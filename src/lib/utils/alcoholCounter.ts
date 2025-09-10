@@ -1,0 +1,63 @@
+export enum Gender {
+  Male = "male",
+  Female = "female",
+  Unspecified = "unspecified",
+};
+
+interface DrunkValueResult {
+  "Alkoholigrammat": number;
+  "Alkoholigrammat / €": number;
+  "Arvioidut promillet": number;
+  "Promillet / €": number;
+}
+
+/**
+ * Laskee alkoholin määrän, känni per euro ja BAC-arvot.
+ *
+ * @param volume Pullon koko litroina (esim. 0.5)
+ * @param percentage Alkoholiprosentti (esim. 5 → 5%)
+ * @param price Pullon hinta euroina
+ * @param weight Käyttäjän paino kiloina
+ * @param gender Käyttäjän sukupuoli
+ * @returns Olio, jossa puhtaan alkoholin määrä, alkoholia per euro, arvioitu BAC ja BAC per euro
+ */
+export function calculateDrunkValue(
+  volume: number,
+  percentage: number,
+  price: number,
+  gender: Gender = Gender.Unspecified,
+  weight?: number,
+): DrunkValueResult {
+  if (gender === Gender.Female && !weight) {
+    weight = 76; // Oletuspaino naisille
+  } else if (gender === Gender.Male && !weight) {
+    weight = 86; // Oletuspaino miehille
+  } else {
+    weight = 79; // Oletuspaino, jos sukupuolta ei ole määritetty
+  }
+
+  // Etanolin tiheys g/l
+  const ETHANOL_DENSITY = 789;
+
+  // Widmarkin kertoimet
+  const r = gender === Gender.Male ? 0.68 : 0.55;
+
+  // Lasketaan puhtaan alkoholin määrä grammoina
+  const pureAlcoholGrams = volume * (percentage / 100) * ETHANOL_DENSITY;
+
+  // Lasketaan alkoholia grammoina per euro
+  const alcoholPerEuro = pureAlcoholGrams / price;
+
+  // Lasketaan arvioitu BAC (‰)
+  const estimatedBAC = pureAlcoholGrams / (weight! * r);
+
+  // Lasketaan promillea per euro
+  const bacPerEuro = estimatedBAC / price;
+
+  return {
+    "Alkoholigrammat": parseFloat(pureAlcoholGrams.toFixed(2)),
+    "Alkoholigrammat / €": parseFloat(alcoholPerEuro.toFixed(2)),
+    "Arvioidut promillet": parseFloat(estimatedBAC.toFixed(3)),
+    "Promillet / €": parseFloat(bacPerEuro.toFixed(4)),
+  };
+}
