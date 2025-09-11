@@ -31,7 +31,9 @@
 		"vite": "^7.0.4"
 	},
 	"dependencies": {
+		"@humanspeak/svelte-virtual-list": "^0.3.2",
 		"@types/xlsx": "^0.0.36",
+		"tailwind-merge": "^3.3.1",
 		"xlsx": "^0.18.5"
 	}
 }

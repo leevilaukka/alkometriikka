@@ -102,6 +102,8 @@ export class Kaljakori {
             if(this.filters[filter].possibleTypes.size > 1) this.filters[filter].type = "any";
             else this.filters[filter].type = this.filters[filter].possibleTypes.values().next().value;
         })
+
+        this.data = this.sortBy("Promillet / €", false)
     }
 
     getFilterKeys() {
@@ -147,7 +149,9 @@ export class Kaljakori {
         return this.data.filter(item => {
             return Object.keys(filters).every(key => {
                 const type = this.getFilterType(key);
+                // Range filter for numbers
                 if(type === "number" && Array.isArray(filters[key]) && filters[key].length === 2) {
+                    // TODO: Fix
                     return item[key] >= filters[key][0] && item[key] <= filters[key][1];
                 } else if (Array.isArray(filters[key])) {
                     return item[key] && filters[key].includes(item[key]);

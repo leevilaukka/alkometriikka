@@ -9,6 +9,7 @@ interface DrunkValueResult {
   "Alkoholigrammat / €": number;
   "Arvioidut promillet": number;
   "Promillet / €": number;
+  "Annokset": number;
 }
 
 /**
@@ -54,10 +55,14 @@ export function calculateDrunkValue(
   // Lasketaan promillea per euro
   const bacPerEuro = estimatedBAC / price;
 
+  // Lasketaan annokset (1 annos = 12g)
+  const servings = pureAlcoholGrams / 12;
+
   return {
     "Alkoholigrammat": parseFloat(pureAlcoholGrams.toFixed(2)),
     "Alkoholigrammat / €": parseFloat(alcoholPerEuro.toFixed(2)),
     "Arvioidut promillet": parseFloat(estimatedBAC.toFixed(3)),
     "Promillet / €": parseFloat(bacPerEuro.toFixed(4)),
+    "Annokset": parseFloat(servings.toFixed(1)),
   };
 }
