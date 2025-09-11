@@ -1,0 +1,24 @@
+name: Download File Periodically
+
+on:
+    schedule:
+        - cron: '0 12 * * *' # Runs every day at 12:00
+    workflow_dispatch:
+
+jobs:
+    download-file:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout repository
+          uses: actions/checkout@v4
+
+        - name: Download File
+          run: curl -L ${{ secrets.FILE_URL }} -o ${{ secrets.FILE_PATH }}
+
+        - name: Commit and push downloaded file
+          run: |
+            git config --global user.name "github-actions[bot]"
+            git config --global user.email "github-actions[bot]@users.noreply.github.com"
+            git add ${{ secrets.FILE_PATH }}
+            git commit -m "Update price list [skip ci]" || echo "No changes to commit"
+            git push

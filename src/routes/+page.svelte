@@ -92,7 +92,7 @@
 					</div>
 				</div>
 			{:else if type === 'any'}
-				<div class="flex flex-col gap-0.5">
+				<div class="flex flex-col text-sm">
 					<label for={filterId}>{filter}</label>
 					<select name={filterId} id={filterId} multiple size={5}>
 						{#each possibleValues as value}
@@ -101,7 +101,7 @@
 					</select>
 				</div>
 			{:else}
-				<div class="flex flex-col gap-0.5 text-sm">
+				<div class="flex flex-col text-sm">
 					<label for={filterId}>{filter}</label>
 					<StringInput options={possibleValues} bind:value={filterValues[filter]} />
 				</div>
