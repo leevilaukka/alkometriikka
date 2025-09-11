@@ -13,6 +13,8 @@ export class Kaljakori {
     data: any[];
     personalInfo: { weight: number; gender: Gender };
     filters: Record<string, Filter> = {};
+    minAlcohol: number = Infinity;
+    maxAlcohol: number = -Infinity;
     minBacPerEuro: number;
     maxBacPerEuro: number;
     maxBottleSize: number;
@@ -63,6 +65,12 @@ export class Kaljakori {
             }
             if (item["Hinta"] > this.maxPrice) {
                 this.maxPrice = item["Hinta"];
+            }
+            if (item["Alkoholi-%"] < this.minAlcohol) {
+                this.minAlcohol = item["Alkoholi-%"];
+            }
+            if (item["Alkoholi-%"] > this.maxAlcohol) {
+                this.maxAlcohol = item["Alkoholi-%"];
             }
             
 

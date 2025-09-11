@@ -2,11 +2,12 @@
 	import { Kaljakori } from '$lib/alko/index.js';
 	import StringInput from '$lib/components/inputs/String.svelte';
 	import Number from '$lib/components/inputs/Number.svelte';
+	import { generateImageUrl } from '$lib/utils/image.js';
 	const { data } = $props();
 
 	const kaljakori = new Kaljakori(data.data);
 
-	const shownFilters = ['Nimi','Tyyppi', 'Valmistusmaa', 'Valmistaja', 'Pullokoko', 'Hinta', 'Promillet / €'];
+	const shownFilters = ['Nimi','Tyyppi', 'Valmistusmaa', 'Valmistaja', 'Pullokoko', 'Hinta', 'Promillet / €', "Alkoholi-%"];
 	const filters = kaljakori.getFilterKeys().filter((f) => shownFilters.includes(f));
 
     function initFilterValues() {
@@ -14,6 +15,7 @@
         if(filter == "Hinta") obj[filter] = [kaljakori.minPrice, kaljakori.maxPrice];
         else if(filter == "Pullokoko") obj[filter] = [kaljakori.minBottleSize, kaljakori.maxBottleSize];
         else if(filter == "Promillet / €") obj[filter] = [kaljakori.minBacPerEuro, kaljakori.maxBacPerEuro];
+        else if (filter == "Alkoholi-%") obj[filter] = [kaljakori.minAlcohol, kaljakori.maxAlcohol];
         else if (kaljakori.getFilterType(filter) == "number") obj[filter] = [0, Infinity];
         else if (kaljakori.getFilterType(filter) == "string") obj[filter] = [];
         else if (kaljakori.getFilterType(filter) == "any") obj[filter] = [null];
@@ -70,6 +72,15 @@
 							step={0.01}
 						/>
 					</div>
+					{:else if filter === "Alkoholi-%"}
+					<div class="flex flex-row gap-2">
+						<Number
+							bind:value={filterValues[filter]}
+							min={kaljakori.minAlcohol}
+                            max={kaljakori.maxAlcohol}
+							step={0.1}
+						/>
+					</div>
 				{/if}
 			</div>
 		{:else if type === 'any'}
@@ -107,6 +118,7 @@
             <p>Alkoholi-%: {item["Alkoholi-%"]} %</p>
             <p>Alkoholigrammat / €: {item["Alkoholigrammat / €"]} g</p>
             <p>Promillet / €: {item["Promillet / €"]}</p>
+			<img src={generateImageUrl(item.Numero, item.Nimi)} loading="lazy" alt={item.Nimi} class="w-32 h-auto mt-2"/>
         </div>
     {/each}
     {#if rows.length == 0}
