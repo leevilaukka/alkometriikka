@@ -2,6 +2,14 @@
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
 
+
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-weight: 100 900;
+  src: url("lib/assets/fonts/Inter/Inter-VariableFont_opsz,wght.ttf");
+}
+
 body, html {
     display: flex;
     flex-direction: column;
@@ -9,9 +17,24 @@ body, html {
     width: 100%;
 }
 
+body {
+    font-family: 'Inter', sans-serif;
+}
 
 .rotate-text:after {
     writing-mode: vertical-rl;
     text-orientation: sideways;
     transform: rotate(-180deg);
+}
+
+input:focus {
+    outline: 0;
+}
+
+input, button, select {
+    @apply text-sm;
+}
+
+.even>*:nth-child(odd) {
+    @apply bg-gray-200;
 }

@@ -4,7 +4,7 @@ export enum Gender {
   Unspecified = "unspecified",
 };
 
-interface DrunkValueResult {
+export interface DrunkValueResult {
   "Alkoholigrammat": number;
   "Alkoholigrammat / €": number;
   "Arvioidut promillet": number;

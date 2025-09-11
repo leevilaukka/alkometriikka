@@ -1,4 +1,4 @@
-import { calculateDrunkValue, Gender } from '../utils/alcoholCounter';
+import { calculateDrunkValue, Gender, type DrunkValueResult } from '../utils/alcoholCounter';
 
 type NativeTypes = "string" | "number" | "object" | "undefined" | "function" | "boolean" | "symbol" | "bigint";
 
@@ -9,29 +9,41 @@ type Filter = {
     possibleTypes: Set<NativeTypes>
 }
 
+
+type NumberValueKeys = keyof DrunkValueResult | "Pullokoko" | "Hinta" | "Alkoholi-%";
+
 export class Kaljakori {
     data: any[];
     personalInfo: { weight: number; gender: Gender };
     filters: Record<string, Filter> = {};
-    minAlcohol: number = Infinity;
-    maxAlcohol: number = -Infinity;
-    minBacPerEuro: number;
-    maxBacPerEuro: number;
-    maxBottleSize: number;
-    minBottleSize: number;
-    maxPrice: number;
-    minPrice: number;
+    min: {
+        [key in NumberValueKeys]: number;
+    } = {
+        "Alkoholigrammat": Infinity,
+        "Alkoholigrammat / €": Infinity,
+        "Arvioidut promillet": Infinity,
+        "Promillet / €": Infinity,
+        "Annokset": Infinity,
+        "Pullokoko": Infinity,
+        "Hinta": Infinity,
+        "Alkoholi-%": Infinity,
+    };
+    max: {
+        [key in NumberValueKeys]: number;
+    } = {
+        "Alkoholigrammat": -Infinity,
+        "Alkoholigrammat / €": -Infinity,
+        "Arvioidut promillet": -Infinity,
+        "Promillet / €": -Infinity,
+        "Annokset": -Infinity,
+        "Pullokoko": -Infinity,
+        "Hinta": -Infinity,
+        "Alkoholi-%": -Infinity,
+    };
     constructor(data: any[], personalInfo?: { weight: number; gender: Gender }) {
         this.data = data;
         this.personalInfo = personalInfo || { weight: 0, gender: Gender.Unspecified };
-        this.minBacPerEuro = Infinity;
-        this.maxBacPerEuro = -Infinity;
-
-        this.maxBottleSize = -Infinity;
-        this.minBottleSize = Infinity;
-
-        this.maxPrice = -Infinity;
-        this.minPrice = Infinity;
+       
 
         this.data.filter(item => item["Tyyppi"] !== "lahja- ja juomatarvikkeet").forEach(item => {
             Object.assign(item, calculateDrunkValue(
@@ -48,31 +60,10 @@ export class Kaljakori {
             item["Hinta"] = parseFloat(item["Hinta"]);
             item["Alkoholi-%"] = parseFloat(item["Alkoholi-%"]);
 
-            if (item["Promillet / €"] < this.minBacPerEuro) {
-                this.minBacPerEuro = item["Promillet / €"];
-            }
-            if (item["Promillet / €"] > this.maxBacPerEuro) {
-                this.maxBacPerEuro = item["Promillet / €"];
-            }
-            if (item["Pullokoko"] < this.minBottleSize) {
-                this.minBottleSize = item["Pullokoko"];
-            }
-            if (item["Pullokoko"] > this.maxBottleSize) {
-                this.maxBottleSize = item["Pullokoko"];
-            }
-            if (item["Hinta"] < this.minPrice) {
-                this.minPrice = item["Hinta"];
-            }
-            if (item["Hinta"] > this.maxPrice) {
-                this.maxPrice = item["Hinta"];
-            }
-            if (item["Alkoholi-%"] < this.minAlcohol) {
-                this.minAlcohol = item["Alkoholi-%"];
-            }
-            if (item["Alkoholi-%"] > this.maxAlcohol) {
-                this.maxAlcohol = item["Alkoholi-%"];
-            }
-            
+            (Object.keys(this.min) as NumberValueKeys[]).forEach((key: NumberValueKeys) => {
+                if(item[key] < this.min[key]) this.min[key] = item[key]
+                if(item[key] > this.max[key]) this.max[key] = item[key]
+            });
 
             Object.keys(item).forEach(key => {
                 if (!this.filters[key]) {
@@ -103,7 +94,7 @@ export class Kaljakori {
             else this.filters[filter].type = this.filters[filter].possibleTypes.values().next().value;
         })
 
-        this.data = this.sortBy("Promillet / €", false)
+        this.data = this.sortBy("Promillet / €", true)
     }
 
     getFilterKeys() {
