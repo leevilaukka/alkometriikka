@@ -11,18 +11,20 @@ on:
 
 jobs:
     download-file:
+        permissions:
+            contents: write
         runs-on: ubuntu-latest
         steps:
         - name: Checkout repository
           uses: actions/checkout@v4
 
         - name: Download File
-          run: curl -L ${{ secrets.FILE_URL }} -o ${{ secrets.FILE_PATH }} && mv ${{ secrets.FILE_PATH }} build/${{ secrets.FILE_PATH }}
+          run: curl -L https://www.alko.fi/INTERSHOP/static/WFS/Alko-OnlineShop-Site/-/Alko-OnlineShop/fi_FI/Alkon%20Hinnasto%20Tekstitiedostona/alkon-hinnasto-tekstitiedostona.xlsx -o build/alkon-hinnasto-tekstitiedostona.xlsx
 
         - name: Commit and push downloaded file
           run: |
             git config --global user.name "github-actions[bot]"
             git config --global user.email "github-actions[bot]@users.noreply.github.com"
-            git add ${{ secrets.FILE_PATH }}
+            git add build/alkon-hinnasto-tekstitiedostona.xlsx -f
             git commit -m "Update price list [skip ci]" || echo "No changes to commit"
             git push origin gh-pages
