@@ -28,12 +28,12 @@
 
 	const filterToUnitMarker: { [key: string]: string } = {
 		Hinta: '€',
-		'Pullokoko': 'L',
-		'Promillet / €': '‰',
+		Pullokoko: 'L',
+		'Promillet / €': '‰'
 	};
 
 	const filterRenameMap: { [key: string]: string } = {
-		'Pullokoko': 'Pakkauskoko'
+		Pullokoko: 'Pakkauskoko'
 	};
 
 	const filters = kaljakori.getFilterKeys().filter((f) => shownFilters.includes(f));
@@ -69,24 +69,28 @@
 	});
 </script>
 
-
 <main class="mx-auto flex h-full flex-col gap-4 p-4">
-	<header class="flex flex-row items-center md:justify-start justify-center gap-4">
+	<header class="flex flex-row items-center justify-center gap-4 md:justify-start">
 		<img src={logo} alt="Alkoassistentti Logo" class="aspect-square w-32" />
-		<h1 class="text-4xl font-bold text-red-600 md:block hidden">Assistentti</h1>
+		<h1 class="hidden text-4xl font-bold text-red-600 md:block">Assistentti</h1>
 	</header>
-	<div class={twMerge("flex flex-row flex-wrap items-end gap-2", !showFilters && "overflow-hidden h-0")}>
+	<div
+		class={twMerge(
+			'flex flex-row flex-wrap items-end gap-2',
+			!showFilters && 'h-0 overflow-hidden'
+		)}
+	>
 		{#each filters as filter}
 			{@const filterId = crypto.randomUUID()}
 			{@const possibleValues = kaljakori.getFilterValues(filter)}
 			{@const type = kaljakori.getFilterType(filter)}
-			<div class="flex flex-col w-full md:w-fit text-sm">
+			<div class="flex w-full flex-col text-sm md:w-fit">
 				{#if type === 'number'}
 					<label for={filterId} class=" text-sm">
 						{filterRenameMap[filter] ?? filter}
 						{filterToUnitMarker[filter] ? ` (${filterToUnitMarker[filter]})` : ''}
 					</label>
-					<div class="flex flex-row w-full gap-2">
+					<div class="flex w-full flex-row gap-2">
 						<NumberInput
 							bind:value={filterValues[filter]}
 							min={kaljakori.min[filter as keyof typeof min]}
@@ -113,7 +117,7 @@
 		<label for={'sortingColumn'}>
 			{'Järjestys'}
 		</label>
-		<div class="flex flex-row items-center flex-wrap gap-4">
+		<div class="flex flex-row flex-wrap items-center gap-4">
 			<select
 				name="sortingColumn"
 				id="sortingColumn"
@@ -172,78 +176,81 @@
 		<SvelteVirtualList items={rows} bufferSize={50} bind:this={listRef}>
 			{#snippet renderItem(item: any, idx: number)}
 				{@const multiplier = item['Promillet / €'] / kaljakori.max['Promillet / €']}
-				{@const colorR = 200 - 100 * multiplier}
-				{@const colorG = 30 + 200 * multiplier * 1.5}
-				{@const colorB = 20}
-				{@const ratings = ['Huono', 'Ok', 'Hyvä', 'Erinomainen']}
-				{@const rating = ratings[Number((3 * multiplier).toFixed(0))]}
-				<div
-					class={twMerge(
-						'relative mb-2 flex flex-col md:flex-row flex-nowrap items-center gap-4 rounded border p-4',
-						rating === 'Erinomainen'
-							? 'rotate-text border-3 border-red-600 after:absolute after:top-1/2 after:right-0 after:block after:-translate-y-1/2 after:rounded-r after:bg-red-600 after:px-3 after:text-nowrap after:text-white after:content-["Erinomainen_‰/€-suhde"]'
-							: 'border-gray-300'
-					)}
-				>
-					<div class="flex aspect-square w-32 max-w-[8rem]">
-						<img
-							src={generateImageUrl(item.Numero, item.Nimi)}
-							alt={item.Nimi}
-							class="block h-full w-full object-contain"
-						/>
+				{@const ratings = ['Matala', 'Kohtalainen', 'Korkea']}
+				{@const rating = ratings[Number(((ratings.length - 1) * multiplier).toFixed(0))]}
+				<div class={twMerge('relative mb-2 flex flex-col gap-3 rounded border border-gray-300')}>
+					<div class={twMerge('flex flex-col flex-nowrap items-center gap-4 p-4 md:flex-row')}>
+						<div class="flex aspect-square w-32 max-w-[8rem]">
+							<img
+								src={generateImageUrl(item.Numero, item.Nimi)}
+								alt={item.Nimi}
+								class="block h-full w-full object-contain"
+							/>
+						</div>
+						<div class="flex flex-col gap-2">
+							<div class="flex flex-row items-center gap-3">
+								<span class="text-sm text-gray-500">{'#' + (idx + 1)}</span>
+								<h2 class="text-2xl font-bold">
+									<a
+										href={`https://www.alko.fi/tuotteet/${item.Numero}`}
+										target="_blank"
+										rel="noopener noreferrer"
+										class="hover:underline"
+									>
+										{item.Nimi} ({item.Pullokoko} L)
+									</a>
+								</h2>
+							</div>
+							<div class="flex flex-col items-start gap-3 md:flex-row">
+								<div class="flex flex-col gap-1">
+									<p>Valmistaja: {item.Valmistaja}</p>
+									<p>Tyyppi: {item.Tyyppi}</p>
+									<p>Valmistusmaa: {item.Valmistusmaa}</p>
+									<p>Pakkauskoko: {item.Pullokoko} L</p>
+									<p>Valikoima: {item.Valikoima}</p>
+								</div>
+								<div class="flex flex-col gap-1">
+									<p>Alkoholi-%: {item['Alkoholi-%']} %</p>
+									<p>Alkoholi (g): {item['Alkoholigrammat']} g</p>
+									<p>Annokset: {item['Annokset']}</p>
+									<p>Alkoholi (g) / €: {item['Alkoholigrammat / €']} g</p>
+									<p>Arvioidut promillet: {item['Arvioidut promillet']} ‰</p>
+								</div>
+							</div>
+							<div class="flex flex-col gap-4 md:flex-row md:items-center">
+								<div class="flex items-center gap-2">
+									<p class="text-xl font-bold">
+										Hinta: {Number.parseFloat(item.Hinta).toFixed(2)} €
+									</p>
+									<span class="text-sm text-gray-500">({item.Litrahinta} €/L)</span>
+								</div>
+								{#if !!item.Uutuus}
+									<p class="rounded bg-red-200 px-1.5 py-0.5 text-red-800">Uutuus</p>
+								{/if}
+								{#if item['Erityisryhmä'] === 'Luomu'}
+									<p class="rounded bg-green-300 px-1.5 py-0.5 text-green-800">Luomu</p>
+								{/if}
+								{#if item['Erityisryhmä'] === 'Vegaaneille soveltuva tuote'}
+									<p class="rounded bg-emerald-300 px-1.5 py-0.5 text-emerald-800">Vegaani</p>
+								{/if}
+							</div>
+						</div>
 					</div>
-					<div class="flex flex-col gap-2">
-						<div class="flex flex-row items-center gap-3">
-							<span class="text-sm text-gray-500">{'#' + (idx + 1)}</span>
-							<h2 class="text-2xl font-bold">
-								<a
-									href={`https://www.alko.fi/tuotteet/${item.Numero}`}
-									target="_blank"
-									rel="noopener noreferrer"
-									class="hover:underline"
-								>
-									{item.Nimi} ({item.Pullokoko} L)
-								</a>
-							</h2>
+					<div class="relative block max-w-full">
+						<div
+							class="relative flex flex-nowrap gap-1 items-center h-full w-fit shrink-0 bg-black px-1.5 py-0.5 text-sm whitespace-nowrap text-white"
+							style={`left: ${100 * multiplier}%; transform: translateX(-${100 * multiplier}%);`}
+						>
+							<p>Promillet / €: {item['Promillet / €']}</p>
+							<span class="text-xs">{rating}</span>
 						</div>
-						<div class="flex flex-col md:flex-row items-start gap-3">
-							<div class="flex flex-col gap-1">
-								<p>Valmistaja: {item.Valmistaja}</p>
-								<p>Tyyppi: {item.Tyyppi}</p>
-								<p>Valmistusmaa: {item.Valmistusmaa}</p>
-								<p>Pakkauskoko: {item.Pullokoko} L</p>
-								<p>Valikoima: {item.Valikoima}</p>
-							</div>
-							<div class="flex flex-col gap-1">
-								<p>Alkoholi-%: {item['Alkoholi-%']} %</p>
-								<p>Alkoholi (g): {item['Alkoholigrammat']} g</p>
-								<p>Annokset: {item['Annokset']}</p>
-								<p>Alkoholi (g) / €: {item['Alkoholigrammat / €']} g</p>
-								<p>Arvioidut promillet: {item['Arvioidut promillet']} ‰</p>
-							</div>
-						</div>
-						<div class="flex flex-col md:flex-row md:items-center gap-4">
-							<div class="flex items-center gap-2">
-								<p class="text-xl font-bold">
-									Hinta: {Number.parseFloat(item.Hinta).toFixed(2)} €
-								</p>
-								<span class="text-sm text-gray-500">({item.Litrahinta} €/L)</span>
-							</div>
-							<p
-								class={twMerge('rounded px-1.5 py-0.5', multiplier <= 0.5 && 'text-white')}
-								style={`background-color: rgba(${colorR}, ${colorG}, ${colorB}, 1)`}
-							>
-								Promillet / €: {item['Promillet / €']} <span class={'text-sm'}>({rating})</span>
-							</p>
-							{#if !!item.Uutuus}
-								<p class="rounded bg-red-200 text-red-800 px-1.5 py-0.5">Uutuus</p>
-							{/if}
-							{#if item['Erityisryhmä'] === 'Luomu'}
-								<p class="rounded bg-green-300 text-green-800 px-1.5 py-0.5">Luomu</p>
-							{/if}
-							{#if item['Erityisryhmä'] === 'Vegaaneille soveltuva tuote'}
-								<p class="rounded bg-emerald-300 text-emerald-800 px-1.5 py-0.5">Vegaani</p>
-							{/if}
+						<div
+							class="relative block h-4 w-full bg-gradient-to-r from-red-500 via-amber-500 to-green-500"
+						>
+							<div
+								class="absolute block h-full w-1 shrink-0 -translate-x-1/2 bg-black whitespace-nowrap"
+								style={`left: ${100 * multiplier}%; transform: translateX(${50 - 100 * multiplier}%);`}
+							></div>
 						</div>
 					</div>
 				</div>
