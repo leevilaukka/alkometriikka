@@ -56,7 +56,7 @@
 						list = options.map((option) => ({ value: option, selected: false }));
 						value = list.filter((option) => option.selected).map((option) => option.value);
 					}}
-					class="flex flex-row flex-nowrap items-center gap-3 rounded border border-gray-300 px-3 py-2"
+					class="flex flex-row flex-nowrap items-center gap-3 rounded border border-gray-300 px-1.5 py-0.5"
 				>
 					Tyhjennä valinnat
 				</button>
@@ -65,7 +65,7 @@
 						list = options.map((option) => ({ value: option, selected: true }));
 						value = list.filter((option) => option.selected).map((option) => option.value);
 					}}
-					class="flex flex-row flex-nowrap items-center gap-3 rounded border border-gray-300 px-3 py-2"
+					class="flex flex-row flex-nowrap items-center gap-3 rounded border border-gray-300 px-1.5 py-0.5"
 				>
 					Valitse kaikki
 				</button>
@@ -74,7 +74,7 @@
 				type="text"
 				bind:value={query}
 				placeholder="Hae..."
-				class="flex shrink-0 rounded border border-gray-300 px-3 py-2 order-2"
+				class="flex shrink-0 rounded border border-gray-300 px-1.5 py-0.5 order-2"
 			/>
 			<div class="flex max-h-full flex-col overflow-auto rounded border border-gray-300 h-[var(--height)] w-[var(--width)] max-w-[80vw] col-span-full lg:col-span-1 order-4 lg:order-3" style:--width={longestOption + 5 + "ch"} style:--height={`${28*20}px;`}>
 				<SvelteVirtualList

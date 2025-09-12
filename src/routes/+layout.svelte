@@ -1,13 +1,14 @@
 <script lang="ts">
 	import '../app.css';
-	import favicon from '$lib/assets/images/alko-juominen.png';
+	import favicon from '$lib/assets/images/favicon.png';
+	import { dev } from '$app/environment';
 
 	let { children } = $props();
 </script>
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<title>Alkoassistentti</title>
+	<title>Alkometriikka {dev && '- DEV'}</title>
 </svelte:head>
 
 {@render children?.()}
