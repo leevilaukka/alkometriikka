@@ -1,23 +1,22 @@
-# sv
+# Alkoassistentti / Alkometriikka
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Alkon tuotetietojen selaamiseen tarkoitettu selainpohjainen sovellus.
 
-## Creating a project
+## Tietolähde
 
-If you're seeing this, you've probably already done this step. Congrats!
+Sovellus käyttää Alkon avoimesti verkossa jakamaa hinnastoa ja sen tarjoamia tietoja. Hinnaston voit löytää [täältä](https://www.alko.fi/INTERSHOP/static/WFS/Alko-OnlineShop-Site/-/Alko-OnlineShop/fi_FI/Alkon%20Hinnasto%20Tekstitiedostona/alkon-hinnasto-tekstitiedostona.xlsx).
 
-```sh
-# create a new project in the current directory
-npx sv create
+## Huomautus
 
-# create a new project in my-app
-npx sv create my-app
-```
+Sovellus tarjoaa vain laskennallista ja informatiivista tietoa Alkon tuotteista.
+
+Sovelluksen sisältö ei ole alkoholin markkinointia, myyntiä tai sen käyttöön kehoittamista. Alkoholin käyttöön liittyy terveysriskejä - käytä vastuullisesti.
+
+# For developers
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
+The development server can be started using `npm run dev`
 ```sh
 npm run dev
 
@@ -27,12 +26,15 @@ npm run dev -- --open
 
 ## Building
 
-To create a production version of your app:
-
+A production build can be built by running:
 ```sh
 npm run build
 ```
 
 You can preview the production build with `npm run preview`.
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+## Deploying
+
+If you intend on selfhosting, you need to make sure to include the price list in the root folder of the hosted website. This is necessary, as we don't want to flood Alko's systems with requests.
+
+The "official" page manages this by using a GitHub Actions workflow to build the app, download the price list to the root of the built site, and then deploy it on GitHub Pages.
