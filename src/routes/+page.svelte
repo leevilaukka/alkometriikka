@@ -10,7 +10,9 @@
 
 	let listRef: SvelteVirtualList | null = null;
 
-	const kaljakori = new Kaljakori(data.data);
+	const personalData = JSON.parse(localStorage.getItem('personalData') ?? '{}');
+
+	const kaljakori = new Kaljakori(data.data, personalData);
 
 	const shownFilters = [
 		'Nimi',
@@ -54,6 +56,8 @@
 	let selectedSortingColumn: string = $state('Promillet / €');
 	let asc = $state(false);
 
+	let showFilters = $state(true);
+
 	const { min, max } = kaljakori;
 
 	let rows = $derived.by(() => {
@@ -67,22 +71,22 @@
 
 
 <main class="mx-auto flex h-full flex-col gap-4 p-4">
-	<header class="flex flex-row items-center gap-4">
+	<header class="flex flex-row items-center md:justify-start justify-center gap-4">
 		<img src={logo} alt="Alkoassistentti Logo" class="aspect-square w-32" />
-		<h1 class="text-4xl font-bold text-red-600">Assistentti</h1>
+		<h1 class="text-4xl font-bold text-red-600 md:block hidden">Assistentti</h1>
 	</header>
-	<div class="flex flex-row flex-wrap items-end gap-2">
+	<div class={twMerge("flex flex-row flex-wrap items-end gap-2", !showFilters && "overflow-hidden h-0")}>
 		{#each filters as filter}
 			{@const filterId = crypto.randomUUID()}
 			{@const possibleValues = kaljakori.getFilterValues(filter)}
 			{@const type = kaljakori.getFilterType(filter)}
-			{#if type === 'number'}
-				<div class="flex flex-col">
+			<div class="flex flex-col w-full md:w-fit text-sm">
+				{#if type === 'number'}
 					<label for={filterId} class=" text-sm">
 						{filterRenameMap[filter] ?? filter}
 						{filterToUnitMarker[filter] ? ` (${filterToUnitMarker[filter]})` : ''}
 					</label>
-					<div class="flex flex-row gap-2">
+					<div class="flex flex-row w-full gap-2">
 						<NumberInput
 							bind:value={filterValues[filter]}
 							min={kaljakori.min[filter as keyof typeof min]}
@@ -90,39 +94,26 @@
 							step={0.01}
 						/>
 					</div>
-				</div>
-			{:else if type === 'any'}
-				<div class="flex flex-col text-sm">
+				{:else if type === 'any'}
 					<label for={filterId}>{filter}</label>
 					<select name={filterId} id={filterId} multiple size={5}>
 						{#each possibleValues as value}
 							<option {value}>{value}</option>
 						{/each}
 					</select>
-				</div>
-			{:else}
-				<div class="flex flex-col text-sm">
+				{:else}
 					<label for={filterId}>{filter}</label>
 					<StringInput options={possibleValues} bind:value={filterValues[filter]} />
-				</div>
-			{/if}
+				{/if}
+			</div>
 		{/each}
-		<button
-			onclick={() => {
-				filterValues = initFilterValues();
-				listRef?.scroll({ index: 0 });
-			}}
-			class="rounded border border-gray-300 px-1.5 py-0.5"
-		>
-			{'Tyhjennä suodattimet'}
-		</button>
 	</div>
 
 	<div class="flex flex-col">
 		<label for={'sortingColumn'}>
 			{'Järjestys'}
 		</label>
-		<div class="flex flex-row flex-wrap gap-4">
+		<div class="flex flex-row items-center flex-wrap gap-4">
 			<select
 				name="sortingColumn"
 				id="sortingColumn"
@@ -145,6 +136,23 @@
 					{asc ? 'Nouseva' : 'Laskeva'}
 				</button>
 			{/if}
+			<button
+				onclick={() => {
+					filterValues = initFilterValues();
+					listRef?.scroll({ index: 0 });
+				}}
+				class="rounded border border-gray-300 px-1.5 py-0.5"
+			>
+				{'Tyhjennä suodattimet'}
+			</button>
+			<button
+				onclick={() => {
+					showFilters = !showFilters;
+				}}
+				class="rounded border border-gray-300 px-1.5 py-0.5"
+			>
+				{showFilters ? 'Piilota suodattimet' : 'Näytä suodattimet'}
+			</button>
 		</div>
 	</div>
 
@@ -171,13 +179,13 @@
 				{@const rating = ratings[Number((3 * multiplier).toFixed(0))]}
 				<div
 					class={twMerge(
-						'relative mb-2 flex flex-row flex-nowrap items-center gap-4 rounded border p-4',
+						'relative mb-2 flex flex-col md:flex-row flex-nowrap items-center gap-4 rounded border p-4',
 						rating === 'Erinomainen'
 							? 'rotate-text border-3 border-red-600 after:absolute after:top-1/2 after:right-0 after:block after:-translate-y-1/2 after:rounded-r after:bg-red-600 after:px-3 after:text-nowrap after:text-white after:content-["Erinomainen_‰/€-suhde"]'
 							: 'border-gray-300'
 					)}
 				>
-					<div class="flex aspect-square w-32">
+					<div class="flex aspect-square w-32 max-w-[8rem]">
 						<img
 							src={generateImageUrl(item.Numero, item.Nimi)}
 							alt={item.Nimi}
@@ -198,7 +206,7 @@
 								</a>
 							</h2>
 						</div>
-						<div class="flex flex-row items-start gap-3">
+						<div class="flex flex-col md:flex-row items-start gap-3">
 							<div class="flex flex-col gap-1">
 								<p>Valmistaja: {item.Valmistaja}</p>
 								<p>Tyyppi: {item.Tyyppi}</p>
@@ -214,7 +222,7 @@
 								<p>Arvioidut promillet: {item['Arvioidut promillet']} ‰</p>
 							</div>
 						</div>
-						<div class="flex flex-row items-center gap-4">
+						<div class="flex flex-col md:flex-row md:items-center gap-4">
 							<div class="flex items-center gap-2">
 								<p class="text-xl font-bold">
 									Hinta: {Number.parseFloat(item.Hinta).toFixed(2)} €
