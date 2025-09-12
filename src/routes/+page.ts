@@ -1,8 +1,13 @@
 import type { PageLoad } from './$types';
 import * as XLSX from 'xlsx';
-import { base } from '$app/paths';
+import { resolve } from '$app/paths';
+import { dev } from '$app/environment';
 
-const URL = base + "/alkon-hinnasto-tekstitiedostona.xlsx";
+function corsProxy(url: string) {
+    return "https://corsproxy.io/?url=" + url
+}
+
+const URL = dev ? corsProxy("https://github.com/leevilaukka/alkoassistentti/raw/refs/heads/gh-pages/alkon-hinnasto-tekstitiedostona.xlsx") : resolve("/") + "alkon-hinnasto-tekstitiedostona.xlsx";
 
 const fetchAlkoPriceList = async () => {
     console.log("Fetching Alko price list...");
