@@ -3,6 +3,13 @@
 
 	let { value = $bindable([]), options = [] } = $props();
 
+	let list = $state(options.map((option) => ({ value: option, selected: false })));
+
+	const longestOption = Math.min(options.reduce((length, option) => {
+		if(option.length > length) return option.length
+		return length
+	}, 0), 50)
+
 	const text = $derived.by(() => {
 		if (value.length > 1) return `${value.length} valittu`;
 		else if (value.length == 1) return value.at(0);
@@ -38,13 +45,13 @@
 	<dialog
 		open={false}
 		bind:this={dialogElement}
-		class="m-auto h-full w-full flex-col gap-4 p-4 open:flex"
+		class="string-selector m-auto flex-col gap-4 p-4 open:flex rounded-2xl"
 	>
 		<div class="grid h-full max-h-full grid-cols-2 grid-rows-[auto_1fr] gap-4 overflow-hidden">
 			<div class="flex flex-row flex-wrap gap-4">
 				<button
 					onclick={() => {
-						value = [];
+						list = options.map((option) => ({ value: option, selected: false }));
 					}}
 					class="flex flex-row flex-nowrap items-center gap-3 rounded border border-gray-300 px-3 py-2"
 				>
@@ -57,32 +64,42 @@
 				placeholder="Hae..."
 				class="flex shrink-0 rounded border border-gray-300 px-3 py-2"
 			/>
-			<div class="flex max-h-full flex-col overflow-auto rounded border border-gray-300">
-				<SvelteVirtualList items={value} bufferSize={50} itemsClass={"even"}>
-					{#snippet renderItem(item: any, idx: number)}
+			<div class="flex max-h-full flex-col overflow-auto rounded border border-gray-300" style={`height: ${28*20}px; width: ${longestOption + 5}ch;`}>
+				<SvelteVirtualList
+					items={list.filter((option) => option.selected)}
+					bufferSize={50}
+					itemsClass={'even'}
+				>
+					{#snippet renderItem(item: any)}
 						<button
-							onclick={() => value.splice(idx, 1)}
-							class="flex flex-row flex-nowrap px-2 py-1"
+							onclick={() => {
+								list.find((option) => option.value == item.value)!.selected = false
+								value = list.filter((option) => option.selected).map((option) => option.value);
+							}}
+							class="flex w-full flex-row flex-nowrap px-2 py-1 whitespace-nowrap"
 						>
-							{item}
+							{item.value}
 						</button>
 					{/snippet}
 				</SvelteVirtualList>
 			</div>
-			<div class="flex max-h-full flex-col overflow-auto rounded border border-gray-300">
+			<div class="flex max-h-full flex-col overflow-auto rounded border border-gray-300" style={`height: ${28*20}px; width: ${longestOption + 5}ch;`}>
 				<SvelteVirtualList
-					items={options
-						.filter((option) => !value.includes(option))
-						.filter((option) => option.toLowerCase().includes(query.toLowerCase()))}
+					items={list
+						.filter((option) => !option.selected)
+						.filter((option) => option.value.toLowerCase().includes(query.toLowerCase()))}
 					bufferSize={50}
-                    itemsClass={"even"}
+					itemsClass={'even'}
 				>
-					{#snippet renderItem(item: any, idx: number)}
+					{#snippet renderItem(item: any)}
 						<button
-							onclick={() => value.push(item)}
-							class="flex w-full flex-row flex-nowrap px-2 py-1"
+							onclick={() => {
+								list.find((option) => option.value == item.value)!.selected = true
+								value = list.filter((option) => option.selected).map((option) => option.value);
+							}}
+							class="flex w-full flex-row flex-nowrap px-2 py-1 whitespace-nowrap"
 						>
-							{item}
+							{item.value}
 						</button>
 					{/snippet}
 				</SvelteVirtualList>
@@ -100,3 +117,9 @@
 		</div>
 	</dialog>
 {/if}
+
+<style>
+	:global(.string-selector .virtual-list-viewport) {
+		overflow-x: hidden;
+	}
+</style>

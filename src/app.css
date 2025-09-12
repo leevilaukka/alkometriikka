@@ -10,6 +10,10 @@
   src: url("lib/assets/fonts/Inter/Inter-VariableFont_opsz,wght.ttf");
 }
 
+:root {
+    @apply text-sm md:text-base;
+}
+
 body, html {
     display: flex;
     flex-direction: column;

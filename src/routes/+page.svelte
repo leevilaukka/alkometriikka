@@ -23,7 +23,8 @@
 		'Hinta',
 		'Promillet / €',
 		'Alkoholi-%',
-		'Valikoima'
+		'Valikoima',
+		'Annokset'
 	];
 
 	const filterToUnitMarker: { [key: string]: string } = {
@@ -53,6 +54,8 @@
 
 	let filterValues = $state(initFilterValues());
 
+	$inspect(filterValues).with(console.trace);
+
 	let selectedHighlight: string = $state('Promillet / €');
 
 	let selectedSortingColumn: string = $state('Promillet / €');
@@ -73,106 +76,106 @@
 
 <main class="mx-auto flex h-full w-full max-w-[150ch] flex-col gap-4 p-6">
 	<header class="flex flex-row items-center justify-center gap-4 md:justify-start">
-		<img src={logo} alt="Alkoassistentti Logo" class="aspect-square w-32" />
+		<img src={logo} alt="Alkoassistentti Logo" class="aspect-square w-16 md:w-32" />
 		<h1 class="hidden text-4xl font-bold text-red-600 md:block">Assistentti</h1>
 	</header>
-	{#if showFilters}
+	<div class="flex flex-col w-full gap-4">
+			<div class={twMerge(showFilters ? "flex" : "hidden", 'flex-row flex-wrap items-end gap-2')}>
+				{#each filters as filter}
+					{@const filterId = crypto.randomUUID()}
+					{@const possibleValues = kaljakori.getFilterValues(filter)}
+					{@const type = kaljakori.getFilterType(filter)}
+					<div class="flex w-full flex-col text-sm md:w-fit">
+						{#if type === 'number'}
+							<label for={filterId} class=" text-sm">
+								{filterRenameMap[filter] ?? filter}
+								{filterToUnitMarker[filter] ? ` (${filterToUnitMarker[filter]})` : ''}
+							</label>
+							<div class="flex w-full flex-row gap-2">
+								<NumberInput
+									bind:value={filterValues[filter]}
+									min={kaljakori.min[filter as keyof typeof min]}
+									max={kaljakori.max[filter as keyof typeof max]}
+									step={0.01}
+								/>
+							</div>
+						{:else if type === 'any'}
+							<label for={filterId}>{filter}</label>
+							<select name={filterId} id={filterId} multiple size={5}>
+								{#each possibleValues as value}
+									<option {value}>{value}</option>
+								{/each}
+							</select>
+						{:else}
+							<label for={filterId}>{filter}</label>
+							<StringInput options={possibleValues} bind:value={filterValues[filter]} />
+						{/if}
+					</div>
+				{/each}
+			</div>
 		<div class={twMerge('flex flex-row flex-wrap items-end gap-2')}>
-			{#each filters as filter}
-				{@const filterId = crypto.randomUUID()}
-				{@const possibleValues = kaljakori.getFilterValues(filter)}
-				{@const type = kaljakori.getFilterType(filter)}
-				<div class="flex w-full flex-col text-sm md:w-fit">
-					{#if type === 'number'}
-						<label for={filterId} class=" text-sm">
-							{filterRenameMap[filter] ?? filter}
-							{filterToUnitMarker[filter] ? ` (${filterToUnitMarker[filter]})` : ''}
-						</label>
-						<div class="flex w-full flex-row gap-2">
-							<NumberInput
-								bind:value={filterValues[filter]}
-								min={kaljakori.min[filter as keyof typeof min]}
-								max={kaljakori.max[filter as keyof typeof max]}
-								step={0.01}
-							/>
-						</div>
-					{:else if type === 'any'}
-						<label for={filterId}>{filter}</label>
-						<select name={filterId} id={filterId} multiple size={5}>
-							{#each possibleValues as value}
-								<option {value}>{value}</option>
-							{/each}
-						</select>
-					{:else}
-						<label for={filterId}>{filter}</label>
-						<StringInput options={possibleValues} bind:value={filterValues[filter]} />
+			<div class="flex flex-col">
+				<label for={'sortingColumn'}>
+					{'Järjestys'}
+				</label>
+				<div class="flex flex-row flex-wrap items-center gap-2">
+					<select
+						name="sortingColumn"
+						id="sortingColumn"
+						bind:value={selectedSortingColumn}
+						class="rounded border border-gray-300 px-1.5 py-0.5"
+					>
+						<option value=""></option>
+						{#each kaljakori.getFilterKeys() as filter}
+							<option value={filter}>{filter}</option>
+						{/each}
+					</select>
+					{#if selectedSortingColumn}
+						<button
+							onclick={() => {
+								asc = !asc;
+								listRef?.scroll({ index: 0, smoothScroll: false });
+							}}
+							class="rounded border border-gray-300 px-1.5 py-0.5"
+						>
+							{asc ? 'Nouseva' : 'Laskeva'}
+						</button>
 					{/if}
 				</div>
-			{/each}
-		</div>
-	{/if}
-	<div class={twMerge('flex flex-row flex-wrap items-end gap-2')}>
-		<div class="flex flex-col">
-			<label for={'sortingColumn'}>
-				{'Järjestys'}
-			</label>
-			<div class="flex flex-row flex-wrap items-center gap-2">
+			</div>
+			<div class="flex flex-col">
+				<label for={'selectedHighlight'}>
+					{'Korostus'}
+				</label>
 				<select
-					name="sortingColumn"
-					id="sortingColumn"
-					bind:value={selectedSortingColumn}
+					name="selectedHighlight"
+					id="selectedHighlight"
+					bind:value={selectedHighlight}
 					class="rounded border border-gray-300 px-1.5 py-0.5"
 				>
-					<option value=""></option>
-					{#each kaljakori.getFilterKeys() as filter}
+					{#each Object.keys(kaljakori.min) as filter}
 						<option value={filter}>{filter}</option>
 					{/each}
 				</select>
-				{#if selectedSortingColumn}
-					<button
-						onclick={() => {
-							asc = !asc;
-							listRef?.scroll({ index: 0, smoothScroll: false });
-						}}
-						class="rounded border border-gray-300 px-1.5 py-0.5"
-					>
-						{asc ? 'Nouseva' : 'Laskeva'}
-					</button>
-				{/if}
 			</div>
-		</div>
-		<div class="flex flex-col">
-			<label for={'selectedHighlight'}>
-				{'Korostus'}
-			</label>
-			<select
-				name="selectedHighlight"
-				id="selectedHighlight"
-				bind:value={selectedHighlight}
+			<button
+				onclick={() => {
+					filterValues = initFilterValues();
+					listRef?.scroll({ index: 0 });
+				}}
 				class="rounded border border-gray-300 px-1.5 py-0.5"
 			>
-				{#each Object.keys(kaljakori.min) as filter}
-					<option value={filter}>{filter}</option>
-				{/each}
-			</select>
+				{'Tyhjennä suodattimet'}
+			</button>
+			<button
+				onclick={() => {
+					showFilters = !showFilters;
+				}}
+				class="rounded border border-gray-300 px-1.5 py-0.5"
+			>
+				{showFilters ? 'Piilota suodattimet' : 'Näytä suodattimet'}
+			</button>
 		</div>
-		<button
-			onclick={() => {
-				filterValues = initFilterValues();
-				listRef?.scroll({ index: 0 });
-			}}
-			class="rounded border border-gray-300 px-1.5 py-0.5"
-		>
-			{'Tyhjennä suodattimet'}
-		</button>
-		<button
-			onclick={() => {
-				showFilters = !showFilters;
-			}}
-			class="rounded border border-gray-300 px-1.5 py-0.5"
-		>
-			{showFilters ? 'Piilota suodattimet' : 'Näytä suodattimet'}
-		</button>
 	</div>
 
 	<div class="flex flex-row flex-wrap justify-between gap-2">
@@ -190,7 +193,8 @@
 	<div class="flex flex-auto flex-col">
 		<SvelteVirtualList items={rows} bufferSize={50} bind:this={listRef}>
 			{#snippet renderItem(item: any, idx: number)}
-				{@const multiplier = item[selectedHighlight] / kaljakori.max[selectedHighlight]}
+				{@const multiplier =
+					item[selectedHighlight] / kaljakori.max[selectedHighlight as keyof typeof kaljakori.max]}
 				{@const ratings = ['Matala', 'Kohtalainen', 'Korkea']}
 				{@const rating = ratings[Number(((ratings.length - 1) * multiplier).toFixed(0))]}
 				<div class={twMerge('relative mb-2 flex flex-col gap-3 rounded border border-gray-300')}>
