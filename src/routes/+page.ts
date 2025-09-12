@@ -1,7 +1,8 @@
 import type { PageLoad } from './$types';
 import * as XLSX from 'xlsx';
+import { base } from '$app/paths';
 
-const URL = "/alkon-hinnasto-tekstitiedostona.xlsx";
+const URL = base + "/alkon-hinnasto-tekstitiedostona.xlsx";
 
 const fetchAlkoPriceList = async () => {
     console.log("Fetching Alko price list...");
