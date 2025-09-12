@@ -19,17 +19,14 @@ jobs:
           uses: actions/checkout@v4
           with:
             ref: gh-pages
-        
-        - name: Ensure build directory exists
-          run: mkdir -p build
 
         - name: Download File
-          run: curl -L https://www.alko.fi/INTERSHOP/static/WFS/Alko-OnlineShop-Site/-/Alko-OnlineShop/fi_FI/Alkon%20Hinnasto%20Tekstitiedostona/alkon-hinnasto-tekstitiedostona.xlsx -o build/alkon-hinnasto-tekstitiedostona.xlsx
+          run: curl -L https://www.alko.fi/INTERSHOP/static/WFS/Alko-OnlineShop-Site/-/Alko-OnlineShop/fi_FI/Alkon%20Hinnasto%20Tekstitiedostona/alkon-hinnasto-tekstitiedostona.xlsx -o alkon-hinnasto-tekstitiedostona.xlsx
 
         - name: Commit and push downloaded file
           run: |
             git config --global user.name "github-actions[bot]"
             git config --global user.email "github-actions[bot]@users.noreply.github.com"
-            git add build/alkon-hinnasto-tekstitiedostona.xlsx -f
+            git add alkon-hinnasto-tekstitiedostona.xlsx -f
             git commit -m "Update price list [skip ci]" || echo "No changes to commit"
             git push origin gh-pages

@@ -35,6 +35,17 @@ jobs:
         run: |
           bun run build
 
+      
+      - name: Delete all files except build directory
+        run: |
+          shopt -s extglob
+          rm -rf !(build)
+
+      - name: Move built files to root
+        run: |
+          mv build/* .
+          rm -rf build
+
       - name: Push build to gh-pages branch
         run: |
           git config --global user.name "github-actions[bot]"
