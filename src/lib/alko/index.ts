@@ -136,14 +136,20 @@ export class Kaljakori {
     }
 
     filter(filters: Record<string, any>) {
-        filters = Object.fromEntries(Object.entries(filters).filter(([key, value]) => { return value.length > 0 }))
+        console.log(filters)
+        filters = Object.fromEntries(Object.entries(filters).filter(([key, value]) => {
+            if(value instanceof Set) return value.size > 0
+            return value.length > 0
+         }))
         return this.data.filter(item => {
             return Object.keys(filters).every(key => {
                 const type = this.getFilterType(key);
                 // Range filter for numbers
-                if(type === "number" && Array.isArray(filters[key]) && filters[key].length === 2) {
+                if(type === "number" && Array.isArray(filters[key])&& filters[key].length === 2) {
                     // TODO: Fix
                     return item[key] >= filters[key][0] && item[key] <= filters[key][1];
+                } else if (filters[key] instanceof Set) {
+                    return item[key] && filters[key].has(item[key]);
                 } else if (Array.isArray(filters[key])) {
                     return item[key] && filters[key].includes(item[key]);
                 } else {

@@ -39,32 +39,44 @@
 			dialogElement?.showModal();
 		}}
 		class="flex flex-row flex-nowrap gap-3 rounded border border-gray-300 px-1.5 py-0.5"
+		title={`${value.slice(0, 3).join(', ')}${value.length > 3 ? ` + ${value.length - 3} muuta` : ''}`}
 	>
 		{text}
 	</button>
 	<dialog
 		open={false}
 		bind:this={dialogElement}
-		class="string-selector m-auto flex-col gap-4 p-4 open:flex rounded-2xl"
+		class="string-selector m-auto flex-col gap-4 p-4 open:flex rounded-lg border border-gray-300 backdrop:backdrop-blur-sm"
+		closedby="any"
 	>
-		<div class="grid h-full max-h-full grid-cols-2 grid-rows-[auto_1fr] gap-4 overflow-hidden">
-			<div class="flex flex-row flex-wrap gap-4">
+		<div class="flex flex-col lg:grid h-full max-h-full lg:grid-cols-2 lg:grid-rows-[auto_1fr] gap-4 overflow-hidden">
+			<div class="flex flex-row flex-wrap gap-4 order-1">
 				<button
 					onclick={() => {
 						list = options.map((option) => ({ value: option, selected: false }));
+						value = list.filter((option) => option.selected).map((option) => option.value);
 					}}
 					class="flex flex-row flex-nowrap items-center gap-3 rounded border border-gray-300 px-3 py-2"
 				>
 					Tyhjennä valinnat
+				</button>
+				<button 
+					onclick={() => {
+						list = options.map((option) => ({ value: option, selected: true }));
+						value = list.filter((option) => option.selected).map((option) => option.value);
+					}}
+					class="flex flex-row flex-nowrap items-center gap-3 rounded border border-gray-300 px-3 py-2"
+				>
+					Valitse kaikki
 				</button>
 			</div>
 			<input
 				type="text"
 				bind:value={query}
 				placeholder="Hae..."
-				class="flex shrink-0 rounded border border-gray-300 px-3 py-2"
+				class="flex shrink-0 rounded border border-gray-300 px-3 py-2 order-2"
 			/>
-			<div class="flex max-h-full flex-col overflow-auto rounded border border-gray-300" style={`height: ${28*20}px; width: ${longestOption + 5}ch;`}>
+			<div class="flex max-h-full flex-col overflow-auto rounded border border-gray-300 h-[var(--height)] w-[var(--width)] max-w-[80vw] col-span-full lg:col-span-1 order-4 lg:order-3" style:--width={longestOption + 5 + "ch"} style:--height={`${28*20}px;`}>
 				<SvelteVirtualList
 					items={list.filter((option) => option.selected)}
 					bufferSize={50}
@@ -83,11 +95,13 @@
 					{/snippet}
 				</SvelteVirtualList>
 			</div>
-			<div class="flex max-h-full flex-col overflow-auto rounded border border-gray-300" style={`height: ${28*20}px; width: ${longestOption + 5}ch;`}>
+			<div class="flex max-h-full flex-col overflow-auto rounded border border-gray-300 h-[var(--height)] w-[var(--width)] max-w-[80vw] col-span-full lg:col-span-1 order-3 lg:order-4" style:--width={longestOption + 5 + "ch"} style:--height={`${28*20}px;`}>
 				<SvelteVirtualList
-					items={list
-						.filter((option) => !option.selected)
-						.filter((option) => option.value.toLowerCase().includes(query.toLowerCase()))}
+					items={(() => { 
+						let temp = list.filter((option) => !option.selected)
+						if(query) temp = temp.filter((option) => option.value.toLowerCase().includes(query.toLowerCase()))
+						return temp
+					})()}
 					bufferSize={50}
 					itemsClass={'even'}
 				>

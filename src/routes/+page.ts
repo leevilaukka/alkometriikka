@@ -9,7 +9,9 @@ function corsProxy(url: string) {
 
 const URL = dev ? corsProxy("https://github.com/leevilaukka/alkoassistentti/raw/refs/heads/gh-pages/alkon-hinnasto-tekstitiedostona.xlsx") : resolve("/") + "alkon-hinnasto-tekstitiedostona.xlsx";
 
-const fetchAlkoPriceList = async () => {
+type Fetch = (input: RequestInfo | URL, init?: RequestInit | undefined) => Promise<Response>
+
+const fetchAlkoPriceList = async ({ fetch }: {fetch: Fetch}) => {
     console.log("Fetching Alko price list...");
     const req = await fetch(URL);
     if (!req.ok) {
@@ -34,15 +36,15 @@ const formatXLSXToJSON = (data: ArrayBuffer) => {
     });
 }
 
-const getData = async () => {
-    const xlsx = await fetchAlkoPriceList();
+const getData = async ({ fetch }: { fetch: Fetch }) => {
+    const xlsx = await fetchAlkoPriceList({ fetch });
     const json = formatXLSXToJSON(xlsx);
     console.log("Formatted JSON data, total items:", json.length);
     return json
 }
 
-export const load: PageLoad = async () => {
-    const data = await getData();
+export const load: PageLoad = async ({ fetch }) => {
+    const data = await getData({ fetch });
     console.log("Data loaded, total items:", data.length);
 	return { data };
 };

@@ -66,7 +66,11 @@
 	const { min, max } = kaljakori;
 
 	let rows = $derived.by(() => {
-		let temp = kaljakori.filter(filterValues);
+		let filterValuesCopy = { ...filterValues }
+		Object.keys(filterValuesCopy).forEach(key => {
+			if(Array.isArray(filterValuesCopy[key]) && kaljakori.getFilterType(key) !== "number") filterValuesCopy[key] = new Set(filterValuesCopy[key]) 
+		})
+		let temp = kaljakori.filter(filterValuesCopy);
 		if (!!selectedSortingColumn)
 			temp = temp.sort((a, b) => (a[selectedSortingColumn] > b[selectedSortingColumn] ? 1 : -1));
 		if (!asc) temp = temp.reverse();
@@ -209,9 +213,11 @@
 						<div class="flex flex-col gap-2">
 							<div class="flex flex-row items-center gap-3">
 								<span class="text-sm text-gray-500">{'#' + (idx + 1)}</span>
-								<h2 class="text-2xl font-bold">
-									{item.Nimi} ({item.Pullokoko} L)
-								</h2>
+								<a href={`https://www.alko.fi/tuotteet/${item.Numero}`} target="_blank" rel="noopener noreferrer" class="hover:underline">
+									<h2 class="text-2xl font-bold">
+										{item.Nimi} ({item.Pullokoko} L)
+									</h2>
+								</a>
 							</div>
 							<div class="flex flex-col items-start gap-3 md:flex-row">
 								<div class="flex flex-col gap-1">
