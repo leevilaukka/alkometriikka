@@ -17,6 +17,9 @@ jobs:
         steps:
         - name: Checkout repository
           uses: actions/checkout@v4
+        
+        - name: Ensure build directory exists
+          run: mkdir -p build
 
         - name: Download File
           run: curl -L https://www.alko.fi/INTERSHOP/static/WFS/Alko-OnlineShop-Site/-/Alko-OnlineShop/fi_FI/Alkon%20Hinnasto%20Tekstitiedostona/alkon-hinnasto-tekstitiedostona.xlsx -o build/alkon-hinnasto-tekstitiedostona.xlsx
