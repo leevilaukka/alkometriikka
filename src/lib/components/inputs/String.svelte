@@ -1,7 +1,7 @@
 <script lang="ts">
 	import SvelteVirtualList from '@humanspeak/svelte-virtual-list';
 
-	let { value = $bindable([]), options = [] } = $props();
+	let { value = $bindable([]), options = [], ...rest } = $props();
 
 	let list = $state(options.map((option) => ({ value: option, selected: false })));
 
@@ -9,6 +9,10 @@
 		if(option.length > length) return option.length
 		return length
 	}, 0), 50)
+
+	$effect(() => {
+		if(value.length === 0) list = options.map((option) => ({ value: option, selected: false }));
+	})
 
 	const text = $derived.by(() => {
 		if (value.length > 1) return `${value.length} valittu`;
@@ -38,10 +42,12 @@
 		onclick={() => {
 			dialogElement?.showModal();
 		}}
-		class="flex flex-row flex-nowrap gap-3 rounded border border-gray-300 px-1.5 py-0.5"
+		class="flex flex-row flex-nowrap gap-3 rounded border border-gray-300 px-1.5 py-0.5 max-w-[30ch]"
 		title={`${value.slice(0, 3).join(', ')}${value.length > 3 ? ` + ${value.length - 3} muuta` : ''}`}
 	>
-		{text}
+		<span class="whitespace-nowrap overflow-hidden max-w-full overflow-ellipsis">
+			{text}
+		</span>
 	</button>
 	<dialog
 		open={false}
@@ -90,7 +96,9 @@
 							}}
 							class="flex w-full flex-row flex-nowrap px-2 py-1 whitespace-nowrap"
 						>
-							{item.value}
+							<span class="whitespace-nowrap overflow-hidden max-w-full overflow-ellipsis" title={item.value}>
+								{item.value}
+							</span>
 						</button>
 					{/snippet}
 				</SvelteVirtualList>
@@ -111,9 +119,11 @@
 								list.find((option) => option.value == item.value)!.selected = true
 								value = list.filter((option) => option.selected).map((option) => option.value);
 							}}
-							class="flex w-full flex-row flex-nowrap px-2 py-1 whitespace-nowrap"
+							class="flex w-full flex-row flex-nowrap px-2 py-1"
 						>
-							{item.value}
+							<span class="whitespace-nowrap overflow-hidden max-w-full overflow-ellipsis" title={item.value}>
+								{item.value}
+							</span>
 						</button>
 					{/snippet}
 				</SvelteVirtualList>

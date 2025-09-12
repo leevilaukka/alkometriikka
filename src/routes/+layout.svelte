@@ -8,7 +8,7 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<title>Alkometriikka {dev && '- DEV'}</title>
+	<title>Alkometriikka {dev ? '- DEV' : ''}</title>
 </svelte:head>
 
 {@render children?.()}

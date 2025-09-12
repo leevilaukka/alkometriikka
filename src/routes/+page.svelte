@@ -54,8 +54,6 @@
 
 	let filterValues = $state(initFilterValues());
 
-	$inspect(filterValues).with(console.trace);
-
 	let selectedHighlight: string = $state('Promillet / €');
 
 	let selectedSortingColumn: string = $state('Promillet / €');
@@ -137,7 +135,7 @@
 						</select>
 					{:else}
 						<label for={filterId}>{filter}</label>
-						<StringInput options={possibleValues} bind:value={filterValues[filter]} />
+						<StringInput options={possibleValues} bind:value={filterValues[filter]} name={filter} />
 					{/if}
 				</div>
 			{/each}
@@ -156,7 +154,7 @@
 						toggleFilterElement();
 						showFilters = !showFilters;
 					}}
-					class="w-full rounded bg-red-700 text-white px-1.5 py-1"
+					class="w-full rounded bg-red-700 text-white px-3 py-2"
 				>
 					{'Sulje suodattimet'}
 				</button>
