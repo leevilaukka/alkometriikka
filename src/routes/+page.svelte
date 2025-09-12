@@ -191,14 +191,7 @@
 							<div class="flex flex-row items-center gap-3">
 								<span class="text-sm text-gray-500">{'#' + (idx + 1)}</span>
 								<h2 class="text-2xl font-bold">
-									<a
-										href={`https://www.alko.fi/tuotteet/${item.Numero}`}
-										target="_blank"
-										rel="noopener noreferrer"
-										class="hover:underline"
-									>
-										{item.Nimi} ({item.Pullokoko} L)
-									</a>
+									{item.Nimi} ({item.Pullokoko} L)
 								</h2>
 							</div>
 							<div class="flex flex-col items-start gap-3 md:flex-row">
