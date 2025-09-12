@@ -1,7 +1,7 @@
 import type { PageLoad } from './$types';
 import * as XLSX from 'xlsx';
 
-const URL = "https://corsproxy.io/?url=https://www.alko.fi/INTERSHOP/static/WFS/Alko-OnlineShop-Site/-/Alko-OnlineShop/fi_FI/Alkon%20Hinnasto%20Tekstitiedostona/alkon-hinnasto-tekstitiedostona.xlsx";
+const URL = "/alkon-hinnasto-tekstitiedostona.xlsx";
 
 const fetchAlkoPriceList = async () => {
     console.log("Fetching Alko price list...");
