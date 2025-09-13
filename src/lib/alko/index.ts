@@ -67,8 +67,6 @@ export class Kaljakori {
 
             const sortedFilters = new Set(["Valmistusmaa", "Valmistaja", "Tyyppi"])
 
-            const possibleValues: any[] = []
-
             Object.keys(item).forEach(key => {
                 if (!this.filters[key]) {
                     this.filters[key] = {
@@ -79,12 +77,10 @@ export class Kaljakori {
                 }
 
                 this.filters[key].possibleTypes.add(typeof item[key])
+                
+                this.filters[key].possibleValues.add(item[key]);
 
-                possibleValues.push(item[key]);
-
-                if(sortedFilters.has(key)) possibleValues.sort((a, b) => (a > b ? 1 : -1))
-
-                this.filters[key].possibleValues = new Set(possibleValues)
+                if(sortedFilters.has(key)) this.filters[key].possibleValues = new Set([...this.filters[key].possibleValues].sort((a, b) => (a > b ? 1 : -1)))
             });
 
         });
