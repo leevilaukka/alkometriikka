@@ -55,7 +55,7 @@
 		class="string-selector m-auto flex-col gap-4 p-4 open:flex rounded-lg border border-gray-300 backdrop:backdrop-blur-sm"
 		closedby="any"
 	>
-		<div class="flex flex-col lg:grid h-full max-h-full lg:grid-cols-2 lg:grid-rows-[auto_1fr] gap-4 rounded-lg overflow-hidden">
+		<div class="flex flex-col lg:grid h-full max-h-full lg:grid-cols-2 lg:grid-rows-[auto_1fr] gap-4 overflow-hidden">
 			<div class="flex flex-row flex-wrap gap-4 order-1">
 				<button
 					onclick={() => {

@@ -64,9 +64,10 @@
 	let showFilters = $derived(!isMobile);
 
 	$effect(() => {
-		if (isMobile) filtersElement.close();
-		else filtersElement.show();
-	})
+		if (filtersElement.open) filtersElement.close();
+		if (isMobile) return;
+		filtersElement.show();
+	});
 
 	function toggleFilterElement() {
 		if (!filtersElement) return;
@@ -96,16 +97,15 @@
 </script>
 
 <div class="relative grid h-full grid-cols-[auto_1fr]">
-	<aside class="flex flex-col h-full border-gray-300 md:border-r md:w-84">
+	<aside class="flex h-full flex-col border-gray-300 md:w-84 md:border-r">
 		<div class="hidden flex-col items-center md:flex">
-			<img src={logo} alt="Alkoassistentti Logo" class="aspect-video object-contain w-64" />
+			<img src={logo} alt="Alkoassistentti Logo" class="aspect-video w-64 object-contain" />
 		</div>
 		<dialog
 			bind:this={filtersElement}
 			class={twMerge(
-				'm-auto hidden h-full w-full flex-col flex-wrap items-end gap-4 p-4 rounded-lg border border-gray-300 open:flex md:relative'
+				'm-auto hidden h-full w-full flex-col items-end gap-4 rounded-lg border border-gray-300 p-4 open:flex md:relative md:rounded-none md:border-0'
 			)}
-			open={showFilters}
 			onclose={() => (showFilters = false)}
 		>
 			{#each filters as filter}
@@ -154,7 +154,7 @@
 						toggleFilterElement();
 						showFilters = !showFilters;
 					}}
-					class="w-full rounded bg-red-700 text-white px-3 py-2"
+					class="w-full rounded bg-red-700 px-3 py-2 text-white"
 				>
 					{'Sulje suodattimet'}
 				</button>
@@ -162,10 +162,10 @@
 		</dialog>
 	</aside>
 	<main class="mx-auto flex h-full w-full flex-col gap-4 bg-gray-100 p-6">
-		<div class="flex w-full flex-col gap-4 items-start">
-		<div class="flex md:hidden flex-col items-center border rounded border-gray-300 bg-white">
-			<img src={logo} alt="Alkoassistentti Logo" class="aspect-video object-contain w-24" />
-		</div>
+		<div class="flex w-full flex-col items-start gap-4">
+			<div class="flex flex-col items-center rounded border border-gray-300 bg-white md:hidden">
+				<img src={logo} alt="Alkoassistentti Logo" class="aspect-video w-24 object-contain" />
+			</div>
 			<div class={twMerge('flex flex-row flex-wrap items-end gap-2')}>
 				<div class="flex flex-col">
 					<label for={'sortingColumn'}>
@@ -231,7 +231,7 @@
 				onclick={() => {
 					listRef?.scroll({ index: 0, smoothScroll: false });
 				}}
-				class="rounded border border-gray-300 px-1.5 py-0.5 bg-white"
+				class="rounded border border-gray-300 bg-white px-1.5 py-0.5"
 			>
 				Hyppää alkuun
 			</button>
@@ -260,7 +260,7 @@
 									class="block h-full w-full object-contain"
 								/>
 							</div>
-							<div class="flex flex-col gap-2 w-full">
+							<div class="flex w-full flex-col gap-2">
 								<div class="flex flex-row items-center gap-3">
 									<span class="text-sm text-gray-500">{'#' + (idx + 1)}</span>
 									<a
