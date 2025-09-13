@@ -67,6 +67,8 @@ export class Kaljakori {
 
             const sortedFilters = new Set(["Valmistusmaa", "Valmistaja", "Tyyppi"])
 
+            const possibleValues: any[] = []
+
             Object.keys(item).forEach(key => {
                 if (!this.filters[key]) {
                     this.filters[key] = {
@@ -77,8 +79,6 @@ export class Kaljakori {
                 }
 
                 this.filters[key].possibleTypes.add(typeof item[key])
-
-                const possibleValues = []
 
                 possibleValues.push(item[key]);
 
