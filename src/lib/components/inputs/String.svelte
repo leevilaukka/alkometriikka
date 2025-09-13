@@ -84,29 +84,31 @@
 			/>
 			<div class="flex max-h-full flex-col overflow-auto rounded border border-gray-300 h-[var(--height)] w-[var(--width)] max-w-[80vw] col-span-full lg:col-span-1 order-4 lg:order-3" style:--width={longestOption + 5 + "ch"} style:--height={`${28*20}px;`}>
 				<SvelteVirtualList
-					items={list.filter((option) => option.selected)}
+					items={list}
 					bufferSize={50}
 					itemsClass={'even'}
 				>
 					{#snippet renderItem(item: any)}
-						<button
-							onclick={() => {
-								list.find((option) => option.value == item.value)!.selected = false
-								value = list.filter((option) => option.selected).map((option) => option.value);
-							}}
-							class="flex w-full flex-row flex-nowrap px-2 py-1 whitespace-nowrap"
-						>
-							<span class="whitespace-nowrap overflow-hidden max-w-full overflow-ellipsis" title={item.value}>
-								{item.value}
-							</span>
-						</button>
+						{#if item.selected}
+							<button
+								onclick={() => {
+									list.find((option) => option.value == item.value)!.selected = false
+									value = list.filter((option) => option.selected).map((option) => option.value);
+								}}
+								class="flex w-full flex-row flex-nowrap px-2 py-1 whitespace-nowrap"
+							>
+								<span class="whitespace-nowrap overflow-hidden max-w-full overflow-ellipsis" title={item.value}>
+									{item.value}
+								</span>
+							</button>
+						{/if}
 					{/snippet}
 				</SvelteVirtualList>
 			</div>
 			<div class="flex max-h-full flex-col overflow-auto rounded border border-gray-300 h-[var(--height)] w-[var(--width)] max-w-[80vw] col-span-full lg:col-span-1 order-3 lg:order-4" style:--width={longestOption + 5 + "ch"} style:--height={`${28*20}px;`}>
 				<SvelteVirtualList
 					items={(() => { 
-						let temp = list.filter((option) => !option.selected)
+						let temp = list
 						if(query) temp = temp.filter((option) => option.value.toLowerCase().includes(query.toLowerCase()))
 						return temp
 					})()}
@@ -114,17 +116,19 @@
 					itemsClass={'even'}
 				>
 					{#snippet renderItem(item: any)}
-						<button
-							onclick={() => {
-								list.find((option) => option.value == item.value)!.selected = true
-								value = list.filter((option) => option.selected).map((option) => option.value);
-							}}
-							class="flex w-full flex-row flex-nowrap px-2 py-1"
-						>
-							<span class="whitespace-nowrap overflow-hidden max-w-full overflow-ellipsis" title={item.value}>
-								{item.value}
-							</span>
-						</button>
+						{#if !item.selected}
+							<button
+								onclick={() => {
+									list.find((option) => option.value == item.value)!.selected = true
+									value = list.filter((option) => option.selected).map((option) => option.value);
+								}}
+								class="flex w-full flex-row flex-nowrap px-2 py-1"
+							>
+								<span class="whitespace-nowrap overflow-hidden max-w-full overflow-ellipsis" title={item.value}>
+									{item.value}
+								</span>
+							</button>
+						{/if}
 					{/snippet}
 				</SvelteVirtualList>
 			</div>

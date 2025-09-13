@@ -65,6 +65,8 @@ export class Kaljakori {
                 if(item[key] > this.max[key]) this.max[key] = item[key]
             });
 
+            const sortedFilters = new Set(["Valmistusmaa", "Valmistaja", "Tyyppi"])
+
             Object.keys(item).forEach(key => {
                 if (!this.filters[key]) {
                     this.filters[key] = {
@@ -73,20 +75,18 @@ export class Kaljakori {
                         type: undefined
                     };
                 }
+
                 this.filters[key].possibleTypes.add(typeof item[key])
-                if(Array.isArray(item[key])) {
-                    item[key].forEach((val: any) => this.filters[key].possibleValues.add(val));
-                    return;
-                } else {
-                    this.filters[key].possibleValues.add(item[key]);
-                }
+
+                const possibleValues = []
+
+                possibleValues.push(item[key]);
+
+                if(sortedFilters.has(key)) possibleValues.sort((a, b) => (a > b ? 1 : -1))
+
+                this.filters[key].possibleValues = new Set(possibleValues)
             });
 
-            const sortedFilters = ["Valmistusmaa", "Valmistaja", "Tyyppi"]
-
-            sortedFilters.forEach(filter => {
-                this.filters[filter].possibleValues = new Set(Array.from(this.filters[filter].possibleValues).sort((a, b) => (a > b ? 1 : -1)));
-            });
         });
 
         Object.keys(this.filters).forEach(filter => {
