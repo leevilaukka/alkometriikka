@@ -96,14 +96,14 @@
 </script>
 
 <div class="relative grid h-full grid-cols-[auto_1fr]">
-	<aside class="flex flex-col h-full border-gray-300 md:border-r">
+	<aside class="flex flex-col h-full border-gray-300 md:border-r md:w-84">
 		<div class="hidden flex-col items-center md:flex">
 			<img src={logo} alt="Alkoassistentti Logo" class="aspect-video object-contain w-64" />
 		</div>
 		<dialog
 			bind:this={filtersElement}
 			class={twMerge(
-				'm-auto hidden h-full w-full flex-col flex-wrap items-end gap-2 p-3 open:flex md:relative'
+				'm-auto hidden h-full w-full flex-col flex-wrap items-end gap-4 p-4 rounded-lg border border-gray-300 open:flex md:relative'
 			)}
 			open={showFilters}
 			onclose={() => (showFilters = false)}
