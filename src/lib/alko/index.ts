@@ -77,7 +77,6 @@ export class Kaljakori {
                 }
 
                 this.filters[key].possibleTypes.add(typeof item[key])
-                
                 this.filters[key].possibleValues.add(item[key]);
 
                 if(sortedFilters.has(key)) this.filters[key].possibleValues = new Set([...this.filters[key].possibleValues].sort((a, b) => (a > b ? 1 : -1)))
