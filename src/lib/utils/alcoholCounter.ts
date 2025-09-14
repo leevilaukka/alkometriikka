@@ -4,14 +4,6 @@ export enum Gender {
 	Unspecified = 'unspecified'
 }
 
-export interface DrunkValueResult {
-	Alkoholigrammat: number;
-	'Alkoholigrammat / €': number;
-	'Arvioidut promillet': number;
-	'Promillet / €': number;
-	Annokset: number;
-}
-
 /**
  * Laskee alkoholin määrän, känni per euro ja BAC-arvot.
  *

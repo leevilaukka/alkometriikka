@@ -1,4 +1,5 @@
-import type { DrunkValueResult } from "$lib/utils/alcoholCounter";
+
+import { AllColumns } from '$lib/utils/constants';
 
 export type NativeTypes = "string" | "number" | "object" | "undefined" | "function" | "boolean" | "symbol" | "bigint";
 
@@ -8,9 +9,7 @@ export type Filter = {
     possibleTypes: Set<NativeTypes>
 }
 
-export type NumberValueKeys = keyof DrunkValueResult | "Pullokoko" | "Hinta" | "Alkoholi-%";
-
-export interface PriceListItem extends DrunkValueResult {
+export interface PriceListItem {
     "Numero": string;
     "Nimi": string;
     "Valmistaja": string;
@@ -42,3 +41,5 @@ export interface PriceListItem extends DrunkValueResult {
     "EAN": string;
     [key: string]: string | number; // Allow other properties with string keys and values of type string or number
 }
+
+export type ColumnNames = typeof AllColumns[keyof typeof AllColumns];

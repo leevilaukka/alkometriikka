@@ -10,11 +10,6 @@
 
 	let list = $state<ListItem[]>(options.map((option) => ({ value: option, selected: false })));
 
-	const longestOption = Math.min(options.reduce((length, option) => {
-		if(option.length > length) return option.length
-		return length
-	}, 0), 50)
-
 	$effect(() => {
 		if(value.length === 0) list = options.map((option) => ({ value: option, selected: false }));
 	})
@@ -57,7 +52,7 @@
 	<dialog
 		open={false}
 		bind:this={dialogElement}
-		class="string-selector m-auto flex-col gap-4 p-4 open:flex rounded-lg border border-gray-300 backdrop:backdrop-blur-sm"
+		class="string-selector m-auto flex-col gap-4 p-4 open:flex rounded-lg border border-gray-300 backdrop:backdrop-blur-sm w-[min(80ch,_100%)]"
 		closedby="any"
 	>
 		<div class="flex flex-col h-full max-h-full gap-4 overflow-hidden">
@@ -87,7 +82,7 @@
 				placeholder="Hae..."
 				class="flex shrink-0 rounded border border-gray-300 px-1.5 py-0.5 order-2"
 			/>
-			<div class="flex max-h-full flex-col overflow-auto rounded border border-gray-300 h-[var(--height)] w-[var(--width)] max-w-[80vw] col-span-full lg:col-span-1 order-4 lg:order-3" style:--width={longestOption + 5 + "ch"} style:--height={`${28*20}px;`}>
+			<div class="flex max-h-full flex-col overflow-auto rounded border border-gray-300 h-[var(--height)] col-span-full lg:col-span-1 order-4 lg:order-3" style:--height={`${28*20}px;`}>
 				<SvelteVirtualList
 					items={query ? list.filter((item) => item.value.toLowerCase().includes(query.toLowerCase())) : list}
 					bufferSize={50}

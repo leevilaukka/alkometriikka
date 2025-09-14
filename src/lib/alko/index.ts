@@ -1,62 +1,33 @@
+import { AllColumns, DatasetColumns, defaultSortingColumn, DrunkColumns } from '$lib/utils/constants';
 import { calculateDrunkValue, Gender } from '../utils/alcoholCounter';
-import type { Filter, NumberValueKeys, PriceListItem } from './types';
+import type { ColumnNames, PriceListItem } from './types';
 
 export class Kaljakori {
 	data: PriceListItem[] = [];
 	personalInfo: { weight: number; gender: Gender };
-	filters: string[] = [];
+	filters: (typeof AllColumns[keyof typeof AllColumns])[] = [];
 	possibleValues: Record<string, Set<any>> = {};
 	columnTypes: Record<string, string>;
-	min: {
-		[key in NumberValueKeys]: number;
-	} = {
-		Alkoholigrammat: Infinity,
-		'Alkoholigrammat / €': Infinity,
-		'Arvioidut promillet': Infinity,
-		'Promillet / €': Infinity,
-		Annokset: Infinity,
-		Pullokoko: Infinity,
-		Hinta: Infinity,
-		'Alkoholi-%': Infinity
-	};
-	max: {
-		[key in NumberValueKeys]: number;
-	} = {
-		Alkoholigrammat: -Infinity,
-		'Alkoholigrammat / €': -Infinity,
-		'Arvioidut promillet': -Infinity,
-		'Promillet / €': -Infinity,
-		Annokset: -Infinity,
-		Pullokoko: -Infinity,
-		Hinta: -Infinity,
-		'Alkoholi-%': -Infinity
-	};
+	minAndMaxValues: (number[] | null)[] = [];
+
 	constructor(table: string[][], personalInfo?: { weight: number; gender: Gender }) {
 		console.log('table[1]', table[1]);
 
 		this.personalInfo = personalInfo || { weight: 0, gender: Gender.Unspecified };
 
-		const [datasetColumns, ...rows] = table;
+		const [datasetColumns, ...rows] = table as [(typeof DatasetColumns[keyof typeof DatasetColumns])[], ...(string | number | undefined)[][]];
 
-		const drunkColumns = [
-			'Alkoholigrammat',
-			'Alkoholigrammat / €',
-			'Arvioidut promillet',
-			'Promillet / €',
-			'Annokset'
-		];
+		const drunkColumns = Object.values(DrunkColumns);
+
+		const isNumeric = (num: unknown) => (typeof num === "string" && num.trim() !== '') && !isNaN(num as unknown as number);
 
 		this.filters = [...datasetColumns, ...drunkColumns];
 
-		const indexOfTypeColumn = datasetColumns.indexOf('Tyyppi');
+		const indexOfTypeColumn = datasetColumns.indexOf(AllColumns.Type);
 
-		const datasetValuesByColumn: any[][] = Array.apply(null, Array(datasetColumns.length)).map(
-			(_) => []
-		);
+		const datasetValuesByColumn: any[][] = [...Array(datasetColumns.length)].map(() => []);
 
-        const drunkValuesByColumn: any[][] = Array.apply(null, Array(drunkColumns.length)).map(
-			(_) => []
-		);
+        const drunkValuesByColumn: any[][] = [...Array(drunkColumns.length)].map(() => []);
 
 		for (let row = 0; row < rows.length; row++) {
 			const item: any = {};
@@ -64,21 +35,26 @@ export class Kaljakori {
 			if (type === 'lahja- ja juomatarvikkeet') continue;
 			for (let col = 0; col < datasetColumns.length; col++) {
 				const key = datasetColumns[col];
-				let value: string | number = rows[row][col];
-				if (key === 'Pullokoko') value = parseFloat(value);
-				const number = Number(value);
-				const isNumber = !Number.isNaN(number) && !['Numero', 'Nimi', 'Valmistaja'].includes(key);
-				if (!isNumber && value && typeof value === 'string')
-					value = value.trim().toLowerCase().charAt(0).toUpperCase() + value.slice(1);
-				else value = number;
-				item[key] = value;
-				if (value) datasetValuesByColumn[col].push(value);
+				let value: string | number | undefined = rows[row][col];
+				const isNumber = (value !== undefined && isNumeric(value) && !['Numero', 'Nimi', 'Valmistaja'].includes(key)) || typeof value === "number";
+				if(key === AllColumns.BottleSize) {
+					value = parseFloat(value as string)
+				} else if (isNumber) {
+					value = Number(value);
+				} else if(typeof value === "string") {
+					value = (value as string).trim().toLowerCase().charAt(0).toUpperCase() + (value as string).slice(1);
+				} else {
+					value = ""
+				}
+
+				item[key] = value
+				if(isNumber || (value as string).length || key === AllColumns.BottleSize) datasetValuesByColumn[col].push(value);
 			}
 
 			const drunkValues = calculateDrunkValue(
-				item['Pullokoko'],
-				item['Alkoholi-%'],
-				item['Hinta'],
+				item[AllColumns.BottleSize],
+				item[AllColumns.AlcoholPercentage],
+				item[AllColumns.Price],
 				personalInfo?.gender,
 				personalInfo?.weight
 			);
@@ -92,13 +68,13 @@ export class Kaljakori {
 		}
 
 		const mergedColumns = [...datasetColumns, ...drunkColumns];
-		const mergedValuesByColumn = [...datasetValuesByColumn, ...datasetValuesByColumn];
+		const mergedValuesByColumn = [...datasetValuesByColumn, ...drunkValuesByColumn];
 
 		this.possibleValues = Object.fromEntries(
-			mergedValuesByColumn.map((column, i) => [mergedColumns[i], new Set(column.sort())])
+			mergedValuesByColumn.map((column, idx) => [mergedColumns[idx], new Set(column.sort())])
 		);
 
-		console.log('possibleValues', this.possibleValues);
+		console.log(this.possibleValues[AllColumns.AlcoholPercentage])
 
 		this.columnTypes = Object.fromEntries(
 			Object.entries(this.possibleValues).map(([key, value]) => [
@@ -106,20 +82,16 @@ export class Kaljakori {
 				typeof value.values().next().value
 			])
 		);
+		
+		this.minAndMaxValues = mergedColumns.map((column, idx) => {
+			if(this.columnTypes[column] !== "number") return null
+			if(column === AllColumns.SortingCode) return null
+			return [Math.min(...mergedValuesByColumn[idx]), Math.max(...mergedValuesByColumn[idx])]
+		})
 
-		console.log('columnTypes', this.columnTypes);
+		console.log("minAndMax", this.minAndMaxValues)
 
-		this.data.forEach((item, idx) => {
-			(Object.keys(this.min) as NumberValueKeys[]).forEach((key: NumberValueKeys) => {
-				const value = Number(item[key]);
-				if (!isNaN(value)) {
-					if (value < this.min[key]) this.min[key] = value;
-					if (value > this.max[key]) this.max[key] = value;
-				}
-			});
-		});
-
-		this.data = this.sortBy('Promillet / €');
+		this.data = this.sortBy(defaultSortingColumn);
 	}
 
 	getFilterKeys() {
@@ -134,7 +106,11 @@ export class Kaljakori {
 		return this.columnTypes[key];
 	}
 
-	fuzzySearch(key: string, query: string) {
+	getMinAndMaxValues(key: ColumnNames) {
+		return this.minAndMaxValues[this.filters.indexOf(key)]
+	}
+
+	fuzzySearch(key: ColumnNames, query: string) {
 		const lowerQuery = query.toLowerCase();
 		return this.data.filter((item) => {
 			return item[key] && item[key].toString().toLowerCase().includes(lowerQuery);
