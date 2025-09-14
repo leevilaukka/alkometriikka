@@ -22,29 +22,38 @@ const fetchAlkoPriceList = async ({ fetch }: {fetch: Fetch}) => {
     return arrayBuffer;
 }
 
+const getFileMetadata = (workbook: XLSX.WorkBook) => {
+    return workbook.Props;
+}
+
 const formatXLSXToJSON = (data: ArrayBuffer) => {
     const workbook = XLSX.read(data);
+    const metadata = getFileMetadata(workbook);
     console.log("XLSX workbook read successfully, sheets:", workbook.SheetNames);
     if (workbook.SheetNames.length === 0) {
         throw new Error("No sheets found in the XLSX file");
     }
     const sheetName = workbook.SheetNames[0];
     const sheet = workbook.Sheets[sheetName];
-    return XLSX.utils.sheet_to_json(sheet, {
-        range: 3,
-        defval: undefined,
-    });
+    return {
+        table: XLSX.utils.sheet_to_json(sheet, {
+            range: 3,
+            defval: undefined,
+            header: 1
+        }),
+        metadata
+    }
 }
 
-const getData = async ({ fetch }: { fetch: Fetch }) => {
+const getTable = async ({ fetch }: { fetch: Fetch }) => {
     const xlsx = await fetchAlkoPriceList({ fetch });
     const json = formatXLSXToJSON(xlsx);
-    console.log("Formatted JSON data, total items:", json.length);
+    console.log("Formatted JSON data, total items:", json.table.length);
     return json
 }
 
 export const load: PageLoad = async ({ fetch }) => {
-    const data = await getData({ fetch });
-    console.log("Data loaded, total items:", data.length);
-	return { data };
+    const data = await getTable({ fetch });
+    console.log("Data loaded, total items:", data.table.length);
+	return { table: data.table };
 };

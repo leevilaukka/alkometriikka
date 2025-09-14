@@ -1,9 +1,14 @@
 <script lang="ts">
+	type ListItem = {
+		value: string;
+		selected: boolean;
+	};
 	import SvelteVirtualList from '@humanspeak/svelte-virtual-list';
+	import { twMerge } from 'tailwind-merge';
 
-	let { value = $bindable([]), options = [], ...rest } = $props();
+	let { value = $bindable(), options = [], ...rest } = $props();
 
-	let list = $state(options.map((option) => ({ value: option, selected: false })));
+	let list = $state<ListItem[]>(options.map((option) => ({ value: option, selected: false })));
 
 	const longestOption = Math.min(options.reduce((length, option) => {
 		if(option.length > length) return option.length
@@ -55,7 +60,7 @@
 		class="string-selector m-auto flex-col gap-4 p-4 open:flex rounded-lg border border-gray-300 backdrop:backdrop-blur-sm"
 		closedby="any"
 	>
-		<div class="flex flex-col lg:grid h-full max-h-full lg:grid-cols-2 lg:grid-rows-[auto_1fr] gap-4 overflow-hidden">
+		<div class="flex flex-col h-full max-h-full gap-4 overflow-hidden">
 			<div class="flex flex-row flex-wrap gap-4 order-1">
 				<button
 					onclick={() => {
@@ -84,51 +89,28 @@
 			/>
 			<div class="flex max-h-full flex-col overflow-auto rounded border border-gray-300 h-[var(--height)] w-[var(--width)] max-w-[80vw] col-span-full lg:col-span-1 order-4 lg:order-3" style:--width={longestOption + 5 + "ch"} style:--height={`${28*20}px;`}>
 				<SvelteVirtualList
-					items={list}
+					items={query ? list.filter((item) => item.value.toLowerCase().includes(query.toLowerCase())) : list}
 					bufferSize={50}
-					itemsClass={'even'}
+					itemsClass={"even"}
 				>
-					{#snippet renderItem(item: any)}
-						{#if item.selected}
-							<button
-								onclick={() => {
-									list.find((option) => option.value == item.value)!.selected = false
-									value = list.filter((option) => option.selected).map((option) => option.value);
-								}}
-								class="flex w-full flex-row flex-nowrap px-2 py-1 whitespace-nowrap"
-							>
-								<span class="whitespace-nowrap overflow-hidden max-w-full overflow-ellipsis" title={item.value}>
-									{item.value}
-								</span>
-							</button>
-						{/if}
-					{/snippet}
-				</SvelteVirtualList>
-			</div>
-			<div class="flex max-h-full flex-col overflow-auto rounded border border-gray-300 h-[var(--height)] w-[var(--width)] max-w-[80vw] col-span-full lg:col-span-1 order-3 lg:order-4" style:--width={longestOption + 5 + "ch"} style:--height={`${28*20}px;`}>
-				<SvelteVirtualList
-					items={(() => { 
-						let temp = list
-						if(query) temp = temp.filter((option) => option.value.toLowerCase().includes(query.toLowerCase()))
-						return temp
-					})()}
-					bufferSize={50}
-					itemsClass={'even'}
-				>
-					{#snippet renderItem(item: any)}
-						{#if !item.selected}
-							<button
-								onclick={() => {
-									list.find((option) => option.value == item.value)!.selected = true
-									value = list.filter((option) => option.selected).map((option) => option.value);
-								}}
-								class="flex w-full flex-row flex-nowrap px-2 py-1"
-							>
-								<span class="whitespace-nowrap overflow-hidden max-w-full overflow-ellipsis" title={item.value}>
-									{item.value}
-								</span>
-							</button>
-						{/if}
+					{#snippet renderItem(item: ListItem, idx: number)}
+						<button
+							onclick={() => {
+								item.selected = !item.selected
+								value = list.filter((option) => option.selected).map((option) => option.value);
+							}}
+							class={twMerge("flex w-full flex-row flex-nowrap px-2 py-1")}
+						>
+							<span class="whitespace-nowrap overflow-hidden max-w-full overflow-ellipsis" title={item.value}>
+								{item.value}
+							</span>
+							<input
+								type="checkbox"
+								bind:checked={item.selected}
+								class="ml-auto"
+								readonly
+							/>
+						</button>
 					{/snippet}
 				</SvelteVirtualList>
 			</div>

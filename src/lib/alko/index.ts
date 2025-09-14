@@ -1,21 +1,12 @@
-import { calculateDrunkValue, Gender, type DrunkValueResult } from '../utils/alcoholCounter';
-
-type NativeTypes = "string" | "number" | "object" | "undefined" | "function" | "boolean" | "symbol" | "bigint";
-
-type Filter = {
-    type: NativeTypes | "any" | undefined
-    possibleValues: Set<any>
-    // Set of all possible types 
-    possibleTypes: Set<NativeTypes>
-}
-
-
-type NumberValueKeys = keyof DrunkValueResult | "Pullokoko" | "Hinta" | "Alkoholi-%";
+import { calculateDrunkValue, Gender } from '../utils/alcoholCounter';
+import type { Filter, NumberValueKeys, PriceListItem } from './types';
 
 export class Kaljakori {
-    data: any[];
+    data: PriceListItem[] = [];
     personalInfo: { weight: number; gender: Gender };
     filters: Record<string, Filter> = {};
+    possibleValues: Record<string, Set<any>> = {};
+    columnTypes: Record<string, string>
     min: {
         [key in NumberValueKeys]: number;
     } = {
@@ -40,46 +31,68 @@ export class Kaljakori {
         "Hinta": -Infinity,
         "Alkoholi-%": -Infinity,
     };
-    constructor(data: any[], personalInfo?: { weight: number; gender: Gender }) {
-        this.data = data;
-        this.personalInfo = personalInfo || { weight: 0, gender: Gender.Unspecified };
-       
+    constructor(table: string[][], personalInfo?: { weight: number; gender: Gender }) {
+        console.log("table[1]", table[1])
 
-        this.data.filter(item => item["Tyyppi"] !== "lahja- ja juomatarvikkeet").forEach(item => {
+        this.personalInfo = personalInfo || { weight: 0, gender: Gender.Unspecified };
+
+        const [columns, ...rows] = table
+        const indexOfTypeColumn = columns.indexOf("Tyyppi");
+        const valuesByColumn: any[][] = Array.apply(null, Array(columns.length)).map(_ => [])
+
+        for(let row = 0; row < rows.length; row++) {
+            const item: any = {}
+            const type = rows[row][indexOfTypeColumn]
+            if(type === "lahja- ja juomatarvikkeet") continue;
+            for(let col = 0; col < columns.length; col++) {
+                const key = columns[col]
+                let value: string | number = rows[row][col]
+                if(key === "Pullokoko") value = parseFloat(value);
+                const number = Number(value)
+                const isNumber = !Number.isNaN(number) && !["Numero", "Nimi", "Valmistaja"].includes(key)
+                if(!isNumber && value && typeof value === "string") value = value.trim().toLowerCase().charAt(0).toUpperCase() + value.slice(1)
+                else value = number
+                item[key] = value
+                if(value) valuesByColumn[col].push(value)
+            }
+            
             Object.assign(item, calculateDrunkValue(
-                parseFloat(item["Pullokoko"]),
-                parseFloat(item["Alkoholi-%"]),
-                parseFloat(item["Hinta"]),
+                item["Pullokoko"],
+                item["Alkoholi-%"],
+                item["Hinta"],
                 personalInfo?.gender,
                 personalInfo?.weight
             ));
 
-            if(typeof item["Tyyppi"] === "string") item["Tyyppi"] = item["Tyyppi"].toLowerCase().charAt(0).toUpperCase() + item["Tyyppi"].slice(1);
+            this.data.push(item)
+        }
 
-            item["Pullokoko"] = parseFloat(item["Pullokoko"]);
-            item["Hinta"] = parseFloat(item["Hinta"]);
-            item["Alkoholi-%"] = parseFloat(item["Alkoholi-%"]);
+        this.possibleValues = Object.fromEntries(valuesByColumn.map((column, i) => [columns[i], new Set(column.sort())]))
 
+        console.log("possibleValues", this.possibleValues)
+
+        this.columnTypes = Object.fromEntries(Object.entries(this.possibleValues).map(([key, value]) => [key, typeof value.values().next().value]))
+
+        console.log("columnTypes", this.columnTypes)
+
+        this.data.forEach((item, idx) => {
             (Object.keys(this.min) as NumberValueKeys[]).forEach((key: NumberValueKeys) => {
-                if(item[key] < this.min[key]) this.min[key] = item[key]
-                if(item[key] > this.max[key]) this.max[key] = item[key]
+                const value = Number(item[key]);
+                if (!isNaN(value)) {
+                    if (value < this.min[key]) this.min[key] = value;
+                    if (value > this.max[key]) this.max[key] = value;
+                }
             });
-
-            const sortedFilters = new Set(["Valmistusmaa", "Valmistaja", "Tyyppi"])
 
             Object.keys(item).forEach(key => {
                 if (!this.filters[key]) {
                     this.filters[key] = {
-                        possibleValues: new Set(),
                         possibleTypes: new Set(),
                         type: undefined
                     };
                 }
 
                 this.filters[key].possibleTypes.add(typeof item[key])
-                this.filters[key].possibleValues.add(item[key]);
-
-                if(sortedFilters.has(key)) this.filters[key].possibleValues = new Set([...this.filters[key].possibleValues].sort((a, b) => (a > b ? 1 : -1)))
             });
 
         });
@@ -89,7 +102,7 @@ export class Kaljakori {
             else this.filters[filter].type = this.filters[filter].possibleTypes.values().next().value;
         })
 
-        this.data = this.sortBy("Promillet / €", true)
+        this.data = this.sortBy("Promillet / €")
     }
 
     getFilterKeys() {
@@ -97,11 +110,11 @@ export class Kaljakori {
     }
 
     getFilterValues(key: string) {
-        return this.filters[key].possibleValues ? Array.from(this.filters[key].possibleValues) : [];
+        return this.possibleValues[key] ? Array.from(this.possibleValues[key]) : [];
     }
 
     getFilterType(key: string) {
-        return this.filters[key].type;
+        return this.columnTypes[key];
     }
 
     fuzzySearch(key: string, query: string) {
@@ -124,14 +137,16 @@ export class Kaljakori {
             return this.sortBy(key, ascending);
         }
         return this.data.sort((a, b) => {
+            // @ts-ignore
             if (a[key][nestedKey] < b[key][nestedKey]) return ascending ? -1 : 1;
+            // @ts-ignore
             if (a[key][nestedKey] > b[key][nestedKey]) return ascending ? 1 : -1;
             return 0;
         });
     }
 
     filter(filters: Record<string, any>) {
-        console.log(filters)
+        console.log("Current filters", filters)
         filters = Object.fromEntries(Object.entries(filters).filter(([key, value]) => {
             if(value instanceof Set) return value.size > 0
             return value.length > 0
@@ -156,14 +171,15 @@ export class Kaljakori {
 
     filterByRange(key: string, min: number, max: number) {
         return this.data.filter(item => {
-            return item[key] >= min && item[key] <= max;
+            const value = Number(item[key]);
+            return !isNaN(value) && value >= min && value <= max;
         });
     }
 
     getPossibleValues() {
         const result: Record<string, any[]> = {};
         Object.keys(this.filters).forEach(key => {
-            result[key] = Array.from(this.filters[key].possibleValues);
+            result[key] = Array.from(this.possibleValues[key]);
         });
         return result;
     }

@@ -6,13 +6,14 @@
 	import SvelteVirtualList from '@humanspeak/svelte-virtual-list';
 	import { twMerge } from 'tailwind-merge';
 	import logo from '$lib/assets/images/logo.png';
-	const { data } = $props();
+	import type { PriceListItem } from '$lib/alko/types';
+	const { data }: { data: { table: string[][], metadata: any } } = $props();
 
-	let listRef: SvelteVirtualList | null = null;
+	let listRef: SvelteVirtualList<PriceListItem> | null = null;
 
 	const personalData = JSON.parse(localStorage.getItem('personalData') ?? '{}');
 
-	const kaljakori = new Kaljakori(data.data, personalData);
+	const kaljakori = new Kaljakori(data.table, personalData);
 
 	const shownFilters = [
 		'Nimi',
@@ -47,7 +48,7 @@
 					kaljakori.max[filter as keyof typeof kaljakori.max]
 				];
 			else if (kaljakori.getFilterType(filter) == 'string') obj[filter] = [];
-			else if (kaljakori.getFilterType(filter) == 'any') obj[filter] = [null];
+			else if (kaljakori.getFilterType(filter) == 'any') obj[filter] = [];
 			return obj;
 		}, {});
 	}
@@ -126,13 +127,6 @@
 								step={0.01}
 							/>
 						</div>
-					{:else if type === 'any'}
-						<label for={filterId}>{filter}</label>
-						<select name={filterId} id={filterId} multiple size={5}>
-							{#each possibleValues as value}
-								<option {value}>{value}</option>
-							{/each}
-						</select>
 					{:else}
 						<label for={filterId}>{filter}</label>
 						<StringInput options={possibleValues} bind:value={filterValues[filter]} name={filter} />
@@ -239,9 +233,9 @@
 
 		<div class="flex flex-auto flex-col">
 			<SvelteVirtualList items={rows} bufferSize={50} bind:this={listRef}>
-				{#snippet renderItem(item: any, idx: number)}
+				{#snippet renderItem(item, idx: number)}
 					{@const multiplier =
-						item[selectedHighlight] /
+						Number(item[selectedHighlight]) /
 						kaljakori.max[selectedHighlight as keyof typeof kaljakori.max]}
 					{@const ratings = ['Matala', 'Kohtalainen', 'Korkea']}
 					{@const rating = ratings[Number(((ratings.length - 1) * multiplier).toFixed(0))]}
@@ -293,7 +287,7 @@
 								<div class="flex flex-col gap-4 md:flex-row md:items-center">
 									<div class="flex items-center gap-2">
 										<p class="text-xl font-bold">
-											Hinta: {Number.parseFloat(item.Hinta).toFixed(2)} €
+											Hinta: {Number.parseFloat(item.Hinta as string).toFixed(2)} €
 										</p>
 										<span class="text-sm text-gray-500">({item.Litrahinta} €/L)</span>
 									</div>
