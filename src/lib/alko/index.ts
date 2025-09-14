@@ -1,170 +1,181 @@
-import { calculateDrunkValue, Gender, type DrunkValueResult } from '../utils/alcoholCounter';
-
-type NativeTypes = "string" | "number" | "object" | "undefined" | "function" | "boolean" | "symbol" | "bigint";
-
-type Filter = {
-    type: NativeTypes | "any" | undefined
-    possibleValues: Set<any>
-    // Set of all possible types 
-    possibleTypes: Set<NativeTypes>
-}
-
-
-type NumberValueKeys = keyof DrunkValueResult | "Pullokoko" | "Hinta" | "Alkoholi-%";
+import { AllColumns, DatasetColumns, defaultSortingColumn, DrunkColumns } from '$lib/utils/constants';
+import { calculateDrunkValue, Gender } from '../utils/alcoholCounter';
+import type { ColumnNames, PriceListItem } from './types';
 
 export class Kaljakori {
-    data: any[];
-    personalInfo: { weight: number; gender: Gender };
-    filters: Record<string, Filter> = {};
-    min: {
-        [key in NumberValueKeys]: number;
-    } = {
-        "Alkoholigrammat": Infinity,
-        "Alkoholigrammat / €": Infinity,
-        "Arvioidut promillet": Infinity,
-        "Promillet / €": Infinity,
-        "Annokset": Infinity,
-        "Pullokoko": Infinity,
-        "Hinta": Infinity,
-        "Alkoholi-%": Infinity,
-    };
-    max: {
-        [key in NumberValueKeys]: number;
-    } = {
-        "Alkoholigrammat": -Infinity,
-        "Alkoholigrammat / €": -Infinity,
-        "Arvioidut promillet": -Infinity,
-        "Promillet / €": -Infinity,
-        "Annokset": -Infinity,
-        "Pullokoko": -Infinity,
-        "Hinta": -Infinity,
-        "Alkoholi-%": -Infinity,
-    };
-    constructor(data: any[], personalInfo?: { weight: number; gender: Gender }) {
-        this.data = data;
-        this.personalInfo = personalInfo || { weight: 0, gender: Gender.Unspecified };
-       
+	data: PriceListItem[] = [];
+	personalInfo: { weight: number; gender: Gender };
+	filters: (typeof AllColumns[keyof typeof AllColumns])[] = [];
+	possibleValues: Record<string, Set<any>> = {};
+	columnTypes: Record<string, string>;
+	minAndMaxValues: (number[] | null)[] = [];
 
-        this.data.filter(item => item["Tyyppi"] !== "lahja- ja juomatarvikkeet").forEach(item => {
-            Object.assign(item, calculateDrunkValue(
-                parseFloat(item["Pullokoko"]),
-                parseFloat(item["Alkoholi-%"]),
-                parseFloat(item["Hinta"]),
-                personalInfo?.gender,
-                personalInfo?.weight
-            ));
+	constructor(table: string[][], personalInfo?: { weight: number; gender: Gender }) {
+		console.log('table[1]', table[1]);
 
-            if(typeof item["Tyyppi"] === "string") item["Tyyppi"] = item["Tyyppi"].toLowerCase().charAt(0).toUpperCase() + item["Tyyppi"].slice(1);
+		this.personalInfo = personalInfo || { weight: 0, gender: Gender.Unspecified };
 
-            item["Pullokoko"] = parseFloat(item["Pullokoko"]);
-            item["Hinta"] = parseFloat(item["Hinta"]);
-            item["Alkoholi-%"] = parseFloat(item["Alkoholi-%"]);
+		const [datasetColumns, ...rows] = table as [(typeof DatasetColumns[keyof typeof DatasetColumns])[], ...(string | number | undefined)[][]];
 
-            (Object.keys(this.min) as NumberValueKeys[]).forEach((key: NumberValueKeys) => {
-                if(item[key] < this.min[key]) this.min[key] = item[key]
-                if(item[key] > this.max[key]) this.max[key] = item[key]
-            });
+		const drunkColumns = Object.values(DrunkColumns);
 
-            const sortedFilters = new Set(["Valmistusmaa", "Valmistaja", "Tyyppi"])
+		const isNumeric = (num: unknown) => (typeof num === "string" && num.trim() !== '') && !isNaN(num as unknown as number);
 
-            Object.keys(item).forEach(key => {
-                if (!this.filters[key]) {
-                    this.filters[key] = {
-                        possibleValues: new Set(),
-                        possibleTypes: new Set(),
-                        type: undefined
-                    };
-                }
+		this.filters = [...datasetColumns, ...drunkColumns];
 
-                this.filters[key].possibleTypes.add(typeof item[key])
-                this.filters[key].possibleValues.add(item[key]);
+		const indexOfTypeColumn = datasetColumns.indexOf(AllColumns.Type);
 
-                if(sortedFilters.has(key)) this.filters[key].possibleValues = new Set([...this.filters[key].possibleValues].sort((a, b) => (a > b ? 1 : -1)))
-            });
+		const datasetValuesByColumn: any[][] = [...Array(datasetColumns.length)].map(() => []);
 
-        });
+        const drunkValuesByColumn: any[][] = [...Array(drunkColumns.length)].map(() => []);
 
-        Object.keys(this.filters).forEach(filter => {
-            if(this.filters[filter].possibleTypes.size > 1) this.filters[filter].type = "any";
-            else this.filters[filter].type = this.filters[filter].possibleTypes.values().next().value;
-        })
+		for (let row = 0; row < rows.length; row++) {
+			const item: any = {};
+			const type = rows[row][indexOfTypeColumn];
+			if (type === 'lahja- ja juomatarvikkeet') continue;
+			for (let col = 0; col < datasetColumns.length; col++) {
+				const key = datasetColumns[col];
+				let value: string | number | undefined = rows[row][col];
+				const isNumber = (value !== undefined && isNumeric(value) && !['Numero', 'Nimi', 'Valmistaja'].includes(key)) || typeof value === "number";
+				if(key === AllColumns.BottleSize) {
+					value = parseFloat(value as string)
+				} else if (isNumber) {
+					value = Number(value);
+				} else if(typeof value === "string") {
+					value = (value as string).trim().toLowerCase().charAt(0).toUpperCase() + (value as string).slice(1);
+				} else {
+					value = ""
+				}
 
-        this.data = this.sortBy("Promillet / €", true)
-    }
+				item[key] = value
+				if(isNumber || (value as string).length || key === AllColumns.BottleSize) datasetValuesByColumn[col].push(value);
+			}
 
-    getFilterKeys() {
-        return Object.keys(this.filters);
-    }
+			const drunkValues = calculateDrunkValue(
+				item[AllColumns.BottleSize],
+				item[AllColumns.AlcoholPercentage],
+				item[AllColumns.Price],
+				personalInfo?.gender,
+				personalInfo?.weight
+			);
 
-    getFilterValues(key: string) {
-        return this.filters[key].possibleValues ? Array.from(this.filters[key].possibleValues) : [];
-    }
+            drunkColumns.forEach((column, idx) => {
+                drunkValuesByColumn[idx].push(drunkValues[idx])
+                item[column] = drunkValues[idx]
+            })
 
-    getFilterType(key: string) {
-        return this.filters[key].type;
-    }
+			this.data.push(item);
+		}
 
-    fuzzySearch(key: string, query: string) {
-        const lowerQuery = query.toLowerCase();
-        return this.data.filter(item => {
-            return item[key] && item[key].toString().toLowerCase().includes(lowerQuery);
-        });
-    }
+		const mergedColumns = [...datasetColumns, ...drunkColumns];
+		const mergedValuesByColumn = [...datasetValuesByColumn, ...drunkValuesByColumn];
 
-    sortBy(key: string, ascending: boolean = true) {
-        return this.data.sort((a, b) => {
-            if (a[key] < b[key]) return ascending ? -1 : 1;
-            if (a[key] > b[key]) return ascending ? 1 : -1;
-            return 0;
-        });
-    }
+		this.possibleValues = Object.fromEntries(
+			mergedValuesByColumn.map((column, idx) => [mergedColumns[idx], new Set(column.sort())])
+		);
 
-    sortByNested(key: string, nestedKey: string, ascending: boolean = true) {
-        if(!nestedKey) {
-            return this.sortBy(key, ascending);
-        }
-        return this.data.sort((a, b) => {
-            if (a[key][nestedKey] < b[key][nestedKey]) return ascending ? -1 : 1;
-            if (a[key][nestedKey] > b[key][nestedKey]) return ascending ? 1 : -1;
-            return 0;
-        });
-    }
+		console.log(this.possibleValues[AllColumns.AlcoholPercentage])
 
-    filter(filters: Record<string, any>) {
-        console.log(filters)
-        filters = Object.fromEntries(Object.entries(filters).filter(([key, value]) => {
-            if(value instanceof Set) return value.size > 0
-            return value.length > 0
-         }))
-        return this.data.filter(item => {
-            return Object.keys(filters).every(key => {
-                const type = this.getFilterType(key);
-                // Range filter for numbers
-                if(type === "number" && Array.isArray(filters[key])&& filters[key].length === 2) {
-                    // TODO: Fix
-                    return item[key] >= filters[key][0] && item[key] <= filters[key][1];
-                } else if (filters[key] instanceof Set) {
-                    return item[key] && filters[key].has(item[key]);
-                } else if (Array.isArray(filters[key])) {
-                    return item[key] && filters[key].includes(item[key]);
-                } else {
-                    return item[key] === filters[key];
-                }
-            });
-        });
-    }
+		this.columnTypes = Object.fromEntries(
+			Object.entries(this.possibleValues).map(([key, value]) => [
+				key,
+				typeof value.values().next().value
+			])
+		);
+		
+		this.minAndMaxValues = mergedColumns.map((column, idx) => {
+			if(this.columnTypes[column] !== "number") return null
+			if(column === AllColumns.SortingCode) return null
+			return [Math.min(...mergedValuesByColumn[idx]), Math.max(...mergedValuesByColumn[idx])]
+		})
 
-    filterByRange(key: string, min: number, max: number) {
-        return this.data.filter(item => {
-            return item[key] >= min && item[key] <= max;
-        });
-    }
+		console.log("minAndMax", this.minAndMaxValues)
 
-    getPossibleValues() {
-        const result: Record<string, any[]> = {};
-        Object.keys(this.filters).forEach(key => {
-            result[key] = Array.from(this.filters[key].possibleValues);
-        });
-        return result;
-    }
+		this.data = this.sortBy(defaultSortingColumn);
+	}
+
+	getFilterKeys() {
+		return this.filters;
+	}
+
+	getFilterValues(key: string) {
+		return this.possibleValues[key] ? Array.from(this.possibleValues[key]) : [];
+	}
+
+	getFilterType(key: string) {
+		return this.columnTypes[key];
+	}
+
+	getMinAndMaxValues(key: ColumnNames) {
+		return this.minAndMaxValues[this.filters.indexOf(key)]
+	}
+
+	fuzzySearch(key: ColumnNames, query: string) {
+		const lowerQuery = query.toLowerCase();
+		return this.data.filter((item) => {
+			return item[key] && item[key].toString().toLowerCase().includes(lowerQuery);
+		});
+	}
+
+	sortBy(key: string, ascending: boolean = true) {
+		return this.data.sort((a, b) => {
+			if (a[key] < b[key]) return ascending ? -1 : 1;
+			if (a[key] > b[key]) return ascending ? 1 : -1;
+			return 0;
+		});
+	}
+
+	sortByNested(key: string, nestedKey: string, ascending: boolean = true) {
+		if (!nestedKey) {
+			return this.sortBy(key, ascending);
+		}
+		return this.data.sort((a, b) => {
+			// @ts-ignore
+			if (a[key][nestedKey] < b[key][nestedKey]) return ascending ? -1 : 1;
+			// @ts-ignore
+			if (a[key][nestedKey] > b[key][nestedKey]) return ascending ? 1 : -1;
+			return 0;
+		});
+	}
+
+	filter(filters: Record<string, any>) {
+		console.log('Current filters', filters);
+		filters = Object.fromEntries(
+			Object.entries(filters).filter(([key, value]) => {
+				if (value instanceof Set) return value.size > 0;
+				return value.length > 0;
+			})
+		);
+		return this.data.filter((item) => {
+			return Object.keys(filters).every((key) => {
+				const type = this.getFilterType(key);
+				// Range filter for numbers
+				if (type === 'number' && Array.isArray(filters[key]) && filters[key].length === 2) {
+					// TODO: Fix
+					return item[key] >= filters[key][0] && item[key] <= filters[key][1];
+				} else if (filters[key] instanceof Set) {
+					return item[key] && filters[key].has(item[key]);
+				} else if (Array.isArray(filters[key])) {
+					return item[key] && filters[key].includes(item[key]);
+				} else {
+					return item[key] === filters[key];
+				}
+			});
+		});
+	}
+
+	filterByRange(key: string, min: number, max: number) {
+		return this.data.filter((item) => {
+			const value = Number(item[key]);
+			return !isNaN(value) && value >= min && value <= max;
+		});
+	}
+
+	getPossibleValues() {
+		const result: Record<string, any[]> = {};
+		this.filters.forEach((key) => {
+			result[key] = Array.from(this.possibleValues[key]);
+		});
+		return result;
+	}
 }

@@ -1,6 +1,8 @@
 const IMAGE_BASE_URL: string = 'https://images.alko.fi/images/cs_srgb,f_auto,t_medium/cdn'
 
 export const generateImageUrl = (itemNumber: string, itemName: string): string => {
+    if(!itemName.toLowerCase) console.warn("itemName has no toLowerCase method:", itemName)
+    itemName = String(itemName)
     const sanitizedItemName = itemName
         .toLowerCase()
         .replace(/[^a-z0-9]+/g, '-') // Replace non-alphanumeric characters with hyphens

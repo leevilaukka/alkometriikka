@@ -6,57 +6,33 @@
 	import SvelteVirtualList from '@humanspeak/svelte-virtual-list';
 	import { twMerge } from 'tailwind-merge';
 	import logo from '$lib/assets/images/logo.png';
-	const { data } = $props();
+	import type { ColumnNames, PriceListItem } from '$lib/alko/types';
+	import { shownFilters, filterRenameMap, filterToUnitMarker, shownColumnsToHighlight, defaultSortingColumn, AllColumns } from '$lib/utils/constants';
+	const { data }: { data: { table: string[][], metadata: any } } = $props();
 
-	let listRef: SvelteVirtualList | null = null;
+	let listRef: SvelteVirtualList<PriceListItem> | null = null;
 
 	const personalData = JSON.parse(localStorage.getItem('personalData') ?? '{}');
 
-	const kaljakori = new Kaljakori(data.data, personalData);
+	const kaljakori = new Kaljakori(data.table, personalData);
 
-	const shownFilters = [
-		'Nimi',
-		'Tyyppi',
-		'Valmistusmaa',
-		'Valmistaja',
-		'Pullokoko',
-		'Hinta',
-		'Promillet / €',
-		'Alkoholi-%',
-		'Valikoima',
-		'Annokset'
-	];
-
-	const filterToUnitMarker: { [key: string]: string } = {
-		Hinta: '€',
-		Pullokoko: 'L',
-		'Promillet / €': '‰'
-	};
-
-	const filterRenameMap: { [key: string]: string } = {
-		Pullokoko: 'Pakkauskoko'
-	};
-
-	const filters = kaljakori.getFilterKeys().filter((f) => shownFilters.includes(f));
+	const filters = kaljakori.getFilterKeys().filter((filter) => shownFilters.includes(filter as typeof shownFilters[number]));
 
 	function initFilterValues() {
 		return shownFilters.reduce<{ [key: string]: any }>((obj, filter) => {
 			if (kaljakori.getFilterType(filter) == 'number')
-				obj[filter] = [
-					kaljakori.min[filter as keyof typeof kaljakori.min],
-					kaljakori.max[filter as keyof typeof kaljakori.max]
-				];
+				obj[filter] = kaljakori.getMinAndMaxValues(filter);
 			else if (kaljakori.getFilterType(filter) == 'string') obj[filter] = [];
-			else if (kaljakori.getFilterType(filter) == 'any') obj[filter] = [null];
+			else if (kaljakori.getFilterType(filter) == 'any') obj[filter] = [];
 			return obj;
 		}, {});
 	}
 
 	let filterValues = $state(initFilterValues());
 
-	let selectedHighlight: string = $state('Promillet / €');
+	let selectedHighlight: string = $state(defaultSortingColumn);
 
-	let selectedSortingColumn: string = $state('Promillet / €');
+	let selectedSortingColumn: string = $state(defaultSortingColumn);
 	let asc = $state(false);
 
 	let filtersElement: HTMLDialogElement;
@@ -75,8 +51,6 @@
 		else if (isMobile) filtersElement.showModal();
 		else filtersElement.show();
 	}
-
-	const { min, max } = kaljakori;
 
 	let rows = $derived.by(() => {
 		let filterValuesCopy = { ...filterValues };
@@ -114,6 +88,7 @@
 				{@const type = kaljakori.getFilterType(filter)}
 				<div class="flex w-full flex-col text-sm">
 					{#if type === 'number'}
+						{@const [min, max] = kaljakori.getMinAndMaxValues(filter) as number[]}
 						<label for={filterId} class=" text-sm">
 							{filterRenameMap[filter] ?? filter}
 							{filterToUnitMarker[filter] ? ` (${filterToUnitMarker[filter]})` : ''}
@@ -121,18 +96,11 @@
 						<div class="flex w-full flex-row gap-2">
 							<NumberInput
 								bind:value={filterValues[filter]}
-								min={kaljakori.min[filter as keyof typeof min]}
-								max={kaljakori.max[filter as keyof typeof max]}
+								{min}
+								{max}
 								step={0.01}
 							/>
 						</div>
-					{:else if type === 'any'}
-						<label for={filterId}>{filter}</label>
-						<select name={filterId} id={filterId} multiple size={5}>
-							{#each possibleValues as value}
-								<option {value}>{value}</option>
-							{/each}
-						</select>
 					{:else}
 						<label for={filterId}>{filter}</label>
 						<StringInput options={possibleValues} bind:value={filterValues[filter]} name={filter} />
@@ -206,7 +174,7 @@
 						bind:value={selectedHighlight}
 						class="rounded border border-gray-300 px-1.5 py-0.5"
 					>
-						{#each Object.keys(kaljakori.min) as filter}
+						{#each shownColumnsToHighlight as filter}
 							<option value={filter}>{filter}</option>
 						{/each}
 					</select>
@@ -239,10 +207,9 @@
 
 		<div class="flex flex-auto flex-col">
 			<SvelteVirtualList items={rows} bufferSize={50} bind:this={listRef}>
-				{#snippet renderItem(item: any, idx: number)}
-					{@const multiplier =
-						item[selectedHighlight] /
-						kaljakori.max[selectedHighlight as keyof typeof kaljakori.max]}
+				{#snippet renderItem(item, idx: number)}
+					{@const [_, max] = kaljakori.getMinAndMaxValues(selectedHighlight as typeof shownColumnsToHighlight[number]) as number[]}
+					{@const multiplier = Number(item[selectedHighlight]) / max}
 					{@const ratings = ['Matala', 'Kohtalainen', 'Korkea']}
 					{@const rating = ratings[Number(((ratings.length - 1) * multiplier).toFixed(0))]}
 					<div
@@ -286,14 +253,14 @@
 										<p>Alkoholi-%: {item['Alkoholi-%']} %</p>
 										<p>Alkoholi (g): {item['Alkoholigrammat']} g</p>
 										<p>Annokset: {item['Annokset']}</p>
-										<p>Alkoholi (g) / €: {item['Alkoholigrammat / €']} g</p>
+										<p>Alkoholi (g) / €: {item[defaultSortingColumn]} g</p>
 										<p>Arvioidut promillet: {item['Arvioidut promillet']} ‰</p>
 									</div>
 								</div>
 								<div class="flex flex-col gap-4 md:flex-row md:items-center">
 									<div class="flex items-center gap-2">
 										<p class="text-xl font-bold">
-											Hinta: {Number.parseFloat(item.Hinta).toFixed(2)} €
+											Hinta: {Number.parseFloat(item.Hinta as string).toFixed(2)} €
 										</p>
 										<span class="text-sm text-gray-500">({item.Litrahinta} €/L)</span>
 									</div>
