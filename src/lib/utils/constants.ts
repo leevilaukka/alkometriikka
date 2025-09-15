@@ -33,10 +33,10 @@ export const DatasetColumns = Object.freeze({
 } as const);
 
 export const DrunkColumns = Object.freeze({
-    PromillePerEuro: "Promillet / €",
     AlcoholGrams: "Alkoholigrammat",
     AlcoholGramsPerEuro: "Alkoholigrammat / €",
     EstimatedPromille: "Arvioidut promillet",
+    PromillePerEuro: "Promillet / €",
     Servings: "Annokset"
 } as const);
 

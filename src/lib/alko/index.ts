@@ -17,7 +17,13 @@ export class Kaljakori {
 
 		const [datasetColumns, ...rows] = table as [(typeof DatasetColumns[keyof typeof DatasetColumns])[], ...(string | number | undefined)[][]];
 
-		const drunkColumns = Object.values(DrunkColumns);
+		const drunkColumns: typeof DrunkColumns[keyof typeof DrunkColumns][] = [
+			"Alkoholigrammat",
+			"Alkoholigrammat / €",
+			"Arvioidut promillet",
+			"Promillet / €",
+			"Annokset"
+		];
 
 		const isNumeric = (num: unknown) => (typeof num === "string" && num.trim() !== '') && !isNaN(num as unknown as number);
 
@@ -27,7 +33,7 @@ export class Kaljakori {
 
 		const datasetValuesByColumn: any[][] = [...Array(datasetColumns.length)].map(() => []);
 
-        const drunkValuesByColumn: any[][] = [...Array(drunkColumns.length)].map(() => []);
+		const drunkValuesByColumn: any[][] = [...Array(drunkColumns.length)].map(() => []);
 
 		for (let row = 0; row < rows.length; row++) {
 			const item: any = {};
@@ -37,18 +43,18 @@ export class Kaljakori {
 				const key = datasetColumns[col];
 				let value: string | number | undefined = rows[row][col];
 				const isNumber = (value !== undefined && isNumeric(value) && !['Numero', 'Nimi', 'Valmistaja'].includes(key)) || typeof value === "number";
-				if(key === AllColumns.BottleSize) {
+				if (key === AllColumns.BottleSize) {
 					value = parseFloat(value as string)
 				} else if (isNumber) {
 					value = Number(value);
-				} else if(typeof value === "string") {
+				} else if (typeof value === "string") {
 					value = (value as string).trim().toLowerCase().charAt(0).toUpperCase() + (value as string).slice(1);
 				} else {
 					value = ""
 				}
 
 				item[key] = value
-				if(isNumber || (value as string).length || key === AllColumns.BottleSize) datasetValuesByColumn[col].push(value);
+				if (isNumber || (value as string).length || key === AllColumns.BottleSize) datasetValuesByColumn[col].push(value);
 			}
 
 			const drunkValues = calculateDrunkValue(
@@ -59,10 +65,10 @@ export class Kaljakori {
 				personalInfo?.weight
 			);
 
-            drunkColumns.forEach((column, idx) => {
-                drunkValuesByColumn[idx].push(drunkValues[idx])
-                item[column] = drunkValues[idx]
-            })
+			drunkColumns.forEach((column, idx) => {
+				drunkValuesByColumn[idx].push(drunkValues[idx])
+				item[column] = drunkValues[idx]
+			})
 
 			this.data.push(item);
 		}
@@ -82,10 +88,10 @@ export class Kaljakori {
 				typeof value.values().next().value
 			])
 		);
-		
+
 		this.minAndMaxValues = mergedColumns.map((column, idx) => {
-			if(this.columnTypes[column] !== "number") return null
-			if(column === AllColumns.SortingCode) return null
+			if (this.columnTypes[column] !== "number") return null
+			if (column === AllColumns.SortingCode) return null
 			return [Math.min(...mergedValuesByColumn[idx]), Math.max(...mergedValuesByColumn[idx])]
 		})
 

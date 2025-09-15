@@ -206,7 +206,7 @@
 		</div>
 
 		<div class="flex flex-auto flex-col">
-			<SvelteVirtualList items={rows} bufferSize={50} bind:this={listRef}>
+			<SvelteVirtualList items={rows} bufferSize={50} bind:this={listRef} itemsClass={"flex flex-col gap-3"}>
 				{#snippet renderItem(item, idx: number)}
 					{@const [_, max] = kaljakori.getMinAndMaxValues(selectedHighlight as typeof shownColumnsToHighlight[number]) as number[]}
 					{@const multiplier = Number(item[selectedHighlight]) / max}
@@ -214,7 +214,7 @@
 					{@const rating = ratings[Number(((ratings.length - 1) * multiplier).toFixed(0))]}
 					<div
 						class={twMerge(
-							'relative mb-2 flex flex-col gap-3 rounded border border-gray-300 bg-white'
+							'relative flex flex-col gap-3 rounded border border-gray-300 bg-white'
 						)}
 					>
 						<div
