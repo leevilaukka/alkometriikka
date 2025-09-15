@@ -35,10 +35,6 @@ input:focus {
     outline: 0;
 }
 
-input, button, select {
-    @apply text-sm;
-}
-
 .even>*:nth-child(odd) {
     @apply bg-gray-200;
 }

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { components } from '$lib/utils/style';
 	type ListItem = {
 		value: string;
 		selected: boolean;
@@ -30,7 +31,7 @@
 		name="sortingColumn"
 		id="sortingColumn"
 		bind:value
-		class="rounded border border-gray-300 px-1.5 py-0.5"
+		class={twMerge(components.input(), "w-full")}
 	>
 		<option value=""></option>
 		{#each options as option}
@@ -42,7 +43,7 @@
 		onclick={() => {
 			dialogElement?.showModal();
 		}}
-		class="flex flex-row flex-nowrap gap-3 rounded border border-gray-300 px-1.5 py-0.5 max-w-full"
+		class={twMerge(components.button(), "w-full")}
 		title={`${value.slice(0, 3).join(', ')}${value.length > 3 ? ` + ${value.length - 3} muuta` : ''}`}
 	>
 		<span class="whitespace-nowrap overflow-hidden max-w-full overflow-ellipsis">
@@ -62,7 +63,7 @@
 						list = options.map((option) => ({ value: option, selected: false }));
 						value = list.filter((option) => option.selected).map((option) => option.value);
 					}}
-					class="flex flex-row flex-nowrap items-center gap-3 rounded border border-gray-300 px-1.5 py-0.5"
+								class={twMerge(components.button({ type: "negative" }))}
 				>
 					Tyhjennä valinnat
 				</button>
@@ -71,7 +72,7 @@
 						list = options.map((option) => ({ value: option, selected: true }));
 						value = list.filter((option) => option.selected).map((option) => option.value);
 					}}
-					class="flex flex-row flex-nowrap items-center gap-3 rounded border border-gray-300 px-1.5 py-0.5"
+								class={twMerge(components.button())}
 				>
 					Valitse kaikki
 				</button>
@@ -94,7 +95,7 @@
 								item.selected = !item.selected
 								value = list.filter((option) => option.selected).map((option) => option.value);
 							}}
-							class={twMerge("flex w-full flex-row flex-nowrap px-2 py-1")}
+							class={twMerge(components.button(), "w-full rounded-none border-none")}
 						>
 							<span class="whitespace-nowrap overflow-hidden max-w-full overflow-ellipsis" title={item.value}>
 								{item.value}
@@ -115,7 +116,7 @@
 				onclick={() => {
 					dialogElement?.close();
 				}}
-				class="flex flex-row flex-nowrap gap-3 rounded bg-red-700 px-3 py-2 text-white"
+				class={twMerge(components.button({ type: "negative" }))}
 			>
 				Sulje
 			</button>

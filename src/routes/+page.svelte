@@ -6,8 +6,10 @@
 	import SvelteVirtualList from '@humanspeak/svelte-virtual-list';
 	import { twMerge } from 'tailwind-merge';
 	import logo from '$lib/assets/images/logo.png';
-	import type { ColumnNames, PriceListItem } from '$lib/alko/types';
-	import { shownFilters, filterRenameMap, filterToUnitMarker, shownColumnsToHighlight, defaultSortingColumn, AllColumns } from '$lib/utils/constants';
+	import type { PriceListItem } from '$lib/alko/types';
+	import { shownFilters, filterRenameMap, filterToUnitMarker, shownColumnsToHighlight, defaultSortingColumn, AllColumns, shownSortingKeys, defaultSortingOrderMap } from '$lib/utils/constants';
+	import { components } from '$lib/utils/style';
+	import { headerToDisplayName, sortingOrderToString, valueToString } from '$lib/utils/helpers';
 	const { data }: { data: { table: string[][], metadata: any } } = $props();
 
 	let listRef: SvelteVirtualList<PriceListItem> | null = null;
@@ -16,7 +18,7 @@
 
 	const kaljakori = new Kaljakori(data.table, personalData);
 
-	const filters = kaljakori.getFilterKeys().filter((filter) => shownFilters.includes(filter as typeof shownFilters[number]));
+	const filters = shownFilters;
 
 	function initFilterValues() {
 		return shownFilters.reduce<{ [key: string]: any }>((obj, filter) => {
@@ -33,7 +35,7 @@
 	let selectedHighlight: string = $state(defaultSortingColumn);
 
 	let selectedSortingColumn: string = $state(defaultSortingColumn);
-	let asc = $state(false);
+	let asc: boolean = $derived(defaultSortingOrderMap[selectedSortingColumn as keyof typeof defaultSortingOrderMap] || false);
 
 	let filtersElement: HTMLDialogElement;
 	let isMobile = $state(window.matchMedia('(width <= 48rem)').matches);
@@ -71,14 +73,14 @@
 </script>
 
 <div class="relative grid h-full grid-cols-[auto_1fr]">
-	<aside class="flex h-full flex-col border-gray-300 md:w-84 md:border-r">
+	<aside class="flex h-full flex-col border-gray-300 md:w-84 md:border-r overflow-x-hidden overflow-y-auto">
 		<div class="hidden flex-col items-center md:flex">
 			<img src={logo} alt="Alkoassistentti Logo" class="aspect-video w-64 object-contain" />
 		</div>
 		<dialog
 			bind:this={filtersElement}
 			class={twMerge(
-				'm-auto hidden h-full w-full flex-col items-end gap-4 rounded-lg border border-gray-300 p-4 open:flex md:relative md:rounded-none md:border-0'
+				'm-auto hidden h-full w-full flex-col gap-4 rounded-lg border border-gray-300 p-4 open:flex md:relative md:rounded-none md:border-0'
 			)}
 			onclose={() => (showFilters = false)}
 		>
@@ -90,8 +92,8 @@
 					{#if type === 'number'}
 						{@const [min, max] = kaljakori.getMinAndMaxValues(filter) as number[]}
 						<label for={filterId} class=" text-sm">
-							{filterRenameMap[filter] ?? filter}
-							{filterToUnitMarker[filter] ? ` (${filterToUnitMarker[filter]})` : ''}
+							{filterRenameMap[filter as keyof typeof filterRenameMap]  ?? filter}
+							{filterToUnitMarker[filter as keyof typeof filterToUnitMarker] ? ` (${filterToUnitMarker[filter as keyof typeof filterToUnitMarker]})` : ''}
 						</label>
 						<div class="flex w-full flex-row gap-2">
 							<NumberInput
@@ -112,7 +114,7 @@
 					filterValues = initFilterValues();
 					listRef?.scroll({ index: 0 });
 				}}
-				class="mt-auto w-full rounded border border-gray-300 bg-white px-1.5 py-0.5"
+				class={twMerge(components.button({ type: "negative" }), "w-full", "mt-auto")}
 			>
 				{'Tyhjennä suodattimet'}
 			</button>
@@ -122,7 +124,7 @@
 						toggleFilterElement();
 						showFilters = !showFilters;
 					}}
-					class="w-full rounded bg-red-700 px-3 py-2 text-white"
+					class={twMerge(components.button({ size: 'md' }), "w-full")}
 				>
 					{'Sulje suodattimet'}
 				</button>
@@ -144,11 +146,11 @@
 							name="sortingColumn"
 							id="sortingColumn"
 							bind:value={selectedSortingColumn}
-							class="rounded border border-gray-300 px-1.5 py-0.5"
+							class={twMerge(components.input(), "bg-white")}
 						>
 							<option value=""></option>
-							{#each kaljakori.getFilterKeys() as filter}
-								<option value={filter}>{filter}</option>
+							{#each shownSortingKeys as filter}
+								<option value={filter}>{headerToDisplayName(filter)}</option>
 							{/each}
 						</select>
 						{#if selectedSortingColumn}
@@ -157,9 +159,9 @@
 									asc = !asc;
 									listRef?.scroll({ index: 0, smoothScroll: false });
 								}}
-								class="rounded border border-gray-300 bg-white px-1.5 py-0.5"
+								class={twMerge(components.button(), "bg-white")}
 							>
-								{asc ? 'Nouseva' : 'Laskeva'}
+								{sortingOrderToString(asc, selectedSortingColumn as typeof shownSortingKeys[number])}
 							</button>
 						{/if}
 					</div>
@@ -172,10 +174,10 @@
 						name="selectedHighlight"
 						id="selectedHighlight"
 						bind:value={selectedHighlight}
-						class="rounded border border-gray-300 px-1.5 py-0.5"
+							class={twMerge(components.input(), "bg-white")}
 					>
 						{#each shownColumnsToHighlight as filter}
-							<option value={filter}>{filter}</option>
+							<option value={filter}>{headerToDisplayName(filter)}</option>
 						{/each}
 					</select>
 				</div>
@@ -186,7 +188,7 @@
 							toggleFilterElement();
 							showFilters = !showFilters;
 						}}
-						class="rounded border border-gray-300 bg-white px-1.5 py-0.5"
+						class={twMerge(components.button(), "bg-white")}
 					>
 						{showFilters ? 'Piilota suodattimet' : 'Näytä suodattimet'}
 					</button>
@@ -199,7 +201,7 @@
 				onclick={() => {
 					listRef?.scroll({ index: 0, smoothScroll: false });
 				}}
-				class="rounded border border-gray-300 bg-white px-1.5 py-0.5"
+				class={twMerge(components.button(), "bg-white")}
 			>
 				Hyppää alkuun
 			</button>
@@ -243,28 +245,28 @@
 								</div>
 								<div class="flex flex-col items-start gap-3 md:flex-row">
 									<div class="flex flex-col gap-1">
-										<p>Valmistaja: {item.Valmistaja}</p>
-										<p>Tyyppi: {item.Tyyppi}</p>
-										<p>Valmistusmaa: {item.Valmistusmaa}</p>
-										<p>Pakkauskoko: {item.Pullokoko} L</p>
-										<p>Valikoima: {item.Valikoima}</p>
+										<p>{valueToString(item[AllColumns.Manufacturer], AllColumns.Manufacturer)}</p>
+										<p>{valueToString(item[AllColumns.Type], AllColumns.Type)}</p>
+										<p>{valueToString(item[AllColumns.Country], AllColumns.Country)}</p>
+										<p>{valueToString(item[AllColumns.BottleSize], AllColumns.BottleSize)}</p>
+										<p>{valueToString(item[AllColumns.Availability], AllColumns.Availability)}</p>
 									</div>
 									<div class="flex flex-col gap-1">
-										<p>Alkoholi-%: {item['Alkoholi-%']} %</p>
-										<p>Alkoholi (g): {item['Alkoholigrammat']} g</p>
-										<p>Annokset: {item['Annokset']}</p>
-										<p>Alkoholi (g) / €: {item[defaultSortingColumn]} g</p>
-										<p>Arvioidut promillet: {item['Arvioidut promillet']} ‰</p>
+										<p>{valueToString(item[AllColumns.AlcoholPercentage], AllColumns.AlcoholPercentage)}</p>
+										<p>{valueToString(item[AllColumns.AlcoholGrams], AllColumns.AlcoholGrams)}</p>
+										<p>{valueToString(item[AllColumns.AlcoholGramsPerEuro], AllColumns.AlcoholGramsPerEuro)}</p>
+										<p>{valueToString(item[AllColumns.Servings], AllColumns.Servings)}</p>
+										<p>{valueToString(item[AllColumns.EstimatedPromille], AllColumns.EstimatedPromille)}</p>
 									</div>
 								</div>
 								<div class="flex flex-col gap-4 md:flex-row md:items-center">
 									<div class="flex items-center gap-2">
 										<p class="text-xl font-bold">
-											Hinta: {Number.parseFloat(item.Hinta as string).toFixed(2)} €
+											Hinta: {Number.parseFloat(item[AllColumns.Price] as string).toFixed(2)} €
 										</p>
-										<span class="text-sm text-gray-500">({item.Litrahinta} €/L)</span>
+										<span class="text-sm text-gray-500">({item[AllColumns.LitersPrice]} €/L)</span>
 									</div>
-									{#if !!item.Uutuus}
+									{#if !!item[AllColumns.New]}
 										<p class="rounded bg-red-200 px-1.5 py-0.5 text-red-800">Uutuus</p>
 									{/if}
 									{#if item['Erityisryhmä'] === 'Luomu'}
@@ -281,7 +283,7 @@
 								class="relative flex h-full w-fit shrink-0 flex-nowrap items-center gap-1 bg-black px-1.5 py-0.5 text-sm whitespace-nowrap text-white"
 								style={`left: ${100 * multiplier}%; transform: translateX(-${100 * multiplier}%);`}
 							>
-								<p>{selectedHighlight}: {item[selectedHighlight]}</p>
+								<p>{selectedHighlight}: {item[selectedHighlight]} {filterToUnitMarker[selectedHighlight as keyof typeof filterToUnitMarker]}</p>
 								<span class="text-xs">{rating}</span>
 							</div>
 							<div

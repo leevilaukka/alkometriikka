@@ -48,31 +48,88 @@ export const AllColumns = Object.freeze({ ...DatasetColumns, ...DrunkColumns } a
  */
 export const shownFilters = [
     AllColumns.Name,
-    AllColumns.Type,
-    AllColumns.Country,
     AllColumns.Manufacturer,
+    AllColumns.Type,
     AllColumns.BottleSize,
     AllColumns.Price,
-    AllColumns.PromillePerEuro,
+    AllColumns.Sugar,
+    AllColumns.PackagingType,
     AllColumns.AlcoholPercentage,
+    AllColumns.Country,
     AllColumns.Availability,
     AllColumns.Servings,
-    AllColumns.PackagingType,
-    AllColumns.SealingType
+    AllColumns.PromillePerEuro,
+    AllColumns.AlcoholGramsPerEuro,
 ] as const;
+
+export const shownSortingKeys = [
+    AllColumns.AlcoholGramsPerEuro,
+    AllColumns.Price,
+    AllColumns.LitersPrice,
+    AllColumns.AlcoholGrams,
+    AllColumns.BottleSize,
+    AllColumns.Name,
+    AllColumns.Manufacturer,
+    AllColumns.Type,
+    AllColumns.AlcoholPercentage,
+    AllColumns.EstimatedPromille,
+    AllColumns.Servings,
+    AllColumns.Sugar,
+    AllColumns.PromillePerEuro,
+] as const;
+
+
+/** Descriptions for sorting order for different columns.
+ * Used in the UI to show what "ascending" and "descending" mean for each column.
+ */
+export const sortingOrderDescriptionMap = {
+    [AllColumns.AlcoholGramsPerEuro]: ["Matalin", "Korkein"],
+    [AllColumns.Price]: ["Halvin", "Kallein"],
+    [AllColumns.LitersPrice]: ["Halvin", "Kallein"],
+    [AllColumns.AlcoholGrams]: ["Matalinn", "Korkein"],
+    [AllColumns.BottleSize]: ["Pienin", "Suurin"],
+    [AllColumns.Name]: ["A-Ö", "Ö-A"],
+    [AllColumns.Manufacturer]: ["A-Ö", "Ö-A"],
+    [AllColumns.Type]: ["A-Ö", "Ö-A"],
+    [AllColumns.EstimatedPromille]: ["Matalin", "Korkein"],
+    [AllColumns.Servings]: ["Vähiten", "Eniten"],
+    [AllColumns.Sugar]: ["Matalin", "Korkein"],
+    [AllColumns.PromillePerEuro]: ["Matalin", "Korkein"],
+} as const;
+
+
+/** Default sorting order for the columns.
+ * true = ascending, false = descending
+ *
+ * Ascending means:
+ * - For numeric values: smallest to largest
+ * - For string values: A to Z
+ * 
+ * Descending means the opposite.
+ */
+export const defaultSortingOrderMap = {
+    [AllColumns.Name]: true,
+    [AllColumns.Manufacturer]: true,
+    [AllColumns.Type]: true,
+    [AllColumns.Price]: true,
+    [AllColumns.LitersPrice]: true,
+    [AllColumns.BottleSize]: true,
+    [AllColumns.Sugar]: true
+} as const
 
 /**
  * Columns which value can be highlighted in the list view.
  * These are the options for the "Highlight" feature
  */
 export const shownColumnsToHighlight = [
+    AllColumns.AlcoholGramsPerEuro,
     AllColumns.Price,
     AllColumns.BottleSize,
     AllColumns.AlcoholPercentage,
     AllColumns.AlcoholGrams,
-    AllColumns.AlcoholGramsPerEuro,
     AllColumns.EstimatedPromille,
-    AllColumns.Servings
+    AllColumns.Servings,
+    AllColumns.Sugar
 ] as const;
 
 export const defaultSortingColumn = AllColumns.AlcoholGramsPerEuro;
@@ -80,16 +137,21 @@ export const defaultSortingColumn = AllColumns.AlcoholGramsPerEuro;
 /** Mapping of filters to their unit markers.
  * Used in the UI to show the unit next to the filter value
  */
-export const filterToUnitMarker: { [key: string]: string } = {
+export const filterToUnitMarker = {
     [AllColumns.Price]: '€',
     [AllColumns.BottleSize]: 'L',
-    [AllColumns.AlcoholGramsPerEuro]: '‰'
+    [AllColumns.EstimatedPromille]: '‰',
+    [AllColumns.AlcoholPercentage]: '%',
+    [AllColumns.Sugar]: 'g/l',
+    [AllColumns.AlcoholGrams]: 'g',
 } as const;
 
 /**
  * Mapping of filter keys to their display names.
  * Used in the UI to show a more user-friendly name for the filter
  */
-export const filterRenameMap: { [key: string]: string } = {
-    [AllColumns.BottleSize]: 'Pakkauskoko'
+export const filterRenameMap = {
+    [AllColumns.BottleSize]: 'Pakkauskoko',
+    [AllColumns.Sugar]: 'Sokeri',
+    [AllColumns.AlcoholPercentage]: 'Alkoholi',
 } as const;
