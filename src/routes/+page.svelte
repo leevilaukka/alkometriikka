@@ -6,7 +6,7 @@
 	import SvelteVirtualList from '@humanspeak/svelte-virtual-list';
 	import { twMerge } from 'tailwind-merge';
 	import logo from '$lib/assets/images/logo.png';
-	import type { PriceListItem } from '$lib/alko/types';
+	import type { ColumnNames, PriceListItem } from '$lib/alko/types';
 	import { shownFilters, filterRenameMap, filterToUnitMarker, shownColumnsToHighlight, defaultSortingColumn, AllColumns, shownSortingKeys, defaultSortingOrderMap } from '$lib/utils/constants';
 	import { components } from '$lib/utils/style';
 	import { headerToDisplayName, sortingOrderToString, valueToString } from '$lib/utils/helpers';
@@ -283,7 +283,7 @@
 								class="relative flex h-full w-fit shrink-0 flex-nowrap items-center gap-1 bg-black px-1.5 py-0.5 text-sm whitespace-nowrap text-white"
 								style={`left: ${100 * multiplier}%; transform: translateX(-${100 * multiplier}%);`}
 							>
-								<p>{selectedHighlight}: {item[selectedHighlight]} {filterToUnitMarker[selectedHighlight as keyof typeof filterToUnitMarker]}</p>
+								<p>{headerToDisplayName(selectedHighlight as ColumnNames)}: {item[selectedHighlight]} {filterToUnitMarker[selectedHighlight as keyof typeof filterToUnitMarker]}</p>
 								<span class="text-xs">{rating}</span>
 							</div>
 							<div
