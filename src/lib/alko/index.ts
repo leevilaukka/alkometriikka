@@ -1,13 +1,13 @@
 import { AllColumns, DatasetColumns, defaultSortingColumn, DrunkColumns } from '$lib/utils/constants';
 import { calculateDrunkValue, Gender } from '../utils/alcoholCounter';
-import type { ColumnNames, PriceListItem } from './types';
+import type { ColumnNames, DatasetColumnNames, DrunkColumnNames, PriceListItem } from './types';
 
 export class Kaljakori {
 	data: PriceListItem[] = [];
 	personalInfo: { weight: number; gender: Gender };
-	filters: (typeof AllColumns[keyof typeof AllColumns])[] = [];
+	filters: ColumnNames[] = [];
 	possibleValues: Record<string, Set<any>> = {};
-	columnTypes: Record<string, string>;
+	columnTypes: Record<string, string> = {};
 	minAndMaxValues: (number[] | null)[] = [];
 
 	constructor(table: string[][], personalInfo?: { weight: number; gender: Gender }) {
@@ -15,9 +15,9 @@ export class Kaljakori {
 
 		this.personalInfo = personalInfo || { weight: 0, gender: Gender.Unspecified };
 
-		const [datasetColumns, ...rows] = table as [(typeof DatasetColumns[keyof typeof DatasetColumns])[], ...(string | number | undefined)[][]];
+		const [datasetColumns, ...rows] = table as [DatasetColumnNames[], ...(string | number | undefined)[][]];
 
-		const drunkColumns: typeof DrunkColumns[keyof typeof DrunkColumns][] = [
+		const drunkColumns: DrunkColumnNames[] = [
 			"Alkoholigrammat",
 			"Alkoholigrammat / €",
 			"Arvioidut promillet",
@@ -104,11 +104,11 @@ export class Kaljakori {
 		return this.filters;
 	}
 
-	getFilterValues(key: string) {
+	getFilterValues(key: ColumnNames) {
 		return this.possibleValues[key] ? Array.from(this.possibleValues[key]) : [];
 	}
 
-	getFilterType(key: string) {
+	getFilterType(key: ColumnNames) {
 		return this.columnTypes[key];
 	}
 
@@ -123,7 +123,7 @@ export class Kaljakori {
 		});
 	}
 
-	sortBy(key: string, ascending: boolean = true) {
+	sortBy(key: ColumnNames, ascending: boolean = true) {
 		return this.data.sort((a, b) => {
 			if (a[key] < b[key]) return ascending ? -1 : 1;
 			if (a[key] > b[key]) return ascending ? 1 : -1;
@@ -131,7 +131,7 @@ export class Kaljakori {
 		});
 	}
 
-	sortByNested(key: string, nestedKey: string, ascending: boolean = true) {
+	sortByNested(key: ColumnNames, nestedKey: string, ascending: boolean = true) {
 		if (!nestedKey) {
 			return this.sortBy(key, ascending);
 		}
@@ -154,7 +154,7 @@ export class Kaljakori {
 		);
 		return this.data.filter((item) => {
 			return Object.keys(filters).every((key) => {
-				const type = this.getFilterType(key);
+				const type = this.getFilterType(key as ColumnNames);
 				// Range filter for numbers
 				if (type === 'number' && Array.isArray(filters[key]) && filters[key].length === 2) {
 					// TODO: Fix

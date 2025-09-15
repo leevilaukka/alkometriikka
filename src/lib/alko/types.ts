@@ -1,5 +1,5 @@
 
-import { AllColumns } from '$lib/utils/constants';
+import { AllColumns, DatasetColumns, DrunkColumns } from '$lib/utils/constants';
 
 export type NativeTypes = "string" | "number" | "object" | "undefined" | "function" | "boolean" | "symbol" | "bigint";
 
@@ -42,4 +42,6 @@ export interface PriceListItem {
     [key: string]: string | number; // Allow other properties with string keys and values of type string or number
 }
 
+export type DatasetColumnNames = typeof DatasetColumns[keyof typeof DatasetColumns];
+export type DrunkColumnNames = typeof DrunkColumns[keyof typeof DrunkColumns];
 export type ColumnNames = typeof AllColumns[keyof typeof AllColumns];

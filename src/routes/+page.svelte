@@ -57,7 +57,7 @@
 	let rows = $derived.by(() => {
 		let filterValuesCopy = { ...filterValues };
 		Object.keys(filterValuesCopy).forEach((key) => {
-			if (Array.isArray(filterValuesCopy[key]) && kaljakori.getFilterType(key) !== 'number')
+			if (Array.isArray(filterValuesCopy[key]) && kaljakori.getFilterType(key as ColumnNames) !== 'number')
 				filterValuesCopy[key] = new Set(filterValuesCopy[key]);
 		});
 		let temp = kaljakori.filter(filterValuesCopy);
