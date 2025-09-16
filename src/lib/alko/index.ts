@@ -1,13 +1,13 @@
 import { AllColumns, DatasetColumns, defaultSortingColumn, DrunkColumns } from '$lib/utils/constants';
 import { calculateDrunkValue, Gender } from '../utils/alcoholCounter';
-import type { ColumnNames, DatasetColumnNames, DrunkColumnNames, PriceListItem } from './types';
+import type { ColumnNames, DatasetColumnNames, DrunkColumnNames, NativeTypes, PriceListItem } from './types';
 
 export class Kaljakori {
 	data: PriceListItem[] = [];
 	personalInfo: { weight: number; gender: Gender };
 	filters: ColumnNames[] = [];
 	possibleValues: Record<string, Set<any>> = {};
-	columnTypes: Record<string, string> = {};
+	columnTypes: Record<string, NativeTypes> = {};
 	minAndMaxValues: (number[] | null)[] = [];
 
 	constructor(table: string[][], personalInfo?: { weight: number; gender: Gender }) {

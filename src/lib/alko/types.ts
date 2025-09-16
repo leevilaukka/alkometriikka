@@ -1,7 +1,7 @@
 
 import { AllColumns, DatasetColumns, DrunkColumns } from '$lib/utils/constants';
 
-export type NativeTypes = "string" | "number" | "object" | "undefined" | "function" | "boolean" | "symbol" | "bigint";
+export type NativeTypes = "string" | "number" | "object" | "undefined" | "function" | "boolean" | "symbol" | "bigint" | "any";
 
 export type Filter = {
     type: NativeTypes | "any" | undefined
@@ -45,3 +45,5 @@ export interface PriceListItem {
 export type DatasetColumnNames = typeof DatasetColumns[keyof typeof DatasetColumns];
 export type DrunkColumnNames = typeof DrunkColumns[keyof typeof DrunkColumns];
 export type ColumnNames = typeof AllColumns[keyof typeof AllColumns];
+
+export type ColNameObj<T> = { [key in ColumnNames]?: T };

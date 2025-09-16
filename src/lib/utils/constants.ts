@@ -1,3 +1,5 @@
+import type { ColNameObj, ColumnNames } from "$lib/alko/types";
+
 
 export const DatasetColumns = Object.freeze({
     Number: "Numero",
@@ -60,7 +62,7 @@ export const shownFilters = [
     AllColumns.Servings,
     AllColumns.PromillePerEuro,
     AllColumns.AlcoholGramsPerEuro,
-] as const;
+] as const satisfies readonly ColumnNames[];
 
 export const shownSortingKeys = [
     AllColumns.AlcoholGramsPerEuro,
@@ -76,7 +78,7 @@ export const shownSortingKeys = [
     AllColumns.Servings,
     AllColumns.Sugar,
     AllColumns.PromillePerEuro,
-] as const;
+] as const satisfies readonly ColumnNames[];
 
 
 /** Descriptions for sorting order for different columns.
@@ -95,7 +97,7 @@ export const sortingOrderDescriptionMap = {
     [AllColumns.Servings]: ["Vähiten", "Eniten"],
     [AllColumns.Sugar]: ["Matalin", "Korkein"],
     [AllColumns.PromillePerEuro]: ["Matalin", "Korkein"],
-} as const;
+} as const satisfies ColNameObj<[string, string]>;
 
 
 /** Default sorting order for the columns.
@@ -115,7 +117,7 @@ export const defaultSortingOrderMap = {
     [AllColumns.LitersPrice]: true,
     [AllColumns.BottleSize]: true,
     [AllColumns.Sugar]: true
-} as const
+} as const satisfies ColNameObj<boolean>;
 
 /**
  * Columns which value can be highlighted in the list view.
@@ -129,10 +131,10 @@ export const shownColumnsToHighlight = [
     AllColumns.AlcoholGrams,
     AllColumns.EstimatedPromille,
     AllColumns.Servings,
-    AllColumns.Sugar
-] as const;
+    AllColumns.Sugar,
+] as const satisfies readonly ColumnNames[];
 
-export const defaultSortingColumn = AllColumns.AlcoholGramsPerEuro;
+export const defaultSortingColumn: ColumnNames = AllColumns.AlcoholGramsPerEuro;
 
 /** Mapping of filters to their unit markers.
  * Used in the UI to show the unit next to the filter value
@@ -144,7 +146,7 @@ export const filterToUnitMarker = {
     [AllColumns.AlcoholPercentage]: '%',
     [AllColumns.Sugar]: 'g/l',
     [AllColumns.AlcoholGrams]: 'g',
-} as const;
+} as const satisfies ColNameObj<string>;
 
 /**
  * Mapping of filter keys to their display names.
@@ -154,4 +156,4 @@ export const filterRenameMap = {
     [AllColumns.BottleSize]: 'Pakkauskoko',
     [AllColumns.Sugar]: 'Sokeri',
     [AllColumns.AlcoholPercentage]: 'Alkoholi',
-} as const;
+} as const satisfies ColNameObj<string>;

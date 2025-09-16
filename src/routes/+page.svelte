@@ -32,9 +32,9 @@
 
 	let filterValues = $state(initFilterValues());
 
-	let selectedHighlight: string = $state(defaultSortingColumn);
+	let selectedHighlight = $state(defaultSortingColumn);
 
-	let selectedSortingColumn: string = $state(defaultSortingColumn);
+	let selectedSortingColumn = $state(defaultSortingColumn);
 	let asc: boolean = $derived(defaultSortingOrderMap[selectedSortingColumn as keyof typeof defaultSortingOrderMap] || false);
 
 	let filtersElement: HTMLDialogElement;
@@ -56,7 +56,7 @@
 
 	let rows = $derived.by(() => {
 		let filterValuesCopy = { ...filterValues };
-		Object.keys(filterValuesCopy).forEach((key) => {
+		Object.keys(filterValuesCopy as Record<string, any>).forEach((key) => {
 			if (Array.isArray(filterValuesCopy[key]) && kaljakori.getFilterType(key as ColumnNames) !== 'number')
 				filterValuesCopy[key] = new Set(filterValuesCopy[key]);
 		});
@@ -92,7 +92,7 @@
 					{#if type === 'number'}
 						{@const [min, max] = kaljakori.getMinAndMaxValues(filter) as number[]}
 						<label for={filterId} class=" text-sm">
-							{filterRenameMap[filter as keyof typeof filterRenameMap]  ?? filter}
+							{filterRenameMap[filter as keyof typeof filterRenameMap] ?? filter}
 							{filterToUnitMarker[filter as keyof typeof filterToUnitMarker] ? ` (${filterToUnitMarker[filter as keyof typeof filterToUnitMarker]})` : ''}
 						</label>
 						<div class="flex w-full flex-row gap-2">
@@ -161,7 +161,7 @@
 								}}
 								class={twMerge(components.button(), "bg-white")}
 							>
-								{sortingOrderToString(asc, selectedSortingColumn as typeof shownSortingKeys[number])}
+								{sortingOrderToString(asc, selectedSortingColumn)}
 							</button>
 						{/if}
 					</div>
@@ -210,7 +210,7 @@
 		<div class="flex flex-auto flex-col">
 			<SvelteVirtualList items={rows} bufferSize={50} bind:this={listRef} itemsClass={"flex flex-col gap-3"}>
 				{#snippet renderItem(item, idx: number)}
-					{@const [_, max] = kaljakori.getMinAndMaxValues(selectedHighlight as typeof shownColumnsToHighlight[number]) as number[]}
+					{@const [_, max] = kaljakori.getMinAndMaxValues(selectedHighlight) as number[]}
 					{@const multiplier = Number(item[selectedHighlight]) / max}
 					{@const ratings = ['Matala', 'Kohtalainen', 'Korkea']}
 					{@const rating = ratings[Number(((ratings.length - 1) * multiplier).toFixed(0))]}
@@ -283,7 +283,7 @@
 								class="relative flex h-full w-fit shrink-0 flex-nowrap items-center gap-1 bg-black px-1.5 py-0.5 text-sm whitespace-nowrap text-white"
 								style={`left: ${100 * multiplier}%; transform: translateX(-${100 * multiplier}%);`}
 							>
-								<p>{headerToDisplayName(selectedHighlight as ColumnNames)}: {item[selectedHighlight]} {filterToUnitMarker[selectedHighlight as keyof typeof filterToUnitMarker]}</p>
+								<p>{headerToDisplayName(selectedHighlight)}: {item[selectedHighlight]} {filterToUnitMarker[selectedHighlight as keyof typeof filterToUnitMarker]}</p>
 								<span class="text-xs">{rating}</span>
 							</div>
 							<div
