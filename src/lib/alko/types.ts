@@ -3,6 +3,8 @@ import { AllColumns, DatasetColumns, DrunkColumns } from '$lib/utils/constants';
 
 export type NativeTypes = "string" | "number" | "object" | "undefined" | "function" | "boolean" | "symbol" | "bigint" | "any";
 
+export type DatasetRow = (string | number | undefined)[];
+
 export type Filter = {
     type: NativeTypes | "any" | undefined
     // Set of all possible types 

@@ -1,0 +1,306 @@
+<script lang="ts">
+	import { Kaljakori } from '$lib/alko/index.js';
+	import StringInput from '$lib/components/inputs/String.svelte';
+	import NumberInput from '$lib/components/inputs/Number.svelte';
+	import { generateImageUrl } from '$lib/utils/image.js';
+	import SvelteVirtualList from '@humanspeak/svelte-virtual-list';
+	import { twMerge } from 'tailwind-merge';
+	import logo from '$lib/assets/images/logo.png';
+	import type { ColumnNames, DatasetRow, PriceListItem } from '$lib/alko/types';
+	import { shownFilters, filterRenameMap, filterToUnitMarker, shownColumnsToHighlight, defaultSortingColumn, AllColumns, shownSortingKeys, defaultSortingOrderMap } from '$lib/utils/constants';
+	import { components } from '$lib/utils/style';
+	import { headerToDisplayName, sortingOrderToString, valueToString } from '$lib/utils/helpers';
+	const { dataset }: { dataset: { table: DatasetRow[], metadata: any } } = $props();
+
+	let listRef: SvelteVirtualList<PriceListItem> | null = null;
+
+	const personalData = JSON.parse(localStorage.getItem('personalData') ?? '{}');
+
+	const kaljakori = new Kaljakori(dataset.table, personalData);
+
+	const filters = shownFilters;
+
+	function initFilterValues() {
+		return shownFilters.reduce<{ [key: string]: any }>((obj, filter) => {
+			if (kaljakori.getFilterType(filter) == 'number')
+				obj[filter] = kaljakori.getMinAndMaxValues(filter);
+			else if (kaljakori.getFilterType(filter) == 'string') obj[filter] = [];
+			else if (kaljakori.getFilterType(filter) == 'any') obj[filter] = [];
+			return obj;
+		}, {});
+	}
+
+	let filterValues = $state(initFilterValues());
+
+	let selectedHighlight = $state(defaultSortingColumn);
+
+	let selectedSortingColumn = $state(defaultSortingColumn);
+	let asc: boolean = $derived(defaultSortingOrderMap[selectedSortingColumn as keyof typeof defaultSortingOrderMap] || false);
+
+	let filtersElement: HTMLDialogElement;
+	let isMobile = $state(window.matchMedia('(width <= 48rem)').matches);
+	let showFilters = $derived(!isMobile);
+
+	$effect(() => {
+		if (filtersElement.open) filtersElement.close();
+		if (isMobile) return;
+		filtersElement.show();
+	});
+
+	function toggleFilterElement() {
+		if (!filtersElement) return;
+		if (filtersElement.open) filtersElement.close();
+		else if (isMobile) filtersElement.showModal();
+		else filtersElement.show();
+	}
+
+	let rows = $derived.by(() => {
+		let filterValuesCopy = { ...filterValues };
+		Object.keys(filterValuesCopy as Record<string, any>).forEach((key) => {
+			if (Array.isArray(filterValuesCopy[key]) && kaljakori.getFilterType(key as ColumnNames) !== 'number')
+				filterValuesCopy[key] = new Set(filterValuesCopy[key]);
+		});
+		let temp = kaljakori.filter(filterValuesCopy);
+		if (!!selectedSortingColumn)
+			temp = temp.sort((a, b) => (a[selectedSortingColumn] > b[selectedSortingColumn] ? 1 : -1));
+		if (!asc) temp = temp.reverse();
+		return temp;
+	});
+
+	window.addEventListener('resize', () => {
+		isMobile = window.matchMedia('(width <= 48rem)').matches;
+	});
+</script>
+
+<div class="relative grid h-full grid-cols-[auto_1fr]">
+	<aside class="flex h-full flex-col border-gray-300 md:w-84 md:border-r overflow-x-hidden overflow-y-auto">
+		<div class="hidden flex-col items-center md:flex">
+			<img src={logo} alt="Alkoassistentti Logo" class="aspect-video w-64 object-contain" />
+		</div>
+		<dialog
+			bind:this={filtersElement}
+			class={twMerge(
+				'm-auto hidden h-full w-full flex-col gap-4 rounded-lg border border-gray-300 p-4 open:flex md:relative md:rounded-none md:border-0'
+			)}
+			onclose={() => (showFilters = false)}
+		>
+			{#each filters as filter}
+				{@const filterId = crypto.randomUUID()}
+				{@const possibleValues = kaljakori.getFilterValues(filter)}
+				{@const type = kaljakori.getFilterType(filter)}
+				<div class="flex w-full flex-col text-sm">
+					{#if type === 'number'}
+						{@const [min, max] = kaljakori.getMinAndMaxValues(filter) as number[]}
+						<label for={filterId} class=" text-sm">
+							{filterRenameMap[filter as keyof typeof filterRenameMap] ?? filter}
+							{filterToUnitMarker[filter as keyof typeof filterToUnitMarker] ? ` (${filterToUnitMarker[filter as keyof typeof filterToUnitMarker]})` : ''}
+						</label>
+						<div class="flex w-full flex-row gap-2">
+							<NumberInput
+								bind:value={filterValues[filter]}
+								{min}
+								{max}
+								step={0.01}
+							/>
+						</div>
+					{:else}
+						<label for={filterId}>{filter}</label>
+						<StringInput options={possibleValues} bind:value={filterValues[filter]} name={filter} />
+					{/if}
+				</div>
+			{/each}
+			<button
+				onclick={() => {
+					filterValues = initFilterValues();
+					listRef?.scroll({ index: 0 });
+				}}
+				class={twMerge(components.button({ type: "negative" }), "w-full", "mt-auto")}
+			>
+				{'Tyhjennä suodattimet'}
+			</button>
+			{#if isMobile}
+				<button
+					onclick={() => {
+						toggleFilterElement();
+						showFilters = !showFilters;
+					}}
+					class={twMerge(components.button({ size: 'md' }), "w-full")}
+				>
+					{'Sulje suodattimet'}
+				</button>
+			{/if}
+		</dialog>
+	</aside>
+	<main class="mx-auto flex h-full w-full flex-col gap-4 bg-gray-100 p-6">
+		<div class="flex w-full flex-col items-start gap-4">
+			<div class="flex flex-col items-center rounded border border-gray-300 bg-white md:hidden">
+				<img src={logo} alt="Alkoassistentti Logo" class="aspect-video w-24 object-contain" />
+			</div>
+			<div class={twMerge('flex flex-row flex-wrap items-end gap-2')}>
+				<div class="flex flex-col">
+					<label for={'sortingColumn'}>
+						{'Järjestys'}
+					</label>
+					<div class="flex flex-row flex-wrap items-center gap-2">
+						<select
+							name="sortingColumn"
+							id="sortingColumn"
+							bind:value={selectedSortingColumn}
+							class={twMerge(components.input(), "bg-white")}
+						>
+							<option value=""></option>
+							{#each shownSortingKeys as filter}
+								<option value={filter}>{headerToDisplayName(filter)}</option>
+							{/each}
+						</select>
+						{#if selectedSortingColumn}
+							<button
+								onclick={() => {
+									asc = !asc;
+									listRef?.scroll({ index: 0, smoothScroll: false });
+								}}
+								class={twMerge(components.button(), "bg-white")}
+							>
+								{sortingOrderToString(asc, selectedSortingColumn)}
+							</button>
+						{/if}
+					</div>
+				</div>
+				<div class="flex flex-col">
+					<label for={'selectedHighlight'}>
+						{'Korostus'}
+					</label>
+					<select
+						name="selectedHighlight"
+						id="selectedHighlight"
+						bind:value={selectedHighlight}
+							class={twMerge(components.input(), "bg-white")}
+					>
+						{#each shownColumnsToHighlight as filter}
+							<option value={filter}>{headerToDisplayName(filter)}</option>
+						{/each}
+					</select>
+				</div>
+
+				{#if isMobile}
+					<button
+						onclick={() => {
+							toggleFilterElement();
+							showFilters = !showFilters;
+						}}
+						class={twMerge(components.button(), "bg-white")}
+					>
+						{showFilters ? 'Piilota suodattimet' : 'Näytä suodattimet'}
+					</button>
+				{/if}
+			</div>
+		</div>
+		<div class="flex flex-row flex-wrap justify-between gap-2">
+			<p>Tulosten määrä: {rows.length}</p>
+			<button
+				onclick={() => {
+					listRef?.scroll({ index: 0, smoothScroll: false });
+				}}
+				class={twMerge(components.button(), "bg-white")}
+			>
+				Hyppää alkuun
+			</button>
+		</div>
+
+		<div class="flex flex-auto flex-col">
+			<SvelteVirtualList items={rows} bufferSize={50} bind:this={listRef} itemsClass={"flex flex-col gap-3"}>
+				{#snippet renderItem(item, idx: number)}
+					{@const [_, max] = kaljakori.getMinAndMaxValues(selectedHighlight) as number[]}
+					{@const multiplier = Number(item[selectedHighlight]) / max}
+					{@const ratings = ['Matala', 'Kohtalainen', 'Korkea']}
+					{@const rating = ratings[Number(((ratings.length - 1) * multiplier).toFixed(0))]}
+					<div
+						class={twMerge(
+							'relative flex flex-col gap-3 rounded border border-gray-300 bg-white'
+						)}
+					>
+						<div
+							class={twMerge('flex flex-col flex-nowrap items-center gap-4 p-4 pb-0 md:flex-row')}
+						>
+							<div class="flex aspect-square w-32 max-w-[8rem]">
+								<img
+									src={generateImageUrl(item.Numero, item.Nimi)}
+									alt={item.Nimi}
+									class="block h-full w-full object-contain"
+								/>
+							</div>
+							<div class="flex w-full flex-col gap-2">
+								<div class="flex flex-row items-center gap-3">
+									<span class="text-sm text-gray-500">{'#' + (idx + 1)}</span>
+									<a
+										href={`https://www.alko.fi/tuotteet/${item.Numero}`}
+										target="_blank"
+										rel="noopener noreferrer"
+										class="hover:underline"
+									>
+										<h2 class="text-2xl font-bold">
+											{item.Nimi} ({item.Pullokoko} L)
+										</h2>
+									</a>
+								</div>
+								<div class="flex flex-col items-start gap-3 md:flex-row">
+									<div class="flex flex-col gap-1">
+										<p>{valueToString(item[AllColumns.Manufacturer], AllColumns.Manufacturer)}</p>
+										<p>{valueToString(item[AllColumns.Type], AllColumns.Type)}</p>
+										<p>{valueToString(item[AllColumns.Country], AllColumns.Country)}</p>
+										<p>{valueToString(item[AllColumns.BottleSize], AllColumns.BottleSize)}</p>
+										<p>{valueToString(item[AllColumns.Availability], AllColumns.Availability)}</p>
+									</div>
+									<div class="flex flex-col gap-1">
+										<p>{valueToString(item[AllColumns.AlcoholPercentage], AllColumns.AlcoholPercentage)}</p>
+										<p>{valueToString(item[AllColumns.AlcoholGrams], AllColumns.AlcoholGrams)}</p>
+										<p>{valueToString(item[AllColumns.AlcoholGramsPerEuro], AllColumns.AlcoholGramsPerEuro)}</p>
+										<p>{valueToString(item[AllColumns.Servings], AllColumns.Servings)}</p>
+										<p>{valueToString(item[AllColumns.EstimatedPromille], AllColumns.EstimatedPromille)}</p>
+									</div>
+								</div>
+								<div class="flex flex-col gap-4 md:flex-row md:items-center">
+									<div class="flex items-center gap-2">
+										<p class="text-xl font-bold">
+											Hinta: {Number.parseFloat(item[AllColumns.Price] as string).toFixed(2)} €
+										</p>
+										<span class="text-sm text-gray-500">({item[AllColumns.LitersPrice]} €/L)</span>
+									</div>
+									{#if !!item[AllColumns.New]}
+										<p class="rounded bg-red-200 px-1.5 py-0.5 text-red-800">Uutuus</p>
+									{/if}
+									{#if item['Erityisryhmä'] === 'Luomu'}
+										<p class="rounded bg-green-300 px-1.5 py-0.5 text-green-800">Luomu</p>
+									{/if}
+									{#if item['Erityisryhmä'] === 'Vegaaneille soveltuva tuote'}
+										<p class="rounded bg-emerald-300 px-1.5 py-0.5 text-emerald-800">Vegaani</p>
+									{/if}
+								</div>
+							</div>
+						</div>
+						<div class="relative block max-w-full">
+							<div
+								class="relative flex h-full w-fit shrink-0 flex-nowrap items-center gap-1 bg-black px-1.5 py-0.5 text-sm whitespace-nowrap text-white"
+								style={`left: ${100 * multiplier}%; transform: translateX(-${100 * multiplier}%);`}
+							>
+								<p>{headerToDisplayName(selectedHighlight)}: {item[selectedHighlight]} {filterToUnitMarker[selectedHighlight as keyof typeof filterToUnitMarker]}</p>
+								<span class="text-xs">{rating}</span>
+							</div>
+							<div
+								class="relative block h-4 w-full rounded-b bg-gradient-to-r from-red-500 via-amber-500 to-green-500"
+							>
+								<div
+									class="absolute block h-full w-1 shrink-0 -translate-x-1/2 bg-black whitespace-nowrap"
+									style={`left: ${100 * multiplier}%; transform: translateX(${50 - 100 * multiplier}%);`}
+								></div>
+							</div>
+						</div>
+					</div>
+				{/snippet}
+			</SvelteVirtualList>
+		</div>
+		{#if rows.length == 0}
+			<p>Ei tuloksia</p>
+		{/if}
+	</main>
+</div>

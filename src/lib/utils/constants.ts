@@ -29,7 +29,7 @@ export const DatasetColumns = Object.freeze({
     OriginalGravity: "Kantavierrep-%",
     ColorEBC: "Väri EBC",
     BitternessEBU: "Katkerot EBU",
-    Energy: "Energia kcal/100ml",
+    Energy: "Energia kcal/100 ml",
     Availability: "Valikoima",
     EAN: "EAN"
 } as const);

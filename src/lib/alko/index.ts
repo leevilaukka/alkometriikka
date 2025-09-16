@@ -1,6 +1,7 @@
 import { AllColumns, DatasetColumns, defaultSortingColumn, DrunkColumns } from '$lib/utils/constants';
 import { calculateDrunkValue, Gender } from '../utils/alcoholCounter';
-import type { ColumnNames, DatasetColumnNames, DrunkColumnNames, NativeTypes, PriceListItem } from './types';
+import type { ColumnNames, DatasetColumnNames, DatasetRow, DrunkColumnNames, NativeTypes, PriceListItem } from './types';
+
 
 export class Kaljakori {
 	data: PriceListItem[] = [];
@@ -10,12 +11,11 @@ export class Kaljakori {
 	columnTypes: Record<string, NativeTypes> = {};
 	minAndMaxValues: (number[] | null)[] = [];
 
-	constructor(table: string[][], personalInfo?: { weight: number; gender: Gender }) {
-		console.log('table[1]', table[1]);
+	constructor(table: DatasetRow[], personalInfo?: { weight: number; gender: Gender }) {
 
 		this.personalInfo = personalInfo || { weight: 0, gender: Gender.Unspecified };
 
-		const [datasetColumns, ...rows] = table as [DatasetColumnNames[], ...(string | number | undefined)[][]];
+		const [datasetColumns, ...rows] = table as [DatasetColumnNames[], ...DatasetRow[]];
 
 		const drunkColumns: DrunkColumnNames[] = [
 			"Alkoholigrammat",
@@ -80,8 +80,6 @@ export class Kaljakori {
 			mergedValuesByColumn.map((column, idx) => [mergedColumns[idx], new Set(column.sort())])
 		);
 
-		console.log(this.possibleValues[AllColumns.AlcoholPercentage])
-
 		this.columnTypes = Object.fromEntries(
 			Object.entries(this.possibleValues).map(([key, value]) => [
 				key,
@@ -94,8 +92,6 @@ export class Kaljakori {
 			if (column === AllColumns.SortingCode) return null
 			return [Math.min(...mergedValuesByColumn[idx]), Math.max(...mergedValuesByColumn[idx])]
 		})
-
-		console.log("minAndMax", this.minAndMaxValues)
 
 		this.data = this.sortBy(defaultSortingColumn);
 	}
@@ -145,7 +141,6 @@ export class Kaljakori {
 	}
 
 	filter(filters: Record<string, any>) {
-		console.log('Current filters', filters);
 		filters = Object.fromEntries(
 			Object.entries(filters).filter(([key, value]) => {
 				if (value instanceof Set) return value.size > 0;
