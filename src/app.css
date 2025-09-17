@@ -19,6 +19,7 @@
 
 :root {
     @apply text-sm md:text-base;
+    font-size: 14px;
 }
 
 body, html {

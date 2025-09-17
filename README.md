@@ -1,4 +1,4 @@
-# Alkoassistentti / Alkometriikka
+# Alkometriikka
 
 Alkon tuotetietojen selaamiseen tarkoitettu selainpohjainen sovellus.
 

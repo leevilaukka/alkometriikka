@@ -108,7 +108,7 @@
 		<dialog
 			bind:this={filtersElement}
 			class={twMerge(
-				'm-auto hidden h-full w-full flex-col gap-4 rounded-lg border border-gray-300 p-4 backdrop:backdrop-blur-sm open:flex md:relative md:rounded-none md:border-0'
+				'relative m-auto hidden h-full w-full flex-col gap-4 rounded-lg border border-gray-300 p-4 backdrop:backdrop-blur-sm open:flex md:relative md:rounded-none md:border-0'
 			)}
 			onclose={() => (showFilters = false)}
 		>
@@ -145,27 +145,29 @@
 					{/if}
 				</div>
 			{/each}
-			<button
-				onclick={() => {
-					filterValues = initFilterValues();
-					listRef?.scroll({ index: 0 });
-				}}
-				class={twMerge(components.button({ type: 'negative' }), 'w-full', 'mt-auto')}
-			>
-				<Icon name={'x_circle'} />
-				<span> Tyhjennä suodattimet</span>
-			</button>
-			{#if isMobile}
+			<div class="flex flex-col sticky bottom-0 mt-auto w-full gap-2 p-2 bg-white border rounded-lg border-gray-300">
 				<button
 					onclick={() => {
-						toggleFilterElement();
-						showFilters = !showFilters;
+						filterValues = initFilterValues();
+						listRef?.scroll({ index: 0 });
 					}}
-					class={twMerge(components.button({ size: 'md' }), 'w-full')}
+					class={twMerge(components.button({ type: 'negative' }), 'w-full', 'mt-auto')}
 				>
-					<span>Sulje suodattimet</span>
+					<Icon name={'x_circle'} />
+					<span>Tyhjennä suodattimet</span>
 				</button>
-			{/if}
+				{#if isMobile}
+					<button
+						onclick={() => {
+							toggleFilterElement();
+							showFilters = !showFilters;
+						}}
+						class={twMerge(components.button(), 'w-full')}
+					>
+						<span>Sulje suodattimet</span>
+					</button>
+				{/if}
+			</div>
 		</dialog>
 	</aside>
 	<main class="mx-auto flex h-full w-full flex-col gap-3 bg-gray-100 p-4 md:gap-4 md:p-6">
@@ -215,19 +217,6 @@
 						{/each}
 					</select>
 				</div>
-
-				{#if isMobile}
-					<button
-						onclick={() => {
-							toggleFilterElement();
-							showFilters = !showFilters;
-						}}
-						class={twMerge(components.button())}
-					>
-						<span>{showFilters ? 'Piilota suodattimet' : 'Näytä suodattimet'}</span>
-						<Icon name={'filter'} />
-					</button>
-				{/if}
 			</div>
 		</div>
 		<div class="flex flex-row flex-wrap justify-between gap-2">
@@ -336,16 +325,16 @@
 										>
 									</div>
 									{#if !!item[AllColumns.New]}
-										<p class="rounded bg-red-200 px-1.5 py-0.5 text-red-800">Uutuus</p>
+										<p class="rounded bg-red-200 px-1.5 py-0.5 text-red-800 text-sm">Uutuus</p>
 									{/if}
 									{#if item[AllColumns.SpecialGroup] === 'Luomu'}
-										<p class="rounded bg-green-300 px-1.5 py-0.5 text-green-800">Luomu</p>
+										<p class="rounded bg-green-300 px-1.5 py-0.5 text-green-800 text-sm">Luomu</p>
 									{/if}
 									{#if item[AllColumns.SpecialGroup] === 'Vegaaneille soveltuva tuote'}
-										<p class="rounded bg-emerald-300 px-1.5 py-0.5 text-emerald-800">Vegaani</p>
+										<p class="rounded bg-emerald-300 px-1.5 py-0.5 text-emerald-800 text-sm">Vegaani</p>
 									{/if}
 									{#if item[AllColumns.AlcoholPercentage] === 0}
-										<p class="rounded bg-blue-300 px-1.5 py-0.5 text-blue-800">Alkoholiton</p>
+										<p class="rounded bg-blue-300 px-1.5 py-0.5 text-blue-800 text-sm">Alkoholiton</p>
 									{/if}
 								</div>
 							</div>
@@ -374,6 +363,18 @@
 				{/snippet}
 			</SvelteVirtualList>
 		</div>
+		{#if isMobile}
+			<button
+				onclick={() => {
+					toggleFilterElement();
+					showFilters = !showFilters;
+				}}
+				class={twMerge(components.button(), "w-full")}
+			>
+				<span>{showFilters ? 'Piilota suodattimet' : 'Näytä suodattimet'}</span>
+				<Icon name={'filter'} />
+			</button>
+		{/if}
 		{#if rows.length == 0}
 			<p>Ei tuloksia</p>
 		{/if}
