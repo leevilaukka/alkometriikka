@@ -46,6 +46,10 @@ jobs:
           mv build/* .
           rm -rf build
 
+      - name: Copy 404.html to index.html
+        run: |
+          cp 404.html index.html
+
       - name: Push build to gh-pages branch
         run: |
           git config --global user.name "github-actions[bot]"
