@@ -51,7 +51,7 @@ jobs:
           cp 404.html index.html
 
       - name: Create CNAME file
-        run: echo "alkoassistentti.fi" > CNAME
+        run: echo "alkometriikka.fi" > CNAME
 
       - name: Push build to gh-pages branch
         run: |
