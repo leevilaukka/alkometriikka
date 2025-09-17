@@ -13,7 +13,7 @@ function corsProxy(url: string) {
 }
 
 function getDatasetURL() {
-    if(dev) return corsProxy("https://github.com/leevilaukka/alkoassistentti/raw/refs/heads/gh-pages/alkon-hinnasto-tekstitiedostona.xlsx")
+    if(dev) return corsProxy("https://alkometriikka.fi/alkon-hinnasto-tekstitiedostona.xlsx")
     return resolve("/") + "alkon-hinnasto-tekstitiedostona.xlsx"
 }
 
