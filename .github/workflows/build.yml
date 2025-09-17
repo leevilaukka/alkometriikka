@@ -50,6 +50,9 @@ jobs:
         run: |
           cp 404.html index.html
 
+      - name: Create CNAME file
+        run: echo "alkoassistentti.fi" > CNAME
+
       - name: Push build to gh-pages branch
         run: |
           git config --global user.name "github-actions[bot]"
