@@ -1,27 +1,42 @@
 <script lang="ts">
 	import { Kaljakori } from '$lib/alko/index.js';
-	import StringInput from '$lib/components/inputs/String.svelte';
-	import NumberInput from '$lib/components/inputs/Number.svelte';
+	import StringInput from '$lib/components/inputs/StringInput.svelte';
+	import NumberInput from '$lib/components/inputs/NumberInput.svelte';
 	import { generateImageUrl } from '$lib/utils/image.js';
 	import SvelteVirtualList from '@humanspeak/svelte-virtual-list';
 	import { twMerge } from 'tailwind-merge';
-	import logo from '$lib/assets/images/logo.png';
-	import type { ColumnNames, DatasetRow, PriceListItem } from '$lib/alko/types';
-	import { shownFilters, filterRenameMap, filterToUnitMarker, shownColumnsToHighlight, defaultSortingColumn, AllColumns, shownSortingKeys, defaultSortingOrderMap } from '$lib/utils/constants';
-	import { components } from '$lib/utils/style';
-	import { headerToDisplayName, sortingOrderToString, valueToString } from '$lib/utils/helpers';
-	const { dataset }: { dataset: { table: DatasetRow[], metadata: any } } = $props();
+	import type { ColumnNames, DatasetRow, PriceListItem } from '$lib/types';
+	import {
+		shownFilters,
+		filterRenameMap,
+		filterToUnitMarker,
+		shownColumnsToHighlight,
+		defaultSortingColumn,
+		AllColumns,
+		shownSortingKeys,
+		defaultSortingOrderMap
+	} from '$lib/utils/constants';
+	import { components } from '$lib/utils/styles';
+	import {
+		formatValue,
+		headerToDisplayName,
+		sortingOrderToString,
+		valueToString
+	} from '$lib/utils/helpers';
+	import { personalInfo } from '$lib/global.svelte';
+	import type { FullProperties } from 'xlsx';
+	import Icon from '../widgets/Icon.svelte';
+
+	const { dataset }: { dataset: { table: DatasetRow[]; metadata: FullProperties } } = $props();
 
 	let listRef: SvelteVirtualList<PriceListItem> | null = null;
 
-	const personalData = JSON.parse(localStorage.getItem('personalData') ?? '{}');
-
-	const kaljakori = new Kaljakori(dataset.table, personalData);
+	const kaljakori = new Kaljakori(dataset.table, personalInfo);
 
 	const filters = shownFilters;
 
 	function initFilterValues() {
-		return shownFilters.reduce<{ [key: string]: any }>((obj, filter) => {
+		return [...shownFilters, AllColumns.BeerType].reduce<{ [key: string]: any }>((obj, filter) => {
 			if (kaljakori.getFilterType(filter) == 'number')
 				obj[filter] = kaljakori.getMinAndMaxValues(filter);
 			else if (kaljakori.getFilterType(filter) == 'string') obj[filter] = [];
@@ -35,7 +50,9 @@
 	let selectedHighlight = $state(defaultSortingColumn);
 
 	let selectedSortingColumn = $state(defaultSortingColumn);
-	let asc: boolean = $derived(defaultSortingOrderMap[selectedSortingColumn as keyof typeof defaultSortingOrderMap] || false);
+	let asc: boolean = $derived(
+		defaultSortingOrderMap[selectedSortingColumn as keyof typeof defaultSortingOrderMap] || false
+	);
 
 	let filtersElement: HTMLDialogElement;
 	let isMobile = $state(window.matchMedia('(width <= 48rem)').matches);
@@ -45,6 +62,15 @@
 		if (filtersElement.open) filtersElement.close();
 		if (isMobile) return;
 		filtersElement.show();
+	});
+
+	$effect(() => {
+		if (
+			filterValues[AllColumns.Type]?.length !== 1 ||
+			filterValues[AllColumns.Type]?.[0] !== 'Oluet'
+		) {
+			filterValues[AllColumns.BeerType] = [];
+		}
 	});
 
 	function toggleFilterElement() {
@@ -57,7 +83,10 @@
 	let rows = $derived.by(() => {
 		let filterValuesCopy = { ...filterValues };
 		Object.keys(filterValuesCopy as Record<string, any>).forEach((key) => {
-			if (Array.isArray(filterValuesCopy[key]) && kaljakori.getFilterType(key as ColumnNames) !== 'number')
+			if (
+				Array.isArray(filterValuesCopy[key]) &&
+				kaljakori.getFilterType(key as ColumnNames) !== 'number'
+			)
 				filterValuesCopy[key] = new Set(filterValuesCopy[key]);
 		});
 		let temp = kaljakori.filter(filterValuesCopy);
@@ -73,14 +102,13 @@
 </script>
 
 <div class="relative grid h-full grid-cols-[auto_1fr]">
-	<aside class="flex h-full flex-col border-gray-300 md:w-84 md:border-r overflow-x-hidden overflow-y-auto">
-		<div class="hidden flex-col items-center md:flex">
-			<img src={logo} alt="Alkoassistentti Logo" class="aspect-video w-64 object-contain" />
-		</div>
+	<aside
+		class="flex h-full flex-col overflow-x-hidden overflow-y-auto border-gray-300 md:w-84 md:border-r"
+	>
 		<dialog
 			bind:this={filtersElement}
 			class={twMerge(
-				'm-auto hidden h-full w-full flex-col gap-4 rounded-lg border border-gray-300 p-4 open:flex md:relative md:rounded-none md:border-0'
+				'm-auto hidden h-full w-full flex-col gap-4 rounded-lg border border-gray-300 p-4 backdrop:backdrop-blur-sm open:flex md:relative md:rounded-none md:border-0'
 			)}
 			onclose={() => (showFilters = false)}
 		>
@@ -93,19 +121,27 @@
 						{@const [min, max] = kaljakori.getMinAndMaxValues(filter) as number[]}
 						<label for={filterId} class=" text-sm">
 							{filterRenameMap[filter as keyof typeof filterRenameMap] ?? filter}
-							{filterToUnitMarker[filter as keyof typeof filterToUnitMarker] ? ` (${filterToUnitMarker[filter as keyof typeof filterToUnitMarker]})` : ''}
+							{filterToUnitMarker[filter as keyof typeof filterToUnitMarker]
+								? ` (${filterToUnitMarker[filter as keyof typeof filterToUnitMarker]})`
+								: ''}
 						</label>
 						<div class="flex w-full flex-row gap-2">
-							<NumberInput
-								bind:value={filterValues[filter]}
-								{min}
-								{max}
-								step={0.01}
-							/>
+							<NumberInput bind:value={filterValues[filter]} {min} {max} step={0.01} />
 						</div>
 					{:else}
 						<label for={filterId}>{filter}</label>
 						<StringInput options={possibleValues} bind:value={filterValues[filter]} name={filter} />
+						{#if filter === AllColumns.Type && [AllColumns.Type]?.length === 1 && filterValues[AllColumns.Type]?.[0] === 'Oluet'}
+							<label for={filterId}
+								>{filterRenameMap[AllColumns.BeerType as keyof typeof filterRenameMap] ??
+									AllColumns.BeerType}</label
+							>
+							<StringInput
+								options={kaljakori.getFilterValues(AllColumns.BeerType)}
+								bind:value={filterValues[AllColumns.BeerType]}
+								name={AllColumns.BeerType}
+							/>
+						{/if}
 					{/if}
 				</div>
 			{/each}
@@ -114,9 +150,10 @@
 					filterValues = initFilterValues();
 					listRef?.scroll({ index: 0 });
 				}}
-				class={twMerge(components.button({ type: "negative" }), "w-full", "mt-auto")}
+				class={twMerge(components.button({ type: 'negative' }), 'w-full', 'mt-auto')}
 			>
-				{'Tyhjennä suodattimet'}
+				<Icon name={'x_circle'} />
+				<span> Tyhjennä suodattimet</span>
 			</button>
 			{#if isMobile}
 				<button
@@ -124,31 +161,27 @@
 						toggleFilterElement();
 						showFilters = !showFilters;
 					}}
-					class={twMerge(components.button({ size: 'md' }), "w-full")}
+					class={twMerge(components.button({ size: 'md' }), 'w-full')}
 				>
-					{'Sulje suodattimet'}
+					<span>Sulje suodattimet</span>
 				</button>
 			{/if}
 		</dialog>
 	</aside>
-	<main class="mx-auto flex h-full w-full flex-col gap-4 bg-gray-100 p-6">
+	<main class="mx-auto flex h-full w-full flex-col gap-3 bg-gray-100 p-4 md:gap-4 md:p-6">
 		<div class="flex w-full flex-col items-start gap-4">
-			<div class="flex flex-col items-center rounded border border-gray-300 bg-white md:hidden">
-				<img src={logo} alt="Alkoassistentti Logo" class="aspect-video w-24 object-contain" />
-			</div>
 			<div class={twMerge('flex flex-row flex-wrap items-end gap-2')}>
 				<div class="flex flex-col">
-					<label for={'sortingColumn'}>
+					<label for={'sortingColumn'} class="text-sm">
 						{'Järjestys'}
 					</label>
-					<div class="flex flex-row flex-wrap items-center gap-2">
+					<div class="flex flex-row flex-nowrap items-center">
 						<select
 							name="sortingColumn"
 							id="sortingColumn"
 							bind:value={selectedSortingColumn}
-							class={twMerge(components.input(), "bg-white")}
+							class={twMerge(components.input(), 'rounded-none rounded-s pe-8')}
 						>
-							<option value=""></option>
 							{#each shownSortingKeys as filter}
 								<option value={filter}>{headerToDisplayName(filter)}</option>
 							{/each}
@@ -159,22 +192,23 @@
 									asc = !asc;
 									listRef?.scroll({ index: 0, smoothScroll: false });
 								}}
-								class={twMerge(components.button(), "bg-white")}
+								class={twMerge(components.button(), 'rounded-none rounded-e border-s-0')}
 							>
-								{sortingOrderToString(asc, selectedSortingColumn)}
+								<span>{sortingOrderToString(asc, selectedSortingColumn)}</span>
+								<Icon name={asc ? 'arrow_up' : 'arrow_down'} />
 							</button>
 						{/if}
 					</div>
 				</div>
 				<div class="flex flex-col">
-					<label for={'selectedHighlight'}>
+					<label for={'selectedHighlight'} class="text-sm">
 						{'Korostus'}
 					</label>
 					<select
 						name="selectedHighlight"
 						id="selectedHighlight"
 						bind:value={selectedHighlight}
-							class={twMerge(components.input(), "bg-white")}
+						class={twMerge(components.input(), 'pe-8')}
 					>
 						{#each shownColumnsToHighlight as filter}
 							<option value={filter}>{headerToDisplayName(filter)}</option>
@@ -188,9 +222,10 @@
 							toggleFilterElement();
 							showFilters = !showFilters;
 						}}
-						class={twMerge(components.button(), "bg-white")}
+						class={twMerge(components.button())}
 					>
-						{showFilters ? 'Piilota suodattimet' : 'Näytä suodattimet'}
+						<span>{showFilters ? 'Piilota suodattimet' : 'Näytä suodattimet'}</span>
+						<Icon name={'filter'} />
 					</button>
 				{/if}
 			</div>
@@ -201,79 +236,116 @@
 				onclick={() => {
 					listRef?.scroll({ index: 0, smoothScroll: false });
 				}}
-				class={twMerge(components.button(), "bg-white")}
+				class={twMerge(components.button())}
 			>
-				Hyppää alkuun
+				<Icon name={'arrow_up'} />
+				<span>Hyppää alkuun</span>
 			</button>
 		</div>
-
 		<div class="flex flex-auto flex-col">
-			<SvelteVirtualList items={rows} bufferSize={50} bind:this={listRef} itemsClass={"flex flex-col gap-3"}>
+			<SvelteVirtualList
+				items={rows}
+				bufferSize={50}
+				bind:this={listRef}
+				itemsClass={'flex flex-col gap-3'}
+			>
 				{#snippet renderItem(item, idx: number)}
 					{@const [_, max] = kaljakori.getMinAndMaxValues(selectedHighlight) as number[]}
 					{@const multiplier = Number(item[selectedHighlight]) / max}
 					{@const ratings = ['Matala', 'Kohtalainen', 'Korkea']}
 					{@const rating = ratings[Number(((ratings.length - 1) * multiplier).toFixed(0))]}
 					<div
-						class={twMerge(
-							'relative flex flex-col gap-3 rounded border border-gray-300 bg-white'
-						)}
+						class={twMerge('relative flex flex-col gap-3 rounded border border-gray-300 bg-white')}
 					>
 						<div
 							class={twMerge('flex flex-col flex-nowrap items-center gap-4 p-4 pb-0 md:flex-row')}
 						>
 							<div class="flex aspect-square w-32 max-w-[8rem]">
 								<img
-									src={generateImageUrl(item.Numero, item.Nimi)}
-									alt={item.Nimi}
+									src={generateImageUrl(item[AllColumns.Number], item[AllColumns.Name])}
+									alt={item[AllColumns.Name]}
 									class="block h-full w-full object-contain"
 								/>
 							</div>
 							<div class="flex w-full flex-col gap-2">
 								<div class="flex flex-row items-center gap-3">
-									<span class="text-sm text-gray-500">{'#' + (idx + 1)}</span>
+									<span
+										class="absolute top-0 left-0 rounded-br bg-gray-100 p-0.5 text-sm text-gray-500"
+									>
+										{'#' + (idx + 1)}
+									</span>
 									<a
-										href={`https://www.alko.fi/tuotteet/${item.Numero}`}
+										href={`https://www.alko.fi/tuotteet/${item[AllColumns.Number]}`}
 										target="_blank"
 										rel="noopener noreferrer"
 										class="hover:underline"
 									>
-										<h2 class="text-2xl font-bold">
-											{item.Nimi} ({item.Pullokoko} L)
+										<h2 class="text-xl font-bold md:text-2xl">
+											{item[AllColumns.Name]} ({formatValue(
+												item[AllColumns.BottleSize],
+												AllColumns.BottleSize
+											)})
 										</h2>
 									</a>
 								</div>
-								<div class="flex flex-col items-start gap-3 md:flex-row">
-									<div class="flex flex-col gap-1">
+								<div class="flex flex-col items-start gap-0.5 md:flex-row md:gap-3">
+									<div class="flex flex-col gap-0.5 md:gap-1">
 										<p>{valueToString(item[AllColumns.Manufacturer], AllColumns.Manufacturer)}</p>
-										<p>{valueToString(item[AllColumns.Type], AllColumns.Type)}</p>
-										<p>{valueToString(item[AllColumns.Country], AllColumns.Country)}</p>
-										<p>{valueToString(item[AllColumns.BottleSize], AllColumns.BottleSize)}</p>
+										<p>
+											{valueToString(item[AllColumns.Type], AllColumns.Type)}
+											{item[AllColumns.Type] === 'Oluet'
+												? `- ${formatValue(item[AllColumns.BeerType], AllColumns.BeerType)}`
+												: null}
+										</p>
 										<p>{valueToString(item[AllColumns.Availability], AllColumns.Availability)}</p>
 									</div>
-									<div class="flex flex-col gap-1">
-										<p>{valueToString(item[AllColumns.AlcoholPercentage], AllColumns.AlcoholPercentage)}</p>
-										<p>{valueToString(item[AllColumns.AlcoholGrams], AllColumns.AlcoholGrams)}</p>
-										<p>{valueToString(item[AllColumns.AlcoholGramsPerEuro], AllColumns.AlcoholGramsPerEuro)}</p>
-										<p>{valueToString(item[AllColumns.Servings], AllColumns.Servings)}</p>
-										<p>{valueToString(item[AllColumns.EstimatedPromille], AllColumns.EstimatedPromille)}</p>
+									<div class="flex flex-col gap-0.5 md:gap-1">
+										<p>
+											{valueToString(
+												item[AllColumns.AlcoholPercentage],
+												AllColumns.AlcoholPercentage
+											)}
+										</p>
+										<p>
+											{valueToString(
+												item[AllColumns.AlcoholGramsPerEuro],
+												AllColumns.AlcoholGramsPerEuro
+											)}
+										</p>
+										<p>
+											{valueToString(
+												item[AllColumns.EstimatedPromille],
+												AllColumns.EstimatedPromille
+											)}
+										</p>
 									</div>
+								</div>
+								<div class="flex items-center gap-2 text-sm text-gray-500">
+									<Icon name="map_pin" />
+									<span class="text-sm">
+										{item[AllColumns.Country]}
+										{item[AllColumns.Region] ? ` - ${item[AllColumns.Region]}` : null}
+									</span>
 								</div>
 								<div class="flex flex-col gap-4 md:flex-row md:items-center">
 									<div class="flex items-center gap-2">
-										<p class="text-xl font-bold">
-											Hinta: {Number.parseFloat(item[AllColumns.Price] as string).toFixed(2)} €
+										<p class="text-2xl font-bold drop-shadow-lg">
+											{Number.parseFloat(item[AllColumns.Price] as string).toFixed(2)} €
 										</p>
-										<span class="text-sm text-gray-500">({item[AllColumns.LitersPrice]} €/L)</span>
+										<span class="text-sm text-gray-500">({item[AllColumns.PricePerLiter]} €/L)</span
+										>
 									</div>
 									{#if !!item[AllColumns.New]}
 										<p class="rounded bg-red-200 px-1.5 py-0.5 text-red-800">Uutuus</p>
 									{/if}
-									{#if item['Erityisryhmä'] === 'Luomu'}
+									{#if item[AllColumns.SpecialGroup] === 'Luomu'}
 										<p class="rounded bg-green-300 px-1.5 py-0.5 text-green-800">Luomu</p>
 									{/if}
-									{#if item['Erityisryhmä'] === 'Vegaaneille soveltuva tuote'}
+									{#if item[AllColumns.SpecialGroup] === 'Vegaaneille soveltuva tuote'}
 										<p class="rounded bg-emerald-300 px-1.5 py-0.5 text-emerald-800">Vegaani</p>
+									{/if}
+									{#if item[AllColumns.AlcoholPercentage] === 0}
+										<p class="rounded bg-blue-300 px-1.5 py-0.5 text-blue-800">Alkoholiton</p>
 									{/if}
 								</div>
 							</div>
@@ -283,7 +355,10 @@
 								class="relative flex h-full w-fit shrink-0 flex-nowrap items-center gap-1 bg-black px-1.5 py-0.5 text-sm whitespace-nowrap text-white"
 								style={`left: ${100 * multiplier}%; transform: translateX(-${100 * multiplier}%);`}
 							>
-								<p>{headerToDisplayName(selectedHighlight)}: {item[selectedHighlight]} {filterToUnitMarker[selectedHighlight as keyof typeof filterToUnitMarker]}</p>
+								<p>
+									{headerToDisplayName(selectedHighlight)}: {item[selectedHighlight]}
+									{filterToUnitMarker[selectedHighlight as keyof typeof filterToUnitMarker]}
+								</p>
 								<span class="text-xs">{rating}</span>
 							</div>
 							<div

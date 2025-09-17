@@ -1,5 +1,5 @@
 
-import { AllColumns, DatasetColumns, DrunkColumns } from '$lib/utils/constants';
+import { AllColumns, DatasetColumns, DrunkColumns, GenderOptionsMap } from '$lib/utils/constants';
 
 export type NativeTypes = "string" | "number" | "object" | "undefined" | "function" | "boolean" | "symbol" | "bigint" | "any";
 
@@ -10,6 +10,13 @@ export type Filter = {
     // Set of all possible types 
     possibleTypes: Set<NativeTypes>
 }
+
+export type GenderOptions = typeof GenderOptionsMap[keyof typeof GenderOptionsMap];
+
+export type PersonalInfo = {
+    weight: number | null;
+    gender: GenderOptions;
+};
 
 export interface PriceListItem {
     "Numero": string;

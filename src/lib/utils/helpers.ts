@@ -1,4 +1,4 @@
-import type { ColumnNames } from "$lib/alko/types";
+import type { ColumnNames } from "$lib/types";
 import { filterRenameMap, filterToUnitMarker, sortingOrderDescriptionMap } from "./constants";
 
 export function formatValue(value: string | number, header?: ColumnNames) {

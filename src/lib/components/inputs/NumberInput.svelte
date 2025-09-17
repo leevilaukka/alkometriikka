@@ -1,5 +1,5 @@
 <script>
-	import { components } from "$lib/utils/style";
+	import { components } from "$lib/utils/styles";
 	import { twMerge } from "tailwind-merge";
 
     let { value = $bindable([-Infinity, Infinity]), min = 0, max = 100, step = 1 } = $props(); 

@@ -1,19 +1,19 @@
-import { AllColumns, DatasetColumns, defaultSortingColumn, DrunkColumns } from '$lib/utils/constants';
-import { calculateDrunkValue, Gender } from '../utils/alcoholCounter';
-import type { ColumnNames, DatasetColumnNames, DatasetRow, DrunkColumnNames, NativeTypes, PriceListItem } from './types';
+import { AllColumns, DatasetColumns, defaultSortingColumn, DrunkColumns, GenderOptionsMap } from '$lib/utils/constants';
+import { calculateDrunkValue } from '../utils/alcoholCounter';
+import { type ColumnNames, type DatasetColumnNames, type DatasetRow, type DrunkColumnNames, type NativeTypes, type PersonalInfo, type PriceListItem } from '../types';
 
 
 export class Kaljakori {
 	data: PriceListItem[] = [];
-	personalInfo: { weight: number; gender: Gender };
+	personalInfo: PersonalInfo;
 	filters: ColumnNames[] = [];
 	possibleValues: Record<string, Set<any>> = {};
 	columnTypes: Record<string, NativeTypes> = {};
 	minAndMaxValues: (number[] | null)[] = [];
 
-	constructor(table: DatasetRow[], personalInfo?: { weight: number; gender: Gender }) {
+	constructor(table: DatasetRow[], personalInfo?: PersonalInfo) {
 
-		this.personalInfo = personalInfo || { weight: 0, gender: Gender.Unspecified };
+		this.personalInfo = personalInfo || { weight: null, gender: GenderOptionsMap.Unspecified };
 
 		const [datasetColumns, ...rows] = table as [DatasetColumnNames[], ...DatasetRow[]];
 
@@ -62,7 +62,7 @@ export class Kaljakori {
 				item[AllColumns.AlcoholPercentage],
 				item[AllColumns.Price],
 				personalInfo?.gender,
-				personalInfo?.weight
+				personalInfo?.weight ?? undefined
 			);
 
 			drunkColumns.forEach((column, idx) => {

@@ -1,4 +1,4 @@
-import type { ColNameObj, ColumnNames } from "$lib/alko/types";
+import type { ColNameObj, ColumnNames, GenderOptions } from "$lib/types";
 
 
 export const DatasetColumns = Object.freeze({
@@ -7,7 +7,7 @@ export const DatasetColumns = Object.freeze({
     Manufacturer: "Valmistaja",
     BottleSize: "Pullokoko",
     Price: "Hinta",
-    LitersPrice: "Litrahinta",
+    PricePerLiter: "Litrahinta",
     New: "Uutuus",
     SortingCode: "Hinnastojärjestyskoodi",
     Type: "Tyyppi",
@@ -67,7 +67,7 @@ export const shownFilters = [
 export const shownSortingKeys = [
     AllColumns.AlcoholGramsPerEuro,
     AllColumns.Price,
-    AllColumns.LitersPrice,
+    AllColumns.PricePerLiter,
     AllColumns.AlcoholGrams,
     AllColumns.BottleSize,
     AllColumns.Name,
@@ -87,7 +87,7 @@ export const shownSortingKeys = [
 export const sortingOrderDescriptionMap = {
     [AllColumns.AlcoholGramsPerEuro]: ["Matalin", "Korkein"],
     [AllColumns.Price]: ["Halvin", "Kallein"],
-    [AllColumns.LitersPrice]: ["Halvin", "Kallein"],
+    [AllColumns.PricePerLiter]: ["Halvin", "Kallein"],
     [AllColumns.AlcoholGrams]: ["Matalinn", "Korkein"],
     [AllColumns.BottleSize]: ["Pienin", "Suurin"],
     [AllColumns.Name]: ["A-Ö", "Ö-A"],
@@ -114,7 +114,7 @@ export const defaultSortingOrderMap = {
     [AllColumns.Manufacturer]: true,
     [AllColumns.Type]: true,
     [AllColumns.Price]: true,
-    [AllColumns.LitersPrice]: true,
+    [AllColumns.PricePerLiter]: true,
     [AllColumns.BottleSize]: true,
     [AllColumns.Sugar]: true
 } as const satisfies ColNameObj<boolean>;
@@ -157,3 +157,14 @@ export const filterRenameMap = {
     [AllColumns.Sugar]: 'Sokeri',
     [AllColumns.AlcoholPercentage]: 'Alkoholi',
 } as const satisfies ColNameObj<string>;
+
+export const LocalStorageKeys = {
+    PersonalInfo: "personal_info",
+    Lists: "lists",
+} as const;
+
+export const GenderOptionsMap = {
+    Male: "Mies",
+    Female: "Nainen",
+    Unspecified: "Muu"
+} as const satisfies { [key: string]: string };

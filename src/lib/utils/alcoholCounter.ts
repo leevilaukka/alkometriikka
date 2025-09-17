@@ -1,8 +1,4 @@
-export enum Gender {
-	Male = 'male',
-	Female = 'female',
-	Unspecified = 'unspecified'
-}
+import { GenderOptionsMap } from "./constants";
 
 /**
  * Laskee alkoholin määrän, känni per euro ja BAC-arvot.
@@ -18,12 +14,12 @@ export function calculateDrunkValue(
 	volume: number,
 	percentage: number,
 	price: number,
-	gender: Gender = Gender.Unspecified,
+	gender: typeof GenderOptionsMap[keyof typeof GenderOptionsMap] = GenderOptionsMap.Unspecified,
 	weight?: number
 ): number[] {
-	if (gender === Gender.Female && !weight) {
+	if (gender === GenderOptionsMap.Female && !weight) {
 		weight = 76; // Oletuspaino naisille
-	} else if (gender === Gender.Male && !weight) {
+	} else if (gender === GenderOptionsMap.Male && !weight) {
 		weight = 86; // Oletuspaino miehille
 	} else {
 		weight = 79; // Oletuspaino, jos sukupuolta ei ole määritetty
@@ -33,7 +29,7 @@ export function calculateDrunkValue(
 	const ETHANOL_DENSITY = 789;
 
 	// Widmarkin kertoimet
-	const r = gender === Gender.Male ? 0.68 : 0.55;
+	const r = gender === GenderOptionsMap.Male ? 0.68 : 0.55;
 
 	// Lasketaan puhtaan alkoholin määrä grammoina
 	const pureAlcoholGrams = volume * (percentage / 100) * ETHANOL_DENSITY;

@@ -3,6 +3,13 @@
 @plugin '@tailwindcss/typography';
 
 
+/* icons */
+@font-face {
+  font-family: 'Feather';
+  font-weight: 500;
+  src: url("lib/assets/fonts/Feather/feather.ttf");
+}
+
 /* latin */
 @font-face {
   font-family: 'Inter';
@@ -23,12 +30,6 @@ body, html {
 
 body {
     font-family: 'Inter', sans-serif;
-}
-
-.rotate-text:after {
-    writing-mode: vertical-rl;
-    text-orientation: sideways;
-    transform: rotate(-180deg);
 }
 
 input:focus {
