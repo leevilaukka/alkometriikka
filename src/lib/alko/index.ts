@@ -1,4 +1,4 @@
-import { AllColumns, DatasetColumns, defaultSortingColumn, DrunkColumns, GenderOptionsMap } from '$lib/utils/constants';
+import { AllColumns, defaultSortingColumn, GenderOptionsMap } from '$lib/utils/constants';
 import { calculateDrunkValue } from '../utils/alcoholCounter';
 import { type ColumnNames, type DatasetColumnNames, type DatasetRow, type DrunkColumnNames, type NativeTypes, type PersonalInfo, type PriceListItem } from '../types';
 
@@ -165,7 +165,7 @@ export class Kaljakori {
 		});
 	}
 
-	filterByRange(key: string, min: number, max: number) {
+	filterByRange(key: ColumnNames, min: number, max: number) {
 		return this.data.filter((item) => {
 			const value = Number(item[key]);
 			return !isNaN(value) && value >= min && value <= max;
