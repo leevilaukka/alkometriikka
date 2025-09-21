@@ -2,7 +2,6 @@ import { AllColumns, defaultSortingColumn, GenderOptionsMap } from '$lib/utils/c
 import { calculateDrunkValue } from '../utils/alcoholCounter';
 import { type ColumnNames, type DatasetColumnNames, type DatasetRow, type DrunkColumnNames, type NativeTypes, type PersonalInfo, type PriceListItem } from '../types';
 
-
 export class Kaljakori {
 	data: PriceListItem[] = [];
 	personalInfo: PersonalInfo;
@@ -12,9 +11,7 @@ export class Kaljakori {
 	minAndMaxValues: (number[] | null)[] = [];
 
 	constructor(table: DatasetRow[], personalInfo?: PersonalInfo) {
-
 		this.personalInfo = personalInfo || { weight: null, gender: GenderOptionsMap.Unspecified };
-
 		const [datasetColumns, ...rows] = table as [DatasetColumnNames[], ...DatasetRow[]];
 
 		const drunkColumns: DrunkColumnNames[] = [
@@ -152,7 +149,6 @@ export class Kaljakori {
 				const type = this.getFilterType(key as ColumnNames);
 				// Range filter for numbers
 				if (type === 'number' && Array.isArray(filters[key]) && filters[key].length === 2) {
-					// TODO: Fix
 					return item[key] >= filters[key][0] && item[key] <= filters[key][1];
 				} else if (filters[key] instanceof Set) {
 					return item[key] && filters[key].has(item[key]);
@@ -178,5 +174,9 @@ export class Kaljakori {
 			result[key] = Array.from(this.possibleValues[key]);
 		});
 		return result;
+	}
+
+	findById(id: string) {
+		return this.data.find((item) => item[AllColumns.Number] === id);
 	}
 }

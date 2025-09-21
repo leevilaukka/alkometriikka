@@ -62,6 +62,7 @@ export const shownFilters = [
     AllColumns.Servings,
     AllColumns.PromillePerEuro,
     AllColumns.AlcoholGramsPerEuro,
+    AllColumns.New
 ] as const satisfies readonly ColumnNames[];
 
 export const shownSortingKeys = [
@@ -146,6 +147,8 @@ export const filterToUnitMarker = {
     [AllColumns.AlcoholPercentage]: '%',
     [AllColumns.Sugar]: 'g/l',
     [AllColumns.AlcoholGrams]: 'g',
+    [AllColumns.Acidity]: 'g/l',
+    [AllColumns.Energy]: 'kcal/100ml',
 } as const satisfies ColNameObj<string>;
 
 /**
@@ -156,6 +159,11 @@ export const filterRenameMap = {
     [AllColumns.BottleSize]: 'Pakkauskoko',
     [AllColumns.Sugar]: 'Sokeri',
     [AllColumns.AlcoholPercentage]: 'Alkoholi',
+    [AllColumns.Acidity]: 'Hapot',
+    [AllColumns.Energy]: 'Energia',
+    [AllColumns.Description]: 'Kuvaus',
+    [AllColumns.LabelInfo]: 'Etiketti',
+    [AllColumns.GrapeVarieties]: 'Rypäleet',
 } as const satisfies ColNameObj<string>;
 
 export const LocalStorageKeys = {
@@ -168,3 +176,14 @@ export const GenderOptionsMap = {
     Female: "Nainen",
     Unspecified: "Muu"
 } as const satisfies { [key: string]: string };
+
+export const hideFromProductPageStats = new Set<ColumnNames>([
+    DatasetColumns.AlcoholPercentage,
+    DatasetColumns.Manufacturer,
+    DatasetColumns.SortingCode,
+    DatasetColumns.BottleSize,
+    DatasetColumns.Price,
+    DatasetColumns.PricePerLiter,
+    DatasetColumns.Name,
+    DatasetColumns.Vintage
+]);

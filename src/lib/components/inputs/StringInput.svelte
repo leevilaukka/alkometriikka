@@ -8,13 +8,15 @@
 	import { twMerge } from 'tailwind-merge';
 	import Popup from '../widgets/Popup.svelte';
 
-	let { value = $bindable(), options = [], ...rest } = $props();
+	let { value = $bindable(), options = [], label, ...rest } = $props();
+	
+	const name = "stringinput-" + crypto.randomUUID();
 
 	let list = $state<ListItem[]>(options.map((option) => ({ value: option, selected: false })));
 
 	$effect(() => {
-		if(value.length === 0) list = options.map((option) => ({ value: option, selected: false }));
-	})
+		if (value.length === 0) list = options.map((option) => ({ value: option, selected: false }));
+	});
 
 	const text = $derived.by(() => {
 		if (value.length > 1) return `${value.length} valittu`;
@@ -25,96 +27,111 @@
 	let query = $state('');
 </script>
 
-{#if options.length <= 5}
-	<select
-		bind:value
-		class={twMerge(components.input(), "w-full")}
-	>
-		<option></option>
-		{#each options as option}
-			<option value={option}>{option}</option>
-		{/each}
-	</select>
-{:else}
-	<Popup>
-		{#snippet renderButton(dialogElement: HTMLDialogElement)}
-			<button 
-				class={twMerge(components.button(), "w-full justify-start")}
-				onclick={() => dialogElement.showModal()}
-				title={`${value.slice(0, 3).join(', ')}${value.length > 3 ? ` + ${value.length - 3} muuta` : ''}`}
-			>
-				{text}
-			</button>
-		{/snippet}
-		{#snippet renderContent(dialogElement: HTMLDialogElement)}
-			<div class="flex flex-col h-full max-h-full gap-4 overflow-hidden">
-				<div class="flex flex-row flex-wrap gap-4 order-1">
+<div class={twMerge("flex", options.length > 1 ? "flex-col" : "items-center")}>
+	<label for={name}>{label}</label>
+	{#if options.length === 1}
+			<input
+				class="ms-2 rounded p-2"
+				{name}
+				type="checkbox"
+				checked={value.includes(options[0])}
+				onchange={(e) => {
+					if ((e.target as HTMLInputElement).checked) value = [options[0]];
+					else value = [];
+				}}
+			/>
+	{:else if options.length <= 5}
+		<select {name} bind:value class={twMerge(components.input(), 'w-full')}>
+			<option></option>
+			{#each options as option}
+				<option value={option}>{option}</option>
+			{/each}
+		</select>
+	{:else}
+		<Popup>
+			{#snippet renderButton(dialogElement: HTMLDialogElement)}
+				<button
+					{name}
+					class={twMerge(components.button(), 'w-full justify-start')}
+					onclick={() => dialogElement.showModal()}
+					title={`${value.slice(0, 3).join(', ')}${value.length > 3 ? ` + ${value.length - 3} muuta` : ''}`}
+				>
+					{text}
+				</button>
+			{/snippet}
+			{#snippet renderContent(dialogElement: HTMLDialogElement)}
+				<div class="flex h-full max-h-full flex-col gap-4 overflow-hidden">
+					<div class="order-1 flex flex-row flex-wrap gap-4">
+						<button
+							onclick={() => {
+								list = options.map((option) => ({ value: option, selected: false }));
+								value = list.filter((option) => option.selected).map((option) => option.value);
+							}}
+							class={twMerge(components.button({ type: 'negative' }))}
+						>
+							Tyhjennä valinnat
+						</button>
+						<button
+							onclick={() => {
+								list = options.map((option) => ({ value: option, selected: true }));
+								value = list.filter((option) => option.selected).map((option) => option.value);
+							}}
+							class={twMerge(components.button())}
+						>
+							Valitse kaikki
+						</button>
+					</div>
+					<input
+						type="text"
+						bind:value={query}
+						placeholder="Hae..."
+						class="order-2 flex shrink-0 rounded border border-gray-300 px-1.5 py-0.5"
+					/>
+					<div
+						class="order-4 col-span-full flex h-[var(--height)] max-h-full flex-col overflow-auto rounded border border-gray-300 lg:order-3 lg:col-span-1"
+						style:--height={`${28 * 20}px;`}
+					>
+						<SvelteVirtualList
+							items={query
+								? list.filter((item) => item.value.toLowerCase().includes(query.toLowerCase()))
+								: list}
+							bufferSize={50}
+							itemsClass={'even'}
+						>
+							{#snippet renderItem(item: ListItem)}
+								<button
+									onclick={() => {
+										item.selected = !item.selected;
+										value = list.filter((option) => option.selected).map((option) => option.value);
+									}}
+									class={twMerge(components.button(), 'w-full rounded-none border-none bg-inherit')}
+								>
+									<span
+										class="max-w-full overflow-hidden overflow-ellipsis whitespace-nowrap"
+										title={item.value}
+									>
+										{item.value}
+									</span>
+									<input type="checkbox" bind:checked={item.selected} class="ml-auto" readonly />
+								</button>
+							{/snippet}
+						</SvelteVirtualList>
+					</div>
+				</div>
+				<div class="flex flex-row flex-wrap justify-end gap-4">
 					<button
 						onclick={() => {
-							list = options.map((option) => ({ value: option, selected: false }));
-							value = list.filter((option) => option.selected).map((option) => option.value);
+							dialogElement?.close();
 						}}
-									class={twMerge(components.button({ type: "negative" }))}
+						class={twMerge(components.button({ type: 'negative' }))}
 					>
-						Tyhjennä valinnat
-					</button>
-					<button 
-						onclick={() => {
-							list = options.map((option) => ({ value: option, selected: true }));
-							value = list.filter((option) => option.selected).map((option) => option.value);
-						}}
-									class={twMerge(components.button())}
-					>
-						Valitse kaikki
+						Sulje
 					</button>
 				</div>
-				<input
-					type="text"
-					bind:value={query}
-					placeholder="Hae..."
-					class="flex shrink-0 rounded border border-gray-300 px-1.5 py-0.5 order-2"
-				/>
-				<div class="flex max-h-full flex-col overflow-auto rounded border border-gray-300 h-[var(--height)] col-span-full lg:col-span-1 order-4 lg:order-3" style:--height={`${28*20}px;`}>
-					<SvelteVirtualList
-						items={query ? list.filter((item) => item.value.toLowerCase().includes(query.toLowerCase())) : list}
-						bufferSize={50}
-						itemsClass={"even"}
-					>
-						{#snippet renderItem(item: ListItem)}
-							<button
-								onclick={() => {
-									item.selected = !item.selected
-									value = list.filter((option) => option.selected).map((option) => option.value);
-								}}
-								class={twMerge(components.button(), "bg-inherit w-full rounded-none border-none")}
-							>
-								<span class="whitespace-nowrap overflow-hidden max-w-full overflow-ellipsis" title={item.value}>
-									{item.value}
-								</span>
-								<input
-									type="checkbox"
-									bind:checked={item.selected}
-									class="ml-auto"
-									readonly
-								/>
-							</button>
-						{/snippet}
-					</SvelteVirtualList>
-				</div>
-			</div>
-			<div class="flex flex-row flex-wrap justify-end gap-4">
-				<button
-					onclick={() => {
-						dialogElement?.close();
-					}}
-					class={twMerge(components.button({ type: "negative" }))}
-				>
-					Sulje
-				</button>
-			</div>
-		{/snippet}
-	</Popup>
-{/if}
+			{/snippet}
+		</Popup>
+	{/if}
+</div>
 
 <style>
 	:global(.string-selector .virtual-list-viewport) {

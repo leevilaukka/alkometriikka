@@ -17,21 +17,15 @@ export function calculateDrunkValue(
 	gender: typeof GenderOptionsMap[keyof typeof GenderOptionsMap] = GenderOptionsMap.Unspecified,
 	weight?: number
 ): number[] {
-	console.log(weight)
 	if (!weight) {
 		if (gender === GenderOptionsMap.Female) {
 			weight = 76; // Oletuspaino naisille
 		} else if (gender === GenderOptionsMap.Male) {
-			console.log("Setting weight for male");
 			weight = 86; // Oletuspaino miehille
 		} else {
 			weight = 79; // Oletuspaino, jos sukupuolta ei ole määritetty
 		}
 	}
-
-	console.log("Using gender:", gender);
-
-	console.log('Using weight:', weight);
 
 	// Etanolin tiheys g/l
 	const ETHANOL_DENSITY = 789;

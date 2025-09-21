@@ -6,6 +6,11 @@ export function formatValue(value: string | number, header?: ColumnNames) {
     return value
 }
 
+export function headerToUnitMarker(header: ColumnNames) {
+    if(Object.hasOwn(filterToUnitMarker, header)) return filterToUnitMarker[header as keyof typeof filterToUnitMarker]
+    return ""								
+}
+
 export function headerToDisplayName(header: ColumnNames) {
     if(Object.hasOwn(filterRenameMap, header)) return filterRenameMap[header as keyof typeof filterRenameMap];
     return header

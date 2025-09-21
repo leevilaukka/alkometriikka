@@ -4,6 +4,8 @@ import { resolve } from '$app/paths';
 import { dev } from '$app/environment';
 import { DatasetColumns } from '$lib/utils/constants';
 import type { ColumnNames } from '$lib/types';
+import { Kaljakori } from '$lib/alko';
+import { personalInfo } from '$lib/global.svelte';
 
 export const ssr = false;
 export const prerender = false;
@@ -67,6 +69,15 @@ const getDataset = async ({ fetch }: { fetch: Fetch }) => {
     return json
 }
 
+const getData = async({ fetch }: { fetch: Fetch }) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            const dataset = await getDataset({ fetch });
+            resolve({ dataset, kaljakori: new Kaljakori(dataset.table, personalInfo) });
+        } catch (error) { reject(error) }
+    })
+}
+
 export const load: PageLoad = async ({ fetch } : { fetch: Fetch }) => {
-	return { dataset: getDataset({ fetch }) };
+	return getData({ fetch });
 };

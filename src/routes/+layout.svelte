@@ -20,7 +20,7 @@
 	<title>Alkometriikka {dev ? '- DEV' : ''}</title>
 </svelte:head>
 
-{#await data.dataset}
+{#await data}
 	<div class="grid w-full h-full place-content-center">
 		<div class="flex flex-col gap-3 items-center">
 			<span class="block w-16 h-16 border-[0.5rem] border-red-600 border-b-transparent animate-spin rounded-full"></span>
@@ -29,9 +29,9 @@
 	</div>
 {:then}
 	<div class="flex flex-col w-full h-full">
-		<header class="flex h-fit items-center justify-between border-b border-gray-300 p-2">
+		<header class="flex h-fit items-center justify-between p-2 border-b border-gray-300">
 			<div class="flex flex-col items-center bg-white">
-				<img src={logo} alt="Alkoassistentti Logo" class="aspect-[10/2] h-12 object-contain" />
+				<a href="/"><img src={logo} alt="Alkoassistentti Logo" class="aspect-[10/2] h-12 object-contain" /></a>
 			</div>
 			<Popup>
 				{#snippet renderButton(dialogElement: HTMLDialogElement)}
@@ -43,6 +43,7 @@
 					</button>
 				{/snippet}
 				{#snippet renderContent(dialogElement: HTMLDialogElement)}
+				{@const weightOK = personalInfo.weight !== null && personalInfo.weight >= 1 && personalInfo.weight <= 500}
 				<div class="prose">
 					<h2 class="text-lg font-bold">Henkilökohtaiset tiedot</h2>
 					<p class="text-sm text-gray-600">Nämä tiedot vaikuttavat promillearvioihin. Annetut tiedot tallennetaan vain paikallisesti, eikä niitä lähetetä mihinkään.</p>
@@ -50,6 +51,9 @@
 				<div class="flex flex-col">
 					<label for="weight" class="text-sm">Paino (kg)</label>
 					<input type="number" name="weight" bind:value={personalInfo.weight} placeholder="Paino (kg)" class={twMerge(components.input(), "w-full")} min="1" max="500" step="0.1" />
+					{#if !weightOK}
+						<p class="text-xs text-red-600">Painon tulee olla välillä 1-500 kg.</p>
+					{/if}
 				</div>
 				<div class="flex flex-col">
 					<label for="gender" class="text-sm">Sukupuoli</label>
@@ -63,7 +67,7 @@
 				<p class="text-xs text-gray-600 self-end">Tallentaminen lataa sivun uudelleen.</p>
 				<div class="grid grid-cols-2 gap-3">
 					<button class={twMerge(components.button(), "w-full")} onclick={() => dialogElement.close()}>Sulje</button>
-					<button class={twMerge(components.button({type: "positive"}), "w-full")} onclick={() => window.location.reload()}>Tallenna</button>
+					<button class={twMerge(components.button({type: "positive"}), "w-full", !weightOK ? 'opacity-50 cursor-not-allowed' : '')} disabled={!weightOK} onclick={() => window.location.reload()}>Tallenna</button>
 				</div>
 				{/snippet}
 			</Popup>
