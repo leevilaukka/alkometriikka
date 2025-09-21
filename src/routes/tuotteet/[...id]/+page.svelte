@@ -7,9 +7,11 @@
 	import { redirect } from '@sveltejs/kit';
 
 	let  { data }: { data: Promise<{ dataset: { table: DatasetRow[]; metadata: FullProperties }, kaljakori: Kaljakori }> } = $props(); 
-	const id = page.params.id
+	const id = page.params.id?.split('/')[0]; // Handle both /tuotteet/123 and /tuotteet/123/extra paths
 
-	if (!id) redirect(418, "/");
+	console.log('id', id);
+
+	if (!id) redirect(300, "/");
 </script>
 
 {#await data then data}
