@@ -1,12 +1,11 @@
 import type { PageLoad } from './$types';
-import * as XLSX from 'xlsx';
 import { resolve } from '$app/paths';
 import { dev } from '$app/environment';
 import { DatasetColumns } from '$lib/utils/constants';
 import type { ColumnNames } from '$lib/types';
 import { Kaljakori } from '$lib/alko';
 import { personalInfo } from '$lib/global.svelte';
-import { decompress } from 'lz-string';
+import { decompress, decompressFromUTF16 } from 'lz-string';
 
 export const ssr = false;
 export const prerender = false;
@@ -33,7 +32,10 @@ const fetchAlkoPriceList = async ({ fetch }: {fetch: Fetch}) => {
 }
 
 const formatDatasetToJSON = (data: string) => {
-    const { dataset: table, metadata } = JSON.parse(decompress(data));
+    console.log("data", data)
+    const decompressed = decompressFromUTF16(data);
+    console.log("decompressed", decompressed)
+    const { dataset: table, metadata } = JSON.parse(decompressed);
     if(!table) throw new Error("Hinnaston purku epäonnistui");
 
     console.log(table)

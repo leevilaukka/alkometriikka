@@ -1,4 +1,4 @@
-import { compress } from "lz-string"
+import { compress, compressToUTF16 } from "lz-string"
 import XLSX from "xlsx"
 
 const DATASET_URL = "https://www.alko.fi/INTERSHOP/static/WFS/Alko-OnlineShop-Site/-/Alko-OnlineShop/fi_FI/Alkon%20Hinnasto%20Tekstitiedostona/alkon-hinnasto-tekstitiedostona.xlsx"
@@ -42,7 +42,7 @@ function formatXLSXToJSON(data: ArrayBuffer) {
 
 function saveDataset(data: { table: any[], metadata: XLSX.FullProperties }) {
     const json = JSON.stringify(data);
-    const compressed = compress(json);
+    const compressed = compressToUTF16(json);
     Bun.write("./data.txt", compressed);
 }
 
