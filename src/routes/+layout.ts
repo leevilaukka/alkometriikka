@@ -35,7 +35,7 @@ const formatDatasetToJSON = (data: string) => {
     console.log("data", data)
     const decompressed = decompressFromUTF16(data);
     console.log("decompressed", decompressed)
-    const { dataset: table, metadata } = JSON.parse(decompressed);
+    const { table, metadata } = JSON.parse(decompressed);
     if(!table) throw new Error("Hinnaston purku epäonnistui");
 
     console.log(table)
