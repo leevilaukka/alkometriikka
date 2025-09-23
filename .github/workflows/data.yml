@@ -14,12 +14,10 @@ jobs:
         permissions:
             contents: write
         runs-on: ubuntu-latest
-        steps:
+        steps: 
         - name: Checkout repository
           uses: actions/checkout@v4
-          with:
-            ref: gh-pages
-  
+
         - name: Install Bun
           uses: oven-sh/setup-bun@v2
 
@@ -27,6 +25,19 @@ jobs:
           run: |
             bun install
             bun run scripts/setup.ts
+
+        - name: Stash changes
+          run: |
+            git stash --include-untracked
+
+        - name: Checkout repository
+          uses: actions/checkout@v4
+          with:
+            ref: gh-pages
+  
+        - name: Apply stashed changes
+          run: |
+            git stash pop || echo "No stashed changes to apply"
 
         - name: Commit and push downloaded file
           run: |
