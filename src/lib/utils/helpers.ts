@@ -30,3 +30,7 @@ export function sortingOrderToString(order: boolean, header?: ColumnNames) {
     }
     return order ? "Nouseva" : "Laskeva";
 }
+
+export function productIdsToDataset(table: string[][], productIds: string[]) {
+    return [table[0], ...table.filter(row => productIds.includes(row[0] as string))];
+}

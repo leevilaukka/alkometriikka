@@ -15,10 +15,12 @@
 	let list = $state<ListItem[]>(options.map((option) => ({ value: option, selected: false })));
 
 	$effect(() => {
+		if (!value) return;
 		if (value.length === 0) list = options.map((option) => ({ value: option, selected: false }));
 	});
 
 	const text = $derived.by(() => {
+		if (!value) return 'Ei valintoja';
 		if (value.length > 1) return `${value.length} valittu`;
 		else if (value.length == 1) return value.at(0);
 		else return 'Ei valintoja';
@@ -34,27 +36,20 @@
 				class="ms-2 rounded p-2"
 				{name}
 				type="checkbox"
-				checked={value.includes(options[0])}
+				checked={value && value.includes(options[0])}
 				onchange={(e) => {
 					if ((e.target as HTMLInputElement).checked) value = [options[0]];
 					else value = [];
 				}}
 			/>
-	{:else if options.length <= 5}
-		<select {name} bind:value class={twMerge(components.input(), 'w-full')}>
-			<option></option>
-			{#each options as option}
-				<option value={option}>{option}</option>
-			{/each}
-		</select>
 	{:else}
-		<Popup>
+		<Popup class="p-4 gap-4">
 			{#snippet renderButton(dialogElement: HTMLDialogElement)}
 				<button
 					{name}
 					class={twMerge(components.button(), 'w-full justify-start')}
 					onclick={() => dialogElement.showModal()}
-					title={`${value.slice(0, 3).join(', ')}${value.length > 3 ? ` + ${value.length - 3} muuta` : ''}`}
+					title={value && `${value.slice(0, 3).join(', ')}${value.length > 3 ? ` + ${value.length - 3} muuta` : ''}`}
 				>
 					{text}
 				</button>
@@ -132,9 +127,3 @@
 		</Popup>
 	{/if}
 </div>
-
-<style>
-	:global(.string-selector .virtual-list-viewport) {
-		overflow-x: hidden;
-	}
-</style>

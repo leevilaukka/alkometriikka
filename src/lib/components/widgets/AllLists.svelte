@@ -1,0 +1,46 @@
+<script lang="ts">
+    import { lists } from "$lib/global.svelte";
+	import { createList, deleteList } from "$lib/utils/lists";
+	import { components } from "$lib/utils/styles";
+	import { twMerge } from "tailwind-merge";
+	import Icon from "./Icon.svelte";
+	import type { ListObj } from "$lib/types";
+
+    const { action, show }: { action: (list: ListObj) => void; show?: { delete?: boolean, length?: boolean } } = $props();
+    const time = new Date();
+
+    function handleCreateList() {
+        createList(`Uusi lista - ${time.getDate()}.${time.getMonth() + 1}.${time.getFullYear()} ${time.getHours() < 10 ? '0' : ''}${time.getHours()}.${time.getMinutes() < 10 ? '0' : ''}${time.getMinutes()}`);
+    }
+
+</script>
+
+<div class={twMerge("flex flex-col gap-4 w-[min(80ch,_100%)]", lists.length === 0 && "h-full justify-center")}>
+    {#if lists.length > 0}
+        <div class="flex flex-col gap-4">
+            {#each lists as list}
+                <div class="flex justify-between items-center gap-2 p-2 border rounded border-gray-300" onclick={() => { action(list) }} onkeydown={() => {}} role="link" tabindex="0">
+                    <div class="flex flex-col">
+                        <p aria-label={list.name} class={twMerge("w-full justify-start text-lg")}>
+                            <span>{list.name}</span>
+                        </p>
+                        <p aria-label={list.name} class={twMerge("w-full justify-start text-gray-600 text-sm")}>
+                            <span>{`Tuotteet: ${list.items.length}`}</span>
+                        </p>
+                    </div>
+                    {#if show?.delete}
+                        <button onclick={(e) => { e.stopPropagation(); deleteList(list) }} aria-label={list.name} class={twMerge(components.button({ type: "negative", size: "md" }), "aspect-square w-fit")}>
+                            <Icon name="trash" />
+                        </button>
+                    {/if}
+                </div>
+            {/each}
+        </div>
+    {:else}
+        <div class="prose text-center mx-auto">  
+            <h2>Ei listoja!</h2>
+            <p>Luo uusi lista alla olevasta painikkeesta!</p>
+        </div>
+    {/if}
+    <button onclick={() => handleCreateList()} class={twMerge(components.button({type: "positive"}), "mx-auto w-full")}><span>Uusi lista</span><Icon name="plus" /></button>
+</div>

@@ -169,6 +169,8 @@ export const filterRenameMap = {
 export const LocalStorageKeys = {
     PersonalInfo: "personal_info",
     Lists: "lists",
+    ListsVersion: "lists_version",
+    AppVersion: "app_version",
 } as const;
 
 export const GenderOptionsMap = {

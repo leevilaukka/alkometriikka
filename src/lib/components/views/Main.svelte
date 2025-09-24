@@ -4,7 +4,7 @@
 	import { generateImageUrl } from '$lib/utils/image.js';
 	import SvelteVirtualList from '@humanspeak/svelte-virtual-list';
 	import { twMerge } from 'tailwind-merge';
-	import type { ColumnNames, DatasetRow, PriceListItem } from '$lib/types';
+	import type { ColumnNames, ListObj, PriceListItem } from '$lib/types';
 	import {
 		shownFilters,
 		filterRenameMap,
@@ -19,33 +19,26 @@
 	import {
 		formatValue,
 		headerToDisplayName,
-		headerToUnitMarker,
 		sortingOrderToString,
 		valueToString
 	} from '$lib/utils/helpers';
-	import type { FullProperties } from 'xlsx';
 	import Icon from '../widgets/Icon.svelte';
 	import type { Kaljakori } from '$lib/alko';
+	import Popup from '../widgets/Popup.svelte';
+	import AllLists from '../widgets/AllLists.svelte';
+	import { addToList } from '$lib/utils/lists';
+	import { isMobile } from '$lib/global.svelte';
+	import Filters from '../widgets/Filters.svelte';
 
 	const { kaljakori }: { kaljakori: Kaljakori } = $props();
 
 	console.log(kaljakori);
 
-	let listRef: SvelteVirtualList<PriceListItem> | null = null;
+	let listRef: SvelteVirtualList<PriceListItem> | null = $state(null);
 
-	const filters = shownFilters;
-
-	function initFilterValues() {
-		return [...shownFilters, AllColumns.BeerType].reduce<{ [key: string]: any }>((obj, filter) => {
-			if (kaljakori.getFilterType(filter) == 'number')
-				obj[filter] = kaljakori.getMinAndMaxValues(filter);
-			else if (kaljakori.getFilterType(filter) == 'string') obj[filter] = [];
-			else if (kaljakori.getFilterType(filter) == 'any') obj[filter] = [];
-			return obj;
-		}, {});
-	}
-
-	let filterValues = $state(initFilterValues());
+	let filtersComponent: Filters | null = $state(null);
+	let filterValues = $state({});
+	let showFilters = $derived(!$isMobile);
 
 	let selectedHighlight = $state(defaultSortingColumn);
 
@@ -54,35 +47,10 @@
 		defaultSortingOrderMap[selectedSortingColumn as keyof typeof defaultSortingOrderMap] || false
 	);
 
-	let filtersElement: HTMLDialogElement;
-	let isMobile = $state(window.matchMedia('(width <= 48rem)').matches);
-	let showFilters = $derived(!isMobile);
-
-	$effect(() => {
-		if (filtersElement.open) filtersElement.close();
-		if (isMobile) return;
-		filtersElement.show();
-	});
-
-	$effect(() => {
-		if (
-			filterValues[AllColumns.Type]?.length !== 1 ||
-			filterValues[AllColumns.Type]?.[0] !== 'Oluet'
-		) {
-			filterValues[AllColumns.BeerType] = [];
-		}
-	});
-
-	function toggleFilterElement() {
-		if (!filtersElement) return;
-		if (filtersElement.open) filtersElement.close();
-		else if (isMobile) filtersElement.showModal();
-		else filtersElement.show();
-	}
 
 	let rows = $derived.by(() => {
-		let filterValuesCopy = { ...filterValues };
-		Object.keys(filterValuesCopy as Record<string, any>).forEach((key) => {
+		let filterValuesCopy: Record<string, any> = { ...filterValues };
+		Object.keys(filterValuesCopy).forEach((key) => {
 			if (
 				Array.isArray(filterValuesCopy[key]) &&
 				kaljakori.getFilterType(key as ColumnNames) !== 'number'
@@ -96,68 +64,17 @@
 		return temp;
 	});
 
-	window.addEventListener('resize', () => {
-		isMobile = window.matchMedia('(width <= 48rem)').matches;
-	});
 </script>
 
 <div class="relative grid h-full grid-cols-[auto_1fr]">
 	<aside
-		class="flex h-full flex-col overflow-x-hidden overflow-y-auto md:w-84 md:border-r border-gray-300 z-10"
+		class="z-10 flex h-full flex-col overflow-x-hidden overflow-y-auto border-gray-300 md:w-84 md:border-r"
 	>
-		<dialog
-			bind:this={filtersElement}
-			class={twMerge(
-				'relative m-auto hidden h-full w-full flex-col gap-4 rounded-lg border bg-gray-50 border-gray-200 p-4 backdrop:backdrop-blur-sm open:flex md:relative md:rounded-none md:border-0 md:border-r'
-			)}
-			onclose={() => (showFilters = false)}
-		>
-			{#each filters as filter}
-				{@const possibleValues = kaljakori.getFilterValues(filter)}
-				{@const type = kaljakori.getFilterType(filter)}
-				<div class="flex w-full flex-col text-sm">
-					{#if type === 'number'}
-						{@const [min, max] = kaljakori.getMinAndMaxValues(filter) as number[]}
-						<NumberInput label={filter} bind:value={filterValues[filter]} {min} {max} step={0.01} />
-					{:else}
-						<StringInput label={filter} options={possibleValues} bind:value={filterValues[filter]} name={filter} />
-						{#if filter === AllColumns.Type && [AllColumns.Type]?.length === 1 && filterValues[AllColumns.Type]?.[0] === 'Oluet'}
-							<StringInput
-								label={filterRenameMap[AllColumns.BeerType as keyof typeof filterRenameMap] ?? AllColumns.BeerType}
-								options={kaljakori.getFilterValues(AllColumns.BeerType)}
-								bind:value={filterValues[AllColumns.BeerType]}
-								name={AllColumns.BeerType}
-							/>
-						{/if}
-					{/if}
-				</div>
-			{/each}
-			<div
-				class="sticky bottom-0 mt-auto flex w-full backdrop:backdrop-blur-sm flex-col gap-2 md:border-0 md:p-0"
-			>
-				<button
-					onclick={() => {
-						filterValues = initFilterValues();
-						listRef?.scroll({ index: 0 });
-					}}
-					class={twMerge(components.button({ type: 'negative' }), 'w-full', 'mt-auto')}
-				>
-					<Icon name={'x_circle'} />
-					<span>Tyhjennä suodattimet</span>
-				</button>
-				{#if isMobile}
-					<button
-						onclick={() => {
-							toggleFilterElement();
-							showFilters = !showFilters;
-						}}
-						class={twMerge(components.button(), 'w-full')}
-					>
-						<span>Sulje suodattimet</span>
-					</button>
-				{/if}
-			</div>
-		</dialog>
+		<Filters
+			{kaljakori}
+			bind:filterValues
+			bind:this={filtersComponent}
+		/>
 	</aside>
 	<main class="mx-auto flex h-full w-full flex-col gap-3 bg-gray-100 p-4 md:gap-4 md:p-6">
 		<div class="flex w-full flex-col items-start gap-4">
@@ -233,7 +150,9 @@
 					{@const ratings = ['Matala', 'Kohtalainen', 'Korkea']}
 					{@const rating = ratings[Number(((ratings.length - 1) * multiplier).toFixed(0))]}
 					<div
-						class={twMerge('relative flex flex-col gap-3 rounded border border-gray-200 shadow overflow-clip bg-white')}
+						class={twMerge(
+							'relative flex flex-col gap-3 overflow-clip rounded border border-gray-200 bg-white shadow'
+						)}
 					>
 						<div
 							class={twMerge('flex flex-col flex-nowrap items-center gap-4 p-4 pb-0 md:flex-row')}
@@ -252,10 +171,7 @@
 									>
 										{'#' + (idx + 1)}
 									</span>
-									<a
-										href={`/tuotteet/${item[AllColumns.Number]}`}
-										class="hover:underline"
-									>
+									<a href={`/tuotteet/${item[AllColumns.Number]}`} class="hover:underline">
 										<h2 class="text-xl font-bold md:text-2xl">
 											{item[AllColumns.Name]} ({formatValue(
 												item[AllColumns.BottleSize],
@@ -327,6 +243,27 @@
 											Alkoholiton
 										</p>
 									{/if}
+
+									<Popup class="p-4 gap-4">
+										{#snippet renderButton(dialogElement: HTMLDialogElement)}
+											<button
+												class={twMerge(components.button({ type: 'positive' }), 'ml-auto')}
+												onclick={() => dialogElement.showModal()}
+											>
+												<span>Lisää listaan</span>
+												<Icon name="plus" />
+											</button>
+										{/snippet}
+										{#snippet renderContent(dialogElement: HTMLDialogElement)}
+											<h2 class="text-xl">Valitse lista</h2>
+											<AllLists
+												action={(list: ListObj) => {
+													addToList(list, item[AllColumns.Number]);
+													dialogElement.close();
+												}}
+											/>
+										{/snippet}
+									</Popup>
 								</div>
 							</div>
 						</div>
@@ -354,10 +291,10 @@
 				{/snippet}
 			</SvelteVirtualList>
 		</div>
-		{#if isMobile}
+		{#if $isMobile}
 			<button
 				onclick={() => {
-					toggleFilterElement();
+					filtersComponent?.toggleFilterElement();
 					showFilters = !showFilters;
 				}}
 				class={twMerge(components.button(), 'w-full')}

@@ -6,6 +6,7 @@ import type { ColumnNames } from '$lib/types';
 import { Kaljakori } from '$lib/alko';
 import { personalInfo } from '$lib/global.svelte';
 import { decompress, decompressFromUTF16 } from 'lz-string';
+import type { FullProperties } from 'xlsx';
 
 export const ssr = false;
 export const prerender = false;
@@ -21,7 +22,7 @@ function getDatasetURL() {
 
 type Fetch = (input: RequestInfo | URL, init?: RequestInit | undefined) => Promise<Response>
 
-const fetchAlkoPriceList = async ({ fetch }: {fetch: Fetch}) => {
+async function fetchAlkoPriceList({ fetch }: { fetch: Fetch; }) {
     console.log("Fetching Alko price list...");
     const req = await fetch(getDatasetURL());
     if (!req.ok) {
@@ -31,44 +32,40 @@ const fetchAlkoPriceList = async ({ fetch }: {fetch: Fetch}) => {
     return text;
 }
 
-const formatDatasetToJSON = (data: string) => {
-    console.log("data", data)
+function formatDatasetToJSON(data: string) {
     const decompressed = decompressFromUTF16(data);
-    console.log("decompressed", decompressed)
     const { table, metadata } = JSON.parse(decompressed);
-    if(!table) throw new Error("Hinnaston purku epäonnistui");
-
-    console.log(table)
+    if (!table) throw new Error("Hinnaston purku epäonnistui");
     if (table.length === 0) {
         throw new Error("Hinnasto on tyhjä tai väärässä muodossa");
     }
     // Validate that all columns in the dataset are known
     const knownColumns = Object.values(DatasetColumns) as ColumnNames[];
-    if(table[0][0] !== DatasetColumns.Number) throw new Error("Hinnasto on tyhjä tai väärässä muodossa");
+    if (table[0][0] !== DatasetColumns.Number) throw new Error("Hinnasto on tyhjä tai väärässä muodossa");
     table[0].forEach((column: typeof DatasetColumns[keyof typeof DatasetColumns]) => {
-        if(!knownColumns.includes(column)) throw new Error(`Tuntematon sarake datassa: ${column}`);
-    })
+        if (!knownColumns.includes(column)) throw new Error(`Tuntematon sarake datassa: ${column}`);
+    });
     return {
         table,
         metadata
-    }
+    };
 }
 
-const getDataset = async ({ fetch }: { fetch: Fetch }) => {
+async function getDataset({ fetch }: { fetch: Fetch; }) {
     const data = await fetchAlkoPriceList({ fetch });
     const json = formatDatasetToJSON(data);
-    return json
+    return json;
 }
 
-const getData = async({ fetch }: { fetch: Fetch }) => {
-    return new Promise(async (resolve, reject) => {
+async function getData({ fetch }: { fetch: Fetch; }) {
+    return new Promise<{ dataset: { table: any[]; metadata: FullProperties; }; kaljakori: Kaljakori; }>(async (resolve, reject) => {
         try {
             const dataset = await getDataset({ fetch });
             resolve({ dataset, kaljakori: new Kaljakori(dataset.table, personalInfo) });
-        } catch (error) { reject(error) }
-    })
+        } catch (error) { reject(error); }
+    });
 }
 
-export const load: PageLoad = async ({ fetch } : { fetch: Fetch }) => {
+export function load({ fetch }: { fetch: Fetch }) {
 	return getData({ fetch });
 };

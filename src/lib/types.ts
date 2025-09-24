@@ -56,3 +56,12 @@ export type DrunkColumnNames = typeof DrunkColumns[keyof typeof DrunkColumns];
 export type ColumnNames = typeof AllColumns[keyof typeof AllColumns];
 
 export type ColNameObj<T> = { [key in ColumnNames]?: T };
+
+export type ListObj = {
+    id: string;
+    name: string;
+    items: {
+        id: string;
+        q: number;
+    }[];
+}

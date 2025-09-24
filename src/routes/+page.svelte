@@ -3,8 +3,9 @@
 	import type { FullProperties } from 'xlsx';
 	import Main from '$lib/components/views/Main.svelte';
 	import type { Kaljakori } from '$lib/alko';
+	import type { PageProps } from './$types';
 
-	let  { data }: { data: Promise<{ dataset: { table: DatasetRow[]; metadata: FullProperties }, kaljakori: Kaljakori }> } = $props();
+	let  { data }: PageProps = $props();
 </script>
 
 {#await data then data}

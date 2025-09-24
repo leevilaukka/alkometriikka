@@ -3,7 +3,7 @@
 	import favicon from '$lib/assets/images/favicon.png';
 	import { dev } from '$app/environment';
 	import { GenderOptionsMap, LocalStorageKeys } from '$lib/utils/constants';
-	import { personalInfo } from '$lib/global.svelte';
+	import { isMobile, lists, personalInfo } from '$lib/global.svelte';
 	import logo from '$lib/assets/images/logo.png';
 	import Popup from '$lib/components/widgets/Popup.svelte';
 	import { twMerge } from 'tailwind-merge';
@@ -13,6 +13,12 @@
 	let { children, data } = $props();
 
 	$effect(() => { localStorage.setItem(LocalStorageKeys.PersonalInfo, JSON.stringify(personalInfo))})
+	$effect(() => { localStorage.setItem(LocalStorageKeys.Lists, JSON.stringify(lists))})
+	
+
+	window.addEventListener('resize', () => {
+		$isMobile = window.matchMedia('(width <= 48rem)').matches;
+	});
 </script>
 
 <svelte:head>
@@ -29,17 +35,22 @@
 	</div>
 {:then}
 	<div class="flex flex-col w-full h-full">
-		<header class="flex h-fit items-center justify-between p-2 border-b border-gray-300">
-			<div class="flex flex-col items-center bg-white">
+		<header class="flex h-fit items-center p-2 border-b border-gray-300">
+			<div class="flex flex-row gap-3 items-center bg-white">
 				<a href="/"><img src={logo} alt="Alkoassistentti Logo" class="aspect-[10/2] h-12 object-contain" /></a>
 			</div>
-			<Popup>
+			<a href="/listat" class="ms-auto me-2">
+				<button class={twMerge(components.button(), "p-2 text-xl")}>
+					{#if !$isMobile}<span class="text-sm">Listat</span>{/if}<Icon name="list" />
+				</button>
+			</a>
+			<Popup class="p-4 gap-4">
 				{#snippet renderButton(dialogElement: HTMLDialogElement)}
 					<button 
 						class={twMerge(components.button(), "p-2 text-xl")}
 						onclick={() => dialogElement.showModal()}
 					>
-						<Icon name="settings" />
+						{#if !$isMobile}<span class="text-sm">Asetukset</span>{/if}<Icon name="settings" />
 					</button>
 				{/snippet}
 				{#snippet renderContent(dialogElement: HTMLDialogElement)}

@@ -5,6 +5,10 @@
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/styles';
 	import Icon from '../widgets/Icon.svelte';
+	import Popup from '../widgets/Popup.svelte';
+	import AllLists from '../widgets/AllLists.svelte';
+	import { type ListObj } from '$lib/types';
+	import { addToList } from '$lib/utils/lists';
 	const { product } = $props();
 </script>
 
@@ -62,6 +66,24 @@
         </div>
     </div>
     <div class="flex w-full items-center gap-4 md:justify-end">
+            <Popup class="p-4 gap-4">
+				{#snippet renderButton(dialogElement: HTMLDialogElement)}
+					<button 
+						class={twMerge(components.button({ type: "positive", size: "md" }))}
+						onclick={() => dialogElement.showModal()}
+					>
+                        <span>Lisää listaan</span>
+						<Icon name="plus" />
+					</button>
+				{/snippet}
+				{#snippet renderContent(dialogElement: HTMLDialogElement)}
+					<h2 class="text-xl">Valitse lista</h2>
+                    <AllLists action={(list: ListObj) => { 
+                        addToList(list, product[AllColumns.Number])
+                        dialogElement.close();
+                     }} />
+				{/snippet}
+			</Popup>
         <a
             href={`https://www.alko.fi/tuotteet/${product[AllColumns.Number]}`}
             target="_blank"

@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 
 export const components = {
-    button: cva("flex flex-nowrap items-center justify-center gap-2 w-fit rounded px-2 py-1", {
+    button: cva("flex flex-nowrap items-center justify-center gap-2 w-fit rounded px-2 py-1 no-underline", {
         variants: {
             type: {
                 primary: "bg-white text-black border border-gray-300 hover:border-gray-400",

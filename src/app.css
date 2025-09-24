@@ -40,3 +40,7 @@ input:focus {
 .even>*:nth-child(odd) {
     @apply bg-gray-200;
 }
+
+.string-selector .virtual-list-viewport {
+    overflow-x: hidden;
+}
