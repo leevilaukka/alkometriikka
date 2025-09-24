@@ -32,9 +32,12 @@
 
 	const { list: importedList, dataset }: { list: ListObj; dataset: string[][] } = $props();
 
+
 	const existingList = getListById(importedList.id);
 
 	const list = existingList || importedList;
+
+	document.title = `Alkometriikka | Lista - ${list.name}`;
 
 	const listDataset = $derived.by(() => { 
 		return productIdsToDataset(dataset, list.items.map((i) => i.id)) 

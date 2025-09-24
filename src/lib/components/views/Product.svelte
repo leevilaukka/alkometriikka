@@ -10,6 +10,8 @@
 	import { type ListObj } from '$lib/types';
 	import { addToList } from '$lib/utils/lists';
 	const { product } = $props();
+
+   document.title = `Alkometriikka | ${product[AllColumns.Name]}`;
 </script>
 
 <div

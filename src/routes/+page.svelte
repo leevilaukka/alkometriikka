@@ -6,6 +6,8 @@
 	import type { PageProps } from './$types';
 
 	let  { data }: PageProps = $props();
+
+	document.title = 'Alkometriikka';
 </script>
 
 {#await data then data}

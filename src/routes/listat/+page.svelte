@@ -7,9 +7,9 @@
     const { data } = $props()
 
 	if (data.list) {
-		document.title = `Lista - ${data.list.name}`;
+		document.title = `Alkometriikka | Lista - ${data.list.name}`;
 	} else {
-		document.title = 'Listat';
+		document.title = 'Alkometriikka | Listat';
 	}
 </script>
 
