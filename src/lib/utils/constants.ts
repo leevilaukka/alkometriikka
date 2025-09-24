@@ -1,4 +1,4 @@
-import type { ColNameObj, ColumnNames, GenderOptions } from "$lib/types";
+import type { ColNameObj, ColumnNames } from "$lib/types";
 
 
 export const DatasetColumns = Object.freeze({

@@ -1,13 +1,9 @@
 <script lang="ts">
-	import StringInput from '$lib/components/inputs/StringInput.svelte';
-	import NumberInput from '$lib/components/inputs/NumberInput.svelte';
 	import { generateImageUrl } from '$lib/utils/image.js';
 	import SvelteVirtualList from '@humanspeak/svelte-virtual-list';
 	import { twMerge } from 'tailwind-merge';
 	import type { ColumnNames, ListObj, PriceListItem } from '$lib/types';
 	import {
-		shownFilters,
-		filterRenameMap,
 		filterToUnitMarker,
 		shownColumnsToHighlight,
 		defaultSortingColumn,

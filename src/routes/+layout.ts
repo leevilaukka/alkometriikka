@@ -1,11 +1,10 @@
-import type { PageLoad } from './$types';
 import { resolve } from '$app/paths';
 import { dev } from '$app/environment';
 import { DatasetColumns } from '$lib/utils/constants';
 import type { ColumnNames } from '$lib/types';
 import { Kaljakori } from '$lib/alko';
 import { personalInfo } from '$lib/global.svelte';
-import { decompress, decompressFromUTF16 } from 'lz-string';
+import { decompressFromUTF16 } from 'lz-string';
 import type { FullProperties } from 'xlsx';
 
 export const ssr = false;
