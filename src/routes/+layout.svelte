@@ -164,7 +164,7 @@
 										a.click();
 										document.body.removeChild(a);
 										URL.revokeObjectURL(url);
-									}}>Vie tiedot</button
+									}}> <Icon name="download" /> <span>Vie tiedot</span></button
 								>
 
 								<button
@@ -196,7 +196,7 @@
 											}
 										};
 										input.click();
-									}}>Tuo tiedot</button
+									}}> <Icon name="upload" /> <span>Tuo tiedot</span></button
 								>
 							</div>
 						</div>
@@ -218,7 +218,7 @@
 										localStorage.clear();
 										window.location.reload();
 									}
-								}}>Tyhjennä</button
+								}}> <Icon name="trash" /> <span>Tyhjennä</span></button
 							>
 						</div>
 						<button class={twMerge(components.button(), 'w-full')} onclick={() => dialogElement.close()}>Sulje</button>
