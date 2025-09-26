@@ -28,6 +28,7 @@ jobs:
 
         - name: Stash changes
           run: |
+            git add data.txt -f
             git stash --include-untracked
 
         - name: Checkout repository
