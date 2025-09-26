@@ -13,11 +13,14 @@
 
 	let { children, data } = $props();
 
-	$effect(() => { localStorage.setItem(LocalStorageKeys.PersonalInfo, JSON.stringify(personalInfo))})
-	$effect(() => { localStorage.setItem(LocalStorageKeys.Lists, JSON.stringify(lists))})
+	$effect(() => {
+		localStorage.setItem(LocalStorageKeys.PersonalInfo, JSON.stringify(personalInfo));
+	});
+	$effect(() => {
+		localStorage.setItem(LocalStorageKeys.Lists, JSON.stringify(lists));
+	});
 
-	let tab = $state<'personal' | 'info'>('personal');
-	
+	let tab = $state<'personal' | 'info' | 'settings'>('personal');
 
 	window.addEventListener('resize', () => {
 		$isMobile = window.matchMedia('(width <= 48rem)').matches;
@@ -30,92 +33,267 @@
 </svelte:head>
 
 {#await data}
-	<div class="grid w-full h-full place-content-center">
-		<div class="flex flex-col gap-3 items-center">
-			<span class="block w-16 h-16 border-[0.5rem] border-red-600 border-b-transparent animate-spin rounded-full"></span>
+	<div class="grid h-full w-full place-content-center">
+		<div class="flex flex-col items-center gap-3">
+			<span
+				class="block h-16 w-16 animate-spin rounded-full border-[0.5rem] border-red-600 border-b-transparent"
+			></span>
 			<p>Ladataan...</p>
 		</div>
 	</div>
 {:then}
-	<div class="flex flex-col w-full h-full">
-		<header class="flex h-fit items-center p-2 border-b border-gray-300">
-			<div class="flex flex-row gap-3 items-center bg-white">
-				<a href="/"><img src={logo} alt="Alkoassistentti Logo" class="aspect-[10/2] h-12 object-contain" /></a>
+	<div class="flex h-full w-full flex-col">
+		<header class="flex h-fit items-center border-b border-gray-300 p-2">
+			<div class="flex flex-row items-center gap-3 bg-white">
+				<a href="/"
+					><img
+						src={logo}
+						alt="Alkoassistentti Logo"
+						class="aspect-[10/2] h-12 object-contain"
+					/></a
+				>
 			</div>
 			{#if dev}
 				<span class="ms-2 rounded bg-red-200 px-1.5 py-0.5 text-sm text-red-800">DEV</span>
 			{/if}
 			<a href="/listat" class="ms-auto me-2">
-				<button class={twMerge(components.button(), "p-2 text-xl")}>
+				<button class={twMerge(components.button(), 'p-2 text-xl')}>
 					{#if !$isMobile}<span class="text-sm">Listat</span>{/if}<Icon name="list" />
 				</button>
 			</a>
-			<Popup class="p-4 gap-4">
+			<Popup class="gap-4 p-4">
 				{#snippet renderButton(dialogElement: HTMLDialogElement)}
-					<button 
-						class={twMerge(components.button(), "p-2 text-xl")}
+					<button
+						class={twMerge(components.button(), 'p-2 text-xl')}
 						onclick={() => dialogElement.showModal()}
 					>
 						{#if !$isMobile}<span class="text-sm">Asetukset</span>{/if}<Icon name="settings" />
 					</button>
 				{/snippet}
 				{#snippet renderContent(dialogElement: HTMLDialogElement)}
-				<!-- Tab selector -->
-				<div class="flex flex-row gap-2 border-b border-gray-300 pb-2 mb-2">
-					<button class={twMerge(components.button(), "w-full", tab === 'personal' ? 'bg-gray-200' : '')} onclick={() => tab = 'personal'}><Icon name="user" />{#if !$isMobile}<span class="ms-2">Henkilökohtaiset tiedot</span>{/if}</button>
-					<button class={twMerge(components.button(), "w-full", tab === 'info' ? 'bg-gray-200' : '')} onclick={() => tab = 'info'}><Icon name="info" />{#if !$isMobile}<span class="ms-2">Tietoa</span>{/if}</button>
-
-				</div>
-				{#if tab === 'info'}
-					<div class="prose">
-						<h2 class="text-lg font-bold">Tietoa</h2>
-						<p>Alkometriikka on <a href="https://github.com/leevilaukka/alkometriikka" target="_blank">avoimen lähdekoodin</a> web-sovellus, joka listaa Alkon tuotevalikoiman ja antaa käyttäjille hieman laskennallista tietoa tuotteista.</p>
-						<p>Hinnasto ladataan Alkon julkisesta Excel-tiedostosta. Tiedostoa päivitetään noin vuorokauden viiveellä. Voit <a href="https://www.alko.fi/INTERSHOP/static/WFS/Alko-OnlineShop-Site/-/Alko-OnlineShop/fi_FI/Alkon%20Hinnasto%20Tekstitiedostona/alkon-hinnasto-tekstitiedostona.xlsx" target="_blank" rel="noopener noreferrer">ladata sen täältä</a>.</p>
+					<!-- Tab selector -->
+					<div class="mb-2 flex flex-row gap-2 border-b border-gray-300 pb-2">
+						<button
+							class={twMerge(
+								components.button(),
+								'w-full',
+								tab === 'personal' ? 'bg-gray-200' : ''
+							)}
+							onclick={() => (tab = 'personal')}
+							><Icon name="user" />{#if !$isMobile}<span class="ms-2">Henkilökohtaiset tiedot</span
+								>{/if}</button
+						>
+						<button
+							class={twMerge(
+								components.button(),
+								'w-full',
+								tab === 'settings' ? 'bg-gray-200' : ''
+							)}
+							onclick={() => (tab = 'settings')}
+						>
+							<Icon name="settings" />{#if !$isMobile}<span class="ms-2">Lisäasetukset</span
+								>{/if}</button
+						>
+						<button
+							class={twMerge(components.button(), 'w-full', tab === 'info' ? 'bg-gray-200' : '')}
+							onclick={() => (tab = 'info')}
+							><Icon name="info" />{#if !$isMobile}<span class="ms-2">Tietoa</span>{/if}</button
+						>
 					</div>
-					{console.log(data.dataset.metadata)}
-					<p class="text-sm text-gray-600">Versio: <a href="https://github.com/leevilaukka/alkometriikka/commit/{version}">{version}</a> {#if data.dataset.metadata?.CreatedDate} | Hinnaston päiväys: {new Date(data.dataset.metadata?.CreatedDate).toLocaleDateString("fi-FI")}{/if}</p>
-					<button class={twMerge(components.button(), "w-full")} onclick={() => dialogElement.close()}>Sulje</button>
-				{/if}
-				{#if tab === 'personal'}
-				{@const weightOK = personalInfo.weight !== null && personalInfo.weight >= 1 && personalInfo.weight <= 500}
-				<div class="prose">
-					<h2 class="text-lg font-bold">Henkilökohtaiset tiedot</h2>
-					<p class="text-sm text-gray-600">Nämä tiedot vaikuttavat promillearvioihin. Annetut tiedot tallennetaan vain paikallisesti, eikä niitä lähetetä mihinkään.</p>
-				</div>
-				<div class="flex flex-col">
-					<label for="weight" class="text-sm">Paino (kg)</label>
-					<input type="number" name="weight" bind:value={personalInfo.weight} placeholder="Paino (kg)" class={twMerge(components.input(), "w-full")} min="1" max="500" step="0.1" />
-					{#if !weightOK}
-						<p class="text-xs text-red-600">Painon tulee olla välillä 1-500 kg.</p>
+					{#if tab === 'info'}
+						<div class="prose">
+							<h2 class="text-lg font-bold">Tietoa</h2>
+							<p>
+								Alkometriikka on <a
+									href="https://github.com/leevilaukka/alkometriikka"
+									target="_blank">avoimen lähdekoodin</a
+								> web-sovellus, joka listaa Alkon tuotevalikoiman ja antaa käyttäjille hieman laskennallista
+								tietoa tuotteista.
+							</p>
+							<p>
+								Hinnasto ladataan Alkon julkisesta Excel-tiedostosta. Tiedostoa päivitetään noin
+								vuorokauden viiveellä. Voit <a
+									href="https://www.alko.fi/INTERSHOP/static/WFS/Alko-OnlineShop-Site/-/Alko-OnlineShop/fi_FI/Alkon%20Hinnasto%20Tekstitiedostona/alkon-hinnasto-tekstitiedostona.xlsx"
+									target="_blank"
+									rel="noopener noreferrer">ladata sen täältä</a
+								>.
+							</p>
+						</div>
+						{console.log(data.dataset.metadata)}
+						<p class="text-sm text-gray-600">
+							Versio: <a href="https://github.com/leevilaukka/alkometriikka/commit/{version}"
+								>{version}</a
+							>
+							{#if data.dataset.metadata?.CreatedDate}
+								| Hinnaston päiväys: {new Date(
+									data.dataset.metadata?.CreatedDate
+								).toLocaleDateString('fi-FI')}{/if}
+						</p>
+						<button
+							class={twMerge(components.button(), 'w-full')}
+							onclick={() => dialogElement.close()}>Sulje</button
+						>
+					{:else if tab === 'settings'}
+						<div class="prose">
+							<h2 class="text-lg font-bold">Lisäasetukset</h2>
+						</div>
+						<div>
+							<p>Vie / tuo tiedot</p>
+							<p class="text-sm text-gray-600">
+								Tällä voit viedä tai tuoda paikallisesti tallennetut tiedot, kuten henkilökohtaiset
+								tiedot ja mukautetut listat. Tiedot tallennetaan JSON-muodossa.
+							</p>
+							<div class="flex flex-row gap-2">
+								<button
+									class={twMerge(components.button(), 'mt-1')}
+									onclick={() => {
+										const data = {
+											personalInfo: personalInfo,
+											lists: lists
+										};
+										const blob = new Blob([JSON.stringify(data, null, 2)], {
+											type: 'application/json'
+										});
+										const url = URL.createObjectURL(blob);
+										const a = document.createElement('a');
+										a.href = url;
+										a.download = `alkometriikka-tiedot-${new Date()
+											.toISOString()
+											.slice(0, 10)}.json`;
+										document.body.appendChild(a);
+										a.click();
+										document.body.removeChild(a);
+										URL.revokeObjectURL(url);
+									}}>Vie tiedot</button
+								>
+
+								<button
+									class={twMerge(components.button(), 'mt-1')}
+									onclick={() => {
+										const input = document.createElement('input');
+										input.type = 'file';
+										input.accept = '.json';
+										input.onchange = async (event) => {
+											const file = (event?.target as HTMLInputElement)?.files?.[0];
+											if (file) {
+												const text = await file.text();
+												const data = JSON.parse(text);
+												console.log(data);
+												const currentPersonalInfo = { ...personalInfo };
+												const currentLists = [...lists];
+												localStorage.setItem(
+													LocalStorageKeys.PersonalInfo,
+													JSON.stringify({
+														...currentPersonalInfo,
+														...data.personalInfo
+													})
+												);
+												localStorage.setItem(
+													LocalStorageKeys.Lists,
+													JSON.stringify([...currentLists, ...data.lists])
+												);
+												window.location.reload();
+											}
+										};
+										input.click();
+									}}>Tuo tiedot</button
+								>
+							</div>
+						</div>
+						<div class="flex flex-col gap-2">
+							<p class="text-sm font-bold">Tyhjennä tiedot</p>
+							<p class="text-sm text-gray-600">
+								Tämä poistaa kaikki paikallisesti tallennetut tiedot, kuten henkilökohtaiset tiedot
+								ja mukautetut listat. Tätä toimintoa ei voi perua.
+							</p>
+							<button
+								class={twMerge(components.button({ type: 'negative' }))}
+								id="clear-data"
+								onclick={() => {
+									if (
+										confirm(
+											'Haluatko varmasti tyhjentää kaikki tallennetut tiedot? Tätä toimintoa ei voi perua.'
+										)
+									) {
+										localStorage.clear();
+										window.location.reload();
+									}
+								}}>Tyhjennä</button
+							>
+						</div>
+						<button class={twMerge(components.button(), 'w-full')} onclick={() => dialogElement.close()}>Sulje</button>
+					{:else if tab === 'personal'}
+						{@const weightOK =
+							personalInfo.weight !== null &&
+							personalInfo.weight >= 1 &&
+							personalInfo.weight <= 500}
+						<div class="prose">
+							<h2 class="text-lg font-bold">Henkilökohtaiset tiedot</h2>
+							<p class="text-sm text-gray-600">
+								Nämä tiedot vaikuttavat promillearvioihin. Annetut tiedot tallennetaan vain
+								paikallisesti, eikä niitä lähetetä mihinkään.
+							</p>
+						</div>
+						<div class="flex flex-col">
+							<label for="weight" class="text-sm">Paino (kg)</label>
+							<input
+								type="number"
+								name="weight"
+								bind:value={personalInfo.weight}
+								placeholder="Paino (kg)"
+								class={twMerge(components.input(), 'w-full')}
+								min="1"
+								max="500"
+								step="0.1"
+							/>
+							{#if !weightOK}
+								<p class="text-xs text-red-600">Painon tulee olla välillä 1-500 kg.</p>
+							{/if}
+						</div>
+						<div class="flex flex-col">
+							<label for="gender" class="text-sm">Sukupuoli</label>
+							<select
+								name="gender"
+								bind:value={personalInfo.gender}
+								class={twMerge(components.input(), 'w-full')}
+							>
+								<option value={null}>Valitse sukupuoli</option>
+								{#each Object.values(GenderOptionsMap) as option}
+									<option value={option}>{option}</option>
+								{/each}
+							</select>
+						</div>
+						<p class="self-end text-xs text-gray-600">Tallentaminen lataa sivun uudelleen.</p>
+						<div class="grid grid-cols-2 gap-3">
+							<button
+								class={twMerge(components.button(), 'w-full')}
+								onclick={() => dialogElement.close()}>Sulje</button
+							>
+							<button
+								class={twMerge(
+									components.button({ type: 'positive' }),
+									'w-full',
+									!weightOK ? 'cursor-not-allowed opacity-50' : ''
+								)}
+								disabled={!weightOK}
+								onclick={() => window.location.reload()}>Tallenna</button
+							>
+						</div>
 					{/if}
-				</div>
-				<div class="flex flex-col">
-					<label for="gender" class="text-sm">Sukupuoli</label>
-					<select name="gender" bind:value={personalInfo.gender} class={twMerge(components.input(), "w-full")}>
-						<option value={null}>Valitse sukupuoli</option>
-						{#each Object.values(GenderOptionsMap) as option}
-							<option value={option}>{option}</option>
-						{/each}
-					</select>
-				</div>
-				<p class="text-xs text-gray-600 self-end">Tallentaminen lataa sivun uudelleen.</p>
-				<div class="grid grid-cols-2 gap-3">
-					<button class={twMerge(components.button(), "w-full")} onclick={() => dialogElement.close()}>Sulje</button>
-					<button class={twMerge(components.button({type: "positive"}), "w-full", !weightOK ? 'opacity-50 cursor-not-allowed' : '')} disabled={!weightOK} onclick={() => window.location.reload()}>Tallenna</button>
-				</div>
-				{/if}
 				{/snippet}
 			</Popup>
 		</header>
-		<div class="flex flex-col flex-auto max-h-full">
+		<div class="flex max-h-full flex-auto flex-col">
 			{@render children?.()}
 		</div>
 	</div>
 {:catch error}
-	<div class="grid w-full h-full place-content-center">
-		<div class="flex flex-col gap-3 items-center">
+	<div class="grid h-full w-full place-content-center">
+		<div class="flex flex-col items-center gap-3">
 			<p>Virhe datan lataamisessa: {error.message}</p>
-			<button class="bg-red-600 text-white py-2 px-4 rounded" onclick={() => location.reload()}>Yritä uudelleen</button>
+			<button class="rounded bg-red-600 px-4 py-2 text-white" onclick={() => location.reload()}
+				>Yritä uudelleen</button
+			>
 		</div>
 	</div>
 {/await}
