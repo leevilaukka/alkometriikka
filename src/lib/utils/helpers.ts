@@ -1,3 +1,4 @@
+import { dev } from "$app/environment";
 import type { ColumnNames } from "$lib/types";
 import { filterRenameMap, filterToUnitMarker, sortingOrderDescriptionMap } from "./constants";
 
@@ -33,4 +34,17 @@ export function sortingOrderToString(order: boolean, header?: ColumnNames) {
 
 export function productIdsToDataset(table: string[][], productIds: string[]) {
     return [table[0], ...table.filter(row => productIds.includes(row[0] as string))];
+}
+
+const baseTitle = "Alkometriikka" as const;
+export function generateTitle<T extends string>(text?: T): typeof baseTitle | `${typeof baseTitle} | ${T}` | `${typeof baseTitle} | ${T} - [dev]` {
+    const fullTitle: `${typeof baseTitle} | ${T}` | typeof baseTitle = text ? `${baseTitle} | ${text}` : baseTitle ;
+    if (dev) {
+        if (text) {
+            return `${baseTitle} | ${text} - [dev]` as `Alkometriikka | ${T} - [dev]`;
+        } else {
+            return "Alkometriikka" as typeof baseTitle;
+        }
+    }
+    return fullTitle;
 }

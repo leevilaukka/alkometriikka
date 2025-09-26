@@ -2,14 +2,15 @@
 	import { goto } from '$app/navigation';
 	import List from '$lib/components/views/List.svelte';
 	import AllLists from '$lib/components/widgets/AllLists.svelte';
+	import { generateTitle } from '$lib/utils/helpers.js';
 	import { listToURI } from '$lib/utils/lists.js';
 
     const { data } = $props()
 
 	if (data.list) {
-		document.title = `Alkometriikka | Lista - ${data.list.name}`;
+		document.title = generateTitle(`Lista - ${data.list.name}`);
 	} else {
-		document.title = 'Alkometriikka | Listat';
+		document.title = generateTitle('Listat');
 	}
 </script>
 

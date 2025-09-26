@@ -9,11 +9,14 @@
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/styles';
 	import Icon from '$lib/components/widgets/Icon.svelte';
+	import { version } from '$app/environment';
 
 	let { children, data } = $props();
 
 	$effect(() => { localStorage.setItem(LocalStorageKeys.PersonalInfo, JSON.stringify(personalInfo))})
 	$effect(() => { localStorage.setItem(LocalStorageKeys.Lists, JSON.stringify(lists))})
+
+	let tab = $state<'personal' | 'info'>('personal');
 	
 
 	window.addEventListener('resize', () => {
@@ -39,6 +42,9 @@
 			<div class="flex flex-row gap-3 items-center bg-white">
 				<a href="/"><img src={logo} alt="Alkoassistentti Logo" class="aspect-[10/2] h-12 object-contain" /></a>
 			</div>
+			{#if dev}
+				<span class="ms-2 rounded bg-red-200 px-1.5 py-0.5 text-sm text-red-800">DEV</span>
+			{/if}
 			<a href="/listat" class="ms-auto me-2">
 				<button class={twMerge(components.button(), "p-2 text-xl")}>
 					{#if !$isMobile}<span class="text-sm">Listat</span>{/if}<Icon name="list" />
@@ -54,6 +60,23 @@
 					</button>
 				{/snippet}
 				{#snippet renderContent(dialogElement: HTMLDialogElement)}
+				<!-- Tab selector -->
+				<div class="flex flex-row gap-2 border-b border-gray-300 pb-2 mb-2">
+					<button class={twMerge(components.button(), "w-full", tab === 'personal' ? 'bg-gray-200' : '')} onclick={() => tab = 'personal'}><Icon name="user" />{#if !$isMobile}<span class="ms-2">Henkilökohtaiset tiedot</span>{/if}</button>
+					<button class={twMerge(components.button(), "w-full", tab === 'info' ? 'bg-gray-200' : '')} onclick={() => tab = 'info'}><Icon name="info" />{#if !$isMobile}<span class="ms-2">Tietoa</span>{/if}</button>
+
+				</div>
+				{#if tab === 'info'}
+					<div class="prose">
+						<h2 class="text-lg font-bold">Tietoa</h2>
+						<p>Alkometriikka on <a href="https://github.com/leevilaukka/alkometriikka" target="_blank">avoimen lähdekoodin</a> web-sovellus, joka listaa Alkon tuotevalikoiman ja antaa käyttäjille hieman laskennallista tietoa tuotteista.</p>
+						<p>Hinnasto ladataan Alkon julkisesta Excel-tiedostosta. Tiedostoa päivitetään noin vuorokauden viiveellä. Voit <a href="https://www.alko.fi/INTERSHOP/static/WFS/Alko-OnlineShop-Site/-/Alko-OnlineShop/fi_FI/Alkon%20Hinnasto%20Tekstitiedostona/alkon-hinnasto-tekstitiedostona.xlsx" target="_blank" rel="noopener noreferrer">ladata sen täältä</a>.</p>
+					</div>
+					{console.log(data.dataset.metadata)}
+					<p class="text-sm text-gray-600">Versio: <a href="https://github.com/leevilaukka/alkometriikka/commit/{version}">{version}</a> {#if data.dataset.metadata?.CreatedDate} | Hinnaston päiväys: {new Date(data.dataset.metadata?.CreatedDate).toLocaleDateString("fi-FI")}{/if}</p>
+					<button class={twMerge(components.button(), "w-full")} onclick={() => dialogElement.close()}>Sulje</button>
+				{/if}
+				{#if tab === 'personal'}
 				{@const weightOK = personalInfo.weight !== null && personalInfo.weight >= 1 && personalInfo.weight <= 500}
 				<div class="prose">
 					<h2 class="text-lg font-bold">Henkilökohtaiset tiedot</h2>
@@ -80,6 +103,7 @@
 					<button class={twMerge(components.button(), "w-full")} onclick={() => dialogElement.close()}>Sulje</button>
 					<button class={twMerge(components.button({type: "positive"}), "w-full", !weightOK ? 'opacity-50 cursor-not-allowed' : '')} disabled={!weightOK} onclick={() => window.location.reload()}>Tallenna</button>
 				</div>
+				{/if}
 				{/snippet}
 			</Popup>
 		</header>

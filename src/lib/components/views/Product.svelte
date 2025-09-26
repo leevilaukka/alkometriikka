@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { AllColumns, DatasetColumns, DrunkColumns, hideFromProductPageStats } from '$lib/utils/constants';
-	import { valueToString } from '$lib/utils/helpers';
+	import { generateTitle, valueToString } from '$lib/utils/helpers';
 	import { generateImageUrl } from '$lib/utils/image';
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/styles';
@@ -11,7 +11,7 @@
 	import { addToList } from '$lib/utils/lists';
 	const { product } = $props();
 
-   document.title = `Alkometriikka | ${product[AllColumns.Name]}`;
+   document.title = generateTitle(`Tuote - ${product[AllColumns.Name]}`);
 </script>
 
 <div
