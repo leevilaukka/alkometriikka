@@ -112,10 +112,10 @@
 							</p>
 							<p>
 								Hinnasto ladataan Alkon julkisesta Excel-tiedostosta. Tiedostoa päivitetään noin
-								vuorokauden viiveellä. Voit <a
+								vuorokauden viiveellä. Voit ladata sen <a
 									href="https://www.alko.fi/INTERSHOP/static/WFS/Alko-OnlineShop-Site/-/Alko-OnlineShop/fi_FI/Alkon%20Hinnasto%20Tekstitiedostona/alkon-hinnasto-tekstitiedostona.xlsx"
 									target="_blank"
-									rel="noopener noreferrer">ladata sen täältä</a
+									rel="noopener noreferrer">täältä</a
 								>.
 							</p>
 						</div>
@@ -124,10 +124,11 @@
 							Versio: <a href="https://github.com/leevilaukka/alkometriikka/commit/{version}"
 								>{version}</a
 							>
-							{#if data.dataset.metadata?.CreatedDate}
+							{#if data.dataset.metadata.CreatedDate}
 								| Hinnaston päiväys: {new Date(
-									data.dataset.metadata?.CreatedDate
+									data.dataset.metadata.CreatedDate
 								).toLocaleDateString('fi-FI')}{/if}
+							
 						</p>
 						<button
 							class={twMerge(components.button(), 'w-full')}
@@ -208,7 +209,6 @@
 							</p>
 							<button
 								class={twMerge(components.button({ type: 'negative' }))}
-								id="clear-data"
 								onclick={() => {
 									if (
 										confirm(

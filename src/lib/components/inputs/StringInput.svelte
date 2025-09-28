@@ -91,15 +91,15 @@
 								? list.filter((item) => item.value.toLowerCase().includes(query.toLowerCase()))
 								: list}
 							bufferSize={50}
-							itemsClass={'even'}
+							
 						>
-							{#snippet renderItem(item: ListItem)}
+							{#snippet renderItem(item: ListItem, index: number)}
 								<button
 									onclick={() => {
 										item.selected = !item.selected;
 										value = list.filter((option) => option.selected).map((option) => option.value);
 									}}
-									class={twMerge(components.button(), 'w-full rounded-none border-none bg-inherit')}
+									class={twMerge(components.button(), 'w-full rounded-none border-none', index % 2 === 0 ? 'bg-gray-200' : 'bg-white', item.selected ? 'font-bold' : '')}
 								>
 									<span
 										class="max-w-full overflow-hidden overflow-ellipsis whitespace-nowrap"
