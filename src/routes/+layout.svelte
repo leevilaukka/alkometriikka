@@ -3,7 +3,7 @@
 	import favicon from '$lib/assets/images/favicon.png';
 	import { dev } from '$app/environment';
 	import { GenderOptionsMap, LocalStorageKeys } from '$lib/utils/constants';
-	import { isMobile, lists, personalInfo } from '$lib/global.svelte';
+	import { isMobile, lists, personalInfo, searchQuery } from '$lib/global.svelte';
 	import logo from '$lib/assets/images/logo.png';
 	import Popup from '$lib/components/widgets/Popup.svelte';
 	import { twMerge } from 'tailwind-merge';
@@ -11,6 +11,8 @@
 	import Icon from '$lib/components/widgets/Icon.svelte';
 	import { version } from '$app/environment';
 	import { handleClearAll, handleExport, handleImport } from '$lib/utils/helpers';
+	import { afterNavigate } from '$app/navigation';
+	import { page } from '$app/state';
 
 	let { children, data } = $props();
 
@@ -21,16 +23,23 @@
 		localStorage.setItem(LocalStorageKeys.Lists, JSON.stringify(lists));
 	});
 
+	let expandSearch = $state(false)
+
 	let tab = $state<'personal' | 'info' | 'settings'>('personal');
 
 	window.addEventListener('resize', () => {
-		$isMobile = window.matchMedia('(width <= 48rem)').matches;
+		$isMobile = window.matchMedia('(width < 48rem)').matches;
 	});
+
+	afterNavigate(() => {
+		$searchQuery = ""
+	})
+	
 </script>
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<title>Alkometriikka {dev ? '- DEV' : ''}</title>
+	<title>Alkometriikka</title>
 </svelte:head>
 
 {#await data}
@@ -44,23 +53,30 @@
 	</div>
 {:then}
 	<div class="flex h-full w-full flex-col">
-		<header class="flex h-fit items-center border-b border-gray-300 p-2">
+		{#if dev}
+			<span class="text-center bg-red-200 px-1.5 py-0.5 text-sm text-red-800">DEV</span>
+		{/if}
+		<header class="relative flex h-fit items-center gap-2 md:gap-4 border-b border-gray-300 p-2">
 			<div class="flex flex-row items-center gap-3 bg-white">
-				<a href="/"
-					><img
-						src={logo}
-						alt="Alkoassistentti Logo"
-						class="aspect-[10/2] h-12 object-contain"
-					/></a
-				>
+				<a href="/">
+					<img src={logo} alt="Alkoassistentti Logo" class="aspect-[10/2] h-12 object-contain" />
+				</a>
 			</div>
-			{#if dev}
-				<span class="ms-2 rounded bg-red-200 px-1.5 py-0.5 text-sm text-red-800">DEV</span>
+			{#if page.route.id !== "/tuotteet/[...id]"}
+			<div class={twMerge("flex flex-row w-full", expandSearch ? "absolute inset-0" : "border border-gray-300 rounded")}>
+				<button onclick={() => {expandSearch = !expandSearch}} class={twMerge(components.button(), "aspect-square border-0 bg-white text-black", "p-2 text-xl", "border-e-0 rounded-e-none")}>
+					<Icon name="search" />
+				</button>
+				<input
+					id="searchQuery"
+					type="text"
+					bind:value={$searchQuery}
+					class={twMerge(components.input(), 'border-0 border-s hover:border-gray-300 text-md w-full gap-2 rounded-s-none')}
+					placeholder="Hae nimellä..."
+				/>
+			</div>
 			{/if}
-			{#if "BarcodeDetector" in globalThis}
-				{console.log('BarcodeDetector is supported')}
-			{/if}
-			<a href="/listat" class="ms-auto me-2">
+			<a href="/listat" class={twMerge(page.route.id !== "/tuotteet/[...id]" ? "" : "ms-auto")}>
 				<button class={twMerge(components.button(), 'p-2 text-xl')}>
 					{#if !$isMobile}<span class="text-sm">Listat</span>{/if}<Icon name="list" />
 				</button>
@@ -132,7 +148,6 @@
 								| Hinnaston päiväys: {new Date(
 									data.dataset.metadata.CreatedDate
 								).toLocaleDateString('fi-FI')}{/if}
-							
 						</p>
 						<button
 							class={twMerge(components.button(), 'w-full')}
@@ -153,14 +168,18 @@
 									class={twMerge(components.button(), 'mt-1')}
 									onclick={() => {
 										handleExport();
-									}}> <Icon name="download" /> <span>Vie tiedot</span></button
+									}}
+								>
+									<Icon name="download" /> <span>Vie tiedot</span></button
 								>
 
 								<button
 									class={twMerge(components.button(), 'mt-1')}
 									onclick={() => {
 										handleImport();
-									}}> <Icon name="upload" /> <span>Tuo tiedot</span></button
+									}}
+								>
+									<Icon name="upload" /> <span>Tuo tiedot</span></button
 								>
 							</div>
 						</div>
@@ -175,10 +194,15 @@
 								onclick={() => {
 									handleClearAll();
 									dialogElement.close();
-								}}> <Icon name="trash" /> <span>Tyhjennä</span></button
+								}}
+							>
+								<Icon name="trash" /> <span>Tyhjennä</span></button
 							>
 						</div>
-						<button class={twMerge(components.button(), 'w-full')} onclick={() => dialogElement.close()}>Sulje</button>
+						<button
+							class={twMerge(components.button(), 'w-full')}
+							onclick={() => dialogElement.close()}>Sulje</button
+						>
 					{:else if tab === 'personal'}
 						{@const weightOK =
 							personalInfo.weight !== null &&

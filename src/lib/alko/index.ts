@@ -1,6 +1,7 @@
 import { AllColumns, defaultSortingColumn, GenderOptionsMap } from '$lib/utils/constants';
 import { calculateDrunkValue } from '../utils/alcoholCounter';
 import { type ColumnNames, type DatasetColumnNames, type DatasetRow, type DrunkColumnNames, type NativeTypes, type PersonalInfo, type PriceListItem } from '../types';
+import { isSimilarString } from '$lib/utils/search';
 
 export class Kaljakori {
 	data: PriceListItem[] = [];
@@ -13,6 +14,8 @@ export class Kaljakori {
 	constructor(table: DatasetRow[], personalInfo?: PersonalInfo) {
 		this.personalInfo = personalInfo || { weight: null, gender: GenderOptionsMap.Unspecified };
 		const [datasetColumns, ...rows] = table as [DatasetColumnNames[], ...DatasetRow[]];
+
+		console.log("datasetColumns", datasetColumns)
 
 		const drunkColumns: DrunkColumnNames[] = [
 			"Alkoholigrammat",
@@ -110,9 +113,14 @@ export class Kaljakori {
 	}
 
 	fuzzySearch(key: ColumnNames, query: string) {
-		const lowerQuery = query.toLowerCase();
 		return this.data.filter((item) => {
-			return item[key] && item[key].toString().toLowerCase().includes(lowerQuery);
+			if(!item[key]) return false
+			if(item[key].toString().toLowerCase().includes(query.toLowerCase())) return true
+			const parts = item[key].toString().split(" ")
+			for(let part of parts) {
+				return isSimilarString(part, query, 0.6)
+			}
+			return false
 		});
 	}
 
@@ -134,6 +142,34 @@ export class Kaljakori {
 			// @ts-ignore
 			if (a[key][nestedKey] > b[key][nestedKey]) return ascending ? 1 : -1;
 			return 0;
+		});
+	}
+
+	fuzzySearchAndFilter(query: string, filters: Record<string, any>) {
+		let result = this.fuzzySearch(AllColumns.Name, query);
+		if (Object.keys(filters).length === 0) return result;
+
+		filters = Object.fromEntries(
+			Object.entries(filters).filter(([key, value]) => {
+				if (value instanceof Set) return value.size > 0;
+				return value.length > 0;
+			})
+		);
+
+		return result.filter((item) => {
+				const temp = Object.keys(filters).every((key) => {
+				const type = this.getFilterType(key as ColumnNames);
+				if (type === 'number' && Array.isArray(filters[key]) && filters[key].length === 2) {
+					return item[key] >= filters[key][0] && item[key] <= filters[key][1];
+				} else if (filters[key] instanceof Set) {
+					return item[key] && filters[key].has(item[key]);
+				} else if (Array.isArray(filters[key])) {
+					return item[key] && filters[key].includes(item[key]);
+				} else {
+					return item[key] === filters[key];
+				}
+			});
+			return temp
 		});
 	}
 

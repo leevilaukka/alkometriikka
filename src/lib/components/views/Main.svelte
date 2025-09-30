@@ -23,7 +23,7 @@
 	import Popup from '../widgets/Popup.svelte';
 	import AllLists from '../widgets/AllLists.svelte';
 	import { addToList } from '$lib/utils/lists';
-	import { isMobile } from '$lib/global.svelte';
+	import { isMobile, searchQuery } from '$lib/global.svelte';
 	import Filters from '../widgets/Filters.svelte';
 
 	const { kaljakori }: { kaljakori: Kaljakori } = $props();
@@ -49,12 +49,13 @@
 			)
 				filterValuesCopy[key] = new Set(filterValuesCopy[key]);
 		});
-		let temp = kaljakori.filter(filterValuesCopy);
+		let temp = kaljakori.fuzzySearchAndFilter($searchQuery,filterValuesCopy);
 		if (!!selectedSortingColumn)
 			temp = temp.sort((a, b) => (a[selectedSortingColumn] > b[selectedSortingColumn] ? 1 : -1));
 		if (!asc) temp = temp.reverse();
 		return temp;
 	});
+
 </script>
 
 <div class="relative grid h-full grid-cols-[auto_1fr]">
@@ -69,17 +70,17 @@
 	</aside>
 	<main class="mx-auto flex h-full w-full flex-col gap-3 bg-gray-100 p-4 md:gap-4 md:p-6">
 		<div class="flex w-full flex-col items-start gap-4">
-			<div class={twMerge('flex flex-row flex-wrap items-end gap-2')}>
+			<div class={twMerge('grid grid-cols-2 w-full md:w-fit items-end gap-2')}>
 				<div class="flex flex-col">
 					<label for={'sortingColumn'} class="text-sm">
 						{'Järjestys'}
 					</label>
-					<div class="flex flex-row flex-nowrap items-center">
+					<div class="flex flex-row flex-nowrap">
 						<select
 							name="sortingColumn"
 							id="sortingColumn"
 							bind:value={selectedSortingColumn}
-							class={twMerge(components.input(), 'rounded-none rounded-s pe-8')}
+							class={twMerge(components.input(), 'w-full rounded-none rounded-s pe-8')}
 						>
 							{#each shownSortingKeys as filter}
 								<option value={filter}>{headerToDisplayName(filter)}</option>
@@ -93,7 +94,7 @@
 								}}
 								class={twMerge(components.button(), 'rounded-none rounded-e border-s-0')}
 							>
-								<span>{sortingOrderToString(asc, selectedSortingColumn)}</span>
+								<span class="hidden md:block">{sortingOrderToString(asc, selectedSortingColumn)}</span>
 								<Icon name={asc ? 'arrow_up' : 'arrow_down'} />
 							</button>
 						{/if}
@@ -107,7 +108,7 @@
 						name="selectedHighlight"
 						id="selectedHighlight"
 						bind:value={selectedHighlight}
-						class={twMerge(components.input(), 'pe-8')}
+						class={twMerge(components.input(), 'w-full pe-8')}
 					>
 						{#each shownColumnsToHighlight as filter}
 							<option value={filter}>{headerToDisplayName(filter)}</option>
@@ -125,13 +126,12 @@
 				class={twMerge(components.button())}
 			>
 				<Icon name={'arrow_up'} />
-				<span>Hyppää alkuun</span>
+				<span>{$isMobile ? "Alkuun" : "Hyppää alkuun"}</span>
 			</button>
 		</div>
 		<div class="flex flex-auto flex-col">
 			<SvelteVirtualList
 				items={rows}
-				bufferSize={25}
 				bind:this={listRef}
 				itemsClass={'flex flex-col gap-3'}
 			>

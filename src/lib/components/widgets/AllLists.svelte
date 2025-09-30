@@ -1,10 +1,11 @@
 <script lang="ts">
-    import { lists } from "$lib/global.svelte";
+    import { lists, searchQuery } from "$lib/global.svelte";
 	import { createList, deleteList } from "$lib/utils/lists";
 	import { components } from "$lib/utils/styles";
 	import { twMerge } from "tailwind-merge";
 	import Icon from "./Icon.svelte";
 	import type { ListObj } from "$lib/types";
+	import { isSimilarString } from "$lib/utils/search";
 
     const { action, show }: { action: (list: ListObj) => void; show?: { delete?: boolean, length?: boolean } } = $props();
     const time = new Date();
@@ -18,7 +19,7 @@
 <div class={twMerge("flex flex-col gap-4 w-[min(80ch,_100%)]", lists.length === 0 && "h-full justify-center")}>
     {#if lists.length > 0}
         <div class="flex flex-col gap-4">
-            {#each lists as list}
+            {#each lists.filter(list => { return $searchQuery ? isSimilarString(list.name, $searchQuery) : true }) as list}
                 <div class="flex justify-between items-center gap-2 p-2 border rounded border-gray-300" onclick={() => { action(list) }} onkeydown={() => {}} role="link" tabindex="0">
                     <div class="flex flex-col">
                         <p aria-label={list.name} class={twMerge("w-full justify-start text-lg")}>

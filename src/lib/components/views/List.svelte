@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { personalInfo } from '$lib/global.svelte';
+	import { personalInfo, searchQuery } from '$lib/global.svelte';
 	import { components } from '$lib/utils/styles';
 	import { generateTitle, productIdsToDataset } from '$lib/utils/helpers';
 	import { Kaljakori } from '$lib/alko';
@@ -75,7 +75,7 @@
 			)
 				filterValuesCopy[key] = new Set(filterValuesCopy[key]);
 		});
-		let temp = kaljakori.filter(filterValuesCopy);
+		let temp = kaljakori.fuzzySearchAndFilter($searchQuery, filterValuesCopy);
 		if (!!selectedSortingColumn)
 			temp = temp.sort((a, b) => (a[selectedSortingColumn] > b[selectedSortingColumn] ? 1 : -1));
 		if (!asc) temp = temp.reverse();
@@ -107,8 +107,15 @@
 </script>
 
 <div
-	class="flex flex-row items-center justify-between border-b border-gray-300 bg-gray-50 p-3 md:p-4"
+	class="flex flex-row items-center justify-between border-b border-gray-300 bg-gray-50 p-3 md:p-4 gap-4"
 >
+	<button
+		onclick={() => window.history.back()}
+		class={twMerge(components.button({ size: "md" }))}
+	>
+		<Icon name="arrow_left" class="inline-block" />
+		<span>Takaisin</span>
+	</button>
 	{#if existingList}
 		<input
 			type="text"
@@ -117,7 +124,7 @@
 			bind:value={list.name}
 		/>
 		<button
-			class={twMerge(components.button({ type: 'positive', size: 'md' }), 'ml-4')}
+			class={twMerge(components.button({ type: 'positive', size: 'md' }))}
 			onclick={async () => {
 				const shared = await handleShare();
 				if (!shared) {
@@ -130,7 +137,7 @@
 	{:else}
 		<h2 class="text-lg leading-none md:text-2xl">{list.name}</h2>
 		<button
-			class={twMerge(components.button({ type: 'positive', size: 'md' }), 'ml-4')}
+			class={twMerge(components.button({ type: 'positive', size: 'md' }))}
 			onclick={() => {
 				saveList(list);
 				location.reload();

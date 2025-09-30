@@ -8,6 +8,7 @@
 	import { twMerge } from 'tailwind-merge';
 	import Popup from '../widgets/Popup.svelte';
 	import { getRandom } from '$lib/utils/helpers';
+	import { isSafari } from '$lib/global.svelte';
 
 	let { value = $bindable(), options = [], label, ...rest } = $props();
 	
@@ -44,7 +45,7 @@
 				}}
 			/>
 	{:else}
-		<Popup class="p-4 gap-4">
+		<Popup class={twMerge("p-4 gap-4", $isSafari && "h-auto")}>
 			{#snippet renderButton(dialogElement: HTMLDialogElement)}
 				<button
 					{name}
@@ -56,7 +57,7 @@
 				</button>
 			{/snippet}
 			{#snippet renderContent(dialogElement: HTMLDialogElement)}
-				<div class="flex h-full max-h-full flex-col gap-4 overflow-hidden">
+				<div class="flex h-full max-h-full flex-col gap-4">
 					<div class="order-1 flex flex-row flex-wrap gap-4">
 						<button
 							onclick={() => {

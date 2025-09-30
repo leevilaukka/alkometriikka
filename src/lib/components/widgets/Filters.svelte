@@ -54,6 +54,8 @@
 			filterValues[AllColumns.BeerType] = [];
 		}
 	});
+
+	$inspect("filterValues", filterValues)
 </script>
 
 <dialog

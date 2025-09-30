@@ -44,3 +44,7 @@ input:focus {
 .string-selector .virtual-list-viewport {
     overflow-x: hidden;
 }
+
+dialog[open] {
+    display: flex;
+}
