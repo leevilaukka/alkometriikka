@@ -57,7 +57,7 @@
 			{#if dev}
 				<span class="ms-2 rounded bg-red-200 px-1.5 py-0.5 text-sm text-red-800">DEV</span>
 			{/if}
-			{#if window.BarcodeDetector}
+			{#if "BarcodeDetector" in globalThis}
 				{console.log('BarcodeDetector is supported')}
 			{/if}
 			<a href="/listat" class="ms-auto me-2">
