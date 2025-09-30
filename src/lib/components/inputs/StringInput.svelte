@@ -7,10 +7,11 @@
 	import SvelteVirtualList from '@humanspeak/svelte-virtual-list';
 	import { twMerge } from 'tailwind-merge';
 	import Popup from '../widgets/Popup.svelte';
+	import { getRandom } from '$lib/utils/helpers';
 
 	let { value = $bindable(), options = [], label, ...rest } = $props();
 	
-	const name = "stringinput-" + crypto.randomUUID();
+	const name = "stringinput-" + getRandom();
 
 	let list = $state<ListItem[]>(options.map((option) => ({ value: option, selected: false })));
 

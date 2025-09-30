@@ -28,13 +28,10 @@
 
 	const { kaljakori }: { kaljakori: Kaljakori } = $props();
 
-	console.log(kaljakori);
-
 	let listRef: SvelteVirtualList<PriceListItem> | null = $state(null);
 
 	let filtersComponent: Filters | null = $state(null);
 	let filterValues = $state({});
-	let showFilters = $derived(!$isMobile);
 
 	let selectedHighlight = $state(defaultSortingColumn);
 
@@ -42,7 +39,6 @@
 	let asc: boolean = $derived(
 		defaultSortingOrderMap[selectedSortingColumn as keyof typeof defaultSortingOrderMap] || false
 	);
-
 
 	let rows = $derived.by(() => {
 		let filterValuesCopy: Record<string, any> = { ...filterValues };
@@ -59,7 +55,6 @@
 		if (!asc) temp = temp.reverse();
 		return temp;
 	});
-
 </script>
 
 <div class="relative grid h-full grid-cols-[auto_1fr]">
@@ -291,11 +286,10 @@
 			<button
 				onclick={() => {
 					filtersComponent?.toggleFilterElement();
-					showFilters = !showFilters;
 				}}
 				class={twMerge(components.button(), 'w-full')}
 			>
-				<span>{showFilters ? 'Piilota suodattimet' : 'Näytä suodattimet'}</span>
+				<span>Näytä suodattimet</span>
 				<Icon name={'filter'} />
 			</button>
 		{/if}

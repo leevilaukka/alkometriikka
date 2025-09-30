@@ -1,5 +1,5 @@
 <script>
-	import { headerToDisplayName, headerToUnitMarker } from '$lib/utils/helpers';
+	import { getRandom, headerToDisplayName, headerToUnitMarker } from '$lib/utils/helpers';
 	import { components } from '$lib/utils/styles';
 	import { twMerge } from 'tailwind-merge';
 
@@ -7,7 +7,7 @@
 
 	const unitMarker = headerToUnitMarker(label) !== '' ? `(${headerToUnitMarker(label)})` : '';
 
-	const name = "numberinput-" + crypto.randomUUID();
+	const name = "numberinput-" + getRandom();
 </script>
 
 <div class="flex flex-col">

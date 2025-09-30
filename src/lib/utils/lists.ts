@@ -1,10 +1,11 @@
 import { lists } from "$lib/global.svelte";
 import type { ListObj } from "$lib/types";
 import { compressToEncodedURIComponent, decompressFromEncodedURIComponent } from "lz-string";
+import { getRandom } from "./helpers";
 
 export function createList(name: string) {
     const newList: ListObj = {
-        id: `${Date.now()}-${crypto.randomUUID().split("-")[0]}`,
+        id: `${Date.now()}-${getRandom().split("-")[0]}`,
         name,
         items: []
     };

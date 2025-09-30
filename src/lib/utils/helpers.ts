@@ -1,24 +1,25 @@
 import { dev } from "$app/environment";
+import { lists, personalInfo } from "$lib/global.svelte";
 import type { ColumnNames } from "$lib/types";
-import { filterRenameMap, filterToUnitMarker, sortingOrderDescriptionMap } from "./constants";
+import { filterRenameMap, filterToUnitMarker, LocalStorageKeys, sortingOrderDescriptionMap } from "./constants";
 
 export function formatValue(value: string | number, header?: ColumnNames) {
-    if(header && Object.hasOwn(filterToUnitMarker, header)) return `${value} ${filterToUnitMarker[header as keyof typeof filterToUnitMarker]}`;
+    if (header && Object.hasOwn(filterToUnitMarker, header)) return `${value} ${filterToUnitMarker[header as keyof typeof filterToUnitMarker]}`;
     return value
 }
 
 export function headerToUnitMarker(header: ColumnNames) {
-    if(Object.hasOwn(filterToUnitMarker, header)) return filterToUnitMarker[header as keyof typeof filterToUnitMarker]
-    return ""								
+    if (Object.hasOwn(filterToUnitMarker, header)) return filterToUnitMarker[header as keyof typeof filterToUnitMarker]
+    return ""
 }
 
 export function headerToDisplayName(header: ColumnNames) {
-    if(Object.hasOwn(filterRenameMap, header)) return filterRenameMap[header as keyof typeof filterRenameMap];
+    if (Object.hasOwn(filterRenameMap, header)) return filterRenameMap[header as keyof typeof filterRenameMap];
     return header
 }
 
 export function valueToString(value: string | number, header?: ColumnNames) {
-    if(!header) return formatValue(value);
+    if (!header) return formatValue(value);
     return `${headerToDisplayName(header)}: ${formatValue(value, header)}`
 }
 
@@ -38,7 +39,7 @@ export function productIdsToDataset(table: string[][], productIds: string[]) {
 
 const baseTitle = "Alkometriikka" as const;
 export function generateTitle<T extends string>(text?: T): typeof baseTitle | `${typeof baseTitle} | ${T}` | `${typeof baseTitle} | ${T} - [dev]` {
-    const fullTitle: `${typeof baseTitle} | ${T}` | typeof baseTitle = text ? `${baseTitle} | ${text}` : baseTitle ;
+    const fullTitle: `${typeof baseTitle} | ${T}` | typeof baseTitle = text ? `${baseTitle} | ${text}` : baseTitle;
     if (dev) {
         if (text) {
             return `${baseTitle} | ${text} - [dev]` as `Alkometriikka | ${T} - [dev]`;
@@ -47,4 +48,71 @@ export function generateTitle<T extends string>(text?: T): typeof baseTitle | `$
         }
     }
     return fullTitle;
+}
+
+export function handleExport() {
+    const data = {
+        personalInfo: personalInfo,
+        lists: lists
+    };
+    const blob = new Blob([JSON.stringify(data, null, 2)], {
+        type: 'application/json'
+    });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `alkometriikka-tiedot-${new Date()
+        .toISOString()
+        .slice(0, 10)}.json`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+}
+
+export function handleImport() {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = '.json';
+    input.onchange = async (event) => {
+        const file = (event?.target as HTMLInputElement)?.files?.[0];
+        if (file) {
+            const text = await file.text();
+            const data = JSON.parse(text);
+            console.log(data);
+            const currentPersonalInfo = { ...personalInfo };
+            const currentLists = [...lists];
+            localStorage.setItem(
+                LocalStorageKeys.PersonalInfo,
+                JSON.stringify({
+                    ...currentPersonalInfo,
+                    ...data.personalInfo
+                })
+            );
+            localStorage.setItem(
+                LocalStorageKeys.Lists,
+                JSON.stringify([...currentLists, ...data.lists])
+            );
+            window.location.reload();
+        }
+    };
+    input.click();
+}
+
+export function handleClearAll() {
+    if (
+        confirm(
+            'Haluatko varmasti tyhjentää kaikki tallennetut tiedot? Tätä toimintoa ei voi perua.'
+        )
+    ) {
+        localStorage.clear();
+        window.location.reload();
+    }
+}
+
+export function getRandom() {
+    if(typeof crypto !== 'undefined' && 'randomUUID' in crypto) {
+        return crypto.randomUUID();
+    }
+    return Math.random().toString(36).substring(2, 10);
 }

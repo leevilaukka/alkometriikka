@@ -10,6 +10,7 @@
 	import { components } from '$lib/utils/styles';
 	import Icon from '$lib/components/widgets/Icon.svelte';
 	import { version } from '$app/environment';
+	import { handleClearAll, handleExport, handleImport } from '$lib/utils/helpers';
 
 	let { children, data } = $props();
 
@@ -55,6 +56,9 @@
 			</div>
 			{#if dev}
 				<span class="ms-2 rounded bg-red-200 px-1.5 py-0.5 text-sm text-red-800">DEV</span>
+			{/if}
+			{#if window.BarcodeDetector}
+				{console.log('BarcodeDetector is supported')}
 			{/if}
 			<a href="/listat" class="ms-auto me-2">
 				<button class={twMerge(components.button(), 'p-2 text-xl')}>
@@ -148,55 +152,14 @@
 								<button
 									class={twMerge(components.button(), 'mt-1')}
 									onclick={() => {
-										const data = {
-											personalInfo: personalInfo,
-											lists: lists
-										};
-										const blob = new Blob([JSON.stringify(data, null, 2)], {
-											type: 'application/json'
-										});
-										const url = URL.createObjectURL(blob);
-										const a = document.createElement('a');
-										a.href = url;
-										a.download = `alkometriikka-tiedot-${new Date()
-											.toISOString()
-											.slice(0, 10)}.json`;
-										document.body.appendChild(a);
-										a.click();
-										document.body.removeChild(a);
-										URL.revokeObjectURL(url);
+										handleExport();
 									}}> <Icon name="download" /> <span>Vie tiedot</span></button
 								>
 
 								<button
 									class={twMerge(components.button(), 'mt-1')}
 									onclick={() => {
-										const input = document.createElement('input');
-										input.type = 'file';
-										input.accept = '.json';
-										input.onchange = async (event) => {
-											const file = (event?.target as HTMLInputElement)?.files?.[0];
-											if (file) {
-												const text = await file.text();
-												const data = JSON.parse(text);
-												console.log(data);
-												const currentPersonalInfo = { ...personalInfo };
-												const currentLists = [...lists];
-												localStorage.setItem(
-													LocalStorageKeys.PersonalInfo,
-													JSON.stringify({
-														...currentPersonalInfo,
-														...data.personalInfo
-													})
-												);
-												localStorage.setItem(
-													LocalStorageKeys.Lists,
-													JSON.stringify([...currentLists, ...data.lists])
-												);
-												window.location.reload();
-											}
-										};
-										input.click();
+										handleImport();
 									}}> <Icon name="upload" /> <span>Tuo tiedot</span></button
 								>
 							</div>
@@ -210,14 +173,8 @@
 							<button
 								class={twMerge(components.button({ type: 'negative' }))}
 								onclick={() => {
-									if (
-										confirm(
-											'Haluatko varmasti tyhjentää kaikki tallennetut tiedot? Tätä toimintoa ei voi perua.'
-										)
-									) {
-										localStorage.clear();
-										window.location.reload();
-									}
+									handleClearAll();
+									dialogElement.close();
 								}}> <Icon name="trash" /> <span>Tyhjennä</span></button
 							>
 						</div>
