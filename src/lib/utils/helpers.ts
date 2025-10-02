@@ -111,8 +111,22 @@ export function handleClearAll() {
 }
 
 export function getRandom() {
-    if(typeof crypto !== 'undefined' && 'randomUUID' in crypto) {
+    if (typeof crypto !== 'undefined' && 'randomUUID' in crypto) {
         return crypto.randomUUID();
     }
     return Math.random().toString(36).substring(2, 10);
+}
+
+export async function handleShare({ title, text, url }: { title: string; text: string; url: string }): Promise<boolean> {
+    if (navigator.canShare && navigator.canShare({ url })) {
+        console.log('sharing via navigator.share');
+        await navigator.share({
+            title,
+            text,
+            url
+        });
+        console.log('shared via navigator.share');
+        return true;
+    } else await navigator.clipboard.writeText(url);
+    return false;
 }

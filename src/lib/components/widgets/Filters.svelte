@@ -7,26 +7,15 @@
 	import StringInput from '../inputs/StringInput.svelte';
 	import Icon from './Icon.svelte';
 	import { isMobile } from '$lib/global.svelte';
+	import { initFilterValues } from '$lib/utils/alko';
 
 	let {
 		kaljakori,
-		filterValues = $bindable(initFilterValues()),
+		filterValues = $bindable(),
 	}: {
 		kaljakori: Kaljakori;
 		filterValues: any;
 	} = $props();
-
-	function initFilterValues() {
-		return [...shownFilters, AllColumns.BeerType].reduce<{ [key: string]: any }>((obj, filter) => {
-			if (kaljakori.getFilterType(filter) == 'number')
-				obj[filter] = kaljakori.getMinAndMaxValues(filter);
-			else if (kaljakori.getFilterType(filter) == 'string') obj[filter] = [];
-			else if (kaljakori.getFilterType(filter) == 'any') obj[filter] = [];
-			return obj;
-		}, {});
-	}
-
-	if(Object.keys(filterValues).length == 0) filterValues = initFilterValues()
 
 	const filters = shownFilters;
 
@@ -98,7 +87,7 @@
 	>
 		<button
 			onclick={() => {
-				filterValues = initFilterValues();
+				filterValues = initFilterValues(kaljakori);
 			}}
 			class={twMerge(components.button({ type: 'negative' }), 'w-full', 'mt-auto')}
 		>

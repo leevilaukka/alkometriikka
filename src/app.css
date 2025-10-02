@@ -13,8 +13,14 @@
 /* latin */
 @font-face {
   font-family: 'Inter';
-  font-weight: 100 900;
-  src: url("lib/assets/fonts/Inter/Inter-VariableFont_opsz,wght.ttf");
+  font-weight: 500;
+  src: url("lib/assets/fonts/Inter/static/Inter_24pt-Medium.ttf");
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 700;
+  src: url("lib/assets/fonts/Inter/static/Inter_24pt-Bold.ttf");
 }
 
 :root {
@@ -31,6 +37,7 @@ body, html {
 
 body {
     font-family: 'Inter', sans-serif;
+    font-weight: 500;
 }
 
 input:focus {

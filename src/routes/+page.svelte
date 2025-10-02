@@ -8,6 +8,6 @@
 	document.title = generateTitle();
 </script>
 
-{#await data then data}
-	<Main kaljakori={data.kaljakori} />
+{#await data.alko then alko}
+	<Main kaljakori={alko.kaljakori} />
 {/await}

@@ -1,5 +1,5 @@
-import { AllColumns, defaultSortingColumn, GenderOptionsMap } from '$lib/utils/constants';
-import { calculateDrunkValue } from '../utils/alcoholCounter';
+import { AllColumns, defaultSortingColumn, GenderOptionsMap, subCategoryMap } from '$lib/utils/constants';
+import { calculateDrunkValue } from '../utils/alko';
 import { type ColumnNames, type DatasetColumnNames, type DatasetRow, type DrunkColumnNames, type NativeTypes, type PersonalInfo, type PriceListItem } from '../types';
 import { isSimilarString } from '$lib/utils/search';
 
@@ -46,7 +46,7 @@ export class Kaljakori {
 				if (key === AllColumns.BottleSize) {
 					value = parseFloat(value as string)
 				} else if (isNumber) {
-					value = Number(value);
+					value = Number(value); 
 				} else if (typeof value === "string") {
 					value = (value as string).trim().toLowerCase().charAt(0).toUpperCase() + (value as string).slice(1);
 				} else {

@@ -15,7 +15,8 @@ function corsProxy(url: string) {
 }
 
 function getDatasetURL() {
-    if(dev) return corsProxy("https://alkometriikka.fi/data.txt")
+    //if(dev) return corsProxy("https://alkometriikka.fi/data.txt");
+    if(dev) return corsProxy("https://alkometriikka.fi/data.txt");
     return resolve("/") + "data.txt";
 }
 
@@ -33,21 +34,25 @@ async function fetchAlkoPriceList({ fetch }: { fetch: Fetch; }) {
 
 function formatDatasetToJSON(data: string) {
     const decompressed = decompressFromUTF16(data);
-    const { table, metadata } = JSON.parse(decompressed);
-    if (!table) throw new Error("Hinnaston purku epäonnistui");
-    if (table.length === 0) {
-        throw new Error("Hinnasto on tyhjä tai väärässä muodossa");
+    try {
+        const { table, metadata } = JSON.parse(decompressed);
+        if (!table) throw new Error("Hinnaston purku epäonnistui");
+        if (table.length === 0) {
+            throw new Error("Hinnasto on tyhjä tai väärässä muodossa");
+        }
+        // Validate that all columns in the dataset are known
+        const knownColumns = Object.values(DatasetColumns) as ColumnNames[];
+        if (table[0][0] !== DatasetColumns.Number) throw new Error("Hinnasto on tyhjä tai väärässä muodossa");
+        table[0].forEach((column: typeof DatasetColumns[keyof typeof DatasetColumns]) => {
+            if (!knownColumns.includes(column)) throw new Error(`Tuntematon sarake datassa: ${column}`);
+        });
+        return {
+            table,
+            metadata
+        };
+    } catch(e) {
+        throw "Hinnaston lataus epäonnistui"
     }
-    // Validate that all columns in the dataset are known
-    const knownColumns = Object.values(DatasetColumns) as ColumnNames[];
-    if (table[0][0] !== DatasetColumns.Number) throw new Error("Hinnasto on tyhjä tai väärässä muodossa");
-    table[0].forEach((column: typeof DatasetColumns[keyof typeof DatasetColumns]) => {
-        if (!knownColumns.includes(column)) throw new Error(`Tuntematon sarake datassa: ${column}`);
-    });
-    return {
-        table,
-        metadata
-    };
 }
 
 async function getDataset({ fetch }: { fetch: Fetch; }) {
@@ -61,10 +66,12 @@ async function getData({ fetch }: { fetch: Fetch; }) {
         try {
             const dataset = await getDataset({ fetch });
             resolve({ dataset, kaljakori: new Kaljakori(dataset.table, personalInfo) });
-        } catch (error) { reject(error); }
+        } catch (error) { 
+            reject(error);
+        }
     });
 }
 
-export function load({ fetch }: { fetch: Fetch }) {
-	return getData({ fetch });
+export async function load({ fetch }: { fetch: Fetch }) {
+	return { alko: getData({ fetch }) };
 };

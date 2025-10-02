@@ -17,21 +17,32 @@
 	}
 </script>
 
-{#if data.list}
-    <List dataset={data.dataset.table} list={data.list} />
-{:else}
-	<div class={twMerge("flex flex-col gap-4 w-[min(80ch,_100%)] mx-auto p-4")}>
-		<div class="flex w-full items-center gap-4">
-			<button
-				onclick={() => window.history.back()}
-				class={twMerge(components.button({ size: "md" }))}
-			>
-				<Icon name="arrow_left" class="inline-block" />
-				<span>Takaisin</span>
-			</button>
-		</div>
-		<div class="flex flex-col flex-auto gap-4 items-center">
-			<AllLists show={{ delete: true }} action={(list) => {goto(`/listat?list=${listToURI(list)}`)}} />
+{#await data.alko}
+	<div class="grid h-full w-full place-content-center">
+		<div class="flex flex-col items-center gap-3">
+			<span
+				class="block h-16 w-16 animate-spin rounded-full border-[0.5rem] border-red-600 border-b-transparent"
+			></span>
+			<p>Ladataan...</p>
 		</div>
 	</div>
-{/if}
+{:then alko}
+	{#if data.list}
+		<List dataset={alko.dataset.table} list={data.list} />
+	{:else}
+		<div class={twMerge("flex flex-col gap-4 w-[min(80ch,_100%)] mx-auto p-4")}>
+			<div class="flex w-full items-center gap-4">
+				<button
+					onclick={() => window.history.back()}
+					class={twMerge(components.button({ size: "md" }))}
+				>
+					<Icon name="arrow_left" class="inline-block" />
+					<span>Takaisin</span>
+				</button>
+			</div>
+			<div class="flex flex-col flex-auto gap-4 items-center">
+				<AllLists show={{ delete: true }} action={(list) => {goto(`/listat?list=${listToURI(list)}`)}} />
+			</div>
+		</div>
+	{/if}
+{/await}

@@ -1,6 +1,12 @@
 import type { ColNameObj, ColumnNames } from "$lib/types";
 
-
+/** Columns present in the Alko price list dataset
+ * These are in Finnish as they are used directly from the dataset
+ * and shown in the UI as-is or with minor modifications using `filterRenameMap`.
+ *
+ * Do not change these values unless the dataset changes.
+ * In that case, update the values accordingly
+ */
 export const DatasetColumns = Object.freeze({
     Number: "Numero",
     Name: "Nimi",
@@ -34,6 +40,9 @@ export const DatasetColumns = Object.freeze({
     EAN: "EAN"
 } as const);
 
+/** Columns related to calculated drunk values.
+ * These are in Finnish as they are shown in the UI as-is
+ */
 export const DrunkColumns = Object.freeze({
     AlcoholGrams: "Alkoholigrammat",
     AlcoholGramsPerEuro: "Alkoholigrammat / €",
@@ -42,7 +51,15 @@ export const DrunkColumns = Object.freeze({
     Servings: "Annokset"
 } as const);
 
+/** All columns available in the app.
+ * This is a combination of DatasetColumns and DrunkColumns
+ */
 export const AllColumns = Object.freeze({ ...DatasetColumns, ...DrunkColumns } as const);
+
+export const subCategoryMap = {
+    [DatasetColumns.Type]: DatasetColumns.SubType,
+    [DatasetColumns.Country]: DatasetColumns.Region,
+} as const satisfies ColNameObj<ColumnNames | null>;
 
 
 /**
@@ -65,6 +82,9 @@ export const shownFilters = [
     AllColumns.New
 ] as const satisfies readonly ColumnNames[];
 
+/**
+ * Keys to be shown in the sorting dropdown.
+ */
 export const shownSortingKeys = [
     AllColumns.AlcoholGramsPerEuro,
     AllColumns.Price,
@@ -166,19 +186,26 @@ export const filterRenameMap = {
     [AllColumns.GrapeVarieties]: 'Rypäleet',
 } as const satisfies ColNameObj<string>;
 
+/** Keys used for storing data in localStorage */
 export const LocalStorageKeys = {
     PersonalInfo: "personal_info",
     Lists: "lists",
     ListsVersion: "lists_version",
     AppVersion: "app_version",
+    CurrentFilters: "current_filters",
 } as const;
 
+/** Options for gender selection */
 export const GenderOptionsMap = {
     Male: "Mies",
     Female: "Nainen",
     Unspecified: "Muu"
 } as const satisfies { [key: string]: string };
 
+/** Columns that are hidden from the product page statistics.
+ * These are usually columns that are either not relevant for the product page
+ * or are already shown prominently elsewhere on the page.
+ */
 export const hideFromProductPageStats = new Set<ColumnNames>([
     DatasetColumns.AlcoholPercentage,
     DatasetColumns.Manufacturer,

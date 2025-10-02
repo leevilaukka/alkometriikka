@@ -19,11 +19,12 @@
 	$effect(() => {
 		localStorage.setItem(LocalStorageKeys.PersonalInfo, JSON.stringify(personalInfo));
 	});
+	
 	$effect(() => {
 		localStorage.setItem(LocalStorageKeys.Lists, JSON.stringify(lists));
 	});
 
-	let expandSearch = $state(false)
+	let expandSearch = $state(false);
 
 	let tab = $state<'personal' | 'info' | 'settings'>('personal');
 
@@ -32,9 +33,10 @@
 	});
 
 	afterNavigate(() => {
-		$searchQuery = ""
-	})
-	
+		$searchQuery = '';
+	});
+
+	console.log("layout", data);
 </script>
 
 <svelte:head>
@@ -42,7 +44,7 @@
 	<title>Alkometriikka</title>
 </svelte:head>
 
-{#await data}
+{#await data.alko}
 	<div class="grid h-full w-full place-content-center">
 		<div class="flex flex-col items-center gap-3">
 			<span
@@ -51,32 +53,50 @@
 			<p>Ladataan...</p>
 		</div>
 	</div>
-{:then}
+{:then alko}
 	<div class="flex h-full w-full flex-col">
 		{#if dev}
-			<span class="text-center bg-red-200 px-1.5 py-0.5 text-sm text-red-800">DEV</span>
+			<span class="bg-red-200 px-1.5 py-0.5 text-center text-sm text-red-800">DEV</span>
 		{/if}
-		<header class="relative flex h-fit items-center gap-2 md:gap-4 border-b border-gray-300 p-2">
+		<header class="relative flex h-fit items-center gap-2 border-b border-gray-300 p-2 md:gap-4">
 			<div class="flex flex-row items-center gap-3 bg-white">
 				<a href="/">
 					<img src={logo} alt="Alkoassistentti Logo" class="aspect-[10/2] h-12 object-contain" />
 				</a>
 			</div>
-			{#if page.route.id !== "/tuotteet/[...id]"}
-			<div class={twMerge("flex flex-row w-full", expandSearch ? "absolute inset-0" : "border border-gray-300 rounded")}>
-				<button onclick={() => {expandSearch = !expandSearch}} class={twMerge(components.button(), "aspect-square border-0 bg-white text-black", "p-2 text-xl", "border-e-0 rounded-e-none")}>
-					<Icon name="search" />
-				</button>
-				<input
-					id="searchQuery"
-					type="text"
-					bind:value={$searchQuery}
-					class={twMerge(components.input(), 'border-0 border-s hover:border-gray-300 text-md w-full gap-2 rounded-s-none')}
-					placeholder="Hae nimellä..."
-				/>
-			</div>
+			{#if page.route.id !== '/tuotteet/[...id]'}
+				<div
+					class={twMerge(
+						'flex w-full flex-row',
+						expandSearch ? 'absolute inset-0' : 'rounded border border-gray-300'
+					)}
+				>
+					<button
+						onclick={() => {
+							if($isMobile) expandSearch = !expandSearch;
+						}}
+						class={twMerge(
+							components.button(),
+							'aspect-square border-0 bg-white text-black',
+							'p-2 text-xl',
+							'rounded-e-none border-e-0'
+						)}
+					>
+						<Icon name="search" />
+					</button>
+					<input
+						id="searchQuery"
+						type="text"
+						bind:value={$searchQuery}
+						class={twMerge(
+							components.input(),
+							'text-md w-full gap-2 rounded-s-none border-0 border-s hover:border-gray-300'
+						)}
+						placeholder="Hae nimellä..."
+					/>
+				</div>
 			{/if}
-			<a href="/listat" class={twMerge(page.route.id !== "/tuotteet/[...id]" ? "" : "ms-auto")}>
+			<a href="/listat" class={twMerge(page.route.id !== '/tuotteet/[...id]' ? '' : 'ms-auto')}>
 				<button class={twMerge(components.button(), 'p-2 text-xl')}>
 					{#if !$isMobile}<span class="text-sm">Listat</span>{/if}<Icon name="list" />
 				</button>
@@ -139,14 +159,14 @@
 								>.
 							</p>
 						</div>
-						{console.log(data.dataset.metadata)}
+						{console.log(alko.dataset.metadata)}
 						<p class="text-sm text-gray-600">
 							Versio: <a href="https://github.com/leevilaukka/alkometriikka/commit/{version}"
 								>{version}</a
 							>
-							{#if data.dataset.metadata.CreatedDate}
+							{#if alko.dataset.metadata.CreatedDate}
 								| Hinnaston päiväys: {new Date(
-									data.dataset.metadata.CreatedDate
+									alko.dataset.metadata.CreatedDate
 								).toLocaleDateString('fi-FI')}{/if}
 						</p>
 						<button
@@ -272,9 +292,9 @@
 	<div class="grid h-full w-full place-content-center">
 		<div class="flex flex-col items-center gap-3">
 			<p>Virhe datan lataamisessa: {error.message}</p>
-			<button class="rounded bg-red-600 px-4 py-2 text-white" onclick={() => location.reload()}
-				>Yritä uudelleen</button
-			>
+			<button class="rounded bg-red-600 px-4 py-2 text-white" onclick={() => location.reload()}>
+				Yritä uudelleen
+			</button>
 		</div>
 	</div>
 {/await}

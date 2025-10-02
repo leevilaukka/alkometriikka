@@ -14,7 +14,7 @@
 	
 	const name = "stringinput-" + getRandom();
 
-	let list = $state<ListItem[]>(options.map((option) => ({ value: option, selected: false })));
+	let list = $state<ListItem[]>(options.map((option) => ({ value: option, selected: value.includes(option) })));
 
 	$effect(() => {
 		if (!value) return;

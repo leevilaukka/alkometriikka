@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { personalInfo, searchQuery } from '$lib/global.svelte';
 	import { components } from '$lib/utils/styles';
-	import { generateTitle, productIdsToDataset } from '$lib/utils/helpers';
+	import { generateTitle, handleShare, productIdsToDataset } from '$lib/utils/helpers';
 	import { Kaljakori } from '$lib/alko';
 	import {
 		getItemQuantity,
@@ -21,7 +21,10 @@
 		defaultSortingColumn,
 		AllColumns,
 		shownSortingKeys,
-		defaultSortingOrderMap
+		defaultSortingOrderMap,
+
+		LocalStorageKeys
+
 	} from '$lib/utils/constants';
 	import {
 		formatValue,
@@ -35,6 +38,8 @@
 	import Filters from '../widgets/Filters.svelte';
 	import { isMobile } from '$lib/global.svelte';
 	import { goto } from '$app/navigation';
+	import { initFilterValues } from '$lib/utils/alko';
+	import { untrack } from 'svelte';
 
 	const { list: importedList, dataset }: { list: ListObj; dataset: string[][] } = $props();
 
@@ -56,7 +61,7 @@
 	let listRef: SvelteVirtualList<PriceListItem> | null = $state(null);
 
 	let filtersComponent: Filters | null = $state(null);
-	let filterValues = $state({});
+	let filterValues = $state(initFilterValues(untrack(() => kaljakori)));
 	let showFilters = $derived(!$isMobile);
 
 	let selectedHighlight = $state(defaultSortingColumn);
@@ -91,19 +96,6 @@
 		goto(`?list=${listToURI(list)}`, { replaceState: true, noScroll: true, keepFocus: true });
 	});
 
-	async function handleShare(): Promise<boolean> {
-		if (navigator.canShare && navigator.canShare({ url: location.href })) {
-			console.log('sharing via navigator.share');
-			await navigator.share({
-				title: `Alkometriikka | Lista - ${list.name}`,
-				text: `Katso lista "${list.name}" Alkometriikassa!`,
-				url: location.href
-			});
-			console.log('shared via navigator.share');
-			return true;
-		} else await navigator.clipboard.writeText(location.href);
-		return false;
-	}
 </script>
 
 <div
@@ -126,10 +118,11 @@
 		<button
 			class={twMerge(components.button({ type: 'positive', size: 'md' }))}
 			onclick={async () => {
-				const shared = await handleShare();
-				if (!shared) {
-					alert('Linkki kopioitu leikepöydälle!');
-				}
+				await handleShare({
+					title: `Alkometriikka - ${list.name}`,
+					text: `Katso lista: ${list.name}`,
+					url: `${location.origin}/listat?list=${listToURI(list)}`
+				});
 			}}
 		>
 			<Icon name="share" /><span>Jaa</span>
@@ -216,7 +209,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="flex flex-row flex-wrap justify-between gap-2">
+			<div class="flex flex-row flex-wrap items-center justify-between gap-2">
 				<p>Tuotteet: {rows.length}</p>
 				<button
 					onclick={() => {
@@ -225,7 +218,7 @@
 					class={twMerge(components.button())}
 				>
 					<Icon name={'arrow_up'} />
-					<span>Hyppää alkuun</span>
+					<span>{ $isMobile ? "Alkuun" : "Hyppää alkuun" }</span>
 				</button>
 			</div>
 			<div class="flex flex-auto flex-col">
@@ -258,7 +251,7 @@
 								<div class="flex w-full flex-col gap-2">
 									<div class="flex flex-row items-center gap-3">
 										<span
-											class="absolute top-0 left-0 rounded-br bg-gray-100 p-0.5 text-sm text-gray-500"
+											class="absolute top-0 left-0 rounded-br bg-gray-100 py-0.5 px-1.5 text-sm text-gray-500"
 										>
 											{'#' + (idx + 1)}
 										</span>

@@ -9,7 +9,10 @@
 		defaultSortingColumn,
 		AllColumns,
 		shownSortingKeys,
-		defaultSortingOrderMap
+		defaultSortingOrderMap,
+
+		LocalStorageKeys
+
 	} from '$lib/utils/constants';
 	import { components } from '$lib/utils/styles';
 	import {
@@ -25,13 +28,14 @@
 	import { addToList } from '$lib/utils/lists';
 	import { isMobile, searchQuery } from '$lib/global.svelte';
 	import Filters from '../widgets/Filters.svelte';
+	import { getFilterValues } from '$lib/utils/alko';
 
 	const { kaljakori }: { kaljakori: Kaljakori } = $props();
 
 	let listRef: SvelteVirtualList<PriceListItem> | null = $state(null);
 
 	let filtersComponent: Filters | null = $state(null);
-	let filterValues = $state({});
+	let filterValues = $state(getFilterValues(kaljakori));
 
 	let selectedHighlight = $state(defaultSortingColumn);
 
@@ -56,6 +60,9 @@
 		return temp;
 	});
 
+	$effect(() => {
+    	if(filterValues) localStorage.setItem(LocalStorageKeys.CurrentFilters, JSON.stringify(filterValues))
+	})
 </script>
 
 <div class="relative grid h-full grid-cols-[auto_1fr]">
@@ -117,7 +124,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="flex flex-row flex-wrap justify-between gap-2">
+		<div class="flex flex-row flex-wrap items-center justify-between gap-2">
 			<p>Tulosten määrä: {rows.length}</p>
 			<button
 				onclick={() => {
@@ -158,7 +165,7 @@
 							<div class="flex w-full flex-col gap-2">
 								<div class="flex flex-row items-center gap-3">
 									<span
-										class="absolute top-0 left-0 rounded-br bg-gray-100 p-0.5 text-sm text-gray-500"
+										class="absolute top-0 left-0 rounded-br bg-gray-100 py-0.5 px-1.5 text-sm text-gray-500"
 									>
 										{'#' + (idx + 1)}
 									</span>

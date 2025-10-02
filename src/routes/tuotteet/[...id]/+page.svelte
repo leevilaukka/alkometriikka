@@ -6,7 +6,7 @@
 	import { page } from '$app/state';
 	import { redirect } from '@sveltejs/kit';
 
-	let  { data }: { data: Promise<{ dataset: { table: DatasetRow[]; metadata: FullProperties }, kaljakori: Kaljakori }> } = $props(); 
+	let  { data } = $props(); 
 	const id = page.params.id?.split('/')[0]; // Handle both /tuotteet/123 and /tuotteet/123/extra paths
 
 	console.log('id', id);
@@ -14,7 +14,16 @@
 	if (!id) redirect(300, "/");
 </script>
 
-{#await data then data}
-	{@const product = data.kaljakori.findById(id)}
+{#await data.alko}
+	<div class="grid h-full w-full place-content-center">
+		<div class="flex flex-col items-center gap-3">
+			<span
+				class="block h-16 w-16 animate-spin rounded-full border-[0.5rem] border-red-600 border-b-transparent"
+			></span>
+			<p>Ladataan...</p>
+		</div>
+	</div>
+{:then alko}
+	{@const product = alko.kaljakori.findById(id)}
 	<Product product={product} />
 {/await}

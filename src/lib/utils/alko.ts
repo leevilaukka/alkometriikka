@@ -1,4 +1,36 @@
-import { GenderOptionsMap } from "./constants";
+import type { Kaljakori } from "$lib/alko";
+import { AllColumns, GenderOptionsMap, LocalStorageKeys, shownFilters } from "./constants";
+
+
+
+export function initFilterValues(kaljakori: Kaljakori) {
+	return [...shownFilters, AllColumns.BeerType].reduce<{ [key: string]: any }>((obj, filter) => {
+		if (kaljakori.getFilterType(filter) == 'number')
+			obj[filter] = kaljakori.getMinAndMaxValues(filter);
+		else if (kaljakori.getFilterType(filter) == 'string') obj[filter] = [];
+		else if (kaljakori.getFilterType(filter) == 'any') obj[filter] = [];
+		return obj;
+	}, {});
+}
+
+export function getFilterValues(kaljakori: Kaljakori) {
+		let values = initFilterValues(kaljakori)
+		let storedFiltersJSON = localStorage.getItem(LocalStorageKeys.CurrentFilters)
+		if(storedFiltersJSON) {
+			try {
+				const temp = JSON.parse(storedFiltersJSON)
+				// before assigning saved filters check that filter keys are the same as default keys in values otherwise return default
+				for(let key of Object.keys(values)) {
+					console.log(key)
+					if(!Object.hasOwn(temp, key)) return values
+				}
+				values = temp
+			} catch(error) {
+				console.warn("Virhe ladatessa tallennettuja suodattimia")
+			}
+		}
+		return values
+	}
 
 /**
  * Laskee alkoholin määrän, känni per euro ja BAC-arvot.
