@@ -1,4 +1,5 @@
 import { dev } from "$app/environment";
+import type { Kaljakori } from "$lib/alko";
 import { lists, personalInfo } from "$lib/global.svelte";
 import type { ColumnNames } from "$lib/types";
 import { filterRenameMap, filterToUnitMarker, LocalStorageKeys, sortingOrderDescriptionMap } from "./constants";
@@ -118,6 +119,13 @@ export function getRandom() {
 }
 
 export async function handleShare({ title, text, url }: { title: string; text: string; url: string }): Promise<boolean> {
+    // if edge browser, share via clipboard
+    if (navigator.userAgent.includes('Edg/')) {
+        console.log('sharing via clipboard (edge)');
+        await navigator.clipboard.writeText(url);
+        return false;
+    }
+
     if (navigator.canShare && navigator.canShare({ url })) {
         console.log('sharing via navigator.share');
         await navigator.share({
@@ -129,4 +137,23 @@ export async function handleShare({ title, text, url }: { title: string; text: s
         return true;
     } else await navigator.clipboard.writeText(url);
     return false;
+}
+
+export function mergeFilterParameters(oldParameters: URLSearchParams, newParameters: URLSearchParams, filterValues: Record<ColumnNames, any[]>) {
+    oldParameters = new URLSearchParams([...oldParameters.entries()].filter(([key, value]) => {
+        // TODO: Make this better
+        return !Object.hasOwn(filterValues, key)
+    }))
+    const merged = oldParameters
+    for (const [key, value] of newParameters.entries()) {
+        if (merged.has(key)) {
+            const existingValues = merged.getAll(key);
+            if (!existingValues.includes(value)) {
+                merged.append(key, value);
+            }
+        } else {
+            merged.append(key, value);
+        }
+    }
+    return merged;
 }

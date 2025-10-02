@@ -10,12 +10,11 @@ export class Kaljakori {
 	possibleValues: Record<string, Set<any>> = {};
 	columnTypes: Record<string, NativeTypes> = {};
 	minAndMaxValues: (number[] | null)[] = [];
+	subValues: Record<string, Record<string, Set<any>>> = {}
 
 	constructor(table: DatasetRow[], personalInfo?: PersonalInfo) {
 		this.personalInfo = personalInfo || { weight: null, gender: GenderOptionsMap.Unspecified };
 		const [datasetColumns, ...rows] = table as [DatasetColumnNames[], ...DatasetRow[]];
-
-		console.log("datasetColumns", datasetColumns)
 
 		const drunkColumns: DrunkColumnNames[] = [
 			"Alkoholigrammat",
@@ -30,6 +29,10 @@ export class Kaljakori {
 		this.filters = [...datasetColumns, ...drunkColumns];
 
 		const indexOfTypeColumn = datasetColumns.indexOf(AllColumns.Type);
+
+		const datasetColumnColumnIndexes = datasetColumns.reduce((obj, current, idx) => {
+			return {...obj, [current]: idx}
+		}, {} as Record<DatasetColumnNames, number>)
 
 		const datasetValuesByColumn: any[][] = [...Array(datasetColumns.length)].map(() => []);
 
@@ -55,6 +58,15 @@ export class Kaljakori {
 
 				item[key] = value
 				if (isNumber || (value as string).length || key === AllColumns.BottleSize) datasetValuesByColumn[col].push(value);
+
+				if(Object.hasOwn(subCategoryMap, key) && value) {
+					if(!this.subValues[key]) this.subValues[key] = {}
+					if(!this.subValues[key][value]) this.subValues[key][value] = new Set();
+					const subvalue = rows[row][datasetColumnColumnIndexes[subCategoryMap[key as keyof typeof subCategoryMap]]];
+					if(subvalue && (isNumeric(subvalue) ? Number(subvalue) : subvalue.toString().trim().length)) {
+						this.subValues[key][value].add(subvalue);
+					}
+				}
 			}
 
 			const drunkValues = calculateDrunkValue(
@@ -104,6 +116,11 @@ export class Kaljakori {
 		return this.possibleValues[key] ? Array.from(this.possibleValues[key]) : [];
 	}
 
+	getSubFilterValues(key: ColumnNames, value: any) {
+		console.log(key, value)
+		return this.subValues[key] ? Array.from(this.subValues[key][value]) : [];
+	}
+
 	getFilterType(key: ColumnNames) {
 		return this.columnTypes[key];
 	}
@@ -150,7 +167,7 @@ export class Kaljakori {
 		if (Object.keys(filters).length === 0) return result;
 
 		filters = Object.fromEntries(
-			Object.entries(filters).filter(([key, value]) => {
+			Object.entries(filters).filter(([_, value]) => {
 				if (value instanceof Set) return value.size > 0;
 				return value.length > 0;
 			})

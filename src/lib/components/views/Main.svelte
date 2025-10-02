@@ -10,9 +10,6 @@
 		AllColumns,
 		shownSortingKeys,
 		defaultSortingOrderMap,
-
-		LocalStorageKeys
-
 	} from '$lib/utils/constants';
 	import { components } from '$lib/utils/styles';
 	import {
@@ -28,14 +25,15 @@
 	import { addToList } from '$lib/utils/lists';
 	import { isMobile, searchQuery } from '$lib/global.svelte';
 	import Filters from '../widgets/Filters.svelte';
-	import { getFilterValues } from '$lib/utils/alko';
+	import { initFilterValues } from '$lib/utils/filters';
+	import { page } from '$app/state';
 
 	const { kaljakori }: { kaljakori: Kaljakori } = $props();
 
 	let listRef: SvelteVirtualList<PriceListItem> | null = $state(null);
 
 	let filtersComponent: Filters | null = $state(null);
-	let filterValues = $state(getFilterValues(kaljakori));
+	let filterValues = $state(initFilterValues(kaljakori, page.url.searchParams));
 
 	let selectedHighlight = $state(defaultSortingColumn);
 
@@ -59,10 +57,6 @@
 		if (!asc) temp = temp.reverse();
 		return temp;
 	});
-
-	$effect(() => {
-    	if(filterValues) localStorage.setItem(LocalStorageKeys.CurrentFilters, JSON.stringify(filterValues))
-	})
 </script>
 
 <div class="relative grid h-full grid-cols-[auto_1fr]">
@@ -109,7 +103,7 @@
 				</div>
 				<div class="flex flex-col">
 					<label for={'selectedHighlight'} class="text-sm">
-						{'Korostus'}
+						Korostus
 					</label>
 					<select
 						name="selectedHighlight"
@@ -122,6 +116,17 @@
 						{/each}
 					</select>
 				</div>
+				{#if $isMobile}
+					<button
+						onclick={() => {
+							filtersComponent?.toggleFilterElement();
+						}}
+						class={twMerge(components.button(), 'w-full col-span-full')}
+					>
+						<span>Näytä suodattimet</span>
+						<Icon name={'filter'} />
+					</button>
+				{/if}
 			</div>
 		</div>
 		<div class="flex flex-row flex-wrap items-center justify-between gap-2">
@@ -289,17 +294,7 @@
 				{/snippet}
 			</SvelteVirtualList>
 		</div>
-		{#if $isMobile}
-			<button
-				onclick={() => {
-					filtersComponent?.toggleFilterElement();
-				}}
-				class={twMerge(components.button(), 'w-full')}
-			>
-				<span>Näytä suodattimet</span>
-				<Icon name={'filter'} />
-			</button>
-		{/if}
+		
 		{#if rows.length == 0}
 			<p>Ei tuloksia</p>
 		{/if}

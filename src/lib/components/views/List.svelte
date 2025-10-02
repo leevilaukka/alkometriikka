@@ -22,9 +22,6 @@
 		AllColumns,
 		shownSortingKeys,
 		defaultSortingOrderMap,
-
-		LocalStorageKeys
-
 	} from '$lib/utils/constants';
 	import {
 		formatValue,
@@ -38,8 +35,8 @@
 	import Filters from '../widgets/Filters.svelte';
 	import { isMobile } from '$lib/global.svelte';
 	import { goto } from '$app/navigation';
-	import { initFilterValues } from '$lib/utils/alko';
 	import { untrack } from 'svelte';
+	import { initFilterValues } from '$lib/utils/filters';
 
 	const { list: importedList, dataset }: { list: ListObj; dataset: string[][] } = $props();
 
@@ -102,11 +99,11 @@
 	class="flex flex-row items-center justify-between border-b border-gray-300 bg-gray-50 p-3 md:p-4 gap-4"
 >
 	<button
-		onclick={() => window.history.back()}
+		onclick={() => window.history.length > 1 ? window.history.back() : goto('/')}
 		class={twMerge(components.button({ size: "md" }))}
 	>
 		<Icon name="arrow_left" class="inline-block" />
-		<span>Takaisin</span>
+		<span>{window.history.length > 1 ? 'Takaisin' : 'Etusivulle'}</span>
 	</button>
 	{#if existingList}
 		<input
@@ -118,11 +115,13 @@
 		<button
 			class={twMerge(components.button({ type: 'positive', size: 'md' }))}
 			onclick={async () => {
-				await handleShare({
+				const shared = await handleShare({
 					title: `Alkometriikka - ${list.name}`,
 					text: `Katso lista: ${list.name}`,
 					url: `${location.origin}/listat?list=${listToURI(list)}`
 				});
+
+				if (!shared) alert('Linkki kopioitu leikepöydälle!');
 			}}
 		>
 			<Icon name="share" /><span>Jaa</span>
@@ -157,7 +156,7 @@
 			<aside
 				class="z-10 flex h-full flex-col overflow-x-hidden overflow-y-auto border-gray-300 md:w-84 md:border-r"
 			>
-				<Filters {kaljakori} bind:filterValues bind:this={filtersComponent} />
+				<Filters {kaljakori} bind:filterValues bind:this={filtersComponent} useURLParams={false} />
 			</aside>
 		{/if}
 		<main class="mx-auto flex h-full w-full flex-col gap-3 bg-gray-100 p-3 md:gap-4 md:p-6">

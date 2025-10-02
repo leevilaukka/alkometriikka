@@ -2,19 +2,27 @@
 	import type { Kaljakori } from '$lib/alko';
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/styles';
-	import { AllColumns, filterRenameMap, shownFilters } from '$lib/utils/constants';
+	import { AllColumns, filterRenameMap, shownFilters, subCategoryMap } from '$lib/utils/constants';
 	import NumberInput from '../inputs/NumberInput.svelte';
 	import StringInput from '../inputs/StringInput.svelte';
 	import Icon from './Icon.svelte';
 	import { isMobile } from '$lib/global.svelte';
-	import { initFilterValues } from '$lib/utils/alko';
+	import { initFilterValues } from '$lib/utils/filters';
+	import { filterValuesFromSearchParameters, searchParametersFromFilterValues } from '$lib/utils/filters';
+	import { goto } from '$app/navigation';
+	import { mergeFilterParameters } from '$lib/utils/helpers';
+	import { page } from '$app/state';
+	import { untrack } from 'svelte';
+	import type { ColumnNames } from '$lib/types';
 
 	let {
 		kaljakori,
 		filterValues = $bindable(),
+		useURLParams = true,
 	}: {
 		kaljakori: Kaljakori;
-		filterValues: any;
+		filterValues: Record<ColumnNames, any[]>; // TODO: types?
+		useURLParams?: boolean,
 	} = $props();
 
 	const filters = shownFilters;
@@ -36,15 +44,17 @@
 	});
 
 	$effect(() => {
-		if (
-			filterValues[AllColumns.Type]?.length !== 1 ||
-			filterValues[AllColumns.Type]?.[0] !== 'Oluet'
-		) {
-			filterValues[AllColumns.BeerType] = [];
-		}
+		(Object.keys(filterValues) as ColumnNames[]).forEach((filter) => {
+			if(Object.hasOwn(subCategoryMap, filter) && filterValues[filter].length > 1 && filterValues[subCategoryMap[filter as keyof typeof subCategoryMap]].length) filterValues[subCategoryMap[filter as keyof typeof subCategoryMap]] = []
+		})
 	});
 
-	$inspect("filterValues", filterValues)
+	$effect(() => {
+		if(!useURLParams) return
+		const searchParams = searchParametersFromFilterValues(filterValues, kaljakori)
+		const url = untrack(() => page.url)
+		goto(`${url.pathname}?${mergeFilterParameters(url.searchParams, searchParams, filterValues).toString()}`, { replaceState: true })
+	})
 </script>
 
 <dialog
@@ -69,13 +79,16 @@
 							bind:value={filterValues[filter]}
 							name={filter}
 						/>
-						{#if filter === AllColumns.Type && [AllColumns.Type]?.length === 1 && filterValues[AllColumns.Type]?.[0] === 'Oluet'}
+					{/if}
+					{#if Object.hasOwn(subCategoryMap, filter) && filterValues[filter].length === 1}
+						{@const subFilter = subCategoryMap[filter as keyof typeof subCategoryMap]}
+						{@const subFilterValues = kaljakori.getSubFilterValues(filter, filterValues[filter][0])}
+						{#if subFilterValues.length}
 							<StringInput
-								label={filterRenameMap[AllColumns.BeerType as keyof typeof filterRenameMap] ??
-									AllColumns.BeerType}
-								options={kaljakori.getFilterValues(AllColumns.BeerType)}
-								bind:value={filterValues[AllColumns.BeerType]}
-								name={AllColumns.BeerType}
+								label={filterRenameMap[subFilter as keyof typeof filterRenameMap] ?? subFilter}
+								options={subFilterValues}
+								bind:value={filterValues[subFilter]}
+								name={subFilter}
 							/>
 						{/if}
 					{/if}

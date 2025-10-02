@@ -35,8 +35,6 @@
 	afterNavigate(() => {
 		$searchQuery = '';
 	});
-
-	console.log("layout", data);
 </script>
 
 <svelte:head>
