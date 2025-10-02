@@ -38,7 +38,7 @@ jobs:
   
         - name: Apply stashed changes
           run: |
-            git stash apply --index || echo "No stashed changes to apply"
+            git stash apply || echo "No stashed changes to apply"
             git checkout --theirs data.txt || true
 
         - name: Commit and push downloaded file
