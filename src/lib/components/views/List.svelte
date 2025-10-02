@@ -34,9 +34,10 @@
 	import { addToList } from '$lib/utils/lists';
 	import Filters from '../widgets/Filters.svelte';
 	import { isMobile } from '$lib/global.svelte';
-	import { goto } from '$app/navigation';
+	import { goto, replaceState } from '$app/navigation';
 	import { untrack } from 'svelte';
 	import { initFilterValues } from '$lib/utils/filters';
+	import { page } from '$app/state';
 
 	const { list: importedList, dataset }: { list: ListObj; dataset: string[][] } = $props();
 
@@ -90,9 +91,8 @@
 	}
 
 	$effect(() => {
-		goto(`?list=${listToURI(list)}`, { replaceState: true, noScroll: true, keepFocus: true });
+		replaceState(`?list=${listToURI(list)}`, page.state);
 	});
-
 </script>
 
 <div
@@ -108,6 +108,7 @@
 	{#if existingList}
 		<input
 			type="text"
+			name="listName"
 			onblur={() => validateListName(list.name)}
 			class="w-full border-none bg-transparent p-0 text-2xl leading-none focus:ring-0"
 			bind:value={list.name}
@@ -174,7 +175,10 @@
 								class={twMerge(components.input(), 'rounded-none rounded-s pe-8')}
 							>
 								{#each shownSortingKeys as filter}
-									<option value={filter}>{headerToDisplayName(filter)}</option>
+									{@const hasValues = kaljakori.getFilterValues(filter).length > 0}
+									{#if hasValues}
+										<option value={filter}>{headerToDisplayName(filter)}</option>
+									{/if}
 								{/each}
 							</select>
 							{#if selectedSortingColumn}
@@ -202,7 +206,10 @@
 							class={twMerge(components.input(), 'pe-8')}
 						>
 							{#each shownColumnsToHighlight as filter}
-								<option value={filter}>{headerToDisplayName(filter)}</option>
+								{@const hasValues = kaljakori.getFilterValues(filter).length > 0}
+								{#if hasValues}
+									<option value={filter}>{headerToDisplayName(filter)}</option>
+								{/if}
 							{/each}
 						</select>
 					</div>

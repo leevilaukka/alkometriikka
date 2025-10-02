@@ -19,7 +19,7 @@
 	$effect(() => {
 		localStorage.setItem(LocalStorageKeys.PersonalInfo, JSON.stringify(personalInfo));
 	});
-	
+
 	$effect(() => {
 		localStorage.setItem(LocalStorageKeys.Lists, JSON.stringify(lists));
 	});
@@ -71,7 +71,7 @@
 				>
 					<button
 						onclick={() => {
-							if($isMobile) expandSearch = !expandSearch;
+							if ($isMobile) expandSearch = !expandSearch;
 						}}
 						class={twMerge(
 							components.button(),
@@ -118,9 +118,12 @@
 								tab === 'personal' ? 'bg-gray-200' : ''
 							)}
 							onclick={() => (tab = 'personal')}
-							><Icon name="user" />{#if !$isMobile}<span class="ms-2">Henkilökohtaiset tiedot</span
-								>{/if}</button
 						>
+							<Icon name="user" />
+							{#if !$isMobile}
+								<span class="ms-2">Henkilökohtaiset tiedot</span>
+							{/if}
+						</button>
 						<button
 							class={twMerge(
 								components.button(),
@@ -129,23 +132,29 @@
 							)}
 							onclick={() => (tab = 'settings')}
 						>
-							<Icon name="settings" />{#if !$isMobile}<span class="ms-2">Lisäasetukset</span
-								>{/if}</button
-						>
+							<Icon name="settings" />
+							{#if !$isMobile}
+								<span class="ms-2">Lisäasetukset</span>
+							{/if}
+						</button>
 						<button
 							class={twMerge(components.button(), 'w-full', tab === 'info' ? 'bg-gray-200' : '')}
 							onclick={() => (tab = 'info')}
-							><Icon name="info" />{#if !$isMobile}<span class="ms-2">Tietoa</span>{/if}</button
 						>
+							<Icon name="info" />
+							{#if !$isMobile}
+								<span class="ms-2">Tietoa</span>
+							{/if}
+						</button>
 					</div>
 					{#if tab === 'info'}
 						<div class="prose">
 							<h2 class="text-lg font-bold">Tietoa</h2>
 							<p>
-								Alkometriikka on <a
-									href="https://github.com/leevilaukka/alkometriikka"
-									target="_blank">avoimen lähdekoodin</a
-								> web-sovellus, joka listaa Alkon tuotevalikoiman ja antaa käyttäjille hieman laskennallista
+								Alkometriikka on
+								<a href="https://github.com/leevilaukka/alkometriikka" target="_blank">
+									avoimen lähdekoodin
+								</a> web-sovellus, joka listaa Alkon tuotevalikoiman ja antaa käyttäjille hieman laskennallista
 								tietoa tuotteista.
 							</p>
 							<p>
@@ -153,19 +162,47 @@
 								vuorokauden viiveellä. Voit ladata sen <a
 									href="https://www.alko.fi/INTERSHOP/static/WFS/Alko-OnlineShop-Site/-/Alko-OnlineShop/fi_FI/Alkon%20Hinnasto%20Tekstitiedostona/alkon-hinnasto-tekstitiedostona.xlsx"
 									target="_blank"
-									rel="noopener noreferrer">täältä</a
-								>.
+									rel="noopener noreferrer"
+									>täältä
+								</a>.
 							</p>
+							<p>
+								Voit lähettää kehitysehdotuksia ja bugiraportteja GitHubin kautta. <br />
+								<a
+									href="https://github.com/leevilaukka/alkometriikka/issues/new?template=feature_request.md"
+									>Lähetä kehitysehdotus
+								</a>
+								|
+								<a
+									href="https://github.com/leevilaukka/alkometriikka/issues/new?template=bug_report.md"
+									>Lähetä bugiraportti
+								</a>
+							</p>
+							<p>
+								Muut yhteydenotot voi lähettää sähköpostitse osoitteeseen
+								<a href="mailto:alkometriikka@proton.me">alkometriikka@proton.me</a>.
+							</p>
+						</div>
+						<div class="flex flex-row items-center gap-2">
+							<a href="https://github.com/leevilaukka/alkometriikka" target="_blank" class={twMerge(components.button())}>
+								<Icon name="github" class="inline-block" />
+								<span>GitHub</span>
+							</a>
+							<a href="mailto:alkometriikka@proton.me" target="_blank" class={twMerge(components.button())}>
+								<Icon name="mail" class="inline-block" />
+								<span>Sähköposti</span>
+							</a>
 						</div>
 						{console.log(alko.dataset.metadata)}
 						<p class="text-sm text-gray-600">
-							Versio: <a href="https://github.com/leevilaukka/alkometriikka/commit/{version}"
-								>{version}</a
-							>
+							Versio: <a href="https://github.com/leevilaukka/alkometriikka/commit/{version}">
+								{version}
+							</a>
 							{#if alko.dataset.metadata.CreatedDate}
 								| Hinnaston päiväys: {new Date(
 									alko.dataset.metadata.CreatedDate
-								).toLocaleDateString('fi-FI')}{/if}
+								).toLocaleDateString('fi-FI')}
+							{/if}
 						</p>
 						<button
 							class={twMerge(components.button(), 'w-full')}

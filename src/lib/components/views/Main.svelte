@@ -84,7 +84,10 @@
 							class={twMerge(components.input(), 'w-full rounded-none rounded-s pe-8')}
 						>
 							{#each shownSortingKeys as filter}
-								<option value={filter}>{headerToDisplayName(filter)}</option>
+								{@const hasValues = kaljakori.getFilterValues(filter).length > 0}
+								{#if hasValues}
+									<option value={filter}>{headerToDisplayName(filter)}</option>
+								{/if}
 							{/each}
 						</select>
 						{#if selectedSortingColumn}
@@ -112,7 +115,10 @@
 						class={twMerge(components.input(), 'w-full pe-8')}
 					>
 						{#each shownColumnsToHighlight as filter}
-							<option value={filter}>{headerToDisplayName(filter)}</option>
+							{@const hasValues = kaljakori.getFilterValues(filter).length > 0}
+							{#if hasValues}
+								<option value={filter}>{headerToDisplayName(filter)}</option>
+							{/if}
 						{/each}
 					</select>
 				</div>

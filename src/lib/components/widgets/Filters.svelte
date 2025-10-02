@@ -9,7 +9,7 @@
 	import { isMobile } from '$lib/global.svelte';
 	import { initFilterValues } from '$lib/utils/filters';
 	import { filterValuesFromSearchParameters, searchParametersFromFilterValues } from '$lib/utils/filters';
-	import { goto } from '$app/navigation';
+	import { goto, replaceState } from '$app/navigation';
 	import { mergeFilterParameters } from '$lib/utils/helpers';
 	import { page } from '$app/state';
 	import { untrack } from 'svelte';
@@ -53,7 +53,7 @@
 		if(!useURLParams) return
 		const searchParams = searchParametersFromFilterValues(filterValues, kaljakori)
 		const url = untrack(() => page.url)
-		goto(`${url.pathname}?${mergeFilterParameters(url.searchParams, searchParams, filterValues).toString()}`, { replaceState: true })
+		replaceState(`${url.pathname}?${mergeFilterParameters(url.searchParams, searchParams, filterValues).toString()}`, page.state)
 	})
 </script>
 
