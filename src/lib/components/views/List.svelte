@@ -211,8 +211,8 @@
 		<button
 			class={twMerge(components.button({ type: 'positive', size: 'md' }))}
 			onclick={() => {
-				saveList(list);
-				location.reload();
+				const saved = saveList(list);
+				goto(`?list=${listToURI(saved)}`);
 			}}
 		>
 			<span>Tallenna lista</span>

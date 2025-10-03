@@ -105,6 +105,7 @@ export function validateList(uri: string) {
 }
 
 export function saveList(list: ListObj) {
-    list.id = createListId();
-    lists.push(list);
+    const copy = { ...list, id: createListId() }
+    lists.push(copy);
+    return copy
 }
