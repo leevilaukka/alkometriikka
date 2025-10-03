@@ -177,6 +177,8 @@ export const filterToUnitMarker = {
     [AllColumns.AlcoholGrams]: 'g',
     [AllColumns.Acidity]: 'g/l',
     [AllColumns.Energy]: 'kcal/100ml',
+    [AllColumns.BitternessEBU]: 'EBU',
+    [AllColumns.OriginalGravity]: '°P',
 } as const satisfies ColNameObj<string>;
 
 /**
@@ -192,6 +194,9 @@ export const filterRenameMap = {
     [AllColumns.Description]: 'Kuvaus',
     [AllColumns.LabelInfo]: 'Etiketti',
     [AllColumns.GrapeVarieties]: 'Rypäleet',
+    [AllColumns.OriginalGravity]: 'Kantavierre',
+    [AllColumns.ColorEBC]: 'Väri',
+    [AllColumns.BitternessEBU]: 'Katkeroaineet',
 } as const satisfies ColNameObj<string>;
 
 /** Keys used for storing data in localStorage */
