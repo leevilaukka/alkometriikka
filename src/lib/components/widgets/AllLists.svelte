@@ -37,7 +37,8 @@
                                     components.button({ type: 'positive', size: 'md' }),
                                     'aspect-square md:aspect-auto'
                                 )}
-                                onclick={async () => {
+                                onclick={async (e) => {
+                                    e.stopPropagation();
                                     const shared = await handleShare({
                                         title: `Alkometriikka - ${list.name}`,
                                         text: `Katso lista: ${list.name}`,
