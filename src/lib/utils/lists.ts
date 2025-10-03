@@ -73,15 +73,12 @@ export function removeFromList(list: ListObj, itemNumber: string) {
 }
 
 export function listToURI(list: ListObj) {
-    const copy: Omit<ListObj, 'id'> & { id?: string } = {...list}
-    delete copy.id
-    return compressToEncodedURIComponent(JSON.stringify(copy));
+    return compressToEncodedURIComponent(JSON.stringify(list));
 }
 
 export function URIToList(uri: string) {
     try {
         const decoded = JSON.parse(decompressFromEncodedURIComponent(uri));
-        if(!("id" in decoded)) decoded.id = createListId()
         return Array.isArray(decoded.items) ? decoded : null;
     } catch(e) {
         return null
@@ -108,10 +105,6 @@ export function validateList(uri: string) {
 }
 
 export function saveList(list: ListObj) {
-    const existingIndex = lists.findIndex(l => l.id === list.id);
-    if (existingIndex !== -1) {
-        lists[existingIndex] = list;
-    } else {
-        lists.push(list);
-    }
+    list.id = createListId();
+    lists.push(list);
 }

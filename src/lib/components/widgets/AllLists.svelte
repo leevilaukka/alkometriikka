@@ -30,7 +30,7 @@
                             <span>{`Tuotteet: ${list.items.length}`}</span>
                         </p>
                     </div>
-                    <div class="flex items-center">
+                    <div class="flex items-center gap-3">
                         {#if show?.share}
                             <button
                                 class={twMerge(
