@@ -55,3 +55,14 @@ input:focus {
 dialog[open] {
     display: flex;
 }
+
+.hide-number-input::-webkit-outer-spin-button,
+.hide-number-input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.hide-number-input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}

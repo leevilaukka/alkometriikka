@@ -3,7 +3,7 @@
 	import favicon from '$lib/assets/images/favicon.png';
 	import { dev } from '$app/environment';
 	import { GenderOptionsMap, LocalStorageKeys } from '$lib/utils/constants';
-	import { isMobile, lists, personalInfo, searchQuery } from '$lib/global.svelte';
+	import { isMobile, isLaptop, lists, personalInfo, searchQuery } from '$lib/global.svelte';
 	import logo from '$lib/assets/images/logo.png';
 	import Popup from '$lib/components/widgets/Popup.svelte';
 	import { twMerge } from 'tailwind-merge';
@@ -30,6 +30,7 @@
 
 	window.addEventListener('resize', () => {
 		$isMobile = window.matchMedia('(width < 48rem)').matches;
+		$isLaptop = window.matchMedia('(width < 1280px)').matches;
 	});
 
 	afterNavigate(() => {

@@ -1,4 +1,4 @@
-import { AllColumns, defaultSortingColumn, GenderOptionsMap, subCategoryMap } from '$lib/utils/constants';
+import { AllColumns, defaultSortingColumn, GenderOptionsMap, subCategoryMap, undefinedToZeroColumns } from '$lib/utils/constants';
 import { calculateDrunkValue } from '../utils/alko';
 import { type ColumnNames, type DatasetColumnNames, type DatasetRow, type DrunkColumnNames, type NativeTypes, type PersonalInfo, type PriceListItem } from '../types';
 import { isSimilarString } from '$lib/utils/search';
@@ -24,8 +24,6 @@ export class Kaljakori {
 			"Annokset"
 		];
 
-		const isNumeric = (num: unknown) => (typeof num === "string" && num.trim() !== '') && !isNaN(num as unknown as number);
-
 		this.filters = [...datasetColumns, ...drunkColumns];
 
 		const indexOfTypeColumn = datasetColumns.indexOf(AllColumns.Type);
@@ -37,6 +35,8 @@ export class Kaljakori {
 		const datasetValuesByColumn: any[][] = [...Array(datasetColumns.length)].map(() => []);
 
 		const drunkValuesByColumn: any[][] = [...Array(drunkColumns.length)].map(() => []);
+
+		const isNumeric = (num: unknown) => (typeof num === "string" && num.trim() !== '') && !isNaN(num as unknown as number);
 
 		for (let row = 0; row < rows.length; row++) {
 			const item: any = {};
@@ -53,11 +53,12 @@ export class Kaljakori {
 				} else if (typeof value === "string") {
 					value = (value as string).trim().toLowerCase().charAt(0).toUpperCase() + (value as string).slice(1);
 				} else {
-					value = ""
+					if (undefinedToZeroColumns.includes(key as any)) value = 0
+					else value = ""
 				}
 
 				item[key] = value
-				if (isNumber || (value as string).length || key === AllColumns.BottleSize) datasetValuesByColumn[col].push(value);
+				if (isNumber || (value as string).length || key === AllColumns.BottleSize || typeof value === "number") datasetValuesByColumn[col].push(value);
 
 				if(Object.hasOwn(subCategoryMap, key) && value) {
 					if(!this.subValues[key]) this.subValues[key] = {}

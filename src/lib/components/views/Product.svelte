@@ -115,6 +115,7 @@
 		<div class="flex flex-col gap-0.5 md:gap-1">
 			<h2 class="text-lg font-bold">Laskennalliset tiedot</h2>
 			{#each Object.entries(DrunkColumns) as [_, value]}
+                {console.log(product[value])}
 				{#if product[value] !== null && product[value] !== undefined}
 					<p>
 						{valueToString(

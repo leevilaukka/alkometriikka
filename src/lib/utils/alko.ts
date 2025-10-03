@@ -1,5 +1,4 @@
-import type { Kaljakori } from "$lib/alko";
-import { AllColumns, GenderOptionsMap, LocalStorageKeys, shownFilters, subCategoryMap } from "./constants";
+import { GenderOptionsMap} from "./constants";
 
 /**
  * Laskee alkoholin määrän, känni per euro ja BAC-arvot.
@@ -49,11 +48,13 @@ export function calculateDrunkValue(
 	// Lasketaan annokset (1 annos = 12g)
 	const servings = pureAlcoholGrams / 12;
 
+
 	return [
 		parseFloat(pureAlcoholGrams.toFixed(2)),
 		parseFloat(alcoholPerEuro.toFixed(2)),
 		parseFloat(estimatedBAC.toFixed(3)),
 		parseFloat(bacPerEuro.toFixed(4)),
-		parseFloat(servings.toFixed(1))
+		parseFloat(servings.toFixed(1)),
 	];
 }
+

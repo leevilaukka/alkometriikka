@@ -2,14 +2,14 @@
 	import type { Kaljakori } from '$lib/alko';
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/styles';
-	import { AllColumns, filterRenameMap, shownFilters, subCategoryMap } from '$lib/utils/constants';
+	import { filterRenameMap, shownFilters, subCategoryMap } from '$lib/utils/constants';
 	import NumberInput from '../inputs/NumberInput.svelte';
 	import StringInput from '../inputs/StringInput.svelte';
 	import Icon from './Icon.svelte';
 	import { isMobile } from '$lib/global.svelte';
 	import { initFilterValues } from '$lib/utils/filters';
-	import { filterValuesFromSearchParameters, searchParametersFromFilterValues } from '$lib/utils/filters';
-	import { goto, replaceState } from '$app/navigation';
+	import { searchParametersFromFilterValues } from '$lib/utils/filters';
+	import { goto } from '$app/navigation';
 	import { mergeFilterParameters } from '$lib/utils/helpers';
 	import { page } from '$app/state';
 	import { untrack } from 'svelte';
@@ -53,14 +53,14 @@
 		if(!useURLParams) return
 		const searchParams = searchParametersFromFilterValues(filterValues, kaljakori)
 		const url = untrack(() => page.url)
-		replaceState(`${url.pathname}?${mergeFilterParameters(url.searchParams, searchParams, filterValues).toString()}`, page.state)
+		goto(`${url.pathname}?${mergeFilterParameters(url.searchParams, searchParams, filterValues).toString()}`, { replaceState: true })
 	})
 </script>
 
 <dialog
 	bind:this={filtersElement}
 	class={twMerge(
-		'relative m-auto hidden h-full w-full flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-4 backdrop:backdrop-blur-sm open:flex md:relative md:rounded-none md:border-0 md:border-r'
+		'relative m-auto hidden h-full w-full flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-4 backdrop:backdrop-blur-sm open:flex md:relative md:rounded-none md:border-0'
 	)}
 	onclose={() => (showFilters = false)}
 >

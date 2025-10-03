@@ -1,14 +1,16 @@
 <script lang="ts">
-	import { personalInfo, searchQuery } from '$lib/global.svelte';
+	import { isLaptop, personalInfo, searchQuery } from '$lib/global.svelte';
 	import { components } from '$lib/utils/styles';
 	import { generateTitle, handleShare, productIdsToDataset } from '$lib/utils/helpers';
 	import { Kaljakori } from '$lib/alko';
 	import {
 		getItemQuantity,
 		getListById,
+		getListItem,
 		listToURI,
 		removeFromList,
-		saveList
+		saveList,
+		updateQuantity
 	} from '$lib/utils/lists';
 	import Icon from '../widgets/Icon.svelte';
 	import { generateImageUrl } from '$lib/utils/image.js';
@@ -21,7 +23,7 @@
 		defaultSortingColumn,
 		AllColumns,
 		shownSortingKeys,
-		defaultSortingOrderMap,
+		defaultSortingOrderMap
 	} from '$lib/utils/constants';
 	import {
 		formatValue,
@@ -58,6 +60,21 @@
 
 	let listRef: SvelteVirtualList<PriceListItem> | null = $state(null);
 
+	let detailsElement: HTMLDialogElement | null = $state(null);
+
+	export function toggleDetailsElement() {
+		if (!detailsElement) return;
+		if (detailsElement.open) detailsElement.close();
+		else if ($isLaptop) detailsElement.showModal();
+		else detailsElement.show();
+	}
+
+	$effect(() => {
+		if (detailsElement?.open) detailsElement.close();
+		if ($isLaptop) return;
+		detailsElement?.show();
+	});
+
 	let filtersComponent: Filters | null = $state(null);
 	let filterValues = $state(initFilterValues(untrack(() => kaljakori)));
 	let showFilters = $derived(!$isMobile);
@@ -85,9 +102,55 @@
 		return temp;
 	});
 
+	function getListDetails() {
+		let totalPrice = 0;
+		let totalAlcoholGrams = 0;
+		let totalAlcoholGramsPerEuro = 0;
+		let totalItems = 0;
+		let totalBAC = 0;
+		let totalSugar = 0;
+		let totalVolume = 0;
+		list.items.forEach((item) => {
+			const product = kaljakori.data.find((p) => p[AllColumns.Number] === item.id);
+			if (product) {
+				totalItems += item.q;
+				totalPrice += Number.parseFloat(product[AllColumns.Price] as string) * item.q;
+				totalAlcoholGrams += Number.parseFloat(product[AllColumns.AlcoholGrams] as string) * item.q;
+				totalAlcoholGramsPerEuro +=
+					(Number.parseFloat(product[AllColumns.AlcoholGrams] as string) * item.q) /
+					(Number.parseFloat(product[AllColumns.Price] as string) * item.q);
+				totalBAC +=
+					(Number.parseFloat(product[AllColumns.EstimatedPromille] as string) || 0) * item.q;
+				totalSugar +=
+					(Number.parseFloat(product[AllColumns.Sugar] as string) || 0) * item.q;
+				totalVolume += Number.parseFloat(product[AllColumns.BottleSize] as string) * item.q;
+			}
+		});
+
+		return {
+			totalPrice: totalPrice.toFixed(2),
+			totalAlcoholGrams: totalAlcoholGrams.toFixed(2),
+			totalAlcoholGramsPerEuro: totalAlcoholGramsPerEuro.toFixed(2),
+			totalItems,
+			totalSugar: totalSugar.toFixed(2),
+			totalBAC: totalBAC.toFixed(2),
+			totalVolume: totalVolume.toFixed(2)
+		};
+	}
+
+	let details = $derived.by(getListDetails);
+
 	function validateListName(name: string) {
 		if (name.trim().length === 0) list.name = 'Nimetön lista';
 		else list.name = name.trim();
+	}
+
+	function modifyQuantity(item: PriceListItem, delta: number) {
+		updateQuantity(
+			list,
+			item[AllColumns.Number],
+			getItemQuantity(list, item[AllColumns.Number]) + delta
+		);
 	}
 
 	$effect(() => {
@@ -96,14 +159,14 @@
 </script>
 
 <div
-	class="flex flex-row items-center justify-between border-b border-gray-300 bg-gray-50 p-3 md:p-4 gap-4"
+	class="flex flex-row items-center justify-between gap-4 border-b border-gray-300 bg-gray-50 p-3 md:p-4"
 >
 	<button
-		onclick={() => window.history.length > 1 ? window.history.back() : goto('/')}
-		class={twMerge(components.button({ size: "md" }))}
+		onclick={() => (window.history.length > 1 ? window.history.back() : goto('/'))}
+		class={twMerge(components.button({ size: 'md' }), 'aspect-square md:aspect-auto')}
 	>
 		<Icon name="arrow_left" class="inline-block" />
-		<span>{window.history.length > 1 ? 'Takaisin' : 'Etusivulle'}</span>
+		<span class="hidden md:block">{window.history.length > 1 ? 'Takaisin' : 'Etusivulle'}</span>
 	</button>
 	{#if existingList}
 		<input
@@ -113,20 +176,36 @@
 			class="w-full border-none bg-transparent p-0 text-2xl leading-none focus:ring-0"
 			bind:value={list.name}
 		/>
-		<button
-			class={twMerge(components.button({ type: 'positive', size: 'md' }))}
-			onclick={async () => {
-				const shared = await handleShare({
-					title: `Alkometriikka - ${list.name}`,
-					text: `Katso lista: ${list.name}`,
-					url: `${location.origin}/listat?list=${listToURI(list)}`
-				});
+		{#if list.items.length > 0}
+			<button
+				class={twMerge(components.button({ size: 'md' }), 'aspect-square md:aspect-auto')}
+				onclick={() => {
+					toggleDetailsElement();
+				}}
+			>
+				<Icon name="sidebar" class="inline-block " />
+				<span class="hidden md:block">
+					Tiedot
+				</span>
+			</button>
+			<button
+				class={twMerge(
+					components.button({ type: 'positive', size: 'md' }),
+					'aspect-square md:aspect-auto'
+				)}
+				onclick={async () => {
+					const shared = await handleShare({
+						title: `Alkometriikka - ${list.name}`,
+						text: `Katso lista: ${list.name}`,
+						url: `${location.origin}/listat?list=${listToURI(list)}`
+					});
 
-				if (!shared) alert('Linkki kopioitu leikepöydälle!');
-			}}
-		>
-			<Icon name="share" /><span>Jaa</span>
-		</button>
+					if (!shared) alert('Linkki kopioitu leikepöydälle!');
+				}}
+			>
+				<Icon name="share_2" class="inline-block " /><span class="hidden md:block">Jaa</span>
+			</button>
+		{/if}
 	{:else}
 		<h2 class="text-lg leading-none md:text-2xl">{list.name}</h2>
 		<button
@@ -141,38 +220,41 @@
 		</button>
 	{/if}
 </div>
-<div class={twMerge('relative grid h-full', kaljakori.data.length > 1 && 'grid-cols-[auto_1fr]')}>
+<div
+	class={twMerge('relative grid grid-cols-[1fr_auto] h-full', kaljakori.data.length > 1 && 'grid-cols-[auto_1fr_auto]')}
+>
 	{#if kaljakori.data.length === 0}
 		<div class="grid flex-auto place-content-center">
 			<div class="mx-auto prose text-center">
 				<h2>Lista on tyhjä!</h2>
 				<p>Lisää tuotteita listaan tuotevalikosta!</p>
-				<a href="/" class={twMerge(components.button({ type: 'positive' }), 'mx-auto w-full')}
-					><span>Tuotevalikkoon</span><Icon name="arrow_right" /></a
-				>
+				<a href="/" class={twMerge(components.button({ type: 'positive' }), 'mx-auto w-full')}>
+					<span>Tuotevalikkoon</span>
+					<Icon name="arrow_right" />
+				</a>
 			</div>
 		</div>
 	{:else}
 		{#if kaljakori.data.length > 1}
 			<aside
-				class="z-10 flex h-full flex-col overflow-x-hidden overflow-y-auto border-gray-300 md:w-84 md:border-r"
+				class="z-10 flex h-full flex-col overflow-x-hidden overflow-y-auto border-gray-300 md:w-84 md:border-e"
 			>
 				<Filters {kaljakori} bind:filterValues bind:this={filtersComponent} useURLParams={false} />
 			</aside>
 		{/if}
 		<main class="mx-auto flex h-full w-full flex-col gap-3 bg-gray-100 p-3 md:gap-4 md:p-6">
 			<div class="flex w-full flex-col items-start gap-4">
-				<div class={twMerge('flex flex-row flex-wrap items-end gap-2')}>
+				<div class={twMerge('grid w-full grid-cols-2 items-end gap-2 md:w-fit')}>
 					<div class="flex flex-col">
 						<label for={'sortingColumn'} class="text-sm">
 							{'Järjestys'}
 						</label>
-						<div class="flex flex-row flex-nowrap items-center">
+						<div class="flex flex-row flex-nowrap">
 							<select
 								name="sortingColumn"
 								id="sortingColumn"
 								bind:value={selectedSortingColumn}
-								class={twMerge(components.input(), 'rounded-none rounded-s pe-8')}
+								class={twMerge(components.input(), 'w-full rounded-none rounded-s pe-8')}
 							>
 								{#each shownSortingKeys as filter}
 									{@const hasValues = kaljakori.getFilterValues(filter).length > 0}
@@ -189,7 +271,9 @@
 									}}
 									class={twMerge(components.button(), 'rounded-none rounded-e border-s-0')}
 								>
-									<span>{sortingOrderToString(asc, selectedSortingColumn)}</span>
+									<span class="hidden md:block"
+										>{sortingOrderToString(asc, selectedSortingColumn)}</span
+									>
 									<Icon name={asc ? 'arrow_up' : 'arrow_down'} />
 								</button>
 							{/if}
@@ -203,7 +287,7 @@
 							name="selectedHighlight"
 							id="selectedHighlight"
 							bind:value={selectedHighlight}
-							class={twMerge(components.input(), 'pe-8')}
+							class={twMerge(components.input(), 'w-full pe-8')}
 						>
 							{#each shownColumnsToHighlight as filter}
 								{@const hasValues = kaljakori.getFilterValues(filter).length > 0}
@@ -215,30 +299,36 @@
 					</div>
 				</div>
 			</div>
-			<div class="flex flex-row flex-wrap items-center justify-between gap-2">
-				<p>Tuotteet: {rows.length}</p>
+			<div class="flex flex-row flex-nowrap items-center justify-between gap-2">
+				{#if $isMobile}
+					<button
+						onclick={() => {
+							filtersComponent?.toggleFilterElement();
+						}}
+						class={twMerge(components.button(), 'w-full')}
+					>
+						<span>Näytä suodattimet</span>
+						<Icon name={'filter'} />
+					</button>
+				{/if}
 				<button
 					onclick={() => {
 						listRef?.scroll({ index: 0, smoothScroll: false });
 					}}
-					class={twMerge(components.button())}
+					class={twMerge(components.button(), 'ml-auto')}
 				>
 					<Icon name={'arrow_up'} />
-					<span>{ $isMobile ? "Alkuun" : "Hyppää alkuun" }</span>
+					<span>{$isMobile ? 'Alkuun' : 'Hyppää alkuun'}</span>
 				</button>
 			</div>
 			<div class="flex flex-auto flex-col">
-				<SvelteVirtualList
-					items={rows}
-					bufferSize={25}
-					bind:this={listRef}
-					itemsClass={'flex flex-col gap-3'}
-				>
+				<SvelteVirtualList items={rows} bind:this={listRef} itemsClass={'flex flex-col gap-3'}>
 					{#snippet renderItem(item, idx: number)}
 						{@const [_, max] = kaljakori.getMinAndMaxValues(selectedHighlight) as number[]}
 						{@const multiplier = Number(item[selectedHighlight]) / max}
 						{@const ratings = ['Matala', 'Kohtalainen', 'Korkea']}
 						{@const rating = ratings[Number(((ratings.length - 1) * multiplier).toFixed(0))]}
+						{@const listItem = getListItem(list, item[AllColumns.Number])}
 						<div
 							class={twMerge(
 								'relative flex flex-col gap-3 overflow-clip rounded border border-gray-200 bg-white shadow'
@@ -257,7 +347,7 @@
 								<div class="flex w-full flex-col gap-2">
 									<div class="flex flex-row items-center gap-3">
 										<span
-											class="absolute top-0 left-0 rounded-br bg-gray-100 py-0.5 px-1.5 text-sm text-gray-500"
+											class="absolute top-0 left-0 rounded-br bg-gray-100 px-1.5 py-0.5 text-sm text-gray-500"
 										>
 											{'#' + (idx + 1)}
 										</span>
@@ -312,14 +402,17 @@
 									<div class="flex flex-col gap-4 md:flex-row md:items-center">
 										<div class="flex items-center gap-2">
 											<p class="text-2xl font-bold drop-shadow-lg">
-												{Number.parseFloat(item[AllColumns.Price] as string).toFixed(2)} €
+												{(
+													Number.parseFloat(item[AllColumns.Price] as string) *
+													getItemQuantity(list, item[AllColumns.Number])
+												).toFixed(2)} €
 											</p>
+											{#if getItemQuantity(list, item[AllColumns.Number]) > 1}
+												<span class="text-sm text-gray-500">@ {item[AllColumns.Price]} € / kpl</span
+												>
+											{/if}
 											<span class="text-sm text-gray-500"
 												>({item[AllColumns.PricePerLiter]} €/L)</span
-											>
-											<span class="text-sm text-gray-500">|</span>
-											<span class="text-sm text-gray-500"
-												>{getItemQuantity(list, item[AllColumns.Number])} kpl</span
 											>
 										</div>
 										{#if !!item[AllColumns.New]}
@@ -339,9 +432,39 @@
 											</p>
 										{/if}
 
+										{#if listItem}
+											<div class={twMerge('ml-auto flex flex-row')}>
+												<button
+													class={twMerge(components.button(), 'rounded-e-none border-e-0',
+														listItem.q === 1 && 'cursor-not-allowed opacity-50')}
+													disabled={listItem.q === 1}
+													onclick={() => {
+														modifyQuantity(item, -1);
+													}}
+												>
+													<Icon name="minus" />
+												</button>
+												<input
+													type="number"
+													bind:value={listItem.q}
+													class={twMerge(
+														components.input(),
+														'hide-number-input w-[6ch] rounded-none text-center'
+													)}
+												/>
+												<button
+													class={twMerge(components.button(), 'rounded-s-none border-s-0')}
+													onclick={() => {
+														modifyQuantity(item, 1);
+													}}
+												>
+													<Icon name="plus" />
+												</button>
+											</div>
+										{/if}
 										{#if existingList}
 											<button
-												class={twMerge(components.button({ type: 'negative' }), 'ml-auto')}
+												class={twMerge(components.button({ type: 'negative' }))}
 												onclick={() => removeFromList(list, item[AllColumns.Number])}
 											>
 												<span>Poista listasta</span>
@@ -396,18 +519,39 @@
 					{/snippet}
 				</SvelteVirtualList>
 			</div>
-			{#if $isMobile}
-				<button
-					onclick={() => {
-						filtersComponent?.toggleFilterElement();
-						showFilters = !showFilters;
-					}}
-					class={twMerge(components.button(), 'w-full')}
-				>
-					<span>{showFilters ? 'Piilota suodattimet' : 'Näytä suodattimet'}</span>
-					<Icon name={'filter'} />
-				</button>
-			{/if}
 		</main>
+		<aside
+			class="z-10 flex h-full flex-col overflow-x-hidden overflow-y-auto border-gray-300 xl:border-s"
+		>
+			<dialog
+				bind:this={detailsElement}
+				class={twMerge(
+					'fixed m-auto hidden h-full w-full flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-4 backdrop:backdrop-blur-sm open:flex xl:relative xl:w-84 xl:rounded-none xl:border-0'
+				)}
+			>
+				<h2 class="text-2xl font-bold">Listan tiedot</h2>
+				<div class="flex flex-auto flex-col gap-4">
+					<p>Tuotteita listassa: {details.totalItems}</p>
+					<p>Kokonaismäärä: {details.totalVolume} L</p>
+					<p>Yhteensä alkoholia: {details.totalAlcoholGrams} g</p>
+					<p>Yhteensä sokeria: {details.totalSugar} g</p>
+					<p>Alkoholia per euro: {details.totalAlcoholGramsPerEuro} g/€</p>
+					<p>Arvioitu promillemäärä: {details.totalBAC} ‰</p>
+					<h2 class="text-2xl text-center font-bold mt-auto bg-white rounded">Yhteensä: {details.totalPrice} €</h2>
+				</div>
+				{#if $isLaptop}
+					<div class="flex flex-row flex-wrap justify-end gap-4">
+						<button
+							onclick={() => {
+								toggleDetailsElement();
+							}}
+							class={twMerge(components.button({ type: 'negative' }))}
+						>
+							Sulje
+						</button>
+					</div>
+				{/if}
+			</dialog>
+		</aside>
 	{/if}
 </div>

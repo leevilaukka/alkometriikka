@@ -48,7 +48,7 @@ export const DrunkColumns = Object.freeze({
     AlcoholGramsPerEuro: "Alkoholigrammat / €",
     EstimatedPromille: "Arvioidut promillet",
     PromillePerEuro: "Promillet / €",
-    Servings: "Annokset"
+    Servings: "Annokset",
 } as const);
 
 /** All columns available in the app.
@@ -61,6 +61,14 @@ export const subCategoryMap = {
     [DatasetColumns.Country]: DatasetColumns.Region,
 } as const satisfies ColNameObj<ColumnNames | null>;
 
+
+export const undefinedToZeroColumns = [
+    AllColumns.Sugar,
+    AllColumns.Acidity,
+    AllColumns.OriginalGravity,
+    AllColumns.BitternessEBU,
+    AllColumns.Energy
+] as const satisfies readonly ColumnNames[];
 
 /**
  * Columns to be shown in the filter area.

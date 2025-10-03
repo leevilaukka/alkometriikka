@@ -24,6 +24,12 @@ export function updateListName(list: ListObj, newName: string) {
     list.name = newName;
 }
 
+export function getListItem(list: ListObj, itemNumber: string) {
+    const item = list.items.find(i => i.id === itemNumber);
+    if (item) return item
+    return null
+}
+
 export function updateQuantity(list: ListObj, itemNumber: string, newQuantity: number) {
     const item = list.items.find(i => i.id === itemNumber);
     if (item) item.q = newQuantity;

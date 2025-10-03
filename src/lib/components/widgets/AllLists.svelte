@@ -7,7 +7,7 @@
 	import type { ListObj } from "$lib/types";
 	import { isSimilarString } from "$lib/utils/search";
 
-    const { action, show }: { action: (list: ListObj) => void; show?: { delete?: boolean, length?: boolean } } = $props();
+    const { action, show, useSearch = false }: { action: (list: ListObj) => void; show?: { delete?: boolean, length?: boolean }, useSearch?: boolean } = $props();
     const time = new Date();
 
     function handleCreateList() {
@@ -19,7 +19,7 @@
 <div class={twMerge("flex flex-col gap-4 w-[min(80ch,_100%)]", lists.length === 0 && "h-full justify-center")}>
     {#if lists.length > 0}
         <div class="flex flex-col gap-4">
-            {#each lists.filter(list => { return $searchQuery ? isSimilarString(list.name, $searchQuery) : true }) as list}
+            {#each lists.filter(list => { return (useSearch && $searchQuery) ? isSimilarString(list.name, $searchQuery) : true }) as list}
                 <div class="flex justify-between items-center gap-2 p-2 border rounded border-gray-300" onclick={() => { action(list) }} onkeydown={() => {}} role="link" tabindex="0">
                     <div class="flex flex-col">
                         <p aria-label={list.name} class={twMerge("w-full justify-start text-lg")}>
