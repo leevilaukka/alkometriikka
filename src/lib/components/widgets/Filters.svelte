@@ -53,6 +53,7 @@
 		if(!useURLParams) return
 		const searchParams = searchParametersFromFilterValues(filterValues, kaljakori)
 		const url = untrack(() => page.url)
+		console.log("goto")
 		goto(`${url.pathname}?${mergeFilterParameters(url.searchParams, searchParams, filterValues).toString()}`, { replaceState: true })
 	})
 </script>

@@ -3,9 +3,13 @@ import type { ListObj } from "$lib/types";
 import { compressToEncodedURIComponent, decompressFromEncodedURIComponent } from "lz-string";
 import { getRandom } from "./helpers";
 
+export function createListId() {
+    return `${Date.now()}-${getRandom().split("-")[0]}`
+}
+
 export function createList(name: string) {
     const newList: ListObj = {
-        id: `${Date.now()}-${getRandom().split("-")[0]}`,
+        id: createListId(),
         name,
         items: []
     };
@@ -69,12 +73,15 @@ export function removeFromList(list: ListObj, itemNumber: string) {
 }
 
 export function listToURI(list: ListObj) {
-    return compressToEncodedURIComponent(JSON.stringify(list));
+    const copy: Omit<ListObj, 'id'> & { id?: string } = {...list}
+    delete copy.id
+    return compressToEncodedURIComponent(JSON.stringify(copy));
 }
 
 export function URIToList(uri: string) {
     try {
         const decoded = JSON.parse(decompressFromEncodedURIComponent(uri));
+        if(!("id" in decoded)) decoded.id = createListId()
         return Array.isArray(decoded.items) ? decoded : null;
     } catch(e) {
         return null
@@ -83,7 +90,6 @@ export function URIToList(uri: string) {
 
 export function validateList(uri: string) {
     const list = URIToList(uri);
-    console.log('list', list);
     if (!list) return false;
 
     // Check if all required fields are present

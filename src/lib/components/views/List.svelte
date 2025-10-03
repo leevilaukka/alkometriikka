@@ -121,8 +121,7 @@
 					(Number.parseFloat(product[AllColumns.Price] as string) * item.q);
 				totalBAC +=
 					(Number.parseFloat(product[AllColumns.EstimatedPromille] as string) || 0) * item.q;
-				totalSugar +=
-					(Number.parseFloat(product[AllColumns.Sugar] as string) || 0) * item.q;
+				totalSugar += (Number.parseFloat(product[AllColumns.Sugar] as string) || 0) * item.q;
 				totalVolume += Number.parseFloat(product[AllColumns.BottleSize] as string) * item.q;
 			}
 		});
@@ -154,7 +153,10 @@
 	}
 
 	$effect(() => {
-		replaceState(`?list=${listToURI(list)}`, page.state);
+		replaceState(
+			`?list=${listToURI(list)}`,
+			untrack(() => page.state)
+		);
 	});
 </script>
 
@@ -184,9 +186,7 @@
 				}}
 			>
 				<Icon name="sidebar" class="inline-block " />
-				<span class="hidden md:block">
-					Tiedot
-				</span>
+				<span class="hidden md:block"> Tiedot </span>
 			</button>
 			<button
 				class={twMerge(
@@ -221,7 +221,10 @@
 	{/if}
 </div>
 <div
-	class={twMerge('relative grid grid-cols-[1fr_auto] h-full', kaljakori.data.length > 1 && 'grid-cols-[auto_1fr_auto]')}
+	class={twMerge(
+		'relative grid h-full grid-cols-[1fr_auto]',
+		kaljakori.data.length > 1 && 'grid-cols-[auto_1fr_auto]'
+	)}
 >
 	{#if kaljakori.data.length === 0}
 		<div class="grid flex-auto place-content-center">
@@ -271,9 +274,9 @@
 									}}
 									class={twMerge(components.button(), 'rounded-none rounded-e border-s-0')}
 								>
-									<span class="hidden md:block"
-										>{sortingOrderToString(asc, selectedSortingColumn)}</span
-									>
+									<span class="hidden md:block">
+										{sortingOrderToString(asc, selectedSortingColumn)}
+									</span>
 									<Icon name={asc ? 'arrow_up' : 'arrow_down'} />
 								</button>
 							{/if}
@@ -399,7 +402,7 @@
 											{item[AllColumns.Region] ? ` - ${item[AllColumns.Region]}` : null}
 										</span>
 									</div>
-									<div class="flex flex-col gap-4 md:flex-row md:items-center">
+									<div class="flex flex-col gap-4 lg:flex-row lg:items-center">
 										<div class="flex items-center gap-2">
 											<p class="text-2xl font-bold drop-shadow-lg">
 												{(
@@ -411,32 +414,37 @@
 												<span class="text-sm text-gray-500">@ {item[AllColumns.Price]} € / kpl</span
 												>
 											{/if}
-											<span class="text-sm text-gray-500"
-												>({item[AllColumns.PricePerLiter]} €/L)</span
-											>
+											<span class="text-sm text-gray-500">
+												({item[AllColumns.PricePerLiter]} €/L)
+											</span>
 										</div>
-										{#if !!item[AllColumns.New]}
-											<p class="rounded bg-red-200 px-1.5 py-0.5 text-sm text-red-800">Uutuus</p>
-										{/if}
-										{#if item[AllColumns.SpecialGroup] === 'Luomu'}
-											<p class="rounded bg-green-300 px-1.5 py-0.5 text-sm text-green-800">Luomu</p>
-										{/if}
-										{#if item[AllColumns.SpecialGroup] === 'Vegaaneille soveltuva tuote'}
-											<p class="rounded bg-emerald-300 px-1.5 py-0.5 text-sm text-emerald-800">
-												Vegaani
-											</p>
-										{/if}
-										{#if item[AllColumns.AlcoholPercentage] === 0}
-											<p class="rounded bg-blue-300 px-1.5 py-0.5 text-sm text-blue-800">
-												Alkoholiton
-											</p>
-										{/if}
-
+										<div class="flex flex-row items-center gap-3">
+											{#if !!item[AllColumns.New]}
+												<p class="rounded bg-red-200 px-1.5 py-0.5 text-sm text-red-800">Uutuus</p>
+											{/if}
+											{#if item[AllColumns.SpecialGroup] === 'Luomu'}
+												<p class="rounded bg-green-300 px-1.5 py-0.5 text-sm text-green-800">Luomu</p>
+											{/if}
+											{#if item[AllColumns.SpecialGroup] === 'Vegaaneille soveltuva tuote'}
+												<p class="rounded bg-emerald-300 px-1.5 py-0.5 text-sm text-emerald-800">
+													Vegaani
+												</p>
+											{/if}
+											{#if item[AllColumns.AlcoholPercentage] === 0}
+												<p class="rounded bg-blue-300 px-1.5 py-0.5 text-sm text-blue-800">
+													Alkoholiton
+												</p>
+											{/if}
+										</div>
+										<div class="flex flex-row items-center ml-auto gap-3">
 										{#if listItem}
-											<div class={twMerge('ml-auto flex flex-row')}>
+											<div class={twMerge('flex flex-row')}>
 												<button
-													class={twMerge(components.button(), 'rounded-e-none border-e-0',
-														listItem.q === 1 && 'cursor-not-allowed opacity-50')}
+													class={twMerge(
+														components.button(),
+														'rounded-e-none border-e-0',
+														listItem.q === 1 && 'cursor-not-allowed opacity-50'
+													)}
 													disabled={listItem.q === 1}
 													onclick={() => {
 														modifyQuantity(item, -1);
@@ -447,6 +455,23 @@
 												<input
 													type="number"
 													bind:value={listItem.q}
+													min={1}
+													oninput={(e) => {
+														const target = e.target as HTMLInputElement
+														if(!target) return
+														if(target.valueAsNumber <= 1) {
+															target.valueAsNumber = 1
+															listItem.q = 1
+														}
+													}}
+													onblur={(e) => {
+														const target = e.target as HTMLInputElement
+														if(!target) return
+														if(!target.value || target.valueAsNumber <= 1) {
+															target.valueAsNumber = 1
+															listItem.q = 1
+														}
+													}}
 													class={twMerge(
 														components.input(),
 														'hide-number-input w-[6ch] rounded-none text-center'
@@ -474,7 +499,7 @@
 											<Popup class="gap-4 p-4">
 												{#snippet renderButton(dialogElement: HTMLDialogElement)}
 													<button
-														class={twMerge(components.button({ type: 'positive' }), 'ml-auto')}
+														class={twMerge(components.button({ type: 'positive' }))}
 														onclick={() => dialogElement.showModal()}
 													>
 														<span>Lisää listaan</span>
@@ -492,6 +517,7 @@
 												{/snippet}
 											</Popup>
 										{/if}
+										</div>
 									</div>
 								</div>
 							</div>
@@ -537,7 +563,9 @@
 					<p>Yhteensä sokeria: {details.totalSugar} g</p>
 					<p>Alkoholia per euro: {details.totalAlcoholGramsPerEuro} g/€</p>
 					<p>Arvioitu promillemäärä: {details.totalBAC} ‰</p>
-					<h2 class="text-2xl text-center font-bold mt-auto bg-white rounded">Yhteensä: {details.totalPrice} €</h2>
+					<h2 class="mt-auto rounded bg-white text-center text-2xl font-bold">
+						Yhteensä: {details.totalPrice} €
+					</h2>
 				</div>
 				{#if $isLaptop}
 					<div class="flex flex-row flex-wrap justify-end gap-4">

@@ -41,7 +41,7 @@
 				</button>
 			</div>
 			<div class="flex flex-col flex-auto gap-4 items-center">
-				<AllLists useSearch={true} show={{ delete: true }} action={(list) => {goto(`/listat?list=${listToURI(list)}`)}} />
+				<AllLists useSearch={true} show={{ delete: true, share: true }} action={(list) => {goto(`/listat?list=${listToURI(list)}`)}} />
 			</div>
 		</div>
 	{/if}

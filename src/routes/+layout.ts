@@ -23,7 +23,6 @@ function getDatasetURL() {
 type Fetch = (input: RequestInfo | URL, init?: RequestInit | undefined) => Promise<Response>
 
 async function fetchAlkoPriceList({ fetch }: { fetch: Fetch; }) {
-    console.log("Fetching Alko price list...");
     const req = await fetch(getDatasetURL());
     if (!req.ok) {
         throw new Error(`Hinnaston lataaminen epäonnistui: ${req.status} ${req.statusText}`);

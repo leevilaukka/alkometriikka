@@ -1,13 +1,14 @@
 <script lang="ts">
     import { lists, searchQuery } from "$lib/global.svelte";
-	import { createList, deleteList } from "$lib/utils/lists";
+	import { createList, deleteList, listToURI } from "$lib/utils/lists";
 	import { components } from "$lib/utils/styles";
 	import { twMerge } from "tailwind-merge";
 	import Icon from "./Icon.svelte";
 	import type { ListObj } from "$lib/types";
 	import { isSimilarString } from "$lib/utils/search";
+	import { handleShare } from "$lib/utils/helpers";
 
-    const { action, show, useSearch = false }: { action: (list: ListObj) => void; show?: { delete?: boolean, length?: boolean }, useSearch?: boolean } = $props();
+    const { action, show, useSearch = false }: { action: (list: ListObj) => void; show?: { delete?: boolean, length?: boolean, share?: boolean }, useSearch?: boolean } = $props();
     const time = new Date();
 
     function handleCreateList() {
@@ -29,11 +30,32 @@
                             <span>{`Tuotteet: ${list.items.length}`}</span>
                         </p>
                     </div>
-                    {#if show?.delete}
-                        <button onclick={(e) => { e.stopPropagation(); deleteList(list) }} aria-label={list.name} class={twMerge(components.button({ type: "negative", size: "md" }), "aspect-square w-fit")}>
-                            <Icon name="trash" />
-                        </button>
-                    {/if}
+                    <div class="flex items-center">
+                        {#if show?.share}
+                            <button
+                                class={twMerge(
+                                    components.button({ type: 'positive', size: 'md' }),
+                                    'aspect-square md:aspect-auto'
+                                )}
+                                onclick={async () => {
+                                    const shared = await handleShare({
+                                        title: `Alkometriikka - ${list.name}`,
+                                        text: `Katso lista: ${list.name}`,
+                                        url: `${location.origin}/listat?list=${listToURI(list)}`
+                                    });
+
+                                    if (!shared) alert('Linkki kopioitu leikepöydälle!');
+                                }}
+                            >
+                                <Icon name="share_2" class="inline-block " /><span class="hidden md:block">Jaa</span>
+                            </button>
+                        {/if}
+                        {#if show?.delete}
+                            <button onclick={(e) => { e.stopPropagation(); deleteList(list) }} aria-label={list.name} class={twMerge(components.button({ type: "negative", size: "md" }), "aspect-square w-fit")}>
+                                <Icon name="trash" />
+                            </button>
+                        {/if}
+                    </div>
                 </div>
             {/each}
         </div>
