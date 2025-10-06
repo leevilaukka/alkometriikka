@@ -36,5 +36,17 @@ export const components = {
             type: "primary",
             size: "sm",
         }
+    }),
+    badge: cva("inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-sm font-medium border border-transparent", {
+        variants: {
+            color: {
+                default: "bg-white text-black border-gray-300",
+                green: "bg-green-300 text-green-800",
+                red: "bg-red-200 text-red-800",
+                emerald: "bg-emerald-300 text-emerald-800",
+                blue: "bg-blue-300 text-blue-800",
+            }
+        }
     })
+
 };

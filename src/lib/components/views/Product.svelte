@@ -9,6 +9,7 @@
 	import AllLists from '../widgets/AllLists.svelte';
 	import { type ListObj } from '$lib/types';
 	import { addToList } from '$lib/utils/lists';
+	import BadgeList from '../widgets/BadgeList.svelte';
 	const { product } = $props();
 
    document.title = generateTitle(`Tuote - ${product[AllColumns.Name]}`);
@@ -24,7 +25,7 @@
             onclick={() => window.history.back()}
             class={twMerge(components.button({ size: "md" }))}
         >
-           <Icon name="arrow_left" class="inline-block" />
+           <Icon name="arrow_back" class="inline-block" />
            <span>Takaisin</span>
         </button>
     </div>
@@ -43,18 +44,7 @@
                 </h2>
                 <span> {valueToString(product[AllColumns.Manufacturer], AllColumns.Manufacturer)} | {valueToString(product[AllColumns.BottleSize], AllColumns.BottleSize)} | {valueToString(product[AllColumns.AlcoholPercentage], AllColumns.AlcoholPercentage)} {product[AllColumns.Vintage] !== "" ? `| ${valueToString(product[AllColumns.Vintage], AllColumns.Vintage)}` : ''}</span>
                 <div class="flex flex-col w-full gap-4 md:flex-row">
-                    {#if !!product[AllColumns.New]}
-                        <p class="rounded bg-red-200 px-1.5 py-0.5 text-sm text-red-800">Uutuus</p>
-                    {/if}
-                    {#if product[AllColumns.SpecialGroup] === 'Luomu'}
-                        <p class="rounded bg-green-300 px-1.5 py-0.5 text-sm text-green-800">Luomu</p>
-                    {/if}
-                    {#if product[AllColumns.SpecialGroup] === 'Vegaaneille soveltuva tuote'}
-                        <p class="rounded bg-emerald-300 px-1.5 py-0.5 text-sm text-emerald-800">Vegaani</p>
-                    {/if}
-                    {#if product[AllColumns.AlcoholPercentage] === 0}
-                        <p class="rounded bg-blue-300 px-1.5 py-0.5 text-sm text-blue-800">Alkoholiton</p>
-                    {/if}
+                   <BadgeList item={product} />
                 </div>
             </div>
             <div class="flex flex-col items-end gap-1">
@@ -92,7 +82,7 @@
             rel="noopener noreferrer"
             class={twMerge(components.button({ size: "md" }))}
         >
-            <span>Alkon tuotesivu</span> <Icon name="external_link" class="inline-block" />
+            <span>Alkon tuotesivu</span> <Icon name="link_external" class="inline-block" />
         </a>
     </div>
 	<div class="flex w-full flex-col gap-2 bg-gray-200 p-4 rounded border border-gray-300">

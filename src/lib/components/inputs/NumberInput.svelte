@@ -2,6 +2,7 @@
 	import { getRandom, headerToDisplayName, headerToUnitMarker } from '$lib/utils/helpers';
 	import { components } from '$lib/utils/styles';
 	import { twMerge } from 'tailwind-merge';
+	import Icon from '../widgets/Icon.svelte';
 
 	let { value = $bindable([-Infinity, Infinity]), label, min = 0, max = 100, step = 1 } = $props();
 
@@ -33,5 +34,6 @@
 			{step}
 			class={twMerge(components.input(), 'w-full')}
 		/>
+		<button class={twMerge(components.button())} onclick={() => (value = [min, max])}><Icon name="refresh_ccw" /></button>
 	</div>
 </div>

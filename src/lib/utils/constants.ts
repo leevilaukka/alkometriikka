@@ -1,4 +1,7 @@
 import type { ColNameObj, ColumnNames } from "$lib/types";
+import type { VariantProps } from "class-variance-authority";
+import { components } from "./styles.js";
+import type { IconName } from "$lib/icons.js";
 
 /** Columns present in the Alko price list dataset
  * These are in Finnish as they are used directly from the dataset
@@ -229,3 +232,17 @@ export const hideFromProductPageStats = new Set<ColumnNames>([
     DatasetColumns.Name,
     DatasetColumns.Vintage
 ]);
+
+export const ColumnToBadgeMap = {
+    [DatasetColumns.New]: { text: "Uutuus", color: "red", icon: "pencil_sparkles" },
+    [DatasetColumns.SpecialGroup]: {
+        Luomu: { text: "Luomu", color: "green", icon: "plant_pot" },
+        "Vegaaneille soveltuva tuote": { text: "Vegaani", color: "emerald", icon: "leaf" },
+        "Alkuviini": { text: "Alkuviini", color: "blue", icon: "wine" },
+        "Biodynaaminen": { text: "Biodynaaminen", color: "emerald", icon: "yin_yang" },
+    },
+} satisfies {
+    [key in typeof DatasetColumns.New]?: { text: string; color: VariantProps<typeof components.badge>["color"]; icon?: IconName };
+} & {
+    [key in typeof DatasetColumns.SpecialGroup]?: { [key: string]: { text: string; color: VariantProps<typeof components.badge>["color"]; icon?: IconName } };
+};

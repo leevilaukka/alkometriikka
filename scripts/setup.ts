@@ -1,11 +1,8 @@
-import { compress, compressToUTF16 } from "lz-string"
+import { compressToUTF16 } from "lz-string"
 import XLSX from "xlsx"
 
 const DATASET_URL = "https://www.alko.fi/INTERSHOP/static/WFS/Alko-OnlineShop-Site/-/Alko-OnlineShop/fi_FI/Alkon%20Hinnasto%20Tekstitiedostona/alkon-hinnasto-tekstitiedostona.xlsx"
-
-function corsProxy(url: string) {
-    return "https://corsproxy.io/?url=" + url
-}
+const DEV = process.argv.includes("--dev");
 
 async function fetchAlkoPriceList() {
     const req = await fetch(DATASET_URL);
@@ -43,7 +40,7 @@ function formatXLSXToJSON(data: ArrayBuffer) {
 function saveDataset(data: { table: any[], metadata: XLSX.FullProperties }) {
     const json = JSON.stringify(data);
     const compressed = compressToUTF16(json);
-    Bun.write("./data.txt", compressed);
+    Bun.write(DEV ? "./static/data.txt" : "./data.txt", compressed);
 }
 
 async function setup() {

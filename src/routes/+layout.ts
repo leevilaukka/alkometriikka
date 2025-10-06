@@ -1,5 +1,4 @@
 import { resolve } from '$app/paths';
-import { dev } from '$app/environment';
 import { DatasetColumns } from '$lib/utils/constants';
 import type { ColumnNames } from '$lib/types';
 import { Kaljakori } from '$lib/alko';
@@ -10,13 +9,7 @@ import type { FullProperties } from 'xlsx';
 export const ssr = false;
 export const prerender = false;
     
-function corsProxy(url: string) {
-    return "https://corsproxy.io/?url=" + url
-}
-
 function getDatasetURL() {
-    //if(dev) return corsProxy("https://alkometriikka.fi/data.txt");
-    if(dev) return corsProxy("https://alkometriikka.fi/data.txt");
     return resolve("/") + "data.txt";
 }
 
@@ -72,5 +65,6 @@ async function getData({ fetch }: { fetch: Fetch; }) {
 }
 
 export async function load({ fetch }: { fetch: Fetch }) {
+    
 	return { alko: getData({ fetch }) };
 };

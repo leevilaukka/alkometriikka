@@ -97,7 +97,7 @@
 			{/if}
 			<a href="/listat" class={twMerge(page.route.id !== '/tuotteet/[...id]' ? '' : 'ms-auto')}>
 				<button class={twMerge(components.button(), 'p-2 text-xl')}>
-					{#if !$isMobile}<span class="text-sm">Listat</span>{/if}<Icon name="list" />
+					{#if !$isMobile}<span class="text-sm">Listat</span>{/if}<Icon name="list_ul" />
 				</button>
 			</a>
 			<Popup class="gap-4 p-4">
@@ -106,7 +106,7 @@
 						class={twMerge(components.button(), 'p-2 text-xl')}
 						onclick={() => dialogElement.showModal()}
 					>
-						{#if !$isMobile}<span class="text-sm">Asetukset</span>{/if}<Icon name="settings" />
+						{#if !$isMobile}<span class="text-sm">Asetukset</span>{/if}<Icon name="cog" />
 					</button>
 				{/snippet}
 				{#snippet renderContent(dialogElement: HTMLDialogElement)}
@@ -133,7 +133,7 @@
 							)}
 							onclick={() => (tab = 'settings')}
 						>
-							<Icon name="settings" />
+							<Icon name="cog" />
 							{#if !$isMobile}
 								<span class="ms-2">Lisäasetukset</span>
 							{/if}
@@ -142,7 +142,7 @@
 							class={twMerge(components.button(), 'w-full', tab === 'info' ? 'bg-gray-200' : '')}
 							onclick={() => (tab = 'info')}
 						>
-							<Icon name="info" />
+							<Icon name="info_circle" />
 							{#if !$isMobile}
 								<span class="ms-2">Tietoa</span>
 							{/if}
@@ -190,7 +190,7 @@
 								<span>GitHub</span>
 							</a>
 							<a href="mailto:alkometriikka@proton.me" target="_blank" class={twMerge(components.button())}>
-								<Icon name="mail" class="inline-block" />
+								<Icon name="mail_send" class="inline-block" />
 								<span>Sähköposti</span>
 							</a>
 						</div>

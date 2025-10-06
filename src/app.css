@@ -5,9 +5,12 @@
 
 /* icons */
 @font-face {
-  font-family: 'Feather';
-  font-weight: 500;
-  src: url("lib/assets/fonts/Feather/feather.ttf");
+    font-family: 'icons';
+    font-weight: 400;
+
+    src: url("lib/assets/fonts/icons/icons.woff2") format("woff2"),
+        url("lib/assets/fonts/icons/icons.woff") format("woff"),
+        url("lib/assets/fonts/icons/icons.ttf") format("truetype");
 }
 
 /* latin */

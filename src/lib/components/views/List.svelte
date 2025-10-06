@@ -40,6 +40,7 @@
 	import { untrack } from 'svelte';
 	import { initFilterValues } from '$lib/utils/filters';
 	import { page } from '$app/state';
+	import BadgeList from '../widgets/BadgeList.svelte';
 
 	const { list: importedList, dataset }: { list: ListObj; dataset: string[][] } = $props();
 
@@ -183,7 +184,7 @@
 				class={twMerge(components.button({ size: 'md' }), 'aspect-square md:aspect-auto')}
 				onclick={() => {
 					toggleDetailsElement();
-				}}
+				}}	
 			>
 				<Icon name="sidebar" class="inline-block " />
 				<span class="hidden md:block"> Tiedot </span>
@@ -203,7 +204,7 @@
 					if (!shared) alert('Linkki kopioitu leikepöydälle!');
 				}}
 			>
-				<Icon name="share_2" class="inline-block " /><span class="hidden md:block">Jaa</span>
+				<Icon name="share" class="inline-block " /><span class="hidden md:block">Jaa</span>
 			</button>
 		{/if}
 	{:else}
@@ -233,7 +234,7 @@
 				<p>Lisää tuotteita listaan tuotevalikosta!</p>
 				<a href="/" class={twMerge(components.button({ type: 'positive' }), 'mx-auto w-full')}>
 					<span>Tuotevalikkoon</span>
-					<Icon name="arrow_right" />
+					<Icon name="right_arrow" />
 				</a>
 			</div>
 		</div>
@@ -277,7 +278,7 @@
 									<span class="hidden md:block">
 										{sortingOrderToString(asc, selectedSortingColumn)}
 									</span>
-									<Icon name={asc ? 'arrow_up' : 'arrow_down'} />
+									<Icon name={asc ? 'up_arrow_alt' : 'down_arrow_alt'} />
 								</button>
 							{/if}
 						</div>
@@ -320,7 +321,7 @@
 					}}
 					class={twMerge(components.button(), 'ml-auto')}
 				>
-					<Icon name={'arrow_up'} />
+					<Icon name={'arrow_to_top'} />
 					<span>{$isMobile ? 'Alkuun' : 'Hyppää alkuun'}</span>
 				</button>
 			</div>
@@ -419,22 +420,7 @@
 											</span>
 										</div>
 										<div class="flex flex-row items-center gap-3">
-											{#if !!item[AllColumns.New]}
-												<p class="rounded bg-red-200 px-1.5 py-0.5 text-sm text-red-800">Uutuus</p>
-											{/if}
-											{#if item[AllColumns.SpecialGroup] === 'Luomu'}
-												<p class="rounded bg-green-300 px-1.5 py-0.5 text-sm text-green-800">Luomu</p>
-											{/if}
-											{#if item[AllColumns.SpecialGroup] === 'Vegaaneille soveltuva tuote'}
-												<p class="rounded bg-emerald-300 px-1.5 py-0.5 text-sm text-emerald-800">
-													Vegaani
-												</p>
-											{/if}
-											{#if item[AllColumns.AlcoholPercentage] === 0}
-												<p class="rounded bg-blue-300 px-1.5 py-0.5 text-sm text-blue-800">
-													Alkoholiton
-												</p>
-											{/if}
+											<BadgeList item={item} />
 										</div>
 										<div class="flex flex-row items-center ml-auto gap-3">
 										{#if listItem}
@@ -563,9 +549,10 @@
 					<p>Yhteensä sokeria: {details.totalSugar} g</p>
 					<p>Alkoholia per euro: {details.totalAlcoholGramsPerEuro} g/€</p>
 					<p>Arvioitu promillemäärä: {details.totalBAC} ‰</p>
-					<h2 class="mt-auto rounded bg-white text-center text-2xl font-bold">
-						Yhteensä: {details.totalPrice} €
-					</h2>
+					<div class=" flex flex-row items-center justify-center gap-3 mt-auto rounded bg-white text-center text-2xl font-bold border border-gray-300 p-1">
+						<Icon name="shopping_bag" />
+						<h2>Yhteensä: {details.totalPrice} €</h2>
+					</div>
 				</div>
 				{#if $isLaptop}
 					<div class="flex flex-row flex-wrap justify-end gap-4">

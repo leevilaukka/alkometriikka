@@ -36,7 +36,7 @@
 					onclick={() => window.history.back()}
 					class={twMerge(components.button({ size: "md" }))}
 				>
-					<Icon name="arrow_left" class="inline-block" />
+					<Icon name="arrow_back" class="inline-block" />
 					<span>Takaisin</span>
 				</button>
 			</div>

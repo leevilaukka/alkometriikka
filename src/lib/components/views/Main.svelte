@@ -10,6 +10,12 @@
 		AllColumns,
 		shownSortingKeys,
 		defaultSortingOrderMap,
+
+		ColumnToBadgeMap,
+
+		DatasetColumns
+
+
 	} from '$lib/utils/constants';
 	import { components } from '$lib/utils/styles';
 	import {
@@ -27,6 +33,8 @@
 	import Filters from '../widgets/Filters.svelte';
 	import { initFilterValues } from '$lib/utils/filters';
 	import { page } from '$app/state';
+	import Badge from '../widgets/Badge.svelte';
+	import BadgeList from '../widgets/BadgeList.svelte';
 
 	const { kaljakori }: { kaljakori: Kaljakori } = $props();
 
@@ -51,7 +59,7 @@
 			)
 				filterValuesCopy[key] = new Set(filterValuesCopy[key]);
 		});
-		let temp = kaljakori.fuzzySearchAndFilter($searchQuery,filterValuesCopy);
+		let temp = kaljakori.fuzzySearchAndFilter($searchQuery, filterValuesCopy);
 		if (!!selectedSortingColumn)
 			temp = temp.sort((a, b) => (a[selectedSortingColumn] > b[selectedSortingColumn] ? 1 : -1));
 		if (!asc) temp = temp.reverse();
@@ -63,15 +71,11 @@
 	<aside
 		class="z-10 flex h-full flex-col overflow-x-hidden overflow-y-auto border-gray-300 md:w-84 md:border-r"
 	>
-		<Filters
-			{kaljakori}
-			bind:filterValues
-			bind:this={filtersComponent}
-		/>
+		<Filters {kaljakori} bind:filterValues bind:this={filtersComponent} />
 	</aside>
 	<main class="mx-auto flex h-full w-full flex-col gap-3 bg-gray-100 p-4 md:gap-4 md:p-6">
 		<div class="flex w-full flex-col items-start gap-4">
-			<div class={twMerge('grid grid-cols-2 w-full md:w-fit items-end gap-2')}>
+			<div class={twMerge('grid w-full grid-cols-2 items-end gap-2 md:w-fit')}>
 				<div class="flex flex-col">
 					<label for={'sortingColumn'} class="text-sm">
 						{'Järjestys'}
@@ -98,16 +102,16 @@
 								}}
 								class={twMerge(components.button(), 'rounded-none rounded-e border-s-0')}
 							>
-								<span class="hidden md:block">{sortingOrderToString(asc, selectedSortingColumn)}</span>
-								<Icon name={asc ? 'arrow_up' : 'arrow_down'} />
+								<span class="hidden md:block"
+									>{sortingOrderToString(asc, selectedSortingColumn)}</span
+								>
+								<Icon name={asc ? 'up_arrow_alt' : 'down_arrow_alt'} />
 							</button>
 						{/if}
 					</div>
 				</div>
 				<div class="flex flex-col">
-					<label for={'selectedHighlight'} class="text-sm">
-						Korostus
-					</label>
+					<label for={'selectedHighlight'} class="text-sm"> Korostus </label>
 					<select
 						name="selectedHighlight"
 						id="selectedHighlight"
@@ -127,7 +131,7 @@
 						onclick={() => {
 							filtersComponent?.toggleFilterElement();
 						}}
-						class={twMerge(components.button(), 'w-full col-span-full')}
+						class={twMerge(components.button(), 'col-span-full w-full')}
 					>
 						<span>Näytä suodattimet</span>
 						<Icon name={'filter'} />
@@ -143,16 +147,12 @@
 				}}
 				class={twMerge(components.button())}
 			>
-				<Icon name={'arrow_up'} />
-				<span>{$isMobile ? "Alkuun" : "Hyppää alkuun"}</span>
+				<Icon name={'arrow_to_top'} />
+				<span>{$isMobile ? 'Alkuun' : 'Hyppää alkuun'}</span>
 			</button>
 		</div>
 		<div class="flex flex-auto flex-col">
-			<SvelteVirtualList
-				items={rows}
-				bind:this={listRef}
-				itemsClass={'flex flex-col gap-3'}
-			>
+			<SvelteVirtualList items={rows} bind:this={listRef} itemsClass={'flex flex-col gap-3'}>
 				{#snippet renderItem(item, idx: number)}
 					{@const [_, max] = kaljakori.getMinAndMaxValues(selectedHighlight) as number[]}
 					{@const multiplier = Number(item[selectedHighlight]) / max}
@@ -176,7 +176,7 @@
 							<div class="flex w-full flex-col gap-2">
 								<div class="flex flex-row items-center gap-3">
 									<span
-										class="absolute top-0 left-0 rounded-br bg-gray-100 py-0.5 px-1.5 text-sm text-gray-500"
+										class="absolute top-0 left-0 rounded-br bg-gray-100 px-1.5 py-0.5 text-sm text-gray-500"
 									>
 										{'#' + (idx + 1)}
 									</span>
@@ -236,24 +236,8 @@
 										<span class="text-sm text-gray-500">({item[AllColumns.PricePerLiter]} €/L)</span
 										>
 									</div>
-									{#if !!item[AllColumns.New]}
-										<p class="rounded bg-red-200 px-1.5 py-0.5 text-sm text-red-800">Uutuus</p>
-									{/if}
-									{#if item[AllColumns.SpecialGroup] === 'Luomu'}
-										<p class="rounded bg-green-300 px-1.5 py-0.5 text-sm text-green-800">Luomu</p>
-									{/if}
-									{#if item[AllColumns.SpecialGroup] === 'Vegaaneille soveltuva tuote'}
-										<p class="rounded bg-emerald-300 px-1.5 py-0.5 text-sm text-emerald-800">
-											Vegaani
-										</p>
-									{/if}
-									{#if item[AllColumns.AlcoholPercentage] === 0}
-										<p class="rounded bg-blue-300 px-1.5 py-0.5 text-sm text-blue-800">
-											Alkoholiton
-										</p>
-									{/if}
-
-									<Popup class="p-4 gap-4">
+									<BadgeList item={item} />
+									<Popup class="gap-4 p-4">
 										{#snippet renderButton(dialogElement: HTMLDialogElement)}
 											<button
 												class={twMerge(components.button({ type: 'positive' }), 'ml-auto')}
@@ -300,7 +284,7 @@
 				{/snippet}
 			</SvelteVirtualList>
 		</div>
-		
+
 		{#if rows.length == 0}
 			<p>Ei tuloksia</p>
 		{/if}
