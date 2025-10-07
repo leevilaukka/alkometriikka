@@ -1,4 +1,4 @@
-import type { ColNameObj, ColumnNames } from "$lib/types";
+import type { ColNameObj, ColumnBadgeMap, ColumnNames } from "$lib/types";
 import type { VariantProps } from "class-variance-authority";
 import { components } from "./styles.js";
 import type { IconName } from "$lib/icons.js";
@@ -233,17 +233,31 @@ export const hideFromProductPageStats = new Set<ColumnNames>([
     DatasetColumns.Vintage
 ]);
 
-export const ColumnToBadgeMap = {
-    [DatasetColumns.New]: { text: "Uutuus", color: "red", icon: "pencil_sparkles" },
+
+export const ColumnToBadgeMap: ColumnBadgeMap = {
     [DatasetColumns.SpecialGroup]: {
         Luomu: { text: "Luomu", color: "green", icon: "plant_pot" },
         "Vegaaneille soveltuva tuote": { text: "Vegaani", color: "emerald", icon: "leaf" },
         "Alkuviini": { text: "Alkuviini", color: "blue", icon: "wine" },
         "Biodynaaminen": { text: "Biodynaaminen", color: "emerald", icon: "yin_yang" },
     },
-    [DatasetColumns.Availability]: {
+    /*[DatasetColumns.Availability]: {
         "Kausituote": { text: "Kausituote", color: "dark_red", icon: "tree" },
         "Erikoiserä": { text: "Erikoiserä", color: "yellow", icon: "star" },
         "Tilausvalikoima": { text: "Tilausvalikoima", color: "cyan", icon: "truck" },
+    }*/
+};
+
+export function DynamicColumnToBadgeMap(item: Record<string, any>): Partial<ColumnBadgeMap> {
+    const map: Partial<ColumnBadgeMap> = { ...ColumnToBadgeMap };
+    if (item[DatasetColumns.AlcoholPercentage] === 0) {
+        map[DatasetColumns.AlcoholPercentage] = { text: "Alkoholiton", color: "blue", icon: "percentage" };
     }
-} 
+    if (Number(item[DatasetColumns.Sugar]) === 0) {
+        map[DatasetColumns.Sugar] = { text: "Sokeriton", color: "gray", icon: "cake_slice" };
+    }
+    if (item[DatasetColumns.New] === "Uutuus" || item[DatasetColumns.New] === "uutuus") {
+        map[DatasetColumns.New] = { text: "Uutuus", color: "red", icon: "pencil_sparkles" };
+    }
+    return map;
+}

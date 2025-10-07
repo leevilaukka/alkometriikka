@@ -1,5 +1,8 @@
 
 import { AllColumns, DatasetColumns, DrunkColumns, GenderOptionsMap } from '$lib/utils/constants';
+import type { VariantProps } from 'class-variance-authority';
+import type { components } from './utils/styles';
+import type { IconName } from './icons';
 
 export type NativeTypes = "string" | "number" | "object" | "undefined" | "function" | "boolean" | "symbol" | "bigint" | "any";
 
@@ -65,3 +68,6 @@ export type ListObj = {
         q: number;
     }[];
 }
+
+export type BadgeConfig = { text: string; color?: VariantProps<typeof components.badge>["color"]; icon?: IconName };
+export type ColumnBadgeMap = Partial<Record<ColumnNames, BadgeConfig | Record<string, BadgeConfig>>>;

@@ -1,28 +1,27 @@
 <script lang="ts">
 	import type { PriceListItem } from '$lib/types';
-	import { AllColumns, ColumnToBadgeMap } from '$lib/utils/constants';
+    import type { IconName } from '$lib/icons';
+	import { DynamicColumnToBadgeMap } from '$lib/utils/constants';
 	import Badge from './Badge.svelte';
 
 	const { item }: { item: PriceListItem } = $props();
+
 </script>
 
-{#each Object.entries(ColumnToBadgeMap) as [column, badgeInfo]}
-	{#if item[column as keyof typeof ColumnToBadgeMap] && badgeInfo}
-        {#if 'text' in badgeInfo && 'color' in badgeInfo && 'icon' in badgeInfo}
-            <Badge text={badgeInfo.text} color={badgeInfo.color} icon={badgeInfo.icon} />
-        {:else}
+{#each Object.entries(DynamicColumnToBadgeMap(item)) as [column, badgeInfo]}
+    {#if item[column] !== null  && badgeInfo}
+        {#if typeof badgeInfo.text === 'string' && typeof badgeInfo.color === 'string'}
+            <Badge text={badgeInfo.text} color={badgeInfo.color} icon={badgeInfo.icon as IconName} />
+        {:else if typeof badgeInfo === 'object' && !Array.isArray(badgeInfo) && badgeInfo !== null}
             {#each Object.entries(badgeInfo) as [subKey, subBadgeInfo]}
-                {#if item[column as keyof typeof ColumnToBadgeMap] === subKey}
+                {#if item[column] === subKey}
                     <Badge
                         text={subBadgeInfo.text}
                         color={subBadgeInfo.color}
-                        {...'icon' in subBadgeInfo ? { icon: subBadgeInfo.icon } : {}}
+                        icon={subBadgeInfo.icon as IconName}
                     />
                 {/if}
             {/each}
         {/if}
     {/if}
 {/each}
-{#if item[AllColumns.AlcoholPercentage] === 0}
-    <Badge text="Alkoholiton" color="blue" icon="percentage" />
-{/if}

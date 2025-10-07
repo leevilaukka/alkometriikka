@@ -48,6 +48,7 @@ export const components = {
                 blue: "bg-blue-300 text-blue-800",
                 cyan: "bg-cyan-300 text-cyan-800",
                 yellow: "bg-yellow-300 text-yellow-800",
+                gray: "bg-gray-300 text-gray-800",
             }
         }
     })
