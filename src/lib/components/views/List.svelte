@@ -168,7 +168,7 @@
 		onclick={() => (window.history.length > 1 ? window.history.back() : goto('/'))}
 		class={twMerge(components.button({ size: 'md' }), 'aspect-square md:aspect-auto')}
 	>
-		<Icon name="arrow_left" class="inline-block" />
+		<Icon name="arrow_back" class="inline-block" />
 		<span class="hidden md:block">{window.history.length > 1 ? 'Takaisin' : 'Etusivulle'}</span>
 	</button>
 	{#if existingList}
@@ -234,7 +234,7 @@
 				<p>Lisää tuotteita listaan tuotevalikosta!</p>
 				<a href="/" class={twMerge(components.button({ type: 'positive' }), 'mx-auto w-full')}>
 					<span>Tuotevalikkoon</span>
-					<Icon name="right_arrow" />
+					<Icon name="arrow_right_stroke" />
 				</a>
 			</div>
 		</div>

@@ -4,7 +4,7 @@
 	import { GenderOptionsMap, LocalStorageKeys } from '$lib/utils/constants';
 	import { isMobile, isLaptop, lists, personalInfo, searchQuery } from '$lib/global.svelte';
 	import logo from '$lib/assets/images/Logo/0.5x/Logo_rounded@0.5x.png';
-	import logo_svg from '$lib/assets/images/Alkometriikka.svg';
+	import logo_transparent from '$lib/assets/images/Logo_transparent.svg';
 	import Popup from '$lib/components/widgets/Popup.svelte';
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/styles';
@@ -13,6 +13,7 @@
 	import { handleClearAll, handleExport, handleImport } from '$lib/utils/helpers';
 	import { afterNavigate } from '$app/navigation';
 	import { page } from '$app/state';
+	import { fade } from 'svelte/transition';
 
 	let { children, data } = $props();
 
@@ -62,9 +63,10 @@
 </svelte:head>
 
 
-
 {#await data.alko}
-	<div class="fixed inset-0 z-99999 block h-full w-full items-end bg-brand-4">
+	<div 
+	out:fade={{ delay: 500 }}
+	class="fixed inset-0 z-99999 block h-full w-full items-end bg-white">
 		<div
 			style={`transform: translate(calc(calc(100% + min(${document.body.clientWidth/6}px, 107px)) * -1), 0%)`}
 			class="absolute bottom-0 left-1/2 flex flex-row-reverse flex-nowrap items-end"
@@ -78,7 +80,7 @@
 			{/each}
 		</div>
 		<img
-			src={logo_svg}
+			src={logo_transparent}
 			alt="Alkometriikka Logo"
 			style="clip-path: inset(0 33.333% 0 33.333%);"
 			class="absolute bottom-0 left-1/2 aspect-square w-full max-w-[640px] -translate-x-1/2 rounded object-contain"
@@ -94,8 +96,8 @@
 				></div>
 			{/each}
 		</div>
-		<div class="absolute left-1/2 top-1/3 text-white -translate-1/2 text-center flex flex-col gap-3">
-			<h1 class="text-4xl">Alkometriikka</h1>
+		<div class="absolute left-1/2 top-1/3 -translate-1/2 text-center flex flex-col gap-3">
+			<h1 class="text-4xl text-brand-3">Alkometriikka</h1>
 			<p>Ladataan...</p>
 		</div>
 	</div>
