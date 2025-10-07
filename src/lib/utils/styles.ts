@@ -5,7 +5,7 @@ export const components = {
         variants: {
             type: {
                 primary: "bg-white text-black border border-gray-300 hover:border-gray-400",
-                negative: "bg-red-600 text-white border border-red-600 hover:bg-red-700 hover:border-red-700",
+                negative: "bg-brand-1 text-white border border-red-600 hover:bg-red-700 hover:border-red-700",
                 positive: "bg-green-600 text-white border border-green-600 hover:bg-green-700 hover:border-green-700"
             },
             size: {

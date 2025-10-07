@@ -272,7 +272,7 @@
 								<span>- {rating}</span>
 							</div>
 							<div
-								class="relative block h-4 w-full rounded-b bg-gradient-to-r from-red-500 via-amber-500 to-green-500"
+								class="relative block h-4 w-full rounded-b bg-gradient-to-r from-brand-1 from-10% via-amber-400 to-green-500"
 							>
 								<div
 									class="absolute block h-full w-1 shrink-0 -translate-x-1/2 bg-black whitespace-nowrap"

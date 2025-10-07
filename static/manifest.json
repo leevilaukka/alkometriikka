@@ -457,12 +457,13 @@
     "id": "/",
     "screenshots": [
         {
-            "src": "/screenshot1.png",
-            "sizes": "1355x770"
+            "src": "/images/visual_1.png",
+            "sizes": "1080x1920",
+            "type": "image/png"
         },
         {
-            "src": "/screenshot1.png",
-            "sizes": "1355x770",
+            "src": "/images/visual_2.png",
+            "sizes": "1920x1080",
             "type": "image/png",
             "form_factor": "wide"
         }
@@ -479,7 +480,7 @@
             "icons": [
                 {
                     "src": "/favicon.ico",
-                    "sizes": "128x128",
+                    "sizes": "256x256",
                     "type": "image/x-icon"
                 }
             ]

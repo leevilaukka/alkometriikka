@@ -2,6 +2,12 @@
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
 
+@theme {
+    --color-brand-1: rgb(229, 27, 21); /* #E51B15 */
+    --color-brand-2: rgb(191, 22, 22); /* #BF1616 */
+    --color-brand-3: rgb(150, 15, 15); /* #960F0F */
+    --color-brand-4: rgb(82, 0, 10); /* #52000A */
+}
 
 /* icons */
 @font-face {
@@ -13,7 +19,6 @@
         url("lib/assets/fonts/icons/icons.ttf") format("truetype");
 }
 
-/* latin */
 @font-face {
   font-family: 'Inter';
   font-weight: 500;

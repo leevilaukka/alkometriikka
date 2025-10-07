@@ -1,10 +1,9 @@
 <script lang="ts">
 	import '../app.css';
-	import favicon from '$lib/assets/images/favicon.png';
 	import { dev } from '$app/environment';
 	import { GenderOptionsMap, LocalStorageKeys } from '$lib/utils/constants';
 	import { isMobile, isLaptop, lists, personalInfo, searchQuery } from '$lib/global.svelte';
-	import logo from '$lib/assets/images/logo.png';
+	import logo from '$lib/assets/images/Logo/0.5x/Logo_rounded@0.5x.png';
 	import Popup from '$lib/components/widgets/Popup.svelte';
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/styles';
@@ -39,7 +38,7 @@
 </script>
 
 <svelte:head>
-	<link rel="icon" href={favicon} />
+	<link rel="icon" href={logo} />
 	<title>Alkometriikka</title>
 </svelte:head>
 
@@ -55,14 +54,13 @@
 {:then alko}
 	<div class="flex h-full w-full flex-col">
 		{#if dev}
-			<span class="bg-red-200 px-1.5 py-0.5 text-center text-sm text-red-800">DEV</span>
+			<span class="bg-brand-3 px-1.5 py-0.5 text-center text-sm text-white">DEV</span>
 		{/if}
 		<header class="relative flex h-fit items-center gap-2 border-b border-gray-300 p-2 md:gap-4">
-			<div class="flex flex-row items-center gap-3 bg-white">
-				<a href="/">
-					<img src={logo} alt="Alkoassistentti Logo" class="aspect-[10/2] h-12 object-contain" />
-				</a>
-			</div>
+			<a href="/" class="flex flex-row shrink-0 items-center gap-3 bg-white">
+				<img src={logo} alt="Alkoassistentti Logo" class="aspect-square h-10 object-contain rounded" />
+				<span class="hidden sm:block text-brand-3 text-[1.75rem]">Alkometriikka</span>
+			</a>
 			{#if page.route.id !== '/tuotteet/[...id]'}
 				<div
 					class={twMerge(
@@ -328,7 +326,7 @@
 	<div class="grid h-full w-full place-content-center">
 		<div class="flex flex-col items-center gap-3">
 			<p>Virhe datan lataamisessa: {error.message}</p>
-			<button class="rounded bg-red-600 px-4 py-2 text-white" onclick={() => location.reload()}>
+			<button class="rounded bg-brand-1 px-4 py-2 text-white" onclick={() => location.reload()}>
 				Yritä uudelleen
 			</button>
 		</div>

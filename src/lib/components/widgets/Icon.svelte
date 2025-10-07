@@ -17,6 +17,6 @@
         place-content: center;
         min-width: 1em;
         min-height: 1em;
-        transform: scale(1.2);
+        transform: scale(1.15);
     }
 </style>
