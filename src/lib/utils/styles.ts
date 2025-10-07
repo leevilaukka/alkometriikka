@@ -42,9 +42,12 @@ export const components = {
             color: {
                 default: "bg-white text-black border-gray-300",
                 green: "bg-green-300 text-green-800",
-                red: "bg-red-200 text-red-800",
                 emerald: "bg-emerald-300 text-emerald-800",
+                red: "bg-red-200 text-red-800",
+                dark_red: "bg-red-600 text-gray-200",
                 blue: "bg-blue-300 text-blue-800",
+                cyan: "bg-cyan-300 text-cyan-800",
+                yellow: "bg-yellow-300 text-yellow-800",
             }
         }
     })

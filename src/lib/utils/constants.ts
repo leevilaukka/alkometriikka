@@ -241,8 +241,9 @@ export const ColumnToBadgeMap = {
         "Alkuviini": { text: "Alkuviini", color: "blue", icon: "wine" },
         "Biodynaaminen": { text: "Biodynaaminen", color: "emerald", icon: "yin_yang" },
     },
-} satisfies {
-    [key in typeof DatasetColumns.New]?: { text: string; color: VariantProps<typeof components.badge>["color"]; icon?: IconName };
-} & {
-    [key in typeof DatasetColumns.SpecialGroup]?: { [key: string]: { text: string; color: VariantProps<typeof components.badge>["color"]; icon?: IconName } };
-};
+    [DatasetColumns.Availability]: {
+        "Kausituote": { text: "Kausituote", color: "dark_red", icon: "tree" },
+        "Erikoiserä": { text: "Erikoiserä", color: "yellow", icon: "star" },
+        "Tilausvalikoima": { text: "Tilausvalikoima", color: "cyan", icon: "truck" },
+    }
+} 
