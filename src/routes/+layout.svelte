@@ -4,6 +4,7 @@
 	import { GenderOptionsMap, LocalStorageKeys } from '$lib/utils/constants';
 	import { isMobile, isLaptop, lists, personalInfo, searchQuery } from '$lib/global.svelte';
 	import logo from '$lib/assets/images/Logo/0.5x/Logo_rounded@0.5x.png';
+	import logo_svg from '$lib/assets/images/Alkometriikka.svg';
 	import Popup from '$lib/components/widgets/Popup.svelte';
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/styles';
@@ -35,6 +36,24 @@
 	afterNavigate(() => {
 		$searchQuery = '';
 	});
+
+	let barCount = Math.ceil(document.body.clientWidth / (640 / 3));
+	if (!(barCount % 2 == 0)) barCount -= 1;
+	let bars = Array.apply(null, Array(barCount / 2)).map(() => {});
+	let barMaxHeight = (Math.min(document.body.clientWidth, 480) / 4) * 3
+
+	function oscillate(node: HTMLDivElement) {
+		let dir = node.clientHeight < barMaxHeight/2 ? 1 : -1;
+		console.log(dir);
+		setInterval(() => {
+			node.style.height = `${node.clientHeight + dir*(0.5 + Math.random() * 2)}px`
+			if(node.clientHeight <= barMaxHeight/5) {
+				dir = 1;
+			} else if(node.clientHeight >= barMaxHeight) {
+				dir = -1;
+			}
+		}, 5)
+	}
 </script>
 
 <svelte:head>
@@ -42,12 +61,41 @@
 	<title>Alkometriikka</title>
 </svelte:head>
 
+
+
 {#await data.alko}
-	<div class="grid h-full w-full place-content-center">
-		<div class="flex flex-col items-center gap-3">
-			<span
-				class="block h-16 w-16 animate-spin rounded-full border-[0.5rem] border-red-600 border-b-transparent"
-			></span>
+	<div class="fixed inset-0 z-99999 block h-full w-full items-end bg-brand-4">
+		<div
+			style={`transform: translate(calc(calc(100% + min(${document.body.clientWidth/6}px, 107px)) * -1), 0%)`}
+			class="absolute bottom-0 left-1/2 flex flex-row-reverse flex-nowrap items-end"
+		>
+			{#each bars as _, index}
+				<div
+					use:oscillate
+					style={`min-width: ${640 / 3}px; height: ${Math.max(80, Math.random() * barMaxHeight)}px`}
+					class={twMerge('block', ['bg-brand-1', 'bg-brand-2', 'bg-brand-3'][(index * 2) % 3])}
+				></div>
+			{/each}
+		</div>
+		<img
+			src={logo_svg}
+			alt="Alkometriikka Logo"
+			style="clip-path: inset(0 33.333% 0 33.333%);"
+			class="absolute bottom-0 left-1/2 aspect-square w-full max-w-[640px] -translate-x-1/2 rounded object-contain"
+		/>
+		<div 
+		style={`transform: translate(min(${document.body.clientWidth/6}px, 107px), 0%)`}
+		class="absolute bottom-0 left-1/2 flex flex-row flex-nowrap items-end">
+			{#each bars as _, index}
+				<div
+					use:oscillate
+					style={`min-width: ${640 / 3}px; height: ${Math.max(80, Math.random() * barMaxHeight)}px`}
+					class={twMerge('block', ['bg-brand-3','bg-brand-1', 'bg-brand-2'][(index * 2) % 3])}
+				></div>
+			{/each}
+		</div>
+		<div class="absolute left-1/2 top-1/3 text-white -translate-1/2 text-center flex flex-col gap-3">
+			<h1 class="text-4xl">Alkometriikka</h1>
 			<p>Ladataan...</p>
 		</div>
 	</div>
@@ -57,9 +105,13 @@
 			<span class="bg-brand-3 px-1.5 py-0.5 text-center text-sm text-white">DEV</span>
 		{/if}
 		<header class="relative flex h-fit items-center gap-2 border-b border-gray-300 p-2 md:gap-4">
-			<a href="/" class="flex flex-row shrink-0 items-center gap-3 bg-white">
-				<img src={logo} alt="Alkoassistentti Logo" class="aspect-square h-10 object-contain rounded" />
-				<span class="hidden sm:block text-brand-3 text-[1.75rem]">Alkometriikka</span>
+			<a href="/" class="flex shrink-0 flex-row items-center gap-3 bg-white">
+				<img
+					src={logo}
+					alt="Alkometriikka Logo"
+					class="aspect-square h-10 rounded object-contain"
+				/>
+				<span class="hidden text-[1.75rem] text-brand-3 sm:block">Alkometriikka</span>
 			</a>
 			{#if page.route.id !== '/tuotteet/[...id]'}
 				<div
@@ -183,11 +235,19 @@
 							</p>
 						</div>
 						<div class="flex flex-row items-center gap-2">
-							<a href="https://github.com/leevilaukka/alkometriikka" target="_blank" class={twMerge(components.button())}>
+							<a
+								href="https://github.com/leevilaukka/alkometriikka"
+								target="_blank"
+								class={twMerge(components.button())}
+							>
 								<Icon name="github" class="inline-block" />
 								<span>GitHub</span>
 							</a>
-							<a href="mailto:alkometriikka@proton.me" target="_blank" class={twMerge(components.button())}>
+							<a
+								href="mailto:alkometriikka@proton.me"
+								target="_blank"
+								class={twMerge(components.button())}
+							>
 								<Icon name="mail_send" class="inline-block" />
 								<span>Sähköposti</span>
 							</a>
