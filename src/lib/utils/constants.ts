@@ -120,7 +120,7 @@ export const sortingOrderDescriptionMap = {
     [AllColumns.AlcoholGramsPerEuro]: ["Matalin", "Korkein"],
     [AllColumns.Price]: ["Halvin", "Kallein"],
     [AllColumns.PricePerLiter]: ["Halvin", "Kallein"],
-    [AllColumns.AlcoholGrams]: ["Matalinn", "Korkein"],
+    [AllColumns.AlcoholGrams]: ["Matalin", "Korkein"],
     [AllColumns.BottleSize]: ["Pienin", "Suurin"],
     [AllColumns.Name]: ["A-Ö", "Ö-A"],
     [AllColumns.Manufacturer]: ["A-Ö", "Ö-A"],
