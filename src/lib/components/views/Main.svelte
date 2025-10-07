@@ -10,12 +10,8 @@
 		AllColumns,
 		shownSortingKeys,
 		defaultSortingOrderMap,
-
 		ColumnToBadgeMap,
-
 		DatasetColumns
-
-
 	} from '$lib/utils/constants';
 	import { components } from '$lib/utils/styles';
 	import {
@@ -228,15 +224,18 @@
 										{item[AllColumns.Region] ? ` - ${item[AllColumns.Region]}` : null}
 									</span>
 								</div>
-								<div class="flex flex-col gap-4 md:flex-row md:items-center">
+								<div class="flex flex-col gap-4 lg:flex-row lg:items-center">
 									<div class="flex items-center gap-2">
 										<p class="text-2xl font-bold drop-shadow-lg">
 											{Number.parseFloat(item[AllColumns.Price] as string).toFixed(2)} €
 										</p>
-										<span class="text-sm text-gray-500">({item[AllColumns.PricePerLiter]} €/L)</span
-										>
+										<span class="text-sm text-gray-500">
+											({item[AllColumns.PricePerLiter]} €/L)
+										</span>
 									</div>
-									<BadgeList item={item} />
+									<div class="flex flex-row items-center gap-3">
+										<BadgeList {item} />
+									</div>
 									<Popup class="gap-4 p-4">
 										{#snippet renderButton(dialogElement: HTMLDialogElement)}
 											<button
