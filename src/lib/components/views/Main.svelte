@@ -12,9 +12,7 @@
 		defaultSortingOrderMap,
 		ColumnToBadgeMap,
 		DatasetColumns,
-
 		ContextKeys
-
 	} from '$lib/utils/constants';
 	import { components } from '$lib/utils/styles';
 	import {
@@ -33,7 +31,7 @@
 	import { initFilterValues } from '$lib/utils/filters';
 	import { page } from '$app/state';
 	import BadgeList from '../widgets/BadgeList.svelte';
-	import { getContext } from 'svelte';
+	import { getContext, onMount } from 'svelte';
 	import type { SearchParamsManager } from '$lib/utils/url';
 
 	const { kaljakori }: { kaljakori: Kaljakori } = $props();
@@ -45,8 +43,12 @@
 	let filtersComponent: Filters | null = $state(null);
 	let filterValues = $state(initFilterValues(kaljakori, page.url.searchParams));
 
-	let selectedHighlight = $state(defaultSortingColumn);
-	let selectedSortingColumn = $state(defaultSortingColumn);
+	let selectedHighlight = $state(
+		searchParamsManager.getParameter('highlight') || defaultSortingColumn
+	);
+	let selectedSortingColumn = $state(
+		searchParamsManager.getParameter('sort') || defaultSortingColumn
+	);
 	let asc: boolean = $derived(
 		defaultSortingOrderMap[selectedSortingColumn as keyof typeof defaultSortingOrderMap] || false
 	);
@@ -67,9 +69,18 @@
 		return temp;
 	});
 
+	onMount(() => {
+		const ascParam = searchParamsManager.getParameter('asc') === "true";
+		if(ascParam !== asc) asc = ascParam
+	});
+
 	$effect(() => {
-		searchParamsManager.setParameter("q", $searchQuery).update();
-	})
+		searchParamsManager.setParameter('q', $searchQuery);
+		selectedHighlight !== defaultSortingColumn ? searchParamsManager.setParameter('highlight', selectedHighlight) : searchParamsManager.setParameter('highlight', "");
+		selectedSortingColumn !== defaultSortingColumn ? searchParamsManager.setParameter('sort', selectedSortingColumn) : searchParamsManager.setParameter('sort', "");
+		asc !== !!defaultSortingOrderMap[selectedSortingColumn as keyof typeof defaultSortingOrderMap] ? searchParamsManager.setParameter('asc', String(asc)) : searchParamsManager.setParameter('asc', "");
+		searchParamsManager.update();
+	});
 </script>
 
 <div class="relative grid h-full grid-cols-[auto_1fr]">
