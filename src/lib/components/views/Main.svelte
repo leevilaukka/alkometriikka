@@ -11,7 +11,10 @@
 		shownSortingKeys,
 		defaultSortingOrderMap,
 		ColumnToBadgeMap,
-		DatasetColumns
+		DatasetColumns,
+
+		ContextKeys
+
 	} from '$lib/utils/constants';
 	import { components } from '$lib/utils/styles';
 	import {
@@ -29,10 +32,13 @@
 	import Filters from '../widgets/Filters.svelte';
 	import { initFilterValues } from '$lib/utils/filters';
 	import { page } from '$app/state';
-	import Badge from '../widgets/Badge.svelte';
 	import BadgeList from '../widgets/BadgeList.svelte';
+	import { getContext } from 'svelte';
+	import type { SearchParamsManager } from '$lib/utils/url';
 
 	const { kaljakori }: { kaljakori: Kaljakori } = $props();
+
+	let searchParamsManager = getContext<SearchParamsManager>(ContextKeys.SearchParamsManager);
 
 	let listRef: SvelteVirtualList<PriceListItem> | null = $state(null);
 
@@ -40,7 +46,6 @@
 	let filterValues = $state(initFilterValues(kaljakori, page.url.searchParams));
 
 	let selectedHighlight = $state(defaultSortingColumn);
-
 	let selectedSortingColumn = $state(defaultSortingColumn);
 	let asc: boolean = $derived(
 		defaultSortingOrderMap[selectedSortingColumn as keyof typeof defaultSortingOrderMap] || false
@@ -61,6 +66,10 @@
 		if (!asc) temp = temp.reverse();
 		return temp;
 	});
+
+	$effect(() => {
+		searchParamsManager.setParameter("q", $searchQuery).update();
+	})
 </script>
 
 <div class="relative grid h-full grid-cols-[auto_1fr]">
@@ -98,9 +107,9 @@
 								}}
 								class={twMerge(components.button(), 'rounded-none rounded-e border-s-0')}
 							>
-								<span class="hidden md:block"
-									>{sortingOrderToString(asc, selectedSortingColumn)}</span
-								>
+								<span class="hidden whitespace-nowrap md:block">
+									{sortingOrderToString(asc, selectedSortingColumn)}
+								</span>
 								<Icon name={asc ? 'up_arrow_alt' : 'down_arrow_alt'} />
 							</button>
 						{/if}
@@ -194,7 +203,7 @@
 												? `- ${formatValue(item[AllColumns.BeerType], AllColumns.BeerType)}`
 												: null}
 										</p>
-										<p>{valueToString(item[AllColumns.Availability], AllColumns.Availability)}</p>
+										<p>{valueToString(item[AllColumns.SubType], AllColumns.SubType)}</p>
 									</div>
 									<div class="flex flex-col gap-0.5 md:gap-1">
 										<p>

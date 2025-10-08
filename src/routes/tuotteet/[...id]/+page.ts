@@ -1,7 +1,6 @@
 import { error } from '@sveltejs/kit';
 
 export async function load({ parent, params }) {
-    console.log('params', params);
     const data = await parent();
     const alko = await data.alko
 

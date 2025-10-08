@@ -1,8 +1,8 @@
 import type { Kaljakori } from "$lib/alko"
-import type { ColumnNames } from "$lib/types"
-import { shownFilters, subCategoryMap, LocalStorageKeys } from "./constants";
+import type { ColumnNames, FilterValue, FilterValues } from "$lib/types"
+import { shownFilters, subCategoryMap } from "./constants";
 
-export function initFilterValues(kaljakori: Kaljakori, searchParams?: URLSearchParams): Record<ColumnNames, any[]> {
+export function initFilterValues(kaljakori: Kaljakori, searchParams?: URLSearchParams) {
     const valuesSearchParams = searchParams ? filterValuesFromSearchParameters(searchParams, kaljakori) : {}
 	return [...shownFilters, ...Object.values(subCategoryMap)].reduce((obj, filter) => {
 		if (kaljakori.getFilterType(filter) == 'number')
@@ -10,20 +10,21 @@ export function initFilterValues(kaljakori: Kaljakori, searchParams?: URLSearchP
 		else if (kaljakori.getFilterType(filter) == 'string') obj[filter] = valuesSearchParams[filter as keyof typeof valuesSearchParams] || [];
 		else if (kaljakori.getFilterType(filter) == 'any') obj[filter] = valuesSearchParams[filter as keyof typeof valuesSearchParams] || [];
 		return obj;
-	}, {} as Record<ColumnNames, any[]>);
+	}, {} as Record<ColumnNames, FilterValue>);
 }
 
-export function searchParametersFromFilterValues(filterValues: any, kaljakori: Kaljakori) {
-    const searchParams = new URLSearchParams()
-    Object.entries(filterValues).forEach(([key, value]: [string, any]) => {
+export function searchParametersFromFilterValues(filterValues: FilterValues, kaljakori: Kaljakori) {
+    return Object.entries(filterValues).reduce<Record<string, string | string[]>>((obj, [key, value]) => {
         const type = kaljakori.getFilterType(key as ColumnNames)
         if(type === "string" && Array.isArray(value)) {
-            value.forEach(v => v.length && searchParams.append(key, v))
+            obj[key] = value as string[]
         } else if(type === "number" && Array.isArray(value)) {
-            searchParams.append(key, `${value[0]}-${value[1]}`)
+            const defaults = kaljakori.getMinAndMaxValues(key as ColumnNames)
+            if(defaults && defaults[0] == value[0] && defaults[1] == value[1]) obj[key] = ""
+            else obj[key] = `${value[0]}-${value[1]}`
         }
-    })
-    return searchParams
+        return obj
+    }, {})
 }
 
 export function filterValuesFromSearchParameters(searchParams: URLSearchParams, kaljakori: Kaljakori) {

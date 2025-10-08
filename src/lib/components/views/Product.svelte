@@ -12,8 +12,11 @@
 	import BadgeList from '../widgets/BadgeList.svelte';
 	const { product } = $props();
 
-   document.title = generateTitle(`Tuote - ${product[AllColumns.Name]}`);
 </script>
+
+<svelte:head>
+	<title>{generateTitle(`${product[AllColumns.Name]}`)}</title>
+</svelte:head>
 
 <div
 	class={twMerge(
@@ -38,12 +41,13 @@
             />
         </div>
         <div class="flex w-full flex-col justify-between gap-3">
-            <div class="flex flex-col gap-1">
+            <div class="flex flex-col gap-2">
                 <h2 class="text-2xl font-bold md:text-3xl">
                     {product[AllColumns.Name]}
                 </h2>
                 <span> {valueToString(product[AllColumns.Manufacturer], AllColumns.Manufacturer)} | {valueToString(product[AllColumns.BottleSize], AllColumns.BottleSize)} | {valueToString(product[AllColumns.AlcoholPercentage], AllColumns.AlcoholPercentage)} {product[AllColumns.Vintage] !== "" ? `| ${valueToString(product[AllColumns.Vintage], AllColumns.Vintage)}` : ''}</span>
-                <div class="flex flex-col w-full gap-4 md:flex-row">
+                <p class="bg-gray-200 w-fit px-1 rounded">{product[AllColumns.Availability]}</p>
+				<div class="flex flex-col w-full gap-2 md:flex-row">
                    <BadgeList item={product} />
                 </div>
             </div>
@@ -105,7 +109,6 @@
 		<div class="flex flex-col gap-0.5 md:gap-1">
 			<h2 class="text-lg font-bold">Laskennalliset tiedot</h2>
 			{#each Object.entries(DrunkColumns) as [_, value]}
-                {console.log(product[value])}
 				{#if product[value] !== null && product[value] !== undefined}
 					<p>
 						{valueToString(

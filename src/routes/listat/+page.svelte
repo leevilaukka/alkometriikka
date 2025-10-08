@@ -9,13 +9,11 @@
 	import { twMerge } from 'tailwind-merge';
 
     const { data } = $props()
-
-	if (data.list) {
-		document.title = generateTitle(`Lista - ${data.list.name}`);
-	} else {
-		document.title = generateTitle('Listat');
-	}
 </script>
+
+<svelte:head>
+    <title>{data.list ? generateTitle(`Lista - ${data.list.name}`) : generateTitle('Listat')}</title>
+</svelte:head>
 
 {#await data.alko}
 	<div class="grid h-full w-full place-content-center">

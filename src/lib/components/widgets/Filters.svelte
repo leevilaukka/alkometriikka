@@ -2,18 +2,15 @@
 	import type { Kaljakori } from '$lib/alko';
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/styles';
-	import { filterRenameMap, shownFilters, subCategoryMap } from '$lib/utils/constants';
+	import { ContextKeys, filterRenameMap, shownFilters, subCategoryMap } from '$lib/utils/constants';
 	import NumberInput from '../inputs/NumberInput.svelte';
 	import StringInput from '../inputs/StringInput.svelte';
 	import Icon from './Icon.svelte';
 	import { isMobile } from '$lib/global.svelte';
-	import { initFilterValues } from '$lib/utils/filters';
-	import { searchParametersFromFilterValues } from '$lib/utils/filters';
-	import { goto } from '$app/navigation';
-	import { mergeFilterParameters } from '$lib/utils/helpers';
-	import { page } from '$app/state';
-	import { untrack } from 'svelte';
-	import type { ColumnNames } from '$lib/types';
+	import { initFilterValues, searchParametersFromFilterValues } from '$lib/utils/filters';
+	import type { ColumnNames, Filter, FilterValues } from '$lib/types';
+	import { getContext } from 'svelte';
+	import type { SearchParamsManager } from '$lib/utils/url';
 
 	let {
 		kaljakori,
@@ -21,11 +18,13 @@
 		useURLParams = true,
 	}: {
 		kaljakori: Kaljakori;
-		filterValues: Record<ColumnNames, any[]>; // TODO: types?
+		filterValues: FilterValues
 		useURLParams?: boolean,
 	} = $props();
 
 	const filters = shownFilters;
+	
+	let searchParamsManager = getContext<SearchParamsManager>(ContextKeys.SearchParamsManager);
 
 	export function toggleFilterElement() {
 		if (!filtersElement) return;
@@ -44,16 +43,19 @@
 	});
 
 	$effect(() => {
-		(Object.keys(filterValues) as ColumnNames[]).forEach((filter) => {
-			if(Object.hasOwn(subCategoryMap, filter) && filterValues[filter].length > 1 && filterValues[subCategoryMap[filter as keyof typeof subCategoryMap]].length) filterValues[subCategoryMap[filter as keyof typeof subCategoryMap]] = []
+		// Reset sub filters when parent filter is changed
+		filterValues && (Object.keys(filterValues) as ColumnNames[]).forEach((filter) => {
+			if(Object.hasOwn(subCategoryMap, filter) && filterValues[filter].length !== 1 && filterValues[subCategoryMap[filter as keyof typeof subCategoryMap]].length)  {
+				filterValues[subCategoryMap[filter as keyof typeof subCategoryMap]] = []
+			}
 		})
 	});
 
 	$effect(() => {
+		// Update URL parameters when filter values change
 		if(!useURLParams) return
-		const searchParams = searchParametersFromFilterValues(filterValues, kaljakori)
-		const url = untrack(() => page.url)
-		goto(`${url.pathname}?${mergeFilterParameters(url.searchParams, searchParams, filterValues).toString()}`, { replaceState: true, keepFocus: true })
+		const filterValuesAsSearchParams = searchParametersFromFilterValues(filterValues, kaljakori)
+		searchParamsManager.setParametersFromObject(filterValuesAsSearchParams).update()
 	})
 </script>
 
@@ -69,29 +71,29 @@
 		{@const type = kaljakori.getFilterType(filter)}
 		{#if possibleValues.length > 1 || (filter === "Uutuus" && possibleValues.length === 1)}
 			<div class="flex w-full flex-col text-sm gap-2">
-					{#if type === 'number'}
-						{@const [min, max] = kaljakori.getMinAndMaxValues(filter) as number[]}
-						<NumberInput label={filter} bind:value={filterValues[filter]} {min} {max} step={0.01} />
-					{:else}
+				{#if type === 'number'}
+					{@const [min, max] = kaljakori.getMinAndMaxValues(filter) as number[]}
+					<NumberInput label={filter} bind:value={filterValues[filter]} {min} {max} step={0.01} />
+				{:else}
+					<StringInput
+						label={filter}
+						options={possibleValues}
+						bind:value={filterValues[filter]}
+						name={filter}
+					/>
+				{/if}
+				{#if Object.hasOwn(subCategoryMap, filter) && filterValues[filter].length === 1}
+					{@const subFilter = subCategoryMap[filter as keyof typeof subCategoryMap]}
+					{@const subFilterValues = kaljakori.getSubFilterValues(filter, filterValues[filter][0])}
+					{#if subFilterValues.length}
 						<StringInput
-							label={filter}
-							options={possibleValues}
-							bind:value={filterValues[filter]}
-							name={filter}
+							label={filterRenameMap[subFilter as keyof typeof filterRenameMap] ?? subFilter}
+							options={subFilterValues}
+							bind:value={filterValues[subFilter]}
+							name={subFilter}
 						/>
 					{/if}
-					{#if Object.hasOwn(subCategoryMap, filter) && filterValues[filter].length === 1}
-						{@const subFilter = subCategoryMap[filter as keyof typeof subCategoryMap]}
-						{@const subFilterValues = kaljakori.getSubFilterValues(filter, filterValues[filter][0])}
-						{#if subFilterValues.length}
-							<StringInput
-								label={filterRenameMap[subFilter as keyof typeof filterRenameMap] ?? subFilter}
-								options={subFilterValues}
-								bind:value={filterValues[subFilter]}
-								name={subFilter}
-							/>
-						{/if}
-					{/if}
+				{/if}
 			</div>
 		{/if}
 	{/each}

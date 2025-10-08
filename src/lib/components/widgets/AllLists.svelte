@@ -6,7 +6,7 @@
 	import Icon from "./Icon.svelte";
 	import type { ListObj } from "$lib/types";
 	import { isSimilarString } from "$lib/utils/search";
-	import { handleShare } from "$lib/utils/helpers";
+	import { generateTitle, handleShare } from "$lib/utils/helpers";
 
     const { action, show, useSearch = false }: { action: (list: ListObj) => void; show?: { delete?: boolean, length?: boolean, share?: boolean }, useSearch?: boolean } = $props();
     const time = new Date();

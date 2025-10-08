@@ -38,11 +38,11 @@ export function productIdsToDataset(table: string[][], productIds: string[]) {
 }
 
 const baseTitle = "Alkometriikka" as const;
-export function generateTitle<T extends string>(text?: T): typeof baseTitle | `${typeof baseTitle} | ${T}` | `${typeof baseTitle} | ${T} - [dev]` {
+export function generateTitle<T extends string>(text?: T): typeof baseTitle | `${typeof baseTitle} - [dev]` | `${typeof baseTitle} | ${T}` | `${typeof baseTitle} - [dev] | ${T}` {
     const fullTitle: `${typeof baseTitle} | ${T}` | typeof baseTitle = text ? `${baseTitle} | ${text}` : baseTitle;
     if (dev) {
         if (text) {
-            return `${baseTitle} | ${text} - [dev]` as `Alkometriikka | ${T} - [dev]`;
+            return `${baseTitle} - [dev] | ${text}`;
         } else {
             return "Alkometriikka" as typeof baseTitle;
         }
@@ -79,7 +79,6 @@ export function handleImport() {
         if (file) {
             const text = await file.text();
             const data = JSON.parse(text);
-            console.log(data);
             const currentPersonalInfo = { ...personalInfo };
             const currentLists = [...lists];
             localStorage.setItem(
@@ -146,4 +145,8 @@ export function mergeFilterParameters(oldParameters: URLSearchParams, newParamet
         }
     }
     return merged;
+}
+
+export function isNullish(value: unknown) {
+    return value === null || value === undefined || value === "";
 }

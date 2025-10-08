@@ -71,3 +71,6 @@ export type ListObj = {
 
 export type BadgeConfig = { text: string; color?: VariantProps<typeof components.badge>["color"]; icon?: IconName };
 export type ColumnBadgeMap = Partial<Record<ColumnNames, BadgeConfig | Record<string, BadgeConfig>>>;
+
+export type FilterValue = (string | number)[];
+export type FilterValues = { [key in ColumnNames]: FilterValue };

@@ -5,14 +5,15 @@
 	import Product from '$lib/components/views/Product.svelte';
 	import { page } from '$app/state';
 	import { redirect } from '@sveltejs/kit';
+	import { generateTitle } from '$lib/utils/helpers.js';
 
 	let  { data } = $props(); 
 	const id = page.params.id?.split('/')[0]; // Handle both /tuotteet/123 and /tuotteet/123/extra paths
 
-	console.log('id', id);
-
 	if (!id) redirect(300, "/");
 </script>
+
+
 
 {#await data.alko}
 	<div class="grid h-full w-full place-content-center">

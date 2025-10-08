@@ -1,6 +1,6 @@
 import { AllColumns, defaultSortingColumn, GenderOptionsMap, subCategoryMap, undefinedToZeroColumns } from '$lib/utils/constants';
 import { calculateDrunkValue } from '../utils/alko';
-import { type ColumnNames, type DatasetColumnNames, type DatasetRow, type DrunkColumnNames, type NativeTypes, type PersonalInfo, type PriceListItem } from '../types';
+import { type ColumnNames, type DatasetColumnNames, type DatasetRow, type DrunkColumnNames, type Filter, type FilterValues, type NativeTypes, type PersonalInfo, type PriceListItem } from '../types';
 import { isSimilarString } from '$lib/utils/search';
 
 export class Kaljakori {
@@ -14,8 +14,10 @@ export class Kaljakori {
 
 	constructor(table: DatasetRow[], personalInfo?: PersonalInfo) {
 		this.personalInfo = personalInfo || { weight: null, gender: GenderOptionsMap.Unspecified };
+
 		const [datasetColumns, ...rows] = table as [DatasetColumnNames[], ...DatasetRow[]];
 
+		// Define calculated columns
 		const drunkColumns: DrunkColumnNames[] = [
 			"Alkoholigrammat",
 			"Alkoholigrammat / €",
@@ -113,12 +115,11 @@ export class Kaljakori {
 		return this.filters;
 	}
 
-	getFilterValues(key: ColumnNames) {
+	getFilterValues(key: ColumnNames): (string | number)[] {
 		return this.possibleValues[key] ? Array.from(this.possibleValues[key]) : [];
 	}
 
 	getSubFilterValues(key: ColumnNames, value: any) {
-		console.log(key, value)
 		return this.subValues[key] ? Array.from(this.subValues[key][value]) : [];
 	}
 

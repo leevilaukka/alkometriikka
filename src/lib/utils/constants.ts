@@ -211,6 +211,10 @@ export const LocalStorageKeys = {
     CurrentFilters: "current_filters",
 } as const;
 
+export const ContextKeys = {
+    SearchParamsManager: "search_params_manager"
+} as const;
+
 /** Options for gender selection */
 export const GenderOptionsMap = {
     Male: "Mies",
@@ -254,7 +258,7 @@ export function DynamicColumnToBadgeMap(item: Record<string, any>): Partial<Colu
         map[DatasetColumns.AlcoholPercentage] = { text: "Alkoholiton", color: "blue", icon: "percentage" };
     }
     if (Number(item[DatasetColumns.Sugar]) === 0) {
-        map[DatasetColumns.Sugar] = { text: "Sokeriton", color: "gray", icon: "cake_slice" };
+        map[DatasetColumns.Sugar] = { text: "Sokeriton", color: "gray" };
     }
     if (item[DatasetColumns.New] === "Uutuus" || item[DatasetColumns.New] === "uutuus") {
         map[DatasetColumns.New] = { text: "Uutuus", color: "red", icon: "pencil_sparkles" };

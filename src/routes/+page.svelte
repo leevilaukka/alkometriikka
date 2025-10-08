@@ -4,9 +4,11 @@
 	import type { PageProps } from './$types';
 
 	let  { data }: PageProps = $props();
-
-	document.title = generateTitle();
 </script>
+
+<svelte:head>
+	<title>{generateTitle()}</title>
+</svelte:head>
 
 {#await data.alko then alko}
 	<Main kaljakori={alko.kaljakori} />

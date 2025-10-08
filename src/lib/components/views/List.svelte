@@ -23,7 +23,10 @@
 		defaultSortingColumn,
 		AllColumns,
 		shownSortingKeys,
-		defaultSortingOrderMap
+		defaultSortingOrderMap,
+
+		ContextKeys
+
 	} from '$lib/utils/constants';
 	import {
 		formatValue,
@@ -37,18 +40,18 @@
 	import Filters from '../widgets/Filters.svelte';
 	import { isMobile } from '$lib/global.svelte';
 	import { goto, replaceState } from '$app/navigation';
-	import { untrack } from 'svelte';
+	import { getContext, untrack } from 'svelte';
 	import { initFilterValues } from '$lib/utils/filters';
 	import { page } from '$app/state';
 	import BadgeList from '../widgets/BadgeList.svelte';
+	import type { SearchParamsManager } from '$lib/utils/url';
 
 	const { list: importedList, dataset }: { list: ListObj; dataset: string[][] } = $props();
 
+	let searchParamsManager = getContext<SearchParamsManager>(ContextKeys.SearchParamsManager);
+
 	const existingList = getListById(importedList.id);
-
 	const list = existingList || importedList;
-
-	document.title = generateTitle(`Lista - ${list.name}`);
 
 	const listDataset = $derived.by(() => {
 		return productIdsToDataset(
@@ -154,10 +157,7 @@
 	}
 
 	$effect(() => {
-		replaceState(
-			`?list=${listToURI(list)}`,
-			untrack(() => page.state)
-		);
+		searchParamsManager.setParameter("list", listToURI(list))
 	});
 </script>
 
@@ -275,7 +275,7 @@
 									}}
 									class={twMerge(components.button(), 'rounded-none rounded-e border-s-0')}
 								>
-									<span class="hidden md:block">
+									<span class="hidden md:block whitespace-nowrap">
 										{sortingOrderToString(asc, selectedSortingColumn)}
 									</span>
 									<Icon name={asc ? 'up_arrow_alt' : 'down_arrow_alt'} />

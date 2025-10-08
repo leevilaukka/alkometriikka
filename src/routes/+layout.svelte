@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	import { dev } from '$app/environment';
-	import { GenderOptionsMap, LocalStorageKeys } from '$lib/utils/constants';
+	import { ContextKeys, GenderOptionsMap, LocalStorageKeys } from '$lib/utils/constants';
 	import { isMobile, isLaptop, lists, personalInfo, searchQuery } from '$lib/global.svelte';
 	import logo from '$lib/assets/images/Logo/0.5x/Logo_rounded@0.5x.png';
 	import logo_transparent from '$lib/assets/images/Logo_transparent.svg';
@@ -11,11 +11,16 @@
 	import Icon from '$lib/components/widgets/Icon.svelte';
 	import { version } from '$app/environment';
 	import { handleClearAll, handleExport, handleImport } from '$lib/utils/helpers';
-	import { afterNavigate } from '$app/navigation';
+	import { beforeNavigate } from '$app/navigation';
 	import { page } from '$app/state';
 	import { fade } from 'svelte/transition';
+	import { SearchParamsManager } from '$lib/utils/url';
+	import { setContext } from 'svelte';
 
 	let { children, data } = $props();
+
+	let searchParamsManager = new SearchParamsManager(page.url)
+	setContext(ContextKeys.SearchParamsManager, searchParamsManager)
 
 	$effect(() => {
 		localStorage.setItem(LocalStorageKeys.PersonalInfo, JSON.stringify(personalInfo));
@@ -25,17 +30,19 @@
 		localStorage.setItem(LocalStorageKeys.Lists, JSON.stringify(lists));
 	});
 
-	let expandSearch = $state(false);
-
 	let tab = $state<'personal' | 'info' | 'settings'>('personal');
+
+	let mounted = $state(false)
 
 	window.addEventListener('resize', () => {
 		$isMobile = window.matchMedia('(width < 48rem)').matches;
 		$isLaptop = window.matchMedia('(width < 1280px)').matches;
 	});
 
-	afterNavigate(() => {
-		$searchQuery = '';
+	beforeNavigate(({ type, from }) => {
+		if(from?.route.id === '/listat') searchParamsManager.reset();
+		if(type !== "popstate") searchParamsManager.reset();
+		searchParamsManager.update()
 	});
 
 	let barCount = Math.ceil(document.body.clientWidth / (640 / 3));
@@ -45,7 +52,6 @@
 
 	function oscillate(node: HTMLDivElement) {
 		let dir = node.clientHeight < barMaxHeight/2 ? 1 : -1;
-		console.log(dir);
 		setInterval(() => {
 			node.style.height = `${node.clientHeight + dir*(0.5 + Math.random() * 2)}px`
 			if(node.clientHeight <= barMaxHeight/5) {
@@ -56,11 +62,6 @@
 		}, 5)
 	}
 </script>
-
-<svelte:head>
-	<link rel="icon" href={logo} />
-	<title>Alkometriikka</title>
-</svelte:head>
 
 
 {#await data.alko}
@@ -119,13 +120,10 @@
 				<div
 					class={twMerge(
 						'flex w-full flex-row',
-						expandSearch ? 'absolute inset-0' : 'rounded border border-gray-300'
+						'rounded border border-gray-300'
 					)}
 				>
-					<button
-						onclick={() => {
-							if ($isMobile) expandSearch = !expandSearch;
-						}}
+					<div
 						class={twMerge(
 							components.button(),
 							'aspect-square border-0 bg-white text-black',
@@ -134,7 +132,7 @@
 						)}
 					>
 						<Icon name="search" />
-					</button>
+					</div>
 					<input
 						id="searchQuery"
 						type="text"
@@ -254,7 +252,6 @@
 								<span>Sähköposti</span>
 							</a>
 						</div>
-						{console.log(alko.dataset.metadata)}
 						<p class="text-sm text-gray-600">
 							Versio: <a href="https://github.com/leevilaukka/alkometriikka/commit/{version}">
 								{version}
