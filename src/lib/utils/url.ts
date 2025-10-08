@@ -41,6 +41,10 @@ export class SearchParamsManager {
         })
         return this;
     }
+
+    setParametersFromURL(url: URL) {
+        this.params = url.searchParams
+    }
     
     addPersistentParameter(key: string, value?: string) {
         this.persistentParams.append(key, value ?? "")

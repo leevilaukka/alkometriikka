@@ -32,16 +32,14 @@
 
 	let tab = $state<'personal' | 'info' | 'settings'>('personal');
 
-	let mounted = $state(false)
-
 	window.addEventListener('resize', () => {
 		$isMobile = window.matchMedia('(width < 48rem)').matches;
 		$isLaptop = window.matchMedia('(width < 1280px)').matches;
 	});
 
-	beforeNavigate(({ type, from }) => {
-		if(from?.route.id === '/listat') searchParamsManager.reset();
-		if(type !== "popstate") searchParamsManager.reset();
+	beforeNavigate(({ to }) => {
+		if(!to) return
+		searchParamsManager.setParametersFromURL(to?.url as URL)
 		searchParamsManager.update()
 	});
 
