@@ -62,7 +62,7 @@
 <dialog
 	bind:this={filtersElement}
 	class={twMerge(
-		'relative m-auto hidden h-full w-full flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-4 backdrop:backdrop-blur-sm open:flex md:relative md:rounded-none md:border-0'
+		'relative m-auto hidden h-full w-full flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-4 backdrop:backdrop-blur-sm open:flex md:relative md:rounded-none md:border-0 overflow-x-hidden overflow-y-auto'
 	)}
 	onclose={() => (showFilters = false)}
 >

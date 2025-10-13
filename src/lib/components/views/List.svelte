@@ -223,7 +223,7 @@
 </div>
 <div
 	class={twMerge(
-		'relative grid h-full grid-cols-[1fr_auto]',
+		'relative grid h-full grid-cols-[1fr_auto] max-h-full overflow-hidden',
 		kaljakori.data.length > 1 && 'grid-cols-[auto_1fr_auto]'
 	)}
 >
@@ -241,7 +241,7 @@
 	{:else}
 		{#if kaljakori.data.length > 1}
 			<aside
-				class="z-10 flex h-full flex-col overflow-x-hidden overflow-y-auto border-gray-300 md:w-84 md:border-e"
+				class="z-10 flex h-full flex-col overflow-hidden border-gray-300 md:w-84 md:border-e"
 			>
 				<Filters {kaljakori} bind:filterValues bind:this={filtersComponent} useURLParams={false} />
 			</aside>

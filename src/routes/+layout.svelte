@@ -375,12 +375,12 @@
 				{/snippet}
 			</Popup>
 		</header>
-		<div class="flex max-h-full flex-auto flex-col">
+		<div class="flex max-h-full overflow-hidden flex-auto flex-col">
 			{@render children?.()}
 		</div>
 	</div>
 {:catch error}
-	<div class="grid h-full w-full place-content-center">
+	<div class="grid h-full w-full max-h-full overflow-hidden place-content-center">
 		<div class="flex flex-col items-center gap-3">
 			<p>Virhe datan lataamisessa: {error.message}</p>
 			<button class="rounded bg-brand-1 px-4 py-2 text-white" onclick={() => location.reload()}>

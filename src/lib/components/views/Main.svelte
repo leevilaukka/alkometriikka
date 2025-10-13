@@ -83,9 +83,9 @@
 	});
 </script>
 
-<div class="relative grid h-full grid-cols-[auto_1fr]">
+<div class="relative grid h-full grid-cols-[auto_1fr] max-h-full overflow-hidden">
 	<aside
-		class="z-10 flex h-full flex-col overflow-x-hidden overflow-y-auto border-gray-300 md:w-84 md:border-r"
+		class="z-10 flex h-full flex-col max-h-full overflow-hidden border-gray-300 md:w-84 md:border-r"
 	>
 		<Filters {kaljakori} bind:filterValues bind:this={filtersComponent} />
 	</aside>
