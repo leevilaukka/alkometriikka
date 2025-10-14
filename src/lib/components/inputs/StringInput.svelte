@@ -57,7 +57,7 @@
 				</button>
 			{/snippet}
 			{#snippet renderContent(dialogElement: HTMLDialogElement)}
-				<div class="flex h-full max-h-full flex-col gap-4">
+				<div class="flex h-full max-h-full overflow-hidden flex-col gap-4">
 					<div class="order-1 flex flex-row flex-wrap gap-4">
 						<button
 							onclick={() => {
