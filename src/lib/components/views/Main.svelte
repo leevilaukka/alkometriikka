@@ -44,10 +44,10 @@
 	let filterValues = $state(initFilterValues(kaljakori, page.url.searchParams));
 
 	let selectedHighlight = $state(
-		searchParamsManager.getParameter('highlight') || defaultSortingColumn
+		searchParamsManager.getParameter('highlight') as ColumnNames || defaultSortingColumn
 	);
 	let selectedSortingColumn = $state(
-		searchParamsManager.getParameter('sort') || defaultSortingColumn
+		searchParamsManager.getParameter('sort') as ColumnNames || defaultSortingColumn
 	);
 	let asc: boolean = $derived(
 		defaultSortingOrderMap[selectedSortingColumn as keyof typeof defaultSortingOrderMap] || false
