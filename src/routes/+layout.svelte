@@ -73,7 +73,11 @@
 	}
 </script>
 
-<div 
+
+
+
+{#await data.alko}
+	<div 
 	out:fade={{ delay: 500 }}
 	class="fixed inset-0 z-99999 block h-full w-full items-end bg-white">
 		<div
@@ -110,47 +114,6 @@
 			<p>Ladataan...</p>
 		</div>
 	</div>
-
-
-{#await data.alko}<!-- 
-	<div 
-	out:fade={{ delay: 500 }}
-	class="fixed inset-0 z-99999 block h-full w-full items-end bg-white">
-		<div
-			style={`transform: translate(calc(calc(100% + min(${document.body.clientWidth/6}px, 107px)) * -1), 0%)`}
-			class="absolute bottom-0 left-1/2 flex flex-row-reverse flex-nowrap items-end"
-		>
-			{#each bars as _, index}
-				<div
-					use:oscillate
-					style={`min-width: ${graphicSize / 3}px; height: ${Math.max(80, Math.random() * barMaxHeight)}px`}
-					class={twMerge('block', ['bg-brand-1', 'bg-brand-2', 'bg-brand-3'][(index * 2) % 3])}
-				></div>
-			{/each}
-		</div>
-		<img
-			src={logo_transparent}
-			alt="Alkometriikka Logo"
-			style="clip-path: inset(0 33.333% 0 33.333%);"
-			class="absolute bottom-0 left-1/2 aspect-square w-full max-w-[640px] max-h-[33.333vh] -translate-x-1/2 rounded object-contain"
-			bind:clientWidth={graphicSize}
-		/>
-		<div 
-		style={`transform: translate(min(${document.body.clientWidth/6}px, 107px), 0%)`}
-		class="absolute bottom-0 left-1/2 flex flex-row flex-nowrap items-end">
-			{#each bars as _, index}
-				<div
-					use:oscillate
-					style={`min-width: ${graphicSize / 3}px; height: ${Math.max(80, Math.random() * barMaxHeight)}px`}
-					class={twMerge('block', ['bg-brand-3','bg-brand-1', 'bg-brand-2'][(index * 2) % 3])}
-				></div>
-			{/each}
-		</div>
-		<div class="absolute left-1/2 top-1/3 -translate-1/2 text-center flex flex-col gap-3">
-			<h1 class="text-4xl text-brand-3">Alkometriikka</h1>
-			<p>Ladataan...</p>
-		</div>
-	</div> -->
 {:then alko}
 	<div class="flex h-full w-full flex-col">
 		{#if dev}
