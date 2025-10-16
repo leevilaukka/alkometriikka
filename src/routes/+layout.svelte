@@ -375,7 +375,7 @@
 				{/snippet}
 			</Popup>
 		</header>
-		<div class="flex max-h-full flex-auto flex-col">
+		<div class="flex max-h-full overflow-hidden flex-auto flex-col">
 			{@render children?.()}
 		</div>
 	</div>
