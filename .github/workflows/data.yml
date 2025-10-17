@@ -33,7 +33,7 @@ jobs:
 
         - name: Convert to JSON and compress
           run: |
-            bun install
+            bun install --frozen-lockfile
             bun run scripts/setup.ts
 
         - name: Stash changes

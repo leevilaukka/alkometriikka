@@ -37,7 +37,7 @@ jobs:
             ${{ runner.os }}-bun-
 
       - name: Install dependencies
-        run: bun i
+        run: bun i --frozen-lockfile
 
       - name: build
         env:
