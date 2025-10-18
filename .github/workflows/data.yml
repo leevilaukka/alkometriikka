@@ -1,13 +1,13 @@
 name: Download Price List
 
 on:
-    schedule:
-        - cron: '30 12 * * *' # Runs every day at 12:30
-    workflow_dispatch:
-    workflow_run: # Trigger on completion of another workflow
-        workflows: ["Build and move files to gh-pages branch"]
-        types:
-          - completed
+  workflow_dispatch:
+  schedule:
+      - cron: '0 */6 * * *' # Runs every 6 hours
+  workflow_run: # Runs after page is built
+      workflows: ["Build and move files to gh-pages branch"]
+      types:
+        - completed
 
 jobs:
     download-file:
@@ -21,9 +21,19 @@ jobs:
         - name: Install Bun
           uses: oven-sh/setup-bun@v2
 
+        - name: Cache Bun dependencies
+          uses: actions/cache@v4
+          with:
+            path: |
+              ~/.bun
+              node_modules
+            key: ${{ runner.os }}-bun-${{ hashFiles('bun.lock') }}
+            restore-keys: |
+              ${{ runner.os }}-bun-
+
         - name: Convert to JSON and compress
           run: |
-            bun install
+            bun install --frozen-lockfile
             bun run scripts/setup.ts
 
         - name: Stash changes

@@ -10,7 +10,13 @@
 	import { type ListObj } from '$lib/types';
 	import { addToList } from '$lib/utils/lists';
 	import BadgeList from '../widgets/BadgeList.svelte';
+	import { goto } from '$app/navigation';
 	const { product } = $props();
+
+	function handleBack() {
+		if(window.history.length > 1) window.history.back();
+		else goto('/');
+	}
 
 </script>
 
@@ -25,11 +31,11 @@
 >
     <div class="flex w-full items-center gap-4">
         <button
-            onclick={() => window.history.back()}
+            onclick={() => handleBack()}
             class={twMerge(components.button({ size: "md" }))}
         >
-           <Icon name="arrow_back" class="inline-block" />
-           <span>Takaisin</span>
+           <Icon name={window.history.length > 1 ? "arrow_back" : "home"} class="inline-block" />
+           <span>{window.history.length > 1 ? 'Takaisin' : 'Etusivulle'}</span>
         </button>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-[auto_1fr] w-full">
