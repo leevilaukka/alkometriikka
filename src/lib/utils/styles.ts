@@ -1,10 +1,10 @@
 import { cva } from "class-variance-authority";
 
 export const components = {
-    button: cva("flex flex-nowrap items-center justify-center gap-2 w-fit rounded px-2 py-1 no-underline", {
+    button: cva("flex flex-nowrap items-center justify-center gap-2 w-fit rounded px-2 py-1 no-underline transition", {
         variants: {
             type: {
-                primary: "bg-white text-black border border-gray-300 hover:border-gray-400",
+                primary: "bg-white text-black border border-gray-300 hover:bg-gray-50 not-hover:shadow-[0_1px_0_rgba(0,0,0,0.1)] hover:cursor-pointer",
                 negative: "bg-brand-1 text-white border border-red-600 hover:bg-red-700 hover:border-red-700",
                 positive: "bg-green-600 text-white border border-green-600 hover:bg-green-700 hover:border-green-700"
             },
@@ -20,10 +20,10 @@ export const components = {
             size: "sm",
         }
     }),
-    input: cva("flex flex-nowrap w-fit rounded px-2 py-1", {
+    input: cva("flex flex-nowrap w-fit rounded px-2 py-1 transition", {
         variants: {
             type: {
-                primary: "bg-white text-black border border-gray-300 hover:border-gray-400",
+                primary: "bg-white text-black border border-gray-300 hover:bg-gray-50 not-hover:shadow-[0_1px_0_rgba(0,0,0,0.1)]",
             },
             size: {
                 xs: "text-xs",

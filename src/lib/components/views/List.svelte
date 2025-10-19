@@ -162,7 +162,7 @@
 </script>
 
 <div
-	class="flex flex-row items-center justify-between gap-4 border-b border-gray-300 bg-gray-50 p-3 md:p-4"
+	class="flex flex-row items-center justify-between gap-4 border-b border-gray-300 p-3 md:p-4"
 >
 	<button
 		onclick={() => (window.history.length > 1 ? window.history.back() : goto('/'))}
@@ -246,7 +246,7 @@
 				<Filters {kaljakori} bind:filterValues bind:this={filtersComponent} useURLParams={false} />
 			</aside>
 		{/if}
-		<main class="mx-auto flex h-full w-full flex-col gap-3 bg-gray-100 p-3 md:gap-4 md:p-6">
+		<main class="mx-auto flex h-full w-full flex-col gap-3 bg-gray-50 p-3 md:gap-4 md:p-6">
 			<div class="flex w-full flex-col items-start gap-4">
 				<div class={twMerge('grid w-full grid-cols-2 items-end gap-2 md:w-fit')}>
 					<div class="flex flex-col">
@@ -335,7 +335,7 @@
 						{@const listItem = getListItem(list, item[AllColumns.Number])}
 						<div
 							class={twMerge(
-								'relative flex flex-col gap-3 overflow-clip rounded border border-gray-200 bg-white shadow'
+								'relative flex flex-col gap-3 overflow-clip rounded border border-gray-200 bg-white'
 							)}
 						>
 							<div
@@ -350,11 +350,12 @@
 								</div>
 								<div class="flex w-full flex-col gap-2">
 									<div class="flex flex-row items-center gap-3">
-										<span
-											class="absolute top-0 left-0 rounded-br bg-gray-100 px-1.5 py-0.5 text-sm text-gray-500"
+										<div
+											class="absolute top-0 left-0 flex flex-nowrap items-center gap-0.5 rounded-br bg-gray-100 px-1.5 py-0.5 text-sm text-gray-500"
 										>
-											{'#' + (idx + 1)}
-										</span>
+											<Icon name="hashtag" />
+											<span>{`${(idx + 1)}`}</span>
+										</div>
 										<a href={`/tuotteet/${item[AllColumns.Number]}`} class="hover:underline">
 											<h2 class="text-xl font-bold md:text-2xl">
 												{item[AllColumns.Name]} ({formatValue(
@@ -405,7 +406,7 @@
 									</div>
 									<div class="flex flex-col gap-4 lg:flex-row lg:items-center">
 										<div class="flex items-center gap-2">
-											<p class="text-2xl font-bold drop-shadow-lg">
+											<p class="text-3xl font-bold drop-shadow-lg">
 												{(
 													Number.parseFloat(item[AllColumns.Price] as string) *
 													getItemQuantity(list, item[AllColumns.Number])
@@ -538,7 +539,7 @@
 			<dialog
 				bind:this={detailsElement}
 				class={twMerge(
-					'fixed m-auto hidden h-full w-full flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-4 backdrop:backdrop-blur-sm open:flex xl:relative xl:w-84 xl:rounded-none xl:border-0'
+					'fixed m-auto hidden h-full w-full flex-col gap-4 rounded-lg border border-gray-200 p-4 backdrop:backdrop-blur-sm open:flex xl:relative xl:w-84 xl:rounded-none xl:border-0'
 				)}
 			>
 				<h2 class="text-2xl font-bold">Listan tiedot</h2>

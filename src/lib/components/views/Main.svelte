@@ -89,7 +89,7 @@
 	>
 		<Filters {kaljakori} bind:filterValues bind:this={filtersComponent} />
 	</aside>
-	<main class="mx-auto flex h-full w-full flex-col gap-3 bg-gray-100 p-4 md:gap-4 md:p-6">
+	<main class="mx-auto flex h-full w-full flex-col gap-3 bg-gray-50 p-4 md:gap-4 md:p-6">
 		<div class="flex w-full flex-col items-start gap-4">
 			<div class={twMerge('grid w-full grid-cols-2 items-end gap-2 md:w-fit')}>
 				<div class="flex flex-col">
@@ -176,13 +176,13 @@
 					{@const rating = ratings[Number(((ratings.length - 1) * multiplier).toFixed(0))]}
 					<div
 						class={twMerge(
-							'relative flex flex-col gap-3 overflow-clip rounded border border-gray-200 bg-white shadow'
+							'relative flex flex-col gap-3 overflow-clip rounded border border-gray-200 bg-white'
 						)}
 					>
 						<div
 							class={twMerge('flex flex-col flex-nowrap items-center gap-4 p-4 pb-0 md:flex-row')}
 						>
-							<div class="flex aspect-square w-32 max-w-[8rem]">
+							<div class="flex aspect-square w-40 max-w-[10rem] md:h-full md:w-auto md:max-w-fit shrink-0 p-1">
 								<img
 									src={generateImageUrl(item[AllColumns.Number], item[AllColumns.Name])}
 									alt={item[AllColumns.Name]}
@@ -191,11 +191,12 @@
 							</div>
 							<div class="flex w-full flex-col gap-2">
 								<div class="flex flex-row items-center gap-3">
-									<span
-										class="absolute top-0 left-0 rounded-br bg-gray-100 px-1.5 py-0.5 text-sm text-gray-500"
+									<div
+										class="absolute top-0 left-0 flex flex-nowrap items-center gap-0.5 rounded-br bg-gray-100 px-1.5 py-0.5 text-sm text-gray-500"
 									>
-										{'#' + (idx + 1)}
-									</span>
+										<Icon name="hashtag" />
+										<span>{`${(idx + 1)}`}</span>
+									</div>
 									<a href={`/tuotteet/${item[AllColumns.Number]}`} class="hover:underline">
 										<h2 class="text-xl font-bold md:text-2xl">
 											{item[AllColumns.Name]} ({formatValue(
@@ -246,7 +247,7 @@
 								</div>
 								<div class="flex flex-col gap-4 lg:flex-row lg:items-center">
 									<div class="flex items-center gap-2">
-										<p class="text-2xl font-bold drop-shadow-lg">
+										<p class="text-3xl font-bold drop-shadow-lg">
 											{Number.parseFloat(item[AllColumns.Price] as string).toFixed(2)} €
 										</p>
 										<span class="text-sm text-gray-500">
