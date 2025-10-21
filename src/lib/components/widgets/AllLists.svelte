@@ -6,9 +6,9 @@
 	import Icon from "./Icon.svelte";
 	import type { ListObj } from "$lib/types";
 	import { isSimilarString } from "$lib/utils/search";
-	import { generateTitle, handleShare } from "$lib/utils/helpers";
+	import { handleShare } from "$lib/utils/helpers";
 
-    const { action, show, useSearch = false }: { action: (list: ListObj) => void; show?: { delete?: boolean, length?: boolean, share?: boolean }, useSearch?: boolean } = $props();
+    const { action, show, useSearch = false }: { action?: (list: ListObj) => void; show?: { delete?: boolean, length?: boolean, share?: boolean }, useSearch?: boolean } = $props();
     const time = new Date();
 
     function handleCreateList() {
@@ -21,7 +21,18 @@
     {#if lists.length > 0}
         <div class="flex flex-col gap-4">
             {#each lists.filter(list => { return (useSearch && $searchQuery) ? isSimilarString(list.name, $searchQuery) : true }) as list}
-                <div class="flex justify-between items-center gap-2 p-2 border rounded border-gray-300" onclick={() => { action(list) }} onkeydown={() => {}} role="link" tabindex="0">
+                <a 
+                    href={`/listat?list=${listToURI(list)}`} 
+                    class="flex justify-between items-center gap-2 p-2 border rounded border-gray-300" 
+                    onclick={(e) => {
+                        if(action && typeof action === "function") {
+                            e.preventDefault();
+                            action(list) 
+                        }
+                    }} 
+                    onkeydown={() => {}} 
+                    tabindex="0"
+                >
                     <div class="flex flex-col">
                         <p aria-label={list.name} class={twMerge("w-full justify-start text-lg")}>
                             <span>{list.name}</span>
@@ -38,6 +49,7 @@
                                     'aspect-square md:aspect-auto'
                                 )}
                                 onclick={async (e) => {
+                                    e.preventDefault();
                                     e.stopPropagation();
                                     const shared = await handleShare({
                                         title: `Alkometriikka - ${list.name}`,
@@ -52,12 +64,19 @@
                             </button>
                         {/if}
                         {#if show?.delete}
-                            <button onclick={(e) => { e.stopPropagation(); deleteList(list) }} aria-label={list.name} class={twMerge(components.button({ type: "negative", size: "md" }), "aspect-square w-fit")}>
+                            <button 
+                                onclick={(e) => {
+                                    e.preventDefault();
+                                    e.stopPropagation();
+                                    deleteList(list)
+                                }}
+                                aria-label={list.name} class={twMerge(components.button({ type: "negative", size: "md" }), "aspect-square w-fit")}
+                            >
                                 <Icon name="trash" />
                             </button>
                         {/if}
                     </div>
-                </div>
+                </a>
             {/each}
         </div>
     {:else}

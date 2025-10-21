@@ -1,16 +1,13 @@
 <script lang="ts">
 	import '../app.css';
 	import { dev } from '$app/environment';
-	import { ContextKeys, GenderOptionsMap, LocalStorageKeys } from '$lib/utils/constants';
+	import { ContextKeys, LocalStorageKeys } from '$lib/utils/constants';
 	import { isMobile, isLaptop, lists, personalInfo, searchQuery } from '$lib/global.svelte';
 	import logo from '$lib/assets/images/Logo/0.5x/Logo_rounded@0.5x.png';
 	import logo_transparent from '$lib/assets/images/Logo_transparent.svg';
-	import Popup from '$lib/components/widgets/Popup.svelte';
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/styles';
 	import Icon from '$lib/components/widgets/Icon.svelte';
-	import { version } from '$app/environment';
-	import { handleClearAll, handleExport, handleImport } from '$lib/utils/helpers';
 	import { beforeNavigate } from '$app/navigation';
 	import { page } from '$app/state';
 	import { fade } from 'svelte/transition';
@@ -41,7 +38,8 @@
 
 	beforeNavigate(({ to }) => {
 		if(!to) return
-		searchParamsManager.setParametersFromURL(to?.url as URL)
+		if(to.url.origin !== window.location.origin) return
+		searchParamsManager.setParametersFromURL(to.url)
 		searchParamsManager.update()
 	});
 
@@ -73,9 +71,6 @@
 		return min + weighted * (max - min);
 	}
 </script>
-
-
-
 
 {#await data.alko}
 	<div 

@@ -39,7 +39,7 @@
         </button>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-[auto_1fr] w-full">
-        <div class="flex aspect-square h-96 max-w-full p-6">
+        <div class="flex w-full md:w-fit aspect-square h-96 max-w-full p-6">
             <img
                 src={generateImageUrl(product[AllColumns.Number], product[AllColumns.Name], 'medium')}
                 alt={product[AllColumns.Name]}
@@ -53,7 +53,7 @@
                 </h2>
                 <span> {valueToString(product[AllColumns.Manufacturer], AllColumns.Manufacturer)} | {valueToString(product[AllColumns.BottleSize], AllColumns.BottleSize)} | {valueToString(product[AllColumns.AlcoholPercentage], AllColumns.AlcoholPercentage)} {product[AllColumns.Vintage] !== "" ? `| ${valueToString(product[AllColumns.Vintage], AllColumns.Vintage)}` : ''}</span>
                 <p class="bg-gray-200 w-fit px-1 rounded">{product[AllColumns.Availability]}</p>
-				<div class="flex flex-col w-full gap-2 md:flex-row">
+				<div class="flex flex-row w-full gap-2 md:flex-row">
                    <BadgeList item={product} />
                 </div>
             </div>

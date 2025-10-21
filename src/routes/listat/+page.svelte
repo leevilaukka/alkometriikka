@@ -1,10 +1,8 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
 	import List from '$lib/components/views/List.svelte';
 	import AllLists from '$lib/components/widgets/AllLists.svelte';
 	import Icon from '$lib/components/widgets/Icon.svelte';
 	import { generateTitle } from '$lib/utils/helpers.js';
-	import { listToURI } from '$lib/utils/lists.js';
 	import { components } from '$lib/utils/styles';
 	import { twMerge } from 'tailwind-merge';
 
@@ -39,7 +37,7 @@
 				</button>
 			</div>
 			<div class="flex flex-col flex-auto gap-4 items-center">
-				<AllLists useSearch={true} show={{ delete: true, share: true }} action={(list) => {goto(`/listat?list=${listToURI(list)}`)}} />
+				<AllLists useSearch={true} show={{ delete: true, share: true }} />
 			</div>
 		</div>
 	{/if}

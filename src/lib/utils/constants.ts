@@ -1,7 +1,4 @@
 import type { ColNameObj, ColumnBadgeMap, ColumnNames } from "$lib/types";
-import type { VariantProps } from "class-variance-authority";
-import { components } from "./styles.js";
-import type { IconName } from "$lib/icons.js";
 
 /** Columns present in the Alko price list dataset
  * These are in Finnish as they are used directly from the dataset
