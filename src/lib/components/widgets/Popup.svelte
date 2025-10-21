@@ -1,9 +1,28 @@
 <script lang="ts">
+	import { onDestroy, onMount } from "svelte";
 	import { twMerge } from "tailwind-merge";
 
-	let dialogElement: HTMLDialogElement | undefined = $state();
+	let { dialogElement = $bindable(), renderContent, renderButton = () => {}, onOpen = (dialogElement: HTMLDialogElement) => {}, onClose = (dialogElement: HTMLDialogElement) => {}, ...rest } = $props();
 
-	let { renderContent, renderButton = () => {}, ...rest } = $props();
+	onMount(() => {
+		if(!dialogElement) return;
+
+		const mutationObserver = new MutationObserver((event) => {
+			console.log(event);
+			const dialog = event[0].target as HTMLDialogElement;
+			if(!dialog) return
+			const open = dialog.hasAttribute("open");
+			console.log(open)
+			if(open) onOpen(dialogElement)
+		})
+
+		mutationObserver.observe(dialogElement, { attributes: true })
+		dialogElement.addEventListener("close", () => { onClose(dialogElement) })
+	})
+
+	onDestroy(() => {
+		onClose();
+	})
 </script>
 
 {@render renderButton(dialogElement)}

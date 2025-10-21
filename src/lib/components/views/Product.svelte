@@ -125,6 +125,5 @@
 				{/if}
 			{/each}
 		</div>
-	
 	</div>
 </div>

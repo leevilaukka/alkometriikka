@@ -45,10 +45,10 @@
 
 	let selectedHighlight = $state(
 		searchParamsManager.getParameter('highlight') || defaultSortingColumn
-	);
+	) as ColumnNames;
 	let selectedSortingColumn = $state(
 		searchParamsManager.getParameter('sort') || defaultSortingColumn
-	);
+	) as ColumnNames;
 	let asc: boolean = $derived(
 		defaultSortingOrderMap[selectedSortingColumn as keyof typeof defaultSortingOrderMap] || false
 	);

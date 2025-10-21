@@ -1,19 +1,10 @@
 <script lang="ts">
-  	import type { DatasetRow } from '$lib/types';
-	import type { FullProperties } from 'xlsx';
-	import type { Kaljakori } from '$lib/alko';
 	import Product from '$lib/components/views/Product.svelte';
 	import { page } from '$app/state';
-	import { redirect } from '@sveltejs/kit';
-	import { generateTitle } from '$lib/utils/helpers.js';
 
-	let  { data } = $props(); 
-	const id = page.params.id?.split('/')[0]; // Handle both /tuotteet/123 and /tuotteet/123/extra paths
-
-	if (!id) redirect(300, "/");
+	let { data } = $props(); 
+	let id = $derived(page.params.id?.split('/')[0]); // Handle both /tuotteet/123 and /tuotteet/123/extra paths
 </script>
-
-
 
 {#await data.alko}
 	<div class="grid h-full w-full place-content-center">
@@ -25,6 +16,6 @@
 		</div>
 	</div>
 {:then alko}
-	{@const product = alko.kaljakori.findById(id)}
+	{@const product = alko.kaljakori.findById(id as string)}
 	<Product product={product} />
 {/await}

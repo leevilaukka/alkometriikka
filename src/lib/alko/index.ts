@@ -47,7 +47,7 @@ export class Kaljakori {
 			for (let col = 0; col < datasetColumns.length; col++) {
 				const key = datasetColumns[col];
 				let value: string | number | undefined = rows[row][col];
-				const isNumber = (value !== undefined && isNumeric(value) && !['Numero', 'Nimi', 'Valmistaja'].includes(key)) || typeof value === "number";
+				const isNumber = (value !== undefined && isNumeric(value) && !['Numero', 'Nimi', 'Valmistaja', "EAN"].includes(key)) || typeof value === "number";
 				if (key === AllColumns.BottleSize) {
 					value = parseFloat(value as string)
 				} else if (isNumber) {
@@ -233,5 +233,9 @@ export class Kaljakori {
 
 	findById(id: string) {
 		return this.data.find((item) => item[AllColumns.Number] === id);
+	}
+
+	findByColumn(key: ColumnNames, value: any) {
+		return this.data.filter((item) => item[key] === value);
 	}
 }
