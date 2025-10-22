@@ -1,4 +1,5 @@
-import { GenderOptionsMap} from "./constants";
+import type { DrunkColumnNames } from "$lib/types";
+import { DrunkColumns, GenderOptionsMap} from "./constants";
 
 /**
  * Laskee alkoholin määrän, känni per euro ja BAC-arvot.
@@ -16,7 +17,7 @@ export function calculateDrunkValue(
 	price: number,
 	gender: typeof GenderOptionsMap[keyof typeof GenderOptionsMap] = GenderOptionsMap.Unspecified,
 	weight?: number
-): number[] {
+): Record<DrunkColumnNames, number> {
 	if (!weight) {
 		if (gender === GenderOptionsMap.Female) {
 			weight = 76; // Oletuspaino naisille
@@ -48,13 +49,11 @@ export function calculateDrunkValue(
 	// Lasketaan annokset (1 annos = 12g)
 	const servings = pureAlcoholGrams / 12;
 
-
-	return [
-		parseFloat(pureAlcoholGrams.toFixed(2)),
-		parseFloat(alcoholPerEuro.toFixed(2)),
-		parseFloat(estimatedBAC.toFixed(3)),
-		parseFloat(bacPerEuro.toFixed(4)),
-		parseFloat(servings.toFixed(1)),
-	];
+	return {
+		[DrunkColumns.AlcoholGrams]: parseFloat(pureAlcoholGrams.toFixed(2)),
+		[DrunkColumns.AlcoholGramsPerEuro]: parseFloat(alcoholPerEuro.toFixed(2)),
+		[DrunkColumns.EstimatedPromille]: parseFloat(estimatedBAC.toFixed(3)),
+		[DrunkColumns.PromillePerEuro]: parseFloat(bacPerEuro.toFixed(4)),
+		[DrunkColumns.Servings]: parseFloat(servings.toFixed(1))
+	};
 }
-

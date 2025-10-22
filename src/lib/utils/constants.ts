@@ -61,7 +61,6 @@ export const subCategoryMap = {
     [DatasetColumns.Country]: DatasetColumns.Region,
 } as const satisfies ColNameObj<ColumnNames | null>;
 
-
 export const undefinedToZeroColumns = [
     AllColumns.Sugar,
     AllColumns.Acidity,
@@ -163,7 +162,7 @@ export const shownColumnsToHighlight = [
     AllColumns.Sugar,
 ] as const satisfies readonly ColumnNames[];
 
-export const defaultSortingColumn: ColumnNames = AllColumns.AlcoholGramsPerEuro;
+export const defaultSortingColumn = AllColumns.AlcoholGramsPerEuro;
 
 /** Mapping of filters to their unit markers.
  * Used in the UI to show the unit next to the filter value

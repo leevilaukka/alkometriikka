@@ -1,6 +1,6 @@
-import { AllColumns, defaultSortingColumn, GenderOptionsMap, subCategoryMap, undefinedToZeroColumns } from '$lib/utils/constants';
+import { AllColumns, defaultSortingColumn, GenderOptionsMap, subCategoryMap, undefinedToZeroColumns, DrunkColumns } from '$lib/utils/constants';
 import { calculateDrunkValue } from '../utils/alko';
-import { type ColumnNames, type DatasetColumnNames, type DatasetRow, type DrunkColumnNames, type Filter, type FilterValues, type NativeTypes, type PersonalInfo, type PriceListItem } from '../types';
+import { type ColumnNames, type DatasetColumnNames, type DatasetRow, type Filter, type FilterValues, type NativeTypes, type PersonalInfo, type PriceListItem } from '../types';
 import { isSimilarString } from '$lib/utils/search';
 
 export class Kaljakori {
@@ -17,14 +17,7 @@ export class Kaljakori {
 
 		const [datasetColumns, ...rows] = table as [DatasetColumnNames[], ...DatasetRow[]];
 
-		// Define calculated columns
-		const drunkColumns: DrunkColumnNames[] = [
-			"Alkoholigrammat",
-			"Alkoholigrammat / €",
-			"Arvioidut promillet",
-			"Promillet / €",
-			"Annokset"
-		];
+		const drunkColumns = Object.values(DrunkColumns);
 
 		this.filters = [...datasetColumns, ...drunkColumns];
 
@@ -38,40 +31,42 @@ export class Kaljakori {
 
 		const drunkValuesByColumn: any[][] = [...Array(drunkColumns.length)].map(() => []);
 
-		const isNumeric = (num: unknown) => (typeof num === "string" && num.trim() !== '') && !isNaN(num as unknown as number);
+		const NUMBER_VALUE_REGEX = /^(0|((0\.|[1-9])(\d|\.){0,}))(\sl)?$/g
+		const isNumber = (value: any) => NUMBER_VALUE_REGEX.test(String(value))
+		const toFormattedStringValue = (value: string) => value.trim().toLowerCase().charAt(0).toUpperCase() + value.slice(1)
 
 		for (let row = 0; row < rows.length; row++) {
+			// Initialize an empty pricelist item
 			const item: any = {};
+
+			// Skip if item type is 'lahja- ja juomatarvikkeet'
 			const type = rows[row][indexOfTypeColumn];
 			if (type === 'lahja- ja juomatarvikkeet') continue;
+
+			// Parse and assign item values and collect possible values
 			for (let col = 0; col < datasetColumns.length; col++) {
 				const key = datasetColumns[col];
 				let value: string | number | undefined = rows[row][col];
-				const isNumber = (value !== undefined && isNumeric(value) && !['Numero', 'Nimi', 'Valmistaja', "EAN"].includes(key)) || typeof value === "number";
-				if (key === AllColumns.BottleSize) {
-					value = parseFloat(value as string)
-				} else if (isNumber) {
-					value = Number(value); 
-				} else if (typeof value === "string") {
-					value = (value as string).trim().toLowerCase().charAt(0).toUpperCase() + (value as string).slice(1);
-				} else {
-					if (undefinedToZeroColumns.includes(key as any)) value = 0
-					else value = ""
-				}
+				
+				if (isNumber(value)) value = Number.parseFloat(String(value));
+				else if (typeof value === "string") value = toFormattedStringValue(value);
+				else if (undefinedToZeroColumns.includes(key as any)) value = 0
+				else value = ""
 
 				item[key] = value
-				if (isNumber || (value as string).length || key === AllColumns.BottleSize || typeof value === "number") datasetValuesByColumn[col].push(value);
+				if (isNumber(value) || (typeof value === "string" && value.length) || typeof value === "number") datasetValuesByColumn[col].push(value);
 
 				if(Object.hasOwn(subCategoryMap, key) && value) {
 					if(!this.subValues[key]) this.subValues[key] = {}
 					if(!this.subValues[key][value]) this.subValues[key][value] = new Set();
 					const subvalue = rows[row][datasetColumnColumnIndexes[subCategoryMap[key as keyof typeof subCategoryMap]]];
-					if(subvalue && (isNumeric(subvalue) ? Number(subvalue) : subvalue.toString().trim().length)) {
+					if(subvalue && subvalue.toString().trim().length) {
 						this.subValues[key][value].add(subvalue);
 					}
 				}
 			}
 
+			// Calculate drunk values
 			const drunkValues = calculateDrunkValue(
 				item[AllColumns.BottleSize],
 				item[AllColumns.AlcoholPercentage],
@@ -80,21 +75,25 @@ export class Kaljakori {
 				personalInfo?.weight ?? undefined
 			);
 
+			// Assign item drunk values and collect possible values
 			drunkColumns.forEach((column, idx) => {
-				drunkValuesByColumn[idx].push(drunkValues[idx])
-				item[column] = drunkValues[idx]
+				drunkValuesByColumn[idx].push(drunkValues[column]);
+				item[column] = drunkValues[column]
 			})
 
 			this.data.push(item);
 		}
 
+		// Merge dataset and drunk columns and their values
 		const mergedColumns = [...datasetColumns, ...drunkColumns];
 		const mergedValuesByColumn = [...datasetValuesByColumn, ...drunkValuesByColumn];
 
+		// Create possible values object
 		this.possibleValues = Object.fromEntries(
 			mergedValuesByColumn.map((column, idx) => [mergedColumns[idx], new Set(column.sort())])
 		);
 
+		// Get column type by getting the type of the first value in the possible values set
 		this.columnTypes = Object.fromEntries(
 			Object.entries(this.possibleValues).map(([key, value]) => [
 				key,
