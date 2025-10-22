@@ -31,7 +31,7 @@ export class Kaljakori {
 
 		const drunkValuesByColumn: any[][] = [...Array(drunkColumns.length)].map(() => []);
 
-		const NUMBER_VALUE_REGEX = /^(\d|((([0-9]\.)|([1-9]+\.?))\d+))(\s*l)?$/
+		const NUMBER_VALUE_REGEX = /^(?:0|[1-9]\d*)(?:\.\d+)?(?:\s*l)?$/
 		const isNumber = (value: any) => NUMBER_VALUE_REGEX.test(String(value))
 		const toFormattedStringValue = (value: string) => value.trim().toLowerCase().charAt(0).toUpperCase() + value.slice(1)
 
