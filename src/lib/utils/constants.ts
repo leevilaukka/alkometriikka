@@ -61,6 +61,13 @@ export const subCategoryMap = {
     [DatasetColumns.Country]: DatasetColumns.Region,
 } as const satisfies ColNameObj<ColumnNames | null>;
 
+export const columnsHandledAsString = [
+    AllColumns.Number,
+    AllColumns.Name,
+    AllColumns.Manufacturer,
+    AllColumns.EAN
+] as const satisfies readonly ColumnNames[];
+
 export const undefinedToZeroColumns = [
     AllColumns.Sugar,
     AllColumns.Acidity,

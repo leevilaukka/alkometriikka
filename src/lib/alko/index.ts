@@ -1,4 +1,4 @@
-import { AllColumns, defaultSortingColumn, GenderOptionsMap, subCategoryMap, undefinedToZeroColumns, DrunkColumns } from '$lib/utils/constants';
+import { AllColumns, defaultSortingColumn, GenderOptionsMap, subCategoryMap, undefinedToZeroColumns, DrunkColumns, columnsHandledAsString } from '$lib/utils/constants';
 import { calculateDrunkValue } from '../utils/alko';
 import { type ColumnNames, type DatasetColumnNames, type DatasetRow, type Filter, type FilterValues, type NativeTypes, type PersonalInfo, type PriceListItem } from '../types';
 import { isSimilarString } from '$lib/utils/search';
@@ -31,7 +31,7 @@ export class Kaljakori {
 
 		const drunkValuesByColumn: any[][] = [...Array(drunkColumns.length)].map(() => []);
 
-		const NUMBER_VALUE_REGEX = /^(0|((0\.|[1-9])(\d|\.){0,}))(\sl)?$/g
+		const NUMBER_VALUE_REGEX = /^(0|((0\.|[1-9])\d{0,}\.?\d{0,}))(\sl)?$/
 		const isNumber = (value: any) => NUMBER_VALUE_REGEX.test(String(value))
 		const toFormattedStringValue = (value: string) => value.trim().toLowerCase().charAt(0).toUpperCase() + value.slice(1)
 
@@ -45,10 +45,12 @@ export class Kaljakori {
 
 			// Parse and assign item values and collect possible values
 			for (let col = 0; col < datasetColumns.length; col++) {
+
 				const key = datasetColumns[col];
 				let value: string | number | undefined = rows[row][col];
-				
-				if (isNumber(value)) value = Number.parseFloat(String(value));
+
+				if (columnsHandledAsString.includes(key as typeof columnsHandledAsString[number])) value = toFormattedStringValue(String(value))
+				else if (isNumber(value)) value = Number.parseFloat(String(value));
 				else if (typeof value === "string") value = toFormattedStringValue(value);
 				else if (undefinedToZeroColumns.includes(key as any)) value = 0
 				else value = ""
