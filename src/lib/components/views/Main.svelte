@@ -10,8 +10,6 @@
 		AllColumns,
 		shownSortingKeys,
 		defaultSortingOrderMap,
-		ColumnToBadgeMap,
-		DatasetColumns,
 		ContextKeys
 	} from '$lib/utils/constants';
 	import { components } from '$lib/utils/styles';
@@ -42,6 +40,7 @@
 
 	let filtersComponent: Filters | null = $state(null);
 	let filterValues = $state(initFilterValues(kaljakori, page.url.searchParams));
+	let activeFilters: ColumnNames[] = $state([])
 
 	let selectedHighlight = $state(
 		searchParamsManager.getParameter('highlight') || defaultSortingColumn
@@ -87,7 +86,7 @@
 	<aside
 		class="z-10 flex h-full flex-col max-h-full overflow-hidden border-gray-300 md:w-84 md:border-r"
 	>
-		<Filters {kaljakori} bind:filterValues bind:this={filtersComponent} />
+		<Filters {kaljakori} bind:activeFilters bind:filterValues bind:this={filtersComponent} />
 	</aside>
 	<main class="mx-auto flex h-full w-full flex-col gap-3 bg-gray-50 p-4 md:gap-4 md:p-6">
 		<div class="flex w-full flex-col items-start gap-4">
@@ -149,7 +148,8 @@
 						}}
 						class={twMerge(components.button(), 'col-span-full w-full')}
 					>
-						<span>Näytä suodattimet</span>
+						<span>Näytä suodattimet {activeFilters.length > 0 ? `(${activeFilters.length} valittu)` : ""}</span>
+					
 						<Icon name={'filter'} />
 					</button>
 				{/if}

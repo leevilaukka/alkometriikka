@@ -1,20 +1,26 @@
 <script lang="ts">
 	import { components } from '$lib/utils/styles';
-	type ListItem = {
-		value: string;
-		selected: boolean;
-	};
 	import SvelteVirtualList from '@humanspeak/svelte-virtual-list';
 	import { twMerge } from 'tailwind-merge';
 	import Popup from '../widgets/Popup.svelte';
 	import { getRandom } from '$lib/utils/helpers';
 	import { isSafari } from '$lib/global.svelte';
 
-	let { value = $bindable(), options = [], label, ...rest } = $props();
+	let { defaultValue = [], value = $bindable(defaultValue), modified = $bindable(false), options = [], label, ...rest } = $props();
 	
 	const name = "stringinput-" + getRandom();
 
+	type ListItem = {
+		value: string;
+		selected: boolean;
+	};
+
 	let list = $state<ListItem[]>(options.map((option) => ({ value: option, selected: value.includes(option) })));
+
+	$effect(() => {
+		const set = new Set(value).difference(new Set(defaultValue))
+		modified = !!set.size
+	})
 
 	$effect(() => {
 		if (!value) return;
@@ -92,8 +98,7 @@
 							items={query
 								? list.filter((item) => item.value.toLowerCase().includes(query.toLowerCase()))
 								: list}
-							bufferSize={50}
-							
+							bufferSize={30}
 						>
 							{#snippet renderItem(item: ListItem, index: number)}
 								<button

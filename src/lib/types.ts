@@ -21,7 +21,7 @@ export type PersonalInfo = {
     gender: GenderOptions;
 };
 
-export interface PriceListItem {
+export interface PriceListItem extends Record<DrunkColumnNames, number> {
     "Numero": string;
     "Nimi": string;
     "Valmistaja": string;
@@ -51,8 +51,8 @@ export interface PriceListItem {
     "Energia kcal/100ml": string;
     "Valikoima": string;
     "EAN": string;
-    [key: string]: string | number; // Allow other properties with string keys and values of type string or number
-}
+    [key: string]: string | number;
+} 
 
 export type DatasetColumnNames = typeof DatasetColumns[keyof typeof DatasetColumns];
 export type DrunkColumnNames = typeof DrunkColumns[keyof typeof DrunkColumns];

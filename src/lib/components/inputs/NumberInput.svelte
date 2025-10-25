@@ -4,7 +4,12 @@
 	import { twMerge } from 'tailwind-merge';
 	import Icon from '../widgets/Icon.svelte';
 
-	let { value = $bindable([-Infinity, Infinity]), label, min = 0, max = 100, step = 1 } = $props();
+	let { defaultValue = [0, 100], value = $bindable([defaultValue[0], defaultValue[1]]), modified = $bindable(false), label, min = 0, max = 100, step = 1 } = $props();
+
+	$effect(() => {
+		const set = new Set(value).difference(new Set(defaultValue))
+		modified = !!set.size
+	})
 
 	const unitMarker = headerToUnitMarker(label) !== '' ? `(${headerToUnitMarker(label)})` : '';
 

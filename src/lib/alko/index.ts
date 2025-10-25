@@ -9,7 +9,7 @@ export class Kaljakori {
 	filters: ColumnNames[] = [];
 	possibleValues: Record<string, Set<any>> = {};
 	columnTypes: Record<string, NativeTypes> = {};
-	minAndMaxValues: (number[] | null)[] = [];
+	minAndMaxValues: ([number, number] | null)[] = [];
 	subValues: Record<string, Record<string, Set<any>>> = {}
 
 	constructor(table: DatasetRow[], personalInfo?: PersonalInfo) {
@@ -128,8 +128,8 @@ export class Kaljakori {
 		return this.columnTypes[key];
 	}
 
-	getMinAndMaxValues(key: ColumnNames) {
-		return this.minAndMaxValues[this.filters.indexOf(key)]
+	getMinAndMaxValues(key: ColumnNames) : [number, number] {
+		return this.minAndMaxValues[this.filters.indexOf(key)] || [0, 0]
 	}
 
 	fuzzySearch(key: ColumnNames, query: string) {
@@ -177,7 +177,7 @@ export class Kaljakori {
 		);
 
 		return result.filter((item) => {
-				const temp = Object.keys(filters).every((key) => {
+			const temp = Object.keys(filters).every((key) => {
 				const type = this.getFilterType(key as ColumnNames);
 				if (type === 'number' && Array.isArray(filters[key]) && filters[key].length === 2) {
 					return item[key] >= filters[key][0] && item[key] <= filters[key][1];
