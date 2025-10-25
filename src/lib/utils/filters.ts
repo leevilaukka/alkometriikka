@@ -1,5 +1,5 @@
 import type { Kaljakori } from "$lib/alko"
-import type { ColumnNames, FilterValue, FilterValues } from "$lib/types"
+import type { ColumnNames, FilterValue, FilterValues, PriceListItem } from "$lib/types"
 import { shownFilters, subCategoryMap } from "./constants";
 
 export function initFilterValues(kaljakori: Kaljakori, searchParams?: URLSearchParams) {
@@ -32,4 +32,13 @@ export function filterValuesFromSearchParameters(searchParams: URLSearchParams, 
         const type = kaljakori.getFilterType(key as ColumnNames)
         return { ...obj, [key]: type === "number" ? searchParams.get(key)?.split("-").map(v => Number(v)) : searchParams.getAll(key) }
     }, {})
+}
+
+export function generateSimilarProductsFilter(product: PriceListItem, restrictions: Partial<Record<ColumnNames, string[] | number | string>>): FilterValues {
+    const temp = Object.fromEntries(Object.entries(restrictions).map(([key, value]) => {
+        if(typeof value === "number" && typeof product[key] === "number" && Object.hasOwn(product, key)) return [key, [product[key] - (product[key] * value), product[key] + (product[key] * value)]]
+        return [key, value]
+    }))
+    console.log(temp)
+    return temp
 }
