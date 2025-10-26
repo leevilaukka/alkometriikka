@@ -46,6 +46,8 @@
 	import BadgeList from '../widgets/BadgeList.svelte';
 	import type { SearchParamsManager } from '$lib/utils/url';
 
+	let activeFilters: ColumnNames[] = $state([]);
+
 	const { list: importedList, dataset }: { list: ListObj; dataset: string[][] } = $props();
 
 	let searchParamsManager = getContext<SearchParamsManager>(ContextKeys.SearchParamsManager);
@@ -118,15 +120,15 @@
 			const product = kaljakori.data.find((p) => p[AllColumns.Number] === item.id);
 			if (product) {
 				totalItems += item.q;
-				totalPrice += Number.parseFloat(product[AllColumns.Price] as string) * item.q;
-				totalAlcoholGrams += Number.parseFloat(product[AllColumns.AlcoholGrams] as string) * item.q;
+				totalPrice += product[AllColumns.Price] * item.q;
+				totalAlcoholGrams += product[AllColumns.AlcoholGrams] * item.q;
 				totalAlcoholGramsPerEuro +=
-					(Number.parseFloat(product[AllColumns.AlcoholGrams] as string) * item.q) /
-					(Number.parseFloat(product[AllColumns.Price] as string) * item.q);
+					product[AllColumns.AlcoholGrams] * item.q /
+					product[AllColumns.Price] * item.q;
 				totalBAC +=
-					(Number.parseFloat(product[AllColumns.EstimatedPromille] as string) || 0) * item.q;
-				totalSugar += (Number.parseFloat(product[AllColumns.Sugar] as string) || 0) * item.q;
-				totalVolume += Number.parseFloat(product[AllColumns.BottleSize] as string) * item.q;
+					(product[AllColumns.EstimatedPromille]) || 0 * item.q;
+				totalSugar += (product[AllColumns.Sugar]) || 0 * item.q;
+				totalVolume += product[AllColumns.BottleSize] * item.q;
 			}
 		});
 
@@ -243,7 +245,7 @@
 			<aside
 				class="z-10 flex h-full flex-col overflow-hidden border-gray-300 md:w-84 md:border-e"
 			>
-				<Filters {kaljakori} bind:filterValues bind:this={filtersComponent} useURLParams={false} />
+				<Filters {kaljakori} bind:filterValues bind:activeFilters bind:this={filtersComponent} useURLParams={false} />
 			</aside>
 		{/if}
 		<main class="mx-auto flex h-full w-full flex-col gap-3 bg-gray-50 p-3 md:gap-4 md:p-6">
@@ -408,7 +410,7 @@
 										<div class="flex items-center gap-2">
 											<p class="text-3xl font-bold drop-shadow-lg">
 												{(
-													Number.parseFloat(item[AllColumns.Price] as string) *
+													item[AllColumns.Price] *
 													getItemQuantity(list, item[AllColumns.Number])
 												).toFixed(2)} €
 											</p>

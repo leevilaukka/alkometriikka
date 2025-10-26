@@ -52,7 +52,7 @@
 		function handleScroll(event: WheelEvent) {
 			if (event.deltaY == 0) return;
 			event.preventDefault();
-			node.scrollBy({ left: event.deltaY < 0 ? -100 : 100, behavior: 'smooth' });
+			node.scrollBy({ left: event.deltaY });
 		}
 
 		node.addEventListener('wheel', handleScroll);
@@ -108,7 +108,7 @@
 			</div>
 			<div class="flex flex-col items-end gap-1">
 				<p class="text-4xl font-bold">
-					{Number.parseFloat(product[AllColumns.Price] as string).toFixed(2)} €
+					{product[AllColumns.Price].toFixed(2)} €
 				</p>
 				<span class="text-sm text-gray-500">
 					({product[AllColumns.PricePerLiter]} €/L)
@@ -210,7 +210,7 @@
 					</div>
 					<div class="flex flex-col gap-2">
 						<p class="text-3xl font-bold drop-shadow-lg">
-							{Number.parseFloat(similarProduct[AllColumns.Price] as string).toFixed(2)} €
+							{similarProduct[AllColumns.Price].toFixed(2)} €
 						</p>
 						<span class="text-sm text-gray-500">
 							{formatValue(similarProduct[AllColumns.BottleSize], AllColumns.BottleSize)} ({similarProduct[

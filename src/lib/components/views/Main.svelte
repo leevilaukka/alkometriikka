@@ -248,7 +248,7 @@
 								<div class="flex flex-col gap-4 lg:flex-row lg:items-center">
 									<div class="flex items-center gap-2">
 										<p class="text-3xl font-bold drop-shadow-lg">
-											{Number.parseFloat(item[AllColumns.Price] as string).toFixed(2)} €
+											{item[AllColumns.Price].toFixed(2)} €
 										</p>
 										<span class="text-sm text-gray-500">
 											({item[AllColumns.PricePerLiter]} €/L)
