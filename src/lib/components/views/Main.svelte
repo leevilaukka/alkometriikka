@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { generateImageUrl } from '$lib/utils/image.js';
 	import SvelteVirtualList from '@humanspeak/svelte-virtual-list';
 	import { twMerge } from 'tailwind-merge';
 	import type { ColumnNames, ListObj, PriceListItem } from '$lib/types';
@@ -31,6 +30,7 @@
 	import BadgeList from '../widgets/BadgeList.svelte';
 	import { getContext, onMount } from 'svelte';
 	import type { SearchParamsManager } from '$lib/utils/url';
+	import ProductImage from '../widgets/ProductImage.svelte';
 
 	const { kaljakori }: { kaljakori: Kaljakori } = $props();
 
@@ -183,10 +183,9 @@
 							class={twMerge('flex flex-col flex-nowrap items-center gap-4 p-4 pb-0 md:flex-row')}
 						>
 							<div class="flex aspect-square w-40 max-w-[10rem] md:h-full md:w-auto md:max-w-fit shrink-0 p-1">
-								<img
-									src={generateImageUrl(item[AllColumns.Number], item[AllColumns.Name])}
-									alt={item[AllColumns.Name]}
-									class="block h-full w-full object-contain"
+								<ProductImage
+									number={item[AllColumns.Number]}
+									name={item[AllColumns.Name]}
 								/>
 							</div>
 							<div class="flex w-full flex-col gap-2">

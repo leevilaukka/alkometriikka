@@ -6,7 +6,6 @@
 		hideFromProductPageStats
 	} from '$lib/utils/constants';
 	import { formatValue, generateTitle, valueToString } from '$lib/utils/helpers';
-	import { generateImageUrl } from '$lib/utils/image';
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/styles';
 	import Icon from '../widgets/Icon.svelte';
@@ -17,7 +16,8 @@
 	import BadgeList from '../widgets/BadgeList.svelte';
 	import { afterNavigate, goto } from '$app/navigation';
 	import type { Kaljakori } from '$lib/alko';
-	import { findSimilarProducts, generateSimilarProductsFilter } from '$lib/utils/filters';
+	import { findSimilarProducts } from '$lib/utils/filters';
+	import ProductImage from '../widgets/ProductImage.svelte';
 	const { product, kaljakori }: { product: PriceListItem; kaljakori: Kaljakori } = $props();
 
 	function handleBack() {
@@ -81,10 +81,11 @@
 	</div>
 	<div class="grid w-full grid-cols-1 md:grid-cols-[auto_1fr]">
 		<div class="flex aspect-square h-96 w-full max-w-full p-6 md:w-fit">
-			<img
-				src={generateImageUrl(product[AllColumns.Number], product[AllColumns.Name], 'medium')}
+			<ProductImage
+				number={product[AllColumns.Number]}
+				name={product[AllColumns.Name]}
+				transform="medium"
 				alt={product[AllColumns.Name]}
-				class="block w-full object-contain"
 			/>
 		</div>
 		<div class="flex w-full flex-col justify-between gap-3">
@@ -198,12 +199,9 @@
 						</span>
 					</div>
 					<div class="flex aspect-square w-full shrink-0 p-2 md:max-w-fit">
-						<img
-							src={generateImageUrl(
-								similarProduct[AllColumns.Number],
-								similarProduct[AllColumns.Name],
-								'products'
-							)}
+						<ProductImage
+							number={similarProduct[AllColumns.Number]}
+							name={similarProduct[AllColumns.Name]}
 							alt={similarProduct[AllColumns.Name]}
 							class="block aspect-square h-full w-full object-contain"
 						/>

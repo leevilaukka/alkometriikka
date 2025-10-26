@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { isLaptop, personalInfo, searchQuery } from '$lib/global.svelte';
 	import { components } from '$lib/utils/styles';
-	import { generateTitle, handleShare, productIdsToDataset } from '$lib/utils/helpers';
+	import { handleShare, productIdsToDataset } from '$lib/utils/helpers';
 	import { Kaljakori } from '$lib/alko';
 	import {
 		getItemQuantity,
@@ -13,7 +13,6 @@
 		updateQuantity
 	} from '$lib/utils/lists';
 	import Icon from '../widgets/Icon.svelte';
-	import { generateImageUrl } from '$lib/utils/image.js';
 	import SvelteVirtualList from '@humanspeak/svelte-virtual-list';
 	import { twMerge } from 'tailwind-merge';
 	import type { ColumnNames, ListObj, PriceListItem } from '$lib/types';
@@ -42,9 +41,9 @@
 	import { goto, replaceState } from '$app/navigation';
 	import { getContext, untrack } from 'svelte';
 	import { initFilterValues } from '$lib/utils/filters';
-	import { page } from '$app/state';
 	import BadgeList from '../widgets/BadgeList.svelte';
 	import type { SearchParamsManager } from '$lib/utils/url';
+	import ProductImage from '../widgets/ProductImage.svelte';
 
 	let activeFilters: ColumnNames[] = $state([]);
 
@@ -344,10 +343,9 @@
 								class={twMerge('flex flex-col flex-nowrap items-center gap-4 p-4 pb-0 md:flex-row')}
 							>
 								<div class="flex aspect-square w-32 max-w-[8rem]">
-									<img
-										src={generateImageUrl(item[AllColumns.Number], item[AllColumns.Name])}
-										alt={item[AllColumns.Name]}
-										class="block h-full w-full object-contain"
+									<ProductImage
+										number={item[AllColumns.Number]}
+										name={item[AllColumns.Name]}
 									/>
 								</div>
 								<div class="flex w-full flex-col gap-2">
