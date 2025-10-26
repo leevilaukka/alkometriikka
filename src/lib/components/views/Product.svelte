@@ -47,6 +47,22 @@
 	afterNavigate(() => {
 		productElement?.scrollIntoView({ behavior: 'smooth' });
 	});
+
+	function sideScroll(node: HTMLElement) {
+		function handleScroll(event: WheelEvent) {
+			if (event.deltaY == 0) return;
+			event.preventDefault();
+			node.scrollBy({ left: event.deltaY < 0 ? -100 : 100, behavior: 'smooth' });
+		}
+
+		node.addEventListener('wheel', handleScroll);
+
+		return {
+			destroy() {
+				node.removeEventListener('wheel', handleScroll);
+			}
+		};
+	}
 </script>
 
 <svelte:head>
@@ -165,13 +181,13 @@
 	</div>
 	{#if similarProducts.length}
 		<h2 class="text-2xl font-bold">Samankaltaisia tuotteita</h2>
-		<div class="flex max-w-full flex-row flex-nowrap gap-3 overflow-x-auto">
+		<div class="flex max-w-full flex-row flex-nowrap gap-3 overflow-x-auto" use:sideScroll>
 			{#each similarProducts as similarProduct}
 				<a
 					href={`/tuotteet/${similarProduct[AllColumns.Number]}`}
 					class="flex w-48 shrink-0 flex-col gap-3 rounded-lg border border-gray-300 p-4"
 				>
-					<div class="flex flex-col gap-2 h-[calc(3_*_1.75rem)] md:h-[calc(3_*_2rem)]">
+					<div class="flex flex-col gap-2 h-[calc(3_*_2.5rem)] md:h-[calc(3_*_2.75rem)]">
 						<h2
 							class="line-clamp-3 text-xl font-bold md:text-2xl"
 						>
