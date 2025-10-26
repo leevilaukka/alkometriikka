@@ -1,6 +1,6 @@
 import type { Kaljakori } from "$lib/alko"
 import type { ColumnNames, FilterValue, FilterValues, PriceListItem } from "$lib/types"
-import { shownFilters, subCategoryMap } from "./constants";
+import { AllColumns, shownFilters, subCategoryMap } from "./constants";
 
 export function initFilterValues(kaljakori: Kaljakori, searchParams?: URLSearchParams) {
     const valuesSearchParams = searchParams ? filterValuesFromSearchParameters(searchParams, kaljakori) : {}
@@ -35,10 +35,41 @@ export function filterValuesFromSearchParameters(searchParams: URLSearchParams, 
 }
 
 export function generateSimilarProductsFilter(product: PriceListItem, restrictions: Partial<Record<ColumnNames, string[] | number | string>>): FilterValues {
-    const temp = Object.fromEntries(Object.entries(restrictions).map(([key, value]) => {
+    return Object.fromEntries(Object.entries(restrictions).map(([key, value]) => {
         if(typeof value === "number" && typeof product[key] === "number" && Object.hasOwn(product, key)) return [key, [product[key] - (product[key] * value), product[key] + (product[key] * value)]]
         return [key, value]
     }))
-    console.log(temp)
-    return temp
+}
+
+export function findSimilarProducts(product: PriceListItem, kaljakori: Kaljakori, restrictions: Set<ColumnNames>, limit: number): PriceListItem[] {
+    const scored = kaljakori.data.map(item => {
+        let score = 0
+
+        // TODO: Improve grape variety matching
+        let grapeMultiplier = 1
+        if(restrictions.has(AllColumns.GrapeVarieties)) {
+            const productGrapes = new Set((product[AllColumns.GrapeVarieties] as string).toLowerCase().split(",").map(g => g.trim()))
+            const itemGrapes = new Set((item[AllColumns.GrapeVarieties] as string).toLowerCase().split(",").map(g => g.trim()))
+            const commonGrapes = productGrapes.intersection(itemGrapes).size
+            grapeMultiplier = 1 + (commonGrapes / Math.max(productGrapes.size, itemGrapes.size))
+        }
+
+        restrictions.forEach((key) => {
+            const valueType = kaljakori.getFilterType(key)
+            if(valueType === "number" && typeof product[key] === "number" && typeof item[key] === "number") {
+                const diff = Math.abs(product[key] - item[key])
+                const range = Math.max(product[key] * 0.2, 0.01) // 20% range or at least 0.01 to avoid division by zero
+                score += Math.max(0, 1 - (diff / range)) // Linear scoring within range
+            } else if(valueType === "string") {
+                if(product[key] === item[key]) score += 1
+            }
+        });
+
+        score *= grapeMultiplier
+
+        return { item, score }
+    });
+    scored.sort((a, b) => b.score - a.score);
+    console.log(scored.slice(0, limit))
+    return scored.filter(({ item }) => item[AllColumns.Number] !== product[AllColumns.Number]).slice(0, limit).map(({ item }) => item);
 }

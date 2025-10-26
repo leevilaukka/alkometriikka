@@ -110,6 +110,7 @@ export class Kaljakori {
 		})
 
 		this.data = this.sortBy(defaultSortingColumn);
+		console.log(this.data)
 	}
 
 	getFilterKeys() {

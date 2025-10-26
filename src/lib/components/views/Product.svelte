@@ -17,7 +17,7 @@
 	import BadgeList from '../widgets/BadgeList.svelte';
 	import { afterNavigate, goto } from '$app/navigation';
 	import type { Kaljakori } from '$lib/alko';
-	import { generateSimilarProductsFilter } from '$lib/utils/filters';
+	import { findSimilarProducts, generateSimilarProductsFilter } from '$lib/utils/filters';
 	const { product, kaljakori }: { product: PriceListItem; kaljakori: Kaljakori } = $props();
 
 	function handleBack() {
@@ -27,17 +27,24 @@
 
 	let productElement: HTMLDivElement;
 
-	let similarProducts = kaljakori
-		.filter(
-			generateSimilarProductsFilter(product, {
-				[AllColumns.Type]: [product[AllColumns.Type]],
-				[AllColumns.AlcoholPercentage]: 0.15,
-				[AllColumns.Price]: 0.2
-			})
-		).filter(p => p[AllColumns.Number] !== product[AllColumns.Number])
-		.splice(0, 20);
+	let similarProducts = findSimilarProducts(
+		product,
+		kaljakori,
+		new Set([
+			AllColumns.Type,
+			AllColumns.SubType,
+			AllColumns.BeerType,
+			AllColumns.Price,
+			AllColumns.BottleSize,
+			AllColumns.Sugar,
+			AllColumns.PackagingType,
+			AllColumns.AlcoholGramsPerEuro,
+			AllColumns.GrapeVarieties,
+		]),
+		20
+	);
 
-	afterNavigate((nav) => {
+	afterNavigate(() => {
 		productElement?.scrollIntoView({ behavior: 'smooth' });
 	});
 </script>
@@ -46,11 +53,9 @@
 	<title>{generateTitle(`${product[AllColumns.Name]}`)}</title>
 </svelte:head>
 
-
-
 <div
 	bind:this={productElement}
-	class={twMerge('mx-auto flex w-full max-w-[120ch] flex-col flex-nowrap items-center gap-6 p-6')}
+	class={twMerge('mx-auto flex w-full max-w-[120ch] flex-col flex-nowrap gap-6 p-6')}
 >
 	<div class="flex w-full items-center gap-4">
 		<button onclick={() => handleBack()} class={twMerge(components.button({ size: 'md' }))}>
@@ -159,36 +164,42 @@
 		</div>
 	</div>
 	{#if similarProducts.length}
-		<h2 class="text-2xl font-bold">Samantyyppisiä tuotteita</h2>
+		<h2 class="text-2xl font-bold">Samankaltaisia tuotteita</h2>
 		<div class="flex max-w-full flex-row flex-nowrap gap-3 overflow-x-auto">
 			{#each similarProducts as similarProduct}
 				<a
 					href={`/tuotteet/${similarProduct[AllColumns.Number]}`}
-					class="flex flex-col gap-3 shrink-0 rounded-lg border border-gray-300 w-48 p-4"
-				>	
-					<h2 class="text-xl font-bold md:text-2xl h-[calc(3_*_1.75rem)] md:h-[calc(3_*_2rem)] line-clamp-3">
-						{similarProduct[AllColumns.Name]}
-					</h2>
-					<div
-						class="flex aspect-square w-full shrink-0 p-2 md:max-w-fit"
-					>
+					class="flex w-48 shrink-0 flex-col gap-3 rounded-lg border border-gray-300 p-4"
+				>
+					<div class="flex flex-col gap-2 h-[calc(3_*_1.75rem)] md:h-[calc(3_*_2rem)]">
+						<h2
+							class="line-clamp-3 text-xl font-bold md:text-2xl"
+						>
+							{similarProduct[AllColumns.Name]}
+						</h2>
+						<span>
+							{formatValue(similarProduct[AllColumns.AlcoholPercentage], AllColumns.AlcoholPercentage)}
+						</span>
+					</div>
+					<div class="flex aspect-square w-full shrink-0 p-2 md:max-w-fit">
 						<img
 							src={generateImageUrl(
 								similarProduct[AllColumns.Number],
 								similarProduct[AllColumns.Name],
-								"products"
+								'products'
 							)}
 							alt={similarProduct[AllColumns.Name]}
 							class="block aspect-square h-full w-full object-contain"
 						/>
 					</div>
-					<div class="flex flex-col items-left gap-2">
-						
+					<div class="flex flex-col gap-2">
 						<p class="text-3xl font-bold drop-shadow-lg">
 							{Number.parseFloat(similarProduct[AllColumns.Price] as string).toFixed(2)} €
 						</p>
 						<span class="text-sm text-gray-500">
-							{formatValue(similarProduct[AllColumns.BottleSize], AllColumns.BottleSize)} ({similarProduct[AllColumns.PricePerLiter]} €/L)
+							{formatValue(similarProduct[AllColumns.BottleSize], AllColumns.BottleSize)} ({similarProduct[
+								AllColumns.PricePerLiter
+							]} €/L)
 						</span>
 					</div>
 				</a>
