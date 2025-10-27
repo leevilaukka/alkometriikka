@@ -38,17 +38,20 @@ export function productIdsToDataset(table: string[][], productIds: string[]) {
 }
 
 const baseTitle = "Alkometriikka" as const;
-export function generateTitle<T extends string>(text?: T): typeof baseTitle | `${typeof baseTitle} - [dev]` | `${typeof baseTitle} | ${T}` | `${typeof baseTitle} - [dev] | ${T}` {
-    const fullTitle: `${typeof baseTitle} | ${T}` | typeof baseTitle = text ? `${baseTitle} | ${text}` : baseTitle;
+
+export function generateTitle(text?: string): string {
     if (dev) {
-        if (text) {
-            return `${baseTitle} - [dev] | ${text}`;
-        } else {
-            return "Alkometriikka" as typeof baseTitle;
-        }
+        return (text
+            ? `${text} - ${baseTitle} [dev]`
+            : `${baseTitle} [dev]`);
+    } else {
+        return (text
+            ? `${text} - ${baseTitle}`
+            : baseTitle)
     }
-    return fullTitle;
 }
+
+const temp = generateTitle("");
 
 export function handleExport() {
     const data = {
