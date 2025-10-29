@@ -23,7 +23,7 @@ export class Kaljakori {
 
 		const indexOfTypeColumn = datasetColumns.indexOf(AllColumns.Type);
 
-		const datasetColumnColumnIndexes = datasetColumns.reduce((obj, current, idx) => {
+		const datasetColumnIndexes = datasetColumns.reduce((obj, current, idx) => {
 			return {...obj, [current]: idx}
 		}, {} as Record<DatasetColumnNames, number>)
 
@@ -61,7 +61,7 @@ export class Kaljakori {
 				if(Object.hasOwn(subCategoryMap, key) && value) {
 					if(!this.subValues[key]) this.subValues[key] = {}
 					if(!this.subValues[key][value]) this.subValues[key][value] = new Set();
-					const subvalue = rows[row][datasetColumnColumnIndexes[subCategoryMap[key as keyof typeof subCategoryMap]]];
+					const subvalue = rows[row][datasetColumnIndexes[subCategoryMap[key as keyof typeof subCategoryMap]]];
 					if(subvalue && subvalue.toString().trim().length) {
 						this.subValues[key][value].add(subvalue);
 					}
@@ -82,6 +82,13 @@ export class Kaljakori {
 				drunkValuesByColumn[idx].push(drunkValues[column]);
 				item[column] = drunkValues[column]
 			})
+
+			// Fill "Alatyyppi" with "Oluttyyppi" or "Tyyppi" if empty
+			if (!item[AllColumns.SubType]) {
+				const fillType = item[AllColumns.BeerType] || item[AllColumns.Type];
+				item[AllColumns.SubType] = fillType;
+				datasetValuesByColumn[datasetColumnIndexes[AllColumns.SubType]].push(item[AllColumns.SubType]);
+			}
 
 			this.data.push(item);
 		}
