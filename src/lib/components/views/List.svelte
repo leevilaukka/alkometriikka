@@ -122,11 +122,11 @@
 				totalPrice += product[AllColumns.Price] * item.q;
 				totalAlcoholGrams += product[AllColumns.AlcoholGrams] * item.q;
 				totalAlcoholGramsPerEuro +=
-					product[AllColumns.AlcoholGrams] * item.q /
-					product[AllColumns.Price] * item.q;
+					(product[AllColumns.AlcoholGrams] * item.q) /
+					(product[AllColumns.Price] * item.q);
 				totalBAC +=
-					(product[AllColumns.EstimatedPromille]) || 0 * item.q;
-				totalSugar += (product[AllColumns.Sugar]) || 0 * item.q;
+					(product[AllColumns.EstimatedPromille] || 0) * item.q;
+				totalSugar += (product[AllColumns.Sugar] || 0) * item.q;
 				totalVolume += product[AllColumns.BottleSize] * item.q;
 			}
 		});

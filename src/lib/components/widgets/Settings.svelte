@@ -181,14 +181,14 @@
 						>
 					{:else if tab === 'personal'}
 						{@const weightOK =
-							personalInfo.weight !== null &&
-							personalInfo.weight >= 1 &&
-							personalInfo.weight <= 500}
+							personalInfo.weight == null ||
+							(personalInfo.weight >= 1)}
 						<div class="prose">
 							<h2 class="text-lg font-bold">Henkilökohtaiset tiedot</h2>
 							<p class="text-sm text-gray-600">
 								Nämä tiedot vaikuttavat promillearvioihin. Annetut tiedot tallennetaan vain
-								paikallisesti, eikä niitä lähetetä mihinkään.
+								paikallisesti, eikä niitä lähetetä mihinkään. Jos et anna tietoja, promillearviot
+								perustuvat oletusarvoihin.
 							</p>
 						</div>
 						<div class="flex flex-col">
@@ -204,7 +204,7 @@
 								step="0.1"
 							/>
 							{#if !weightOK}
-								<p class="text-xs text-red-600">Painon tulee olla välillä 1-500 kg.</p>
+								<p class="text-xs text-red-600">Painon tulee olla suurempi kuin 1 kg tai tyhjä.</p>
 							{/if}
 						</div>
 						<div class="flex flex-col">
