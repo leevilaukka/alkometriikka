@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { isLaptop, personalInfo, searchQuery } from '$lib/global.svelte';
+	import { isLaptop, personalInfo, searchQuery, isMobile } from '$lib/global.svelte';
 	import { components } from '$lib/utils/styles';
 	import { handleShare, productIdsToDataset } from '$lib/utils/helpers';
 	import { Kaljakori } from '$lib/alko';
@@ -23,9 +23,8 @@
 		AllColumns,
 		shownSortingKeys,
 		defaultSortingOrderMap,
-
-		ContextKeys
-
+		ContextKeys,
+		GenderOptionsMap,
 	} from '$lib/utils/constants';
 	import {
 		formatValue,
@@ -37,8 +36,7 @@
 	import AllLists from '../widgets/AllLists.svelte';
 	import { addToList } from '$lib/utils/lists';
 	import Filters from '../widgets/Filters.svelte';
-	import { isMobile } from '$lib/global.svelte';
-	import { goto, replaceState } from '$app/navigation';
+	import { goto,  } from '$app/navigation';
 	import { getContext, untrack } from 'svelte';
 	import { initFilterValues } from '$lib/utils/filters';
 	import BadgeList from '../widgets/BadgeList.svelte';
@@ -110,9 +108,7 @@
 	function getListDetails() {
 		let totalPrice = 0;
 		let totalAlcoholGrams = 0;
-		let totalAlcoholGramsPerEuro = 0;
 		let totalItems = 0;
-		let totalBAC = 0;
 		let totalSugar = 0;
 		let totalVolume = 0;
 		list.items.forEach((item) => {
@@ -121,15 +117,13 @@
 				totalItems += item.q;
 				totalPrice += product[AllColumns.Price] * item.q;
 				totalAlcoholGrams += product[AllColumns.AlcoholGrams] * item.q;
-				totalAlcoholGramsPerEuro +=
-					(product[AllColumns.AlcoholGrams] * item.q) /
-					(product[AllColumns.Price] * item.q);
-				totalBAC +=
-					(product[AllColumns.EstimatedPromille] || 0) * item.q;
 				totalSugar += (product[AllColumns.Sugar] || 0) * item.q;
 				totalVolume += product[AllColumns.BottleSize] * item.q;
 			}
 		});
+
+		const totalAlcoholGramsPerEuro = totalPrice > 0 ? totalAlcoholGrams / totalPrice : 0;
+		const totalBAC = (personalInfo.weight && personalInfo.weight > 0) ? (totalAlcoholGrams / (personalInfo.weight * (personalInfo.gender === GenderOptionsMap.Male ? 0.68 : 0.55))) : 0;
 
 		return {
 			totalPrice: totalPrice.toFixed(2),
