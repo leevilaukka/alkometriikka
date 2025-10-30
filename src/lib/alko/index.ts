@@ -83,11 +83,21 @@ export class Kaljakori {
 				item[column] = drunkValues[column]
 			})
 
+			// Fill "Tyyppi" with "Ei määritelty" if empty
+			if(!item[AllColumns.Type]) {
+				item[AllColumns.Type] = "Ei määritelty";
+				datasetValuesByColumn[datasetColumnIndexes[AllColumns.Type]].push(item[AllColumns.Type]);
+			}
+
 			// Fill "Alatyyppi" with "Oluttyyppi" or "Tyyppi" if empty
 			if (!item[AllColumns.SubType]) {
 				const fillType = item[AllColumns.BeerType] || item[AllColumns.Type];
 				item[AllColumns.SubType] = fillType;
 				datasetValuesByColumn[datasetColumnIndexes[AllColumns.SubType]].push(item[AllColumns.SubType]);
+				// Add value to subValues map
+				if(!this.subValues[AllColumns.Type]) this.subValues[AllColumns.Type] = {}
+				if(!this.subValues[AllColumns.Type][item[AllColumns.Type]]) this.subValues[AllColumns.Type][item[AllColumns.Type]] = new Set();
+				this.subValues[AllColumns.Type][item[AllColumns.Type]].add(fillType);
 			}
 
 			this.data.push(item);
