@@ -94,7 +94,7 @@
 				{#if Object.hasOwn(subCategoryMap, filter) && filterValues[filter].length === 1}
 					{@const subFilter = subCategoryMap[filter as keyof typeof subCategoryMap]}
 					{@const subFilterValues = kaljakori.getSubFilterValues(filter, filterValues[filter][0])}
-					{#if subFilterValues.length}
+					{#if subFilterValues.length > 1}
 						<StringInput
 							defaultValue={[]}
 							label={filterRenameMap[subFilter as keyof typeof filterRenameMap] ?? subFilter}

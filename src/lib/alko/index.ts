@@ -58,14 +58,14 @@ export class Kaljakori {
 				item[key] = value
 				if (isNumber(value) || (typeof value === "string" && value.length) || typeof value === "number") datasetValuesByColumn[col].push(value);
 
-				if(Object.hasOwn(subCategoryMap, key) && value) {
+				/* if(Object.hasOwn(subCategoryMap, key) && value) {
 					if(!this.subValues[key]) this.subValues[key] = {}
 					if(!this.subValues[key][value]) this.subValues[key][value] = new Set();
 					const subvalue = rows[row][datasetColumnIndexes[subCategoryMap[key as keyof typeof subCategoryMap]]];
 					if(subvalue && subvalue.toString().trim().length) {
 						this.subValues[key][value].add(subvalue);
 					}
-				}
+				} */
 			}
 
 			// Calculate drunk values
@@ -84,7 +84,7 @@ export class Kaljakori {
 			})
 
 			// Fill "Tyyppi" with "Ei määritelty" if empty
-			if(!item[AllColumns.Type]) {
+			if (!item[AllColumns.Type]) {
 				item[AllColumns.Type] = "Ei määritelty";
 				datasetValuesByColumn[datasetColumnIndexes[AllColumns.Type]].push(item[AllColumns.Type]);
 			}
@@ -94,14 +94,23 @@ export class Kaljakori {
 				const fillType = item[AllColumns.BeerType] || item[AllColumns.Type];
 				item[AllColumns.SubType] = fillType;
 				datasetValuesByColumn[datasetColumnIndexes[AllColumns.SubType]].push(item[AllColumns.SubType]);
-				// Add value to subValues map
-				if(!this.subValues[AllColumns.Type]) this.subValues[AllColumns.Type] = {}
-				if(!this.subValues[AllColumns.Type][item[AllColumns.Type]]) this.subValues[AllColumns.Type][item[AllColumns.Type]] = new Set();
-				this.subValues[AllColumns.Type][item[AllColumns.Type]].add(fillType);
 			}
+
+			// Add sub filter values
+			Object.keys(subCategoryMap).forEach((key) => {
+				const value = item[key as keyof PriceListItem];
+				if(!this.subValues[key]) this.subValues[key] = {}
+				if(!this.subValues[key][value]) this.subValues[key][value] = new Set();
+				const subvalue = item[subCategoryMap[key as keyof typeof subCategoryMap] as keyof PriceListItem];
+				if(subvalue && subvalue.toString().trim().length) {
+					this.subValues[key][value].add(subvalue);
+				}
+			})
 
 			this.data.push(item);
 		}
+
+		console.log(this.subValues)
 
 		// Merge dataset and drunk columns and their values
 		const mergedColumns = [...datasetColumns, ...drunkColumns];
