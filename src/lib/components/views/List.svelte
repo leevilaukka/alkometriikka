@@ -123,7 +123,7 @@
 		});
 
 		const totalAlcoholGramsPerEuro = totalPrice > 0 ? totalAlcoholGrams / totalPrice : 0;
-		const totalBAC = (personalInfo.weight && personalInfo.weight > 0) ? (totalAlcoholGrams / (personalInfo.weight * (personalInfo.gender === GenderOptionsMap.Male ? 0.68 : 0.55))) : 0;
+		const totalBAC = totalAlcoholGrams / ((personalInfo.weight || (personalInfo.gender === GenderOptionsMap.Female ? 76 : personalInfo.gender === GenderOptionsMap.Male ? 86 : 79)) * (personalInfo.gender === GenderOptionsMap.Male ? 0.68 : 0.55));
 
 		return {
 			totalPrice: totalPrice.toFixed(2),
