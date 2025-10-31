@@ -153,9 +153,8 @@
 			<div class="flex flex-col gap-0.5 md:gap-1">
 				<h2 class="text-lg font-bold">Perustiedot</h2>
 				{#each Object.entries(DatasetColumns) as [_, value]}
-					{@const valueEmpty =
-						product[value] !== null && product[value] !== undefined && product[value] !== ''}
-					{#if valueEmpty && !hideFromProductPageStats.has(value as (typeof DatasetColumns)[keyof typeof DatasetColumns])}
+					{@const hasValue = valueToString(product[value]).length > 0}
+					{#if hasValue && !hideFromProductPageStats.has(value as (typeof DatasetColumns)[keyof typeof DatasetColumns])}
 						<p>
 							{valueToString(
 								product[value],

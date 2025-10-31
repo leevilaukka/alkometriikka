@@ -4,14 +4,14 @@ import type { VariantProps } from 'class-variance-authority';
 import type { components } from './utils/styles';
 import type { IconName } from './icons';
 
-export type NativeTypes = "string" | "number" | "object" | "undefined" | "function" | "boolean" | "symbol" | "bigint" | "any";
+export type ColumnType = "string" | "number" | "object" | "undefined" | "function" | "boolean" | "symbol" | "bigint";
 
 export type DatasetRow = (string | number | undefined)[];
 
 export type Filter = {
-    type: NativeTypes | "any" | undefined
+    type: ColumnType
     // Set of all possible types 
-    possibleTypes: Set<NativeTypes>
+    possibleTypes: Set<ColumnType>
 }
 
 export type GenderOptions = typeof GenderOptionsMap[keyof typeof GenderOptionsMap];
@@ -38,9 +38,9 @@ export interface PriceListItem extends Record<DrunkColumnNames, number> {
     "Alue": string;
     "Vuosikerta": string;
     "Etikettimerkintöjä": string;
-    "Huomautus": string;
-    "Rypäleet": string;
-    "Luonnehdinta": string;
+    "Huomautus": Set<string>;
+    "Rypäleet": Set<string>;
+    "Luonnehdinta": Set<string>;
     "Pakkaustyyppi": string;
     "Alkoholi-%": number;
     "Hapot g/l": number;
@@ -51,7 +51,7 @@ export interface PriceListItem extends Record<DrunkColumnNames, number> {
     "Energia kcal/100ml": number;
     "Valikoima": string;
     "EAN": string;
-    [key: string]: string | number;
+    [key: string]: string | number | Set<string>;
 } 
 
 export type DatasetColumnNames = typeof DatasetColumns[keyof typeof DatasetColumns];

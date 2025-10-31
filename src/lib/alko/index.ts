@@ -1,6 +1,6 @@
-import { AllColumns, defaultSortingColumn, GenderOptionsMap, subCategoryMap, undefinedToZeroColumns, DrunkColumns, columnsHandledAsString } from '$lib/utils/constants';
+import { AllColumns, defaultSortingColumn, GenderOptionsMap, subCategoryMap, undefinedToZeroColumns, DrunkColumns, columnsHandledAsString, columnsHandledAsSet } from '$lib/utils/constants';
 import { calculateDrunkValue } from '../utils/alko';
-import { type ColumnNames, type DatasetColumnNames, type DatasetRow, type Filter, type FilterValues, type NativeTypes, type PersonalInfo, type PriceListItem } from '../types';
+import { type ColumnNames, type DatasetColumnNames, type DatasetRow, type Filter, type FilterValues, type ColumnType, type PersonalInfo, type PriceListItem } from '../types';
 import { isSimilarString } from '$lib/utils/search';
 
 export class Kaljakori {
@@ -8,7 +8,7 @@ export class Kaljakori {
 	personalInfo: PersonalInfo;
 	filters: ColumnNames[] = [];
 	possibleValues: Record<string, Set<any>> = {};
-	columnTypes: Record<string, NativeTypes> = {};
+	columnTypes: Record<string, ColumnType> = {};
 	minAndMaxValues: ([number, number] | null)[] = [];
 	subValues: Record<string, Record<string, Set<any>>> = {}
 
@@ -47,25 +47,20 @@ export class Kaljakori {
 			for (let col = 0; col < datasetColumns.length; col++) {
 
 				const key = datasetColumns[col];
-				let value: string | number | undefined = rows[row][col];
+				let value: string | number | Set<string> | undefined = rows[row][col];
 
 				if (columnsHandledAsString.includes(key as typeof columnsHandledAsString[number])) value = toFormattedStringValue(String(value))
+				else if (columnsHandledAsSet.includes(key as typeof columnsHandledAsSet[number])) value = new Set(String(value || "").split(/[\.,]\s/).map(v => toFormattedStringValue(v.trim())).filter(v => v.length > 0))
 				else if (isNumber(value)) value = Number.parseFloat(String(value));
 				else if (typeof value === "string") value = toFormattedStringValue(value);
 				else if (undefinedToZeroColumns.includes(key as any)) value = 0
 				else value = ""
 
+				if(value instanceof Set && value.has("Null")) console.log(key, value)
+
 				item[key] = value
 				if (isNumber(value) || (typeof value === "string" && value.length) || typeof value === "number") datasetValuesByColumn[col].push(value);
-
-				/* if(Object.hasOwn(subCategoryMap, key) && value) {
-					if(!this.subValues[key]) this.subValues[key] = {}
-					if(!this.subValues[key][value]) this.subValues[key][value] = new Set();
-					const subvalue = rows[row][datasetColumnIndexes[subCategoryMap[key as keyof typeof subCategoryMap]]];
-					if(subvalue && subvalue.toString().trim().length) {
-						this.subValues[key][value].add(subvalue);
-					}
-				} */
+				if (value instanceof Set && value.size) datasetValuesByColumn[col].push(...Array.from(value));
 			}
 
 			// Calculate drunk values
@@ -110,8 +105,6 @@ export class Kaljakori {
 			this.data.push(item);
 		}
 
-		console.log(this.subValues)
-
 		// Merge dataset and drunk columns and their values
 		const mergedColumns = [...datasetColumns, ...drunkColumns];
 		const mergedValuesByColumn = [...datasetValuesByColumn, ...drunkValuesByColumn];
@@ -123,10 +116,10 @@ export class Kaljakori {
 
 		// Get column type by getting the type of the first value in the possible values set
 		this.columnTypes = Object.fromEntries(
-			Object.entries(this.possibleValues).map(([key, value]) => [
-				key,
-				typeof value.values().next().value
-			])
+			Object.entries(this.possibleValues).map(([key, value]) => {
+				if(columnsHandledAsSet.includes(key as typeof columnsHandledAsSet[number])) return [ key, "object" ]
+				return [ key, typeof value.values().next().value ]
+			})
 		);
 
 		this.minAndMaxValues = mergedColumns.map((column, idx) => {
@@ -208,6 +201,8 @@ export class Kaljakori {
 				const type = this.getFilterType(key as ColumnNames);
 				if (type === 'number' && Array.isArray(filters[key]) && filters[key].length === 2) {
 					return item[key] >= filters[key][0] && item[key] <= filters[key][1];
+				} else if (type === 'object' && item[key] instanceof Set && filters[key] instanceof Set) {
+					return filters[key].isSubsetOf(item[key]);
 				} else if (filters[key] instanceof Set) {
 					return item[key] && filters[key].has(item[key]);
 				} else if (Array.isArray(filters[key])) {
@@ -230,7 +225,6 @@ export class Kaljakori {
 		return this.data.filter((item) => {
 			return Object.keys(filters).every((key) => {
 				const type = this.getFilterType(key as ColumnNames);
-				// Range filter for numbers
 				if (type === 'number' && Array.isArray(filters[key]) && filters[key].length === 2) {
 					return item[key] >= filters[key][0] && item[key] <= filters[key][1];
 				} else if (filters[key] instanceof Set) {

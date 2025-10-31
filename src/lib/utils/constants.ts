@@ -68,6 +68,12 @@ export const columnsHandledAsString = [
     AllColumns.EAN
 ] as const satisfies readonly ColumnNames[];
 
+export const columnsHandledAsSet = [
+    AllColumns.Description,
+    AllColumns.Note,
+    AllColumns.GrapeVarieties
+] as const satisfies readonly ColumnNames[];
+
 export const undefinedToZeroColumns = [
     AllColumns.Sugar,
     AllColumns.Acidity,
@@ -93,7 +99,10 @@ export const shownFilters = [
     AllColumns.Servings,
     AllColumns.PromillePerEuro,
     AllColumns.AlcoholGramsPerEuro,
-    AllColumns.New
+    AllColumns.Description,
+    AllColumns.Note,
+    AllColumns.GrapeVarieties,
+    AllColumns.New,
 ] as const satisfies readonly ColumnNames[];
 
 /**

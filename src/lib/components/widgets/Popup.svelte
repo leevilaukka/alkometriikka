@@ -8,11 +8,9 @@
 		if(!dialogElement) return;
 
 		const mutationObserver = new MutationObserver((event) => {
-			console.log(event);
 			const dialog = event[0].target as HTMLDialogElement;
 			if(!dialog) return
 			const open = dialog.hasAttribute("open");
-			console.log(open)
 			if(open) onOpen(dialogElement)
 		})
 

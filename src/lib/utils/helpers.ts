@@ -3,7 +3,8 @@ import { lists, personalInfo } from "$lib/global.svelte";
 import type { ColumnNames } from "$lib/types";
 import { filterRenameMap, filterToUnitMarker, LocalStorageKeys, sortingOrderDescriptionMap } from "./constants";
 
-export function formatValue(value: string | number, header?: ColumnNames) {
+export function formatValue(value: string | number | Set<string>, header?: ColumnNames) {
+    if (value instanceof Set) return Array.from(value).join(', ');
     if (header && Object.hasOwn(filterToUnitMarker, header)) return `${value} ${filterToUnitMarker[header as keyof typeof filterToUnitMarker]}`;
     return value
 }
@@ -18,8 +19,8 @@ export function headerToDisplayName(header: ColumnNames) {
     return header
 }
 
-export function valueToString(value: string | number, header?: ColumnNames) {
-    if (!header) return formatValue(value);
+export function valueToString(value: string | number | Set<string>, header?: ColumnNames) {
+    if (!header) return String(formatValue(value));
     return `${headerToDisplayName(header)}: ${formatValue(value, header)}`
 }
 

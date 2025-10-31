@@ -11,6 +11,7 @@
 	import type { ColumnNames, FilterValues } from '$lib/types';
 	import { getContext } from 'svelte';
 	import type { SearchParamsManager } from '$lib/utils/url';
+	import { headerToDisplayName } from '$lib/utils/helpers';
 
 	let {
 		kaljakori,
@@ -81,10 +82,19 @@
 				{#if type === 'number'}
 					{@const [min, max] = kaljakori.getMinAndMaxValues(filter)}
 					<NumberInput defaultValue={[min, max]} label={filter} bind:value={filterValues[filter]} bind:modified={filterActiveState[filter]} {min} {max} step={0.01} />
+				{:else if type === "object"}
+					<StringInput
+						defaultValue={[]}
+						label={headerToDisplayName(filter)}
+						options={possibleValues}
+						bind:value={filterValues[filter]}
+						bind:modified={filterActiveState[filter]}
+						name={filter}
+					/>
 				{:else}
 					<StringInput
 						defaultValue={[]}
-						label={filter}
+						label={headerToDisplayName(filter)}
 						options={possibleValues}
 						bind:value={filterValues[filter]}
 						bind:modified={filterActiveState[filter]}
@@ -97,7 +107,7 @@
 					{#if subFilterValues.length > 1}
 						<StringInput
 							defaultValue={[]}
-							label={filterRenameMap[subFilter as keyof typeof filterRenameMap] ?? subFilter}
+							label={headerToDisplayName(subFilter)}
 							options={subFilterValues}
 							bind:value={filterValues[subFilter]}
 							name={subFilter}

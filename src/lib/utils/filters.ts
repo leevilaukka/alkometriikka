@@ -8,7 +8,7 @@ export function initFilterValues(kaljakori: Kaljakori, searchParams?: URLSearchP
 		if (kaljakori.getFilterType(filter) == 'number')
 			obj[filter] = valuesSearchParams[filter as keyof typeof valuesSearchParams] ?? kaljakori.getMinAndMaxValues(filter);
 		else if (kaljakori.getFilterType(filter) == 'string') obj[filter] = valuesSearchParams[filter as keyof typeof valuesSearchParams] || [];
-		else if (kaljakori.getFilterType(filter) == 'any') obj[filter] = valuesSearchParams[filter as keyof typeof valuesSearchParams] || [];
+		else if (kaljakori.getFilterType(filter) == 'object') obj[filter] = valuesSearchParams[filter as keyof typeof valuesSearchParams] || [];
 		return obj;
 	}, {} as Record<ColumnNames, FilterValue>);
 }
@@ -18,6 +18,8 @@ export function searchParametersFromFilterValues(filterValues: FilterValues, kal
         const type = kaljakori.getFilterType(key as ColumnNames)
         if(type === "string" && Array.isArray(value)) {
             obj[key] = value as string[]
+        } else if(type === "object") {
+            obj[key] = Array.from(value) as string[]
         } else if(type === "number" && Array.isArray(value)) {
             const defaults = kaljakori.getMinAndMaxValues(key as ColumnNames)
             if(defaults && defaults[0] == value[0] && defaults[1] == value[1]) obj[key] = ""
@@ -48,10 +50,10 @@ export function findSimilarProducts(product: PriceListItem, kaljakori: Kaljakori
         // TODO: Improve grape variety matching
         let grapeMultiplier = 1
         if(restrictions.has(AllColumns.GrapeVarieties)) {
-            const productGrapes = new Set((product[AllColumns.GrapeVarieties] as string).toLowerCase().split(",").map(g => g.trim()))
-            const itemGrapes = new Set((item[AllColumns.GrapeVarieties] as string).toLowerCase().split(",").map(g => g.trim()))
+            const productGrapes = product[AllColumns.GrapeVarieties]
+            const itemGrapes = item[AllColumns.GrapeVarieties]
             const commonGrapes = productGrapes.intersection(itemGrapes).size
-            grapeMultiplier = 1 + (commonGrapes / Math.max(productGrapes.size, itemGrapes.size))
+            grapeMultiplier = 1 + (commonGrapes / (Math.max(productGrapes.size, itemGrapes.size) || 1))
         }
 
         restrictions.forEach((key) => {
@@ -70,6 +72,5 @@ export function findSimilarProducts(product: PriceListItem, kaljakori: Kaljakori
         return { item, score }
     });
     scored.sort((a, b) => b.score - a.score);
-    console.log(scored.slice(0, limit))
     return scored.filter(({ item }) => item[AllColumns.Number] !== product[AllColumns.Number]).slice(0, limit).map(({ item }) => item);
 }
