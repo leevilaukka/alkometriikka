@@ -40,6 +40,7 @@
 			AllColumns.PackagingType,
 			AllColumns.AlcoholGramsPerEuro,
 			AllColumns.GrapeVarieties,
+			AllColumns.Description,
 		]),
 		20
 	);

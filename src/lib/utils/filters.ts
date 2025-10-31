@@ -47,15 +47,6 @@ export function findSimilarProducts(product: PriceListItem, kaljakori: Kaljakori
     const scored = kaljakori.data.map(item => {
         let score = 0
 
-        // TODO: Improve grape variety matching
-        let grapeMultiplier = 1
-        if(restrictions.has(AllColumns.GrapeVarieties)) {
-            const productGrapes = product[AllColumns.GrapeVarieties]
-            const itemGrapes = item[AllColumns.GrapeVarieties]
-            const commonGrapes = productGrapes.intersection(itemGrapes).size
-            grapeMultiplier = 1 + (commonGrapes / (Math.max(productGrapes.size, itemGrapes.size) || 1))
-        }
-
         restrictions.forEach((key) => {
             const valueType = kaljakori.getFilterType(key)
             if(valueType === "number" && typeof product[key] === "number" && typeof item[key] === "number") {
@@ -67,10 +58,26 @@ export function findSimilarProducts(product: PriceListItem, kaljakori: Kaljakori
             }
         });
 
-        score *= grapeMultiplier
+        const multiplierColumnsAndWeights = {
+            [AllColumns.GrapeVarieties]: 1,
+            [AllColumns.Description]: 1,
+        } as const;
+
+        Object.keys(multiplierColumnsAndWeights).forEach((column) => {
+            if(restrictions.has(column as keyof typeof multiplierColumnsAndWeights) && product[column] instanceof Set && item[column] instanceof Set) {
+                let multiplier = 1
+                const productValues = product[column]
+                const itemValues = item[column]
+                const commonGrapes = productValues.intersection(itemValues).size
+                multiplier += (commonGrapes / (Math.max(productValues.size, itemValues.size) || 1))
+                multiplier += multiplier * multiplierColumnsAndWeights[column as keyof typeof multiplierColumnsAndWeights] as number
+                score *= multiplier
+            }
+        })
 
         return { item, score }
     });
     scored.sort((a, b) => b.score - a.score);
+    console.log(scored.slice(0, 20))
     return scored.filter(({ item }) => item[AllColumns.Number] !== product[AllColumns.Number]).slice(0, limit).map(({ item }) => item);
 }
