@@ -2,7 +2,7 @@
 	import { onDestroy, onMount } from "svelte";
 	import { twMerge } from "tailwind-merge";
 
-	let { dialogElement = $bindable(), renderContent, renderButton = () => {}, onOpen = (dialogElement: HTMLDialogElement) => {}, onClose = (dialogElement: HTMLDialogElement) => {}, ...rest } = $props();
+	let { dialogElement = $bindable(), renderContent, renderButton, onOpen = (dialogElement: HTMLDialogElement) => {}, onClose = (dialogElement: HTMLDialogElement) => {}, ...rest } = $props();
 
 	onMount(() => {
 		if(!dialogElement) return;

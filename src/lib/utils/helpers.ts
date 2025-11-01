@@ -1,6 +1,7 @@
 import { dev } from "$app/environment";
+import type { Kaljakori } from "$lib/alko";
 import { lists, personalInfo } from "$lib/global.svelte";
-import type { ColumnNames } from "$lib/types";
+import type { ColumnNames, PriceListItem } from "$lib/types";
 import { filterRenameMap, filterToUnitMarker, LocalStorageKeys, sortingOrderDescriptionMap } from "./constants";
 
 export function formatValue(value: string | number | Set<string>, header?: ColumnNames) {
@@ -51,8 +52,6 @@ export function generateTitle(text?: string): string {
             : baseTitle)
     }
 }
-
-const temp = generateTitle("");
 
 export function handleExport() {
     const data = {

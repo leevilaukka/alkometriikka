@@ -68,9 +68,9 @@ export function findSimilarProducts(product: PriceListItem, kaljakori: Kaljakori
                 let multiplier = 1
                 const productValues = product[column]
                 const itemValues = item[column]
-                const commonGrapes = productValues.intersection(itemValues).size
-                multiplier += (commonGrapes / (Math.max(productValues.size, itemValues.size) || 1))
-                multiplier += multiplier * multiplierColumnsAndWeights[column as keyof typeof multiplierColumnsAndWeights] as number
+                const commonValuesCount = productValues.intersection(itemValues).size
+                multiplier += (commonValuesCount / (Math.max(productValues.size, itemValues.size) || 1))
+                multiplier += multiplier * multiplierColumnsAndWeights[column as keyof typeof multiplierColumnsAndWeights]
                 score *= multiplier
             }
         })
