@@ -183,7 +183,7 @@
 	{#if similarProducts.length}
 		<div class="flex items-center justify-between">
 			<h2 class="text-2xl font-bold">Samankaltaisia tuotteita</h2>
-			<a class={twMerge(components.button({ size: "md" }))} href={`/samanlaiset/${product[AllColumns.Number]}`}>
+			<a class={twMerge(components.button({ size: "md" }))} href={`/vastaavat/${product[AllColumns.Number]}`}>
 				<span>Lisää samankaltaisia</span>
 				<Icon name="arrow_right" />
 			</a>
