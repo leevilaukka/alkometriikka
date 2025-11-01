@@ -31,6 +31,7 @@
 	import { getContext, onMount } from 'svelte';
 	import type { SearchParamsManager } from '$lib/utils/url';
 	import ProductImage from '../widgets/ProductImage.svelte';
+	import ProductPreview from '../widgets/ProductPreview.svelte';
 
 	const { kaljakori }: { kaljakori: Kaljakori } = $props();
 
@@ -170,140 +171,39 @@
 		<div class="flex flex-auto flex-col">
 			<SvelteVirtualList items={rows} bind:this={listRef} itemsClass={'flex flex-col gap-3'}>
 				{#snippet renderItem(item, idx: number)}
-					{@const [_, max] = kaljakori.getMinAndMaxValues(selectedHighlight) as number[]}
-					{@const multiplier = Number(item[selectedHighlight]) / max}
-					{@const ratings = ['Matala', 'Kohtalainen', 'Korkea']}
-					{@const rating = ratings[Number(((ratings.length - 1) * multiplier).toFixed(0))]}
-					<div
-						class={twMerge(
-							'relative flex flex-col gap-3 overflow-clip rounded border border-gray-200 bg-white'
-						)}
-					>
-						<div
-							class={twMerge('flex flex-col flex-nowrap items-center gap-4 p-4 pb-0 md:flex-row')}
-						>
-							<div class="flex aspect-square w-40 max-w-[10rem] md:h-full md:w-auto md:max-w-fit shrink-0 p-1">
-								<ProductImage
-									number={item[AllColumns.Number]}
-									name={item[AllColumns.Name]}
-								/>
+					<ProductPreview product={item} highlight={selectedHighlight} {kaljakori}>
+						{#snippet renderExtras()}
+							<div
+								class="absolute top-0 left-0 flex flex-nowrap items-center gap-0.5 rounded-br bg-gray-100 px-1.5 py-0.5 text-sm text-gray-500"
+							>
+								<Icon name="hashtag" />
+								<span>{`${(idx + 1)}`}</span>
 							</div>
-							<div class="flex w-full flex-col gap-2">
-								<div class="flex flex-row items-center gap-3">
-									<div
-										class="absolute top-0 left-0 flex flex-nowrap items-center gap-0.5 rounded-br bg-gray-100 px-1.5 py-0.5 text-sm text-gray-500"
+							<Popup class="gap-4 p-4">
+								{#snippet renderButton(dialogElement: HTMLDialogElement)}
+									<button
+										class={twMerge(components.button({ type: 'positive' }), 'ml-auto')}
+										onclick={() => dialogElement.showModal()}
 									>
-										<Icon name="hashtag" />
-										<span>{`${(idx + 1)}`}</span>
-									</div>
-									<a href={`/tuotteet/${item[AllColumns.Number]}`} class="hover:underline">
-										<h2 class="text-xl font-bold md:text-2xl">
-											{item[AllColumns.Name]} ({formatValue(
-												item[AllColumns.BottleSize],
-												AllColumns.BottleSize
-											)})
-										</h2>
-									</a>
-								</div>
-								<div class="flex flex-col items-start gap-0.5 md:flex-row md:gap-3">
-									<div class="flex flex-col gap-0.5 md:gap-1">
-										<p>{valueToString(item[AllColumns.Manufacturer], AllColumns.Manufacturer)}</p>
-										<p>
-											{valueToString(item[AllColumns.Type], AllColumns.Type)}
-											{item[AllColumns.Type] === 'Oluet'
-												? `- ${formatValue(item[AllColumns.BeerType], AllColumns.BeerType)}`
-												: null}
-										</p>
-										<p>{valueToString(item[AllColumns.SubType], AllColumns.SubType)}</p>
-									</div>
-									<div class="flex flex-col gap-0.5 md:gap-1">
-										<p>
-											{valueToString(
-												item[AllColumns.AlcoholPercentage],
-												AllColumns.AlcoholPercentage
-											)}
-										</p>
-										<p>
-											{valueToString(
-												item[AllColumns.AlcoholGramsPerEuro],
-												AllColumns.AlcoholGramsPerEuro
-											)}
-										</p>
-										<p>
-											{valueToString(
-												item[AllColumns.EstimatedPromille],
-												AllColumns.EstimatedPromille
-											)}
-										</p>
-									</div>
-								</div>
-								<div class="flex items-center gap-2 text-sm text-gray-500">
-									<Icon name="map_pin" />
-									<span class="text-sm">
-										{item[AllColumns.Country]}
-										{item[AllColumns.Region] ? ` - ${item[AllColumns.Region]}` : null}
-									</span>
-								</div>
-								<div class="flex flex-col gap-4 lg:flex-row lg:items-center">
-									<div class="flex items-center gap-2">
-										<p class="text-3xl font-bold drop-shadow-lg">
-											{item[AllColumns.Price].toFixed(2)} €
-										</p>
-										<span class="text-sm text-gray-500">
-											({item[AllColumns.PricePerLiter]} €/L)
-										</span>
-									</div>
-									<div class="flex flex-row items-center gap-3">
-										<BadgeList {item} />
-									</div>
-									<Popup class="gap-4 p-4">
-										{#snippet renderButton(dialogElement: HTMLDialogElement)}
-											<button
-												class={twMerge(components.button({ type: 'positive' }), 'ml-auto')}
-												onclick={() => dialogElement.showModal()}
-											>
-												<span>Lisää listaan</span>
-												<Icon name="plus" />
-											</button>
-										{/snippet}
-										{#snippet renderContent(dialogElement: HTMLDialogElement)}
-											<h2 class="text-xl">Valitse lista</h2>
-											<AllLists
-												action={(list: ListObj) => {
-													addToList(list, item[AllColumns.Number]);
-													dialogElement.close();
-												}}
-											/>
-										{/snippet}
-									</Popup>
-								</div>
-							</div>
-						</div>
-						<div class="relative block max-w-full">
-							<div
-								class="relative flex h-full w-fit shrink-0 flex-nowrap items-center gap-1 bg-black px-1.5 py-0.5 text-sm whitespace-nowrap text-white"
-								style={`left: ${100 * multiplier}%; transform: translateX(-${100 * multiplier}%);`}
-							>
-								<p>
-									{headerToDisplayName(selectedHighlight)}: {item[selectedHighlight]}
-									{filterToUnitMarker[selectedHighlight as keyof typeof filterToUnitMarker]}
-								</p>
-								<span>- {rating}</span>
-							</div>
-							<div
-								class="relative block h-4 w-full rounded-b bg-gradient-to-r from-brand-1 from-10% via-amber-400 to-green-500"
-							>
-								<div
-									class="absolute block h-full w-1 shrink-0 -translate-x-1/2 bg-black whitespace-nowrap"
-									style={`left: ${100 * multiplier}%; transform: translateX(${50 - 100 * multiplier}%);`}
-								></div>
-							</div>
-						</div>
-					</div>
+										<span>Lisää listaan</span>
+										<Icon name="plus" />
+									</button>
+								{/snippet}
+								{#snippet renderContent(dialogElement: HTMLDialogElement)}
+									<h2 class="text-xl">Valitse lista</h2>
+									<AllLists
+										action={(list: ListObj) => {
+											addToList(list, item[AllColumns.Number]);
+											dialogElement.close();
+										}}
+									/>
+								{/snippet}
+							</Popup>
+						{/snippet}
+					</ProductPreview>
 				{/snippet}
 			</SvelteVirtualList>
 		</div>
-
 		{#if rows.length == 0}
 			<p>Ei tuloksia</p>
 		{/if}
