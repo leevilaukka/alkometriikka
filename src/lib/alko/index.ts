@@ -111,7 +111,13 @@ export class Kaljakori {
 
 		// Create possible values object
 		this.possibleValues = Object.fromEntries(
-			mergedValuesByColumn.map((column, idx) => [mergedColumns[idx], new Set(column.sort())])
+			mergedValuesByColumn.map((column, idx) => {
+				const sorted = [...column].sort((a, b) => {
+					if (typeof a === 'number' && typeof b === 'number') return a - b;
+					return String(a).localeCompare(String(b));
+				});
+				return [mergedColumns[idx], new Set(sorted)];
+			}) 
 		);
 
 		// Get column type by getting the type of the first value in the possible values set
@@ -141,6 +147,7 @@ export class Kaljakori {
 	}
 
 	getSubFilterValues(key: ColumnNames, value: any) {
+		console.log(key, value)
 		return this.subValues[key] ? Array.from(this.subValues[key][value]) : [];
 	}
 

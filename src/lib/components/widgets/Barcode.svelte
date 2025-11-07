@@ -23,7 +23,7 @@
 
 	const { kaljakori }: { kaljakori: Kaljakori } = $props();
 
-	let videoElement: HTMLVideoElement;
+	let videoElement: HTMLVideoElement = $state()!;
 	let decodingInterval: ReturnType<typeof setInterval>;
 	let decoding = false;
 	let stream: null | MediaStream = $state(null);
@@ -112,10 +112,10 @@
 
 <Popup
 	bind:dialogElement
-	onOpen={async () => {
+	onopen={async () => {
 		await startCamera();
 	}}
-	onClose={() => {
+	onclose={() => {
 		stopCamera();
 	}}
 >

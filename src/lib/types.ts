@@ -48,7 +48,7 @@ export interface PriceListItem extends Record<DrunkColumnNames, number> {
     "Kantavierrep-%": number;
     "Väri EBC": number;
     "Katkerot EBU": number;
-    "Energia kcal/100ml": number;
+    "Energia kcal/100 ml": number;
     "Valikoima": string;
     "EAN": string;
     [key: string]: string | number | Set<string>;

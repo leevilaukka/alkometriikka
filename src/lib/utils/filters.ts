@@ -51,8 +51,9 @@ export function findSimilarProducts(product: PriceListItem, kaljakori: Kaljakori
             const valueType = kaljakori.getFilterType(key)
             if(valueType === "number" && typeof product[key] === "number" && typeof item[key] === "number") {
                 const diff = Math.abs(product[key] - item[key])
-                const range = Math.max(product[key] * 0.2, 0.01) // 20% range or at least 0.01 to avoid division by zero
-                score += Math.max(0, 1 - (diff / range)) // Linear scoring within range
+                const maxValue = Math.max(Math.abs(product[key]), Math.abs(item[key]), 1) // Avoid division by zero
+                const percentageDiff = diff / maxValue
+                score += Math.max(0, 1 - percentageDiff) // Score based on percentage difference
             } else if(valueType === "string") {
                 if(product[key] === item[key]) score += 1
             }
@@ -78,6 +79,5 @@ export function findSimilarProducts(product: PriceListItem, kaljakori: Kaljakori
         return { item, score }
     });
     scored.sort((a, b) => b.score - a.score);
-    console.log(scored.slice(0, 20))
     return scored.filter(({ item }) => item[AllColumns.Number] !== product[AllColumns.Number]).slice(0, limit).map(({ item }) => item);
 }

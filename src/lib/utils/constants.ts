@@ -257,11 +257,11 @@ export const ColumnToBadgeMap: ColumnBadgeMap = {
         "Alkuviini": { text: "Alkuviini", color: "blue", icon: "wine" },
         "Biodynaaminen": { text: "Biodynaaminen", color: "emerald", icon: "yin_yang" },
     },
-    /*[DatasetColumns.Availability]: {
+    [DatasetColumns.Availability]: {
         "Kausituote": { text: "Kausituote", color: "dark_red", icon: "tree" },
         "Erikoiserä": { text: "Erikoiserä", color: "yellow", icon: "star" },
         "Tilausvalikoima": { text: "Tilausvalikoima", color: "cyan", icon: "truck" },
-    }*/
+    }
 };
 
 export function DynamicColumnToBadgeMap(item: Record<string, any>): Partial<ColumnBadgeMap> {

@@ -5,7 +5,7 @@
 	import { twMerge } from 'tailwind-merge';
 	import { goto } from '$app/navigation';
 	import { AllColumns } from '$lib/utils/constants';
-	import type { ListObj, PriceListItem } from '$lib/types';
+	import type { ColumnNames, ListObj, PriceListItem } from '$lib/types';
 	import { components } from '$lib/utils/styles';
 	import { isMobile } from '$lib/global.svelte';
 	import Icon from '../widgets/Icon.svelte';
@@ -17,29 +17,27 @@
 	import BadgeList from '../widgets/BadgeList.svelte';
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
+	import type { Kaljakori } from '$lib/alko';
 
-	let { product, kaljakori } = $props();
+	let defaultSimilarityRestrictions = new Set([
+		AllColumns.Type,
+		AllColumns.SubType,
+		AllColumns.BeerType,
+		AllColumns.Price,
+		AllColumns.BottleSize,
+		AllColumns.Sugar,
+		AllColumns.PackagingType,
+		AllColumns.AlcoholGramsPerEuro,
+		AllColumns.GrapeVarieties,
+		AllColumns.Description
+	])
+
+	let { product, kaljakori, show = { source: true }, limit = kaljakori.data.length, restrictions = defaultSimilarityRestrictions }: {product: PriceListItem, kaljakori: Kaljakori, show?: { source?: boolean }, limit?: number, restrictions?: Set<ColumnNames> } = $props();
 
 	let listRef: SvelteVirtualList<PriceListItem | null> | null = $state(null);
     let showScrollToTopButton = $state(false);
 
-	let similarProducts = findSimilarProducts(
-		product,
-		kaljakori,
-		new Set([
-			AllColumns.Type,
-			AllColumns.SubType,
-			AllColumns.BeerType,
-			AllColumns.Price,
-			AllColumns.BottleSize,
-			AllColumns.Sugar,
-			AllColumns.PackagingType,
-			AllColumns.AlcoholGramsPerEuro,
-			AllColumns.GrapeVarieties,
-			AllColumns.Description
-		]),
-		kaljakori.data.length
-	);
+	let similarProducts = $derived(findSimilarProducts(product, kaljakori, restrictions, limit));
 
 	function handleBack() {
 		if (window.history.length > 1) window.history.back();
@@ -83,6 +81,7 @@
 		>
 			{#snippet renderItem(item, idx: number)}
 				{#if idx === 0}
+					{#if show.source}
                     <div class="flex w-full flex-col gap-3">
                         <div class="grid w-full grid-cols-1 md:grid-cols-[auto_1fr]">
                             <div class="flex aspect-square h-56 w-full max-w-full p-6 md:w-fit">
@@ -132,6 +131,7 @@
                             <hr class="border-gray-300">
                         </div>
                     </div>
+					{/if}
 				{:else}
 					<ProductPreview product={item} {kaljakori}>
 						{#snippet renderExtras()}
@@ -155,7 +155,7 @@
 									<h2 class="text-xl">Valitse lista</h2>
 									<AllLists
 										action={(list: ListObj) => {
-											addToList(list, item[AllColumns.Number]);
+											addToList(list, item![AllColumns.Number]);
 											dialogElement.close();
 										}}
 									/>

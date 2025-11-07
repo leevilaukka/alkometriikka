@@ -86,19 +86,17 @@
 					<StringInput
 						defaultValue={[]}
 						label={headerToDisplayName(filter)}
-						options={possibleValues}
-						bind:value={filterValues[filter]}
+						options={possibleValues as string[]}
+						bind:value={filterValues[filter] as string[]}
 						bind:modified={filterActiveState[filter]}
-						name={filter}
 					/>
 				{:else}
 					<StringInput
 						defaultValue={[]}
 						label={headerToDisplayName(filter)}
-						options={possibleValues}
-						bind:value={filterValues[filter]}
+						options={possibleValues as string[]}
+						bind:value={filterValues[filter] as string[]}
 						bind:modified={filterActiveState[filter]}
-						name={filter}
 					/>
 				{/if}
 				{#if Object.hasOwn(subCategoryMap, filter) && filterValues[filter].length === 1}
@@ -109,8 +107,7 @@
 							defaultValue={[]}
 							label={headerToDisplayName(subFilter)}
 							options={subFilterValues}
-							bind:value={filterValues[subFilter]}
-							name={subFilter}
+							bind:value={filterValues[subFilter] as string[]}
 						/>
 					{/if}
 				{/if}

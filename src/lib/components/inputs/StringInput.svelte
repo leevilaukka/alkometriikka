@@ -5,9 +5,19 @@
 	import Popup from '../widgets/Popup.svelte';
 	import { getRandom } from '$lib/utils/helpers';
 	import { isSafari } from '$lib/global.svelte';
-
-	let { defaultValue = [], value = $bindable(defaultValue), modified = $bindable(false), options = [], label, ...rest } = $props();
 	
+	type Props = {
+		defaultValue?: string[];
+		value?: string[];
+		modified?: boolean;
+		options: string[];
+		label: string;
+		multiple?: boolean;
+		onchange?: (value: string[]) => void;
+		oninput?: (value: string[]) => void;
+	};
+	let { defaultValue = [], value = $bindable(defaultValue), modified = $bindable(false), options = [], label, multiple = true, onchange = (value: string[]) => {}, oninput = (value: string[]) => {}, ...rest }: Props = $props();
+
 	const name = "stringinput-" + getRandom();
 
 	type ListItem = {
@@ -26,6 +36,10 @@
 		if (!value) return;
 		if (value.length === 0) list = options.map((option) => ({ value: option, selected: false }));
 	});
+
+	$effect(() => {
+		oninput(value)
+	})
 
 	const text = $derived.by(() => {
 		if (!value) return 'Ei valintoja';
@@ -51,7 +65,7 @@
 				}}
 			/>
 	{:else}
-		<Popup class={twMerge("p-4 gap-4", $isSafari && "h-auto")}>
+		<Popup onclose={() => { onchange(value) }} class={twMerge("p-4 gap-4", $isSafari && "h-auto")}>
 			{#snippet renderButton(dialogElement: HTMLDialogElement)}
 				<button
 					{name}
@@ -103,6 +117,7 @@
 							{#snippet renderItem(item: ListItem, index: number)}
 								<button
 									onclick={() => {
+										if(!multiple && !item.selected) list.forEach(option => option.selected = false)
 										item.selected = !item.selected;
 										value = list.filter((option) => option.selected).map((option) => option.value);
 									}}
