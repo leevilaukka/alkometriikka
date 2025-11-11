@@ -84,8 +84,8 @@
 			{#snippet renderItem(item, idx: number)}
 				{#if idx === 0}
                     <div class="flex w-full flex-col gap-3">
-                        <div class="grid w-full grid-cols-1 md:grid-cols-[auto_1fr]">
-                            <div class="flex aspect-square h-56 w-full max-w-full p-6 md:w-fit">
+                        <div class="grid w-full grid-cols-1 md:grid-cols-[auto_1fr] gap-6">
+                            <div class="flex aspect-square h-56 w-full max-w-full p-6 md:w-fit bg-white rounded">
                                 <ProductImage
                                     number={product[AllColumns.Number]}
                                     name={product[AllColumns.Name]}
@@ -111,7 +111,7 @@
                                             ? `| ${valueToString(product[AllColumns.Vintage], AllColumns.Vintage)}`
                                             : ''}</span
                                     >
-                                    <p class="w-fit rounded bg-gray-200 px-1">{product[AllColumns.Availability]}</p>
+                                    <p class="w-fit rounded bg-gray-100 dark:bg-zinc-700 dark:text-white px-1">{product[AllColumns.Availability]}</p>
                                     <div class="flex w-full flex-row gap-2 md:flex-row">
                                         <BadgeList item={product} />
                                     </div>
@@ -120,23 +120,23 @@
                                     <p class="text-4xl font-bold">
                                         {product[AllColumns.Price].toFixed(2)} €
                                     </p>
-                                    <span class="text-sm text-gray-500">
+                                    <span class="text-sm text-secondary">
                                         ({product[AllColumns.PricePerLiter]} €/L)
                                     </span>
                                 </div>
                             </div>
                         </div>
                         <div class="grid grid-cols-[1fr_auto_1fr] items-center gap-3">
-                            <hr class="border-gray-300">
-                            <span class="text-sm text-gray-500">Vastaavin ensin</span>
-                            <hr class="border-gray-300">
+                            <hr class="border-primary">
+                            <span class="text-sm text-secondary">Vastaavin ensin</span>
+                            <hr class="border-primary">
                         </div>
                     </div>
 				{:else}
 					<ProductPreview product={item} {kaljakori}>
 						{#snippet renderExtras()}
 							<div
-								class="absolute top-0 left-0 flex flex-nowrap items-center gap-0.5 rounded-br bg-gray-100 px-1.5 py-0.5 text-sm text-gray-500"
+								class="absolute top-0 left-0 flex flex-nowrap items-center gap-0.5 rounded-br bg-gray-100 dark:bg-zinc-700 px-1.5 py-0.5 text-sm text-secondary"
 							>
 								<Icon name="hashtag" />
 								<span>{`${idx}`}</span>

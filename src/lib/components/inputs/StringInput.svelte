@@ -88,10 +88,10 @@
 						type="text"
 						bind:value={query}
 						placeholder="Hae..."
-						class="order-2 flex shrink-0 rounded border border-gray-300 px-1.5 py-0.5"
+						class={twMerge(components.input(), "w-full")}
 					/>
 					<div
-						class="order-4 col-span-full flex h-[var(--height)] max-h-full flex-col overflow-auto rounded border border-gray-300 lg:order-3 lg:col-span-1"
+						class="order-4 col-span-full flex h-[var(--height)] max-h-full flex-col overflow-auto rounded border border-primary lg:order-3 lg:col-span-1"
 						style:--height={`${28 * 20}px;`}
 					>
 						<SvelteVirtualList
@@ -106,7 +106,7 @@
 										item.selected = !item.selected;
 										value = list.filter((option) => option.selected).map((option) => option.value);
 									}}
-									class={twMerge(components.button(), 'w-full rounded-none border-none', index % 2 === 0 ? 'bg-gray-200' : 'bg-white', item.selected ? 'font-bold' : '')}
+									class={twMerge(components.button(), 'w-full rounded-none border-none', index % 2 === 0 && 'bg-gray-200 dark:bg-zinc-900', item.selected ? 'font-bold' : '')}
 								>
 									<span
 										class="max-w-full overflow-hidden overflow-ellipsis whitespace-nowrap"

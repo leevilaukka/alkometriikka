@@ -85,11 +85,11 @@
 
 <div class="relative grid h-full grid-cols-[auto_1fr] max-h-full overflow-hidden">
 	<aside
-		class="z-10 flex h-full flex-col max-h-full overflow-hidden border-gray-300 md:w-84 md:border-r"
+		class="z-10 flex h-full flex-col max-h-full overflow-hidden border-primary md:w-84 md:border-r"
 	>
 		<Filters {kaljakori} bind:activeFilters bind:filterValues bind:this={filtersComponent} />
 	</aside>
-	<main class="mx-auto flex h-full w-full flex-col gap-3 bg-gray-50 p-4 md:gap-4 md:p-6">
+	<main class="mx-auto flex h-full w-full flex-col gap-3 bg-secondary p-4 md:gap-4 md:p-6">
 		<div class="flex w-full flex-col items-start gap-4">
 			<div class={twMerge('grid w-full grid-cols-2 items-end gap-2 md:w-fit')}>
 				<div class="flex flex-col">
@@ -174,7 +174,7 @@
 					<ProductPreview product={item} highlight={selectedHighlight} {kaljakori}>
 						{#snippet renderExtras()}
 							<div
-								class="absolute top-0 left-0 flex flex-nowrap items-center gap-0.5 rounded-br bg-gray-100 px-1.5 py-0.5 text-sm text-gray-500"
+								class="absolute top-0 left-0 flex flex-nowrap items-center gap-0.5 rounded-br bg-gray-100 dark:bg-zinc-700 px-1.5 py-0.5 text-sm text-secondary"
 							>
 								<Icon name="hashtag" />
 								<span>{`${(idx + 1)}`}</span>

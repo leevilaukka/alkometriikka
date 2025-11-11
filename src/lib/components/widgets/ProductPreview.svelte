@@ -12,7 +12,7 @@
 
 <div
     class={twMerge(
-        'relative flex flex-col overflow-clip rounded border border-gray-200 bg-white'
+        'relative flex flex-col overflow-clip rounded border border-primary bg-primary'
     )}
 >
     <div
@@ -67,7 +67,7 @@
                     </p>
                 </div>
             </div>
-            <div class="flex items-center gap-2 text-sm text-gray-500">
+            <div class="flex items-center gap-2 text-sm text-secondary">
                 <Icon name="map_pin" />
                 <span class="text-sm">
                     {product[AllColumns.Country]}
@@ -83,11 +83,11 @@
                         ).toFixed(2)} €
                     </p>
                     {#if quantity > 1}
-                        <span class="text-sm text-gray-500">
+                        <span class="text-sm text-secondary">
                             @ {product[AllColumns.Price]} € / kpl
                         </span>
                     {/if}
-                    <span class="text-sm text-gray-500">
+                    <span class="text-sm text-secondary">
                         ({product[AllColumns.PricePerLiter]} €/L)
                     </span>
                 </div>

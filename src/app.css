@@ -9,6 +9,22 @@
     --color-brand-4: rgb(82, 0, 10); /* #52000A */
 }
 
+@utility bg-primary {
+    @apply bg-white dark:bg-zinc-900;
+}
+
+@utility bg-secondary {
+    @apply bg-gray-100 dark:bg-zinc-950;
+}
+
+@utility border-primary {
+    @apply border-gray-300 dark:border-zinc-700;
+}
+
+@utility text-secondary {
+    @apply text-gray-500 dark:text-zinc-400;
+}
+
 /* icons */
 @font-face {
     font-family: 'icons';
@@ -32,8 +48,8 @@
 }
 
 :root {
-    @apply text-sm md:text-base;
     font-size: 14px;
+    @apply text-black dark:text-white bg-primary;
 }
 
 body, html {
@@ -62,6 +78,7 @@ input:focus {
 
 dialog[open] {
     display: flex;
+    @apply text-black dark:text-white;
 }
 
 .hide-number-input::-webkit-outer-spin-button,

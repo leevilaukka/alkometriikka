@@ -136,7 +136,7 @@
 		<div class="flex flex-col gap-4 p-4">
 			<h2 class="text-center text-xl font-bold">Skannaa viivakoodi</h2>
 			<p class="text-center">Skannaa tuotteen viivakoodi kameralla tai lataa kuva viivakoodista.</p>
-			<div class="border-2 border-dashed border-gray-400 p-4 text-center">
+			<div class="border-2 border-dashed border-primary p-4 text-center">
 				<label class="cursor-pointer">
 					<input type="file" accept="image/*" class="hidden" onchange={handleFileUpload} />
 					<div class="flex flex-col items-center justify-center">

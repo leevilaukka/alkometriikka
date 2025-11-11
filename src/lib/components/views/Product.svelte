@@ -80,8 +80,8 @@
 			<span>{window.history.length > 1 ? 'Takaisin' : 'Etusivulle'}</span>
 		</button>
 	</div>
-	<div class="grid w-full grid-cols-1 md:grid-cols-[auto_1fr]">
-		<div class="flex aspect-square h-96 w-full max-w-full p-6 md:w-fit">
+	<div class="grid w-full grid-cols-1 gap-6 md:grid-cols-[auto_1fr]">
+		<div class="flex aspect-square h-96 w-full max-w-full p-6 md:w-fit bg-white rounded">
 			<ProductImage
 				number={product[AllColumns.Number]}
 				name={product[AllColumns.Name]}
@@ -103,7 +103,7 @@
 						? `| ${valueToString(product[AllColumns.Vintage], AllColumns.Vintage)}`
 						: ''}</span
 				>
-				<p class="w-fit rounded bg-gray-200 px-1">{product[AllColumns.Availability]}</p>
+				<p class="w-fit rounded bg-gray-100 dark:bg-zinc-700 dark:text-white px-1">{product[AllColumns.Availability]}</p>
 				<div class="flex w-full flex-row gap-2 md:flex-row">
 					<BadgeList item={product} />
 				</div>
@@ -112,7 +112,7 @@
 				<p class="text-4xl font-bold">
 					{product[AllColumns.Price].toFixed(2)} €
 				</p>
-				<span class="text-sm text-gray-500">
+				<span class="text-sm text-secondary">
 					({product[AllColumns.PricePerLiter]} €/L)
 				</span>
 			</div>
@@ -149,10 +149,10 @@
 			<Icon name="link_external" class="inline-block" />
 		</a>
 	</div>
-	<div class="flex w-full flex-col gap-2 rounded border border-gray-300 bg-gray-200 p-4">
+	<div class="flex w-full flex-col gap-4 rounded border border-primary bg-secondary p-4">
 		<div class="flex flex-col items-start gap-0.5 md:flex-row md:gap-3">
 			<div class="flex flex-col gap-0.5 md:gap-1">
-				<h2 class="text-lg font-bold">Perustiedot</h2>
+				<h2 class="text-xl font-bold">Perustiedot</h2>
 				{#each Object.entries(DatasetColumns) as [_, value]}
 					{@const hasValue = valueToString(product[value]).length > 0}
 					{#if hasValue && !hideFromProductPageStats.has(value as (typeof DatasetColumns)[keyof typeof DatasetColumns])}
@@ -167,7 +167,7 @@
 			</div>
 		</div>
 		<div class="flex flex-col gap-0.5 md:gap-1">
-			<h2 class="text-lg font-bold">Laskennalliset tiedot</h2>
+			<h2 class="text-xl font-bold">Laskennalliset tiedot</h2>
 			{#each Object.entries(DrunkColumns) as [_, value]}
 				{#if product[value] !== null && product[value] !== undefined}
 					<p>
@@ -192,7 +192,7 @@
 			{#each similarProducts as similarProduct}
 				<a
 					href={`/tuotteet/${similarProduct[AllColumns.Number]}`}
-					class="flex w-48 shrink-0 flex-col gap-3 rounded-lg border border-gray-300 p-4"
+					class="flex w-48 shrink-0 flex-col gap-3 rounded-lg border border-primary p-4"
 				>
 					<div class="flex flex-col gap-2 h-[calc(3_*_2.5rem)] md:h-[calc(3_*_2.75rem)]">
 						<h2
@@ -204,7 +204,7 @@
 							{formatValue(similarProduct[AllColumns.AlcoholPercentage], AllColumns.AlcoholPercentage)}
 						</span>
 					</div>
-					<div class="flex aspect-square w-full shrink-0 p-2 md:max-w-fit">
+					<div class="flex aspect-square w-full shrink-0 p-2 md:max-w-fit bg-white rounded">
 						<ProductImage
 							number={similarProduct[AllColumns.Number]}
 							name={similarProduct[AllColumns.Name]}
@@ -216,7 +216,7 @@
 						<p class="text-3xl font-bold drop-shadow-lg">
 							{similarProduct[AllColumns.Price].toFixed(2)} €
 						</p>
-						<span class="text-sm text-gray-500">
+						<span class="text-sm text-secondary">
 							{formatValue(similarProduct[AllColumns.BottleSize], AllColumns.BottleSize)} ({similarProduct[
 								AllColumns.PricePerLiter
 							]} €/L)

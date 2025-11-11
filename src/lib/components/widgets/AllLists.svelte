@@ -23,7 +23,7 @@
             {#each lists.filter(list => { return (useSearch && $searchQuery) ? isSimilarString(list.name, $searchQuery) : true }) as list}
                 <a 
                     href={`/listat?list=${listToURI(list)}`} 
-                    class="flex justify-between items-center gap-2 p-2 border rounded border-gray-300" 
+                    class="flex justify-between items-center gap-2 p-2 border rounded border-primary" 
                     onclick={(e) => {
                         if(action && typeof action === "function") {
                             e.preventDefault();
@@ -37,7 +37,7 @@
                         <p aria-label={list.name} class={twMerge("w-full justify-start text-lg")}>
                             <span>{list.name}</span>
                         </p>
-                        <p aria-label={list.name} class={twMerge("w-full justify-start text-gray-600 text-sm")}>
+                        <p aria-label={list.name} class={twMerge("w-full justify-start text-secondary text-sm")}>
                             <span>{`Tuotteet: ${list.items.length}`}</span>
                         </p>
                     </div>
