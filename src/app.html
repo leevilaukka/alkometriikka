@@ -1,219 +1,244 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="keywords" content="alkometriikka, alkometri, promillelaskuri, promillet, alko, juomat, suodattaminen, suodatus, hinnat, vertailu, alkoholi, viina, viinit, oluet, siiderit, lonkerot, juomalistat, listat, jaa" />
-		<meta name="twitter:title" content="Alkometriikka" />
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:image" content="/images/twitter_image.png" />
-		<meta property="og:title" content="Alkometriikka" />
-		<meta property="og:url" content="https://alkometriikka.fi" />
-		<meta property="og:description" content="Selaa Alkon tuotevalikoimaa, ja luo jaettavia listoja helposti!" />
-		<meta property="og:image" content="/images/og_image.png" />
-		<meta property="og:image:width" content="1200" />
-		<meta property="og:image:height" content="630" />
-		<meta property="og:image:alt" content="Alkometriikka logo" />
-		<meta name="twitter:description" content="Selaa Alkon tuotevalikoimaa, ja luo jaettavia listoja helposti!" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="description" content="Vertaa kuin ammattilainen: Selvitä juomien todellinen hinta-tehosuhde. Tee viisaita valintoja ja jaa valmiit tuotelistat yhdellä klikkauksella!" />
-		<link rel="manifest" href="/manifest.json" />
-		<title>Alkometriikka</title>
-		%sveltekit.head%
-		<style>
-			:root {
-				--loader-color-1: rgb(229, 27, 21);
-				--loader-color-2: rgb(191, 22, 22);
-				--loader-color-3: rgb(150, 15, 15);
-    			--loader-color-4: rgb(82, 0, 10);
-				font-size: 14px;
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="keywords"
+		content="alkometriikka, alkometri, promillelaskuri, promillet, alko, juomat, suodattaminen, suodatus, hinnat, vertailu, alkoholi, viina, viinit, oluet, siiderit, lonkerot, juomalistat, listat, jaa" />
+	<meta name="twitter:title" content="Alkometriikka" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:image" content="/images/twitter_image.png" />
+	<meta property="og:title" content="Alkometriikka" />
+	<meta property="og:url" content="https://alkometriikka.fi" />
+	<meta property="og:description" content="Selaa Alkon tuotevalikoimaa, ja luo jaettavia listoja helposti!" />
+	<meta property="og:image" content="/images/og_image.png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta property="og:image:alt" content="Alkometriikka logo" />
+	<meta name="twitter:description" content="Selaa Alkon tuotevalikoimaa, ja luo jaettavia listoja helposti!" />
+	<link rel="icon" href="/favicon.ico" />
+	<meta name="description"
+		content="Vertaa kuin ammattilainen: Selvitä juomien todellinen hinta-tehosuhde. Tee viisaita valintoja ja jaa valmiit tuotelistat yhdellä klikkauksella!" />
+	<link rel="manifest" href="/manifest.json" />
+	<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)" />
+	<meta name="theme-color" content="#18181b" media="(prefers-color-scheme: dark)" />
+	<title>Alkometriikka</title>
+	%sveltekit.head%
+	<style>
+		:root {
+			--loader-color-1: rgb(229, 27, 21);
+			--loader-color-2: rgb(191, 22, 22);
+			--loader-color-3: rgb(150, 15, 15);
+			--loader-color-4: rgb(82, 0, 10);
+			font-size: 14px;
+		}
+
+		#main-loader {
+			position: fixed;
+			inset: 0;
+			z-index: 999999;
+			display: grid;
+			grid-template-columns: 1fr auto 1fr;
+			grid-template-rows: 1fr auto;
+			align-items: end;
+			background: white;
+			transition: transform 500ms ease-in-out;
+			background-color: white;
+
+			@media (prefers-color-scheme: dark) {
+				background-color: var(--loader-color-4);
+			}
+		}
+
+
+
+		#main-loader.shift {
+			transform: translateY(-100%);
+		}
+
+		#loader-header {
+			grid-column: 1/-1;
+			display: grid;
+			place-content: center;
+			text-align: center;
+			gap: 0.5rem;
+			height: 100%;
+			font-family: sans-serif;
+		}
+
+		#loader-header svg {
+			display: block;
+			height: 4.5rem;
+			aspect-ratio: 263.28/69.19;
+			fill: var(--loader-color-3);
+
+			@media (prefers-color-scheme: dark) {
+				fill: white;
+			}
+		}
+
+		#main-loader .loader-bar {
+			display: block;
+			animation: oscillate 2s infinite linear;
+		}
+
+		#main-loader .loader-center {
+			display: flex;
+			flex-direction: column;
+			justify-content: end;
+			height: 33.333vh;
+			aspect-ratio: 341.34/927.22;
+			fill: var(--loader-color-2);
+		}
+
+		#main-loader .loader-left {
+			display: flex;
+			flex-direction: row-reverse;
+			justify-content: end;
+			align-items: end;
+			height: 55%;
+			flex-shrink: 0;
+			overflow: hidden;
+
+			& .loader-bar {
+				background: var(--loader-color-1);
 			}
 
-			#main-loader {
-				position: fixed;
-				inset: 0;
-				z-index: 999999;
-				display: grid;
-				grid-template-columns: 1fr auto 1fr;
-				grid-template-rows: 1fr auto;
-				align-items: end;
-				background: white;
-				transition: transform 500ms ease-in-out;
-				background-color: white;
-				@media (prefers-color-scheme: dark) {
-					background-color: var(--loader-color-4);
-				}
+			& .loader-bar:nth-child(2n) {
+				background: var(--loader-color-2);
 			}
 
-			
+			& .loader-bar:nth-child(3n) {
+				background: var(--loader-color-3);
+			}
+		}
 
-			#main-loader.shift {
-				transform: translateY(-100%);
+		#main-loader .loader-right {
+			display: flex;
+			flex-direction: row;
+			justify-content: start;
+			align-items: end;
+			height: 55%;
+			flex-shrink: 0;
+			overflow: hidden;
+
+			& .loader-bar {
+				background: var(--loader-color-3);
 			}
 
-			#loader-header {
-				grid-column: 1/-1;
-				display: grid;
-				place-content: center;
-				text-align: center;
-				gap: 0.5rem;
+			& .loader-bar:nth-child(2n) {
+				background: var(--loader-color-2);
+			}
+
+			& .loader-bar:nth-child(3n) {
+				background: var(--loader-color-1);
+			}
+		}
+
+		@keyframes oscillate {
+			0% {
+				height: 20%;
+			}
+
+			50% {
 				height: 100%;
-				font-family: sans-serif;
 			}
 
-			#loader-header svg {
-				display: block;
-				height: 4.5rem;
-				aspect-ratio: 263.28/69.19;
-				fill: var(--loader-color-3);
-				@media (prefers-color-scheme: dark) {
-					fill: white;
-				}
+			100% {
+				height: 20%;
 			}
+		}
+	</style>
+</head>
+<!-- Simple Analytics - simpleanalytics.com -->
+<script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 
-			#main-loader .loader-bar {
-				display: block;
-				animation: oscillate 2s infinite linear;
-			}
-
-			#main-loader .loader-center {
-				display: flex;
-				flex-direction: column;
-				justify-content: end;
-				height: 33.333vh;
-				aspect-ratio: 341.34/927.22;
-				fill: var(--loader-color-2);
-			}
-
-			#main-loader .loader-left {
-				display: flex;
-				flex-direction: row-reverse;
-				justify-content: end;
-				align-items: end;
-				height: 55%;
-				flex-shrink: 0;
-				overflow: hidden;
-
-				& .loader-bar {
-					background: var(--loader-color-1);
-				}
-
-				& .loader-bar:nth-child(2n) {
-					background: var(--loader-color-2);
-				}
-
-				& .loader-bar:nth-child(3n) {
-					background: var(--loader-color-3);
-				}
-			}
-
-			#main-loader .loader-right {
-				display: flex;
-				flex-direction: row;
-				justify-content: start;
-				align-items: end;
-				height: 55%;
-				flex-shrink: 0;
-				overflow: hidden;
-
-				& .loader-bar {
-					background: var(--loader-color-3);
-				}
-
-				& .loader-bar:nth-child(2n) {
-					background: var(--loader-color-2);
-				}
-
-				& .loader-bar:nth-child(3n) {
-					background: var(--loader-color-1);
-				}
-			}
-
-			@keyframes oscillate {
-				0% {
-					height: 20%;
-				}
-				50% {
-					height: 100%;
-				}
-				100% {
-					height: 20%;
-				}
-			}
-		</style>
-	</head>
-	<!-- Simple Analytics - simpleanalytics.com -->
-	<script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
-	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">%sveltekit.body%</div>
-		<div open id="main-loader">
-			<div id="loader-header">
-				<svg id="loading-graphic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 263.28 69.19">
-					<g>
-						<path class="loading-graphic-text" d="M17.52,1.58h-7.71L0,30.3h6.49l2.14-6.67h10.2l2.21,6.67h6.54L17.52,1.58ZM10.1,19.02l.83-2.58c.52-1.75,1.05-3.69,1.59-5.83.34-1.39.71-2.85,1.09-4.4.39,1.54.77,2.99,1.14,4.36.57,2.13,1.14,4.09,1.69,5.87l.86,2.58h-7.2Z"/>
-						<path class="loading-graphic-text" d="M36.77,1.58v28.71h-5.78V1.58h5.78Z"/>
-						<polygon class="loading-graphic-text" points="61.94 30.3 55.13 30.3 49.12 21.52 47.46 23.39 47.46 30.3 41.68 30.3 41.68 1.58 47.46 1.58 47.46 17.04 47.79 17.04 54.84 8.75 61.53 8.75 53.47 18.11 61.94 30.3"/>
-						<path class="loading-graphic-text" d="M73.33,30.72c-2.16,0-4.03-.47-5.61-1.4-1.58-.93-2.8-2.23-3.65-3.89s-1.28-3.6-1.28-5.81.43-4.19,1.28-5.85c.85-1.66,2.07-2.96,3.65-3.89,1.58-.93,3.45-1.4,5.61-1.4s4.04.47,5.62,1.4c1.57.93,2.79,2.23,3.64,3.89.85,1.66,1.28,3.61,1.28,5.85s-.43,4.15-1.28,5.81c-.85,1.66-2.07,2.96-3.64,3.89-1.57.93-3.45,1.4-5.62,1.4ZM73.33,26.17c1.03,0,1.89-.29,2.58-.86.69-.57,1.21-1.36,1.56-2.35.35-1,.52-2.12.52-3.36s-.17-2.4-.52-3.39c-.35-.99-.87-1.77-1.56-2.33-.69-.57-1.55-.85-2.58-.85s-1.89.28-2.57.85c-.69.57-1.2,1.34-1.55,2.33-.35.99-.52,2.12-.52,3.39s.17,2.37.52,3.36c.35,1,.86,1.78,1.55,2.35.69.57,1.54.86,2.57.86Z"/>
-						<path class="loading-graphic-text" d="M118.98,15.77v14.53h-5.78v-13.43c0-1.23-.33-2.13-1-2.72-.66-.59-1.47-.89-2.43-.89-.72,0-1.35.16-1.88.47-.54.32-.95.76-1.24,1.32-.28.57-.43,1.23-.43,1.99v13.26h-5.59v-13.59c0-1.05-.31-1.89-.93-2.51s-1.43-.94-2.42-.94c-.68,0-1.3.16-1.84.46-.55.31-.98.77-1.29,1.36-.32.6-.47,1.33-.47,2.19v13.03h-5.79V8.75h5.36l.23,4.21c.29-.81.66-1.51,1.11-2.09.65-.83,1.41-1.45,2.28-1.85.88-.4,1.8-.59,2.76-.59,1.55,0,2.81.49,3.76,1.47.75.78,1.35,1.89,1.78,3.34.31-.84.71-1.57,1.21-2.18.73-.9,1.59-1.56,2.59-1.99.99-.43,2.04-.64,3.13-.64,1.32,0,2.5.28,3.53.86,1.04.58,1.85,1.41,2.45,2.5.6,1.08.9,2.41.9,3.98Z"/>
-						<path class="loading-graphic-text" d="M143.47,19.41c0-1.85-.26-3.46-.78-4.82-.52-1.36-1.24-2.49-2.17-3.4-.92-.91-2-1.58-3.22-2.03-1.22-.45-2.53-.68-3.95-.68-2.09,0-3.91.47-5.47,1.41-1.55.94-2.75,2.24-3.6,3.91-.85,1.67-1.27,3.62-1.27,5.84s.42,4.24,1.28,5.9c.85,1.65,2.08,2.93,3.67,3.83,1.59.9,3.49,1.35,5.68,1.35,1.69,0,3.17-.24,4.46-.73,1.3-.49,2.37-1.18,3.23-2.07.86-.9,1.47-1.93,1.81-3.11l-5.24-.99c-.2.55-.5,1.02-.89,1.4-.4.38-.87.66-1.42.86-.55.19-1.17.29-1.85.29-1,0-1.88-.22-2.63-.64-.75-.42-1.34-1.06-1.75-1.91-.38-.77-.59-1.69-.61-2.79h14.72v-1.62ZM128.76,17.41c.07-.74.24-1.4.51-2,.36-.79.89-1.42,1.59-1.88.7-.46,1.55-.69,2.55-.69s1.82.23,2.5.68c.67.46,1.18,1.1,1.52,1.93.24.58.39,1.24.46,1.96h-9.13Z"/>
-						<path class="loading-graphic-text" d="M158.71,30.09c-.64.19-1.28.32-1.91.4-.64.08-1.25.12-1.82.12-2.16,0-3.81-.53-4.96-1.58-1.14-1.06-1.71-2.57-1.71-4.53v-11.33h-2.97v-4.42h2.97V3.63h5.78v5.12h4.03v4.42h-4.03v10.83c0,.68.15,1.18.45,1.51s.81.49,1.51.49c.22,0,.53-.03.93-.09.4-.05.7-.11.91-.16l.82,4.34Z"/>
-						<path class="loading-graphic-text" d="M161.87,30.29V8.75h5.59v3.76h.23c.4-1.34,1.06-2.34,2-3.03.93-.68,2-1.02,3.21-1.02.3,0,.62.02.96.05.35.03.65.08.91.14v5.16c-.26-.09-.63-.16-1.12-.21s-.95-.08-1.39-.08c-.87,0-1.66.19-2.37.57-.71.38-1.26.91-1.65,1.58-.39.67-.59,1.46-.59,2.36v12.26h-5.78Z"/>
-						<path class="loading-graphic-text" d="M181.01,5.94c-.87,0-1.62-.29-2.24-.87-.62-.58-.92-1.28-.92-2.1s.31-1.52.92-2.1c.62-.58,1.36-.87,2.24-.87s1.62.29,2.25.87.93,1.28.93,2.1-.31,1.52-.93,2.1-1.37.87-2.25.87ZM178.12,30.29V8.75h5.78v21.54h-5.78Z"/>
-						<path class="loading-graphic-text" d="M191.71,5.94c-.87,0-1.62-.29-2.24-.87-.62-.58-.92-1.28-.92-2.1s.31-1.52.92-2.1c.62-.58,1.36-.87,2.24-.87s1.62.29,2.25.87.93,1.28.93,2.1-.31,1.52-.93,2.1-1.37.87-2.25.87ZM188.82,30.29V8.75h5.78v21.54h-5.78Z"/>
-						<polygon class="loading-graphic-text" points="219.76 30.3 212.96 30.3 206.95 21.52 205.29 23.39 205.29 30.3 199.51 30.3 199.51 1.58 205.29 1.58 205.29 17.04 205.62 17.04 212.67 8.75 219.36 8.75 211.3 18.11 219.76 30.3"/>
-						<polygon class="loading-graphic-text" points="242.66 30.3 235.86 30.3 229.84 21.52 228.19 23.39 228.19 30.3 222.4 30.3 222.4 1.58 228.19 1.58 228.19 17.04 228.51 17.04 235.57 8.75 242.25 8.75 234.2 18.11 242.66 30.3"/>
-						<path class="loading-graphic-text" d="M251.31,30.72c-1.36,0-2.59-.24-3.67-.72-1.08-.48-1.94-1.2-2.56-2.16s-.93-2.15-.93-3.57c0-1.19.22-2.2.67-3.01.44-.81,1.05-1.46,1.81-1.95.76-.49,1.63-.86,2.6-1.12.97-.26,1.99-.44,3.05-.54,1.25-.13,2.25-.25,3.02-.36.76-.11,1.32-.28,1.68-.52.35-.24.53-.59.53-1.05v-.1c0-.62-.13-1.14-.39-1.56s-.64-.75-1.15-.97c-.51-.22-1.12-.34-1.84-.34s-1.39.11-1.95.34c-.55.23-1,.52-1.35.9-.35.37-.6.79-.77,1.25l-5.3-.87c.37-1.26.99-2.33,1.85-3.2.86-.87,1.93-1.54,3.21-2s2.72-.69,4.33-.69c1.16,0,2.28.14,3.37.41,1.09.28,2.07.7,2.94,1.28s1.55,1.33,2.06,2.26c.51.93.76,2.05.76,3.34v14.51h-5.47v-2.99h-.19c-.35.67-.81,1.26-1.39,1.76-.58.51-1.28.91-2.09,1.2-.82.29-1.76.44-2.82.44ZM252.95,26.65c.91,0,1.71-.18,2.4-.54.69-.36,1.22-.85,1.61-1.46.39-.62.58-1.3.58-2.06v-2.33c-.17.13-.42.24-.77.35-.35.1-.73.19-1.16.27s-.84.15-1.25.21c-.41.06-.78.12-1.1.15-.71.1-1.33.27-1.87.5-.54.23-.96.54-1.25.92-.3.38-.44.86-.44,1.45,0,.55.14,1.02.42,1.4s.67.66,1.16.86c.49.19,1.05.29,1.68.29Z"/>
-					</g>
-				</svg>
-			</div>
-			<div class="loader-left"></div>
-			<div class="loader-center">
-				<svg id="loader-bottle" data-name="loader-bottle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 341.34 927.22">
-					<path d="M341.34,376.9v550.32H0V376.9c0-60.39,31.37-113.45,78.7-143.79,15.25-9.77,24.63-26.48,24.63-44.58V0h134.68v188.53c0,18.11,9.39,34.81,24.63,44.58,47.33,30.34,78.7,83.4,78.7,143.79Z"/>
-				</svg>
-			</div>
-			<div class="loader-right"></div>
+<body data-sveltekit-preload-data="hover">
+	<div style="display: contents">%sveltekit.body%</div>
+	<div open id="main-loader">
+		<div id="loader-header">
+			<svg id="loading-graphic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 263.28 69.19">
+				<g>
+					<path class="loading-graphic-text"
+						d="M17.52,1.58h-7.71L0,30.3h6.49l2.14-6.67h10.2l2.21,6.67h6.54L17.52,1.58ZM10.1,19.02l.83-2.58c.52-1.75,1.05-3.69,1.59-5.83.34-1.39.71-2.85,1.09-4.4.39,1.54.77,2.99,1.14,4.36.57,2.13,1.14,4.09,1.69,5.87l.86,2.58h-7.2Z" />
+					<path class="loading-graphic-text" d="M36.77,1.58v28.71h-5.78V1.58h5.78Z" />
+					<polygon class="loading-graphic-text"
+						points="61.94 30.3 55.13 30.3 49.12 21.52 47.46 23.39 47.46 30.3 41.68 30.3 41.68 1.58 47.46 1.58 47.46 17.04 47.79 17.04 54.84 8.75 61.53 8.75 53.47 18.11 61.94 30.3" />
+					<path class="loading-graphic-text"
+						d="M73.33,30.72c-2.16,0-4.03-.47-5.61-1.4-1.58-.93-2.8-2.23-3.65-3.89s-1.28-3.6-1.28-5.81.43-4.19,1.28-5.85c.85-1.66,2.07-2.96,3.65-3.89,1.58-.93,3.45-1.4,5.61-1.4s4.04.47,5.62,1.4c1.57.93,2.79,2.23,3.64,3.89.85,1.66,1.28,3.61,1.28,5.85s-.43,4.15-1.28,5.81c-.85,1.66-2.07,2.96-3.64,3.89-1.57.93-3.45,1.4-5.62,1.4ZM73.33,26.17c1.03,0,1.89-.29,2.58-.86.69-.57,1.21-1.36,1.56-2.35.35-1,.52-2.12.52-3.36s-.17-2.4-.52-3.39c-.35-.99-.87-1.77-1.56-2.33-.69-.57-1.55-.85-2.58-.85s-1.89.28-2.57.85c-.69.57-1.2,1.34-1.55,2.33-.35.99-.52,2.12-.52,3.39s.17,2.37.52,3.36c.35,1,.86,1.78,1.55,2.35.69.57,1.54.86,2.57.86Z" />
+					<path class="loading-graphic-text"
+						d="M118.98,15.77v14.53h-5.78v-13.43c0-1.23-.33-2.13-1-2.72-.66-.59-1.47-.89-2.43-.89-.72,0-1.35.16-1.88.47-.54.32-.95.76-1.24,1.32-.28.57-.43,1.23-.43,1.99v13.26h-5.59v-13.59c0-1.05-.31-1.89-.93-2.51s-1.43-.94-2.42-.94c-.68,0-1.3.16-1.84.46-.55.31-.98.77-1.29,1.36-.32.6-.47,1.33-.47,2.19v13.03h-5.79V8.75h5.36l.23,4.21c.29-.81.66-1.51,1.11-2.09.65-.83,1.41-1.45,2.28-1.85.88-.4,1.8-.59,2.76-.59,1.55,0,2.81.49,3.76,1.47.75.78,1.35,1.89,1.78,3.34.31-.84.71-1.57,1.21-2.18.73-.9,1.59-1.56,2.59-1.99.99-.43,2.04-.64,3.13-.64,1.32,0,2.5.28,3.53.86,1.04.58,1.85,1.41,2.45,2.5.6,1.08.9,2.41.9,3.98Z" />
+					<path class="loading-graphic-text"
+						d="M143.47,19.41c0-1.85-.26-3.46-.78-4.82-.52-1.36-1.24-2.49-2.17-3.4-.92-.91-2-1.58-3.22-2.03-1.22-.45-2.53-.68-3.95-.68-2.09,0-3.91.47-5.47,1.41-1.55.94-2.75,2.24-3.6,3.91-.85,1.67-1.27,3.62-1.27,5.84s.42,4.24,1.28,5.9c.85,1.65,2.08,2.93,3.67,3.83,1.59.9,3.49,1.35,5.68,1.35,1.69,0,3.17-.24,4.46-.73,1.3-.49,2.37-1.18,3.23-2.07.86-.9,1.47-1.93,1.81-3.11l-5.24-.99c-.2.55-.5,1.02-.89,1.4-.4.38-.87.66-1.42.86-.55.19-1.17.29-1.85.29-1,0-1.88-.22-2.63-.64-.75-.42-1.34-1.06-1.75-1.91-.38-.77-.59-1.69-.61-2.79h14.72v-1.62ZM128.76,17.41c.07-.74.24-1.4.51-2,.36-.79.89-1.42,1.59-1.88.7-.46,1.55-.69,2.55-.69s1.82.23,2.5.68c.67.46,1.18,1.1,1.52,1.93.24.58.39,1.24.46,1.96h-9.13Z" />
+					<path class="loading-graphic-text"
+						d="M158.71,30.09c-.64.19-1.28.32-1.91.4-.64.08-1.25.12-1.82.12-2.16,0-3.81-.53-4.96-1.58-1.14-1.06-1.71-2.57-1.71-4.53v-11.33h-2.97v-4.42h2.97V3.63h5.78v5.12h4.03v4.42h-4.03v10.83c0,.68.15,1.18.45,1.51s.81.49,1.51.49c.22,0,.53-.03.93-.09.4-.05.7-.11.91-.16l.82,4.34Z" />
+					<path class="loading-graphic-text"
+						d="M161.87,30.29V8.75h5.59v3.76h.23c.4-1.34,1.06-2.34,2-3.03.93-.68,2-1.02,3.21-1.02.3,0,.62.02.96.05.35.03.65.08.91.14v5.16c-.26-.09-.63-.16-1.12-.21s-.95-.08-1.39-.08c-.87,0-1.66.19-2.37.57-.71.38-1.26.91-1.65,1.58-.39.67-.59,1.46-.59,2.36v12.26h-5.78Z" />
+					<path class="loading-graphic-text"
+						d="M181.01,5.94c-.87,0-1.62-.29-2.24-.87-.62-.58-.92-1.28-.92-2.1s.31-1.52.92-2.1c.62-.58,1.36-.87,2.24-.87s1.62.29,2.25.87.93,1.28.93,2.1-.31,1.52-.93,2.1-1.37.87-2.25.87ZM178.12,30.29V8.75h5.78v21.54h-5.78Z" />
+					<path class="loading-graphic-text"
+						d="M191.71,5.94c-.87,0-1.62-.29-2.24-.87-.62-.58-.92-1.28-.92-2.1s.31-1.52.92-2.1c.62-.58,1.36-.87,2.24-.87s1.62.29,2.25.87.93,1.28.93,2.1-.31,1.52-.93,2.1-1.37.87-2.25.87ZM188.82,30.29V8.75h5.78v21.54h-5.78Z" />
+					<polygon class="loading-graphic-text"
+						points="219.76 30.3 212.96 30.3 206.95 21.52 205.29 23.39 205.29 30.3 199.51 30.3 199.51 1.58 205.29 1.58 205.29 17.04 205.62 17.04 212.67 8.75 219.36 8.75 211.3 18.11 219.76 30.3" />
+					<polygon class="loading-graphic-text"
+						points="242.66 30.3 235.86 30.3 229.84 21.52 228.19 23.39 228.19 30.3 222.4 30.3 222.4 1.58 228.19 1.58 228.19 17.04 228.51 17.04 235.57 8.75 242.25 8.75 234.2 18.11 242.66 30.3" />
+					<path class="loading-graphic-text"
+						d="M251.31,30.72c-1.36,0-2.59-.24-3.67-.72-1.08-.48-1.94-1.2-2.56-2.16s-.93-2.15-.93-3.57c0-1.19.22-2.2.67-3.01.44-.81,1.05-1.46,1.81-1.95.76-.49,1.63-.86,2.6-1.12.97-.26,1.99-.44,3.05-.54,1.25-.13,2.25-.25,3.02-.36.76-.11,1.32-.28,1.68-.52.35-.24.53-.59.53-1.05v-.1c0-.62-.13-1.14-.39-1.56s-.64-.75-1.15-.97c-.51-.22-1.12-.34-1.84-.34s-1.39.11-1.95.34c-.55.23-1,.52-1.35.9-.35.37-.6.79-.77,1.25l-5.3-.87c.37-1.26.99-2.33,1.85-3.2.86-.87,1.93-1.54,3.21-2s2.72-.69,4.33-.69c1.16,0,2.28.14,3.37.41,1.09.28,2.07.7,2.94,1.28s1.55,1.33,2.06,2.26c.51.93.76,2.05.76,3.34v14.51h-5.47v-2.99h-.19c-.35.67-.81,1.26-1.39,1.76-.58.51-1.28.91-2.09,1.2-.82.29-1.76.44-2.82.44ZM252.95,26.65c.91,0,1.71-.18,2.4-.54.69-.36,1.22-.85,1.61-1.46.39-.62.58-1.3.58-2.06v-2.33c-.17.13-.42.24-.77.35-.35.1-.73.19-1.16.27s-.84.15-1.25.21c-.41.06-.78.12-1.1.15-.71.1-1.33.27-1.87.5-.54.23-.96.54-1.25.92-.3.38-.44.86-.44,1.45,0,.55.14,1.02.42,1.4s.67.66,1.16.86c.49.19,1.05.29,1.68.29Z" />
+				</g>
+			</svg>
 		</div>
-		<script>
-			const loaderElement = document.getElementById('main-loader');
-			const loaderBottle = document.getElementById('loader-bottle');
-			const loaderCenter = loaderElement.querySelector('.loader-center');
-			const loaderLeft = loaderElement.querySelector('.loader-left');
-			const loaderRight = loaderElement.querySelector('.loader-right');
+		<div class="loader-left"></div>
+		<div class="loader-center">
+			<svg id="loader-bottle" data-name="loader-bottle" xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 341.34 927.22">
+				<path
+					d="M341.34,376.9v550.32H0V376.9c0-60.39,31.37-113.45,78.7-143.79,15.25-9.77,24.63-26.48,24.63-44.58V0h134.68v188.53c0,18.11,9.39,34.81,24.63,44.58,47.33,30.34,78.7,83.4,78.7,143.79Z" />
+			</svg>
+		</div>
+		<div class="loader-right"></div>
+	</div>
+	<script>
+		const loaderElement = document.getElementById('main-loader');
+		const loaderBottle = document.getElementById('loader-bottle');
+		const loaderCenter = loaderElement.querySelector('.loader-center');
+		const loaderLeft = loaderElement.querySelector('.loader-left');
+		const loaderRight = loaderElement.querySelector('.loader-right');
 
-			function getBarsCount(side) {
-				const width = side.clientWidth;
-				return Math.ceil(width / loaderCenter.clientWidth);
-			}
+		function getBarsCount(side) {
+			const width = side.clientWidth;
+			return Math.ceil(width / loaderCenter.clientWidth);
+		}
 
-			function fillLoaderBars(side) {
-				[...side.children].forEach(child => {
-					child.remove()
-				})
-				const count = getBarsCount(side)
-				for(let i = 0; i < count; i++) {
-					const element = document.createElement("div");
-					element.classList.add('loader-bar');
-					element.style.minWidth = `${loaderCenter.clientWidth}px`
-					side.appendChild(element);
-					const animation = element.getAnimations()[0]
-					const duration = animation.effect.getTiming().duration;
-					animation.currentTime = (duration / 2) * Math.random();
-				}
-			}
-
-			function setupLoader() {
-				loaderLeft.style.height = `${loaderBottle.clientHeight*0.55}px`
-				loaderRight.style.height = `${loaderBottle.clientHeight*0.55}px`
-				fillLoaderBars(loaderLeft);
-				fillLoaderBars(loaderRight);
-			}
-
-			setupLoader()
-
-			window.addEventListener("resize", () => {
-				setupLoader()
+		function fillLoaderBars(side) {
+			[...side.children].forEach(child => {
+				child.remove()
 			})
-		</script>
-	</body>
+			const count = getBarsCount(side)
+			for (let i = 0; i < count; i++) {
+				const element = document.createElement("div");
+				element.classList.add('loader-bar');
+				element.style.minWidth = `${loaderCenter.clientWidth}px`
+				side.appendChild(element);
+				const animation = element.getAnimations()[0]
+				const duration = animation.effect.getTiming().duration;
+				animation.currentTime = (duration / 2) * Math.random();
+			}
+		}
+
+		function setupLoader() {
+			loaderLeft.style.height = `${loaderBottle.clientHeight * 0.55}px`
+			loaderRight.style.height = `${loaderBottle.clientHeight * 0.55}px`
+			fillLoaderBars(loaderLeft);
+			fillLoaderBars(loaderRight);
+		}
+
+		setupLoader()
+
+		window.addEventListener("resize", () => {
+			setupLoader()
+		})
+	</script>
+</body>
+
 </html>
