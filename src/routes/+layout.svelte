@@ -31,12 +31,15 @@
 		localStorage.setItem(LocalStorageKeys.Theme, $theme);
 	});
 
+	
+	const mql = window.matchMedia("(prefers-color-scheme: dark)")
+	
+	function handleDarkModeChange(event: MediaQueryListEvent) {
+		if(event.matches) document.documentElement.classList.add("dark")
+		else document.documentElement.classList.remove("dark")
+	}
+
 	theme.subscribe((value) => {
-		const mql = window.matchMedia("(prefers-color-scheme: dark)")
-		const handleDarkModeChange = (event: MediaQueryListEvent) => {
-			if(event.matches) document.documentElement.classList.add("dark")
-			else document.documentElement.classList.remove("dark")
-		}
 		mql.removeEventListener("change", handleDarkModeChange)
 		if(value === "dark") document.documentElement.classList.add("dark")
 		else if(value === "light") document.documentElement.classList.remove("dark")
