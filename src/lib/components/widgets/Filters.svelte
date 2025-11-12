@@ -70,7 +70,7 @@
 <dialog
 	bind:this={filtersElement}
 	class={twMerge(
-		'relative m-auto hidden h-full w-full flex-col gap-4 rounded-lg bg-primary border border-primary p-4 backdrop:backdrop-blur-sm open:flex md:relative md:rounded-none md:border-0 overflow-x-hidden overflow-y-auto transition open:starting:scale-0 md:open:starting:scale-100 open:scale-100'
+		'relative m-auto hidden h-full w-full flex-col gap-4 rounded-lg bg-primary border border-primary p-4 backdrop:backdrop-blur-sm open:flex md:relative md:rounded-none md:border-0 overflow-x-hidden overflow-y-auto transition-transform open:starting:scale-0 md:open:starting:scale-100 open:scale-100'
 	)}
 	onclose={() => (showFilters = false)}
 >

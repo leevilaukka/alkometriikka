@@ -27,7 +27,7 @@
 <dialog
 	open={false}
 	bind:this={dialogElement}
-	class={twMerge("bg-primary m-auto w-[min(80ch,_100%)] flex-col rounded-lg border border-primary backdrop:backdrop-blur-sm open:flex transition open:starting:scale-0 open:scale-100", rest.class)}
+	class={twMerge("bg-primary m-auto w-[min(80ch,_100%)] flex-col rounded-lg border border-primary backdrop:backdrop-blur-sm open:flex transition-transform open:starting:scale-0 open:scale-100", rest.class)}
 	closedby="any"
 >
 	{@render renderContent(dialogElement)}

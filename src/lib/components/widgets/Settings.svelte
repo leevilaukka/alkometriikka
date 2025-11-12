@@ -1,7 +1,7 @@
 <script lang="ts">
     import { components } from '$lib/utils/styles';
     import { twMerge } from 'tailwind-merge';
-    import { isMobile, personalInfo } from '$lib/global.svelte';
+    import { isLaptop, isMobile, personalInfo, theme } from '$lib/global.svelte';
     import { GenderOptionsMap } from '$lib/utils/constants';
     import Popup from '$lib/components/widgets/Popup.svelte';
     import Icon from '$lib/components/widgets/Icon.svelte';
@@ -24,7 +24,7 @@
 	{/snippet}
 	{#snippet renderContent(dialogElement: HTMLDialogElement)}
 		<!-- Tab selector -->
-		<div class="mb-2 flex flex-row gap-2 border-b border-primary pb-2">
+		<div class="flex flex-row gap-2">
 			<button
 				class={twMerge(
 					components.button(),
@@ -131,15 +131,57 @@
 			<div class="prose dark:prose-invert">
 				<h2 class="text-lg font-bold">Lisäasetukset</h2>
 			</div>
-			<div>
-				<p>Vie / tuo tiedot</p>
+			<div class="flex flex-col gap-2">
+				<p class="text-sm font-bold">Teema</p>
+				<div class="flex flex-row gap-0">
+					<label
+						for="system"
+						class={twMerge(components.button(), 'rounded-e-none', "has-checked:bg-secondary")}>
+						<input 
+							type="radio"
+							id="system"
+							value={""}
+							class="hidden"
+							bind:group={$theme}
+						/>
+						<Icon name={$isMobile ? "mobile" : $isLaptop ? "laptop" : "desktop"} /> <span>Järjestelmä</span>
+					</label>
+					<label
+						for="light"
+						class={twMerge(components.button(), 'rounded-none border-x-0', "has-checked:bg-secondary")}
+					>
+						<input 
+							type="radio"
+							id="light"
+							value={"light"}
+							class="hidden"
+							bind:group={$theme}
+						/>
+						<Icon name="sun" /> <span>Vaalea</span>
+					</label>
+					<label
+						for="dark"
+						class={twMerge(components.button(), 'rounded-s-none', "has-checked:bg-secondary")}>
+						<input 
+							type="radio"
+							id="dark"
+							value={"dark"}
+							class="hidden"
+							bind:group={$theme}
+						/>
+						<Icon name="moon" /> <span>Tumma</span>
+					</label>
+				</div>
+			</div>
+			<div class="flex flex-col gap-2">
+				<p class="text-sm font-bold">Vie / tuo tiedot</p>
 				<p class="text-sm text-secondary">
 					Tällä voit viedä tai tuoda paikallisesti tallennetut tiedot, kuten henkilökohtaiset
 					tiedot ja mukautetut listat. Tiedot tallennetaan JSON-muodossa.
 				</p>
 				<div class="flex flex-row gap-2">
 					<button
-						class={twMerge(components.button(), 'mt-1')}
+						class={twMerge(components.button())}
 						onclick={() => {
 							handleExport();
 						}}
@@ -148,7 +190,7 @@
 					>
 
 					<button
-						class={twMerge(components.button(), 'mt-1')}
+						class={twMerge(components.button())}
 						onclick={() => {
 							handleImport();
 						}}

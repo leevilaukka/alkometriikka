@@ -429,7 +429,7 @@
 			<dialog
 				bind:this={detailsElement}
 				class={twMerge(
-					'fixed m-auto hidden h-full w-full flex-col gap-4 rounded-lg bg-primary border border-primary p-4 backdrop:backdrop-blur-sm open:flex xl:relative xl:w-84 xl:rounded-none xl:border-0 transition open:starting:scale-0 md:open:starting:scale-100 open:scale-100'
+					'fixed m-auto hidden h-full w-full flex-col gap-4 rounded-lg bg-primary border border-primary p-4 backdrop:backdrop-blur-sm open:flex xl:relative xl:w-84 xl:rounded-none xl:border-0 transition-transform open:starting:scale-0 md:open:starting:scale-100 open:scale-100'
 				)}
 			>
 				<h2 class="text-2xl font-bold">Listan tiedot</h2>

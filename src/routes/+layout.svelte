@@ -2,7 +2,7 @@
 	import '../app.css';
 	import { dev } from '$app/environment';
 	import { ContextKeys, LocalStorageKeys } from '$lib/utils/constants';
-	import { isMobile, isLaptop, lists, personalInfo, searchQuery } from '$lib/global.svelte';
+	import { isMobile, isLaptop, lists, personalInfo, searchQuery, theme } from '$lib/global.svelte';
 	import logo from '$lib/assets/images/Logo/0.5x/Logo_rounded@0.5x.png';
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/styles';
@@ -27,6 +27,25 @@
 		localStorage.setItem(LocalStorageKeys.Lists, JSON.stringify(lists));
 	});
 
+	$effect(() => {
+		localStorage.setItem(LocalStorageKeys.Theme, $theme);
+	});
+
+	theme.subscribe((value) => {
+		const mql = window.matchMedia("(prefers-color-scheme: dark)")
+		const handleDarkModeChange = (event: MediaQueryListEvent) => {
+			if(event.matches) document.documentElement.classList.add("dark")
+			else document.documentElement.classList.remove("dark")
+		}
+		mql.removeEventListener("change", handleDarkModeChange)
+		if(value === "dark") document.documentElement.classList.add("dark")
+		else if(value === "light") document.documentElement.classList.remove("dark")
+		else {
+			if(mql.matches) document.documentElement.classList.add("dark")
+			else document.documentElement.classList.remove("dark")
+			mql.addEventListener("change", handleDarkModeChange)
+		}
+	})
 
 	window.addEventListener('resize', () => {
 		$isMobile = window.matchMedia('(width < 48rem)').matches;

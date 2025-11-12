@@ -9,6 +9,8 @@
     --color-brand-4: rgb(82, 0, 10); /* #52000A */
 }
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @utility bg-primary {
     @apply bg-white dark:bg-zinc-900;
 }
