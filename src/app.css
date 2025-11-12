@@ -49,7 +49,7 @@
 
 :root {
     font-size: 14px;
-    @apply text-black dark:text-white bg-primary;
+    @apply text-black dark:text-zinc-200 bg-primary;
 }
 
 body, html {
@@ -78,7 +78,7 @@ input:focus {
 
 dialog[open] {
     display: flex;
-    @apply text-black dark:text-white;
+    color: inherit;
 }
 
 .hide-number-input::-webkit-outer-spin-button,
