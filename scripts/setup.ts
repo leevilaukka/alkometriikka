@@ -13,6 +13,11 @@ async function fetchAlkoPriceList() {
     return arrayBuffer;
 }
 
+/**
+ * Formats the XLSX file data into a JSON object.
+ * @param data ArrayBuffer with XLSX file data
+ * @returns Object with AOA table and file metadata
+ */
 function formatXLSXToJSON(data: ArrayBuffer) {
     const workbook = XLSX.read(data);
     const sheetName = workbook.SheetNames[0];
@@ -37,10 +42,14 @@ function formatXLSXToJSON(data: ArrayBuffer) {
     }
 }
 
+/**
+ * Compresses the dataset and saves it to a file.
+ * @param data Table data and metadata from formatXLSXToJSON
+ * @returns void 
+ */
 function saveDataset(data: { table: any[], metadata: XLSX.FullProperties }) {
     const json = JSON.stringify(data);
-    const compressed = compressToUTF16(json);
-    Bun.write(DEV ? "./static/data.txt" : "./data.txt", compressed);
+    Bun.write(DEV ? "./static/data.json" : "./data.json", json);
 }
 
 async function setup() {

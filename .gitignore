@@ -1,5 +1,5 @@
 node_modules
-/static/data.txt
+/static/data.json
 
 # Output
 .output

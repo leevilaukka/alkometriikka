@@ -10,7 +10,7 @@ export const ssr = false;
 export const prerender = false;
     
 function getDatasetURL() {
-    return resolve("/") + "data.txt";
+    return resolve("/") + "data.json";
 }
 
 type Fetch = (input: RequestInfo | URL, init?: RequestInit | undefined) => Promise<Response>
@@ -25,9 +25,8 @@ async function fetchAlkoPriceList({ fetch }: { fetch: Fetch; }) {
 }
 
 function formatDatasetToJSON(data: string) {
-    const decompressed = decompressFromUTF16(data);
     try {
-        const { table, metadata } = JSON.parse(decompressed);
+        const { table, metadata } = JSON.parse(data);
         if (!table) throw new Error("Hinnaston purku epäonnistui");
         if (table.length === 0) {
             throw new Error("Hinnasto on tyhjä tai väärässä muodossa");
