@@ -128,6 +128,7 @@
 		</div>
 	</div>
 {:catch error}
+	{shiftLoader()}
 	<div class="grid h-full w-full max-h-full overflow-hidden place-content-center">
 		<div class="flex flex-col items-center gap-3">
 			<p>Virhe datan lataamisessa: {error.message}</p>
