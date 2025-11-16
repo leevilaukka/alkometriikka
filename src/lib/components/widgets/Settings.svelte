@@ -1,18 +1,18 @@
 <script lang="ts">
-    import { components } from '$lib/utils/styles';
-    import { twMerge } from 'tailwind-merge';
-    import { isLaptop, isMobile, personalInfo, theme } from '$lib/global.svelte';
-    import { GenderOptionsMap } from '$lib/utils/constants';
-    import Popup from '$lib/components/widgets/Popup.svelte';
-    import Icon from '$lib/components/widgets/Icon.svelte';
-    import { version } from '$app/environment';
+	import { components } from '$lib/utils/styles';
+	import { twMerge } from 'tailwind-merge';
+	import { isLaptop, isMobile, personalInfo, theme } from '$lib/global.svelte';
+	import { GenderOptionsMap } from '$lib/utils/constants';
+	import Popup from '$lib/components/widgets/Popup.svelte';
+	import Icon from '$lib/components/widgets/Icon.svelte';
+	import { version } from '$app/environment';
 	import { handleClearAll, handleExport, handleImport } from '$lib/utils/helpers';
-
 
 	let tab = $state<'personal' | 'info' | 'settings'>('personal');
 
-    const { alko }: { alko: any; } = $props();
+	const { alko }: { alko: any } = $props();
 </script>
+
 <Popup class="gap-4 p-4">
 	{#snippet renderButton(dialogElement: HTMLDialogElement)}
 		<button
@@ -23,41 +23,42 @@
 		</button>
 	{/snippet}
 	{#snippet renderContent(dialogElement: HTMLDialogElement)}
-		<!-- Tab selector -->
 		<div class="flex flex-row gap-2">
-			<button
-				class={twMerge(
-					components.button(),
-					'w-full'
-				)}
-				onclick={() => (tab = 'personal')}
+			<label
+				for="personal"
+				class={twMerge(components.button(), 'w-full', 'has-checked:bg-secondary')}
 			>
+				<input
+					type="radio"
+					id="personal"
+					name="tab"
+					class="hidden"
+					value="personal"
+					bind:group={tab}
+				/>
 				<Icon name="user" />
-				{#if !$isMobile}
-					<span class="ms-2">Henkilökohtaiset tiedot</span>
-				{/if}
-			</button>
-			<button
-				class={twMerge(
-					components.button(),
-					'w-full'
-				)}
-				onclick={() => (tab = 'settings')}
+				<span>Henkilökohtaiset tiedot</span>
+			</label>
+			<label
+				for="settings"
+				class={twMerge(components.button(), 'w-full', 'has-checked:bg-secondary')}
 			>
+				<input
+					type="radio"
+					id="settings"
+					name="tab"
+					class="hidden"
+					value="settings"
+					bind:group={tab}
+				/>
 				<Icon name="cog" />
-				{#if !$isMobile}
-					<span class="ms-2">Lisäasetukset</span>
-				{/if}
-			</button>
-			<button
-				class={twMerge(components.button(), 'w-full')}
-				onclick={() => (tab = 'info')}
-			>
+				<span>Lisäasetukset</span>
+			</label>
+			<label for="info" class={twMerge(components.button(), 'w-full', 'has-checked:bg-secondary')}>
+				<input type="radio" id="info" name="tab" class="hidden" value="info" bind:group={tab} />
 				<Icon name="info_circle" />
-				{#if !$isMobile}
-					<span class="ms-2">Tietoa</span>
-				{/if}
-			</button>
+				<span>Tietoa</span>
+			</label>
 		</div>
 		{#if tab === 'info'}
 			<div class="prose dark:prose-invert">
@@ -85,8 +86,7 @@
 						>Lähetä kehitysehdotus
 					</a>
 					|
-					<a
-						href="https://github.com/leevilaukka/alkometriikka/issues/new?template=bug_report.md"
+					<a href="https://github.com/leevilaukka/alkometriikka/issues/new?template=bug_report.md"
 						>Lähetä bugiraportti
 					</a>
 				</p>
@@ -118,14 +118,13 @@
 					{version}
 				</a>
 				{#if alko.dataset.metadata.CreatedDate}
-					| Hinnaston päiväys: {new Date(
-						alko.dataset.metadata.CreatedDate
-					).toLocaleDateString('fi-FI')}
+					| Hinnaston päiväys: {new Date(alko.dataset.metadata.CreatedDate).toLocaleDateString(
+						'fi-FI'
+					)}
 				{/if}
 			</p>
-			<button
-				class={twMerge(components.button(), 'w-full')}
-				onclick={() => dialogElement.close()}>Sulje</button
+			<button class={twMerge(components.button(), 'w-full')} onclick={() => dialogElement.close()}
+				>Sulje</button
 			>
 		{:else if tab === 'settings'}
 			<div class="prose dark:prose-invert">
@@ -136,39 +135,28 @@
 				<div class="flex flex-row gap-0">
 					<label
 						for="system"
-						class={twMerge(components.button(), 'rounded-e-none', "has-checked:bg-secondary")}>
-						<input 
-							type="radio"
-							id="system"
-							value={""}
-							class="hidden"
-							bind:group={$theme}
-						/>
-						<Icon name={$isMobile ? "mobile" : $isLaptop ? "laptop" : "desktop"} /> <span>Järjestelmä</span>
+						class={twMerge(components.button(), 'rounded-e-none', 'has-checked:bg-secondary')}
+					>
+						<input type="radio" id="system" value={''} class="hidden" bind:group={$theme} />
+						<Icon name={$isMobile ? 'mobile' : $isLaptop ? 'laptop' : 'desktop'} />
+						<span>Järjestelmä</span>
 					</label>
 					<label
 						for="light"
-						class={twMerge(components.button(), 'rounded-none border-x-0', "has-checked:bg-secondary")}
+						class={twMerge(
+							components.button(),
+							'rounded-none border-x-0',
+							'has-checked:bg-secondary'
+						)}
 					>
-						<input 
-							type="radio"
-							id="light"
-							value={"light"}
-							class="hidden"
-							bind:group={$theme}
-						/>
+						<input type="radio" id="light" value={'light'} class="hidden" bind:group={$theme} />
 						<Icon name="sun" /> <span>Vaalea</span>
 					</label>
 					<label
 						for="dark"
-						class={twMerge(components.button(), 'rounded-s-none', "has-checked:bg-secondary")}>
-						<input 
-							type="radio"
-							id="dark"
-							value={"dark"}
-							class="hidden"
-							bind:group={$theme}
-						/>
+						class={twMerge(components.button(), 'rounded-s-none', 'has-checked:bg-secondary')}
+					>
+						<input type="radio" id="dark" value={'dark'} class="hidden" bind:group={$theme} />
 						<Icon name="moon" /> <span>Tumma</span>
 					</label>
 				</div>
@@ -176,8 +164,8 @@
 			<div class="flex flex-col gap-2">
 				<p class="text-sm font-bold">Vie / tuo tiedot</p>
 				<p class="text-sm text-secondary">
-					Tällä voit viedä tai tuoda paikallisesti tallennetut tiedot, kuten henkilökohtaiset
-					tiedot ja mukautetut listat. Tiedot tallennetaan JSON-muodossa.
+					Tällä voit viedä tai tuoda paikallisesti tallennetut tiedot, kuten henkilökohtaiset tiedot
+					ja mukautetut listat. Tiedot tallennetaan JSON-muodossa.
 				</p>
 				<div class="flex flex-row gap-2">
 					<button
@@ -202,8 +190,8 @@
 			<div class="flex flex-col gap-2">
 				<p class="text-sm font-bold">Tyhjennä tiedot</p>
 				<p class="text-sm text-secondary">
-					Tämä poistaa kaikki paikallisesti tallennetut tiedot, kuten henkilökohtaiset tiedot
-					ja mukautetut listat. Tätä toimintoa ei voi perua.
+					Tämä poistaa kaikki paikallisesti tallennetut tiedot, kuten henkilökohtaiset tiedot ja
+					mukautetut listat. Tätä toimintoa ei voi perua.
 				</p>
 				<button
 					class={twMerge(components.button({ type: 'negative' }))}
@@ -215,20 +203,17 @@
 					<Icon name="trash" /> <span>Tyhjennä</span></button
 				>
 			</div>
-			<button
-				class={twMerge(components.button(), 'w-full')}
-				onclick={() => dialogElement.close()}>Sulje</button
+			<button class={twMerge(components.button(), 'w-full')} onclick={() => dialogElement.close()}
+				>Sulje</button
 			>
 		{:else if tab === 'personal'}
-			{@const weightOK =
-				personalInfo.weight == null ||
-				(personalInfo.weight >= 1)}
+			{@const weightOK = personalInfo.weight == null || personalInfo.weight >= 1}
 			<div class="prose dark:prose-invert">
 				<h2 class="text-lg font-bold">Henkilökohtaiset tiedot</h2>
 				<p class="text-sm text-secondary">
-					Nämä tiedot vaikuttavat promillearvioihin. Annetut tiedot tallennetaan vain
-					paikallisesti, eikä niitä lähetetä mihinkään. Jos et anna tietoja, promillearviot
-					perustuvat oletusarvoihin.
+					Nämä tiedot vaikuttavat promillearvioihin. Annetut tiedot tallennetaan vain paikallisesti,
+					eikä niitä lähetetä mihinkään. Jos et anna tietoja, promillearviot perustuvat
+					oletusarvoihin.
 				</p>
 			</div>
 			<div class="flex flex-col">
@@ -262,9 +247,8 @@
 			</div>
 			<p class="self-end text-xs text-secondary">Tallentaminen lataa sivun uudelleen.</p>
 			<div class="grid grid-cols-2 gap-3">
-				<button
-					class={twMerge(components.button(), 'w-full')}
-					onclick={() => dialogElement.close()}>Sulje</button
+				<button class={twMerge(components.button(), 'w-full')} onclick={() => dialogElement.close()}
+					>Sulje</button
 				>
 				<button
 					class={twMerge(
