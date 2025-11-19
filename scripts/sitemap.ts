@@ -29,7 +29,7 @@ function generateSitemapXML(entries: string[]) {
 
     const body = entries.map((entry) => {
         return `  <url>\n` +
-            `    <loc>https://alkometriikka${entry}</loc>\n` +
+            `    <loc>https://alkometriikka.fi${entry}</loc>\n` +
             `    <priority>0.5</priority>\n` +
             `    <changefreq>weekly</changefreq>\n` +
             `  </url>\n`;
