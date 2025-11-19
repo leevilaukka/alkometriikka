@@ -92,7 +92,7 @@
 				</p>
 				<p>
 					Muut yhteydenotot voi lähettää sähköpostitse osoitteeseen
-					<a href="mailto:alkometriikka@proton.me">alkometriikka@proton.me</a>.
+					<a href="mailto:contact@alkometriikka.fi">contact@alkometriikka.fi</a>.
 				</p>
 			</div>
 			<div class="flex flex-row items-center gap-2">
@@ -105,7 +105,7 @@
 					<span>GitHub</span>
 				</a>
 				<a
-					href="mailto:alkometriikka@proton.me"
+					href="mailto:contact@alkometriikka.fi"
 					target="_blank"
 					class={twMerge(components.button())}
 				>
