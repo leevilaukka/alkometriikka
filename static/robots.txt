@@ -1,6 +1,5 @@
-# Allow everything but data.json
+# allow crawling everything by default
 User-agent: *
-Disallow: 
-Disallow: /data.json
+Disallow:
 
 Sitemap: https://www.alkometriikka.fi/sitemap.xml
