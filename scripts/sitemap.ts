@@ -9,7 +9,7 @@ async function main() {
     for (const product of data) {
         sitemapEntries.push(`/tuotteet/${product[0]}`);
     }
-    Bun.write("static/sitemap.xml", generateSitemapXML(sitemapEntries));
+    Bun.write("sitemap.xml", generateSitemapXML(sitemapEntries));
 }
 
 
