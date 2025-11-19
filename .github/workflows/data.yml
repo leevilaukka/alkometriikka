@@ -44,7 +44,7 @@ jobs:
 
         - name: Stash changes
           run: |
-            git add data.json -f
+            git add data.json sitemap.xml -f
             git stash --include-untracked
 
         - name: Checkout repository
@@ -61,6 +61,6 @@ jobs:
           run: |
             git config --global user.name "github-actions[bot]"
             git config --global user.email "github-actions[bot]@users.noreply.github.com"
-            git add data.json -f
+            git add data.json sitemap.xml -f
             git commit -m "Update price list [skip ci]" || echo "No changes to commit"
             git push origin gh-pages

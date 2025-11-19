@@ -5,7 +5,6 @@ async function main() {
     const sitemapEntries: string[] = [];
     const parsed = await file.json() as { table: any[][], metadata: any };
     const data = parsed.table.slice(1);
-    console.log(parsed)
 
     for (const product of data) {
         sitemapEntries.push(`/tuotteet/${product[0]}`);
