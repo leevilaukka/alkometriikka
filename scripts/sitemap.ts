@@ -6,7 +6,10 @@ async function main() {
     const parsed = await file.json() as { table: any[][], metadata: any };
     const data = parsed.table.slice(1);
 
+    const indexOfTypeColumn = parsed.table[0].indexOf("Tyyppi");
+
     for (const product of data) {
+        if(product[indexOfTypeColumn] === "lahja- ja juomatarvikkeet") continue; // Skip gift and drink accessories
         sitemapEntries.push(`/tuotteet/${product[0]}`);
     }
     Bun.write("sitemap.xml", generateSitemapXML(sitemapEntries));
