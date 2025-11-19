@@ -1,5 +1,6 @@
 node_modules
 /static/data.json
+/static/sitemap.xml
 
 # Output
 .output
