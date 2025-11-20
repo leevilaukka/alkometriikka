@@ -35,6 +35,9 @@ jobs:
           run: bun install --frozen-lockfile
 
         - name: Run script to convert to JSON
+          env:
+            CLOUDFLARE_PURGE_KEY: ${{ secrets.CLOUDFLARE_PURGE_KEY }}
+            CLOUDFLARE_ZONE: ${{ secrets.CF_ZONE }}
           run: |
             bun run scripts/setup.ts
 

@@ -1,3 +1,4 @@
+import { file } from "bun";
 import { compressToUTF16 } from "lz-string"
 import XLSX from "xlsx"
 
@@ -52,10 +53,38 @@ function saveDataset(data: { table: any[], metadata: XLSX.FullProperties }) {
     Bun.write(DEV ? "./static/data.json" : "./data.json", json);
 }
 
+async function purgeCache() {
+    const purgeKey = process.env.CLOUDFLARE_PURGE_KEY;
+
+    if (!purgeKey) {
+        console.warn("CLOUDFLARE_PURGE_KEY is not set. Skipping cache purge.");
+        return;
+    }
+    console.log("Purging Cloudflare cache...");
+
+    await fetch(`https://api.cloudflare.com/client/v4/zones/${process.env.CLOUDFLARE_ZONE}/purge_cache`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${purgeKey}`
+        },
+        body: JSON.stringify({
+            files: ["https://alkometriikka.fi/data.json"]
+        })
+    }).then(res => {
+        if (!res.ok) {
+            throw new Error(`Cache purge failed: ${res.status} ${res.statusText}`);
+        }
+    }).catch(err => {
+        console.error("Error during cache purge:", err);
+    });
+}
+
 async function setup() {
     console.log("Fetching Alko price list...");
     const xlsx = await fetchAlkoPriceList();
     const json = formatXLSXToJSON(xlsx);
+    await purgeCache();
     saveDataset(json);
 }
 
