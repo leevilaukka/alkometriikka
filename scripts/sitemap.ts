@@ -31,8 +31,9 @@ function generateSitemapXML(entries: string[]) {
     const footer = `</urlset>`;
 
     const body = entries.map((entry) => {
+        const encodedEntry = encodeURI(entry);
         return `  <url>\n` +
-            `    <loc>https://alkometriikka.fi${entry}</loc>\n` +
+            `    <loc>https://alkometriikka.fi${encodedEntry}</loc>\n` +
             `    <priority>0.5</priority>\n` +
             `    <changefreq>weekly</changefreq>\n` +
             `  </url>\n`;

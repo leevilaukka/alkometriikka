@@ -1,5 +1,3 @@
-import { file } from "bun";
-import { compressToUTF16 } from "lz-string"
 import XLSX from "xlsx"
 
 const DATASET_URL = "https://www.alko.fi/INTERSHOP/static/WFS/Alko-OnlineShop-Site/-/Alko-OnlineShop/fi_FI/Alkon%20Hinnasto%20Tekstitiedostona/alkon-hinnasto-tekstitiedostona.xlsx"
@@ -71,10 +69,11 @@ async function purgeCache() {
         body: JSON.stringify({
             files: ["https://alkometriikka.fi/data.json"]
         })
-    }).then(res => {
+    }).then(async res => {
         if (!res.ok) {
             throw new Error(`Cache purge failed: ${res.status} ${res.statusText}`);
         }
+        console.log("Cache purge successful.", await res.json());
     }).catch(err => {
         console.error("Error during cache purge:", err);
     });
