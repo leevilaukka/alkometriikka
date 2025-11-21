@@ -5,7 +5,7 @@
 		DrunkColumns,
 		hideFromProductPageStats
 	} from '$lib/utils/constants';
-	import { formatValue, generateTitle, valueToString } from '$lib/utils/helpers';
+	import { formatValue, generateTitle, setSEO, valueToString } from '$lib/utils/helpers';
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/styles';
 	import Icon from '../widgets/Icon.svelte';
@@ -18,6 +18,7 @@
 	import type { Kaljakori } from '$lib/alko';
 	import { findSimilarProducts } from '$lib/utils/filters';
 	import ProductImage from '../widgets/ProductImage.svelte';
+	import { generateImageUrl } from '$lib/utils/image';
 	const { product, kaljakori }: { product: PriceListItem; kaljakori: Kaljakori } = $props();
 
 	function handleBack() {
@@ -64,6 +65,33 @@
 			}
 		};
 	}
+
+	setSEO({
+		description: `Katso ${product[AllColumns.Name]} -tuotteen tiedot, hinnat ja vastaavat tuotteet Alkometriikasta.`,
+		og: {
+			title: generateTitle(`${product[AllColumns.Name]}`),
+			description: `Katso ${product[AllColumns.Name]} -tuotteen tiedot, hinnat ja vastaavat tuotteet Alkometriikasta.`,
+			url: `https://alkometriikka.fi/tuotteet/${product[AllColumns.Number]}`
+		},
+		image: {
+			alt: product[AllColumns.Name],
+			url: generateImageUrl(
+				product[AllColumns.Number],
+				product[AllColumns.Name],
+				'medium'
+			),
+		},
+		twitter: {
+			card: 'summary_large_image',
+			title: generateTitle(`${product[AllColumns.Name]}`),
+			description: `Katso ${product[AllColumns.Name]} -tuotteen tiedot, hinnat ja vastaavat tuotteet Alkometriikasta.`,
+			image: generateImageUrl(
+				product[AllColumns.Number],
+				product[AllColumns.Name],
+				'medium'
+			),
+		}
+	});
 </script>
 
 <svelte:head>

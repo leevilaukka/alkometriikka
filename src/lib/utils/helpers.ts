@@ -2,7 +2,7 @@ import { dev } from "$app/environment";
 import type { Kaljakori } from "$lib/alko";
 import { lists, personalInfo } from "$lib/global.svelte";
 import type { ColumnNames, PriceListItem } from "$lib/types";
-import { filterRenameMap, filterToUnitMarker, LocalStorageKeys, sortingOrderDescriptionMap } from "./constants";
+import { defaultSEOData, filterRenameMap, filterToUnitMarker, LocalStorageKeys, sortingOrderDescriptionMap } from "./constants";
 
 export function formatValue(value: string | number | Set<string>, header?: ColumnNames) {
     if (value instanceof Set) return Array.from(value).join(', ');
@@ -152,4 +152,43 @@ export function mergeFilterParameters(oldParameters: URLSearchParams, newParamet
 
 export function isNullish(value: unknown) {
     return value === null || value === undefined || value === "";
+}
+
+export function setSEO({ description, og, image, twitter }: { description?: string; og?: { [key: string]: string }, image?: { [key: string]: string }, twitter?: { [key: string]: string } }) {
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription && description) {
+        metaDescription.setAttribute('content', description);
+    }
+    if (og) {
+        for (const [key, value] of Object.entries(og)) {
+            const metaTag = document.querySelector(`meta[property="og:${key}"]`);
+            if (metaTag && value) {
+                metaTag.setAttribute('content', String(value));
+            }
+        }
+    }
+    if (image) {
+        const ogImageTag = document.querySelector('meta[property="og:image"]');
+        if (ogImageTag && image.url) {
+            ogImageTag.setAttribute('content', String(image.url));
+        }
+        for (const [key, value] of Object.entries(image)) {
+            const metaTag = document.querySelector(`meta[property="og:image:${key}"]`);
+            if (metaTag && value) {
+                metaTag.setAttribute('content', String(value));
+            }
+        }
+    }
+    if (twitter) {
+        for (const [key, value] of Object.entries(twitter)) {
+            const metaTag = document.querySelector(`meta[name="twitter:${key}"]`);
+            if (metaTag && value) {
+                metaTag.setAttribute('content', String(value));
+            }
+        }
+    }
+}
+
+export function resetSEO() {
+    setSEO(defaultSEOData);
 }

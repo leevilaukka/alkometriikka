@@ -1,4 +1,5 @@
 import type { ColNameObj, ColumnBadgeMap, ColumnNames } from "$lib/types";
+import type { setSEO } from "./helpers";
 
 /** Columns present in the Alko price list dataset
  * These are in Finnish as they are used directly from the dataset
@@ -249,6 +250,27 @@ export const hideFromProductPageStats = new Set<ColumnNames>([
     DatasetColumns.Name,
     DatasetColumns.Vintage
 ]);
+
+export const defaultSEOData = {
+    description: "Vertaa kuin ammattilainen: Selvitä juomien todellinen hinta-tehosuhde. Tee viisaita valintoja ja jaa valmiit tuotelistat yhdellä klikkauksella!",
+    og: {
+        title: "Alkometriikka",
+        description: "Selaa Alkon tuotevalikoimaa, ja luo jaettavia listoja helposti!",
+        url: "https://alkometriikka.fi",
+    },
+    image: {
+        url: "/images/og_image.png",
+        alt: "Alkometriikka logo",
+        width: "1200",
+        height: "630"
+    },
+    twitter: {
+        title: "Alkometriikka",
+        card: "summary_large_image",
+        image: "/images/twitter_image.png",
+        description: "Selaa Alkon tuotevalikoimaa, ja luo jaettavia listoja helposti!"
+    }
+} as const satisfies Parameters<typeof setSEO>[0];
 
 
 export const ColumnToBadgeMap: ColumnBadgeMap = {
