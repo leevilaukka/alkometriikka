@@ -80,6 +80,8 @@
 				product[AllColumns.Name],
 				'medium'
 			),
+			width: "160",
+			height: "192"
 		},
 		twitter: {
 			card: 'summary_large_image',
