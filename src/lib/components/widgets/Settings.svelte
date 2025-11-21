@@ -37,7 +37,7 @@
 					bind:group={tab}
 				/>
 				<Icon name="user" />
-				<span>Henkilökohtaiset tiedot</span>
+				{#if !$isMobile}<span class="text-sm">Henkilökohtaiset tiedot</span>{/if}
 			</label>
 			<label
 				for="settings"
@@ -52,12 +52,12 @@
 					bind:group={tab}
 				/>
 				<Icon name="cog" />
-				<span>Lisäasetukset</span>
+				{#if !$isMobile}<span class="text-sm">Lisäasetukset</span>{/if}
 			</label>
 			<label for="info" class={twMerge(components.button(), 'w-full', 'has-checked:bg-secondary')}>
 				<input type="radio" id="info" name="tab" class="hidden" value="info" bind:group={tab} />
 				<Icon name="info_circle" />
-				<span>Tietoa</span>
+				{#if !$isMobile}<span class="text-sm">Tietoa</span>{/if}
 			</label>
 		</div>
 		{#if tab === 'info'}
