@@ -1,7 +1,7 @@
 import { dev } from "$app/environment";
 import type { Kaljakori } from "$lib/alko";
 import { lists, personalInfo } from "$lib/global.svelte";
-import type { ColumnNames, PriceListItem } from "$lib/types";
+import type { ColumnNames, OGImage, OgProperties, PriceListItem, TwitterProperties } from "$lib/types";
 import { defaultSEOData, filterRenameMap, filterToUnitMarker, LocalStorageKeys, sortingOrderDescriptionMap } from "./constants";
 
 export function formatValue(value: string | number | Set<string>, header?: ColumnNames) {
@@ -154,7 +154,7 @@ export function isNullish(value: unknown) {
     return value === null || value === undefined || value === "";
 }
 
-export function setSEO({ description, og, image, twitter }: { description?: string; og?: { [key: string]: string }, image?: { [key: string]: string }, twitter?: { [key: string]: string } }) {
+export function setSEO({ description, og, image, twitter }: { description?: string; og?: OgProperties; image?: OGImage; twitter?: TwitterProperties }) {
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription && description) {
         metaDescription.setAttribute('content', description);

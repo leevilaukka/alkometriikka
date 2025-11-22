@@ -69,6 +69,29 @@ export type ListObj = {
     }[];
 }
 
+export type OgProperties = {
+    title: string;
+    type?: 'website';
+    description: string;
+    url: string;
+};
+
+export type TwitterProperties = {
+    title: string;
+    description: string;
+    image: string;
+    card: 'summary_large_image';
+    site?: string;
+    creator?: string;
+};
+
+export type OGImage = {
+    url: string;
+    width: string;
+    height: string;
+    alt: string;
+};
+
 export type BadgeConfig = { text: string; color?: VariantProps<typeof components.badge>["color"]; icon?: IconName };
 export type ColumnBadgeMap = Partial<Record<ColumnNames, BadgeConfig | Record<string, BadgeConfig>>>;
 

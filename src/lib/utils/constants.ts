@@ -257,6 +257,7 @@ export const defaultSEOData = {
         title: "Alkometriikka",
         description: "Selaa Alkon tuotevalikoimaa, ja luo jaettavia listoja helposti!",
         url: "https://alkometriikka.fi",
+        type: "website"
     },
     image: {
         url: "/images/og_image.png",

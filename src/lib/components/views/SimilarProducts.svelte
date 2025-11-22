@@ -155,7 +155,9 @@
 									<h2 class="text-xl">Valitse lista</h2>
 									<AllLists
 										action={(list: ListObj) => {
-											addToList(list, item[AllColumns.Number]);
+											if (item) {
+												addToList(list, item[AllColumns.Number]);
+											}
 											dialogElement.close();
 										}}
 									/>
