@@ -1,6 +1,7 @@
 import type { Kaljakori } from "$lib/alko"
 import type { ColumnNames, FilterValue, FilterValues, PriceListItem } from "$lib/types"
 import { AllColumns, shownFilters, subCategoryMap } from "./constants";
+import { isSimilarString } from "./search";
 
 export function initFilterValues(kaljakori: Kaljakori, searchParams?: URLSearchParams) {
     const valuesSearchParams = searchParams ? filterValuesFromSearchParameters(searchParams, kaljakori) : {}
@@ -95,7 +96,7 @@ export function findDifferentSizeOfProduct(product: PriceListItem, kaljakori: Ka
         const number = Number.parseFloat(part.replaceAll(",", "."))
         if(Number.isNaN(number)) return part
         else return ""
-    })
+    }).filter(_ => !!_)
     const filtered = kaljakori.filter({ 
         [AllColumns.Type]: new Set([product[AllColumns.Type]]),
         [AllColumns.SubType]: new Set([product[AllColumns.SubType]]),
@@ -107,18 +108,15 @@ export function findDifferentSizeOfProduct(product: PriceListItem, kaljakori: Ka
             const number = Number.parseFloat(part.replaceAll(",", "."))
             if(Number.isNaN(number)) return part
             else return ""
-        })
+        }).filter(_ => !!_)
         let score = 0
         for(let i = 0; i<comparisonWordList.length; i++) {
             const word1 = comparisonWordList.at(i)
             const word2 = targetWordList.at(i)
-            if(!word1 || !word2) continue;
-            if(word1.toLowerCase().includes(word2.toLowerCase()) || word2.toLowerCase().includes(word1.toLowerCase())) score += 1;
-            else return {
-                item,
-                score
-            }
+            if(word1 && word2 && isSimilarString(word1, word2, 0.8)) score += 1;
+            else break
         }
+        if(comparisonWordList.length > targetWordList.length && targetWordList.at(0) === comparisonWordList.at(0) && [...item[AllColumns.Description].values()].at(0) !== [...product[AllColumns.Description].values()].at(0)) score -= 1
         return {
             item,
             score
