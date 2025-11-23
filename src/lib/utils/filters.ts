@@ -113,7 +113,7 @@ export function findDifferentSizeOfProduct(product: PriceListItem, kaljakori: Ka
             const word1 = comparisonWordList.at(i)
             const word2 = targetWordList.at(i)
             if(!word1 || !word2) continue;
-            if(word1.toLowerCase().includes(word2.toLowerCase())) score += 1;
+            if(word1.toLowerCase().includes(word2.toLowerCase()) || word2.toLowerCase().includes(word1.toLowerCase())) score += 1;
             else return {
                 item,
                 score
