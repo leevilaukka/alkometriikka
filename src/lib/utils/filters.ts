@@ -81,3 +81,56 @@ export function findSimilarProducts(product: PriceListItem, kaljakori: Kaljakori
     console.log(scored.slice(0, 20))
     return scored.filter(({ item }) => item[AllColumns.Number] !== product[AllColumns.Number]).slice(0, limit).map(({ item }) => item);
 }
+
+export function findDifferentSizeOfProduct(product: PriceListItem, kaljakori: Kaljakori): PriceListItem[] {
+    // TODO: Fix this garbage V1 algo and improve matching + performance
+    /*
+        Examples of hard to match products due to different desc name etc:
+        http://localhost:5173/tuotteet/777886 vs http://localhost:5173/tuotteet/901542 has different sugar level and desc?
+        http://localhost:5173/tuotteet/700013 name has been misspelled 
+        http://localhost:5173/tuotteet/720914 vs http://localhost:5173/tuotteet/792176 name sometimes includes % and sometimes not
+
+    */
+    const targetWordList = product[AllColumns.Name].toLowerCase().replace(product[AllColumns.PackagingType].toLowerCase(), "").split(" ").map(part => {
+        const number = Number.parseFloat(part.replaceAll(",", "."))
+        if(Number.isNaN(number)) return part
+        else return ""
+    })
+    const filtered = kaljakori.filter({ 
+        [AllColumns.Type]: new Set([product[AllColumns.Type]]),
+        [AllColumns.SubType]: new Set([product[AllColumns.SubType]]),
+        [AllColumns.AlcoholPercentage]: new Set([product[AllColumns.AlcoholPercentage]]),
+        [AllColumns.Sugar]: [product[AllColumns.Sugar] - product[AllColumns.Sugar] * 0.5, product[AllColumns.Sugar] + product[AllColumns.Sugar] * 0.5],
+    })
+    const scored = filtered.map((item) => {
+        const comparisonWordList = item[AllColumns.Name].toLowerCase().replace(product[AllColumns.PackagingType].toLowerCase(), "").split(" ").map(part => {
+            const number = Number.parseFloat(part.replaceAll(",", "."))
+            if(Number.isNaN(number)) return part
+            else return ""
+        })
+        let score = 0
+        for(let i = 0; i<comparisonWordList.length; i++) {
+            const word1 = comparisonWordList.at(i)
+            const word2 = targetWordList.at(i)
+            if(!word1 || !word2) continue;
+            if(word1.toLowerCase().includes(word2.toLowerCase())) score += 1;
+            else return {
+                item,
+                score
+            }
+        }
+        return {
+            item,
+            score
+        }
+    }).sort((a, b) => (a.score - b.score)).reverse()
+    const out = []
+    for(let i = 0; i<scored.length; i++) {
+        const entry = scored[i]
+        if(entry.item[AllColumns.Number] === product[AllColumns.Number]) continue
+        if(i === 0) out.push(entry.item);
+        else if(entry.score === scored[i - 1].score) out.push(entry.item)
+        else return out;
+    }
+    return out
+}

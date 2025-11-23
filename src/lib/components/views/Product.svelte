@@ -16,7 +16,7 @@
 	import BadgeList from '../widgets/BadgeList.svelte';
 	import { afterNavigate, goto } from '$app/navigation';
 	import type { Kaljakori } from '$lib/alko';
-	import { findSimilarProducts } from '$lib/utils/filters';
+	import { findDifferentSizeOfProduct, findSimilarProducts } from '$lib/utils/filters';
 	import ProductImage from '../widgets/ProductImage.svelte';
 	import { generateImageUrl } from '$lib/utils/image';
 	const { product, kaljakori }: { product: PriceListItem; kaljakori: Kaljakori } = $props();
@@ -86,6 +86,10 @@
 			image: generateImageUrl(product[AllColumns.Number], product[AllColumns.Name], 'medium')
 		}
 	});
+
+	const differentSizesOfProduct = findDifferentSizeOfProduct(product, kaljakori)
+
+	console.log("differentSizesOfProduct", differentSizesOfProduct)
 </script>
 
 <svelte:head>
@@ -204,6 +208,51 @@
 			{/each}
 		</div>
 	</div>
+	{#if differentSizesOfProduct.length}
+	<details>
+		<summary class="text-2xl font-bold mb-2">
+			Muut koot
+		</summary>
+		<div class="flex max-w-full flex-col flex-nowrap gap-3">
+			{#each differentSizesOfProduct.sort((a, b) => (a[AllColumns.BottleSize] - b[AllColumns.BottleSize])) as differentSizeProduct}
+				<a
+					href={`/tuotteet/${differentSizeProduct[AllColumns.Number]}`}
+					class="flex shrink-0 flex-row gap-3 rounded-lg border border-primary p-4"
+				>
+					
+					<div class="flex h-36 aspect-square w-fit shrink-0 rounded bg-white p-2 md:max-w-fit">
+						<ProductImage
+							number={differentSizeProduct[AllColumns.Number]}
+							name={differentSizeProduct[AllColumns.Name]}
+							alt={differentSizeProduct[AllColumns.Name]}
+							class="block aspect-square h-full w-full object-contain"
+						/>
+					</div>
+					<div class="flex flex-col gap-2">
+						<h2 class="line-clamp-3 text-xl font-bold md:text-2xl">
+							{`${differentSizeProduct[AllColumns.Name]} (${formatValue(differentSizeProduct[AllColumns.BottleSize], AllColumns.BottleSize)})`}
+						</h2>
+						<span>
+							{formatValue(
+								differentSizeProduct[AllColumns.AlcoholPercentage],
+								AllColumns.AlcoholPercentage
+							)}
+						</span>
+						<p class="text-3xl font-bold drop-shadow-lg">
+							{differentSizeProduct[AllColumns.Price].toFixed(2)} €
+						</p>
+						<span class="text-sm text-secondary">
+							{formatValue(differentSizeProduct[AllColumns.BottleSize], AllColumns.BottleSize)} ({differentSizeProduct[
+								AllColumns.PricePerLiter
+							]} €/L)
+						</span>
+					</div>
+				</a>
+			{/each}
+		</div>
+	</details>
+		
+	{/if}
 	{#if similarProducts.length}
 		<div class="flex items-center justify-between">
 			<h2 class="text-2xl font-bold">Samankaltaisia tuotteita</h2>
