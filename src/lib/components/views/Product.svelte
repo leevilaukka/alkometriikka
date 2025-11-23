@@ -41,7 +41,7 @@
 			AllColumns.PackagingType,
 			AllColumns.AlcoholGramsPerEuro,
 			AllColumns.GrapeVarieties,
-			AllColumns.Description,
+			AllColumns.Description
 		]),
 		20
 	);
@@ -75,23 +75,15 @@
 		},
 		image: {
 			alt: product[AllColumns.Name],
-			url: generateImageUrl(
-				product[AllColumns.Number],
-				product[AllColumns.Name],
-				'medium'
-			),
-			width: "160",
-			height: "192"
+			url: generateImageUrl(product[AllColumns.Number], product[AllColumns.Name], 'medium'),
+			width: '160',
+			height: '192'
 		},
 		twitter: {
 			card: 'summary_large_image',
 			title: generateTitle(`${product[AllColumns.Name]}`),
 			description: `Katso ${product[AllColumns.Name]} -tuotteen tiedot, hinnat ja vastaavat tuotteet Alkometriikasta.`,
-			image: generateImageUrl(
-				product[AllColumns.Number],
-				product[AllColumns.Name],
-				'medium'
-			),
+			image: generateImageUrl(product[AllColumns.Number], product[AllColumns.Name], 'medium')
 		}
 	});
 </script>
@@ -110,8 +102,8 @@
 			<span>{window.history.length > 1 ? 'Takaisin' : 'Etusivulle'}</span>
 		</button>
 	</div>
-	<div class="grid w-full grid-cols-1 gap-6 md:grid-cols-[auto_1fr]">
-		<div class="flex aspect-square h-96 w-full max-w-full p-6 md:w-fit bg-white rounded">
+	<header class="grid w-full grid-cols-1 gap-6 md:grid-cols-[auto_1fr]">
+		<div class="flex aspect-square h-96 w-full max-w-full rounded bg-white p-6 md:w-fit">
 			<ProductImage
 				number={product[AllColumns.Number]}
 				name={product[AllColumns.Name]}
@@ -121,9 +113,9 @@
 		</div>
 		<div class="flex w-full flex-col justify-between gap-3">
 			<div class="flex flex-col gap-2">
-				<h2 class="text-2xl font-bold md:text-3xl">
+				<h1 class="text-2xl font-bold md:text-3xl" data-product={product[AllColumns.Name]}>
 					{product[AllColumns.Name]}
-				</h2>
+				</h1>
 				<span>
 					{valueToString(product[AllColumns.Manufacturer], AllColumns.Manufacturer)} | {valueToString(
 						product[AllColumns.BottleSize],
@@ -131,15 +123,17 @@
 					)} | {valueToString(product[AllColumns.AlcoholPercentage], AllColumns.AlcoholPercentage)}
 					{product[AllColumns.Vintage] !== ''
 						? `| ${valueToString(product[AllColumns.Vintage], AllColumns.Vintage)}`
-						: ''}</span
-				>
-				<p class="w-fit rounded bg-gray-100 dark:bg-zinc-700 dark:text-white px-1">{product[AllColumns.Availability]}</p>
+						: ''}
+				</span>
+				<p class="w-fit rounded bg-gray-100 px-1 dark:bg-zinc-700 dark:text-white">
+					{product[AllColumns.Availability]}
+				</p>
 				<div class="flex w-full flex-row gap-2 md:flex-row">
 					<BadgeList item={product} />
 				</div>
 			</div>
 			<div class="flex flex-col items-end gap-1">
-				<p class="text-4xl font-bold">
+				<p class="text-4xl font-bold" data-price={`${product[AllColumns.Price].toFixed(2)} €`}>
 					{product[AllColumns.Price].toFixed(2)} €
 				</p>
 				<span class="text-sm text-secondary">
@@ -147,15 +141,15 @@
 				</span>
 			</div>
 		</div>
-	</div>
-	<div class="flex w-full items-center gap-4 md:justify-end">
+	</header>
+	<div class="grid grid-cols-1 md:grid-cols-[2fr_1fr] w-full gap-4 md:justify-end">
 		<Popup class="gap-4 p-4">
 			{#snippet renderButton(dialogElement: HTMLDialogElement)}
 				<button
-					class={twMerge(components.button({ type: 'positive', size: 'md' }))}
+					class={twMerge(components.button({ type: 'positive', size: 'lg' }), "py-3 px-5 text-xl justify-between w-full")}
 					onclick={() => dialogElement.showModal()}
 				>
-					<span>Lisää listaan</span>
+					<span>Lisää listaan ja vertaa!</span>
 					<Icon name="plus" />
 				</button>
 			{/snippet}
@@ -173,7 +167,7 @@
 			href={`https://www.alko.fi/tuotteet/${product[AllColumns.Number]}`}
 			target="_blank"
 			rel="noopener noreferrer"
-			class={twMerge(components.button({ size: 'md' }))}
+			class={twMerge(components.button({ size: 'md' }), "py-3 px-5 text-xl w-full")}
 		>
 			<span>Alkon tuotesivu</span>
 			<Icon name="link_external" class="inline-block" />
@@ -213,7 +207,10 @@
 	{#if similarProducts.length}
 		<div class="flex items-center justify-between">
 			<h2 class="text-2xl font-bold">Samankaltaisia tuotteita</h2>
-			<a class={twMerge(components.button({ size: "md" }))} href={`/vastaavat/${product[AllColumns.Number]}`}>
+			<a
+				class={twMerge(components.button({ size: 'md' }))}
+				href={`/vastaavat/${product[AllColumns.Number]}`}
+			>
 				<span>Lisää samankaltaisia</span>
 				<Icon name="arrow_right" />
 			</a>
@@ -224,17 +221,18 @@
 					href={`/tuotteet/${similarProduct[AllColumns.Number]}`}
 					class="flex w-48 shrink-0 flex-col gap-3 rounded-lg border border-primary p-4"
 				>
-					<div class="flex flex-col gap-2 h-[calc(3_*_2.5rem)] md:h-[calc(3_*_2.75rem)]">
-						<h2
-							class="line-clamp-3 text-xl font-bold md:text-2xl"
-						>
+					<div class="flex h-[calc(3_*_2.5rem)] flex-col gap-2 md:h-[calc(3_*_2.75rem)]">
+						<h2 class="line-clamp-3 text-xl font-bold md:text-2xl">
 							{similarProduct[AllColumns.Name]}
 						</h2>
 						<span>
-							{formatValue(similarProduct[AllColumns.AlcoholPercentage], AllColumns.AlcoholPercentage)}
+							{formatValue(
+								similarProduct[AllColumns.AlcoholPercentage],
+								AllColumns.AlcoholPercentage
+							)}
 						</span>
 					</div>
-					<div class="flex aspect-square w-full shrink-0 p-2 md:max-w-fit bg-white rounded">
+					<div class="flex aspect-square w-full shrink-0 rounded bg-white p-2 md:max-w-fit">
 						<ProductImage
 							number={similarProduct[AllColumns.Number]}
 							name={similarProduct[AllColumns.Name]}

@@ -11,5 +11,6 @@
 	referrerpolicy="no-referrer"
 	src={generateImageUrl(number, name, transform || "products")}
 	alt={name}
+	data-name="product-image"
 	class={twMerge("block h-full w-full object-contain", rest.class)}
 />
