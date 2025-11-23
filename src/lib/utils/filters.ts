@@ -99,7 +99,7 @@ export function findDifferentSizeOfProduct(product: PriceListItem, kaljakori: Ka
     const filtered = kaljakori.filter({ 
         [AllColumns.Type]: new Set([product[AllColumns.Type]]),
         [AllColumns.SubType]: new Set([product[AllColumns.SubType]]),
-        [AllColumns.AlcoholPercentage]: new Set([product[AllColumns.AlcoholPercentage]]),
+        [AllColumns.AlcoholPercentage]: [product[AllColumns.AlcoholPercentage], product[AllColumns.AlcoholPercentage]],
         [AllColumns.Sugar]: [product[AllColumns.Sugar] - product[AllColumns.Sugar] * 0.5, product[AllColumns.Sugar] + product[AllColumns.Sugar] * 0.5],
     })
     const scored = filtered.map((item) => {
@@ -124,6 +124,7 @@ export function findDifferentSizeOfProduct(product: PriceListItem, kaljakori: Ka
             score
         }
     }).sort((a, b) => (a.score - b.score)).reverse()
+    console.log("scored", scored)
     const out = []
     for(let i = 0; i<scored.length; i++) {
         const entry = scored[i]
