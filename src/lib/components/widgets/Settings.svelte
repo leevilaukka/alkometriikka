@@ -6,7 +6,7 @@
 	import Popup from '$lib/components/widgets/Popup.svelte';
 	import Icon from '$lib/components/widgets/Icon.svelte';
 	import { version } from '$app/environment';
-	import { handleClearAll, handleExport, handleImport } from '$lib/utils/helpers';
+	import { generateOutLink, handleClearAll, handleExport, handleImport } from '$lib/utils/helpers';
 
 	let tab = $state<'personal' | 'info' | 'settings'>('personal');
 
@@ -65,7 +65,7 @@
 				<h2 class="text-lg font-bold">Tietoa</h2>
 				<p>
 					Alkometriikka on
-					<a href="https://github.com/leevilaukka/alkometriikka" target="_blank">
+					<a href={generateOutLink("https://github.com/leevilaukka/alkometriikka")} target="_blank">
 						avoimen lähdekoodin
 					</a> web-sovellus, joka listaa Alkon tuotevalikoiman ja antaa käyttäjille hieman laskennallista
 					tietoa tuotteista.
@@ -73,7 +73,7 @@
 				<p>
 					Hinnasto ladataan Alkon julkisesta Excel-tiedostosta. Tiedostoa päivitetään noin
 					vuorokauden viiveellä. Voit ladata sen <a
-						href="https://www.alko.fi/INTERSHOP/static/WFS/Alko-OnlineShop-Site/-/Alko-OnlineShop/fi_FI/Alkon%20Hinnasto%20Tekstitiedostona/alkon-hinnasto-tekstitiedostona.xlsx"
+						href={generateOutLink("https://www.alko.fi/INTERSHOP/static/WFS/Alko-OnlineShop-Site/-/Alko-OnlineShop/fi_FI/Alkon%20Hinnasto%20Tekstitiedostona/alkon-hinnasto-tekstitiedostona.xlsx")}
 						target="_blank"
 						rel="noopener noreferrer"
 						>täältä
@@ -82,11 +82,11 @@
 				<p>
 					Voit lähettää kehitysehdotuksia ja bugiraportteja GitHubin kautta. <br />
 					<a
-						href="https://github.com/leevilaukka/alkometriikka/issues/new?template=feature_request.md"
+						href={generateOutLink("https://github.com/leevilaukka/alkometriikka/issues/new?template=feature_request.md")}
 						>Lähetä kehitysehdotus
 					</a>
 					|
-					<a href="https://github.com/leevilaukka/alkometriikka/issues/new?template=bug_report.md"
+					<a href={generateOutLink("https://github.com/leevilaukka/alkometriikka/issues/new?template=bug_report.md")}
 						>Lähetä bugiraportti
 					</a>
 				</p>
@@ -97,7 +97,7 @@
 			</div>
 			<div class="flex flex-row items-center gap-2">
 				<a
-					href="https://github.com/leevilaukka/alkometriikka"
+					href={generateOutLink("https://github.com/leevilaukka/alkometriikka")}
 					target="_blank"
 					class={twMerge(components.button())}
 				>
@@ -114,7 +114,7 @@
 				</a>
 			</div>
 			<p class="text-sm text-secondary">
-				Versio: <a href="https://github.com/leevilaukka/alkometriikka/commit/{version}">
+				Versio: <a href={generateOutLink("https://github.com/leevilaukka/alkometriikka/commit/{version}")}>
 					{version}
 				</a>
 				{#if alko.dataset.metadata.CreatedDate}

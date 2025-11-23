@@ -73,6 +73,10 @@ export function handleExport() {
     URL.revokeObjectURL(url);
 }
 
+export function generateOutLink(url: string) {
+    return `/linkki.html?to=${encodeURI(url)}`
+}
+
 export function handleImport() {
     const input = document.createElement('input');
     input.type = 'file';

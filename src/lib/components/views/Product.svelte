@@ -5,7 +5,7 @@
 		DrunkColumns,
 		hideFromProductPageStats
 	} from '$lib/utils/constants';
-	import { formatValue, generateTitle, setSEO, valueToString } from '$lib/utils/helpers';
+	import { formatValue, generateOutLink, generateTitle, setSEO, valueToString } from '$lib/utils/helpers';
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/styles';
 	import Icon from '../widgets/Icon.svelte';
@@ -164,7 +164,7 @@
 			{/snippet}
 		</Popup>
 		<a
-			href={`/linkki.html?to=${encodeURI("https://www.alko.fi/tuotteet/")}` + product[AllColumns.Number]}
+			href={generateOutLink(`https://www.alko.fi/tuotteet/${product[AllColumns.Number]}`)}
 			target="_blank"
 			rel="noopener noreferrer"
 			class={twMerge(components.button({ size: 'md' }), "py-3 px-5 text-xl w-full")}
