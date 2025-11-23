@@ -164,7 +164,7 @@
 			{/snippet}
 		</Popup>
 		<a
-			href={`https://www.alko.fi/tuotteet/${product[AllColumns.Number]}`}
+			href={`/linkki.html?to=${encodeURI("https://www.alko.fi/tuotteet/")}` + product[AllColumns.Number]}
 			target="_blank"
 			rel="noopener noreferrer"
 			class={twMerge(components.button({ size: 'md' }), "py-3 px-5 text-xl w-full")}

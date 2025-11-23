@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fi">
+    <head>
+        <meta name="robots" content="noindex">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Alkometriikka | Redirect</title>
+        <script id="analytics" data-allow-params="to" src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+        <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#18181b" media="(prefers-color-scheme: dark)" />
+        <meta name="color-scheme" content="light dark" />
+    </head>
+    <body>
+        <noscript>Tämä ominaisuus vaatii JavaScriptiä toimiakseen!</noscript>
+        <p>Uudelleenohjataan...</p>
+        <script>
+            let link = document.createElement("a");
+            link.referrerPolicy = "no-referrer";
+            link.rel = "noreferrer nofollow";
+            link.href = new URL(window.location).searchParams.get("to");
+            document.body.appendChild(link)
+            link.click();
+        </script>
+    </body>
+</html>
