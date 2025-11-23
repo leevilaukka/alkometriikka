@@ -52,6 +52,7 @@ function saveDataset(data: { table: any[], metadata: XLSX.FullProperties }) {
 }
 
 async function purgeCache() {
+    if(DEV) return;
     const purgeKey = process.env.CLOUDFLARE_PURGE_KEY;
 
     if (!purgeKey) {
