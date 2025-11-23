@@ -170,7 +170,6 @@
 		<a
 			href={generateOutLink(`https://www.alko.fi/tuotteet/${product[AllColumns.Number]}`)}
 			target="_blank"
-			rel="noopener noreferrer"
 			class={twMerge(components.button({ size: 'md' }), "py-3 px-5 text-xl w-full")}
 		>
 			<span>Alkon tuotesivu</span>
