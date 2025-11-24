@@ -14,17 +14,12 @@
 	import { type ListObj, type PriceListItem } from '$lib/types';
 	import { addToList } from '$lib/utils/lists';
 	import BadgeList from '../widgets/BadgeList.svelte';
-	import { afterNavigate, goto } from '$app/navigation';
+	import { afterNavigate } from '$app/navigation';
 	import type { Kaljakori } from '$lib/alko';
 	import { findDifferentSizeOfProduct, findSimilarProducts } from '$lib/utils/filters';
 	import ProductImage from '../widgets/ProductImage.svelte';
 	import { generateImageUrl } from '$lib/utils/image';
 	const { product, kaljakori }: { product: PriceListItem; kaljakori: Kaljakori } = $props();
-
-	function handleBack() {
-		if (window.history.length > 1) window.history.back();
-		else goto('/');
-	}
 
 	let productElement: HTMLDivElement;
 
@@ -101,10 +96,10 @@
 	class={twMerge('mx-auto flex w-full max-w-[120ch] flex-col flex-nowrap gap-6 p-6')}
 >
 	<div class="flex w-full items-center gap-4">
-		<button onclick={() => handleBack()} class={twMerge(components.button({ size: 'md' }))}>
-			<Icon name={window.history.length > 1 ? 'arrow_back' : 'home'} class="inline-block" />
-			<span>{window.history.length > 1 ? 'Takaisin' : 'Etusivulle'}</span>
-		</button>
+		<a href="/" class={twMerge(components.button({ size: 'md' }))}>
+			<Icon name={'home'} class="inline-block" />
+			<span>Etusivulle</span>
+		</a>
 	</div>
 	<header class="grid w-full grid-cols-1 gap-6 md:grid-cols-[auto_1fr]">
 		<div class="flex aspect-square h-96 w-full max-w-full rounded bg-white p-6 md:w-fit">
@@ -197,7 +192,7 @@
 			<h2 class="text-xl font-bold">Laskennalliset tiedot</h2>
 			{#each Object.entries(DrunkColumns) as [_, value]}
 				{#if product[value] !== null && product[value] !== undefined}
-					<p>
+					<p class="flex flex-row gap-2 items-center">
 						{valueToString(
 							product[value],
 							value as (typeof DrunkColumns)[keyof typeof DrunkColumns]
