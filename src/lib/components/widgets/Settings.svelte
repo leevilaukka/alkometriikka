@@ -65,7 +65,7 @@
 				<h2 class="text-lg font-bold">Tietoa</h2>
 				<p>
 					Alkometriikka on
-					<a href={generateOutLink("https://github.com/leevilaukka/alkometriikka")} target="_blank">
+					<a href={generateOutLink("https://github.com/leevilaukka/alkometriikka", true)} target="_blank">
 						avoimen lähdekoodin
 					</a> web-sovellus, joka listaa Alkon tuotevalikoiman ja antaa käyttäjille hieman laskennallista
 					tietoa tuotteista.
@@ -81,11 +81,11 @@
 				<p>
 					Voit lähettää kehitysehdotuksia ja bugiraportteja GitHubin kautta. <br />
 					<a
-						href={generateOutLink("https://github.com/leevilaukka/alkometriikka/issues/new?template=feature_request.md")}
+						href={generateOutLink("https://github.com/leevilaukka/alkometriikka/issues/new?template=feature_request.md", true)}
 						>Lähetä kehitysehdotus
 					</a>
 					|
-					<a href={generateOutLink("https://github.com/leevilaukka/alkometriikka/issues/new?template=bug_report.md")}
+					<a href={generateOutLink("https://github.com/leevilaukka/alkometriikka/issues/new?template=bug_report.md", true)}
 						>Lähetä bugiraportti
 					</a>
 				</p>
@@ -96,7 +96,7 @@
 			</div>
 			<div class="flex flex-row items-center gap-2">
 				<a
-					href={generateOutLink("https://github.com/leevilaukka/alkometriikka")}
+					href={generateOutLink("https://github.com/leevilaukka/alkometriikka", true)}
 					target="_blank"
 					class={twMerge(components.button())}
 				>
@@ -113,7 +113,7 @@
 				</a>
 			</div>
 			<p class="text-sm text-secondary">
-				Versio: <a href={generateOutLink("https://github.com/leevilaukka/alkometriikka/commit/{version}")}>
+				Versio: <a href={generateOutLink(`https://github.com/leevilaukka/alkometriikka/commit/${version}`, true)} target="_blank">
 					{version}
 				</a>
 				{#if alko.dataset.metadata.CreatedDate}

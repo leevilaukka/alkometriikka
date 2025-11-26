@@ -15,8 +15,13 @@
         <p>Uudelleenohjataan...</p>
         <script>
             let link = document.createElement("a");
-            link.referrerPolicy = "no-referrer";
-            link.rel = "noreferrer nofollow";
+            const includeReferrer = new URL(window.location).searchParams.get("referrer");
+            if (includeReferrer === "1") {
+                link.referrerPolicy = "origin";
+            } else {
+                link.referrerPolicy = "no-referrer";
+            }
+            link.rel = "nofollow noopener noreferrer";
             link.href = new URL(window.location).searchParams.get("to");
             document.body.appendChild(link)
             link.click();

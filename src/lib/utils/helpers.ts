@@ -73,8 +73,8 @@ export function handleExport() {
     URL.revokeObjectURL(url);
 }
 
-export function generateOutLink(url: string) {
-    return `/linkki.html?to=${encodeURI(url)}`
+export function generateOutLink(url: string, includeReferrer: boolean = false) {
+    return `/linkki.html?to=${encodeURI(url)}${includeReferrer ? '&referrer=1' : ''}`;
 }
 
 export function handleImport() {
