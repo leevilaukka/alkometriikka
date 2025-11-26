@@ -22,7 +22,9 @@
                 link.referrerPolicy = "no-referrer";
             }
             link.rel = "nofollow noopener noreferrer";
-            link.href = new URL(window.location).searchParams.get("to");
+            const url = new URL(new URL(window.location).searchParams.get("to"));
+            if(url.protocol.startsWith("http") && url.host !== window.location.host) link.href = url.toString()
+            else link.href = "/"
             document.body.appendChild(link)
             link.click();
         </script>
