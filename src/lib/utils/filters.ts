@@ -100,6 +100,7 @@ export function findDifferentSizeOfProduct(product: PriceListItem, kaljakori: Ka
     const filtered = kaljakori.filter({ 
         [AllColumns.Type]: new Set([product[AllColumns.Type]]),
         [AllColumns.SubType]: new Set([product[AllColumns.SubType]]),
+        [AllColumns.Manufacturer]: new Set([product[AllColumns.Manufacturer]]),
         [AllColumns.AlcoholPercentage]: [product[AllColumns.AlcoholPercentage], product[AllColumns.AlcoholPercentage]],
         [AllColumns.Sugar]: [product[AllColumns.Sugar] - product[AllColumns.Sugar] * 0.5, product[AllColumns.Sugar] + product[AllColumns.Sugar] * 0.5],
     })
