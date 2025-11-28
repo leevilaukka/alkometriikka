@@ -87,9 +87,9 @@ export function getComparableProductName(product: PriceListItem): string {
     let out = product[AllColumns.Name]
     out = out.replace(/M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})/g, "") // Remove roman numerals (before lowercase)
     out = out.toLowerCase()
-    out = out.replace(product[AllColumns.PackagingType].toLowerCase(), "")
+    out = out.replace(product[AllColumns.PackagingType].toLowerCase(), "") // Remove packaging type
     out = out.replace(/\w+-pack/g, "") // Remove "x-pack"
-    out = out.replace(/[\d.,%-]+/g, "") // Remove numbers
+    out = out.replace(/[\d.,%\-]+/g, "") // Remove numbers
     out = out.replace(/\s+/g, " ").trim() // Remove extra spaces
     return out
 }
@@ -115,7 +115,7 @@ export function findDifferentSizeOfProduct(product: PriceListItem, kaljakori: Ka
         let score = 0
         const compareName = getComparableProductName(item)
         console.log(item[AllColumns.Name], "----->", compareName)
-        if(isSimilarString(targetName, compareName, 0.80)) score += 1
+        if(isSimilarString(targetName, compareName, 0.85)) score += 1
         return {
             item,
             score
