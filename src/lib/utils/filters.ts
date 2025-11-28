@@ -101,12 +101,13 @@ export function findDifferentSizeOfProduct(product: PriceListItem, kaljakori: Ka
         http://localhost:5173/tuotteet/777886 vs http://localhost:5173/tuotteet/901542 has different sugar level and desc?
         http://localhost:5173/tuotteet/700013 name has been misspelled 
         http://localhost:5173/tuotteet/720914 vs http://localhost:5173/tuotteet/792176 name sometimes includes % and sometimes not
-
+        http://localhost:5173/tuotteet/580039 vs http://localhost:5173/tuotteet/008003 different subtype
+        http://localhost:5173/tuotteet/131158 vs http://localhost:5173/tuotteet/902199 different product only difference in name
+        http://localhost:5173/tuotteet/139586 vs http://localhost:5173/tuotteet/148781 different manufacturer listed but same product
     */
     const targetName = getComparableProductName(product)
     const filtered = kaljakori.filter({ 
         [AllColumns.Type]: new Set([product[AllColumns.Type]]),
-        [AllColumns.SubType]: new Set([product[AllColumns.SubType]]),
         [AllColumns.AlcoholPercentage]: [product[AllColumns.AlcoholPercentage], product[AllColumns.AlcoholPercentage]],
         [AllColumns.Vintage]: [product[AllColumns.Vintage], product[AllColumns.Vintage]],
     })
