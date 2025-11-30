@@ -2445,11 +2445,6 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://alkometriikka.fi/tuotteet/956161</loc>
-    <priority>0.5</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
     <loc>https://alkometriikka.fi/tuotteet/939236</loc>
     <priority>0.5</priority>
     <changefreq>weekly</changefreq>
@@ -5480,11 +5475,6 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://alkometriikka.fi/tuotteet/930152</loc>
-    <priority>0.5</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
     <loc>https://alkometriikka.fi/tuotteet/416564</loc>
     <priority>0.5</priority>
     <changefreq>weekly</changefreq>
@@ -6170,11 +6160,6 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://alkometriikka.fi/tuotteet/923711</loc>
-    <priority>0.5</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
     <loc>https://alkometriikka.fi/tuotteet/905267</loc>
     <priority>0.5</priority>
     <changefreq>weekly</changefreq>
@@ -6226,16 +6211,6 @@
   </url>
   <url>
     <loc>https://alkometriikka.fi/tuotteet/492407</loc>
-    <priority>0.5</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://alkometriikka.fi/tuotteet/423717</loc>
-    <priority>0.5</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://alkometriikka.fi/tuotteet/403307</loc>
     <priority>0.5</priority>
     <changefreq>weekly</changefreq>
   </url>
@@ -20936,11 +20911,6 @@
   </url>
   <url>
     <loc>https://alkometriikka.fi/tuotteet/500193</loc>
-    <priority>0.5</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://alkometriikka.fi/tuotteet/524027</loc>
     <priority>0.5</priority>
     <changefreq>weekly</changefreq>
   </url>
