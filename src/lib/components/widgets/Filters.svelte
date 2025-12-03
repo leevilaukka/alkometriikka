@@ -53,7 +53,7 @@
 	$effect(() => {
 		// Reset sub filters when parent filter is changed
 		filterValues && (Object.keys(filterValues) as ColumnNames[]).forEach((filter) => {
-			if(Object.hasOwn(subCategoryMap, filter) && filterValues[filter].length !== 1 && filterValues[subCategoryMap[filter as keyof typeof subCategoryMap]].length)  {
+			if(Object.hasOwn(subCategoryMap, filter) && filterValues[filter].length !== 1 && filterValues[subCategoryMap[filter as keyof typeof subCategoryMap]]?.length)  {
 				filterValues[subCategoryMap[filter as keyof typeof subCategoryMap]] = []
 			}
 		})

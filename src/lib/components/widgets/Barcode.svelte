@@ -9,7 +9,6 @@
 	import type { Kaljakori } from '$lib/alko';
 	import { AllColumns } from '$lib/utils/constants';
 	import { goto } from '$app/navigation';
-	import { send } from 'process';
 	import { sendAnalyticsEvent } from '$lib/utils/helpers';
 
 	const barcodeDetector = new BarcodeDetector({
