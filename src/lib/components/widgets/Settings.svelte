@@ -6,7 +6,7 @@
 	import Popup from '$lib/components/widgets/Popup.svelte';
 	import Icon from '$lib/components/widgets/Icon.svelte';
 	import { version } from '$app/environment';
-	import { generateOutLink, handleClearAll, handleExport, handleImport } from '$lib/utils/helpers';
+	import { handleClearAll, handleExport, handleImport, sendAnalyticsEvent } from '$lib/utils/helpers';
 
 	let tab = $state<'personal' | 'info' | 'settings'>('personal');
 
@@ -17,7 +17,10 @@
 	{#snippet renderButton(dialogElement: HTMLDialogElement)}
 		<button
 			class={twMerge(components.button(), 'p-2 text-xl')}
-			onclick={() => dialogElement.showModal()}
+			onclick={() =>  {
+				sendAnalyticsEvent('open_settings');
+				dialogElement.showModal()
+			}}
 		>
 			{#if !$isMobile}<span class="text-sm">Asetukset</span>{/if}<Icon name="cog" />
 		</button>
@@ -65,7 +68,7 @@
 				<h2 class="text-lg font-bold">Tietoa</h2>
 				<p>
 					Alkometriikka on
-					<a href={generateOutLink("https://github.com/leevilaukka/alkometriikka", true)} target="_blank">
+					<a href={"https://github.com/leevilaukka/alkometriikka"} target="_blank">
 						avoimen lähdekoodin
 					</a> web-sovellus, joka listaa Alkon tuotevalikoiman ja antaa käyttäjille hieman laskennallista
 					tietoa tuotteista.
@@ -73,7 +76,9 @@
 				<p>
 					Hinnasto ladataan Alkon julkisesta Excel-tiedostosta. Tiedostoa päivitetään noin
 					vuorokauden viiveellä. Voit ladata sen <a
-						href={generateOutLink("https://www.alko.fi/INTERSHOP/static/WFS/Alko-OnlineShop-Site/-/Alko-OnlineShop/fi_FI/Alkon%20Hinnasto%20Tekstitiedostona/alkon-hinnasto-tekstitiedostona.xlsx")}
+						href={"https://www.alko.fi/INTERSHOP/static/WFS/Alko-OnlineShop-Site/-/Alko-OnlineShop/fi_FI/Alkon%20Hinnasto%20Tekstitiedostona/alkon-hinnasto-tekstitiedostona.xlsx"}
+						referrerpolicy="no-referrer"
+						rel="noopener noreferrer"
 						target="_blank"
 						>täältä
 					</a>.
@@ -81,11 +86,11 @@
 				<p>
 					Voit lähettää kehitysehdotuksia ja bugiraportteja GitHubin kautta. <br />
 					<a
-						href={generateOutLink("https://github.com/leevilaukka/alkometriikka/issues/new?template=feature_request.md", true)}
+						href={"https://github.com/leevilaukka/alkometriikka/issues/new?template=feature_request.md"}
 						>Lähetä kehitysehdotus
 					</a>
 					|
-					<a href={generateOutLink("https://github.com/leevilaukka/alkometriikka/issues/new?template=bug_report.md", true)}
+					<a href={"https://github.com/leevilaukka/alkometriikka/issues/new?template=bug_report.md"}
 						>Lähetä bugiraportti
 					</a>
 				</p>
@@ -96,7 +101,7 @@
 			</div>
 			<div class="flex flex-row items-center gap-2">
 				<a
-					href={generateOutLink("https://github.com/leevilaukka/alkometriikka", true)}
+					href={"https://github.com/leevilaukka/alkometriikka"}
 					target="_blank"
 					class={twMerge(components.button())}
 				>
@@ -113,7 +118,7 @@
 				</a>
 			</div>
 			<p class="text-sm text-secondary">
-				Versio: <a href={generateOutLink(`https://github.com/leevilaukka/alkometriikka/commit/${version}`, true)} target="_blank">
+				Versio: <a href={`https://github.com/leevilaukka/alkometriikka/commit/${version}`} target="_blank">
 					{version}
 				</a>
 				{#if alko.dataset.metadata.CreatedDate}

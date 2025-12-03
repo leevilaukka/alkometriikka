@@ -8,6 +8,9 @@ declare global {
 		// interface PageState {}
 		// interface Platform {}
 	}
-}
 
+	interface Window {
+		sa_event: (eventName: string, eventParams?: Record<string, any>) => void | undefined;
+	}
+}
 export {};

@@ -6,13 +6,14 @@
 	import Icon from "./Icon.svelte";
 	import type { ListObj } from "$lib/types";
 	import { isSimilarString } from "$lib/utils/search";
-	import { handleShare } from "$lib/utils/helpers";
+	import { handleShare, sendAnalyticsEvent } from "$lib/utils/helpers";
 
     const { action, show, useSearch = false }: { action?: (list: ListObj) => void; show?: { delete?: boolean, length?: boolean, share?: boolean }, useSearch?: boolean } = $props();
     const time = new Date();
 
     function handleCreateList() {
         createList(`Uusi lista - ${time.getDate()}.${time.getMonth() + 1}.${time.getFullYear()} ${time.getHours() < 10 ? '0' : ''}${time.getHours()}.${time.getMinutes() < 10 ? '0' : ''}${time.getMinutes()}`);
+        sendAnalyticsEvent('create_list');
     }
 
 </script>

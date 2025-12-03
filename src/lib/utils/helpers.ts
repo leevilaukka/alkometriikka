@@ -1,5 +1,4 @@
 import { dev } from "$app/environment";
-import type { Kaljakori } from "$lib/alko";
 import { lists, personalInfo } from "$lib/global.svelte";
 import type { ColumnNames, OGImage, OgProperties, PriceListItem, TwitterProperties } from "$lib/types";
 import { defaultSEOData, filterRenameMap, filterToUnitMarker, LocalStorageKeys, sortingOrderDescriptionMap } from "./constants";
@@ -82,6 +81,14 @@ export function generateOutLink<U extends string, I extends boolean = false>(url
     return outLink as `/linkki.html?to=${U}${I extends true ? '&referrer=1' : ''}`;
 }
 
+export function sendAnalyticsEvent(eventName: string, eventParams?: Record<string, any>) {
+    if (dev) return;
+
+    if (typeof window.sa_event === 'function') {
+        window.sa_event(eventName, eventParams);
+    }
+}
+
 export function handleImport() {
     const input = document.createElement('input');
     input.type = 'file';
@@ -129,6 +136,7 @@ export function getRandom() {
 }
 
 export async function handleShare({ title, text, url }: { title: string; text: string; url: string }): Promise<boolean> {
+    sendAnalyticsEvent('share_list', { url });
     if (navigator.canShare && navigator.canShare({ url })) {
         await navigator.share({
             title,

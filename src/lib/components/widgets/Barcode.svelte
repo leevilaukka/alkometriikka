@@ -9,6 +9,8 @@
 	import type { Kaljakori } from '$lib/alko';
 	import { AllColumns } from '$lib/utils/constants';
 	import { goto } from '$app/navigation';
+	import { send } from 'process';
+	import { sendAnalyticsEvent } from '$lib/utils/helpers';
 
 	const barcodeDetector = new BarcodeDetector({
 		formats: ['ean_13', 'qr_code']
@@ -96,7 +98,9 @@
 		const productCode = rawValue;
 		const products = kaljakori.findByColumn(AllColumns.EAN, productCode);
 		if (products.length !== 1) throw 'Tuotetta ei löytynyt';
-		goto(`/tuotteet/${products[0][AllColumns.Number]}`, { replaceState: true});
+		const link = `/tuote/${products[0][AllColumns.Number]}`;
+		sendAnalyticsEvent('scan_barcode', { ean: productCode, link });
+		goto(link, { replaceState: true });
 	}
 
 	function handleQRCode({ rawValue }: DetectedBarcode) {
