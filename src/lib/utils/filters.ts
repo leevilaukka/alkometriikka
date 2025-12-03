@@ -83,40 +83,39 @@ export function findSimilarProducts(product: PriceListItem, kaljakori: Kaljakori
     return scored.filter(({ item }) => item[AllColumns.Number] !== product[AllColumns.Number]).slice(0, limit).map(({ item }) => item);
 }
 
+export function getComparableProductName(product: PriceListItem): string {
+    let out = product[AllColumns.Name]
+    out = out.replace(/M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})/g, "") // Remove roman numerals (before lowercase)
+    out = out.toLowerCase()
+    out = out.replace(product[AllColumns.PackagingType].toLowerCase(), "") // Remove packaging type
+    out = out.replace(/\w+-pack/g, "") // Remove "x-pack"
+    out = out.replace(/[\d.,%\-]+/g, "") // Remove numbers
+    out = out.replace(/\s+/g, " ").trim() // Remove extra spaces
+    return out
+}
+
 export function findDifferentSizeOfProduct(product: PriceListItem, kaljakori: Kaljakori): PriceListItem[] {
-    // TODO: Fix this garbage V1 algo and improve matching + performance
+    // TODO: Fix this garbage V2 algo and improve matching + performance
     /*
         Examples of hard to match products due to different desc name etc:
         http://localhost:5173/tuotteet/777886 vs http://localhost:5173/tuotteet/901542 has different sugar level and desc?
         http://localhost:5173/tuotteet/700013 name has been misspelled 
         http://localhost:5173/tuotteet/720914 vs http://localhost:5173/tuotteet/792176 name sometimes includes % and sometimes not
-
+        http://localhost:5173/tuotteet/580039 vs http://localhost:5173/tuotteet/008003 different subtype
+        http://localhost:5173/tuotteet/131158 vs http://localhost:5173/tuotteet/902199 different product only difference in name
+        http://localhost:5173/tuotteet/139586 vs http://localhost:5173/tuotteet/148781 different manufacturer listed but same product
     */
-    const targetWordList = product[AllColumns.Name].toLowerCase().replace(product[AllColumns.PackagingType].toLowerCase(), "").split(" ").map(part => {
-        const number = Number.parseFloat(part.replaceAll(",", "."))
-        if(Number.isNaN(number)) return part
-        else return ""
-    }).filter(_ => !!_)
+    const targetName = getComparableProductName(product)
     const filtered = kaljakori.filter({ 
         [AllColumns.Type]: new Set([product[AllColumns.Type]]),
-        [AllColumns.SubType]: new Set([product[AllColumns.SubType]]),
         [AllColumns.AlcoholPercentage]: [product[AllColumns.AlcoholPercentage], product[AllColumns.AlcoholPercentage]],
-        [AllColumns.Sugar]: [product[AllColumns.Sugar] - product[AllColumns.Sugar] * 0.5, product[AllColumns.Sugar] + product[AllColumns.Sugar] * 0.5],
+        [AllColumns.Vintage]: [product[AllColumns.Vintage], product[AllColumns.Vintage]],
     })
     const scored = filtered.map((item) => {
-        const comparisonWordList = item[AllColumns.Name].toLowerCase().replace(product[AllColumns.PackagingType].toLowerCase(), "").split(" ").map(part => {
-            const number = Number.parseFloat(part.replaceAll(",", "."))
-            if(Number.isNaN(number)) return part
-            else return ""
-        }).filter(_ => !!_)
         let score = 0
-        for(let i = 0; i<comparisonWordList.length; i++) {
-            const word1 = comparisonWordList.at(i)
-            const word2 = targetWordList.at(i)
-            if(word1 && word2 && isSimilarString(word1, word2, 0.8)) score += 1;
-            else break
-        }
-        if(comparisonWordList.length > targetWordList.length && targetWordList.at(0) === comparisonWordList.at(0) && [...item[AllColumns.Description].values()].at(0) !== [...product[AllColumns.Description].values()].at(0)) score -= 1
+        const compareName = getComparableProductName(item)
+        console.log(item[AllColumns.Name], "----->", compareName)
+        if(isSimilarString(targetName, compareName, 0.85)) score += 1
         return {
             item,
             score
