@@ -76,13 +76,6 @@
   window.saAutomatedLink = function saAutomatedLink(element, type) {
     try {
       if (!element) return log("no element found");
-      let sent = false;
-
-      let callback = function () {
-        if (!sent && !element.getAttribute("target"))
-          document.location = element.getAttribute("href");
-        sent = true;
-      };
 
       if (window[saGlobal] && window[saGlobal + "_loaded"]) {
         let hostname = element.hostname;
@@ -130,16 +123,11 @@
           "_" +
           event.replace(/[^a-z0-9]+/gi, "_").replace(/(^_+|_+$)/g, "");
 
-        window[saGlobal](clean, metadata, callback);
+        window[saGlobal](clean, metadata);
 
         log("collected " + clean);
-
-        return type === "email"
-          ? callback()
-          : window.setTimeout(callback, 5000);
       } else {
         log(saGlobal + " is not defined", "warn");
-        return callback();
       }
     } catch (error) {
       log(error.message, "warn");
@@ -175,7 +163,7 @@
     if (!collect) return;
 
     const linkClickHandler = function (element) {
-        saAutomatedLink(element.target, collect);
+        saAutomatedLink(link, collect);
     }
 
     link.removeEventListener("click", linkClickHandler);
@@ -193,6 +181,8 @@
 
         // Skip links that don't have an href
         if (!href) continue;
+
+        console.log(link)
           
         collectLink(link);
       }
@@ -201,13 +191,9 @@
     }
   }
 
-    document.addEventListener("readystatechange", function (event) {
-        if (event.target.readyState === "complete") registerLinkListeners();
+  const obsverver = new MutationObserver(() => {
+      registerLinkListeners();
+  })
 
-        const obsverver = new MutationObserver(() => {
-            registerLinkListeners();
-        })
-
-        obsverver.observe(document.body, { childList: true, subtree: true });
-    });
+  obsverver.observe(document.body, { childList: true, subtree: true });
 })(window);
