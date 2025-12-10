@@ -97,7 +97,7 @@
 		const productCode = rawValue;
 		const products = kaljakori.findByColumn(AllColumns.EAN, productCode);
 		if (products.length !== 1) throw 'Tuotetta ei löytynyt';
-		const link = `/tuote/${products[0][AllColumns.Number]}`;
+		const link = `/tuotteet/${products[0][AllColumns.Number]}`;
 		sendAnalyticsEvent('scan_barcode', { ean: productCode, link });
 		goto(link, { replaceState: true });
 	}
