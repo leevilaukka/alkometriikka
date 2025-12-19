@@ -50,6 +50,7 @@ export const DrunkColumns = Object.freeze({
     EstimatedPromille: "Arvioidut promillet",
     PromillePerEuro: "Promillet / €",
     Servings: "Annokset",
+    EuroPerLiterAlcohol: "€ / l (alk.)"
 } as const);
 
 /** All columns available in the app.
@@ -195,6 +196,10 @@ export const filterToUnitMarker = {
     [AllColumns.Energy]: 'kcal/100ml',
     [AllColumns.BitternessEBU]: 'EBU',
     [AllColumns.OriginalGravity]: '°P',
+    [AllColumns.ColorEBC]: 'EBC',
+    [AllColumns.EuroPerLiterAlcohol]: '€',
+    [AllColumns.PromillePerEuro]: '‰',
+    [AllColumns.AlcoholGramsPerEuro]: 'g',
 } as const satisfies ColNameObj<string>;
 
 /**

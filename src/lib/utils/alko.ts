@@ -49,11 +49,15 @@ export function calculateDrunkValue(
 	// Lasketaan annokset (1 annos = 12g)
 	const servings = pureAlcoholGrams / 12;
 
+	// € per litra raakaa alkoholia
+	const euroPerLiter = price / (volume * (percentage / 100));
+
 	return {
 		[DrunkColumns.AlcoholGrams]: parseFloat(pureAlcoholGrams.toFixed(2)),
 		[DrunkColumns.AlcoholGramsPerEuro]: parseFloat(alcoholPerEuro.toFixed(2)),
 		[DrunkColumns.EstimatedPromille]: parseFloat(estimatedBAC.toFixed(3)),
 		[DrunkColumns.PromillePerEuro]: parseFloat(bacPerEuro.toFixed(4)),
-		[DrunkColumns.Servings]: parseFloat(servings.toFixed(1))
+		[DrunkColumns.Servings]: parseFloat(servings.toFixed(1)),
+		[DrunkColumns.EuroPerLiterAlcohol]: parseFloat(euroPerLiter.toFixed(2))
 	};
 }

@@ -5,6 +5,7 @@ import { defaultSEOData, filterRenameMap, filterToUnitMarker, LocalStorageKeys, 
 
 export function formatValue(value: string | number | Set<string>, header?: ColumnNames) {
     if (value instanceof Set) return Array.from(value).join(', ');
+    if (value === Infinity || value === -Infinity) value = "∞";
     if (header && Object.hasOwn(filterToUnitMarker, header)) return `${value} ${filterToUnitMarker[header as keyof typeof filterToUnitMarker]}`;
     return value
 }
