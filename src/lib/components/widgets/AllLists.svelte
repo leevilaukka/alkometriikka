@@ -81,7 +81,7 @@
             {/each}
         </div>
     {:else}
-        <div class="prose text-center mx-auto">  
+        <div class="prose text-center mx-auto dark:prose-invert">  
             <h2>Ei listoja!</h2>
             <p>Luo uusi lista alla olevasta painikkeesta!</p>
         </div>

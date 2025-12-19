@@ -97,7 +97,9 @@
                                 <div class="flex flex-col gap-2">
                                     <h2 class="text-lg font-bold md:text-xl">Samankaltaisia tuotteita kuin:</h2>
                                     <h1 class="text-2xl font-bold md:text-3xl">
-                                        {product[AllColumns.Name]}
+										<a href={`/tuotteet/${product[AllColumns.Number]}`} class="hover:underline">
+											{product[AllColumns.Name]}
+										</a>
                                     </h1>
                                     <span>
                                         {valueToString(product[AllColumns.Manufacturer], AllColumns.Manufacturer)} | {valueToString(
