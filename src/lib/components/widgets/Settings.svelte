@@ -7,7 +7,6 @@
 	import Icon from '$lib/components/widgets/Icon.svelte';
 	import { version } from '$app/environment';
 	import { handleClearAll, handleExport, handleImport, sendAnalyticsEvent } from '$lib/utils/helpers';
-	import { send } from 'process';
 
 	let tab = $state<'personal' | 'info' | 'settings'>('personal');
 
