@@ -5,7 +5,7 @@
 		DrunkColumns,
 		hideFromProductPageStats
 	} from '$lib/utils/constants';
-	import { formatValue, generateOutLink, generateTitle, setSEO, valueToString } from '$lib/utils/helpers';
+	import { formatValue, generateOutLink, generateTitle, sendAnalyticsEvent, setSEO, valueToString } from '$lib/utils/helpers';
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/styles';
 	import Icon from '../widgets/Icon.svelte';
@@ -19,6 +19,7 @@
 	import { findDifferentSizeOfProduct, findSimilarProducts } from '$lib/utils/filters';
 	import ProductImage from '../widgets/ProductImage.svelte';
 	import { generateImageUrl } from '$lib/utils/image';
+	import { preventDefault } from 'svelte/legacy';
 	const { product, kaljakori }: { product: PriceListItem; kaljakori: Kaljakori } = $props();
 
 	let productElement: HTMLDivElement;
@@ -206,7 +207,9 @@
 	</div>
 	{#if differentSizesOfProduct.length}
 	<details>
-		<summary class="text-2xl font-bold mb-2">
+		<summary class="text-2xl font-bold mb-2" onclick={(e) => {
+			sendAnalyticsEvent('view_sizes', { product_number: product[AllColumns.Number] });
+		}}>
 			Muut koot
 		</summary>
 		<div class="flex max-w-full flex-col flex-nowrap gap-3">

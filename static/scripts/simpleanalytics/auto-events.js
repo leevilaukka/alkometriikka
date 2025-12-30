@@ -180,10 +180,7 @@
         let href = link.getAttribute("href");
 
         // Skip links that don't have an href
-        if (!href) continue;
-
-        console.log(link)
-          
+        if (!href) continue;          
         collectLink(link);
       }
     } catch (error) {
