@@ -105,6 +105,16 @@
 	function handleQRCode({ rawValue }: DetectedBarcode) {
 		try {
 			const url = new URL(rawValue);
+			if (url.host === "www.alko.fi" && url.pathname.startsWith("/tuotteet/")) {
+				// Alko product link
+				const productNumber = url.pathname.split("/tuotteet/")[1].split("/")[0];
+				const products = kaljakori.findByColumn(AllColumns.Number, productNumber);
+				if (products.length !== 1) throw 'Tuotetta ei löytynyt';
+				const link = `/tuotteet/${products[0][AllColumns.Number]}`;
+				sendAnalyticsEvent('scan_qr_code', { type: 'alko_product_qr', product_number: productNumber, link });
+				goto(link, { replaceState: true });
+				return;
+			}
 			if (url.host !== window.location.host) return;
 			goto(url.pathname + url.search);
 		} catch (error) {
