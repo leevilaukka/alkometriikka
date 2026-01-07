@@ -3,7 +3,6 @@
 	import { twMerge } from 'tailwind-merge';
 	import type { ColumnNames, ListObj, PriceListItem } from '$lib/types';
 	import {
-		filterToUnitMarker,
 		shownColumnsToHighlight,
 		defaultSortingColumn,
 		AllColumns,
@@ -13,10 +12,8 @@
 	} from '$lib/utils/constants';
 	import { components } from '$lib/utils/styles';
 	import {
-		formatValue,
 		headerToDisplayName,
 		sortingOrderToString,
-		valueToString
 	} from '$lib/utils/helpers';
 	import Icon from '../widgets/Icon.svelte';
 	import type { Kaljakori } from '$lib/alko';
@@ -27,10 +24,8 @@
 	import Filters from '../widgets/Filters.svelte';
 	import { initFilterValues } from '$lib/utils/filters';
 	import { page } from '$app/state';
-	import BadgeList from '../widgets/BadgeList.svelte';
 	import { getContext, onMount } from 'svelte';
 	import type { SearchParamsManager } from '$lib/utils/url';
-	import ProductImage from '../widgets/ProductImage.svelte';
 	import ProductPreview from '../widgets/ProductPreview.svelte';
 
 	const { kaljakori }: { kaljakori: Kaljakori } = $props();
