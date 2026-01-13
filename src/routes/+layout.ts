@@ -64,6 +64,5 @@ async function getData({ fetch }: { fetch: Fetch; }) {
 }
 
 export async function load({ fetch }: { fetch: Fetch }) {
-    
 	return { alko: getData({ fetch }) };
 };
