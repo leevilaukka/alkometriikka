@@ -5,13 +5,7 @@
 		DrunkColumns,
 		hideFromProductPageStats
 	} from '$lib/utils/constants';
-	import {
-		formatValue,
-		generateTitle,
-		sendAnalyticsEvent,
-		setSEO,
-		valueToString
-	} from '$lib/utils/helpers';
+	import { formatValue, generateOutLink, generateTitle, sendAnalyticsEvent, setSEO, valueToString } from '$lib/utils/helpers';
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/styles';
 	import Icon from '../widgets/Icon.svelte';
@@ -25,6 +19,7 @@
 	import { findDifferentSizeOfProduct, findSimilarProducts } from '$lib/utils/filters';
 	import ProductImage from '../widgets/ProductImage.svelte';
 	import { generateImageUrl } from '$lib/utils/image';
+	import { preventDefault } from 'svelte/legacy';
 	const { product, kaljakori }: { product: PriceListItem; kaljakori: Kaljakori } = $props();
 
 	let productElement: HTMLDivElement;
@@ -88,9 +83,9 @@
 		}
 	});
 
-	const differentSizesOfProduct = findDifferentSizeOfProduct(product, kaljakori);
+	const differentSizesOfProduct = findDifferentSizeOfProduct(product, kaljakori)
 
-	console.log('differentSizesOfProduct', differentSizesOfProduct);
+	console.log("differentSizesOfProduct", differentSizesOfProduct)
 </script>
 
 <svelte:head>
@@ -147,14 +142,11 @@
 			</div>
 		</div>
 	</header>
-	<div class="grid w-full grid-cols-1 gap-4 md:grid-cols-[2fr_2fr_auto]">
+	<div class="grid grid-cols-1 md:grid-cols-[2fr_1fr] w-full gap-4 md:justify-end">
 		<Popup class="gap-4 p-4">
 			{#snippet renderButton(dialogElement: HTMLDialogElement)}
 				<button
-					class={twMerge(
-						components.button({ type: 'positive', size: 'lg' }),
-						'w-full justify-between px-5 py-3 text-xl'
-					)}
+					class={twMerge(components.button({ type: 'positive', size: 'lg' }), "py-3 px-5 text-xl justify-between w-full")}
 					onclick={() => dialogElement.showModal()}
 				>
 					<span>Lisää listaan ja vertaa!</span>
@@ -176,48 +168,11 @@
 			target="_blank"
 			rel="noopener noreferrer"
 			referrerpolicy="no-referrer"
-			class={twMerge(components.button({ size: 'md' }), 'w-full px-5 py-3 text-xl')}
+			class={twMerge(components.button({ size: 'md' }), "py-3 px-5 text-xl w-full")}
 		>
 			<span>Alkon tuotesivu</span>
 			<Icon name="link_external" class="inline-block" />
 		</a>
-		<Popup class="gap-4 p-4">
-			{#snippet renderButton(dialogElement: HTMLDialogElement)}
-				<button
-					class={twMerge(components.button({ type: 'primary', size: 'lg' }), 'px-5 py-3 text-xl')}
-					onclick={() => dialogElement.showModal()}
-				>
-					<Icon name="qr_scan" />
-				</button>
-			{/snippet}
-			{#snippet renderContent(dialogElement: HTMLDialogElement)}
-				<div class="flex flex-col gap-4">
-					<h2 class="text-center text-xl font-bold">{product[AllColumns.Name]}</h2>
-					<ProductImage
-						number={product[AllColumns.Number]}
-						name={product[AllColumns.Name]}
-						transform="medium"
-						alt={product[AllColumns.Name]}
-						class="mx-auto block h-64 w-64 rounded bg-white p-4"
-					/>
-					
-					<img
-						crossorigin="anonymous"
-						referrerpolicy="no-referrer"
-						src={`https://barcodeapi.org/api/qr/https://www.alko.fi/tuotteet/${product[AllColumns.Number]}?width=300&height=300`}
-						alt="QR-koodi"
-						class="mx-auto rounded"
-					/>
-					<img
-						crossorigin="anonymous"
-						referrerpolicy="no-referrer"
-						src={`https://barcodeapi.org/api/128/${product[AllColumns.EAN]}`}
-						alt="Viivakoodi"
-						class="mx-auto rounded"
-					/>
-				</div>
-			{/snippet}
-		</Popup>
 	</div>
 	<div class="flex w-full flex-col gap-4 rounded border border-primary bg-secondary p-4">
 		<div class="flex flex-col items-start gap-0.5 md:flex-row md:gap-3">
@@ -240,7 +195,7 @@
 			<h2 class="text-xl font-bold">Laskennalliset tiedot</h2>
 			{#each Object.entries(DrunkColumns) as [_, value]}
 				{#if product[value] !== null && product[value] !== undefined}
-					<p class="flex flex-row items-center gap-2">
+					<p class="flex flex-row gap-2 items-center">
 						{valueToString(
 							product[value],
 							value as (typeof DrunkColumns)[keyof typeof DrunkColumns]
@@ -251,52 +206,51 @@
 		</div>
 	</div>
 	{#if differentSizesOfProduct.length}
-		<details>
-			<summary
-				class="mb-2 text-2xl font-bold"
-				onclick={(e) => {
-					sendAnalyticsEvent('view_sizes', { product_number: product[AllColumns.Number] });
-				}}
-			>
-				Muut koot
-			</summary>
-			<div class="flex max-w-full flex-col flex-nowrap gap-3">
-				{#each differentSizesOfProduct.sort((a, b) => a[AllColumns.BottleSize] - b[AllColumns.BottleSize]) as differentSizeProduct}
-					<a
-						href={`/tuotteet/${differentSizeProduct[AllColumns.Number]}`}
-						class="flex shrink-0 flex-row gap-3 rounded-lg border border-primary p-4"
-					>
-						<div class="flex aspect-square h-36 w-fit shrink-0 rounded bg-white p-2 md:max-w-fit">
-							<ProductImage
-								number={differentSizeProduct[AllColumns.Number]}
-								name={differentSizeProduct[AllColumns.Name]}
-								alt={differentSizeProduct[AllColumns.Name]}
-								class="block aspect-square h-full w-full object-contain"
-							/>
-						</div>
-						<div class="flex flex-col gap-2">
-							<h2 class="line-clamp-3 text-xl font-bold md:text-2xl">
-								{`${differentSizeProduct[AllColumns.Name]} (${formatValue(differentSizeProduct[AllColumns.BottleSize], AllColumns.BottleSize)})`}
-							</h2>
-							<span>
-								{formatValue(
-									differentSizeProduct[AllColumns.AlcoholPercentage],
-									AllColumns.AlcoholPercentage
-								)}
-							</span>
-							<p class="text-3xl font-bold drop-shadow-lg">
-								{differentSizeProduct[AllColumns.Price].toFixed(2)} €
-							</p>
-							<span class="text-sm text-secondary">
-								{formatValue(differentSizeProduct[AllColumns.BottleSize], AllColumns.BottleSize)} ({differentSizeProduct[
-									AllColumns.PricePerLiter
-								]} €/L)
-							</span>
-						</div>
-					</a>
-				{/each}
-			</div>
-		</details>
+	<details>
+		<summary class="text-2xl font-bold mb-2" onclick={(e) => {
+			sendAnalyticsEvent('view_sizes', { product_number: product[AllColumns.Number] });
+		}}>
+			Muut koot
+		</summary>
+		<div class="flex max-w-full flex-col flex-nowrap gap-3">
+			{#each differentSizesOfProduct.sort((a, b) => (a[AllColumns.BottleSize] - b[AllColumns.BottleSize])) as differentSizeProduct}
+				<a
+					href={`/tuotteet/${differentSizeProduct[AllColumns.Number]}`}
+					class="flex shrink-0 flex-row gap-3 rounded-lg border border-primary p-4"
+				>
+					
+					<div class="flex h-36 aspect-square w-fit shrink-0 rounded bg-white p-2 md:max-w-fit">
+						<ProductImage
+							number={differentSizeProduct[AllColumns.Number]}
+							name={differentSizeProduct[AllColumns.Name]}
+							alt={differentSizeProduct[AllColumns.Name]}
+							class="block aspect-square h-full w-full object-contain"
+						/>
+					</div>
+					<div class="flex flex-col gap-2">
+						<h2 class="line-clamp-3 text-xl font-bold md:text-2xl">
+							{`${differentSizeProduct[AllColumns.Name]} (${formatValue(differentSizeProduct[AllColumns.BottleSize], AllColumns.BottleSize)})`}
+						</h2>
+						<span>
+							{formatValue(
+								differentSizeProduct[AllColumns.AlcoholPercentage],
+								AllColumns.AlcoholPercentage
+							)}
+						</span>
+						<p class="text-3xl font-bold drop-shadow-lg">
+							{differentSizeProduct[AllColumns.Price].toFixed(2)} €
+						</p>
+						<span class="text-sm text-secondary">
+							{formatValue(differentSizeProduct[AllColumns.BottleSize], AllColumns.BottleSize)} ({differentSizeProduct[
+								AllColumns.PricePerLiter
+							]} €/L)
+						</span>
+					</div>
+				</a>
+			{/each}
+		</div>
+	</details>
+		
 	{/if}
 	{#if similarProducts.length}
 		<div class="flex items-center justify-between">

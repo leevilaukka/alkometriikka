@@ -2,6 +2,7 @@
     import { generateImageUrl } from '$lib/utils/image';
 	import { twMerge } from 'tailwind-merge';
     let { number, name, transform, ...rest }: { number: string, name: string, transform?: "medium" | "products", [key: string]: any } = $props();
+
 </script>
 
 

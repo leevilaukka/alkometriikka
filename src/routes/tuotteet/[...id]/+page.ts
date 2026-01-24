@@ -1,6 +1,6 @@
-import { error, redirect, type Load } from '@sveltejs/kit';
+import { error, redirect } from '@sveltejs/kit';
 
-export const load: Load = async ({ parent, params }) => {
+export async function load({ parent, params }) {
     const data = await parent();
     const alko = await data.alko
 
