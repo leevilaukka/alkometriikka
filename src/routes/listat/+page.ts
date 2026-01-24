@@ -1,8 +1,8 @@
 import { validateList } from '$lib/utils/lists.js';
-import { error, type Load } from '@sveltejs/kit';
+import { error } from '@sveltejs/kit';
 import { decompressFromEncodedURIComponent } from 'lz-string';
 
-export const load: Load = async ({ parent, url }) => {
+export async function load({ parent, url }) {
     const data = await parent();
     const listParam = url.searchParams.get('list');
     const isValid = listParam && validateList(listParam);

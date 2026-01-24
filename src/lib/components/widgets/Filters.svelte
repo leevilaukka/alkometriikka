@@ -2,7 +2,7 @@
 	import type { Kaljakori } from '$lib/alko';
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/styles';
-	import { ContextKeys, shownFilters as filters, subCategoryMap } from '$lib/utils/constants';
+	import { ContextKeys, filterRenameMap, shownFilters as filters, subCategoryMap } from '$lib/utils/constants';
 	import NumberInput from '../inputs/NumberInput.svelte';
 	import StringInput from '../inputs/StringInput.svelte';
 	import Icon from './Icon.svelte';
