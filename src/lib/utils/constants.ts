@@ -38,7 +38,8 @@ export const DatasetColumns = Object.freeze({
     BitternessEBU: "Katkerot EBU",
     Energy: "Energia kcal/100 ml",
     Availability: "Valikoima",
-    EAN: "EAN"
+    EAN: "EAN",
+    History: "Hintahistoria"
 } as const);
 
 /** Columns related to calculated drunk values.

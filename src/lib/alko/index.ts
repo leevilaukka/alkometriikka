@@ -47,7 +47,13 @@ export class Kaljakori {
 			for (let col = 0; col < datasetColumns.length; col++) {
 
 				const key = datasetColumns[col];
-				let value: string | number | Set<string> | undefined = rows[row][col];
+				let value: string | number | Set<string> | any[] | undefined = rows[row][col];
+
+				// Special handling for History column - preserve as array
+				if (key === AllColumns.History) {
+					item[key] = Array.isArray(value) ? value : [];
+					continue; // Skip further processing for this column
+				}
 
 				if (columnsHandledAsString.includes(key as typeof columnsHandledAsString[number])) value = toFormattedStringValue(String(value))
 				else if (columnsHandledAsSet.includes(key as typeof columnsHandledAsSet[number])) value = new Set(String(value || "").split(/[\.,]\s/).map(v => toFormattedStringValue(v.trim())).filter(v => v.length > 0))
@@ -118,6 +124,7 @@ export class Kaljakori {
 		this.columnTypes = Object.fromEntries(
 			Object.entries(this.possibleValues).map(([key, value]) => {
 				if(columnsHandledAsSet.includes(key as typeof columnsHandledAsSet[number])) return [ key, "object" ]
+				if(key === AllColumns.History) return [ key, "object" ]
 				return [ key, typeof value.values().next().value ]
 			})
 		);

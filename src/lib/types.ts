@@ -51,7 +51,8 @@ export interface PriceListItem extends Record<DrunkColumnNames, number> {
     "Energia kcal/100ml": number;
     "Valikoima": string;
     "EAN": string;
-    [key: string]: string | number | Set<string>;
+    "Hintahistoria": { date: string; price: number }[];
+    [key: string]: string | number | Set<string> | { date: string; price: number }[];
 } 
 
 export type DatasetColumnNames = typeof DatasetColumns[keyof typeof DatasetColumns];

@@ -5,7 +5,14 @@
 		DrunkColumns,
 		hideFromProductPageStats
 	} from '$lib/utils/constants';
-	import { formatValue, generateOutLink, generateTitle, sendAnalyticsEvent, setSEO, valueToString } from '$lib/utils/helpers';
+	import {
+		formatValue,
+		generateOutLink,
+		generateTitle,
+		sendAnalyticsEvent,
+		setSEO,
+		valueToString
+	} from '$lib/utils/helpers';
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/styles';
 	import Icon from '../widgets/Icon.svelte';
@@ -20,7 +27,28 @@
 	import ProductImage from '../widgets/ProductImage.svelte';
 	import { generateImageUrl } from '$lib/utils/image';
 	import { preventDefault } from 'svelte/legacy';
+	import {
+		Chart,
+		CategoryScale,
+		LinearScale,
+		PointElement,
+		LineElement,
+		Title,
+		Tooltip,
+		Legend,
+		LineController
+	} from 'chart.js';
+	import { onMount } from 'svelte';
+	import { dev } from '$app/environment';
+
+	// Register Chart.js components
+	Chart.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, LineController);
+
 	const { product, kaljakori }: { product: PriceListItem; kaljakori: Kaljakori } = $props();
+
+	console.log('Product.svelte product', product);
+
+	console.log(product[AllColumns.History]);
 
 	let productElement: HTMLDivElement;
 
@@ -41,6 +69,66 @@
 		]),
 		20
 	);
+
+	let historyChartElem: HTMLCanvasElement | null = null;
+	onMount(() => {
+		if (historyChartElem) {
+			new Chart(historyChartElem, {
+				type: 'line',
+				data: {
+					labels: product[AllColumns.History]?.map((entry) => new Date(entry.date).toLocaleDateString("fi-FI")) || [],
+					datasets: [
+						{
+							label: 'Hintahistoria',
+							data: product[AllColumns.History]?.map((entry) => entry.price) || [],
+							borderColor: 'rgba(75, 192, 192, 1)',
+							backgroundColor: 'rgba(75, 192, 192, 0.2)',
+							fill: true,
+							tension: 0.1
+						}
+					]
+				},
+				options: {
+					scales: {
+						x: {
+							title: {
+								display: true,
+								text: 'Päivämäärä',
+							}
+						},
+						y: {
+							title: {
+								display: true,
+								text: 'Hinta (€)'
+							},
+							beginAtZero: true
+						}
+					},
+
+					plugins: {
+						legend: {
+							display: false,
+							position: 'top'
+						},
+						title: {
+							display: false,
+							text: 'Product Price History'
+						},
+						tooltip: {
+							enabled: true,
+							mode: 'index',
+							intersect: false,
+							callbacks: {
+								label: function(context) {
+									return `Hinta: ${context.parsed.y} €`;
+								}
+							}
+						}
+					}
+				}
+			});
+		}
+	});
 
 	afterNavigate(() => {
 		productElement?.scrollIntoView({ behavior: 'smooth' });
@@ -83,9 +171,9 @@
 		}
 	});
 
-	const differentSizesOfProduct = findDifferentSizeOfProduct(product, kaljakori)
+	const differentSizesOfProduct = findDifferentSizeOfProduct(product, kaljakori);
 
-	console.log("differentSizesOfProduct", differentSizesOfProduct)
+	console.log('differentSizesOfProduct', differentSizesOfProduct);
 </script>
 
 <svelte:head>
@@ -142,11 +230,14 @@
 			</div>
 		</div>
 	</header>
-	<div class="grid grid-cols-1 md:grid-cols-[2fr_1fr] w-full gap-4 md:justify-end">
+	<div class="grid w-full grid-cols-1 gap-4 md:grid-cols-[2fr_1fr] md:justify-end">
 		<Popup class="gap-4 p-4">
 			{#snippet renderButton(dialogElement: HTMLDialogElement)}
 				<button
-					class={twMerge(components.button({ type: 'positive', size: 'lg' }), "py-3 px-5 text-xl justify-between w-full")}
+					class={twMerge(
+						components.button({ type: 'positive', size: 'lg' }),
+						'w-full justify-between px-5 py-3 text-xl'
+					)}
 					onclick={() => dialogElement.showModal()}
 				>
 					<span>Lisää listaan ja vertaa!</span>
@@ -168,7 +259,7 @@
 			target="_blank"
 			rel="noopener noreferrer"
 			referrerpolicy="no-referrer"
-			class={twMerge(components.button({ size: 'md' }), "py-3 px-5 text-xl w-full")}
+			class={twMerge(components.button({ size: 'md' }), 'w-full px-5 py-3 text-xl')}
 		>
 			<span>Alkon tuotesivu</span>
 			<Icon name="link_external" class="inline-block" />
@@ -179,11 +270,12 @@
 			<div class="flex flex-col gap-0.5 md:gap-1">
 				<h2 class="text-xl font-bold">Perustiedot</h2>
 				{#each Object.entries(DatasetColumns) as [_, value]}
-					{@const hasValue = valueToString(product[value]).length > 0}
+					{@const valueStr = Array.isArray(product[value]) ? '' : valueToString(product[value])}
+					{@const hasValue = valueStr.length > 0}
 					{#if hasValue && !hideFromProductPageStats.has(value as (typeof DatasetColumns)[keyof typeof DatasetColumns])}
 						<p>
 							{valueToString(
-								product[value],
+								Array.isArray(product[value]) ? '' : product[value],
 								value as (typeof DatasetColumns)[keyof typeof DatasetColumns]
 							)}
 						</p>
@@ -195,7 +287,7 @@
 			<h2 class="text-xl font-bold">Laskennalliset tiedot</h2>
 			{#each Object.entries(DrunkColumns) as [_, value]}
 				{#if product[value] !== null && product[value] !== undefined}
-					<p class="flex flex-row gap-2 items-center">
+					<p class="flex flex-row items-center gap-2">
 						{valueToString(
 							product[value],
 							value as (typeof DrunkColumns)[keyof typeof DrunkColumns]
@@ -205,52 +297,59 @@
 			{/each}
 		</div>
 	</div>
-	{#if differentSizesOfProduct.length}
-	<details>
-		<summary class="text-2xl font-bold mb-2" onclick={(e) => {
-			sendAnalyticsEvent('view_sizes', { product_number: product[AllColumns.Number] });
-		}}>
-			Muut koot
-		</summary>
-		<div class="flex max-w-full flex-col flex-nowrap gap-3">
-			{#each differentSizesOfProduct.sort((a, b) => (a[AllColumns.BottleSize] - b[AllColumns.BottleSize])) as differentSizeProduct}
-				<a
-					href={`/tuotteet/${differentSizeProduct[AllColumns.Number]}`}
-					class="flex shrink-0 flex-row gap-3 rounded-lg border border-primary p-4"
-				>
-					
-					<div class="flex h-36 aspect-square w-fit shrink-0 rounded bg-white p-2 md:max-w-fit">
-						<ProductImage
-							number={differentSizeProduct[AllColumns.Number]}
-							name={differentSizeProduct[AllColumns.Name]}
-							alt={differentSizeProduct[AllColumns.Name]}
-							class="block aspect-square h-full w-full object-contain"
-						/>
-					</div>
-					<div class="flex flex-col gap-2">
-						<h2 class="line-clamp-3 text-xl font-bold md:text-2xl">
-							{`${differentSizeProduct[AllColumns.Name]} (${formatValue(differentSizeProduct[AllColumns.BottleSize], AllColumns.BottleSize)})`}
-						</h2>
-						<span>
-							{formatValue(
-								differentSizeProduct[AllColumns.AlcoholPercentage],
-								AllColumns.AlcoholPercentage
-							)}
-						</span>
-						<p class="text-3xl font-bold drop-shadow-lg">
-							{differentSizeProduct[AllColumns.Price].toFixed(2)} €
-						</p>
-						<span class="text-sm text-secondary">
-							{formatValue(differentSizeProduct[AllColumns.BottleSize], AllColumns.BottleSize)} ({differentSizeProduct[
-								AllColumns.PricePerLiter
-							]} €/L)
-						</span>
-					</div>
-				</a>
-			{/each}
-		</div>
+	{#if dev||product[AllColumns.History]?.length > 1}
+	<details class="w-full rounded border border-primary bg-secondary">
+		<summary class="m-2 text-2xl font-bold">Hintahistoria</summary>
+		<canvas bind:this={historyChartElem} class="max-w-full"></canvas>
 	</details>
-		
+	{/if}
+	{#if differentSizesOfProduct.length}
+		<details>
+			<summary
+				class="mb-2 text-2xl font-bold"
+				onclick={(e) => {
+					sendAnalyticsEvent('view_sizes', { product_number: product[AllColumns.Number] });
+				}}
+			>
+				Muut koot
+			</summary>
+			<div class="flex max-w-full flex-col flex-nowrap gap-3">
+				{#each differentSizesOfProduct.sort((a, b) => a[AllColumns.BottleSize] - b[AllColumns.BottleSize]) as differentSizeProduct}
+					<a
+						href={`/tuotteet/${differentSizeProduct[AllColumns.Number]}`}
+						class="flex shrink-0 flex-row gap-3 rounded-lg border border-primary p-4"
+					>
+						<div class="flex aspect-square h-36 w-fit shrink-0 rounded bg-white p-2 md:max-w-fit">
+							<ProductImage
+								number={differentSizeProduct[AllColumns.Number]}
+								name={differentSizeProduct[AllColumns.Name]}
+								alt={differentSizeProduct[AllColumns.Name]}
+								class="block aspect-square h-full w-full object-contain"
+							/>
+						</div>
+						<div class="flex flex-col gap-2">
+							<h2 class="line-clamp-3 text-xl font-bold md:text-2xl">
+								{`${differentSizeProduct[AllColumns.Name]} (${formatValue(differentSizeProduct[AllColumns.BottleSize], AllColumns.BottleSize)})`}
+							</h2>
+							<span>
+								{formatValue(
+									differentSizeProduct[AllColumns.AlcoholPercentage],
+									AllColumns.AlcoholPercentage
+								)}
+							</span>
+							<p class="text-3xl font-bold drop-shadow-lg">
+								{differentSizeProduct[AllColumns.Price].toFixed(2)} €
+							</p>
+							<span class="text-sm text-secondary">
+								{formatValue(differentSizeProduct[AllColumns.BottleSize], AllColumns.BottleSize)} ({differentSizeProduct[
+									AllColumns.PricePerLiter
+								]} €/L)
+							</span>
+						</div>
+					</a>
+				{/each}
+			</div>
+		</details>
 	{/if}
 	{#if similarProducts.length}
 		<div class="flex items-center justify-between">
