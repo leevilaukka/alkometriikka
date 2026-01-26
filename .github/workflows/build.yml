@@ -53,6 +53,12 @@ jobs:
         run: |
           cp 404.html index.html
 
+      - name: Restore data.json and sitemap.xml from existing gh-pages
+        run: |
+          git fetch origin gh-pages || true
+          git show origin/gh-pages:data.json > data.json 2>/dev/null || true
+          git show origin/gh-pages:sitemap.xml > sitemap.xml 2>/dev/null || true
+
       - name: Create CNAME file
         run: echo "alkometriikka.fi" > CNAME
 
