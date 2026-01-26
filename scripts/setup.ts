@@ -1,4 +1,5 @@
 import XLSX from "xlsx"
+import { priceHistory } from "./pricehistory";
 
 const DATASET_URL = "https://www.alko.fi/INTERSHOP/static/WFS/Alko-OnlineShop-Site/-/Alko-OnlineShop/fi_FI/Alkon%20Hinnasto%20Tekstitiedostona/alkon-hinnasto-tekstitiedostona.xlsx"
 const DEV = process.argv.includes("--dev");
@@ -86,6 +87,7 @@ async function setup() {
     const json = formatXLSXToJSON(xlsx);
     await purgeCache();
     saveDataset(json);
+    priceHistory(json.table);
 }
 
 setup().catch(err => {

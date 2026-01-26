@@ -2,6 +2,7 @@ node_modules
 sitemap.xml
 /static/data.json
 /static/sitemap.xml
+/static/pricehistory.json
 
 # Output
 .output
