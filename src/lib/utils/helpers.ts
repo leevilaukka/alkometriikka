@@ -83,7 +83,7 @@ export function generateOutLink<U extends string, I extends boolean = false>(url
 }
 
 export function sendAnalyticsEvent(eventName: string, eventParams?: Record<string, any>) {
-    if (dev) return;
+    if (dev) return console.warn(`Analytics event skipped in dev mode: ${eventName}`, eventParams);
 
     if (typeof window.sa_event === 'function') {
         window.sa_event(eventName, eventParams);

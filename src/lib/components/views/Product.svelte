@@ -7,7 +7,6 @@
 	} from '$lib/utils/constants';
 	import {
 		formatValue,
-		generateOutLink,
 		generateTitle,
 		sendAnalyticsEvent,
 		setSEO,
@@ -26,7 +25,6 @@
 	import { findDifferentSizeOfProduct, findSimilarProducts } from '$lib/utils/filters';
 	import ProductImage from '../widgets/ProductImage.svelte';
 	import { generateImageUrl } from '$lib/utils/image';
-	import { preventDefault } from 'svelte/legacy';
 	import {
 		Chart,
 		CategoryScale,
@@ -42,7 +40,16 @@
 	import { dev } from '$app/environment';
 
 	// Register Chart.js components
-	Chart.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, LineController);
+	Chart.register(
+		CategoryScale,
+		LinearScale,
+		PointElement,
+		LineElement,
+		Title,
+		Tooltip,
+		Legend,
+		LineController
+	);
 
 	const { product, kaljakori }: { product: PriceListItem; kaljakori: Kaljakori } = $props();
 
@@ -70,21 +77,31 @@
 		20
 	);
 
-	let historyChartElem: HTMLCanvasElement | null = null;
+	let historyChartElem: HTMLCanvasElement | null = $state(null);
 	onMount(() => {
 		if (historyChartElem) {
 			new Chart(historyChartElem, {
 				type: 'line',
 				data: {
-					labels: product[AllColumns.History]?.map((entry) => new Date(entry.date).toLocaleDateString("fi-FI")) || [],
+					labels:
+						product[AllColumns.History]?.map((entry) =>
+							new Date(entry.date).toLocaleDateString('fi-FI')
+						) || [],
 					datasets: [
 						{
-							label: 'Hintahistoria',
+							label: 'Hinta',
 							data: product[AllColumns.History]?.map((entry) => entry.price) || [],
 							borderColor: 'rgba(75, 192, 192, 1)',
 							backgroundColor: 'rgba(75, 192, 192, 0.2)',
 							fill: true,
-							tension: 0.1
+							tension: 0.1,
+							tooltip: {
+								callbacks: {
+									label: function (context) {
+										return `Hinta: ${context?.parsed?.y?.toFixed(2)} €`;
+									}
+								}
+							}
 						}
 					]
 				},
@@ -93,7 +110,7 @@
 						x: {
 							title: {
 								display: true,
-								text: 'Päivämäärä',
+								text: 'Päivämäärä'
 							}
 						},
 						y: {
@@ -111,18 +128,12 @@
 							position: 'top'
 						},
 						title: {
-							display: false,
-							text: 'Product Price History'
+							display: false
 						},
 						tooltip: {
 							enabled: true,
 							mode: 'index',
-							intersect: false,
-							callbacks: {
-								label: function(context) {
-									return `Hinta: ${context.parsed.y} €`;
-								}
-							}
+							intersect: false
 						}
 					}
 				}
@@ -149,6 +160,9 @@
 			}
 		};
 	}
+
+	let sizesOpened = $state(false);
+	let historyOpened = $state(false);
 
 	setSEO({
 		description: `Katso ${product[AllColumns.Name]} -tuotteen tiedot, hinnat ja vastaavat tuotteet Alkometriikasta.`,
@@ -297,18 +311,27 @@
 			{/each}
 		</div>
 	</div>
-	{#if dev||product[AllColumns.History]?.length > 1}
-	<details class="w-full rounded border border-primary bg-secondary">
-		<summary class="m-2 text-2xl font-bold">Hintahistoria</summary>
-		<canvas bind:this={historyChartElem} class="max-w-full"></canvas>
-	</details>
+	{#if dev || product[AllColumns.History]?.length > 1}
+		<details class="w-full rounded border border-primary bg-secondary">
+			<summary
+				class="m-2 text-2xl font-bold"
+				onclick={(e) => {
+					if (!historyOpened) sendAnalyticsEvent('show_price_history', { product_number: product[AllColumns.Number] });
+					historyOpened = true;
+				}}
+			>
+				Hintahistoria
+			</summary>
+			<canvas bind:this={historyChartElem} class="max-w-full"></canvas>
+		</details>
 	{/if}
 	{#if differentSizesOfProduct.length}
 		<details>
 			<summary
 				class="mb-2 text-2xl font-bold"
 				onclick={(e) => {
-					sendAnalyticsEvent('view_sizes', { product_number: product[AllColumns.Number] });
+					if (!sizesOpened) sendAnalyticsEvent('view_sizes', { product_number: product[AllColumns.Number] });
+					sizesOpened = true;
 				}}
 			>
 				Muut koot
