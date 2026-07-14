@@ -1,21 +1,25 @@
 const DEV = process.argv.includes("--dev");
 
+type PricePoint = { date: string; price: number };
+type MigratedProduct = { values: unknown[]; priceHistory?: PricePoint[] };
+type MigratedData = { schema: string[] } & Record<string, MigratedProduct>;
+
 async function main() {
     const file = Bun.file(DEV ? "./static/data.json" : "./data.json");
     const sitemapEntries: { loc: string; lastMod: string }[] = [];
-    const parsed = await file.json() as { table: any[][], metadata: any };
-    const data = parsed.table.slice(1);
+    const { schema, ...products } = await file.json() as MigratedData;
 
-    const indexOfTypeColumn = parsed.table[0].indexOf("Tyyppi");
-    const indexOfHistoryColumn = parsed.table[0].indexOf("Hintahistoria");
+    const indexOfTypeColumn = schema.indexOf("Tyyppi");
 
-    for (const product of data) {
-        if(product[indexOfTypeColumn] === "lahja- ja juomatarvikkeet") continue; // Skip gift and drink accessories
+    for (const product of Object.values(products)) {
+        if (!product || !Array.isArray(product.values)) continue;
+        if (product.values[indexOfTypeColumn] === "lahja- ja juomatarvikkeet") continue; // Skip gift and drink accessories
+        const priceHistory = product.priceHistory ?? [];
         sitemapEntries.push({
-            loc: `/tuotteet/${product[0]}`,
-            lastMod: product[indexOfHistoryColumn] && product[indexOfHistoryColumn].length > 0
-                ? product[indexOfHistoryColumn][product[indexOfHistoryColumn].length - 1].date
-                : new Date().toISOString().split('T')[0] 
+            loc: `/tuotteet/${product.values[0]}`,
+            lastMod: priceHistory.length > 0
+                ? priceHistory[priceHistory.length - 1].date
+                : new Date().toISOString().split('T')[0]
         });
     }
     Bun.write("sitemap.xml", generateSitemapXML(sitemapEntries));

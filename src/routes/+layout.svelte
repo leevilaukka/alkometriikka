@@ -11,7 +11,6 @@
 	import { page } from '$app/state';
 	import { SearchParamsManager } from '$lib/utils/url';
 	import { setContext } from 'svelte';
-	import Barcode from '$lib/components/widgets/Barcode.svelte';
 	import Settings from '$lib/components/widgets/Settings.svelte';
 
 	let { children, data } = $props();
@@ -112,9 +111,6 @@
 				</div>
 			{/if}
 			<div class="flex items-center gap-2 ms-auto">
-				{#if $isMobile}
-					<Barcode kaljakori={alko.kaljakori} />
-				{/if}	
 				<a href="/listat">
 					<button class={twMerge(components.button(), 'p-2 text-xl')}>
 						{#if !$isMobile}<span class="text-sm">Listat</span>{/if}<Icon name="list_ul" />

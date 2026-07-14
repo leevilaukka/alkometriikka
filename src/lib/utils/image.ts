@@ -3,9 +3,5 @@ export function generateImageUrl(itemNumber: string, itemName: string, transform
     const imageURL =`https://images.alko.fi/images/cs_srgb,f_auto,t_${transform || "products"}/cdn` as const;
     if(!itemName.toLowerCase) console.warn("itemName has no toLowerCase method:", itemName)
     itemName = String(itemName)
-    const sanitizedItemName = itemName
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, '-') // Replace non-alphanumeric characters with hyphens
-        .replace(/^-+|-+$/g, '');  // Remove leading and trailing hyphens
-    return `${imageURL}/${itemNumber}/${sanitizedItemName}.jpg` as const;
+    return `${imageURL}/${itemNumber}/kuva.jpg` as const;
 }

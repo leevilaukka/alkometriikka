@@ -39,7 +39,7 @@ jobs:
             CLOUDFLARE_PURGE_KEY: ${{ secrets.CLOUDFLARE_PURGE_KEY }}
             CLOUDFLARE_ZONE: ${{ secrets.CF_ZONE }}
           run: |
-            bun run scripts/setup.ts
+            bun run scripts/setup/index.ts
 
         - name: Run script to generate sitemap
           run: |

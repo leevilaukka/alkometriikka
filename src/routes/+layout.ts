@@ -3,7 +3,6 @@ import { DatasetColumns } from '$lib/utils/constants';
 import type { ColumnNames } from '$lib/types';
 import { Kaljakori } from '$lib/alko';
 import { personalInfo } from '$lib/global.svelte';
-import { decompressFromUTF16 } from 'lz-string';
 import type { FullProperties } from 'xlsx';
 
 export const ssr = false;
@@ -24,25 +23,58 @@ async function fetchAlkoPriceList({ fetch }: { fetch: Fetch; }) {
     return text;
 }
 
+type MigratedProduct = {
+    values: unknown[];
+    priceHistory?: { date: string; price: number }[];
+};
+
 function formatDatasetToJSON(data: string) {
     try {
-        const { table, metadata } = JSON.parse(data);
-        if (!table) throw new Error("Hinnaston purku epäonnistui");
-        if (table.length === 0) {
+        const { schema, ...products } = JSON.parse(data) as { schema?: unknown } & Record<string, MigratedProduct>;
+        if (!Array.isArray(schema) || schema.length === 0) {
             throw new Error("Hinnasto on tyhjä tai väärässä muodossa");
         }
         // Validate that all columns in the dataset are known
         const knownColumns = Object.values(DatasetColumns) as ColumnNames[];
-        if (table[0][0] !== DatasetColumns.Number) throw new Error("Hinnasto on tyhjä tai väärässä muodossa");
-        table[0].forEach((column: typeof DatasetColumns[keyof typeof DatasetColumns]) => {
-            if (!knownColumns.includes(column)) throw new Error(`Tuntematon sarake datassa: ${column}`);
+        if (schema[0] !== DatasetColumns.Number) throw new Error("Hinnasto on tyhjä tai väärässä muodossa");
+        schema.forEach((column: unknown) => {
+            if (!knownColumns.includes(column as ColumnNames)) throw new Error(`Tuntematon sarake datassa: ${column}`);
         });
+
+        // The new format stores each product under its id and keeps price history
+        // in a separate `priceHistory` field. Rebuild the table shape the app
+        // expects: a header row plus one row per product with the price history
+        // appended as the "Hintahistoria" column. Every product is kept —
+        // including ones no longer in Alko's selection — so nothing disappears
+        // from the UI.
+        const header = [...schema, DatasetColumns.History];
+
+        let latestDate: string | undefined;
+        const rows = Object.values(products)
+            .filter((product): product is MigratedProduct =>
+                !!product && typeof product === "object" && Array.isArray(product.values)
+            )
+            .map((product) => {
+                const priceHistory = Array.isArray(product.priceHistory) ? product.priceHistory : [];
+                for (const point of priceHistory) {
+                    if (point?.date && (!latestDate || point.date > latestDate)) latestDate = point.date;
+                }
+                return [...product.values, priceHistory];
+            });
+
+        if (rows.length === 0) {
+            throw new Error("Hinnasto on tyhjä tai väärässä muodossa");
+        }
+
+        const metadata: FullProperties = latestDate ? { CreatedDate: new Date(latestDate) } : {};
+
         return {
-            table,
+            table: [header, ...rows],
             metadata
         };
     } catch(e) {
-        throw "Hinnaston lataus epäonnistui"
+        if (e instanceof Error) throw e;
+        throw new Error("Hinnaston lataus epäonnistui");
     }
 }
 

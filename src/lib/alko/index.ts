@@ -3,6 +3,35 @@ import { calculateDrunkValue } from '../utils/alko';
 import { type ColumnNames, type DatasetColumnNames, type DatasetRow, type Filter, type FilterValues, type ColumnType, type PersonalInfo, type PriceListItem } from '../types';
 import { isSimilarString } from '$lib/utils/search';
 
+function toPositiveNumber(value: unknown): number | null {
+	if (typeof value === 'number') {
+		return Number.isFinite(value) && value > 0 ? value : null;
+	}
+
+	if (typeof value !== 'string') return null;
+	const normalized = value
+		.replace(/\s/g, '')
+		.replace(/,/g, '.')
+		.replace(/[^\d.\-]/g, '');
+
+	const parsed = Number(normalized);
+	return Number.isFinite(parsed) && parsed > 0 ? parsed : null;
+}
+
+function resolveBottleSize(row: DatasetRow, datasetColumnIndexes: Record<DatasetColumnNames, number>): number {
+	const rawBottleSize = toPositiveNumber(row[datasetColumnIndexes[AllColumns.BottleSize]]);
+	if (rawBottleSize) return rawBottleSize;
+
+	const price = toPositiveNumber(row[datasetColumnIndexes[AllColumns.Price]]);
+	const pricePerLiter = toPositiveNumber(row[datasetColumnIndexes[AllColumns.PricePerLiter]]);
+	if (price && pricePerLiter) {
+		const inferred = Number((price / pricePerLiter).toFixed(3));
+		if (inferred >= 0.05 && inferred <= 30) return inferred;
+	}
+
+	return 1;
+}
+
 export class Kaljakori {
 	data: PriceListItem[] = [];
 	personalInfo: PersonalInfo;
@@ -21,7 +50,7 @@ export class Kaljakori {
 
 		this.filters = [...datasetColumns, ...drunkColumns];
 
-		const indexOfTypeColumn = datasetColumns.indexOf(AllColumns.Type);
+		const indexOfTypeColumn = datasetColumns.indexOf(AllColumns.Availability);
 
 		const datasetColumnIndexes = datasetColumns.reduce((obj, current, idx) => {
 			return {...obj, [current]: idx}
@@ -40,9 +69,18 @@ export class Kaljakori {
 			const item: any = {};
 
 			// Skip if item type is 'lahja- ja juomatarvikkeet'
-			const type = rows[row][indexOfTypeColumn];
-			if (type === 'lahja- ja juomatarvikkeet') continue;
+			const valikoima = rows[row][indexOfTypeColumn];
+			if (valikoima === "tarvikevalikoima") continue;
+			if (rows[row][datasetColumnIndexes[AllColumns.AlcoholPercentage]] === null || rows[row][datasetColumnIndexes[AllColumns.AlcoholPercentage]] === undefined || rows[row][datasetColumnIndexes[AllColumns.AlcoholPercentage]] === "") {
+				console.log("Skipping product with missing alcohol percentage:", `${rows[row][datasetColumnIndexes[AllColumns.Name]] || "Unknown product name"} www.alko.fi/tuotteet/${rows[row][datasetColumnIndexes[AllColumns.Number]] || "Unknown product number"}`);
+				continue;
+			} // Skip rows without alcohol percentage
 
+			if (rows[row][datasetColumnIndexes[AllColumns.Price]] === null || rows[row][datasetColumnIndexes[AllColumns.Price]] === undefined || rows[row][datasetColumnIndexes[AllColumns.Price]] === "") {
+				console.log("Skipping product with missing price:", `${rows[row][datasetColumnIndexes[AllColumns.Name]] || "Unknown product name"} www.alko.fi/tuotteet/${rows[row][datasetColumnIndexes[AllColumns.Number]] || "Unknown product number"}`);
+				continue; // Skip rows without price
+			}; // Skip rows without product number
+			rows[row][datasetColumnIndexes[AllColumns.BottleSize]] = resolveBottleSize(rows[row], datasetColumnIndexes);
 			// Parse and assign item values and collect possible values
 			for (let col = 0; col < datasetColumns.length; col++) {
 
@@ -75,7 +113,8 @@ export class Kaljakori {
 				item[AllColumns.AlcoholPercentage],
 				item[AllColumns.Price],
 				personalInfo?.gender,
-				personalInfo?.weight ?? undefined
+				personalInfo?.weight ?? undefined,
+				item[AllColumns.Name]
 			);
 
 			// Assign item drunk values and collect possible values

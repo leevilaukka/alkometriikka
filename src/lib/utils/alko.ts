@@ -16,7 +16,8 @@ export function calculateDrunkValue(
 	percentage: number,
 	price: number,
 	gender: typeof GenderOptionsMap[keyof typeof GenderOptionsMap] = GenderOptionsMap.Unspecified,
-	weight?: number
+	weight?: number,
+	itemName?: string
 ): Record<DrunkColumnNames, number> {
 	if (!weight) {
 		if (gender === GenderOptionsMap.Female) {
@@ -51,6 +52,10 @@ export function calculateDrunkValue(
 
 	// € per litra raakaa alkoholia
 	const euroPerLiter = price / (volume * (percentage / 100));
+
+	if (isNaN(pureAlcoholGrams) || isNaN(alcoholPerEuro) || isNaN(estimatedBAC) || isNaN(bacPerEuro) || isNaN(servings) || isNaN(euroPerLiter)) {
+		console.log("Invalid input values. Please ensure volume, percentage, price, and weight are valid numbers., Item: " + (itemName || "Unknown") + ", Volume: " + volume + ", Percentage: " + percentage + ", Price: " + price + ", Weight: " + weight);
+	}
 
 	return {
 		[DrunkColumns.AlcoholGrams]: parseFloat(pureAlcoholGrams.toFixed(2)),

@@ -254,7 +254,8 @@ export const hideFromProductPageStats = new Set<ColumnNames>([
     DatasetColumns.Price,
     DatasetColumns.PricePerLiter,
     DatasetColumns.Name,
-    DatasetColumns.Vintage
+    DatasetColumns.Vintage,
+    DatasetColumns.EAN
 ]);
 
 export const defaultSEOData = {
