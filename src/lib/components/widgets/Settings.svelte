@@ -74,11 +74,9 @@
 					tietoa tuotteista.
 				</p>
 				<p>
-					Hinnasto ladataan Alkon julkisesta Excel-tiedostosta. Tiedostoa päivitetään noin
-					vuorokauden viiveellä. Voit ladata sen <a
-						href={"https://www.alko.fi/INTERSHOP/static/WFS/Alko-OnlineShop-Site/-/Alko-OnlineShop/fi_FI/Alkon%20Hinnasto%20Tekstitiedostona/alkon-hinnasto-tekstitiedostona.xlsx"}
-						referrerpolicy="no-referrer"
-						rel="noopener noreferrer"
+					Hinnasto ladataan Alkon rajapinnoista. Tiedostoa päivitetään noin
+					kuuden tunnin välein. Voit ladata Alkometriikan käyttämän tiedoston <a
+						href={"https://github.com/leevilaukka/alkometriikka/blob/gh-pages/data.json"}
 						target="_blank"
 						>täältä
 					</a>.
