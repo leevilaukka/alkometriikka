@@ -225,7 +225,7 @@
 >
 	{#if kaljakori.data.length === 0}
 		<div class="grid flex-auto place-content-center">
-			<div class="mx-auto prose text-center">
+			<div class="mx-auto prose dark:prose-invert text-center">
 				<h2>Lista on tyhjä!</h2>
 				<p>Lisää tuotteita listaan tuotevalikosta!</p>
 				<a href="/" class={twMerge(components.button({ type: 'positive' }), 'mx-auto w-full')}>
