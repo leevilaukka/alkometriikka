@@ -34,6 +34,11 @@ jobs:
         - name: Install dependencies
           run: bun install --frozen-lockfile
 
+        - name: Seed existing dataset from gh-pages
+          run: |
+            git fetch origin gh-pages || true
+            git show origin/gh-pages:data.json > data.json 2>/dev/null || true
+
         - name: Run script to convert to JSON
           env:
             CLOUDFLARE_PURGE_KEY: ${{ secrets.CLOUDFLARE_PURGE_KEY }}

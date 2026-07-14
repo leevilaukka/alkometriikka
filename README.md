@@ -4,7 +4,7 @@ Alkon tuotetietojen selaamiseen tarkoitettu selainpohjainen sovellus.
 
 ## Tietolähde
 
-Sovellus käyttää Alkon avoimesti verkossa jakamaa hinnastoa ja sen tarjoamia tietoja. Hinnaston voit löytää [täältä](https://www.alko.fi/INTERSHOP/static/WFS/Alko-OnlineShop-Site/-/Alko-OnlineShop/fi_FI/Alkon%20Hinnasto%20Tekstitiedostona/alkon-hinnasto-tekstitiedostona.xlsx).
+Sovellus käyttää Alkon avoimesti verkossa jakamaa dataa. Hinnasto kerätään Alkon rajapintojen tarjoamista tiedoista.
 
 ## Huomautus
 
@@ -35,6 +35,6 @@ You can preview the production build with `npm run preview`.
 
 ## Deploying
 
-If you intend on selfhosting, you need to make sure to include the price list in the root folder of the hosted website. This is necessary, as we don't want to flood Alko's systems with requests.
+If you intend on selfhosting, you need to make sure to include the price list in the root folder of the hosted website. This is necessary, as we don't want to flood Alko systems with requests. The current JSON used in production can be found on the `gh-pages` branch of this repo in the `data.json` file in the root folder, [here](https://github.com/leevilaukka/alkometriikka/blob/gh-pages/data.json).
 
-The "official" page manages this by using a GitHub Actions workflow to build the app, download the price list to the root of the built site, and then deploy it on GitHub Pages.
+The "official" page manages this by using a GitHub Actions workflow to build the app, download and parse the price list to the root of the built site, and then deploy it on GitHub Pages.
