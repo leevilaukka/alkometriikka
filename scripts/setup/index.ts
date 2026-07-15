@@ -60,6 +60,8 @@ const RETRY_MAX_DELAY_MS = 60_000;
 /** How often (in products) to log detail-fetch progress. */
 const PROGRESS_LOG_INTERVAL = 25;
 
+const VERBOSE = truthyEnvVar("VERBOSE");
+
 const REQUEST_HEADERS: Record<string, string> = {
   "Accept": "application/json",
   "Content-Type": "application/json",
@@ -75,6 +77,11 @@ interface Config {
   detailConcurrency: number;
   maxRetries: number;
   maxPages: number;
+}
+
+function truthyEnvVar(name: string): boolean {
+  const value = process.env[name];
+  return value === "true" || value === "1";
 }
 
 function loadConfig(): Config {
@@ -179,6 +186,9 @@ async function fetchJson<T>(url: string, init: RequestInit, maxRetries: number):
       if (response.status === 403 || response.status === 429) {
         const backoff = Math.min(RETRY_BASE_DELAY_MS * 2 ** attempt, RETRY_MAX_DELAY_MS) + Math.random() * 500;
         console.log(`  ⏳ Rate limited (${response.status}), retry ${attempt + 1}/${maxRetries} in ${Math.round(backoff)}ms`);
+        if(VERBOSE) {
+          console.log(`  ❗ Response headers:`, Object.fromEntries(response.headers.entries()));
+        }
         await sleep(backoff);
         continue;
       }
@@ -211,10 +221,12 @@ async function loadSearchProducts(config: Config): Promise<SearchProductData[]> 
       config.maxRetries
     );
 
+
     const batch = response?.value ?? [];
     if (batch.length === 0) break;
 
     products.push(...batch);
+
     console.log(`  📦 Fetched ${products.length} products (page ${page + 1})`);
 
     if (batch.length < PAGE_SIZE) break;
@@ -239,9 +251,8 @@ async function fetchProductDetails(id: string, config: Config): Promise<Detailed
 
 async function loadExistingData(): Promise<MigratedData> {
   const file = Bun.file(DATA_PATH);
-  if (!(await file.exists())) {
-    console.log("⚠️  No existing dataset found, starting fresh");
-    return { schema: LEGACY_HEADERS };
+  if(VERBOSE) {
+    console.log(`  📂 Loading existing dataset from ${DATA_PATH}...`);
   }
 
   try {
@@ -249,6 +260,9 @@ async function loadExistingData(): Promise<MigratedData> {
     if (!parsed || !Array.isArray(parsed.schema)) {
       console.warn("⚠️  Existing dataset has no schema, starting fresh");
       return { schema: LEGACY_HEADERS };
+    }
+    if(VERBOSE) {
+      console.log(`  ✅ Loaded file: ${DATA_PATH} with ${Object.keys(parsed).length - 1} products - File size: ${file.size} bytes`);
     }
     return parsed;
   } catch (error) {
@@ -300,7 +314,12 @@ async function purgeCache(): Promise<void> {
     if (!response.ok) {
       throw new Error(`Cache purge failed: ${response.status} ${response.statusText}`);
     }
-    console.log("✅ Cache purge successful.", await response.json());
+    if(VERBOSE) {
+      console.log("  ✅ Cache purge successful.", await response.json());
+    }
+    else {
+      console.log("✅ Cache purge successful.", `Status: ${response.status} ${response.statusText}`);
+    }
   } catch (error) {
     console.error("❌ Error during cache purge:", error);
   }
@@ -313,6 +332,9 @@ async function purgeCache(): Promise<void> {
 async function sync(): Promise<void> {
   console.log("🚀 Starting Alko sync...\n");
   const config = loadConfig();
+  if(VERBOSE) {
+    console.log(`  🔧 Config:`, config);
+  }
 
   const [searchProducts, existing] = await Promise.all([
     loadSearchProducts(config),
@@ -379,7 +401,18 @@ async function sync(): Promise<void> {
         const previousPrice = toNumber(previous.values[HINTA_INDEX]);
         const priceChanged = previousPrice !== null && price !== null && previousPrice !== price;
         const priceInfo = priceChanged ? ` (${previousPrice} € → ${price} €)` : "";
-        console.log(`  🔄 Updated ${product.id} — ${name}${priceInfo}`);
+        // Compare the previous and current values to see what changed.
+        const changedFields = values.reduce<string[]>((acc, value, index) => {
+          if (previous.values[index] !== value) {
+            acc.push(LEGACY_HEADERS[index]);
+          }
+          return acc;
+        }, []);
+        if (changedFields.length > 0 && VERBOSE) {
+          console.log(`  🔄 Updated ${product.id} — ${name}${priceInfo}.\n\tChanged fields: \n\t${changedFields.map((f) => `\t• ${f} ${previous.values[LEGACY_HEADERS.indexOf(f as typeof LEGACY_HEADERS[number])]} → ${values[LEGACY_HEADERS.indexOf(f as typeof LEGACY_HEADERS[number])]}`).join("\n")}`);
+        } else {
+          console.log(`  🔄 Updated ${product.id} — ${name}${priceInfo}`);
+        }
       } else {
         stats.added++;
       }
