@@ -3,7 +3,6 @@
 	import AllLists from '$lib/components/widgets/AllLists.svelte';
 	import Icon from '$lib/components/widgets/Icon.svelte';
 	import { generateTitle, setSEO } from '$lib/utils/helpers.js';
-	import { listToURI } from '$lib/utils/lists.js';
 	import { components } from '$lib/utils/styles';
 	import { twMerge } from 'tailwind-merge';
 

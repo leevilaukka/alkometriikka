@@ -1,6 +1,6 @@
 import { AllColumns, defaultSortingColumn, GenderOptionsMap, subCategoryMap, undefinedToZeroColumns, DrunkColumns, columnsHandledAsString, columnsHandledAsSet } from '$lib/utils/constants';
 import { calculateDrunkValue } from '../utils/alko';
-import { type ColumnNames, type DatasetColumnNames, type DatasetRow, type Filter, type FilterValues, type ColumnType, type PersonalInfo, type PriceListItem } from '../types';
+import { type ColumnNames, type DatasetColumnNames, type DatasetRow, type ColumnType, type PersonalInfo, type PriceListItem } from '../types';
 import { isSimilarString } from '$lib/utils/search';
 
 function toPositiveNumber(value: unknown): number | null {

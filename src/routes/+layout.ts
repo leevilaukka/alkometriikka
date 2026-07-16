@@ -3,7 +3,6 @@ import { DatasetColumns } from '$lib/utils/constants';
 import type { ColumnNames } from '$lib/types';
 import { Kaljakori } from '$lib/alko';
 import { personalInfo } from '$lib/global.svelte';
-import type { FullProperties } from 'xlsx';
 
 export const ssr = false;
 export const prerender = false;
@@ -66,7 +65,7 @@ function formatDatasetToJSON(data: string) {
             throw new Error("Hinnasto on tyhjä tai väärässä muodossa");
         }
 
-        const metadata: FullProperties = latestDate ? { CreatedDate: new Date(latestDate) } : {};
+        const metadata = latestDate ? { CreatedDate: new Date(latestDate) } : {};
 
         return {
             table: [header, ...rows],
@@ -85,7 +84,7 @@ async function getDataset({ fetch }: { fetch: Fetch; }) {
 }
 
 async function getData({ fetch }: { fetch: Fetch; }) {
-    return new Promise<{ dataset: { table: any[]; metadata: FullProperties; }; kaljakori: Kaljakori; }>(async (resolve, reject) => {
+    return new Promise<{ dataset: { table: any[]; metadata: Record<string, unknown>; }; kaljakori: Kaljakori; }>(async (resolve, reject) => {
         try {
             const dataset = await getDataset({ fetch });
             resolve({ dataset, kaljakori: new Kaljakori(dataset.table, personalInfo) });
