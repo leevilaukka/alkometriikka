@@ -37,6 +37,7 @@
 	let filtersComponent: Filters | null = $state(null);
 	let filterValues = $state(initFilterValues(kaljakori, page.url.searchParams));
 	let activeFilters: ColumnNames[] = $state([])
+	let showRemoved = $state(false);
 
 	let selectedHighlight = $state(
 		searchParamsManager.getParameter('highlight') || defaultSortingColumn
@@ -58,6 +59,7 @@
 				filterValuesCopy[key] = new Set(filterValuesCopy[key]);
 		});
 		let temp = kaljakori.fuzzySearchAndFilter($searchQuery, filterValuesCopy);
+		if (!showRemoved) temp = temp.filter((item) => item[AllColumns.RemovedFromSelection] !== true);
 		if (!!selectedSortingColumn)
 			temp = temp.sort((a, b) => (a[selectedSortingColumn] > b[selectedSortingColumn] ? 1 : -1));
 		if (!asc) temp = temp.reverse();
@@ -82,7 +84,7 @@
 	<aside
 		class="z-10 flex h-full flex-col max-h-full overflow-hidden border-primary md:w-84 md:border-r"
 	>
-		<Filters {kaljakori} bind:activeFilters bind:filterValues bind:this={filtersComponent} />
+		<Filters {kaljakori} bind:activeFilters bind:filterValues bind:showRemoved bind:this={filtersComponent} />
 	</aside>
 	<main class="mx-auto flex h-full w-full flex-col gap-3 bg-secondary p-4 md:gap-4 md:p-6">
 		<div class="flex w-full flex-col items-start gap-4">

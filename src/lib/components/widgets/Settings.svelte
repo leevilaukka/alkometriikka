@@ -11,6 +11,12 @@
 	let tab = $state<'personal' | 'info' | 'settings'>('personal');
 
 	const { alko }: { alko: any } = $props();
+
+	const timeConfig: Intl.DateTimeFormatOptions = {
+		hour: '2-digit',
+		minute: '2-digit',
+		timeZone: 'Europe/Helsinki',
+	};
 </script>
 
 <Popup class="gap-4 p-4">
@@ -74,14 +80,6 @@
 					tietoa tuotteista.
 				</p>
 				<p>
-					Hinnasto ladataan Alkon rajapinnoista. Tiedostoa päivitetään noin
-					kuuden tunnin välein. Voit ladata Alkometriikan käyttämän tiedoston <a
-						href={"https://github.com/leevilaukka/alkometriikka/blob/gh-pages/data.json"}
-						target="_blank"
-						>täältä
-					</a>.
-				</p>
-				<p>
 					Voit lähettää kehitysehdotuksia ja bugiraportteja GitHubin kautta. <br />
 					<a
 						href={"https://github.com/leevilaukka/alkometriikka/issues/new?template=feature_request.md"}
@@ -96,6 +94,20 @@
 					Muut yhteydenotot voi lähettää sähköpostitse osoitteeseen
 					<a href="mailto:contact@alkometriikka.fi">contact@alkometriikka.fi</a>.
 				</p>
+				<details>
+					<summary class="cursor-pointer"> Tietolähteet</summary>
+					<p>
+						Tuotevalikoima ladataan Alkon rajapinnoista. Tiedostoa päivitetään noin
+						kuuden tunnin välein. Voit ladata Alkometriikan käyttämän tiedoston <a
+							href={"https://github.com/leevilaukka/alkometriikka/blob/gh-pages/data.json"}
+							target="_blank"
+							>täältä
+						</a>.
+					</p>
+					<p>
+						Valikoiman "poistuneet tuotteet" perustuvat Alkometriikan aiemmin keräämiin tietoihin. Tiedot eivät siis sisällä kautta aikojen kaikkia poistuneita tuotteita, vaan vain ne, jotka on kerätty ennen tuotteen poistumista valikoimasta. Tämän vuoksi tietoa ei voi pitää täysin luotettavana.
+					</p>
+				</details>
 			</div>
 			<div class="flex flex-row items-center gap-2">
 				<a
@@ -119,10 +131,11 @@
 				Versio: <a href={`https://github.com/leevilaukka/alkometriikka/commit/${version}`} target="_blank">
 					{version}
 				</a>
-				{#if alko.dataset.metadata.CreatedDate}
-					| Hinnaston päiväys: {new Date(alko.dataset.metadata.CreatedDate).toLocaleDateString(
-						'fi-FI'
-					)}
+				{#if alko.dataset.metadata.LastUpdated && alko.dataset.metadata.LastSynced}
+					<br />
+				{@const lastSynced = `${new Date(alko.dataset.metadata.LastSynced).toLocaleDateString('fi-FI')} klo ${new Date(alko.dataset.metadata.LastSynced).toLocaleTimeString('fi-FI', timeConfig)}`}
+				{@const lastUpdated = `${new Date(alko.dataset.metadata.LastUpdated).toLocaleDateString('fi-FI')} klo ${new Date(alko.dataset.metadata.LastUpdated).toLocaleTimeString('fi-FI', timeConfig)}`}
+					Viimeisin synkronointi: {lastSynced} | Viimeisin muutos: {lastUpdated}
 				{/if}
 			</p>
 			<button class={twMerge(components.button(), 'w-full')} onclick={() => dialogElement.close()}

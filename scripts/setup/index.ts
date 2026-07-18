@@ -46,6 +46,8 @@ const productDetailsUrl = (id: string) => `https://www.alko.fi/api/product-api/p
 const DEV = process.argv.includes("--dev");
 /** Where the dataset is read from and written to. Mirrors the legacy setup.ts convention. */
 const DATA_PATH = DEV ? "./static/data.json" : "./data.json";
+/** Fallback base dataset used when no synced `data.json` exists yet (produced by migrate.ts). */
+const MIGRATED_DATA_PATH = "./data-migrated.json";
 
 /** How many products the search API returns per page. */
 const PAGE_SIZE = 1000;
@@ -250,9 +252,20 @@ async function fetchProductDetails(id: string, config: Config): Promise<Detailed
 // ============================================================================
 
 async function loadExistingData(): Promise<MigratedData> {
-  const file = Bun.file(DATA_PATH);
+  let file = Bun.file(DATA_PATH);
+  let sourcePath = DATA_PATH;
+
+  // Fall back to the migration output when no synced dataset exists yet.
+  if (!(await file.exists())) {
+    const migrated = Bun.file(MIGRATED_DATA_PATH);
+    if (await migrated.exists()) {
+      file = migrated;
+      sourcePath = MIGRATED_DATA_PATH;
+    }
+  }
+
   if(VERBOSE) {
-    console.log(`  📂 Loading existing dataset from ${DATA_PATH}...`);
+    console.log(`  📂 Loading existing dataset from ${sourcePath}...`);
   }
 
   try {
@@ -263,11 +276,11 @@ async function loadExistingData(): Promise<MigratedData> {
       return { schema: LEGACY_HEADERS, metadata: { LastUpdated: now, LastSynced: now }, products: {} };
     }
     if(VERBOSE) {
-      console.log(`  ✅ Loaded file: ${DATA_PATH} with ${Object.keys(parsed.products ?? {}).length} products - File size: ${file.size} bytes`);
+      console.log(`  ✅ Loaded file: ${sourcePath} with ${Object.keys(parsed.products ?? {}).length} products - File size: ${file.size} bytes`);
     }
     return parsed;
   } catch (error) {
-    console.warn(`⚠️  Failed to read ${DATA_PATH}, starting fresh:`, error);
+    console.warn(`⚠️  Failed to read ${sourcePath}, starting fresh:`, error);
     const now = new Date().toISOString();
     return { schema: LEGACY_HEADERS, metadata: { LastUpdated: now, LastSynced: now }, products: {} };
   }

@@ -19,7 +19,10 @@ import {FIELD_TO_LEGACY_SCHEMA, LEGACY_HEADERS, getHash, getHashValues} from "./
 import type {MigratedData, MigratedProduct} from "./types.ts";
 
 const LEGACY_JSON_URL = "https://raw.githubusercontent.com/leevilaukka/alkometriikka/dfbaa4c24221a1844388fcc53d361add4019b6c2/data.json";
-const OUTPUT_JSON_PATH = "./data-migrated.json";
+/** When running with `--dev` we write to the local static folder. Mirrors setup/index.ts. */
+const DEV = process.argv.includes("--dev");
+/** Where the migrated dataset is written. Mirrors the setup/index.ts convention. */
+const OUTPUT_JSON_PATH = DEV ? "./static/data.json" : "./data.json";
 
 /** Column indices of hashed fields whose stored legacy format differs from the sync-produced format. */
 const HINTA_INDEX = LEGACY_HEADERS.indexOf("Hinta");

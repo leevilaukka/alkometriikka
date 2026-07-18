@@ -211,10 +211,25 @@ export function getHashValues(values: unknown[]): unknown[] {
     .map(({ index }) => values[index]);
 }
 
+/**
+ * Produces an order-independent representation of a hashed value. Array-valued
+ * fields (e.g. `taste`/Luonnehdinta) are trimmed and sorted so that the same
+ * set of entries in a different source order hashes identically, preventing
+ * spurious "changed" detections that trigger unnecessary detail re-fetches.
+ */
+function canonicalizeHashValue(value: unknown): unknown {
+  if (Array.isArray(value)) {
+    return value
+      .map((item) => (typeof item === "string" ? item.trim() : item))
+      .sort();
+  }
+  return value;
+}
+
 /** Computes a stable SHA-256 hex hash over the given values. */
 export function getHash(values: unknown[]): string {
   const hasher = new CryptoHasher("sha256");
-  hasher.update(JSON.stringify(values));
+  hasher.update(JSON.stringify(values.map(canonicalizeHashValue)));
   return hasher.digest("hex");
 }
 

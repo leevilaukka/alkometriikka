@@ -25,6 +25,7 @@ async function fetchAlkoPriceList({ fetch }: { fetch: Fetch; }) {
 type MigratedProduct = {
     values: unknown[];
     priceHistory?: { date: string; price: number }[];
+    meta?: { removedFromSelection?: string };
 };
 
 type Dataset = {
@@ -51,8 +52,9 @@ function formatDatasetToJSON(data: string) {
         // expects: a header row plus one row per product with the price history
         // appended as the "Hintahistoria" column. Every product is kept —
         // including ones no longer in Alko's selection — so nothing disappears
-        // from the UI.
-        const header = [...schema, DatasetColumns.History];
+        // from the UI. Whether a product has been removed from the selection is
+        // recorded in `meta.removedFromSelection` and appended as its own column.
+        const header = [...schema, DatasetColumns.History, DatasetColumns.RemovedFromSelection];
 
         let latestDate: string | undefined;
         const rows = Object.values(products)
@@ -64,7 +66,8 @@ function formatDatasetToJSON(data: string) {
                 for (const point of priceHistory) {
                     if (point?.date && (!latestDate || point.date > latestDate)) latestDate = point.date;
                 }
-                return [...product.values, priceHistory];
+                const removedFromSelection = Boolean(product.meta?.removedFromSelection);
+                return [...product.values, priceHistory, removedFromSelection];
             });
 
         if (rows.length === 0) {
@@ -73,8 +76,7 @@ function formatDatasetToJSON(data: string) {
 
         // Prefer the dataset's recorded last-modified date; fall back to the
         // newest price-history entry for older datasets without metadata.
-        const createdDate = datasetMeta?.LastUpdated ?? latestDate;
-        const metadata = createdDate ? { CreatedDate: new Date(createdDate) } : {};
+        const metadata = datasetMeta ? { ...datasetMeta } : {};
 
         return {
             table: [header, ...rows],

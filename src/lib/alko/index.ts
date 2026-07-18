@@ -93,6 +93,12 @@ export class Kaljakori {
 					continue; // Skip further processing for this column
 				}
 
+				// Special handling for the removed-from-selection flag - preserve as boolean
+				if (key === AllColumns.RemovedFromSelection) {
+					item[key] = Boolean(value);
+					continue; // Skip further processing for this column
+				}
+
 				if (columnsHandledAsString.includes(key as typeof columnsHandledAsString[number])) value = toFormattedStringValue(String(value))
 				else if (columnsHandledAsSet.includes(key as typeof columnsHandledAsSet[number])) value = new Set(String(value || "").split(/[\.,]\s/).map(v => toFormattedStringValue(v.trim())).filter(v => v.length > 0))
 				else if (isNumber(value)) value = Number.parseFloat(String(value));

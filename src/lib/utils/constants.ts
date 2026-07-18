@@ -39,7 +39,8 @@ export const DatasetColumns = Object.freeze({
     Energy: "Energia kcal/100 ml",
     Availability: "Valikoima",
     EAN: "EAN",
-    History: "Hintahistoria"
+    History: "Hintahistoria",
+    RemovedFromSelection: "Poistunut valikoimasta"
 } as const);
 
 /** Columns related to calculated drunk values.

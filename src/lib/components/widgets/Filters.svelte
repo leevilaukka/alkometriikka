@@ -2,7 +2,7 @@
 	import type { Kaljakori } from '$lib/alko';
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/styles';
-	import { ContextKeys, shownFilters as filters, subCategoryMap } from '$lib/utils/constants';
+	import { ContextKeys, shownFilters as filters, subCategoryMap, AllColumns } from '$lib/utils/constants';
 	import NumberInput from '../inputs/NumberInput.svelte';
 	import StringInput from '../inputs/StringInput.svelte';
 	import Icon from './Icon.svelte';
@@ -17,17 +17,20 @@
 		kaljakori,
 		filterValues = $bindable(),
 		activeFilters = $bindable([]),
+		showRemoved = $bindable(false),
 		useURLParams = true,
 	}: {
 		kaljakori: Kaljakori;
 		filterValues: FilterValues
 		activeFilters: ColumnNames[],
+		showRemoved?: boolean,
 		useURLParams?: boolean,
 	} = $props();
 	
 	let searchParamsManager = getContext<SearchParamsManager>(ContextKeys.SearchParamsManager);
 	let filtersElement: HTMLDialogElement;
 	let showFilters = $derived(!isMobile);
+	let hasRemovedProducts = $derived(kaljakori.data.some((item) => item[AllColumns.RemovedFromSelection] === true));
 	let filterActiveState = $state(filters.reduce((acc, filter) => {
 		acc[filter] = false;
 		return acc;
@@ -120,6 +123,15 @@
 	<div
 		class="sticky bottom-0 mt-auto flex w-full flex-col gap-2 backdrop:backdrop-blur-sm md:border-0 md:p-0"
 	>
+		{#if hasRemovedProducts}
+			<button
+				onclick={() => (showRemoved = !showRemoved)}
+				class={twMerge(components.button(), 'w-full')}
+			>
+				<Icon name={showRemoved ? 'eye' : 'eye_slash'} />
+				<span>{showRemoved ? 'Piilota poistuneet tuotteet' : 'Näytä poistuneet tuotteet'}</span>
+			</button>
+		{/if}
 		<button
 			onclick={() => {
 				filterValues = initFilterValues(kaljakori);
