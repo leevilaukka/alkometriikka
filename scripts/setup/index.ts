@@ -51,6 +51,8 @@ const MIGRATED_DATA_PATH = "./data-migrated.json";
 
 /** How many products the search API returns per page. */
 const PAGE_SIZE = 1000;
+/** Delay (ms) between consecutive search page requests to avoid rate limiting. */
+const SEARCH_PAGE_DELAY_MS = 300;
 /** How many detail requests to run in parallel. */
 const DEFAULT_DETAIL_CONCURRENCY = 4;
 /** How many times to retry a failed/ratelimited request before giving up. */
@@ -211,9 +213,30 @@ async function fetchJson<T>(url: string, init: RequestInit, maxRetries: number):
   return null;
 }
 
-/** Fetches every product from the paginated search API. */
-async function loadSearchProducts(config: Config): Promise<SearchProductData[]> {
+/** Result of a paginated search fetch, including whether it completed fully. */
+interface SearchFetchResult {
+  products: SearchProductData[];
+  /** True only when every page was fetched successfully (see `@odata.count`). */
+  complete: boolean;
+  /** Total product count the API reported via `@odata.count`, if available. */
+  expectedTotal: number | null;
+}
+
+/**
+ * Fetches every product from the paginated search API.
+ *
+ * Crucially, this reports whether the fetch was **complete**. A failed page
+ * request returns `null` from `fetchJson`, which is indistinguishable from a
+ * genuine end-of-list empty page if we only look at the array length. Treating
+ * a failed page as "the end" is what caused thousands of live products to be
+ * missing from the API id set and therefore falsely flagged as removed from the
+ * selection. We now surface incompleteness so the caller can refuse to run the
+ * removal pass on a partial dataset.
+ */
+async function loadSearchProducts(config: Config): Promise<SearchFetchResult> {
   const products: SearchProductData[] = [];
+  let expectedTotal: number | null = null;
+  let complete = true;
 
   for (let page = 0; page < config.maxPages; page++) {
     const skip = page * PAGE_SIZE;
@@ -223,8 +246,21 @@ async function loadSearchProducts(config: Config): Promise<SearchProductData[]> 
       config.maxRetries
     );
 
+    // A null response means the request failed after all retries. We cannot tell
+    // this apart from a legitimately empty page by array length alone, so we
+    // must treat the whole fetch as incomplete rather than assume end-of-list.
+    if (response === null) {
+      console.error(`  ❌ Search page ${page + 1} (skip ${skip}) failed after retries — marking fetch as incomplete.`);
+      complete = false;
+      break;
+    }
 
-    const batch = response?.value ?? [];
+    if (expectedTotal === null && typeof response["@odata.count"] === "number") {
+      expectedTotal = response["@odata.count"];
+      console.log(`  🔢 API reports ${expectedTotal} total products`);
+    }
+
+    const batch = response.value ?? [];
     if (batch.length === 0) break;
 
     products.push(...batch);
@@ -232,9 +268,20 @@ async function loadSearchProducts(config: Config): Promise<SearchProductData[]> 
     console.log(`  📦 Fetched ${products.length} products (page ${page + 1})`);
 
     if (batch.length < PAGE_SIZE) break;
+    if (expectedTotal !== null && products.length >= expectedTotal) break;
+
+    // Space out page requests slightly to avoid tripping the API's rate limiter,
+    // which previously caused later pages to fail and truncate the fetch.
+    await sleep(SEARCH_PAGE_DELAY_MS);
   }
 
-  return products;
+  // If the API told us how many products exist, require that we actually
+  // collected them all before the set can be trusted for removal detection.
+  if (expectedTotal !== null && products.length < expectedTotal) {
+    complete = false;
+  }
+
+  return { products, complete, expectedTotal };
 }
 
 /** Fetches the full detail payload for a single product. */
@@ -351,11 +398,12 @@ async function sync(): Promise<void> {
     console.log(`  🔧 Config:`, config);
   }
 
-  const [searchProducts, existing] = await Promise.all([
+  const [searchResult, existing] = await Promise.all([
     loadSearchProducts(config),
     loadExistingData(),
   ]);
 
+  const searchProducts = searchResult.products;
   const existingProducts = existing.products ?? {};
 
   console.log(`\n📦 ${searchProducts.length} products from API, ${Object.keys(existingProducts).length} in existing dataset\n`);
@@ -441,38 +489,72 @@ async function sync(): Promise<void> {
     }
   });
 
-  // Never delete products: carry over anything missing from the latest search
-  // response and flag it as removed from the selection. Only products that are
-  // genuinely absent from the API response are flagged — anything the API still
-  // returns is always kept as an active product.
+  // Never delete products: carry over every product from the existing dataset
+  // (data.json, or the migrated fallback) that the latest search response no
+  // longer contains, and flag it as removed from the selection. The rule is
+  // simple: a product counts as "removed from selection" purely by its absence
+  // from the API's search response. Anything the API still returns is always
+  // kept as an active product, and any stale removed flag is cleared.
+  //
+  // This is ONLY safe when the search fetch was complete. On a partial fetch the
+  // API id set is missing live products, so flagging by absence would wrongly
+  // mark thousands of them as removed (exactly the corruption we are fixing).
+  // When incomplete, we carry over every existing product untouched instead.
   const apiIds = new Set(searchProducts.map((product) => product.id));
   const today = new Date().toISOString().slice(0, 10);
-  for (const id of Object.keys(existingProducts)) {
-    if (id in products) continue;
 
-    const previous = existingProducts[id];
-    if (!isMigratedProduct(previous)) continue;
+  if (!searchResult.complete) {
+    const totalLabel = searchResult.expectedTotal !== null ? `/${searchResult.expectedTotal}` : "";
+    console.warn(
+      `\n⚠️  Search fetch was INCOMPLETE (${searchProducts.length}${totalLabel} products). ` +
+        `Skipping removed-from-selection detection and carrying over all existing products ` +
+        `unchanged to avoid falsely flagging live products as removed. Re-run the sync once ` +
+        `the API returns the full product list to reconcile removals.`
+    );
 
-    // Drop any existing gifts & drinking accessories: matched by the API's
-    // classification (by id) or, for items no longer in the API, by the stored
-    // main-group name.
-    if (irrelevantIds.has(id) || isIrrelevantStoredValues(previous.values)) {
-      stats.filteredRemoved++;
-      continue;
+    for (const [id, previous] of Object.entries(existingProducts)) {
+      if (id in products) continue;
+      if (!isMigratedProduct(previous)) continue;
+
+      if (irrelevantIds.has(id) || isIrrelevantStoredValues(previous.values)) {
+        stats.filteredRemoved++;
+        continue;
+      }
+
+      // Product was in the (partial) API response: keep active, clear stale flag.
+      // Otherwise carry it over exactly as-is — we cannot conclude it was removed.
+      products[id] = apiIds.has(id) ? clearRemovedFlag(previous) : previous;
     }
+  } else {
+    for (const [id, previous] of Object.entries(existingProducts)) {
+      // Already rebuilt as an active product from the API response this run.
+      if (id in products) continue;
+      if (!isMigratedProduct(previous)) continue;
 
-    // Still in the API response: keep it as-is, never mark it removed.
-    if (apiIds.has(id)) {
-      products[id] = previous;
-    } else if (previous.meta?.removedFromSelection) {
-      // Already flagged in a previous run: keep as-is.
-      products[id] = previous;
-    } else {
-      products[id] = {
-        ...previous,
-        meta: { ...previous.meta, removedFromSelection: today },
-      };
-      stats.removed++;
+      // Drop any existing gifts & drinking accessories: matched by the API's
+      // classification (by id) or, for items no longer in the API, by the stored
+      // main-group name. These are excluded from the dataset, not "removed".
+      if (irrelevantIds.has(id) || isIrrelevantStoredValues(previous.values)) {
+        stats.filteredRemoved++;
+        continue;
+      }
+
+      if (apiIds.has(id)) {
+        // Still present in the API response: keep it active, clear any stale flag.
+        products[id] = clearRemovedFlag(previous);
+      } else if (previous.meta?.removedFromSelection) {
+        // Missing from the API and already flagged in an earlier run: keep the
+        // original removal date.
+        products[id] = previous;
+      } else {
+        // Present in the existing dataset but absent from the API response: this
+        // is a newly removed product, flag it with today's date.
+        products[id] = {
+          ...previous,
+          meta: { ...previous.meta, removedFromSelection: today },
+        };
+        stats.removed++;
+      }
     }
   }
 

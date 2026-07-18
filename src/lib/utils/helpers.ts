@@ -3,7 +3,7 @@ import { lists, personalInfo } from "$lib/global.svelte";
 import type { ColumnNames, OGImage, OgProperties, TwitterProperties } from "$lib/types";
 import { defaultSEOData, filterRenameMap, filterToUnitMarker, LocalStorageKeys, sortingOrderDescriptionMap } from "./constants";
 
-export function formatValue(value: string | number | Set<string>, header?: ColumnNames) {
+export function formatValue(value: string | number | boolean | Set<string>, header?: ColumnNames) {
     if (value instanceof Set) return Array.from(value).join(', ');
     if (value === Infinity || value === -Infinity) value = "∞";
     if (header && Object.hasOwn(filterToUnitMarker, header)) return `${value} ${filterToUnitMarker[header as keyof typeof filterToUnitMarker]}`;
@@ -20,7 +20,7 @@ export function headerToDisplayName(header: ColumnNames) {
     return header
 }
 
-export function valueToString(value: string | number | Set<string>, header?: ColumnNames) {
+export function valueToString(value: string | number | boolean | Set<string>, header?: ColumnNames) {
     if (!header) return String(formatValue(value));
     return `${headerToDisplayName(header)}: ${formatValue(value, header)}`
 }

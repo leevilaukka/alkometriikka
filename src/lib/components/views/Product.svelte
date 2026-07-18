@@ -228,7 +228,9 @@
 						: ''}
 				</span>
 				<p class="w-fit rounded bg-gray-100 px-1 dark:bg-zinc-700 dark:text-white">
-					{product[AllColumns.Availability]}
+					{product[AllColumns.RemovedFromSelection]
+						? 'Poistunut valikoimasta'
+						: product[AllColumns.Availability]}
 				</p>
 				<div class="flex w-full flex-row gap-2 md:flex-row">
 					<BadgeList item={product} />
