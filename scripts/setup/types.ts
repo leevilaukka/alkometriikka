@@ -33,7 +33,12 @@ export type MigratedProduct = {
 /** The on-disk dataset shape: a `schema` header row plus one entry per product id. */
 export type MigratedData = {
   schema: readonly string[];
-} & Record<string, MigratedProduct | readonly string[]>;
+  metadata: {
+    LastUpdated: string;
+    LastSynced: string;
+  }
+  products?: Record<string, MigratedProduct>;
+}
 
 export type FieldToArrayOrder<T extends FullProductData> = [keyof T, (value: T[keyof T]) => unknown][];
 /**

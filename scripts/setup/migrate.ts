@@ -120,8 +120,14 @@ function migrateLegacyTable(legacy: LegacyData): MigratedData {
     });
 
     const historyIndex = headerIndex.get("Hintahistoria");
+    const now = new Date().toISOString();
     const out: MigratedData = {
-        schema: LEGACY_HEADERS
+        schema: LEGACY_HEADERS,
+        metadata: {
+            LastUpdated: now,
+            LastSynced: now
+        },
+        products: {}
     };
 
     for (const row of rows) {
@@ -145,7 +151,7 @@ function migrateLegacyTable(legacy: LegacyData): MigratedData {
         const rowHistory = historyIndex !== undefined ? row[historyIndex] : undefined;
         const priceHistory = normalizeHistory(rowHistory, values[4]);
 
-        out[id] = {
+        out.products![id] = {
             hash: getHash(getHashValues(normalizeHashValues(values))),
             values,
             priceHistory
@@ -161,7 +167,7 @@ async function migrateData() {
 
     await Bun.write(OUTPUT_JSON_PATH, JSON.stringify(migrated));
 
-    const productCount = Object.keys(migrated).length - 1;
+    const productCount = Object.keys(migrated.products ?? {}).length;
     console.log(`Migration valmis: ${productCount} tuotetta kirjoitettu tiedostoon ${OUTPUT_JSON_PATH}`);
 }
 

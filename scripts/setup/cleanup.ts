@@ -68,6 +68,7 @@ async function cleanup(): Promise<void> {
   }
 
   const data = (await file.json()) as MigratedData;
+  const products = data.products ?? {};
 
   const searchProducts = await loadSearchProducts();
   const irrelevantIds = new Set<string>();
@@ -79,17 +80,15 @@ async function cleanup(): Promise<void> {
   console.log(`\n🔎 API classifies ${irrelevantIds.size} products as irrelevant\n`);
 
   const removed: string[] = [];
-  for (const id of Object.keys(data)) {
-    if (id === "schema") continue;
-
-    const entry = data[id];
+  for (const id of Object.keys(products)) {
+    const entry = products[id];
     if (!isMigratedProduct(entry)) continue;
 
     if (irrelevantIds.has(id) || isIrrelevantStoredValues(entry.values)) {
       const name = String(entry.values[1] ?? "").trim() || "(nimetön)";
       console.log(`  🗑️  Removing ${id} — ${name}`);
       removed.push(id);
-      delete data[id];
+      delete products[id];
     }
   }
 

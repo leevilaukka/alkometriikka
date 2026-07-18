@@ -259,15 +259,17 @@ async function loadExistingData(): Promise<MigratedData> {
     const parsed = (await file.json()) as MigratedData;
     if (!parsed || !Array.isArray(parsed.schema)) {
       console.warn("⚠️  Existing dataset has no schema, starting fresh");
-      return { schema: LEGACY_HEADERS };
+      const now = new Date().toISOString();
+      return { schema: LEGACY_HEADERS, metadata: { LastUpdated: now, LastSynced: now }, products: {} };
     }
     if(VERBOSE) {
-      console.log(`  ✅ Loaded file: ${DATA_PATH} with ${Object.keys(parsed).length - 1} products - File size: ${file.size} bytes`);
+      console.log(`  ✅ Loaded file: ${DATA_PATH} with ${Object.keys(parsed.products ?? {}).length} products - File size: ${file.size} bytes`);
     }
     return parsed;
   } catch (error) {
     console.warn(`⚠️  Failed to read ${DATA_PATH}, starting fresh:`, error);
-    return { schema: LEGACY_HEADERS };
+    const now = new Date().toISOString();
+    return { schema: LEGACY_HEADERS, metadata: { LastUpdated: now, LastSynced: now }, products: {} };
   }
 }
 
@@ -341,9 +343,11 @@ async function sync(): Promise<void> {
     loadExistingData(),
   ]);
 
-  console.log(`\n📦 ${searchProducts.length} products from API, ${Object.keys(existing).length - 1} in existing dataset\n`);
+  const existingProducts = existing.products ?? {};
 
-  const result: MigratedData = { schema: LEGACY_HEADERS };
+  console.log(`\n📦 ${searchProducts.length} products from API, ${Object.keys(existingProducts).length} in existing dataset\n`);
+
+  const products: Record<string, MigratedProduct> = {};
   const stats: SyncStats = { unchanged: 0, updated: 0, added: 0, removed: 0, failed: 0, filtered: 0, filteredRemoved: 0 };
 
   // Cheap first pass: hash the search-only fields and skip anything unchanged.
@@ -361,11 +365,11 @@ async function sync(): Promise<void> {
     }
 
     const searchHash = getHash(getHashValues(buildLegacyValues(product as unknown as Record<string, unknown>)));
-    const previous = existing[product.id];
+    const previous = existingProducts[product.id];
 
     if (isMigratedProduct(previous) && previous.hash === searchHash) {
       // Back in (or still in) the selection: keep it, but drop any stale removed flag.
-      result[product.id] = clearRemovedFlag(previous);
+      products[product.id] = clearRemovedFlag(previous);
       stats.unchanged++;
     } else {
       pending.push({
@@ -387,14 +391,14 @@ async function sync(): Promise<void> {
       stats.failed++;
       // Keep the previous entry so a transient failure never drops a product.
       // It's still in the selection, so clear any stale removed flag.
-      if (previous) result[product.id] = clearRemovedFlag(previous);
+      if (previous) products[product.id] = clearRemovedFlag(previous);
     } else {
       const values = buildLegacyValues(mergeProduct(product, details));
       const price = toNumber(values[HINTA_INDEX]);
       const priceHistory = updatePriceHistory(previous?.priceHistory, price);
       const meta = withoutRemovedFlag(previous?.meta);
 
-      result[product.id] = { hash, values, priceHistory, ...(meta ? { meta } : {}) };
+      products[product.id] = { hash, values, priceHistory, ...(meta ? { meta } : {}) };
       if (previous) {
         stats.updated++;
         const name = String(values[NIMI_INDEX] ?? "").trim() || "(nimetön)";
@@ -430,10 +434,10 @@ async function sync(): Promise<void> {
   // returns is always kept as an active product.
   const apiIds = new Set(searchProducts.map((product) => product.id));
   const today = new Date().toISOString().slice(0, 10);
-  for (const id of Object.keys(existing)) {
-    if (id === "schema" || id in result) continue;
+  for (const id of Object.keys(existingProducts)) {
+    if (id in products) continue;
 
-    const previous = existing[id];
+    const previous = existingProducts[id];
     if (!isMigratedProduct(previous)) continue;
 
     // Drop any existing gifts & drinking accessories: matched by the API's
@@ -446,12 +450,12 @@ async function sync(): Promise<void> {
 
     // Still in the API response: keep it as-is, never mark it removed.
     if (apiIds.has(id)) {
-      result[id] = previous;
+      products[id] = previous;
     } else if (previous.meta?.removedFromSelection) {
       // Already flagged in a previous run: keep as-is.
-      result[id] = previous;
+      products[id] = previous;
     } else {
-      result[id] = {
+      products[id] = {
         ...previous,
         meta: { ...previous.meta, removedFromSelection: today },
       };
@@ -459,8 +463,21 @@ async function sync(): Promise<void> {
     }
   }
 
+  const now = new Date().toISOString();
+  // `LastSynced` records every fetch; `LastUpdated` only moves when an actual
+  // change to the data was detected this run.
+  const hasChanges = stats.added > 0 || stats.updated > 0 || stats.removed > 0 || stats.filteredRemoved > 0;
+  const result: MigratedData = {
+    schema: LEGACY_HEADERS,
+    metadata: {
+      LastUpdated: hasChanges ? now : (existing.metadata?.LastUpdated ?? now),
+      LastSynced: now,
+    },
+    products,
+  };
+
   await Bun.write(DATA_PATH, JSON.stringify(result));
-  printSummary(stats, Object.keys(result).length - 1);
+  printSummary(stats, Object.keys(products).length);
 
   await purgeCache();
 }

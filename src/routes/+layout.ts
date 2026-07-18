@@ -27,9 +27,15 @@ type MigratedProduct = {
     priceHistory?: { date: string; price: number }[];
 };
 
+type Dataset = {
+    schema?: unknown;
+    metadata?: { LastUpdated?: string; LastSynced?: string };
+    products?: Record<string, MigratedProduct>;
+};
+
 function formatDatasetToJSON(data: string) {
     try {
-        const { schema, ...products } = JSON.parse(data) as { schema?: unknown } & Record<string, MigratedProduct>;
+        const { schema, metadata: datasetMeta, products = {} } = JSON.parse(data) as Dataset;
         if (!Array.isArray(schema) || schema.length === 0) {
             throw new Error("Hinnasto on tyhjä tai väärässä muodossa");
         }
@@ -65,7 +71,10 @@ function formatDatasetToJSON(data: string) {
             throw new Error("Hinnasto on tyhjä tai väärässä muodossa");
         }
 
-        const metadata = latestDate ? { CreatedDate: new Date(latestDate) } : {};
+        // Prefer the dataset's recorded last-modified date; fall back to the
+        // newest price-history entry for older datasets without metadata.
+        const createdDate = datasetMeta?.LastUpdated ?? latestDate;
+        const metadata = createdDate ? { CreatedDate: new Date(createdDate) } : {};
 
         return {
             table: [header, ...rows],
