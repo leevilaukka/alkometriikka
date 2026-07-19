@@ -120,7 +120,6 @@
 							display: true,
 							text: 'Hinta (€)'
 						},
-						beginAtZero: true
 					}
 				},
 
