@@ -114,7 +114,6 @@ export function findDifferentSizeOfProduct(product: PriceListItem, kaljakori: Ka
     const scored = filtered.map((item) => {
         let score = 0
         const compareName = getComparableProductName(item)
-        console.log(item[AllColumns.Name], "----->", compareName)
         if(isSimilarString(targetName, compareName, 0.85)) score += 1
         return {
             item,

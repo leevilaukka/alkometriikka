@@ -59,22 +59,24 @@
 
 	let productElement: HTMLDivElement;
 
-	let similarProducts = findSimilarProducts(
-		product,
-		kaljakori,
-		new Set([
-			AllColumns.Type,
-			AllColumns.SubType,
-			AllColumns.BeerType,
-			AllColumns.Price,
-			AllColumns.BottleSize,
-			AllColumns.Sugar,
-			AllColumns.PackagingType,
-			AllColumns.AlcoholGramsPerEuro,
-			AllColumns.GrapeVarieties,
-			AllColumns.Description
-		]),
-		20
+	let similarProducts = $derived(
+		findSimilarProducts(
+			product,
+			kaljakori,
+			new Set([
+				AllColumns.Type,
+				AllColumns.SubType,
+				AllColumns.BeerType,
+				AllColumns.Price,
+				AllColumns.BottleSize,
+				AllColumns.Sugar,
+				AllColumns.PackagingType,
+				AllColumns.AlcoholGramsPerEuro,
+				AllColumns.GrapeVarieties,
+				AllColumns.Description
+			]),
+			20
+		)
 	);
 
 	let historyChartElem: HTMLCanvasElement | null = $state(null);
@@ -185,7 +187,7 @@
 		}
 	});
 
-	const differentSizesOfProduct = findDifferentSizeOfProduct(product, kaljakori);
+	const differentSizesOfProduct = $derived(findDifferentSizeOfProduct(product, kaljakori));
 
 	console.log('differentSizesOfProduct', differentSizesOfProduct);
 </script>
@@ -318,7 +320,10 @@
 			<summary
 				class="m-2 text-2xl font-bold"
 				onclick={(e) => {
-					if (!historyOpened) sendAnalyticsEvent('show_price_history', { product_number: product[AllColumns.Number] });
+					if (!historyOpened)
+						sendAnalyticsEvent('show_price_history', {
+							product_number: product[AllColumns.Number]
+						});
 					historyOpened = true;
 				}}
 			>
@@ -332,7 +337,8 @@
 			<summary
 				class="mb-2 text-2xl font-bold"
 				onclick={(e) => {
-					if (!sizesOpened) sendAnalyticsEvent('view_sizes', { product_number: product[AllColumns.Number] });
+					if (!sizesOpened)
+						sendAnalyticsEvent('view_sizes', { product_number: product[AllColumns.Number] });
 					sizesOpened = true;
 				}}
 			>
