@@ -36,7 +36,6 @@
 		Legend,
 		LineController
 	} from 'chart.js';
-	import { onMount } from 'svelte';
 	import { dev } from '$app/environment';
 
 	// Register Chart.js components
@@ -80,67 +79,69 @@
 	);
 
 	let historyChartElem: HTMLCanvasElement | null = $state(null);
-	onMount(() => {
-		if (historyChartElem) {
-			new Chart(historyChartElem, {
-				type: 'line',
-				data: {
-					labels:
-						product[AllColumns.History]?.map((entry) =>
-							new Date(entry.date).toLocaleDateString('fi-FI')
-						) || [],
-					datasets: [
-						{
-							label: 'Hinta',
-							data: product[AllColumns.History]?.map((entry) => entry.price) || [],
-							borderColor: 'rgba(75, 192, 192, 1)',
-							backgroundColor: 'rgba(75, 192, 192, 0.2)',
-							fill: true,
-							tension: 0.1,
-							tooltip: {
-								callbacks: {
-									label: function (context) {
-										return `Hinta: ${context?.parsed?.y?.toFixed(2)} €`;
-									}
+	$effect(() => {
+		if (!historyChartElem) return;
+
+		const chart = new Chart(historyChartElem, {
+			type: 'line',
+			data: {
+				labels:
+					product[AllColumns.History]?.map((entry) =>
+						new Date(entry.date).toLocaleDateString('fi-FI')
+					) || [],
+				datasets: [
+					{
+						label: 'Hinta',
+						data: product[AllColumns.History]?.map((entry) => entry.price) || [],
+						borderColor: 'rgba(75, 192, 192, 1)',
+						backgroundColor: 'rgba(75, 192, 192, 0.2)',
+						fill: true,
+						tension: 0.1,
+						tooltip: {
+							callbacks: {
+								label: function (context) {
+									return `Hinta: ${context?.parsed?.y?.toFixed(2)} €`;
 								}
 							}
 						}
-					]
-				},
-				options: {
-					scales: {
-						x: {
-							title: {
-								display: true,
-								text: 'Päivämäärä'
-							}
-						},
-						y: {
-							title: {
-								display: true,
-								text: 'Hinta (€)'
-							},
-							beginAtZero: true
+					}
+				]
+			},
+			options: {
+				scales: {
+					x: {
+						title: {
+							display: true,
+							text: 'Päivämäärä'
 						}
 					},
-
-					plugins: {
-						legend: {
-							display: false,
-							position: 'top'
-						},
+					y: {
 						title: {
-							display: false
+							display: true,
+							text: 'Hinta (€)'
 						},
-						tooltip: {
-							enabled: true,
-							mode: 'index',
-							intersect: false
-						}
+						beginAtZero: true
+					}
+				},
+
+				plugins: {
+					legend: {
+						display: false,
+						position: 'top'
+					},
+					title: {
+						display: false
+					},
+					tooltip: {
+						enabled: true,
+						mode: 'index',
+						intersect: false
 					}
 				}
-			});
-		}
+			}
+		});
+
+		return () => chart.destroy();
 	});
 
 	afterNavigate(() => {
