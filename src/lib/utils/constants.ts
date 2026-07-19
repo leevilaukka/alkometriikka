@@ -279,7 +279,8 @@ export const defaultSEOData = {
         card: "summary_large_image",
         image: "/images/twitter_image.png",
         description: "Selaa Alkon tuotevalikoimaa, ja luo jaettavia listoja helposti!"
-    }
+    },
+    keywords: "alkometriikka, alkometri, promillelaskuri, promillet, alko, juomat, suodattaminen, suodatus, hinnat, vertailu, alkoholi, viina, viinit, oluet, siiderit, lonkerot, juomalistat, listat, jaa"
 } as const satisfies Parameters<typeof setSEO>[0];
 
 

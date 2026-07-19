@@ -172,10 +172,16 @@ export function isNullish(value: unknown) {
     return value === null || value === undefined || value === "";
 }
 
-export function setSEO({ description, og, image, twitter }: { description?: string; og?: OgProperties; image?: OGImage; twitter?: TwitterProperties }) {
+export function setSEO({ description, og, image, twitter, keywords }: { description?: string; og?: OgProperties; image?: OGImage; twitter?: TwitterProperties; keywords?: string }) {
     const metaDescription = document.querySelector('meta[name="description"]');
+    const metaKeywords = document.querySelector('meta[name="keywords"]');
     if (metaDescription && description) {
         metaDescription.setAttribute('content', description);
+    }
+    if (metaKeywords && keywords) {
+        metaKeywords.setAttribute('content', `${keywords}, ${defaultSEOData.keywords}`);
+    } else if (metaKeywords) {
+        metaKeywords.setAttribute('content', defaultSEOData.keywords);
     }
     if (og) {
         for (const [key, value] of Object.entries(og)) {

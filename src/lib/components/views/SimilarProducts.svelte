@@ -12,7 +12,7 @@
 	import Popup from '../widgets/Popup.svelte';
 	import AllLists from '../widgets/AllLists.svelte';
 	import { addToList } from '$lib/utils/lists';
-	import { valueToString } from '$lib/utils/helpers';
+	import { setSEO, valueToString } from '$lib/utils/helpers';
 	import ProductImage from '../widgets/ProductImage.svelte';
 	import BadgeList from '../widgets/BadgeList.svelte';
 	import { onMount } from 'svelte';
@@ -53,6 +53,28 @@
             else showScrollToTopButton = false;
         })
     })
+
+	setSEO({
+		description: `Katso samankaltaisia tuotteita kuin ${product[AllColumns.Name]} Alkometriikasta. Vertaa hintoja, ominaisuuksia ja löydä parhaat vaihtoehdot.`,
+		og: {
+			title: `Samankaltaisia tuotteita kuin ${product[AllColumns.Name]} | Alkometriikka`,
+			url: window.location.href,
+			type: 'website',
+			description: `Katso samankaltaisia tuotteita kuin ${product[AllColumns.Name]} Alkometriikasta. Vertaa hintoja, ominaisuuksia ja löydä parhaat vaihtoehdot.`
+		},
+		twitter: {
+			title: `Samankaltaisia tuotteita kuin ${product[AllColumns.Name]} | Alkometriikka`,
+			description: `Katso samankaltaisia tuotteita kuin ${product[AllColumns.Name]} Alkometriikasta. Vertaa hintoja, ominaisuuksia ja löydä parhaat vaihtoehdot.`,
+			image: `https://alkometriikka.fi/og-image.png`,
+			card: "summary_large_image"
+		},
+		image: {
+			url: `https://alkometriikka.fi/og-image.png`,
+			alt: `Samankaltaisia tuotteita kuin ${product[AllColumns.Name]} | Alkometriikka`,
+			height: "630",
+			width: "1200"
+		}
+	})
 </script>
 
 <div class={twMerge('mx-auto flex w-full max-w-[120ch] flex-auto flex-col flex-nowrap p-4 gap-4 md:p-6')}>
