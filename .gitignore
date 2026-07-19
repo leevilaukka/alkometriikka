@@ -3,7 +3,6 @@ sitemap.xml
 /static/data.json
 /static/data-migrate.json
 /static/sitemap.xml
-/static/pricehistory.json
 
 # Output
 .output

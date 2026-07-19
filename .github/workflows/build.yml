@@ -59,8 +59,10 @@ jobs:
           git show origin/gh-pages:data.json > data.json 2>/dev/null || true
           git show origin/gh-pages:sitemap.xml > sitemap.xml 2>/dev/null || true
 
-      - name: Create CNAME file
-        run: echo "alkometriikka.fi" > CNAME
+      - name: Create CNAME and .nojekyll file
+        run: |
+          echo "alkometriikka.fi" > CNAME
+          touch .nojekyll
 
       - name: Push build to gh-pages branch
         run: |
