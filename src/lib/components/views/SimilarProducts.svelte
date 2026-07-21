@@ -17,6 +17,7 @@
 	import BadgeList from '../widgets/BadgeList.svelte';
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
+	import { generateImageUrl } from '$lib/utils/image';
 
 	let { product, kaljakori } = $props();
 
@@ -54,27 +55,29 @@
         })
     })
 
-	setSEO({
-		description: `Katso samankaltaisia tuotteita kuin ${product[AllColumns.Name]} Alkometriikasta. Vertaa hintoja, ominaisuuksia ja löydä parhaat vaihtoehdot.`,
-		og: {
-			title: `Samankaltaisia tuotteita kuin ${product[AllColumns.Name]} | Alkometriikka`,
-			url: window.location.href,
-			type: 'website',
-			description: `Katso samankaltaisia tuotteita kuin ${product[AllColumns.Name]} Alkometriikasta. Vertaa hintoja, ominaisuuksia ja löydä parhaat vaihtoehdot.`
-		},
-		twitter: {
-			title: `Samankaltaisia tuotteita kuin ${product[AllColumns.Name]} | Alkometriikka`,
+	$effect(() => {
+		setSEO({
 			description: `Katso samankaltaisia tuotteita kuin ${product[AllColumns.Name]} Alkometriikasta. Vertaa hintoja, ominaisuuksia ja löydä parhaat vaihtoehdot.`,
-			image: `https://alkometriikka.fi/og-image.png`,
-			card: "summary_large_image"
-		},
-		image: {
-			url: `https://alkometriikka.fi/og-image.png`,
-			alt: `Samankaltaisia tuotteita kuin ${product[AllColumns.Name]} | Alkometriikka`,
-			height: "630",
-			width: "1200"
-		}
-	})
+			og: {
+				title: `Samankaltaisia tuotteita kuin ${product[AllColumns.Name]} | Alkometriikka`,
+				url: window.location.href,
+				type: 'website',
+				description: `Katso samankaltaisia tuotteita kuin ${product[AllColumns.Name]} Alkometriikasta. Vertaa hintoja, ominaisuuksia ja löydä parhaat vaihtoehdot.`
+			},
+			twitter: {
+				title: `Samankaltaisia tuotteita kuin ${product[AllColumns.Name]} | Alkometriikka`,
+				description: `Katso samankaltaisia tuotteita kuin ${product[AllColumns.Name]} Alkometriikasta. Vertaa hintoja, ominaisuuksia ja löydä parhaat vaihtoehdot.`,
+				image: generateImageUrl(product[AllColumns.Number], product[AllColumns.Name], 'medium'),
+				card: "summary_large_image"
+			},
+			image: {
+				url: generateImageUrl(product[AllColumns.Number], product[AllColumns.Name], 'medium'),
+				alt: `Samankaltaisia tuotteita kuin ${product[AllColumns.Name]} | Alkometriikka`,
+				height: 192,
+				width: 160
+			}
+		})
+	});
 </script>
 
 <div class={twMerge('mx-auto flex w-full max-w-[120ch] flex-auto flex-col flex-nowrap p-4 gap-4 md:p-6')}>

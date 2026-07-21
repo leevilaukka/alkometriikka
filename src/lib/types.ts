@@ -89,8 +89,8 @@ export type TwitterProperties = {
 
 export type OGImage = {
     url: string;
-    width: string;
-    height: string;
+    width: string | number;
+    height: string | number;
     alt: string;
 };
 

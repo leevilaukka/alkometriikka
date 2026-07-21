@@ -1,19 +1,18 @@
+import Bun from "bun";
+import { MigratedData } from "./setup/types";
 const DEV = process.argv.includes("--dev");
-
-type PricePoint = { date: string; price: number };
-type MigratedProduct = { values: unknown[]; priceHistory?: PricePoint[] };
-type MigratedData = { schema: string[] } & Record<string, MigratedProduct>;
 
 async function main() {
     const file = Bun.file(DEV ? "./static/data.json" : "./data.json");
     const sitemapEntries: { loc: string; lastMod: string }[] = [];
-    const { schema, ...products } = await file.json() as MigratedData;
+    const { products } = await file.json() as MigratedData;
 
-    const indexOfTypeColumn = schema.indexOf("Tyyppi");
-
-    for (const product of Object.values(products)) {
+    if (products === undefined) {
+        console.error("No products found in the data file.");
+        return;
+    }
+    for (const product of Object.keys(products).map((k) => products[k])) {
         if (!product || !Array.isArray(product.values)) continue;
-        if (product.values[indexOfTypeColumn] === "lahja- ja juomatarvikkeet") continue; // Skip gift and drink accessories
         const priceHistory = product.priceHistory ?? [];
         sitemapEntries.push({
             loc: `/tuotteet/${product.values[0]}`,
@@ -44,7 +43,7 @@ function generateSitemapXML(entries: { loc: string; lastMod: string }[]) {
         const encodedLoc = encodeURI( entry.loc );
         return `  <url>\n` +
             `    <loc>https://alkometriikka.fi${encodedLoc}</loc>\n` +
-            `    <priority>0.5</priority>\n` +
+            `    <priority>0.6</priority>\n` +
             `    <changefreq>weekly</changefreq>\n` +
             `    <lastmod>${entry.lastMod}</lastmod>\n` +
             `  </url>\n`;
