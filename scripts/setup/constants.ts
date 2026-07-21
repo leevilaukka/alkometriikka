@@ -114,10 +114,10 @@ export const FIELD_TO_LEGACY_SCHEMA: ProductFieldMapping[] = [
   { newPropertyKey: "price", legacyKey: "Hinta", usedForHashing: true, preprocessor: (value) => value },
   { newPropertyKey: "pricePerLitre", legacyKey: "Litrahinta", usedForHashing: false, preprocessor: (value) => Number(value) },
   {
-    newPropertyKey: "tags",
+    newPropertyKey: "statusId",
     legacyKey: "Uutuus",
-    usedForHashing: false,
-    preprocessor: (tags) => Array.isArray(tags) && tags.some((tag) => tag && typeof tag === "object" && (tag as { variant?: unknown }).variant === "new") ? "uutuus" : null
+    usedForHashing: true,
+    preprocessor: (statusId) => statusId === "U" ? "Uutuus" : null
   },
   { newPropertyKey: "id", legacyKey: "Hinnastojärjestyskoodi", usedForHashing: false, preprocessor: () => null },
   { newPropertyKey: "mainGroup", legacyKey: "Tyyppi", usedForHashing: false, preprocessor: (value) => value },
