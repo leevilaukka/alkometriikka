@@ -619,6 +619,7 @@ async function sync(): Promise<void> {
 				// Missing from the API and already flagged in an earlier run: keep the
 				// original removal date.
 				products[id] = previous;
+				products[id]["values"][LEGACY_HEADERS.indexOf("Uutuus")] = null; // Clear the "Uutuus" field for removed products
 			} else {
 				// Present in the existing dataset but absent from the API response: this
 				// is a newly removed product, flag it with today's date.
@@ -626,6 +627,7 @@ async function sync(): Promise<void> {
 					...previous,
 					meta: { ...previous.meta, removedFromSelection: today }
 				};
+				products[id]["values"][LEGACY_HEADERS.indexOf("Uutuus")] = null; // Clear the "Uutuus" field for removed products
 				stats.removed++;
 			}
 		}
