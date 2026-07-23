@@ -278,10 +278,12 @@
 			target="_blank"
 			rel="noopener noreferrer"
 			referrerpolicy="no-referrer"
-			class={twMerge(components.button({ size: 'md' }), 'w-full px-5 py-3 text-xl')}
+			class={twMerge(components.button({ size: 'md' }), 'w-full px-5 py-3 text-xl', product[AllColumns.RemovedFromSelection] ? 'pointer-events-none opacity-50' : '')}
 		>
-			<span>Alkon tuotesivu</span>
-			<Icon name="link_external" class="inline-block" />
+			<span>{product[AllColumns.RemovedFromSelection] ? 'Poistunut valikoimasta' : 'Alkon tuotesivu'}</span>
+			{#if !product[AllColumns.RemovedFromSelection]}
+			 <Icon name="link_external" class="inline-block" />
+			{/if}
 		</a>
 	</div>
 	<div class="flex w-full flex-col gap-4 rounded border border-primary bg-secondary p-4">
@@ -387,7 +389,7 @@
 		<div class="flex items-center justify-between">
 			<h2 class="text-2xl font-bold">Samankaltaisia tuotteita</h2>
 			<a
-				class={twMerge(components.button({ size: 'md' }))}
+				class={twMerge(components.button({ size: 'md' }), product[AllColumns.RemovedFromSelection] ? 'pointer-events-none opacity-50' : '')}
 				href={`/vastaavat/${product[AllColumns.Number]}`}
 			>
 				<span>Lisää samankaltaisia</span>
