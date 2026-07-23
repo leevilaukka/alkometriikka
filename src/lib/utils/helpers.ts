@@ -88,6 +88,10 @@ export function sendAnalyticsEvent(eventName: string, eventParams?: Record<strin
     if (typeof window.sa_event === 'function') {
         window.sa_event(eventName, eventParams);
     }
+
+    if (typeof window.umami === 'object' && typeof window.umami.track === 'function') {
+        window.umami.track(eventName, eventParams);
+    }
 }
 
 export function handleImport() {

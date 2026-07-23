@@ -3,6 +3,7 @@ import { DatasetColumns } from '$lib/utils/constants';
 import type { ColumnNames } from '$lib/types';
 import { Kaljakori } from '$lib/alko';
 import { personalInfo } from '$lib/global.svelte';
+import { dev } from '$app/env';
 
 export const ssr = false;
 export const prerender = false;
@@ -10,6 +11,8 @@ export const prerender = false;
 function getDatasetURL() {
     return resolve("/") + "data.json";
 }
+
+if(dev) localStorage.setItem("umami.disabled", "1");
 
 type Fetch = (input: RequestInfo | URL, init?: RequestInit | undefined) => Promise<Response>
 

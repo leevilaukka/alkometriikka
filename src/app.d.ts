@@ -11,6 +11,10 @@ declare global {
 
 	interface Window {
 		sa_event: (eventName: string, eventParams?: Record<string, any>) => void | undefined;
+		umami: { 
+			track: (nameOrPayload: string | {}, data?: Record<string, any>) => void | undefined;
+			identify: (userIdOrData: string | Record<string, any>, data?: Record<string, any>) => void | undefined
+		 } | undefined;
 	}
 }
 export {};
