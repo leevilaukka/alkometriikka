@@ -180,7 +180,14 @@
         let href = link.getAttribute("href");
 
         // Skip links that don't have an href
-        if (!href) continue;          
+        if (!href) continue;
+
+        // Add umami attributes to outbound links that don't already have them
+        const name = `outbound_link_click`;
+        if (link.host !== window.location.host) {
+          link.setAttribute('data-umami-event', name);
+          link.setAttribute('data-umami-event-url', href);
+        }    
         collectLink(link);
       }
     } catch (error) {
