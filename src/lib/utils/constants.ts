@@ -220,6 +220,7 @@ export const filterRenameMap = {
     [AllColumns.OriginalGravity]: 'Kantavierre',
     [AllColumns.ColorEBC]: 'Väri',
     [AllColumns.BitternessEBU]: 'Katkeroaineet',
+    [AllColumns.BeerType]: "Maku"
 } as const satisfies ColNameObj<string>;
 
 /** Keys used for storing data in localStorage */
