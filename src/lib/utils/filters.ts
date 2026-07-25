@@ -44,6 +44,18 @@ export function generateSimilarProductsFilter(product: PriceListItem, restrictio
     }))
 }
 
+/**
+ * Algorithm to find similar products based on a given product and a set of restrictions. The function scores each product in the `kaljakori` based on how closely it matches the specified restrictions compared to the target product.
+ *  The scoring takes into account numerical differences, string matches, and common values in sets for specific columns. 
+ * The top-scoring products are returned, excluding the original product.
+ * This algo is expensive and should be used sparingly, as it iterates through all products in the `kaljakori` and performs multiple comparisons for each product.
+ * @param product The target product for which similar products are to be found.
+ * @param kaljakori The dataset containing all products to be compared against the target product. 
+ * @param restrictions A set of column names that define the criteria for similarity. The function will only consider these columns when scoring products.
+ * @param limit The maximum number of similar products to return.
+ * @returns An array of similar products, sorted by their similarity score, not including the original product.
+ */
+
 export function findSimilarProducts(product: PriceListItem, kaljakori: Kaljakori, restrictions: Set<ColumnNames>, limit: number): PriceListItem[] {
     const scored = kaljakori.data.map(item => {
         let score = 0
@@ -83,6 +95,12 @@ export function findSimilarProducts(product: PriceListItem, kaljakori: Kaljakori
     return scored.filter(({ item }) => item[AllColumns.Number] !== product[AllColumns.Number]).slice(0, limit).map(({ item }) => item);
 }
 
+
+/**
+ * Gets a comparable product name by normalizing the product's name. This function removes roman numerals, packaging types, numbers, and extra spaces from the product name to facilitate comparison with other products.
+ * @param product The product for which to generate a comparable name.
+ * @returns A normalized string representing the comparable product name.
+ */
 export function getComparableProductName(product: PriceListItem): string {
     let out = product[AllColumns.Name]
     out = out.replace(/M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})/g, "") // Remove roman numerals (before lowercase)
@@ -94,6 +112,13 @@ export function getComparableProductName(product: PriceListItem): string {
     return out
 }
 
+
+/**
+ * Finds products that are the same as the given product but in different sizes. The function filters the products in the provided `kaljakori` based on type, alcohol percentage, and vintage, and then scores them based on the similarity of their names to the target product's name. The products with the highest scores are returned, excluding the original product.
+ * @param product 
+ * @param kaljakori 
+ * @returns An array of `PriceListItem` objects that are (in the best case) the same as the given product but in different sizes.
+ */
 export function findDifferentSizeOfProduct(product: PriceListItem, kaljakori: Kaljakori): PriceListItem[] {
     // TODO: Fix this garbage V2 algo and improve matching + performance
     /*
