@@ -39,12 +39,6 @@ export const DatasetColumns = Object.freeze({
     Energy: "Energia kcal/100 ml",
     Availability: "Valikoima",
     EAN: "EAN",
-} as const);
-
-/** Columns related to metadata about the product.
- * Not present in the dataset 
-*/
-export const MetadataColumns = Object.freeze({
     History: "Hintahistoria",
     RemovedFromSelection: "Poistunut valikoimasta"
 } as const);
@@ -62,9 +56,9 @@ export const DrunkColumns = Object.freeze({
 } as const);
 
 /** All columns available in the app.
- * This is a combination of DatasetColumns, DrunkColumns and MetadataColumns
+ * This is a combination of DatasetColumns and DrunkColumns
  */
-export const AllColumns = Object.freeze({ ...DatasetColumns, ...DrunkColumns, ...MetadataColumns } as const);
+export const AllColumns = Object.freeze({ ...DatasetColumns, ...DrunkColumns } as const);
 
 export const subCategoryMap = {
     [DatasetColumns.Type]: DatasetColumns.SubType,
@@ -212,7 +206,7 @@ export const filterToUnitMarker = {
 
 /**
  * Mapping of filter keys to their display names.
- * Used in the UI to show a more user-friendly name for the filter.
+ * Used in the UI to show a more user-friendly name for the filter
  */
 export const filterRenameMap = {
     [AllColumns.BottleSize]: 'Pakkauskoko',
@@ -255,51 +249,31 @@ export const GenderOptionsMap = {
  * or are already shown prominently elsewhere on the page.
  */
 export const hideFromProductPageStats = new Set<ColumnNames>([
-    AllColumns.AlcoholPercentage,
-    AllColumns.Manufacturer,
-    AllColumns.SortingCode,
-    AllColumns.BottleSize,
-    AllColumns.Price,
-    AllColumns.PricePerLiter,
-    AllColumns.Name,
-    AllColumns.Vintage,
-    AllColumns.EAN,
-    AllColumns.RemovedFromSelection
+    DatasetColumns.AlcoholPercentage,
+    DatasetColumns.Manufacturer,
+    DatasetColumns.SortingCode,
+    DatasetColumns.BottleSize,
+    DatasetColumns.Price,
+    DatasetColumns.PricePerLiter,
+    DatasetColumns.Name,
+    DatasetColumns.Vintage,
+    DatasetColumns.EAN,
+    DatasetColumns.RemovedFromSelection
 ]);
-
-const ImageSizes = {
-    OG: {
-        width: 1200,
-        height: 630
-    },
-    Twitter: {
-        width: 1200,
-        height: 675
-    },
-    ProductImages: {
-        medium: {
-            width: 600,
-            height: undefined
-        },
-        products: {
-            width: 160,
-            height: 192
-        }
-    }
-} as const;
 
 export const defaultSEOData = {
     description: "Vertaa kuin ammattilainen: Selvitä juomien todellinen hinta-tehosuhde. Tee viisaita valintoja ja jaa valmiit tuotelistat yhdellä klikkauksella!",
     og: {
         title: "Alkometriikka",
         description: "Selaa Alkon tuotevalikoimaa, ja luo jaettavia listoja helposti!",
-        url: window.location.origin,
+        url: "https://alkometriikka.fi",
         type: "website"
     },
     image: {
         url: "/images/og_image.png",
         alt: "Alkometriikka logo",
-        ...ImageSizes.OG
+        width: "1200",
+        height: "630"
     },
     twitter: {
         title: "Alkometriikka",

@@ -2,20 +2,14 @@ import type { DrunkColumnNames } from "$lib/types";
 import { DrunkColumns, GenderOptionsMap} from "./constants";
 
 /**
- * Calculates various metrics related to alcohol consumption based on the provided parameters.
- * The function computes the amount of pure alcohol in grams, the amount of alcohol per euro spent, an estimated blood alcohol concentration (BAC), BAC per euro, the number of servings, and the cost per liter of pure alcohol. 
- * 
- * TODO: Maybe implement a time-based BAC decay model to estimate BAC over time after consumption, taking into account the body's metabolism of alcohol. This would provide a more accurate representation of BAC levels at different time intervals post-consumption.
- * 
- * It uses Widmark's formula `BAC = (A / (W × r))` for estimating BAC and takes into account the:
+ * Laskee alkoholin määrän, känni per euro ja BAC-arvot.
  *
- * @param volume The volume of the alcoholic beverage in liters.
- * @param percentage The alcohol percentage of the beverage (e.g., 5 for 5%). This and the volume are used to calculate the amount of pure alcohol in grams (`A`).
- * @param price The price of the beverage in euros.
- * @param gender (`r`, 0.68 for men or 0.55 for women, the default / unspecified value is an average) The gender of the individual consuming the alcohol. Defaults to "Unspecified" if not provided.
- * @param weight (`W`) The weight of the individual in kilograms. If not provided, a default weight is used based on the specified gender
- * @param itemName The name of the alcoholic beverage, used for logging purposes in case of invalid input values.
- * @returns An object containing the calculated metrics, including pure alcohol in grams, alcohol per euro, estimated BAC, BAC per euro, number of servings, and cost per liter of pure alcohol.
+ * @param volume Pullon koko litroina (esim. 0.5)
+ * @param percentage Alkoholiprosentti (esim. 5 → 5%)
+ * @param price Pullon hinta euroina
+ * @param weight Käyttäjän paino kiloina
+ * @param gender Käyttäjän sukupuoli
+ * @returns Olio, jossa puhtaan alkoholin määrä, alkoholia per euro, arvioitu BAC ja BAC per euro
  */
 export function calculateDrunkValue(
 	volume: number,
@@ -35,28 +29,28 @@ export function calculateDrunkValue(
 		}
 	}
 
-	// Ethanol density in grams per liter (g/L)
+	// Etanolin tiheys g/l
 	const ETHANOL_DENSITY = 789;
 
-	// Widmark's formula for estimating BAC: BAC = (A / (W × r))
+	// Widmarkin kertoimet
 	const r = gender === GenderOptionsMap.Male ? 0.68 : 0.55;
 
-	// Calculate the amount of pure alcohol in grams (A)
+	// Lasketaan puhtaan alkoholin määrä grammoina
 	const pureAlcoholGrams = volume * (percentage / 100) * ETHANOL_DENSITY;
 
-	// Calculate the amount of alcohol per euro spent
+	// Lasketaan alkoholia grammoina per euro
 	const alcoholPerEuro = pureAlcoholGrams / price;
 
-	// Calculate the estimated blood alcohol concentration (BAC) using Widmark's formula
+	// Lasketaan arvioitu BAC (‰)
 	const estimatedBAC = pureAlcoholGrams / (weight * r);
 
-	// Calculate the BAC per euro
+	// Lasketaan promillea per euro
 	const bacPerEuro = estimatedBAC / price;
 
-	// Calculate the number of servings (1 serving = 12g)
+	// Lasketaan annokset (1 annos = 12g)
 	const servings = pureAlcoholGrams / 12;
 
-	// € per liter of pure alcohol
+	// € per litra raakaa alkoholia
 	const euroPerLiter = price / (volume * (percentage / 100));
 
 	if (isNaN(pureAlcoholGrams) || isNaN(alcoholPerEuro) || isNaN(estimatedBAC) || isNaN(bacPerEuro) || isNaN(servings) || isNaN(euroPerLiter)) {
@@ -69,6 +63,6 @@ export function calculateDrunkValue(
 		[DrunkColumns.EstimatedPromille]: parseFloat(estimatedBAC.toFixed(3)),
 		[DrunkColumns.PromillePerEuro]: parseFloat(bacPerEuro.toFixed(4)),
 		[DrunkColumns.Servings]: parseFloat(servings.toFixed(1)),
-		[DrunkColumns.EuroPerLiterAlcohol]: parseFloat(euroPerLiter.toFixed(2)),
+		[DrunkColumns.EuroPerLiterAlcohol]: parseFloat(euroPerLiter.toFixed(2))
 	};
 }
