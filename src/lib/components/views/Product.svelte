@@ -389,7 +389,7 @@
 		<div class="flex items-center justify-between">
 			<h2 class="text-2xl font-bold">Samankaltaisia tuotteita</h2>
 			<a
-				class={twMerge(components.button({ size: 'md' }), product[AllColumns.RemovedFromSelection] ? 'pointer-events-none opacity-50' : '')}
+				class={twMerge(components.button({ size: 'md' }), 'flex flex-row items-center gap-2')}
 				href={`/vastaavat/${product[AllColumns.Number]}`}
 			>
 				<span>Lisää samankaltaisia</span>
