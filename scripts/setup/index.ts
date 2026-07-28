@@ -472,6 +472,19 @@ async function sync(): Promise<void> {
 		process.exit(1);
 	}
 
+	// Bail out if the API returned no products at all. An empty response would
+	// flag every existing product as removed and overwrite the dataset with an
+	// empty view, so treat it the same as an incomplete fetch and leave the
+	// existing data.json untouched.
+	if (searchProducts.length === 0) {
+		console.warn(
+			`\n⚠️  Search fetch returned 0 products. Aborting sync without writing the dataset to ` +
+				`avoid overwriting existing data with an empty result. Re-run the sync once the API ` +
+				`returns the product list.`
+		);
+		process.exit(1);
+	}
+
 	console.log(
 		`\n📦 ${searchProducts.length} products from API, ${Object.keys(existingProducts).length} in existing dataset\n`
 	);
@@ -608,7 +621,7 @@ async function sync(): Promise<void> {
 			// Missing from the API and already flagged in an earlier run: keep the
 			// original removal date.
 			products[id] = previous;
-			products[id]["values"][LEGACY_HEADERS.indexOf("Uutuus")] = null; // Clear the "Uutuus" field for removed products
+			products[id]['values'][LEGACY_HEADERS.indexOf('Uutuus')] = null; // Clear the "Uutuus" field for removed products
 		} else {
 			// Present in the existing dataset but absent from the API response: this
 			// is a newly removed product, flag it with today's date.
@@ -616,7 +629,7 @@ async function sync(): Promise<void> {
 				...previous,
 				meta: { ...previous.meta, removedFromSelection: today }
 			};
-			products[id]["values"][LEGACY_HEADERS.indexOf("Uutuus")] = null; // Clear the "Uutuus" field for removed products
+			products[id]['values'][LEGACY_HEADERS.indexOf('Uutuus')] = null; // Clear the "Uutuus" field for removed products
 			stats.removed++;
 		}
 	}
