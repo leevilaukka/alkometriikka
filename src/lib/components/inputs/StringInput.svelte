@@ -35,6 +35,7 @@
 	});
 
 	let query = $state('');
+	let isOpen = $state(false);
 </script>
 
 <div class={twMerge("flex", options.length > 1 ? "flex-col" : "items-center")}>
@@ -51,7 +52,11 @@
 				}}
 			/>
 	{:else}
-		<Popup class={twMerge("p-4 gap-4", $isSafari && "h-auto")}>
+		<Popup
+			class={twMerge("p-4 gap-4", $isSafari && "h-auto")}
+			onOpen={() => (isOpen = true)}
+			onClose={() => (isOpen = false)}
+		>
 			{#snippet renderButton(dialogElement: HTMLDialogElement)}
 				<button
 					{name}
@@ -94,30 +99,35 @@
 						class="order-4 col-span-full flex h-[var(--height)] max-h-full flex-col overflow-auto rounded border border-primary lg:order-3 lg:col-span-1"
 						style:--height={`${28 * 20}px;`}
 					>
-						<SvelteVirtualList
-							items={query
-								? list.filter((item) => item.value.toLowerCase().includes(query.toLowerCase()))
-								: list}
-							bufferSize={30}
-						>
-							{#snippet renderItem(item: ListItem, index: number)}
-								<button
-									onclick={() => {
-										item.selected = !item.selected;
-										value = list.filter((option) => option.selected).map((option) => option.value);
-									}}
-									class={twMerge(components.button(), 'w-full rounded-none border-none', index % 2 === 0 && 'bg-gray-200 dark:bg-zinc-900', item.selected ? 'font-bold' : '')}
-								>
-									<span
-										class="max-w-full overflow-hidden overflow-ellipsis whitespace-nowrap"
-										title={item.value}
+						<!-- Only mount the virtual list once the dialog is visible. Mounting it
+						     while the dialog is display:none makes the list measure a 0px viewport
+						     and render only a tiny window, hiding later options until scrolled. -->
+						{#if isOpen}
+							<SvelteVirtualList
+								items={query
+									? list.filter((item) => item.value.toLowerCase().includes(query.toLowerCase()))
+									: list}
+								bufferSize={30}
+							>
+								{#snippet renderItem(item: ListItem, index: number)}
+									<button
+										onclick={() => {
+											item.selected = !item.selected;
+											value = list.filter((option) => option.selected).map((option) => option.value);
+										}}
+										class={twMerge(components.button(), 'w-full rounded-none border-none', index % 2 === 0 && 'bg-gray-200 dark:bg-zinc-900', item.selected ? 'font-bold' : '')}
 									>
-										{item.value}
-									</span>
-									<input type="checkbox" bind:checked={item.selected} class="ml-auto" readonly />
-								</button>
-							{/snippet}
-						</SvelteVirtualList>
+										<span
+											class="max-w-full overflow-hidden overflow-ellipsis whitespace-nowrap"
+											title={item.value}
+										>
+											{item.value}
+										</span>
+										<input type="checkbox" bind:checked={item.selected} class="ml-auto" readonly />
+									</button>
+								{/snippet}
+							</SvelteVirtualList>
+						{/if}
 					</div>
 				</div>
 				<div class="flex flex-row flex-wrap justify-end gap-4">

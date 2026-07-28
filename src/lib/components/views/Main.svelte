@@ -35,9 +35,9 @@
 	let listRef: SvelteVirtualList<PriceListItem> | null = $state(null);
 
 	let filtersComponent: Filters | null = $state(null);
-	let filterValues = $state(initFilterValues(kaljakori, page.url.searchParams));
-	let activeFilters: ColumnNames[] = $state([])
 	let showRemoved = $state(false);
+	let filterValues = $state(initFilterValues(kaljakori, page.url.searchParams, showRemoved));
+	let activeFilters: ColumnNames[] = $state([])
 
 	let selectedHighlight = $state(
 		searchParamsManager.getParameter('highlight') || defaultSortingColumn

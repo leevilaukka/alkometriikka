@@ -9,9 +9,10 @@
 	import { isMobile } from '$lib/global.svelte';
 	import { initFilterValues, searchParametersFromFilterValues } from '$lib/utils/filters';
 	import type { ColumnNames, FilterValues } from '$lib/types';
-	import { getContext } from 'svelte';
+	import { getContext, untrack } from 'svelte';
 	import type { SearchParamsManager } from '$lib/utils/url';
 	import { headerToDisplayName } from '$lib/utils/helpers';
+	import RecursiveFilter from '../inputs/RecursiveFilter.svelte';
 
 	let {
 		kaljakori,
@@ -62,12 +63,33 @@
 		})
 	});
 
+	let previousShowRemoved = showRemoved;
+	$effect(() => {
+		// Toggling "show removed" changes the min/max defaults for number ranges.
+		// Re-sync any range that is still at its previous default to the new default
+		// so the toggle itself doesn't mark filters as modified / leak URL params.
+		const currentShowRemoved = showRemoved;
+		if (currentShowRemoved === previousShowRemoved) return;
+		untrack(() => {
+			(Object.keys(filterValues) as ColumnNames[]).forEach((filter) => {
+				if (kaljakori.getFilterType(filter) !== 'number') return;
+				const value = filterValues[filter];
+				if (!Array.isArray(value)) return;
+				const oldDefault = kaljakori.getMinAndMaxValues(filter, previousShowRemoved);
+				if (value[0] === oldDefault[0] && value[1] === oldDefault[1])
+					filterValues[filter] = kaljakori.getMinAndMaxValues(filter, currentShowRemoved);
+			});
+			previousShowRemoved = currentShowRemoved;
+		});
+	});
+
 	$effect(() => {
 		// Update URL parameters when filter values change
 		if(!useURLParams) return
-		const filterValuesAsSearchParams = searchParametersFromFilterValues(filterValues, kaljakori)
+		const filterValuesAsSearchParams = searchParametersFromFilterValues(filterValues, kaljakori, showRemoved)
 		searchParamsManager.setParametersFromObject(filterValuesAsSearchParams).update()
 	})
+	
 </script>
 
 <dialog
@@ -78,22 +100,13 @@
 	onclose={() => (showFilters = false)}
 >
 	{#each filters as filter}
-		{@const possibleValues = kaljakori.getFilterValues(filter)}
+		{@const possibleValues = kaljakori.getFilterValues(filter, showRemoved)}
 		{@const type = kaljakori.getFilterType(filter)}
 		{#if possibleValues.length > 1 || (filter === "Uutuus" && possibleValues.length === 1)}
 			<div class="flex w-full flex-col text-sm gap-2">
 				{#if type === 'number'}
-					{@const [min, max] = kaljakori.getMinAndMaxValues(filter)}
+					{@const [min, max] = kaljakori.getMinAndMaxValues(filter, showRemoved)}
 					<NumberInput defaultValue={[min, max]} label={filter} bind:value={filterValues[filter]} bind:modified={filterActiveState[filter]} {min} {max} step={0.01} />
-				{:else if type === "object"}
-					<StringInput
-						defaultValue={[]}
-						label={headerToDisplayName(filter)}
-						options={possibleValues}
-						bind:value={filterValues[filter]}
-						bind:modified={filterActiveState[filter]}
-						name={filter}
-					/>
 				{:else}
 					<StringInput
 						defaultValue={[]}
@@ -104,19 +117,12 @@
 						name={filter}
 					/>
 				{/if}
-				{#if Object.hasOwn(subCategoryMap, filter) && filterValues[filter].length === 1}
-					{@const subFilter = subCategoryMap[filter as keyof typeof subCategoryMap]}
-					{@const subFilterValues = kaljakori.getSubFilterValues(filter, filterValues[filter][0])}
-					{#if subFilterValues.length > 1}
-						<StringInput
-							defaultValue={[]}
-							label={headerToDisplayName(subFilter)}
-							options={subFilterValues}
-							bind:value={filterValues[subFilter]}
-							name={subFilter}
-						/>
-					{/if}
-				{/if}
+				<RecursiveFilter
+					filter={filter}
+					bind:filterValues
+					{kaljakori}
+					{showRemoved}
+				/>
 			</div>
 		{/if}
 	{/each}
@@ -134,7 +140,7 @@
 		{/if}
 		<button
 			onclick={() => {
-				filterValues = initFilterValues(kaljakori);
+				filterValues = initFilterValues(kaljakori, undefined, showRemoved);
 			}}
 			class={twMerge(components.button({ type: 'negative' }), 'w-full', 'mt-auto')}
 		>

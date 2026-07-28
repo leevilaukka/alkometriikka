@@ -62,8 +62,9 @@ export const AllColumns = Object.freeze({ ...DatasetColumns, ...DrunkColumns } a
 
 export const subCategoryMap = {
     [DatasetColumns.Type]: DatasetColumns.SubType,
+    [DatasetColumns.SubType]: DatasetColumns.BeerType,
     [DatasetColumns.Country]: DatasetColumns.Region,
-} as const satisfies ColNameObj<ColumnNames | null>;
+} as const satisfies ColNameObj<ColumnNames>;
 
 export const columnsHandledAsString = [
     AllColumns.Number,
@@ -209,6 +210,9 @@ export const filterToUnitMarker = {
  * Used in the UI to show a more user-friendly name for the filter
  */
 export const filterRenameMap = {
+    [AllColumns.Type]: "Kategoria",
+    [AllColumns.SubType]: "Tyyppi",
+    [AllColumns.BeerType]: "Maku",
     [AllColumns.BottleSize]: 'Pakkauskoko',
     [AllColumns.Sugar]: 'Sokeri',
     [AllColumns.AlcoholPercentage]: 'Alkoholi',
@@ -220,7 +224,6 @@ export const filterRenameMap = {
     [AllColumns.OriginalGravity]: 'Kantavierre',
     [AllColumns.ColorEBC]: 'Väri',
     [AllColumns.BitternessEBU]: 'Katkeroaineet',
-    [AllColumns.BeerType]: "Maku"
 } as const satisfies ColNameObj<string>;
 
 /** Keys used for storing data in localStorage */
