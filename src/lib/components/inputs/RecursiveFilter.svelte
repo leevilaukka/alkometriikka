@@ -10,17 +10,19 @@
 		filter,
 		filterValues = $bindable(),
 		kaljakori,
+		showRemoved = true,
 	}: {
 		filter: ColumnNames;
 		filterValues: FilterValues;
 		kaljakori: Kaljakori;
+		showRemoved?: boolean;
 	} = $props();
 
 	const child = $derived(subCategoryMap[filter as keyof typeof subCategoryMap]);
 </script>
 
 {#if child && filterValues[filter].length === 1}
-	{@const options = kaljakori.getSubFilterValues(filter, filterValues)}
+	{@const options = kaljakori.getSubFilterValues(filter, filterValues, showRemoved)}
 
 	{#if options.length > 1}
 		<StringInput
@@ -35,6 +37,7 @@
 		<RecursiveFilter
             bind:filterValues
             {kaljakori}
+            {showRemoved}
             filter={child}
         />
 	{/if}

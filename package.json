@@ -35,7 +35,7 @@
 		"vite": "^7.1.6"
 	},
 	"dependencies": {
-		"@humanspeak/svelte-virtual-list": "^0.3.2",
+		"@humanspeak/svelte-virtual-list": "^0.5.13",
 		"barcode-detector": "^3.0.6",
 		"chart.js": "^4.5.1",
 		"class-variance-authority": "^0.7.1",

@@ -9,7 +9,7 @@
 	import { isMobile } from '$lib/global.svelte';
 	import { initFilterValues, searchParametersFromFilterValues } from '$lib/utils/filters';
 	import type { ColumnNames, FilterValues } from '$lib/types';
-	import { getContext } from 'svelte';
+	import { getContext, untrack } from 'svelte';
 	import type { SearchParamsManager } from '$lib/utils/url';
 	import { headerToDisplayName } from '$lib/utils/helpers';
 	import RecursiveFilter from '../inputs/RecursiveFilter.svelte';
@@ -63,10 +63,30 @@
 		})
 	});
 
+	let previousShowRemoved = showRemoved;
+	$effect(() => {
+		// Toggling "show removed" changes the min/max defaults for number ranges.
+		// Re-sync any range that is still at its previous default to the new default
+		// so the toggle itself doesn't mark filters as modified / leak URL params.
+		const currentShowRemoved = showRemoved;
+		if (currentShowRemoved === previousShowRemoved) return;
+		untrack(() => {
+			(Object.keys(filterValues) as ColumnNames[]).forEach((filter) => {
+				if (kaljakori.getFilterType(filter) !== 'number') return;
+				const value = filterValues[filter];
+				if (!Array.isArray(value)) return;
+				const oldDefault = kaljakori.getMinAndMaxValues(filter, previousShowRemoved);
+				if (value[0] === oldDefault[0] && value[1] === oldDefault[1])
+					filterValues[filter] = kaljakori.getMinAndMaxValues(filter, currentShowRemoved);
+			});
+			previousShowRemoved = currentShowRemoved;
+		});
+	});
+
 	$effect(() => {
 		// Update URL parameters when filter values change
 		if(!useURLParams) return
-		const filterValuesAsSearchParams = searchParametersFromFilterValues(filterValues, kaljakori)
+		const filterValuesAsSearchParams = searchParametersFromFilterValues(filterValues, kaljakori, showRemoved)
 		searchParamsManager.setParametersFromObject(filterValuesAsSearchParams).update()
 	})
 	
@@ -101,6 +121,7 @@
 					filter={filter}
 					bind:filterValues
 					{kaljakori}
+					{showRemoved}
 				/>
 			</div>
 		{/if}
@@ -119,7 +140,7 @@
 		{/if}
 		<button
 			onclick={() => {
-				filterValues = initFilterValues(kaljakori);
+				filterValues = initFilterValues(kaljakori, undefined, showRemoved);
 			}}
 			class={twMerge(components.button({ type: 'negative' }), 'w-full', 'mt-auto')}
 		>

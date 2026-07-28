@@ -1,11 +1,10 @@
 {
   "lockfileVersion": 1,
-  "configVersion": 1,
   "workspaces": {
     "": {
       "name": "alkometriikka",
       "dependencies": {
-        "@humanspeak/svelte-virtual-list": "^0.3.2",
+        "@humanspeak/svelte-virtual-list": "^0.5.13",
         "barcode-detector": "^3.0.6",
         "chart.js": "^4.5.1",
         "class-variance-authority": "^0.7.1",
@@ -86,7 +85,7 @@
 
     "@esbuild/win32-x64": ["@esbuild/win32-x64@0.28.1", "", { "os": "win32", "cpu": "x64" }, "sha512-bm4Mowrv+GXMlpWX++EcXw/iLyd1o3+bJkC2DkWXYVvgZCqD/bSj9ctZeAMC3cIxgjRVR2Dufaiu4YPxr5gW1A=="],
 
-    "@humanspeak/svelte-virtual-list": ["@humanspeak/svelte-virtual-list@0.3.13", "", { "dependencies": { "esm-env": "^1.2.2" }, "peerDependencies": { "svelte": "^5.0.0" } }, "sha512-CrJvKg3NWt4WhGRLTnMpvoPJRedz5QF8LkfAfh6hR3xTalbkW98G65JuQjtpyAiAm+rGHD5qlrjKNZER1D+w6w=="],
+    "@humanspeak/svelte-virtual-list": ["@humanspeak/svelte-virtual-list@0.5.13", "", { "dependencies": { "esm-env": "^1.2.2" }, "peerDependencies": { "svelte": "^5.0.0" } }, "sha512-F75hlpZ/7SflG6FPomdT6cQVnp0TCPjyJYegye7KkwKUS0o58736zik5k8MRsSL9nb/sQ5lTvM2++aSQ1SjzLw=="],
 
     "@jridgewell/gen-mapping": ["@jridgewell/gen-mapping@0.3.13", "", { "dependencies": { "@jridgewell/sourcemap-codec": "^1.5.0", "@jridgewell/trace-mapping": "^0.3.24" } }, "sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA=="],
 
