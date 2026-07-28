@@ -44,7 +44,20 @@ jobs:
             CLOUDFLARE_PURGE_KEY: ${{ secrets.CLOUDFLARE_PURGE_KEY }}
             CLOUDFLARE_ZONE: ${{ secrets.CF_ZONE }}
           run: |
-            bun run scripts/setup/index.ts
+            for attempt in 1 2 3; do
+              echo "▶️  Sync attempt $attempt..."
+              if bun run scripts/setup/index.ts; then
+                echo "✅ Sync succeeded on attempt $attempt"
+                exit 0
+              fi
+              echo "⚠️  Sync failed on attempt $attempt (incomplete fetch or error)"
+              if [ "$attempt" -lt 3 ]; then
+                echo "⏳ Waiting 60s before retrying..."
+                sleep 60
+              fi
+            done
+            echo "❌ All sync attempts failed — leaving existing dataset untouched."
+            exit 1
 
         - name: Run script to generate sitemap
           run: |

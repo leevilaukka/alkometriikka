@@ -98,7 +98,6 @@
 							items={query
 								? list.filter((item) => item.value.toLowerCase().includes(query.toLowerCase()))
 								: list}
-							bufferSize={30}
 						>
 							{#snippet renderItem(item: ListItem, index: number)}
 								<button

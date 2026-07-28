@@ -89,3 +89,74 @@ product was needlessly re-fetched. Whitespace drift from the untrimmed
   the next sync produces; otherwise affected products would be re-fetched once.
   - Usage: `bun run scripts/setup/rehash.ts` (or `--dev` for `./static/data.json`).
   - Safe to delete after the rehash has been applied.
+
+## Stale filter values from removed-from-selection products
+
+### Problem
+
+`possibleValues` (and therefore every filter dropdown) is built once in the
+`Kaljakori` constructor from **all** products, including those flagged
+`RemovedFromSelection`. When the UI hides removed products (`showRemoved === false`,
+the default in `Main.svelte`), some filter options no longer match any *visible*
+product, so selecting them returns an empty result set.
+
+This is made worse by dataset drift: a categorical value can be **renamed** in
+newer data (e.g. `Tyyppi` was `"Oluet"` but is now `"Panimotuotteet"`). The old
+value survives only on removed products, so it lingers in the filter list as a
+dead option that always yields zero results while removed products are hidden.
+
+### Fix (Plan A — precompute two static value sets: active vs. all)
+
+`Kaljakori` now maintains a second, "active-only" copy of the possible-value and
+min/max structures that excludes products flagged `RemovedFromSelection`. The
+filter UI reads whichever set matches the current `showRemoved` toggle, so
+options that only exist on removed products disappear from the dropdowns while
+removed products are hidden (the default).
+
+#### Files changed
+
+- **`src/lib/alko/index.ts`**
+  - New fields `possibleValuesActive` and `minAndMaxValuesActive` mirror the
+    existing `possibleValues` / `minAndMaxValues`.
+  - In the constructor loop, an `isRemoved` flag is computed once per row from
+    `RemovedFromSelection`. Every existing value-collection site
+    (per-column pushes, `Set` flattening, the drunk-column loop, and the
+    `Type`/`SubType` fill-in fallbacks) now **also** pushes into parallel
+    `...Active` buckets, but only when `!isRemoved`. Removed products still enter
+    `this.data` and remain viewable.
+  - After the loop, `possibleValuesActive` and `minAndMaxValuesActive` are built
+    from the active buckets alongside the full ones. `minAndMaxValuesActive`
+    returns `null` for a column with no active numeric values (guards against
+    `Math.min(...[])` → `Infinity`; callers fall back to `[0, 0]`).
+  - Accessors gained an optional `showRemoved` parameter that selects the bucket:
+    - `getFilterValues(key, showRemoved = true)`
+    - `getMinAndMaxValues(key, showRemoved = true)`
+  - The default is `true` (full set) so existing call sites in `List.svelte`,
+    `Main.svelte` (sort-key presence checks), `ProductPreview.svelte`, and
+    `utils/filters.ts` keep their previous behavior unchanged.
+
+- **`src/lib/components/widgets/Filters.svelte`**
+  - Passes its existing bindable `showRemoved` prop into
+    `getFilterValues(filter, showRemoved)` and
+    `getMinAndMaxValues(filter, showRemoved)`, so the rendered options and the
+    number-range bounds track the toggle.
+
+#### Notes / scope
+
+- This addresses the binary removed/active split only. It does **not** hide
+  values that become irrelevant because of *other* active filters — that is a
+  separate, pre-existing concern (Plan B territory).
+- A previously-selected stale value (e.g. loaded from URL params) is not
+  auto-cleared when `showRemoved` flips off; it simply no longer appears as a
+  selectable option. Left as-is to keep the change minimal.
+
+#### Alternatives considered (not taken)
+
+- **Plan B — derive options reactively from the visible dataset.** Single source
+  of truth; also fixes empty results from *any* filter combination. Rejected for
+  now due to per-interaction rescans (O(rows) per column) versus Plan A's O(1)
+  precomputed lookups.
+- **Plan C — build possible values from active products only (single set).**
+  Smallest diff, but removes the ability to filter by removed-only values when
+  the user opts in via `showRemoved`.
+

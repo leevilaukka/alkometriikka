@@ -1,6 +1,6 @@
 import { AllColumns, defaultSortingColumn, GenderOptionsMap, subCategoryMap, undefinedToZeroColumns, DrunkColumns, columnsHandledAsString, columnsHandledAsSet } from '$lib/utils/constants';
 import { calculateDrunkValue } from '../utils/alko';
-import { type ColumnNames, type DatasetColumnNames, type DatasetRow, type ColumnType, type PersonalInfo, type PriceListItem } from '../types';
+import { type ColumnNames, type DatasetColumnNames, type DatasetRow, type ColumnType, type PersonalInfo, type PriceListItem, type FilterValues } from '../types';
 import { isSimilarString } from '$lib/utils/search';
 
 function toPositiveNumber(value: unknown): number | null {
@@ -37,8 +37,10 @@ export class Kaljakori {
 	personalInfo: PersonalInfo;
 	filters: ColumnNames[] = [];
 	possibleValues: Record<string, Set<any>> = {};
+	possibleValuesActive: Record<string, Set<any>> = {};
 	columnTypes: Record<string, ColumnType> = {};
 	minAndMaxValues: ([number, number] | null)[] = [];
+	minAndMaxValuesActive: ([number, number] | null)[] = [];
 	subValues: Record<string, Record<string, Set<any>>> = {}
 
 	constructor(table: DatasetRow[], personalInfo?: PersonalInfo) {
@@ -57,8 +59,10 @@ export class Kaljakori {
 		}, {} as Record<DatasetColumnNames, number>)
 
 		const datasetValuesByColumn: any[][] = [...Array(datasetColumns.length)].map(() => []);
+		const datasetValuesByColumnActive: any[][] = [...Array(datasetColumns.length)].map(() => []);
 
 		const drunkValuesByColumn: any[][] = [...Array(drunkColumns.length)].map(() => []);
+		const drunkValuesByColumnActive: any[][] = [...Array(drunkColumns.length)].map(() => []);
 
 		const NUMBER_VALUE_REGEX = /^(?:0|[1-9]\d*)(?:\.\d+)?(?:\s*l)?$/
 		const isNumber = (value: any) => NUMBER_VALUE_REGEX.test(String(value))
@@ -80,6 +84,12 @@ export class Kaljakori {
 				console.log("Skipping product with missing price:", `${rows[row][datasetColumnIndexes[AllColumns.Name]] || "Unknown product name"} www.alko.fi/tuotteet/${rows[row][datasetColumnIndexes[AllColumns.Number]] || "Unknown product number"}`);
 				continue; // Skip rows without price
 			}; // Skip rows without product number
+
+			// Products removed from selection still populate `this.data` (they remain
+			// viewable), but their values must not leak into the "active" possible-value
+			// buckets used when removed products are hidden in the UI.
+			const isRemoved = Boolean(rows[row][datasetColumnIndexes[AllColumns.RemovedFromSelection]]);
+
 			rows[row][datasetColumnIndexes[AllColumns.BottleSize]] = resolveBottleSize(rows[row], datasetColumnIndexes);
 			// Parse and assign item values and collect possible values
 			for (let col = 0; col < datasetColumns.length; col++) {
@@ -109,8 +119,14 @@ export class Kaljakori {
 				if(value instanceof Set && value.has("Null")) console.log(key, value)
 
 				item[key] = value
-				if (isNumber(value) || (typeof value === "string" && value.length) || typeof value === "number") datasetValuesByColumn[col].push(value);
-				if (value instanceof Set && value.size) datasetValuesByColumn[col].push(...Array.from(value));
+				if (isNumber(value) || (typeof value === "string" && value.length) || typeof value === "number") {
+					datasetValuesByColumn[col].push(value);
+					if (!isRemoved) datasetValuesByColumnActive[col].push(value);
+				}
+				if (value instanceof Set && value.size) {
+					datasetValuesByColumn[col].push(...Array.from(value));
+					if (!isRemoved) datasetValuesByColumnActive[col].push(...Array.from(value));
+				}
 			}
 
 			// Calculate drunk values
@@ -126,6 +142,7 @@ export class Kaljakori {
 			// Assign item drunk values and collect possible values
 			drunkColumns.forEach((column, idx) => {
 				drunkValuesByColumn[idx].push(drunkValues[column]);
+				if (!isRemoved) drunkValuesByColumnActive[idx].push(drunkValues[column]);
 				item[column] = drunkValues[column]
 			})
 
@@ -133,6 +150,7 @@ export class Kaljakori {
 			if (!item[AllColumns.Type]) {
 				item[AllColumns.Type] = "Ei määritelty";
 				datasetValuesByColumn[datasetColumnIndexes[AllColumns.Type]].push(item[AllColumns.Type]);
+				if (!isRemoved) datasetValuesByColumnActive[datasetColumnIndexes[AllColumns.Type]].push(item[AllColumns.Type]);
 			}
 
 			// Fill "Alatyyppi" with "Oluttyyppi" or "Tyyppi" if empty
@@ -140,6 +158,7 @@ export class Kaljakori {
 				const fillType = item[AllColumns.BeerType] || item[AllColumns.Type];
 				item[AllColumns.SubType] = fillType;
 				datasetValuesByColumn[datasetColumnIndexes[AllColumns.SubType]].push(item[AllColumns.SubType]);
+				if (!isRemoved) datasetValuesByColumnActive[datasetColumnIndexes[AllColumns.SubType]].push(item[AllColumns.SubType]);
 			}
 
 			// Add sub filter values
@@ -159,10 +178,14 @@ export class Kaljakori {
 		// Merge dataset and drunk columns and their values
 		const mergedColumns = [...datasetColumns, ...drunkColumns];
 		const mergedValuesByColumn = [...datasetValuesByColumn, ...drunkValuesByColumn];
+		const mergedValuesByColumnActive = [...datasetValuesByColumnActive, ...drunkValuesByColumnActive];
 
-		// Create possible values object
+		// Create possible values object (full = incl. removed, active = excl. removed)
 		this.possibleValues = Object.fromEntries(
 			mergedValuesByColumn.map((column, idx) => [mergedColumns[idx], new Set(column.sort())])
+		);
+		this.possibleValuesActive = Object.fromEntries(
+			mergedValuesByColumnActive.map((column, idx) => [mergedColumns[idx], new Set(column.sort())])
 		);
 
 		// Get column type by getting the type of the first value in the possible values set
@@ -180,6 +203,14 @@ export class Kaljakori {
 			return [Math.min(...mergedValuesByColumn[idx]), Math.max(...mergedValuesByColumn[idx])]
 		})
 
+		this.minAndMaxValuesActive = mergedColumns.map((column, idx) => {
+			if (this.columnTypes[column] !== "number") return null
+			if (column === AllColumns.SortingCode) return null
+			const values = mergedValuesByColumnActive[idx];
+			if (!values.length) return null
+			return [Math.min(...values), Math.max(...values)]
+		})
+
 		this.data = this.sortBy(defaultSortingColumn);
 		console.log(this.data)
 	}
@@ -188,20 +219,47 @@ export class Kaljakori {
 		return this.filters;
 	}
 
-	getFilterValues(key: ColumnNames): (string | number)[] {
-		return this.possibleValues[key] ? Array.from(this.possibleValues[key]) : [];
+	getFilterValues(key: ColumnNames, showRemoved: boolean = true): (string | number)[] {
+		const source = showRemoved ? this.possibleValues : this.possibleValuesActive;
+		return source[key] ? Array.from(source[key]) : [];
 	}
 
-	getSubFilterValues(key: ColumnNames, value: any) {
-		return this.subValues[key] ? Array.from(this.subValues[key][value]) : [];
+	getSubFilterValues(
+		parent: ColumnNames,
+		filterValues: FilterValues
+	): string[] {
+		const child = subCategoryMap[parent as keyof typeof subCategoryMap];
+		if (!child) return [];
+
+		// Copy the current filters
+		const filters = Object.fromEntries(
+			Object.entries(filterValues).map(([k, v]) => [k, [...v]])
+		) as FilterValues;
+
+		// Remove the child and everything below it
+		let current: ColumnNames | undefined = child;
+
+		while (current) {
+			filters[current] = [];
+			current = subCategoryMap[current as keyof typeof subCategoryMap];
+		}
+
+		return [
+			...new Set(
+				this.filter(filters)
+					.map(item => item[child])
+					.filter((value): value is string => typeof value === "string" && value.trim().length > 0)
+			)
+		];
 	}
 
 	getFilterType(key: ColumnNames) {
 		return this.columnTypes[key];
 	}
 
-	getMinAndMaxValues(key: ColumnNames) : [number, number] {
-		return this.minAndMaxValues[this.filters.indexOf(key)] || [0, 0]
+	getMinAndMaxValues(key: ColumnNames, showRemoved: boolean = true) : [number, number] {
+		const source = showRemoved ? this.minAndMaxValues : this.minAndMaxValuesActive;
+		return source[this.filters.indexOf(key)] || [0, 0]
 	}
 
 	fuzzySearch(key: ColumnNames, query: string) {

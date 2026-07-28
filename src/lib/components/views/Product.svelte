@@ -34,8 +34,10 @@
 		Title,
 		Tooltip,
 		Legend,
-		LineController
+		LineController,
+		Filler
 	} from 'chart.js';
+	
 	import { dev } from '$app/environment';
 
 	// Register Chart.js components
@@ -47,7 +49,8 @@
 		Title,
 		Tooltip,
 		Legend,
-		LineController
+		LineController,
+		Filler
 	);
 
 	const { product, kaljakori }: { product: PriceListItem; kaljakori: Kaljakori } = $props();

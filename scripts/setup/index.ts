@@ -458,6 +458,20 @@ async function sync(): Promise<void> {
 	const searchProducts = searchResult.products;
 	const existingProducts = existing.products ?? {};
 
+	// Bail out before touching the dataset if the search fetch was incomplete.
+	// A partial fetch is missing live products, so proceeding would overwrite the
+	// existing dataset with a corrupted view (and falsely flag live products as
+	// removed). Exit with a warning and leave the existing data.json untouched.
+	if (!searchResult.complete) {
+		const totalLabel = searchResult.expectedTotal !== null ? `/${searchResult.expectedTotal}` : '';
+		console.warn(
+			`\n⚠️  Search fetch was INCOMPLETE (${searchProducts.length}${totalLabel} products). ` +
+				`Aborting sync without writing the dataset to avoid overwriting existing data with a ` +
+				`partial result. Re-run the sync once the API returns the full product list.`
+		);
+		process.exit(1);
+	}
+
 	console.log(
 		`\n📦 ${searchProducts.length} products from API, ${Object.keys(existingProducts).length} in existing dataset\n`
 	);
@@ -569,67 +583,41 @@ async function sync(): Promise<void> {
 	// from the API's search response. Anything the API still returns is always
 	// kept as an active product, and any stale removed flag is cleared.
 	//
-	// This is ONLY safe when the search fetch was complete. On a partial fetch the
-	// API id set is missing live products, so flagging by absence would wrongly
-	// mark thousands of them as removed (exactly the corruption we are fixing).
-	// When incomplete, we carry over every existing product untouched instead.
+	// This is only reached when the search fetch was complete (we exit early
+	// otherwise), so the API id set can be trusted for removal detection.
 	const apiIds = new Set(searchProducts.map((product) => product.id));
 	const today = new Date().toISOString().slice(0, 10);
 
-	if (!searchResult.complete) {
-		const totalLabel = searchResult.expectedTotal !== null ? `/${searchResult.expectedTotal}` : '';
-		console.warn(
-			`\n⚠️  Search fetch was INCOMPLETE (${searchProducts.length}${totalLabel} products). ` +
-				`Skipping removed-from-selection detection and carrying over all existing products ` +
-				`unchanged to avoid falsely flagging live products as removed. Re-run the sync once ` +
-				`the API returns the full product list to reconcile removals.`
-		);
+	for (const [id, previous] of Object.entries(existingProducts)) {
+		// Already rebuilt as an active product from the API response this run.
+		if (id in products) continue;
+		if (!isMigratedProduct(previous)) continue;
 
-		for (const [id, previous] of Object.entries(existingProducts)) {
-			if (id in products) continue;
-			if (!isMigratedProduct(previous)) continue;
-
-			if (irrelevantIds.has(id) || isIrrelevantStoredValues(previous.values)) {
-				stats.filteredRemoved++;
-				continue;
-			}
-
-			// Product was in the (partial) API response: keep active, clear stale flag.
-			// Otherwise carry it over exactly as-is — we cannot conclude it was removed.
-			products[id] = apiIds.has(id) ? clearRemovedFlag(previous) : previous;
+		// Drop any existing gifts & drinking accessories: matched by the API's
+		// classification (by id) or, for items no longer in the API, by the stored
+		// main-group name. These are excluded from the dataset, not "removed".
+		if (irrelevantIds.has(id) || isIrrelevantStoredValues(previous.values)) {
+			stats.filteredRemoved++;
+			continue;
 		}
-	} else {
-		for (const [id, previous] of Object.entries(existingProducts)) {
-			// Already rebuilt as an active product from the API response this run.
-			if (id in products) continue;
-			if (!isMigratedProduct(previous)) continue;
 
-			// Drop any existing gifts & drinking accessories: matched by the API's
-			// classification (by id) or, for items no longer in the API, by the stored
-			// main-group name. These are excluded from the dataset, not "removed".
-			if (irrelevantIds.has(id) || isIrrelevantStoredValues(previous.values)) {
-				stats.filteredRemoved++;
-				continue;
-			}
-
-			if (apiIds.has(id)) {
-				// Still present in the API response: keep it active, clear any stale flag.
-				products[id] = clearRemovedFlag(previous);
-			} else if (previous.meta?.removedFromSelection) {
-				// Missing from the API and already flagged in an earlier run: keep the
-				// original removal date.
-				products[id] = previous;
-				products[id]["values"][LEGACY_HEADERS.indexOf("Uutuus")] = null; // Clear the "Uutuus" field for removed products
-			} else {
-				// Present in the existing dataset but absent from the API response: this
-				// is a newly removed product, flag it with today's date.
-				products[id] = {
-					...previous,
-					meta: { ...previous.meta, removedFromSelection: today }
-				};
-				products[id]["values"][LEGACY_HEADERS.indexOf("Uutuus")] = null; // Clear the "Uutuus" field for removed products
-				stats.removed++;
-			}
+		if (apiIds.has(id)) {
+			// Still present in the API response: keep it active, clear any stale flag.
+			products[id] = clearRemovedFlag(previous);
+		} else if (previous.meta?.removedFromSelection) {
+			// Missing from the API and already flagged in an earlier run: keep the
+			// original removal date.
+			products[id] = previous;
+			products[id]["values"][LEGACY_HEADERS.indexOf("Uutuus")] = null; // Clear the "Uutuus" field for removed products
+		} else {
+			// Present in the existing dataset but absent from the API response: this
+			// is a newly removed product, flag it with today's date.
+			products[id] = {
+				...previous,
+				meta: { ...previous.meta, removedFromSelection: today }
+			};
+			products[id]["values"][LEGACY_HEADERS.indexOf("Uutuus")] = null; // Clear the "Uutuus" field for removed products
+			stats.removed++;
 		}
 	}
 
