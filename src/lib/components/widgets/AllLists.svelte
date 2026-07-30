@@ -1,6 +1,4 @@
 <script lang="ts">
-,
-
     import { lists, searchQuery } from "$lib/global.svelte";
 	import { createList, deleteList, listToURI } from "$lib/utils/lists";
 	import { components } from "$lib/utils/styles";
