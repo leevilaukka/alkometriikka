@@ -12,6 +12,7 @@
 	import { SearchParamsManager } from '$lib/utils/url';
 	import { setContext } from 'svelte';
 	import Settings from '$lib/components/widgets/Settings.svelte';
+	import { LocalStorageManager } from '$lib/utils/storage';
 
 	let { children, data } = $props();
 
@@ -19,15 +20,15 @@
 	setContext(ContextKeys.SearchParamsManager, searchParamsManager)
 
 	$effect(() => {
-		localStorage.setItem(LocalStorageKeys.PersonalInfo, JSON.stringify(personalInfo));
+		LocalStorageManager.setItem(LocalStorageKeys.PersonalInfo, personalInfo);
 	});
 
 	$effect(() => {
-		localStorage.setItem(LocalStorageKeys.Lists, JSON.stringify(lists));
+		LocalStorageManager.setItem(LocalStorageKeys.Lists, lists);
 	});
 
 	$effect(() => {
-		localStorage.setItem(LocalStorageKeys.Theme, $theme);
+		LocalStorageManager.setItem(LocalStorageKeys.Theme, $theme);
 	});
 
 	

@@ -1,5 +1,5 @@
 
-import { AllColumns, DatasetColumns, DrunkColumns, GenderOptionsMap } from '$lib/utils/constants';
+import { AllColumns, DatasetColumns, DrunkColumns, GenderOptionsMap, ShareTypes } from '$lib/utils/constants';
 import type { VariantProps } from 'class-variance-authority';
 import type { components } from './utils/styles';
 import type { IconName } from './icons';
@@ -18,7 +18,7 @@ export type GenderOptions = typeof GenderOptionsMap[keyof typeof GenderOptionsMa
 
 export type PersonalInfo = {
     weight: number | null;
-    gender: GenderOptions;
+    gender: GenderOptions | undefined | null;
 };
 
 export interface PriceListItem extends Record<DrunkColumnNames, number> {
@@ -99,3 +99,28 @@ export type ColumnBadgeMap = Partial<Record<ColumnNames, BadgeConfig | Record<st
 
 export type FilterValue = (string | number)[];
 export type FilterValues = { [key in ColumnNames]: FilterValue };
+
+export type ImageTransform = "products" | "medium" | "pdp";
+
+export type ShareType = typeof ShareTypes[keyof typeof ShareTypes];
+
+export type ShareEvent = `share_${ShareType}`;
+export type ShareViewEvent = `shared_${ShareType}_viewed`; 
+
+export type AnalyticsEventMap = {
+    'open_settings': undefined;
+    'export_data': undefined;
+    'import_data': undefined;
+    'create_list': undefined;
+    'save_list': { url?: string };
+    'view_sizes': { product_number: string };
+    'show_price_history': { product_number?: string; [key: string]: any };
+    'scan_barcode': { ean: string; link?: string };
+    'scan_qr_code': { type: string; product_number: string; link?: string };
+} & {
+    [K in ShareEvent]: { url?: string; sid?: string; [key: string]: any };
+} & {
+    [K in ShareViewEvent]: { url?: string; sid?: string; [key: string]: any };
+};
+
+export type AnalyticsEventName = keyof AnalyticsEventMap;

@@ -233,7 +233,14 @@ export const LocalStorageKeys = {
     ListsVersion: "lists_version",
     AppVersion: "app_version",
     CurrentFilters: "current_filters",
-    Theme: "theme"
+    Theme: "theme",
+    ViewedShares: "viewed_shares",
+} as const;
+
+export const ShareTypes = {
+    Default: "page",
+    List: "list",
+    Product: "product",
 } as const;
 
 export const ContextKeys = {

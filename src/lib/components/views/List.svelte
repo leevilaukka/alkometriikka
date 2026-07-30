@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { isLaptop, personalInfo, searchQuery, isMobile } from '$lib/global.svelte';
 	import { components } from '$lib/utils/styles';
-	import { handleShare, productIdsToDataset } from '$lib/utils/helpers';
+	import { handleShare, trackSharedView, productIdsToDataset, sendAnalyticsEvent } from '$lib/utils/helpers';
 	import { Kaljakori } from '$lib/alko';
 	import {
 		getItemQuantity,
@@ -23,7 +23,8 @@
 		shownSortingKeys,
 		defaultSortingOrderMap,
 		ContextKeys,
-		GenderOptionsMap
+		GenderOptionsMap,
+		ShareTypes
 	} from '$lib/utils/constants';
 	import {
 		headerToDisplayName,
@@ -157,6 +158,10 @@
 	$effect(() => {
 		searchParamsManager.setParameter('list', listToURI(list));
 	});
+
+	$effect(() => {
+		trackSharedView(ShareTypes.List);
+	});
 </script>
 
 <div class="flex flex-row items-center justify-between gap-4 border-b border-primary p-3 md:p-4">
@@ -192,9 +197,11 @@
 				)}
 				onclick={async () => {
 					const shared = await handleShare({
+						type: 'list',
 						title: `Alkometriikka - ${list.name}`,
 						text: `Katso lista: ${list.name}`,
-						url: `${location.origin}/listat?list=${listToURI(list)}`
+						url: `${location.origin}/listat?list=${listToURI(list)}`,
+						includeSID: true
 					});
 
 					if (!shared) alert('Linkki kopioitu leikepöydälle!');
@@ -208,6 +215,7 @@
 		<button
 			class={twMerge(components.button({ type: 'positive', size: 'md' }))}
 			onclick={() => {
+				sendAnalyticsEvent('save_list', { url: location.href });
 				const saved = saveList(list);
 				goto(`?list=${listToURI(saved)}`);
 			}}

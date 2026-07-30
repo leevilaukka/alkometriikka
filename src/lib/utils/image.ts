@@ -1,5 +1,6 @@
+import type { ImageTransform } from "$lib/types";
 
-export function generateImageUrl(itemNumber: string, itemName: string, transform?: "products" | "medium"): string {
+export function generateImageUrl(itemNumber: string, itemName: string, transform?: ImageTransform): string {
     const imageURL =`https://images.alko.fi/images/cs_srgb,f_auto,t_${transform || "products"}/cdn` as const;
     if(!itemName.toLowerCase) console.warn("itemName has no toLowerCase method:", itemName)
     itemName = String(itemName)

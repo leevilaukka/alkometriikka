@@ -185,7 +185,7 @@ export class Kaljakori {
 				item[AllColumns.BottleSize],
 				item[AllColumns.AlcoholPercentage],
 				item[AllColumns.Price],
-				personalInfo?.gender,
+				personalInfo?.gender ?? undefined,
 				personalInfo?.weight ?? undefined,
 				item[AllColumns.Name]
 			);

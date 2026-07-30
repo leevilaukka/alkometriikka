@@ -1,7 +1,8 @@
 import { dev } from "$app/environment";
-import { lists, personalInfo } from "$lib/global.svelte";
-import type { ColumnNames, OGImage, OgProperties, TwitterProperties } from "$lib/types";
-import { defaultSEOData, filterRenameMap, filterToUnitMarker, LocalStorageKeys, sortingOrderDescriptionMap } from "./constants";
+import { isFirefox, lists, personalInfo } from "$lib/global.svelte";
+import type { AnalyticsEventMap, AnalyticsEventName, ColumnNames, OGImage, OgProperties, ShareType, TwitterProperties } from "$lib/types";
+import { defaultSEOData, filterRenameMap, filterToUnitMarker, LocalStorageKeys, ShareTypes, sortingOrderDescriptionMap } from "./constants";
+import { LocalStorageManager } from "./storage";
 
 export function formatValue(value: string | number | boolean | Set<string>, header?: ColumnNames) {
     if (value instanceof Set) return Array.from(value).join(', ');
@@ -73,7 +74,7 @@ export function handleExport() {
     URL.revokeObjectURL(url);
 }
 
-export function generateOutLink<U extends string, I extends boolean = false>(url: U, includeReferrer: I = false as I):  `/linkki.html?to=${U}${I extends true ? '&referrer=1' : ''}` {
+export function generateOutLink<U extends string, I extends boolean = false>(url: U, includeReferrer: I = false as I): `/linkki.html?to=${U}${I extends true ? '&referrer=1' : ''}` {
     const encodedUrl = encodeURIComponent(url);
     let outLink = `/linkki.html?to=${encodedUrl}`;
     if (includeReferrer) {
@@ -82,13 +83,16 @@ export function generateOutLink<U extends string, I extends boolean = false>(url
     return outLink as `/linkki.html?to=${U}${I extends true ? '&referrer=1' : ''}`;
 }
 
-export function sendAnalyticsEvent(eventName: string, eventParams?: Record<string, any>) {
+export function sendAnalyticsEvent<T extends AnalyticsEventName>(
+    eventName: T,
+    ...args: AnalyticsEventMap[T] extends undefined ? [params?: undefined] : [params: AnalyticsEventMap[T]]
+) {
+    const [eventParams] = args;
     if (dev) return console.warn(`Analytics event skipped in dev mode: ${eventName}`, eventParams);
 
     if (typeof window.sa_event === 'function') {
         window.sa_event(eventName, eventParams);
     }
-
     if (typeof window.umami === 'object' && typeof window.umami.track === 'function') {
         window.umami.track(eventName, eventParams);
     }
@@ -105,16 +109,16 @@ export function handleImport() {
             const data = JSON.parse(text);
             const currentPersonalInfo = { ...personalInfo };
             const currentLists = [...lists];
-            localStorage.setItem(
+            LocalStorageManager.setItem(
                 LocalStorageKeys.PersonalInfo,
-                JSON.stringify({
+                {
                     ...currentPersonalInfo,
                     ...data.personalInfo
-                })
+                }
             );
-            localStorage.setItem(
+            LocalStorageManager.setItem(
                 LocalStorageKeys.Lists,
-                JSON.stringify([...currentLists, ...data.lists])
+                [...currentLists, ...data.lists]
             );
             window.location.reload();
         }
@@ -133,24 +137,103 @@ export function handleClearAll() {
     }
 }
 
-export function getRandom() {
+export function getRandom(): string {
     if (typeof crypto !== 'undefined' && 'randomUUID' in crypto) {
         return crypto.randomUUID();
     }
     return Math.random().toString(36).substring(2, 10);
 }
 
-export async function handleShare({ title, text, url }: { title: string; text: string; url: string }): Promise<boolean> {
-    sendAnalyticsEvent('share_list', { url });
-    if (navigator.canShare && navigator.canShare({ url })) {
-        await navigator.share({
-            title,
-            text,
-            url
+function generateSID() {
+    return getRandom().replace(/-/g, '').substring(0, 8);
+}
+
+export async function handleShare({
+    type = ShareTypes.Default,
+    title,
+    text,
+    url,
+    includeSID = false
+}: {
+    type?: ShareType;
+    title: string;
+    text: string;
+    url: string;
+    includeSID?: boolean;
+}): Promise<boolean> {
+    const sid = includeSID ? generateSID() : undefined;
+
+    const shareUrl = sid
+        ? `${url}${url.includes('?') ? '&' : '?'}sid=${sid}`
+        : url;
+
+    const completeShare = () => {
+        if (sid) {
+            // Mark this share as already viewed by the sharer so their own visit
+            // doesn't count as a shared view.
+            LocalStorageManager.appendToArrayItem(
+                LocalStorageKeys.ViewedShares,
+                sid
+            );
+        }
+
+        sendAnalyticsEvent(`share_${type}`, {
+            url,
+            sid
         });
+    };
+
+    if (
+        navigator.canShare &&
+        navigator.canShare({ url: shareUrl }) &&
+        !isFirefox // Firefox has a poor implementation of the Web Share API
+    ) {
+        try {
+            await navigator.share({
+                title,
+                text,
+                url: shareUrl
+            });
+
+            completeShare();
+        } catch (err) {
+            if ((err as Error).name === 'AbortError') {
+                // The user cancelled the share sheet.
+                return true;
+            }
+
+            throw err;
+        }
+
         return true;
-    } else await navigator.clipboard.writeText(url);
+    }
+
+    await navigator.clipboard.writeText(shareUrl);
+
+    completeShare();
+
     return false;
+}
+
+export function trackSharedView(type: ShareType = ShareTypes.Default) {
+    const url = new URL(location.href);
+    const sid = url.searchParams.get('sid');
+    if (sid) {
+        const viewedShares = LocalStorageManager.getItem<string[]>(LocalStorageKeys.ViewedShares) || [];
+        url.searchParams.delete('sid');
+
+        if (!viewedShares.includes(sid)) {
+            viewedShares.push(sid);
+            LocalStorageManager.setItem(LocalStorageKeys.ViewedShares, viewedShares);
+            
+            sendAnalyticsEvent(`shared_${type}_viewed`, {
+                url: url.href,
+                sid
+            });
+        }
+
+        window.history.replaceState({}, '', url.href);
+    }
 }
 
 export function mergeFilterParameters(oldParameters: URLSearchParams, newParameters: URLSearchParams, filterValues: Record<ColumnNames, any[]>) {
