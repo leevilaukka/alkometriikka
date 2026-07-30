@@ -1,4 +1,6 @@
 <script lang="ts">
+,
+
     import { lists, searchQuery } from "$lib/global.svelte";
 	import { createList, deleteList, listToURI } from "$lib/utils/lists";
 	import { components } from "$lib/utils/styles";
@@ -55,7 +57,8 @@
                                     const shared = await handleShare({
                                         title: `Alkometriikka - ${list.name}`,
                                         text: `Katso lista: ${list.name}`,
-                                        url: `${location.origin}/listat?list=${listToURI(list)}`
+                                        url: `${location.origin}/listat?list=${listToURI(list)}`,
+                                        includeSID: true
                                     });
 
                                     if (!shared) alert('Linkki kopioitu leikepöydälle!');
