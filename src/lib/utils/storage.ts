@@ -8,9 +8,8 @@ export class LocalStorageManager {
         if (item) {
             try {
                 return JSON.parse(item) as T;
-            } catch (e) {
-                console.error(`Error parsing localStorage item for key "${key}":`, e);
-                return null;
+            } catch {
+                return item as unknown as T;
             }
         }
         return null;
