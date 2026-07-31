@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { isLaptop, personalInfo, searchQuery, isMobile } from '$lib/global.svelte';
 	import { components } from '$lib/utils/styles';
-	import { handleShare, trackSharedView, productIdsToDataset, sendAnalyticsEvent } from '$lib/utils/helpers';
+	import { handleShare, trackSharedView, productIdsToDataset, sendAnalyticsEvent, formatValue } from '$lib/utils/helpers';
 	import { Kaljakori } from '$lib/alko';
 	import {
 		getItemQuantity,
@@ -131,12 +131,12 @@
 
 		return {
 			totalPrice: totalPrice.toFixed(2),
-			totalAlcoholGrams: totalAlcoholGrams.toFixed(2),
-			totalAlcoholGramsPerEuro: totalAlcoholGramsPerEuro.toFixed(2),
+			totalAlcoholGrams,
+			totalAlcoholGramsPerEuro,
 			totalItems,
-			totalSugar: totalSugar.toFixed(2),
-			totalBAC: totalBAC.toFixed(2),
-			totalVolume: totalVolume.toFixed(2)
+			totalSugar,
+			totalBAC,
+			totalVolume
 		};
 	}
 
@@ -443,16 +443,16 @@
 				<h2 class="text-2xl font-bold">Listan tiedot</h2>
 				<div class="flex flex-auto flex-col gap-4">
 					<p>Tuotteita listassa: {details.totalItems}</p>
-					<p>Kokonaismäärä: {details.totalVolume} L</p>
-					<p>Yhteensä alkoholia: {details.totalAlcoholGrams} g</p>
-					<p>Yhteensä sokeria: {details.totalSugar} g</p>
-					<p>Alkoholia per euro: {details.totalAlcoholGramsPerEuro} g/€</p>
-					<p>Arvioitu promillemäärä: {details.totalBAC} ‰</p>
+					<p>Kokonaismäärä: {formatValue(details.totalVolume, AllColumns.BottleSize)}</p>
+					<p>Yhteensä alkoholia: {formatValue(details.totalAlcoholGrams, AllColumns.AlcoholGrams)}</p>
+					<p>Yhteensä sokeria: {formatValue(details.totalSugar, AllColumns.Sugar)}</p>
+					<p>Alkoholia per euro: {formatValue(details.totalAlcoholGramsPerEuro, AllColumns.AlcoholPercentage)}</p>
+					<p>Arvioitu promillemäärä: {formatValue(details.totalBAC, AllColumns.PromillePerEuro)}</p>
 					<div
 						class={twMerge(components.button({ size: "lg" }), "w-full mt-auto hover:cursor-default")}
 					>
 						<Icon name="shopping_bag" />
-						<h2>Yhteensä: {details.totalPrice} €</h2>
+						<h2>Yhteensä: {formatValue(details.totalPrice, AllColumns.Price)}</h2>
 					</div>
 				</div>
 				{#if $isLaptop}

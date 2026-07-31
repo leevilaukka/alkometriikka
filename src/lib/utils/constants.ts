@@ -60,7 +60,7 @@ export const DrunkColumns = Object.freeze({
  */
 export const AllColumns = Object.freeze({ ...DatasetColumns, ...DrunkColumns } as const);
 
-export const subCategoryMap = {
+export const subCategoryMap = {    
     [DatasetColumns.Type]: DatasetColumns.SubType,
     [DatasetColumns.SubType]: DatasetColumns.BeerType,
     [DatasetColumns.Country]: DatasetColumns.Region,
@@ -190,6 +190,7 @@ export const defaultSortingColumn = AllColumns.AlcoholGramsPerEuro;
  */
 export const filterToUnitMarker = {
     [AllColumns.Price]: '€',
+    [AllColumns.PricePerLiter]: '€/L',
     [AllColumns.BottleSize]: 'L',
     [AllColumns.EstimatedPromille]: '‰',
     [AllColumns.AlcoholPercentage]: '%',
@@ -202,7 +203,7 @@ export const filterToUnitMarker = {
     [AllColumns.ColorEBC]: 'EBC',
     [AllColumns.EuroPerLiterAlcohol]: '€',
     [AllColumns.PromillePerEuro]: '‰',
-    [AllColumns.AlcoholGramsPerEuro]: 'g',
+    [AllColumns.AlcoholGramsPerEuro]: 'g/€',
 } as const satisfies ColNameObj<string>;
 
 /**

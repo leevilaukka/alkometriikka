@@ -12,7 +12,7 @@
 	import Popup from '../widgets/Popup.svelte';
 	import AllLists from '../widgets/AllLists.svelte';
 	import { addToList } from '$lib/utils/lists';
-	import { setSEO, valueToString } from '$lib/utils/helpers';
+	import { formatValue, setSEO, valueToString } from '$lib/utils/helpers';
 	import ProductImage from '../widgets/ProductImage.svelte';
 	import BadgeList from '../widgets/BadgeList.svelte';
 	import { onMount } from 'svelte';
@@ -144,11 +144,11 @@
                                     </div>
                                 </div>
                                 <div class="flex flex-col items-end gap-1">
-                                    <p class="text-4xl font-bold">
-                                        {product[AllColumns.Price].toFixed(2)} €
+									<p class="text-4xl font-bold">
+										{formatValue(product[AllColumns.Price], AllColumns.Price)}
                                     </p>
                                     <span class="text-sm text-secondary">
-                                        ({product[AllColumns.PricePerLiter]} €/L)
+                                        ({formatValue(product[AllColumns.BottleSize], AllColumns.BottleSize)} | {formatValue(product[AllColumns.PricePerLiter], AllColumns.PricePerLiter)})
                                     </span>
                                 </div>
                             </div>

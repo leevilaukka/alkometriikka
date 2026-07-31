@@ -22,6 +22,7 @@
 	</label>
 	<div class="flex w-full gap-2">
 		<input
+			lang="fi"
 			type="number"
 			{name}
 			bind:value={value[0]}
@@ -32,6 +33,7 @@
 		/>
 		<span class="my-auto">-</span>
 		<input
+			lang="fi"
 			type="number"
 			bind:value={value[1]}
 			min={value[0]}

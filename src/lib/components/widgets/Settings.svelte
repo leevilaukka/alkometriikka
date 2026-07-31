@@ -236,6 +236,7 @@
 			<div class="flex flex-col">
 				<label for="weight" class="text-sm">Paino (kg)</label>
 				<input
+					lang="fi"
 					type="number"
 					name="weight"
 					bind:value={personalInfo.weight}

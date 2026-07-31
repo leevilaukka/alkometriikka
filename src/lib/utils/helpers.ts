@@ -7,6 +7,7 @@ import { LocalStorageManager } from "./storage";
 export function formatValue(value: string | number | boolean | Set<string>, header?: ColumnNames) {
     if (value instanceof Set) return Array.from(value).join(', ');
     if (value === Infinity || value === -Infinity) value = "∞";
+    if (typeof value === "number") value = Intl.NumberFormat('fi-FI', { maximumFractionDigits: 3 }).format(value);
     if (header && Object.hasOwn(filterToUnitMarker, header)) return `${value} ${filterToUnitMarker[header as keyof typeof filterToUnitMarker]}`;
     return value
 }

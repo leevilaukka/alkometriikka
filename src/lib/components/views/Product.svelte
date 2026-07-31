@@ -103,7 +103,7 @@
 						tooltip: {
 							callbacks: {
 								label: function (context) {
-									return `Hinta: ${context?.parsed?.y?.toFixed(2)} €`;
+									return `Hinta: ${formatValue(context?.parsed?.y || 0, AllColumns.Price)}`;
 								}
 							}
 						}
@@ -111,7 +111,7 @@
 				]
 			},
 			options: {
-				scales: {
+				scales: {	
 					x: {
 						title: {
 							display: true,
@@ -119,9 +119,14 @@
 						}
 					},
 					y: {
+						ticks: {
+							callback: function (value) {
+								return value.toLocaleString('fi-FI');
+							}
+						},
 						title: {
 							display: true,
-							text: 'Hinta (€)'
+							text: 'Hinta (€)',
 						},
 					}
 				},
@@ -243,11 +248,11 @@
 				</div>
 			</div>
 			<div class="flex flex-col items-end gap-1">
-				<p class="text-4xl font-bold" data-price={`${product[AllColumns.Price].toFixed(2)} €`}>
-					{product[AllColumns.Price].toFixed(2)} €
+				<p class="text-4xl font-bold" data-price={`${formatValue(product[AllColumns.Price], AllColumns.Price)} €`}>
+					{formatValue(product[AllColumns.Price], AllColumns.Price)}
 				</p>
 				<span class="text-sm text-secondary">
-					({product[AllColumns.PricePerLiter]} €/L)
+					({formatValue(product[AllColumns.PricePerLiter], AllColumns.PricePerLiter)})
 				</span>
 			</div>
 		</div>
@@ -375,12 +380,10 @@
 								)}
 							</span>
 							<p class="text-3xl font-bold drop-shadow-lg">
-								{differentSizeProduct[AllColumns.Price].toFixed(2)} €
+								{formatValue(differentSizeProduct[AllColumns.Price], AllColumns.Price)}
 							</p>
 							<span class="text-sm text-secondary">
-								{formatValue(differentSizeProduct[AllColumns.BottleSize], AllColumns.BottleSize)} ({differentSizeProduct[
-									AllColumns.PricePerLiter
-								]} €/L)
+								{formatValue(differentSizeProduct[AllColumns.BottleSize], AllColumns.BottleSize)} ({formatValue(differentSizeProduct[AllColumns.PricePerLiter], AllColumns.PricePerLiter)})
 							</span>
 						</div>
 					</a>
@@ -426,12 +429,10 @@
 					</div>
 					<div class="flex flex-col gap-2">
 						<p class="text-3xl font-bold drop-shadow-lg">
-							{similarProduct[AllColumns.Price].toFixed(2)} €
+							{formatValue(similarProduct[AllColumns.Price], AllColumns.Price)}
 						</p>
 						<span class="text-sm text-secondary">
-							{formatValue(similarProduct[AllColumns.BottleSize], AllColumns.BottleSize)} ({similarProduct[
-								AllColumns.PricePerLiter
-							]} €/L)
+							{formatValue(similarProduct[AllColumns.BottleSize], AllColumns.BottleSize)} ({formatValue(similarProduct[AllColumns.PricePerLiter], AllColumns.PricePerLiter)})
 						</span>
 					</div>
 				</a>

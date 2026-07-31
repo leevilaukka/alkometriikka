@@ -77,18 +77,18 @@
             <div class="flex flex-col gap-4 lg:flex-row lg:items-center">
                 <div class="flex items-center gap-2">
                     <p class="text-3xl font-bold drop-shadow-lg">
-                        {(
-                            product[AllColumns.Price] *
-                            quantity
-                        ).toFixed(2)} €
+                        {formatValue(
+                            product[AllColumns.Price] * quantity,
+                            AllColumns.Price
+                        )}
                     </p>
                     {#if quantity > 1}
                         <span class="text-sm text-secondary">
-                            @ {product[AllColumns.Price]} € / kpl
+                            @ {formatValue(product[AllColumns.Price], AllColumns.Price)} / kpl
                         </span>
                     {/if}
                     <span class="text-sm text-secondary">
-                        ({product[AllColumns.PricePerLiter]} €/L)
+                        ({formatValue(product[AllColumns.PricePerLiter], AllColumns.PricePerLiter)})
                     </span>
                 </div>
                 <div class="flex flex-row items-center gap-3">
