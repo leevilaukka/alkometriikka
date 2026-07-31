@@ -113,8 +113,7 @@
                 style={`left: ${100 * multiplier}%; transform: translateX(-${100 * multiplier}%);`}
             >
                 <p>
-                    {headerToDisplayName(highlight)}: {product[highlight]}
-                    {filterToUnitMarker[highlight as keyof typeof filterToUnitMarker]}
+                    {headerToDisplayName(highlight)}: {formatValue(product[highlight], highlight)}
                 </p>
                 <span>- {rating}</span>
             </div>
