@@ -195,13 +195,16 @@
 					components.button({ type: 'positive', size: 'md' }),
 					'aspect-square md:aspect-auto'
 				)}
-				onclick={async () => {
+				onclick={async (e) => {
+					// Omit SID from the URL if shift key is held down
+					const includeSID = !e.shiftKey;
+					
 					const shared = await handleShare({
 						type: 'list',
 						title: `Alkometriikka - ${list.name}`,
 						text: `Katso lista: ${list.name}`,
 						url: `${location.origin}/listat?list=${listToURI(list)}`,
-						includeSID: true
+						includeSID
 					});
 
 					if (!shared) alert('Linkki kopioitu leikepöydälle!');

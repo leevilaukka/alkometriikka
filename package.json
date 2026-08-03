@@ -4,7 +4,8 @@
 	"version": "0.0.2",
 	"type": "module",
 	"scripts": {
-		"dev": "bun run sync --dev && vite dev --host",
+		"dev": "VERBOSE=1 bun run sync --dev && vite dev --host",
+		"dev:no-sync": "vite dev --host",
 		"build": "vite build",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",

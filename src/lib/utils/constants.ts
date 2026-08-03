@@ -93,7 +93,7 @@ export const undefinedToZeroColumns = [
 export const shownFilters = [
     AllColumns.Name,
     AllColumns.Manufacturer,
-    AllColumns.Type,
+    AllColumns.SubType,
     AllColumns.BottleSize,
     AllColumns.Price,
     AllColumns.Sugar,
@@ -203,7 +203,6 @@ export const filterToUnitMarker = {
     [AllColumns.ColorEBC]: 'EBC',
     [AllColumns.EuroPerLiterAlcohol]: '€',
     [AllColumns.PromillePerEuro]: '‰',
-    [AllColumns.AlcoholGramsPerEuro]: 'g/€',
 } as const satisfies ColNameObj<string>;
 
 /**

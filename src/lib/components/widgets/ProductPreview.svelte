@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { AllColumns, filterToUnitMarker } from "$lib/utils/constants";
+	import { AllColumns } from "$lib/utils/constants";
 	import { formatValue, headerToDisplayName, valueToString } from "$lib/utils/helpers";
 	import { twMerge } from "tailwind-merge";
 	import BadgeList from "./BadgeList.svelte";
