@@ -79,17 +79,16 @@
                     <p class="text-3xl font-bold drop-shadow-lg">
                         {formatValue(
                             product[AllColumns.Price] * quantity,
-                            AllColumns.Price,
-                            { format: true, numberFormatOptions: { minimumFractionDigits: 2, maximumFractionDigits: 2 }, includeUnit: true }
+                            AllColumns.Price
                         )}
                     </p>
                     {#if quantity > 1}
                         <span class="text-sm text-secondary">
-                            @ {formatValue(product[AllColumns.Price], AllColumns.Price, { format: true, numberFormatOptions: { minimumFractionDigits: 2, maximumFractionDigits: 2 }, includeUnit: true })} / kpl
+                            @ {formatValue(product[AllColumns.Price], AllColumns.Price)} / kpl
                         </span>
                     {/if}
                     <span class="text-sm text-secondary">
-                        ({formatValue(product[AllColumns.PricePerLiter], AllColumns.PricePerLiter, { format: true, numberFormatOptions: { minimumFractionDigits: 2, maximumFractionDigits: 2 }, includeUnit: true })})
+                        ({formatValue(product[AllColumns.PricePerLiter], AllColumns.PricePerLiter)})
                     </span>
                 </div>
                 <div class="flex flex-row items-center gap-3">

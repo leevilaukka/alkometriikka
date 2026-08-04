@@ -132,7 +132,7 @@
 				(personalInfo.gender === GenderOptionsMap.Male ? 0.68 : 0.55));
 
 		return {
-			totalPrice: totalPrice.toFixed(2),
+			totalPrice,
 			totalAlcoholGrams,
 			totalAlcoholGramsPerEuro,
 			totalItems,
@@ -452,7 +452,7 @@
 					<p>Kokonaismäärä: {formatValue(details.totalVolume, AllColumns.BottleSize)}</p>
 					<p>Yhteensä alkoholia: {formatValue(details.totalAlcoholGrams, AllColumns.AlcoholGrams)}</p>
 					<p>Sokeria: {formatValue(details.totalSugarPerLitre, AllColumns.Sugar)}</p>
-					<p>Yhteensä sokeria: {formatValue(details.totalSugar, AllColumns.Sugar, {includeUnit: false, format: false})} g</p>
+					<p>Yhteensä sokeria: {formatValue(details.totalSugar, AllColumns.Sugar, {includeUnit: false})} g</p>
 					<p>Alkoholia per euro: {formatValue(details.totalAlcoholGramsPerEuro, AllColumns.AlcoholGramsPerEuro)} g</p>
 					<p>Arvioitu promillemäärä: {formatValue(details.totalBAC, AllColumns.PromillePerEuro)}</p>
 					<div
