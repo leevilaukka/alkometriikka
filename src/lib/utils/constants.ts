@@ -1,3 +1,4 @@
+import type { IconName } from "$lib/icons";
 import type { ColNameObj, ColumnBadgeMap, ColumnNames } from "$lib/types";
 import type { setSEO } from "./helpers";
 
@@ -109,6 +110,33 @@ export const shownFilters = [
     AllColumns.GrapeVarieties,
     AllColumns.New,
 ] as const satisfies readonly ColumnNames[];
+
+
+const filterAnnotations: { [key: string]: { title: string; description: string; icon: IconName } } = {
+    AND: {
+        title: "Kaikki valitut (JA)",
+        description: "Näytä tuotteet, jotka täyttävät kaikki valitut ehdot.\nEsim. jos valitset kaksi rypälettä, näytetään vain tuotteet, joissa on molemmat rypäleet.",
+        icon: "list"
+    },
+    OR: {
+        title: "Jokin valituista (TAI)",
+        description: "Näytä tuotteet, jotka täyttävät vähintään yhden valitun ehdon.\nEsim. jos valitset kaksi valmistajaa, näytetään kaikki molempien valmistajien tuotteet.",
+        icon: "list_plus"
+    }
+} as const;
+
+export const filterAnnotationsToFilter = {
+    [AllColumns.Name]: filterAnnotations.OR,
+    [AllColumns.Manufacturer]: filterAnnotations.OR,
+    [AllColumns.SubType]: filterAnnotations.OR,
+    [AllColumns.Country]: filterAnnotations.OR,
+    [AllColumns.PackagingType]: filterAnnotations.OR,
+    [AllColumns.Region]: filterAnnotations.OR,
+    [AllColumns.Availability]: filterAnnotations.OR,
+    [AllColumns.Description]: filterAnnotations.AND,
+    [AllColumns.Note]: filterAnnotations.AND,
+    [AllColumns.GrapeVarieties]: filterAnnotations.AND,
+}
 
 /**
  * Keys to be shown in the sorting dropdown.

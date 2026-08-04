@@ -5,6 +5,8 @@
 	import Popup from '../widgets/Popup.svelte';
 	import { getRandom } from '$lib/utils/helpers';
 	import { isSafari } from '$lib/global.svelte';
+	import { filterAnnotationsToFilter, filterRenameMap } from '$lib/utils/constants';
+	import Icon from '../widgets/Icon.svelte';
 
 	let { defaultValue = [], value = $bindable(defaultValue), modified = $bindable(false), options = [], label, ...rest } = $props();
 	
@@ -36,6 +38,17 @@
 
 	let query = $state('');
 	let isOpen = $state(false);
+
+	const originalFilter = $derived.by(() => {
+		const original = (Object.keys(filterRenameMap) as (keyof typeof filterRenameMap)[]).find((key) => filterRenameMap[key] === label);
+		return filterAnnotationsToFilter[(original ?? label) as keyof typeof filterAnnotationsToFilter];
+	});
+
+	const filteredList = $derived.by(() =>
+		query
+			? list.filter((item) => item.value.toLowerCase().includes(query.toLowerCase()))
+			: list
+	);
 </script>
 
 <div class={twMerge("flex", options.length > 1 ? "flex-col" : "items-center")}>
@@ -69,6 +82,7 @@
 			{/snippet}
 			{#snippet renderContent(dialogElement: HTMLDialogElement)}
 				<div class="flex h-full max-h-full overflow-hidden flex-col gap-4">
+					<h2 class="text-center font-semibold">{label}</h2>
 					<div class="order-1 flex flex-row flex-wrap gap-4">
 						<button
 							onclick={() => {
@@ -81,13 +95,16 @@
 						</button>
 						<button
 							onclick={() => {
-								list = options.map((option) => ({ value: option, selected: true }));
+								filteredList.forEach((option) => (option.selected = true));
 								value = list.filter((option) => option.selected).map((option) => option.value);
 							}}
 							class={twMerge(components.button())}
 						>
 							Valitse kaikki
 						</button>
+						<span class="flex flex-row gap-2 ml-auto my-auto text-sm text-gray-500 dark:text-gray-400">
+							{list.filter((option) => option.selected).length} / {list.length} valittu
+						</span>
 					</div>
 					<input
 						type="text"
@@ -104,9 +121,7 @@
 						     and render only a tiny window, hiding later options until scrolled. -->
 						{#if isOpen}
 							<SvelteVirtualList
-								items={query
-									? list.filter((item) => item.value.toLowerCase().includes(query.toLowerCase()))
-									: list}
+								items={filteredList}
 								bufferSize={30}
 							>
 								{#snippet renderItem(item: ListItem, index: number)}
@@ -131,6 +146,9 @@
 					</div>
 				</div>
 				<div class="flex flex-row flex-wrap justify-end gap-4">
+					<span class="flex flex-row gap-2 mr-auto my-auto text-sm text-gray-500 dark:text-gray-400" title={originalFilter?.description || ''}>
+						<Icon name={originalFilter?.icon || 'list'} /> {originalFilter?.title || ''}
+					</span>
 					<button
 						onclick={() => {
 							dialogElement?.close();
