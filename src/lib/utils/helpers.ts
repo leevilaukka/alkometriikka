@@ -4,11 +4,16 @@ import type { AnalyticsEventMap, AnalyticsEventName, ColumnNames, OGImage, OgPro
 import { defaultSEOData, filterRenameMap, filterToUnitMarker, LocalStorageKeys, ShareTypes, sortingOrderDescriptionMap } from "./constants";
 import { LocalStorageManager } from "./storage";
 
-export function formatValue(value: string | number | boolean | Set<string>, header?: ColumnNames) {
+const defaultNumberFormatOptions: Intl.NumberFormatOptions = {
+    maximumFractionDigits: 3,
+    minimumFractionDigits: 2,
+    style: 'decimal',
+};
+export function formatValue(value: string | number | boolean | Set<string>, header?: ColumnNames, opts: { numberFormatOptions?: Intl.NumberFormatOptions, includeUnit?: boolean } = {numberFormatOptions: defaultNumberFormatOptions, includeUnit: true}) {
     if (value instanceof Set) return Array.from(value).join(', ');
     if (value === Infinity || value === -Infinity) value = "∞";
-    if (typeof value === "number") value = Intl.NumberFormat('fi-FI', { maximumFractionDigits: 3 }).format(value);
-    if (header && Object.hasOwn(filterToUnitMarker, header)) return `${value} ${filterToUnitMarker[header as keyof typeof filterToUnitMarker]}`;
+    if (typeof value === "number") value = Intl.NumberFormat('fi-FI', opts?.numberFormatOptions).format(value);
+    if (header && Object.hasOwn(filterToUnitMarker, header) && opts?.includeUnit) return `${value} ${filterToUnitMarker[header as keyof typeof filterToUnitMarker]}`;
     return value
 }
 
