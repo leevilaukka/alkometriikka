@@ -248,11 +248,11 @@
 				</div>
 			</div>
 			<div class="flex flex-col items-end gap-1">
-				<p class="text-4xl font-bold" data-price={`${formatValue(product[AllColumns.Price], AllColumns.Price)} €`}>
-					{formatValue(product[AllColumns.Price], AllColumns.Price)}
+				<p class="text-4xl font-bold" data-price={`${formatValue(product[AllColumns.Price], AllColumns.Price)}`}>
+					{formatValue(product[AllColumns.Price], AllColumns.Price, { format: true, numberFormatOptions: { minimumFractionDigits: 2, maximumFractionDigits: 2, }, includeUnit: true })}
 				</p>
 				<span class="text-sm text-secondary">
-					({formatValue(product[AllColumns.PricePerLiter], AllColumns.PricePerLiter)})
+					({formatValue(product[AllColumns.PricePerLiter], AllColumns.PricePerLiter, { format: true, numberFormatOptions: { minimumFractionDigits: 2, maximumFractionDigits: 2 }, includeUnit: true })})
 				</span>
 			</div>
 		</div>

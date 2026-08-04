@@ -9,7 +9,14 @@ const defaultNumberFormatOptions: Intl.NumberFormatOptions = {
     minimumFractionDigits: 0,
 };
 
-export function formatValue(value: string | number | boolean | Set<string>, header?: ColumnNames, opts: {format?: boolean, numberFormatOptions?: Intl.NumberFormatOptions, includeUnit?: boolean } = {format: true, numberFormatOptions: defaultNumberFormatOptions, includeUnit: true}) {
+/* TODO: This is a bit of a hack, but it works for now. We should probably refactor this to be more robust / maintainable in the future. */
+type FormatOpts = {
+    format?: boolean;
+    numberFormatOptions?: Intl.NumberFormatOptions;
+    includeUnit?: boolean;
+};
+
+export function formatValue(value: string | number | boolean | Set<string>, header?: ColumnNames, opts: FormatOpts = {format: true, numberFormatOptions: defaultNumberFormatOptions, includeUnit: true}) {
     if (value instanceof Set) return Array.from(value).join(', ');
     if (value === Infinity || value === -Infinity) value = "∞";
     if (typeof value === "number" && opts.format) value = Intl.NumberFormat('fi-FI', opts?.numberFormatOptions).format(value);
@@ -27,7 +34,7 @@ export function headerToDisplayName(header: ColumnNames) {
     return header
 }
 
-export function valueToString(value: string | number | boolean | Set<string>, header?: ColumnNames, opts: {format?: boolean, numberFormatOptions?: Intl.NumberFormatOptions, includeUnit?: boolean } = {format: true, numberFormatOptions: defaultNumberFormatOptions, includeUnit: true}) {
+export function valueToString(value: string | number | boolean | Set<string>, header?: ColumnNames, opts: FormatOpts = {format: true, numberFormatOptions: defaultNumberFormatOptions, includeUnit: true}) {
     if (!header) return String(formatValue(value, undefined, opts));
     return `${headerToDisplayName(header)}: ${formatValue(value, header, opts)}`
 }
