@@ -105,6 +105,7 @@
 		let totalPrice = 0;
 		let totalAlcoholGrams = 0;
 		let totalItems = 0;
+		let totalSugarPerLitre = 0;
 		let totalSugar = 0;
 		let totalVolume = 0;
 		list.items.forEach((item) => {
@@ -113,7 +114,8 @@
 				totalItems += item.q;
 				totalPrice += product[AllColumns.Price] * item.q;
 				totalAlcoholGrams += product[AllColumns.AlcoholGrams] * item.q;
-				totalSugar += (product[AllColumns.Sugar] || 0) * item.q;
+				totalSugarPerLitre += (product[AllColumns.Sugar] || 0) * item.q;
+				totalSugar += (product[AllColumns.Sugar] || 0) * product[AllColumns.BottleSize] * item.q;
 				totalVolume += product[AllColumns.BottleSize] * item.q;
 			}
 		});
@@ -134,6 +136,7 @@
 			totalAlcoholGrams,
 			totalAlcoholGramsPerEuro,
 			totalItems,
+			totalSugarPerLitre,
 			totalSugar,
 			totalBAC,
 			totalVolume
@@ -448,8 +451,9 @@
 					<p>Tuotteita listassa: {details.totalItems}</p>
 					<p>Kokonaismäärä: {formatValue(details.totalVolume, AllColumns.BottleSize)}</p>
 					<p>Yhteensä alkoholia: {formatValue(details.totalAlcoholGrams, AllColumns.AlcoholGrams)}</p>
-					<p>Yhteensä sokeria: {formatValue(details.totalSugar, AllColumns.Sugar)}</p>
-					<p>Alkoholia per euro: {formatValue(details.totalAlcoholGramsPerEuro, AllColumns.AlcoholPercentage)}</p>
+					<p>Sokeria: {formatValue(details.totalSugarPerLitre, AllColumns.Sugar)}</p>
+					<p>Yhteensä sokeria: {formatValue(details.totalSugar, AllColumns.Sugar, {includeUnit: false, format: false})} g</p>
+					<p>Alkoholia per euro: {formatValue(details.totalAlcoholGramsPerEuro, AllColumns.AlcoholGramsPerEuro)} g</p>
 					<p>Arvioitu promillemäärä: {formatValue(details.totalBAC, AllColumns.PromillePerEuro)}</p>
 					<div
 						class={twMerge(components.button({ size: "lg" }), "w-full mt-auto hover:cursor-default")}

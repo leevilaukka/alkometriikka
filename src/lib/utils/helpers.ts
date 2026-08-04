@@ -6,13 +6,13 @@ import { LocalStorageManager } from "./storage";
 
 const defaultNumberFormatOptions: Intl.NumberFormatOptions = {
     maximumFractionDigits: 3,
-    minimumFractionDigits: 2,
-    style: 'decimal',
+    minimumFractionDigits: 0,
 };
-export function formatValue(value: string | number | boolean | Set<string>, header?: ColumnNames, opts: { numberFormatOptions?: Intl.NumberFormatOptions, includeUnit?: boolean } = {numberFormatOptions: defaultNumberFormatOptions, includeUnit: true}) {
+
+export function formatValue(value: string | number | boolean | Set<string>, header?: ColumnNames, opts: {format?: boolean, numberFormatOptions?: Intl.NumberFormatOptions, includeUnit?: boolean } = {format: true, numberFormatOptions: defaultNumberFormatOptions, includeUnit: true}) {
     if (value instanceof Set) return Array.from(value).join(', ');
     if (value === Infinity || value === -Infinity) value = "∞";
-    if (typeof value === "number") value = Intl.NumberFormat('fi-FI', opts?.numberFormatOptions).format(value);
+    if (typeof value === "number" && opts.format) value = Intl.NumberFormat('fi-FI', opts?.numberFormatOptions).format(value);
     if (header && Object.hasOwn(filterToUnitMarker, header) && opts?.includeUnit) return `${value} ${filterToUnitMarker[header as keyof typeof filterToUnitMarker]}`;
     return value
 }
@@ -27,9 +27,9 @@ export function headerToDisplayName(header: ColumnNames) {
     return header
 }
 
-export function valueToString(value: string | number | boolean | Set<string>, header?: ColumnNames) {
-    if (!header) return String(formatValue(value));
-    return `${headerToDisplayName(header)}: ${formatValue(value, header)}`
+export function valueToString(value: string | number | boolean | Set<string>, header?: ColumnNames, opts: {format?: boolean, numberFormatOptions?: Intl.NumberFormatOptions, includeUnit?: boolean } = {format: true, numberFormatOptions: defaultNumberFormatOptions, includeUnit: true}) {
+    if (!header) return String(formatValue(value, undefined, opts));
+    return `${headerToDisplayName(header)}: ${formatValue(value, header, opts)}`
 }
 
 export function sortingOrderToString(order: boolean, header?: ColumnNames) {

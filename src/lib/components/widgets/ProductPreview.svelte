@@ -41,7 +41,7 @@
                     <p>
                         {valueToString(product[AllColumns.Type], AllColumns.Type)}
                         {product[AllColumns.Type] === 'Oluet'
-                            ? `- ${formatValue(product[AllColumns.BeerType], AllColumns.BeerType)}`
+                            ? `- ${valueToString(product[AllColumns.BeerType], AllColumns.BeerType)}`
                             : null}
                     </p>
                     <p>{valueToString(product[AllColumns.SubType], AllColumns.SubType)}</p>
