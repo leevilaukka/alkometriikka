@@ -121,7 +121,7 @@
 					y: {
 						ticks: {
 							callback: function (value) {
-								return value.toLocaleString('fi-FI');
+								return String(formatValue(Number(value), AllColumns.Price));
 							}
 						},
 						title: {
@@ -235,7 +235,7 @@
 						AllColumns.BottleSize
 					)} | {valueToString(product[AllColumns.AlcoholPercentage], AllColumns.AlcoholPercentage)}
 					{product[AllColumns.Vintage] !== ''
-						? `| ${valueToString(product[AllColumns.Vintage], AllColumns.Vintage, {format: false})}`
+						? `| ${valueToString(product[AllColumns.Vintage], AllColumns.Vintage)}`
 						: ''}
 				</span>
 				<p class="w-fit rounded bg-gray-100 px-1 dark:bg-zinc-700 dark:text-white">
@@ -248,11 +248,11 @@
 				</div>
 			</div>
 			<div class="flex flex-col items-end gap-1">
-				<p class="text-4xl font-bold" data-price={`${formatValue(product[AllColumns.Price], AllColumns.Price)} €`}>
-					{formatValue(product[AllColumns.Price], AllColumns.Price)}
+				<p class="text-4xl font-bold" data-price={`${formatValue(product[AllColumns.Price], AllColumns.Price)}`}>
+					{formatValue(product[AllColumns.Price], AllColumns.Price, { numberFormatOptions: { minimumFractionDigits: 2, maximumFractionDigits: 2 } })}
 				</p>
 				<span class="text-sm text-secondary">
-					({formatValue(product[AllColumns.PricePerLiter], AllColumns.PricePerLiter)})
+					({formatValue(product[AllColumns.PricePerLiter], AllColumns.PricePerLiter, { numberFormatOptions: { minimumFractionDigits: 2, maximumFractionDigits: 2 } })})
 				</span>
 			</div>
 		</div>
