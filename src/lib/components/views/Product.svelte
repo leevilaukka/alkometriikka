@@ -235,7 +235,7 @@
 						AllColumns.BottleSize
 					)} | {valueToString(product[AllColumns.AlcoholPercentage], AllColumns.AlcoholPercentage)}
 					{product[AllColumns.Vintage] !== ''
-						? `| ${valueToString(product[AllColumns.Vintage], AllColumns.Vintage)}`
+						? `| ${valueToString(product[AllColumns.Vintage], AllColumns.Vintage, {format: false})}`
 						: ''}
 				</span>
 				<p class="w-fit rounded bg-gray-100 px-1 dark:bg-zinc-700 dark:text-white">
