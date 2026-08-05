@@ -2,55 +2,10 @@ import { dev } from "$app/environment";
 import { isFirefox, lists, personalInfo } from "$lib/global.svelte";
 import type { AnalyticsEventMap, AnalyticsEventName, ColumnNames, OGImage, OgProperties, ShareType, TwitterProperties } from "$lib/types";
 import { defaultSEOData, filterRenameMap, filterToUnitMarker, LocalStorageKeys, ShareTypes, sortingOrderDescriptionMap, AllColumns } from "./constants";
+import { formatValue, type FormatOpts } from "./format";
 import { LocalStorageManager } from "./storage";
 
-const defaultNumberFormatOptions: Intl.NumberFormatOptions = {
-    maximumFractionDigits: 3,
-    minimumFractionDigits: 0,
-};
 
-const columnNumberFormatDefaults: Partial<Record<ColumnNames, Intl.NumberFormatOptions>> = {
-    [AllColumns.Price]: { minimumFractionDigits: 2, maximumFractionDigits: 2 },
-    [AllColumns.PricePerLiter]: { minimumFractionDigits: 2, maximumFractionDigits: 2 },
-    [AllColumns.BottleSize]: { minimumFractionDigits: 0, maximumFractionDigits: 3 },
-    [AllColumns.AlcoholPercentage]: { minimumFractionDigits: 0, maximumFractionDigits: 1 },
-    [AllColumns.AlcoholGrams]: { minimumFractionDigits: 2, maximumFractionDigits: 2 },
-    [AllColumns.AlcoholGramsPerEuro]: { minimumFractionDigits: 2, maximumFractionDigits: 2 },
-    [AllColumns.EstimatedPromille]: { minimumFractionDigits: 3, maximumFractionDigits: 3 },
-    [AllColumns.PromillePerEuro]: { minimumFractionDigits: 3, maximumFractionDigits: 3 },
-    [AllColumns.Servings]: { minimumFractionDigits: 1, maximumFractionDigits: 2 },
-    [AllColumns.EuroPerLiterAlcohol]: { minimumFractionDigits: 2, maximumFractionDigits: 2 },
-    [AllColumns.Vintage]: { minimumFractionDigits: 0, maximumFractionDigits: 0, useGrouping: false },
-};
-
-type FormatOpts = {
-    numberFormatOptions?: Intl.NumberFormatOptions | undefined;
-    includeUnit?: boolean;
-};
-
-export function formatValue(value: string | number | boolean | Set<string>, header?: ColumnNames, opts: FormatOpts = { numberFormatOptions: undefined, includeUnit: true }) {
-    if (value instanceof Set) return Array.from(value).join(', ');
-    if (value === Infinity || value === -Infinity) value = "∞";
-
-    const effectiveOpts: FormatOpts = {
-        numberFormatOptions: opts?.numberFormatOptions,
-        includeUnit: opts?.includeUnit ?? true,
-    };
-
-    if (typeof value === "number") {
-        const headerDefaults = header ? columnNumberFormatDefaults[header] : undefined;
-        const numberFormatOptions = {
-            ...defaultNumberFormatOptions,
-            ...(headerDefaults || {}),
-            ...(effectiveOpts.numberFormatOptions || {})
-        } as Intl.NumberFormatOptions;
-
-        value = Intl.NumberFormat('fi-FI', numberFormatOptions).format(value);
-    }
-
-    if (header && Object.hasOwn(filterToUnitMarker, header) && effectiveOpts?.includeUnit) return `${value} ${filterToUnitMarker[header as keyof typeof filterToUnitMarker]}`;
-    return value
-}
 
 export function headerToUnitMarker(header: ColumnNames) {
     if (Object.hasOwn(filterToUnitMarker, header)) return filterToUnitMarker[header as keyof typeof filterToUnitMarker]

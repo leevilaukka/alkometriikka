@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { isLaptop, personalInfo, searchQuery, isMobile } from '$lib/global.svelte';
 	import { components } from '$lib/utils/styles';
-	import { handleShare, trackSharedView, productIdsToDataset, sendAnalyticsEvent, formatValue } from '$lib/utils/helpers';
+	import { handleShare, trackSharedView, productIdsToDataset, sendAnalyticsEvent } from '$lib/utils/helpers';
+	import { formatValue } from '$lib/utils/format';
 	import { Kaljakori } from '$lib/alko';
 	import {
 		getItemQuantity,

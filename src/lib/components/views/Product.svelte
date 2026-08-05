@@ -6,12 +6,12 @@
 		hideFromProductPageStats
 	} from '$lib/utils/constants';
 	import {
-		formatValue,
 		generateTitle,
 		sendAnalyticsEvent,
 		setSEO,
 		valueToString
 	} from '$lib/utils/helpers';
+	import { formatValue } from '$lib/utils/format';
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/styles';
 	import Icon from '../widgets/Icon.svelte';

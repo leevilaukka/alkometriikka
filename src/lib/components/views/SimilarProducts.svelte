@@ -12,7 +12,8 @@
 	import Popup from '../widgets/Popup.svelte';
 	import AllLists from '../widgets/AllLists.svelte';
 	import { addToList } from '$lib/utils/lists';
-	import { formatValue, setSEO, valueToString } from '$lib/utils/helpers';
+	import { setSEO, valueToString } from '$lib/utils/helpers';
+	import { formatValue } from '$lib/utils/format';
 	import ProductImage from '../widgets/ProductImage.svelte';
 	import BadgeList from '../widgets/BadgeList.svelte';
 	import { onMount } from 'svelte';
