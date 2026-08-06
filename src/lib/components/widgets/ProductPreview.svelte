@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { AllColumns } from "$lib/utils/constants";
-	import { formatValue, headerToDisplayName, valueToString } from "$lib/utils/helpers";
+	import { headerToDisplayName, valueToString } from "$lib/utils/helpers";
+	import { formatValue } from "$lib/utils/format";
 	import { twMerge } from "tailwind-merge";
 	import BadgeList from "./BadgeList.svelte";
     import ProductImage from "./ProductImage.svelte";
