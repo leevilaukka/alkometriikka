@@ -9,6 +9,8 @@ import { DrunkColumns, GenderOptionsMap} from "./constants";
  * @param price Pullon hinta euroina
  * @param weight Käyttäjän paino kiloina
  * @param gender Käyttäjän sukupuoli
+ * @param time Aika (tunteina), jonka aikana alkoholi on nautittu
+ * @param itemName Tuotteen nimi (valinnainen, käytetään virheilmoituksissa)
  * @returns Olio, jossa puhtaan alkoholin määrä, alkoholia per euro, arvioitu BAC ja BAC per euro
  */
 export function calculateDrunkValue(
@@ -17,6 +19,7 @@ export function calculateDrunkValue(
 	price: number,
 	gender: typeof GenderOptionsMap[keyof typeof GenderOptionsMap] = GenderOptionsMap.Unspecified,
 	weight?: number,
+	timeInHours: number = 2,
 	itemName?: string
 ): Record<DrunkColumnNames, number> {
 	if (!weight) {
@@ -31,6 +34,9 @@ export function calculateDrunkValue(
 
 	// Etanolin tiheys g/l
 	const ETHANOL_DENSITY = 789;
+	const ELIMINATION_RATE = 0.15; // Keskimääräinen eliminoitumisnopeus promillea per tunti
+
+	const eliminatedBAC = ELIMINATION_RATE * timeInHours;
 
 	// Widmarkin kertoimet
 	const r = gender === GenderOptionsMap.Male ? 0.68 : 0.55;
@@ -39,22 +45,32 @@ export function calculateDrunkValue(
 	const pureAlcoholGrams = volume * (percentage / 100) * ETHANOL_DENSITY;
 
 	// Lasketaan alkoholia grammoina per euro
-	const alcoholPerEuro = pureAlcoholGrams / price;
+	const alcoholPerEuro = price > 0 && Number.isFinite(price) ? pureAlcoholGrams / price : 0;
 
-	// Lasketaan arvioitu BAC (‰)
-	const estimatedBAC = pureAlcoholGrams / (weight * r);
+	// Lasketaan arvioitu BAC (‰) ja estetään negatiiviset arvot (ei negatiivista promillea)
+	const estimatedBACRaw = pureAlcoholGrams / (weight * r) - eliminatedBAC;
+	const estimatedBAC = Number.isFinite(estimatedBACRaw) ? Math.max(0, estimatedBACRaw) : 0;
 
-	// Lasketaan promillea per euro
-	const bacPerEuro = estimatedBAC / price;
-
+	console.log(estimatedBACRaw, "(raw) Estimated BAC for item:", itemName, "->", estimatedBAC, "(clamped). Volume:", volume, "Percentage:", percentage, "Price:", price, "Weight:", weight, "Time in hours:", timeInHours);
+	// Lasketaan promillea per euro (ei jaeta nollalla)
+	const bacPerEuro = price > 0 && Number.isFinite(price) && Number.isFinite(estimatedBAC) ? estimatedBAC / price : 0;
+	
 	// Lasketaan annokset (1 annos = 12g)
 	const servings = pureAlcoholGrams / 12;
 
-	// € per litra raakaa alkoholia
-	const euroPerLiter = price / (volume * (percentage / 100));
+	// € per litra raakaa alkoholia (varmistetaan, että nimittäjä ei ole nolla)
+	const alcoholLiters = volume * (percentage / 100);
+	const euroPerLiter = alcoholLiters > 0 && Number.isFinite(alcoholLiters) && Number.isFinite(price) ? price / alcoholLiters : 0;
 
-	if (isNaN(pureAlcoholGrams) || isNaN(alcoholPerEuro) || isNaN(estimatedBAC) || isNaN(bacPerEuro) || isNaN(servings) || isNaN(euroPerLiter)) {
-		console.log("Invalid input values. Please ensure volume, percentage, price, and weight are valid numbers., Item: " + (itemName || "Unknown") + ", Volume: " + volume + ", Percentage: " + percentage + ", Price: " + price + ", Weight: " + weight);
+	if (
+		!Number.isFinite(pureAlcoholGrams) ||
+		!Number.isFinite(alcoholPerEuro) ||
+		!Number.isFinite(estimatedBAC) ||
+		!Number.isFinite(bacPerEuro) ||
+		!Number.isFinite(servings) ||
+		!Number.isFinite(euroPerLiter)
+	) {
+		console.log("Invalid input values. Please ensure volume, percentage, price, and weight are valid numbers., Item: " + (itemName || "Unknown") + ", Volume: " + volume + ", Percentage: " + percentage + ", Price: " + price + ", Weight: " + weight + ", Time: " + timeInHours);
 	}
 
 	return {

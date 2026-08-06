@@ -233,22 +233,38 @@
 					oletusarvoihin.
 				</p>
 			</div>
-			<div class="flex flex-col">
-				<label for="weight" class="text-sm">Paino (kg)</label>
-				<input
-					lang="fi"
-					type="number"
-					name="weight"
-					bind:value={personalInfo.weight}
-					placeholder="Paino (kg)"
-					class={twMerge(components.input(), 'w-full')}
-					min="1"
-					max="500"
-					step="0.1"
-				/>
-				{#if !weightOK}
-					<p class="text-xs text-red-600">Painon tulee olla suurempi kuin 1 kg tai tyhjä.</p>
-				{/if}
+			<div class="flex flex-row gap-2 w-full">
+				<div class="flex flex-col w-full gap-2">
+					<label for="weight" class="text-sm">Paino (kg)</label>
+					<input
+						lang="fi"
+						type="number"
+						name="weight"
+						bind:value={personalInfo.weight}
+						placeholder="Paino (kg)"
+						class={twMerge(components.input(), 'w-full')}
+						min="1"
+						max="500"
+						step="0.1"
+					/>
+					{#if !weightOK}
+						<p class="text-xs text-red-600">Painon tulee olla suurempi kuin 1 kg tai tyhjä.</p>
+					{/if}
+				</div>
+				<div class="flex flex-col min-w-fit gap-2">
+					<label for="time" class="text-sm">Aika juomisesta (tuntia)</label>
+					<input
+						lang="fi"
+						type="number"
+						name="time"
+						bind:value={personalInfo.time}
+						placeholder="Aika juomisesta (tuntia)"
+						class={twMerge(components.input(), 'w-full')}
+						min="0"
+						max="24"
+						step="0.1"
+					/>
+				</div>
 			</div>
 			<div class="flex flex-col">
 				<label for="gender" class="text-sm">Sukupuoli</label>

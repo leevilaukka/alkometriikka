@@ -19,6 +19,7 @@ export type GenderOptions = typeof GenderOptionsMap[keyof typeof GenderOptionsMa
 export type PersonalInfo = {
     weight: number | null;
     gender: GenderOptions | undefined | null;
+    time: number | null;
 };
 
 export interface PriceListItem extends Record<DrunkColumnNames, number> {
