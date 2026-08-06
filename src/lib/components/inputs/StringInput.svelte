@@ -82,7 +82,17 @@
 			{/snippet}
 			{#snippet renderContent(dialogElement: HTMLDialogElement)}
 				<div class="flex h-full max-h-full overflow-hidden flex-col gap-4">
-					<h2 class="text-center font-semibold">{label}</h2>
+					<div class="flex flex-row items-center align-middle justify-between gap-4">
+						<h2 class="font-semibold">{label}</h2>
+						<button
+							onclick={() => {
+								dialogElement?.close();
+							}}
+							class={twMerge(components.button({ type: 'noborder' }))}
+						>
+							<Icon name="x" />
+						</button>
+					</div>
 					<div class="order-1 flex flex-row flex-wrap gap-4">
 						<button
 							onclick={() => {

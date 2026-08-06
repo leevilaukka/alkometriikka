@@ -7,8 +7,10 @@ export type FormatOpts = {
 };
 
 const formatters = new Map<ColumnNames, Intl.NumberFormat>();
+const extraFormatters = new Map<string, Intl.NumberFormat>();
 
 console.log("formatters", formatters);
+console.log("extraFormatters", extraFormatters);
 
 const defaultNumberFormatOptions: Intl.NumberFormatOptions = {
     maximumFractionDigits: 3,
@@ -27,6 +29,12 @@ const columnNumberFormatDefaults: Partial<Record<ColumnNames, Intl.NumberFormatO
     [AllColumns.Servings]: { minimumFractionDigits: 1, maximumFractionDigits: 2 },
     [AllColumns.EuroPerLiterAlcohol]: { minimumFractionDigits: 2, maximumFractionDigits: 2 },
     [AllColumns.Vintage]: { minimumFractionDigits: 0, maximumFractionDigits: 0, useGrouping: false },
+    [AllColumns.Number]: { minimumFractionDigits: 0, maximumFractionDigits: 0, useGrouping: false },
+    [AllColumns.BitternessEBU]: { minimumFractionDigits: 0, maximumFractionDigits: 1 },
+    [AllColumns.Energy]: { minimumFractionDigits: 0, maximumFractionDigits: 1 },
+    [AllColumns.Sugar]: { minimumFractionDigits: 0, maximumFractionDigits: 1 },
+    [AllColumns.Acidity]: { minimumFractionDigits: 0, maximumFractionDigits: 1 },
+    [AllColumns.OriginalGravity]: { minimumFractionDigits: 0, maximumFractionDigits: 1 },
 };
 
 for (const [column, options] of Object.entries(columnNumberFormatDefaults)) {
@@ -67,10 +75,13 @@ export function formatValue(
         ) {
             value = formatters.get(header)!.format(value);
         } else {
-            value = new Intl.NumberFormat(
-                "fi-FI",
-                numberFormatOptions
-            ).format(value);
+            const key = `${header ?? "default"}-${JSON.stringify(numberFormatOptions)}`;
+            if (!extraFormatters.has(key)) {
+                console.log("Creating new formatter for key", key, "with options", numberFormatOptions, "caller", new Error().stack);
+                extraFormatters.set(key, new Intl.NumberFormat("fi-FI", numberFormatOptions));
+            }
+            const formatter = extraFormatters.get(key);
+            value = formatter!.format(value);
         }
     }
 

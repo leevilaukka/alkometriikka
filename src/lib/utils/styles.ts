@@ -6,7 +6,8 @@ export const components = {
             type: {
                 primary: "bg-white dark:bg-zinc-800 text-black dark:text-white border border-primary hover:bg-secondary not-hover:shadow-[0_1px_0_rgba(0,0,0,0.1)]",
                 negative: "bg-brand-1 text-white border border-red-600 hover:bg-red-700 hover:border-red-700",
-                positive: "bg-green-600 text-white border border-green-600 hover:bg-green-700 hover:border-green-700"
+                positive: "bg-green-600 text-white border border-green-600 hover:bg-green-700 hover:border-green-700",
+                noborder: "bg-transparent text-black dark:text-white border-none hover:bg-secondary not-hover:shadow-[0_1px_0_rgba(0,0,0,0.1)]",
             },
             size: {
                 xs: "text-xs",

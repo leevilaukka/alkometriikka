@@ -249,10 +249,10 @@
 			</div>
 			<div class="flex flex-col items-end gap-1">
 				<p class="text-4xl font-bold" data-price={`${formatValue(product[AllColumns.Price], AllColumns.Price)}`}>
-					{formatValue(product[AllColumns.Price], AllColumns.Price, { numberFormatOptions: { minimumFractionDigits: 2, maximumFractionDigits: 2 } })}
+					{formatValue(product[AllColumns.Price], AllColumns.Price)}
 				</p>
 				<span class="text-sm text-secondary">
-					({formatValue(product[AllColumns.PricePerLiter], AllColumns.PricePerLiter, { numberFormatOptions: { minimumFractionDigits: 2, maximumFractionDigits: 2 } })})
+					({formatValue(product[AllColumns.PricePerLiter], AllColumns.PricePerLiter)})
 				</span>
 			</div>
 		</div>
@@ -299,7 +299,7 @@
 			<div class="flex flex-col gap-0.5 md:gap-1">
 				<h2 class="text-xl font-bold">Perustiedot</h2>
 				{#each Object.entries(DatasetColumns) as [_, value]}
-					{@const valueStr = Array.isArray(product[value]) ? '' : valueToString(product[value])}
+					{@const valueStr = Array.isArray(product[value]) ? '' : valueToString(product[value], value)}
 					{@const hasValue = valueStr.length > 0}
 					{#if hasValue && !hideFromProductPageStats.has(value as (typeof DatasetColumns)[keyof typeof DatasetColumns])}
 						<p>
@@ -319,7 +319,7 @@
 					<p class="flex flex-row items-center gap-2">
 						{valueToString(
 							product[value],
-							value as (typeof DrunkColumns)[keyof typeof DrunkColumns]
+							value
 						)}
 					</p>
 				{/if}

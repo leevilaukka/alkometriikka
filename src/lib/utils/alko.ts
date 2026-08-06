@@ -51,7 +51,6 @@ export function calculateDrunkValue(
 	const estimatedBACRaw = pureAlcoholGrams / (weight * r) - eliminatedBAC;
 	const estimatedBAC = Number.isFinite(estimatedBACRaw) ? Math.max(0, estimatedBACRaw) : 0;
 
-	console.log(estimatedBACRaw, "(raw) Estimated BAC for item:", itemName, "->", estimatedBAC, "(clamped). Volume:", volume, "Percentage:", percentage, "Price:", price, "Weight:", weight, "Time in hours:", timeInHours);
 	// Lasketaan promillea per euro (ei jaeta nollalla)
 	const bacPerEuro = price > 0 && Number.isFinite(price) && Number.isFinite(estimatedBAC) ? estimatedBAC / price : 0;
 	
