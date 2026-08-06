@@ -34,9 +34,6 @@ export function calculateDrunkValue(
 
 	// Etanolin tiheys g/l
 	const ETHANOL_DENSITY = 789;
-	const ELIMINATION_RATE = 0.15; // Keskimääräinen eliminoitumisnopeus promillea per tunti
-
-	const eliminatedBAC = ELIMINATION_RATE * timeInHours;
 
 	// Widmarkin kertoimet
 	const r = gender === GenderOptionsMap.Male ? 0.68 : 0.55;
@@ -48,12 +45,12 @@ export function calculateDrunkValue(
 	const alcoholPerEuro = price > 0 && Number.isFinite(price) ? pureAlcoholGrams / price : 0;
 
 	// Lasketaan arvioitu BAC (‰) ja estetään negatiiviset arvot (ei negatiivista promillea)
-	const estimatedBACRaw = pureAlcoholGrams / (weight * r) - eliminatedBAC;
+	const estimatedBACRaw = pureAlcoholGrams / (weight * r)
 	const estimatedBAC = Number.isFinite(estimatedBACRaw) ? Math.max(0, estimatedBACRaw) : 0;
 
 	// Lasketaan promillea per euro (ei jaeta nollalla)
 	const bacPerEuro = price > 0 && Number.isFinite(price) && Number.isFinite(estimatedBAC) ? estimatedBAC / price : 0;
-	
+
 	// Lasketaan annokset (1 annos = 12g)
 	const servings = pureAlcoholGrams / 12;
 

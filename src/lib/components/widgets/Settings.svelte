@@ -251,20 +251,6 @@
 						<p class="text-xs text-red-600">Painon tulee olla suurempi kuin 1 kg tai tyhjä.</p>
 					{/if}
 				</div>
-				<div class="flex flex-col min-w-fit gap-2">
-					<label for="time" class="text-sm">Aika juomisesta (tuntia)</label>
-					<input
-						lang="fi"
-						type="number"
-						name="time"
-						bind:value={personalInfo.time}
-						placeholder="Aika juomisesta (tuntia)"
-						class={twMerge(components.input(), 'w-full')}
-						min="0"
-						max="24"
-						step="0.1"
-					/>
-				</div>
 			</div>
 			<div class="flex flex-col">
 				<label for="gender" class="text-sm">Sukupuoli</label>
