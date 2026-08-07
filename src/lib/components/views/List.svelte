@@ -102,6 +102,15 @@
 		return temp;
 	});
 
+	let highlightMax = $derived.by(() => {
+		if (!selectedHighlight) return null;
+		const maxValue = rows.reduce((max, item) => {
+			const value = Number(item[selectedHighlight] ?? 0);
+			return value > max ? value : max;
+		}, 0);
+		return maxValue > 0 ? maxValue : null;
+	});
+
 	function getListDetails() {
 		let totalPrice = 0;
 		let totalAlcoholGrams = 0;
@@ -344,7 +353,7 @@
 				<SvelteVirtualList items={rows} bind:this={listRef} itemsClass={'flex flex-col gap-3'}>
 					{#snippet renderItem(item, idx: number)}
 						{@const listItem = getListItem(list, item[AllColumns.Number])}
-						<ProductPreview product={item} quantity={listItem?.q} highlight={selectedHighlight} {kaljakori}>
+						<ProductPreview product={item} quantity={listItem?.q} highlight={selectedHighlight} {kaljakori} highlightMax={highlightMax}>
 							{#snippet renderExtras()}
 								<div
 									class="absolute top-0 left-0 flex flex-nowrap items-center gap-0.5 rounded-br bg-gray-100 dark:bg-zinc-700 px-1.5 py-0.5 text-sm text-secondary"

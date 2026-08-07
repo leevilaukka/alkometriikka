@@ -7,7 +7,7 @@
     import ProductImage from "./ProductImage.svelte";
 	import Icon from "./Icon.svelte";
 
-    let { product, highlight = null, kaljakori, renderExtras, quantity = 1 } = $props();
+    let { product, highlight = null, kaljakori, renderExtras, quantity = 1, highlightMax = null } = $props();
 </script>
 
 
@@ -104,8 +104,8 @@
         </div>
     </div>
     {#if highlight}
-        {@const [_, max] = kaljakori.getMinAndMaxValues(highlight) as number[]}
-        {@const multiplier = Number(product[highlight]) / max}
+        {@const max = highlightMax ?? (kaljakori.getMinAndMaxValues(highlight) as number[])[1]}
+        {@const multiplier = max > 0 ? Number(product[highlight]) / max : 0}
         {@const ratings = ['Matala', 'Kohtalainen', 'Korkea']}
         {@const rating = ratings[Number(((ratings.length - 1) * multiplier).toFixed(0))]}
         <div class="relative block max-w-full">
