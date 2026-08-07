@@ -9,6 +9,7 @@
 		generateTitle,
 		sendAnalyticsEvent,
 		setSEO,
+		isNullish,
 		valueToString
 	} from '$lib/utils/helpers';
 	import { formatValue } from '$lib/utils/format';
@@ -299,12 +300,17 @@
 			<div class="flex flex-col gap-0.5 md:gap-1">
 				<h2 class="text-xl font-bold">Perustiedot</h2>
 				{#each Object.entries(DatasetColumns) as [_, value]}
-					{@const valueStr = Array.isArray(product[value]) ? '' : valueToString(product[value], value)}
-					{@const hasValue = valueStr.length > 0}
+					{@const rawValue = product[value]}
+					{@const hasValue =
+						!isNullish(rawValue) &&
+						(!(rawValue instanceof Set) || rawValue.size > 0) &&
+						(!Array.isArray(rawValue) || rawValue.length > 0) &&
+						(typeof rawValue !== 'string' || rawValue.trim().length > 0)
+					}
 					{#if hasValue && !hideFromProductPageStats.has(value as (typeof DatasetColumns)[keyof typeof DatasetColumns])}
 						<p>
 							{valueToString(
-								Array.isArray(product[value]) ? '' : product[value],
+								rawValue as string | number | boolean | Set<string>,
 								value as (typeof DatasetColumns)[keyof typeof DatasetColumns]
 							)}
 						</p>
