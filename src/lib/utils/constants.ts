@@ -296,7 +296,9 @@ export const hideFromProductPageStats = new Set<ColumnNames>([
     DatasetColumns.Name,
     DatasetColumns.Vintage,
     DatasetColumns.EAN,
-    DatasetColumns.RemovedFromSelection
+    DatasetColumns.RemovedFromSelection,
+    // Hide Uutuus as it is currently kinda bugged and not very useful on the product page stats. It is still shown in the list view and can be used for filtering.
+    DatasetColumns.New
 ]);
 
 export const defaultSEOData = {
