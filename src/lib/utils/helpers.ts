@@ -128,7 +128,7 @@ export function handleClearAll() {
             'Haluatko varmasti tyhjentää kaikki tallennetut tiedot? Tätä toimintoa ei voi perua.'
         )
     ) {
-        localStorage.clear();
+        LocalStorageManager.clear();
         window.location.reload();
     }
 }
@@ -215,7 +215,7 @@ export function trackSharedView(type: ShareType = ShareTypes.Default) {
     const url = new URL(location.href);
     const sid = url.searchParams.get('sid');
     if (sid) {
-        const viewedShares = LocalStorageManager.getItem<string[]>(LocalStorageKeys.ViewedShares) || [];
+        const viewedShares = LocalStorageManager.getItem(LocalStorageKeys.ViewedShares) || [];
         url.searchParams.delete('sid');
 
         if (!viewedShares.includes(sid)) {
