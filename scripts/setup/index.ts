@@ -466,8 +466,8 @@ async function sync(): Promise<void> {
 		const totalLabel = searchResult.expectedTotal !== null ? `/${searchResult.expectedTotal}` : '';
 		console.warn(
 			`\n⚠️  Search fetch was INCOMPLETE (${searchProducts.length}${totalLabel} products). ` +
-				`Aborting sync without writing the dataset to avoid overwriting existing data with a ` +
-				`partial result. Re-run the sync once the API returns the full product list.`
+			`Aborting sync without writing the dataset to avoid overwriting existing data with a ` +
+			`partial result. Re-run the sync once the API returns the full product list.`
 		);
 		process.exit(1);
 	}
@@ -479,8 +479,8 @@ async function sync(): Promise<void> {
 	if (searchProducts.length === 0) {
 		console.warn(
 			`\n⚠️  Search fetch returned 0 products. Aborting sync without writing the dataset to ` +
-				`avoid overwriting existing data with an empty result. Re-run the sync once the API ` +
-				`returns the product list.`
+			`avoid overwriting existing data with an empty result. Re-run the sync once the API ` +
+			`returns the product list.`
 		);
 		process.exit(1);
 	}
@@ -639,11 +639,24 @@ async function sync(): Promise<void> {
 	// change to the data was detected this run.
 	const hasChanges =
 		stats.added > 0 || stats.updated > 0 || stats.removed > 0 || stats.filteredRemoved > 0;
+
+	const workflowRunUrl = process.env.GITHUB_RUN_ID && process.env.GITHUB_REPOSITORY ? `https://github.com/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}` : '';
+
+	const currentCIRun = process.env.GITHUB_SHA ? { commit: process.env.GITHUB_SHA, workflowRun: workflowRunUrl } : undefined;
+	const previousCIRun = existing.metadata?.ci;
+	const emptyCIRun = { commit: '', workflowRun: '' };
+
 	const result: MigratedData = {
 		schema: LEGACY_HEADERS,
 		metadata: {
 			LastUpdated: hasChanges ? now : (existing.metadata?.LastUpdated ?? now),
-			LastSynced: now
+			LastSynced: now,
+			ci: {
+				sync: currentCIRun ?? previousCIRun?.sync ?? emptyCIRun,
+				update: hasChanges
+					? (currentCIRun ?? previousCIRun?.update ?? emptyCIRun)
+					: (previousCIRun?.update ?? emptyCIRun)
+			}
 		},
 		products
 	};

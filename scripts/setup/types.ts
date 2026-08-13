@@ -36,6 +36,16 @@ export type MigratedData = {
   metadata: {
     LastUpdated: string;
     LastSynced: string;
+    ci?: {
+      sync: {
+        commit: string;
+        workflowRun: string;
+      },
+      update: {
+        commit: string;
+        workflowRun: string;
+      }
+    };
   }
   products?: Record<string, MigratedProduct>;
 }
