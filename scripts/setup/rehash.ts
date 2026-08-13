@@ -17,11 +17,10 @@
  * Safe to delete once the rehash has been applied everywhere.
  */
 
-import { getHash, getHashValues } from "./constants.ts";
+import { DEV, getHash, getHashValues } from "./constants.ts";
 import type { MigratedData, MigratedProduct } from "./types.ts";
 
 /** When running with `--dev` we operate on the local static folder. Mirrors index.ts. */
-const DEV = process.argv.includes("--dev");
 const DATA_PATH = DEV ? "./static/data.json" : "./data.json";
 
 function isMigratedProduct(entry: unknown): entry is MigratedProduct {

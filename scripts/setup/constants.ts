@@ -33,6 +33,8 @@ export const LEGACY_HEADERS = [
   "EAN"
 ] as const;
 
+export const DEV = process.argv.includes("--dev");
+
 /**
  * Main groups that are not actual drinks (gifts & drinking accessories) and
  * should never end up in the dataset.
@@ -42,6 +44,23 @@ export const IRRELEVANT_MAIN_GROUP_NAMES: ReadonlySet<string> = new Set(["lahja-
 
 /** Column index of the main-group name ("Tyyppi") inside a legacy `values` array. */
 const TYYPPI_INDEX = LEGACY_HEADERS.indexOf("Tyyppi");
+
+// Alko API constants and helpers are shared between setup scripts, so that
+// they can be updated in one place if the API changes.
+const API_BASE_URL = "https://www.alko.fi/api";
+
+export const SEARCH_URL = `${API_BASE_URL}/search/product`;
+export const productDetailsUrl = <ID extends string>(id: ID) => `${API_BASE_URL}/product-api/products/${id}` as const;
+
+/** Request headers to be used for Alko API calls. 
+ * The User-Agent is set to a recent Firefox on Linux to avoid 403s. 
+ */
+export const REQUEST_HEADERS: Record<string, string> = {
+  "Accept": "application/json",
+  "Content-Type": "application/json",
+  "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0",
+};
+
 
 /** Normalizes an unknown field into a list of trimmed strings. */
 function toStringList(value: unknown): string[] {

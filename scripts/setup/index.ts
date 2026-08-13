@@ -18,12 +18,16 @@
  */
 
 import {
+    DEV,
 	LEGACY_HEADERS,
+	REQUEST_HEADERS,
+	SEARCH_URL,
 	buildLegacyValues,
 	getHash,
 	getHashValues,
 	isIrrelevantMainGroup,
-	isIrrelevantStoredValues
+	isIrrelevantStoredValues,
+    productDetailsUrl
 } from './constants.ts';
 import type {
 	DetailedProductData,
@@ -40,10 +44,7 @@ import type {
 // CONFIG & CONSTANTS
 // ============================================================================
 
-const SEARCH_URL = 'https://www.alko.fi/api/search/product';
-const productDetailsUrl = (id: string) => `https://www.alko.fi/api/product-api/products/${id}`;
-/** When running with `--dev` we write to the local static folder and skip cache purging. */
-const DEV = process.argv.includes('--dev');
+
 /** Where the dataset is read from and written to. Mirrors the legacy setup.ts convention. */
 const DATA_PATH = DEV ? './static/data.json' : './data.json';
 /** Fallback base dataset used when no synced `data.json` exists yet (produced by migrate.ts). */
@@ -75,12 +76,6 @@ const RETRY_MAX_DELAY_MS = 60_000;
 const PROGRESS_LOG_INTERVAL = 25;
 
 const VERBOSE = truthyEnvVar('VERBOSE');
-
-const REQUEST_HEADERS: Record<string, string> = {
-	Accept: 'application/json',
-	'Content-Type': 'application/json',
-	'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0'
-};
 
 /** Column indices we read back out of a stored `values` array. */
 const NUMERO_INDEX = LEGACY_HEADERS.indexOf('Numero');

@@ -1,6 +1,6 @@
 import Bun from "bun";
 import { MigratedData } from "./setup/types";
-const DEV = process.argv.includes("--dev");
+import { DEV } from "./setup/constants";
 
 async function main() {
     const file = Bun.file(DEV ? "./static/data.json" : "./data.json");

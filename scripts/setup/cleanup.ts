@@ -9,18 +9,12 @@
  * Usage: bun scripts/new-2026/cleanup.ts
  */
 
-import { isIrrelevantMainGroup, isIrrelevantStoredValues } from "./constants.ts";
+import { isIrrelevantMainGroup, isIrrelevantStoredValues, REQUEST_HEADERS, SEARCH_URL } from "./constants.ts";
 import type { MigratedData, MigratedProduct, SearchApiResponse, SearchProductData } from "./types.ts";
 
-const SEARCH_URL = "https://www.alko.fi/api/search/product";
 const DATA_PATH = "./data-migrated.json";
 const PAGE_SIZE = 1000;
 
-const REQUEST_HEADERS: Record<string, string> = {
-  "Accept": "application/json",
-  "Content-Type": "application/json",
-  "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0",
-};
 
 function isMigratedProduct(entry: unknown): entry is MigratedProduct {
   return (
