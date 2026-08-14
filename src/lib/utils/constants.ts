@@ -112,7 +112,7 @@ export const shownFilters = [
 ] as const satisfies readonly ColumnNames[];
 
 
-const filterAnnotations: { [key: string]: { title: string; description: string; icon: IconName } } = {
+const { AND, OR }: { [key: string]: { title: string; description: string; icon: IconName } } = {
     AND: {
         title: "Kaikki valitut (JA)",
         description: "Näytä tuotteet, jotka täyttävät kaikki valitut ehdot.\nEsim. jos valitset kaksi rypälettä, näytetään vain tuotteet, joissa on molemmat rypäleet.",
@@ -125,17 +125,18 @@ const filterAnnotations: { [key: string]: { title: string; description: string; 
     }
 } as const;
 
+
 export const filterAnnotationsToFilter = {
-    [AllColumns.Name]: filterAnnotations.OR,
-    [AllColumns.Manufacturer]: filterAnnotations.OR,
-    [AllColumns.SubType]: filterAnnotations.OR,
-    [AllColumns.Country]: filterAnnotations.OR,
-    [AllColumns.PackagingType]: filterAnnotations.OR,
-    [AllColumns.Region]: filterAnnotations.OR,
-    [AllColumns.Availability]: filterAnnotations.OR,
-    [AllColumns.Description]: filterAnnotations.AND,
-    [AllColumns.Note]: filterAnnotations.AND,
-    [AllColumns.GrapeVarieties]: filterAnnotations.AND,
+    [AllColumns.Name]: OR,
+    [AllColumns.Manufacturer]: OR,
+    [AllColumns.SubType]: OR,
+    [AllColumns.Country]: OR,
+    [AllColumns.PackagingType]: OR,
+    [AllColumns.Region]: OR,
+    [AllColumns.Availability]: OR,
+    [AllColumns.Description]: AND,
+    [AllColumns.Note]: AND,
+    [AllColumns.GrapeVarieties]: AND,
 }
 
 /**

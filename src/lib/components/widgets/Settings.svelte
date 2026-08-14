@@ -135,7 +135,19 @@
 					<br />
 				{@const lastSynced = `${new Date(alko.dataset.metadata.LastSynced).toLocaleDateString('fi-FI')} klo ${new Date(alko.dataset.metadata.LastSynced).toLocaleTimeString('fi-FI', timeConfig)}`}
 				{@const lastUpdated = `${new Date(alko.dataset.metadata.LastUpdated).toLocaleDateString('fi-FI')} klo ${new Date(alko.dataset.metadata.LastUpdated).toLocaleTimeString('fi-FI', timeConfig)}`}
-					Viimeisin synkronointi: {lastSynced} | Viimeisin muutos: {lastUpdated}
+				{@const {sync, update} = alko.dataset.metadata.ci}
+					Viimeisin synkronointi: 
+					{#if sync.workflowRun}
+						<a href={sync.workflowRun} target="_blank">{lastSynced}</a>
+					{:else}
+						{lastSynced}
+					{/if}
+					| Viimeisin muutos: 
+					{#if update.workflowRun}
+						<a href={update.workflowRun} target="_blank">{lastUpdated}</a>
+					{:else}
+						{lastUpdated}
+					{/if}
 				{/if}
 			</p>
 			<button class={twMerge(components.button(), 'w-full')} onclick={() => dialogElement.close()}

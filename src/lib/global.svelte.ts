@@ -1,10 +1,9 @@
 import { writable } from "svelte/store";
-import type { ListObj, PersonalInfo } from "./types";
 import { LocalStorageKeys } from "./utils/constants";
 import { LocalStorageManager } from "./utils/storage";
 
-export let personalInfo: PersonalInfo = $state(LocalStorageManager.getItem(LocalStorageKeys.PersonalInfo) || { gender: null, weight: null });
-export let lists: ListObj[] = $state(LocalStorageManager.getItem(LocalStorageKeys.Lists) || []);
+export let personalInfo = $state(LocalStorageManager.getItem(LocalStorageKeys.PersonalInfo) || { gender: null, weight: null });
+export let lists = $state(LocalStorageManager.getItem(LocalStorageKeys.Lists) || []);
 
 export let searchQuery = writable(new URLSearchParams(location.search).get("q") || "");
 
