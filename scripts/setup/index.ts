@@ -356,6 +356,7 @@ async function loadStores(config: Config): Promise<Record<string, StoreData> | n
 			console.error('  ❌ Store API returned a store without a valid id.');
 			return null;
 		}
+		if (store.outletType === '2') continue;
 		if (store.id in stores) {
 			console.error(`  ❌ Store API returned duplicate id ${store.id}.`);
 			return null;
@@ -363,7 +364,9 @@ async function loadStores(config: Config): Promise<Record<string, StoreData> | n
 		stores[store.id] = store;
 	}
 
-	console.log(`  🏪 Fetched ${storeList.length} stores`);
+	console.log(
+		`  🏪 Fetched ${storeList.length} outlets, kept ${Object.keys(stores).length} stores`
+	);
 	return stores;
 }
 

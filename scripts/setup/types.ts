@@ -6,6 +6,7 @@ export interface SearchApiResponse {
 
 export interface StoreData {
 	id: string;
+	outletType?: string;
 	[key: string]: unknown;
 }
 

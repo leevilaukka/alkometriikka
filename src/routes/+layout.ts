@@ -46,7 +46,8 @@ async function fetchAvailability({ fetch }: { fetch: Fetch }): Promise<Availabil
 				!!entry[1] &&
 				typeof entry[1] === 'object' &&
 				typeof entry[1].id === 'string' &&
-				typeof entry[1].name === 'string'
+				typeof entry[1].name === 'string' &&
+				entry[1].outletType !== '2'
 		)
 	);
 	const product = Object.fromEntries(

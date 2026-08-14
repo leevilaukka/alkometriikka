@@ -325,43 +325,43 @@
 		</a>
 	</div>
 	{#if preferredStore}
-		<section class="flex w-full items-center gap-3 rounded border border-primary bg-secondary px-4 py-3 text-2xl">
-			<Icon
-				name={availableInPreferredStore ? 'check_circle' : 'x_circle'}
-				class={availableInPreferredStore
-					? 'text-green-700 dark:text-green-400'
-					: 'text-red-700 dark:text-red-400'}
-			/>
-			<div class="flex min-w-0 flex-1 flex-col gap-1">
-				<div class="flex flex-col items-center justify-between gap-1 sm:flex-row sm:items-center sm:gap-3">
-					<div class="flex flex-col gap-0.5">
-						<span
+		<section class="flex w-full items-center justify-start gap-3 rounded border border-primary bg-secondary px-4 py-3 text-2xl">
+				<div class="flex flex-col w-full items-center justify-between gap-2 sm:flex-row sm:items-center sm:gap-3">
+					<div class="flex w-full items-center gap-3">
+						<Icon
+							name={availableInPreferredStore ? 'check_circle' : 'x_circle'}
 							class={availableInPreferredStore
-								? 'text-sm text-green-700 dark:text-green-400'
-								: 'text-sm text-red-700 dark:text-red-400'}
-						>
-							{availableInPreferredStore
-								? 'Saatavilla valitusta myymälästä'
-								: 'Ei saatavilla valitusta myymälästä'}
-						</span>
-						<strong class="text-lg">{preferredStore.name}</strong>
-						{#if !availableInPreferredStore && closestAvailableStore}
-							<span class="text-sm text-secondary">
-								Lähin saatavilla: {closestAvailableStore.name}{closestAvailableDistance
-									? ` (${closestAvailableDistance})`
-									: ''}
+								? 'text-green-700 dark:text-green-400'
+								: 'text-red-700 dark:text-red-400'}
+						/>
+						<div class="flex flex-col gap-0.5">
+							<span
+								class={availableInPreferredStore
+									? 'text-sm text-green-700 dark:text-green-400'
+									: 'text-sm text-red-700 dark:text-red-400'}
+							>
+								{availableInPreferredStore
+									? 'Saatavilla valitusta myymälästä'
+									: 'Ei saatavilla valitusta myymälästä'}
 							</span>
-						{/if}
+							<strong class="text-lg">{preferredStore.name}</strong>
+							{#if !availableInPreferredStore && closestAvailableStore}
+								<span class="text-sm text-secondary">
+									Lähin saatavilla: {closestAvailableStore.name}{closestAvailableDistance
+										? ` (${closestAvailableDistance})`
+										: ''}
+								</span>
+							{/if}
+						</div>
 					</div>
 					<button
 						type="button"
-						class={twMerge(components.button({ size: 'sm' }), 'shrink-0')}
+						class={twMerge(components.button({ size: 'sm' }), 'w-full sm:w-fit shrink-0')}
 						onclick={requestSettingsOpen}
 					>
 						Vaihda myymälää
 					</button>
 				</div>
-			</div>
 		</section>
 	{/if}
 	<div class="flex w-full flex-col gap-4 rounded border border-primary bg-secondary p-4">
@@ -404,6 +404,17 @@
 	<section class="w-full overflow-hidden rounded border border-primary bg-secondary">
 		<details>
 			<summary class="m-2 text-2xl font-bold">Saatavuus myymälässä</summary>
+			{#if !preferredStore}
+				<div class="border-t border-primary px-4 py-3">
+					<button
+						type="button"
+						class={twMerge(components.button({ type: 'positive', size: 'md' }), 'w-full')}
+						onclick={requestSettingsOpen}
+					>
+						Valitse ensisijainen myymälä
+					</button>
+				</div>
+			{/if}
 			<div class="max-h-128 overflow-y-auto border-t border-primary">
 				{#if rankedAvailabilityStores.length > 0}
 					<ul>

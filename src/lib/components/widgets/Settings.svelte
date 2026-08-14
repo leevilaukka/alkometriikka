@@ -12,12 +12,12 @@
 	import { onMount } from 'svelte';
 
 	let tab = $state<'personal' | 'info' | 'settings'>('personal');
-	let dialogElement: HTMLDialogElement;
+	let dialogElement: HTMLDialogElement | undefined = $state();
 
 	function openSettings() {
 		tab = 'personal';
 		sendAnalyticsEvent('open_settings');
-		if (!dialogElement.open) dialogElement.showModal();
+		if (dialogElement && !dialogElement.open) dialogElement.showModal();
 	}
 
 	onMount(() => onSettingsOpenRequested(openSettings));
@@ -298,6 +298,7 @@
 					name="preferred-store"
 					bind:value={$preferredStoreId}
 					class={twMerge(components.input(), 'w-full')}
+					onchange={() => sendAnalyticsEvent('preferred_store_changed', { storeId: $preferredStoreId, storeName: stores.find(store => store.id === $preferredStoreId)?.name || "" })}
 				>
 					<option value="">Ei valittua myymälää</option>
 					{#each stores as store (store.id)}
