@@ -18,12 +18,18 @@
 	import Icon from '../widgets/Icon.svelte';
 	import Popup from '../widgets/Popup.svelte';
 	import AllLists from '../widgets/AllLists.svelte';
-	import { type ListObj, type PriceListItem } from '$lib/types';
+	import { type AvailabilityStore, type ListObj, type PriceListItem } from '$lib/types';
 	import { addToList } from '$lib/utils/lists';
 	import BadgeList from '../widgets/BadgeList.svelte';
 	import { afterNavigate } from '$app/navigation';
 	import type { Kaljakori } from '$lib/alko';
 	import { findDifferentSizeOfProduct, findSimilarProducts } from '$lib/utils/filters';
+	import {
+		formatStoreDistance,
+		getStoreDistance,
+		rankStoresByDistance
+	} from '$lib/utils/availability';
+	import { requestSettingsOpen } from '$lib/utils/settings';
 	import ProductImage from '../widgets/ProductImage.svelte';
 	import { generateImageUrl } from '$lib/utils/image';
 	import {
@@ -54,7 +60,30 @@
 		Filler
 	);
 
-	const { product, kaljakori }: { product: PriceListItem; kaljakori: Kaljakori } = $props();
+	const {
+		product,
+		kaljakori,
+		availabilityStores,
+		preferredStore
+	}: {
+		product: PriceListItem;
+		kaljakori: Kaljakori;
+		availabilityStores: AvailabilityStore[];
+		preferredStore?: AvailabilityStore;
+	} = $props();
+
+	const rankedAvailabilityStores = $derived(
+		rankStoresByDistance(availabilityStores, preferredStore)
+	);
+	const availableInPreferredStore = $derived(
+		preferredStore
+			? availabilityStores.some((store) => store.id === preferredStore.id)
+			: false
+	);
+	const closestAvailableStore = $derived(rankedAvailabilityStores[0]);
+	const closestAvailableDistance = $derived(
+		formatStoreDistance(getStoreDistance(preferredStore, closestAvailableStore))
+	);
 
 	console.log('Product.svelte product', product);
 
@@ -295,6 +324,46 @@
 			{/if}
 		</a>
 	</div>
+	{#if preferredStore}
+		<section class="flex w-full items-center gap-3 rounded border border-primary bg-secondary px-4 py-3 text-2xl">
+			<Icon
+				name={availableInPreferredStore ? 'check_circle' : 'x_circle'}
+				class={availableInPreferredStore
+					? 'text-green-700 dark:text-green-400'
+					: 'text-red-700 dark:text-red-400'}
+			/>
+			<div class="flex min-w-0 flex-1 flex-col gap-1">
+				<div class="flex flex-col items-center justify-between gap-1 sm:flex-row sm:items-center sm:gap-3">
+					<div class="flex flex-col gap-0.5">
+						<span
+							class={availableInPreferredStore
+								? 'text-sm text-green-700 dark:text-green-400'
+								: 'text-sm text-red-700 dark:text-red-400'}
+						>
+							{availableInPreferredStore
+								? 'Saatavilla valitusta myymälästä'
+								: 'Ei saatavilla valitusta myymälästä'}
+						</span>
+						<strong class="text-lg">{preferredStore.name}</strong>
+						{#if !availableInPreferredStore && closestAvailableStore}
+							<span class="text-sm text-secondary">
+								Lähin saatavilla: {closestAvailableStore.name}{closestAvailableDistance
+									? ` (${closestAvailableDistance})`
+									: ''}
+							</span>
+						{/if}
+					</div>
+					<button
+						type="button"
+						class={twMerge(components.button({ size: 'sm' }), 'shrink-0')}
+						onclick={requestSettingsOpen}
+					>
+						Vaihda myymälää
+					</button>
+				</div>
+			</div>
+		</section>
+	{/if}
 	<div class="flex w-full flex-col gap-4 rounded border border-primary bg-secondary p-4">
 		<div class="flex flex-col items-start gap-0.5 md:flex-row md:gap-3">
 			<div class="flex flex-col gap-0.5 md:gap-1">
@@ -332,6 +401,37 @@
 			{/each}
 		</div>
 	</div>
+	<section class="w-full overflow-hidden rounded border border-primary bg-secondary">
+		<details>
+			<summary class="m-2 text-2xl font-bold">Saatavuus myymälässä</summary>
+			<div class="max-h-128 overflow-y-auto border-t border-primary">
+				{#if rankedAvailabilityStores.length > 0}
+					<ul>
+						{#each rankedAvailabilityStores as store (store.id)}
+							{@const distance = formatStoreDistance(getStoreDistance(preferredStore, store))}
+							<li class="flex gap-3 border-b border-primary px-4 py-3 last:border-b-0">
+								<div class="flex min-w-0 flex-1 flex-col gap-0.5">
+									<span class="font-semibold">{store.name}</span>
+									{#if store.address || store.postalCode || store.postOffice}
+										<span class="text-sm text-secondary">
+											{[store.address, [store.postalCode, store.postOffice].filter(Boolean).join(' ')]
+												.filter(Boolean)
+												.join(', ')}
+										</span>
+									{/if}
+								</div>
+								{#if distance}
+									<span class="shrink-0 text-sm text-secondary">{distance}</span>
+								{/if}
+							</li>
+						{/each}
+					</ul>
+				{:else}
+					<p class="px-4 py-3 text-secondary">Ei saatavilla myymälöissä.</p>
+				{/if}
+			</div>
+		</details>
+	</section>
 	{#if dev || product[AllColumns.History]?.length > 1}
 		<details class="w-full rounded border border-primary bg-secondary">
 			<summary

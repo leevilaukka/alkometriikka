@@ -1,16 +1,33 @@
 <script lang="ts">
 	import { components } from '$lib/utils/styles';
 	import { twMerge } from 'tailwind-merge';
-	import { isLaptop, isMobile, personalInfo, theme } from '$lib/global.svelte';
+	import { isLaptop, isMobile, personalInfo, preferredStoreId, theme } from '$lib/global.svelte';
 	import { GenderOptionsMap } from '$lib/utils/constants';
 	import Popup from '$lib/components/widgets/Popup.svelte';
 	import Icon from '$lib/components/widgets/Icon.svelte';
 	import { version } from '$app/environment';
 	import { handleClearAll, handleExport, handleImport, sendAnalyticsEvent } from '$lib/utils/helpers';
+	import type { AvailabilityStore } from '$lib/types';
+	import { onSettingsOpenRequested } from '$lib/utils/settings';
+	import { onMount } from 'svelte';
 
 	let tab = $state<'personal' | 'info' | 'settings'>('personal');
+	let dialogElement: HTMLDialogElement;
+
+	function openSettings() {
+		tab = 'personal';
+		sendAnalyticsEvent('open_settings');
+		if (!dialogElement.open) dialogElement.showModal();
+	}
+
+	onMount(() => onSettingsOpenRequested(openSettings));
 
 	const { alko }: { alko: any } = $props();
+	const stores = $derived(
+		(Object.values(alko.availability.stores) as AvailabilityStore[]).sort((a, b) =>
+			a.name.localeCompare(b.name, 'fi', { sensitivity: 'base' })
+		)
+	);
 
 	const timeConfig: Intl.DateTimeFormatOptions = {
 		hour: '2-digit',
@@ -19,14 +36,11 @@
 	};
 </script>
 
-<Popup class="gap-4 p-4">
+<Popup bind:dialogElement class="gap-4 p-4">
 	{#snippet renderButton(dialogElement: HTMLDialogElement)}
 		<button
 			class={twMerge(components.button(), 'p-2 text-xl')}
-			onclick={() =>  {
-				sendAnalyticsEvent('open_settings');
-				dialogElement.showModal()
-			}}
+			onclick={openSettings}
 		>
 			{#if !$isMobile}<span class="text-sm">Asetukset</span>{/if}<Icon name="cog" />
 		</button>
@@ -276,6 +290,23 @@
 						<option value={option}>{option}</option>
 					{/each}
 				</select>
+			</div>
+			<div class="flex flex-col gap-2 border-t border-primary pt-3">
+				<label for="preferred-store" class="text-sm font-bold">Ensisijainen myymälä</label>
+				<select
+					id="preferred-store"
+					name="preferred-store"
+					bind:value={$preferredStoreId}
+					class={twMerge(components.input(), 'w-full')}
+				>
+					<option value="">Ei valittua myymälää</option>
+					{#each stores as store (store.id)}
+						<option value={store.id}>{store.name}</option>
+					{/each}
+				</select>
+				<p class="text-xs text-secondary">
+					Tuotesivu näyttää tuotteen saatavuuden valitsemassasi myymälässä.
+				</p>
 			</div>
 			<p class="self-end text-xs text-secondary">Tallentaminen lataa sivun uudelleen.</p>
 			<div class="grid grid-cols-2 gap-3">

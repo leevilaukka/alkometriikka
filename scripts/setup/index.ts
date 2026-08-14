@@ -18,18 +18,20 @@
  */
 
 import {
-    DEV,
+	DEV,
 	LEGACY_HEADERS,
 	REQUEST_HEADERS,
 	SEARCH_URL,
+	STORES_URL,
 	buildLegacyValues,
 	getHash,
 	getHashValues,
 	isIrrelevantMainGroup,
 	isIrrelevantStoredValues,
-    productDetailsUrl
+	productDetailsUrl
 } from './constants.ts';
 import type {
+	AvailabilityData,
 	DetailedProductData,
 	MigratedData,
 	MigratedProduct,
@@ -37,16 +39,19 @@ import type {
 	ProductDetailsApiResponse,
 	ProductMeta,
 	SearchApiResponse,
-	SearchProductData
+	SearchProductData,
+	StoreData,
+	StoresApiResponse
 } from './types.ts';
 
 // ============================================================================
 // CONFIG & CONSTANTS
 // ============================================================================
 
-
 /** Where the dataset is read from and written to. Mirrors the legacy setup.ts convention. */
 const DATA_PATH = DEV ? './static/data.json' : './data.json';
+/** Store and per-product availability generated from the same complete search sweep. */
+const AVAILABILITY_PATH = DEV ? './static/availability.json' : './availability.json';
 /** Fallback base dataset used when no synced `data.json` exists yet (produced by migrate.ts). */
 const MIGRATED_DATA_PATH = './data-migrated.json';
 
@@ -326,6 +331,42 @@ async function fetchProductDetails(
 	return response?.data ?? null;
 }
 
+/** Fetches all stores and indexes the unmodified API objects by store id. */
+async function loadStores(config: Config): Promise<Record<string, StoreData> | null> {
+	const response = await fetchJson<StoresApiResponse>(
+		STORES_URL,
+		{ method: 'GET' },
+		config.maxRetries
+	);
+	const storeList = response?.data;
+	const totalAmount = response?.totalAmount;
+
+	if (!Array.isArray(storeList) || storeList.length === 0) {
+		console.error('  ❌ Store API returned no stores.');
+		return null;
+	}
+	if (typeof totalAmount === 'number' && storeList.length !== totalAmount) {
+		console.error(`  ❌ Store API returned ${storeList.length}/${totalAmount} stores.`);
+		return null;
+	}
+
+	const stores: Record<string, StoreData> = {};
+	for (const store of storeList) {
+		if (!store || typeof store !== 'object' || typeof store.id !== 'string' || !store.id) {
+			console.error('  ❌ Store API returned a store without a valid id.');
+			return null;
+		}
+		if (store.id in stores) {
+			console.error(`  ❌ Store API returned duplicate id ${store.id}.`);
+			return null;
+		}
+		stores[store.id] = store;
+	}
+
+	console.log(`  🏪 Fetched ${storeList.length} stores`);
+	return stores;
+}
+
 // ============================================================================
 // DATA
 // ============================================================================
@@ -414,7 +455,12 @@ async function purgeCache(): Promise<void> {
 					'Content-Type': 'application/json',
 					Authorization: `Bearer ${purgeKey}`
 				},
-				body: JSON.stringify({ files: ['https://alkometriikka.fi/data.json'] })
+				body: JSON.stringify({
+					files: [
+						'https://alkometriikka.fi/data.json',
+						'https://alkometriikka.fi/availability.json'
+					]
+				})
 			}
 		);
 
@@ -445,9 +491,10 @@ async function sync(): Promise<void> {
 		console.log(`  🔧 Config:`, config);
 	}
 
-	const [searchResult, existing] = await Promise.all([
+	const [searchResult, existing, stores] = await Promise.all([
 		loadSearchProducts(config),
-		loadExistingData()
+		loadExistingData(),
+		loadStores(config)
 	]);
 
 	const searchProducts = searchResult.products;
@@ -461,8 +508,8 @@ async function sync(): Promise<void> {
 		const totalLabel = searchResult.expectedTotal !== null ? `/${searchResult.expectedTotal}` : '';
 		console.warn(
 			`\n⚠️  Search fetch was INCOMPLETE (${searchProducts.length}${totalLabel} products). ` +
-			`Aborting sync without writing the dataset to avoid overwriting existing data with a ` +
-			`partial result. Re-run the sync once the API returns the full product list.`
+				`Aborting sync without writing the dataset to avoid overwriting existing data with a ` +
+				`partial result. Re-run the sync once the API returns the full product list.`
 		);
 		process.exit(1);
 	}
@@ -474,8 +521,15 @@ async function sync(): Promise<void> {
 	if (searchProducts.length === 0) {
 		console.warn(
 			`\n⚠️  Search fetch returned 0 products. Aborting sync without writing the dataset to ` +
-			`avoid overwriting existing data with an empty result. Re-run the sync once the API ` +
-			`returns the product list.`
+				`avoid overwriting existing data with an empty result. Re-run the sync once the API ` +
+				`returns the product list.`
+		);
+		process.exit(1);
+	}
+
+	if (!stores) {
+		console.warn(
+			'\n⚠️  Store fetch failed or returned no stores. Aborting sync without writing either dataset.'
 		);
 		process.exit(1);
 	}
@@ -635,9 +689,14 @@ async function sync(): Promise<void> {
 	const hasChanges =
 		stats.added > 0 || stats.updated > 0 || stats.removed > 0 || stats.filteredRemoved > 0;
 
-	const workflowRunUrl = process.env.GITHUB_RUN_ID && process.env.GITHUB_REPOSITORY ? `https://github.com/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}` : '';
+	const workflowRunUrl =
+		process.env.GITHUB_RUN_ID && process.env.GITHUB_REPOSITORY
+			? `https://github.com/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`
+			: '';
 
-	const currentCIRun = process.env.GITHUB_SHA ? { commit: process.env.GITHUB_SHA, workflowRun: workflowRunUrl } : undefined;
+	const currentCIRun = process.env.GITHUB_SHA
+		? { commit: process.env.GITHUB_SHA, workflowRun: workflowRunUrl }
+		: undefined;
 	const previousCIRun = existing.metadata?.ci;
 	const emptyCIRun = { commit: '', workflowRun: '' };
 
@@ -655,9 +714,18 @@ async function sync(): Promise<void> {
 		},
 		products
 	};
+	const availability: AvailabilityData = {
+		lastUpdated: now,
+		stores,
+		product: Object.fromEntries(searchProducts.map((product) => [product.id, product.storeId]))
+	};
 
-	await Bun.write(DATA_PATH, JSON.stringify(result));
+	await Promise.all([
+		Bun.write(DATA_PATH, JSON.stringify(result)),
+		Bun.write(AVAILABILITY_PATH, JSON.stringify(availability))
+	]);
 	printSummary(stats, Object.keys(products).length);
+	console.log(`✅ Saved ${AVAILABILITY_PATH}`);
 
 	await purgeCache();
 }

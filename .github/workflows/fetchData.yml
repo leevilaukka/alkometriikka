@@ -3,11 +3,11 @@ name: Download Price List
 on:
   workflow_dispatch:
   schedule:
-      - cron: '0 */6 * * *' # Runs every 6 hours
+    - cron: '0 */6 * * *' # Runs every 6 hours
   workflow_run: # Runs after page is built
-      workflows: ["Build and move files to gh-pages branch"]
-      types:
-        - completed
+    workflows: ['Build and move files to gh-pages branch']
+    types:
+      - completed
 
 concurrency:
   group: gh-pages-deployment
@@ -20,71 +20,71 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
-        - name: Checkout repository
-          uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-        - name: Install Bun
-          uses: oven-sh/setup-bun@v2
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v2
 
-        - name: Cache Bun dependencies
-          uses: actions/cache@v4
-          with:
-            path: |
-              ~/.bun
-              node_modules
-            key: ${{ runner.os }}-bun-${{ hashFiles('bun.lock') }}
-            restore-keys: |
-              ${{ runner.os }}-bun-
+      - name: Cache Bun dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.bun
+            node_modules
+          key: ${{ runner.os }}-bun-${{ hashFiles('bun.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-bun-
 
-        - name: Install dependencies
-          run: bun install --frozen-lockfile
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
 
-        - name: Seed existing dataset from gh-pages
-          run: |
-            git fetch origin gh-pages || true
-            if git show origin/gh-pages:data.json > /tmp/data.json 2>/dev/null; then
-              mv /tmp/data.json data.json
+      - name: Seed existing dataset from gh-pages
+        run: |
+          git fetch origin gh-pages || true
+          if git show origin/gh-pages:data.json > /tmp/data.json 2>/dev/null; then
+            mv /tmp/data.json data.json
+          fi
+
+      - name: Run script to convert to JSON
+        env:
+          CLOUDFLARE_PURGE_KEY: ${{ secrets.CLOUDFLARE_PURGE_KEY }}
+          CLOUDFLARE_ZONE: ${{ secrets.CF_ZONE }}
+        run: |
+          for attempt in 1 2 3; do
+            echo "▶️  Sync attempt $attempt..."
+            if bun run scripts/setup/index.ts; then
+              echo "✅ Sync succeeded on attempt $attempt"
+              exit 0
             fi
+            echo "⚠️  Sync failed on attempt $attempt (incomplete fetch or error)"
+            if [ "$attempt" -lt 3 ]; then
+              echo "⏳ Waiting 60s before retrying..."
+              sleep 60
+            fi
+          done
+          echo "❌ All sync attempts failed — leaving existing dataset untouched."
+          exit 1
 
-        - name: Run script to convert to JSON
-          env:
-            CLOUDFLARE_PURGE_KEY: ${{ secrets.CLOUDFLARE_PURGE_KEY }}
-            CLOUDFLARE_ZONE: ${{ secrets.CF_ZONE }}
-          run: |
-            for attempt in 1 2 3; do
-              echo "▶️  Sync attempt $attempt..."
-              if bun run scripts/setup/index.ts; then
-                echo "✅ Sync succeeded on attempt $attempt"
-                exit 0
-              fi
-              echo "⚠️  Sync failed on attempt $attempt (incomplete fetch or error)"
-              if [ "$attempt" -lt 3 ]; then
-                echo "⏳ Waiting 60s before retrying..."
-                sleep 60
-              fi
-            done
-            echo "❌ All sync attempts failed — leaving existing dataset untouched."
-            exit 1
+      - name: Run script to generate sitemap
+        run: |
+          bun run scripts/sitemap.ts
 
-        - name: Run script to generate sitemap
-          run: |
-            bun run scripts/sitemap.ts
+      - name: Check out deployed site
+        run: |
+          git fetch origin gh-pages
+          git worktree add --detach ../gh-pages origin/gh-pages
 
-        - name: Check out deployed site
-          run: |
-            git fetch origin gh-pages
-            git worktree add --detach ../gh-pages origin/gh-pages
+      - name: Refresh product pages
+        run: |
+          bun run scripts/prerender-products.ts --data data.json --out ../gh-pages --template ../gh-pages/404.html
+          cp data.json availability.json sitemap.xml ../gh-pages/
 
-        - name: Refresh product pages
-          run: |
-            bun run scripts/prerender-products.ts --data data.json --out ../gh-pages --template ../gh-pages/404.html
-            cp data.json sitemap.xml ../gh-pages/
-
-        - name: Commit and push downloaded file
-          working-directory: ../gh-pages
-          run: |
-            git config --global user.name "github-actions[bot]"
-            git config --global user.email "github-actions[bot]@users.noreply.github.com"
-            git add data.json sitemap.xml tuotteet -f
-            git commit -m "Update price list and static product pages [skip ci]" || echo "No changes to commit"
-            git push origin HEAD:gh-pages
+      - name: Commit and push downloaded file
+        working-directory: ../gh-pages
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data.json availability.json sitemap.xml tuotteet -f
+          git commit -m "Update price list and static product pages [skip ci]" || echo "No changes to commit"
+          git push origin HEAD:gh-pages

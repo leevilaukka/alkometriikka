@@ -2,7 +2,7 @@ name: Build and move files to gh-pages branch
 
 on:
   push:
-    branches: [ 'main' ]
+    branches: ['main']
 
 concurrency:
   group: gh-pages-deployment
@@ -11,7 +11,7 @@ concurrency:
 jobs:
   build_site:
     runs-on: ubuntu-latest
-    permissions: 
+    permissions:
       contents: write
       pages: write
       id-token: write
@@ -43,13 +43,16 @@ jobs:
           if git show origin/gh-pages:data.json > /tmp/data.json 2>/dev/null; then
             mv /tmp/data.json static/data.json
           fi
+          if git show origin/gh-pages:availability.json > /tmp/availability.json 2>/dev/null; then
+            mv /tmp/availability.json static/availability.json
+          fi
 
       - name: build
         env:
           BASE_PATH: ''
         run: |
           bun run build
-    
+
       - name: Delete all files except build directory
         run: |
           shopt -s extglob
@@ -85,7 +88,3 @@ jobs:
           git push origin gh-pages --force
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-        
-      
-      
