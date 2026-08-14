@@ -27,7 +27,7 @@
         </div>
         <div class="flex w-full flex-col gap-2">
             <div class="flex flex-row items-center gap-3">
-                <a href={`/tuotteet/${product[AllColumns.Number]}`} class="hover:underline">
+                <a href={`/tuotteet/${product[AllColumns.Number]}/`} class="hover:underline">
                     <h2 class="text-xl font-bold md:text-2xl">
                         {product[AllColumns.Name]} ({formatValue(
                             product[AllColumns.BottleSize],

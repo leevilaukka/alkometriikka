@@ -4,6 +4,10 @@ on:
   push:
     branches: [ 'main' ]
 
+concurrency:
+  group: gh-pages-deployment
+  cancel-in-progress: false
+
 jobs:
   build_site:
     runs-on: ubuntu-latest
@@ -33,6 +37,13 @@ jobs:
       - name: Install dependencies
         run: bun i --frozen-lockfile
 
+      - name: Seed latest deployed dataset
+        run: |
+          git fetch origin gh-pages || true
+          if git show origin/gh-pages:data.json > /tmp/data.json 2>/dev/null; then
+            mv /tmp/data.json static/data.json
+          fi
+
       - name: build
         env:
           BASE_PATH: ''
@@ -53,11 +64,11 @@ jobs:
         run: |
           cp 404.html index.html
 
-      - name: Restore data.json and sitemap.xml from existing gh-pages
+      - name: Restore sitemap.xml from existing gh-pages
         run: |
-          git fetch origin gh-pages || true
-          git show origin/gh-pages:data.json > data.json 2>/dev/null || true
-          git show origin/gh-pages:sitemap.xml > sitemap.xml 2>/dev/null || true
+          if git show origin/gh-pages:sitemap.xml > /tmp/sitemap.xml 2>/dev/null; then
+            mv /tmp/sitemap.xml sitemap.xml
+          fi
 
       - name: Create CNAME and .nojekyll file
         run: |

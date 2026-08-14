@@ -31,6 +31,17 @@ A production build can be built by running:
 npm run build
 ```
 
+The build reads `build/data.json` once after Vite finishes and generates a static
+`tuotteet/<id>/index.html` document for every product. These documents provide
+product-specific HTML, canonical and social metadata, and JSON-LD while the
+existing client application continues to provide the interactive experience.
+
+To refresh only the product documents against an already-built site, run:
+
+```sh
+bun run prerender:products --data path/to/data.json --out path/to/site --template path/to/site/404.html
+```
+
 You can preview the production build with `npm run preview`.
 
 ## Deploying

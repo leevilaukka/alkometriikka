@@ -180,7 +180,7 @@
 		og: {
 			title: generateTitle(`${product[AllColumns.Name]}`),
 			description: `Katso ${product[AllColumns.Name]} -tuotteen tiedot, hinnat ja vastaavat tuotteet Alkometriikasta.`,
-			url: `https://alkometriikka.fi/tuotteet/${product[AllColumns.Number]}`
+			url: `https://alkometriikka.fi/tuotteet/${product[AllColumns.Number]}/`
 		},
 		image: {
 			alt: product[AllColumns.Name],
@@ -364,7 +364,7 @@
 			<div class="flex max-w-full flex-col flex-nowrap gap-3">
 				{#each differentSizesOfProduct.sort((a, b) => a[AllColumns.BottleSize] - b[AllColumns.BottleSize]) as differentSizeProduct}
 					<a
-						href={`/tuotteet/${differentSizeProduct[AllColumns.Number]}`}
+						href={`/tuotteet/${differentSizeProduct[AllColumns.Number]}/`}
 						class="flex shrink-0 flex-row gap-3 rounded-lg border border-primary p-4"
 					>
 						<div class="flex aspect-square h-36 w-fit shrink-0 rounded bg-white p-2 md:max-w-fit">
@@ -411,7 +411,7 @@
 		<div class="flex max-w-full flex-row flex-nowrap gap-3 overflow-x-auto" use:sideScroll>
 			{#each similarProducts as similarProduct}
 				<a
-					href={`/tuotteet/${similarProduct[AllColumns.Number]}`}
+					href={`/tuotteet/${similarProduct[AllColumns.Number]}/`}
 					class="flex w-48 shrink-0 flex-col gap-3 rounded-lg border border-primary p-4"
 				>
 					<div class="flex h-[calc(3_*_2.5rem)] flex-col gap-2 md:h-[calc(3_*_2.75rem)]">

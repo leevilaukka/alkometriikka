@@ -1,5 +1,7 @@
 import { error, redirect } from '@sveltejs/kit';
 
+export const trailingSlash = 'always';
+
 export async function load({ parent, params }) {
     const data = await parent();
     const alko = await data.alko

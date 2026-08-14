@@ -97,7 +97,7 @@
 		const productCode = rawValue;
 		const products = kaljakori.findByColumn(AllColumns.EAN, productCode);
 		if (products.length !== 1) throw 'Tuotetta ei löytynyt';
-		const link = `/tuotteet/${products[0][AllColumns.Number]}`;
+		const link = `/tuotteet/${products[0][AllColumns.Number]}/`;
 		sendAnalyticsEvent('scan_barcode', { ean: productCode, link });
 		goto(link, { replaceState: true });
 	}
@@ -110,7 +110,7 @@
 				const productNumber = url.pathname.split("/tuotteet/")[1].split("/")[0];
 				const products = kaljakori.findByColumn(AllColumns.Number, productNumber);
 				if (products.length !== 1) throw 'Tuotetta ei löytynyt';
-				const link = `/tuotteet/${products[0][AllColumns.Number]}`;
+				const link = `/tuotteet/${products[0][AllColumns.Number]}/`;
 				sendAnalyticsEvent('scan_qr_code', { type: 'alko_product_qr', product_number: productNumber, link });
 				goto(link, { replaceState: true });
 				return;

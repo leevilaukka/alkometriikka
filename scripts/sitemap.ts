@@ -15,7 +15,7 @@ async function main() {
         if (!product || !Array.isArray(product.values)) continue;
         const priceHistory = product.priceHistory ?? [];
         sitemapEntries.push({
-            loc: `/tuotteet/${product.values[0]}`,
+            loc: `/tuotteet/${product.values[0]}/`,
             lastMod: priceHistory.length > 0
                 ? priceHistory[priceHistory.length - 1].date
                 : new Date().toISOString().split('T')[0],
