@@ -3,6 +3,9 @@ import path from "node:path";
 
 type ProductRecord = {
   values: unknown[];
+  meta?: {
+    removedFromSelection?: string;
+  };
 };
 
 type Dataset = {
@@ -59,6 +62,14 @@ function formatNumber(value: unknown, suffix: string): string {
   return Number.isFinite(number) ? `${number.toLocaleString("fi-FI")} ${suffix}` : text;
 }
 
+function parsePrice(value: unknown, productId: string): number {
+  const price = typeof value === "number" ? value : Number(asText(value).replace(",", "."));
+  if (!Number.isFinite(price) || price <= 0) {
+    throw new Error(`Invalid price for product ${productId}: ${asText(value) || "(empty)"}`);
+  }
+  return price;
+}
+
 function replaceMarkedSection(template: string, content: string): string {
   const start = template.indexOf(SEO_START);
   const end = template.indexOf(SEO_END, start);
@@ -83,6 +94,7 @@ function productHtml(template: string, schema: string[], product: ProductRecord)
   const title = `${name} | Alkometriikka`;
   const url = `${SITE_URL}/tuotteet/${encodeURIComponent(id)}/`;
   const image = `https://images.alko.fi/images/cs_srgb,f_auto,t_products/cdn/${encodeURIComponent(id)}/kuva.jpg`;
+  const price = parsePrice(fields.Hinta, id);
   const keywords = [name, manufacturer, type, subtype, descriptionValue].filter(Boolean).join(", ");
   const category = [type, subtype].filter(Boolean).join(" / ");
 
@@ -95,7 +107,16 @@ function productHtml(template: string, schema: string[], product: ProductRecord)
     image,
     description: descriptionValue || description,
     ...(manufacturer ? { brand: { "@type": "Brand", name: manufacturer } } : {}),
-    ...(category ? { category } : {})
+    ...(category ? { category } : {}),
+    offers: {
+      "@type": "Offer",
+      url,
+      price,
+      priceCurrency: "EUR",
+      availability: product.meta?.removedFromSelection
+        ? "https://schema.org/Discontinued"
+        : "https://schema.org/InStock"
+    }
   };
 
   const metadata = [
