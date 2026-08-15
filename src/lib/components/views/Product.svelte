@@ -205,26 +205,28 @@
 	let historyOpened = $state(false);
 	let availabilityOpened = $state(false);
 
-	setSEO({
-		description: `Katso ${product[AllColumns.Name]} -tuotteen tiedot, hinnat ja vastaavat tuotteet Alkometriikasta.`,
-		og: {
-			title: generateTitle(`${product[AllColumns.Name]}`),
+	$effect(() => {
+		setSEO({
 			description: `Katso ${product[AllColumns.Name]} -tuotteen tiedot, hinnat ja vastaavat tuotteet Alkometriikasta.`,
-			url: `https://alkometriikka.fi/tuotteet/${product[AllColumns.Number]}/`
-		},
-		image: {
-			alt: product[AllColumns.Name],
-			url: generateImageUrl(product[AllColumns.Number], product[AllColumns.Name], 'medium'),
-			width: '160',
-			height: '192'
-		},
-		twitter: {
-			card: 'summary_large_image',
-			title: generateTitle(`${product[AllColumns.Name]}`),
-			description: `Katso ${product[AllColumns.Name]} -tuotteen tiedot, hinnat ja vastaavat tuotteet Alkometriikasta.`,
-			image: generateImageUrl(product[AllColumns.Number], product[AllColumns.Name], 'medium')
-		},
-		keywords: `${product[AllColumns.Name]}, ${product[AllColumns.Manufacturer]}, ${product[AllColumns.Type]}, ${product[AllColumns.SubType]}, ${[...(product[AllColumns.Description] || [])].join(', ').toLocaleLowerCase()}`
+			og: {
+				title: generateTitle(`${product[AllColumns.Name]}`),
+				description: `Katso ${product[AllColumns.Name]} -tuotteen tiedot, hinnat ja vastaavat tuotteet Alkometriikasta.`,
+				url: `https://alkometriikka.fi/tuotteet/${product[AllColumns.Number]}/`
+			},
+			image: {
+				alt: product[AllColumns.Name],
+				url: generateImageUrl(product[AllColumns.Number], product[AllColumns.Name], 'medium'),
+				width: '160',
+				height: '192'
+			},
+			twitter: {
+				card: 'summary_large_image',
+				title: generateTitle(`${product[AllColumns.Name]}`),
+				description: `Katso ${product[AllColumns.Name]} -tuotteen tiedot, hinnat ja vastaavat tuotteet Alkometriikasta.`,
+				image: generateImageUrl(product[AllColumns.Number], product[AllColumns.Name], 'medium')
+			},
+			keywords: `${product[AllColumns.Name]}, ${product[AllColumns.Manufacturer]}, ${product[AllColumns.Type]}, ${product[AllColumns.SubType]}, ${[...(product[AllColumns.Description] || [])].join(', ').toLocaleLowerCase()}`
+		});
 	});
 
 	const differentSizesOfProduct = $derived(findDifferentSizeOfProduct(product, kaljakori));
