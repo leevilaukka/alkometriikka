@@ -147,6 +147,7 @@ export type AnalyticsEventMap = {
 	scan_barcode: { ean: string; link?: string };
 	scan_qr_code: { type: string; product_number: string; link?: string };
 	preferred_store_changed: { storeId: string; storeName: string; action?: 'set' | 'change' };
+	show_availability: { product_number?: string; [key: string]: any }
 } & {
 	[K in ShareEvent]: { url?: string; sid?: string; [key: string]: any };
 } & {

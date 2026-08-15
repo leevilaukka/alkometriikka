@@ -203,6 +203,7 @@
 
 	let sizesOpened = $state(false);
 	let historyOpened = $state(false);
+	let availabilityOpened = $state(false);
 
 	setSEO({
 		description: `Katso ${product[AllColumns.Name]} -tuotteen tiedot, hinnat ja vastaavat tuotteet Alkometriikasta.`,
@@ -403,7 +404,12 @@
 	</div>
 	<section class="w-full overflow-hidden rounded border border-primary bg-secondary">
 		<details>
-			<summary class="m-2 text-2xl font-bold">Saatavuus myymälässä</summary>
+			<summary class="m-2 text-2xl font-bold" onclick={(e) => {
+				if (!availabilityOpened) sendAnalyticsEvent('show_availability', { product_number: product[AllColumns.Number] });
+				availabilityOpened = true;
+			}}>
+				Saatavuus myymälässä
+			</summary>
 			{#if !preferredStore}
 				<div class="border-t border-primary px-4 py-3">
 					<button
