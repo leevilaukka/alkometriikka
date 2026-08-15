@@ -1,5 +1,6 @@
 import { mkdir, rm } from "node:fs/promises";
 import path from "node:path";
+import Bun from "bun";
 
 type ProductRecord = {
   values: unknown[];
@@ -93,7 +94,7 @@ function productHtml(template: string, schema: string[], product: ProductRecord)
   const description = `Katso ${name} -tuotteen tiedot, hinnat ja vastaavat tuotteet Alkometriikasta.`;
   const title = `${name} | Alkometriikka`;
   const url = `${SITE_URL}/tuotteet/${encodeURIComponent(id)}/`;
-  const image = `https://images.alko.fi/images/cs_srgb,f_auto,t_products/cdn/${encodeURIComponent(id)}/kuva.jpg`;
+  const image = `https://images.alko.fi/images/cs_srgb,f_auto,t_medium/cdn/${encodeURIComponent(id)}/kuva.jpg`;
   const price = parsePrice(fields.Hinta, id);
   const keywords = [name, manufacturer, type, subtype, descriptionValue].filter(Boolean).join(", ");
   const category = [type, subtype].filter(Boolean).join(" / ");
@@ -127,6 +128,7 @@ function productHtml(template: string, schema: string[], product: ProductRecord)
     `\t<meta property="og:title" content="${escapeHtml(title)}" />`,
     `\t<meta property="og:url" content="${escapeHtml(url)}" />`,
     `\t<meta property="og:description" content="${escapeHtml(description)}" />`,
+    `\t<meta property="og:site_name" content="Alkometriikka" />`,
     `\t<meta property="og:image" content="${escapeHtml(image)}" />`,
     `\t<meta property="og:image:alt" content="${escapeHtml(name)}" />`,
     `\t<meta name="twitter:card" content="summary_large_image" />`,
