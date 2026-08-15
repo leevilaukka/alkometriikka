@@ -44,7 +44,7 @@ function generateSitemapXML(entries: { loc: string; lastMod: string, imageLoc: s
     const body = entries.map((entry) => {
         const encodedLoc = encodeURI( entry.loc );
         return `  <url>\n` +
-            `    <loc>https://alkometriikka.fi${encodedLoc}/</loc>\n` +
+            `    <loc>https://alkometriikka.fi${encodedLoc}</loc>\n` +
             `    <priority>0.6</priority>\n` +
             `    <changefreq>weekly</changefreq>\n` +
             `    <lastmod>${entry.lastMod}</lastmod>\n` +
