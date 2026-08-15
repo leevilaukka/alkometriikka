@@ -5,7 +5,7 @@ export async function load({ parent, params }) {
     if (!id) {
         throw redirect(300, "/");
     } else {
-        throw redirect(300, `/tuotteet/${id}`);
+        throw redirect(300, `/tuotteet/${id}/`);
     }  
 }
  
