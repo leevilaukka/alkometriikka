@@ -7,6 +7,7 @@ type ProductRecord = {
   meta?: {
     removedFromSelection?: string;
   };
+  priceHistory?: { date: string; price: number }[];
 };
 
 type Dataset = {
@@ -63,6 +64,21 @@ function formatNumber(value: unknown, suffix: string): string {
   return Number.isFinite(number) ? `${number.toLocaleString("fi-FI")} ${suffix}` : text;
 }
 
+function asNumber(value: unknown): number | null {
+  if (typeof value === "number") return Number.isFinite(value) ? value : null;
+  const number = Number(asText(value).replace(",", "."));
+  return Number.isFinite(number) && number > 0 ? number : null;
+}
+
+function property(
+  name: string,
+  value: unknown,
+  suffix?: string
+): { "@type": "PropertyValue"; name: string; value: string } | null {
+  const text = suffix ? formatNumber(value, suffix) : asText(value);
+  return text ? { "@type": "PropertyValue", name, value: text } : null;
+}
+
 function parsePrice(value: unknown, productId: string): number {
   const price = typeof value === "number" ? value : Number(asText(value).replace(",", "."));
   if (!Number.isFinite(price) || price <= 0) {
@@ -95,28 +111,69 @@ function productHtml(template: string, schema: string[], product: ProductRecord)
   const title = `${name} | Alkometriikka`;
   const url = `${SITE_URL}/tuotteet/${encodeURIComponent(id)}/`;
   const image = `https://images.alko.fi/images/cs_srgb,f_auto,t_medium/cdn/${encodeURIComponent(id)}/kuva.jpg`;
+  const imageVariants = [
+    image,
+    `https://images.alko.fi/images/cs_srgb,f_auto,t_products/cdn/${encodeURIComponent(id)}/kuva.jpg`
+  ];
   const price = parsePrice(fields.Hinta, id);
   const keywords = [name, manufacturer, type, subtype, descriptionValue].filter(Boolean).join(", ");
   const category = [type, subtype].filter(Boolean).join(" / ");
+  const volume = asNumber(fields.Pullokoko);
+  const pricePerLitre = asNumber(fields.Litrahinta);
+  const priceValidUntil = product.priceHistory?.at(-1)?.date;
+  const additionalProperties = [
+    property("Valmistusmaa", fields.Valmistusmaa),
+    property("Alue", fields.Alue),
+    property("Vuosikerta", fields.Vuosikerta),
+    property("Rypäleet", fields.Rypäleet),
+    property("Pakkaustyyppi", fields.Pakkaustyyppi),
+    property("Suljentatyyppi", fields.Suljentatyyppi),
+    property("Alkoholiprosentti", fields["Alkoholi-%"], "%"),
+    property("Hapot", fields["Hapot g/l"], "g/l"),
+    property("Sokeri", fields["Sokeri g/l"], "g/l"),
+    property("Kantavierre", fields["Kantavierrep-%"], "%"),
+    property("Väri", fields["Väri EBC"], "EBC"),
+    property("Katkerot", fields["Katkerot EBU"], "EBU"),
+    property("Energia", fields["Energia kcal/100 ml"], "kcal/100 ml"),
+    property("Valikoima", fields.Valikoima)
+  ].filter((entry) => entry !== null);
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
+    "@id": url,
+    inLanguage: "fi-FI",
     name,
     sku: id,
     url,
-    image,
+    image: imageVariants,
     description: descriptionValue || description,
     ...(manufacturer ? { brand: { "@type": "Brand", name: manufacturer } } : {}),
+    ...(asText(fields.Valmistusmaa) ? { countryOfOrigin: asText(fields.Valmistusmaa) } : {}),
+    ...(volume !== null ? { size: { "@type": "QuantitativeValue", value: volume, unitCode: "LTR" } } : {}),
     ...(category ? { category } : {}),
+    ...(additionalProperties.length ? { additionalProperty: additionalProperties } : {}),
+    ...(!product.meta?.removedFromSelection ? { sameAs: `https://www.alko.fi/tuotteet/${id}` } : {}),
     offers: {
       "@type": "Offer",
       url,
       price,
       priceCurrency: "EUR",
+      ...(priceValidUntil ? { priceValidUntil } : {}),
+      itemCondition: "https://schema.org/NewCondition",
       availability: product.meta?.removedFromSelection
         ? "https://schema.org/Discontinued"
-        : "https://schema.org/InStock"
+        : "https://schema.org/InStock",
+      ...(pricePerLitre !== null
+        ? {
+            priceSpecification: {
+              "@type": "UnitPriceSpecification",
+              price: pricePerLitre,
+              priceCurrency: "EUR",
+              referenceQuantity: { "@type": "QuantitativeValue", value: 1, unitCode: "LTR" }
+            }
+          }
+        : {})
     }
   };
 
