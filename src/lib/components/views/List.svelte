@@ -16,7 +16,7 @@
 	import Icon from '../widgets/Icon.svelte';
 	import SvelteVirtualList from '@humanspeak/svelte-virtual-list';
 	import { twMerge } from 'tailwind-merge';
-	import type { ColumnNames, ListObj, PriceListItem } from '$lib/types';
+	import type { AvailabilityData, ColumnNames, ListObj, PriceListItem } from '$lib/types';
 	import {
 		shownColumnsToHighlight,
 		defaultSortingColumn,
@@ -43,7 +43,11 @@
 
 	let activeFilters: ColumnNames[] = $state([]);
 
-	const { list: importedList, dataset }: { list: ListObj; dataset: string[][] } = $props();
+	const {
+		list: importedList,
+		dataset,
+		availability
+	}: { list: ListObj; dataset: string[][]; availability?: AvailabilityData } = $props();
 
 	let searchParamsManager = getContext<SearchParamsManager>(ContextKeys.SearchParamsManager);
 
@@ -57,7 +61,7 @@
 		);
 	});
 
-	const kaljakori = $derived(new Kaljakori(listDataset, personalInfo));
+	const kaljakori = $derived(new Kaljakori(listDataset, personalInfo, availability));
 
 	let listRef: SvelteVirtualList<PriceListItem> | null = $state(null);
 

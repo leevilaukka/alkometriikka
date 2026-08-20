@@ -39,7 +39,7 @@
 	</div>
 {:then alko}
 	{#if data.list}
-		<List dataset={alko.dataset.table} list={data.list} />
+		<List dataset={alko.dataset.table} availability={alko.availability} list={data.list} />
 	{:else}
 		<div class={twMerge('mx-auto flex w-[min(80ch,_100%)] flex-col gap-4 p-4')}>
 			<div class="flex w-full items-center gap-4">

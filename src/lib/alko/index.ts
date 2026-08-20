@@ -5,6 +5,7 @@ import {
 	subCategoryMap,
 	undefinedToZeroColumns,
 	DrunkColumns,
+	StoreColumns,
 	columnsHandledAsString,
 	columnsHandledAsSet
 } from '$lib/utils/constants';
@@ -16,7 +17,8 @@ import {
 	type ColumnType,
 	type PersonalInfo,
 	type PriceListItem,
-	type FilterValues
+	type FilterValues,
+	type AvailabilityData
 } from '../types';
 import { isSimilarString } from '$lib/utils/search';
 
@@ -63,14 +65,19 @@ export class Kaljakori {
 	minAndMaxValuesActive: ([number, number] | null)[] = [];
 	subValues: Record<string, Record<string, Set<any>>> = {};
 
-	constructor(table: DatasetRow[], personalInfo?: PersonalInfo) {
+	constructor(table: DatasetRow[], personalInfo?: PersonalInfo, availability?: AvailabilityData) {
 		this.personalInfo = personalInfo || { weight: null, gender: GenderOptionsMap.Unspecified };
 
 		const [datasetColumns, ...rows] = table as [DatasetColumnNames[], ...DatasetRow[]];
 
 		const drunkColumns = Object.values(DrunkColumns);
+		const storeColumns = Object.values(StoreColumns);
 
-		this.filters = [...datasetColumns, ...drunkColumns];
+		this.filters = [...datasetColumns, ...drunkColumns, ...storeColumns];
+
+		const storeNameById = new Map(
+			Object.entries(availability?.stores ?? {}).map(([id, store]) => [id, store.name])
+		);
 
 		const indexOfTypeColumn = datasetColumns.indexOf(AllColumns.Availability);
 
@@ -86,6 +93,9 @@ export class Kaljakori {
 
 		const drunkValuesByColumn: any[][] = [...Array(drunkColumns.length)].map(() => []);
 		const drunkValuesByColumnActive: any[][] = [...Array(drunkColumns.length)].map(() => []);
+
+		const storeValuesByColumn: any[][] = [...Array(storeColumns.length)].map(() => []);
+		const storeValuesByColumnActive: any[][] = [...Array(storeColumns.length)].map(() => []);
 
 		const NUMBER_VALUE_REGEX = /^(?:0|[1-9]\d*)(?:\.\d+)?(?:\s*l)?$/;
 		const isNumber = (value: any) => NUMBER_VALUE_REGEX.test(String(value));
@@ -196,6 +206,17 @@ export class Kaljakori {
 				item[column] = drunkValues[column];
 			});
 
+			// Derive the set of store names this product is available in, resolved from
+			// availability.json's productId -> storeId[] map (kept out of the dataset itself).
+			const availableStoreNames = new Set(
+				(availability?.product[item[AllColumns.Number]] ?? [])
+					.map((storeId) => storeNameById.get(storeId))
+					.filter((name): name is string => Boolean(name))
+			);
+			item[AllColumns.StoreAvailability] = availableStoreNames;
+			storeValuesByColumn[0].push(...availableStoreNames);
+			if (!isRemoved) storeValuesByColumnActive[0].push(...availableStoreNames);
+
 			// Fill "Tyyppi" with "Ei määritelty" if empty
 			if (!item[AllColumns.Type]) {
 				item[AllColumns.Type] = 'Ei määritelty';
@@ -234,20 +255,32 @@ export class Kaljakori {
 			this.data.push(item);
 		}
 
-		// Merge dataset and drunk columns and their values
-		const mergedColumns = [...datasetColumns, ...drunkColumns];
-		const mergedValuesByColumn = [...datasetValuesByColumn, ...drunkValuesByColumn];
+		// Merge dataset, drunk and store columns and their values
+		const mergedColumns = [...datasetColumns, ...drunkColumns, ...storeColumns];
+		const mergedValuesByColumn = [
+			...datasetValuesByColumn,
+			...drunkValuesByColumn,
+			...storeValuesByColumn
+		];
 		const mergedValuesByColumnActive = [
 			...datasetValuesByColumnActive,
-			...drunkValuesByColumnActive
+			...drunkValuesByColumnActive,
+			...storeValuesByColumnActive
 		];
 
 		// Create possible values object (full = incl. removed, active = excl. removed)
+		// Dedupe before sorting - columns like store availability push one entry per
+		// product/value pair (hundreds of thousands total) but only have a few hundred
+		// unique values, so sorting after dedupe avoids sorting a huge duplicate-heavy array.
+		const toSortedUniqueValues = (column: any[]) => new Set([...new Set(column)].sort());
 		this.possibleValues = Object.fromEntries(
-			mergedValuesByColumn.map((column, idx) => [mergedColumns[idx], new Set(column.sort())])
+			mergedValuesByColumn.map((column, idx) => [mergedColumns[idx], toSortedUniqueValues(column)])
 		);
 		this.possibleValuesActive = Object.fromEntries(
-			mergedValuesByColumnActive.map((column, idx) => [mergedColumns[idx], new Set(column.sort())])
+			mergedValuesByColumnActive.map((column, idx) => [
+				mergedColumns[idx],
+				toSortedUniqueValues(column)
+			])
 		);
 
 		// Get column type by getting the type of the first value in the possible values set
@@ -382,6 +415,9 @@ export class Kaljakori {
 				if (type === 'number' && Array.isArray(filters[key]) && filters[key].length === 2) {
 					return item[key] >= filters[key][0] && item[key] <= filters[key][1];
 				} else if (type === 'object' && item[key] instanceof Set && filters[key] instanceof Set) {
+					// Store availability uses OR semantics: match if available in any selected store
+					if (key === AllColumns.StoreAvailability)
+						return filters[key].intersection(item[key]).size > 0;
 					return filters[key].isSubsetOf(item[key]);
 				} else if (filters[key] instanceof Set) {
 					return item[key] && filters[key].has(item[key]);

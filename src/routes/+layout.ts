@@ -155,7 +155,7 @@ async function getData({ fetch }: { fetch: Fetch }) {
 				getDataset({ fetch }),
 				getAvailability({ fetch })
 			]);
-			resolve({ dataset, availability, kaljakori: new Kaljakori(dataset.table, personalInfo) });
+			resolve({ dataset, availability, kaljakori: new Kaljakori(dataset.table, personalInfo, availability) });
 		} catch (error) {
 			reject(error);
 		}

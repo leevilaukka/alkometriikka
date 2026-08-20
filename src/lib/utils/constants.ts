@@ -56,10 +56,21 @@ export const DrunkColumns = Object.freeze({
 	EuroPerLiterAlcohol: '€ / l (alk.)'
 } as const);
 
-/** All columns available in the app.
- * This is a combination of DatasetColumns and DrunkColumns
+/** Column holding the per-store availability derived from availability.json.
+ * Not part of the raw dataset - computed in Kaljakori from AvailabilityData.
  */
-export const AllColumns = Object.freeze({ ...DatasetColumns, ...DrunkColumns } as const);
+export const StoreColumns = Object.freeze({
+	StoreAvailability: 'Myymälät'
+} as const);
+
+/** All columns available in the app.
+ * This is a combination of DatasetColumns, DrunkColumns and StoreColumns
+ */
+export const AllColumns = Object.freeze({
+	...DatasetColumns,
+	...DrunkColumns,
+	...StoreColumns
+} as const);
 
 export const subCategoryMap = {
 	[DatasetColumns.Type]: DatasetColumns.SubType,
@@ -77,7 +88,8 @@ export const columnsHandledAsString = [
 export const columnsHandledAsSet = [
 	AllColumns.Description,
 	AllColumns.Note,
-	AllColumns.GrapeVarieties
+	AllColumns.GrapeVarieties,
+	AllColumns.StoreAvailability
 ] as const satisfies readonly ColumnNames[];
 
 export const undefinedToZeroColumns = [
@@ -102,6 +114,7 @@ export const shownFilters = [
 	AllColumns.AlcoholPercentage,
 	AllColumns.Country,
 	AllColumns.Availability,
+	AllColumns.StoreAvailability,
 	AllColumns.Servings,
 	AllColumns.PromillePerEuro,
 	AllColumns.AlcoholGramsPerEuro,
@@ -134,6 +147,7 @@ export const filterAnnotationsToFilter = {
 	[AllColumns.PackagingType]: OR,
 	[AllColumns.Region]: OR,
 	[AllColumns.Availability]: OR,
+	[AllColumns.StoreAvailability]: OR,
 	[AllColumns.Description]: AND,
 	[AllColumns.Note]: AND,
 	[AllColumns.GrapeVarieties]: AND

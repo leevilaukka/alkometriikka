@@ -83,6 +83,7 @@ export interface PriceListItem extends Record<DrunkColumnNames, number> {
 	EAN: string;
 	Hintahistoria: { date: string; price: number }[];
 	'Poistunut valikoimasta': boolean;
+	Myymälät: Set<string>;
 	[key: string]: string | number | boolean | Set<string> | { date: string; price: number }[];
 }
 
