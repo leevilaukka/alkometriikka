@@ -1,8 +1,0 @@
----
-description: Project conventions for the Alkometriikka SvelteKit application
-alwaysApply: true
----
-
-Read `.claude/CLAUDE.md` and `AGENTS.md` before changing this repository.
-
-Use Bun scripts and prefer `npm run dev:no-sync` for UI work. Run `npm run check` and `npm run lint` after changes when practical. Do not edit generated `build/` output or casually commit generated datasets. Preserve the new dataset format, keep discontinued products marked with `meta.removedFromSelection`, and keep migration/sync hash normalization equivalent. Follow existing Svelte 5 patterns, typed local-storage APIs, and Finnish UI copy.
