@@ -36,6 +36,13 @@ export type AvailabilityStore = {
 	outletType?: string;
 	latitude?: number;
 	longitude?: number;
+	open?: boolean;
+	openDays?: string[];
+	openHours?: { date: string; hours: string }[];
+	unobstructured?: string;
+	additional_info?: string;
+	location_details?: string;
+	exceptions?: string;
 };
 
 export type AvailabilityData = {

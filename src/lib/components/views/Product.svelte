@@ -425,7 +425,9 @@
 							{@const distance = formatStoreDistance(getStoreDistance(preferredStore, store))}
 							<li class="flex gap-3 border-b border-primary px-4 py-3 last:border-b-0">
 								<div class="flex min-w-0 flex-1 flex-col gap-0.5">
-									<span class="font-semibold">{store.name}</span>
+									<a href={`/myymalat/${store.id}/`} class="w-fit font-semibold hover:underline">
+										{store.name}
+									</a>
 									{#if store.address || store.postalCode || store.postOffice}
 										<span class="text-sm text-secondary">
 											{[store.address, [store.postalCode, store.postOffice].filter(Boolean).join(' ')]
