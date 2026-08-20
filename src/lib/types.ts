@@ -36,6 +36,10 @@ export type AvailabilityStore = {
 	outletType?: string;
 	latitude?: number;
 	longitude?: number;
+	openHours?: Array<{
+		date: string;
+		hours: string;
+	}>;
 };
 
 export type AvailabilityData = {
