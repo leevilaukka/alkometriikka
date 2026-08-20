@@ -24,7 +24,7 @@
 
 	const { kaljakori }: { kaljakori: Kaljakori } = $props();
 
-	let videoElement: HTMLVideoElement;
+	let videoElement = $state<HTMLVideoElement | null>(null);
 	let decodingInterval: ReturnType<typeof setInterval>;
 	let decoding = false;
 	let stream: null | MediaStream = $state(null);
@@ -34,6 +34,7 @@
 	async function startCamera() {
 		try {
 			stream = await loadDeviceCameraStream();
+			if (!videoElement) return;
 			videoElement.srcObject = stream;
 			startDecoding();
 		} catch (error) {
@@ -67,6 +68,7 @@
 
 	async function decode() {
 		if (decoding === true) return;
+		if (!videoElement) return;
 		decoding = true;
 		let barcodes = await barcodeDetector.detect(videoElement);
 		if (barcodes.length > 0) handleDetection(barcodes);

@@ -24,7 +24,7 @@
 	import Filters from '../widgets/Filters.svelte';
 	import { initFilterValues } from '$lib/utils/filters';
 	import { page } from '$app/state';
-	import { getContext, onMount } from 'svelte';
+	import { getContext, onMount, untrack } from 'svelte';
 	import type { SearchParamsManager } from '$lib/utils/url';
 	import ProductPreview from '../widgets/ProductPreview.svelte';
 
@@ -36,7 +36,7 @@
 
 	let filtersComponent: Filters | null = $state(null);
 	let showRemoved = $state(false);
-	let filterValues = $state(initFilterValues(kaljakori, page.url.searchParams, showRemoved));
+	let filterValues = $state(untrack(() => initFilterValues(kaljakori, page.url.searchParams, showRemoved)));
 	let activeFilters: ColumnNames[] = $state([])
 
 	let selectedHighlight = $state(

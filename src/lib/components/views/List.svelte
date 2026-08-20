@@ -47,8 +47,8 @@
 
 	let searchParamsManager = getContext<SearchParamsManager>(ContextKeys.SearchParamsManager);
 
-	const existingList = getListById(importedList.id);
-	const list = existingList || importedList;
+	const existingList = untrack(() => getListById(importedList.id));
+	const list = untrack(() => existingList || importedList);
 
 	const listDataset = $derived.by(() => {
 		return productIdsToDataset(

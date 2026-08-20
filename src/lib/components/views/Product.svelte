@@ -85,10 +85,6 @@
 		formatStoreDistance(getStoreDistance(preferredStore, closestAvailableStore))
 	);
 
-	console.log('Product.svelte product', product);
-
-	console.log(product[AllColumns.History]);
-
 	let productElement: HTMLDivElement;
 
 	let similarProducts = $derived(
@@ -231,7 +227,6 @@
 
 	const differentSizesOfProduct = $derived(findDifferentSizeOfProduct(product, kaljakori));
 
-	console.log('differentSizesOfProduct', differentSizesOfProduct);
 </script>
 
 <svelte:head>

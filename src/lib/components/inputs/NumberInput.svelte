@@ -2,6 +2,7 @@
 	import { getRandom, headerToDisplayName, headerToUnitMarker } from '$lib/utils/helpers';
 	import { components } from '$lib/utils/styles';
 	import { twMerge } from 'tailwind-merge';
+	import { untrack } from 'svelte';
 	import Icon from '../widgets/Icon.svelte';
 
 	let { defaultValue = [0, 100], value = $bindable([defaultValue[0], defaultValue[1]]), modified = $bindable(false), label, min = 0, max = 100, step = 1 } = $props();
@@ -11,7 +12,9 @@
 		modified = !!set.size
 	})
 
-	const unitMarker = headerToUnitMarker(label) !== '' ? `(${headerToUnitMarker(label)})` : '';
+	const unitMarker = untrack(() =>
+		headerToUnitMarker(label) !== '' ? `(${headerToUnitMarker(label)})` : ''
+	);
 
 	const name = "numberinput-" + getRandom();
 </script>

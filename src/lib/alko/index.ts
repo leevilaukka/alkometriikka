@@ -64,7 +64,7 @@ export class Kaljakori {
 	subValues: Record<string, Record<string, Set<any>>> = {};
 
 	constructor(table: DatasetRow[], personalInfo?: PersonalInfo) {
-		this.personalInfo = personalInfo || { weight: null, gender: GenderOptionsMap.Unspecified, time: 2 };
+		this.personalInfo = personalInfo || { weight: null, gender: GenderOptionsMap.Unspecified };
 
 		const [datasetColumns, ...rows] = table as [DatasetColumnNames[], ...DatasetRow[]];
 
@@ -187,7 +187,6 @@ export class Kaljakori {
 				item[AllColumns.Price],
 				personalInfo?.gender ?? undefined,
 				personalInfo?.weight ?? undefined,
-				personalInfo?.time ?? 2,
 			);
 
 			// Assign item drunk values and collect possible values

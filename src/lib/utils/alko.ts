@@ -9,7 +9,6 @@ import { DrunkColumns, GenderOptionsMap} from "./constants";
  * @param price Pullon hinta euroina
  * @param weight Käyttäjän paino kiloina
  * @param gender Käyttäjän sukupuoli
- * @param time Aika (tunteina), jonka aikana alkoholi on nautittu
  * @param itemName Tuotteen nimi (valinnainen, käytetään virheilmoituksissa)
  * @returns Olio, jossa puhtaan alkoholin määrä, alkoholia per euro, arvioitu BAC ja BAC per euro
  */
@@ -19,7 +18,6 @@ export function calculateDrunkValue(
 	price: number,
 	gender: typeof GenderOptionsMap[keyof typeof GenderOptionsMap] = GenderOptionsMap.Unspecified,
 	weight?: number,
-	timeInHours: number = 2,
 	itemName?: string
 ): Record<DrunkColumnNames, number> {
 	if (!weight) {
@@ -66,7 +64,7 @@ export function calculateDrunkValue(
 		!Number.isFinite(servings) ||
 		!Number.isFinite(euroPerLiter)
 	) {
-		console.log("Invalid input values. Please ensure volume, percentage, price, and weight are valid numbers., Item: " + (itemName || "Unknown") + ", Volume: " + volume + ", Percentage: " + percentage + ", Price: " + price + ", Weight: " + weight + ", Time: " + timeInHours);
+		console.log("Invalid input values. Please ensure volume, percentage, price, and weight are valid numbers., Item: " + (itemName || "Unknown") + ", Volume: " + volume + ", Percentage: " + percentage + ", Price: " + price + ", Weight: " + weight);
 	}
 
 	return {

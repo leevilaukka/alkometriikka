@@ -25,22 +25,24 @@
 	let listRef: SvelteVirtualList<PriceListItem | null> | null = $state(null);
     let showScrollToTopButton = $state(false);
 
-	let similarProducts = findSimilarProducts(
-		product,
-		kaljakori,
-		new Set([
-			AllColumns.Type,
-			AllColumns.SubType,
-			AllColumns.BeerType,
-			AllColumns.Price,
-			AllColumns.BottleSize,
-			AllColumns.Sugar,
-			AllColumns.PackagingType,
-			AllColumns.AlcoholGramsPerEuro,
-			AllColumns.GrapeVarieties,
-			AllColumns.Description
-		]),
-		kaljakori.data.length
+	let similarProducts = $derived(
+		findSimilarProducts(
+			product,
+			kaljakori,
+			new Set([
+				AllColumns.Type,
+				AllColumns.SubType,
+				AllColumns.BeerType,
+				AllColumns.Price,
+				AllColumns.BottleSize,
+				AllColumns.Sugar,
+				AllColumns.PackagingType,
+				AllColumns.AlcoholGramsPerEuro,
+				AllColumns.GrapeVarieties,
+				AllColumns.Description
+			]),
+			kaljakori.data.length
+		)
 	);
 
 	function handleBack() {

@@ -7,6 +7,7 @@
 	import { isSafari } from '$lib/global.svelte';
 	import { filterAnnotationsToFilter, filterRenameMap } from '$lib/utils/constants';
 	import Icon from '../widgets/Icon.svelte';
+	import { untrack } from 'svelte';
 
 	let { defaultValue = [], value = $bindable(defaultValue), modified = $bindable(false), options = [], label, ...rest } = $props();
 	
@@ -17,7 +18,7 @@
 		selected: boolean;
 	};
 
-	let list = $state<ListItem[]>(options.map((option) => ({ value: option, selected: value.includes(option) })));
+	let list = $state<ListItem[]>(untrack(() => options.map((option) => ({ value: option, selected: value.includes(option) }))));
 
 	$effect(() => {
 		const set = new Set(value).difference(new Set(defaultValue))
