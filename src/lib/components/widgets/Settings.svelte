@@ -14,6 +14,8 @@
 	let tab = $state<'personal' | 'info' | 'settings'>('personal');
 	let dialogElement: HTMLDialogElement | undefined = $state();
 
+	const gitCommitHash = version.substring(0, 7);
+
 	function openSettings() {
 		tab = 'personal';
 		sendAnalyticsEvent('open_settings');
@@ -143,7 +145,7 @@
 			</div>
 			<p class="text-sm text-secondary">
 				Versio: <a href={`https://github.com/leevilaukka/alkometriikka/commit/${version}`} target="_blank">
-					{version}
+					{gitCommitHash}
 				</a>
 				{#if alko.dataset.metadata.LastUpdated && alko.dataset.metadata.LastSynced}
 					<br />

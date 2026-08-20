@@ -6,8 +6,6 @@ export default defineConfig({
 	esbuild: {
 		drop: process.argv.includes('dev') ? [] : ["console"]
 	},
-	server: {
-		allowedHosts: ["desktop-leevi"]
-	},
+	server: {},
 	plugins: [tailwindcss(), sveltekit()]
 });
