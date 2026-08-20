@@ -27,6 +27,7 @@
 	import {
 		formatStoreDistance,
 		getStoreDistance,
+		getTodaysOpeningHours,
 		rankStoresByDistance
 	} from '$lib/utils/availability';
 	import { requestSettingsOpen } from '$lib/utils/settings';
@@ -423,6 +424,7 @@
 					<ul>
 						{#each rankedAvailabilityStores as store (store.id)}
 							{@const distance = formatStoreDistance(getStoreDistance(preferredStore, store))}
+							{@const openingHours = getTodaysOpeningHours(store)}
 							<li class="flex gap-3 border-b border-primary px-4 py-3 last:border-b-0">
 								<div class="flex min-w-0 flex-1 flex-col gap-0.5">
 									<a href={`/myymalat/${store.id}/`} class="w-fit font-semibold hover:underline">
@@ -433,6 +435,13 @@
 											{[store.address, [store.postalCode, store.postOffice].filter(Boolean).join(' ')]
 												.filter(Boolean)
 												.join(', ')}
+										</span>
+									{/if}
+									{#if openingHours}
+										<span class="text-sm text-secondary">
+											{openingHours.toLocaleLowerCase('fi-FI') === 'kiinni'
+												? 'Suljettu'
+												: `Avoinna tänään ${openingHours}`}
 										</span>
 									{/if}
 								</div>
