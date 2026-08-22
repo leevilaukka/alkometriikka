@@ -36,6 +36,8 @@
 		minute: '2-digit',
 		timeZone: 'Europe/Helsinki',
 	};
+
+	const githubBase = 'https://github.com/leevilaukka/alkometriikka';
 </script>
 
 <Popup bind:dialogElement class="gap-4 p-4">
@@ -90,7 +92,7 @@
 				<h2 class="text-lg font-bold">Tietoa</h2>
 				<p>
 					Alkometriikka on
-					<a href={"https://github.com/leevilaukka/alkometriikka"} target="_blank">
+					<a href={githubBase} target="_blank">
 						avoimen lähdekoodin
 					</a> web-sovellus, joka listaa Alkon tuotevalikoiman ja antaa käyttäjille hieman laskennallista
 					tietoa tuotteista.
@@ -98,11 +100,11 @@
 				<p>
 					Voit lähettää kehitysehdotuksia ja bugiraportteja GitHubin kautta. <br />
 					<a
-						href={"https://github.com/leevilaukka/alkometriikka/issues/new?template=feature_request.md"}
+						href={`${githubBase}/issues/new?template=feature_request.md`}
 						>Lähetä kehitysehdotus
 					</a>
 					|
-					<a href={"https://github.com/leevilaukka/alkometriikka/issues/new?template=bug_report.md"}
+					<a href={`${githubBase}/issues/new?template=bug_report.md`}
 						>Lähetä bugiraportti
 					</a>
 				</p>
@@ -111,11 +113,11 @@
 					<a href="mailto:contact@alkometriikka.fi">contact@alkometriikka.fi</a>.
 				</p>
 				<details>
-					<summary class="cursor-pointer"> Tietolähteet</summary>
+					<summary class="cursor-pointer">Tietolähteet</summary>
 					<p>
 						Tuotevalikoima ladataan Alkon rajapinnoista. Tiedostoa päivitetään noin
 						kuuden tunnin välein. Voit ladata Alkometriikan käyttämän tiedoston <a
-							href={"https://github.com/leevilaukka/alkometriikka/blob/gh-pages/data.json"}
+							href={`${githubBase}/blob/gh-pages/data.json`}
 							target="_blank"
 							>täältä
 						</a>.
@@ -127,7 +129,7 @@
 			</div>
 			<div class="flex flex-row items-center gap-2">
 				<a
-					href={"https://github.com/leevilaukka/alkometriikka"}
+					href={githubBase}
 					target="_blank"
 					class={twMerge(components.button())}
 				>
@@ -144,7 +146,7 @@
 				</a>
 			</div>
 			<p class="text-sm text-secondary">
-				Versio: <a href={`https://github.com/leevilaukka/alkometriikka/commit/${version}`} target="_blank">
+				Versio: <a href={`${githubBase}/commit/${version}`} target="_blank">
 					{gitCommitHash}
 				</a>
 				{#if alko.dataset.metadata.LastUpdated && alko.dataset.metadata.LastSynced}
