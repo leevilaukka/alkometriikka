@@ -51,6 +51,26 @@ export type AvailabilityData = {
 	product: Record<string, string[]>;
 };
 
+/** Matches the `Tyyppi` product field for wines - see scripts/vintages/types.ts. */
+export type WineType = 'punaviinit' | 'valkoviinit';
+
+export type VintageRegion = {
+	country: string | null;
+	area: string;
+	name: string;
+	ratings: Record<string, number>;
+};
+
+/** One parsed Alko vintage-rating PDF, produced by scripts/vintages/generate.ts into static/vintages.json. */
+export type VintageDocument = {
+	id: string;
+	source: string;
+	title: string;
+	wineType: WineType;
+	extractedAt: string;
+	regions: VintageRegion[];
+};
+
 export interface PriceListItem extends Record<DrunkColumnNames, number> {
 	Numero: string;
 	Nimi: string;
@@ -155,7 +175,7 @@ export type AnalyticsEventMap = {
 	scan_barcode: { ean: string; link?: string };
 	scan_qr_code: { type: string; product_number: string; link?: string };
 	preferred_store_changed: { storeId: string; storeName: string; action?: 'set' | 'change' };
-	show_availability: { product_number?: string; [key: string]: any }
+	show_availability: { product_number?: string; [key: string]: any };
 } & {
 	[K in ShareEvent]: { url?: string; sid?: string; [key: string]: any };
 } & {

@@ -1,8 +1,11 @@
 node_modules
 sitemap.xml
+
+# Static generated files
 /static/data.json
 /static/availability.json
 /static/data-migrate.json
+/static/vintages.json
 /static/sitemap.xml
 
 # Output
@@ -22,6 +25,10 @@ Thumbs.db
 .env.*
 !.env.example
 !.env.test
+
+# Vintage PDF cache
+/scripts/vintages/.cache
+/scripts/vintages/__fixtures__
 
 # Vite
 vite.config.js.timestamp-*

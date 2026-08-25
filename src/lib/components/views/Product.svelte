@@ -18,7 +18,7 @@
 	import Icon from '../widgets/Icon.svelte';
 	import Popup from '../widgets/Popup.svelte';
 	import AllLists from '../widgets/AllLists.svelte';
-	import { type AvailabilityStore, type ListObj, type PriceListItem } from '$lib/types';
+	import { type AvailabilityStore, type ListObj, type PriceListItem, type VintageDocument } from '$lib/types';
 	import { addToList } from '$lib/utils/lists';
 	import BadgeList from '../widgets/BadgeList.svelte';
 	import { afterNavigate } from '$app/navigation';
@@ -32,6 +32,7 @@
 	} from '$lib/utils/availability';
 	import { requestSettingsOpen } from '$lib/utils/settings';
 	import ProductImage from '../widgets/ProductImage.svelte';
+	import VintageRating from '../widgets/VintageRating.svelte';
 	import { generateImageUrl } from '$lib/utils/image';
 	import {
 		Chart,
@@ -65,12 +66,14 @@
 		product,
 		kaljakori,
 		availabilityStores,
-		preferredStore
+		preferredStore,
+		vintages
 	}: {
 		product: PriceListItem;
 		kaljakori: Kaljakori;
 		availabilityStores: AvailabilityStore[];
 		preferredStore?: AvailabilityStore;
+		vintages: VintageDocument[];
 	} = $props();
 
 	const rankedAvailabilityStores = $derived(
@@ -400,6 +403,7 @@
 			{/each}
 		</div>
 	</div>
+	<VintageRating {product} {vintages} />
 	<section class="w-full overflow-hidden rounded border border-primary bg-secondary">
 		<details>
 			<summary class="m-2 text-2xl font-bold" onclick={(e) => {

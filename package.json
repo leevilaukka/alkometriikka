@@ -15,7 +15,8 @@
 		"format": "prettier --write .",
 		"lint": "prettier --check .",
 		"migrate": "bun run scripts/setup/migrate.ts",
-		"sync": "bun run scripts/setup/index.ts"
+		"sync": "bun run scripts/setup/index.ts",
+		"vintages:generate": "bun run scripts/vintages/generate.ts"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^6.1.1",
@@ -27,6 +28,7 @@
 		"@tailwindcss/vite": "^4.3.3",
 		"@types/bun": "^1.3.14",
 		"@types/node": "^25.9.5",
+		"pdfjs-dist": "^6.2.108",
 		"prettier": "^3.9.6",
 		"prettier-plugin-svelte": "^3.5.2",
 		"prettier-plugin-tailwindcss": "^0.6.14",

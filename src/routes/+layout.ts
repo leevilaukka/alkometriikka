@@ -1,6 +1,6 @@
 import { resolve } from '$app/paths';
 import { DatasetColumns } from '$lib/utils/constants';
-import type { AvailabilityData, AvailabilityStore, ColumnNames } from '$lib/types';
+import type { AvailabilityData, AvailabilityStore, ColumnNames, VintageDocument } from '$lib/types';
 import { Kaljakori } from '$lib/alko';
 import { personalInfo } from '$lib/global.svelte';
 import { dev } from '$app/env';
@@ -14,6 +14,10 @@ function getDatasetURL() {
 
 function getAvailabilityURL() {
 	return resolve('/') + 'availability.json';
+}
+
+function getVintagesURL() {
+	return resolve('/') + 'vintages.json';
 }
 
 if (dev) localStorage.setItem('umami.disabled', '1');
@@ -144,18 +148,46 @@ async function getAvailability({ fetch }: { fetch: Fetch }): Promise<Availabilit
 	}
 }
 
+async function fetchVintages({ fetch }: { fetch: Fetch }): Promise<VintageDocument[]> {
+	const req = await fetch(getVintagesURL());
+	if (!req.ok) {
+		throw new Error(`Vuosikertatietojen lataaminen epäonnistui: ${req.status} ${req.statusText}`);
+	}
+	const data = (await req.json()) as unknown;
+	if (!Array.isArray(data)) {
+		throw new Error('Vuosikertatiedot ovat väärässä muodossa');
+	}
+	return data as VintageDocument[];
+}
+
+async function getVintages({ fetch }: { fetch: Fetch }): Promise<VintageDocument[]> {
+	try {
+		return await fetchVintages({ fetch });
+	} catch (error) {
+		console.warn(error);
+		return [];
+	}
+}
+
 async function getData({ fetch }: { fetch: Fetch }) {
 	return new Promise<{
 		dataset: { table: any[]; metadata: Record<string, unknown> };
 		availability: AvailabilityData;
+		vintages: VintageDocument[];
 		kaljakori: Kaljakori;
 	}>(async (resolve, reject) => {
 		try {
-			const [dataset, availability] = await Promise.all([
+			const [dataset, availability, vintages] = await Promise.all([
 				getDataset({ fetch }),
-				getAvailability({ fetch })
+				getAvailability({ fetch }),
+				getVintages({ fetch })
 			]);
-			resolve({ dataset, availability, kaljakori: new Kaljakori(dataset.table, personalInfo, availability) });
+			resolve({
+				dataset,
+				availability,
+				vintages,
+				kaljakori: new Kaljakori(dataset.table, personalInfo, availability)
+			});
 		} catch (error) {
 			reject(error);
 		}
