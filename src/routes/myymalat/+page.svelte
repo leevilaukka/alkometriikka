@@ -48,6 +48,7 @@
 			.toLocaleLowerCase('fi-FI')
 			.includes(normalizedQuery)
 	)}
+	
 
 	<div class="mx-auto flex w-full max-w-[120ch] flex-col gap-6 p-6">
 		<header class="flex flex-col gap-2">
@@ -74,6 +75,13 @@
 				<ul>
 					{#each filteredStores as store (store.id)}
 						{@const address = formatAddress(store)}
+						{@const storeOpen = store.openHours?.some((openingHour) => {
+							if (!openingHour.hours || openingHour.hours === "kiinni") return false;
+							const now = new Date();
+							const openingDate = new Date(`${openingHour.date}T${openingHour.hours.split('-')[0]}:00`);
+							const closingDate = new Date(`${openingHour.date}T${openingHour.hours.split('-')[1]}:00`);
+							return now >= openingDate && now <= closingDate;
+						})}
 						<li class="flex flex-col gap-3 border-b border-primary px-4 py-3 last:border-b-0 sm:flex-row sm:items-center">
 							<a href={`/myymalat/${store.id}/`} class="min-w-0 flex-1 hover:underline">
 								<span class="block font-semibold">{store.name}</span>
@@ -83,11 +91,11 @@
 							</a>
 							<div class="flex items-center justify-between gap-3 sm:justify-end">
 								<span
-									class={store.open
+									class={storeOpen
 										? 'rounded bg-green-100 px-2 py-1 text-sm text-green-800 dark:bg-green-900 dark:text-green-100'
 										: 'rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-zinc-700 dark:text-zinc-100'}
 								>
-									{store.open ? 'Avoinna' : 'Suljettu'}
+									{storeOpen ? 'Avoinna' : 'Suljettu'}
 								</span>
 								<button
 									type="button"

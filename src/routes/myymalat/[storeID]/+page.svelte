@@ -51,6 +51,14 @@
 		store.unobstructured,
 		store.exceptions
 	].filter((detail): detail is string => Boolean(detail?.trim()))}
+	<!-- DO NOT take the store.open value for the store open state as that is only updated every 4 hours, calculate it from opening hours -->
+	 {@const storeOpen = store.openHours?.some((openingHour) => {
+		if (!openingHour.hours || openingHour.hours === "kiinni") return false;
+		const now = new Date();
+		const openingDate = new Date(`${openingHour.date}T${openingHour.hours.split('-')[0]}:00`);
+		const closingDate = new Date(`${openingHour.date}T${openingHour.hours.split('-')[1]}:00`);
+		return now >= openingDate && now <= closingDate;
+	})}
 
 	<div class="mx-auto flex w-full max-w-[120ch] flex-col gap-6 p-6">
 		<div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
@@ -75,11 +83,11 @@
 					<span class="text-secondary">Myymälän numero: {store.id}</span>
 				</div>
 				<span
-					class={store.open
+					class={storeOpen
 						? 'shrink-0 rounded bg-green-100 px-2 py-1 text-sm text-green-800 dark:bg-green-900 dark:text-green-100'
 						: 'shrink-0 rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-zinc-700 dark:text-zinc-100'}
 				>
-					{store.open ? 'Avoinna' : 'Suljettu'}
+					{storeOpen ? 'Avoinna' : 'Suljettu'}
 				</span>
 			</div>
 			{#if address}
