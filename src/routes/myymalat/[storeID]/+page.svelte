@@ -2,6 +2,7 @@
 	import Icon from '$lib/components/widgets/Icon.svelte';
 	import { preferredStoreId } from '$lib/global.svelte';
 	import type { AvailabilityStore } from '$lib/types';
+	import { AllColumns } from '$lib/utils/constants';
 	import { generateTitle, sendAnalyticsEvent } from '$lib/utils/helpers';
 	import { components } from '$lib/utils/styles';
 	import { twMerge } from 'tailwind-merge';
@@ -120,6 +121,7 @@
 					<Icon name="link_external" />
 				</a>
 			{/if}
+		
 			<a
 				href={`https://www.alko.fi/myymalat-palvelut/${store.id}`}
 				target="_blank"
@@ -131,7 +133,13 @@
 				<Icon name="link_external" />
 			</a>
 		</div>
-
+		<a
+				href={`/?${AllColumns.StoreAvailability}=${encodeURIComponent(store.name)}`}
+				class={twMerge(components.button({ size: 'md' }), 'w-full px-5 py-3 text-xl')}
+			>
+				<Icon name="list" />
+				<span>Myymälän valikoima</span>
+			</a>
 		<section class="overflow-hidden rounded border border-primary bg-secondary">
 			<h2 class="border-b border-primary px-4 py-3 text-xl font-bold">Aukioloajat</h2>
 			{#if store.openHours?.length}

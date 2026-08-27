@@ -21,6 +21,7 @@ import {
 } from './constants';
 import { formatValue, type FormatOpts } from './format';
 import { LocalStorageManager } from './storage';
+import { replaceState } from '$app/navigation';
 
 export function headerToUnitMarker(header: ColumnNames) {
 	if (Object.hasOwn(filterToUnitMarker, header))
@@ -239,7 +240,7 @@ export function trackSharedView(type: ShareType = ShareTypes.Default) {
 			});
 		}
 
-		window.history.replaceState({}, '', url.href);
+		replaceState(url.href, {});
 	}
 }
 
