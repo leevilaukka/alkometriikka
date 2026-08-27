@@ -92,3 +92,37 @@ export function getTodaysOpeningHours(
 
 	return openingHours.trim() || null;
 }
+export function isStoreOpen(store: AvailabilityStore, date: Date = new Date()): boolean | null {
+	const openingHours = getTodaysOpeningHours(store, date);
+	if (openingHours === "kiinni" || openingHours === null) return null;
+
+	const [openTime, closeTime] = openingHours.split('-').map((time) => time.trim());
+	if (!openTime || !closeTime) return null;
+
+	const [openHour, openMinute] = openTime.split(':').map(Number);
+	const [closeHour, closeMinute] = closeTime.split(':').map(Number);
+
+	const storeOpenDate = new Date(date);
+	storeOpenDate.setHours(openHour, openMinute, 0, 0);
+
+	const storeCloseDate = new Date(date);
+	storeCloseDate.setHours(closeHour, closeMinute, 0, 0);
+
+	return date >= storeOpenDate && date <= storeCloseDate;
+}
+
+export function getStoreCity(store: AvailabilityStore): string {
+	if (!store) return "";
+	if (typeof store.postOffice === 'string' && store.postOffice.trim() !== '') {
+		return store.postOffice.trim();
+	}
+
+	if (typeof store.address === 'string' && store.address.trim() !== '') {
+		const addressParts = store.address.split(',');
+		if (addressParts.length > 1) {
+			return addressParts[addressParts.length - 1].trim();
+		}
+	}
+
+	return "";
+}

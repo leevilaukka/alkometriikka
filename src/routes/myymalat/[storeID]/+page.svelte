@@ -2,6 +2,7 @@
 	import Icon from '$lib/components/widgets/Icon.svelte';
 	import { preferredStoreId } from '$lib/global.svelte';
 	import type { AvailabilityStore } from '$lib/types';
+	import { getStoreCity, isStoreOpen } from '$lib/utils/availability.js';
 	import { AllColumns } from '$lib/utils/constants';
 	import { generateTitle, sendAnalyticsEvent } from '$lib/utils/helpers';
 	import { components } from '$lib/utils/styles';
@@ -22,7 +23,7 @@
 		sendAnalyticsEvent('preferred_store_changed', {
 			storeId: store.id,
 			storeName: store.name,
-			action: 'set'
+			city: getStoreCity(store),
 		});
 	}
 </script>
@@ -52,15 +53,10 @@
 		store.unobstructured,
 		store.exceptions
 	].filter((detail): detail is string => Boolean(detail?.trim()))}
+	
 	<!-- DO NOT take the store.open value for the store open state as that is only updated every 4 hours, calculate it from opening hours -->
-	 {@const storeOpen = store.openHours?.some((openingHour) => {
-		if (!openingHour.hours || openingHour.hours === "kiinni") return false;
-		const now = new Date();
-		const openingDate = new Date(`${openingHour.date}T${openingHour.hours.split('-')[0]}:00`);
-		const closingDate = new Date(`${openingHour.date}T${openingHour.hours.split('-')[1]}:00`);
-		return now >= openingDate && now <= closingDate;
-	})}
-
+	{@const storeOpen = isStoreOpen(store)}
+	
 	<div class="mx-auto flex w-full max-w-[120ch] flex-col gap-6 p-6">
 		<div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
 			<div class="flex items-center gap-2">

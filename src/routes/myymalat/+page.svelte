@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { preferredStoreId } from '$lib/global.svelte';
 	import type { AvailabilityStore } from '$lib/types';
+	import { getStoreCity, isStoreOpen } from '$lib/utils/availability.js';
 	import { generateTitle, sendAnalyticsEvent } from '$lib/utils/helpers';
 	import { components } from '$lib/utils/styles';
 	import { twMerge } from 'tailwind-merge';
@@ -18,7 +19,8 @@
 		$preferredStoreId = store.id;
 		sendAnalyticsEvent('preferred_store_changed', {
 			storeId: store.id,
-			storeName: store.name
+			storeName: store.name,
+			city: getStoreCity(store),
 		});
 	}
 </script>
@@ -75,13 +77,7 @@
 				<ul>
 					{#each filteredStores as store (store.id)}
 						{@const address = formatAddress(store)}
-						{@const storeOpen = store.openHours?.some((openingHour) => {
-							if (!openingHour.hours || openingHour.hours === "kiinni") return false;
-							const now = new Date();
-							const openingDate = new Date(`${openingHour.date}T${openingHour.hours.split('-')[0]}:00`);
-							const closingDate = new Date(`${openingHour.date}T${openingHour.hours.split('-')[1]}:00`);
-							return now >= openingDate && now <= closingDate;
-						})}
+						{@const storeOpen = isStoreOpen(store)}
 						<li class="flex flex-col gap-3 border-b border-primary px-4 py-3 last:border-b-0 sm:flex-row sm:items-center">
 							<a href={`/myymalat/${store.id}/`} class="min-w-0 flex-1 hover:underline">
 								<span class="block font-semibold">{store.name}</span>
