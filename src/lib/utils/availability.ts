@@ -92,12 +92,12 @@ export function getTodaysOpeningHours(
 
 	return openingHours.trim() || null;
 }
-export function isStoreOpen(store: AvailabilityStore, date: Date = new Date()): boolean | null {
+export function isStoreOpen(store: AvailabilityStore, date: Date = new Date()): boolean {
 	const openingHours = getTodaysOpeningHours(store, date);
-	if (openingHours === "kiinni" || openingHours === null) return null;
+	if (openingHours === "kiinni" || openingHours === null) return false;
 
 	const [openTime, closeTime] = openingHours.split('-').map((time) => time.trim());
-	if (!openTime || !closeTime) return null;
+	if (!openTime || !closeTime) return false;
 
 	const [openHour, openMinute] = openTime.split(':').map(Number);
 	const [closeHour, closeMinute] = closeTime.split(':').map(Number);
