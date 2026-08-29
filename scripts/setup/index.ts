@@ -580,7 +580,7 @@ async function sync(): Promise<void> {
 			pending.push({
 				product,
 				hash: searchHash,
-				previous: isMigratedProduct(previous) ? previous : undefined
+				previous: isMigratedProduct(previous) ? previous : undefined,
 			});
 		}
 	}

@@ -12,7 +12,27 @@ type LocalStorageValueMap = {
 	[LocalStorageKeys.ViewedShares]: string[];
 };
 
-type LocalStorageKey = keyof LocalStorageValueMap;
+export const persistentExportKeys: (keyof LocalStorageValueMap)[] = [
+	LocalStorageKeys.AppVersion,
+	LocalStorageKeys.ListsVersion
+]
+
+const StorageKeyToFriendlyNameMap: Record<keyof LocalStorageValueMap, string> = {
+	[LocalStorageKeys.PersonalInfo]: 'Henkilökohtaiset tiedot',
+	[LocalStorageKeys.PreferredStore]: 'Oma myymälä',
+	[LocalStorageKeys.Lists]: 'Listat',
+	[LocalStorageKeys.ListsVersion]: 'Listaversio',
+	[LocalStorageKeys.AppVersion]: 'Sovellusversio',
+	[LocalStorageKeys.CurrentFilters]: 'Suodattimet',
+	[LocalStorageKeys.Theme]: 'Teema',
+	[LocalStorageKeys.ViewedShares]: 'Katsotut jaetut näkymät'
+};
+
+export function getFriendlyNameForStorageKey(key: keyof LocalStorageValueMap): string {
+	return StorageKeyToFriendlyNameMap[key] || key;
+}
+
+export type LocalStorageKey = keyof LocalStorageValueMap;
 type LocalStorageArrayKey = {
 	[K in LocalStorageKey]: LocalStorageValueMap[K] extends readonly unknown[] ? K : never;
 }[LocalStorageKey];

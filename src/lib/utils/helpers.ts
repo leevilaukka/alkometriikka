@@ -20,7 +20,7 @@ import {
 	AllColumns
 } from './constants';
 import { formatValue, type FormatOpts } from './format';
-import { LocalStorageManager } from './storage';
+import { LocalStorageManager as LocalStorageManager, persistentExportKeys, type LocalStorageKey } from './storage';
 import { replaceState } from '$app/navigation';
 
 export function headerToUnitMarker(header: ColumnNames) {
@@ -68,24 +68,7 @@ export function generateTitle(text?: string): string {
 	}
 }
 
-export function handleExport() {
-	const data = {
-		personalInfo: personalInfo,
-		preferredStoreId: get(preferredStoreId),
-		lists: lists
-	};
-	const blob = new Blob([JSON.stringify(data, null, 2)], {
-		type: 'application/json'
-	});
-	const url = URL.createObjectURL(blob);
-	const a = document.createElement('a');
-	a.href = url;
-	a.download = `alkometriikka-tiedot-${new Date().toISOString().slice(0, 10)}.json`;
-	document.body.appendChild(a);
-	a.click();
-	document.body.removeChild(a);
-	URL.revokeObjectURL(url);
-}
+
 
 export function generateOutLink<U extends string, I extends boolean = false>(
 	url: U,
@@ -116,6 +99,32 @@ export function sendAnalyticsEvent<T extends AnalyticsEventName>(
 	}
 }
 
+
+// Function to handle exporting data to a JSON file, with the option to specify which data to export
+export function handleExport(dataToExport: LocalStorageKey[] = persistentExportKeys) {
+	const data: Record<string, unknown> = {};
+
+	if (dataToExport) {
+		for (const key of dataToExport) {
+			data[key] = LocalStorageManager.getItem(key);
+		}
+		data["exported_at"] = new Date().toISOString();
+		data["exported_keys"] = dataToExport;
+	}
+
+	const blob = new Blob([JSON.stringify(data, null, 2)], {
+		type: 'application/json'
+	});
+	const url = URL.createObjectURL(blob);
+	const a = document.createElement('a');
+	a.href = url;
+	a.download = `alkometriikka-tiedot-${new Date().toISOString().slice(0, 10)}.json`;
+	document.body.appendChild(a);
+	a.click();
+	document.body.removeChild(a);
+	URL.revokeObjectURL(url);
+}
+
 export function handleImport() {
 	const input = document.createElement('input');
 	input.type = 'file';
@@ -123,17 +132,30 @@ export function handleImport() {
 	input.onchange = async (event) => {
 		const file = (event?.target as HTMLInputElement)?.files?.[0];
 		if (file) {
-			const text = await file.text();
-			const data = JSON.parse(text);
+			const data = await file.text();
+			const jsonData = JSON.parse(data) as Partial<Record<LocalStorageKey | 'exported_at' | 'exported_keys', unknown>>;
 			const currentPersonalInfo = { ...personalInfo };
 			const currentLists = [...lists];
-			LocalStorageManager.setItem(LocalStorageKeys.PersonalInfo, {
-				...currentPersonalInfo,
-				...data.personalInfo
-			});
-			LocalStorageManager.setItem(LocalStorageKeys.Lists, [...currentLists, ...data.lists]);
-			if (typeof data.preferredStoreId === 'string') {
-				LocalStorageManager.setItem(LocalStorageKeys.PreferredStore, data.preferredStoreId);
+
+			for (const key of Object.values(jsonData.exported_keys || [])) {
+				console.log(`Importing key: ${key}`);
+				if (key === LocalStorageKeys.Lists) {
+					const importedLists = jsonData.lists as typeof lists;
+					console.log(`Imported lists:`, importedLists);
+					if (importedLists) {
+						LocalStorageManager.setItem(LocalStorageKeys.Lists, [...currentLists, ...importedLists]);
+					}
+				} else if (key === LocalStorageKeys.PersonalInfo) {
+					const importedPersonalInfo = jsonData.personal_info as typeof personalInfo;
+					if (importedPersonalInfo) {
+						LocalStorageManager.setItem(LocalStorageKeys.PersonalInfo, {
+							...currentPersonalInfo,
+							...importedPersonalInfo
+						});
+					}
+				} else {
+					LocalStorageManager.setItem(key as LocalStorageKey, jsonData[key as LocalStorageKey] as any);
+				}
 			}
 			window.location.reload();
 		}

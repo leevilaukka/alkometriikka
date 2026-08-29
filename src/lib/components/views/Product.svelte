@@ -301,8 +301,13 @@
 				</button>
 			{/snippet}
 			{#snippet renderContent(dialogElement: HTMLDialogElement)}
-				<h2 class="text-xl">Valitse lista</h2>
-				<AllLists
+			<div class="flex flex-row gap-4">
+				<h2 class="text-xl my-auto">Valitse lista</h2>
+				<button class={twMerge(components.button({ type: 'noborder' }), 'text-lg my-auto ml-auto p-2 text-center')} onclick={() => dialogElement.close()}>
+					<Icon name="x" />
+				</button>
+			</div>
+			<AllLists
 					action={(list: ListObj) => {
 						addToList(list, product[AllColumns.Number]);
 						dialogElement.close();
