@@ -4,11 +4,13 @@
 	import type { AvailabilityStore } from '$lib/types';
 	import { getStoreCity, isStoreOpen } from '$lib/utils/availability.js';
 	import { AllColumns } from '$lib/utils/constants';
-	import { generateTitle, sendAnalyticsEvent } from '$lib/utils/helpers';
+	import { generateTitle, sendAnalyticsEvent, setSEO } from '$lib/utils/helpers';
 	import { components } from '$lib/utils/styles';
 	import { twMerge } from 'tailwind-merge';
 
 	let { data } = $props();
+	
+	$effect(() => console.log(data));
 
 	function formatDate(date: string) {
 		return new Intl.DateTimeFormat('fi-FI', {
@@ -26,23 +28,26 @@
 			city: getStoreCity(store),
 		});
 	}
+
+
+	$effect(() => data.store && setSEO({
+		og: {
+			title: generateTitle(`Myymälä - ${data.store.name}`),
+			description: `Alkon myymälä - ${data.store.name}. Katso aukioloajat, osoite ja valikoima Alkometriikasta!`,
+			url: `https://alkometriikka.fi/myymalat/${data.storeId}`,
+			type: 'website',
+		},
+		keywords: `Alko, myymälä, ${data.store.name}, ${data.store.address}, ${data.store.postalCode}, ${data.store.postOffice}`,
+		description: `Alkon myymälä - ${data.store.name}.`,
+	}));
 </script>
 
 <svelte:head>
-	<title>{generateTitle('Myymälä')}</title>
+	<title>{generateTitle(`Myymälä - ${data.store.name}`)}</title>
 </svelte:head>
 
-{#await data.alko}
-	<div class="grid h-full w-full place-content-center">
-		<div class="flex flex-col items-center gap-3">
-			<span
-				class="block h-16 w-16 animate-spin rounded-full border-[0.5rem] border-red-600 border-b-transparent"
-			></span>
-			<p>Ladataan...</p>
-		</div>
-	</div>
-{:then alko}
-	{@const store = alko.availability.stores[data.storeId] as AvailabilityStore}
+{#if data.store}
+	{@const store = data.store}
 	{@const address = [store.address, [store.postalCode, store.postOffice].filter(Boolean).join(' ')]
 		.filter(Boolean)
 		.join(', ')}
@@ -161,4 +166,11 @@
 			</section>
 		{/if}
 	</div>
-{/await}
+{:else}
+	<div class="mx-auto flex w-full max-w-[120ch] flex-col gap-6 p-6">
+		<div class="flex flex-col gap-2">
+			<h1 class="text-2xl font-bold md:text-3xl">Myymälää ei löytynyt</h1>
+			<p class="text-secondary">Valitettavasti myymälää ei löytynyt. Tarkista myymälän numero ja yritä uudelleen.</p>
+		</div>
+	</div>
+{/if}
