@@ -13,12 +13,28 @@ const STORE_DATE_FORMATTER = new Intl.DateTimeFormat('en', {
 	month: '2-digit',
 	day: '2-digit'
 });
+const STORE_TIME_FORMATTER = new Intl.DateTimeFormat('en-GB', {
+	timeZone: STORE_TIME_ZONE,
+	hour: '2-digit',
+	minute: '2-digit',
+	hour12: false
+});
 
 function getStoreLocalDate(date: Date): string {
 	const parts = STORE_DATE_FORMATTER.formatToParts(date);
 	const values = Object.fromEntries(parts.map(({ type, value }) => [type, value]));
 
 	return `${values.year}-${values.month}-${values.day}`;
+}
+
+/** Returns the number of minutes since midnight, in the store's local time zone. */
+function getStoreLocalMinutes(date: Date): number {
+	const parts = STORE_TIME_FORMATTER.formatToParts(date);
+	const values = Object.fromEntries(parts.map(({ type, value }) => [type, value]));
+	const hour = Number(values.hour);
+	const minute = Number(values.minute);
+
+	return hour * 60 + minute;
 }
 
 function hasCoordinates(
@@ -101,14 +117,20 @@ export function isStoreOpen(store: AvailabilityStore, date: Date = new Date()): 
 
 	const [openHour, openMinute] = openTime.split(':').map(Number);
 	const [closeHour, closeMinute] = closeTime.split(':').map(Number);
+	if (
+		!Number.isFinite(openHour) ||
+		!Number.isFinite(openMinute) ||
+		!Number.isFinite(closeHour) ||
+		!Number.isFinite(closeMinute)
+	) {
+		return false;
+	}
 
-	const storeOpenDate = new Date(date);
-	storeOpenDate.setHours(openHour, openMinute, 0, 0);
+	const nowMinutes = getStoreLocalMinutes(date);
+	const openMinutes = openHour * 60 + openMinute;
+	const closeMinutes = closeHour * 60 + closeMinute;
 
-	const storeCloseDate = new Date(date);
-	storeCloseDate.setHours(closeHour, closeMinute, 0, 0);
-
-	return date >= storeOpenDate && date <= storeCloseDate;
+	return nowMinutes >= openMinutes && nowMinutes <= closeMinutes;
 }
 
 export function getStoreCity(store: AvailabilityStore): string {
