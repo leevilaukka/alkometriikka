@@ -2,11 +2,15 @@
 	import Icon from '$lib/components/widgets/Icon.svelte';
 	import { preferredStoreId } from '$lib/global.svelte';
 	import type { AvailabilityStore } from '$lib/types';
-	import { generateTitle, sendAnalyticsEvent } from '$lib/utils/helpers';
+	import { getStoreCity, isStoreOpen } from '$lib/utils/availability.js';
+	import { AllColumns } from '$lib/utils/constants';
+	import { generateTitle, sendAnalyticsEvent, setSEO } from '$lib/utils/helpers';
 	import { components } from '$lib/utils/styles';
 	import { twMerge } from 'tailwind-merge';
 
 	let { data } = $props();
+	
+	$effect(() => console.log(data));
 
 	function formatDate(date: string) {
 		return new Intl.DateTimeFormat('fi-FI', {
@@ -21,26 +25,29 @@
 		sendAnalyticsEvent('preferred_store_changed', {
 			storeId: store.id,
 			storeName: store.name,
-			action: 'set'
+			city: getStoreCity(store),
 		});
 	}
+
+
+	$effect(() => data.store && setSEO({
+		og: {
+			title: generateTitle(`Myymälä - ${data.store.name}`),
+			description: `Alkon myymälä - ${data.store.name}. Katso aukioloajat, osoite ja valikoima Alkometriikasta!`,
+			url: `https://alkometriikka.fi/myymalat/${data.storeId}`,
+			type: 'website',
+		},
+		keywords: `Alko, myymälä, ${data.store.name}, ${data.store.address}, ${data.store.postalCode}, ${data.store.postOffice}`,
+		description: `Alkon myymälä - ${data.store.name}.`,
+	}));
 </script>
 
 <svelte:head>
-	<title>{generateTitle('Myymälä')}</title>
+	<title>{generateTitle(`Myymälä - ${data.store.name}`)}</title>
 </svelte:head>
 
-{#await data.alko}
-	<div class="grid h-full w-full place-content-center">
-		<div class="flex flex-col items-center gap-3">
-			<span
-				class="block h-16 w-16 animate-spin rounded-full border-[0.5rem] border-red-600 border-b-transparent"
-			></span>
-			<p>Ladataan...</p>
-		</div>
-	</div>
-{:then alko}
-	{@const store = alko.availability.stores[data.storeId] as AvailabilityStore}
+{#if data.store}
+	{@const store = data.store}
 	{@const address = [store.address, [store.postalCode, store.postOffice].filter(Boolean).join(' ')]
 		.filter(Boolean)
 		.join(', ')}
@@ -51,7 +58,10 @@
 		store.unobstructured,
 		store.exceptions
 	].filter((detail): detail is string => Boolean(detail?.trim()))}
-
+	
+	<!-- DO NOT take the store.open value for the store open state as that is only updated every 4 hours, calculate it from opening hours -->
+	{@const storeOpen = isStoreOpen(store)}
+	
 	<div class="mx-auto flex w-full max-w-[120ch] flex-col gap-6 p-6">
 		<div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
 			<div class="flex items-center gap-2">
@@ -75,11 +85,11 @@
 					<span class="text-secondary">Myymälän numero: {store.id}</span>
 				</div>
 				<span
-					class={store.open
+					class={storeOpen
 						? 'shrink-0 rounded bg-green-100 px-2 py-1 text-sm text-green-800 dark:bg-green-900 dark:text-green-100'
 						: 'shrink-0 rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-zinc-700 dark:text-zinc-100'}
 				>
-					{store.open ? 'Avoinna' : 'Suljettu'}
+					{storeOpen ? 'Avoinna' : 'Suljettu'}
 				</span>
 			</div>
 			{#if address}
@@ -112,6 +122,7 @@
 					<Icon name="link_external" />
 				</a>
 			{/if}
+		
 			<a
 				href={`https://www.alko.fi/myymalat-palvelut/${store.id}`}
 				target="_blank"
@@ -123,7 +134,13 @@
 				<Icon name="link_external" />
 			</a>
 		</div>
-
+		<a
+				href={`/?${AllColumns.StoreAvailability}=${encodeURIComponent(store.name)}`}
+				class={twMerge(components.button({ size: 'md' }), 'w-full px-5 py-3 text-xl')}
+			>
+				<Icon name="list" />
+				<span>Myymälän valikoima</span>
+			</a>
 		<section class="overflow-hidden rounded border border-primary bg-secondary">
 			<h2 class="border-b border-primary px-4 py-3 text-xl font-bold">Aukioloajat</h2>
 			{#if store.openHours?.length}
@@ -149,4 +166,11 @@
 			</section>
 		{/if}
 	</div>
-{/await}
+{:else}
+	<div class="mx-auto flex w-full max-w-[120ch] flex-col gap-6 p-6">
+		<div class="flex flex-col gap-2">
+			<h1 class="text-2xl font-bold md:text-3xl">Myymälää ei löytynyt</h1>
+			<p class="text-secondary">Valitettavasti myymälää ei löytynyt. Tarkista myymälän numero ja yritä uudelleen.</p>
+		</div>
+	</div>
+{/if}

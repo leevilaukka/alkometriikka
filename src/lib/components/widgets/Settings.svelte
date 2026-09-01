@@ -10,6 +10,7 @@
 	import type { AvailabilityStore } from '$lib/types';
 	import { onSettingsOpenRequested } from '$lib/utils/settings';
 	import { onMount } from 'svelte';
+	import { getStoreCity } from '$lib/utils/availability';
 
 	let tab = $state<'personal' | 'info' | 'settings'>('personal');
 	let dialogElement: HTMLDialogElement | undefined = $state();
@@ -302,8 +303,16 @@
 					name="preferred-store"
 					bind:value={$preferredStoreId}
 					class={twMerge(components.input(), 'w-full')}
-					onchange={() => sendAnalyticsEvent('preferred_store_changed', { storeId: $preferredStoreId, storeName: stores.find(store => store.id === $preferredStoreId)?.name || "" })}
-				>
+					onchange={() => {
+						const selectedStore = stores.find(store => store.id === $preferredStoreId);
+						if (selectedStore) {
+							sendAnalyticsEvent('preferred_store_changed', {
+								storeId: selectedStore.id,
+								storeName: selectedStore.name,
+								city: getStoreCity(selectedStore),
+							});
+						}
+					}}>
 					<option value="">Ei valittua myymälää</option>
 					{#each stores as store (store.id)}
 						<option value={store.id}>{store.name}</option>
