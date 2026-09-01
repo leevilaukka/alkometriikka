@@ -108,33 +108,41 @@ export function getTodaysOpeningHours(
 
 	return openingHours.trim() || null;
 }
+
+/**
+ * Parses a single `HH`, `HH:MM`, or `H` clock time (as used in Alko's opening
+ * hours strings) into minutes since midnight, or `null` if it isn't a valid time.
+ */
+function parseClockTimeToMinutes(time: string): number | null {
+	const [hourPart, minutePart] = time.split(':');
+	const hour = Number(hourPart);
+	const minute = minutePart === undefined ? 0 : Number(minutePart);
+
+	if (!Number.isFinite(hour) || !Number.isFinite(minute)) return null;
+
+	return hour * 60 + minute;
+}
+
 export function isStoreOpen(store: AvailabilityStore, date: Date = new Date()): boolean {
 	const openingHours = getTodaysOpeningHours(store, date);
-	if (openingHours === "kiinni" || openingHours === null) return false;
+	if (openingHours === 'kiinni' || openingHours === null) return false;
 
-	const [openTime, closeTime] = openingHours.split('-').map((time) => time.trim());
+	// Alko's API returns ranges like "9–21" (en dash, hour-only, no leading
+	// zero or minutes), but may also use a plain hyphen and/or "HH:MM" times.
+	const [openTime, closeTime] = openingHours.split(/[-–—]/).map((time) => time.trim());
 	if (!openTime || !closeTime) return false;
 
-	const [openHour, openMinute] = openTime.split(':').map(Number);
-	const [closeHour, closeMinute] = closeTime.split(':').map(Number);
-	if (
-		!Number.isFinite(openHour) ||
-		!Number.isFinite(openMinute) ||
-		!Number.isFinite(closeHour) ||
-		!Number.isFinite(closeMinute)
-	) {
-		return false;
-	}
+	const openMinutes = parseClockTimeToMinutes(openTime);
+	const closeMinutes = parseClockTimeToMinutes(closeTime);
+	if (openMinutes === null || closeMinutes === null) return false;
 
 	const nowMinutes = getStoreLocalMinutes(date);
-	const openMinutes = openHour * 60 + openMinute;
-	const closeMinutes = closeHour * 60 + closeMinute;
 
 	return nowMinutes >= openMinutes && nowMinutes <= closeMinutes;
 }
 
 export function getStoreCity(store: AvailabilityStore): string {
-	if (!store) return "";
+	if (!store) return '';
 	if (typeof store.postOffice === 'string' && store.postOffice.trim() !== '') {
 		return store.postOffice.trim();
 	}
@@ -146,5 +154,5 @@ export function getStoreCity(store: AvailabilityStore): string {
 		}
 	}
 
-	return "";
+	return '';
 }
