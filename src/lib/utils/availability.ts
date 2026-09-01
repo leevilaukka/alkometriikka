@@ -110,11 +110,12 @@ export function getTodaysOpeningHours(
 }
 
 /**
- * Parses a single `HH`, `HH:MM`, or `H` clock time (as used in Alko's opening
- * hours strings) into minutes since midnight, or `null` if it isn't a valid time.
+ * Parses a single `HH`, `HH:MM`, `HH.MM`, or `H` clock time (as used in Alko's
+ * opening hours strings) into minutes since midnight, or `null` if it isn't a
+ * valid time.
  */
 function parseClockTimeToMinutes(time: string): number | null {
-	const [hourPart, minutePart] = time.split(':');
+	const [hourPart, minutePart] = time.split(/[:.]/);
 	const hour = Number(hourPart);
 	const minute = minutePart === undefined ? 0 : Number(minutePart);
 
