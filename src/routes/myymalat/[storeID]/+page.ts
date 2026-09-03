@@ -10,10 +10,10 @@ export async function load({ parent, params }) {
 	if (!storeId) redirect(300, '/');
 
 	if (!alko.availability.stores[storeId]) {
-		error(404, {
+		throw error(404, {
 			message: 'Myymälää ei löytynyt'
 		});
 	}
-
-	return { alko: data.alko, storeId };
+	
+	return { store: (await data.alko).availability.stores[storeId], storeId };
 }

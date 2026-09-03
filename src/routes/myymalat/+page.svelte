@@ -2,7 +2,7 @@
 	import { preferredStoreId } from '$lib/global.svelte';
 	import type { AvailabilityStore } from '$lib/types';
 	import { getStoreCity, isStoreOpen } from '$lib/utils/availability.js';
-	import { generateTitle, sendAnalyticsEvent } from '$lib/utils/helpers';
+	import { generateTitle, sendAnalyticsEvent, setSEO } from '$lib/utils/helpers';
 	import { components } from '$lib/utils/styles';
 	import { twMerge } from 'tailwind-merge';
 
@@ -23,6 +23,16 @@
 			city: getStoreCity(store),
 		});
 	}
+
+	setSEO({
+		og: {
+			title: generateTitle('Myymälät'),
+			description: 'Selaa Alkon myymälöitä ja valitse ensisijainen myymälä.',
+			url: 'https://alkometriikka.fi/myymalat',
+		},
+		keywords: 'Alko, myymälät, myymälä, aukioloajat, osoite, valikoima',
+		description: 'Selaa Alkon myymälöitä ja valitse ensisijainen myymälä.',
+	});
 </script>
 
 <svelte:head>

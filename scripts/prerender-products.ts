@@ -120,7 +120,6 @@ function productHtml(template: string, schema: string[], product: ProductRecord)
   const category = [type, subtype].filter(Boolean).join(" / ");
   const volume = asNumber(fields.Pullokoko);
   const pricePerLitre = asNumber(fields.Litrahinta);
-  const priceValidUntil = product.priceHistory?.at(-1)?.date;
   const additionalProperties = [
     property("Valmistusmaa", fields.Valmistusmaa),
     property("Alue", fields.Alue),
@@ -148,6 +147,7 @@ function productHtml(template: string, schema: string[], product: ProductRecord)
     url,
     image: imageVariants,
     description: descriptionValue || description,
+    hasAdultConsideration: "https://schema.org/AlcoholConsideration",
     ...(manufacturer ? { brand: { "@type": "Brand", name: manufacturer } } : {}),
     ...(asText(fields.Valmistusmaa) ? { countryOfOrigin: asText(fields.Valmistusmaa) } : {}),
     ...(volume !== null ? { size: { "@type": "QuantitativeValue", value: volume, unitCode: "LTR" } } : {}),
@@ -159,21 +159,22 @@ function productHtml(template: string, schema: string[], product: ProductRecord)
       url,
       price,
       priceCurrency: "EUR",
-      ...(priceValidUntil ? { priceValidUntil } : {}),
+      ...(pricePerLitre ? {
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          price: pricePerLitre, // The strict per-litre price directly from the API
+          priceCurrency: "EUR",
+          referenceQuantity: {
+            "@type": "QuantitativeValue",
+            value: 1,
+            unitCode: "LTR"
+          }
+        }
+      } : {}),
       itemCondition: "https://schema.org/NewCondition",
       availability: product.meta?.removedFromSelection
         ? "https://schema.org/Discontinued"
         : "https://schema.org/InStock",
-      ...(pricePerLitre !== null
-        ? {
-            priceSpecification: {
-              "@type": "UnitPriceSpecification",
-              price: pricePerLitre,
-              priceCurrency: "EUR",
-              referenceQuantity: { "@type": "QuantitativeValue", value: 1, unitCode: "LTR" }
-            }
-          }
-        : {})
     }
   };
 
