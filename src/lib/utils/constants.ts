@@ -276,7 +276,8 @@ export const LocalStorageKeys = {
 	AppVersion: 'app_version',
 	CurrentFilters: 'current_filters',
 	Theme: 'theme',
-	ViewedShares: 'viewed_shares'
+	ViewedShares: 'viewed_shares',
+	CustomTemplates: 'custom_templates'
 } as const;
 
 export const ShareTypes = {

@@ -149,7 +149,9 @@ export type AnalyticsEventMap = {
 	export_data: undefined;
 	import_data: undefined;
 	create_list: undefined;
+	create_list_from_template: { template: string };
 	save_list: { url?: string };
+	save_list_template: { name?: string };
 	view_sizes: { product_number: string };
 	show_price_history: { product_number?: string; [key: string]: any };
 	scan_barcode: { ean: string; link?: string };

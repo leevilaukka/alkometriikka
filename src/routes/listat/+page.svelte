@@ -1,6 +1,7 @@
 <script lang="ts">
 	import List from '$lib/components/views/List.svelte';
 	import AllLists from '$lib/components/widgets/AllLists.svelte';
+	import TemplatePicker from '$lib/components/widgets/TemplatePicker.svelte';
 	import Icon from '$lib/components/widgets/Icon.svelte';
 	import { generateTitle, setSEO } from '$lib/utils/helpers.js';
 	import { components } from '$lib/utils/styles';
@@ -50,6 +51,9 @@
 					<Icon name="arrow_back" class="inline-block" />
 					<span>Takaisin</span>
 				</button>
+				<div class="ml-auto">
+					<TemplatePicker kaljakori={alko.kaljakori} availability={alko.availability} />
+				</div>
 			</div>
 			<div class="flex flex-auto flex-col items-center gap-4">
 				<AllLists useSearch={true} show={{ delete: true, share: true }} />

@@ -14,6 +14,7 @@ export function createList(name: string) {
         items: []
     };
     lists.push(newList);
+    return newList;
 }
 
 export function getListById(listId: string) {

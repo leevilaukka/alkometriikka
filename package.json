@@ -14,6 +14,7 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --write .",
 		"lint": "prettier --check .",
+		"test": "bun test ./src/lib/utils/templates.test.ts",
 		"migrate": "bun run scripts/setup/migrate.ts",
 		"sync": "bun run scripts/setup/index.ts"
 	},

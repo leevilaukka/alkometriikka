@@ -6,6 +6,9 @@ export let personalInfo = $state(
 	LocalStorageManager.getItem(LocalStorageKeys.PersonalInfo) || { gender: null, weight: null }
 );
 export let lists = $state(LocalStorageManager.getItem(LocalStorageKeys.Lists) || []);
+export let customTemplates = $state(
+	LocalStorageManager.getItem(LocalStorageKeys.CustomTemplates) || []
+);
 
 export let searchQuery = writable(new URLSearchParams(location.search).get('q') || '');
 

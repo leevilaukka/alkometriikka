@@ -1,4 +1,5 @@
 import type { FilterValues, ListObj, PersonalInfo } from '../types';
+import type { CustomTemplate } from './templates';
 import { LocalStorageKeys } from './constants';
 
 type LocalStorageValueMap = {
@@ -10,6 +11,7 @@ type LocalStorageValueMap = {
 	[LocalStorageKeys.CurrentFilters]: FilterValues;
 	[LocalStorageKeys.Theme]: '' | 'dark' | 'light';
 	[LocalStorageKeys.ViewedShares]: string[];
+	[LocalStorageKeys.CustomTemplates]: CustomTemplate[];
 };
 
 type LocalStorageKey = keyof LocalStorageValueMap;
