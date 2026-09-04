@@ -1,4 +1,46 @@
-import type { AvailabilityStore } from '$lib/types';
+import type { AvailabilityStore, PriceListItem } from '$lib/types';
+import { AllColumns } from './constants';
+
+export type StoreBasketSummary = {
+	store: AvailabilityStore;
+	available: PriceListItem[];
+	missing: PriceListItem[];
+};
+
+export function rankStoresForProducts(
+	products: PriceListItem[],
+	stores: AvailabilityStore[],
+	preferredStoreId?: string
+): StoreBasketSummary[] {
+	return stores
+		.map((store) => {
+			const available: PriceListItem[] = [];
+			const missing: PriceListItem[] = [];
+
+			products.forEach((product) => {
+				if (
+					product[AllColumns.StoreAvailability] instanceof Set &&
+					product[AllColumns.StoreAvailability].has(store.name)
+				) {
+					available.push(product);
+				} else {
+					missing.push(product);
+				}
+			});
+
+			return { store, available, missing };
+		})
+		.sort((first, second) => {
+			const preferredDifference =
+				Number(second.store.id === preferredStoreId) - Number(first.store.id === preferredStoreId);
+			return (
+				second.available.length - first.available.length ||
+				first.missing.length - second.missing.length ||
+				preferredDifference ||
+				first.store.name.localeCompare(second.store.name, 'fi', { sensitivity: 'base' })
+			);
+		});
+}
 
 type Coordinates = {
 	latitude: number;

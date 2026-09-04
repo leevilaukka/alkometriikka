@@ -40,6 +40,8 @@
 	import { initFilterValues } from '$lib/utils/filters';
 	import type { SearchParamsManager } from '$lib/utils/url';
 	import ProductPreview from '../widgets/ProductPreview.svelte';
+	import { preferredStoreId } from '$lib/global.svelte';
+	import { rankStoresForProducts } from '$lib/utils/availability';
 
 	let activeFilters: ColumnNames[] = $state([]);
 
@@ -158,6 +160,20 @@
 	}
 
 	let details = $derived.by(getListDetails);
+
+	let storeSummaries = $derived.by(() => {
+		if (!availability) return [];
+		const rankedStores = rankStoresForProducts(
+			kaljakori.data,
+			Object.values(availability.stores),
+			$preferredStoreId
+		);
+		const preferredStore = rankedStores.find((summary) => summary.store.id === $preferredStoreId);
+		const topStores = rankedStores.slice(0, 8);
+		return preferredStore && !topStores.some((summary) => summary.store.id === preferredStore.store.id)
+			? [...topStores, preferredStore]
+			: topStores;
+	});
 
 	function validateListName(name: string) {
 		if (name.trim().length === 0) list.name = 'Nimetön lista';
@@ -457,7 +473,7 @@
 			<dialog
 				bind:this={detailsElement}
 				class={twMerge(
-					'fixed m-auto hidden h-full w-full flex-col gap-4 rounded-lg bg-primary border border-primary p-4 backdrop:backdrop-blur-sm open:flex xl:relative xl:w-84 xl:rounded-none xl:border-0 transition-transform open:starting:scale-0 md:open:starting:scale-100 open:scale-100'
+					'fixed m-auto hidden h-full w-full flex-col gap-4 overflow-y-auto rounded-lg bg-primary border border-primary p-4 backdrop:backdrop-blur-sm open:flex xl:relative xl:w-84 xl:rounded-none xl:border-0 transition-transform open:starting:scale-0 md:open:starting:scale-100 open:scale-100'
 				)}
 			>
 				<h2 class="text-2xl font-bold">Listan tiedot</h2>
@@ -469,8 +485,47 @@
 					<p>Yhteensä sokeria: {formatValue(details.totalSugar, AllColumns.Sugar, {includeUnit: false})} g</p>
 					<p>Alkoholia per euro: {formatValue(details.totalAlcoholGramsPerEuro, AllColumns.AlcoholGramsPerEuro)} g</p>
 					<p>Arvioitu promillemäärä: {formatValue(details.totalBAC, AllColumns.PromillePerEuro)}</p>
+					{#if storeSummaries.length}
+						{@const bestStore = storeSummaries[0]}
+						<section class="flex flex-col gap-2 border-t border-primary pt-4">
+							<div>
+								<h3 class="text-lg font-bold">Ostoksille</h3>
+								<p class="text-sm text-secondary">Paras: {bestStore.store.name} · {bestStore.available.length}/{kaljakori.data.length} saatavilla</p>
+							</div>
+							<div class="rounded border border-primary bg-secondary p-3">
+								<ul class="flex max-h-100 flex-col gap-2 overflow-y-auto">
+									{#each storeSummaries as summary, index (summary.store.id)}
+										{@const address = [summary.store.address, summary.store.postOffice].filter(Boolean).join(', ')}
+										{@const directionsQuery = ['Alko', summary.store.name, address].filter(Boolean).join(', ')}
+										<li class="grid grid-cols-[minmax(0,1fr)_auto] gap-3 rounded border border-primary bg-primary p-3">
+											<div class="flex min-w-0 flex-col gap-2">
+												<div class="min-w-0">
+													<p class="font-semibold">{#if index === 0}★ {/if}{summary.store.name}{#if summary.store.id === $preferredStoreId}<span class="text-xs"> (ensisijainen)</span>{/if}</p>
+													{#if address}<p class="text-xs text-secondary">{address}</p>{/if}
+												</div>
+												<p class="text-sm"><span class="font-semibold text-green-700 dark:text-green-300">{summary.available.length} saatavilla</span><span class="text-secondary"> · {summary.missing.length} puuttuu</span></p>
+												{#if summary.missing.length}
+													<details class="text-sm">
+														<summary class="cursor-pointer text-secondary">Näytä puuttuvat</summary>
+														<ul class="mt-1 max-h-32 list-inside list-disc overflow-y-auto text-secondary">
+															{#each summary.missing as product (product[AllColumns.Number])}<li>{product[AllColumns.Name]}</li>{/each}
+														</ul>
+													</details>
+												{/if}
+											</div>
+											<div class="flex shrink-0 flex-col gap-2 self-start">
+												<a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(directionsQuery)}`} target="_blank" rel="noopener noreferrer" aria-label={`Näytä ${summary.store.name} kartalla`} title="Näytä kartalla" class={twMerge(components.button({ size: 'sm' }), 'aspect-square p-3')}><Icon name="map_pin" /></a>
+												<a href={`/myymalat/${summary.store.id}/`} aria-label={`Avaa ${summary.store.name} myymäläsivu`} title="Avaa myymäläsivu" class={twMerge(components.button({ size: 'sm' }), 'aspect-square p-3')}><Icon name="store" /></a>
+												<a href={`/?${AllColumns.StoreAvailability}=${encodeURIComponent(summary.store.name)}`} aria-label={`Avaa ${summary.store.name} koko valikoima`} title="Avaa koko valikoima" class={twMerge(components.button({ size: 'sm' }), 'aspect-square p-3')}><Icon name="list" /></a>
+											</div>
+										</li>
+									{/each}
+								</ul>
+							</div>
+						</section>
+					{/if}
 					<div
-						class={twMerge(components.button({ size: "lg" }), "w-full mt-auto hover:cursor-default")}
+						class={twMerge(components.button({ size: 'lg' }), 'sticky bottom-0 z-10 mt-auto w-full hover:cursor-default')}
 					>
 						<Icon name="shopping_bag" />
 						<h2>Yhteensä: {formatValue(details.totalPrice, AllColumns.Price)}</h2>
