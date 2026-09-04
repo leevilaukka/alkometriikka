@@ -14,13 +14,13 @@
     };
 </script>
 
-{#each Object.entries(DynamicColumnToBadgeMap(item)) as [column, badgeInfo]}
+{#each Object.entries(DynamicColumnToBadgeMap(item)) as [column, badgeInfo] (column)}
     {#if item[column] !== null  && badgeInfo}
         {#if isBadge(badgeInfo)}
             <Badge text={badgeInfo.text} color={badgeInfo.color} icon={badgeInfo.icon} />
         {:else if isSubBadge(badgeInfo)}
-            {#each Object.entries(badgeInfo) as [subKey, subBadgeInfo]}
-                {#if item[column] === subKey}
+            {#each Object.entries(badgeInfo) as [subKey, subBadgeInfo] (subKey)}
+                {#if item[column] === subKey || (item[column] instanceof Set && item[column].has(subKey))}
                     <Badge
                         text={subBadgeInfo.text}
                         color={subBadgeInfo.color}

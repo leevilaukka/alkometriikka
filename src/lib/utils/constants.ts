@@ -344,15 +344,22 @@ export const defaultSEOData = {
 export const ColumnToBadgeMap: ColumnBadgeMap = {
 	[DatasetColumns.SpecialGroup]: {
 		Luomu: { text: 'Luomu', color: 'green', icon: 'plant_pot' },
-		'Vegaaneille soveltuva tuote': { text: 'Vegaani', color: 'emerald', icon: 'leaf' },
-		Alkuviini: { text: 'Alkuviini', color: 'blue', icon: 'wine' },
+		Alkuviini: { text: 'Alkuviini', color: 'violet', icon: 'wine' },
 		Biodynaaminen: { text: 'Biodynaaminen', color: 'emerald', icon: 'yin_yang' }
+	},
+	[DatasetColumns.Availability]: {
+		kausituote: { text: 'Kausituote', color: 'orange', icon: 'tree' },
+		erikoiserä: { text: 'Erikoiserä', color: 'yellow', icon: 'star' },
+		tilausvalikoima: { text: 'Tilausvalikoima', color: 'cyan', icon: 'truck' }
+	},
+	[DatasetColumns.Note]: {
+		'Vegaaneille soveltuva tuote': { text: 'Vegaani', color: 'emerald', icon: 'leaf' },
+		Biodynaaminen: { text: 'Biodynaaminen', color: 'emerald', icon: 'yin_yang' },
+		Alkuviini: { text: 'Alkuviini', color: 'violet', icon: 'wine' },
+		'Ei lisättyä sulfiittia': { text: 'Ei lisättyä sulfiittia', color: 'green', icon: 'check_circle' },
+		'Myydään lahjapakkauksessa': { text: 'Lahjapakkaus', color: 'pink', icon: 'gift' },
+		'Laktoositon': { text: 'Laktoositon', color: 'cyan', icon: 'milk_bottle' }
 	}
-	/*[DatasetColumns.Availability]: {
-        "Kausituote": { text: "Kausituote", color: "dark_red", icon: "tree" },
-        "Erikoiserä": { text: "Erikoiserä", color: "yellow", icon: "star" },
-        "Tilausvalikoima": { text: "Tilausvalikoima", color: "cyan", icon: "truck" },
-    }*/
 };
 
 export function DynamicColumnToBadgeMap(item: Record<string, any>): Partial<ColumnBadgeMap> {
