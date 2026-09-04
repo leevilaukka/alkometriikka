@@ -70,11 +70,11 @@
 			twitter: {
 				title: `Samankaltaisia tuotteita kuin ${product[AllColumns.Name]} | Alkometriikka`,
 				description: `Katso samankaltaisia tuotteita kuin ${product[AllColumns.Name]} Alkometriikasta. Vertaa hintoja, ominaisuuksia ja löydä parhaat vaihtoehdot.`,
-				image: generateImageUrl(product[AllColumns.Number], product[AllColumns.Name], 'medium'),
+				image: generateImageUrl(product[AllColumns.Number], 'medium'),
 				card: "summary_large_image"
 			},
 			image: {
-				url: generateImageUrl(product[AllColumns.Number], product[AllColumns.Name], 'medium'),
+				url: generateImageUrl(product[AllColumns.Number], 'medium'),
 				alt: `Samankaltaisia tuotteita kuin ${product[AllColumns.Name]} | Alkometriikka`,
 				height: 192,
 				width: 160

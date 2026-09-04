@@ -213,7 +213,7 @@
 			},
 			image: {
 				alt: product[AllColumns.Name],
-				url: generateImageUrl(product[AllColumns.Number], product[AllColumns.Name], 'medium'),
+				url: generateImageUrl(product[AllColumns.Number], 'medium'),
 				width: '160',
 				height: '192'
 			},
@@ -221,7 +221,7 @@
 				card: 'summary_large_image',
 				title: generateTitle(`${product[AllColumns.Name]}`),
 				description: `Katso ${product[AllColumns.Name]} -tuotteen tiedot, hinnat ja vastaavat tuotteet Alkometriikasta.`,
-				image: generateImageUrl(product[AllColumns.Number], product[AllColumns.Name], 'medium')
+				image: generateImageUrl(product[AllColumns.Number], 'medium')
 			},
 			keywords: `${product[AllColumns.Name]}, ${product[AllColumns.Manufacturer]}, ${product[AllColumns.Type]}, ${product[AllColumns.SubType]}, ${[...(product[AllColumns.Description] || [])].join(', ').toLocaleLowerCase()}`
 		});

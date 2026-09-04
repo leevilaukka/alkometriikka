@@ -28,7 +28,7 @@
 		og: {
 			title: generateTitle('Myymälät'),
 			description: 'Selaa Alkon myymälöitä ja valitse ensisijainen myymälä.',
-			url: 'https://alkometriikka.fi/myymalat',
+			url: window.location.href,
 		},
 		keywords: 'Alko, myymälät, myymälä, aukioloajat, osoite, valikoima',
 		description: 'Selaa Alkon myymälöitä ja valitse ensisijainen myymälä.',
