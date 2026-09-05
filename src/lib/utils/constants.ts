@@ -282,7 +282,9 @@ export const LocalStorageKeys = {
 export const ShareTypes = {
 	Default: 'page',
 	List: 'list',
-	Product: 'product'
+	Product: 'product',
+	Filters: 'filters',
+	Similar: 'similar'
 } as const;
 
 export const ContextKeys = {
