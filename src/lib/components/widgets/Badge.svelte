@@ -4,10 +4,10 @@
 	import { components } from '$lib/utils/styles';
 	import type { BadgeConfig } from '$lib/types';
     
-    const { text, color = "default", icon }: BadgeConfig = $props();
+    const { text, color = "default", icon, tooltip }: BadgeConfig = $props();
 </script>
 
-<p class={twMerge(components.badge({ color }))}>
+<p class={twMerge(components.badge({ color }))} title={tooltip}>
     {#if icon}
         <Icon name={icon} />
     {/if}
