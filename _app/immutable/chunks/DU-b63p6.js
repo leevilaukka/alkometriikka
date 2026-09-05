@@ -1,0 +1,1 @@
+import"./DsnmJJEf.js";import{p,t as c,a as m,b as n,f,c as l,r as i,d as _}from"./CCKJH_tv.js";import{c as d,t as u,s as v}from"./C8sIuNVq.js";import{p as x}from"./B2PNa_5Z.js";var h=f("<span> </span>");function q(t,a){p(a,!0);const e=x(a,"class",3,"");var s=h(),r=l(s,!0);i(s),c(o=>{v(s,1,o,"svelte-11rqrwd"),_(r,a.name)},[()=>d(u("icon",e()))]),m(t,s),n()}export{q as I};
