@@ -245,10 +245,58 @@ export async function handleShare({
 	return false;
 }
 
+export function shareTypeFromRoute(routeId: string | null | undefined): ShareType {
+	switch (routeId) {
+		case '/':
+			return ShareTypes.Filters;
+		case '/listat':
+			return ShareTypes.List;
+		case '/tuotteet/[...id]':
+			return ShareTypes.Product;
+		case '/vastaavat/[...id]':
+			return ShareTypes.Similar;
+		default:
+			return ShareTypes.Default;
+	}
+}
+
+let routerReady = false;
+let pendingUrl: string | null = null;
+
+/**
+ * Fired (via `afterNavigate`) once the SvelteKit router is initialized and URL
+ * replacement is allowed. Any replacements requested before the router was
+ * ready are flushed once it is.
+ */
+export function markRouterReady() {
+	routerReady = true;
+	if (pendingUrl !== null) {
+		const url = pendingUrl;
+		pendingUrl = null;
+		// Defer to a microtask so the flush runs after the router has fully
+		// initialized (it marks itself ready right after the initial navigation).
+		queueMicrotask(() => replaceState(url, {}));
+	}
+}
+
+/**
+ * Replaces the current URL, or queues the replacement until the router is ready.
+ * Before the router initializes the URL already reflects the loaded page, so a
+ * queued write only matters for edits like stripping a `sid` parameter.
+ */
+export function updateURL(url: string) {
+	if (!routerReady) {
+		pendingUrl = url;
+		return;
+	}
+	replaceState(url, {});
+}
+
 export function trackSharedView(type: ShareType = ShareTypes.Default) {
 	const url = new URL(location.href);
 	const sid = url.searchParams.get('sid');
 	if (sid) {
+		console.log(`Tracking shared view for ${type} with SID: ${sid}`);
 		const viewedShares = LocalStorageManager.getItem(LocalStorageKeys.ViewedShares) || [];
 		url.searchParams.delete('sid');
 
@@ -262,7 +310,7 @@ export function trackSharedView(type: ShareType = ShareTypes.Default) {
 			});
 		}
 
-		replaceState(url.href, {});
+		updateURL(url.href);
 	}
 }
 

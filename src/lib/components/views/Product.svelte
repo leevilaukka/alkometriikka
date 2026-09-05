@@ -10,7 +10,9 @@
 		sendAnalyticsEvent,
 		setSEO,
 		isNullish,
-		valueToString
+		valueToString,
+		handleShare
+
 	} from '$lib/utils/helpers';
 	import { formatValue } from '$lib/utils/format';
 	import { twMerge } from 'tailwind-merge';
@@ -213,7 +215,7 @@
 			},
 			image: {
 				alt: product[AllColumns.Name],
-				url: generateImageUrl(product[AllColumns.Number], product[AllColumns.Name], 'medium'),
+				url: generateImageUrl(product[AllColumns.Number], 'medium'),
 				width: '160',
 				height: '192'
 			},
@@ -221,7 +223,7 @@
 				card: 'summary_large_image',
 				title: generateTitle(`${product[AllColumns.Name]}`),
 				description: `Katso ${product[AllColumns.Name]} -tuotteen tiedot, hinnat ja vastaavat tuotteet Alkometriikasta.`,
-				image: generateImageUrl(product[AllColumns.Number], product[AllColumns.Name], 'medium')
+				image: generateImageUrl(product[AllColumns.Number], 'medium')
 			},
 			keywords: `${product[AllColumns.Name]}, ${product[AllColumns.Manufacturer]}, ${product[AllColumns.Type]}, ${product[AllColumns.SubType]}, ${[...(product[AllColumns.Description] || [])].join(', ').toLocaleLowerCase()}`
 		});
@@ -244,6 +246,26 @@
 			<Icon name={'home'} class="inline-block" />
 			<span>Etusivulle</span>
 		</a>
+		<button
+			type="button"
+			class={twMerge(components.button({ size: 'md', type: "positive" }), 'flex flex-row ml-auto items-center gap-2')}
+			onclick={async () => {
+				const shared = await handleShare({
+					type: 'product',
+					text: `Katso ${product[AllColumns.Name]} -tuotteen tiedot, hinnat ja vastaavat tuotteet Alkometriikasta.`,
+					url: location.href,
+					title: `Alkometriikka - ${product[AllColumns.Name]}`,
+					includeSID: true
+				})
+
+				if (!shared) {
+					alert("Linkki kopioitu leikepöydälle!");
+				}
+			}}
+			> 
+			<Icon name="share" class="inline-block" />
+			<span>Jaa tuote</span>
+		</button>
 	</div>
 	<header class="grid w-full grid-cols-1 gap-6 md:grid-cols-[auto_1fr]">
 		<div class="flex aspect-square h-96 w-full max-w-full rounded bg-white p-6 md:w-fit">

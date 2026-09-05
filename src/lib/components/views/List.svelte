@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { isLaptop, personalInfo, searchQuery, isMobile } from '$lib/global.svelte';
 	import { components } from '$lib/utils/styles';
-	import { handleShare, trackSharedView, productIdsToDataset, sendAnalyticsEvent } from '$lib/utils/helpers';
+	import { handleShare, productIdsToDataset, sendAnalyticsEvent } from '$lib/utils/helpers';
 	import { formatValue } from '$lib/utils/format';
 	import { Kaljakori } from '$lib/alko';
 	import {
@@ -24,8 +24,7 @@
 		shownSortingKeys,
 		defaultSortingOrderMap,
 		ContextKeys,
-		GenderOptionsMap,
-		ShareTypes
+		GenderOptionsMap
 	} from '$lib/utils/constants';
 	import {
 		headerToDisplayName,
@@ -174,10 +173,6 @@
 
 	$effect(() => {
 		searchParamsManager.setParameter('list', listToURI(list));
-	});
-
-	$effect(() => {
-		trackSharedView(ShareTypes.List);
 	});
 </script>
 
