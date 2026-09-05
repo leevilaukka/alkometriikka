@@ -129,6 +129,7 @@ export type BadgeConfig = {
 	text: string;
 	color?: VariantProps<typeof components.badge>['color'];
 	icon?: IconName;
+	tooltip?: string;
 };
 export type ColumnBadgeMap = Partial<
 	Record<ColumnNames, BadgeConfig | Record<string, BadgeConfig>>

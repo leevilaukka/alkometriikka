@@ -17,7 +17,7 @@
 {#each Object.entries(DynamicColumnToBadgeMap(item)) as [column, badgeInfo] (column)}
     {#if item[column] !== null  && badgeInfo}
         {#if isBadge(badgeInfo)}
-            <Badge text={badgeInfo.text} color={badgeInfo.color} icon={badgeInfo.icon} />
+            <Badge text={badgeInfo.text} color={badgeInfo.color} icon={badgeInfo.icon} tooltip={badgeInfo.tooltip} />
         {:else if isSubBadge(badgeInfo)}
             {#each Object.entries(badgeInfo) as [subKey, subBadgeInfo] (subKey)}
                 {#if item[column] === subKey || (item[column] instanceof Set && item[column].has(subKey))}
@@ -25,6 +25,7 @@
                         text={subBadgeInfo.text}
                         color={subBadgeInfo.color}
                         icon={subBadgeInfo.icon}
+                        tooltip={subBadgeInfo.tooltip}
                     />
                 {/if}
             {/each}

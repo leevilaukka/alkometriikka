@@ -1,5 +1,4 @@
-import { replaceState } from "$app/navigation";
-import { isNullish } from "./helpers";
+import { isNullish, updateURL } from "./helpers";
 
 export class SearchParamsManager {
     params = new URLSearchParams();
@@ -14,7 +13,7 @@ export class SearchParamsManager {
         this.mergedParams = new URLSearchParams([...this.params, ...this.persistentParams]);
         let url = window.location.pathname
         if(this.mergedParams.size) url += `?${this.mergedParams.toString()}`;
-        replaceState(url, {});
+        updateURL(url);
     }
 
     reset() {

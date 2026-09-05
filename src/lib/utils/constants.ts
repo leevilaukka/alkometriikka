@@ -283,7 +283,9 @@ export const LocalStorageKeys = {
 export const ShareTypes = {
 	Default: 'page',
 	List: 'list',
-	Product: 'product'
+	Product: 'product',
+	Filters: 'filters',
+	Similar: 'similar'
 } as const;
 
 export const ContextKeys = {
@@ -354,11 +356,11 @@ export const ColumnToBadgeMap: ColumnBadgeMap = {
 		tilausvalikoima: { text: 'Tilausvalikoima', color: 'cyan', icon: 'truck' }
 	},
 	[DatasetColumns.Note]: {
-		'Vegaaneille soveltuva tuote': { text: 'Vegaani', color: 'emerald', icon: 'leaf' },
+		'Vegaaneille soveltuva tuote': { text: 'Vegaani', color: 'emerald', icon: 'leaf', tooltip: 'Vegaaneille soveltuva tuote' },
 		Biodynaaminen: { text: 'Biodynaaminen', color: 'emerald', icon: 'yin_yang' },
 		Alkuviini: { text: 'Alkuviini', color: 'violet', icon: 'wine' },
 		'Ei lisättyä sulfiittia': { text: 'Ei lisättyä sulfiittia', color: 'green', icon: 'check_circle' },
-		'Myydään lahjapakkauksessa': { text: 'Lahjapakkaus', color: 'pink', icon: 'gift' },
+		'Myydään lahjapakkauksessa': { text: 'Lahjapakkaus', color: 'pink', icon: 'gift', tooltip: 'Myydään lahjapakkauksessa' },
 		'Laktoositon': { text: 'Laktoositon', color: 'cyan', icon: 'milk_bottle' }
 	}
 };

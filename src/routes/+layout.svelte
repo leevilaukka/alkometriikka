@@ -7,9 +7,10 @@
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/styles';
 	import Icon from '$lib/components/widgets/Icon.svelte';
-	import { beforeNavigate } from '$app/navigation';
+	import { beforeNavigate, afterNavigate } from '$app/navigation';
 	import { page } from '$app/state';
 	import { SearchParamsManager } from '$lib/utils/url';
+	import { markRouterReady, shareTypeFromRoute, trackSharedView } from '$lib/utils/helpers';
 	import { setContext } from 'svelte';
 	import Settings from '$lib/components/widgets/Settings.svelte';
 	import { LocalStorageManager } from '$lib/utils/storage';
@@ -37,6 +38,10 @@
 
 	$effect(() => {
 		LocalStorageManager.setItem(LocalStorageKeys.PreferredStore, $preferredStoreId);
+	});
+
+	$effect(() => {
+		trackSharedView(shareTypeFromRoute(page.route.id));
 	});
 
 	
@@ -68,6 +73,10 @@
 		if(to.url.origin !== window.location.origin) return
 		searchParamsManager.setParametersFromURL(to.url)
 		searchParamsManager.update()
+	});
+
+	afterNavigate(() => {
+		markRouterReady();
 	});
 
 	function shiftLoader() {
