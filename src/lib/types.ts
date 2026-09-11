@@ -130,9 +130,10 @@ export type BadgeConfig = {
 	color?: VariantProps<typeof components.badge>['color'];
 	icon?: IconName;
 	tooltip?: string;
+	hideFromProductPage?: boolean;
 };
-export type ColumnBadgeMap = Partial<
-	Record<ColumnNames, BadgeConfig | Record<string, BadgeConfig>>
+export type ColumnBadgeMap<T extends PriceListItem = PriceListItem> = Partial<
+	Pick<Record<ColumnNames, BadgeConfig | Record<string, BadgeConfig>>, keyof T & ColumnNames>
 >;
 
 export type FilterValue = (string | number)[];

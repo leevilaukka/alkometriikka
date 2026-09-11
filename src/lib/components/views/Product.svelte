@@ -201,9 +201,17 @@
 		};
 	}
 
-	let sizesOpened = $state(false);
-	let historyOpened = $state(false);
-	let availabilityOpened = $state(false);
+	type OpenedDetails = {
+		sizes: boolean;
+		history: boolean;
+		availability: boolean;
+	};
+
+	let opened: OpenedDetails = $state({
+		sizes: false,
+		history: false,
+		availability: false
+	});
 
 	$effect(() => {
 		setSEO({
@@ -296,7 +304,7 @@
 						: product[AllColumns.Availability]}
 				</p>
 				<div class="flex w-full flex-row gap-2 md:flex-row">
-					<BadgeList item={product} />
+					<BadgeList item={product} isProductPage={true} />
 				</div>
 			</div>
 			<div class="flex flex-col items-end gap-1">
@@ -426,8 +434,8 @@
 	<section class="w-full overflow-hidden rounded border border-primary bg-secondary">
 		<details>
 			<summary class="m-2 text-2xl font-bold" onclick={(e) => {
-				if (!availabilityOpened) sendAnalyticsEvent('show_availability', { product_number: product[AllColumns.Number] });
-				availabilityOpened = true;
+				if (!opened.availability) sendAnalyticsEvent('show_availability', { product_number: product[AllColumns.Number] });
+				opened.availability = true;
 			}}>
 				Saatavuus myymälässä
 			</summary>
@@ -486,11 +494,11 @@
 			<summary
 				class="m-2 text-2xl font-bold"
 				onclick={(e) => {
-					if (!historyOpened)
+					if (!opened.history)
 						sendAnalyticsEvent('show_price_history', {
 							product_number: product[AllColumns.Number]
 						});
-					historyOpened = true;
+					opened.history = true;
 				}}
 			>
 				Hintahistoria
@@ -503,9 +511,9 @@
 			<summary
 				class="mb-2 text-2xl font-bold"
 				onclick={(e) => {
-					if (!sizesOpened)
+					if (!opened.sizes)
 						sendAnalyticsEvent('view_sizes', { product_number: product[AllColumns.Number] });
-					sizesOpened = true;
+					opened.sizes = true;
 				}}
 			>
 				Muut koot

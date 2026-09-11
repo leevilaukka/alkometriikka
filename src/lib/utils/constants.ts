@@ -1,5 +1,5 @@
 import type { IconName } from '$lib/icons';
-import type { ColNameObj, ColumnBadgeMap, ColumnNames } from '$lib/types';
+import type { BadgeConfig, ColNameObj, ColumnBadgeMap, ColumnNames, PriceListItem } from '$lib/types';
 import type { setSEO } from './helpers';
 
 /** Columns present in the Alko price list dataset
@@ -339,8 +339,7 @@ export const defaultSEOData = {
 		image: '/images/twitter_image.png',
 		description: 'Selaa Alkon tuotevalikoimaa, ja luo jaettavia listoja helposti!'
 	},
-	keywords:
-		'alkometriikka, alkometri, promillelaskuri, promillet, alko, juomat, suodattaminen, suodatus, hinnat, vertailu, alkoholi, viina, viinit, oluet, siiderit, lonkerot, juomalistat, listat, jaa'
+	keywords: 'alkometriikka, alko, alkometri, promillelaskuri, promillet, juomat, suodattaminen, suodatus, hinnat, vertailu, alkoholi, viina, viinit, oluet, siiderit, lonkerot, juomalistat, listat, jaa, myymälät'
 } as const satisfies Parameters<typeof setSEO>[0];
 
 export const ColumnToBadgeMap: ColumnBadgeMap = {
@@ -364,8 +363,8 @@ export const ColumnToBadgeMap: ColumnBadgeMap = {
 	}
 };
 
-export function DynamicColumnToBadgeMap(item: Record<string, any>): Partial<ColumnBadgeMap> {
-	const map: Partial<ColumnBadgeMap> = { ...ColumnToBadgeMap };
+export function DynamicColumnToBadgeMap<T extends PriceListItem>(item: T): ColumnBadgeMap<T> {
+	const map: ColumnBadgeMap = { ...ColumnToBadgeMap };
 	if (item[DatasetColumns.AlcoholPercentage] === 0) {
 		map[DatasetColumns.AlcoholPercentage] = {
 			text: 'Alkoholiton',
@@ -376,8 +375,12 @@ export function DynamicColumnToBadgeMap(item: Record<string, any>): Partial<Colu
 	if (Number(item[DatasetColumns.Sugar]) === 0) {
 		map[DatasetColumns.Sugar] = { text: 'Sokeriton', color: 'gray' };
 	}
-	if (item[DatasetColumns.New] === 'Uutuus' || item[DatasetColumns.New] === 'uutuus') {
+	if (item[DatasetColumns.New].toLowerCase() === 'uutuus') {
 		map[DatasetColumns.New] = { text: 'Uutuus', color: 'red', icon: 'pencil_sparkles' };
+	}
+
+	if (item[DatasetColumns.RemovedFromSelection] === true) {
+		map[DatasetColumns.RemovedFromSelection] = { text: 'Poistettu valikoimasta', color: 'red', icon: 'x_circle', tooltip: 'Tuote on poistettu Alkon valikoimista', hideFromProductPage: true };
 	}
 	return map;
 }
