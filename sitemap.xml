@@ -73900,7 +73900,7 @@
     <loc>https://alkometriikka.fi/tuotteet/904344/</loc>
     <priority>0.7</priority>
     <changefreq>weekly</changefreq>
-    <lastmod>2026-01-26</lastmod>
+    <lastmod>2026-09-11</lastmod>
     <image:image>
       <image:loc>https://images.alko.fi/images/cs_srgb,f_auto,t_products/cdn/904344/kuva.jpg</image:loc>
     </image:image>
@@ -112078,7 +112078,7 @@
     <loc>https://alkometriikka.fi/tuotteet/951394/</loc>
     <priority>0.7</priority>
     <changefreq>weekly</changefreq>
-    <lastmod>2026-01-26</lastmod>
+    <lastmod>2026-09-11</lastmod>
     <image:image>
       <image:loc>https://images.alko.fi/images/cs_srgb,f_auto,t_products/cdn/951394/kuva.jpg</image:loc>
     </image:image>
@@ -118735,15 +118735,6 @@
     </image:image>
   </url>
   <url>
-    <loc>https://alkometriikka.fi/tuotteet/004909/</loc>
-    <priority>0.7</priority>
-    <changefreq>weekly</changefreq>
-    <lastmod>2026-07-18</lastmod>
-    <image:image>
-      <image:loc>https://images.alko.fi/images/cs_srgb,f_auto,t_products/cdn/004909/kuva.jpg</image:loc>
-    </image:image>
-  </url>
-  <url>
     <loc>https://alkometriikka.fi/tuotteet/001403/</loc>
     <priority>0.7</priority>
     <changefreq>weekly</changefreq>
@@ -118861,6 +118852,15 @@
     </image:image>
   </url>
   <url>
+    <loc>https://alkometriikka.fi/tuotteet/004909/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+    <lastmod>2026-07-18</lastmod>
+    <image:image>
+      <image:loc>https://images.alko.fi/images/cs_srgb,f_auto,t_products/cdn/004909/kuva.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://alkometriikka.fi/tuotteet/008179/</loc>
     <priority>0.7</priority>
     <changefreq>weekly</changefreq>
@@ -118894,15 +118894,6 @@
     <lastmod>2026-07-18</lastmod>
     <image:image>
       <image:loc>https://images.alko.fi/images/cs_srgb,f_auto,t_products/cdn/007045/kuva.jpg</image:loc>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://alkometriikka.fi/tuotteet/008981/</loc>
-    <priority>0.7</priority>
-    <changefreq>weekly</changefreq>
-    <lastmod>2026-07-18</lastmod>
-    <image:image>
-      <image:loc>https://images.alko.fi/images/cs_srgb,f_auto,t_products/cdn/008981/kuva.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -119113,21 +119104,21 @@
     </image:image>
   </url>
   <url>
-    <loc>https://alkometriikka.fi/tuotteet/008512/</loc>
-    <priority>0.7</priority>
-    <changefreq>weekly</changefreq>
-    <lastmod>2026-01-26</lastmod>
-    <image:image>
-      <image:loc>https://images.alko.fi/images/cs_srgb,f_auto,t_products/cdn/008512/kuva.jpg</image:loc>
-    </image:image>
-  </url>
-  <url>
     <loc>https://alkometriikka.fi/tuotteet/007072/</loc>
     <priority>0.7</priority>
     <changefreq>weekly</changefreq>
     <lastmod>2026-07-18</lastmod>
     <image:image>
       <image:loc>https://images.alko.fi/images/cs_srgb,f_auto,t_products/cdn/007072/kuva.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alkometriikka.fi/tuotteet/001377/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+    <lastmod>2026-07-18</lastmod>
+    <image:image>
+      <image:loc>https://images.alko.fi/images/cs_srgb,f_auto,t_products/cdn/001377/kuva.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -119419,6 +119410,15 @@
     </image:image>
   </url>
   <url>
+    <loc>https://alkometriikka.fi/tuotteet/008512/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+    <lastmod>2026-01-26</lastmod>
+    <image:image>
+      <image:loc>https://images.alko.fi/images/cs_srgb,f_auto,t_products/cdn/008512/kuva.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://alkometriikka.fi/tuotteet/000823/</loc>
     <priority>0.7</priority>
     <changefreq>weekly</changefreq>
@@ -119518,15 +119518,6 @@
     </image:image>
   </url>
   <url>
-    <loc>https://alkometriikka.fi/tuotteet/001377/</loc>
-    <priority>0.7</priority>
-    <changefreq>weekly</changefreq>
-    <lastmod>2026-07-18</lastmod>
-    <image:image>
-      <image:loc>https://images.alko.fi/images/cs_srgb,f_auto,t_products/cdn/001377/kuva.jpg</image:loc>
-    </image:image>
-  </url>
-  <url>
     <loc>https://alkometriikka.fi/tuotteet/007932/</loc>
     <priority>0.7</priority>
     <changefreq>weekly</changefreq>
@@ -119623,6 +119614,15 @@
     <lastmod>2026-07-18</lastmod>
     <image:image>
       <image:loc>https://images.alko.fi/images/cs_srgb,f_auto,t_products/cdn/008782/kuva.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alkometriikka.fi/tuotteet/008924/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+    <lastmod>2026-07-18</lastmod>
+    <image:image>
+      <image:loc>https://images.alko.fi/images/cs_srgb,f_auto,t_products/cdn/008924/kuva.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -120100,6 +120100,15 @@
     <lastmod>2026-07-18</lastmod>
     <image:image>
       <image:loc>https://images.alko.fi/images/cs_srgb,f_auto,t_products/cdn/007122/kuva.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alkometriikka.fi/tuotteet/001657/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+    <lastmod>2026-07-18</lastmod>
+    <image:image>
+      <image:loc>https://images.alko.fi/images/cs_srgb,f_auto,t_products/cdn/001657/kuva.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -120688,12 +120697,12 @@
     </image:image>
   </url>
   <url>
-    <loc>https://alkometriikka.fi/tuotteet/008924/</loc>
+    <loc>https://alkometriikka.fi/tuotteet/008981/</loc>
     <priority>0.7</priority>
     <changefreq>weekly</changefreq>
     <lastmod>2026-07-18</lastmod>
     <image:image>
-      <image:loc>https://images.alko.fi/images/cs_srgb,f_auto,t_products/cdn/008924/kuva.jpg</image:loc>
+      <image:loc>https://images.alko.fi/images/cs_srgb,f_auto,t_products/cdn/008981/kuva.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -120922,15 +120931,6 @@
     </image:image>
   </url>
   <url>
-    <loc>https://alkometriikka.fi/tuotteet/008824/</loc>
-    <priority>0.7</priority>
-    <changefreq>weekly</changefreq>
-    <lastmod>2026-07-18</lastmod>
-    <image:image>
-      <image:loc>https://images.alko.fi/images/cs_srgb,f_auto,t_products/cdn/008824/kuva.jpg</image:loc>
-    </image:image>
-  </url>
-  <url>
     <loc>https://alkometriikka.fi/tuotteet/002303/</loc>
     <priority>0.7</priority>
     <changefreq>weekly</changefreq>
@@ -121156,15 +121156,6 @@
     </image:image>
   </url>
   <url>
-    <loc>https://alkometriikka.fi/tuotteet/001657/</loc>
-    <priority>0.7</priority>
-    <changefreq>weekly</changefreq>
-    <lastmod>2026-07-18</lastmod>
-    <image:image>
-      <image:loc>https://images.alko.fi/images/cs_srgb,f_auto,t_products/cdn/001657/kuva.jpg</image:loc>
-    </image:image>
-  </url>
-  <url>
     <loc>https://alkometriikka.fi/tuotteet/002296/</loc>
     <priority>0.7</priority>
     <changefreq>weekly</changefreq>
@@ -121198,6 +121189,15 @@
     <lastmod>2026-01-26</lastmod>
     <image:image>
       <image:loc>https://images.alko.fi/images/cs_srgb,f_auto,t_products/cdn/001004/kuva.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alkometriikka.fi/tuotteet/008824/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+    <lastmod>2026-07-18</lastmod>
+    <image:image>
+      <image:loc>https://images.alko.fi/images/cs_srgb,f_auto,t_products/cdn/008824/kuva.jpg</image:loc>
     </image:image>
   </url>
   <url>
