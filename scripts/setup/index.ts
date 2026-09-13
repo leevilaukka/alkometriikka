@@ -80,6 +80,10 @@ const RETRY_BASE_DELAY_MS = 1000;
 const RETRY_MAX_DELAY_MS = 60_000;
 /** How often (in products) to log detail-fetch progress. */
 const PROGRESS_LOG_INTERVAL = 25;
+/** Default staleness (in days) after which an otherwise-unchanged product's details get re-verified. */
+const DEFAULT_DETAIL_VERIFY_COOLDOWN_DAYS = 30;
+/** Default cap on how many stale products get detail-verified per sync run. */
+const DEFAULT_DETAIL_VERIFY_BATCH = 200;
 
 const VERBOSE = truthyEnvVar('VERBOSE');
 
@@ -92,6 +96,8 @@ interface Config {
 	detailConcurrency: number;
 	maxRetries: number;
 	maxPages: number;
+	detailVerifyCooldownDays: number;
+	detailVerifyBatch: number;
 }
 
 function truthyEnvVar(name: string): boolean {
@@ -106,7 +112,15 @@ function loadConfig(): Config {
 	);
 	const maxRetries = Math.max(0, Number(process.env.ALKO_MAX_RETRIES) || DEFAULT_MAX_RETRIES);
 	const maxPages = Number(process.env.ALKO_MAX_PAGES) || Infinity;
-	return { detailConcurrency, maxRetries, maxPages };
+	const detailVerifyCooldownDays = Math.max(
+		1,
+		Number(process.env.ALKO_DETAIL_VERIFY_COOLDOWN_DAYS) || DEFAULT_DETAIL_VERIFY_COOLDOWN_DAYS
+	);
+	const detailVerifyBatch = Math.max(
+		0,
+		Number(process.env.ALKO_DETAIL_VERIFY_BATCH) || DEFAULT_DETAIL_VERIFY_BATCH
+	);
+	return { detailConcurrency, maxRetries, maxPages, detailVerifyCooldownDays, detailVerifyBatch };
 }
 
 interface SyncStats {
@@ -117,6 +131,8 @@ interface SyncStats {
 	failed: number;
 	filtered: number;
 	filteredRemoved: number;
+	verified: number;
+	verifyFailed: number;
 }
 
 /** Returns a copy of `meta` without the `removedFromSelection` flag, or `undefined` if nothing remains. */
@@ -132,6 +148,38 @@ function clearRemovedFlag(product: MigratedProduct): MigratedProduct {
 	const meta = withoutRemovedFlag(product.meta);
 	const { meta: _omit, ...rest } = product;
 	return meta ? { ...rest, meta } : rest;
+}
+
+const DAY_MS = 24 * 60 * 60 * 1000;
+
+/**
+ * Number of days since the product's last detail verification. Products that
+ * have never been verified sort as infinitely stale, so bootstrapping or
+ * migrated datasets drain oldest-first across successive runs.
+ */
+function detailVerifyAgeDays(product: MigratedProduct): number {
+	const checkedAt = product.meta?.detailCheckedAt;
+	const timestamp = checkedAt ? Date.parse(checkedAt) : NaN;
+	if (Number.isNaN(timestamp)) return Infinity;
+	return (Date.now() - timestamp) / DAY_MS;
+}
+
+/** True when a product is stale enough to warrant a detail re-verification. */
+function isDetailVerifyCandidate(product: MigratedProduct, cooldownDays: number): boolean {
+	return detailVerifyAgeDays(product) > cooldownDays;
+}
+
+/**
+ * Deep value equality between two `values` cells. Array-shaped fields (such as
+ * `taste`/Luonnehdinta) are produced as a fresh array on every build, so a
+ * reference comparison would falsely flag identical content as a change.
+ */
+function valuesEqual(a: unknown, b: unknown): boolean {
+	if (Array.isArray(a) && Array.isArray(b)) {
+		if (a.length !== b.length) return false;
+		return a.every((item, index) => valuesEqual(item, b[index]));
+	}
+	return Object.is(a, b);
 }
 
 // ============================================================================
@@ -574,12 +622,18 @@ async function sync(): Promise<void> {
 		removed: 0,
 		failed: 0,
 		filtered: 0,
-		filteredRemoved: 0
+		filteredRemoved: 0,
+		verified: 0,
+		verifyFailed: 0
 	};
 
 	// Cheap first pass: hash the search-only fields and skip anything unchanged.
 	const pending: Array<{ product: SearchProductData; hash: string; previous?: MigratedProduct }> =
 		[];
+
+	// Products whose search hash is unchanged but whose stored details have aged
+	// past the verification cooldown. Handled by the lazy third pass below.
+	const verifyCandidates: Array<{ product: SearchProductData; previous: MigratedProduct }> = [];
 
 	// Ids the API classifies as irrelevant (gifts & drinking accessories).
 	const irrelevantIds = new Set<string>();
@@ -599,8 +653,12 @@ async function sync(): Promise<void> {
 
 		if (isMigratedProduct(previous) && previous.hash === searchHash) {
 			// Back in (or still in) the selection: keep it, but drop any stale removed flag.
-			products[product.id] = clearRemovedFlag(previous);
+			const kept = clearRemovedFlag(previous);
+			products[product.id] = kept;
 			stats.unchanged++;
+			if (isDetailVerifyCandidate(kept, config.detailVerifyCooldownDays)) {
+				verifyCandidates.push({ product, previous: kept });
+			}
 		} else {
 			pending.push({
 				product,
@@ -642,7 +700,7 @@ async function sync(): Promise<void> {
 					const priceInfo = priceChanged ? ` (${previousPrice} € → ${price} €)` : '';
 					// Compare the previous and current values to see what changed.
 					const changedFields = values.reduce<string[]>((acc, value, index) => {
-						if (previous.values[index] !== value) {
+						if (!valuesEqual(previous.values[index], value)) {
 							acc.push(LEGACY_HEADERS[index]);
 						}
 						return acc;
@@ -665,6 +723,72 @@ async function sync(): Promise<void> {
 			}
 		}
 	);
+
+	// Lazy third pass: re-verify details for stale-but-unchanged products. Cold
+	// detail-only fields (producer, vintage, grapes, ...) can drift without ever
+	// touching the search payload, so each run re-fetches up to
+	// `detailVerifyBatch` of the stale products, oldest-first, and records a
+	// fresh `detailCheckedAt`. A product only becomes stale again once that
+	// timestamp ages past the cooldown, so any real change resets the clock and
+	// it isn't touched again for another cooldown window. Per-run cost stays
+	// bounded by the batch cap even after a long gap that leaves everything stale.
+	if (config.detailVerifyBatch > 0 && verifyCandidates.length > 0) {
+		const verifyBatch = [...verifyCandidates]
+			.sort((a, b) => detailVerifyAgeDays(b.previous) - detailVerifyAgeDays(a.previous))
+			.slice(0, config.detailVerifyBatch);
+
+		console.log(
+			`\n🔍 ${verifyCandidates.length} stale products, verifying details for ${verifyBatch.length}...\n`
+		);
+
+		const today = new Date().toISOString().slice(0, 10);
+		await mapWithConcurrency(
+			verifyBatch,
+			config.detailConcurrency,
+			async ({ product, previous }) => {
+				const details = await fetchProductDetails(product.id, config);
+				// Leave the entry and its `detailCheckedAt` untouched so the product
+				// stays eligible and is retried on the next run after a transient failure.
+				if (!details) {
+					stats.verifyFailed++;
+					return;
+				}
+
+				const values = buildLegacyValues(mergeProduct(product, details));
+				const changedFields = values.reduce<string[]>((acc, value, index) => {
+					if (!valuesEqual(previous.values[index], value)) {
+						acc.push(LEGACY_HEADERS[index]);
+					}
+					return acc;
+				}, []);
+
+				if (changedFields.length > 0) {
+					const price = toNumber(values[HINTA_INDEX]);
+					const priceHistory = updatePriceHistory(previous.priceHistory, price);
+					products[product.id] = {
+						...previous,
+						values,
+						priceHistory,
+						meta: { ...previous.meta, detailCheckedAt: today }
+					};
+					stats.updated++;
+					if (VERBOSE) {
+						console.log(
+							`  🔄 Verified ${product.id} — detail data changed:\n\t${changedFields.map((f) => `\t• ${f}`).join('\n')}`
+						);
+					} else {
+						console.log(`  🔄 Verified ${product.id} — detail data changed, updated values`);
+					}
+				} else {
+					products[product.id] = {
+						...previous,
+						meta: { ...previous.meta, detailCheckedAt: today }
+					};
+					stats.verified++;
+				}
+			}
+		);
+	}
 
 	// Never delete products: carry over every product from the existing dataset
 	// (data.json, or the migrated fallback) that the latest search response no
@@ -766,7 +890,9 @@ function printSummary(stats: SyncStats, total: number): void {
 	console.log(`  � Removed from selection: ${stats.removed}`);
 	console.log(`  🚫 Irrelevant filtered items: ${stats.filtered}`);
 	console.log(`  🧹 Irrelevant filtered items (removed by sync): ${stats.filteredRemoved}`);
+	console.log(`  🔍 Verified (unchanged): ${stats.verified}`);
 	console.log(`  ❌ Failed:    ${stats.failed}`);
+	console.log(`  ❌ Verify failed: ${stats.verifyFailed}`);
 	console.log(`  📦 Total:     ${total}\n`);
 	console.log(`✅ Saved ${DATA_PATH}`);
 }

@@ -37,6 +37,8 @@ export type PricePoint = { date: string; price: number };
 export type ProductMeta = {
 	/** ISO date (YYYY-MM-DD) when the product was first detected as no longer in Alko's selection. */
 	removedFromSelection?: string;
+	/** ISO date (YYYY-MM-DD) of the last detail re-verification. Drives the staleness cooldown. */
+	detailCheckedAt?: string;
 };
 
 /** A migrated/synced product: change-detection hash, legacy-ordered values, price history and optional metadata. */
