@@ -108,7 +108,7 @@ function productHtml(template: string, schema: string[], product: ProductRecord)
   const subtype = asText(fields.Alatyyppi);
   const descriptionValue = asText(fields.Luonnehdinta);
   const description = `Katso ${name} -tuotteen tiedot, hinnat ja vastaavat tuotteet Alkometriikasta.`;
-  const title = `${name} | Alkometriikka`;
+  const title = `${name} - Alkometriikka`;
   const url = `${SITE_URL}/tuotteet/${encodeURIComponent(id)}/`;
   const image = `https://images.alko.fi/images/cs_srgb,f_auto,t_medium/cdn/${encodeURIComponent(id)}/kuva.jpg`;
   const imageVariants = [
