@@ -1,5 +1,4 @@
-import type { IconName } from '$lib/icons';
-import type { ColNameObj, ColumnBadgeMap, ColumnNames } from '$lib/types';
+import type { ColNameObj, ColumnBadgeMap, ColumnNames, PriceListItem } from '$lib/types';
 import type { setSEO } from './helpers';
 
 /** Columns present in the Alko price list dataset
@@ -72,12 +71,17 @@ export const AllColumns = Object.freeze({
 	...StoreColumns
 } as const);
 
+/**
+ * Mapping of subcategories for hierarchical filtering.
+ */
 export const subCategoryMap = {
 	[DatasetColumns.Type]: DatasetColumns.SubType,
 	[DatasetColumns.SubType]: DatasetColumns.BeerType,
 	[DatasetColumns.Country]: DatasetColumns.Region
 } as const satisfies ColNameObj<ColumnNames>;
 
+
+// Columns that should be handled as strings rather than numbers or other types, even if they look numeric and could be cast to numbers.
 export const columnsHandledAsString = [
 	AllColumns.Number,
 	AllColumns.Name,
@@ -85,6 +89,8 @@ export const columnsHandledAsString = [
 	AllColumns.EAN
 ] as const satisfies readonly ColumnNames[];
 
+
+// Columns that should be handled as sets (arrays) rather than single values.
 export const columnsHandledAsSet = [
 	AllColumns.Description,
 	AllColumns.Note,
@@ -92,6 +98,8 @@ export const columnsHandledAsSet = [
 	AllColumns.StoreAvailability
 ] as const satisfies readonly ColumnNames[];
 
+
+// Columns where undefined values should be treated as zero. Doing this helps avoid NaN issues in calculations.
 export const undefinedToZeroColumns = [
 	AllColumns.Sugar,
 	AllColumns.Acidity,
@@ -124,7 +132,11 @@ export const shownFilters = [
 	AllColumns.New
 ] as const satisfies readonly ColumnNames[];
 
-const { AND, OR }: { [key: string]: { title: string; description: string; icon: IconName } } = {
+
+/**
+ * Filter annotations (AND / OR) used in the filter popups.
+ */
+const FilterAnnotations = {
 	AND: {
 		title: 'Kaikki valitut (JA)',
 		description:
@@ -139,6 +151,12 @@ const { AND, OR }: { [key: string]: { title: string; description: string; icon: 
 	}
 } as const;
 
+const { AND, OR } = FilterAnnotations;
+
+/**
+ * Mapping from column names to their respective filter annotation (AND / OR).
+ * @see FilterAnnotations
+ */
 export const filterAnnotationsToFilter = {
 	[AllColumns.Name]: OR,
 	[AllColumns.Manufacturer]: OR,
@@ -151,7 +169,7 @@ export const filterAnnotationsToFilter = {
 	[AllColumns.Description]: AND,
 	[AllColumns.Note]: AND,
 	[AllColumns.GrapeVarieties]: AND
-};
+} as const satisfies Partial<Record<ColumnNames, typeof AND | typeof OR>>;
 
 /**
  * Keys to be shown in the sorting dropdown.
@@ -191,13 +209,13 @@ export const sortingOrderDescriptionMap = {
 } as const satisfies ColNameObj<[string, string]>;
 
 /** Default sorting order for the columns.
- * true = ascending, false = descending
+ * true = ascending, false / undefined (default) = descending
  *
  * Ascending means:
  * - For numeric values: smallest to largest
  * - For string values: A to Z
  *
- * Descending means the opposite.
+ * Descending means the opposite, as one would expect :)
  */
 export const defaultSortingOrderMap = {
 	[AllColumns.Name]: true,
@@ -339,10 +357,14 @@ export const defaultSEOData = {
 		image: '/images/twitter_image.png',
 		description: 'Selaa Alkon tuotevalikoimaa, ja luo jaettavia listoja helposti!'
 	},
-	keywords:
-		'alkometriikka, alkometri, promillelaskuri, promillet, alko, juomat, suodattaminen, suodatus, hinnat, vertailu, alkoholi, viina, viinit, oluet, siiderit, lonkerot, juomalistat, listat, jaa'
+	keywords: 'alkometriikka, alko, alkometri, promillelaskuri, promillet, juomat, suodattaminen, suodatus, hinnat, vertailu, alkoholi, viina, viinit, oluet, siiderit, lonkerot, juomalistat, listat, jaa, myymälät'
 } as const satisfies Parameters<typeof setSEO>[0];
 
+/** Column to badge mapping
+ * Maps static dataset columns and their values to their corresponding badge configurations.
+ * 
+ * @see DynamicColumnToBadgeMap for generating dynamic badge mappings based on product properties.
+ */
 export const ColumnToBadgeMap: ColumnBadgeMap = {
 	[DatasetColumns.SpecialGroup]: {
 		Luomu: { text: 'Luomu', color: 'green', icon: 'plant_pot' },
@@ -364,8 +386,17 @@ export const ColumnToBadgeMap: ColumnBadgeMap = {
 	}
 };
 
-export function DynamicColumnToBadgeMap(item: Record<string, any>): Partial<ColumnBadgeMap> {
-	const map: Partial<ColumnBadgeMap> = { ...ColumnToBadgeMap };
+/**
+ * Generates a dynamic column-to-badge mapping based on the properties of a given product item.
+ * This allows for badges to be assigned conditionally, such as "Alkoholiton" for alcohol-free products.
+ * 
+ * Uses the entire static column to badge mapping as a base and adds dynamic badges based on the product's properties on top.
+ * 
+ * @param item The product item for which to generate the badge mapping.
+ * @returns The combined mapping of static and dynamic badges for the given product item.
+ */
+export function DynamicColumnToBadgeMap<T extends PriceListItem>(item: T): ColumnBadgeMap<T> {
+	const map: ColumnBadgeMap = { ...ColumnToBadgeMap };
 	if (item[DatasetColumns.AlcoholPercentage] === 0) {
 		map[DatasetColumns.AlcoholPercentage] = {
 			text: 'Alkoholiton',
@@ -376,8 +407,12 @@ export function DynamicColumnToBadgeMap(item: Record<string, any>): Partial<Colu
 	if (Number(item[DatasetColumns.Sugar]) === 0) {
 		map[DatasetColumns.Sugar] = { text: 'Sokeriton', color: 'gray' };
 	}
-	if (item[DatasetColumns.New] === 'Uutuus' || item[DatasetColumns.New] === 'uutuus') {
+	if (item[DatasetColumns.New].toLowerCase() === 'uutuus') {
 		map[DatasetColumns.New] = { text: 'Uutuus', color: 'red', icon: 'pencil_sparkles' };
+	}
+
+	if (item[DatasetColumns.RemovedFromSelection] === true) {
+		map[DatasetColumns.RemovedFromSelection] = { text: 'Poistettu valikoimasta', color: 'red', icon: 'x_circle', tooltip: 'Tuote on poistettu Alkon valikoimista', hideFromProductPage: true };
 	}
 	return map;
 }
