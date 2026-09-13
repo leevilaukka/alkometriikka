@@ -46,6 +46,10 @@ jobs:
             mv /tmp/data.json data.json
           fi
 
+      - name: Rehash seeded dataset to current schema
+        run: |
+          bun run scripts/setup/rehash.ts
+
       - name: Run script to convert to JSON
         env:
           CLOUDFLARE_PURGE_KEY: ${{ secrets.CLOUDFLARE_PURGE_KEY }}

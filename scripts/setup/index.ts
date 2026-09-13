@@ -23,6 +23,7 @@ import {
 	REQUEST_HEADERS,
 	SEARCH_URL,
 	STORES_URL,
+	alignValues,
 	buildLegacyValues,
 	getHash,
 	getHashValues,
@@ -407,6 +408,15 @@ async function loadExistingData(): Promise<MigratedData> {
 				`  ✅ Loaded file: ${sourcePath} with ${Object.keys(parsed.products ?? {}).length} products - File size: ${file.size} bytes`
 			);
 		}
+
+		// Bring any rows written under an older (shorter) schema up to the current
+		// column count so the dataset stays column-aligned after schema changes.
+		for (const product of Object.values(parsed.products ?? {})) {
+			if (isMigratedProduct(product) && Array.isArray(product.values)) {
+				product.values = alignValues(product.values);
+			}
+		}
+
 		return parsed;
 	} catch (error) {
 		console.warn(`⚠️  Failed to read ${sourcePath}, starting fresh:`, error);
@@ -423,12 +433,27 @@ async function loadExistingData(): Promise<MigratedData> {
  * Merges the search and detail payloads into a single object the schema can
  * read from. Detail-API keys win over search-API keys (see notes), while
  * price/abv/volume remain search-only fields and are preserved.
+ *
+ * The campaign fields are an exception: the search and detail endpoints report
+ * them in different formats, and the search format is the canonical one — the
+ * search API returns `lowest_30d_price` as a euro string ("1.1900") and the
+ * campaign dates as plain `YYYY-MM-DD`, whereas the detail API returns the
+ * price as an integer in cents (179 = 1.79 €) and the dates as ISO timestamps.
+ * Keeping the search values protects the normal price from being read as a
+ * 100×-too-large reference price and the campaign window from being
+ * unparseable.
  */
+const SEARCH_WINS_KEYS = ['lowest_30d_price', 'campaign_start_date', 'campaign_end_date'] as const;
+
 function mergeProduct(
 	search: SearchProductData,
 	details: DetailedProductData
 ): Record<string, unknown> {
-	return { ...search, ...details };
+	const merged: Record<string, unknown> = { ...search, ...details };
+	for (const key of SEARCH_WINS_KEYS) {
+		if (search[key] != null) merged[key] = search[key];
+	}
+	return merged;
 }
 
 // ============================================================================

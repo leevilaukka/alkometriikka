@@ -111,6 +111,12 @@ export interface SearchProductData {
 	webshopStock: number;
 	limeStock: number | null;
 	limeWebshopTotalStock: number;
+	/** Reference ("normal") price Alko reports for campaign pricing; only present for products on sale. */
+	lowest_30d_price?: number | string | null;
+	/** ISO date (YYYY-MM-DD) marking the start of a campaign sale. */
+	campaign_start_date?: string | null;
+	/** ISO date (YYYY-MM-DD) marking the end of a campaign sale. */
+	campaign_end_date?: string | null;
 }
 
 /**

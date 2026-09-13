@@ -18,6 +18,7 @@
 
 	} from '$lib/utils/helpers';
 	import { formatValue } from '$lib/utils/format';
+	import { formatCampaignWindow, getSaleInfo } from '$lib/utils/sales';
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/styles';
 	import Icon from '../widgets/Icon.svelte';
@@ -244,6 +245,16 @@
 
 	const differentSizesOfProduct = $derived(findDifferentSizeOfProduct(product, kaljakori));
 
+	const sale = $derived(
+		getSaleInfo({
+			price: product[AllColumns.Price],
+			normalPrice: product[AllColumns.NormalPrice],
+			campaignStart: product[AllColumns.CampaignStart],
+			campaignEnd: product[AllColumns.CampaignEnd]
+		})
+	);
+	const campaignWindow = $derived(sale ? formatCampaignWindow(sale) : null);
+
 </script>
 
 <svelte:head>
@@ -313,9 +324,24 @@
 				</div>
 			</div>
 			<div class="flex flex-col items-end gap-1">
-				<p class="text-4xl font-bold" data-price={`${formatValue(product[AllColumns.Price], AllColumns.Price)}`}>
-					{formatValue(product[AllColumns.Price], AllColumns.Price)}
-				</p>
+				<div class="flex flex-row items-end gap-2">
+					{#if sale}
+						<span class="text-2xl text-secondary line-through">
+							{formatValue(sale.normalPrice, AllColumns.NormalPrice)}
+						</span>
+					{/if}
+					<p class="text-4xl font-bold" data-price={`${formatValue(product[AllColumns.Price], AllColumns.Price)}`}>
+						{formatValue(product[AllColumns.Price], AllColumns.Price)}
+					</p>
+				</div>
+				{#if sale}
+					<p class="text-sm font-semibold text-red-700 dark:text-red-400">
+						Alennus {sale.discountPercent} % normaalihinnasta
+						{formatValue(sale.normalPrice, AllColumns.NormalPrice)}{campaignWindow
+							? `, voimassa ${campaignWindow}`
+							: ''}
+					</p>
+				{/if}
 				<span class="text-sm text-secondary">
 					({formatValue(product[AllColumns.PricePerLiter], AllColumns.PricePerLiter)})
 				</span>

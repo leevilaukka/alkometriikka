@@ -78,14 +78,18 @@ function formatDatasetToJSON(data: string) {
 		if (!Array.isArray(schema) || schema.length === 0) {
 			throw new Error('Hinnasto on tyhjä tai väärässä muodossa');
 		}
-		// Validate that all columns in the dataset are known
-		const knownColumns = Object.values(DatasetColumns) as ColumnNames[];
+		// Validate the dataset shape. Unknown schema columns are tolerated and
+		// merely warned about: rows are read positionally (and new columns are
+		// always appended at the end of the legacy header), so a dataset written
+		// by a newer sync can never crash an older deployed bundle during a
+		// frontend/data rollout — the extra columns are simply ignored.
 		if (schema[0] !== DatasetColumns.Number)
 			throw new Error('Hinnasto on tyhjä tai väärässä muodossa');
-		schema.forEach((column: unknown) => {
+		const knownColumns = Object.values(DatasetColumns) as ColumnNames[];
+		for (const column of schema) {
 			if (!knownColumns.includes(column as ColumnNames))
-				throw new Error(`Tuntematon sarake datassa: ${column}`);
-		});
+				console.warn(`Tuntematon sarake datassa: ${column}`);
+		}
 
 		// The new format stores each product under its id and keeps price history
 		// in a separate `priceHistory` field. Rebuild the table shape the app
@@ -155,7 +159,11 @@ async function getData({ fetch }: { fetch: Fetch }) {
 				getDataset({ fetch }),
 				getAvailability({ fetch })
 			]);
-			resolve({ dataset, availability, kaljakori: new Kaljakori(dataset.table, personalInfo, availability) });
+			resolve({
+				dataset,
+				availability,
+				kaljakori: new Kaljakori(dataset.table, personalInfo, availability)
+			});
 		} catch (error) {
 			reject(error);
 		}

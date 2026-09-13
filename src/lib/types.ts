@@ -81,6 +81,9 @@ export interface PriceListItem extends Record<DrunkColumnNames, number> {
 	'Energia kcal/100ml': number;
 	Valikoima: string;
 	EAN: string;
+	Normaalihinta: number;
+	'Kampanja alkaa': string;
+	'Kampanja päättyy': string;
 	Hintahistoria: { date: string; price: number }[];
 	'Poistunut valikoimasta': boolean;
 	Myymälät: Set<string>;
@@ -156,8 +159,13 @@ export type AnalyticsEventMap = {
 	show_price_history: { product_number?: string; [key: string]: any };
 	scan_barcode: { ean: string; link?: string };
 	scan_qr_code: { type: string; product_number: string; link?: string };
-	preferred_store_changed: { storeId: string; storeName: string; city?: string; action?: 'set' | 'change'; };
-	show_availability: { product_number?: string; [key: string]: any }
+	preferred_store_changed: {
+		storeId: string;
+		storeName: string;
+		city?: string;
+		action?: 'set' | 'change';
+	};
+	show_availability: { product_number?: string; [key: string]: any };
 } & {
 	[K in ShareEvent]: { url?: string; sid?: string; [key: string]: any };
 } & {

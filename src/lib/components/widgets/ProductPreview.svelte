@@ -2,12 +2,22 @@
 	import { AllColumns } from "$lib/utils/constants";
 	import { headerToDisplayName, valueToString } from "$lib/utils/helpers";
 	import { formatValue } from "$lib/utils/format";
+	import { getSaleInfo } from "$lib/utils/sales";
 	import { twMerge } from "tailwind-merge";
 	import BadgeList from "./BadgeList.svelte";
     import ProductImage from "./ProductImage.svelte";
 	import Icon from "./Icon.svelte";
 
     let { product, highlight = null, kaljakori, renderExtras, quantity = 1, highlightMax = null } = $props();
+
+    const sale = $derived(
+        getSaleInfo({
+            price: product[AllColumns.Price],
+            normalPrice: product[AllColumns.NormalPrice],
+            campaignStart: product[AllColumns.CampaignStart],
+            campaignEnd: product[AllColumns.CampaignEnd]
+        })
+    );
 </script>
 
 
@@ -77,6 +87,11 @@
             </div>
             <div class="flex flex-col gap-4 lg:flex-row lg:items-center">
                 <div class="flex items-center gap-2">
+                    {#if sale}
+                        <span class="text-xl text-secondary line-through">
+                            {formatValue(sale.normalPrice * quantity, AllColumns.NormalPrice)}
+                        </span>
+                    {/if}
                     <p class="text-3xl font-bold drop-shadow-lg">
                         {formatValue(
                             product[AllColumns.Price] * quantity,
