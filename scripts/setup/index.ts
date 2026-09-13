@@ -737,7 +737,16 @@ async function sync(): Promise<void> {
 	// timestamp ages past the cooldown, so any real change resets the clock and
 	// it isn't touched again for another cooldown window. Per-run cost stays
 	// bounded by the batch cap even after a long gap that leaves everything stale.
-	if (config.detailVerifyBatch > 0 && verifyCandidates.length > 0) {
+	//
+	// Skipped in dev: the verify pass only matters for the deployed dataset, and
+	// dev's static copy is neither committed nor seeded back to production, so
+	// the stamps would be discarded and the extra requests wasted. Use
+	// ALKO_DETAIL_VERIFY_IN_DEV=1 to force it anyway.
+	if (
+		(!DEV || truthyEnvVar('ALKO_DETAIL_VERIFY_IN_DEV')) &&
+		config.detailVerifyBatch > 0 &&
+		verifyCandidates.length > 0
+	) {
 		const verifyBatch = [...verifyCandidates]
 			.sort((a, b) => detailVerifyAgeDays(b.previous) - detailVerifyAgeDays(a.previous))
 			.slice(0, config.detailVerifyBatch);
