@@ -37,6 +37,19 @@ function toISODate(date: Date): string {
 	return `${date.getFullYear()}-${month}-${day}`;
 }
 
+/** ISO date (`YYYY-MM-DD`) in a given IANA time zone, e.g. `Europe/Helsinki`. */
+export function toISODateInTimeZone(timeZone: string, date: Date = new Date()): string {
+	const parts = new Intl.DateTimeFormat('en-US', {
+		timeZone,
+		year: 'numeric',
+		month: '2-digit',
+		day: '2-digit'
+	}).formatToParts(date);
+	const value = (type: Intl.DateTimeFormatPartTypes) =>
+		parts.find((part) => part.type === type)?.value ?? '';
+	return `${value('year')}-${value('month')}-${value('day')}`;
+}
+
 /**
  * A campaign is active when the given day falls inside its window. With no
  * dates we cannot time-gate, so the campaign is treated as active (the price
@@ -70,6 +83,7 @@ function formatISODate(date?: string): string | null {
  * Pass `today` (YYYY-MM-DD) to override the reference day, e.g. in tests.
  * Returns `null` when the product is not on sale.
  */
+
 export function getSaleInfo(item: {
 	price?: unknown;
 	normalPrice?: unknown;
