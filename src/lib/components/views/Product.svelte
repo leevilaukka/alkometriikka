@@ -437,7 +437,7 @@
 				if (!opened.availability) sendAnalyticsEvent('show_availability', { product_number: product[AllColumns.Number] });
 				opened.availability = true;
 			}}>
-				Saatavuus myymälässä
+				Myymäläsaatavuus
 			</summary>
 			{#if !preferredStore}
 				<div class="border-t border-primary px-4 py-3">
@@ -450,6 +450,11 @@
 					</button>
 				</div>
 			{/if}
+			<div class="border-t border-primary ">
+				<p class="px-4 py-2">
+					Tuotetta on saatavilla seuraavissa myymälöissä:
+				</p>
+			</div>
 			<div class="max-h-128 overflow-y-auto border-t border-primary">
 				{#if rankedAvailabilityStores.length > 0}
 					<ul>
