@@ -689,9 +689,14 @@ async function sync(): Promise<void> {
 				const values = buildLegacyValues(mergeProduct(product, details));
 				const price = toNumber(values[HINTA_INDEX]);
 				const priceHistory = updatePriceHistory(previous?.priceHistory, price);
-				const meta = withoutRemovedFlag(previous?.meta);
+				// A fresh detail fetch means the product was verified now: reset the
+				// cooldown clock so it isn't re-verified by the lazy pass as well.
+				const meta = {
+					...withoutRemovedFlag(previous?.meta),
+					detailCheckedAt: new Date().toISOString().slice(0, 10)
+				};
 
-				products[product.id] = { hash, values, priceHistory, ...(meta ? { meta } : {}) };
+				products[product.id] = { hash, values, priceHistory, meta };
 				if (previous) {
 					stats.updated++;
 					const name = String(values[NIMI_INDEX] ?? '').trim() || '(nimetön)';
