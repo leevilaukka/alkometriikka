@@ -11,8 +11,17 @@
 	import { onSettingsOpenRequested } from '$lib/utils/settings';
 	import { onMount } from 'svelte';
 	import { getStoreCity } from '$lib/utils/availability';
+	import { type IconName } from '$lib/icons';
 
-	let tab = $state<'personal' | 'info' | 'settings'>('personal');
+	const tabs = [
+		{ id: 'personal', label: 'Henkilökohtaiset tiedot', icon: 'user' },
+		{ id: 'settings', label: 'Lisäasetukset', icon: 'cog' },
+		{ id: 'info', label: 'Tietoa', icon: 'info_circle' }
+	] as const satisfies readonly { id: string; label: string; icon: IconName }[];
+
+	type tabId = typeof tabs[number]['id'];
+
+	let tab = $state<tabId>('personal');
 	let dialogElement: HTMLDialogElement | undefined = $state();
 
 	const gitCommitHash = version.substring(0, 7);
@@ -38,7 +47,11 @@
 		timeZone: 'Europe/Helsinki',
 	};
 
-	const githubBase = 'https://github.com/leevilaukka/alkometriikka';
+	const githubRepoBase = 'https://github.com/leevilaukka/alkometriikka';
+	const githubFileBase = 'https://raw.githubusercontent.com/leevilaukka/alkometriikka/refs/heads/gh-pages';
+
+
+
 </script>
 
 <Popup bind:dialogElement class="gap-4 p-4">
@@ -52,48 +65,30 @@
 	{/snippet}
 	{#snippet renderContent(dialogElement: HTMLDialogElement)}
 		<div class="flex flex-row gap-2">
-			<label
-				for="personal"
-				class={twMerge(components.button(), 'w-full', 'has-checked:bg-secondary')}
-			>
-				<input
-					type="radio"
-					id="personal"
-					name="tab"
-					class="hidden"
-					value="personal"
-					bind:group={tab}
-				/>
-				<Icon name="user" />
-				{#if !$isMobile}<span class="text-sm">Henkilökohtaiset tiedot</span>{/if}
-			</label>
-			<label
-				for="settings"
-				class={twMerge(components.button(), 'w-full', 'has-checked:bg-secondary')}
-			>
-				<input
-					type="radio"
-					id="settings"
-					name="tab"
-					class="hidden"
-					value="settings"
-					bind:group={tab}
-				/>
-				<Icon name="cog" />
-				{#if !$isMobile}<span class="text-sm">Lisäasetukset</span>{/if}
-			</label>
-			<label for="info" class={twMerge(components.button(), 'w-full', 'has-checked:bg-secondary')}>
-				<input type="radio" id="info" name="tab" class="hidden" value="info" bind:group={tab} />
-				<Icon name="info_circle" />
-				{#if !$isMobile}<span class="text-sm">Tietoa</span>{/if}
-			</label>
+			{#each tabs as tabOption}
+				<label
+					for={tabOption.id}
+					class={twMerge(components.button(), 'w-full', 'has-checked:bg-secondary')}
+				>
+					<input
+						type="radio"
+						id={tabOption.id}
+						name="tab"
+						class="hidden"
+						value={tabOption.id}
+						bind:group={tab}
+					/>
+					<Icon name={tabOption.icon} />
+					{#if !$isMobile}<span class="text-sm">{tabOption.label}</span>{/if}
+				</label>
+			{/each}
 		</div>
 		{#if tab === 'info'}
 			<div class="prose dark:prose-invert">
 				<h2 class="text-lg font-bold">Tietoa</h2>
 				<p>
 					Alkometriikka on
-					<a href={githubBase} target="_blank">
+					<a href={githubRepoBase} target="_blank">
 						avoimen lähdekoodin
 					</a> web-sovellus, joka listaa Alkon tuotevalikoiman ja antaa käyttäjille hieman laskennallista
 					tietoa tuotteista.
@@ -101,11 +96,11 @@
 				<p>
 					Voit lähettää kehitysehdotuksia ja bugiraportteja GitHubin kautta. <br />
 					<a
-						href={`${githubBase}/issues/new?template=feature_request.md`}
+						href={`${githubRepoBase}/issues/new?template=feature_request.md`}
 						>Lähetä kehitysehdotus
 					</a>
 					|
-					<a href={`${githubBase}/issues/new?template=bug_report.md`}
+					<a href={`${githubRepoBase}/issues/new?template=bug_report.md`}
 						>Lähetä bugiraportti
 					</a>
 				</p>
@@ -118,9 +113,16 @@
 					<p>
 						Tuotevalikoima ladataan Alkon rajapinnoista. Tiedostoa päivitetään noin
 						kuuden tunnin välein. Voit ladata Alkometriikan käyttämän tiedoston <a
-							href={`${githubBase}/blob/gh-pages/data.json`}
-							target="_blank"
-							>täältä
+							href={`${githubFileBase}/data.json`}
+							download
+							>tästä
+						</a>.
+					</p>
+					<p>
+						Myymälä- ja tuotesaatavuustiedot ladataan samoista rajapinnoista ja päivittyvät samaan aikaan kuin tuotevalikoima. Tämän vuoksi saatavuustiedot eivät välttämättä ole täysin ajantasaisia. Voit ladata nykyiset myymälä- ja saatavuustiedot <a
+							href={`${githubFileBase}/availability.json`}
+							download
+							>tästä
 						</a>.
 					</p>
 					<p>
@@ -130,7 +132,7 @@
 			</div>
 			<div class="flex flex-row items-center gap-2">
 				<a
-					href={githubBase}
+					href={githubRepoBase}
 					target="_blank"
 					class={twMerge(components.button())}
 				>
@@ -147,7 +149,7 @@
 				</a>
 			</div>
 			<p class="text-sm text-secondary">
-				Versio: <a href={`${githubBase}/commit/${version}`} target="_blank">
+				Versio: <a href={`${githubRepoBase}/commit/${version}`} target="_blank">
 					{gitCommitHash}
 				</a>
 				{#if alko.dataset.metadata.LastUpdated && alko.dataset.metadata.LastSynced}
@@ -167,7 +169,13 @@
 					{:else}
 						{lastUpdated}
 					{/if}
+					{#if alko.availability && alko.availability.lastUpdated && alko.availability.lastUpdated !== alko.dataset.metadata.LastUpdated}
+						{@const availabilitySynced = `${new Date(alko.availability.lastUpdated).toLocaleDateString('fi-FI')} klo ${new Date(alko.availability.lastUpdated).toLocaleTimeString('fi-FI', timeConfig)}`}
+						<br/>
+						Saatavuustiedot viimeksi synkronoitu: {availabilitySynced}
+					{/if}
 				{/if}
+				
 			</p>
 			<button class={twMerge(components.button(), 'w-full')} onclick={() => dialogElement.close()}
 				>Sulje</button
