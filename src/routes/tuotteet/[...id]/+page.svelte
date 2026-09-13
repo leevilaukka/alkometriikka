@@ -23,5 +23,6 @@
 		.map((storeId: string) => alko.availability.stores[storeId])
 		.filter((store: AvailabilityStore | undefined): store is AvailabilityStore => Boolean(store))}
 	{@const preferredStore = alko.availability.stores[$preferredStoreId]}
-	<Product product={product} kaljakori={alko.kaljakori} {availabilityStores} {preferredStore} />
+	{@const availabilityUpdated = alko.availability?.lastUpdated ? new Date(alko.availability.lastUpdated) : undefined}
+	<Product product={product} kaljakori={alko.kaljakori} {availabilityStores} {preferredStore} availabilityUpdated={availabilityUpdated} />
 {/await}

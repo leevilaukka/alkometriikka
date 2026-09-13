@@ -3,7 +3,10 @@
 		AllColumns,
 		DatasetColumns,
 		DrunkColumns,
-		hideFromProductPageStats
+		hideFromProductPageStats,
+
+		timeConfig
+
 	} from '$lib/utils/constants';
 	import {
 		generateTitle,
@@ -68,12 +71,14 @@
 		product,
 		kaljakori,
 		availabilityStores,
-		preferredStore
+		preferredStore,
+		availabilityUpdated
 	}: {
 		product: PriceListItem;
 		kaljakori: Kaljakori;
 		availabilityStores: AvailabilityStore[];
 		preferredStore?: AvailabilityStore;
+		availabilityUpdated: Date | undefined;
 	} = $props();
 
 	const rankedAvailabilityStores = $derived(
@@ -450,10 +455,15 @@
 					</button>
 				</div>
 			{/if}
-			<div class="border-t border-primary ">
+			<div class="border-t border-primary flex flex-row justify-between gap-0.5">
 				<p class="px-4 py-2">
 					Tuotetta on saatavilla seuraavissa myymälöissä:
 				</p>
+				{#if availabilityUpdated}
+					<p class="px-4 py-2 my-auto text-secondary text-sm">
+						Päivitetty viimeksi: {availabilityUpdated.toLocaleString('fi-FI')}
+					</p>
+				{/if}
 			</div>
 			<div class="max-h-128 overflow-y-auto border-t border-primary">
 				{#if rankedAvailabilityStores.length > 0}

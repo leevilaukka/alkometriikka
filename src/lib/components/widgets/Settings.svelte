@@ -2,7 +2,7 @@
 	import { components } from '$lib/utils/styles';
 	import { twMerge } from 'tailwind-merge';
 	import { isLaptop, isMobile, personalInfo, preferredStoreId, theme } from '$lib/global.svelte';
-	import { GenderOptionsMap } from '$lib/utils/constants';
+	import { GenderOptionsMap, LocalStorageKeys, timeConfig } from '$lib/utils/constants';
 	import Popup from '$lib/components/widgets/Popup.svelte';
 	import Icon from '$lib/components/widgets/Icon.svelte';
 	import { version } from '$app/environment';
@@ -41,17 +41,8 @@
 		)
 	);
 
-	const timeConfig: Intl.DateTimeFormatOptions = {
-		hour: '2-digit',
-		minute: '2-digit',
-		timeZone: 'Europe/Helsinki',
-	};
-
 	const githubRepoBase = 'https://github.com/leevilaukka/alkometriikka';
 	const githubFileBase = 'https://raw.githubusercontent.com/leevilaukka/alkometriikka/refs/heads/gh-pages';
-
-
-
 </script>
 
 <Popup bind:dialogElement class="gap-4 p-4">
