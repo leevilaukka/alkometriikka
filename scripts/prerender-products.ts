@@ -286,7 +286,7 @@ function productHtml(template: string, schema: string[], product: ProductRecord)
     hasAdultConsideration: "https://schema.org/AlcoholConsideration",
     ...(manufacturer ? { brand: { "@type": "Brand", name: manufacturer } } : {}),
     ...(asText(fields.Valmistusmaa) ? { countryOfOrigin: asText(fields.Valmistusmaa) } : {}),
-    ...(volume !== null ? { size: { "@type": "QuantitativeValue", value: volume, unitCode: "LTR" } } : {}),
+    ...(volume !== null ? { size: `${volume} L` } : {}),
     ...(category ? { category } : {}),
     ...(additionalProperties.length ? { additionalProperty: additionalProperties } : {}),
     ...(!product.meta?.removedFromSelection ? { sameAs: `https://www.alko.fi/tuotteet/${id}` } : {}),
