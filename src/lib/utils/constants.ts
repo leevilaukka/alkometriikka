@@ -66,13 +66,20 @@ export const StoreColumns = Object.freeze({
 	StoreAvailability: 'Myymälät'
 } as const);
 
+/** Columns derived from other dataset columns - not present in the raw price list.
+ */
+export const CalculatedColumns = Object.freeze({
+	OnSale: 'Alennuksessa'
+} as const);
+
 /** All columns available in the app.
- * This is a combination of DatasetColumns, DrunkColumns and StoreColumns
+ * This is a combination of DatasetColumns, DrunkColumns, StoreColumns and CalculatedColumns
  */
 export const AllColumns = Object.freeze({
 	...DatasetColumns,
 	...DrunkColumns,
-	...StoreColumns
+	...StoreColumns,
+	...CalculatedColumns
 } as const);
 
 /**
@@ -130,7 +137,8 @@ export const shownFilters = [
 	AllColumns.Description,
 	AllColumns.Note,
 	AllColumns.GrapeVarieties,
-	AllColumns.New
+	AllColumns.New,
+	AllColumns.OnSale
 ] as const satisfies readonly ColumnNames[];
 
 /**

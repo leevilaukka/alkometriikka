@@ -1,5 +1,6 @@
 import {
 	AllColumns,
+	CalculatedColumns,
 	defaultSortingColumn,
 	GenderOptionsMap,
 	subCategoryMap,
@@ -21,6 +22,7 @@ import {
 	type AvailabilityData
 } from '../types';
 import { isSimilarString } from '$lib/utils/search';
+import { getSaleInfo } from '../utils/sales';
 
 function toPositiveNumber(value: unknown): number | null {
 	if (typeof value === 'number') {
@@ -72,8 +74,9 @@ export class Kaljakori {
 
 		const drunkColumns = Object.values(DrunkColumns);
 		const storeColumns = Object.values(StoreColumns);
+		const calculatedColumns = Object.values(CalculatedColumns);
 
-		this.filters = [...datasetColumns, ...drunkColumns, ...storeColumns];
+		this.filters = [...datasetColumns, ...drunkColumns, ...storeColumns, ...calculatedColumns];
 
 		const storeNameById = new Map(
 			Object.entries(availability?.stores ?? {}).map(([id, store]) => [id, store.name])
@@ -96,6 +99,11 @@ export class Kaljakori {
 
 		const storeValuesByColumn: any[][] = [...Array(storeColumns.length)].map(() => []);
 		const storeValuesByColumnActive: any[][] = [...Array(storeColumns.length)].map(() => []);
+
+		const calculatedValuesByColumn: any[][] = [...Array(calculatedColumns.length)].map(() => []);
+		const calculatedValuesByColumnActive: any[][] = [...Array(calculatedColumns.length)].map(
+			() => []
+		);
 
 		const NUMBER_VALUE_REGEX = /^(?:0|[1-9]\d*)(?:\.\d+)?(?:\s*l)?$/;
 		const isNumber = (value: any) => NUMBER_VALUE_REGEX.test(String(value));
@@ -190,13 +198,32 @@ export class Kaljakori {
 				}
 			}
 
+			// Assign calculated column values and collect possible values
+			calculatedColumns.forEach((column, idx) => {
+				if (column === AllColumns.OnSale) {
+					const sale = getSaleInfo({
+						price: item[AllColumns.Price],
+						normalPrice: item[AllColumns.NormalPrice],
+						campaignStart: item[AllColumns.CampaignStart],
+						campaignEnd: item[AllColumns.CampaignEnd]
+					});
+					item[column] = sale ? 'alennuksessa' : '';
+					if (sale) {
+						calculatedValuesByColumn[idx].push(item[column]);
+						if (!isRemoved) calculatedValuesByColumnActive[idx].push(item[column]);
+					}
+				} else {
+					item[column] = '';
+				}
+			});
+
 			// Calculate drunk values
 			const drunkValues = calculateDrunkValue(
 				item[AllColumns.BottleSize],
 				item[AllColumns.AlcoholPercentage],
 				item[AllColumns.Price],
 				personalInfo?.gender ?? undefined,
-				personalInfo?.weight ?? undefined,
+				personalInfo?.weight ?? undefined
 			);
 
 			// Assign item drunk values and collect possible values
@@ -255,17 +282,24 @@ export class Kaljakori {
 			this.data.push(item);
 		}
 
-		// Merge dataset, drunk and store columns and their values
-		const mergedColumns = [...datasetColumns, ...drunkColumns, ...storeColumns];
+		// Merge dataset, drunk, store and calculated columns and their values
+		const mergedColumns = [
+			...datasetColumns,
+			...drunkColumns,
+			...storeColumns,
+			...calculatedColumns
+		];
 		const mergedValuesByColumn = [
 			...datasetValuesByColumn,
 			...drunkValuesByColumn,
-			...storeValuesByColumn
+			...storeValuesByColumn,
+			...calculatedValuesByColumn
 		];
 		const mergedValuesByColumnActive = [
 			...datasetValuesByColumnActive,
 			...drunkValuesByColumnActive,
-			...storeValuesByColumnActive
+			...storeValuesByColumnActive,
+			...calculatedValuesByColumnActive
 		];
 
 		// Create possible values object (full = incl. removed, active = excl. removed)

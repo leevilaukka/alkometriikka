@@ -53,19 +53,29 @@
 </script>
 
 <div class={twMerge("flex", options.length > 1 ? "flex-col" : "items-center")}>
-	<label for={name}>{label}</label>
 	{#if options.length === 1}
+		{@const isChecked = value?.includes(options[0]) ?? false}
+		<label
+			class={twMerge(components.button(), 'w-fit justify-start gap-2')}
+		>
+			<Icon
+				name={isChecked ? 'checkbox_checked' : 'checkbox'}
+				class={isChecked ? 'text-brand-1' : 'text-secondary'}
+			/>
+			<span>{label}</span>
 			<input
-				class="ms-2 rounded p-2"
 				{name}
 				type="checkbox"
-				checked={value && value.includes(options[0])}
+				class="sr-only"
+				checked={isChecked}
 				onchange={(e) => {
 					if ((e.target as HTMLInputElement).checked) value = [options[0]];
 					else value = [];
 				}}
 			/>
+		</label>
 	{:else}
+		<label for={name}>{label}</label>
 		<Popup
 			class={twMerge("p-4 gap-4", $isSafari && "h-auto")}
 			onOpen={() => (isOpen = true)}

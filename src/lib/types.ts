@@ -59,6 +59,7 @@ export interface PriceListItem extends Record<DrunkColumnNames, number> {
 	Hinta: number;
 	Litrahinta: number;
 	Uutuus: 'uutuus' | '';
+	Alennuksessa: 'alennuksessa' | '';
 	Hinnastojärjestyskoodi: string;
 	Tyyppi: string;
 	Alatyyppi: string;
