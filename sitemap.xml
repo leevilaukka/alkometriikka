@@ -118951,15 +118951,6 @@
     </image:image>
   </url>
   <url>
-    <loc>https://alkometriikka.fi/tuotteet/007185/</loc>
-    <priority>0.7</priority>
-    <changefreq>weekly</changefreq>
-    <lastmod>2026-01-26</lastmod>
-    <image:image>
-      <image:loc>https://images.alko.fi/images/cs_srgb,f_auto,t_products/cdn/007185/kuva.jpg</image:loc>
-    </image:image>
-  </url>
-  <url>
     <loc>https://alkometriikka.fi/tuotteet/007081/</loc>
     <priority>0.7</priority>
     <changefreq>weekly</changefreq>
@@ -119362,6 +119353,15 @@
     <lastmod>2026-07-18</lastmod>
     <image:image>
       <image:loc>https://images.alko.fi/images/cs_srgb,f_auto,t_products/cdn/008902/kuva.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alkometriikka.fi/tuotteet/007185/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+    <lastmod>2026-01-26</lastmod>
+    <image:image>
+      <image:loc>https://images.alko.fi/images/cs_srgb,f_auto,t_products/cdn/007185/kuva.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -120217,15 +120217,6 @@
     <lastmod>2026-01-26</lastmod>
     <image:image>
       <image:loc>https://images.alko.fi/images/cs_srgb,f_auto,t_products/cdn/001527/kuva.jpg</image:loc>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://alkometriikka.fi/tuotteet/006774/</loc>
-    <priority>0.7</priority>
-    <changefreq>weekly</changefreq>
-    <lastmod>2026-07-18</lastmod>
-    <image:image>
-      <image:loc>https://images.alko.fi/images/cs_srgb,f_auto,t_products/cdn/006774/kuva.jpg</image:loc>
     </image:image>
   </url>
   <url>
@@ -121252,6 +121243,15 @@
     <lastmod>2026-07-18</lastmod>
     <image:image>
       <image:loc>https://images.alko.fi/images/cs_srgb,f_auto,t_products/cdn/008901/kuva.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alkometriikka.fi/tuotteet/006774/</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+    <lastmod>2026-07-18</lastmod>
+    <image:image>
+      <image:loc>https://images.alko.fi/images/cs_srgb,f_auto,t_products/cdn/006774/kuva.jpg</image:loc>
     </image:image>
   </url>
   <url>
