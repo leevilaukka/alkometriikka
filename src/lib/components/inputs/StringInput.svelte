@@ -9,7 +9,14 @@
 	import Icon from '../widgets/Icon.svelte';
 	import { untrack } from 'svelte';
 
-	let { defaultValue = [], value = $bindable(defaultValue), modified = $bindable(false), options = [], label, ...rest } = $props();
+	let { defaultValue = [], value = $bindable(defaultValue), modified = $bindable(false), options = [], label, ...rest } : {
+		defaultValue?: string[];
+		value?: string[];
+		modified?: boolean;
+		options?: string[];
+		label?: string;
+		rest?: Record<string, any>;
+	} = $props();
 	
 	const name = "stringinput-" + getRandom();
 
