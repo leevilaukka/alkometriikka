@@ -10,6 +10,7 @@
 	import { initFilterValues, searchParametersFromFilterValues } from '$lib/utils/filters';
 	import type { ColumnNames, FilterValues } from '$lib/types';
 	import { getContext, untrack } from 'svelte';
+	import { get } from 'svelte/store';
 	import type { SearchParamsManager } from '$lib/utils/url';
 	import { headerToDisplayName } from '$lib/utils/helpers';
 	import RecursiveFilter from '../inputs/RecursiveFilter.svelte';
@@ -30,7 +31,7 @@
 	
 	let searchParamsManager = getContext<SearchParamsManager>(ContextKeys.SearchParamsManager);
 	let filtersElement: HTMLDialogElement;
-	let showFilters = $derived(!isMobile);
+	let showFilters = $state(get(isMobile));
 	let hasRemovedProducts = $derived(kaljakori.data.some((item) => item[AllColumns.RemovedFromSelection] === true));
 	let filterActiveState = $state(filters.reduce((acc, filter) => {
 		acc[filter] = false;
