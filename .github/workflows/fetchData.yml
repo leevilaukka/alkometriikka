@@ -48,7 +48,11 @@ jobs:
 
       - name: Rehash seeded dataset to current schema
         run: |
-          bun run scripts/setup/rehash.ts
+          if [ -f data.json ]; then
+            bun run scripts/setup/rehash.ts
+          else
+            echo "ℹ️  No seeded data.json found (first run or missing gh-pages dataset); skipping rehash."
+          fi
 
       - name: Run script to convert to JSON
         env:
