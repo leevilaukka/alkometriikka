@@ -121,12 +121,12 @@ bun run scripts/og-images.ts --render /tmp/og-rendered --local --data static/dat
 export CF_R2_ACCESS_KEY_ID=... CF_R2_SECRET_ACCESS_KEY=... CF_R2_ACCOUNT_ID=...
 bun run scripts/og-images.ts --upload /tmp/og-rendered --data static/data.json
 
-# 3) Seed gh-pages so CI uses this manifest as its baseline
-#    stages one commit (based on origin/gh-pages) on branch `seed-og-manifest`,
-#    NOT pushed. Re-run after a later render+upload to refresh the manifest.
-bash scripts/seed-og-manifest.sh /tmp/og-rendered
-#    deploy when ready:   git push origin seed-og-manifest:gh-pages
-#    undo if it goes bad: git worktree remove --force ../ghp && git branch -D seed-og-manifest
+# 3) Commit the manifest on gh-pages (via the web UI, no script needed)
+
+   In GitHub, switch the repo to the `gh-pages` branch → **Add file → Upload
+   files** → drop `og-images.json` in → commit. One commit, no branch juggling.
+   `fetchData.yml` picks it up on its next run as the resume baseline; re-run
+   web-uploads whenever a later local render+upload refreshes the manifest.
 #    (after push, roll back with the old-sha command the script prints)
 ```
 
