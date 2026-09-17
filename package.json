@@ -8,6 +8,7 @@
 		"dev:no-sync": "vite dev --host",
 		"build": "vite build && bun run prerender:products",
 		"prerender:products": "bun run scripts/prerender-products.ts",
+		"og:images": "bun run scripts/og-images.ts",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -38,10 +39,12 @@
 	},
 	"dependencies": {
 		"@humanspeak/svelte-virtual-list": "^0.5.14",
+		"@resvg/resvg-js": "^2.6.2",
 		"barcode-detector": "^3.2.2",
 		"chart.js": "^4.5.1",
 		"class-variance-authority": "^0.7.1",
 		"lz-string": "^1.5.0",
+		"satori": "^0.33.4",
 		"tailwind-merge": "^3.6.0"
 	}
 }

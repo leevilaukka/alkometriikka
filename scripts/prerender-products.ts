@@ -2,6 +2,8 @@ import { mkdir, rm } from "node:fs/promises";
 import path from "node:path";
 import Bun from "bun";
 import { getSaleInfo, toISODateInTimeZone } from "../src/lib/utils/sales.ts";
+import { ogImageUrl } from "./og";
+import { OG_IMAGE_WIDTH, OG_IMAGE_HEIGHT } from "./og";
 
 type ProductRecord = {
   values: unknown[];
@@ -20,6 +22,7 @@ type Options = {
   dataPath: string;
   outputPath: string;
   templatePath: string;
+  ogManifestPath: string;
 };
 
 const SITE_URL = "https://alkometriikka.fi";
@@ -36,7 +39,8 @@ function resolveOptions(): Options {
   return {
     dataPath: path.resolve(readOption("--data") ?? path.join(outputPath, "data.json")),
     outputPath,
-    templatePath: path.resolve(readOption("--template") ?? path.join(outputPath, "404.html"))
+    templatePath: path.resolve(readOption("--template") ?? path.join(outputPath, "404.html")),
+    ogManifestPath: path.resolve(readOption("--og-manifest") ?? path.join(outputPath, "og-images.json"))
   };
 }
 
@@ -224,7 +228,12 @@ function replaceMarkedSection(template: string, content: string): string {
   return `${template.slice(0, start)}${SEO_START}\n${content}\n\t${template.slice(end)}`;
 }
 
-function productHtml(template: string, schema: string[], product: ProductRecord): { html: string; id: string } {
+function productHtml(
+  template: string,
+  schema: string[],
+  product: ProductRecord,
+  ogImageKey: string | null
+): { html: string; id: string } {
   const fields = Object.fromEntries(schema.map((column, index) => [column, product.values[index]]));
   const id = asText(fields.Numero);
   if (!/^[A-Za-z0-9_-]+$/.test(id)) throw new Error(`Invalid product id: ${id || "(empty)"}`);
@@ -238,6 +247,7 @@ function productHtml(template: string, schema: string[], product: ProductRecord)
   const title = `${name} - Alkometriikka`;
   const url = `${SITE_URL}/tuotteet/${encodeURIComponent(id)}/`;
   const image = `https://images.alko.fi/images/cs_srgb,f_auto,t_medium/cdn/${encodeURIComponent(id)}/kuva.jpg`;
+  const ogImage = ogImageKey ? ogImageUrl(ogImageKey) : image;
   const imageVariants = [
     image,
     `https://images.alko.fi/images/cs_srgb,f_auto,t_products/cdn/${encodeURIComponent(id)}/kuva.jpg`
@@ -347,12 +357,14 @@ function productHtml(template: string, schema: string[], product: ProductRecord)
     `\t<meta property="og:url" content="${escapeHtml(url)}" />`,
     `\t<meta property="og:description" content="${escapeHtml(description)}" />`,
     `\t<meta property="og:site_name" content="Alkometriikka" />`,
-    `\t<meta property="og:image" content="${escapeHtml(image)}" />`,
+    `\t<meta property="og:image" content="${escapeHtml(ogImage)}" />`,
+    `\t<meta property="og:image:width" content="${OG_IMAGE_WIDTH}" />`,
+    `\t<meta property="og:image:height" content="${OG_IMAGE_HEIGHT}" />`,
     `\t<meta property="og:image:alt" content="${escapeHtml(name)}" />`,
     `\t<meta name="twitter:card" content="summary_large_image" />`,
     `\t<meta name="twitter:title" content="${escapeHtml(title)}" />`,
     `\t<meta name="twitter:description" content="${escapeHtml(description)}" />`,
-    `\t<meta name="twitter:image" content="${escapeHtml(image)}" />`,
+    `\t<meta name="twitter:image" content="${escapeHtml(ogImage)}" />`,
     `\t<script type="application/ld+json">${escapeJson(jsonLd)}</script>`
   ].join("\n");
 
@@ -389,9 +401,13 @@ function productHtml(template: string, schema: string[], product: ProductRecord)
 
 async function main() {
   const options = resolveOptions();
-  const [dataset, template] = await Promise.all([
+  const [dataset, template, ogManifest] = await Promise.all([
     Bun.file(options.dataPath).json() as Promise<Dataset>,
-    Bun.file(options.templatePath).text()
+    Bun.file(options.templatePath).text(),
+    Bun.file(options.ogManifestPath)
+      .json()
+      .then((value) => value as Record<string, string>)
+      .catch(() => ({}) as Record<string, string>)
   ]);
 
   if (!Array.isArray(dataset.schema) || !dataset.schema.every((column) => typeof column === "string")) {
@@ -406,9 +422,9 @@ async function main() {
 
   let count = 0;
   const generatedIds = new Set<string>();
-  for (const product of Object.values(dataset.products)) {
+  for (const [productId, product] of Object.entries(dataset.products)) {
     if (!product || !Array.isArray(product.values)) continue;
-    const rendered = productHtml(template, dataset.schema, product);
+    const rendered = productHtml(template, dataset.schema, product, ogManifest[productId] ?? null);
     if (generatedIds.has(rendered.id)) throw new Error(`Duplicate product id: ${rendered.id}`);
     generatedIds.add(rendered.id);
     const directory = path.join(productsPath, rendered.id);

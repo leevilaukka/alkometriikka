@@ -4,6 +4,10 @@ sitemap.xml
 /static/availability.json
 /static/data-migrate.json
 /static/sitemap.xml
+/static/og-images.json
+/og-images.json
+/data.json
+/availability.json
 
 # Output
 .output

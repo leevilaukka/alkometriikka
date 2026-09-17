@@ -79,9 +79,21 @@ jobs:
           git fetch origin gh-pages
           git worktree add --detach ../gh-pages origin/gh-pages
 
+      - name: Generate and upload OG images
+        env:
+          CF_R2_ACCESS_KEY_ID: ${{ secrets.CF_R2_ACCESS_KEY_ID }}
+          CF_R2_SECRET_ACCESS_KEY: ${{ secrets.CF_R2_SECRET_ACCESS_KEY }}
+          CF_R2_ACCOUNT_ID: ${{ secrets.CF_R2_ACCOUNT_ID }}
+          CF_R2_BUCKET: ${{ vars.CF_R2_BUCKET }}
+          CF_R2_REGION: ${{ vars.CF_R2_REGION }}
+          OG_CDN_BASE: ${{ vars.OG_CDN_BASE }}
+        run: |
+          bun run scripts/og-images.ts --data data.json --manifest ../gh-pages/og-images.json
+        continue-on-error: true
+
       - name: Refresh product pages
         run: |
-          bun run scripts/prerender-products.ts --data data.json --out ../gh-pages --template ../gh-pages/404.html
+          bun run scripts/prerender-products.ts --data data.json --out ../gh-pages --template ../gh-pages/404.html --og-manifest ../gh-pages/og-images.json
           cp data.json availability.json sitemap.xml ../gh-pages/
 
       - name: Commit and push downloaded file
@@ -90,5 +102,6 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add data.json availability.json sitemap.xml tuotteet -f
+          [ -f og-images.json ] && git add og-images.json -f || true
           git commit -m "Update price list and static product pages [skip ci]" || echo "No changes to commit"
           git push origin HEAD:gh-pages
