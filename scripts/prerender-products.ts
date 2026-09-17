@@ -401,6 +401,19 @@ function productHtml(
 
 async function main() {
   const options = resolveOptions();
+
+  // The dataset is deployed separately by the fetch-data workflow and is not
+  // part of the repo (it is gitignored). When it is unavailable — first
+  // deploy, or a gh-pages dataset that has not been regenerated yet — skip
+  // product prerendering instead of failing the whole site build. The
+  // fetch-data workflow will populate the dataset and product pages afterwards.
+  if (!(await Bun.file(options.dataPath).exists())) {
+    console.warn(
+      `⚠️  Dataset not found at ${options.dataPath}; skipping product prerendering.`
+    );
+    return;
+  }
+
   const [dataset, template, ogManifest] = await Promise.all([
     Bun.file(options.dataPath).json() as Promise<Dataset>,
     Bun.file(options.templatePath).text(),
