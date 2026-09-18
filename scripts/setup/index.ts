@@ -19,6 +19,7 @@
 
 import {
 	DEV,
+	HASH_VERSION,
 	LEGACY_HEADERS,
 	REQUEST_HEADERS,
 	SEARCH_URL,
@@ -871,6 +872,7 @@ async function sync(): Promise<void> {
 		metadata: {
 			LastUpdated: hasChanges ? now : (existing.metadata?.LastUpdated ?? now),
 			LastSynced: now,
+			HashVersion: HASH_VERSION,
 			ci: {
 				sync: currentCIRun ?? previousCIRun?.sync ?? emptyCIRun,
 				update: hasChanges

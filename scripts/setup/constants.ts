@@ -392,6 +392,17 @@ export function alignValues(values: unknown[]): unknown[] {
 }
 
 /**
+ * Version of the change-detection hash algorithm and its hashed field set.
+ *
+ * Bump this whenever a `usedForHashing` column is added/removed/renamed, a
+ * hashed column's `preprocessor` changes, or the hash canonicalization changes.
+ * `rehash.ts` uses it to decide whether stored hashes need rewriting, and the
+ * sync persists it in the dataset metadata. Do not bump it for unrelated
+ * schema additions (appended columns don't affect hashed indices).
+ */
+export const HASH_VERSION = 1;
+
+/**
  * Extracts only the change-detection relevant values (`usedForHashing`) from a
  * legacy-ordered value array, preserving their column order.
  */

@@ -55,6 +55,8 @@ export type MigratedData = {
 	metadata: {
 		LastUpdated: string;
 		LastSynced: string;
+		/** Version of the hash algorithm that produced each product's `hash`. */
+		HashVersion?: number;
 		ci?: {
 			sync: {
 				commit: string;
