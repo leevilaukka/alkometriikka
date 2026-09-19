@@ -24,6 +24,7 @@ type FeedItem = {
 	description: string;
 	image: string | null;
 	name: string;
+	category: string;
 };
 
 type ProductRecord = {
@@ -96,6 +97,7 @@ function collectPerProductItems(
 
 		const image = ogManifest[productId] ? ogImageUrl(ogManifest[productId]) : alkoImageUrl(id);
 		const link = `${SITE_URL}/tuotteet/${encodeURIComponent(id)}/`;
+		const category = [asText(fields.Tyyppi), asText(fields.Alatyyppi)].filter(Boolean).join(' / ');
 
 		const items: FeedItem[] = [];
 		for (let index = 1; index < history.length; index += 1) {
@@ -120,7 +122,8 @@ function collectPerProductItems(
 					previous.price
 				)} € → ${formatPrice(current.price)} € (${formatSigned(delta, '€')}, ${signedPercent}).</p>`,
 				image,
-				name
+				name,
+				category
 			});
 		}
 		if (items.length > 0) byProduct.set(productId, items);
@@ -148,6 +151,7 @@ function generateRssXml(
 				`\t\t\t<link>${escapeXml(item.link)}</link>\n` +
 				`\t\t\t<guid isPermaLink="false">${escapeXml(item.guid)}</guid>\n` +
 				`\t\t\t<pubDate>${escapeXml(item.pubDate)}</pubDate>\n` +
+				(item.category ? `\t\t\t<category>${escapeXml(item.category)}</category>\n` : '') +
 				`\t\t\t<description><![CDATA[${item.description}]]></description>\n` +
 				(item.image ? `\t\t\t<media:thumbnail url="${escapeXml(item.image)}" />\n` : '') +
 				`\t\t</item>\n`
