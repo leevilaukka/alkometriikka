@@ -59,6 +59,7 @@ jobs:
           CLOUDFLARE_PURGE_KEY: ${{ secrets.CLOUDFLARE_PURGE_KEY }}
           CLOUDFLARE_ZONE: ${{ secrets.CF_ZONE }}
           ALKO_DETAIL_CONCURRENCY: '8'
+          ALKO_SEARCH_CONCURRENCY: '3'
         run: |
           for attempt in 1 2 3; do
             echo "▶️  Sync attempt $attempt..."

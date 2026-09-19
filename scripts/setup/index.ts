@@ -61,6 +61,8 @@ const MIGRATED_DATA_PATH = './data-migrated.json';
 const PAGE_SIZE = 1000;
 /** Delay (ms) between consecutive search page requests to avoid rate limiting. */
 const SEARCH_PAGE_DELAY_MS = 300;
+/** How many search pages to fetch in parallel (the requests are network-bound). */
+const DEFAULT_SEARCH_CONCURRENCY = 3;
 /**
  * A fixed scoring `seed` sent with every search request. Without it the API
  * returns a non-deterministic subset of the catalogue (~7000-7700 distinct
@@ -95,6 +97,7 @@ const HINTA_INDEX = LEGACY_HEADERS.indexOf('Hinta');
 
 interface Config {
 	detailConcurrency: number;
+	searchConcurrency: number;
 	maxRetries: number;
 	maxPages: number;
 	detailVerifyCooldownDays: number;
@@ -111,6 +114,10 @@ function loadConfig(): Config {
 		1,
 		Number(process.env.ALKO_DETAIL_CONCURRENCY) || DEFAULT_DETAIL_CONCURRENCY
 	);
+	const searchConcurrency = Math.max(
+		1,
+		Number(process.env.ALKO_SEARCH_CONCURRENCY) || DEFAULT_SEARCH_CONCURRENCY
+	);
 	const maxRetries = Math.max(0, Number(process.env.ALKO_MAX_RETRIES) || DEFAULT_MAX_RETRIES);
 	const maxPages = Number(process.env.ALKO_MAX_PAGES) || Infinity;
 	const detailVerifyCooldownDays = Math.max(
@@ -121,7 +128,14 @@ function loadConfig(): Config {
 		0,
 		Number(process.env.ALKO_DETAIL_VERIFY_BATCH) || DEFAULT_DETAIL_VERIFY_BATCH
 	);
-	return { detailConcurrency, maxRetries, maxPages, detailVerifyCooldownDays, detailVerifyBatch };
+	return {
+		detailConcurrency,
+		searchConcurrency,
+		maxRetries,
+		maxPages,
+		detailVerifyCooldownDays,
+		detailVerifyBatch
+	};
 }
 
 interface SyncStats {
@@ -319,42 +333,90 @@ async function loadSearchProducts(config: Config): Promise<SearchFetchResult> {
 	let expectedTotal: number | null = null;
 	let complete = true;
 
-	for (let page = 0; page < config.maxPages; page++) {
-		const skip = page * PAGE_SIZE;
-		const response = await fetchJson<SearchApiResponse>(
-			SEARCH_URL,
-			// A fixed `seed` makes paging deterministic and duplicate-free (see above).
-			{ method: 'POST', body: JSON.stringify({ top: PAGE_SIZE, skip, seed: SEARCH_SEED }) },
-			config.maxRetries
+	// The first page is fetched alone: its `@odata.count` tells us how many pages
+	// the rest of the sweep needs, so we can go parallel instead of paging serially.
+	const first = await fetchJson<SearchApiResponse>(
+		SEARCH_URL,
+		// A fixed `seed` makes paging deterministic and duplicate-free (see above).
+		{ method: 'POST', body: JSON.stringify({ top: PAGE_SIZE, skip: 0, seed: SEARCH_SEED }) },
+		config.maxRetries
+	);
+
+	// A null response means the request failed after all retries. We cannot tell
+	// this apart from a legitimately empty page by array length alone, so we
+	// must treat the whole fetch as incomplete rather than assume end-of-list.
+	if (first === null) {
+		console.error(
+			'  ❌ Search page 1 (skip 0) failed after retries — marking fetch as incomplete.'
+		);
+		return { products: [], complete: false, expectedTotal: null };
+	}
+
+	if (typeof first['@odata.count'] === 'number') {
+		expectedTotal = first['@odata.count'];
+		console.log(`  🔢 API reports ${expectedTotal} total products`);
+	}
+
+	for (const product of first.value ?? []) byId.set(product.id, product);
+	console.log(`  📦 Fetched ${byId.size} unique products (page 1)`);
+
+	// When the API reports a total we know exactly how many pages exist and can
+	// fetch them all in parallel waves. Without a total we page until a request
+	// comes back empty, as before.
+	const totalPages = Math.min(
+		expectedTotal !== null ? Math.ceil(expectedTotal / PAGE_SIZE) : config.maxPages,
+		config.maxPages
+	);
+
+	for (let start = 1; start < totalPages; start += config.searchConcurrency) {
+		const pages = Array.from(
+			{ length: Math.min(config.searchConcurrency, totalPages - start) },
+			(_, i) => start + i
 		);
 
-		// A null response means the request failed after all retries. We cannot tell
-		// this apart from a legitimately empty page by array length alone, so we
-		// must treat the whole fetch as incomplete rather than assume end-of-list.
-		if (response === null) {
-			console.error(
-				`  ❌ Search page ${page + 1} (skip ${skip}) failed after retries — marking fetch as incomplete.`
-			);
-			complete = false;
-			break;
+		const responses = await Promise.all(
+			pages.map(async (page) => ({
+				page,
+				response: await fetchJson<SearchApiResponse>(
+					SEARCH_URL,
+					{
+						method: 'POST',
+						body: JSON.stringify({
+							top: PAGE_SIZE,
+							skip: page * PAGE_SIZE,
+							seed: SEARCH_SEED
+						})
+					},
+					config.maxRetries
+				)
+			}))
+		);
+
+		let reachedEnd = false;
+		for (const { page, response } of responses) {
+			if (response === null) {
+				console.error(
+					`  ❌ Search page ${page + 1} (skip ${page * PAGE_SIZE}) failed after retries — marking fetch as incomplete.`
+				);
+				complete = false;
+				continue;
+			}
+
+			const batch = response.value ?? [];
+			if (batch.length === 0) {
+				reachedEnd = true;
+				break;
+			}
+
+			for (const product of batch) byId.set(product.id, product);
+			console.log(`  📦 Fetched ${byId.size} unique products (page ${page + 1})`);
 		}
 
-		if (expectedTotal === null && typeof response['@odata.count'] === 'number') {
-			expectedTotal = response['@odata.count'];
-			console.log(`  🔢 API reports ${expectedTotal} total products`);
-		}
-
-		const batch = response.value ?? [];
-		if (batch.length === 0) break;
-
-		for (const product of batch) byId.set(product.id, product);
-
-		console.log(`  📦 Fetched ${byId.size} unique products (page ${page + 1})`);
-
-		if (batch.length < PAGE_SIZE) break;
+		if (reachedEnd) break;
+		// Skip the remaining pages once we've collected the advertised total.
 		if (expectedTotal !== null && byId.size >= expectedTotal) break;
 
-		// Space out page requests slightly to avoid tripping the API's rate limiter.
+		// Space out request waves slightly to avoid tripping the API's rate limiter.
 		await sleep(SEARCH_PAGE_DELAY_MS);
 	}
 
