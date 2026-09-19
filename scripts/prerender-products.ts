@@ -1,6 +1,6 @@
-import { mkdir, rm } from "node:fs/promises";
+import { mkdir, readdir, rm } from "node:fs/promises";
 import path from "node:path";
-import Bun from "bun";
+import Bun, { CryptoHasher } from "bun";
 import { getSaleInfo, toISODateInTimeZone } from "../src/lib/utils/sales.ts";
 import { ogImageUrl } from "./og";
 import { OG_IMAGE_WIDTH, OG_IMAGE_HEIGHT } from "./og";
@@ -18,11 +18,53 @@ type Dataset = {
   products?: Record<string, ProductRecord>;
 };
 
+type PrerenderManifestEntry = {
+  key: string;
+  pageId: string;
+};
+
+type PrerenderManifest = Record<string, PrerenderManifestEntry>;
+
+// Bump when the page rendering logic (productHtml, minifyHtml, the SEO
+// template, ...) changes in a way that can alter existing pages without the
+// template or product data changing, forcing a full re-render.
+const RENDER_VERSION = 2;
+
+function sha256Hex(value: string): string {
+  const hasher = new CryptoHasher("sha256");
+  hasher.update(value);
+  return hasher.digest("hex");
+}
+
+// Content-addressable key for a product page. Every input that can change the
+// rendered HTML — the rendering logic version, the schema, the raw product
+// data, the page template (new JS/CSS hashes invalidate every page) and the
+// product's OG image key — is hashed, so unchanged pages can be skipped.
+function productKey(
+  schema: readonly string[],
+  product: ProductRecord,
+  templateFingerprint: string,
+  ogKey: string | null
+): string {
+  return sha256Hex(
+    JSON.stringify([
+      RENDER_VERSION,
+      schema,
+      product.values,
+      product.meta ?? null,
+      product.priceHistory ?? null,
+      templateFingerprint,
+      ogKey
+    ])
+  );
+}
+
 type Options = {
   dataPath: string;
   outputPath: string;
   templatePath: string;
   ogManifestPath: string;
+  manifestPath: string;
 };
 
 const SITE_URL = "https://alkometriikka.fi";
@@ -34,13 +76,23 @@ function readOption(name: string): string | undefined {
   return index === -1 ? undefined : process.argv[index + 1];
 }
 
+async function readManifest(filePath: string): Promise<PrerenderManifest> {
+  return Bun.file(filePath)
+    .json()
+    .then((value) =>
+      value && typeof value === "object" && !Array.isArray(value) ? (value as PrerenderManifest) : {}
+    )
+    .catch(() => ({}));
+}
+
 function resolveOptions(): Options {
   const outputPath = path.resolve(readOption("--out") ?? "build");
   return {
     dataPath: path.resolve(readOption("--data") ?? path.join(outputPath, "data.json")),
     outputPath,
     templatePath: path.resolve(readOption("--template") ?? path.join(outputPath, "404.html")),
-    ogManifestPath: path.resolve(readOption("--og-manifest") ?? path.join(outputPath, "og-images.json"))
+    ogManifestPath: path.resolve(readOption("--og-manifest") ?? path.join(outputPath, "og-images.json")),
+    manifestPath: path.resolve(readOption("--manifest") ?? path.join(outputPath, "tuotteet-manifest.json"))
   };
 }
 
@@ -454,24 +506,78 @@ async function main() {
   const schema = dataset.schema;
   const products = dataset.products;
   const productsPath = path.join(options.outputPath, "tuotteet");
-  await rm(productsPath, { recursive: true, force: true });
+
+  const previous = await readManifest(options.manifestPath);
+  const manifest: PrerenderManifest = {};
+  const templateFingerprint = sha256Hex(template);
+  const keptPageIds = new Set<string>();
+  const generatedIds = new Set<string>();
 
   let count = 0;
-  const generatedIds = new Set<string>();
+  let skipped = 0;
   const concurrency = Number(process.env.ALKO_PRERENDER_CONCURRENCY) || 32;
   await mapPool(Object.entries(products), concurrency, async ([productId, product]) => {
     if (!product || !Array.isArray(product.values)) return;
-    const rendered = productHtml(template, schema, product, ogManifest[productId] ?? null);
+    const ogKey = ogManifest[productId] ?? null;
+    const key = productKey(schema, product, templateFingerprint, ogKey);
+    const previousEntry = previous[productId];
+    const previousPageId = previousEntry?.pageId;
+    const previousFile = previousPageId
+      ? path.join(productsPath, previousPageId, "index.html")
+      : null;
+    if (
+      previousEntry &&
+      previousEntry.key === key &&
+      previousFile &&
+      (await Bun.file(previousFile).exists())
+    ) {
+      manifest[productId] = previousEntry;
+      keptPageIds.add(previousPageId);
+      skipped += 1;
+      return;
+    }
+    const rendered = productHtml(template, schema, product, ogKey);
     if (generatedIds.has(rendered.id)) throw new Error(`Duplicate product id: ${rendered.id}`);
     generatedIds.add(rendered.id);
     const directory = path.join(productsPath, rendered.id);
     await mkdir(directory, { recursive: true });
     await Bun.write(path.join(directory, "index.html"), rendered.html);
+    manifest[productId] = { key, pageId: rendered.id };
+    keptPageIds.add(rendered.id);
     count += 1;
   });
 
-  if (count === 0) throw new Error(`No product pages were generated`);
-  console.log(`Generated ${count.toLocaleString("en-US")} product pages in ${productsPath}`);
+  // Prune directories for products that dropped out of the dataset (or were
+  // replaced under a different page id) so stale pages never linger on the
+  // deployed site.
+  let existing: string[] = [];
+  try {
+    existing = await readdir(productsPath);
+  } catch {
+    existing = [];
+  }
+  for (const entry of existing) {
+    if (!keptPageIds.has(entry)) {
+      await rm(path.join(productsPath, entry), { recursive: true, force: true });
+    }
+  }
+
+  const sortedManifest = Object.fromEntries(
+    Object.entries(manifest).sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0))
+  );
+
+  if (Object.keys(sortedManifest).length === 0) {
+    throw new Error(`No product pages were generated`);
+  }
+
+  await mkdir(path.dirname(options.manifestPath), { recursive: true });
+  await Bun.write(options.manifestPath, JSON.stringify(sortedManifest));
+
+  console.log(
+    `Product pages: ${Object.keys(sortedManifest).length.toLocaleString("en-US")} total, ` +
+      `${count.toLocaleString("en-US")} regenerated, ${skipped.toLocaleString("en-US")} unchanged | ` +
+      `manifest → ${options.manifestPath}`
+  );
 }
 
 await main();

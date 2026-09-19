@@ -50,11 +50,43 @@ jobs:
             mv /tmp/og-images.json static/og-images.json
           fi
 
-      - name: build
+      - name: Build site assets
         env:
           BASE_PATH: ''
         run: |
-          bun run build
+          bun run vite build
+
+      - name: Check if product pages need regenerating
+        id: prerender-gate
+        run: |
+          set -e
+          changed=no
+          for f in data.json 404.html og-images.json; do
+            if git show "origin/gh-pages:$f" 2>/dev/null | cmp -s - "build/$f"; then
+              echo "· $f unchanged"
+            else
+              echo "· $f differs — product pages will be regenerated"
+              changed=yes
+            fi
+          done
+          echo "changed=$changed" >> "$GITHUB_OUTPUT"
+
+      # Product pages embed the built page shell (hashed asset URLs), so they
+      # must be present in the deploy even when nothing changed. Restore the
+      # last deployed pages first so the incremental prerender below can skip
+      # untouched products and so a skip keeps the existing pages on gh-pages.
+      - name: Restore last deployed product pages
+        run: |
+          git archive origin/gh-pages tuotteet tuotteet-manifest.json 2>/dev/null | tar -x -C build/ || true
+
+      - name: Prerender product pages
+        if: steps.prerender-gate.outputs.changed == 'true'
+        run: |
+          bun run scripts/prerender-products.ts \
+            --out build \
+            --data build/data.json \
+            --template build/404.html \
+            --og-manifest build/og-images.json
 
       - name: Delete all files except build directory
         run: |
@@ -90,7 +122,7 @@ jobs:
           # Runtime datasets are gitignored, so `git add .` skips them. Force-add
           # them so the force-push to gh-pages preserves the data deployed by
           # fetchData.yml instead of deleting it on every site build.
-          for f in data.json availability.json sitemap.xml og-images.json; do
+          for f in data.json availability.json sitemap.xml og-images.json tuotteet-manifest.json; do
             if [ -f "$f" ]; then git add -f "$f"; fi
           done
           git commit -m "Deploy to GitHub Pages [skip ci]" || echo "No changes to commit"
