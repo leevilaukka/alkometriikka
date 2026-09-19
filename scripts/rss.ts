@@ -116,7 +116,7 @@ function collectPerProductItems(
 				link,
 				date: current.date,
 				pubDate: toRfc822Date(current.date),
-				description: `<p>${name} on vaihtanut hintaa.</p><p>${formatPrice(
+				description: `<p>Tuotteen ${name} hinta on muuttunut.</p><p>${formatPrice(
 					previous.price
 				)} € → ${formatPrice(current.price)} € (${formatSigned(delta, '€')}, ${signedPercent}).</p>`,
 				image,
