@@ -58,6 +58,7 @@ jobs:
         env:
           CLOUDFLARE_PURGE_KEY: ${{ secrets.CLOUDFLARE_PURGE_KEY }}
           CLOUDFLARE_ZONE: ${{ secrets.CF_ZONE }}
+          ALKO_DETAIL_CONCURRENCY: '8'
         run: |
           for attempt in 1 2 3; do
             echo "▶️  Sync attempt $attempt..."
@@ -96,6 +97,8 @@ jobs:
         continue-on-error: true
 
       - name: Refresh product pages
+        env:
+          ALKO_PRERENDER_CONCURRENCY: '32'
         run: |
           bun run scripts/prerender-products.ts --data data.json --out ../gh-pages --template ../gh-pages/404.html --og-manifest ../gh-pages/og-images.json
           cp data.json availability.json sitemap.xml ../gh-pages/

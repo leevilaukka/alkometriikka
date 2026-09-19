@@ -218,6 +218,27 @@ function parsePrice(value: unknown, productId: string): number {
   return price;
 }
 
+/** Runs `fn` over `items` with at most `limit` concurrent workers. A failure stops scheduling. */
+async function mapPool<T, R>(items: T[], limit: number, fn: (item: T) => Promise<R>): Promise<R[]> {
+  const results = new Array<R>(items.length);
+  let next = 0;
+  let failed = false;
+  async function worker() {
+    while (!failed && next < items.length) {
+      const index = next;
+      next += 1;
+      try {
+        results[index] = await fn(items[index]);
+      } catch (error) {
+        failed = true;
+        throw error;
+      }
+    }
+  }
+  await Promise.all(Array.from({ length: Math.min(limit, items.length) }, () => worker()));
+  return results;
+}
+
 function replaceMarkedSection(template: string, content: string): string {
   const start = template.indexOf(SEO_START);
   const end = template.indexOf(SEO_END, start);
@@ -430,21 +451,24 @@ async function main() {
     throw new Error(`No products found in ${options.dataPath}`);
   }
 
+  const schema = dataset.schema;
+  const products = dataset.products;
   const productsPath = path.join(options.outputPath, "tuotteet");
   await rm(productsPath, { recursive: true, force: true });
 
   let count = 0;
   const generatedIds = new Set<string>();
-  for (const [productId, product] of Object.entries(dataset.products)) {
-    if (!product || !Array.isArray(product.values)) continue;
-    const rendered = productHtml(template, dataset.schema, product, ogManifest[productId] ?? null);
+  const concurrency = Number(process.env.ALKO_PRERENDER_CONCURRENCY) || 32;
+  await mapPool(Object.entries(products), concurrency, async ([productId, product]) => {
+    if (!product || !Array.isArray(product.values)) return;
+    const rendered = productHtml(template, schema, product, ogManifest[productId] ?? null);
     if (generatedIds.has(rendered.id)) throw new Error(`Duplicate product id: ${rendered.id}`);
     generatedIds.add(rendered.id);
     const directory = path.join(productsPath, rendered.id);
     await mkdir(directory, { recursive: true });
     await Bun.write(path.join(directory, "index.html"), rendered.html);
     count += 1;
-  }
+  });
 
   if (count === 0) throw new Error(`No product pages were generated`);
   console.log(`Generated ${count.toLocaleString("en-US")} product pages in ${productsPath}`);
