@@ -6,7 +6,7 @@ import { DEV } from './setup/constants';
 import { ogImageUrl } from './og';
 
 /** Max items in the aggregate (whole-catalog) feed. */
-const RSS_LIMIT = 200;
+const RSS_LIMIT = 1000;
 /** Max items in each per-product feed. */
 const PER_PRODUCT_LIMIT = 20;
 const SITE_URL = 'https://alkometriikka.fi';
@@ -52,6 +52,23 @@ function asText(value: unknown): string {
 
 function formatPrice(value: number): string {
 	return value.toLocaleString('fi-FI', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+function formatVolume(value: number): string {
+	return `${value.toLocaleString('fi-FI', { maximumFractionDigits: 2 })} l`;
+}
+
+function formatPercentage(value: number): string {
+	return value.toLocaleString('fi-FI', { minimumFractionDigits: 1, maximumFractionDigits: 2 });
+}
+
+function asNumber(value: unknown): number | undefined {
+	if (typeof value === 'number' && Number.isFinite(value)) return value;
+	if (typeof value === 'string') {
+		const parsed = Number(value.replace(',', '.').replace(/\s/g, '').trim());
+		if (Number.isFinite(parsed)) return parsed;
+	}
+	return undefined;
 }
 
 function formatSigned(value: number, suffix: string): string {
@@ -129,6 +146,64 @@ function collectPerProductItems(
 		if (items.length > 0) byProduct.set(productId, items);
 	}
 	return byProduct;
+}
+
+/**
+ * One feed item per product currently flagged as a novelty ("Uutuus") in the
+ * dataset. Each item's date is the product's first recorded price observation,
+ * which approximates when it appeared in Alko's selection.
+ */
+function collectNewProductItems(
+	schema: string[],
+	products: Record<string, ProductRecord>,
+	ogManifest: Record<string, string>
+): FeedItem[] {
+	const items: FeedItem[] = [];
+	for (const [productId, product] of Object.entries(products)) {
+		if (!product || !Array.isArray(product.values)) continue;
+
+		const fields = Object.fromEntries(
+			schema.map((column, index) => [column, product.values[index]])
+		);
+		if (asText(fields.Uutuus).toLowerCase() !== 'uutuus') continue;
+
+		const id = asText(fields.Numero);
+		const name = asText(fields.Nimi) || `Tuote ${id}`;
+		if (!id || id !== productId) continue;
+
+		const history = Array.isArray(product.priceHistory) ? product.priceHistory : [];
+		const date = history[0]?.date;
+		if (!date) continue;
+
+		const manufacturer = asText(fields.Valmistaja);
+		const country = asText(fields.Valmistusmaa);
+		const price = asNumber(fields.Hinta);
+		const volume = asNumber(fields.Pullokoko);
+		const abv = asNumber(fields['Alkoholi-%']);
+		const category = [asText(fields.Tyyppi), asText(fields.Alatyyppi)].filter(Boolean).join(' / ');
+
+		const details: string[] = [];
+		if (manufacturer) details.push(`Valmistaja: ${manufacturer}`);
+		if (country) details.push(`Valmistusmaa: ${country}`);
+		if (price !== undefined) details.push(`Hinta: ${formatPrice(price)} €`);
+		if (volume !== undefined) details.push(`Tilavuus: ${formatVolume(volume)}`);
+		if (abv !== undefined) details.push(`Alkoholi: ${formatPercentage(abv)} %`);
+
+		items.push({
+			guid: `alkometriikka-new-${id}`,
+			title: name,
+			link: `${SITE_URL}/tuotteet/${encodeURIComponent(id)}/`,
+			date,
+			pubDate: toRfc822Date(date),
+			description:
+				`<p>${name} on uusi tuote Alkon valikoimassa.</p>` +
+				(details.length > 0 ? `<p>${details.join('<br />')}</p>` : ''),
+			image: ogManifest[productId] ? ogImageUrl(ogManifest[productId]) : alkoImageUrl(id),
+			name,
+			category
+		});
+	}
+	return items;
 }
 
 type ChannelInfo = {
@@ -250,16 +325,22 @@ async function main() {
 	}
 
 	const byProduct = collectPerProductItems(schema, products, ogManifest);
+	const newItems = [...collectNewProductItems(schema, products, ogManifest)].sort(compareItemsByDate);
+	const priceChanges = [...byProduct.values()].flat().sort(compareItemsByDate);
 	const lastBuildDateISO = metadata?.LastUpdated;
 
-	const aggregate = [...byProduct.values()].flat().sort(compareItemsByDate).slice(0, RSS_LIMIT);
+	// Reserve a slot for every currently-new product so the "uutuudet" section is
+	// never crowded out of the aggregate by price changes, then fill the remaining
+	// slots with the most recent price changes and sort the whole mix by date.
+	const priceLimit = Math.max(0, RSS_LIMIT - newItems.length);
+	const aggregate = [...newItems, ...priceChanges.slice(0, priceLimit)].sort(compareItemsByDate);
 	await Bun.write(
 		RSS_AGGREGATE_PATH,
 		generateRssXml(
 			aggregate,
 			{
-				title: 'Alkometriikka – hintamuutokset',
-				description: 'Uusimmat hinnanmuutokset Alkon tuotevalikoimassa.',
+				title: 'Alkometriikka – uutuudet ja hintamuutokset',
+				description: 'Uusimmat uutuudet ja hinnanmuutokset Alkon tuotevalikoimassa.',
 				link: `${SITE_URL}/`,
 				selfUrl: `${SITE_URL}/rss.xml`
 			},
@@ -271,7 +352,7 @@ async function main() {
 	const totalChanges = [...byProduct.values()].reduce((sum, items) => sum + items.length, 0);
 
 	console.log(
-		`RSS: aggregate ${aggregate.length} of ${totalChanges} price changes → ${RSS_AGGREGATE_PATH}; ` +
+		`RSS: aggregate ${aggregate.length} of ${totalChanges} price changes + ${newItems.length} new products → ${RSS_AGGREGATE_PATH}; ` +
 			`${productFeedCount} per-product feeds → ${RSS_DIR}/`
 	);
 }

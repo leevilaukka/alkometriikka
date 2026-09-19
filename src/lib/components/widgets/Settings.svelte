@@ -99,6 +99,9 @@
 					Muut yhteydenotot voi lähettää sähköpostitse osoitteeseen
 					<a href="mailto:contact@alkometriikka.fi">contact@alkometriikka.fi</a>.
 				</p>
+				<p>
+					Voit tilata hintamuutostiedot ja uutuustuotteet <a href="https://alkometriikka.fi/rss.xml" target="_blank">RSS-syötteen</a> kautta.
+				</p>
 				<details>
 					<summary class="cursor-pointer">Tietolähteet</summary>
 					<p>
@@ -137,6 +140,14 @@
 				>
 					<Icon name="mail_send" class="inline-block" />
 					<span>Sähköposti</span>
+				</a>
+				<a
+					href="https://alkometriikka.fi/rss.xml"
+					target="_blank"
+					class={twMerge(components.button())}
+				>
+					<Icon name="rss" class="inline-block" />
+					<span>RSS</span>
 				</a>
 			</div>
 			<p class="text-sm text-secondary">
