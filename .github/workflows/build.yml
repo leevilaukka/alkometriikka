@@ -60,13 +60,13 @@ jobs:
         id: prerender-gate
         run: |
           set -e
-          changed=no
+          changed=false
           for f in data.json 404.html og-images.json; do
             if git show "origin/gh-pages:$f" 2>/dev/null | cmp -s - "build/$f"; then
               echo "· $f unchanged"
             else
               echo "· $f differs — product pages will be regenerated"
-              changed=yes
+              changed=true
             fi
           done
           echo "changed=$changed" >> "$GITHUB_OUTPUT"
@@ -77,7 +77,11 @@ jobs:
       # untouched products and so a skip keeps the existing pages on gh-pages.
       - name: Restore last deployed product pages
         run: |
-          git archive origin/gh-pages tuotteet tuotteet-manifest.json 2>/dev/null | tar -x -C build/ || true
+          # Restore each path separately: git archive fails as a whole when any
+          # one pathspec is missing (e.g. the manifest on the first run after
+          # adding it), which would otherwise silently drop the pages too.
+          git archive origin/gh-pages tuotteet 2>/dev/null | tar -x -C build/ || true
+          git archive origin/gh-pages tuotteet-manifest.json 2>/dev/null | tar -x -C build/ || true
 
       - name: Prerender product pages
         if: steps.prerender-gate.outputs.changed == 'true'
