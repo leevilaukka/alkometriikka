@@ -188,7 +188,7 @@ jobs:
           path: sitemap.xml
 
   rss:
-    needs: sync
+    needs: [sync, og-images]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
