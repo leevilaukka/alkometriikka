@@ -301,6 +301,15 @@ function replaceMarkedSection(template: string, content: string): string {
   return `${template.slice(0, start)}${SEO_START}\n${content}\n\t${template.slice(end)}`;
 }
 
+/** True when a per-product RSS feed has at least one recorded price change to list. */
+function hasPriceChange(history?: { date: string; price: number }[]): boolean {
+  if (!Array.isArray(history) || history.length < 2) return false;
+  for (let index = 1; index < history.length; index += 1) {
+    if (history[index].price !== history[index - 1].price) return true;
+  }
+  return false;
+}
+
 function productHtml(
   template: string,
   schema: string[],
@@ -425,6 +434,13 @@ function productHtml(
     `\t<meta name="description" content="${escapeHtml(description)}" />`,
     `\t<meta name="keywords" content="${escapeHtml(keywords)}" />`,
     `\t<link rel="canonical" href="${escapeHtml(url)}" />`,
+    ...(hasPriceChange(product.priceHistory)
+      ? [
+          `\t<link rel="alternate" type="application/rss+xml" title="${escapeHtml(
+            `${name} – hintamuutokset`
+          )}" href="${escapeHtml(`${SITE_URL}/rss/${encodeURIComponent(id)}.xml`)}" />`
+        ]
+      : []),
     `\t<meta property="og:type" content="product" />`,
     `\t<meta property="og:title" content="${escapeHtml(title)}" />`,
     `\t<meta property="og:url" content="${escapeHtml(url)}" />`,

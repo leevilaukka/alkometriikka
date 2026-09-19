@@ -187,8 +187,58 @@ jobs:
           name: sitemap
           path: sitemap.xml
 
+  rss:
+    needs: sync
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Cache Bun dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.bun
+            node_modules
+          key: ${{ runner.os }}-bun-${{ hashFiles('bun.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-bun-
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Download dataset
+        uses: actions/download-artifact@v4
+        with:
+          name: data
+          path: ./
+          merge-multiple: true
+
+      - name: Download OG image manifest
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: og-images
+          path: ./
+          merge-multiple: true
+
+      - name: Run script to generate RSS feed
+        run: |
+          bun run scripts/rss.ts
+
+      - name: Upload RSS feed
+        uses: actions/upload-artifact@v4
+        with:
+          name: rss
+          path: |
+            rss.xml
+            rss
+
   deploy:
-    needs: [sync, og-images, sitemap]
+    needs: [sync, og-images, sitemap, rss]
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -230,14 +280,16 @@ jobs:
         run: |
           cp og-images.json ../gh-pages/og-images.json
           bun run scripts/prerender-products.ts --data data.json --out ../gh-pages --template ../gh-pages/404.html --og-manifest ../gh-pages/og-images.json --manifest ../gh-pages/tuotteet-manifest.json
-          cp data.json availability.json sitemap.xml ../gh-pages/
+          cp data.json availability.json sitemap.xml rss.xml ../gh-pages/
+          rm -rf ../gh-pages/rss
+          cp -r rss ../gh-pages/
 
       - name: Commit and push downloaded file
         working-directory: ../gh-pages
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add data.json availability.json sitemap.xml tuotteet tuotteet-manifest.json -f
+          git add data.json availability.json sitemap.xml rss.xml rss tuotteet tuotteet-manifest.json -f
           [ -f og-images.json ] && git add og-images.json -f || true
           git commit -m "Update price list and static product pages [skip ci]" || echo "No changes to commit"
           git push origin HEAD:gh-pages
