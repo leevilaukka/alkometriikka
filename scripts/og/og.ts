@@ -260,7 +260,7 @@ function loadFonts(): Promise<
 				weight,
 				style,
 				data: await Bun.file(
-					path.join(import.meta.dir, '..', 'src/lib/assets/fonts/Inter/static', file)
+					path.join(import.meta.dir, '..', '..', 'src/lib/assets/fonts/Inter/static', file)
 				).arrayBuffer()
 			}))
 		))();
@@ -275,7 +275,7 @@ function loadFonts(): Promise<
  */
 function loadFavicon(): Promise<ArrayBuffer | undefined> {
 	return (async () => {
-		const file = path.join(import.meta.dir, '..', 'static/favicon.ico');
+		const file = path.join(import.meta.dir, '..', '..', 'static/favicon.ico');
 		const data = await Bun.file(file).arrayBuffer();
 		const bytes = new Uint8Array(data);
 		const signature = [0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a];

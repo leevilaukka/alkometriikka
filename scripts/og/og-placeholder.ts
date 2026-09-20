@@ -13,6 +13,7 @@ const RED = '#e51b15';
 const FONT_FILE = path.join(
 	import.meta.dir,
 	'..',
+	'..',
 	'src/lib/assets/fonts/Inter/static/Inter_18pt-ExtraBold.ttf'
 );
 
