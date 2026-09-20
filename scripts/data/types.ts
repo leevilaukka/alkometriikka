@@ -27,8 +27,23 @@ export interface ProductDetailsApiResponse {
 	data?: DetailedProductData;
 }
 
-/** A single dated price observation kept in a product's price history. */
-export type PricePoint = { date: string; price: number };
+/**
+ * A single dated price observation kept in a product's price history.
+ *
+ * The optional sale fields are recorded when the observation was captured while
+ * the product was on a sales campaign, so the chart can reconstruct historical
+ * sale periods even after the campaign columns on the live product have moved on.
+ */
+export type PricePoint = {
+	date: string;
+	price: number;
+	/** Reference ("normal") price Alko reported alongside the sale price. */
+	normalPrice?: number;
+	/** ISO date (YYYY-MM-DD) the campaign sale period started. */
+	campaignStart?: string;
+	/** ISO date (YYYY-MM-DD) the campaign sale period ended. */
+	campaignEnd?: string;
+};
 
 /**
  * Extra, non-schema metadata attached to a product. Products are never deleted
@@ -37,6 +52,8 @@ export type PricePoint = { date: string; price: number };
 export type ProductMeta = {
 	/** ISO date (YYYY-MM-DD) when the product was first detected as no longer in Alko's selection. */
 	removedFromSelection?: string;
+	/** ISO date (YYYY-MM-DD) of the last detail re-verification. Drives the staleness cooldown. */
+	detailCheckedAt?: string;
 };
 
 /** A migrated/synced product: change-detection hash, legacy-ordered values, price history and optional metadata. */
@@ -53,6 +70,8 @@ export type MigratedData = {
 	metadata: {
 		LastUpdated: string;
 		LastSynced: string;
+		/** Version of the hash algorithm that produced each product's `hash`. */
+		HashVersion?: number;
 		ci?: {
 			sync: {
 				commit: string;
@@ -111,6 +130,12 @@ export interface SearchProductData {
 	webshopStock: number;
 	limeStock: number | null;
 	limeWebshopTotalStock: number;
+	/** Reference ("normal") price Alko reports for campaign pricing; only present for products on sale. */
+	lowest_30d_price?: number | string | null;
+	/** ISO date (YYYY-MM-DD) marking the start of a campaign sale. */
+	campaign_start_date?: string | null;
+	/** ISO date (YYYY-MM-DD) marking the end of a campaign sale. */
+	campaign_end_date?: string | null;
 }
 
 /**

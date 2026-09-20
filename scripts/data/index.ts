@@ -17,12 +17,16 @@
  * Muistiinpanot -> notes/notes.md
  */
 
+import { getSaleInfo } from '../../src/lib/utils/sales.ts';
+import type { SaleInfo } from '../../src/lib/utils/sales.ts';
 import {
 	DEV,
+	HASH_VERSION,
 	LEGACY_HEADERS,
 	REQUEST_HEADERS,
 	SEARCH_URL,
 	STORES_URL,
+	alignValues,
 	buildLegacyValues,
 	getHash,
 	getHashValues,
@@ -59,6 +63,8 @@ const MIGRATED_DATA_PATH = './data-migrated.json';
 const PAGE_SIZE = 1000;
 /** Delay (ms) between consecutive search page requests to avoid rate limiting. */
 const SEARCH_PAGE_DELAY_MS = 300;
+/** How many search pages to fetch in parallel (the requests are network-bound). */
+const DEFAULT_SEARCH_CONCURRENCY = 3;
 /**
  * A fixed scoring `seed` sent with every search request. Without it the API
  * returns a non-deterministic subset of the catalogue (~7000-7700 distinct
@@ -79,6 +85,10 @@ const RETRY_BASE_DELAY_MS = 1000;
 const RETRY_MAX_DELAY_MS = 60_000;
 /** How often (in products) to log detail-fetch progress. */
 const PROGRESS_LOG_INTERVAL = 25;
+/** Default staleness (in days) after which an otherwise-unchanged product's details get re-verified. */
+const DEFAULT_DETAIL_VERIFY_COOLDOWN_DAYS = 30;
+/** Default cap on how many stale products get detail-verified per sync run. */
+const DEFAULT_DETAIL_VERIFY_BATCH = 200;
 
 const VERBOSE = truthyEnvVar('VERBOSE');
 
@@ -86,11 +96,17 @@ const VERBOSE = truthyEnvVar('VERBOSE');
 const NUMERO_INDEX = LEGACY_HEADERS.indexOf('Numero');
 const NIMI_INDEX = LEGACY_HEADERS.indexOf('Nimi');
 const HINTA_INDEX = LEGACY_HEADERS.indexOf('Hinta');
+const NORMAL_PRICE_INDEX = LEGACY_HEADERS.indexOf('Normaalihinta');
+const CAMPAIGN_START_INDEX = LEGACY_HEADERS.indexOf('Kampanja alkaa');
+const CAMPAIGN_END_INDEX = LEGACY_HEADERS.indexOf('Kampanja päättyy');
 
 interface Config {
 	detailConcurrency: number;
+	searchConcurrency: number;
 	maxRetries: number;
 	maxPages: number;
+	detailVerifyCooldownDays: number;
+	detailVerifyBatch: number;
 }
 
 function truthyEnvVar(name: string): boolean {
@@ -103,9 +119,28 @@ function loadConfig(): Config {
 		1,
 		Number(process.env.ALKO_DETAIL_CONCURRENCY) || DEFAULT_DETAIL_CONCURRENCY
 	);
+	const searchConcurrency = Math.max(
+		1,
+		Number(process.env.ALKO_SEARCH_CONCURRENCY) || DEFAULT_SEARCH_CONCURRENCY
+	);
 	const maxRetries = Math.max(0, Number(process.env.ALKO_MAX_RETRIES) || DEFAULT_MAX_RETRIES);
 	const maxPages = Number(process.env.ALKO_MAX_PAGES) || Infinity;
-	return { detailConcurrency, maxRetries, maxPages };
+	const detailVerifyCooldownDays = Math.max(
+		1,
+		Number(process.env.ALKO_DETAIL_VERIFY_COOLDOWN_DAYS) || DEFAULT_DETAIL_VERIFY_COOLDOWN_DAYS
+	);
+	const detailVerifyBatch = Math.max(
+		0,
+		Number(process.env.ALKO_DETAIL_VERIFY_BATCH) || DEFAULT_DETAIL_VERIFY_BATCH
+	);
+	return {
+		detailConcurrency,
+		searchConcurrency,
+		maxRetries,
+		maxPages,
+		detailVerifyCooldownDays,
+		detailVerifyBatch
+	};
 }
 
 interface SyncStats {
@@ -116,6 +151,8 @@ interface SyncStats {
 	failed: number;
 	filtered: number;
 	filteredRemoved: number;
+	verified: number;
+	verifyFailed: number;
 }
 
 /** Returns a copy of `meta` without the `removedFromSelection` flag, or `undefined` if nothing remains. */
@@ -131,6 +168,38 @@ function clearRemovedFlag(product: MigratedProduct): MigratedProduct {
 	const meta = withoutRemovedFlag(product.meta);
 	const { meta: _omit, ...rest } = product;
 	return meta ? { ...rest, meta } : rest;
+}
+
+const DAY_MS = 24 * 60 * 60 * 1000;
+
+/**
+ * Number of days since the product's last detail verification. Products that
+ * have never been verified sort as infinitely stale, so bootstrapping or
+ * migrated datasets drain oldest-first across successive runs.
+ */
+function detailVerifyAgeDays(product: MigratedProduct): number {
+	const checkedAt = product.meta?.detailCheckedAt;
+	const timestamp = checkedAt ? Date.parse(checkedAt) : NaN;
+	if (Number.isNaN(timestamp)) return Infinity;
+	return (Date.now() - timestamp) / DAY_MS;
+}
+
+/** True when a product is stale enough to warrant a detail re-verification. */
+function isDetailVerifyCandidate(product: MigratedProduct, cooldownDays: number): boolean {
+	return detailVerifyAgeDays(product) > cooldownDays;
+}
+
+/**
+ * Deep value equality between two `values` cells. Array-shaped fields (such as
+ * `taste`/Luonnehdinta) are produced as a fresh array on every build, so a
+ * reference comparison would falsely flag identical content as a change.
+ */
+function valuesEqual(a: unknown, b: unknown): boolean {
+	if (Array.isArray(a) && Array.isArray(b)) {
+		if (a.length !== b.length) return false;
+		return a.every((item, index) => valuesEqual(item, b[index]));
+	}
+	return Object.is(a, b);
 }
 
 // ============================================================================
@@ -158,19 +227,48 @@ function isMigratedProduct(entry: unknown): entry is MigratedProduct {
 }
 
 /**
+ * Extracts the sale/campaign info stored in a product's legacy `values` array
+ * and detects whether the product was on sale at the time the values were
+ * captured. Returns `null` when the product is not on sale.
+ */
+function salesInfoFromValues(values: unknown[]): SaleInfo | null {
+	return getSaleInfo({
+		price: values[HINTA_INDEX],
+		normalPrice: values[NORMAL_PRICE_INDEX],
+		campaignStart: values[CAMPAIGN_START_INDEX],
+		campaignEnd: values[CAMPAIGN_END_INDEX]
+	});
+}
+
+/**
  * Appends today's price to the product's history when it differs from the most
  * recent recorded price. Existing history is preserved untouched otherwise.
+ *
+ * When the product is on sale (`sale` is non-null) the recorded point also
+ * carries the reference price and campaign window, so the chart can later show
+ * the sale period.
  */
 function updatePriceHistory(
 	previous: PricePoint[] | undefined,
-	price: number | null
+	price: number | null,
+	sale: SaleInfo | null
 ): PricePoint[] {
 	const history = Array.isArray(previous) ? [...previous] : [];
 	if (price === null) return history;
 
 	const last = history[history.length - 1];
 	if (!last || last.price !== price) {
-		history.push({ date: new Date().toISOString().slice(0, 10), price });
+		history.push({
+			date: new Date().toISOString().slice(0, 10),
+			price,
+			...(sale
+				? {
+						normalPrice: sale.normalPrice,
+						campaignStart: sale.campaignStart,
+						campaignEnd: sale.campaignEnd
+					}
+				: {})
+		});
 	}
 	return history;
 }
@@ -269,42 +367,90 @@ async function loadSearchProducts(config: Config): Promise<SearchFetchResult> {
 	let expectedTotal: number | null = null;
 	let complete = true;
 
-	for (let page = 0; page < config.maxPages; page++) {
-		const skip = page * PAGE_SIZE;
-		const response = await fetchJson<SearchApiResponse>(
-			SEARCH_URL,
-			// A fixed `seed` makes paging deterministic and duplicate-free (see above).
-			{ method: 'POST', body: JSON.stringify({ top: PAGE_SIZE, skip, seed: SEARCH_SEED }) },
-			config.maxRetries
+	// The first page is fetched alone: its `@odata.count` tells us how many pages
+	// the rest of the sweep needs, so we can go parallel instead of paging serially.
+	const first = await fetchJson<SearchApiResponse>(
+		SEARCH_URL,
+		// A fixed `seed` makes paging deterministic and duplicate-free (see above).
+		{ method: 'POST', body: JSON.stringify({ top: PAGE_SIZE, skip: 0, seed: SEARCH_SEED }) },
+		config.maxRetries
+	);
+
+	// A null response means the request failed after all retries. We cannot tell
+	// this apart from a legitimately empty page by array length alone, so we
+	// must treat the whole fetch as incomplete rather than assume end-of-list.
+	if (first === null) {
+		console.error(
+			'  ❌ Search page 1 (skip 0) failed after retries — marking fetch as incomplete.'
+		);
+		return { products: [], complete: false, expectedTotal: null };
+	}
+
+	if (typeof first['@odata.count'] === 'number') {
+		expectedTotal = first['@odata.count'];
+		console.log(`  🔢 API reports ${expectedTotal} total products`);
+	}
+
+	for (const product of first.value ?? []) byId.set(product.id, product);
+	console.log(`  📦 Fetched ${byId.size} unique products (page 1)`);
+
+	// When the API reports a total we know exactly how many pages exist and can
+	// fetch them all in parallel waves. Without a total we page until a request
+	// comes back empty, as before.
+	const totalPages = Math.min(
+		expectedTotal !== null ? Math.ceil(expectedTotal / PAGE_SIZE) : config.maxPages,
+		config.maxPages
+	);
+
+	for (let start = 1; start < totalPages; start += config.searchConcurrency) {
+		const pages = Array.from(
+			{ length: Math.min(config.searchConcurrency, totalPages - start) },
+			(_, i) => start + i
 		);
 
-		// A null response means the request failed after all retries. We cannot tell
-		// this apart from a legitimately empty page by array length alone, so we
-		// must treat the whole fetch as incomplete rather than assume end-of-list.
-		if (response === null) {
-			console.error(
-				`  ❌ Search page ${page + 1} (skip ${skip}) failed after retries — marking fetch as incomplete.`
-			);
-			complete = false;
-			break;
+		const responses = await Promise.all(
+			pages.map(async (page) => ({
+				page,
+				response: await fetchJson<SearchApiResponse>(
+					SEARCH_URL,
+					{
+						method: 'POST',
+						body: JSON.stringify({
+							top: PAGE_SIZE,
+							skip: page * PAGE_SIZE,
+							seed: SEARCH_SEED
+						})
+					},
+					config.maxRetries
+				)
+			}))
+		);
+
+		let reachedEnd = false;
+		for (const { page, response } of responses) {
+			if (response === null) {
+				console.error(
+					`  ❌ Search page ${page + 1} (skip ${page * PAGE_SIZE}) failed after retries — marking fetch as incomplete.`
+				);
+				complete = false;
+				continue;
+			}
+
+			const batch = response.value ?? [];
+			if (batch.length === 0) {
+				reachedEnd = true;
+				break;
+			}
+
+			for (const product of batch) byId.set(product.id, product);
+			console.log(`  📦 Fetched ${byId.size} unique products (page ${page + 1})`);
 		}
 
-		if (expectedTotal === null && typeof response['@odata.count'] === 'number') {
-			expectedTotal = response['@odata.count'];
-			console.log(`  🔢 API reports ${expectedTotal} total products`);
-		}
-
-		const batch = response.value ?? [];
-		if (batch.length === 0) break;
-
-		for (const product of batch) byId.set(product.id, product);
-
-		console.log(`  📦 Fetched ${byId.size} unique products (page ${page + 1})`);
-
-		if (batch.length < PAGE_SIZE) break;
+		if (reachedEnd) break;
+		// Skip the remaining pages once we've collected the advertised total.
 		if (expectedTotal !== null && byId.size >= expectedTotal) break;
 
-		// Space out page requests slightly to avoid tripping the API's rate limiter.
+		// Space out request waves slightly to avoid tripping the API's rate limiter.
 		await sleep(SEARCH_PAGE_DELAY_MS);
 	}
 
@@ -407,6 +553,15 @@ async function loadExistingData(): Promise<MigratedData> {
 				`  ✅ Loaded file: ${sourcePath} with ${Object.keys(parsed.products ?? {}).length} products - File size: ${file.size} bytes`
 			);
 		}
+
+		// Bring any rows written under an older (shorter) schema up to the current
+		// column count so the dataset stays column-aligned after schema changes.
+		for (const product of Object.values(parsed.products ?? {})) {
+			if (isMigratedProduct(product) && Array.isArray(product.values)) {
+				product.values = alignValues(product.values);
+			}
+		}
+
 		return parsed;
 	} catch (error) {
 		console.warn(`⚠️  Failed to read ${sourcePath}, starting fresh:`, error);
@@ -423,12 +578,27 @@ async function loadExistingData(): Promise<MigratedData> {
  * Merges the search and detail payloads into a single object the schema can
  * read from. Detail-API keys win over search-API keys (see notes), while
  * price/abv/volume remain search-only fields and are preserved.
+ *
+ * The campaign fields are an exception: the search and detail endpoints report
+ * them in different formats, and the search format is the canonical one — the
+ * search API returns `lowest_30d_price` as a euro string ("1.1900") and the
+ * campaign dates as plain `YYYY-MM-DD`, whereas the detail API returns the
+ * price as an integer in cents (179 = 1.79 €) and the dates as ISO timestamps.
+ * Keeping the search values protects the normal price from being read as a
+ * 100×-too-large reference price and the campaign window from being
+ * unparseable.
  */
+const SEARCH_WINS_KEYS = ['lowest_30d_price', 'campaign_start_date', 'campaign_end_date'] as const;
+
 function mergeProduct(
 	search: SearchProductData,
 	details: DetailedProductData
 ): Record<string, unknown> {
-	return { ...search, ...details };
+	const merged: Record<string, unknown> = { ...search, ...details };
+	for (const key of SEARCH_WINS_KEYS) {
+		if (search[key] != null) merged[key] = search[key];
+	}
+	return merged;
 }
 
 // ============================================================================
@@ -461,7 +631,9 @@ async function purgeCache(): Promise<void> {
 				body: JSON.stringify({
 					files: [
 						'https://alkometriikka.fi/data.json',
-						'https://alkometriikka.fi/availability.json'
+						'https://alkometriikka.fi/availability.json',
+						'https://alkometriikka.fi/rss.xml',
+						'https://alkometriikka.fi/feed.json'
 					]
 				})
 			}
@@ -549,12 +721,18 @@ async function sync(): Promise<void> {
 		removed: 0,
 		failed: 0,
 		filtered: 0,
-		filteredRemoved: 0
+		filteredRemoved: 0,
+		verified: 0,
+		verifyFailed: 0
 	};
 
 	// Cheap first pass: hash the search-only fields and skip anything unchanged.
 	const pending: Array<{ product: SearchProductData; hash: string; previous?: MigratedProduct }> =
 		[];
+
+	// Products whose search hash is unchanged but whose stored details have aged
+	// past the verification cooldown. Handled by the lazy third pass below.
+	const verifyCandidates: Array<{ product: SearchProductData; previous: MigratedProduct }> = [];
 
 	// Ids the API classifies as irrelevant (gifts & drinking accessories).
 	const irrelevantIds = new Set<string>();
@@ -574,8 +752,12 @@ async function sync(): Promise<void> {
 
 		if (isMigratedProduct(previous) && previous.hash === searchHash) {
 			// Back in (or still in) the selection: keep it, but drop any stale removed flag.
-			products[product.id] = clearRemovedFlag(previous);
+			const kept = clearRemovedFlag(previous);
+			products[product.id] = kept;
 			stats.unchanged++;
+			if (isDetailVerifyCandidate(kept, config.detailVerifyCooldownDays)) {
+				verifyCandidates.push({ product, previous: kept });
+			}
 		} else {
 			pending.push({
 				product,
@@ -605,10 +787,19 @@ async function sync(): Promise<void> {
 			} else {
 				const values = buildLegacyValues(mergeProduct(product, details));
 				const price = toNumber(values[HINTA_INDEX]);
-				const priceHistory = updatePriceHistory(previous?.priceHistory, price);
-				const meta = withoutRemovedFlag(previous?.meta);
+				const priceHistory = updatePriceHistory(
+					previous?.priceHistory,
+					price,
+					salesInfoFromValues(values)
+				);
+				// A fresh detail fetch means the product was verified now: reset the
+				// cooldown clock so it isn't re-verified by the lazy pass as well.
+				const meta = {
+					...withoutRemovedFlag(previous?.meta),
+					detailCheckedAt: new Date().toISOString().slice(0, 10)
+				};
 
-				products[product.id] = { hash, values, priceHistory, ...(meta ? { meta } : {}) };
+				products[product.id] = { hash, values, priceHistory, meta };
 				if (previous) {
 					stats.updated++;
 					const name = String(values[NIMI_INDEX] ?? '').trim() || '(nimetön)';
@@ -617,7 +808,7 @@ async function sync(): Promise<void> {
 					const priceInfo = priceChanged ? ` (${previousPrice} € → ${price} €)` : '';
 					// Compare the previous and current values to see what changed.
 					const changedFields = values.reduce<string[]>((acc, value, index) => {
-						if (previous.values[index] !== value) {
+						if (!valuesEqual(previous.values[index], value)) {
 							acc.push(LEGACY_HEADERS[index]);
 						}
 						return acc;
@@ -640,6 +831,85 @@ async function sync(): Promise<void> {
 			}
 		}
 	);
+
+	// Lazy third pass: re-verify details for stale-but-unchanged products. Cold
+	// detail-only fields (producer, vintage, grapes, ...) can drift without ever
+	// touching the search payload, so each run re-fetches up to
+	// `detailVerifyBatch` of the stale products, oldest-first, and records a
+	// fresh `detailCheckedAt`. A product only becomes stale again once that
+	// timestamp ages past the cooldown, so any real change resets the clock and
+	// it isn't touched again for another cooldown window. Per-run cost stays
+	// bounded by the batch cap even after a long gap that leaves everything stale.
+	//
+	// Skipped in dev: the verify pass only matters for the deployed dataset, and
+	// dev's static copy is neither committed nor seeded back to production, so
+	// the stamps would be discarded and the extra requests wasted. Use
+	// ALKO_DETAIL_VERIFY_IN_DEV=1 to force it anyway.
+	if (
+		(!DEV || truthyEnvVar('ALKO_DETAIL_VERIFY_IN_DEV')) &&
+		config.detailVerifyBatch > 0 &&
+		verifyCandidates.length > 0
+	) {
+		const verifyBatch = [...verifyCandidates]
+			.sort((a, b) => detailVerifyAgeDays(b.previous) - detailVerifyAgeDays(a.previous))
+			.slice(0, config.detailVerifyBatch);
+
+		console.log(
+			`\n🔍 ${verifyCandidates.length} stale products, verifying details for ${verifyBatch.length}...\n`
+		);
+
+		const today = new Date().toISOString().slice(0, 10);
+		await mapWithConcurrency(
+			verifyBatch,
+			config.detailConcurrency,
+			async ({ product, previous }) => {
+				const details = await fetchProductDetails(product.id, config);
+				// Leave the entry and its `detailCheckedAt` untouched so the product
+				// stays eligible and is retried on the next run after a transient failure.
+				if (!details) {
+					stats.verifyFailed++;
+					return;
+				}
+
+				const values = buildLegacyValues(mergeProduct(product, details));
+				const changedFields = values.reduce<string[]>((acc, value, index) => {
+					if (!valuesEqual(previous.values[index], value)) {
+						acc.push(LEGACY_HEADERS[index]);
+					}
+					return acc;
+				}, []);
+
+				if (changedFields.length > 0) {
+					const price = toNumber(values[HINTA_INDEX]);
+					const priceHistory = updatePriceHistory(
+						previous.priceHistory,
+						price,
+						salesInfoFromValues(values)
+					);
+					products[product.id] = {
+						...previous,
+						values,
+						priceHistory,
+						meta: { ...previous.meta, detailCheckedAt: today }
+					};
+					stats.updated++;
+					if (VERBOSE) {
+						console.log(
+							`  🔄 Verified ${product.id} — detail data changed:\n\t${changedFields.map((f) => `\t• ${f}`).join('\n')}`
+						);
+					} else {
+						console.log(`  🔄 Verified ${product.id} — detail data changed, updated values`);
+					}
+				} else {
+					products[product.id] = {
+						...previous,
+						meta: { ...previous.meta, detailCheckedAt: today }
+					};
+					stats.verified++;
+				}
+			}
+		);
+	}
 
 	// Never delete products: carry over every product from the existing dataset
 	// (data.json, or the migrated fallback) that the latest search response no
@@ -708,6 +978,7 @@ async function sync(): Promise<void> {
 		metadata: {
 			LastUpdated: hasChanges ? now : (existing.metadata?.LastUpdated ?? now),
 			LastSynced: now,
+			HashVersion: HASH_VERSION,
 			ci: {
 				sync: currentCIRun ?? previousCIRun?.sync ?? emptyCIRun,
 				update: hasChanges
@@ -741,7 +1012,9 @@ function printSummary(stats: SyncStats, total: number): void {
 	console.log(`  � Removed from selection: ${stats.removed}`);
 	console.log(`  🚫 Irrelevant filtered items: ${stats.filtered}`);
 	console.log(`  🧹 Irrelevant filtered items (removed by sync): ${stats.filteredRemoved}`);
+	console.log(`  🔍 Verified (unchanged): ${stats.verified}`);
 	console.log(`  ❌ Failed:    ${stats.failed}`);
+	console.log(`  ❌ Verify failed: ${stats.verifyFailed}`);
 	console.log(`  📦 Total:     ${total}\n`);
 	console.log(`✅ Saved ${DATA_PATH}`);
 }

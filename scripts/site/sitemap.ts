@@ -1,6 +1,6 @@
 import Bun from "bun";
-import { MigratedData } from "./setup/types";
-import { DEV } from "./setup/constants";
+import { MigratedData } from "../data/types";
+import { DEV } from "../data/constants";
 
 type SitemapEntry = {
     loc: string;

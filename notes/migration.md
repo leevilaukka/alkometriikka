@@ -8,7 +8,7 @@ dataset, and the changes required in the frontend loader
 
 The dataset was previously generated from Alko's XLSX price list and shipped as a
 single `table` + `metadata` object. It is now produced by the sync script in
-[`scripts/setup/`](../scripts/setup) directly from Alko's API, using change
+[`scripts/data/`](../scripts/data) directly from Alko's API, using change
 detection (hashing) so only new/changed products are re-fetched. See
 [`notes/notes.md`](./notes.md) and [`notes/improvements.md`](./improvements.md)
 for the sync design.
@@ -60,7 +60,7 @@ Key differences:
 | Removed products | absent | kept, flagged via `meta.removedFromSelection` |
 | Metadata | XLSX document props | none |
 
-Type definitions live in [`scripts/setup/types.ts`](../scripts/setup/types.ts)
+Type definitions live in [`scripts/data/types.ts`](../scripts/data/types.ts)
 (`MigratedData`, `MigratedProduct`, `PricePoint`, `ProductMeta`).
 
 ## Frontend change (`formatDatasetToJSON`)
