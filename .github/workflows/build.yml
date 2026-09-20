@@ -86,7 +86,7 @@ jobs:
       - name: Prerender product pages
         if: steps.prerender-gate.outputs.changed == 'true'
         run: |
-          bun run scripts/prerender-products.ts \
+          bun run scripts/site/prerender-products.ts \
             --out build \
             --data build/data.json \
             --template build/404.html \

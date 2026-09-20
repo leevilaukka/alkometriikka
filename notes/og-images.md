@@ -7,7 +7,7 @@ every shared link a consistently branded preview.
 
 ## Architecture
 
-- [`scripts/og.ts`](../scripts/og.ts) — shared rendering module. Builds the SVG
+- [`scripts/og/og.ts`](../scripts/og/og.ts) — shared rendering module. Builds the SVG
   with [satori](https://github.com/vercel/satori), rasterizes it with
   [@resvg/resvg-js](https://github.com/yisibl/resvg-js), and exposes the key/URL
   helpers used by both scripts below.
@@ -19,13 +19,13 @@ every shared link a consistently branded preview.
     content change (e.g. a price drop) produces a new key but unrelated metadata
     does not.
   - `OG_CDN_BASE` env overrides the default `https://cdn.alkometriikka.fi`.
-- [`scripts/r2.ts`](../scripts/r2.ts) — minimal AWS Signature V4 client for
+- [`scripts/r2/client.ts`](../scripts/r2/client.ts) — minimal AWS Signature V4 client for
   R2's **S3-compatible endpoint**
   (`https://<account>.<region>.r2.cloudflarestorage.com`, region = `CF_R2_REGION`,
   default `eu`). The Cloudflare REST API throttles to ~4 req/s account-wide (≈ 1 h
   for a full dataset); the S3 endpoint has its own much higher limits, so bulk
   uploads finish in minutes.
-- [`scripts/og-images.ts`](../scripts/og-images.ts) — three modes:
+- [`scripts/og/og-images.ts`](../scripts/og/og-images.ts) — three modes:
   - *Render-only* (`--render <dir>`): fetch the Alko `t_medium` photo, render the
     SVG, rasterize the PNG, and write it under `<dir>/products/` plus a
     `<dir>/og-images.json` manifest. No credentials needed. Skips products whose
@@ -46,7 +46,7 @@ every shared link a consistently branded preview.
     always keeps its image (even if it failed or was capped by `--limit`); only
     products that have left the dataset are pruned. All deletion is skipped when
     the pass had any failure, so a partial run never wipes valid images.
-- [`scripts/prerender-products.ts`](../scripts/prerender-products.ts) — reads the
+- [`scripts/site/prerender-products.ts`](../scripts/site/prerender-products.ts) — reads the
   manifest (`--og-manifest`, default `build/og-images.json`), and for each
   product sets `og:image`, `twitter:image`, and `og:image:width/height` to the
   R2 URL when a key exists, falling back to the Alko CDN URL otherwise.
@@ -76,7 +76,7 @@ every shared link a consistently branded preview.
    doesn't cover `alkometriikka-og` / the `CF_R2_ACCOUNT_ID` account. Test with:
 
    ```bash
-   bun run scripts/og-images.ts --upload <render-dir> --data static/data.json
+   bun run scripts/og/og-images.ts --upload <render-dir> --data static/data.json
    ```
 
 ## CI wiring
@@ -115,11 +115,11 @@ incremental syncs afterwards.
 # 1) Render the entire catalog (~30-40 min; no credentials needed).
 #    --local keeps it files-only even if CF_R2_* is loaded from .env.
 #    Safe to Ctrl-C and re-run: it resumes from the written manifest.
-bun run scripts/og-images.ts --render /tmp/og-rendered --local --data static/data.json
+bun run scripts/og/og-images.ts --render /tmp/og-rendered --local --data static/data.json
 
 # 2) Batch-upload the rendered dir via the R2 S3 endpoint (~10-15 min)
 export CF_R2_ACCESS_KEY_ID=... CF_R2_SECRET_ACCESS_KEY=... CF_R2_ACCOUNT_ID=...
-bun run scripts/og-images.ts --upload /tmp/og-rendered --data static/data.json
+bun run scripts/og/og-images.ts --upload /tmp/og-rendered --data static/data.json
 
 # 3) Commit the manifest on gh-pages (via the web UI, no script needed)
 
@@ -134,14 +134,14 @@ bun run scripts/og-images.ts --upload /tmp/og-rendered --data static/data.json
 
 ```bash
 # Render just a handful locally to preview (--local avoids R2 even with .env)
-bun run scripts/og-images.ts --render /tmp/og-preview --local --limit 5 --data static/data.json
+bun run scripts/og/og-images.ts --render /tmp/og-preview --local --limit 5 --data static/data.json
 
 # Render changed products + upload them (CI mode)
 # needs CF_R2_* env vars
-bun run scripts/og-images.ts --data static/data.json --manifest og-images.json
+bun run scripts/og/og-images.ts --data static/data.json --manifest og-images.json
 
 # Full build with R2 URLs baked into the product pages
-bun run scripts/prerender-products.ts --data static/data.json --out build --template src/app.html --og-manifest og-images.json
+bun run scripts/site/prerender-products.ts --data static/data.json --out build --template src/app.html --og-manifest og-images.json
 ```
 
 ## Notes / caveats
@@ -153,8 +153,8 @@ bun run scripts/prerender-products.ts --data static/data.json --out build --temp
 - Products with a failed bottle fetch are skipped and fall back to the Alko CDN
   URL in prerendered pages.
 - The hash covers the **displayed product content** (name, price, sale, specs…)
-  **plus the design fingerprint** (`ogDesignFingerprint()` in `scripts/og.ts`):
-  the normalized (comment/whitespace-stripped) source of `og.ts`, the embedded
+  **plus the design fingerprint** (`ogDesignFingerprint()` in `scripts/og/og.ts`):
+  the normalized (comment/whitespace-stripped) source of `scripts/og/og.ts`, the embedded
   favicon, and the fonts. Consequences:
   - A real layout change (edit `og.ts`, new favicon/fonts) changes every key, so
     the next run re-renders and re-uploads the whole catalog automatically —

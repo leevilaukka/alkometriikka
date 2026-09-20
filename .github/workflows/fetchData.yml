@@ -47,7 +47,7 @@ jobs:
       - name: Rehash seeded dataset to current schema
         run: |
           if [ -f data.json ]; then
-            bun run scripts/setup/rehash.ts
+            bun run scripts/data/rehash.ts
           else
             echo "ℹ️  No seeded data.json found (first run or missing gh-pages dataset); skipping rehash."
           fi
@@ -61,7 +61,7 @@ jobs:
         run: |
           for attempt in 1 2 3; do
             echo "▶️  Sync attempt $attempt..."
-            if bun run scripts/setup/index.ts; then
+            if bun run scripts/data/index.ts; then
               echo "✅ Sync succeeded on attempt $attempt"
               exit 0
             fi
@@ -131,7 +131,7 @@ jobs:
           CF_R2_REGION: ${{ vars.CF_R2_REGION }}
           OG_CDN_BASE: ${{ vars.OG_CDN_BASE }}
         run: |
-          bun run scripts/og-images.ts --data data.json --manifest ../gh-pages/og-images.json
+          bun run scripts/og/og-images.ts --data data.json --manifest ../gh-pages/og-images.json
           cp ../gh-pages/og-images.json og-images.json
 
       - name: Upload updated OG image manifest
@@ -179,7 +179,7 @@ jobs:
 
       - name: Run script to generate sitemap
         run: |
-          bun run scripts/sitemap.ts
+          bun run scripts/site/sitemap.ts
 
       - name: Upload sitemap
         uses: actions/upload-artifact@v4
@@ -227,7 +227,7 @@ jobs:
 
       - name: Run script to generate RSS feed
         run: |
-          bun run scripts/rss.ts
+          bun run scripts/site/rss.ts
 
       - name: Upload RSS feed
         uses: actions/upload-artifact@v4
@@ -280,7 +280,7 @@ jobs:
           ALKO_PRERENDER_CONCURRENCY: '32'
         run: |
           cp og-images.json ../gh-pages/og-images.json
-          bun run scripts/prerender-products.ts --data data.json --out ../gh-pages --template ../gh-pages/404.html --og-manifest ../gh-pages/og-images.json --manifest ../gh-pages/tuotteet-manifest.json
+          bun run scripts/site/prerender-products.ts --data data.json --out ../gh-pages --template ../gh-pages/404.html --og-manifest ../gh-pages/og-images.json --manifest ../gh-pages/tuotteet-manifest.json
           cp data.json availability.json sitemap.xml rss.xml feed.json ../gh-pages/
           rm -rf ../gh-pages/rss
           cp -r rss ../gh-pages/

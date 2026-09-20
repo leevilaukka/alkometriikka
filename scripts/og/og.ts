@@ -2,13 +2,13 @@ import { CryptoHasher } from 'bun';
 import path from 'node:path';
 import { Resvg } from '@resvg/resvg-js';
 import satori from 'satori';
-import { getSaleInfo, toISODateInTimeZone } from '../src/lib/utils/sales';
+import { getSaleInfo, toISODateInTimeZone } from '../../src/lib/utils/sales';
 
 /**
  * Shared Open Graph image helpers for the Alkometriikka product pages.
  *
- * Both scripts/og-images.ts (rendering + R2 upload) and
- * scripts/prerender-products.ts (injecting the og:image tag) must agree on the
+ * Both scripts/og/og-images.ts (rendering + R2 upload) and
+ * scripts/site/prerender-products.ts (injecting the og:image tag) must agree on the
  * exact derived key for a product. Everything that determines the *visual
  * content* of the image is hashed into the key, so a product whose displayed
  * fields are unchanged reuses the same immutable object in R2 (no re-upload,
@@ -171,7 +171,7 @@ let designFingerprintPromise: Promise<string> | null = null;
  * Fingerprints everything that affects the *layout* of the image without
  * needing to render it: the normalized source of this file, the favicon, and
  * the embedded fonts. Combined into the content hash, so a real layout change
- * (edit to `scripts/og.ts`, a new favicon, new font files) re-keys every image
+ * (edit to `scripts/og/og.ts`, a new favicon, new font files) re-keys every image
  * and the next run re-renders the whole catalog — while formatting-only edits
  * (prettier, reordering, comments) leave the fingerprint, and thus all keys,
  * untouched. `OG_DESIGN_VERSION` is included as an escape hatch to force a

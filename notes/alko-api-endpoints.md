@@ -12,7 +12,7 @@
 > Content-Type: application/json   (POST/PUT/PATCH)
 > ```
 >
-> This already exists in the codebase as `REQUEST_HEADERS` (scripts/setup/constants.ts).
+> This already exists in the codebase as `REQUEST_HEADERS` (scripts/data/constants.ts).
 
 ---
 
@@ -41,7 +41,7 @@ The SPA client module (`8175-f677ecb5a418ca88.js`) wires up the services like th
 ### `POST /api/search/product?lang=<locale>` – product search (used by sync)
 - Body: `{ top: 1000, skip: 0, seed?: 1337 }`
 - Response: `{ "@odata.count": 11209, "@search.facets": {...}, value: [SearchProductData, ...] }`
-- `seed` – a fixed `seed` makes paging deterministic (without it the API returns only ~7000–7700 *distinct* products and pads the rest with duplicates despite advertising the full `@odata.count`). Already documented in the `scripts/setup/index.ts` comments.
+- `seed` – a fixed `seed` makes paging deterministic (without it the API returns only ~7000–7700 *distinct* products and pads the rest with duplicates despite advertising the full `@odata.count`). Already documented in the `scripts/data/index.ts` comments.
 - Per-product response fields (verified via live call):
   ```json
   {
@@ -88,7 +88,7 @@ The SPA client module (`8175-f677ecb5a418ca88.js`) wires up the services like th
 
 ### `GET /api/product-api/products/{productId}` – full product details (used by sync)
 - Response: `{ data: DetailedProductData }` – e.g. `producer`, `vintage`, `grapeVarieties`, `productionSites`, `nutrition`, `taste`, etc. Not present in the search API.
-- Used by `fetchProductDetails` in `scripts/setup/index.ts`.
+- Used by `fetchProductDetails` in `scripts/data/index.ts`.
 
 ### `GET /api/product-api/products?id=<id>[&lang=<locale>]` – batch-ish helper
 - The SPA's `getProductsByIds` uses `URLSearchParams.stringify({ id, lang })`.

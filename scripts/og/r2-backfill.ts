@@ -1,5 +1,5 @@
 import path from 'node:path';
-import { R2S3Client } from './r2';
+import { R2S3Client } from '../r2/client';
 import { ogPlaceholderPng } from './og-placeholder';
 import {
 	OG_KEY_PREFIX,

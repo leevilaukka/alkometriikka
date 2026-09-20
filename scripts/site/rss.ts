@@ -1,9 +1,9 @@
 import Bun from 'bun';
 import { mkdir, readdir, rm } from 'node:fs/promises';
 import path from 'node:path';
-import { MigratedData } from './setup/types';
-import { DEV } from './setup/constants';
-import { ogImageUrl } from './og';
+import { MigratedData } from '../data/types';
+import { DEV } from '../data/constants';
+import { ogImageUrl } from '../og/og';
 
 /** Max items in the aggregate (whole-catalog) feed. */
 const RSS_LIMIT = 1000;

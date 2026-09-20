@@ -1,9 +1,9 @@
 import { mkdir, readdir, rm } from "node:fs/promises";
 import path from "node:path";
 import Bun, { CryptoHasher } from "bun";
-import { getSaleInfo, toISODateInTimeZone } from "../src/lib/utils/sales.ts";
-import { ogImageUrl } from "./og";
-import { OG_IMAGE_WIDTH, OG_IMAGE_HEIGHT } from "./og";
+import { getSaleInfo, toISODateInTimeZone } from "../../src/lib/utils/sales.ts";
+import { ogImageUrl } from "../og/og";
+import { OG_IMAGE_WIDTH, OG_IMAGE_HEIGHT } from "../og/og";
 
 type ProductRecord = {
   values: unknown[];

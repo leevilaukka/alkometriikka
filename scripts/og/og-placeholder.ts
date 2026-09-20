@@ -4,7 +4,7 @@ import { Resvg } from '@resvg/resvg-js';
 /**
  * Fallback OG image tile for products that have no photo on Alko's CDN (their
  * `images.alko.fi/.../kuva.jpg` returns HTTP 400). Rendered directly with resvg
- * so it stays out of scripts/og.ts — the design fingerprint only hashes that
+ * so it stays out of scripts/og/og.ts — the design fingerprint only hashes that
  * file (+ favicon + fonts), so adding this fallback does NOT re-key any of the
  * existing content-addressed images.
  */

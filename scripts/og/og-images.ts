@@ -9,7 +9,7 @@ import {
 	ogSvg,
 	svgToPng
 } from './og';
-import { R2S3Client } from './r2';
+import { R2S3Client } from '../r2/client';
 import { ogPlaceholderPng } from './og-placeholder';
 
 const REQUEST_HEADERS = {

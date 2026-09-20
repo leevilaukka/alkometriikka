@@ -22,8 +22,8 @@
  * only when the version gate allows it; everything else is left untouched.
  *
  * Usage:
- *   bun run scripts/setup/rehash.ts          # rewrites ./data.json
- *   bun run scripts/setup/rehash.ts --dev    # rewrites ./static/data.json
+ *   bun run scripts/data/rehash.ts          # rewrites ./data.json
+ *   bun run scripts/data/rehash.ts --dev    # rewrites ./static/data.json
  */
 
 import { DEV, HASH_VERSION, alignValues, getHash, getHashValues } from './constants.ts';

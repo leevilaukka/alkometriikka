@@ -1,4 +1,4 @@
-import { R2S3Client } from './r2';
+import { R2S3Client } from './client';
 
 const accessKeyId = process.env.CF_R2_ACCESS_KEY_ID;
 const secretAccessKey = process.env.CF_R2_SECRET_ACCESS_KEY;
