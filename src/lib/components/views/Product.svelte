@@ -121,25 +121,143 @@
 	$effect(() => {
 		if (!historyChartElem) return;
 
+		const history = product[AllColumns.History] ?? [];
+		const dates = history.map((entry) => entry.date);
+		const isSaleEntry = (entry: {
+			price: number;
+			normalPrice?: number;
+		}): entry is { price: number; normalPrice: number } =>
+			entry.normalPrice != null && entry.price < entry.normalPrice;
+
+		// Sale periods are built from the price-history data (recorded at sync
+		// time) merged with the product's currently active campaign window, so
+		// ongoing sales appear on the chart even before the next price change
+		// records a new point.
+		const windows: { start: string; end: string }[] = [];
+		let run: { start: string; end: string } | null = null;
+		history.forEach((entry) => {
+			if (isSaleEntry(entry)) {
+				if (!run) run = { start: entry.date, end: entry.date };
+				else run.end = entry.date;
+				if (entry.campaignStart && entry.campaignStart < run.start) run.start = entry.campaignStart;
+				if (entry.campaignEnd && entry.campaignEnd > run.end) run.end = entry.campaignEnd;
+			} else if (run) {
+				windows.push(run);
+				run = null;
+			}
+		});
+		if (run) windows.push(run);
+
+		const currentSale = getSaleInfo({
+			price: product[AllColumns.Price],
+			normalPrice: product[AllColumns.NormalPrice],
+			campaignStart: product[AllColumns.CampaignStart],
+			campaignEnd: product[AllColumns.CampaignEnd]
+		});
+		if (currentSale) {
+			windows.push({
+				start: currentSale.campaignStart ?? history[0]?.date ?? '',
+				end: currentSale.campaignEnd ?? ''
+			});
+		}
+
+		const firstIndexFor = (date: string) => {
+			for (let i = 0; i < dates.length; i++) {
+				if (dates[i] >= date) return i;
+			}
+			return Math.max(0, dates.length - 1);
+		};
+		const lastIndexFor = (date: string) => {
+			for (let i = dates.length - 1; i >= 0; i--) {
+				if (dates[i] <= date) return i;
+			}
+			return 0;
+		};
+
+		// The end marker is only drawn once the campaign has really ended and
+		// its end date is in the past; while the sale is still running only the
+		// start marker is shown.
+		const now = new Date();
+		const todayISO = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(
+			now.getDate()
+		).padStart(2, '0')}`;
+
+		// Vertical "Kampanja" marker lines: one at the campaign start date and
+		// another at the end date once it is known.
+		const campaignLinePlugin = {
+			id: 'campaignLinePlugin',
+			afterDatasetsDraw(chart: any) {
+				const { ctx, chartArea, scales } = chart;
+				const xScale = scales.x;
+				if (!chartArea || !xScale || windows.length === 0) return;
+				ctx.save();
+				ctx.strokeStyle = 'rgba(239, 68, 68, 0.9)';
+				ctx.fillStyle = 'rgba(239, 68, 68, 0.9)';
+				ctx.lineWidth = 1.5;
+				ctx.font = '12px Inter, system-ui, sans-serif';
+				for (const window of windows) {
+					const drawMarker = (date: string, index: number, label: string) => {
+						const x = Math.max(
+							chartArea.left,
+							Math.min(chartArea.right, xScale.getPixelForValue(index))
+						);
+						const labelGap = 22;
+						ctx.setLineDash([6, 4]);
+						ctx.beginPath();
+						ctx.moveTo(x, chartArea.top + labelGap);
+						ctx.lineTo(x, chartArea.bottom);
+						ctx.stroke();
+						ctx.setLineDash([]);
+						ctx.textAlign = 'center';
+						ctx.textBaseline = 'top';
+						const halfWidth = ctx.measureText(label).width / 2;
+						const textX = Math.max(
+							chartArea.left + halfWidth + 4,
+							Math.min(chart.width - halfWidth - 4, x)
+						);
+						ctx.fillText(label, textX, chartArea.top + 3);
+					};
+					if (window.start) drawMarker(window.start, firstIndexFor(window.start), 'Kampanja alkaa');
+					if (window.end && window.end < todayISO)
+						drawMarker(window.end, lastIndexFor(window.end), 'Kampanja päättyy');
+				}
+				ctx.restore();
+			}
+		};
+
 		const chart = new Chart(historyChartElem, {
 			type: 'line',
 			data: {
-				labels:
-					product[AllColumns.History]?.map((entry) =>
-						new Date(entry.date).toLocaleDateString('fi-FI')
-					) || [],
+				labels: dates.map((date) => new Date(date).toLocaleDateString('fi-FI')),
 				datasets: [
 					{
 						label: 'Hinta',
-						data: product[AllColumns.History]?.map((entry) => entry.price) || [],
+						data: history.map((entry) => entry.price),
 						borderColor: 'rgba(75, 192, 192, 1)',
 						backgroundColor: 'rgba(75, 192, 192, 0.2)',
 						fill: true,
 						tension: 0.1,
+						pointRadius: history.map((entry) => (isSaleEntry(entry) ? 5 : 3)),
+						pointBackgroundColor: history.map((entry) =>
+							isSaleEntry(entry) ? 'rgba(239, 68, 68, 1)' : 'rgba(75, 192, 192, 1)'
+						),
+						pointBorderColor: history.map((entry) =>
+							isSaleEntry(entry) ? 'rgba(255, 255, 255, 1)' : 'rgba(75, 192, 192, 1)'
+						),
 						tooltip: {
 							callbacks: {
-								label: function (context) {
-									return `Hinta: ${formatValue(context?.parsed?.y || 0, AllColumns.Price)}`;
+								label: function (context: any) {
+									const entry = history[context.dataIndex];
+									if (!entry) return '';
+									const label = `Hinta: ${formatValue(entry.price, AllColumns.Price)}`;
+									if (isSaleEntry(entry)) {
+										const discount = Math.round((1 - entry.price / entry.normalPrice) * 100);
+										return `${label} · Normaalihinta ${formatValue(
+											entry.normalPrice,
+											AllColumns.NormalPrice
+										)} · Alennus ${discount}%`;
+									}
+									return label;
 								}
 							}
 						}
@@ -181,7 +299,8 @@
 						intersect: false
 					}
 				}
-			}
+			},
+			plugins: [campaignLinePlugin]
 		});
 
 		return () => chart.destroy();

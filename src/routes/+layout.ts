@@ -62,7 +62,13 @@ async function fetchAvailability({ fetch }: { fetch: Fetch }): Promise<Availabil
 
 type MigratedProduct = {
 	values: unknown[];
-	priceHistory?: { date: string; price: number }[];
+	priceHistory?: {
+		date: string;
+		price: number;
+		normalPrice?: number;
+		campaignStart?: string;
+		campaignEnd?: string;
+	}[];
 	meta?: { removedFromSelection?: string };
 };
 

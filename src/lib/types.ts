@@ -14,6 +14,18 @@ export type ColumnType =
 
 export type DatasetRow = (string | number | undefined)[];
 
+/**
+ * A single dated price observation in a product's price history. Optional sale
+ * fields are present when the observation was recorded during a sales campaign.
+ */
+export type PriceHistoryEntry = {
+	date: string;
+	price: number;
+	normalPrice?: number;
+	campaignStart?: string;
+	campaignEnd?: string;
+};
+
 export type Filter = {
 	type: ColumnType;
 	// Set of all possible types
@@ -85,10 +97,10 @@ export interface PriceListItem extends Record<DrunkColumnNames, number> {
 	Normaalihinta: number;
 	'Kampanja alkaa': string;
 	'Kampanja päättyy': string;
-	Hintahistoria: { date: string; price: number }[];
+	Hintahistoria: PriceHistoryEntry[];
 	'Poistunut valikoimasta': boolean;
 	Myymälät: Set<string>;
-	[key: string]: string | number | boolean | Set<string> | { date: string; price: number }[];
+	[key: string]: string | number | boolean | Set<string> | PriceHistoryEntry[];
 }
 
 export type DatasetColumnNames = (typeof DatasetColumns)[keyof typeof DatasetColumns];

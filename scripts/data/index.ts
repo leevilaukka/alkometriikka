@@ -17,6 +17,8 @@
  * Muistiinpanot -> notes/notes.md
  */
 
+import { getSaleInfo } from '../../src/lib/utils/sales.ts';
+import type { SaleInfo } from '../../src/lib/utils/sales.ts';
 import {
 	DEV,
 	HASH_VERSION,
@@ -94,6 +96,9 @@ const VERBOSE = truthyEnvVar('VERBOSE');
 const NUMERO_INDEX = LEGACY_HEADERS.indexOf('Numero');
 const NIMI_INDEX = LEGACY_HEADERS.indexOf('Nimi');
 const HINTA_INDEX = LEGACY_HEADERS.indexOf('Hinta');
+const NORMAL_PRICE_INDEX = LEGACY_HEADERS.indexOf('Normaalihinta');
+const CAMPAIGN_START_INDEX = LEGACY_HEADERS.indexOf('Kampanja alkaa');
+const CAMPAIGN_END_INDEX = LEGACY_HEADERS.indexOf('Kampanja päättyy');
 
 interface Config {
 	detailConcurrency: number;
@@ -222,19 +227,48 @@ function isMigratedProduct(entry: unknown): entry is MigratedProduct {
 }
 
 /**
+ * Extracts the sale/campaign info stored in a product's legacy `values` array
+ * and detects whether the product was on sale at the time the values were
+ * captured. Returns `null` when the product is not on sale.
+ */
+function salesInfoFromValues(values: unknown[]): SaleInfo | null {
+	return getSaleInfo({
+		price: values[HINTA_INDEX],
+		normalPrice: values[NORMAL_PRICE_INDEX],
+		campaignStart: values[CAMPAIGN_START_INDEX],
+		campaignEnd: values[CAMPAIGN_END_INDEX]
+	});
+}
+
+/**
  * Appends today's price to the product's history when it differs from the most
  * recent recorded price. Existing history is preserved untouched otherwise.
+ *
+ * When the product is on sale (`sale` is non-null) the recorded point also
+ * carries the reference price and campaign window, so the chart can later show
+ * the sale period.
  */
 function updatePriceHistory(
 	previous: PricePoint[] | undefined,
-	price: number | null
+	price: number | null,
+	sale: SaleInfo | null
 ): PricePoint[] {
 	const history = Array.isArray(previous) ? [...previous] : [];
 	if (price === null) return history;
 
 	const last = history[history.length - 1];
 	if (!last || last.price !== price) {
-		history.push({ date: new Date().toISOString().slice(0, 10), price });
+		history.push({
+			date: new Date().toISOString().slice(0, 10),
+			price,
+			...(sale
+				? {
+						normalPrice: sale.normalPrice,
+						campaignStart: sale.campaignStart,
+						campaignEnd: sale.campaignEnd
+					}
+				: {})
+		});
 	}
 	return history;
 }
@@ -753,7 +787,11 @@ async function sync(): Promise<void> {
 			} else {
 				const values = buildLegacyValues(mergeProduct(product, details));
 				const price = toNumber(values[HINTA_INDEX]);
-				const priceHistory = updatePriceHistory(previous?.priceHistory, price);
+				const priceHistory = updatePriceHistory(
+					previous?.priceHistory,
+					price,
+					salesInfoFromValues(values)
+				);
 				// A fresh detail fetch means the product was verified now: reset the
 				// cooldown clock so it isn't re-verified by the lazy pass as well.
 				const meta = {
@@ -843,7 +881,11 @@ async function sync(): Promise<void> {
 
 				if (changedFields.length > 0) {
 					const price = toNumber(values[HINTA_INDEX]);
-					const priceHistory = updatePriceHistory(previous.priceHistory, price);
+					const priceHistory = updatePriceHistory(
+						previous.priceHistory,
+						price,
+						salesInfoFromValues(values)
+					);
 					products[product.id] = {
 						...previous,
 						values,
