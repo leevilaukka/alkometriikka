@@ -10,6 +10,7 @@ import {
 	svgToPng
 } from './og';
 import { R2S3Client } from './r2';
+import { ogPlaceholderPng } from './og-placeholder';
 
 const REQUEST_HEADERS = {
 	'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0'
@@ -35,7 +36,7 @@ function hasFlag(name: string): boolean {
 	return process.argv.includes(name);
 }
 
-async function fetchProductImage(id: string): Promise<ArrayBuffer> {
+async function fetchProductImage(id: string): Promise<ArrayBuffer | null> {
 	const url = `https://images.alko.fi/images/cs_srgb,f_auto,t_medium/cdn/${encodeURIComponent(id)}/kuva.jpg`;
 	let lastError: unknown;
 	for (let attempt = 0; attempt < 3; attempt += 1) {
@@ -44,6 +45,9 @@ async function fetchProductImage(id: string): Promise<ArrayBuffer> {
 				headers: REQUEST_HEADERS,
 				signal: AbortSignal.timeout(20_000)
 			});
+			// No photo exists for this product — callers fall back to a
+			// placeholder rather than failing the product forever.
+			if (response.status >= 400 && response.status < 500) return null;
 			if (!response.ok) throw new Error(`Alko image HTTP ${response.status}`);
 			return await response.arrayBuffer();
 		} catch (error) {
@@ -210,6 +214,16 @@ async function main() {
 	const schema = dataset.schema ?? [];
 	const design = await ogDesignFingerprint();
 
+	// Only objects that actually exist in R2 may be carried over from the
+	// previous manifest. A content-addressed key that isn't in the bucket (e.g.
+	// an earlier upload that failed but still got recorded) is re-queued here,
+	// so the manifest can never reference a missing object: a partially failed
+	// run drops the un-uploaded products and the next run heals them automatically.
+	let existing: Set<string> | null = null;
+	if (client) {
+		existing = new Set(await client.listKeys(`${OG_KEY_PREFIX}/`));
+	}
+
 	const current: Manifest = {};
 	const queue: Array<{ id: string; values: unknown[] }> = [];
 	for (const [id, product] of products) {
@@ -218,16 +232,23 @@ async function main() {
 		const display = ogDisplayFields(schema, product.values);
 		if (!display) continue;
 		const key = ogImageKey(display, design);
-		if (previous[id] === key) {
+		if (previous[id] === key && (existing === null || existing.has(key))) {
 			current[id] = key;
 			continue;
 		}
 		queue.push({ id, values: product.values });
 	}
 	// Products not queued this run (unchanged, capped by --limit, or with a
-	// prior image) keep their previous key so nothing valid is ever lost.
+	// prior image) keep their previous key so nothing valid is ever lost — but
+	// only when the object still exists in the bucket.
 	for (const [id] of products) {
-		if (current[id] === undefined && previous[id] !== undefined) current[id] = previous[id];
+		if (
+			current[id] === undefined &&
+			previous[id] !== undefined &&
+			(existing === null || existing.has(previous[id]))
+		) {
+			current[id] = previous[id];
+		}
 	}
 
 	if (renderDir) await mkdir(renderDir, { recursive: true });
@@ -263,7 +284,7 @@ async function main() {
 			const display = ogDisplayFields(schema, values);
 			if (!display) throw new Error('invalid display');
 			const image = await fetchProductImage(id);
-			const svg = await ogSvg(display, image);
+			const svg = await ogSvg(display, image ?? ogPlaceholderPng(display.name));
 			const png = svgToPng(svg);
 			const key = ogImageKey(display, design);
 
@@ -291,11 +312,13 @@ async function main() {
 	process.off('SIGTERM', onSignal);
 
 	if (client && failures.length === 0) {
+		// Only delete objects no manifest has ever referenced. Adding *every*
+		// previous key (not just the ones still in the dataset) means a run
+		// against a partial/incomplete dataset can never prune images that the
+		// deployed site still uses — which is exactly how the bucket's storage
+		// collapsed in the first place. Prune = delete true garbage only.
 		const wanted = new Set(Object.values(current));
-		for (const id of Object.keys(dataset.products ?? {})) {
-			const previousKey = previous[id];
-			if (current[id] === undefined && previousKey !== undefined) wanted.add(previousKey);
-		}
+		for (const previousKey of Object.values(previous)) wanted.add(previousKey);
 		await pruneTo(client, wanted);
 	}
 
