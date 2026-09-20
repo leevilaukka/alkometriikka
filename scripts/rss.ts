@@ -12,6 +12,7 @@ const PER_PRODUCT_LIMIT = 20;
 const SITE_URL = 'https://alkometriikka.fi';
 const RSS_AGGREGATE_PATH = 'rss.xml';
 const RSS_DIR = 'rss';
+const FEED_AGGREGATE_PATH = 'feed.json';
 
 type PricePoint = { date: string; price: number };
 
@@ -83,6 +84,21 @@ function compareItemsByDate(a: FeedItem, b: FeedItem): number {
 function toRfc822Date(date: string): string {
 	if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return new Date().toUTCString();
 	return new Date(`${date}T12:00:00Z`).toUTCString();
+}
+
+/** ISO 8601 date (as JSON Feed requires) from a YYYY-MM-DD price-history date. */
+function toIsoDate(date: string): string {
+	if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return new Date().toISOString();
+	return `${date}T12:00:00Z`;
+}
+
+/** Strips the HTML out of a feed description for the JSON Feed summary field. */
+function stripHtml(html: string): string {
+	return html
+		.replace(/<br\s*\/?>/gi, ' ')
+		.replace(/<[^>]+>/g, ' ')
+		.replace(/\s+/g, ' ')
+		.trim();
 }
 
 function alkoImageUrl(productId: string): string {
@@ -263,6 +279,37 @@ function generateRssXml(
 	);
 }
 
+/** Serializes feed items to the JSON Feed 1.1 format (https://jsonfeed.org). */
+function generateJsonFeed(items: FeedItem[], channel: ChannelInfo): string {
+	return JSON.stringify(
+		{
+			version: 'https://jsonfeed.org/version/1.1',
+			title: channel.title,
+			home_page_url: channel.link,
+			feed_url: channel.selfUrl,
+			description: channel.description,
+			language: 'fi',
+			favicon: `${SITE_URL}/favicon.ico`,
+			items: items.map((item) => {
+				const entry: Record<string, string | string[]> = {
+					id: item.guid,
+					url: item.link,
+					title: item.title,
+					content_html: item.description,
+					summary: stripHtml(item.description),
+					date_published: toIsoDate(item.date)
+				};
+				if (item.image) entry.image = item.image;
+				// Split the hierarchical "Tyyppi / Alatyyppi" category into flat tags.
+				if (item.category) entry.tags = item.category.split(' / ');
+				return entry;
+			})
+		},
+		null,
+		'\t'
+	);
+}
+
 async function writePerProductFeeds(
 	byProduct: Map<string, FeedItem[]>,
 	lastBuildDateISO: string | undefined
@@ -272,25 +319,31 @@ async function writePerProductFeeds(
 	for (const [productId, items] of byProduct) {
 		const feed = [...items].sort(compareItemsByDate).slice(0, PER_PRODUCT_LIMIT);
 		const name = feed[0]?.name ?? productId;
-		await Bun.write(
-			path.join(RSS_DIR, `${productId}.xml`),
-			generateRssXml(
-				feed,
-				{
-					title: `Alkometriikka – ${name} – hintamuutokset`,
-					description: `Uusimmat hinnanmuutokset tuotteelle: ${name}.`,
-					link: feed[0]?.link ?? `${SITE_URL}/tuotteet/${encodeURIComponent(productId)}/`,
-					selfUrl: `${SITE_URL}/rss/${encodeURIComponent(productId)}.xml`
-				},
-				lastBuildDateISO
+		const channel: ChannelInfo = {
+			title: `Alkometriikka – ${name} – hintamuutokset`,
+			description: `Uusimmat hinnanmuutokset tuotteelle: ${name}.`,
+			link: feed[0]?.link ?? `${SITE_URL}/tuotteet/${encodeURIComponent(productId)}/`,
+			selfUrl: `${SITE_URL}/rss/${encodeURIComponent(productId)}.xml`
+		};
+		await Promise.all([
+			Bun.write(
+				path.join(RSS_DIR, `${productId}.xml`),
+				generateRssXml(feed, channel, lastBuildDateISO)
+			),
+			Bun.write(
+				path.join(RSS_DIR, `${productId}.json`),
+				generateJsonFeed(feed, {
+					...channel,
+					selfUrl: `${SITE_URL}/rss/${encodeURIComponent(productId)}.json`
+				})
 			)
-		);
+		]);
 		writtenIds.add(productId);
 	}
 
 	// Prune stale per-product feeds for products that dropped out of the
 	// dataset, so an old feed never lingers on the deployed site.
-	const expected = new Set([...writtenIds].map((id) => `${id}.xml`));
+	const expected = new Set([...writtenIds].flatMap((id) => [`${id}.xml`, `${id}.json`]));
 	let existing: string[] = [];
 	try {
 		existing = await readdir(RSS_DIR);
@@ -325,7 +378,9 @@ async function main() {
 	}
 
 	const byProduct = collectPerProductItems(schema, products, ogManifest);
-	const newItems = [...collectNewProductItems(schema, products, ogManifest)].sort(compareItemsByDate);
+	const newItems = [...collectNewProductItems(schema, products, ogManifest)].sort(
+		compareItemsByDate
+	);
 	const priceChanges = [...byProduct.values()].flat().sort(compareItemsByDate);
 	const lastBuildDateISO = metadata?.LastUpdated;
 
@@ -334,26 +389,26 @@ async function main() {
 	// slots with the most recent price changes and sort the whole mix by date.
 	const priceLimit = Math.max(0, RSS_LIMIT - newItems.length);
 	const aggregate = [...newItems, ...priceChanges.slice(0, priceLimit)].sort(compareItemsByDate);
-	await Bun.write(
-		RSS_AGGREGATE_PATH,
-		generateRssXml(
-			aggregate,
-			{
-				title: 'Alkometriikka – uutuudet ja hintamuutokset',
-				description: 'Uusimmat uutuudet ja hinnanmuutokset Alkon tuotevalikoimassa.',
-				link: `${SITE_URL}/`,
-				selfUrl: `${SITE_URL}/rss.xml`
-			},
-			lastBuildDateISO
+	const channel: ChannelInfo = {
+		title: 'Alkometriikka – uutuudet ja hintamuutokset',
+		description: 'Uusimmat uutuudet ja hinnanmuutokset Alkon tuotevalikoimassa.',
+		link: `${SITE_URL}/`,
+		selfUrl: `${SITE_URL}/rss.xml`
+	};
+	await Promise.all([
+		Bun.write(RSS_AGGREGATE_PATH, generateRssXml(aggregate, channel, lastBuildDateISO)),
+		Bun.write(
+			FEED_AGGREGATE_PATH,
+			generateJsonFeed(aggregate, { ...channel, selfUrl: `${SITE_URL}/feed.json` })
 		)
-	);
+	]);
 
 	const productFeedCount = await writePerProductFeeds(byProduct, lastBuildDateISO);
 	const totalChanges = [...byProduct.values()].reduce((sum, items) => sum + items.length, 0);
 
 	console.log(
-		`RSS: aggregate ${aggregate.length} of ${totalChanges} price changes + ${newItems.length} new products → ${RSS_AGGREGATE_PATH}; ` +
-			`${productFeedCount} per-product feeds → ${RSS_DIR}/`
+		`RSS: aggregate ${aggregate.length} of ${totalChanges} price changes + ${newItems.length} new products → ${RSS_AGGREGATE_PATH}+${FEED_AGGREGATE_PATH}; ` +
+			`${productFeedCount} per-product feeds (xml+json) → ${RSS_DIR}/`
 	);
 }
 

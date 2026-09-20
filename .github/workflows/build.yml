@@ -118,6 +118,12 @@ jobs:
             mv /tmp/rss.xml rss.xml
           fi
 
+      - name: Restore feed.json from existing gh-pages
+        run: |
+          if git show origin/gh-pages:feed.json > /tmp/feed.json 2>/dev/null; then
+            mv /tmp/feed.json feed.json
+          fi
+
       - name: Restore per-product rss feeds from existing gh-pages
         run: |
           git archive origin/gh-pages rss 2>/dev/null | tar -x - || true
@@ -136,7 +142,7 @@ jobs:
           # Runtime datasets are gitignored, so `git add .` skips them. Force-add
           # them so the force-push to gh-pages preserves the data deployed by
           # fetchData.yml instead of deleting it on every site build.
-          for f in data.json availability.json sitemap.xml rss.xml rss og-images.json tuotteet-manifest.json; do
+          for f in data.json availability.json sitemap.xml rss.xml feed.json rss og-images.json tuotteet-manifest.json; do
             if [ -f "$f" ]; then git add -f "$f"; fi
           done
           git commit -m "Deploy to GitHub Pages [skip ci]" || echo "No changes to commit"

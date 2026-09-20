@@ -100,7 +100,7 @@
 					<a href="mailto:contact@alkometriikka.fi">contact@alkometriikka.fi</a>.
 				</p>
 				<p>
-					Voit tilata hintamuutostiedot ja uutuustuotteet <a href="https://alkometriikka.fi/rss.xml" target="_blank">RSS-syötteen</a> kautta.
+					Voit tilata hintamuutostiedot ja uutuustuotteet <a href="https://alkometriikka.fi/rss.xml" target="_blank">RSS-</a> tai <a href="https://alkometriikka.fi/feed.json" target="_blank">JSON-syötteen</a> kautta.
 				</p>
 				<details>
 					<summary class="cursor-pointer">Tietolähteet</summary>
@@ -141,14 +141,24 @@
 					<Icon name="mail_send" class="inline-block" />
 					<span>Sähköposti</span>
 				</a>
-				<a
-					href="https://alkometriikka.fi/rss.xml"
-					target="_blank"
-					class={twMerge(components.button())}
-				>
-					<Icon name="rss" class="inline-block" />
-					<span>RSS</span>
-				</a>
+				<div class="flex flex-1">
+					<a
+						href="https://alkometriikka.fi/rss.xml"
+						target="_blank"
+						class={twMerge(components.button(), "rounded-e-none")}
+					>
+						<Icon name="rss" class="inline-block" />
+						<span>RSS</span>
+					</a>
+					<a
+						href="https://alkometriikka.fi/feed.json"
+						target="_blank"
+						class={twMerge(components.button(), "rounded-s-none border-s-0")}
+					>
+						<Icon name="bracket_curly" class="inline-block" />
+						<span>JSON-syöte</span>
+					</a>
+				</div>
 			</div>
 			<p class="text-sm text-secondary">
 				Versio: <a href={`${githubRepoBase}/commit/${version}`} target="_blank">

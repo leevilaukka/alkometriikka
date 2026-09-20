@@ -2,6 +2,7 @@ node_modules
 
 sitemap.xml
 rss.xml
+feed.json
 
 /rss/
 

@@ -598,7 +598,8 @@ async function purgeCache(): Promise<void> {
 					files: [
 						'https://alkometriikka.fi/data.json',
 						'https://alkometriikka.fi/availability.json',
-						'https://alkometriikka.fi/rss.xml'
+						'https://alkometriikka.fi/rss.xml',
+						'https://alkometriikka.fi/feed.json'
 					]
 				})
 			}
