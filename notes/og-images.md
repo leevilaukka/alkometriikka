@@ -19,14 +19,15 @@ every shared link a consistently branded preview.
     content change (e.g. a price drop) produces a new key but unrelated metadata
     does not.
   - `OG_CDN_BASE` env overrides the default `https://cdn.alkometriikka.fi`.
-- [`scripts/r2/client.ts`](../scripts/r2/client.ts) — minimal AWS Signature V4 client for
-  R2's **S3-compatible endpoint**
+- [`scripts/r2/client.ts`](../scripts/r2/client.ts) — thin wrapper over Bun's native
+  [`S3Client`](https://bun.com/docs/runtime/s3) pointed at R2's **S3-compatible endpoint**
   (`https://<account>.<region>.r2.cloudflarestorage.com`, region = `CF_R2_REGION`,
-  default `eu`). The Cloudflare REST API throttles to ~4 req/s account-wide (≈ 1 h
+  default `eu`; R2 accepts Bun's default `us-east-1` signing region as an alias for
+  `auto`). The Cloudflare REST API throttles to ~4 req/s account-wide (≈ 1 h
   for a full dataset); the S3 endpoint has its own much higher limits, so bulk
   uploads finish in minutes.
 - [`scripts/og/og-images.ts`](../scripts/og/og-images.ts) — three modes:
-  - *Render-only* (`--render <dir>`): fetch the Alko `t_medium` photo, render the
+  - _Render-only_ (`--render <dir>`): fetch the Alko `t_medium` photo, render the
     SVG, rasterize the PNG, and write it under `<dir>/products/` plus a
     `<dir>/og-images.json` manifest. No credentials needed. Skips products whose
     previous manifest key still matches. This is how the full catalog is
@@ -35,11 +36,11 @@ every shared link a consistently branded preview.
     uploads). The manifest is flushed every 500 products, every 15 s, and on
     `Ctrl-C`, so an interrupted run resumes from where it stopped instead of
     starting over.
-  - *Upload-only* (`--upload <dir>`): push every PNG in a render dir so the
+  - _Upload-only_ (`--upload <dir>`): push every PNG in a render dir so the
     bucket matches its manifest (via the S3 endpoint, high concurrency, no
     rate-limit throttle), then prune objects for products that left the dataset.
     Idempotent — content-addressed keys make re-uploading harmless.
-  - *Render-and-upload* (no `--render`/`--upload`, credentials provided): the CI
+  - _Render-and-upload_ (no `--render`/`--upload`, credentials provided): the CI
     path. Renders only products whose display content changed, uploads them, and
     writes the manifest to `--manifest`.
   - Cleanup is derived from `data.json`: a product still present in the dataset
@@ -61,7 +62,7 @@ every shared link a consistently branded preview.
    bunx wrangler r2 bucket domain add alkometriikka-og cdn.alkometriikka.fi
    ```
 
-2. **R2 API token** — Dashboard → R2 → *Manage R2 API Tokens*. Copy the
+2. **R2 API token** — Dashboard → R2 → _Manage R2 API Tokens_. Copy the
    **Access Key ID** and **Secret Access Key**; they authenticate against the
    S3 endpoint. The bucket must be selected (or created with account-level
    access). Also usable: `bunx wrangler r2 object put` style uploads, but the
@@ -81,7 +82,7 @@ every shared link a consistently branded preview.
 
 ## CI wiring
 
-- `.github/workflows/fetchData.yml` runs the *render-and-upload* mode every 6h
+- `.github/workflows/fetchData.yml` runs the _render-and-upload_ mode every 6h
   right before prerendering product pages. Only changed products are
   re-rendered/re-uploaded (usually a handful), so the step is quick.
   `continue-on-error: true` — if OG generation fails, pages deploy with the
@@ -164,9 +165,11 @@ bun run scripts/site/prerender-products.ts --data static/data.json --out build -
   - `OG_DESIGN_VERSION` (env, default `1`) is mixed into the fingerprint as an
     escape hatch: bump it in CI to force a one-off global refresh without a
     code change.
-- Objects are uploaded with
-  `Cache-Control: public, max-age=31536000, immutable` (+ `CDN-Cache-Control`
-  of the same value) since keys are content-addressed. Consequently each
+- Caching is `Cache-Control: public, max-age=31536000, immutable` (+
+  `CDN-Cache-Control` of the same value) since keys are content-addressed. It is
+  applied by a **Cloudflare Cache Rule on the R2 custom domain** rather than
+  per-object headers: Bun's S3 client can't set arbitrary headers on write, and
+  existing objects keep the headers they were uploaded with. Either way, each
   distinct image is fetched from the R2 bucket once per edge PoP at most —
   repeat visitors are served from their browser / the Cloudflare cache,
   keeping R2 read operations (and bandwidth) minimal.
