@@ -26,6 +26,7 @@ type FeedItem = {
 	image: string | null;
 	name: string;
 	category: string;
+	tags: string[];
 };
 
 type ProductRecord = {
@@ -156,7 +157,8 @@ function collectPerProductItems(
 				)} € → ${formatPrice(current.price)} € (${formatSigned(delta, '€')}, ${signedPercent}).</p>`,
 				image,
 				name,
-				category
+				category,
+				tags: []
 			});
 		}
 		if (items.length > 0) byProduct.set(productId, items);
@@ -216,7 +218,8 @@ function collectNewProductItems(
 				(details.length > 0 ? `<p>${details.join('<br />')}</p>` : ''),
 			image: ogManifest[productId] ? ogImageUrl(ogManifest[productId]) : alkoImageUrl(id),
 			name,
-			category
+			category,
+			tags: ['Uutuus']
 		});
 	}
 	return items;
@@ -242,7 +245,10 @@ function generateRssXml(
 				`\t\t\t<link>${escapeXml(item.link)}</link>\n` +
 				`\t\t\t<guid isPermaLink="false">${escapeXml(item.guid)}</guid>\n` +
 				`\t\t\t<pubDate>${escapeXml(item.pubDate)}</pubDate>\n` +
-				(item.category ? `\t\t\t<category>${escapeXml(item.category)}</category>\n` : '') +
+				[...item.tags, item.category]
+					.filter(Boolean)
+					.map((category) => `\t\t\t<category>${escapeXml(category)}</category>\n`)
+					.join('') +
 				`\t\t\t<description><![CDATA[${item.description}]]></description>\n` +
 				(item.image ? `\t\t\t<media:thumbnail url="${escapeXml(item.image)}" />\n` : '') +
 				`\t\t</item>\n`
@@ -300,8 +306,9 @@ function generateJsonFeed(items: FeedItem[], channel: ChannelInfo): string {
 					date_published: toIsoDate(item.date)
 				};
 				if (item.image) entry.image = item.image;
-				// Split the hierarchical "Tyyppi / Alatyyppi" category into flat tags.
-				if (item.category) entry.tags = item.category.split(' / ');
+				// Split the hierarchical "Tyyppi / Alatyyppi" category into flat tags,
+				// prefixed with any item tags ("Uutuus" for new products).
+				entry.tags = [...item.tags, ...item.category.split(' / ')].filter(Boolean);
 				return entry;
 			})
 		},
