@@ -100,7 +100,7 @@
 					<a href="mailto:contact@alkometriikka.fi">contact@alkometriikka.fi</a>.
 				</p>
 				<p>
-					Voit tilata hintamuutostiedot ja uutuustuotteet <a href="https://alkometriikka.fi/rss.xml" target="_blank">RSS-</a> tai <a href="https://alkometriikka.fi/feed.json" target="_blank">JSON-syötteen</a> kautta.
+					Voit tilata hintamuutos- ja uutuustuotetiedot <a href="https://alkometriikka.fi/rss.xml" target="_blank">RSS-</a> tai <a href="https://alkometriikka.fi/feed.json" target="_blank">JSON-syötteen</a> kautta.
 				</p>
 				<details>
 					<summary class="cursor-pointer">Tietolähteet</summary>
