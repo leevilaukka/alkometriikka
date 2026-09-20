@@ -27,7 +27,7 @@ export type MigratedData = {
 
 ### Files changed
 
-- **`scripts/setup/index.ts`** (sync/index script)
+- **`scripts/data/index.ts`** (sync/index script)
   - Products are collected in a local `products` map and written under
     `result.products` instead of as top-level keys.
   - Existing products are read via `existing.products`; the old
@@ -37,11 +37,11 @@ export type MigratedData = {
     previous `LastUpdated` is preserved.
   - Fresh-start fallbacks now include `products: {}` and a `metadata` stamp.
 
-- **`scripts/setup/migrate.ts`** (one-time migration)
+- **`scripts/data/migrate.ts`** (one-time migration)
   - Writes products under `out.products` and stamps `metadata`
     (`LastUpdated`/`LastSynced`) at migration time.
 
-- **`scripts/setup/cleanup.ts`** (one-off cleanup)
+- **`scripts/data/cleanup.ts`** (one-off cleanup)
   - Iterates and deletes from `data.products` instead of the top-level object.
 
 - **`src/routes/+layout.ts`** (app consumer)
@@ -72,7 +72,7 @@ product was needlessly re-fetched. Whitespace drift from the untrimmed
 
 ### Fix
 
-- **`scripts/setup/constants.ts`** — `getHash` now canonicalizes each value
+- **`scripts/data/constants.ts`** — `getHash` now canonicalizes each value
   before stringifying via a new `canonicalizeHashValue` helper: array-valued
   entries are trimmed and sorted, so the same set of entries hashes identically
   regardless of source order.
@@ -83,11 +83,11 @@ product was needlessly re-fetched. Whitespace drift from the untrimmed
   - The stored `values` (and thus the app's display order) are left untouched —
     only the hash representation is canonicalized.
 
-- **`scripts/setup/rehash.ts`** — temporary one-off script that recomputes the
+- **`scripts/data/rehash.ts`** — temporary one-off script that recomputes the
   `hash` for every product in `data.json` **in place** (only `hash` changes)
   using the new `getHash`. Run once after this change so stored hashes match what
   the next sync produces; otherwise affected products would be re-fetched once.
-  - Usage: `bun run scripts/setup/rehash.ts` (or `--dev` for `./static/data.json`).
+  - Usage: `bun run scripts/data/rehash.ts` (or `--dev` for `./static/data.json`).
   - Safe to delete after the rehash has been applied.
 
 ## Stale filter values from removed-from-selection products

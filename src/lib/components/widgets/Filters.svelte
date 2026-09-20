@@ -10,6 +10,7 @@
 	import { initFilterValues, searchParametersFromFilterValues } from '$lib/utils/filters';
 	import type { ColumnNames, FilterValues } from '$lib/types';
 	import { getContext, untrack } from 'svelte';
+	import { get } from 'svelte/store';
 	import type { SearchParamsManager } from '$lib/utils/url';
 	import { headerToDisplayName } from '$lib/utils/helpers';
 	import RecursiveFilter from '../inputs/RecursiveFilter.svelte';
@@ -30,12 +31,19 @@
 	
 	let searchParamsManager = getContext<SearchParamsManager>(ContextKeys.SearchParamsManager);
 	let filtersElement: HTMLDialogElement;
-	let showFilters = $derived(!isMobile);
+	let showFilters = $state(get(isMobile));
 	let hasRemovedProducts = $derived(kaljakori.data.some((item) => item[AllColumns.RemovedFromSelection] === true));
 	let filterActiveState = $state(filters.reduce((acc, filter) => {
 		acc[filter] = false;
 		return acc;
 	}, {} as Record<ColumnNames, boolean>));
+
+	let pillFilters = $derived.by(() =>
+		filters.filter((filter) => {
+			const type = kaljakori.getFilterType(filter);
+			return type === 'string' && kaljakori.getFilterValues(filter, showRemoved).length === 1;
+		})
+	);
 
 	export function toggleFilterElement() {
 		if (!filtersElement) return;
@@ -102,7 +110,7 @@
 	{#each filters as filter}
 		{@const possibleValues = kaljakori.getFilterValues(filter, showRemoved)}
 		{@const type = kaljakori.getFilterType(filter)}
-		{#if possibleValues.length > 1 || (filter === "Uutuus" && possibleValues.length === 1)}
+		{#if !pillFilters.includes(filter) && possibleValues.length > 1}
 			<div class="flex w-full flex-col text-sm gap-2">
 				{#if type === 'number'}
 					{@const [min, max] = kaljakori.getMinAndMaxValues(filter, showRemoved)}
@@ -126,6 +134,21 @@
 			</div>
 		{/if}
 	{/each}
+	{#if pillFilters.length}
+		<div class="flex w-full flex-row flex-wrap items-center gap-2">
+			{#each pillFilters as filter}
+				{@const possibleValues = kaljakori.getFilterValues(filter, showRemoved)}
+				<StringInput
+					defaultValue={[]}
+					label={headerToDisplayName(filter)}
+					options={possibleValues}
+					bind:value={filterValues[filter]}
+					bind:modified={filterActiveState[filter]}
+					name={filter}
+				/>
+			{/each}
+		</div>
+	{/if}
 	<div
 		class="sticky bottom-0 mt-auto flex w-full flex-col gap-2 backdrop:backdrop-blur-sm md:border-0 md:p-0"
 	>

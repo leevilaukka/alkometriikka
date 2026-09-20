@@ -14,6 +14,18 @@ export type ColumnType =
 
 export type DatasetRow = (string | number | undefined)[];
 
+/**
+ * A single dated price observation in a product's price history. Optional sale
+ * fields are present when the observation was recorded during a sales campaign.
+ */
+export type PriceHistoryEntry = {
+	date: string;
+	price: number;
+	normalPrice?: number;
+	campaignStart?: string;
+	campaignEnd?: string;
+};
+
 export type Filter = {
 	type: ColumnType;
 	// Set of all possible types
@@ -59,6 +71,7 @@ export interface PriceListItem extends Record<DrunkColumnNames, number> {
 	Hinta: number;
 	Litrahinta: number;
 	Uutuus: 'uutuus' | '';
+	Alennuksessa: 'alennuksessa' | '';
 	Hinnastojärjestyskoodi: string;
 	Tyyppi: string;
 	Alatyyppi: string;
@@ -81,10 +94,13 @@ export interface PriceListItem extends Record<DrunkColumnNames, number> {
 	'Energia kcal/100ml': number;
 	Valikoima: string;
 	EAN: string;
-	Hintahistoria: { date: string; price: number }[];
+	Normaalihinta: number;
+	'Kampanja alkaa': string;
+	'Kampanja päättyy': string;
+	Hintahistoria: PriceHistoryEntry[];
 	'Poistunut valikoimasta': boolean;
 	Myymälät: Set<string>;
-	[key: string]: string | number | boolean | Set<string> | { date: string; price: number }[];
+	[key: string]: string | number | boolean | Set<string> | PriceHistoryEntry[];
 }
 
 export type DatasetColumnNames = (typeof DatasetColumns)[keyof typeof DatasetColumns];
@@ -158,8 +174,13 @@ export type AnalyticsEventMap = {
 	show_price_history: { product_number?: string; [key: string]: any };
 	scan_barcode: { ean: string; link?: string };
 	scan_qr_code: { type: string; product_number: string; link?: string };
-	preferred_store_changed: { storeId: string; storeName: string; city?: string; action?: 'set' | 'change'; };
-	show_availability: { product_number?: string; [key: string]: any }
+	preferred_store_changed: {
+		storeId: string;
+		storeName: string;
+		city?: string;
+		action?: 'set' | 'change';
+	};
+	show_availability: { product_number?: string; [key: string]: any };
 } & {
 	[K in ShareEvent]: { url?: string; sid?: string; [key: string]: any };
 } & {

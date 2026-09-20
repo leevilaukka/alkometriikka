@@ -12,7 +12,7 @@
 	import { SearchParamsManager } from '$lib/utils/url';
 	import { markRouterReady, shareTypeFromRoute, trackSharedView } from '$lib/utils/helpers';
 	import { setContext } from 'svelte';
-	import Settings from '$lib/components/widgets/Settings.svelte';
+	import Settings from '$lib/components/widgets/Settings/Index.svelte';
 	import { LocalStorageManager } from '$lib/utils/storage';
 
 	let { children, data } = $props();

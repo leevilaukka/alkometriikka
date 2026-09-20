@@ -3,7 +3,10 @@
 		AllColumns,
 		DatasetColumns,
 		DrunkColumns,
-		hideFromProductPageStats
+		hideFromProductPageStats,
+
+		timeConfig
+
 	} from '$lib/utils/constants';
 	import {
 		generateTitle,
@@ -15,6 +18,7 @@
 
 	} from '$lib/utils/helpers';
 	import { formatValue } from '$lib/utils/format';
+	import { formatCampaignWindow, getSaleInfo } from '$lib/utils/sales';
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/styles';
 	import Icon from '../widgets/Icon.svelte';
@@ -68,12 +72,14 @@
 		product,
 		kaljakori,
 		availabilityStores,
-		preferredStore
+		preferredStore,
+		availabilityUpdated
 	}: {
 		product: PriceListItem;
 		kaljakori: Kaljakori;
 		availabilityStores: AvailabilityStore[];
 		preferredStore?: AvailabilityStore;
+		availabilityUpdated: Date | undefined;
 	} = $props();
 
 	const rankedAvailabilityStores = $derived(
@@ -115,25 +121,143 @@
 	$effect(() => {
 		if (!historyChartElem) return;
 
+		const history = product[AllColumns.History] ?? [];
+		const dates = history.map((entry) => entry.date);
+		const isSaleEntry = (entry: {
+			price: number;
+			normalPrice?: number;
+		}): entry is { price: number; normalPrice: number } =>
+			entry.normalPrice != null && entry.price < entry.normalPrice;
+
+		// Sale periods are built from the price-history data (recorded at sync
+		// time) merged with the product's currently active campaign window, so
+		// ongoing sales appear on the chart even before the next price change
+		// records a new point.
+		const windows: { start: string; end: string }[] = [];
+		let run: { start: string; end: string } | null = null;
+		history.forEach((entry) => {
+			if (isSaleEntry(entry)) {
+				if (!run) run = { start: entry.date, end: entry.date };
+				else run.end = entry.date;
+				if (entry.campaignStart && entry.campaignStart < run.start) run.start = entry.campaignStart;
+				if (entry.campaignEnd && entry.campaignEnd > run.end) run.end = entry.campaignEnd;
+			} else if (run) {
+				windows.push(run);
+				run = null;
+			}
+		});
+		if (run) windows.push(run);
+
+		const currentSale = getSaleInfo({
+			price: product[AllColumns.Price],
+			normalPrice: product[AllColumns.NormalPrice],
+			campaignStart: product[AllColumns.CampaignStart],
+			campaignEnd: product[AllColumns.CampaignEnd]
+		});
+		if (currentSale) {
+			windows.push({
+				start: currentSale.campaignStart ?? history[0]?.date ?? '',
+				end: currentSale.campaignEnd ?? ''
+			});
+		}
+
+		const firstIndexFor = (date: string) => {
+			for (let i = 0; i < dates.length; i++) {
+				if (dates[i] >= date) return i;
+			}
+			return Math.max(0, dates.length - 1);
+		};
+		const lastIndexFor = (date: string) => {
+			for (let i = dates.length - 1; i >= 0; i--) {
+				if (dates[i] <= date) return i;
+			}
+			return 0;
+		};
+
+		// The end marker is only drawn once the campaign has really ended and
+		// its end date is in the past; while the sale is still running only the
+		// start marker is shown.
+		const now = new Date();
+		const todayISO = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(
+			now.getDate()
+		).padStart(2, '0')}`;
+
+		// Vertical "Kampanja" marker lines: one at the campaign start date and
+		// another at the end date once it is known.
+		const campaignLinePlugin = {
+			id: 'campaignLinePlugin',
+			afterDatasetsDraw(chart: any) {
+				const { ctx, chartArea, scales } = chart;
+				const xScale = scales.x;
+				if (!chartArea || !xScale || windows.length === 0) return;
+				ctx.save();
+				ctx.strokeStyle = 'rgba(239, 68, 68, 0.9)';
+				ctx.fillStyle = 'rgba(239, 68, 68, 0.9)';
+				ctx.lineWidth = 1.5;
+				ctx.font = '12px Inter, system-ui, sans-serif';
+				for (const window of windows) {
+					const drawMarker = (date: string, index: number, label: string) => {
+						const x = Math.max(
+							chartArea.left,
+							Math.min(chartArea.right, xScale.getPixelForValue(index))
+						);
+						const labelGap = 22;
+						ctx.setLineDash([6, 4]);
+						ctx.beginPath();
+						ctx.moveTo(x, chartArea.top + labelGap);
+						ctx.lineTo(x, chartArea.bottom);
+						ctx.stroke();
+						ctx.setLineDash([]);
+						ctx.textAlign = 'center';
+						ctx.textBaseline = 'top';
+						const halfWidth = ctx.measureText(label).width / 2;
+						const textX = Math.max(
+							chartArea.left + halfWidth + 4,
+							Math.min(chart.width - halfWidth - 4, x)
+						);
+						ctx.fillText(label, textX, chartArea.top + 3);
+					};
+					if (window.start) drawMarker(window.start, firstIndexFor(window.start), 'Kampanja alkaa');
+					if (window.end && window.end < todayISO)
+						drawMarker(window.end, lastIndexFor(window.end), 'Kampanja päättyy');
+				}
+				ctx.restore();
+			}
+		};
+
 		const chart = new Chart(historyChartElem, {
 			type: 'line',
 			data: {
-				labels:
-					product[AllColumns.History]?.map((entry) =>
-						new Date(entry.date).toLocaleDateString('fi-FI')
-					) || [],
+				labels: dates.map((date) => new Date(date).toLocaleDateString('fi-FI')),
 				datasets: [
 					{
 						label: 'Hinta',
-						data: product[AllColumns.History]?.map((entry) => entry.price) || [],
+						data: history.map((entry) => entry.price),
 						borderColor: 'rgba(75, 192, 192, 1)',
 						backgroundColor: 'rgba(75, 192, 192, 0.2)',
 						fill: true,
 						tension: 0.1,
+						pointRadius: history.map((entry) => (isSaleEntry(entry) ? 5 : 3)),
+						pointBackgroundColor: history.map((entry) =>
+							isSaleEntry(entry) ? 'rgba(239, 68, 68, 1)' : 'rgba(75, 192, 192, 1)'
+						),
+						pointBorderColor: history.map((entry) =>
+							isSaleEntry(entry) ? 'rgba(255, 255, 255, 1)' : 'rgba(75, 192, 192, 1)'
+						),
 						tooltip: {
 							callbacks: {
-								label: function (context) {
-									return `Hinta: ${formatValue(context?.parsed?.y || 0, AllColumns.Price)}`;
+								label: function (context: any) {
+									const entry = history[context.dataIndex];
+									if (!entry) return '';
+									const label = `Hinta: ${formatValue(entry.price, AllColumns.Price)}`;
+									if (isSaleEntry(entry)) {
+										const discount = Math.round((1 - entry.price / entry.normalPrice) * 100);
+										return `${label} · Normaalihinta ${formatValue(
+											entry.normalPrice,
+											AllColumns.NormalPrice
+										)} · Alennus ${discount}%`;
+									}
+									return label;
 								}
 							}
 						}
@@ -175,7 +299,8 @@
 						intersect: false
 					}
 				}
-			}
+			},
+			plugins: [campaignLinePlugin]
 		});
 
 		return () => chart.destroy();
@@ -238,6 +363,16 @@
 	});
 
 	const differentSizesOfProduct = $derived(findDifferentSizeOfProduct(product, kaljakori));
+
+	const sale = $derived(
+		getSaleInfo({
+			price: product[AllColumns.Price],
+			normalPrice: product[AllColumns.NormalPrice],
+			campaignStart: product[AllColumns.CampaignStart],
+			campaignEnd: product[AllColumns.CampaignEnd]
+		})
+	);
+	const campaignWindow = $derived(sale ? formatCampaignWindow(sale) : null);
 
 </script>
 
@@ -308,9 +443,24 @@
 				</div>
 			</div>
 			<div class="flex flex-col items-end gap-1">
-				<p class="text-4xl font-bold" data-price={`${formatValue(product[AllColumns.Price], AllColumns.Price)}`}>
-					{formatValue(product[AllColumns.Price], AllColumns.Price)}
-				</p>
+				<div class="flex flex-row items-end gap-2">
+					{#if sale}
+						<span class="text-2xl text-secondary line-through">
+							{formatValue(sale.normalPrice, AllColumns.NormalPrice)}
+						</span>
+					{/if}
+					<p class="text-4xl font-bold" data-price={`${formatValue(product[AllColumns.Price], AllColumns.Price)}`}>
+						{formatValue(product[AllColumns.Price], AllColumns.Price)}
+					</p>
+				</div>
+				{#if sale}
+					<p class="text-sm font-semibold text-red-700 dark:text-red-400">
+						Alennus {sale.discountPercent} % normaalihinnasta
+						{formatValue(sale.normalPrice, AllColumns.NormalPrice)}{campaignWindow
+							? `, voimassa ${campaignWindow}`
+							: ''}
+					</p>
+				{/if}
 				<span class="text-sm text-secondary">
 					({formatValue(product[AllColumns.PricePerLiter], AllColumns.PricePerLiter)})
 				</span>
@@ -450,10 +600,15 @@
 					</button>
 				</div>
 			{/if}
-			<div class="border-t border-primary ">
+			<div class="border-t border-primary flex flex-row justify-between gap-0.5">
 				<p class="px-4 py-2">
 					Tuotetta on saatavilla seuraavissa myymälöissä:
 				</p>
+				{#if availabilityUpdated}
+					<p class="px-4 py-2 my-auto text-secondary text-sm">
+						Päivitetty viimeksi: {availabilityUpdated.toLocaleString('fi-FI')}
+					</p>
+				{/if}
 			</div>
 			<div class="max-h-128 overflow-y-auto border-t border-primary">
 				{#if rankedAvailabilityStores.length > 0}

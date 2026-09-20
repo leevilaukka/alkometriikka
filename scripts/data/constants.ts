@@ -30,7 +30,10 @@ export const LEGACY_HEADERS = [
 	'Katkerot EBU',
 	'Energia kcal/100 ml',
 	'Valikoima',
-	'EAN'
+	'EAN',
+	'Normaalihinta',
+	'Kampanja alkaa',
+	'Kampanja päättyy'
 ] as const;
 
 export const DEV = process.argv.includes('--dev');
@@ -69,6 +72,16 @@ export const REQUEST_HEADERS: Record<string, string> = {
 function toStringList(value: unknown): string[] {
 	if (Array.isArray(value)) return value.filter((item): item is string => typeof item === 'string');
 	return typeof value === 'string' ? [value] : [];
+}
+
+/** Converts an unknown field into a finite number or null. Handles the string prices the API returns. */
+function toPriceNumber(value: unknown): number | null {
+	if (typeof value === 'number' && Number.isFinite(value)) return value;
+	if (typeof value === 'string') {
+		const normalized = Number(value.replace(',', '.').trim());
+		if (Number.isFinite(normalized)) return normalized;
+	}
+	return null;
 }
 
 /**
@@ -327,7 +340,25 @@ export const FIELD_TO_LEGACY_SCHEMA: ProductFieldMapping[] = [
 					? (value.split('|')[2] ?? null)
 					: null
 	},
-	{ newPropertyKey: 'id', legacyKey: 'EAN', usedForHashing: false, preprocessor: () => null }
+	{ newPropertyKey: 'id', legacyKey: 'EAN', usedForHashing: false, preprocessor: () => null },
+	{
+		newPropertyKey: 'lowest_30d_price',
+		legacyKey: 'Normaalihinta',
+		usedForHashing: true,
+		preprocessor: toPriceNumber
+	},
+	{
+		newPropertyKey: 'campaign_start_date',
+		legacyKey: 'Kampanja alkaa',
+		usedForHashing: true,
+		preprocessor: (value) => value ?? null
+	},
+	{
+		newPropertyKey: 'campaign_end_date',
+		legacyKey: 'Kampanja päättyy',
+		usedForHashing: true,
+		preprocessor: (value) => value ?? null
+	}
 ];
 
 /**
@@ -342,6 +373,34 @@ export function buildLegacyValues(source: Record<string, unknown>): unknown[] {
 		(field) => field.preprocessor(source[field.newPropertyKey]) ?? null
 	);
 }
+
+/**
+ * Ensures a stored legacy `values` array lines up with the current schema.
+ *
+ * When the schema gains columns (e.g. the campaign/normal-price fields), rows
+ * carried over from an older dataset are shorter than `LEGACY_HEADERS`. If left
+ * as-is, every such row would be misaligned in the app (the appended
+ * "Hintahistoria" and "Poistunut valikoimasta" columns would land in the wrong
+ * positions). Padding/truncating on load keeps every row aligned.
+ */
+export function alignValues(values: unknown[]): unknown[] {
+	if (values.length === LEGACY_HEADERS.length) return values;
+	if (values.length < LEGACY_HEADERS.length) {
+		return [...values, ...Array(LEGACY_HEADERS.length - values.length).fill(null)];
+	}
+	return values.slice(0, LEGACY_HEADERS.length);
+}
+
+/**
+ * Version of the change-detection hash algorithm and its hashed field set.
+ *
+ * Bump this whenever a `usedForHashing` column is added/removed/renamed, a
+ * hashed column's `preprocessor` changes, or the hash canonicalization changes.
+ * `rehash.ts` uses it to decide whether stored hashes need rewriting, and the
+ * sync persists it in the dataset metadata. Do not bump it for unrelated
+ * schema additions (appended columns don't affect hashed indices).
+ */
+export const HASH_VERSION = 1;
 
 /**
  * Extracts only the change-detection relevant values (`usedForHashing`) from a

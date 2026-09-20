@@ -194,7 +194,7 @@ export async function handleShare({
 	if (
 		navigator.canShare &&
 		navigator.canShare({ url: shareUrl }) &&
-		!isFirefox // Firefox has a poor implementation of the Web Share API
+		!get(isFirefox) // Firefox has a poor implementation of the Web Share API
 	) {
 		try {
 			await navigator.share({

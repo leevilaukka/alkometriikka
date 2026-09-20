@@ -8,17 +8,28 @@
 	import { filterAnnotationsToFilter, filterRenameMap } from '$lib/utils/constants';
 	import Icon from '../widgets/Icon.svelte';
 	import { untrack } from 'svelte';
+	import type { FilterValue } from '$lib/types';
 
-	let { defaultValue = [], value = $bindable(defaultValue), modified = $bindable(false), options = [], label, ...rest } = $props();
+	let { defaultValue = [], value = $bindable(defaultValue), modified = $bindable(false), options = [], label, name, ...rest } : {
+		defaultValue?: FilterValue;
+		value?: FilterValue;
+		modified?: boolean;
+		options?: FilterValue;
+		label?: string;
+		name?: string;
+		rest?: Record<string, any>;
+	} = $props();
+
+	const strOptions = $derived(options.map(String));
 	
-	const name = "stringinput-" + getRandom();
+	const inputId = "stringinput-" + getRandom();
 
 	type ListItem = {
 		value: string;
 		selected: boolean;
 	};
 
-	let list = $state<ListItem[]>(untrack(() => options.map((option) => ({ value: option, selected: value.includes(option) }))));
+	let list = $state<ListItem[]>(untrack(() => strOptions.map((option) => ({ value: option, selected: value.includes(option) }))));
 
 	$effect(() => {
 		const set = new Set(value).difference(new Set(defaultValue))
@@ -27,7 +38,7 @@
 
 	$effect(() => {
 		if (!value) return;
-		if (value.length === 0) list = options.map((option) => ({ value: option, selected: false }));
+		if (value.length === 0) list = strOptions.map((option) => ({ value: option, selected: false }));
 	});
 
 	const text = $derived.by(() => {
@@ -52,20 +63,30 @@
 	);
 </script>
 
-<div class={twMerge("flex", options.length > 1 ? "flex-col" : "items-center")}>
-	<label for={name}>{label}</label>
-	{#if options.length === 1}
+<div class={twMerge("flex", strOptions.length > 1 ? "flex-col" : "items-center")}>
+	{#if strOptions.length === 1}
+		{@const isChecked = value?.includes(strOptions[0]) ?? false}
+		<label
+			class={twMerge(components.button(), 'w-fit justify-start gap-2')}
+		>
+			<Icon
+				name={isChecked ? 'checkbox_checked' : 'checkbox'}
+				class={isChecked ? 'text-brand-1' : 'text-secondary'}
+			/>
+			<span>{label}</span>
 			<input
-				class="ms-2 rounded p-2"
-				{name}
+				id={inputId}
 				type="checkbox"
-				checked={value && value.includes(options[0])}
+				class="sr-only"
+				checked={isChecked}
 				onchange={(e) => {
-					if ((e.target as HTMLInputElement).checked) value = [options[0]];
+					if ((e.target as HTMLInputElement).checked) value = [strOptions[0]];
 					else value = [];
 				}}
 			/>
+		</label>
 	{:else}
+		<label for={inputId}>{label}</label>
 		<Popup
 			class={twMerge("p-4 gap-4", $isSafari && "h-auto")}
 			onOpen={() => (isOpen = true)}
@@ -97,7 +118,7 @@
 					<div class="order-1 flex flex-row flex-wrap gap-4">
 						<button
 							onclick={() => {
-								list = options.map((option) => ({ value: option, selected: false }));
+								list = strOptions.map((option) => ({ value: option, selected: false }));
 								value = list.filter((option) => option.selected).map((option) => option.value);
 							}}
 							class={twMerge(components.button({ type: 'negative' }))}

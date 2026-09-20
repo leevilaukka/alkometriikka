@@ -1,5 +1,6 @@
 import type { ColNameObj, ColumnBadgeMap, ColumnNames, PriceListItem } from '$lib/types';
 import type { setSEO } from './helpers';
+import { formatCampaignWindow, getSaleInfo } from './sales';
 
 /** Columns present in the Alko price list dataset
  * These are in Finnish as they are used directly from the dataset
@@ -39,6 +40,9 @@ export const DatasetColumns = Object.freeze({
 	Energy: 'Energia kcal/100 ml',
 	Availability: 'Valikoima',
 	EAN: 'EAN',
+	NormalPrice: 'Normaalihinta',
+	CampaignStart: 'Kampanja alkaa',
+	CampaignEnd: 'Kampanja päättyy',
 	History: 'Hintahistoria',
 	RemovedFromSelection: 'Poistunut valikoimasta'
 } as const);
@@ -62,13 +66,20 @@ export const StoreColumns = Object.freeze({
 	StoreAvailability: 'Myymälät'
 } as const);
 
+/** Columns derived from other dataset columns - not present in the raw price list.
+ */
+export const CalculatedColumns = Object.freeze({
+	OnSale: 'Alennuksessa'
+} as const);
+
 /** All columns available in the app.
- * This is a combination of DatasetColumns, DrunkColumns and StoreColumns
+ * This is a combination of DatasetColumns, DrunkColumns, StoreColumns and CalculatedColumns
  */
 export const AllColumns = Object.freeze({
 	...DatasetColumns,
 	...DrunkColumns,
-	...StoreColumns
+	...StoreColumns,
+	...CalculatedColumns
 } as const);
 
 /**
@@ -80,7 +91,6 @@ export const subCategoryMap = {
 	[DatasetColumns.Country]: DatasetColumns.Region
 } as const satisfies ColNameObj<ColumnNames>;
 
-
 // Columns that should be handled as strings rather than numbers or other types, even if they look numeric and could be cast to numbers.
 export const columnsHandledAsString = [
 	AllColumns.Number,
@@ -89,7 +99,6 @@ export const columnsHandledAsString = [
 	AllColumns.EAN
 ] as const satisfies readonly ColumnNames[];
 
-
 // Columns that should be handled as sets (arrays) rather than single values.
 export const columnsHandledAsSet = [
 	AllColumns.Description,
@@ -97,7 +106,6 @@ export const columnsHandledAsSet = [
 	AllColumns.GrapeVarieties,
 	AllColumns.StoreAvailability
 ] as const satisfies readonly ColumnNames[];
-
 
 // Columns where undefined values should be treated as zero. Doing this helps avoid NaN issues in calculations.
 export const undefinedToZeroColumns = [
@@ -129,9 +137,9 @@ export const shownFilters = [
 	AllColumns.Description,
 	AllColumns.Note,
 	AllColumns.GrapeVarieties,
-	AllColumns.New
+	AllColumns.New,
+	AllColumns.OnSale
 ] as const satisfies readonly ColumnNames[];
-
 
 /**
  * Filter annotations (AND / OR) used in the filter popups.
@@ -250,6 +258,7 @@ export const defaultSortingColumn = AllColumns.AlcoholGramsPerEuro;
 export const filterToUnitMarker = {
 	[AllColumns.Price]: '€',
 	[AllColumns.PricePerLiter]: '€/L',
+	[AllColumns.NormalPrice]: '€',
 	[AllColumns.BottleSize]: 'L',
 	[AllColumns.EstimatedPromille]: '‰',
 	[AllColumns.AlcoholPercentage]: '%',
@@ -332,6 +341,11 @@ export const hideFromProductPageStats = new Set<ColumnNames>([
 	DatasetColumns.Vintage,
 	DatasetColumns.EAN,
 	DatasetColumns.RemovedFromSelection,
+	// The campaign/normal-price fields are shown around the price itself rather
+	// than as raw perustiedot rows.
+	DatasetColumns.NormalPrice,
+	DatasetColumns.CampaignStart,
+	DatasetColumns.CampaignEnd,
 	// Hide Uutuus as it is currently kinda bugged and not very useful on the product page stats. It is still shown in the list view and can be used for filtering.
 	DatasetColumns.New,
 	DatasetColumns.History
@@ -358,12 +372,13 @@ export const defaultSEOData = {
 		image: '/images/twitter_image.png',
 		description: 'Selaa Alkon tuotevalikoimaa, ja luo jaettavia listoja helposti!'
 	},
-	keywords: 'alkometriikka, alko, alkometri, promillelaskuri, promillet, juomat, suodattaminen, suodatus, hinnat, vertailu, alkoholi, viina, viinit, oluet, siiderit, lonkerot, juomalistat, listat, jaa, myymälät'
+	keywords:
+		'alkometriikka, alko, alkometri, promillelaskuri, promillet, juomat, suodattaminen, suodatus, hinnat, vertailu, alkoholi, viina, viinit, oluet, siiderit, lonkerot, juomalistat, listat, jaa, myymälät'
 } as const satisfies Parameters<typeof setSEO>[0];
 
 /** Column to badge mapping
  * Maps static dataset columns and their values to their corresponding badge configurations.
- * 
+ *
  * @see DynamicColumnToBadgeMap for generating dynamic badge mappings based on product properties.
  */
 export const ColumnToBadgeMap: ColumnBadgeMap = {
@@ -378,21 +393,35 @@ export const ColumnToBadgeMap: ColumnBadgeMap = {
 		tilausvalikoima: { text: 'Tilausvalikoima', color: 'cyan', icon: 'truck' }
 	},
 	[DatasetColumns.Note]: {
-		'Vegaaneille soveltuva tuote': { text: 'Vegaani', color: 'emerald', icon: 'leaf', tooltip: 'Vegaaneille soveltuva tuote' },
+		'Vegaaneille soveltuva tuote': {
+			text: 'Vegaani',
+			color: 'emerald',
+			icon: 'leaf',
+			tooltip: 'Vegaaneille soveltuva tuote'
+		},
 		Biodynaaminen: { text: 'Biodynaaminen', color: 'emerald', icon: 'yin_yang' },
 		Alkuviini: { text: 'Alkuviini', color: 'violet', icon: 'wine' },
-		'Ei lisättyä sulfiittia': { text: 'Ei lisättyä sulfiittia', color: 'green', icon: 'check_circle' },
-		'Myydään lahjapakkauksessa': { text: 'Lahjapakkaus', color: 'pink', icon: 'gift', tooltip: 'Myydään lahjapakkauksessa' },
-		'Laktoositon': { text: 'Laktoositon', color: 'cyan', icon: 'milk_bottle' }
+		'Ei lisättyä sulfiittia': {
+			text: 'Ei lisättyä sulfiittia',
+			color: 'green',
+			icon: 'check_circle'
+		},
+		'Myydään lahjapakkauksessa': {
+			text: 'Lahjapakkaus',
+			color: 'pink',
+			icon: 'gift',
+			tooltip: 'Myydään lahjapakkauksessa'
+		},
+		Laktoositon: { text: 'Laktoositon', color: 'cyan', icon: 'milk_bottle' }
 	}
 };
 
 /**
  * Generates a dynamic column-to-badge mapping based on the properties of a given product item.
  * This allows for badges to be assigned conditionally, such as "Alkoholiton" for alcohol-free products.
- * 
+ *
  * Uses the entire static column to badge mapping as a base and adds dynamic badges based on the product's properties on top.
- * 
+ *
  * @param item The product item for which to generate the badge mapping.
  * @returns The combined mapping of static and dynamic badges for the given product item.
  */
@@ -405,6 +434,24 @@ export function DynamicColumnToBadgeMap<T extends PriceListItem>(item: T): Colum
 			icon: 'percentage'
 		};
 	}
+	const sale = getSaleInfo({
+		price: item[DatasetColumns.Price],
+		normalPrice: item[DatasetColumns.NormalPrice],
+		campaignStart: item[DatasetColumns.CampaignStart],
+		campaignEnd: item[DatasetColumns.CampaignEnd]
+	});
+	if (sale) {
+		const campaignWindow = formatCampaignWindow(sale);
+		map[DatasetColumns.Price] = {
+			text: `Alennus ${sale.discountPercent}%`,
+			color: 'red',
+			icon: 'price_tag',
+			tooltip: `Normaalihinta ${sale.normalPrice.toLocaleString('fi-FI', {
+				minimumFractionDigits: 2,
+				maximumFractionDigits: 2
+			})} €${campaignWindow ? ` · voimassa ${campaignWindow}` : ''}`
+		};
+	}
 	if (Number(item[DatasetColumns.Sugar]) === 0) {
 		map[DatasetColumns.Sugar] = { text: 'Sokeriton', color: 'gray' };
 	}
@@ -413,7 +460,19 @@ export function DynamicColumnToBadgeMap<T extends PriceListItem>(item: T): Colum
 	}
 
 	if (item[DatasetColumns.RemovedFromSelection] === true) {
-		map[DatasetColumns.RemovedFromSelection] = { text: 'Poistettu valikoimasta', color: 'red', icon: 'x_circle', tooltip: 'Tuote on poistettu Alkon valikoimista', hideFromProductPage: true };
+		map[DatasetColumns.RemovedFromSelection] = {
+			text: 'Poistettu valikoimasta',
+			color: 'red',
+			icon: 'x_circle',
+			tooltip: 'Tuote on poistettu Alkon valikoimista',
+			hideFromProductPage: true
+		};
 	}
 	return map;
 }
+
+export const timeConfig: Intl.DateTimeFormatOptions = {
+	hour: '2-digit',
+	minute: '2-digit',
+	timeZone: 'Europe/Helsinki'
+};

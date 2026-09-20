@@ -26,7 +26,7 @@ Two workflows manage this:
 ### [`data.yml`](../.github/workflows/data.yml) — refresh the dataset (every 6h + after build + manual)
 
 1. Checkout `main`.
-2. Run the sync ([`scripts/setup/index.ts`](../scripts/setup/index.ts)), which
+2. Run the sync ([`scripts/data/index.ts`](../scripts/data/index.ts)), which
    reads `./data.json`, hashes the search API, and fetches details only for
    new/changed products.
 3. Stash `data.json` + `sitemap.xml`, checkout `gh-pages`, apply, commit, push.
