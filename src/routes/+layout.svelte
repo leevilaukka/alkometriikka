@@ -130,6 +130,11 @@
 						{#if !$isMobile}<span class="text-sm">Listat</span>{/if}<Icon name="list_ul" />
 					</button>
 				</a>
+				<a href="/tilastot">
+					<button class={twMerge(components.button(), 'p-2 text-xl')}>
+						{#if !$isMobile}<span class="text-sm">Tilastot</span>{/if}<Icon name="stats" />
+					</button>
+				</a>
 				<Settings {alko} />
 			</div>
 		</header>
