@@ -337,9 +337,13 @@ export function setSEO({
 }) {
 	const metaDescription = document.querySelector('meta[name="description"]');
 	const metaKeywords = document.querySelector('meta[name="keywords"]');
+	
 	if (metaDescription && description) {
 		metaDescription.setAttribute('content', description);
+	} else if (metaDescription) {
+		metaDescription.setAttribute('content', defaultSEOData.description);
 	}
+
 	if (metaKeywords && keywords) {
 		metaKeywords.setAttribute('content', `${keywords}, ${defaultSEOData.keywords}`);
 	} else if (metaKeywords) {
@@ -350,6 +354,8 @@ export function setSEO({
 			const metaTag = document.querySelector(`meta[property="og:${key}"]`);
 			if (metaTag && value) {
 				metaTag.setAttribute('content', String(value));
+			} else if (metaTag && !value) {
+				metaTag.setAttribute('content', defaultSEOData.og[key as keyof typeof defaultSEOData.og] as string);
 			}
 		}
 	}
@@ -362,6 +368,8 @@ export function setSEO({
 			const metaTag = document.querySelector(`meta[property="og:image:${key}"]`);
 			if (metaTag && value) {
 				metaTag.setAttribute('content', String(value));
+			} else if (metaTag && !value) {
+				metaTag.setAttribute('content', defaultSEOData.image[key as keyof typeof defaultSEOData.image] as string);
 			}
 		}
 	}
@@ -370,6 +378,8 @@ export function setSEO({
 			const metaTag = document.querySelector(`meta[name="twitter:${key}"]`);
 			if (metaTag && value) {
 				metaTag.setAttribute('content', String(value));
+			} else if (metaTag && !value) {
+				metaTag.setAttribute('content', defaultSEOData.twitter[key as keyof typeof defaultSEOData.twitter] as string);
 			}
 		}
 	}

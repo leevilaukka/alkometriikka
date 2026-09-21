@@ -125,14 +125,14 @@ export type OgProperties = {
 	url: string;
 };
 
-export type TwitterProperties = {
+export type TwitterProperties = Partial<{
 	title: string;
 	description: string;
-	image: string;
+	image?: string;
 	card: 'summary_large_image';
 	site?: string;
 	creator?: string;
-};
+}>;
 
 export type OGImage = {
 	url: string;

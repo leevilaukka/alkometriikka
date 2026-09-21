@@ -8,7 +8,7 @@
 	import { clearUnlimitedProgress, completeGame, loadSavedGame, loadStreak, loadUnlimitedProgress, resetDailyGame, saveGame, saveUnlimitedProgress, type DailyStreak, type SavedDailyGame } from '$lib/daily/storage';
 	import { LocalStorageManager } from '$lib/utils/storage';
 	import { dev } from '$app/environment';
-	import { generateTitle, handleShare, sendAnalyticsEvent } from '$lib/utils/helpers';
+	import { generateTitle, handleShare, sendAnalyticsEvent, setSEO } from '$lib/utils/helpers';
 	import ProductImage from '$lib/components/widgets/ProductImage.svelte';
 	import { twMerge } from 'tailwind-merge';
 	import type { PageProps } from './$types';
@@ -317,7 +317,7 @@
 
         return `${String(hours).padStart(2, '0')}.${String(minutes).padStart(2, '0')}.${String(seconds).padStart(2, '0')}`;
     }
-    
+
     let dailyDate = getFinnishDate();
     let dailyCountdown = $state(timeTillNextDaily());
 
@@ -330,6 +330,21 @@
             location.reload();
         }
     }, 1000);
+
+    $effect(() => setSEO({
+        description: `Alkometriikka Daily on seitsemän kysymyksen tietovisa Alkon valikoimasta. Testaa Alko(holi) tuntemuksesi!`,
+        keywords: 'alkometriikka, alkometriikka daily, alkometriikka unlimited, tietovisa, alkometriikka kysymykset, alkometriikka kysymys, daily, game, peli',
+        og: {
+            description: "Alkometriikka Daily on seitsemän kysymyksen tietovisa Alkon valikoimasta. Testaa Alko(holi) tuntemuksesi!",
+            title: "Alkometriikka Daily",
+            url: window.location.href,
+            type: 'website',
+        },
+        twitter: {
+            description: "Alkometriikka Daily on seitsemän kysymyksen tietovisa Alkon valikoimasta. Testaa Alko(holi) tuntemuksesi!",
+            title: "Alkometriikka Daily"
+        }
+    }));
 </script>
 
 <svelte:head>

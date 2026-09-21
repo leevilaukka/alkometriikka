@@ -53,11 +53,17 @@ async function main() {
 
 
 function generateSitemapXML(entries: SitemapEntry[]) {
-    const header = `<?xml version="1.0" encoding="UTF-8"?>\n` +
+    const header = 
+    `<?xml version="1.0" encoding="UTF-8"?>\n` +
         `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n` +
         `  <url>\n` +
         `    <loc>https://alkometriikka.fi/</loc>\n` +
         `    <priority>1.0</priority>\n` +
+        `    <changefreq>daily</changefreq>\n` +
+        `  </url>\n` +
+        `  <url>\n` +
+        `    <loc>https://alkometriikka.fi/daily/</loc>\n` +
+        `    <priority>0.7</priority>\n` +
         `    <changefreq>daily</changefreq>\n` +
         `  </url>\n` +
         `  <url>\n` +
