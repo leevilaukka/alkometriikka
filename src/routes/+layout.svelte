@@ -105,7 +105,7 @@
 				/>
 				<span class="hidden text-[1.75rem] text-brand-3 dark:text-white sm:block">Alkometriikka</span>
 			</a>
-			{#if page.route.id !== '/tuotteet/[...id]'}
+			{#if page.route.id === null || !['/tuotteet/[...id]', '/laskin', '/tilastot'].includes(page.route.id)}
 				<div
 					class={twMerge(
 						'flex w-full flex-row',
