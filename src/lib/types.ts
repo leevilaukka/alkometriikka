@@ -162,8 +162,15 @@ export type ShareType = (typeof ShareTypes)[keyof typeof ShareTypes];
 export type ShareEvent = `share_${ShareType}`;
 export type ShareViewEvent = `shared_${ShareType}_viewed`;
 
+export type GameType = 'daily' | 'unlimited_game';
+export type GameEvent = `${GameType}_${'started' | 'completed'}`;
+
 export type AnalyticsEventMap = {
 	calculator_calculated: { using_saved_values: boolean };
+	daily_started: { date: string };
+	daily_completed: { date: string; score: number; questions_right: number };
+	unlimited_game_started: { date: string };
+	unlimited_game_completed: { date: string; score: number; questions_right: number };
 	open_settings: undefined;
 	export_data: undefined;
 	import_data: undefined;

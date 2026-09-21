@@ -1,4 +1,5 @@
 import type { FilterValues, ListObj, PersonalInfo } from '../types';
+import type { DailyStreak, SavedDailyGame, UnlimitedRunState } from '$lib/daily/questions';
 import { LocalStorageKeys } from './constants';
 
 type LocalStorageValueMap = {
@@ -10,6 +11,10 @@ type LocalStorageValueMap = {
 	[LocalStorageKeys.CurrentFilters]: FilterValues;
 	[LocalStorageKeys.Theme]: '' | 'dark' | 'light';
 	[LocalStorageKeys.ViewedShares]: string[];
+	[LocalStorageKeys.DailyGame]: SavedDailyGame;
+	[LocalStorageKeys.DailyStreak]: DailyStreak;
+	[LocalStorageKeys.DailyUnlimitedRun]: UnlimitedRunState;
+	[LocalStorageKeys.DailyUnlimitedEnabled]: boolean;
 };
 
 type LocalStorageKey = keyof LocalStorageValueMap;

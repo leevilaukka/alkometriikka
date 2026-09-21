@@ -303,7 +303,11 @@ export const LocalStorageKeys = {
 	AppVersion: 'app_version',
 	CurrentFilters: 'current_filters',
 	Theme: 'theme',
-	ViewedShares: 'viewed_shares'
+	ViewedShares: 'viewed_shares',
+	DailyGame: 'alkometriikka-daily-v1',
+	DailyStreak: 'alkometriikka-daily-streak-v1',
+	DailyUnlimitedRun: 'alkometriikka-daily-unlimited-v1',
+	DailyUnlimitedEnabled: 'alkometriikka-daily-unlimited-enabled'
 } as const;
 
 export const ShareTypes = {
@@ -311,7 +315,8 @@ export const ShareTypes = {
 	List: 'list',
 	Product: 'product',
 	Filters: 'filters',
-	Similar: 'similar'
+	Similar: 'similar',
+	DailyGame: 'daily_game',
 } as const;
 
 export const ContextKeys = {

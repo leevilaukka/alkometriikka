@@ -105,7 +105,7 @@
 				/>
 				<span class="hidden text-[1.75rem] text-brand-3 dark:text-white sm:block">Alkometriikka</span>
 			</a>
-			{#if page.route.id === null || !['/tuotteet/[...id]', '/laskin', '/tilastot'].includes(page.route.id)}
+			{#if page.route.id === null || !['/tuotteet/[...id]', '/laskin', '/tilastot', '/daily'].includes(page.route.id)}
 				<div
 					class={twMerge(
 						'flex w-full flex-row',
@@ -150,6 +150,11 @@
 						</a>
 					</div>
 				</details>
+				<a href="/daily">
+					<button class={twMerge(components.button(), 'p-2 text-xl')}>
+						{#if !$isMobile}<span class="text-sm">Daily</span>{/if}<Icon name="flame" />
+					</button>
+				</a>
 				<a href="/listat">
 					<button class={twMerge(components.button(), 'p-2 text-xl')}>
 						{#if !$isMobile}<span class="text-sm">Listat</span>{/if}<Icon name="list_ul" />

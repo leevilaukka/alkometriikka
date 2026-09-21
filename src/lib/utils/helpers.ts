@@ -216,7 +216,8 @@ export async function handleShare({
 		return true;
 	}
 
-	await navigator.clipboard.writeText(shareUrl);
+	const clipboardText = text.trim() ? `${text}\n\n${shareUrl}` : shareUrl;
+	await navigator.clipboard.writeText(clipboardText);
 
 	completeShare();
 
