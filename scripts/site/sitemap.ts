@@ -1,5 +1,5 @@
 import Bun from "bun";
-import { MigratedData } from "../data/types";
+import { MigratedData, StoreData } from "../data/types";
 import { DEV } from "../data/constants";
 
 type SitemapEntry = {
@@ -11,7 +11,7 @@ type SitemapEntry = {
 };
 
 type StoreList = {
-    stores: Record<string, any>;
+    stores: Record<string, StoreData>;
 };
 
 async function main() {
@@ -19,7 +19,7 @@ async function main() {
     const availabilityFile = Bun.file(DEV ? "./static/availability.json" : "./availability.json");
     const sitemapEntries: SitemapEntry[] = [];
     const { products } = await productFile.json() as MigratedData;
-    const { stores } = await availabilityFile.json() as { stores: Record<string, any> };
+    const { stores } = await availabilityFile.json() as StoreList;
 
     if (products === undefined) {
         console.error("No products found in the data file.");
@@ -62,8 +62,18 @@ function generateSitemapXML(entries: SitemapEntry[]) {
         `  </url>\n` +
         `  <url>\n` +
         `    <loc>https://alkometriikka.fi/listat/</loc>\n` +
-        `    <priority>0.8</priority>\n` +
+        `    <priority>0.6</priority>\n` +
         `    <changefreq>never</changefreq>\n` +
+        `  </url>\n` +
+        `  <url>\n` +
+        `    <loc>https://alkometriikka.fi/tilastot/</loc>\n` +
+        `    <priority>0.6</priority>\n` +
+        `    <changefreq>weekly</changefreq>\n` +
+        `  </url>\n` +
+        `  <url>\n` +
+        `    <loc>https://alkometriikka.fi/laskin/</loc>\n` +
+        `    <priority>0.6</priority>\n` +
+        `    <changefreq>weekly</changefreq>\n` +
         `  </url>\n` +
         `  <url>\n` +
         `    <loc>https://alkometriikka.fi/myymalat/</loc>\n` +

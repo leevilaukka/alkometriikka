@@ -16,9 +16,8 @@
 	import { LocalStorageManager } from '$lib/utils/storage';
 
 	let { children, data } = $props();
-
-	let searchParamsManager = new SearchParamsManager(page.url)
-	setContext(ContextKeys.SearchParamsManager, searchParamsManager)
+	let searchParamsManager = new SearchParamsManager(page.url);
+	setContext(ContextKeys.SearchParamsManager, searchParamsManager);
 
 	$effect(() => {
 		LocalStorageManager.setItem(LocalStorageKeys.PersonalInfo, personalInfo);
@@ -78,7 +77,18 @@
 	function shiftLoader() {
 		document.getElementById("main-loader")?.classList.add("shift");
 	}
+
+	let extraMenu = $state<HTMLDetailsElement>();
+	function closeExtraMenu() {
+		if (extraMenu) extraMenu.open = false;
+	}
+
+	function handleDocumentClick(event: MouseEvent) {
+		if (extraMenu?.open && !event.composedPath().includes(extraMenu)) extraMenu.open = false;
+	}
 </script>
+
+<svelte:window onclick={handleDocumentClick} />
 
 {#await data.alko then alko}
 	{shiftLoader()}
@@ -125,14 +135,24 @@
 				</div>
 			{/if}
 			<div class="flex items-center gap-2 ms-auto">
+				<details bind:this={extraMenu} class="relative">
+					<summary class={twMerge(components.button(), 'list-none p-2 text-xl')}>
+						{#if !$isMobile}<span class="text-sm">Lisää</span>{/if}<Icon name="menu" />
+					</summary>
+					<div class="absolute end-0 top-full z-20 mt-2 flex min-w-40 flex-col gap-1 rounded border border-primary bg-primary p-1 shadow-lg">
+						<a href="/laskin" onclick={closeExtraMenu} class={twMerge(components.button(), 'w-full justify-start')}>
+							<Icon name="calculator" />
+							<span>Laskin</span>
+						</a>
+						<a href="/tilastot" onclick={closeExtraMenu} class={twMerge(components.button(), 'w-full justify-start')}>
+							<Icon name="stats" />
+							<span>Tilastot</span>
+						</a>
+					</div>
+				</details>
 				<a href="/listat">
 					<button class={twMerge(components.button(), 'p-2 text-xl')}>
 						{#if !$isMobile}<span class="text-sm">Listat</span>{/if}<Icon name="list_ul" />
-					</button>
-				</a>
-				<a href="/tilastot">
-					<button class={twMerge(components.button(), 'p-2 text-xl')}>
-						{#if !$isMobile}<span class="text-sm">Tilastot</span>{/if}<Icon name="stats" />
 					</button>
 				</a>
 				<Settings {alko} />
