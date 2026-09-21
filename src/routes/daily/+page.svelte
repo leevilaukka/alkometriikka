@@ -27,10 +27,15 @@
 	let shareStatus = $state('');
 	let runMode = $state<'daily' | 'unlimited'>('daily');
 	let unlimitedEnabled = $state(true);
+    
+    const date = new Intl.DateTimeFormat('en-CA', {
+        timeZone: 'Europe/Helsinki',
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit'
+    }).format(new Date());	
 
-	const now = new Date();
-	const date = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
-	const displayDate = new Intl.DateTimeFormat('fi-FI', { day: 'numeric', month: 'numeric', year: 'numeric' }).format(new Date(`${date}T12:00:00`));
+    const displayDate = new Intl.DateTimeFormat('fi-FI', { day: 'numeric', month: 'numeric', year: 'numeric' }).format(new Date(`${date}T12:00:00`));
 	const question = $derived(game?.questions[currentIndex]);
 	const currentProduct = $derived(question ? products.find((product) => product[AllColumns.Number] === productIdFor(question)) : undefined);
 	const finished = $derived(saved?.completed === true);
@@ -255,6 +260,76 @@
 		resetDailyGame();
 		location.reload();
 	}
+
+    function getFinnishDate() {
+        return new Intl.DateTimeFormat('en-CA', {
+            timeZone: 'Europe/Helsinki',
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit'
+        }).format(new Date());
+    }
+
+    function timeTillNextDaily() {
+        const now = new Date();
+
+        const parts = new Intl.DateTimeFormat('en-CA', {
+            timeZone: 'Europe/Helsinki',
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit'
+        }).formatToParts(now);
+
+        const get = (type: string) => Number(
+            parts.find(part => part.type === type)?.value
+        );
+
+        const year = get('year');
+        const month = get('month');
+        const day = get('day');
+
+        // Get the current Helsinki UTC offset.
+        const offsetParts = new Intl.DateTimeFormat('en-US', {
+            timeZone: 'Europe/Helsinki',
+            timeZoneName: 'longOffset'
+        }).formatToParts(now);
+
+        const offset = offsetParts
+            .find(part => part.type === 'timeZoneName')
+            ?.value ?? 'GMT+02:00';
+
+        const match = offset.match(/GMT([+-])(\d{2}):(\d{2})/);
+
+        const offsetMinutes = match
+            ? (Number(match[2]) * 60 + Number(match[3])) *
+            (match[1] === '+' ? 1 : -1)
+            : 120;
+
+        // Finnish midnight at the start of tomorrow.
+        const nextMidnightUtc = Date.UTC(year, month - 1, day + 1);
+
+        const nextDaily = nextMidnightUtc - offsetMinutes * 60_000;
+        const diff = Math.max(0, nextDaily - now.getTime());
+
+        const hours = Math.floor(diff / 3_600_000);
+        const minutes = Math.floor((diff % 3_600_000) / 60_000);
+        const seconds = Math.floor((diff % 60_000) / 1_000);
+
+        return `${String(hours).padStart(2, '0')}.${String(minutes).padStart(2, '0')}.${String(seconds).padStart(2, '0')}`;
+    }
+    
+    let dailyDate = getFinnishDate();
+    let dailyCountdown = $state(timeTillNextDaily());
+
+    setInterval(() => {
+        const newDate = getFinnishDate();
+
+        dailyCountdown = timeTillNextDaily();
+
+        if (newDate !== dailyDate) {
+            location.reload();
+        }
+    }, 1000);
 </script>
 
 <svelte:head>
@@ -292,6 +367,10 @@
 				{#if runMode === 'daily'}
 					<p class="text-lg font-bold">🔥 {streak.current} päivän putki</p>
 					<p class="text-secondary">Päivän peli on jo suoritettu. Tule takaisin huomenna.</p>
+                    <div>
+                        <p class="text-sm text-secondary">Seuraava peli aukeaa:</p>
+                        <p class="text-lg font-bold">{dailyCountdown}</p>
+                    </div>
                     <p class="text-secondary">Voit myös harjoitella Rajaton-tilassa alla olevalla painikkeella.</p>
 				{:else}
 					<p class="text-secondary">Rajattoman kierroksen tulosta ei tallennettu.</p>
