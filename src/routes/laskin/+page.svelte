@@ -78,7 +78,7 @@
 
 	const resultRows = [
 		[DrunkColumns.AlcoholGrams, 'Puhdasta alkoholia'],
-		[DrunkColumns.AlcoholGramsPerEuro, 'Alkoholia per euro'],
+		[DrunkColumns.AlcoholGramsPerEuro, 'Alkoholia per euro (g)'],
 		[DrunkColumns.EstimatedPromille, 'Arvioidut promillet'],
 		[DrunkColumns.PromillePerEuro, 'Promillea per euro'],
 		[DrunkColumns.Servings, 'Annokset'],
