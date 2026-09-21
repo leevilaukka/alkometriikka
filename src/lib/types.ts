@@ -163,6 +163,7 @@ export type ShareEvent = `share_${ShareType}`;
 export type ShareViewEvent = `shared_${ShareType}_viewed`;
 
 export type AnalyticsEventMap = {
+	calculator_calculated: { using_saved_values: boolean };
 	open_settings: undefined;
 	export_data: undefined;
 	import_data: undefined;

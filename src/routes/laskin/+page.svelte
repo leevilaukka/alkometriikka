@@ -3,11 +3,30 @@
 	import { calculateDrunkValue } from '$lib/utils/alko';
 	import { components } from '$lib/utils/styles';
 	import { formatValue } from '$lib/utils/format';
-	import { generateTitle, setSEO } from '$lib/utils/helpers';
+	import { generateTitle, sendAnalyticsEvent, setSEO } from '$lib/utils/helpers';
 	import { personalInfo } from '$lib/global.svelte';
 	import type { GenderOptions } from '$lib/types';
 	import { twMerge } from 'tailwind-merge';
 	import type { PageProps } from './$types';
+
+	const calculatorAnalytics = (() => {
+		let timeout: ReturnType<typeof setTimeout> | undefined;
+		const track = (usingSavedValues: boolean) => {
+			sendAnalyticsEvent('calculator_calculated', { using_saved_values: usingSavedValues });
+		};
+
+		return {
+			schedule(usingSavedValues: boolean) {
+				if (timeout) clearTimeout(timeout);
+				timeout = setTimeout(() => track(usingSavedValues), 1000);
+			},
+			flush(usingSavedValues: boolean) {
+				if (timeout) clearTimeout(timeout);
+				timeout = undefined;
+				track(usingSavedValues);
+			}
+		};
+	})();
 
 	let { data }: PageProps = $props();
 
@@ -19,18 +38,33 @@
 	const savedValuesAvailable = $derived(personalInfo.weight != null || personalInfo.gender != null);
 	let savedValuesOverride = $state<boolean | undefined>(undefined);
 	const useSavedValues = $derived(savedValuesOverride ?? savedValuesAvailable);
+	let hasUserEdited = false;
 
 	function toggleSavedValues() {
+		hasUserEdited = true;
 		savedValuesOverride = !useSavedValues;
 	}
 
 	function updateWeight(event: Event) {
+		hasUserEdited = true;
 		const value = (event.currentTarget as HTMLInputElement).value;
 		weight = value === '' ? null : Number(value);
 	}
 
 	function updateGender(event: Event) {
+		hasUserEdited = true;
 		gender = (event.currentTarget as HTMLSelectElement).value as GenderOptions;
+	}
+
+	function markCalculatorEdited() {
+		hasUserEdited = true;
+	}
+
+	function flushWhenLeavingCalculator(event: FocusEvent) {
+		const form = event.currentTarget as HTMLFormElement;
+		const nextFocusedElement = event.relatedTarget as Node | null;
+		if (nextFocusedElement && form.contains(nextFocusedElement)) return;
+		if (hasUserEdited && result) calculatorAnalytics.flush(useSavedValues);
 	}
 
 	const effectiveWeight = $derived(useSavedValues ? personalInfo.weight : weight);
@@ -91,6 +125,12 @@
 			keywords: 'laskin, promillelaskuri, alkoholi, annokset'
 		});
 	});
+
+	$effect(() => {
+		if (hasUserEdited && result) {
+			calculatorAnalytics.schedule(useSavedValues);
+		}
+	});
 </script>
 
 <svelte:head>
@@ -105,21 +145,21 @@
 		</p>
 	</header>
 
-	<form class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]" onsubmit={(event) => event.preventDefault()}>
+	<form class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]" onsubmit={(event) => event.preventDefault()} onfocusout={flushWhenLeavingCalculator}>
 		<section class="flex flex-col gap-4 rounded border border-primary bg-secondary p-4 md:p-6">
 			<h2 class="text-lg font-bold">Juoman tiedot</h2>
 			<div class="grid gap-4 sm:grid-cols-2">
 				<label class="flex flex-col gap-1" for="volume">
 					<span class="text-sm">Tilavuus (l)</span>
-					<input id="volume" bind:value={volume} class={twMerge(components.input(), 'w-full')} type="number" min="0.001" step="0.001" required />
+					<input id="volume" bind:value={volume} oninput={markCalculatorEdited} class={twMerge(components.input(), 'w-full')} type="number" min="0.001" step="0.001" required />
 				</label>
 				<label class="flex flex-col gap-1" for="percentage">
 					<span class="text-sm">Alkoholipitoisuus (%)</span>
-					<input id="percentage" bind:value={percentage} class={twMerge(components.input(), 'w-full')} type="number" min="0" max="100" step="0.1" required />
+					<input id="percentage" bind:value={percentage} oninput={markCalculatorEdited} class={twMerge(components.input(), 'w-full')} type="number" min="0" max="100" step="0.1" required />
 				</label>
 				<label class="flex flex-col gap-1" for="price">
 					<span class="text-sm">Hinta (€)</span>
-					<input id="price" bind:value={price} class={twMerge(components.input(), 'w-full')} type="number" min="0" step="0.01" required />
+					<input id="price" bind:value={price} oninput={markCalculatorEdited} class={twMerge(components.input(), 'w-full')} type="number" min="0" step="0.01" required />
 				</label>
 			</div>
 		</section>
@@ -135,11 +175,11 @@
 			</label>
 			<label class="flex flex-col gap-1" for="weight">
 				<span class="text-sm">Paino (kg)</span>
-				<input id="weight" value={effectiveWeight ?? ''} oninput={updateWeight} disabled={useSavedValues} class={twMerge(components.input(), 'w-full')} type="number" min="1" max="500" step="0.1" placeholder="Oletusarvo" />
+				<input id="weight" value={effectiveWeight ?? ''} oninput={updateWeight} disabled={useSavedValues} aria-describedby="saved-values-help" class={twMerge(components.input(), 'w-full', useSavedValues ? 'cursor-not-allowed opacity-60' : '')} type="number" min="1" max="500" step="0.1" placeholder="Oletusarvo" />
 			</label>
 			<label class="flex flex-col gap-1" for="gender">
 				<span class="text-sm">Sukupuoli</span>
-				<select id="gender" value={effectiveGender} onchange={updateGender} disabled={useSavedValues} class={twMerge(components.input(), 'w-full')}>
+				<select id="gender" value={effectiveGender} onchange={updateGender} disabled={useSavedValues} aria-describedby="saved-values-help" class={twMerge(components.input(), 'w-full', useSavedValues ? 'cursor-not-allowed opacity-60' : '')}>
 					{#each Object.values(GenderOptionsMap) as option (option)}
 						<option value={option}>{option}</option>
 					{/each}
