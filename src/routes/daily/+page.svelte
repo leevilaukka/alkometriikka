@@ -369,7 +369,7 @@
 					{/if}
 				</div>
 			</div>
-			<p class="text-secondary">Seitsemän kysymystä Alkon valikoimasta. Testaa Alko(holi) tuntemuksesi!</p>
+			<p class="text-secondary">Seitsemän kysymystä Alkon valikoimasta. Kuinka hyvin tunnet Alko(holi)n?</p>
 		</header>
 
 		{#if finished && saved}
