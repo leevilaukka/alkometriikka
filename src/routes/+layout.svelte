@@ -102,7 +102,7 @@
 		name: 'Tilastot'
 	}];
 
-	const noSearchPages: typeof page.route.id[] = ['/daily/arkisto', '/laskin', '/tilastot', '/listat', '/daily', "/daily/arkisto/[date]", "/[lang]/tuotteet/[...id]" ];
+	const noSearchPages: typeof page.route.id[] = ['/daily/arkisto', '/laskin', '/tilastot', '/listat', '/daily', '/daily/arkisto/[date]', '/tuotteet/[...id]'];
 </script>
 
 <svelte:window onclick={handleDocumentClick} />
