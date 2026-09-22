@@ -358,7 +358,7 @@
 				<div>
 					<p class="text-sm font-bold uppercase tracking-widest text-brand-2">Alkometriikka</p>
 					<div class="flex items-center gap-2">
-						<h1 class="text-3xl font-bold md:text-4xl">Daily</h1>
+						<h1 class="text-3xl font-bold md:text-4xl">{runMode === 'daily' ? 'Daily' : 'Unlimited'}</h1>
 						<span class="rounded border border-brand-2 px-1.5 py-0.5 text-xs font-bold uppercase tracking-wide text-brand-2">Beta</span>
 					</div>
 				</div>
@@ -369,7 +369,7 @@
 					{/if}
 				</div>
 			</div>
-			<p class="text-secondary">Seitsemän kysymystä Alkon valikoimasta. Kuinka hyvin tunnet Alko(holi)n?</p>
+			<p class="text-secondary">Seitsemän kysymystä Alkon valikoimasta. Testaa Alko(holi)tuntemuksesi!</p>
 		</header>
 
 		{#if finished && saved}
