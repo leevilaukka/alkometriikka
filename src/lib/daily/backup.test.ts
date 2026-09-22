@@ -2,7 +2,12 @@ import { describe, expect, it } from 'bun:test';
 import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
-import { createArchiveTarball, extractArchiveTarball } from '../../../scripts/site/backup-archive';
+import {
+	assertBackupNotShrinking,
+	countTarballFiles,
+	createArchiveTarball,
+	extractArchiveTarball
+} from '../../../scripts/site/backup-archive';
 
 describe('daily archive backup', () => {
 	it('packs and extracts daily archive files without loss', async () => {
@@ -46,5 +51,18 @@ describe('daily archive backup', () => {
 		const tempDir = mkdtempSync(join(tmpdir(), 'alko-empty-test-'));
 		expect(createArchiveTarball(tempDir)).rejects.toThrow('No JSON files found');
 		rmSync(tempDir, { recursive: true, force: true });
+	});
+
+	it('counts tarball files and refuses to shrink an existing backup', async () => {
+		const tempDir = mkdtempSync(join(tmpdir(), 'alko-backup-test-'));
+		writeFileSync(join(tempDir, 'index.json'), '{}');
+		writeFileSync(join(tempDir, '2026-09-21.json'), '{}');
+		const { compressed } = await createArchiveTarball(tempDir);
+		expect(await countTarballFiles(compressed)).toBe(2);
+		rmSync(tempDir, { recursive: true, force: true });
+
+		expect(() => assertBackupNotShrinking(40, 2)).toThrow('Refusing to overwrite backup');
+		expect(() => assertBackupNotShrinking(40, 40)).not.toThrow();
+		expect(() => assertBackupNotShrinking(40, 41)).not.toThrow();
 	});
 });

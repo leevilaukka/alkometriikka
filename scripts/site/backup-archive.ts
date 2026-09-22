@@ -4,9 +4,12 @@
  * Runs as part of the daily archiving workflow to preserve historical finished
  * daily games in object storage independently of GitHub repository history.
  *
- * Overwrites `daily-archive.tar.gz` in R2 on each backup run.
+ * Overwrites `daily-archive.tar.gz` in R2 on each backup run — but never with
+ * a backup holding fewer files than the current one (see
+ * {@link assertBackupNotShrinking}), unless `--force` is passed.
  */
-import { existsSync, readdirSync, readFileSync } from 'node:fs';
+import { existsSync, mkdtempSync, readdirSync, readFileSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { R2S3Client } from '../r2/client';
 
@@ -67,11 +70,38 @@ export async function extractArchiveTarball(
 	await archive.extract(destinationDir);
 }
 
+/** Counts the files inside a gzipped tarball by extracting it to a temp dir. */
+export async function countTarballFiles(tarGzBytes: Uint8Array): Promise<number> {
+	const dir = mkdtempSync(join(tmpdir(), 'daily-archive-backup-'));
+	try {
+		await extractArchiveTarball(tarGzBytes, dir);
+		return readdirSync(dir).length;
+	} finally {
+		rmSync(dir, { recursive: true, force: true });
+	}
+}
+
+/**
+ * Archive files are immutable and only ever added, so a new backup with fewer
+ * files than the current one means the local archive was lost or truncated
+ * (e.g. a broken gh-pages seed). Overwriting then would destroy the one copy
+ * the backup exists to protect.
+ */
+export function assertBackupNotShrinking(previousCount: number, nextCount: number): void {
+	if (nextCount < previousCount) {
+		throw new Error(
+			`Refusing to overwrite backup: it has ${previousCount} file(s) but the new one only ${nextCount}. ` +
+				'Restore the archive (--restore) or pass --force if this is intentional.'
+		);
+	}
+}
+
 async function main(): Promise<void> {
 	const dev = process.argv.includes('--dev');
 	const defaultDir = dev ? './static/daily/archive' : './daily/archive';
 	const archiveDir = readOption('--dir') ?? defaultDir;
 	const isRestore = process.argv.includes('--restore');
+	const force = process.argv.includes('--force');
 	const outFile = readOption('--out');
 	const inFile = readOption('--in');
 	const targetBucket =
@@ -137,6 +167,12 @@ async function main(): Promise<void> {
 			bucket: targetBucket,
 			region
 		});
+
+		const previous = await client.getObject(backupKey);
+		if (previous && !force) {
+			const previousCount = await countTarballFiles(new Uint8Array(await previous.arrayBuffer()));
+			assertBackupNotShrinking(previousCount, fileCount);
+		}
 
 		console.log(`☁️  Uploading backup to R2 bucket "${targetBucket}" as "${backupKey}"...`);
 		await client.putObject(backupKey, compressed, { type: 'application/gzip' });

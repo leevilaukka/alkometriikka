@@ -38,12 +38,14 @@
 		...Array.from({ length: daysInMonth }, (_, dayIndex) => dayIndex + 1)
 	]);
 	const maxMonthStart = $derived(new Date(today.getFullYear(), today.getMonth(), 1, 12));
-	const minMonthStart = $derived(
-		(index?.dates.length
-			? new Date(`${index.dates[index.dates.length - 1]}T12:00:00`)
-			: maxMonthStart
-		).getTime()
-	);
+	// Compare month starts on both sides: using the oldest *date* here made its
+	// own month unreachable whenever that date was not the 1st.
+	const minMonthStart = $derived.by(() => {
+		const oldest = index?.dates[index.dates.length - 1];
+		if (!oldest) return maxMonthStart.getTime();
+		const [year, month] = oldest.split('-').map(Number);
+		return new Date(year!, month! - 1, 1, 12).getTime();
+	});
 	const canGoBack = $derived(new Date(viewYear, viewMonth, 1, 12).getTime() > minMonthStart);
 	const canGoForward = $derived(new Date(viewYear, viewMonth, 1, 12).getTime() < maxMonthStart.getTime());
 
@@ -72,8 +74,8 @@
 				}
 			}
 			index = parsed;
-		} catch {
-			index = { version: 1, dates: [] };
+		} catch (error) {
+			loadError = error instanceof Error ? error.message : 'Tuntematon virhe';
 		}
 	}
 
@@ -135,6 +137,7 @@
 	{#if loadError}
 		<section class="rounded border border-primary bg-secondary p-5 text-center">
 			<p>Arkistoa ei voitu ladata: {loadError}</p>
+			<button class={twMerge(components.button(), 'mt-3 px-3 py-2')} onclick={loadIndex}>Yritä uudelleen</button>
 		</section>
 	{:else if !index}
 		<section class="rounded border border-primary bg-secondary p-5 text-center">

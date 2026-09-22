@@ -30,15 +30,16 @@ export function saveGame(saved: SavedDailyGame) {
 export function completeGame(saved: SavedDailyGame, score: number, correct: number): DailyStreak {
 	const completedGame = { ...saved, completed: true, score, correct };
 	saveGame(completedGame);
-	recordArchivedScore(saved.date, score, correct);
+	recordArchivedScore(saved.date, score, correct, true);
 	const streak = LocalStorageManager.getItem(LocalStorageKeys.DailyStreak) ?? {
 		current: 0,
 		best: 0
 	};
 	if (streak.completedDate === saved.date) return streak;
-	const yesterday = new Date(`${saved.date}T12:00:00`);
-	yesterday.setDate(yesterday.getDate() - 1);
-	const yesterdayDate = yesterday.toISOString().slice(0, 10);
+	// Pure UTC date arithmetic: mixing local noon with toISOString() skipped or
+	// repeated a day for players in UTC+13/+14 and UTC-12.
+	const [year, month, day] = saved.date.split('-').map(Number);
+	const yesterdayDate = new Date(Date.UTC(year!, month! - 1, day! - 1)).toISOString().slice(0, 10);
 	const current = streak.completedDate === yesterdayDate ? streak.current + 1 : 1;
 	const next: DailyStreak = {
 		current,
@@ -57,9 +58,14 @@ export function loadArchivedScores(): ArchivedScores {
 	return LocalStorageManager.getItem(LocalStorageKeys.DailyArchiveScores) ?? {};
 }
 
-export function recordArchivedScore(date: string, score: number, correct: number): void {
+export function recordArchivedScore(
+	date: string,
+	score: number,
+	correct: number,
+	live = false
+): void {
 	const scores = loadArchivedScores();
-	scores[date] = { score, correct };
+	scores[date] = live ? { score, correct, live } : { score, correct };
 	LocalStorageManager.setItem(LocalStorageKeys.DailyArchiveScores, scores);
 }
 

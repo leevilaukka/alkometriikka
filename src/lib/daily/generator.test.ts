@@ -3,7 +3,7 @@ import { AllColumns } from '$lib/utils/constants';
 import type { PriceListItem } from '$lib/types';
 import { createRng } from './rng';
 import { DAILY_QUESTION_COUNT, generateDailyGame, pureAlcoholPerEuro } from './questions';
-import { completeGame, loadSavedGame, saveGame } from './storage';
+import { completeGame, loadArchivedScores, loadSavedGame, recordArchivedScore, saveGame } from './storage';
 
 const product = (id: string, price: number, volume = 0.7, alcohol = 12, history: unknown[] = []) => ({
 	[AllColumns.Number]: id,
@@ -128,6 +128,19 @@ describe('daily game generation', () => {
 		}
 	});
 
+	it('never repeats a price option when products share a price', () => {
+		// Options are rendered in a keyed {#each}; a duplicate key crashes the page.
+		const samePriced = [product('1', 1.99), product('2', 1.99), product('3', 1.99), product('4', 1.99), product('5', 4.99), product('6', 9.99)];
+		for (let seed = 0; seed < 200; seed += 1) {
+			const game = generateDailyGame(`dupes-${seed}`, samePriced, createRng(`dupes-${seed}`));
+			for (const question of game.questions) {
+				if (question.type !== 'price') continue;
+				expect(new Set(question.options).size).toBe(question.options.length);
+				expect(question.options).toContain(question.correctPrice);
+			}
+		}
+	});
+
 	it('calculates pure alcohol efficiency', () => expect(pureAlcoholPerEuro(products[0])).toBeCloseTo(10.5));
 });
 
@@ -163,5 +176,22 @@ describe('daily persistence and streaks', () => {
 		expect(first.current).toBe(1);
 		expect(second.current).toBe(1);
 		expect(loadSavedGame('2026-09-22')?.completed).toBe(true);
+	});
+
+	it('extends the streak across consecutive days, including month boundaries', () => {
+		for (const date of ['2026-09-30', '2026-10-01']) {
+			const game = generateDailyGame(date, products, createRng(date));
+			completeGame({ date, game }, 100, 1);
+		}
+		const game = generateDailyGame('2026-10-03', products, createRng('gap'));
+		expect(completeGame({ date: '2026-10-03', game }, 100, 1)).toEqual({ current: 1, best: 2, completedDate: '2026-10-03' });
+	});
+
+	it('marks live completions so the archive can refuse replays', () => {
+		const game = generateDailyGame('2026-09-22', products, createRng('same'));
+		completeGame({ date: '2026-09-22', game }, 400, 4);
+		recordArchivedScore('2026-09-21', 300, 3);
+		expect(loadArchivedScores()['2026-09-22']).toEqual({ score: 400, correct: 4, live: true });
+		expect(loadArchivedScores()['2026-09-21']?.live).toBeUndefined();
 	});
 });

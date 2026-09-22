@@ -73,7 +73,11 @@ export type SavedDailyGame = {
 };
 export type DailyStreak = { current: number; best: number; completedDate?: string };
 /** Per-date result kept in localStorage so the archive can show past scores. */
-export type ArchivedScore = { score: number; correct: number };
+/**
+ * `live` marks a result earned on the day itself (via the Daily page). Those
+ * days are shown read-only in the archive and cannot be replayed.
+ */
+export type ArchivedScore = { score: number; correct: number; live?: boolean };
 export type ArchivedScores = Record<string, ArchivedScore>;
 /** In-progress or completed play of an archived (past) day, persisted safely. */
 export type ArchiveRunState = {
@@ -167,7 +171,9 @@ function uniquePrices(
 		products.map((product) => product[AllColumns.Price]).filter((price) => price !== correctPrice),
 		random
 	);
-	const options = [correctPrice, ...nearby];
+	// Dedupe after shuffling (not before) so RNG consumption — and therefore
+	// every already-baked game without duplicate prices — stays unchanged.
+	const options = [...new Set([correctPrice, ...nearby])];
 	for (const offset of [0.5, 1, 2, 5]) {
 		if (options.length >= 4) break;
 		const candidate = Number(

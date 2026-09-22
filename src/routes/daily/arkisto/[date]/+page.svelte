@@ -42,7 +42,12 @@
 		)
 	);
 	const run = $derived(date ? (runs[date] ?? null) : null);
-	const completed = $derived(run?.completed === true);
+	// Days completed live are read-only here: show the answers, never a replay.
+	const playedLive = $derived(date ? scores[date]?.live === true : false);
+	const completed = $derived(playedLive || run?.completed === true);
+	const result = $derived(
+		!playedLive && run?.completed ? { score: run.score, correct: run.correct } : scores[date]
+	);
 	const questionIndex = $derived(run?.currentIndex ?? 0);
 	const question = $derived(archive?.game.questions[questionIndex]);
 	const runningTotal = $derived(run?.points.reduce((total, value) => total + value, 0) ?? 0);
@@ -70,8 +75,8 @@
 		archive = null;
 		loadError = null;
 		try {
+			if (!/^\d{4}-\d{2}-\d{2}$/.test(forDate)) throw new Error('Päivää ei ole vielä arkistoitu');
 			const response = await fetch(`${base}/daily/archive/${forDate}.json`);
-			if (forDate.length !== 10) throw new Error('Päivää ei ole vielä arkistoitu');
 			if (response.status === 404) throw new Error('Päivää ei ole vielä arkistoitu');
 			if (!response.ok) throw new Error(`HTTP ${response.status}`);
 			let parsed: ArchiveGame;
@@ -212,7 +217,7 @@
 	}
 
 	function answer(value: string | number) {
-		if (!question || run?.answered) return;
+		if (!question || run?.answered || playedLive) return;
 		const points = questionPoints(question, value);
 		const correct =
 			question.type === 'estimate' ? Number(value) === question.correctPrice : points === 100;
@@ -238,7 +243,8 @@
 			const score = run.points.reduce((total, value) => total + value, 0);
 			const correct = run.correctAnswers.filter(Boolean).length;
 			updateRun({ completed: true, score, correct });
-			recordArchivedScore(date, score, correct);
+			// Replays must not overwrite the result from playing the day live.
+			if (!loadArchivedScores()[date]) recordArchivedScore(date, score, correct);
 			scores = loadArchivedScores();
 			return;
 		}
@@ -331,10 +337,14 @@
 			</div>
 			<section class="flex flex-col gap-5 rounded border border-primary bg-secondary p-5 text-center md:p-8">
 				<p class="text-lg font-bold">
-					{scores[date]?.correct ?? run?.correct}/{archive.game.questions.length} oikein ·{' '}
-					{scores[date]?.score ?? run?.score} pistettä
+					{result?.correct}/{archive.game.questions.length} oikein ·{' '}
+					{result?.score} pistettä
 				</p>
-				<p class="text-secondary">Päivä pelattu loppuun — vastaukset alla.</p>
+				<p class="text-secondary">
+					{playedLive
+						? 'Pelasit tämän päivän pelin sen ollessa päivän peli, joten sitä ei voi pelata uudelleen — vastaukset alla.'
+						: 'Päivä pelattu loppuun — vastaukset alla.'}
+				</p>
 			</section>
 			{#each archive.game.questions as currentQuestion, questionIndex (questionIndex)}
 				<div class="rounded border border-primary bg-primary p-5 md:p-8">
@@ -590,6 +600,11 @@
 							<p class="flex items-center gap-2 text-lg font-bold text-green-700">
 								<Icon name="check_circle" />
 								Oikein! <span class="text-secondary">+{run.answerPoints} pistettä</span>
+							</p>
+						{:else if question.type === 'estimate' && run.answerPoints > 0}
+							<p class="flex items-center gap-2 text-lg font-bold text-green-700">
+								<Icon name="check_circle" />
+								Hyvä arvio! <span class="text-secondary">+{run.answerPoints} pistettä</span>
 							</p>
 						{:else}
 							<p class="flex items-center gap-2 text-lg font-bold text-red-700">

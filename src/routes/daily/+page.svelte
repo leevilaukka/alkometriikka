@@ -30,6 +30,8 @@
 	let shareStatus = $state('');
 	let runMode = $state<'daily' | 'unlimited'>('daily');
 	let unlimitedEnabled = $state(true);
+	let dailyError = $state<string | null>(null);
+	const MANIFEST_ATTEMPTS = 3;
     
     const date = new Intl.DateTimeFormat('en-CA', {
         timeZone: 'Europe/Helsinki',
@@ -63,7 +65,7 @@
 	}
 
 	function efficiency(value: number) {
-		return `${value.toFixed(2).replace('.', ',')} g/€`;
+		return `${value.toFixed(2).replace('.', ',')} ml/€`;
 	}
 
 	function estimateDetails(product: PriceListItem | undefined) {
@@ -135,11 +137,20 @@
 			return;
 		}
 		clearUnlimitedProgress();
-		loadDailyGame(date, catalog).then((generated) => {
-			game = generated;
-			saved = { date, game: generated, currentIndex: 0, points: [], correctAnswers: [], answered: false };
-			saveGame(saved);
-		});
+		startDaily(catalog);
+	}
+
+	function startDaily(catalog: PriceListItem[]) {
+		dailyError = null;
+		loadDailyGame(date, catalog)
+			.then((generated) => {
+				game = generated;
+				saved = { date, game: generated, currentIndex: 0, points: [], correctAnswers: [], answered: false };
+				saveGame(saved);
+			})
+			.catch((error) => {
+				dailyError = error instanceof Error ? error.message : 'Päivän peliä ei voitu ladata.';
+			});
 	}
 
 	function isValidManifest(value: DailyGameManifest | null, date: string): value is DailyGameManifest {
@@ -157,26 +168,34 @@
 		// is already available the moment a new day starts. The file never
 		// contains the answers — only a seed, the frozen product pool and the
 		// hash of the canonical game — so the game is rebuilt and verified
-		// here. Fall back to the local generator when the file is missing
-		// (e.g. dev) or has been tampered with.
-		try {
-			const response = await fetch(`${base}/daily/${date}.json`);
-			if (response.ok) {
-				const manifest = (await response.json()) as DailyGameManifest | null;
-				if (isValidManifest(manifest, date)) {
-					const game = await reconstructDailyGame(manifest);
-					if (game) {
-						if (dev) console.info(`[daily] pinned manifest → ${manifest.gameHash} (${date})`);
-						return game;
+		// here. Network errors are retried. In production a missing or
+		// unverifiable manifest is an error, never a silent local fallback: that
+		// fallback would be saved for the whole day and count toward streaks
+		// while every other player sees a different game. Dev (no baked files
+		// unless `bun run daily --dev`) still falls back to the local generator.
+		for (let attempt = 1; attempt <= MANIFEST_ATTEMPTS; attempt++) {
+			try {
+				const response = await fetch(`${base}/daily/${date}.json`);
+				if (response.ok) {
+					const manifest = (await response.json()) as DailyGameManifest | null;
+					if (isValidManifest(manifest, date)) {
+						const game = await reconstructDailyGame(manifest);
+						if (game) {
+							if (dev) console.info(`[daily] pinned manifest → ${manifest.gameHash} (${date})`);
+							return game;
+						}
 					}
 				}
+				// A reachable but missing/invalid file will not fix itself on retry.
+				if (dev) console.warn(`[daily] manifest rejected (HTTP ${response.status})`);
+				break;
+			} catch (error) {
+				if (dev) console.warn(`[daily] manifest unavailable (attempt ${attempt})`, error);
+				if (attempt < MANIFEST_ATTEMPTS) await new Promise((resolve) => setTimeout(resolve, attempt * 1000));
 			}
-			if (dev) console.warn(`[daily] manifest rejected (HTTP ${response.status}) → local fallback`);
-		} catch (error) {
-			if (dev) console.warn('[daily] manifest unavailable → local fallback', error);
-			// Network, parse or hash failure: fall through to local generation.
 		}
-		return generateDailyGame(date, catalog, createRng(`alkometriikka-daily-v1-${date}`));
+		if (dev) return generateDailyGame(date, catalog, createRng(`alkometriikka-daily-v1-${date}`));
+		throw new Error('Päivän peliä ei voitu ladata.');
 	}
 
 	function restoreUnlimited(state: UnlimitedRunState) {
@@ -328,6 +347,23 @@
         }).format(new Date());
     }
 
+    function helsinkiOffsetMinutes(at: Date) {
+        const offset = new Intl.DateTimeFormat('en-US', {
+            timeZone: 'Europe/Helsinki',
+            timeZoneName: 'longOffset'
+        })
+            .formatToParts(at)
+            .find(part => part.type === 'timeZoneName')
+            ?.value ?? 'GMT+02:00';
+
+        const match = offset.match(/GMT([+-])(\d{2}):(\d{2})/);
+
+        return match
+            ? (Number(match[2]) * 60 + Number(match[3])) *
+            (match[1] === '+' ? 1 : -1)
+            : 120;
+    }
+
     function timeTillNextDaily() {
         const now = new Date();
 
@@ -346,27 +382,11 @@
         const month = get('month');
         const day = get('day');
 
-        // Get the current Helsinki UTC offset.
-        const offsetParts = new Intl.DateTimeFormat('en-US', {
-            timeZone: 'Europe/Helsinki',
-            timeZoneName: 'longOffset'
-        }).formatToParts(now);
-
-        const offset = offsetParts
-            .find(part => part.type === 'timeZoneName')
-            ?.value ?? 'GMT+02:00';
-
-        const match = offset.match(/GMT([+-])(\d{2}):(\d{2})/);
-
-        const offsetMinutes = match
-            ? (Number(match[2]) * 60 + Number(match[3])) *
-            (match[1] === '+' ? 1 : -1)
-            : 120;
-
-        // Finnish midnight at the start of tomorrow.
+        // Finnish midnight at the start of tomorrow. Use the offset in effect
+        // *at* that midnight, not now: on DST change days they differ.
         const nextMidnightUtc = Date.UTC(year, month - 1, day + 1);
-
-        const nextDaily = nextMidnightUtc - offsetMinutes * 60_000;
+        const guess = nextMidnightUtc - helsinkiOffsetMinutes(now) * 60_000;
+        const nextDaily = nextMidnightUtc - helsinkiOffsetMinutes(new Date(guess)) * 60_000;
         const diff = Math.max(0, nextDaily - now.getTime());
 
         const hours = Math.floor(diff / 3_600_000);
@@ -378,16 +398,24 @@
 
     let dailyDate = getFinnishDate();
     let dailyCountdown = $state(timeTillNextDaily());
+    let newDayAvailable = $state(false);
 
-    setInterval(() => {
-        const newDate = getFinnishDate();
+    $effect(() => {
+        const interval = setInterval(() => {
+            const newDate = getFinnishDate();
 
-        dailyCountdown = timeTillNextDaily();
+            dailyCountdown = timeTillNextDaily();
 
-        if (newDate !== dailyDate) {
-            location.reload();
-        }
-    }, 1000);
+            if (newDate !== dailyDate && !newDayAvailable) {
+                // Never yank a half-played run away at midnight: let the player
+                // finish (yesterday's game still scores for yesterday) and offer
+                // the new day instead of reloading.
+                if (points.length > 0 && !saved?.completed) newDayAvailable = true;
+                else location.reload();
+            }
+        }, 1000);
+        return () => clearInterval(interval);
+    });
 
     $effect(() => setSEO({
         description: `Alkometriikka Daily on seitsemän kysymyksen tietovisa Alkon valikoimasta. Testaa Alko(holi) tuntemuksesi!`,
@@ -435,6 +463,13 @@
 			<p class="text-secondary">Seitsemän kysymystä Alkon valikoimasta. Testaa Alko(holi)tuntemuksesi!</p>
 		</header>
 
+		{#if newDayAvailable}
+			<section class="flex flex-col items-center justify-between gap-3 rounded border border-brand-2 bg-secondary p-4 sm:flex-row">
+				<p class="font-bold">Uusi päivän peli on saatavilla.</p>
+				<button class={twMerge(components.button({ type: 'negative', size: 'md' }), 'px-4 py-2')} onclick={() => location.reload()}>Siirry uuteen peliin</button>
+			</section>
+		{/if}
+
 		{#if finished && saved}
 			<section class="flex flex-col gap-5 rounded border border-primary bg-secondary p-5 text-center md:p-8 lg:p-10">
 				<p class="text-sm font-bold uppercase tracking-widest text-brand-2">{runMode === 'daily' ? 'Alkometriikka Daily' : 'Alkometriikka Unlimited'}</p>
@@ -445,10 +480,12 @@
 				{#if runMode === 'daily'}
 					<p class="text-lg font-bold">🔥 {streak.current} päivän putki</p>
 					<p class="text-secondary">Päivän peli on jo suoritettu. Tule takaisin huomenna.</p>
-                    <div>
-                        <p class="text-sm text-secondary">Seuraava peli aukeaa:</p>
-                        <p class="text-lg font-bold">{dailyCountdown}</p>
-                    </div>
+                    {#if !newDayAvailable}
+                        <div>
+                            <p class="text-sm text-secondary">Seuraava peli aukeaa:</p>
+                            <p class="text-lg font-bold">{dailyCountdown}</p>
+                        </div>
+                    {/if}
                     <p class="text-secondary">Voit myös harjoitella Unlimited-tilassa tai pelata aiempien päivien pelejä alta.</p>
 				{:else}
 					<p class="text-secondary">Rajattoman pelin tuloksia ei tallenneta.</p>
@@ -566,6 +603,12 @@
 						</div>
 					{/if}
 				</div>
+			</section>
+		{:else if dailyError}
+			<section class="flex flex-col items-center gap-4 rounded border border-primary bg-secondary p-8 text-center">
+				<p class="text-lg font-bold">{dailyError}</p>
+				<p class="text-secondary">Tarkista verkkoyhteys ja yritä hetken päästä uudelleen.</p>
+				<button class={twMerge(components.button({ type: 'negative', size: 'md' }), 'px-4 py-2')} onclick={() => startDaily(products)}>Yritä uudelleen</button>
 			</section>
 		{/if}
 	</main>

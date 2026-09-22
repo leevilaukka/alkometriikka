@@ -64,8 +64,9 @@ jobs:
           CF_R2_ACCESS_KEY_ID: ${{ secrets.CF_R2_ACCESS_KEY_ID }}
           CF_R2_SECRET_ACCESS_KEY: ${{ secrets.CF_R2_SECRET_ACCESS_KEY }}
           CF_R2_ACCOUNT_ID: ${{ secrets.CF_R2_ACCOUNT_ID }}
-          CF_R2_BUCKET: ${{ secrets.CF_R2_BUCKET || 'alkometriikka-og' }}
-          CF_R2_REGION: ${{ secrets.CF_R2_REGION }}
+          # Same source as fetchData.yml (repo variables); secrets kept as a fallback.
+          CF_R2_BUCKET: ${{ vars.CF_R2_BUCKET || secrets.CF_R2_BUCKET || 'alkometriikka-og' }}
+          CF_R2_REGION: ${{ vars.CF_R2_REGION || secrets.CF_R2_REGION }}
         run: bun run backup:daily || echo "⚠️  Archive backup to R2 failed; continuing."
 
       - name: Check out deployed site
