@@ -206,11 +206,11 @@ The generated product HTML is intentionally lightweight and acts largely as a st
 
 This approach provides:
 
-Search-engine-friendly product URLs
-Useful Open Graph previews when links are shared
-Structured data for search engines
-Fast initial page responses
-A static deployment without requiring a traditional application server
+* Search-engine-friendly product URLs
+* Useful Open Graph previews when links are shared
+* Structured data for search engines
+* Fast initial page responses
+* A static deployment without requiring a traditional application server
 
 The generated files should therefore not be considered a separate product database or a complete server-rendered version of the application. They are primarily an SEO and metadata layer around the underlying Alkometriikka application and data.
 
