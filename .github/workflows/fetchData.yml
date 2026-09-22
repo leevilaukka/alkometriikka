@@ -275,6 +275,11 @@ jobs:
           git fetch origin gh-pages
           git worktree add --detach ../gh-pages origin/gh-pages
 
+      # Same pinned-manifest guard build.yml runs: never bake with generator code
+      # that failed the tests (a live manifest would stop verifying on clients).
+      - name: Run daily game tests
+        run: bunx svelte-kit sync && bun test src/lib/daily
+
       # The daily manifests are immutable pins: once baked, a date must never
       # change. Seed the deployed manifests into the workspace before baking so
       # the baker skips dates that already exist instead of re-rolling them with

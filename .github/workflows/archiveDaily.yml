@@ -56,6 +56,11 @@ jobs:
             echo "ℹ️  No seeded data.json found; skipping rehash."
           fi
 
+      # Same pinned-manifest guard build.yml runs: never bake with generator code
+      # that failed the tests (a live manifest would stop verifying on clients).
+      - name: Run daily game tests
+        run: bunx svelte-kit sync && bun test src/lib/daily
+
       - name: Bake daily manifests and archive finished days
         run: bun run daily
 
@@ -67,7 +72,18 @@ jobs:
           # Same source as fetchData.yml (repo variables); secrets kept as a fallback.
           CF_R2_BUCKET: ${{ vars.CF_R2_BUCKET || secrets.CF_R2_BUCKET || 'alkometriikka-og' }}
           CF_R2_REGION: ${{ vars.CF_R2_REGION || secrets.CF_R2_REGION }}
-        run: bun run backup:daily || echo "⚠️  Archive backup to R2 failed; continuing."
+        run: |
+          # Exit code 3 = backup refused because the archive shrank, i.e. gh-pages
+          # lost archive files. Fail loudly; other errors (network etc.) are soft.
+          set +e
+          bun run backup:daily
+          status=$?
+          if [ "$status" -eq 3 ]; then
+            echo "❌ Archive shrank compared to the R2 backup — refusing to publish."
+            exit 1
+          elif [ "$status" -ne 0 ]; then
+            echo "⚠️  Archive backup to R2 failed; continuing."
+          fi
 
       - name: Check out deployed site
         run: |

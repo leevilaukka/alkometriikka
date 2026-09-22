@@ -87,9 +87,14 @@ export async function countTarballFiles(tarGzBytes: Uint8Array): Promise<number>
  * (e.g. a broken gh-pages seed). Overwriting then would destroy the one copy
  * the backup exists to protect.
  */
+export class ShrinkingBackupError extends Error {}
+
+/** Exit code used when the backup is refused for shrinking, so CI can fail loudly on it. */
+export const SHRINKING_BACKUP_EXIT_CODE = 3;
+
 export function assertBackupNotShrinking(previousCount: number, nextCount: number): void {
 	if (nextCount < previousCount) {
-		throw new Error(
+		throw new ShrinkingBackupError(
 			`Refusing to overwrite backup: it has ${previousCount} file(s) but the new one only ${nextCount}. ` +
 				'Restore the archive (--restore) or pass --force if this is intentional.'
 		);
@@ -185,5 +190,11 @@ async function main(): Promise<void> {
 }
 
 if (import.meta.main) {
-	await main();
+	try {
+		await main();
+	} catch (error) {
+		if (!(error instanceof ShrinkingBackupError)) throw error;
+		console.error(`❌ ${error.message}`);
+		process.exit(SHRINKING_BACKUP_EXIT_CODE);
+	}
 }
