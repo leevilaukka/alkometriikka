@@ -94,7 +94,7 @@ jobs:
         working-directory: ../gh-pages
         run: |
           rm -rf daily
-          cp -r ../daily daily
+          cp -r "$GITHUB_WORKSPACE/daily" daily
 
       - name: Commit and push archive
         working-directory: ../gh-pages
