@@ -9,7 +9,8 @@
  *
  * This script runs at the end of each data sync and writes
  * `daily/<YYYY-MM-DD>.json` for today and the next {@link AHEAD_DAYS} days.
- * Files are never overwritten (same-version files keep the first baked game),
+ * Files are never overwritten (same-version files keep the first baked game;
+ * CI must seed `daily/` from gh-pages before running this),
  * so the first sync to see a given date decides that date's questions forever.
  * Because every future date is already baked before it arrives, the game flips
  * over exactly at midnight — the client just fetches the file for the new date.
@@ -169,6 +170,14 @@ async function bake(): Promise<void> {
 	const { table } = formatDatasetToJSON(await Bun.file(DATA_PATH).text());
 	const catalog = new Kaljakori(table, { weight: null, gender: null }, { stores: {}, product: {} })
 		.data;
+	// Baking without the previously deployed manifests would re-roll dates that
+	// players are already playing. CI must seed `daily/` from gh-pages first;
+	// set DAILY_ALLOW_EMPTY=1 only to bootstrap a brand-new deployment.
+	if (!DEV && !existsSync(DAILY_DIR) && !process.env.DAILY_ALLOW_EMPTY) {
+		throw new Error(
+			`${DAILY_DIR} not found. Seed it from the deployed site before baking (or set DAILY_ALLOW_EMPTY=1).`
+		);
+	}
 	mkdirSync(DAILY_DIR, { recursive: true });
 
 	const today = toISODateInTimeZone('Europe/Helsinki');

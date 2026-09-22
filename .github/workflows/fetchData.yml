@@ -275,13 +275,29 @@ jobs:
           git fetch origin gh-pages
           git worktree add --detach ../gh-pages origin/gh-pages
 
+      # The daily manifests are immutable pins: once baked, a date must never
+      # change. Seed the deployed manifests into the workspace before baking so
+      # the baker skips dates that already exist instead of re-rolling them with
+      # a fresh random seed (which would give players a different game mid-day).
+      - name: Seed deployed daily games
+        run: |
+          set -e
+          if [ -d ../gh-pages/daily ] && [ -n "$(ls -A ../gh-pages/daily)" ]; then
+            rm -rf daily
+            cp -r ../gh-pages/daily daily
+            echo "✅ Seeded $(ls daily | wc -l) daily files from gh-pages"
+          else
+            echo "❌ daily/ missing on gh-pages — refusing to bake so no in-flight game is re-rolled."
+            exit 1
+          fi
+
       - name: Refresh product pages
         env:
           ALKO_PRERENDER_CONCURRENCY: '32'
         run: |
           # Bake the daily manifests here so `daily/` exists next to the copied
           # data.json — the sync-job artifact round-trip would flatten the
-          # directory into the workspace root.
+          # directory into the workspace root. Existing dates are kept as-is.
           bun run daily
           cp og-images.json ../gh-pages/og-images.json
           bun run scripts/site/prerender-products.ts --data data.json --out ../gh-pages --template ../gh-pages/404.html --og-manifest ../gh-pages/og-images.json --manifest ../gh-pages/tuotteet-manifest.json
