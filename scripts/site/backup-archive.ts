@@ -71,13 +71,52 @@ async function main(): Promise<void> {
 	const dev = process.argv.includes('--dev');
 	const defaultDir = dev ? './static/daily/archive' : './daily/archive';
 	const archiveDir = readOption('--dir') ?? defaultDir;
+	const isRestore = process.argv.includes('--restore');
 	const outFile = readOption('--out');
+	const inFile = readOption('--in');
 	const targetBucket =
 		readOption('--bucket') ??
 		process.env.CF_R2_BACKUP_BUCKET ??
 		process.env.CF_R2_BUCKET ??
 		DEFAULT_BUCKET;
 	const backupKey = readOption('--key') ?? process.env.CF_R2_BACKUP_KEY ?? DEFAULT_BACKUP_KEY;
+
+	const accessKeyId = process.env.CF_R2_ACCESS_KEY_ID;
+	const secretAccessKey = process.env.CF_R2_SECRET_ACCESS_KEY;
+	const accountId = process.env.CF_R2_ACCOUNT_ID;
+	const region = process.env.CF_R2_REGION;
+
+	if (isRestore) {
+		console.log(`📥 Restoring daily archive into ${archiveDir}...`);
+		let tarGzBytes: Uint8Array | null = null;
+
+		if (inFile) {
+			const file = Bun.file(inFile);
+			if (!(await file.exists())) throw new Error(`Backup file not found at ${inFile}`);
+			tarGzBytes = new Uint8Array(await file.arrayBuffer());
+			console.log(`📂 Read backup from local file: ${inFile}`);
+		} else if (accessKeyId && secretAccessKey && accountId) {
+			const client = new R2S3Client({
+				accessKeyId,
+				secretAccessKey,
+				accountId,
+				bucket: targetBucket,
+				region
+			});
+			console.log(`☁️  Downloading backup from R2 (${targetBucket}/${backupKey})...`);
+			const response = await client.getObject(backupKey);
+			if (!response || !response.ok) {
+				throw new Error(`Backup object "${backupKey}" not found in R2 bucket "${targetBucket}"`);
+			}
+			tarGzBytes = new Uint8Array(await response.arrayBuffer());
+		} else {
+			throw new Error('Restore requires either --in <file> or R2 credentials.');
+		}
+
+		await extractArchiveTarball(tarGzBytes, archiveDir);
+		console.log(`✅ Successfully restored daily archive to ${archiveDir}`);
+		return;
+	}
 
 	console.log(`📦 Creating daily archive backup from ${archiveDir}...`);
 	const { compressed, fileCount, rawBytes } = await createArchiveTarball(archiveDir);
@@ -89,11 +128,6 @@ async function main(): Promise<void> {
 		await Bun.write(outFile, compressed);
 		console.log(`💾 Saved local backup to ${outFile}`);
 	}
-
-	const accessKeyId = process.env.CF_R2_ACCESS_KEY_ID;
-	const secretAccessKey = process.env.CF_R2_SECRET_ACCESS_KEY;
-	const accountId = process.env.CF_R2_ACCOUNT_ID;
-	const region = process.env.CF_R2_REGION;
 
 	if (accessKeyId && secretAccessKey && accountId) {
 		const client = new R2S3Client({

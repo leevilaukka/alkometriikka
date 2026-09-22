@@ -67,6 +67,11 @@ function generateSitemapXML(entries: SitemapEntry[]) {
         `    <changefreq>daily</changefreq>\n` +
         `  </url>\n` +
         `  <url>\n` +
+        `    <loc>https://alkometriikka.fi/daily/arkisto/</loc>\n` +
+        `    <priority>0.6</priority>\n` +
+        `    <changefreq>daily</changefreq>\n` +
+        `  </url>\n` +
+        `  <url>\n` +
         `    <loc>https://alkometriikka.fi/listat/</loc>\n` +
         `    <priority>0.6</priority>\n` +
         `    <changefreq>never</changefreq>\n` +
