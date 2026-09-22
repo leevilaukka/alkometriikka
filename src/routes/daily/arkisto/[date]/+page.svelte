@@ -70,7 +70,7 @@
 		archive = null;
 		loadError = null;
 		try {
-			const response = await fetch(`${base}/daily/arkisto/${forDate}.json`);
+			const response = await fetch(`${base}/daily/archive/${forDate}.json`);
 			if (forDate.length !== 10) throw new Error('Päivää ei ole vielä arkistoitu');
 			if (response.status === 404) throw new Error('Päivää ei ole vielä arkistoitu');
 			if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -92,7 +92,7 @@
 
 	async function loadIndex() {
 		try {
-			const response = await fetch(`${base}/daily/arkisto/index.json`);
+			const response = await fetch(`${base}/daily/archive/index.json`);
 			if (response.status !== 200) {
 				index = { version: 1, dates: [] };
 				return;

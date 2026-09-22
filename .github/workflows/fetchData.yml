@@ -286,7 +286,7 @@ jobs:
           cp og-images.json ../gh-pages/og-images.json
           bun run scripts/site/prerender-products.ts --data data.json --out ../gh-pages --template ../gh-pages/404.html --og-manifest ../gh-pages/og-images.json --manifest ../gh-pages/tuotteet-manifest.json
           cp data.json availability.json sitemap.xml rss.xml feed.json ../gh-pages/
-          # Reset first so stale manifests (and the nested arkisto/) actually
+          # Reset first so stale manifests (and the nested archive/) actually
           # disappear from the site instead of merging over.
           rm -rf ../gh-pages/daily
           cp -r daily ../gh-pages/

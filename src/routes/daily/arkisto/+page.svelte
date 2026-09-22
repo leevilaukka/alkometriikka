@@ -55,7 +55,7 @@
 	async function loadIndex() {
 		loadError = null;
 		try {
-			const response = await fetch(`${base}/daily/arkisto/index.json`);
+			const response = await fetch(`${base}/daily/archive/index.json`);
 			if (response.status === 404) {
 				index = { version: 1, dates: [] };
 				return;

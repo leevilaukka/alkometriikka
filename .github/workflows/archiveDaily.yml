@@ -91,5 +91,5 @@ jobs:
           curl -sS -X POST "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE}/purge_cache" \
             -H "Authorization: Bearer ${CLOUDFLARE_PURGE_KEY}" \
             -H "Content-Type: application/json" \
-            --data '{"files":["https://alkometriikka.fi/daily/arkisto/index.json"]}' || \
+            --data '{"files":["https://alkometriikka.fi/daily/archive/index.json"]}' || \
             echo "⚠️  Cache purge failed; continuing."

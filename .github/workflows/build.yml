@@ -93,6 +93,16 @@ jobs:
         run: |
           set -e
           if git archive origin/gh-pages daily 2>/dev/null | tar -x -C build/ && [ -d build/daily ] && [ -n "$(ls -A build/daily)" ]; then
+            for legacy in build/daily/arkisto build/daily/arkisto-data; do
+              if [ -d "$legacy" ]; then
+                if [ ! -d build/daily/archive ]; then
+                  mv "$legacy" build/daily/archive
+                else
+                  cp -rn "$legacy"/* build/daily/archive/ 2>/dev/null || true
+                  rm -rf "$legacy"
+                fi
+              fi
+            done
             echo "✅ Restored $(ls build/daily | wc -l) daily files from gh-pages"
           else
             echo "❌ daily/ was not restored — refusing to deploy so clients never see a re-baked game."

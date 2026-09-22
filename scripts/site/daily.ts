@@ -19,13 +19,21 @@
  * questions draw from, and a SHA-256 hash of the canonical game. The client
  * rebuilds the exact game from the seed + pool and verifies it against the hash.
  *
- * Finished days are additionally archived to `archive/<date>.json`: once a day
+ * Finished days are additionally archived to `daily/archive/<date>.json`: once a day
  * is over the answers are public anyway, so the archive stores the full resolved
  * game with embedded product display data (a self-contained record that keeps
  * replaying even after products leave the live catalog). Old manifests are kept
  * forever — they are tiny (~6 KB) and they are the only way to rebuild past days.
  */
-import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import {
+	copyFileSync,
+	existsSync,
+	mkdirSync,
+	readdirSync,
+	readFileSync,
+	rmSync,
+	writeFileSync
+} from 'node:fs';
 import { join } from 'node:path';
 import { Kaljakori } from '../../src/lib/alko/index.ts';
 import { DAILY_GAME_VERSION } from '../../src/lib/daily/questions';
@@ -52,7 +60,7 @@ const DATA_PATH = DEV ? './static/data.json' : './data.json';
  */
 const DAILY_DIR = DEV ? './static/daily' : './daily';
 /** Directory immutable archive records of finished days are written to. */
-const ARCHIVE_DIR = DEV ? './static/daily/arkisto' : './daily/arkisto';
+const ARCHIVE_DIR = DEV ? './static/daily/archive' : './daily/archive';
 
 type MigratedProduct = { values: unknown[] };
 
@@ -92,6 +100,24 @@ const ARCHIVE_DIR_NAME = ARCHIVE_DIR.split('/').pop();
  */
 async function bakeArchive(today: string): Promise<void> {
 	mkdirSync(ARCHIVE_DIR, { recursive: true });
+
+	const legacyDirs = DEV
+		? ['./static/daily/arkisto', './static/daily/arkisto-data']
+		: ['./daily/arkisto', './daily/arkisto-data'];
+	for (const legacyDir of legacyDirs) {
+		if (existsSync(legacyDir)) {
+			try {
+				for (const file of readdirSync(legacyDir)) {
+					const src = join(legacyDir, file);
+					const dest = join(ARCHIVE_DIR, file);
+					if (!existsSync(dest)) {
+						copyFileSync(src, dest);
+					}
+				}
+				rmSync(legacyDir, { recursive: true, force: true });
+			} catch {}
+		}
+	}
 
 	const existing = readdirSync(DAILY_DIR)
 		.filter((file) => file.endsWith('.json'))
