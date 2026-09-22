@@ -101,6 +101,8 @@
 		icon: 'stats',
 		name: 'Tilastot'
 	}];
+
+	const noSearchPages: typeof page.route.id[] = ['/daily/arkisto', '/laskin', '/tilastot', '/listat', '/daily', "/daily/arkisto/[date]" ];
 </script>
 
 <svelte:window onclick={handleDocumentClick} />
@@ -120,7 +122,7 @@
 				/>
 				<span class="hidden text-[1.75rem] text-brand-3 dark:text-white sm:block">Alkometriikka</span>
 			</a>
-			{#if page.route.id === null || !['/tuotteet/[...id]', '/laskin', '/tilastot', '/daily'].includes(page.route.id)}
+			{#if page.route.id === null || !noSearchPages.includes(page.route.id)}
 				<div
 					class={twMerge(
 						'flex w-full flex-row',
