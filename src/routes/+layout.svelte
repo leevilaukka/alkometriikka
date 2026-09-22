@@ -14,6 +14,7 @@
 	import { setContext } from 'svelte';
 	import Settings from '$lib/components/widgets/Settings/Index.svelte';
 	import { LocalStorageManager } from '$lib/utils/storage';
+	import type { IconName } from '$lib/icons';
 
 	let { children, data } = $props();
 	let searchParamsManager = new SearchParamsManager(page.url);
@@ -86,6 +87,20 @@
 	function handleDocumentClick(event: MouseEvent) {
 		if (extraMenu?.open && !event.composedPath().includes(extraMenu)) extraMenu.open = false;
 	}
+
+	const extraItems: {href: string, icon: IconName, name: string}[] = [{
+		href: '/daily/arkisto',
+		icon: 'archive',
+		name: 'Daily-arkisto'
+	}, {
+		href: '/laskin',
+		icon: 'calculator',
+		name: 'Laskin'
+	}, {
+		href: '/tilastot',
+		icon: 'stats',
+		name: 'Tilastot'
+	}];
 </script>
 
 <svelte:window onclick={handleDocumentClick} />
@@ -140,18 +155,12 @@
 						{#if !$isMobile}<span class="text-sm">Lisää</span>{/if}<Icon name="menu" />
 					</summary>
 					<div class="absolute end-0 top-full z-20 mt-2 flex min-w-40 flex-col gap-1 rounded border border-primary bg-primary p-1 shadow-lg">
-						<a href="/daily/arkisto" onclick={closeExtraMenu} class={twMerge(components.button(), 'w-full justify-start')}>
-							<Icon name="archive" />
-							<span>Arkisto</span>
-						</a>
-						<a href="/laskin" onclick={closeExtraMenu} class={twMerge(components.button(), 'w-full justify-start')}>
-							<Icon name="calculator" />
-							<span>Laskin</span>
-						</a>
-						<a href="/tilastot" onclick={closeExtraMenu} class={twMerge(components.button(), 'w-full justify-start')}>
-							<Icon name="stats" />
-							<span>Tilastot</span>
-						</a>
+						{#each extraItems as item}
+							<a href={item.href} onclick={closeExtraMenu} class={twMerge(components.button(), 'w-full justify-start')}>
+								<Icon name={item.icon} />
+								<span>{item.name}</span>
+							</a>
+						{/each}
 					</div>
 				</details>
 				<a href="/daily">
