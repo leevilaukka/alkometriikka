@@ -3,11 +3,13 @@ name: Archive Finished Daily Games
 on:
   workflow_dispatch:
   schedule:
-    # Midnight in Helsinki is 21:00 UTC (summer) or 22:00 UTC (winter). These
-    # runs start before/around the flip and wait until the of-date changes, so
-    # the finished day gets archived within a minute or two of midnight HKI.
-    - cron: '0 21,22 * * *'
-    - cron: '30 21,22 * * *'
+    # Midnight in Helsinki is 21:00 UTC (summer) or 22:00 UTC (winter).
+    # Runs are scheduled just after the flip in each DST period, so they bake
+    # the finished day right away without parking a waiting runner:
+    #   21:15 UTC -> archives ~00:15 HKI in summer; harmless no-op in winter.
+    #   22:15 UTC -> archives ~00:15 HKI in winter; redundant in summer.
+    - cron: '15 21 * * *'
+    - cron: '15 22 * * *'
 
 concurrency:
   group: gh-pages-deployment
@@ -53,17 +55,6 @@ jobs:
           else
             echo "ℹ️  No seeded data.json found; skipping rehash."
           fi
-
-      - name: Wait for the Finnish day to roll over
-        if: github.event_name != 'workflow_dispatch'
-        run: |
-          start=$(TZ=Europe/Helsinki date +%F)
-          deadline=$(( $(date +%s) + 3600 ))
-          while [ "$(TZ=Europe/Helsinki date +%F)" = "$start" ] && [ "$(date +%s)" -lt "$deadline" ]; do
-            echo "⏳ $start is still active, waiting for the Helsinki midnight flip..."
-            sleep 30
-          done
-          echo "Today is now $(TZ=Europe/Helsinki date +%F)"
 
       - name: Bake daily manifests and archive finished days
         run: bun run daily
