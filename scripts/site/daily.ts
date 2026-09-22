@@ -19,7 +19,14 @@
  * questions draw from, and a SHA-256 hash of the canonical game. The client
  * rebuilds the exact game from the seed + pool and verifies it against the hash.
  */
-import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import {
+	existsSync,
+	mkdirSync,
+	readdirSync,
+	readFileSync,
+	rmSync,
+	writeFileSync
+} from 'node:fs';
 import { join } from 'node:path';
 import { Kaljakori } from '../../src/lib/alko/index.ts';
 import { DAILY_GAME_VERSION } from '../../src/lib/daily/questions';
@@ -31,6 +38,8 @@ const DEV = process.argv.includes('--dev');
 
 /** How many future dates (beyond today) to pre-bake every run. */
 const AHEAD_DAYS = Number(process.env.DAILY_AHEAD_DAYS) || 2;
+/** How many past dates of baked manifests to keep before pruning the rest. */
+const RETAIN_DAYS = Number(process.env.DAILY_RETAIN_DAYS) || 30;
 /** Dataset path written by the sync (see scripts/data/index.ts). */
 const DATA_PATH = DEV ? './static/data.json' : './data.json';
 /**
@@ -67,6 +76,20 @@ function isCurrentVersion(path: string): boolean {
 	}
 }
 
+function pruneOld(directory: string, today: string): number {
+	const cutoff = addDaysUTC(today, -RETAIN_DAYS);
+	let removed = 0;
+	for (const file of readdirSync(directory)) {
+		if (!file.endsWith('.json')) continue;
+		const date = file.slice(0, 10);
+		if (date < cutoff) {
+			rmSync(join(directory, file));
+			removed += 1;
+		}
+	}
+	return removed;
+}
+
 async function bake(): Promise<void> {
 	if (!existsSync(DATA_PATH)) {
 		throw new Error(`Dataset not found at ${DATA_PATH}. Run the sync first.`);
@@ -96,6 +119,8 @@ async function bake(): Promise<void> {
 		);
 	}
 
+	const pruned = pruneOld(DAILY_DIR, today);
+	if (pruned) console.log(`🗑️  Pruned ${pruned} stale daily manifest(s)`);
 	console.log(`✅ ${written} new daily manifest(s) written to ${DAILY_DIR}`);
 }
 
