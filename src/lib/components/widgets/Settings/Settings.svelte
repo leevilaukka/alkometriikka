@@ -74,7 +74,7 @@
 				<p class="text-sm font-bold">Tyhjennä tiedot</p>
 				<p class="text-sm text-secondary">
 					Tämä poistaa kaikki paikallisesti tallennetut tiedot, kuten henkilökohtaiset tiedot ja
-					mukautetut listat. Tätä toimintoa ei voi perua.
+					mukautetut listat. Toiminto myös nollaa nykyisen Daily-putkesi. Tätä toimintoa ei voi perua.
 				</p>
 				<button
 					class={twMerge(components.button({ type: 'negative' }))}

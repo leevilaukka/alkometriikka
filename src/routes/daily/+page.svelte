@@ -12,6 +12,7 @@
 	import ProductImage from '$lib/components/widgets/ProductImage.svelte';
 	import { twMerge } from 'tailwind-merge';
 	import type { PageProps } from './$types';
+	import Icon from '$lib/components/widgets/Icon.svelte';
 
 	let { data }: PageProps = $props();
 	let products = $state<PriceListItem[]>([]);
@@ -405,10 +406,10 @@
 				</section>
 				<div class="flex flex-wrap justify-center gap-2">
 					{#if runMode === 'daily'}
-						<button class={twMerge(components.button({ type: 'negative', size: 'md' }), 'px-4 py-2')} onclick={shareResult}>Jaa tulos</button>
+						<button class={twMerge(components.button({ type: 'negative', size: 'md' }), 'px-4 py-2')} onclick={shareResult}> <span class="flex items-center gap-2"> <Icon name="share"/>Jaa tulos</span> </button>
 					{/if}
 					{#if unlimitedEnabled}
-						<button class={twMerge(components.button({ type: 'negative', size: 'md' }), 'px-4 py-2')} onclick={startUnlimited}>{runMode === 'daily' ? 'Pelaa rajattomasti' : 'Uusi kierros'}</button>
+						<button class={twMerge(components.button({ type: 'negative', size: 'md' }), 'px-4 py-2')} onclick={startUnlimited}> <span class="flex items-center gap-2"> <Icon name="repeat_alt_2"/>{runMode === 'daily' ? 'Pelaa rajattomasti' : 'Uusi kierros'}</span> </button>
 					{/if}
 					<a href="/" class={twMerge(components.button({ size: 'md' }), 'px-4 py-2')}>Takaisin Alkometriikkaan</a>
 				</div>
