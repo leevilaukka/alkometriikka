@@ -4,10 +4,13 @@ import type { PriceListItem } from '$lib/types';
 import { createRng } from './rng';
 import { DAILY_QUESTION_COUNT, generateDailyGame } from './questions';
 import {
+	ARCHIVE_INDEX_VERSION,
+	buildArchiveGame,
 	DAILY_MIN_VARIANTS,
 	generateDailyGameManifest,
 	questionVariant,
 	reconstructDailyGame,
+	requiredProductIds,
 	sha256Hex,
 	trimProduct,
 	type DailyGameManifest
@@ -93,5 +96,48 @@ describe('daily game manifest', () => {
 		expect(await sha256Hex('abc')).toBe(
 			'ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad'
 		);
+	});
+
+	it('collects every product referenced by the questions', async () => {
+		const manifest: DailyGameManifest = await generateDailyGameManifest('2026-09-22', products);
+		const rebuilt = await reconstructDailyGame(manifest);
+		expect(rebuilt).not.toBeNull();
+		const ids = requiredProductIds(rebuilt!);
+		expect(ids.length).toBeGreaterThan(0);
+		for (const question of rebuilt!.questions) {
+			if (
+				question.type === 'cheaper' ||
+				question.type === 'efficiency' ||
+				question.type === 'attribute'
+			) {
+				expect(ids).toContain(question.productIds[0]);
+				expect(ids).toContain(question.productIds[1]);
+			} else {
+				expect(ids).toContain(question.productId);
+			}
+		}
+	});
+
+	it('builds an immutable archive game with embedded display products', async () => {
+		const manifest: DailyGameManifest = await generateDailyGameManifest('2026-09-21', products);
+		const archive = await buildArchiveGame(manifest);
+		expect(archive).not.toBeNull();
+		expect(archive!.version).toBe(manifest.version);
+		expect(archive!.date).toBe('2026-09-21');
+		expect(archive!.game.questions).toHaveLength(DAILY_QUESTION_COUNT);
+		expect(archive!.game).toEqual((await reconstructDailyGame(manifest))!);
+
+		const ids = requiredProductIds(archive!.game);
+		expect(archive!.products.map((p) => p[AllColumns.Number])).toEqual(ids);
+		expect(new Set(archive!.products.map((p) => p[AllColumns.Number])).size).toBe(ids.length);
+	});
+
+	it('fails to build an archive when the manifest game hash does not match', async () => {
+		const manifest: DailyGameManifest = await generateDailyGameManifest('2026-09-21', products);
+		expect(await buildArchiveGame({ ...manifest, gameHash: 'f'.repeat(64) })).toBeNull();
+	});
+
+	it('archive index version is stable', () => {
+		expect(ARCHIVE_INDEX_VERSION).toBe(1);
 	});
 });

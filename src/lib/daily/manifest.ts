@@ -62,6 +62,7 @@ export type DailyProduct = {
 	[AllColumns.Manufacturer]: string;
 	[AllColumns.Type]: string;
 	[AllColumns.New]?: string;
+	[AllColumns.PackagingType]: string;
 };
 
 export type DailyGameManifest = {
@@ -96,7 +97,8 @@ export function trimProduct(product: PriceListItem): DailyProduct {
 		[AllColumns.Country]: String(product[AllColumns.Country]),
 		[AllColumns.Manufacturer]: String(product[AllColumns.Manufacturer]),
 		[AllColumns.Type]: String(product[AllColumns.Type]),
-		[AllColumns.New]: typeof product[AllColumns.New] === 'string' ? product[AllColumns.New] : ''
+		[AllColumns.New]: typeof product[AllColumns.New] === 'string' ? product[AllColumns.New] : '',
+		[AllColumns.PackagingType]: String(product[AllColumns.PackagingType] ?? '')
 	};
 }
 
@@ -156,4 +158,78 @@ export async function reconstructDailyGame(
 	if (game.questions.length !== DAILY_QUESTION_COUNT) return null;
 	if ((await sha256Hex(JSON.stringify(game))) !== manifest.gameHash) return null;
 	return game;
+}
+
+/**
+ * Once a day is over its answers are public, so the archive can ship the full
+ * resolved game instead of the answer-free manifest. Doing this means old days
+ * stay replayable even if the generator or the manifest format changes later —
+ * the archive file is a self-contained, immutable historical record.
+ *
+ * Display data is embedded per product too (name, price, manufacturer, type,
+ * packaging) so archived days render correctly even after a product has been
+ * removed from the live catalog.
+ */
+export const ARCHIVE_INDEX_VERSION = 1;
+
+export type ArchiveProduct = {
+	[AllColumns.Number]: string;
+	[AllColumns.Name]: string;
+	[AllColumns.Price]: number;
+	[AllColumns.Manufacturer]: string;
+	[AllColumns.Type]: string;
+	[AllColumns.PackagingType]: string;
+};
+
+export type ArchiveGame = {
+	version: typeof DAILY_GAME_VERSION;
+	date: string;
+	game: GeneratedGame;
+	products: ArchiveProduct[];
+};
+
+export type ArchiveIndex = {
+	version: typeof ARCHIVE_INDEX_VERSION;
+	dates: string[];
+};
+
+/** Unique product ids referenced by the questions, in game order. */
+export function requiredProductIds(game: GeneratedGame): string[] {
+	const ids = new Set<string>();
+	for (const question of game.questions) {
+		if (
+			question.type === 'cheaper' ||
+			question.type === 'efficiency' ||
+			question.type === 'attribute'
+		) {
+			ids.add(question.productIds[0]);
+			ids.add(question.productIds[1]);
+		} else {
+			ids.add(question.productId);
+		}
+	}
+	return [...ids];
+}
+
+/**
+ * Builds the immutable archive record for a finished day from its manifest.
+ * Returns `null` when the manifest no longer rebuilds to a valid game.
+ */
+export async function buildArchiveGame(manifest: DailyGameManifest): Promise<ArchiveGame | null> {
+	const game = await reconstructDailyGame(manifest);
+	if (!game) return null;
+	const products: ArchiveProduct[] = [];
+	for (const id of requiredProductIds(game)) {
+		const product = manifest.products.find((item) => item[AllColumns.Number] === id);
+		if (!product) return null;
+		products.push({
+			[AllColumns.Number]: product[AllColumns.Number],
+			[AllColumns.Name]: product[AllColumns.Name],
+			[AllColumns.Price]: product[AllColumns.Price],
+			[AllColumns.Manufacturer]: product[AllColumns.Manufacturer],
+			[AllColumns.Type]: product[AllColumns.Type],
+			[AllColumns.PackagingType]: product[AllColumns.PackagingType]
+		});
+	}
+	return { version: DAILY_GAME_VERSION, date: game.date, game, products };
 }

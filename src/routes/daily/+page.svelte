@@ -444,16 +444,21 @@
 						{/each}
 					</div>
 				</section>
-				<div class="flex flex-wrap justify-center gap-2">
+				<div class="flex flex-col items-center gap-3">
 					{#if runMode === 'daily'}
-						<button class={twMerge(components.button({ type: 'negative', size: 'md' }), 'px-4 py-2')} onclick={shareResult}> <span class="flex items-center gap-2"> <Icon name="share"/>Jaa tulos</span> </button>
+						<button class={twMerge(components.button({ type: 'positive', size: 'md' }), 'px-4 py-2')} onclick={shareResult}> <span class="flex items-center gap-2"> <Icon name="share"/>Jaa tulos</span> </button>
+						{#if shareStatus}<p class="whitespace-pre-wrap text-left text-sm text-secondary">{shareStatus}</p>{/if}
 					{/if}
-					{#if unlimitedEnabled}
-						<button class={twMerge(components.button({ type: 'negative', size: 'md' }), 'px-4 py-2')} onclick={startUnlimited}> <span class="flex items-center gap-2"> <Icon name="repeat_alt_2"/>{runMode === 'daily' ? 'Pelaa rajattomasti' : 'Uusi kierros'}</span> </button>
-					{/if}
-					<a href="/" class={twMerge(components.button({ size: 'md' }), 'px-4 py-2')}>Takaisin Alkometriikkaan</a>
+					<div class="flex w-full max-w-md flex-col items-center gap-2">
+						{#if unlimitedEnabled}
+							<button class={twMerge(components.button({ type: 'negative', size: 'md' }), 'w-full px-4 py-2')} onclick={startUnlimited}> <span class="flex items-center gap-2"> <Icon name="repeat_alt_2"/>{runMode === 'daily' ? 'Pelaa rajattomasti' : 'Uusi kierros'}</span> </button>
+						{/if}
+						<div class="grid w-full grid-cols-2 gap-2">
+							<a href="/daily/arkisto" class={twMerge(components.button({ size: 'md' }), 'w-full px-4 py-2')}> <span class="flex items-center gap-2"> <Icon name="archive"/>Arkisto</span> </a>
+							<a href="/" class={twMerge(components.button({ size: 'md' }), 'w-full px-4 py-2')}>Takaisin Alkometriikkaan</a>
+						</div>
+					</div>
 				</div>
-				{#if shareStatus}<p class="whitespace-pre-wrap text-left text-sm text-secondary">{shareStatus}</p>{/if}
 			</section>
 		{:else if game && question}
 			<section class="flex flex-col gap-5">

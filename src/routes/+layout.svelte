@@ -140,6 +140,10 @@
 						{#if !$isMobile}<span class="text-sm">Lisää</span>{/if}<Icon name="menu" />
 					</summary>
 					<div class="absolute end-0 top-full z-20 mt-2 flex min-w-40 flex-col gap-1 rounded border border-primary bg-primary p-1 shadow-lg">
+						<a href="/daily/arkisto" onclick={closeExtraMenu} class={twMerge(components.button(), 'w-full justify-start')}>
+							<Icon name="archive" />
+							<span>Arkisto</span>
+						</a>
 						<a href="/laskin" onclick={closeExtraMenu} class={twMerge(components.button(), 'w-full justify-start')}>
 							<Icon name="calculator" />
 							<span>Laskin</span>

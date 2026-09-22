@@ -18,12 +18,23 @@
  * to disk. It ships a random seed, a frozen pool of the ~24 products that day's
  * questions draw from, and a SHA-256 hash of the canonical game. The client
  * rebuilds the exact game from the seed + pool and verifies it against the hash.
+ *
+ * Finished days are additionally archived to `archive/<date>.json`: once a day
+ * is over the answers are public anyway, so the archive stores the full resolved
+ * game with embedded product display data (a self-contained record that keeps
+ * replaying even after products leave the live catalog). Old manifests are kept
+ * forever — they are tiny (~6 KB) and they are the only way to rebuild past days.
  */
-import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { Kaljakori } from '../../src/lib/alko/index.ts';
 import { DAILY_GAME_VERSION } from '../../src/lib/daily/questions';
-import { generateDailyGameManifest, type DailyGameManifest } from '../../src/lib/daily/manifest';
+import {
+	ARCHIVE_INDEX_VERSION,
+	buildArchiveGame,
+	generateDailyGameManifest,
+	type DailyGameManifest
+} from '../../src/lib/daily/manifest';
 import { toISODateInTimeZone } from '../../src/lib/utils/sales';
 
 /** When running with `--dev` we operate on the local static folder. Mirrors the sync scripts. */
@@ -31,8 +42,6 @@ const DEV = process.argv.includes('--dev');
 
 /** How many future dates (beyond today) to pre-bake every run. */
 const AHEAD_DAYS = Number(process.env.DAILY_AHEAD_DAYS) || 2;
-/** How many past dates of baked manifests to keep before pruning the rest. */
-const RETAIN_DAYS = Number(process.env.DAILY_RETAIN_DAYS) || 30;
 /** Dataset path written by the sync (see scripts/data/index.ts). */
 const DATA_PATH = DEV ? './static/data.json' : './data.json';
 /**
@@ -42,6 +51,8 @@ const DATA_PATH = DEV ? './static/data.json' : './data.json';
  * folder to the gh-pages site root.
  */
 const DAILY_DIR = DEV ? './static/daily' : './daily';
+/** Directory immutable archive records of finished days are written to. */
+const ARCHIVE_DIR = DEV ? './static/daily/arkisto' : './daily/arkisto';
 
 type MigratedProduct = { values: unknown[] };
 
@@ -69,18 +80,59 @@ function isCurrentVersion(path: string): boolean {
 	}
 }
 
-function pruneOld(directory: string, today: string): number {
-	const cutoff = addDaysUTC(today, -RETAIN_DAYS);
-	let removed = 0;
-	for (const file of readdirSync(directory)) {
-		if (!file.endsWith('.json')) continue;
-		const date = file.slice(0, 10);
-		if (date < cutoff) {
-			rmSync(join(directory, file));
-			removed += 1;
+const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
+const ARCHIVE_DIR_NAME = ARCHIVE_DIR.split('/').pop();
+
+/**
+ * Archives finished days (any manifest date before today) that are not archived
+ * yet. Once written, an archive file is immutable — it must never be rewritten,
+ * because it pins the exact game to its date; later format/generator changes
+ * must not touch history. Re-runs only fill in missing dates and refresh the
+ * index of available archives.
+ */
+async function bakeArchive(today: string): Promise<void> {
+	mkdirSync(ARCHIVE_DIR, { recursive: true });
+
+	const existing = readdirSync(DAILY_DIR)
+		.filter((file) => file.endsWith('.json'))
+		.map((file) => file.slice(0, 10))
+		.filter((date) => ISO_DATE.test(date) && date < today);
+	const current = new Set(
+		readdirSync(ARCHIVE_DIR)
+			.filter((file) => file.endsWith('.json'))
+			.map((file) => file.slice(0, 10))
+	);
+	let archived = 0;
+
+	for (const date of existing) {
+		if (current.has(date)) continue;
+		const manifestPath = join(DAILY_DIR, `${date}.json`);
+		let manifest: DailyGameManifest;
+		try {
+			manifest = JSON.parse(readFileSync(manifestPath, 'utf8')) as DailyGameManifest;
+		} catch {
+			continue;
 		}
+		if (manifest?.version !== DAILY_GAME_VERSION || manifest.date !== date) continue;
+		const archive = await buildArchiveGame(manifest);
+		if (!archive) continue;
+		writeFileSync(join(ARCHIVE_DIR, `${date}.json`), JSON.stringify(archive));
+		archived++;
+		console.log(`🗄️  Archived ${date} (${archive.game.questions.length} questions)`);
 	}
-	return removed;
+
+	const index = {
+		version: ARCHIVE_INDEX_VERSION,
+		dates: readdirSync(ARCHIVE_DIR)
+			.filter((file) => file.endsWith('.json') && file !== 'index.json')
+			.map((file) => file.slice(0, 10))
+			.filter((date) => ISO_DATE.test(date))
+			.sort((a, b) => b.localeCompare(a))
+	};
+	writeFileSync(join(ARCHIVE_DIR, 'index.json'), JSON.stringify(index));
+	console.log(
+		`📋 Archive index: ${index.dates.length} day(s) available (${archived} newly archived in ${ARCHIVE_DIR_NAME}/)`
+	);
 }
 
 async function bake(): Promise<void> {
@@ -112,9 +164,8 @@ async function bake(): Promise<void> {
 		);
 	}
 
-	const pruned = pruneOld(DAILY_DIR, today);
-	if (pruned) console.log(`🗑️  Pruned ${pruned} stale daily manifest(s)`);
 	console.log(`✅ ${written} new daily manifest(s) written to ${DAILY_DIR}`);
+	await bakeArchive(today);
 }
 
 await bake();

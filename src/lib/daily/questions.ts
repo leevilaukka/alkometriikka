@@ -72,6 +72,23 @@ export type SavedDailyGame = {
 	answerPoints?: number;
 };
 export type DailyStreak = { current: number; best: number; completedDate?: string };
+/** Per-date result kept in localStorage so the archive can show past scores. */
+export type ArchivedScore = { score: number; correct: number };
+export type ArchivedScores = Record<string, ArchivedScore>;
+/** In-progress or completed play of an archived (past) day, persisted safely. */
+export type ArchiveRunState = {
+	date: string;
+	currentIndex: number;
+	points: number[];
+	correctAnswers: boolean[];
+	selectedAnswer: string | number | null;
+	answered: boolean;
+	answerPoints: number;
+	completed?: boolean;
+	score?: number;
+	correct?: number;
+};
+export type ArchiveRuns = Record<string, ArchiveRunState>;
 export type UnlimitedRunState = {
 	game: GeneratedGame;
 	currentIndex: number;
@@ -285,7 +302,11 @@ export function generateDailyGame(
 			type: 'attribute',
 			metric,
 			productIds: [productId(first)!, productId(second)!],
-			correctProductId: firstValue >= secondValue ? productId(first)! : productId(second)!,
+			correctProductId: (
+				metric === 'literPrice' ? firstValue <= secondValue : firstValue >= secondValue
+			)
+				? productId(first)!
+				: productId(second)!,
 			values: { [productId(first)!]: firstValue, [productId(second)!]: secondValue }
 		});
 		return true;
