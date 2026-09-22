@@ -22,6 +22,7 @@ import {
 import { formatValue, type FormatOpts } from './format';
 import { LocalStorageManager } from './storage';
 import { replaceState } from '$app/navigation';
+import { page } from '$app/state';
 
 export function headerToUnitMarker(header: ColumnNames) {
 	if (Object.hasOwn(filterToUnitMarker, header))
@@ -224,7 +225,7 @@ export async function handleShare({
 	return false;
 }
 
-export function shareTypeFromRoute(routeId: string | null | undefined): ShareType {
+export function shareTypeFromRoute(routeId: typeof page.route.id): ShareType {
 	switch (routeId) {
 		case '/':
 			return ShareTypes.Filters;
@@ -234,6 +235,10 @@ export function shareTypeFromRoute(routeId: string | null | undefined): ShareTyp
 			return ShareTypes.Product;
 		case '/vastaavat/[...id]':
 			return ShareTypes.Similar;
+		case "/daily":
+		case "/daily/arkisto":
+		case "/daily/arkisto/[date]":
+			return ShareTypes.DailyGame
 		default:
 			return ShareTypes.Default;
 	}
