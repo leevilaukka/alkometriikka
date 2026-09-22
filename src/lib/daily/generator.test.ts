@@ -3,7 +3,7 @@ import { AllColumns } from '$lib/utils/constants';
 import type { PriceListItem } from '$lib/types';
 import { createRng } from './rng';
 import { DAILY_QUESTION_COUNT, generateDailyGame, pureAlcoholPerEuro } from './questions';
-import { completeGame, loadArchivedScores, loadSavedGame, recordArchivedScore, saveGame } from './storage';
+import { completeGame, loadArchivedScores, loadSavedGame, saveGame } from './storage';
 
 const product = (id: string, price: number, volume = 0.7, alcohol = 12, history: unknown[] = []) => ({
 	[AllColumns.Number]: id,
@@ -187,11 +187,9 @@ describe('daily persistence and streaks', () => {
 		expect(completeGame({ date: '2026-10-03', game }, 100, 1)).toEqual({ current: 1, best: 2, completedDate: '2026-10-03' });
 	});
 
-	it('marks live completions so the archive can refuse replays', () => {
+	it('records live completions so the archive treats the day as finished', () => {
 		const game = generateDailyGame('2026-09-22', products, createRng('same'));
 		completeGame({ date: '2026-09-22', game }, 400, 4);
-		recordArchivedScore('2026-09-21', 300, 3);
-		expect(loadArchivedScores()['2026-09-22']).toEqual({ score: 400, correct: 4, live: true });
-		expect(loadArchivedScores()['2026-09-21']?.live).toBeUndefined();
+		expect(loadArchivedScores()['2026-09-22']).toEqual({ score: 400, correct: 4 });
 	});
 });

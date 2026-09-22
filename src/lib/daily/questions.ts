@@ -91,7 +91,7 @@ export type DailyStreak = { current: number; best: number; completedDate?: strin
  * `live` marks a result earned on the day itself (via the Daily page); those
  * days are shown read-only in the archive and cannot be replayed.
  */
-export type ArchivedScore = { score: number; correct: number; live?: boolean };
+export type ArchivedScore = { score: number; correct: number };
 export type ArchivedScores = Record<string, ArchivedScore>;
 /** In-progress or completed play of an archived (past) day, persisted safely. */
 export type ArchiveRunState = {

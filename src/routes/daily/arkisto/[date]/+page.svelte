@@ -17,7 +17,7 @@
 	import type { ArchiveGame, ArchiveIndex, ArchiveProduct } from '$lib/daily/manifest';
 	import { base } from '$app/paths';
 	import { page } from '$app/state';
-	import { generateTitle, setSEO } from '$lib/utils/helpers';
+	import { generateTitle, sendAnalyticsEvent, setSEO } from '$lib/utils/helpers';
 	import ProductImage from '$lib/components/widgets/ProductImage.svelte';
 	import { twMerge } from 'tailwind-merge';
 	import Icon from '$lib/components/widgets/Icon.svelte';
@@ -42,12 +42,12 @@
 		)
 	);
 	const run = $derived(date ? (runs[date] ?? null) : null);
-	// Days completed live are read-only here: show the answers, never a replay.
-	const playedLive = $derived(date ? scores[date]?.live === true : false);
-	const completed = $derived(playedLive || run?.completed === true);
+	// Any recorded score (live or archive) means the day is finished: show the answers.
 	const result = $derived(
-		!playedLive && run?.completed ? { score: run.score, correct: run.correct } : scores[date]
+		(date ? scores[date] : undefined) ??
+			(run?.completed ? { score: run.score, correct: run.correct } : undefined)
 	);
+	const completed = $derived(result !== undefined);
 	const questionIndex = $derived(run?.currentIndex ?? 0);
 	const question = $derived(archive?.game.questions[questionIndex]);
 	const runningTotal = $derived(run?.points.reduce((total, value) => total + value, 0) ?? 0);
@@ -217,7 +217,8 @@
 	}
 
 	function answer(value: string | number) {
-		if (!question || run?.answered || playedLive) return;
+		if (!question || run?.answered || completed) return;
+		if (!run?.points.length) sendAnalyticsEvent('archive_game', { state: 'started', date });
 		const points = questionPoints(question, value);
 		const correct =
 			question.type === 'estimate' ? Number(value) === question.correctPrice : points === 100;
@@ -243,9 +244,9 @@
 			const score = run.points.reduce((total, value) => total + value, 0);
 			const correct = run.correctAnswers.filter(Boolean).length;
 			updateRun({ completed: true, score, correct });
-			// Replays must not overwrite the result from playing the day live.
-			if (!loadArchivedScores()[date]) recordArchivedScore(date, score, correct);
+			recordArchivedScore(date, score, correct);
 			scores = loadArchivedScores();
+			sendAnalyticsEvent('archive_game', { state: 'completed', date, score, questions_right: correct });
 			return;
 		}
 		updateRun({
@@ -329,22 +330,16 @@
 		<section class="flex flex-col gap-5">
 			<div class="flex items-center justify-between">
 				<h2 class="text-xl font-bold">Tulokset</h2>
-				{#if scores[date]}
-					<a href="/daily/arkisto">
-						<button class={twMerge(components.button(), 'px-3 py-2')}>Kalenteri</button>
-					</a>
-				{/if}
+				<a href="/daily/arkisto">
+					<button class={twMerge(components.button(), 'px-3 py-2')}>Kalenteri</button>
+				</a>
 			</div>
 			<section class="flex flex-col gap-5 rounded border border-primary bg-secondary p-5 text-center md:p-8">
 				<p class="text-lg font-bold">
 					{result?.correct}/{archive.game.questions.length} oikein ·{' '}
 					{result?.score} pistettä
 				</p>
-				<p class="text-secondary">
-					{playedLive
-						? 'Pelasit tämän päivän pelin sen ollessa päivän peli, joten sitä ei voi pelata uudelleen — vastaukset alla.'
-						: 'Päivä pelattu loppuun — vastaukset alla.'}
-				</p>
+				<p class="text-secondary">Päivä pelattu loppuun — vastaukset alla.</p>
 			</section>
 			{#each archive.game.questions as currentQuestion, questionIndex (questionIndex)}
 				<div class="rounded border border-primary bg-primary p-5 md:p-8">

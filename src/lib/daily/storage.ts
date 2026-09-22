@@ -30,7 +30,7 @@ export function saveGame(saved: SavedDailyGame) {
 export function completeGame(saved: SavedDailyGame, score: number, correct: number): DailyStreak {
 	const completedGame = { ...saved, completed: true, score, correct };
 	saveGame(completedGame);
-	recordArchivedScore(saved.date, score, correct, true);
+	recordArchivedScore(saved.date, score, correct);
 	const streak = LocalStorageManager.getItem(LocalStorageKeys.DailyStreak) ?? {
 		current: 0,
 		best: 0
@@ -58,14 +58,9 @@ export function loadArchivedScores(): ArchivedScores {
 	return LocalStorageManager.getItem(LocalStorageKeys.DailyArchiveScores) ?? {};
 }
 
-export function recordArchivedScore(
-	date: string,
-	score: number,
-	correct: number,
-	live = false
-): void {
+export function recordArchivedScore(date: string, score: number, correct: number): void {
 	const scores = loadArchivedScores();
-	scores[date] = live ? { score, correct, live } : { score, correct };
+	scores[date] = { score, correct };
 	LocalStorageManager.setItem(LocalStorageKeys.DailyArchiveScores, scores);
 }
 
