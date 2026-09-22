@@ -238,7 +238,7 @@
 	function answer(value: string | number) {
 		if (answered || !question) return;
 		if (points.length === 0) {
-			sendAnalyticsEvent(runMode === 'daily' ? 'daily_started' : 'unlimited_game_started', { date });
+			sendAnalyticsEvent(runMode === 'daily' ? 'daily_game' : 'unlimited_game', { state: 'started', date });
 		}
 		selectedAnswer = value;
 		answerPoints = questionPoints(question, value);
@@ -266,10 +266,10 @@
 			if (runMode === 'daily') {
 				saveGame(saved);
 				streak = completeGame(saved, score, correct);
-				sendAnalyticsEvent('daily_completed', { date, score, questions_right: correct });
+				sendAnalyticsEvent('daily_game', {state: 'completed', date, score, questions_right: correct });
 			} else {
 				clearUnlimitedProgress();
-				sendAnalyticsEvent('unlimited_game_completed', { date, score, questions_right: correct });
+				sendAnalyticsEvent('unlimited_game', {state: "completed", date, score, questions_right: correct });
 			}
 			return;
 		}

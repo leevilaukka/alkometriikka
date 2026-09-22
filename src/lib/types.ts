@@ -162,15 +162,28 @@ export type ShareType = (typeof ShareTypes)[keyof typeof ShareTypes];
 export type ShareEvent = `share_${ShareType}`;
 export type ShareViewEvent = `shared_${ShareType}_viewed`;
 
-export type GameType = 'daily' | 'unlimited_game';
-export type GameEvent = `${GameType}_${'started' | 'completed'}`;
+type ShareState = { url?: string; sid?: string; [key: string]: any }
+type Shares = {[K in ShareEvent | ShareViewEvent]: ShareState};
+
+export type GameTypes = "daily" | "unlimited" | "archive";
+type GameKeys = `${GameTypes}_game`;
+
+type GameState =
+	| {
+			state: 'started';
+			date: string;
+	  }
+	| {
+			state: 'completed';
+			date: string;
+			score: number;
+			questions_right: number;
+	  };
+
+type Games = {[K in GameKeys]: GameState;};
 
 export type AnalyticsEventMap = {
 	calculator_calculated: { using_saved_values: boolean };
-	daily_started: { date: string };
-	daily_completed: { date: string; score: number; questions_right: number };
-	unlimited_game_started: { date: string };
-	unlimited_game_completed: { date: string; score: number; questions_right: number };
 	open_settings: undefined;
 	export_data: undefined;
 	import_data: undefined;
@@ -187,10 +200,6 @@ export type AnalyticsEventMap = {
 		action?: 'set' | 'change';
 	};
 	show_availability: { product_number?: string; [key: string]: any };
-} & {
-	[K in ShareEvent]: { url?: string; sid?: string; [key: string]: any };
-} & {
-	[K in ShareViewEvent]: { url?: string; sid?: string; [key: string]: any };
-};
+} & Shares & Games
 
 export type AnalyticsEventName = keyof AnalyticsEventMap;
