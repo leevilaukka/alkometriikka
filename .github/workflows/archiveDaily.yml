@@ -1,0 +1,104 @@
+name: Archive Finished Daily Games
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Midnight in Helsinki is 21:00 UTC (summer) or 22:00 UTC (winter). These
+    # runs start before/around the flip and wait until the of-date changes, so
+    # the finished day gets archived within a minute or two of midnight HKI.
+    - cron: '0 21,22 * * *'
+    - cron: '30 21,22 * * *'
+
+concurrency:
+  group: gh-pages-deployment
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Cache Bun dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.bun
+            node_modules
+          key: ${{ runner.os }}-bun-${{ hashFiles('bun.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-bun-
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Seed dataset and current daily folder from deployed site
+        run: |
+          git fetch origin gh-pages
+          git show origin/gh-pages:data.json > data.json
+          git archive origin/gh-pages daily | tar -x
+
+      - name: Rehash seeded dataset to current schema
+        run: |
+          if [ -f data.json ]; then
+            bun run scripts/data/rehash.ts
+          else
+            echo "ℹ️  No seeded data.json found; skipping rehash."
+          fi
+
+      - name: Wait for the Finnish day to roll over
+        if: github.event_name != 'workflow_dispatch'
+        run: |
+          start=$(TZ=Europe/Helsinki date +%F)
+          deadline=$(( $(date +%s) + 3600 ))
+          while [ "$(TZ=Europe/Helsinki date +%F)" = "$start" ] && [ "$(date +%s)" -lt "$deadline" ]; do
+            echo "⏳ $start is still active, waiting for the Helsinki midnight flip..."
+            sleep 30
+          done
+          echo "Today is now $(TZ=Europe/Helsinki date +%F)"
+
+      - name: Bake daily manifests and archive finished days
+        run: bun run daily
+
+      - name: Check out deployed site
+        run: |
+          git fetch origin gh-pages
+          git worktree add --detach ../gh-pages origin/gh-pages
+
+      - name: Publish daily folder (manifests + archive)
+        working-directory: ../gh-pages
+        run: |
+          rm -rf daily
+          cp -r ../daily daily
+
+      - name: Commit and push archive
+        working-directory: ../gh-pages
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add daily -f
+          git commit -m "Archive finished daily games [skip ci]" || echo "No changes to commit"
+          git push origin HEAD:gh-pages
+
+      - name: Purge Cloudflare cache for archive index
+        env:
+          CLOUDFLARE_PURGE_KEY: ${{ secrets.CLOUDFLARE_PURGE_KEY }}
+          CLOUDFLARE_ZONE: ${{ secrets.CF_ZONE }}
+        run: |
+          if [ -z "$CLOUDFLARE_PURGE_KEY" ] || [ -z "$CLOUDFLARE_ZONE" ]; then
+            echo "ℹ️  No purge credentials; skipping cache purge."
+            exit 0
+          fi
+          curl -sS -X POST "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE}/purge_cache" \
+            -H "Authorization: Bearer ${CLOUDFLARE_PURGE_KEY}" \
+            -H "Content-Type: application/json" \
+            --data '{"files":["https://alkometriikka.fi/daily/arkisto/index.json"]}' || \
+            echo "⚠️  Cache purge failed; continuing."

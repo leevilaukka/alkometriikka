@@ -3,7 +3,7 @@ name: Download Price List
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */6 * * *' # Runs every 6 hours
+    - cron: '0 */6 * * *' # Runs every 6 hours (also archives any missed finished days)
   workflow_run: # Runs after page is built
     workflows: ['Build and move files to gh-pages branch']
     types:
