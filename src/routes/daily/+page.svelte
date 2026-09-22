@@ -327,8 +327,13 @@
 		return question?.type === 'estimate' && Number(selectedAnswer) === question.correctPrice;
 	}
 
+	function resultEmoji(value: number) {
+		return value === 100 ? '🟩' : value > 0 ? '🟨' : '🟥';
+	}
+
 	function shareText() {
-		return `🍺 Alkometriikka Daily\n${displayDate}\n\n${totalCorrect}/${DAILY_QUESTION_COUNT} oikein\n${totalScore} pistettä\n🔥 ${streak.current} päivän putki`;
+		const grid = points.map(resultEmoji).join('');
+		return `🍺 Alkometriikka Daily — ${displayDate}\n${grid}\n${totalCorrect}/${DAILY_QUESTION_COUNT} oikein · ${totalScore} pistettä · 🔥 ${streak.current} päivän putki`;
 	}
 
 	async function shareResult() {

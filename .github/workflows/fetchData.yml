@@ -296,14 +296,35 @@ jobs:
             exit 1
           fi
 
-      - name: Refresh product pages
-        env:
-          ALKO_PRERENDER_CONCURRENCY: '32'
+      - name: Bake daily manifests
         run: |
           # Bake the daily manifests here so `daily/` exists next to the copied
           # data.json — the sync-job artifact round-trip would flatten the
           # directory into the workspace root. Existing dates are kept as-is.
           bun run daily
+
+      # A 6-hourly fallback for the midnight-precise run in archiveDaily.yml
+      # (which already publishes this the moment the day flips) — this just
+      # re-confirms the same content later. Best-effort: decorative, must
+      # never block the rest of the (critical) deploy job.
+      - name: Generate and publish today's Daily OG card
+        continue-on-error: true
+        uses: ./.github/actions/daily-og
+        with:
+          template: ../gh-pages/404.html
+          archive-index: ./daily/archive/index.json
+          out-dir: ./daily
+          r2-access-key-id: ${{ secrets.CF_R2_ACCESS_KEY_ID }}
+          r2-secret-access-key: ${{ secrets.CF_R2_SECRET_ACCESS_KEY }}
+          r2-account-id: ${{ secrets.CF_R2_ACCOUNT_ID }}
+          r2-bucket: ${{ vars.CF_R2_BUCKET }}
+          r2-region: ${{ vars.CF_R2_REGION }}
+          og-cdn-base: ${{ vars.OG_CDN_BASE }}
+
+      - name: Refresh product pages
+        env:
+          ALKO_PRERENDER_CONCURRENCY: '32'
+        run: |
           cp og-images.json ../gh-pages/og-images.json
           bun run scripts/site/prerender-products.ts --data data.json --out ../gh-pages --template ../gh-pages/404.html --og-manifest ../gh-pages/og-images.json --manifest ../gh-pages/tuotteet-manifest.json
           cp data.json availability.json sitemap.xml rss.xml feed.json ../gh-pages/

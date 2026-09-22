@@ -1,0 +1,53 @@
+name: Generate Daily OG card
+description: >-
+  Renders and uploads today's Alkometriikka Daily share card to R2, then
+  writes the daily/index.html stub so link-preview crawlers see it (they
+  don't execute the client-side setSEO() call). Purely decorative — the
+  calling workflow should mark the invoking step `continue-on-error: true`
+  so a failure here can never block a deploy or archive publish.
+inputs:
+  template:
+    description: Path to the built 404.html template (SEO markers + app bundle refs)
+    required: true
+  archive-index:
+    description: Path to daily/archive/index.json, used to compute the day number
+    required: false
+    default: ./daily/archive/index.json
+  out-dir:
+    description: Directory to write daily/index.html into
+    required: false
+    default: ./daily
+  r2-access-key-id:
+    required: false
+  r2-secret-access-key:
+    required: false
+  r2-account-id:
+    required: false
+  r2-bucket:
+    required: false
+  r2-region:
+    required: false
+  og-cdn-base:
+    required: false
+runs:
+  using: composite
+  steps:
+    - name: Render and upload today's card, then prerender the stub
+      shell: bash
+      env:
+        CF_R2_ACCESS_KEY_ID: ${{ inputs.r2-access-key-id }}
+        CF_R2_SECRET_ACCESS_KEY: ${{ inputs.r2-secret-access-key }}
+        CF_R2_ACCOUNT_ID: ${{ inputs.r2-account-id }}
+        CF_R2_BUCKET: ${{ inputs.r2-bucket }}
+        CF_R2_REGION: ${{ inputs.r2-region }}
+        OG_CDN_BASE: ${{ inputs.og-cdn-base }}
+      run: |
+        # Deliberately no `|| true` on either line: if the upload fails, the
+        # stub must NOT be (re)written, since it would then point at an image
+        # that doesn't exist. Bash's default errexit stops the script after
+        # the first failure, so the stub-writer only ever runs once the image
+        # it references is actually live — leaving the previous day's
+        # (valid) stub in place on failure beats a fresh one with a broken
+        # image. og-daily.ts retries transient upload failures itself.
+        bun run scripts/og/og-daily.ts --archive-index "${{ inputs.archive-index }}"
+        bun run scripts/site/prerender-daily.ts --template "${{ inputs.template }}" --archive-index "${{ inputs.archive-index }}" --out "${{ inputs.out-dir }}"

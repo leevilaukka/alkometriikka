@@ -90,6 +90,25 @@ jobs:
           git fetch origin gh-pages
           git worktree add --detach ../gh-pages origin/gh-pages
 
+      # Generated here (not just in fetchData.yml) so the Daily share card and
+      # its page stub flip over in the same commit as the archive, right at
+      # the real midnight boundary — not up to ~3h later on fetchData.yml's
+      # next 6-hourly tick. Best-effort: decorative, must never block the
+      # archive publish below.
+      - name: Generate and publish today's Daily OG card
+        continue-on-error: true
+        uses: ./.github/actions/daily-og
+        with:
+          template: ../gh-pages/404.html
+          archive-index: ./daily/archive/index.json
+          out-dir: ./daily
+          r2-access-key-id: ${{ secrets.CF_R2_ACCESS_KEY_ID }}
+          r2-secret-access-key: ${{ secrets.CF_R2_SECRET_ACCESS_KEY }}
+          r2-account-id: ${{ secrets.CF_R2_ACCOUNT_ID }}
+          r2-bucket: ${{ vars.CF_R2_BUCKET || secrets.CF_R2_BUCKET }}
+          r2-region: ${{ vars.CF_R2_REGION || secrets.CF_R2_REGION }}
+          og-cdn-base: ${{ vars.OG_CDN_BASE }}
+
       - name: Publish daily folder (manifests + archive)
         working-directory: ../gh-pages
         run: |
