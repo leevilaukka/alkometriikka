@@ -83,6 +83,22 @@ jobs:
           git archive origin/gh-pages tuotteet 2>/dev/null | tar -x -C build/ || true
           git archive origin/gh-pages tuotteet-manifest.json 2>/dev/null | tar -x -C build/ || true
 
+      # The daily manifests are immutable pins: once baked, a date must never
+      # change. Restoring them here (inside build/, same as tuotteet) — instead
+      # of later into the repo root — keeps them through the `rm -rf !(build)`
+      # pruning and the force-push, so a stale/broken restore can never wipe
+      # them and let a later bake re-seed an in-flight game. Keep the restored
+      # copy (fetchData re-bakes with the same seed because the pins exist).
+      - name: Restore pre-baked daily games into build output
+        run: |
+          set -e
+          if git archive origin/gh-pages daily 2>/dev/null | tar -x -C build/ && [ -d build/daily ] && [ -n "$(ls -A build/daily)" ]; then
+            echo "✅ Restored $(ls build/daily | wc -l) daily files from gh-pages"
+          else
+            echo "❌ daily/ was not restored — refusing to deploy so clients never see a re-baked game."
+            exit 1
+          fi
+
       - name: Prerender product pages
         if: steps.prerender-gate.outputs.changed == 'true'
         run: |
@@ -127,10 +143,6 @@ jobs:
       - name: Restore per-product rss feeds from existing gh-pages
         run: |
           git archive origin/gh-pages rss 2>/dev/null | tar -x - || true
-
-      - name: Restore pre-baked daily games from existing gh-pages
-        run: |
-          git archive origin/gh-pages daily 2>/dev/null | tar -x - || true
 
       - name: Create CNAME and .nojekyll file
         run: |
