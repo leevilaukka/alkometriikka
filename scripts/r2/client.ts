@@ -43,12 +43,26 @@ export class R2S3Client {
 		});
 	}
 
-	async putObject(key: string, body: Buffer): Promise<void> {
-		await this.client.write(key, body, { type: 'image/png' });
+	async putObject(
+		key: string,
+		body: Buffer | Uint8Array | Blob | Response | string,
+		options: { type?: string } = {}
+	): Promise<void> {
+		await this.client.write(key, body, { type: options.type ?? 'image/png' });
 	}
 
 	async deleteObject(key: string): Promise<void> {
 		await this.client.delete(key);
+	}
+
+	async getObject(key: string): Promise<Response | null> {
+		try {
+			const file = this.client.file(key);
+			if (!(await file.exists())) return null;
+			return new Response(file);
+		} catch {
+			return null;
+		}
 	}
 
 	/** Lists object keys under a prefix (ListObjectsV2), following pagination. */

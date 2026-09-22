@@ -59,6 +59,15 @@ jobs:
       - name: Bake daily manifests and archive finished days
         run: bun run daily
 
+      - name: Backup daily archive to Cloudflare R2
+        env:
+          CF_R2_ACCESS_KEY_ID: ${{ secrets.CF_R2_ACCESS_KEY_ID }}
+          CF_R2_SECRET_ACCESS_KEY: ${{ secrets.CF_R2_SECRET_ACCESS_KEY }}
+          CF_R2_ACCOUNT_ID: ${{ secrets.CF_R2_ACCOUNT_ID }}
+          CF_R2_BUCKET: ${{ secrets.CF_R2_BUCKET || 'alkometriikka-og' }}
+          CF_R2_REGION: ${{ secrets.CF_R2_REGION }}
+        run: bun run backup:daily || echo "⚠️  Archive backup to R2 failed; continuing."
+
       - name: Check out deployed site
         run: |
           git fetch origin gh-pages
