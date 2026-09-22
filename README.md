@@ -54,7 +54,7 @@ flowchart TD
 
 ### Deployment
 
-The production site is primarily statically generated. GitHub Actions builds the application and generated content and publishes the resulting site to GitHub Pages.
+The production site is primarily served as a static site. GitHub Actions builds the application and generated content and publishes the resulting site to GitHub Pages. Open Graph images are generated separately and stored in a Cloudflare R2 bucket.
 
 ```mermaid
 flowchart LR
@@ -62,16 +62,16 @@ flowchart LR
     C[Product data] --> B
 
     B --> D[Svelte build]
-    B --> E[Generated product pages]
+    B --> E[SEO / OG stubs]
     B --> F[RSS / feeds]
-    B --> G[Daily-game archive]
-    B --> H[OG images]
+    B --> G[Daily archive]
+    B --> H[OG image generation]
 
     D --> I[GitHub Pages]
     E --> I
     F --> I
     G --> I
-    H --> I
+    H --> J[Cloudflare R2]
 ```
 
 ## Tech stack
