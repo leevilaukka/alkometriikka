@@ -3,11 +3,13 @@
 	import { components } from '$lib/utils/styles';
 	import type { PriceListItem } from '$lib/types';
 	import { createRng } from '$lib/daily/rng';
-	import { DAILY_QUESTION_COUNT, generateDailyGame, type GeneratedGame, type Question, type UnlimitedRunState } from '$lib/daily/questions';
+	import { reconstructDailyGame, type DailyGameManifest } from '$lib/daily/manifest';
+	import { DAILY_GAME_VERSION, DAILY_QUESTION_COUNT, generateDailyGame, type GeneratedGame, type Question, type UnlimitedRunState } from '$lib/daily/questions';
 	import { questionPoints } from '$lib/daily/scoring';
 	import { clearUnlimitedProgress, completeGame, loadSavedGame, loadStreak, loadUnlimitedProgress, resetDailyGame, saveGame, saveUnlimitedProgress, type DailyStreak, type SavedDailyGame } from '$lib/daily/storage';
 	import { LocalStorageManager } from '$lib/utils/storage';
 	import { dev } from '$app/environment';
+	import { base } from '$app/paths';
 	import { generateTitle, handleShare, sendAnalyticsEvent, setSEO } from '$lib/utils/helpers';
 	import ProductImage from '$lib/components/widgets/ProductImage.svelte';
 	import { twMerge } from 'tailwind-merge';
@@ -133,10 +135,48 @@
 			return;
 		}
 		clearUnlimitedProgress();
-		const generated = generateDailyGame(date, catalog, createRng(`alkometriikka-daily-v1-${date}`));
-		game = generated;
-		saved = { date, game: generated, currentIndex: 0, points: [], correctAnswers: [], answered: false };
-		saveGame(saved);
+		loadDailyGame(date, catalog).then((generated) => {
+			game = generated;
+			saved = { date, game: generated, currentIndex: 0, points: [], correctAnswers: [], answered: false };
+			saveGame(saved);
+		});
+	}
+
+	function isValidManifest(value: DailyGameManifest | null, date: string): value is DailyGameManifest {
+		return value !== null
+			&& value.version === DAILY_GAME_VERSION
+			&& value.date === date
+			&& typeof value.seed === 'string' && value.seed.length > 0
+			&& typeof value.gameHash === 'string' && value.gameHash.length > 0
+			&& Array.isArray(value.products) && value.products.length >= 2;
+	}
+
+	async function loadDailyGame(date: string, catalog: PriceListItem[]): Promise<GeneratedGame> {
+		// The day's questions are pre-baked by the data pipeline into
+		// `/daily/<date>.json` so every visitor gets the exact same game and it
+		// is already available the moment a new day starts. The file never
+		// contains the answers — only a seed, the frozen product pool and the
+		// hash of the canonical game — so the game is rebuilt and verified
+		// here. Fall back to the local generator when the file is missing
+		// (e.g. dev) or has been tampered with.
+		try {
+			const response = await fetch(`${base}/daily/${date}.json`);
+			if (response.ok) {
+				const manifest = (await response.json()) as DailyGameManifest | null;
+				if (isValidManifest(manifest, date)) {
+					const game = await reconstructDailyGame(manifest);
+					if (game) {
+						if (dev) console.info(`[daily] pinned manifest → ${manifest.gameHash} (${date})`);
+						return game;
+					}
+				}
+			}
+			if (dev) console.warn(`[daily] manifest rejected (HTTP ${response.status}) → local fallback`);
+		} catch (error) {
+			if (dev) console.warn('[daily] manifest unavailable → local fallback', error);
+			// Network, parse or hash failure: fall through to local generation.
+		}
+		return generateDailyGame(date, catalog, createRng(`alkometriikka-daily-v1-${date}`));
 	}
 
 	function restoreUnlimited(state: UnlimitedRunState) {

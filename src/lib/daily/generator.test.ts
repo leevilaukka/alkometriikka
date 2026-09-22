@@ -30,6 +30,62 @@ describe('daily game generation', () => {
 		expect(first).toEqual(generateDailyGame('2026-09-22', products, createRng('alkometriikka-daily-v1-2026-09-22')));
 	});
 
+	it('does not depend on the engine sort algorithm (fixed RNG consumption for options)', () => {
+		// Golden output. uniquePrices must shuffle distractors with the seeded
+		// Fisher-Yates shuffle, never `sort(() => random() - 0.5)`: a random
+		// comparator makes the number of RNG draws engine-specific (V8 vs
+		// JavaScriptCore vs SpiderMonkey), so the same date would produce
+		// different questions on different devices.
+		const game = generateDailyGame('2026-09-22', products, createRng('alkometriikka-daily-v1-2026-09-22'));
+		expect(game.questions).toEqual([
+			{
+				type: 'choice',
+				field: 'country',
+				productId: '5',
+				options: ['Country 1', 'Country 5', 'Country 2', 'Country 3'],
+				correctValue: 'Country 5'
+			},
+			{
+				type: 'price',
+				productId: '1',
+				options: [8, 25, 12, 18],
+				correctPrice: 8
+			},
+			{
+				type: 'attribute',
+				metric: 'energy',
+				productIds: ['4', '3'],
+				correctProductId: '4',
+				values: { '3': 103, '4': 104 }
+			},
+			{
+				type: 'cheaper',
+				productIds: ['2', '3'],
+				correctProductId: '2'
+			},
+			{
+				type: 'attribute',
+				metric: 'alcohol',
+				productIds: ['5', '3'],
+				correctProductId: '3',
+				values: { '3': 40, '5': 14 }
+			},
+			{
+				type: 'attribute',
+				metric: 'volume',
+				productIds: ['3', '4'],
+				correctProductId: '3',
+				values: { '3': 0.75, '4': 0.7 }
+			},
+			{
+				type: 'efficiency',
+				productIds: ['1', '2'],
+				correctProductId: '1',
+				efficiency: { '1': 10.499999999999998, '2': 2.0833333333333335 }
+			}
+		]);
+	});
+
 	it('normally changes with the date and always has seven questions', () => {
 		const first = generateDailyGame('2026-09-22', products, createRng('first'));
 		const second = generateDailyGame('2026-09-23', products, createRng('second'));

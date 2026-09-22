@@ -17,7 +17,8 @@
 		"format": "prettier --write .",
 		"lint": "prettier --check .",
 		"migrate": "bun run scripts/data/migrate.ts",
-		"sync": "bun run scripts/data/index.ts"
+		"sync": "bun run scripts/data/index.ts",
+		"daily": "bun run scripts/site/daily.ts"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^6.1.1",

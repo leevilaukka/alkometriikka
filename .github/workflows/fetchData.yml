@@ -86,6 +86,15 @@ jobs:
           name: availability
           path: availability.json
 
+      - name: Generate daily games
+        run: bun run daily
+
+      - name: Upload daily games
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily
+          path: daily
+
   og-images:
     needs: sync
     runs-on: ubuntu-latest
@@ -282,6 +291,7 @@ jobs:
           cp og-images.json ../gh-pages/og-images.json
           bun run scripts/site/prerender-products.ts --data data.json --out ../gh-pages --template ../gh-pages/404.html --og-manifest ../gh-pages/og-images.json --manifest ../gh-pages/tuotteet-manifest.json
           cp data.json availability.json sitemap.xml rss.xml feed.json ../gh-pages/
+          cp -r daily ../gh-pages/
           rm -rf ../gh-pages/rss
           cp -r rss ../gh-pages/
 
@@ -290,7 +300,7 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add data.json availability.json sitemap.xml rss.xml feed.json rss tuotteet tuotteet-manifest.json -f
+          git add data.json availability.json sitemap.xml rss.xml feed.json rss daily tuotteet tuotteet-manifest.json -f
           [ -f og-images.json ] && git add og-images.json -f || true
           git commit -m "Update price list and static product pages [skip ci]" || echo "No changes to commit"
           git push origin HEAD:gh-pages

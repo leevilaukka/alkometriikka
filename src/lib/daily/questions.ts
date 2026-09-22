@@ -4,18 +4,60 @@ import { shuffle } from './rng';
 
 export type ProductId = string;
 export const DAILY_QUESTION_COUNT = 7;
-export const DAILY_GAME_VERSION = 5;
+export const DAILY_GAME_VERSION = 7;
 
-export type PriceQuestion = { type: 'price'; productId: ProductId; options: number[]; correctPrice: number };
-export type ComparisonQuestion = { type: 'cheaper'; productIds: [ProductId, ProductId]; correctProductId: ProductId };
-export type EfficiencyQuestion = { type: 'efficiency'; productIds: [ProductId, ProductId]; correctProductId: ProductId; efficiency: Record<ProductId, number> };
-export type EstimateQuestion = { type: 'estimate'; productId: ProductId; volume: number; alcoholPercentage: number; correctPrice: number };
+export type PriceQuestion = {
+	type: 'price';
+	productId: ProductId;
+	options: number[];
+	correctPrice: number;
+};
+export type ComparisonQuestion = {
+	type: 'cheaper';
+	productIds: [ProductId, ProductId];
+	correctProductId: ProductId;
+};
+export type EfficiencyQuestion = {
+	type: 'efficiency';
+	productIds: [ProductId, ProductId];
+	correctProductId: ProductId;
+	efficiency: Record<ProductId, number>;
+};
+export type EstimateQuestion = {
+	type: 'estimate';
+	productId: ProductId;
+	volume: number;
+	alcoholPercentage: number;
+	correctPrice: number;
+};
 export type AttributeMetric = 'alcohol' | 'volume' | 'literPrice' | 'sugar' | 'energy';
-export type AttributeQuestion = { type: 'attribute'; metric: AttributeMetric; productIds: [ProductId, ProductId]; correctProductId: ProductId; values: Record<ProductId, number> };
+export type AttributeQuestion = {
+	type: 'attribute';
+	metric: AttributeMetric;
+	productIds: [ProductId, ProductId];
+	correctProductId: ProductId;
+	values: Record<ProductId, number>;
+};
 export type ChoiceField = 'country' | 'manufacturer' | 'category';
-export type ChoiceQuestion = { type: 'choice'; field: ChoiceField; productId: ProductId; options: string[]; correctValue: string };
-export type Question = PriceQuestion | ComparisonQuestion | EfficiencyQuestion | EstimateQuestion | AttributeQuestion | ChoiceQuestion;
-export type GeneratedGame = { version: typeof DAILY_GAME_VERSION; date: string; questions: Question[] };
+export type ChoiceQuestion = {
+	type: 'choice';
+	field: ChoiceField;
+	productId: ProductId;
+	options: string[];
+	correctValue: string;
+};
+export type Question =
+	| PriceQuestion
+	| ComparisonQuestion
+	| EfficiencyQuestion
+	| EstimateQuestion
+	| AttributeQuestion
+	| ChoiceQuestion;
+export type GeneratedGame = {
+	version: typeof DAILY_GAME_VERSION;
+	date: string;
+	questions: Question[];
+};
 export type SavedDailyGame = {
 	date: string;
 	game: GeneratedGame;
@@ -43,7 +85,11 @@ export type UnlimitedRunState = {
 	correct?: number;
 };
 
-type ValidProduct = PriceListItem & { [AllColumns.Number]: string; [AllColumns.Name]: string; [AllColumns.Price]: number };
+type ValidProduct = PriceListItem & {
+	[AllColumns.Number]: string;
+	[AllColumns.Name]: string;
+	[AllColumns.Price]: number;
+};
 
 function positiveNumber(value: unknown): number | null {
 	if (typeof value === 'number' && Number.isFinite(value) && value > 0) return value;
@@ -57,16 +103,22 @@ function productId(product: PriceListItem): string | null {
 	return typeof id === 'string' && id.trim() ? id : null;
 }
 
-function getValidProducts(products: readonly PriceListItem[]): ValidProduct[] {
+export function getValidProducts(products: readonly PriceListItem[]): ValidProduct[] {
 	const seen = new Set<string>();
-	return products.filter((product): product is ValidProduct => {
-		const id = productId(product);
-		const name = product[AllColumns.Name];
-		const price = positiveNumber(product[AllColumns.Price]);
-		if (!id || seen.has(id) || typeof name !== 'string' || !name.trim() || price == null) return false;
-		seen.add(id);
-		return true;
-	}).map((product) => ({ ...product, [AllColumns.Price]: positiveNumber(product[AllColumns.Price])! }));
+	return products
+		.filter((product): product is ValidProduct => {
+			const id = productId(product);
+			const name = product[AllColumns.Name];
+			const price = positiveNumber(product[AllColumns.Price]);
+			if (!id || seen.has(id) || typeof name !== 'string' || !name.trim() || price == null)
+				return false;
+			seen.add(id);
+			return true;
+		})
+		.map((product) => ({
+			...product,
+			[AllColumns.Price]: positiveNumber(product[AllColumns.Price])!
+		}));
 }
 
 function getVolume(product: PriceListItem): number | null {
@@ -89,12 +141,21 @@ function pureAlcoholPerEuro(product: PriceListItem): number | null {
 	return Number.isFinite(result) && result > 0 ? result : null;
 }
 
-function uniquePrices(correctPrice: number, products: readonly ValidProduct[], random: () => number): number[] {
-	const nearby = products.map((product) => product[AllColumns.Price]).filter((price) => price !== correctPrice).sort(() => random() - 0.5);
+function uniquePrices(
+	correctPrice: number,
+	products: readonly ValidProduct[],
+	random: () => number
+): number[] {
+	const nearby = shuffle(
+		products.map((product) => product[AllColumns.Price]).filter((price) => price !== correctPrice),
+		random
+	);
 	const options = [correctPrice, ...nearby];
 	for (const offset of [0.5, 1, 2, 5]) {
 		if (options.length >= 4) break;
-		const candidate = Number(Math.max(0.01, correctPrice + (random() > 0.5 ? offset : -offset)).toFixed(2));
+		const candidate = Number(
+			Math.max(0.01, correctPrice + (random() > 0.5 ? offset : -offset)).toFixed(2)
+		);
 		if (!options.includes(candidate)) options.push(candidate);
 	}
 	return options.slice(0, 4);
@@ -114,15 +175,25 @@ function attributeValue(product: PriceListItem, metric: AttributeMetric): number
 	return null;
 }
 
-export function generateDailyGame(date: string, products: readonly PriceListItem[], random: () => number): GeneratedGame {
+export function generateDailyGame(
+	date: string,
+	products: readonly PriceListItem[],
+	random: () => number
+): GeneratedGame {
 	const validProducts = getValidProducts(products);
 	const questions: Question[] = [];
 	const efficiencyProducts = validProducts.filter((product) => pureAlcoholPerEuro(product) != null);
-	const estimateProducts = validProducts.filter((product) => getVolume(product) != null && getAlcoholPercentage(product) != null);
+	const estimateProducts = validProducts.filter(
+		(product) => getVolume(product) != null && getAlcoholPercentage(product) != null
+	);
 	const usedProducts = new Set<string>();
 
 	const weightedPick = (pool: readonly ValidProduct[]) => {
-		const totalWeight = pool.reduce((total, product) => total + (String(product[AllColumns.New]).toLowerCase() === 'uutuus' ? 3 : 1), 0);
+		const totalWeight = pool.reduce(
+			(total, product) =>
+				total + (String(product[AllColumns.New]).toLowerCase() === 'uutuus' ? 3 : 1),
+			0
+		);
 		let cursor = random() * totalWeight;
 		for (const product of pool) {
 			cursor -= String(product[AllColumns.New]).toLowerCase() === 'uutuus' ? 3 : 1;
@@ -140,13 +211,19 @@ export function generateDailyGame(date: string, products: readonly PriceListItem
 		const secondPool = pool.filter((product) => product !== first);
 		return [first, pickProduct(secondPool)] as const;
 	};
-	const remember = (...selected: ValidProduct[]) => selected.forEach((product) => usedProducts.add(productId(product)!));
+	const remember = (...selected: ValidProduct[]) =>
+		selected.forEach((product) => usedProducts.add(productId(product)!));
 
 	const addPrice = () => {
 		if (!validProducts.length) return false;
 		const product = pickProduct(validProducts);
 		remember(product);
-		questions.push({ type: 'price', productId: productId(product)!, options: uniquePrices(product[AllColumns.Price], validProducts, random), correctPrice: product[AllColumns.Price] });
+		questions.push({
+			type: 'price',
+			productId: productId(product)!,
+			options: uniquePrices(product[AllColumns.Price], validProducts, random),
+			correctPrice: product[AllColumns.Price]
+		});
 		return true;
 	};
 	const addComparison = () => {
@@ -155,7 +232,12 @@ export function generateDailyGame(date: string, products: readonly PriceListItem
 		const [first, second] = pair;
 		if (first[AllColumns.Price] === second[AllColumns.Price]) return false;
 		remember(first, second);
-		questions.push({ type: 'cheaper', productIds: [productId(first)!, productId(second)!], correctProductId: first[AllColumns.Price] <= second[AllColumns.Price] ? productId(first)! : productId(second)! });
+		questions.push({
+			type: 'cheaper',
+			productIds: [productId(first)!, productId(second)!],
+			correctProductId:
+				first[AllColumns.Price] <= second[AllColumns.Price] ? productId(first)! : productId(second)!
+		});
 		return true;
 	};
 	const addEfficiency = () => {
@@ -166,7 +248,13 @@ export function generateDailyGame(date: string, products: readonly PriceListItem
 		const secondEfficiency = pureAlcoholPerEuro(second)!;
 		if (firstEfficiency === secondEfficiency) return false;
 		remember(first, second);
-		questions.push({ type: 'efficiency', productIds: [productId(first)!, productId(second)!], correctProductId: firstEfficiency >= secondEfficiency ? productId(first)! : productId(second)!, efficiency: { [productId(first)!]: firstEfficiency, [productId(second)!]: secondEfficiency } });
+		questions.push({
+			type: 'efficiency',
+			productIds: [productId(first)!, productId(second)!],
+			correctProductId:
+				firstEfficiency >= secondEfficiency ? productId(first)! : productId(second)!,
+			efficiency: { [productId(first)!]: firstEfficiency, [productId(second)!]: secondEfficiency }
+		});
 		return true;
 	};
 	const addEstimate = () => {
@@ -175,7 +263,13 @@ export function generateDailyGame(date: string, products: readonly PriceListItem
 		const alcoholPercentage = product && getAlcoholPercentage(product);
 		if (!product || volume == null || alcoholPercentage == null) return false;
 		remember(product);
-		questions.push({ type: 'estimate', productId: productId(product)!, volume, alcoholPercentage, correctPrice: product[AllColumns.Price] });
+		questions.push({
+			type: 'estimate',
+			productId: productId(product)!,
+			volume,
+			alcoholPercentage,
+			correctPrice: product[AllColumns.Price]
+		});
 		return true;
 	};
 	const addAttribute = (metric: AttributeMetric) => {
@@ -187,26 +281,59 @@ export function generateDailyGame(date: string, products: readonly PriceListItem
 		const secondValue = attributeValue(second, metric)!;
 		if (firstValue === secondValue) return false;
 		remember(first, second);
-		questions.push({ type: 'attribute', metric, productIds: [productId(first)!, productId(second)!], correctProductId: firstValue >= secondValue ? productId(first)! : productId(second)!, values: { [productId(first)!]: firstValue, [productId(second)!]: secondValue } });
+		questions.push({
+			type: 'attribute',
+			metric,
+			productIds: [productId(first)!, productId(second)!],
+			correctProductId: firstValue >= secondValue ? productId(first)! : productId(second)!,
+			values: { [productId(first)!]: firstValue, [productId(second)!]: secondValue }
+		});
 		return true;
 	};
 	const addChoice = (field: ChoiceField) => {
-		const column = field === 'country' ? AllColumns.Country : field === 'manufacturer' ? AllColumns.Manufacturer : AllColumns.Type;
+		const column =
+			field === 'country'
+				? AllColumns.Country
+				: field === 'manufacturer'
+					? AllColumns.Manufacturer
+					: AllColumns.Type;
 		const candidates = validProducts.filter((product) => textValue(product, column));
 		if (!candidates.length) return false;
 		const product = pickProduct(candidates);
 		const correctValue = textValue(product, column)!;
-		const allValues = [...new Set(candidates.map((item) => textValue(item, column)).filter((value): value is string => Boolean(value)))];
+		const allValues = [
+			...new Set(
+				candidates
+					.map((item) => textValue(item, column))
+					.filter((value): value is string => Boolean(value))
+			)
+		];
 		const options = [correctValue, ...allValues.filter((value) => value !== correctValue)];
 		if (options.length < 2) return false;
 		remember(product);
-		questions.push({ type: 'choice', field, productId: productId(product)!, options: shuffle(options.slice(0, 4), random), correctValue });
+		questions.push({
+			type: 'choice',
+			field,
+			productId: productId(product)!,
+			options: shuffle(options.slice(0, 4), random),
+			correctValue
+		});
 		return true;
 	};
-	const generators: (() => boolean)[] = [addPrice, addComparison, addEfficiency, addEstimate,
-		() => addAttribute('alcohol'), () => addAttribute('volume'), () => addAttribute('literPrice'),
-		() => addAttribute('sugar'), () => addAttribute('energy'),
-		() => addChoice('country'), () => addChoice('manufacturer'), () => addChoice('category')];
+	const generators: (() => boolean)[] = [
+		addPrice,
+		addComparison,
+		addEfficiency,
+		addEstimate,
+		() => addAttribute('alcohol'),
+		() => addAttribute('volume'),
+		() => addAttribute('literPrice'),
+		() => addAttribute('sugar'),
+		() => addAttribute('energy'),
+		() => addChoice('country'),
+		() => addChoice('manufacturer'),
+		() => addChoice('category')
+	];
 	for (const generator of shuffle(generators, random)) {
 		if (questions.length >= DAILY_QUESTION_COUNT) break;
 		generator();
@@ -216,7 +343,11 @@ export function generateDailyGame(date: string, products: readonly PriceListItem
 	return { version: DAILY_GAME_VERSION, date, questions };
 }
 
-export function productForQuestion(question: Question, products: readonly PriceListItem[], id: string) {
+export function productForQuestion(
+	question: Question,
+	products: readonly PriceListItem[],
+	id: string
+) {
 	return products.find((product) => product[AllColumns.Number] === id);
 }
 
