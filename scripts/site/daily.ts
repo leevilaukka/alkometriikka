@@ -19,14 +19,7 @@
  * questions draw from, and a SHA-256 hash of the canonical game. The client
  * rebuilds the exact game from the seed + pool and verifies it against the hash.
  */
-import {
-	existsSync,
-	mkdirSync,
-	readdirSync,
-	readFileSync,
-	rmSync,
-	writeFileSync
-} from 'node:fs';
+import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { Kaljakori } from '../../src/lib/alko/index.ts';
 import { DAILY_GAME_VERSION } from '../../src/lib/daily/questions';
