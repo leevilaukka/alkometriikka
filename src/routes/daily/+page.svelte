@@ -3,7 +3,7 @@
 	import { components } from '$lib/utils/styles';
 	import type { PriceListItem } from '$lib/types';
 	import { createRng } from '$lib/daily/rng';
-	import { reconstructDailyGame, type DailyGameManifest } from '$lib/daily/manifest';
+	import { reconstructDailyGame, type DailyGameManifest, type DailyProduct } from '$lib/daily/manifest';
 	import { DAILY_GAME_VERSION, DAILY_QUESTION_COUNT, generateDailyGame, type GeneratedGame, type Question, type UnlimitedRunState } from '$lib/daily/questions';
 	import { questionPoints } from '$lib/daily/scoring';
 	import { clearUnlimitedProgress, completeGame, loadSavedGame, loadStreak, loadUnlimitedProgress, resetDailyGame, saveGame, saveUnlimitedProgress, type DailyStreak, type SavedDailyGame } from '$lib/daily/storage';
@@ -18,6 +18,8 @@
 
 	let { data }: PageProps = $props();
 	let products = $state<PriceListItem[]>([]);
+	/** The day's frozen manifest pool; preferred over the live catalog for display. */
+	let pool = $state<PriceListItem[]>([]);
 	let game = $state<GeneratedGame | null>(null);
 	let saved = $state<SavedDailyGame | null>(null);
 	let streak = $state<DailyStreak>(loadStreak());
@@ -42,22 +44,27 @@
 
     const displayDate = new Intl.DateTimeFormat('fi-FI', { day: 'numeric', month: 'numeric', year: 'numeric' }).format(new Date(`${date}T12:00:00`));
 	const question = $derived(game?.questions[currentIndex]);
-	const currentProduct = $derived(question ? products.find((product) => product[AllColumns.Number] === productIdFor(question)) : undefined);
+	const currentProduct = $derived(question ? findProduct(productIdFor(question)) : undefined);
 	const finished = $derived(saved?.completed === true);
 	const totalScore = $derived(saved?.score ?? points.reduce((total, value) => total + value, 0));
 	const totalCorrect = $derived(saved?.correct ?? correctAnswers.filter(Boolean).length);
 	const showcasedProducts = $derived.by(() => {
 		if (!game) return [];
 		const ids = game.questions.flatMap((currentQuestion) => currentQuestion.type === 'cheaper' || currentQuestion.type === 'efficiency' || currentQuestion.type === 'attribute' ? currentQuestion.productIds : [currentQuestion.productId]);
-		return [...new Set(ids)].map((id) => products.find((product) => product[AllColumns.Number] === id)).filter((product): product is PriceListItem => Boolean(product));
+		return [...new Set(ids)].map((id) => findProduct(id)).filter((product): product is PriceListItem => Boolean(product));
 	});
 
 	function productIdFor(currentQuestion: Question): string {
 		return currentQuestion.type === 'cheaper' || currentQuestion.type === 'efficiency' || currentQuestion.type === 'attribute' ? currentQuestion.productIds[0] : currentQuestion.productId;
 	}
 
+	function findProduct(id: string): PriceListItem | undefined {
+		const frozen = runMode === 'daily' ? pool.find((product) => product[AllColumns.Number] === id) : undefined;
+		return frozen ?? products.find((product) => product[AllColumns.Number] === id);
+	}
+
 	function productName(id: string) {
-		return products.find((product) => product[AllColumns.Number] === id)?.[AllColumns.Name] ?? 'Tuntematon tuote';
+		return findProduct(id)?.[AllColumns.Name] ?? 'Tuntematon tuote';
 	}
 
 	function price(value: number) {
@@ -125,6 +132,7 @@
 			runMode = 'daily';
 			saved = existing;
 			game = existing.game;
+			pool = (existing.products ?? []) as unknown as PriceListItem[];
 			currentIndex = existing.currentIndex ?? 0;
 			points = existing.points ?? [];
 			correctAnswers = existing.correctAnswers ?? [];
@@ -143,9 +151,10 @@
 	function startDaily(catalog: PriceListItem[]) {
 		dailyError = null;
 		loadDailyGame(date, catalog)
-			.then((generated) => {
+			.then(({ game: generated, products: frozen }) => {
 				game = generated;
-				saved = { date, game: generated, currentIndex: 0, points: [], correctAnswers: [], answered: false };
+				pool = frozen as unknown as PriceListItem[];
+				saved = { date, game: generated, products: frozen, currentIndex: 0, points: [], correctAnswers: [], answered: false };
 				saveGame(saved);
 			})
 			.catch((error) => {
@@ -162,7 +171,7 @@
 			&& Array.isArray(value.products) && value.products.length >= 2;
 	}
 
-	async function loadDailyGame(date: string, catalog: PriceListItem[]): Promise<GeneratedGame> {
+	async function loadDailyGame(date: string, catalog: PriceListItem[]): Promise<{ game: GeneratedGame; products: DailyProduct[] }> {
 		// The day's questions are pre-baked by the data pipeline into
 		// `/daily/<date>.json` so every visitor gets the exact same game and it
 		// is already available the moment a new day starts. The file never
@@ -182,7 +191,7 @@
 						const game = await reconstructDailyGame(manifest);
 						if (game) {
 							if (dev) console.info(`[daily] pinned manifest → ${manifest.gameHash} (${date})`);
-							return game;
+							return { game, products: manifest.products };
 						}
 					}
 				}
@@ -194,7 +203,7 @@
 				if (attempt < MANIFEST_ATTEMPTS) await new Promise((resolve) => setTimeout(resolve, attempt * 1000));
 			}
 		}
-		if (dev) return generateDailyGame(date, catalog, createRng(`alkometriikka-daily-v1-${date}`));
+		if (dev) return { game: generateDailyGame(date, catalog, createRng(`alkometriikka-daily-v1-${date}`)), products: [] };
 		throw new Error('Päivän peliä ei voitu ladata.');
 	}
 
@@ -224,6 +233,7 @@
 		runMode = 'daily';
 		saved = existing;
 		game = existing.game;
+		pool = (existing.products ?? []) as unknown as PriceListItem[];
 		currentIndex = existing.currentIndex ?? 0;
 		points = existing.points ?? [];
 		correctAnswers = existing.correctAnswers ?? [];
@@ -547,7 +557,7 @@
 						<h2 class="text-2xl font-bold">{question.type === 'cheaper' ? 'Kumpi tuote on halvempi?' : question.type === 'efficiency' ? 'Kummasta saat enemmän puhdasta alkoholia eurolla?' : attributeTitle(question.metric)}</h2>
 						<div class="mt-6 grid gap-3 sm:grid-cols-2">
 							{#each question.productIds as id (id)}
-								{@const comparedProduct = products.find((product) => product[AllColumns.Number] === id)}
+								{@const comparedProduct = findProduct(id)}
 								<button class={twMerge(components.button(), 'min-h-40 w-full justify-start p-3 text-left', answered && (isCorrect(id) ? 'border-green-600 bg-green-100 text-green-900' : selectedAnswer === id ? 'border-red-600 bg-red-100 text-red-900' : 'opacity-60'))} disabled={answered} onclick={() => answer(id)}>
 									<div class="h-32 w-24 shrink-0 rounded bg-white p-1">
 										<ProductImage number={id} name={productName(id)} transform="medium" />

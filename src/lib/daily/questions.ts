@@ -1,9 +1,21 @@
 import { AllColumns } from '$lib/utils/constants';
 import type { PriceListItem } from '$lib/types';
 import { shuffle } from './rng';
+import type { DailyProduct } from './manifest';
 
 export type ProductId = string;
 export const DAILY_QUESTION_COUNT = 7;
+/**
+ * Bump whenever the generated game changes for the same seed + pool (this
+ * file, rng.ts, the pool/trim logic in manifest.ts). The pinned-manifest test
+ * fails when you forget. A bump is not free:
+ * - the baker re-bakes today's manifest, so the live game changes mid-day;
+ * - every player's saved progress for today is discarded (loadSavedGame);
+ * - finished days not yet archived are skipped forever (bakeArchive only
+ *   archives current-version manifests), so deploy after the 00:15 archive run;
+ * - until fetchData re-bakes (right after the build), clients reject the old
+ *   manifests and show an error.
+ */
 export const DAILY_GAME_VERSION = 7;
 
 export type PriceQuestion = {
@@ -61,6 +73,8 @@ export type GeneratedGame = {
 export type SavedDailyGame = {
 	date: string;
 	game: GeneratedGame;
+	/** The manifest's frozen pool, so display data never depends on the live catalog. */
+	products?: DailyProduct[];
 	completed?: boolean;
 	score?: number;
 	correct?: number;
@@ -72,9 +86,9 @@ export type SavedDailyGame = {
 	answerPoints?: number;
 };
 export type DailyStreak = { current: number; best: number; completedDate?: string };
-/** Per-date result kept in localStorage so the archive can show past scores. */
 /**
- * `live` marks a result earned on the day itself (via the Daily page). Those
+ * Per-date result kept in localStorage so the archive can show past scores.
+ * `live` marks a result earned on the day itself (via the Daily page); those
  * days are shown read-only in the archive and cannot be replayed.
  */
 export type ArchivedScore = { score: number; correct: number; live?: boolean };

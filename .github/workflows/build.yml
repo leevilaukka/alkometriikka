@@ -37,6 +37,12 @@ jobs:
       - name: Install dependencies
         run: bun i --frozen-lockfile
 
+      # Includes the pinned-manifest guard: a generator change without a
+      # DAILY_GAME_VERSION bump must never deploy (live manifests would stop
+      # verifying and players would get an error instead of the daily game).
+      - name: Run tests
+        run: bunx svelte-kit sync && bun test
+
       - name: Seed latest deployed dataset
         run: |
           git fetch origin gh-pages || true

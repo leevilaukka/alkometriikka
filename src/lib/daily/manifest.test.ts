@@ -2,7 +2,8 @@ import { describe, expect, it } from 'bun:test';
 import { AllColumns } from '$lib/utils/constants';
 import type { PriceListItem } from '$lib/types';
 import { createRng } from './rng';
-import { DAILY_QUESTION_COUNT, generateDailyGame } from './questions';
+import { DAILY_GAME_VERSION, DAILY_QUESTION_COUNT, generateDailyGame } from './questions';
+import pinnedManifest from './fixtures/pinned-manifest.json';
 import {
 	ARCHIVE_INDEX_VERSION,
 	buildArchiveGame,
@@ -139,5 +140,17 @@ describe('daily game manifest', () => {
 
 	it('archive index version is stable', () => {
 		expect(ARCHIVE_INDEX_VERSION).toBe(1);
+	});
+
+	it('still rebuilds a real deployed manifest to its pinned hash', async () => {
+		// Guard against changing the generator, RNG or product validation
+		// without bumping DAILY_GAME_VERSION: the already-deployed manifests
+		// would stop verifying and players would get an error instead of the
+		// day's game. If this fails on purpose, bump DAILY_GAME_VERSION and
+		// replace the fixture with a freshly baked manifest
+		// (`bun run daily --dev`, then copy one from static/daily/).
+		const manifest = pinnedManifest as DailyGameManifest;
+		expect(manifest.version).toBe(DAILY_GAME_VERSION);
+		expect(await reconstructDailyGame(manifest)).not.toBeNull();
 	});
 });
