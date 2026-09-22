@@ -197,6 +197,23 @@
 		saveUnlimitedProgress(state);
 	}
 
+	function exitUnlimited() {
+		clearUnlimitedProgress();
+		shareStatus = '';
+		const existing = loadSavedGame(date);
+		if (!existing) return;
+		runMode = 'daily';
+		saved = existing;
+		game = existing.game;
+		currentIndex = existing.currentIndex ?? 0;
+		points = existing.points ?? [];
+		correctAnswers = existing.correctAnswers ?? [];
+		selectedAnswer = existing.selectedAnswer ?? null;
+		answered = existing.answered ?? false;
+		answerPoints = existing.answerPoints ?? 0;
+		streak = loadStreak();
+	}
+
 	function startUnlimited() {
 		if (!unlimitedEnabled || !saved?.completed || !products.length) return;
 		const seed = globalThis.crypto?.randomUUID?.() ?? `${Date.now()}-${Math.random()}`;
@@ -397,14 +414,19 @@
 		<header class="flex flex-col gap-2 border-b border-primary pb-5">
 			<div class="flex items-center justify-between gap-4">
 				<div>
-					<p class="text-sm font-bold uppercase tracking-widest text-brand-2">Alkometriikka</p>
+					<p class="text-sm font-bold uppercase tracking-widest text-brand-2">Alkometriikka {runMode === "unlimited" ? "Daily" : ""}</p>
 					<div class="flex items-center gap-2">
 						<h1 class="text-3xl font-bold md:text-4xl">{runMode === 'daily' ? 'Daily' : 'Unlimited'}</h1>
 						<span class="rounded border border-brand-2 px-1.5 py-0.5 text-xs font-bold uppercase tracking-wide text-brand-2">Beta</span>
 					</div>
 				</div>
 				<div class="flex items-center gap-2">
-					<span class="rounded bg-brand-4 px-3 py-2 text-sm font-bold text-white">{runMode === 'unlimited' ? 'Rajaton' : displayDate}</span>
+					{#if runMode === 'daily'}
+						<span class="rounded bg-brand-4 px-3 py-2 text-sm font-bold text-white">{displayDate}</span>
+					{/if}
+					{#if runMode === 'unlimited'}
+						<button class={twMerge(components.button(), 'px-3 py-2')} onclick={exitUnlimited}> <span class="flex items-center gap-2"> <Icon name="exit"/>Lopeta</span> </button>
+					{/if}
 					{#if dev}
 						<button class={twMerge(components.button({ size: 'xs' }), 'border-red-300 px-2 py-1 text-xs')} onclick={resetGame}>Nollaa peli</button>
 					{/if}
@@ -427,9 +449,9 @@
                         <p class="text-sm text-secondary">Seuraava peli aukeaa:</p>
                         <p class="text-lg font-bold">{dailyCountdown}</p>
                     </div>
-                    <p class="text-secondary">Voit myös harjoitella Rajaton-tilassa alla olevalla painikkeella.</p>
+                    <p class="text-secondary">Voit myös harjoitella Unlimited-tilassa tai pelata aiempien päivien pelejä alta.</p>
 				{:else}
-					<p class="text-secondary">Rajattoman kierroksen tulosta ei tallennettu.</p>
+					<p class="text-secondary">Rajattoman pelin tuloksia ei tallenneta.</p>
 				{/if}
 				<section class="border-t border-primary pt-5 text-left">
 					<h2 class="text-lg font-bold">{runMode === 'daily' ? 'Tämän päivän tuotteet' : 'Tämän kierroksen tuotteet'}</h2>
