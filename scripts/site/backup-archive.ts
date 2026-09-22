@@ -139,11 +139,11 @@ async function main(): Promise<void> {
 				region
 			});
 			console.log(`☁️  Downloading backup from R2 (${targetBucket}/${backupKey})...`);
-			const response = await client.getObject(backupKey);
-			if (!response || !response.ok) {
+			const object = await client.getObject(backupKey);
+			if (!object) {
 				throw new Error(`Backup object "${backupKey}" not found in R2 bucket "${targetBucket}"`);
 			}
-			tarGzBytes = new Uint8Array(await response.arrayBuffer());
+			tarGzBytes = new Uint8Array(await object.arrayBuffer());
 		} else {
 			throw new Error('Restore requires either --in <file> or R2 credentials.');
 		}
