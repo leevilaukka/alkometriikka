@@ -387,6 +387,8 @@ function productHtml(
       url,
       price,
       priceCurrency: "EUR",
+      valueAddedTaxIncluded: true,
+      seller: { "@type": "Organization", name: "Alko", url: "https://www.alko.fi" },
       ...(sale && (sale.campaignStart || sale.campaignEnd)
         ? {
             ...(sale.campaignStart ? { validFrom: sale.campaignStart } : {}),
@@ -430,6 +432,19 @@ function productHtml(
     }
   };
 
+  // Only two levels: there's no indexable category-listing page to point an
+  // intermediate crumb at (the /tuotteet route is a catch-all for individual
+  // products, not a filterable category page), and a breadcrumb item's URL
+  // must resolve to a real page.
+  const breadcrumbList = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Alkometriikka", item: `${SITE_URL}/` },
+      { "@type": "ListItem", position: 2, name, item: url }
+    ]
+  };
+
   const metadata = [
     `\t<meta name="description" content="${escapeHtml(description)}" />`,
     `\t<meta name="keywords" content="${escapeHtml(keywords)}" />`,
@@ -454,7 +469,8 @@ function productHtml(
     `\t<meta name="twitter:title" content="${escapeHtml(title)}" />`,
     `\t<meta name="twitter:description" content="${escapeHtml(description)}" />`,
     `\t<meta name="twitter:image" content="${escapeHtml(ogImage)}" />`,
-    `\t<script type="application/ld+json">${escapeJson(jsonLd)}</script>`
+    `\t<script type="application/ld+json">${escapeJson(jsonLd)}</script>`,
+    `\t<script type="application/ld+json">${escapeJson(breadcrumbList)}</script>`
   ].join("\n");
 
   const facts = [

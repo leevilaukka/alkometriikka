@@ -37,6 +37,10 @@ function escapeHtml(value: unknown): string {
 		.replaceAll("'", '&#39;');
 }
 
+function escapeJson(value: unknown): string {
+	return JSON.stringify(value).replaceAll('<', '\\u003c');
+}
+
 function replaceMarkedSection(template: string, content: string): string {
 	const start = template.indexOf(SEO_START);
 	const end = template.indexOf(SEO_END, start);
@@ -69,6 +73,18 @@ async function main() {
 	const url = `${SITE_URL}/daily/`;
 	const ogImage = dailyOgUrl(date);
 
+	const jsonLd = {
+		'@context': 'https://schema.org',
+		'@type': 'Quiz',
+		name: TITLE,
+		description: DESCRIPTION,
+		url,
+		inLanguage: 'fi-FI',
+		datePublished: date,
+		isPartOf: { '@type': 'WebSite', name: 'Alkometriikka', url: SITE_URL },
+		publisher: { '@type': 'Organization', name: 'Alkometriikka', url: SITE_URL }
+	};
+
 	const metadata = [
 		`\t<meta name="description" content="${escapeHtml(DESCRIPTION)}" />`,
 		`\t<link rel="canonical" href="${escapeHtml(url)}" />`,
@@ -84,11 +100,27 @@ async function main() {
 		`\t<meta name="twitter:card" content="summary_large_image" />`,
 		`\t<meta name="twitter:title" content="${escapeHtml(TITLE)}" />`,
 		`\t<meta name="twitter:description" content="${escapeHtml(DESCRIPTION)}" />`,
-		`\t<meta name="twitter:image" content="${escapeHtml(ogImage)}" />`
+		`\t<meta name="twitter:image" content="${escapeHtml(ogImage)}" />`,
+		`\t<script type="application/ld+json">${escapeJson(jsonLd)}</script>`
 	].join('\n');
+
+	// Crawlers that don't execute JS need real content in <body>, not just
+	// <head> metadata — otherwise there's no H1 for them to see. This mirrors
+	// prerender-products.ts's fallback: a plain-HTML summary that removes
+	// itself once the SvelteKit app hydrates and renders the real page.
+	const fallback = `
+\t<article data-prerendered-daily style="max-width:80rem;margin:0 auto;padding:2rem;font-family:sans-serif">
+\t\t<nav><a href="/">Alkometriikka</a></nav>
+\t\t<header>
+\t\t\t<h1>${escapeHtml(TITLE)}</h1>
+\t\t\t<p>${escapeHtml(DESCRIPTION)}</p>
+\t\t</header>
+\t</article>
+\t<script>document.querySelector('[data-prerendered-daily]')?.remove();document.currentScript?.remove();</script>`;
 
 	let html = replaceMarkedSection(template, metadata);
 	html = html.replace(/<title>[^<]*<\/title>/, `<title>${escapeHtml(TITLE)}</title>`);
+	html = html.replace(/(<body(?:\s[^>]*)?>)/, `$1${fallback}`);
 
 	await mkdir(outDir, { recursive: true });
 	await Bun.write(path.join(outDir, 'index.html'), html);
