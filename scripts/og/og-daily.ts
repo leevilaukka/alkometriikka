@@ -1,6 +1,7 @@
 import path from 'node:path';
 import { mkdir } from 'node:fs/promises';
-import { dailyOgKey, dailyOgSvg, svgToPng } from './og';
+import { svgToPng } from './og';
+import { dailyOgKey, dailyOgSvg } from './og-daily-card';
 import { R2S3Client } from '../r2/client';
 import { toISODateInTimeZone } from '../../src/lib/utils/sales';
 

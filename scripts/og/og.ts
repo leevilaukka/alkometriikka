@@ -150,21 +150,6 @@ export function ogImageUrl(key: string): string {
 	return `${OG_CDN_BASE}/${key}`;
 }
 
-/**
- * The Daily share card is one generic image per calendar day (not
- * personalized per player), so its key is just the date — no content hash
- * needed, since a new day always gets a new key.
- */
-export const DAILY_OG_KEY_PREFIX = 'daily';
-
-export function dailyOgKey(date: string): string {
-	return `${DAILY_OG_KEY_PREFIX}/${date}.png`;
-}
-
-export function dailyOgUrl(date: string): string {
-	return ogImageUrl(dailyOgKey(date));
-}
-
 function sha256Hex(input: string | ArrayBuffer | Uint8Array): string {
 	const hasher = new CryptoHasher('sha256');
 	hasher.update(input);
@@ -217,14 +202,14 @@ export function ogDesignFingerprint(): Promise<string> {
 /* Rendering                                                                  */
 /* -------------------------------------------------------------------------- */
 
-const RED = '#e51b15';
-const INK = '#18181c';
-const SLATE = '#5b5b62';
+export const RED = '#e51b15';
+export const INK = '#18181c';
+export const SLATE = '#5b5b62';
 const FAINT = '#909099';
 
-type El = { type: string; props: Record<string, unknown> };
+export type El = { type: string; props: Record<string, unknown> };
 
-function el(
+export function el(
 	type: string,
 	props: Record<string, unknown>,
 	...children: Array<El | string | null | undefined>
@@ -265,7 +250,7 @@ let fontsPromise: Promise<
 	{ name: string; data: ArrayBuffer; weight: number; style: string }[]
 > | null = null;
 
-function loadFonts(): Promise<
+export function loadFonts(): Promise<
 	{ name: string; data: ArrayBuffer; weight: number; style: string }[]
 > {
 	fontsPromise ??= (async () =>
@@ -288,7 +273,7 @@ function loadFonts(): Promise<
  * is unavailable (e.g. a bare script test), in which case the caller falls back
  * to a plain monogram tile.
  */
-function loadFavicon(): Promise<ArrayBuffer | undefined> {
+export function loadFavicon(): Promise<ArrayBuffer | undefined> {
 	return (async () => {
 		const file = path.join(import.meta.dir, '..', '..', 'static/favicon.ico');
 		const data = await Bun.file(file).arrayBuffer();
@@ -544,187 +529,6 @@ export async function ogSvg(display: OgDisplay, image?: ArrayBuffer): Promise<st
 		width: OG_IMAGE_WIDTH,
 		height: OG_IMAGE_HEIGHT,
 		fonts: (await loadFonts()) as never
-	});
-}
-
-export type DailyOgDisplay = {
-	/** ISO `YYYY-MM-DD`, Europe/Helsinki. */
-	date: string;
-	/** 1-indexed count of Daily days published so far, including this one. */
-	dayNumber: number;
-};
-
-function formatDailyDate(date: string): string {
-	const formatted = new Intl.DateTimeFormat('fi-FI', {
-		weekday: 'long',
-		day: 'numeric',
-		month: 'numeric',
-		year: 'numeric'
-	}).format(new Date(`${date}T12:00:00`));
-	return formatted.charAt(0).toUpperCase() + formatted.slice(1);
-}
-
-/**
- * Renders the generic, non-personalized "today's Daily" share card into a
- * 1200x630 SVG using satori. Unlike {@link ogSvg}, this never varies per
- * player — it's the same image for everyone sharing that day, so it carries
- * no score or grid, only a teaser.
- */
-export async function dailyOgSvg(display: DailyOgDisplay): Promise<string> {
-	const [fonts, favicon] = await Promise.all([loadFonts(), loadFavicon()]);
-	const gridBorder = '#c9c6c0';
-
-	const emptyGrid = el(
-		'div',
-		{ style: { display: 'flex', flexDirection: 'row', gap: 14 } },
-		...Array.from({ length: 7 }, () =>
-			el('div', {
-				style: { width: 56, height: 56, borderRadius: 10, border: `3px solid ${gridBorder}` }
-			})
-		)
-	);
-
-	const tree = el(
-		'div',
-		{
-			style: {
-				width: OG_IMAGE_WIDTH,
-				height: OG_IMAGE_HEIGHT,
-				display: 'flex',
-				flexDirection: 'row',
-				backgroundColor: '#ffffff',
-				fontFamily: 'Inter'
-			}
-		},
-		el('div', {
-			style: {
-				width: 24,
-				height: '100%',
-				flexShrink: 0,
-				backgroundImage: `linear-gradient(to bottom, ${RED}, #7a0606)`
-			}
-		}),
-		el(
-			'div',
-			{
-				style: {
-					flexGrow: 1,
-					display: 'flex',
-					flexDirection: 'column',
-					justifyContent: 'center',
-					gap: 28,
-					paddingLeft: 72,
-					paddingRight: 72
-				}
-			},
-			el(
-				'div',
-				{
-					style: {
-						display: 'flex',
-						flexDirection: 'row',
-						alignItems: 'center',
-						justifyContent: 'space-between'
-					}
-				},
-				el(
-					'div',
-					{ style: { display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 14 } },
-					favicon
-						? el('img', {
-								alt: '',
-								width: 52,
-								height: 52,
-								src: favicon as ArrayBuffer,
-								style: { width: 52, height: 52, borderRadius: 13, objectFit: 'cover' }
-							})
-						: el(
-								'div',
-								{
-									style: {
-										width: 44,
-										height: 44,
-										borderRadius: 13,
-										backgroundColor: RED,
-										display: 'flex',
-										alignItems: 'center',
-										justifyContent: 'center',
-										fontSize: 28,
-										fontWeight: 800,
-										color: '#ffffff'
-									}
-								},
-								'A'
-							),
-					el(
-						'span',
-						{ style: { fontSize: 30, fontWeight: 800, color: INK, letterSpacing: -0.5 } },
-						'Alkometriikka Daily'
-					)
-				),
-				el(
-					'div',
-					{
-						style: {
-							display: 'flex',
-							alignItems: 'center',
-							backgroundColor: '#f4f1ec',
-							color: SLATE,
-							fontSize: 24,
-							fontWeight: 700,
-							borderRadius: 999,
-							padding: '10px 20px'
-						}
-					},
-					`#${display.dayNumber}`
-				)
-			),
-			el(
-				'span',
-				{ style: { fontSize: 60, fontWeight: 900, letterSpacing: -1.5, color: INK } },
-				formatDailyDate(display.date)
-			),
-			el(
-				'span',
-				{ style: { fontSize: 30, fontWeight: 500, color: SLATE, lineHeight: 1.35, maxWidth: 820 } },
-				'Seitsemän kysymystä Alkon valikoimasta. Testaa Alko(holi)tuntemuksesi!'
-			),
-			el(
-				'div',
-				{
-					style: {
-						display: 'flex',
-						flexDirection: 'row',
-						alignItems: 'center',
-						gap: 28,
-						marginTop: 8
-					}
-				},
-				emptyGrid,
-				el(
-					'div',
-					{
-						style: {
-							display: 'flex',
-							alignItems: 'center',
-							backgroundColor: RED,
-							color: '#ffffff',
-							fontSize: 24,
-							fontWeight: 800,
-							borderRadius: 999,
-							padding: '14px 28px'
-						}
-					},
-					'Pelaa nyt →'
-				)
-			)
-		)
-	);
-
-	return satori(tree as never, {
-		width: OG_IMAGE_WIDTH,
-		height: OG_IMAGE_HEIGHT,
-		fonts: fonts as never
 	});
 }
 

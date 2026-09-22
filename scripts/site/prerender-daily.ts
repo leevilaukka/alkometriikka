@@ -1,6 +1,7 @@
 import path from 'node:path';
 import { mkdir } from 'node:fs/promises';
-import { dailyOgUrl, OG_IMAGE_WIDTH, OG_IMAGE_HEIGHT } from '../og/og';
+import { OG_IMAGE_WIDTH, OG_IMAGE_HEIGHT } from '../og/og';
+import { dailyOgUrl } from '../og/og-daily-card';
 import { toISODateInTimeZone } from '../../src/lib/utils/sales';
 
 /**
