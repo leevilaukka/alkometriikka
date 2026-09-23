@@ -7,6 +7,7 @@
 	import { components } from '$lib/utils/styles';
 	import { twMerge } from 'tailwind-merge';
 	import Icon from '$lib/components/widgets/Icon.svelte';
+	import { dayNumberForDate } from '$lib/daily/dayNumber';
 
 	const weekdayLabels = ['ma', 'ti', 'ke', 'to', 'pe', 'la', 'su'];
 	const monthFormatter = new Intl.DateTimeFormat('fi-FI', {
@@ -173,11 +174,15 @@
 				{@const iso = day === null ? null : toISO(viewYear, viewMonth, day)}
 				{@const result = iso ? scores[iso] : undefined}
 				{@const inProgress = iso ? (runs[iso] && !runs[iso].completed ? true : false) : false}
+				{@const dayNumber = iso ? dayNumberForDate(iso) : 0}
 				{#if iso && available.has(iso)}
 					<a
 						href={`${base}/daily/arkisto/${iso}`}
-						class="flex min-h-14 flex-col items-center justify-center gap-0.5 rounded border border-primary bg-primary p-1.5 transition-colors hover:border-brand-2"
+						class="relative flex min-h-14 flex-col items-center justify-center gap-0.5 rounded border border-primary bg-primary p-1.5 transition-colors hover:border-brand-2"
 					>
+						{#if dayNumber >= 1}
+							<span class="absolute right-1 top-1 text-[9px] font-bold text-secondary">#{dayNumber}</span>
+						{/if}
 						<span class="text-sm font-bold">{day}</span>
 						{#if result}
 							<span class="rounded bg-brand-4 px-1.5 py-0.5 text-[10px] font-bold text-white">
@@ -192,8 +197,11 @@
 				{:else if iso === todayISO}
 					<a
 						href="/daily"
-						class="flex min-h-14 flex-col items-center justify-center gap-0.5 rounded border border-brand-2 border-dashed bg-secondary p-1.5 transition-colors hover:bg-primary"
+						class="relative flex min-h-14 flex-col items-center justify-center gap-0.5 rounded border border-brand-2 border-dashed bg-secondary p-1.5 transition-colors hover:bg-primary"
 					>
+						{#if dayNumber >= 1}
+							<span class="absolute right-1 top-1 text-[9px] font-bold text-brand-2">#{dayNumber}</span>
+						{/if}
 						<span class="text-sm font-bold text-brand-2">{day}</span>
 						<span class="text-[10px] font-bold text-brand-2">tänään</span>
 					</a>
