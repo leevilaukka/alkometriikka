@@ -12,7 +12,8 @@
 	const calculatorAnalytics = (() => {
 		let timeout: ReturnType<typeof setTimeout> | undefined;
 		const track = (usingSavedValues: boolean) => {
-			sendAnalyticsEvent('calculator_calculated', { using_saved_values: usingSavedValues });
+			if (!volume || !percentage || !price) return;
+			sendAnalyticsEvent('calculator_used', { using_saved_values: usingSavedValues, state: {volume, percentage, price}, result: {perEuro: result?.[DrunkColumns.AlcoholGramsPerEuro] || 0, rawAlcohol: result?.[DrunkColumns.AlcoholGrams] || 0} });
 		};
 
 		return {

@@ -183,7 +183,10 @@ type GameState =
 type Games = {[K in GameKeys]: GameState;};
 
 export type AnalyticsEventMap = {
-	calculator_calculated: { using_saved_values: boolean };
+	calculator_used: { using_saved_values: boolean, state: { percentage: number, volume: number, price: number }, result: {
+		perEuro: number
+		rawAlcohol: number
+	} };
 	open_settings: undefined;
 	export_data: undefined;
 	import_data: undefined;
