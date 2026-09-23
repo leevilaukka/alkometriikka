@@ -19,3 +19,14 @@ export function dayNumberForDate(date: string): number {
 	);
 	return days + 1;
 }
+
+/** Inverse of {@link dayNumberForDate}: the ISO date (Europe/Helsinki) for a given day number. */
+export function dateForDayNumber(dayNumber: number): string {
+	const [launchYear, launchMonth, launchDay] = DAILY_LAUNCH_DATE.split('-').map(Number);
+	const ms = Date.UTC(launchYear!, launchMonth! - 1, launchDay!) + (dayNumber - 1) * 86_400_000;
+	const date = new Date(ms);
+	const year = date.getUTCFullYear();
+	const month = String(date.getUTCMonth() + 1).padStart(2, '0');
+	const day = String(date.getUTCDate()).padStart(2, '0');
+	return `${year}-${month}-${day}`;
+}
