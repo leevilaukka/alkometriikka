@@ -4,6 +4,7 @@
 	import Icon from '$lib/components/widgets/Icon.svelte';
 	import { version } from '$app/environment';
 	import { timeConfig } from '$lib/utils/constants';
+	import SiteFeedback from './SiteFeedback.svelte';
 	const { alko, dialogElement, githubRepoBase, githubFileBase, gitCommitHash } = $props();
 </script>
 
@@ -26,6 +27,9 @@
 					<a href={`${githubRepoBase}/issues/new?template=bug_report.md`}
 						>Lähetä bugiraportti
 					</a>
+				</p>
+				<p>
+					Voit myös ilmoittaa ongelmasta nopeasti suoraan sovelluksesta alla olevasta Palaute-napista.
 				</p>
 				<p>
 					Muut yhteydenotot voi lähettää sähköpostitse osoitteeseen
@@ -73,6 +77,7 @@
 					<Icon name="mail_send" class="inline-block" />
 					<span>Sähköposti</span>
 				</a>
+				<SiteFeedback />
 				<div class="flex flex-1">
 					<a
 						href="https://alkometriikka.fi/rss.xml"

@@ -16,6 +16,7 @@
 	import { twMerge } from 'tailwind-merge';
 	import type { PageProps } from './$types';
 	import Icon from '$lib/components/widgets/Icon.svelte';
+	import DailyFeedback from '$lib/components/widgets/DailyFeedback.svelte';
 
 	let { data }: PageProps = $props();
 	let products = $state<PriceListItem[]>([]);
@@ -475,6 +476,7 @@
 					{#if dev}
 						<button class={twMerge(components.button({ size: 'xs' }), 'border-red-300 px-2 py-1 text-xs')} onclick={resetGame}>Nollaa peli</button>
 					{/if}
+					<DailyFeedback {date} runMode={runMode} {dayNumber} questionIndex={currentIndex} {game} />
 				</div>
 			</div>
 			<p class="text-secondary">Seitsemän kysymystä Alkon valikoimasta. Testaa Alko(holi)tuntemuksesi!</p>

@@ -200,6 +200,30 @@ export type AnalyticsEventMap = {
 		action?: 'set' | 'change';
 	};
 	show_availability: { product_number?: string; [key: string]: any };
+	daily_feedback: {
+		date: string;
+		run_mode: GameTypes;
+		day_number?: number;
+		question_index: number;
+		game_hash: string;
+		wrong_answer: boolean;
+		wrong_price: boolean;
+		wrong_image: boolean;
+		unclear_question: boolean;
+		ui_bug: boolean;
+		other: boolean;
+	};
+	site_feedback: {
+		path: string;
+		version: string;
+		wrong_product_info: boolean;
+		wrong_image: boolean;
+		search_broken: boolean;
+		filters_broken: boolean;
+		page_crash: boolean;
+		ui_bug: boolean;
+		other: boolean;
+	};
 } & Shares & Games
 
 export type AnalyticsEventName = keyof AnalyticsEventMap;

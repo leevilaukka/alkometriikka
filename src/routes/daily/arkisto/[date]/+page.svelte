@@ -21,6 +21,7 @@
 	import ProductImage from '$lib/components/widgets/ProductImage.svelte';
 	import { twMerge } from 'tailwind-merge';
 	import Icon from '$lib/components/widgets/Icon.svelte';
+	import DailyFeedback from '$lib/components/widgets/DailyFeedback.svelte';
 
 	const date = $derived(page.params.date ?? '');
 	const dateFormatter = new Intl.DateTimeFormat('fi-FI', {
@@ -302,6 +303,12 @@
 							</button>
 						</a>
 					{/if}
+					<DailyFeedback
+						{date}
+						runMode="archive"
+						questionIndex={run?.currentIndex ?? questionIndex}
+						game={archive.game}
+					/>
 				</div>
 			{/if}
 		</div>
