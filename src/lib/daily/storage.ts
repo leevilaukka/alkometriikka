@@ -78,10 +78,8 @@ export function saveArchiveRuns(runs: ArchiveRuns): void {
 		compacted[date] = {
 			date: run.date ?? date,
 			currentIndex: run.currentIndex,
-			// Kept post-completion so the results view can show which questions
-			// were actually missed instead of implying every answer was correct.
-			points: run.points,
-			correctAnswers: run.correctAnswers,
+			points: [],
+			correctAnswers: [],
 			selectedAnswer: null,
 			answered: false,
 			answerPoints: 0,
