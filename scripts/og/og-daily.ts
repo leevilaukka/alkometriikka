@@ -4,6 +4,7 @@ import { svgToPng } from './og';
 import { dailyOgKey, dailyOgSvg } from './og-daily-card';
 import { R2S3Client } from '../r2/client';
 import { toISODateInTimeZone } from '../../src/lib/utils/sales';
+import { dayNumberForDate } from '../../src/lib/daily/dayNumber';
 
 /**
  * Renders today's generic Daily share card and uploads it to R2 at
@@ -34,23 +35,11 @@ async function withRetry<T>(fn: () => Promise<T>, attempts = 3): Promise<T> {
 	throw lastError instanceof Error ? lastError : new Error(String(lastError));
 }
 
-async function readDayNumber(archiveIndexPath: string): Promise<number> {
-	try {
-		const index = (await Bun.file(archiveIndexPath).json()) as { dates?: string[] };
-		return (Array.isArray(index.dates) ? index.dates.length : 0) + 1;
-	} catch {
-		return 1;
-	}
-}
-
 async function main() {
-	const archiveIndexPath = path.resolve(
-		readOption('--archive-index') ?? './daily/archive/index.json'
-	);
 	const renderDir = readOption('--render');
 	const date = readOption('--date') ?? toISODateInTimeZone('Europe/Helsinki');
 
-	const dayNumber = await readDayNumber(archiveIndexPath);
+	const dayNumber = dayNumberForDate(date);
 	const svg = await dailyOgSvg({ date, dayNumber });
 	const png = svgToPng(svg);
 	const key = dailyOgKey(date);

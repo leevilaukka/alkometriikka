@@ -9,10 +9,6 @@ inputs:
   template:
     description: Path to the built 404.html template (SEO markers + app bundle refs)
     required: true
-  archive-index:
-    description: Path to daily/archive/index.json, used to compute the day number
-    required: false
-    default: ./daily/archive/index.json
   out-dir:
     description: Directory to write daily/index.html into
     required: false
@@ -49,5 +45,5 @@ runs:
         # it references is actually live — leaving the previous day's
         # (valid) stub in place on failure beats a fresh one with a broken
         # image. og-daily.ts retries transient upload failures itself.
-        bun run scripts/og/og-daily.ts --archive-index "${{ inputs.archive-index }}"
-        bun run scripts/site/prerender-daily.ts --template "${{ inputs.template }}" --archive-index "${{ inputs.archive-index }}" --out "${{ inputs.out-dir }}"
+        bun run scripts/og/og-daily.ts
+        bun run scripts/site/prerender-daily.ts --template "${{ inputs.template }}" --out "${{ inputs.out-dir }}"

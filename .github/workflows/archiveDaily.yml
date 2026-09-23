@@ -100,7 +100,6 @@ jobs:
         uses: ./.github/actions/daily-og
         with:
           template: ../gh-pages/404.html
-          archive-index: ./daily/archive/index.json
           out-dir: ./daily
           r2-access-key-id: ${{ secrets.CF_R2_ACCESS_KEY_ID }}
           r2-secret-access-key: ${{ secrets.CF_R2_SECRET_ACCESS_KEY }}

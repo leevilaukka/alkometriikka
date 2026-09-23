@@ -3,6 +3,7 @@ import { mkdir } from 'node:fs/promises';
 import { OG_IMAGE_WIDTH, OG_IMAGE_HEIGHT } from '../og/og';
 import { dailyOgUrl } from '../og/og-daily-card';
 import { toISODateInTimeZone } from '../../src/lib/utils/sales';
+import { dayNumberForDate } from '../../src/lib/daily/dayNumber';
 
 /**
  * Writes a static `daily/index.html` stub, mirroring scripts/site/prerender-products.ts.
@@ -50,24 +51,12 @@ function replaceMarkedSection(template: string, content: string): string {
 	return `${template.slice(0, start)}${SEO_START}\n${content}\n\t${template.slice(end)}`;
 }
 
-async function readDayNumber(archiveIndexPath: string): Promise<number> {
-	try {
-		const index = (await Bun.file(archiveIndexPath).json()) as { dates?: string[] };
-		return (Array.isArray(index.dates) ? index.dates.length : 0) + 1;
-	} catch {
-		return 1;
-	}
-}
-
 async function main() {
 	const templatePath = path.resolve(readOption('--template') ?? 'build/404.html');
-	const archiveIndexPath = path.resolve(
-		readOption('--archive-index') ?? './daily/archive/index.json'
-	);
 	const outDir = path.resolve(readOption('--out') ?? './daily');
 	const date = readOption('--date') ?? toISODateInTimeZone('Europe/Helsinki');
 
-	const dayNumber = await readDayNumber(archiveIndexPath);
+	const dayNumber = dayNumberForDate(date);
 	const template = await Bun.file(templatePath).text();
 
 	const url = `${SITE_URL}/daily/`;

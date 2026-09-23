@@ -4,6 +4,7 @@
 	import type { PriceListItem } from '$lib/types';
 	import { createRng } from '$lib/daily/rng';
 	import { reconstructDailyGame, type DailyGameManifest, type DailyProduct } from '$lib/daily/manifest';
+	import { dayNumberForDate } from '$lib/daily/dayNumber';
 	import { DAILY_GAME_VERSION, DAILY_QUESTION_COUNT, generateDailyGame, type GeneratedGame, type Question, type UnlimitedRunState } from '$lib/daily/questions';
 	import { questionPoints } from '$lib/daily/scoring';
 	import { clearUnlimitedProgress, completeGame, loadSavedGame, loadStreak, loadUnlimitedProgress, resetDailyGame, saveGame, saveUnlimitedProgress, type DailyStreak, type SavedDailyGame } from '$lib/daily/storage';
@@ -414,6 +415,7 @@
     let dailyDate = getFinnishDate();
     let dailyCountdown = $state(timeTillNextDaily());
     let newDayAvailable = $state(false);
+    const dayNumber = dayNumberForDate(date);
 
     $effect(() => {
         const interval = setInterval(() => {
@@ -465,7 +467,7 @@
 				</div>
 				<div class="flex items-center gap-2">
 					{#if runMode === 'daily'}
-						<span class="rounded bg-brand-4 px-3 py-2 text-sm font-bold text-white">{displayDate}</span>
+						<span class="rounded bg-brand-4 px-3 py-2 text-sm font-bold text-white">{displayDate}{#if dayNumber} · #{dayNumber}{/if}</span>
 					{/if}
 					{#if runMode === 'unlimited'}
 						<button class={twMerge(components.button(), 'px-3 py-2')} onclick={exitUnlimited}> <span class="flex items-center gap-2"> <Icon name="exit"/>Lopeta</span> </button>
