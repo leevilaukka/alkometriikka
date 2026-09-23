@@ -349,10 +349,21 @@
 				<p class="text-secondary">Päivä pelattu loppuun — vastaukset alla.</p>
 			</section>
 			{#each archive.game.questions as currentQuestion, questionIndex (questionIndex)}
+				{@const wasCorrect = run?.correctAnswers?.[questionIndex]}
 				<div class="rounded border border-primary bg-primary p-5 md:p-8">
 					<div class="flex items-center justify-between text-sm font-bold">
 						<span>Kysymys {questionIndex + 1} / {archive.game.questions.length}</span>
-						<span class="text-secondary">Vastaus</span>
+						{#if wasCorrect === true}
+							<span class="flex items-center gap-1 text-green-700">
+								<Icon name="check_circle" />Oikein
+							</span>
+						{:else if wasCorrect === false}
+							<span class="flex items-center gap-1 text-red-700">
+								<Icon name="block" />Väärin
+							</span>
+						{:else}
+							<span class="text-secondary">Vastaus</span>
+						{/if}
 					</div>
 					<div class="mt-4">
 						{#if currentQuestion.type === 'price'}
