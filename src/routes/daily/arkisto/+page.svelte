@@ -205,6 +205,28 @@
 						<span class="text-sm font-bold text-brand-2">{day}</span>
 						<span class="text-[10px] font-bold text-brand-2">tänään</span>
 					</a>
+				{:else if iso && iso < todayISO && result}
+					<span
+						class="relative flex min-h-14 flex-col items-center justify-center gap-0.5 rounded border border-dashed border-primary bg-primary p-1.5 opacity-80"
+						title="Arkistoituu pian – koko kertaus tulee saataville kun päivä arkistoidaan"
+					>
+						{#if dayNumber >= 1}
+							<span class="absolute right-1 top-1 text-[9px] font-bold text-secondary">#{dayNumber}</span>
+						{/if}
+						<span class="text-sm font-bold">{day}</span>
+						<span class="rounded bg-brand-4 px-1.5 py-0.5 text-[10px] font-bold text-white">
+							{result.score} p
+						</span>
+					</span>
+				{:else if iso && iso < todayISO && dayNumber >= 1}
+					<span
+						class="relative flex min-h-14 flex-col items-center justify-center gap-0.5 rounded border border-dashed border-primary p-1.5 opacity-60"
+						title="Päivää ei ole vielä arkistoitu – tarkista uudelleen myöhemmin"
+					>
+						<span class="absolute right-1 top-1 text-[9px] font-bold text-secondary">#{dayNumber}</span>
+						<span class="text-sm font-bold">{day}</span>
+						<span class="text-[10px] text-secondary">odottaa</span>
+					</span>
 				{:else}
 					<span class="flex min-h-14 items-center justify-center rounded p-1.5 text-sm text-secondary">
 						{day ?? ''}
