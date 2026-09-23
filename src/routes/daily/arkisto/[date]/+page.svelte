@@ -293,14 +293,14 @@
 			{#if archive}
 				<div class="flex items-center gap-2">
 					{#if previousDate}
-						<a href={`${base}/daily/arkisto/${previousDate}`}>
+						<a href={`/daily/arkisto/${previousDate}`}>
 							<button class={twMerge(components.button(), 'px-3 py-2')} aria-label="Edellinen päivä">
 								<Icon name="chevron_left" />{shortDate(previousDate)}
 							</button>
 						</a>
 					{/if}
 					{#if nextDate}
-						<a href={`${base}/daily/arkisto/${nextDate}`}>
+						<a href={`/daily/arkisto/${nextDate}`}>
 							<button class={twMerge(components.button(), 'px-3 py-2')} aria-label="Seuraava päivä">
 								{shortDate(nextDate)}<Icon name="chevron_right" />
 							</button>
