@@ -78,8 +78,12 @@ export function saveArchiveRuns(runs: ArchiveRuns): void {
 		compacted[date] = {
 			date: run.date ?? date,
 			currentIndex: run.currentIndex,
-			points: [],
-			correctAnswers: [],
+			// One small entry per question (≈7 numbers/booleans/short values) —
+			// kept so the "correct answers" review can show what was picked and
+			// whether it was right, without ballooning storage over years of play.
+			points: run.points,
+			correctAnswers: run.correctAnswers,
+			answers: run.answers,
 			selectedAnswer: null,
 			answered: false,
 			answerPoints: 0,

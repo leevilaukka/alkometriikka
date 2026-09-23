@@ -99,6 +99,8 @@ export type ArchiveRunState = {
 	currentIndex: number;
 	points: number[];
 	correctAnswers: boolean[];
+	/** The value picked for each answered question, kept after completion for the "correct answers" review. */
+	answers: (string | number)[];
 	selectedAnswer: string | number | null;
 	answered: boolean;
 	answerPoints: number;

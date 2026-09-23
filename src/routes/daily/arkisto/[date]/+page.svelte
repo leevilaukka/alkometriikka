@@ -35,6 +35,7 @@
 	let loadError = $state<string | null>(null);
 	let runs: ArchiveRuns = $state(loadArchiveRuns());
 	let scores: ArchivedScores = $state(loadArchivedScores());
+	let showAnswers = $state(false);
 	let requestId = 0;
 
 	const productMap = $derived(
@@ -209,6 +210,7 @@
 			currentIndex: 0,
 			points: [],
 			correctAnswers: [],
+			answers: [],
 			selectedAnswer: null,
 			answered: false,
 			answerPoints: 0
@@ -228,7 +230,8 @@
 			answered: true,
 			answerPoints: points,
 			points: [...(run?.points ?? []), points],
-			correctAnswers: [...(run?.correctAnswers ?? []), correct]
+			correctAnswers: [...(run?.correctAnswers ?? []), correct],
+			answers: [...(run?.answers ?? []), value]
 		});
 	}
 
@@ -347,7 +350,182 @@
 					{result?.score} pistettä
 				</p>
 				<p class="text-secondary">Päivä pelattu loppuun.</p>
+				<button
+					class={twMerge(components.button(), 'mx-auto px-3 py-2')}
+					onclick={() => (showAnswers = !showAnswers)}
+				>
+					{showAnswers ? 'Piilota oikeat vastaukset' : 'Näytä oikeat vastaukset'}
+				</button>
 			</section>
+			{#if showAnswers}
+				{#each archive.game.questions as currentQuestion, questionIndex (questionIndex)}
+					{@const given = run?.answers?.[questionIndex]}
+					{@const wasCorrect = run?.correctAnswers?.[questionIndex]}
+					<div class="rounded border border-primary bg-primary p-5 md:p-8">
+						<div class="flex items-center justify-between text-sm font-bold">
+							<span>Kysymys {questionIndex + 1} / {archive.game.questions.length}</span>
+							{#if wasCorrect === true}
+								<span class="flex items-center gap-1 text-green-700">
+									<Icon name="check_circle" />Oikein
+								</span>
+							{:else if wasCorrect === false}
+								<span class="flex items-center gap-1 text-red-700">
+									<Icon name="block" />Väärin
+								</span>
+							{:else}
+								<span class="text-secondary">Oikea vastaus</span>
+							{/if}
+						</div>
+						<div class="mt-4">
+							{#if currentQuestion.type === 'price'}
+								<div class="flex items-center gap-4">
+									<div class="h-40 w-28 shrink-0 rounded bg-white p-2">
+										<ProductImage
+											number={currentQuestion.productId}
+											name={productMap.get(currentQuestion.productId)?.[AllColumns.Name] ?? 'Tuote'}
+											transform="medium"
+										/>
+									</div>
+									<div class="min-w-0">
+										<p class="text-lg font-bold">{productName(currentQuestion.productId)}</p>
+										<h3 class="mt-2 text-xl font-bold">Paljonko tämä tuote maksaa?</h3>
+									</div>
+								</div>
+								<div class="mt-6 grid grid-cols-2 gap-3">
+									{#each currentQuestion.options as option (option)}
+										{@const correct = Number(option) === currentQuestion.correctPrice}
+										{@const picked = given !== undefined && Number(given) === Number(option)}
+										<div
+											class={twMerge(
+												components.button(),
+												'min-h-12 w-full justify-center text-lg',
+												correct
+													? 'border-green-600 bg-green-100 text-green-900'
+													: picked
+														? 'border-red-600 bg-red-100 text-red-900'
+														: 'opacity-70'
+											)}
+										>
+											{price(option)}
+											{#if correct}<Icon name="check_circle" />{:else if picked}<Icon name="block" />{/if}
+										</div>
+									{/each}
+								</div>
+							{:else if currentQuestion.type === 'cheaper' || currentQuestion.type === 'efficiency' || currentQuestion.type === 'attribute'}
+								<h3 class="text-xl font-bold">{pairTitle(currentQuestion)}</h3>
+								<div class="mt-6 grid gap-3 sm:grid-cols-2">
+									{#each currentQuestion.productIds as id (id)}
+										{@const correct = id === currentQuestion.correctProductId}
+										{@const picked = given === id}
+										<div
+											class={twMerge(
+												components.button(),
+												'min-h-40 w-full justify-start p-3 text-left',
+												correct
+													? 'border-green-600 bg-green-100 text-green-900'
+													: picked
+														? 'border-red-600 bg-red-100 text-red-900'
+														: 'opacity-70'
+											)}
+										>
+											<div class="h-32 w-24 shrink-0 rounded bg-white p-1">
+												<ProductImage number={id} name={productName(id)} transform="medium" />
+											</div>
+											<span class="min-w-0">{productName(id)}</span>
+											{#if correct}<Icon name="check_circle" />{:else if picked}<Icon name="block" />{/if}
+										</div>
+									{/each}
+								</div>
+								{#if currentQuestion.type === 'attribute'}
+									<p class="mt-3 text-sm text-secondary">
+										{attributeValueLabel(
+											currentQuestion.metric,
+											currentQuestion.values[currentQuestion.correctProductId]
+										)}
+									</p>
+								{/if}
+							{:else if currentQuestion.type === 'choice'}
+								<div class="flex items-center gap-4">
+									<div class="h-40 w-28 shrink-0 rounded bg-white p-2">
+										<ProductImage
+											number={currentQuestion.productId}
+											name={productMap.get(currentQuestion.productId)?.[AllColumns.Name] ?? 'Tuote'}
+											transform="medium"
+										/>
+									</div>
+									<div class="min-w-0">
+										<p class="text-lg font-bold">{productName(currentQuestion.productId)}</p>
+										<h3 class="mt-2 text-xl font-bold">{choiceTitle(currentQuestion.field)}</h3>
+									</div>
+								</div>
+								<div class="mt-6 grid grid-cols-2 gap-3">
+									{#each currentQuestion.options as option (option)}
+										{@const correct = option === currentQuestion.correctValue}
+										{@const picked = given === option}
+										<div
+											class={twMerge(
+												components.button(),
+												'min-h-12 w-full justify-start text-left',
+												correct
+													? 'border-green-600 bg-green-100 text-green-900'
+													: picked
+														? 'border-red-600 bg-red-100 text-red-900'
+														: 'opacity-70'
+											)}
+										>
+											{option}
+											{#if correct}<Icon name="check_circle" />{:else if picked}<Icon name="block" />{/if}
+										</div>
+									{/each}
+								</div>
+							{:else if currentQuestion.type === 'estimate'}
+								<div class="flex gap-4">
+									<div class="h-40 w-28 shrink-0 rounded bg-white p-2">
+										<ProductImage
+											number={currentQuestion.productId}
+											name={productMap.get(currentQuestion.productId)?.[AllColumns.Name] ?? 'Tuote'}
+											transform="medium"
+										/>
+									</div>
+									<div class="min-w-0">
+										<p class="text-lg font-bold">{productName(currentQuestion.productId)}</p>
+										{#if estimatedWith(productMap.get(currentQuestion.productId))}
+											<p class="mt-1 text-sm text-secondary">
+												{estimatedWith(productMap.get(currentQuestion.productId))}
+											</p>
+										{/if}
+										<p class="mt-2 text-secondary">
+											{currentQuestion.alcoholPercentage}% · {currentQuestion.volume} L
+										</p>
+									</div>
+								</div>
+								<h3 class="mt-5 text-xl font-bold">Arvaa tuotteen hinta</h3>
+								{#if given !== undefined}
+									<div
+										class={twMerge(
+											'mt-6 rounded border p-3 text-lg font-bold',
+											wasCorrect
+												? 'border-green-600 bg-green-100 text-green-900'
+												: 'border-red-600 bg-red-100 text-red-900'
+										)}
+									>
+										<span class="flex items-center gap-2">
+											<Icon name={wasCorrect ? 'check_circle' : 'block'} />Sinun arviosi: {price(
+												Number(given)
+											)}
+										</span>
+									</div>
+								{/if}
+								<div class="mt-3 rounded border border-green-600 bg-green-100 p-3 text-lg font-bold text-green-900">
+									<span class="flex items-center gap-2">
+										<Icon name="check_circle" />Oikea hinta: {price(currentQuestion.correctPrice)}
+									</span>
+								</div>
+							{/if}
+						</div>
+					</div>
+				{/each}
+			{/if}
 		</section>
 	{:else if question}
 		<section class="flex flex-col gap-5">
