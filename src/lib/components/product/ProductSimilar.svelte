@@ -130,7 +130,9 @@
 							/>
 						</a>
 						<a href={`/tuotteet/${delta.product[AllColumns.Number]}/`} class="flex flex-col gap-0.5 hover:underline">
-							<h3 class="line-clamp-2 min-h-10 text-sm leading-tight font-bold">{delta.product[AllColumns.Name]}</h3>
+							<div class="h-10 overflow-hidden">
+								<h3 class="line-clamp-2 text-sm leading-tight font-bold">{delta.product[AllColumns.Name]}</h3>
+							</div>
 							<span class="text-xs text-secondary">
 								{formatValue(delta.product[AllColumns.BottleSize], AllColumns.BottleSize)} · {formatValue(
 									delta.product[AllColumns.AlcoholPercentage],
