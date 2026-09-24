@@ -1,0 +1,27 @@
+name: Set up Bun
+description: >-
+  Installs Bun, restores the dependency cache, and installs dependencies
+  with a frozen lockfile. Shared by every job in every workflow so the
+  toolchain only needs to be changed in one place. The calling job must
+  check out the repository (actions/checkout) before using this action,
+  since a local action can only be resolved once the repo it lives in is
+  on disk.
+runs:
+  using: composite
+  steps:
+    - name: Install Bun
+      uses: oven-sh/setup-bun@v2
+
+    - name: Cache Bun dependencies
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/.bun
+          node_modules
+        key: ${{ runner.os }}-bun-${{ hashFiles('bun.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-bun-
+
+    - name: Install dependencies
+      shell: bash
+      run: bun install --frozen-lockfile

@@ -1,0 +1,12 @@
+name: Run daily game tests
+description: >-
+  Runs the daily game test suite. This is the pinned-manifest guard shared
+  by build.yml, fetchData.yml and archiveDaily.yml: never bake with
+  generator code that failed the tests, since a live manifest would stop
+  verifying on clients instead of erroring here.
+runs:
+  using: composite
+  steps:
+    - name: Run daily game tests
+      shell: bash
+      run: bunx svelte-kit sync && bun test src/lib/daily

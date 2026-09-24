@@ -19,23 +19,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install Bun
-        uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: latest
-
-      - name: Cache Bun dependencies
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.bun
-            node_modules
-          key: ${{ runner.os }}-bun-${{ hashFiles('bun.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-bun-
-
-      - name: Install dependencies
-        run: bun i --frozen-lockfile
+      - name: Set up Bun
+        uses: ./.github/actions/setup
 
       # Includes the pinned-manifest guard: a generator change without a
       # DAILY_GAME_VERSION bump must never deploy (live manifests would stop
@@ -165,10 +150,11 @@ jobs:
           echo "alkometriikka.fi" > CNAME
           touch .nojekyll
 
+      - name: Configure git bot identity
+        uses: ./.github/actions/git-bot-identity
+
       - name: Push build to gh-pages branch
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git checkout -b gh-pages
           git add .
           # Runtime datasets are gitignored, so `git add .` skips them. Force-add

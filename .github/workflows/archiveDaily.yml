@@ -26,21 +26,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install Bun
-        uses: oven-sh/setup-bun@v2
-
-      - name: Cache Bun dependencies
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.bun
-            node_modules
-          key: ${{ runner.os }}-bun-${{ hashFiles('bun.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-bun-
-
-      - name: Install dependencies
-        run: bun install --frozen-lockfile
+      - name: Set up Bun
+        uses: ./.github/actions/setup
 
       - name: Seed dataset and current daily folder from deployed site
         run: |
@@ -49,17 +36,10 @@ jobs:
           git archive origin/gh-pages daily | tar -x
 
       - name: Rehash seeded dataset to current schema
-        run: |
-          if [ -f data.json ]; then
-            bun run scripts/data/rehash.ts
-          else
-            echo "ℹ️  No seeded data.json found; skipping rehash."
-          fi
+        uses: ./.github/actions/rehash-dataset
 
-      # Same pinned-manifest guard build.yml runs: never bake with generator code
-      # that failed the tests (a live manifest would stop verifying on clients).
       - name: Run daily game tests
-        run: bunx svelte-kit sync && bun test src/lib/daily
+        uses: ./.github/actions/run-daily-tests
 
       - name: Bake daily manifests and archive finished days
         run: bun run daily
@@ -86,9 +66,7 @@ jobs:
           fi
 
       - name: Check out deployed site
-        run: |
-          git fetch origin gh-pages
-          git worktree add --detach ../gh-pages origin/gh-pages
+        uses: ./.github/actions/checkout-gh-pages
 
       # Generated here (not just in fetchData.yml) so the Daily share card and
       # its page stub flip over in the same commit as the archive, right at
@@ -114,11 +92,12 @@ jobs:
           rm -rf daily
           cp -r "$GITHUB_WORKSPACE/daily" daily
 
+      - name: Configure git bot identity
+        uses: ./.github/actions/git-bot-identity
+
       - name: Commit and push archive
         working-directory: ../gh-pages
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add daily -f
           git commit -m "Archive finished daily games [skip ci]" || echo "No changes to commit"
           git push origin HEAD:gh-pages
