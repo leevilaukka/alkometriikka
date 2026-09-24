@@ -34,11 +34,13 @@ export const fixtureStatus: DatasetStatus = {
 	stale: false
 };
 
-export function fixtureCatalog(options: { withAvailability?: boolean } = {}): Catalog {
+export function fixtureCatalog(
+	options: { withAvailability?: boolean; siteUrl?: string } = {}
+): Catalog {
 	const { table } = formatDatasetToJSON(fixtureText('data.json'));
 	const availability =
 		options.withAvailability === false
 			? { stores: {}, product: {} }
 			: parseAvailability(JSON.parse(fixtureText('availability.json')));
-	return quietly(() => new Catalog(table, availability, fixtureStatus));
+	return quietly(() => new Catalog(table, availability, fixtureStatus, options.siteUrl));
 }

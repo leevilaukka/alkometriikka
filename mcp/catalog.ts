@@ -8,11 +8,13 @@
  * This module only translates between that representation and compact,
  * English-keyed objects suitable for an LLM.
  */
+import { compressToEncodedURIComponent } from 'lz-string';
 import { Kaljakori } from '../src/lib/alko/index.ts';
 import type {
 	AvailabilityData,
 	AvailabilityStore,
 	ColumnNames,
+	ListObj,
 	PriceHistoryEntry,
 	PriceListItem
 } from '../src/lib/types.ts';
@@ -113,6 +115,8 @@ export type SearchParams = {
 export const SEARCH_LIMIT_DEFAULT = 10;
 export const SEARCH_LIMIT_MAX = 50;
 export const COMPARE_MAX = 10;
+export const LIST_ITEMS_MAX = 100;
+export const LIST_QUANTITY_MAX = 99;
 
 const METRICS_NOTE =
 	'Metrics are computed with the same formulas as alkometriikka.fi: alcohol_grams = volume × ABV × 789 g/l ' +
@@ -542,6 +546,68 @@ export class Catalog {
 			},
 			not_found: notFound,
 			metrics_note: METRICS_NOTE,
+			dataset: this.status
+		};
+	}
+
+	/**
+	 * Builds an alkometriikka.fi share link for a list. The site keeps the whole list in
+	 * the URL (`listToURI` in src/lib/utils/lists.ts), so nothing is stored anywhere.
+	 */
+	createListLink(name: string, items: { product_id: string; quantity?: number }[]) {
+		const listName = name.trim();
+		if (!listName) throw new ToolInputError('The list name cannot be empty.');
+
+		// Merge repeated products, adding up their quantities, in first-seen order.
+		const quantities = new Map<PriceListItem, number>();
+		const notFound: string[] = [];
+		for (const { product_id, quantity = 1 } of items) {
+			const item = this.findProduct(product_id);
+			if (!item) notFound.push(product_id);
+			else quantities.set(item, (quantities.get(item) ?? 0) + quantity);
+		}
+		if (notFound.length) {
+			throw new ToolInputError(
+				`No products found for: ${notFound.join(', ')}. Use search_products to find product IDs; no link was created.`
+			);
+		}
+		const tooMany = [...quantities].find(([, quantity]) => quantity > LIST_QUANTITY_MAX);
+		if (tooMany) {
+			throw new ToolInputError(
+				`"${tooMany[0][AllColumns.Name]}" has a total quantity of ${tooMany[1]}; the maximum is ${LIST_QUANTITY_MAX}.`
+			);
+		}
+
+		const list: ListObj = {
+			// Same format as the site's createListId: the site reads the creation time from it.
+			id: `${Date.now()}-${crypto.randomUUID().split('-')[0]}`,
+			name: listName,
+			items: [...quantities].map(([item, q]) => ({ id: String(item[AllColumns.Number]), q }))
+		};
+
+		let totalPrice = 0;
+		let totalAlcohol = 0;
+		let totalVolume = 0;
+		const products = [...quantities].map(([item, quantity]) => {
+			const price = num(item[AllColumns.Price]) ?? 0;
+			totalPrice += price * quantity;
+			totalAlcohol += (num(item[AllColumns.AlcoholGrams]) ?? 0) * quantity;
+			totalVolume += (num(item[AllColumns.BottleSize]) ?? 0) * quantity;
+			return { ...this.summary(item), quantity, line_total_eur: round(price * quantity) };
+		});
+
+		return {
+			url: `${this.siteUrl.replace(/\/+$/, '')}/listat?list=${compressToEncodedURIComponent(JSON.stringify(list))}`,
+			name: listName,
+			products,
+			totals: {
+				items: products.reduce((sum, product) => sum + product.quantity, 0),
+				price_eur: round(totalPrice),
+				volume_l: round(totalVolume, 3),
+				alcohol_grams: round(totalAlcohol, 1),
+				standard_drinks: round(totalAlcohol / 12, 1)
+			},
+			note: 'The list lives only in the link: opening it shows the list on alkometriikka.fi, where it can be saved. Changing the list requires a new link. Prices are current catalog prices.',
 			dataset: this.status
 		};
 	}

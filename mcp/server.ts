@@ -8,6 +8,8 @@ import { z } from 'zod';
 import {
 	COMPARE_MAX,
 	FILTER_FIELDS,
+	LIST_ITEMS_MAX,
+	LIST_QUANTITY_MAX,
 	SEARCH_LIMIT_DEFAULT,
 	SEARCH_LIMIT_MAX,
 	SORT_KEYS,
@@ -22,7 +24,7 @@ export type CatalogSource = { get(): Promise<Catalog> };
 const INSTRUCTIONS = `Alkometriikka is an independent database of the Finnish alcohol retailer Alko's product catalog (not affiliated with Alko).
 - Product data (names, categories, countries, etc.) is in Finnish, exactly as Alko publishes it, and filter values are Finnish. Products are classified as category (e.g. "Viinit" wines, "Väkevät" spirits, "Panimotuotteet" beers/ciders/long drinks, "Alkoholittomat" non-alcoholic) → subcategory (e.g. "Punaviinit" red wines, "Oluet" beers, "Viskit" whiskies) → style (e.g. "Lager", "Ipa"). Use list_filter_values when unsure of a value.
 - Prices are in euros, volumes in liters. Product IDs are Alko product numbers (e.g. "319027").
-- Typical flow: search_products → get_product / compare_products / price_history / store_availability.
+- Typical flow: search_products → get_product / compare_products / price_history / store_availability. create_list_link turns chosen products into a shareable alkometriikka.fi list link.
 - Every result includes a "dataset" block with update timestamps. Data is refreshed upstream about every 6 hours; mention staleness when "stale" is true or warnings are present.
 - Store availability is a periodic snapshot without stock quantities; do not present it as live stock.`;
 
@@ -226,6 +228,51 @@ Products removed from Alko's selection are excluded unless include_removed is tr
 			annotations: { title: 'Compare products', ...READ_ONLY }
 		},
 		async ({ product_ids }) => result((await source.get()).compare(product_ids))
+	);
+
+	server.registerTool(
+		'create_list_link',
+		{
+			title: 'Create a shareable list link',
+			description: `Create a link to an alkometriikka.fi list (e.g. a shopping list or party plan) with a name and products with quantities. Opening the link shows the list on alkometriikka.fi with its totals, and the visitor can save it to their own lists. The whole list is encoded in the URL: nothing is stored, and a changed list needs a new link. Repeated product IDs are merged by adding up their quantities. Fails without creating a link if any product ID is not found. Returns the URL plus each product, its quantity and line total, and list totals (price, volume, alcohol grams, standard drinks). Share the url with the user as is.`,
+			inputSchema: {
+				name: z.string().min(1).max(100).describe('List name shown on the page, e.g. "Juhannus"'),
+				items: z
+					.array(
+						z.object({
+							product_id: productId,
+							quantity: z
+								.number()
+								.int()
+								.min(1)
+								.max(LIST_QUANTITY_MAX)
+								.optional()
+								.describe('How many of this product (default 1)')
+						})
+					)
+					.min(1)
+					.max(LIST_ITEMS_MAX)
+					.describe(`1–${LIST_ITEMS_MAX} products`)
+			},
+			outputSchema: {
+				url: z.string(),
+				name: z.string(),
+				products: z.array(
+					productSummary.extend({ quantity: z.number(), line_total_eur: z.number() })
+				),
+				totals: z.object({
+					items: z.number(),
+					price_eur: z.number(),
+					volume_l: z.number(),
+					alcohol_grams: z.number(),
+					standard_drinks: z.number()
+				}),
+				note: z.string(),
+				dataset: datasetStatus
+			},
+			annotations: { title: 'Create a shareable list link', ...READ_ONLY, idempotentHint: false }
+		},
+		async ({ name, items }) => result((await source.get()).createListLink(name, items))
 	);
 
 	server.registerTool(

@@ -13,6 +13,7 @@ import { FIXTURE_DIR, fixtureCatalog } from './helpers.ts';
 const TOOLS = [
 	'catalog_statistics',
 	'compare_products',
+	'create_list_link',
 	'get_product',
 	'list_filter_values',
 	'price_history',
@@ -73,6 +74,27 @@ describe('MCP server (in-memory)', () => {
 		expect(structured.products[0]!.id).toBe('200002');
 		const text = result.content[0];
 		expect(text?.type === 'text' && JSON.parse(text.text)).toEqual(structured);
+	});
+
+	it('creates list links through the protocol', async () => {
+		const result = await call(client, 'create_list_link', {
+			name: 'Sauna',
+			items: [{ product_id: '200002', quantity: 6 }]
+		});
+		expect(result.isError).toBeFalsy();
+		expect(result.structuredContent).toMatchObject({
+			name: 'Sauna',
+			totals: { items: 6 },
+			products: [{ id: '200002', quantity: 6 }]
+		});
+		expect(
+			errorText(
+				await call(client, 'create_list_link', {
+					name: 'X',
+					items: [{ product_id: '200002', quantity: 0 }]
+				})
+			)
+		).toContain('quantity');
 	});
 
 	it('returns empty search results without an error', async () => {

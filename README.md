@@ -240,6 +240,7 @@ claude mcp add alkometriikka -- bun run /absolute/path/to/alkometriikka/mcp/inde
 | `compare_products` | Compare 2–10 products and show which one is best on each metric. |
 | `price_history` | Recorded price changes and a summary for a product. |
 | `store_availability` | Stores that listed the product in the latest availability snapshot, with today's opening hours. |
+| `create_list_link` | Build a shareable alkometriikka.fi list link from products and quantities. The list is encoded in the URL; nothing is stored. |
 | `catalog_statistics` | Product counts, averages, category breakdown and data timestamps. |
 | `list_filter_values` | Valid (Finnish) values for the search filters, with product counts. |
 
