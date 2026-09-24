@@ -1,0 +1,51 @@
+{
+	"lastUpdated": "2026-09-20T12:00:00.000Z",
+	"stores": {
+		"2101": {
+			"id": "2101",
+			"name": "Helsinki keskusta Testi",
+			"address": "Testikatu 2101",
+			"postalCode": "00100",
+			"postOffice": "HELSINKI",
+			"outletType": "1"
+		},
+		"2201": {
+			"id": "2201",
+			"name": "Tampere keskusta Testi",
+			"address": "Testikatu 2201",
+			"postalCode": "00100",
+			"postOffice": "TAMPERE",
+			"outletType": "1"
+		},
+		"2202": {
+			"id": "2202",
+			"name": "Tampere Hervanta Testi",
+			"address": "Testikatu 2202",
+			"postalCode": "00100",
+			"postOffice": "TAMPERE",
+			"outletType": "1"
+		},
+		"2301": {
+			"id": "2301",
+			"name": "Turku Testi",
+			"address": "Testikatu 2301",
+			"postalCode": "00100",
+			"postOffice": "TURKU",
+			"outletType": "1"
+		},
+		"9999": {
+			"id": "9999",
+			"name": "Noutopiste Testi",
+			"address": "Testikatu 9999",
+			"postalCode": "00100",
+			"postOffice": "OULU",
+			"outletType": "2"
+		}
+	},
+	"product": {
+		"100001": ["2101", "2201", "9999"],
+		"200002": ["2101", "2202"],
+		"300003": ["2201", "2301"],
+		"500005": ["2101"]
+	}
+}
