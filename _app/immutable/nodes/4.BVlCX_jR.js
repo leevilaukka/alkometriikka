@@ -1,0 +1,1 @@
+import{r as t}from"../chunks/B0hI5iWL.js";async function r({parent:i,params:o}){const e=o.id?.split("/")[0];throw e?t(300,`/tuotteet/${e}/`):t(300,"/")}const a=Object.freeze(Object.defineProperty({__proto__:null,load:r},Symbol.toStringTag,{value:"Module"}));export{a as universal};
