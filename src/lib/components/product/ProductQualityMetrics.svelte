@@ -18,7 +18,7 @@
 		<div class="flex items-baseline gap-2">
 			<h2 class="text-2xl font-bold">Hinta-laatu</h2>
 			<span class="text-sm text-secondary">
-				verrattuna muihin kategorian "{result.categoryLabel}" tuotteisiin (n = {result.sampleSize})
+				verrattuna muihin ryhmän "{result.categoryLabel}" tuotteisiin (n = {result.sampleSize})
 			</span>
 		</div>
 		<div class="grid grid-cols-2 gap-3.5 lg:grid-cols-4">
