@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bache Gabrielsen 3 Kors VS – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/927507/",
+	"feed_url": "https://alkometriikka.fi/rss/927507.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bache Gabrielsen 3 Kors VS.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-927507-2026-07-18-41.99",
+			"url": "https://alkometriikka.fi/tuotteet/927507/",
+			"title": "Bache Gabrielsen 3 Kors VS — 40,40 € → 41,99 €",
+			"content_html": "<p>Tuotteen Bache Gabrielsen 3 Kors VS hinta on muuttunut.</p><p>40,40 € → 41,99 € (+1,59 €, +3,94 %).</p>",
+			"summary": "Tuotteen Bache Gabrielsen 3 Kors VS hinta on muuttunut. 40,40 € → 41,99 € (+1,59 €, +3,94 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/927507-45fc6ca935b5.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

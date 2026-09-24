@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Finlandia Vodka – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/000173/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Finlandia Vodka.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/000173.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Finlandia Vodka – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Finlandia Vodka — 68,67 € → 68,69 €</title>
+			<link>https://alkometriikka.fi/tuotteet/000173/</link>
+			<guid isPermaLink="false">alkometriikka-000173-2026-07-18-68.69</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / vodka</category>
+			<description><![CDATA[<p>Tuotteen Finlandia Vodka hinta on muuttunut.</p><p>68,67 € → 68,69 € (+0,02 €, +0,03 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/000173-4a34faa084db.png" />
+		</item>
+	</channel>
+</rss>

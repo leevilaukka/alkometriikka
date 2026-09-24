@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Beefeater London Dry Gin muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/105371/",
+	"feed_url": "https://alkometriikka.fi/rss/105371.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Beefeater London Dry Gin muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-105371-2026-07-18-4.45",
+			"url": "https://alkometriikka.fi/tuotteet/105371/",
+			"title": "Beefeater London Dry Gin muovipullo — 4,41 € → 4,45 €",
+			"content_html": "<p>Tuotteen Beefeater London Dry Gin muovipullo hinta on muuttunut.</p><p>4,41 € → 4,45 € (+0,04 €, +0,91 %).</p>",
+			"summary": "Tuotteen Beefeater London Dry Gin muovipullo hinta on muuttunut. 4,41 € → 4,45 € (+0,04 €, +0,91 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/105371-d5f6686ca2fb.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

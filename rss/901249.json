@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Bitter Truth Olive Bitters – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901249/",
+	"feed_url": "https://alkometriikka.fi/rss/901249.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Bitter Truth Olive Bitters.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901249-2026-07-18-22.69",
+			"url": "https://alkometriikka.fi/tuotteet/901249/",
+			"title": "The Bitter Truth Olive Bitters — 22,71 € → 22,69 €",
+			"content_html": "<p>Tuotteen The Bitter Truth Olive Bitters hinta on muuttunut.</p><p>22,71 € → 22,69 € (−0,02 €, −0,09 %).</p>",
+			"summary": "Tuotteen The Bitter Truth Olive Bitters hinta on muuttunut. 22,71 € → 22,69 € (−0,02 €, −0,09 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901249-b0cd7417051a.png",
+			"tags": [
+				"Väkevät",
+				"maha- ja maustekatkerot"
+			]
+		}
+	]
+}

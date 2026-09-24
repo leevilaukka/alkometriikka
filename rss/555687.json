@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pongrácz Méthode Cap Classique Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/555687/",
+	"feed_url": "https://alkometriikka.fi/rss/555687.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pongrácz Méthode Cap Classique Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-555687-2026-07-18-17.98",
+			"url": "https://alkometriikka.fi/tuotteet/555687/",
+			"title": "Pongrácz Méthode Cap Classique Brut — 18,16 € → 17,98 €",
+			"content_html": "<p>Tuotteen Pongrácz Méthode Cap Classique Brut hinta on muuttunut.</p><p>18,16 € → 17,98 € (−0,18 €, −0,99 %).</p>",
+			"summary": "Tuotteen Pongrácz Méthode Cap Classique Brut hinta on muuttunut. 18,16 € → 17,98 € (−0,18 €, −0,99 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/555687-ae9b4041d04b.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Koskenkorva Salmiakki muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/153524/",
+	"feed_url": "https://alkometriikka.fi/rss/153524.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Koskenkorva Salmiakki muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-153524-2026-07-18-13.49",
+			"url": "https://alkometriikka.fi/tuotteet/153524/",
+			"title": "Koskenkorva Salmiakki muovipullo — 13,28 € → 13,49 €",
+			"content_html": "<p>Tuotteen Koskenkorva Salmiakki muovipullo hinta on muuttunut.</p><p>13,28 € → 13,49 € (+0,21 €, +1,58 %).</p>",
+			"summary": "Tuotteen Koskenkorva Salmiakki muovipullo hinta on muuttunut. 13,28 € → 13,49 € (+0,21 €, +1,58 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/153524-5918218f6463.png",
+			"tags": [
+				"Väkevät",
+				"salmiakkiliköörit"
+			]
+		}
+	]
+}

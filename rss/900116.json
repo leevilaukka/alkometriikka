@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Telmo Rodriguez Mountain Blanco 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900116/",
+	"feed_url": "https://alkometriikka.fi/rss/900116.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Telmo Rodriguez Mountain Blanco 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900116-2026-07-18-26.89",
+			"url": "https://alkometriikka.fi/tuotteet/900116/",
+			"title": "Telmo Rodriguez Mountain Blanco 2021 — 26,86 € → 26,89 €",
+			"content_html": "<p>Tuotteen Telmo Rodriguez Mountain Blanco 2021 hinta on muuttunut.</p><p>26,86 € → 26,89 € (+0,03 €, +0,11 %).</p>",
+			"summary": "Tuotteen Telmo Rodriguez Mountain Blanco 2021 hinta on muuttunut. 26,86 € → 26,89 € (+0,03 €, +0,11 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900116-cf59ba42f8b4.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

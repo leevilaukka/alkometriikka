@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Flechas de Los Andes Gran Corte 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/930156/",
+	"feed_url": "https://alkometriikka.fi/rss/930156.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Flechas de Los Andes Gran Corte 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-930156-2026-07-18-51.8",
+			"url": "https://alkometriikka.fi/tuotteet/930156/",
+			"title": "Flechas de Los Andes Gran Corte 2020 — 46,39 € → 51,80 €",
+			"content_html": "<p>Tuotteen Flechas de Los Andes Gran Corte 2020 hinta on muuttunut.</p><p>46,39 € → 51,80 € (+5,41 €, +11,66 %).</p>",
+			"summary": "Tuotteen Flechas de Los Andes Gran Corte 2020 hinta on muuttunut. 46,39 € → 51,80 € (+5,41 €, +11,66 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/930156-74590e91ebff.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – San Pellegrino muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/703226/",
+	"feed_url": "https://alkometriikka.fi/rss/703226.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: San Pellegrino muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-703226-2026-07-18-2.75",
+			"url": "https://alkometriikka.fi/tuotteet/703226/",
+			"title": "San Pellegrino muovipullo — 2,74 € → 2,75 €",
+			"content_html": "<p>Tuotteen San Pellegrino muovipullo hinta on muuttunut.</p><p>2,74 € → 2,75 € (+0,01 €, +0,36 %).</p>",
+			"summary": "Tuotteen San Pellegrino muovipullo hinta on muuttunut. 2,74 € → 2,75 € (+0,01 €, +0,36 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/703226-7359ed0b6527.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

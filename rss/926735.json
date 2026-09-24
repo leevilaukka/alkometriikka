@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Darroze Les Grands Assemblages 8 Ans d'Âge – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/926735/",
+	"feed_url": "https://alkometriikka.fi/rss/926735.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Darroze Les Grands Assemblages 8 Ans d'Âge.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-926735-2026-07-18-70.67",
+			"url": "https://alkometriikka.fi/tuotteet/926735/",
+			"title": "Darroze Les Grands Assemblages 8 Ans d'Âge — 67,32 € → 70,67 €",
+			"content_html": "<p>Tuotteen Darroze Les Grands Assemblages 8 Ans d'Âge hinta on muuttunut.</p><p>67,32 € → 70,67 € (+3,35 €, +4,98 %).</p>",
+			"summary": "Tuotteen Darroze Les Grands Assemblages 8 Ans d'Âge hinta on muuttunut. 67,32 € → 70,67 € (+3,35 €, +4,98 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/926735-35831f65bb95.png",
+			"tags": [
+				"Väkevät",
+				"armanjakit"
+			]
+		}
+	]
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Karhu 5,3 6-pack tölkki – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/710578/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Karhu 5,3 6-pack tölkki.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/710578.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Karhu 5,3 6-pack tölkki – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Karhu 5,3 6-pack tölkki — 12,54 € → 13,20 €</title>
+			<link>https://alkometriikka.fi/tuotteet/710578/</link>
+			<guid isPermaLink="false">alkometriikka-710578-2026-07-18-13.2</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Panimotuotteet / oluet</category>
+			<description><![CDATA[<p>Tuotteen Karhu 5,3 6-pack tölkki hinta on muuttunut.</p><p>12,54 € → 13,20 € (+0,66 €, +5,26 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/710578-57ccc284d09c.png" />
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Le Sirop de Monin Lime Citron Vert – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903514/",
+	"feed_url": "https://alkometriikka.fi/rss/903514.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Le Sirop de Monin Lime Citron Vert.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903514-2026-07-18-22.29",
+			"url": "https://alkometriikka.fi/tuotteet/903514/",
+			"title": "Le Sirop de Monin Lime Citron Vert — 21,96 € → 22,29 €",
+			"content_html": "<p>Tuotteen Le Sirop de Monin Lime Citron Vert hinta on muuttunut.</p><p>21,96 € → 22,29 € (+0,33 €, +1,50 %).</p>",
+			"summary": "Tuotteen Le Sirop de Monin Lime Citron Vert hinta on muuttunut. 21,96 € → 22,29 € (+0,33 €, +1,50 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903514-d135b2e9290d.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

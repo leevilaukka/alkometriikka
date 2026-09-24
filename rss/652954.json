@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ainoa Vaapukka 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/652954/",
+	"feed_url": "https://alkometriikka.fi/rss/652954.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ainoa Vaapukka 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-652954-2026-07-18-28.2",
+			"url": "https://alkometriikka.fi/tuotteet/652954/",
+			"title": "Ainoa Vaapukka 2021 — 27,74 € → 28,20 €",
+			"content_html": "<p>Tuotteen Ainoa Vaapukka 2021 hinta on muuttunut.</p><p>27,74 € → 28,20 € (+0,46 €, +1,66 %).</p>",
+			"summary": "Tuotteen Ainoa Vaapukka 2021 hinta on muuttunut. 27,74 € → 28,20 € (+0,46 €, +1,66 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/652954-33c969d90974.png",
+			"tags": [
+				"Viinit",
+				"jälkiruokaviinit"
+			]
+		}
+	]
+}

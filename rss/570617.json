@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Petit Bourgeois Sauvignon Blanc 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/570617/",
+	"feed_url": "https://alkometriikka.fi/rss/570617.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Petit Bourgeois Sauvignon Blanc 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-570617-2026-07-18-16.98",
+			"url": "https://alkometriikka.fi/tuotteet/570617/",
+			"title": "Petit Bourgeois Sauvignon Blanc 2025 — 16,90 € → 16,98 €",
+			"content_html": "<p>Tuotteen Petit Bourgeois Sauvignon Blanc 2025 hinta on muuttunut.</p><p>16,90 € → 16,98 € (+0,08 €, +0,47 %).</p>",
+			"summary": "Tuotteen Petit Bourgeois Sauvignon Blanc 2025 hinta on muuttunut. 16,90 € → 16,98 € (+0,08 €, +0,47 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/570617-ed58cf0b4568.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

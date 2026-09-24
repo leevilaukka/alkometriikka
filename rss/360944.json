@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Osborne Manzanilla Sherry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/360944/",
+	"feed_url": "https://alkometriikka.fi/rss/360944.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Osborne Manzanilla Sherry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-360944-2026-07-18-9.98",
+			"url": "https://alkometriikka.fi/tuotteet/360944/",
+			"title": "Osborne Manzanilla Sherry — 9,50 € → 9,98 €",
+			"content_html": "<p>Tuotteen Osborne Manzanilla Sherry hinta on muuttunut.</p><p>9,50 € → 9,98 € (+0,48 €, +5,05 %).</p>",
+			"summary": "Tuotteen Osborne Manzanilla Sherry hinta on muuttunut. 9,50 € → 9,98 € (+0,48 €, +5,05 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/360944-0042201d11ab.png",
+			"tags": [
+				"Välituotteet",
+				"sherryt"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Le Grand Noir Chardonnay 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/956768/",
+	"feed_url": "https://alkometriikka.fi/rss/956768.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Le Grand Noir Chardonnay 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-956768-2026-07-18-15.99",
+			"url": "https://alkometriikka.fi/tuotteet/956768/",
+			"title": "Le Grand Noir Chardonnay 2025 — 16,48 € → 15,99 €",
+			"content_html": "<p>Tuotteen Le Grand Noir Chardonnay 2025 hinta on muuttunut.</p><p>16,48 € → 15,99 € (−0,49 €, −2,97 %).</p>",
+			"summary": "Tuotteen Le Grand Noir Chardonnay 2025 hinta on muuttunut. 16,48 € → 15,99 € (−0,49 €, −2,97 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/956768-86272d8bd176.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

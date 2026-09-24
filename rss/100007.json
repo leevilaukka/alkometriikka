@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pallini Limoncetto – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/100007/",
+	"feed_url": "https://alkometriikka.fi/rss/100007.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pallini Limoncetto.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-100007-2026-02-02-14.88",
+			"url": "https://alkometriikka.fi/tuotteet/100007/",
+			"title": "Pallini Limoncetto — 14,98 € → 14,88 €",
+			"content_html": "<p>Tuotteen Pallini Limoncetto hinta on muuttunut.</p><p>14,98 € → 14,88 € (−0,10 €, −0,67 %).</p>",
+			"summary": "Tuotteen Pallini Limoncetto hinta on muuttunut. 14,98 € → 14,88 € (−0,10 €, −0,67 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/100007-5b53e0e49e25.png",
+			"tags": [
+				"Väkevät",
+				"hedelmäliköörit"
+			]
+		},
+		{
+			"id": "alkometriikka-100007-2026-02-02-14.98",
+			"url": "https://alkometriikka.fi/tuotteet/100007/",
+			"title": "Pallini Limoncetto — 14,88 € → 14,98 €",
+			"content_html": "<p>Tuotteen Pallini Limoncetto hinta on muuttunut.</p><p>14,88 € → 14,98 € (+0,10 €, +0,67 %).</p>",
+			"summary": "Tuotteen Pallini Limoncetto hinta on muuttunut. 14,88 € → 14,98 € (+0,10 €, +0,67 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/100007-5b53e0e49e25.png",
+			"tags": [
+				"Väkevät",
+				"hedelmäliköörit"
+			]
+		}
+	]
+}

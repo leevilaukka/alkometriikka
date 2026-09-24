@@ -1,0 +1,63 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Crisp Vaalea Lager tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/793114/",
+	"feed_url": "https://alkometriikka.fi/rss/793114.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Crisp Vaalea Lager tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-793114-2026-09-04-1.07",
+			"url": "https://alkometriikka.fi/tuotteet/793114/",
+			"title": "Crisp Vaalea Lager tölkki — 1,19 € → 1,07 €",
+			"content_html": "<p>Tuotteen Crisp Vaalea Lager tölkki hinta on muuttunut.</p><p>1,19 € → 1,07 € (−0,12 €, −10,08 %).</p>",
+			"summary": "Tuotteen Crisp Vaalea Lager tölkki hinta on muuttunut. 1,19 € → 1,07 € (−0,12 €, −10,08 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/793114-a67002cb6229.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-793114-2026-07-18-1.19",
+			"url": "https://alkometriikka.fi/tuotteet/793114/",
+			"title": "Crisp Vaalea Lager tölkki — 1,29 € → 1,19 €",
+			"content_html": "<p>Tuotteen Crisp Vaalea Lager tölkki hinta on muuttunut.</p><p>1,29 € → 1,19 € (−0,10 €, −7,75 %).</p>",
+			"summary": "Tuotteen Crisp Vaalea Lager tölkki hinta on muuttunut. 1,29 € → 1,19 € (−0,10 €, −7,75 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/793114-a67002cb6229.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-793114-2026-02-02-1.14",
+			"url": "https://alkometriikka.fi/tuotteet/793114/",
+			"title": "Crisp Vaalea Lager tölkki — 1,29 € → 1,14 €",
+			"content_html": "<p>Tuotteen Crisp Vaalea Lager tölkki hinta on muuttunut.</p><p>1,29 € → 1,14 € (−0,15 €, −11,63 %).</p>",
+			"summary": "Tuotteen Crisp Vaalea Lager tölkki hinta on muuttunut. 1,29 € → 1,14 € (−0,15 €, −11,63 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/793114-a67002cb6229.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-793114-2026-02-02-1.29",
+			"url": "https://alkometriikka.fi/tuotteet/793114/",
+			"title": "Crisp Vaalea Lager tölkki — 1,14 € → 1,29 €",
+			"content_html": "<p>Tuotteen Crisp Vaalea Lager tölkki hinta on muuttunut.</p><p>1,14 € → 1,29 € (+0,15 €, +13,16 %).</p>",
+			"summary": "Tuotteen Crisp Vaalea Lager tölkki hinta on muuttunut. 1,14 € → 1,29 € (+0,15 €, +13,16 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/793114-a67002cb6229.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

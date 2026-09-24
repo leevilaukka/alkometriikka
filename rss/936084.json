@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Arthur Metz Crémant d'Alsace 1904 Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/936084/",
+	"feed_url": "https://alkometriikka.fi/rss/936084.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Arthur Metz Crémant d'Alsace 1904 Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-936084-2026-07-18-21.38",
+			"url": "https://alkometriikka.fi/tuotteet/936084/",
+			"title": "Arthur Metz Crémant d'Alsace 1904 Brut — 21,29 € → 21,38 €",
+			"content_html": "<p>Tuotteen Arthur Metz Crémant d'Alsace 1904 Brut hinta on muuttunut.</p><p>21,29 € → 21,38 € (+0,09 €, +0,42 %).</p>",
+			"summary": "Tuotteen Arthur Metz Crémant d'Alsace 1904 Brut hinta on muuttunut. 21,29 € → 21,38 € (+0,09 €, +0,42 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/936084-89fb88ec3afb.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

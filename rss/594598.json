@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Liisa Muscat Sauvignon Blanc kartonkitölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/594598/",
+	"feed_url": "https://alkometriikka.fi/rss/594598.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Liisa Muscat Sauvignon Blanc kartonkitölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-594598-2026-07-18-10.69",
+			"url": "https://alkometriikka.fi/tuotteet/594598/",
+			"title": "Liisa Muscat Sauvignon Blanc kartonkitölkki — 10,59 € → 10,69 €",
+			"content_html": "<p>Tuotteen Liisa Muscat Sauvignon Blanc kartonkitölkki hinta on muuttunut.</p><p>10,59 € → 10,69 € (+0,10 €, +0,94 %).</p>",
+			"summary": "Tuotteen Liisa Muscat Sauvignon Blanc kartonkitölkki hinta on muuttunut. 10,59 € → 10,69 € (+0,10 €, +0,94 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/594598-36c70f82526a.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

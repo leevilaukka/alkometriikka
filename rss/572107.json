@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Eymann Vom Löss Weißburgunder 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/572107/",
+	"feed_url": "https://alkometriikka.fi/rss/572107.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Eymann Vom Löss Weißburgunder 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-572107-2026-07-18-17.9",
+			"url": "https://alkometriikka.fi/tuotteet/572107/",
+			"title": "Eymann Vom Löss Weißburgunder 2022 — 22,35 € → 17,90 €",
+			"content_html": "<p>Tuotteen Eymann Vom Löss Weißburgunder 2022 hinta on muuttunut.</p><p>22,35 € → 17,90 € (−4,45 €, −19,91 %).</p>",
+			"summary": "Tuotteen Eymann Vom Löss Weißburgunder 2022 hinta on muuttunut. 22,35 € → 17,90 € (−4,45 €, −19,91 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/572107-f7d88a34db94.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

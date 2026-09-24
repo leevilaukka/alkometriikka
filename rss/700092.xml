@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Toneido Watermelon Soju – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/700092/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Toneido Watermelon Soju.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/700092.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Toneido Watermelon Soju – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Toneido Watermelon Soju — 8,99 € → 9,48 €</title>
+			<link>https://alkometriikka.fi/tuotteet/700092/</link>
+			<guid isPermaLink="false">alkometriikka-700092-2026-07-18-9.48</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Panimotuotteet / juomasekoitukset</category>
+			<description><![CDATA[<p>Tuotteen Toneido Watermelon Soju hinta on muuttunut.</p><p>8,99 € → 9,48 € (+0,49 €, +5,45 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/700092-cf60550258cf.png" />
+		</item>
+	</channel>
+</rss>

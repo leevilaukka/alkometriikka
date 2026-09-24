@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Autréau de Champillon Blanc de Blancs Grand Cru Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/915046/",
+	"feed_url": "https://alkometriikka.fi/rss/915046.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Autréau de Champillon Blanc de Blancs Grand Cru Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-915046-2026-07-18-54.9",
+			"url": "https://alkometriikka.fi/tuotteet/915046/",
+			"title": "Autréau de Champillon Blanc de Blancs Grand Cru Champagne Brut — 53,99 € → 54,90 €",
+			"content_html": "<p>Tuotteen Autréau de Champillon Blanc de Blancs Grand Cru Champagne Brut hinta on muuttunut.</p><p>53,99 € → 54,90 € (+0,91 €, +1,69 %).</p>",
+			"summary": "Tuotteen Autréau de Champillon Blanc de Blancs Grand Cru Champagne Brut hinta on muuttunut. 53,99 € → 54,90 € (+0,91 €, +1,69 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/915046-8a373ecae6c1.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

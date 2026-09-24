@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Salmon Meunier Rosé Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/942013/",
+	"feed_url": "https://alkometriikka.fi/rss/942013.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Salmon Meunier Rosé Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-942013-2026-07-18-59.8",
+			"url": "https://alkometriikka.fi/tuotteet/942013/",
+			"title": "Salmon Meunier Rosé Champagne Brut — 60,45 € → 59,80 €",
+			"content_html": "<p>Tuotteen Salmon Meunier Rosé Champagne Brut hinta on muuttunut.</p><p>60,45 € → 59,80 € (−0,65 €, −1,08 %).</p>",
+			"summary": "Tuotteen Salmon Meunier Rosé Champagne Brut hinta on muuttunut. 60,45 € → 59,80 € (−0,65 €, −1,08 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/942013-2c6599cac0a8.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

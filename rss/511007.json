@@ -1,0 +1,50 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bubble Attraction Rose Cava Extra Seco – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/511007/",
+	"feed_url": "https://alkometriikka.fi/rss/511007.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bubble Attraction Rose Cava Extra Seco.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-511007-2026-07-18-13.48",
+			"url": "https://alkometriikka.fi/tuotteet/511007/",
+			"title": "Bubble Attraction Rose Cava Extra Seco — 13,40 € → 13,48 €",
+			"content_html": "<p>Tuotteen Bubble Attraction Rose Cava Extra Seco hinta on muuttunut.</p><p>13,40 € → 13,48 € (+0,08 €, +0,60 %).</p>",
+			"summary": "Tuotteen Bubble Attraction Rose Cava Extra Seco hinta on muuttunut. 13,40 € → 13,48 € (+0,08 €, +0,60 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/511007-ebf09c36bdf6.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-511007-2026-02-02-13.3",
+			"url": "https://alkometriikka.fi/tuotteet/511007/",
+			"title": "Bubble Attraction Rose Cava Extra Seco — 13,40 € → 13,30 €",
+			"content_html": "<p>Tuotteen Bubble Attraction Rose Cava Extra Seco hinta on muuttunut.</p><p>13,40 € → 13,30 € (−0,10 €, −0,75 %).</p>",
+			"summary": "Tuotteen Bubble Attraction Rose Cava Extra Seco hinta on muuttunut. 13,40 € → 13,30 € (−0,10 €, −0,75 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/511007-ebf09c36bdf6.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-511007-2026-02-02-13.4",
+			"url": "https://alkometriikka.fi/tuotteet/511007/",
+			"title": "Bubble Attraction Rose Cava Extra Seco — 13,30 € → 13,40 €",
+			"content_html": "<p>Tuotteen Bubble Attraction Rose Cava Extra Seco hinta on muuttunut.</p><p>13,30 € → 13,40 € (+0,10 €, +0,75 %).</p>",
+			"summary": "Tuotteen Bubble Attraction Rose Cava Extra Seco hinta on muuttunut. 13,30 € → 13,40 € (+0,10 €, +0,75 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/511007-ebf09c36bdf6.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

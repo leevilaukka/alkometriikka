@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Royal Salute 21 Year Old Signature Blend – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/935187/",
+	"feed_url": "https://alkometriikka.fi/rss/935187.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Royal Salute 21 Year Old Signature Blend.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-935187-2026-07-18-177.99",
+			"url": "https://alkometriikka.fi/tuotteet/935187/",
+			"title": "Royal Salute 21 Year Old Signature Blend — 177,76 € → 177,99 €",
+			"content_html": "<p>Tuotteen Royal Salute 21 Year Old Signature Blend hinta on muuttunut.</p><p>177,76 € → 177,99 € (+0,23 €, +0,13 %).</p>",
+			"summary": "Tuotteen Royal Salute 21 Year Old Signature Blend hinta on muuttunut. 177,76 € → 177,99 € (+0,23 €, +0,13 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/935187-c119c506d7ac.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

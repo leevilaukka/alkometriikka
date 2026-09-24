@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Relicario Ron Dominicano – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903407/",
+	"feed_url": "https://alkometriikka.fi/rss/903407.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Relicario Ron Dominicano.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903407-2026-07-18-54.97",
+			"url": "https://alkometriikka.fi/tuotteet/903407/",
+			"title": "Relicario Ron Dominicano — 54,82 € → 54,97 €",
+			"content_html": "<p>Tuotteen Relicario Ron Dominicano hinta on muuttunut.</p><p>54,82 € → 54,97 € (+0,15 €, +0,27 %).</p>",
+			"summary": "Tuotteen Relicario Ron Dominicano hinta on muuttunut. 54,82 € → 54,97 € (+0,15 €, +0,27 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903407-e2f21c3fbd0f.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Perrier-Jouët Belle Epoque Champagne Brut 2014 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/925877/",
+	"feed_url": "https://alkometriikka.fi/rss/925877.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Perrier-Jouët Belle Epoque Champagne Brut 2014.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-925877-2026-07-18-225.98",
+			"url": "https://alkometriikka.fi/tuotteet/925877/",
+			"title": "Perrier-Jouët Belle Epoque Champagne Brut 2014 — 225,45 € → 225,98 €",
+			"content_html": "<p>Tuotteen Perrier-Jouët Belle Epoque Champagne Brut 2014 hinta on muuttunut.</p><p>225,45 € → 225,98 € (+0,53 €, +0,24 %).</p>",
+			"summary": "Tuotteen Perrier-Jouët Belle Epoque Champagne Brut 2014 hinta on muuttunut. 225,45 € → 225,98 € (+0,53 €, +0,24 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/925877-2f28d70b7cf7.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

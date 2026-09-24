@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Moët & Chandon Impérial Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/008783/",
+	"feed_url": "https://alkometriikka.fi/rss/008783.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Moët & Chandon Impérial Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-008783-2026-07-18-62.98",
+			"url": "https://alkometriikka.fi/tuotteet/008783/",
+			"title": "Moët & Chandon Impérial Champagne Brut — 62,94 € → 62,98 €",
+			"content_html": "<p>Tuotteen Moët & Chandon Impérial Champagne Brut hinta on muuttunut.</p><p>62,94 € → 62,98 € (+0,04 €, +0,06 %).</p>",
+			"summary": "Tuotteen Moët & Chandon Impérial Champagne Brut hinta on muuttunut. 62,94 € → 62,98 € (+0,04 €, +0,06 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/008783-e85c07498baa.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

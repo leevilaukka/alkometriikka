@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Clos Alkio Caminito a Motel Tinto 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/930913/",
+	"feed_url": "https://alkometriikka.fi/rss/930913.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Clos Alkio Caminito a Motel Tinto 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-930913-2026-07-18-32.99",
+			"url": "https://alkometriikka.fi/tuotteet/930913/",
+			"title": "Clos Alkio Caminito a Motel Tinto 2021 — 32,45 € → 32,99 €",
+			"content_html": "<p>Tuotteen Clos Alkio Caminito a Motel Tinto 2021 hinta on muuttunut.</p><p>32,45 € → 32,99 € (+0,54 €, +1,66 %).</p>",
+			"summary": "Tuotteen Clos Alkio Caminito a Motel Tinto 2021 hinta on muuttunut. 32,45 € → 32,99 € (+0,54 €, +1,66 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/930913-64689c2020dd.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

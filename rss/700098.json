@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – 1664 Blanc 5,0% tölkki tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/700098/",
+	"feed_url": "https://alkometriikka.fi/rss/700098.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: 1664 Blanc 5,0% tölkki tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-700098-2026-07-18-2.44",
+			"url": "https://alkometriikka.fi/tuotteet/700098/",
+			"title": "1664 Blanc 5,0% tölkki tölkki — 2,39 € → 2,44 €",
+			"content_html": "<p>Tuotteen 1664 Blanc 5,0% tölkki tölkki hinta on muuttunut.</p><p>2,39 € → 2,44 € (+0,05 €, +2,09 %).</p>",
+			"summary": "Tuotteen 1664 Blanc 5,0% tölkki tölkki hinta on muuttunut. 2,39 € → 2,44 € (+0,05 €, +2,09 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/700098-575a1f4d1428.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

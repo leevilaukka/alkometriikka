@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Volpaia Castelprile Riserva 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901649/",
+	"feed_url": "https://alkometriikka.fi/rss/901649.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Volpaia Castelprile Riserva 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901649-2026-07-18-52",
+			"url": "https://alkometriikka.fi/tuotteet/901649/",
+			"title": "Volpaia Castelprile Riserva 2018 — 52,03 € → 52,00 €",
+			"content_html": "<p>Tuotteen Volpaia Castelprile Riserva 2018 hinta on muuttunut.</p><p>52,03 € → 52,00 € (−0,03 €, −0,06 %).</p>",
+			"summary": "Tuotteen Volpaia Castelprile Riserva 2018 hinta on muuttunut. 52,03 € → 52,00 € (−0,03 €, −0,06 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901649-62f4e7afd51c.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

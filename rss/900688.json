@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Signorelli Prosecco Extra Dry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900688/",
+	"feed_url": "https://alkometriikka.fi/rss/900688.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Signorelli Prosecco Extra Dry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900688-2026-07-18-12.49",
+			"url": "https://alkometriikka.fi/tuotteet/900688/",
+			"title": "Signorelli Prosecco Extra Dry — 12,45 € → 12,49 €",
+			"content_html": "<p>Tuotteen Signorelli Prosecco Extra Dry hinta on muuttunut.</p><p>12,45 € → 12,49 € (+0,04 €, +0,32 %).</p>",
+			"summary": "Tuotteen Signorelli Prosecco Extra Dry hinta on muuttunut. 12,45 € → 12,49 € (+0,04 €, +0,32 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900688-f781b04fc721.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – El Escolladero 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/933002/",
+	"feed_url": "https://alkometriikka.fi/rss/933002.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: El Escolladero 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-933002-2026-07-18-98.9",
+			"url": "https://alkometriikka.fi/tuotteet/933002/",
+			"title": "El Escolladero 2023 — 95,21 € → 98,90 €",
+			"content_html": "<p>Tuotteen El Escolladero 2023 hinta on muuttunut.</p><p>95,21 € → 98,90 € (+3,69 €, +3,88 %).</p>",
+			"summary": "Tuotteen El Escolladero 2023 hinta on muuttunut. 95,21 € → 98,90 € (+3,69 €, +3,88 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/933002-e45fa3b58478.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

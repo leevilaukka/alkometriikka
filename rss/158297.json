@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Label 5 Bourbon Barrel Single Grain – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/158297/",
+	"feed_url": "https://alkometriikka.fi/rss/158297.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Label 5 Bourbon Barrel Single Grain.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-158297-2026-07-18-27.25",
+			"url": "https://alkometriikka.fi/tuotteet/158297/",
+			"title": "Label 5 Bourbon Barrel Single Grain — 27,23 € → 27,25 €",
+			"content_html": "<p>Tuotteen Label 5 Bourbon Barrel Single Grain hinta on muuttunut.</p><p>27,23 € → 27,25 € (+0,02 €, +0,07 %).</p>",
+			"summary": "Tuotteen Label 5 Bourbon Barrel Single Grain hinta on muuttunut. 27,23 € → 27,25 € (+0,02 €, +0,07 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/158297-fdd253b8a3ad.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

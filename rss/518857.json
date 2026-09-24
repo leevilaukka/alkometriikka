@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pizzolato Organic Alcohol Free Sparkling – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/518857/",
+	"feed_url": "https://alkometriikka.fi/rss/518857.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pizzolato Organic Alcohol Free Sparkling.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-518857-2026-07-18-8.89",
+			"url": "https://alkometriikka.fi/tuotteet/518857/",
+			"title": "Pizzolato Organic Alcohol Free Sparkling — 8,86 € → 8,89 €",
+			"content_html": "<p>Tuotteen Pizzolato Organic Alcohol Free Sparkling hinta on muuttunut.</p><p>8,86 € → 8,89 € (+0,03 €, +0,34 %).</p>",
+			"summary": "Tuotteen Pizzolato Organic Alcohol Free Sparkling hinta on muuttunut. 8,86 € → 8,89 € (+0,03 €, +0,34 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/518857-54cc50895371.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat kuohuviinit"
+			]
+		}
+	]
+}

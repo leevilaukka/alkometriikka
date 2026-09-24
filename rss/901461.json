@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Four Pillars Olive Leaf Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901461/",
+	"feed_url": "https://alkometriikka.fi/rss/901461.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Four Pillars Olive Leaf Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901461-2026-07-18-57.99",
+			"url": "https://alkometriikka.fi/tuotteet/901461/",
+			"title": "Four Pillars Olive Leaf Gin — 57,28 € → 57,99 €",
+			"content_html": "<p>Tuotteen Four Pillars Olive Leaf Gin hinta on muuttunut.</p><p>57,28 € → 57,99 € (+0,71 €, +1,24 %).</p>",
+			"summary": "Tuotteen Four Pillars Olive Leaf Gin hinta on muuttunut. 57,28 € → 57,99 € (+0,71 €, +1,24 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901461-8e4ead5d73a6.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

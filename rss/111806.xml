@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – De Kuyper Triple Sec – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/111806/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: De Kuyper Triple Sec.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/111806.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – De Kuyper Triple Sec – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>De Kuyper Triple Sec — 23,09 € → 22,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/111806/</link>
+			<guid isPermaLink="false">alkometriikka-111806-2026-02-02-22.99</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / hedelmäliköörit</category>
+			<description><![CDATA[<p>Tuotteen De Kuyper Triple Sec hinta on muuttunut.</p><p>23,09 € → 22,99 € (−0,10 €, −0,43 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/111806-4574ae103b7b.png" />
+		</item>
+		<item>
+			<title>De Kuyper Triple Sec — 22,99 € → 23,09 €</title>
+			<link>https://alkometriikka.fi/tuotteet/111806/</link>
+			<guid isPermaLink="false">alkometriikka-111806-2026-02-02-23.09</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / hedelmäliköörit</category>
+			<description><![CDATA[<p>Tuotteen De Kuyper Triple Sec hinta on muuttunut.</p><p>22,99 € → 23,09 € (+0,10 €, +0,43 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/111806-4574ae103b7b.png" />
+		</item>
+	</channel>
+</rss>

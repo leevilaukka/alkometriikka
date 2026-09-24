@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Dr. Loosen Riesling Alcohol Free – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/950565/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Dr. Loosen Riesling Alcohol Free.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/950565.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Dr. Loosen Riesling Alcohol Free – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Dr. Loosen Riesling Alcohol Free — 11,90 € → 11,93 €</title>
+			<link>https://alkometriikka.fi/tuotteet/950565/</link>
+			<guid isPermaLink="false">alkometriikka-950565-2026-07-18-11.93</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Alkoholittomat / alkoholittomat valko- ja roseeviinit</category>
+			<description><![CDATA[<p>Tuotteen Dr. Loosen Riesling Alcohol Free hinta on muuttunut.</p><p>11,90 € → 11,93 € (+0,03 €, +0,25 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/950565-3b17a5eea992.png" />
+		</item>
+	</channel>
+</rss>

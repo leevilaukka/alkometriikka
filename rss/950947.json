@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – El Gobernador Pisco – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/950947/",
+	"feed_url": "https://alkometriikka.fi/rss/950947.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: El Gobernador Pisco.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-950947-2026-07-18-42.99",
+			"url": "https://alkometriikka.fi/tuotteet/950947/",
+			"title": "El Gobernador Pisco — 42,26 € → 42,99 €",
+			"content_html": "<p>Tuotteen El Gobernador Pisco hinta on muuttunut.</p><p>42,26 € → 42,99 € (+0,73 €, +1,73 %).</p>",
+			"summary": "Tuotteen El Gobernador Pisco hinta on muuttunut. 42,26 € → 42,99 € (+0,73 €, +1,73 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/950947-0a7de1f44b07.png",
+			"tags": [
+				"Väkevät",
+				"hedelmätisleet"
+			]
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – De Kuyper Triple Sec – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/111806/",
+	"feed_url": "https://alkometriikka.fi/rss/111806.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: De Kuyper Triple Sec.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-111806-2026-02-02-22.99",
+			"url": "https://alkometriikka.fi/tuotteet/111806/",
+			"title": "De Kuyper Triple Sec — 23,09 € → 22,99 €",
+			"content_html": "<p>Tuotteen De Kuyper Triple Sec hinta on muuttunut.</p><p>23,09 € → 22,99 € (−0,10 €, −0,43 %).</p>",
+			"summary": "Tuotteen De Kuyper Triple Sec hinta on muuttunut. 23,09 € → 22,99 € (−0,10 €, −0,43 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/111806-4574ae103b7b.png",
+			"tags": [
+				"Väkevät",
+				"hedelmäliköörit"
+			]
+		},
+		{
+			"id": "alkometriikka-111806-2026-02-02-23.09",
+			"url": "https://alkometriikka.fi/tuotteet/111806/",
+			"title": "De Kuyper Triple Sec — 22,99 € → 23,09 €",
+			"content_html": "<p>Tuotteen De Kuyper Triple Sec hinta on muuttunut.</p><p>22,99 € → 23,09 € (+0,10 €, +0,43 %).</p>",
+			"summary": "Tuotteen De Kuyper Triple Sec hinta on muuttunut. 22,99 € → 23,09 € (+0,10 €, +0,43 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/111806-4574ae103b7b.png",
+			"tags": [
+				"Väkevät",
+				"hedelmäliköörit"
+			]
+		}
+	]
+}

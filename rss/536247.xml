@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Veuve Clicquot Rich on Ice Champagne Doux – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/536247/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Veuve Clicquot Rich on Ice Champagne Doux.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/536247.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Veuve Clicquot Rich on Ice Champagne Doux – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Veuve Clicquot Rich on Ice Champagne Doux — 82,45 € → 83,98 €</title>
+			<link>https://alkometriikka.fi/tuotteet/536247/</link>
+			<guid isPermaLink="false">alkometriikka-536247-2026-07-18-83.98</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / kuohuviinit ja samppanjat</category>
+			<description><![CDATA[<p>Tuotteen Veuve Clicquot Rich on Ice Champagne Doux hinta on muuttunut.</p><p>82,45 € → 83,98 € (+1,53 €, +1,86 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/536247-49d0f2ea74a7.png" />
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Captain Morgan Sliced Apple – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/122017/",
+	"feed_url": "https://alkometriikka.fi/rss/122017.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Captain Morgan Sliced Apple.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-122017-2026-07-18-30.69",
+			"url": "https://alkometriikka.fi/tuotteet/122017/",
+			"title": "Captain Morgan Sliced Apple — 29,83 € → 30,69 €",
+			"content_html": "<p>Tuotteen Captain Morgan Sliced Apple hinta on muuttunut.</p><p>29,83 € → 30,69 € (+0,86 €, +2,88 %).</p>",
+			"summary": "Tuotteen Captain Morgan Sliced Apple hinta on muuttunut. 29,83 € → 30,69 € (+0,86 €, +2,88 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/122017-a9a26bcf2838.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château du Breuil VSOP – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/932831/",
+	"feed_url": "https://alkometriikka.fi/rss/932831.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château du Breuil VSOP.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-932831-2026-07-18-4.28",
+			"url": "https://alkometriikka.fi/tuotteet/932831/",
+			"title": "Château du Breuil VSOP — 4,16 € → 4,28 €",
+			"content_html": "<p>Tuotteen Château du Breuil VSOP hinta on muuttunut.</p><p>4,16 € → 4,28 € (+0,12 €, +2,88 %).</p>",
+			"summary": "Tuotteen Château du Breuil VSOP hinta on muuttunut. 4,16 € → 4,28 € (+0,12 €, +2,88 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/932831-5efd2c21ef85.png",
+			"tags": [
+				"Väkevät",
+				"calvadosit"
+			]
+		}
+	]
+}

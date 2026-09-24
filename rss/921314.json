@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Brockmans Agave Cut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/921314/",
+	"feed_url": "https://alkometriikka.fi/rss/921314.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Brockmans Agave Cut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-921314-2026-07-18-68.72",
+			"url": "https://alkometriikka.fi/tuotteet/921314/",
+			"title": "Brockmans Agave Cut — 63,94 € → 68,72 €",
+			"content_html": "<p>Tuotteen Brockmans Agave Cut hinta on muuttunut.</p><p>63,94 € → 68,72 € (+4,78 €, +7,48 %).</p>",
+			"summary": "Tuotteen Brockmans Agave Cut hinta on muuttunut. 63,94 € → 68,72 € (+4,78 €, +7,48 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/921314-d93287f10e05.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

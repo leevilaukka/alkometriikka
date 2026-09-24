@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Righi Lambrusco di Modena Biologico – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/906605/",
+	"feed_url": "https://alkometriikka.fi/rss/906605.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Righi Lambrusco di Modena Biologico.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-906605-2026-07-18-12.49",
+			"url": "https://alkometriikka.fi/tuotteet/906605/",
+			"title": "Righi Lambrusco di Modena Biologico — 11,99 € → 12,49 €",
+			"content_html": "<p>Tuotteen Righi Lambrusco di Modena Biologico hinta on muuttunut.</p><p>11,99 € → 12,49 € (+0,50 €, +4,17 %).</p>",
+			"summary": "Tuotteen Righi Lambrusco di Modena Biologico hinta on muuttunut. 11,99 € → 12,49 € (+0,50 €, +4,17 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/906605-5f91765e8ebb.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

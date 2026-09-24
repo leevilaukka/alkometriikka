@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Hennessy VSOP – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/000892/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Hennessy VSOP.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/000892.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Hennessy VSOP – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Hennessy VSOP — 39,04 € → 38,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/000892/</link>
+			<guid isPermaLink="false">alkometriikka-000892-2026-07-18-38.99</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / konjakit</category>
+			<description><![CDATA[<p>Tuotteen Hennessy VSOP hinta on muuttunut.</p><p>39,04 € → 38,99 € (−0,05 €, −0,13 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/000892-9d795dedf091.png" />
+		</item>
+	</channel>
+</rss>

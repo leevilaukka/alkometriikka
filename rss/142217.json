@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Poli Bagno Maria Grappa Biologica – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/142217/",
+	"feed_url": "https://alkometriikka.fi/rss/142217.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Poli Bagno Maria Grappa Biologica.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-142217-2026-07-18-48.98",
+			"url": "https://alkometriikka.fi/tuotteet/142217/",
+			"title": "Poli Bagno Maria Grappa Biologica — 48,00 € → 48,98 €",
+			"content_html": "<p>Tuotteen Poli Bagno Maria Grappa Biologica hinta on muuttunut.</p><p>48,00 € → 48,98 € (+0,98 €, +2,04 %).</p>",
+			"summary": "Tuotteen Poli Bagno Maria Grappa Biologica hinta on muuttunut. 48,00 € → 48,98 € (+0,98 €, +2,04 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/142217-255accc89a1c.png",
+			"tags": [
+				"Väkevät",
+				"grapat"
+			]
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ollenaut Kaineken Pale Ale Citra – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/928115/",
+	"feed_url": "https://alkometriikka.fi/rss/928115.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ollenaut Kaineken Pale Ale Citra.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-928115-2026-09-04-3.11",
+			"url": "https://alkometriikka.fi/tuotteet/928115/",
+			"title": "Ollenaut Kaineken Pale Ale Citra — 3,45 € → 3,11 €",
+			"content_html": "<p>Tuotteen Ollenaut Kaineken Pale Ale Citra hinta on muuttunut.</p><p>3,45 € → 3,11 € (−0,34 €, −9,86 %).</p>",
+			"summary": "Tuotteen Ollenaut Kaineken Pale Ale Citra hinta on muuttunut. 3,45 € → 3,11 € (−0,34 €, −9,86 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/928115-6f62e6a3edf3.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-928115-2026-07-18-3.45",
+			"url": "https://alkometriikka.fi/tuotteet/928115/",
+			"title": "Ollenaut Kaineken Pale Ale Citra — 3,44 € → 3,45 €",
+			"content_html": "<p>Tuotteen Ollenaut Kaineken Pale Ale Citra hinta on muuttunut.</p><p>3,44 € → 3,45 € (+0,01 €, +0,29 %).</p>",
+			"summary": "Tuotteen Ollenaut Kaineken Pale Ale Citra hinta on muuttunut. 3,44 € → 3,45 € (+0,01 €, +0,29 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/928115-6f62e6a3edf3.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

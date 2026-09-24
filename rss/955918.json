@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tenute del Cabreo La Pietra 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/955918/",
+	"feed_url": "https://alkometriikka.fi/rss/955918.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tenute del Cabreo La Pietra 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-955918-2026-07-18-49.99",
+			"url": "https://alkometriikka.fi/tuotteet/955918/",
+			"title": "Tenute del Cabreo La Pietra 2019 — 51,96 € → 49,99 €",
+			"content_html": "<p>Tuotteen Tenute del Cabreo La Pietra 2019 hinta on muuttunut.</p><p>51,96 € → 49,99 € (−1,97 €, −3,79 %).</p>",
+			"summary": "Tuotteen Tenute del Cabreo La Pietra 2019 hinta on muuttunut. 51,96 € → 49,99 € (−1,97 €, −3,79 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/955918-ba485a8bae87.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

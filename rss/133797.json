@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glenburgie 15 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/133797/",
+	"feed_url": "https://alkometriikka.fi/rss/133797.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glenburgie 15 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-133797-2026-07-18-53.58",
+			"url": "https://alkometriikka.fi/tuotteet/133797/",
+			"title": "Glenburgie 15 Year Old Single Malt — 53,56 € → 53,58 €",
+			"content_html": "<p>Tuotteen Glenburgie 15 Year Old Single Malt hinta on muuttunut.</p><p>53,56 € → 53,58 € (+0,02 €, +0,04 %).</p>",
+			"summary": "Tuotteen Glenburgie 15 Year Old Single Malt hinta on muuttunut. 53,56 € → 53,58 € (+0,02 €, +0,04 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/133797-e5d67d4f7eec.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

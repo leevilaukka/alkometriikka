@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Come Hell Or High Water Rum XO – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/951327/",
+	"feed_url": "https://alkometriikka.fi/rss/951327.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Come Hell Or High Water Rum XO.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-951327-2026-07-18-56",
+			"url": "https://alkometriikka.fi/tuotteet/951327/",
+			"title": "Come Hell Or High Water Rum XO — 58,26 € → 56,00 €",
+			"content_html": "<p>Tuotteen Come Hell Or High Water Rum XO hinta on muuttunut.</p><p>58,26 € → 56,00 € (−2,26 €, −3,88 %).</p>",
+			"summary": "Tuotteen Come Hell Or High Water Rum XO hinta on muuttunut. 58,26 € → 56,00 € (−2,26 €, −3,88 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/951327-9219a82f6c8d.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

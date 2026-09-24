@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lisa 1503 Rosso D'artista hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/937434/",
+	"feed_url": "https://alkometriikka.fi/rss/937434.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lisa 1503 Rosso D'artista hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-937434-2026-07-18-37.98",
+			"url": "https://alkometriikka.fi/tuotteet/937434/",
+			"title": "Lisa 1503 Rosso D'artista hanapakkaus — 37,83 € → 37,98 €",
+			"content_html": "<p>Tuotteen Lisa 1503 Rosso D'artista hanapakkaus hinta on muuttunut.</p><p>37,83 € → 37,98 € (+0,15 €, +0,40 %).</p>",
+			"summary": "Tuotteen Lisa 1503 Rosso D'artista hanapakkaus hinta on muuttunut. 37,83 € → 37,98 € (+0,15 €, +0,40 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/937434-64d4f50df4a7.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

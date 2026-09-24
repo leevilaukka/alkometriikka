@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Leijona Bangkok Pineapple muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/256566/",
+	"feed_url": "https://alkometriikka.fi/rss/256566.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Leijona Bangkok Pineapple muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-256566-2026-07-18-11.98",
+			"url": "https://alkometriikka.fi/tuotteet/256566/",
+			"title": "Leijona Bangkok Pineapple muovipullo — 11,96 € → 11,98 €",
+			"content_html": "<p>Tuotteen Leijona Bangkok Pineapple muovipullo hinta on muuttunut.</p><p>11,96 € → 11,98 € (+0,02 €, +0,17 %).</p>",
+			"summary": "Tuotteen Leijona Bangkok Pineapple muovipullo hinta on muuttunut. 11,96 € → 11,98 € (+0,02 €, +0,17 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/256566-fa90ec8ffac9.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

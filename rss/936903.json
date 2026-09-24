@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Álvaro Palacios La Baixada 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/936903/",
+	"feed_url": "https://alkometriikka.fi/rss/936903.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Álvaro Palacios La Baixada 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-936903-2026-07-18-214.79",
+			"url": "https://alkometriikka.fi/tuotteet/936903/",
+			"title": "Álvaro Palacios La Baixada 2020 — 214,76 € → 214,79 €",
+			"content_html": "<p>Tuotteen Álvaro Palacios La Baixada 2020 hinta on muuttunut.</p><p>214,76 € → 214,79 € (+0,03 €, +0,01 %).</p>",
+			"summary": "Tuotteen Álvaro Palacios La Baixada 2020 hinta on muuttunut. 214,76 € → 214,79 € (+0,03 €, +0,01 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/936903-a0526aede979.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

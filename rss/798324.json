@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Galipette Non-Alc – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/798324/",
+	"feed_url": "https://alkometriikka.fi/rss/798324.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Galipette Non-Alc.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-798324-2026-07-18-2.59",
+			"url": "https://alkometriikka.fi/tuotteet/798324/",
+			"title": "Galipette Non-Alc — 2,44 € → 2,59 €",
+			"content_html": "<p>Tuotteen Galipette Non-Alc hinta on muuttunut.</p><p>2,44 € → 2,59 € (+0,15 €, +6,15 %).</p>",
+			"summary": "Tuotteen Galipette Non-Alc hinta on muuttunut. 2,44 € → 2,59 € (+0,15 €, +6,15 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/798324-dbb5fd46f482.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat siiderit"
+			]
+		}
+	]
+}

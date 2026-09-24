@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Helsinki Barrel Aged Gin – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/916974/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Helsinki Barrel Aged Gin.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/916974.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Helsinki Barrel Aged Gin – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Helsinki Barrel Aged Gin — 49,21 € → 49,65 €</title>
+			<link>https://alkometriikka.fi/tuotteet/916974/</link>
+			<guid isPermaLink="false">alkometriikka-916974-2026-07-18-49.65</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / ginit</category>
+			<description><![CDATA[<p>Tuotteen Helsinki Barrel Aged Gin hinta on muuttunut.</p><p>49,21 € → 49,65 € (+0,44 €, +0,89 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/916974-48c9fb5dac0f.png" />
+		</item>
+	</channel>
+</rss>

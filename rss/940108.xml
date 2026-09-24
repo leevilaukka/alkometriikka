@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Mallaskoski Hazy Horizon NEIPA tölkki – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/940108/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Mallaskoski Hazy Horizon NEIPA tölkki.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/940108.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Mallaskoski Hazy Horizon NEIPA tölkki – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Mallaskoski Hazy Horizon NEIPA tölkki — 3,69 € → 3,49 €</title>
+			<link>https://alkometriikka.fi/tuotteet/940108/</link>
+			<guid isPermaLink="false">alkometriikka-940108-2026-07-18-3.49</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Panimotuotteet / oluet</category>
+			<description><![CDATA[<p>Tuotteen Mallaskoski Hazy Horizon NEIPA tölkki hinta on muuttunut.</p><p>3,69 € → 3,49 € (−0,20 €, −5,42 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/940108-68f76a59e7f3.png" />
+		</item>
+		<item>
+			<title>Mallaskoski Hazy Horizon NEIPA tölkki — 3,69 € → 3,54 €</title>
+			<link>https://alkometriikka.fi/tuotteet/940108/</link>
+			<guid isPermaLink="false">alkometriikka-940108-2026-02-02-3.54</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Panimotuotteet / oluet</category>
+			<description><![CDATA[<p>Tuotteen Mallaskoski Hazy Horizon NEIPA tölkki hinta on muuttunut.</p><p>3,69 € → 3,54 € (−0,15 €, −4,07 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/940108-68f76a59e7f3.png" />
+		</item>
+		<item>
+			<title>Mallaskoski Hazy Horizon NEIPA tölkki — 3,54 € → 3,69 €</title>
+			<link>https://alkometriikka.fi/tuotteet/940108/</link>
+			<guid isPermaLink="false">alkometriikka-940108-2026-02-02-3.69</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Panimotuotteet / oluet</category>
+			<description><![CDATA[<p>Tuotteen Mallaskoski Hazy Horizon NEIPA tölkki hinta on muuttunut.</p><p>3,54 € → 3,69 € (+0,15 €, +4,24 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/940108-68f76a59e7f3.png" />
+		</item>
+	</channel>
+</rss>

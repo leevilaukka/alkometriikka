@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Helsinki Tyrnipontikka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/927244/",
+	"feed_url": "https://alkometriikka.fi/rss/927244.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Helsinki Tyrnipontikka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-927244-2026-07-18-5.84",
+			"url": "https://alkometriikka.fi/tuotteet/927244/",
+			"title": "Helsinki Tyrnipontikka — 5,71 € → 5,84 €",
+			"content_html": "<p>Tuotteen Helsinki Tyrnipontikka hinta on muuttunut.</p><p>5,71 € → 5,84 € (+0,13 €, +2,28 %).</p>",
+			"summary": "Tuotteen Helsinki Tyrnipontikka hinta on muuttunut. 5,71 € → 5,84 € (+0,13 €, +2,28 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/927244-668a50609d2c.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

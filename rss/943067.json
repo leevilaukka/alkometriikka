@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bollinger La Grande Année Champagne Brut 2015 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/943067/",
+	"feed_url": "https://alkometriikka.fi/rss/943067.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bollinger La Grande Année Champagne Brut 2015.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-943067-2026-07-18-229.99",
+			"url": "https://alkometriikka.fi/tuotteet/943067/",
+			"title": "Bollinger La Grande Année Champagne Brut 2015 — 248,55 € → 229,99 €",
+			"content_html": "<p>Tuotteen Bollinger La Grande Année Champagne Brut 2015 hinta on muuttunut.</p><p>248,55 € → 229,99 € (−18,56 €, −7,47 %).</p>",
+			"summary": "Tuotteen Bollinger La Grande Année Champagne Brut 2015 hinta on muuttunut. 248,55 € → 229,99 € (−18,56 €, −7,47 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/943067-4bfa760340f2.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Rodenbach Classic – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901513/",
+	"feed_url": "https://alkometriikka.fi/rss/901513.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Rodenbach Classic.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901513-2026-02-02-3.89",
+			"url": "https://alkometriikka.fi/tuotteet/901513/",
+			"title": "Rodenbach Classic — 3,99 € → 3,89 €",
+			"content_html": "<p>Tuotteen Rodenbach Classic hinta on muuttunut.</p><p>3,99 € → 3,89 € (−0,10 €, −2,51 %).</p>",
+			"summary": "Tuotteen Rodenbach Classic hinta on muuttunut. 3,99 € → 3,89 € (−0,10 €, −2,51 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901513-6ebc4e31181d.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-901513-2026-02-02-3.99",
+			"url": "https://alkometriikka.fi/tuotteet/901513/",
+			"title": "Rodenbach Classic — 3,89 € → 3,99 €",
+			"content_html": "<p>Tuotteen Rodenbach Classic hinta on muuttunut.</p><p>3,89 € → 3,99 € (+0,10 €, +2,57 %).</p>",
+			"summary": "Tuotteen Rodenbach Classic hinta on muuttunut. 3,89 € → 3,99 € (+0,10 €, +2,57 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901513-6ebc4e31181d.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

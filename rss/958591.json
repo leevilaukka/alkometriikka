@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – LYV Moelleux – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/958591/",
+	"feed_url": "https://alkometriikka.fi/rss/958591.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: LYV Moelleux.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-958591-2026-07-18-14.49",
+			"url": "https://alkometriikka.fi/tuotteet/958591/",
+			"title": "LYV Moelleux — 14,45 € → 14,49 €",
+			"content_html": "<p>Tuotteen LYV Moelleux hinta on muuttunut.</p><p>14,45 € → 14,49 € (+0,04 €, +0,28 %).</p>",
+			"summary": "Tuotteen LYV Moelleux hinta on muuttunut. 14,45 € → 14,49 € (+0,04 €, +0,28 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/958591-01cfccd1b900.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

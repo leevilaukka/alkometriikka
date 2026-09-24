@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Guigal Crozes-Hermitage Blanc 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901053/",
+	"feed_url": "https://alkometriikka.fi/rss/901053.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Guigal Crozes-Hermitage Blanc 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901053-2026-07-18-33.49",
+			"url": "https://alkometriikka.fi/tuotteet/901053/",
+			"title": "Guigal Crozes-Hermitage Blanc 2023 — 33,24 € → 33,49 €",
+			"content_html": "<p>Tuotteen Guigal Crozes-Hermitage Blanc 2023 hinta on muuttunut.</p><p>33,24 € → 33,49 € (+0,25 €, +0,75 %).</p>",
+			"summary": "Tuotteen Guigal Crozes-Hermitage Blanc 2023 hinta on muuttunut. 33,24 € → 33,49 € (+0,25 €, +0,75 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901053-e9472cb7715a.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

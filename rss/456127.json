@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cabreo Il Borgo 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/456127/",
+	"feed_url": "https://alkometriikka.fi/rss/456127.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cabreo Il Borgo 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-456127-2026-07-18-62.5",
+			"url": "https://alkometriikka.fi/tuotteet/456127/",
+			"title": "Cabreo Il Borgo 2022 — 62,96 € → 62,50 €",
+			"content_html": "<p>Tuotteen Cabreo Il Borgo 2022 hinta on muuttunut.</p><p>62,96 € → 62,50 € (−0,46 €, −0,73 %).</p>",
+			"summary": "Tuotteen Cabreo Il Borgo 2022 hinta on muuttunut. 62,96 € → 62,50 € (−0,46 €, −0,73 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/456127-9a572d8aa790.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

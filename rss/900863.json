@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kaiho Salmiakki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900863/",
+	"feed_url": "https://alkometriikka.fi/rss/900863.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kaiho Salmiakki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900863-2026-07-18-20.98",
+			"url": "https://alkometriikka.fi/tuotteet/900863/",
+			"title": "Kaiho Salmiakki — 20,07 € → 20,98 €",
+			"content_html": "<p>Tuotteen Kaiho Salmiakki hinta on muuttunut.</p><p>20,07 € → 20,98 € (+0,91 €, +4,53 %).</p>",
+			"summary": "Tuotteen Kaiho Salmiakki hinta on muuttunut. 20,07 € → 20,98 € (+0,91 €, +4,53 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900863-b6e551c9c719.png",
+			"tags": [
+				"Väkevät",
+				"salmiakkiliköörit"
+			]
+		}
+	]
+}

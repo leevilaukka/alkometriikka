@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mallaskoski Cerberos Bourbon Barrel Aged Imperial Stout – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/924882/",
+	"feed_url": "https://alkometriikka.fi/rss/924882.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mallaskoski Cerberos Bourbon Barrel Aged Imperial Stout.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-924882-2026-07-18-23.88",
+			"url": "https://alkometriikka.fi/tuotteet/924882/",
+			"title": "Mallaskoski Cerberos Bourbon Barrel Aged Imperial Stout — 23,90 € → 23,88 €",
+			"content_html": "<p>Tuotteen Mallaskoski Cerberos Bourbon Barrel Aged Imperial Stout hinta on muuttunut.</p><p>23,90 € → 23,88 € (−0,02 €, −0,08 %).</p>",
+			"summary": "Tuotteen Mallaskoski Cerberos Bourbon Barrel Aged Imperial Stout hinta on muuttunut. 23,90 € → 23,88 € (−0,02 €, −0,08 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/924882-b60d6ee72fff.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

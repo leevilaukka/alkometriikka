@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Palmer & Co La Réserve Champagne Brut Mathusalem – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/945828/",
+	"feed_url": "https://alkometriikka.fi/rss/945828.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Palmer & Co La Réserve Champagne Brut Mathusalem.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-945828-2026-07-18-849",
+			"url": "https://alkometriikka.fi/tuotteet/945828/",
+			"title": "Palmer & Co La Réserve Champagne Brut Mathusalem — 832,85 € → 849,00 €",
+			"content_html": "<p>Tuotteen Palmer & Co La Réserve Champagne Brut Mathusalem hinta on muuttunut.</p><p>832,85 € → 849,00 € (+16,15 €, +1,94 %).</p>",
+			"summary": "Tuotteen Palmer & Co La Réserve Champagne Brut Mathusalem hinta on muuttunut. 832,85 € → 849,00 € (+16,15 €, +1,94 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/945828-a40cb343f972.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

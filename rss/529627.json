@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Codorníu Ars Collecta Rosé Cava Organic Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/529627/",
+	"feed_url": "https://alkometriikka.fi/rss/529627.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Codorníu Ars Collecta Rosé Cava Organic Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-529627-2026-07-18-15.49",
+			"url": "https://alkometriikka.fi/tuotteet/529627/",
+			"title": "Codorníu Ars Collecta Rosé Cava Organic Brut — 15,45 € → 15,49 €",
+			"content_html": "<p>Tuotteen Codorníu Ars Collecta Rosé Cava Organic Brut hinta on muuttunut.</p><p>15,45 € → 15,49 € (+0,04 €, +0,26 %).</p>",
+			"summary": "Tuotteen Codorníu Ars Collecta Rosé Cava Organic Brut hinta on muuttunut. 15,45 € → 15,49 € (+0,04 €, +0,26 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/529627-157b9902bb4e.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

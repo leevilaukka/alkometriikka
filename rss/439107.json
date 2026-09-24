@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Valparaíso Crianza 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/439107/",
+	"feed_url": "https://alkometriikka.fi/rss/439107.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Valparaíso Crianza 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-439107-2026-07-18-17.98",
+			"url": "https://alkometriikka.fi/tuotteet/439107/",
+			"title": "Valparaíso Crianza 2023 — 18,12 € → 17,98 €",
+			"content_html": "<p>Tuotteen Valparaíso Crianza 2023 hinta on muuttunut.</p><p>18,12 € → 17,98 € (−0,14 €, −0,77 %).</p>",
+			"summary": "Tuotteen Valparaíso Crianza 2023 hinta on muuttunut. 18,12 € → 17,98 € (−0,14 €, −0,77 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/439107-fa2138cd0c33.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Carlshamns Flaggpunsch Original – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/127333/",
+	"feed_url": "https://alkometriikka.fi/rss/127333.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Carlshamns Flaggpunsch Original.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-127333-2026-07-18-8.59",
+			"url": "https://alkometriikka.fi/tuotteet/127333/",
+			"title": "Carlshamns Flaggpunsch Original — 8,63 € → 8,59 €",
+			"content_html": "<p>Tuotteen Carlshamns Flaggpunsch Original hinta on muuttunut.</p><p>8,63 € → 8,59 € (−0,04 €, −0,46 %).</p>",
+			"summary": "Tuotteen Carlshamns Flaggpunsch Original hinta on muuttunut. 8,63 € → 8,59 € (−0,04 €, −0,46 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/127333-5fd716ff8f08.png",
+			"tags": [
+				"Väkevät",
+				"mausteliköörit"
+			]
+		}
+	]
+}

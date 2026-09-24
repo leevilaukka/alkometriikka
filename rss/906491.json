@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tassin Sancerre 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/906491/",
+	"feed_url": "https://alkometriikka.fi/rss/906491.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tassin Sancerre 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-906491-2026-07-18-29.56",
+			"url": "https://alkometriikka.fi/tuotteet/906491/",
+			"title": "Tassin Sancerre 2025 — 30,43 € → 29,56 €",
+			"content_html": "<p>Tuotteen Tassin Sancerre 2025 hinta on muuttunut.</p><p>30,43 € → 29,56 € (−0,87 €, −2,86 %).</p>",
+			"summary": "Tuotteen Tassin Sancerre 2025 hinta on muuttunut. 30,43 € → 29,56 € (−0,87 €, −2,86 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/906491-40f73be436d4.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Shake-It Mixer Mango – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/906372/",
+	"feed_url": "https://alkometriikka.fi/rss/906372.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Shake-It Mixer Mango.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-906372-2026-07-18-9.19",
+			"url": "https://alkometriikka.fi/tuotteet/906372/",
+			"title": "Shake-It Mixer Mango — 9,21 € → 9,19 €",
+			"content_html": "<p>Tuotteen Shake-It Mixer Mango hinta on muuttunut.</p><p>9,21 € → 9,19 € (−0,02 €, −0,22 %).</p>",
+			"summary": "Tuotteen Shake-It Mixer Mango hinta on muuttunut. 9,21 € → 9,19 € (−0,02 €, −0,22 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/906372-dcf012358cbe.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

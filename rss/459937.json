@@ -1,0 +1,50 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pares Balta Mas Elena 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/459937/",
+	"feed_url": "https://alkometriikka.fi/rss/459937.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pares Balta Mas Elena 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-459937-2026-07-18-17.48",
+			"url": "https://alkometriikka.fi/tuotteet/459937/",
+			"title": "Pares Balta Mas Elena 2020 — 17,46 € → 17,48 €",
+			"content_html": "<p>Tuotteen Pares Balta Mas Elena 2020 hinta on muuttunut.</p><p>17,46 € → 17,48 € (+0,02 €, +0,11 %).</p>",
+			"summary": "Tuotteen Pares Balta Mas Elena 2020 hinta on muuttunut. 17,46 € → 17,48 € (+0,02 €, +0,11 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/459937-0f67eeaf8400.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-459937-2026-02-02-17.36",
+			"url": "https://alkometriikka.fi/tuotteet/459937/",
+			"title": "Pares Balta Mas Elena 2020 — 17,46 € → 17,36 €",
+			"content_html": "<p>Tuotteen Pares Balta Mas Elena 2020 hinta on muuttunut.</p><p>17,46 € → 17,36 € (−0,10 €, −0,57 %).</p>",
+			"summary": "Tuotteen Pares Balta Mas Elena 2020 hinta on muuttunut. 17,46 € → 17,36 € (−0,10 €, −0,57 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/459937-0f67eeaf8400.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-459937-2026-02-02-17.46",
+			"url": "https://alkometriikka.fi/tuotteet/459937/",
+			"title": "Pares Balta Mas Elena 2020 — 17,36 € → 17,46 €",
+			"content_html": "<p>Tuotteen Pares Balta Mas Elena 2020 hinta on muuttunut.</p><p>17,36 € → 17,46 € (+0,10 €, +0,58 %).</p>",
+			"summary": "Tuotteen Pares Balta Mas Elena 2020 hinta on muuttunut. 17,36 € → 17,46 € (+0,10 €, +0,58 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/459937-0f67eeaf8400.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

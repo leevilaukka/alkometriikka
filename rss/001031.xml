@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Rémy Martin VSOP – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/001031/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Rémy Martin VSOP.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/001031.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Rémy Martin VSOP – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Rémy Martin VSOP — 64,98 € → 59,98 €</title>
+			<link>https://alkometriikka.fi/tuotteet/001031/</link>
+			<guid isPermaLink="false">alkometriikka-001031-2026-07-18-59.98</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / konjakit</category>
+			<description><![CDATA[<p>Tuotteen Rémy Martin VSOP hinta on muuttunut.</p><p>64,98 € → 59,98 € (−5,00 €, −7,69 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/001031-1c05cccf7ff0.png" />
+		</item>
+		<item>
+			<title>Rémy Martin VSOP — 64,98 € → 64,88 €</title>
+			<link>https://alkometriikka.fi/tuotteet/001031/</link>
+			<guid isPermaLink="false">alkometriikka-001031-2026-02-02-64.88</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / konjakit</category>
+			<description><![CDATA[<p>Tuotteen Rémy Martin VSOP hinta on muuttunut.</p><p>64,98 € → 64,88 € (−0,10 €, −0,15 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/001031-1c05cccf7ff0.png" />
+		</item>
+		<item>
+			<title>Rémy Martin VSOP — 64,88 € → 64,98 €</title>
+			<link>https://alkometriikka.fi/tuotteet/001031/</link>
+			<guid isPermaLink="false">alkometriikka-001031-2026-02-02-64.98</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / konjakit</category>
+			<description><![CDATA[<p>Tuotteen Rémy Martin VSOP hinta on muuttunut.</p><p>64,88 € → 64,98 € (+0,10 €, +0,15 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/001031-1c05cccf7ff0.png" />
+		</item>
+	</channel>
+</rss>

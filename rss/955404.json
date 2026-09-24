@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Birichino Pinot Noir Boer 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/955404/",
+	"feed_url": "https://alkometriikka.fi/rss/955404.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Birichino Pinot Noir Boer 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-955404-2026-07-18-55.6",
+			"url": "https://alkometriikka.fi/tuotteet/955404/",
+			"title": "Birichino Pinot Noir Boer 2021 — 55,56 € → 55,60 €",
+			"content_html": "<p>Tuotteen Birichino Pinot Noir Boer 2021 hinta on muuttunut.</p><p>55,56 € → 55,60 € (+0,04 €, +0,07 %).</p>",
+			"summary": "Tuotteen Birichino Pinot Noir Boer 2021 hinta on muuttunut. 55,56 € → 55,60 € (+0,04 €, +0,07 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/955404-868465848ef8.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kaiho Pearl Cream – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/921771/",
+	"feed_url": "https://alkometriikka.fi/rss/921771.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kaiho Pearl Cream.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-921771-2026-07-18-27.98",
+			"url": "https://alkometriikka.fi/tuotteet/921771/",
+			"title": "Kaiho Pearl Cream — 27,06 € → 27,98 €",
+			"content_html": "<p>Tuotteen Kaiho Pearl Cream hinta on muuttunut.</p><p>27,06 € → 27,98 € (+0,92 €, +3,40 %).</p>",
+			"summary": "Tuotteen Kaiho Pearl Cream hinta on muuttunut. 27,06 € → 27,98 € (+0,92 €, +3,40 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/921771-9003d0494ef5.png",
+			"tags": [
+				"Väkevät",
+				"kermaliköörit"
+			]
+		}
+	]
+}

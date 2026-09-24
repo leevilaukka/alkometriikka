@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Devaux Cœur des Bar Blanc de Noir Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/934612/",
+	"feed_url": "https://alkometriikka.fi/rss/934612.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Devaux Cœur des Bar Blanc de Noir Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-934612-2026-07-18-48.99",
+			"url": "https://alkometriikka.fi/tuotteet/934612/",
+			"title": "Devaux Cœur des Bar Blanc de Noir Champagne Brut — 48,45 € → 48,99 €",
+			"content_html": "<p>Tuotteen Devaux Cœur des Bar Blanc de Noir Champagne Brut hinta on muuttunut.</p><p>48,45 € → 48,99 € (+0,54 €, +1,11 %).</p>",
+			"summary": "Tuotteen Devaux Cœur des Bar Blanc de Noir Champagne Brut hinta on muuttunut. 48,45 € → 48,99 € (+0,54 €, +1,11 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/934612-4085f36b1c63.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Maisel's Weisse Alkoholfrei – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901715/",
+	"feed_url": "https://alkometriikka.fi/rss/901715.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Maisel's Weisse Alkoholfrei.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901715-2026-09-04-3.05",
+			"url": "https://alkometriikka.fi/tuotteet/901715/",
+			"title": "Maisel's Weisse Alkoholfrei — 3,39 € → 3,05 €",
+			"content_html": "<p>Tuotteen Maisel's Weisse Alkoholfrei hinta on muuttunut.</p><p>3,39 € → 3,05 € (−0,34 €, −10,03 %).</p>",
+			"summary": "Tuotteen Maisel's Weisse Alkoholfrei hinta on muuttunut. 3,39 € → 3,05 € (−0,34 €, −10,03 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901715-6e399e46168e.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-901715-2026-07-18-3.39",
+			"url": "https://alkometriikka.fi/tuotteet/901715/",
+			"title": "Maisel's Weisse Alkoholfrei — 3,34 € → 3,39 €",
+			"content_html": "<p>Tuotteen Maisel's Weisse Alkoholfrei hinta on muuttunut.</p><p>3,34 € → 3,39 € (+0,05 €, +1,50 %).</p>",
+			"summary": "Tuotteen Maisel's Weisse Alkoholfrei hinta on muuttunut. 3,34 € → 3,39 € (+0,05 €, +1,50 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901715-6e399e46168e.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

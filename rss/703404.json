@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Karhu 0,0 tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/703404/",
+	"feed_url": "https://alkometriikka.fi/rss/703404.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Karhu 0,0 tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-703404-2026-09-04-1.31",
+			"url": "https://alkometriikka.fi/tuotteet/703404/",
+			"title": "Karhu 0,0 tölkki — 1,45 € → 1,31 €",
+			"content_html": "<p>Tuotteen Karhu 0,0 tölkki hinta on muuttunut.</p><p>1,45 € → 1,31 € (−0,14 €, −9,66 %).</p>",
+			"summary": "Tuotteen Karhu 0,0 tölkki hinta on muuttunut. 1,45 € → 1,31 € (−0,14 €, −9,66 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/703404-97ddd08d31d9.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-703404-2026-07-18-1.45",
+			"url": "https://alkometriikka.fi/tuotteet/703404/",
+			"title": "Karhu 0,0 tölkki — 1,39 € → 1,45 €",
+			"content_html": "<p>Tuotteen Karhu 0,0 tölkki hinta on muuttunut.</p><p>1,39 € → 1,45 € (+0,06 €, +4,32 %).</p>",
+			"summary": "Tuotteen Karhu 0,0 tölkki hinta on muuttunut. 1,39 € → 1,45 € (+0,06 €, +4,32 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/703404-97ddd08d31d9.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Castelmondo Amarone della Valpolicella 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/958575/",
+	"feed_url": "https://alkometriikka.fi/rss/958575.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Castelmondo Amarone della Valpolicella 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-958575-2026-07-18-28.98",
+			"url": "https://alkometriikka.fi/tuotteet/958575/",
+			"title": "Castelmondo Amarone della Valpolicella 2022 — 28,46 € → 28,98 €",
+			"content_html": "<p>Tuotteen Castelmondo Amarone della Valpolicella 2022 hinta on muuttunut.</p><p>28,46 € → 28,98 € (+0,52 €, +1,83 %).</p>",
+			"summary": "Tuotteen Castelmondo Amarone della Valpolicella 2022 hinta on muuttunut. 28,46 € → 28,98 € (+0,52 €, +1,83 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/958575-7cd71f0a683c.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

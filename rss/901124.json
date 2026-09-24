@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pratsch Riesling Ried Heiligenberg 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901124/",
+	"feed_url": "https://alkometriikka.fi/rss/901124.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pratsch Riesling Ried Heiligenberg 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901124-2026-07-18-18.99",
+			"url": "https://alkometriikka.fi/tuotteet/901124/",
+			"title": "Pratsch Riesling Ried Heiligenberg 2024 — 18,96 € → 18,99 €",
+			"content_html": "<p>Tuotteen Pratsch Riesling Ried Heiligenberg 2024 hinta on muuttunut.</p><p>18,96 € → 18,99 € (+0,03 €, +0,16 %).</p>",
+			"summary": "Tuotteen Pratsch Riesling Ried Heiligenberg 2024 hinta on muuttunut. 18,96 € → 18,99 € (+0,03 €, +0,16 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901124-ce7ee5acdd89.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

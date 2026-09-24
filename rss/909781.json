@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cuatro Pasos 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/909781/",
+	"feed_url": "https://alkometriikka.fi/rss/909781.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cuatro Pasos 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-909781-2026-07-18-15.49",
+			"url": "https://alkometriikka.fi/tuotteet/909781/",
+			"title": "Cuatro Pasos 2023 — 15,35 € → 15,49 €",
+			"content_html": "<p>Tuotteen Cuatro Pasos 2023 hinta on muuttunut.</p><p>15,35 € → 15,49 € (+0,14 €, +0,91 %).</p>",
+			"summary": "Tuotteen Cuatro Pasos 2023 hinta on muuttunut. 15,35 € → 15,49 € (+0,14 €, +0,91 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/909781-e62a3b173228.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

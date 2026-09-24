@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Arzuaga Crianza 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/909907/",
+	"feed_url": "https://alkometriikka.fi/rss/909907.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Arzuaga Crianza 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-909907-2026-07-18-36.99",
+			"url": "https://alkometriikka.fi/tuotteet/909907/",
+			"title": "Arzuaga Crianza 2022 — 37,89 € → 36,99 €",
+			"content_html": "<p>Tuotteen Arzuaga Crianza 2022 hinta on muuttunut.</p><p>37,89 € → 36,99 € (−0,90 €, −2,38 %).</p>",
+			"summary": "Tuotteen Arzuaga Crianza 2022 hinta on muuttunut. 37,89 € → 36,99 € (−0,90 €, −2,38 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/909907-550a91ead047.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

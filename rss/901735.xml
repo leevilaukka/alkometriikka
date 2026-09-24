@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Besini Rose 2024 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/901735/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Besini Rose 2024.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/901735.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Besini Rose 2024 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Besini Rose 2024 — 14,45 € → 15,84 €</title>
+			<link>https://alkometriikka.fi/tuotteet/901735/</link>
+			<guid isPermaLink="false">alkometriikka-901735-2026-07-18-15.84</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / roseeviinit</category>
+			<description><![CDATA[<p>Tuotteen Besini Rose 2024 hinta on muuttunut.</p><p>14,45 € → 15,84 € (+1,39 €, +9,62 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/901735-e2375d6df6ec.png" />
+		</item>
+	</channel>
+</rss>

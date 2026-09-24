@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tommasi Amarone della Valpolicella Classico 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/446477/",
+	"feed_url": "https://alkometriikka.fi/rss/446477.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tommasi Amarone della Valpolicella Classico 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-446477-2026-07-18-47.98",
+			"url": "https://alkometriikka.fi/tuotteet/446477/",
+			"title": "Tommasi Amarone della Valpolicella Classico 2022 — 48,35 € → 47,98 €",
+			"content_html": "<p>Tuotteen Tommasi Amarone della Valpolicella Classico 2022 hinta on muuttunut.</p><p>48,35 € → 47,98 € (−0,37 €, −0,77 %).</p>",
+			"summary": "Tuotteen Tommasi Amarone della Valpolicella Classico 2022 hinta on muuttunut. 48,35 € → 47,98 € (−0,37 €, −0,77 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/446477-af30c379e462.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

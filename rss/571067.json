@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jean-Baptiste Adam Riesling Terroir Selection 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/571067/",
+	"feed_url": "https://alkometriikka.fi/rss/571067.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jean-Baptiste Adam Riesling Terroir Selection 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-571067-2026-07-18-19.39",
+			"url": "https://alkometriikka.fi/tuotteet/571067/",
+			"title": "Jean-Baptiste Adam Riesling Terroir Selection 2023 — 19,35 € → 19,39 €",
+			"content_html": "<p>Tuotteen Jean-Baptiste Adam Riesling Terroir Selection 2023 hinta on muuttunut.</p><p>19,35 € → 19,39 € (+0,04 €, +0,21 %).</p>",
+			"summary": "Tuotteen Jean-Baptiste Adam Riesling Terroir Selection 2023 hinta on muuttunut. 19,35 € → 19,39 € (+0,04 €, +0,21 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/571067-5cc3d12c26f2.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

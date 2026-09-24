@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Astoria Prosecco Extra Dry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/509597/",
+	"feed_url": "https://alkometriikka.fi/rss/509597.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Astoria Prosecco Extra Dry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-509597-2026-07-18-17.98",
+			"url": "https://alkometriikka.fi/tuotteet/509597/",
+			"title": "Astoria Prosecco Extra Dry — 17,65 € → 17,98 €",
+			"content_html": "<p>Tuotteen Astoria Prosecco Extra Dry hinta on muuttunut.</p><p>17,65 € → 17,98 € (+0,33 €, +1,87 %).</p>",
+			"summary": "Tuotteen Astoria Prosecco Extra Dry hinta on muuttunut. 17,65 € → 17,98 € (+0,33 €, +1,87 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/509597-0a8c43453198.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

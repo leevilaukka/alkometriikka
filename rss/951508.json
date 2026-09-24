@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tronnes VSOP – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/951508/",
+	"feed_url": "https://alkometriikka.fi/rss/951508.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tronnes VSOP.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-951508-2026-07-18-25.89",
+			"url": "https://alkometriikka.fi/tuotteet/951508/",
+			"title": "Tronnes VSOP — 25,23 € → 25,89 €",
+			"content_html": "<p>Tuotteen Tronnes VSOP hinta on muuttunut.</p><p>25,23 € → 25,89 € (+0,66 €, +2,62 %).</p>",
+			"summary": "Tuotteen Tronnes VSOP hinta on muuttunut. 25,23 € → 25,89 € (+0,66 €, +2,62 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/951508-e6cdf4e3c436.png",
+			"tags": [
+				"Väkevät",
+				"brandyt"
+			]
+		}
+	]
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Larsen VSOP – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/109277/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Larsen VSOP.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/109277.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Larsen VSOP – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Larsen VSOP — 52,27 € → 51,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/109277/</link>
+			<guid isPermaLink="false">alkometriikka-109277-2026-07-18-51.99</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / konjakit</category>
+			<description><![CDATA[<p>Tuotteen Larsen VSOP hinta on muuttunut.</p><p>52,27 € → 51,99 € (−0,28 €, −0,54 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/109277-e8521227d030.png" />
+		</item>
+	</channel>
+</rss>

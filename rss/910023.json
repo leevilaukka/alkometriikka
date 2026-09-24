@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Henkell Alkoholfrei Sparkling Blanc – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/910023/",
+	"feed_url": "https://alkometriikka.fi/rss/910023.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Henkell Alkoholfrei Sparkling Blanc.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-910023-2026-07-18-2.49",
+			"url": "https://alkometriikka.fi/tuotteet/910023/",
+			"title": "Henkell Alkoholfrei Sparkling Blanc — 2,38 € → 2,49 €",
+			"content_html": "<p>Tuotteen Henkell Alkoholfrei Sparkling Blanc hinta on muuttunut.</p><p>2,38 € → 2,49 € (+0,11 €, +4,62 %).</p>",
+			"summary": "Tuotteen Henkell Alkoholfrei Sparkling Blanc hinta on muuttunut. 2,38 € → 2,49 € (+0,11 €, +4,62 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/910023-f3951d3cdb81.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat kuohuviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Du Grappin Mâcon-Villages 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900234/",
+	"feed_url": "https://alkometriikka.fi/rss/900234.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Du Grappin Mâcon-Villages 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900234-2026-07-18-38.7",
+			"url": "https://alkometriikka.fi/tuotteet/900234/",
+			"title": "Du Grappin Mâcon-Villages 2021 — 38,66 € → 38,70 €",
+			"content_html": "<p>Tuotteen Du Grappin Mâcon-Villages 2021 hinta on muuttunut.</p><p>38,66 € → 38,70 € (+0,04 €, +0,10 %).</p>",
+			"summary": "Tuotteen Du Grappin Mâcon-Villages 2021 hinta on muuttunut. 38,66 € → 38,70 € (+0,04 €, +0,10 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900234-0884c1fac41b.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – E. Guigal Condrieu 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/910754/",
+	"feed_url": "https://alkometriikka.fi/rss/910754.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: E. Guigal Condrieu 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-910754-2026-07-18-65.49",
+			"url": "https://alkometriikka.fi/tuotteet/910754/",
+			"title": "E. Guigal Condrieu 2021 — 65,23 € → 65,49 €",
+			"content_html": "<p>Tuotteen E. Guigal Condrieu 2021 hinta on muuttunut.</p><p>65,23 € → 65,49 € (+0,26 €, +0,40 %).</p>",
+			"summary": "Tuotteen E. Guigal Condrieu 2021 hinta on muuttunut. 65,23 € → 65,49 € (+0,26 €, +0,40 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/910754-b32ce30fe4ba.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

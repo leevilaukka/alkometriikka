@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tronnes Napoléon muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/198747/",
+	"feed_url": "https://alkometriikka.fi/rss/198747.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tronnes Napoléon muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-198747-2026-07-18-23.79",
+			"url": "https://alkometriikka.fi/tuotteet/198747/",
+			"title": "Tronnes Napoléon muovipullo — 23,64 € → 23,79 €",
+			"content_html": "<p>Tuotteen Tronnes Napoléon muovipullo hinta on muuttunut.</p><p>23,64 € → 23,79 € (+0,15 €, +0,63 %).</p>",
+			"summary": "Tuotteen Tronnes Napoléon muovipullo hinta on muuttunut. 23,64 € → 23,79 € (+0,15 €, +0,63 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/198747-1d87abd03ee1.png",
+			"tags": [
+				"Väkevät",
+				"brandyt"
+			]
+		}
+	]
+}

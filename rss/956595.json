@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nonino Grappa il Merlot – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/956595/",
+	"feed_url": "https://alkometriikka.fi/rss/956595.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nonino Grappa il Merlot.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-956595-2026-07-18-45",
+			"url": "https://alkometriikka.fi/tuotteet/956595/",
+			"title": "Nonino Grappa il Merlot — 44,91 € → 45,00 €",
+			"content_html": "<p>Tuotteen Nonino Grappa il Merlot hinta on muuttunut.</p><p>44,91 € → 45,00 € (+0,09 €, +0,20 %).</p>",
+			"summary": "Tuotteen Nonino Grappa il Merlot hinta on muuttunut. 44,91 € → 45,00 € (+0,09 €, +0,20 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/956595-c57303b6c339.png",
+			"tags": [
+				"Väkevät",
+				"grapat"
+			]
+		}
+	]
+}

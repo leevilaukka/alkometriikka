@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Condado de Oriza Reserva 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/942732/",
+	"feed_url": "https://alkometriikka.fi/rss/942732.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Condado de Oriza Reserva 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-942732-2026-02-02-22.38",
+			"url": "https://alkometriikka.fi/tuotteet/942732/",
+			"title": "Condado de Oriza Reserva 2019 — 22,48 € → 22,38 €",
+			"content_html": "<p>Tuotteen Condado de Oriza Reserva 2019 hinta on muuttunut.</p><p>22,48 € → 22,38 € (−0,10 €, −0,44 %).</p>",
+			"summary": "Tuotteen Condado de Oriza Reserva 2019 hinta on muuttunut. 22,48 € → 22,38 € (−0,10 €, −0,44 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/942732-623fbc9c4bd1.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-942732-2026-02-02-22.48",
+			"url": "https://alkometriikka.fi/tuotteet/942732/",
+			"title": "Condado de Oriza Reserva 2019 — 22,38 € → 22,48 €",
+			"content_html": "<p>Tuotteen Condado de Oriza Reserva 2019 hinta on muuttunut.</p><p>22,38 € → 22,48 € (+0,10 €, +0,45 %).</p>",
+			"summary": "Tuotteen Condado de Oriza Reserva 2019 hinta on muuttunut. 22,38 € → 22,48 € (+0,10 €, +0,45 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/942732-623fbc9c4bd1.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

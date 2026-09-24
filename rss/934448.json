@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – That's Neiss Pink Riesling – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/934448/",
+	"feed_url": "https://alkometriikka.fi/rss/934448.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: That's Neiss Pink Riesling.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-934448-2026-07-18-15.49",
+			"url": "https://alkometriikka.fi/tuotteet/934448/",
+			"title": "That's Neiss Pink Riesling — 15,45 € → 15,49 €",
+			"content_html": "<p>Tuotteen That's Neiss Pink Riesling hinta on muuttunut.</p><p>15,45 € → 15,49 € (+0,04 €, +0,26 %).</p>",
+			"summary": "Tuotteen That's Neiss Pink Riesling hinta on muuttunut. 15,45 € → 15,49 € (+0,04 €, +0,26 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/934448-74a9b619405f.png",
+			"tags": [
+				"Viinit",
+				"hedelmä- ja aromatisoidut viinit"
+			]
+		}
+	]
+}

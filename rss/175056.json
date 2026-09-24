@@ -1,0 +1,50 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lingoncello – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/175056/",
+	"feed_url": "https://alkometriikka.fi/rss/175056.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lingoncello.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-175056-2026-07-18-19.98",
+			"url": "https://alkometriikka.fi/tuotteet/175056/",
+			"title": "Lingoncello — 20,09 € → 19,98 €",
+			"content_html": "<p>Tuotteen Lingoncello hinta on muuttunut.</p><p>20,09 € → 19,98 € (−0,11 €, −0,55 %).</p>",
+			"summary": "Tuotteen Lingoncello hinta on muuttunut. 20,09 € → 19,98 € (−0,11 €, −0,55 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/175056-75013bdee98e.png",
+			"tags": [
+				"Väkevät",
+				"marjaliköörit"
+			]
+		},
+		{
+			"id": "alkometriikka-175056-2026-02-02-19.99",
+			"url": "https://alkometriikka.fi/tuotteet/175056/",
+			"title": "Lingoncello — 20,09 € → 19,99 €",
+			"content_html": "<p>Tuotteen Lingoncello hinta on muuttunut.</p><p>20,09 € → 19,99 € (−0,10 €, −0,50 %).</p>",
+			"summary": "Tuotteen Lingoncello hinta on muuttunut. 20,09 € → 19,99 € (−0,10 €, −0,50 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/175056-75013bdee98e.png",
+			"tags": [
+				"Väkevät",
+				"marjaliköörit"
+			]
+		},
+		{
+			"id": "alkometriikka-175056-2026-02-02-20.09",
+			"url": "https://alkometriikka.fi/tuotteet/175056/",
+			"title": "Lingoncello — 19,99 € → 20,09 €",
+			"content_html": "<p>Tuotteen Lingoncello hinta on muuttunut.</p><p>19,99 € → 20,09 € (+0,10 €, +0,50 %).</p>",
+			"summary": "Tuotteen Lingoncello hinta on muuttunut. 19,99 € → 20,09 € (+0,10 €, +0,50 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/175056-75013bdee98e.png",
+			"tags": [
+				"Väkevät",
+				"marjaliköörit"
+			]
+		}
+	]
+}

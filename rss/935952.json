@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Moss Primitivo di Manduria Riserva 2016 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/935952/",
+	"feed_url": "https://alkometriikka.fi/rss/935952.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Moss Primitivo di Manduria Riserva 2016.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-935952-2026-07-18-39.56",
+			"url": "https://alkometriikka.fi/tuotteet/935952/",
+			"title": "Moss Primitivo di Manduria Riserva 2016 — 49,44 € → 39,56 €",
+			"content_html": "<p>Tuotteen Moss Primitivo di Manduria Riserva 2016 hinta on muuttunut.</p><p>49,44 € → 39,56 € (−9,88 €, −19,98 %).</p>",
+			"summary": "Tuotteen Moss Primitivo di Manduria Riserva 2016 hinta on muuttunut. 49,44 € → 39,56 € (−9,88 €, −19,98 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/935952-fbd0b8f749d6.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

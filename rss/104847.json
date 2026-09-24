@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Drumshanbo Single Pot Still Irish Whiskey – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/104847/",
+	"feed_url": "https://alkometriikka.fi/rss/104847.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Drumshanbo Single Pot Still Irish Whiskey.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-104847-2026-07-18-72.99",
+			"url": "https://alkometriikka.fi/tuotteet/104847/",
+			"title": "Drumshanbo Single Pot Still Irish Whiskey — 72,09 € → 72,99 €",
+			"content_html": "<p>Tuotteen Drumshanbo Single Pot Still Irish Whiskey hinta on muuttunut.</p><p>72,09 € → 72,99 € (+0,90 €, +1,25 %).</p>",
+			"summary": "Tuotteen Drumshanbo Single Pot Still Irish Whiskey hinta on muuttunut. 72,09 € → 72,99 € (+0,90 €, +1,25 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/104847-2ba44b625ef5.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

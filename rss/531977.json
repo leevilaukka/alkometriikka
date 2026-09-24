@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Shabo Telti-Kuruk 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/531977/",
+	"feed_url": "https://alkometriikka.fi/rss/531977.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Shabo Telti-Kuruk 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-531977-2026-07-18-18.99",
+			"url": "https://alkometriikka.fi/tuotteet/531977/",
+			"title": "Shabo Telti-Kuruk 2023 — 18,44 € → 18,99 €",
+			"content_html": "<p>Tuotteen Shabo Telti-Kuruk 2023 hinta on muuttunut.</p><p>18,44 € → 18,99 € (+0,55 €, +2,98 %).</p>",
+			"summary": "Tuotteen Shabo Telti-Kuruk 2023 hinta on muuttunut. 18,44 € → 18,99 € (+0,55 €, +2,98 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/531977-fb023d6b4903.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

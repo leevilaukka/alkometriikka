@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – San Pellegrino Limonata tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/730344/",
+	"feed_url": "https://alkometriikka.fi/rss/730344.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: San Pellegrino Limonata tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-730344-2026-07-18-2.19",
+			"url": "https://alkometriikka.fi/tuotteet/730344/",
+			"title": "San Pellegrino Limonata tölkki — 2,08 € → 2,19 €",
+			"content_html": "<p>Tuotteen San Pellegrino Limonata tölkki hinta on muuttunut.</p><p>2,08 € → 2,19 € (+0,11 €, +5,29 %).</p>",
+			"summary": "Tuotteen San Pellegrino Limonata tölkki hinta on muuttunut. 2,08 € → 2,19 € (+0,11 €, +5,29 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/730344-6d7428daeb3c.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

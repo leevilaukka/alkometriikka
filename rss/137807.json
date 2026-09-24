@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Teeling Single Grain – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/137807/",
+	"feed_url": "https://alkometriikka.fi/rss/137807.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Teeling Single Grain.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-137807-2026-07-18-59.49",
+			"url": "https://alkometriikka.fi/tuotteet/137807/",
+			"title": "Teeling Single Grain — 58,10 € → 59,49 €",
+			"content_html": "<p>Tuotteen Teeling Single Grain hinta on muuttunut.</p><p>58,10 € → 59,49 € (+1,39 €, +2,39 %).</p>",
+			"summary": "Tuotteen Teeling Single Grain hinta on muuttunut. 58,10 € → 59,49 € (+1,39 €, +2,39 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/137807-4ad7164189fc.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – William Fevre Petit Chablis 2023 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/946237/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: William Fevre Petit Chablis 2023.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/946237.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – William Fevre Petit Chablis 2023 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>William Fevre Petit Chablis 2023 — 33,46 € → 33,48 €</title>
+			<link>https://alkometriikka.fi/tuotteet/946237/</link>
+			<guid isPermaLink="false">alkometriikka-946237-2026-07-18-33.48</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / valkoviinit</category>
+			<description><![CDATA[<p>Tuotteen William Fevre Petit Chablis 2023 hinta on muuttunut.</p><p>33,46 € → 33,48 € (+0,02 €, +0,06 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/946237-9ee574c02408.png" />
+		</item>
+		<item>
+			<title>William Fevre Petit Chablis 2023 — 33,46 € → 33,36 €</title>
+			<link>https://alkometriikka.fi/tuotteet/946237/</link>
+			<guid isPermaLink="false">alkometriikka-946237-2026-02-02-33.36</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / valkoviinit</category>
+			<description><![CDATA[<p>Tuotteen William Fevre Petit Chablis 2023 hinta on muuttunut.</p><p>33,46 € → 33,36 € (−0,10 €, −0,30 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/946237-9ee574c02408.png" />
+		</item>
+		<item>
+			<title>William Fevre Petit Chablis 2023 — 33,36 € → 33,46 €</title>
+			<link>https://alkometriikka.fi/tuotteet/946237/</link>
+			<guid isPermaLink="false">alkometriikka-946237-2026-02-02-33.46</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / valkoviinit</category>
+			<description><![CDATA[<p>Tuotteen William Fevre Petit Chablis 2023 hinta on muuttunut.</p><p>33,36 € → 33,46 € (+0,10 €, +0,30 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/946237-9ee574c02408.png" />
+		</item>
+	</channel>
+</rss>

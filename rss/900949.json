@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – This Is The Bomb Box hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900949/",
+	"feed_url": "https://alkometriikka.fi/rss/900949.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: This Is The Bomb Box hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900949-2026-07-18-39.99",
+			"url": "https://alkometriikka.fi/tuotteet/900949/",
+			"title": "This Is The Bomb Box hanapakkaus — 39,84 € → 39,99 €",
+			"content_html": "<p>Tuotteen This Is The Bomb Box hanapakkaus hinta on muuttunut.</p><p>39,84 € → 39,99 € (+0,15 €, +0,38 %).</p>",
+			"summary": "Tuotteen This Is The Bomb Box hanapakkaus hinta on muuttunut. 39,84 € → 39,99 € (+0,15 €, +0,38 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900949-e153248ffc66.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

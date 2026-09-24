@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Wine & Soul Pintas 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900896/",
+	"feed_url": "https://alkometriikka.fi/rss/900896.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Wine & Soul Pintas 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900896-2026-07-18-124.95",
+			"url": "https://alkometriikka.fi/tuotteet/900896/",
+			"title": "Wine & Soul Pintas 2022 — 121,89 € → 124,95 €",
+			"content_html": "<p>Tuotteen Wine & Soul Pintas 2022 hinta on muuttunut.</p><p>121,89 € → 124,95 € (+3,06 €, +2,51 %).</p>",
+			"summary": "Tuotteen Wine & Soul Pintas 2022 hinta on muuttunut. 121,89 € → 124,95 € (+3,06 €, +2,51 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900896-fe1b2f7d1141.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

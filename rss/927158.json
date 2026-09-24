@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Aldo Conterno Barolo Bussia 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/927158/",
+	"feed_url": "https://alkometriikka.fi/rss/927158.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Aldo Conterno Barolo Bussia 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-927158-2026-07-18-148.27",
+			"url": "https://alkometriikka.fi/tuotteet/927158/",
+			"title": "Aldo Conterno Barolo Bussia 2021 — 138,96 € → 148,27 €",
+			"content_html": "<p>Tuotteen Aldo Conterno Barolo Bussia 2021 hinta on muuttunut.</p><p>138,96 € → 148,27 € (+9,31 €, +6,70 %).</p>",
+			"summary": "Tuotteen Aldo Conterno Barolo Bussia 2021 hinta on muuttunut. 138,96 € → 148,27 € (+9,31 €, +6,70 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/927158-9c46b1178e9b.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

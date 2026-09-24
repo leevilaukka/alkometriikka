@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nikka Coffey Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/936756/",
+	"feed_url": "https://alkometriikka.fi/rss/936756.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nikka Coffey Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-936756-2026-07-18-76.99",
+			"url": "https://alkometriikka.fi/tuotteet/936756/",
+			"title": "Nikka Coffey Malt — 77,51 € → 76,99 €",
+			"content_html": "<p>Tuotteen Nikka Coffey Malt hinta on muuttunut.</p><p>77,51 € → 76,99 € (−0,52 €, −0,67 %).</p>",
+			"summary": "Tuotteen Nikka Coffey Malt hinta on muuttunut. 77,51 € → 76,99 € (−0,52 €, −0,67 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/936756-62418f03f70e.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

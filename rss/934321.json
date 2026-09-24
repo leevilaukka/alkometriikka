@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Le Sirop de Monin Rantcho Lemon – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/934321/",
+	"feed_url": "https://alkometriikka.fi/rss/934321.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Le Sirop de Monin Rantcho Lemon.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-934321-2026-07-18-12.69",
+			"url": "https://alkometriikka.fi/tuotteet/934321/",
+			"title": "Le Sirop de Monin Rantcho Lemon — 12,70 € → 12,69 €",
+			"content_html": "<p>Tuotteen Le Sirop de Monin Rantcho Lemon hinta on muuttunut.</p><p>12,70 € → 12,69 € (−0,01 €, −0,08 %).</p>",
+			"summary": "Tuotteen Le Sirop de Monin Rantcho Lemon hinta on muuttunut. 12,70 € → 12,69 € (−0,01 €, −0,08 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/934321-488b8531807d.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

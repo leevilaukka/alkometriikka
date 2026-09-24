@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Four Pillars Fresh Yuzu Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901412/",
+	"feed_url": "https://alkometriikka.fi/rss/901412.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Four Pillars Fresh Yuzu Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901412-2026-07-18-59.98",
+			"url": "https://alkometriikka.fi/tuotteet/901412/",
+			"title": "Four Pillars Fresh Yuzu Gin — 58,18 € → 59,98 €",
+			"content_html": "<p>Tuotteen Four Pillars Fresh Yuzu Gin hinta on muuttunut.</p><p>58,18 € → 59,98 € (+1,80 €, +3,09 %).</p>",
+			"summary": "Tuotteen Four Pillars Fresh Yuzu Gin hinta on muuttunut. 58,18 € → 59,98 € (+1,80 €, +3,09 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901412-f5ad30bbe840.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

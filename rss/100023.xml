@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Karpalet muovipullo – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/100023/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Karpalet muovipullo.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/100023.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Karpalet muovipullo – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Karpalet muovipullo — 12,28 € → 12,58 €</title>
+			<link>https://alkometriikka.fi/tuotteet/100023/</link>
+			<guid isPermaLink="false">alkometriikka-100023-2026-07-18-12.58</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / maustetut viinat</category>
+			<description><![CDATA[<p>Tuotteen Karpalet muovipullo hinta on muuttunut.</p><p>12,28 € → 12,58 € (+0,30 €, +2,44 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/100023-a218b0fa5031.png" />
+		</item>
+		<item>
+			<title>Karpalet muovipullo — 12,28 € → 12,08 €</title>
+			<link>https://alkometriikka.fi/tuotteet/100023/</link>
+			<guid isPermaLink="false">alkometriikka-100023-2026-02-02-12.08</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / maustetut viinat</category>
+			<description><![CDATA[<p>Tuotteen Karpalet muovipullo hinta on muuttunut.</p><p>12,28 € → 12,08 € (−0,20 €, −1,63 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/100023-a218b0fa5031.png" />
+		</item>
+		<item>
+			<title>Karpalet muovipullo — 12,08 € → 12,28 €</title>
+			<link>https://alkometriikka.fi/tuotteet/100023/</link>
+			<guid isPermaLink="false">alkometriikka-100023-2026-02-02-12.28</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / maustetut viinat</category>
+			<description><![CDATA[<p>Tuotteen Karpalet muovipullo hinta on muuttunut.</p><p>12,08 € → 12,28 € (+0,20 €, +1,66 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/100023-a218b0fa5031.png" />
+		</item>
+	</channel>
+</rss>

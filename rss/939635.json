@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nittenauer The Wit – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/939635/",
+	"feed_url": "https://alkometriikka.fi/rss/939635.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nittenauer The Wit.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-939635-2026-09-04-4.49",
+			"url": "https://alkometriikka.fi/tuotteet/939635/",
+			"title": "Nittenauer The Wit — 4,99 € → 4,49 €",
+			"content_html": "<p>Tuotteen Nittenauer The Wit hinta on muuttunut.</p><p>4,99 € → 4,49 € (−0,50 €, −10,02 %).</p>",
+			"summary": "Tuotteen Nittenauer The Wit hinta on muuttunut. 4,99 € → 4,49 € (−0,50 €, −10,02 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/939635-e180b9602c90.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-939635-2026-07-18-4.99",
+			"url": "https://alkometriikka.fi/tuotteet/939635/",
+			"title": "Nittenauer The Wit — 4,87 € → 4,99 €",
+			"content_html": "<p>Tuotteen Nittenauer The Wit hinta on muuttunut.</p><p>4,87 € → 4,99 € (+0,12 €, +2,46 %).</p>",
+			"summary": "Tuotteen Nittenauer The Wit hinta on muuttunut. 4,87 € → 4,99 € (+0,12 €, +2,46 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/939635-e180b9602c90.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Stift Klosterneuburg Mathäi Brut – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/544037/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Stift Klosterneuburg Mathäi Brut.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/544037.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Stift Klosterneuburg Mathäi Brut – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Stift Klosterneuburg Mathäi Brut — 20,42 € → 19,95 €</title>
+			<link>https://alkometriikka.fi/tuotteet/544037/</link>
+			<guid isPermaLink="false">alkometriikka-544037-2026-07-18-19.95</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / kuohuviinit ja samppanjat</category>
+			<description><![CDATA[<p>Tuotteen Stift Klosterneuburg Mathäi Brut hinta on muuttunut.</p><p>20,42 € → 19,95 € (−0,47 €, −2,30 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/544037-2228a10dabe7.png" />
+		</item>
+	</channel>
+</rss>

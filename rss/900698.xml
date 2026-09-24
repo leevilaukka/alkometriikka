@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Alte Grafschaft Wertheim Pinot Blanc 2022 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/900698/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Alte Grafschaft Wertheim Pinot Blanc 2022.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/900698.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Alte Grafschaft Wertheim Pinot Blanc 2022 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Alte Grafschaft Wertheim Pinot Blanc 2022 — 30,14 € → 29,75 €</title>
+			<link>https://alkometriikka.fi/tuotteet/900698/</link>
+			<guid isPermaLink="false">alkometriikka-900698-2026-07-18-29.75</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / valkoviinit</category>
+			<description><![CDATA[<p>Tuotteen Alte Grafschaft Wertheim Pinot Blanc 2022 hinta on muuttunut.</p><p>30,14 € → 29,75 € (−0,39 €, −1,29 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/900698-25af4aaa7c04.png" />
+		</item>
+	</channel>
+</rss>

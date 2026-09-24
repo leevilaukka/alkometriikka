@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Oban 14 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/906087/",
+	"feed_url": "https://alkometriikka.fi/rss/906087.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Oban 14 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-906087-2026-07-18-93",
+			"url": "https://alkometriikka.fi/tuotteet/906087/",
+			"title": "Oban 14 Year Old Single Malt — 92,28 € → 93,00 €",
+			"content_html": "<p>Tuotteen Oban 14 Year Old Single Malt hinta on muuttunut.</p><p>92,28 € → 93,00 € (+0,72 €, +0,78 %).</p>",
+			"summary": "Tuotteen Oban 14 Year Old Single Malt hinta on muuttunut. 92,28 € → 93,00 € (+0,72 €, +0,78 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/906087-408cbcf7c5c9.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

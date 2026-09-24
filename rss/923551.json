@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Domaine Anne-Francoise Gros Richebourg Grand Cru 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/923551/",
+	"feed_url": "https://alkometriikka.fi/rss/923551.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Domaine Anne-Francoise Gros Richebourg Grand Cru 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-923551-2026-07-18-1226.29",
+			"url": "https://alkometriikka.fi/tuotteet/923551/",
+			"title": "Domaine Anne-Francoise Gros Richebourg Grand Cru 2020 — 1 465,46 € → 1 226,29 €",
+			"content_html": "<p>Tuotteen Domaine Anne-Francoise Gros Richebourg Grand Cru 2020 hinta on muuttunut.</p><p>1 465,46 € → 1 226,29 € (−239,17 €, −16,32 %).</p>",
+			"summary": "Tuotteen Domaine Anne-Francoise Gros Richebourg Grand Cru 2020 hinta on muuttunut. 1 465,46 € → 1 226,29 € (−239,17 €, −16,32 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/923551-ad4949e19690.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

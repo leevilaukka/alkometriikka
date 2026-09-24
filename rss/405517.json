@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – VA! Maceración Carbónica Tempranillo 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/405517/",
+	"feed_url": "https://alkometriikka.fi/rss/405517.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: VA! Maceración Carbónica Tempranillo 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-405517-2026-02-02-14.88",
+			"url": "https://alkometriikka.fi/tuotteet/405517/",
+			"title": "VA! Maceración Carbónica Tempranillo 2021 — 14,98 € → 14,88 €",
+			"content_html": "<p>Tuotteen VA! Maceración Carbónica Tempranillo 2021 hinta on muuttunut.</p><p>14,98 € → 14,88 € (−0,10 €, −0,67 %).</p>",
+			"summary": "Tuotteen VA! Maceración Carbónica Tempranillo 2021 hinta on muuttunut. 14,98 € → 14,88 € (−0,10 €, −0,67 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/405517-6a13e5d34129.png",
+			"tags": [
+				"punaviinit",
+				"Marjaisa & Raikas"
+			]
+		},
+		{
+			"id": "alkometriikka-405517-2026-02-02-14.98",
+			"url": "https://alkometriikka.fi/tuotteet/405517/",
+			"title": "VA! Maceración Carbónica Tempranillo 2021 — 14,88 € → 14,98 €",
+			"content_html": "<p>Tuotteen VA! Maceración Carbónica Tempranillo 2021 hinta on muuttunut.</p><p>14,88 € → 14,98 € (+0,10 €, +0,67 %).</p>",
+			"summary": "Tuotteen VA! Maceración Carbónica Tempranillo 2021 hinta on muuttunut. 14,88 € → 14,98 € (+0,10 €, +0,67 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/405517-6a13e5d34129.png",
+			"tags": [
+				"punaviinit",
+				"Marjaisa & Raikas"
+			]
+		}
+	]
+}

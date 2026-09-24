@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Drumshanbo Gunpowder Californian Orange Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/136157/",
+	"feed_url": "https://alkometriikka.fi/rss/136157.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Drumshanbo Gunpowder Californian Orange Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-136157-2026-07-18-43.48",
+			"url": "https://alkometriikka.fi/tuotteet/136157/",
+			"title": "Drumshanbo Gunpowder Californian Orange Gin — 43,26 € → 43,48 €",
+			"content_html": "<p>Tuotteen Drumshanbo Gunpowder Californian Orange Gin hinta on muuttunut.</p><p>43,26 € → 43,48 € (+0,22 €, +0,51 %).</p>",
+			"summary": "Tuotteen Drumshanbo Gunpowder Californian Orange Gin hinta on muuttunut. 43,26 € → 43,48 € (+0,22 €, +0,51 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/136157-123cb2e5ce2a.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

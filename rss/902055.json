@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Zenato Cresasso 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902055/",
+	"feed_url": "https://alkometriikka.fi/rss/902055.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Zenato Cresasso 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902055-2026-07-18-53.9",
+			"url": "https://alkometriikka.fi/tuotteet/902055/",
+			"title": "Zenato Cresasso 2018 — 52,25 € → 53,90 €",
+			"content_html": "<p>Tuotteen Zenato Cresasso 2018 hinta on muuttunut.</p><p>52,25 € → 53,90 € (+1,65 €, +3,16 %).</p>",
+			"summary": "Tuotteen Zenato Cresasso 2018 hinta on muuttunut. 52,25 € → 53,90 € (+1,65 €, +3,16 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902055-f6606296c34c.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

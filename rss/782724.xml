@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Abavas Summer Cider – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/782724/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Abavas Summer Cider.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/782724.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Abavas Summer Cider – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Abavas Summer Cider — 4,96 € → 5,47 €</title>
+			<link>https://alkometriikka.fi/tuotteet/782724/</link>
+			<guid isPermaLink="false">alkometriikka-782724-2026-07-18-5.47</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Panimotuotteet / siiderit</category>
+			<description><![CDATA[<p>Tuotteen Abavas Summer Cider hinta on muuttunut.</p><p>4,96 € → 5,47 € (+0,51 €, +10,28 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/782724-4e5ffa1ad260.png" />
+		</item>
+	</channel>
+</rss>

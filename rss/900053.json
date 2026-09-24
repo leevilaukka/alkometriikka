@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Animardente Etna Rosso 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900053/",
+	"feed_url": "https://alkometriikka.fi/rss/900053.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Animardente Etna Rosso 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900053-2026-07-18-56.5",
+			"url": "https://alkometriikka.fi/tuotteet/900053/",
+			"title": "Animardente Etna Rosso 2020 — 56,45 € → 56,50 €",
+			"content_html": "<p>Tuotteen Animardente Etna Rosso 2020 hinta on muuttunut.</p><p>56,45 € → 56,50 € (+0,05 €, +0,09 %).</p>",
+			"summary": "Tuotteen Animardente Etna Rosso 2020 hinta on muuttunut. 56,45 € → 56,50 € (+0,05 €, +0,09 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900053-9516301bbf71.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

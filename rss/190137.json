@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Concorde XO – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/190137/",
+	"feed_url": "https://alkometriikka.fi/rss/190137.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Concorde XO.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-190137-2026-07-18-30.28",
+			"url": "https://alkometriikka.fi/tuotteet/190137/",
+			"title": "Concorde XO — 30,23 € → 30,28 €",
+			"content_html": "<p>Tuotteen Concorde XO hinta on muuttunut.</p><p>30,23 € → 30,28 € (+0,05 €, +0,17 %).</p>",
+			"summary": "Tuotteen Concorde XO hinta on muuttunut. 30,23 € → 30,28 € (+0,05 €, +0,17 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/190137-f3dfebaaa73c.png",
+			"tags": [
+				"Väkevät",
+				"brandyt"
+			]
+		}
+	]
+}

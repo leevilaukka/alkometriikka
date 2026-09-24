@@ -1,0 +1,50 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cascina Bruciata Barbaresco 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/482917/",
+	"feed_url": "https://alkometriikka.fi/rss/482917.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cascina Bruciata Barbaresco 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-482917-2026-07-18-37.99",
+			"url": "https://alkometriikka.fi/tuotteet/482917/",
+			"title": "Cascina Bruciata Barbaresco 2019 — 38,45 € → 37,99 €",
+			"content_html": "<p>Tuotteen Cascina Bruciata Barbaresco 2019 hinta on muuttunut.</p><p>38,45 € → 37,99 € (−0,46 €, −1,20 %).</p>",
+			"summary": "Tuotteen Cascina Bruciata Barbaresco 2019 hinta on muuttunut. 38,45 € → 37,99 € (−0,46 €, −1,20 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/482917-038f52e848d9.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-482917-2026-02-02-38.35",
+			"url": "https://alkometriikka.fi/tuotteet/482917/",
+			"title": "Cascina Bruciata Barbaresco 2019 — 38,45 € → 38,35 €",
+			"content_html": "<p>Tuotteen Cascina Bruciata Barbaresco 2019 hinta on muuttunut.</p><p>38,45 € → 38,35 € (−0,10 €, −0,26 %).</p>",
+			"summary": "Tuotteen Cascina Bruciata Barbaresco 2019 hinta on muuttunut. 38,45 € → 38,35 € (−0,10 €, −0,26 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/482917-038f52e848d9.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-482917-2026-02-02-38.45",
+			"url": "https://alkometriikka.fi/tuotteet/482917/",
+			"title": "Cascina Bruciata Barbaresco 2019 — 38,35 € → 38,45 €",
+			"content_html": "<p>Tuotteen Cascina Bruciata Barbaresco 2019 hinta on muuttunut.</p><p>38,35 € → 38,45 € (+0,10 €, +0,26 %).</p>",
+			"summary": "Tuotteen Cascina Bruciata Barbaresco 2019 hinta on muuttunut. 38,35 € → 38,45 € (+0,10 €, +0,26 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/482917-038f52e848d9.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

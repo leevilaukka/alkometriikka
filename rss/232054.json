@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pramia Hunaja-Rommilikööri muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/232054/",
+	"feed_url": "https://alkometriikka.fi/rss/232054.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pramia Hunaja-Rommilikööri muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-232054-2026-02-02-12.87",
+			"url": "https://alkometriikka.fi/tuotteet/232054/",
+			"title": "Pramia Hunaja-Rommilikööri muovipullo — 12,97 € → 12,87 €",
+			"content_html": "<p>Tuotteen Pramia Hunaja-Rommilikööri muovipullo hinta on muuttunut.</p><p>12,97 € → 12,87 € (−0,10 €, −0,77 %).</p>",
+			"summary": "Tuotteen Pramia Hunaja-Rommilikööri muovipullo hinta on muuttunut. 12,97 € → 12,87 € (−0,10 €, −0,77 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/232054-b653848b523f.png",
+			"tags": [
+				"Väkevät",
+				"mausteliköörit"
+			]
+		},
+		{
+			"id": "alkometriikka-232054-2026-02-02-12.97",
+			"url": "https://alkometriikka.fi/tuotteet/232054/",
+			"title": "Pramia Hunaja-Rommilikööri muovipullo — 12,87 € → 12,97 €",
+			"content_html": "<p>Tuotteen Pramia Hunaja-Rommilikööri muovipullo hinta on muuttunut.</p><p>12,87 € → 12,97 € (+0,10 €, +0,78 %).</p>",
+			"summary": "Tuotteen Pramia Hunaja-Rommilikööri muovipullo hinta on muuttunut. 12,87 € → 12,97 € (+0,10 €, +0,78 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/232054-b653848b523f.png",
+			"tags": [
+				"Väkevät",
+				"mausteliköörit"
+			]
+		}
+	]
+}

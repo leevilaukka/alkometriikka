@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gaja Promis 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901597/",
+	"feed_url": "https://alkometriikka.fi/rss/901597.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gaja Promis 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901597-2026-07-18-59.98",
+			"url": "https://alkometriikka.fi/tuotteet/901597/",
+			"title": "Gaja Promis 2023 — 58,98 € → 59,98 €",
+			"content_html": "<p>Tuotteen Gaja Promis 2023 hinta on muuttunut.</p><p>58,98 € → 59,98 € (+1,00 €, +1,70 %).</p>",
+			"summary": "Tuotteen Gaja Promis 2023 hinta on muuttunut. 58,98 € → 59,98 € (+1,00 €, +1,70 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901597-73118f513e5a.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

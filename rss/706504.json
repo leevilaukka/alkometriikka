@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Laitilan Imperiaali Stout – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/706504/",
+	"feed_url": "https://alkometriikka.fi/rss/706504.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Laitilan Imperiaali Stout.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-706504-2026-07-18-5.45",
+			"url": "https://alkometriikka.fi/tuotteet/706504/",
+			"title": "Laitilan Imperiaali Stout — 5,15 € → 5,45 €",
+			"content_html": "<p>Tuotteen Laitilan Imperiaali Stout hinta on muuttunut.</p><p>5,15 € → 5,45 € (+0,30 €, +5,83 %).</p>",
+			"summary": "Tuotteen Laitilan Imperiaali Stout hinta on muuttunut. 5,15 € → 5,45 € (+0,30 €, +5,83 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/706504-3a499a6c4a96.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

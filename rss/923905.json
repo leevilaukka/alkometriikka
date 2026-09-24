@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Shabo Modern Collection VSOP – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/923905/",
+	"feed_url": "https://alkometriikka.fi/rss/923905.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Shabo Modern Collection VSOP.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-923905-2026-07-18-27.5",
+			"url": "https://alkometriikka.fi/tuotteet/923905/",
+			"title": "Shabo Modern Collection VSOP — 26,20 € → 27,50 €",
+			"content_html": "<p>Tuotteen Shabo Modern Collection VSOP hinta on muuttunut.</p><p>26,20 € → 27,50 € (+1,30 €, +4,96 %).</p>",
+			"summary": "Tuotteen Shabo Modern Collection VSOP hinta on muuttunut. 26,20 € → 27,50 € (+1,30 €, +4,96 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/923905-3cf56b36433f.png",
+			"tags": [
+				"Väkevät",
+				"brandyt"
+			]
+		}
+	]
+}

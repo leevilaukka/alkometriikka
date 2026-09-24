@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Grimbergen Blonde – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/932661/",
+	"feed_url": "https://alkometriikka.fi/rss/932661.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Grimbergen Blonde.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-932661-2026-07-18-4.39",
+			"url": "https://alkometriikka.fi/tuotteet/932661/",
+			"title": "Grimbergen Blonde — 4,29 € → 4,39 €",
+			"content_html": "<p>Tuotteen Grimbergen Blonde hinta on muuttunut.</p><p>4,29 € → 4,39 € (+0,10 €, +2,33 %).</p>",
+			"summary": "Tuotteen Grimbergen Blonde hinta on muuttunut. 4,29 € → 4,39 € (+0,10 €, +2,33 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/932661-e87732223ce2.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

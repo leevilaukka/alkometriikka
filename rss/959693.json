@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Boizel Blanc de Blancs Champagne Brut 2009 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/959693/",
+	"feed_url": "https://alkometriikka.fi/rss/959693.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Boizel Blanc de Blancs Champagne Brut 2009.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-959693-2026-07-18-123.5",
+			"url": "https://alkometriikka.fi/tuotteet/959693/",
+			"title": "Boizel Blanc de Blancs Champagne Brut 2009 — 123,96 € → 123,50 €",
+			"content_html": "<p>Tuotteen Boizel Blanc de Blancs Champagne Brut 2009 hinta on muuttunut.</p><p>123,96 € → 123,50 € (−0,46 €, −0,37 %).</p>",
+			"summary": "Tuotteen Boizel Blanc de Blancs Champagne Brut 2009 hinta on muuttunut. 123,96 € → 123,50 € (−0,46 €, −0,37 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/959693-faff8c3a5830.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Piper-Heidsieck Cuvée Sublime Champagne Demi-Sec – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/954457/",
+	"feed_url": "https://alkometriikka.fi/rss/954457.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Piper-Heidsieck Cuvée Sublime Champagne Demi-Sec.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-954457-2026-07-18-64.99",
+			"url": "https://alkometriikka.fi/tuotteet/954457/",
+			"title": "Piper-Heidsieck Cuvée Sublime Champagne Demi-Sec — 60,45 € → 64,99 €",
+			"content_html": "<p>Tuotteen Piper-Heidsieck Cuvée Sublime Champagne Demi-Sec hinta on muuttunut.</p><p>60,45 € → 64,99 € (+4,54 €, +7,51 %).</p>",
+			"summary": "Tuotteen Piper-Heidsieck Cuvée Sublime Champagne Demi-Sec hinta on muuttunut. 60,45 € → 64,99 € (+4,54 €, +7,51 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/954457-02fd3f2a32a6.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

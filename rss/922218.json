@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nett Paranoia Pinot Noir – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/922218/",
+	"feed_url": "https://alkometriikka.fi/rss/922218.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nett Paranoia Pinot Noir.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-922218-2026-02-02-12.89",
+			"url": "https://alkometriikka.fi/tuotteet/922218/",
+			"title": "Nett Paranoia Pinot Noir — 12,99 € → 12,89 €",
+			"content_html": "<p>Tuotteen Nett Paranoia Pinot Noir hinta on muuttunut.</p><p>12,99 € → 12,89 € (−0,10 €, −0,77 %).</p>",
+			"summary": "Tuotteen Nett Paranoia Pinot Noir hinta on muuttunut. 12,99 € → 12,89 € (−0,10 €, −0,77 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/922218-67123714cb87.png",
+			"tags": [
+				"punaviinit",
+				"Marjaisa & Raikas"
+			]
+		},
+		{
+			"id": "alkometriikka-922218-2026-02-02-12.99",
+			"url": "https://alkometriikka.fi/tuotteet/922218/",
+			"title": "Nett Paranoia Pinot Noir — 12,89 € → 12,99 €",
+			"content_html": "<p>Tuotteen Nett Paranoia Pinot Noir hinta on muuttunut.</p><p>12,89 € → 12,99 € (+0,10 €, +0,78 %).</p>",
+			"summary": "Tuotteen Nett Paranoia Pinot Noir hinta on muuttunut. 12,89 € → 12,99 € (+0,10 €, +0,78 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/922218-67123714cb87.png",
+			"tags": [
+				"punaviinit",
+				"Marjaisa & Raikas"
+			]
+		}
+	]
+}

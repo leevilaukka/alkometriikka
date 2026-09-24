@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mucho Mas Tinto hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/933702/",
+	"feed_url": "https://alkometriikka.fi/rss/933702.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mucho Mas Tinto hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-933702-2026-07-18-37.48",
+			"url": "https://alkometriikka.fi/tuotteet/933702/",
+			"title": "Mucho Mas Tinto hanapakkaus — 36,84 € → 37,48 €",
+			"content_html": "<p>Tuotteen Mucho Mas Tinto hanapakkaus hinta on muuttunut.</p><p>36,84 € → 37,48 € (+0,64 €, +1,74 %).</p>",
+			"summary": "Tuotteen Mucho Mas Tinto hanapakkaus hinta on muuttunut. 36,84 € → 37,48 € (+0,64 €, +1,74 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/933702-c094cddc83f1.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

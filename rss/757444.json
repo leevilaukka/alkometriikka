@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Teerenpeli Whisky Barrel Aged Scottish Ale – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/757444/",
+	"feed_url": "https://alkometriikka.fi/rss/757444.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Teerenpeli Whisky Barrel Aged Scottish Ale.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-757444-2026-07-18-7.22",
+			"url": "https://alkometriikka.fi/tuotteet/757444/",
+			"title": "Teerenpeli Whisky Barrel Aged Scottish Ale — 7,21 € → 7,22 €",
+			"content_html": "<p>Tuotteen Teerenpeli Whisky Barrel Aged Scottish Ale hinta on muuttunut.</p><p>7,21 € → 7,22 € (+0,01 €, +0,14 %).</p>",
+			"summary": "Tuotteen Teerenpeli Whisky Barrel Aged Scottish Ale hinta on muuttunut. 7,21 € → 7,22 € (+0,01 €, +0,14 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/757444-4d5c4ddaf2a5.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

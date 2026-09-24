@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Demon's Share 3 Year Old – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/952576/",
+	"feed_url": "https://alkometriikka.fi/rss/952576.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Demon's Share 3 Year Old.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-952576-2026-07-18-41.59",
+			"url": "https://alkometriikka.fi/tuotteet/952576/",
+			"title": "The Demon's Share 3 Year Old — 41,57 € → 41,59 €",
+			"content_html": "<p>Tuotteen The Demon's Share 3 Year Old hinta on muuttunut.</p><p>41,57 € → 41,59 € (+0,02 €, +0,05 %).</p>",
+			"summary": "Tuotteen The Demon's Share 3 Year Old hinta on muuttunut. 41,57 € → 41,59 € (+0,02 €, +0,05 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/952576-7f15502cbe63.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

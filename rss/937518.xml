@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Amaro Nonino Quintessentia – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/937518/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Amaro Nonino Quintessentia.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/937518.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Amaro Nonino Quintessentia – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Amaro Nonino Quintessentia — 44,04 € → 44,00 €</title>
+			<link>https://alkometriikka.fi/tuotteet/937518/</link>
+			<guid isPermaLink="false">alkometriikka-937518-2026-07-18-44</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / yrttiliköörit</category>
+			<description><![CDATA[<p>Tuotteen Amaro Nonino Quintessentia hinta on muuttunut.</p><p>44,04 € → 44,00 € (−0,04 €, −0,09 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/937518-d572d86e93ba.png" />
+		</item>
+	</channel>
+</rss>

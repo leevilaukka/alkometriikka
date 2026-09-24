@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nikka Miyagikyo Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/157387/",
+	"feed_url": "https://alkometriikka.fi/rss/157387.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nikka Miyagikyo Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-157387-2026-07-18-89.98",
+			"url": "https://alkometriikka.fi/tuotteet/157387/",
+			"title": "Nikka Miyagikyo Single Malt — 89,38 € → 89,98 €",
+			"content_html": "<p>Tuotteen Nikka Miyagikyo Single Malt hinta on muuttunut.</p><p>89,38 € → 89,98 € (+0,60 €, +0,67 %).</p>",
+			"summary": "Tuotteen Nikka Miyagikyo Single Malt hinta on muuttunut. 89,38 € → 89,98 € (+0,60 €, +0,67 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/157387-07a78c4badc5.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

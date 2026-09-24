@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Torres Floralis Moscatel Oro – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/336016/",
+	"feed_url": "https://alkometriikka.fi/rss/336016.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Torres Floralis Moscatel Oro.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-336016-2026-07-18-12.98",
+			"url": "https://alkometriikka.fi/tuotteet/336016/",
+			"title": "Torres Floralis Moscatel Oro — 13,04 € → 12,98 €",
+			"content_html": "<p>Tuotteen Torres Floralis Moscatel Oro hinta on muuttunut.</p><p>13,04 € → 12,98 € (−0,06 €, −0,46 %).</p>",
+			"summary": "Tuotteen Torres Floralis Moscatel Oro hinta on muuttunut. 13,04 € → 12,98 € (−0,06 €, −0,46 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/336016-8d48b2ef5b93.png",
+			"tags": [
+				"Välituotteet",
+				"väkevät viinit"
+			]
+		}
+	]
+}

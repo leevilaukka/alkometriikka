@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Akashi Meïsei – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/911702/",
+	"feed_url": "https://alkometriikka.fi/rss/911702.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Akashi Meïsei.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-911702-2026-07-18-51.78",
+			"url": "https://alkometriikka.fi/tuotteet/911702/",
+			"title": "Akashi Meïsei — 51,51 € → 51,78 €",
+			"content_html": "<p>Tuotteen Akashi Meïsei hinta on muuttunut.</p><p>51,51 € → 51,78 € (+0,27 €, +0,52 %).</p>",
+			"summary": "Tuotteen Akashi Meïsei hinta on muuttunut. 51,51 € → 51,78 € (+0,27 €, +0,52 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/911702-c0a619d5f916.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

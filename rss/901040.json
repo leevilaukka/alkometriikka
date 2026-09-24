@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Steininger Pinot Noir 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901040/",
+	"feed_url": "https://alkometriikka.fi/rss/901040.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Steininger Pinot Noir 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901040-2026-07-18-25.48",
+			"url": "https://alkometriikka.fi/tuotteet/901040/",
+			"title": "Steininger Pinot Noir 2022 — 25,36 € → 25,48 €",
+			"content_html": "<p>Tuotteen Steininger Pinot Noir 2022 hinta on muuttunut.</p><p>25,36 € → 25,48 € (+0,12 €, +0,47 %).</p>",
+			"summary": "Tuotteen Steininger Pinot Noir 2022 hinta on muuttunut. 25,36 € → 25,48 € (+0,12 €, +0,47 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901040-e441a4e35c19.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

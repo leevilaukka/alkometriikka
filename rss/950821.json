@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – La Casa di Roberta Valpolicella Ripasso Organic 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/950821/",
+	"feed_url": "https://alkometriikka.fi/rss/950821.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: La Casa di Roberta Valpolicella Ripasso Organic 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-950821-2026-07-18-21.48",
+			"url": "https://alkometriikka.fi/tuotteet/950821/",
+			"title": "La Casa di Roberta Valpolicella Ripasso Organic 2020 — 21,94 € → 21,48 €",
+			"content_html": "<p>Tuotteen La Casa di Roberta Valpolicella Ripasso Organic 2020 hinta on muuttunut.</p><p>21,94 € → 21,48 € (−0,46 €, −2,10 %).</p>",
+			"summary": "Tuotteen La Casa di Roberta Valpolicella Ripasso Organic 2020 hinta on muuttunut. 21,94 € → 21,48 € (−0,46 €, −2,10 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/950821-6ac3d19ecdc9.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

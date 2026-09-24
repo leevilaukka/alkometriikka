@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Helsinki Dry Vodka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/953164/",
+	"feed_url": "https://alkometriikka.fi/rss/953164.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Helsinki Dry Vodka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-953164-2026-07-18-32.98",
+			"url": "https://alkometriikka.fi/tuotteet/953164/",
+			"title": "Helsinki Dry Vodka — 31,99 € → 32,98 €",
+			"content_html": "<p>Tuotteen Helsinki Dry Vodka hinta on muuttunut.</p><p>31,99 € → 32,98 € (+0,99 €, +3,09 %).</p>",
+			"summary": "Tuotteen Helsinki Dry Vodka hinta on muuttunut. 31,99 € → 32,98 € (+0,99 €, +3,09 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/953164-4a036c169707.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

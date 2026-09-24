@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Varo Codigo 1530 Anejo Tequila – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901378/",
+	"feed_url": "https://alkometriikka.fi/rss/901378.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Varo Codigo 1530 Anejo Tequila.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901378-2026-07-18-152.99",
+			"url": "https://alkometriikka.fi/tuotteet/901378/",
+			"title": "Varo Codigo 1530 Anejo Tequila — 153,25 € → 152,99 €",
+			"content_html": "<p>Tuotteen Varo Codigo 1530 Anejo Tequila hinta on muuttunut.</p><p>153,25 € → 152,99 € (−0,26 €, −0,17 %).</p>",
+			"summary": "Tuotteen Varo Codigo 1530 Anejo Tequila hinta on muuttunut. 153,25 € → 152,99 € (−0,26 €, −0,17 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901378-b268f0e35afd.png",
+			"tags": [
+				"Väkevät",
+				"Tequilat"
+			]
+		}
+	]
+}

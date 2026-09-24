@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Marabello muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/318947/",
+	"feed_url": "https://alkometriikka.fi/rss/318947.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Marabello muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-318947-2026-07-18-9.2",
+			"url": "https://alkometriikka.fi/tuotteet/318947/",
+			"title": "Marabello muovipullo — 9,57 € → 9,20 €",
+			"content_html": "<p>Tuotteen Marabello muovipullo hinta on muuttunut.</p><p>9,57 € → 9,20 € (−0,37 €, −3,87 %).</p>",
+			"summary": "Tuotteen Marabello muovipullo hinta on muuttunut. 9,57 € → 9,20 € (−0,37 €, −3,87 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/318947-09113db4604b.png",
+			"tags": [
+				"Välituotteet",
+				"väkevät viinit"
+			]
+		}
+	]
+}

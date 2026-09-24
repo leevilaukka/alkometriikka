@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Roe & Co – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/905527/",
+	"feed_url": "https://alkometriikka.fi/rss/905527.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Roe & Co.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-905527-2026-07-18-39.49",
+			"url": "https://alkometriikka.fi/tuotteet/905527/",
+			"title": "Roe & Co — 49,30 € → 39,49 €",
+			"content_html": "<p>Tuotteen Roe & Co hinta on muuttunut.</p><p>49,30 € → 39,49 € (−9,81 €, −19,90 %).</p>",
+			"summary": "Tuotteen Roe & Co hinta on muuttunut. 49,30 € → 39,49 € (−9,81 €, −19,90 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/905527-17b677c69484.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

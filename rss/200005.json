@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Havana Club Añejo 3 Años – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/200005/",
+	"feed_url": "https://alkometriikka.fi/rss/200005.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Havana Club Añejo 3 Años.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-200005-2026-07-18-3.79",
+			"url": "https://alkometriikka.fi/tuotteet/200005/",
+			"title": "Havana Club Añejo 3 Años — 3,70 € → 3,79 €",
+			"content_html": "<p>Tuotteen Havana Club Añejo 3 Años hinta on muuttunut.</p><p>3,70 € → 3,79 € (+0,09 €, +2,43 %).</p>",
+			"summary": "Tuotteen Havana Club Añejo 3 Años hinta on muuttunut. 3,70 € → 3,79 € (+0,09 €, +2,43 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/200005-ad0e4d91541d.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

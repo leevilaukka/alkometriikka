@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Apteekkarin Cognac XO – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/000833/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Apteekkarin Cognac XO.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/000833.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Apteekkarin Cognac XO – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Apteekkarin Cognac XO — 47,19 € → 47,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/000833/</link>
+			<guid isPermaLink="false">alkometriikka-000833-2026-07-18-47.99</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / konjakit</category>
+			<description><![CDATA[<p>Tuotteen Apteekkarin Cognac XO hinta on muuttunut.</p><p>47,19 € → 47,99 € (+0,80 €, +1,70 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/000833-573b7b0e8abb.png" />
+		</item>
+	</channel>
+</rss>

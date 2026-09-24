@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Guigal Hermitage Blanc 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901051/",
+	"feed_url": "https://alkometriikka.fi/rss/901051.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Guigal Hermitage Blanc 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901051-2026-07-18-65.99",
+			"url": "https://alkometriikka.fi/tuotteet/901051/",
+			"title": "Guigal Hermitage Blanc 2019 — 66,05 € → 65,99 €",
+			"content_html": "<p>Tuotteen Guigal Hermitage Blanc 2019 hinta on muuttunut.</p><p>66,05 € → 65,99 € (−0,06 €, −0,09 %).</p>",
+			"summary": "Tuotteen Guigal Hermitage Blanc 2019 hinta on muuttunut. 66,05 € → 65,99 € (−0,06 €, −0,09 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901051-8deb6ec92f03.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

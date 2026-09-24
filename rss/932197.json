@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – John Wine 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/932197/",
+	"feed_url": "https://alkometriikka.fi/rss/932197.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: John Wine 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-932197-2026-07-18-17.98",
+			"url": "https://alkometriikka.fi/tuotteet/932197/",
+			"title": "John Wine 2023 — 17,94 € → 17,98 €",
+			"content_html": "<p>Tuotteen John Wine 2023 hinta on muuttunut.</p><p>17,94 € → 17,98 € (+0,04 €, +0,22 %).</p>",
+			"summary": "Tuotteen John Wine 2023 hinta on muuttunut. 17,94 € → 17,98 € (+0,04 €, +0,22 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/932197-d39aadacb21a.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

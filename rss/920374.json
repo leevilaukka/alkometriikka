@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Artadi El Carretil 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/920374/",
+	"feed_url": "https://alkometriikka.fi/rss/920374.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Artadi El Carretil 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-920374-2026-07-18-199.95",
+			"url": "https://alkometriikka.fi/tuotteet/920374/",
+			"title": "Artadi El Carretil 2020 — 209,98 € → 199,95 €",
+			"content_html": "<p>Tuotteen Artadi El Carretil 2020 hinta on muuttunut.</p><p>209,98 € → 199,95 € (−10,03 €, −4,78 %).</p>",
+			"summary": "Tuotteen Artadi El Carretil 2020 hinta on muuttunut. 209,98 € → 199,95 € (−10,03 €, −4,78 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/920374-6ee13c6b33e4.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

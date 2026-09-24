@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ketel One Vodka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/940517/",
+	"feed_url": "https://alkometriikka.fi/rss/940517.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ketel One Vodka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-940517-2026-07-18-45.99",
+			"url": "https://alkometriikka.fi/tuotteet/940517/",
+			"title": "Ketel One Vodka — 45,27 € → 45,99 €",
+			"content_html": "<p>Tuotteen Ketel One Vodka hinta on muuttunut.</p><p>45,27 € → 45,99 € (+0,72 €, +1,59 %).</p>",
+			"summary": "Tuotteen Ketel One Vodka hinta on muuttunut. 45,27 € → 45,99 € (+0,72 €, +1,59 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/940517-746f7f1deb03.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

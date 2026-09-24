@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Somersby Pear Cider – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/939634/",
+	"feed_url": "https://alkometriikka.fi/rss/939634.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Somersby Pear Cider.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-939634-2026-07-18-3.29",
+			"url": "https://alkometriikka.fi/tuotteet/939634/",
+			"title": "Somersby Pear Cider — 2,69 € → 3,29 €",
+			"content_html": "<p>Tuotteen Somersby Pear Cider hinta on muuttunut.</p><p>2,69 € → 3,29 € (+0,60 €, +22,30 %).</p>",
+			"summary": "Tuotteen Somersby Pear Cider hinta on muuttunut. 2,69 € → 3,29 € (+0,60 €, +22,30 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/939634-126425d8fd57.png",
+			"tags": [
+				"Panimotuotteet",
+				"siiderit"
+			]
+		}
+	]
+}

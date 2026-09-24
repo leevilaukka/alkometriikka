@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Djuce Heinrich Red 2019 tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/957222/",
+	"feed_url": "https://alkometriikka.fi/rss/957222.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Djuce Heinrich Red 2019 tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-957222-2026-07-18-7.9",
+			"url": "https://alkometriikka.fi/tuotteet/957222/",
+			"title": "Djuce Heinrich Red 2019 tölkki — 9,58 € → 7,90 €",
+			"content_html": "<p>Tuotteen Djuce Heinrich Red 2019 tölkki hinta on muuttunut.</p><p>9,58 € → 7,90 € (−1,68 €, −17,54 %).</p>",
+			"summary": "Tuotteen Djuce Heinrich Red 2019 tölkki hinta on muuttunut. 9,58 € → 7,90 € (−1,68 €, −17,54 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/957222-ac02edb648a1.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

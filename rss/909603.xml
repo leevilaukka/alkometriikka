@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Villa Wolf Pinot Noir 2023 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/909603/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Villa Wolf Pinot Noir 2023.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/909603.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Villa Wolf Pinot Noir 2023 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Villa Wolf Pinot Noir 2023 — 8,72 € → 8,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/909603/</link>
+			<guid isPermaLink="false">alkometriikka-909603-2026-07-18-8.99</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Villa Wolf Pinot Noir 2023 hinta on muuttunut.</p><p>8,72 € → 8,99 € (+0,27 €, +3,10 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/909603-2e7774d68b2c.png" />
+		</item>
+		<item>
+			<title>Villa Wolf Pinot Noir 2023 — 8,72 € → 8,62 €</title>
+			<link>https://alkometriikka.fi/tuotteet/909603/</link>
+			<guid isPermaLink="false">alkometriikka-909603-2026-02-02-8.62</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Villa Wolf Pinot Noir 2023 hinta on muuttunut.</p><p>8,72 € → 8,62 € (−0,10 €, −1,15 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/909603-2e7774d68b2c.png" />
+		</item>
+		<item>
+			<title>Villa Wolf Pinot Noir 2023 — 8,62 € → 8,72 €</title>
+			<link>https://alkometriikka.fi/tuotteet/909603/</link>
+			<guid isPermaLink="false">alkometriikka-909603-2026-02-02-8.72</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Villa Wolf Pinot Noir 2023 hinta on muuttunut.</p><p>8,62 € → 8,72 € (+0,10 €, +1,16 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/909603-2e7774d68b2c.png" />
+		</item>
+	</channel>
+</rss>

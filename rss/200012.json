@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Smokehead Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/200012/",
+	"feed_url": "https://alkometriikka.fi/rss/200012.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Smokehead Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-200012-2026-07-18-53.55",
+			"url": "https://alkometriikka.fi/tuotteet/200012/",
+			"title": "Smokehead Single Malt — 66,92 € → 53,55 €",
+			"content_html": "<p>Tuotteen Smokehead Single Malt hinta on muuttunut.</p><p>66,92 € → 53,55 € (−13,37 €, −19,98 %).</p>",
+			"summary": "Tuotteen Smokehead Single Malt hinta on muuttunut. 66,92 € → 53,55 € (−13,37 €, −19,98 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/200012-cf5dbfc14f10.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kehrwieder Road Runner Coffee Stout – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/943881/",
+	"feed_url": "https://alkometriikka.fi/rss/943881.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kehrwieder Road Runner Coffee Stout.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-943881-2026-09-04-4.49",
+			"url": "https://alkometriikka.fi/tuotteet/943881/",
+			"title": "Kehrwieder Road Runner Coffee Stout — 4,99 € → 4,49 €",
+			"content_html": "<p>Tuotteen Kehrwieder Road Runner Coffee Stout hinta on muuttunut.</p><p>4,99 € → 4,49 € (−0,50 €, −10,02 %).</p>",
+			"summary": "Tuotteen Kehrwieder Road Runner Coffee Stout hinta on muuttunut. 4,99 € → 4,49 € (−0,50 €, −10,02 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/943881-b3e1f211d94a.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-943881-2026-07-18-4.99",
+			"url": "https://alkometriikka.fi/tuotteet/943881/",
+			"title": "Kehrwieder Road Runner Coffee Stout — 5,53 € → 4,99 €",
+			"content_html": "<p>Tuotteen Kehrwieder Road Runner Coffee Stout hinta on muuttunut.</p><p>5,53 € → 4,99 € (−0,54 €, −9,76 %).</p>",
+			"summary": "Tuotteen Kehrwieder Road Runner Coffee Stout hinta on muuttunut. 5,53 € → 4,99 € (−0,54 €, −9,76 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/943881-b3e1f211d94a.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

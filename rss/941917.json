@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Steininger Reserve Steinhaus Riesling 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/941917/",
+	"feed_url": "https://alkometriikka.fi/rss/941917.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Steininger Reserve Steinhaus Riesling 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-941917-2026-07-18-28.48",
+			"url": "https://alkometriikka.fi/tuotteet/941917/",
+			"title": "Steininger Reserve Steinhaus Riesling 2023 — 28,45 € → 28,48 €",
+			"content_html": "<p>Tuotteen Steininger Reserve Steinhaus Riesling 2023 hinta on muuttunut.</p><p>28,45 € → 28,48 € (+0,03 €, +0,11 %).</p>",
+			"summary": "Tuotteen Steininger Reserve Steinhaus Riesling 2023 hinta on muuttunut. 28,45 € → 28,48 € (+0,03 €, +0,11 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/941917-7df5fbad59d1.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

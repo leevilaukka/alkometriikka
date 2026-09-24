@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Stag's Leap Wine Cellars Artemis 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901618/",
+	"feed_url": "https://alkometriikka.fi/rss/901618.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Stag's Leap Wine Cellars Artemis 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901618-2026-07-18-121.69",
+			"url": "https://alkometriikka.fi/tuotteet/901618/",
+			"title": "Stag's Leap Wine Cellars Artemis 2021 — 121,67 € → 121,69 €",
+			"content_html": "<p>Tuotteen Stag's Leap Wine Cellars Artemis 2021 hinta on muuttunut.</p><p>121,67 € → 121,69 € (+0,02 €, +0,02 %).</p>",
+			"summary": "Tuotteen Stag's Leap Wine Cellars Artemis 2021 hinta on muuttunut. 121,67 € → 121,69 € (+0,02 €, +0,02 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901618-61558eb1c743.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

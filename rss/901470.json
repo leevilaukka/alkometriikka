@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glendalough Pot Still Irish Oak Finish – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901470/",
+	"feed_url": "https://alkometriikka.fi/rss/901470.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glendalough Pot Still Irish Oak Finish.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901470-2026-07-18-69.99",
+			"url": "https://alkometriikka.fi/tuotteet/901470/",
+			"title": "Glendalough Pot Still Irish Oak Finish — 70,06 € → 69,99 €",
+			"content_html": "<p>Tuotteen Glendalough Pot Still Irish Oak Finish hinta on muuttunut.</p><p>70,06 € → 69,99 € (−0,07 €, −0,10 %).</p>",
+			"summary": "Tuotteen Glendalough Pot Still Irish Oak Finish hinta on muuttunut. 70,06 € → 69,99 € (−0,07 €, −0,10 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901470-1d9f8f057cf2.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

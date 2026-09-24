@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château d'Aqueria Lirac 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/457557/",
+	"feed_url": "https://alkometriikka.fi/rss/457557.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château d'Aqueria Lirac 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-457557-2026-07-18-21.48",
+			"url": "https://alkometriikka.fi/tuotteet/457557/",
+			"title": "Château d'Aqueria Lirac 2023 — 20,17 € → 21,48 €",
+			"content_html": "<p>Tuotteen Château d'Aqueria Lirac 2023 hinta on muuttunut.</p><p>20,17 € → 21,48 € (+1,31 €, +6,49 %).</p>",
+			"summary": "Tuotteen Château d'Aqueria Lirac 2023 hinta on muuttunut. 20,17 € → 21,48 € (+1,31 €, +6,49 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/457557-13a2ce92feee.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

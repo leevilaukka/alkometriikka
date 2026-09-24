@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Masottina Costabella Prosecco Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/952217/",
+	"feed_url": "https://alkometriikka.fi/rss/952217.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Masottina Costabella Prosecco Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-952217-2026-07-18-19.5",
+			"url": "https://alkometriikka.fi/tuotteet/952217/",
+			"title": "Masottina Costabella Prosecco Brut — 19,46 € → 19,50 €",
+			"content_html": "<p>Tuotteen Masottina Costabella Prosecco Brut hinta on muuttunut.</p><p>19,46 € → 19,50 € (+0,04 €, +0,21 %).</p>",
+			"summary": "Tuotteen Masottina Costabella Prosecco Brut hinta on muuttunut. 19,46 € → 19,50 € (+0,04 €, +0,21 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/952217-42170d87cb54.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

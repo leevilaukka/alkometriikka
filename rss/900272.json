@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ardbeg Anthology The Unicorn's Tale 14 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900272/",
+	"feed_url": "https://alkometriikka.fi/rss/900272.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ardbeg Anthology The Unicorn's Tale 14 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900272-2026-07-18-189.99",
+			"url": "https://alkometriikka.fi/tuotteet/900272/",
+			"title": "Ardbeg Anthology The Unicorn's Tale 14 Year Old Single Malt — 189,79 € → 189,99 €",
+			"content_html": "<p>Tuotteen Ardbeg Anthology The Unicorn's Tale 14 Year Old Single Malt hinta on muuttunut.</p><p>189,79 € → 189,99 € (+0,20 €, +0,11 %).</p>",
+			"summary": "Tuotteen Ardbeg Anthology The Unicorn's Tale 14 Year Old Single Malt hinta on muuttunut. 189,79 € → 189,99 € (+0,20 €, +0,11 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900272-0a48d4ae598d.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

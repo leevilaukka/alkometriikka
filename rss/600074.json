@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Birra Corelli 0,0 tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/600074/",
+	"feed_url": "https://alkometriikka.fi/rss/600074.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Birra Corelli 0,0 tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-600074-2026-09-04-0.89",
+			"url": "https://alkometriikka.fi/tuotteet/600074/",
+			"title": "Birra Corelli 0,0 tölkki — 0,99 € → 0,89 €",
+			"content_html": "<p>Tuotteen Birra Corelli 0,0 tölkki hinta on muuttunut.</p><p>0,99 € → 0,89 € (−0,10 €, −10,10 %).</p>",
+			"summary": "Tuotteen Birra Corelli 0,0 tölkki hinta on muuttunut. 0,99 € → 0,89 € (−0,10 €, −10,10 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600074-7f9978741239.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

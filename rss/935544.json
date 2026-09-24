@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Norton Lote Negro 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/935544/",
+	"feed_url": "https://alkometriikka.fi/rss/935544.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Norton Lote Negro 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-935544-2026-07-18-26.49",
+			"url": "https://alkometriikka.fi/tuotteet/935544/",
+			"title": "Norton Lote Negro 2021 — 26,45 € → 26,49 €",
+			"content_html": "<p>Tuotteen Norton Lote Negro 2021 hinta on muuttunut.</p><p>26,45 € → 26,49 € (+0,04 €, +0,15 %).</p>",
+			"summary": "Tuotteen Norton Lote Negro 2021 hinta on muuttunut. 26,45 € → 26,49 € (+0,04 €, +0,15 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/935544-9bf51cb5dd8e.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

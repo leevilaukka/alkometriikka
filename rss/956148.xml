@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Riga Black Balsam Original – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/956148/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Riga Black Balsam Original.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/956148.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Riga Black Balsam Original – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Riga Black Balsam Original — 27,93 € → 27,98 €</title>
+			<link>https://alkometriikka.fi/tuotteet/956148/</link>
+			<guid isPermaLink="false">alkometriikka-956148-2026-07-18-27.98</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / maha- ja maustekatkerot</category>
+			<description><![CDATA[<p>Tuotteen Riga Black Balsam Original hinta on muuttunut.</p><p>27,93 € → 27,98 € (+0,05 €, +0,18 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/956148-d36036b05ebb.png" />
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Aperol – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/787047/",
+	"feed_url": "https://alkometriikka.fi/rss/787047.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Aperol.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-787047-2026-07-18-23.5",
+			"url": "https://alkometriikka.fi/tuotteet/787047/",
+			"title": "Aperol — 22,99 € → 23,50 €",
+			"content_html": "<p>Tuotteen Aperol hinta on muuttunut.</p><p>22,99 € → 23,50 € (+0,51 €, +2,22 %).</p>",
+			"summary": "Tuotteen Aperol hinta on muuttunut. 22,99 € → 23,50 € (+0,51 €, +2,22 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/787047-c9a619bf036b.png",
+			"tags": [
+				"Panimotuotteet",
+				"juomasekoitukset"
+			]
+		}
+	]
+}

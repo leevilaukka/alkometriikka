@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mouton Cadet Réserve Sauternes 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/912984/",
+	"feed_url": "https://alkometriikka.fi/rss/912984.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mouton Cadet Réserve Sauternes 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-912984-2026-07-18-18.6",
+			"url": "https://alkometriikka.fi/tuotteet/912984/",
+			"title": "Mouton Cadet Réserve Sauternes 2023 — 18,33 € → 18,60 €",
+			"content_html": "<p>Tuotteen Mouton Cadet Réserve Sauternes 2023 hinta on muuttunut.</p><p>18,33 € → 18,60 € (+0,27 €, +1,47 %).</p>",
+			"summary": "Tuotteen Mouton Cadet Réserve Sauternes 2023 hinta on muuttunut. 18,33 € → 18,60 € (+0,27 €, +1,47 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/912984-f6c61b64f880.png",
+			"tags": [
+				"Viinit",
+				"jälkiruokaviinit"
+			]
+		}
+	]
+}

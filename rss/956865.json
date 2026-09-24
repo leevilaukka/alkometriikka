@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cloudy Bay Te Wahi 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/956865/",
+	"feed_url": "https://alkometriikka.fi/rss/956865.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cloudy Bay Te Wahi 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-956865-2026-07-18-98.99",
+			"url": "https://alkometriikka.fi/tuotteet/956865/",
+			"title": "Cloudy Bay Te Wahi 2021 — 96,37 € → 98,99 €",
+			"content_html": "<p>Tuotteen Cloudy Bay Te Wahi 2021 hinta on muuttunut.</p><p>96,37 € → 98,99 € (+2,62 €, +2,72 %).</p>",
+			"summary": "Tuotteen Cloudy Bay Te Wahi 2021 hinta on muuttunut. 96,37 € → 98,99 € (+2,62 €, +2,72 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/956865-c5a356d3f7ec.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

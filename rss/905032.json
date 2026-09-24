@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Faustino VII Blanco – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/905032/",
+	"feed_url": "https://alkometriikka.fi/rss/905032.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Faustino VII Blanco.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-905032-2026-07-18-4.99",
+			"url": "https://alkometriikka.fi/tuotteet/905032/",
+			"title": "Faustino VII Blanco — 4,30 € → 4,99 €",
+			"content_html": "<p>Tuotteen Faustino VII Blanco hinta on muuttunut.</p><p>4,30 € → 4,99 € (+0,69 €, +16,05 %).</p>",
+			"summary": "Tuotteen Faustino VII Blanco hinta on muuttunut. 4,30 € → 4,99 € (+0,69 €, +16,05 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/905032-ee8dea200ecb.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

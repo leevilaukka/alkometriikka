@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Salmon Collection Meunier Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/946074/",
+	"feed_url": "https://alkometriikka.fi/rss/946074.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Salmon Collection Meunier Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-946074-2026-07-18-57.98",
+			"url": "https://alkometriikka.fi/tuotteet/946074/",
+			"title": "Salmon Collection Meunier Champagne Brut — 57,96 € → 57,98 €",
+			"content_html": "<p>Tuotteen Salmon Collection Meunier Champagne Brut hinta on muuttunut.</p><p>57,96 € → 57,98 € (+0,02 €, +0,03 %).</p>",
+			"summary": "Tuotteen Salmon Collection Meunier Champagne Brut hinta on muuttunut. 57,96 € → 57,98 € (+0,02 €, +0,03 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/946074-63d7d9667b2a.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

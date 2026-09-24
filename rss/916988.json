@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – G'Vine Floraison Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/916988/",
+	"feed_url": "https://alkometriikka.fi/rss/916988.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: G'Vine Floraison Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-916988-2026-07-18-51.9",
+			"url": "https://alkometriikka.fi/tuotteet/916988/",
+			"title": "G'Vine Floraison Gin — 51,28 € → 51,90 €",
+			"content_html": "<p>Tuotteen G'Vine Floraison Gin hinta on muuttunut.</p><p>51,28 € → 51,90 € (+0,62 €, +1,21 %).</p>",
+			"summary": "Tuotteen G'Vine Floraison Gin hinta on muuttunut. 51,28 € → 51,90 € (+0,62 €, +1,21 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/916988-593ac554b550.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

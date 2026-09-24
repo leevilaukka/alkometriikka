@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – De Kuyper Blueberry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/930754/",
+	"feed_url": "https://alkometriikka.fi/rss/930754.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: De Kuyper Blueberry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-930754-2026-07-18-19.98",
+			"url": "https://alkometriikka.fi/tuotteet/930754/",
+			"title": "De Kuyper Blueberry — 19,97 € → 19,98 €",
+			"content_html": "<p>Tuotteen De Kuyper Blueberry hinta on muuttunut.</p><p>19,97 € → 19,98 € (+0,01 €, +0,05 %).</p>",
+			"summary": "Tuotteen De Kuyper Blueberry hinta on muuttunut. 19,97 € → 19,98 € (+0,01 €, +0,05 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/930754-70804d0192ee.png",
+			"tags": [
+				"Väkevät",
+				"marjaliköörit"
+			]
+		}
+	]
+}

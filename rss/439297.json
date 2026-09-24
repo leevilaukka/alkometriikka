@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château Morillon 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/439297/",
+	"feed_url": "https://alkometriikka.fi/rss/439297.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château Morillon 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-439297-2026-07-18-16.45",
+			"url": "https://alkometriikka.fi/tuotteet/439297/",
+			"title": "Château Morillon 2022 — 16,88 € → 16,45 €",
+			"content_html": "<p>Tuotteen Château Morillon 2022 hinta on muuttunut.</p><p>16,88 € → 16,45 € (−0,43 €, −2,55 %).</p>",
+			"summary": "Tuotteen Château Morillon 2022 hinta on muuttunut. 16,88 € → 16,45 € (−0,43 €, −2,55 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/439297-c6f2a74563a3.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

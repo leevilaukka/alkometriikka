@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lamberti Pinot Grigio Ca' Preella 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/008365/",
+	"feed_url": "https://alkometriikka.fi/rss/008365.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lamberti Pinot Grigio Ca' Preella 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-008365-2026-07-18-11.7",
+			"url": "https://alkometriikka.fi/tuotteet/008365/",
+			"title": "Lamberti Pinot Grigio Ca' Preella 2024 — 11,99 € → 11,70 €",
+			"content_html": "<p>Tuotteen Lamberti Pinot Grigio Ca' Preella 2024 hinta on muuttunut.</p><p>11,99 € → 11,70 € (−0,29 €, −2,42 %).</p>",
+			"summary": "Tuotteen Lamberti Pinot Grigio Ca' Preella 2024 hinta on muuttunut. 11,99 € → 11,70 € (−0,29 €, −2,42 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/008365-e92a48e60a89.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

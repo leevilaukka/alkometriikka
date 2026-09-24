@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Rothaus Tannenzäpfle Alkoholfrei – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/600066/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Rothaus Tannenzäpfle Alkoholfrei.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/600066.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Rothaus Tannenzäpfle Alkoholfrei – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Rothaus Tannenzäpfle Alkoholfrei — 3,29 € → 2,96 €</title>
+			<link>https://alkometriikka.fi/tuotteet/600066/</link>
+			<guid isPermaLink="false">alkometriikka-600066-2026-09-04-2.96</guid>
+			<pubDate>Fri, 04 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Alkoholittomat / alkoholittomat oluet</category>
+			<description><![CDATA[<p>Tuotteen Rothaus Tannenzäpfle Alkoholfrei hinta on muuttunut.</p><p>3,29 € → 2,96 € (−0,33 €, −10,03 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/600066-423715749e15.png" />
+		</item>
+		<item>
+			<title>Rothaus Tannenzäpfle Alkoholfrei — 3,19 € → 3,29 €</title>
+			<link>https://alkometriikka.fi/tuotteet/600066/</link>
+			<guid isPermaLink="false">alkometriikka-600066-2026-07-18-3.29</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Alkoholittomat / alkoholittomat oluet</category>
+			<description><![CDATA[<p>Tuotteen Rothaus Tannenzäpfle Alkoholfrei hinta on muuttunut.</p><p>3,19 € → 3,29 € (+0,10 €, +3,13 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/600066-423715749e15.png" />
+		</item>
+	</channel>
+</rss>

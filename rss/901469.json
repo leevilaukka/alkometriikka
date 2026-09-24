@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hiisi Goat Apple Dry Finnish Apple Cider – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901469/",
+	"feed_url": "https://alkometriikka.fi/rss/901469.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hiisi Goat Apple Dry Finnish Apple Cider.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901469-2026-07-18-6.49",
+			"url": "https://alkometriikka.fi/tuotteet/901469/",
+			"title": "Hiisi Goat Apple Dry Finnish Apple Cider — 8,19 € → 6,49 €",
+			"content_html": "<p>Tuotteen Hiisi Goat Apple Dry Finnish Apple Cider hinta on muuttunut.</p><p>8,19 € → 6,49 € (−1,70 €, −20,76 %).</p>",
+			"summary": "Tuotteen Hiisi Goat Apple Dry Finnish Apple Cider hinta on muuttunut. 8,19 € → 6,49 € (−1,70 €, −20,76 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901469-c8d2ce364664.png",
+			"tags": [
+				"Panimotuotteet",
+				"siiderit"
+			]
+		}
+	]
+}

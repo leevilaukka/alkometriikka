@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Frei Gigante 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/568227/",
+	"feed_url": "https://alkometriikka.fi/rss/568227.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Frei Gigante 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-568227-2026-02-02-29.82",
+			"url": "https://alkometriikka.fi/tuotteet/568227/",
+			"title": "Frei Gigante 2021 — 29,92 € → 29,82 €",
+			"content_html": "<p>Tuotteen Frei Gigante 2021 hinta on muuttunut.</p><p>29,92 € → 29,82 € (−0,10 €, −0,33 %).</p>",
+			"summary": "Tuotteen Frei Gigante 2021 hinta on muuttunut. 29,92 € → 29,82 € (−0,10 €, −0,33 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/568227-5831776f5280.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-568227-2026-02-02-29.92",
+			"url": "https://alkometriikka.fi/tuotteet/568227/",
+			"title": "Frei Gigante 2021 — 29,82 € → 29,92 €",
+			"content_html": "<p>Tuotteen Frei Gigante 2021 hinta on muuttunut.</p><p>29,82 € → 29,92 € (+0,10 €, +0,34 %).</p>",
+			"summary": "Tuotteen Frei Gigante 2021 hinta on muuttunut. 29,82 € → 29,92 € (+0,10 €, +0,34 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/568227-5831776f5280.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

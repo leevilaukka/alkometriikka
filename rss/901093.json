@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Fritz Walter Riesling Löss Trocken 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901093/",
+	"feed_url": "https://alkometriikka.fi/rss/901093.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Fritz Walter Riesling Löss Trocken 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901093-2026-07-18-12.99",
+			"url": "https://alkometriikka.fi/tuotteet/901093/",
+			"title": "Fritz Walter Riesling Löss Trocken 2024 — 12,96 € → 12,99 €",
+			"content_html": "<p>Tuotteen Fritz Walter Riesling Löss Trocken 2024 hinta on muuttunut.</p><p>12,96 € → 12,99 € (+0,03 €, +0,23 %).</p>",
+			"summary": "Tuotteen Fritz Walter Riesling Löss Trocken 2024 hinta on muuttunut. 12,96 € → 12,99 € (+0,03 €, +0,23 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901093-9c5e4a3c24aa.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

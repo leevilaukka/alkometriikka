@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Castillo de Gredos Blanco Organic kartonkitölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/948488/",
+	"feed_url": "https://alkometriikka.fi/rss/948488.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Castillo de Gredos Blanco Organic kartonkitölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-948488-2026-07-18-9.99",
+			"url": "https://alkometriikka.fi/tuotteet/948488/",
+			"title": "Castillo de Gredos Blanco Organic kartonkitölkki — 10,61 € → 9,99 €",
+			"content_html": "<p>Tuotteen Castillo de Gredos Blanco Organic kartonkitölkki hinta on muuttunut.</p><p>10,61 € → 9,99 € (−0,62 €, −5,84 %).</p>",
+			"summary": "Tuotteen Castillo de Gredos Blanco Organic kartonkitölkki hinta on muuttunut. 10,61 € → 9,99 € (−0,62 €, −5,84 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/948488-7a99a3808d71.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

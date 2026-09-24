@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Monopol VSOP – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/106287/",
+	"feed_url": "https://alkometriikka.fi/rss/106287.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Monopol VSOP.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-106287-2026-07-18-46.48",
+			"url": "https://alkometriikka.fi/tuotteet/106287/",
+			"title": "Monopol VSOP — 46,26 € → 46,48 €",
+			"content_html": "<p>Tuotteen Monopol VSOP hinta on muuttunut.</p><p>46,26 € → 46,48 € (+0,22 €, +0,48 %).</p>",
+			"summary": "Tuotteen Monopol VSOP hinta on muuttunut. 46,26 € → 46,48 € (+0,22 €, +0,48 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/106287-0470468be457.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

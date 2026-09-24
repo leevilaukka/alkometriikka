@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Absolut Elyx Single Estate Copper Crafted Vodka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/953814/",
+	"feed_url": "https://alkometriikka.fi/rss/953814.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Absolut Elyx Single Estate Copper Crafted Vodka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-953814-2026-07-18-251.99",
+			"url": "https://alkometriikka.fi/tuotteet/953814/",
+			"title": "Absolut Elyx Single Estate Copper Crafted Vodka — 251,23 € → 251,99 €",
+			"content_html": "<p>Tuotteen Absolut Elyx Single Estate Copper Crafted Vodka hinta on muuttunut.</p><p>251,23 € → 251,99 € (+0,76 €, +0,30 %).</p>",
+			"summary": "Tuotteen Absolut Elyx Single Estate Copper Crafted Vodka hinta on muuttunut. 251,23 € → 251,99 € (+0,76 €, +0,30 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/953814-3e7e324fb60a.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lasso Zero 0% tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/600061/",
+	"feed_url": "https://alkometriikka.fi/rss/600061.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lasso Zero 0% tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-600061-2026-09-04-0.89",
+			"url": "https://alkometriikka.fi/tuotteet/600061/",
+			"title": "Lasso Zero 0% tölkki — 0,99 € → 0,89 €",
+			"content_html": "<p>Tuotteen Lasso Zero 0% tölkki hinta on muuttunut.</p><p>0,99 € → 0,89 € (−0,10 €, −10,10 %).</p>",
+			"summary": "Tuotteen Lasso Zero 0% tölkki hinta on muuttunut. 0,99 € → 0,89 € (−0,10 €, −10,10 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600061-dafa8a5b0fbf.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

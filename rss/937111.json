@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château Maucoil Châteauneuf-du-Pape Tradition Magnum 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/937111/",
+	"feed_url": "https://alkometriikka.fi/rss/937111.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château Maucoil Châteauneuf-du-Pape Tradition Magnum 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-937111-2026-07-18-99.95",
+			"url": "https://alkometriikka.fi/tuotteet/937111/",
+			"title": "Château Maucoil Châteauneuf-du-Pape Tradition Magnum 2020 — 99,91 € → 99,95 €",
+			"content_html": "<p>Tuotteen Château Maucoil Châteauneuf-du-Pape Tradition Magnum 2020 hinta on muuttunut.</p><p>99,91 € → 99,95 € (+0,04 €, +0,04 %).</p>",
+			"summary": "Tuotteen Château Maucoil Châteauneuf-du-Pape Tradition Magnum 2020 hinta on muuttunut. 99,91 € → 99,95 € (+0,04 €, +0,04 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/937111-8ec616d5188a.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

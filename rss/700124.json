@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – St Feuillien Quadruple – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/700124/",
+	"feed_url": "https://alkometriikka.fi/rss/700124.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: St Feuillien Quadruple.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-700124-2026-07-18-5.28",
+			"url": "https://alkometriikka.fi/tuotteet/700124/",
+			"title": "St Feuillien Quadruple — 5,29 € → 5,28 €",
+			"content_html": "<p>Tuotteen St Feuillien Quadruple hinta on muuttunut.</p><p>5,29 € → 5,28 € (−0,01 €, −0,19 %).</p>",
+			"summary": "Tuotteen St Feuillien Quadruple hinta on muuttunut. 5,29 € → 5,28 € (−0,01 €, −0,19 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/700124-7bb8d34306a1.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Verrocchio Valpolicella Ripasso Superiore 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/922825/",
+	"feed_url": "https://alkometriikka.fi/rss/922825.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Verrocchio Valpolicella Ripasso Superiore 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-922825-2026-07-18-9.89",
+			"url": "https://alkometriikka.fi/tuotteet/922825/",
+			"title": "Verrocchio Valpolicella Ripasso Superiore 2023 — 9,99 € → 9,89 €",
+			"content_html": "<p>Tuotteen Verrocchio Valpolicella Ripasso Superiore 2023 hinta on muuttunut.</p><p>9,99 € → 9,89 € (−0,10 €, −1,00 %).</p>",
+			"summary": "Tuotteen Verrocchio Valpolicella Ripasso Superiore 2023 hinta on muuttunut. 9,99 € → 9,89 € (−0,10 €, −1,00 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/922825-59cb01406d47.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

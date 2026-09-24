@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Domaine Collet Rose Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/920595/",
+	"feed_url": "https://alkometriikka.fi/rss/920595.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Domaine Collet Rose Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-920595-2026-07-18-59.89",
+			"url": "https://alkometriikka.fi/tuotteet/920595/",
+			"title": "Domaine Collet Rose Champagne Brut — 60,22 € → 59,89 €",
+			"content_html": "<p>Tuotteen Domaine Collet Rose Champagne Brut hinta on muuttunut.</p><p>60,22 € → 59,89 € (−0,33 €, −0,55 %).</p>",
+			"summary": "Tuotteen Domaine Collet Rose Champagne Brut hinta on muuttunut. 60,22 € → 59,89 € (−0,33 €, −0,55 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/920595-dfebbd58855c.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

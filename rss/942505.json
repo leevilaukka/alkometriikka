@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Små Sure Twisted Sour Fruit – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/942505/",
+	"feed_url": "https://alkometriikka.fi/rss/942505.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Små Sure Twisted Sour Fruit.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-942505-2026-07-18-19.99",
+			"url": "https://alkometriikka.fi/tuotteet/942505/",
+			"title": "Små Sure Twisted Sour Fruit — 20,10 € → 19,99 €",
+			"content_html": "<p>Tuotteen Små Sure Twisted Sour Fruit hinta on muuttunut.</p><p>20,10 € → 19,99 € (−0,11 €, −0,55 %).</p>",
+			"summary": "Tuotteen Små Sure Twisted Sour Fruit hinta on muuttunut. 20,10 € → 19,99 € (−0,11 €, −0,55 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/942505-002cee7904ba.png",
+			"tags": [
+				"Väkevät",
+				"hedelmäliköörit"
+			]
+		}
+	]
+}

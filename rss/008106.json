@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Frontera Chardonnay 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/008106/",
+	"feed_url": "https://alkometriikka.fi/rss/008106.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Frontera Chardonnay 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-008106-2026-07-18-8.59",
+			"url": "https://alkometriikka.fi/tuotteet/008106/",
+			"title": "Frontera Chardonnay 2025 — 8,49 € → 8,59 €",
+			"content_html": "<p>Tuotteen Frontera Chardonnay 2025 hinta on muuttunut.</p><p>8,49 € → 8,59 € (+0,10 €, +1,18 %).</p>",
+			"summary": "Tuotteen Frontera Chardonnay 2025 hinta on muuttunut. 8,49 € → 8,59 € (+0,10 €, +1,18 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/008106-978a976c497e.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Le Sirop de Monin Agave – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/928375/",
+	"feed_url": "https://alkometriikka.fi/rss/928375.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Le Sirop de Monin Agave.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-928375-2026-07-18-27.79",
+			"url": "https://alkometriikka.fi/tuotteet/928375/",
+			"title": "Le Sirop de Monin Agave — 27,44 € → 27,79 €",
+			"content_html": "<p>Tuotteen Le Sirop de Monin Agave hinta on muuttunut.</p><p>27,44 € → 27,79 € (+0,35 €, +1,28 %).</p>",
+			"summary": "Tuotteen Le Sirop de Monin Agave hinta on muuttunut. 27,44 € → 27,79 € (+0,35 €, +1,28 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/928375-67f11f5609ab.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

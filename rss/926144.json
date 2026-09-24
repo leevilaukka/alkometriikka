@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Canard-Duchêne Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/926144/",
+	"feed_url": "https://alkometriikka.fi/rss/926144.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Canard-Duchêne Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-926144-2026-07-18-47.98",
+			"url": "https://alkometriikka.fi/tuotteet/926144/",
+			"title": "Canard-Duchêne Champagne Brut — 47,46 € → 47,98 €",
+			"content_html": "<p>Tuotteen Canard-Duchêne Champagne Brut hinta on muuttunut.</p><p>47,46 € → 47,98 € (+0,52 €, +1,10 %).</p>",
+			"summary": "Tuotteen Canard-Duchêne Champagne Brut hinta on muuttunut. 47,46 € → 47,98 € (+0,52 €, +1,10 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/926144-da9763f32637.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

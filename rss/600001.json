@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bundaberg Ginger Beer – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/600001/",
+	"feed_url": "https://alkometriikka.fi/rss/600001.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bundaberg Ginger Beer.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-600001-2026-07-18-2.79",
+			"url": "https://alkometriikka.fi/tuotteet/600001/",
+			"title": "Bundaberg Ginger Beer — 2,78 € → 2,79 €",
+			"content_html": "<p>Tuotteen Bundaberg Ginger Beer hinta on muuttunut.</p><p>2,78 € → 2,79 € (+0,01 €, +0,36 %).</p>",
+			"summary": "Tuotteen Bundaberg Ginger Beer hinta on muuttunut. 2,78 € → 2,79 € (+0,01 €, +0,36 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600001-ada56c52782f.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

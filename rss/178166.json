@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Drumshanbo Gunpowder Irish Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/178166/",
+	"feed_url": "https://alkometriikka.fi/rss/178166.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Drumshanbo Gunpowder Irish Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-178166-2026-07-18-30.99",
+			"url": "https://alkometriikka.fi/tuotteet/178166/",
+			"title": "Drumshanbo Gunpowder Irish Gin — 30,90 € → 30,99 €",
+			"content_html": "<p>Tuotteen Drumshanbo Gunpowder Irish Gin hinta on muuttunut.</p><p>30,90 € → 30,99 € (+0,09 €, +0,29 %).</p>",
+			"summary": "Tuotteen Drumshanbo Gunpowder Irish Gin hinta on muuttunut. 30,90 € → 30,99 € (+0,09 €, +0,29 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/178166-d99f5865d2bf.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

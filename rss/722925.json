@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Moersleutel Quad tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/722925/",
+	"feed_url": "https://alkometriikka.fi/rss/722925.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Moersleutel Quad tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-722925-2026-07-18-6.96",
+			"url": "https://alkometriikka.fi/tuotteet/722925/",
+			"title": "Moersleutel Quad tölkki — 6,97 € → 6,96 €",
+			"content_html": "<p>Tuotteen Moersleutel Quad tölkki hinta on muuttunut.</p><p>6,97 € → 6,96 € (−0,01 €, −0,14 %).</p>",
+			"summary": "Tuotteen Moersleutel Quad tölkki hinta on muuttunut. 6,97 € → 6,96 € (−0,01 €, −0,14 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/722925-2d93e9114fc8.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

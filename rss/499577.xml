@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Ruffino Chianti Superiore 2023 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/499577/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Ruffino Chianti Superiore 2023.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/499577.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Ruffino Chianti Superiore 2023 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Ruffino Chianti Superiore 2023 — 22,09 € → 22,20 €</title>
+			<link>https://alkometriikka.fi/tuotteet/499577/</link>
+			<guid isPermaLink="false">alkometriikka-499577-2026-07-18-22.2</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Ruffino Chianti Superiore 2023 hinta on muuttunut.</p><p>22,09 € → 22,20 € (+0,11 €, +0,50 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/499577-1ab1b0c472d5.png" />
+		</item>
+	</channel>
+</rss>

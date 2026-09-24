@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Kopparberg Cider Cranberry Alkoholiton tölkki – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/923921/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Kopparberg Cider Cranberry Alkoholiton tölkki.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/923921.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Kopparberg Cider Cranberry Alkoholiton tölkki – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Kopparberg Cider Cranberry Alkoholiton tölkki — 2,08 € → 3,49 €</title>
+			<link>https://alkometriikka.fi/tuotteet/923921/</link>
+			<guid isPermaLink="false">alkometriikka-923921-2026-07-18-3.49</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Alkoholittomat / alkoholittomat siiderit</category>
+			<description><![CDATA[<p>Tuotteen Kopparberg Cider Cranberry Alkoholiton tölkki hinta on muuttunut.</p><p>2,08 € → 3,49 € (+1,41 €, +67,79 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/923921-d1846dc36036.png" />
+		</item>
+	</channel>
+</rss>

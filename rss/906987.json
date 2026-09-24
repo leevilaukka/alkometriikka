@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Le Corti Chianti Classico 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/906987/",
+	"feed_url": "https://alkometriikka.fi/rss/906987.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Le Corti Chianti Classico 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-906987-2026-07-18-22.49",
+			"url": "https://alkometriikka.fi/tuotteet/906987/",
+			"title": "Le Corti Chianti Classico 2024 — 22,45 € → 22,49 €",
+			"content_html": "<p>Tuotteen Le Corti Chianti Classico 2024 hinta on muuttunut.</p><p>22,45 € → 22,49 € (+0,04 €, +0,18 %).</p>",
+			"summary": "Tuotteen Le Corti Chianti Classico 2024 hinta on muuttunut. 22,45 € → 22,49 € (+0,04 €, +0,18 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/906987-2e4b5ecf182b.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

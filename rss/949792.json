@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Stallhagen Styrman Non Alcoholic IPA – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/949792/",
+	"feed_url": "https://alkometriikka.fi/rss/949792.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Stallhagen Styrman Non Alcoholic IPA.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-949792-2026-09-04-2.24",
+			"url": "https://alkometriikka.fi/tuotteet/949792/",
+			"title": "Stallhagen Styrman Non Alcoholic IPA — 2,49 € → 2,24 €",
+			"content_html": "<p>Tuotteen Stallhagen Styrman Non Alcoholic IPA hinta on muuttunut.</p><p>2,49 € → 2,24 € (−0,25 €, −10,04 %).</p>",
+			"summary": "Tuotteen Stallhagen Styrman Non Alcoholic IPA hinta on muuttunut. 2,49 € → 2,24 € (−0,25 €, −10,04 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/949792-03c07acdbe28.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-949792-2026-07-18-2.49",
+			"url": "https://alkometriikka.fi/tuotteet/949792/",
+			"title": "Stallhagen Styrman Non Alcoholic IPA — 2,48 € → 2,49 €",
+			"content_html": "<p>Tuotteen Stallhagen Styrman Non Alcoholic IPA hinta on muuttunut.</p><p>2,48 € → 2,49 € (+0,01 €, +0,40 %).</p>",
+			"summary": "Tuotteen Stallhagen Styrman Non Alcoholic IPA hinta on muuttunut. 2,48 € → 2,49 € (+0,01 €, +0,40 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/949792-03c07acdbe28.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

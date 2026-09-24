@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Talisker Storm Single Malt – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/175817/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Talisker Storm Single Malt.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/175817.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Talisker Storm Single Malt – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Talisker Storm Single Malt — 59,30 € → 59,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/175817/</link>
+			<guid isPermaLink="false">alkometriikka-175817-2026-07-18-59.99</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / viskit</category>
+			<description><![CDATA[<p>Tuotteen Talisker Storm Single Malt hinta on muuttunut.</p><p>59,30 € → 59,99 € (+0,69 €, +1,16 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/175817-569a93b96dbe.png" />
+		</item>
+	</channel>
+</rss>

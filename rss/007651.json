@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Königsmosel Riesling 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/007651/",
+	"feed_url": "https://alkometriikka.fi/rss/007651.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Königsmosel Riesling 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-007651-2026-07-18-10.98",
+			"url": "https://alkometriikka.fi/tuotteet/007651/",
+			"title": "Königsmosel Riesling 2025 — 11,45 € → 10,98 €",
+			"content_html": "<p>Tuotteen Königsmosel Riesling 2025 hinta on muuttunut.</p><p>11,45 € → 10,98 € (−0,47 €, −4,10 %).</p>",
+			"summary": "Tuotteen Königsmosel Riesling 2025 hinta on muuttunut. 11,45 € → 10,98 € (−0,47 €, −4,10 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/007651-5907f7374a74.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

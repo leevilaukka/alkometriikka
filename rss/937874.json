@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Loch Lomond Inchmoan 12 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/937874/",
+	"feed_url": "https://alkometriikka.fi/rss/937874.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Loch Lomond Inchmoan 12 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-937874-2026-07-18-68.78",
+			"url": "https://alkometriikka.fi/tuotteet/937874/",
+			"title": "Loch Lomond Inchmoan 12 Year Old Single Malt — 68,80 € → 68,78 €",
+			"content_html": "<p>Tuotteen Loch Lomond Inchmoan 12 Year Old Single Malt hinta on muuttunut.</p><p>68,80 € → 68,78 € (−0,02 €, −0,03 %).</p>",
+			"summary": "Tuotteen Loch Lomond Inchmoan 12 Year Old Single Malt hinta on muuttunut. 68,80 € → 68,78 € (−0,02 €, −0,03 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/937874-d0bd792bb99d.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – JM Sélèque Quintette Champagne Extra Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/942951/",
+	"feed_url": "https://alkometriikka.fi/rss/942951.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: JM Sélèque Quintette Champagne Extra Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-942951-2026-07-18-75.99",
+			"url": "https://alkometriikka.fi/tuotteet/942951/",
+			"title": "JM Sélèque Quintette Champagne Extra Brut — 74,99 € → 75,99 €",
+			"content_html": "<p>Tuotteen JM Sélèque Quintette Champagne Extra Brut hinta on muuttunut.</p><p>74,99 € → 75,99 € (+1,00 €, +1,33 %).</p>",
+			"summary": "Tuotteen JM Sélèque Quintette Champagne Extra Brut hinta on muuttunut. 74,99 € → 75,99 € (+1,00 €, +1,33 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/942951-13d977eace95.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

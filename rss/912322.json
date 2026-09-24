@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Raimat Albariño Saira Organic 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/912322/",
+	"feed_url": "https://alkometriikka.fi/rss/912322.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Raimat Albariño Saira Organic 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-912322-2026-07-18-13.98",
+			"url": "https://alkometriikka.fi/tuotteet/912322/",
+			"title": "Raimat Albariño Saira Organic 2025 — 13,44 € → 13,98 €",
+			"content_html": "<p>Tuotteen Raimat Albariño Saira Organic 2025 hinta on muuttunut.</p><p>13,44 € → 13,98 € (+0,54 €, +4,02 %).</p>",
+			"summary": "Tuotteen Raimat Albariño Saira Organic 2025 hinta on muuttunut. 13,44 € → 13,98 € (+0,54 €, +4,02 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/912322-e602413100ee.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

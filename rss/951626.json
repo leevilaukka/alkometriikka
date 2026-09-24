@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bründlmayer Reserve Rosé Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/951626/",
+	"feed_url": "https://alkometriikka.fi/rss/951626.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bründlmayer Reserve Rosé Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-951626-2026-07-18-41.99",
+			"url": "https://alkometriikka.fi/tuotteet/951626/",
+			"title": "Bründlmayer Reserve Rosé Brut — 41,45 € → 41,99 €",
+			"content_html": "<p>Tuotteen Bründlmayer Reserve Rosé Brut hinta on muuttunut.</p><p>41,45 € → 41,99 € (+0,54 €, +1,30 %).</p>",
+			"summary": "Tuotteen Bründlmayer Reserve Rosé Brut hinta on muuttunut. 41,45 € → 41,99 € (+0,54 €, +1,30 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/951626-a22b26bd7793.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

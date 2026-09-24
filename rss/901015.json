@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gaia & Rey 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901015/",
+	"feed_url": "https://alkometriikka.fi/rss/901015.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gaia & Rey 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901015-2026-07-18-309.99",
+			"url": "https://alkometriikka.fi/tuotteet/901015/",
+			"title": "Gaia & Rey 2022 — 310,82 € → 309,99 €",
+			"content_html": "<p>Tuotteen Gaia & Rey 2022 hinta on muuttunut.</p><p>310,82 € → 309,99 € (−0,83 €, −0,27 %).</p>",
+			"summary": "Tuotteen Gaia & Rey 2022 hinta on muuttunut. 310,82 € → 309,99 € (−0,83 €, −0,27 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901015-b6735ca9c43f.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

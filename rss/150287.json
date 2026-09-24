@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dubliner Bourbon Cask – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/150287/",
+	"feed_url": "https://alkometriikka.fi/rss/150287.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dubliner Bourbon Cask.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-150287-2026-07-18-33.99",
+			"url": "https://alkometriikka.fi/tuotteet/150287/",
+			"title": "Dubliner Bourbon Cask — 33,27 € → 33,99 €",
+			"content_html": "<p>Tuotteen Dubliner Bourbon Cask hinta on muuttunut.</p><p>33,27 € → 33,99 € (+0,72 €, +2,16 %).</p>",
+			"summary": "Tuotteen Dubliner Bourbon Cask hinta on muuttunut. 33,27 € → 33,99 € (+0,72 €, +2,16 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/150287-232c227ebf86.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ca'del Bosco Cuvée Prestige 48 Edizione Franciacorta Extra Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/501587/",
+	"feed_url": "https://alkometriikka.fi/rss/501587.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ca'del Bosco Cuvée Prestige 48 Edizione Franciacorta Extra Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-501587-2026-07-18-42.98",
+			"url": "https://alkometriikka.fi/tuotteet/501587/",
+			"title": "Ca'del Bosco Cuvée Prestige 48 Edizione Franciacorta Extra Brut — 42,40 € → 42,98 €",
+			"content_html": "<p>Tuotteen Ca'del Bosco Cuvée Prestige 48 Edizione Franciacorta Extra Brut hinta on muuttunut.</p><p>42,40 € → 42,98 € (+0,58 €, +1,37 %).</p>",
+			"summary": "Tuotteen Ca'del Bosco Cuvée Prestige 48 Edizione Franciacorta Extra Brut hinta on muuttunut. 42,40 € → 42,98 € (+0,58 €, +1,37 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/501587-bc53ae8c6e0e.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

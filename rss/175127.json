@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Malecon Rare Proof Añejo 13 Años – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/175127/",
+	"feed_url": "https://alkometriikka.fi/rss/175127.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Malecon Rare Proof Añejo 13 Años.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-175127-2026-07-18-49.99",
+			"url": "https://alkometriikka.fi/tuotteet/175127/",
+			"title": "Malecon Rare Proof Añejo 13 Años — 50,35 € → 49,99 €",
+			"content_html": "<p>Tuotteen Malecon Rare Proof Añejo 13 Años hinta on muuttunut.</p><p>50,35 € → 49,99 € (−0,36 €, −0,71 %).</p>",
+			"summary": "Tuotteen Malecon Rare Proof Añejo 13 Años hinta on muuttunut. 50,35 € → 49,99 € (−0,36 €, −0,71 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/175127-11511099edfa.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

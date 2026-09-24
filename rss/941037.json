@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Four Roses Small Batch – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/941037/",
+	"feed_url": "https://alkometriikka.fi/rss/941037.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Four Roses Small Batch.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-941037-2026-07-18-54.49",
+			"url": "https://alkometriikka.fi/tuotteet/941037/",
+			"title": "Four Roses Small Batch — 54,31 € → 54,49 €",
+			"content_html": "<p>Tuotteen Four Roses Small Batch hinta on muuttunut.</p><p>54,31 € → 54,49 € (+0,18 €, +0,33 %).</p>",
+			"summary": "Tuotteen Four Roses Small Batch hinta on muuttunut. 54,31 € → 54,49 € (+0,18 €, +0,33 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/941037-61a6168be965.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

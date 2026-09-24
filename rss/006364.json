@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Masi Campofiorin 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/006364/",
+	"feed_url": "https://alkometriikka.fi/rss/006364.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Masi Campofiorin 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-006364-2026-07-18-16.98",
+			"url": "https://alkometriikka.fi/tuotteet/006364/",
+			"title": "Masi Campofiorin 2023 — 17,36 € → 16,98 €",
+			"content_html": "<p>Tuotteen Masi Campofiorin 2023 hinta on muuttunut.</p><p>17,36 € → 16,98 € (−0,38 €, −2,19 %).</p>",
+			"summary": "Tuotteen Masi Campofiorin 2023 hinta on muuttunut. 17,36 € → 16,98 € (−0,38 €, −2,19 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/006364-8ede7056a6e2.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

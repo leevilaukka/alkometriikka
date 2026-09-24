@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Quinta do Crasto Reserva Old Vines Mathusalem 2017 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/939003/",
+	"feed_url": "https://alkometriikka.fi/rss/939003.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Quinta do Crasto Reserva Old Vines Mathusalem 2017.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-939003-2026-07-18-399.99",
+			"url": "https://alkometriikka.fi/tuotteet/939003/",
+			"title": "Quinta do Crasto Reserva Old Vines Mathusalem 2017 — 403,58 € → 399,99 €",
+			"content_html": "<p>Tuotteen Quinta do Crasto Reserva Old Vines Mathusalem 2017 hinta on muuttunut.</p><p>403,58 € → 399,99 € (−3,59 €, −0,89 %).</p>",
+			"summary": "Tuotteen Quinta do Crasto Reserva Old Vines Mathusalem 2017 hinta on muuttunut. 403,58 € → 399,99 € (−3,59 €, −0,89 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/939003-69b2ff0d5a04.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

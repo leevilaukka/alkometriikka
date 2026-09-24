@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Intimista Tinto – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/910651/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Intimista Tinto.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/910651.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Intimista Tinto – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Intimista Tinto — 9,38 € → 9,48 €</title>
+			<link>https://alkometriikka.fi/tuotteet/910651/</link>
+			<guid isPermaLink="false">alkometriikka-910651-2026-07-18-9.48</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Intimista Tinto hinta on muuttunut.</p><p>9,38 € → 9,48 € (+0,10 €, +1,07 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/910651-6529c2c9be48.png" />
+		</item>
+	</channel>
+</rss>

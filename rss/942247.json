@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Henri Bourgeois Pouilly-Fumé JS - 150 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/942247/",
+	"feed_url": "https://alkometriikka.fi/rss/942247.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Henri Bourgeois Pouilly-Fumé JS - 150 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-942247-2026-07-18-43.98",
+			"url": "https://alkometriikka.fi/tuotteet/942247/",
+			"title": "Henri Bourgeois Pouilly-Fumé JS - 150 2023 — 43,44 € → 43,98 €",
+			"content_html": "<p>Tuotteen Henri Bourgeois Pouilly-Fumé JS - 150 2023 hinta on muuttunut.</p><p>43,44 € → 43,98 € (+0,54 €, +1,24 %).</p>",
+			"summary": "Tuotteen Henri Bourgeois Pouilly-Fumé JS - 150 2023 hinta on muuttunut. 43,44 € → 43,98 € (+0,54 €, +1,24 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/942247-4a0296f351c0.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

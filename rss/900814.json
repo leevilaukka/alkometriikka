@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tanqueray Flor De Sevilla Distilled Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900814/",
+	"feed_url": "https://alkometriikka.fi/rss/900814.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tanqueray Flor De Sevilla Distilled Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900814-2026-07-18-40.49",
+			"url": "https://alkometriikka.fi/tuotteet/900814/",
+			"title": "Tanqueray Flor De Sevilla Distilled Gin — 40,27 € → 40,49 €",
+			"content_html": "<p>Tuotteen Tanqueray Flor De Sevilla Distilled Gin hinta on muuttunut.</p><p>40,27 € → 40,49 € (+0,22 €, +0,55 %).</p>",
+			"summary": "Tuotteen Tanqueray Flor De Sevilla Distilled Gin hinta on muuttunut. 40,27 € → 40,49 € (+0,22 €, +0,55 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900814-b3c3064c37c0.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

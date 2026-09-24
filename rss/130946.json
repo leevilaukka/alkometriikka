@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Zalmiakki Salmiakki Shotti muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/130946/",
+	"feed_url": "https://alkometriikka.fi/rss/130946.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Zalmiakki Salmiakki Shotti muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-130946-2026-07-18-15.79",
+			"url": "https://alkometriikka.fi/tuotteet/130946/",
+			"title": "Zalmiakki Salmiakki Shotti muovipullo — 15,73 € → 15,79 €",
+			"content_html": "<p>Tuotteen Zalmiakki Salmiakki Shotti muovipullo hinta on muuttunut.</p><p>15,73 € → 15,79 € (+0,06 €, +0,38 %).</p>",
+			"summary": "Tuotteen Zalmiakki Salmiakki Shotti muovipullo hinta on muuttunut. 15,73 € → 15,79 € (+0,06 €, +0,38 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/130946-62b1c5ad59ca.png",
+			"tags": [
+				"Väkevät",
+				"salmiakkiliköörit"
+			]
+		}
+	]
+}

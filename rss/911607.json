@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Louis Vallon Crémant de Bordeaux Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/911607/",
+	"feed_url": "https://alkometriikka.fi/rss/911607.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Louis Vallon Crémant de Bordeaux Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-911607-2026-07-18-15.98",
+			"url": "https://alkometriikka.fi/tuotteet/911607/",
+			"title": "Louis Vallon Crémant de Bordeaux Brut — 15,46 € → 15,98 €",
+			"content_html": "<p>Tuotteen Louis Vallon Crémant de Bordeaux Brut hinta on muuttunut.</p><p>15,46 € → 15,98 € (+0,52 €, +3,36 %).</p>",
+			"summary": "Tuotteen Louis Vallon Crémant de Bordeaux Brut hinta on muuttunut. 15,46 € → 15,98 € (+0,52 €, +3,36 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/911607-7a9ca1519b2d.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

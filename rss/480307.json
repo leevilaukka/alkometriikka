@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Joseph Drouhin Nuits-Saint-Georges 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/480307/",
+	"feed_url": "https://alkometriikka.fi/rss/480307.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Joseph Drouhin Nuits-Saint-Georges 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-480307-2026-07-18-79.89",
+			"url": "https://alkometriikka.fi/tuotteet/480307/",
+			"title": "Joseph Drouhin Nuits-Saint-Georges 2022 — 80,44 € → 79,89 €",
+			"content_html": "<p>Tuotteen Joseph Drouhin Nuits-Saint-Georges 2022 hinta on muuttunut.</p><p>80,44 € → 79,89 € (−0,55 €, −0,68 %).</p>",
+			"summary": "Tuotteen Joseph Drouhin Nuits-Saint-Georges 2022 hinta on muuttunut. 80,44 € → 79,89 € (−0,55 €, −0,68 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/480307-4085a849dea3.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

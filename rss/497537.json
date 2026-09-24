@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – La Rioja Alta Viña Arana Gran Reserva 2017 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/497537/",
+	"feed_url": "https://alkometriikka.fi/rss/497537.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: La Rioja Alta Viña Arana Gran Reserva 2017.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-497537-2026-07-18-46.99",
+			"url": "https://alkometriikka.fi/tuotteet/497537/",
+			"title": "La Rioja Alta Viña Arana Gran Reserva 2017 — 46,95 € → 46,99 €",
+			"content_html": "<p>Tuotteen La Rioja Alta Viña Arana Gran Reserva 2017 hinta on muuttunut.</p><p>46,95 € → 46,99 € (+0,04 €, +0,09 %).</p>",
+			"summary": "Tuotteen La Rioja Alta Viña Arana Gran Reserva 2017 hinta on muuttunut. 46,95 € → 46,99 € (+0,04 €, +0,09 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/497537-e2f1e4cb15cd.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

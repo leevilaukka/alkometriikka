@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dow's Late Bottled Vintage 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/934474/",
+	"feed_url": "https://alkometriikka.fi/rss/934474.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dow's Late Bottled Vintage 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-934474-2026-07-18-13.99",
+			"url": "https://alkometriikka.fi/tuotteet/934474/",
+			"title": "Dow's Late Bottled Vintage 2018 — 13,65 € → 13,99 €",
+			"content_html": "<p>Tuotteen Dow's Late Bottled Vintage 2018 hinta on muuttunut.</p><p>13,65 € → 13,99 € (+0,34 €, +2,49 %).</p>",
+			"summary": "Tuotteen Dow's Late Bottled Vintage 2018 hinta on muuttunut. 13,65 € → 13,99 € (+0,34 €, +2,49 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/934474-6065152bc1fc.png",
+			"tags": [
+				"Välituotteet",
+				"portviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gusbourne Rosé Brut 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/914978/",
+	"feed_url": "https://alkometriikka.fi/rss/914978.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gusbourne Rosé Brut 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-914978-2026-07-18-68",
+			"url": "https://alkometriikka.fi/tuotteet/914978/",
+			"title": "Gusbourne Rosé Brut 2018 — 67,40 € → 68,00 €",
+			"content_html": "<p>Tuotteen Gusbourne Rosé Brut 2018 hinta on muuttunut.</p><p>67,40 € → 68,00 € (+0,60 €, +0,89 %).</p>",
+			"summary": "Tuotteen Gusbourne Rosé Brut 2018 hinta on muuttunut. 67,40 € → 68,00 € (+0,60 €, +0,89 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/914978-adfa061c043e.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

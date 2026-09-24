@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Edradour 12 Year Old Caledonia Single Malt – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/900870/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Edradour 12 Year Old Caledonia Single Malt.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/900870.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Edradour 12 Year Old Caledonia Single Malt – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Edradour 12 Year Old Caledonia Single Malt — 103,34 € → 107,29 €</title>
+			<link>https://alkometriikka.fi/tuotteet/900870/</link>
+			<guid isPermaLink="false">alkometriikka-900870-2026-07-18-107.29</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / viskit</category>
+			<description><![CDATA[<p>Tuotteen Edradour 12 Year Old Caledonia Single Malt hinta on muuttunut.</p><p>103,34 € → 107,29 € (+3,95 €, +3,82 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/900870-cb6ea42f762a.png" />
+		</item>
+	</channel>
+</rss>

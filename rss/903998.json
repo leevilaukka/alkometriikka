@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nittenauer Lola Porter Coffee – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903998/",
+	"feed_url": "https://alkometriikka.fi/rss/903998.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nittenauer Lola Porter Coffee.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903998-2026-09-04-4.1",
+			"url": "https://alkometriikka.fi/tuotteet/903998/",
+			"title": "Nittenauer Lola Porter Coffee — 4,55 € → 4,10 €",
+			"content_html": "<p>Tuotteen Nittenauer Lola Porter Coffee hinta on muuttunut.</p><p>4,55 € → 4,10 € (−0,45 €, −9,89 %).</p>",
+			"summary": "Tuotteen Nittenauer Lola Porter Coffee hinta on muuttunut. 4,55 € → 4,10 € (−0,45 €, −9,89 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903998-5d3112aec2f0.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-903998-2026-07-18-4.55",
+			"url": "https://alkometriikka.fi/tuotteet/903998/",
+			"title": "Nittenauer Lola Porter Coffee — 4,53 € → 4,55 €",
+			"content_html": "<p>Tuotteen Nittenauer Lola Porter Coffee hinta on muuttunut.</p><p>4,53 € → 4,55 € (+0,02 €, +0,44 %).</p>",
+			"summary": "Tuotteen Nittenauer Lola Porter Coffee hinta on muuttunut. 4,53 € → 4,55 € (+0,02 €, +0,44 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903998-5d3112aec2f0.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

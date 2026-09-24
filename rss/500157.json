@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Baglietti Organic Prosecco Extra Dry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/500157/",
+	"feed_url": "https://alkometriikka.fi/rss/500157.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Baglietti Organic Prosecco Extra Dry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-500157-2026-07-18-35.98",
+			"url": "https://alkometriikka.fi/tuotteet/500157/",
+			"title": "Baglietti Organic Prosecco Extra Dry — 35,90 € → 35,98 €",
+			"content_html": "<p>Tuotteen Baglietti Organic Prosecco Extra Dry hinta on muuttunut.</p><p>35,90 € → 35,98 € (+0,08 €, +0,22 %).</p>",
+			"summary": "Tuotteen Baglietti Organic Prosecco Extra Dry hinta on muuttunut. 35,90 € → 35,98 € (+0,08 €, +0,22 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/500157-f8d9e70488c3.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

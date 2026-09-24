@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Helsinki Whiskey Rye Malt Islay Whisky Finish Release #18 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/152626/",
+	"feed_url": "https://alkometriikka.fi/rss/152626.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Helsinki Whiskey Rye Malt Islay Whisky Finish Release #18.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-152626-2026-07-18-69.99",
+			"url": "https://alkometriikka.fi/tuotteet/152626/",
+			"title": "Helsinki Whiskey Rye Malt Islay Whisky Finish Release #18 — 69,12 € → 69,99 €",
+			"content_html": "<p>Tuotteen Helsinki Whiskey Rye Malt Islay Whisky Finish Release #18 hinta on muuttunut.</p><p>69,12 € → 69,99 € (+0,87 €, +1,26 %).</p>",
+			"summary": "Tuotteen Helsinki Whiskey Rye Malt Islay Whisky Finish Release #18 hinta on muuttunut. 69,12 € → 69,99 € (+0,87 €, +1,26 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/152626-421e23b43656.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

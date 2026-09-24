@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Prunotto Barolo Cerretta 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901899/",
+	"feed_url": "https://alkometriikka.fi/rss/901899.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Prunotto Barolo Cerretta 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901899-2026-07-18-149.99",
+			"url": "https://alkometriikka.fi/tuotteet/901899/",
+			"title": "Prunotto Barolo Cerretta 2020 — 150,39 € → 149,99 €",
+			"content_html": "<p>Tuotteen Prunotto Barolo Cerretta 2020 hinta on muuttunut.</p><p>150,39 € → 149,99 € (−0,40 €, −0,27 %).</p>",
+			"summary": "Tuotteen Prunotto Barolo Cerretta 2020 hinta on muuttunut. 150,39 € → 149,99 € (−0,40 €, −0,27 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901899-90e82ed6fb2e.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Soerlie VS muovipullo – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/134426/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Soerlie VS muovipullo.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/134426.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Soerlie VS muovipullo – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Soerlie VS muovipullo — 27,98 € → 27,78 €</title>
+			<link>https://alkometriikka.fi/tuotteet/134426/</link>
+			<guid isPermaLink="false">alkometriikka-134426-2026-02-02-27.78</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / konjakit</category>
+			<description><![CDATA[<p>Tuotteen Soerlie VS muovipullo hinta on muuttunut.</p><p>27,98 € → 27,78 € (−0,20 €, −0,71 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/134426-61fbbb99e864.png" />
+		</item>
+		<item>
+			<title>Soerlie VS muovipullo — 27,78 € → 27,98 €</title>
+			<link>https://alkometriikka.fi/tuotteet/134426/</link>
+			<guid isPermaLink="false">alkometriikka-134426-2026-02-02-27.98</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / konjakit</category>
+			<description><![CDATA[<p>Tuotteen Soerlie VS muovipullo hinta on muuttunut.</p><p>27,78 € → 27,98 € (+0,20 €, +0,72 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/134426-61fbbb99e864.png" />
+		</item>
+	</channel>
+</rss>

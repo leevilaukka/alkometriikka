@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Caparzo Brunello di Montalcino 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/936164/",
+	"feed_url": "https://alkometriikka.fi/rss/936164.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Caparzo Brunello di Montalcino 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-936164-2026-07-18-28.5",
+			"url": "https://alkometriikka.fi/tuotteet/936164/",
+			"title": "Caparzo Brunello di Montalcino 2020 — 28,22 € → 28,50 €",
+			"content_html": "<p>Tuotteen Caparzo Brunello di Montalcino 2020 hinta on muuttunut.</p><p>28,22 € → 28,50 € (+0,28 €, +0,99 %).</p>",
+			"summary": "Tuotteen Caparzo Brunello di Montalcino 2020 hinta on muuttunut. 28,22 € → 28,50 € (+0,28 €, +0,99 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/936164-c6844849347c.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

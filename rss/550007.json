@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Monistrol Selección Especial Cava Semi Seco – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/550007/",
+	"feed_url": "https://alkometriikka.fi/rss/550007.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Monistrol Selección Especial Cava Semi Seco.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-550007-2026-07-18-11.99",
+			"url": "https://alkometriikka.fi/tuotteet/550007/",
+			"title": "Monistrol Selección Especial Cava Semi Seco — 11,95 € → 11,99 €",
+			"content_html": "<p>Tuotteen Monistrol Selección Especial Cava Semi Seco hinta on muuttunut.</p><p>11,95 € → 11,99 € (+0,04 €, +0,33 %).</p>",
+			"summary": "Tuotteen Monistrol Selección Especial Cava Semi Seco hinta on muuttunut. 11,95 € → 11,99 € (+0,04 €, +0,33 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/550007-a0b47b1e393f.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

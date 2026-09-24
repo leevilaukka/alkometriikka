@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Sebastian Erbeldinger Riesling 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/952244/",
+	"feed_url": "https://alkometriikka.fi/rss/952244.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Sebastian Erbeldinger Riesling 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-952244-2026-07-18-16.5",
+			"url": "https://alkometriikka.fi/tuotteet/952244/",
+			"title": "Sebastian Erbeldinger Riesling 2023 — 16,44 € → 16,50 €",
+			"content_html": "<p>Tuotteen Sebastian Erbeldinger Riesling 2023 hinta on muuttunut.</p><p>16,44 € → 16,50 € (+0,06 €, +0,36 %).</p>",
+			"summary": "Tuotteen Sebastian Erbeldinger Riesling 2023 hinta on muuttunut. 16,44 € → 16,50 € (+0,06 €, +0,36 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/952244-a43985237252.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

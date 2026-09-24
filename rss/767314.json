@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Clausthaler Grapefruit – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/767314/",
+	"feed_url": "https://alkometriikka.fi/rss/767314.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Clausthaler Grapefruit.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-767314-2026-09-04-1.88",
+			"url": "https://alkometriikka.fi/tuotteet/767314/",
+			"title": "Clausthaler Grapefruit — 2,09 € → 1,88 €",
+			"content_html": "<p>Tuotteen Clausthaler Grapefruit hinta on muuttunut.</p><p>2,09 € → 1,88 € (−0,21 €, −10,05 %).</p>",
+			"summary": "Tuotteen Clausthaler Grapefruit hinta on muuttunut. 2,09 € → 1,88 € (−0,21 €, −10,05 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/767314-8a6b4de220a3.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-767314-2026-07-18-2.09",
+			"url": "https://alkometriikka.fi/tuotteet/767314/",
+			"title": "Clausthaler Grapefruit — 2,08 € → 2,09 €",
+			"content_html": "<p>Tuotteen Clausthaler Grapefruit hinta on muuttunut.</p><p>2,08 € → 2,09 € (+0,01 €, +0,48 %).</p>",
+			"summary": "Tuotteen Clausthaler Grapefruit hinta on muuttunut. 2,08 € → 2,09 € (+0,01 €, +0,48 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/767314-8a6b4de220a3.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

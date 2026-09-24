@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Marques de Murrieta Gran Reserva 2016 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/911735/",
+	"feed_url": "https://alkometriikka.fi/rss/911735.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Marques de Murrieta Gran Reserva 2016.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-911735-2026-07-18-68.99",
+			"url": "https://alkometriikka.fi/tuotteet/911735/",
+			"title": "Marques de Murrieta Gran Reserva 2016 — 64,98 € → 68,99 €",
+			"content_html": "<p>Tuotteen Marques de Murrieta Gran Reserva 2016 hinta on muuttunut.</p><p>64,98 € → 68,99 € (+4,01 €, +6,17 %).</p>",
+			"summary": "Tuotteen Marques de Murrieta Gran Reserva 2016 hinta on muuttunut. 64,98 € → 68,99 € (+4,01 €, +6,17 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/911735-c3c67ebb446a.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

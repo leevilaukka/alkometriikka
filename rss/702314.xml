@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Lapin Kulta 0,0% tölkki – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/702314/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Lapin Kulta 0,0% tölkki.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/702314.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Lapin Kulta 0,0% tölkki – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Lapin Kulta 0,0% tölkki — 1,49 € → 1,34 €</title>
+			<link>https://alkometriikka.fi/tuotteet/702314/</link>
+			<guid isPermaLink="false">alkometriikka-702314-2026-09-04-1.34</guid>
+			<pubDate>Fri, 04 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Alkoholittomat / alkoholittomat oluet</category>
+			<description><![CDATA[<p>Tuotteen Lapin Kulta 0,0% tölkki hinta on muuttunut.</p><p>1,49 € → 1,34 € (−0,15 €, −10,07 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/702314-ee92ccd38ea8.png" />
+		</item>
+		<item>
+			<title>Lapin Kulta 0,0% tölkki — 1,44 € → 1,49 €</title>
+			<link>https://alkometriikka.fi/tuotteet/702314/</link>
+			<guid isPermaLink="false">alkometriikka-702314-2026-07-18-1.49</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Alkoholittomat / alkoholittomat oluet</category>
+			<description><![CDATA[<p>Tuotteen Lapin Kulta 0,0% tölkki hinta on muuttunut.</p><p>1,44 € → 1,49 € (+0,05 €, +3,47 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/702314-ee92ccd38ea8.png" />
+		</item>
+	</channel>
+</rss>

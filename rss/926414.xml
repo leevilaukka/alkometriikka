@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Frieden-Berg Spätburgunder Nittel 2022 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/926414/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Frieden-Berg Spätburgunder Nittel 2022.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/926414.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Frieden-Berg Spätburgunder Nittel 2022 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Frieden-Berg Spätburgunder Nittel 2022 — 35,55 € → 33,04 €</title>
+			<link>https://alkometriikka.fi/tuotteet/926414/</link>
+			<guid isPermaLink="false">alkometriikka-926414-2026-07-18-33.04</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Frieden-Berg Spätburgunder Nittel 2022 hinta on muuttunut.</p><p>35,55 € → 33,04 € (−2,51 €, −7,06 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/926414-cb5d000c1202.png" />
+		</item>
+	</channel>
+</rss>

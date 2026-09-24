@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Montes Sparkling Angel Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/556357/",
+	"feed_url": "https://alkometriikka.fi/rss/556357.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Montes Sparkling Angel Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-556357-2026-07-18-24.98",
+			"url": "https://alkometriikka.fi/tuotteet/556357/",
+			"title": "Montes Sparkling Angel Brut — 23,41 € → 24,98 €",
+			"content_html": "<p>Tuotteen Montes Sparkling Angel Brut hinta on muuttunut.</p><p>23,41 € → 24,98 € (+1,57 €, +6,71 %).</p>",
+			"summary": "Tuotteen Montes Sparkling Angel Brut hinta on muuttunut. 23,41 € → 24,98 € (+1,57 €, +6,71 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/556357-5a79a5736404.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

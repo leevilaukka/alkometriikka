@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Force Majeure Tripel – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/926615/",
+	"feed_url": "https://alkometriikka.fi/rss/926615.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Force Majeure Tripel.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-926615-2026-09-04-3.59",
+			"url": "https://alkometriikka.fi/tuotteet/926615/",
+			"title": "Force Majeure Tripel — 3,99 € → 3,59 €",
+			"content_html": "<p>Tuotteen Force Majeure Tripel hinta on muuttunut.</p><p>3,99 € → 3,59 € (−0,40 €, −10,03 %).</p>",
+			"summary": "Tuotteen Force Majeure Tripel hinta on muuttunut. 3,99 € → 3,59 € (−0,40 €, −10,03 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/926615-a7ba3d756bc6.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-926615-2026-07-18-3.99",
+			"url": "https://alkometriikka.fi/tuotteet/926615/",
+			"title": "Force Majeure Tripel — 3,74 € → 3,99 €",
+			"content_html": "<p>Tuotteen Force Majeure Tripel hinta on muuttunut.</p><p>3,74 € → 3,99 € (+0,25 €, +6,68 %).</p>",
+			"summary": "Tuotteen Force Majeure Tripel hinta on muuttunut. 3,74 € → 3,99 € (+0,25 €, +6,68 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/926615-a7ba3d756bc6.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

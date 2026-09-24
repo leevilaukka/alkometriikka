@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Enate Chardonnay Barrica 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/945572/",
+	"feed_url": "https://alkometriikka.fi/rss/945572.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Enate Chardonnay Barrica 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-945572-2026-07-18-38.49",
+			"url": "https://alkometriikka.fi/tuotteet/945572/",
+			"title": "Enate Chardonnay Barrica 2021 — 38,42 € → 38,49 €",
+			"content_html": "<p>Tuotteen Enate Chardonnay Barrica 2021 hinta on muuttunut.</p><p>38,42 € → 38,49 € (+0,07 €, +0,18 %).</p>",
+			"summary": "Tuotteen Enate Chardonnay Barrica 2021 hinta on muuttunut. 38,42 € → 38,49 € (+0,07 €, +0,18 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/945572-8169494636fb.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

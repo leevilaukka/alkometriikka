@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tokaji Oremus Late Harvest 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/931568/",
+	"feed_url": "https://alkometriikka.fi/rss/931568.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tokaji Oremus Late Harvest 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-931568-2026-07-18-33.99",
+			"url": "https://alkometriikka.fi/tuotteet/931568/",
+			"title": "Tokaji Oremus Late Harvest 2023 — 28,35 € → 33,99 €",
+			"content_html": "<p>Tuotteen Tokaji Oremus Late Harvest 2023 hinta on muuttunut.</p><p>28,35 € → 33,99 € (+5,64 €, +19,89 %).</p>",
+			"summary": "Tuotteen Tokaji Oremus Late Harvest 2023 hinta on muuttunut. 28,35 € → 33,99 € (+5,64 €, +19,89 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/931568-49326ba3e20e.png",
+			"tags": [
+				"Viinit",
+				"jälkiruokaviinit"
+			]
+		}
+	]
+}

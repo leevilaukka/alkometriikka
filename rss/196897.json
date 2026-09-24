@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glenkinchie 12 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/196897/",
+	"feed_url": "https://alkometriikka.fi/rss/196897.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glenkinchie 12 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-196897-2026-07-18-56.49",
+			"url": "https://alkometriikka.fi/tuotteet/196897/",
+			"title": "Glenkinchie 12 Year Old Single Malt — 56,27 € → 56,49 €",
+			"content_html": "<p>Tuotteen Glenkinchie 12 Year Old Single Malt hinta on muuttunut.</p><p>56,27 € → 56,49 € (+0,22 €, +0,39 %).</p>",
+			"summary": "Tuotteen Glenkinchie 12 Year Old Single Malt hinta on muuttunut. 56,27 € → 56,49 € (+0,22 €, +0,39 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/196897-4d1ee46c5619.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

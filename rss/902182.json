@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Noita Enuma Elis – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902182/",
+	"feed_url": "https://alkometriikka.fi/rss/902182.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Noita Enuma Elis.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902182-2026-02-02-20.35",
+			"url": "https://alkometriikka.fi/tuotteet/902182/",
+			"title": "Noita Enuma Elis — 20,45 € → 20,35 €",
+			"content_html": "<p>Tuotteen Noita Enuma Elis hinta on muuttunut.</p><p>20,45 € → 20,35 € (−0,10 €, −0,49 %).</p>",
+			"summary": "Tuotteen Noita Enuma Elis hinta on muuttunut. 20,45 € → 20,35 € (−0,10 €, −0,49 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902182-50e9741326c0.png",
+			"tags": [
+				"Viinit",
+				"hedelmä- ja aromatisoidut viinit"
+			]
+		},
+		{
+			"id": "alkometriikka-902182-2026-02-02-20.45",
+			"url": "https://alkometriikka.fi/tuotteet/902182/",
+			"title": "Noita Enuma Elis — 20,35 € → 20,45 €",
+			"content_html": "<p>Tuotteen Noita Enuma Elis hinta on muuttunut.</p><p>20,35 € → 20,45 € (+0,10 €, +0,49 %).</p>",
+			"summary": "Tuotteen Noita Enuma Elis hinta on muuttunut. 20,35 € → 20,45 € (+0,10 €, +0,49 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902182-50e9741326c0.png",
+			"tags": [
+				"Viinit",
+				"hedelmä- ja aromatisoidut viinit"
+			]
+		}
+	]
+}

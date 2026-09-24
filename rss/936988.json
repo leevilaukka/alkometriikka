@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Normindia Distilled Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/936988/",
+	"feed_url": "https://alkometriikka.fi/rss/936988.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Normindia Distilled Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-936988-2026-07-18-41.6",
+			"url": "https://alkometriikka.fi/tuotteet/936988/",
+			"title": "Normindia Distilled Gin — 41,54 € → 41,60 €",
+			"content_html": "<p>Tuotteen Normindia Distilled Gin hinta on muuttunut.</p><p>41,54 € → 41,60 € (+0,06 €, +0,14 %).</p>",
+			"summary": "Tuotteen Normindia Distilled Gin hinta on muuttunut. 41,54 € → 41,60 € (+0,06 €, +0,14 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/936988-8c7a21d87daa.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

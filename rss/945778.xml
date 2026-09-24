@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – KWV Chenin Blanc Muscat d&apos;Alexandrie 2025 hanapakkaus – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/945778/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: KWV Chenin Blanc Muscat d&apos;Alexandrie 2025 hanapakkaus.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/945778.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – KWV Chenin Blanc Muscat d&apos;Alexandrie 2025 hanapakkaus – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>KWV Chenin Blanc Muscat d&apos;Alexandrie 2025 hanapakkaus — 35,84 € → 35,95 €</title>
+			<link>https://alkometriikka.fi/tuotteet/945778/</link>
+			<guid isPermaLink="false">alkometriikka-945778-2026-07-18-35.95</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / valkoviinit</category>
+			<description><![CDATA[<p>Tuotteen KWV Chenin Blanc Muscat d'Alexandrie 2025 hanapakkaus hinta on muuttunut.</p><p>35,84 € → 35,95 € (+0,11 €, +0,31 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/945778-c2cd8fcf5e95.png" />
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – 1664 Blanc 6-pack tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/700097/",
+	"feed_url": "https://alkometriikka.fi/rss/700097.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: 1664 Blanc 6-pack tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-700097-2026-07-18-14.64",
+			"url": "https://alkometriikka.fi/tuotteet/700097/",
+			"title": "1664 Blanc 6-pack tölkki — 14,34 € → 14,64 €",
+			"content_html": "<p>Tuotteen 1664 Blanc 6-pack tölkki hinta on muuttunut.</p><p>14,34 € → 14,64 € (+0,30 €, +2,09 %).</p>",
+			"summary": "Tuotteen 1664 Blanc 6-pack tölkki hinta on muuttunut. 14,34 € → 14,64 € (+0,30 €, +2,09 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/700097-69b29bad2732.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gordon's Sicilian Lemon – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/161867/",
+	"feed_url": "https://alkometriikka.fi/rss/161867.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gordon's Sicilian Lemon.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-161867-2026-07-18-33.98",
+			"url": "https://alkometriikka.fi/tuotteet/161867/",
+			"title": "Gordon's Sicilian Lemon — 33,24 € → 33,98 €",
+			"content_html": "<p>Tuotteen Gordon's Sicilian Lemon hinta on muuttunut.</p><p>33,24 € → 33,98 € (+0,74 €, +2,23 %).</p>",
+			"summary": "Tuotteen Gordon's Sicilian Lemon hinta on muuttunut. 33,24 € → 33,98 € (+0,74 €, +2,23 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/161867-84e187ef8976.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

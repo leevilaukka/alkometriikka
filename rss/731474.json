@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Krombacher Pils Non-Alcoholic – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/731474/",
+	"feed_url": "https://alkometriikka.fi/rss/731474.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Krombacher Pils Non-Alcoholic.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-731474-2026-09-04-1.7",
+			"url": "https://alkometriikka.fi/tuotteet/731474/",
+			"title": "Krombacher Pils Non-Alcoholic — 1,89 € → 1,70 €",
+			"content_html": "<p>Tuotteen Krombacher Pils Non-Alcoholic hinta on muuttunut.</p><p>1,89 € → 1,70 € (−0,19 €, −10,05 %).</p>",
+			"summary": "Tuotteen Krombacher Pils Non-Alcoholic hinta on muuttunut. 1,89 € → 1,70 € (−0,19 €, −10,05 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/731474-e046a723e70d.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-731474-2026-07-18-1.89",
+			"url": "https://alkometriikka.fi/tuotteet/731474/",
+			"title": "Krombacher Pils Non-Alcoholic — 1,88 € → 1,89 €",
+			"content_html": "<p>Tuotteen Krombacher Pils Non-Alcoholic hinta on muuttunut.</p><p>1,88 € → 1,89 € (+0,01 €, +0,53 %).</p>",
+			"summary": "Tuotteen Krombacher Pils Non-Alcoholic hinta on muuttunut. 1,88 € → 1,89 € (+0,01 €, +0,53 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/731474-e046a723e70d.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Christian Drouin Pays d&apos;Auge VSOP Calvados – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/122417/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Christian Drouin Pays d&apos;Auge VSOP Calvados.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/122417.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Christian Drouin Pays d&apos;Auge VSOP Calvados – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Christian Drouin Pays d&apos;Auge VSOP Calvados — 44,17 € → 46,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/122417/</link>
+			<guid isPermaLink="false">alkometriikka-122417-2026-07-18-46.99</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / calvadosit</category>
+			<description><![CDATA[<p>Tuotteen Christian Drouin Pays d'Auge VSOP Calvados hinta on muuttunut.</p><p>44,17 € → 46,99 € (+2,82 €, +6,38 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/122417-76403674f252.png" />
+		</item>
+	</channel>
+</rss>

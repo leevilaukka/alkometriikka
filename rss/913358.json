@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Boizel Ultime Champagne Zéro Dosage – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/913358/",
+	"feed_url": "https://alkometriikka.fi/rss/913358.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Boizel Ultime Champagne Zéro Dosage.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-913358-2026-07-18-69",
+			"url": "https://alkometriikka.fi/tuotteet/913358/",
+			"title": "Boizel Ultime Champagne Zéro Dosage — 68,46 € → 69,00 €",
+			"content_html": "<p>Tuotteen Boizel Ultime Champagne Zéro Dosage hinta on muuttunut.</p><p>68,46 € → 69,00 € (+0,54 €, +0,79 %).</p>",
+			"summary": "Tuotteen Boizel Ultime Champagne Zéro Dosage hinta on muuttunut. 68,46 € → 69,00 € (+0,54 €, +0,79 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/913358-fcddc205205f.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

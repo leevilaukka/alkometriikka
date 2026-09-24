@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glenmorangie Grand Vintage Single Malt 1998 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/927336/",
+	"feed_url": "https://alkometriikka.fi/rss/927336.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glenmorangie Grand Vintage Single Malt 1998.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-927336-2026-07-18-857.99",
+			"url": "https://alkometriikka.fi/tuotteet/927336/",
+			"title": "Glenmorangie Grand Vintage Single Malt 1998 — 854,27 € → 857,99 €",
+			"content_html": "<p>Tuotteen Glenmorangie Grand Vintage Single Malt 1998 hinta on muuttunut.</p><p>854,27 € → 857,99 € (+3,72 €, +0,44 %).</p>",
+			"summary": "Tuotteen Glenmorangie Grand Vintage Single Malt 1998 hinta on muuttunut. 854,27 € → 857,99 € (+3,72 €, +0,44 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/927336-6a4d3d2da36e.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

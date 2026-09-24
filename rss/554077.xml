@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Redoma Branco 2025 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/554077/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Redoma Branco 2025.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/554077.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Redoma Branco 2025 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Redoma Branco 2025 — 27,35 € → 27,90 €</title>
+			<link>https://alkometriikka.fi/tuotteet/554077/</link>
+			<guid isPermaLink="false">alkometriikka-554077-2026-07-18-27.9</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / valkoviinit</category>
+			<description><![CDATA[<p>Tuotteen Redoma Branco 2025 hinta on muuttunut.</p><p>27,35 € → 27,90 € (+0,55 €, +2,01 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/554077-c841fd8142ba.png" />
+		</item>
+	</channel>
+</rss>

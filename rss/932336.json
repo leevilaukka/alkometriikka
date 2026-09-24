@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Marjakossu Mustikka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/932336/",
+	"feed_url": "https://alkometriikka.fi/rss/932336.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Marjakossu Mustikka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-932336-2026-07-18-11.59",
+			"url": "https://alkometriikka.fi/tuotteet/932336/",
+			"title": "Marjakossu Mustikka — 11,27 € → 11,59 €",
+			"content_html": "<p>Tuotteen Marjakossu Mustikka hinta on muuttunut.</p><p>11,27 € → 11,59 € (+0,32 €, +2,84 %).</p>",
+			"summary": "Tuotteen Marjakossu Mustikka hinta on muuttunut. 11,27 € → 11,59 € (+0,32 €, +2,84 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/932336-cac88442a037.png",
+			"tags": [
+				"Väkevät",
+				"marjaliköörit"
+			]
+		}
+	]
+}

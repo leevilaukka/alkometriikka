@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vinea Crianza Tempranillo 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/454307/",
+	"feed_url": "https://alkometriikka.fi/rss/454307.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vinea Crianza Tempranillo 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-454307-2026-07-18-17.98",
+			"url": "https://alkometriikka.fi/tuotteet/454307/",
+			"title": "Vinea Crianza Tempranillo 2021 — 17,65 € → 17,98 €",
+			"content_html": "<p>Tuotteen Vinea Crianza Tempranillo 2021 hinta on muuttunut.</p><p>17,65 € → 17,98 € (+0,33 €, +1,87 %).</p>",
+			"summary": "Tuotteen Vinea Crianza Tempranillo 2021 hinta on muuttunut. 17,65 € → 17,98 € (+0,33 €, +1,87 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/454307-dd1a93d8f0d1.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

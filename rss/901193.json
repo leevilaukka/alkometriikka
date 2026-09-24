@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Alvar de Dios Tio Uco 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901193/",
+	"feed_url": "https://alkometriikka.fi/rss/901193.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Alvar de Dios Tio Uco 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901193-2026-07-18-21.39",
+			"url": "https://alkometriikka.fi/tuotteet/901193/",
+			"title": "Alvar de Dios Tio Uco 2022 — 20,98 € → 21,39 €",
+			"content_html": "<p>Tuotteen Alvar de Dios Tio Uco 2022 hinta on muuttunut.</p><p>20,98 € → 21,39 € (+0,41 €, +1,95 %).</p>",
+			"summary": "Tuotteen Alvar de Dios Tio Uco 2022 hinta on muuttunut. 20,98 € → 21,39 € (+0,41 €, +1,95 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901193-21d95e2be1f4.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

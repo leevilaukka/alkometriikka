@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Billecart-Salmon Vintage Champagne Extra Brut 2013 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/950567/",
+	"feed_url": "https://alkometriikka.fi/rss/950567.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Billecart-Salmon Vintage Champagne Extra Brut 2013.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-950567-2026-07-18-90.29",
+			"url": "https://alkometriikka.fi/tuotteet/950567/",
+			"title": "Billecart-Salmon Vintage Champagne Extra Brut 2013 — 90,26 € → 90,29 €",
+			"content_html": "<p>Tuotteen Billecart-Salmon Vintage Champagne Extra Brut 2013 hinta on muuttunut.</p><p>90,26 € → 90,29 € (+0,03 €, +0,03 %).</p>",
+			"summary": "Tuotteen Billecart-Salmon Vintage Champagne Extra Brut 2013 hinta on muuttunut. 90,26 € → 90,29 € (+0,03 €, +0,03 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/950567-6bab43e8f563.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

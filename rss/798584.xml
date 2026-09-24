@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Hiisi Ohto Dark Lager – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/798584/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Hiisi Ohto Dark Lager.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/798584.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Hiisi Ohto Dark Lager – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Hiisi Ohto Dark Lager — 4,69 € → 4,94 €</title>
+			<link>https://alkometriikka.fi/tuotteet/798584/</link>
+			<guid isPermaLink="false">alkometriikka-798584-2026-07-18-4.94</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Panimotuotteet / oluet</category>
+			<description><![CDATA[<p>Tuotteen Hiisi Ohto Dark Lager hinta on muuttunut.</p><p>4,69 € → 4,94 € (+0,25 €, +5,33 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/798584-feb831421593.png" />
+		</item>
+	</channel>
+</rss>

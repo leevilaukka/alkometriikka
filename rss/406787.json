@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Peter Lehmann The Barossan Shiraz 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/406787/",
+	"feed_url": "https://alkometriikka.fi/rss/406787.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Peter Lehmann The Barossan Shiraz 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-406787-2026-07-18-23.9",
+			"url": "https://alkometriikka.fi/tuotteet/406787/",
+			"title": "Peter Lehmann The Barossan Shiraz 2023 — 27,26 € → 23,90 €",
+			"content_html": "<p>Tuotteen Peter Lehmann The Barossan Shiraz 2023 hinta on muuttunut.</p><p>27,26 € → 23,90 € (−3,36 €, −12,33 %).</p>",
+			"summary": "Tuotteen Peter Lehmann The Barossan Shiraz 2023 hinta on muuttunut. 27,26 € → 23,90 € (−3,36 €, −12,33 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/406787-07dfcfe2f3ae.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

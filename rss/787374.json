@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Thornbridge Jaipur IPA – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/787374/",
+	"feed_url": "https://alkometriikka.fi/rss/787374.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Thornbridge Jaipur IPA.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-787374-2026-07-18-3.69",
+			"url": "https://alkometriikka.fi/tuotteet/787374/",
+			"title": "Thornbridge Jaipur IPA — 3,59 € → 3,69 €",
+			"content_html": "<p>Tuotteen Thornbridge Jaipur IPA hinta on muuttunut.</p><p>3,59 € → 3,69 € (+0,10 €, +2,79 %).</p>",
+			"summary": "Tuotteen Thornbridge Jaipur IPA hinta on muuttunut. 3,59 € → 3,69 € (+0,10 €, +2,79 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/787374-d2226e6abbaf.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

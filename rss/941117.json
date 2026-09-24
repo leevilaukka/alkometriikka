@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Perelada Finca Malaveïna 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/941117/",
+	"feed_url": "https://alkometriikka.fi/rss/941117.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Perelada Finca Malaveïna 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-941117-2026-07-18-39.99",
+			"url": "https://alkometriikka.fi/tuotteet/941117/",
+			"title": "Perelada Finca Malaveïna 2019 — 40,42 € → 39,99 €",
+			"content_html": "<p>Tuotteen Perelada Finca Malaveïna 2019 hinta on muuttunut.</p><p>40,42 € → 39,99 € (−0,43 €, −1,06 %).</p>",
+			"summary": "Tuotteen Perelada Finca Malaveïna 2019 hinta on muuttunut. 40,42 € → 39,99 € (−0,43 €, −1,06 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/941117-56354dcc67aa.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

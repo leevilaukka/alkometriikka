@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Scandinavian Vahwa Terwa muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/190386/",
+	"feed_url": "https://alkometriikka.fi/rss/190386.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Scandinavian Vahwa Terwa muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-190386-2026-07-18-18.32",
+			"url": "https://alkometriikka.fi/tuotteet/190386/",
+			"title": "Scandinavian Vahwa Terwa muovipullo — 18,56 € → 18,32 €",
+			"content_html": "<p>Tuotteen Scandinavian Vahwa Terwa muovipullo hinta on muuttunut.</p><p>18,56 € → 18,32 € (−0,24 €, −1,29 %).</p>",
+			"summary": "Tuotteen Scandinavian Vahwa Terwa muovipullo hinta on muuttunut. 18,56 € → 18,32 € (−0,24 €, −1,29 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/190386-7b5eaf41dd54.png",
+			"tags": [
+				"Väkevät",
+				"mausteliköörit"
+			]
+		}
+	]
+}

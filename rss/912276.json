@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Paso las Mañas 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/912276/",
+	"feed_url": "https://alkometriikka.fi/rss/912276.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Paso las Mañas 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-912276-2026-07-18-42.91",
+			"url": "https://alkometriikka.fi/tuotteet/912276/",
+			"title": "Paso las Mañas 2023 — 41,23 € → 42,91 €",
+			"content_html": "<p>Tuotteen Paso las Mañas 2023 hinta on muuttunut.</p><p>41,23 € → 42,91 € (+1,68 €, +4,07 %).</p>",
+			"summary": "Tuotteen Paso las Mañas 2023 hinta on muuttunut. 41,23 € → 42,91 € (+1,68 €, +4,07 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/912276-fffd3bed4df0.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

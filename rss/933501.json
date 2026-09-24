@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bottega Rose Gold Brut Jeroboam – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/933501/",
+	"feed_url": "https://alkometriikka.fi/rss/933501.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bottega Rose Gold Brut Jeroboam.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-933501-2026-07-18-164.99",
+			"url": "https://alkometriikka.fi/tuotteet/933501/",
+			"title": "Bottega Rose Gold Brut Jeroboam — 161,83 € → 164,99 €",
+			"content_html": "<p>Tuotteen Bottega Rose Gold Brut Jeroboam hinta on muuttunut.</p><p>161,83 € → 164,99 € (+3,16 €, +1,95 %).</p>",
+			"summary": "Tuotteen Bottega Rose Gold Brut Jeroboam hinta on muuttunut. 161,83 € → 164,99 € (+3,16 €, +1,95 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/933501-9f8dfc54e047.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

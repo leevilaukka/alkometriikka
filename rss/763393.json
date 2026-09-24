@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Fever-Tree Premium Indian Tonic Water – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/763393/",
+	"feed_url": "https://alkometriikka.fi/rss/763393.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Fever-Tree Premium Indian Tonic Water.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-763393-2026-07-18-2.29",
+			"url": "https://alkometriikka.fi/tuotteet/763393/",
+			"title": "Fever-Tree Premium Indian Tonic Water — 1,98 € → 2,29 €",
+			"content_html": "<p>Tuotteen Fever-Tree Premium Indian Tonic Water hinta on muuttunut.</p><p>1,98 € → 2,29 € (+0,31 €, +15,66 %).</p>",
+			"summary": "Tuotteen Fever-Tree Premium Indian Tonic Water hinta on muuttunut. 1,98 € → 2,29 € (+0,31 €, +15,66 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/763393-fa9178c7c64a.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

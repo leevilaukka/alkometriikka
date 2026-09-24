@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Black Bottle – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/952067/",
+	"feed_url": "https://alkometriikka.fi/rss/952067.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Black Bottle.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-952067-2026-07-18-38.29",
+			"url": "https://alkometriikka.fi/tuotteet/952067/",
+			"title": "Black Bottle — 38,27 € → 38,29 €",
+			"content_html": "<p>Tuotteen Black Bottle hinta on muuttunut.</p><p>38,27 € → 38,29 € (+0,02 €, +0,05 %).</p>",
+			"summary": "Tuotteen Black Bottle hinta on muuttunut. 38,27 € → 38,29 € (+0,02 €, +0,05 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/952067-5e998058dd36.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

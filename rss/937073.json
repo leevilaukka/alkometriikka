@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Havana Club Añejo 15 Años Gran Reserva – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/937073/",
+	"feed_url": "https://alkometriikka.fi/rss/937073.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Havana Club Añejo 15 Años Gran Reserva.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-937073-2026-07-18-237.98",
+			"url": "https://alkometriikka.fi/tuotteet/937073/",
+			"title": "Havana Club Añejo 15 Años Gran Reserva — 237,66 € → 237,98 €",
+			"content_html": "<p>Tuotteen Havana Club Añejo 15 Años Gran Reserva hinta on muuttunut.</p><p>237,66 € → 237,98 € (+0,32 €, +0,13 %).</p>",
+			"summary": "Tuotteen Havana Club Añejo 15 Años Gran Reserva hinta on muuttunut. 237,66 € → 237,98 € (+0,32 €, +0,13 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/937073-1606ab12960b.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

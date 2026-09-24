@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nyetimber Classic Cuvee Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/512784/",
+	"feed_url": "https://alkometriikka.fi/rss/512784.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nyetimber Classic Cuvee Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-512784-2026-07-18-26.9",
+			"url": "https://alkometriikka.fi/tuotteet/512784/",
+			"title": "Nyetimber Classic Cuvee Brut — 26,21 € → 26,90 €",
+			"content_html": "<p>Tuotteen Nyetimber Classic Cuvee Brut hinta on muuttunut.</p><p>26,21 € → 26,90 € (+0,69 €, +2,63 %).</p>",
+			"summary": "Tuotteen Nyetimber Classic Cuvee Brut hinta on muuttunut. 26,21 € → 26,90 € (+0,69 €, +2,63 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/512784-6b78b5afcf53.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Verus Furmint 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/959967/",
+	"feed_url": "https://alkometriikka.fi/rss/959967.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Verus Furmint 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-959967-2026-07-18-23.96",
+			"url": "https://alkometriikka.fi/tuotteet/959967/",
+			"title": "Verus Furmint 2023 — 24,09 € → 23,96 €",
+			"content_html": "<p>Tuotteen Verus Furmint 2023 hinta on muuttunut.</p><p>24,09 € → 23,96 € (−0,13 €, −0,54 %).</p>",
+			"summary": "Tuotteen Verus Furmint 2023 hinta on muuttunut. 24,09 € → 23,96 € (−0,13 €, −0,54 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/959967-1abece381349.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

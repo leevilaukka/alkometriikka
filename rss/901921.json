@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Criminally Bad Elf – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901921/",
+	"feed_url": "https://alkometriikka.fi/rss/901921.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Criminally Bad Elf.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901921-2026-07-18-3.98",
+			"url": "https://alkometriikka.fi/tuotteet/901921/",
+			"title": "Criminally Bad Elf — 3,99 € → 3,98 €",
+			"content_html": "<p>Tuotteen Criminally Bad Elf hinta on muuttunut.</p><p>3,99 € → 3,98 € (−0,01 €, −0,25 %).</p>",
+			"summary": "Tuotteen Criminally Bad Elf hinta on muuttunut. 3,99 € → 3,98 € (−0,01 €, −0,25 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901921-c6d96419400a.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

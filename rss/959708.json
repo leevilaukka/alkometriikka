@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Domaine Zinck Rosé Crémant d'Alsace Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/959708/",
+	"feed_url": "https://alkometriikka.fi/rss/959708.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Domaine Zinck Rosé Crémant d'Alsace Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-959708-2026-07-18-24.48",
+			"url": "https://alkometriikka.fi/tuotteet/959708/",
+			"title": "Domaine Zinck Rosé Crémant d'Alsace Brut — 24,44 € → 24,48 €",
+			"content_html": "<p>Tuotteen Domaine Zinck Rosé Crémant d'Alsace Brut hinta on muuttunut.</p><p>24,44 € → 24,48 € (+0,04 €, +0,16 %).</p>",
+			"summary": "Tuotteen Domaine Zinck Rosé Crémant d'Alsace Brut hinta on muuttunut. 24,44 € → 24,48 € (+0,04 €, +0,16 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/959708-b1f75b9f4acf.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

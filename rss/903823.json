@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Shabo Original Collection Chardonnay 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903823/",
+	"feed_url": "https://alkometriikka.fi/rss/903823.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Shabo Original Collection Chardonnay 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903823-2026-07-18-18.99",
+			"url": "https://alkometriikka.fi/tuotteet/903823/",
+			"title": "Shabo Original Collection Chardonnay 2022 — 18,44 € → 18,99 €",
+			"content_html": "<p>Tuotteen Shabo Original Collection Chardonnay 2022 hinta on muuttunut.</p><p>18,44 € → 18,99 € (+0,55 €, +2,98 %).</p>",
+			"summary": "Tuotteen Shabo Original Collection Chardonnay 2022 hinta on muuttunut. 18,44 € → 18,99 € (+0,55 €, +2,98 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903823-4bae188370d3.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

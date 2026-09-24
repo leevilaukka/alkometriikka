@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tommasi Valpolicella 2025 hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/913098/",
+	"feed_url": "https://alkometriikka.fi/rss/913098.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tommasi Valpolicella 2025 hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-913098-2026-07-18-46.68",
+			"url": "https://alkometriikka.fi/tuotteet/913098/",
+			"title": "Tommasi Valpolicella 2025 hanapakkaus — 47,33 € → 46,68 €",
+			"content_html": "<p>Tuotteen Tommasi Valpolicella 2025 hanapakkaus hinta on muuttunut.</p><p>47,33 € → 46,68 € (−0,65 €, −1,37 %).</p>",
+			"summary": "Tuotteen Tommasi Valpolicella 2025 hanapakkaus hinta on muuttunut. 47,33 € → 46,68 € (−0,65 €, −1,37 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/913098-b85462044423.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

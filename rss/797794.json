@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – To Øl Implosion tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/797794/",
+	"feed_url": "https://alkometriikka.fi/rss/797794.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: To Øl Implosion tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-797794-2026-09-04-1.79",
+			"url": "https://alkometriikka.fi/tuotteet/797794/",
+			"title": "To Øl Implosion tölkki — 1,99 € → 1,79 €",
+			"content_html": "<p>Tuotteen To Øl Implosion tölkki hinta on muuttunut.</p><p>1,99 € → 1,79 € (−0,20 €, −10,05 %).</p>",
+			"summary": "Tuotteen To Øl Implosion tölkki hinta on muuttunut. 1,99 € → 1,79 € (−0,20 €, −10,05 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/797794-decef1b8777e.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-797794-2026-07-18-1.99",
+			"url": "https://alkometriikka.fi/tuotteet/797794/",
+			"title": "To Øl Implosion tölkki — 1,78 € → 1,99 €",
+			"content_html": "<p>Tuotteen To Øl Implosion tölkki hinta on muuttunut.</p><p>1,78 € → 1,99 € (+0,21 €, +11,80 %).</p>",
+			"summary": "Tuotteen To Øl Implosion tölkki hinta on muuttunut. 1,78 € → 1,99 € (+0,21 €, +11,80 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/797794-decef1b8777e.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

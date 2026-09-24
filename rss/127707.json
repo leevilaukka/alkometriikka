@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Highland Queen Sherry Finish – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/127707/",
+	"feed_url": "https://alkometriikka.fi/rss/127707.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Highland Queen Sherry Finish.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-127707-2026-07-18-26.79",
+			"url": "https://alkometriikka.fi/tuotteet/127707/",
+			"title": "Highland Queen Sherry Finish — 26,76 € → 26,79 €",
+			"content_html": "<p>Tuotteen Highland Queen Sherry Finish hinta on muuttunut.</p><p>26,76 € → 26,79 € (+0,03 €, +0,11 %).</p>",
+			"summary": "Tuotteen Highland Queen Sherry Finish hinta on muuttunut. 26,76 € → 26,79 € (+0,03 €, +0,11 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/127707-81db96fa0b40.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

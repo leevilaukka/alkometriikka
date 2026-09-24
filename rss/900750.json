@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – La Crema Monterey Chardonnay 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900750/",
+	"feed_url": "https://alkometriikka.fi/rss/900750.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: La Crema Monterey Chardonnay 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900750-2026-07-18-36.86",
+			"url": "https://alkometriikka.fi/tuotteet/900750/",
+			"title": "La Crema Monterey Chardonnay 2020 — 36,81 € → 36,86 €",
+			"content_html": "<p>Tuotteen La Crema Monterey Chardonnay 2020 hinta on muuttunut.</p><p>36,81 € → 36,86 € (+0,05 €, +0,14 %).</p>",
+			"summary": "Tuotteen La Crema Monterey Chardonnay 2020 hinta on muuttunut. 36,81 € → 36,86 € (+0,05 €, +0,14 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900750-7d47a563fdaf.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

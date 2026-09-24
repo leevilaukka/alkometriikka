@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Torres Viña Esmeralda 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/575314/",
+	"feed_url": "https://alkometriikka.fi/rss/575314.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Torres Viña Esmeralda 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-575314-2026-07-18-7.1",
+			"url": "https://alkometriikka.fi/tuotteet/575314/",
+			"title": "Torres Viña Esmeralda 2023 — 7,02 € → 7,10 €",
+			"content_html": "<p>Tuotteen Torres Viña Esmeralda 2023 hinta on muuttunut.</p><p>7,02 € → 7,10 € (+0,08 €, +1,14 %).</p>",
+			"summary": "Tuotteen Torres Viña Esmeralda 2023 hinta on muuttunut. 7,02 € → 7,10 € (+0,08 €, +1,14 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/575314-a7e44d611f9f.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

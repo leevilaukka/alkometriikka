@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Schwarzwälder Kirschwasser – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/134974/",
+	"feed_url": "https://alkometriikka.fi/rss/134974.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Schwarzwälder Kirschwasser.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-134974-2026-07-18-29.19",
+			"url": "https://alkometriikka.fi/tuotteet/134974/",
+			"title": "Schwarzwälder Kirschwasser — 28,43 € → 29,19 €",
+			"content_html": "<p>Tuotteen Schwarzwälder Kirschwasser hinta on muuttunut.</p><p>28,43 € → 29,19 € (+0,76 €, +2,67 %).</p>",
+			"summary": "Tuotteen Schwarzwälder Kirschwasser hinta on muuttunut. 28,43 € → 29,19 € (+0,76 €, +2,67 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/134974-58e62616261b.png",
+			"tags": [
+				"Väkevät",
+				"hedelmätisleet"
+			]
+		}
+	]
+}

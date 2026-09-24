@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – G.H. Martel & Co Champagne Rosé Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/942142/",
+	"feed_url": "https://alkometriikka.fi/rss/942142.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: G.H. Martel & Co Champagne Rosé Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-942142-2026-07-18-24.99",
+			"url": "https://alkometriikka.fi/tuotteet/942142/",
+			"title": "G.H. Martel & Co Champagne Rosé Brut — 25,22 € → 24,99 €",
+			"content_html": "<p>Tuotteen G.H. Martel & Co Champagne Rosé Brut hinta on muuttunut.</p><p>25,22 € → 24,99 € (−0,23 €, −0,91 %).</p>",
+			"summary": "Tuotteen G.H. Martel & Co Champagne Rosé Brut hinta on muuttunut. 25,22 € → 24,99 € (−0,23 €, −0,91 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/942142-ce447b5d1650.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

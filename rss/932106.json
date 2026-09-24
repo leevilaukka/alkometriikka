@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Helsinki Akvavit – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/932106/",
+	"feed_url": "https://alkometriikka.fi/rss/932106.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Helsinki Akvavit.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-932106-2026-07-18-39.98",
+			"url": "https://alkometriikka.fi/tuotteet/932106/",
+			"title": "Helsinki Akvavit — 39,90 € → 39,98 €",
+			"content_html": "<p>Tuotteen Helsinki Akvavit hinta on muuttunut.</p><p>39,90 € → 39,98 € (+0,08 €, +0,20 %).</p>",
+			"summary": "Tuotteen Helsinki Akvavit hinta on muuttunut. 39,90 € → 39,98 € (+0,08 €, +0,20 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/932106-4edb69c8eeaf.png",
+			"tags": [
+				"Väkevät",
+				"akvaviitit"
+			]
+		}
+	]
+}

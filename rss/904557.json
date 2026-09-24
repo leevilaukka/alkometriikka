@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Il Prugneto Sangiovese Superiore 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/904557/",
+	"feed_url": "https://alkometriikka.fi/rss/904557.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Il Prugneto Sangiovese Superiore 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-904557-2026-07-18-15.89",
+			"url": "https://alkometriikka.fi/tuotteet/904557/",
+			"title": "Il Prugneto Sangiovese Superiore 2020 — 14,99 € → 15,89 €",
+			"content_html": "<p>Tuotteen Il Prugneto Sangiovese Superiore 2020 hinta on muuttunut.</p><p>14,99 € → 15,89 € (+0,90 €, +6,00 %).</p>",
+			"summary": "Tuotteen Il Prugneto Sangiovese Superiore 2020 hinta on muuttunut. 14,99 € → 15,89 € (+0,90 €, +6,00 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/904557-67aa93e08865.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

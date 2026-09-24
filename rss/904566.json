@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – André Clouet Rosé Champagne Brut Magnum – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/904566/",
+	"feed_url": "https://alkometriikka.fi/rss/904566.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: André Clouet Rosé Champagne Brut Magnum.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-904566-2026-07-18-98.9",
+			"url": "https://alkometriikka.fi/tuotteet/904566/",
+			"title": "André Clouet Rosé Champagne Brut Magnum — 98,81 € → 98,90 €",
+			"content_html": "<p>Tuotteen André Clouet Rosé Champagne Brut Magnum hinta on muuttunut.</p><p>98,81 € → 98,90 € (+0,09 €, +0,09 %).</p>",
+			"summary": "Tuotteen André Clouet Rosé Champagne Brut Magnum hinta on muuttunut. 98,81 € → 98,90 € (+0,09 €, +0,09 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/904566-b3092712108f.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

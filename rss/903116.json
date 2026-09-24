@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Freemark Abbey Cabernet Sauvignon Sycamore Vineyard 2016 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903116/",
+	"feed_url": "https://alkometriikka.fi/rss/903116.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Freemark Abbey Cabernet Sauvignon Sycamore Vineyard 2016.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903116-2026-07-18-198.56",
+			"url": "https://alkometriikka.fi/tuotteet/903116/",
+			"title": "Freemark Abbey Cabernet Sauvignon Sycamore Vineyard 2016 — 212,96 € → 198,56 €",
+			"content_html": "<p>Tuotteen Freemark Abbey Cabernet Sauvignon Sycamore Vineyard 2016 hinta on muuttunut.</p><p>212,96 € → 198,56 € (−14,40 €, −6,76 %).</p>",
+			"summary": "Tuotteen Freemark Abbey Cabernet Sauvignon Sycamore Vineyard 2016 hinta on muuttunut. 212,96 € → 198,56 € (−14,40 €, −6,76 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903116-66b596571bbf.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

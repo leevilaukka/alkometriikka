@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Brooklyn The Stonewall Inn IPA – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/950911/",
+	"feed_url": "https://alkometriikka.fi/rss/950911.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Brooklyn The Stonewall Inn IPA.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-950911-2026-07-18-3.89",
+			"url": "https://alkometriikka.fi/tuotteet/950911/",
+			"title": "Brooklyn The Stonewall Inn IPA — 3,79 € → 3,89 €",
+			"content_html": "<p>Tuotteen Brooklyn The Stonewall Inn IPA hinta on muuttunut.</p><p>3,79 € → 3,89 € (+0,10 €, +2,64 %).</p>",
+			"summary": "Tuotteen Brooklyn The Stonewall Inn IPA hinta on muuttunut. 3,79 € → 3,89 € (+0,10 €, +2,64 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/950911-1509b0e86213.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

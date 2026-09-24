@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Baglietti Organic Prosecco Rosé Extra Dry 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/913813/",
+	"feed_url": "https://alkometriikka.fi/rss/913813.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Baglietti Organic Prosecco Rosé Extra Dry 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-913813-2026-07-18-17.98",
+			"url": "https://alkometriikka.fi/tuotteet/913813/",
+			"title": "Baglietti Organic Prosecco Rosé Extra Dry 2020 — 17,46 € → 17,98 €",
+			"content_html": "<p>Tuotteen Baglietti Organic Prosecco Rosé Extra Dry 2020 hinta on muuttunut.</p><p>17,46 € → 17,98 € (+0,52 €, +2,98 %).</p>",
+			"summary": "Tuotteen Baglietti Organic Prosecco Rosé Extra Dry 2020 hinta on muuttunut. 17,46 € → 17,98 € (+0,52 €, +2,98 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/913813-9e61810e4be2.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

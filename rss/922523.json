@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bestheim Crémant Rosé Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/922523/",
+	"feed_url": "https://alkometriikka.fi/rss/922523.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bestheim Crémant Rosé Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-922523-2026-07-18-16.98",
+			"url": "https://alkometriikka.fi/tuotteet/922523/",
+			"title": "Bestheim Crémant Rosé Brut — 16,96 € → 16,98 €",
+			"content_html": "<p>Tuotteen Bestheim Crémant Rosé Brut hinta on muuttunut.</p><p>16,96 € → 16,98 € (+0,02 €, +0,12 %).</p>",
+			"summary": "Tuotteen Bestheim Crémant Rosé Brut hinta on muuttunut. 16,96 € → 16,98 € (+0,02 €, +0,12 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/922523-5764d907693d.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

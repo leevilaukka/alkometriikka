@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Brocard Chablis 1er Cru Montée de Tonnerre 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/007682/",
+	"feed_url": "https://alkometriikka.fi/rss/007682.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Brocard Chablis 1er Cru Montée de Tonnerre 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-007682-2026-07-18-52.48",
+			"url": "https://alkometriikka.fi/tuotteet/007682/",
+			"title": "Brocard Chablis 1er Cru Montée de Tonnerre 2022 — 51,45 € → 52,48 €",
+			"content_html": "<p>Tuotteen Brocard Chablis 1er Cru Montée de Tonnerre 2022 hinta on muuttunut.</p><p>51,45 € → 52,48 € (+1,03 €, +2,00 %).</p>",
+			"summary": "Tuotteen Brocard Chablis 1er Cru Montée de Tonnerre 2022 hinta on muuttunut. 51,45 € → 52,48 € (+1,03 €, +2,00 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/007682-e3080bb90781.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

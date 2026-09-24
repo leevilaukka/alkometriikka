@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Codorníu Organic Cava Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/541453/",
+	"feed_url": "https://alkometriikka.fi/rss/541453.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Codorníu Organic Cava Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-541453-2026-07-18-4.99",
+			"url": "https://alkometriikka.fi/tuotteet/541453/",
+			"title": "Codorníu Organic Cava Brut — 5,09 € → 4,99 €",
+			"content_html": "<p>Tuotteen Codorníu Organic Cava Brut hinta on muuttunut.</p><p>5,09 € → 4,99 € (−0,10 €, −1,96 %).</p>",
+			"summary": "Tuotteen Codorníu Organic Cava Brut hinta on muuttunut. 5,09 € → 4,99 € (−0,10 €, −1,96 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/541453-30780fb14e27.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

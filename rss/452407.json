@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nederburg Shiraz 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/452407/",
+	"feed_url": "https://alkometriikka.fi/rss/452407.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nederburg Shiraz 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-452407-2026-07-18-14.99",
+			"url": "https://alkometriikka.fi/tuotteet/452407/",
+			"title": "Nederburg Shiraz 2023 — 14,44 € → 14,99 €",
+			"content_html": "<p>Tuotteen Nederburg Shiraz 2023 hinta on muuttunut.</p><p>14,44 € → 14,99 € (+0,55 €, +3,81 %).</p>",
+			"summary": "Tuotteen Nederburg Shiraz 2023 hinta on muuttunut. 14,44 € → 14,99 € (+0,55 €, +3,81 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/452407-7b40ffe2616b.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

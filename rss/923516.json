@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nikka From The Barrel – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/923516/",
+	"feed_url": "https://alkometriikka.fi/rss/923516.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nikka From The Barrel.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-923516-2026-07-18-59.99",
+			"url": "https://alkometriikka.fi/tuotteet/923516/",
+			"title": "Nikka From The Barrel — 62,18 € → 59,99 €",
+			"content_html": "<p>Tuotteen Nikka From The Barrel hinta on muuttunut.</p><p>62,18 € → 59,99 € (−2,19 €, −3,52 %).</p>",
+			"summary": "Tuotteen Nikka From The Barrel hinta on muuttunut. 62,18 € → 59,99 € (−2,19 €, −3,52 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/923516-3c7db492c102.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

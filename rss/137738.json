@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jules Gautret VS – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/137738/",
+	"feed_url": "https://alkometriikka.fi/rss/137738.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jules Gautret VS.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-137738-2026-07-18-47.97",
+			"url": "https://alkometriikka.fi/tuotteet/137738/",
+			"title": "Jules Gautret VS — 49,94 € → 47,97 €",
+			"content_html": "<p>Tuotteen Jules Gautret VS hinta on muuttunut.</p><p>49,94 € → 47,97 € (−1,97 €, −3,94 %).</p>",
+			"summary": "Tuotteen Jules Gautret VS hinta on muuttunut. 49,94 € → 47,97 € (−1,97 €, −3,94 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/137738-9ba4b599af18.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

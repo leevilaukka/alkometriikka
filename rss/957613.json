@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Beefeater Blood Orange – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/957613/",
+	"feed_url": "https://alkometriikka.fi/rss/957613.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Beefeater Blood Orange.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-957613-2026-07-18-37.68",
+			"url": "https://alkometriikka.fi/tuotteet/957613/",
+			"title": "Beefeater Blood Orange — 37,64 € → 37,68 €",
+			"content_html": "<p>Tuotteen Beefeater Blood Orange hinta on muuttunut.</p><p>37,64 € → 37,68 € (+0,04 €, +0,11 %).</p>",
+			"summary": "Tuotteen Beefeater Blood Orange hinta on muuttunut. 37,64 € → 37,68 € (+0,04 €, +0,11 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/957613-e976b49de4ff.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

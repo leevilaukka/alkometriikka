@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mallaskoski Hera Sherry Barrel Aged Imperial Red Ale – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/928528/",
+	"feed_url": "https://alkometriikka.fi/rss/928528.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mallaskoski Hera Sherry Barrel Aged Imperial Red Ale.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-928528-2026-07-18-5.88",
+			"url": "https://alkometriikka.fi/tuotteet/928528/",
+			"title": "Mallaskoski Hera Sherry Barrel Aged Imperial Red Ale — 5,89 € → 5,88 €",
+			"content_html": "<p>Tuotteen Mallaskoski Hera Sherry Barrel Aged Imperial Red Ale hinta on muuttunut.</p><p>5,89 € → 5,88 € (−0,01 €, −0,17 %).</p>",
+			"summary": "Tuotteen Mallaskoski Hera Sherry Barrel Aged Imperial Red Ale hinta on muuttunut. 5,89 € → 5,88 € (−0,01 €, −0,17 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/928528-9c4602ef92dc.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

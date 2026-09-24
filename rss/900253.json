@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Le Sirop de Monin Blue Curacao – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900253/",
+	"feed_url": "https://alkometriikka.fi/rss/900253.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Le Sirop de Monin Blue Curacao.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900253-2026-07-18-9.19",
+			"url": "https://alkometriikka.fi/tuotteet/900253/",
+			"title": "Le Sirop de Monin Blue Curacao — 9,05 € → 9,19 €",
+			"content_html": "<p>Tuotteen Le Sirop de Monin Blue Curacao hinta on muuttunut.</p><p>9,05 € → 9,19 € (+0,14 €, +1,55 %).</p>",
+			"summary": "Tuotteen Le Sirop de Monin Blue Curacao hinta on muuttunut. 9,05 € → 9,19 € (+0,14 €, +1,55 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900253-248199c1da90.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

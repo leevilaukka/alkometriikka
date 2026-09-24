@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Schloss Vollrads Riesling 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/556254/",
+	"feed_url": "https://alkometriikka.fi/rss/556254.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Schloss Vollrads Riesling 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-556254-2026-07-18-11.29",
+			"url": "https://alkometriikka.fi/tuotteet/556254/",
+			"title": "Schloss Vollrads Riesling 2024 — 11,21 € → 11,29 €",
+			"content_html": "<p>Tuotteen Schloss Vollrads Riesling 2024 hinta on muuttunut.</p><p>11,21 € → 11,29 € (+0,08 €, +0,71 %).</p>",
+			"summary": "Tuotteen Schloss Vollrads Riesling 2024 hinta on muuttunut. 11,21 € → 11,29 € (+0,08 €, +0,71 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/556254-99534dc6b280.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

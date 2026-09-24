@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Montesanco Món Macabeo  2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900490/",
+	"feed_url": "https://alkometriikka.fi/rss/900490.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Montesanco Món Macabeo  2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900490-2026-07-18-28.91",
+			"url": "https://alkometriikka.fi/tuotteet/900490/",
+			"title": "Montesanco Món Macabeo  2023 — 28,39 € → 28,91 €",
+			"content_html": "<p>Tuotteen Montesanco Món Macabeo  2023 hinta on muuttunut.</p><p>28,39 € → 28,91 € (+0,52 €, +1,83 %).</p>",
+			"summary": "Tuotteen Montesanco Món Macabeo 2023 hinta on muuttunut. 28,39 € → 28,91 € (+0,52 €, +1,83 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900490-f34875fa130c.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

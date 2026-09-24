@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vintense Fines Bulles Rosé – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/578537/",
+	"feed_url": "https://alkometriikka.fi/rss/578537.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vintense Fines Bulles Rosé.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-578537-2026-07-18-8.79",
+			"url": "https://alkometriikka.fi/tuotteet/578537/",
+			"title": "Vintense Fines Bulles Rosé — 8,62 € → 8,79 €",
+			"content_html": "<p>Tuotteen Vintense Fines Bulles Rosé hinta on muuttunut.</p><p>8,62 € → 8,79 € (+0,17 €, +1,97 %).</p>",
+			"summary": "Tuotteen Vintense Fines Bulles Rosé hinta on muuttunut. 8,62 € → 8,79 € (+0,17 €, +1,97 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/578537-56d7178079ad.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat kuohuviinit"
+			]
+		}
+	]
+}

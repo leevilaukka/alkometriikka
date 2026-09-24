@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – El Tiempo Blanco hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/949278/",
+	"feed_url": "https://alkometriikka.fi/rss/949278.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: El Tiempo Blanco hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-949278-2026-07-18-23.48",
+			"url": "https://alkometriikka.fi/tuotteet/949278/",
+			"title": "El Tiempo Blanco hanapakkaus — 22,98 € → 23,48 €",
+			"content_html": "<p>Tuotteen El Tiempo Blanco hanapakkaus hinta on muuttunut.</p><p>22,98 € → 23,48 € (+0,50 €, +2,18 %).</p>",
+			"summary": "Tuotteen El Tiempo Blanco hanapakkaus hinta on muuttunut. 22,98 € → 23,48 € (+0,50 €, +2,18 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/949278-e3607aba54c8.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

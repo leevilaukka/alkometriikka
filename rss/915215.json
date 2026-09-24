@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Häjy Puro Vodka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/915215/",
+	"feed_url": "https://alkometriikka.fi/rss/915215.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Häjy Puro Vodka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-915215-2026-07-18-29.92",
+			"url": "https://alkometriikka.fi/tuotteet/915215/",
+			"title": "Häjy Puro Vodka — 30,72 € → 29,92 €",
+			"content_html": "<p>Tuotteen Häjy Puro Vodka hinta on muuttunut.</p><p>30,72 € → 29,92 € (−0,80 €, −2,60 %).</p>",
+			"summary": "Tuotteen Häjy Puro Vodka hinta on muuttunut. 30,72 € → 29,92 € (−0,80 €, −2,60 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/915215-2c3023001a6c.png",
+			"tags": [
+				"Väkevät",
+				"maustetut vodkat"
+			]
+		}
+	]
+}

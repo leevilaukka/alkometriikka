@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Teeling Blackpitts Peated Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/128167/",
+	"feed_url": "https://alkometriikka.fi/rss/128167.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Teeling Blackpitts Peated Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-128167-2026-07-18-69.96",
+			"url": "https://alkometriikka.fi/tuotteet/128167/",
+			"title": "Teeling Blackpitts Peated Single Malt — 69,30 € → 69,96 €",
+			"content_html": "<p>Tuotteen Teeling Blackpitts Peated Single Malt hinta on muuttunut.</p><p>69,30 € → 69,96 € (+0,66 €, +0,95 %).</p>",
+			"summary": "Tuotteen Teeling Blackpitts Peated Single Malt hinta on muuttunut. 69,30 € → 69,96 € (+0,66 €, +0,95 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/128167-b74b5c5a9d85.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

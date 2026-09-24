@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Renault Carte Noire Extra Old – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/001041/",
+	"feed_url": "https://alkometriikka.fi/rss/001041.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Renault Carte Noire Extra Old.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-001041-2026-07-18-79.98",
+			"url": "https://alkometriikka.fi/tuotteet/001041/",
+			"title": "Renault Carte Noire Extra Old — 80,26 € → 79,98 €",
+			"content_html": "<p>Tuotteen Renault Carte Noire Extra Old hinta on muuttunut.</p><p>80,26 € → 79,98 € (−0,28 €, −0,35 %).</p>",
+			"summary": "Tuotteen Renault Carte Noire Extra Old hinta on muuttunut. 80,26 € → 79,98 € (−0,28 €, −0,35 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/001041-fc6662236974.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

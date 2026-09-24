@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Quinta do Crasto Touriga Nacional 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/921632/",
+	"feed_url": "https://alkometriikka.fi/rss/921632.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Quinta do Crasto Touriga Nacional 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-921632-2026-07-18-73.5",
+			"url": "https://alkometriikka.fi/tuotteet/921632/",
+			"title": "Quinta do Crasto Touriga Nacional 2019 — 73,46 € → 73,50 €",
+			"content_html": "<p>Tuotteen Quinta do Crasto Touriga Nacional 2019 hinta on muuttunut.</p><p>73,46 € → 73,50 € (+0,04 €, +0,05 %).</p>",
+			"summary": "Tuotteen Quinta do Crasto Touriga Nacional 2019 hinta on muuttunut. 73,46 € → 73,50 € (+0,04 €, +0,05 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/921632-565b3f4c3a37.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

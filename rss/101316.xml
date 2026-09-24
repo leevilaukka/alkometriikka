@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Koskenkorva Viina muovipullo – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/101316/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Koskenkorva Viina muovipullo.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/101316.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Koskenkorva Viina muovipullo – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Koskenkorva Viina muovipullo — 16,58 € → 16,38 €</title>
+			<link>https://alkometriikka.fi/tuotteet/101316/</link>
+			<guid isPermaLink="false">alkometriikka-101316-2026-02-02-16.38</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / vodka</category>
+			<description><![CDATA[<p>Tuotteen Koskenkorva Viina muovipullo hinta on muuttunut.</p><p>16,58 € → 16,38 € (−0,20 €, −1,21 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/101316-47da9cd8c483.png" />
+		</item>
+		<item>
+			<title>Koskenkorva Viina muovipullo — 16,38 € → 16,58 €</title>
+			<link>https://alkometriikka.fi/tuotteet/101316/</link>
+			<guid isPermaLink="false">alkometriikka-101316-2026-02-02-16.58</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / vodka</category>
+			<description><![CDATA[<p>Tuotteen Koskenkorva Viina muovipullo hinta on muuttunut.</p><p>16,38 € → 16,58 € (+0,20 €, +1,22 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/101316-47da9cd8c483.png" />
+		</item>
+	</channel>
+</rss>

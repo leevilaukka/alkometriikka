@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Feiler-Artinger Zweigelt 2022 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/463937/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Feiler-Artinger Zweigelt 2022.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/463937.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Feiler-Artinger Zweigelt 2022 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Feiler-Artinger Zweigelt 2022 — 17,44 € → 18,89 €</title>
+			<link>https://alkometriikka.fi/tuotteet/463937/</link>
+			<guid isPermaLink="false">alkometriikka-463937-2026-07-18-18.89</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Feiler-Artinger Zweigelt 2022 hinta on muuttunut.</p><p>17,44 € → 18,89 € (+1,45 €, +8,31 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/463937-b3d33cf4a416.png" />
+		</item>
+	</channel>
+</rss>

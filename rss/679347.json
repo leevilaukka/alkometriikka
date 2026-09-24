@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ainoa Aho – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/679347/",
+	"feed_url": "https://alkometriikka.fi/rss/679347.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ainoa Aho.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-679347-2026-07-18-23.99",
+			"url": "https://alkometriikka.fi/tuotteet/679347/",
+			"title": "Ainoa Aho — 23,42 € → 23,99 €",
+			"content_html": "<p>Tuotteen Ainoa Aho hinta on muuttunut.</p><p>23,42 € → 23,99 € (+0,57 €, +2,43 %).</p>",
+			"summary": "Tuotteen Ainoa Aho hinta on muuttunut. 23,42 € → 23,99 € (+0,57 €, +2,43 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/679347-1b33baee45d5.png",
+			"tags": [
+				"Viinit",
+				"hedelmä- ja aromatisoidut viinit"
+			]
+		}
+	]
+}

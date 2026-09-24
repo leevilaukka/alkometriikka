@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Choya Extra Years Umeshu – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/904427/",
+	"feed_url": "https://alkometriikka.fi/rss/904427.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Choya Extra Years Umeshu.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-904427-2026-07-18-37.61",
+			"url": "https://alkometriikka.fi/tuotteet/904427/",
+			"title": "Choya Extra Years Umeshu — 37,44 € → 37,61 €",
+			"content_html": "<p>Tuotteen Choya Extra Years Umeshu hinta on muuttunut.</p><p>37,44 € → 37,61 € (+0,17 €, +0,45 %).</p>",
+			"summary": "Tuotteen Choya Extra Years Umeshu hinta on muuttunut. 37,44 € → 37,61 € (+0,17 €, +0,45 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/904427-107e663b9fb3.png",
+			"tags": [
+				"Väkevät",
+				"hedelmäliköörit"
+			]
+		}
+	]
+}

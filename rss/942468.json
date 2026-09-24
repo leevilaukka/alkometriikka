@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Joseph Drouhin Vaudon Chablis 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/942468/",
+	"feed_url": "https://alkometriikka.fi/rss/942468.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Joseph Drouhin Vaudon Chablis 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-942468-2026-07-18-18.6",
+			"url": "https://alkometriikka.fi/tuotteet/942468/",
+			"title": "Joseph Drouhin Vaudon Chablis 2023 — 18,20 € → 18,60 €",
+			"content_html": "<p>Tuotteen Joseph Drouhin Vaudon Chablis 2023 hinta on muuttunut.</p><p>18,20 € → 18,60 € (+0,40 €, +2,20 %).</p>",
+			"summary": "Tuotteen Joseph Drouhin Vaudon Chablis 2023 hinta on muuttunut. 18,20 € → 18,60 € (+0,40 €, +2,20 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/942468-f9a1c2f08ec1.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

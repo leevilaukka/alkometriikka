@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – SanPellegrino Pompelmo tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/910985/",
+	"feed_url": "https://alkometriikka.fi/rss/910985.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: SanPellegrino Pompelmo tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-910985-2026-07-18-2.09",
+			"url": "https://alkometriikka.fi/tuotteet/910985/",
+			"title": "SanPellegrino Pompelmo tölkki — 2,08 € → 2,09 €",
+			"content_html": "<p>Tuotteen SanPellegrino Pompelmo tölkki hinta on muuttunut.</p><p>2,08 € → 2,09 € (+0,01 €, +0,48 %).</p>",
+			"summary": "Tuotteen SanPellegrino Pompelmo tölkki hinta on muuttunut. 2,08 € → 2,09 € (+0,01 €, +0,48 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/910985-6da2a2259c4a.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

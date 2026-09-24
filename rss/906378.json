@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tenute Rossetti Chianti 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/906378/",
+	"feed_url": "https://alkometriikka.fi/rss/906378.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tenute Rossetti Chianti 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-906378-2026-07-18-14.48",
+			"url": "https://alkometriikka.fi/tuotteet/906378/",
+			"title": "Tenute Rossetti Chianti 2024 — 14,44 € → 14,48 €",
+			"content_html": "<p>Tuotteen Tenute Rossetti Chianti 2024 hinta on muuttunut.</p><p>14,44 € → 14,48 € (+0,04 €, +0,28 %).</p>",
+			"summary": "Tuotteen Tenute Rossetti Chianti 2024 hinta on muuttunut. 14,44 € → 14,48 € (+0,04 €, +0,28 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/906378-f27556b4c42d.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

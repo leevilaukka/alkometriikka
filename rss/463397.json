@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Sangre de Toro Reserva Organic 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/463397/",
+	"feed_url": "https://alkometriikka.fi/rss/463397.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Sangre de Toro Reserva Organic 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-463397-2026-07-18-15.99",
+			"url": "https://alkometriikka.fi/tuotteet/463397/",
+			"title": "Sangre de Toro Reserva Organic 2021 — 15,95 € → 15,99 €",
+			"content_html": "<p>Tuotteen Sangre de Toro Reserva Organic 2021 hinta on muuttunut.</p><p>15,95 € → 15,99 € (+0,04 €, +0,25 %).</p>",
+			"summary": "Tuotteen Sangre de Toro Reserva Organic 2021 hinta on muuttunut. 15,95 € → 15,99 € (+0,04 €, +0,25 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/463397-7a9fd5930c49.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

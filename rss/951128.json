@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Crystal Head Pride Vodka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/951128/",
+	"feed_url": "https://alkometriikka.fi/rss/951128.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Crystal Head Pride Vodka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-951128-2026-07-18-91.2",
+			"url": "https://alkometriikka.fi/tuotteet/951128/",
+			"title": "Crystal Head Pride Vodka — 91,17 € → 91,20 €",
+			"content_html": "<p>Tuotteen Crystal Head Pride Vodka hinta on muuttunut.</p><p>91,17 € → 91,20 € (+0,03 €, +0,03 %).</p>",
+			"summary": "Tuotteen Crystal Head Pride Vodka hinta on muuttunut. 91,17 € → 91,20 € (+0,03 €, +0,03 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/951128-924ff83e9e84.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

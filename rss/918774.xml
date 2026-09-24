@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Hinch 10 Years Old Sherry Cask Finish – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/918774/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Hinch 10 Years Old Sherry Cask Finish.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/918774.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Hinch 10 Years Old Sherry Cask Finish – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Hinch 10 Years Old Sherry Cask Finish — 78,97 € → 78,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/918774/</link>
+			<guid isPermaLink="false">alkometriikka-918774-2026-07-18-78.99</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / viskit</category>
+			<description><![CDATA[<p>Tuotteen Hinch 10 Years Old Sherry Cask Finish hinta on muuttunut.</p><p>78,97 € → 78,99 € (+0,02 €, +0,03 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/918774-0c559d2f60ca.png" />
+		</item>
+	</channel>
+</rss>

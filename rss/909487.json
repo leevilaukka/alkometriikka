@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Philipponnat Réserve Perpétuelle Champagne Non Dosé – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/909487/",
+	"feed_url": "https://alkometriikka.fi/rss/909487.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Philipponnat Réserve Perpétuelle Champagne Non Dosé.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-909487-2026-07-18-70.48",
+			"url": "https://alkometriikka.fi/tuotteet/909487/",
+			"title": "Philipponnat Réserve Perpétuelle Champagne Non Dosé — 70,46 € → 70,48 €",
+			"content_html": "<p>Tuotteen Philipponnat Réserve Perpétuelle Champagne Non Dosé hinta on muuttunut.</p><p>70,46 € → 70,48 € (+0,02 €, +0,03 %).</p>",
+			"summary": "Tuotteen Philipponnat Réserve Perpétuelle Champagne Non Dosé hinta on muuttunut. 70,46 € → 70,48 € (+0,02 €, +0,03 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/909487-fc88fd63ed43.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

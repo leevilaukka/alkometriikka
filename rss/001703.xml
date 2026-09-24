@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Captain Morgan – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/001703/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Captain Morgan.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/001703.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Captain Morgan – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Captain Morgan — 34,27 € → 34,49 €</title>
+			<link>https://alkometriikka.fi/tuotteet/001703/</link>
+			<guid isPermaLink="false">alkometriikka-001703-2026-07-18-34.49</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / rommit</category>
+			<description><![CDATA[<p>Tuotteen Captain Morgan hinta on muuttunut.</p><p>34,27 € → 34,49 € (+0,22 €, +0,64 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/001703-19f6edf64362.png" />
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Omnipollo&Fidens Paradis Mango Triple IPA tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901006/",
+	"feed_url": "https://alkometriikka.fi/rss/901006.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Omnipollo&Fidens Paradis Mango Triple IPA tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901006-2026-07-18-10.97",
+			"url": "https://alkometriikka.fi/tuotteet/901006/",
+			"title": "Omnipollo&Fidens Paradis Mango Triple IPA tölkki — 10,98 € → 10,97 €",
+			"content_html": "<p>Tuotteen Omnipollo&Fidens Paradis Mango Triple IPA tölkki hinta on muuttunut.</p><p>10,98 € → 10,97 € (−0,01 €, −0,09 %).</p>",
+			"summary": "Tuotteen Omnipollo&Fidens Paradis Mango Triple IPA tölkki hinta on muuttunut. 10,98 € → 10,97 € (−0,01 €, −0,09 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901006-d09c6f5e4b3a.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

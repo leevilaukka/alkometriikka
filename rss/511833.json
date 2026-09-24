@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Poikain Parhaat Metsä Juhlakuohu Mustikka & Kuusenkerkkä – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/511833/",
+	"feed_url": "https://alkometriikka.fi/rss/511833.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Poikain Parhaat Metsä Juhlakuohu Mustikka & Kuusenkerkkä.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-511833-2026-07-18-5.25",
+			"url": "https://alkometriikka.fi/tuotteet/511833/",
+			"title": "Poikain Parhaat Metsä Juhlakuohu Mustikka & Kuusenkerkkä — 5,17 € → 5,25 €",
+			"content_html": "<p>Tuotteen Poikain Parhaat Metsä Juhlakuohu Mustikka & Kuusenkerkkä hinta on muuttunut.</p><p>5,17 € → 5,25 € (+0,08 €, +1,55 %).</p>",
+			"summary": "Tuotteen Poikain Parhaat Metsä Juhlakuohu Mustikka & Kuusenkerkkä hinta on muuttunut. 5,17 € → 5,25 € (+0,08 €, +1,55 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/511833-57fbcf4f4c91.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat kuohuviinit"
+			]
+		}
+	]
+}

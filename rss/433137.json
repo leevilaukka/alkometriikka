@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Garzón Tannat Reserva 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/433137/",
+	"feed_url": "https://alkometriikka.fi/rss/433137.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Garzón Tannat Reserva 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-433137-2026-07-18-17.98",
+			"url": "https://alkometriikka.fi/tuotteet/433137/",
+			"title": "Garzón Tannat Reserva 2022 — 17,94 € → 17,98 €",
+			"content_html": "<p>Tuotteen Garzón Tannat Reserva 2022 hinta on muuttunut.</p><p>17,94 € → 17,98 € (+0,04 €, +0,22 %).</p>",
+			"summary": "Tuotteen Garzón Tannat Reserva 2022 hinta on muuttunut. 17,94 € → 17,98 € (+0,04 €, +0,22 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/433137-ae28c7f0bd86.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

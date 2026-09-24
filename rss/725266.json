@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ettl Hell – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/725266/",
+	"feed_url": "https://alkometriikka.fi/rss/725266.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ettl Hell.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-725266-2026-07-18-3.59",
+			"url": "https://alkometriikka.fi/tuotteet/725266/",
+			"title": "Ettl Hell — 3,49 € → 3,59 €",
+			"content_html": "<p>Tuotteen Ettl Hell hinta on muuttunut.</p><p>3,49 € → 3,59 € (+0,10 €, +2,87 %).</p>",
+			"summary": "Tuotteen Ettl Hell hinta on muuttunut. 3,49 € → 3,59 € (+0,10 €, +2,87 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/725266-4b5f148d8e39.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

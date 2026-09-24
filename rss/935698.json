@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vermutti Original Formula – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/935698/",
+	"feed_url": "https://alkometriikka.fi/rss/935698.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vermutti Original Formula.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-935698-2026-07-18-29.99",
+			"url": "https://alkometriikka.fi/tuotteet/935698/",
+			"title": "Vermutti Original Formula — 30,03 € → 29,99 €",
+			"content_html": "<p>Tuotteen Vermutti Original Formula hinta on muuttunut.</p><p>30,03 € → 29,99 € (−0,04 €, −0,13 %).</p>",
+			"summary": "Tuotteen Vermutti Original Formula hinta on muuttunut. 30,03 € → 29,99 € (−0,04 €, −0,13 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/935698-42a559bbdbe0.png",
+			"tags": [
+				"Välituotteet",
+				"vermutit"
+			]
+		}
+	]
+}

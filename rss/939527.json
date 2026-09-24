@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Leclerc Briant Rosé Champagne Extra Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/939527/",
+	"feed_url": "https://alkometriikka.fi/rss/939527.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Leclerc Briant Rosé Champagne Extra Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-939527-2026-07-18-74.98",
+			"url": "https://alkometriikka.fi/tuotteet/939527/",
+			"title": "Leclerc Briant Rosé Champagne Extra Brut — 70,46 € → 74,98 €",
+			"content_html": "<p>Tuotteen Leclerc Briant Rosé Champagne Extra Brut hinta on muuttunut.</p><p>70,46 € → 74,98 € (+4,52 €, +6,41 %).</p>",
+			"summary": "Tuotteen Leclerc Briant Rosé Champagne Extra Brut hinta on muuttunut. 70,46 € → 74,98 € (+4,52 €, +6,41 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/939527-1e306265286f.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

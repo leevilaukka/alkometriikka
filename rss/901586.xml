@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Tenuta Bocca di Lupo Pietrabianca Chardonnay 2024 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/901586/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Tenuta Bocca di Lupo Pietrabianca Chardonnay 2024.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/901586.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Tenuta Bocca di Lupo Pietrabianca Chardonnay 2024 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Tenuta Bocca di Lupo Pietrabianca Chardonnay 2024 — 30,44 € → 30,98 €</title>
+			<link>https://alkometriikka.fi/tuotteet/901586/</link>
+			<guid isPermaLink="false">alkometriikka-901586-2026-07-18-30.98</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / valkoviinit</category>
+			<description><![CDATA[<p>Tuotteen Tenuta Bocca di Lupo Pietrabianca Chardonnay 2024 hinta on muuttunut.</p><p>30,44 € → 30,98 € (+0,54 €, +1,77 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/901586-f33237747b28.png" />
+		</item>
+	</channel>
+</rss>

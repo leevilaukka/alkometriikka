@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Karhu 4,6 tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/720914/",
+	"feed_url": "https://alkometriikka.fi/rss/720914.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Karhu 4,6 tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-720914-2026-07-18-1.46",
+			"url": "https://alkometriikka.fi/tuotteet/720914/",
+			"title": "Karhu 4,6 tölkki — 1,41 € → 1,46 €",
+			"content_html": "<p>Tuotteen Karhu 4,6 tölkki hinta on muuttunut.</p><p>1,41 € → 1,46 € (+0,05 €, +3,55 %).</p>",
+			"summary": "Tuotteen Karhu 4,6 tölkki hinta on muuttunut. 1,41 € → 1,46 € (+0,05 €, +3,55 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/720914-abb5e30f1d08.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

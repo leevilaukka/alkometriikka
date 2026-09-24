@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Baron d'Arignac Doux – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/553777/",
+	"feed_url": "https://alkometriikka.fi/rss/553777.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Baron d'Arignac Doux.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-553777-2026-07-18-10.48",
+			"url": "https://alkometriikka.fi/tuotteet/553777/",
+			"title": "Baron d'Arignac Doux — 10,44 € → 10,48 €",
+			"content_html": "<p>Tuotteen Baron d'Arignac Doux hinta on muuttunut.</p><p>10,44 € → 10,48 € (+0,04 €, +0,38 %).</p>",
+			"summary": "Tuotteen Baron d'Arignac Doux hinta on muuttunut. 10,44 € → 10,48 € (+0,04 €, +0,38 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/553777-6c11c7d2ff4c.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

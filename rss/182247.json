@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Clynelish 14 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/182247/",
+	"feed_url": "https://alkometriikka.fi/rss/182247.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Clynelish 14 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-182247-2026-07-18-66.49",
+			"url": "https://alkometriikka.fi/tuotteet/182247/",
+			"title": "Clynelish 14 Year Old Single Malt — 66,30 € → 66,49 €",
+			"content_html": "<p>Tuotteen Clynelish 14 Year Old Single Malt hinta on muuttunut.</p><p>66,30 € → 66,49 € (+0,19 €, +0,29 %).</p>",
+			"summary": "Tuotteen Clynelish 14 Year Old Single Malt hinta on muuttunut. 66,30 € → 66,49 € (+0,19 €, +0,29 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/182247-d8e244ef1d33.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

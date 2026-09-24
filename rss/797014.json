@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mallaskoski Black Imperial Rye – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/797014/",
+	"feed_url": "https://alkometriikka.fi/rss/797014.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mallaskoski Black Imperial Rye.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-797014-2026-07-18-5.26",
+			"url": "https://alkometriikka.fi/tuotteet/797014/",
+			"title": "Mallaskoski Black Imperial Rye — 5,27 € → 5,26 €",
+			"content_html": "<p>Tuotteen Mallaskoski Black Imperial Rye hinta on muuttunut.</p><p>5,27 € → 5,26 € (−0,01 €, −0,19 %).</p>",
+			"summary": "Tuotteen Mallaskoski Black Imperial Rye hinta on muuttunut. 5,27 € → 5,26 € (−0,01 €, −0,19 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/797014-2507c0f5ba04.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

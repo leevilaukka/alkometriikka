@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Montesanco Món Bobal 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/911342/",
+	"feed_url": "https://alkometriikka.fi/rss/911342.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Montesanco Món Bobal 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-911342-2026-07-18-41.91",
+			"url": "https://alkometriikka.fi/tuotteet/911342/",
+			"title": "Montesanco Món Bobal 2019 — 41,23 € → 41,91 €",
+			"content_html": "<p>Tuotteen Montesanco Món Bobal 2019 hinta on muuttunut.</p><p>41,23 € → 41,91 € (+0,68 €, +1,65 %).</p>",
+			"summary": "Tuotteen Montesanco Món Bobal 2019 hinta on muuttunut. 41,23 € → 41,91 € (+0,68 €, +1,65 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/911342-4a1916a162b2.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

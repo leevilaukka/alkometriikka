@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bollinger Special Cuvée Champagne Brut Jeroboam – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/581058/",
+	"feed_url": "https://alkometriikka.fi/rss/581058.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bollinger Special Cuvée Champagne Brut Jeroboam.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-581058-2026-07-18-441.69",
+			"url": "https://alkometriikka.fi/tuotteet/581058/",
+			"title": "Bollinger Special Cuvée Champagne Brut Jeroboam — 438,55 € → 441,69 €",
+			"content_html": "<p>Tuotteen Bollinger Special Cuvée Champagne Brut Jeroboam hinta on muuttunut.</p><p>438,55 € → 441,69 € (+3,14 €, +0,72 %).</p>",
+			"summary": "Tuotteen Bollinger Special Cuvée Champagne Brut Jeroboam hinta on muuttunut. 438,55 € → 441,69 € (+3,14 €, +0,72 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/581058-32a53b48e08b.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

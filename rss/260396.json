@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pople Peach Party muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/260396/",
+	"feed_url": "https://alkometriikka.fi/rss/260396.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pople Peach Party muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-260396-2026-07-18-12.9",
+			"url": "https://alkometriikka.fi/tuotteet/260396/",
+			"title": "Pople Peach Party muovipullo — 12,83 € → 12,90 €",
+			"content_html": "<p>Tuotteen Pople Peach Party muovipullo hinta on muuttunut.</p><p>12,83 € → 12,90 € (+0,07 €, +0,55 %).</p>",
+			"summary": "Tuotteen Pople Peach Party muovipullo hinta on muuttunut. 12,83 € → 12,90 € (+0,07 €, +0,55 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/260396-b1cc883d450f.png",
+			"tags": [
+				"Väkevät",
+				"hedelmäliköörit"
+			]
+		}
+	]
+}

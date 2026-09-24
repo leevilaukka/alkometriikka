@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glasgow 1770 Peated Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/954095/",
+	"feed_url": "https://alkometriikka.fi/rss/954095.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glasgow 1770 Peated Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-954095-2026-07-18-79.88",
+			"url": "https://alkometriikka.fi/tuotteet/954095/",
+			"title": "Glasgow 1770 Peated Single Malt — 92,96 € → 79,88 €",
+			"content_html": "<p>Tuotteen Glasgow 1770 Peated Single Malt hinta on muuttunut.</p><p>92,96 € → 79,88 € (−13,08 €, −14,07 %).</p>",
+			"summary": "Tuotteen Glasgow 1770 Peated Single Malt hinta on muuttunut. 92,96 € → 79,88 € (−13,08 €, −14,07 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/954095-20fc592335a8.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

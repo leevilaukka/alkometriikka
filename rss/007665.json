@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Moselland Riesling Kabinett 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/007665/",
+	"feed_url": "https://alkometriikka.fi/rss/007665.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Moselland Riesling Kabinett 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-007665-2026-07-18-9.89",
+			"url": "https://alkometriikka.fi/tuotteet/007665/",
+			"title": "Moselland Riesling Kabinett 2025 — 9,99 € → 9,89 €",
+			"content_html": "<p>Tuotteen Moselland Riesling Kabinett 2025 hinta on muuttunut.</p><p>9,99 € → 9,89 € (−0,10 €, −1,00 %).</p>",
+			"summary": "Tuotteen Moselland Riesling Kabinett 2025 hinta on muuttunut. 9,99 € → 9,89 € (−0,10 €, −1,00 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/007665-86a4220f8c17.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Label 5 Classic Black – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/906547/",
+	"feed_url": "https://alkometriikka.fi/rss/906547.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Label 5 Classic Black.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-906547-2026-07-18-26.29",
+			"url": "https://alkometriikka.fi/tuotteet/906547/",
+			"title": "Label 5 Classic Black — 26,27 € → 26,29 €",
+			"content_html": "<p>Tuotteen Label 5 Classic Black hinta on muuttunut.</p><p>26,27 € → 26,29 € (+0,02 €, +0,08 %).</p>",
+			"summary": "Tuotteen Label 5 Classic Black hinta on muuttunut. 26,27 € → 26,29 € (+0,02 €, +0,08 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/906547-b8af19b96a51.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

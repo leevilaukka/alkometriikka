@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Sihinä Kupliva Puolukkakuohari – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/921696/",
+	"feed_url": "https://alkometriikka.fi/rss/921696.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Sihinä Kupliva Puolukkakuohari.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-921696-2026-07-18-13.79",
+			"url": "https://alkometriikka.fi/tuotteet/921696/",
+			"title": "Sihinä Kupliva Puolukkakuohari — 13,64 € → 13,79 €",
+			"content_html": "<p>Tuotteen Sihinä Kupliva Puolukkakuohari hinta on muuttunut.</p><p>13,64 € → 13,79 € (+0,15 €, +1,10 %).</p>",
+			"summary": "Tuotteen Sihinä Kupliva Puolukkakuohari hinta on muuttunut. 13,64 € → 13,79 € (+0,15 €, +1,10 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/921696-09707d6c51ef.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat kuohuviinit"
+			]
+		}
+	]
+}

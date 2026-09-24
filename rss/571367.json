@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – J. Moreau & Fils Chablis 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/571367/",
+	"feed_url": "https://alkometriikka.fi/rss/571367.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: J. Moreau & Fils Chablis 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-571367-2026-07-18-25.48",
+			"url": "https://alkometriikka.fi/tuotteet/571367/",
+			"title": "J. Moreau & Fils Chablis 2025 — 25,44 € → 25,48 €",
+			"content_html": "<p>Tuotteen J. Moreau & Fils Chablis 2025 hinta on muuttunut.</p><p>25,44 € → 25,48 € (+0,04 €, +0,16 %).</p>",
+			"summary": "Tuotteen J. Moreau & Fils Chablis 2025 hinta on muuttunut. 25,44 € → 25,48 € (+0,04 €, +0,16 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/571367-0b15f9cd0a84.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

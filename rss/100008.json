@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Black Scanlan Honey – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/100008/",
+	"feed_url": "https://alkometriikka.fi/rss/100008.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Black Scanlan Honey.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-100008-2026-07-18-25.49",
+			"url": "https://alkometriikka.fi/tuotteet/100008/",
+			"title": "Black Scanlan Honey — 25,13 € → 25,49 €",
+			"content_html": "<p>Tuotteen Black Scanlan Honey hinta on muuttunut.</p><p>25,13 € → 25,49 € (+0,36 €, +1,43 %).</p>",
+			"summary": "Tuotteen Black Scanlan Honey hinta on muuttunut. 25,13 € → 25,49 € (+0,36 €, +1,43 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/100008-135875e7d5e9.png",
+			"tags": [
+				"Väkevät",
+				"mausteliköörit"
+			]
+		}
+	]
+}

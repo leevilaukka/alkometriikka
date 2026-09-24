@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hiisi Ohto Dark Lager – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/798584/",
+	"feed_url": "https://alkometriikka.fi/rss/798584.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hiisi Ohto Dark Lager.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-798584-2026-07-18-4.94",
+			"url": "https://alkometriikka.fi/tuotteet/798584/",
+			"title": "Hiisi Ohto Dark Lager — 4,69 € → 4,94 €",
+			"content_html": "<p>Tuotteen Hiisi Ohto Dark Lager hinta on muuttunut.</p><p>4,69 € → 4,94 € (+0,25 €, +5,33 %).</p>",
+			"summary": "Tuotteen Hiisi Ohto Dark Lager hinta on muuttunut. 4,69 € → 4,94 € (+0,25 €, +5,33 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/798584-feb831421593.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

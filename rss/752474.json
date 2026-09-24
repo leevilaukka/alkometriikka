@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Warsteiner Premium Fresh – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/752474/",
+	"feed_url": "https://alkometriikka.fi/rss/752474.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Warsteiner Premium Fresh.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-752474-2026-09-04-1.88",
+			"url": "https://alkometriikka.fi/tuotteet/752474/",
+			"title": "Warsteiner Premium Fresh — 2,09 € → 1,88 €",
+			"content_html": "<p>Tuotteen Warsteiner Premium Fresh hinta on muuttunut.</p><p>2,09 € → 1,88 € (−0,21 €, −10,05 %).</p>",
+			"summary": "Tuotteen Warsteiner Premium Fresh hinta on muuttunut. 2,09 € → 1,88 € (−0,21 €, −10,05 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/752474-c00dd6f22e99.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-752474-2026-07-18-2.09",
+			"url": "https://alkometriikka.fi/tuotteet/752474/",
+			"title": "Warsteiner Premium Fresh — 2,34 € → 2,09 €",
+			"content_html": "<p>Tuotteen Warsteiner Premium Fresh hinta on muuttunut.</p><p>2,34 € → 2,09 € (−0,25 €, −10,68 %).</p>",
+			"summary": "Tuotteen Warsteiner Premium Fresh hinta on muuttunut. 2,34 € → 2,09 € (−0,25 €, −10,68 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/752474-c00dd6f22e99.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

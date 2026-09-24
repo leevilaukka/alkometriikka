@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Piedemonte Cuatro Tierras 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/923507/",
+	"feed_url": "https://alkometriikka.fi/rss/923507.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Piedemonte Cuatro Tierras 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-923507-2026-07-18-13.79",
+			"url": "https://alkometriikka.fi/tuotteet/923507/",
+			"title": "Piedemonte Cuatro Tierras 2022 — 13,38 € → 13,79 €",
+			"content_html": "<p>Tuotteen Piedemonte Cuatro Tierras 2022 hinta on muuttunut.</p><p>13,38 € → 13,79 € (+0,41 €, +3,06 %).</p>",
+			"summary": "Tuotteen Piedemonte Cuatro Tierras 2022 hinta on muuttunut. 13,38 € → 13,79 € (+0,41 €, +3,06 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/923507-0f826a5c7442.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

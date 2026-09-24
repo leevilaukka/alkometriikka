@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Prunotto Barbaresco 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/921458/",
+	"feed_url": "https://alkometriikka.fi/rss/921458.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Prunotto Barbaresco 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-921458-2026-07-18-46.99",
+			"url": "https://alkometriikka.fi/tuotteet/921458/",
+			"title": "Prunotto Barbaresco 2021 — 47,44 € → 46,99 €",
+			"content_html": "<p>Tuotteen Prunotto Barbaresco 2021 hinta on muuttunut.</p><p>47,44 € → 46,99 € (−0,45 €, −0,95 %).</p>",
+			"summary": "Tuotteen Prunotto Barbaresco 2021 hinta on muuttunut. 47,44 € → 46,99 € (−0,45 €, −0,95 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/921458-b6a3749859bb.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Helmi Salmiakkikermalikööri muovipullo – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/287056/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Helmi Salmiakkikermalikööri muovipullo.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/287056.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Helmi Salmiakkikermalikööri muovipullo – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Helmi Salmiakkikermalikööri muovipullo — 11,65 € → 11,69 €</title>
+			<link>https://alkometriikka.fi/tuotteet/287056/</link>
+			<guid isPermaLink="false">alkometriikka-287056-2026-07-18-11.69</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / kermaliköörit</category>
+			<description><![CDATA[<p>Tuotteen Helmi Salmiakkikermalikööri muovipullo hinta on muuttunut.</p><p>11,65 € → 11,69 € (+0,04 €, +0,34 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/287056-8bdd728b034f.png" />
+		</item>
+		<item>
+			<title>Helmi Salmiakkikermalikööri muovipullo — 11,65 € → 11,45 €</title>
+			<link>https://alkometriikka.fi/tuotteet/287056/</link>
+			<guid isPermaLink="false">alkometriikka-287056-2026-02-02-11.45</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / kermaliköörit</category>
+			<description><![CDATA[<p>Tuotteen Helmi Salmiakkikermalikööri muovipullo hinta on muuttunut.</p><p>11,65 € → 11,45 € (−0,20 €, −1,72 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/287056-8bdd728b034f.png" />
+		</item>
+		<item>
+			<title>Helmi Salmiakkikermalikööri muovipullo — 11,45 € → 11,65 €</title>
+			<link>https://alkometriikka.fi/tuotteet/287056/</link>
+			<guid isPermaLink="false">alkometriikka-287056-2026-02-02-11.65</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / kermaliköörit</category>
+			<description><![CDATA[<p>Tuotteen Helmi Salmiakkikermalikööri muovipullo hinta on muuttunut.</p><p>11,45 € → 11,65 € (+0,20 €, +1,75 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/287056-8bdd728b034f.png" />
+		</item>
+	</channel>
+</rss>

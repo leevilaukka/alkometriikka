@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Laurent Vogt Crémant d'Alsace Blanc de Blancs Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/908127/",
+	"feed_url": "https://alkometriikka.fi/rss/908127.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Laurent Vogt Crémant d'Alsace Blanc de Blancs Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-908127-2026-07-18-24.92",
+			"url": "https://alkometriikka.fi/tuotteet/908127/",
+			"title": "Laurent Vogt Crémant d'Alsace Blanc de Blancs Brut — 25,04 € → 24,92 €",
+			"content_html": "<p>Tuotteen Laurent Vogt Crémant d'Alsace Blanc de Blancs Brut hinta on muuttunut.</p><p>25,04 € → 24,92 € (−0,12 €, −0,48 %).</p>",
+			"summary": "Tuotteen Laurent Vogt Crémant d'Alsace Blanc de Blancs Brut hinta on muuttunut. 25,04 € → 24,92 € (−0,12 €, −0,48 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/908127-0800a9bcf14c.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

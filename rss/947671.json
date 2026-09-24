@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Delavenne Grand Cru Rosé Marne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/947671/",
+	"feed_url": "https://alkometriikka.fi/rss/947671.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Delavenne Grand Cru Rosé Marne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-947671-2026-07-18-60",
+			"url": "https://alkometriikka.fi/tuotteet/947671/",
+			"title": "Delavenne Grand Cru Rosé Marne Brut — 60,45 € → 60,00 €",
+			"content_html": "<p>Tuotteen Delavenne Grand Cru Rosé Marne Brut hinta on muuttunut.</p><p>60,45 € → 60,00 € (−0,45 €, −0,74 %).</p>",
+			"summary": "Tuotteen Delavenne Grand Cru Rosé Marne Brut hinta on muuttunut. 60,45 € → 60,00 € (−0,45 €, −0,74 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/947671-593205851b3a.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

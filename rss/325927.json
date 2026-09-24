@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hehkuviini – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/325927/",
+	"feed_url": "https://alkometriikka.fi/rss/325927.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hehkuviini.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-325927-2026-07-18-14.99",
+			"url": "https://alkometriikka.fi/tuotteet/325927/",
+			"title": "Hehkuviini — 14,70 € → 14,99 €",
+			"content_html": "<p>Tuotteen Hehkuviini hinta on muuttunut.</p><p>14,70 € → 14,99 € (+0,29 €, +1,97 %).</p>",
+			"summary": "Tuotteen Hehkuviini hinta on muuttunut. 14,70 € → 14,99 € (+0,29 €, +1,97 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/325927-e8515266284f.png",
+			"tags": [
+				"Välituotteet",
+				"glögit"
+			]
+		}
+	]
+}

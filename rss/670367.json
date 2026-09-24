@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Noita Grüner Veltliner 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/670367/",
+	"feed_url": "https://alkometriikka.fi/rss/670367.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Noita Grüner Veltliner 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-670367-2026-07-18-17.98",
+			"url": "https://alkometriikka.fi/tuotteet/670367/",
+			"title": "Noita Grüner Veltliner 2024 — 19,99 € → 17,98 €",
+			"content_html": "<p>Tuotteen Noita Grüner Veltliner 2024 hinta on muuttunut.</p><p>19,99 € → 17,98 € (−2,01 €, −10,06 %).</p>",
+			"summary": "Tuotteen Noita Grüner Veltliner 2024 hinta on muuttunut. 19,99 € → 17,98 € (−2,01 €, −10,06 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/670367-3ed28da3acbf.png",
+			"tags": [
+				"Viinit",
+				"hedelmä- ja aromatisoidut viinit"
+			]
+		}
+	]
+}

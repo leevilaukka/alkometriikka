@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Yellowstone Select – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/936902/",
+	"feed_url": "https://alkometriikka.fi/rss/936902.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Yellowstone Select.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-936902-2026-07-18-69.99",
+			"url": "https://alkometriikka.fi/tuotteet/936902/",
+			"title": "Yellowstone Select — 70,30 € → 69,99 €",
+			"content_html": "<p>Tuotteen Yellowstone Select hinta on muuttunut.</p><p>70,30 € → 69,99 € (−0,31 €, −0,44 %).</p>",
+			"summary": "Tuotteen Yellowstone Select hinta on muuttunut. 70,30 € → 69,99 € (−0,31 €, −0,44 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/936902-320438c44c37.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

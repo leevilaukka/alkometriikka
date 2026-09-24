@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Col di Lamo Brunello di Montalcino Riserva 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/913173/",
+	"feed_url": "https://alkometriikka.fi/rss/913173.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Col di Lamo Brunello di Montalcino Riserva 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-913173-2026-07-18-108.99",
+			"url": "https://alkometriikka.fi/tuotteet/913173/",
+			"title": "Col di Lamo Brunello di Montalcino Riserva 2019 — 98,46 € → 108,99 €",
+			"content_html": "<p>Tuotteen Col di Lamo Brunello di Montalcino Riserva 2019 hinta on muuttunut.</p><p>98,46 € → 108,99 € (+10,53 €, +10,69 %).</p>",
+			"summary": "Tuotteen Col di Lamo Brunello di Montalcino Riserva 2019 hinta on muuttunut. 98,46 € → 108,99 € (+10,53 €, +10,69 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/913173-6d0611427a7e.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

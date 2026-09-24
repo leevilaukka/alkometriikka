@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Fraga do Corvo Godello 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/924524/",
+	"feed_url": "https://alkometriikka.fi/rss/924524.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Fraga do Corvo Godello 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-924524-2026-07-18-22.9",
+			"url": "https://alkometriikka.fi/tuotteet/924524/",
+			"title": "Fraga do Corvo Godello 2023 — 22,38 € → 22,90 €",
+			"content_html": "<p>Tuotteen Fraga do Corvo Godello 2023 hinta on muuttunut.</p><p>22,38 € → 22,90 € (+0,52 €, +2,32 %).</p>",
+			"summary": "Tuotteen Fraga do Corvo Godello 2023 hinta on muuttunut. 22,38 € → 22,90 € (+0,52 €, +2,32 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/924524-0449e4f38dbb.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

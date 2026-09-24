@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – El Tiempo Blanco – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/580847/",
+	"feed_url": "https://alkometriikka.fi/rss/580847.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: El Tiempo Blanco.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-580847-2026-07-18-8.99",
+			"url": "https://alkometriikka.fi/tuotteet/580847/",
+			"title": "El Tiempo Blanco — 9,46 € → 8,99 €",
+			"content_html": "<p>Tuotteen El Tiempo Blanco hinta on muuttunut.</p><p>9,46 € → 8,99 € (−0,47 €, −4,97 %).</p>",
+			"summary": "Tuotteen El Tiempo Blanco hinta on muuttunut. 9,46 € → 8,99 € (−0,47 €, −4,97 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/580847-b86189952717.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Readers´Rum Preface – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/907463/",
+	"feed_url": "https://alkometriikka.fi/rss/907463.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Readers´Rum Preface.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-907463-2026-07-18-39.95",
+			"url": "https://alkometriikka.fi/tuotteet/907463/",
+			"title": "Readers´Rum Preface — 43,97 € → 39,95 €",
+			"content_html": "<p>Tuotteen Readers´Rum Preface hinta on muuttunut.</p><p>43,97 € → 39,95 € (−4,02 €, −9,14 %).</p>",
+			"summary": "Tuotteen Readers´Rum Preface hinta on muuttunut. 43,97 € → 39,95 € (−4,02 €, −9,14 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/907463-726c9f60c54a.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

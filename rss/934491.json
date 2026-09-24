@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Shabo Saperavi Grande Reserve 2016 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/934491/",
+	"feed_url": "https://alkometriikka.fi/rss/934491.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Shabo Saperavi Grande Reserve 2016.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-934491-2026-07-18-44.5",
+			"url": "https://alkometriikka.fi/tuotteet/934491/",
+			"title": "Shabo Saperavi Grande Reserve 2016 — 44,45 € → 44,50 €",
+			"content_html": "<p>Tuotteen Shabo Saperavi Grande Reserve 2016 hinta on muuttunut.</p><p>44,45 € → 44,50 € (+0,05 €, +0,11 %).</p>",
+			"summary": "Tuotteen Shabo Saperavi Grande Reserve 2016 hinta on muuttunut. 44,45 € → 44,50 € (+0,05 €, +0,11 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/934491-cf82049832bd.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

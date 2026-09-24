@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Abavas Summer Cider – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/782724/",
+	"feed_url": "https://alkometriikka.fi/rss/782724.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Abavas Summer Cider.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-782724-2026-07-18-5.47",
+			"url": "https://alkometriikka.fi/tuotteet/782724/",
+			"title": "Abavas Summer Cider — 4,96 € → 5,47 €",
+			"content_html": "<p>Tuotteen Abavas Summer Cider hinta on muuttunut.</p><p>4,96 € → 5,47 € (+0,51 €, +10,28 %).</p>",
+			"summary": "Tuotteen Abavas Summer Cider hinta on muuttunut. 4,96 € → 5,47 € (+0,51 €, +10,28 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/782724-4e5ffa1ad260.png",
+			"tags": [
+				"Panimotuotteet",
+				"siiderit"
+			]
+		}
+	]
+}

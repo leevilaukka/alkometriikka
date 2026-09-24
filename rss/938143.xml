@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Leyda Reserva Riesling 2023 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/938143/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Leyda Reserva Riesling 2023.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/938143.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Leyda Reserva Riesling 2023 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Leyda Reserva Riesling 2023 — 12,99 € → 12,89 €</title>
+			<link>https://alkometriikka.fi/tuotteet/938143/</link>
+			<guid isPermaLink="false">alkometriikka-938143-2026-02-02-12.89</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / valkoviinit</category>
+			<description><![CDATA[<p>Tuotteen Leyda Reserva Riesling 2023 hinta on muuttunut.</p><p>12,99 € → 12,89 € (−0,10 €, −0,77 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/938143-2509f6bdb707.png" />
+		</item>
+		<item>
+			<title>Leyda Reserva Riesling 2023 — 12,89 € → 12,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/938143/</link>
+			<guid isPermaLink="false">alkometriikka-938143-2026-02-02-12.99</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / valkoviinit</category>
+			<description><![CDATA[<p>Tuotteen Leyda Reserva Riesling 2023 hinta on muuttunut.</p><p>12,89 € → 12,99 € (+0,10 €, +0,78 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/938143-2509f6bdb707.png" />
+		</item>
+	</channel>
+</rss>

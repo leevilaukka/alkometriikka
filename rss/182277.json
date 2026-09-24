@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ledaig 10 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/182277/",
+	"feed_url": "https://alkometriikka.fi/rss/182277.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ledaig 10 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-182277-2026-07-18-64.99",
+			"url": "https://alkometriikka.fi/tuotteet/182277/",
+			"title": "Ledaig 10 Year Old Single Malt — 64,97 € → 64,99 €",
+			"content_html": "<p>Tuotteen Ledaig 10 Year Old Single Malt hinta on muuttunut.</p><p>64,97 € → 64,99 € (+0,02 €, +0,03 %).</p>",
+			"summary": "Tuotteen Ledaig 10 Year Old Single Malt hinta on muuttunut. 64,97 € → 64,99 € (+0,02 €, +0,03 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/182277-75bb0b8d6200.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

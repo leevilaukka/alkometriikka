@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Poli Po'di Aromatica Grappa – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/910637/",
+	"feed_url": "https://alkometriikka.fi/rss/910637.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Poli Po'di Aromatica Grappa.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-910637-2026-07-18-56.98",
+			"url": "https://alkometriikka.fi/tuotteet/910637/",
+			"title": "Poli Po'di Aromatica Grappa — 56,20 € → 56,98 €",
+			"content_html": "<p>Tuotteen Poli Po'di Aromatica Grappa hinta on muuttunut.</p><p>56,20 € → 56,98 € (+0,78 €, +1,39 %).</p>",
+			"summary": "Tuotteen Poli Po'di Aromatica Grappa hinta on muuttunut. 56,20 € → 56,98 € (+0,78 €, +1,39 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/910637-d41d4e1459ff.png",
+			"tags": [
+				"Väkevät",
+				"grapat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kamnik Terroir Vranec Grand Reserva 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/937201/",
+	"feed_url": "https://alkometriikka.fi/rss/937201.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kamnik Terroir Vranec Grand Reserva 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-937201-2026-07-18-99.98",
+			"url": "https://alkometriikka.fi/tuotteet/937201/",
+			"title": "Kamnik Terroir Vranec Grand Reserva 2018 — 100,44 € → 99,98 €",
+			"content_html": "<p>Tuotteen Kamnik Terroir Vranec Grand Reserva 2018 hinta on muuttunut.</p><p>100,44 € → 99,98 € (−0,46 €, −0,46 %).</p>",
+			"summary": "Tuotteen Kamnik Terroir Vranec Grand Reserva 2018 hinta on muuttunut. 100,44 € → 99,98 € (−0,46 €, −0,46 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/937201-ed73abcc723e.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

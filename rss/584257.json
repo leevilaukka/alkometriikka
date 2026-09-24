@@ -1,0 +1,50 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pieropan La Rocca 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/584257/",
+	"feed_url": "https://alkometriikka.fi/rss/584257.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pieropan La Rocca 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-584257-2026-07-18-40.99",
+			"url": "https://alkometriikka.fi/tuotteet/584257/",
+			"title": "Pieropan La Rocca 2024 — 40,20 € → 40,99 €",
+			"content_html": "<p>Tuotteen Pieropan La Rocca 2024 hinta on muuttunut.</p><p>40,20 € → 40,99 € (+0,79 €, +1,97 %).</p>",
+			"summary": "Tuotteen Pieropan La Rocca 2024 hinta on muuttunut. 40,20 € → 40,99 € (+0,79 €, +1,97 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/584257-57eb4b652da2.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-584257-2026-02-02-40.1",
+			"url": "https://alkometriikka.fi/tuotteet/584257/",
+			"title": "Pieropan La Rocca 2024 — 40,20 € → 40,10 €",
+			"content_html": "<p>Tuotteen Pieropan La Rocca 2024 hinta on muuttunut.</p><p>40,20 € → 40,10 € (−0,10 €, −0,25 %).</p>",
+			"summary": "Tuotteen Pieropan La Rocca 2024 hinta on muuttunut. 40,20 € → 40,10 € (−0,10 €, −0,25 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/584257-57eb4b652da2.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-584257-2026-02-02-40.2",
+			"url": "https://alkometriikka.fi/tuotteet/584257/",
+			"title": "Pieropan La Rocca 2024 — 40,10 € → 40,20 €",
+			"content_html": "<p>Tuotteen Pieropan La Rocca 2024 hinta on muuttunut.</p><p>40,10 € → 40,20 € (+0,10 €, +0,25 %).</p>",
+			"summary": "Tuotteen Pieropan La Rocca 2024 hinta on muuttunut. 40,10 € → 40,20 € (+0,10 €, +0,25 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/584257-57eb4b652da2.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

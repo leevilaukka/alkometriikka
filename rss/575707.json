@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Barrels and Drums Chardonnay Non-alcoholic Sparkling – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/575707/",
+	"feed_url": "https://alkometriikka.fi/rss/575707.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Barrels and Drums Chardonnay Non-alcoholic Sparkling.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-575707-2026-07-18-8.94",
+			"url": "https://alkometriikka.fi/tuotteet/575707/",
+			"title": "Barrels and Drums Chardonnay Non-alcoholic Sparkling — 8,66 € → 8,94 €",
+			"content_html": "<p>Tuotteen Barrels and Drums Chardonnay Non-alcoholic Sparkling hinta on muuttunut.</p><p>8,66 € → 8,94 € (+0,28 €, +3,23 %).</p>",
+			"summary": "Tuotteen Barrels and Drums Chardonnay Non-alcoholic Sparkling hinta on muuttunut. 8,66 € → 8,94 € (+0,28 €, +3,23 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/575707-90c882382741.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat kuohuviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mailly Grand Cru Réserve Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/921604/",
+	"feed_url": "https://alkometriikka.fi/rss/921604.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mailly Grand Cru Réserve Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-921604-2026-07-18-31.89",
+			"url": "https://alkometriikka.fi/tuotteet/921604/",
+			"title": "Mailly Grand Cru Réserve Champagne Brut — 31,39 € → 31,89 €",
+			"content_html": "<p>Tuotteen Mailly Grand Cru Réserve Champagne Brut hinta on muuttunut.</p><p>31,39 € → 31,89 € (+0,50 €, +1,59 %).</p>",
+			"summary": "Tuotteen Mailly Grand Cru Réserve Champagne Brut hinta on muuttunut. 31,39 € → 31,89 € (+0,50 €, +1,59 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/921604-91635ca0a9e6.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

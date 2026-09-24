@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Berså Terra Alta 2022 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/919814/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Berså Terra Alta 2022.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/919814.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Berså Terra Alta 2022 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Berså Terra Alta 2022 — 17,79 € → 17,69 €</title>
+			<link>https://alkometriikka.fi/tuotteet/919814/</link>
+			<guid isPermaLink="false">alkometriikka-919814-2026-02-02-17.69</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Berså Terra Alta 2022 hinta on muuttunut.</p><p>17,79 € → 17,69 € (−0,10 €, −0,56 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/919814-d1033c297f69.png" />
+		</item>
+		<item>
+			<title>Berså Terra Alta 2022 — 17,69 € → 17,79 €</title>
+			<link>https://alkometriikka.fi/tuotteet/919814/</link>
+			<guid isPermaLink="false">alkometriikka-919814-2026-02-02-17.79</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Berså Terra Alta 2022 hinta on muuttunut.</p><p>17,69 € → 17,79 € (+0,10 €, +0,57 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/919814-d1033c297f69.png" />
+		</item>
+	</channel>
+</rss>

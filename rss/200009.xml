@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Planteray Barbados 20th Anniversary PX XO – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/200009/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Planteray Barbados 20th Anniversary PX XO.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/200009.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Planteray Barbados 20th Anniversary PX XO – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Planteray Barbados 20th Anniversary PX XO — 40,45 € → 39,98 €</title>
+			<link>https://alkometriikka.fi/tuotteet/200009/</link>
+			<guid isPermaLink="false">alkometriikka-200009-2026-07-18-39.98</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / rommit</category>
+			<description><![CDATA[<p>Tuotteen Planteray Barbados 20th Anniversary PX XO hinta on muuttunut.</p><p>40,45 € → 39,98 € (−0,47 €, −1,16 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/200009-bf2371178d0e.png" />
+		</item>
+	</channel>
+</rss>

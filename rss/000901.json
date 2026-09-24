@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hennessy Very Special – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/000901/",
+	"feed_url": "https://alkometriikka.fi/rss/000901.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hennessy Very Special.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-000901-2026-07-18-49.98",
+			"url": "https://alkometriikka.fi/tuotteet/000901/",
+			"title": "Hennessy Very Special — 53,78 € → 49,98 €",
+			"content_html": "<p>Tuotteen Hennessy Very Special hinta on muuttunut.</p><p>53,78 € → 49,98 € (−3,80 €, −7,07 %).</p>",
+			"summary": "Tuotteen Hennessy Very Special hinta on muuttunut. 53,78 € → 49,98 € (−3,80 €, −7,07 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/000901-ab76e815c8d7.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

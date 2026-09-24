@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Noilly Prat Original Dry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/316607/",
+	"feed_url": "https://alkometriikka.fi/rss/316607.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Noilly Prat Original Dry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-316607-2026-07-18-22.98",
+			"url": "https://alkometriikka.fi/tuotteet/316607/",
+			"title": "Noilly Prat Original Dry — 22,09 € → 22,98 €",
+			"content_html": "<p>Tuotteen Noilly Prat Original Dry hinta on muuttunut.</p><p>22,09 € → 22,98 € (+0,89 €, +4,03 %).</p>",
+			"summary": "Tuotteen Noilly Prat Original Dry hinta on muuttunut. 22,09 € → 22,98 € (+0,89 €, +4,03 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/316607-80faa3e72e06.png",
+			"tags": [
+				"Välituotteet",
+				"vermutit"
+			]
+		}
+	]
+}

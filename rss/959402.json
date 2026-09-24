@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Antiche Terre Venete Valpolicella Ripasso 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/959402/",
+	"feed_url": "https://alkometriikka.fi/rss/959402.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Antiche Terre Venete Valpolicella Ripasso 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-959402-2026-07-18-18.48",
+			"url": "https://alkometriikka.fi/tuotteet/959402/",
+			"title": "Antiche Terre Venete Valpolicella Ripasso 2022 — 18,44 € → 18,48 €",
+			"content_html": "<p>Tuotteen Antiche Terre Venete Valpolicella Ripasso 2022 hinta on muuttunut.</p><p>18,44 € → 18,48 € (+0,04 €, +0,22 %).</p>",
+			"summary": "Tuotteen Antiche Terre Venete Valpolicella Ripasso 2022 hinta on muuttunut. 18,44 € → 18,48 € (+0,04 €, +0,22 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/959402-1ed0197d83b5.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

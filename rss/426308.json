@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Errázuriz Max Reserva Cabernet Sauvignon 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/426308/",
+	"feed_url": "https://alkometriikka.fi/rss/426308.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Errázuriz Max Reserva Cabernet Sauvignon 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-426308-2026-07-18-44.98",
+			"url": "https://alkometriikka.fi/tuotteet/426308/",
+			"title": "Errázuriz Max Reserva Cabernet Sauvignon 2018 — 44,91 € → 44,98 €",
+			"content_html": "<p>Tuotteen Errázuriz Max Reserva Cabernet Sauvignon 2018 hinta on muuttunut.</p><p>44,91 € → 44,98 € (+0,07 €, +0,16 %).</p>",
+			"summary": "Tuotteen Errázuriz Max Reserva Cabernet Sauvignon 2018 hinta on muuttunut. 44,91 € → 44,98 € (+0,07 €, +0,16 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/426308-75c21436ce7c.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

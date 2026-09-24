@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Le Sirop de Monin Peach Tea – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/930398/",
+	"feed_url": "https://alkometriikka.fi/rss/930398.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Le Sirop de Monin Peach Tea.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-930398-2026-07-18-22.29",
+			"url": "https://alkometriikka.fi/tuotteet/930398/",
+			"title": "Le Sirop de Monin Peach Tea — 21,96 € → 22,29 €",
+			"content_html": "<p>Tuotteen Le Sirop de Monin Peach Tea hinta on muuttunut.</p><p>21,96 € → 22,29 € (+0,33 €, +1,50 %).</p>",
+			"summary": "Tuotteen Le Sirop de Monin Peach Tea hinta on muuttunut. 21,96 € → 22,29 € (+0,33 €, +1,50 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/930398-76369f99fc17.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

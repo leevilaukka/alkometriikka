@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Poli Segretario di Stato Whisky – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/917902/",
+	"feed_url": "https://alkometriikka.fi/rss/917902.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Poli Segretario di Stato Whisky.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-917902-2026-07-18-78",
+			"url": "https://alkometriikka.fi/tuotteet/917902/",
+			"title": "Poli Segretario di Stato Whisky — 77,20 € → 78,00 €",
+			"content_html": "<p>Tuotteen Poli Segretario di Stato Whisky hinta on muuttunut.</p><p>77,20 € → 78,00 € (+0,80 €, +1,04 %).</p>",
+			"summary": "Tuotteen Poli Segretario di Stato Whisky hinta on muuttunut. 77,20 € → 78,00 € (+0,80 €, +1,04 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/917902-848d840377b4.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

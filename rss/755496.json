@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Karhu 8,0 tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/755496/",
+	"feed_url": "https://alkometriikka.fi/rss/755496.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Karhu 8,0 tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-755496-2026-07-18-3.89",
+			"url": "https://alkometriikka.fi/tuotteet/755496/",
+			"title": "Karhu 8,0 tölkki — 3,79 € → 3,89 €",
+			"content_html": "<p>Tuotteen Karhu 8,0 tölkki hinta on muuttunut.</p><p>3,79 € → 3,89 € (+0,10 €, +2,64 %).</p>",
+			"summary": "Tuotteen Karhu 8,0 tölkki hinta on muuttunut. 3,79 € → 3,89 € (+0,10 €, +2,64 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/755496-45c06e45c36e.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

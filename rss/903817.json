@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Terre del Barolo Nebbiolo d'Alba Biologico 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903817/",
+	"feed_url": "https://alkometriikka.fi/rss/903817.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Terre del Barolo Nebbiolo d'Alba Biologico 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903817-2026-07-18-19.49",
+			"url": "https://alkometriikka.fi/tuotteet/903817/",
+			"title": "Terre del Barolo Nebbiolo d'Alba Biologico 2022 — 19,43 € → 19,49 €",
+			"content_html": "<p>Tuotteen Terre del Barolo Nebbiolo d'Alba Biologico 2022 hinta on muuttunut.</p><p>19,43 € → 19,49 € (+0,06 €, +0,31 %).</p>",
+			"summary": "Tuotteen Terre del Barolo Nebbiolo d'Alba Biologico 2022 hinta on muuttunut. 19,43 € → 19,49 € (+0,06 €, +0,31 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903817-6ba4f31a483d.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

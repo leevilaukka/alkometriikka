@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Viñas del Jaro Jaros 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/915607/",
+	"feed_url": "https://alkometriikka.fi/rss/915607.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Viñas del Jaro Jaros 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-915607-2026-07-18-34.49",
+			"url": "https://alkometriikka.fi/tuotteet/915607/",
+			"title": "Viñas del Jaro Jaros 2022 — 33,99 € → 34,49 €",
+			"content_html": "<p>Tuotteen Viñas del Jaro Jaros 2022 hinta on muuttunut.</p><p>33,99 € → 34,49 € (+0,50 €, +1,47 %).</p>",
+			"summary": "Tuotteen Viñas del Jaro Jaros 2022 hinta on muuttunut. 33,99 € → 34,49 € (+0,50 €, +1,47 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/915607-d717db3e5cfd.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

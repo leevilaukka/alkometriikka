@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Ron Cabana Blanco muovipullo – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/123987/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Ron Cabana Blanco muovipullo.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/123987.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Ron Cabana Blanco muovipullo – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Ron Cabana Blanco muovipullo — 23,97 € → 23,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/123987/</link>
+			<guid isPermaLink="false">alkometriikka-123987-2026-07-18-23.99</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / rommit</category>
+			<description><![CDATA[<p>Tuotteen Ron Cabana Blanco muovipullo hinta on muuttunut.</p><p>23,97 € → 23,99 € (+0,02 €, +0,08 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/123987-84581030ec99.png" />
+		</item>
+	</channel>
+</rss>

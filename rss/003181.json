@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Conde de Monsul Tawny Port – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/003181/",
+	"feed_url": "https://alkometriikka.fi/rss/003181.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Conde de Monsul Tawny Port.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-003181-2026-07-18-19.99",
+			"url": "https://alkometriikka.fi/tuotteet/003181/",
+			"title": "Conde de Monsul Tawny Port — 20,10 € → 19,99 €",
+			"content_html": "<p>Tuotteen Conde de Monsul Tawny Port hinta on muuttunut.</p><p>20,10 € → 19,99 € (−0,11 €, −0,55 %).</p>",
+			"summary": "Tuotteen Conde de Monsul Tawny Port hinta on muuttunut. 20,10 € → 19,99 € (−0,11 €, −0,55 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/003181-dcd39f9497d5.png",
+			"tags": [
+				"Välituotteet",
+				"portviinit"
+			]
+		}
+	]
+}

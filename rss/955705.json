@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Allram Grüner Veltliner Eiswein 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/955705/",
+	"feed_url": "https://alkometriikka.fi/rss/955705.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Allram Grüner Veltliner Eiswein 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-955705-2026-07-18-39.81",
+			"url": "https://alkometriikka.fi/tuotteet/955705/",
+			"title": "Allram Grüner Veltliner Eiswein 2021 — 40,18 € → 39,81 €",
+			"content_html": "<p>Tuotteen Allram Grüner Veltliner Eiswein 2021 hinta on muuttunut.</p><p>40,18 € → 39,81 € (−0,37 €, −0,92 %).</p>",
+			"summary": "Tuotteen Allram Grüner Veltliner Eiswein 2021 hinta on muuttunut. 40,18 € → 39,81 € (−0,37 €, −0,92 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/955705-c92c5753b337.png",
+			"tags": [
+				"Viinit",
+				"jälkiruokaviinit"
+			]
+		}
+	]
+}

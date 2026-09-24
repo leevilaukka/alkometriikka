@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Rochefort 10 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/743434/",
+	"feed_url": "https://alkometriikka.fi/rss/743434.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Rochefort 10.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-743434-2026-07-18-7.86",
+			"url": "https://alkometriikka.fi/tuotteet/743434/",
+			"title": "Rochefort 10 — 7,88 € → 7,86 €",
+			"content_html": "<p>Tuotteen Rochefort 10 hinta on muuttunut.</p><p>7,88 € → 7,86 € (−0,02 €, −0,25 %).</p>",
+			"summary": "Tuotteen Rochefort 10 hinta on muuttunut. 7,88 € → 7,86 € (−0,02 €, −0,25 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/743434-957d635b42b9.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

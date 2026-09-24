@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ettl Pils – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/725656/",
+	"feed_url": "https://alkometriikka.fi/rss/725656.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ettl Pils.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-725656-2026-07-18-3.69",
+			"url": "https://alkometriikka.fi/tuotteet/725656/",
+			"title": "Ettl Pils — 3,59 € → 3,69 €",
+			"content_html": "<p>Tuotteen Ettl Pils hinta on muuttunut.</p><p>3,59 € → 3,69 € (+0,10 €, +2,79 %).</p>",
+			"summary": "Tuotteen Ettl Pils hinta on muuttunut. 3,59 € → 3,69 € (+0,10 €, +2,79 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/725656-c99d3525fe38.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

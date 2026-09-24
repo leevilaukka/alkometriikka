@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Puolukkavodka Cocktail muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/100022/",
+	"feed_url": "https://alkometriikka.fi/rss/100022.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Puolukkavodka Cocktail muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-100022-2026-07-18-12.58",
+			"url": "https://alkometriikka.fi/tuotteet/100022/",
+			"title": "Puolukkavodka Cocktail muovipullo — 12,28 € → 12,58 €",
+			"content_html": "<p>Tuotteen Puolukkavodka Cocktail muovipullo hinta on muuttunut.</p><p>12,28 € → 12,58 € (+0,30 €, +2,44 %).</p>",
+			"summary": "Tuotteen Puolukkavodka Cocktail muovipullo hinta on muuttunut. 12,28 € → 12,58 € (+0,30 €, +2,44 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/100022-ddeeb7413d02.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

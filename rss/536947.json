@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nadal Original Reserva Corpinnat Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/536947/",
+	"feed_url": "https://alkometriikka.fi/rss/536947.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nadal Original Reserva Corpinnat Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-536947-2026-07-18-22.99",
+			"url": "https://alkometriikka.fi/tuotteet/536947/",
+			"title": "Nadal Original Reserva Corpinnat Brut — 23,35 € → 22,99 €",
+			"content_html": "<p>Tuotteen Nadal Original Reserva Corpinnat Brut hinta on muuttunut.</p><p>23,35 € → 22,99 € (−0,36 €, −1,54 %).</p>",
+			"summary": "Tuotteen Nadal Original Reserva Corpinnat Brut hinta on muuttunut. 23,35 € → 22,99 € (−0,36 €, −1,54 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/536947-b4d0a72d0ad0.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

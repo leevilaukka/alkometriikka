@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Le Sirop de Monin Strawberry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/914735/",
+	"feed_url": "https://alkometriikka.fi/rss/914735.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Le Sirop de Monin Strawberry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-914735-2026-07-18-21.45",
+			"url": "https://alkometriikka.fi/tuotteet/914735/",
+			"title": "Le Sirop de Monin Strawberry — 21,11 € → 21,45 €",
+			"content_html": "<p>Tuotteen Le Sirop de Monin Strawberry hinta on muuttunut.</p><p>21,11 € → 21,45 € (+0,34 €, +1,61 %).</p>",
+			"summary": "Tuotteen Le Sirop de Monin Strawberry hinta on muuttunut. 21,11 € → 21,45 € (+0,34 €, +1,61 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/914735-87aa59d0e846.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

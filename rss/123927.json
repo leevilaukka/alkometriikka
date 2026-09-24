@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hine VSOP – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/123927/",
+	"feed_url": "https://alkometriikka.fi/rss/123927.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hine VSOP.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-123927-2026-07-18-57.99",
+			"url": "https://alkometriikka.fi/tuotteet/123927/",
+			"title": "Hine VSOP — 55,85 € → 57,99 €",
+			"content_html": "<p>Tuotteen Hine VSOP hinta on muuttunut.</p><p>55,85 € → 57,99 € (+2,14 €, +3,83 %).</p>",
+			"summary": "Tuotteen Hine VSOP hinta on muuttunut. 55,85 € → 57,99 € (+2,14 €, +3,83 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/123927-b6e33b7218e0.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

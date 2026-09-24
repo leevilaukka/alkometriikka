@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Farrell Irish Whiskey – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/927402/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Farrell Irish Whiskey.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/927402.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Farrell Irish Whiskey – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Farrell Irish Whiskey — 31,26 € → 31,89 €</title>
+			<link>https://alkometriikka.fi/tuotteet/927402/</link>
+			<guid isPermaLink="false">alkometriikka-927402-2026-07-18-31.89</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / viskit</category>
+			<description><![CDATA[<p>Tuotteen Farrell Irish Whiskey hinta on muuttunut.</p><p>31,26 € → 31,89 € (+0,63 €, +2,02 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/927402-833a93924ae1.png" />
+		</item>
+	</channel>
+</rss>

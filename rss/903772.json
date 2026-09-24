@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Unicum Barista – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903772/",
+	"feed_url": "https://alkometriikka.fi/rss/903772.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Unicum Barista.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903772-2026-07-18-2.99",
+			"url": "https://alkometriikka.fi/tuotteet/903772/",
+			"title": "Unicum Barista — 3,09 € → 2,99 €",
+			"content_html": "<p>Tuotteen Unicum Barista hinta on muuttunut.</p><p>3,09 € → 2,99 € (−0,10 €, −3,24 %).</p>",
+			"summary": "Tuotteen Unicum Barista hinta on muuttunut. 3,09 € → 2,99 € (−0,10 €, −3,24 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903772-f3d2e4a6b333.png",
+			"tags": [
+				"Väkevät",
+				"yrttiliköörit"
+			]
+		}
+	]
+}

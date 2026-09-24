@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – San José Silver Tequila – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/917727/",
+	"feed_url": "https://alkometriikka.fi/rss/917727.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: San José Silver Tequila.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-917727-2026-07-18-29.25",
+			"url": "https://alkometriikka.fi/tuotteet/917727/",
+			"title": "San José Silver Tequila — 29,22 € → 29,25 €",
+			"content_html": "<p>Tuotteen San José Silver Tequila hinta on muuttunut.</p><p>29,22 € → 29,25 € (+0,03 €, +0,10 %).</p>",
+			"summary": "Tuotteen San José Silver Tequila hinta on muuttunut. 29,22 € → 29,25 € (+0,03 €, +0,10 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/917727-a0fdddd536cf.png",
+			"tags": [
+				"Väkevät",
+				"Tequilat"
+			]
+		}
+	]
+}

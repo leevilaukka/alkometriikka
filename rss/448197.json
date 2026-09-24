@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – La Braccesca Achelo 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/448197/",
+	"feed_url": "https://alkometriikka.fi/rss/448197.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: La Braccesca Achelo 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-448197-2026-07-18-24.48",
+			"url": "https://alkometriikka.fi/tuotteet/448197/",
+			"title": "La Braccesca Achelo 2024 — 24,43 € → 24,48 €",
+			"content_html": "<p>Tuotteen La Braccesca Achelo 2024 hinta on muuttunut.</p><p>24,43 € → 24,48 € (+0,05 €, +0,20 %).</p>",
+			"summary": "Tuotteen La Braccesca Achelo 2024 hinta on muuttunut. 24,43 € → 24,48 € (+0,05 €, +0,20 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/448197-55e8a2ddbc57.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

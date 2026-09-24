@@ -1,0 +1,50 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Albert Jarraud VSOP – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/000933/",
+	"feed_url": "https://alkometriikka.fi/rss/000933.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Albert Jarraud VSOP.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-000933-2026-07-18-18.1",
+			"url": "https://alkometriikka.fi/tuotteet/000933/",
+			"title": "Albert Jarraud VSOP — 18,08 € → 18,10 €",
+			"content_html": "<p>Tuotteen Albert Jarraud VSOP hinta on muuttunut.</p><p>18,08 € → 18,10 € (+0,02 €, +0,11 %).</p>",
+			"summary": "Tuotteen Albert Jarraud VSOP hinta on muuttunut. 18,08 € → 18,10 € (+0,02 €, +0,11 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/000933-e3db314671bc.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		},
+		{
+			"id": "alkometriikka-000933-2026-02-02-17.98",
+			"url": "https://alkometriikka.fi/tuotteet/000933/",
+			"title": "Albert Jarraud VSOP — 18,08 € → 17,98 €",
+			"content_html": "<p>Tuotteen Albert Jarraud VSOP hinta on muuttunut.</p><p>18,08 € → 17,98 € (−0,10 €, −0,55 %).</p>",
+			"summary": "Tuotteen Albert Jarraud VSOP hinta on muuttunut. 18,08 € → 17,98 € (−0,10 €, −0,55 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/000933-e3db314671bc.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		},
+		{
+			"id": "alkometriikka-000933-2026-02-02-18.08",
+			"url": "https://alkometriikka.fi/tuotteet/000933/",
+			"title": "Albert Jarraud VSOP — 17,98 € → 18,08 €",
+			"content_html": "<p>Tuotteen Albert Jarraud VSOP hinta on muuttunut.</p><p>17,98 € → 18,08 € (+0,10 €, +0,56 %).</p>",
+			"summary": "Tuotteen Albert Jarraud VSOP hinta on muuttunut. 17,98 € → 18,08 € (+0,10 €, +0,56 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/000933-e3db314671bc.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

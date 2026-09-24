@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Moët & Chandon Rosé Impérial Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/589057/",
+	"feed_url": "https://alkometriikka.fi/rss/589057.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Moët & Chandon Rosé Impérial Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-589057-2026-07-18-74.98",
+			"url": "https://alkometriikka.fi/tuotteet/589057/",
+			"title": "Moët & Chandon Rosé Impérial Champagne Brut — 73,75 € → 74,98 €",
+			"content_html": "<p>Tuotteen Moët & Chandon Rosé Impérial Champagne Brut hinta on muuttunut.</p><p>73,75 € → 74,98 € (+1,23 €, +1,67 %).</p>",
+			"summary": "Tuotteen Moët & Chandon Rosé Impérial Champagne Brut hinta on muuttunut. 73,75 € → 74,98 € (+1,23 €, +1,67 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/589057-bd3b13bde1f8.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

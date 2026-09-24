@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Marques de Vargas Reserva 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900845/",
+	"feed_url": "https://alkometriikka.fi/rss/900845.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Marques de Vargas Reserva 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900845-2026-07-18-33.49",
+			"url": "https://alkometriikka.fi/tuotteet/900845/",
+			"title": "Marques de Vargas Reserva 2019 — 33,43 € → 33,49 €",
+			"content_html": "<p>Tuotteen Marques de Vargas Reserva 2019 hinta on muuttunut.</p><p>33,43 € → 33,49 € (+0,06 €, +0,18 %).</p>",
+			"summary": "Tuotteen Marques de Vargas Reserva 2019 hinta on muuttunut. 33,43 € → 33,49 € (+0,06 €, +0,18 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900845-10359d03328d.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

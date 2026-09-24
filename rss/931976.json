@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Le Sirop de Monin Caramel Sugar Free – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/931976/",
+	"feed_url": "https://alkometriikka.fi/rss/931976.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Le Sirop de Monin Caramel Sugar Free.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-931976-2026-07-18-18.99",
+			"url": "https://alkometriikka.fi/tuotteet/931976/",
+			"title": "Le Sirop de Monin Caramel Sugar Free — 18,92 € → 18,99 €",
+			"content_html": "<p>Tuotteen Le Sirop de Monin Caramel Sugar Free hinta on muuttunut.</p><p>18,92 € → 18,99 € (+0,07 €, +0,37 %).</p>",
+			"summary": "Tuotteen Le Sirop de Monin Caramel Sugar Free hinta on muuttunut. 18,92 € → 18,99 € (+0,07 €, +0,37 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/931976-84058e26668e.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

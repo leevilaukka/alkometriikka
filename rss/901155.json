@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Laurent-Perrier la Cuvée Champagne Brut Mathusalem – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901155/",
+	"feed_url": "https://alkometriikka.fi/rss/901155.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Laurent-Perrier la Cuvée Champagne Brut Mathusalem.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901155-2026-07-18-1059.98",
+			"url": "https://alkometriikka.fi/tuotteet/901155/",
+			"title": "Laurent-Perrier la Cuvée Champagne Brut Mathusalem — 1 060,38 € → 1 059,98 €",
+			"content_html": "<p>Tuotteen Laurent-Perrier la Cuvée Champagne Brut Mathusalem hinta on muuttunut.</p><p>1 060,38 € → 1 059,98 € (−0,40 €, −0,04 %).</p>",
+			"summary": "Tuotteen Laurent-Perrier la Cuvée Champagne Brut Mathusalem hinta on muuttunut. 1 060,38 € → 1 059,98 € (−0,40 €, −0,04 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901155-4738e786d0e1.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

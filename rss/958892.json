@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Amador Medrano Terra 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/958892/",
+	"feed_url": "https://alkometriikka.fi/rss/958892.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Amador Medrano Terra 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-958892-2026-07-18-18.97",
+			"url": "https://alkometriikka.fi/tuotteet/958892/",
+			"title": "Amador Medrano Terra 2021 — 18,78 € → 18,97 €",
+			"content_html": "<p>Tuotteen Amador Medrano Terra 2021 hinta on muuttunut.</p><p>18,78 € → 18,97 € (+0,19 €, +1,01 %).</p>",
+			"summary": "Tuotteen Amador Medrano Terra 2021 hinta on muuttunut. 18,78 € → 18,97 € (+0,19 €, +1,01 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/958892-10f38c7902ae.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Schweppes Russchian muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/793958/",
+	"feed_url": "https://alkometriikka.fi/rss/793958.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Schweppes Russchian muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-793958-2026-07-18-5.31",
+			"url": "https://alkometriikka.fi/tuotteet/793958/",
+			"title": "Schweppes Russchian muovipullo — 4,77 € → 5,31 €",
+			"content_html": "<p>Tuotteen Schweppes Russchian muovipullo hinta on muuttunut.</p><p>4,77 € → 5,31 € (+0,54 €, +11,32 %).</p>",
+			"summary": "Tuotteen Schweppes Russchian muovipullo hinta on muuttunut. 4,77 € → 5,31 € (+0,54 €, +11,32 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/793958-8ef641fe7cea.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

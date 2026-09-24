@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Lillet Rosé – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/929972/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Lillet Rosé.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/929972.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Lillet Rosé – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Lillet Rosé — 23,60 € → 23,79 €</title>
+			<link>https://alkometriikka.fi/tuotteet/929972/</link>
+			<guid isPermaLink="false">alkometriikka-929972-2026-07-18-23.79</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Välituotteet / vermutit</category>
+			<description><![CDATA[<p>Tuotteen Lillet Rosé hinta on muuttunut.</p><p>23,60 € → 23,79 € (+0,19 €, +0,81 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/929972-f91b583325fb.png" />
+		</item>
+	</channel>
+</rss>

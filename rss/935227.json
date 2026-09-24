@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Le Serre Nuove dell'Ornellaia 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/935227/",
+	"feed_url": "https://alkometriikka.fi/rss/935227.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Le Serre Nuove dell'Ornellaia 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-935227-2026-07-18-64.99",
+			"url": "https://alkometriikka.fi/tuotteet/935227/",
+			"title": "Le Serre Nuove dell'Ornellaia 2022 — 60,45 € → 64,99 €",
+			"content_html": "<p>Tuotteen Le Serre Nuove dell'Ornellaia 2022 hinta on muuttunut.</p><p>60,45 € → 64,99 € (+4,54 €, +7,51 %).</p>",
+			"summary": "Tuotteen Le Serre Nuove dell'Ornellaia 2022 hinta on muuttunut. 60,45 € → 64,99 € (+4,54 €, +7,51 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/935227-b0c103f3a7dc.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

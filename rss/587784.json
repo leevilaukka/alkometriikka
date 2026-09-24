@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Villa Wolf Riesling 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/587784/",
+	"feed_url": "https://alkometriikka.fi/rss/587784.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Villa Wolf Riesling 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-587784-2026-07-18-8.29",
+			"url": "https://alkometriikka.fi/tuotteet/587784/",
+			"title": "Villa Wolf Riesling 2025 — 8,22 € → 8,29 €",
+			"content_html": "<p>Tuotteen Villa Wolf Riesling 2025 hinta on muuttunut.</p><p>8,22 € → 8,29 € (+0,07 €, +0,85 %).</p>",
+			"summary": "Tuotteen Villa Wolf Riesling 2025 hinta on muuttunut. 8,22 € → 8,29 € (+0,07 €, +0,85 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/587784-444563a81d0e.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

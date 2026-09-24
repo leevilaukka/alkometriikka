@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Woven Experience N.20 Friends in the North – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901414/",
+	"feed_url": "https://alkometriikka.fi/rss/901414.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Woven Experience N.20 Friends in the North.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901414-2026-07-18-74.99",
+			"url": "https://alkometriikka.fi/tuotteet/901414/",
+			"title": "Woven Experience N.20 Friends in the North — 79,98 € → 74,99 €",
+			"content_html": "<p>Tuotteen Woven Experience N.20 Friends in the North hinta on muuttunut.</p><p>79,98 € → 74,99 € (−4,99 €, −6,24 %).</p>",
+			"summary": "Tuotteen Woven Experience N.20 Friends in the North hinta on muuttunut. 79,98 € → 74,99 € (−4,99 €, −6,24 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901414-4b1430ba3824.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

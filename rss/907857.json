@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nikka Coffey Grain – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/907857/",
+	"feed_url": "https://alkometriikka.fi/rss/907857.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nikka Coffey Grain.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-907857-2026-07-18-74.99",
+			"url": "https://alkometriikka.fi/tuotteet/907857/",
+			"title": "Nikka Coffey Grain — 77,53 € → 74,99 €",
+			"content_html": "<p>Tuotteen Nikka Coffey Grain hinta on muuttunut.</p><p>77,53 € → 74,99 € (−2,54 €, −3,28 %).</p>",
+			"summary": "Tuotteen Nikka Coffey Grain hinta on muuttunut. 77,53 € → 74,99 € (−2,54 €, −3,28 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/907857-3837bc74e829.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Baileys Original Irish Cream muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/002295/",
+	"feed_url": "https://alkometriikka.fi/rss/002295.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Baileys Original Irish Cream muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-002295-2026-07-18-4.4",
+			"url": "https://alkometriikka.fi/tuotteet/002295/",
+			"title": "Baileys Original Irish Cream muovipullo — 4,20 € → 4,40 €",
+			"content_html": "<p>Tuotteen Baileys Original Irish Cream muovipullo hinta on muuttunut.</p><p>4,20 € → 4,40 € (+0,20 €, +4,76 %).</p>",
+			"summary": "Tuotteen Baileys Original Irish Cream muovipullo hinta on muuttunut. 4,20 € → 4,40 € (+0,20 €, +4,76 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/002295-efd7097bfc13.png",
+			"tags": [
+				"Väkevät",
+				"kermaliköörit"
+			]
+		}
+	]
+}

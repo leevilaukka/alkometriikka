@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – De Kuyper Sour Apple – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/217496/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: De Kuyper Sour Apple.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/217496.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – De Kuyper Sour Apple – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>De Kuyper Sour Apple — 14,97 € → 14,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/217496/</link>
+			<guid isPermaLink="false">alkometriikka-217496-2026-07-18-14.99</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / hedelmäliköörit</category>
+			<description><![CDATA[<p>Tuotteen De Kuyper Sour Apple hinta on muuttunut.</p><p>14,97 € → 14,99 € (+0,02 €, +0,13 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/217496-9d5f15e7b20c.png" />
+		</item>
+		<item>
+			<title>De Kuyper Sour Apple — 14,97 € → 14,87 €</title>
+			<link>https://alkometriikka.fi/tuotteet/217496/</link>
+			<guid isPermaLink="false">alkometriikka-217496-2026-02-02-14.87</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / hedelmäliköörit</category>
+			<description><![CDATA[<p>Tuotteen De Kuyper Sour Apple hinta on muuttunut.</p><p>14,97 € → 14,87 € (−0,10 €, −0,67 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/217496-9d5f15e7b20c.png" />
+		</item>
+		<item>
+			<title>De Kuyper Sour Apple — 14,87 € → 14,97 €</title>
+			<link>https://alkometriikka.fi/tuotteet/217496/</link>
+			<guid isPermaLink="false">alkometriikka-217496-2026-02-02-14.97</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / hedelmäliköörit</category>
+			<description><![CDATA[<p>Tuotteen De Kuyper Sour Apple hinta on muuttunut.</p><p>14,87 € → 14,97 € (+0,10 €, +0,67 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/217496-9d5f15e7b20c.png" />
+		</item>
+	</channel>
+</rss>

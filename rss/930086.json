@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Malfy Arancia – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/930086/",
+	"feed_url": "https://alkometriikka.fi/rss/930086.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Malfy Arancia.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-930086-2026-07-18-46.28",
+			"url": "https://alkometriikka.fi/tuotteet/930086/",
+			"title": "Malfy Arancia — 46,27 € → 46,28 €",
+			"content_html": "<p>Tuotteen Malfy Arancia hinta on muuttunut.</p><p>46,27 € → 46,28 € (+0,01 €, +0,02 %).</p>",
+			"summary": "Tuotteen Malfy Arancia hinta on muuttunut. 46,27 € → 46,28 € (+0,01 €, +0,02 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/930086-dea89544909b.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

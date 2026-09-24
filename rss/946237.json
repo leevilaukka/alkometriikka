@@ -1,0 +1,50 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – William Fevre Petit Chablis 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/946237/",
+	"feed_url": "https://alkometriikka.fi/rss/946237.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: William Fevre Petit Chablis 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-946237-2026-07-18-33.48",
+			"url": "https://alkometriikka.fi/tuotteet/946237/",
+			"title": "William Fevre Petit Chablis 2023 — 33,46 € → 33,48 €",
+			"content_html": "<p>Tuotteen William Fevre Petit Chablis 2023 hinta on muuttunut.</p><p>33,46 € → 33,48 € (+0,02 €, +0,06 %).</p>",
+			"summary": "Tuotteen William Fevre Petit Chablis 2023 hinta on muuttunut. 33,46 € → 33,48 € (+0,02 €, +0,06 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/946237-9ee574c02408.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-946237-2026-02-02-33.36",
+			"url": "https://alkometriikka.fi/tuotteet/946237/",
+			"title": "William Fevre Petit Chablis 2023 — 33,46 € → 33,36 €",
+			"content_html": "<p>Tuotteen William Fevre Petit Chablis 2023 hinta on muuttunut.</p><p>33,46 € → 33,36 € (−0,10 €, −0,30 %).</p>",
+			"summary": "Tuotteen William Fevre Petit Chablis 2023 hinta on muuttunut. 33,46 € → 33,36 € (−0,10 €, −0,30 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/946237-9ee574c02408.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-946237-2026-02-02-33.46",
+			"url": "https://alkometriikka.fi/tuotteet/946237/",
+			"title": "William Fevre Petit Chablis 2023 — 33,36 € → 33,46 €",
+			"content_html": "<p>Tuotteen William Fevre Petit Chablis 2023 hinta on muuttunut.</p><p>33,36 € → 33,46 € (+0,10 €, +0,30 %).</p>",
+			"summary": "Tuotteen William Fevre Petit Chablis 2023 hinta on muuttunut. 33,36 € → 33,46 € (+0,10 €, +0,30 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/946237-9ee574c02408.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

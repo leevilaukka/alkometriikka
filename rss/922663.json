@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – G.D Vajra Barolo Albe 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/922663/",
+	"feed_url": "https://alkometriikka.fi/rss/922663.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: G.D Vajra Barolo Albe 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-922663-2026-07-18-53.99",
+			"url": "https://alkometriikka.fi/tuotteet/922663/",
+			"title": "G.D Vajra Barolo Albe 2022 — 52,98 € → 53,99 €",
+			"content_html": "<p>Tuotteen G.D Vajra Barolo Albe 2022 hinta on muuttunut.</p><p>52,98 € → 53,99 € (+1,01 €, +1,91 %).</p>",
+			"summary": "Tuotteen G.D Vajra Barolo Albe 2022 hinta on muuttunut. 52,98 € → 53,99 € (+1,01 €, +1,91 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/922663-e2689418e236.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

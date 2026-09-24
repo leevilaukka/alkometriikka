@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Martha’s 10 Years Old Tawny Port – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/936094/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Martha’s 10 Years Old Tawny Port.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/936094.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Martha’s 10 Years Old Tawny Port – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Martha’s 10 Years Old Tawny Port — 46,49 € → 46,98 €</title>
+			<link>https://alkometriikka.fi/tuotteet/936094/</link>
+			<guid isPermaLink="false">alkometriikka-936094-2026-07-18-46.98</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Välituotteet / portviinit</category>
+			<description><![CDATA[<p>Tuotteen Martha’s 10 Years Old Tawny Port hinta on muuttunut.</p><p>46,49 € → 46,98 € (+0,49 €, +1,05 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/936094-57e2fa6619a3.png" />
+		</item>
+	</channel>
+</rss>

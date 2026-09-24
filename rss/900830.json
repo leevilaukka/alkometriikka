@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Don Julio 1942 Tequila – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900830/",
+	"feed_url": "https://alkometriikka.fi/rss/900830.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Don Julio 1942 Tequila.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900830-2026-07-18-266.99",
+			"url": "https://alkometriikka.fi/tuotteet/900830/",
+			"title": "Don Julio 1942 Tequila — 266,18 € → 266,99 €",
+			"content_html": "<p>Tuotteen Don Julio 1942 Tequila hinta on muuttunut.</p><p>266,18 € → 266,99 € (+0,81 €, +0,30 %).</p>",
+			"summary": "Tuotteen Don Julio 1942 Tequila hinta on muuttunut. 266,18 € → 266,99 € (+0,81 €, +0,30 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900830-042631e72bff.png",
+			"tags": [
+				"Väkevät",
+				"Tequilat"
+			]
+		}
+	]
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Torres Natureo Muscat – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/531384/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Torres Natureo Muscat.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/531384.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Torres Natureo Muscat – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Torres Natureo Muscat — 5,67 € → 5,74 €</title>
+			<link>https://alkometriikka.fi/tuotteet/531384/</link>
+			<guid isPermaLink="false">alkometriikka-531384-2026-07-18-5.74</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Alkoholittomat / alkoholittomat valko- ja roseeviinit</category>
+			<description><![CDATA[<p>Tuotteen Torres Natureo Muscat hinta on muuttunut.</p><p>5,67 € → 5,74 € (+0,07 €, +1,23 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/531384-4349658a3f62.png" />
+		</item>
+	</channel>
+</rss>

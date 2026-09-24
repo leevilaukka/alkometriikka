@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kaiho Single Estate Organic Vodka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/950131/",
+	"feed_url": "https://alkometriikka.fi/rss/950131.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kaiho Single Estate Organic Vodka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-950131-2026-07-18-42.99",
+			"url": "https://alkometriikka.fi/tuotteet/950131/",
+			"title": "Kaiho Single Estate Organic Vodka — 43,09 € → 42,99 €",
+			"content_html": "<p>Tuotteen Kaiho Single Estate Organic Vodka hinta on muuttunut.</p><p>43,09 € → 42,99 € (−0,10 €, −0,23 %).</p>",
+			"summary": "Tuotteen Kaiho Single Estate Organic Vodka hinta on muuttunut. 43,09 € → 42,99 € (−0,10 €, −0,23 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/950131-7e2b2ed71bfd.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

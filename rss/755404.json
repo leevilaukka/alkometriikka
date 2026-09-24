@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Peroni Nastro Azzurro – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/755404/",
+	"feed_url": "https://alkometriikka.fi/rss/755404.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Peroni Nastro Azzurro.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-755404-2026-07-18-2.89",
+			"url": "https://alkometriikka.fi/tuotteet/755404/",
+			"title": "Peroni Nastro Azzurro — 2,79 € → 2,89 €",
+			"content_html": "<p>Tuotteen Peroni Nastro Azzurro hinta on muuttunut.</p><p>2,79 € → 2,89 € (+0,10 €, +3,58 %).</p>",
+			"summary": "Tuotteen Peroni Nastro Azzurro hinta on muuttunut. 2,79 € → 2,89 € (+0,10 €, +3,58 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/755404-4979bed108fa.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

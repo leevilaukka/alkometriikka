@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Philipponnat Rosé Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/913582/",
+	"feed_url": "https://alkometriikka.fi/rss/913582.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Philipponnat Rosé Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-913582-2026-07-18-90.48",
+			"url": "https://alkometriikka.fi/tuotteet/913582/",
+			"title": "Philipponnat Rosé Champagne Brut — 90,45 € → 90,48 €",
+			"content_html": "<p>Tuotteen Philipponnat Rosé Champagne Brut hinta on muuttunut.</p><p>90,45 € → 90,48 € (+0,03 €, +0,03 %).</p>",
+			"summary": "Tuotteen Philipponnat Rosé Champagne Brut hinta on muuttunut. 90,45 € → 90,48 € (+0,03 €, +0,03 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/913582-4b5af9b79d5e.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

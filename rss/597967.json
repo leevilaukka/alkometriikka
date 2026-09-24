@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – De Sousa Grand Cru Blanc de Blancs Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/597967/",
+	"feed_url": "https://alkometriikka.fi/rss/597967.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: De Sousa Grand Cru Blanc de Blancs Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-597967-2026-07-18-74.98",
+			"url": "https://alkometriikka.fi/tuotteet/597967/",
+			"title": "De Sousa Grand Cru Blanc de Blancs Champagne Brut — 76,40 € → 74,98 €",
+			"content_html": "<p>Tuotteen De Sousa Grand Cru Blanc de Blancs Champagne Brut hinta on muuttunut.</p><p>76,40 € → 74,98 € (−1,42 €, −1,86 %).</p>",
+			"summary": "Tuotteen De Sousa Grand Cru Blanc de Blancs Champagne Brut hinta on muuttunut. 76,40 € → 74,98 € (−1,42 €, −1,86 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/597967-d3849efc78b2.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

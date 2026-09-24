@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Charles Heidsieck Réserve Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/564737/",
+	"feed_url": "https://alkometriikka.fi/rss/564737.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Charles Heidsieck Réserve Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-564737-2026-07-18-66.98",
+			"url": "https://alkometriikka.fi/tuotteet/564737/",
+			"title": "Charles Heidsieck Réserve Champagne Brut — 65,46 € → 66,98 €",
+			"content_html": "<p>Tuotteen Charles Heidsieck Réserve Champagne Brut hinta on muuttunut.</p><p>65,46 € → 66,98 € (+1,52 €, +2,32 %).</p>",
+			"summary": "Tuotteen Charles Heidsieck Réserve Champagne Brut hinta on muuttunut. 65,46 € → 66,98 € (+1,52 €, +2,32 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/564737-e77d19935d81.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

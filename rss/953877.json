@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cono Sur Organic Cabernet Sauvignon Carmenere Syrah 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/953877/",
+	"feed_url": "https://alkometriikka.fi/rss/953877.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cono Sur Organic Cabernet Sauvignon Carmenere Syrah 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-953877-2026-02-02-11.89",
+			"url": "https://alkometriikka.fi/tuotteet/953877/",
+			"title": "Cono Sur Organic Cabernet Sauvignon Carmenere Syrah 2023 — 11,99 € → 11,89 €",
+			"content_html": "<p>Tuotteen Cono Sur Organic Cabernet Sauvignon Carmenere Syrah 2023 hinta on muuttunut.</p><p>11,99 € → 11,89 € (−0,10 €, −0,83 %).</p>",
+			"summary": "Tuotteen Cono Sur Organic Cabernet Sauvignon Carmenere Syrah 2023 hinta on muuttunut. 11,99 € → 11,89 € (−0,10 €, −0,83 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/953877-f729664b0439.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-953877-2026-02-02-11.99",
+			"url": "https://alkometriikka.fi/tuotteet/953877/",
+			"title": "Cono Sur Organic Cabernet Sauvignon Carmenere Syrah 2023 — 11,89 € → 11,99 €",
+			"content_html": "<p>Tuotteen Cono Sur Organic Cabernet Sauvignon Carmenere Syrah 2023 hinta on muuttunut.</p><p>11,89 € → 11,99 € (+0,10 €, +0,84 %).</p>",
+			"summary": "Tuotteen Cono Sur Organic Cabernet Sauvignon Carmenere Syrah 2023 hinta on muuttunut. 11,89 € → 11,99 € (+0,10 €, +0,84 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/953877-f729664b0439.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

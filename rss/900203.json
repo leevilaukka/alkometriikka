@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ontañón Gran Reserva 2015 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900203/",
+	"feed_url": "https://alkometriikka.fi/rss/900203.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ontañón Gran Reserva 2015.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900203-2026-07-18-48.9",
+			"url": "https://alkometriikka.fi/tuotteet/900203/",
+			"title": "Ontañón Gran Reserva 2015 — 48,76 € → 48,90 €",
+			"content_html": "<p>Tuotteen Ontañón Gran Reserva 2015 hinta on muuttunut.</p><p>48,76 € → 48,90 € (+0,14 €, +0,29 %).</p>",
+			"summary": "Tuotteen Ontañón Gran Reserva 2015 hinta on muuttunut. 48,76 € → 48,90 € (+0,14 €, +0,29 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900203-aa77b8934f7a.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

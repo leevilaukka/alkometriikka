@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gusbourne Reserve Brut 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/914433/",
+	"feed_url": "https://alkometriikka.fi/rss/914433.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gusbourne Reserve Brut 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-914433-2026-07-18-59.99",
+			"url": "https://alkometriikka.fi/tuotteet/914433/",
+			"title": "Gusbourne Reserve Brut 2020 — 52,45 € → 59,99 €",
+			"content_html": "<p>Tuotteen Gusbourne Reserve Brut 2020 hinta on muuttunut.</p><p>52,45 € → 59,99 € (+7,54 €, +14,38 %).</p>",
+			"summary": "Tuotteen Gusbourne Reserve Brut 2020 hinta on muuttunut. 52,45 € → 59,99 € (+7,54 €, +14,38 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/914433-baaf318863c7.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Panizzi Vernaccia di San Gimignano Riserva 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901128/",
+	"feed_url": "https://alkometriikka.fi/rss/901128.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Panizzi Vernaccia di San Gimignano Riserva 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901128-2026-07-18-46",
+			"url": "https://alkometriikka.fi/tuotteet/901128/",
+			"title": "Panizzi Vernaccia di San Gimignano Riserva 2021 — 45,46 € → 46,00 €",
+			"content_html": "<p>Tuotteen Panizzi Vernaccia di San Gimignano Riserva 2021 hinta on muuttunut.</p><p>45,46 € → 46,00 € (+0,54 €, +1,19 %).</p>",
+			"summary": "Tuotteen Panizzi Vernaccia di San Gimignano Riserva 2021 hinta on muuttunut. 45,46 € → 46,00 € (+0,54 €, +1,19 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901128-a103b859d7a6.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

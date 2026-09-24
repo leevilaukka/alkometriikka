@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nittnaus Eiswein Exquisit 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/945484/",
+	"feed_url": "https://alkometriikka.fi/rss/945484.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nittnaus Eiswein Exquisit 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-945484-2026-07-18-34.62",
+			"url": "https://alkometriikka.fi/tuotteet/945484/",
+			"title": "Nittnaus Eiswein Exquisit 2023 — 35,27 € → 34,62 €",
+			"content_html": "<p>Tuotteen Nittnaus Eiswein Exquisit 2023 hinta on muuttunut.</p><p>35,27 € → 34,62 € (−0,65 €, −1,84 %).</p>",
+			"summary": "Tuotteen Nittnaus Eiswein Exquisit 2023 hinta on muuttunut. 35,27 € → 34,62 € (−0,65 €, −1,84 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/945484-0998c2a3e68c.png",
+			"tags": [
+				"Viinit",
+				"jälkiruokaviinit"
+			]
+		}
+	]
+}

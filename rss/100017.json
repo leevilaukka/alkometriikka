@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Minttu Peppermint – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/100017/",
+	"feed_url": "https://alkometriikka.fi/rss/100017.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Minttu Peppermint.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-100017-2026-07-18-3.49",
+			"url": "https://alkometriikka.fi/tuotteet/100017/",
+			"title": "Minttu Peppermint — 3,50 € → 3,49 €",
+			"content_html": "<p>Tuotteen Minttu Peppermint hinta on muuttunut.</p><p>3,50 € → 3,49 € (−0,01 €, −0,29 %).</p>",
+			"summary": "Tuotteen Minttu Peppermint hinta on muuttunut. 3,50 € → 3,49 € (−0,01 €, −0,29 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/100017-bfc9c57554e7.png",
+			"tags": [
+				"Väkevät",
+				"mausteliköörit"
+			]
+		}
+	]
+}

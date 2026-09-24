@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Unser Haus White Glühwein Organic – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/300009/",
+	"feed_url": "https://alkometriikka.fi/rss/300009.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Unser Haus White Glühwein Organic.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-300009-2026-09-19-9.98",
+			"url": "https://alkometriikka.fi/tuotteet/300009/",
+			"title": "Unser Haus White Glühwein Organic — 8,59 € → 9,98 €",
+			"content_html": "<p>Tuotteen Unser Haus White Glühwein Organic hinta on muuttunut.</p><p>8,59 € → 9,98 € (+1,39 €, +16,18 %).</p>",
+			"summary": "Tuotteen Unser Haus White Glühwein Organic hinta on muuttunut. 8,59 € → 9,98 € (+1,39 €, +16,18 %).",
+			"date_published": "2026-09-19T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/300009-b9d0df832d15.png",
+			"tags": [
+				"Viinit",
+				"glögit"
+			]
+		},
+		{
+			"id": "alkometriikka-300009-2026-09-17-8.59",
+			"url": "https://alkometriikka.fi/tuotteet/300009/",
+			"title": "Unser Haus White Glühwein Organic — 9,98 € → 8,59 €",
+			"content_html": "<p>Tuotteen Unser Haus White Glühwein Organic hinta on muuttunut.</p><p>9,98 € → 8,59 € (−1,39 €, −13,93 %).</p>",
+			"summary": "Tuotteen Unser Haus White Glühwein Organic hinta on muuttunut. 9,98 € → 8,59 € (−1,39 €, −13,93 %).",
+			"date_published": "2026-09-17T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/300009-b9d0df832d15.png",
+			"tags": [
+				"Viinit",
+				"glögit"
+			]
+		}
+	]
+}

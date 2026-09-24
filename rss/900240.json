@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Launois Grand Cru Réserve Blanc de Blancs Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900240/",
+	"feed_url": "https://alkometriikka.fi/rss/900240.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Launois Grand Cru Réserve Blanc de Blancs Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900240-2026-07-18-59.98",
+			"url": "https://alkometriikka.fi/tuotteet/900240/",
+			"title": "Launois Grand Cru Réserve Blanc de Blancs Champagne Brut — 62,22 € → 59,98 €",
+			"content_html": "<p>Tuotteen Launois Grand Cru Réserve Blanc de Blancs Champagne Brut hinta on muuttunut.</p><p>62,22 € → 59,98 € (−2,24 €, −3,60 %).</p>",
+			"summary": "Tuotteen Launois Grand Cru Réserve Blanc de Blancs Champagne Brut hinta on muuttunut. 62,22 € → 59,98 € (−2,24 €, −3,60 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900240-b22d64a0eb03.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

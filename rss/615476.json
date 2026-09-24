@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lumo White Sweet – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/615476/",
+	"feed_url": "https://alkometriikka.fi/rss/615476.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lumo White Sweet.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-615476-2026-07-18-17.6",
+			"url": "https://alkometriikka.fi/tuotteet/615476/",
+			"title": "Lumo White Sweet — 16,77 € → 17,60 €",
+			"content_html": "<p>Tuotteen Lumo White Sweet hinta on muuttunut.</p><p>16,77 € → 17,60 € (+0,83 €, +4,95 %).</p>",
+			"summary": "Tuotteen Lumo White Sweet hinta on muuttunut. 16,77 € → 17,60 € (+0,83 €, +4,95 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/615476-4d12f576689c.png",
+			"tags": [
+				"Viinit",
+				"jälkiruokaviinit"
+			]
+		}
+	]
+}

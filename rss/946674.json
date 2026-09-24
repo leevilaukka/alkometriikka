@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Enate Chardonnay 234 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/946674/",
+	"feed_url": "https://alkometriikka.fi/rss/946674.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Enate Chardonnay 234 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-946674-2026-07-18-19.98",
+			"url": "https://alkometriikka.fi/tuotteet/946674/",
+			"title": "Enate Chardonnay 234 2025 — 20,45 € → 19,98 €",
+			"content_html": "<p>Tuotteen Enate Chardonnay 234 2025 hinta on muuttunut.</p><p>20,45 € → 19,98 € (−0,47 €, −2,30 %).</p>",
+			"summary": "Tuotteen Enate Chardonnay 234 2025 hinta on muuttunut. 20,45 € → 19,98 € (−0,47 €, −2,30 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/946674-de54e3a3d4fe.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

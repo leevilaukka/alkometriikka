@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Arpepe Rosso di Valtellina 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/955728/",
+	"feed_url": "https://alkometriikka.fi/rss/955728.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Arpepe Rosso di Valtellina 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-955728-2026-07-18-44.5",
+			"url": "https://alkometriikka.fi/tuotteet/955728/",
+			"title": "Arpepe Rosso di Valtellina 2023 — 43,86 € → 44,50 €",
+			"content_html": "<p>Tuotteen Arpepe Rosso di Valtellina 2023 hinta on muuttunut.</p><p>43,86 € → 44,50 € (+0,64 €, +1,46 %).</p>",
+			"summary": "Tuotteen Arpepe Rosso di Valtellina 2023 hinta on muuttunut. 43,86 € → 44,50 € (+0,64 €, +1,46 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/955728-6d823bd8f507.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

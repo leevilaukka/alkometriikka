@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bonvalet Epopée Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900574/",
+	"feed_url": "https://alkometriikka.fi/rss/900574.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bonvalet Epopée Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900574-2026-07-18-49.95",
+			"url": "https://alkometriikka.fi/tuotteet/900574/",
+			"title": "Bonvalet Epopée Champagne Brut — 58,55 € → 49,95 €",
+			"content_html": "<p>Tuotteen Bonvalet Epopée Champagne Brut hinta on muuttunut.</p><p>58,55 € → 49,95 € (−8,60 €, −14,69 %).</p>",
+			"summary": "Tuotteen Bonvalet Epopée Champagne Brut hinta on muuttunut. 58,55 € → 49,95 € (−8,60 €, −14,69 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900574-1b4b0156e5a2.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château Lamarsalle 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/946137/",
+	"feed_url": "https://alkometriikka.fi/rss/946137.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château Lamarsalle 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-946137-2026-07-18-32.91",
+			"url": "https://alkometriikka.fi/tuotteet/946137/",
+			"title": "Château Lamarsalle 2023 — 33,45 € → 32,91 €",
+			"content_html": "<p>Tuotteen Château Lamarsalle 2023 hinta on muuttunut.</p><p>33,45 € → 32,91 € (−0,54 €, −1,61 %).</p>",
+			"summary": "Tuotteen Château Lamarsalle 2023 hinta on muuttunut. 33,45 € → 32,91 € (−0,54 €, −1,61 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/946137-ae26dc27ce1a.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Michter's Small Batch American Whiskey – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/946026/",
+	"feed_url": "https://alkometriikka.fi/rss/946026.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Michter's Small Batch American Whiskey.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-946026-2026-07-18-78.19",
+			"url": "https://alkometriikka.fi/tuotteet/946026/",
+			"title": "Michter's Small Batch American Whiskey — 78,28 € → 78,19 €",
+			"content_html": "<p>Tuotteen Michter's Small Batch American Whiskey hinta on muuttunut.</p><p>78,28 € → 78,19 € (−0,09 €, −0,11 %).</p>",
+			"summary": "Tuotteen Michter's Small Batch American Whiskey hinta on muuttunut. 78,28 € → 78,19 € (−0,09 €, −0,11 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/946026-8f4342e96dbc.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

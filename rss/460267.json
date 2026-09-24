@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – E. Guigal Côtes du Rhône 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/460267/",
+	"feed_url": "https://alkometriikka.fi/rss/460267.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: E. Guigal Côtes du Rhône 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-460267-2026-07-18-19.49",
+			"url": "https://alkometriikka.fi/tuotteet/460267/",
+			"title": "E. Guigal Côtes du Rhône 2023 — 19,24 € → 19,49 €",
+			"content_html": "<p>Tuotteen E. Guigal Côtes du Rhône 2023 hinta on muuttunut.</p><p>19,24 € → 19,49 € (+0,25 €, +1,30 %).</p>",
+			"summary": "Tuotteen E. Guigal Côtes du Rhône 2023 hinta on muuttunut. 19,24 € → 19,49 € (+0,25 €, +1,30 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/460267-2705a1457c96.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

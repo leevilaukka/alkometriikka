@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – La Trappe Nillis – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/600059/",
+	"feed_url": "https://alkometriikka.fi/rss/600059.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: La Trappe Nillis.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-600059-2026-09-04-2.15",
+			"url": "https://alkometriikka.fi/tuotteet/600059/",
+			"title": "La Trappe Nillis — 2,39 € → 2,15 €",
+			"content_html": "<p>Tuotteen La Trappe Nillis hinta on muuttunut.</p><p>2,39 € → 2,15 € (−0,24 €, −10,04 %).</p>",
+			"summary": "Tuotteen La Trappe Nillis hinta on muuttunut. 2,39 € → 2,15 € (−0,24 €, −10,04 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600059-f41a1f56def3.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

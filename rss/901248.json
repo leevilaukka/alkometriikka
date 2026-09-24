@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Farmer's Reserve Strength Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901248/",
+	"feed_url": "https://alkometriikka.fi/rss/901248.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Farmer's Reserve Strength Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901248-2026-07-18-60.29",
+			"url": "https://alkometriikka.fi/tuotteet/901248/",
+			"title": "Farmer's Reserve Strength Gin — 60,26 € → 60,29 €",
+			"content_html": "<p>Tuotteen Farmer's Reserve Strength Gin hinta on muuttunut.</p><p>60,26 € → 60,29 € (+0,03 €, +0,05 %).</p>",
+			"summary": "Tuotteen Farmer's Reserve Strength Gin hinta on muuttunut. 60,26 € → 60,29 € (+0,03 €, +0,05 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901248-b4ae54a119b5.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

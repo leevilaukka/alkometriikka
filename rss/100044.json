@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Big Kahuna Pineapple Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/100044/",
+	"feed_url": "https://alkometriikka.fi/rss/100044.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Big Kahuna Pineapple Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-100044-2026-02-02-42.41",
+			"url": "https://alkometriikka.fi/tuotteet/100044/",
+			"title": "Big Kahuna Pineapple Gin — 42,16 € → 42,41 €",
+			"content_html": "<p>Tuotteen Big Kahuna Pineapple Gin hinta on muuttunut.</p><p>42,16 € → 42,41 € (+0,25 €, +0,59 %).</p>",
+			"summary": "Tuotteen Big Kahuna Pineapple Gin hinta on muuttunut. 42,16 € → 42,41 € (+0,25 €, +0,59 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/100044-6e61bcaadaf0.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

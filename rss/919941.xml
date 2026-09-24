@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Vellamo mineraalivesi hiilihapotettu – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/919941/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Vellamo mineraalivesi hiilihapotettu.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/919941.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Vellamo mineraalivesi hiilihapotettu – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Vellamo mineraalivesi hiilihapotettu — 5,23 € → 5,25 €</title>
+			<link>https://alkometriikka.fi/tuotteet/919941/</link>
+			<guid isPermaLink="false">alkometriikka-919941-2026-07-18-5.25</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Alkoholittomat / vedet, mehut ja muut alkoholittomat</category>
+			<description><![CDATA[<p>Tuotteen Vellamo mineraalivesi hiilihapotettu hinta on muuttunut.</p><p>5,23 € → 5,25 € (+0,02 €, +0,38 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/919941-eb6adc32eeda.png" />
+		</item>
+	</channel>
+</rss>

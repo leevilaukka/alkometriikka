@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – G.H. Martel & Co Champagne Doux – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/512387/",
+	"feed_url": "https://alkometriikka.fi/rss/512387.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: G.H. Martel & Co Champagne Doux.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-512387-2026-07-18-42.9",
+			"url": "https://alkometriikka.fi/tuotteet/512387/",
+			"title": "G.H. Martel & Co Champagne Doux — 42,43 € → 42,90 €",
+			"content_html": "<p>Tuotteen G.H. Martel & Co Champagne Doux hinta on muuttunut.</p><p>42,43 € → 42,90 € (+0,47 €, +1,11 %).</p>",
+			"summary": "Tuotteen G.H. Martel & Co Champagne Doux hinta on muuttunut. 42,43 € → 42,90 € (+0,47 €, +1,11 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/512387-655313e45780.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

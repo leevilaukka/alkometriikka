@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Esporão Reserva 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/470667/",
+	"feed_url": "https://alkometriikka.fi/rss/470667.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Esporão Reserva 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-470667-2026-07-18-25.98",
+			"url": "https://alkometriikka.fi/tuotteet/470667/",
+			"title": "Esporão Reserva 2023 — 25,96 € → 25,98 €",
+			"content_html": "<p>Tuotteen Esporão Reserva 2023 hinta on muuttunut.</p><p>25,96 € → 25,98 € (+0,02 €, +0,08 %).</p>",
+			"summary": "Tuotteen Esporão Reserva 2023 hinta on muuttunut. 25,96 € → 25,98 € (+0,02 €, +0,08 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/470667-ec8b14bf60b9.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

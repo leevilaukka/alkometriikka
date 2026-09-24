@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Koskenkorva Spirit Drink 21% muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/929092/",
+	"feed_url": "https://alkometriikka.fi/rss/929092.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Koskenkorva Spirit Drink 21% muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-929092-2026-07-18-10.29",
+			"url": "https://alkometriikka.fi/tuotteet/929092/",
+			"title": "Koskenkorva Spirit Drink 21% muovipullo — 10,09 € → 10,29 €",
+			"content_html": "<p>Tuotteen Koskenkorva Spirit Drink 21% muovipullo hinta on muuttunut.</p><p>10,09 € → 10,29 € (+0,20 €, +1,98 %).</p>",
+			"summary": "Tuotteen Koskenkorva Spirit Drink 21% muovipullo hinta on muuttunut. 10,09 € → 10,29 € (+0,20 €, +1,98 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/929092-ee993787b0f7.png",
+			"tags": [
+				"Väkevät",
+				"viina"
+			]
+		}
+	]
+}

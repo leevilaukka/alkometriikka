@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Chartreuse MOF – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/939008/",
+	"feed_url": "https://alkometriikka.fi/rss/939008.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Chartreuse MOF.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-939008-2026-07-18-68.68",
+			"url": "https://alkometriikka.fi/tuotteet/939008/",
+			"title": "Chartreuse MOF — 68,50 € → 68,68 €",
+			"content_html": "<p>Tuotteen Chartreuse MOF hinta on muuttunut.</p><p>68,50 € → 68,68 € (+0,18 €, +0,26 %).</p>",
+			"summary": "Tuotteen Chartreuse MOF hinta on muuttunut. 68,50 € → 68,68 € (+0,18 €, +0,26 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/939008-5ff998fc9563.png",
+			"tags": [
+				"Väkevät",
+				"yrttiliköörit"
+			]
+		}
+	]
+}

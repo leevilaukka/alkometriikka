@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bonaqua Vichy muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/713096/",
+	"feed_url": "https://alkometriikka.fi/rss/713096.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bonaqua Vichy muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-713096-2026-07-18-2.39",
+			"url": "https://alkometriikka.fi/tuotteet/713096/",
+			"title": "Bonaqua Vichy muovipullo — 2,28 € → 2,39 €",
+			"content_html": "<p>Tuotteen Bonaqua Vichy muovipullo hinta on muuttunut.</p><p>2,28 € → 2,39 € (+0,11 €, +4,82 %).</p>",
+			"summary": "Tuotteen Bonaqua Vichy muovipullo hinta on muuttunut. 2,28 € → 2,39 € (+0,11 €, +4,82 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/713096-36bb258a3f59.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

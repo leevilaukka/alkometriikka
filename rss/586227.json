@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lumen Reserva Brut 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/586227/",
+	"feed_url": "https://alkometriikka.fi/rss/586227.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lumen Reserva Brut 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-586227-2026-07-18-15.39",
+			"url": "https://alkometriikka.fi/tuotteet/586227/",
+			"title": "Lumen Reserva Brut 2020 — 16,94 € → 15,39 €",
+			"content_html": "<p>Tuotteen Lumen Reserva Brut 2020 hinta on muuttunut.</p><p>16,94 € → 15,39 € (−1,55 €, −9,15 %).</p>",
+			"summary": "Tuotteen Lumen Reserva Brut 2020 hinta on muuttunut. 16,94 € → 15,39 € (−1,55 €, −9,15 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/586227-f43fd6bf7e98.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

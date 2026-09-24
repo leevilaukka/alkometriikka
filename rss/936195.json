@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Canard Duchêne Charles VII Blanc de Blancs Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/936195/",
+	"feed_url": "https://alkometriikka.fi/rss/936195.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Canard Duchêne Charles VII Blanc de Blancs Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-936195-2026-07-18-66.49",
+			"url": "https://alkometriikka.fi/tuotteet/936195/",
+			"title": "Canard Duchêne Charles VII Blanc de Blancs Champagne Brut — 66,46 € → 66,49 €",
+			"content_html": "<p>Tuotteen Canard Duchêne Charles VII Blanc de Blancs Champagne Brut hinta on muuttunut.</p><p>66,46 € → 66,49 € (+0,03 €, +0,05 %).</p>",
+			"summary": "Tuotteen Canard Duchêne Charles VII Blanc de Blancs Champagne Brut hinta on muuttunut. 66,46 € → 66,49 € (+0,03 €, +0,05 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/936195-d3c0af5467e1.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

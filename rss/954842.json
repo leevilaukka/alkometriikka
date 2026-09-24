@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Joseph Faiveley Chardonnay 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/954842/",
+	"feed_url": "https://alkometriikka.fi/rss/954842.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Joseph Faiveley Chardonnay 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-954842-2026-07-18-32.27",
+			"url": "https://alkometriikka.fi/tuotteet/954842/",
+			"title": "Joseph Faiveley Chardonnay 2023 — 34,98 € → 32,27 €",
+			"content_html": "<p>Tuotteen Joseph Faiveley Chardonnay 2023 hinta on muuttunut.</p><p>34,98 € → 32,27 € (−2,71 €, −7,75 %).</p>",
+			"summary": "Tuotteen Joseph Faiveley Chardonnay 2023 hinta on muuttunut. 34,98 € → 32,27 € (−2,71 €, −7,75 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/954842-5b6d97876d31.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

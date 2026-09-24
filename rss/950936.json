@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Chateau Roubine Premium Rouge 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/950936/",
+	"feed_url": "https://alkometriikka.fi/rss/950936.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Chateau Roubine Premium Rouge 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-950936-2026-07-18-27.9",
+			"url": "https://alkometriikka.fi/tuotteet/950936/",
+			"title": "Chateau Roubine Premium Rouge 2022 — 27,34 € → 27,90 €",
+			"content_html": "<p>Tuotteen Chateau Roubine Premium Rouge 2022 hinta on muuttunut.</p><p>27,34 € → 27,90 € (+0,56 €, +2,05 %).</p>",
+			"summary": "Tuotteen Chateau Roubine Premium Rouge 2022 hinta on muuttunut. 27,34 € → 27,90 € (+0,56 €, +2,05 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/950936-cf063856a1ca.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

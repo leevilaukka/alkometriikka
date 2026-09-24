@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Helsinki Whiskey Rye Malt Sherry Cask #25 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900248/",
+	"feed_url": "https://alkometriikka.fi/rss/900248.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Helsinki Whiskey Rye Malt Sherry Cask #25.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900248-2026-07-18-69.99",
+			"url": "https://alkometriikka.fi/tuotteet/900248/",
+			"title": "Helsinki Whiskey Rye Malt Sherry Cask #25 — 69,90 € → 69,99 €",
+			"content_html": "<p>Tuotteen Helsinki Whiskey Rye Malt Sherry Cask #25 hinta on muuttunut.</p><p>69,90 € → 69,99 € (+0,09 €, +0,13 %).</p>",
+			"summary": "Tuotteen Helsinki Whiskey Rye Malt Sherry Cask #25 hinta on muuttunut. 69,90 € → 69,99 € (+0,09 €, +0,13 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900248-44b57c3695d3.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

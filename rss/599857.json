@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mont-Ferrant Americano Organic Cava Brut Nature – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/599857/",
+	"feed_url": "https://alkometriikka.fi/rss/599857.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mont-Ferrant Americano Organic Cava Brut Nature.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-599857-2026-07-18-12.99",
+			"url": "https://alkometriikka.fi/tuotteet/599857/",
+			"title": "Mont-Ferrant Americano Organic Cava Brut Nature — 12,94 € → 12,99 €",
+			"content_html": "<p>Tuotteen Mont-Ferrant Americano Organic Cava Brut Nature hinta on muuttunut.</p><p>12,94 € → 12,99 € (+0,05 €, +0,39 %).</p>",
+			"summary": "Tuotteen Mont-Ferrant Americano Organic Cava Brut Nature hinta on muuttunut. 12,94 € → 12,99 € (+0,05 €, +0,39 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/599857-8c5e9fd5a0db.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

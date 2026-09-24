@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glendalough Pot Still Peated – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901791/",
+	"feed_url": "https://alkometriikka.fi/rss/901791.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glendalough Pot Still Peated.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901791-2026-07-18-84.99",
+			"url": "https://alkometriikka.fi/tuotteet/901791/",
+			"title": "Glendalough Pot Still Peated — 85,32 € → 84,99 €",
+			"content_html": "<p>Tuotteen Glendalough Pot Still Peated hinta on muuttunut.</p><p>85,32 € → 84,99 € (−0,33 €, −0,39 %).</p>",
+			"summary": "Tuotteen Glendalough Pot Still Peated hinta on muuttunut. 85,32 € → 84,99 € (−0,33 €, −0,39 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901791-8a93aef693fc.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

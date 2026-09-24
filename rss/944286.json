@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Shake-It Mixer Strawberry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/944286/",
+	"feed_url": "https://alkometriikka.fi/rss/944286.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Shake-It Mixer Strawberry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-944286-2026-07-18-9.19",
+			"url": "https://alkometriikka.fi/tuotteet/944286/",
+			"title": "Shake-It Mixer Strawberry — 9,21 € → 9,19 €",
+			"content_html": "<p>Tuotteen Shake-It Mixer Strawberry hinta on muuttunut.</p><p>9,21 € → 9,19 € (−0,02 €, −0,22 %).</p>",
+			"summary": "Tuotteen Shake-It Mixer Strawberry hinta on muuttunut. 9,21 € → 9,19 € (−0,02 €, −0,22 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/944286-3e855000cc55.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

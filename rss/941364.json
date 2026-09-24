@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Boizel Réserve Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/941364/",
+	"feed_url": "https://alkometriikka.fi/rss/941364.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Boizel Réserve Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-941364-2026-07-18-64.99",
+			"url": "https://alkometriikka.fi/tuotteet/941364/",
+			"title": "Boizel Réserve Champagne Brut — 65,46 € → 64,99 €",
+			"content_html": "<p>Tuotteen Boizel Réserve Champagne Brut hinta on muuttunut.</p><p>65,46 € → 64,99 € (−0,47 €, −0,72 %).</p>",
+			"summary": "Tuotteen Boizel Réserve Champagne Brut hinta on muuttunut. 65,46 € → 64,99 € (−0,47 €, −0,72 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/941364-5a505bea35e0.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

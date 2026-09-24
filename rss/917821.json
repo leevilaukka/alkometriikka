@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kolima Pontikka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/917821/",
+	"feed_url": "https://alkometriikka.fi/rss/917821.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kolima Pontikka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-917821-2026-07-18-5.49",
+			"url": "https://alkometriikka.fi/tuotteet/917821/",
+			"title": "Kolima Pontikka — 5,01 € → 5,49 €",
+			"content_html": "<p>Tuotteen Kolima Pontikka hinta on muuttunut.</p><p>5,01 € → 5,49 € (+0,48 €, +9,58 %).</p>",
+			"summary": "Tuotteen Kolima Pontikka hinta on muuttunut. 5,01 € → 5,49 € (+0,48 €, +9,58 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/917821-f7132370b0c6.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

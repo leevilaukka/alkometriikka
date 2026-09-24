@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Little Quino Sauvignon Blanc 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/565977/",
+	"feed_url": "https://alkometriikka.fi/rss/565977.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Little Quino Sauvignon Blanc 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-565977-2026-02-02-15.5",
+			"url": "https://alkometriikka.fi/tuotteet/565977/",
+			"title": "Little Quino Sauvignon Blanc 2020 — 15,60 € → 15,50 €",
+			"content_html": "<p>Tuotteen Little Quino Sauvignon Blanc 2020 hinta on muuttunut.</p><p>15,60 € → 15,50 € (−0,10 €, −0,64 %).</p>",
+			"summary": "Tuotteen Little Quino Sauvignon Blanc 2020 hinta on muuttunut. 15,60 € → 15,50 € (−0,10 €, −0,64 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/565977-815a416b98e2.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-565977-2026-02-02-15.6",
+			"url": "https://alkometriikka.fi/tuotteet/565977/",
+			"title": "Little Quino Sauvignon Blanc 2020 — 15,50 € → 15,60 €",
+			"content_html": "<p>Tuotteen Little Quino Sauvignon Blanc 2020 hinta on muuttunut.</p><p>15,50 € → 15,60 € (+0,10 €, +0,65 %).</p>",
+			"summary": "Tuotteen Little Quino Sauvignon Blanc 2020 hinta on muuttunut. 15,50 € → 15,60 € (+0,10 €, +0,65 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/565977-815a416b98e2.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

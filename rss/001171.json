@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ronsard Napoléon XO – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/001171/",
+	"feed_url": "https://alkometriikka.fi/rss/001171.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ronsard Napoléon XO.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-001171-2026-07-18-26.28",
+			"url": "https://alkometriikka.fi/tuotteet/001171/",
+			"title": "Ronsard Napoléon XO — 26,18 € → 26,28 €",
+			"content_html": "<p>Tuotteen Ronsard Napoléon XO hinta on muuttunut.</p><p>26,18 € → 26,28 € (+0,10 €, +0,38 %).</p>",
+			"summary": "Tuotteen Ronsard Napoléon XO hinta on muuttunut. 26,18 € → 26,28 € (+0,10 €, +0,38 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/001171-639609ccbfec.png",
+			"tags": [
+				"Väkevät",
+				"brandyt"
+			]
+		}
+	]
+}

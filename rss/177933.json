@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Angostura Aromatic Bitters – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/177933/",
+	"feed_url": "https://alkometriikka.fi/rss/177933.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Angostura Aromatic Bitters.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-177933-2026-07-18-23.35",
+			"url": "https://alkometriikka.fi/tuotteet/177933/",
+			"title": "Angostura Aromatic Bitters — 23,26 € → 23,35 €",
+			"content_html": "<p>Tuotteen Angostura Aromatic Bitters hinta on muuttunut.</p><p>23,26 € → 23,35 € (+0,09 €, +0,39 %).</p>",
+			"summary": "Tuotteen Angostura Aromatic Bitters hinta on muuttunut. 23,26 € → 23,35 € (+0,09 €, +0,39 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/177933-4b3e4c046171.png",
+			"tags": [
+				"Väkevät",
+				"maha- ja maustekatkerot"
+			]
+		}
+	]
+}

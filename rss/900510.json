@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Chateau Grenouille Chablis Grand Cru 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900510/",
+	"feed_url": "https://alkometriikka.fi/rss/900510.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Chateau Grenouille Chablis Grand Cru 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900510-2026-07-18-121",
+			"url": "https://alkometriikka.fi/tuotteet/900510/",
+			"title": "Chateau Grenouille Chablis Grand Cru 2022 — 120,45 € → 121,00 €",
+			"content_html": "<p>Tuotteen Chateau Grenouille Chablis Grand Cru 2022 hinta on muuttunut.</p><p>120,45 € → 121,00 € (+0,55 €, +0,46 %).</p>",
+			"summary": "Tuotteen Chateau Grenouille Chablis Grand Cru 2022 hinta on muuttunut. 120,45 € → 121,00 € (+0,55 €, +0,46 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900510-cd473ce87933.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

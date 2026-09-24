@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gaja Darmagi 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901896/",
+	"feed_url": "https://alkometriikka.fi/rss/901896.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gaja Darmagi 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901896-2026-07-18-499",
+			"url": "https://alkometriikka.fi/tuotteet/901896/",
+			"title": "Gaja Darmagi 2022 — 500,44 € → 499,00 €",
+			"content_html": "<p>Tuotteen Gaja Darmagi 2022 hinta on muuttunut.</p><p>500,44 € → 499,00 € (−1,44 €, −0,29 %).</p>",
+			"summary": "Tuotteen Gaja Darmagi 2022 hinta on muuttunut. 500,44 € → 499,00 € (−1,44 €, −0,29 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901896-de1e88a52d35.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

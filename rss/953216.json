@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pflüger Tradition Riesling 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/953216/",
+	"feed_url": "https://alkometriikka.fi/rss/953216.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pflüger Tradition Riesling 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-953216-2026-07-18-25.7",
+			"url": "https://alkometriikka.fi/tuotteet/953216/",
+			"title": "Pflüger Tradition Riesling 2025 — 25,45 € → 25,70 €",
+			"content_html": "<p>Tuotteen Pflüger Tradition Riesling 2025 hinta on muuttunut.</p><p>25,45 € → 25,70 € (+0,25 €, +0,98 %).</p>",
+			"summary": "Tuotteen Pflüger Tradition Riesling 2025 hinta on muuttunut. 25,45 € → 25,70 € (+0,25 €, +0,98 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/953216-6ba97f7a2970.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

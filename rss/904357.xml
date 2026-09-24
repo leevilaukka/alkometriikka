@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Pieropan Soave Classico 2025 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/904357/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Pieropan Soave Classico 2025.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/904357.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Pieropan Soave Classico 2025 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Pieropan Soave Classico 2025 — 19,99 € → 19,89 €</title>
+			<link>https://alkometriikka.fi/tuotteet/904357/</link>
+			<guid isPermaLink="false">alkometriikka-904357-2026-02-02-19.89</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / valkoviinit</category>
+			<description><![CDATA[<p>Tuotteen Pieropan Soave Classico 2025 hinta on muuttunut.</p><p>19,99 € → 19,89 € (−0,10 €, −0,50 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/904357-f9c6822087f9.png" />
+		</item>
+		<item>
+			<title>Pieropan Soave Classico 2025 — 19,89 € → 19,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/904357/</link>
+			<guid isPermaLink="false">alkometriikka-904357-2026-02-02-19.99</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / valkoviinit</category>
+			<description><![CDATA[<p>Tuotteen Pieropan Soave Classico 2025 hinta on muuttunut.</p><p>19,89 € → 19,99 € (+0,10 €, +0,50 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/904357-f9c6822087f9.png" />
+		</item>
+	</channel>
+</rss>

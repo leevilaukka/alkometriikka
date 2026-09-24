@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glendalough Single Cask Madeira Finish – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/952406/",
+	"feed_url": "https://alkometriikka.fi/rss/952406.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glendalough Single Cask Madeira Finish.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-952406-2026-07-18-60.9",
+			"url": "https://alkometriikka.fi/tuotteet/952406/",
+			"title": "Glendalough Single Cask Madeira Finish — 60,28 € → 60,90 €",
+			"content_html": "<p>Tuotteen Glendalough Single Cask Madeira Finish hinta on muuttunut.</p><p>60,28 € → 60,90 € (+0,62 €, +1,03 %).</p>",
+			"summary": "Tuotteen Glendalough Single Cask Madeira Finish hinta on muuttunut. 60,28 € → 60,90 € (+0,62 €, +1,03 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/952406-682a2caa7910.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

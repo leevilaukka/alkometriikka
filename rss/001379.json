@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dalwhinnie 15 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/001379/",
+	"feed_url": "https://alkometriikka.fi/rss/001379.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dalwhinnie 15 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-001379-2026-07-18-63.99",
+			"url": "https://alkometriikka.fi/tuotteet/001379/",
+			"title": "Dalwhinnie 15 Year Old Single Malt — 63,26 € → 63,99 €",
+			"content_html": "<p>Tuotteen Dalwhinnie 15 Year Old Single Malt hinta on muuttunut.</p><p>63,26 € → 63,99 € (+0,73 €, +1,15 %).</p>",
+			"summary": "Tuotteen Dalwhinnie 15 Year Old Single Malt hinta on muuttunut. 63,26 € → 63,99 € (+0,73 €, +1,15 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/001379-eaff8bd9a0af.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

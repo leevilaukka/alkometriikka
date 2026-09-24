@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glenmorangie A Tale of Tokyo Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900130/",
+	"feed_url": "https://alkometriikka.fi/rss/900130.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glenmorangie A Tale of Tokyo Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900130-2026-07-18-125.99",
+			"url": "https://alkometriikka.fi/tuotteet/900130/",
+			"title": "Glenmorangie A Tale of Tokyo Single Malt — 125,90 € → 125,99 €",
+			"content_html": "<p>Tuotteen Glenmorangie A Tale of Tokyo Single Malt hinta on muuttunut.</p><p>125,90 € → 125,99 € (+0,09 €, +0,07 %).</p>",
+			"summary": "Tuotteen Glenmorangie A Tale of Tokyo Single Malt hinta on muuttunut. 125,90 € → 125,99 € (+0,09 €, +0,07 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900130-c9b7b4da82e8.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

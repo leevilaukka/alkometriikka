@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mayer Asia Cuvée 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/513807/",
+	"feed_url": "https://alkometriikka.fi/rss/513807.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mayer Asia Cuvée 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-513807-2026-07-18-15.99",
+			"url": "https://alkometriikka.fi/tuotteet/513807/",
+			"title": "Mayer Asia Cuvée 2025 — 15,95 € → 15,99 €",
+			"content_html": "<p>Tuotteen Mayer Asia Cuvée 2025 hinta on muuttunut.</p><p>15,95 € → 15,99 € (+0,04 €, +0,25 %).</p>",
+			"summary": "Tuotteen Mayer Asia Cuvée 2025 hinta on muuttunut. 15,95 € → 15,99 € (+0,04 €, +0,25 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/513807-198d137764e1.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

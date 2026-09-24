@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Le Contesse Prosecco Extra Dry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/906703/",
+	"feed_url": "https://alkometriikka.fi/rss/906703.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Le Contesse Prosecco Extra Dry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-906703-2026-07-18-4.99",
+			"url": "https://alkometriikka.fi/tuotteet/906703/",
+			"title": "Le Contesse Prosecco Extra Dry — 5,10 € → 4,99 €",
+			"content_html": "<p>Tuotteen Le Contesse Prosecco Extra Dry hinta on muuttunut.</p><p>5,10 € → 4,99 € (−0,11 €, −2,16 %).</p>",
+			"summary": "Tuotteen Le Contesse Prosecco Extra Dry hinta on muuttunut. 5,10 € → 4,99 € (−0,11 €, −2,16 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/906703-5284554d98fb.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

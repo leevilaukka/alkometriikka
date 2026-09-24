@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Force Majeure Kriek – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/928904/",
+	"feed_url": "https://alkometriikka.fi/rss/928904.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Force Majeure Kriek.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-928904-2026-09-04-3.59",
+			"url": "https://alkometriikka.fi/tuotteet/928904/",
+			"title": "Force Majeure Kriek — 3,99 € → 3,59 €",
+			"content_html": "<p>Tuotteen Force Majeure Kriek hinta on muuttunut.</p><p>3,99 € → 3,59 € (−0,40 €, −10,03 %).</p>",
+			"summary": "Tuotteen Force Majeure Kriek hinta on muuttunut. 3,99 € → 3,59 € (−0,40 €, −10,03 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/928904-64e50b20b7ed.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-928904-2026-07-18-3.99",
+			"url": "https://alkometriikka.fi/tuotteet/928904/",
+			"title": "Force Majeure Kriek — 3,94 € → 3,99 €",
+			"content_html": "<p>Tuotteen Force Majeure Kriek hinta on muuttunut.</p><p>3,94 € → 3,99 € (+0,05 €, +1,27 %).</p>",
+			"summary": "Tuotteen Force Majeure Kriek hinta on muuttunut. 3,94 € → 3,99 € (+0,05 €, +1,27 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/928904-64e50b20b7ed.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

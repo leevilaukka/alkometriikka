@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Granbazán Limousin Albariño 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/938126/",
+	"feed_url": "https://alkometriikka.fi/rss/938126.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Granbazán Limousin Albariño 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-938126-2026-07-18-49.95",
+			"url": "https://alkometriikka.fi/tuotteet/938126/",
+			"title": "Granbazán Limousin Albariño 2022 — 49,44 € → 49,95 €",
+			"content_html": "<p>Tuotteen Granbazán Limousin Albariño 2022 hinta on muuttunut.</p><p>49,44 € → 49,95 € (+0,51 €, +1,03 %).</p>",
+			"summary": "Tuotteen Granbazán Limousin Albariño 2022 hinta on muuttunut. 49,44 € → 49,95 € (+0,51 €, +1,03 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/938126-a6a42495bd15.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

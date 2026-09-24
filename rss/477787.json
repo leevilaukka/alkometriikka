@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Karl May Pinot Noir 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/477787/",
+	"feed_url": "https://alkometriikka.fi/rss/477787.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Karl May Pinot Noir 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-477787-2026-07-18-17.98",
+			"url": "https://alkometriikka.fi/tuotteet/477787/",
+			"title": "Karl May Pinot Noir 2023 — 17,94 € → 17,98 €",
+			"content_html": "<p>Tuotteen Karl May Pinot Noir 2023 hinta on muuttunut.</p><p>17,94 € → 17,98 € (+0,04 €, +0,22 %).</p>",
+			"summary": "Tuotteen Karl May Pinot Noir 2023 hinta on muuttunut. 17,94 € → 17,98 € (+0,04 €, +0,22 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/477787-3cfc9ae725fe.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

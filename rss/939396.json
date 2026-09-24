@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cuma Organic Torrontés 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/939396/",
+	"feed_url": "https://alkometriikka.fi/rss/939396.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cuma Organic Torrontés 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-939396-2026-07-18-11.49",
+			"url": "https://alkometriikka.fi/tuotteet/939396/",
+			"title": "Cuma Organic Torrontés 2025 — 11,45 € → 11,49 €",
+			"content_html": "<p>Tuotteen Cuma Organic Torrontés 2025 hinta on muuttunut.</p><p>11,45 € → 11,49 € (+0,04 €, +0,35 %).</p>",
+			"summary": "Tuotteen Cuma Organic Torrontés 2025 hinta on muuttunut. 11,45 € → 11,49 € (+0,04 €, +0,35 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/939396-d6f9ba07d4b8.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

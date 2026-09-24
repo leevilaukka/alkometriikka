@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mucho Más Gold – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902848/",
+	"feed_url": "https://alkometriikka.fi/rss/902848.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mucho Más Gold.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902848-2026-07-18-14.68",
+			"url": "https://alkometriikka.fi/tuotteet/902848/",
+			"title": "Mucho Más Gold — 14,44 € → 14,68 €",
+			"content_html": "<p>Tuotteen Mucho Más Gold hinta on muuttunut.</p><p>14,44 € → 14,68 € (+0,24 €, +1,66 %).</p>",
+			"summary": "Tuotteen Mucho Más Gold hinta on muuttunut. 14,44 € → 14,68 € (+0,24 €, +1,66 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902848-be96fc370e42.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

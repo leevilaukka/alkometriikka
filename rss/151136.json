@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Campari – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/151136/",
+	"feed_url": "https://alkometriikka.fi/rss/151136.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Campari.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-151136-2026-07-18-23.9",
+			"url": "https://alkometriikka.fi/tuotteet/151136/",
+			"title": "Campari — 22,97 € → 23,90 €",
+			"content_html": "<p>Tuotteen Campari hinta on muuttunut.</p><p>22,97 € → 23,90 € (+0,93 €, +4,05 %).</p>",
+			"summary": "Tuotteen Campari hinta on muuttunut. 22,97 € → 23,90 € (+0,93 €, +4,05 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/151136-e0251c4d29f4.png",
+			"tags": [
+				"Väkevät",
+				"grogikatkerot"
+			]
+		}
+	]
+}

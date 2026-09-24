@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bache Gabrielsen American Oak – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/154117/",
+	"feed_url": "https://alkometriikka.fi/rss/154117.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bache Gabrielsen American Oak.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-154117-2026-07-18-49.98",
+			"url": "https://alkometriikka.fi/tuotteet/154117/",
+			"title": "Bache Gabrielsen American Oak — 50,26 € → 49,98 €",
+			"content_html": "<p>Tuotteen Bache Gabrielsen American Oak hinta on muuttunut.</p><p>50,26 € → 49,98 € (−0,28 €, −0,56 %).</p>",
+			"summary": "Tuotteen Bache Gabrielsen American Oak hinta on muuttunut. 50,26 € → 49,98 € (−0,28 €, −0,56 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/154117-cf4a87e74499.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

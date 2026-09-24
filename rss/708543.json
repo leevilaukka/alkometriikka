@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Breezer Lime – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/708543/",
+	"feed_url": "https://alkometriikka.fi/rss/708543.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Breezer Lime.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-708543-2026-07-18-3.69",
+			"url": "https://alkometriikka.fi/tuotteet/708543/",
+			"title": "Breezer Lime — 3,39 € → 3,69 €",
+			"content_html": "<p>Tuotteen Breezer Lime hinta on muuttunut.</p><p>3,39 € → 3,69 € (+0,30 €, +8,85 %).</p>",
+			"summary": "Tuotteen Breezer Lime hinta on muuttunut. 3,39 € → 3,69 € (+0,30 €, +8,85 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/708543-9b7fc6b793e6.png",
+			"tags": [
+				"Panimotuotteet",
+				"juomasekoitukset"
+			]
+		}
+	]
+}

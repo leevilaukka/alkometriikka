@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glenmorangie Quinta Ruban 14 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/924995/",
+	"feed_url": "https://alkometriikka.fi/rss/924995.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glenmorangie Quinta Ruban 14 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-924995-2026-07-18-85.98",
+			"url": "https://alkometriikka.fi/tuotteet/924995/",
+			"title": "Glenmorangie Quinta Ruban 14 Year Old Single Malt — 85,30 € → 85,98 €",
+			"content_html": "<p>Tuotteen Glenmorangie Quinta Ruban 14 Year Old Single Malt hinta on muuttunut.</p><p>85,30 € → 85,98 € (+0,68 €, +0,80 %).</p>",
+			"summary": "Tuotteen Glenmorangie Quinta Ruban 14 Year Old Single Malt hinta on muuttunut. 85,30 € → 85,98 € (+0,68 €, +0,80 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/924995-32a5e88944ff.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

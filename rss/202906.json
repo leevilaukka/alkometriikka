@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Leijona Tutti Frutti muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/202906/",
+	"feed_url": "https://alkometriikka.fi/rss/202906.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Leijona Tutti Frutti muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-202906-2026-07-18-11.98",
+			"url": "https://alkometriikka.fi/tuotteet/202906/",
+			"title": "Leijona Tutti Frutti muovipullo — 11,96 € → 11,98 €",
+			"content_html": "<p>Tuotteen Leijona Tutti Frutti muovipullo hinta on muuttunut.</p><p>11,96 € → 11,98 € (+0,02 €, +0,17 %).</p>",
+			"summary": "Tuotteen Leijona Tutti Frutti muovipullo hinta on muuttunut. 11,96 € → 11,98 € (+0,02 €, +0,17 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/202906-8fa447fea374.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

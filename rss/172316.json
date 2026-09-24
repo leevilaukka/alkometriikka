@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Helsinki Dry Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/172316/",
+	"feed_url": "https://alkometriikka.fi/rss/172316.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Helsinki Dry Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-172316-2026-07-18-39.98",
+			"url": "https://alkometriikka.fi/tuotteet/172316/",
+			"title": "Helsinki Dry Gin — 44,98 € → 39,98 €",
+			"content_html": "<p>Tuotteen Helsinki Dry Gin hinta on muuttunut.</p><p>44,98 € → 39,98 € (−5,00 €, −11,12 %).</p>",
+			"summary": "Tuotteen Helsinki Dry Gin hinta on muuttunut. 44,98 € → 39,98 € (−5,00 €, −11,12 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/172316-ec3fa93d5ff7.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

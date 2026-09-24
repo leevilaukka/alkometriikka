@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Haimer Riesling Selektion 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901710/",
+	"feed_url": "https://alkometriikka.fi/rss/901710.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Haimer Riesling Selektion 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901710-2026-07-18-18.99",
+			"url": "https://alkometriikka.fi/tuotteet/901710/",
+			"title": "Haimer Riesling Selektion 2024 — 18,38 € → 18,99 €",
+			"content_html": "<p>Tuotteen Haimer Riesling Selektion 2024 hinta on muuttunut.</p><p>18,38 € → 18,99 € (+0,61 €, +3,32 %).</p>",
+			"summary": "Tuotteen Haimer Riesling Selektion 2024 hinta on muuttunut. 18,38 € → 18,99 € (+0,61 €, +3,32 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901710-eee60bde9c6a.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

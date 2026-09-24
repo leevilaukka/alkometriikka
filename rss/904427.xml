@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Choya Extra Years Umeshu – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/904427/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Choya Extra Years Umeshu.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/904427.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Choya Extra Years Umeshu – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Choya Extra Years Umeshu — 37,44 € → 37,61 €</title>
+			<link>https://alkometriikka.fi/tuotteet/904427/</link>
+			<guid isPermaLink="false">alkometriikka-904427-2026-07-18-37.61</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / hedelmäliköörit</category>
+			<description><![CDATA[<p>Tuotteen Choya Extra Years Umeshu hinta on muuttunut.</p><p>37,44 € → 37,61 € (+0,17 €, +0,45 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/904427-107e663b9fb3.png" />
+		</item>
+	</channel>
+</rss>

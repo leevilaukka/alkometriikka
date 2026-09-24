@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – TreRose Vin Santo di Montepulciano 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/591644/",
+	"feed_url": "https://alkometriikka.fi/rss/591644.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: TreRose Vin Santo di Montepulciano 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-591644-2026-07-18-32.97",
+			"url": "https://alkometriikka.fi/tuotteet/591644/",
+			"title": "TreRose Vin Santo di Montepulciano 2018 — 27,98 € → 32,97 €",
+			"content_html": "<p>Tuotteen TreRose Vin Santo di Montepulciano 2018 hinta on muuttunut.</p><p>27,98 € → 32,97 € (+4,99 €, +17,83 %).</p>",
+			"summary": "Tuotteen TreRose Vin Santo di Montepulciano 2018 hinta on muuttunut. 27,98 € → 32,97 € (+4,99 €, +17,83 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/591644-8c6451f34d80.png",
+			"tags": [
+				"Viinit",
+				"jälkiruokaviinit"
+			]
+		}
+	]
+}

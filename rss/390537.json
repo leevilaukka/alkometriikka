@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Chymos Väkevä Päärynä muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/390537/",
+	"feed_url": "https://alkometriikka.fi/rss/390537.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Chymos Väkevä Päärynä muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-390537-2026-07-18-9.59",
+			"url": "https://alkometriikka.fi/tuotteet/390537/",
+			"title": "Chymos Väkevä Päärynä muovipullo — 9,55 € → 9,59 €",
+			"content_html": "<p>Tuotteen Chymos Väkevä Päärynä muovipullo hinta on muuttunut.</p><p>9,55 € → 9,59 € (+0,04 €, +0,42 %).</p>",
+			"summary": "Tuotteen Chymos Väkevä Päärynä muovipullo hinta on muuttunut. 9,55 € → 9,59 € (+0,04 €, +0,42 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/390537-93abd14db7b9.png",
+			"tags": [
+				"Välituotteet",
+				"väkevät viinit"
+			]
+		}
+	]
+}

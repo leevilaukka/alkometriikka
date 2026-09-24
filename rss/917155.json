@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Le Sirop de Monin Ginger – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/917155/",
+	"feed_url": "https://alkometriikka.fi/rss/917155.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Le Sirop de Monin Ginger.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-917155-2026-07-18-17.19",
+			"url": "https://alkometriikka.fi/tuotteet/917155/",
+			"title": "Le Sirop de Monin Ginger — 16,88 € → 17,19 €",
+			"content_html": "<p>Tuotteen Le Sirop de Monin Ginger hinta on muuttunut.</p><p>16,88 € → 17,19 € (+0,31 €, +1,84 %).</p>",
+			"summary": "Tuotteen Le Sirop de Monin Ginger hinta on muuttunut. 16,88 € → 17,19 € (+0,31 €, +1,84 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/917155-69ef2a8fb821.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

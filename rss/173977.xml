@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Stoli Salted Karamel – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/173977/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Stoli Salted Karamel.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/173977.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Stoli Salted Karamel – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Stoli Salted Karamel — 27,58 € → 27,75 €</title>
+			<link>https://alkometriikka.fi/tuotteet/173977/</link>
+			<guid isPermaLink="false">alkometriikka-173977-2026-07-18-27.75</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / maustetut vodkat</category>
+			<description><![CDATA[<p>Tuotteen Stoli Salted Karamel hinta on muuttunut.</p><p>27,58 € → 27,75 € (+0,17 €, +0,62 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/173977-ec4a6c0f248e.png" />
+		</item>
+	</channel>
+</rss>

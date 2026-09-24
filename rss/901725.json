@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Darling Surfers Choice Sauvignon Blanc – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901725/",
+	"feed_url": "https://alkometriikka.fi/rss/901725.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Darling Surfers Choice Sauvignon Blanc.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901725-2026-07-18-13.49",
+			"url": "https://alkometriikka.fi/tuotteet/901725/",
+			"title": "Darling Surfers Choice Sauvignon Blanc — 13,45 € → 13,49 €",
+			"content_html": "<p>Tuotteen Darling Surfers Choice Sauvignon Blanc hinta on muuttunut.</p><p>13,45 € → 13,49 € (+0,04 €, +0,30 %).</p>",
+			"summary": "Tuotteen Darling Surfers Choice Sauvignon Blanc hinta on muuttunut. 13,45 € → 13,49 € (+0,04 €, +0,30 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901725-18fcd7295d7d.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

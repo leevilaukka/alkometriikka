@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dom Pérignon Plénitude 2 Champagne Brut 2008 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901785/",
+	"feed_url": "https://alkometriikka.fi/rss/901785.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dom Pérignon Plénitude 2 Champagne Brut 2008.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901785-2026-07-18-589.98",
+			"url": "https://alkometriikka.fi/tuotteet/901785/",
+			"title": "Dom Pérignon Plénitude 2 Champagne Brut 2008 — 570,44 € → 589,98 €",
+			"content_html": "<p>Tuotteen Dom Pérignon Plénitude 2 Champagne Brut 2008 hinta on muuttunut.</p><p>570,44 € → 589,98 € (+19,54 €, +3,43 %).</p>",
+			"summary": "Tuotteen Dom Pérignon Plénitude 2 Champagne Brut 2008 hinta on muuttunut. 570,44 € → 589,98 € (+19,54 €, +3,43 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901785-faa81f48f9a7.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

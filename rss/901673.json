@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Casals Vermouth – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901673/",
+	"feed_url": "https://alkometriikka.fi/rss/901673.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Casals Vermouth.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901673-2026-07-18-24.98",
+			"url": "https://alkometriikka.fi/tuotteet/901673/",
+			"title": "Casals Vermouth — 25,10 € → 24,98 €",
+			"content_html": "<p>Tuotteen Casals Vermouth hinta on muuttunut.</p><p>25,10 € → 24,98 € (−0,12 €, −0,48 %).</p>",
+			"summary": "Tuotteen Casals Vermouth hinta on muuttunut. 25,10 € → 24,98 € (−0,12 €, −0,48 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901673-10f5df7111d7.png",
+			"tags": [
+				"Välituotteet",
+				"vermutit"
+			]
+		}
+	]
+}

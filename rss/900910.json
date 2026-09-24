@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Julià & Navinès Organic Cava Brut Nature – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900910/",
+	"feed_url": "https://alkometriikka.fi/rss/900910.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Julià & Navinès Organic Cava Brut Nature.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900910-2026-07-18-8.68",
+			"url": "https://alkometriikka.fi/tuotteet/900910/",
+			"title": "Julià & Navinès Organic Cava Brut Nature — 8,70 € → 8,68 €",
+			"content_html": "<p>Tuotteen Julià & Navinès Organic Cava Brut Nature hinta on muuttunut.</p><p>8,70 € → 8,68 € (−0,02 €, −0,23 %).</p>",
+			"summary": "Tuotteen Julià & Navinès Organic Cava Brut Nature hinta on muuttunut. 8,70 € → 8,68 € (−0,02 €, −0,23 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900910-c99663d570fd.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

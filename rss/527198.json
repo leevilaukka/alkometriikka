@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cerro Blanco kartonkitölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/527198/",
+	"feed_url": "https://alkometriikka.fi/rss/527198.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cerro Blanco kartonkitölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-527198-2026-07-18-9.99",
+			"url": "https://alkometriikka.fi/tuotteet/527198/",
+			"title": "Cerro Blanco kartonkitölkki — 10,30 € → 9,99 €",
+			"content_html": "<p>Tuotteen Cerro Blanco kartonkitölkki hinta on muuttunut.</p><p>10,30 € → 9,99 € (−0,31 €, −3,01 %).</p>",
+			"summary": "Tuotteen Cerro Blanco kartonkitölkki hinta on muuttunut. 10,30 € → 9,99 € (−0,31 €, −3,01 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/527198-c9c36cba552d.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

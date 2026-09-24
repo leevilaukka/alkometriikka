@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Creation Reserve Pinot Noir 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/954168/",
+	"feed_url": "https://alkometriikka.fi/rss/954168.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Creation Reserve Pinot Noir 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-954168-2026-07-18-46.49",
+			"url": "https://alkometriikka.fi/tuotteet/954168/",
+			"title": "Creation Reserve Pinot Noir 2019 — 46,45 € → 46,49 €",
+			"content_html": "<p>Tuotteen Creation Reserve Pinot Noir 2019 hinta on muuttunut.</p><p>46,45 € → 46,49 € (+0,04 €, +0,09 %).</p>",
+			"summary": "Tuotteen Creation Reserve Pinot Noir 2019 hinta on muuttunut. 46,45 € → 46,49 € (+0,04 €, +0,09 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/954168-d58de5b7e1c6.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

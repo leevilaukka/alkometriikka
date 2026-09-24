@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bestheim Riesling Grand Cru Schlossberg 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/595687/",
+	"feed_url": "https://alkometriikka.fi/rss/595687.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bestheim Riesling Grand Cru Schlossberg 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-595687-2026-07-18-23.49",
+			"url": "https://alkometriikka.fi/tuotteet/595687/",
+			"title": "Bestheim Riesling Grand Cru Schlossberg 2022 — 23,95 € → 23,49 €",
+			"content_html": "<p>Tuotteen Bestheim Riesling Grand Cru Schlossberg 2022 hinta on muuttunut.</p><p>23,95 € → 23,49 € (−0,46 €, −1,92 %).</p>",
+			"summary": "Tuotteen Bestheim Riesling Grand Cru Schlossberg 2022 hinta on muuttunut. 23,95 € → 23,49 € (−0,46 €, −1,92 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/595687-7e0f403ce3c4.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

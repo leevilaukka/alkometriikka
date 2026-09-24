@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lelarge-Pugeot Tradition 1er Cru Champagne Extra Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/580887/",
+	"feed_url": "https://alkometriikka.fi/rss/580887.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lelarge-Pugeot Tradition 1er Cru Champagne Extra Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-580887-2026-07-18-60",
+			"url": "https://alkometriikka.fi/tuotteet/580887/",
+			"title": "Lelarge-Pugeot Tradition 1er Cru Champagne Extra Brut — 59,06 € → 60,00 €",
+			"content_html": "<p>Tuotteen Lelarge-Pugeot Tradition 1er Cru Champagne Extra Brut hinta on muuttunut.</p><p>59,06 € → 60,00 € (+0,94 €, +1,59 %).</p>",
+			"summary": "Tuotteen Lelarge-Pugeot Tradition 1er Cru Champagne Extra Brut hinta on muuttunut. 59,06 € → 60,00 € (+0,94 €, +1,59 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/580887-695bbe3778ef.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

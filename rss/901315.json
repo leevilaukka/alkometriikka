@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Oh la Vache! Colombard Chardonnay – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901315/",
+	"feed_url": "https://alkometriikka.fi/rss/901315.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Oh la Vache! Colombard Chardonnay.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901315-2026-07-18-13.48",
+			"url": "https://alkometriikka.fi/tuotteet/901315/",
+			"title": "Oh la Vache! Colombard Chardonnay — 13,46 € → 13,48 €",
+			"content_html": "<p>Tuotteen Oh la Vache! Colombard Chardonnay hinta on muuttunut.</p><p>13,46 € → 13,48 € (+0,02 €, +0,15 %).</p>",
+			"summary": "Tuotteen Oh la Vache! Colombard Chardonnay hinta on muuttunut. 13,46 € → 13,48 € (+0,02 €, +0,15 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901315-36d273ddd3e5.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Don Julio Blanco Tequila – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/940387/",
+	"feed_url": "https://alkometriikka.fi/rss/940387.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Don Julio Blanco Tequila.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-940387-2026-07-18-81.99",
+			"url": "https://alkometriikka.fi/tuotteet/940387/",
+			"title": "Don Julio Blanco Tequila — 80,25 € → 81,99 €",
+			"content_html": "<p>Tuotteen Don Julio Blanco Tequila hinta on muuttunut.</p><p>80,25 € → 81,99 € (+1,74 €, +2,17 %).</p>",
+			"summary": "Tuotteen Don Julio Blanco Tequila hinta on muuttunut. 80,25 € → 81,99 € (+1,74 €, +2,17 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/940387-2755e80e7943.png",
+			"tags": [
+				"Väkevät",
+				"Tequilat"
+			]
+		}
+	]
+}

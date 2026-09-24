@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Tahbilk Marsanne Viognier Roussanne 2022 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/512587/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Tahbilk Marsanne Viognier Roussanne 2022.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/512587.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Tahbilk Marsanne Viognier Roussanne 2022 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Tahbilk Marsanne Viognier Roussanne 2022 — 16,99 € → 15,10 €</title>
+			<link>https://alkometriikka.fi/tuotteet/512587/</link>
+			<guid isPermaLink="false">alkometriikka-512587-2026-07-18-15.1</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / valkoviinit</category>
+			<description><![CDATA[<p>Tuotteen Tahbilk Marsanne Viognier Roussanne 2022 hinta on muuttunut.</p><p>16,99 € → 15,10 € (−1,89 €, −11,12 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/512587-ac647943de69.png" />
+		</item>
+	</channel>
+</rss>

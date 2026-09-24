@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Greenall's London Dry Gin & Tonic tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/727684/",
+	"feed_url": "https://alkometriikka.fi/rss/727684.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Greenall's London Dry Gin & Tonic tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-727684-2026-07-18-3.98",
+			"url": "https://alkometriikka.fi/tuotteet/727684/",
+			"title": "Greenall's London Dry Gin & Tonic tölkki — 4,01 € → 3,98 €",
+			"content_html": "<p>Tuotteen Greenall's London Dry Gin & Tonic tölkki hinta on muuttunut.</p><p>4,01 € → 3,98 € (−0,03 €, −0,75 %).</p>",
+			"summary": "Tuotteen Greenall's London Dry Gin & Tonic tölkki hinta on muuttunut. 4,01 € → 3,98 € (−0,03 €, −0,75 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/727684-42b5aafecaf6.png",
+			"tags": [
+				"Panimotuotteet",
+				"juomasekoitukset"
+			]
+		}
+	]
+}

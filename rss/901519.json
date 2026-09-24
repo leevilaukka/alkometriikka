@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – La Baume Chardonnay Organic 2024 viinipussi – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901519/",
+	"feed_url": "https://alkometriikka.fi/rss/901519.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: La Baume Chardonnay Organic 2024 viinipussi.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901519-2026-07-18-22.97",
+			"url": "https://alkometriikka.fi/tuotteet/901519/",
+			"title": "La Baume Chardonnay Organic 2024 viinipussi — 22,89 € → 22,97 €",
+			"content_html": "<p>Tuotteen La Baume Chardonnay Organic 2024 viinipussi hinta on muuttunut.</p><p>22,89 € → 22,97 € (+0,08 €, +0,35 %).</p>",
+			"summary": "Tuotteen La Baume Chardonnay Organic 2024 viinipussi hinta on muuttunut. 22,89 € → 22,97 € (+0,08 €, +0,35 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901519-f22de1c4628d.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

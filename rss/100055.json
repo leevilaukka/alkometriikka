@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Stoli Vodka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/100055/",
+	"feed_url": "https://alkometriikka.fi/rss/100055.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Stoli Vodka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-100055-2026-07-18-9.9",
+			"url": "https://alkometriikka.fi/tuotteet/100055/",
+			"title": "Stoli Vodka — 9,49 € → 9,90 €",
+			"content_html": "<p>Tuotteen Stoli Vodka hinta on muuttunut.</p><p>9,49 € → 9,90 € (+0,41 €, +4,32 %).</p>",
+			"summary": "Tuotteen Stoli Vodka hinta on muuttunut. 9,49 € → 9,90 € (+0,41 €, +4,32 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/100055-a467a67b1fcb.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

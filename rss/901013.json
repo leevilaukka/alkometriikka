@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gaja Barolo Dagromis 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901013/",
+	"feed_url": "https://alkometriikka.fi/rss/901013.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gaja Barolo Dagromis 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901013-2026-07-18-119.99",
+			"url": "https://alkometriikka.fi/tuotteet/901013/",
+			"title": "Gaja Barolo Dagromis 2021 — 122,35 € → 119,99 €",
+			"content_html": "<p>Tuotteen Gaja Barolo Dagromis 2021 hinta on muuttunut.</p><p>122,35 € → 119,99 € (−2,36 €, −1,93 %).</p>",
+			"summary": "Tuotteen Gaja Barolo Dagromis 2021 hinta on muuttunut. 122,35 € → 119,99 € (−2,36 €, −1,93 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901013-9a0a2dc074a2.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

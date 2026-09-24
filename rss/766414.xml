@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Sandels Vahva Lager tölkki – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/766414/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Sandels Vahva Lager tölkki.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/766414.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Sandels Vahva Lager tölkki – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Sandels Vahva Lager tölkki — 2,65 € → 2,69 €</title>
+			<link>https://alkometriikka.fi/tuotteet/766414/</link>
+			<guid isPermaLink="false">alkometriikka-766414-2026-07-18-2.69</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Panimotuotteet / oluet</category>
+			<description><![CDATA[<p>Tuotteen Sandels Vahva Lager tölkki hinta on muuttunut.</p><p>2,65 € → 2,69 € (+0,04 €, +1,51 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/766414-c7e6945b6ccc.png" />
+		</item>
+	</channel>
+</rss>

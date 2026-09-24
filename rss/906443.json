@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Duckstein Weizen – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/906443/",
+	"feed_url": "https://alkometriikka.fi/rss/906443.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Duckstein Weizen.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-906443-2026-07-18-4.49",
+			"url": "https://alkometriikka.fi/tuotteet/906443/",
+			"title": "Duckstein Weizen — 4,39 € → 4,49 €",
+			"content_html": "<p>Tuotteen Duckstein Weizen hinta on muuttunut.</p><p>4,39 € → 4,49 € (+0,10 €, +2,28 %).</p>",
+			"summary": "Tuotteen Duckstein Weizen hinta on muuttunut. 4,39 € → 4,49 € (+0,10 €, +2,28 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/906443-b4af06e5a48f.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

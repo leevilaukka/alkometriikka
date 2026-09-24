@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ipsus 2016 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/953034/",
+	"feed_url": "https://alkometriikka.fi/rss/953034.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ipsus 2016.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-953034-2026-07-18-360.49",
+			"url": "https://alkometriikka.fi/tuotteet/953034/",
+			"title": "Ipsus 2016 — 360,45 € → 360,49 €",
+			"content_html": "<p>Tuotteen Ipsus 2016 hinta on muuttunut.</p><p>360,45 € → 360,49 € (+0,04 €, +0,01 %).</p>",
+			"summary": "Tuotteen Ipsus 2016 hinta on muuttunut. 360,45 € → 360,49 € (+0,04 €, +0,01 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/953034-8544da07324b.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Keo Zivania – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/957492/",
+	"feed_url": "https://alkometriikka.fi/rss/957492.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Keo Zivania.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-957492-2026-07-18-26.99",
+			"url": "https://alkometriikka.fi/tuotteet/957492/",
+			"title": "Keo Zivania — 26,71 € → 26,99 €",
+			"content_html": "<p>Tuotteen Keo Zivania hinta on muuttunut.</p><p>26,71 € → 26,99 € (+0,28 €, +1,05 %).</p>",
+			"summary": "Tuotteen Keo Zivania hinta on muuttunut. 26,71 € → 26,99 € (+0,28 €, +1,05 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/957492-093a049c1a2c.png",
+			"tags": [
+				"Väkevät",
+				"hedelmätisleet"
+			]
+		}
+	]
+}

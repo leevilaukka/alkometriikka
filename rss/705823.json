@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Breezer Orange – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/705823/",
+	"feed_url": "https://alkometriikka.fi/rss/705823.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Breezer Orange.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-705823-2026-07-18-3.69",
+			"url": "https://alkometriikka.fi/tuotteet/705823/",
+			"title": "Breezer Orange — 3,39 € → 3,69 €",
+			"content_html": "<p>Tuotteen Breezer Orange hinta on muuttunut.</p><p>3,39 € → 3,69 € (+0,30 €, +8,85 %).</p>",
+			"summary": "Tuotteen Breezer Orange hinta on muuttunut. 3,39 € → 3,69 € (+0,30 €, +8,85 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/705823-0fcff71d5552.png",
+			"tags": [
+				"Panimotuotteet",
+				"juomasekoitukset"
+			]
+		}
+	]
+}

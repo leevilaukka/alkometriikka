@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dufvenkrooks Prestige Väkevä Punaviiniglögi – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/300019/",
+	"feed_url": "https://alkometriikka.fi/rss/300019.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dufvenkrooks Prestige Väkevä Punaviiniglögi.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-300019-2026-02-02-10.29",
+			"url": "https://alkometriikka.fi/tuotteet/300019/",
+			"title": "Dufvenkrooks Prestige Väkevä Punaviiniglögi — 10,39 € → 10,29 €",
+			"content_html": "<p>Tuotteen Dufvenkrooks Prestige Väkevä Punaviiniglögi hinta on muuttunut.</p><p>10,39 € → 10,29 € (−0,10 €, −0,96 %).</p>",
+			"summary": "Tuotteen Dufvenkrooks Prestige Väkevä Punaviiniglögi hinta on muuttunut. 10,39 € → 10,29 € (−0,10 €, −0,96 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/300019-37be61e68fd0.png",
+			"tags": [
+				"jälkiruokaviinit, väkevöidyt ja muut viinit",
+				"Glögit"
+			]
+		},
+		{
+			"id": "alkometriikka-300019-2026-02-02-10.39",
+			"url": "https://alkometriikka.fi/tuotteet/300019/",
+			"title": "Dufvenkrooks Prestige Väkevä Punaviiniglögi — 10,29 € → 10,39 €",
+			"content_html": "<p>Tuotteen Dufvenkrooks Prestige Väkevä Punaviiniglögi hinta on muuttunut.</p><p>10,29 € → 10,39 € (+0,10 €, +0,97 %).</p>",
+			"summary": "Tuotteen Dufvenkrooks Prestige Väkevä Punaviiniglögi hinta on muuttunut. 10,29 € → 10,39 € (+0,10 €, +0,97 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/300019-37be61e68fd0.png",
+			"tags": [
+				"jälkiruokaviinit, väkevöidyt ja muut viinit",
+				"Glögit"
+			]
+		}
+	]
+}

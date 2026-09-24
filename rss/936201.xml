@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Montalbera Grignè Grignolino D&apos;Asti 2023 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/936201/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Montalbera Grignè Grignolino D&apos;Asti 2023.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/936201.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Montalbera Grignè Grignolino D&apos;Asti 2023 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Montalbera Grignè Grignolino D&apos;Asti 2023 — 12,98 € → 12,88 €</title>
+			<link>https://alkometriikka.fi/tuotteet/936201/</link>
+			<guid isPermaLink="false">alkometriikka-936201-2026-02-02-12.88</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Montalbera Grignè Grignolino D'Asti 2023 hinta on muuttunut.</p><p>12,98 € → 12,88 € (−0,10 €, −0,77 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/936201-07b73462ca23.png" />
+		</item>
+		<item>
+			<title>Montalbera Grignè Grignolino D&apos;Asti 2023 — 12,88 € → 12,98 €</title>
+			<link>https://alkometriikka.fi/tuotteet/936201/</link>
+			<guid isPermaLink="false">alkometriikka-936201-2026-02-02-12.98</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Montalbera Grignè Grignolino D'Asti 2023 hinta on muuttunut.</p><p>12,88 € → 12,98 € (+0,10 €, +0,78 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/936201-07b73462ca23.png" />
+		</item>
+	</channel>
+</rss>

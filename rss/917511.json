@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château Montus 2012 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/917511/",
+	"feed_url": "https://alkometriikka.fi/rss/917511.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château Montus 2012.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-917511-2026-07-18-19.9",
+			"url": "https://alkometriikka.fi/tuotteet/917511/",
+			"title": "Château Montus 2012 — 19,72 € → 19,90 €",
+			"content_html": "<p>Tuotteen Château Montus 2012 hinta on muuttunut.</p><p>19,72 € → 19,90 € (+0,18 €, +0,91 %).</p>",
+			"summary": "Tuotteen Château Montus 2012 hinta on muuttunut. 19,72 € → 19,90 € (+0,18 €, +0,91 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/917511-85e142ea110d.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

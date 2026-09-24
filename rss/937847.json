@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pierre Paillard Grand Cru Rosé Champagne Extra-Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/937847/",
+	"feed_url": "https://alkometriikka.fi/rss/937847.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pierre Paillard Grand Cru Rosé Champagne Extra-Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-937847-2026-07-18-80.92",
+			"url": "https://alkometriikka.fi/tuotteet/937847/",
+			"title": "Pierre Paillard Grand Cru Rosé Champagne Extra-Brut — 80,37 € → 80,92 €",
+			"content_html": "<p>Tuotteen Pierre Paillard Grand Cru Rosé Champagne Extra-Brut hinta on muuttunut.</p><p>80,37 € → 80,92 € (+0,55 €, +0,68 %).</p>",
+			"summary": "Tuotteen Pierre Paillard Grand Cru Rosé Champagne Extra-Brut hinta on muuttunut. 80,37 € → 80,92 € (+0,55 €, +0,68 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/937847-798e477ee447.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

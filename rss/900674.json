@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Granja Remelluri Gran Reserva 2016 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900674/",
+	"feed_url": "https://alkometriikka.fi/rss/900674.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Granja Remelluri Gran Reserva 2016.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900674-2026-07-18-81.79",
+			"url": "https://alkometriikka.fi/tuotteet/900674/",
+			"title": "Granja Remelluri Gran Reserva 2016 — 81,76 € → 81,79 €",
+			"content_html": "<p>Tuotteen Granja Remelluri Gran Reserva 2016 hinta on muuttunut.</p><p>81,76 € → 81,79 € (+0,03 €, +0,04 %).</p>",
+			"summary": "Tuotteen Granja Remelluri Gran Reserva 2016 hinta on muuttunut. 81,76 € → 81,79 € (+0,03 €, +0,04 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900674-d3c5607b9de7.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

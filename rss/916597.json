@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Valduero Gran Reserva 12 Anos 2001 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/916597/",
+	"feed_url": "https://alkometriikka.fi/rss/916597.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Valduero Gran Reserva 12 Anos 2001.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-916597-2026-07-18-1357.48",
+			"url": "https://alkometriikka.fi/tuotteet/916597/",
+			"title": "Valduero Gran Reserva 12 Anos 2001 — 1 285,50 € → 1 357,48 €",
+			"content_html": "<p>Tuotteen Valduero Gran Reserva 12 Anos 2001 hinta on muuttunut.</p><p>1 285,50 € → 1 357,48 € (+71,98 €, +5,60 %).</p>",
+			"summary": "Tuotteen Valduero Gran Reserva 12 Anos 2001 hinta on muuttunut. 1 285,50 € → 1 357,48 € (+71,98 €, +5,60 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/916597-4bef839650bb.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

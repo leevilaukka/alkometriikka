@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Frison Riesling Sauvignon Blanc 2023 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/581647/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Frison Riesling Sauvignon Blanc 2023.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/581647.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Frison Riesling Sauvignon Blanc 2023 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Frison Riesling Sauvignon Blanc 2023 — 11,29 € → 11,19 €</title>
+			<link>https://alkometriikka.fi/tuotteet/581647/</link>
+			<guid isPermaLink="false">alkometriikka-581647-2026-02-02-11.19</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / valkoviinit</category>
+			<description><![CDATA[<p>Tuotteen Frison Riesling Sauvignon Blanc 2023 hinta on muuttunut.</p><p>11,29 € → 11,19 € (−0,10 €, −0,89 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/581647-440696332d03.png" />
+		</item>
+		<item>
+			<title>Frison Riesling Sauvignon Blanc 2023 — 11,19 € → 11,29 €</title>
+			<link>https://alkometriikka.fi/tuotteet/581647/</link>
+			<guid isPermaLink="false">alkometriikka-581647-2026-02-02-11.29</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / valkoviinit</category>
+			<description><![CDATA[<p>Tuotteen Frison Riesling Sauvignon Blanc 2023 hinta on muuttunut.</p><p>11,19 € → 11,29 € (+0,10 €, +0,89 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/581647-440696332d03.png" />
+		</item>
+	</channel>
+</rss>

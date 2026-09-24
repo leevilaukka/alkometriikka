@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Krohn Ruby Port – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/312914/",
+	"feed_url": "https://alkometriikka.fi/rss/312914.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Krohn Ruby Port.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-312914-2026-07-18-11.3",
+			"url": "https://alkometriikka.fi/tuotteet/312914/",
+			"title": "Krohn Ruby Port — 11,36 € → 11,30 €",
+			"content_html": "<p>Tuotteen Krohn Ruby Port hinta on muuttunut.</p><p>11,36 € → 11,30 € (−0,06 €, −0,53 %).</p>",
+			"summary": "Tuotteen Krohn Ruby Port hinta on muuttunut. 11,36 € → 11,30 € (−0,06 €, −0,53 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/312914-6c8a5eaaea90.png",
+			"tags": [
+				"Välituotteet",
+				"portviinit"
+			]
+		}
+	]
+}

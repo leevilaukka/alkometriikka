@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Helmi Mangokermalikööri muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/100067/",
+	"feed_url": "https://alkometriikka.fi/rss/100067.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Helmi Mangokermalikööri muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-100067-2026-07-18-11.69",
+			"url": "https://alkometriikka.fi/tuotteet/100067/",
+			"title": "Helmi Mangokermalikööri muovipullo — 11,65 € → 11,69 €",
+			"content_html": "<p>Tuotteen Helmi Mangokermalikööri muovipullo hinta on muuttunut.</p><p>11,65 € → 11,69 € (+0,04 €, +0,34 %).</p>",
+			"summary": "Tuotteen Helmi Mangokermalikööri muovipullo hinta on muuttunut. 11,65 € → 11,69 € (+0,04 €, +0,34 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/100067-70a9abdd3a33.png",
+			"tags": [
+				"Väkevät",
+				"kermaliköörit"
+			]
+		}
+	]
+}

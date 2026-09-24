@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Cascina Boschetti Gomba Barbera d’Alba 2023 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/484694/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Cascina Boschetti Gomba Barbera d’Alba 2023.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/484694.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Cascina Boschetti Gomba Barbera d’Alba 2023 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Cascina Boschetti Gomba Barbera d’Alba 2023 — 9,20 € → 9,49 €</title>
+			<link>https://alkometriikka.fi/tuotteet/484694/</link>
+			<guid isPermaLink="false">alkometriikka-484694-2026-07-18-9.49</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Cascina Boschetti Gomba Barbera d’Alba 2023 hinta on muuttunut.</p><p>9,20 € → 9,49 € (+0,29 €, +3,15 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/484694-9f10a3ec7515.png" />
+		</item>
+	</channel>
+</rss>

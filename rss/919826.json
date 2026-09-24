@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – De Kuyper Butterscotch – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/919826/",
+	"feed_url": "https://alkometriikka.fi/rss/919826.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: De Kuyper Butterscotch.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-919826-2026-07-18-14.99",
+			"url": "https://alkometriikka.fi/tuotteet/919826/",
+			"title": "De Kuyper Butterscotch — 14,97 € → 14,99 €",
+			"content_html": "<p>Tuotteen De Kuyper Butterscotch hinta on muuttunut.</p><p>14,97 € → 14,99 € (+0,02 €, +0,13 %).</p>",
+			"summary": "Tuotteen De Kuyper Butterscotch hinta on muuttunut. 14,97 € → 14,99 € (+0,02 €, +0,13 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/919826-b5ab904cef3a.png",
+			"tags": [
+				"Väkevät",
+				"mausteliköörit"
+			]
+		}
+	]
+}

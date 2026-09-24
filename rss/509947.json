@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Codorniu Ecológica Cava Semi Seco – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/509947/",
+	"feed_url": "https://alkometriikka.fi/rss/509947.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Codorniu Ecológica Cava Semi Seco.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-509947-2026-07-18-12.98",
+			"url": "https://alkometriikka.fi/tuotteet/509947/",
+			"title": "Codorniu Ecológica Cava Semi Seco — 13,25 € → 12,98 €",
+			"content_html": "<p>Tuotteen Codorniu Ecológica Cava Semi Seco hinta on muuttunut.</p><p>13,25 € → 12,98 € (−0,27 €, −2,04 %).</p>",
+			"summary": "Tuotteen Codorniu Ecológica Cava Semi Seco hinta on muuttunut. 13,25 € → 12,98 € (−0,27 €, −2,04 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/509947-6ba34a5cc577.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Domaine de Biéville Chablis 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/513847/",
+	"feed_url": "https://alkometriikka.fi/rss/513847.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Domaine de Biéville Chablis 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-513847-2026-07-18-26.51",
+			"url": "https://alkometriikka.fi/tuotteet/513847/",
+			"title": "Domaine de Biéville Chablis 2025 — 26,36 € → 26,51 €",
+			"content_html": "<p>Tuotteen Domaine de Biéville Chablis 2025 hinta on muuttunut.</p><p>26,36 € → 26,51 € (+0,15 €, +0,57 %).</p>",
+			"summary": "Tuotteen Domaine de Biéville Chablis 2025 hinta on muuttunut. 26,36 € → 26,51 € (+0,15 €, +0,57 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/513847-9354018475a0.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

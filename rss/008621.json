@@ -1,0 +1,50 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Laurent-Perrier La Cuvée Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/008621/",
+	"feed_url": "https://alkometriikka.fi/rss/008621.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Laurent-Perrier La Cuvée Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-008621-2026-07-18-65.49",
+			"url": "https://alkometriikka.fi/tuotteet/008621/",
+			"title": "Laurent-Perrier La Cuvée Champagne Brut — 65,40 € → 65,49 €",
+			"content_html": "<p>Tuotteen Laurent-Perrier La Cuvée Champagne Brut hinta on muuttunut.</p><p>65,40 € → 65,49 € (+0,09 €, +0,14 %).</p>",
+			"summary": "Tuotteen Laurent-Perrier La Cuvée Champagne Brut hinta on muuttunut. 65,40 € → 65,49 € (+0,09 €, +0,14 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/008621-bad4314070c8.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-008621-2026-02-02-65.3",
+			"url": "https://alkometriikka.fi/tuotteet/008621/",
+			"title": "Laurent-Perrier La Cuvée Champagne Brut — 65,40 € → 65,30 €",
+			"content_html": "<p>Tuotteen Laurent-Perrier La Cuvée Champagne Brut hinta on muuttunut.</p><p>65,40 € → 65,30 € (−0,10 €, −0,15 %).</p>",
+			"summary": "Tuotteen Laurent-Perrier La Cuvée Champagne Brut hinta on muuttunut. 65,40 € → 65,30 € (−0,10 €, −0,15 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/008621-bad4314070c8.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-008621-2026-02-02-65.4",
+			"url": "https://alkometriikka.fi/tuotteet/008621/",
+			"title": "Laurent-Perrier La Cuvée Champagne Brut — 65,30 € → 65,40 €",
+			"content_html": "<p>Tuotteen Laurent-Perrier La Cuvée Champagne Brut hinta on muuttunut.</p><p>65,30 € → 65,40 € (+0,10 €, +0,15 %).</p>",
+			"summary": "Tuotteen Laurent-Perrier La Cuvée Champagne Brut hinta on muuttunut. 65,30 € → 65,40 € (+0,10 €, +0,15 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/008621-bad4314070c8.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

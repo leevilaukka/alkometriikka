@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Cortese Aranciata Rossa – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/944324/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Cortese Aranciata Rossa.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/944324.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Cortese Aranciata Rossa – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Cortese Aranciata Rossa — 4,17 € → 4,19 €</title>
+			<link>https://alkometriikka.fi/tuotteet/944324/</link>
+			<guid isPermaLink="false">alkometriikka-944324-2026-07-18-4.19</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Alkoholittomat / vedet, mehut ja muut alkoholittomat</category>
+			<description><![CDATA[<p>Tuotteen Cortese Aranciata Rossa hinta on muuttunut.</p><p>4,17 € → 4,19 € (+0,02 €, +0,48 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/944324-671b7650467b.png" />
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tommasi Ripasso Valpolicella 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/429567/",
+	"feed_url": "https://alkometriikka.fi/rss/429567.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tommasi Ripasso Valpolicella 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-429567-2026-07-18-23.49",
+			"url": "https://alkometriikka.fi/tuotteet/429567/",
+			"title": "Tommasi Ripasso Valpolicella 2023 — 23,45 € → 23,49 €",
+			"content_html": "<p>Tuotteen Tommasi Ripasso Valpolicella 2023 hinta on muuttunut.</p><p>23,45 € → 23,49 € (+0,04 €, +0,17 %).</p>",
+			"summary": "Tuotteen Tommasi Ripasso Valpolicella 2023 hinta on muuttunut. 23,45 € → 23,49 € (+0,04 €, +0,17 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/429567-dd95efa5879f.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

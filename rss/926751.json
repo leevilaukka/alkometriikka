@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Watson Irancy Rouge 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/926751/",
+	"feed_url": "https://alkometriikka.fi/rss/926751.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Watson Irancy Rouge 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-926751-2026-07-18-59.89",
+			"url": "https://alkometriikka.fi/tuotteet/926751/",
+			"title": "Watson Irancy Rouge 2020 — 67,41 € → 59,89 €",
+			"content_html": "<p>Tuotteen Watson Irancy Rouge 2020 hinta on muuttunut.</p><p>67,41 € → 59,89 € (−7,52 €, −11,16 %).</p>",
+			"summary": "Tuotteen Watson Irancy Rouge 2020 hinta on muuttunut. 67,41 € → 59,89 € (−7,52 €, −11,16 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/926751-42a6104e9f12.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

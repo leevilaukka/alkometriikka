@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Martell XO – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/189444/",
+	"feed_url": "https://alkometriikka.fi/rss/189444.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Martell XO.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-189444-2026-07-18-118.99",
+			"url": "https://alkometriikka.fi/tuotteet/189444/",
+			"title": "Martell XO — 118,12 € → 118,99 €",
+			"content_html": "<p>Tuotteen Martell XO hinta on muuttunut.</p><p>118,12 € → 118,99 € (+0,87 €, +0,74 %).</p>",
+			"summary": "Tuotteen Martell XO hinta on muuttunut. 118,12 € → 118,99 € (+0,87 €, +0,74 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/189444-a124ecad3793.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

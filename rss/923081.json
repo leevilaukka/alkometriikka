@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Monbazillac Cuvée du Chateau 2008 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/923081/",
+	"feed_url": "https://alkometriikka.fi/rss/923081.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Monbazillac Cuvée du Chateau 2008.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-923081-2026-07-18-20.9",
+			"url": "https://alkometriikka.fi/tuotteet/923081/",
+			"title": "Monbazillac Cuvée du Chateau 2008 — 20,22 € → 20,90 €",
+			"content_html": "<p>Tuotteen Monbazillac Cuvée du Chateau 2008 hinta on muuttunut.</p><p>20,22 € → 20,90 € (+0,68 €, +3,36 %).</p>",
+			"summary": "Tuotteen Monbazillac Cuvée du Chateau 2008 hinta on muuttunut. 20,22 € → 20,90 € (+0,68 €, +3,36 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/923081-960219305d46.png",
+			"tags": [
+				"Viinit",
+				"jälkiruokaviinit"
+			]
+		}
+	]
+}

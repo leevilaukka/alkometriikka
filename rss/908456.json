@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Reh Kendermann Tausendhugel Riesling 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/908456/",
+	"feed_url": "https://alkometriikka.fi/rss/908456.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Reh Kendermann Tausendhugel Riesling 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-908456-2026-07-18-12.98",
+			"url": "https://alkometriikka.fi/tuotteet/908456/",
+			"title": "Reh Kendermann Tausendhugel Riesling 2022 — 12,96 € → 12,98 €",
+			"content_html": "<p>Tuotteen Reh Kendermann Tausendhugel Riesling 2022 hinta on muuttunut.</p><p>12,96 € → 12,98 € (+0,02 €, +0,15 %).</p>",
+			"summary": "Tuotteen Reh Kendermann Tausendhugel Riesling 2022 hinta on muuttunut. 12,96 € → 12,98 € (+0,02 €, +0,15 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/908456-89b4b7670fa9.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Baileys Salted Caramel – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/948545/",
+	"feed_url": "https://alkometriikka.fi/rss/948545.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Baileys Salted Caramel.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-948545-2026-07-18-24.99",
+			"url": "https://alkometriikka.fi/tuotteet/948545/",
+			"title": "Baileys Salted Caramel — 27,10 € → 24,99 €",
+			"content_html": "<p>Tuotteen Baileys Salted Caramel hinta on muuttunut.</p><p>27,10 € → 24,99 € (−2,11 €, −7,79 %).</p>",
+			"summary": "Tuotteen Baileys Salted Caramel hinta on muuttunut. 27,10 € → 24,99 € (−2,11 €, −7,79 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/948545-511c353b0518.png",
+			"tags": [
+				"Väkevät",
+				"kermaliköörit"
+			]
+		}
+	]
+}

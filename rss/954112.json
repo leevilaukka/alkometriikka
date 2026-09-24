@@ -1,0 +1,50 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hans Baer Pinot Noir – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/954112/",
+	"feed_url": "https://alkometriikka.fi/rss/954112.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hans Baer Pinot Noir.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-954112-2026-07-18-4.78",
+			"url": "https://alkometriikka.fi/tuotteet/954112/",
+			"title": "Hans Baer Pinot Noir — 4,74 € → 4,78 €",
+			"content_html": "<p>Tuotteen Hans Baer Pinot Noir hinta on muuttunut.</p><p>4,74 € → 4,78 € (+0,04 €, +0,84 %).</p>",
+			"summary": "Tuotteen Hans Baer Pinot Noir hinta on muuttunut. 4,74 € → 4,78 € (+0,04 €, +0,84 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/954112-cf379789d7db.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-954112-2026-02-02-4.64",
+			"url": "https://alkometriikka.fi/tuotteet/954112/",
+			"title": "Hans Baer Pinot Noir — 4,74 € → 4,64 €",
+			"content_html": "<p>Tuotteen Hans Baer Pinot Noir hinta on muuttunut.</p><p>4,74 € → 4,64 € (−0,10 €, −2,11 %).</p>",
+			"summary": "Tuotteen Hans Baer Pinot Noir hinta on muuttunut. 4,74 € → 4,64 € (−0,10 €, −2,11 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/954112-cf379789d7db.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-954112-2026-02-02-4.74",
+			"url": "https://alkometriikka.fi/tuotteet/954112/",
+			"title": "Hans Baer Pinot Noir — 4,64 € → 4,74 €",
+			"content_html": "<p>Tuotteen Hans Baer Pinot Noir hinta on muuttunut.</p><p>4,64 € → 4,74 € (+0,10 €, +2,16 %).</p>",
+			"summary": "Tuotteen Hans Baer Pinot Noir hinta on muuttunut. 4,64 € → 4,74 € (+0,10 €, +2,16 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/954112-cf379789d7db.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

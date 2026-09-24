@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Le Sirop de Monin Gingerbread – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/917308/",
+	"feed_url": "https://alkometriikka.fi/rss/917308.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Le Sirop de Monin Gingerbread.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-917308-2026-07-18-21.45",
+			"url": "https://alkometriikka.fi/tuotteet/917308/",
+			"title": "Le Sirop de Monin Gingerbread — 21,11 € → 21,45 €",
+			"content_html": "<p>Tuotteen Le Sirop de Monin Gingerbread hinta on muuttunut.</p><p>21,11 € → 21,45 € (+0,34 €, +1,61 %).</p>",
+			"summary": "Tuotteen Le Sirop de Monin Gingerbread hinta on muuttunut. 21,11 € → 21,45 € (+0,34 €, +1,61 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/917308-1f6395798b82.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

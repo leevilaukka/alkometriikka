@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Silhouet 0,0% – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/560287/",
+	"feed_url": "https://alkometriikka.fi/rss/560287.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Silhouet 0,0%.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-560287-2026-07-18-8.98",
+			"url": "https://alkometriikka.fi/tuotteet/560287/",
+			"title": "Silhouet 0,0% — 8,96 € → 8,98 €",
+			"content_html": "<p>Tuotteen Silhouet 0,0% hinta on muuttunut.</p><p>8,96 € → 8,98 € (+0,02 €, +0,22 %).</p>",
+			"summary": "Tuotteen Silhouet 0,0% hinta on muuttunut. 8,96 € → 8,98 € (+0,02 €, +0,22 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/560287-70d31ecb119b.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat kuohuviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Casalforte Valpolicella Ripasso 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/905732/",
+	"feed_url": "https://alkometriikka.fi/rss/905732.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Casalforte Valpolicella Ripasso 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-905732-2026-07-18-14.99",
+			"url": "https://alkometriikka.fi/tuotteet/905732/",
+			"title": "Casalforte Valpolicella Ripasso 2022 — 16,38 € → 14,99 €",
+			"content_html": "<p>Tuotteen Casalforte Valpolicella Ripasso 2022 hinta on muuttunut.</p><p>16,38 € → 14,99 € (−1,39 €, −8,49 %).</p>",
+			"summary": "Tuotteen Casalforte Valpolicella Ripasso 2022 hinta on muuttunut. 16,38 € → 14,99 € (−1,39 €, −8,49 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/905732-bc9694f9c519.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

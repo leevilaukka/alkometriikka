@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Neumeister Gelber Muskateller Trocken 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/590257/",
+	"feed_url": "https://alkometriikka.fi/rss/590257.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Neumeister Gelber Muskateller Trocken 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-590257-2026-07-18-19.99",
+			"url": "https://alkometriikka.fi/tuotteet/590257/",
+			"title": "Neumeister Gelber Muskateller Trocken 2022 — 22,97 € → 19,99 €",
+			"content_html": "<p>Tuotteen Neumeister Gelber Muskateller Trocken 2022 hinta on muuttunut.</p><p>22,97 € → 19,99 € (−2,98 €, −12,97 %).</p>",
+			"summary": "Tuotteen Neumeister Gelber Muskateller Trocken 2022 hinta on muuttunut. 22,97 € → 19,99 € (−2,98 €, −12,97 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/590257-e3e3368a98c6.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

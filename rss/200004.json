@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Two Stacks Double Barrel Single Grain – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/200004/",
+	"feed_url": "https://alkometriikka.fi/rss/200004.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Two Stacks Double Barrel Single Grain.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-200004-2026-07-18-44.99",
+			"url": "https://alkometriikka.fi/tuotteet/200004/",
+			"title": "Two Stacks Double Barrel Single Grain — 38,33 € → 44,99 €",
+			"content_html": "<p>Tuotteen Two Stacks Double Barrel Single Grain hinta on muuttunut.</p><p>38,33 € → 44,99 € (+6,66 €, +17,38 %).</p>",
+			"summary": "Tuotteen Two Stacks Double Barrel Single Grain hinta on muuttunut. 38,33 € → 44,99 € (+6,66 €, +17,38 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/200004-2acacf3add84.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

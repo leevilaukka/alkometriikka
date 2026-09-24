@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Chateau Musar Jeune 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/433897/",
+	"feed_url": "https://alkometriikka.fi/rss/433897.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Chateau Musar Jeune 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-433897-2026-07-18-23.49",
+			"url": "https://alkometriikka.fi/tuotteet/433897/",
+			"title": "Chateau Musar Jeune 2022 — 22,95 € → 23,49 €",
+			"content_html": "<p>Tuotteen Chateau Musar Jeune 2022 hinta on muuttunut.</p><p>22,95 € → 23,49 € (+0,54 €, +2,35 %).</p>",
+			"summary": "Tuotteen Chateau Musar Jeune 2022 hinta on muuttunut. 22,95 € → 23,49 € (+0,54 €, +2,35 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/433897-fd03b1f3ab10.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

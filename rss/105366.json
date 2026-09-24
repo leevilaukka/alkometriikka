@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Helsinki Sailor’s Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/105366/",
+	"feed_url": "https://alkometriikka.fi/rss/105366.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Helsinki Sailor’s Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-105366-2026-07-18-49.65",
+			"url": "https://alkometriikka.fi/tuotteet/105366/",
+			"title": "Helsinki Sailor’s Gin — 49,26 € → 49,65 €",
+			"content_html": "<p>Tuotteen Helsinki Sailor’s Gin hinta on muuttunut.</p><p>49,26 € → 49,65 € (+0,39 €, +0,79 %).</p>",
+			"summary": "Tuotteen Helsinki Sailor’s Gin hinta on muuttunut. 49,26 € → 49,65 € (+0,39 €, +0,79 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/105366-50b1c571e505.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

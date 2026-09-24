@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mythe Absinthe – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/945044/",
+	"feed_url": "https://alkometriikka.fi/rss/945044.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mythe Absinthe.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-945044-2026-07-18-52.6",
+			"url": "https://alkometriikka.fi/tuotteet/945044/",
+			"title": "Mythe Absinthe — 52,33 € → 52,60 €",
+			"content_html": "<p>Tuotteen Mythe Absinthe hinta on muuttunut.</p><p>52,33 € → 52,60 € (+0,27 €, +0,52 %).</p>",
+			"summary": "Tuotteen Mythe Absinthe hinta on muuttunut. 52,33 € → 52,60 € (+0,27 €, +0,52 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/945044-14372666b680.png",
+			"tags": [
+				"Väkevät",
+				"anistisleet"
+			]
+		}
+	]
+}

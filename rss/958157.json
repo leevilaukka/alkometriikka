@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Black Stallion Chardonnay 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/958157/",
+	"feed_url": "https://alkometriikka.fi/rss/958157.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Black Stallion Chardonnay 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-958157-2026-07-18-42.89",
+			"url": "https://alkometriikka.fi/tuotteet/958157/",
+			"title": "Black Stallion Chardonnay 2020 — 43,46 € → 42,89 €",
+			"content_html": "<p>Tuotteen Black Stallion Chardonnay 2020 hinta on muuttunut.</p><p>43,46 € → 42,89 € (−0,57 €, −1,31 %).</p>",
+			"summary": "Tuotteen Black Stallion Chardonnay 2020 hinta on muuttunut. 43,46 € → 42,89 € (−0,57 €, −1,31 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/958157-cc34cd69b6dd.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mallassepät 6 Epic Years – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900202/",
+	"feed_url": "https://alkometriikka.fi/rss/900202.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mallassepät 6 Epic Years.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900202-2026-07-18-20.65",
+			"url": "https://alkometriikka.fi/tuotteet/900202/",
+			"title": "Mallassepät 6 Epic Years — 20,63 € → 20,65 €",
+			"content_html": "<p>Tuotteen Mallassepät 6 Epic Years hinta on muuttunut.</p><p>20,63 € → 20,65 € (+0,02 €, +0,10 %).</p>",
+			"summary": "Tuotteen Mallassepät 6 Epic Years hinta on muuttunut. 20,63 € → 20,65 € (+0,02 €, +0,10 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900202-0bb452393e72.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

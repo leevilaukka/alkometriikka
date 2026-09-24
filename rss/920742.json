@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nachschlag no Bubbles, no Alk, no Troubles 0% – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/920742/",
+	"feed_url": "https://alkometriikka.fi/rss/920742.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nachschlag no Bubbles, no Alk, no Troubles 0%.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-920742-2026-07-18-15.85",
+			"url": "https://alkometriikka.fi/tuotteet/920742/",
+			"title": "Nachschlag no Bubbles, no Alk, no Troubles 0% — 15,79 € → 15,85 €",
+			"content_html": "<p>Tuotteen Nachschlag no Bubbles, no Alk, no Troubles 0% hinta on muuttunut.</p><p>15,79 € → 15,85 € (+0,06 €, +0,38 %).</p>",
+			"summary": "Tuotteen Nachschlag no Bubbles, no Alk, no Troubles 0% hinta on muuttunut. 15,79 € → 15,85 € (+0,06 €, +0,38 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/920742-41095c2a585f.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat valko- ja roseeviinit"
+			]
+		}
+	]
+}

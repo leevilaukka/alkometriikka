@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Copenhagen Sparkling Tea Lyserød Oolong – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/600024/",
+	"feed_url": "https://alkometriikka.fi/rss/600024.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Copenhagen Sparkling Tea Lyserød Oolong.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-600024-2026-07-18-21.45",
+			"url": "https://alkometriikka.fi/tuotteet/600024/",
+			"title": "Copenhagen Sparkling Tea Lyserød Oolong — 21,51 € → 21,45 €",
+			"content_html": "<p>Tuotteen Copenhagen Sparkling Tea Lyserød Oolong hinta on muuttunut.</p><p>21,51 € → 21,45 € (−0,06 €, −0,28 %).</p>",
+			"summary": "Tuotteen Copenhagen Sparkling Tea Lyserød Oolong hinta on muuttunut. 21,51 € → 21,45 € (−0,06 €, −0,28 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600024-daec52c647d8.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat kuohuviinit"
+			]
+		}
+	]
+}

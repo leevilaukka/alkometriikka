@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Yalumba Y Series Pinot Grigio 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/517227/",
+	"feed_url": "https://alkometriikka.fi/rss/517227.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Yalumba Y Series Pinot Grigio 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-517227-2026-07-18-11.99",
+			"url": "https://alkometriikka.fi/tuotteet/517227/",
+			"title": "Yalumba Y Series Pinot Grigio 2023 — 13,25 € → 11,99 €",
+			"content_html": "<p>Tuotteen Yalumba Y Series Pinot Grigio 2023 hinta on muuttunut.</p><p>13,25 € → 11,99 € (−1,26 €, −9,51 %).</p>",
+			"summary": "Tuotteen Yalumba Y Series Pinot Grigio 2023 hinta on muuttunut. 13,25 € → 11,99 € (−1,26 €, −9,51 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/517227-59a9927193c0.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

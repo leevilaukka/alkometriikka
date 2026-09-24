@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – E. Guigal Hermitage 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/904445/",
+	"feed_url": "https://alkometriikka.fi/rss/904445.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: E. Guigal Hermitage 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-904445-2026-07-18-87.99",
+			"url": "https://alkometriikka.fi/tuotteet/904445/",
+			"title": "E. Guigal Hermitage 2020 — 87,94 € → 87,99 €",
+			"content_html": "<p>Tuotteen E. Guigal Hermitage 2020 hinta on muuttunut.</p><p>87,94 € → 87,99 € (+0,05 €, +0,06 %).</p>",
+			"summary": "Tuotteen E. Guigal Hermitage 2020 hinta on muuttunut. 87,94 € → 87,99 € (+0,05 €, +0,06 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/904445-e90b922234d6.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

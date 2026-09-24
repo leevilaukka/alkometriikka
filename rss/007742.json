@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pearly Bay Dry White – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/007742/",
+	"feed_url": "https://alkometriikka.fi/rss/007742.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pearly Bay Dry White.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-007742-2026-07-18-8.9",
+			"url": "https://alkometriikka.fi/tuotteet/007742/",
+			"title": "Pearly Bay Dry White — 8,86 € → 8,90 €",
+			"content_html": "<p>Tuotteen Pearly Bay Dry White hinta on muuttunut.</p><p>8,86 € → 8,90 € (+0,04 €, +0,45 %).</p>",
+			"summary": "Tuotteen Pearly Bay Dry White hinta on muuttunut. 8,86 € → 8,90 € (+0,04 €, +0,45 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/007742-6b7d4b6a1964.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

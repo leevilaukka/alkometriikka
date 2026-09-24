@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Fentimans Rose Lemonade – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/735753/",
+	"feed_url": "https://alkometriikka.fi/rss/735753.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Fentimans Rose Lemonade.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-735753-2026-07-18-2.75",
+			"url": "https://alkometriikka.fi/tuotteet/735753/",
+			"title": "Fentimans Rose Lemonade — 2,98 € → 2,75 €",
+			"content_html": "<p>Tuotteen Fentimans Rose Lemonade hinta on muuttunut.</p><p>2,98 € → 2,75 € (−0,23 €, −7,72 %).</p>",
+			"summary": "Tuotteen Fentimans Rose Lemonade hinta on muuttunut. 2,98 € → 2,75 € (−0,23 €, −7,72 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/735753-0e07ffb4a8ce.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

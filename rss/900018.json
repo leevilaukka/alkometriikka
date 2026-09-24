@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – St. Bernardus Christmas Ale – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900018/",
+	"feed_url": "https://alkometriikka.fi/rss/900018.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: St. Bernardus Christmas Ale.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900018-2026-07-18-5.48",
+			"url": "https://alkometriikka.fi/tuotteet/900018/",
+			"title": "St. Bernardus Christmas Ale — 5,49 € → 5,48 €",
+			"content_html": "<p>Tuotteen St. Bernardus Christmas Ale hinta on muuttunut.</p><p>5,49 € → 5,48 € (−0,01 €, −0,18 %).</p>",
+			"summary": "Tuotteen St. Bernardus Christmas Ale hinta on muuttunut. 5,49 € → 5,48 € (−0,01 €, −0,18 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900018-ee8ba6d5da31.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

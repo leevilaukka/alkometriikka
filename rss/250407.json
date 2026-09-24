@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Poli Americano – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/250407/",
+	"feed_url": "https://alkometriikka.fi/rss/250407.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Poli Americano.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-250407-2026-07-18-32.98",
+			"url": "https://alkometriikka.fi/tuotteet/250407/",
+			"title": "Poli Americano — 31,00 € → 32,98 €",
+			"content_html": "<p>Tuotteen Poli Americano hinta on muuttunut.</p><p>31,00 € → 32,98 € (+1,98 €, +6,39 %).</p>",
+			"summary": "Tuotteen Poli Americano hinta on muuttunut. 31,00 € → 32,98 € (+1,98 €, +6,39 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/250407-00b65997d592.png",
+			"tags": [
+				"Väkevät",
+				"mausteliköörit"
+			]
+		}
+	]
+}

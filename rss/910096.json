@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Charles de Fere Crémant du Jura Rosé Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/910096/",
+	"feed_url": "https://alkometriikka.fi/rss/910096.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Charles de Fere Crémant du Jura Rosé Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-910096-2026-07-18-18.48",
+			"url": "https://alkometriikka.fi/tuotteet/910096/",
+			"title": "Charles de Fere Crémant du Jura Rosé Brut — 18,39 € → 18,48 €",
+			"content_html": "<p>Tuotteen Charles de Fere Crémant du Jura Rosé Brut hinta on muuttunut.</p><p>18,39 € → 18,48 € (+0,09 €, +0,49 %).</p>",
+			"summary": "Tuotteen Charles de Fere Crémant du Jura Rosé Brut hinta on muuttunut. 18,39 € → 18,48 € (+0,09 €, +0,49 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/910096-177fc0d32015.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château Cantemerle 2017 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/916206/",
+	"feed_url": "https://alkometriikka.fi/rss/916206.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château Cantemerle 2017.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-916206-2026-07-18-64.48",
+			"url": "https://alkometriikka.fi/tuotteet/916206/",
+			"title": "Château Cantemerle 2017 — 61,51 € → 64,48 €",
+			"content_html": "<p>Tuotteen Château Cantemerle 2017 hinta on muuttunut.</p><p>61,51 € → 64,48 € (+2,97 €, +4,83 %).</p>",
+			"summary": "Tuotteen Château Cantemerle 2017 hinta on muuttunut. 61,51 € → 64,48 € (+2,97 €, +4,83 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/916206-8e33516f0374.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

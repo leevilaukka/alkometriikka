@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Stag Hunter – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/112787/",
+	"feed_url": "https://alkometriikka.fi/rss/112787.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Stag Hunter.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-112787-2026-07-18-28.49",
+			"url": "https://alkometriikka.fi/tuotteet/112787/",
+			"title": "Stag Hunter — 28,24 € → 28,49 €",
+			"content_html": "<p>Tuotteen Stag Hunter hinta on muuttunut.</p><p>28,24 € → 28,49 € (+0,25 €, +0,89 %).</p>",
+			"summary": "Tuotteen Stag Hunter hinta on muuttunut. 28,24 € → 28,49 € (+0,25 €, +0,89 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/112787-0031cc9c153e.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

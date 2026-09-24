@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Boira Organic Pecorino 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901580/",
+	"feed_url": "https://alkometriikka.fi/rss/901580.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Boira Organic Pecorino 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901580-2026-07-18-11.99",
+			"url": "https://alkometriikka.fi/tuotteet/901580/",
+			"title": "Boira Organic Pecorino 2024 — 12,99 € → 11,99 €",
+			"content_html": "<p>Tuotteen Boira Organic Pecorino 2024 hinta on muuttunut.</p><p>12,99 € → 11,99 € (−1,00 €, −7,70 %).</p>",
+			"summary": "Tuotteen Boira Organic Pecorino 2024 hinta on muuttunut. 12,99 € → 11,99 € (−1,00 €, −7,70 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901580-2c54817bd797.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

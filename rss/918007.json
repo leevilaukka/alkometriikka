@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lucente 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/918007/",
+	"feed_url": "https://alkometriikka.fi/rss/918007.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lucente 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-918007-2026-07-18-39.99",
+			"url": "https://alkometriikka.fi/tuotteet/918007/",
+			"title": "Lucente 2022 — 40,44 € → 39,99 €",
+			"content_html": "<p>Tuotteen Lucente 2022 hinta on muuttunut.</p><p>40,44 € → 39,99 € (−0,45 €, −1,11 %).</p>",
+			"summary": "Tuotteen Lucente 2022 hinta on muuttunut. 40,44 € → 39,99 € (−0,45 €, −1,11 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/918007-2b1bc6b5829e.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

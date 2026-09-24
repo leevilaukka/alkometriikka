@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Torres 10 Smoked Barrel – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/923365/",
+	"feed_url": "https://alkometriikka.fi/rss/923365.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Torres 10 Smoked Barrel.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-923365-2026-07-18-32.98",
+			"url": "https://alkometriikka.fi/tuotteet/923365/",
+			"title": "Torres 10 Smoked Barrel — 32,76 € → 32,98 €",
+			"content_html": "<p>Tuotteen Torres 10 Smoked Barrel hinta on muuttunut.</p><p>32,76 € → 32,98 € (+0,22 €, +0,67 %).</p>",
+			"summary": "Tuotteen Torres 10 Smoked Barrel hinta on muuttunut. 32,76 € → 32,98 € (+0,22 €, +0,67 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/923365-98ba97d950b2.png",
+			"tags": [
+				"Väkevät",
+				"brandyt"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Koff Suodattamaton tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/945618/",
+	"feed_url": "https://alkometriikka.fi/rss/945618.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Koff Suodattamaton tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-945618-2026-07-18-2.99",
+			"url": "https://alkometriikka.fi/tuotteet/945618/",
+			"title": "Koff Suodattamaton tölkki — 2,79 € → 2,99 €",
+			"content_html": "<p>Tuotteen Koff Suodattamaton tölkki hinta on muuttunut.</p><p>2,79 € → 2,99 € (+0,20 €, +7,17 %).</p>",
+			"summary": "Tuotteen Koff Suodattamaton tölkki hinta on muuttunut. 2,79 € → 2,99 € (+0,20 €, +7,17 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/945618-417aa36dbe77.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

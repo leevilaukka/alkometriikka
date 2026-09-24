@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Le Sirop de Monin Vanilla – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/937572/",
+	"feed_url": "https://alkometriikka.fi/rss/937572.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Le Sirop de Monin Vanilla.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-937572-2026-07-18-21.19",
+			"url": "https://alkometriikka.fi/tuotteet/937572/",
+			"title": "Le Sirop de Monin Vanilla — 21,11 € → 21,19 €",
+			"content_html": "<p>Tuotteen Le Sirop de Monin Vanilla hinta on muuttunut.</p><p>21,11 € → 21,19 € (+0,08 €, +0,38 %).</p>",
+			"summary": "Tuotteen Le Sirop de Monin Vanilla hinta on muuttunut. 21,11 € → 21,19 € (+0,08 €, +0,38 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/937572-5f1c6d3706a9.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

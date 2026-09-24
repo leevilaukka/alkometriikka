@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Stoli Gold Vodka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/186927/",
+	"feed_url": "https://alkometriikka.fi/rss/186927.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Stoli Gold Vodka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-186927-2026-07-18-31.75",
+			"url": "https://alkometriikka.fi/tuotteet/186927/",
+			"title": "Stoli Gold Vodka — 31,98 € → 31,75 €",
+			"content_html": "<p>Tuotteen Stoli Gold Vodka hinta on muuttunut.</p><p>31,98 € → 31,75 € (−0,23 €, −0,72 %).</p>",
+			"summary": "Tuotteen Stoli Gold Vodka hinta on muuttunut. 31,98 € → 31,75 € (−0,23 €, −0,72 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/186927-294e37c6fdb9.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

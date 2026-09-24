@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Suomenlinnan Ton Alkoholiton Lager tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901981/",
+	"feed_url": "https://alkometriikka.fi/rss/901981.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Suomenlinnan Ton Alkoholiton Lager tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901981-2026-09-04-2.02",
+			"url": "https://alkometriikka.fi/tuotteet/901981/",
+			"title": "Suomenlinnan Ton Alkoholiton Lager tölkki — 2,24 € → 2,02 €",
+			"content_html": "<p>Tuotteen Suomenlinnan Ton Alkoholiton Lager tölkki hinta on muuttunut.</p><p>2,24 € → 2,02 € (−0,22 €, −9,82 %).</p>",
+			"summary": "Tuotteen Suomenlinnan Ton Alkoholiton Lager tölkki hinta on muuttunut. 2,24 € → 2,02 € (−0,22 €, −9,82 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901981-b8f2a4d52a5f.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

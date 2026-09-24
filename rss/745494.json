@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Rochefort Triple Extra – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/745494/",
+	"feed_url": "https://alkometriikka.fi/rss/745494.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Rochefort Triple Extra.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-745494-2026-07-18-6.25",
+			"url": "https://alkometriikka.fi/tuotteet/745494/",
+			"title": "Rochefort Triple Extra — 6,26 € → 6,25 €",
+			"content_html": "<p>Tuotteen Rochefort Triple Extra hinta on muuttunut.</p><p>6,26 € → 6,25 € (−0,01 €, −0,16 %).</p>",
+			"summary": "Tuotteen Rochefort Triple Extra hinta on muuttunut. 6,26 € → 6,25 € (−0,01 €, −0,16 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/745494-1cd7004dd545.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

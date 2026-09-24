@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vintense Fines Bulles Blanc – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/907088/",
+	"feed_url": "https://alkometriikka.fi/rss/907088.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vintense Fines Bulles Blanc.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-907088-2026-07-18-3.99",
+			"url": "https://alkometriikka.fi/tuotteet/907088/",
+			"title": "Vintense Fines Bulles Blanc — 3,97 € → 3,99 €",
+			"content_html": "<p>Tuotteen Vintense Fines Bulles Blanc hinta on muuttunut.</p><p>3,97 € → 3,99 € (+0,02 €, +0,50 %).</p>",
+			"summary": "Tuotteen Vintense Fines Bulles Blanc hinta on muuttunut. 3,97 € → 3,99 € (+0,02 €, +0,50 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/907088-3b8d3836578e.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat kuohuviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gosset Champagne Extra-Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/570577/",
+	"feed_url": "https://alkometriikka.fi/rss/570577.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gosset Champagne Extra-Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-570577-2026-07-18-56.99",
+			"url": "https://alkometriikka.fi/tuotteet/570577/",
+			"title": "Gosset Champagne Extra-Brut — 55,99 € → 56,99 €",
+			"content_html": "<p>Tuotteen Gosset Champagne Extra-Brut hinta on muuttunut.</p><p>55,99 € → 56,99 € (+1,00 €, +1,79 %).</p>",
+			"summary": "Tuotteen Gosset Champagne Extra-Brut hinta on muuttunut. 55,99 € → 56,99 € (+1,00 €, +1,79 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/570577-ae3ee4b9766c.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

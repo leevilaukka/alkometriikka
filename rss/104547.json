@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glenmorangie The Nectar 16 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/104547/",
+	"feed_url": "https://alkometriikka.fi/rss/104547.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glenmorangie The Nectar 16 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-104547-2026-07-18-119.99",
+			"url": "https://alkometriikka.fi/tuotteet/104547/",
+			"title": "Glenmorangie The Nectar 16 Year Old Single Malt — 115,30 € → 119,99 €",
+			"content_html": "<p>Tuotteen Glenmorangie The Nectar 16 Year Old Single Malt hinta on muuttunut.</p><p>115,30 € → 119,99 € (+4,69 €, +4,07 %).</p>",
+			"summary": "Tuotteen Glenmorangie The Nectar 16 Year Old Single Malt hinta on muuttunut. 115,30 € → 119,99 € (+4,69 €, +4,07 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/104547-6b596801546f.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

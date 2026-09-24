@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Captain Morgan – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/001703/",
+	"feed_url": "https://alkometriikka.fi/rss/001703.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Captain Morgan.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-001703-2026-07-18-34.49",
+			"url": "https://alkometriikka.fi/tuotteet/001703/",
+			"title": "Captain Morgan — 34,27 € → 34,49 €",
+			"content_html": "<p>Tuotteen Captain Morgan hinta on muuttunut.</p><p>34,27 € → 34,49 € (+0,22 €, +0,64 %).</p>",
+			"summary": "Tuotteen Captain Morgan hinta on muuttunut. 34,27 € → 34,49 € (+0,22 €, +0,64 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/001703-19f6edf64362.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

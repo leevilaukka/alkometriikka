@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Joseph Drouhin Chassagne-Montrachet 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/583757/",
+	"feed_url": "https://alkometriikka.fi/rss/583757.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Joseph Drouhin Chassagne-Montrachet 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-583757-2026-07-18-103.7",
+			"url": "https://alkometriikka.fi/tuotteet/583757/",
+			"title": "Joseph Drouhin Chassagne-Montrachet 2023 — 97,36 € → 103,70 €",
+			"content_html": "<p>Tuotteen Joseph Drouhin Chassagne-Montrachet 2023 hinta on muuttunut.</p><p>97,36 € → 103,70 € (+6,34 €, +6,51 %).</p>",
+			"summary": "Tuotteen Joseph Drouhin Chassagne-Montrachet 2023 hinta on muuttunut. 97,36 € → 103,70 € (+6,34 €, +6,51 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/583757-f4c71c2e297e.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

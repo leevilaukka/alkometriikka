@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Õllenaut Kaineken Pale Ale – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900293/",
+	"feed_url": "https://alkometriikka.fi/rss/900293.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Õllenaut Kaineken Pale Ale.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900293-2026-09-04-2.57",
+			"url": "https://alkometriikka.fi/tuotteet/900293/",
+			"title": "Õllenaut Kaineken Pale Ale — 2,85 € → 2,57 €",
+			"content_html": "<p>Tuotteen Õllenaut Kaineken Pale Ale hinta on muuttunut.</p><p>2,85 € → 2,57 € (−0,28 €, −9,82 %).</p>",
+			"summary": "Tuotteen Õllenaut Kaineken Pale Ale hinta on muuttunut. 2,85 € → 2,57 € (−0,28 €, −9,82 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900293-22b22dd313cb.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-900293-2026-07-18-2.85",
+			"url": "https://alkometriikka.fi/tuotteet/900293/",
+			"title": "Õllenaut Kaineken Pale Ale — 2,84 € → 2,85 €",
+			"content_html": "<p>Tuotteen Õllenaut Kaineken Pale Ale hinta on muuttunut.</p><p>2,84 € → 2,85 € (+0,01 €, +0,35 %).</p>",
+			"summary": "Tuotteen Õllenaut Kaineken Pale Ale hinta on muuttunut. 2,84 € → 2,85 € (+0,01 €, +0,35 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900293-22b22dd313cb.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

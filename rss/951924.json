@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Torbreck Old Vines 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/951924/",
+	"feed_url": "https://alkometriikka.fi/rss/951924.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Torbreck Old Vines 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-951924-2026-02-02-22.88",
+			"url": "https://alkometriikka.fi/tuotteet/951924/",
+			"title": "Torbreck Old Vines 2022 — 22,98 € → 22,88 €",
+			"content_html": "<p>Tuotteen Torbreck Old Vines 2022 hinta on muuttunut.</p><p>22,98 € → 22,88 € (−0,10 €, −0,44 %).</p>",
+			"summary": "Tuotteen Torbreck Old Vines 2022 hinta on muuttunut. 22,98 € → 22,88 € (−0,10 €, −0,44 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/951924-794a9e31a214.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-951924-2026-02-02-22.98",
+			"url": "https://alkometriikka.fi/tuotteet/951924/",
+			"title": "Torbreck Old Vines 2022 — 22,88 € → 22,98 €",
+			"content_html": "<p>Tuotteen Torbreck Old Vines 2022 hinta on muuttunut.</p><p>22,88 € → 22,98 € (+0,10 €, +0,44 %).</p>",
+			"summary": "Tuotteen Torbreck Old Vines 2022 hinta on muuttunut. 22,88 € → 22,98 € (+0,10 €, +0,44 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/951924-794a9e31a214.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

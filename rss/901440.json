@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cluster Flock Abaaassimento 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901440/",
+	"feed_url": "https://alkometriikka.fi/rss/901440.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cluster Flock Abaaassimento 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901440-2026-07-18-13.98",
+			"url": "https://alkometriikka.fi/tuotteet/901440/",
+			"title": "Cluster Flock Abaaassimento 2021 — 13,46 € → 13,98 €",
+			"content_html": "<p>Tuotteen Cluster Flock Abaaassimento 2021 hinta on muuttunut.</p><p>13,46 € → 13,98 € (+0,52 €, +3,86 %).</p>",
+			"summary": "Tuotteen Cluster Flock Abaaassimento 2021 hinta on muuttunut. 13,46 € → 13,98 € (+0,52 €, +3,86 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901440-14394a2114fc.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

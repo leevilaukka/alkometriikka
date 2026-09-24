@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Saint Materne Pinot Gris 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/909547/",
+	"feed_url": "https://alkometriikka.fi/rss/909547.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Saint Materne Pinot Gris 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-909547-2026-07-18-34.8",
+			"url": "https://alkometriikka.fi/tuotteet/909547/",
+			"title": "Saint Materne Pinot Gris 2024 — 34,76 € → 34,80 €",
+			"content_html": "<p>Tuotteen Saint Materne Pinot Gris 2024 hinta on muuttunut.</p><p>34,76 € → 34,80 € (+0,04 €, +0,12 %).</p>",
+			"summary": "Tuotteen Saint Materne Pinot Gris 2024 hinta on muuttunut. 34,76 € → 34,80 € (+0,04 €, +0,12 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/909547-9dffce367ff9.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

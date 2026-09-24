@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Monbazillac Cuvée du Château 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/949327/",
+	"feed_url": "https://alkometriikka.fi/rss/949327.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Monbazillac Cuvée du Château 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-949327-2026-07-18-44",
+			"url": "https://alkometriikka.fi/tuotteet/949327/",
+			"title": "Monbazillac Cuvée du Château 2020 — 43,45 € → 44,00 €",
+			"content_html": "<p>Tuotteen Monbazillac Cuvée du Château 2020 hinta on muuttunut.</p><p>43,45 € → 44,00 € (+0,55 €, +1,27 %).</p>",
+			"summary": "Tuotteen Monbazillac Cuvée du Château 2020 hinta on muuttunut. 43,45 € → 44,00 € (+0,55 €, +1,27 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/949327-06e779ca6363.png",
+			"tags": [
+				"Viinit",
+				"jälkiruokaviinit"
+			]
+		}
+	]
+}

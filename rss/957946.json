@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jaloviina * muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/957946/",
+	"feed_url": "https://alkometriikka.fi/rss/957946.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jaloviina * muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-957946-2026-07-18-10.59",
+			"url": "https://alkometriikka.fi/tuotteet/957946/",
+			"title": "Jaloviina * muovipullo — 10,18 € → 10,59 €",
+			"content_html": "<p>Tuotteen Jaloviina * muovipullo hinta on muuttunut.</p><p>10,18 € → 10,59 € (+0,41 €, +4,03 %).</p>",
+			"summary": "Tuotteen Jaloviina * muovipullo hinta on muuttunut. 10,18 € → 10,59 € (+0,41 €, +4,03 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/957946-79abbfd70a6b.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

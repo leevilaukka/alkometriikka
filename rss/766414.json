@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Sandels Vahva Lager tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/766414/",
+	"feed_url": "https://alkometriikka.fi/rss/766414.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Sandels Vahva Lager tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-766414-2026-07-18-2.69",
+			"url": "https://alkometriikka.fi/tuotteet/766414/",
+			"title": "Sandels Vahva Lager tölkki — 2,65 € → 2,69 €",
+			"content_html": "<p>Tuotteen Sandels Vahva Lager tölkki hinta on muuttunut.</p><p>2,65 € → 2,69 € (+0,04 €, +1,51 %).</p>",
+			"summary": "Tuotteen Sandels Vahva Lager tölkki hinta on muuttunut. 2,65 € → 2,69 € (+0,04 €, +1,51 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/766414-c7e6945b6ccc.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

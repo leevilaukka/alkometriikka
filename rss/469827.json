@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Torraccia del Piantavigna Gattinara 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/469827/",
+	"feed_url": "https://alkometriikka.fi/rss/469827.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Torraccia del Piantavigna Gattinara 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-469827-2026-07-18-45.99",
+			"url": "https://alkometriikka.fi/tuotteet/469827/",
+			"title": "Torraccia del Piantavigna Gattinara 2020 — 42,37 € → 45,99 €",
+			"content_html": "<p>Tuotteen Torraccia del Piantavigna Gattinara 2020 hinta on muuttunut.</p><p>42,37 € → 45,99 € (+3,62 €, +8,54 %).</p>",
+			"summary": "Tuotteen Torraccia del Piantavigna Gattinara 2020 hinta on muuttunut. 42,37 € → 45,99 € (+3,62 €, +8,54 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/469827-b96918692b26.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

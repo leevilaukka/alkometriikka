@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Méry Melrose VSOP Grande Champagne Organic – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/199837/",
+	"feed_url": "https://alkometriikka.fi/rss/199837.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Méry Melrose VSOP Grande Champagne Organic.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-199837-2026-07-18-49.99",
+			"url": "https://alkometriikka.fi/tuotteet/199837/",
+			"title": "Méry Melrose VSOP Grande Champagne Organic — 50,25 € → 49,99 €",
+			"content_html": "<p>Tuotteen Méry Melrose VSOP Grande Champagne Organic hinta on muuttunut.</p><p>50,25 € → 49,99 € (−0,26 €, −0,52 %).</p>",
+			"summary": "Tuotteen Méry Melrose VSOP Grande Champagne Organic hinta on muuttunut. 50,25 € → 49,99 € (−0,26 €, −0,52 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/199837-dd4bd414c51d.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

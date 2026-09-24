@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Emilio Moro Malleolus 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/913118/",
+	"feed_url": "https://alkometriikka.fi/rss/913118.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Emilio Moro Malleolus 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-913118-2026-07-18-50.2",
+			"url": "https://alkometriikka.fi/tuotteet/913118/",
+			"title": "Emilio Moro Malleolus 2023 — 50,16 € → 50,20 €",
+			"content_html": "<p>Tuotteen Emilio Moro Malleolus 2023 hinta on muuttunut.</p><p>50,16 € → 50,20 € (+0,04 €, +0,08 %).</p>",
+			"summary": "Tuotteen Emilio Moro Malleolus 2023 hinta on muuttunut. 50,16 € → 50,20 € (+0,04 €, +0,08 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/913118-ee7776a7703e.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

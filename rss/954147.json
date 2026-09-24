@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glen Moray Peated Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/954147/",
+	"feed_url": "https://alkometriikka.fi/rss/954147.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glen Moray Peated Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-954147-2026-07-18-38.55",
+			"url": "https://alkometriikka.fi/tuotteet/954147/",
+			"title": "Glen Moray Peated Single Malt — 38,53 € → 38,55 €",
+			"content_html": "<p>Tuotteen Glen Moray Peated Single Malt hinta on muuttunut.</p><p>38,53 € → 38,55 € (+0,02 €, +0,05 %).</p>",
+			"summary": "Tuotteen Glen Moray Peated Single Malt hinta on muuttunut. 38,53 € → 38,55 € (+0,02 €, +0,05 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/954147-d0f94a21e2a1.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

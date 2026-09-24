@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bacardi Spiced – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/100517/",
+	"feed_url": "https://alkometriikka.fi/rss/100517.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bacardi Spiced.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-100517-2026-07-18-29.99",
+			"url": "https://alkometriikka.fi/tuotteet/100517/",
+			"title": "Bacardi Spiced — 29,23 € → 29,99 €",
+			"content_html": "<p>Tuotteen Bacardi Spiced hinta on muuttunut.</p><p>29,23 € → 29,99 € (+0,76 €, +2,60 %).</p>",
+			"summary": "Tuotteen Bacardi Spiced hinta on muuttunut. 29,23 € → 29,99 € (+0,76 €, +2,60 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/100517-121ccadbde9d.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

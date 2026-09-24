@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Victoire Golden Eagle Champagne Extra Brut 2005 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901026/",
+	"feed_url": "https://alkometriikka.fi/rss/901026.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Victoire Golden Eagle Champagne Extra Brut 2005.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901026-2026-07-18-184.9",
+			"url": "https://alkometriikka.fi/tuotteet/901026/",
+			"title": "Victoire Golden Eagle Champagne Extra Brut 2005 — 182,44 € → 184,90 €",
+			"content_html": "<p>Tuotteen Victoire Golden Eagle Champagne Extra Brut 2005 hinta on muuttunut.</p><p>182,44 € → 184,90 € (+2,46 €, +1,35 %).</p>",
+			"summary": "Tuotteen Victoire Golden Eagle Champagne Extra Brut 2005 hinta on muuttunut. 182,44 € → 184,90 € (+2,46 €, +1,35 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901026-2a22b7c162d7.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Prunotto Bansella 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/465917/",
+	"feed_url": "https://alkometriikka.fi/rss/465917.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Prunotto Bansella 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-465917-2026-07-18-24.98",
+			"url": "https://alkometriikka.fi/tuotteet/465917/",
+			"title": "Prunotto Bansella 2023 — 24,44 € → 24,98 €",
+			"content_html": "<p>Tuotteen Prunotto Bansella 2023 hinta on muuttunut.</p><p>24,44 € → 24,98 € (+0,54 €, +2,21 %).</p>",
+			"summary": "Tuotteen Prunotto Bansella 2023 hinta on muuttunut. 24,44 € → 24,98 € (+0,54 €, +2,21 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/465917-0a77f087b009.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

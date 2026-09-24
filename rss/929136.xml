@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Boulard XO Calvados – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/929136/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Boulard XO Calvados.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/929136.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Boulard XO Calvados – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Boulard XO Calvados — 82,50 € → 69,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/929136/</link>
+			<guid isPermaLink="false">alkometriikka-929136-2026-07-18-69.99</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / calvadosit</category>
+			<description><![CDATA[<p>Tuotteen Boulard XO Calvados hinta on muuttunut.</p><p>82,50 € → 69,99 € (−12,51 €, −15,16 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/929136-0b05a7638576.png" />
+		</item>
+	</channel>
+</rss>

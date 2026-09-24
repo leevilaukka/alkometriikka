@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Robert Mondavi Winery Napa Valley Cabernet Sauvignon 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/921966/",
+	"feed_url": "https://alkometriikka.fi/rss/921966.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Robert Mondavi Winery Napa Valley Cabernet Sauvignon 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-921966-2026-07-18-77.99",
+			"url": "https://alkometriikka.fi/tuotteet/921966/",
+			"title": "Robert Mondavi Winery Napa Valley Cabernet Sauvignon 2021 — 77,96 € → 77,99 €",
+			"content_html": "<p>Tuotteen Robert Mondavi Winery Napa Valley Cabernet Sauvignon 2021 hinta on muuttunut.</p><p>77,96 € → 77,99 € (+0,03 €, +0,04 %).</p>",
+			"summary": "Tuotteen Robert Mondavi Winery Napa Valley Cabernet Sauvignon 2021 hinta on muuttunut. 77,96 € → 77,99 € (+0,03 €, +0,04 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/921966-9550a7f5383c.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dingle Bealtaine Single Pot Still – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/940446/",
+	"feed_url": "https://alkometriikka.fi/rss/940446.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dingle Bealtaine Single Pot Still.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-940446-2026-07-18-109.99",
+			"url": "https://alkometriikka.fi/tuotteet/940446/",
+			"title": "Dingle Bealtaine Single Pot Still — 115,00 € → 109,99 €",
+			"content_html": "<p>Tuotteen Dingle Bealtaine Single Pot Still hinta on muuttunut.</p><p>115,00 € → 109,99 € (−5,01 €, −4,36 %).</p>",
+			"summary": "Tuotteen Dingle Bealtaine Single Pot Still hinta on muuttunut. 115,00 € → 109,99 € (−5,01 €, −4,36 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/940446-5aa9dbd55c03.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Sober Spirits Amaretto 0.0% – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900963/",
+	"feed_url": "https://alkometriikka.fi/rss/900963.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Sober Spirits Amaretto 0.0%.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900963-2026-07-18-21.99",
+			"url": "https://alkometriikka.fi/tuotteet/900963/",
+			"title": "Sober Spirits Amaretto 0.0% — 21,87 € → 21,99 €",
+			"content_html": "<p>Tuotteen Sober Spirits Amaretto 0.0% hinta on muuttunut.</p><p>21,87 € → 21,99 € (+0,12 €, +0,55 %).</p>",
+			"summary": "Tuotteen Sober Spirits Amaretto 0.0% hinta on muuttunut. 21,87 € → 21,99 € (+0,12 €, +0,55 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900963-12e0952e26b4.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

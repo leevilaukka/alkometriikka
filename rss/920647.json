@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Black Stallion Cabernet Sauvignon 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/920647/",
+	"feed_url": "https://alkometriikka.fi/rss/920647.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Black Stallion Cabernet Sauvignon 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-920647-2026-07-18-45.9",
+			"url": "https://alkometriikka.fi/tuotteet/920647/",
+			"title": "Black Stallion Cabernet Sauvignon 2023 — 45,45 € → 45,90 €",
+			"content_html": "<p>Tuotteen Black Stallion Cabernet Sauvignon 2023 hinta on muuttunut.</p><p>45,45 € → 45,90 € (+0,45 €, +0,99 %).</p>",
+			"summary": "Tuotteen Black Stallion Cabernet Sauvignon 2023 hinta on muuttunut. 45,45 € → 45,90 € (+0,45 €, +0,99 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/920647-ad1ce26880d9.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

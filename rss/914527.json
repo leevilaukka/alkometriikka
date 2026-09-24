@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dalva Colheita 1990 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/914527/",
+	"feed_url": "https://alkometriikka.fi/rss/914527.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dalva Colheita 1990.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-914527-2026-07-18-79.98",
+			"url": "https://alkometriikka.fi/tuotteet/914527/",
+			"title": "Dalva Colheita 1990 — 83,58 € → 79,98 €",
+			"content_html": "<p>Tuotteen Dalva Colheita 1990 hinta on muuttunut.</p><p>83,58 € → 79,98 € (−3,60 €, −4,31 %).</p>",
+			"summary": "Tuotteen Dalva Colheita 1990 hinta on muuttunut. 83,58 € → 79,98 € (−3,60 €, −4,31 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/914527-198172f4254c.png",
+			"tags": [
+				"Välituotteet",
+				"portviinit"
+			]
+		}
+	]
+}

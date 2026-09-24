@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Fauve Rose 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/448547/",
+	"feed_url": "https://alkometriikka.fi/rss/448547.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Fauve Rose 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-448547-2026-07-18-9.98",
+			"url": "https://alkometriikka.fi/tuotteet/448547/",
+			"title": "Fauve Rose 2024 — 10,44 € → 9,98 €",
+			"content_html": "<p>Tuotteen Fauve Rose 2024 hinta on muuttunut.</p><p>10,44 € → 9,98 € (−0,46 €, −4,41 %).</p>",
+			"summary": "Tuotteen Fauve Rose 2024 hinta on muuttunut. 10,44 € → 9,98 € (−0,46 €, −4,41 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/448547-01e554ccd057.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

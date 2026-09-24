@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kolme Leijonaa Savu muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/163297/",
+	"feed_url": "https://alkometriikka.fi/rss/163297.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kolme Leijonaa Savu muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-163297-2026-07-18-27.59",
+			"url": "https://alkometriikka.fi/tuotteet/163297/",
+			"title": "Kolme Leijonaa Savu muovipullo — 27,16 € → 27,59 €",
+			"content_html": "<p>Tuotteen Kolme Leijonaa Savu muovipullo hinta on muuttunut.</p><p>27,16 € → 27,59 € (+0,43 €, +1,58 %).</p>",
+			"summary": "Tuotteen Kolme Leijonaa Savu muovipullo hinta on muuttunut. 27,16 € → 27,59 € (+0,43 €, +1,58 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/163297-f58d9c24279f.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

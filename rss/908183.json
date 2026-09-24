@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ruffino Santedame Chianti Classico Organic 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/908183/",
+	"feed_url": "https://alkometriikka.fi/rss/908183.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ruffino Santedame Chianti Classico Organic 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-908183-2026-07-18-27.48",
+			"url": "https://alkometriikka.fi/tuotteet/908183/",
+			"title": "Ruffino Santedame Chianti Classico Organic 2019 — 27,25 € → 27,48 €",
+			"content_html": "<p>Tuotteen Ruffino Santedame Chianti Classico Organic 2019 hinta on muuttunut.</p><p>27,25 € → 27,48 € (+0,23 €, +0,84 %).</p>",
+			"summary": "Tuotteen Ruffino Santedame Chianti Classico Organic 2019 hinta on muuttunut. 27,25 € → 27,48 € (+0,23 €, +0,84 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/908183-8e2d36b5aa86.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

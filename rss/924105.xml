@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Ruffino Romitorio di Santedame Chianti Classico Gran Selezione 2019 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/924105/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Ruffino Romitorio di Santedame Chianti Classico Gran Selezione 2019.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/924105.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Ruffino Romitorio di Santedame Chianti Classico Gran Selezione 2019 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Ruffino Romitorio di Santedame Chianti Classico Gran Selezione 2019 — 88,25 € → 87,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/924105/</link>
+			<guid isPermaLink="false">alkometriikka-924105-2026-07-18-87.99</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Ruffino Romitorio di Santedame Chianti Classico Gran Selezione 2019 hinta on muuttunut.</p><p>88,25 € → 87,99 € (−0,26 €, −0,29 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/924105-98a091523568.png" />
+		</item>
+	</channel>
+</rss>

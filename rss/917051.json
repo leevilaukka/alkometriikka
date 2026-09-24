@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glengoyne 10 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/917051/",
+	"feed_url": "https://alkometriikka.fi/rss/917051.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glengoyne 10 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-917051-2026-07-18-55.9",
+			"url": "https://alkometriikka.fi/tuotteet/917051/",
+			"title": "Glengoyne 10 Year Old Single Malt — 64,24 € → 55,90 €",
+			"content_html": "<p>Tuotteen Glengoyne 10 Year Old Single Malt hinta on muuttunut.</p><p>64,24 € → 55,90 € (−8,34 €, −12,98 %).</p>",
+			"summary": "Tuotteen Glengoyne 10 Year Old Single Malt hinta on muuttunut. 64,24 € → 55,90 € (−8,34 €, −12,98 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/917051-b73b0d27500e.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

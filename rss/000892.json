@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hennessy VSOP – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/000892/",
+	"feed_url": "https://alkometriikka.fi/rss/000892.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hennessy VSOP.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-000892-2026-07-18-38.99",
+			"url": "https://alkometriikka.fi/tuotteet/000892/",
+			"title": "Hennessy VSOP — 39,04 € → 38,99 €",
+			"content_html": "<p>Tuotteen Hennessy VSOP hinta on muuttunut.</p><p>39,04 € → 38,99 € (−0,05 €, −0,13 %).</p>",
+			"summary": "Tuotteen Hennessy VSOP hinta on muuttunut. 39,04 € → 38,99 € (−0,05 €, −0,13 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/000892-9d795dedf091.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

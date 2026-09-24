@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ballantine's Finest – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/946051/",
+	"feed_url": "https://alkometriikka.fi/rss/946051.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ballantine's Finest.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-946051-2026-07-18-3.79",
+			"url": "https://alkometriikka.fi/tuotteet/946051/",
+			"title": "Ballantine's Finest — 3,68 € → 3,79 €",
+			"content_html": "<p>Tuotteen Ballantine's Finest hinta on muuttunut.</p><p>3,68 € → 3,79 € (+0,11 €, +2,99 %).</p>",
+			"summary": "Tuotteen Ballantine's Finest hinta on muuttunut. 3,68 € → 3,79 € (+0,11 €, +2,99 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/946051-a9dcfb1010d6.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

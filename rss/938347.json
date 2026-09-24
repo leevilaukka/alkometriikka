@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Drappier Champagne Brut Nature – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/938347/",
+	"feed_url": "https://alkometriikka.fi/rss/938347.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Drappier Champagne Brut Nature.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-938347-2026-07-18-55.99",
+			"url": "https://alkometriikka.fi/tuotteet/938347/",
+			"title": "Drappier Champagne Brut Nature — 55,46 € → 55,99 €",
+			"content_html": "<p>Tuotteen Drappier Champagne Brut Nature hinta on muuttunut.</p><p>55,46 € → 55,99 € (+0,53 €, +0,96 %).</p>",
+			"summary": "Tuotteen Drappier Champagne Brut Nature hinta on muuttunut. 55,46 € → 55,99 € (+0,53 €, +0,96 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/938347-aaab5002b54d.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

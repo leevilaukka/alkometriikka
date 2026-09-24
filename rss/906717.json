@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Choya Extra Shiso Umeshu – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/906717/",
+	"feed_url": "https://alkometriikka.fi/rss/906717.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Choya Extra Shiso Umeshu.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-906717-2026-07-18-40.78",
+			"url": "https://alkometriikka.fi/tuotteet/906717/",
+			"title": "Choya Extra Shiso Umeshu — 40,61 € → 40,78 €",
+			"content_html": "<p>Tuotteen Choya Extra Shiso Umeshu hinta on muuttunut.</p><p>40,61 € → 40,78 € (+0,17 €, +0,42 %).</p>",
+			"summary": "Tuotteen Choya Extra Shiso Umeshu hinta on muuttunut. 40,61 € → 40,78 € (+0,17 €, +0,42 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/906717-1643ba403db1.png",
+			"tags": [
+				"Väkevät",
+				"hedelmäliköörit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Chateau Argadens Blanc 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900582/",
+	"feed_url": "https://alkometriikka.fi/rss/900582.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Chateau Argadens Blanc 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900582-2026-07-18-19.51",
+			"url": "https://alkometriikka.fi/tuotteet/900582/",
+			"title": "Chateau Argadens Blanc 2023 — 20,44 € → 19,51 €",
+			"content_html": "<p>Tuotteen Chateau Argadens Blanc 2023 hinta on muuttunut.</p><p>20,44 € → 19,51 € (−0,93 €, −4,55 %).</p>",
+			"summary": "Tuotteen Chateau Argadens Blanc 2023 hinta on muuttunut. 20,44 € → 19,51 € (−0,93 €, −4,55 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900582-9a752ff52bb9.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

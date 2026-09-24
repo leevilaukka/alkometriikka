@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Petit Comité del Sió 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/433727/",
+	"feed_url": "https://alkometriikka.fi/rss/433727.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Petit Comité del Sió 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-433727-2026-07-18-17.98",
+			"url": "https://alkometriikka.fi/tuotteet/433727/",
+			"title": "Petit Comité del Sió 2023 — 17,44 € → 17,98 €",
+			"content_html": "<p>Tuotteen Petit Comité del Sió 2023 hinta on muuttunut.</p><p>17,44 € → 17,98 € (+0,54 €, +3,10 %).</p>",
+			"summary": "Tuotteen Petit Comité del Sió 2023 hinta on muuttunut. 17,44 € → 17,98 € (+0,54 €, +3,10 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/433727-cc96538e5953.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

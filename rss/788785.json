@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Guinness 0,0% tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/788785/",
+	"feed_url": "https://alkometriikka.fi/rss/788785.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Guinness 0,0% tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-788785-2026-09-04-2.84",
+			"url": "https://alkometriikka.fi/tuotteet/788785/",
+			"title": "Guinness 0,0% tölkki — 3,15 € → 2,84 €",
+			"content_html": "<p>Tuotteen Guinness 0,0% tölkki hinta on muuttunut.</p><p>3,15 € → 2,84 € (−0,31 €, −9,84 %).</p>",
+			"summary": "Tuotteen Guinness 0,0% tölkki hinta on muuttunut. 3,15 € → 2,84 € (−0,31 €, −9,84 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/788785-a50141d22c76.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-788785-2026-07-18-3.15",
+			"url": "https://alkometriikka.fi/tuotteet/788785/",
+			"title": "Guinness 0,0% tölkki — 3,18 € → 3,15 €",
+			"content_html": "<p>Tuotteen Guinness 0,0% tölkki hinta on muuttunut.</p><p>3,18 € → 3,15 € (−0,03 €, −0,94 %).</p>",
+			"summary": "Tuotteen Guinness 0,0% tölkki hinta on muuttunut. 3,18 € → 3,15 € (−0,03 €, −0,94 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/788785-a50141d22c76.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

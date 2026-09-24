@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bruxo X Joven Mezcal – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/920671/",
+	"feed_url": "https://alkometriikka.fi/rss/920671.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bruxo X Joven Mezcal.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-920671-2026-07-18-55.32",
+			"url": "https://alkometriikka.fi/tuotteet/920671/",
+			"title": "Bruxo X Joven Mezcal — 54,97 € → 55,32 €",
+			"content_html": "<p>Tuotteen Bruxo X Joven Mezcal hinta on muuttunut.</p><p>54,97 € → 55,32 € (+0,35 €, +0,64 %).</p>",
+			"summary": "Tuotteen Bruxo X Joven Mezcal hinta on muuttunut. 54,97 € → 55,32 € (+0,35 €, +0,64 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/920671-98fc17f0ba3a.png",
+			"tags": [
+				"Väkevät",
+				"Tequilat"
+			]
+		}
+	]
+}

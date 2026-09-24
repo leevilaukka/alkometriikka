@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – J.P. Wisers 10 Year Old Triple Barrel muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/144874/",
+	"feed_url": "https://alkometriikka.fi/rss/144874.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: J.P. Wisers 10 Year Old Triple Barrel muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-144874-2026-07-18-14.68",
+			"url": "https://alkometriikka.fi/tuotteet/144874/",
+			"title": "J.P. Wisers 10 Year Old Triple Barrel muovipullo — 14,63 € → 14,68 €",
+			"content_html": "<p>Tuotteen J.P. Wisers 10 Year Old Triple Barrel muovipullo hinta on muuttunut.</p><p>14,63 € → 14,68 € (+0,05 €, +0,34 %).</p>",
+			"summary": "Tuotteen J.P. Wisers 10 Year Old Triple Barrel muovipullo hinta on muuttunut. 14,63 € → 14,68 € (+0,05 €, +0,34 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/144874-afb291cfc24b.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

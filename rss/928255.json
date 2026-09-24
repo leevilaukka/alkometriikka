@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Beaulieu Vinyard Rutherford Cabernet Sauvignon 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/928255/",
+	"feed_url": "https://alkometriikka.fi/rss/928255.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Beaulieu Vinyard Rutherford Cabernet Sauvignon 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-928255-2026-07-18-109.39",
+			"url": "https://alkometriikka.fi/tuotteet/928255/",
+			"title": "Beaulieu Vinyard Rutherford Cabernet Sauvignon 2019 — 109,26 € → 109,39 €",
+			"content_html": "<p>Tuotteen Beaulieu Vinyard Rutherford Cabernet Sauvignon 2019 hinta on muuttunut.</p><p>109,26 € → 109,39 € (+0,13 €, +0,12 %).</p>",
+			"summary": "Tuotteen Beaulieu Vinyard Rutherford Cabernet Sauvignon 2019 hinta on muuttunut. 109,26 € → 109,39 € (+0,13 €, +0,12 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/928255-c7e06dcbcdb3.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

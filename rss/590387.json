@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Zenato Pinot Grigio 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/590387/",
+	"feed_url": "https://alkometriikka.fi/rss/590387.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Zenato Pinot Grigio 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-590387-2026-07-18-13.98",
+			"url": "https://alkometriikka.fi/tuotteet/590387/",
+			"title": "Zenato Pinot Grigio 2025 — 14,42 € → 13,98 €",
+			"content_html": "<p>Tuotteen Zenato Pinot Grigio 2025 hinta on muuttunut.</p><p>14,42 € → 13,98 € (−0,44 €, −3,05 %).</p>",
+			"summary": "Tuotteen Zenato Pinot Grigio 2025 hinta on muuttunut. 14,42 € → 13,98 € (−0,44 €, −3,05 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/590387-1ebbd20529b3.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

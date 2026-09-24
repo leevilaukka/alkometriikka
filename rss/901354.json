@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vietti Barbera d'Alba Trevie 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901354/",
+	"feed_url": "https://alkometriikka.fi/rss/901354.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vietti Barbera d'Alba Trevie 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901354-2026-07-18-31.48",
+			"url": "https://alkometriikka.fi/tuotteet/901354/",
+			"title": "Vietti Barbera d'Alba Trevie 2023 — 31,44 € → 31,48 €",
+			"content_html": "<p>Tuotteen Vietti Barbera d'Alba Trevie 2023 hinta on muuttunut.</p><p>31,44 € → 31,48 € (+0,04 €, +0,13 %).</p>",
+			"summary": "Tuotteen Vietti Barbera d'Alba Trevie 2023 hinta on muuttunut. 31,44 € → 31,48 € (+0,04 €, +0,13 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901354-b53b313d7e64.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

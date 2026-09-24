@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Omnipollo Noa Pecan Mud Cake Non-Alcoholic Imperial Stout tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/600065/",
+	"feed_url": "https://alkometriikka.fi/rss/600065.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Omnipollo Noa Pecan Mud Cake Non-Alcoholic Imperial Stout tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-600065-2026-09-04-5.39",
+			"url": "https://alkometriikka.fi/tuotteet/600065/",
+			"title": "Omnipollo Noa Pecan Mud Cake Non-Alcoholic Imperial Stout tölkki — 5,99 € → 5,39 €",
+			"content_html": "<p>Tuotteen Omnipollo Noa Pecan Mud Cake Non-Alcoholic Imperial Stout tölkki hinta on muuttunut.</p><p>5,99 € → 5,39 € (−0,60 €, −10,02 %).</p>",
+			"summary": "Tuotteen Omnipollo Noa Pecan Mud Cake Non-Alcoholic Imperial Stout tölkki hinta on muuttunut. 5,99 € → 5,39 € (−0,60 €, −10,02 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600065-1cc6b4f945bd.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

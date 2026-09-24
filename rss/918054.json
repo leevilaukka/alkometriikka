@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nyetimber Rosé Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/918054/",
+	"feed_url": "https://alkometriikka.fi/rss/918054.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nyetimber Rosé Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-918054-2026-07-18-75.98",
+			"url": "https://alkometriikka.fi/tuotteet/918054/",
+			"title": "Nyetimber Rosé Brut — 75,44 € → 75,98 €",
+			"content_html": "<p>Tuotteen Nyetimber Rosé Brut hinta on muuttunut.</p><p>75,44 € → 75,98 € (+0,54 €, +0,72 %).</p>",
+			"summary": "Tuotteen Nyetimber Rosé Brut hinta on muuttunut. 75,44 € → 75,98 € (+0,54 €, +0,72 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/918054-3a6fb68c0a7e.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

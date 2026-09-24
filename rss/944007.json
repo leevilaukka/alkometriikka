@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Coeur du Breuil à la Pomme et à la Vanille – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/944007/",
+	"feed_url": "https://alkometriikka.fi/rss/944007.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Coeur du Breuil à la Pomme et à la Vanille.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-944007-2026-07-18-27.29",
+			"url": "https://alkometriikka.fi/tuotteet/944007/",
+			"title": "Coeur du Breuil à la Pomme et à la Vanille — 27,10 € → 27,29 €",
+			"content_html": "<p>Tuotteen Coeur du Breuil à la Pomme et à la Vanille hinta on muuttunut.</p><p>27,10 € → 27,29 € (+0,19 €, +0,70 %).</p>",
+			"summary": "Tuotteen Coeur du Breuil à la Pomme et à la Vanille hinta on muuttunut. 27,10 € → 27,29 € (+0,19 €, +0,70 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/944007-62462783dd07.png",
+			"tags": [
+				"Väkevät",
+				"hedelmäliköörit"
+			]
+		}
+	]
+}

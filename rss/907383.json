@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tenuta Calimaia Vino Nobile di Montepulciano 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/907383/",
+	"feed_url": "https://alkometriikka.fi/rss/907383.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tenuta Calimaia Vino Nobile di Montepulciano 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-907383-2026-07-18-38.89",
+			"url": "https://alkometriikka.fi/tuotteet/907383/",
+			"title": "Tenuta Calimaia Vino Nobile di Montepulciano 2021 — 32,46 € → 38,89 €",
+			"content_html": "<p>Tuotteen Tenuta Calimaia Vino Nobile di Montepulciano 2021 hinta on muuttunut.</p><p>32,46 € → 38,89 € (+6,43 €, +19,81 %).</p>",
+			"summary": "Tuotteen Tenuta Calimaia Vino Nobile di Montepulciano 2021 hinta on muuttunut. 32,46 € → 38,89 € (+6,43 €, +19,81 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/907383-f1d707d946ef.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

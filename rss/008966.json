@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Freixenet Carta Nevada Cava Medium Dry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/008966/",
+	"feed_url": "https://alkometriikka.fi/rss/008966.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Freixenet Carta Nevada Cava Medium Dry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-008966-2026-07-18-12.84",
+			"url": "https://alkometriikka.fi/tuotteet/008966/",
+			"title": "Freixenet Carta Nevada Cava Medium Dry — 12,76 € → 12,84 €",
+			"content_html": "<p>Tuotteen Freixenet Carta Nevada Cava Medium Dry hinta on muuttunut.</p><p>12,76 € → 12,84 € (+0,08 €, +0,63 %).</p>",
+			"summary": "Tuotteen Freixenet Carta Nevada Cava Medium Dry hinta on muuttunut. 12,76 € → 12,84 € (+0,08 €, +0,63 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/008966-8d0bc154e7aa.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

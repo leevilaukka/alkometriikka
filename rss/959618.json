@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Karhu III – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/959618/",
+	"feed_url": "https://alkometriikka.fi/rss/959618.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Karhu III.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-959618-2026-07-18-224.31",
+			"url": "https://alkometriikka.fi/tuotteet/959618/",
+			"title": "Karhu III — 221,05 € → 224,31 €",
+			"content_html": "<p>Tuotteen Karhu III hinta on muuttunut.</p><p>221,05 € → 224,31 € (+3,26 €, +1,47 %).</p>",
+			"summary": "Tuotteen Karhu III hinta on muuttunut. 221,05 € → 224,31 € (+3,26 €, +1,47 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/959618-e4d73c9b47b3.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

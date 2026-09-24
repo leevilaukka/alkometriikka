@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Codorníu Clásico Cava Sec Organic – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/008911/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Codorníu Clásico Cava Sec Organic.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/008911.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Codorníu Clásico Cava Sec Organic – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Codorníu Clásico Cava Sec Organic — 12,45 € → 11,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/008911/</link>
+			<guid isPermaLink="false">alkometriikka-008911-2026-07-18-11.99</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / kuohuviinit ja samppanjat</category>
+			<description><![CDATA[<p>Tuotteen Codorníu Clásico Cava Sec Organic hinta on muuttunut.</p><p>12,45 € → 11,99 € (−0,46 €, −3,69 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/008911-f301d662c9a8.png" />
+		</item>
+	</channel>
+</rss>

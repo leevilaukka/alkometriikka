@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pegasus Amarone della Valpolicella 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900214/",
+	"feed_url": "https://alkometriikka.fi/rss/900214.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pegasus Amarone della Valpolicella 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900214-2026-07-18-19.79",
+			"url": "https://alkometriikka.fi/tuotteet/900214/",
+			"title": "Pegasus Amarone della Valpolicella 2019 — 19,75 € → 19,79 €",
+			"content_html": "<p>Tuotteen Pegasus Amarone della Valpolicella 2019 hinta on muuttunut.</p><p>19,75 € → 19,79 € (+0,04 €, +0,20 %).</p>",
+			"summary": "Tuotteen Pegasus Amarone della Valpolicella 2019 hinta on muuttunut. 19,75 € → 19,79 € (+0,04 €, +0,20 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900214-8c3840bd967c.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Condado de Oriza Crianza 2023 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/400093/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Condado de Oriza Crianza 2023.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/400093.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Condado de Oriza Crianza 2023 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Condado de Oriza Crianza 2023 — 15,45 € → 15,49 €</title>
+			<link>https://alkometriikka.fi/tuotteet/400093/</link>
+			<guid isPermaLink="false">alkometriikka-400093-2026-07-18-15.49</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Condado de Oriza Crianza 2023 hinta on muuttunut.</p><p>15,45 € → 15,49 € (+0,04 €, +0,26 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/400093-4cdaf8f8ac66.png" />
+		</item>
+	</channel>
+</rss>

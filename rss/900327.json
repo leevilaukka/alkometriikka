@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dr Thanisch Riesling 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900327/",
+	"feed_url": "https://alkometriikka.fi/rss/900327.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dr Thanisch Riesling 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900327-2026-07-18-18.48",
+			"url": "https://alkometriikka.fi/tuotteet/900327/",
+			"title": "Dr Thanisch Riesling 2023 — 18,44 € → 18,48 €",
+			"content_html": "<p>Tuotteen Dr Thanisch Riesling 2023 hinta on muuttunut.</p><p>18,44 € → 18,48 € (+0,04 €, +0,22 %).</p>",
+			"summary": "Tuotteen Dr Thanisch Riesling 2023 hinta on muuttunut. 18,44 € → 18,48 € (+0,04 €, +0,22 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900327-85522f924554.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

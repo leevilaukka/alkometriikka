@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Guigal Saint-Joseph Rouge \"Vignes de l'Hospice\" 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901050/",
+	"feed_url": "https://alkometriikka.fi/rss/901050.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Guigal Saint-Joseph Rouge \"Vignes de l'Hospice\" 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901050-2026-07-18-105.48",
+			"url": "https://alkometriikka.fi/tuotteet/901050/",
+			"title": "Guigal Saint-Joseph Rouge \"Vignes de l'Hospice\" 2022 — 105,02 € → 105,48 €",
+			"content_html": "<p>Tuotteen Guigal Saint-Joseph Rouge \"Vignes de l'Hospice\" 2022 hinta on muuttunut.</p><p>105,02 € → 105,48 € (+0,46 €, +0,44 %).</p>",
+			"summary": "Tuotteen Guigal Saint-Joseph Rouge \"Vignes de l'Hospice\" 2022 hinta on muuttunut. 105,02 € → 105,48 € (+0,46 €, +0,44 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901050-318fe76ae8c4.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Charles Mignon Premium Reserva Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/957273/",
+	"feed_url": "https://alkometriikka.fi/rss/957273.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Charles Mignon Premium Reserva Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-957273-2026-07-18-39.98",
+			"url": "https://alkometriikka.fi/tuotteet/957273/",
+			"title": "Charles Mignon Premium Reserva Champagne Brut — 35,94 € → 39,98 €",
+			"content_html": "<p>Tuotteen Charles Mignon Premium Reserva Champagne Brut hinta on muuttunut.</p><p>35,94 € → 39,98 € (+4,04 €, +11,24 %).</p>",
+			"summary": "Tuotteen Charles Mignon Premium Reserva Champagne Brut hinta on muuttunut. 35,94 € → 39,98 € (+4,04 €, +11,24 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/957273-b3790659be52.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

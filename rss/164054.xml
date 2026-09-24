@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Koskenkorva Luomu Viina muovipullo – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/164054/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Koskenkorva Luomu Viina muovipullo.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/164054.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Koskenkorva Luomu Viina muovipullo – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Koskenkorva Luomu Viina muovipullo — 9,97 € → 9,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/164054/</link>
+			<guid isPermaLink="false">alkometriikka-164054-2026-07-18-9.99</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / viina</category>
+			<description><![CDATA[<p>Tuotteen Koskenkorva Luomu Viina muovipullo hinta on muuttunut.</p><p>9,97 € → 9,99 € (+0,02 €, +0,20 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/164054-07b129ffe5b9.png" />
+		</item>
+	</channel>
+</rss>

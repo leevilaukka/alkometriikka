@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Mufloni Islay Imperial stout tölkki – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/915692/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Mufloni Islay Imperial stout tölkki.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/915692.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Mufloni Islay Imperial stout tölkki – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Mufloni Islay Imperial stout tölkki — 9,72 € → 9,71 €</title>
+			<link>https://alkometriikka.fi/tuotteet/915692/</link>
+			<guid isPermaLink="false">alkometriikka-915692-2026-07-18-9.71</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Panimotuotteet / oluet</category>
+			<description><![CDATA[<p>Tuotteen Mufloni Islay Imperial stout tölkki hinta on muuttunut.</p><p>9,72 € → 9,71 € (−0,01 €, −0,10 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/915692-ee397b9a7ef8.png" />
+		</item>
+	</channel>
+</rss>

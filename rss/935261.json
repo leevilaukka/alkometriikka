@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Banditti Club – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/935261/",
+	"feed_url": "https://alkometriikka.fi/rss/935261.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Banditti Club.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-935261-2026-07-18-49.94",
+			"url": "https://alkometriikka.fi/tuotteet/935261/",
+			"title": "Banditti Club — 50,37 € → 49,94 €",
+			"content_html": "<p>Tuotteen Banditti Club hinta on muuttunut.</p><p>50,37 € → 49,94 € (−0,43 €, −0,85 %).</p>",
+			"summary": "Tuotteen Banditti Club hinta on muuttunut. 50,37 € → 49,94 € (−0,43 €, −0,85 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/935261-648dd877931f.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

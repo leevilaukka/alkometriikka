@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Strega Liquore muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/932325/",
+	"feed_url": "https://alkometriikka.fi/rss/932325.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Strega Liquore muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-932325-2026-07-18-5.2",
+			"url": "https://alkometriikka.fi/tuotteet/932325/",
+			"title": "Strega Liquore muovipullo — 5,21 € → 5,20 €",
+			"content_html": "<p>Tuotteen Strega Liquore muovipullo hinta on muuttunut.</p><p>5,21 € → 5,20 € (−0,01 €, −0,19 %).</p>",
+			"summary": "Tuotteen Strega Liquore muovipullo hinta on muuttunut. 5,21 € → 5,20 € (−0,01 €, −0,19 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/932325-1a39ae604e79.png",
+			"tags": [
+				"Väkevät",
+				"mausteliköörit"
+			]
+		}
+	]
+}

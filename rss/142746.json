@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Fiorito Limoncello Superiore – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/142746/",
+	"feed_url": "https://alkometriikka.fi/rss/142746.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Fiorito Limoncello Superiore.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-142746-2026-07-18-21.99",
+			"url": "https://alkometriikka.fi/tuotteet/142746/",
+			"title": "Fiorito Limoncello Superiore — 23,14 € → 21,99 €",
+			"content_html": "<p>Tuotteen Fiorito Limoncello Superiore hinta on muuttunut.</p><p>23,14 € → 21,99 € (−1,15 €, −4,97 %).</p>",
+			"summary": "Tuotteen Fiorito Limoncello Superiore hinta on muuttunut. 23,14 € → 21,99 € (−1,15 €, −4,97 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/142746-68a9bcacfab6.png",
+			"tags": [
+				"Väkevät",
+				"hedelmäliköörit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Smashberry 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/465757/",
+	"feed_url": "https://alkometriikka.fi/rss/465757.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Smashberry 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-465757-2026-07-18-10.56",
+			"url": "https://alkometriikka.fi/tuotteet/465757/",
+			"title": "Smashberry 2018 — 10,02 € → 10,56 €",
+			"content_html": "<p>Tuotteen Smashberry 2018 hinta on muuttunut.</p><p>10,02 € → 10,56 € (+0,54 €, +5,39 %).</p>",
+			"summary": "Tuotteen Smashberry 2018 hinta on muuttunut. 10,02 € → 10,56 € (+0,54 €, +5,39 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/465757-ceb99d600124.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

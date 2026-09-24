@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Louis Roederer Collection 246 Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/578457/",
+	"feed_url": "https://alkometriikka.fi/rss/578457.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Louis Roederer Collection 246 Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-578457-2026-07-18-74.98",
+			"url": "https://alkometriikka.fi/tuotteet/578457/",
+			"title": "Louis Roederer Collection 246 Champagne Brut — 74,45 € → 74,98 €",
+			"content_html": "<p>Tuotteen Louis Roederer Collection 246 Champagne Brut hinta on muuttunut.</p><p>74,45 € → 74,98 € (+0,53 €, +0,71 %).</p>",
+			"summary": "Tuotteen Louis Roederer Collection 246 Champagne Brut hinta on muuttunut. 74,45 € → 74,98 € (+0,53 €, +0,71 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/578457-1db7285cd54a.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

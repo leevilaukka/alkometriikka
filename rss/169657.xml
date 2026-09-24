@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Casamigos Blanco Tequila – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/169657/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Casamigos Blanco Tequila.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/169657.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Casamigos Blanco Tequila – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Casamigos Blanco Tequila — 61,48 € → 63,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/169657/</link>
+			<guid isPermaLink="false">alkometriikka-169657-2026-07-18-63.99</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / Tequilat</category>
+			<description><![CDATA[<p>Tuotteen Casamigos Blanco Tequila hinta on muuttunut.</p><p>61,48 € → 63,99 € (+2,51 €, +4,08 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/169657-f19b2b0ac2b8.png" />
+		</item>
+	</channel>
+</rss>

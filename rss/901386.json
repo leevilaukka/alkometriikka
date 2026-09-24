@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Poças 50 Year Old Tawny Port – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901386/",
+	"feed_url": "https://alkometriikka.fi/rss/901386.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Poças 50 Year Old Tawny Port.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901386-2026-07-18-269.9",
+			"url": "https://alkometriikka.fi/tuotteet/901386/",
+			"title": "Poças 50 Year Old Tawny Port — 267,49 € → 269,90 €",
+			"content_html": "<p>Tuotteen Poças 50 Year Old Tawny Port hinta on muuttunut.</p><p>267,49 € → 269,90 € (+2,41 €, +0,90 %).</p>",
+			"summary": "Tuotteen Poças 50 Year Old Tawny Port hinta on muuttunut. 267,49 € → 269,90 € (+2,41 €, +0,90 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901386-5460d7eb2cf9.png",
+			"tags": [
+				"Välituotteet",
+				"portviinit"
+			]
+		}
+	]
+}

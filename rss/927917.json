@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Boizel Premier Cru La Montagne Blanc de Noirs Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/927917/",
+	"feed_url": "https://alkometriikka.fi/rss/927917.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Boizel Premier Cru La Montagne Blanc de Noirs Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-927917-2026-07-18-72.99",
+			"url": "https://alkometriikka.fi/tuotteet/927917/",
+			"title": "Boizel Premier Cru La Montagne Blanc de Noirs Champagne Brut — 72,95 € → 72,99 €",
+			"content_html": "<p>Tuotteen Boizel Premier Cru La Montagne Blanc de Noirs Champagne Brut hinta on muuttunut.</p><p>72,95 € → 72,99 € (+0,04 €, +0,05 %).</p>",
+			"summary": "Tuotteen Boizel Premier Cru La Montagne Blanc de Noirs Champagne Brut hinta on muuttunut. 72,95 € → 72,99 € (+0,04 €, +0,05 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/927917-a54f050bf4ee.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

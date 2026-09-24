@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pata Negra Reserva Tempranillo Valdepeñas 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/908052/",
+	"feed_url": "https://alkometriikka.fi/rss/908052.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pata Negra Reserva Tempranillo Valdepeñas 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-908052-2026-07-18-7.48",
+			"url": "https://alkometriikka.fi/tuotteet/908052/",
+			"title": "Pata Negra Reserva Tempranillo Valdepeñas 2018 — 7,12 € → 7,48 €",
+			"content_html": "<p>Tuotteen Pata Negra Reserva Tempranillo Valdepeñas 2018 hinta on muuttunut.</p><p>7,12 € → 7,48 € (+0,36 €, +5,06 %).</p>",
+			"summary": "Tuotteen Pata Negra Reserva Tempranillo Valdepeñas 2018 hinta on muuttunut. 7,12 € → 7,48 € (+0,36 €, +5,06 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/908052-eea602743264.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

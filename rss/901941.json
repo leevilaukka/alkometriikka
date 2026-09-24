@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kaiho Ruby Blackcurrant Organic – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901941/",
+	"feed_url": "https://alkometriikka.fi/rss/901941.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kaiho Ruby Blackcurrant Organic.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901941-2026-07-18-29.99",
+			"url": "https://alkometriikka.fi/tuotteet/901941/",
+			"title": "Kaiho Ruby Blackcurrant Organic — 29,08 € → 29,99 €",
+			"content_html": "<p>Tuotteen Kaiho Ruby Blackcurrant Organic hinta on muuttunut.</p><p>29,08 € → 29,99 € (+0,91 €, +3,13 %).</p>",
+			"summary": "Tuotteen Kaiho Ruby Blackcurrant Organic hinta on muuttunut. 29,08 € → 29,99 € (+0,91 €, +3,13 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901941-7d025f049f16.png",
+			"tags": [
+				"Väkevät",
+				"marjaliköörit"
+			]
+		}
+	]
+}

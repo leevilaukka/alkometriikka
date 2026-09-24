@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Langham Blanc de Blancs Extra Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/925923/",
+	"feed_url": "https://alkometriikka.fi/rss/925923.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Langham Blanc de Blancs Extra Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-925923-2026-07-18-72.99",
+			"url": "https://alkometriikka.fi/tuotteet/925923/",
+			"title": "Langham Blanc de Blancs Extra Brut — 71,46 € → 72,99 €",
+			"content_html": "<p>Tuotteen Langham Blanc de Blancs Extra Brut hinta on muuttunut.</p><p>71,46 € → 72,99 € (+1,53 €, +2,14 %).</p>",
+			"summary": "Tuotteen Langham Blanc de Blancs Extra Brut hinta on muuttunut. 71,46 € → 72,99 € (+1,53 €, +2,14 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/925923-ebec5f99398f.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

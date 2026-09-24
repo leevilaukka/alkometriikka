@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Coca-Cola Zero Sugar 0,5L muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/600037/",
+	"feed_url": "https://alkometriikka.fi/rss/600037.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Coca-Cola Zero Sugar 0,5L muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-600037-2026-07-18-2.59",
+			"url": "https://alkometriikka.fi/tuotteet/600037/",
+			"title": "Coca-Cola Zero Sugar 0,5L muovipullo — 2,44 € → 2,59 €",
+			"content_html": "<p>Tuotteen Coca-Cola Zero Sugar 0,5L muovipullo hinta on muuttunut.</p><p>2,44 € → 2,59 € (+0,15 €, +6,15 %).</p>",
+			"summary": "Tuotteen Coca-Cola Zero Sugar 0,5L muovipullo hinta on muuttunut. 2,44 € → 2,59 € (+0,15 €, +6,15 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600037-c5d7db2ed4de.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Meinklang Pet Nat Rosé – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/911777/",
+	"feed_url": "https://alkometriikka.fi/rss/911777.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Meinklang Pet Nat Rosé.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-911777-2026-07-18-16.5",
+			"url": "https://alkometriikka.fi/tuotteet/911777/",
+			"title": "Meinklang Pet Nat Rosé — 16,44 € → 16,50 €",
+			"content_html": "<p>Tuotteen Meinklang Pet Nat Rosé hinta on muuttunut.</p><p>16,44 € → 16,50 € (+0,06 €, +0,36 %).</p>",
+			"summary": "Tuotteen Meinklang Pet Nat Rosé hinta on muuttunut. 16,44 € → 16,50 € (+0,06 €, +0,36 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/911777-7cbacb713652.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

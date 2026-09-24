@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Redoma Tinto 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/950298/",
+	"feed_url": "https://alkometriikka.fi/rss/950298.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Redoma Tinto 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-950298-2026-07-18-44.5",
+			"url": "https://alkometriikka.fi/tuotteet/950298/",
+			"title": "Redoma Tinto 2021 — 44,36 € → 44,50 €",
+			"content_html": "<p>Tuotteen Redoma Tinto 2021 hinta on muuttunut.</p><p>44,36 € → 44,50 € (+0,14 €, +0,32 %).</p>",
+			"summary": "Tuotteen Redoma Tinto 2021 hinta on muuttunut. 44,36 € → 44,50 € (+0,14 €, +0,32 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/950298-0c34d19c6d35.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

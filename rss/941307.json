@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Xavier Gigondas 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/941307/",
+	"feed_url": "https://alkometriikka.fi/rss/941307.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Xavier Gigondas 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-941307-2026-07-18-39.92",
+			"url": "https://alkometriikka.fi/tuotteet/941307/",
+			"title": "Xavier Gigondas 2022 — 40,90 € → 39,92 €",
+			"content_html": "<p>Tuotteen Xavier Gigondas 2022 hinta on muuttunut.</p><p>40,90 € → 39,92 € (−0,98 €, −2,40 %).</p>",
+			"summary": "Tuotteen Xavier Gigondas 2022 hinta on muuttunut. 40,90 € → 39,92 € (−0,98 €, −2,40 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/941307-f2d19d03d5b0.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

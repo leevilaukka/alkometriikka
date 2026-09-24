@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glenmorangie Signet Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/931202/",
+	"feed_url": "https://alkometriikka.fi/rss/931202.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glenmorangie Signet Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-931202-2026-07-18-279.99",
+			"url": "https://alkometriikka.fi/tuotteet/931202/",
+			"title": "Glenmorangie Signet Single Malt — 276,29 € → 279,99 €",
+			"content_html": "<p>Tuotteen Glenmorangie Signet Single Malt hinta on muuttunut.</p><p>276,29 € → 279,99 € (+3,70 €, +1,34 %).</p>",
+			"summary": "Tuotteen Glenmorangie Signet Single Malt hinta on muuttunut. 276,29 € → 279,99 € (+3,70 €, +1,34 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/931202-94d7411b7a89.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

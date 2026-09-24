@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tenuta San Mauro Barbaresco 2017 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/910018/",
+	"feed_url": "https://alkometriikka.fi/rss/910018.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tenuta San Mauro Barbaresco 2017.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-910018-2026-07-18-39.74",
+			"url": "https://alkometriikka.fi/tuotteet/910018/",
+			"title": "Tenuta San Mauro Barbaresco 2017 — 40,43 € → 39,74 €",
+			"content_html": "<p>Tuotteen Tenuta San Mauro Barbaresco 2017 hinta on muuttunut.</p><p>40,43 € → 39,74 € (−0,69 €, −1,71 %).</p>",
+			"summary": "Tuotteen Tenuta San Mauro Barbaresco 2017 hinta on muuttunut. 40,43 € → 39,74 € (−0,69 €, −1,71 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/910018-d645a1fbbda9.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

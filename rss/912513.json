@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Shake-It Mixer Passion Fruit – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/912513/",
+	"feed_url": "https://alkometriikka.fi/rss/912513.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Shake-It Mixer Passion Fruit.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-912513-2026-07-18-9.19",
+			"url": "https://alkometriikka.fi/tuotteet/912513/",
+			"title": "Shake-It Mixer Passion Fruit — 9,21 € → 9,19 €",
+			"content_html": "<p>Tuotteen Shake-It Mixer Passion Fruit hinta on muuttunut.</p><p>9,21 € → 9,19 € (−0,02 €, −0,22 %).</p>",
+			"summary": "Tuotteen Shake-It Mixer Passion Fruit hinta on muuttunut. 9,21 € → 9,19 € (−0,02 €, −0,22 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/912513-22e80c003ba1.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

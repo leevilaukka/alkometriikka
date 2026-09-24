@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Robert Mondavi Private Selection Cabernet Sauvignon 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/906315/",
+	"feed_url": "https://alkometriikka.fi/rss/906315.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Robert Mondavi Private Selection Cabernet Sauvignon 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-906315-2026-07-18-20.49",
+			"url": "https://alkometriikka.fi/tuotteet/906315/",
+			"title": "Robert Mondavi Private Selection Cabernet Sauvignon 2022 — 20,45 € → 20,49 €",
+			"content_html": "<p>Tuotteen Robert Mondavi Private Selection Cabernet Sauvignon 2022 hinta on muuttunut.</p><p>20,45 € → 20,49 € (+0,04 €, +0,20 %).</p>",
+			"summary": "Tuotteen Robert Mondavi Private Selection Cabernet Sauvignon 2022 hinta on muuttunut. 20,45 € → 20,49 € (+0,04 €, +0,20 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/906315-65dacc08fca2.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Togouchi – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/931907/",
+	"feed_url": "https://alkometriikka.fi/rss/931907.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Togouchi.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-931907-2026-07-18-68.53",
+			"url": "https://alkometriikka.fi/tuotteet/931907/",
+			"title": "Togouchi — 67,65 € → 68,53 €",
+			"content_html": "<p>Tuotteen Togouchi hinta on muuttunut.</p><p>67,65 € → 68,53 € (+0,88 €, +1,30 %).</p>",
+			"summary": "Tuotteen Togouchi hinta on muuttunut. 67,65 € → 68,53 € (+0,88 €, +1,30 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/931907-41df6e3e2af9.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

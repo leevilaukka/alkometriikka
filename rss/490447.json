@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château Ksara Reserve du Couvent 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/490447/",
+	"feed_url": "https://alkometriikka.fi/rss/490447.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château Ksara Reserve du Couvent 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-490447-2026-07-18-19.7",
+			"url": "https://alkometriikka.fi/tuotteet/490447/",
+			"title": "Château Ksara Reserve du Couvent 2022 — 18,44 € → 19,70 €",
+			"content_html": "<p>Tuotteen Château Ksara Reserve du Couvent 2022 hinta on muuttunut.</p><p>18,44 € → 19,70 € (+1,26 €, +6,83 %).</p>",
+			"summary": "Tuotteen Château Ksara Reserve du Couvent 2022 hinta on muuttunut. 18,44 € → 19,70 € (+1,26 €, +6,83 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/490447-85559274c9de.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Le Sirop de Monin Caramel – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/949033/",
+	"feed_url": "https://alkometriikka.fi/rss/949033.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Le Sirop de Monin Caramel.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-949033-2026-07-18-16.49",
+			"url": "https://alkometriikka.fi/tuotteet/949033/",
+			"title": "Le Sirop de Monin Caramel — 10,95 € → 16,49 €",
+			"content_html": "<p>Tuotteen Le Sirop de Monin Caramel hinta on muuttunut.</p><p>10,95 € → 16,49 € (+5,54 €, +50,59 %).</p>",
+			"summary": "Tuotteen Le Sirop de Monin Caramel hinta on muuttunut. 10,95 € → 16,49 € (+5,54 €, +50,59 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/949033-892d179570ee.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

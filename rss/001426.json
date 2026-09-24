@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Talisker 10 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/001426/",
+	"feed_url": "https://alkometriikka.fi/rss/001426.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Talisker 10 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-001426-2026-07-18-60.98",
+			"url": "https://alkometriikka.fi/tuotteet/001426/",
+			"title": "Talisker 10 Year Old Single Malt — 60,31 € → 60,98 €",
+			"content_html": "<p>Tuotteen Talisker 10 Year Old Single Malt hinta on muuttunut.</p><p>60,31 € → 60,98 € (+0,67 €, +1,11 %).</p>",
+			"summary": "Tuotteen Talisker 10 Year Old Single Malt hinta on muuttunut. 60,31 € → 60,98 € (+0,67 €, +1,11 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/001426-24287eb60332.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

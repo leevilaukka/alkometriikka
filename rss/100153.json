@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Koskenkorva Vodka 40 % muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/100153/",
+	"feed_url": "https://alkometriikka.fi/rss/100153.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Koskenkorva Vodka 40 % muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-100153-2026-07-18-9.59",
+			"url": "https://alkometriikka.fi/tuotteet/100153/",
+			"title": "Koskenkorva Vodka 40 % muovipullo — 9,47 € → 9,59 €",
+			"content_html": "<p>Tuotteen Koskenkorva Vodka 40 % muovipullo hinta on muuttunut.</p><p>9,47 € → 9,59 € (+0,12 €, +1,27 %).</p>",
+			"summary": "Tuotteen Koskenkorva Vodka 40 % muovipullo hinta on muuttunut. 9,47 € → 9,59 € (+0,12 €, +1,27 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/100153-84c902dba505.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

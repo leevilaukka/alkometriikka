@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Les Jamelles Vin Orange 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/500022/",
+	"feed_url": "https://alkometriikka.fi/rss/500022.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Les Jamelles Vin Orange 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-500022-2026-02-02-12.35",
+			"url": "https://alkometriikka.fi/tuotteet/500022/",
+			"title": "Les Jamelles Vin Orange 2025 — 12,45 € → 12,35 €",
+			"content_html": "<p>Tuotteen Les Jamelles Vin Orange 2025 hinta on muuttunut.</p><p>12,45 € → 12,35 € (−0,10 €, −0,80 %).</p>",
+			"summary": "Tuotteen Les Jamelles Vin Orange 2025 hinta on muuttunut. 12,45 € → 12,35 € (−0,10 €, −0,80 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/500022-9c85d69c7d2d.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-500022-2026-02-02-12.45",
+			"url": "https://alkometriikka.fi/tuotteet/500022/",
+			"title": "Les Jamelles Vin Orange 2025 — 12,35 € → 12,45 €",
+			"content_html": "<p>Tuotteen Les Jamelles Vin Orange 2025 hinta on muuttunut.</p><p>12,35 € → 12,45 € (+0,10 €, +0,81 %).</p>",
+			"summary": "Tuotteen Les Jamelles Vin Orange 2025 hinta on muuttunut. 12,35 € → 12,45 € (+0,10 €, +0,81 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/500022-9c85d69c7d2d.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

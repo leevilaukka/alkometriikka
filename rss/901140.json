@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Osborne Carlos I PX – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901140/",
+	"feed_url": "https://alkometriikka.fi/rss/901140.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Osborne Carlos I PX.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901140-2026-07-18-60.9",
+			"url": "https://alkometriikka.fi/tuotteet/901140/",
+			"title": "Osborne Carlos I PX — 60,27 € → 60,90 €",
+			"content_html": "<p>Tuotteen Osborne Carlos I PX hinta on muuttunut.</p><p>60,27 € → 60,90 € (+0,63 €, +1,05 %).</p>",
+			"summary": "Tuotteen Osborne Carlos I PX hinta on muuttunut. 60,27 € → 60,90 € (+0,63 €, +1,05 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901140-9daa2cbe9ee8.png",
+			"tags": [
+				"Väkevät",
+				"brandyt"
+			]
+		}
+	]
+}

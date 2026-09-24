@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Reh Kendermann Riesling Vom Kalkstein 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/543547/",
+	"feed_url": "https://alkometriikka.fi/rss/543547.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Reh Kendermann Riesling Vom Kalkstein 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-543547-2026-02-02-13.88",
+			"url": "https://alkometriikka.fi/tuotteet/543547/",
+			"title": "Reh Kendermann Riesling Vom Kalkstein 2025 — 13,98 € → 13,88 €",
+			"content_html": "<p>Tuotteen Reh Kendermann Riesling Vom Kalkstein 2025 hinta on muuttunut.</p><p>13,98 € → 13,88 € (−0,10 €, −0,72 %).</p>",
+			"summary": "Tuotteen Reh Kendermann Riesling Vom Kalkstein 2025 hinta on muuttunut. 13,98 € → 13,88 € (−0,10 €, −0,72 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/543547-381734e42303.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-543547-2026-02-02-13.98",
+			"url": "https://alkometriikka.fi/tuotteet/543547/",
+			"title": "Reh Kendermann Riesling Vom Kalkstein 2025 — 13,88 € → 13,98 €",
+			"content_html": "<p>Tuotteen Reh Kendermann Riesling Vom Kalkstein 2025 hinta on muuttunut.</p><p>13,88 € → 13,98 € (+0,10 €, +0,72 %).</p>",
+			"summary": "Tuotteen Reh Kendermann Riesling Vom Kalkstein 2025 hinta on muuttunut. 13,88 € → 13,98 € (+0,10 €, +0,72 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/543547-381734e42303.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

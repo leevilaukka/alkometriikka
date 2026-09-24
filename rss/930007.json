@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hardy Rare Fine Champagne XO – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/930007/",
+	"feed_url": "https://alkometriikka.fi/rss/930007.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hardy Rare Fine Champagne XO.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-930007-2026-07-18-104.9",
+			"url": "https://alkometriikka.fi/tuotteet/930007/",
+			"title": "Hardy Rare Fine Champagne XO — 104,27 € → 104,90 €",
+			"content_html": "<p>Tuotteen Hardy Rare Fine Champagne XO hinta on muuttunut.</p><p>104,27 € → 104,90 € (+0,63 €, +0,60 %).</p>",
+			"summary": "Tuotteen Hardy Rare Fine Champagne XO hinta on muuttunut. 104,27 € → 104,90 € (+0,63 €, +0,60 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/930007-1cc7e4ec7130.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

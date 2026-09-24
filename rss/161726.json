@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Koskenkorva Lakritsi muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/161726/",
+	"feed_url": "https://alkometriikka.fi/rss/161726.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Koskenkorva Lakritsi muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-161726-2026-07-18-17.49",
+			"url": "https://alkometriikka.fi/tuotteet/161726/",
+			"title": "Koskenkorva Lakritsi muovipullo — 17,55 € → 17,49 €",
+			"content_html": "<p>Tuotteen Koskenkorva Lakritsi muovipullo hinta on muuttunut.</p><p>17,55 € → 17,49 € (−0,06 €, −0,34 %).</p>",
+			"summary": "Tuotteen Koskenkorva Lakritsi muovipullo hinta on muuttunut. 17,55 € → 17,49 € (−0,06 €, −0,34 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/161726-7fe837287f17.png",
+			"tags": [
+				"Väkevät",
+				"salmiakkiliköörit"
+			]
+		}
+	]
+}

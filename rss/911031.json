@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jura 18 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/911031/",
+	"feed_url": "https://alkometriikka.fi/rss/911031.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jura 18 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-911031-2026-07-18-104.98",
+			"url": "https://alkometriikka.fi/tuotteet/911031/",
+			"title": "Jura 18 Year Old Single Malt — 105,29 € → 104,98 €",
+			"content_html": "<p>Tuotteen Jura 18 Year Old Single Malt hinta on muuttunut.</p><p>105,29 € → 104,98 € (−0,31 €, −0,29 %).</p>",
+			"summary": "Tuotteen Jura 18 Year Old Single Malt hinta on muuttunut. 105,29 € → 104,98 € (−0,31 €, −0,29 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/911031-416c07d986b2.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

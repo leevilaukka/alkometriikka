@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bava Barolo di Castiglione Falletto 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/946004/",
+	"feed_url": "https://alkometriikka.fi/rss/946004.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bava Barolo di Castiglione Falletto 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-946004-2026-07-18-54.48",
+			"url": "https://alkometriikka.fi/tuotteet/946004/",
+			"title": "Bava Barolo di Castiglione Falletto 2018 — 54,45 € → 54,48 €",
+			"content_html": "<p>Tuotteen Bava Barolo di Castiglione Falletto 2018 hinta on muuttunut.</p><p>54,45 € → 54,48 € (+0,03 €, +0,06 %).</p>",
+			"summary": "Tuotteen Bava Barolo di Castiglione Falletto 2018 hinta on muuttunut. 54,45 € → 54,48 € (+0,03 €, +0,06 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/946004-71af02b6510a.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

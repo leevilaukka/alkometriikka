@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jermann Vintage Tunina  2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901592/",
+	"feed_url": "https://alkometriikka.fi/rss/901592.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jermann Vintage Tunina  2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901592-2026-07-18-75.48",
+			"url": "https://alkometriikka.fi/tuotteet/901592/",
+			"title": "Jermann Vintage Tunina  2021 — 75,44 € → 75,48 €",
+			"content_html": "<p>Tuotteen Jermann Vintage Tunina  2021 hinta on muuttunut.</p><p>75,44 € → 75,48 € (+0,04 €, +0,05 %).</p>",
+			"summary": "Tuotteen Jermann Vintage Tunina 2021 hinta on muuttunut. 75,44 € → 75,48 € (+0,04 €, +0,05 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901592-63f52174f838.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

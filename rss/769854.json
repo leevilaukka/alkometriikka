@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – La Trappe Tripel – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/769854/",
+	"feed_url": "https://alkometriikka.fi/rss/769854.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: La Trappe Tripel.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-769854-2026-07-18-4.49",
+			"url": "https://alkometriikka.fi/tuotteet/769854/",
+			"title": "La Trappe Tripel — 4,39 € → 4,49 €",
+			"content_html": "<p>Tuotteen La Trappe Tripel hinta on muuttunut.</p><p>4,39 € → 4,49 € (+0,10 €, +2,28 %).</p>",
+			"summary": "Tuotteen La Trappe Tripel hinta on muuttunut. 4,39 € → 4,49 € (+0,10 €, +2,28 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/769854-d0f7d42519b3.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

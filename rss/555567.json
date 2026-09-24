@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Anselmann Riesling Classic 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/555567/",
+	"feed_url": "https://alkometriikka.fi/rss/555567.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Anselmann Riesling Classic 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-555567-2026-07-18-14.99",
+			"url": "https://alkometriikka.fi/tuotteet/555567/",
+			"title": "Anselmann Riesling Classic 2025 — 14,44 € → 14,99 €",
+			"content_html": "<p>Tuotteen Anselmann Riesling Classic 2025 hinta on muuttunut.</p><p>14,44 € → 14,99 € (+0,55 €, +3,81 %).</p>",
+			"summary": "Tuotteen Anselmann Riesling Classic 2025 hinta on muuttunut. 14,44 € → 14,99 € (+0,55 €, +3,81 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/555567-26518a148c15.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

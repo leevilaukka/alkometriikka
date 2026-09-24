@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cal Grau Badaceli de la Solana 2017 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900785/",
+	"feed_url": "https://alkometriikka.fi/rss/900785.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cal Grau Badaceli de la Solana 2017.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900785-2026-07-18-38.99",
+			"url": "https://alkometriikka.fi/tuotteet/900785/",
+			"title": "Cal Grau Badaceli de la Solana 2017 — 39,04 € → 38,99 €",
+			"content_html": "<p>Tuotteen Cal Grau Badaceli de la Solana 2017 hinta on muuttunut.</p><p>39,04 € → 38,99 € (−0,05 €, −0,13 %).</p>",
+			"summary": "Tuotteen Cal Grau Badaceli de la Solana 2017 hinta on muuttunut. 39,04 € → 38,99 € (−0,05 €, −0,13 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900785-fdf6477ce88f.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

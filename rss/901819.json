@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Planteray Trinidad Vintage 2003 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901819/",
+	"feed_url": "https://alkometriikka.fi/rss/901819.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Planteray Trinidad Vintage 2003.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901819-2026-07-18-79.98",
+			"url": "https://alkometriikka.fi/tuotteet/901819/",
+			"title": "Planteray Trinidad Vintage 2003 — 82,41 € → 79,98 €",
+			"content_html": "<p>Tuotteen Planteray Trinidad Vintage 2003 hinta on muuttunut.</p><p>82,41 € → 79,98 € (−2,43 €, −2,95 %).</p>",
+			"summary": "Tuotteen Planteray Trinidad Vintage 2003 hinta on muuttunut. 82,41 € → 79,98 € (−2,43 €, −2,95 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901819-5ad38bfb78fb.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Petri Riesling Trocken 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903198/",
+	"feed_url": "https://alkometriikka.fi/rss/903198.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Petri Riesling Trocken 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903198-2026-07-18-27.41",
+			"url": "https://alkometriikka.fi/tuotteet/903198/",
+			"title": "Petri Riesling Trocken 2023 — 25,47 € → 27,41 €",
+			"content_html": "<p>Tuotteen Petri Riesling Trocken 2023 hinta on muuttunut.</p><p>25,47 € → 27,41 € (+1,94 €, +7,62 %).</p>",
+			"summary": "Tuotteen Petri Riesling Trocken 2023 hinta on muuttunut. 25,47 € → 27,41 € (+1,94 €, +7,62 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903198-a929ee0c333e.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

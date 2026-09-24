@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nino Negri Ca' Brione 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/935507/",
+	"feed_url": "https://alkometriikka.fi/rss/935507.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nino Negri Ca' Brione 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-935507-2026-07-18-35.5",
+			"url": "https://alkometriikka.fi/tuotteet/935507/",
+			"title": "Nino Negri Ca' Brione 2022 — 35,46 € → 35,50 €",
+			"content_html": "<p>Tuotteen Nino Negri Ca' Brione 2022 hinta on muuttunut.</p><p>35,46 € → 35,50 € (+0,04 €, +0,11 %).</p>",
+			"summary": "Tuotteen Nino Negri Ca' Brione 2022 hinta on muuttunut. 35,46 € → 35,50 € (+0,04 €, +0,11 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/935507-eb8a3c24e504.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

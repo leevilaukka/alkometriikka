@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dry Anis muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/100051/",
+	"feed_url": "https://alkometriikka.fi/rss/100051.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dry Anis muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-100051-2026-07-18-18.89",
+			"url": "https://alkometriikka.fi/tuotteet/100051/",
+			"title": "Dry Anis muovipullo — 18,67 € → 18,89 €",
+			"content_html": "<p>Tuotteen Dry Anis muovipullo hinta on muuttunut.</p><p>18,67 € → 18,89 € (+0,22 €, +1,18 %).</p>",
+			"summary": "Tuotteen Dry Anis muovipullo hinta on muuttunut. 18,67 € → 18,89 € (+0,22 €, +1,18 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/100051-deb435685c57.png",
+			"tags": [
+				"Väkevät",
+				"anistisleet"
+			]
+		}
+	]
+}

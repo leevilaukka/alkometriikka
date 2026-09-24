@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Planeta Didacus Chardonnay Organic 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901075/",
+	"feed_url": "https://alkometriikka.fi/rss/901075.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Planeta Didacus Chardonnay Organic 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901075-2026-07-18-89.99",
+			"url": "https://alkometriikka.fi/tuotteet/901075/",
+			"title": "Planeta Didacus Chardonnay Organic 2022 — 90,45 € → 89,99 €",
+			"content_html": "<p>Tuotteen Planeta Didacus Chardonnay Organic 2022 hinta on muuttunut.</p><p>90,45 € → 89,99 € (−0,46 €, −0,51 %).</p>",
+			"summary": "Tuotteen Planeta Didacus Chardonnay Organic 2022 hinta on muuttunut. 90,45 € → 89,99 € (−0,46 €, −0,51 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901075-e4018ddc15d5.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

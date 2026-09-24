@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pere Magloire Fraternité Hors d'Age Calvados – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/169496/",
+	"feed_url": "https://alkometriikka.fi/rss/169496.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pere Magloire Fraternité Hors d'Age Calvados.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-169496-2026-07-18-29.99",
+			"url": "https://alkometriikka.fi/tuotteet/169496/",
+			"title": "Pere Magloire Fraternité Hors d'Age Calvados — 31,99 € → 29,99 €",
+			"content_html": "<p>Tuotteen Pere Magloire Fraternité Hors d'Age Calvados hinta on muuttunut.</p><p>31,99 € → 29,99 € (−2,00 €, −6,25 %).</p>",
+			"summary": "Tuotteen Pere Magloire Fraternité Hors d'Age Calvados hinta on muuttunut. 31,99 € → 29,99 € (−2,00 €, −6,25 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/169496-208fa063f668.png",
+			"tags": [
+				"Väkevät",
+				"calvadosit"
+			]
+		}
+	]
+}

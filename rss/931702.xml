@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Frontaal Brewery Juice Punch tölkki – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/931702/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Frontaal Brewery Juice Punch tölkki.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/931702.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Frontaal Brewery Juice Punch tölkki – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Frontaal Brewery Juice Punch tölkki — 4,89 € → 4,59 €</title>
+			<link>https://alkometriikka.fi/tuotteet/931702/</link>
+			<guid isPermaLink="false">alkometriikka-931702-2026-07-18-4.59</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Panimotuotteet / oluet</category>
+			<description><![CDATA[<p>Tuotteen Frontaal Brewery Juice Punch tölkki hinta on muuttunut.</p><p>4,89 € → 4,59 € (−0,30 €, −6,13 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/931702-b8269ef54542.png" />
+		</item>
+	</channel>
+</rss>

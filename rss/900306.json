@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Santa Sofia Recioto della Valpolicella Classico 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900306/",
+	"feed_url": "https://alkometriikka.fi/rss/900306.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Santa Sofia Recioto della Valpolicella Classico 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900306-2026-07-18-31.5",
+			"url": "https://alkometriikka.fi/tuotteet/900306/",
+			"title": "Santa Sofia Recioto della Valpolicella Classico 2021 — 31,29 € → 31,50 €",
+			"content_html": "<p>Tuotteen Santa Sofia Recioto della Valpolicella Classico 2021 hinta on muuttunut.</p><p>31,29 € → 31,50 € (+0,21 €, +0,67 %).</p>",
+			"summary": "Tuotteen Santa Sofia Recioto della Valpolicella Classico 2021 hinta on muuttunut. 31,29 € → 31,50 € (+0,21 €, +0,67 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900306-d6a060f82f90.png",
+			"tags": [
+				"Viinit",
+				"jälkiruokaviinit"
+			]
+		}
+	]
+}

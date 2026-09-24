@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Masi Bonacosta Valpolicella Classico 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901812/",
+	"feed_url": "https://alkometriikka.fi/rss/901812.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Masi Bonacosta Valpolicella Classico 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901812-2026-07-18-9.3",
+			"url": "https://alkometriikka.fi/tuotteet/901812/",
+			"title": "Masi Bonacosta Valpolicella Classico 2024 — 9,20 € → 9,30 €",
+			"content_html": "<p>Tuotteen Masi Bonacosta Valpolicella Classico 2024 hinta on muuttunut.</p><p>9,20 € → 9,30 € (+0,10 €, +1,09 %).</p>",
+			"summary": "Tuotteen Masi Bonacosta Valpolicella Classico 2024 hinta on muuttunut. 9,20 € → 9,30 € (+0,10 €, +1,09 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901812-1278669fa916.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

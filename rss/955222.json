@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Henkell Trocken – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/955222/",
+	"feed_url": "https://alkometriikka.fi/rss/955222.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Henkell Trocken.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-955222-2026-07-18-7.6",
+			"url": "https://alkometriikka.fi/tuotteet/955222/",
+			"title": "Henkell Trocken — 7,52 € → 7,60 €",
+			"content_html": "<p>Tuotteen Henkell Trocken hinta on muuttunut.</p><p>7,52 € → 7,60 € (+0,08 €, +1,06 %).</p>",
+			"summary": "Tuotteen Henkell Trocken hinta on muuttunut. 7,52 € → 7,60 € (+0,08 €, +1,06 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/955222-5633336a1522.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

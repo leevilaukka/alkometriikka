@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pommery Royal Champagne Brut Jeroboam – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902124/",
+	"feed_url": "https://alkometriikka.fi/rss/902124.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pommery Royal Champagne Brut Jeroboam.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902124-2026-07-18-449.99",
+			"url": "https://alkometriikka.fi/tuotteet/902124/",
+			"title": "Pommery Royal Champagne Brut Jeroboam — 449,82 € → 449,99 €",
+			"content_html": "<p>Tuotteen Pommery Royal Champagne Brut Jeroboam hinta on muuttunut.</p><p>449,82 € → 449,99 € (+0,17 €, +0,04 %).</p>",
+			"summary": "Tuotteen Pommery Royal Champagne Brut Jeroboam hinta on muuttunut. 449,82 € → 449,99 € (+0,17 €, +0,04 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902124-7b9feac90a83.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Varo Codigo 1530 Blanco Tequila – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901371/",
+	"feed_url": "https://alkometriikka.fi/rss/901371.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Varo Codigo 1530 Blanco Tequila.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901371-2026-07-18-59.99",
+			"url": "https://alkometriikka.fi/tuotteet/901371/",
+			"title": "Varo Codigo 1530 Blanco Tequila — 60,25 € → 59,99 €",
+			"content_html": "<p>Tuotteen Varo Codigo 1530 Blanco Tequila hinta on muuttunut.</p><p>60,25 € → 59,99 € (−0,26 €, −0,43 %).</p>",
+			"summary": "Tuotteen Varo Codigo 1530 Blanco Tequila hinta on muuttunut. 60,25 € → 59,99 € (−0,26 €, −0,43 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901371-77023f39e56e.png",
+			"tags": [
+				"Väkevät",
+				"Tequilat"
+			]
+		}
+	]
+}

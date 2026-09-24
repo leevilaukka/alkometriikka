@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Veuve Clicquot Extra Brut Extra Old 4 Champagne – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/956972/",
+	"feed_url": "https://alkometriikka.fi/rss/956972.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Veuve Clicquot Extra Brut Extra Old 4 Champagne.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-956972-2026-07-18-107.98",
+			"url": "https://alkometriikka.fi/tuotteet/956972/",
+			"title": "Veuve Clicquot Extra Brut Extra Old 4 Champagne — 104,04 € → 107,98 €",
+			"content_html": "<p>Tuotteen Veuve Clicquot Extra Brut Extra Old 4 Champagne hinta on muuttunut.</p><p>104,04 € → 107,98 € (+3,94 €, +3,79 %).</p>",
+			"summary": "Tuotteen Veuve Clicquot Extra Brut Extra Old 4 Champagne hinta on muuttunut. 104,04 € → 107,98 € (+3,94 €, +3,79 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/956972-a41e3535e0ba.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

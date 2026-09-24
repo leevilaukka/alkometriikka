@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ollenaut Kaineken IPA – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901241/",
+	"feed_url": "https://alkometriikka.fi/rss/901241.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ollenaut Kaineken IPA.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901241-2026-09-04-3.29",
+			"url": "https://alkometriikka.fi/tuotteet/901241/",
+			"title": "Ollenaut Kaineken IPA — 3,65 € → 3,29 €",
+			"content_html": "<p>Tuotteen Ollenaut Kaineken IPA hinta on muuttunut.</p><p>3,65 € → 3,29 € (−0,36 €, −9,86 %).</p>",
+			"summary": "Tuotteen Ollenaut Kaineken IPA hinta on muuttunut. 3,65 € → 3,29 € (−0,36 €, −9,86 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901241-20566dda6b68.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-901241-2026-07-18-3.65",
+			"url": "https://alkometriikka.fi/tuotteet/901241/",
+			"title": "Ollenaut Kaineken IPA — 3,64 € → 3,65 €",
+			"content_html": "<p>Tuotteen Ollenaut Kaineken IPA hinta on muuttunut.</p><p>3,64 € → 3,65 € (+0,01 €, +0,27 %).</p>",
+			"summary": "Tuotteen Ollenaut Kaineken IPA hinta on muuttunut. 3,64 € → 3,65 € (+0,01 €, +0,27 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901241-20566dda6b68.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Crisp IPA tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/772024/",
+	"feed_url": "https://alkometriikka.fi/rss/772024.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Crisp IPA tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-772024-2026-09-04-1.34",
+			"url": "https://alkometriikka.fi/tuotteet/772024/",
+			"title": "Crisp IPA tölkki — 1,49 € → 1,34 €",
+			"content_html": "<p>Tuotteen Crisp IPA tölkki hinta on muuttunut.</p><p>1,49 € → 1,34 € (−0,15 €, −10,07 %).</p>",
+			"summary": "Tuotteen Crisp IPA tölkki hinta on muuttunut. 1,49 € → 1,34 € (−0,15 €, −10,07 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/772024-aef3c16a5f91.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-772024-2026-07-18-1.49",
+			"url": "https://alkometriikka.fi/tuotteet/772024/",
+			"title": "Crisp IPA tölkki — 1,45 € → 1,49 €",
+			"content_html": "<p>Tuotteen Crisp IPA tölkki hinta on muuttunut.</p><p>1,45 € → 1,49 € (+0,04 €, +2,76 %).</p>",
+			"summary": "Tuotteen Crisp IPA tölkki hinta on muuttunut. 1,45 € → 1,49 € (+0,04 €, +2,76 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/772024-aef3c16a5f91.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

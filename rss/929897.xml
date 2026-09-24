@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Luce 2021 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/929897/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Luce 2021.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/929897.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Luce 2021 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Luce 2021 — 128,42 € → 129,00 €</title>
+			<link>https://alkometriikka.fi/tuotteet/929897/</link>
+			<guid isPermaLink="false">alkometriikka-929897-2026-07-18-129</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Luce 2021 hinta on muuttunut.</p><p>128,42 € → 129,00 € (+0,58 €, +0,45 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/929897-258bf79d531b.png" />
+		</item>
+	</channel>
+</rss>

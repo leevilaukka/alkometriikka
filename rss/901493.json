@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Varo Codigo 1530 Origen – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901493/",
+	"feed_url": "https://alkometriikka.fi/rss/901493.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Varo Codigo 1530 Origen.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901493-2026-07-18-379.99",
+			"url": "https://alkometriikka.fi/tuotteet/901493/",
+			"title": "Varo Codigo 1530 Origen — 373,69 € → 379,99 €",
+			"content_html": "<p>Tuotteen Varo Codigo 1530 Origen hinta on muuttunut.</p><p>373,69 € → 379,99 € (+6,30 €, +1,69 %).</p>",
+			"summary": "Tuotteen Varo Codigo 1530 Origen hinta on muuttunut. 373,69 € → 379,99 € (+6,30 €, +1,69 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901493-a2cd6f30c248.png",
+			"tags": [
+				"Väkevät",
+				"Tequilat"
+			]
+		}
+	]
+}

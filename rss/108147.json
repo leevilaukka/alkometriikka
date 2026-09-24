@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dry Vodka muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/108147/",
+	"feed_url": "https://alkometriikka.fi/rss/108147.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dry Vodka muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-108147-2026-07-18-25.59",
+			"url": "https://alkometriikka.fi/tuotteet/108147/",
+			"title": "Dry Vodka muovipullo — 25,57 € → 25,59 €",
+			"content_html": "<p>Tuotteen Dry Vodka muovipullo hinta on muuttunut.</p><p>25,57 € → 25,59 € (+0,02 €, +0,08 %).</p>",
+			"summary": "Tuotteen Dry Vodka muovipullo hinta on muuttunut. 25,57 € → 25,59 € (+0,02 €, +0,08 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/108147-037827ad6023.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

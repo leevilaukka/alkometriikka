@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cecilia Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/500005/",
+	"feed_url": "https://alkometriikka.fi/rss/500005.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cecilia Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-500005-2026-07-18-19.89",
+			"url": "https://alkometriikka.fi/tuotteet/500005/",
+			"title": "Cecilia Brut — 16,45 € → 19,89 €",
+			"content_html": "<p>Tuotteen Cecilia Brut hinta on muuttunut.</p><p>16,45 € → 19,89 € (+3,44 €, +20,91 %).</p>",
+			"summary": "Tuotteen Cecilia Brut hinta on muuttunut. 16,45 € → 19,89 € (+3,44 €, +20,91 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/500005-07814254e81f.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

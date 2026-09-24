@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Simonnet-Febvre P100 Blanc de Noirs Crémant de Bourgogne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900503/",
+	"feed_url": "https://alkometriikka.fi/rss/900503.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Simonnet-Febvre P100 Blanc de Noirs Crémant de Bourgogne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900503-2026-07-18-28.89",
+			"url": "https://alkometriikka.fi/tuotteet/900503/",
+			"title": "Simonnet-Febvre P100 Blanc de Noirs Crémant de Bourgogne Brut — 28,35 € → 28,89 €",
+			"content_html": "<p>Tuotteen Simonnet-Febvre P100 Blanc de Noirs Crémant de Bourgogne Brut hinta on muuttunut.</p><p>28,35 € → 28,89 € (+0,54 €, +1,90 %).</p>",
+			"summary": "Tuotteen Simonnet-Febvre P100 Blanc de Noirs Crémant de Bourgogne Brut hinta on muuttunut. 28,35 € → 28,89 € (+0,54 €, +1,90 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900503-46942b1b7c91.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

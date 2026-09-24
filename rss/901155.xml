@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Laurent-Perrier la Cuvée Champagne Brut Mathusalem – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/901155/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Laurent-Perrier la Cuvée Champagne Brut Mathusalem.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/901155.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Laurent-Perrier la Cuvée Champagne Brut Mathusalem – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Laurent-Perrier la Cuvée Champagne Brut Mathusalem — 1 060,38 € → 1 059,98 €</title>
+			<link>https://alkometriikka.fi/tuotteet/901155/</link>
+			<guid isPermaLink="false">alkometriikka-901155-2026-07-18-1059.98</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / kuohuviinit ja samppanjat</category>
+			<description><![CDATA[<p>Tuotteen Laurent-Perrier la Cuvée Champagne Brut Mathusalem hinta on muuttunut.</p><p>1 060,38 € → 1 059,98 € (−0,40 €, −0,04 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/901155-4738e786d0e1.png" />
+		</item>
+	</channel>
+</rss>

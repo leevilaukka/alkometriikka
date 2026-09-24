@@ -1,0 +1,50 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Crisp Lager 6-pack tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/772198/",
+	"feed_url": "https://alkometriikka.fi/rss/772198.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Crisp Lager 6-pack tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-772198-2026-09-04-5.75",
+			"url": "https://alkometriikka.fi/tuotteet/772198/",
+			"title": "Crisp Lager 6-pack tölkki — 6,39 € → 5,75 €",
+			"content_html": "<p>Tuotteen Crisp Lager 6-pack tölkki hinta on muuttunut.</p><p>6,39 € → 5,75 € (−0,64 €, −10,02 %).</p>",
+			"summary": "Tuotteen Crisp Lager 6-pack tölkki hinta on muuttunut. 6,39 € → 5,75 € (−0,64 €, −10,02 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/772198-08d6620f2956.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-772198-2026-07-18-6.39",
+			"url": "https://alkometriikka.fi/tuotteet/772198/",
+			"title": "Crisp Lager 6-pack tölkki — 6,49 € → 6,39 €",
+			"content_html": "<p>Tuotteen Crisp Lager 6-pack tölkki hinta on muuttunut.</p><p>6,49 € → 6,39 € (−0,10 €, −1,54 %).</p>",
+			"summary": "Tuotteen Crisp Lager 6-pack tölkki hinta on muuttunut. 6,49 € → 6,39 € (−0,10 €, −1,54 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/772198-08d6620f2956.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-772198-2026-01-29-6.49",
+			"url": "https://alkometriikka.fi/tuotteet/772198/",
+			"title": "Crisp Lager 6-pack tölkki — 5,89 € → 6,49 €",
+			"content_html": "<p>Tuotteen Crisp Lager 6-pack tölkki hinta on muuttunut.</p><p>5,89 € → 6,49 € (+0,60 €, +10,19 %).</p>",
+			"summary": "Tuotteen Crisp Lager 6-pack tölkki hinta on muuttunut. 5,89 € → 6,49 € (+0,60 €, +10,19 %).",
+			"date_published": "2026-01-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/772198-08d6620f2956.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

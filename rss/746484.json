@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Heineken 0.0 tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/746484/",
+	"feed_url": "https://alkometriikka.fi/rss/746484.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Heineken 0.0 tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-746484-2026-09-04-1.58",
+			"url": "https://alkometriikka.fi/tuotteet/746484/",
+			"title": "Heineken 0.0 tölkki — 1,75 € → 1,58 €",
+			"content_html": "<p>Tuotteen Heineken 0.0 tölkki hinta on muuttunut.</p><p>1,75 € → 1,58 € (−0,17 €, −9,71 %).</p>",
+			"summary": "Tuotteen Heineken 0.0 tölkki hinta on muuttunut. 1,75 € → 1,58 € (−0,17 €, −9,71 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/746484-93b71d4748f6.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-746484-2026-07-18-1.75",
+			"url": "https://alkometriikka.fi/tuotteet/746484/",
+			"title": "Heineken 0.0 tölkki — 1,78 € → 1,75 €",
+			"content_html": "<p>Tuotteen Heineken 0.0 tölkki hinta on muuttunut.</p><p>1,78 € → 1,75 € (−0,03 €, −1,69 %).</p>",
+			"summary": "Tuotteen Heineken 0.0 tölkki hinta on muuttunut. 1,78 € → 1,75 € (−0,03 €, −1,69 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/746484-93b71d4748f6.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

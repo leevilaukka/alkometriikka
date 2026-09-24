@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Royal Tokaji Late Harvest 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/921926/",
+	"feed_url": "https://alkometriikka.fi/rss/921926.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Royal Tokaji Late Harvest 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-921926-2026-07-18-21.48",
+			"url": "https://alkometriikka.fi/tuotteet/921926/",
+			"title": "Royal Tokaji Late Harvest 2019 — 21,19 € → 21,48 €",
+			"content_html": "<p>Tuotteen Royal Tokaji Late Harvest 2019 hinta on muuttunut.</p><p>21,19 € → 21,48 € (+0,29 €, +1,37 %).</p>",
+			"summary": "Tuotteen Royal Tokaji Late Harvest 2019 hinta on muuttunut. 21,19 € → 21,48 € (+0,29 €, +1,37 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/921926-f759e1b7c04b.png",
+			"tags": [
+				"Viinit",
+				"jälkiruokaviinit"
+			]
+		}
+	]
+}

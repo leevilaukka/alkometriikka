@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Boann PX Cask Single Pot Still – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901505/",
+	"feed_url": "https://alkometriikka.fi/rss/901505.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Boann PX Cask Single Pot Still.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901505-2026-07-18-86.99",
+			"url": "https://alkometriikka.fi/tuotteet/901505/",
+			"title": "Boann PX Cask Single Pot Still — 87,19 € → 86,99 €",
+			"content_html": "<p>Tuotteen Boann PX Cask Single Pot Still hinta on muuttunut.</p><p>87,19 € → 86,99 € (−0,20 €, −0,23 %).</p>",
+			"summary": "Tuotteen Boann PX Cask Single Pot Still hinta on muuttunut. 87,19 € → 86,99 € (−0,20 €, −0,23 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901505-1bfc51ceaf47.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

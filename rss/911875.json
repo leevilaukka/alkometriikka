@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Henriot Millésime Champagne Brut 2014 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/911875/",
+	"feed_url": "https://alkometriikka.fi/rss/911875.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Henriot Millésime Champagne Brut 2014.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-911875-2026-07-18-109.98",
+			"url": "https://alkometriikka.fi/tuotteet/911875/",
+			"title": "Henriot Millésime Champagne Brut 2014 — 108,46 € → 109,98 €",
+			"content_html": "<p>Tuotteen Henriot Millésime Champagne Brut 2014 hinta on muuttunut.</p><p>108,46 € → 109,98 € (+1,52 €, +1,40 %).</p>",
+			"summary": "Tuotteen Henriot Millésime Champagne Brut 2014 hinta on muuttunut. 108,46 € → 109,98 € (+1,52 €, +1,40 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/911875-658cd9c89d28.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

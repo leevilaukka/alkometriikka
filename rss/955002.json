@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Beefsteak Club Malbec 2023 hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/955002/",
+	"feed_url": "https://alkometriikka.fi/rss/955002.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Beefsteak Club Malbec 2023 hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-955002-2026-07-18-36.95",
+			"url": "https://alkometriikka.fi/tuotteet/955002/",
+			"title": "Beefsteak Club Malbec 2023 hanapakkaus — 37,07 € → 36,95 €",
+			"content_html": "<p>Tuotteen Beefsteak Club Malbec 2023 hanapakkaus hinta on muuttunut.</p><p>37,07 € → 36,95 € (−0,12 €, −0,32 %).</p>",
+			"summary": "Tuotteen Beefsteak Club Malbec 2023 hanapakkaus hinta on muuttunut. 37,07 € → 36,95 € (−0,12 €, −0,32 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/955002-abd17469a4b2.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

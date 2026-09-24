@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lecomte Pere & Fils Champagne  Brut Tradition – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/935778/",
+	"feed_url": "https://alkometriikka.fi/rss/935778.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lecomte Pere & Fils Champagne  Brut Tradition.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-935778-2026-07-18-39.94",
+			"url": "https://alkometriikka.fi/tuotteet/935778/",
+			"title": "Lecomte Pere & Fils Champagne  Brut Tradition — 40,13 € → 39,94 €",
+			"content_html": "<p>Tuotteen Lecomte Pere & Fils Champagne  Brut Tradition hinta on muuttunut.</p><p>40,13 € → 39,94 € (−0,19 €, −0,47 %).</p>",
+			"summary": "Tuotteen Lecomte Pere & Fils Champagne Brut Tradition hinta on muuttunut. 40,13 € → 39,94 € (−0,19 €, −0,47 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/935778-217620cff5ef.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

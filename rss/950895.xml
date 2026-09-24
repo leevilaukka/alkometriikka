@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Lyre&apos;s Italian Spritz – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/950895/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Lyre&apos;s Italian Spritz.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/950895.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Lyre&apos;s Italian Spritz – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Lyre&apos;s Italian Spritz — 32,22 € → 33,35 €</title>
+			<link>https://alkometriikka.fi/tuotteet/950895/</link>
+			<guid isPermaLink="false">alkometriikka-950895-2026-07-18-33.35</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Alkoholittomat / vedet, mehut ja muut alkoholittomat</category>
+			<description><![CDATA[<p>Tuotteen Lyre's Italian Spritz hinta on muuttunut.</p><p>32,22 € → 33,35 € (+1,13 €, +3,51 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/950895-6294a8c66629.png" />
+		</item>
+	</channel>
+</rss>

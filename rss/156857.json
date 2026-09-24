@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Barra Oak Bay Dark – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/156857/",
+	"feed_url": "https://alkometriikka.fi/rss/156857.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Barra Oak Bay Dark.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-156857-2026-07-18-23.99",
+			"url": "https://alkometriikka.fi/tuotteet/156857/",
+			"title": "Barra Oak Bay Dark — 23,67 € → 23,99 €",
+			"content_html": "<p>Tuotteen Barra Oak Bay Dark hinta on muuttunut.</p><p>23,67 € → 23,99 € (+0,32 €, +1,35 %).</p>",
+			"summary": "Tuotteen Barra Oak Bay Dark hinta on muuttunut. 23,67 € → 23,99 € (+0,32 €, +1,35 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/156857-ea3f7497f3c3.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

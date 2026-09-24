@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Laurent Ponsot Cuvée des Peupliers 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/931002/",
+	"feed_url": "https://alkometriikka.fi/rss/931002.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Laurent Ponsot Cuvée des Peupliers 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-931002-2026-07-18-59.32",
+			"url": "https://alkometriikka.fi/tuotteet/931002/",
+			"title": "Laurent Ponsot Cuvée des Peupliers 2022 — 62,82 € → 59,32 €",
+			"content_html": "<p>Tuotteen Laurent Ponsot Cuvée des Peupliers 2022 hinta on muuttunut.</p><p>62,82 € → 59,32 € (−3,50 €, −5,57 %).</p>",
+			"summary": "Tuotteen Laurent Ponsot Cuvée des Peupliers 2022 hinta on muuttunut. 62,82 € → 59,32 € (−3,50 €, −5,57 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/931002-cdda747aa30e.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Magners Alcohol Free – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/772144/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Magners Alcohol Free.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/772144.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Magners Alcohol Free – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Magners Alcohol Free — 2,28 € → 2,48 €</title>
+			<link>https://alkometriikka.fi/tuotteet/772144/</link>
+			<guid isPermaLink="false">alkometriikka-772144-2026-07-18-2.48</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Alkoholittomat / alkoholittomat siiderit</category>
+			<description><![CDATA[<p>Tuotteen Magners Alcohol Free hinta on muuttunut.</p><p>2,28 € → 2,48 € (+0,20 €, +8,77 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/772144-3a6c5e3f4ac4.png" />
+		</item>
+	</channel>
+</rss>

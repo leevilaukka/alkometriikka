@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Drappier Blanc de Blancs Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/925857/",
+	"feed_url": "https://alkometriikka.fi/rss/925857.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Drappier Blanc de Blancs Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-925857-2026-07-18-58.99",
+			"url": "https://alkometriikka.fi/tuotteet/925857/",
+			"title": "Drappier Blanc de Blancs Champagne Brut — 58,45 € → 58,99 €",
+			"content_html": "<p>Tuotteen Drappier Blanc de Blancs Champagne Brut hinta on muuttunut.</p><p>58,45 € → 58,99 € (+0,54 €, +0,92 %).</p>",
+			"summary": "Tuotteen Drappier Blanc de Blancs Champagne Brut hinta on muuttunut. 58,45 € → 58,99 € (+0,54 €, +0,92 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/925857-9b3bee36fd8f.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

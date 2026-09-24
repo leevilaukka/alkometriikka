@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tapio Viina muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/104528/",
+	"feed_url": "https://alkometriikka.fi/rss/104528.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tapio Viina muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-104528-2026-07-18-31.99",
+			"url": "https://alkometriikka.fi/tuotteet/104528/",
+			"title": "Tapio Viina muovipullo — 32,06 € → 31,99 €",
+			"content_html": "<p>Tuotteen Tapio Viina muovipullo hinta on muuttunut.</p><p>32,06 € → 31,99 € (−0,07 €, −0,22 %).</p>",
+			"summary": "Tuotteen Tapio Viina muovipullo hinta on muuttunut. 32,06 € → 31,99 € (−0,07 €, −0,22 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/104528-14cc6a70e436.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

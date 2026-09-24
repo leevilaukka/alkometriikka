@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Il Capolavoro Rosato – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902456/",
+	"feed_url": "https://alkometriikka.fi/rss/902456.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Il Capolavoro Rosato.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902456-2026-02-02-9.38",
+			"url": "https://alkometriikka.fi/tuotteet/902456/",
+			"title": "Il Capolavoro Rosato — 9,48 € → 9,38 €",
+			"content_html": "<p>Tuotteen Il Capolavoro Rosato hinta on muuttunut.</p><p>9,48 € → 9,38 € (−0,10 €, −1,05 %).</p>",
+			"summary": "Tuotteen Il Capolavoro Rosato hinta on muuttunut. 9,48 € → 9,38 € (−0,10 €, −1,05 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902456-1e2c13e5414a.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-902456-2026-02-02-9.48",
+			"url": "https://alkometriikka.fi/tuotteet/902456/",
+			"title": "Il Capolavoro Rosato — 9,38 € → 9,48 €",
+			"content_html": "<p>Tuotteen Il Capolavoro Rosato hinta on muuttunut.</p><p>9,38 € → 9,48 € (+0,10 €, +1,07 %).</p>",
+			"summary": "Tuotteen Il Capolavoro Rosato hinta on muuttunut. 9,38 € → 9,48 € (+0,10 €, +1,07 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902456-1e2c13e5414a.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

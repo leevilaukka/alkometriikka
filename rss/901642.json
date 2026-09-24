@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Paul Bara Grand Cru Bouzy Réserve Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901642/",
+	"feed_url": "https://alkometriikka.fi/rss/901642.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Paul Bara Grand Cru Bouzy Réserve Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901642-2026-07-18-58.99",
+			"url": "https://alkometriikka.fi/tuotteet/901642/",
+			"title": "Paul Bara Grand Cru Bouzy Réserve Champagne Brut — 58,39 € → 58,99 €",
+			"content_html": "<p>Tuotteen Paul Bara Grand Cru Bouzy Réserve Champagne Brut hinta on muuttunut.</p><p>58,39 € → 58,99 € (+0,60 €, +1,03 %).</p>",
+			"summary": "Tuotteen Paul Bara Grand Cru Bouzy Réserve Champagne Brut hinta on muuttunut. 58,39 € → 58,99 € (+0,60 €, +1,03 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901642-931263678569.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

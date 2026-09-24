@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Varo Codigo 1530 Reposado Tequila – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901376/",
+	"feed_url": "https://alkometriikka.fi/rss/901376.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Varo Codigo 1530 Reposado Tequila.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901376-2026-07-18-72.98",
+			"url": "https://alkometriikka.fi/tuotteet/901376/",
+			"title": "Varo Codigo 1530 Reposado Tequila — 73,25 € → 72,98 €",
+			"content_html": "<p>Tuotteen Varo Codigo 1530 Reposado Tequila hinta on muuttunut.</p><p>73,25 € → 72,98 € (−0,27 €, −0,37 %).</p>",
+			"summary": "Tuotteen Varo Codigo 1530 Reposado Tequila hinta on muuttunut. 73,25 € → 72,98 € (−0,27 €, −0,37 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901376-45dc44f65ae2.png",
+			"tags": [
+				"Väkevät",
+				"Tequilat"
+			]
+		}
+	]
+}

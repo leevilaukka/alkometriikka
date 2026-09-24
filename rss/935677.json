@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cafaggio Basilica del Cortaccio Cabernet Sauvignon 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/935677/",
+	"feed_url": "https://alkometriikka.fi/rss/935677.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cafaggio Basilica del Cortaccio Cabernet Sauvignon 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-935677-2026-07-18-39.98",
+			"url": "https://alkometriikka.fi/tuotteet/935677/",
+			"title": "Cafaggio Basilica del Cortaccio Cabernet Sauvignon 2019 — 39,45 € → 39,98 €",
+			"content_html": "<p>Tuotteen Cafaggio Basilica del Cortaccio Cabernet Sauvignon 2019 hinta on muuttunut.</p><p>39,45 € → 39,98 € (+0,53 €, +1,34 %).</p>",
+			"summary": "Tuotteen Cafaggio Basilica del Cortaccio Cabernet Sauvignon 2019 hinta on muuttunut. 39,45 € → 39,98 € (+0,53 €, +1,34 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/935677-f8d07fc4b128.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nangkita Roadman CSM 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/436057/",
+	"feed_url": "https://alkometriikka.fi/rss/436057.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nangkita Roadman CSM 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-436057-2026-07-18-14.46",
+			"url": "https://alkometriikka.fi/tuotteet/436057/",
+			"title": "Nangkita Roadman CSM 2021 — 15,56 € → 14,46 €",
+			"content_html": "<p>Tuotteen Nangkita Roadman CSM 2021 hinta on muuttunut.</p><p>15,56 € → 14,46 € (−1,10 €, −7,07 %).</p>",
+			"summary": "Tuotteen Nangkita Roadman CSM 2021 hinta on muuttunut. 15,56 € → 14,46 € (−1,10 €, −7,07 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/436057-729a204a8c3a.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

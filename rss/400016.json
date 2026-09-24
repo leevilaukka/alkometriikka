@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vallee Verte Rosé 2024 kartonkitölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/400016/",
+	"feed_url": "https://alkometriikka.fi/rss/400016.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vallee Verte Rosé 2024 kartonkitölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-400016-2026-07-18-9.99",
+			"url": "https://alkometriikka.fi/tuotteet/400016/",
+			"title": "Vallee Verte Rosé 2024 kartonkitölkki — 9,68 € → 9,99 €",
+			"content_html": "<p>Tuotteen Vallee Verte Rosé 2024 kartonkitölkki hinta on muuttunut.</p><p>9,68 € → 9,99 € (+0,31 €, +3,20 %).</p>",
+			"summary": "Tuotteen Vallee Verte Rosé 2024 kartonkitölkki hinta on muuttunut. 9,68 € → 9,99 € (+0,31 €, +3,20 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/400016-91db6adc035a.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lost Distillery Stratheden Blended Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901090/",
+	"feed_url": "https://alkometriikka.fi/rss/901090.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lost Distillery Stratheden Blended Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901090-2026-07-18-64.95",
+			"url": "https://alkometriikka.fi/tuotteet/901090/",
+			"title": "Lost Distillery Stratheden Blended Malt — 69,49 € → 64,95 €",
+			"content_html": "<p>Tuotteen Lost Distillery Stratheden Blended Malt hinta on muuttunut.</p><p>69,49 € → 64,95 € (−4,54 €, −6,53 %).</p>",
+			"summary": "Tuotteen Lost Distillery Stratheden Blended Malt hinta on muuttunut. 69,49 € → 64,95 € (−4,54 €, −6,53 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901090-3a7186321471.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

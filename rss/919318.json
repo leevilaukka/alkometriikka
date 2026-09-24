@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Königsmosel Riesling 2023 hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/919318/",
+	"feed_url": "https://alkometriikka.fi/rss/919318.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Königsmosel Riesling 2023 hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-919318-2026-07-18-35.99",
+			"url": "https://alkometriikka.fi/tuotteet/919318/",
+			"title": "Königsmosel Riesling 2023 hanapakkaus — 37,79 € → 35,99 €",
+			"content_html": "<p>Tuotteen Königsmosel Riesling 2023 hanapakkaus hinta on muuttunut.</p><p>37,79 € → 35,99 € (−1,80 €, −4,76 %).</p>",
+			"summary": "Tuotteen Königsmosel Riesling 2023 hanapakkaus hinta on muuttunut. 37,79 € → 35,99 € (−1,80 €, −4,76 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/919318-c768190e6511.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

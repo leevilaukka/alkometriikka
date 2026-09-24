@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Patrón Silver Tequila – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901861/",
+	"feed_url": "https://alkometriikka.fi/rss/901861.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Patrón Silver Tequila.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901861-2026-07-18-66.98",
+			"url": "https://alkometriikka.fi/tuotteet/901861/",
+			"title": "Patrón Silver Tequila — 66,92 € → 66,98 €",
+			"content_html": "<p>Tuotteen Patrón Silver Tequila hinta on muuttunut.</p><p>66,92 € → 66,98 € (+0,06 €, +0,09 %).</p>",
+			"summary": "Tuotteen Patrón Silver Tequila hinta on muuttunut. 66,92 € → 66,98 € (+0,06 €, +0,09 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901861-1fa5bf729ac7.png",
+			"tags": [
+				"Väkevät",
+				"Tequilat"
+			]
+		}
+	]
+}

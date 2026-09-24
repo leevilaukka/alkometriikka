@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Aldea Tempranillo 0,0% – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/453387/",
+	"feed_url": "https://alkometriikka.fi/rss/453387.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Aldea Tempranillo 0,0%.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-453387-2026-07-18-8.79",
+			"url": "https://alkometriikka.fi/tuotteet/453387/",
+			"title": "Aldea Tempranillo 0,0% — 8,86 € → 8,79 €",
+			"content_html": "<p>Tuotteen Aldea Tempranillo 0,0% hinta on muuttunut.</p><p>8,86 € → 8,79 € (−0,07 €, −0,79 %).</p>",
+			"summary": "Tuotteen Aldea Tempranillo 0,0% hinta on muuttunut. 8,86 € → 8,79 € (−0,07 €, −0,79 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/453387-5046f3815c74.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat punaviinit"
+			]
+		}
+	]
+}

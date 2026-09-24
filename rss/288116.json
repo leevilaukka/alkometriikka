@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lapponia Mustikka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/288116/",
+	"feed_url": "https://alkometriikka.fi/rss/288116.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lapponia Mustikka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-288116-2026-07-18-16.49",
+			"url": "https://alkometriikka.fi/tuotteet/288116/",
+			"title": "Lapponia Mustikka — 16,58 € → 16,49 €",
+			"content_html": "<p>Tuotteen Lapponia Mustikka hinta on muuttunut.</p><p>16,58 € → 16,49 € (−0,09 €, −0,54 %).</p>",
+			"summary": "Tuotteen Lapponia Mustikka hinta on muuttunut. 16,58 € → 16,49 € (−0,09 €, −0,54 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/288116-ecac2774047b.png",
+			"tags": [
+				"Väkevät",
+				"marjaliköörit"
+			]
+		}
+	]
+}

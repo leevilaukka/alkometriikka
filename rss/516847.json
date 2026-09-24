@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Yalumba Eden Valley Viognier 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/516847/",
+	"feed_url": "https://alkometriikka.fi/rss/516847.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Yalumba Eden Valley Viognier 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-516847-2026-07-18-20.49",
+			"url": "https://alkometriikka.fi/tuotteet/516847/",
+			"title": "Yalumba Eden Valley Viognier 2022 — 25,44 € → 20,49 €",
+			"content_html": "<p>Tuotteen Yalumba Eden Valley Viognier 2022 hinta on muuttunut.</p><p>25,44 € → 20,49 € (−4,95 €, −19,46 %).</p>",
+			"summary": "Tuotteen Yalumba Eden Valley Viognier 2022 hinta on muuttunut. 25,44 € → 20,49 € (−4,95 €, −19,46 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/516847-d2f07c8cf7cd.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

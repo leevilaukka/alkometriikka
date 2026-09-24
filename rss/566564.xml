@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Charles Mignon 1er Cru Premium Reserve Champagne Brut – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/566564/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Charles Mignon 1er Cru Premium Reserve Champagne Brut.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/566564.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Charles Mignon 1er Cru Premium Reserve Champagne Brut – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Charles Mignon 1er Cru Premium Reserve Champagne Brut — 24,71 € → 24,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/566564/</link>
+			<guid isPermaLink="false">alkometriikka-566564-2026-07-18-24.99</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / kuohuviinit ja samppanjat</category>
+			<description><![CDATA[<p>Tuotteen Charles Mignon 1er Cru Premium Reserve Champagne Brut hinta on muuttunut.</p><p>24,71 € → 24,99 € (+0,28 €, +1,13 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/566564-10731a77b00b.png" />
+		</item>
+	</channel>
+</rss>

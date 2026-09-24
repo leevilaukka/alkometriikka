@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ferrand 10 Generations – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/179156/",
+	"feed_url": "https://alkometriikka.fi/rss/179156.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ferrand 10 Generations.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-179156-2026-07-18-39.98",
+			"url": "https://alkometriikka.fi/tuotteet/179156/",
+			"title": "Ferrand 10 Generations — 39,96 € → 39,98 €",
+			"content_html": "<p>Tuotteen Ferrand 10 Generations hinta on muuttunut.</p><p>39,96 € → 39,98 € (+0,02 €, +0,05 %).</p>",
+			"summary": "Tuotteen Ferrand 10 Generations hinta on muuttunut. 39,96 € → 39,98 € (+0,02 €, +0,05 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/179156-59772cb013ff.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

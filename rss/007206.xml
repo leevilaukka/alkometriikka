@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – JP. Chenet Colombard-Sauvignon 2023 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/007206/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: JP. Chenet Colombard-Sauvignon 2023.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/007206.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – JP. Chenet Colombard-Sauvignon 2023 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>JP. Chenet Colombard-Sauvignon 2023 — 4,14 € → 4,18 €</title>
+			<link>https://alkometriikka.fi/tuotteet/007206/</link>
+			<guid isPermaLink="false">alkometriikka-007206-2026-07-18-4.18</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / valkoviinit</category>
+			<description><![CDATA[<p>Tuotteen JP. Chenet Colombard-Sauvignon 2023 hinta on muuttunut.</p><p>4,14 € → 4,18 € (+0,04 €, +0,97 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/007206-c30df9094fd1.png" />
+		</item>
+		<item>
+			<title>JP. Chenet Colombard-Sauvignon 2023 — 4,14 € → 4,04 €</title>
+			<link>https://alkometriikka.fi/tuotteet/007206/</link>
+			<guid isPermaLink="false">alkometriikka-007206-2026-02-02-4.04</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / valkoviinit</category>
+			<description><![CDATA[<p>Tuotteen JP. Chenet Colombard-Sauvignon 2023 hinta on muuttunut.</p><p>4,14 € → 4,04 € (−0,10 €, −2,42 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/007206-c30df9094fd1.png" />
+		</item>
+		<item>
+			<title>JP. Chenet Colombard-Sauvignon 2023 — 4,04 € → 4,14 €</title>
+			<link>https://alkometriikka.fi/tuotteet/007206/</link>
+			<guid isPermaLink="false">alkometriikka-007206-2026-02-02-4.14</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / valkoviinit</category>
+			<description><![CDATA[<p>Tuotteen JP. Chenet Colombard-Sauvignon 2023 hinta on muuttunut.</p><p>4,04 € → 4,14 € (+0,10 €, +2,48 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/007206-c30df9094fd1.png" />
+		</item>
+	</channel>
+</rss>

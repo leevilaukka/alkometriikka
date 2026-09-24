@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château d'Orignac Single Estate VSOP – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/943603/",
+	"feed_url": "https://alkometriikka.fi/rss/943603.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château d'Orignac Single Estate VSOP.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-943603-2026-07-18-69.88",
+			"url": "https://alkometriikka.fi/tuotteet/943603/",
+			"title": "Château d'Orignac Single Estate VSOP — 70,07 € → 69,88 €",
+			"content_html": "<p>Tuotteen Château d'Orignac Single Estate VSOP hinta on muuttunut.</p><p>70,07 € → 69,88 € (−0,19 €, −0,27 %).</p>",
+			"summary": "Tuotteen Château d'Orignac Single Estate VSOP hinta on muuttunut. 70,07 € → 69,88 € (−0,19 €, −0,27 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/943603-915bd39ba8d4.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

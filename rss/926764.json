@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Freixenet 0,0% Alcohol Free Sparkling – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/926764/",
+	"feed_url": "https://alkometriikka.fi/rss/926764.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Freixenet 0,0% Alcohol Free Sparkling.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-926764-2026-07-18-7.59",
+			"url": "https://alkometriikka.fi/tuotteet/926764/",
+			"title": "Freixenet 0,0% Alcohol Free Sparkling — 7,56 € → 7,59 €",
+			"content_html": "<p>Tuotteen Freixenet 0,0% Alcohol Free Sparkling hinta on muuttunut.</p><p>7,56 € → 7,59 € (+0,03 €, +0,40 %).</p>",
+			"summary": "Tuotteen Freixenet 0,0% Alcohol Free Sparkling hinta on muuttunut. 7,56 € → 7,59 € (+0,03 €, +0,40 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/926764-a6b2930d1303.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat kuohuviinit"
+			]
+		}
+	]
+}

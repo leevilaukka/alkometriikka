@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Compass Box Nectarosity – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901085/",
+	"feed_url": "https://alkometriikka.fi/rss/901085.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Compass Box Nectarosity.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901085-2026-07-18-76.21",
+			"url": "https://alkometriikka.fi/tuotteet/901085/",
+			"title": "Compass Box Nectarosity — 73,91 € → 76,21 €",
+			"content_html": "<p>Tuotteen Compass Box Nectarosity hinta on muuttunut.</p><p>73,91 € → 76,21 € (+2,30 €, +3,11 %).</p>",
+			"summary": "Tuotteen Compass Box Nectarosity hinta on muuttunut. 73,91 € → 76,21 € (+2,30 €, +3,11 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901085-8f2d98c1c943.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

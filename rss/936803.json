@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Penet Chardonnet Grand Cru Terroir Escence Champagne Extra Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/936803/",
+	"feed_url": "https://alkometriikka.fi/rss/936803.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Penet Chardonnet Grand Cru Terroir Escence Champagne Extra Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-936803-2026-07-18-79.91",
+			"url": "https://alkometriikka.fi/tuotteet/936803/",
+			"title": "Penet Chardonnet Grand Cru Terroir Escence Champagne Extra Brut — 73,56 € → 79,91 €",
+			"content_html": "<p>Tuotteen Penet Chardonnet Grand Cru Terroir Escence Champagne Extra Brut hinta on muuttunut.</p><p>73,56 € → 79,91 € (+6,35 €, +8,63 %).</p>",
+			"summary": "Tuotteen Penet Chardonnet Grand Cru Terroir Escence Champagne Extra Brut hinta on muuttunut. 73,56 € → 79,91 € (+6,35 €, +8,63 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/936803-0433cd18850a.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

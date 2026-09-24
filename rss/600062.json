@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nokian Strawberry Margarita Mocktail tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/600062/",
+	"feed_url": "https://alkometriikka.fi/rss/600062.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nokian Strawberry Margarita Mocktail tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-600062-2026-07-18-1.85",
+			"url": "https://alkometriikka.fi/tuotteet/600062/",
+			"title": "Nokian Strawberry Margarita Mocktail tölkki — 1,68 € → 1,85 €",
+			"content_html": "<p>Tuotteen Nokian Strawberry Margarita Mocktail tölkki hinta on muuttunut.</p><p>1,68 € → 1,85 € (+0,17 €, +10,12 %).</p>",
+			"summary": "Tuotteen Nokian Strawberry Margarita Mocktail tölkki hinta on muuttunut. 1,68 € → 1,85 € (+0,17 €, +10,12 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600062-fcc5847b4e99.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

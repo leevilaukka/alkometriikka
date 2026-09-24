@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Vermutti Original Formula – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/935698/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Vermutti Original Formula.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/935698.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Vermutti Original Formula – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Vermutti Original Formula — 30,03 € → 29,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/935698/</link>
+			<guid isPermaLink="false">alkometriikka-935698-2026-07-18-29.99</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Välituotteet / vermutit</category>
+			<description><![CDATA[<p>Tuotteen Vermutti Original Formula hinta on muuttunut.</p><p>30,03 € → 29,99 € (−0,04 €, −0,13 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/935698-42a559bbdbe0.png" />
+		</item>
+	</channel>
+</rss>

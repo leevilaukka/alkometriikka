@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Pérez Barquero G1 Brut Nature – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/939992/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Pérez Barquero G1 Brut Nature.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/939992.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Pérez Barquero G1 Brut Nature – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Pérez Barquero G1 Brut Nature — 30,45 € → 29,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/939992/</link>
+			<guid isPermaLink="false">alkometriikka-939992-2026-07-18-29.99</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / kuohuviinit ja samppanjat</category>
+			<description><![CDATA[<p>Tuotteen Pérez Barquero G1 Brut Nature hinta on muuttunut.</p><p>30,45 € → 29,99 € (−0,46 €, −1,51 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/939992-1ca1919c16c7.png" />
+		</item>
+	</channel>
+</rss>

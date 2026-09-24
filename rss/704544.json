@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bavaria Wit Non-Alcoholic – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/704544/",
+	"feed_url": "https://alkometriikka.fi/rss/704544.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bavaria Wit Non-Alcoholic.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-704544-2026-09-04-1.61",
+			"url": "https://alkometriikka.fi/tuotteet/704544/",
+			"title": "Bavaria Wit Non-Alcoholic — 1,79 € → 1,61 €",
+			"content_html": "<p>Tuotteen Bavaria Wit Non-Alcoholic hinta on muuttunut.</p><p>1,79 € → 1,61 € (−0,18 €, −10,06 %).</p>",
+			"summary": "Tuotteen Bavaria Wit Non-Alcoholic hinta on muuttunut. 1,79 € → 1,61 € (−0,18 €, −10,06 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/704544-38f106b3bed7.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-704544-2026-07-18-1.79",
+			"url": "https://alkometriikka.fi/tuotteet/704544/",
+			"title": "Bavaria Wit Non-Alcoholic — 1,78 € → 1,79 €",
+			"content_html": "<p>Tuotteen Bavaria Wit Non-Alcoholic hinta on muuttunut.</p><p>1,78 € → 1,79 € (+0,01 €, +0,56 %).</p>",
+			"summary": "Tuotteen Bavaria Wit Non-Alcoholic hinta on muuttunut. 1,78 € → 1,79 € (+0,01 €, +0,56 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/704544-38f106b3bed7.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

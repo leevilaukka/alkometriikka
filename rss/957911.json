@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Legras & Haas Intuition Rose Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/957911/",
+	"feed_url": "https://alkometriikka.fi/rss/957911.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Legras & Haas Intuition Rose Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-957911-2026-07-18-78.19",
+			"url": "https://alkometriikka.fi/tuotteet/957911/",
+			"title": "Legras & Haas Intuition Rose Champagne Brut — 72,82 € → 78,19 €",
+			"content_html": "<p>Tuotteen Legras & Haas Intuition Rose Champagne Brut hinta on muuttunut.</p><p>72,82 € → 78,19 € (+5,37 €, +7,37 %).</p>",
+			"summary": "Tuotteen Legras & Haas Intuition Rose Champagne Brut hinta on muuttunut. 72,82 € → 78,19 € (+5,37 €, +7,37 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/957911-48c03e4811c3.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

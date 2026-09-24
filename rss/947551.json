@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ron Zacapa Centenario XO – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/947551/",
+	"feed_url": "https://alkometriikka.fi/rss/947551.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ron Zacapa Centenario XO.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-947551-2026-07-18-149.99",
+			"url": "https://alkometriikka.fi/tuotteet/947551/",
+			"title": "Ron Zacapa Centenario XO — 150,26 € → 149,99 €",
+			"content_html": "<p>Tuotteen Ron Zacapa Centenario XO hinta on muuttunut.</p><p>150,26 € → 149,99 € (−0,27 €, −0,18 %).</p>",
+			"summary": "Tuotteen Ron Zacapa Centenario XO hinta on muuttunut. 150,26 € → 149,99 € (−0,27 €, −0,18 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/947551-d275527b2679.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

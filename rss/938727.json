@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Sukula Barolo Meriame 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/938727/",
+	"feed_url": "https://alkometriikka.fi/rss/938727.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Sukula Barolo Meriame 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-938727-2026-07-18-105.99",
+			"url": "https://alkometriikka.fi/tuotteet/938727/",
+			"title": "Sukula Barolo Meriame 2019 — 106,47 € → 105,99 €",
+			"content_html": "<p>Tuotteen Sukula Barolo Meriame 2019 hinta on muuttunut.</p><p>106,47 € → 105,99 € (−0,48 €, −0,45 %).</p>",
+			"summary": "Tuotteen Sukula Barolo Meriame 2019 hinta on muuttunut. 106,47 € → 105,99 € (−0,48 €, −0,45 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/938727-6f744f01be50.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

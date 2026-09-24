@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Mallaskoski Imperial Red Ale – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/900007/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Mallaskoski Imperial Red Ale.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/900007.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Mallaskoski Imperial Red Ale – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Mallaskoski Imperial Red Ale — 4,90 € → 4,89 €</title>
+			<link>https://alkometriikka.fi/tuotteet/900007/</link>
+			<guid isPermaLink="false">alkometriikka-900007-2026-07-18-4.89</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Panimotuotteet / oluet</category>
+			<description><![CDATA[<p>Tuotteen Mallaskoski Imperial Red Ale hinta on muuttunut.</p><p>4,90 € → 4,89 € (−0,01 €, −0,20 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/900007-91f9e52d68d1.png" />
+		</item>
+	</channel>
+</rss>

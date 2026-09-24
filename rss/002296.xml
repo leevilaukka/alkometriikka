@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Baileys Original Irish Cream – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/002296/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Baileys Original Irish Cream.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/002296.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Baileys Original Irish Cream – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Baileys Original Irish Cream — 15,99 € → 16,50 €</title>
+			<link>https://alkometriikka.fi/tuotteet/002296/</link>
+			<guid isPermaLink="false">alkometriikka-002296-2026-07-18-16.5</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / kermaliköörit</category>
+			<description><![CDATA[<p>Tuotteen Baileys Original Irish Cream hinta on muuttunut.</p><p>15,99 € → 16,50 € (+0,51 €, +3,19 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/002296-d029f5462c2d.png" />
+		</item>
+	</channel>
+</rss>

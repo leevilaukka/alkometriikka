@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tenuta Aquilaia Ciliegiolo 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/955832/",
+	"feed_url": "https://alkometriikka.fi/rss/955832.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tenuta Aquilaia Ciliegiolo 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-955832-2026-07-18-21",
+			"url": "https://alkometriikka.fi/tuotteet/955832/",
+			"title": "Tenuta Aquilaia Ciliegiolo 2022 — 20,70 € → 21,00 €",
+			"content_html": "<p>Tuotteen Tenuta Aquilaia Ciliegiolo 2022 hinta on muuttunut.</p><p>20,70 € → 21,00 € (+0,30 €, +1,45 %).</p>",
+			"summary": "Tuotteen Tenuta Aquilaia Ciliegiolo 2022 hinta on muuttunut. 20,70 € → 21,00 € (+0,30 €, +1,45 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/955832-f11b83d448b2.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

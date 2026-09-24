@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lan Reserva 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/402117/",
+	"feed_url": "https://alkometriikka.fi/rss/402117.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lan Reserva 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-402117-2026-07-18-22.48",
+			"url": "https://alkometriikka.fi/tuotteet/402117/",
+			"title": "Lan Reserva 2018 — 22,45 € → 22,48 €",
+			"content_html": "<p>Tuotteen Lan Reserva 2018 hinta on muuttunut.</p><p>22,45 € → 22,48 € (+0,03 €, +0,13 %).</p>",
+			"summary": "Tuotteen Lan Reserva 2018 hinta on muuttunut. 22,45 € → 22,48 € (+0,03 €, +0,13 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/402117-2dc84874c1b6.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gin Mare – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/913207/",
+	"feed_url": "https://alkometriikka.fi/rss/913207.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gin Mare.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-913207-2026-07-18-49.99",
+			"url": "https://alkometriikka.fi/tuotteet/913207/",
+			"title": "Gin Mare — 60,49 € → 49,99 €",
+			"content_html": "<p>Tuotteen Gin Mare hinta on muuttunut.</p><p>60,49 € → 49,99 € (−10,50 €, −17,36 %).</p>",
+			"summary": "Tuotteen Gin Mare hinta on muuttunut. 60,49 € → 49,99 € (−10,50 €, −17,36 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/913207-b3929a139282.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

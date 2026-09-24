@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bushmills Black Bush – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/001573/",
+	"feed_url": "https://alkometriikka.fi/rss/001573.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bushmills Black Bush.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-001573-2026-07-18-46.9",
+			"url": "https://alkometriikka.fi/tuotteet/001573/",
+			"title": "Bushmills Black Bush — 46,88 € → 46,90 €",
+			"content_html": "<p>Tuotteen Bushmills Black Bush hinta on muuttunut.</p><p>46,88 € → 46,90 € (+0,02 €, +0,04 %).</p>",
+			"summary": "Tuotteen Bushmills Black Bush hinta on muuttunut. 46,88 € → 46,90 € (+0,02 €, +0,04 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/001573-4c7dc87f3fa0.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

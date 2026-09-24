@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Prado Pastis – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/941386/",
+	"feed_url": "https://alkometriikka.fi/rss/941386.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Prado Pastis.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-941386-2026-07-18-22.9",
+			"url": "https://alkometriikka.fi/tuotteet/941386/",
+			"title": "Prado Pastis — 22,69 € → 22,90 €",
+			"content_html": "<p>Tuotteen Prado Pastis hinta on muuttunut.</p><p>22,69 € → 22,90 € (+0,21 €, +0,93 %).</p>",
+			"summary": "Tuotteen Prado Pastis hinta on muuttunut. 22,69 € → 22,90 € (+0,21 €, +0,93 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/941386-8b59a7726f96.png",
+			"tags": [
+				"Väkevät",
+				"anistisleet"
+			]
+		}
+	]
+}

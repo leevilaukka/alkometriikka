@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Saltkis Suolakaramelli Shotti – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/265697/",
+	"feed_url": "https://alkometriikka.fi/rss/265697.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Saltkis Suolakaramelli Shotti.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-265697-2026-07-18-16.89",
+			"url": "https://alkometriikka.fi/tuotteet/265697/",
+			"title": "Saltkis Suolakaramelli Shotti — 16,81 € → 16,89 €",
+			"content_html": "<p>Tuotteen Saltkis Suolakaramelli Shotti hinta on muuttunut.</p><p>16,81 € → 16,89 € (+0,08 €, +0,48 %).</p>",
+			"summary": "Tuotteen Saltkis Suolakaramelli Shotti hinta on muuttunut. 16,81 € → 16,89 € (+0,08 €, +0,48 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/265697-6baf7193bb0b.png",
+			"tags": [
+				"Väkevät",
+				"mausteliköörit"
+			]
+		}
+	]
+}

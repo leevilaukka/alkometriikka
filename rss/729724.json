@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ägräs Long Drink Nordic Nettle with Akvavit tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/729724/",
+	"feed_url": "https://alkometriikka.fi/rss/729724.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ägräs Long Drink Nordic Nettle with Akvavit tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-729724-2026-07-18-3.39",
+			"url": "https://alkometriikka.fi/tuotteet/729724/",
+			"title": "Ägräs Long Drink Nordic Nettle with Akvavit tölkki — 3,49 € → 3,39 €",
+			"content_html": "<p>Tuotteen Ägräs Long Drink Nordic Nettle with Akvavit tölkki hinta on muuttunut.</p><p>3,49 € → 3,39 € (−0,10 €, −2,87 %).</p>",
+			"summary": "Tuotteen Ägräs Long Drink Nordic Nettle with Akvavit tölkki hinta on muuttunut. 3,49 € → 3,39 € (−0,10 €, −2,87 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/729724-090cebd1223d.png",
+			"tags": [
+				"Panimotuotteet",
+				"juomasekoitukset"
+			]
+		}
+	]
+}

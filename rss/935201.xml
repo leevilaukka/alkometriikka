@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Coto de Imaz Reserva 2021 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/935201/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Coto de Imaz Reserva 2021.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/935201.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Coto de Imaz Reserva 2021 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Coto de Imaz Reserva 2021 — 19,45 € → 19,35 €</title>
+			<link>https://alkometriikka.fi/tuotteet/935201/</link>
+			<guid isPermaLink="false">alkometriikka-935201-2026-02-02-19.35</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Coto de Imaz Reserva 2021 hinta on muuttunut.</p><p>19,45 € → 19,35 € (−0,10 €, −0,51 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/935201-a8102403198d.png" />
+		</item>
+		<item>
+			<title>Coto de Imaz Reserva 2021 — 19,35 € → 19,45 €</title>
+			<link>https://alkometriikka.fi/tuotteet/935201/</link>
+			<guid isPermaLink="false">alkometriikka-935201-2026-02-02-19.45</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Coto de Imaz Reserva 2021 hinta on muuttunut.</p><p>19,35 € → 19,45 € (+0,10 €, +0,52 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/935201-a8102403198d.png" />
+		</item>
+	</channel>
+</rss>

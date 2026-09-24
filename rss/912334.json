@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Koskenkorva Vodka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/912334/",
+	"feed_url": "https://alkometriikka.fi/rss/912334.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Koskenkorva Vodka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-912334-2026-07-18-3.19",
+			"url": "https://alkometriikka.fi/tuotteet/912334/",
+			"title": "Koskenkorva Vodka — 3,20 € → 3,19 €",
+			"content_html": "<p>Tuotteen Koskenkorva Vodka hinta on muuttunut.</p><p>3,20 € → 3,19 € (−0,01 €, −0,31 %).</p>",
+			"summary": "Tuotteen Koskenkorva Vodka hinta on muuttunut. 3,20 € → 3,19 € (−0,01 €, −0,31 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/912334-b6e709bc4b47.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

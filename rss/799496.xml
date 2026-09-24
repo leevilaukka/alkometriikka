@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Aura Tumma tölkki – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/799496/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Aura Tumma tölkki.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/799496.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Aura Tumma tölkki – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Aura Tumma tölkki — 3,49 € → 3,34 €</title>
+			<link>https://alkometriikka.fi/tuotteet/799496/</link>
+			<guid isPermaLink="false">alkometriikka-799496-2026-02-02-3.34</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Panimotuotteet / oluet</category>
+			<description><![CDATA[<p>Tuotteen Aura Tumma tölkki hinta on muuttunut.</p><p>3,49 € → 3,34 € (−0,15 €, −4,30 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/799496-703aaf19872d.png" />
+		</item>
+		<item>
+			<title>Aura Tumma tölkki — 3,34 € → 3,49 €</title>
+			<link>https://alkometriikka.fi/tuotteet/799496/</link>
+			<guid isPermaLink="false">alkometriikka-799496-2026-02-02-3.49</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Panimotuotteet / oluet</category>
+			<description><![CDATA[<p>Tuotteen Aura Tumma tölkki hinta on muuttunut.</p><p>3,34 € → 3,49 € (+0,15 €, +4,49 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/799496-703aaf19872d.png" />
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,50 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Baron-Albert L'Universelle Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/938801/",
+	"feed_url": "https://alkometriikka.fi/rss/938801.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Baron-Albert L'Universelle Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-938801-2026-07-18-39.99",
+			"url": "https://alkometriikka.fi/tuotteet/938801/",
+			"title": "Baron-Albert L'Universelle Champagne Brut — 40,44 € → 39,99 €",
+			"content_html": "<p>Tuotteen Baron-Albert L'Universelle Champagne Brut hinta on muuttunut.</p><p>40,44 € → 39,99 € (−0,45 €, −1,11 %).</p>",
+			"summary": "Tuotteen Baron-Albert L'Universelle Champagne Brut hinta on muuttunut. 40,44 € → 39,99 € (−0,45 €, −1,11 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/938801-105703df5213.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-938801-2026-02-02-40.34",
+			"url": "https://alkometriikka.fi/tuotteet/938801/",
+			"title": "Baron-Albert L'Universelle Champagne Brut — 40,44 € → 40,34 €",
+			"content_html": "<p>Tuotteen Baron-Albert L'Universelle Champagne Brut hinta on muuttunut.</p><p>40,44 € → 40,34 € (−0,10 €, −0,25 %).</p>",
+			"summary": "Tuotteen Baron-Albert L'Universelle Champagne Brut hinta on muuttunut. 40,44 € → 40,34 € (−0,10 €, −0,25 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/938801-105703df5213.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-938801-2026-02-02-40.44",
+			"url": "https://alkometriikka.fi/tuotteet/938801/",
+			"title": "Baron-Albert L'Universelle Champagne Brut — 40,34 € → 40,44 €",
+			"content_html": "<p>Tuotteen Baron-Albert L'Universelle Champagne Brut hinta on muuttunut.</p><p>40,34 € → 40,44 € (+0,10 €, +0,25 %).</p>",
+			"summary": "Tuotteen Baron-Albert L'Universelle Champagne Brut hinta on muuttunut. 40,34 € → 40,44 € (+0,10 €, +0,25 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/938801-105703df5213.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

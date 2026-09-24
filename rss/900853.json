@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Universite de Bourgogne Marsannay Rouge 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900853/",
+	"feed_url": "https://alkometriikka.fi/rss/900853.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Universite de Bourgogne Marsannay Rouge 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900853-2026-07-18-52.15",
+			"url": "https://alkometriikka.fi/tuotteet/900853/",
+			"title": "Universite de Bourgogne Marsannay Rouge 2022 — 49,95 € → 52,15 €",
+			"content_html": "<p>Tuotteen Universite de Bourgogne Marsannay Rouge 2022 hinta on muuttunut.</p><p>49,95 € → 52,15 € (+2,20 €, +4,40 %).</p>",
+			"summary": "Tuotteen Universite de Bourgogne Marsannay Rouge 2022 hinta on muuttunut. 49,95 € → 52,15 € (+2,20 €, +4,40 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900853-3500bb9528a0.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

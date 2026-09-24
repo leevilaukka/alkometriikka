@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Crystal Head Aurora Vodka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/905553/",
+	"feed_url": "https://alkometriikka.fi/rss/905553.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Crystal Head Aurora Vodka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-905553-2026-07-18-77.99",
+			"url": "https://alkometriikka.fi/tuotteet/905553/",
+			"title": "Crystal Head Aurora Vodka — 78,07 € → 77,99 €",
+			"content_html": "<p>Tuotteen Crystal Head Aurora Vodka hinta on muuttunut.</p><p>78,07 € → 77,99 € (−0,08 €, −0,10 %).</p>",
+			"summary": "Tuotteen Crystal Head Aurora Vodka hinta on muuttunut. 78,07 € → 77,99 € (−0,08 €, −0,10 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/905553-faece718907e.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

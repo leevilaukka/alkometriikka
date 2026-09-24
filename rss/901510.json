@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Georg Mosbacher Jesuitengarten GG 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901510/",
+	"feed_url": "https://alkometriikka.fi/rss/901510.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Georg Mosbacher Jesuitengarten GG 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901510-2026-07-18-84.5",
+			"url": "https://alkometriikka.fi/tuotteet/901510/",
+			"title": "Georg Mosbacher Jesuitengarten GG 2020 — 84,39 € → 84,50 €",
+			"content_html": "<p>Tuotteen Georg Mosbacher Jesuitengarten GG 2020 hinta on muuttunut.</p><p>84,39 € → 84,50 € (+0,11 €, +0,13 %).</p>",
+			"summary": "Tuotteen Georg Mosbacher Jesuitengarten GG 2020 hinta on muuttunut. 84,39 € → 84,50 € (+0,11 €, +0,13 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901510-3d9d7db22d7d.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

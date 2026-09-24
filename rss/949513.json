@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Chateau La Grace Fonrazade Persevero 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/949513/",
+	"feed_url": "https://alkometriikka.fi/rss/949513.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Chateau La Grace Fonrazade Persevero 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-949513-2026-07-18-44.78",
+			"url": "https://alkometriikka.fi/tuotteet/949513/",
+			"title": "Chateau La Grace Fonrazade Persevero 2021 — 44,57 € → 44,78 €",
+			"content_html": "<p>Tuotteen Chateau La Grace Fonrazade Persevero 2021 hinta on muuttunut.</p><p>44,57 € → 44,78 € (+0,21 €, +0,47 %).</p>",
+			"summary": "Tuotteen Chateau La Grace Fonrazade Persevero 2021 hinta on muuttunut. 44,57 € → 44,78 € (+0,21 €, +0,47 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/949513-770cc7a9a8be.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Beefeater Pink Strawberry Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/129607/",
+	"feed_url": "https://alkometriikka.fi/rss/129607.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Beefeater Pink Strawberry Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-129607-2026-02-02-35.39",
+			"url": "https://alkometriikka.fi/tuotteet/129607/",
+			"title": "Beefeater Pink Strawberry Gin — 35,49 € → 35,39 €",
+			"content_html": "<p>Tuotteen Beefeater Pink Strawberry Gin hinta on muuttunut.</p><p>35,49 € → 35,39 € (−0,10 €, −0,28 %).</p>",
+			"summary": "Tuotteen Beefeater Pink Strawberry Gin hinta on muuttunut. 35,49 € → 35,39 € (−0,10 €, −0,28 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/129607-a3c15c8e2bd2.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		},
+		{
+			"id": "alkometriikka-129607-2026-02-02-35.49",
+			"url": "https://alkometriikka.fi/tuotteet/129607/",
+			"title": "Beefeater Pink Strawberry Gin — 35,39 € → 35,49 €",
+			"content_html": "<p>Tuotteen Beefeater Pink Strawberry Gin hinta on muuttunut.</p><p>35,39 € → 35,49 € (+0,10 €, +0,28 %).</p>",
+			"summary": "Tuotteen Beefeater Pink Strawberry Gin hinta on muuttunut. 35,39 € → 35,49 € (+0,10 €, +0,28 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/129607-a3c15c8e2bd2.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

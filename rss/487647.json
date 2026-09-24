@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cantina Terlano Lagrein 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/487647/",
+	"feed_url": "https://alkometriikka.fi/rss/487647.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cantina Terlano Lagrein 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-487647-2026-07-18-25.25",
+			"url": "https://alkometriikka.fi/tuotteet/487647/",
+			"title": "Cantina Terlano Lagrein 2024 — 25,31 € → 25,25 €",
+			"content_html": "<p>Tuotteen Cantina Terlano Lagrein 2024 hinta on muuttunut.</p><p>25,31 € → 25,25 € (−0,06 €, −0,24 %).</p>",
+			"summary": "Tuotteen Cantina Terlano Lagrein 2024 hinta on muuttunut. 25,31 € → 25,25 € (−0,06 €, −0,24 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/487647-082f93be2180.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

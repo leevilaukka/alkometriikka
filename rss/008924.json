@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ballet Carte Noire Organic Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/008924/",
+	"feed_url": "https://alkometriikka.fi/rss/008924.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ballet Carte Noire Organic Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-008924-2026-07-18-11.49",
+			"url": "https://alkometriikka.fi/tuotteet/008924/",
+			"title": "Ballet Carte Noire Organic Brut — 11,26 € → 11,49 €",
+			"content_html": "<p>Tuotteen Ballet Carte Noire Organic Brut hinta on muuttunut.</p><p>11,26 € → 11,49 € (+0,23 €, +2,04 %).</p>",
+			"summary": "Tuotteen Ballet Carte Noire Organic Brut hinta on muuttunut. 11,26 € → 11,49 € (+0,23 €, +2,04 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/008924-d33fc726058d.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

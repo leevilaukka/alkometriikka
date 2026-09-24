@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Jules Gautret VS – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/137738/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Jules Gautret VS.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/137738.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Jules Gautret VS – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Jules Gautret VS — 49,94 € → 47,97 €</title>
+			<link>https://alkometriikka.fi/tuotteet/137738/</link>
+			<guid isPermaLink="false">alkometriikka-137738-2026-07-18-47.97</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / konjakit</category>
+			<description><![CDATA[<p>Tuotteen Jules Gautret VS hinta on muuttunut.</p><p>49,94 € → 47,97 € (−1,97 €, −3,94 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/137738-9ba4b599af18.png" />
+		</item>
+	</channel>
+</rss>

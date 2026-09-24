@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château Ksara 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/906157/",
+	"feed_url": "https://alkometriikka.fi/rss/906157.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château Ksara 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-906157-2026-07-18-29.98",
+			"url": "https://alkometriikka.fi/tuotteet/906157/",
+			"title": "Château Ksara 2018 — 30,45 € → 29,98 €",
+			"content_html": "<p>Tuotteen Château Ksara 2018 hinta on muuttunut.</p><p>30,45 € → 29,98 € (−0,47 €, −1,54 %).</p>",
+			"summary": "Tuotteen Château Ksara 2018 hinta on muuttunut. 30,45 € → 29,98 € (−0,47 €, −1,54 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/906157-981298f470e4.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

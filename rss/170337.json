@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ardbeg Corryvreckan Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/170337/",
+	"feed_url": "https://alkometriikka.fi/rss/170337.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ardbeg Corryvreckan Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-170337-2026-07-18-131.9",
+			"url": "https://alkometriikka.fi/tuotteet/170337/",
+			"title": "Ardbeg Corryvreckan Single Malt — 130,36 € → 131,90 €",
+			"content_html": "<p>Tuotteen Ardbeg Corryvreckan Single Malt hinta on muuttunut.</p><p>130,36 € → 131,90 € (+1,54 €, +1,18 %).</p>",
+			"summary": "Tuotteen Ardbeg Corryvreckan Single Malt hinta on muuttunut. 130,36 € → 131,90 € (+1,54 €, +1,18 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/170337-0d28fbaca77c.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pol Roger Pure Champagne Extra Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/925027/",
+	"feed_url": "https://alkometriikka.fi/rss/925027.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pol Roger Pure Champagne Extra Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-925027-2026-07-18-74.9",
+			"url": "https://alkometriikka.fi/tuotteet/925027/",
+			"title": "Pol Roger Pure Champagne Extra Brut — 72,99 € → 74,90 €",
+			"content_html": "<p>Tuotteen Pol Roger Pure Champagne Extra Brut hinta on muuttunut.</p><p>72,99 € → 74,90 € (+1,91 €, +2,62 %).</p>",
+			"summary": "Tuotteen Pol Roger Pure Champagne Extra Brut hinta on muuttunut. 72,99 € → 74,90 € (+1,91 €, +2,62 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/925027-cdfc0461d83b.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

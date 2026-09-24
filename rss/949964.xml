@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Jean Canon Pastis – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/949964/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Jean Canon Pastis.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/949964.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Jean Canon Pastis – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Jean Canon Pastis — 51,71 € → 49,36 €</title>
+			<link>https://alkometriikka.fi/tuotteet/949964/</link>
+			<guid isPermaLink="false">alkometriikka-949964-2026-07-18-49.36</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / anistisleet</category>
+			<description><![CDATA[<p>Tuotteen Jean Canon Pastis hinta on muuttunut.</p><p>51,71 € → 49,36 € (−2,35 €, −4,54 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/949964-5ae35da996bc.png" />
+		</item>
+	</channel>
+</rss>

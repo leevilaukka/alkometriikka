@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pearsons Botanicals London Dry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901525/",
+	"feed_url": "https://alkometriikka.fi/rss/901525.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pearsons Botanicals London Dry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901525-2026-07-18-27.59",
+			"url": "https://alkometriikka.fi/tuotteet/901525/",
+			"title": "Pearsons Botanicals London Dry — 27,58 € → 27,59 €",
+			"content_html": "<p>Tuotteen Pearsons Botanicals London Dry hinta on muuttunut.</p><p>27,58 € → 27,59 € (+0,01 €, +0,04 %).</p>",
+			"summary": "Tuotteen Pearsons Botanicals London Dry hinta on muuttunut. 27,58 € → 27,59 € (+0,01 €, +0,04 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901525-aecfdc9ebcbc.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

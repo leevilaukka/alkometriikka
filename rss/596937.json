@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Maison du Vin Crémant de Loire Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/596937/",
+	"feed_url": "https://alkometriikka.fi/rss/596937.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Maison du Vin Crémant de Loire Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-596937-2026-07-18-16.89",
+			"url": "https://alkometriikka.fi/tuotteet/596937/",
+			"title": "Maison du Vin Crémant de Loire Brut — 16,44 € → 16,89 €",
+			"content_html": "<p>Tuotteen Maison du Vin Crémant de Loire Brut hinta on muuttunut.</p><p>16,44 € → 16,89 € (+0,45 €, +2,74 %).</p>",
+			"summary": "Tuotteen Maison du Vin Crémant de Loire Brut hinta on muuttunut. 16,44 € → 16,89 € (+0,45 €, +2,74 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/596937-faec0d6c9328.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

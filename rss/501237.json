@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Fidora Tenuta Civranetta Prosecco Extra Dry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/501237/",
+	"feed_url": "https://alkometriikka.fi/rss/501237.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Fidora Tenuta Civranetta Prosecco Extra Dry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-501237-2026-07-18-18.99",
+			"url": "https://alkometriikka.fi/tuotteet/501237/",
+			"title": "Fidora Tenuta Civranetta Prosecco Extra Dry — 19,35 € → 18,99 €",
+			"content_html": "<p>Tuotteen Fidora Tenuta Civranetta Prosecco Extra Dry hinta on muuttunut.</p><p>19,35 € → 18,99 € (−0,36 €, −1,86 %).</p>",
+			"summary": "Tuotteen Fidora Tenuta Civranetta Prosecco Extra Dry hinta on muuttunut. 19,35 € → 18,99 € (−0,36 €, −1,86 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/501237-796b930bf845.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

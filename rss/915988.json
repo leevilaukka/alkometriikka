@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vintense Syrah Alcohol Free – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/915988/",
+	"feed_url": "https://alkometriikka.fi/rss/915988.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vintense Syrah Alcohol Free.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-915988-2026-07-18-9.99",
+			"url": "https://alkometriikka.fi/tuotteet/915988/",
+			"title": "Vintense Syrah Alcohol Free — 10,35 € → 9,99 €",
+			"content_html": "<p>Tuotteen Vintense Syrah Alcohol Free hinta on muuttunut.</p><p>10,35 € → 9,99 € (−0,36 €, −3,48 %).</p>",
+			"summary": "Tuotteen Vintense Syrah Alcohol Free hinta on muuttunut. 10,35 € → 9,99 € (−0,36 €, −3,48 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/915988-2144480f90f6.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat valko- ja roseeviinit"
+			]
+		}
+	]
+}

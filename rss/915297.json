@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Four Roses – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/915297/",
+	"feed_url": "https://alkometriikka.fi/rss/915297.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Four Roses.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-915297-2026-07-18-36.28",
+			"url": "https://alkometriikka.fi/tuotteet/915297/",
+			"title": "Four Roses — 36,17 € → 36,28 €",
+			"content_html": "<p>Tuotteen Four Roses hinta on muuttunut.</p><p>36,17 € → 36,28 € (+0,11 €, +0,30 %).</p>",
+			"summary": "Tuotteen Four Roses hinta on muuttunut. 36,17 € → 36,28 € (+0,11 €, +0,30 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/915297-cd077b7cf547.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

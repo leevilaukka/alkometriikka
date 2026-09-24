@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Guigal Côte-Rôtie La Mouline 2016 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/920292/",
+	"feed_url": "https://alkometriikka.fi/rss/920292.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Guigal Côte-Rôtie La Mouline 2016.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-920292-2026-07-18-398.99",
+			"url": "https://alkometriikka.fi/tuotteet/920292/",
+			"title": "Guigal Côte-Rôtie La Mouline 2016 — 400,43 € → 398,99 €",
+			"content_html": "<p>Tuotteen Guigal Côte-Rôtie La Mouline 2016 hinta on muuttunut.</p><p>400,43 € → 398,99 € (−1,44 €, −0,36 %).</p>",
+			"summary": "Tuotteen Guigal Côte-Rôtie La Mouline 2016 hinta on muuttunut. 400,43 € → 398,99 € (−1,44 €, −0,36 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/920292-b2439572fc26.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

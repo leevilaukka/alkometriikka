@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Sprite 0,5L  muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/600035/",
+	"feed_url": "https://alkometriikka.fi/rss/600035.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Sprite 0,5L  muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-600035-2026-07-18-2.59",
+			"url": "https://alkometriikka.fi/tuotteet/600035/",
+			"title": "Sprite 0,5L  muovipullo — 2,48 € → 2,59 €",
+			"content_html": "<p>Tuotteen Sprite 0,5L  muovipullo hinta on muuttunut.</p><p>2,48 € → 2,59 € (+0,11 €, +4,44 %).</p>",
+			"summary": "Tuotteen Sprite 0,5L muovipullo hinta on muuttunut. 2,48 € → 2,59 € (+0,11 €, +4,44 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600035-bb51f3d2d8fe.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

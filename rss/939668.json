@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Poggio Nero Appassimento Organic – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/939668/",
+	"feed_url": "https://alkometriikka.fi/rss/939668.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Poggio Nero Appassimento Organic.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-939668-2026-07-18-15.99",
+			"url": "https://alkometriikka.fi/tuotteet/939668/",
+			"title": "Poggio Nero Appassimento Organic — 16,74 € → 15,99 €",
+			"content_html": "<p>Tuotteen Poggio Nero Appassimento Organic hinta on muuttunut.</p><p>16,74 € → 15,99 € (−0,75 €, −4,48 %).</p>",
+			"summary": "Tuotteen Poggio Nero Appassimento Organic hinta on muuttunut. 16,74 € → 15,99 € (−0,75 €, −4,48 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/939668-73bf4efb497d.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gramona Celler Batlle Corpinnat Brut 2014 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901143/",
+	"feed_url": "https://alkometriikka.fi/rss/901143.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gramona Celler Batlle Corpinnat Brut 2014.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901143-2026-07-18-93.99",
+			"url": "https://alkometriikka.fi/tuotteet/901143/",
+			"title": "Gramona Celler Batlle Corpinnat Brut 2014 — 94,05 € → 93,99 €",
+			"content_html": "<p>Tuotteen Gramona Celler Batlle Corpinnat Brut 2014 hinta on muuttunut.</p><p>94,05 € → 93,99 € (−0,06 €, −0,06 %).</p>",
+			"summary": "Tuotteen Gramona Celler Batlle Corpinnat Brut 2014 hinta on muuttunut. 94,05 € → 93,99 € (−0,06 €, −0,06 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901143-82d116971f63.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

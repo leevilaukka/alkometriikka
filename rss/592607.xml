@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Serra Lupini Roero Arneis 2024 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/592607/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Serra Lupini Roero Arneis 2024.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/592607.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Serra Lupini Roero Arneis 2024 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Serra Lupini Roero Arneis 2024 — 16,98 € → 17,69 €</title>
+			<link>https://alkometriikka.fi/tuotteet/592607/</link>
+			<guid isPermaLink="false">alkometriikka-592607-2026-07-18-17.69</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / valkoviinit</category>
+			<description><![CDATA[<p>Tuotteen Serra Lupini Roero Arneis 2024 hinta on muuttunut.</p><p>16,98 € → 17,69 € (+0,71 €, +4,18 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/592607-10a257c6a94d.png" />
+		</item>
+	</channel>
+</rss>

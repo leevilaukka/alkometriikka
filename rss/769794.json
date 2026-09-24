@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – BrewDog Punk AF Alcohol Free – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/769794/",
+	"feed_url": "https://alkometriikka.fi/rss/769794.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: BrewDog Punk AF Alcohol Free.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-769794-2026-09-04-2.33",
+			"url": "https://alkometriikka.fi/tuotteet/769794/",
+			"title": "BrewDog Punk AF Alcohol Free — 2,59 € → 2,33 €",
+			"content_html": "<p>Tuotteen BrewDog Punk AF Alcohol Free hinta on muuttunut.</p><p>2,59 € → 2,33 € (−0,26 €, −10,04 %).</p>",
+			"summary": "Tuotteen BrewDog Punk AF Alcohol Free hinta on muuttunut. 2,59 € → 2,33 € (−0,26 €, −10,04 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/769794-093ff848c0d9.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-769794-2026-07-18-2.59",
+			"url": "https://alkometriikka.fi/tuotteet/769794/",
+			"title": "BrewDog Punk AF Alcohol Free — 2,54 € → 2,59 €",
+			"content_html": "<p>Tuotteen BrewDog Punk AF Alcohol Free hinta on muuttunut.</p><p>2,54 € → 2,59 € (+0,05 €, +1,97 %).</p>",
+			"summary": "Tuotteen BrewDog Punk AF Alcohol Free hinta on muuttunut. 2,54 € → 2,59 € (+0,05 €, +1,97 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/769794-093ff848c0d9.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

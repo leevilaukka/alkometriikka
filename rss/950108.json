@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Krug Vintage Champagne Brut 2011 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/950108/",
+	"feed_url": "https://alkometriikka.fi/rss/950108.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Krug Vintage Champagne Brut 2011.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-950108-2026-07-18-519.99",
+			"url": "https://alkometriikka.fi/tuotteet/950108/",
+			"title": "Krug Vintage Champagne Brut 2011 — 520,45 € → 519,99 €",
+			"content_html": "<p>Tuotteen Krug Vintage Champagne Brut 2011 hinta on muuttunut.</p><p>520,45 € → 519,99 € (−0,46 €, −0,09 %).</p>",
+			"summary": "Tuotteen Krug Vintage Champagne Brut 2011 hinta on muuttunut. 520,45 € → 519,99 € (−0,46 €, −0,09 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/950108-80bb5c2c391b.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

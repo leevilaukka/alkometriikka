@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Niepoort Dry White Port – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/377727/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Niepoort Dry White Port.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/377727.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Niepoort Dry White Port – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Niepoort Dry White Port — 20,70 € → 20,89 €</title>
+			<link>https://alkometriikka.fi/tuotteet/377727/</link>
+			<guid isPermaLink="false">alkometriikka-377727-2026-07-18-20.89</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Välituotteet / portviinit</category>
+			<description><![CDATA[<p>Tuotteen Niepoort Dry White Port hinta on muuttunut.</p><p>20,70 € → 20,89 € (+0,19 €, +0,92 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/377727-facac3c6bbde.png" />
+		</item>
+	</channel>
+</rss>

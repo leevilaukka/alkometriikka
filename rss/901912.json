@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vana Tallinn 3-pack  muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901912/",
+	"feed_url": "https://alkometriikka.fi/rss/901912.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vana Tallinn 3-pack  muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901912-2026-07-18-9.42",
+			"url": "https://alkometriikka.fi/tuotteet/901912/",
+			"title": "Vana Tallinn 3-pack  muovipullo — 9,56 € → 9,42 €",
+			"content_html": "<p>Tuotteen Vana Tallinn 3-pack  muovipullo hinta on muuttunut.</p><p>9,56 € → 9,42 € (−0,14 €, −1,46 %).</p>",
+			"summary": "Tuotteen Vana Tallinn 3-pack muovipullo hinta on muuttunut. 9,56 € → 9,42 € (−0,14 €, −1,46 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901912-7ae7ac3607a0.png",
+			"tags": [
+				"Väkevät",
+				"yrttiliköörit"
+			]
+		}
+	]
+}

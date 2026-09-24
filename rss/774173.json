@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Happy Joe Alcohol Free Dry Apple – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/774173/",
+	"feed_url": "https://alkometriikka.fi/rss/774173.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Happy Joe Alcohol Free Dry Apple.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-774173-2026-07-18-2.39",
+			"url": "https://alkometriikka.fi/tuotteet/774173/",
+			"title": "Happy Joe Alcohol Free Dry Apple — 2,28 € → 2,39 €",
+			"content_html": "<p>Tuotteen Happy Joe Alcohol Free Dry Apple hinta on muuttunut.</p><p>2,28 € → 2,39 € (+0,11 €, +4,82 %).</p>",
+			"summary": "Tuotteen Happy Joe Alcohol Free Dry Apple hinta on muuttunut. 2,28 € → 2,39 € (+0,11 €, +4,82 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/774173-6a39fda06626.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat siiderit"
+			]
+		}
+	]
+}

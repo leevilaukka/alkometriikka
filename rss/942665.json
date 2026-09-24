@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Codorníu Rosado Cava Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/942665/",
+	"feed_url": "https://alkometriikka.fi/rss/942665.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Codorníu Rosado Cava Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-942665-2026-07-18-4.99",
+			"url": "https://alkometriikka.fi/tuotteet/942665/",
+			"title": "Codorníu Rosado Cava Brut — 5,09 € → 4,99 €",
+			"content_html": "<p>Tuotteen Codorníu Rosado Cava Brut hinta on muuttunut.</p><p>5,09 € → 4,99 € (−0,10 €, −1,96 %).</p>",
+			"summary": "Tuotteen Codorníu Rosado Cava Brut hinta on muuttunut. 5,09 € → 4,99 € (−0,10 €, −1,96 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/942665-713e28e7453a.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

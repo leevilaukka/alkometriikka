@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Woven Hemispheres – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900482/",
+	"feed_url": "https://alkometriikka.fi/rss/900482.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Woven Hemispheres.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900482-2026-07-18-58.08",
+			"url": "https://alkometriikka.fi/tuotteet/900482/",
+			"title": "Woven Hemispheres — 59,49 € → 58,08 €",
+			"content_html": "<p>Tuotteen Woven Hemispheres hinta on muuttunut.</p><p>59,49 € → 58,08 € (−1,41 €, −2,37 %).</p>",
+			"summary": "Tuotteen Woven Hemispheres hinta on muuttunut. 59,49 € → 58,08 € (−1,41 €, −2,37 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900482-3ba7fbf328ce.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

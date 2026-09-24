@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Helsinki Tyrnipontikka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/184116/",
+	"feed_url": "https://alkometriikka.fi/rss/184116.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Helsinki Tyrnipontikka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-184116-2026-07-18-49.99",
+			"url": "https://alkometriikka.fi/tuotteet/184116/",
+			"title": "Helsinki Tyrnipontikka — 51,68 € → 49,99 €",
+			"content_html": "<p>Tuotteen Helsinki Tyrnipontikka hinta on muuttunut.</p><p>51,68 € → 49,99 € (−1,69 €, −3,27 %).</p>",
+			"summary": "Tuotteen Helsinki Tyrnipontikka hinta on muuttunut. 51,68 € → 49,99 € (−1,69 €, −3,27 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/184116-b9ff966f4f0a.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

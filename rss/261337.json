@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Baileys Espresso Créme – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/261337/",
+	"feed_url": "https://alkometriikka.fi/rss/261337.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Baileys Espresso Créme.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-261337-2026-07-18-24.99",
+			"url": "https://alkometriikka.fi/tuotteet/261337/",
+			"title": "Baileys Espresso Créme — 27,10 € → 24,99 €",
+			"content_html": "<p>Tuotteen Baileys Espresso Créme hinta on muuttunut.</p><p>27,10 € → 24,99 € (−2,11 €, −7,79 %).</p>",
+			"summary": "Tuotteen Baileys Espresso Créme hinta on muuttunut. 27,10 € → 24,99 € (−2,11 €, −7,79 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/261337-9d0715384781.png",
+			"tags": [
+				"Väkevät",
+				"kermaliköörit"
+			]
+		}
+	]
+}

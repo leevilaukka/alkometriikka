@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bread & Butter Chardonnay 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/954406/",
+	"feed_url": "https://alkometriikka.fi/rss/954406.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bread & Butter Chardonnay 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-954406-2026-07-18-19.99",
+			"url": "https://alkometriikka.fi/tuotteet/954406/",
+			"title": "Bread & Butter Chardonnay 2024 — 20,45 € → 19,99 €",
+			"content_html": "<p>Tuotteen Bread & Butter Chardonnay 2024 hinta on muuttunut.</p><p>20,45 € → 19,99 € (−0,46 €, −2,25 %).</p>",
+			"summary": "Tuotteen Bread & Butter Chardonnay 2024 hinta on muuttunut. 20,45 € → 19,99 € (−0,46 €, −2,25 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/954406-3ea120804ba6.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

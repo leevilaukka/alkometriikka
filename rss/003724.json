@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Valdespino Oloroso Blend Medium Sherry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/003724/",
+	"feed_url": "https://alkometriikka.fi/rss/003724.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Valdespino Oloroso Blend Medium Sherry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-003724-2026-07-18-19.89",
+			"url": "https://alkometriikka.fi/tuotteet/003724/",
+			"title": "Valdespino Oloroso Blend Medium Sherry — 19,60 € → 19,89 €",
+			"content_html": "<p>Tuotteen Valdespino Oloroso Blend Medium Sherry hinta on muuttunut.</p><p>19,60 € → 19,89 € (+0,29 €, +1,48 %).</p>",
+			"summary": "Tuotteen Valdespino Oloroso Blend Medium Sherry hinta on muuttunut. 19,60 € → 19,89 € (+0,29 €, +1,48 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/003724-2f35ae87881e.png",
+			"tags": [
+				"Välituotteet",
+				"sherryt"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Coral Duero Las Parvas 2017 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/958436/",
+	"feed_url": "https://alkometriikka.fi/rss/958436.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Coral Duero Las Parvas 2017.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-958436-2026-07-18-64.98",
+			"url": "https://alkometriikka.fi/tuotteet/958436/",
+			"title": "Coral Duero Las Parvas 2017 — 64,44 € → 64,98 €",
+			"content_html": "<p>Tuotteen Coral Duero Las Parvas 2017 hinta on muuttunut.</p><p>64,44 € → 64,98 € (+0,54 €, +0,84 %).</p>",
+			"summary": "Tuotteen Coral Duero Las Parvas 2017 hinta on muuttunut. 64,44 € → 64,98 € (+0,54 €, +0,84 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/958436-9216135c18c1.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

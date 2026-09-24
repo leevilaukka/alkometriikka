@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ardbeg Wee Beastie Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/199307/",
+	"feed_url": "https://alkometriikka.fi/rss/199307.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ardbeg Wee Beastie Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-199307-2026-07-18-64.4",
+			"url": "https://alkometriikka.fi/tuotteet/199307/",
+			"title": "Ardbeg Wee Beastie Single Malt — 64,31 € → 64,40 €",
+			"content_html": "<p>Tuotteen Ardbeg Wee Beastie Single Malt hinta on muuttunut.</p><p>64,31 € → 64,40 € (+0,09 €, +0,14 %).</p>",
+			"summary": "Tuotteen Ardbeg Wee Beastie Single Malt hinta on muuttunut. 64,31 € → 64,40 € (+0,09 €, +0,14 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/199307-0c15a859abc5.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Glenmorangie A Tale of Tokyo Single Malt – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/900130/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Glenmorangie A Tale of Tokyo Single Malt.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/900130.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Glenmorangie A Tale of Tokyo Single Malt – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Glenmorangie A Tale of Tokyo Single Malt — 125,90 € → 125,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/900130/</link>
+			<guid isPermaLink="false">alkometriikka-900130-2026-07-18-125.99</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / viskit</category>
+			<description><![CDATA[<p>Tuotteen Glenmorangie A Tale of Tokyo Single Malt hinta on muuttunut.</p><p>125,90 € → 125,99 € (+0,09 €, +0,07 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/900130-c9b7b4da82e8.png" />
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tosti Vermouth Rosso – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/326357/",
+	"feed_url": "https://alkometriikka.fi/rss/326357.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tosti Vermouth Rosso.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-326357-2026-07-18-12.98",
+			"url": "https://alkometriikka.fi/tuotteet/326357/",
+			"title": "Tosti Vermouth Rosso — 12,69 € → 12,98 €",
+			"content_html": "<p>Tuotteen Tosti Vermouth Rosso hinta on muuttunut.</p><p>12,69 € → 12,98 € (+0,29 €, +2,29 %).</p>",
+			"summary": "Tuotteen Tosti Vermouth Rosso hinta on muuttunut. 12,69 € → 12,98 € (+0,29 €, +2,29 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/326357-e79e4b38fdc6.png",
+			"tags": [
+				"Välituotteet",
+				"vermutit"
+			]
+		}
+	]
+}

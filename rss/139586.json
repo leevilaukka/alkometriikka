@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Valhalla – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/139586/",
+	"feed_url": "https://alkometriikka.fi/rss/139586.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Valhalla.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-139586-2026-07-18-22.99",
+			"url": "https://alkometriikka.fi/tuotteet/139586/",
+			"title": "Valhalla — 22,97 € → 22,99 €",
+			"content_html": "<p>Tuotteen Valhalla hinta on muuttunut.</p><p>22,97 € → 22,99 € (+0,02 €, +0,09 %).</p>",
+			"summary": "Tuotteen Valhalla hinta on muuttunut. 22,97 € → 22,99 € (+0,02 €, +0,09 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/139586-92da73c40cd7.png",
+			"tags": [
+				"Väkevät",
+				"yrttiliköörit"
+			]
+		}
+	]
+}

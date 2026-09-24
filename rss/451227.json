@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lunar Apogé Côtes du Rhône 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/451227/",
+	"feed_url": "https://alkometriikka.fi/rss/451227.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lunar Apogé Côtes du Rhône 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-451227-2026-07-18-17.9",
+			"url": "https://alkometriikka.fi/tuotteet/451227/",
+			"title": "Lunar Apogé Côtes du Rhône 2022 — 17,92 € → 17,90 €",
+			"content_html": "<p>Tuotteen Lunar Apogé Côtes du Rhône 2022 hinta on muuttunut.</p><p>17,92 € → 17,90 € (−0,02 €, −0,11 %).</p>",
+			"summary": "Tuotteen Lunar Apogé Côtes du Rhône 2022 hinta on muuttunut. 17,92 € → 17,90 € (−0,02 €, −0,11 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/451227-c295d8991e8a.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

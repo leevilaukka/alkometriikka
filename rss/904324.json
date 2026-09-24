@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Somersby Apple Cider tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/904324/",
+	"feed_url": "https://alkometriikka.fi/rss/904324.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Somersby Apple Cider tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-904324-2026-07-18-3.29",
+			"url": "https://alkometriikka.fi/tuotteet/904324/",
+			"title": "Somersby Apple Cider tölkki — 2,79 € → 3,29 €",
+			"content_html": "<p>Tuotteen Somersby Apple Cider tölkki hinta on muuttunut.</p><p>2,79 € → 3,29 € (+0,50 €, +17,92 %).</p>",
+			"summary": "Tuotteen Somersby Apple Cider tölkki hinta on muuttunut. 2,79 € → 3,29 € (+0,50 €, +17,92 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/904324-947edb6dfb84.png",
+			"tags": [
+				"Panimotuotteet",
+				"siiderit"
+			]
+		}
+	]
+}

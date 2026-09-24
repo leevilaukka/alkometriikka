@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Sette Ponti Crognolo 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900081/",
+	"feed_url": "https://alkometriikka.fi/rss/900081.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Sette Ponti Crognolo 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900081-2026-07-18-45.98",
+			"url": "https://alkometriikka.fi/tuotteet/900081/",
+			"title": "Sette Ponti Crognolo 2021 — 46,44 € → 45,98 €",
+			"content_html": "<p>Tuotteen Sette Ponti Crognolo 2021 hinta on muuttunut.</p><p>46,44 € → 45,98 € (−0,46 €, −0,99 %).</p>",
+			"summary": "Tuotteen Sette Ponti Crognolo 2021 hinta on muuttunut. 46,44 € → 45,98 € (−0,46 €, −0,99 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900081-5df5269ba892.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Stigbergets Dubbelnelson DIPA tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/700034/",
+	"feed_url": "https://alkometriikka.fi/rss/700034.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Stigbergets Dubbelnelson DIPA tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-700034-2026-07-18-7.3",
+			"url": "https://alkometriikka.fi/tuotteet/700034/",
+			"title": "Stigbergets Dubbelnelson DIPA tölkki — 7,52 € → 7,30 €",
+			"content_html": "<p>Tuotteen Stigbergets Dubbelnelson DIPA tölkki hinta on muuttunut.</p><p>7,52 € → 7,30 € (−0,22 €, −2,93 %).</p>",
+			"summary": "Tuotteen Stigbergets Dubbelnelson DIPA tölkki hinta on muuttunut. 7,52 € → 7,30 € (−0,22 €, −2,93 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/700034-f557c1c29dac.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

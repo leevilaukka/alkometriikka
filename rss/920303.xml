@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Bock Magnifico 2017 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/920303/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Bock Magnifico 2017.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/920303.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Bock Magnifico 2017 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Bock Magnifico 2017 — 100,44 € → 99,98 €</title>
+			<link>https://alkometriikka.fi/tuotteet/920303/</link>
+			<guid isPermaLink="false">alkometriikka-920303-2026-07-18-99.98</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Bock Magnifico 2017 hinta on muuttunut.</p><p>100,44 € → 99,98 € (−0,46 €, −0,46 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/920303-d2d0dcaac900.png" />
+		</item>
+	</channel>
+</rss>

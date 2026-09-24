@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ceretto Barolo 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901751/",
+	"feed_url": "https://alkometriikka.fi/rss/901751.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ceretto Barolo 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901751-2026-07-18-99.89",
+			"url": "https://alkometriikka.fi/tuotteet/901751/",
+			"title": "Ceretto Barolo 2021 — 106,12 € → 99,89 €",
+			"content_html": "<p>Tuotteen Ceretto Barolo 2021 hinta on muuttunut.</p><p>106,12 € → 99,89 € (−6,23 €, −5,87 %).</p>",
+			"summary": "Tuotteen Ceretto Barolo 2021 hinta on muuttunut. 106,12 € → 99,89 € (−6,23 €, −5,87 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901751-9f10f44797d3.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

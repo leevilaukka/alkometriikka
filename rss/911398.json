@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Shake-It Mixer Sugar Cane – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/911398/",
+	"feed_url": "https://alkometriikka.fi/rss/911398.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Shake-It Mixer Sugar Cane.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-911398-2026-07-18-9.19",
+			"url": "https://alkometriikka.fi/tuotteet/911398/",
+			"title": "Shake-It Mixer Sugar Cane — 9,21 € → 9,19 €",
+			"content_html": "<p>Tuotteen Shake-It Mixer Sugar Cane hinta on muuttunut.</p><p>9,21 € → 9,19 € (−0,02 €, −0,22 %).</p>",
+			"summary": "Tuotteen Shake-It Mixer Sugar Cane hinta on muuttunut. 9,21 € → 9,19 € (−0,02 €, −0,22 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/911398-12283e74448d.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

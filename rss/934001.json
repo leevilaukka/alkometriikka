@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Andre Delorme Crémant de Bourgogne Magnum Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/934001/",
+	"feed_url": "https://alkometriikka.fi/rss/934001.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Andre Delorme Crémant de Bourgogne Magnum Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-934001-2026-07-18-48.99",
+			"url": "https://alkometriikka.fi/tuotteet/934001/",
+			"title": "Andre Delorme Crémant de Bourgogne Magnum Brut — 48,89 € → 48,99 €",
+			"content_html": "<p>Tuotteen Andre Delorme Crémant de Bourgogne Magnum Brut hinta on muuttunut.</p><p>48,89 € → 48,99 € (+0,10 €, +0,20 %).</p>",
+			"summary": "Tuotteen Andre Delorme Crémant de Bourgogne Magnum Brut hinta on muuttunut. 48,89 € → 48,99 € (+0,10 €, +0,20 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/934001-9c49b0680c9c.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

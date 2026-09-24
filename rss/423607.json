@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Georges Duboeuf Chénas 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/423607/",
+	"feed_url": "https://alkometriikka.fi/rss/423607.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Georges Duboeuf Chénas 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-423607-2026-02-02-23.08",
+			"url": "https://alkometriikka.fi/tuotteet/423607/",
+			"title": "Georges Duboeuf Chénas 2022 — 23,18 € → 23,08 €",
+			"content_html": "<p>Tuotteen Georges Duboeuf Chénas 2022 hinta on muuttunut.</p><p>23,18 € → 23,08 € (−0,10 €, −0,43 %).</p>",
+			"summary": "Tuotteen Georges Duboeuf Chénas 2022 hinta on muuttunut. 23,18 € → 23,08 € (−0,10 €, −0,43 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/423607-75211f5f7f42.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-423607-2026-02-02-23.18",
+			"url": "https://alkometriikka.fi/tuotteet/423607/",
+			"title": "Georges Duboeuf Chénas 2022 — 23,08 € → 23,18 €",
+			"content_html": "<p>Tuotteen Georges Duboeuf Chénas 2022 hinta on muuttunut.</p><p>23,08 € → 23,18 € (+0,10 €, +0,43 %).</p>",
+			"summary": "Tuotteen Georges Duboeuf Chénas 2022 hinta on muuttunut. 23,08 € → 23,18 € (+0,10 €, +0,43 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/423607-75211f5f7f42.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

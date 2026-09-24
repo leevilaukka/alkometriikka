@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Coca-Cola – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/720393/",
+	"feed_url": "https://alkometriikka.fi/rss/720393.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Coca-Cola.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-720393-2026-07-18-2.09",
+			"url": "https://alkometriikka.fi/tuotteet/720393/",
+			"title": "Coca-Cola — 1,97 € → 2,09 €",
+			"content_html": "<p>Tuotteen Coca-Cola hinta on muuttunut.</p><p>1,97 € → 2,09 € (+0,12 €, +6,09 %).</p>",
+			"summary": "Tuotteen Coca-Cola hinta on muuttunut. 1,97 € → 2,09 € (+0,12 €, +6,09 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/720393-882a0d983403.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

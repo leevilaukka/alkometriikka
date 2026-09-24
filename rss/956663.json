@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lyrarakis Liastos 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/956663/",
+	"feed_url": "https://alkometriikka.fi/rss/956663.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lyrarakis Liastos 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-956663-2026-07-18-23.48",
+			"url": "https://alkometriikka.fi/tuotteet/956663/",
+			"title": "Lyrarakis Liastos 2024 — 23,21 € → 23,48 €",
+			"content_html": "<p>Tuotteen Lyrarakis Liastos 2024 hinta on muuttunut.</p><p>23,21 € → 23,48 € (+0,27 €, +1,16 %).</p>",
+			"summary": "Tuotteen Lyrarakis Liastos 2024 hinta on muuttunut. 23,21 € → 23,48 € (+0,27 €, +1,16 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/956663-e789bcb5da52.png",
+			"tags": [
+				"Viinit",
+				"jälkiruokaviinit"
+			]
+		}
+	]
+}

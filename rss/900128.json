@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Wittmann Westhofener Riesling Trocken 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900128/",
+	"feed_url": "https://alkometriikka.fi/rss/900128.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Wittmann Westhofener Riesling Trocken 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900128-2026-07-18-45.98",
+			"url": "https://alkometriikka.fi/tuotteet/900128/",
+			"title": "Wittmann Westhofener Riesling Trocken 2024 — 45,45 € → 45,98 €",
+			"content_html": "<p>Tuotteen Wittmann Westhofener Riesling Trocken 2024 hinta on muuttunut.</p><p>45,45 € → 45,98 € (+0,53 €, +1,17 %).</p>",
+			"summary": "Tuotteen Wittmann Westhofener Riesling Trocken 2024 hinta on muuttunut. 45,45 € → 45,98 € (+0,53 €, +1,17 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900128-e17309e58cd4.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

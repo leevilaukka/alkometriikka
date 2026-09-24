@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Septima Malbec Organic 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/932333/",
+	"feed_url": "https://alkometriikka.fi/rss/932333.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Septima Malbec Organic 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-932333-2026-07-18-13.48",
+			"url": "https://alkometriikka.fi/tuotteet/932333/",
+			"title": "Septima Malbec Organic 2023 — 13,44 € → 13,48 €",
+			"content_html": "<p>Tuotteen Septima Malbec Organic 2023 hinta on muuttunut.</p><p>13,44 € → 13,48 € (+0,04 €, +0,30 %).</p>",
+			"summary": "Tuotteen Septima Malbec Organic 2023 hinta on muuttunut. 13,44 € → 13,48 € (+0,04 €, +0,30 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/932333-44ec116c00ac.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

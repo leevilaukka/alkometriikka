@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Yellowstone American Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/911351/",
+	"feed_url": "https://alkometriikka.fi/rss/911351.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Yellowstone American Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-911351-2026-07-18-89.5",
+			"url": "https://alkometriikka.fi/tuotteet/911351/",
+			"title": "Yellowstone American Single Malt — 89,56 € → 89,50 €",
+			"content_html": "<p>Tuotteen Yellowstone American Single Malt hinta on muuttunut.</p><p>89,56 € → 89,50 € (−0,06 €, −0,07 %).</p>",
+			"summary": "Tuotteen Yellowstone American Single Malt hinta on muuttunut. 89,56 € → 89,50 € (−0,06 €, −0,07 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/911351-5737f47487d0.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

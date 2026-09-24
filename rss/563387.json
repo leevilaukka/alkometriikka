@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Raja Riesling 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/563387/",
+	"feed_url": "https://alkometriikka.fi/rss/563387.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Raja Riesling 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-563387-2026-07-18-28.98",
+			"url": "https://alkometriikka.fi/tuotteet/563387/",
+			"title": "Raja Riesling 2022 — 27,99 € → 28,98 €",
+			"content_html": "<p>Tuotteen Raja Riesling 2022 hinta on muuttunut.</p><p>27,99 € → 28,98 € (+0,99 €, +3,54 %).</p>",
+			"summary": "Tuotteen Raja Riesling 2022 hinta on muuttunut. 27,99 € → 28,98 € (+0,99 €, +3,54 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/563387-30d31e9fc22c.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

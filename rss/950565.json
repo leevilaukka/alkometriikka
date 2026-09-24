@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dr. Loosen Riesling Alcohol Free – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/950565/",
+	"feed_url": "https://alkometriikka.fi/rss/950565.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dr. Loosen Riesling Alcohol Free.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-950565-2026-07-18-11.93",
+			"url": "https://alkometriikka.fi/tuotteet/950565/",
+			"title": "Dr. Loosen Riesling Alcohol Free — 11,90 € → 11,93 €",
+			"content_html": "<p>Tuotteen Dr. Loosen Riesling Alcohol Free hinta on muuttunut.</p><p>11,90 € → 11,93 € (+0,03 €, +0,25 %).</p>",
+			"summary": "Tuotteen Dr. Loosen Riesling Alcohol Free hinta on muuttunut. 11,90 € → 11,93 € (+0,03 €, +0,25 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/950565-3b17a5eea992.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat valko- ja roseeviinit"
+			]
+		}
+	]
+}

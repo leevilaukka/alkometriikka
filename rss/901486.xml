@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Silverboom Cabernet Sauvignon Winemaker´s Release hanapakkaus – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/901486/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Silverboom Cabernet Sauvignon Winemaker´s Release hanapakkaus.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/901486.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Silverboom Cabernet Sauvignon Winemaker´s Release hanapakkaus – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Silverboom Cabernet Sauvignon Winemaker´s Release hanapakkaus — 41,83 € → 39,95 €</title>
+			<link>https://alkometriikka.fi/tuotteet/901486/</link>
+			<guid isPermaLink="false">alkometriikka-901486-2026-07-18-39.95</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Silverboom Cabernet Sauvignon Winemaker´s Release hanapakkaus hinta on muuttunut.</p><p>41,83 € → 39,95 € (−1,88 €, −4,49 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/901486-bb76e5d235f6.png" />
+		</item>
+	</channel>
+</rss>

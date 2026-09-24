@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Coca-Cola 0,5L muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/600033/",
+	"feed_url": "https://alkometriikka.fi/rss/600033.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Coca-Cola 0,5L muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-600033-2026-07-18-2.7",
+			"url": "https://alkometriikka.fi/tuotteet/600033/",
+			"title": "Coca-Cola 0,5L muovipullo — 2,48 € → 2,70 €",
+			"content_html": "<p>Tuotteen Coca-Cola 0,5L muovipullo hinta on muuttunut.</p><p>2,48 € → 2,70 € (+0,22 €, +8,87 %).</p>",
+			"summary": "Tuotteen Coca-Cola 0,5L muovipullo hinta on muuttunut. 2,48 € → 2,70 € (+0,22 €, +8,87 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600033-717b39fc6ce0.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

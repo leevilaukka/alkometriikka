@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Granbazán Veigalobos Albariño 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/905848/",
+	"feed_url": "https://alkometriikka.fi/rss/905848.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Granbazán Veigalobos Albariño 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-905848-2026-07-18-66.99",
+			"url": "https://alkometriikka.fi/tuotteet/905848/",
+			"title": "Granbazán Veigalobos Albariño 2021 — 67,45 € → 66,99 €",
+			"content_html": "<p>Tuotteen Granbazán Veigalobos Albariño 2021 hinta on muuttunut.</p><p>67,45 € → 66,99 € (−0,46 €, −0,68 %).</p>",
+			"summary": "Tuotteen Granbazán Veigalobos Albariño 2021 hinta on muuttunut. 67,45 € → 66,99 € (−0,46 €, −0,68 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/905848-531c775cd229.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Petó Organic 2023 hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/492788/",
+	"feed_url": "https://alkometriikka.fi/rss/492788.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Petó Organic 2023 hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-492788-2026-07-18-32.99",
+			"url": "https://alkometriikka.fi/tuotteet/492788/",
+			"title": "Petó Organic 2023 hanapakkaus — 33,99 € → 32,99 €",
+			"content_html": "<p>Tuotteen Petó Organic 2023 hanapakkaus hinta on muuttunut.</p><p>33,99 € → 32,99 € (−1,00 €, −2,94 %).</p>",
+			"summary": "Tuotteen Petó Organic 2023 hanapakkaus hinta on muuttunut. 33,99 € → 32,99 € (−1,00 €, −2,94 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/492788-90148286b03d.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

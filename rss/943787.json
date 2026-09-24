@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Zenato Amarone Classico della Valpolicella Riserva 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/943787/",
+	"feed_url": "https://alkometriikka.fi/rss/943787.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Zenato Amarone Classico della Valpolicella Riserva 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-943787-2026-07-18-117.99",
+			"url": "https://alkometriikka.fi/tuotteet/943787/",
+			"title": "Zenato Amarone Classico della Valpolicella Riserva 2019 — 115,91 € → 117,99 €",
+			"content_html": "<p>Tuotteen Zenato Amarone Classico della Valpolicella Riserva 2019 hinta on muuttunut.</p><p>115,91 € → 117,99 € (+2,08 €, +1,79 %).</p>",
+			"summary": "Tuotteen Zenato Amarone Classico della Valpolicella Riserva 2019 hinta on muuttunut. 115,91 € → 117,99 € (+2,08 €, +1,79 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/943787-16c9a5d0963c.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bache-Gabrielsen Suomi 1917-2017 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/190757/",
+	"feed_url": "https://alkometriikka.fi/rss/190757.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bache-Gabrielsen Suomi 1917-2017.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-190757-2026-07-18-55.98",
+			"url": "https://alkometriikka.fi/tuotteet/190757/",
+			"title": "Bache-Gabrielsen Suomi 1917-2017 — 56,27 € → 55,98 €",
+			"content_html": "<p>Tuotteen Bache-Gabrielsen Suomi 1917-2017 hinta on muuttunut.</p><p>56,27 € → 55,98 € (−0,29 €, −0,52 %).</p>",
+			"summary": "Tuotteen Bache-Gabrielsen Suomi 1917-2017 hinta on muuttunut. 56,27 € → 55,98 € (−0,29 €, −0,52 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/190757-bafb47f20aea.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Stallhagen Styrman Non Alcoholic IPA – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/949792/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Stallhagen Styrman Non Alcoholic IPA.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/949792.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Stallhagen Styrman Non Alcoholic IPA – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Stallhagen Styrman Non Alcoholic IPA — 2,49 € → 2,24 €</title>
+			<link>https://alkometriikka.fi/tuotteet/949792/</link>
+			<guid isPermaLink="false">alkometriikka-949792-2026-09-04-2.24</guid>
+			<pubDate>Fri, 04 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Alkoholittomat / alkoholittomat oluet</category>
+			<description><![CDATA[<p>Tuotteen Stallhagen Styrman Non Alcoholic IPA hinta on muuttunut.</p><p>2,49 € → 2,24 € (−0,25 €, −10,04 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/949792-03c07acdbe28.png" />
+		</item>
+		<item>
+			<title>Stallhagen Styrman Non Alcoholic IPA — 2,48 € → 2,49 €</title>
+			<link>https://alkometriikka.fi/tuotteet/949792/</link>
+			<guid isPermaLink="false">alkometriikka-949792-2026-07-18-2.49</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Alkoholittomat / alkoholittomat oluet</category>
+			<description><![CDATA[<p>Tuotteen Stallhagen Styrman Non Alcoholic IPA hinta on muuttunut.</p><p>2,48 € → 2,49 € (+0,01 €, +0,40 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/949792-03c07acdbe28.png" />
+		</item>
+	</channel>
+</rss>

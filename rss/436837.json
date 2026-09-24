@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Footmark Pinotage 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/436837/",
+	"feed_url": "https://alkometriikka.fi/rss/436837.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Footmark Pinotage 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-436837-2026-07-18-8.98",
+			"url": "https://alkometriikka.fi/tuotteet/436837/",
+			"title": "Footmark Pinotage 2024 — 9,44 € → 8,98 €",
+			"content_html": "<p>Tuotteen Footmark Pinotage 2024 hinta on muuttunut.</p><p>9,44 € → 8,98 € (−0,46 €, −4,87 %).</p>",
+			"summary": "Tuotteen Footmark Pinotage 2024 hinta on muuttunut. 9,44 € → 8,98 € (−0,46 €, −4,87 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/436837-7f44583a57ba.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

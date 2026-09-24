@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hardy Fine VS – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/919057/",
+	"feed_url": "https://alkometriikka.fi/rss/919057.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hardy Fine VS.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-919057-2026-07-18-49.9",
+			"url": "https://alkometriikka.fi/tuotteet/919057/",
+			"title": "Hardy Fine VS — 49,26 € → 49,90 €",
+			"content_html": "<p>Tuotteen Hardy Fine VS hinta on muuttunut.</p><p>49,26 € → 49,90 € (+0,64 €, +1,30 %).</p>",
+			"summary": "Tuotteen Hardy Fine VS hinta on muuttunut. 49,26 € → 49,90 € (+0,64 €, +1,30 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/919057-37fec0fc5d8a.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

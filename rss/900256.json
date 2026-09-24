@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ayala Champagne Brut Majeur – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900256/",
+	"feed_url": "https://alkometriikka.fi/rss/900256.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ayala Champagne Brut Majeur.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900256-2026-07-18-31.99",
+			"url": "https://alkometriikka.fi/tuotteet/900256/",
+			"title": "Ayala Champagne Brut Majeur — 31,69 € → 31,99 €",
+			"content_html": "<p>Tuotteen Ayala Champagne Brut Majeur hinta on muuttunut.</p><p>31,69 € → 31,99 € (+0,30 €, +0,95 %).</p>",
+			"summary": "Tuotteen Ayala Champagne Brut Majeur hinta on muuttunut. 31,69 € → 31,99 € (+0,30 €, +0,95 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900256-15900e3003f3.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

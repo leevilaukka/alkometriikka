@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Imaz  Gran Reserva ICON 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900431/",
+	"feed_url": "https://alkometriikka.fi/rss/900431.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Imaz  Gran Reserva ICON 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900431-2026-07-18-62.73",
+			"url": "https://alkometriikka.fi/tuotteet/900431/",
+			"title": "Imaz  Gran Reserva ICON 2019 — 62,06 € → 62,73 €",
+			"content_html": "<p>Tuotteen Imaz  Gran Reserva ICON 2019 hinta on muuttunut.</p><p>62,06 € → 62,73 € (+0,67 €, +1,08 %).</p>",
+			"summary": "Tuotteen Imaz Gran Reserva ICON 2019 hinta on muuttunut. 62,06 € → 62,73 € (+0,67 €, +1,08 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900431-598d649f9ddd.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

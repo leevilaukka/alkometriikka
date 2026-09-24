@@ -1,0 +1,50 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mallaskoski Nemesis Cognac Barrel Aged Imperial Rye – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/953032/",
+	"feed_url": "https://alkometriikka.fi/rss/953032.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mallaskoski Nemesis Cognac Barrel Aged Imperial Rye.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-953032-2026-07-18-5.96",
+			"url": "https://alkometriikka.fi/tuotteet/953032/",
+			"title": "Mallaskoski Nemesis Cognac Barrel Aged Imperial Rye — 5,97 € → 5,96 €",
+			"content_html": "<p>Tuotteen Mallaskoski Nemesis Cognac Barrel Aged Imperial Rye hinta on muuttunut.</p><p>5,97 € → 5,96 € (−0,01 €, −0,17 %).</p>",
+			"summary": "Tuotteen Mallaskoski Nemesis Cognac Barrel Aged Imperial Rye hinta on muuttunut. 5,97 € → 5,96 € (−0,01 €, −0,17 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/953032-16330fd3ffa8.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-953032-2026-02-02-5.87",
+			"url": "https://alkometriikka.fi/tuotteet/953032/",
+			"title": "Mallaskoski Nemesis Cognac Barrel Aged Imperial Rye — 5,97 € → 5,87 €",
+			"content_html": "<p>Tuotteen Mallaskoski Nemesis Cognac Barrel Aged Imperial Rye hinta on muuttunut.</p><p>5,97 € → 5,87 € (−0,10 €, −1,68 %).</p>",
+			"summary": "Tuotteen Mallaskoski Nemesis Cognac Barrel Aged Imperial Rye hinta on muuttunut. 5,97 € → 5,87 € (−0,10 €, −1,68 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/953032-16330fd3ffa8.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-953032-2026-02-02-5.97",
+			"url": "https://alkometriikka.fi/tuotteet/953032/",
+			"title": "Mallaskoski Nemesis Cognac Barrel Aged Imperial Rye — 5,87 € → 5,97 €",
+			"content_html": "<p>Tuotteen Mallaskoski Nemesis Cognac Barrel Aged Imperial Rye hinta on muuttunut.</p><p>5,87 € → 5,97 € (+0,10 €, +1,70 %).</p>",
+			"summary": "Tuotteen Mallaskoski Nemesis Cognac Barrel Aged Imperial Rye hinta on muuttunut. 5,87 € → 5,97 € (+0,10 €, +1,70 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/953032-16330fd3ffa8.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

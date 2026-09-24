@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Four Pillars Rare Dry Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901524/",
+	"feed_url": "https://alkometriikka.fi/rss/901524.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Four Pillars Rare Dry Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901524-2026-07-18-57.98",
+			"url": "https://alkometriikka.fi/tuotteet/901524/",
+			"title": "Four Pillars Rare Dry Gin — 58,25 € → 57,98 €",
+			"content_html": "<p>Tuotteen Four Pillars Rare Dry Gin hinta on muuttunut.</p><p>58,25 € → 57,98 € (−0,27 €, −0,46 %).</p>",
+			"summary": "Tuotteen Four Pillars Rare Dry Gin hinta on muuttunut. 58,25 € → 57,98 € (−0,27 €, −0,46 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901524-15a1aab1ab08.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

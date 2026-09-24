@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Edmond Briottet Liquer de Basilic – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/938508/",
+	"feed_url": "https://alkometriikka.fi/rss/938508.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Edmond Briottet Liquer de Basilic.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-938508-2026-07-18-25.99",
+			"url": "https://alkometriikka.fi/tuotteet/938508/",
+			"title": "Edmond Briottet Liquer de Basilic — 25,07 € → 25,99 €",
+			"content_html": "<p>Tuotteen Edmond Briottet Liquer de Basilic hinta on muuttunut.</p><p>25,07 € → 25,99 € (+0,92 €, +3,67 %).</p>",
+			"summary": "Tuotteen Edmond Briottet Liquer de Basilic hinta on muuttunut. 25,07 € → 25,99 € (+0,92 €, +3,67 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/938508-74d339ae8e96.png",
+			"tags": [
+				"Väkevät",
+				"yrttiliköörit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pere Kermann's Absinthe – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/911755/",
+	"feed_url": "https://alkometriikka.fi/rss/911755.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pere Kermann's Absinthe.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-911755-2026-07-18-47.98",
+			"url": "https://alkometriikka.fi/tuotteet/911755/",
+			"title": "Pere Kermann's Absinthe — 47,70 € → 47,98 €",
+			"content_html": "<p>Tuotteen Pere Kermann's Absinthe hinta on muuttunut.</p><p>47,70 € → 47,98 € (+0,28 €, +0,59 %).</p>",
+			"summary": "Tuotteen Pere Kermann's Absinthe hinta on muuttunut. 47,70 € → 47,98 € (+0,28 €, +0,59 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/911755-8c4397554eae.png",
+			"tags": [
+				"Väkevät",
+				"anistisleet"
+			]
+		}
+	]
+}

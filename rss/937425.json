@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Faliero Langhe Nebbiolo 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/937425/",
+	"feed_url": "https://alkometriikka.fi/rss/937425.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Faliero Langhe Nebbiolo 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-937425-2026-07-18-17.49",
+			"url": "https://alkometriikka.fi/tuotteet/937425/",
+			"title": "Faliero Langhe Nebbiolo 2022 — 17,45 € → 17,49 €",
+			"content_html": "<p>Tuotteen Faliero Langhe Nebbiolo 2022 hinta on muuttunut.</p><p>17,45 € → 17,49 € (+0,04 €, +0,23 %).</p>",
+			"summary": "Tuotteen Faliero Langhe Nebbiolo 2022 hinta on muuttunut. 17,45 € → 17,49 € (+0,04 €, +0,23 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/937425-e4708b346b01.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

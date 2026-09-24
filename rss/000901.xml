@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Hennessy Very Special – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/000901/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Hennessy Very Special.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/000901.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Hennessy Very Special – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Hennessy Very Special — 53,78 € → 49,98 €</title>
+			<link>https://alkometriikka.fi/tuotteet/000901/</link>
+			<guid isPermaLink="false">alkometriikka-000901-2026-07-18-49.98</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / konjakit</category>
+			<description><![CDATA[<p>Tuotteen Hennessy Very Special hinta on muuttunut.</p><p>53,78 € → 49,98 € (−3,80 €, −7,07 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/000901-ab76e815c8d7.png" />
+		</item>
+	</channel>
+</rss>

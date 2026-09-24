@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cline Sauvignon Blanc 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/563927/",
+	"feed_url": "https://alkometriikka.fi/rss/563927.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cline Sauvignon Blanc 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-563927-2026-07-18-14.99",
+			"url": "https://alkometriikka.fi/tuotteet/563927/",
+			"title": "Cline Sauvignon Blanc 2022 — 14,98 € → 14,99 €",
+			"content_html": "<p>Tuotteen Cline Sauvignon Blanc 2022 hinta on muuttunut.</p><p>14,98 € → 14,99 € (+0,01 €, +0,07 %).</p>",
+			"summary": "Tuotteen Cline Sauvignon Blanc 2022 hinta on muuttunut. 14,98 € → 14,99 € (+0,01 €, +0,07 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/563927-af1d60126931.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

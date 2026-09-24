@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tiempo de Diversion White hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901721/",
+	"feed_url": "https://alkometriikka.fi/rss/901721.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tiempo de Diversion White hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901721-2026-07-18-33.48",
+			"url": "https://alkometriikka.fi/tuotteet/901721/",
+			"title": "Tiempo de Diversion White hanapakkaus — 34,83 € → 33,48 €",
+			"content_html": "<p>Tuotteen Tiempo de Diversion White hanapakkaus hinta on muuttunut.</p><p>34,83 € → 33,48 € (−1,35 €, −3,88 %).</p>",
+			"summary": "Tuotteen Tiempo de Diversion White hanapakkaus hinta on muuttunut. 34,83 € → 33,48 € (−1,35 €, −3,88 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901721-5f8e31a9a657.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

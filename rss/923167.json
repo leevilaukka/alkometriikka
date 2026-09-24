@@ -1,0 +1,50 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tanqueray No. Ten – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/923167/",
+	"feed_url": "https://alkometriikka.fi/rss/923167.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tanqueray No. Ten.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-923167-2026-07-18-55.98",
+			"url": "https://alkometriikka.fi/tuotteet/923167/",
+			"title": "Tanqueray No. Ten — 55,32 € → 55,98 €",
+			"content_html": "<p>Tuotteen Tanqueray No. Ten hinta on muuttunut.</p><p>55,32 € → 55,98 € (+0,66 €, +1,19 %).</p>",
+			"summary": "Tuotteen Tanqueray No. Ten hinta on muuttunut. 55,32 € → 55,98 € (+0,66 €, +1,19 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/923167-15b8d8382200.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		},
+		{
+			"id": "alkometriikka-923167-2026-02-02-55.22",
+			"url": "https://alkometriikka.fi/tuotteet/923167/",
+			"title": "Tanqueray No. Ten — 55,32 € → 55,22 €",
+			"content_html": "<p>Tuotteen Tanqueray No. Ten hinta on muuttunut.</p><p>55,32 € → 55,22 € (−0,10 €, −0,18 %).</p>",
+			"summary": "Tuotteen Tanqueray No. Ten hinta on muuttunut. 55,32 € → 55,22 € (−0,10 €, −0,18 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/923167-15b8d8382200.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		},
+		{
+			"id": "alkometriikka-923167-2026-02-02-55.32",
+			"url": "https://alkometriikka.fi/tuotteet/923167/",
+			"title": "Tanqueray No. Ten — 55,22 € → 55,32 €",
+			"content_html": "<p>Tuotteen Tanqueray No. Ten hinta on muuttunut.</p><p>55,22 € → 55,32 € (+0,10 €, +0,18 %).</p>",
+			"summary": "Tuotteen Tanqueray No. Ten hinta on muuttunut. 55,22 € → 55,32 € (+0,10 €, +0,18 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/923167-15b8d8382200.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

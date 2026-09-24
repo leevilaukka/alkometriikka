@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Finlandia Blackcurrant – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/950067/",
+	"feed_url": "https://alkometriikka.fi/rss/950067.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Finlandia Blackcurrant.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-950067-2026-07-18-29.48",
+			"url": "https://alkometriikka.fi/tuotteet/950067/",
+			"title": "Finlandia Blackcurrant — 29,44 € → 29,48 €",
+			"content_html": "<p>Tuotteen Finlandia Blackcurrant hinta on muuttunut.</p><p>29,44 € → 29,48 € (+0,04 €, +0,14 %).</p>",
+			"summary": "Tuotteen Finlandia Blackcurrant hinta on muuttunut. 29,44 € → 29,48 € (+0,04 €, +0,14 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/950067-535c08bd5208.png",
+			"tags": [
+				"Väkevät",
+				"maustetut vodkat"
+			]
+		}
+	]
+}

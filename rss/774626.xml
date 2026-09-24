@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Benediktiner Hell – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/774626/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Benediktiner Hell.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/774626.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Benediktiner Hell – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Benediktiner Hell — 4,35 € → 4,25 €</title>
+			<link>https://alkometriikka.fi/tuotteet/774626/</link>
+			<guid isPermaLink="false">alkometriikka-774626-2026-02-02-4.25</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Panimotuotteet / oluet</category>
+			<description><![CDATA[<p>Tuotteen Benediktiner Hell hinta on muuttunut.</p><p>4,35 € → 4,25 € (−0,10 €, −2,30 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/774626-848b68d85ade.png" />
+		</item>
+		<item>
+			<title>Benediktiner Hell — 4,25 € → 4,35 €</title>
+			<link>https://alkometriikka.fi/tuotteet/774626/</link>
+			<guid isPermaLink="false">alkometriikka-774626-2026-02-02-4.35</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Panimotuotteet / oluet</category>
+			<description><![CDATA[<p>Tuotteen Benediktiner Hell hinta on muuttunut.</p><p>4,25 € → 4,35 € (+0,10 €, +2,35 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/774626-848b68d85ade.png" />
+		</item>
+	</channel>
+</rss>

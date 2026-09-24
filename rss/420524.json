@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Sandpiper Barossa Shiraz 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/420524/",
+	"feed_url": "https://alkometriikka.fi/rss/420524.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Sandpiper Barossa Shiraz 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-420524-2026-07-18-10.9",
+			"url": "https://alkometriikka.fi/tuotteet/420524/",
+			"title": "Sandpiper Barossa Shiraz 2021 — 10,71 € → 10,90 €",
+			"content_html": "<p>Tuotteen Sandpiper Barossa Shiraz 2021 hinta on muuttunut.</p><p>10,71 € → 10,90 € (+0,19 €, +1,77 %).</p>",
+			"summary": "Tuotteen Sandpiper Barossa Shiraz 2021 hinta on muuttunut. 10,71 € → 10,90 € (+0,19 €, +1,77 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/420524-4f7e3443c795.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

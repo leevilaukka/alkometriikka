@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – With Love Syrah 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/934743/",
+	"feed_url": "https://alkometriikka.fi/rss/934743.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: With Love Syrah 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-934743-2026-07-18-13.98",
+			"url": "https://alkometriikka.fi/tuotteet/934743/",
+			"title": "With Love Syrah 2023 — 13,46 € → 13,98 €",
+			"content_html": "<p>Tuotteen With Love Syrah 2023 hinta on muuttunut.</p><p>13,46 € → 13,98 € (+0,52 €, +3,86 %).</p>",
+			"summary": "Tuotteen With Love Syrah 2023 hinta on muuttunut. 13,46 € → 13,98 € (+0,52 €, +3,86 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/934743-550af7347a5e.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

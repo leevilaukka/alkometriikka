@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – A. Bergere Rosé Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/952984/",
+	"feed_url": "https://alkometriikka.fi/rss/952984.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: A. Bergere Rosé Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-952984-2026-07-18-51.99",
+			"url": "https://alkometriikka.fi/tuotteet/952984/",
+			"title": "A. Bergere Rosé Champagne Brut — 52,05 € → 51,99 €",
+			"content_html": "<p>Tuotteen A. Bergere Rosé Champagne Brut hinta on muuttunut.</p><p>52,05 € → 51,99 € (−0,06 €, −0,12 %).</p>",
+			"summary": "Tuotteen A. Bergere Rosé Champagne Brut hinta on muuttunut. 52,05 € → 51,99 € (−0,06 €, −0,12 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/952984-8a94a4f24fac.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

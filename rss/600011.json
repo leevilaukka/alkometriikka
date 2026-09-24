@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Torres Serena Sauvignon Blanc – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/600011/",
+	"feed_url": "https://alkometriikka.fi/rss/600011.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Torres Serena Sauvignon Blanc.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-600011-2026-07-18-10.49",
+			"url": "https://alkometriikka.fi/tuotteet/600011/",
+			"title": "Torres Serena Sauvignon Blanc — 10,45 € → 10,49 €",
+			"content_html": "<p>Tuotteen Torres Serena Sauvignon Blanc hinta on muuttunut.</p><p>10,45 € → 10,49 € (+0,04 €, +0,38 %).</p>",
+			"summary": "Tuotteen Torres Serena Sauvignon Blanc hinta on muuttunut. 10,45 € → 10,49 € (+0,04 €, +0,38 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600011-c36a7d21a7ba.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat valko- ja roseeviinit"
+			]
+		}
+	]
+}

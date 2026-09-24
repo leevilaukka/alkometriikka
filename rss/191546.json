@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lithuanian Vodka Classic muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/191546/",
+	"feed_url": "https://alkometriikka.fi/rss/191546.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lithuanian Vodka Classic muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-191546-2026-07-18-16.48",
+			"url": "https://alkometriikka.fi/tuotteet/191546/",
+			"title": "Lithuanian Vodka Classic muovipullo — 16,56 € → 16,48 €",
+			"content_html": "<p>Tuotteen Lithuanian Vodka Classic muovipullo hinta on muuttunut.</p><p>16,56 € → 16,48 € (−0,08 €, −0,48 %).</p>",
+			"summary": "Tuotteen Lithuanian Vodka Classic muovipullo hinta on muuttunut. 16,56 € → 16,48 € (−0,08 €, −0,48 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/191546-dc7d1831334a.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

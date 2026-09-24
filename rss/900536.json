@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Austo Novebolle Rosé Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900536/",
+	"feed_url": "https://alkometriikka.fi/rss/900536.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Austo Novebolle Rosé Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900536-2026-07-18-13.98",
+			"url": "https://alkometriikka.fi/tuotteet/900536/",
+			"title": "Austo Novebolle Rosé Brut — 14,99 € → 13,98 €",
+			"content_html": "<p>Tuotteen Austo Novebolle Rosé Brut hinta on muuttunut.</p><p>14,99 € → 13,98 € (−1,01 €, −6,74 %).</p>",
+			"summary": "Tuotteen Austo Novebolle Rosé Brut hinta on muuttunut. 14,99 € → 13,98 € (−1,01 €, −6,74 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900536-8ec9851d392b.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Engine Italian Organic Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901473/",
+	"feed_url": "https://alkometriikka.fi/rss/901473.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Engine Italian Organic Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901473-2026-07-18-5.49",
+			"url": "https://alkometriikka.fi/tuotteet/901473/",
+			"title": "Engine Italian Organic Gin — 5,51 € → 5,49 €",
+			"content_html": "<p>Tuotteen Engine Italian Organic Gin hinta on muuttunut.</p><p>5,51 € → 5,49 € (−0,02 €, −0,36 %).</p>",
+			"summary": "Tuotteen Engine Italian Organic Gin hinta on muuttunut. 5,51 € → 5,49 € (−0,02 €, −0,36 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901473-6a3c31bfedc5.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

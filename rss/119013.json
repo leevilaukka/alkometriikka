@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Fireball muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/119013/",
+	"feed_url": "https://alkometriikka.fi/rss/119013.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Fireball muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-119013-2026-07-18-8.69",
+			"url": "https://alkometriikka.fi/tuotteet/119013/",
+			"title": "Fireball muovipullo — 8,66 € → 8,69 €",
+			"content_html": "<p>Tuotteen Fireball muovipullo hinta on muuttunut.</p><p>8,66 € → 8,69 € (+0,03 €, +0,35 %).</p>",
+			"summary": "Tuotteen Fireball muovipullo hinta on muuttunut. 8,66 € → 8,69 € (+0,03 €, +0,35 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/119013-48dd77d4fe95.png",
+			"tags": [
+				"Väkevät",
+				"mausteliköörit"
+			]
+		}
+	]
+}

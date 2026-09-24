@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tío Pepe Fino en Rama – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901540/",
+	"feed_url": "https://alkometriikka.fi/rss/901540.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tío Pepe Fino en Rama.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901540-2026-07-18-25.28",
+			"url": "https://alkometriikka.fi/tuotteet/901540/",
+			"title": "Tío Pepe Fino en Rama — 25,07 € → 25,28 €",
+			"content_html": "<p>Tuotteen Tío Pepe Fino en Rama hinta on muuttunut.</p><p>25,07 € → 25,28 € (+0,21 €, +0,84 %).</p>",
+			"summary": "Tuotteen Tío Pepe Fino en Rama hinta on muuttunut. 25,07 € → 25,28 € (+0,21 €, +0,84 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901540-a675b18e8a90.png",
+			"tags": [
+				"Välituotteet",
+				"sherryt"
+			]
+		}
+	]
+}

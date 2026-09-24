@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Thörle Riesling 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/905937/",
+	"feed_url": "https://alkometriikka.fi/rss/905937.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Thörle Riesling 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-905937-2026-07-18-18.49",
+			"url": "https://alkometriikka.fi/tuotteet/905937/",
+			"title": "Thörle Riesling 2025 — 18,45 € → 18,49 €",
+			"content_html": "<p>Tuotteen Thörle Riesling 2025 hinta on muuttunut.</p><p>18,45 € → 18,49 € (+0,04 €, +0,22 %).</p>",
+			"summary": "Tuotteen Thörle Riesling 2025 hinta on muuttunut. 18,45 € → 18,49 € (+0,04 €, +0,22 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/905937-fe4890bd9d38.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

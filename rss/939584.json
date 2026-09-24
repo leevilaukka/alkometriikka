@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Fleurie Terres Dorées 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/939584/",
+	"feed_url": "https://alkometriikka.fi/rss/939584.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Fleurie Terres Dorées 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-939584-2026-07-18-38.7",
+			"url": "https://alkometriikka.fi/tuotteet/939584/",
+			"title": "Fleurie Terres Dorées 2023 — 38,66 € → 38,70 €",
+			"content_html": "<p>Tuotteen Fleurie Terres Dorées 2023 hinta on muuttunut.</p><p>38,66 € → 38,70 € (+0,04 €, +0,10 %).</p>",
+			"summary": "Tuotteen Fleurie Terres Dorées 2023 hinta on muuttunut. 38,66 € → 38,70 € (+0,04 €, +0,10 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/939584-4ce1b8b06cef.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

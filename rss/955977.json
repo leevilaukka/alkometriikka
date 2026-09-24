@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pierre Paillard Les Parcelles Grand Cru Champagne Extra Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/955977/",
+	"feed_url": "https://alkometriikka.fi/rss/955977.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pierre Paillard Les Parcelles Grand Cru Champagne Extra Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-955977-2026-07-18-62.91",
+			"url": "https://alkometriikka.fi/tuotteet/955977/",
+			"title": "Pierre Paillard Les Parcelles Grand Cru Champagne Extra Brut — 62,58 € → 62,91 €",
+			"content_html": "<p>Tuotteen Pierre Paillard Les Parcelles Grand Cru Champagne Extra Brut hinta on muuttunut.</p><p>62,58 € → 62,91 € (+0,33 €, +0,53 %).</p>",
+			"summary": "Tuotteen Pierre Paillard Les Parcelles Grand Cru Champagne Extra Brut hinta on muuttunut. 62,58 € → 62,91 € (+0,33 €, +0,53 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/955977-f864c0a56653.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

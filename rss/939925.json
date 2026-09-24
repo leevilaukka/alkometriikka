@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lol Fisu Shot – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/939925/",
+	"feed_url": "https://alkometriikka.fi/rss/939925.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lol Fisu Shot.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-939925-2026-07-18-15.29",
+			"url": "https://alkometriikka.fi/tuotteet/939925/",
+			"title": "Lol Fisu Shot — 15,09 € → 15,29 €",
+			"content_html": "<p>Tuotteen Lol Fisu Shot hinta on muuttunut.</p><p>15,09 € → 15,29 € (+0,20 €, +1,33 %).</p>",
+			"summary": "Tuotteen Lol Fisu Shot hinta on muuttunut. 15,09 € → 15,29 € (+0,20 €, +1,33 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/939925-0713b7d948ca.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

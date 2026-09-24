@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ver Sacrum GSM 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/958502/",
+	"feed_url": "https://alkometriikka.fi/rss/958502.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ver Sacrum GSM 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-958502-2026-07-18-27.9",
+			"url": "https://alkometriikka.fi/tuotteet/958502/",
+			"title": "Ver Sacrum GSM 2022 — 25,99 € → 27,90 €",
+			"content_html": "<p>Tuotteen Ver Sacrum GSM 2022 hinta on muuttunut.</p><p>25,99 € → 27,90 € (+1,91 €, +7,35 %).</p>",
+			"summary": "Tuotteen Ver Sacrum GSM 2022 hinta on muuttunut. 25,99 € → 27,90 € (+1,91 €, +7,35 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/958502-512d5b87aaf3.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

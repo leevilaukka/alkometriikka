@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dugges Idjit Imperial Stout tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/778124/",
+	"feed_url": "https://alkometriikka.fi/rss/778124.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dugges Idjit Imperial Stout tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-778124-2026-07-18-5.97",
+			"url": "https://alkometriikka.fi/tuotteet/778124/",
+			"title": "Dugges Idjit Imperial Stout tölkki — 5,98 € → 5,97 €",
+			"content_html": "<p>Tuotteen Dugges Idjit Imperial Stout tölkki hinta on muuttunut.</p><p>5,98 € → 5,97 € (−0,01 €, −0,17 %).</p>",
+			"summary": "Tuotteen Dugges Idjit Imperial Stout tölkki hinta on muuttunut. 5,98 € → 5,97 € (−0,01 €, −0,17 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/778124-79a1f01d8bc5.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

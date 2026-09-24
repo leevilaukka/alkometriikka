@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Freemark Abbey Merlot 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/957503/",
+	"feed_url": "https://alkometriikka.fi/rss/957503.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Freemark Abbey Merlot 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-957503-2026-07-18-89.89",
+			"url": "https://alkometriikka.fi/tuotteet/957503/",
+			"title": "Freemark Abbey Merlot 2019 — 90,81 € → 89,89 €",
+			"content_html": "<p>Tuotteen Freemark Abbey Merlot 2019 hinta on muuttunut.</p><p>90,81 € → 89,89 € (−0,92 €, −1,01 %).</p>",
+			"summary": "Tuotteen Freemark Abbey Merlot 2019 hinta on muuttunut. 90,81 € → 89,89 € (−0,92 €, −1,01 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/957503-337f5b98b414.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

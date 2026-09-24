@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hans Baer Riesling 2024 muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/534578/",
+	"feed_url": "https://alkometriikka.fi/rss/534578.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hans Baer Riesling 2024 muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-534578-2026-07-18-13.59",
+			"url": "https://alkometriikka.fi/tuotteet/534578/",
+			"title": "Hans Baer Riesling 2024 muovipullo — 13,49 € → 13,59 €",
+			"content_html": "<p>Tuotteen Hans Baer Riesling 2024 muovipullo hinta on muuttunut.</p><p>13,49 € → 13,59 € (+0,10 €, +0,74 %).</p>",
+			"summary": "Tuotteen Hans Baer Riesling 2024 muovipullo hinta on muuttunut. 13,49 € → 13,59 € (+0,10 €, +0,74 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/534578-633f33b6b6b7.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

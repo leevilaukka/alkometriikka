@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bellavista Alma Assemblage Franciacorta Extra Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/534197/",
+	"feed_url": "https://alkometriikka.fi/rss/534197.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bellavista Alma Assemblage Franciacorta Extra Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-534197-2026-07-18-43.99",
+			"url": "https://alkometriikka.fi/tuotteet/534197/",
+			"title": "Bellavista Alma Assemblage Franciacorta Extra Brut — 42,45 € → 43,99 €",
+			"content_html": "<p>Tuotteen Bellavista Alma Assemblage Franciacorta Extra Brut hinta on muuttunut.</p><p>42,45 € → 43,99 € (+1,54 €, +3,63 %).</p>",
+			"summary": "Tuotteen Bellavista Alma Assemblage Franciacorta Extra Brut hinta on muuttunut. 42,45 € → 43,99 € (+1,54 €, +3,63 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/534197-4832b69e2c15.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

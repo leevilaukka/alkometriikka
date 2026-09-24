@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Per Se Aperitivo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/937022/",
+	"feed_url": "https://alkometriikka.fi/rss/937022.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Per Se Aperitivo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-937022-2026-07-18-27.99",
+			"url": "https://alkometriikka.fi/tuotteet/937022/",
+			"title": "Per Se Aperitivo — 28,09 € → 27,99 €",
+			"content_html": "<p>Tuotteen Per Se Aperitivo hinta on muuttunut.</p><p>28,09 € → 27,99 € (−0,10 €, −0,36 %).</p>",
+			"summary": "Tuotteen Per Se Aperitivo hinta on muuttunut. 28,09 € → 27,99 € (−0,10 €, −0,36 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/937022-045bc82bd603.png",
+			"tags": [
+				"Panimotuotteet",
+				"juomasekoitukset"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Banfi Brunello di Montalcino 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/931997/",
+	"feed_url": "https://alkometriikka.fi/rss/931997.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Banfi Brunello di Montalcino 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-931997-2026-07-18-59.99",
+			"url": "https://alkometriikka.fi/tuotteet/931997/",
+			"title": "Banfi Brunello di Montalcino 2020 — 57,46 € → 59,99 €",
+			"content_html": "<p>Tuotteen Banfi Brunello di Montalcino 2020 hinta on muuttunut.</p><p>57,46 € → 59,99 € (+2,53 €, +4,40 %).</p>",
+			"summary": "Tuotteen Banfi Brunello di Montalcino 2020 hinta on muuttunut. 57,46 € → 59,99 € (+2,53 €, +4,40 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/931997-05cea8588107.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

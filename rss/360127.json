@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dow's Colheita Single Harvest Tawny Port 2007 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/360127/",
+	"feed_url": "https://alkometriikka.fi/rss/360127.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dow's Colheita Single Harvest Tawny Port 2007.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-360127-2026-07-18-39.99",
+			"url": "https://alkometriikka.fi/tuotteet/360127/",
+			"title": "Dow's Colheita Single Harvest Tawny Port 2007 — 40,55 € → 39,99 €",
+			"content_html": "<p>Tuotteen Dow's Colheita Single Harvest Tawny Port 2007 hinta on muuttunut.</p><p>40,55 € → 39,99 € (−0,56 €, −1,38 %).</p>",
+			"summary": "Tuotteen Dow's Colheita Single Harvest Tawny Port 2007 hinta on muuttunut. 40,55 € → 39,99 € (−0,56 €, −1,38 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/360127-91fcbd715f3f.png",
+			"tags": [
+				"Välituotteet",
+				"portviinit"
+			]
+		}
+	]
+}

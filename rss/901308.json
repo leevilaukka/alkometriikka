@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Laurent-Perrier la Cuvée Champagne Brut Salmanazar – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901308/",
+	"feed_url": "https://alkometriikka.fi/rss/901308.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Laurent-Perrier la Cuvée Champagne Brut Salmanazar.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901308-2026-07-18-1999.99",
+			"url": "https://alkometriikka.fi/tuotteet/901308/",
+			"title": "Laurent-Perrier la Cuvée Champagne Brut Salmanazar — 1 977,19 € → 1 999,99 €",
+			"content_html": "<p>Tuotteen Laurent-Perrier la Cuvée Champagne Brut Salmanazar hinta on muuttunut.</p><p>1 977,19 € → 1 999,99 € (+22,80 €, +1,15 %).</p>",
+			"summary": "Tuotteen Laurent-Perrier la Cuvée Champagne Brut Salmanazar hinta on muuttunut. 1 977,19 € → 1 999,99 € (+22,80 €, +1,15 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901308-744aeabb7812.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

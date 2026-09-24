@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Juniper Gin muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/178396/",
+	"feed_url": "https://alkometriikka.fi/rss/178396.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Juniper Gin muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-178396-2026-07-18-18.79",
+			"url": "https://alkometriikka.fi/tuotteet/178396/",
+			"title": "Juniper Gin muovipullo — 18,67 € → 18,79 €",
+			"content_html": "<p>Tuotteen Juniper Gin muovipullo hinta on muuttunut.</p><p>18,67 € → 18,79 € (+0,12 €, +0,64 %).</p>",
+			"summary": "Tuotteen Juniper Gin muovipullo hinta on muuttunut. 18,67 € → 18,79 € (+0,12 €, +0,64 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/178396-a684237332ac.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

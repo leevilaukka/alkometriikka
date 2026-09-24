@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – André Delorme Brut Crémant de Bourgogne – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/905805/",
+	"feed_url": "https://alkometriikka.fi/rss/905805.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: André Delorme Brut Crémant de Bourgogne.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-905805-2026-07-18-19.99",
+			"url": "https://alkometriikka.fi/tuotteet/905805/",
+			"title": "André Delorme Brut Crémant de Bourgogne — 19,95 € → 19,99 €",
+			"content_html": "<p>Tuotteen André Delorme Brut Crémant de Bourgogne hinta on muuttunut.</p><p>19,95 € → 19,99 € (+0,04 €, +0,20 %).</p>",
+			"summary": "Tuotteen André Delorme Brut Crémant de Bourgogne hinta on muuttunut. 19,95 € → 19,99 € (+0,04 €, +0,20 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/905805-dfd06f8c7e3d.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pernod – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/141247/",
+	"feed_url": "https://alkometriikka.fi/rss/141247.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pernod.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-141247-2026-07-18-37.28",
+			"url": "https://alkometriikka.fi/tuotteet/141247/",
+			"title": "Pernod — 37,26 € → 37,28 €",
+			"content_html": "<p>Tuotteen Pernod hinta on muuttunut.</p><p>37,26 € → 37,28 € (+0,02 €, +0,05 %).</p>",
+			"summary": "Tuotteen Pernod hinta on muuttunut. 37,26 € → 37,28 € (+0,02 €, +0,05 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/141247-8619241e4894.png",
+			"tags": [
+				"Väkevät",
+				"anistisleet"
+			]
+		}
+	]
+}

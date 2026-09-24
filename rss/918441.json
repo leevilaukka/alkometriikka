@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ksarak – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/918441/",
+	"feed_url": "https://alkometriikka.fi/rss/918441.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ksarak.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-918441-2026-07-18-51.99",
+			"url": "https://alkometriikka.fi/tuotteet/918441/",
+			"title": "Ksarak — 50,35 € → 51,99 €",
+			"content_html": "<p>Tuotteen Ksarak hinta on muuttunut.</p><p>50,35 € → 51,99 € (+1,64 €, +3,26 %).</p>",
+			"summary": "Tuotteen Ksarak hinta on muuttunut. 50,35 € → 51,99 € (+1,64 €, +3,26 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/918441-fd50e5da02aa.png",
+			"tags": [
+				"Väkevät",
+				"anistisleet"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Singleton 12 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/152017/",
+	"feed_url": "https://alkometriikka.fi/rss/152017.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Singleton 12 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-152017-2026-07-18-43.49",
+			"url": "https://alkometriikka.fi/tuotteet/152017/",
+			"title": "The Singleton 12 Year Old Single Malt — 43,27 € → 43,49 €",
+			"content_html": "<p>Tuotteen The Singleton 12 Year Old Single Malt hinta on muuttunut.</p><p>43,27 € → 43,49 € (+0,22 €, +0,51 %).</p>",
+			"summary": "Tuotteen The Singleton 12 Year Old Single Malt hinta on muuttunut. 43,27 € → 43,49 € (+0,22 €, +0,51 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/152017-7dc3a0a621a4.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

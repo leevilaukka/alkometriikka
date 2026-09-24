@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kilchoman Sanaig – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/135097/",
+	"feed_url": "https://alkometriikka.fi/rss/135097.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kilchoman Sanaig.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-135097-2026-07-18-84.99",
+			"url": "https://alkometriikka.fi/tuotteet/135097/",
+			"title": "Kilchoman Sanaig — 82,90 € → 84,99 €",
+			"content_html": "<p>Tuotteen Kilchoman Sanaig hinta on muuttunut.</p><p>82,90 € → 84,99 € (+2,09 €, +2,52 %).</p>",
+			"summary": "Tuotteen Kilchoman Sanaig hinta on muuttunut. 82,90 € → 84,99 € (+2,09 €, +2,52 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/135097-97e83df3e8cc.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

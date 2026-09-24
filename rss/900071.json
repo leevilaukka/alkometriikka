@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Passi di Orma Bolgheri 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900071/",
+	"feed_url": "https://alkometriikka.fi/rss/900071.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Passi di Orma Bolgheri 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900071-2026-07-18-51.98",
+			"url": "https://alkometriikka.fi/tuotteet/900071/",
+			"title": "Passi di Orma Bolgheri 2023 — 52,45 € → 51,98 €",
+			"content_html": "<p>Tuotteen Passi di Orma Bolgheri 2023 hinta on muuttunut.</p><p>52,45 € → 51,98 € (−0,47 €, −0,90 %).</p>",
+			"summary": "Tuotteen Passi di Orma Bolgheri 2023 hinta on muuttunut. 52,45 € → 51,98 € (−0,47 €, −0,90 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900071-ce3704771e6e.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

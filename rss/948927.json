@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Zuccardi Q Malbec 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/948927/",
+	"feed_url": "https://alkometriikka.fi/rss/948927.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Zuccardi Q Malbec 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-948927-2026-07-18-24.48",
+			"url": "https://alkometriikka.fi/tuotteet/948927/",
+			"title": "Zuccardi Q Malbec 2023 — 24,44 € → 24,48 €",
+			"content_html": "<p>Tuotteen Zuccardi Q Malbec 2023 hinta on muuttunut.</p><p>24,44 € → 24,48 € (+0,04 €, +0,16 %).</p>",
+			"summary": "Tuotteen Zuccardi Q Malbec 2023 hinta on muuttunut. 24,44 € → 24,48 € (+0,04 €, +0,16 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/948927-0df5518e35f6.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

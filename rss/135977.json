@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Planteray Stiggins' Fancy Pineapple – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/135977/",
+	"feed_url": "https://alkometriikka.fi/rss/135977.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Planteray Stiggins' Fancy Pineapple.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-135977-2026-07-18-39.98",
+			"url": "https://alkometriikka.fi/tuotteet/135977/",
+			"title": "Planteray Stiggins' Fancy Pineapple — 39,96 € → 39,98 €",
+			"content_html": "<p>Tuotteen Planteray Stiggins' Fancy Pineapple hinta on muuttunut.</p><p>39,96 € → 39,98 € (+0,02 €, +0,05 %).</p>",
+			"summary": "Tuotteen Planteray Stiggins' Fancy Pineapple hinta on muuttunut. 39,96 € → 39,98 € (+0,02 €, +0,05 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/135977-6b7eb2dda63b.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

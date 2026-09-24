@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bernard-Massard Sélection Demi-Sec – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/502824/",
+	"feed_url": "https://alkometriikka.fi/rss/502824.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bernard-Massard Sélection Demi-Sec.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-502824-2026-07-18-10.48",
+			"url": "https://alkometriikka.fi/tuotteet/502824/",
+			"title": "Bernard-Massard Sélection Demi-Sec — 9,98 € → 10,48 €",
+			"content_html": "<p>Tuotteen Bernard-Massard Sélection Demi-Sec hinta on muuttunut.</p><p>9,98 € → 10,48 € (+0,50 €, +5,01 %).</p>",
+			"summary": "Tuotteen Bernard-Massard Sélection Demi-Sec hinta on muuttunut. 9,98 € → 10,48 € (+0,50 €, +5,01 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/502824-28f01e89549f.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

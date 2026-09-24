@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Zéra Chardonnay Sparkling 0,0% – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/557024/",
+	"feed_url": "https://alkometriikka.fi/rss/557024.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Zéra Chardonnay Sparkling 0,0%.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-557024-2026-07-18-7.49",
+			"url": "https://alkometriikka.fi/tuotteet/557024/",
+			"title": "Zéra Chardonnay Sparkling 0,0% — 7,46 € → 7,49 €",
+			"content_html": "<p>Tuotteen Zéra Chardonnay Sparkling 0,0% hinta on muuttunut.</p><p>7,46 € → 7,49 € (+0,03 €, +0,40 %).</p>",
+			"summary": "Tuotteen Zéra Chardonnay Sparkling 0,0% hinta on muuttunut. 7,46 € → 7,49 € (+0,03 €, +0,40 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/557024-4e1430ebdfe5.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat kuohuviinit"
+			]
+		}
+	]
+}

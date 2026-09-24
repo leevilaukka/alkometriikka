@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Planeta Frappato 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/958663/",
+	"feed_url": "https://alkometriikka.fi/rss/958663.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Planeta Frappato 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-958663-2026-07-18-22.49",
+			"url": "https://alkometriikka.fi/tuotteet/958663/",
+			"title": "Planeta Frappato 2025 — 22,45 € → 22,49 €",
+			"content_html": "<p>Tuotteen Planeta Frappato 2025 hinta on muuttunut.</p><p>22,45 € → 22,49 € (+0,04 €, +0,18 %).</p>",
+			"summary": "Tuotteen Planeta Frappato 2025 hinta on muuttunut. 22,45 € → 22,49 € (+0,04 €, +0,18 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/958663-f56494fb5ac5.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

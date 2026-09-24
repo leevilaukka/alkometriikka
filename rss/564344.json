@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Baron-Fuenté Grande Réserve Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/564344/",
+	"feed_url": "https://alkometriikka.fi/rss/564344.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Baron-Fuenté Grande Réserve Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-564344-2026-07-18-21.49",
+			"url": "https://alkometriikka.fi/tuotteet/564344/",
+			"title": "Baron-Fuenté Grande Réserve Champagne Brut — 21,92 € → 21,49 €",
+			"content_html": "<p>Tuotteen Baron-Fuenté Grande Réserve Champagne Brut hinta on muuttunut.</p><p>21,92 € → 21,49 € (−0,43 €, −1,96 %).</p>",
+			"summary": "Tuotteen Baron-Fuenté Grande Réserve Champagne Brut hinta on muuttunut. 21,92 € → 21,49 € (−0,43 €, −1,96 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/564344-aa32d0e3be84.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

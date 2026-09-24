@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Veuve Clicquot Rich on Ice Champagne Doux – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/536247/",
+	"feed_url": "https://alkometriikka.fi/rss/536247.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Veuve Clicquot Rich on Ice Champagne Doux.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-536247-2026-07-18-83.98",
+			"url": "https://alkometriikka.fi/tuotteet/536247/",
+			"title": "Veuve Clicquot Rich on Ice Champagne Doux — 82,45 € → 83,98 €",
+			"content_html": "<p>Tuotteen Veuve Clicquot Rich on Ice Champagne Doux hinta on muuttunut.</p><p>82,45 € → 83,98 € (+1,53 €, +1,86 %).</p>",
+			"summary": "Tuotteen Veuve Clicquot Rich on Ice Champagne Doux hinta on muuttunut. 82,45 € → 83,98 € (+1,53 €, +1,86 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/536247-49d0f2ea74a7.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

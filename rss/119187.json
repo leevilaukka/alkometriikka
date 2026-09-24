@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Teeling Single Pot Still – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/119187/",
+	"feed_url": "https://alkometriikka.fi/rss/119187.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Teeling Single Pot Still.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-119187-2026-07-18-62.94",
+			"url": "https://alkometriikka.fi/tuotteet/119187/",
+			"title": "Teeling Single Pot Still — 62,30 € → 62,94 €",
+			"content_html": "<p>Tuotteen Teeling Single Pot Still hinta on muuttunut.</p><p>62,30 € → 62,94 € (+0,64 €, +1,03 %).</p>",
+			"summary": "Tuotteen Teeling Single Pot Still hinta on muuttunut. 62,30 € → 62,94 € (+0,64 €, +1,03 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/119187-bb8e6f6714d0.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

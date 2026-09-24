@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mumm Le Millésimé Champagne Brut 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/959177/",
+	"feed_url": "https://alkometriikka.fi/rss/959177.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mumm Le Millésimé Champagne Brut 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-959177-2026-07-18-73.69",
+			"url": "https://alkometriikka.fi/tuotteet/959177/",
+			"title": "Mumm Le Millésimé Champagne Brut 2019 — 73,65 € → 73,69 €",
+			"content_html": "<p>Tuotteen Mumm Le Millésimé Champagne Brut 2019 hinta on muuttunut.</p><p>73,65 € → 73,69 € (+0,04 €, +0,05 %).</p>",
+			"summary": "Tuotteen Mumm Le Millésimé Champagne Brut 2019 hinta on muuttunut. 73,65 € → 73,69 € (+0,04 €, +0,05 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/959177-03f09554e430.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

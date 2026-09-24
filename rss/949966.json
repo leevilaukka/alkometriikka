@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Sancrispino Syrah Merlot Organic kartonkitölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/949966/",
+	"feed_url": "https://alkometriikka.fi/rss/949966.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Sancrispino Syrah Merlot Organic kartonkitölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-949966-2026-07-18-6.79",
+			"url": "https://alkometriikka.fi/tuotteet/949966/",
+			"title": "Sancrispino Syrah Merlot Organic kartonkitölkki — 6,75 € → 6,79 €",
+			"content_html": "<p>Tuotteen Sancrispino Syrah Merlot Organic kartonkitölkki hinta on muuttunut.</p><p>6,75 € → 6,79 € (+0,04 €, +0,59 %).</p>",
+			"summary": "Tuotteen Sancrispino Syrah Merlot Organic kartonkitölkki hinta on muuttunut. 6,75 € → 6,79 € (+0,04 €, +0,59 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/949966-a2c4f7b9cb01.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

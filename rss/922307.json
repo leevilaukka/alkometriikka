@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vve Fourny & Fils Blanc de Blancs Champagne Brut Nature – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/922307/",
+	"feed_url": "https://alkometriikka.fi/rss/922307.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vve Fourny & Fils Blanc de Blancs Champagne Brut Nature.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-922307-2026-07-18-51.98",
+			"url": "https://alkometriikka.fi/tuotteet/922307/",
+			"title": "Vve Fourny & Fils Blanc de Blancs Champagne Brut Nature — 52,04 € → 51,98 €",
+			"content_html": "<p>Tuotteen Vve Fourny & Fils Blanc de Blancs Champagne Brut Nature hinta on muuttunut.</p><p>52,04 € → 51,98 € (−0,06 €, −0,12 %).</p>",
+			"summary": "Tuotteen Vve Fourny & Fils Blanc de Blancs Champagne Brut Nature hinta on muuttunut. 52,04 € → 51,98 € (−0,06 €, −0,12 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/922307-4f87d98362be.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

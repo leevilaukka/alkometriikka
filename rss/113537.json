@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glen Scanlan muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/113537/",
+	"feed_url": "https://alkometriikka.fi/rss/113537.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glen Scanlan muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-113537-2026-07-18-26.3",
+			"url": "https://alkometriikka.fi/tuotteet/113537/",
+			"title": "Glen Scanlan muovipullo — 26,17 € → 26,30 €",
+			"content_html": "<p>Tuotteen Glen Scanlan muovipullo hinta on muuttunut.</p><p>26,17 € → 26,30 € (+0,13 €, +0,50 %).</p>",
+			"summary": "Tuotteen Glen Scanlan muovipullo hinta on muuttunut. 26,17 € → 26,30 € (+0,13 €, +0,50 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/113537-30d454f70d3f.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

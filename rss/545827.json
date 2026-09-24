@@ -1,0 +1,50 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Charles de Cazanove Tradition Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/545827/",
+	"feed_url": "https://alkometriikka.fi/rss/545827.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Charles de Cazanove Tradition Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-545827-2026-07-18-37.89",
+			"url": "https://alkometriikka.fi/tuotteet/545827/",
+			"title": "Charles de Cazanove Tradition Champagne Brut — 36,44 € → 37,89 €",
+			"content_html": "<p>Tuotteen Charles de Cazanove Tradition Champagne Brut hinta on muuttunut.</p><p>36,44 € → 37,89 € (+1,45 €, +3,98 %).</p>",
+			"summary": "Tuotteen Charles de Cazanove Tradition Champagne Brut hinta on muuttunut. 36,44 € → 37,89 € (+1,45 €, +3,98 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/545827-5bdbddfe8b54.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-545827-2026-02-02-36.34",
+			"url": "https://alkometriikka.fi/tuotteet/545827/",
+			"title": "Charles de Cazanove Tradition Champagne Brut — 36,44 € → 36,34 €",
+			"content_html": "<p>Tuotteen Charles de Cazanove Tradition Champagne Brut hinta on muuttunut.</p><p>36,44 € → 36,34 € (−0,10 €, −0,27 %).</p>",
+			"summary": "Tuotteen Charles de Cazanove Tradition Champagne Brut hinta on muuttunut. 36,44 € → 36,34 € (−0,10 €, −0,27 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/545827-5bdbddfe8b54.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-545827-2026-02-02-36.44",
+			"url": "https://alkometriikka.fi/tuotteet/545827/",
+			"title": "Charles de Cazanove Tradition Champagne Brut — 36,34 € → 36,44 €",
+			"content_html": "<p>Tuotteen Charles de Cazanove Tradition Champagne Brut hinta on muuttunut.</p><p>36,34 € → 36,44 € (+0,10 €, +0,28 %).</p>",
+			"summary": "Tuotteen Charles de Cazanove Tradition Champagne Brut hinta on muuttunut. 36,34 € → 36,44 € (+0,10 €, +0,28 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/545827-5bdbddfe8b54.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

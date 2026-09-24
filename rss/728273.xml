@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Pettersson &amp; Munthe Sparkling Tea tölkki – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/728273/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Pettersson &amp; Munthe Sparkling Tea tölkki.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/728273.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Pettersson &amp; Munthe Sparkling Tea tölkki – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Pettersson &amp; Munthe Sparkling Tea tölkki — 3,68 € → 3,69 €</title>
+			<link>https://alkometriikka.fi/tuotteet/728273/</link>
+			<guid isPermaLink="false">alkometriikka-728273-2026-07-18-3.69</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Alkoholittomat / vedet, mehut ja muut alkoholittomat</category>
+			<description><![CDATA[<p>Tuotteen Pettersson & Munthe Sparkling Tea tölkki hinta on muuttunut.</p><p>3,68 € → 3,69 € (+0,01 €, +0,27 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/728273-a856118fda9c.png" />
+		</item>
+	</channel>
+</rss>

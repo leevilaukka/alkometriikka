@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Domaine Albert Bichot Gevrey-Chambertin 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901560/",
+	"feed_url": "https://alkometriikka.fi/rss/901560.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Domaine Albert Bichot Gevrey-Chambertin 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901560-2026-07-18-74.9",
+			"url": "https://alkometriikka.fi/tuotteet/901560/",
+			"title": "Domaine Albert Bichot Gevrey-Chambertin 2019 — 73,58 € → 74,90 €",
+			"content_html": "<p>Tuotteen Domaine Albert Bichot Gevrey-Chambertin 2019 hinta on muuttunut.</p><p>73,58 € → 74,90 € (+1,32 €, +1,79 %).</p>",
+			"summary": "Tuotteen Domaine Albert Bichot Gevrey-Chambertin 2019 hinta on muuttunut. 73,58 € → 74,90 € (+1,32 €, +1,79 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901560-47ff3777420e.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

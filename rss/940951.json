@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Andechs Spezial Hell – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/940951/",
+	"feed_url": "https://alkometriikka.fi/rss/940951.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Andechs Spezial Hell.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-940951-2026-02-02-4.19",
+			"url": "https://alkometriikka.fi/tuotteet/940951/",
+			"title": "Andechs Spezial Hell — 4,29 € → 4,19 €",
+			"content_html": "<p>Tuotteen Andechs Spezial Hell hinta on muuttunut.</p><p>4,29 € → 4,19 € (−0,10 €, −2,33 %).</p>",
+			"summary": "Tuotteen Andechs Spezial Hell hinta on muuttunut. 4,29 € → 4,19 € (−0,10 €, −2,33 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/940951-6e68607ce6f2.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-940951-2026-02-02-4.29",
+			"url": "https://alkometriikka.fi/tuotteet/940951/",
+			"title": "Andechs Spezial Hell — 4,19 € → 4,29 €",
+			"content_html": "<p>Tuotteen Andechs Spezial Hell hinta on muuttunut.</p><p>4,19 € → 4,29 € (+0,10 €, +2,39 %).</p>",
+			"summary": "Tuotteen Andechs Spezial Hell hinta on muuttunut. 4,19 € → 4,29 € (+0,10 €, +2,39 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/940951-6e68607ce6f2.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Små Sure Sour Strawberry muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/957205/",
+	"feed_url": "https://alkometriikka.fi/rss/957205.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Små Sure Sour Strawberry muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-957205-2026-07-18-13.98",
+			"url": "https://alkometriikka.fi/tuotteet/957205/",
+			"title": "Små Sure Sour Strawberry muovipullo — 13,06 € → 13,98 €",
+			"content_html": "<p>Tuotteen Små Sure Sour Strawberry muovipullo hinta on muuttunut.</p><p>13,06 € → 13,98 € (+0,92 €, +7,04 %).</p>",
+			"summary": "Tuotteen Små Sure Sour Strawberry muovipullo hinta on muuttunut. 13,06 € → 13,98 € (+0,92 €, +7,04 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/957205-b48a0be04286.png",
+			"tags": [
+				"Väkevät",
+				"marjaliköörit"
+			]
+		}
+	]
+}

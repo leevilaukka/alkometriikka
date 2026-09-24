@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Deacon – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/914191/",
+	"feed_url": "https://alkometriikka.fi/rss/914191.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Deacon.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-914191-2026-07-18-50.98",
+			"url": "https://alkometriikka.fi/tuotteet/914191/",
+			"title": "The Deacon — 49,99 € → 50,98 €",
+			"content_html": "<p>Tuotteen The Deacon hinta on muuttunut.</p><p>49,99 € → 50,98 € (+0,99 €, +1,98 %).</p>",
+			"summary": "Tuotteen The Deacon hinta on muuttunut. 49,99 € → 50,98 € (+0,99 €, +1,98 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/914191-843160e0e8ad.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

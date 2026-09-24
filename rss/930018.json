@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Catena Alta Cabernet Sauvignon 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/930018/",
+	"feed_url": "https://alkometriikka.fi/rss/930018.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Catena Alta Cabernet Sauvignon 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-930018-2026-07-18-45.99",
+			"url": "https://alkometriikka.fi/tuotteet/930018/",
+			"title": "Catena Alta Cabernet Sauvignon 2022 — 45,19 € → 45,99 €",
+			"content_html": "<p>Tuotteen Catena Alta Cabernet Sauvignon 2022 hinta on muuttunut.</p><p>45,19 € → 45,99 € (+0,80 €, +1,77 %).</p>",
+			"summary": "Tuotteen Catena Alta Cabernet Sauvignon 2022 hinta on muuttunut. 45,19 € → 45,99 € (+0,80 €, +1,77 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/930018-0b489cabef9d.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ramos Pinto Ruby Port – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/953068/",
+	"feed_url": "https://alkometriikka.fi/rss/953068.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ramos Pinto Ruby Port.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-953068-2026-07-18-23.49",
+			"url": "https://alkometriikka.fi/tuotteet/953068/",
+			"title": "Ramos Pinto Ruby Port — 22,60 € → 23,49 €",
+			"content_html": "<p>Tuotteen Ramos Pinto Ruby Port hinta on muuttunut.</p><p>22,60 € → 23,49 € (+0,89 €, +3,94 %).</p>",
+			"summary": "Tuotteen Ramos Pinto Ruby Port hinta on muuttunut. 22,60 € → 23,49 € (+0,89 €, +3,94 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/953068-876a88a37c92.png",
+			"tags": [
+				"Välituotteet",
+				"portviinit"
+			]
+		}
+	]
+}

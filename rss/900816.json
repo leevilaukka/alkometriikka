@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Manoella Douro Branco 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900816/",
+	"feed_url": "https://alkometriikka.fi/rss/900816.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Manoella Douro Branco 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900816-2026-07-18-23.79",
+			"url": "https://alkometriikka.fi/tuotteet/900816/",
+			"title": "Manoella Douro Branco 2025 — 22,94 € → 23,79 €",
+			"content_html": "<p>Tuotteen Manoella Douro Branco 2025 hinta on muuttunut.</p><p>22,94 € → 23,79 € (+0,85 €, +3,71 %).</p>",
+			"summary": "Tuotteen Manoella Douro Branco 2025 hinta on muuttunut. 22,94 € → 23,79 € (+0,85 €, +3,71 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900816-7cb822e3ef2b.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

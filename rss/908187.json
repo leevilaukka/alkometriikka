@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Signorelli Amarone della Valpolicella 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/908187/",
+	"feed_url": "https://alkometriikka.fi/rss/908187.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Signorelli Amarone della Valpolicella 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-908187-2026-07-18-28.9",
+			"url": "https://alkometriikka.fi/tuotteet/908187/",
+			"title": "Signorelli Amarone della Valpolicella 2023 — 29,98 € → 28,90 €",
+			"content_html": "<p>Tuotteen Signorelli Amarone della Valpolicella 2023 hinta on muuttunut.</p><p>29,98 € → 28,90 € (−1,08 €, −3,60 %).</p>",
+			"summary": "Tuotteen Signorelli Amarone della Valpolicella 2023 hinta on muuttunut. 29,98 € → 28,90 € (−1,08 €, −3,60 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/908187-6f2e893da482.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gilbey's Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/113837/",
+	"feed_url": "https://alkometriikka.fi/rss/113837.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gilbey's Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-113837-2026-07-18-24.48",
+			"url": "https://alkometriikka.fi/tuotteet/113837/",
+			"title": "Gilbey's Gin — 24,23 € → 24,48 €",
+			"content_html": "<p>Tuotteen Gilbey's Gin hinta on muuttunut.</p><p>24,23 € → 24,48 € (+0,25 €, +1,03 %).</p>",
+			"summary": "Tuotteen Gilbey's Gin hinta on muuttunut. 24,23 € → 24,48 € (+0,25 €, +1,03 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/113837-5574e707ddc9.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

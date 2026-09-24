@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Barbera d'Alba Le Colline 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901229/",
+	"feed_url": "https://alkometriikka.fi/rss/901229.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Barbera d'Alba Le Colline 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901229-2026-07-18-14.48",
+			"url": "https://alkometriikka.fi/tuotteet/901229/",
+			"title": "Barbera d'Alba Le Colline 2019 — 14,99 € → 14,48 €",
+			"content_html": "<p>Tuotteen Barbera d'Alba Le Colline 2019 hinta on muuttunut.</p><p>14,99 € → 14,48 € (−0,51 €, −3,40 %).</p>",
+			"summary": "Tuotteen Barbera d'Alba Le Colline 2019 hinta on muuttunut. 14,99 € → 14,48 € (−0,51 €, −3,40 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901229-d04ec8a4a774.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pure Nordic Distillery Extra Pure Vodka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901062/",
+	"feed_url": "https://alkometriikka.fi/rss/901062.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pure Nordic Distillery Extra Pure Vodka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901062-2026-07-18-4.48",
+			"url": "https://alkometriikka.fi/tuotteet/901062/",
+			"title": "Pure Nordic Distillery Extra Pure Vodka — 4,13 € → 4,48 €",
+			"content_html": "<p>Tuotteen Pure Nordic Distillery Extra Pure Vodka hinta on muuttunut.</p><p>4,13 € → 4,48 € (+0,35 €, +8,47 %).</p>",
+			"summary": "Tuotteen Pure Nordic Distillery Extra Pure Vodka hinta on muuttunut. 4,13 € → 4,48 € (+0,35 €, +8,47 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901062-2ef64bb1e58e.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

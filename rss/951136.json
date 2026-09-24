@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pérez Barquero La Cañada Pedro Ximénez – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/951136/",
+	"feed_url": "https://alkometriikka.fi/rss/951136.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pérez Barquero La Cañada Pedro Ximénez.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-951136-2026-07-18-79.99",
+			"url": "https://alkometriikka.fi/tuotteet/951136/",
+			"title": "Pérez Barquero La Cañada Pedro Ximénez — 80,05 € → 79,99 €",
+			"content_html": "<p>Tuotteen Pérez Barquero La Cañada Pedro Ximénez hinta on muuttunut.</p><p>80,05 € → 79,99 € (−0,06 €, −0,07 %).</p>",
+			"summary": "Tuotteen Pérez Barquero La Cañada Pedro Ximénez hinta on muuttunut. 80,05 € → 79,99 € (−0,06 €, −0,07 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/951136-95b40ee328dd.png",
+			"tags": [
+				"Välituotteet",
+				"väkevät viinit"
+			]
+		}
+	]
+}

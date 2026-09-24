@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Contadi Castaldi Franciacorta Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/529154/",
+	"feed_url": "https://alkometriikka.fi/rss/529154.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Contadi Castaldi Franciacorta Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-529154-2026-07-18-19.48",
+			"url": "https://alkometriikka.fi/tuotteet/529154/",
+			"title": "Contadi Castaldi Franciacorta Brut — 19,42 € → 19,48 €",
+			"content_html": "<p>Tuotteen Contadi Castaldi Franciacorta Brut hinta on muuttunut.</p><p>19,42 € → 19,48 € (+0,06 €, +0,31 %).</p>",
+			"summary": "Tuotteen Contadi Castaldi Franciacorta Brut hinta on muuttunut. 19,42 € → 19,48 € (+0,06 €, +0,31 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/529154-c42dc3534226.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

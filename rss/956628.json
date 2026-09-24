@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Christian Drouin Pomme Prisonnière Calvados – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/956628/",
+	"feed_url": "https://alkometriikka.fi/rss/956628.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Christian Drouin Pomme Prisonnière Calvados.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-956628-2026-07-18-106.99",
+			"url": "https://alkometriikka.fi/tuotteet/956628/",
+			"title": "Christian Drouin Pomme Prisonnière Calvados — 107,37 € → 106,99 €",
+			"content_html": "<p>Tuotteen Christian Drouin Pomme Prisonnière Calvados hinta on muuttunut.</p><p>107,37 € → 106,99 € (−0,38 €, −0,35 %).</p>",
+			"summary": "Tuotteen Christian Drouin Pomme Prisonnière Calvados hinta on muuttunut. 107,37 € → 106,99 € (−0,38 €, −0,35 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/956628-072c535643ab.png",
+			"tags": [
+				"Väkevät",
+				"calvadosit"
+			]
+		}
+	]
+}

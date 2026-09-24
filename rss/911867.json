@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Xavier Côtes du Rhône Villages 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/911867/",
+	"feed_url": "https://alkometriikka.fi/rss/911867.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Xavier Côtes du Rhône Villages 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-911867-2026-07-18-24.63",
+			"url": "https://alkometriikka.fi/tuotteet/911867/",
+			"title": "Xavier Côtes du Rhône Villages 2020 — 26,51 € → 24,63 €",
+			"content_html": "<p>Tuotteen Xavier Côtes du Rhône Villages 2020 hinta on muuttunut.</p><p>26,51 € → 24,63 € (−1,88 €, −7,09 %).</p>",
+			"summary": "Tuotteen Xavier Côtes du Rhône Villages 2020 hinta on muuttunut. 26,51 € → 24,63 € (−1,88 €, −7,09 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/911867-31f37a707888.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

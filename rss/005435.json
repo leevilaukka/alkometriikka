@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Marqués de Cáceres Reserva 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/005435/",
+	"feed_url": "https://alkometriikka.fi/rss/005435.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Marqués de Cáceres Reserva 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-005435-2026-07-18-19.95",
+			"url": "https://alkometriikka.fi/tuotteet/005435/",
+			"title": "Marqués de Cáceres Reserva 2020 — 20,42 € → 19,95 €",
+			"content_html": "<p>Tuotteen Marqués de Cáceres Reserva 2020 hinta on muuttunut.</p><p>20,42 € → 19,95 € (−0,47 €, −2,30 %).</p>",
+			"summary": "Tuotteen Marqués de Cáceres Reserva 2020 hinta on muuttunut. 20,42 € → 19,95 € (−0,47 €, −2,30 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/005435-14b4484e5dd8.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Martini Bitter – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/104017/",
+	"feed_url": "https://alkometriikka.fi/rss/104017.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Martini Bitter.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-104017-2026-07-18-26.98",
+			"url": "https://alkometriikka.fi/tuotteet/104017/",
+			"title": "Martini Bitter — 26,19 € → 26,98 €",
+			"content_html": "<p>Tuotteen Martini Bitter hinta on muuttunut.</p><p>26,19 € → 26,98 € (+0,79 €, +3,02 %).</p>",
+			"summary": "Tuotteen Martini Bitter hinta on muuttunut. 26,19 € → 26,98 € (+0,79 €, +3,02 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/104017-82e43e27a6af.png",
+			"tags": [
+				"Väkevät",
+				"grogikatkerot"
+			]
+		}
+	]
+}

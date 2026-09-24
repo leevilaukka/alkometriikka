@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Farrell Irish Whiskey – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/927402/",
+	"feed_url": "https://alkometriikka.fi/rss/927402.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Farrell Irish Whiskey.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-927402-2026-07-18-31.89",
+			"url": "https://alkometriikka.fi/tuotteet/927402/",
+			"title": "Farrell Irish Whiskey — 31,26 € → 31,89 €",
+			"content_html": "<p>Tuotteen Farrell Irish Whiskey hinta on muuttunut.</p><p>31,26 € → 31,89 € (+0,63 €, +2,02 %).</p>",
+			"summary": "Tuotteen Farrell Irish Whiskey hinta on muuttunut. 31,26 € → 31,89 € (+0,63 €, +2,02 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/927402-833a93924ae1.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

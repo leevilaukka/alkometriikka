@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Bitchy Blend 2024 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/926793/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Bitchy Blend 2024.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/926793.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Bitchy Blend 2024 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Bitchy Blend 2024 — 10,45 € → 10,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/926793/</link>
+			<guid isPermaLink="false">alkometriikka-926793-2026-07-18-10.99</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / valkoviinit</category>
+			<description><![CDATA[<p>Tuotteen Bitchy Blend 2024 hinta on muuttunut.</p><p>10,45 € → 10,99 € (+0,54 €, +5,17 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/926793-4b493f013bc1.png" />
+		</item>
+	</channel>
+</rss>

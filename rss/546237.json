@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Zacharias Omikron Retsina – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/546237/",
+	"feed_url": "https://alkometriikka.fi/rss/546237.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Zacharias Omikron Retsina.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-546237-2026-07-18-12.49",
+			"url": "https://alkometriikka.fi/tuotteet/546237/",
+			"title": "Zacharias Omikron Retsina — 12,45 € → 12,49 €",
+			"content_html": "<p>Tuotteen Zacharias Omikron Retsina hinta on muuttunut.</p><p>12,45 € → 12,49 € (+0,04 €, +0,32 %).</p>",
+			"summary": "Tuotteen Zacharias Omikron Retsina hinta on muuttunut. 12,45 € → 12,49 € (+0,04 €, +0,32 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/546237-2bf51aa851e9.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Glenlivet 18 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/921482/",
+	"feed_url": "https://alkometriikka.fi/rss/921482.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Glenlivet 18 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-921482-2026-07-18-138.48",
+			"url": "https://alkometriikka.fi/tuotteet/921482/",
+			"title": "The Glenlivet 18 Year Old Single Malt — 138,26 € → 138,48 €",
+			"content_html": "<p>Tuotteen The Glenlivet 18 Year Old Single Malt hinta on muuttunut.</p><p>138,26 € → 138,48 € (+0,22 €, +0,16 %).</p>",
+			"summary": "Tuotteen The Glenlivet 18 Year Old Single Malt hinta on muuttunut. 138,26 € → 138,48 € (+0,22 €, +0,16 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/921482-67ff4d854342.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

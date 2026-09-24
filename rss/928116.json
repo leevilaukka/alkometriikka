@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Langham Corallian Classic Cuvée Extra Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/928116/",
+	"feed_url": "https://alkometriikka.fi/rss/928116.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Langham Corallian Classic Cuvée Extra Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-928116-2026-07-18-54.98",
+			"url": "https://alkometriikka.fi/tuotteet/928116/",
+			"title": "Langham Corallian Classic Cuvée Extra Brut — 53,44 € → 54,98 €",
+			"content_html": "<p>Tuotteen Langham Corallian Classic Cuvée Extra Brut hinta on muuttunut.</p><p>53,44 € → 54,98 € (+1,54 €, +2,88 %).</p>",
+			"summary": "Tuotteen Langham Corallian Classic Cuvée Extra Brut hinta on muuttunut. 53,44 € → 54,98 € (+1,54 €, +2,88 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/928116-bc7ead9becf7.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

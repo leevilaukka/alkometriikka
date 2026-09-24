@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Neiss Cabernet Sauvignon 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/455897/",
+	"feed_url": "https://alkometriikka.fi/rss/455897.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Neiss Cabernet Sauvignon 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-455897-2026-07-18-19.99",
+			"url": "https://alkometriikka.fi/tuotteet/455897/",
+			"title": "Neiss Cabernet Sauvignon 2019 — 20,36 € → 19,99 €",
+			"content_html": "<p>Tuotteen Neiss Cabernet Sauvignon 2019 hinta on muuttunut.</p><p>20,36 € → 19,99 € (−0,37 €, −1,82 %).</p>",
+			"summary": "Tuotteen Neiss Cabernet Sauvignon 2019 hinta on muuttunut. 20,36 € → 19,99 € (−0,37 €, −1,82 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/455897-f5b453a593cd.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

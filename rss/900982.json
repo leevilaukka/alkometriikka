@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mallassepät Tiramisu Stout tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900982/",
+	"feed_url": "https://alkometriikka.fi/rss/900982.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mallassepät Tiramisu Stout tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900982-2026-07-18-7.52",
+			"url": "https://alkometriikka.fi/tuotteet/900982/",
+			"title": "Mallassepät Tiramisu Stout tölkki — 7,51 € → 7,52 €",
+			"content_html": "<p>Tuotteen Mallassepät Tiramisu Stout tölkki hinta on muuttunut.</p><p>7,51 € → 7,52 € (+0,01 €, +0,13 %).</p>",
+			"summary": "Tuotteen Mallassepät Tiramisu Stout tölkki hinta on muuttunut. 7,51 € → 7,52 € (+0,01 €, +0,13 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900982-d5f13ae88062.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

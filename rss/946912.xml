@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Lumo White Semi-Dry – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/946912/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Lumo White Semi-Dry.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/946912.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Lumo White Semi-Dry – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Lumo White Semi-Dry — 16,82 € → 17,59 €</title>
+			<link>https://alkometriikka.fi/tuotteet/946912/</link>
+			<guid isPermaLink="false">alkometriikka-946912-2026-07-18-17.59</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / hedelmä- ja aromatisoidut viinit</category>
+			<description><![CDATA[<p>Tuotteen Lumo White Semi-Dry hinta on muuttunut.</p><p>16,82 € → 17,59 € (+0,77 €, +4,58 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/946912-9e33c93f8cb9.png" />
+		</item>
+	</channel>
+</rss>

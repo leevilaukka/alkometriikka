@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nemiroff Flavoured Wild Cranberry Vodka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/958232/",
+	"feed_url": "https://alkometriikka.fi/rss/958232.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nemiroff Flavoured Wild Cranberry Vodka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-958232-2026-07-18-29.98",
+			"url": "https://alkometriikka.fi/tuotteet/958232/",
+			"title": "Nemiroff Flavoured Wild Cranberry Vodka — 30,25 € → 29,98 €",
+			"content_html": "<p>Tuotteen Nemiroff Flavoured Wild Cranberry Vodka hinta on muuttunut.</p><p>30,25 € → 29,98 € (−0,27 €, −0,89 %).</p>",
+			"summary": "Tuotteen Nemiroff Flavoured Wild Cranberry Vodka hinta on muuttunut. 30,25 € → 29,98 € (−0,27 €, −0,89 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/958232-345c451cc15d.png",
+			"tags": [
+				"Väkevät",
+				"maustetut vodkat"
+			]
+		}
+	]
+}

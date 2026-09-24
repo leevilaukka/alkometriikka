@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Montepalacio Vino Tinto – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/901271/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Montepalacio Vino Tinto.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/901271.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Montepalacio Vino Tinto – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Montepalacio Vino Tinto — 7,99 € → 8,49 €</title>
+			<link>https://alkometriikka.fi/tuotteet/901271/</link>
+			<guid isPermaLink="false">alkometriikka-901271-2026-07-18-8.49</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Montepalacio Vino Tinto hinta on muuttunut.</p><p>7,99 € → 8,49 € (+0,50 €, +6,26 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/901271-0ce39ba6fb66.png" />
+		</item>
+	</channel>
+</rss>

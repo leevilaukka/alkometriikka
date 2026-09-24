@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lignell & Piispanen Vadelma muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/250946/",
+	"feed_url": "https://alkometriikka.fi/rss/250946.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lignell & Piispanen Vadelma muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-250946-2026-07-18-11.9",
+			"url": "https://alkometriikka.fi/tuotteet/250946/",
+			"title": "Lignell & Piispanen Vadelma muovipullo — 11,83 € → 11,90 €",
+			"content_html": "<p>Tuotteen Lignell & Piispanen Vadelma muovipullo hinta on muuttunut.</p><p>11,83 € → 11,90 € (+0,07 €, +0,59 %).</p>",
+			"summary": "Tuotteen Lignell & Piispanen Vadelma muovipullo hinta on muuttunut. 11,83 € → 11,90 € (+0,07 €, +0,59 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/250946-f0a2a3fb0d52.png",
+			"tags": [
+				"Väkevät",
+				"marjaliköörit"
+			]
+		}
+	]
+}

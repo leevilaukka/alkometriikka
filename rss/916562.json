@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Le Sirop de Monin Irish – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/916562/",
+	"feed_url": "https://alkometriikka.fi/rss/916562.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Le Sirop de Monin Irish.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-916562-2026-07-18-10.89",
+			"url": "https://alkometriikka.fi/tuotteet/916562/",
+			"title": "Le Sirop de Monin Irish — 10,75 € → 10,89 €",
+			"content_html": "<p>Tuotteen Le Sirop de Monin Irish hinta on muuttunut.</p><p>10,75 € → 10,89 € (+0,14 €, +1,30 %).</p>",
+			"summary": "Tuotteen Le Sirop de Monin Irish hinta on muuttunut. 10,75 € → 10,89 € (+0,14 €, +1,30 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/916562-09e5578819ff.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

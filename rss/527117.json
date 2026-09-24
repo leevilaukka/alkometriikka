@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cuvée Antoinette Crémant de Luxembourg Rosé Extra Dry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/527117/",
+	"feed_url": "https://alkometriikka.fi/rss/527117.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cuvée Antoinette Crémant de Luxembourg Rosé Extra Dry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-527117-2026-07-18-16.98",
+			"url": "https://alkometriikka.fi/tuotteet/527117/",
+			"title": "Cuvée Antoinette Crémant de Luxembourg Rosé Extra Dry — 16,45 € → 16,98 €",
+			"content_html": "<p>Tuotteen Cuvée Antoinette Crémant de Luxembourg Rosé Extra Dry hinta on muuttunut.</p><p>16,45 € → 16,98 € (+0,53 €, +3,22 %).</p>",
+			"summary": "Tuotteen Cuvée Antoinette Crémant de Luxembourg Rosé Extra Dry hinta on muuttunut. 16,45 € → 16,98 € (+0,53 €, +3,22 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/527117-213e37a32bad.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

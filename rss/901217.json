@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vollereaux Blanc de Blancs Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901217/",
+	"feed_url": "https://alkometriikka.fi/rss/901217.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vollereaux Blanc de Blancs Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901217-2026-07-18-49.7",
+			"url": "https://alkometriikka.fi/tuotteet/901217/",
+			"title": "Vollereaux Blanc de Blancs Champagne Brut — 49,46 € → 49,70 €",
+			"content_html": "<p>Tuotteen Vollereaux Blanc de Blancs Champagne Brut hinta on muuttunut.</p><p>49,46 € → 49,70 € (+0,24 €, +0,49 %).</p>",
+			"summary": "Tuotteen Vollereaux Blanc de Blancs Champagne Brut hinta on muuttunut. 49,46 € → 49,70 € (+0,24 €, +0,49 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901217-89ac7b59815f.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Poças 30 Years Old Tawny – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/337674/",
+	"feed_url": "https://alkometriikka.fi/rss/337674.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Poças 30 Years Old Tawny.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-337674-2026-07-18-45.95",
+			"url": "https://alkometriikka.fi/tuotteet/337674/",
+			"title": "Poças 30 Years Old Tawny — 41,99 € → 45,95 €",
+			"content_html": "<p>Tuotteen Poças 30 Years Old Tawny hinta on muuttunut.</p><p>41,99 € → 45,95 € (+3,96 €, +9,43 %).</p>",
+			"summary": "Tuotteen Poças 30 Years Old Tawny hinta on muuttunut. 41,99 € → 45,95 € (+3,96 €, +9,43 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/337674-34da4dd61818.png",
+			"tags": [
+				"Välituotteet",
+				"portviinit"
+			]
+		}
+	]
+}

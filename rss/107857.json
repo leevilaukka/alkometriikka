@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Craigellachie 13 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/107857/",
+	"feed_url": "https://alkometriikka.fi/rss/107857.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Craigellachie 13 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-107857-2026-07-18-72.98",
+			"url": "https://alkometriikka.fi/tuotteet/107857/",
+			"title": "Craigellachie 13 Year Old Single Malt — 72,11 € → 72,98 €",
+			"content_html": "<p>Tuotteen Craigellachie 13 Year Old Single Malt hinta on muuttunut.</p><p>72,11 € → 72,98 € (+0,87 €, +1,21 %).</p>",
+			"summary": "Tuotteen Craigellachie 13 Year Old Single Malt hinta on muuttunut. 72,11 € → 72,98 € (+0,87 €, +1,21 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/107857-207a6a382b4b.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

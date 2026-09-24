@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – JP. Chenet Ice Edition Demi Sec – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/944623/",
+	"feed_url": "https://alkometriikka.fi/rss/944623.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: JP. Chenet Ice Edition Demi Sec.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-944623-2026-07-18-4.68",
+			"url": "https://alkometriikka.fi/tuotteet/944623/",
+			"title": "JP. Chenet Ice Edition Demi Sec — 4,58 € → 4,68 €",
+			"content_html": "<p>Tuotteen JP. Chenet Ice Edition Demi Sec hinta on muuttunut.</p><p>4,58 € → 4,68 € (+0,10 €, +2,18 %).</p>",
+			"summary": "Tuotteen JP. Chenet Ice Edition Demi Sec hinta on muuttunut. 4,58 € → 4,68 € (+0,10 €, +2,18 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/944623-73d4dc352126.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

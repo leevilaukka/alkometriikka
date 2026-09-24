@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Four Pillars Navy Strength Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901460/",
+	"feed_url": "https://alkometriikka.fi/rss/901460.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Four Pillars Navy Strength Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901460-2026-07-18-67.99",
+			"url": "https://alkometriikka.fi/tuotteet/901460/",
+			"title": "Four Pillars Navy Strength Gin — 67,40 € → 67,99 €",
+			"content_html": "<p>Tuotteen Four Pillars Navy Strength Gin hinta on muuttunut.</p><p>67,40 € → 67,99 € (+0,59 €, +0,88 %).</p>",
+			"summary": "Tuotteen Four Pillars Navy Strength Gin hinta on muuttunut. 67,40 € → 67,99 € (+0,59 €, +0,88 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901460-00591a5ac0d8.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

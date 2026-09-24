@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Tanqueray No. Ten – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/923167/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Tanqueray No. Ten.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/923167.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Tanqueray No. Ten – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Tanqueray No. Ten — 55,32 € → 55,98 €</title>
+			<link>https://alkometriikka.fi/tuotteet/923167/</link>
+			<guid isPermaLink="false">alkometriikka-923167-2026-07-18-55.98</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / ginit</category>
+			<description><![CDATA[<p>Tuotteen Tanqueray No. Ten hinta on muuttunut.</p><p>55,32 € → 55,98 € (+0,66 €, +1,19 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/923167-15b8d8382200.png" />
+		</item>
+		<item>
+			<title>Tanqueray No. Ten — 55,32 € → 55,22 €</title>
+			<link>https://alkometriikka.fi/tuotteet/923167/</link>
+			<guid isPermaLink="false">alkometriikka-923167-2026-02-02-55.22</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / ginit</category>
+			<description><![CDATA[<p>Tuotteen Tanqueray No. Ten hinta on muuttunut.</p><p>55,32 € → 55,22 € (−0,10 €, −0,18 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/923167-15b8d8382200.png" />
+		</item>
+		<item>
+			<title>Tanqueray No. Ten — 55,22 € → 55,32 €</title>
+			<link>https://alkometriikka.fi/tuotteet/923167/</link>
+			<guid isPermaLink="false">alkometriikka-923167-2026-02-02-55.32</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / ginit</category>
+			<description><![CDATA[<p>Tuotteen Tanqueray No. Ten hinta on muuttunut.</p><p>55,22 € → 55,32 € (+0,10 €, +0,18 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/923167-15b8d8382200.png" />
+		</item>
+	</channel>
+</rss>

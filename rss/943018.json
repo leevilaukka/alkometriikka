@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Captain Morgan Tiki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/943018/",
+	"feed_url": "https://alkometriikka.fi/rss/943018.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Captain Morgan Tiki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-943018-2026-07-18-30.49",
+			"url": "https://alkometriikka.fi/tuotteet/943018/",
+			"title": "Captain Morgan Tiki — 30,16 € → 30,49 €",
+			"content_html": "<p>Tuotteen Captain Morgan Tiki hinta on muuttunut.</p><p>30,16 € → 30,49 € (+0,33 €, +1,09 %).</p>",
+			"summary": "Tuotteen Captain Morgan Tiki hinta on muuttunut. 30,16 € → 30,49 € (+0,33 €, +1,09 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/943018-38aa03d7a547.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

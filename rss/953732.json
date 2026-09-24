@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Torres 20 Hors d'âge Brandy – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/953732/",
+	"feed_url": "https://alkometriikka.fi/rss/953732.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Torres 20 Hors d'âge Brandy.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-953732-2026-07-18-61.98",
+			"url": "https://alkometriikka.fi/tuotteet/953732/",
+			"title": "Torres 20 Hors d'âge Brandy — 61,53 € → 61,98 €",
+			"content_html": "<p>Tuotteen Torres 20 Hors d'âge Brandy hinta on muuttunut.</p><p>61,53 € → 61,98 € (+0,45 €, +0,73 %).</p>",
+			"summary": "Tuotteen Torres 20 Hors d'âge Brandy hinta on muuttunut. 61,53 € → 61,98 € (+0,45 €, +0,73 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/953732-98407d0f61bd.png",
+			"tags": [
+				"Väkevät",
+				"brandyt"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Universite de Bourgogne Blanc 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900850/",
+	"feed_url": "https://alkometriikka.fi/rss/900850.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Universite de Bourgogne Blanc 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900850-2026-07-18-37.78",
+			"url": "https://alkometriikka.fi/tuotteet/900850/",
+			"title": "Universite de Bourgogne Blanc 2023 — 36,88 € → 37,78 €",
+			"content_html": "<p>Tuotteen Universite de Bourgogne Blanc 2023 hinta on muuttunut.</p><p>36,88 € → 37,78 € (+0,90 €, +2,44 %).</p>",
+			"summary": "Tuotteen Universite de Bourgogne Blanc 2023 hinta on muuttunut. 36,88 € → 37,78 € (+0,90 €, +2,44 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900850-3fde11f0cde3.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

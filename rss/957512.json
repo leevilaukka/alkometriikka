@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Billecart-Salmon Le Blanc de Blancs Grand Cru Champagne Extra Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/957512/",
+	"feed_url": "https://alkometriikka.fi/rss/957512.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Billecart-Salmon Le Blanc de Blancs Grand Cru Champagne Extra Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-957512-2026-07-18-95.5",
+			"url": "https://alkometriikka.fi/tuotteet/957512/",
+			"title": "Billecart-Salmon Le Blanc de Blancs Grand Cru Champagne Extra Brut — 95,36 € → 95,50 €",
+			"content_html": "<p>Tuotteen Billecart-Salmon Le Blanc de Blancs Grand Cru Champagne Extra Brut hinta on muuttunut.</p><p>95,36 € → 95,50 € (+0,14 €, +0,15 %).</p>",
+			"summary": "Tuotteen Billecart-Salmon Le Blanc de Blancs Grand Cru Champagne Extra Brut hinta on muuttunut. 95,36 € → 95,50 € (+0,14 €, +0,15 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/957512-25e4a5ce2c6e.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

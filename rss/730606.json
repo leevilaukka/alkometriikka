@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Koff Stallion tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/730606/",
+	"feed_url": "https://alkometriikka.fi/rss/730606.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Koff Stallion tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-730606-2026-07-18-3.35",
+			"url": "https://alkometriikka.fi/tuotteet/730606/",
+			"title": "Koff Stallion tölkki — 3,29 € → 3,35 €",
+			"content_html": "<p>Tuotteen Koff Stallion tölkki hinta on muuttunut.</p><p>3,29 € → 3,35 € (+0,06 €, +1,82 %).</p>",
+			"summary": "Tuotteen Koff Stallion tölkki hinta on muuttunut. 3,29 € → 3,35 € (+0,06 €, +1,82 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/730606-51dc28094122.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

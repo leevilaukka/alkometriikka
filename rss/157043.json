@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Finlandia Vodka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/157043/",
+	"feed_url": "https://alkometriikka.fi/rss/157043.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Finlandia Vodka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-157043-2026-07-18-9.59",
+			"url": "https://alkometriikka.fi/tuotteet/157043/",
+			"title": "Finlandia Vodka — 9,55 € → 9,59 €",
+			"content_html": "<p>Tuotteen Finlandia Vodka hinta on muuttunut.</p><p>9,55 € → 9,59 € (+0,04 €, +0,42 %).</p>",
+			"summary": "Tuotteen Finlandia Vodka hinta on muuttunut. 9,55 € → 9,59 € (+0,04 €, +0,42 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/157043-c296f2d7b1d8.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

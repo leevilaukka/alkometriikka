@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Palmer & Co La Réserve Jeroboam Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/928238/",
+	"feed_url": "https://alkometriikka.fi/rss/928238.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Palmer & Co La Réserve Jeroboam Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-928238-2026-07-18-386",
+			"url": "https://alkometriikka.fi/tuotteet/928238/",
+			"title": "Palmer & Co La Réserve Jeroboam Champagne Brut — 370,85 € → 386,00 €",
+			"content_html": "<p>Tuotteen Palmer & Co La Réserve Jeroboam Champagne Brut hinta on muuttunut.</p><p>370,85 € → 386,00 € (+15,15 €, +4,09 %).</p>",
+			"summary": "Tuotteen Palmer & Co La Réserve Jeroboam Champagne Brut hinta on muuttunut. 370,85 € → 386,00 € (+15,15 €, +4,09 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/928238-543c8e34181f.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

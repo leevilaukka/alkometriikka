@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Hartwall Vichy Original 1,5l muovipullo – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/600030/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Hartwall Vichy Original 1,5l muovipullo.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/600030.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Hartwall Vichy Original 1,5l muovipullo – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Hartwall Vichy Original 1,5l muovipullo — 3,18 € → 3,39 €</title>
+			<link>https://alkometriikka.fi/tuotteet/600030/</link>
+			<guid isPermaLink="false">alkometriikka-600030-2026-07-18-3.39</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Alkoholittomat / vedet, mehut ja muut alkoholittomat</category>
+			<description><![CDATA[<p>Tuotteen Hartwall Vichy Original 1,5l muovipullo hinta on muuttunut.</p><p>3,18 € → 3,39 € (+0,21 €, +6,60 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/600030-eb8d7cfc564c.png" />
+		</item>
+	</channel>
+</rss>

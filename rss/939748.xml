@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Brockmans Orange Kiss Gin – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/939748/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Brockmans Orange Kiss Gin.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/939748.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Brockmans Orange Kiss Gin – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Brockmans Orange Kiss Gin — 53,78 € → 58,40 €</title>
+			<link>https://alkometriikka.fi/tuotteet/939748/</link>
+			<guid isPermaLink="false">alkometriikka-939748-2026-07-18-58.4</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / ginit</category>
+			<description><![CDATA[<p>Tuotteen Brockmans Orange Kiss Gin hinta on muuttunut.</p><p>53,78 € → 58,40 € (+4,62 €, +8,59 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/939748-bdf9228d97f1.png" />
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mallassepät Sahti Tumma tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/946423/",
+	"feed_url": "https://alkometriikka.fi/rss/946423.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mallassepät Sahti Tumma tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-946423-2026-07-18-5.18",
+			"url": "https://alkometriikka.fi/tuotteet/946423/",
+			"title": "Mallassepät Sahti Tumma tölkki — 5,17 € → 5,18 €",
+			"content_html": "<p>Tuotteen Mallassepät Sahti Tumma tölkki hinta on muuttunut.</p><p>5,17 € → 5,18 € (+0,01 €, +0,19 %).</p>",
+			"summary": "Tuotteen Mallassepät Sahti Tumma tölkki hinta on muuttunut. 5,17 € → 5,18 € (+0,01 €, +0,19 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/946423-178c04276236.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

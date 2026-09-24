@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Estrella Damm N.A. tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/757214/",
+	"feed_url": "https://alkometriikka.fi/rss/757214.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Estrella Damm N.A. tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-757214-2026-09-04-1.43",
+			"url": "https://alkometriikka.fi/tuotteet/757214/",
+			"title": "Estrella Damm N.A. tölkki — 1,59 € → 1,43 €",
+			"content_html": "<p>Tuotteen Estrella Damm N.A. tölkki hinta on muuttunut.</p><p>1,59 € → 1,43 € (−0,16 €, −10,06 %).</p>",
+			"summary": "Tuotteen Estrella Damm N.A. tölkki hinta on muuttunut. 1,59 € → 1,43 € (−0,16 €, −10,06 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/757214-05f7d2bd9676.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-757214-2026-07-18-1.59",
+			"url": "https://alkometriikka.fi/tuotteet/757214/",
+			"title": "Estrella Damm N.A. tölkki — 1,58 € → 1,59 €",
+			"content_html": "<p>Tuotteen Estrella Damm N.A. tölkki hinta on muuttunut.</p><p>1,58 € → 1,59 € (+0,01 €, +0,63 %).</p>",
+			"summary": "Tuotteen Estrella Damm N.A. tölkki hinta on muuttunut. 1,58 € → 1,59 € (+0,01 €, +0,63 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/757214-05f7d2bd9676.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Koff Porter – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/770014/",
+	"feed_url": "https://alkometriikka.fi/rss/770014.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Koff Porter.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-770014-2026-07-18-3.45",
+			"url": "https://alkometriikka.fi/tuotteet/770014/",
+			"title": "Koff Porter — 3,39 € → 3,45 €",
+			"content_html": "<p>Tuotteen Koff Porter hinta on muuttunut.</p><p>3,39 € → 3,45 € (+0,06 €, +1,77 %).</p>",
+			"summary": "Tuotteen Koff Porter hinta on muuttunut. 3,39 € → 3,45 € (+0,06 €, +1,77 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/770014-5a195c97df87.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

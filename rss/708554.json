@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tsingtao Alcohol Free Lager – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/708554/",
+	"feed_url": "https://alkometriikka.fi/rss/708554.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tsingtao Alcohol Free Lager.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-708554-2026-09-04-1.52",
+			"url": "https://alkometriikka.fi/tuotteet/708554/",
+			"title": "Tsingtao Alcohol Free Lager — 1,69 € → 1,52 €",
+			"content_html": "<p>Tuotteen Tsingtao Alcohol Free Lager hinta on muuttunut.</p><p>1,69 € → 1,52 € (−0,17 €, −10,06 %).</p>",
+			"summary": "Tuotteen Tsingtao Alcohol Free Lager hinta on muuttunut. 1,69 € → 1,52 € (−0,17 €, −10,06 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/708554-1a35ee706fba.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-708554-2026-07-18-1.69",
+			"url": "https://alkometriikka.fi/tuotteet/708554/",
+			"title": "Tsingtao Alcohol Free Lager — 1,68 € → 1,69 €",
+			"content_html": "<p>Tuotteen Tsingtao Alcohol Free Lager hinta on muuttunut.</p><p>1,68 € → 1,69 € (+0,01 €, +0,60 %).</p>",
+			"summary": "Tuotteen Tsingtao Alcohol Free Lager hinta on muuttunut. 1,68 € → 1,69 € (+0,01 €, +0,60 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/708554-1a35ee706fba.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

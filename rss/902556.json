@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Delavenne Grand Cru Champagne Original 60/40 Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902556/",
+	"feed_url": "https://alkometriikka.fi/rss/902556.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Delavenne Grand Cru Champagne Original 60/40 Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902556-2026-07-18-54",
+			"url": "https://alkometriikka.fi/tuotteet/902556/",
+			"title": "Delavenne Grand Cru Champagne Original 60/40 Brut — 54,45 € → 54,00 €",
+			"content_html": "<p>Tuotteen Delavenne Grand Cru Champagne Original 60/40 Brut hinta on muuttunut.</p><p>54,45 € → 54,00 € (−0,45 €, −0,83 %).</p>",
+			"summary": "Tuotteen Delavenne Grand Cru Champagne Original 60/40 Brut hinta on muuttunut. 54,45 € → 54,00 € (−0,45 €, −0,83 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902556-7c67e9fb7243.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

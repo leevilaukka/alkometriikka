@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Crisp Hoppy Lager tölkki – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/700058/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Crisp Hoppy Lager tölkki.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/700058.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Crisp Hoppy Lager tölkki – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Crisp Hoppy Lager tölkki — 1,29 € → 1,16 €</title>
+			<link>https://alkometriikka.fi/tuotteet/700058/</link>
+			<guid isPermaLink="false">alkometriikka-700058-2026-09-04-1.16</guid>
+			<pubDate>Fri, 04 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Alkoholittomat / alkoholittomat oluet</category>
+			<description><![CDATA[<p>Tuotteen Crisp Hoppy Lager tölkki hinta on muuttunut.</p><p>1,29 € → 1,16 € (−0,13 €, −10,08 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/700058-fd3b061e4d5a.png" />
+		</item>
+		<item>
+			<title>Crisp Hoppy Lager tölkki — 1,45 € → 1,29 €</title>
+			<link>https://alkometriikka.fi/tuotteet/700058/</link>
+			<guid isPermaLink="false">alkometriikka-700058-2026-07-18-1.29</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Alkoholittomat / alkoholittomat oluet</category>
+			<description><![CDATA[<p>Tuotteen Crisp Hoppy Lager tölkki hinta on muuttunut.</p><p>1,45 € → 1,29 € (−0,16 €, −11,03 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/700058-fd3b061e4d5a.png" />
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Poli Cleopatra Amarone Oro Grappa – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/913297/",
+	"feed_url": "https://alkometriikka.fi/rss/913297.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Poli Cleopatra Amarone Oro Grappa.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-913297-2026-07-18-65",
+			"url": "https://alkometriikka.fi/tuotteet/913297/",
+			"title": "Poli Cleopatra Amarone Oro Grappa — 64,21 € → 65,00 €",
+			"content_html": "<p>Tuotteen Poli Cleopatra Amarone Oro Grappa hinta on muuttunut.</p><p>64,21 € → 65,00 € (+0,79 €, +1,23 %).</p>",
+			"summary": "Tuotteen Poli Cleopatra Amarone Oro Grappa hinta on muuttunut. 64,21 € → 65,00 € (+0,79 €, +1,23 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/913297-bd6262fbf023.png",
+			"tags": [
+				"Väkevät",
+				"grapat"
+			]
+		}
+	]
+}

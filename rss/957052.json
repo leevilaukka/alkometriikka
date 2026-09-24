@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – SJK OmaSp Stadion – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/957052/",
+	"feed_url": "https://alkometriikka.fi/rss/957052.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: SJK OmaSp Stadion.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-957052-2026-07-18-13.5",
+			"url": "https://alkometriikka.fi/tuotteet/957052/",
+			"title": "SJK OmaSp Stadion — 13,46 € → 13,50 €",
+			"content_html": "<p>Tuotteen SJK OmaSp Stadion hinta on muuttunut.</p><p>13,46 € → 13,50 € (+0,04 €, +0,30 %).</p>",
+			"summary": "Tuotteen SJK OmaSp Stadion hinta on muuttunut. 13,46 € → 13,50 € (+0,04 €, +0,30 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/957052-dbdc57ee0a55.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

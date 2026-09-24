@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lagavulin 8 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/175857/",
+	"feed_url": "https://alkometriikka.fi/rss/175857.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lagavulin 8 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-175857-2026-07-18-79.98",
+			"url": "https://alkometriikka.fi/tuotteet/175857/",
+			"title": "Lagavulin 8 Year Old Single Malt — 79,31 € → 79,98 €",
+			"content_html": "<p>Tuotteen Lagavulin 8 Year Old Single Malt hinta on muuttunut.</p><p>79,31 € → 79,98 € (+0,67 €, +0,84 %).</p>",
+			"summary": "Tuotteen Lagavulin 8 Year Old Single Malt hinta on muuttunut. 79,31 € → 79,98 € (+0,67 €, +0,84 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/175857-30362b40263d.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

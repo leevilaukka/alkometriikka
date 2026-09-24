@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Suomenlinnan Ton Alkoholiton IPA tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901982/",
+	"feed_url": "https://alkometriikka.fi/rss/901982.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Suomenlinnan Ton Alkoholiton IPA tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901982-2026-09-04-2.02",
+			"url": "https://alkometriikka.fi/tuotteet/901982/",
+			"title": "Suomenlinnan Ton Alkoholiton IPA tölkki — 2,24 € → 2,02 €",
+			"content_html": "<p>Tuotteen Suomenlinnan Ton Alkoholiton IPA tölkki hinta on muuttunut.</p><p>2,24 € → 2,02 € (−0,22 €, −9,82 %).</p>",
+			"summary": "Tuotteen Suomenlinnan Ton Alkoholiton IPA tölkki hinta on muuttunut. 2,24 € → 2,02 € (−0,22 €, −9,82 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901982-4b81ddd2f621.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

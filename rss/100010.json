@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nemiroff De Luxe Vodka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/100010/",
+	"feed_url": "https://alkometriikka.fi/rss/100010.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nemiroff De Luxe Vodka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-100010-2026-07-18-26.19",
+			"url": "https://alkometriikka.fi/tuotteet/100010/",
+			"title": "Nemiroff De Luxe Vodka — 26,23 € → 26,19 €",
+			"content_html": "<p>Tuotteen Nemiroff De Luxe Vodka hinta on muuttunut.</p><p>26,23 € → 26,19 € (−0,04 €, −0,15 %).</p>",
+			"summary": "Tuotteen Nemiroff De Luxe Vodka hinta on muuttunut. 26,23 € → 26,19 € (−0,04 €, −0,15 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/100010-56e3d2cafb73.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

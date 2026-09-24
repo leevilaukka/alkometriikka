@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bell's Original – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/152918/",
+	"feed_url": "https://alkometriikka.fi/rss/152918.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bell's Original.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-152918-2026-07-18-41.98",
+			"url": "https://alkometriikka.fi/tuotteet/152918/",
+			"title": "Bell's Original — 41,87 € → 41,98 €",
+			"content_html": "<p>Tuotteen Bell's Original hinta on muuttunut.</p><p>41,87 € → 41,98 € (+0,11 €, +0,26 %).</p>",
+			"summary": "Tuotteen Bell's Original hinta on muuttunut. 41,87 € → 41,98 € (+0,11 €, +0,26 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/152918-472ca77932e2.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

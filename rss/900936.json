@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – San Miguel de la Vega Crianza 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900936/",
+	"feed_url": "https://alkometriikka.fi/rss/900936.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: San Miguel de la Vega Crianza 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900936-2026-07-18-8.99",
+			"url": "https://alkometriikka.fi/tuotteet/900936/",
+			"title": "San Miguel de la Vega Crianza 2020 — 9,98 € → 8,99 €",
+			"content_html": "<p>Tuotteen San Miguel de la Vega Crianza 2020 hinta on muuttunut.</p><p>9,98 € → 8,99 € (−0,99 €, −9,92 %).</p>",
+			"summary": "Tuotteen San Miguel de la Vega Crianza 2020 hinta on muuttunut. 9,98 € → 8,99 € (−0,99 €, −9,92 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900936-462d5b22b3e7.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

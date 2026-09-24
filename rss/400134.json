@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tenuta Vignega Valpolicella Ripasso Superiore  2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/400134/",
+	"feed_url": "https://alkometriikka.fi/rss/400134.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tenuta Vignega Valpolicella Ripasso Superiore  2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-400134-2026-07-18-11.9",
+			"url": "https://alkometriikka.fi/tuotteet/400134/",
+			"title": "Tenuta Vignega Valpolicella Ripasso Superiore  2022 — 12,21 € → 11,90 €",
+			"content_html": "<p>Tuotteen Tenuta Vignega Valpolicella Ripasso Superiore  2022 hinta on muuttunut.</p><p>12,21 € → 11,90 € (−0,31 €, −2,54 %).</p>",
+			"summary": "Tuotteen Tenuta Vignega Valpolicella Ripasso Superiore 2022 hinta on muuttunut. 12,21 € → 11,90 € (−0,31 €, −2,54 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/400134-c0c79d70519d.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

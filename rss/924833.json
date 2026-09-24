@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Uljas Premium Dry Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/924833/",
+	"feed_url": "https://alkometriikka.fi/rss/924833.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Uljas Premium Dry Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-924833-2026-07-18-64.85",
+			"url": "https://alkometriikka.fi/tuotteet/924833/",
+			"title": "Uljas Premium Dry Gin — 72,71 € → 64,85 €",
+			"content_html": "<p>Tuotteen Uljas Premium Dry Gin hinta on muuttunut.</p><p>72,71 € → 64,85 € (−7,86 €, −10,81 %).</p>",
+			"summary": "Tuotteen Uljas Premium Dry Gin hinta on muuttunut. 72,71 € → 64,85 € (−7,86 €, −10,81 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/924833-b7c2c1d38027.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

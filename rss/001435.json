@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Johnnie Walker Red Label muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/001435/",
+	"feed_url": "https://alkometriikka.fi/rss/001435.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Johnnie Walker Red Label muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-001435-2026-07-18-4.69",
+			"url": "https://alkometriikka.fi/tuotteet/001435/",
+			"title": "Johnnie Walker Red Label muovipullo — 4,62 € → 4,69 €",
+			"content_html": "<p>Tuotteen Johnnie Walker Red Label muovipullo hinta on muuttunut.</p><p>4,62 € → 4,69 € (+0,07 €, +1,52 %).</p>",
+			"summary": "Tuotteen Johnnie Walker Red Label muovipullo hinta on muuttunut. 4,62 € → 4,69 € (+0,07 €, +1,52 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/001435-7a43bef2bd22.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Marques de Whatever 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901202/",
+	"feed_url": "https://alkometriikka.fi/rss/901202.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Marques de Whatever 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901202-2026-07-18-14.99",
+			"url": "https://alkometriikka.fi/tuotteet/901202/",
+			"title": "Marques de Whatever 2022 — 14,44 € → 14,99 €",
+			"content_html": "<p>Tuotteen Marques de Whatever 2022 hinta on muuttunut.</p><p>14,44 € → 14,99 € (+0,55 €, +3,81 %).</p>",
+			"summary": "Tuotteen Marques de Whatever 2022 hinta on muuttunut. 14,44 € → 14,99 € (+0,55 €, +3,81 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901202-45c1a3930e18.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

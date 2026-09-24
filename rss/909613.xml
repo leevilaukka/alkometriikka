@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Zuccardi Finca Piedra Infinita 2017 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/909613/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Zuccardi Finca Piedra Infinita 2017.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/909613.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Zuccardi Finca Piedra Infinita 2017 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Zuccardi Finca Piedra Infinita 2017 — 170,45 € → 169,98 €</title>
+			<link>https://alkometriikka.fi/tuotteet/909613/</link>
+			<guid isPermaLink="false">alkometriikka-909613-2026-07-18-169.98</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Zuccardi Finca Piedra Infinita 2017 hinta on muuttunut.</p><p>170,45 € → 169,98 € (−0,47 €, −0,28 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/909613-d942a5f6b6fa.png" />
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Conterno Fantino Barolo Vigna del Gris 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/913047/",
+	"feed_url": "https://alkometriikka.fi/rss/913047.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Conterno Fantino Barolo Vigna del Gris 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-913047-2026-07-18-93.37",
+			"url": "https://alkometriikka.fi/tuotteet/913047/",
+			"title": "Conterno Fantino Barolo Vigna del Gris 2020 — 93,17 € → 93,37 €",
+			"content_html": "<p>Tuotteen Conterno Fantino Barolo Vigna del Gris 2020 hinta on muuttunut.</p><p>93,17 € → 93,37 € (+0,20 €, +0,21 %).</p>",
+			"summary": "Tuotteen Conterno Fantino Barolo Vigna del Gris 2020 hinta on muuttunut. 93,17 € → 93,37 € (+0,20 €, +0,21 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/913047-03a452d58008.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

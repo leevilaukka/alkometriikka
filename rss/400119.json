@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Catalina Tempranillo Organic 2025 kartonkitölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/400119/",
+	"feed_url": "https://alkometriikka.fi/rss/400119.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Catalina Tempranillo Organic 2025 kartonkitölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-400119-2026-07-18-10.28",
+			"url": "https://alkometriikka.fi/tuotteet/400119/",
+			"title": "Catalina Tempranillo Organic 2025 kartonkitölkki — 9,60 € → 10,28 €",
+			"content_html": "<p>Tuotteen Catalina Tempranillo Organic 2025 kartonkitölkki hinta on muuttunut.</p><p>9,60 € → 10,28 € (+0,68 €, +7,08 %).</p>",
+			"summary": "Tuotteen Catalina Tempranillo Organic 2025 kartonkitölkki hinta on muuttunut. 9,60 € → 10,28 € (+0,68 €, +7,08 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/400119-9c15ea3a1915.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

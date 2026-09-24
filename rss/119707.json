@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lagavulin 16 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/119707/",
+	"feed_url": "https://alkometriikka.fi/rss/119707.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lagavulin 16 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-119707-2026-07-18-110.98",
+			"url": "https://alkometriikka.fi/tuotteet/119707/",
+			"title": "Lagavulin 16 Year Old Single Malt — 105,27 € → 110,98 €",
+			"content_html": "<p>Tuotteen Lagavulin 16 Year Old Single Malt hinta on muuttunut.</p><p>105,27 € → 110,98 € (+5,71 €, +5,42 %).</p>",
+			"summary": "Tuotteen Lagavulin 16 Year Old Single Malt hinta on muuttunut. 105,27 € → 110,98 € (+5,71 €, +5,42 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/119707-e517a2d50199.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

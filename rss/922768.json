@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ägräs Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/922768/",
+	"feed_url": "https://alkometriikka.fi/rss/922768.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ägräs Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-922768-2026-07-18-15.99",
+			"url": "https://alkometriikka.fi/tuotteet/922768/",
+			"title": "Ägräs Gin — 16,86 € → 15,99 €",
+			"content_html": "<p>Tuotteen Ägräs Gin hinta on muuttunut.</p><p>16,86 € → 15,99 € (−0,87 €, −5,16 %).</p>",
+			"summary": "Tuotteen Ägräs Gin hinta on muuttunut. 16,86 € → 15,99 € (−0,87 €, −5,16 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/922768-6aee2d0715ba.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

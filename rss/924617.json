@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Chateau Ste Michelle Cabernet Sauvignon 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/924617/",
+	"feed_url": "https://alkometriikka.fi/rss/924617.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Chateau Ste Michelle Cabernet Sauvignon 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-924617-2026-07-18-22.49",
+			"url": "https://alkometriikka.fi/tuotteet/924617/",
+			"title": "Chateau Ste Michelle Cabernet Sauvignon 2018 — 22,45 € → 22,49 €",
+			"content_html": "<p>Tuotteen Chateau Ste Michelle Cabernet Sauvignon 2018 hinta on muuttunut.</p><p>22,45 € → 22,49 € (+0,04 €, +0,18 %).</p>",
+			"summary": "Tuotteen Chateau Ste Michelle Cabernet Sauvignon 2018 hinta on muuttunut. 22,45 € → 22,49 € (+0,04 €, +0,18 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/924617-e75d03acf331.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

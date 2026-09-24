@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jaloviina * – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/101121/",
+	"feed_url": "https://alkometriikka.fi/rss/101121.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jaloviina *.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-101121-2026-07-18-3.59",
+			"url": "https://alkometriikka.fi/tuotteet/101121/",
+			"title": "Jaloviina * — 3,48 € → 3,59 €",
+			"content_html": "<p>Tuotteen Jaloviina * hinta on muuttunut.</p><p>3,48 € → 3,59 € (+0,11 €, +3,16 %).</p>",
+			"summary": "Tuotteen Jaloviina * hinta on muuttunut. 3,48 € → 3,59 € (+0,11 €, +3,16 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/101121-668318cd3895.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

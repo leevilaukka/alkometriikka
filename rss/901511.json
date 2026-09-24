@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Stauning Smoke Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901511/",
+	"feed_url": "https://alkometriikka.fi/rss/901511.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Stauning Smoke Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901511-2026-07-18-99.98",
+			"url": "https://alkometriikka.fi/tuotteet/901511/",
+			"title": "Stauning Smoke Single Malt — 93,68 € → 99,98 €",
+			"content_html": "<p>Tuotteen Stauning Smoke Single Malt hinta on muuttunut.</p><p>93,68 € → 99,98 € (+6,30 €, +6,73 %).</p>",
+			"summary": "Tuotteen Stauning Smoke Single Malt hinta on muuttunut. 93,68 € → 99,98 € (+6,30 €, +6,73 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901511-82649f63ac03.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

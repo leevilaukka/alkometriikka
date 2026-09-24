@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Joseph Drouhin Meursault 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/567487/",
+	"feed_url": "https://alkometriikka.fi/rss/567487.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Joseph Drouhin Meursault 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-567487-2026-07-18-89.99",
+			"url": "https://alkometriikka.fi/tuotteet/567487/",
+			"title": "Joseph Drouhin Meursault 2023 — 83,47 € → 89,99 €",
+			"content_html": "<p>Tuotteen Joseph Drouhin Meursault 2023 hinta on muuttunut.</p><p>83,47 € → 89,99 € (+6,52 €, +7,81 %).</p>",
+			"summary": "Tuotteen Joseph Drouhin Meursault 2023 hinta on muuttunut. 83,47 € → 89,99 € (+6,52 €, +7,81 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/567487-8c155cad260e.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

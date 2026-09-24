@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hienoa Cognac VSOP – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/000914/",
+	"feed_url": "https://alkometriikka.fi/rss/000914.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hienoa Cognac VSOP.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-000914-2026-07-18-107.49",
+			"url": "https://alkometriikka.fi/tuotteet/000914/",
+			"title": "Hienoa Cognac VSOP — 107,07 € → 107,49 €",
+			"content_html": "<p>Tuotteen Hienoa Cognac VSOP hinta on muuttunut.</p><p>107,07 € → 107,49 € (+0,42 €, +0,39 %).</p>",
+			"summary": "Tuotteen Hienoa Cognac VSOP hinta on muuttunut. 107,07 € → 107,49 € (+0,42 €, +0,39 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/000914-894542841b8c.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

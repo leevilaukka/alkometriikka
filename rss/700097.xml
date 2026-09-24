@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – 1664 Blanc 6-pack tölkki – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/700097/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: 1664 Blanc 6-pack tölkki.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/700097.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – 1664 Blanc 6-pack tölkki – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>1664 Blanc 6-pack tölkki — 14,34 € → 14,64 €</title>
+			<link>https://alkometriikka.fi/tuotteet/700097/</link>
+			<guid isPermaLink="false">alkometriikka-700097-2026-07-18-14.64</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Panimotuotteet / oluet</category>
+			<description><![CDATA[<p>Tuotteen 1664 Blanc 6-pack tölkki hinta on muuttunut.</p><p>14,34 € → 14,64 € (+0,30 €, +2,09 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/700097-69b29bad2732.png" />
+		</item>
+	</channel>
+</rss>

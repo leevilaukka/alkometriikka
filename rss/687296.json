@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ystävän Glögi Puolukka-Punaherukka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/687296/",
+	"feed_url": "https://alkometriikka.fi/rss/687296.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ystävän Glögi Puolukka-Punaherukka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-687296-2026-09-17-4.49",
+			"url": "https://alkometriikka.fi/tuotteet/687296/",
+			"title": "Ystävän Glögi Puolukka-Punaherukka — 3,99 € → 4,49 €",
+			"content_html": "<p>Tuotteen Ystävän Glögi Puolukka-Punaherukka hinta on muuttunut.</p><p>3,99 € → 4,49 € (+0,50 €, +12,53 %).</p>",
+			"summary": "Tuotteen Ystävän Glögi Puolukka-Punaherukka hinta on muuttunut. 3,99 € → 4,49 € (+0,50 €, +12,53 %).",
+			"date_published": "2026-09-17T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/687296-fb5369a94d1f.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

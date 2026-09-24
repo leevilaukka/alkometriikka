@@ -1,0 +1,50 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mumm Cordon Rouge Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/008741/",
+	"feed_url": "https://alkometriikka.fi/rss/008741.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mumm Cordon Rouge Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-008741-2026-07-18-46.98",
+			"url": "https://alkometriikka.fi/tuotteet/008741/",
+			"title": "Mumm Cordon Rouge Champagne Brut — 46,94 € → 46,98 €",
+			"content_html": "<p>Tuotteen Mumm Cordon Rouge Champagne Brut hinta on muuttunut.</p><p>46,94 € → 46,98 € (+0,04 €, +0,09 %).</p>",
+			"summary": "Tuotteen Mumm Cordon Rouge Champagne Brut hinta on muuttunut. 46,94 € → 46,98 € (+0,04 €, +0,09 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/008741-680b6f19f6f4.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-008741-2026-02-02-46.84",
+			"url": "https://alkometriikka.fi/tuotteet/008741/",
+			"title": "Mumm Cordon Rouge Champagne Brut — 46,94 € → 46,84 €",
+			"content_html": "<p>Tuotteen Mumm Cordon Rouge Champagne Brut hinta on muuttunut.</p><p>46,94 € → 46,84 € (−0,10 €, −0,21 %).</p>",
+			"summary": "Tuotteen Mumm Cordon Rouge Champagne Brut hinta on muuttunut. 46,94 € → 46,84 € (−0,10 €, −0,21 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/008741-680b6f19f6f4.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-008741-2026-02-02-46.94",
+			"url": "https://alkometriikka.fi/tuotteet/008741/",
+			"title": "Mumm Cordon Rouge Champagne Brut — 46,84 € → 46,94 €",
+			"content_html": "<p>Tuotteen Mumm Cordon Rouge Champagne Brut hinta on muuttunut.</p><p>46,84 € → 46,94 € (+0,10 €, +0,21 %).</p>",
+			"summary": "Tuotteen Mumm Cordon Rouge Champagne Brut hinta on muuttunut. 46,84 € → 46,94 € (+0,10 €, +0,21 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/008741-680b6f19f6f4.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

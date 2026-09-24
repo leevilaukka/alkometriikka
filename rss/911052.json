@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Martha’s Single Harvest Tawny Port Colheita 2007 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/911052/",
+	"feed_url": "https://alkometriikka.fi/rss/911052.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Martha’s Single Harvest Tawny Port Colheita 2007.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-911052-2026-07-18-59.98",
+			"url": "https://alkometriikka.fi/tuotteet/911052/",
+			"title": "Martha’s Single Harvest Tawny Port Colheita 2007 — 51,90 € → 59,98 €",
+			"content_html": "<p>Tuotteen Martha’s Single Harvest Tawny Port Colheita 2007 hinta on muuttunut.</p><p>51,90 € → 59,98 € (+8,08 €, +15,57 %).</p>",
+			"summary": "Tuotteen Martha’s Single Harvest Tawny Port Colheita 2007 hinta on muuttunut. 51,90 € → 59,98 € (+8,08 €, +15,57 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/911052-6ecec4f9acd2.png",
+			"tags": [
+				"Välituotteet",
+				"portviinit"
+			]
+		}
+	]
+}

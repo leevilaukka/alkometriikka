@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dow's Nirvana Reserve Port – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/334736/",
+	"feed_url": "https://alkometriikka.fi/rss/334736.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dow's Nirvana Reserve Port.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-334736-2026-07-18-19.99",
+			"url": "https://alkometriikka.fi/tuotteet/334736/",
+			"title": "Dow's Nirvana Reserve Port — 19,56 € → 19,99 €",
+			"content_html": "<p>Tuotteen Dow's Nirvana Reserve Port hinta on muuttunut.</p><p>19,56 € → 19,99 € (+0,43 €, +2,20 %).</p>",
+			"summary": "Tuotteen Dow's Nirvana Reserve Port hinta on muuttunut. 19,56 € → 19,99 € (+0,43 €, +2,20 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/334736-ae4751a3e34c.png",
+			"tags": [
+				"Välituotteet",
+				"portviinit"
+			]
+		}
+	]
+}

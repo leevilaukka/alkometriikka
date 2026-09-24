@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Conde Valdemar Gran Reserva 2017 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/452997/",
+	"feed_url": "https://alkometriikka.fi/rss/452997.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Conde Valdemar Gran Reserva 2017.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-452997-2026-07-18-33.3",
+			"url": "https://alkometriikka.fi/tuotteet/452997/",
+			"title": "Conde Valdemar Gran Reserva 2017 — 33,32 € → 33,30 €",
+			"content_html": "<p>Tuotteen Conde Valdemar Gran Reserva 2017 hinta on muuttunut.</p><p>33,32 € → 33,30 € (−0,02 €, −0,06 %).</p>",
+			"summary": "Tuotteen Conde Valdemar Gran Reserva 2017 hinta on muuttunut. 33,32 € → 33,30 € (−0,02 €, −0,06 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/452997-b86a1ac27944.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Plan B Riesling 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/588837/",
+	"feed_url": "https://alkometriikka.fi/rss/588837.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Plan B Riesling 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-588837-2026-07-18-15.49",
+			"url": "https://alkometriikka.fi/tuotteet/588837/",
+			"title": "Plan B Riesling 2024 — 15,43 € → 15,49 €",
+			"content_html": "<p>Tuotteen Plan B Riesling 2024 hinta on muuttunut.</p><p>15,43 € → 15,49 € (+0,06 €, +0,39 %).</p>",
+			"summary": "Tuotteen Plan B Riesling 2024 hinta on muuttunut. 15,43 € → 15,49 € (+0,06 €, +0,39 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/588837-182fb14ed4db.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

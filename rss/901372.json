@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Varo Codigo 1530 Rosa Tequila – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901372/",
+	"feed_url": "https://alkometriikka.fi/rss/901372.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Varo Codigo 1530 Rosa Tequila.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901372-2026-07-18-66.99",
+			"url": "https://alkometriikka.fi/tuotteet/901372/",
+			"title": "Varo Codigo 1530 Rosa Tequila — 67,23 € → 66,99 €",
+			"content_html": "<p>Tuotteen Varo Codigo 1530 Rosa Tequila hinta on muuttunut.</p><p>67,23 € → 66,99 € (−0,24 €, −0,36 %).</p>",
+			"summary": "Tuotteen Varo Codigo 1530 Rosa Tequila hinta on muuttunut. 67,23 € → 66,99 € (−0,24 €, −0,36 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901372-c42df3a01dfe.png",
+			"tags": [
+				"Väkevät",
+				"Tequilat"
+			]
+		}
+	]
+}

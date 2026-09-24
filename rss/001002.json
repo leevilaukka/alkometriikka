@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Monnet VS – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/001002/",
+	"feed_url": "https://alkometriikka.fi/rss/001002.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Monnet VS.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-001002-2026-07-18-22.99",
+			"url": "https://alkometriikka.fi/tuotteet/001002/",
+			"title": "Monnet VS — 23,12 € → 22,99 €",
+			"content_html": "<p>Tuotteen Monnet VS hinta on muuttunut.</p><p>23,12 € → 22,99 € (−0,13 €, −0,56 %).</p>",
+			"summary": "Tuotteen Monnet VS hinta on muuttunut. 23,12 € → 22,99 € (−0,13 €, −0,56 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/001002-e12bdaa40700.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

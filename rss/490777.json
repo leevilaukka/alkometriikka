@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Susana Balbo Crios Malbec 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/490777/",
+	"feed_url": "https://alkometriikka.fi/rss/490777.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Susana Balbo Crios Malbec 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-490777-2026-07-18-19.99",
+			"url": "https://alkometriikka.fi/tuotteet/490777/",
+			"title": "Susana Balbo Crios Malbec 2023 — 19,95 € → 19,99 €",
+			"content_html": "<p>Tuotteen Susana Balbo Crios Malbec 2023 hinta on muuttunut.</p><p>19,95 € → 19,99 € (+0,04 €, +0,20 %).</p>",
+			"summary": "Tuotteen Susana Balbo Crios Malbec 2023 hinta on muuttunut. 19,95 € → 19,99 € (+0,04 €, +0,20 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/490777-3a1d1b75733b.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

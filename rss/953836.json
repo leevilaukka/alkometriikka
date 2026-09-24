@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – La Guita Manzanilla Sherry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/953836/",
+	"feed_url": "https://alkometriikka.fi/rss/953836.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: La Guita Manzanilla Sherry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-953836-2026-07-18-12.58",
+			"url": "https://alkometriikka.fi/tuotteet/953836/",
+			"title": "La Guita Manzanilla Sherry — 12,52 € → 12,58 €",
+			"content_html": "<p>Tuotteen La Guita Manzanilla Sherry hinta on muuttunut.</p><p>12,52 € → 12,58 € (+0,06 €, +0,48 %).</p>",
+			"summary": "Tuotteen La Guita Manzanilla Sherry hinta on muuttunut. 12,52 € → 12,58 € (+0,06 €, +0,48 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/953836-e3384a3910cf.png",
+			"tags": [
+				"Välituotteet",
+				"sherryt"
+			]
+		}
+	]
+}

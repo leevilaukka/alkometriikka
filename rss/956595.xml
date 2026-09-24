@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Nonino Grappa il Merlot – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/956595/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Nonino Grappa il Merlot.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/956595.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Nonino Grappa il Merlot – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Nonino Grappa il Merlot — 44,91 € → 45,00 €</title>
+			<link>https://alkometriikka.fi/tuotteet/956595/</link>
+			<guid isPermaLink="false">alkometriikka-956595-2026-07-18-45</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / grapat</category>
+			<description><![CDATA[<p>Tuotteen Nonino Grappa il Merlot hinta on muuttunut.</p><p>44,91 € → 45,00 € (+0,09 €, +0,20 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/956595-c57303b6c339.png" />
+		</item>
+	</channel>
+</rss>

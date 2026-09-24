@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – McGuigan Zero Chardonnay – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/573477/",
+	"feed_url": "https://alkometriikka.fi/rss/573477.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: McGuigan Zero Chardonnay.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-573477-2026-07-18-7.99",
+			"url": "https://alkometriikka.fi/tuotteet/573477/",
+			"title": "McGuigan Zero Chardonnay — 7,96 € → 7,99 €",
+			"content_html": "<p>Tuotteen McGuigan Zero Chardonnay hinta on muuttunut.</p><p>7,96 € → 7,99 € (+0,03 €, +0,38 %).</p>",
+			"summary": "Tuotteen McGuigan Zero Chardonnay hinta on muuttunut. 7,96 € → 7,99 € (+0,03 €, +0,38 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/573477-2c61fbb76f9c.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat valko- ja roseeviinit"
+			]
+		}
+	]
+}

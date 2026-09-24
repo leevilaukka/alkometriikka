@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gen One White 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/945933/",
+	"feed_url": "https://alkometriikka.fi/rss/945933.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gen One White 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-945933-2026-07-18-38.99",
+			"url": "https://alkometriikka.fi/tuotteet/945933/",
+			"title": "Gen One White 2019 — 38,46 € → 38,99 €",
+			"content_html": "<p>Tuotteen Gen One White 2019 hinta on muuttunut.</p><p>38,46 € → 38,99 € (+0,53 €, +1,38 %).</p>",
+			"summary": "Tuotteen Gen One White 2019 hinta on muuttunut. 38,46 € → 38,99 € (+0,53 €, +1,38 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/945933-3bedde1b2abb.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

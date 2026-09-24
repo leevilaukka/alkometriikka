@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lindores Casks of Lindores II Bourbon Cask Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900549/",
+	"feed_url": "https://alkometriikka.fi/rss/900549.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lindores Casks of Lindores II Bourbon Cask Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900549-2026-07-18-73.99",
+			"url": "https://alkometriikka.fi/tuotteet/900549/",
+			"title": "Lindores Casks of Lindores II Bourbon Cask Single Malt — 75,99 € → 73,99 €",
+			"content_html": "<p>Tuotteen Lindores Casks of Lindores II Bourbon Cask Single Malt hinta on muuttunut.</p><p>75,99 € → 73,99 € (−2,00 €, −2,63 %).</p>",
+			"summary": "Tuotteen Lindores Casks of Lindores II Bourbon Cask Single Malt hinta on muuttunut. 75,99 € → 73,99 € (−2,00 €, −2,63 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900549-d411c5317eac.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Helsinki Release #24 VYS Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/921378/",
+	"feed_url": "https://alkometriikka.fi/rss/921378.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Helsinki Release #24 VYS Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-921378-2026-07-18-89.89",
+			"url": "https://alkometriikka.fi/tuotteet/921378/",
+			"title": "Helsinki Release #24 VYS Single Malt — 91,02 € → 89,89 €",
+			"content_html": "<p>Tuotteen Helsinki Release #24 VYS Single Malt hinta on muuttunut.</p><p>91,02 € → 89,89 € (−1,13 €, −1,24 %).</p>",
+			"summary": "Tuotteen Helsinki Release #24 VYS Single Malt hinta on muuttunut. 91,02 € → 89,89 € (−1,13 €, −1,24 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/921378-692c7c6705ec.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,50 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mionetto Treviso Prosecco Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/916823/",
+	"feed_url": "https://alkometriikka.fi/rss/916823.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mionetto Treviso Prosecco Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-916823-2026-07-18-5.2",
+			"url": "https://alkometriikka.fi/tuotteet/916823/",
+			"title": "Mionetto Treviso Prosecco Brut — 5,11 € → 5,20 €",
+			"content_html": "<p>Tuotteen Mionetto Treviso Prosecco Brut hinta on muuttunut.</p><p>5,11 € → 5,20 € (+0,09 €, +1,76 %).</p>",
+			"summary": "Tuotteen Mionetto Treviso Prosecco Brut hinta on muuttunut. 5,11 € → 5,20 € (+0,09 €, +1,76 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/916823-5f5c3827714b.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-916823-2026-02-02-5.01",
+			"url": "https://alkometriikka.fi/tuotteet/916823/",
+			"title": "Mionetto Treviso Prosecco Brut — 5,11 € → 5,01 €",
+			"content_html": "<p>Tuotteen Mionetto Treviso Prosecco Brut hinta on muuttunut.</p><p>5,11 € → 5,01 € (−0,10 €, −1,96 %).</p>",
+			"summary": "Tuotteen Mionetto Treviso Prosecco Brut hinta on muuttunut. 5,11 € → 5,01 € (−0,10 €, −1,96 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/916823-5f5c3827714b.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-916823-2026-02-02-5.11",
+			"url": "https://alkometriikka.fi/tuotteet/916823/",
+			"title": "Mionetto Treviso Prosecco Brut — 5,01 € → 5,11 €",
+			"content_html": "<p>Tuotteen Mionetto Treviso Prosecco Brut hinta on muuttunut.</p><p>5,01 € → 5,11 € (+0,10 €, +2,00 %).</p>",
+			"summary": "Tuotteen Mionetto Treviso Prosecco Brut hinta on muuttunut. 5,01 € → 5,11 € (+0,10 €, +2,00 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/916823-5f5c3827714b.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Butler Organic White 2024 kartonkitölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/500017/",
+	"feed_url": "https://alkometriikka.fi/rss/500017.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Butler Organic White 2024 kartonkitölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-500017-2026-07-18-9.99",
+			"url": "https://alkometriikka.fi/tuotteet/500017/",
+			"title": "The Butler Organic White 2024 kartonkitölkki — 9,60 € → 9,99 €",
+			"content_html": "<p>Tuotteen The Butler Organic White 2024 kartonkitölkki hinta on muuttunut.</p><p>9,60 € → 9,99 € (+0,39 €, +4,06 %).</p>",
+			"summary": "Tuotteen The Butler Organic White 2024 kartonkitölkki hinta on muuttunut. 9,60 € → 9,99 € (+0,39 €, +4,06 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/500017-2d5cf5f3b759.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

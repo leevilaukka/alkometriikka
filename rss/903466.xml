@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – High Coast Timmer Single Malt – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/903466/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: High Coast Timmer Single Malt.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/903466.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – High Coast Timmer Single Malt – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>High Coast Timmer Single Malt — 74,20 € → 74,10 €</title>
+			<link>https://alkometriikka.fi/tuotteet/903466/</link>
+			<guid isPermaLink="false">alkometriikka-903466-2026-02-02-74.1</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / viskit</category>
+			<description><![CDATA[<p>Tuotteen High Coast Timmer Single Malt hinta on muuttunut.</p><p>74,20 € → 74,10 € (−0,10 €, −0,13 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903466-23d5a31e7da9.png" />
+		</item>
+		<item>
+			<title>High Coast Timmer Single Malt — 74,10 € → 74,20 €</title>
+			<link>https://alkometriikka.fi/tuotteet/903466/</link>
+			<guid isPermaLink="false">alkometriikka-903466-2026-02-02-74.2</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / viskit</category>
+			<description><![CDATA[<p>Tuotteen High Coast Timmer Single Malt hinta on muuttunut.</p><p>74,10 € → 74,20 € (+0,10 €, +0,13 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903466-23d5a31e7da9.png" />
+		</item>
+	</channel>
+</rss>

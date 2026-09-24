@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Johnnie Walker Black Label 12 Year Old – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/001447/",
+	"feed_url": "https://alkometriikka.fi/rss/001447.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Johnnie Walker Black Label 12 Year Old.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-001447-2026-07-18-48.99",
+			"url": "https://alkometriikka.fi/tuotteet/001447/",
+			"title": "Johnnie Walker Black Label 12 Year Old — 47,99 € → 48,99 €",
+			"content_html": "<p>Tuotteen Johnnie Walker Black Label 12 Year Old hinta on muuttunut.</p><p>47,99 € → 48,99 € (+1,00 €, +2,08 %).</p>",
+			"summary": "Tuotteen Johnnie Walker Black Label 12 Year Old hinta on muuttunut. 47,99 € → 48,99 € (+1,00 €, +2,08 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/001447-3416b7a92865.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

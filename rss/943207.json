@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Fontanafredda Barolo Serralunga d'Alba 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/943207/",
+	"feed_url": "https://alkometriikka.fi/rss/943207.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Fontanafredda Barolo Serralunga d'Alba 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-943207-2026-07-18-49.99",
+			"url": "https://alkometriikka.fi/tuotteet/943207/",
+			"title": "Fontanafredda Barolo Serralunga d'Alba 2019 — 49,87 € → 49,99 €",
+			"content_html": "<p>Tuotteen Fontanafredda Barolo Serralunga d'Alba 2019 hinta on muuttunut.</p><p>49,87 € → 49,99 € (+0,12 €, +0,24 %).</p>",
+			"summary": "Tuotteen Fontanafredda Barolo Serralunga d'Alba 2019 hinta on muuttunut. 49,87 € → 49,99 € (+0,12 €, +0,24 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/943207-54aa32d4c0d1.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

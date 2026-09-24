@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Arancione Originale Amarone della Valpolicella 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/421637/",
+	"feed_url": "https://alkometriikka.fi/rss/421637.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Arancione Originale Amarone della Valpolicella 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-421637-2026-02-02-29.88",
+			"url": "https://alkometriikka.fi/tuotteet/421637/",
+			"title": "Arancione Originale Amarone della Valpolicella 2022 — 29,98 € → 29,88 €",
+			"content_html": "<p>Tuotteen Arancione Originale Amarone della Valpolicella 2022 hinta on muuttunut.</p><p>29,98 € → 29,88 € (−0,10 €, −0,33 %).</p>",
+			"summary": "Tuotteen Arancione Originale Amarone della Valpolicella 2022 hinta on muuttunut. 29,98 € → 29,88 € (−0,10 €, −0,33 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/421637-df9a92ae9c62.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-421637-2026-02-02-29.98",
+			"url": "https://alkometriikka.fi/tuotteet/421637/",
+			"title": "Arancione Originale Amarone della Valpolicella 2022 — 29,88 € → 29,98 €",
+			"content_html": "<p>Tuotteen Arancione Originale Amarone della Valpolicella 2022 hinta on muuttunut.</p><p>29,88 € → 29,98 € (+0,10 €, +0,33 %).</p>",
+			"summary": "Tuotteen Arancione Originale Amarone della Valpolicella 2022 hinta on muuttunut. 29,88 € → 29,98 € (+0,10 €, +0,33 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/421637-df9a92ae9c62.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

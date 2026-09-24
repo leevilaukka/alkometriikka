@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ruinart Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/577177/",
+	"feed_url": "https://alkometriikka.fi/rss/577177.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ruinart Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-577177-2026-07-18-84.49",
+			"url": "https://alkometriikka.fi/tuotteet/577177/",
+			"title": "Ruinart Champagne Brut — 84,45 € → 84,49 €",
+			"content_html": "<p>Tuotteen Ruinart Champagne Brut hinta on muuttunut.</p><p>84,45 € → 84,49 € (+0,04 €, +0,05 %).</p>",
+			"summary": "Tuotteen Ruinart Champagne Brut hinta on muuttunut. 84,45 € → 84,49 € (+0,04 €, +0,05 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/577177-18cb7593f8aa.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

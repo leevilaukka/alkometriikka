@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Louis Jadot Bourgogne Côte d'Or 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/433697/",
+	"feed_url": "https://alkometriikka.fi/rss/433697.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Louis Jadot Bourgogne Côte d'Or 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-433697-2026-07-18-32.98",
+			"url": "https://alkometriikka.fi/tuotteet/433697/",
+			"title": "Louis Jadot Bourgogne Côte d'Or 2023 — 32,46 € → 32,98 €",
+			"content_html": "<p>Tuotteen Louis Jadot Bourgogne Côte d'Or 2023 hinta on muuttunut.</p><p>32,46 € → 32,98 € (+0,52 €, +1,60 %).</p>",
+			"summary": "Tuotteen Louis Jadot Bourgogne Côte d'Or 2023 hinta on muuttunut. 32,46 € → 32,98 € (+0,52 €, +1,60 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/433697-05d28d3c47ab.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

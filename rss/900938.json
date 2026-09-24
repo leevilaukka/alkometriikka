@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – San Miguel de la Vega Reserva 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900938/",
+	"feed_url": "https://alkometriikka.fi/rss/900938.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: San Miguel de la Vega Reserva 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900938-2026-07-18-10.98",
+			"url": "https://alkometriikka.fi/tuotteet/900938/",
+			"title": "San Miguel de la Vega Reserva 2019 — 11,99 € → 10,98 €",
+			"content_html": "<p>Tuotteen San Miguel de la Vega Reserva 2019 hinta on muuttunut.</p><p>11,99 € → 10,98 € (−1,01 €, −8,42 %).</p>",
+			"summary": "Tuotteen San Miguel de la Vega Reserva 2019 hinta on muuttunut. 11,99 € → 10,98 € (−1,01 €, −8,42 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900938-4efb17a849bf.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

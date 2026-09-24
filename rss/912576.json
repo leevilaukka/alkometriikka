@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Louis Roederer Rosé Champagne Brut 2017 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/912576/",
+	"feed_url": "https://alkometriikka.fi/rss/912576.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Louis Roederer Rosé Champagne Brut 2017.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-912576-2026-07-18-108.99",
+			"url": "https://alkometriikka.fi/tuotteet/912576/",
+			"title": "Louis Roederer Rosé Champagne Brut 2017 — 108,46 € → 108,99 €",
+			"content_html": "<p>Tuotteen Louis Roederer Rosé Champagne Brut 2017 hinta on muuttunut.</p><p>108,46 € → 108,99 € (+0,53 €, +0,49 %).</p>",
+			"summary": "Tuotteen Louis Roederer Rosé Champagne Brut 2017 hinta on muuttunut. 108,46 € → 108,99 € (+0,53 €, +0,49 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/912576-1be800383ddd.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

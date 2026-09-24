@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Grappa Il Moscato di Nonino – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/954617/",
+	"feed_url": "https://alkometriikka.fi/rss/954617.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Grappa Il Moscato di Nonino.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-954617-2026-07-18-55",
+			"url": "https://alkometriikka.fi/tuotteet/954617/",
+			"title": "Grappa Il Moscato di Nonino — 54,88 € → 55,00 €",
+			"content_html": "<p>Tuotteen Grappa Il Moscato di Nonino hinta on muuttunut.</p><p>54,88 € → 55,00 € (+0,12 €, +0,22 %).</p>",
+			"summary": "Tuotteen Grappa Il Moscato di Nonino hinta on muuttunut. 54,88 € → 55,00 € (+0,12 €, +0,22 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/954617-de178db940c7.png",
+			"tags": [
+				"Väkevät",
+				"grapat"
+			]
+		}
+	]
+}

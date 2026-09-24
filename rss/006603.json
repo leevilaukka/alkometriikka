@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Willowglen Gewürztraminer Riesling 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/006603/",
+	"feed_url": "https://alkometriikka.fi/rss/006603.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Willowglen Gewürztraminer Riesling 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-006603-2026-07-18-12.49",
+			"url": "https://alkometriikka.fi/tuotteet/006603/",
+			"title": "Willowglen Gewürztraminer Riesling 2023 — 12,30 € → 12,49 €",
+			"content_html": "<p>Tuotteen Willowglen Gewürztraminer Riesling 2023 hinta on muuttunut.</p><p>12,30 € → 12,49 € (+0,19 €, +1,54 %).</p>",
+			"summary": "Tuotteen Willowglen Gewürztraminer Riesling 2023 hinta on muuttunut. 12,30 € → 12,49 € (+0,19 €, +1,54 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/006603-e6022d803731.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

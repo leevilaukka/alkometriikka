@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Barbuntin Albariño 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/954035/",
+	"feed_url": "https://alkometriikka.fi/rss/954035.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Barbuntin Albariño 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-954035-2026-07-18-20.91",
+			"url": "https://alkometriikka.fi/tuotteet/954035/",
+			"title": "Barbuntin Albariño 2023 — 20,44 € → 20,91 €",
+			"content_html": "<p>Tuotteen Barbuntin Albariño 2023 hinta on muuttunut.</p><p>20,44 € → 20,91 € (+0,47 €, +2,30 %).</p>",
+			"summary": "Tuotteen Barbuntin Albariño 2023 hinta on muuttunut. 20,44 € → 20,91 € (+0,47 €, +2,30 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/954035-030dc3f9655f.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

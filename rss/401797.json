@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Querciabella Mongrana 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/401797/",
+	"feed_url": "https://alkometriikka.fi/rss/401797.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Querciabella Mongrana 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-401797-2026-07-18-24.9",
+			"url": "https://alkometriikka.fi/tuotteet/401797/",
+			"title": "Querciabella Mongrana 2023 — 26,45 € → 24,90 €",
+			"content_html": "<p>Tuotteen Querciabella Mongrana 2023 hinta on muuttunut.</p><p>26,45 € → 24,90 € (−1,55 €, −5,86 %).</p>",
+			"summary": "Tuotteen Querciabella Mongrana 2023 hinta on muuttunut. 26,45 € → 24,90 € (−1,55 €, −5,86 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/401797-c5343cf80a22.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

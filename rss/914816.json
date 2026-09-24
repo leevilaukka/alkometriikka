@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Blandy's 5 Year Old Reserva Rich Madeira – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/914816/",
+	"feed_url": "https://alkometriikka.fi/rss/914816.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Blandy's 5 Year Old Reserva Rich Madeira.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-914816-2026-07-18-21.99",
+			"url": "https://alkometriikka.fi/tuotteet/914816/",
+			"title": "Blandy's 5 Year Old Reserva Rich Madeira — 21,06 € → 21,99 €",
+			"content_html": "<p>Tuotteen Blandy's 5 Year Old Reserva Rich Madeira hinta on muuttunut.</p><p>21,06 € → 21,99 € (+0,93 €, +4,42 %).</p>",
+			"summary": "Tuotteen Blandy's 5 Year Old Reserva Rich Madeira hinta on muuttunut. 21,06 € → 21,99 € (+0,93 €, +4,42 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/914816-4fd5f4bf1d6c.png",
+			"tags": [
+				"Välituotteet",
+				"madeirat"
+			]
+		}
+	]
+}

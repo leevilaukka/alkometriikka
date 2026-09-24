@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bertani Valpolicella Ripasso 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/480977/",
+	"feed_url": "https://alkometriikka.fi/rss/480977.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bertani Valpolicella Ripasso 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-480977-2026-07-18-20.9",
+			"url": "https://alkometriikka.fi/tuotteet/480977/",
+			"title": "Bertani Valpolicella Ripasso 2023 — 19,99 € → 20,90 €",
+			"content_html": "<p>Tuotteen Bertani Valpolicella Ripasso 2023 hinta on muuttunut.</p><p>19,99 € → 20,90 € (+0,91 €, +4,55 %).</p>",
+			"summary": "Tuotteen Bertani Valpolicella Ripasso 2023 hinta on muuttunut. 19,99 € → 20,90 € (+0,91 €, +4,55 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/480977-617b5d233d66.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

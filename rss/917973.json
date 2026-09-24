@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nonino il Prosecco di Grappa – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/917973/",
+	"feed_url": "https://alkometriikka.fi/rss/917973.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nonino il Prosecco di Grappa.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-917973-2026-07-18-43.99",
+			"url": "https://alkometriikka.fi/tuotteet/917973/",
+			"title": "Nonino il Prosecco di Grappa — 43,88 € → 43,99 €",
+			"content_html": "<p>Tuotteen Nonino il Prosecco di Grappa hinta on muuttunut.</p><p>43,88 € → 43,99 € (+0,11 €, +0,25 %).</p>",
+			"summary": "Tuotteen Nonino il Prosecco di Grappa hinta on muuttunut. 43,88 € → 43,99 € (+0,11 €, +0,25 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/917973-0e8a7c09d900.png",
+			"tags": [
+				"Väkevät",
+				"grapat"
+			]
+		}
+	]
+}

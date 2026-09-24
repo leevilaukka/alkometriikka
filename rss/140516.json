@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Père Magloire VSOP Calvados muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/140516/",
+	"feed_url": "https://alkometriikka.fi/rss/140516.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Père Magloire VSOP Calvados muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-140516-2026-07-18-29.98",
+			"url": "https://alkometriikka.fi/tuotteet/140516/",
+			"title": "Père Magloire VSOP Calvados muovipullo — 30,99 € → 29,98 €",
+			"content_html": "<p>Tuotteen Père Magloire VSOP Calvados muovipullo hinta on muuttunut.</p><p>30,99 € → 29,98 € (−1,01 €, −3,26 %).</p>",
+			"summary": "Tuotteen Père Magloire VSOP Calvados muovipullo hinta on muuttunut. 30,99 € → 29,98 € (−1,01 €, −3,26 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/140516-54d00c07ab8d.png",
+			"tags": [
+				"Väkevät",
+				"calvadosit"
+			]
+		}
+	]
+}

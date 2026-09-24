@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Bitter Truth Old Time Aromatic Bitters – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900548/",
+	"feed_url": "https://alkometriikka.fi/rss/900548.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Bitter Truth Old Time Aromatic Bitters.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900548-2026-07-18-22.69",
+			"url": "https://alkometriikka.fi/tuotteet/900548/",
+			"title": "The Bitter Truth Old Time Aromatic Bitters — 22,57 € → 22,69 €",
+			"content_html": "<p>Tuotteen The Bitter Truth Old Time Aromatic Bitters hinta on muuttunut.</p><p>22,57 € → 22,69 € (+0,12 €, +0,53 %).</p>",
+			"summary": "Tuotteen The Bitter Truth Old Time Aromatic Bitters hinta on muuttunut. 22,57 € → 22,69 € (+0,12 €, +0,53 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900548-42d771d1614c.png",
+			"tags": [
+				"Väkevät",
+				"maha- ja maustekatkerot"
+			]
+		}
+	]
+}

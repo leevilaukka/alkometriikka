@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pegasus Stellarossa 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/908267/",
+	"feed_url": "https://alkometriikka.fi/rss/908267.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pegasus Stellarossa 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-908267-2026-02-02-15.89",
+			"url": "https://alkometriikka.fi/tuotteet/908267/",
+			"title": "Pegasus Stellarossa 2023 — 15,99 € → 15,89 €",
+			"content_html": "<p>Tuotteen Pegasus Stellarossa 2023 hinta on muuttunut.</p><p>15,99 € → 15,89 € (−0,10 €, −0,63 %).</p>",
+			"summary": "Tuotteen Pegasus Stellarossa 2023 hinta on muuttunut. 15,99 € → 15,89 € (−0,10 €, −0,63 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/908267-347e5a471203.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-908267-2026-02-02-15.99",
+			"url": "https://alkometriikka.fi/tuotteet/908267/",
+			"title": "Pegasus Stellarossa 2023 — 15,89 € → 15,99 €",
+			"content_html": "<p>Tuotteen Pegasus Stellarossa 2023 hinta on muuttunut.</p><p>15,89 € → 15,99 € (+0,10 €, +0,63 %).</p>",
+			"summary": "Tuotteen Pegasus Stellarossa 2023 hinta on muuttunut. 15,89 € → 15,99 € (+0,10 €, +0,63 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/908267-347e5a471203.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

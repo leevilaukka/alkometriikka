@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Fever-Tree Raspberry &Rhubarb Tonic Water – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/953401/",
+	"feed_url": "https://alkometriikka.fi/rss/953401.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Fever-Tree Raspberry &Rhubarb Tonic Water.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-953401-2026-07-18-4.59",
+			"url": "https://alkometriikka.fi/tuotteet/953401/",
+			"title": "Fever-Tree Raspberry &Rhubarb Tonic Water — 4,47 € → 4,59 €",
+			"content_html": "<p>Tuotteen Fever-Tree Raspberry &Rhubarb Tonic Water hinta on muuttunut.</p><p>4,47 € → 4,59 € (+0,12 €, +2,68 %).</p>",
+			"summary": "Tuotteen Fever-Tree Raspberry &Rhubarb Tonic Water hinta on muuttunut. 4,47 € → 4,59 € (+0,12 €, +2,68 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/953401-a1a67c0eb5e5.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

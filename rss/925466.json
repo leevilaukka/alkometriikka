@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nikka Days – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/925466/",
+	"feed_url": "https://alkometriikka.fi/rss/925466.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nikka Days.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-925466-2026-07-18-49.98",
+			"url": "https://alkometriikka.fi/tuotteet/925466/",
+			"title": "Nikka Days — 50,75 € → 49,98 €",
+			"content_html": "<p>Tuotteen Nikka Days hinta on muuttunut.</p><p>50,75 € → 49,98 € (−0,77 €, −1,52 %).</p>",
+			"summary": "Tuotteen Nikka Days hinta on muuttunut. 50,75 € → 49,98 € (−0,77 €, −1,52 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/925466-d94161a0813f.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

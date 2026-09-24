@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ollenaut Kaineken Suitsu Porter – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/904172/",
+	"feed_url": "https://alkometriikka.fi/rss/904172.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ollenaut Kaineken Suitsu Porter.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-904172-2026-09-04-2.51",
+			"url": "https://alkometriikka.fi/tuotteet/904172/",
+			"title": "Ollenaut Kaineken Suitsu Porter — 2,79 € → 2,51 €",
+			"content_html": "<p>Tuotteen Ollenaut Kaineken Suitsu Porter hinta on muuttunut.</p><p>2,79 € → 2,51 € (−0,28 €, −10,04 %).</p>",
+			"summary": "Tuotteen Ollenaut Kaineken Suitsu Porter hinta on muuttunut. 2,79 € → 2,51 € (−0,28 €, −10,04 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/904172-35fc763173a1.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-904172-2026-07-18-2.79",
+			"url": "https://alkometriikka.fi/tuotteet/904172/",
+			"title": "Ollenaut Kaineken Suitsu Porter — 2,78 € → 2,79 €",
+			"content_html": "<p>Tuotteen Ollenaut Kaineken Suitsu Porter hinta on muuttunut.</p><p>2,78 € → 2,79 € (+0,01 €, +0,36 %).</p>",
+			"summary": "Tuotteen Ollenaut Kaineken Suitsu Porter hinta on muuttunut. 2,78 € → 2,79 € (+0,01 €, +0,36 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/904172-35fc763173a1.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

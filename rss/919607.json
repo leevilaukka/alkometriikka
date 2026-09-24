@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Camino Romano Tinto 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/919607/",
+	"feed_url": "https://alkometriikka.fi/rss/919607.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Camino Romano Tinto 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-919607-2026-07-18-25.99",
+			"url": "https://alkometriikka.fi/tuotteet/919607/",
+			"title": "Camino Romano Tinto 2022 — 25,95 € → 25,99 €",
+			"content_html": "<p>Tuotteen Camino Romano Tinto 2022 hinta on muuttunut.</p><p>25,95 € → 25,99 € (+0,04 €, +0,15 %).</p>",
+			"summary": "Tuotteen Camino Romano Tinto 2022 hinta on muuttunut. 25,95 € → 25,99 € (+0,04 €, +0,15 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/919607-dbb0b9fc3a6c.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

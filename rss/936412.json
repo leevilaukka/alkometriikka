@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Faustino VII Tinto 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/936412/",
+	"feed_url": "https://alkometriikka.fi/rss/936412.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Faustino VII Tinto 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-936412-2026-07-18-4.99",
+			"url": "https://alkometriikka.fi/tuotteet/936412/",
+			"title": "Faustino VII Tinto 2023 — 4,30 € → 4,99 €",
+			"content_html": "<p>Tuotteen Faustino VII Tinto 2023 hinta on muuttunut.</p><p>4,30 € → 4,99 € (+0,69 €, +16,05 %).</p>",
+			"summary": "Tuotteen Faustino VII Tinto 2023 hinta on muuttunut. 4,30 € → 4,99 € (+0,69 €, +16,05 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/936412-2fe7730f556b.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Campillo Rosé 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/915898/",
+	"feed_url": "https://alkometriikka.fi/rss/915898.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Campillo Rosé 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-915898-2026-07-18-17.99",
+			"url": "https://alkometriikka.fi/tuotteet/915898/",
+			"title": "Campillo Rosé 2023 — 17,45 € → 17,99 €",
+			"content_html": "<p>Tuotteen Campillo Rosé 2023 hinta on muuttunut.</p><p>17,45 € → 17,99 € (+0,54 €, +3,09 %).</p>",
+			"summary": "Tuotteen Campillo Rosé 2023 hinta on muuttunut. 17,45 € → 17,99 € (+0,54 €, +3,09 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/915898-ba5c3dff2022.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

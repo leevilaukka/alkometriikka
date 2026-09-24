@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Steinschaden Grüner Veltliner Engabrunn 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/526027/",
+	"feed_url": "https://alkometriikka.fi/rss/526027.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Steinschaden Grüner Veltliner Engabrunn 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-526027-2026-07-18-15.49",
+			"url": "https://alkometriikka.fi/tuotteet/526027/",
+			"title": "Steinschaden Grüner Veltliner Engabrunn 2025 — 15,45 € → 15,49 €",
+			"content_html": "<p>Tuotteen Steinschaden Grüner Veltliner Engabrunn 2025 hinta on muuttunut.</p><p>15,45 € → 15,49 € (+0,04 €, +0,26 %).</p>",
+			"summary": "Tuotteen Steinschaden Grüner Veltliner Engabrunn 2025 hinta on muuttunut. 15,45 € → 15,49 € (+0,04 €, +0,26 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/526027-56caf8e8ec91.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

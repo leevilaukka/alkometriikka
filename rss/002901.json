@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Muscat – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/002901/",
+	"feed_url": "https://alkometriikka.fi/rss/002901.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Muscat.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-002901-2026-07-18-13.49",
+			"url": "https://alkometriikka.fi/tuotteet/002901/",
+			"title": "Muscat — 13,06 € → 13,49 €",
+			"content_html": "<p>Tuotteen Muscat hinta on muuttunut.</p><p>13,06 € → 13,49 € (+0,43 €, +3,29 %).</p>",
+			"summary": "Tuotteen Muscat hinta on muuttunut. 13,06 € → 13,49 € (+0,43 €, +3,29 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/002901-70a6dbdc30b4.png",
+			"tags": [
+				"Välituotteet",
+				"väkevät viinit"
+			]
+		}
+	]
+}

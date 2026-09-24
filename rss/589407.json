@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dom Pérignon Champagne Brut 2017 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/589407/",
+	"feed_url": "https://alkometriikka.fi/rss/589407.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dom Pérignon Champagne Brut 2017.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-589407-2026-07-18-298.48",
+			"url": "https://alkometriikka.fi/tuotteet/589407/",
+			"title": "Dom Pérignon Champagne Brut 2017 — 297,45 € → 298,48 €",
+			"content_html": "<p>Tuotteen Dom Pérignon Champagne Brut 2017 hinta on muuttunut.</p><p>297,45 € → 298,48 € (+1,03 €, +0,35 %).</p>",
+			"summary": "Tuotteen Dom Pérignon Champagne Brut 2017 hinta on muuttunut. 297,45 € → 298,48 € (+1,03 €, +0,35 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/589407-d64c76c64666.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

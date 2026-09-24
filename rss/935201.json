@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Coto de Imaz Reserva 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/935201/",
+	"feed_url": "https://alkometriikka.fi/rss/935201.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Coto de Imaz Reserva 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-935201-2026-02-02-19.35",
+			"url": "https://alkometriikka.fi/tuotteet/935201/",
+			"title": "Coto de Imaz Reserva 2021 — 19,45 € → 19,35 €",
+			"content_html": "<p>Tuotteen Coto de Imaz Reserva 2021 hinta on muuttunut.</p><p>19,45 € → 19,35 € (−0,10 €, −0,51 %).</p>",
+			"summary": "Tuotteen Coto de Imaz Reserva 2021 hinta on muuttunut. 19,45 € → 19,35 € (−0,10 €, −0,51 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/935201-a8102403198d.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-935201-2026-02-02-19.45",
+			"url": "https://alkometriikka.fi/tuotteet/935201/",
+			"title": "Coto de Imaz Reserva 2021 — 19,35 € → 19,45 €",
+			"content_html": "<p>Tuotteen Coto de Imaz Reserva 2021 hinta on muuttunut.</p><p>19,35 € → 19,45 € (+0,10 €, +0,52 %).</p>",
+			"summary": "Tuotteen Coto de Imaz Reserva 2021 hinta on muuttunut. 19,35 € → 19,45 € (+0,10 €, +0,52 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/935201-a8102403198d.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

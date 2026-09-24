@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Barth Riesling Trocken 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903337/",
+	"feed_url": "https://alkometriikka.fi/rss/903337.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Barth Riesling Trocken 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903337-2026-07-18-20.98",
+			"url": "https://alkometriikka.fi/tuotteet/903337/",
+			"title": "Barth Riesling Trocken 2023 — 20,44 € → 20,98 €",
+			"content_html": "<p>Tuotteen Barth Riesling Trocken 2023 hinta on muuttunut.</p><p>20,44 € → 20,98 € (+0,54 €, +2,64 %).</p>",
+			"summary": "Tuotteen Barth Riesling Trocken 2023 hinta on muuttunut. 20,44 € → 20,98 € (+0,54 €, +2,64 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903337-216dc366c7bf.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

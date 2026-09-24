@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mallassepät Coconut Imperial Stout tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900753/",
+	"feed_url": "https://alkometriikka.fi/rss/900753.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mallassepät Coconut Imperial Stout tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900753-2026-07-18-7.72",
+			"url": "https://alkometriikka.fi/tuotteet/900753/",
+			"title": "Mallassepät Coconut Imperial Stout tölkki — 7,71 € → 7,72 €",
+			"content_html": "<p>Tuotteen Mallassepät Coconut Imperial Stout tölkki hinta on muuttunut.</p><p>7,71 € → 7,72 € (+0,01 €, +0,13 %).</p>",
+			"summary": "Tuotteen Mallassepät Coconut Imperial Stout tölkki hinta on muuttunut. 7,71 € → 7,72 € (+0,01 €, +0,13 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900753-9ad0439bc4cc.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Franck Millet Pouilly-Fumé 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/934205/",
+	"feed_url": "https://alkometriikka.fi/rss/934205.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Franck Millet Pouilly-Fumé 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-934205-2026-07-18-27.48",
+			"url": "https://alkometriikka.fi/tuotteet/934205/",
+			"title": "Franck Millet Pouilly-Fumé 2023 — 27,44 € → 27,48 €",
+			"content_html": "<p>Tuotteen Franck Millet Pouilly-Fumé 2023 hinta on muuttunut.</p><p>27,44 € → 27,48 € (+0,04 €, +0,15 %).</p>",
+			"summary": "Tuotteen Franck Millet Pouilly-Fumé 2023 hinta on muuttunut. 27,44 € → 27,48 € (+0,04 €, +0,15 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/934205-12a5ac2655fa.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – LAB Reserva 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/926043/",
+	"feed_url": "https://alkometriikka.fi/rss/926043.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: LAB Reserva 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-926043-2026-02-02-6.38",
+			"url": "https://alkometriikka.fi/tuotteet/926043/",
+			"title": "LAB Reserva 2023 — 6,48 € → 6,38 €",
+			"content_html": "<p>Tuotteen LAB Reserva 2023 hinta on muuttunut.</p><p>6,48 € → 6,38 € (−0,10 €, −1,54 %).</p>",
+			"summary": "Tuotteen LAB Reserva 2023 hinta on muuttunut. 6,48 € → 6,38 € (−0,10 €, −1,54 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/926043-6bfa64fe5ea5.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-926043-2026-02-02-6.48",
+			"url": "https://alkometriikka.fi/tuotteet/926043/",
+			"title": "LAB Reserva 2023 — 6,38 € → 6,48 €",
+			"content_html": "<p>Tuotteen LAB Reserva 2023 hinta on muuttunut.</p><p>6,38 € → 6,48 € (+0,10 €, +1,57 %).</p>",
+			"summary": "Tuotteen LAB Reserva 2023 hinta on muuttunut. 6,38 € → 6,48 € (+0,10 €, +1,57 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/926043-6bfa64fe5ea5.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

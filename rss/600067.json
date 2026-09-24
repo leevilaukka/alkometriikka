@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dugges Tropic Thunder Alcohol Free tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/600067/",
+	"feed_url": "https://alkometriikka.fi/rss/600067.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dugges Tropic Thunder Alcohol Free tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-600067-2026-09-04-3.14",
+			"url": "https://alkometriikka.fi/tuotteet/600067/",
+			"title": "Dugges Tropic Thunder Alcohol Free tölkki — 3,49 € → 3,14 €",
+			"content_html": "<p>Tuotteen Dugges Tropic Thunder Alcohol Free tölkki hinta on muuttunut.</p><p>3,49 € → 3,14 € (−0,35 €, −10,03 %).</p>",
+			"summary": "Tuotteen Dugges Tropic Thunder Alcohol Free tölkki hinta on muuttunut. 3,49 € → 3,14 € (−0,35 €, −10,03 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600067-9926c7f9ccbe.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Famille Moussé Les Vignes de Mon Village Champagne Brut Nature – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/947795/",
+	"feed_url": "https://alkometriikka.fi/rss/947795.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Famille Moussé Les Vignes de Mon Village Champagne Brut Nature.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-947795-2026-07-18-65.8",
+			"url": "https://alkometriikka.fi/tuotteet/947795/",
+			"title": "Famille Moussé Les Vignes de Mon Village Champagne Brut Nature — 65,76 € → 65,80 €",
+			"content_html": "<p>Tuotteen Famille Moussé Les Vignes de Mon Village Champagne Brut Nature hinta on muuttunut.</p><p>65,76 € → 65,80 € (+0,04 €, +0,06 %).</p>",
+			"summary": "Tuotteen Famille Moussé Les Vignes de Mon Village Champagne Brut Nature hinta on muuttunut. 65,76 € → 65,80 € (+0,04 €, +0,06 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/947795-c540667ed898.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

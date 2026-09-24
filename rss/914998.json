@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Le Calendre Amarone della Valpolicella Classico 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/914998/",
+	"feed_url": "https://alkometriikka.fi/rss/914998.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Le Calendre Amarone della Valpolicella Classico 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-914998-2026-07-18-57.02",
+			"url": "https://alkometriikka.fi/tuotteet/914998/",
+			"title": "Le Calendre Amarone della Valpolicella Classico 2019 — 56,78 € → 57,02 €",
+			"content_html": "<p>Tuotteen Le Calendre Amarone della Valpolicella Classico 2019 hinta on muuttunut.</p><p>56,78 € → 57,02 € (+0,24 €, +0,42 %).</p>",
+			"summary": "Tuotteen Le Calendre Amarone della Valpolicella Classico 2019 hinta on muuttunut. 56,78 € → 57,02 € (+0,24 €, +0,42 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/914998-0f8a89ae41ff.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

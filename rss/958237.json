@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Trimbach Riesling Frédéric Emile 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/958237/",
+	"feed_url": "https://alkometriikka.fi/rss/958237.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Trimbach Riesling Frédéric Emile 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-958237-2026-07-18-80.98",
+			"url": "https://alkometriikka.fi/tuotteet/958237/",
+			"title": "Trimbach Riesling Frédéric Emile 2019 — 80,26 € → 80,98 €",
+			"content_html": "<p>Tuotteen Trimbach Riesling Frédéric Emile 2019 hinta on muuttunut.</p><p>80,26 € → 80,98 € (+0,72 €, +0,90 %).</p>",
+			"summary": "Tuotteen Trimbach Riesling Frédéric Emile 2019 hinta on muuttunut. 80,26 € → 80,98 € (+0,72 €, +0,90 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/958237-041dba15b1ed.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

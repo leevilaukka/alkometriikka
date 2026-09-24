@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Starward Peated Finish Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900518/",
+	"feed_url": "https://alkometriikka.fi/rss/900518.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Starward Peated Finish Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900518-2026-07-18-95.9",
+			"url": "https://alkometriikka.fi/tuotteet/900518/",
+			"title": "Starward Peated Finish Single Malt — 104,90 € → 95,90 €",
+			"content_html": "<p>Tuotteen Starward Peated Finish Single Malt hinta on muuttunut.</p><p>104,90 € → 95,90 € (−9,00 €, −8,58 %).</p>",
+			"summary": "Tuotteen Starward Peated Finish Single Malt hinta on muuttunut. 104,90 € → 95,90 € (−9,00 €, −8,58 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900518-04012da93514.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

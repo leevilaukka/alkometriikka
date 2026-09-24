@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Domaine Nowack Assemblage S. A. Champagne Extra-Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/922763/",
+	"feed_url": "https://alkometriikka.fi/rss/922763.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Domaine Nowack Assemblage S. A. Champagne Extra-Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-922763-2026-07-18-58.5",
+			"url": "https://alkometriikka.fi/tuotteet/922763/",
+			"title": "Domaine Nowack Assemblage S. A. Champagne Extra-Brut — 58,46 € → 58,50 €",
+			"content_html": "<p>Tuotteen Domaine Nowack Assemblage S. A. Champagne Extra-Brut hinta on muuttunut.</p><p>58,46 € → 58,50 € (+0,04 €, +0,07 %).</p>",
+			"summary": "Tuotteen Domaine Nowack Assemblage S. A. Champagne Extra-Brut hinta on muuttunut. 58,46 € → 58,50 € (+0,04 €, +0,07 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/922763-f900d3f9bb0f.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

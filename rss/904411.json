@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – S. Cristina Rigoletto Bianco Passito Veneto 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/904411/",
+	"feed_url": "https://alkometriikka.fi/rss/904411.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: S. Cristina Rigoletto Bianco Passito Veneto 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-904411-2026-07-18-27.8",
+			"url": "https://alkometriikka.fi/tuotteet/904411/",
+			"title": "S. Cristina Rigoletto Bianco Passito Veneto 2020 — 27,61 € → 27,80 €",
+			"content_html": "<p>Tuotteen S. Cristina Rigoletto Bianco Passito Veneto 2020 hinta on muuttunut.</p><p>27,61 € → 27,80 € (+0,19 €, +0,69 %).</p>",
+			"summary": "Tuotteen S. Cristina Rigoletto Bianco Passito Veneto 2020 hinta on muuttunut. 27,61 € → 27,80 € (+0,19 €, +0,69 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/904411-e82324bf487c.png",
+			"tags": [
+				"Viinit",
+				"jälkiruokaviinit"
+			]
+		}
+	]
+}

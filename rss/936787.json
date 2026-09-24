@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Torres Salmos 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/936787/",
+	"feed_url": "https://alkometriikka.fi/rss/936787.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Torres Salmos 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-936787-2026-07-18-37.49",
+			"url": "https://alkometriikka.fi/tuotteet/936787/",
+			"title": "Torres Salmos 2021 — 37,46 € → 37,49 €",
+			"content_html": "<p>Tuotteen Torres Salmos 2021 hinta on muuttunut.</p><p>37,46 € → 37,49 € (+0,03 €, +0,08 %).</p>",
+			"summary": "Tuotteen Torres Salmos 2021 hinta on muuttunut. 37,46 € → 37,49 € (+0,03 €, +0,08 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/936787-201203befd09.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

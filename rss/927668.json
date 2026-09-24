@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pure Nordic Distillery Dark Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/927668/",
+	"feed_url": "https://alkometriikka.fi/rss/927668.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pure Nordic Distillery Dark Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-927668-2026-07-18-44.98",
+			"url": "https://alkometriikka.fi/tuotteet/927668/",
+			"title": "Pure Nordic Distillery Dark Gin — 44,77 € → 44,98 €",
+			"content_html": "<p>Tuotteen Pure Nordic Distillery Dark Gin hinta on muuttunut.</p><p>44,77 € → 44,98 € (+0,21 €, +0,47 %).</p>",
+			"summary": "Tuotteen Pure Nordic Distillery Dark Gin hinta on muuttunut. 44,77 € → 44,98 € (+0,21 €, +0,47 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/927668-27163e03ba3f.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Paresseux Pastis 1 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/917433/",
+	"feed_url": "https://alkometriikka.fi/rss/917433.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Paresseux Pastis 1.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-917433-2026-07-18-29.77",
+			"url": "https://alkometriikka.fi/tuotteet/917433/",
+			"title": "Paresseux Pastis 1 — 39,39 € → 29,77 €",
+			"content_html": "<p>Tuotteen Paresseux Pastis 1 hinta on muuttunut.</p><p>39,39 € → 29,77 € (−9,62 €, −24,42 %).</p>",
+			"summary": "Tuotteen Paresseux Pastis 1 hinta on muuttunut. 39,39 € → 29,77 € (−9,62 €, −24,42 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/917433-6bb2c5518071.png",
+			"tags": [
+				"Väkevät",
+				"anistisleet"
+			]
+		}
+	]
+}

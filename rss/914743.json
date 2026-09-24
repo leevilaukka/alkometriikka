@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Moët & Chandon Impérial Champagne Brut Mathusalem – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/914743/",
+	"feed_url": "https://alkometriikka.fi/rss/914743.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Moët & Chandon Impérial Champagne Brut Mathusalem.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-914743-2026-07-18-1048.66",
+			"url": "https://alkometriikka.fi/tuotteet/914743/",
+			"title": "Moët & Chandon Impérial Champagne Brut Mathusalem — 1 023,44 € → 1 048,66 €",
+			"content_html": "<p>Tuotteen Moët & Chandon Impérial Champagne Brut Mathusalem hinta on muuttunut.</p><p>1 023,44 € → 1 048,66 € (+25,22 €, +2,46 %).</p>",
+			"summary": "Tuotteen Moët & Chandon Impérial Champagne Brut Mathusalem hinta on muuttunut. 1 023,44 € → 1 048,66 € (+25,22 €, +2,46 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/914743-7e18b3f08e77.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

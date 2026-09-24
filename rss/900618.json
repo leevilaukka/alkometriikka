@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Frescobaldi Benefizio Pomino Bianco Riserva 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900618/",
+	"feed_url": "https://alkometriikka.fi/rss/900618.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Frescobaldi Benefizio Pomino Bianco Riserva 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900618-2026-07-18-49.99",
+			"url": "https://alkometriikka.fi/tuotteet/900618/",
+			"title": "Frescobaldi Benefizio Pomino Bianco Riserva 2023 — 50,85 € → 49,99 €",
+			"content_html": "<p>Tuotteen Frescobaldi Benefizio Pomino Bianco Riserva 2023 hinta on muuttunut.</p><p>50,85 € → 49,99 € (−0,86 €, −1,69 %).</p>",
+			"summary": "Tuotteen Frescobaldi Benefizio Pomino Bianco Riserva 2023 hinta on muuttunut. 50,85 € → 49,99 € (−0,86 €, −1,69 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900618-c767e1bdc0e6.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vellamo mineraalivesi still – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900021/",
+	"feed_url": "https://alkometriikka.fi/rss/900021.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vellamo mineraalivesi still.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900021-2026-07-18-5.25",
+			"url": "https://alkometriikka.fi/tuotteet/900021/",
+			"title": "Vellamo mineraalivesi still — 5,17 € → 5,25 €",
+			"content_html": "<p>Tuotteen Vellamo mineraalivesi still hinta on muuttunut.</p><p>5,17 € → 5,25 € (+0,08 €, +1,55 %).</p>",
+			"summary": "Tuotteen Vellamo mineraalivesi still hinta on muuttunut. 5,17 € → 5,25 € (+0,08 €, +1,55 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900021-ad07b3d96cd5.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

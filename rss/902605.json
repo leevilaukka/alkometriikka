@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Avanto Vodka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902605/",
+	"feed_url": "https://alkometriikka.fi/rss/902605.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Avanto Vodka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902605-2026-07-18-69.37",
+			"url": "https://alkometriikka.fi/tuotteet/902605/",
+			"title": "Avanto Vodka — 70,12 € → 69,37 €",
+			"content_html": "<p>Tuotteen Avanto Vodka hinta on muuttunut.</p><p>70,12 € → 69,37 € (−0,75 €, −1,07 %).</p>",
+			"summary": "Tuotteen Avanto Vodka hinta on muuttunut. 70,12 € → 69,37 € (−0,75 €, −1,07 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902605-d1d99ea97bc0.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

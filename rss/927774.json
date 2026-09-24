@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pople Strawberry muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/927774/",
+	"feed_url": "https://alkometriikka.fi/rss/927774.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pople Strawberry muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-927774-2026-07-18-12.99",
+			"url": "https://alkometriikka.fi/tuotteet/927774/",
+			"title": "Pople Strawberry muovipullo — 12,87 € → 12,99 €",
+			"content_html": "<p>Tuotteen Pople Strawberry muovipullo hinta on muuttunut.</p><p>12,87 € → 12,99 € (+0,12 €, +0,93 %).</p>",
+			"summary": "Tuotteen Pople Strawberry muovipullo hinta on muuttunut. 12,87 € → 12,99 € (+0,12 €, +0,93 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/927774-0dc6a8608ef4.png",
+			"tags": [
+				"Väkevät",
+				"marjaliköörit"
+			]
+		}
+	]
+}

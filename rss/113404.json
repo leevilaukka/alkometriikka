@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jura 12 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/113404/",
+	"feed_url": "https://alkometriikka.fi/rss/113404.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jura 12 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-113404-2026-07-18-32.98",
+			"url": "https://alkometriikka.fi/tuotteet/113404/",
+			"title": "Jura 12 Year Old Single Malt — 33,59 € → 32,98 €",
+			"content_html": "<p>Tuotteen Jura 12 Year Old Single Malt hinta on muuttunut.</p><p>33,59 € → 32,98 € (−0,61 €, −1,82 %).</p>",
+			"summary": "Tuotteen Jura 12 Year Old Single Malt hinta on muuttunut. 33,59 € → 32,98 € (−0,61 €, −1,82 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/113404-0832a586e7d7.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

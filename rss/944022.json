@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gran Mirador Dark Blend 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/944022/",
+	"feed_url": "https://alkometriikka.fi/rss/944022.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gran Mirador Dark Blend 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-944022-2026-07-18-11.99",
+			"url": "https://alkometriikka.fi/tuotteet/944022/",
+			"title": "Gran Mirador Dark Blend 2021 — 11,76 € → 11,99 €",
+			"content_html": "<p>Tuotteen Gran Mirador Dark Blend 2021 hinta on muuttunut.</p><p>11,76 € → 11,99 € (+0,23 €, +1,96 %).</p>",
+			"summary": "Tuotteen Gran Mirador Dark Blend 2021 hinta on muuttunut. 11,76 € → 11,99 € (+0,23 €, +1,96 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/944022-08e1f493fadc.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

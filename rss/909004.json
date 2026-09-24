@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vandestreek Playground Non Alcoholic Ipa – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/909004/",
+	"feed_url": "https://alkometriikka.fi/rss/909004.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vandestreek Playground Non Alcoholic Ipa.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-909004-2026-09-04-3.59",
+			"url": "https://alkometriikka.fi/tuotteet/909004/",
+			"title": "Vandestreek Playground Non Alcoholic Ipa — 3,99 € → 3,59 €",
+			"content_html": "<p>Tuotteen Vandestreek Playground Non Alcoholic Ipa hinta on muuttunut.</p><p>3,99 € → 3,59 € (−0,40 €, −10,03 %).</p>",
+			"summary": "Tuotteen Vandestreek Playground Non Alcoholic Ipa hinta on muuttunut. 3,99 € → 3,59 € (−0,40 €, −10,03 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/909004-03f4ad116274.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-909004-2026-07-18-3.99",
+			"url": "https://alkometriikka.fi/tuotteet/909004/",
+			"title": "Vandestreek Playground Non Alcoholic Ipa — 3,64 € → 3,99 €",
+			"content_html": "<p>Tuotteen Vandestreek Playground Non Alcoholic Ipa hinta on muuttunut.</p><p>3,64 € → 3,99 € (+0,35 €, +9,62 %).</p>",
+			"summary": "Tuotteen Vandestreek Playground Non Alcoholic Ipa hinta on muuttunut. 3,64 € → 3,99 € (+0,35 €, +9,62 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/909004-03f4ad116274.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

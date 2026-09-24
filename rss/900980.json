@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Bitter Truth Orange Bitters – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900980/",
+	"feed_url": "https://alkometriikka.fi/rss/900980.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Bitter Truth Orange Bitters.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900980-2026-07-18-22.69",
+			"url": "https://alkometriikka.fi/tuotteet/900980/",
+			"title": "The Bitter Truth Orange Bitters — 22,71 € → 22,69 €",
+			"content_html": "<p>Tuotteen The Bitter Truth Orange Bitters hinta on muuttunut.</p><p>22,71 € → 22,69 € (−0,02 €, −0,09 %).</p>",
+			"summary": "Tuotteen The Bitter Truth Orange Bitters hinta on muuttunut. 22,71 € → 22,69 € (−0,02 €, −0,09 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900980-fad7ae9aa22b.png",
+			"tags": [
+				"Väkevät",
+				"maha- ja maustekatkerot"
+			]
+		}
+	]
+}

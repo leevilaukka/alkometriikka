@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Alamos Malbec Organic 2024 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/440567/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Alamos Malbec Organic 2024.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/440567.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Alamos Malbec Organic 2024 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Alamos Malbec Organic 2024 — 12,99 € → 9,98 €</title>
+			<link>https://alkometriikka.fi/tuotteet/440567/</link>
+			<guid isPermaLink="false">alkometriikka-440567-2026-07-18-9.98</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Alamos Malbec Organic 2024 hinta on muuttunut.</p><p>12,99 € → 9,98 € (−3,01 €, −23,17 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/440567-5085f9c5ea06.png" />
+		</item>
+	</channel>
+</rss>

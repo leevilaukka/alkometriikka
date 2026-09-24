@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Donnafugata Mille e una Notte 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901405/",
+	"feed_url": "https://alkometriikka.fi/rss/901405.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Donnafugata Mille e una Notte 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901405-2026-07-18-84.89",
+			"url": "https://alkometriikka.fi/tuotteet/901405/",
+			"title": "Donnafugata Mille e una Notte 2021 — 84,37 € → 84,89 €",
+			"content_html": "<p>Tuotteen Donnafugata Mille e una Notte 2021 hinta on muuttunut.</p><p>84,37 € → 84,89 € (+0,52 €, +0,62 %).</p>",
+			"summary": "Tuotteen Donnafugata Mille e una Notte 2021 hinta on muuttunut. 84,37 € → 84,89 € (+0,52 €, +0,62 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901405-0bae7deedd9f.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

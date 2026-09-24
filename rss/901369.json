@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Stauning Floor Malted Rye – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901369/",
+	"feed_url": "https://alkometriikka.fi/rss/901369.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Stauning Floor Malted Rye.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901369-2026-07-18-74.99",
+			"url": "https://alkometriikka.fi/tuotteet/901369/",
+			"title": "Stauning Floor Malted Rye — 69,31 € → 74,99 €",
+			"content_html": "<p>Tuotteen Stauning Floor Malted Rye hinta on muuttunut.</p><p>69,31 € → 74,99 € (+5,68 €, +8,20 %).</p>",
+			"summary": "Tuotteen Stauning Floor Malted Rye hinta on muuttunut. 69,31 € → 74,99 € (+5,68 €, +8,20 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901369-d601d98e3c30.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

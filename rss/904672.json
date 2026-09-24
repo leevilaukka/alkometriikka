@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Chateau Clarke 2010 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/904672/",
+	"feed_url": "https://alkometriikka.fi/rss/904672.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Chateau Clarke 2010.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-904672-2026-07-18-58.42",
+			"url": "https://alkometriikka.fi/tuotteet/904672/",
+			"title": "Chateau Clarke 2010 — 57,37 € → 58,42 €",
+			"content_html": "<p>Tuotteen Chateau Clarke 2010 hinta on muuttunut.</p><p>57,37 € → 58,42 € (+1,05 €, +1,83 %).</p>",
+			"summary": "Tuotteen Chateau Clarke 2010 hinta on muuttunut. 57,37 € → 58,42 € (+1,05 €, +1,83 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/904672-9b528a42f3eb.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

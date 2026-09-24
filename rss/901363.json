@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Domaine Albert Bichot Chablis 1er Cru Vaillons 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901363/",
+	"feed_url": "https://alkometriikka.fi/rss/901363.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Domaine Albert Bichot Chablis 1er Cru Vaillons 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901363-2026-07-18-55.99",
+			"url": "https://alkometriikka.fi/tuotteet/901363/",
+			"title": "Domaine Albert Bichot Chablis 1er Cru Vaillons 2021 — 55,20 € → 55,99 €",
+			"content_html": "<p>Tuotteen Domaine Albert Bichot Chablis 1er Cru Vaillons 2021 hinta on muuttunut.</p><p>55,20 € → 55,99 € (+0,79 €, +1,43 %).</p>",
+			"summary": "Tuotteen Domaine Albert Bichot Chablis 1er Cru Vaillons 2021 hinta on muuttunut. 55,20 € → 55,99 € (+0,79 €, +1,43 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901363-5e9a9fce64c3.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

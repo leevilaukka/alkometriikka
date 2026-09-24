@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Schweppes Indian Tonic Water muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/735598/",
+	"feed_url": "https://alkometriikka.fi/rss/735598.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Schweppes Indian Tonic Water muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-735598-2026-07-18-4.94",
+			"url": "https://alkometriikka.fi/tuotteet/735598/",
+			"title": "Schweppes Indian Tonic Water muovipullo — 4,77 € → 4,94 €",
+			"content_html": "<p>Tuotteen Schweppes Indian Tonic Water muovipullo hinta on muuttunut.</p><p>4,77 € → 4,94 € (+0,17 €, +3,56 %).</p>",
+			"summary": "Tuotteen Schweppes Indian Tonic Water muovipullo hinta on muuttunut. 4,77 € → 4,94 € (+0,17 €, +3,56 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/735598-a45f03458063.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

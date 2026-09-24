@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Piper-Heidsieck Essentiel Blanc de Noirs Champagne Extra Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/934308/",
+	"feed_url": "https://alkometriikka.fi/rss/934308.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Piper-Heidsieck Essentiel Blanc de Noirs Champagne Extra Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-934308-2026-07-18-76.99",
+			"url": "https://alkometriikka.fi/tuotteet/934308/",
+			"title": "Piper-Heidsieck Essentiel Blanc de Noirs Champagne Extra Brut — 73,35 € → 76,99 €",
+			"content_html": "<p>Tuotteen Piper-Heidsieck Essentiel Blanc de Noirs Champagne Extra Brut hinta on muuttunut.</p><p>73,35 € → 76,99 € (+3,64 €, +4,96 %).</p>",
+			"summary": "Tuotteen Piper-Heidsieck Essentiel Blanc de Noirs Champagne Extra Brut hinta on muuttunut. 73,35 € → 76,99 € (+3,64 €, +4,96 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/934308-8196c837a6ff.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

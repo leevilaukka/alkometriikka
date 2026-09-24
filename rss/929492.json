@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Planat VSOP Bio – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/929492/",
+	"feed_url": "https://alkometriikka.fi/rss/929492.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Planat VSOP Bio.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-929492-2026-07-18-45.99",
+			"url": "https://alkometriikka.fi/tuotteet/929492/",
+			"title": "Planat VSOP Bio — 45,18 € → 45,99 €",
+			"content_html": "<p>Tuotteen Planat VSOP Bio hinta on muuttunut.</p><p>45,18 € → 45,99 € (+0,81 €, +1,79 %).</p>",
+			"summary": "Tuotteen Planat VSOP Bio hinta on muuttunut. 45,18 € → 45,99 € (+0,81 €, +1,79 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/929492-b984250a12ca.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

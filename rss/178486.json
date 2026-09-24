@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Torres 5 Solera Imperial – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/178486/",
+	"feed_url": "https://alkometriikka.fi/rss/178486.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Torres 5 Solera Imperial.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-178486-2026-07-18-19.49",
+			"url": "https://alkometriikka.fi/tuotteet/178486/",
+			"title": "Torres 5 Solera Imperial — 19,17 € → 19,49 €",
+			"content_html": "<p>Tuotteen Torres 5 Solera Imperial hinta on muuttunut.</p><p>19,17 € → 19,49 € (+0,32 €, +1,67 %).</p>",
+			"summary": "Tuotteen Torres 5 Solera Imperial hinta on muuttunut. 19,17 € → 19,49 € (+0,32 €, +1,67 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/178486-0e4323872680.png",
+			"tags": [
+				"Väkevät",
+				"brandyt"
+			]
+		}
+	]
+}

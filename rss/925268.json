@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Enate Uno Tinto 2010 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/925268/",
+	"feed_url": "https://alkometriikka.fi/rss/925268.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Enate Uno Tinto 2010.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-925268-2026-07-18-243.99",
+			"url": "https://alkometriikka.fi/tuotteet/925268/",
+			"title": "Enate Uno Tinto 2010 — 243,46 € → 243,99 €",
+			"content_html": "<p>Tuotteen Enate Uno Tinto 2010 hinta on muuttunut.</p><p>243,46 € → 243,99 € (+0,53 €, +0,22 %).</p>",
+			"summary": "Tuotteen Enate Uno Tinto 2010 hinta on muuttunut. 243,46 € → 243,99 € (+0,53 €, +0,22 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/925268-16011cd7be7e.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

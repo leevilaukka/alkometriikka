@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Valdifalco Morellino di Scansano 2020 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/487817/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Valdifalco Morellino di Scansano 2020.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/487817.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Valdifalco Morellino di Scansano 2020 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Valdifalco Morellino di Scansano 2020 — 18,44 € → 18,34 €</title>
+			<link>https://alkometriikka.fi/tuotteet/487817/</link>
+			<guid isPermaLink="false">alkometriikka-487817-2026-02-02-18.34</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>punaviinit / Mehevä &amp; Hilloinen</category>
+			<description><![CDATA[<p>Tuotteen Valdifalco Morellino di Scansano 2020 hinta on muuttunut.</p><p>18,44 € → 18,34 € (−0,10 €, −0,54 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/487817-2d8b56b0b77e.png" />
+		</item>
+		<item>
+			<title>Valdifalco Morellino di Scansano 2020 — 18,34 € → 18,44 €</title>
+			<link>https://alkometriikka.fi/tuotteet/487817/</link>
+			<guid isPermaLink="false">alkometriikka-487817-2026-02-02-18.44</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>punaviinit / Mehevä &amp; Hilloinen</category>
+			<description><![CDATA[<p>Tuotteen Valdifalco Morellino di Scansano 2020 hinta on muuttunut.</p><p>18,34 € → 18,44 € (+0,10 €, +0,55 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/487817-2d8b56b0b77e.png" />
+		</item>
+	</channel>
+</rss>

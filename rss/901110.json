@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Osborne Coquinero Sherry en Rama – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901110/",
+	"feed_url": "https://alkometriikka.fi/rss/901110.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Osborne Coquinero Sherry en Rama.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901110-2026-07-18-25.99",
+			"url": "https://alkometriikka.fi/tuotteet/901110/",
+			"title": "Osborne Coquinero Sherry en Rama — 25,28 € → 25,99 €",
+			"content_html": "<p>Tuotteen Osborne Coquinero Sherry en Rama hinta on muuttunut.</p><p>25,28 € → 25,99 € (+0,71 €, +2,81 %).</p>",
+			"summary": "Tuotteen Osborne Coquinero Sherry en Rama hinta on muuttunut. 25,28 € → 25,99 € (+0,71 €, +2,81 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901110-16e3db9cd395.png",
+			"tags": [
+				"Viinit",
+				"hedelmä- ja aromatisoidut viinit"
+			]
+		}
+	]
+}

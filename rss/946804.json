@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cap de Canons Negre 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/946804/",
+	"feed_url": "https://alkometriikka.fi/rss/946804.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cap de Canons Negre 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-946804-2026-07-18-16.98",
+			"url": "https://alkometriikka.fi/tuotteet/946804/",
+			"title": "Cap de Canons Negre 2021 — 17,35 € → 16,98 €",
+			"content_html": "<p>Tuotteen Cap de Canons Negre 2021 hinta on muuttunut.</p><p>17,35 € → 16,98 € (−0,37 €, −2,13 %).</p>",
+			"summary": "Tuotteen Cap de Canons Negre 2021 hinta on muuttunut. 17,35 € → 16,98 € (−0,37 €, −2,13 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/946804-e09b20c8285f.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

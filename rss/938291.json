@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Four Roses Single Barrel – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/938291/",
+	"feed_url": "https://alkometriikka.fi/rss/938291.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Four Roses Single Barrel.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-938291-2026-07-18-64.99",
+			"url": "https://alkometriikka.fi/tuotteet/938291/",
+			"title": "Four Roses Single Barrel — 64,82 € → 64,99 €",
+			"content_html": "<p>Tuotteen Four Roses Single Barrel hinta on muuttunut.</p><p>64,82 € → 64,99 € (+0,17 €, +0,26 %).</p>",
+			"summary": "Tuotteen Four Roses Single Barrel hinta on muuttunut. 64,82 € → 64,99 € (+0,17 €, +0,26 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/938291-867c10a1f75a.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

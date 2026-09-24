@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Freixenet 0.0% Low Calorie Rosé – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/910833/",
+	"feed_url": "https://alkometriikka.fi/rss/910833.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Freixenet 0.0% Low Calorie Rosé.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-910833-2026-07-18-7.69",
+			"url": "https://alkometriikka.fi/tuotteet/910833/",
+			"title": "Freixenet 0.0% Low Calorie Rosé — 7,56 € → 7,69 €",
+			"content_html": "<p>Tuotteen Freixenet 0.0% Low Calorie Rosé hinta on muuttunut.</p><p>7,56 € → 7,69 € (+0,13 €, +1,72 %).</p>",
+			"summary": "Tuotteen Freixenet 0.0% Low Calorie Rosé hinta on muuttunut. 7,56 € → 7,69 € (+0,13 €, +1,72 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/910833-bb33f3229c7b.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat valko- ja roseeviinit"
+			]
+		}
+	]
+}

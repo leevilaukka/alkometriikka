@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vintense Sauvignon Alcohol Free – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/938583/",
+	"feed_url": "https://alkometriikka.fi/rss/938583.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vintense Sauvignon Alcohol Free.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-938583-2026-07-18-8.99",
+			"url": "https://alkometriikka.fi/tuotteet/938583/",
+			"title": "Vintense Sauvignon Alcohol Free — 7,96 € → 8,99 €",
+			"content_html": "<p>Tuotteen Vintense Sauvignon Alcohol Free hinta on muuttunut.</p><p>7,96 € → 8,99 € (+1,03 €, +12,94 %).</p>",
+			"summary": "Tuotteen Vintense Sauvignon Alcohol Free hinta on muuttunut. 7,96 € → 8,99 € (+1,03 €, +12,94 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/938583-eb5f853935f5.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat valko- ja roseeviinit"
+			]
+		}
+	]
+}

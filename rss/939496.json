@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Blue Nun White Alcohol Free – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/939496/",
+	"feed_url": "https://alkometriikka.fi/rss/939496.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Blue Nun White Alcohol Free.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-939496-2026-07-18-7.49",
+			"url": "https://alkometriikka.fi/tuotteet/939496/",
+			"title": "Blue Nun White Alcohol Free — 6,96 € → 7,49 €",
+			"content_html": "<p>Tuotteen Blue Nun White Alcohol Free hinta on muuttunut.</p><p>6,96 € → 7,49 € (+0,53 €, +7,61 %).</p>",
+			"summary": "Tuotteen Blue Nun White Alcohol Free hinta on muuttunut. 6,96 € → 7,49 € (+0,53 €, +7,61 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/939496-d9eed92187f9.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat valko- ja roseeviinit"
+			]
+		}
+	]
+}

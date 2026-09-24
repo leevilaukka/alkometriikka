@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Los Molinos Tempranillo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901617/",
+	"feed_url": "https://alkometriikka.fi/rss/901617.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Los Molinos Tempranillo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901617-2026-07-18-8.49",
+			"url": "https://alkometriikka.fi/tuotteet/901617/",
+			"title": "Los Molinos Tempranillo — 8,28 € → 8,49 €",
+			"content_html": "<p>Tuotteen Los Molinos Tempranillo hinta on muuttunut.</p><p>8,28 € → 8,49 € (+0,21 €, +2,54 %).</p>",
+			"summary": "Tuotteen Los Molinos Tempranillo hinta on muuttunut. 8,28 € → 8,49 € (+0,21 €, +2,54 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901617-b4c63da04180.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hine Rare – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/179257/",
+	"feed_url": "https://alkometriikka.fi/rss/179257.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hine Rare.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-179257-2026-07-18-74.99",
+			"url": "https://alkometriikka.fi/tuotteet/179257/",
+			"title": "Hine Rare — 72,33 € → 74,99 €",
+			"content_html": "<p>Tuotteen Hine Rare hinta on muuttunut.</p><p>72,33 € → 74,99 € (+2,66 €, +3,68 %).</p>",
+			"summary": "Tuotteen Hine Rare hinta on muuttunut. 72,33 € → 74,99 € (+2,66 €, +3,68 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/179257-e9de548d4ef9.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

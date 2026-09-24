@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Beefsteak Club Reserve Barrel Aged Malbec 2020 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/903027/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Beefsteak Club Reserve Barrel Aged Malbec 2020.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/903027.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Beefsteak Club Reserve Barrel Aged Malbec 2020 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Beefsteak Club Reserve Barrel Aged Malbec 2020 — 30,43 € → 29,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/903027/</link>
+			<guid isPermaLink="false">alkometriikka-903027-2026-07-18-29.99</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Beefsteak Club Reserve Barrel Aged Malbec 2020 hinta on muuttunut.</p><p>30,43 € → 29,99 € (−0,44 €, −1,45 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903027-946efd1f32d0.png" />
+		</item>
+	</channel>
+</rss>

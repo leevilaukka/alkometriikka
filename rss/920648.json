@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Louis Latour Château Corton Grancey Grand Cru 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/920648/",
+	"feed_url": "https://alkometriikka.fi/rss/920648.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Louis Latour Château Corton Grancey Grand Cru 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-920648-2026-07-18-177",
+			"url": "https://alkometriikka.fi/tuotteet/920648/",
+			"title": "Louis Latour Château Corton Grancey Grand Cru 2019 — 176,44 € → 177,00 €",
+			"content_html": "<p>Tuotteen Louis Latour Château Corton Grancey Grand Cru 2019 hinta on muuttunut.</p><p>176,44 € → 177,00 € (+0,56 €, +0,32 %).</p>",
+			"summary": "Tuotteen Louis Latour Château Corton Grancey Grand Cru 2019 hinta on muuttunut. 176,44 € → 177,00 € (+0,56 €, +0,32 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/920648-5aa054870469.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

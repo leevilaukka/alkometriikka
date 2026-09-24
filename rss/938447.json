@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tosti Asti Secco – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/938447/",
+	"feed_url": "https://alkometriikka.fi/rss/938447.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tosti Asti Secco.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-938447-2026-07-18-14.48",
+			"url": "https://alkometriikka.fi/tuotteet/938447/",
+			"title": "Tosti Asti Secco — 14,44 € → 14,48 €",
+			"content_html": "<p>Tuotteen Tosti Asti Secco hinta on muuttunut.</p><p>14,44 € → 14,48 € (+0,04 €, +0,28 %).</p>",
+			"summary": "Tuotteen Tosti Asti Secco hinta on muuttunut. 14,44 € → 14,48 € (+0,04 €, +0,28 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/938447-1db431432c41.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Magners Alcohol Free – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/772144/",
+	"feed_url": "https://alkometriikka.fi/rss/772144.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Magners Alcohol Free.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-772144-2026-07-18-2.48",
+			"url": "https://alkometriikka.fi/tuotteet/772144/",
+			"title": "Magners Alcohol Free — 2,28 € → 2,48 €",
+			"content_html": "<p>Tuotteen Magners Alcohol Free hinta on muuttunut.</p><p>2,28 € → 2,48 € (+0,20 €, +8,77 %).</p>",
+			"summary": "Tuotteen Magners Alcohol Free hinta on muuttunut. 2,28 € → 2,48 € (+0,20 €, +8,77 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/772144-3a6c5e3f4ac4.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat siiderit"
+			]
+		}
+	]
+}

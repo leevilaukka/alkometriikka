@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Spaten München – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/752956/",
+	"feed_url": "https://alkometriikka.fi/rss/752956.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Spaten München.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-752956-2026-07-18-3.79",
+			"url": "https://alkometriikka.fi/tuotteet/752956/",
+			"title": "Spaten München — 3,49 € → 3,79 €",
+			"content_html": "<p>Tuotteen Spaten München hinta on muuttunut.</p><p>3,49 € → 3,79 € (+0,30 €, +8,60 %).</p>",
+			"summary": "Tuotteen Spaten München hinta on muuttunut. 3,49 € → 3,79 € (+0,30 €, +8,60 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/752956-d99c3b7ae65e.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

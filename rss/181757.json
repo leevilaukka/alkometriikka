@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bulleit Rye – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/181757/",
+	"feed_url": "https://alkometriikka.fi/rss/181757.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bulleit Rye.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-181757-2026-07-18-51.98",
+			"url": "https://alkometriikka.fi/tuotteet/181757/",
+			"title": "Bulleit Rye — 51,80 € → 51,98 €",
+			"content_html": "<p>Tuotteen Bulleit Rye hinta on muuttunut.</p><p>51,80 € → 51,98 € (+0,18 €, +0,35 %).</p>",
+			"summary": "Tuotteen Bulleit Rye hinta on muuttunut. 51,80 € → 51,98 € (+0,18 €, +0,35 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/181757-4f4ed87ff6b6.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Henri Bourgeois Pouilly-Fumé JS - 150 2023 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/942247/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Henri Bourgeois Pouilly-Fumé JS - 150 2023.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/942247.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Henri Bourgeois Pouilly-Fumé JS - 150 2023 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Henri Bourgeois Pouilly-Fumé JS - 150 2023 — 43,44 € → 43,98 €</title>
+			<link>https://alkometriikka.fi/tuotteet/942247/</link>
+			<guid isPermaLink="false">alkometriikka-942247-2026-07-18-43.98</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / valkoviinit</category>
+			<description><![CDATA[<p>Tuotteen Henri Bourgeois Pouilly-Fumé JS - 150 2023 hinta on muuttunut.</p><p>43,44 € → 43,98 € (+0,54 €, +1,24 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/942247-4a0296f351c0.png" />
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Briego Vendimia Seleccionada 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/458287/",
+	"feed_url": "https://alkometriikka.fi/rss/458287.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Briego Vendimia Seleccionada 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-458287-2026-07-18-15.99",
+			"url": "https://alkometriikka.fi/tuotteet/458287/",
+			"title": "Briego Vendimia Seleccionada 2022 — 16,09 € → 15,99 €",
+			"content_html": "<p>Tuotteen Briego Vendimia Seleccionada 2022 hinta on muuttunut.</p><p>16,09 € → 15,99 € (−0,10 €, −0,62 %).</p>",
+			"summary": "Tuotteen Briego Vendimia Seleccionada 2022 hinta on muuttunut. 16,09 € → 15,99 € (−0,10 €, −0,62 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/458287-086094a7145a.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Johnnie Walker Green Label 15 Year Old Blended Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/149817/",
+	"feed_url": "https://alkometriikka.fi/rss/149817.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Johnnie Walker Green Label 15 Year Old Blended Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-149817-2026-07-18-64.99",
+			"url": "https://alkometriikka.fi/tuotteet/149817/",
+			"title": "Johnnie Walker Green Label 15 Year Old Blended Malt — 64,26 € → 64,99 €",
+			"content_html": "<p>Tuotteen Johnnie Walker Green Label 15 Year Old Blended Malt hinta on muuttunut.</p><p>64,26 € → 64,99 € (+0,73 €, +1,14 %).</p>",
+			"summary": "Tuotteen Johnnie Walker Green Label 15 Year Old Blended Malt hinta on muuttunut. 64,26 € → 64,99 € (+0,73 €, +1,14 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/149817-4b8f39acf972.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

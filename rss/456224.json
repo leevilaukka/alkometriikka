@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tommasi Fiorato Recioto della Valpolicella 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/456224/",
+	"feed_url": "https://alkometriikka.fi/rss/456224.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tommasi Fiorato Recioto della Valpolicella 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-456224-2026-07-18-25.7",
+			"url": "https://alkometriikka.fi/tuotteet/456224/",
+			"title": "Tommasi Fiorato Recioto della Valpolicella 2022 — 25,56 € → 25,70 €",
+			"content_html": "<p>Tuotteen Tommasi Fiorato Recioto della Valpolicella 2022 hinta on muuttunut.</p><p>25,56 € → 25,70 € (+0,14 €, +0,55 %).</p>",
+			"summary": "Tuotteen Tommasi Fiorato Recioto della Valpolicella 2022 hinta on muuttunut. 25,56 € → 25,70 € (+0,14 €, +0,55 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/456224-5f2aed87dc3f.png",
+			"tags": [
+				"Viinit",
+				"jälkiruokaviinit"
+			]
+		}
+	]
+}

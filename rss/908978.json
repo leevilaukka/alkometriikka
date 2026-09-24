@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Giuseppe Campagnola Valpolicella Classico 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/908978/",
+	"feed_url": "https://alkometriikka.fi/rss/908978.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Giuseppe Campagnola Valpolicella Classico 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-908978-2026-07-18-16.49",
+			"url": "https://alkometriikka.fi/tuotteet/908978/",
+			"title": "Giuseppe Campagnola Valpolicella Classico 2023 — 16,45 € → 16,49 €",
+			"content_html": "<p>Tuotteen Giuseppe Campagnola Valpolicella Classico 2023 hinta on muuttunut.</p><p>16,45 € → 16,49 € (+0,04 €, +0,24 %).</p>",
+			"summary": "Tuotteen Giuseppe Campagnola Valpolicella Classico 2023 hinta on muuttunut. 16,45 € → 16,49 € (+0,04 €, +0,24 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/908978-a8a328909a49.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

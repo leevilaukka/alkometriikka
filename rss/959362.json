@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Altozano Tempranillo Syrah Rose 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/959362/",
+	"feed_url": "https://alkometriikka.fi/rss/959362.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Altozano Tempranillo Syrah Rose 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-959362-2026-07-18-10.5",
+			"url": "https://alkometriikka.fi/tuotteet/959362/",
+			"title": "Altozano Tempranillo Syrah Rose 2021 — 11,64 € → 10,50 €",
+			"content_html": "<p>Tuotteen Altozano Tempranillo Syrah Rose 2021 hinta on muuttunut.</p><p>11,64 € → 10,50 € (−1,14 €, −9,79 %).</p>",
+			"summary": "Tuotteen Altozano Tempranillo Syrah Rose 2021 hinta on muuttunut. 11,64 € → 10,50 € (−1,14 €, −9,79 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/959362-849fbc2f6c27.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

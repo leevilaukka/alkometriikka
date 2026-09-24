@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nicosia Frappato 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/955063/",
+	"feed_url": "https://alkometriikka.fi/rss/955063.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nicosia Frappato 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-955063-2026-07-18-19.4",
+			"url": "https://alkometriikka.fi/tuotteet/955063/",
+			"title": "Nicosia Frappato 2025 — 19,32 € → 19,40 €",
+			"content_html": "<p>Tuotteen Nicosia Frappato 2025 hinta on muuttunut.</p><p>19,32 € → 19,40 € (+0,08 €, +0,41 %).</p>",
+			"summary": "Tuotteen Nicosia Frappato 2025 hinta on muuttunut. 19,32 € → 19,40 € (+0,08 €, +0,41 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/955063-ce58f3feaf1a.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

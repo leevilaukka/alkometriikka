@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Footmark Smooth Red 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/481017/",
+	"feed_url": "https://alkometriikka.fi/rss/481017.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Footmark Smooth Red 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-481017-2026-07-18-9.98",
+			"url": "https://alkometriikka.fi/tuotteet/481017/",
+			"title": "Footmark Smooth Red 2025 — 9,46 € → 9,98 €",
+			"content_html": "<p>Tuotteen Footmark Smooth Red 2025 hinta on muuttunut.</p><p>9,46 € → 9,98 € (+0,52 €, +5,50 %).</p>",
+			"summary": "Tuotteen Footmark Smooth Red 2025 hinta on muuttunut. 9,46 € → 9,98 € (+0,52 €, +5,50 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/481017-32f3810037a2.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Redoma Branco 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/554077/",
+	"feed_url": "https://alkometriikka.fi/rss/554077.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Redoma Branco 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-554077-2026-07-18-27.9",
+			"url": "https://alkometriikka.fi/tuotteet/554077/",
+			"title": "Redoma Branco 2025 — 27,35 € → 27,90 €",
+			"content_html": "<p>Tuotteen Redoma Branco 2025 hinta on muuttunut.</p><p>27,35 € → 27,90 € (+0,55 €, +2,01 %).</p>",
+			"summary": "Tuotteen Redoma Branco 2025 hinta on muuttunut. 27,35 € → 27,90 € (+0,55 €, +2,01 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/554077-c841fd8142ba.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

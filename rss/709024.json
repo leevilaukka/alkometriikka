@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Crowmoor White Crow tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/709024/",
+	"feed_url": "https://alkometriikka.fi/rss/709024.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Crowmoor White Crow tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-709024-2026-07-18-1.99",
+			"url": "https://alkometriikka.fi/tuotteet/709024/",
+			"title": "Crowmoor White Crow tölkki — 1,88 € → 1,99 €",
+			"content_html": "<p>Tuotteen Crowmoor White Crow tölkki hinta on muuttunut.</p><p>1,88 € → 1,99 € (+0,11 €, +5,85 %).</p>",
+			"summary": "Tuotteen Crowmoor White Crow tölkki hinta on muuttunut. 1,88 € → 1,99 € (+0,11 €, +5,85 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/709024-34340f44fb3b.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat siiderit"
+			]
+		}
+	]
+}

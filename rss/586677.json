@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Blanc Pescador – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/586677/",
+	"feed_url": "https://alkometriikka.fi/rss/586677.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Blanc Pescador.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-586677-2026-07-18-11.78",
+			"url": "https://alkometriikka.fi/tuotteet/586677/",
+			"title": "Blanc Pescador — 11,43 € → 11,78 €",
+			"content_html": "<p>Tuotteen Blanc Pescador hinta on muuttunut.</p><p>11,43 € → 11,78 € (+0,35 €, +3,06 %).</p>",
+			"summary": "Tuotteen Blanc Pescador hinta on muuttunut. 11,43 € → 11,78 € (+0,35 €, +3,06 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/586677-fabf1156dce7.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

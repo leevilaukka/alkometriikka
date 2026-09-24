@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Original Long Drink Light Pineapple tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/700397/",
+	"feed_url": "https://alkometriikka.fi/rss/700397.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Original Long Drink Light Pineapple tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-700397-2026-07-29-2.79",
+			"url": "https://alkometriikka.fi/tuotteet/700397/",
+			"title": "Original Long Drink Light Pineapple tölkki — 2,90 € → 2,79 €",
+			"content_html": "<p>Tuotteen Original Long Drink Light Pineapple tölkki hinta on muuttunut.</p><p>2,90 € → 2,79 € (−0,11 €, −3,79 %).</p>",
+			"summary": "Tuotteen Original Long Drink Light Pineapple tölkki hinta on muuttunut. 2,90 € → 2,79 € (−0,11 €, −3,79 %).",
+			"date_published": "2026-07-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/700397-70fe3e5295ce.png",
+			"tags": [
+				"Panimotuotteet",
+				"juomasekoitukset"
+			]
+		}
+	]
+}

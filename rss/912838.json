@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Sukula Barbera d´Alba Meriame 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/912838/",
+	"feed_url": "https://alkometriikka.fi/rss/912838.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Sukula Barbera d´Alba Meriame 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-912838-2026-07-18-59.98",
+			"url": "https://alkometriikka.fi/tuotteet/912838/",
+			"title": "Sukula Barbera d´Alba Meriame 2022 — 59,44 € → 59,98 €",
+			"content_html": "<p>Tuotteen Sukula Barbera d´Alba Meriame 2022 hinta on muuttunut.</p><p>59,44 € → 59,98 € (+0,54 €, +0,91 %).</p>",
+			"summary": "Tuotteen Sukula Barbera d´Alba Meriame 2022 hinta on muuttunut. 59,44 € → 59,98 € (+0,54 €, +0,91 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/912838-32e1afe67676.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gran Vinhas do Ocidente Reserva 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/957846/",
+	"feed_url": "https://alkometriikka.fi/rss/957846.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gran Vinhas do Ocidente Reserva 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-957846-2026-01-27-13.98",
+			"url": "https://alkometriikka.fi/tuotteet/957846/",
+			"title": "Gran Vinhas do Ocidente Reserva 2023 — 14,02 € → 13,98 €",
+			"content_html": "<p>Tuotteen Gran Vinhas do Ocidente Reserva 2023 hinta on muuttunut.</p><p>14,02 € → 13,98 € (−0,04 €, −0,29 %).</p>",
+			"summary": "Tuotteen Gran Vinhas do Ocidente Reserva 2023 hinta on muuttunut. 14,02 € → 13,98 € (−0,04 €, −0,29 %).",
+			"date_published": "2026-01-27T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/957846-4f415f1d8fd6.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

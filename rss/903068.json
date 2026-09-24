@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – E. Guigal Gigondas 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903068/",
+	"feed_url": "https://alkometriikka.fi/rss/903068.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: E. Guigal Gigondas 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903068-2026-07-18-37.48",
+			"url": "https://alkometriikka.fi/tuotteet/903068/",
+			"title": "E. Guigal Gigondas 2021 — 37,43 € → 37,48 €",
+			"content_html": "<p>Tuotteen E. Guigal Gigondas 2021 hinta on muuttunut.</p><p>37,43 € → 37,48 € (+0,05 €, +0,13 %).</p>",
+			"summary": "Tuotteen E. Guigal Gigondas 2021 hinta on muuttunut. 37,43 € → 37,48 € (+0,05 €, +0,13 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903068-556bf41f28b8.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

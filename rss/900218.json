@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ayala Rosé Majeur Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900218/",
+	"feed_url": "https://alkometriikka.fi/rss/900218.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ayala Rosé Majeur Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900218-2026-07-18-69.98",
+			"url": "https://alkometriikka.fi/tuotteet/900218/",
+			"title": "Ayala Rosé Majeur Champagne Brut — 69,85 € → 69,98 €",
+			"content_html": "<p>Tuotteen Ayala Rosé Majeur Champagne Brut hinta on muuttunut.</p><p>69,85 € → 69,98 € (+0,13 €, +0,19 %).</p>",
+			"summary": "Tuotteen Ayala Rosé Majeur Champagne Brut hinta on muuttunut. 69,85 € → 69,98 € (+0,13 €, +0,19 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900218-4f73d1fef109.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

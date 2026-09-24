@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Monistrol Selección Especial Cava Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/507347/",
+	"feed_url": "https://alkometriikka.fi/rss/507347.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Monistrol Selección Especial Cava Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-507347-2026-07-18-11.99",
+			"url": "https://alkometriikka.fi/tuotteet/507347/",
+			"title": "Monistrol Selección Especial Cava Brut — 11,95 € → 11,99 €",
+			"content_html": "<p>Tuotteen Monistrol Selección Especial Cava Brut hinta on muuttunut.</p><p>11,95 € → 11,99 € (+0,04 €, +0,33 %).</p>",
+			"summary": "Tuotteen Monistrol Selección Especial Cava Brut hinta on muuttunut. 11,95 € → 11,99 € (+0,04 €, +0,33 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/507347-1ca422e3a06c.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

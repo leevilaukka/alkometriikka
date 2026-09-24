@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – LOL Salmiakki Shot – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/908492/",
+	"feed_url": "https://alkometriikka.fi/rss/908492.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: LOL Salmiakki Shot.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-908492-2026-07-18-15.28",
+			"url": "https://alkometriikka.fi/tuotteet/908492/",
+			"title": "LOL Salmiakki Shot — 15,09 € → 15,28 €",
+			"content_html": "<p>Tuotteen LOL Salmiakki Shot hinta on muuttunut.</p><p>15,09 € → 15,28 € (+0,19 €, +1,26 %).</p>",
+			"summary": "Tuotteen LOL Salmiakki Shot hinta on muuttunut. 15,09 € → 15,28 € (+0,19 €, +1,26 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/908492-a96806ee9877.png",
+			"tags": [
+				"Väkevät",
+				"salmiakkiliköörit"
+			]
+		}
+	]
+}

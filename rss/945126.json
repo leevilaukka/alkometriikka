@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pinot Noir Rood Vogelsanck 2017 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/945126/",
+	"feed_url": "https://alkometriikka.fi/rss/945126.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pinot Noir Rood Vogelsanck 2017.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-945126-2026-07-18-52.34",
+			"url": "https://alkometriikka.fi/tuotteet/945126/",
+			"title": "Pinot Noir Rood Vogelsanck 2017 — 47,18 € → 52,34 €",
+			"content_html": "<p>Tuotteen Pinot Noir Rood Vogelsanck 2017 hinta on muuttunut.</p><p>47,18 € → 52,34 € (+5,16 €, +10,94 %).</p>",
+			"summary": "Tuotteen Pinot Noir Rood Vogelsanck 2017 hinta on muuttunut. 47,18 € → 52,34 € (+5,16 €, +10,94 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/945126-57695e2f2bab.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

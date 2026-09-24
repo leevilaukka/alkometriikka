@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Stony Cape Chenin Blanc hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/008166/",
+	"feed_url": "https://alkometriikka.fi/rss/008166.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Stony Cape Chenin Blanc hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-008166-2026-07-18-33.99",
+			"url": "https://alkometriikka.fi/tuotteet/008166/",
+			"title": "Stony Cape Chenin Blanc hanapakkaus — 34,24 € → 33,99 €",
+			"content_html": "<p>Tuotteen Stony Cape Chenin Blanc hanapakkaus hinta on muuttunut.</p><p>34,24 € → 33,99 € (−0,25 €, −0,73 %).</p>",
+			"summary": "Tuotteen Stony Cape Chenin Blanc hanapakkaus hinta on muuttunut. 34,24 € → 33,99 € (−0,25 €, −0,73 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/008166-59de05863c19.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

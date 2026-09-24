@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Fernand Engel Crémant d&apos;Alsace Tradition Brut – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/532484/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Fernand Engel Crémant d&apos;Alsace Tradition Brut.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/532484.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Fernand Engel Crémant d&apos;Alsace Tradition Brut – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Fernand Engel Crémant d&apos;Alsace Tradition Brut — 12,22 € → 11,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/532484/</link>
+			<guid isPermaLink="false">alkometriikka-532484-2026-07-18-11.99</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / kuohuviinit ja samppanjat</category>
+			<description><![CDATA[<p>Tuotteen Fernand Engel Crémant d'Alsace Tradition Brut hinta on muuttunut.</p><p>12,22 € → 11,99 € (−0,23 €, −1,88 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/532484-2be6e601d7c0.png" />
+		</item>
+	</channel>
+</rss>

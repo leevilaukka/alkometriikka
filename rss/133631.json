@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Underberg – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/133631/",
+	"feed_url": "https://alkometriikka.fi/rss/133631.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Underberg.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-133631-2026-07-18-2.43",
+			"url": "https://alkometriikka.fi/tuotteet/133631/",
+			"title": "Underberg — 2,45 € → 2,43 €",
+			"content_html": "<p>Tuotteen Underberg hinta on muuttunut.</p><p>2,45 € → 2,43 € (−0,02 €, −0,82 %).</p>",
+			"summary": "Tuotteen Underberg hinta on muuttunut. 2,45 € → 2,43 € (−0,02 €, −0,82 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/133631-71fffbe36bc0.png",
+			"tags": [
+				"Väkevät",
+				"maha- ja maustekatkerot"
+			]
+		}
+	]
+}

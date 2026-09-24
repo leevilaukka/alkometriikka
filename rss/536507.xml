@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Infinitea Black Tea – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/536507/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Infinitea Black Tea.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/536507.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Infinitea Black Tea – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Infinitea Black Tea — 11,90 € → 12,05 €</title>
+			<link>https://alkometriikka.fi/tuotteet/536507/</link>
+			<guid isPermaLink="false">alkometriikka-536507-2026-07-18-12.05</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Alkoholittomat / alkoholittomat kuohuviinit</category>
+			<description><![CDATA[<p>Tuotteen Infinitea Black Tea hinta on muuttunut.</p><p>11,90 € → 12,05 € (+0,15 €, +1,26 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/536507-e1d1c2714f61.png" />
+		</item>
+	</channel>
+</rss>

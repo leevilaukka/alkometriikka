@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lombard Premier Cru Rosé Champagne Extra Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/917062/",
+	"feed_url": "https://alkometriikka.fi/rss/917062.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lombard Premier Cru Rosé Champagne Extra Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-917062-2026-07-18-61.99",
+			"url": "https://alkometriikka.fi/tuotteet/917062/",
+			"title": "Lombard Premier Cru Rosé Champagne Extra Brut — 57,49 € → 61,99 €",
+			"content_html": "<p>Tuotteen Lombard Premier Cru Rosé Champagne Extra Brut hinta on muuttunut.</p><p>57,49 € → 61,99 € (+4,50 €, +7,83 %).</p>",
+			"summary": "Tuotteen Lombard Premier Cru Rosé Champagne Extra Brut hinta on muuttunut. 57,49 € → 61,99 € (+4,50 €, +7,83 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/917062-40be31949e00.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

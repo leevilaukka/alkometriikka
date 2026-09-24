@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Equiano Original Rum – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/917893/",
+	"feed_url": "https://alkometriikka.fi/rss/917893.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Equiano Original Rum.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-917893-2026-07-18-57.99",
+			"url": "https://alkometriikka.fi/tuotteet/917893/",
+			"title": "Equiano Original Rum — 61,98 € → 57,99 €",
+			"content_html": "<p>Tuotteen Equiano Original Rum hinta on muuttunut.</p><p>61,98 € → 57,99 € (−3,99 €, −6,44 %).</p>",
+			"summary": "Tuotteen Equiano Original Rum hinta on muuttunut. 61,98 € → 57,99 € (−3,99 €, −6,44 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/917893-7704d29dc5c8.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

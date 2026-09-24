@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vuokatin Viini Kuohuva Valkoherukkajuoma – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/584057/",
+	"feed_url": "https://alkometriikka.fi/rss/584057.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vuokatin Viini Kuohuva Valkoherukkajuoma.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-584057-2026-07-18-11.89",
+			"url": "https://alkometriikka.fi/tuotteet/584057/",
+			"title": "Vuokatin Viini Kuohuva Valkoherukkajuoma — 11,64 € → 11,89 €",
+			"content_html": "<p>Tuotteen Vuokatin Viini Kuohuva Valkoherukkajuoma hinta on muuttunut.</p><p>11,64 € → 11,89 € (+0,25 €, +2,15 %).</p>",
+			"summary": "Tuotteen Vuokatin Viini Kuohuva Valkoherukkajuoma hinta on muuttunut. 11,64 € → 11,89 € (+0,25 €, +2,15 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/584057-68f1e4ebfcfc.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat kuohuviinit"
+			]
+		}
+	]
+}

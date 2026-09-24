@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Keo Zivania – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/957492/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Keo Zivania.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/957492.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Keo Zivania – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Keo Zivania — 26,71 € → 26,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/957492/</link>
+			<guid isPermaLink="false">alkometriikka-957492-2026-07-18-26.99</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / hedelmätisleet</category>
+			<description><![CDATA[<p>Tuotteen Keo Zivania hinta on muuttunut.</p><p>26,71 € → 26,99 € (+0,28 €, +1,05 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/957492-093a049c1a2c.png" />
+		</item>
+	</channel>
+</rss>

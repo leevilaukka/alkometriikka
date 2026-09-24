@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Zonin Frizzantino Amabile – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/008384/",
+	"feed_url": "https://alkometriikka.fi/rss/008384.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Zonin Frizzantino Amabile.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-008384-2026-07-18-9.29",
+			"url": "https://alkometriikka.fi/tuotteet/008384/",
+			"title": "Zonin Frizzantino Amabile — 8,98 € → 9,29 €",
+			"content_html": "<p>Tuotteen Zonin Frizzantino Amabile hinta on muuttunut.</p><p>8,98 € → 9,29 € (+0,31 €, +3,45 %).</p>",
+			"summary": "Tuotteen Zonin Frizzantino Amabile hinta on muuttunut. 8,98 € → 9,29 € (+0,31 €, +3,45 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/008384-02e1600ecdc1.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Val de Rance Cidre de Bretagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/789677/",
+	"feed_url": "https://alkometriikka.fi/rss/789677.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Val de Rance Cidre de Bretagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-789677-2026-02-02-6.89",
+			"url": "https://alkometriikka.fi/tuotteet/789677/",
+			"title": "Val de Rance Cidre de Bretagne Brut — 6,99 € → 6,89 €",
+			"content_html": "<p>Tuotteen Val de Rance Cidre de Bretagne Brut hinta on muuttunut.</p><p>6,99 € → 6,89 € (−0,10 €, −1,43 %).</p>",
+			"summary": "Tuotteen Val de Rance Cidre de Bretagne Brut hinta on muuttunut. 6,99 € → 6,89 € (−0,10 €, −1,43 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/789677-a165ce84d843.png",
+			"tags": [
+				"Panimotuotteet",
+				"siiderit"
+			]
+		},
+		{
+			"id": "alkometriikka-789677-2026-02-02-6.99",
+			"url": "https://alkometriikka.fi/tuotteet/789677/",
+			"title": "Val de Rance Cidre de Bretagne Brut — 6,89 € → 6,99 €",
+			"content_html": "<p>Tuotteen Val de Rance Cidre de Bretagne Brut hinta on muuttunut.</p><p>6,89 € → 6,99 € (+0,10 €, +1,45 %).</p>",
+			"summary": "Tuotteen Val de Rance Cidre de Bretagne Brut hinta on muuttunut. 6,89 € → 6,99 € (+0,10 €, +1,45 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/789677-a165ce84d843.png",
+			"tags": [
+				"Panimotuotteet",
+				"siiderit"
+			]
+		}
+	]
+}

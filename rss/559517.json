@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Codorníu Kosher Cava Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/559517/",
+	"feed_url": "https://alkometriikka.fi/rss/559517.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Codorníu Kosher Cava Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-559517-2026-07-18-13.48",
+			"url": "https://alkometriikka.fi/tuotteet/559517/",
+			"title": "Codorníu Kosher Cava Brut — 13,46 € → 13,48 €",
+			"content_html": "<p>Tuotteen Codorníu Kosher Cava Brut hinta on muuttunut.</p><p>13,46 € → 13,48 € (+0,02 €, +0,15 %).</p>",
+			"summary": "Tuotteen Codorníu Kosher Cava Brut hinta on muuttunut. 13,46 € → 13,48 € (+0,02 €, +0,15 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/559517-f623ddeaa509.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

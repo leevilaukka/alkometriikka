@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Monopol VS muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/105674/",
+	"feed_url": "https://alkometriikka.fi/rss/105674.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Monopol VS muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-105674-2026-07-18-22.49",
+			"url": "https://alkometriikka.fi/tuotteet/105674/",
+			"title": "Monopol VS muovipullo — 22,62 € → 22,49 €",
+			"content_html": "<p>Tuotteen Monopol VS muovipullo hinta on muuttunut.</p><p>22,62 € → 22,49 € (−0,13 €, −0,57 %).</p>",
+			"summary": "Tuotteen Monopol VS muovipullo hinta on muuttunut. 22,62 € → 22,49 € (−0,13 €, −0,57 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/105674-87d135bff3ed.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

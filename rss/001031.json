@@ -1,0 +1,50 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Rémy Martin VSOP – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/001031/",
+	"feed_url": "https://alkometriikka.fi/rss/001031.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Rémy Martin VSOP.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-001031-2026-07-18-59.98",
+			"url": "https://alkometriikka.fi/tuotteet/001031/",
+			"title": "Rémy Martin VSOP — 64,98 € → 59,98 €",
+			"content_html": "<p>Tuotteen Rémy Martin VSOP hinta on muuttunut.</p><p>64,98 € → 59,98 € (−5,00 €, −7,69 %).</p>",
+			"summary": "Tuotteen Rémy Martin VSOP hinta on muuttunut. 64,98 € → 59,98 € (−5,00 €, −7,69 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/001031-1c05cccf7ff0.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		},
+		{
+			"id": "alkometriikka-001031-2026-02-02-64.88",
+			"url": "https://alkometriikka.fi/tuotteet/001031/",
+			"title": "Rémy Martin VSOP — 64,98 € → 64,88 €",
+			"content_html": "<p>Tuotteen Rémy Martin VSOP hinta on muuttunut.</p><p>64,98 € → 64,88 € (−0,10 €, −0,15 %).</p>",
+			"summary": "Tuotteen Rémy Martin VSOP hinta on muuttunut. 64,98 € → 64,88 € (−0,10 €, −0,15 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/001031-1c05cccf7ff0.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		},
+		{
+			"id": "alkometriikka-001031-2026-02-02-64.98",
+			"url": "https://alkometriikka.fi/tuotteet/001031/",
+			"title": "Rémy Martin VSOP — 64,88 € → 64,98 €",
+			"content_html": "<p>Tuotteen Rémy Martin VSOP hinta on muuttunut.</p><p>64,88 € → 64,98 € (+0,10 €, +0,15 %).</p>",
+			"summary": "Tuotteen Rémy Martin VSOP hinta on muuttunut. 64,88 € → 64,98 € (+0,10 €, +0,15 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/001031-1c05cccf7ff0.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

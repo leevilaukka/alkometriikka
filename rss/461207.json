@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Louis Latour Chambolle-Musigny 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/461207/",
+	"feed_url": "https://alkometriikka.fi/rss/461207.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Louis Latour Chambolle-Musigny 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-461207-2026-07-18-114.49",
+			"url": "https://alkometriikka.fi/tuotteet/461207/",
+			"title": "Louis Latour Chambolle-Musigny 2022 — 114,44 € → 114,49 €",
+			"content_html": "<p>Tuotteen Louis Latour Chambolle-Musigny 2022 hinta on muuttunut.</p><p>114,44 € → 114,49 € (+0,05 €, +0,04 %).</p>",
+			"summary": "Tuotteen Louis Latour Chambolle-Musigny 2022 hinta on muuttunut. 114,44 € → 114,49 € (+0,05 €, +0,04 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/461207-d166e03052c0.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

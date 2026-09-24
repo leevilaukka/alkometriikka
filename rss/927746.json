@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Satyr de Marsyas 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/927746/",
+	"feed_url": "https://alkometriikka.fi/rss/927746.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Satyr de Marsyas 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-927746-2026-07-18-27.24",
+			"url": "https://alkometriikka.fi/tuotteet/927746/",
+			"title": "Satyr de Marsyas 2019 — 25,31 € → 27,24 €",
+			"content_html": "<p>Tuotteen Satyr de Marsyas 2019 hinta on muuttunut.</p><p>25,31 € → 27,24 € (+1,93 €, +7,63 %).</p>",
+			"summary": "Tuotteen Satyr de Marsyas 2019 hinta on muuttunut. 25,31 € → 27,24 € (+1,93 €, +7,63 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/927746-6e8bdf64002d.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

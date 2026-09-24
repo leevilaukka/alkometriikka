@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Frescobaldi Alìe Rosé 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903375/",
+	"feed_url": "https://alkometriikka.fi/rss/903375.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Frescobaldi Alìe Rosé 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903375-2026-07-18-21.8",
+			"url": "https://alkometriikka.fi/tuotteet/903375/",
+			"title": "Frescobaldi Alìe Rosé 2025 — 21,45 € → 21,80 €",
+			"content_html": "<p>Tuotteen Frescobaldi Alìe Rosé 2025 hinta on muuttunut.</p><p>21,45 € → 21,80 € (+0,35 €, +1,63 %).</p>",
+			"summary": "Tuotteen Frescobaldi Alìe Rosé 2025 hinta on muuttunut. 21,45 € → 21,80 € (+0,35 €, +1,63 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903375-f2289223987f.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

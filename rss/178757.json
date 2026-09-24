@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glenmorangie The Infinita 18 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/178757/",
+	"feed_url": "https://alkometriikka.fi/rss/178757.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glenmorangie The Infinita 18 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-178757-2026-07-18-139.99",
+			"url": "https://alkometriikka.fi/tuotteet/178757/",
+			"title": "Glenmorangie The Infinita 18 Year Old Single Malt — 142,27 € → 139,99 €",
+			"content_html": "<p>Tuotteen Glenmorangie The Infinita 18 Year Old Single Malt hinta on muuttunut.</p><p>142,27 € → 139,99 € (−2,28 €, −1,60 %).</p>",
+			"summary": "Tuotteen Glenmorangie The Infinita 18 Year Old Single Malt hinta on muuttunut. 142,27 € → 139,99 € (−2,28 €, −1,60 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/178757-50d9b9ac6a57.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

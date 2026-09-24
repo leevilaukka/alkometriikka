@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Terlan Winkl Sauvignon Blanc  2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902089/",
+	"feed_url": "https://alkometriikka.fi/rss/902089.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Terlan Winkl Sauvignon Blanc  2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902089-2026-07-18-33.9",
+			"url": "https://alkometriikka.fi/tuotteet/902089/",
+			"title": "Terlan Winkl Sauvignon Blanc  2024 — 34,78 € → 33,90 €",
+			"content_html": "<p>Tuotteen Terlan Winkl Sauvignon Blanc  2024 hinta on muuttunut.</p><p>34,78 € → 33,90 € (−0,88 €, −2,53 %).</p>",
+			"summary": "Tuotteen Terlan Winkl Sauvignon Blanc 2024 hinta on muuttunut. 34,78 € → 33,90 € (−0,88 €, −2,53 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902089-ce9e5f79a831.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

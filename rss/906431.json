@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Sauvignon Blanc Ortswein Nittel 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/906431/",
+	"feed_url": "https://alkometriikka.fi/rss/906431.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Sauvignon Blanc Ortswein Nittel 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-906431-2026-07-18-28.59",
+			"url": "https://alkometriikka.fi/tuotteet/906431/",
+			"title": "Sauvignon Blanc Ortswein Nittel 2023 — 28,21 € → 28,59 €",
+			"content_html": "<p>Tuotteen Sauvignon Blanc Ortswein Nittel 2023 hinta on muuttunut.</p><p>28,21 € → 28,59 € (+0,38 €, +1,35 %).</p>",
+			"summary": "Tuotteen Sauvignon Blanc Ortswein Nittel 2023 hinta on muuttunut. 28,21 € → 28,59 € (+0,38 €, +1,35 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/906431-3c66c1208b55.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

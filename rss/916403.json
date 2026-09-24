@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Sualtezza 650 Rose Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/916403/",
+	"feed_url": "https://alkometriikka.fi/rss/916403.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Sualtezza 650 Rose Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-916403-2026-07-18-18.99",
+			"url": "https://alkometriikka.fi/tuotteet/916403/",
+			"title": "Sualtezza 650 Rose Brut — 18,96 € → 18,99 €",
+			"content_html": "<p>Tuotteen Sualtezza 650 Rose Brut hinta on muuttunut.</p><p>18,96 € → 18,99 € (+0,03 €, +0,16 %).</p>",
+			"summary": "Tuotteen Sualtezza 650 Rose Brut hinta on muuttunut. 18,96 € → 18,99 € (+0,03 €, +0,16 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/916403-69f5c270644f.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

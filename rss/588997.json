@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Corvezzo Cuvée Organic Spumante Extra Dry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/588997/",
+	"feed_url": "https://alkometriikka.fi/rss/588997.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Corvezzo Cuvée Organic Spumante Extra Dry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-588997-2026-07-18-14.49",
+			"url": "https://alkometriikka.fi/tuotteet/588997/",
+			"title": "Corvezzo Cuvée Organic Spumante Extra Dry — 13,45 € → 14,49 €",
+			"content_html": "<p>Tuotteen Corvezzo Cuvée Organic Spumante Extra Dry hinta on muuttunut.</p><p>13,45 € → 14,49 € (+1,04 €, +7,73 %).</p>",
+			"summary": "Tuotteen Corvezzo Cuvée Organic Spumante Extra Dry hinta on muuttunut. 13,45 € → 14,49 € (+1,04 €, +7,73 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/588997-709e4a3fa4ac.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

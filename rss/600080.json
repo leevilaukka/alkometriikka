@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – A Le Coq Premium 0,0% 6-pack tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/600080/",
+	"feed_url": "https://alkometriikka.fi/rss/600080.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: A Le Coq Premium 0,0% 6-pack tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-600080-2026-09-04-5.75",
+			"url": "https://alkometriikka.fi/tuotteet/600080/",
+			"title": "A Le Coq Premium 0,0% 6-pack tölkki — 6,39 € → 5,75 €",
+			"content_html": "<p>Tuotteen A Le Coq Premium 0,0% 6-pack tölkki hinta on muuttunut.</p><p>6,39 € → 5,75 € (−0,64 €, −10,02 %).</p>",
+			"summary": "Tuotteen A Le Coq Premium 0,0% 6-pack tölkki hinta on muuttunut. 6,39 € → 5,75 € (−0,64 €, −10,02 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600080-5e2fab8544ec.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

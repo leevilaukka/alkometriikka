@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bacardi Coconut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/100012/",
+	"feed_url": "https://alkometriikka.fi/rss/100012.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bacardi Coconut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-100012-2026-07-18-24.98",
+			"url": "https://alkometriikka.fi/tuotteet/100012/",
+			"title": "Bacardi Coconut — 23,48 € → 24,98 €",
+			"content_html": "<p>Tuotteen Bacardi Coconut hinta on muuttunut.</p><p>23,48 € → 24,98 € (+1,50 €, +6,39 %).</p>",
+			"summary": "Tuotteen Bacardi Coconut hinta on muuttunut. 23,48 € → 24,98 € (+1,50 €, +6,39 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/100012-ee25a332ab5e.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

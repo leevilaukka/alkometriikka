@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Billecart-Salmon Le Sous Bois Champagne Extra Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/913167/",
+	"feed_url": "https://alkometriikka.fi/rss/913167.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Billecart-Salmon Le Sous Bois Champagne Extra Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-913167-2026-07-18-89.89",
+			"url": "https://alkometriikka.fi/tuotteet/913167/",
+			"title": "Billecart-Salmon Le Sous Bois Champagne Extra Brut — 88,96 € → 89,89 €",
+			"content_html": "<p>Tuotteen Billecart-Salmon Le Sous Bois Champagne Extra Brut hinta on muuttunut.</p><p>88,96 € → 89,89 € (+0,93 €, +1,05 %).</p>",
+			"summary": "Tuotteen Billecart-Salmon Le Sous Bois Champagne Extra Brut hinta on muuttunut. 88,96 € → 89,89 € (+0,93 €, +1,05 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/913167-f9578827d5cb.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

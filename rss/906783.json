@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lingua Franca Avni Chardonnay 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/906783/",
+	"feed_url": "https://alkometriikka.fi/rss/906783.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lingua Franca Avni Chardonnay 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-906783-2026-07-18-54.98",
+			"url": "https://alkometriikka.fi/tuotteet/906783/",
+			"title": "Lingua Franca Avni Chardonnay 2021 — 54,45 € → 54,98 €",
+			"content_html": "<p>Tuotteen Lingua Franca Avni Chardonnay 2021 hinta on muuttunut.</p><p>54,45 € → 54,98 € (+0,53 €, +0,97 %).</p>",
+			"summary": "Tuotteen Lingua Franca Avni Chardonnay 2021 hinta on muuttunut. 54,45 € → 54,98 € (+0,53 €, +0,97 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/906783-04c16a94cd64.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

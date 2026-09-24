@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Lahden Erikois New England Double IPA tölkki – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/791264/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Lahden Erikois New England Double IPA tölkki.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/791264.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Lahden Erikois New England Double IPA tölkki – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Lahden Erikois New England Double IPA tölkki — 3,69 € → 3,54 €</title>
+			<link>https://alkometriikka.fi/tuotteet/791264/</link>
+			<guid isPermaLink="false">alkometriikka-791264-2026-02-02-3.54</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Panimotuotteet / oluet</category>
+			<description><![CDATA[<p>Tuotteen Lahden Erikois New England Double IPA tölkki hinta on muuttunut.</p><p>3,69 € → 3,54 € (−0,15 €, −4,07 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/791264-acf9db97c6d8.png" />
+		</item>
+		<item>
+			<title>Lahden Erikois New England Double IPA tölkki — 3,54 € → 3,69 €</title>
+			<link>https://alkometriikka.fi/tuotteet/791264/</link>
+			<guid isPermaLink="false">alkometriikka-791264-2026-02-02-3.69</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Panimotuotteet / oluet</category>
+			<description><![CDATA[<p>Tuotteen Lahden Erikois New England Double IPA tölkki hinta on muuttunut.</p><p>3,54 € → 3,69 € (+0,15 €, +4,24 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/791264-acf9db97c6d8.png" />
+		</item>
+	</channel>
+</rss>

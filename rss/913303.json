@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Henkell Piccolo Rosé Dry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/913303/",
+	"feed_url": "https://alkometriikka.fi/rss/913303.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Henkell Piccolo Rosé Dry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-913303-2026-07-18-4.16",
+			"url": "https://alkometriikka.fi/tuotteet/913303/",
+			"title": "Henkell Piccolo Rosé Dry — 3,93 € → 4,16 €",
+			"content_html": "<p>Tuotteen Henkell Piccolo Rosé Dry hinta on muuttunut.</p><p>3,93 € → 4,16 € (+0,23 €, +5,85 %).</p>",
+			"summary": "Tuotteen Henkell Piccolo Rosé Dry hinta on muuttunut. 3,93 € → 4,16 € (+0,23 €, +5,85 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/913303-7e606325779c.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

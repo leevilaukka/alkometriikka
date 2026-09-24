@@ -1,0 +1,50 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Karpalet muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/100023/",
+	"feed_url": "https://alkometriikka.fi/rss/100023.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Karpalet muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-100023-2026-07-18-12.58",
+			"url": "https://alkometriikka.fi/tuotteet/100023/",
+			"title": "Karpalet muovipullo — 12,28 € → 12,58 €",
+			"content_html": "<p>Tuotteen Karpalet muovipullo hinta on muuttunut.</p><p>12,28 € → 12,58 € (+0,30 €, +2,44 %).</p>",
+			"summary": "Tuotteen Karpalet muovipullo hinta on muuttunut. 12,28 € → 12,58 € (+0,30 €, +2,44 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/100023-a218b0fa5031.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		},
+		{
+			"id": "alkometriikka-100023-2026-02-02-12.08",
+			"url": "https://alkometriikka.fi/tuotteet/100023/",
+			"title": "Karpalet muovipullo — 12,28 € → 12,08 €",
+			"content_html": "<p>Tuotteen Karpalet muovipullo hinta on muuttunut.</p><p>12,28 € → 12,08 € (−0,20 €, −1,63 %).</p>",
+			"summary": "Tuotteen Karpalet muovipullo hinta on muuttunut. 12,28 € → 12,08 € (−0,20 €, −1,63 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/100023-a218b0fa5031.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		},
+		{
+			"id": "alkometriikka-100023-2026-02-02-12.28",
+			"url": "https://alkometriikka.fi/tuotteet/100023/",
+			"title": "Karpalet muovipullo — 12,08 € → 12,28 €",
+			"content_html": "<p>Tuotteen Karpalet muovipullo hinta on muuttunut.</p><p>12,08 € → 12,28 € (+0,20 €, +1,66 %).</p>",
+			"summary": "Tuotteen Karpalet muovipullo hinta on muuttunut. 12,08 € → 12,28 € (+0,20 €, +1,66 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/100023-a218b0fa5031.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

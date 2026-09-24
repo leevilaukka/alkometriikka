@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hendrick's Oasium Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900979/",
+	"feed_url": "https://alkometriikka.fi/rss/900979.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hendrick's Oasium Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900979-2026-07-18-61.49",
+			"url": "https://alkometriikka.fi/tuotteet/900979/",
+			"title": "Hendrick's Oasium Gin — 61,47 € → 61,49 €",
+			"content_html": "<p>Tuotteen Hendrick's Oasium Gin hinta on muuttunut.</p><p>61,47 € → 61,49 € (+0,02 €, +0,03 %).</p>",
+			"summary": "Tuotteen Hendrick's Oasium Gin hinta on muuttunut. 61,47 € → 61,49 € (+0,02 €, +0,03 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900979-94dc6011f4f8.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

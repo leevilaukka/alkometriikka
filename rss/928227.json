@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Palmer & Co Amazone Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/928227/",
+	"feed_url": "https://alkometriikka.fi/rss/928227.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Palmer & Co Amazone Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-928227-2026-07-18-169.99",
+			"url": "https://alkometriikka.fi/tuotteet/928227/",
+			"title": "Palmer & Co Amazone Champagne Brut — 170,45 € → 169,99 €",
+			"content_html": "<p>Tuotteen Palmer & Co Amazone Champagne Brut hinta on muuttunut.</p><p>170,45 € → 169,99 € (−0,46 €, −0,27 %).</p>",
+			"summary": "Tuotteen Palmer & Co Amazone Champagne Brut hinta on muuttunut. 170,45 € → 169,99 € (−0,46 €, −0,27 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/928227-0e928184b387.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

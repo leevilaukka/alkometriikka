@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Campo Viejo Crianza 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/006941/",
+	"feed_url": "https://alkometriikka.fi/rss/006941.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Campo Viejo Crianza 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-006941-2026-07-18-13.79",
+			"url": "https://alkometriikka.fi/tuotteet/006941/",
+			"title": "Campo Viejo Crianza 2022 — 13,46 € → 13,79 €",
+			"content_html": "<p>Tuotteen Campo Viejo Crianza 2022 hinta on muuttunut.</p><p>13,46 € → 13,79 € (+0,33 €, +2,45 %).</p>",
+			"summary": "Tuotteen Campo Viejo Crianza 2022 hinta on muuttunut. 13,46 € → 13,79 € (+0,33 €, +2,45 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/006941-b5be09bbefea.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

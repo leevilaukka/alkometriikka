@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Monster Energy Green  tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/600032/",
+	"feed_url": "https://alkometriikka.fi/rss/600032.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Monster Energy Green  tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-600032-2026-07-18-2.59",
+			"url": "https://alkometriikka.fi/tuotteet/600032/",
+			"title": "Monster Energy Green  tölkki — 2,34 € → 2,59 €",
+			"content_html": "<p>Tuotteen Monster Energy Green  tölkki hinta on muuttunut.</p><p>2,34 € → 2,59 € (+0,25 €, +10,68 %).</p>",
+			"summary": "Tuotteen Monster Energy Green tölkki hinta on muuttunut. 2,34 € → 2,59 € (+0,25 €, +10,68 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600032-bef6221f3e91.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

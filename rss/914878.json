@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bordón Reserva 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/914878/",
+	"feed_url": "https://alkometriikka.fi/rss/914878.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bordón Reserva 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-914878-2026-07-18-18.72",
+			"url": "https://alkometriikka.fi/tuotteet/914878/",
+			"title": "Bordón Reserva 2018 — 23,18 € → 18,72 €",
+			"content_html": "<p>Tuotteen Bordón Reserva 2018 hinta on muuttunut.</p><p>23,18 € → 18,72 € (−4,46 €, −19,24 %).</p>",
+			"summary": "Tuotteen Bordón Reserva 2018 hinta on muuttunut. 23,18 € → 18,72 € (−4,46 €, −19,24 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/914878-b4546a503830.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

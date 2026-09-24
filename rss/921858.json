@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Corvezzo Organic Prosecco Extra Dry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/921858/",
+	"feed_url": "https://alkometriikka.fi/rss/921858.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Corvezzo Organic Prosecco Extra Dry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-921858-2026-07-18-16.99",
+			"url": "https://alkometriikka.fi/tuotteet/921858/",
+			"title": "Corvezzo Organic Prosecco Extra Dry — 16,45 € → 16,99 €",
+			"content_html": "<p>Tuotteen Corvezzo Organic Prosecco Extra Dry hinta on muuttunut.</p><p>16,45 € → 16,99 € (+0,54 €, +3,28 %).</p>",
+			"summary": "Tuotteen Corvezzo Organic Prosecco Extra Dry hinta on muuttunut. 16,45 € → 16,99 € (+0,54 €, +3,28 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/921858-f012f41a860a.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

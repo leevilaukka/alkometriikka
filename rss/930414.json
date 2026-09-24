@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Minor Case Straight Rye – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/930414/",
+	"feed_url": "https://alkometriikka.fi/rss/930414.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Minor Case Straight Rye.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-930414-2026-07-18-72.3",
+			"url": "https://alkometriikka.fi/tuotteet/930414/",
+			"title": "Minor Case Straight Rye — 72,32 € → 72,30 €",
+			"content_html": "<p>Tuotteen Minor Case Straight Rye hinta on muuttunut.</p><p>72,32 € → 72,30 € (−0,02 €, −0,03 %).</p>",
+			"summary": "Tuotteen Minor Case Straight Rye hinta on muuttunut. 72,32 € → 72,30 € (−0,02 €, −0,03 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/930414-2d02522a462a.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

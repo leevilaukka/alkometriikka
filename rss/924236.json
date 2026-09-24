@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Braida Bricco del'Uccellone 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/924236/",
+	"feed_url": "https://alkometriikka.fi/rss/924236.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Braida Bricco del'Uccellone 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-924236-2026-07-18-91.99",
+			"url": "https://alkometriikka.fi/tuotteet/924236/",
+			"title": "Braida Bricco del'Uccellone 2020 — 92,45 € → 91,99 €",
+			"content_html": "<p>Tuotteen Braida Bricco del'Uccellone 2020 hinta on muuttunut.</p><p>92,45 € → 91,99 € (−0,46 €, −0,50 %).</p>",
+			"summary": "Tuotteen Braida Bricco del'Uccellone 2020 hinta on muuttunut. 92,45 € → 91,99 € (−0,46 €, −0,50 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/924236-03c329200738.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

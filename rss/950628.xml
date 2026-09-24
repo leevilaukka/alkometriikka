@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Bruery Mash &amp; Coconut 2017 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/950628/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Bruery Mash &amp; Coconut 2017.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/950628.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Bruery Mash &amp; Coconut 2017 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Bruery Mash &amp; Coconut 2017 — 20,24 € → 20,21 €</title>
+			<link>https://alkometriikka.fi/tuotteet/950628/</link>
+			<guid isPermaLink="false">alkometriikka-950628-2026-07-18-20.21</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Panimotuotteet / oluet</category>
+			<description><![CDATA[<p>Tuotteen Bruery Mash & Coconut 2017 hinta on muuttunut.</p><p>20,24 € → 20,21 € (−0,03 €, −0,15 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/950628-2ced50fc6e3c.png" />
+		</item>
+	</channel>
+</rss>

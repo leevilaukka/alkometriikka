@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Rose Pom Pom 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/921662/",
+	"feed_url": "https://alkometriikka.fi/rss/921662.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Rose Pom Pom 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-921662-2026-07-18-16.98",
+			"url": "https://alkometriikka.fi/tuotteet/921662/",
+			"title": "Rose Pom Pom 2025 — 16,45 € → 16,98 €",
+			"content_html": "<p>Tuotteen Rose Pom Pom 2025 hinta on muuttunut.</p><p>16,45 € → 16,98 € (+0,53 €, +3,22 %).</p>",
+			"summary": "Tuotteen Rose Pom Pom 2025 hinta on muuttunut. 16,45 € → 16,98 € (+0,53 €, +3,22 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/921662-4629bf3c4e0d.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

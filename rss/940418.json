@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Heidell Navy Strength Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/940418/",
+	"feed_url": "https://alkometriikka.fi/rss/940418.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Heidell Navy Strength Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-940418-2026-07-18-50.59",
+			"url": "https://alkometriikka.fi/tuotteet/940418/",
+			"title": "Heidell Navy Strength Gin — 49,80 € → 50,59 €",
+			"content_html": "<p>Tuotteen Heidell Navy Strength Gin hinta on muuttunut.</p><p>49,80 € → 50,59 € (+0,79 €, +1,59 %).</p>",
+			"summary": "Tuotteen Heidell Navy Strength Gin hinta on muuttunut. 49,80 € → 50,59 € (+0,79 €, +1,59 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/940418-1f03c25c7545.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

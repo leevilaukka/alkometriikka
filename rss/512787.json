@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Laurent-Perrier Champagne Ultra Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/512787/",
+	"feed_url": "https://alkometriikka.fi/rss/512787.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Laurent-Perrier Champagne Ultra Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-512787-2026-07-18-94.99",
+			"url": "https://alkometriikka.fi/tuotteet/512787/",
+			"title": "Laurent-Perrier Champagne Ultra Brut — 95,45 € → 94,99 €",
+			"content_html": "<p>Tuotteen Laurent-Perrier Champagne Ultra Brut hinta on muuttunut.</p><p>95,45 € → 94,99 € (−0,46 €, −0,48 %).</p>",
+			"summary": "Tuotteen Laurent-Perrier Champagne Ultra Brut hinta on muuttunut. 95,45 € → 94,99 € (−0,46 €, −0,48 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/512787-4f9ed5cb8dae.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

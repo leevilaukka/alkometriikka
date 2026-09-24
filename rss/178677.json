@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Stumbras Vodka Rye – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/178677/",
+	"feed_url": "https://alkometriikka.fi/rss/178677.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Stumbras Vodka Rye.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-178677-2026-07-18-24.99",
+			"url": "https://alkometriikka.fi/tuotteet/178677/",
+			"title": "Stumbras Vodka Rye — 24,48 € → 24,99 €",
+			"content_html": "<p>Tuotteen Stumbras Vodka Rye hinta on muuttunut.</p><p>24,48 € → 24,99 € (+0,51 €, +2,08 %).</p>",
+			"summary": "Tuotteen Stumbras Vodka Rye hinta on muuttunut. 24,48 € → 24,99 € (+0,51 €, +2,08 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/178677-76f62626a04a.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

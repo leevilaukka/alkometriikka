@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Torres 10 Bourbon Barrel Brandy – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901676/",
+	"feed_url": "https://alkometriikka.fi/rss/901676.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Torres 10 Bourbon Barrel Brandy.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901676-2026-07-18-33.49",
+			"url": "https://alkometriikka.fi/tuotteet/901676/",
+			"title": "Torres 10 Bourbon Barrel Brandy — 33,25 € → 33,49 €",
+			"content_html": "<p>Tuotteen Torres 10 Bourbon Barrel Brandy hinta on muuttunut.</p><p>33,25 € → 33,49 € (+0,24 €, +0,72 %).</p>",
+			"summary": "Tuotteen Torres 10 Bourbon Barrel Brandy hinta on muuttunut. 33,25 € → 33,49 € (+0,24 €, +0,72 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901676-c3ca13d9b36a.png",
+			"tags": [
+				"Väkevät",
+				"brandyt"
+			]
+		}
+	]
+}

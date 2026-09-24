@@ -1,0 +1,50 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Havana Club Añejo 3 Años – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/120888/",
+	"feed_url": "https://alkometriikka.fi/rss/120888.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Havana Club Añejo 3 Años.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-120888-2026-07-18-41.19",
+			"url": "https://alkometriikka.fi/tuotteet/120888/",
+			"title": "Havana Club Añejo 3 Años — 41,15 € → 41,19 €",
+			"content_html": "<p>Tuotteen Havana Club Añejo 3 Años hinta on muuttunut.</p><p>41,15 € → 41,19 € (+0,04 €, +0,10 %).</p>",
+			"summary": "Tuotteen Havana Club Añejo 3 Años hinta on muuttunut. 41,15 € → 41,19 € (+0,04 €, +0,10 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/120888-7279ec8e6456.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		},
+		{
+			"id": "alkometriikka-120888-2026-02-02-41.05",
+			"url": "https://alkometriikka.fi/tuotteet/120888/",
+			"title": "Havana Club Añejo 3 Años — 41,15 € → 41,05 €",
+			"content_html": "<p>Tuotteen Havana Club Añejo 3 Años hinta on muuttunut.</p><p>41,15 € → 41,05 € (−0,10 €, −0,24 %).</p>",
+			"summary": "Tuotteen Havana Club Añejo 3 Años hinta on muuttunut. 41,15 € → 41,05 € (−0,10 €, −0,24 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/120888-7279ec8e6456.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		},
+		{
+			"id": "alkometriikka-120888-2026-02-02-41.15",
+			"url": "https://alkometriikka.fi/tuotteet/120888/",
+			"title": "Havana Club Añejo 3 Años — 41,05 € → 41,15 €",
+			"content_html": "<p>Tuotteen Havana Club Añejo 3 Años hinta on muuttunut.</p><p>41,05 € → 41,15 € (+0,10 €, +0,24 %).</p>",
+			"summary": "Tuotteen Havana Club Añejo 3 Años hinta on muuttunut. 41,05 € → 41,15 € (+0,10 €, +0,24 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/120888-7279ec8e6456.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mallaskoski Royal Flush Imperial Sour tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901109/",
+	"feed_url": "https://alkometriikka.fi/rss/901109.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mallaskoski Royal Flush Imperial Sour tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901109-2026-07-18-4.69",
+			"url": "https://alkometriikka.fi/tuotteet/901109/",
+			"title": "Mallaskoski Royal Flush Imperial Sour tölkki — 4,99 € → 4,69 €",
+			"content_html": "<p>Tuotteen Mallaskoski Royal Flush Imperial Sour tölkki hinta on muuttunut.</p><p>4,99 € → 4,69 € (−0,30 €, −6,01 %).</p>",
+			"summary": "Tuotteen Mallaskoski Royal Flush Imperial Sour tölkki hinta on muuttunut. 4,99 € → 4,69 € (−0,30 €, −6,01 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901109-67f313797b6d.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

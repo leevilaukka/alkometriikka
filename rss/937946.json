@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Domaine Trapet Chambertin Grand Cru 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/937946/",
+	"feed_url": "https://alkometriikka.fi/rss/937946.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Domaine Trapet Chambertin Grand Cru 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-937946-2026-07-18-996.1",
+			"url": "https://alkometriikka.fi/tuotteet/937946/",
+			"title": "Domaine Trapet Chambertin Grand Cru 2020 — 998,26 € → 996,10 €",
+			"content_html": "<p>Tuotteen Domaine Trapet Chambertin Grand Cru 2020 hinta on muuttunut.</p><p>998,26 € → 996,10 € (−2,16 €, −0,22 %).</p>",
+			"summary": "Tuotteen Domaine Trapet Chambertin Grand Cru 2020 hinta on muuttunut. 998,26 € → 996,10 € (−2,16 €, −0,22 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/937946-21932ebc6537.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

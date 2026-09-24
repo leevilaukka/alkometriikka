@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Los Molinos Airén-Verdejo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/905947/",
+	"feed_url": "https://alkometriikka.fi/rss/905947.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Los Molinos Airén-Verdejo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-905947-2026-07-18-8.49",
+			"url": "https://alkometriikka.fi/tuotteet/905947/",
+			"title": "Los Molinos Airén-Verdejo — 8,45 € → 8,49 €",
+			"content_html": "<p>Tuotteen Los Molinos Airén-Verdejo hinta on muuttunut.</p><p>8,45 € → 8,49 € (+0,04 €, +0,47 %).</p>",
+			"summary": "Tuotteen Los Molinos Airén-Verdejo hinta on muuttunut. 8,45 € → 8,49 € (+0,04 €, +0,47 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/905947-3745bd9a3121.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Conway's Irish Country Cream – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/235707/",
+	"feed_url": "https://alkometriikka.fi/rss/235707.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Conway's Irish Country Cream.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-235707-2026-07-18-18.98",
+			"url": "https://alkometriikka.fi/tuotteet/235707/",
+			"title": "Conway's Irish Country Cream — 19,09 € → 18,98 €",
+			"content_html": "<p>Tuotteen Conway's Irish Country Cream hinta on muuttunut.</p><p>19,09 € → 18,98 € (−0,11 €, −0,58 %).</p>",
+			"summary": "Tuotteen Conway's Irish Country Cream hinta on muuttunut. 19,09 € → 18,98 € (−0,11 €, −0,58 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/235707-b32cbff0bd5e.png",
+			"tags": [
+				"Väkevät",
+				"kermaliköörit"
+			]
+		}
+	]
+}

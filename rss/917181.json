@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Martell VS Single Distillery – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/917181/",
+	"feed_url": "https://alkometriikka.fi/rss/917181.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Martell VS Single Distillery.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-917181-2026-07-18-5.44",
+			"url": "https://alkometriikka.fi/tuotteet/917181/",
+			"title": "Martell VS Single Distillery — 5,41 € → 5,44 €",
+			"content_html": "<p>Tuotteen Martell VS Single Distillery hinta on muuttunut.</p><p>5,41 € → 5,44 € (+0,03 €, +0,55 %).</p>",
+			"summary": "Tuotteen Martell VS Single Distillery hinta on muuttunut. 5,41 € → 5,44 € (+0,03 €, +0,55 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/917181-74eae7eee8a7.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Antinori Tignanello 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/934197/",
+	"feed_url": "https://alkometriikka.fi/rss/934197.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Antinori Tignanello 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-934197-2026-07-18-139.98",
+			"url": "https://alkometriikka.fi/tuotteet/934197/",
+			"title": "Antinori Tignanello 2022 — 142,35 € → 139,98 €",
+			"content_html": "<p>Tuotteen Antinori Tignanello 2022 hinta on muuttunut.</p><p>142,35 € → 139,98 € (−2,37 €, −1,66 %).</p>",
+			"summary": "Tuotteen Antinori Tignanello 2022 hinta on muuttunut. 142,35 € → 139,98 € (−2,37 €, −1,66 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/934197-95266e8c489c.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

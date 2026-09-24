@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Leclerc Briant Réserve Champagne Brut Magnum – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/934103/",
+	"feed_url": "https://alkometriikka.fi/rss/934103.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Leclerc Briant Réserve Champagne Brut Magnum.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-934103-2026-07-18-134.99",
+			"url": "https://alkometriikka.fi/tuotteet/934103/",
+			"title": "Leclerc Briant Réserve Champagne Brut Magnum — 130,90 € → 134,99 €",
+			"content_html": "<p>Tuotteen Leclerc Briant Réserve Champagne Brut Magnum hinta on muuttunut.</p><p>130,90 € → 134,99 € (+4,09 €, +3,12 %).</p>",
+			"summary": "Tuotteen Leclerc Briant Réserve Champagne Brut Magnum hinta on muuttunut. 130,90 € → 134,99 € (+4,09 €, +3,12 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/934103-d0f5cfe5e6b7.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

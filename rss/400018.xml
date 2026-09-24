@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Riviera Rosé 2024 kartonkitölkki – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/400018/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Riviera Rosé 2024 kartonkitölkki.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/400018.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Riviera Rosé 2024 kartonkitölkki – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Riviera Rosé 2024 kartonkitölkki — 11,59 € → 11,98 €</title>
+			<link>https://alkometriikka.fi/tuotteet/400018/</link>
+			<guid isPermaLink="false">alkometriikka-400018-2026-07-18-11.98</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / roseeviinit</category>
+			<description><![CDATA[<p>Tuotteen Riviera Rosé 2024 kartonkitölkki hinta on muuttunut.</p><p>11,59 € → 11,98 € (+0,39 €, +3,36 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/400018-bb0f97990d3b.png" />
+		</item>
+	</channel>
+</rss>

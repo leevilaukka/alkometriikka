@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château Grange-Neuve 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/489537/",
+	"feed_url": "https://alkometriikka.fi/rss/489537.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château Grange-Neuve 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-489537-2026-07-18-43.5",
+			"url": "https://alkometriikka.fi/tuotteet/489537/",
+			"title": "Château Grange-Neuve 2021 — 43,97 € → 43,50 €",
+			"content_html": "<p>Tuotteen Château Grange-Neuve 2021 hinta on muuttunut.</p><p>43,97 € → 43,50 € (−0,47 €, −1,07 %).</p>",
+			"summary": "Tuotteen Château Grange-Neuve 2021 hinta on muuttunut. 43,97 € → 43,50 € (−0,47 €, −1,07 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/489537-7b8e46c420a1.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

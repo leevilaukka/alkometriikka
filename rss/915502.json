@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Fattoria Le Pupille Morellino di Scansano 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/915502/",
+	"feed_url": "https://alkometriikka.fi/rss/915502.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Fattoria Le Pupille Morellino di Scansano 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-915502-2026-07-18-23.46",
+			"url": "https://alkometriikka.fi/tuotteet/915502/",
+			"title": "Fattoria Le Pupille Morellino di Scansano 2023 — 24,92 € → 23,46 €",
+			"content_html": "<p>Tuotteen Fattoria Le Pupille Morellino di Scansano 2023 hinta on muuttunut.</p><p>24,92 € → 23,46 € (−1,46 €, −5,86 %).</p>",
+			"summary": "Tuotteen Fattoria Le Pupille Morellino di Scansano 2023 hinta on muuttunut. 24,92 € → 23,46 € (−1,46 €, −5,86 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/915502-62c2316e098c.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

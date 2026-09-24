@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lignell & Piispanen Kova Tee – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/102756/",
+	"feed_url": "https://alkometriikka.fi/rss/102756.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lignell & Piispanen Kova Tee.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-102756-2026-07-18-19.7",
+			"url": "https://alkometriikka.fi/tuotteet/102756/",
+			"title": "Lignell & Piispanen Kova Tee — 19,64 € → 19,70 €",
+			"content_html": "<p>Tuotteen Lignell & Piispanen Kova Tee hinta on muuttunut.</p><p>19,64 € → 19,70 € (+0,06 €, +0,31 %).</p>",
+			"summary": "Tuotteen Lignell & Piispanen Kova Tee hinta on muuttunut. 19,64 € → 19,70 € (+0,06 €, +0,31 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/102756-f5027ccbb80b.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

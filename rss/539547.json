@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ferrari Organic Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/539547/",
+	"feed_url": "https://alkometriikka.fi/rss/539547.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ferrari Organic Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-539547-2026-07-18-32.9",
+			"url": "https://alkometriikka.fi/tuotteet/539547/",
+			"title": "Ferrari Organic Brut — 30,35 € → 32,90 €",
+			"content_html": "<p>Tuotteen Ferrari Organic Brut hinta on muuttunut.</p><p>30,35 € → 32,90 € (+2,55 €, +8,40 %).</p>",
+			"summary": "Tuotteen Ferrari Organic Brut hinta on muuttunut. 30,35 € → 32,90 € (+2,55 €, +8,40 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/539547-9bf738c93da3.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

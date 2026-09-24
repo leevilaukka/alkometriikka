@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Last Mango muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/383877/",
+	"feed_url": "https://alkometriikka.fi/rss/383877.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Last Mango muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-383877-2026-07-18-9.78",
+			"url": "https://alkometriikka.fi/tuotteet/383877/",
+			"title": "Last Mango muovipullo — 9,55 € → 9,78 €",
+			"content_html": "<p>Tuotteen Last Mango muovipullo hinta on muuttunut.</p><p>9,55 € → 9,78 € (+0,23 €, +2,41 %).</p>",
+			"summary": "Tuotteen Last Mango muovipullo hinta on muuttunut. 9,55 € → 9,78 € (+0,23 €, +2,41 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/383877-a522fd936eba.png",
+			"tags": [
+				"Välituotteet",
+				"väkevät viinit"
+			]
+		}
+	]
+}

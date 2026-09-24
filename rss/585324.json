@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Fratelli Berlucchi 25 Franciacorta Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/585324/",
+	"feed_url": "https://alkometriikka.fi/rss/585324.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Fratelli Berlucchi 25 Franciacorta Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-585324-2026-02-02-20.51",
+			"url": "https://alkometriikka.fi/tuotteet/585324/",
+			"title": "Fratelli Berlucchi 25 Franciacorta Brut — 20,61 € → 20,51 €",
+			"content_html": "<p>Tuotteen Fratelli Berlucchi 25 Franciacorta Brut hinta on muuttunut.</p><p>20,61 € → 20,51 € (−0,10 €, −0,49 %).</p>",
+			"summary": "Tuotteen Fratelli Berlucchi 25 Franciacorta Brut hinta on muuttunut. 20,61 € → 20,51 € (−0,10 €, −0,49 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/585324-5200a506b058.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-585324-2026-02-02-20.61",
+			"url": "https://alkometriikka.fi/tuotteet/585324/",
+			"title": "Fratelli Berlucchi 25 Franciacorta Brut — 20,51 € → 20,61 €",
+			"content_html": "<p>Tuotteen Fratelli Berlucchi 25 Franciacorta Brut hinta on muuttunut.</p><p>20,51 € → 20,61 € (+0,10 €, +0,49 %).</p>",
+			"summary": "Tuotteen Fratelli Berlucchi 25 Franciacorta Brut hinta on muuttunut. 20,51 € → 20,61 € (+0,10 €, +0,49 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/585324-5200a506b058.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

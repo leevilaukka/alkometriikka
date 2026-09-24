@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Marchese Antinori Chianti Classico Riserva 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/401477/",
+	"feed_url": "https://alkometriikka.fi/rss/401477.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Marchese Antinori Chianti Classico Riserva 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-401477-2026-07-18-49.99",
+			"url": "https://alkometriikka.fi/tuotteet/401477/",
+			"title": "Marchese Antinori Chianti Classico Riserva 2023 — 50,43 € → 49,99 €",
+			"content_html": "<p>Tuotteen Marchese Antinori Chianti Classico Riserva 2023 hinta on muuttunut.</p><p>50,43 € → 49,99 € (−0,44 €, −0,87 %).</p>",
+			"summary": "Tuotteen Marchese Antinori Chianti Classico Riserva 2023 hinta on muuttunut. 50,43 € → 49,99 € (−0,44 €, −0,87 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/401477-c05411fa8141.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

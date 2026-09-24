@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – MMM Pinot Noir 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901711/",
+	"feed_url": "https://alkometriikka.fi/rss/901711.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: MMM Pinot Noir 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901711-2026-07-18-20.98",
+			"url": "https://alkometriikka.fi/tuotteet/901711/",
+			"title": "MMM Pinot Noir 2024 — 20,44 € → 20,98 €",
+			"content_html": "<p>Tuotteen MMM Pinot Noir 2024 hinta on muuttunut.</p><p>20,44 € → 20,98 € (+0,54 €, +2,64 %).</p>",
+			"summary": "Tuotteen MMM Pinot Noir 2024 hinta on muuttunut. 20,44 € → 20,98 € (+0,54 €, +2,64 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901711-4e302e9679a4.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

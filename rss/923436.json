@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Fuoco e Fiamme Valpolicella Ripasso  2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/923436/",
+	"feed_url": "https://alkometriikka.fi/rss/923436.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Fuoco e Fiamme Valpolicella Ripasso  2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-923436-2026-07-18-19.95",
+			"url": "https://alkometriikka.fi/tuotteet/923436/",
+			"title": "Fuoco e Fiamme Valpolicella Ripasso  2022 — 19,45 € → 19,95 €",
+			"content_html": "<p>Tuotteen Fuoco e Fiamme Valpolicella Ripasso  2022 hinta on muuttunut.</p><p>19,45 € → 19,95 € (+0,50 €, +2,57 %).</p>",
+			"summary": "Tuotteen Fuoco e Fiamme Valpolicella Ripasso 2022 hinta on muuttunut. 19,45 € → 19,95 € (+0,50 €, +2,57 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/923436-156b469229e5.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kopparberg Cider Rosé Alkoholiton tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/959885/",
+	"feed_url": "https://alkometriikka.fi/rss/959885.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kopparberg Cider Rosé Alkoholiton tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-959885-2026-07-18-2.49",
+			"url": "https://alkometriikka.fi/tuotteet/959885/",
+			"title": "Kopparberg Cider Rosé Alkoholiton tölkki — 1,64 € → 2,49 €",
+			"content_html": "<p>Tuotteen Kopparberg Cider Rosé Alkoholiton tölkki hinta on muuttunut.</p><p>1,64 € → 2,49 € (+0,85 €, +51,83 %).</p>",
+			"summary": "Tuotteen Kopparberg Cider Rosé Alkoholiton tölkki hinta on muuttunut. 1,64 € → 2,49 € (+0,85 €, +51,83 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/959885-13a352db24c6.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat siiderit"
+			]
+		}
+	]
+}

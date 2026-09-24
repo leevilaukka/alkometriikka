@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Domaine Marcel Deiss Engelgarten 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902317/",
+	"feed_url": "https://alkometriikka.fi/rss/902317.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Domaine Marcel Deiss Engelgarten 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902317-2026-07-18-53.93",
+			"url": "https://alkometriikka.fi/tuotteet/902317/",
+			"title": "Domaine Marcel Deiss Engelgarten 2023 — 51,24 € → 53,93 €",
+			"content_html": "<p>Tuotteen Domaine Marcel Deiss Engelgarten 2023 hinta on muuttunut.</p><p>51,24 € → 53,93 € (+2,69 €, +5,25 %).</p>",
+			"summary": "Tuotteen Domaine Marcel Deiss Engelgarten 2023 hinta on muuttunut. 51,24 € → 53,93 € (+2,69 €, +5,25 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902317-f23665901acd.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

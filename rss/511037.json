@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hacienda Lopez de Haro Viura 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/511037/",
+	"feed_url": "https://alkometriikka.fi/rss/511037.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hacienda Lopez de Haro Viura 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-511037-2026-07-18-17.48",
+			"url": "https://alkometriikka.fi/tuotteet/511037/",
+			"title": "Hacienda Lopez de Haro Viura 2022 — 17,46 € → 17,48 €",
+			"content_html": "<p>Tuotteen Hacienda Lopez de Haro Viura 2022 hinta on muuttunut.</p><p>17,46 € → 17,48 € (+0,02 €, +0,11 %).</p>",
+			"summary": "Tuotteen Hacienda Lopez de Haro Viura 2022 hinta on muuttunut. 17,46 € → 17,48 € (+0,02 €, +0,11 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/511037-ffdafca06732.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

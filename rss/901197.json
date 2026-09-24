@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ornellaia 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901197/",
+	"feed_url": "https://alkometriikka.fi/rss/901197.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ornellaia 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901197-2026-07-18-259",
+			"url": "https://alkometriikka.fi/tuotteet/901197/",
+			"title": "Ornellaia 2020 — 259,38 € → 259,00 €",
+			"content_html": "<p>Tuotteen Ornellaia 2020 hinta on muuttunut.</p><p>259,38 € → 259,00 € (−0,38 €, −0,15 %).</p>",
+			"summary": "Tuotteen Ornellaia 2020 hinta on muuttunut. 259,38 € → 259,00 € (−0,38 €, −0,15 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901197-e6274ff1fb22.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

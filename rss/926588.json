@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – André Clouet Grande Reserve Champagne Brut Jeroboam – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/926588/",
+	"feed_url": "https://alkometriikka.fi/rss/926588.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: André Clouet Grande Reserve Champagne Brut Jeroboam.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-926588-2026-07-18-301.8",
+			"url": "https://alkometriikka.fi/tuotteet/926588/",
+			"title": "André Clouet Grande Reserve Champagne Brut Jeroboam — 301,84 € → 301,80 €",
+			"content_html": "<p>Tuotteen André Clouet Grande Reserve Champagne Brut Jeroboam hinta on muuttunut.</p><p>301,84 € → 301,80 € (−0,04 €, −0,01 %).</p>",
+			"summary": "Tuotteen André Clouet Grande Reserve Champagne Brut Jeroboam hinta on muuttunut. 301,84 € → 301,80 € (−0,04 €, −0,01 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/926588-45a22b96e43f.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

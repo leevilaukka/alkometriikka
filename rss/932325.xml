@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Strega Liquore muovipullo – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/932325/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Strega Liquore muovipullo.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/932325.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Strega Liquore muovipullo – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Strega Liquore muovipullo — 5,21 € → 5,20 €</title>
+			<link>https://alkometriikka.fi/tuotteet/932325/</link>
+			<guid isPermaLink="false">alkometriikka-932325-2026-07-18-5.2</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / mausteliköörit</category>
+			<description><![CDATA[<p>Tuotteen Strega Liquore muovipullo hinta on muuttunut.</p><p>5,21 € → 5,20 € (−0,01 €, −0,19 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/932325-1a39ae604e79.png" />
+		</item>
+	</channel>
+</rss>

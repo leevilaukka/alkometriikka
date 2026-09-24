@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Knob Creek Small Batch Bourbon – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/167287/",
+	"feed_url": "https://alkometriikka.fi/rss/167287.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Knob Creek Small Batch Bourbon.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-167287-2026-07-18-62.99",
+			"url": "https://alkometriikka.fi/tuotteet/167287/",
+			"title": "Knob Creek Small Batch Bourbon — 61,84 € → 62,99 €",
+			"content_html": "<p>Tuotteen Knob Creek Small Batch Bourbon hinta on muuttunut.</p><p>61,84 € → 62,99 € (+1,15 €, +1,86 %).</p>",
+			"summary": "Tuotteen Knob Creek Small Batch Bourbon hinta on muuttunut. 61,84 € → 62,99 € (+1,15 €, +1,86 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/167287-27ebc4ca1a99.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

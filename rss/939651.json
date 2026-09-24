@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – E. Guigal Château d’Ampuis Côte-Rôtie 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/939651/",
+	"feed_url": "https://alkometriikka.fi/rss/939651.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: E. Guigal Château d’Ampuis Côte-Rôtie 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-939651-2026-07-18-151.98",
+			"url": "https://alkometriikka.fi/tuotteet/939651/",
+			"title": "E. Guigal Château d’Ampuis Côte-Rôtie 2019 — 144,43 € → 151,98 €",
+			"content_html": "<p>Tuotteen E. Guigal Château d’Ampuis Côte-Rôtie 2019 hinta on muuttunut.</p><p>144,43 € → 151,98 € (+7,55 €, +5,23 %).</p>",
+			"summary": "Tuotteen E. Guigal Château d’Ampuis Côte-Rôtie 2019 hinta on muuttunut. 144,43 € → 151,98 € (+7,55 €, +5,23 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/939651-3bc5bf2aa4ee.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

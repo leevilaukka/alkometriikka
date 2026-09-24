@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glendalough Double Barrel Single Grain – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/192957/",
+	"feed_url": "https://alkometriikka.fi/rss/192957.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glendalough Double Barrel Single Grain.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-192957-2026-07-18-42.3",
+			"url": "https://alkometriikka.fi/tuotteet/192957/",
+			"title": "Glendalough Double Barrel Single Grain — 42,28 € → 42,30 €",
+			"content_html": "<p>Tuotteen Glendalough Double Barrel Single Grain hinta on muuttunut.</p><p>42,28 € → 42,30 € (+0,02 €, +0,05 %).</p>",
+			"summary": "Tuotteen Glendalough Double Barrel Single Grain hinta on muuttunut. 42,28 € → 42,30 € (+0,02 €, +0,05 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/192957-94a98cc138a9.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Grant's Rum Cask Finish – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/173557/",
+	"feed_url": "https://alkometriikka.fi/rss/173557.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Grant's Rum Cask Finish.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-173557-2026-07-18-35.1",
+			"url": "https://alkometriikka.fi/tuotteet/173557/",
+			"title": "Grant's Rum Cask Finish — 34,85 € → 35,10 €",
+			"content_html": "<p>Tuotteen Grant's Rum Cask Finish hinta on muuttunut.</p><p>34,85 € → 35,10 € (+0,25 €, +0,72 %).</p>",
+			"summary": "Tuotteen Grant's Rum Cask Finish hinta on muuttunut. 34,85 € → 35,10 € (+0,25 €, +0,72 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/173557-5441eb6455e8.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

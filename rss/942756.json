@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Poikain Parhaat Limonaadi Omena – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/942756/",
+	"feed_url": "https://alkometriikka.fi/rss/942756.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Poikain Parhaat Limonaadi Omena.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-942756-2026-07-18-2.99",
+			"url": "https://alkometriikka.fi/tuotteet/942756/",
+			"title": "Poikain Parhaat Limonaadi Omena — 3,14 € → 2,99 €",
+			"content_html": "<p>Tuotteen Poikain Parhaat Limonaadi Omena hinta on muuttunut.</p><p>3,14 € → 2,99 € (−0,15 €, −4,78 %).</p>",
+			"summary": "Tuotteen Poikain Parhaat Limonaadi Omena hinta on muuttunut. 3,14 € → 2,99 € (−0,15 €, −4,78 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/942756-591a426991fe.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

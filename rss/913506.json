@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Petri Noir 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/913506/",
+	"feed_url": "https://alkometriikka.fi/rss/913506.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Petri Noir 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-913506-2026-07-18-27.41",
+			"url": "https://alkometriikka.fi/tuotteet/913506/",
+			"title": "Petri Noir 2022 — 25,47 € → 27,41 €",
+			"content_html": "<p>Tuotteen Petri Noir 2022 hinta on muuttunut.</p><p>25,47 € → 27,41 € (+1,94 €, +7,62 %).</p>",
+			"summary": "Tuotteen Petri Noir 2022 hinta on muuttunut. 25,47 € → 27,41 € (+1,94 €, +7,62 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/913506-793ddf1ef01c.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

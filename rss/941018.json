@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Frame Riesling Trocken 2023 muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/941018/",
+	"feed_url": "https://alkometriikka.fi/rss/941018.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Frame Riesling Trocken 2023 muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-941018-2026-07-18-13.99",
+			"url": "https://alkometriikka.fi/tuotteet/941018/",
+			"title": "Frame Riesling Trocken 2023 muovipullo — 14,59 € → 13,99 €",
+			"content_html": "<p>Tuotteen Frame Riesling Trocken 2023 muovipullo hinta on muuttunut.</p><p>14,59 € → 13,99 € (−0,60 €, −4,11 %).</p>",
+			"summary": "Tuotteen Frame Riesling Trocken 2023 muovipullo hinta on muuttunut. 14,59 € → 13,99 € (−0,60 €, −4,11 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/941018-5e35fe3dd63d.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

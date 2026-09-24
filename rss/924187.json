@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pimm's No.1 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/924187/",
+	"feed_url": "https://alkometriikka.fi/rss/924187.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pimm's No.1.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-924187-2026-07-18-28.49",
+			"url": "https://alkometriikka.fi/tuotteet/924187/",
+			"title": "Pimm's No.1 — 28,16 € → 28,49 €",
+			"content_html": "<p>Tuotteen Pimm's No.1 hinta on muuttunut.</p><p>28,16 € → 28,49 € (+0,33 €, +1,17 %).</p>",
+			"summary": "Tuotteen Pimm's No.1 hinta on muuttunut. 28,16 € → 28,49 € (+0,33 €, +1,17 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/924187-c3bbdafad722.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

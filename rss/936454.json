@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Billecart-Salmon Le Réserve Champagne Extra Brut Magnum – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/936454/",
+	"feed_url": "https://alkometriikka.fi/rss/936454.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Billecart-Salmon Le Réserve Champagne Extra Brut Magnum.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-936454-2026-07-18-125.7",
+			"url": "https://alkometriikka.fi/tuotteet/936454/",
+			"title": "Billecart-Salmon Le Réserve Champagne Extra Brut Magnum — 125,72 € → 125,70 €",
+			"content_html": "<p>Tuotteen Billecart-Salmon Le Réserve Champagne Extra Brut Magnum hinta on muuttunut.</p><p>125,72 € → 125,70 € (−0,02 €, −0,02 %).</p>",
+			"summary": "Tuotteen Billecart-Salmon Le Réserve Champagne Extra Brut Magnum hinta on muuttunut. 125,72 € → 125,70 € (−0,02 €, −0,02 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/936454-0a7592a593d4.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

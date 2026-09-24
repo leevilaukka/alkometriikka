@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Domaine de Viviers Chablis 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/566424/",
+	"feed_url": "https://alkometriikka.fi/rss/566424.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Domaine de Viviers Chablis 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-566424-2026-02-02-16.73",
+			"url": "https://alkometriikka.fi/tuotteet/566424/",
+			"title": "Domaine de Viviers Chablis 2023 — 16,83 € → 16,73 €",
+			"content_html": "<p>Tuotteen Domaine de Viviers Chablis 2023 hinta on muuttunut.</p><p>16,83 € → 16,73 € (−0,10 €, −0,59 %).</p>",
+			"summary": "Tuotteen Domaine de Viviers Chablis 2023 hinta on muuttunut. 16,83 € → 16,73 € (−0,10 €, −0,59 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/566424-ef020691014a.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-566424-2026-02-02-16.83",
+			"url": "https://alkometriikka.fi/tuotteet/566424/",
+			"title": "Domaine de Viviers Chablis 2023 — 16,73 € → 16,83 €",
+			"content_html": "<p>Tuotteen Domaine de Viviers Chablis 2023 hinta on muuttunut.</p><p>16,73 € → 16,83 € (+0,10 €, +0,60 %).</p>",
+			"summary": "Tuotteen Domaine de Viviers Chablis 2023 hinta on muuttunut. 16,73 € → 16,83 € (+0,10 €, +0,60 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/566424-ef020691014a.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

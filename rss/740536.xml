@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Ayinger Jahrhundert Bier – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/740536/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Ayinger Jahrhundert Bier.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/740536.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Ayinger Jahrhundert Bier – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Ayinger Jahrhundert Bier — 4,55 € → 4,45 €</title>
+			<link>https://alkometriikka.fi/tuotteet/740536/</link>
+			<guid isPermaLink="false">alkometriikka-740536-2026-02-02-4.45</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Panimotuotteet / oluet</category>
+			<description><![CDATA[<p>Tuotteen Ayinger Jahrhundert Bier hinta on muuttunut.</p><p>4,55 € → 4,45 € (−0,10 €, −2,20 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/740536-177160c7e795.png" />
+		</item>
+		<item>
+			<title>Ayinger Jahrhundert Bier — 4,45 € → 4,55 €</title>
+			<link>https://alkometriikka.fi/tuotteet/740536/</link>
+			<guid isPermaLink="false">alkometriikka-740536-2026-02-02-4.55</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Panimotuotteet / oluet</category>
+			<description><![CDATA[<p>Tuotteen Ayinger Jahrhundert Bier hinta on muuttunut.</p><p>4,45 € → 4,55 € (+0,10 €, +2,25 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/740536-177160c7e795.png" />
+		</item>
+	</channel>
+</rss>

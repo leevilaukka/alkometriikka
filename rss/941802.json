@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Schloss Gobelsburg Ried Lamm Grüner Veltliner 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/941802/",
+	"feed_url": "https://alkometriikka.fi/rss/941802.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Schloss Gobelsburg Ried Lamm Grüner Veltliner 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-941802-2026-07-18-65.65",
+			"url": "https://alkometriikka.fi/tuotteet/941802/",
+			"title": "Schloss Gobelsburg Ried Lamm Grüner Veltliner 2023 — 55,45 € → 65,65 €",
+			"content_html": "<p>Tuotteen Schloss Gobelsburg Ried Lamm Grüner Veltliner 2023 hinta on muuttunut.</p><p>55,45 € → 65,65 € (+10,20 €, +18,39 %).</p>",
+			"summary": "Tuotteen Schloss Gobelsburg Ried Lamm Grüner Veltliner 2023 hinta on muuttunut. 55,45 € → 65,65 € (+10,20 €, +18,39 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/941802-b15e3690ce7a.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

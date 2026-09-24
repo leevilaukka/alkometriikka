@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Evaristo Red Wine 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901435/",
+	"feed_url": "https://alkometriikka.fi/rss/901435.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Evaristo Red Wine 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901435-2026-07-18-9.98",
+			"url": "https://alkometriikka.fi/tuotteet/901435/",
+			"title": "Evaristo Red Wine 2023 — 10,44 € → 9,98 €",
+			"content_html": "<p>Tuotteen Evaristo Red Wine 2023 hinta on muuttunut.</p><p>10,44 € → 9,98 € (−0,46 €, −4,41 %).</p>",
+			"summary": "Tuotteen Evaristo Red Wine 2023 hinta on muuttunut. 10,44 € → 9,98 € (−0,46 €, −4,41 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901435-a0ef3f0640f4.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Four Pillars Bloody Shiraz Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901459/",
+	"feed_url": "https://alkometriikka.fi/rss/901459.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Four Pillars Bloody Shiraz Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901459-2026-07-18-57.99",
+			"url": "https://alkometriikka.fi/tuotteet/901459/",
+			"title": "Four Pillars Bloody Shiraz Gin — 57,25 € → 57,99 €",
+			"content_html": "<p>Tuotteen Four Pillars Bloody Shiraz Gin hinta on muuttunut.</p><p>57,25 € → 57,99 € (+0,74 €, +1,29 %).</p>",
+			"summary": "Tuotteen Four Pillars Bloody Shiraz Gin hinta on muuttunut. 57,25 € → 57,99 € (+0,74 €, +1,29 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901459-949d0c683c0b.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

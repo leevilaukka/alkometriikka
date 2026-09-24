@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hardy Legend 1863 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/929187/",
+	"feed_url": "https://alkometriikka.fi/rss/929187.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hardy Legend 1863.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-929187-2026-07-18-67.5",
+			"url": "https://alkometriikka.fi/tuotteet/929187/",
+			"title": "Hardy Legend 1863 — 67,18 € → 67,50 €",
+			"content_html": "<p>Tuotteen Hardy Legend 1863 hinta on muuttunut.</p><p>67,18 € → 67,50 € (+0,32 €, +0,48 %).</p>",
+			"summary": "Tuotteen Hardy Legend 1863 hinta on muuttunut. 67,18 € → 67,50 € (+0,32 €, +0,48 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/929187-9cbe9f07b37a.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

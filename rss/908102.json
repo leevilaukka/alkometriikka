@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Van Nahmen Sparkling Juicy Tea Rose-Darjeeling Rhabarber – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/908102/",
+	"feed_url": "https://alkometriikka.fi/rss/908102.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Van Nahmen Sparkling Juicy Tea Rose-Darjeeling Rhabarber.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-908102-2026-07-18-18.79",
+			"url": "https://alkometriikka.fi/tuotteet/908102/",
+			"title": "Van Nahmen Sparkling Juicy Tea Rose-Darjeeling Rhabarber — 18,62 € → 18,79 €",
+			"content_html": "<p>Tuotteen Van Nahmen Sparkling Juicy Tea Rose-Darjeeling Rhabarber hinta on muuttunut.</p><p>18,62 € → 18,79 € (+0,17 €, +0,91 %).</p>",
+			"summary": "Tuotteen Van Nahmen Sparkling Juicy Tea Rose-Darjeeling Rhabarber hinta on muuttunut. 18,62 € → 18,79 € (+0,17 €, +0,91 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/908102-37a8696be8da.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

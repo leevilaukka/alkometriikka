@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lahden Erikois New England Double IPA tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/791264/",
+	"feed_url": "https://alkometriikka.fi/rss/791264.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lahden Erikois New England Double IPA tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-791264-2026-02-02-3.54",
+			"url": "https://alkometriikka.fi/tuotteet/791264/",
+			"title": "Lahden Erikois New England Double IPA tölkki — 3,69 € → 3,54 €",
+			"content_html": "<p>Tuotteen Lahden Erikois New England Double IPA tölkki hinta on muuttunut.</p><p>3,69 € → 3,54 € (−0,15 €, −4,07 %).</p>",
+			"summary": "Tuotteen Lahden Erikois New England Double IPA tölkki hinta on muuttunut. 3,69 € → 3,54 € (−0,15 €, −4,07 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/791264-acf9db97c6d8.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-791264-2026-02-02-3.69",
+			"url": "https://alkometriikka.fi/tuotteet/791264/",
+			"title": "Lahden Erikois New England Double IPA tölkki — 3,54 € → 3,69 €",
+			"content_html": "<p>Tuotteen Lahden Erikois New England Double IPA tölkki hinta on muuttunut.</p><p>3,54 € → 3,69 € (+0,15 €, +4,24 %).</p>",
+			"summary": "Tuotteen Lahden Erikois New England Double IPA tölkki hinta on muuttunut. 3,54 € → 3,69 € (+0,15 €, +4,24 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/791264-acf9db97c6d8.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

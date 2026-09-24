@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Unser Haus White Glühwein Organic – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/300009/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Unser Haus White Glühwein Organic.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/300009.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Unser Haus White Glühwein Organic – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Unser Haus White Glühwein Organic — 8,59 € → 9,98 €</title>
+			<link>https://alkometriikka.fi/tuotteet/300009/</link>
+			<guid isPermaLink="false">alkometriikka-300009-2026-09-19-9.98</guid>
+			<pubDate>Sat, 19 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / glögit</category>
+			<description><![CDATA[<p>Tuotteen Unser Haus White Glühwein Organic hinta on muuttunut.</p><p>8,59 € → 9,98 € (+1,39 €, +16,18 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/300009-b9d0df832d15.png" />
+		</item>
+		<item>
+			<title>Unser Haus White Glühwein Organic — 9,98 € → 8,59 €</title>
+			<link>https://alkometriikka.fi/tuotteet/300009/</link>
+			<guid isPermaLink="false">alkometriikka-300009-2026-09-17-8.59</guid>
+			<pubDate>Thu, 17 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / glögit</category>
+			<description><![CDATA[<p>Tuotteen Unser Haus White Glühwein Organic hinta on muuttunut.</p><p>9,98 € → 8,59 € (−1,39 €, −13,93 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/300009-b9d0df832d15.png" />
+		</item>
+	</channel>
+</rss>

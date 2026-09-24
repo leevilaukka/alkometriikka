@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hampton Water Rosé 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/907462/",
+	"feed_url": "https://alkometriikka.fi/rss/907462.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hampton Water Rosé 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-907462-2026-07-18-25.48",
+			"url": "https://alkometriikka.fi/tuotteet/907462/",
+			"title": "Hampton Water Rosé 2024 — 25,46 € → 25,48 €",
+			"content_html": "<p>Tuotteen Hampton Water Rosé 2024 hinta on muuttunut.</p><p>25,46 € → 25,48 € (+0,02 €, +0,08 %).</p>",
+			"summary": "Tuotteen Hampton Water Rosé 2024 hinta on muuttunut. 25,46 € → 25,48 € (+0,02 €, +0,08 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/907462-cef3c63a6966.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

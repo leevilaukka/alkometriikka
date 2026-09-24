@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Esporão Reserva Branco 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/950114/",
+	"feed_url": "https://alkometriikka.fi/rss/950114.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Esporão Reserva Branco 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-950114-2026-07-18-23.49",
+			"url": "https://alkometriikka.fi/tuotteet/950114/",
+			"title": "Esporão Reserva Branco 2022 — 22,97 € → 23,49 €",
+			"content_html": "<p>Tuotteen Esporão Reserva Branco 2022 hinta on muuttunut.</p><p>22,97 € → 23,49 € (+0,52 €, +2,26 %).</p>",
+			"summary": "Tuotteen Esporão Reserva Branco 2022 hinta on muuttunut. 22,97 € → 23,49 € (+0,52 €, +2,26 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/950114-91f49f2f7b20.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

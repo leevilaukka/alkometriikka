@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Remelluri Reserva 2017 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/920946/",
+	"feed_url": "https://alkometriikka.fi/rss/920946.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Remelluri Reserva 2017.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-920946-2026-07-18-41.36",
+			"url": "https://alkometriikka.fi/tuotteet/920946/",
+			"title": "Remelluri Reserva 2017 — 40,90 € → 41,36 €",
+			"content_html": "<p>Tuotteen Remelluri Reserva 2017 hinta on muuttunut.</p><p>40,90 € → 41,36 € (+0,46 €, +1,12 %).</p>",
+			"summary": "Tuotteen Remelluri Reserva 2017 hinta on muuttunut. 40,90 € → 41,36 € (+0,46 €, +1,12 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/920946-0621c00711a8.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

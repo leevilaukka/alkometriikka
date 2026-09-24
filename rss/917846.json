@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Niepoort Vertente 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/917846/",
+	"feed_url": "https://alkometriikka.fi/rss/917846.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Niepoort Vertente 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-917846-2026-07-18-25.99",
+			"url": "https://alkometriikka.fi/tuotteet/917846/",
+			"title": "Niepoort Vertente 2022 — 25,95 € → 25,99 €",
+			"content_html": "<p>Tuotteen Niepoort Vertente 2022 hinta on muuttunut.</p><p>25,95 € → 25,99 € (+0,04 €, +0,15 %).</p>",
+			"summary": "Tuotteen Niepoort Vertente 2022 hinta on muuttunut. 25,95 € → 25,99 € (+0,04 €, +0,15 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/917846-ae334d9d33a7.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

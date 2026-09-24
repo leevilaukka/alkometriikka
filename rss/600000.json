@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bavaria Wit 0,0% tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/600000/",
+	"feed_url": "https://alkometriikka.fi/rss/600000.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bavaria Wit 0,0% tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-600000-2026-09-04-1.61",
+			"url": "https://alkometriikka.fi/tuotteet/600000/",
+			"title": "Bavaria Wit 0,0% tölkki — 1,79 € → 1,61 €",
+			"content_html": "<p>Tuotteen Bavaria Wit 0,0% tölkki hinta on muuttunut.</p><p>1,79 € → 1,61 € (−0,18 €, −10,06 %).</p>",
+			"summary": "Tuotteen Bavaria Wit 0,0% tölkki hinta on muuttunut. 1,79 € → 1,61 € (−0,18 €, −10,06 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600000-eb0664d73345.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-600000-2026-07-18-1.79",
+			"url": "https://alkometriikka.fi/tuotteet/600000/",
+			"title": "Bavaria Wit 0,0% tölkki — 1,78 € → 1,79 €",
+			"content_html": "<p>Tuotteen Bavaria Wit 0,0% tölkki hinta on muuttunut.</p><p>1,78 € → 1,79 € (+0,01 €, +0,56 %).</p>",
+			"summary": "Tuotteen Bavaria Wit 0,0% tölkki hinta on muuttunut. 1,78 € → 1,79 € (+0,01 €, +0,56 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600000-eb0664d73345.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

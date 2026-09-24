@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – FiorAmore Prosecco Extra Dry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/930712/",
+	"feed_url": "https://alkometriikka.fi/rss/930712.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: FiorAmore Prosecco Extra Dry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-930712-2026-07-18-14.68",
+			"url": "https://alkometriikka.fi/tuotteet/930712/",
+			"title": "FiorAmore Prosecco Extra Dry — 14,75 € → 14,68 €",
+			"content_html": "<p>Tuotteen FiorAmore Prosecco Extra Dry hinta on muuttunut.</p><p>14,75 € → 14,68 € (−0,07 €, −0,47 %).</p>",
+			"summary": "Tuotteen FiorAmore Prosecco Extra Dry hinta on muuttunut. 14,75 € → 14,68 € (−0,07 €, −0,47 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/930712-fdc007ca11aa.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

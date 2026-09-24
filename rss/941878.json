@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Malfy Rosa – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/941878/",
+	"feed_url": "https://alkometriikka.fi/rss/941878.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Malfy Rosa.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-941878-2026-07-18-46.28",
+			"url": "https://alkometriikka.fi/tuotteet/941878/",
+			"title": "Malfy Rosa — 46,27 € → 46,28 €",
+			"content_html": "<p>Tuotteen Malfy Rosa hinta on muuttunut.</p><p>46,27 € → 46,28 € (+0,01 €, +0,02 %).</p>",
+			"summary": "Tuotteen Malfy Rosa hinta on muuttunut. 46,27 € → 46,28 € (+0,01 €, +0,02 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/941878-67129a32c57d.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

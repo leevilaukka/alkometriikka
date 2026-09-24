@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château Montus 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/909647/",
+	"feed_url": "https://alkometriikka.fi/rss/909647.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château Montus 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-909647-2026-07-18-33.7",
+			"url": "https://alkometriikka.fi/tuotteet/909647/",
+			"title": "Château Montus 2021 — 32,89 € → 33,70 €",
+			"content_html": "<p>Tuotteen Château Montus 2021 hinta on muuttunut.</p><p>32,89 € → 33,70 € (+0,81 €, +2,46 %).</p>",
+			"summary": "Tuotteen Château Montus 2021 hinta on muuttunut. 32,89 € → 33,70 € (+0,81 €, +2,46 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/909647-9c959fc42b47.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

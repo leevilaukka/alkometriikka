@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gratiot-Pillière Tradition Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/924568/",
+	"feed_url": "https://alkometriikka.fi/rss/924568.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gratiot-Pillière Tradition Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-924568-2026-07-18-31.78",
+			"url": "https://alkometriikka.fi/tuotteet/924568/",
+			"title": "Gratiot-Pillière Tradition Champagne Brut — 31,70 € → 31,78 €",
+			"content_html": "<p>Tuotteen Gratiot-Pillière Tradition Champagne Brut hinta on muuttunut.</p><p>31,70 € → 31,78 € (+0,08 €, +0,25 %).</p>",
+			"summary": "Tuotteen Gratiot-Pillière Tradition Champagne Brut hinta on muuttunut. 31,70 € → 31,78 € (+0,08 €, +0,25 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/924568-f209ebdb210f.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Villa Loren Prosecco Extra Dry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/953627/",
+	"feed_url": "https://alkometriikka.fi/rss/953627.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Villa Loren Prosecco Extra Dry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-953627-2026-07-18-13.49",
+			"url": "https://alkometriikka.fi/tuotteet/953627/",
+			"title": "Villa Loren Prosecco Extra Dry — 13,45 € → 13,49 €",
+			"content_html": "<p>Tuotteen Villa Loren Prosecco Extra Dry hinta on muuttunut.</p><p>13,45 € → 13,49 € (+0,04 €, +0,30 %).</p>",
+			"summary": "Tuotteen Villa Loren Prosecco Extra Dry hinta on muuttunut. 13,45 € → 13,49 € (+0,04 €, +0,30 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/953627-921752e9700a.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

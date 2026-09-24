@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Marskin Ryyppy – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/000412/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Marskin Ryyppy.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/000412.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Marskin Ryyppy – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Marskin Ryyppy — 25,38 € → 25,48 €</title>
+			<link>https://alkometriikka.fi/tuotteet/000412/</link>
+			<guid isPermaLink="false">alkometriikka-000412-2026-07-18-25.48</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / maustetut vodkat</category>
+			<description><![CDATA[<p>Tuotteen Marskin Ryyppy hinta on muuttunut.</p><p>25,38 € → 25,48 € (+0,10 €, +0,39 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/000412-ab2719fb6aac.png" />
+		</item>
+	</channel>
+</rss>

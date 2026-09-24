@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – De Dolle Brouwers Stille Nacht – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/910892/",
+	"feed_url": "https://alkometriikka.fi/rss/910892.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: De Dolle Brouwers Stille Nacht.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-910892-2026-07-18-9.52",
+			"url": "https://alkometriikka.fi/tuotteet/910892/",
+			"title": "De Dolle Brouwers Stille Nacht — 9,50 € → 9,52 €",
+			"content_html": "<p>Tuotteen De Dolle Brouwers Stille Nacht hinta on muuttunut.</p><p>9,50 € → 9,52 € (+0,02 €, +0,21 %).</p>",
+			"summary": "Tuotteen De Dolle Brouwers Stille Nacht hinta on muuttunut. 9,50 € → 9,52 € (+0,02 €, +0,21 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/910892-b701bc41f98b.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

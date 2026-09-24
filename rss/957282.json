@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glendalough Single Cask Burgundy Finish – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/957282/",
+	"feed_url": "https://alkometriikka.fi/rss/957282.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glendalough Single Cask Burgundy Finish.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-957282-2026-07-18-60.9",
+			"url": "https://alkometriikka.fi/tuotteet/957282/",
+			"title": "Glendalough Single Cask Burgundy Finish — 60,28 € → 60,90 €",
+			"content_html": "<p>Tuotteen Glendalough Single Cask Burgundy Finish hinta on muuttunut.</p><p>60,28 € → 60,90 € (+0,62 €, +1,03 %).</p>",
+			"summary": "Tuotteen Glendalough Single Cask Burgundy Finish hinta on muuttunut. 60,28 € → 60,90 € (+0,62 €, +1,03 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/957282-95aff6c0eb48.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

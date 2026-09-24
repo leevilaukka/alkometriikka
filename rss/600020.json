@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Levin Chardonnay 0% – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/600020/",
+	"feed_url": "https://alkometriikka.fi/rss/600020.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Levin Chardonnay 0%.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-600020-2026-07-28-6.99",
+			"url": "https://alkometriikka.fi/tuotteet/600020/",
+			"title": "Levin Chardonnay 0% — 6,96 € → 6,99 €",
+			"content_html": "<p>Tuotteen Levin Chardonnay 0% hinta on muuttunut.</p><p>6,96 € → 6,99 € (+0,03 €, +0,43 %).</p>",
+			"summary": "Tuotteen Levin Chardonnay 0% hinta on muuttunut. 6,96 € → 6,99 € (+0,03 €, +0,43 %).",
+			"date_published": "2026-07-28T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600020-c1852ae13841.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat valko- ja roseeviinit"
+			]
+		}
+	]
+}

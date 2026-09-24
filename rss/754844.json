@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hiisi Gosebump Raspberry & Passionfruit Gose – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/754844/",
+	"feed_url": "https://alkometriikka.fi/rss/754844.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hiisi Gosebump Raspberry & Passionfruit Gose.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-754844-2026-07-18-4.97",
+			"url": "https://alkometriikka.fi/tuotteet/754844/",
+			"title": "Hiisi Gosebump Raspberry & Passionfruit Gose — 4,55 € → 4,97 €",
+			"content_html": "<p>Tuotteen Hiisi Gosebump Raspberry & Passionfruit Gose hinta on muuttunut.</p><p>4,55 € → 4,97 € (+0,42 €, +9,23 %).</p>",
+			"summary": "Tuotteen Hiisi Gosebump Raspberry & Passionfruit Gose hinta on muuttunut. 4,55 € → 4,97 € (+0,42 €, +9,23 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/754844-12f77f751ba2.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

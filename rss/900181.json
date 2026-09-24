@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Fleurie 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900181/",
+	"feed_url": "https://alkometriikka.fi/rss/900181.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Fleurie 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900181-2026-07-18-59.98",
+			"url": "https://alkometriikka.fi/tuotteet/900181/",
+			"title": "Fleurie 2020 — 60,41 € → 59,98 €",
+			"content_html": "<p>Tuotteen Fleurie 2020 hinta on muuttunut.</p><p>60,41 € → 59,98 € (−0,43 €, −0,71 %).</p>",
+			"summary": "Tuotteen Fleurie 2020 hinta on muuttunut. 60,41 € → 59,98 € (−0,43 €, −0,71 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900181-28a789a2a514.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

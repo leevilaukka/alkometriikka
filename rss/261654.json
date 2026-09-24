@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Donna Carmen Limoncello – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/261654/",
+	"feed_url": "https://alkometriikka.fi/rss/261654.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Donna Carmen Limoncello.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-261654-2026-07-18-12.98",
+			"url": "https://alkometriikka.fi/tuotteet/261654/",
+			"title": "Donna Carmen Limoncello — 13,04 € → 12,98 €",
+			"content_html": "<p>Tuotteen Donna Carmen Limoncello hinta on muuttunut.</p><p>13,04 € → 12,98 € (−0,06 €, −0,46 %).</p>",
+			"summary": "Tuotteen Donna Carmen Limoncello hinta on muuttunut. 13,04 € → 12,98 € (−0,06 €, −0,46 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/261654-eb4e67d3818b.png",
+			"tags": [
+				"Väkevät",
+				"hedelmäliköörit"
+			]
+		}
+	]
+}

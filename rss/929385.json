@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vintense Terra Australis Alcohol Free – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/929385/",
+	"feed_url": "https://alkometriikka.fi/rss/929385.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vintense Terra Australis Alcohol Free.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-929385-2026-07-18-12.65",
+			"url": "https://alkometriikka.fi/tuotteet/929385/",
+			"title": "Vintense Terra Australis Alcohol Free — 12,64 € → 12,65 €",
+			"content_html": "<p>Tuotteen Vintense Terra Australis Alcohol Free hinta on muuttunut.</p><p>12,64 € → 12,65 € (+0,01 €, +0,08 %).</p>",
+			"summary": "Tuotteen Vintense Terra Australis Alcohol Free hinta on muuttunut. 12,64 € → 12,65 € (+0,01 €, +0,08 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/929385-af810178d525.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat valko- ja roseeviinit"
+			]
+		}
+	]
+}

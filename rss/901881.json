@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vega-Sicilia Valbuena 5° 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901881/",
+	"feed_url": "https://alkometriikka.fi/rss/901881.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vega-Sicilia Valbuena 5° 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901881-2026-07-18-189.99",
+			"url": "https://alkometriikka.fi/tuotteet/901881/",
+			"title": "Vega-Sicilia Valbuena 5° 2020 — 170,36 € → 189,99 €",
+			"content_html": "<p>Tuotteen Vega-Sicilia Valbuena 5° 2020 hinta on muuttunut.</p><p>170,36 € → 189,99 € (+19,63 €, +11,52 %).</p>",
+			"summary": "Tuotteen Vega-Sicilia Valbuena 5° 2020 hinta on muuttunut. 170,36 € → 189,99 € (+19,63 €, +11,52 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901881-33d058e324c9.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

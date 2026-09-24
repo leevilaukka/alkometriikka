@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château Pomone 2012 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/460787/",
+	"feed_url": "https://alkometriikka.fi/rss/460787.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château Pomone 2012.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-460787-2026-07-18-39.49",
+			"url": "https://alkometriikka.fi/tuotteet/460787/",
+			"title": "Château Pomone 2012 — 43,27 € → 39,49 €",
+			"content_html": "<p>Tuotteen Château Pomone 2012 hinta on muuttunut.</p><p>43,27 € → 39,49 € (−3,78 €, −8,74 %).</p>",
+			"summary": "Tuotteen Château Pomone 2012 hinta on muuttunut. 43,27 € → 39,49 € (−3,78 €, −8,74 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/460787-de16d4eeb789.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

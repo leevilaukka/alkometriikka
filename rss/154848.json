@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Koskenkorva Spirit Drink Organic muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/154848/",
+	"feed_url": "https://alkometriikka.fi/rss/154848.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Koskenkorva Spirit Drink Organic muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-154848-2026-07-18-21.99",
+			"url": "https://alkometriikka.fi/tuotteet/154848/",
+			"title": "Koskenkorva Spirit Drink Organic muovipullo — 22,22 € → 21,99 €",
+			"content_html": "<p>Tuotteen Koskenkorva Spirit Drink Organic muovipullo hinta on muuttunut.</p><p>22,22 € → 21,99 € (−0,23 €, −1,04 %).</p>",
+			"summary": "Tuotteen Koskenkorva Spirit Drink Organic muovipullo hinta on muuttunut. 22,22 € → 21,99 € (−0,23 €, −1,04 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/154848-40eaffcc825a.png",
+			"tags": [
+				"Väkevät",
+				"viina"
+			]
+		}
+	]
+}

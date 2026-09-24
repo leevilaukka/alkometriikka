@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Giuseppe Campagnola Amarone della Valpolicella Classico 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/934281/",
+	"feed_url": "https://alkometriikka.fi/rss/934281.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Giuseppe Campagnola Amarone della Valpolicella Classico 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-934281-2026-07-18-47.98",
+			"url": "https://alkometriikka.fi/tuotteet/934281/",
+			"title": "Giuseppe Campagnola Amarone della Valpolicella Classico 2021 — 46,46 € → 47,98 €",
+			"content_html": "<p>Tuotteen Giuseppe Campagnola Amarone della Valpolicella Classico 2021 hinta on muuttunut.</p><p>46,46 € → 47,98 € (+1,52 €, +3,27 %).</p>",
+			"summary": "Tuotteen Giuseppe Campagnola Amarone della Valpolicella Classico 2021 hinta on muuttunut. 46,46 € → 47,98 € (+1,52 €, +3,27 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/934281-df88fa2b3281.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

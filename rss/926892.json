@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – A. Bergere Origine Champagne Brut Magnum – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/926892/",
+	"feed_url": "https://alkometriikka.fi/rss/926892.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: A. Bergere Origine Champagne Brut Magnum.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-926892-2026-07-18-100",
+			"url": "https://alkometriikka.fi/tuotteet/926892/",
+			"title": "A. Bergere Origine Champagne Brut Magnum — 104,04 € → 100,00 €",
+			"content_html": "<p>Tuotteen A. Bergere Origine Champagne Brut Magnum hinta on muuttunut.</p><p>104,04 € → 100,00 € (−4,04 €, −3,88 %).</p>",
+			"summary": "Tuotteen A. Bergere Origine Champagne Brut Magnum hinta on muuttunut. 104,04 € → 100,00 € (−4,04 €, −3,88 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/926892-f7d59036d13e.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

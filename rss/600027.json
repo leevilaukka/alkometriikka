@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Coca-Cola 1,5L  muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/600027/",
+	"feed_url": "https://alkometriikka.fi/rss/600027.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Coca-Cola 1,5L  muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-600027-2026-07-18-4.52",
+			"url": "https://alkometriikka.fi/tuotteet/600027/",
+			"title": "Coca-Cola 1,5L  muovipullo — 3,98 € → 4,52 €",
+			"content_html": "<p>Tuotteen Coca-Cola 1,5L  muovipullo hinta on muuttunut.</p><p>3,98 € → 4,52 € (+0,54 €, +13,57 %).</p>",
+			"summary": "Tuotteen Coca-Cola 1,5L muovipullo hinta on muuttunut. 3,98 € → 4,52 € (+0,54 €, +13,57 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600027-e6f2265f78b7.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

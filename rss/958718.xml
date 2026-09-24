@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Poli Elisir Prugna – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/958718/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Poli Elisir Prugna.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/958718.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Poli Elisir Prugna – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Poli Elisir Prugna — 41,20 € → 42,00 €</title>
+			<link>https://alkometriikka.fi/tuotteet/958718/</link>
+			<guid isPermaLink="false">alkometriikka-958718-2026-07-18-42</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / hedelmäliköörit</category>
+			<description><![CDATA[<p>Tuotteen Poli Elisir Prugna hinta on muuttunut.</p><p>41,20 € → 42,00 € (+0,80 €, +1,94 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/958718-afe2f2491c06.png" />
+		</item>
+	</channel>
+</rss>

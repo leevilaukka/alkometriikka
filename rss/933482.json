@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Edmond Briottet Crème de Cassis de Dijon – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/933482/",
+	"feed_url": "https://alkometriikka.fi/rss/933482.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Edmond Briottet Crème de Cassis de Dijon.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-933482-2026-07-18-25.98",
+			"url": "https://alkometriikka.fi/tuotteet/933482/",
+			"title": "Edmond Briottet Crème de Cassis de Dijon — 25,09 € → 25,98 €",
+			"content_html": "<p>Tuotteen Edmond Briottet Crème de Cassis de Dijon hinta on muuttunut.</p><p>25,09 € → 25,98 € (+0,89 €, +3,55 %).</p>",
+			"summary": "Tuotteen Edmond Briottet Crème de Cassis de Dijon hinta on muuttunut. 25,09 € → 25,98 € (+0,89 €, +3,55 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/933482-8507ddf8661e.png",
+			"tags": [
+				"Väkevät",
+				"marjaliköörit"
+			]
+		}
+	]
+}

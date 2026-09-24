@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Leijona Namu Sour Vadelma muovipullo – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/283436/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Leijona Namu Sour Vadelma muovipullo.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/283436.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Leijona Namu Sour Vadelma muovipullo – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Leijona Namu Sour Vadelma muovipullo — 11,75 € → 11,98 €</title>
+			<link>https://alkometriikka.fi/tuotteet/283436/</link>
+			<guid isPermaLink="false">alkometriikka-283436-2026-07-18-11.98</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / marjaliköörit</category>
+			<description><![CDATA[<p>Tuotteen Leijona Namu Sour Vadelma muovipullo hinta on muuttunut.</p><p>11,75 € → 11,98 € (+0,23 €, +1,96 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/283436-2c9009e2c9af.png" />
+		</item>
+		<item>
+			<title>Leijona Namu Sour Vadelma muovipullo — 11,75 € → 11,55 €</title>
+			<link>https://alkometriikka.fi/tuotteet/283436/</link>
+			<guid isPermaLink="false">alkometriikka-283436-2026-02-02-11.55</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / marjaliköörit</category>
+			<description><![CDATA[<p>Tuotteen Leijona Namu Sour Vadelma muovipullo hinta on muuttunut.</p><p>11,75 € → 11,55 € (−0,20 €, −1,70 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/283436-2c9009e2c9af.png" />
+		</item>
+		<item>
+			<title>Leijona Namu Sour Vadelma muovipullo — 11,55 € → 11,75 €</title>
+			<link>https://alkometriikka.fi/tuotteet/283436/</link>
+			<guid isPermaLink="false">alkometriikka-283436-2026-02-02-11.75</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / marjaliköörit</category>
+			<description><![CDATA[<p>Tuotteen Leijona Namu Sour Vadelma muovipullo hinta on muuttunut.</p><p>11,55 € → 11,75 € (+0,20 €, +1,73 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/283436-2c9009e2c9af.png" />
+		</item>
+	</channel>
+</rss>

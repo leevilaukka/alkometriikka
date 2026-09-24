@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Karhun Puutarhan Mansikkakuohu – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/957191/",
+	"feed_url": "https://alkometriikka.fi/rss/957191.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Karhun Puutarhan Mansikkakuohu.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-957191-2026-07-18-15.39",
+			"url": "https://alkometriikka.fi/tuotteet/957191/",
+			"title": "Karhun Puutarhan Mansikkakuohu — 15,36 € → 15,39 €",
+			"content_html": "<p>Tuotteen Karhun Puutarhan Mansikkakuohu hinta on muuttunut.</p><p>15,36 € → 15,39 € (+0,03 €, +0,20 %).</p>",
+			"summary": "Tuotteen Karhun Puutarhan Mansikkakuohu hinta on muuttunut. 15,36 € → 15,39 € (+0,03 €, +0,20 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/957191-84d3c17d4cfa.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat kuohuviinit"
+			]
+		}
+	]
+}

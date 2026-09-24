@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kuohuva Kuusenkerkkä – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/599754/",
+	"feed_url": "https://alkometriikka.fi/rss/599754.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kuohuva Kuusenkerkkä.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-599754-2026-07-18-10.25",
+			"url": "https://alkometriikka.fi/tuotteet/599754/",
+			"title": "Kuohuva Kuusenkerkkä — 10,11 € → 10,25 €",
+			"content_html": "<p>Tuotteen Kuohuva Kuusenkerkkä hinta on muuttunut.</p><p>10,11 € → 10,25 € (+0,14 €, +1,38 %).</p>",
+			"summary": "Tuotteen Kuohuva Kuusenkerkkä hinta on muuttunut. 10,11 € → 10,25 € (+0,14 €, +1,38 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/599754-203f098ed434.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat kuohuviinit"
+			]
+		}
+	]
+}

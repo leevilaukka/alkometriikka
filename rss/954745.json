@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Boizel Réserve Champagne Brut Magnum – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/954745/",
+	"feed_url": "https://alkometriikka.fi/rss/954745.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Boizel Réserve Champagne Brut Magnum.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-954745-2026-07-18-139.9",
+			"url": "https://alkometriikka.fi/tuotteet/954745/",
+			"title": "Boizel Réserve Champagne Brut Magnum — 138,91 € → 139,90 €",
+			"content_html": "<p>Tuotteen Boizel Réserve Champagne Brut Magnum hinta on muuttunut.</p><p>138,91 € → 139,90 € (+0,99 €, +0,71 %).</p>",
+			"summary": "Tuotteen Boizel Réserve Champagne Brut Magnum hinta on muuttunut. 138,91 € → 139,90 € (+0,99 €, +0,71 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/954745-97c1786a2194.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

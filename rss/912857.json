@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vietti Perbacco Nebbiolo 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/912857/",
+	"feed_url": "https://alkometriikka.fi/rss/912857.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vietti Perbacco Nebbiolo 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-912857-2026-07-18-39.99",
+			"url": "https://alkometriikka.fi/tuotteet/912857/",
+			"title": "Vietti Perbacco Nebbiolo 2023 — 35,43 € → 39,99 €",
+			"content_html": "<p>Tuotteen Vietti Perbacco Nebbiolo 2023 hinta on muuttunut.</p><p>35,43 € → 39,99 € (+4,56 €, +12,87 %).</p>",
+			"summary": "Tuotteen Vietti Perbacco Nebbiolo 2023 hinta on muuttunut. 35,43 € → 39,99 € (+4,56 €, +12,87 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/912857-2ada96a86571.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

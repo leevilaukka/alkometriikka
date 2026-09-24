@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Quinta do Crasto Old Vines Reserva 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/959243/",
+	"feed_url": "https://alkometriikka.fi/rss/959243.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Quinta do Crasto Old Vines Reserva 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-959243-2026-07-18-49.98",
+			"url": "https://alkometriikka.fi/tuotteet/959243/",
+			"title": "Quinta do Crasto Old Vines Reserva 2021 — 50,45 € → 49,98 €",
+			"content_html": "<p>Tuotteen Quinta do Crasto Old Vines Reserva 2021 hinta on muuttunut.</p><p>50,45 € → 49,98 € (−0,47 €, −0,93 %).</p>",
+			"summary": "Tuotteen Quinta do Crasto Old Vines Reserva 2021 hinta on muuttunut. 50,45 € → 49,98 € (−0,47 €, −0,93 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/959243-c9e9a006e2d9.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

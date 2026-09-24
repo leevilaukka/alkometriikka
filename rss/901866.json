@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – NETT Riesling Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901866/",
+	"feed_url": "https://alkometriikka.fi/rss/901866.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: NETT Riesling Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901866-2026-07-18-26.99",
+			"url": "https://alkometriikka.fi/tuotteet/901866/",
+			"title": "NETT Riesling Brut — 27,45 € → 26,99 €",
+			"content_html": "<p>Tuotteen NETT Riesling Brut hinta on muuttunut.</p><p>27,45 € → 26,99 € (−0,46 €, −1,68 %).</p>",
+			"summary": "Tuotteen NETT Riesling Brut hinta on muuttunut. 27,45 € → 26,99 € (−0,46 €, −1,68 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901866-42a997b4f5f6.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

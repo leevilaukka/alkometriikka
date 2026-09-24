@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Campbells Rutherglen Muscat – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/357964/",
+	"feed_url": "https://alkometriikka.fi/rss/357964.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Campbells Rutherglen Muscat.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-357964-2026-07-18-15",
+			"url": "https://alkometriikka.fi/tuotteet/357964/",
+			"title": "Campbells Rutherglen Muscat — 15,73 € → 15,00 €",
+			"content_html": "<p>Tuotteen Campbells Rutherglen Muscat hinta on muuttunut.</p><p>15,73 € → 15,00 € (−0,73 €, −4,64 %).</p>",
+			"summary": "Tuotteen Campbells Rutherglen Muscat hinta on muuttunut. 15,73 € → 15,00 € (−0,73 €, −4,64 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/357964-1d93dbf17af7.png",
+			"tags": [
+				"Välituotteet",
+				"väkevät viinit"
+			]
+		}
+	]
+}

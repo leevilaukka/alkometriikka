@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Martell VSOP – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/000956/",
+	"feed_url": "https://alkometriikka.fi/rss/000956.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Martell VSOP.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-000956-2026-07-18-63.29",
+			"url": "https://alkometriikka.fi/tuotteet/000956/",
+			"title": "Martell VSOP — 63,27 € → 63,29 €",
+			"content_html": "<p>Tuotteen Martell VSOP hinta on muuttunut.</p><p>63,27 € → 63,29 € (+0,02 €, +0,03 %).</p>",
+			"summary": "Tuotteen Martell VSOP hinta on muuttunut. 63,27 € → 63,29 € (+0,02 €, +0,03 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/000956-d200fac6f9ce.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

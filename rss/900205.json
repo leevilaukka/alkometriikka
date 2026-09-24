@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bernard-Massard Cuvèe Organic Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900205/",
+	"feed_url": "https://alkometriikka.fi/rss/900205.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bernard-Massard Cuvèe Organic Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900205-2026-07-18-17.98",
+			"url": "https://alkometriikka.fi/tuotteet/900205/",
+			"title": "Bernard-Massard Cuvèe Organic Brut — 17,94 € → 17,98 €",
+			"content_html": "<p>Tuotteen Bernard-Massard Cuvèe Organic Brut hinta on muuttunut.</p><p>17,94 € → 17,98 € (+0,04 €, +0,22 %).</p>",
+			"summary": "Tuotteen Bernard-Massard Cuvèe Organic Brut hinta on muuttunut. 17,94 € → 17,98 € (+0,04 €, +0,22 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900205-cf1ad348f58b.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

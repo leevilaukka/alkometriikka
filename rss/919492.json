@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Finca Viñoa Treixadura 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/919492/",
+	"feed_url": "https://alkometriikka.fi/rss/919492.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Finca Viñoa Treixadura 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-919492-2026-07-18-21.9",
+			"url": "https://alkometriikka.fi/tuotteet/919492/",
+			"title": "Finca Viñoa Treixadura 2023 — 21,40 € → 21,90 €",
+			"content_html": "<p>Tuotteen Finca Viñoa Treixadura 2023 hinta on muuttunut.</p><p>21,40 € → 21,90 € (+0,50 €, +2,34 %).</p>",
+			"summary": "Tuotteen Finca Viñoa Treixadura 2023 hinta on muuttunut. 21,40 € → 21,90 € (+0,50 €, +2,34 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/919492-ff77b92bc0fc.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

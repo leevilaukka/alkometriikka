@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Oberto Barbera d'Alba 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/942015/",
+	"feed_url": "https://alkometriikka.fi/rss/942015.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Oberto Barbera d'Alba 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-942015-2026-07-18-24.99",
+			"url": "https://alkometriikka.fi/tuotteet/942015/",
+			"title": "Oberto Barbera d'Alba 2022 — 26,70 € → 24,99 €",
+			"content_html": "<p>Tuotteen Oberto Barbera d'Alba 2022 hinta on muuttunut.</p><p>26,70 € → 24,99 € (−1,71 €, −6,40 %).</p>",
+			"summary": "Tuotteen Oberto Barbera d'Alba 2022 hinta on muuttunut. 26,70 € → 24,99 € (−1,71 €, −6,40 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/942015-d245a803a631.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

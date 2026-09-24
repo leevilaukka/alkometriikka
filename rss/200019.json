@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Godet Terre XO – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/200019/",
+	"feed_url": "https://alkometriikka.fi/rss/200019.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Godet Terre XO.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-200019-2026-07-18-104.99",
+			"url": "https://alkometriikka.fi/tuotteet/200019/",
+			"title": "Godet Terre XO — 104,63 € → 104,99 €",
+			"content_html": "<p>Tuotteen Godet Terre XO hinta on muuttunut.</p><p>104,63 € → 104,99 € (+0,36 €, +0,34 %).</p>",
+			"summary": "Tuotteen Godet Terre XO hinta on muuttunut. 104,63 € → 104,99 € (+0,36 €, +0,34 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/200019-43d8ec58d607.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

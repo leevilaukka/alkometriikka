@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Etna Rosso Vulkà 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/946711/",
+	"feed_url": "https://alkometriikka.fi/rss/946711.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Etna Rosso Vulkà 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-946711-2026-07-18-25.99",
+			"url": "https://alkometriikka.fi/tuotteet/946711/",
+			"title": "Etna Rosso Vulkà 2023 — 26,71 € → 25,99 €",
+			"content_html": "<p>Tuotteen Etna Rosso Vulkà 2023 hinta on muuttunut.</p><p>26,71 € → 25,99 € (−0,72 €, −2,70 %).</p>",
+			"summary": "Tuotteen Etna Rosso Vulkà 2023 hinta on muuttunut. 26,71 € → 25,99 € (−0,72 €, −2,70 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/946711-cc94bf72037d.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

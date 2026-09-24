@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nemiroff De Luxe Rested in Barrel Vodka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/953145/",
+	"feed_url": "https://alkometriikka.fi/rss/953145.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nemiroff De Luxe Rested in Barrel Vodka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-953145-2026-07-18-29.2",
+			"url": "https://alkometriikka.fi/tuotteet/953145/",
+			"title": "Nemiroff De Luxe Rested in Barrel Vodka — 29,18 € → 29,20 €",
+			"content_html": "<p>Tuotteen Nemiroff De Luxe Rested in Barrel Vodka hinta on muuttunut.</p><p>29,18 € → 29,20 € (+0,02 €, +0,07 %).</p>",
+			"summary": "Tuotteen Nemiroff De Luxe Rested in Barrel Vodka hinta on muuttunut. 29,18 € → 29,20 € (+0,02 €, +0,07 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/953145-f8b016c42854.png",
+			"tags": [
+				"Väkevät",
+				"maustetut vodkat"
+			]
+		}
+	]
+}

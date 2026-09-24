@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Wine & Soul Pintas Character 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900934/",
+	"feed_url": "https://alkometriikka.fi/rss/900934.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Wine & Soul Pintas Character 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900934-2026-07-18-40.89",
+			"url": "https://alkometriikka.fi/tuotteet/900934/",
+			"title": "Wine & Soul Pintas Character 2023 — 41,23 € → 40,89 €",
+			"content_html": "<p>Tuotteen Wine & Soul Pintas Character 2023 hinta on muuttunut.</p><p>41,23 € → 40,89 € (−0,34 €, −0,82 %).</p>",
+			"summary": "Tuotteen Wine & Soul Pintas Character 2023 hinta on muuttunut. 41,23 € → 40,89 € (−0,34 €, −0,82 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900934-186ed5f66beb.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

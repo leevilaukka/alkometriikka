@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Little Yering Pinot Noir 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/466267/",
+	"feed_url": "https://alkometriikka.fi/rss/466267.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Little Yering Pinot Noir 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-466267-2026-02-02-14.88",
+			"url": "https://alkometriikka.fi/tuotteet/466267/",
+			"title": "Little Yering Pinot Noir 2020 — 14,98 € → 14,88 €",
+			"content_html": "<p>Tuotteen Little Yering Pinot Noir 2020 hinta on muuttunut.</p><p>14,98 € → 14,88 € (−0,10 €, −0,67 %).</p>",
+			"summary": "Tuotteen Little Yering Pinot Noir 2020 hinta on muuttunut. 14,98 € → 14,88 € (−0,10 €, −0,67 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/466267-2e9b0980b168.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-466267-2026-02-02-14.98",
+			"url": "https://alkometriikka.fi/tuotteet/466267/",
+			"title": "Little Yering Pinot Noir 2020 — 14,88 € → 14,98 €",
+			"content_html": "<p>Tuotteen Little Yering Pinot Noir 2020 hinta on muuttunut.</p><p>14,88 € → 14,98 € (+0,10 €, +0,67 %).</p>",
+			"summary": "Tuotteen Little Yering Pinot Noir 2020 hinta on muuttunut. 14,88 € → 14,98 € (+0,10 €, +0,67 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/466267-2e9b0980b168.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

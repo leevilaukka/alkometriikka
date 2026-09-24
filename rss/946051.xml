@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Ballantine&apos;s Finest – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/946051/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Ballantine&apos;s Finest.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/946051.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Ballantine&apos;s Finest – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Ballantine&apos;s Finest — 3,68 € → 3,79 €</title>
+			<link>https://alkometriikka.fi/tuotteet/946051/</link>
+			<guid isPermaLink="false">alkometriikka-946051-2026-07-18-3.79</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / viskit</category>
+			<description><![CDATA[<p>Tuotteen Ballantine's Finest hinta on muuttunut.</p><p>3,68 € → 3,79 € (+0,11 €, +2,99 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/946051-a9dcfb1010d6.png" />
+		</item>
+	</channel>
+</rss>

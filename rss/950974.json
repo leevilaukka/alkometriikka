@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glendalough Wild Botanical Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/950974/",
+	"feed_url": "https://alkometriikka.fi/rss/950974.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glendalough Wild Botanical Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-950974-2026-07-18-49.99",
+			"url": "https://alkometriikka.fi/tuotteet/950974/",
+			"title": "Glendalough Wild Botanical Gin — 50,26 € → 49,99 €",
+			"content_html": "<p>Tuotteen Glendalough Wild Botanical Gin hinta on muuttunut.</p><p>50,26 € → 49,99 € (−0,27 €, −0,54 %).</p>",
+			"summary": "Tuotteen Glendalough Wild Botanical Gin hinta on muuttunut. 50,26 € → 49,99 € (−0,27 €, −0,54 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/950974-d3fed102112e.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

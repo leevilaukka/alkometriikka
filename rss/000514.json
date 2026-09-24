@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bombay Sapphire London Dry Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/000514/",
+	"feed_url": "https://alkometriikka.fi/rss/000514.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bombay Sapphire London Dry Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-000514-2026-07-18-38.99",
+			"url": "https://alkometriikka.fi/tuotteet/000514/",
+			"title": "Bombay Sapphire London Dry Gin — 38,77 € → 38,99 €",
+			"content_html": "<p>Tuotteen Bombay Sapphire London Dry Gin hinta on muuttunut.</p><p>38,77 € → 38,99 € (+0,22 €, +0,57 %).</p>",
+			"summary": "Tuotteen Bombay Sapphire London Dry Gin hinta on muuttunut. 38,77 € → 38,99 € (+0,22 €, +0,57 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/000514-8b6dd833abfa.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

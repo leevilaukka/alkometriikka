@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ardbeg An Oa Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/927547/",
+	"feed_url": "https://alkometriikka.fi/rss/927547.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ardbeg An Oa Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-927547-2026-07-18-88.98",
+			"url": "https://alkometriikka.fi/tuotteet/927547/",
+			"title": "Ardbeg An Oa Single Malt — 87,21 € → 88,98 €",
+			"content_html": "<p>Tuotteen Ardbeg An Oa Single Malt hinta on muuttunut.</p><p>87,21 € → 88,98 € (+1,77 €, +2,03 %).</p>",
+			"summary": "Tuotteen Ardbeg An Oa Single Malt hinta on muuttunut. 87,21 € → 88,98 € (+1,77 €, +2,03 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/927547-7a61ea8d3997.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

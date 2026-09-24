@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Klokk & Co Gringo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/909716/",
+	"feed_url": "https://alkometriikka.fi/rss/909716.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Klokk & Co Gringo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-909716-2026-09-04-3.05",
+			"url": "https://alkometriikka.fi/tuotteet/909716/",
+			"title": "Klokk & Co Gringo — 3,39 € → 3,05 €",
+			"content_html": "<p>Tuotteen Klokk & Co Gringo hinta on muuttunut.</p><p>3,39 € → 3,05 € (−0,34 €, −10,03 %).</p>",
+			"summary": "Tuotteen Klokk & Co Gringo hinta on muuttunut. 3,39 € → 3,05 € (−0,34 €, −10,03 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/909716-f1176fd86000.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-909716-2026-07-18-3.39",
+			"url": "https://alkometriikka.fi/tuotteet/909716/",
+			"title": "Klokk & Co Gringo — 2,94 € → 3,39 €",
+			"content_html": "<p>Tuotteen Klokk & Co Gringo hinta on muuttunut.</p><p>2,94 € → 3,39 € (+0,45 €, +15,31 %).</p>",
+			"summary": "Tuotteen Klokk & Co Gringo hinta on muuttunut. 2,94 € → 3,39 € (+0,45 €, +15,31 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/909716-f1176fd86000.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

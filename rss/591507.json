@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Drappier Clarevallis Champagne Extra Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/591507/",
+	"feed_url": "https://alkometriikka.fi/rss/591507.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Drappier Clarevallis Champagne Extra Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-591507-2026-07-18-58.98",
+			"url": "https://alkometriikka.fi/tuotteet/591507/",
+			"title": "Drappier Clarevallis Champagne Extra Brut — 58,45 € → 58,98 €",
+			"content_html": "<p>Tuotteen Drappier Clarevallis Champagne Extra Brut hinta on muuttunut.</p><p>58,45 € → 58,98 € (+0,53 €, +0,91 %).</p>",
+			"summary": "Tuotteen Drappier Clarevallis Champagne Extra Brut hinta on muuttunut. 58,45 € → 58,98 € (+0,53 €, +0,91 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/591507-89876355f78b.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

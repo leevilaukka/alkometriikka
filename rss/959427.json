@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Louis Jadot Bouzeron 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/959427/",
+	"feed_url": "https://alkometriikka.fi/rss/959427.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Louis Jadot Bouzeron 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-959427-2026-07-18-31.98",
+			"url": "https://alkometriikka.fi/tuotteet/959427/",
+			"title": "Louis Jadot Bouzeron 2022 — 31,46 € → 31,98 €",
+			"content_html": "<p>Tuotteen Louis Jadot Bouzeron 2022 hinta on muuttunut.</p><p>31,46 € → 31,98 € (+0,52 €, +1,65 %).</p>",
+			"summary": "Tuotteen Louis Jadot Bouzeron 2022 hinta on muuttunut. 31,46 € → 31,98 € (+0,52 €, +1,65 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/959427-fa3dd7b3b591.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nanit Orange Wine Organic 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/906576/",
+	"feed_url": "https://alkometriikka.fi/rss/906576.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nanit Orange Wine Organic 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-906576-2026-07-18-14.99",
+			"url": "https://alkometriikka.fi/tuotteet/906576/",
+			"title": "Nanit Orange Wine Organic 2024 — 14,95 € → 14,99 €",
+			"content_html": "<p>Tuotteen Nanit Orange Wine Organic 2024 hinta on muuttunut.</p><p>14,95 € → 14,99 € (+0,04 €, +0,27 %).</p>",
+			"summary": "Tuotteen Nanit Orange Wine Organic 2024 hinta on muuttunut. 14,95 € → 14,99 € (+0,04 €, +0,27 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/906576-1b9c999bf6f0.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

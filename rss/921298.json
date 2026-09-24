@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Montbra Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/921298/",
+	"feed_url": "https://alkometriikka.fi/rss/921298.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Montbra Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-921298-2026-07-18-37.98",
+			"url": "https://alkometriikka.fi/tuotteet/921298/",
+			"title": "Montbra Champagne Brut — 36,98 € → 37,98 €",
+			"content_html": "<p>Tuotteen Montbra Champagne Brut hinta on muuttunut.</p><p>36,98 € → 37,98 € (+1,00 €, +2,70 %).</p>",
+			"summary": "Tuotteen Montbra Champagne Brut hinta on muuttunut. 36,98 € → 37,98 € (+1,00 €, +2,70 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/921298-20bb9ade6080.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

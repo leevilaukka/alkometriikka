@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Enzo Bartoli Dolcetto 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/949535/",
+	"feed_url": "https://alkometriikka.fi/rss/949535.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Enzo Bartoli Dolcetto 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-949535-2026-07-18-15.39",
+			"url": "https://alkometriikka.fi/tuotteet/949535/",
+			"title": "Enzo Bartoli Dolcetto 2022 — 15,43 € → 15,39 €",
+			"content_html": "<p>Tuotteen Enzo Bartoli Dolcetto 2022 hinta on muuttunut.</p><p>15,43 € → 15,39 € (−0,04 €, −0,26 %).</p>",
+			"summary": "Tuotteen Enzo Bartoli Dolcetto 2022 hinta on muuttunut. 15,43 € → 15,39 € (−0,04 €, −0,26 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/949535-ac5f86d5d7a8.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Talisker Storm Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/175817/",
+	"feed_url": "https://alkometriikka.fi/rss/175817.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Talisker Storm Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-175817-2026-07-18-59.99",
+			"url": "https://alkometriikka.fi/tuotteet/175817/",
+			"title": "Talisker Storm Single Malt — 59,30 € → 59,99 €",
+			"content_html": "<p>Tuotteen Talisker Storm Single Malt hinta on muuttunut.</p><p>59,30 € → 59,99 € (+0,69 €, +1,16 %).</p>",
+			"summary": "Tuotteen Talisker Storm Single Malt hinta on muuttunut. 59,30 € → 59,99 € (+0,69 €, +1,16 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/175817-569a93b96dbe.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

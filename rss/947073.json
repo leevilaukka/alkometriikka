@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Patrizi Dogliani 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/947073/",
+	"feed_url": "https://alkometriikka.fi/rss/947073.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Patrizi Dogliani 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-947073-2026-07-18-11.9",
+			"url": "https://alkometriikka.fi/tuotteet/947073/",
+			"title": "Patrizi Dogliani 2018 — 13,95 € → 11,90 €",
+			"content_html": "<p>Tuotteen Patrizi Dogliani 2018 hinta on muuttunut.</p><p>13,95 € → 11,90 € (−2,05 €, −14,70 %).</p>",
+			"summary": "Tuotteen Patrizi Dogliani 2018 hinta on muuttunut. 13,95 € → 11,90 € (−2,05 €, −14,70 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/947073-ba2f681fc2c5.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

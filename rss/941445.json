@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Helsinki Koli Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/941445/",
+	"feed_url": "https://alkometriikka.fi/rss/941445.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Helsinki Koli Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-941445-2026-07-18-44.99",
+			"url": "https://alkometriikka.fi/tuotteet/941445/",
+			"title": "Helsinki Koli Gin — 43,50 € → 44,99 €",
+			"content_html": "<p>Tuotteen Helsinki Koli Gin hinta on muuttunut.</p><p>43,50 € → 44,99 € (+1,49 €, +3,43 %).</p>",
+			"summary": "Tuotteen Helsinki Koli Gin hinta on muuttunut. 43,50 € → 44,99 € (+1,49 €, +3,43 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/941445-76d187f1a7ad.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

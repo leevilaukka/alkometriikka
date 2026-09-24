@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gosset Grande Réserve Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/008429/",
+	"feed_url": "https://alkometriikka.fi/rss/008429.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gosset Grande Réserve Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-008429-2026-07-18-67.98",
+			"url": "https://alkometriikka.fi/tuotteet/008429/",
+			"title": "Gosset Grande Réserve Champagne Brut — 65,99 € → 67,98 €",
+			"content_html": "<p>Tuotteen Gosset Grande Réserve Champagne Brut hinta on muuttunut.</p><p>65,99 € → 67,98 € (+1,99 €, +3,02 %).</p>",
+			"summary": "Tuotteen Gosset Grande Réserve Champagne Brut hinta on muuttunut. 65,99 € → 67,98 € (+1,99 €, +3,02 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/008429-c0145828247c.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

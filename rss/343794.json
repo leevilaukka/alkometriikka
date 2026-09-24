@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Blandy's Santa Luzia Madeira – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/343794/",
+	"feed_url": "https://alkometriikka.fi/rss/343794.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Blandy's Santa Luzia Madeira.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-343794-2026-07-18-13.3",
+			"url": "https://alkometriikka.fi/tuotteet/343794/",
+			"title": "Blandy's Santa Luzia Madeira — 13,05 € → 13,30 €",
+			"content_html": "<p>Tuotteen Blandy's Santa Luzia Madeira hinta on muuttunut.</p><p>13,05 € → 13,30 € (+0,25 €, +1,92 %).</p>",
+			"summary": "Tuotteen Blandy's Santa Luzia Madeira hinta on muuttunut. 13,05 € → 13,30 € (+0,25 €, +1,92 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/343794-b201c1328acb.png",
+			"tags": [
+				"Välituotteet",
+				"madeirat"
+			]
+		}
+	]
+}

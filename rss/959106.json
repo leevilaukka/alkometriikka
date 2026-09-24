@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Krombacher Weizen – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/959106/",
+	"feed_url": "https://alkometriikka.fi/rss/959106.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Krombacher Weizen.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-959106-2026-07-18-3.99",
+			"url": "https://alkometriikka.fi/tuotteet/959106/",
+			"title": "Krombacher Weizen — 3,79 € → 3,99 €",
+			"content_html": "<p>Tuotteen Krombacher Weizen hinta on muuttunut.</p><p>3,79 € → 3,99 € (+0,20 €, +5,28 %).</p>",
+			"summary": "Tuotteen Krombacher Weizen hinta on muuttunut. 3,79 € → 3,99 € (+0,20 €, +5,28 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/959106-16aa9d4e9602.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

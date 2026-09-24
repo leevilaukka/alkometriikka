@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Santa Clara Blanc de Blancs – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/531047/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Santa Clara Blanc de Blancs.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/531047.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Santa Clara Blanc de Blancs – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Santa Clara Blanc de Blancs — 15,96 € → 15,86 €</title>
+			<link>https://alkometriikka.fi/tuotteet/531047/</link>
+			<guid isPermaLink="false">alkometriikka-531047-2026-02-02-15.86</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / valkoviinit</category>
+			<description><![CDATA[<p>Tuotteen Santa Clara Blanc de Blancs hinta on muuttunut.</p><p>15,96 € → 15,86 € (−0,10 €, −0,63 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/531047-919eb89a7229.png" />
+		</item>
+		<item>
+			<title>Santa Clara Blanc de Blancs — 15,86 € → 15,96 €</title>
+			<link>https://alkometriikka.fi/tuotteet/531047/</link>
+			<guid isPermaLink="false">alkometriikka-531047-2026-02-02-15.96</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / valkoviinit</category>
+			<description><![CDATA[<p>Tuotteen Santa Clara Blanc de Blancs hinta on muuttunut.</p><p>15,86 € → 15,96 € (+0,10 €, +0,63 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/531047-919eb89a7229.png" />
+		</item>
+	</channel>
+</rss>

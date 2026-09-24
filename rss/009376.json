@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Fuller's ESB Extra Special Bitter – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/009376/",
+	"feed_url": "https://alkometriikka.fi/rss/009376.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Fuller's ESB Extra Special Bitter.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-009376-2026-07-18-4.59",
+			"url": "https://alkometriikka.fi/tuotteet/009376/",
+			"title": "Fuller's ESB Extra Special Bitter — 4,49 € → 4,59 €",
+			"content_html": "<p>Tuotteen Fuller's ESB Extra Special Bitter hinta on muuttunut.</p><p>4,49 € → 4,59 € (+0,10 €, +2,23 %).</p>",
+			"summary": "Tuotteen Fuller's ESB Extra Special Bitter hinta on muuttunut. 4,49 € → 4,59 € (+0,10 €, +2,23 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/009376-045b50410126.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

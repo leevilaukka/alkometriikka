@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Martell VS – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/000951/",
+	"feed_url": "https://alkometriikka.fi/rss/000951.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Martell VS.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-000951-2026-07-18-46.79",
+			"url": "https://alkometriikka.fi/tuotteet/000951/",
+			"title": "Martell VS — 46,77 € → 46,79 €",
+			"content_html": "<p>Tuotteen Martell VS hinta on muuttunut.</p><p>46,77 € → 46,79 € (+0,02 €, +0,04 %).</p>",
+			"summary": "Tuotteen Martell VS hinta on muuttunut. 46,77 € → 46,79 € (+0,02 €, +0,04 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/000951-430993d39c6f.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

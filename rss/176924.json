@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Demons Share 6 Years Old – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/176924/",
+	"feed_url": "https://alkometriikka.fi/rss/176924.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Demons Share 6 Years Old.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-176924-2026-07-18-25.98",
+			"url": "https://alkometriikka.fi/tuotteet/176924/",
+			"title": "The Demons Share 6 Years Old — 26,12 € → 25,98 €",
+			"content_html": "<p>Tuotteen The Demons Share 6 Years Old hinta on muuttunut.</p><p>26,12 € → 25,98 € (−0,14 €, −0,54 %).</p>",
+			"summary": "Tuotteen The Demons Share 6 Years Old hinta on muuttunut. 26,12 € → 25,98 € (−0,14 €, −0,54 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/176924-9208fd75a374.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

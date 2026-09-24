@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Leffe Blonde 0.0% tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/600078/",
+	"feed_url": "https://alkometriikka.fi/rss/600078.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Leffe Blonde 0.0% tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-600078-2026-09-04-1.79",
+			"url": "https://alkometriikka.fi/tuotteet/600078/",
+			"title": "Leffe Blonde 0.0% tölkki — 1,99 € → 1,79 €",
+			"content_html": "<p>Tuotteen Leffe Blonde 0.0% tölkki hinta on muuttunut.</p><p>1,99 € → 1,79 € (−0,20 €, −10,05 %).</p>",
+			"summary": "Tuotteen Leffe Blonde 0.0% tölkki hinta on muuttunut. 1,99 € → 1,79 € (−0,20 €, −10,05 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600078-7356c57a0bc2.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

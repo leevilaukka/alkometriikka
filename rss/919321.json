@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kyrö Peat Smoke – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/919321/",
+	"feed_url": "https://alkometriikka.fi/rss/919321.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kyrö Peat Smoke.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-919321-2026-07-18-60.01",
+			"url": "https://alkometriikka.fi/tuotteet/919321/",
+			"title": "Kyrö Peat Smoke — 60,03 € → 60,01 €",
+			"content_html": "<p>Tuotteen Kyrö Peat Smoke hinta on muuttunut.</p><p>60,03 € → 60,01 € (−0,02 €, −0,03 %).</p>",
+			"summary": "Tuotteen Kyrö Peat Smoke hinta on muuttunut. 60,03 € → 60,01 € (−0,02 €, −0,03 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/919321-ecfecd701f74.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cortese Chinotto – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/959641/",
+	"feed_url": "https://alkometriikka.fi/rss/959641.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cortese Chinotto.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-959641-2026-07-18-3.99",
+			"url": "https://alkometriikka.fi/tuotteet/959641/",
+			"title": "Cortese Chinotto — 4,17 € → 3,99 €",
+			"content_html": "<p>Tuotteen Cortese Chinotto hinta on muuttunut.</p><p>4,17 € → 3,99 € (−0,18 €, −4,32 %).</p>",
+			"summary": "Tuotteen Cortese Chinotto hinta on muuttunut. 4,17 € → 3,99 € (−0,18 €, −4,32 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/959641-e8f710e66acd.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

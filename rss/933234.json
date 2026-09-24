@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – La Rioja Alta Viña Alberdi Reserva 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/933234/",
+	"feed_url": "https://alkometriikka.fi/rss/933234.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: La Rioja Alta Viña Alberdi Reserva 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-933234-2026-07-18-26.98",
+			"url": "https://alkometriikka.fi/tuotteet/933234/",
+			"title": "La Rioja Alta Viña Alberdi Reserva 2020 — 26,45 € → 26,98 €",
+			"content_html": "<p>Tuotteen La Rioja Alta Viña Alberdi Reserva 2020 hinta on muuttunut.</p><p>26,45 € → 26,98 € (+0,53 €, +2,00 %).</p>",
+			"summary": "Tuotteen La Rioja Alta Viña Alberdi Reserva 2020 hinta on muuttunut. 26,45 € → 26,98 € (+0,53 €, +2,00 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/933234-160fe0b33705.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

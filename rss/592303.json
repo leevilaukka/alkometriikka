@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Charles Mignon Premium Réserve Rosé Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/592303/",
+	"feed_url": "https://alkometriikka.fi/rss/592303.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Charles Mignon Premium Réserve Rosé Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-592303-2026-07-18-16.49",
+			"url": "https://alkometriikka.fi/tuotteet/592303/",
+			"title": "Charles Mignon Premium Réserve Rosé Champagne Brut — 16,11 € → 16,49 €",
+			"content_html": "<p>Tuotteen Charles Mignon Premium Réserve Rosé Champagne Brut hinta on muuttunut.</p><p>16,11 € → 16,49 € (+0,38 €, +2,36 %).</p>",
+			"summary": "Tuotteen Charles Mignon Premium Réserve Rosé Champagne Brut hinta on muuttunut. 16,11 € → 16,49 € (+0,38 €, +2,36 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/592303-b43ddbe1b3e3.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

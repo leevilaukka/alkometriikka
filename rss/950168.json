@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Five Farms Cream Liqueur – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/950168/",
+	"feed_url": "https://alkometriikka.fi/rss/950168.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Five Farms Cream Liqueur.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-950168-2026-07-18-38.49",
+			"url": "https://alkometriikka.fi/tuotteet/950168/",
+			"title": "Five Farms Cream Liqueur — 38,10 € → 38,49 €",
+			"content_html": "<p>Tuotteen Five Farms Cream Liqueur hinta on muuttunut.</p><p>38,10 € → 38,49 € (+0,39 €, +1,02 %).</p>",
+			"summary": "Tuotteen Five Farms Cream Liqueur hinta on muuttunut. 38,10 € → 38,49 € (+0,39 €, +1,02 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/950168-0e396a09cb51.png",
+			"tags": [
+				"Väkevät",
+				"kermaliköörit"
+			]
+		}
+	]
+}

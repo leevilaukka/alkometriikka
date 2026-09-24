@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Johnnie Walker Red Label – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/001437/",
+	"feed_url": "https://alkometriikka.fi/rss/001437.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Johnnie Walker Red Label.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-001437-2026-07-18-33.5",
+			"url": "https://alkometriikka.fi/tuotteet/001437/",
+			"title": "Johnnie Walker Red Label — 32,99 € → 33,50 €",
+			"content_html": "<p>Tuotteen Johnnie Walker Red Label hinta on muuttunut.</p><p>32,99 € → 33,50 € (+0,51 €, +1,55 %).</p>",
+			"summary": "Tuotteen Johnnie Walker Red Label hinta on muuttunut. 32,99 € → 33,50 € (+0,51 €, +1,55 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/001437-0e589281ac04.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

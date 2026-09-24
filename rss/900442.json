@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Wynns V&A Lane Shiraz 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900442/",
+	"feed_url": "https://alkometriikka.fi/rss/900442.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Wynns V&A Lane Shiraz 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900442-2026-07-18-52.95",
+			"url": "https://alkometriikka.fi/tuotteet/900442/",
+			"title": "Wynns V&A Lane Shiraz 2021 — 59,44 € → 52,95 €",
+			"content_html": "<p>Tuotteen Wynns V&A Lane Shiraz 2021 hinta on muuttunut.</p><p>59,44 € → 52,95 € (−6,49 €, −10,92 %).</p>",
+			"summary": "Tuotteen Wynns V&A Lane Shiraz 2021 hinta on muuttunut. 59,44 € → 52,95 € (−6,49 €, −10,92 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900442-b204ece5c65c.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

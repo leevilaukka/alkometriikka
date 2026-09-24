@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jaume Serra Organic Cava Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/916437/",
+	"feed_url": "https://alkometriikka.fi/rss/916437.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jaume Serra Organic Cava Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-916437-2026-07-18-13.48",
+			"url": "https://alkometriikka.fi/tuotteet/916437/",
+			"title": "Jaume Serra Organic Cava Brut — 13,46 € → 13,48 €",
+			"content_html": "<p>Tuotteen Jaume Serra Organic Cava Brut hinta on muuttunut.</p><p>13,46 € → 13,48 € (+0,02 €, +0,15 %).</p>",
+			"summary": "Tuotteen Jaume Serra Organic Cava Brut hinta on muuttunut. 13,46 € → 13,48 € (+0,02 €, +0,15 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/916437-37c332f9f449.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Xavier 100 % Rouge 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/904887/",
+	"feed_url": "https://alkometriikka.fi/rss/904887.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Xavier 100 % Rouge 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-904887-2026-07-18-24.54",
+			"url": "https://alkometriikka.fi/tuotteet/904887/",
+			"title": "Xavier 100 % Rouge 2020 — 26,95 € → 24,54 €",
+			"content_html": "<p>Tuotteen Xavier 100 % Rouge 2020 hinta on muuttunut.</p><p>26,95 € → 24,54 € (−2,41 €, −8,94 %).</p>",
+			"summary": "Tuotteen Xavier 100 % Rouge 2020 hinta on muuttunut. 26,95 € → 24,54 € (−2,41 €, −8,94 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/904887-7b0e267f1871.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

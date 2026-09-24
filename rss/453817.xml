@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Vina Tondonia Reserva Red 2013 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/453817/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Vina Tondonia Reserva Red 2013.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/453817.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Vina Tondonia Reserva Red 2013 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Vina Tondonia Reserva Red 2013 — 48,44 € → 49,96 €</title>
+			<link>https://alkometriikka.fi/tuotteet/453817/</link>
+			<guid isPermaLink="false">alkometriikka-453817-2026-07-18-49.96</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Vina Tondonia Reserva Red 2013 hinta on muuttunut.</p><p>48,44 € → 49,96 € (+1,52 €, +3,14 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/453817-00db9fe85060.png" />
+		</item>
+	</channel>
+</rss>

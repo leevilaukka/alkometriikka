@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Poliziano Vino Nobile di Montepulciano 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/442007/",
+	"feed_url": "https://alkometriikka.fi/rss/442007.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Poliziano Vino Nobile di Montepulciano 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-442007-2026-07-18-34.99",
+			"url": "https://alkometriikka.fi/tuotteet/442007/",
+			"title": "Poliziano Vino Nobile di Montepulciano 2021 — 34,45 € → 34,99 €",
+			"content_html": "<p>Tuotteen Poliziano Vino Nobile di Montepulciano 2021 hinta on muuttunut.</p><p>34,45 € → 34,99 € (+0,54 €, +1,57 %).</p>",
+			"summary": "Tuotteen Poliziano Vino Nobile di Montepulciano 2021 hinta on muuttunut. 34,45 € → 34,99 € (+0,54 €, +1,57 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/442007-9d8ac163cd2c.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

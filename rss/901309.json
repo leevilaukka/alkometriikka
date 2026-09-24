@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Noita Poppet Sparkling White tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901309/",
+	"feed_url": "https://alkometriikka.fi/rss/901309.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Noita Poppet Sparkling White tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901309-2026-07-18-6.5",
+			"url": "https://alkometriikka.fi/tuotteet/901309/",
+			"title": "Noita Poppet Sparkling White tölkki — 6,40 € → 6,50 €",
+			"content_html": "<p>Tuotteen Noita Poppet Sparkling White tölkki hinta on muuttunut.</p><p>6,40 € → 6,50 € (+0,10 €, +1,56 %).</p>",
+			"summary": "Tuotteen Noita Poppet Sparkling White tölkki hinta on muuttunut. 6,40 € → 6,50 € (+0,10 €, +1,56 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901309-3ff8ba321098.png",
+			"tags": [
+				"Viinit",
+				"hedelmä- ja aromatisoidut viinit"
+			]
+		}
+	]
+}

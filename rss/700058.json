@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Crisp Hoppy Lager tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/700058/",
+	"feed_url": "https://alkometriikka.fi/rss/700058.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Crisp Hoppy Lager tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-700058-2026-09-04-1.16",
+			"url": "https://alkometriikka.fi/tuotteet/700058/",
+			"title": "Crisp Hoppy Lager tölkki — 1,29 € → 1,16 €",
+			"content_html": "<p>Tuotteen Crisp Hoppy Lager tölkki hinta on muuttunut.</p><p>1,29 € → 1,16 € (−0,13 €, −10,08 %).</p>",
+			"summary": "Tuotteen Crisp Hoppy Lager tölkki hinta on muuttunut. 1,29 € → 1,16 € (−0,13 €, −10,08 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/700058-fd3b061e4d5a.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-700058-2026-07-18-1.29",
+			"url": "https://alkometriikka.fi/tuotteet/700058/",
+			"title": "Crisp Hoppy Lager tölkki — 1,45 € → 1,29 €",
+			"content_html": "<p>Tuotteen Crisp Hoppy Lager tölkki hinta on muuttunut.</p><p>1,45 € → 1,29 € (−0,16 €, −11,03 %).</p>",
+			"summary": "Tuotteen Crisp Hoppy Lager tölkki hinta on muuttunut. 1,45 € → 1,29 € (−0,16 €, −11,03 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/700058-fd3b061e4d5a.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

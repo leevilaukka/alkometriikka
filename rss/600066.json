@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Rothaus Tannenzäpfle Alkoholfrei – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/600066/",
+	"feed_url": "https://alkometriikka.fi/rss/600066.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Rothaus Tannenzäpfle Alkoholfrei.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-600066-2026-09-04-2.96",
+			"url": "https://alkometriikka.fi/tuotteet/600066/",
+			"title": "Rothaus Tannenzäpfle Alkoholfrei — 3,29 € → 2,96 €",
+			"content_html": "<p>Tuotteen Rothaus Tannenzäpfle Alkoholfrei hinta on muuttunut.</p><p>3,29 € → 2,96 € (−0,33 €, −10,03 %).</p>",
+			"summary": "Tuotteen Rothaus Tannenzäpfle Alkoholfrei hinta on muuttunut. 3,29 € → 2,96 € (−0,33 €, −10,03 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600066-423715749e15.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-600066-2026-07-18-3.29",
+			"url": "https://alkometriikka.fi/tuotteet/600066/",
+			"title": "Rothaus Tannenzäpfle Alkoholfrei — 3,19 € → 3,29 €",
+			"content_html": "<p>Tuotteen Rothaus Tannenzäpfle Alkoholfrei hinta on muuttunut.</p><p>3,19 € → 3,29 € (+0,10 €, +3,13 %).</p>",
+			"summary": "Tuotteen Rothaus Tannenzäpfle Alkoholfrei hinta on muuttunut. 3,19 € → 3,29 € (+0,10 €, +3,13 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600066-423715749e15.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

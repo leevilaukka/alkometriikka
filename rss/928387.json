@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Yellow Tail Cabernet Sauvignon 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/928387/",
+	"feed_url": "https://alkometriikka.fi/rss/928387.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Yellow Tail Cabernet Sauvignon 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-928387-2026-07-18-12.3",
+			"url": "https://alkometriikka.fi/tuotteet/928387/",
+			"title": "Yellow Tail Cabernet Sauvignon 2023 — 12,14 € → 12,30 €",
+			"content_html": "<p>Tuotteen Yellow Tail Cabernet Sauvignon 2023 hinta on muuttunut.</p><p>12,14 € → 12,30 € (+0,16 €, +1,32 %).</p>",
+			"summary": "Tuotteen Yellow Tail Cabernet Sauvignon 2023 hinta on muuttunut. 12,14 € → 12,30 € (+0,16 €, +1,32 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/928387-d7b556eff0e2.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

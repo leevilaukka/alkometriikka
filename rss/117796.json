@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Helsinki Puolukka-Gin Likööri – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/117796/",
+	"feed_url": "https://alkometriikka.fi/rss/117796.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Helsinki Puolukka-Gin Likööri.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-117796-2026-07-18-36.99",
+			"url": "https://alkometriikka.fi/tuotteet/117796/",
+			"title": "Helsinki Puolukka-Gin Likööri — 35,99 € → 36,99 €",
+			"content_html": "<p>Tuotteen Helsinki Puolukka-Gin Likööri hinta on muuttunut.</p><p>35,99 € → 36,99 € (+1,00 €, +2,78 %).</p>",
+			"summary": "Tuotteen Helsinki Puolukka-Gin Likööri hinta on muuttunut. 35,99 € → 36,99 € (+1,00 €, +2,78 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/117796-24fc5f06bd01.png",
+			"tags": [
+				"Väkevät",
+				"marjaliköörit"
+			]
+		}
+	]
+}

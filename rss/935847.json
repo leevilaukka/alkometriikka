@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kaiken Ultra Malbec 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/935847/",
+	"feed_url": "https://alkometriikka.fi/rss/935847.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kaiken Ultra Malbec 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-935847-2026-07-18-21.98",
+			"url": "https://alkometriikka.fi/tuotteet/935847/",
+			"title": "Kaiken Ultra Malbec 2022 — 21,40 € → 21,98 €",
+			"content_html": "<p>Tuotteen Kaiken Ultra Malbec 2022 hinta on muuttunut.</p><p>21,40 € → 21,98 € (+0,58 €, +2,71 %).</p>",
+			"summary": "Tuotteen Kaiken Ultra Malbec 2022 hinta on muuttunut. 21,40 € → 21,98 € (+0,58 €, +2,71 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/935847-7f54a2cb837c.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

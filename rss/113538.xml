@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Glen Scanlan – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/113538/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Glen Scanlan.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/113538.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Glen Scanlan – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Glen Scanlan — 38,35 € → 38,50 €</title>
+			<link>https://alkometriikka.fi/tuotteet/113538/</link>
+			<guid isPermaLink="false">alkometriikka-113538-2026-07-18-38.5</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / viskit</category>
+			<description><![CDATA[<p>Tuotteen Glen Scanlan hinta on muuttunut.</p><p>38,35 € → 38,50 € (+0,15 €, +0,39 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/113538-7e81cc9458d8.png" />
+		</item>
+	</channel>
+</rss>

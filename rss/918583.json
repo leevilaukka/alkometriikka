@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ruffino Modus 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/918583/",
+	"feed_url": "https://alkometriikka.fi/rss/918583.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ruffino Modus 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-918583-2026-07-18-49.49",
+			"url": "https://alkometriikka.fi/tuotteet/918583/",
+			"title": "Ruffino Modus 2022 — 49,45 € → 49,49 €",
+			"content_html": "<p>Tuotteen Ruffino Modus 2022 hinta on muuttunut.</p><p>49,45 € → 49,49 € (+0,04 €, +0,08 %).</p>",
+			"summary": "Tuotteen Ruffino Modus 2022 hinta on muuttunut. 49,45 € → 49,49 € (+0,04 €, +0,08 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/918583-be607f774f12.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

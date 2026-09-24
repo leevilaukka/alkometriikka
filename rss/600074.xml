@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Birra Corelli 0,0 tölkki – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/600074/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Birra Corelli 0,0 tölkki.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/600074.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Birra Corelli 0,0 tölkki – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Birra Corelli 0,0 tölkki — 0,99 € → 0,89 €</title>
+			<link>https://alkometriikka.fi/tuotteet/600074/</link>
+			<guid isPermaLink="false">alkometriikka-600074-2026-09-04-0.89</guid>
+			<pubDate>Fri, 04 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Alkoholittomat / alkoholittomat oluet</category>
+			<description><![CDATA[<p>Tuotteen Birra Corelli 0,0 tölkki hinta on muuttunut.</p><p>0,99 € → 0,89 € (−0,10 €, −10,10 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/600074-7f9978741239.png" />
+		</item>
+	</channel>
+</rss>

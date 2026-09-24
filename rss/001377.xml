@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – The Famous Grouse – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/001377/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: The Famous Grouse.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/001377.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – The Famous Grouse – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>The Famous Grouse — 33,50 € → 33,95 €</title>
+			<link>https://alkometriikka.fi/tuotteet/001377/</link>
+			<guid isPermaLink="false">alkometriikka-001377-2026-07-18-33.95</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / viskit</category>
+			<description><![CDATA[<p>Tuotteen The Famous Grouse hinta on muuttunut.</p><p>33,50 € → 33,95 € (+0,45 €, +1,34 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/001377-8a2e9110a179.png" />
+		</item>
+	</channel>
+</rss>

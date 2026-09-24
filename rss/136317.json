@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Captain Morgan White Rum – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/136317/",
+	"feed_url": "https://alkometriikka.fi/rss/136317.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Captain Morgan White Rum.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-136317-2026-07-18-30.5",
+			"url": "https://alkometriikka.fi/tuotteet/136317/",
+			"title": "Captain Morgan White Rum — 30,24 € → 30,50 €",
+			"content_html": "<p>Tuotteen Captain Morgan White Rum hinta on muuttunut.</p><p>30,24 € → 30,50 € (+0,26 €, +0,86 %).</p>",
+			"summary": "Tuotteen Captain Morgan White Rum hinta on muuttunut. 30,24 € → 30,50 € (+0,26 €, +0,86 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/136317-46c3b622d1b7.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

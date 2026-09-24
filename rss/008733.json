@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Casa Burti Flûte Dolce – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/008733/",
+	"feed_url": "https://alkometriikka.fi/rss/008733.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Casa Burti Flûte Dolce.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-008733-2026-02-02-11.29",
+			"url": "https://alkometriikka.fi/tuotteet/008733/",
+			"title": "Casa Burti Flûte Dolce — 11,39 € → 11,29 €",
+			"content_html": "<p>Tuotteen Casa Burti Flûte Dolce hinta on muuttunut.</p><p>11,39 € → 11,29 € (−0,10 €, −0,88 %).</p>",
+			"summary": "Tuotteen Casa Burti Flûte Dolce hinta on muuttunut. 11,39 € → 11,29 € (−0,10 €, −0,88 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/008733-083976d42db2.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-008733-2026-02-02-11.39",
+			"url": "https://alkometriikka.fi/tuotteet/008733/",
+			"title": "Casa Burti Flûte Dolce — 11,29 € → 11,39 €",
+			"content_html": "<p>Tuotteen Casa Burti Flûte Dolce hinta on muuttunut.</p><p>11,29 € → 11,39 € (+0,10 €, +0,89 %).</p>",
+			"summary": "Tuotteen Casa Burti Flûte Dolce hinta on muuttunut. 11,29 € → 11,39 € (+0,10 €, +0,89 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/008733-083976d42db2.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

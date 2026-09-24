@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – I Am Vodka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/947064/",
+	"feed_url": "https://alkometriikka.fi/rss/947064.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: I Am Vodka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-947064-2026-07-18-49.99",
+			"url": "https://alkometriikka.fi/tuotteet/947064/",
+			"title": "I Am Vodka — 50,27 € → 49,99 €",
+			"content_html": "<p>Tuotteen I Am Vodka hinta on muuttunut.</p><p>50,27 € → 49,99 € (−0,28 €, −0,56 %).</p>",
+			"summary": "Tuotteen I Am Vodka hinta on muuttunut. 50,27 € → 49,99 € (−0,28 €, −0,56 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/947064-b343a5c1d68f.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

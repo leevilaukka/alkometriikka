@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Maku Imperial Stout tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/954368/",
+	"feed_url": "https://alkometriikka.fi/rss/954368.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Maku Imperial Stout tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-954368-2026-07-18-7.18",
+			"url": "https://alkometriikka.fi/tuotteet/954368/",
+			"title": "Maku Imperial Stout tölkki — 7,17 € → 7,18 €",
+			"content_html": "<p>Tuotteen Maku Imperial Stout tölkki hinta on muuttunut.</p><p>7,17 € → 7,18 € (+0,01 €, +0,14 %).</p>",
+			"summary": "Tuotteen Maku Imperial Stout tölkki hinta on muuttunut. 7,17 € → 7,18 € (+0,01 €, +0,14 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/954368-49f0c66b6dd3.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

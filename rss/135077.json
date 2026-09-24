@@ -1,0 +1,50 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glenmorangie The Original 12 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/135077/",
+	"feed_url": "https://alkometriikka.fi/rss/135077.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glenmorangie The Original 12 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-135077-2026-07-18-59.98",
+			"url": "https://alkometriikka.fi/tuotteet/135077/",
+			"title": "Glenmorangie The Original 12 Year Old Single Malt — 60,26 € → 59,98 €",
+			"content_html": "<p>Tuotteen Glenmorangie The Original 12 Year Old Single Malt hinta on muuttunut.</p><p>60,26 € → 59,98 € (−0,28 €, −0,46 %).</p>",
+			"summary": "Tuotteen Glenmorangie The Original 12 Year Old Single Malt hinta on muuttunut. 60,26 € → 59,98 € (−0,28 €, −0,46 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/135077-17f9ca46740a.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		},
+		{
+			"id": "alkometriikka-135077-2026-02-02-60.16",
+			"url": "https://alkometriikka.fi/tuotteet/135077/",
+			"title": "Glenmorangie The Original 12 Year Old Single Malt — 60,26 € → 60,16 €",
+			"content_html": "<p>Tuotteen Glenmorangie The Original 12 Year Old Single Malt hinta on muuttunut.</p><p>60,26 € → 60,16 € (−0,10 €, −0,17 %).</p>",
+			"summary": "Tuotteen Glenmorangie The Original 12 Year Old Single Malt hinta on muuttunut. 60,26 € → 60,16 € (−0,10 €, −0,17 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/135077-17f9ca46740a.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		},
+		{
+			"id": "alkometriikka-135077-2026-02-02-60.26",
+			"url": "https://alkometriikka.fi/tuotteet/135077/",
+			"title": "Glenmorangie The Original 12 Year Old Single Malt — 60,16 € → 60,26 €",
+			"content_html": "<p>Tuotteen Glenmorangie The Original 12 Year Old Single Malt hinta on muuttunut.</p><p>60,16 € → 60,26 € (+0,10 €, +0,17 %).</p>",
+			"summary": "Tuotteen Glenmorangie The Original 12 Year Old Single Malt hinta on muuttunut. 60,16 € → 60,26 € (+0,10 €, +0,17 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/135077-17f9ca46740a.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Olmeca Altos Reposado Tequila – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/131887/",
+	"feed_url": "https://alkometriikka.fi/rss/131887.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Olmeca Altos Reposado Tequila.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-131887-2026-07-18-49.29",
+			"url": "https://alkometriikka.fi/tuotteet/131887/",
+			"title": "Olmeca Altos Reposado Tequila — 49,25 € → 49,29 €",
+			"content_html": "<p>Tuotteen Olmeca Altos Reposado Tequila hinta on muuttunut.</p><p>49,25 € → 49,29 € (+0,04 €, +0,08 %).</p>",
+			"summary": "Tuotteen Olmeca Altos Reposado Tequila hinta on muuttunut. 49,25 € → 49,29 € (+0,04 €, +0,08 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/131887-9a368bcb9ab7.png",
+			"tags": [
+				"Väkevät",
+				"Tequilat"
+			]
+		}
+	]
+}

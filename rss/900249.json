@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Starward Ginger Beer Cask #7 Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900249/",
+	"feed_url": "https://alkometriikka.fi/rss/900249.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Starward Ginger Beer Cask #7 Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900249-2026-07-18-95.9",
+			"url": "https://alkometriikka.fi/tuotteet/900249/",
+			"title": "Starward Ginger Beer Cask #7 Single Malt — 104,99 € → 95,90 €",
+			"content_html": "<p>Tuotteen Starward Ginger Beer Cask #7 Single Malt hinta on muuttunut.</p><p>104,99 € → 95,90 € (−9,09 €, −8,66 %).</p>",
+			"summary": "Tuotteen Starward Ginger Beer Cask #7 Single Malt hinta on muuttunut. 104,99 € → 95,90 € (−9,09 €, −8,66 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900249-a18de80266d3.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

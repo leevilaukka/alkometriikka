@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Krombacher Weizen Alkoholfrei – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/776206/",
+	"feed_url": "https://alkometriikka.fi/rss/776206.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Krombacher Weizen Alkoholfrei.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-776206-2026-09-04-2.15",
+			"url": "https://alkometriikka.fi/tuotteet/776206/",
+			"title": "Krombacher Weizen Alkoholfrei — 2,39 € → 2,15 €",
+			"content_html": "<p>Tuotteen Krombacher Weizen Alkoholfrei hinta on muuttunut.</p><p>2,39 € → 2,15 € (−0,24 €, −10,04 %).</p>",
+			"summary": "Tuotteen Krombacher Weizen Alkoholfrei hinta on muuttunut. 2,39 € → 2,15 € (−0,24 €, −10,04 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/776206-e3acfc7973a0.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-776206-2026-07-18-2.39",
+			"url": "https://alkometriikka.fi/tuotteet/776206/",
+			"title": "Krombacher Weizen Alkoholfrei — 2,28 € → 2,39 €",
+			"content_html": "<p>Tuotteen Krombacher Weizen Alkoholfrei hinta on muuttunut.</p><p>2,28 € → 2,39 € (+0,11 €, +4,82 %).</p>",
+			"summary": "Tuotteen Krombacher Weizen Alkoholfrei hinta on muuttunut. 2,28 € → 2,39 € (+0,11 €, +4,82 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/776206-e3acfc7973a0.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

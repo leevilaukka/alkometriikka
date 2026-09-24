@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Wolfberger (W)3 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/597157/",
+	"feed_url": "https://alkometriikka.fi/rss/597157.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Wolfberger (W)3 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-597157-2026-07-18-15.99",
+			"url": "https://alkometriikka.fi/tuotteet/597157/",
+			"title": "Wolfberger (W)3 2024 — 15,95 € → 15,99 €",
+			"content_html": "<p>Tuotteen Wolfberger (W)3 2024 hinta on muuttunut.</p><p>15,95 € → 15,99 € (+0,04 €, +0,25 %).</p>",
+			"summary": "Tuotteen Wolfberger (W)3 2024 hinta on muuttunut. 15,95 € → 15,99 € (+0,04 €, +0,25 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/597157-7b35ead3a1e6.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

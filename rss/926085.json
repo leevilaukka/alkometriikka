@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Readers´Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/926085/",
+	"feed_url": "https://alkometriikka.fi/rss/926085.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Readers´Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-926085-2026-07-18-39.95",
+			"url": "https://alkometriikka.fi/tuotteet/926085/",
+			"title": "Readers´Gin — 41,07 € → 39,95 €",
+			"content_html": "<p>Tuotteen Readers´Gin hinta on muuttunut.</p><p>41,07 € → 39,95 € (−1,12 €, −2,73 %).</p>",
+			"summary": "Tuotteen Readers´Gin hinta on muuttunut. 41,07 € → 39,95 € (−1,12 €, −2,73 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/926085-a0ce951f0db5.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

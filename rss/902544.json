@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bundaberg Pink Grapefruit – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902544/",
+	"feed_url": "https://alkometriikka.fi/rss/902544.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bundaberg Pink Grapefruit.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902544-2026-07-18-3.39",
+			"url": "https://alkometriikka.fi/tuotteet/902544/",
+			"title": "Bundaberg Pink Grapefruit — 3,38 € → 3,39 €",
+			"content_html": "<p>Tuotteen Bundaberg Pink Grapefruit hinta on muuttunut.</p><p>3,38 € → 3,39 € (+0,01 €, +0,30 %).</p>",
+			"summary": "Tuotteen Bundaberg Pink Grapefruit hinta on muuttunut. 3,38 € → 3,39 € (+0,01 €, +0,30 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902544-2f8187c57e19.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

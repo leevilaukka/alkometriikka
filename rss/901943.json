@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hussonet Gran Reserva Cabernet Sauvignon 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901943/",
+	"feed_url": "https://alkometriikka.fi/rss/901943.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hussonet Gran Reserva Cabernet Sauvignon 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901943-2026-07-18-26.48",
+			"url": "https://alkometriikka.fi/tuotteet/901943/",
+			"title": "Hussonet Gran Reserva Cabernet Sauvignon 2020 — 26,43 € → 26,48 €",
+			"content_html": "<p>Tuotteen Hussonet Gran Reserva Cabernet Sauvignon 2020 hinta on muuttunut.</p><p>26,43 € → 26,48 € (+0,05 €, +0,19 %).</p>",
+			"summary": "Tuotteen Hussonet Gran Reserva Cabernet Sauvignon 2020 hinta on muuttunut. 26,43 € → 26,48 € (+0,05 €, +0,19 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901943-02b849122272.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

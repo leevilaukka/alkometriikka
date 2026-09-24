@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Louis Roederer et Philippe Starck Champagne Brut Nature 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900813/",
+	"feed_url": "https://alkometriikka.fi/rss/900813.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Louis Roederer et Philippe Starck Champagne Brut Nature 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900813-2026-07-18-109.98",
+			"url": "https://alkometriikka.fi/tuotteet/900813/",
+			"title": "Louis Roederer et Philippe Starck Champagne Brut Nature 2018 — 109,45 € → 109,98 €",
+			"content_html": "<p>Tuotteen Louis Roederer et Philippe Starck Champagne Brut Nature 2018 hinta on muuttunut.</p><p>109,45 € → 109,98 € (+0,53 €, +0,48 %).</p>",
+			"summary": "Tuotteen Louis Roederer et Philippe Starck Champagne Brut Nature 2018 hinta on muuttunut. 109,45 € → 109,98 € (+0,53 €, +0,48 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900813-84b7d8387e98.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Andechs Weissbier Alkoholfrei – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/600002/",
+	"feed_url": "https://alkometriikka.fi/rss/600002.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Andechs Weissbier Alkoholfrei.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-600002-2026-09-04-2.69",
+			"url": "https://alkometriikka.fi/tuotteet/600002/",
+			"title": "Andechs Weissbier Alkoholfrei — 2,99 € → 2,69 €",
+			"content_html": "<p>Tuotteen Andechs Weissbier Alkoholfrei hinta on muuttunut.</p><p>2,99 € → 2,69 € (−0,30 €, −10,03 %).</p>",
+			"summary": "Tuotteen Andechs Weissbier Alkoholfrei hinta on muuttunut. 2,99 € → 2,69 € (−0,30 €, −10,03 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600002-c1bf11016f4a.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-600002-2026-07-18-2.99",
+			"url": "https://alkometriikka.fi/tuotteet/600002/",
+			"title": "Andechs Weissbier Alkoholfrei — 2,98 € → 2,99 €",
+			"content_html": "<p>Tuotteen Andechs Weissbier Alkoholfrei hinta on muuttunut.</p><p>2,98 € → 2,99 € (+0,01 €, +0,34 %).</p>",
+			"summary": "Tuotteen Andechs Weissbier Alkoholfrei hinta on muuttunut. 2,98 € → 2,99 € (+0,01 €, +0,34 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600002-c1bf11016f4a.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

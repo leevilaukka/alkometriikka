@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Expedition Chardonnay 2024 muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/536288/",
+	"feed_url": "https://alkometriikka.fi/rss/536288.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Expedition Chardonnay 2024 muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-536288-2026-07-18-12.68",
+			"url": "https://alkometriikka.fi/tuotteet/536288/",
+			"title": "Expedition Chardonnay 2024 muovipullo — 12,60 € → 12,68 €",
+			"content_html": "<p>Tuotteen Expedition Chardonnay 2024 muovipullo hinta on muuttunut.</p><p>12,60 € → 12,68 € (+0,08 €, +0,63 %).</p>",
+			"summary": "Tuotteen Expedition Chardonnay 2024 muovipullo hinta on muuttunut. 12,60 € → 12,68 € (+0,08 €, +0,63 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/536288-006b8aea7738.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

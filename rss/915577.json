@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Palmer & Co Rosé Solera Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/915577/",
+	"feed_url": "https://alkometriikka.fi/rss/915577.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Palmer & Co Rosé Solera Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-915577-2026-07-18-69.99",
+			"url": "https://alkometriikka.fi/tuotteet/915577/",
+			"title": "Palmer & Co Rosé Solera Champagne Brut — 70,46 € → 69,99 €",
+			"content_html": "<p>Tuotteen Palmer & Co Rosé Solera Champagne Brut hinta on muuttunut.</p><p>70,46 € → 69,99 € (−0,47 €, −0,67 %).</p>",
+			"summary": "Tuotteen Palmer & Co Rosé Solera Champagne Brut hinta on muuttunut. 70,46 € → 69,99 € (−0,47 €, −0,67 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/915577-888d1281dbd5.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

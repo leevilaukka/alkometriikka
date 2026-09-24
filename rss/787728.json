@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tropic Dream Piña Colada kartonkitölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/787728/",
+	"feed_url": "https://alkometriikka.fi/rss/787728.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tropic Dream Piña Colada kartonkitölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-787728-2026-07-18-3.99",
+			"url": "https://alkometriikka.fi/tuotteet/787728/",
+			"title": "Tropic Dream Piña Colada kartonkitölkki — 3,84 € → 3,99 €",
+			"content_html": "<p>Tuotteen Tropic Dream Piña Colada kartonkitölkki hinta on muuttunut.</p><p>3,84 € → 3,99 € (+0,15 €, +3,91 %).</p>",
+			"summary": "Tuotteen Tropic Dream Piña Colada kartonkitölkki hinta on muuttunut. 3,84 € → 3,99 € (+0,15 €, +3,91 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/787728-295e9cdf83f0.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

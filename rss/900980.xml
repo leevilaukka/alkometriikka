@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – The Bitter Truth Orange Bitters – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/900980/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: The Bitter Truth Orange Bitters.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/900980.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – The Bitter Truth Orange Bitters – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>The Bitter Truth Orange Bitters — 22,71 € → 22,69 €</title>
+			<link>https://alkometriikka.fi/tuotteet/900980/</link>
+			<guid isPermaLink="false">alkometriikka-900980-2026-07-18-22.69</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / maha- ja maustekatkerot</category>
+			<description><![CDATA[<p>Tuotteen The Bitter Truth Orange Bitters hinta on muuttunut.</p><p>22,71 € → 22,69 € (−0,02 €, −0,09 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/900980-fad7ae9aa22b.png" />
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Robert de Pampignac Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/557534/",
+	"feed_url": "https://alkometriikka.fi/rss/557534.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Robert de Pampignac Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-557534-2026-07-18-19.9",
+			"url": "https://alkometriikka.fi/tuotteet/557534/",
+			"title": "Robert de Pampignac Champagne Brut — 19,22 € → 19,90 €",
+			"content_html": "<p>Tuotteen Robert de Pampignac Champagne Brut hinta on muuttunut.</p><p>19,22 € → 19,90 € (+0,68 €, +3,54 %).</p>",
+			"summary": "Tuotteen Robert de Pampignac Champagne Brut hinta on muuttunut. 19,22 € → 19,90 € (+0,68 €, +3,54 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/557534-45dce3a62552.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

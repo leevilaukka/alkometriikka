@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Palmer & Co Blanc de Noirs  Champagne Brut Magnum – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/926508/",
+	"feed_url": "https://alkometriikka.fi/rss/926508.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Palmer & Co Blanc de Noirs  Champagne Brut Magnum.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-926508-2026-07-18-176",
+			"url": "https://alkometriikka.fi/tuotteet/926508/",
+			"title": "Palmer & Co Blanc de Noirs  Champagne Brut Magnum — 176,92 € → 176,00 €",
+			"content_html": "<p>Tuotteen Palmer & Co Blanc de Noirs  Champagne Brut Magnum hinta on muuttunut.</p><p>176,92 € → 176,00 € (−0,92 €, −0,52 %).</p>",
+			"summary": "Tuotteen Palmer & Co Blanc de Noirs Champagne Brut Magnum hinta on muuttunut. 176,92 € → 176,00 € (−0,92 €, −0,52 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/926508-982215992f65.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Coral Duero Rompesedas 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/937185/",
+	"feed_url": "https://alkometriikka.fi/rss/937185.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Coral Duero Rompesedas 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-937185-2026-07-18-47.99",
+			"url": "https://alkometriikka.fi/tuotteet/937185/",
+			"title": "Coral Duero Rompesedas 2018 — 47,45 € → 47,99 €",
+			"content_html": "<p>Tuotteen Coral Duero Rompesedas 2018 hinta on muuttunut.</p><p>47,45 € → 47,99 € (+0,54 €, +1,14 %).</p>",
+			"summary": "Tuotteen Coral Duero Rompesedas 2018 hinta on muuttunut. 47,45 € → 47,99 € (+0,54 €, +1,14 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/937185-593e0370a253.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

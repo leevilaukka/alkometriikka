@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Smokehead 15 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902014/",
+	"feed_url": "https://alkometriikka.fi/rss/902014.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Smokehead 15 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902014-2026-07-18-79.99",
+			"url": "https://alkometriikka.fi/tuotteet/902014/",
+			"title": "Smokehead 15 Year Old Single Malt — 99,98 € → 79,99 €",
+			"content_html": "<p>Tuotteen Smokehead 15 Year Old Single Malt hinta on muuttunut.</p><p>99,98 € → 79,99 € (−19,99 €, −19,99 %).</p>",
+			"summary": "Tuotteen Smokehead 15 Year Old Single Malt hinta on muuttunut. 99,98 € → 79,99 € (−19,99 €, −19,99 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902014-79fb736e683b.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

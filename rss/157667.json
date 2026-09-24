@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Buffalo Trace – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/157667/",
+	"feed_url": "https://alkometriikka.fi/rss/157667.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Buffalo Trace.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-157667-2026-07-18-46.99",
+			"url": "https://alkometriikka.fi/tuotteet/157667/",
+			"title": "Buffalo Trace — 46,97 € → 46,99 €",
+			"content_html": "<p>Tuotteen Buffalo Trace hinta on muuttunut.</p><p>46,97 € → 46,99 € (+0,02 €, +0,04 %).</p>",
+			"summary": "Tuotteen Buffalo Trace hinta on muuttunut. 46,97 € → 46,99 € (+0,02 €, +0,04 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/157667-a30b76a66415.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jean Vesselle Oeil de Perdrix Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/959447/",
+	"feed_url": "https://alkometriikka.fi/rss/959447.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jean Vesselle Oeil de Perdrix Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-959447-2026-07-18-59.9",
+			"url": "https://alkometriikka.fi/tuotteet/959447/",
+			"title": "Jean Vesselle Oeil de Perdrix Champagne Brut — 60,45 € → 59,90 €",
+			"content_html": "<p>Tuotteen Jean Vesselle Oeil de Perdrix Champagne Brut hinta on muuttunut.</p><p>60,45 € → 59,90 € (−0,55 €, −0,91 %).</p>",
+			"summary": "Tuotteen Jean Vesselle Oeil de Perdrix Champagne Brut hinta on muuttunut. 60,45 € → 59,90 € (−0,55 €, −0,91 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/959447-c5a1c3a495eb.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

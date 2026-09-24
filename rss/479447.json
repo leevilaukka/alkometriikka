@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Barahonda Barrica Monastrell Syrah 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/479447/",
+	"feed_url": "https://alkometriikka.fi/rss/479447.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Barahonda Barrica Monastrell Syrah 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-479447-2026-07-18-15.99",
+			"url": "https://alkometriikka.fi/tuotteet/479447/",
+			"title": "Barahonda Barrica Monastrell Syrah 2022 — 16,45 € → 15,99 €",
+			"content_html": "<p>Tuotteen Barahonda Barrica Monastrell Syrah 2022 hinta on muuttunut.</p><p>16,45 € → 15,99 € (−0,46 €, −2,80 %).</p>",
+			"summary": "Tuotteen Barahonda Barrica Monastrell Syrah 2022 hinta on muuttunut. 16,45 € → 15,99 € (−0,46 €, −2,80 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/479447-844fd0519d8c.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

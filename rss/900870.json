@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Edradour 12 Year Old Caledonia Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900870/",
+	"feed_url": "https://alkometriikka.fi/rss/900870.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Edradour 12 Year Old Caledonia Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900870-2026-07-18-107.29",
+			"url": "https://alkometriikka.fi/tuotteet/900870/",
+			"title": "Edradour 12 Year Old Caledonia Single Malt — 103,34 € → 107,29 €",
+			"content_html": "<p>Tuotteen Edradour 12 Year Old Caledonia Single Malt hinta on muuttunut.</p><p>103,34 € → 107,29 € (+3,95 €, +3,82 %).</p>",
+			"summary": "Tuotteen Edradour 12 Year Old Caledonia Single Malt hinta on muuttunut. 103,34 € → 107,29 € (+3,95 €, +3,82 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900870-cb6ea42f762a.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

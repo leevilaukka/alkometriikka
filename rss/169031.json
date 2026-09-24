@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Koskenkorva Salmiakki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/169031/",
+	"feed_url": "https://alkometriikka.fi/rss/169031.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Koskenkorva Salmiakki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-169031-2026-07-18-3.39",
+			"url": "https://alkometriikka.fi/tuotteet/169031/",
+			"title": "Koskenkorva Salmiakki — 3,41 € → 3,39 €",
+			"content_html": "<p>Tuotteen Koskenkorva Salmiakki hinta on muuttunut.</p><p>3,41 € → 3,39 € (−0,02 €, −0,59 %).</p>",
+			"summary": "Tuotteen Koskenkorva Salmiakki hinta on muuttunut. 3,41 € → 3,39 € (−0,02 €, −0,59 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/169031-ecd9b8943620.png",
+			"tags": [
+				"Väkevät",
+				"salmiakkiliköörit"
+			]
+		}
+	]
+}

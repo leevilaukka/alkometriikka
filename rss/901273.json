@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ballechin 10 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901273/",
+	"feed_url": "https://alkometriikka.fi/rss/901273.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ballechin 10 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901273-2026-07-18-89.73",
+			"url": "https://alkometriikka.fi/tuotteet/901273/",
+			"title": "Ballechin 10 Year Old Single Malt — 93,18 € → 89,73 €",
+			"content_html": "<p>Tuotteen Ballechin 10 Year Old Single Malt hinta on muuttunut.</p><p>93,18 € → 89,73 € (−3,45 €, −3,70 %).</p>",
+			"summary": "Tuotteen Ballechin 10 Year Old Single Malt hinta on muuttunut. 93,18 € → 89,73 € (−3,45 €, −3,70 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901273-81c53a546c24.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

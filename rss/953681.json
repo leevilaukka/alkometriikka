@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Brockmans Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/953681/",
+	"feed_url": "https://alkometriikka.fi/rss/953681.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Brockmans Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-953681-2026-07-18-58.4",
+			"url": "https://alkometriikka.fi/tuotteet/953681/",
+			"title": "Brockmans Gin — 53,78 € → 58,40 €",
+			"content_html": "<p>Tuotteen Brockmans Gin hinta on muuttunut.</p><p>53,78 € → 58,40 € (+4,62 €, +8,59 %).</p>",
+			"summary": "Tuotteen Brockmans Gin hinta on muuttunut. 53,78 € → 58,40 € (+4,62 €, +8,59 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/953681-7fdffc9dd34c.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Retoño Organic Cava Brut Guarda – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/958066/",
+	"feed_url": "https://alkometriikka.fi/rss/958066.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Retoño Organic Cava Brut Guarda.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-958066-2026-07-18-14.48",
+			"url": "https://alkometriikka.fi/tuotteet/958066/",
+			"title": "Retoño Organic Cava Brut Guarda — 14,44 € → 14,48 €",
+			"content_html": "<p>Tuotteen Retoño Organic Cava Brut Guarda hinta on muuttunut.</p><p>14,44 € → 14,48 € (+0,04 €, +0,28 %).</p>",
+			"summary": "Tuotteen Retoño Organic Cava Brut Guarda hinta on muuttunut. 14,44 € → 14,48 € (+0,04 €, +0,28 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/958066-8f03915a5140.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

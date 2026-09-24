@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Koskenkorva Salmiakki Apple muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/188256/",
+	"feed_url": "https://alkometriikka.fi/rss/188256.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Koskenkorva Salmiakki Apple muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-188256-2026-07-18-16.48",
+			"url": "https://alkometriikka.fi/tuotteet/188256/",
+			"title": "Koskenkorva Salmiakki Apple muovipullo — 16,45 € → 16,48 €",
+			"content_html": "<p>Tuotteen Koskenkorva Salmiakki Apple muovipullo hinta on muuttunut.</p><p>16,45 € → 16,48 € (+0,03 €, +0,18 %).</p>",
+			"summary": "Tuotteen Koskenkorva Salmiakki Apple muovipullo hinta on muuttunut. 16,45 € → 16,48 € (+0,03 €, +0,18 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/188256-aab7287252ff.png",
+			"tags": [
+				"Väkevät",
+				"salmiakkiliköörit"
+			]
+		}
+	]
+}

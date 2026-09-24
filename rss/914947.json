@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Elusìa Prosecco Extra Dry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/914947/",
+	"feed_url": "https://alkometriikka.fi/rss/914947.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Elusìa Prosecco Extra Dry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-914947-2026-07-18-18.96",
+			"url": "https://alkometriikka.fi/tuotteet/914947/",
+			"title": "Elusìa Prosecco Extra Dry — 19,44 € → 18,96 €",
+			"content_html": "<p>Tuotteen Elusìa Prosecco Extra Dry hinta on muuttunut.</p><p>19,44 € → 18,96 € (−0,48 €, −2,47 %).</p>",
+			"summary": "Tuotteen Elusìa Prosecco Extra Dry hinta on muuttunut. 19,44 € → 18,96 € (−0,48 €, −2,47 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/914947-9dc44848829a.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

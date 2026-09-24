@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nederburg Edelrood 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/462387/",
+	"feed_url": "https://alkometriikka.fi/rss/462387.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nederburg Edelrood 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-462387-2026-07-18-14.99",
+			"url": "https://alkometriikka.fi/tuotteet/462387/",
+			"title": "Nederburg Edelrood 2022 — 14,44 € → 14,99 €",
+			"content_html": "<p>Tuotteen Nederburg Edelrood 2022 hinta on muuttunut.</p><p>14,44 € → 14,99 € (+0,55 €, +3,81 %).</p>",
+			"summary": "Tuotteen Nederburg Edelrood 2022 hinta on muuttunut. 14,44 € → 14,99 € (+0,55 €, +3,81 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/462387-e0f68b430b51.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

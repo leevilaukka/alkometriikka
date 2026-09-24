@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – La Trappe Isid&apos;or – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/948023/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: La Trappe Isid&apos;or.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/948023.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – La Trappe Isid&apos;or – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>La Trappe Isid&apos;or — 11,39 € → 11,49 €</title>
+			<link>https://alkometriikka.fi/tuotteet/948023/</link>
+			<guid isPermaLink="false">alkometriikka-948023-2026-07-18-11.49</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Panimotuotteet / oluet</category>
+			<description><![CDATA[<p>Tuotteen La Trappe Isid'or hinta on muuttunut.</p><p>11,39 € → 11,49 € (+0,10 €, +0,88 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/948023-e093ffe98851.png" />
+		</item>
+	</channel>
+</rss>

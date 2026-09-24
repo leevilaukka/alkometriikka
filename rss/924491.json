@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jameson – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/924491/",
+	"feed_url": "https://alkometriikka.fi/rss/924491.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jameson.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-924491-2026-07-18-4.39",
+			"url": "https://alkometriikka.fi/tuotteet/924491/",
+			"title": "Jameson — 4,32 € → 4,39 €",
+			"content_html": "<p>Tuotteen Jameson hinta on muuttunut.</p><p>4,32 € → 4,39 € (+0,07 €, +1,62 %).</p>",
+			"summary": "Tuotteen Jameson hinta on muuttunut. 4,32 € → 4,39 € (+0,07 €, +1,62 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/924491-d43ecd269171.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Domaine Albert Bichot Meursault 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901556/",
+	"feed_url": "https://alkometriikka.fi/rss/901556.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Domaine Albert Bichot Meursault 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901556-2026-07-18-95.98",
+			"url": "https://alkometriikka.fi/tuotteet/901556/",
+			"title": "Domaine Albert Bichot Meursault 2018 — 95,29 € → 95,98 €",
+			"content_html": "<p>Tuotteen Domaine Albert Bichot Meursault 2018 hinta on muuttunut.</p><p>95,29 € → 95,98 € (+0,69 €, +0,72 %).</p>",
+			"summary": "Tuotteen Domaine Albert Bichot Meursault 2018 hinta on muuttunut. 95,29 € → 95,98 € (+0,69 €, +0,72 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901556-7c98040408f4.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

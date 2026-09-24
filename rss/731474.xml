@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Krombacher Pils Non-Alcoholic – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/731474/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Krombacher Pils Non-Alcoholic.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/731474.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Krombacher Pils Non-Alcoholic – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Krombacher Pils Non-Alcoholic — 1,89 € → 1,70 €</title>
+			<link>https://alkometriikka.fi/tuotteet/731474/</link>
+			<guid isPermaLink="false">alkometriikka-731474-2026-09-04-1.7</guid>
+			<pubDate>Fri, 04 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Alkoholittomat / alkoholittomat oluet</category>
+			<description><![CDATA[<p>Tuotteen Krombacher Pils Non-Alcoholic hinta on muuttunut.</p><p>1,89 € → 1,70 € (−0,19 €, −10,05 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/731474-e046a723e70d.png" />
+		</item>
+		<item>
+			<title>Krombacher Pils Non-Alcoholic — 1,88 € → 1,89 €</title>
+			<link>https://alkometriikka.fi/tuotteet/731474/</link>
+			<guid isPermaLink="false">alkometriikka-731474-2026-07-18-1.89</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Alkoholittomat / alkoholittomat oluet</category>
+			<description><![CDATA[<p>Tuotteen Krombacher Pils Non-Alcoholic hinta on muuttunut.</p><p>1,88 € → 1,89 € (+0,01 €, +0,53 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/731474-e046a723e70d.png" />
+		</item>
+	</channel>
+</rss>

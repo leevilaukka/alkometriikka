@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Laurent Vogt Pinot Gris 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/953287/",
+	"feed_url": "https://alkometriikka.fi/rss/953287.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Laurent Vogt Pinot Gris 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-953287-2026-07-18-24.92",
+			"url": "https://alkometriikka.fi/tuotteet/953287/",
+			"title": "Laurent Vogt Pinot Gris 2023 — 25,02 € → 24,92 €",
+			"content_html": "<p>Tuotteen Laurent Vogt Pinot Gris 2023 hinta on muuttunut.</p><p>25,02 € → 24,92 € (−0,10 €, −0,40 %).</p>",
+			"summary": "Tuotteen Laurent Vogt Pinot Gris 2023 hinta on muuttunut. 25,02 € → 24,92 € (−0,10 €, −0,40 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/953287-ed3ad41c1974.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

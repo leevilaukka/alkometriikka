@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Veuve Ambal Grande Cuvée Crémant de Bourgogne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/916314/",
+	"feed_url": "https://alkometriikka.fi/rss/916314.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Veuve Ambal Grande Cuvée Crémant de Bourgogne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-916314-2026-07-18-19.98",
+			"url": "https://alkometriikka.fi/tuotteet/916314/",
+			"title": "Veuve Ambal Grande Cuvée Crémant de Bourgogne Brut — 20,15 € → 19,98 €",
+			"content_html": "<p>Tuotteen Veuve Ambal Grande Cuvée Crémant de Bourgogne Brut hinta on muuttunut.</p><p>20,15 € → 19,98 € (−0,17 €, −0,84 %).</p>",
+			"summary": "Tuotteen Veuve Ambal Grande Cuvée Crémant de Bourgogne Brut hinta on muuttunut. 20,15 € → 19,98 € (−0,17 €, −0,84 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/916314-ee12acbf5686.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

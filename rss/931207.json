@@ -1,0 +1,50 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Deutz Classic Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/931207/",
+	"feed_url": "https://alkometriikka.fi/rss/931207.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Deutz Classic Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-931207-2026-07-18-59.16",
+			"url": "https://alkometriikka.fi/tuotteet/931207/",
+			"title": "Deutz Classic Champagne Brut — 60,06 € → 59,16 €",
+			"content_html": "<p>Tuotteen Deutz Classic Champagne Brut hinta on muuttunut.</p><p>60,06 € → 59,16 € (−0,90 €, −1,50 %).</p>",
+			"summary": "Tuotteen Deutz Classic Champagne Brut hinta on muuttunut. 60,06 € → 59,16 € (−0,90 €, −1,50 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/931207-17c6810e7c33.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-931207-2026-02-02-59.96",
+			"url": "https://alkometriikka.fi/tuotteet/931207/",
+			"title": "Deutz Classic Champagne Brut — 60,06 € → 59,96 €",
+			"content_html": "<p>Tuotteen Deutz Classic Champagne Brut hinta on muuttunut.</p><p>60,06 € → 59,96 € (−0,10 €, −0,17 %).</p>",
+			"summary": "Tuotteen Deutz Classic Champagne Brut hinta on muuttunut. 60,06 € → 59,96 € (−0,10 €, −0,17 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/931207-17c6810e7c33.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-931207-2026-02-02-60.06",
+			"url": "https://alkometriikka.fi/tuotteet/931207/",
+			"title": "Deutz Classic Champagne Brut — 59,96 € → 60,06 €",
+			"content_html": "<p>Tuotteen Deutz Classic Champagne Brut hinta on muuttunut.</p><p>59,96 € → 60,06 € (+0,10 €, +0,17 %).</p>",
+			"summary": "Tuotteen Deutz Classic Champagne Brut hinta on muuttunut. 59,96 € → 60,06 € (+0,10 €, +0,17 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/931207-17c6810e7c33.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

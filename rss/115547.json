@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bushmills 14 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/115547/",
+	"feed_url": "https://alkometriikka.fi/rss/115547.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bushmills 14 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-115547-2026-02-02-67.95",
+			"url": "https://alkometriikka.fi/tuotteet/115547/",
+			"title": "Bushmills 14 Year Old Single Malt — 68,05 € → 67,95 €",
+			"content_html": "<p>Tuotteen Bushmills 14 Year Old Single Malt hinta on muuttunut.</p><p>68,05 € → 67,95 € (−0,10 €, −0,15 %).</p>",
+			"summary": "Tuotteen Bushmills 14 Year Old Single Malt hinta on muuttunut. 68,05 € → 67,95 € (−0,10 €, −0,15 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/115547-abd90c361d45.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		},
+		{
+			"id": "alkometriikka-115547-2026-02-02-68.05",
+			"url": "https://alkometriikka.fi/tuotteet/115547/",
+			"title": "Bushmills 14 Year Old Single Malt — 67,95 € → 68,05 €",
+			"content_html": "<p>Tuotteen Bushmills 14 Year Old Single Malt hinta on muuttunut.</p><p>67,95 € → 68,05 € (+0,10 €, +0,15 %).</p>",
+			"summary": "Tuotteen Bushmills 14 Year Old Single Malt hinta on muuttunut. 67,95 € → 68,05 € (+0,10 €, +0,15 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/115547-abd90c361d45.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

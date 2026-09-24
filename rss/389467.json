@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Last Pineapple muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/389467/",
+	"feed_url": "https://alkometriikka.fi/rss/389467.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Last Pineapple muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-389467-2026-07-18-9.78",
+			"url": "https://alkometriikka.fi/tuotteet/389467/",
+			"title": "Last Pineapple muovipullo — 9,55 € → 9,78 €",
+			"content_html": "<p>Tuotteen Last Pineapple muovipullo hinta on muuttunut.</p><p>9,55 € → 9,78 € (+0,23 €, +2,41 %).</p>",
+			"summary": "Tuotteen Last Pineapple muovipullo hinta on muuttunut. 9,55 € → 9,78 € (+0,23 €, +2,41 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/389467-37cca37112e1.png",
+			"tags": [
+				"Välituotteet",
+				"väkevät viinit"
+			]
+		}
+	]
+}

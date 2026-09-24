@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Huré Frères Invitation Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/943055/",
+	"feed_url": "https://alkometriikka.fi/rss/943055.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Huré Frères Invitation Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-943055-2026-07-18-58.99",
+			"url": "https://alkometriikka.fi/tuotteet/943055/",
+			"title": "Huré Frères Invitation Champagne Brut — 57,99 € → 58,99 €",
+			"content_html": "<p>Tuotteen Huré Frères Invitation Champagne Brut hinta on muuttunut.</p><p>57,99 € → 58,99 € (+1,00 €, +1,72 %).</p>",
+			"summary": "Tuotteen Huré Frères Invitation Champagne Brut hinta on muuttunut. 57,99 € → 58,99 € (+1,00 €, +1,72 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/943055-605392e16b02.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

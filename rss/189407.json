@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Aberlour A'Bunadh Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/189407/",
+	"feed_url": "https://alkometriikka.fi/rss/189407.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Aberlour A'Bunadh Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-189407-2026-07-18-108.49",
+			"url": "https://alkometriikka.fi/tuotteet/189407/",
+			"title": "Aberlour A'Bunadh Single Malt — 108,40 € → 108,49 €",
+			"content_html": "<p>Tuotteen Aberlour A'Bunadh Single Malt hinta on muuttunut.</p><p>108,40 € → 108,49 € (+0,09 €, +0,08 %).</p>",
+			"summary": "Tuotteen Aberlour A'Bunadh Single Malt hinta on muuttunut. 108,40 € → 108,49 € (+0,09 €, +0,08 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/189407-6beb2876fce0.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

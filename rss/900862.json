@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Landhaus Paul Golden Donkey Zweigelt Reserve 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900862/",
+	"feed_url": "https://alkometriikka.fi/rss/900862.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Landhaus Paul Golden Donkey Zweigelt Reserve 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900862-2026-07-18-30.25",
+			"url": "https://alkometriikka.fi/tuotteet/900862/",
+			"title": "Landhaus Paul Golden Donkey Zweigelt Reserve 2021 — 30,04 € → 30,25 €",
+			"content_html": "<p>Tuotteen Landhaus Paul Golden Donkey Zweigelt Reserve 2021 hinta on muuttunut.</p><p>30,04 € → 30,25 € (+0,21 €, +0,70 %).</p>",
+			"summary": "Tuotteen Landhaus Paul Golden Donkey Zweigelt Reserve 2021 hinta on muuttunut. 30,04 € → 30,25 € (+0,21 €, +0,70 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900862-c81b5df388b9.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bock Magnifico 2017 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/920303/",
+	"feed_url": "https://alkometriikka.fi/rss/920303.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bock Magnifico 2017.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-920303-2026-07-18-99.98",
+			"url": "https://alkometriikka.fi/tuotteet/920303/",
+			"title": "Bock Magnifico 2017 — 100,44 € → 99,98 €",
+			"content_html": "<p>Tuotteen Bock Magnifico 2017 hinta on muuttunut.</p><p>100,44 € → 99,98 € (−0,46 €, −0,46 %).</p>",
+			"summary": "Tuotteen Bock Magnifico 2017 hinta on muuttunut. 100,44 € → 99,98 € (−0,46 €, −0,46 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/920303-d2d0dcaac900.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

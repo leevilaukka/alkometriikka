@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pommery Royal Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/904145/",
+	"feed_url": "https://alkometriikka.fi/rss/904145.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pommery Royal Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-904145-2026-07-18-23.49",
+			"url": "https://alkometriikka.fi/tuotteet/904145/",
+			"title": "Pommery Royal Champagne Brut — 23,10 € → 23,49 €",
+			"content_html": "<p>Tuotteen Pommery Royal Champagne Brut hinta on muuttunut.</p><p>23,10 € → 23,49 € (+0,39 €, +1,69 %).</p>",
+			"summary": "Tuotteen Pommery Royal Champagne Brut hinta on muuttunut. 23,10 € → 23,49 € (+0,39 €, +1,69 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/904145-542db5caef39.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

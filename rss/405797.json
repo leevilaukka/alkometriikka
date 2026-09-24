@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Chateau Ste Michelle Syrah 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/405797/",
+	"feed_url": "https://alkometriikka.fi/rss/405797.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Chateau Ste Michelle Syrah 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-405797-2026-07-18-21.48",
+			"url": "https://alkometriikka.fi/tuotteet/405797/",
+			"title": "Chateau Ste Michelle Syrah 2020 — 21,46 € → 21,48 €",
+			"content_html": "<p>Tuotteen Chateau Ste Michelle Syrah 2020 hinta on muuttunut.</p><p>21,46 € → 21,48 € (+0,02 €, +0,09 %).</p>",
+			"summary": "Tuotteen Chateau Ste Michelle Syrah 2020 hinta on muuttunut. 21,46 € → 21,48 € (+0,02 €, +0,09 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/405797-376d54307e5b.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

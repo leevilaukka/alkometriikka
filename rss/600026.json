@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Sprite 1,5L  muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/600026/",
+	"feed_url": "https://alkometriikka.fi/rss/600026.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Sprite 1,5L  muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-600026-2026-07-18-4.33",
+			"url": "https://alkometriikka.fi/tuotteet/600026/",
+			"title": "Sprite 1,5L  muovipullo — 3,98 € → 4,33 €",
+			"content_html": "<p>Tuotteen Sprite 1,5L  muovipullo hinta on muuttunut.</p><p>3,98 € → 4,33 € (+0,35 €, +8,79 %).</p>",
+			"summary": "Tuotteen Sprite 1,5L muovipullo hinta on muuttunut. 3,98 € → 4,33 € (+0,35 €, +8,79 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600026-2a679a6e32a2.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glen Scanlan – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/113538/",
+	"feed_url": "https://alkometriikka.fi/rss/113538.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glen Scanlan.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-113538-2026-07-18-38.5",
+			"url": "https://alkometriikka.fi/tuotteet/113538/",
+			"title": "Glen Scanlan — 38,35 € → 38,50 €",
+			"content_html": "<p>Tuotteen Glen Scanlan hinta on muuttunut.</p><p>38,35 € → 38,50 € (+0,15 €, +0,39 %).</p>",
+			"summary": "Tuotteen Glen Scanlan hinta on muuttunut. 38,35 € → 38,50 € (+0,15 €, +0,39 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/113538-7e81cc9458d8.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Perelada Stars Cava Brut Reserva 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/008981/",
+	"feed_url": "https://alkometriikka.fi/rss/008981.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Perelada Stars Cava Brut Reserva 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-008981-2026-07-18-13.48",
+			"url": "https://alkometriikka.fi/tuotteet/008981/",
+			"title": "Perelada Stars Cava Brut Reserva 2022 — 13,44 € → 13,48 €",
+			"content_html": "<p>Tuotteen Perelada Stars Cava Brut Reserva 2022 hinta on muuttunut.</p><p>13,44 € → 13,48 € (+0,04 €, +0,30 %).</p>",
+			"summary": "Tuotteen Perelada Stars Cava Brut Reserva 2022 hinta on muuttunut. 13,44 € → 13,48 € (+0,04 €, +0,30 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/008981-a3cdff38e9cd.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Verus Riesling 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/950207/",
+	"feed_url": "https://alkometriikka.fi/rss/950207.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Verus Riesling 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-950207-2026-07-18-23.96",
+			"url": "https://alkometriikka.fi/tuotteet/950207/",
+			"title": "Verus Riesling 2022 — 24,09 € → 23,96 €",
+			"content_html": "<p>Tuotteen Verus Riesling 2022 hinta on muuttunut.</p><p>24,09 € → 23,96 € (−0,13 €, −0,54 %).</p>",
+			"summary": "Tuotteen Verus Riesling 2022 hinta on muuttunut. 24,09 € → 23,96 € (−0,13 €, −0,54 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/950207-777d1f2515c0.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

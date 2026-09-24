@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Troquet Merlot 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/911966/",
+	"feed_url": "https://alkometriikka.fi/rss/911966.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Troquet Merlot 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-911966-2026-07-18-13.98",
+			"url": "https://alkometriikka.fi/tuotteet/911966/",
+			"title": "Troquet Merlot 2022 — 14,97 € → 13,98 €",
+			"content_html": "<p>Tuotteen Troquet Merlot 2022 hinta on muuttunut.</p><p>14,97 € → 13,98 € (−0,99 €, −6,61 %).</p>",
+			"summary": "Tuotteen Troquet Merlot 2022 hinta on muuttunut. 14,97 € → 13,98 € (−0,99 €, −6,61 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/911966-1ee6f5dfba07.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

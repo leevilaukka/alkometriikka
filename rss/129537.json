@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nikka Yoichi Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/129537/",
+	"feed_url": "https://alkometriikka.fi/rss/129537.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nikka Yoichi Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-129537-2026-07-18-89.99",
+			"url": "https://alkometriikka.fi/tuotteet/129537/",
+			"title": "Nikka Yoichi Single Malt — 88,35 € → 89,99 €",
+			"content_html": "<p>Tuotteen Nikka Yoichi Single Malt hinta on muuttunut.</p><p>88,35 € → 89,99 € (+1,64 €, +1,86 %).</p>",
+			"summary": "Tuotteen Nikka Yoichi Single Malt hinta on muuttunut. 88,35 € → 89,99 € (+1,64 €, +1,86 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/129537-b359a6fa7864.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

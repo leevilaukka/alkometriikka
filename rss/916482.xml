@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Braun Weissburgunder Trocken 2024 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/916482/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Braun Weissburgunder Trocken 2024.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/916482.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Braun Weissburgunder Trocken 2024 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Braun Weissburgunder Trocken 2024 — 17,45 € → 17,49 €</title>
+			<link>https://alkometriikka.fi/tuotteet/916482/</link>
+			<guid isPermaLink="false">alkometriikka-916482-2026-07-18-17.49</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / valkoviinit</category>
+			<description><![CDATA[<p>Tuotteen Braun Weissburgunder Trocken 2024 hinta on muuttunut.</p><p>17,45 € → 17,49 € (+0,04 €, +0,23 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/916482-e60cf23d2983.png" />
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Battery  tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/600056/",
+	"feed_url": "https://alkometriikka.fi/rss/600056.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Battery  tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-600056-2026-07-18-2.99",
+			"url": "https://alkometriikka.fi/tuotteet/600056/",
+			"title": "Battery  tölkki — 2,89 € → 2,99 €",
+			"content_html": "<p>Tuotteen Battery  tölkki hinta on muuttunut.</p><p>2,89 € → 2,99 € (+0,10 €, +3,46 %).</p>",
+			"summary": "Tuotteen Battery tölkki hinta on muuttunut. 2,89 € → 2,99 € (+0,10 €, +3,46 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600056-daba7909309c.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Planteray O.F.T.D – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/163677/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Planteray O.F.T.D.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/163677.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Planteray O.F.T.D – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Planteray O.F.T.D — 50,95 € → 50,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/163677/</link>
+			<guid isPermaLink="false">alkometriikka-163677-2026-07-18-50.99</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / rommit</category>
+			<description><![CDATA[<p>Tuotteen Planteray O.F.T.D hinta on muuttunut.</p><p>50,95 € → 50,99 € (+0,04 €, +0,08 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/163677-62b5d387b171.png" />
+		</item>
+	</channel>
+</rss>

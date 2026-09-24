@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Freixenet Italian Rosé 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/918093/",
+	"feed_url": "https://alkometriikka.fi/rss/918093.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Freixenet Italian Rosé 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-918093-2026-07-18-4.65",
+			"url": "https://alkometriikka.fi/tuotteet/918093/",
+			"title": "Freixenet Italian Rosé 2022 — 4,51 € → 4,65 €",
+			"content_html": "<p>Tuotteen Freixenet Italian Rosé 2022 hinta on muuttunut.</p><p>4,51 € → 4,65 € (+0,14 €, +3,10 %).</p>",
+			"summary": "Tuotteen Freixenet Italian Rosé 2022 hinta on muuttunut. 4,51 € → 4,65 € (+0,14 €, +3,10 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/918093-05e0f8c90ad4.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

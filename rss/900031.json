@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Islay Mist Mufloni Stout Cask Finish – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900031/",
+	"feed_url": "https://alkometriikka.fi/rss/900031.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Islay Mist Mufloni Stout Cask Finish.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900031-2026-07-18-39.98",
+			"url": "https://alkometriikka.fi/tuotteet/900031/",
+			"title": "Islay Mist Mufloni Stout Cask Finish — 39,49 € → 39,98 €",
+			"content_html": "<p>Tuotteen Islay Mist Mufloni Stout Cask Finish hinta on muuttunut.</p><p>39,49 € → 39,98 € (+0,49 €, +1,24 %).</p>",
+			"summary": "Tuotteen Islay Mist Mufloni Stout Cask Finish hinta on muuttunut. 39,49 € → 39,98 € (+0,49 €, +1,24 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900031-274d05e82b78.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

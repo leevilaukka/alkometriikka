@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Coquerel VS Calvados – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/000622/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Coquerel VS Calvados.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/000622.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Coquerel VS Calvados – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Coquerel VS Calvados — 20,13 € → 19,98 €</title>
+			<link>https://alkometriikka.fi/tuotteet/000622/</link>
+			<guid isPermaLink="false">alkometriikka-000622-2026-07-18-19.98</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / calvadosit</category>
+			<description><![CDATA[<p>Tuotteen Coquerel VS Calvados hinta on muuttunut.</p><p>20,13 € → 19,98 € (−0,15 €, −0,75 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/000622-9f37f248861c.png" />
+		</item>
+	</channel>
+</rss>

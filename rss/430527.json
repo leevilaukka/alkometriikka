@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château Beauséjour 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/430527/",
+	"feed_url": "https://alkometriikka.fi/rss/430527.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château Beauséjour 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-430527-2026-07-18-19.47",
+			"url": "https://alkometriikka.fi/tuotteet/430527/",
+			"title": "Château Beauséjour 2018 — 22,73 € → 19,47 €",
+			"content_html": "<p>Tuotteen Château Beauséjour 2018 hinta on muuttunut.</p><p>22,73 € → 19,47 € (−3,26 €, −14,34 %).</p>",
+			"summary": "Tuotteen Château Beauséjour 2018 hinta on muuttunut. 22,73 € → 19,47 € (−3,26 €, −14,34 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/430527-cf154545774c.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Villa Conchi Cava Blush Rosé Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/921037/",
+	"feed_url": "https://alkometriikka.fi/rss/921037.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Villa Conchi Cava Blush Rosé Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-921037-2026-07-18-16.98",
+			"url": "https://alkometriikka.fi/tuotteet/921037/",
+			"title": "Villa Conchi Cava Blush Rosé Brut — 16,94 € → 16,98 €",
+			"content_html": "<p>Tuotteen Villa Conchi Cava Blush Rosé Brut hinta on muuttunut.</p><p>16,94 € → 16,98 € (+0,04 €, +0,24 %).</p>",
+			"summary": "Tuotteen Villa Conchi Cava Blush Rosé Brut hinta on muuttunut. 16,94 € → 16,98 € (+0,04 €, +0,24 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/921037-8cae7b0d649d.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Bardinet VSOP muovipullo – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/111434/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Bardinet VSOP muovipullo.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/111434.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Bardinet VSOP muovipullo – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Bardinet VSOP muovipullo — 11,61 € → 11,51 €</title>
+			<link>https://alkometriikka.fi/tuotteet/111434/</link>
+			<guid isPermaLink="false">alkometriikka-111434-2026-02-02-11.51</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / brandyt</category>
+			<description><![CDATA[<p>Tuotteen Bardinet VSOP muovipullo hinta on muuttunut.</p><p>11,61 € → 11,51 € (−0,10 €, −0,86 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/111434-d00894c195df.png" />
+		</item>
+		<item>
+			<title>Bardinet VSOP muovipullo — 11,51 € → 11,61 €</title>
+			<link>https://alkometriikka.fi/tuotteet/111434/</link>
+			<guid isPermaLink="false">alkometriikka-111434-2026-02-02-11.61</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / brandyt</category>
+			<description><![CDATA[<p>Tuotteen Bardinet VSOP muovipullo hinta on muuttunut.</p><p>11,51 € → 11,61 € (+0,10 €, +0,87 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/111434-d00894c195df.png" />
+		</item>
+	</channel>
+</rss>

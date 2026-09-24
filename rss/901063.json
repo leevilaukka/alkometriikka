@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pure Nordic Distillery Dark Vodka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901063/",
+	"feed_url": "https://alkometriikka.fi/rss/901063.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pure Nordic Distillery Dark Vodka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901063-2026-07-18-4.49",
+			"url": "https://alkometriikka.fi/tuotteet/901063/",
+			"title": "Pure Nordic Distillery Dark Vodka — 4,11 € → 4,49 €",
+			"content_html": "<p>Tuotteen Pure Nordic Distillery Dark Vodka hinta on muuttunut.</p><p>4,11 € → 4,49 € (+0,38 €, +9,25 %).</p>",
+			"summary": "Tuotteen Pure Nordic Distillery Dark Vodka hinta on muuttunut. 4,11 € → 4,49 € (+0,38 €, +9,25 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901063-55aae339b691.png",
+			"tags": [
+				"Väkevät",
+				"maustetut vodkat"
+			]
+		}
+	]
+}

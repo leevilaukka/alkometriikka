@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mionetto 0,0% Alcohol Free Sparkling – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/942321/",
+	"feed_url": "https://alkometriikka.fi/rss/942321.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mionetto 0,0% Alcohol Free Sparkling.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-942321-2026-07-18-3.59",
+			"url": "https://alkometriikka.fi/tuotteet/942321/",
+			"title": "Mionetto 0,0% Alcohol Free Sparkling — 3,58 € → 3,59 €",
+			"content_html": "<p>Tuotteen Mionetto 0,0% Alcohol Free Sparkling hinta on muuttunut.</p><p>3,58 € → 3,59 € (+0,01 €, +0,28 %).</p>",
+			"summary": "Tuotteen Mionetto 0,0% Alcohol Free Sparkling hinta on muuttunut. 3,58 € → 3,59 € (+0,01 €, +0,28 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/942321-24bb02c81117.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat kuohuviinit"
+			]
+		}
+	]
+}

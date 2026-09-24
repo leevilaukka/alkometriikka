@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bladnoch Samsara Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/192177/",
+	"feed_url": "https://alkometriikka.fi/rss/192177.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bladnoch Samsara Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-192177-2026-07-18-99.98",
+			"url": "https://alkometriikka.fi/tuotteet/192177/",
+			"title": "Bladnoch Samsara Single Malt — 100,30 € → 99,98 €",
+			"content_html": "<p>Tuotteen Bladnoch Samsara Single Malt hinta on muuttunut.</p><p>100,30 € → 99,98 € (−0,32 €, −0,32 %).</p>",
+			"summary": "Tuotteen Bladnoch Samsara Single Malt hinta on muuttunut. 100,30 € → 99,98 € (−0,32 €, −0,32 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/192177-950e8e52ef1a.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

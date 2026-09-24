@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Domaine Franck Millet Sancerre 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/565157/",
+	"feed_url": "https://alkometriikka.fi/rss/565157.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Domaine Franck Millet Sancerre 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-565157-2026-07-18-29.98",
+			"url": "https://alkometriikka.fi/tuotteet/565157/",
+			"title": "Domaine Franck Millet Sancerre 2025 — 29,93 € → 29,98 €",
+			"content_html": "<p>Tuotteen Domaine Franck Millet Sancerre 2025 hinta on muuttunut.</p><p>29,93 € → 29,98 € (+0,05 €, +0,17 %).</p>",
+			"summary": "Tuotteen Domaine Franck Millet Sancerre 2025 hinta on muuttunut. 29,93 € → 29,98 € (+0,05 €, +0,17 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/565157-3bd89b23f0d2.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

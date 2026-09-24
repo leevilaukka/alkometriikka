@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mont-Ferrant Blanc de Blancs Cava Brut Nature – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/949742/",
+	"feed_url": "https://alkometriikka.fi/rss/949742.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mont-Ferrant Blanc de Blancs Cava Brut Nature.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-949742-2026-07-18-14.79",
+			"url": "https://alkometriikka.fi/tuotteet/949742/",
+			"title": "Mont-Ferrant Blanc de Blancs Cava Brut Nature — 14,42 € → 14,79 €",
+			"content_html": "<p>Tuotteen Mont-Ferrant Blanc de Blancs Cava Brut Nature hinta on muuttunut.</p><p>14,42 € → 14,79 € (+0,37 €, +2,57 %).</p>",
+			"summary": "Tuotteen Mont-Ferrant Blanc de Blancs Cava Brut Nature hinta on muuttunut. 14,42 € → 14,79 € (+0,37 €, +2,57 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/949742-6292fd7ac8ff.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

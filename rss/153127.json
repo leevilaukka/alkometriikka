@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Aberlour Double Cask Matured 12 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/153127/",
+	"feed_url": "https://alkometriikka.fi/rss/153127.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Aberlour Double Cask Matured 12 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-153127-2026-07-18-58.99",
+			"url": "https://alkometriikka.fi/tuotteet/153127/",
+			"title": "Aberlour Double Cask Matured 12 Year Old Single Malt — 58,27 € → 58,99 €",
+			"content_html": "<p>Tuotteen Aberlour Double Cask Matured 12 Year Old Single Malt hinta on muuttunut.</p><p>58,27 € → 58,99 € (+0,72 €, +1,24 %).</p>",
+			"summary": "Tuotteen Aberlour Double Cask Matured 12 Year Old Single Malt hinta on muuttunut. 58,27 € → 58,99 € (+0,72 €, +1,24 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/153127-4b903a0a5fd9.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

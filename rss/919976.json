@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Fiorente Elderflower – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/919976/",
+	"feed_url": "https://alkometriikka.fi/rss/919976.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Fiorente Elderflower.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-919976-2026-07-18-25.9",
+			"url": "https://alkometriikka.fi/tuotteet/919976/",
+			"title": "Fiorente Elderflower — 24,98 € → 25,90 €",
+			"content_html": "<p>Tuotteen Fiorente Elderflower hinta on muuttunut.</p><p>24,98 € → 25,90 € (+0,92 €, +3,68 %).</p>",
+			"summary": "Tuotteen Fiorente Elderflower hinta on muuttunut. 24,98 € → 25,90 € (+0,92 €, +3,68 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/919976-5c8a7fcc2fa5.png",
+			"tags": [
+				"Väkevät",
+				"mausteliköörit"
+			]
+		}
+	]
+}

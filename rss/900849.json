@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Wine & Soul Guru 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900849/",
+	"feed_url": "https://alkometriikka.fi/rss/900849.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Wine & Soul Guru 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900849-2026-07-18-48.65",
+			"url": "https://alkometriikka.fi/tuotteet/900849/",
+			"title": "Wine & Soul Guru 2023 — 47,22 € → 48,65 €",
+			"content_html": "<p>Tuotteen Wine & Soul Guru 2023 hinta on muuttunut.</p><p>47,22 € → 48,65 € (+1,43 €, +3,03 %).</p>",
+			"summary": "Tuotteen Wine & Soul Guru 2023 hinta on muuttunut. 47,22 € → 48,65 € (+1,43 €, +3,03 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900849-b18e8dfaf15d.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

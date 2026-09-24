@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Fidora Monte Tabor Valpolicella Ripasso 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/927001/",
+	"feed_url": "https://alkometriikka.fi/rss/927001.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Fidora Monte Tabor Valpolicella Ripasso 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-927001-2026-07-18-25.99",
+			"url": "https://alkometriikka.fi/tuotteet/927001/",
+			"title": "Fidora Monte Tabor Valpolicella Ripasso 2020 — 25,45 € → 25,99 €",
+			"content_html": "<p>Tuotteen Fidora Monte Tabor Valpolicella Ripasso 2020 hinta on muuttunut.</p><p>25,45 € → 25,99 € (+0,54 €, +2,12 %).</p>",
+			"summary": "Tuotteen Fidora Monte Tabor Valpolicella Ripasso 2020 hinta on muuttunut. 25,45 € → 25,99 € (+0,54 €, +2,12 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/927001-0581b77f59f8.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Coma Vella 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/430407/",
+	"feed_url": "https://alkometriikka.fi/rss/430407.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Coma Vella 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-430407-2026-07-18-39.99",
+			"url": "https://alkometriikka.fi/tuotteet/430407/",
+			"title": "Coma Vella 2018 — 40,14 € → 39,99 €",
+			"content_html": "<p>Tuotteen Coma Vella 2018 hinta on muuttunut.</p><p>40,14 € → 39,99 € (−0,15 €, −0,37 %).</p>",
+			"summary": "Tuotteen Coma Vella 2018 hinta on muuttunut. 40,14 € → 39,99 € (−0,15 €, −0,37 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/430407-240b82c1b428.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

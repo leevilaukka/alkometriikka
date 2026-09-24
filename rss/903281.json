@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Puolustuslaitos Punaviiniä 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903281/",
+	"feed_url": "https://alkometriikka.fi/rss/903281.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Puolustuslaitos Punaviiniä 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903281-2026-07-18-15.49",
+			"url": "https://alkometriikka.fi/tuotteet/903281/",
+			"title": "Puolustuslaitos Punaviiniä 2020 — 15,45 € → 15,49 €",
+			"content_html": "<p>Tuotteen Puolustuslaitos Punaviiniä 2020 hinta on muuttunut.</p><p>15,45 € → 15,49 € (+0,04 €, +0,26 %).</p>",
+			"summary": "Tuotteen Puolustuslaitos Punaviiniä 2020 hinta on muuttunut. 15,45 € → 15,49 € (+0,04 €, +0,26 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903281-335c8019fa8b.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

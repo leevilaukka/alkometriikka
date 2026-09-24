@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jameson Caskmates Stout Edition – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/126447/",
+	"feed_url": "https://alkometriikka.fi/rss/126447.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jameson Caskmates Stout Edition.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-126447-2026-07-18-44.58",
+			"url": "https://alkometriikka.fi/tuotteet/126447/",
+			"title": "Jameson Caskmates Stout Edition — 44,56 € → 44,58 €",
+			"content_html": "<p>Tuotteen Jameson Caskmates Stout Edition hinta on muuttunut.</p><p>44,56 € → 44,58 € (+0,02 €, +0,04 %).</p>",
+			"summary": "Tuotteen Jameson Caskmates Stout Edition hinta on muuttunut. 44,56 € → 44,58 € (+0,02 €, +0,04 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/126447-8fa613aa81d8.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Cono Sur Organic Pinot Noir 2022 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/901681/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Cono Sur Organic Pinot Noir 2022.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/901681.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Cono Sur Organic Pinot Noir 2022 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Cono Sur Organic Pinot Noir 2022 — 13,46 € → 13,36 €</title>
+			<link>https://alkometriikka.fi/tuotteet/901681/</link>
+			<guid isPermaLink="false">alkometriikka-901681-2026-02-02-13.36</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>punaviinit / Marjaisa &amp; Raikas</category>
+			<description><![CDATA[<p>Tuotteen Cono Sur Organic Pinot Noir 2022 hinta on muuttunut.</p><p>13,46 € → 13,36 € (−0,10 €, −0,74 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/901681-46a808ca0ec0.png" />
+		</item>
+		<item>
+			<title>Cono Sur Organic Pinot Noir 2022 — 13,36 € → 13,46 €</title>
+			<link>https://alkometriikka.fi/tuotteet/901681/</link>
+			<guid isPermaLink="false">alkometriikka-901681-2026-02-02-13.46</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>punaviinit / Marjaisa &amp; Raikas</category>
+			<description><![CDATA[<p>Tuotteen Cono Sur Organic Pinot Noir 2022 hinta on muuttunut.</p><p>13,36 € → 13,46 € (+0,10 €, +0,75 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/901681-46a808ca0ec0.png" />
+		</item>
+	</channel>
+</rss>

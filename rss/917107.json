@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Elit Vodka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/917107/",
+	"feed_url": "https://alkometriikka.fi/rss/917107.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Elit Vodka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-917107-2026-07-18-59.99",
+			"url": "https://alkometriikka.fi/tuotteet/917107/",
+			"title": "Elit Vodka — 60,20 € → 59,99 €",
+			"content_html": "<p>Tuotteen Elit Vodka hinta on muuttunut.</p><p>60,20 € → 59,99 € (−0,21 €, −0,35 %).</p>",
+			"summary": "Tuotteen Elit Vodka hinta on muuttunut. 60,20 € → 59,99 € (−0,21 €, −0,35 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/917107-47fbacfbaf8b.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – La Cruz Spiced muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/110336/",
+	"feed_url": "https://alkometriikka.fi/rss/110336.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: La Cruz Spiced muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-110336-2026-07-18-18.98",
+			"url": "https://alkometriikka.fi/tuotteet/110336/",
+			"title": "La Cruz Spiced muovipullo — 19,14 € → 18,98 €",
+			"content_html": "<p>Tuotteen La Cruz Spiced muovipullo hinta on muuttunut.</p><p>19,14 € → 18,98 € (−0,16 €, −0,84 %).</p>",
+			"summary": "Tuotteen La Cruz Spiced muovipullo hinta on muuttunut. 19,14 € → 18,98 € (−0,16 €, −0,84 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/110336-4094d298c547.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

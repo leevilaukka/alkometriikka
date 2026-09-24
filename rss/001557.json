@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Seagram's VO – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/001557/",
+	"feed_url": "https://alkometriikka.fi/rss/001557.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Seagram's VO.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-001557-2026-02-02-30.1",
+			"url": "https://alkometriikka.fi/tuotteet/001557/",
+			"title": "Seagram's VO — 30,20 € → 30,10 €",
+			"content_html": "<p>Tuotteen Seagram's VO hinta on muuttunut.</p><p>30,20 € → 30,10 € (−0,10 €, −0,33 %).</p>",
+			"summary": "Tuotteen Seagram's VO hinta on muuttunut. 30,20 € → 30,10 € (−0,10 €, −0,33 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/001557-049f3b4c2ba7.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		},
+		{
+			"id": "alkometriikka-001557-2026-02-02-30.2",
+			"url": "https://alkometriikka.fi/tuotteet/001557/",
+			"title": "Seagram's VO — 30,10 € → 30,20 €",
+			"content_html": "<p>Tuotteen Seagram's VO hinta on muuttunut.</p><p>30,10 € → 30,20 € (+0,10 €, +0,33 %).</p>",
+			"summary": "Tuotteen Seagram's VO hinta on muuttunut. 30,10 € → 30,20 € (+0,10 €, +0,33 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/001557-049f3b4c2ba7.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

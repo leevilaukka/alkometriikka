@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Provetto Spumante Rosato Secco – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901946/",
+	"feed_url": "https://alkometriikka.fi/rss/901946.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Provetto Spumante Rosato Secco.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901946-2026-02-02-9.88",
+			"url": "https://alkometriikka.fi/tuotteet/901946/",
+			"title": "Provetto Spumante Rosato Secco — 9,98 € → 9,88 €",
+			"content_html": "<p>Tuotteen Provetto Spumante Rosato Secco hinta on muuttunut.</p><p>9,98 € → 9,88 € (−0,10 €, −1,00 %).</p>",
+			"summary": "Tuotteen Provetto Spumante Rosato Secco hinta on muuttunut. 9,98 € → 9,88 € (−0,10 €, −1,00 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901946-ae2216dda1bc.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-901946-2026-02-02-9.98",
+			"url": "https://alkometriikka.fi/tuotteet/901946/",
+			"title": "Provetto Spumante Rosato Secco — 9,88 € → 9,98 €",
+			"content_html": "<p>Tuotteen Provetto Spumante Rosato Secco hinta on muuttunut.</p><p>9,88 € → 9,98 € (+0,10 €, +1,01 %).</p>",
+			"summary": "Tuotteen Provetto Spumante Rosato Secco hinta on muuttunut. 9,88 € → 9,98 € (+0,10 €, +1,01 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901946-ae2216dda1bc.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

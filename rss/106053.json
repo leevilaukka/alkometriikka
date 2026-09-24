@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Captain Morgan Original Spiced Gold – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/106053/",
+	"feed_url": "https://alkometriikka.fi/rss/106053.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Captain Morgan Original Spiced Gold.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-106053-2026-07-18-12.59",
+			"url": "https://alkometriikka.fi/tuotteet/106053/",
+			"title": "Captain Morgan Original Spiced Gold — 12,55 € → 12,59 €",
+			"content_html": "<p>Tuotteen Captain Morgan Original Spiced Gold hinta on muuttunut.</p><p>12,55 € → 12,59 € (+0,04 €, +0,32 %).</p>",
+			"summary": "Tuotteen Captain Morgan Original Spiced Gold hinta on muuttunut. 12,55 € → 12,59 € (+0,04 €, +0,32 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/106053-5f8dc48a6a56.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

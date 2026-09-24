@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Strip Joint 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901091/",
+	"feed_url": "https://alkometriikka.fi/rss/901091.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Strip Joint 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901091-2026-07-18-17.98",
+			"url": "https://alkometriikka.fi/tuotteet/901091/",
+			"title": "Strip Joint 2024 — 16,45 € → 17,98 €",
+			"content_html": "<p>Tuotteen Strip Joint 2024 hinta on muuttunut.</p><p>16,45 € → 17,98 € (+1,53 €, +9,30 %).</p>",
+			"summary": "Tuotteen Strip Joint 2024 hinta on muuttunut. 16,45 € → 17,98 € (+1,53 €, +9,30 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901091-591e342d0d39.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

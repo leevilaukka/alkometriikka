@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pühaste Dekadents Imperial Stout tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/945968/",
+	"feed_url": "https://alkometriikka.fi/rss/945968.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pühaste Dekadents Imperial Stout tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-945968-2026-07-18-6.98",
+			"url": "https://alkometriikka.fi/tuotteet/945968/",
+			"title": "Pühaste Dekadents Imperial Stout tölkki — 6,99 € → 6,98 €",
+			"content_html": "<p>Tuotteen Pühaste Dekadents Imperial Stout tölkki hinta on muuttunut.</p><p>6,99 € → 6,98 € (−0,01 €, −0,14 %).</p>",
+			"summary": "Tuotteen Pühaste Dekadents Imperial Stout tölkki hinta on muuttunut. 6,99 € → 6,98 € (−0,01 €, −0,14 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/945968-266a61ad87fa.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Boulard Grand Solage Calvados – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/000453/",
+	"feed_url": "https://alkometriikka.fi/rss/000453.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Boulard Grand Solage Calvados.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-000453-2026-07-18-29.98",
+			"url": "https://alkometriikka.fi/tuotteet/000453/",
+			"title": "Boulard Grand Solage Calvados — 29,59 € → 29,98 €",
+			"content_html": "<p>Tuotteen Boulard Grand Solage Calvados hinta on muuttunut.</p><p>29,59 € → 29,98 € (+0,39 €, +1,32 %).</p>",
+			"summary": "Tuotteen Boulard Grand Solage Calvados hinta on muuttunut. 29,59 € → 29,98 € (+0,39 €, +1,32 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/000453-3570899f0ec3.png",
+			"tags": [
+				"Väkevät",
+				"calvadosit"
+			]
+		}
+	]
+}

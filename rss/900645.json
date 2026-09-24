@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Balvenie 25 Year Old – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900645/",
+	"feed_url": "https://alkometriikka.fi/rss/900645.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Balvenie 25 Year Old.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900645-2026-07-18-899.95",
+			"url": "https://alkometriikka.fi/tuotteet/900645/",
+			"title": "The Balvenie 25 Year Old — 899,78 € → 899,95 €",
+			"content_html": "<p>Tuotteen The Balvenie 25 Year Old hinta on muuttunut.</p><p>899,78 € → 899,95 € (+0,17 €, +0,02 %).</p>",
+			"summary": "Tuotteen The Balvenie 25 Year Old hinta on muuttunut. 899,78 € → 899,95 € (+0,17 €, +0,02 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900645-28d607ec0a73.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

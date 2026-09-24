@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Krug Grande Cuvée 173ème Édition Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/533257/",
+	"feed_url": "https://alkometriikka.fi/rss/533257.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Krug Grande Cuvée 173ème Édition Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-533257-2026-07-18-309.99",
+			"url": "https://alkometriikka.fi/tuotteet/533257/",
+			"title": "Krug Grande Cuvée 173ème Édition Champagne Brut — 305,46 € → 309,99 €",
+			"content_html": "<p>Tuotteen Krug Grande Cuvée 173ème Édition Champagne Brut hinta on muuttunut.</p><p>305,46 € → 309,99 € (+4,53 €, +1,48 %).</p>",
+			"summary": "Tuotteen Krug Grande Cuvée 173ème Édition Champagne Brut hinta on muuttunut. 305,46 € → 309,99 € (+4,53 €, +1,48 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/533257-42399453f978.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

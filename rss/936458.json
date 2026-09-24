@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bollinger Spécial Cuvée Magnum Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/936458/",
+	"feed_url": "https://alkometriikka.fi/rss/936458.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bollinger Spécial Cuvée Magnum Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-936458-2026-07-18-174.99",
+			"url": "https://alkometriikka.fi/tuotteet/936458/",
+			"title": "Bollinger Spécial Cuvée Magnum Champagne Brut — 173,29 € → 174,99 €",
+			"content_html": "<p>Tuotteen Bollinger Spécial Cuvée Magnum Champagne Brut hinta on muuttunut.</p><p>173,29 € → 174,99 € (+1,70 €, +0,98 %).</p>",
+			"summary": "Tuotteen Bollinger Spécial Cuvée Magnum Champagne Brut hinta on muuttunut. 173,29 € → 174,99 € (+1,70 €, +0,98 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/936458-c10367669755.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

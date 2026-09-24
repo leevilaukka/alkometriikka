@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Fever-Tree Ginger Beer – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/750013/",
+	"feed_url": "https://alkometriikka.fi/rss/750013.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Fever-Tree Ginger Beer.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-750013-2026-07-18-2.45",
+			"url": "https://alkometriikka.fi/tuotteet/750013/",
+			"title": "Fever-Tree Ginger Beer — 2,38 € → 2,45 €",
+			"content_html": "<p>Tuotteen Fever-Tree Ginger Beer hinta on muuttunut.</p><p>2,38 € → 2,45 € (+0,07 €, +2,94 %).</p>",
+			"summary": "Tuotteen Fever-Tree Ginger Beer hinta on muuttunut. 2,38 € → 2,45 € (+0,07 €, +2,94 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/750013-5ce28c7c4eda.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

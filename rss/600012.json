@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mionetto Alcohol Free Rosé – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/600012/",
+	"feed_url": "https://alkometriikka.fi/rss/600012.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mionetto Alcohol Free Rosé.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-600012-2026-07-18-6.99",
+			"url": "https://alkometriikka.fi/tuotteet/600012/",
+			"title": "Mionetto Alcohol Free Rosé — 6,96 € → 6,99 €",
+			"content_html": "<p>Tuotteen Mionetto Alcohol Free Rosé hinta on muuttunut.</p><p>6,96 € → 6,99 € (+0,03 €, +0,43 %).</p>",
+			"summary": "Tuotteen Mionetto Alcohol Free Rosé hinta on muuttunut. 6,96 € → 6,99 € (+0,03 €, +0,43 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600012-f3f920976b13.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat kuohuviinit"
+			]
+		}
+	]
+}

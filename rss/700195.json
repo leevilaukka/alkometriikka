@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Suomenlinnan Thor NEIPA tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/700195/",
+	"feed_url": "https://alkometriikka.fi/rss/700195.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Suomenlinnan Thor NEIPA tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-700195-2026-07-18-4.39",
+			"url": "https://alkometriikka.fi/tuotteet/700195/",
+			"title": "Suomenlinnan Thor NEIPA tölkki — 5,49 € → 4,39 €",
+			"content_html": "<p>Tuotteen Suomenlinnan Thor NEIPA tölkki hinta on muuttunut.</p><p>5,49 € → 4,39 € (−1,10 €, −20,04 %).</p>",
+			"summary": "Tuotteen Suomenlinnan Thor NEIPA tölkki hinta on muuttunut. 5,49 € → 4,39 € (−1,10 €, −20,04 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/700195-61eedf4231e8.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

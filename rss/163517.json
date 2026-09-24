@@ -1,0 +1,50 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Monopol VS – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/163517/",
+	"feed_url": "https://alkometriikka.fi/rss/163517.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Monopol VS.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-163517-2026-07-18-39.48",
+			"url": "https://alkometriikka.fi/tuotteet/163517/",
+			"title": "Monopol VS — 39,26 € → 39,48 €",
+			"content_html": "<p>Tuotteen Monopol VS hinta on muuttunut.</p><p>39,26 € → 39,48 € (+0,22 €, +0,56 %).</p>",
+			"summary": "Tuotteen Monopol VS hinta on muuttunut. 39,26 € → 39,48 € (+0,22 €, +0,56 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/163517-5330381df209.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		},
+		{
+			"id": "alkometriikka-163517-2026-02-02-39.16",
+			"url": "https://alkometriikka.fi/tuotteet/163517/",
+			"title": "Monopol VS — 39,26 € → 39,16 €",
+			"content_html": "<p>Tuotteen Monopol VS hinta on muuttunut.</p><p>39,26 € → 39,16 € (−0,10 €, −0,25 %).</p>",
+			"summary": "Tuotteen Monopol VS hinta on muuttunut. 39,26 € → 39,16 € (−0,10 €, −0,25 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/163517-5330381df209.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		},
+		{
+			"id": "alkometriikka-163517-2026-02-02-39.26",
+			"url": "https://alkometriikka.fi/tuotteet/163517/",
+			"title": "Monopol VS — 39,16 € → 39,26 €",
+			"content_html": "<p>Tuotteen Monopol VS hinta on muuttunut.</p><p>39,16 € → 39,26 € (+0,10 €, +0,26 %).</p>",
+			"summary": "Tuotteen Monopol VS hinta on muuttunut. 39,16 € → 39,26 € (+0,10 €, +0,26 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/163517-5330381df209.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

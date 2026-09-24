@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glen Moray Port Cask Finish Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/910617/",
+	"feed_url": "https://alkometriikka.fi/rss/910617.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glen Moray Port Cask Finish Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-910617-2026-07-18-38.98",
+			"url": "https://alkometriikka.fi/tuotteet/910617/",
+			"title": "Glen Moray Port Cask Finish Single Malt — 38,96 € → 38,98 €",
+			"content_html": "<p>Tuotteen Glen Moray Port Cask Finish Single Malt hinta on muuttunut.</p><p>38,96 € → 38,98 € (+0,02 €, +0,05 %).</p>",
+			"summary": "Tuotteen Glen Moray Port Cask Finish Single Malt hinta on muuttunut. 38,96 € → 38,98 € (+0,02 €, +0,05 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/910617-c798e0b94317.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

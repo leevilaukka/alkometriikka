@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Casa Burti Flûte Dolce – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/008733/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Casa Burti Flûte Dolce.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/008733.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Casa Burti Flûte Dolce – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Casa Burti Flûte Dolce — 11,39 € → 11,29 €</title>
+			<link>https://alkometriikka.fi/tuotteet/008733/</link>
+			<guid isPermaLink="false">alkometriikka-008733-2026-02-02-11.29</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / kuohuviinit ja samppanjat</category>
+			<description><![CDATA[<p>Tuotteen Casa Burti Flûte Dolce hinta on muuttunut.</p><p>11,39 € → 11,29 € (−0,10 €, −0,88 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/008733-083976d42db2.png" />
+		</item>
+		<item>
+			<title>Casa Burti Flûte Dolce — 11,29 € → 11,39 €</title>
+			<link>https://alkometriikka.fi/tuotteet/008733/</link>
+			<guid isPermaLink="false">alkometriikka-008733-2026-02-02-11.39</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / kuohuviinit ja samppanjat</category>
+			<description><![CDATA[<p>Tuotteen Casa Burti Flûte Dolce hinta on muuttunut.</p><p>11,29 € → 11,39 € (+0,10 €, +0,89 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/008733-083976d42db2.png" />
+		</item>
+	</channel>
+</rss>

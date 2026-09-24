@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Sauska Rosé 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/452337/",
+	"feed_url": "https://alkometriikka.fi/rss/452337.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Sauska Rosé 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-452337-2026-07-18-16.49",
+			"url": "https://alkometriikka.fi/tuotteet/452337/",
+			"title": "Sauska Rosé 2023 — 16,45 € → 16,49 €",
+			"content_html": "<p>Tuotteen Sauska Rosé 2023 hinta on muuttunut.</p><p>16,45 € → 16,49 € (+0,04 €, +0,24 %).</p>",
+			"summary": "Tuotteen Sauska Rosé 2023 hinta on muuttunut. 16,45 € → 16,49 € (+0,04 €, +0,24 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/452337-8edfeae21fbf.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

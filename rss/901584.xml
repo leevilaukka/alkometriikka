@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – The Fifth Quarter Vinho Verde 2025 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/901584/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: The Fifth Quarter Vinho Verde 2025.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/901584.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – The Fifth Quarter Vinho Verde 2025 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>The Fifth Quarter Vinho Verde 2025 — 13,45 € → 12,98 €</title>
+			<link>https://alkometriikka.fi/tuotteet/901584/</link>
+			<guid isPermaLink="false">alkometriikka-901584-2026-07-18-12.98</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / valkoviinit</category>
+			<description><![CDATA[<p>Tuotteen The Fifth Quarter Vinho Verde 2025 hinta on muuttunut.</p><p>13,45 € → 12,98 € (−0,47 €, −3,49 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/901584-70c761d51b8c.png" />
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Churchill Reserve Port – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/308083/",
+	"feed_url": "https://alkometriikka.fi/rss/308083.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Churchill Reserve Port.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-308083-2026-07-18-11.29",
+			"url": "https://alkometriikka.fi/tuotteet/308083/",
+			"title": "Churchill Reserve Port — 11,22 € → 11,29 €",
+			"content_html": "<p>Tuotteen Churchill Reserve Port hinta on muuttunut.</p><p>11,22 € → 11,29 € (+0,07 €, +0,62 %).</p>",
+			"summary": "Tuotteen Churchill Reserve Port hinta on muuttunut. 11,22 € → 11,29 € (+0,07 €, +0,62 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/308083-f23007032ad1.png",
+			"tags": [
+				"Välituotteet",
+				"portviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kronenbourg 1664 Blanc 0,0% – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/761984/",
+	"feed_url": "https://alkometriikka.fi/rss/761984.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kronenbourg 1664 Blanc 0,0%.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-761984-2026-09-04-1.79",
+			"url": "https://alkometriikka.fi/tuotteet/761984/",
+			"title": "Kronenbourg 1664 Blanc 0,0% — 1,99 € → 1,79 €",
+			"content_html": "<p>Tuotteen Kronenbourg 1664 Blanc 0,0% hinta on muuttunut.</p><p>1,99 € → 1,79 € (−0,20 €, −10,05 %).</p>",
+			"summary": "Tuotteen Kronenbourg 1664 Blanc 0,0% hinta on muuttunut. 1,99 € → 1,79 € (−0,20 €, −10,05 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/761984-aff378052ff5.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-761984-2026-07-18-1.99",
+			"url": "https://alkometriikka.fi/tuotteet/761984/",
+			"title": "Kronenbourg 1664 Blanc 0,0% — 1,98 € → 1,99 €",
+			"content_html": "<p>Tuotteen Kronenbourg 1664 Blanc 0,0% hinta on muuttunut.</p><p>1,98 € → 1,99 € (+0,01 €, +0,51 %).</p>",
+			"summary": "Tuotteen Kronenbourg 1664 Blanc 0,0% hinta on muuttunut. 1,98 € → 1,99 € (+0,01 €, +0,51 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/761984-aff378052ff5.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

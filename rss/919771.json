@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Philippe Pacalet Corton Bressandes Grand Cru 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/919771/",
+	"feed_url": "https://alkometriikka.fi/rss/919771.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Philippe Pacalet Corton Bressandes Grand Cru 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-919771-2026-07-18-399.9",
+			"url": "https://alkometriikka.fi/tuotteet/919771/",
+			"title": "Philippe Pacalet Corton Bressandes Grand Cru 2019 — 400,45 € → 399,90 €",
+			"content_html": "<p>Tuotteen Philippe Pacalet Corton Bressandes Grand Cru 2019 hinta on muuttunut.</p><p>400,45 € → 399,90 € (−0,55 €, −0,14 %).</p>",
+			"summary": "Tuotteen Philippe Pacalet Corton Bressandes Grand Cru 2019 hinta on muuttunut. 400,45 € → 399,90 € (−0,55 €, −0,14 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/919771-4a722b83a280.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

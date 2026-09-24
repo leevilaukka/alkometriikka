@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Codorníu Tempranillo Organic – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/948396/",
+	"feed_url": "https://alkometriikka.fi/rss/948396.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Codorníu Tempranillo Organic.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-948396-2026-07-18-12.99",
+			"url": "https://alkometriikka.fi/tuotteet/948396/",
+			"title": "Codorníu Tempranillo Organic — 13,15 € → 12,99 €",
+			"content_html": "<p>Tuotteen Codorníu Tempranillo Organic hinta on muuttunut.</p><p>13,15 € → 12,99 € (−0,16 €, −1,22 %).</p>",
+			"summary": "Tuotteen Codorníu Tempranillo Organic hinta on muuttunut. 13,15 € → 12,99 € (−0,16 €, −1,22 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/948396-8dd7e7be27b4.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

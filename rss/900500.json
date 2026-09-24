@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Freixenet French Royal Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900500/",
+	"feed_url": "https://alkometriikka.fi/rss/900500.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Freixenet French Royal Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900500-2026-07-18-13.98",
+			"url": "https://alkometriikka.fi/tuotteet/900500/",
+			"title": "Freixenet French Royal Brut — 14,48 € → 13,98 €",
+			"content_html": "<p>Tuotteen Freixenet French Royal Brut hinta on muuttunut.</p><p>14,48 € → 13,98 € (−0,50 €, −3,45 %).</p>",
+			"summary": "Tuotteen Freixenet French Royal Brut hinta on muuttunut. 14,48 € → 13,98 € (−0,50 €, −3,45 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900500-cc9e5199c566.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

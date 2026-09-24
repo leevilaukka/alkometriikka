@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kaiken Cabernet Sauvignon 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/927447/",
+	"feed_url": "https://alkometriikka.fi/rss/927447.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kaiken Cabernet Sauvignon 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-927447-2026-07-18-13.98",
+			"url": "https://alkometriikka.fi/tuotteet/927447/",
+			"title": "Kaiken Cabernet Sauvignon 2023 — 13,90 € → 13,98 €",
+			"content_html": "<p>Tuotteen Kaiken Cabernet Sauvignon 2023 hinta on muuttunut.</p><p>13,90 € → 13,98 € (+0,08 €, +0,58 %).</p>",
+			"summary": "Tuotteen Kaiken Cabernet Sauvignon 2023 hinta on muuttunut. 13,90 € → 13,98 € (+0,08 €, +0,58 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/927447-5acbf0d6bf9d.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

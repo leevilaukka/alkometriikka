@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cantina Terlan Terlaner Cuvée 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/959521/",
+	"feed_url": "https://alkometriikka.fi/rss/959521.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cantina Terlan Terlaner Cuvée 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-959521-2026-07-18-31.72",
+			"url": "https://alkometriikka.fi/tuotteet/959521/",
+			"title": "Cantina Terlan Terlaner Cuvée 2024 — 32,65 € → 31,72 €",
+			"content_html": "<p>Tuotteen Cantina Terlan Terlaner Cuvée 2024 hinta on muuttunut.</p><p>32,65 € → 31,72 € (−0,93 €, −2,85 %).</p>",
+			"summary": "Tuotteen Cantina Terlan Terlaner Cuvée 2024 hinta on muuttunut. 32,65 € → 31,72 € (−0,93 €, −2,85 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/959521-5efc2ecff54f.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

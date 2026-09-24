@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bacardi Carta Negra – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/143007/",
+	"feed_url": "https://alkometriikka.fi/rss/143007.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bacardi Carta Negra.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-143007-2026-07-18-29.99",
+			"url": "https://alkometriikka.fi/tuotteet/143007/",
+			"title": "Bacardi Carta Negra — 30,26 € → 29,99 €",
+			"content_html": "<p>Tuotteen Bacardi Carta Negra hinta on muuttunut.</p><p>30,26 € → 29,99 € (−0,27 €, −0,89 %).</p>",
+			"summary": "Tuotteen Bacardi Carta Negra hinta on muuttunut. 30,26 € → 29,99 € (−0,27 €, −0,89 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/143007-c5e739fd7c02.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Torres 10 Reserva Imperial – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/001162/",
+	"feed_url": "https://alkometriikka.fi/rss/001162.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Torres 10 Reserva Imperial.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-001162-2026-07-18-28.49",
+			"url": "https://alkometriikka.fi/tuotteet/001162/",
+			"title": "Torres 10 Reserva Imperial — 28,15 € → 28,49 €",
+			"content_html": "<p>Tuotteen Torres 10 Reserva Imperial hinta on muuttunut.</p><p>28,15 € → 28,49 € (+0,34 €, +1,21 %).</p>",
+			"summary": "Tuotteen Torres 10 Reserva Imperial hinta on muuttunut. 28,15 € → 28,49 € (+0,34 €, +1,21 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/001162-69374ff71156.png",
+			"tags": [
+				"Väkevät",
+				"brandyt"
+			]
+		}
+	]
+}

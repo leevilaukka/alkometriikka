@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tenuta La Fuga Brunello di Montalcino 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/957872/",
+	"feed_url": "https://alkometriikka.fi/rss/957872.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tenuta La Fuga Brunello di Montalcino 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-957872-2026-07-18-64.5",
+			"url": "https://alkometriikka.fi/tuotteet/957872/",
+			"title": "Tenuta La Fuga Brunello di Montalcino 2019 — 68,25 € → 64,50 €",
+			"content_html": "<p>Tuotteen Tenuta La Fuga Brunello di Montalcino 2019 hinta on muuttunut.</p><p>68,25 € → 64,50 € (−3,75 €, −5,49 %).</p>",
+			"summary": "Tuotteen Tenuta La Fuga Brunello di Montalcino 2019 hinta on muuttunut. 68,25 € → 64,50 € (−3,75 €, −5,49 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/957872-404cb3754140.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

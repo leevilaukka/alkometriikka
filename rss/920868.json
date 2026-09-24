@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ciroc Vodka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/920868/",
+	"feed_url": "https://alkometriikka.fi/rss/920868.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ciroc Vodka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-920868-2026-07-18-332.48",
+			"url": "https://alkometriikka.fi/tuotteet/920868/",
+			"title": "Ciroc Vodka — 332,10 € → 332,48 €",
+			"content_html": "<p>Tuotteen Ciroc Vodka hinta on muuttunut.</p><p>332,10 € → 332,48 € (+0,38 €, +0,11 %).</p>",
+			"summary": "Tuotteen Ciroc Vodka hinta on muuttunut. 332,10 € → 332,48 € (+0,38 €, +0,11 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/920868-b278cd6892a3.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

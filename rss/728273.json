@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pettersson & Munthe Sparkling Tea tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/728273/",
+	"feed_url": "https://alkometriikka.fi/rss/728273.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pettersson & Munthe Sparkling Tea tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-728273-2026-07-18-3.69",
+			"url": "https://alkometriikka.fi/tuotteet/728273/",
+			"title": "Pettersson & Munthe Sparkling Tea tölkki — 3,68 € → 3,69 €",
+			"content_html": "<p>Tuotteen Pettersson & Munthe Sparkling Tea tölkki hinta on muuttunut.</p><p>3,68 € → 3,69 € (+0,01 €, +0,27 %).</p>",
+			"summary": "Tuotteen Pettersson & Munthe Sparkling Tea tölkki hinta on muuttunut. 3,68 € → 3,69 € (+0,01 €, +0,27 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/728273-a856118fda9c.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

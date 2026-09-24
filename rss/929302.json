@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – E. Guigal Tavel 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/929302/",
+	"feed_url": "https://alkometriikka.fi/rss/929302.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: E. Guigal Tavel 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-929302-2026-07-18-22.49",
+			"url": "https://alkometriikka.fi/tuotteet/929302/",
+			"title": "E. Guigal Tavel 2024 — 22,24 € → 22,49 €",
+			"content_html": "<p>Tuotteen E. Guigal Tavel 2024 hinta on muuttunut.</p><p>22,24 € → 22,49 € (+0,25 €, +1,12 %).</p>",
+			"summary": "Tuotteen E. Guigal Tavel 2024 hinta on muuttunut. 22,24 € → 22,49 € (+0,25 €, +1,12 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/929302-b856401cb422.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

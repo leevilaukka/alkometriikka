@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Villa Huesgen Riesling By The Glass 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/931747/",
+	"feed_url": "https://alkometriikka.fi/rss/931747.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Villa Huesgen Riesling By The Glass 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-931747-2026-02-02-16.18",
+			"url": "https://alkometriikka.fi/tuotteet/931747/",
+			"title": "Villa Huesgen Riesling By The Glass 2021 — 16,28 € → 16,18 €",
+			"content_html": "<p>Tuotteen Villa Huesgen Riesling By The Glass 2021 hinta on muuttunut.</p><p>16,28 € → 16,18 € (−0,10 €, −0,61 %).</p>",
+			"summary": "Tuotteen Villa Huesgen Riesling By The Glass 2021 hinta on muuttunut. 16,28 € → 16,18 € (−0,10 €, −0,61 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/931747-639c93eb0ecd.png",
+			"tags": [
+				"valkoviinit",
+				"Pirteä & Hedelmäinen"
+			]
+		},
+		{
+			"id": "alkometriikka-931747-2026-02-02-16.28",
+			"url": "https://alkometriikka.fi/tuotteet/931747/",
+			"title": "Villa Huesgen Riesling By The Glass 2021 — 16,18 € → 16,28 €",
+			"content_html": "<p>Tuotteen Villa Huesgen Riesling By The Glass 2021 hinta on muuttunut.</p><p>16,18 € → 16,28 € (+0,10 €, +0,62 %).</p>",
+			"summary": "Tuotteen Villa Huesgen Riesling By The Glass 2021 hinta on muuttunut. 16,18 € → 16,28 € (+0,10 €, +0,62 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/931747-639c93eb0ecd.png",
+			"tags": [
+				"valkoviinit",
+				"Pirteä & Hedelmäinen"
+			]
+		}
+	]
+}

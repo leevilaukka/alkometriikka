@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Barth Riesling Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/939537/",
+	"feed_url": "https://alkometriikka.fi/rss/939537.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Barth Riesling Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-939537-2026-07-18-28.99",
+			"url": "https://alkometriikka.fi/tuotteet/939537/",
+			"title": "Barth Riesling Brut — 28,45 € → 28,99 €",
+			"content_html": "<p>Tuotteen Barth Riesling Brut hinta on muuttunut.</p><p>28,45 € → 28,99 € (+0,54 €, +1,90 %).</p>",
+			"summary": "Tuotteen Barth Riesling Brut hinta on muuttunut. 28,45 € → 28,99 € (+0,54 €, +1,90 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/939537-59bb127113e4.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

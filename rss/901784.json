@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dom Pérignon Champagne Rosé Brut 2010 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901784/",
+	"feed_url": "https://alkometriikka.fi/rss/901784.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dom Pérignon Champagne Rosé Brut 2010.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901784-2026-07-18-569.98",
+			"url": "https://alkometriikka.fi/tuotteet/901784/",
+			"title": "Dom Pérignon Champagne Rosé Brut 2010 — 560,45 € → 569,98 €",
+			"content_html": "<p>Tuotteen Dom Pérignon Champagne Rosé Brut 2010 hinta on muuttunut.</p><p>560,45 € → 569,98 € (+9,53 €, +1,70 %).</p>",
+			"summary": "Tuotteen Dom Pérignon Champagne Rosé Brut 2010 hinta on muuttunut. 560,45 € → 569,98 € (+9,53 €, +1,70 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901784-c8d462c7422a.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

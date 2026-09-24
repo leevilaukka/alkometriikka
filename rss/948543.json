@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Le Sirop de Monin Grenadine – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/948543/",
+	"feed_url": "https://alkometriikka.fi/rss/948543.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Le Sirop de Monin Grenadine.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-948543-2026-07-18-21.45",
+			"url": "https://alkometriikka.fi/tuotteet/948543/",
+			"title": "Le Sirop de Monin Grenadine — 21,11 € → 21,45 €",
+			"content_html": "<p>Tuotteen Le Sirop de Monin Grenadine hinta on muuttunut.</p><p>21,11 € → 21,45 € (+0,34 €, +1,61 %).</p>",
+			"summary": "Tuotteen Le Sirop de Monin Grenadine hinta on muuttunut. 21,11 € → 21,45 € (+0,34 €, +1,61 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/948543-971379ba29e3.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Rodenbach Alexander – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/730364/",
+	"feed_url": "https://alkometriikka.fi/rss/730364.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Rodenbach Alexander.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-730364-2026-07-18-4.49",
+			"url": "https://alkometriikka.fi/tuotteet/730364/",
+			"title": "Rodenbach Alexander — 4,45 € → 4,49 €",
+			"content_html": "<p>Tuotteen Rodenbach Alexander hinta on muuttunut.</p><p>4,45 € → 4,49 € (+0,04 €, +0,90 %).</p>",
+			"summary": "Tuotteen Rodenbach Alexander hinta on muuttunut. 4,45 € → 4,49 € (+0,04 €, +0,90 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/730364-2206c486409a.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

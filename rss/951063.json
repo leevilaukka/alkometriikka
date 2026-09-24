@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Matsu La Jefa 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/951063/",
+	"feed_url": "https://alkometriikka.fi/rss/951063.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Matsu La Jefa 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-951063-2026-07-18-40.48",
+			"url": "https://alkometriikka.fi/tuotteet/951063/",
+			"title": "Matsu La Jefa 2021 — 40,46 € → 40,48 €",
+			"content_html": "<p>Tuotteen Matsu La Jefa 2021 hinta on muuttunut.</p><p>40,46 € → 40,48 € (+0,02 €, +0,05 %).</p>",
+			"summary": "Tuotteen Matsu La Jefa 2021 hinta on muuttunut. 40,46 € → 40,48 € (+0,02 €, +0,05 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/951063-b63ae555e577.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

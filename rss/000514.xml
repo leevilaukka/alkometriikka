@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Bombay Sapphire London Dry Gin – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/000514/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Bombay Sapphire London Dry Gin.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/000514.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Bombay Sapphire London Dry Gin – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Bombay Sapphire London Dry Gin — 38,77 € → 38,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/000514/</link>
+			<guid isPermaLink="false">alkometriikka-000514-2026-07-18-38.99</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / ginit</category>
+			<description><![CDATA[<p>Tuotteen Bombay Sapphire London Dry Gin hinta on muuttunut.</p><p>38,77 € → 38,99 € (+0,22 €, +0,57 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/000514-8b6dd833abfa.png" />
+		</item>
+	</channel>
+</rss>

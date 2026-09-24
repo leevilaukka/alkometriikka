@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Fernand Engel Crémant d'Alsace Tradition Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/532484/",
+	"feed_url": "https://alkometriikka.fi/rss/532484.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Fernand Engel Crémant d'Alsace Tradition Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-532484-2026-07-18-11.99",
+			"url": "https://alkometriikka.fi/tuotteet/532484/",
+			"title": "Fernand Engel Crémant d'Alsace Tradition Brut — 12,22 € → 11,99 €",
+			"content_html": "<p>Tuotteen Fernand Engel Crémant d'Alsace Tradition Brut hinta on muuttunut.</p><p>12,22 € → 11,99 € (−0,23 €, −1,88 %).</p>",
+			"summary": "Tuotteen Fernand Engel Crémant d'Alsace Tradition Brut hinta on muuttunut. 12,22 € → 11,99 € (−0,23 €, −1,88 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/532484-2be6e601d7c0.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

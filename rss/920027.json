@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Veuve Clicquot Rosé Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/920027/",
+	"feed_url": "https://alkometriikka.fi/rss/920027.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Veuve Clicquot Rosé Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-920027-2026-07-18-82.99",
+			"url": "https://alkometriikka.fi/tuotteet/920027/",
+			"title": "Veuve Clicquot Rosé Champagne Brut — 81,25 € → 82,99 €",
+			"content_html": "<p>Tuotteen Veuve Clicquot Rosé Champagne Brut hinta on muuttunut.</p><p>81,25 € → 82,99 € (+1,74 €, +2,14 %).</p>",
+			"summary": "Tuotteen Veuve Clicquot Rosé Champagne Brut hinta on muuttunut. 81,25 € → 82,99 € (+1,74 €, +2,14 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/920027-2108b5aa0133.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

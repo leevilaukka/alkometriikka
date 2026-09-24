@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Montresor Amarone della Valpolicella 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/932073/",
+	"feed_url": "https://alkometriikka.fi/rss/932073.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Montresor Amarone della Valpolicella 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-932073-2026-07-18-25.98",
+			"url": "https://alkometriikka.fi/tuotteet/932073/",
+			"title": "Montresor Amarone della Valpolicella 2022 — 25,20 € → 25,98 €",
+			"content_html": "<p>Tuotteen Montresor Amarone della Valpolicella 2022 hinta on muuttunut.</p><p>25,20 € → 25,98 € (+0,78 €, +3,10 %).</p>",
+			"summary": "Tuotteen Montresor Amarone della Valpolicella 2022 hinta on muuttunut. 25,20 € → 25,98 € (+0,78 €, +3,10 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/932073-266cd10fbe1c.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

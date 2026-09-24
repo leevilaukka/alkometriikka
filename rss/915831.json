@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gratiot-Pillière Heritage Champagne Brut 2015 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/915831/",
+	"feed_url": "https://alkometriikka.fi/rss/915831.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gratiot-Pillière Heritage Champagne Brut 2015.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-915831-2026-07-18-89.99",
+			"url": "https://alkometriikka.fi/tuotteet/915831/",
+			"title": "Gratiot-Pillière Heritage Champagne Brut 2015 — 89,95 € → 89,99 €",
+			"content_html": "<p>Tuotteen Gratiot-Pillière Heritage Champagne Brut 2015 hinta on muuttunut.</p><p>89,95 € → 89,99 € (+0,04 €, +0,04 %).</p>",
+			"summary": "Tuotteen Gratiot-Pillière Heritage Champagne Brut 2015 hinta on muuttunut. 89,95 € → 89,99 € (+0,04 €, +0,04 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/915831-b3ee1b296d16.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

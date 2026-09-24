@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Messias Porto Ruby – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/920585/",
+	"feed_url": "https://alkometriikka.fi/rss/920585.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Messias Porto Ruby.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-920585-2026-07-18-20.49",
+			"url": "https://alkometriikka.fi/tuotteet/920585/",
+			"title": "Messias Porto Ruby — 20,10 € → 20,49 €",
+			"content_html": "<p>Tuotteen Messias Porto Ruby hinta on muuttunut.</p><p>20,10 € → 20,49 € (+0,39 €, +1,94 %).</p>",
+			"summary": "Tuotteen Messias Porto Ruby hinta on muuttunut. 20,10 € → 20,49 € (+0,39 €, +1,94 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/920585-4b824a4bf5b9.png",
+			"tags": [
+				"Välituotteet",
+				"portviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Boffa Barbaresco Pajè 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902815/",
+	"feed_url": "https://alkometriikka.fi/rss/902815.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Boffa Barbaresco Pajè 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902815-2026-07-18-50.45",
+			"url": "https://alkometriikka.fi/tuotteet/902815/",
+			"title": "Boffa Barbaresco Pajè 2022 — 49,98 € → 50,45 €",
+			"content_html": "<p>Tuotteen Boffa Barbaresco Pajè 2022 hinta on muuttunut.</p><p>49,98 € → 50,45 € (+0,47 €, +0,94 %).</p>",
+			"summary": "Tuotteen Boffa Barbaresco Pajè 2022 hinta on muuttunut. 49,98 € → 50,45 € (+0,47 €, +0,94 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902815-e8a86dddd89c.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

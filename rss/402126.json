@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Barone Montalto Rosso kartonkitölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/402126/",
+	"feed_url": "https://alkometriikka.fi/rss/402126.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Barone Montalto Rosso kartonkitölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-402126-2026-07-18-6.48",
+			"url": "https://alkometriikka.fi/tuotteet/402126/",
+			"title": "Barone Montalto Rosso kartonkitölkki — 6,99 € → 6,48 €",
+			"content_html": "<p>Tuotteen Barone Montalto Rosso kartonkitölkki hinta on muuttunut.</p><p>6,99 € → 6,48 € (−0,51 €, −7,30 %).</p>",
+			"summary": "Tuotteen Barone Montalto Rosso kartonkitölkki hinta on muuttunut. 6,99 € → 6,48 € (−0,51 €, −7,30 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/402126-3f24d3bb3c0b.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Maison du Vin Chardonnay 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/518047/",
+	"feed_url": "https://alkometriikka.fi/rss/518047.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Maison du Vin Chardonnay 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-518047-2026-07-18-15.89",
+			"url": "https://alkometriikka.fi/tuotteet/518047/",
+			"title": "Maison du Vin Chardonnay 2022 — 13,95 € → 15,89 €",
+			"content_html": "<p>Tuotteen Maison du Vin Chardonnay 2022 hinta on muuttunut.</p><p>13,95 € → 15,89 € (+1,94 €, +13,91 %).</p>",
+			"summary": "Tuotteen Maison du Vin Chardonnay 2022 hinta on muuttunut. 13,95 € → 15,89 € (+1,94 €, +13,91 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/518047-107f36bb3752.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

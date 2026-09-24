@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bottega Rose Gold Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/929051/",
+	"feed_url": "https://alkometriikka.fi/rss/929051.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bottega Rose Gold Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-929051-2026-07-18-5.9",
+			"url": "https://alkometriikka.fi/tuotteet/929051/",
+			"title": "Bottega Rose Gold Brut — 5,55 € → 5,90 €",
+			"content_html": "<p>Tuotteen Bottega Rose Gold Brut hinta on muuttunut.</p><p>5,55 € → 5,90 € (+0,35 €, +6,31 %).</p>",
+			"summary": "Tuotteen Bottega Rose Gold Brut hinta on muuttunut. 5,55 € → 5,90 € (+0,35 €, +6,31 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/929051-7e05303c092b.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

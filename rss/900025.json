@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Baron M Jardin d'amour 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900025/",
+	"feed_url": "https://alkometriikka.fi/rss/900025.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Baron M Jardin d'amour 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900025-2026-07-18-29.79",
+			"url": "https://alkometriikka.fi/tuotteet/900025/",
+			"title": "Baron M Jardin d'amour 2024 — 30,37 € → 29,79 €",
+			"content_html": "<p>Tuotteen Baron M Jardin d'amour 2024 hinta on muuttunut.</p><p>30,37 € → 29,79 € (−0,58 €, −1,91 %).</p>",
+			"summary": "Tuotteen Baron M Jardin d'amour 2024 hinta on muuttunut. 30,37 € → 29,79 € (−0,58 €, −1,91 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900025-3d50cba4741d.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

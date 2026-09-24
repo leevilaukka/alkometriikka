@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Villi ja Vapaa Alkoholiton Blonde tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902550/",
+	"feed_url": "https://alkometriikka.fi/rss/902550.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Villi ja Vapaa Alkoholiton Blonde tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902550-2026-09-04-2.69",
+			"url": "https://alkometriikka.fi/tuotteet/902550/",
+			"title": "Villi ja Vapaa Alkoholiton Blonde tölkki — 2,99 € → 2,69 €",
+			"content_html": "<p>Tuotteen Villi ja Vapaa Alkoholiton Blonde tölkki hinta on muuttunut.</p><p>2,99 € → 2,69 € (−0,30 €, −10,03 %).</p>",
+			"summary": "Tuotteen Villi ja Vapaa Alkoholiton Blonde tölkki hinta on muuttunut. 2,99 € → 2,69 € (−0,30 €, −10,03 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902550-9174778fdf73.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-902550-2026-07-18-2.99",
+			"url": "https://alkometriikka.fi/tuotteet/902550/",
+			"title": "Villi ja Vapaa Alkoholiton Blonde tölkki — 3,04 € → 2,99 €",
+			"content_html": "<p>Tuotteen Villi ja Vapaa Alkoholiton Blonde tölkki hinta on muuttunut.</p><p>3,04 € → 2,99 € (−0,05 €, −1,64 %).</p>",
+			"summary": "Tuotteen Villi ja Vapaa Alkoholiton Blonde tölkki hinta on muuttunut. 3,04 € → 2,99 € (−0,05 €, −1,64 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902550-9174778fdf73.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

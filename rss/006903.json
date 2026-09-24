@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pasqua Merlot Trevenezie 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/006903/",
+	"feed_url": "https://alkometriikka.fi/rss/006903.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pasqua Merlot Trevenezie 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-006903-2026-07-18-10.69",
+			"url": "https://alkometriikka.fi/tuotteet/006903/",
+			"title": "Pasqua Merlot Trevenezie 2024 — 10,44 € → 10,69 €",
+			"content_html": "<p>Tuotteen Pasqua Merlot Trevenezie 2024 hinta on muuttunut.</p><p>10,44 € → 10,69 € (+0,25 €, +2,39 %).</p>",
+			"summary": "Tuotteen Pasqua Merlot Trevenezie 2024 hinta on muuttunut. 10,44 € → 10,69 € (+0,25 €, +2,39 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/006903-75ea15f48186.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

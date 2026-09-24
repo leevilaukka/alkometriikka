@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Domaine Les Chenevières Mâcon Blanc Villages Chardonnay 2024 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/942206/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Domaine Les Chenevières Mâcon Blanc Villages Chardonnay 2024.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/942206.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Domaine Les Chenevières Mâcon Blanc Villages Chardonnay 2024 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Domaine Les Chenevières Mâcon Blanc Villages Chardonnay 2024 — 22,12 € → 21,50 €</title>
+			<link>https://alkometriikka.fi/tuotteet/942206/</link>
+			<guid isPermaLink="false">alkometriikka-942206-2026-07-18-21.5</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / valkoviinit</category>
+			<description><![CDATA[<p>Tuotteen Domaine Les Chenevières Mâcon Blanc Villages Chardonnay 2024 hinta on muuttunut.</p><p>22,12 € → 21,50 € (−0,62 €, −2,80 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/942206-950a522fb193.png" />
+		</item>
+	</channel>
+</rss>

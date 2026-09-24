@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tosti Prosecco Extra Dry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/564067/",
+	"feed_url": "https://alkometriikka.fi/rss/564067.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tosti Prosecco Extra Dry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-564067-2026-07-18-13.98",
+			"url": "https://alkometriikka.fi/tuotteet/564067/",
+			"title": "Tosti Prosecco Extra Dry — 13,46 € → 13,98 €",
+			"content_html": "<p>Tuotteen Tosti Prosecco Extra Dry hinta on muuttunut.</p><p>13,46 € → 13,98 € (+0,52 €, +3,86 %).</p>",
+			"summary": "Tuotteen Tosti Prosecco Extra Dry hinta on muuttunut. 13,46 € → 13,98 € (+0,52 €, +3,86 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/564067-cd4ca460f8f8.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

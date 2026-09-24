@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Bitter Truth Original Celery Bitters – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901250/",
+	"feed_url": "https://alkometriikka.fi/rss/901250.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Bitter Truth Original Celery Bitters.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901250-2026-07-18-22.69",
+			"url": "https://alkometriikka.fi/tuotteet/901250/",
+			"title": "The Bitter Truth Original Celery Bitters — 22,67 € → 22,69 €",
+			"content_html": "<p>Tuotteen The Bitter Truth Original Celery Bitters hinta on muuttunut.</p><p>22,67 € → 22,69 € (+0,02 €, +0,09 %).</p>",
+			"summary": "Tuotteen The Bitter Truth Original Celery Bitters hinta on muuttunut. 22,67 € → 22,69 € (+0,02 €, +0,09 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901250-4b7693cd1391.png",
+			"tags": [
+				"Väkevät",
+				"maha- ja maustekatkerot"
+			]
+		}
+	]
+}

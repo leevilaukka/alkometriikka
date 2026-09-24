@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gordon's Premium Pink Distilled Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/175477/",
+	"feed_url": "https://alkometriikka.fi/rss/175477.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gordon's Premium Pink Distilled Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-175477-2026-07-18-34",
+			"url": "https://alkometriikka.fi/tuotteet/175477/",
+			"title": "Gordon's Premium Pink Distilled Gin — 33,24 € → 34,00 €",
+			"content_html": "<p>Tuotteen Gordon's Premium Pink Distilled Gin hinta on muuttunut.</p><p>33,24 € → 34,00 € (+0,76 €, +2,29 %).</p>",
+			"summary": "Tuotteen Gordon's Premium Pink Distilled Gin hinta on muuttunut. 33,24 € → 34,00 € (+0,76 €, +2,29 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/175477-772581ca12ee.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Arbellot VS – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/000821/",
+	"feed_url": "https://alkometriikka.fi/rss/000821.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Arbellot VS.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-000821-2026-07-18-37.99",
+			"url": "https://alkometriikka.fi/tuotteet/000821/",
+			"title": "Arbellot VS — 37,96 € → 37,99 €",
+			"content_html": "<p>Tuotteen Arbellot VS hinta on muuttunut.</p><p>37,96 € → 37,99 € (+0,03 €, +0,08 %).</p>",
+			"summary": "Tuotteen Arbellot VS hinta on muuttunut. 37,96 € → 37,99 € (+0,03 €, +0,08 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/000821-1d2a2711f384.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Castelmondo Prosecco Extra Dry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/918813/",
+	"feed_url": "https://alkometriikka.fi/rss/918813.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Castelmondo Prosecco Extra Dry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-918813-2026-07-18-12.99",
+			"url": "https://alkometriikka.fi/tuotteet/918813/",
+			"title": "Castelmondo Prosecco Extra Dry — 12,96 € → 12,99 €",
+			"content_html": "<p>Tuotteen Castelmondo Prosecco Extra Dry hinta on muuttunut.</p><p>12,96 € → 12,99 € (+0,03 €, +0,23 %).</p>",
+			"summary": "Tuotteen Castelmondo Prosecco Extra Dry hinta on muuttunut. 12,96 € → 12,99 € (+0,03 €, +0,23 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/918813-0268c2dc40d4.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

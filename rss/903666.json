@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Great Wave Sauvignon Blanc hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903666/",
+	"feed_url": "https://alkometriikka.fi/rss/903666.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Great Wave Sauvignon Blanc hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903666-2026-07-18-36.95",
+			"url": "https://alkometriikka.fi/tuotteet/903666/",
+			"title": "The Great Wave Sauvignon Blanc hanapakkaus — 37,07 € → 36,95 €",
+			"content_html": "<p>Tuotteen The Great Wave Sauvignon Blanc hanapakkaus hinta on muuttunut.</p><p>37,07 € → 36,95 € (−0,12 €, −0,32 %).</p>",
+			"summary": "Tuotteen The Great Wave Sauvignon Blanc hanapakkaus hinta on muuttunut. 37,07 € → 36,95 € (−0,12 €, −0,32 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903666-acb1d0cac8b0.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

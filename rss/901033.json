@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Zonin Prosecco Rosé Brut 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901033/",
+	"feed_url": "https://alkometriikka.fi/rss/901033.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Zonin Prosecco Rosé Brut 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901033-2026-07-18-4.99",
+			"url": "https://alkometriikka.fi/tuotteet/901033/",
+			"title": "Zonin Prosecco Rosé Brut 2024 — 5,30 € → 4,99 €",
+			"content_html": "<p>Tuotteen Zonin Prosecco Rosé Brut 2024 hinta on muuttunut.</p><p>5,30 € → 4,99 € (−0,31 €, −5,85 %).</p>",
+			"summary": "Tuotteen Zonin Prosecco Rosé Brut 2024 hinta on muuttunut. 5,30 € → 4,99 € (−0,31 €, −5,85 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901033-995af304dd20.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

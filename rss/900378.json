@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Antinori Badia A Passignano 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900378/",
+	"feed_url": "https://alkometriikka.fi/rss/900378.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Antinori Badia A Passignano 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900378-2026-07-18-59.48",
+			"url": "https://alkometriikka.fi/tuotteet/900378/",
+			"title": "Antinori Badia A Passignano 2021 — 59,44 € → 59,48 €",
+			"content_html": "<p>Tuotteen Antinori Badia A Passignano 2021 hinta on muuttunut.</p><p>59,44 € → 59,48 € (+0,04 €, +0,07 %).</p>",
+			"summary": "Tuotteen Antinori Badia A Passignano 2021 hinta on muuttunut. 59,44 € → 59,48 € (+0,04 €, +0,07 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900378-9f1af15656ec.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Fuzzy Duck Riesling 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/500015/",
+	"feed_url": "https://alkometriikka.fi/rss/500015.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Fuzzy Duck Riesling 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-500015-2026-07-18-11.49",
+			"url": "https://alkometriikka.fi/tuotteet/500015/",
+			"title": "Fuzzy Duck Riesling 2024 — 11,22 € → 11,49 €",
+			"content_html": "<p>Tuotteen Fuzzy Duck Riesling 2024 hinta on muuttunut.</p><p>11,22 € → 11,49 € (+0,27 €, +2,41 %).</p>",
+			"summary": "Tuotteen Fuzzy Duck Riesling 2024 hinta on muuttunut. 11,22 € → 11,49 € (+0,27 €, +2,41 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/500015-8d42e728f1ba.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

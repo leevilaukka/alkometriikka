@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Hiisi Lempo White Grape Sour – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/700464/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Hiisi Lempo White Grape Sour.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/700464.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Hiisi Lempo White Grape Sour – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Hiisi Lempo White Grape Sour — 4,09 € → 4,58 €</title>
+			<link>https://alkometriikka.fi/tuotteet/700464/</link>
+			<guid isPermaLink="false">alkometriikka-700464-2026-07-18-4.58</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Panimotuotteet / oluet</category>
+			<description><![CDATA[<p>Tuotteen Hiisi Lempo White Grape Sour hinta on muuttunut.</p><p>4,09 € → 4,58 € (+0,49 €, +11,98 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/700464-467abe8e80dd.png" />
+		</item>
+	</channel>
+</rss>

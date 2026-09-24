@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Soolong T-Vino Enjoy Jasmin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/600009/",
+	"feed_url": "https://alkometriikka.fi/rss/600009.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Soolong T-Vino Enjoy Jasmin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-600009-2026-07-18-13.79",
+			"url": "https://alkometriikka.fi/tuotteet/600009/",
+			"title": "Soolong T-Vino Enjoy Jasmin — 13,74 € → 13,79 €",
+			"content_html": "<p>Tuotteen Soolong T-Vino Enjoy Jasmin hinta on muuttunut.</p><p>13,74 € → 13,79 € (+0,05 €, +0,36 %).</p>",
+			"summary": "Tuotteen Soolong T-Vino Enjoy Jasmin hinta on muuttunut. 13,74 € → 13,79 € (+0,05 €, +0,36 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600009-51e85772fc7f.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat kuohuviinit"
+			]
+		}
+	]
+}

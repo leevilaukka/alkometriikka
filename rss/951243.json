@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Sukula Limoncino – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/951243/",
+	"feed_url": "https://alkometriikka.fi/rss/951243.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Sukula Limoncino.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-951243-2026-07-18-22",
+			"url": "https://alkometriikka.fi/tuotteet/951243/",
+			"title": "Sukula Limoncino — 22,15 € → 22,00 €",
+			"content_html": "<p>Tuotteen Sukula Limoncino hinta on muuttunut.</p><p>22,15 € → 22,00 € (−0,15 €, −0,68 %).</p>",
+			"summary": "Tuotteen Sukula Limoncino hinta on muuttunut. 22,15 € → 22,00 € (−0,15 €, −0,68 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/951243-224dfbb6c5c0.png",
+			"tags": [
+				"Väkevät",
+				"hedelmäliköörit"
+			]
+		}
+	]
+}

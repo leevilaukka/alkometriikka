@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château Chaubinet 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/005286/",
+	"feed_url": "https://alkometriikka.fi/rss/005286.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château Chaubinet 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-005286-2026-07-18-7.29",
+			"url": "https://alkometriikka.fi/tuotteet/005286/",
+			"title": "Château Chaubinet 2022 — 7,21 € → 7,29 €",
+			"content_html": "<p>Tuotteen Château Chaubinet 2022 hinta on muuttunut.</p><p>7,21 € → 7,29 € (+0,08 €, +1,11 %).</p>",
+			"summary": "Tuotteen Château Chaubinet 2022 hinta on muuttunut. 7,21 € → 7,29 € (+0,08 €, +1,11 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/005286-390df149740e.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

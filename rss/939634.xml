@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Somersby Pear Cider – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/939634/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Somersby Pear Cider.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/939634.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Somersby Pear Cider – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Somersby Pear Cider — 2,69 € → 3,29 €</title>
+			<link>https://alkometriikka.fi/tuotteet/939634/</link>
+			<guid isPermaLink="false">alkometriikka-939634-2026-07-18-3.29</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Panimotuotteet / siiderit</category>
+			<description><![CDATA[<p>Tuotteen Somersby Pear Cider hinta on muuttunut.</p><p>2,69 € → 3,29 € (+0,60 €, +22,30 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/939634-126425d8fd57.png" />
+		</item>
+	</channel>
+</rss>

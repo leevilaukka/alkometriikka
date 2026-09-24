@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Meinklang Grüner Veltliner 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/505247/",
+	"feed_url": "https://alkometriikka.fi/rss/505247.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Meinklang Grüner Veltliner 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-505247-2026-07-18-14.99",
+			"url": "https://alkometriikka.fi/tuotteet/505247/",
+			"title": "Meinklang Grüner Veltliner 2025 — 14,96 € → 14,99 €",
+			"content_html": "<p>Tuotteen Meinklang Grüner Veltliner 2025 hinta on muuttunut.</p><p>14,96 € → 14,99 € (+0,03 €, +0,20 %).</p>",
+			"summary": "Tuotteen Meinklang Grüner Veltliner 2025 hinta on muuttunut. 14,96 € → 14,99 € (+0,03 €, +0,20 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/505247-d98d6c0f8025.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

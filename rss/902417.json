@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tommasi Le Prunée Merlot 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902417/",
+	"feed_url": "https://alkometriikka.fi/rss/902417.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tommasi Le Prunée Merlot 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902417-2026-07-18-15.89",
+			"url": "https://alkometriikka.fi/tuotteet/902417/",
+			"title": "Tommasi Le Prunée Merlot 2021 — 15,95 € → 15,89 €",
+			"content_html": "<p>Tuotteen Tommasi Le Prunée Merlot 2021 hinta on muuttunut.</p><p>15,95 € → 15,89 € (−0,06 €, −0,38 %).</p>",
+			"summary": "Tuotteen Tommasi Le Prunée Merlot 2021 hinta on muuttunut. 15,95 € → 15,89 € (−0,06 €, −0,38 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902417-39bbc4662c07.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

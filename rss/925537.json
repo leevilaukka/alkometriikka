@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Palmer & Co Grands Terroirs Champagne Brut 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/925537/",
+	"feed_url": "https://alkometriikka.fi/rss/925537.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Palmer & Co Grands Terroirs Champagne Brut 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-925537-2026-07-18-98.99",
+			"url": "https://alkometriikka.fi/tuotteet/925537/",
+			"title": "Palmer & Co Grands Terroirs Champagne Brut 2018 — 98,46 € → 98,99 €",
+			"content_html": "<p>Tuotteen Palmer & Co Grands Terroirs Champagne Brut 2018 hinta on muuttunut.</p><p>98,46 € → 98,99 € (+0,53 €, +0,54 %).</p>",
+			"summary": "Tuotteen Palmer & Co Grands Terroirs Champagne Brut 2018 hinta on muuttunut. 98,46 € → 98,99 € (+0,53 €, +0,54 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/925537-e158eca400c8.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

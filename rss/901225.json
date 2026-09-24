@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Collery Grand Cru Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901225/",
+	"feed_url": "https://alkometriikka.fi/rss/901225.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Collery Grand Cru Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901225-2026-07-18-61.78",
+			"url": "https://alkometriikka.fi/tuotteet/901225/",
+			"title": "Collery Grand Cru Champagne Brut — 61,76 € → 61,78 €",
+			"content_html": "<p>Tuotteen Collery Grand Cru Champagne Brut hinta on muuttunut.</p><p>61,76 € → 61,78 € (+0,02 €, +0,03 %).</p>",
+			"summary": "Tuotteen Collery Grand Cru Champagne Brut hinta on muuttunut. 61,76 € → 61,78 € (+0,02 €, +0,03 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901225-24ab02f84b84.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

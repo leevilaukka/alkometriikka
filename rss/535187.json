@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Wente Riva Ranch Chardonnay 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/535187/",
+	"feed_url": "https://alkometriikka.fi/rss/535187.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Wente Riva Ranch Chardonnay 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-535187-2026-07-18-27.49",
+			"url": "https://alkometriikka.fi/tuotteet/535187/",
+			"title": "Wente Riva Ranch Chardonnay 2022 — 27,45 € → 27,49 €",
+			"content_html": "<p>Tuotteen Wente Riva Ranch Chardonnay 2022 hinta on muuttunut.</p><p>27,45 € → 27,49 € (+0,04 €, +0,15 %).</p>",
+			"summary": "Tuotteen Wente Riva Ranch Chardonnay 2022 hinta on muuttunut. 27,45 € → 27,49 € (+0,04 €, +0,15 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/535187-4329597bad4e.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

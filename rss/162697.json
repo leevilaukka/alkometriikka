@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Islay Mist Original – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/162697/",
+	"feed_url": "https://alkometriikka.fi/rss/162697.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Islay Mist Original.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-162697-2026-07-18-29.99",
+			"url": "https://alkometriikka.fi/tuotteet/162697/",
+			"title": "Islay Mist Original — 32,50 € → 29,99 €",
+			"content_html": "<p>Tuotteen Islay Mist Original hinta on muuttunut.</p><p>32,50 € → 29,99 € (−2,51 €, −7,72 %).</p>",
+			"summary": "Tuotteen Islay Mist Original hinta on muuttunut. 32,50 € → 29,99 € (−2,51 €, −7,72 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/162697-dc088424d495.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

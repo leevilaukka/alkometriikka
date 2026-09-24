@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Demon's Share 12 Year Old – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/200014/",
+	"feed_url": "https://alkometriikka.fi/rss/200014.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Demon's Share 12 Year Old.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-200014-2026-07-18-52.99",
+			"url": "https://alkometriikka.fi/tuotteet/200014/",
+			"title": "The Demon's Share 12 Year Old — 52,88 € → 52,99 €",
+			"content_html": "<p>Tuotteen The Demon's Share 12 Year Old hinta on muuttunut.</p><p>52,88 € → 52,99 € (+0,11 €, +0,21 %).</p>",
+			"summary": "Tuotteen The Demon's Share 12 Year Old hinta on muuttunut. 52,88 € → 52,99 € (+0,11 €, +0,21 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/200014-9b203214cfe8.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

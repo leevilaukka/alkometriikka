@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bollinger R.D. Champagne Extra Brut 2008 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/923183/",
+	"feed_url": "https://alkometriikka.fi/rss/923183.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bollinger R.D. Champagne Extra Brut 2008.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-923183-2026-07-18-439.98",
+			"url": "https://alkometriikka.fi/tuotteet/923183/",
+			"title": "Bollinger R.D. Champagne Extra Brut 2008 — 491,00 € → 439,98 €",
+			"content_html": "<p>Tuotteen Bollinger R.D. Champagne Extra Brut 2008 hinta on muuttunut.</p><p>491,00 € → 439,98 € (−51,02 €, −10,39 %).</p>",
+			"summary": "Tuotteen Bollinger R.D. Champagne Extra Brut 2008 hinta on muuttunut. 491,00 € → 439,98 € (−51,02 €, −10,39 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/923183-b767bdaf8314.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Strauch Blanc Pur Alkoholfrei – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/925763/",
+	"feed_url": "https://alkometriikka.fi/rss/925763.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Strauch Blanc Pur Alkoholfrei.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-925763-2026-07-18-18.39",
+			"url": "https://alkometriikka.fi/tuotteet/925763/",
+			"title": "Strauch Blanc Pur Alkoholfrei — 18,22 € → 18,39 €",
+			"content_html": "<p>Tuotteen Strauch Blanc Pur Alkoholfrei hinta on muuttunut.</p><p>18,22 € → 18,39 € (+0,17 €, +0,93 %).</p>",
+			"summary": "Tuotteen Strauch Blanc Pur Alkoholfrei hinta on muuttunut. 18,22 € → 18,39 € (+0,17 €, +0,93 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/925763-4a4ab98c36c1.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat kuohuviinit"
+			]
+		}
+	]
+}

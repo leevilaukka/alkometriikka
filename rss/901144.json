@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Resolution Bay Pinot Noir 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901144/",
+	"feed_url": "https://alkometriikka.fi/rss/901144.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Resolution Bay Pinot Noir 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901144-2026-07-18-15.49",
+			"url": "https://alkometriikka.fi/tuotteet/901144/",
+			"title": "Resolution Bay Pinot Noir 2024 — 15,45 € → 15,49 €",
+			"content_html": "<p>Tuotteen Resolution Bay Pinot Noir 2024 hinta on muuttunut.</p><p>15,45 € → 15,49 € (+0,04 €, +0,26 %).</p>",
+			"summary": "Tuotteen Resolution Bay Pinot Noir 2024 hinta on muuttunut. 15,45 € → 15,49 € (+0,04 €, +0,26 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901144-a300465ab6d3.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

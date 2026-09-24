@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Moët & Chandon Nectar Impérial Champagne Demi Sec – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/912367/",
+	"feed_url": "https://alkometriikka.fi/rss/912367.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Moët & Chandon Nectar Impérial Champagne Demi Sec.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-912367-2026-07-18-71.9",
+			"url": "https://alkometriikka.fi/tuotteet/912367/",
+			"title": "Moët & Chandon Nectar Impérial Champagne Demi Sec — 70,35 € → 71,90 €",
+			"content_html": "<p>Tuotteen Moët & Chandon Nectar Impérial Champagne Demi Sec hinta on muuttunut.</p><p>70,35 € → 71,90 € (+1,55 €, +2,20 %).</p>",
+			"summary": "Tuotteen Moët & Chandon Nectar Impérial Champagne Demi Sec hinta on muuttunut. 70,35 € → 71,90 € (+1,55 €, +2,20 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/912367-0ee99d11c104.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

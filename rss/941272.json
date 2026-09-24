@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Niepoort Colheita Port 2013 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/941272/",
+	"feed_url": "https://alkometriikka.fi/rss/941272.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Niepoort Colheita Port 2013.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-941272-2026-07-18-27.89",
+			"url": "https://alkometriikka.fi/tuotteet/941272/",
+			"title": "Niepoort Colheita Port 2013 — 27,55 € → 27,89 €",
+			"content_html": "<p>Tuotteen Niepoort Colheita Port 2013 hinta on muuttunut.</p><p>27,55 € → 27,89 € (+0,34 €, +1,23 %).</p>",
+			"summary": "Tuotteen Niepoort Colheita Port 2013 hinta on muuttunut. 27,55 € → 27,89 € (+0,34 €, +1,23 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/941272-3cd15f1fa440.png",
+			"tags": [
+				"Välituotteet",
+				"portviinit"
+			]
+		}
+	]
+}

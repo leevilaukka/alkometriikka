@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Fentimans Ginger Beer – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/794383/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Fentimans Ginger Beer.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/794383.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Fentimans Ginger Beer – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Fentimans Ginger Beer — 2,24 € → 2,49 €</title>
+			<link>https://alkometriikka.fi/tuotteet/794383/</link>
+			<guid isPermaLink="false">alkometriikka-794383-2026-07-18-2.49</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Alkoholittomat / mikserit</category>
+			<description><![CDATA[<p>Tuotteen Fentimans Ginger Beer hinta on muuttunut.</p><p>2,24 € → 2,49 € (+0,25 €, +11,16 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/794383-9ded55a2f194.png" />
+		</item>
+	</channel>
+</rss>

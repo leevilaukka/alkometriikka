@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Diplomático Reserva Exclusiva – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/911397/",
+	"feed_url": "https://alkometriikka.fi/rss/911397.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Diplomático Reserva Exclusiva.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-911397-2026-07-18-54.99",
+			"url": "https://alkometriikka.fi/tuotteet/911397/",
+			"title": "Diplomático Reserva Exclusiva — 59,98 € → 54,99 €",
+			"content_html": "<p>Tuotteen Diplomático Reserva Exclusiva hinta on muuttunut.</p><p>59,98 € → 54,99 € (−4,99 €, −8,32 %).</p>",
+			"summary": "Tuotteen Diplomático Reserva Exclusiva hinta on muuttunut. 59,98 € → 54,99 € (−4,99 €, −8,32 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/911397-86be85b601b4.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

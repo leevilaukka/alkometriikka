@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Jermann Vintage Tunina  2021 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/901592/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Jermann Vintage Tunina  2021.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/901592.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Jermann Vintage Tunina  2021 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Jermann Vintage Tunina  2021 — 75,44 € → 75,48 €</title>
+			<link>https://alkometriikka.fi/tuotteet/901592/</link>
+			<guid isPermaLink="false">alkometriikka-901592-2026-07-18-75.48</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / valkoviinit</category>
+			<description><![CDATA[<p>Tuotteen Jermann Vintage Tunina  2021 hinta on muuttunut.</p><p>75,44 € → 75,48 € (+0,04 €, +0,05 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/901592-63f52174f838.png" />
+		</item>
+	</channel>
+</rss>

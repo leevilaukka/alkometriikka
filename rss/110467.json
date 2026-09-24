@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ardbeg Ten Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/110467/",
+	"feed_url": "https://alkometriikka.fi/rss/110467.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ardbeg Ten Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-110467-2026-07-18-73.8",
+			"url": "https://alkometriikka.fi/tuotteet/110467/",
+			"title": "Ardbeg Ten Year Old Single Malt — 72,11 € → 73,80 €",
+			"content_html": "<p>Tuotteen Ardbeg Ten Year Old Single Malt hinta on muuttunut.</p><p>72,11 € → 73,80 € (+1,69 €, +2,34 %).</p>",
+			"summary": "Tuotteen Ardbeg Ten Year Old Single Malt hinta on muuttunut. 72,11 € → 73,80 € (+1,69 €, +2,34 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/110467-31771f1a8c3d.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

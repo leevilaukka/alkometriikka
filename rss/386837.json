@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Doris muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/386837/",
+	"feed_url": "https://alkometriikka.fi/rss/386837.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Doris muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-386837-2026-07-18-9.28",
+			"url": "https://alkometriikka.fi/tuotteet/386837/",
+			"title": "Doris muovipullo — 9,20 € → 9,28 €",
+			"content_html": "<p>Tuotteen Doris muovipullo hinta on muuttunut.</p><p>9,20 € → 9,28 € (+0,08 €, +0,87 %).</p>",
+			"summary": "Tuotteen Doris muovipullo hinta on muuttunut. 9,20 € → 9,28 € (+0,08 €, +0,87 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/386837-33455d4d3507.png",
+			"tags": [
+				"Välituotteet",
+				"väkevät viinit"
+			]
+		}
+	]
+}

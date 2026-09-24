@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Havana Club Añejo Especial – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/121587/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Havana Club Añejo Especial.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/121587.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Havana Club Añejo Especial – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Havana Club Añejo Especial — 31,14 € → 31,18 €</title>
+			<link>https://alkometriikka.fi/tuotteet/121587/</link>
+			<guid isPermaLink="false">alkometriikka-121587-2026-07-18-31.18</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / rommit</category>
+			<description><![CDATA[<p>Tuotteen Havana Club Añejo Especial hinta on muuttunut.</p><p>31,14 € → 31,18 € (+0,04 €, +0,13 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/121587-0f3050a743fa.png" />
+		</item>
+		<item>
+			<title>Havana Club Añejo Especial — 31,14 € → 31,04 €</title>
+			<link>https://alkometriikka.fi/tuotteet/121587/</link>
+			<guid isPermaLink="false">alkometriikka-121587-2026-02-02-31.04</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / rommit</category>
+			<description><![CDATA[<p>Tuotteen Havana Club Añejo Especial hinta on muuttunut.</p><p>31,14 € → 31,04 € (−0,10 €, −0,32 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/121587-0f3050a743fa.png" />
+		</item>
+		<item>
+			<title>Havana Club Añejo Especial — 31,04 € → 31,14 €</title>
+			<link>https://alkometriikka.fi/tuotteet/121587/</link>
+			<guid isPermaLink="false">alkometriikka-121587-2026-02-02-31.14</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / rommit</category>
+			<description><![CDATA[<p>Tuotteen Havana Club Añejo Especial hinta on muuttunut.</p><p>31,04 € → 31,14 € (+0,10 €, +0,32 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/121587-0f3050a743fa.png" />
+		</item>
+	</channel>
+</rss>

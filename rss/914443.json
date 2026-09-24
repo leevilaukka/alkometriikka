@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Crystal Head Vodka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/914443/",
+	"feed_url": "https://alkometriikka.fi/rss/914443.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Crystal Head Vodka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-914443-2026-07-18-72.31",
+			"url": "https://alkometriikka.fi/tuotteet/914443/",
+			"title": "Crystal Head Vodka — 72,28 € → 72,31 €",
+			"content_html": "<p>Tuotteen Crystal Head Vodka hinta on muuttunut.</p><p>72,28 € → 72,31 € (+0,03 €, +0,04 %).</p>",
+			"summary": "Tuotteen Crystal Head Vodka hinta on muuttunut. 72,28 € → 72,31 € (+0,03 €, +0,04 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/914443-446f6f563d54.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pieropan Calvarino 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/920537/",
+	"feed_url": "https://alkometriikka.fi/rss/920537.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pieropan Calvarino 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-920537-2026-07-18-30.98",
+			"url": "https://alkometriikka.fi/tuotteet/920537/",
+			"title": "Pieropan Calvarino 2024 — 30,46 € → 30,98 €",
+			"content_html": "<p>Tuotteen Pieropan Calvarino 2024 hinta on muuttunut.</p><p>30,46 € → 30,98 € (+0,52 €, +1,71 %).</p>",
+			"summary": "Tuotteen Pieropan Calvarino 2024 hinta on muuttunut. 30,46 € → 30,98 € (+0,52 €, +1,71 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/920537-6ec703dc5c74.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

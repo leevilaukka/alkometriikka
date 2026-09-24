@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Argiano Solengo 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901650/",
+	"feed_url": "https://alkometriikka.fi/rss/901650.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Argiano Solengo 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901650-2026-07-18-79.98",
+			"url": "https://alkometriikka.fi/tuotteet/901650/",
+			"title": "Argiano Solengo 2023 — 79,10 € → 79,98 €",
+			"content_html": "<p>Tuotteen Argiano Solengo 2023 hinta on muuttunut.</p><p>79,10 € → 79,98 € (+0,88 €, +1,11 %).</p>",
+			"summary": "Tuotteen Argiano Solengo 2023 hinta on muuttunut. 79,10 € → 79,98 € (+0,88 €, +1,11 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901650-97c1e3f346a8.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

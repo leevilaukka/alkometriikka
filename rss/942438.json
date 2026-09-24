@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Martini Fiero – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/942438/",
+	"feed_url": "https://alkometriikka.fi/rss/942438.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Martini Fiero.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-942438-2026-07-18-18.99",
+			"url": "https://alkometriikka.fi/tuotteet/942438/",
+			"title": "Martini Fiero — 18,06 € → 18,99 €",
+			"content_html": "<p>Tuotteen Martini Fiero hinta on muuttunut.</p><p>18,06 € → 18,99 € (+0,93 €, +5,15 %).</p>",
+			"summary": "Tuotteen Martini Fiero hinta on muuttunut. 18,06 € → 18,99 € (+0,93 €, +5,15 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/942438-96591a0a14ed.png",
+			"tags": [
+				"Välituotteet",
+				"vermutit"
+			]
+		}
+	]
+}

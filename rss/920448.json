@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Farmers Market Organic Bianco – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/920448/",
+	"feed_url": "https://alkometriikka.fi/rss/920448.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Farmers Market Organic Bianco.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-920448-2026-07-18-10.98",
+			"url": "https://alkometriikka.fi/tuotteet/920448/",
+			"title": "Farmers Market Organic Bianco — 10,44 € → 10,98 €",
+			"content_html": "<p>Tuotteen Farmers Market Organic Bianco hinta on muuttunut.</p><p>10,44 € → 10,98 € (+0,54 €, +5,17 %).</p>",
+			"summary": "Tuotteen Farmers Market Organic Bianco hinta on muuttunut. 10,44 € → 10,98 € (+0,54 €, +5,17 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/920448-25bb840c39f5.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

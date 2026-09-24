@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Aviation American Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/141807/",
+	"feed_url": "https://alkometriikka.fi/rss/141807.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Aviation American Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-141807-2026-07-18-52.99",
+			"url": "https://alkometriikka.fi/tuotteet/141807/",
+			"title": "Aviation American Gin — 53,26 € → 52,99 €",
+			"content_html": "<p>Tuotteen Aviation American Gin hinta on muuttunut.</p><p>53,26 € → 52,99 € (−0,27 €, −0,51 %).</p>",
+			"summary": "Tuotteen Aviation American Gin hinta on muuttunut. 53,26 € → 52,99 € (−0,27 €, −0,51 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/141807-4a7ca2a05132.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

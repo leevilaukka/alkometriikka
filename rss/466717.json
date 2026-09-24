@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bertani Valpolicella 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/466717/",
+	"feed_url": "https://alkometriikka.fi/rss/466717.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bertani Valpolicella 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-466717-2026-07-18-17.98",
+			"url": "https://alkometriikka.fi/tuotteet/466717/",
+			"title": "Bertani Valpolicella 2022 — 17,46 € → 17,98 €",
+			"content_html": "<p>Tuotteen Bertani Valpolicella 2022 hinta on muuttunut.</p><p>17,46 € → 17,98 € (+0,52 €, +2,98 %).</p>",
+			"summary": "Tuotteen Bertani Valpolicella 2022 hinta on muuttunut. 17,46 € → 17,98 € (+0,52 €, +2,98 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/466717-5b95e34b9fe0.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

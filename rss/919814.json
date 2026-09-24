@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Berså Terra Alta 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/919814/",
+	"feed_url": "https://alkometriikka.fi/rss/919814.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Berså Terra Alta 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-919814-2026-02-02-17.69",
+			"url": "https://alkometriikka.fi/tuotteet/919814/",
+			"title": "Berså Terra Alta 2022 — 17,79 € → 17,69 €",
+			"content_html": "<p>Tuotteen Berså Terra Alta 2022 hinta on muuttunut.</p><p>17,79 € → 17,69 € (−0,10 €, −0,56 %).</p>",
+			"summary": "Tuotteen Berså Terra Alta 2022 hinta on muuttunut. 17,79 € → 17,69 € (−0,10 €, −0,56 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/919814-d1033c297f69.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-919814-2026-02-02-17.79",
+			"url": "https://alkometriikka.fi/tuotteet/919814/",
+			"title": "Berså Terra Alta 2022 — 17,69 € → 17,79 €",
+			"content_html": "<p>Tuotteen Berså Terra Alta 2022 hinta on muuttunut.</p><p>17,69 € → 17,79 € (+0,10 €, +0,57 %).</p>",
+			"summary": "Tuotteen Berså Terra Alta 2022 hinta on muuttunut. 17,69 € → 17,79 € (+0,10 €, +0,57 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/919814-d1033c297f69.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

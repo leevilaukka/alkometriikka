@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Devaux Cœur des Bar Rosé Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/952761/",
+	"feed_url": "https://alkometriikka.fi/rss/952761.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Devaux Cœur des Bar Rosé Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-952761-2026-07-18-59.98",
+			"url": "https://alkometriikka.fi/tuotteet/952761/",
+			"title": "Devaux Cœur des Bar Rosé Champagne Brut — 60,38 € → 59,98 €",
+			"content_html": "<p>Tuotteen Devaux Cœur des Bar Rosé Champagne Brut hinta on muuttunut.</p><p>60,38 € → 59,98 € (−0,40 €, −0,66 %).</p>",
+			"summary": "Tuotteen Devaux Cœur des Bar Rosé Champagne Brut hinta on muuttunut. 60,38 € → 59,98 € (−0,40 €, −0,66 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/952761-355dd2da4b00.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

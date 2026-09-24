@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château Fontesteau 2016 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/919997/",
+	"feed_url": "https://alkometriikka.fi/rss/919997.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château Fontesteau 2016.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-919997-2026-07-18-23.49",
+			"url": "https://alkometriikka.fi/tuotteet/919997/",
+			"title": "Château Fontesteau 2016 — 22,45 € → 23,49 €",
+			"content_html": "<p>Tuotteen Château Fontesteau 2016 hinta on muuttunut.</p><p>22,45 € → 23,49 € (+1,04 €, +4,63 %).</p>",
+			"summary": "Tuotteen Château Fontesteau 2016 hinta on muuttunut. 22,45 € → 23,49 € (+1,04 €, +4,63 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/919997-392bf94f42ac.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

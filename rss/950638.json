@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Readers' Rum Chapter One – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/950638/",
+	"feed_url": "https://alkometriikka.fi/rss/950638.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Readers' Rum Chapter One.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-950638-2026-07-18-49.9",
+			"url": "https://alkometriikka.fi/tuotteet/950638/",
+			"title": "Readers' Rum Chapter One — 46,28 € → 49,90 €",
+			"content_html": "<p>Tuotteen Readers' Rum Chapter One hinta on muuttunut.</p><p>46,28 € → 49,90 € (+3,62 €, +7,82 %).</p>",
+			"summary": "Tuotteen Readers' Rum Chapter One hinta on muuttunut. 46,28 € → 49,90 € (+3,62 €, +7,82 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/950638-202188c81905.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

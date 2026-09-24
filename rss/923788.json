@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Piper-Heidsieck Essentiel Champagne Extra Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/923788/",
+	"feed_url": "https://alkometriikka.fi/rss/923788.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Piper-Heidsieck Essentiel Champagne Extra Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-923788-2026-07-18-63.98",
+			"url": "https://alkometriikka.fi/tuotteet/923788/",
+			"title": "Piper-Heidsieck Essentiel Champagne Extra Brut — 60,45 € → 63,98 €",
+			"content_html": "<p>Tuotteen Piper-Heidsieck Essentiel Champagne Extra Brut hinta on muuttunut.</p><p>60,45 € → 63,98 € (+3,53 €, +5,84 %).</p>",
+			"summary": "Tuotteen Piper-Heidsieck Essentiel Champagne Extra Brut hinta on muuttunut. 60,45 € → 63,98 € (+3,53 €, +5,84 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/923788-efff13970c9b.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

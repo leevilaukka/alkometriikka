@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Christophe Semaska Lys d'Or Condrieu 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/943561/",
+	"feed_url": "https://alkometriikka.fi/rss/943561.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Christophe Semaska Lys d'Or Condrieu 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-943561-2026-07-18-91.99",
+			"url": "https://alkometriikka.fi/tuotteet/943561/",
+			"title": "Christophe Semaska Lys d'Or Condrieu 2020 — 90,44 € → 91,99 €",
+			"content_html": "<p>Tuotteen Christophe Semaska Lys d'Or Condrieu 2020 hinta on muuttunut.</p><p>90,44 € → 91,99 € (+1,55 €, +1,71 %).</p>",
+			"summary": "Tuotteen Christophe Semaska Lys d'Or Condrieu 2020 hinta on muuttunut. 90,44 € → 91,99 € (+1,55 €, +1,71 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/943561-695b093bffa7.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

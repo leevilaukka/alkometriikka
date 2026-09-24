@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ardbeg Traigh Bhan 19 Year Old Batch 6 Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900192/",
+	"feed_url": "https://alkometriikka.fi/rss/900192.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ardbeg Traigh Bhan 19 Year Old Batch 6 Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900192-2026-07-18-369.69",
+			"url": "https://alkometriikka.fi/tuotteet/900192/",
+			"title": "Ardbeg Traigh Bhan 19 Year Old Batch 6 Single Malt — 368,31 € → 369,69 €",
+			"content_html": "<p>Tuotteen Ardbeg Traigh Bhan 19 Year Old Batch 6 Single Malt hinta on muuttunut.</p><p>368,31 € → 369,69 € (+1,38 €, +0,37 %).</p>",
+			"summary": "Tuotteen Ardbeg Traigh Bhan 19 Year Old Batch 6 Single Malt hinta on muuttunut. 368,31 € → 369,69 € (+1,38 €, +0,37 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900192-8788bdc9da4f.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

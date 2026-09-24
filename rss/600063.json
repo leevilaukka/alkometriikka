@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bavaria 0,0%  tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/600063/",
+	"feed_url": "https://alkometriikka.fi/rss/600063.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bavaria 0,0%  tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-600063-2026-09-04-1.61",
+			"url": "https://alkometriikka.fi/tuotteet/600063/",
+			"title": "Bavaria 0,0%  tölkki — 1,79 € → 1,61 €",
+			"content_html": "<p>Tuotteen Bavaria 0,0%  tölkki hinta on muuttunut.</p><p>1,79 € → 1,61 € (−0,18 €, −10,06 %).</p>",
+			"summary": "Tuotteen Bavaria 0,0% tölkki hinta on muuttunut. 1,79 € → 1,61 € (−0,18 €, −10,06 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600063-ea34be2c7532.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-600063-2026-01-29-1.79",
+			"url": "https://alkometriikka.fi/tuotteet/600063/",
+			"title": "Bavaria 0,0%  tölkki — 1,49 € → 1,79 €",
+			"content_html": "<p>Tuotteen Bavaria 0,0%  tölkki hinta on muuttunut.</p><p>1,49 € → 1,79 € (+0,30 €, +20,13 %).</p>",
+			"summary": "Tuotteen Bavaria 0,0% tölkki hinta on muuttunut. 1,49 € → 1,79 € (+0,30 €, +20,13 %).",
+			"date_published": "2026-01-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600063-ea34be2c7532.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

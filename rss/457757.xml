@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Despedida Tinto 2022 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/457757/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Despedida Tinto 2022.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/457757.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Despedida Tinto 2022 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Despedida Tinto 2022 — 12,88 € → 11,49 €</title>
+			<link>https://alkometriikka.fi/tuotteet/457757/</link>
+			<guid isPermaLink="false">alkometriikka-457757-2026-07-18-11.49</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Despedida Tinto 2022 hinta on muuttunut.</p><p>12,88 € → 11,49 € (−1,39 €, −10,79 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/457757-b2830532c1f9.png" />
+		</item>
+	</channel>
+</rss>

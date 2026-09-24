@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Nyetimber Classic Cuvée Brut – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/943525/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Nyetimber Classic Cuvée Brut.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/943525.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Nyetimber Classic Cuvée Brut – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Nyetimber Classic Cuvée Brut — 56,45 € → 56,98 €</title>
+			<link>https://alkometriikka.fi/tuotteet/943525/</link>
+			<guid isPermaLink="false">alkometriikka-943525-2026-07-18-56.98</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / kuohuviinit ja samppanjat</category>
+			<description><![CDATA[<p>Tuotteen Nyetimber Classic Cuvée Brut hinta on muuttunut.</p><p>56,45 € → 56,98 € (+0,53 €, +0,94 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/943525-9a9c0fe972df.png" />
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nittenauer Le Chauffeur – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/909791/",
+	"feed_url": "https://alkometriikka.fi/rss/909791.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nittenauer Le Chauffeur.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-909791-2026-09-04-3.23",
+			"url": "https://alkometriikka.fi/tuotteet/909791/",
+			"title": "Nittenauer Le Chauffeur — 3,59 € → 3,23 €",
+			"content_html": "<p>Tuotteen Nittenauer Le Chauffeur hinta on muuttunut.</p><p>3,59 € → 3,23 € (−0,36 €, −10,03 %).</p>",
+			"summary": "Tuotteen Nittenauer Le Chauffeur hinta on muuttunut. 3,59 € → 3,23 € (−0,36 €, −10,03 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/909791-867fa519acda.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-909791-2026-07-18-3.59",
+			"url": "https://alkometriikka.fi/tuotteet/909791/",
+			"title": "Nittenauer Le Chauffeur — 3,58 € → 3,59 €",
+			"content_html": "<p>Tuotteen Nittenauer Le Chauffeur hinta on muuttunut.</p><p>3,58 € → 3,59 € (+0,01 €, +0,28 %).</p>",
+			"summary": "Tuotteen Nittenauer Le Chauffeur hinta on muuttunut. 3,58 € → 3,59 € (+0,01 €, +0,28 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/909791-867fa519acda.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

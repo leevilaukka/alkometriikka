@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Haddington House – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/001406/",
+	"feed_url": "https://alkometriikka.fi/rss/001406.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Haddington House.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-001406-2026-07-18-25.38",
+			"url": "https://alkometriikka.fi/tuotteet/001406/",
+			"title": "Haddington House — 25,25 € → 25,38 €",
+			"content_html": "<p>Tuotteen Haddington House hinta on muuttunut.</p><p>25,25 € → 25,38 € (+0,13 €, +0,51 %).</p>",
+			"summary": "Tuotteen Haddington House hinta on muuttunut. 25,25 € → 25,38 € (+0,13 €, +0,51 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/001406-70fbbc5a09aa.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

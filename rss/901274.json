@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Sober Spirits Bitter 0.0% – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901274/",
+	"feed_url": "https://alkometriikka.fi/rss/901274.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Sober Spirits Bitter 0.0%.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901274-2026-07-18-21.49",
+			"url": "https://alkometriikka.fi/tuotteet/901274/",
+			"title": "Sober Spirits Bitter 0.0% — 21,41 € → 21,49 €",
+			"content_html": "<p>Tuotteen Sober Spirits Bitter 0.0% hinta on muuttunut.</p><p>21,41 € → 21,49 € (+0,08 €, +0,37 %).</p>",
+			"summary": "Tuotteen Sober Spirits Bitter 0.0% hinta on muuttunut. 21,41 € → 21,49 € (+0,08 €, +0,37 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901274-30a6949f64c5.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

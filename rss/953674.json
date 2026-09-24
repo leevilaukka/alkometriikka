@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Delavenne Bouzy Rouge 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/953674/",
+	"feed_url": "https://alkometriikka.fi/rss/953674.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Delavenne Bouzy Rouge 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-953674-2026-07-18-62.5",
+			"url": "https://alkometriikka.fi/tuotteet/953674/",
+			"title": "Delavenne Bouzy Rouge 2019 — 62,97 € → 62,50 €",
+			"content_html": "<p>Tuotteen Delavenne Bouzy Rouge 2019 hinta on muuttunut.</p><p>62,97 € → 62,50 € (−0,47 €, −0,75 %).</p>",
+			"summary": "Tuotteen Delavenne Bouzy Rouge 2019 hinta on muuttunut. 62,97 € → 62,50 € (−0,47 €, −0,75 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/953674-2a8e6297044b.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

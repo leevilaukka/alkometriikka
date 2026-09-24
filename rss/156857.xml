@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Barra Oak Bay Dark – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/156857/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Barra Oak Bay Dark.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/156857.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Barra Oak Bay Dark – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Barra Oak Bay Dark — 23,67 € → 23,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/156857/</link>
+			<guid isPermaLink="false">alkometriikka-156857-2026-07-18-23.99</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / rommit</category>
+			<description><![CDATA[<p>Tuotteen Barra Oak Bay Dark hinta on muuttunut.</p><p>23,67 € → 23,99 € (+0,32 €, +1,35 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/156857-ea3f7497f3c3.png" />
+		</item>
+	</channel>
+</rss>

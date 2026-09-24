@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tertin Kartano Ruusukuohu – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/957713/",
+	"feed_url": "https://alkometriikka.fi/rss/957713.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tertin Kartano Ruusukuohu.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-957713-2026-07-18-18.99",
+			"url": "https://alkometriikka.fi/tuotteet/957713/",
+			"title": "Tertin Kartano Ruusukuohu — 19,87 € → 18,99 €",
+			"content_html": "<p>Tuotteen Tertin Kartano Ruusukuohu hinta on muuttunut.</p><p>19,87 € → 18,99 € (−0,88 €, −4,43 %).</p>",
+			"summary": "Tuotteen Tertin Kartano Ruusukuohu hinta on muuttunut. 19,87 € → 18,99 € (−0,88 €, −4,43 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/957713-c8665890dff2.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat kuohuviinit"
+			]
+		}
+	]
+}

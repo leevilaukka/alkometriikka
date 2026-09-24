@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Icono Selección Especial hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/480848/",
+	"feed_url": "https://alkometriikka.fi/rss/480848.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Icono Selección Especial hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-480848-2026-07-18-24.49",
+			"url": "https://alkometriikka.fi/tuotteet/480848/",
+			"title": "Icono Selección Especial hanapakkaus — 24,22 € → 24,49 €",
+			"content_html": "<p>Tuotteen Icono Selección Especial hanapakkaus hinta on muuttunut.</p><p>24,22 € → 24,49 € (+0,27 €, +1,11 %).</p>",
+			"summary": "Tuotteen Icono Selección Especial hanapakkaus hinta on muuttunut. 24,22 € → 24,49 € (+0,27 €, +1,11 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/480848-78963bfdace3.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

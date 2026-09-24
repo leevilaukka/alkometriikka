@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Highland Queen Sherry Finish – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/127707/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Highland Queen Sherry Finish.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/127707.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Highland Queen Sherry Finish – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Highland Queen Sherry Finish — 26,76 € → 26,79 €</title>
+			<link>https://alkometriikka.fi/tuotteet/127707/</link>
+			<guid isPermaLink="false">alkometriikka-127707-2026-07-18-26.79</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / viskit</category>
+			<description><![CDATA[<p>Tuotteen Highland Queen Sherry Finish hinta on muuttunut.</p><p>26,76 € → 26,79 € (+0,03 €, +0,11 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/127707-81db96fa0b40.png" />
+		</item>
+	</channel>
+</rss>

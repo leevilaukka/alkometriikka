@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bunnahabhain Móine Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/912657/",
+	"feed_url": "https://alkometriikka.fi/rss/912657.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bunnahabhain Móine Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-912657-2026-07-18-53.95",
+			"url": "https://alkometriikka.fi/tuotteet/912657/",
+			"title": "Bunnahabhain Móine Single Malt — 53,87 € → 53,95 €",
+			"content_html": "<p>Tuotteen Bunnahabhain Móine Single Malt hinta on muuttunut.</p><p>53,87 € → 53,95 € (+0,08 €, +0,15 %).</p>",
+			"summary": "Tuotteen Bunnahabhain Móine Single Malt hinta on muuttunut. 53,87 € → 53,95 € (+0,08 €, +0,15 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/912657-d04c7b3c9c8c.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

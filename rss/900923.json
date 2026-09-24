@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Allram Grüner Veltliner Ried Gaisberg 1ÖWT 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900923/",
+	"feed_url": "https://alkometriikka.fi/rss/900923.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Allram Grüner Veltliner Ried Gaisberg 1ÖWT 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900923-2026-07-18-52",
+			"url": "https://alkometriikka.fi/tuotteet/900923/",
+			"title": "Allram Grüner Veltliner Ried Gaisberg 1ÖWT 2022 — 49,96 € → 52,00 €",
+			"content_html": "<p>Tuotteen Allram Grüner Veltliner Ried Gaisberg 1ÖWT 2022 hinta on muuttunut.</p><p>49,96 € → 52,00 € (+2,04 €, +4,08 %).</p>",
+			"summary": "Tuotteen Allram Grüner Veltliner Ried Gaisberg 1ÖWT 2022 hinta on muuttunut. 49,96 € → 52,00 € (+2,04 €, +4,08 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900923-9e860b43e19b.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

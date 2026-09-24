@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Michter's Single Barrel Kentucky Straight Rye – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/916176/",
+	"feed_url": "https://alkometriikka.fi/rss/916176.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Michter's Single Barrel Kentucky Straight Rye.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-916176-2026-07-18-78.2",
+			"url": "https://alkometriikka.fi/tuotteet/916176/",
+			"title": "Michter's Single Barrel Kentucky Straight Rye — 78,27 € → 78,20 €",
+			"content_html": "<p>Tuotteen Michter's Single Barrel Kentucky Straight Rye hinta on muuttunut.</p><p>78,27 € → 78,20 € (−0,07 €, −0,09 %).</p>",
+			"summary": "Tuotteen Michter's Single Barrel Kentucky Straight Rye hinta on muuttunut. 78,27 € → 78,20 € (−0,07 €, −0,09 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/916176-d4bee7d81060.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

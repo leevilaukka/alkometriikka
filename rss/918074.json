@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Campillo 57 Gran Reserva 2015 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/918074/",
+	"feed_url": "https://alkometriikka.fi/rss/918074.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Campillo 57 Gran Reserva 2015.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-918074-2026-07-18-51.89",
+			"url": "https://alkometriikka.fi/tuotteet/918074/",
+			"title": "Campillo 57 Gran Reserva 2015 — 50,00 € → 51,89 €",
+			"content_html": "<p>Tuotteen Campillo 57 Gran Reserva 2015 hinta on muuttunut.</p><p>50,00 € → 51,89 € (+1,89 €, +3,78 %).</p>",
+			"summary": "Tuotteen Campillo 57 Gran Reserva 2015 hinta on muuttunut. 50,00 € → 51,89 € (+1,89 €, +3,78 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/918074-9106e1852321.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

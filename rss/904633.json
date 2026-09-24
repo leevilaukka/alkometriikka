@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Fuerst Wiacek Crowdsurfer IPA tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/904633/",
+	"feed_url": "https://alkometriikka.fi/rss/904633.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Fuerst Wiacek Crowdsurfer IPA tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-904633-2026-07-18-6.29",
+			"url": "https://alkometriikka.fi/tuotteet/904633/",
+			"title": "Fuerst Wiacek Crowdsurfer IPA tölkki — 6,99 € → 6,29 €",
+			"content_html": "<p>Tuotteen Fuerst Wiacek Crowdsurfer IPA tölkki hinta on muuttunut.</p><p>6,99 € → 6,29 € (−0,70 €, −10,01 %).</p>",
+			"summary": "Tuotteen Fuerst Wiacek Crowdsurfer IPA tölkki hinta on muuttunut. 6,99 € → 6,29 € (−0,70 €, −10,01 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/904633-d0b0c68e54d3.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

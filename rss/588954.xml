@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Esporão Monte Velho Branco 2023 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/588954/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Esporão Monte Velho Branco 2023.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/588954.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Esporão Monte Velho Branco 2023 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Esporão Monte Velho Branco 2023 — 7,71 € → 7,79 €</title>
+			<link>https://alkometriikka.fi/tuotteet/588954/</link>
+			<guid isPermaLink="false">alkometriikka-588954-2026-07-18-7.79</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / valkoviinit</category>
+			<description><![CDATA[<p>Tuotteen Esporão Monte Velho Branco 2023 hinta on muuttunut.</p><p>7,71 € → 7,79 € (+0,08 €, +1,04 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/588954-625be1990b41.png" />
+		</item>
+	</channel>
+</rss>

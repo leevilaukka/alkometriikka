@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Fiskarsin Villi & Vapaa Raspberry Sour Ale tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902488/",
+	"feed_url": "https://alkometriikka.fi/rss/902488.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Fiskarsin Villi & Vapaa Raspberry Sour Ale tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902488-2026-09-04-2.24",
+			"url": "https://alkometriikka.fi/tuotteet/902488/",
+			"title": "Fiskarsin Villi & Vapaa Raspberry Sour Ale tölkki — 2,49 € → 2,24 €",
+			"content_html": "<p>Tuotteen Fiskarsin Villi & Vapaa Raspberry Sour Ale tölkki hinta on muuttunut.</p><p>2,49 € → 2,24 € (−0,25 €, −10,04 %).</p>",
+			"summary": "Tuotteen Fiskarsin Villi & Vapaa Raspberry Sour Ale tölkki hinta on muuttunut. 2,49 € → 2,24 € (−0,25 €, −10,04 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902488-f3a7515549db.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-902488-2026-07-18-2.49",
+			"url": "https://alkometriikka.fi/tuotteet/902488/",
+			"title": "Fiskarsin Villi & Vapaa Raspberry Sour Ale tölkki — 2,48 € → 2,49 €",
+			"content_html": "<p>Tuotteen Fiskarsin Villi & Vapaa Raspberry Sour Ale tölkki hinta on muuttunut.</p><p>2,48 € → 2,49 € (+0,01 €, +0,40 %).</p>",
+			"summary": "Tuotteen Fiskarsin Villi & Vapaa Raspberry Sour Ale tölkki hinta on muuttunut. 2,48 € → 2,49 € (+0,01 €, +0,40 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902488-f3a7515549db.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

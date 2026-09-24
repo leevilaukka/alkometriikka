@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Chateau Musar 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/954277/",
+	"feed_url": "https://alkometriikka.fi/rss/954277.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Chateau Musar 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-954277-2026-07-18-55.49",
+			"url": "https://alkometriikka.fi/tuotteet/954277/",
+			"title": "Chateau Musar 2019 — 55,25 € → 55,49 €",
+			"content_html": "<p>Tuotteen Chateau Musar 2019 hinta on muuttunut.</p><p>55,25 € → 55,49 € (+0,24 €, +0,43 %).</p>",
+			"summary": "Tuotteen Chateau Musar 2019 hinta on muuttunut. 55,25 € → 55,49 € (+0,24 €, +0,43 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/954277-044d685cafd1.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

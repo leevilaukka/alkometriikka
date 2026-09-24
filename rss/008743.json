@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Beautiful Fruit Fragola – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/008743/",
+	"feed_url": "https://alkometriikka.fi/rss/008743.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Beautiful Fruit Fragola.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-008743-2026-07-18-8.79",
+			"url": "https://alkometriikka.fi/tuotteet/008743/",
+			"title": "Beautiful Fruit Fragola — 8,49 € → 8,79 €",
+			"content_html": "<p>Tuotteen Beautiful Fruit Fragola hinta on muuttunut.</p><p>8,49 € → 8,79 € (+0,30 €, +3,53 %).</p>",
+			"summary": "Tuotteen Beautiful Fruit Fragola hinta on muuttunut. 8,49 € → 8,79 € (+0,30 €, +3,53 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/008743-77bc4c97a4dc.png",
+			"tags": [
+				"Viinit",
+				"muut viinijuomat"
+			]
+		}
+	]
+}

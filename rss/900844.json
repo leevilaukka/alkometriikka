@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pazo de San Mauro Albarino 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900844/",
+	"feed_url": "https://alkometriikka.fi/rss/900844.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pazo de San Mauro Albarino 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900844-2026-07-18-27.9",
+			"url": "https://alkometriikka.fi/tuotteet/900844/",
+			"title": "Pazo de San Mauro Albarino 2024 — 27,44 € → 27,90 €",
+			"content_html": "<p>Tuotteen Pazo de San Mauro Albarino 2024 hinta on muuttunut.</p><p>27,44 € → 27,90 € (+0,46 €, +1,68 %).</p>",
+			"summary": "Tuotteen Pazo de San Mauro Albarino 2024 hinta on muuttunut. 27,44 € → 27,90 € (+0,46 €, +1,68 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900844-dd1e97d3c1a3.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

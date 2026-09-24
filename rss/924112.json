@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – A. Bergere Solera Blanc de Blancs Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/924112/",
+	"feed_url": "https://alkometriikka.fi/rss/924112.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: A. Bergere Solera Blanc de Blancs Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-924112-2026-07-18-62.9",
+			"url": "https://alkometriikka.fi/tuotteet/924112/",
+			"title": "A. Bergere Solera Blanc de Blancs Champagne Brut — 62,84 € → 62,90 €",
+			"content_html": "<p>Tuotteen A. Bergere Solera Blanc de Blancs Champagne Brut hinta on muuttunut.</p><p>62,84 € → 62,90 € (+0,06 €, +0,10 %).</p>",
+			"summary": "Tuotteen A. Bergere Solera Blanc de Blancs Champagne Brut hinta on muuttunut. 62,84 € → 62,90 € (+0,06 €, +0,10 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/924112-7ee3b96251fc.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

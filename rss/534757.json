@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Baron-Fuenté Quinconce Blanc de Blancs Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/534757/",
+	"feed_url": "https://alkometriikka.fi/rss/534757.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Baron-Fuenté Quinconce Blanc de Blancs Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-534757-2026-07-18-44.2",
+			"url": "https://alkometriikka.fi/tuotteet/534757/",
+			"title": "Baron-Fuenté Quinconce Blanc de Blancs Champagne Brut — 45,36 € → 44,20 €",
+			"content_html": "<p>Tuotteen Baron-Fuenté Quinconce Blanc de Blancs Champagne Brut hinta on muuttunut.</p><p>45,36 € → 44,20 € (−1,16 €, −2,56 %).</p>",
+			"summary": "Tuotteen Baron-Fuenté Quinconce Blanc de Blancs Champagne Brut hinta on muuttunut. 45,36 € → 44,20 € (−1,16 €, −2,56 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/534757-acb2dc2c69cb.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

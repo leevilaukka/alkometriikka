@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Stauning Smooth & Delicate Double Malt Høst – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901370/",
+	"feed_url": "https://alkometriikka.fi/rss/901370.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Stauning Smooth & Delicate Double Malt Høst.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901370-2026-07-18-64.98",
+			"url": "https://alkometriikka.fi/tuotteet/901370/",
+			"title": "Stauning Smooth & Delicate Double Malt Høst — 60,26 € → 64,98 €",
+			"content_html": "<p>Tuotteen Stauning Smooth & Delicate Double Malt Høst hinta on muuttunut.</p><p>60,26 € → 64,98 € (+4,72 €, +7,83 %).</p>",
+			"summary": "Tuotteen Stauning Smooth & Delicate Double Malt Høst hinta on muuttunut. 60,26 € → 64,98 € (+4,72 €, +7,83 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901370-4d577d726530.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

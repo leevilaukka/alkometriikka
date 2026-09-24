@@ -1,0 +1,50 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Enrico Serafino Alta Langa Brut 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/565677/",
+	"feed_url": "https://alkometriikka.fi/rss/565677.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Enrico Serafino Alta Langa Brut 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-565677-2026-07-18-32.98",
+			"url": "https://alkometriikka.fi/tuotteet/565677/",
+			"title": "Enrico Serafino Alta Langa Brut 2020 — 32,46 € → 32,98 €",
+			"content_html": "<p>Tuotteen Enrico Serafino Alta Langa Brut 2020 hinta on muuttunut.</p><p>32,46 € → 32,98 € (+0,52 €, +1,60 %).</p>",
+			"summary": "Tuotteen Enrico Serafino Alta Langa Brut 2020 hinta on muuttunut. 32,46 € → 32,98 € (+0,52 €, +1,60 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/565677-0dab7bfc6536.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-565677-2026-02-02-32.36",
+			"url": "https://alkometriikka.fi/tuotteet/565677/",
+			"title": "Enrico Serafino Alta Langa Brut 2020 — 32,46 € → 32,36 €",
+			"content_html": "<p>Tuotteen Enrico Serafino Alta Langa Brut 2020 hinta on muuttunut.</p><p>32,46 € → 32,36 € (−0,10 €, −0,31 %).</p>",
+			"summary": "Tuotteen Enrico Serafino Alta Langa Brut 2020 hinta on muuttunut. 32,46 € → 32,36 € (−0,10 €, −0,31 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/565677-0dab7bfc6536.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-565677-2026-02-02-32.46",
+			"url": "https://alkometriikka.fi/tuotteet/565677/",
+			"title": "Enrico Serafino Alta Langa Brut 2020 — 32,36 € → 32,46 €",
+			"content_html": "<p>Tuotteen Enrico Serafino Alta Langa Brut 2020 hinta on muuttunut.</p><p>32,36 € → 32,46 € (+0,10 €, +0,31 %).</p>",
+			"summary": "Tuotteen Enrico Serafino Alta Langa Brut 2020 hinta on muuttunut. 32,36 € → 32,46 € (+0,10 €, +0,31 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/565677-0dab7bfc6536.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

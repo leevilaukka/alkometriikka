@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pasqua Black Label Amarone della Valpolicella 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902758/",
+	"feed_url": "https://alkometriikka.fi/rss/902758.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pasqua Black Label Amarone della Valpolicella 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902758-2026-07-18-43.99",
+			"url": "https://alkometriikka.fi/tuotteet/902758/",
+			"title": "Pasqua Black Label Amarone della Valpolicella 2020 — 43,97 € → 43,99 €",
+			"content_html": "<p>Tuotteen Pasqua Black Label Amarone della Valpolicella 2020 hinta on muuttunut.</p><p>43,97 € → 43,99 € (+0,02 €, +0,05 %).</p>",
+			"summary": "Tuotteen Pasqua Black Label Amarone della Valpolicella 2020 hinta on muuttunut. 43,97 € → 43,99 € (+0,02 €, +0,05 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902758-e40deb4baace.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

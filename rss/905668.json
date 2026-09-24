@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Frieden-Berg Grauburgunder Nittel 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/905668/",
+	"feed_url": "https://alkometriikka.fi/rss/905668.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Frieden-Berg Grauburgunder Nittel 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-905668-2026-07-18-29.95",
+			"url": "https://alkometriikka.fi/tuotteet/905668/",
+			"title": "Frieden-Berg Grauburgunder Nittel 2021 — 31,20 € → 29,95 €",
+			"content_html": "<p>Tuotteen Frieden-Berg Grauburgunder Nittel 2021 hinta on muuttunut.</p><p>31,20 € → 29,95 € (−1,25 €, −4,01 %).</p>",
+			"summary": "Tuotteen Frieden-Berg Grauburgunder Nittel 2021 hinta on muuttunut. 31,20 € → 29,95 € (−1,25 €, −4,01 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/905668-74f7736d2964.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

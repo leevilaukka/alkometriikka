@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pfaff Crémant d'Alsace Rosé Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/934447/",
+	"feed_url": "https://alkometriikka.fi/rss/934447.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pfaff Crémant d'Alsace Rosé Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-934447-2026-07-18-19.99",
+			"url": "https://alkometriikka.fi/tuotteet/934447/",
+			"title": "Pfaff Crémant d'Alsace Rosé Brut — 19,45 € → 19,99 €",
+			"content_html": "<p>Tuotteen Pfaff Crémant d'Alsace Rosé Brut hinta on muuttunut.</p><p>19,45 € → 19,99 € (+0,54 €, +2,78 %).</p>",
+			"summary": "Tuotteen Pfaff Crémant d'Alsace Rosé Brut hinta on muuttunut. 19,45 € → 19,99 € (+0,54 €, +2,78 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/934447-6c5c3e3ab44a.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

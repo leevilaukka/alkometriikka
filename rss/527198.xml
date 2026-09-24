@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Cerro Blanco kartonkitölkki – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/527198/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Cerro Blanco kartonkitölkki.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/527198.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Cerro Blanco kartonkitölkki – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Cerro Blanco kartonkitölkki — 10,30 € → 9,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/527198/</link>
+			<guid isPermaLink="false">alkometriikka-527198-2026-07-18-9.99</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / valkoviinit</category>
+			<description><![CDATA[<p>Tuotteen Cerro Blanco kartonkitölkki hinta on muuttunut.</p><p>10,30 € → 9,99 € (−0,31 €, −3,01 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/527198-c9c36cba552d.png" />
+		</item>
+	</channel>
+</rss>

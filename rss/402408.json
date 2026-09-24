@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ícaro Tinto 2022 hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/402408/",
+	"feed_url": "https://alkometriikka.fi/rss/402408.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ícaro Tinto 2022 hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-402408-2026-07-18-32.99",
+			"url": "https://alkometriikka.fi/tuotteet/402408/",
+			"title": "Ícaro Tinto 2022 hanapakkaus — 32,83 € → 32,99 €",
+			"content_html": "<p>Tuotteen Ícaro Tinto 2022 hanapakkaus hinta on muuttunut.</p><p>32,83 € → 32,99 € (+0,16 €, +0,49 %).</p>",
+			"summary": "Tuotteen Ícaro Tinto 2022 hanapakkaus hinta on muuttunut. 32,83 € → 32,99 € (+0,16 €, +0,49 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/402408-5a765a1e5195.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

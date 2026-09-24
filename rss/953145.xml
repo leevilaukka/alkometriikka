@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Nemiroff De Luxe Rested in Barrel Vodka – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/953145/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Nemiroff De Luxe Rested in Barrel Vodka.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/953145.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Nemiroff De Luxe Rested in Barrel Vodka – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Nemiroff De Luxe Rested in Barrel Vodka — 29,18 € → 29,20 €</title>
+			<link>https://alkometriikka.fi/tuotteet/953145/</link>
+			<guid isPermaLink="false">alkometriikka-953145-2026-07-18-29.2</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / maustetut vodkat</category>
+			<description><![CDATA[<p>Tuotteen Nemiroff De Luxe Rested in Barrel Vodka hinta on muuttunut.</p><p>29,18 € → 29,20 € (+0,02 €, +0,07 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/953145-f8b016c42854.png" />
+		</item>
+	</channel>
+</rss>

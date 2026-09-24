@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Omnipollo Zodiak Non-Alcoholic IPA tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/600064/",
+	"feed_url": "https://alkometriikka.fi/rss/600064.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Omnipollo Zodiak Non-Alcoholic IPA tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-600064-2026-09-04-3.59",
+			"url": "https://alkometriikka.fi/tuotteet/600064/",
+			"title": "Omnipollo Zodiak Non-Alcoholic IPA tölkki — 3,99 € → 3,59 €",
+			"content_html": "<p>Tuotteen Omnipollo Zodiak Non-Alcoholic IPA tölkki hinta on muuttunut.</p><p>3,99 € → 3,59 € (−0,40 €, −10,03 %).</p>",
+			"summary": "Tuotteen Omnipollo Zodiak Non-Alcoholic IPA tölkki hinta on muuttunut. 3,99 € → 3,59 € (−0,40 €, −10,03 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600064-1588946073f8.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

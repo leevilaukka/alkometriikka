@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Caparzo La Casa Brunello di Montalcino 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/465127/",
+	"feed_url": "https://alkometriikka.fi/rss/465127.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Caparzo La Casa Brunello di Montalcino 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-465127-2026-07-18-88.99",
+			"url": "https://alkometriikka.fi/tuotteet/465127/",
+			"title": "Caparzo La Casa Brunello di Montalcino 2018 — 88,46 € → 88,99 €",
+			"content_html": "<p>Tuotteen Caparzo La Casa Brunello di Montalcino 2018 hinta on muuttunut.</p><p>88,46 € → 88,99 € (+0,53 €, +0,60 %).</p>",
+			"summary": "Tuotteen Caparzo La Casa Brunello di Montalcino 2018 hinta on muuttunut. 88,46 € → 88,99 € (+0,53 €, +0,60 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/465127-4fc8217353c7.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

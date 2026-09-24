@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Domaine Collet Silex & Craie Chardonnay Champagne Extra Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/907111/",
+	"feed_url": "https://alkometriikka.fi/rss/907111.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Domaine Collet Silex & Craie Chardonnay Champagne Extra Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-907111-2026-07-18-69.23",
+			"url": "https://alkometriikka.fi/tuotteet/907111/",
+			"title": "Domaine Collet Silex & Craie Chardonnay Champagne Extra Brut — 60,22 € → 69,23 €",
+			"content_html": "<p>Tuotteen Domaine Collet Silex & Craie Chardonnay Champagne Extra Brut hinta on muuttunut.</p><p>60,22 € → 69,23 € (+9,01 €, +14,96 %).</p>",
+			"summary": "Tuotteen Domaine Collet Silex & Craie Chardonnay Champagne Extra Brut hinta on muuttunut. 60,22 € → 69,23 € (+9,01 €, +14,96 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/907111-4b723ca63245.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

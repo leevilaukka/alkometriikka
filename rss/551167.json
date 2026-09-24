@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hannes Reeh Rohstoff Chardonnay 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/551167/",
+	"feed_url": "https://alkometriikka.fi/rss/551167.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hannes Reeh Rohstoff Chardonnay 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-551167-2026-07-18-24.98",
+			"url": "https://alkometriikka.fi/tuotteet/551167/",
+			"title": "Hannes Reeh Rohstoff Chardonnay 2021 — 24,96 € → 24,98 €",
+			"content_html": "<p>Tuotteen Hannes Reeh Rohstoff Chardonnay 2021 hinta on muuttunut.</p><p>24,96 € → 24,98 € (+0,02 €, +0,08 %).</p>",
+			"summary": "Tuotteen Hannes Reeh Rohstoff Chardonnay 2021 hinta on muuttunut. 24,96 € → 24,98 € (+0,02 €, +0,08 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/551167-043d8b27ceb1.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

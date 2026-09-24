@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Havana Club Selección de Maestros – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/191157/",
+	"feed_url": "https://alkometriikka.fi/rss/191157.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Havana Club Selección de Maestros.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-191157-2026-07-18-63.28",
+			"url": "https://alkometriikka.fi/tuotteet/191157/",
+			"title": "Havana Club Selección de Maestros — 63,21 € → 63,28 €",
+			"content_html": "<p>Tuotteen Havana Club Selección de Maestros hinta on muuttunut.</p><p>63,21 € → 63,28 € (+0,07 €, +0,11 %).</p>",
+			"summary": "Tuotteen Havana Club Selección de Maestros hinta on muuttunut. 63,21 € → 63,28 € (+0,07 €, +0,11 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/191157-9cf6c3dfddd4.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

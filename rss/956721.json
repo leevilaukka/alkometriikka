@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Alta Corte Red 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/956721/",
+	"feed_url": "https://alkometriikka.fi/rss/956721.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Alta Corte Red 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-956721-2026-07-18-11.99",
+			"url": "https://alkometriikka.fi/tuotteet/956721/",
+			"title": "Alta Corte Red 2021 — 11,39 € → 11,99 €",
+			"content_html": "<p>Tuotteen Alta Corte Red 2021 hinta on muuttunut.</p><p>11,39 € → 11,99 € (+0,60 €, +5,27 %).</p>",
+			"summary": "Tuotteen Alta Corte Red 2021 hinta on muuttunut. 11,39 € → 11,99 € (+0,60 €, +5,27 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/956721-c44a7bf8073b.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

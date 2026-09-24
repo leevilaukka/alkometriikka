@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Ollenaut Kaineken Suitsu Porter – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/904172/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Ollenaut Kaineken Suitsu Porter.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/904172.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Ollenaut Kaineken Suitsu Porter – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Ollenaut Kaineken Suitsu Porter — 2,79 € → 2,51 €</title>
+			<link>https://alkometriikka.fi/tuotteet/904172/</link>
+			<guid isPermaLink="false">alkometriikka-904172-2026-09-04-2.51</guid>
+			<pubDate>Fri, 04 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Alkoholittomat / alkoholittomat oluet</category>
+			<description><![CDATA[<p>Tuotteen Ollenaut Kaineken Suitsu Porter hinta on muuttunut.</p><p>2,79 € → 2,51 € (−0,28 €, −10,04 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/904172-35fc763173a1.png" />
+		</item>
+		<item>
+			<title>Ollenaut Kaineken Suitsu Porter — 2,78 € → 2,79 €</title>
+			<link>https://alkometriikka.fi/tuotteet/904172/</link>
+			<guid isPermaLink="false">alkometriikka-904172-2026-07-18-2.79</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Alkoholittomat / alkoholittomat oluet</category>
+			<description><![CDATA[<p>Tuotteen Ollenaut Kaineken Suitsu Porter hinta on muuttunut.</p><p>2,78 € → 2,79 € (+0,01 €, +0,36 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/904172-35fc763173a1.png" />
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ardbeg Uigeadail Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/926537/",
+	"feed_url": "https://alkometriikka.fi/rss/926537.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ardbeg Uigeadail Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-926537-2026-07-18-119.99",
+			"url": "https://alkometriikka.fi/tuotteet/926537/",
+			"title": "Ardbeg Uigeadail Single Malt — 118,26 € → 119,99 €",
+			"content_html": "<p>Tuotteen Ardbeg Uigeadail Single Malt hinta on muuttunut.</p><p>118,26 € → 119,99 € (+1,73 €, +1,46 %).</p>",
+			"summary": "Tuotteen Ardbeg Uigeadail Single Malt hinta on muuttunut. 118,26 € → 119,99 € (+1,73 €, +1,46 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/926537-9d09a435301a.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

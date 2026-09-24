@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pflüger Biodynamite 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/949373/",
+	"feed_url": "https://alkometriikka.fi/rss/949373.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pflüger Biodynamite 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-949373-2026-07-18-26.99",
+			"url": "https://alkometriikka.fi/tuotteet/949373/",
+			"title": "Pflüger Biodynamite 2022 — 26,41 € → 26,99 €",
+			"content_html": "<p>Tuotteen Pflüger Biodynamite 2022 hinta on muuttunut.</p><p>26,41 € → 26,99 € (+0,58 €, +2,20 %).</p>",
+			"summary": "Tuotteen Pflüger Biodynamite 2022 hinta on muuttunut. 26,41 € → 26,99 € (+0,58 €, +2,20 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/949373-86d0255e5c0d.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

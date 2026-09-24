@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Wolfberger Crémant d'Alsace Rosé Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901311/",
+	"feed_url": "https://alkometriikka.fi/rss/901311.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Wolfberger Crémant d'Alsace Rosé Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901311-2026-07-18-13.49",
+			"url": "https://alkometriikka.fi/tuotteet/901311/",
+			"title": "Wolfberger Crémant d'Alsace Rosé Brut — 13,22 € → 13,49 €",
+			"content_html": "<p>Tuotteen Wolfberger Crémant d'Alsace Rosé Brut hinta on muuttunut.</p><p>13,22 € → 13,49 € (+0,27 €, +2,04 %).</p>",
+			"summary": "Tuotteen Wolfberger Crémant d'Alsace Rosé Brut hinta on muuttunut. 13,22 € → 13,49 € (+0,27 €, +2,04 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901311-ee0bad0cd771.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

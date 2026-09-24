@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – André Delorme Crémant de Bourgogne Brut Jeroboam – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900900/",
+	"feed_url": "https://alkometriikka.fi/rss/900900.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: André Delorme Crémant de Bourgogne Brut Jeroboam.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900900-2026-07-18-155.99",
+			"url": "https://alkometriikka.fi/tuotteet/900900/",
+			"title": "André Delorme Crémant de Bourgogne Brut Jeroboam — 153,99 € → 155,99 €",
+			"content_html": "<p>Tuotteen André Delorme Crémant de Bourgogne Brut Jeroboam hinta on muuttunut.</p><p>153,99 € → 155,99 € (+2,00 €, +1,30 %).</p>",
+			"summary": "Tuotteen André Delorme Crémant de Bourgogne Brut Jeroboam hinta on muuttunut. 153,99 € → 155,99 € (+2,00 €, +1,30 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900900-01ce432ebd68.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

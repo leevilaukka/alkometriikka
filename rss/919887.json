@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Castaño  Ecologico Monastrell 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/919887/",
+	"feed_url": "https://alkometriikka.fi/rss/919887.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Castaño  Ecologico Monastrell 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-919887-2026-07-18-12.98",
+			"url": "https://alkometriikka.fi/tuotteet/919887/",
+			"title": "Castaño  Ecologico Monastrell 2023 — 13,22 € → 12,98 €",
+			"content_html": "<p>Tuotteen Castaño  Ecologico Monastrell 2023 hinta on muuttunut.</p><p>13,22 € → 12,98 € (−0,24 €, −1,82 %).</p>",
+			"summary": "Tuotteen Castaño Ecologico Monastrell 2023 hinta on muuttunut. 13,22 € → 12,98 € (−0,24 €, −1,82 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/919887-41e60af3439f.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

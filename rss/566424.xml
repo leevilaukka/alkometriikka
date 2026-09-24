@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Domaine de Viviers Chablis 2023 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/566424/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Domaine de Viviers Chablis 2023.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/566424.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Domaine de Viviers Chablis 2023 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Domaine de Viviers Chablis 2023 — 16,83 € → 16,73 €</title>
+			<link>https://alkometriikka.fi/tuotteet/566424/</link>
+			<guid isPermaLink="false">alkometriikka-566424-2026-02-02-16.73</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / valkoviinit</category>
+			<description><![CDATA[<p>Tuotteen Domaine de Viviers Chablis 2023 hinta on muuttunut.</p><p>16,83 € → 16,73 € (−0,10 €, −0,59 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/566424-ef020691014a.png" />
+		</item>
+		<item>
+			<title>Domaine de Viviers Chablis 2023 — 16,73 € → 16,83 €</title>
+			<link>https://alkometriikka.fi/tuotteet/566424/</link>
+			<guid isPermaLink="false">alkometriikka-566424-2026-02-02-16.83</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / valkoviinit</category>
+			<description><![CDATA[<p>Tuotteen Domaine de Viviers Chablis 2023 hinta on muuttunut.</p><p>16,73 € → 16,83 € (+0,10 €, +0,60 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/566424-ef020691014a.png" />
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Olvi Tuplapukki 6-pack tölkki – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/792848/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Olvi Tuplapukki 6-pack tölkki.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/792848.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Olvi Tuplapukki 6-pack tölkki – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Olvi Tuplapukki 6-pack tölkki — 25,80 € → 24,90 €</title>
+			<link>https://alkometriikka.fi/tuotteet/792848/</link>
+			<guid isPermaLink="false">alkometriikka-792848-2026-02-02-24.9</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Panimotuotteet / oluet</category>
+			<description><![CDATA[<p>Tuotteen Olvi Tuplapukki 6-pack tölkki hinta on muuttunut.</p><p>25,80 € → 24,90 € (−0,90 €, −3,49 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/792848-794ad7da279e.png" />
+		</item>
+		<item>
+			<title>Olvi Tuplapukki 6-pack tölkki — 24,90 € → 25,80 €</title>
+			<link>https://alkometriikka.fi/tuotteet/792848/</link>
+			<guid isPermaLink="false">alkometriikka-792848-2026-02-02-25.8</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Panimotuotteet / oluet</category>
+			<description><![CDATA[<p>Tuotteen Olvi Tuplapukki 6-pack tölkki hinta on muuttunut.</p><p>24,90 € → 25,80 € (+0,90 €, +3,61 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/792848-794ad7da279e.png" />
+		</item>
+	</channel>
+</rss>

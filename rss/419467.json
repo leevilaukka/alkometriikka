@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tommasi Crearo 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/419467/",
+	"feed_url": "https://alkometriikka.fi/rss/419467.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tommasi Crearo 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-419467-2026-07-18-24.98",
+			"url": "https://alkometriikka.fi/tuotteet/419467/",
+			"title": "Tommasi Crearo 2020 — 24,46 € → 24,98 €",
+			"content_html": "<p>Tuotteen Tommasi Crearo 2020 hinta on muuttunut.</p><p>24,46 € → 24,98 € (+0,52 €, +2,13 %).</p>",
+			"summary": "Tuotteen Tommasi Crearo 2020 hinta on muuttunut. 24,46 € → 24,98 € (+0,52 €, +2,13 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/419467-32c259ee34a0.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

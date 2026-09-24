@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Råstoff Pure Liquorice – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/932814/",
+	"feed_url": "https://alkometriikka.fi/rss/932814.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Råstoff Pure Liquorice.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-932814-2026-07-18-24.98",
+			"url": "https://alkometriikka.fi/tuotteet/932814/",
+			"title": "Råstoff Pure Liquorice — 24,09 € → 24,98 €",
+			"content_html": "<p>Tuotteen Råstoff Pure Liquorice hinta on muuttunut.</p><p>24,09 € → 24,98 € (+0,89 €, +3,69 %).</p>",
+			"summary": "Tuotteen Råstoff Pure Liquorice hinta on muuttunut. 24,09 € → 24,98 € (+0,89 €, +3,69 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/932814-855aeba4c946.png",
+			"tags": [
+				"Väkevät",
+				"salmiakkiliköörit"
+			]
+		}
+	]
+}

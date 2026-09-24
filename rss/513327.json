@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Baglietti Organic Spumante Rose – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/513327/",
+	"feed_url": "https://alkometriikka.fi/rss/513327.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Baglietti Organic Spumante Rose.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-513327-2026-07-18-15.99",
+			"url": "https://alkometriikka.fi/tuotteet/513327/",
+			"title": "Baglietti Organic Spumante Rose — 15,45 € → 15,99 €",
+			"content_html": "<p>Tuotteen Baglietti Organic Spumante Rose hinta on muuttunut.</p><p>15,45 € → 15,99 € (+0,54 €, +3,50 %).</p>",
+			"summary": "Tuotteen Baglietti Organic Spumante Rose hinta on muuttunut. 15,45 € → 15,99 € (+0,54 €, +3,50 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/513327-cd81cb677a73.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

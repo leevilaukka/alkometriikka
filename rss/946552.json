@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Heidell Vodka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/946552/",
+	"feed_url": "https://alkometriikka.fi/rss/946552.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Heidell Vodka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-946552-2026-07-18-43.85",
+			"url": "https://alkometriikka.fi/tuotteet/946552/",
+			"title": "Heidell Vodka — 42,91 € → 43,85 €",
+			"content_html": "<p>Tuotteen Heidell Vodka hinta on muuttunut.</p><p>42,91 € → 43,85 € (+0,94 €, +2,19 %).</p>",
+			"summary": "Tuotteen Heidell Vodka hinta on muuttunut. 42,91 € → 43,85 € (+0,94 €, +2,19 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/946552-5e2f68ec7de6.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

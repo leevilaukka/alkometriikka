@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jim Beam Rye – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/173387/",
+	"feed_url": "https://alkometriikka.fi/rss/173387.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jim Beam Rye.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-173387-2026-07-18-37.98",
+			"url": "https://alkometriikka.fi/tuotteet/173387/",
+			"title": "Jim Beam Rye — 37,81 € → 37,98 €",
+			"content_html": "<p>Tuotteen Jim Beam Rye hinta on muuttunut.</p><p>37,81 € → 37,98 € (+0,17 €, +0,45 %).</p>",
+			"summary": "Tuotteen Jim Beam Rye hinta on muuttunut. 37,81 € → 37,98 € (+0,17 €, +0,45 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/173387-2e1279ed2fbd.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

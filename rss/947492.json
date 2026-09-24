@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Domaine Faiveley Corton Clos des Cortons Grand Cru Monopole 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/947492/",
+	"feed_url": "https://alkometriikka.fi/rss/947492.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Domaine Faiveley Corton Clos des Cortons Grand Cru Monopole 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-947492-2026-07-18-293",
+			"url": "https://alkometriikka.fi/tuotteet/947492/",
+			"title": "Domaine Faiveley Corton Clos des Cortons Grand Cru Monopole 2021 — 330,46 € → 293,00 €",
+			"content_html": "<p>Tuotteen Domaine Faiveley Corton Clos des Cortons Grand Cru Monopole 2021 hinta on muuttunut.</p><p>330,46 € → 293,00 € (−37,46 €, −11,34 %).</p>",
+			"summary": "Tuotteen Domaine Faiveley Corton Clos des Cortons Grand Cru Monopole 2021 hinta on muuttunut. 330,46 € → 293,00 € (−37,46 €, −11,34 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/947492-ac55e2955a9a.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

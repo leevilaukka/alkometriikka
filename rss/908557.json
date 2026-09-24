@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cocchi Vermouth di Torino – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/908557/",
+	"feed_url": "https://alkometriikka.fi/rss/908557.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cocchi Vermouth di Torino.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-908557-2026-07-18-36.98",
+			"url": "https://alkometriikka.fi/tuotteet/908557/",
+			"title": "Cocchi Vermouth di Torino — 36,91 € → 36,98 €",
+			"content_html": "<p>Tuotteen Cocchi Vermouth di Torino hinta on muuttunut.</p><p>36,91 € → 36,98 € (+0,07 €, +0,19 %).</p>",
+			"summary": "Tuotteen Cocchi Vermouth di Torino hinta on muuttunut. 36,91 € → 36,98 € (+0,07 €, +0,19 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/908557-b0bd7733a4be.png",
+			"tags": [
+				"Välituotteet",
+				"vermutit"
+			]
+		}
+	]
+}

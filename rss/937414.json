@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ruby Zin hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/937414/",
+	"feed_url": "https://alkometriikka.fi/rss/937414.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ruby Zin hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-937414-2026-07-18-38.89",
+			"url": "https://alkometriikka.fi/tuotteet/937414/",
+			"title": "Ruby Zin hanapakkaus — 38,83 € → 38,89 €",
+			"content_html": "<p>Tuotteen Ruby Zin hanapakkaus hinta on muuttunut.</p><p>38,83 € → 38,89 € (+0,06 €, +0,15 %).</p>",
+			"summary": "Tuotteen Ruby Zin hanapakkaus hinta on muuttunut. 38,83 € → 38,89 € (+0,06 €, +0,15 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/937414-ee1748e5aded.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

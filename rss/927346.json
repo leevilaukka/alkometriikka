@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Torres Jaime I – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/927346/",
+	"feed_url": "https://alkometriikka.fi/rss/927346.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Torres Jaime I.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-927346-2026-07-18-120.98",
+			"url": "https://alkometriikka.fi/tuotteet/927346/",
+			"title": "Torres Jaime I — 120,89 € → 120,98 €",
+			"content_html": "<p>Tuotteen Torres Jaime I hinta on muuttunut.</p><p>120,89 € → 120,98 € (+0,09 €, +0,07 %).</p>",
+			"summary": "Tuotteen Torres Jaime I hinta on muuttunut. 120,89 € → 120,98 € (+0,09 €, +0,07 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/927346-01a2ee6ffbf8.png",
+			"tags": [
+				"Väkevät",
+				"brandyt"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vintense Prestige Blanc de Blanc 0,0% – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/939138/",
+	"feed_url": "https://alkometriikka.fi/rss/939138.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vintense Prestige Blanc de Blanc 0,0%.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-939138-2026-07-18-14.69",
+			"url": "https://alkometriikka.fi/tuotteet/939138/",
+			"title": "Vintense Prestige Blanc de Blanc 0,0% — 14,63 € → 14,69 €",
+			"content_html": "<p>Tuotteen Vintense Prestige Blanc de Blanc 0,0% hinta on muuttunut.</p><p>14,63 € → 14,69 € (+0,06 €, +0,41 %).</p>",
+			"summary": "Tuotteen Vintense Prestige Blanc de Blanc 0,0% hinta on muuttunut. 14,63 € → 14,69 € (+0,06 €, +0,41 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/939138-f0cef170ffac.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat kuohuviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Viña Albali Gran Reserva 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/005153/",
+	"feed_url": "https://alkometriikka.fi/rss/005153.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Viña Albali Gran Reserva 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-005153-2026-07-18-14.48",
+			"url": "https://alkometriikka.fi/tuotteet/005153/",
+			"title": "Viña Albali Gran Reserva 2019 — 14,29 € → 14,48 €",
+			"content_html": "<p>Tuotteen Viña Albali Gran Reserva 2019 hinta on muuttunut.</p><p>14,29 € → 14,48 € (+0,19 €, +1,33 %).</p>",
+			"summary": "Tuotteen Viña Albali Gran Reserva 2019 hinta on muuttunut. 14,29 € → 14,48 € (+0,19 €, +1,33 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/005153-cd82d7e90586.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

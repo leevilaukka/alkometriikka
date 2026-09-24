@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cameleon Bonarda 2025 viinipussi – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901578/",
+	"feed_url": "https://alkometriikka.fi/rss/901578.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cameleon Bonarda 2025 viinipussi.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901578-2026-07-18-24.9",
+			"url": "https://alkometriikka.fi/tuotteet/901578/",
+			"title": "Cameleon Bonarda 2025 viinipussi — 24,89 € → 24,90 €",
+			"content_html": "<p>Tuotteen Cameleon Bonarda 2025 viinipussi hinta on muuttunut.</p><p>24,89 € → 24,90 € (+0,01 €, +0,04 %).</p>",
+			"summary": "Tuotteen Cameleon Bonarda 2025 viinipussi hinta on muuttunut. 24,89 € → 24,90 € (+0,01 €, +0,04 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901578-d22314185038.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

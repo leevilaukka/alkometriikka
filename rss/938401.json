@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mallaskoski Black Stout – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/938401/",
+	"feed_url": "https://alkometriikka.fi/rss/938401.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mallaskoski Black Stout.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-938401-2026-07-18-5.23",
+			"url": "https://alkometriikka.fi/tuotteet/938401/",
+			"title": "Mallaskoski Black Stout — 5,24 € → 5,23 €",
+			"content_html": "<p>Tuotteen Mallaskoski Black Stout hinta on muuttunut.</p><p>5,24 € → 5,23 € (−0,01 €, −0,19 %).</p>",
+			"summary": "Tuotteen Mallaskoski Black Stout hinta on muuttunut. 5,24 € → 5,23 € (−0,01 €, −0,19 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/938401-df4446661ae9.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

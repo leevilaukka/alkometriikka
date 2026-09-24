@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Watson Irancy Rouge 2020 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/926751/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Watson Irancy Rouge 2020.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/926751.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Watson Irancy Rouge 2020 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Watson Irancy Rouge 2020 — 67,41 € → 59,89 €</title>
+			<link>https://alkometriikka.fi/tuotteet/926751/</link>
+			<guid isPermaLink="false">alkometriikka-926751-2026-07-18-59.89</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Watson Irancy Rouge 2020 hinta on muuttunut.</p><p>67,41 € → 59,89 € (−7,52 €, −11,16 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/926751-42a6104e9f12.png" />
+		</item>
+	</channel>
+</rss>

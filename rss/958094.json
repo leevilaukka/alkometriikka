@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Philippe Pacalet Corton Charlemagne Grand Cru 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/958094/",
+	"feed_url": "https://alkometriikka.fi/rss/958094.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Philippe Pacalet Corton Charlemagne Grand Cru 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-958094-2026-07-18-459.3",
+			"url": "https://alkometriikka.fi/tuotteet/958094/",
+			"title": "Philippe Pacalet Corton Charlemagne Grand Cru 2020 — 459,26 € → 459,30 €",
+			"content_html": "<p>Tuotteen Philippe Pacalet Corton Charlemagne Grand Cru 2020 hinta on muuttunut.</p><p>459,26 € → 459,30 € (+0,04 €, +0,01 %).</p>",
+			"summary": "Tuotteen Philippe Pacalet Corton Charlemagne Grand Cru 2020 hinta on muuttunut. 459,26 € → 459,30 € (+0,04 €, +0,01 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/958094-d6547399cb24.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

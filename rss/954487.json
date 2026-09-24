@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mouton Cadet Réserve Saint-Émilion 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/954487/",
+	"feed_url": "https://alkometriikka.fi/rss/954487.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mouton Cadet Réserve Saint-Émilion 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-954487-2026-07-18-25.46",
+			"url": "https://alkometriikka.fi/tuotteet/954487/",
+			"title": "Mouton Cadet Réserve Saint-Émilion 2019 — 25,48 € → 25,46 €",
+			"content_html": "<p>Tuotteen Mouton Cadet Réserve Saint-Émilion 2019 hinta on muuttunut.</p><p>25,48 € → 25,46 € (−0,02 €, −0,08 %).</p>",
+			"summary": "Tuotteen Mouton Cadet Réserve Saint-Émilion 2019 hinta on muuttunut. 25,48 € → 25,46 € (−0,02 €, −0,08 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/954487-875a911a74b9.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

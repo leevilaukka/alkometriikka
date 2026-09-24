@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Sazerac Rye Straight Rye Whiskey – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/131377/",
+	"feed_url": "https://alkometriikka.fi/rss/131377.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Sazerac Rye Straight Rye Whiskey.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-131377-2026-07-18-74.95",
+			"url": "https://alkometriikka.fi/tuotteet/131377/",
+			"title": "Sazerac Rye Straight Rye Whiskey — 74,97 € → 74,95 €",
+			"content_html": "<p>Tuotteen Sazerac Rye Straight Rye Whiskey hinta on muuttunut.</p><p>74,97 € → 74,95 € (−0,02 €, −0,03 %).</p>",
+			"summary": "Tuotteen Sazerac Rye Straight Rye Whiskey hinta on muuttunut. 74,97 € → 74,95 € (−0,02 €, −0,03 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/131377-1c1c8d775ac8.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

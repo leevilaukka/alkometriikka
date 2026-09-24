@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Buxton Ale of Christmas Past Old Ale tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902558/",
+	"feed_url": "https://alkometriikka.fi/rss/902558.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Buxton Ale of Christmas Past Old Ale tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902558-2026-07-18-5.54",
+			"url": "https://alkometriikka.fi/tuotteet/902558/",
+			"title": "Buxton Ale of Christmas Past Old Ale tölkki — 5,89 € → 5,54 €",
+			"content_html": "<p>Tuotteen Buxton Ale of Christmas Past Old Ale tölkki hinta on muuttunut.</p><p>5,89 € → 5,54 € (−0,35 €, −5,94 %).</p>",
+			"summary": "Tuotteen Buxton Ale of Christmas Past Old Ale tölkki hinta on muuttunut. 5,89 € → 5,54 € (−0,35 €, −5,94 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902558-48a33a4915da.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

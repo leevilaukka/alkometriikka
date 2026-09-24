@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vóila Vineyard Assyrtiko 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/587157/",
+	"feed_url": "https://alkometriikka.fi/rss/587157.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vóila Vineyard Assyrtiko 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-587157-2026-07-18-19.99",
+			"url": "https://alkometriikka.fi/tuotteet/587157/",
+			"title": "Vóila Vineyard Assyrtiko 2025 — 18,94 € → 19,99 €",
+			"content_html": "<p>Tuotteen Vóila Vineyard Assyrtiko 2025 hinta on muuttunut.</p><p>18,94 € → 19,99 € (+1,05 €, +5,54 %).</p>",
+			"summary": "Tuotteen Vóila Vineyard Assyrtiko 2025 hinta on muuttunut. 18,94 € → 19,99 € (+1,05 €, +5,54 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/587157-2e33792d593d.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bestheim Crémant d'Alsace Brut Premium – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/933147/",
+	"feed_url": "https://alkometriikka.fi/rss/933147.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bestheim Crémant d'Alsace Brut Premium.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-933147-2026-07-18-16.98",
+			"url": "https://alkometriikka.fi/tuotteet/933147/",
+			"title": "Bestheim Crémant d'Alsace Brut Premium — 16,96 € → 16,98 €",
+			"content_html": "<p>Tuotteen Bestheim Crémant d'Alsace Brut Premium hinta on muuttunut.</p><p>16,96 € → 16,98 € (+0,02 €, +0,12 %).</p>",
+			"summary": "Tuotteen Bestheim Crémant d'Alsace Brut Premium hinta on muuttunut. 16,96 € → 16,98 € (+0,02 €, +0,12 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/933147-2ae092ef35ba.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

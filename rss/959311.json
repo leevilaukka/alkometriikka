@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gusbourne Blanc de Blancs Brut 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/959311/",
+	"feed_url": "https://alkometriikka.fi/rss/959311.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gusbourne Blanc de Blancs Brut 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-959311-2026-07-18-70.99",
+			"url": "https://alkometriikka.fi/tuotteet/959311/",
+			"title": "Gusbourne Blanc de Blancs Brut 2018 — 69,40 € → 70,99 €",
+			"content_html": "<p>Tuotteen Gusbourne Blanc de Blancs Brut 2018 hinta on muuttunut.</p><p>69,40 € → 70,99 € (+1,59 €, +2,29 %).</p>",
+			"summary": "Tuotteen Gusbourne Blanc de Blancs Brut 2018 hinta on muuttunut. 69,40 € → 70,99 € (+1,59 €, +2,29 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/959311-2c73d0c6101c.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

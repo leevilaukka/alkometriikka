@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Tanqueray Rangpur Gin – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/956097/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Tanqueray Rangpur Gin.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/956097.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Tanqueray Rangpur Gin – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Tanqueray Rangpur Gin — 40,27 € → 40,49 €</title>
+			<link>https://alkometriikka.fi/tuotteet/956097/</link>
+			<guid isPermaLink="false">alkometriikka-956097-2026-07-18-40.49</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / ginit</category>
+			<description><![CDATA[<p>Tuotteen Tanqueray Rangpur Gin hinta on muuttunut.</p><p>40,27 € → 40,49 € (+0,22 €, +0,55 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/956097-f30d1d7b0db5.png" />
+		</item>
+		<item>
+			<title>Tanqueray Rangpur Gin — 40,27 € → 40,17 €</title>
+			<link>https://alkometriikka.fi/tuotteet/956097/</link>
+			<guid isPermaLink="false">alkometriikka-956097-2026-02-02-40.17</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / ginit</category>
+			<description><![CDATA[<p>Tuotteen Tanqueray Rangpur Gin hinta on muuttunut.</p><p>40,27 € → 40,17 € (−0,10 €, −0,25 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/956097-f30d1d7b0db5.png" />
+		</item>
+		<item>
+			<title>Tanqueray Rangpur Gin — 40,17 € → 40,27 €</title>
+			<link>https://alkometriikka.fi/tuotteet/956097/</link>
+			<guid isPermaLink="false">alkometriikka-956097-2026-02-02-40.27</guid>
+			<pubDate>Mon, 02 Feb 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / ginit</category>
+			<description><![CDATA[<p>Tuotteen Tanqueray Rangpur Gin hinta on muuttunut.</p><p>40,17 € → 40,27 € (+0,10 €, +0,25 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/956097-f30d1d7b0db5.png" />
+		</item>
+	</channel>
+</rss>

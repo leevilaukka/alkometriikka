@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pusser's Rum Coronation Reserve – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/915592/",
+	"feed_url": "https://alkometriikka.fi/rss/915592.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pusser's Rum Coronation Reserve.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-915592-2026-07-18-68.1",
+			"url": "https://alkometriikka.fi/tuotteet/915592/",
+			"title": "Pusser's Rum Coronation Reserve — 67,58 € → 68,10 €",
+			"content_html": "<p>Tuotteen Pusser's Rum Coronation Reserve hinta on muuttunut.</p><p>67,58 € → 68,10 € (+0,52 €, +0,77 %).</p>",
+			"summary": "Tuotteen Pusser's Rum Coronation Reserve hinta on muuttunut. 67,58 € → 68,10 € (+0,52 €, +0,77 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/915592-5ae2a6474bf6.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

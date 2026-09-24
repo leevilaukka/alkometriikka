@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Aalto 2023 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/930756/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Aalto 2023.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/930756.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Aalto 2023 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Aalto 2023 — 63,99 € → 65,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/930756/</link>
+			<guid isPermaLink="false">alkometriikka-930756-2026-07-18-65.99</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Aalto 2023 hinta on muuttunut.</p><p>63,99 € → 65,99 € (+2,00 €, +3,13 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/930756-7e732a4f7838.png" />
+		</item>
+	</channel>
+</rss>

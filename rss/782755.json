@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – To Øl Steep Slope tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/782755/",
+	"feed_url": "https://alkometriikka.fi/rss/782755.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: To Øl Steep Slope tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-782755-2026-07-18-5.97",
+			"url": "https://alkometriikka.fi/tuotteet/782755/",
+			"title": "To Øl Steep Slope tölkki — 5,98 € → 5,97 €",
+			"content_html": "<p>Tuotteen To Øl Steep Slope tölkki hinta on muuttunut.</p><p>5,98 € → 5,97 € (−0,01 €, −0,17 %).</p>",
+			"summary": "Tuotteen To Øl Steep Slope tölkki hinta on muuttunut. 5,98 € → 5,97 € (−0,01 €, −0,17 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/782755-b9c917c5996e.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

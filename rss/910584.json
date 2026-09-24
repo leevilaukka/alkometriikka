@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Rivetto Barolo Leon Riserva 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/910584/",
+	"feed_url": "https://alkometriikka.fi/rss/910584.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Rivetto Barolo Leon Riserva 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-910584-2026-07-18-109",
+			"url": "https://alkometriikka.fi/tuotteet/910584/",
+			"title": "Rivetto Barolo Leon Riserva 2019 — 109,46 € → 109,00 €",
+			"content_html": "<p>Tuotteen Rivetto Barolo Leon Riserva 2019 hinta on muuttunut.</p><p>109,46 € → 109,00 € (−0,46 €, −0,42 %).</p>",
+			"summary": "Tuotteen Rivetto Barolo Leon Riserva 2019 hinta on muuttunut. 109,46 € → 109,00 € (−0,46 €, −0,42 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/910584-0e67baee2ffd.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

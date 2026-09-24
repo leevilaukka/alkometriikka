@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cerro Tinto kartonkitölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/454138/",
+	"feed_url": "https://alkometriikka.fi/rss/454138.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cerro Tinto kartonkitölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-454138-2026-07-18-9.99",
+			"url": "https://alkometriikka.fi/tuotteet/454138/",
+			"title": "Cerro Tinto kartonkitölkki — 10,30 € → 9,99 €",
+			"content_html": "<p>Tuotteen Cerro Tinto kartonkitölkki hinta on muuttunut.</p><p>10,30 € → 9,99 € (−0,31 €, −3,01 %).</p>",
+			"summary": "Tuotteen Cerro Tinto kartonkitölkki hinta on muuttunut. 10,30 € → 9,99 € (−0,31 €, −3,01 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/454138-cfe01b5a684b.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

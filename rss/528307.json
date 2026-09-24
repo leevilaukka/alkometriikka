@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Steininger Cabernet Sauvignon Rosé Sekt Brut 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/528307/",
+	"feed_url": "https://alkometriikka.fi/rss/528307.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Steininger Cabernet Sauvignon Rosé Sekt Brut 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-528307-2026-07-18-25.5",
+			"url": "https://alkometriikka.fi/tuotteet/528307/",
+			"title": "Steininger Cabernet Sauvignon Rosé Sekt Brut 2023 — 25,36 € → 25,50 €",
+			"content_html": "<p>Tuotteen Steininger Cabernet Sauvignon Rosé Sekt Brut 2023 hinta on muuttunut.</p><p>25,36 € → 25,50 € (+0,14 €, +0,55 %).</p>",
+			"summary": "Tuotteen Steininger Cabernet Sauvignon Rosé Sekt Brut 2023 hinta on muuttunut. 25,36 € → 25,50 € (+0,14 €, +0,55 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/528307-5655c07b423f.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

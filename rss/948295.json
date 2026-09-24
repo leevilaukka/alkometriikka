@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – La Spinetta Toscana Vermentino 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/948295/",
+	"feed_url": "https://alkometriikka.fi/rss/948295.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: La Spinetta Toscana Vermentino 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-948295-2026-07-18-24.48",
+			"url": "https://alkometriikka.fi/tuotteet/948295/",
+			"title": "La Spinetta Toscana Vermentino 2024 — 24,44 € → 24,48 €",
+			"content_html": "<p>Tuotteen La Spinetta Toscana Vermentino 2024 hinta on muuttunut.</p><p>24,44 € → 24,48 € (+0,04 €, +0,16 %).</p>",
+			"summary": "Tuotteen La Spinetta Toscana Vermentino 2024 hinta on muuttunut. 24,44 € → 24,48 € (+0,04 €, +0,16 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/948295-5f50dac96f57.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

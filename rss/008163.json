@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Luna Negra Chardonnay hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/008163/",
+	"feed_url": "https://alkometriikka.fi/rss/008163.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Luna Negra Chardonnay hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-008163-2026-07-18-24.99",
+			"url": "https://alkometriikka.fi/tuotteet/008163/",
+			"title": "Luna Negra Chardonnay hanapakkaus — 24,68 € → 24,99 €",
+			"content_html": "<p>Tuotteen Luna Negra Chardonnay hanapakkaus hinta on muuttunut.</p><p>24,68 € → 24,99 € (+0,31 €, +1,26 %).</p>",
+			"summary": "Tuotteen Luna Negra Chardonnay hanapakkaus hinta on muuttunut. 24,68 € → 24,99 € (+0,31 €, +1,26 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/008163-14ad0460edb9.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

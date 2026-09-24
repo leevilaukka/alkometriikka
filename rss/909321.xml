@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Gustav Blueberry &amp; Raspberry – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/909321/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Gustav Blueberry &amp; Raspberry.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/909321.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Gustav Blueberry &amp; Raspberry – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Gustav Blueberry &amp; Raspberry — 17,40 € → 17,48 €</title>
+			<link>https://alkometriikka.fi/tuotteet/909321/</link>
+			<guid isPermaLink="false">alkometriikka-909321-2026-07-18-17.48</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / marjaliköörit</category>
+			<description><![CDATA[<p>Tuotteen Gustav Blueberry & Raspberry hinta on muuttunut.</p><p>17,40 € → 17,48 € (+0,08 €, +0,46 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/909321-e2db210f5225.png" />
+		</item>
+	</channel>
+</rss>

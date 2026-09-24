@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Casa Charlize Passonata – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/956184/",
+	"feed_url": "https://alkometriikka.fi/rss/956184.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Casa Charlize Passonata.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-956184-2026-07-18-13.98",
+			"url": "https://alkometriikka.fi/tuotteet/956184/",
+			"title": "Casa Charlize Passonata — 13,96 € → 13,98 €",
+			"content_html": "<p>Tuotteen Casa Charlize Passonata hinta on muuttunut.</p><p>13,96 € → 13,98 € (+0,02 €, +0,14 %).</p>",
+			"summary": "Tuotteen Casa Charlize Passonata hinta on muuttunut. 13,96 € → 13,98 € (+0,02 €, +0,14 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/956184-ab72c6183726.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

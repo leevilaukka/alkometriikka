@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Camille Giroud Marsannay Longeroies 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/911035/",
+	"feed_url": "https://alkometriikka.fi/rss/911035.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Camille Giroud Marsannay Longeroies 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-911035-2026-07-18-61.5",
+			"url": "https://alkometriikka.fi/tuotteet/911035/",
+			"title": "Camille Giroud Marsannay Longeroies 2022 — 61,46 € → 61,50 €",
+			"content_html": "<p>Tuotteen Camille Giroud Marsannay Longeroies 2022 hinta on muuttunut.</p><p>61,46 € → 61,50 € (+0,04 €, +0,07 %).</p>",
+			"summary": "Tuotteen Camille Giroud Marsannay Longeroies 2022 hinta on muuttunut. 61,46 € → 61,50 € (+0,04 €, +0,07 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/911035-e2a23cafc220.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

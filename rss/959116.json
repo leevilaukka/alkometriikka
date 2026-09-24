@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tenuta San Guido Guidalberto 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/959116/",
+	"feed_url": "https://alkometriikka.fi/rss/959116.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tenuta San Guido Guidalberto 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-959116-2026-07-18-63.48",
+			"url": "https://alkometriikka.fi/tuotteet/959116/",
+			"title": "Tenuta San Guido Guidalberto 2023 — 63,44 € → 63,48 €",
+			"content_html": "<p>Tuotteen Tenuta San Guido Guidalberto 2023 hinta on muuttunut.</p><p>63,44 € → 63,48 € (+0,04 €, +0,06 %).</p>",
+			"summary": "Tuotteen Tenuta San Guido Guidalberto 2023 hinta on muuttunut. 63,44 € → 63,48 € (+0,04 €, +0,06 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/959116-814d74f522cd.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

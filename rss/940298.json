@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Domini Veneti Amarone Della Valpolicella Classico 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/940298/",
+	"feed_url": "https://alkometriikka.fi/rss/940298.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Domini Veneti Amarone Della Valpolicella Classico 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-940298-2026-07-18-42.49",
+			"url": "https://alkometriikka.fi/tuotteet/940298/",
+			"title": "Domini Veneti Amarone Della Valpolicella Classico 2021 — 40,46 € → 42,49 €",
+			"content_html": "<p>Tuotteen Domini Veneti Amarone Della Valpolicella Classico 2021 hinta on muuttunut.</p><p>40,46 € → 42,49 € (+2,03 €, +5,02 %).</p>",
+			"summary": "Tuotteen Domini Veneti Amarone Della Valpolicella Classico 2021 hinta on muuttunut. 40,46 € → 42,49 € (+2,03 €, +5,02 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/940298-1cc333a0c172.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

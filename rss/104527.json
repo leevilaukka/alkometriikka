@@ -1,0 +1,50 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tapio Viina muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/104527/",
+	"feed_url": "https://alkometriikka.fi/rss/104527.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tapio Viina muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-104527-2026-07-18-22.39",
+			"url": "https://alkometriikka.fi/tuotteet/104527/",
+			"title": "Tapio Viina muovipullo — 22,36 € → 22,39 €",
+			"content_html": "<p>Tuotteen Tapio Viina muovipullo hinta on muuttunut.</p><p>22,36 € → 22,39 € (+0,03 €, +0,13 %).</p>",
+			"summary": "Tuotteen Tapio Viina muovipullo hinta on muuttunut. 22,36 € → 22,39 € (+0,03 €, +0,13 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/104527-0063f9a8477a.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		},
+		{
+			"id": "alkometriikka-104527-2026-02-02-22.16",
+			"url": "https://alkometriikka.fi/tuotteet/104527/",
+			"title": "Tapio Viina muovipullo — 22,36 € → 22,16 €",
+			"content_html": "<p>Tuotteen Tapio Viina muovipullo hinta on muuttunut.</p><p>22,36 € → 22,16 € (−0,20 €, −0,89 %).</p>",
+			"summary": "Tuotteen Tapio Viina muovipullo hinta on muuttunut. 22,36 € → 22,16 € (−0,20 €, −0,89 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/104527-0063f9a8477a.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		},
+		{
+			"id": "alkometriikka-104527-2026-02-02-22.36",
+			"url": "https://alkometriikka.fi/tuotteet/104527/",
+			"title": "Tapio Viina muovipullo — 22,16 € → 22,36 €",
+			"content_html": "<p>Tuotteen Tapio Viina muovipullo hinta on muuttunut.</p><p>22,16 € → 22,36 € (+0,20 €, +0,90 %).</p>",
+			"summary": "Tuotteen Tapio Viina muovipullo hinta on muuttunut. 22,16 € → 22,36 € (+0,20 €, +0,90 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/104527-0063f9a8477a.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

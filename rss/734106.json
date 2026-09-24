@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Fentimans Connoisseurs Tonic Water – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/734106/",
+	"feed_url": "https://alkometriikka.fi/rss/734106.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Fentimans Connoisseurs Tonic Water.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-734106-2026-07-18-3.59",
+			"url": "https://alkometriikka.fi/tuotteet/734106/",
+			"title": "Fentimans Connoisseurs Tonic Water — 3,58 € → 3,59 €",
+			"content_html": "<p>Tuotteen Fentimans Connoisseurs Tonic Water hinta on muuttunut.</p><p>3,58 € → 3,59 € (+0,01 €, +0,28 %).</p>",
+			"summary": "Tuotteen Fentimans Connoisseurs Tonic Water hinta on muuttunut. 3,58 € → 3,59 € (+0,01 €, +0,28 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/734106-1422385d442b.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

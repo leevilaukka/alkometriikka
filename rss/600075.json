@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Budvar 0.0% – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/600075/",
+	"feed_url": "https://alkometriikka.fi/rss/600075.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Budvar 0.0%.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-600075-2026-09-04-1.61",
+			"url": "https://alkometriikka.fi/tuotteet/600075/",
+			"title": "Budvar 0.0% — 1,79 € → 1,61 €",
+			"content_html": "<p>Tuotteen Budvar 0.0% hinta on muuttunut.</p><p>1,79 € → 1,61 € (−0,18 €, −10,06 %).</p>",
+			"summary": "Tuotteen Budvar 0.0% hinta on muuttunut. 1,79 € → 1,61 € (−0,18 €, −10,06 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600075-6ec91dc4deda.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

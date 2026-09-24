@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Botran 8 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/113307/",
+	"feed_url": "https://alkometriikka.fi/rss/113307.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Botran 8.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-113307-2026-07-18-37.49",
+			"url": "https://alkometriikka.fi/tuotteet/113307/",
+			"title": "Botran 8 — 37,45 € → 37,49 €",
+			"content_html": "<p>Tuotteen Botran 8 hinta on muuttunut.</p><p>37,45 € → 37,49 € (+0,04 €, +0,11 %).</p>",
+			"summary": "Tuotteen Botran 8 hinta on muuttunut. 37,45 € → 37,49 € (+0,04 €, +0,11 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/113307-65d2861b908e.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

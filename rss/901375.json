@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Arran Sherry Cask Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901375/",
+	"feed_url": "https://alkometriikka.fi/rss/901375.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Arran Sherry Cask Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901375-2026-07-18-86.78",
+			"url": "https://alkometriikka.fi/tuotteet/901375/",
+			"title": "Arran Sherry Cask Single Malt — 82,57 € → 86,78 €",
+			"content_html": "<p>Tuotteen Arran Sherry Cask Single Malt hinta on muuttunut.</p><p>82,57 € → 86,78 € (+4,21 €, +5,10 %).</p>",
+			"summary": "Tuotteen Arran Sherry Cask Single Malt hinta on muuttunut. 82,57 € → 86,78 € (+4,21 €, +5,10 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901375-4205869a1a18.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

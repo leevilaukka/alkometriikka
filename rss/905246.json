@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cles Des Ducs VSOP Armagnac – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/905246/",
+	"feed_url": "https://alkometriikka.fi/rss/905246.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cles Des Ducs VSOP Armagnac.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-905246-2026-07-18-55.3",
+			"url": "https://alkometriikka.fi/tuotteet/905246/",
+			"title": "Cles Des Ducs VSOP Armagnac — 55,26 € → 55,30 €",
+			"content_html": "<p>Tuotteen Cles Des Ducs VSOP Armagnac hinta on muuttunut.</p><p>55,26 € → 55,30 € (+0,04 €, +0,07 %).</p>",
+			"summary": "Tuotteen Cles Des Ducs VSOP Armagnac hinta on muuttunut. 55,26 € → 55,30 € (+0,04 €, +0,07 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/905246-65d31fb60474.png",
+			"tags": [
+				"Väkevät",
+				"armanjakit"
+			]
+		}
+	]
+}

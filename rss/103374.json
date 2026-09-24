@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Absolut Vodka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/103374/",
+	"feed_url": "https://alkometriikka.fi/rss/103374.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Absolut Vodka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-103374-2026-07-18-15.89",
+			"url": "https://alkometriikka.fi/tuotteet/103374/",
+			"title": "Absolut Vodka — 15,83 € → 15,89 €",
+			"content_html": "<p>Tuotteen Absolut Vodka hinta on muuttunut.</p><p>15,83 € → 15,89 € (+0,06 €, +0,38 %).</p>",
+			"summary": "Tuotteen Absolut Vodka hinta on muuttunut. 15,83 € → 15,89 € (+0,06 €, +0,38 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/103374-0b0a620937af.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

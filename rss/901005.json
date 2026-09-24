@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vietti Barolo Brunate 2017 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901005/",
+	"feed_url": "https://alkometriikka.fi/rss/901005.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vietti Barolo Brunate 2017.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901005-2026-07-18-278.99",
+			"url": "https://alkometriikka.fi/tuotteet/901005/",
+			"title": "Vietti Barolo Brunate 2017 — 279,22 € → 278,99 €",
+			"content_html": "<p>Tuotteen Vietti Barolo Brunate 2017 hinta on muuttunut.</p><p>279,22 € → 278,99 € (−0,23 €, −0,08 %).</p>",
+			"summary": "Tuotteen Vietti Barolo Brunate 2017 hinta on muuttunut. 279,22 € → 278,99 € (−0,23 €, −0,08 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901005-a64fd1507726.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Domini Veneti Pruviniano Ripasso Classico Superiore 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/908086/",
+	"feed_url": "https://alkometriikka.fi/rss/908086.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Domini Veneti Pruviniano Ripasso Classico Superiore 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-908086-2026-02-02-19.89",
+			"url": "https://alkometriikka.fi/tuotteet/908086/",
+			"title": "Domini Veneti Pruviniano Ripasso Classico Superiore 2021 — 19,99 € → 19,89 €",
+			"content_html": "<p>Tuotteen Domini Veneti Pruviniano Ripasso Classico Superiore 2021 hinta on muuttunut.</p><p>19,99 € → 19,89 € (−0,10 €, −0,50 %).</p>",
+			"summary": "Tuotteen Domini Veneti Pruviniano Ripasso Classico Superiore 2021 hinta on muuttunut. 19,99 € → 19,89 € (−0,10 €, −0,50 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/908086-b4f2ca620e93.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-908086-2026-02-02-19.99",
+			"url": "https://alkometriikka.fi/tuotteet/908086/",
+			"title": "Domini Veneti Pruviniano Ripasso Classico Superiore 2021 — 19,89 € → 19,99 €",
+			"content_html": "<p>Tuotteen Domini Veneti Pruviniano Ripasso Classico Superiore 2021 hinta on muuttunut.</p><p>19,89 € → 19,99 € (+0,10 €, +0,50 %).</p>",
+			"summary": "Tuotteen Domini Veneti Pruviniano Ripasso Classico Superiore 2021 hinta on muuttunut. 19,89 € → 19,99 € (+0,10 €, +0,50 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/908086-b4f2ca620e93.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

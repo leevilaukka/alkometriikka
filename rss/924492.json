@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pointe Blanche Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/924492/",
+	"feed_url": "https://alkometriikka.fi/rss/924492.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pointe Blanche Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-924492-2026-07-18-61.79",
+			"url": "https://alkometriikka.fi/tuotteet/924492/",
+			"title": "Pointe Blanche Single Malt — 61,77 € → 61,79 €",
+			"content_html": "<p>Tuotteen Pointe Blanche Single Malt hinta on muuttunut.</p><p>61,77 € → 61,79 € (+0,02 €, +0,03 %).</p>",
+			"summary": "Tuotteen Pointe Blanche Single Malt hinta on muuttunut. 61,77 € → 61,79 € (+0,02 €, +0,03 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/924492-c80f5517d83d.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

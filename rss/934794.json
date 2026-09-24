@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ägräs Hoppy Vodka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/934794/",
+	"feed_url": "https://alkometriikka.fi/rss/934794.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ägräs Hoppy Vodka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-934794-2026-07-18-26.9",
+			"url": "https://alkometriikka.fi/tuotteet/934794/",
+			"title": "Ägräs Hoppy Vodka — 26,84 € → 26,90 €",
+			"content_html": "<p>Tuotteen Ägräs Hoppy Vodka hinta on muuttunut.</p><p>26,84 € → 26,90 € (+0,06 €, +0,22 %).</p>",
+			"summary": "Tuotteen Ägräs Hoppy Vodka hinta on muuttunut. 26,84 € → 26,90 € (+0,06 €, +0,22 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/934794-58907c80d633.png",
+			"tags": [
+				"Väkevät",
+				"maustetut vodkat"
+			]
+		}
+	]
+}

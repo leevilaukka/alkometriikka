@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Pizzolato Alcohol Free Sparkling – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/558573/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Pizzolato Alcohol Free Sparkling.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/558573.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Pizzolato Alcohol Free Sparkling – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Pizzolato Alcohol Free Sparkling — 4,73 € → 4,79 €</title>
+			<link>https://alkometriikka.fi/tuotteet/558573/</link>
+			<guid isPermaLink="false">alkometriikka-558573-2026-07-18-4.79</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Alkoholittomat / alkoholittomat kuohuviinit</category>
+			<description><![CDATA[<p>Tuotteen Pizzolato Alcohol Free Sparkling hinta on muuttunut.</p><p>4,73 € → 4,79 € (+0,06 €, +1,27 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/558573-b52b8b10047f.png" />
+		</item>
+	</channel>
+</rss>

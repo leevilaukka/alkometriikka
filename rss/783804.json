@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bavaria IPA 0,0% – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/783804/",
+	"feed_url": "https://alkometriikka.fi/rss/783804.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bavaria IPA 0,0%.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-783804-2026-09-04-1.53",
+			"url": "https://alkometriikka.fi/tuotteet/783804/",
+			"title": "Bavaria IPA 0,0% — 1,70 € → 1,53 €",
+			"content_html": "<p>Tuotteen Bavaria IPA 0,0% hinta on muuttunut.</p><p>1,70 € → 1,53 € (−0,17 €, −10,00 %).</p>",
+			"summary": "Tuotteen Bavaria IPA 0,0% hinta on muuttunut. 1,70 € → 1,53 € (−0,17 €, −10,00 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/783804-3853828587d7.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

@@ -1,0 +1,50 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – De Kuyper Sour Apple – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/217496/",
+	"feed_url": "https://alkometriikka.fi/rss/217496.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: De Kuyper Sour Apple.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-217496-2026-07-18-14.99",
+			"url": "https://alkometriikka.fi/tuotteet/217496/",
+			"title": "De Kuyper Sour Apple — 14,97 € → 14,99 €",
+			"content_html": "<p>Tuotteen De Kuyper Sour Apple hinta on muuttunut.</p><p>14,97 € → 14,99 € (+0,02 €, +0,13 %).</p>",
+			"summary": "Tuotteen De Kuyper Sour Apple hinta on muuttunut. 14,97 € → 14,99 € (+0,02 €, +0,13 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/217496-9d5f15e7b20c.png",
+			"tags": [
+				"Väkevät",
+				"hedelmäliköörit"
+			]
+		},
+		{
+			"id": "alkometriikka-217496-2026-02-02-14.87",
+			"url": "https://alkometriikka.fi/tuotteet/217496/",
+			"title": "De Kuyper Sour Apple — 14,97 € → 14,87 €",
+			"content_html": "<p>Tuotteen De Kuyper Sour Apple hinta on muuttunut.</p><p>14,97 € → 14,87 € (−0,10 €, −0,67 %).</p>",
+			"summary": "Tuotteen De Kuyper Sour Apple hinta on muuttunut. 14,97 € → 14,87 € (−0,10 €, −0,67 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/217496-9d5f15e7b20c.png",
+			"tags": [
+				"Väkevät",
+				"hedelmäliköörit"
+			]
+		},
+		{
+			"id": "alkometriikka-217496-2026-02-02-14.97",
+			"url": "https://alkometriikka.fi/tuotteet/217496/",
+			"title": "De Kuyper Sour Apple — 14,87 € → 14,97 €",
+			"content_html": "<p>Tuotteen De Kuyper Sour Apple hinta on muuttunut.</p><p>14,87 € → 14,97 € (+0,10 €, +0,67 %).</p>",
+			"summary": "Tuotteen De Kuyper Sour Apple hinta on muuttunut. 14,87 € → 14,97 € (+0,10 €, +0,67 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/217496-9d5f15e7b20c.png",
+			"tags": [
+				"Väkevät",
+				"hedelmäliköörit"
+			]
+		}
+	]
+}

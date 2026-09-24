@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Boizel Absolu Rosé Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/949464/",
+	"feed_url": "https://alkometriikka.fi/rss/949464.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Boizel Absolu Rosé Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-949464-2026-07-18-28.9",
+			"url": "https://alkometriikka.fi/tuotteet/949464/",
+			"title": "Boizel Absolu Rosé Brut — 28,71 € → 28,90 €",
+			"content_html": "<p>Tuotteen Boizel Absolu Rosé Brut hinta on muuttunut.</p><p>28,71 € → 28,90 € (+0,19 €, +0,66 %).</p>",
+			"summary": "Tuotteen Boizel Absolu Rosé Brut hinta on muuttunut. 28,71 € → 28,90 € (+0,19 €, +0,66 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/949464-a21c14367d78.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

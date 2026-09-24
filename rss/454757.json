@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Quinta do Valdoeiro 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/454757/",
+	"feed_url": "https://alkometriikka.fi/rss/454757.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Quinta do Valdoeiro 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-454757-2026-07-18-15.99",
+			"url": "https://alkometriikka.fi/tuotteet/454757/",
+			"title": "Quinta do Valdoeiro 2018 — 15,66 € → 15,99 €",
+			"content_html": "<p>Tuotteen Quinta do Valdoeiro 2018 hinta on muuttunut.</p><p>15,66 € → 15,99 € (+0,33 €, +2,11 %).</p>",
+			"summary": "Tuotteen Quinta do Valdoeiro 2018 hinta on muuttunut. 15,66 € → 15,99 € (+0,33 €, +2,11 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/454757-d24f91707b46.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

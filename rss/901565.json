@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Heidell Hoburg – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901565/",
+	"feed_url": "https://alkometriikka.fi/rss/901565.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Heidell Hoburg.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901565-2026-07-18-41.1",
+			"url": "https://alkometriikka.fi/tuotteet/901565/",
+			"title": "Heidell Hoburg — 41,04 € → 41,10 €",
+			"content_html": "<p>Tuotteen Heidell Hoburg hinta on muuttunut.</p><p>41,04 € → 41,10 € (+0,06 €, +0,15 %).</p>",
+			"summary": "Tuotteen Heidell Hoburg hinta on muuttunut. 41,04 € → 41,10 € (+0,06 €, +0,15 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901565-e5e1de291afb.png",
+			"tags": [
+				"Väkevät",
+				"yrttiliköörit"
+			]
+		}
+	]
+}

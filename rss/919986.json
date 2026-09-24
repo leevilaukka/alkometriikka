@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Massolino Barolo 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/919986/",
+	"feed_url": "https://alkometriikka.fi/rss/919986.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Massolino Barolo 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-919986-2026-07-18-52.99",
+			"url": "https://alkometriikka.fi/tuotteet/919986/",
+			"title": "Massolino Barolo 2021 — 51,99 € → 52,99 €",
+			"content_html": "<p>Tuotteen Massolino Barolo 2021 hinta on muuttunut.</p><p>51,99 € → 52,99 € (+1,00 €, +1,92 %).</p>",
+			"summary": "Tuotteen Massolino Barolo 2021 hinta on muuttunut. 51,99 € → 52,99 € (+1,00 €, +1,92 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/919986-4e167f45536d.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

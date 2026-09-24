@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ruinart Blanc de Blancs Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/914977/",
+	"feed_url": "https://alkometriikka.fi/rss/914977.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ruinart Blanc de Blancs Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-914977-2026-07-18-107.98",
+			"url": "https://alkometriikka.fi/tuotteet/914977/",
+			"title": "Ruinart Blanc de Blancs Champagne Brut — 106,25 € → 107,98 €",
+			"content_html": "<p>Tuotteen Ruinart Blanc de Blancs Champagne Brut hinta on muuttunut.</p><p>106,25 € → 107,98 € (+1,73 €, +1,63 %).</p>",
+			"summary": "Tuotteen Ruinart Blanc de Blancs Champagne Brut hinta on muuttunut. 106,25 € → 107,98 € (+1,73 €, +1,63 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/914977-93ffc214d8c6.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

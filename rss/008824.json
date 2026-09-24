@@ -1,0 +1,50 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ballet Carte Noire Organic Demi-Sec – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/008824/",
+	"feed_url": "https://alkometriikka.fi/rss/008824.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ballet Carte Noire Organic Demi-Sec.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-008824-2026-07-18-11.49",
+			"url": "https://alkometriikka.fi/tuotteet/008824/",
+			"title": "Ballet Carte Noire Organic Demi-Sec — 11,26 € → 11,49 €",
+			"content_html": "<p>Tuotteen Ballet Carte Noire Organic Demi-Sec hinta on muuttunut.</p><p>11,26 € → 11,49 € (+0,23 €, +2,04 %).</p>",
+			"summary": "Tuotteen Ballet Carte Noire Organic Demi-Sec hinta on muuttunut. 11,26 € → 11,49 € (+0,23 €, +2,04 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/008824-aef5d1e0df00.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-008824-2026-02-02-11.16",
+			"url": "https://alkometriikka.fi/tuotteet/008824/",
+			"title": "Ballet Carte Noire Organic Demi-Sec — 11,26 € → 11,16 €",
+			"content_html": "<p>Tuotteen Ballet Carte Noire Organic Demi-Sec hinta on muuttunut.</p><p>11,26 € → 11,16 € (−0,10 €, −0,89 %).</p>",
+			"summary": "Tuotteen Ballet Carte Noire Organic Demi-Sec hinta on muuttunut. 11,26 € → 11,16 € (−0,10 €, −0,89 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/008824-aef5d1e0df00.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-008824-2026-02-02-11.26",
+			"url": "https://alkometriikka.fi/tuotteet/008824/",
+			"title": "Ballet Carte Noire Organic Demi-Sec — 11,16 € → 11,26 €",
+			"content_html": "<p>Tuotteen Ballet Carte Noire Organic Demi-Sec hinta on muuttunut.</p><p>11,16 € → 11,26 € (+0,10 €, +0,90 %).</p>",
+			"summary": "Tuotteen Ballet Carte Noire Organic Demi-Sec hinta on muuttunut. 11,16 € → 11,26 € (+0,10 €, +0,90 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/008824-aef5d1e0df00.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Planteray Barbados Grande Reserve – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/117787/",
+	"feed_url": "https://alkometriikka.fi/rss/117787.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Planteray Barbados Grande Reserve.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-117787-2026-07-18-34.98",
+			"url": "https://alkometriikka.fi/tuotteet/117787/",
+			"title": "Planteray Barbados Grande Reserve — 34,96 € → 34,98 €",
+			"content_html": "<p>Tuotteen Planteray Barbados Grande Reserve hinta on muuttunut.</p><p>34,96 € → 34,98 € (+0,02 €, +0,06 %).</p>",
+			"summary": "Tuotteen Planteray Barbados Grande Reserve hinta on muuttunut. 34,96 € → 34,98 € (+0,02 €, +0,06 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/117787-66d6afefb796.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

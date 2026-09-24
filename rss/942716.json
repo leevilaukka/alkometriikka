@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vollereaux Réserve Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/942716/",
+	"feed_url": "https://alkometriikka.fi/rss/942716.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vollereaux Réserve Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-942716-2026-07-18-47.7",
+			"url": "https://alkometriikka.fi/tuotteet/942716/",
+			"title": "Vollereaux Réserve Champagne Brut — 46,44 € → 47,70 €",
+			"content_html": "<p>Tuotteen Vollereaux Réserve Champagne Brut hinta on muuttunut.</p><p>46,44 € → 47,70 € (+1,26 €, +2,71 %).</p>",
+			"summary": "Tuotteen Vollereaux Réserve Champagne Brut hinta on muuttunut. 46,44 € → 47,70 € (+1,26 €, +2,71 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/942716-694f3b74a0ae.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Le Sirop de Monin Bubble Gum – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/918666/",
+	"feed_url": "https://alkometriikka.fi/rss/918666.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Le Sirop de Monin Bubble Gum.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-918666-2026-07-18-18.75",
+			"url": "https://alkometriikka.fi/tuotteet/918666/",
+			"title": "Le Sirop de Monin Bubble Gum — 18,42 € → 18,75 €",
+			"content_html": "<p>Tuotteen Le Sirop de Monin Bubble Gum hinta on muuttunut.</p><p>18,42 € → 18,75 € (+0,33 €, +1,79 %).</p>",
+			"summary": "Tuotteen Le Sirop de Monin Bubble Gum hinta on muuttunut. 18,42 € → 18,75 € (+0,33 €, +1,79 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/918666-0303f6973006.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

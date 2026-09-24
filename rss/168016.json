@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tronnes VSOP Reserve muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/168016/",
+	"feed_url": "https://alkometriikka.fi/rss/168016.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tronnes VSOP Reserve muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-168016-2026-07-18-18.48",
+			"url": "https://alkometriikka.fi/tuotteet/168016/",
+			"title": "Tronnes VSOP Reserve muovipullo — 18,37 € → 18,48 €",
+			"content_html": "<p>Tuotteen Tronnes VSOP Reserve muovipullo hinta on muuttunut.</p><p>18,37 € → 18,48 € (+0,11 €, +0,60 %).</p>",
+			"summary": "Tuotteen Tronnes VSOP Reserve muovipullo hinta on muuttunut. 18,37 € → 18,48 € (+0,11 €, +0,60 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/168016-640d94252053.png",
+			"tags": [
+				"Väkevät",
+				"brandyt"
+			]
+		}
+	]
+}

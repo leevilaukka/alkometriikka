@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Richard Juhlin Blanc de Blanc Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/949893/",
+	"feed_url": "https://alkometriikka.fi/rss/949893.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Richard Juhlin Blanc de Blanc Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-949893-2026-07-18-15.98",
+			"url": "https://alkometriikka.fi/tuotteet/949893/",
+			"title": "Richard Juhlin Blanc de Blanc Brut — 15,96 € → 15,98 €",
+			"content_html": "<p>Tuotteen Richard Juhlin Blanc de Blanc Brut hinta on muuttunut.</p><p>15,96 € → 15,98 € (+0,02 €, +0,13 %).</p>",
+			"summary": "Tuotteen Richard Juhlin Blanc de Blanc Brut hinta on muuttunut. 15,96 € → 15,98 € (+0,02 €, +0,13 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/949893-724c2008ace4.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

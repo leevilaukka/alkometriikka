@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Ystävän Glögi Puolukka-Punaherukka – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/687296/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Ystävän Glögi Puolukka-Punaherukka.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/687296.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Ystävän Glögi Puolukka-Punaherukka – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Ystävän Glögi Puolukka-Punaherukka — 3,99 € → 4,49 €</title>
+			<link>https://alkometriikka.fi/tuotteet/687296/</link>
+			<guid isPermaLink="false">alkometriikka-687296-2026-09-17-4.49</guid>
+			<pubDate>Thu, 17 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Alkoholittomat / vedet, mehut ja muut alkoholittomat</category>
+			<description><![CDATA[<p>Tuotteen Ystävän Glögi Puolukka-Punaherukka hinta on muuttunut.</p><p>3,99 € → 4,49 € (+0,50 €, +12,53 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/687296-fb5369a94d1f.png" />
+		</item>
+	</channel>
+</rss>

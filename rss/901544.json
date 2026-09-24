@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Enrico Serafino Pajena Barbera D'Alba 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901544/",
+	"feed_url": "https://alkometriikka.fi/rss/901544.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Enrico Serafino Pajena Barbera D'Alba 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901544-2026-07-18-27.29",
+			"url": "https://alkometriikka.fi/tuotteet/901544/",
+			"title": "Enrico Serafino Pajena Barbera D'Alba 2023 — 27,25 € → 27,29 €",
+			"content_html": "<p>Tuotteen Enrico Serafino Pajena Barbera D'Alba 2023 hinta on muuttunut.</p><p>27,25 € → 27,29 € (+0,04 €, +0,15 %).</p>",
+			"summary": "Tuotteen Enrico Serafino Pajena Barbera D'Alba 2023 hinta on muuttunut. 27,25 € → 27,29 € (+0,04 €, +0,15 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901544-5cf95e78a2cc.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

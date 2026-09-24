@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Djuce Mehling Riesling 2022 tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/922548/",
+	"feed_url": "https://alkometriikka.fi/rss/922548.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Djuce Mehling Riesling 2022 tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-922548-2026-07-18-6.95",
+			"url": "https://alkometriikka.fi/tuotteet/922548/",
+			"title": "Djuce Mehling Riesling 2022 tölkki — 8,59 € → 6,95 €",
+			"content_html": "<p>Tuotteen Djuce Mehling Riesling 2022 tölkki hinta on muuttunut.</p><p>8,59 € → 6,95 € (−1,64 €, −19,09 %).</p>",
+			"summary": "Tuotteen Djuce Mehling Riesling 2022 tölkki hinta on muuttunut. 8,59 € → 6,95 € (−1,64 €, −19,09 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/922548-408521d79fa4.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

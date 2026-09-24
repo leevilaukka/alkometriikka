@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dewar's Caribbean Smooth Aged 8 Years – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/156687/",
+	"feed_url": "https://alkometriikka.fi/rss/156687.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dewar's Caribbean Smooth Aged 8 Years.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-156687-2026-07-18-36.98",
+			"url": "https://alkometriikka.fi/tuotteet/156687/",
+			"title": "Dewar's Caribbean Smooth Aged 8 Years — 36,26 € → 36,98 €",
+			"content_html": "<p>Tuotteen Dewar's Caribbean Smooth Aged 8 Years hinta on muuttunut.</p><p>36,26 € → 36,98 € (+0,72 €, +1,99 %).</p>",
+			"summary": "Tuotteen Dewar's Caribbean Smooth Aged 8 Years hinta on muuttunut. 36,26 € → 36,98 € (+0,72 €, +1,99 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/156687-4afddbfc16c6.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

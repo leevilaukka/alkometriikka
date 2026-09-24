@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Harveys Bristol Cream Sherry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/003591/",
+	"feed_url": "https://alkometriikka.fi/rss/003591.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Harveys Bristol Cream Sherry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-003591-2026-07-18-21.98",
+			"url": "https://alkometriikka.fi/tuotteet/003591/",
+			"title": "Harveys Bristol Cream Sherry — 21,84 € → 21,98 €",
+			"content_html": "<p>Tuotteen Harveys Bristol Cream Sherry hinta on muuttunut.</p><p>21,84 € → 21,98 € (+0,14 €, +0,64 %).</p>",
+			"summary": "Tuotteen Harveys Bristol Cream Sherry hinta on muuttunut. 21,84 € → 21,98 € (+0,14 €, +0,64 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/003591-6995df251271.png",
+			"tags": [
+				"Välituotteet",
+				"sherryt"
+			]
+		}
+	]
+}

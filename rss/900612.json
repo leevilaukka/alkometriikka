@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cascina Boschetti Gomba Barolo 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900612/",
+	"feed_url": "https://alkometriikka.fi/rss/900612.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cascina Boschetti Gomba Barolo 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900612-2026-07-18-19.9",
+			"url": "https://alkometriikka.fi/tuotteet/900612/",
+			"title": "Cascina Boschetti Gomba Barolo 2019 — 19,22 € → 19,90 €",
+			"content_html": "<p>Tuotteen Cascina Boschetti Gomba Barolo 2019 hinta on muuttunut.</p><p>19,22 € → 19,90 € (+0,68 €, +3,54 %).</p>",
+			"summary": "Tuotteen Cascina Boschetti Gomba Barolo 2019 hinta on muuttunut. 19,22 € → 19,90 € (+0,68 €, +3,54 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900612-342d559f2970.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

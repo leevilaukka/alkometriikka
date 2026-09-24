@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Piper-Heidsieck Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/948977/",
+	"feed_url": "https://alkometriikka.fi/rss/948977.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Piper-Heidsieck Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-948977-2026-07-18-56.99",
+			"url": "https://alkometriikka.fi/tuotteet/948977/",
+			"title": "Piper-Heidsieck Champagne Brut — 55,36 € → 56,99 €",
+			"content_html": "<p>Tuotteen Piper-Heidsieck Champagne Brut hinta on muuttunut.</p><p>55,36 € → 56,99 € (+1,63 €, +2,94 %).</p>",
+			"summary": "Tuotteen Piper-Heidsieck Champagne Brut hinta on muuttunut. 55,36 € → 56,99 € (+1,63 €, +2,94 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/948977-3216576851c1.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

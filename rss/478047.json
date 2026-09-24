@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Amarone Armigero 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/478047/",
+	"feed_url": "https://alkometriikka.fi/rss/478047.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Amarone Armigero 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-478047-2026-07-18-28.98",
+			"url": "https://alkometriikka.fi/tuotteet/478047/",
+			"title": "Amarone Armigero 2022 — 29,98 € → 28,98 €",
+			"content_html": "<p>Tuotteen Amarone Armigero 2022 hinta on muuttunut.</p><p>29,98 € → 28,98 € (−1,00 €, −3,34 %).</p>",
+			"summary": "Tuotteen Amarone Armigero 2022 hinta on muuttunut. 29,98 € → 28,98 € (−1,00 €, −3,34 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/478047-d34858ef8c8d.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Magners Original Irish Cider tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/740946/",
+	"feed_url": "https://alkometriikka.fi/rss/740946.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Magners Original Irish Cider tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-740946-2026-07-18-3.79",
+			"url": "https://alkometriikka.fi/tuotteet/740946/",
+			"title": "Magners Original Irish Cider tölkki — 3,49 € → 3,79 €",
+			"content_html": "<p>Tuotteen Magners Original Irish Cider tölkki hinta on muuttunut.</p><p>3,49 € → 3,79 € (+0,30 €, +8,60 %).</p>",
+			"summary": "Tuotteen Magners Original Irish Cider tölkki hinta on muuttunut. 3,49 € → 3,79 € (+0,30 €, +8,60 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/740946-df8c93cb092a.png",
+			"tags": [
+				"Panimotuotteet",
+				"siiderit"
+			]
+		}
+	]
+}

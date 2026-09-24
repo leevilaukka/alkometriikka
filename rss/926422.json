@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lyre's Apéritif Rosso – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/926422/",
+	"feed_url": "https://alkometriikka.fi/rss/926422.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lyre's Apéritif Rosso.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-926422-2026-07-18-33.35",
+			"url": "https://alkometriikka.fi/tuotteet/926422/",
+			"title": "Lyre's Apéritif Rosso — 32,22 € → 33,35 €",
+			"content_html": "<p>Tuotteen Lyre's Apéritif Rosso hinta on muuttunut.</p><p>32,22 € → 33,35 € (+1,13 €, +3,51 %).</p>",
+			"summary": "Tuotteen Lyre's Apéritif Rosso hinta on muuttunut. 32,22 € → 33,35 € (+1,13 €, +3,51 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/926422-e5251a64a6cf.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

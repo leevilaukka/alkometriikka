@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Barone Montalto Pinot Grigio 2025 muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/536818/",
+	"feed_url": "https://alkometriikka.fi/rss/536818.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Barone Montalto Pinot Grigio 2025 muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-536818-2026-02-02-12.59",
+			"url": "https://alkometriikka.fi/tuotteet/536818/",
+			"title": "Barone Montalto Pinot Grigio 2025 muovipullo — 12,99 € → 12,59 €",
+			"content_html": "<p>Tuotteen Barone Montalto Pinot Grigio 2025 muovipullo hinta on muuttunut.</p><p>12,99 € → 12,59 € (−0,40 €, −3,08 %).</p>",
+			"summary": "Tuotteen Barone Montalto Pinot Grigio 2025 muovipullo hinta on muuttunut. 12,99 € → 12,59 € (−0,40 €, −3,08 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/536818-cb4d2cb01141.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-536818-2026-02-02-12.99",
+			"url": "https://alkometriikka.fi/tuotteet/536818/",
+			"title": "Barone Montalto Pinot Grigio 2025 muovipullo — 12,59 € → 12,99 €",
+			"content_html": "<p>Tuotteen Barone Montalto Pinot Grigio 2025 muovipullo hinta on muuttunut.</p><p>12,59 € → 12,99 € (+0,40 €, +3,18 %).</p>",
+			"summary": "Tuotteen Barone Montalto Pinot Grigio 2025 muovipullo hinta on muuttunut. 12,59 € → 12,99 € (+0,40 €, +3,18 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/536818-cb4d2cb01141.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

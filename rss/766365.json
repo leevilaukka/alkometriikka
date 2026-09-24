@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tuju Pyöveli tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/766365/",
+	"feed_url": "https://alkometriikka.fi/rss/766365.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tuju Pyöveli tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-766365-2026-07-18-8.96",
+			"url": "https://alkometriikka.fi/tuotteet/766365/",
+			"title": "Tuju Pyöveli tölkki — 8,94 € → 8,96 €",
+			"content_html": "<p>Tuotteen Tuju Pyöveli tölkki hinta on muuttunut.</p><p>8,94 € → 8,96 € (+0,02 €, +0,22 %).</p>",
+			"summary": "Tuotteen Tuju Pyöveli tölkki hinta on muuttunut. 8,94 € → 8,96 € (+0,02 €, +0,22 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/766365-cae714764922.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

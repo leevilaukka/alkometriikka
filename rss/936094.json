@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Martha’s 10 Years Old Tawny Port – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/936094/",
+	"feed_url": "https://alkometriikka.fi/rss/936094.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Martha’s 10 Years Old Tawny Port.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-936094-2026-07-18-46.98",
+			"url": "https://alkometriikka.fi/tuotteet/936094/",
+			"title": "Martha’s 10 Years Old Tawny Port — 46,49 € → 46,98 €",
+			"content_html": "<p>Tuotteen Martha’s 10 Years Old Tawny Port hinta on muuttunut.</p><p>46,49 € → 46,98 € (+0,49 €, +1,05 %).</p>",
+			"summary": "Tuotteen Martha’s 10 Years Old Tawny Port hinta on muuttunut. 46,49 € → 46,98 € (+0,49 €, +1,05 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/936094-57e2fa6619a3.png",
+			"tags": [
+				"Välituotteet",
+				"portviinit"
+			]
+		}
+	]
+}

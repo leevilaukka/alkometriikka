@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – 1st Winner Lakka Seljankukka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/935978/",
+	"feed_url": "https://alkometriikka.fi/rss/935978.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: 1st Winner Lakka Seljankukka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-935978-2026-07-18-15.99",
+			"url": "https://alkometriikka.fi/tuotteet/935978/",
+			"title": "1st Winner Lakka Seljankukka — 12,64 € → 15,99 €",
+			"content_html": "<p>Tuotteen 1st Winner Lakka Seljankukka hinta on muuttunut.</p><p>12,64 € → 15,99 € (+3,35 €, +26,50 %).</p>",
+			"summary": "Tuotteen 1st Winner Lakka Seljankukka hinta on muuttunut. 12,64 € → 15,99 € (+3,35 €, +26,50 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/935978-bdfb6dba9281.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat kuohuviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Torres Natureo Garnacha Syrah – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/429674/",
+	"feed_url": "https://alkometriikka.fi/rss/429674.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Torres Natureo Garnacha Syrah.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-429674-2026-07-18-5.74",
+			"url": "https://alkometriikka.fi/tuotteet/429674/",
+			"title": "Torres Natureo Garnacha Syrah — 5,67 € → 5,74 €",
+			"content_html": "<p>Tuotteen Torres Natureo Garnacha Syrah hinta on muuttunut.</p><p>5,67 € → 5,74 € (+0,07 €, +1,23 %).</p>",
+			"summary": "Tuotteen Torres Natureo Garnacha Syrah hinta on muuttunut. 5,67 € → 5,74 € (+0,07 €, +1,23 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/429674-c1ca0b5c3f49.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ferghettina Franciacorta Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/911187/",
+	"feed_url": "https://alkometriikka.fi/rss/911187.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ferghettina Franciacorta Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-911187-2026-07-18-41.5",
+			"url": "https://alkometriikka.fi/tuotteet/911187/",
+			"title": "Ferghettina Franciacorta Brut — 40,46 € → 41,50 €",
+			"content_html": "<p>Tuotteen Ferghettina Franciacorta Brut hinta on muuttunut.</p><p>40,46 € → 41,50 € (+1,04 €, +2,57 %).</p>",
+			"summary": "Tuotteen Ferghettina Franciacorta Brut hinta on muuttunut. 40,46 € → 41,50 € (+1,04 €, +2,57 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/911187-aaf76ee2de3f.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

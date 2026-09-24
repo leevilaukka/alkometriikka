@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mayu Reserva Syrah Appassimento hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/947268/",
+	"feed_url": "https://alkometriikka.fi/rss/947268.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mayu Reserva Syrah Appassimento hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-947268-2026-07-18-39.89",
+			"url": "https://alkometriikka.fi/tuotteet/947268/",
+			"title": "Mayu Reserva Syrah Appassimento hanapakkaus — 39,70 € → 39,89 €",
+			"content_html": "<p>Tuotteen Mayu Reserva Syrah Appassimento hanapakkaus hinta on muuttunut.</p><p>39,70 € → 39,89 € (+0,19 €, +0,48 %).</p>",
+			"summary": "Tuotteen Mayu Reserva Syrah Appassimento hanapakkaus hinta on muuttunut. 39,70 € → 39,89 € (+0,19 €, +0,48 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/947268-e641c0c3d708.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

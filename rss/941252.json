@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kilchoman Batch Strength Tour Edition Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/941252/",
+	"feed_url": "https://alkometriikka.fi/rss/941252.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kilchoman Batch Strength Tour Edition Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-941252-2026-07-18-94.98",
+			"url": "https://alkometriikka.fi/tuotteet/941252/",
+			"title": "Kilchoman Batch Strength Tour Edition Single Malt — 104,10 € → 94,98 €",
+			"content_html": "<p>Tuotteen Kilchoman Batch Strength Tour Edition Single Malt hinta on muuttunut.</p><p>104,10 € → 94,98 € (−9,12 €, −8,76 %).</p>",
+			"summary": "Tuotteen Kilchoman Batch Strength Tour Edition Single Malt hinta on muuttunut. 104,10 € → 94,98 € (−9,12 €, −8,76 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/941252-b3faec33fac3.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

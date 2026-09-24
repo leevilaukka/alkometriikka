@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Villa Conchi Imperial Cava Extra Brut 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/913213/",
+	"feed_url": "https://alkometriikka.fi/rss/913213.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Villa Conchi Imperial Cava Extra Brut 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-913213-2026-07-18-22.99",
+			"url": "https://alkometriikka.fi/tuotteet/913213/",
+			"title": "Villa Conchi Imperial Cava Extra Brut 2022 — 22,93 € → 22,99 €",
+			"content_html": "<p>Tuotteen Villa Conchi Imperial Cava Extra Brut 2022 hinta on muuttunut.</p><p>22,93 € → 22,99 € (+0,06 €, +0,26 %).</p>",
+			"summary": "Tuotteen Villa Conchi Imperial Cava Extra Brut 2022 hinta on muuttunut. 22,93 € → 22,99 € (+0,06 €, +0,26 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/913213-ce2321d4b62e.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

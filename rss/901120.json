@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Reserve Carlier Sauternes 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901120/",
+	"feed_url": "https://alkometriikka.fi/rss/901120.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Reserve Carlier Sauternes 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901120-2026-07-18-18.99",
+			"url": "https://alkometriikka.fi/tuotteet/901120/",
+			"title": "Reserve Carlier Sauternes 2023 — 17,70 € → 18,99 €",
+			"content_html": "<p>Tuotteen Reserve Carlier Sauternes 2023 hinta on muuttunut.</p><p>17,70 € → 18,99 € (+1,29 €, +7,29 %).</p>",
+			"summary": "Tuotteen Reserve Carlier Sauternes 2023 hinta on muuttunut. 17,70 € → 18,99 € (+1,29 €, +7,29 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901120-1fae75682eb1.png",
+			"tags": [
+				"Viinit",
+				"jälkiruokaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ridge Geyserville 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/950518/",
+	"feed_url": "https://alkometriikka.fi/rss/950518.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ridge Geyserville 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-950518-2026-07-18-74.5",
+			"url": "https://alkometriikka.fi/tuotteet/950518/",
+			"title": "Ridge Geyserville 2023 — 74,46 € → 74,50 €",
+			"content_html": "<p>Tuotteen Ridge Geyserville 2023 hinta on muuttunut.</p><p>74,46 € → 74,50 € (+0,04 €, +0,05 %).</p>",
+			"summary": "Tuotteen Ridge Geyserville 2023 hinta on muuttunut. 74,46 € → 74,50 € (+0,04 €, +0,05 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/950518-e1639a038f17.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

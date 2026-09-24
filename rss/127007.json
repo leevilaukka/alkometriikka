@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Shanky’s Whip – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/127007/",
+	"feed_url": "https://alkometriikka.fi/rss/127007.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Shanky’s Whip.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-127007-2026-07-18-35.98",
+			"url": "https://alkometriikka.fi/tuotteet/127007/",
+			"title": "Shanky’s Whip — 35,21 € → 35,98 €",
+			"content_html": "<p>Tuotteen Shanky’s Whip hinta on muuttunut.</p><p>35,21 € → 35,98 € (+0,77 €, +2,19 %).</p>",
+			"summary": "Tuotteen Shanky’s Whip hinta on muuttunut. 35,21 € → 35,98 € (+0,77 €, +2,19 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/127007-673e800bfd45.png",
+			"tags": [
+				"Väkevät",
+				"mausteliköörit"
+			]
+		}
+	]
+}

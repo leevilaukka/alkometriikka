@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Universite de Bourgogne Rouge 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900851/",
+	"feed_url": "https://alkometriikka.fi/rss/900851.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Universite de Bourgogne Rouge 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900851-2026-07-18-37.78",
+			"url": "https://alkometriikka.fi/tuotteet/900851/",
+			"title": "Universite de Bourgogne Rouge 2023 — 36,88 € → 37,78 €",
+			"content_html": "<p>Tuotteen Universite de Bourgogne Rouge 2023 hinta on muuttunut.</p><p>36,88 € → 37,78 € (+0,90 €, +2,44 %).</p>",
+			"summary": "Tuotteen Universite de Bourgogne Rouge 2023 hinta on muuttunut. 36,88 € → 37,78 € (+0,90 €, +2,44 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900851-496395cfde48.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

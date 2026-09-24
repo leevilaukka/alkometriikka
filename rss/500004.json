@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Brusa Spumante Extra Dry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/500004/",
+	"feed_url": "https://alkometriikka.fi/rss/500004.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Brusa Spumante Extra Dry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-500004-2026-07-18-9.48",
+			"url": "https://alkometriikka.fi/tuotteet/500004/",
+			"title": "Brusa Spumante Extra Dry — 9,46 € → 9,48 €",
+			"content_html": "<p>Tuotteen Brusa Spumante Extra Dry hinta on muuttunut.</p><p>9,46 € → 9,48 € (+0,02 €, +0,21 %).</p>",
+			"summary": "Tuotteen Brusa Spumante Extra Dry hinta on muuttunut. 9,46 € → 9,48 € (+0,02 €, +0,21 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/500004-9af7ea262715.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

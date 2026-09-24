@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pfaffl Rose Hasen 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/912354/",
+	"feed_url": "https://alkometriikka.fi/rss/912354.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pfaffl Rose Hasen 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-912354-2026-07-18-15.99",
+			"url": "https://alkometriikka.fi/tuotteet/912354/",
+			"title": "Pfaffl Rose Hasen 2023 — 18,70 € → 15,99 €",
+			"content_html": "<p>Tuotteen Pfaffl Rose Hasen 2023 hinta on muuttunut.</p><p>18,70 € → 15,99 € (−2,71 €, −14,49 %).</p>",
+			"summary": "Tuotteen Pfaffl Rose Hasen 2023 hinta on muuttunut. 18,70 € → 15,99 € (−2,71 €, −14,49 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/912354-b2de1cc45bc6.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

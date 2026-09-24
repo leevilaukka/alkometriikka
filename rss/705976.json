@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Aecht Schlenkerla Weichsel Red Lager – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/705976/",
+	"feed_url": "https://alkometriikka.fi/rss/705976.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Aecht Schlenkerla Weichsel Red Lager.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-705976-2026-02-02-3.89",
+			"url": "https://alkometriikka.fi/tuotteet/705976/",
+			"title": "Aecht Schlenkerla Weichsel Red Lager — 3,99 € → 3,89 €",
+			"content_html": "<p>Tuotteen Aecht Schlenkerla Weichsel Red Lager hinta on muuttunut.</p><p>3,99 € → 3,89 € (−0,10 €, −2,51 %).</p>",
+			"summary": "Tuotteen Aecht Schlenkerla Weichsel Red Lager hinta on muuttunut. 3,99 € → 3,89 € (−0,10 €, −2,51 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/705976-331f497bebec.png",
+			"tags": [
+				"oluet",
+				"Erikoisuus"
+			]
+		},
+		{
+			"id": "alkometriikka-705976-2026-02-02-3.99",
+			"url": "https://alkometriikka.fi/tuotteet/705976/",
+			"title": "Aecht Schlenkerla Weichsel Red Lager — 3,89 € → 3,99 €",
+			"content_html": "<p>Tuotteen Aecht Schlenkerla Weichsel Red Lager hinta on muuttunut.</p><p>3,89 € → 3,99 € (+0,10 €, +2,57 %).</p>",
+			"summary": "Tuotteen Aecht Schlenkerla Weichsel Red Lager hinta on muuttunut. 3,89 € → 3,99 € (+0,10 €, +2,57 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/705976-331f497bebec.png",
+			"tags": [
+				"oluet",
+				"Erikoisuus"
+			]
+		}
+	]
+}

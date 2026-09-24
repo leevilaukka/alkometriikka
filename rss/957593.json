@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Heidell Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/957593/",
+	"feed_url": "https://alkometriikka.fi/rss/957593.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Heidell Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-957593-2026-07-18-10.83",
+			"url": "https://alkometriikka.fi/tuotteet/957593/",
+			"title": "Heidell Gin — 10,70 € → 10,83 €",
+			"content_html": "<p>Tuotteen Heidell Gin hinta on muuttunut.</p><p>10,70 € → 10,83 € (+0,13 €, +1,21 %).</p>",
+			"summary": "Tuotteen Heidell Gin hinta on muuttunut. 10,70 € → 10,83 € (+0,13 €, +1,21 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/957593-785b59deb4b1.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

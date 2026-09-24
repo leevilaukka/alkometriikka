@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Leijona Salmiakki-Granaattiomena Shot muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/226976/",
+	"feed_url": "https://alkometriikka.fi/rss/226976.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Leijona Salmiakki-Granaattiomena Shot muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-226976-2026-07-18-13.18",
+			"url": "https://alkometriikka.fi/tuotteet/226976/",
+			"title": "Leijona Salmiakki-Granaattiomena Shot muovipullo — 13,08 € → 13,18 €",
+			"content_html": "<p>Tuotteen Leijona Salmiakki-Granaattiomena Shot muovipullo hinta on muuttunut.</p><p>13,08 € → 13,18 € (+0,10 €, +0,76 %).</p>",
+			"summary": "Tuotteen Leijona Salmiakki-Granaattiomena Shot muovipullo hinta on muuttunut. 13,08 € → 13,18 € (+0,10 €, +0,76 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/226976-50280d2ee499.png",
+			"tags": [
+				"Väkevät",
+				"salmiakkiliköörit"
+			]
+		}
+	]
+}

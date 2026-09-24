@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Ciroc Vodka – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/941897/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Ciroc Vodka.</description>
+		<language>fi</language>
+		<lastBuildDate>Thu, 24 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/941897.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Ciroc Vodka – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Ciroc Vodka — 60,25 € → 60,50 €</title>
+			<link>https://alkometriikka.fi/tuotteet/941897/</link>
+			<guid isPermaLink="false">alkometriikka-941897-2026-07-18-60.5</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / vodka</category>
+			<description><![CDATA[<p>Tuotteen Ciroc Vodka hinta on muuttunut.</p><p>60,25 € → 60,50 € (+0,25 €, +0,41 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/941897-3f65a5879c13.png" />
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Crisp Radler Ananas tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/600057/",
+	"feed_url": "https://alkometriikka.fi/rss/600057.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Crisp Radler Ananas tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-600057-2026-09-04-1.61",
+			"url": "https://alkometriikka.fi/tuotteet/600057/",
+			"title": "Crisp Radler Ananas tölkki — 1,79 € → 1,61 €",
+			"content_html": "<p>Tuotteen Crisp Radler Ananas tölkki hinta on muuttunut.</p><p>1,79 € → 1,61 € (−0,18 €, −10,06 %).</p>",
+			"summary": "Tuotteen Crisp Radler Ananas tölkki hinta on muuttunut. 1,79 € → 1,61 € (−0,18 €, −10,06 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600057-a3fb024854b0.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-600057-2026-01-29-1.79",
+			"url": "https://alkometriikka.fi/tuotteet/600057/",
+			"title": "Crisp Radler Ananas tölkki — 1,59 € → 1,79 €",
+			"content_html": "<p>Tuotteen Crisp Radler Ananas tölkki hinta on muuttunut.</p><p>1,59 € → 1,79 € (+0,20 €, +12,58 %).</p>",
+			"summary": "Tuotteen Crisp Radler Ananas tölkki hinta on muuttunut. 1,59 € → 1,79 € (+0,20 €, +12,58 %).",
+			"date_published": "2026-01-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600057-a3fb024854b0.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

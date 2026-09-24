@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Asia Blend Cuvée White 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/940858/",
+	"feed_url": "https://alkometriikka.fi/rss/940858.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Asia Blend Cuvée White 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-940858-2026-07-18-16.49",
+			"url": "https://alkometriikka.fi/tuotteet/940858/",
+			"title": "Asia Blend Cuvée White 2024 — 16,45 € → 16,49 €",
+			"content_html": "<p>Tuotteen Asia Blend Cuvée White 2024 hinta on muuttunut.</p><p>16,45 € → 16,49 € (+0,04 €, +0,24 %).</p>",
+			"summary": "Tuotteen Asia Blend Cuvée White 2024 hinta on muuttunut. 16,45 € → 16,49 € (+0,04 €, +0,24 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/940858-7cf07887563d.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

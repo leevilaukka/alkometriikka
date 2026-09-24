@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Corona Cero – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/775034/",
+	"feed_url": "https://alkometriikka.fi/rss/775034.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Corona Cero.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-775034-2026-09-04-1.61",
+			"url": "https://alkometriikka.fi/tuotteet/775034/",
+			"title": "Corona Cero — 1,79 € → 1,61 €",
+			"content_html": "<p>Tuotteen Corona Cero hinta on muuttunut.</p><p>1,79 € → 1,61 € (−0,18 €, −10,06 %).</p>",
+			"summary": "Tuotteen Corona Cero hinta on muuttunut. 1,79 € → 1,61 € (−0,18 €, −10,06 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/775034-880af1040d2b.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-775034-2026-07-18-1.79",
+			"url": "https://alkometriikka.fi/tuotteet/775034/",
+			"title": "Corona Cero — 1,78 € → 1,79 €",
+			"content_html": "<p>Tuotteen Corona Cero hinta on muuttunut.</p><p>1,78 € → 1,79 € (+0,01 €, +0,56 %).</p>",
+			"summary": "Tuotteen Corona Cero hinta on muuttunut. 1,78 € → 1,79 € (+0,01 €, +0,56 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/775034-880af1040d2b.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Crystal Head Onyx Vodka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/941251/",
+	"feed_url": "https://alkometriikka.fi/rss/941251.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Crystal Head Onyx Vodka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-941251-2026-07-18-73.7",
+			"url": "https://alkometriikka.fi/tuotteet/941251/",
+			"title": "Crystal Head Onyx Vodka — 73,68 € → 73,70 €",
+			"content_html": "<p>Tuotteen Crystal Head Onyx Vodka hinta on muuttunut.</p><p>73,68 € → 73,70 € (+0,02 €, +0,03 %).</p>",
+			"summary": "Tuotteen Crystal Head Onyx Vodka hinta on muuttunut. 73,68 € → 73,70 € (+0,02 €, +0,03 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/941251-57e0ee244bf6.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

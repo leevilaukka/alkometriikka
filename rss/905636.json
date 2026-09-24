@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Chateau de Malengin Eve 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/905636/",
+	"feed_url": "https://alkometriikka.fi/rss/905636.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Chateau de Malengin Eve 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-905636-2026-07-18-39.56",
+			"url": "https://alkometriikka.fi/tuotteet/905636/",
+			"title": "Chateau de Malengin Eve 2018 — 40,45 € → 39,56 €",
+			"content_html": "<p>Tuotteen Chateau de Malengin Eve 2018 hinta on muuttunut.</p><p>40,45 € → 39,56 € (−0,89 €, −2,20 %).</p>",
+			"summary": "Tuotteen Chateau de Malengin Eve 2018 hinta on muuttunut. 40,45 € → 39,56 € (−0,89 €, −2,20 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/905636-8764cceaf7fd.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

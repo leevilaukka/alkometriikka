@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lumo Red Semi-sweet – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/664026/",
+	"feed_url": "https://alkometriikka.fi/rss/664026.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lumo Red Semi-sweet.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-664026-2026-07-18-17.6",
+			"url": "https://alkometriikka.fi/tuotteet/664026/",
+			"title": "Lumo Red Semi-sweet — 16,77 € → 17,60 €",
+			"content_html": "<p>Tuotteen Lumo Red Semi-sweet hinta on muuttunut.</p><p>16,77 € → 17,60 € (+0,83 €, +4,95 %).</p>",
+			"summary": "Tuotteen Lumo Red Semi-sweet hinta on muuttunut. 16,77 € → 17,60 € (+0,83 €, +4,95 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/664026-1b56f069fb93.png",
+			"tags": [
+				"Viinit",
+				"hedelmä- ja aromatisoidut viinit"
+			]
+		}
+	]
+}

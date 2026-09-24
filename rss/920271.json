@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glasgow 1770 The Original Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/920271/",
+	"feed_url": "https://alkometriikka.fi/rss/920271.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glasgow 1770 The Original Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-920271-2026-07-18-75.33",
+			"url": "https://alkometriikka.fi/tuotteet/920271/",
+			"title": "Glasgow 1770 The Original Single Malt — 82,42 € → 75,33 €",
+			"content_html": "<p>Tuotteen Glasgow 1770 The Original Single Malt hinta on muuttunut.</p><p>82,42 € → 75,33 € (−7,09 €, −8,60 %).</p>",
+			"summary": "Tuotteen Glasgow 1770 The Original Single Malt hinta on muuttunut. 82,42 € → 75,33 € (−7,09 €, −8,60 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/920271-1bd83c857eb1.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

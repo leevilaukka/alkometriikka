@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Rooster Rojo Smoked Pineapple – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900866/",
+	"feed_url": "https://alkometriikka.fi/rss/900866.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Rooster Rojo Smoked Pineapple.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900866-2026-07-18-54.98",
+			"url": "https://alkometriikka.fi/tuotteet/900866/",
+			"title": "Rooster Rojo Smoked Pineapple — 56,21 € → 54,98 €",
+			"content_html": "<p>Tuotteen Rooster Rojo Smoked Pineapple hinta on muuttunut.</p><p>56,21 € → 54,98 € (−1,23 €, −2,19 %).</p>",
+			"summary": "Tuotteen Rooster Rojo Smoked Pineapple hinta on muuttunut. 56,21 € → 54,98 € (−1,23 €, −2,19 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900866-19d842718078.png",
+			"tags": [
+				"Väkevät",
+				"Tequilat"
+			]
+		}
+	]
+}

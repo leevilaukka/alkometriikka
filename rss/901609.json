@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glen Dochus Royale – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901609/",
+	"feed_url": "https://alkometriikka.fi/rss/901609.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glen Dochus Royale.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901609-2026-07-18-29.99",
+			"url": "https://alkometriikka.fi/tuotteet/901609/",
+			"title": "Glen Dochus Royale — 40,29 € → 29,99 €",
+			"content_html": "<p>Tuotteen Glen Dochus Royale hinta on muuttunut.</p><p>40,29 € → 29,99 € (−10,30 €, −25,56 %).</p>",
+			"summary": "Tuotteen Glen Dochus Royale hinta on muuttunut. 40,29 € → 29,99 € (−10,30 €, −25,56 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901609-6c8a2618c694.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

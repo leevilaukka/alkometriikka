@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Suomi Viina Luomu muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/125336/",
+	"feed_url": "https://alkometriikka.fi/rss/125336.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Suomi Viina Luomu muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-125336-2026-07-18-10.98",
+			"url": "https://alkometriikka.fi/tuotteet/125336/",
+			"title": "Suomi Viina Luomu muovipullo — 11,69 € → 10,98 €",
+			"content_html": "<p>Tuotteen Suomi Viina Luomu muovipullo hinta on muuttunut.</p><p>11,69 € → 10,98 € (−0,71 €, −6,07 %).</p>",
+			"summary": "Tuotteen Suomi Viina Luomu muovipullo hinta on muuttunut. 11,69 € → 10,98 € (−0,71 €, −6,07 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/125336-7569083c99e0.png",
+			"tags": [
+				"Väkevät",
+				"viina"
+			]
+		}
+	]
+}

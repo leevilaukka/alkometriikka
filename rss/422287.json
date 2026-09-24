@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Basson SMG 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/422287/",
+	"feed_url": "https://alkometriikka.fi/rss/422287.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Basson SMG 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-422287-2026-07-18-14.5",
+			"url": "https://alkometriikka.fi/tuotteet/422287/",
+			"title": "Basson SMG 2021 — 14,44 € → 14,50 €",
+			"content_html": "<p>Tuotteen Basson SMG 2021 hinta on muuttunut.</p><p>14,44 € → 14,50 € (+0,06 €, +0,42 %).</p>",
+			"summary": "Tuotteen Basson SMG 2021 hinta on muuttunut. 14,44 € → 14,50 € (+0,06 €, +0,42 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/422287-f9b58e7b35eb.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

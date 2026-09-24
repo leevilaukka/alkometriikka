@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Torres 10 Double Barrel – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/158577/",
+	"feed_url": "https://alkometriikka.fi/rss/158577.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Torres 10 Double Barrel.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-158577-2026-07-18-34.48",
+			"url": "https://alkometriikka.fi/tuotteet/158577/",
+			"title": "Torres 10 Double Barrel — 34,25 € → 34,48 €",
+			"content_html": "<p>Tuotteen Torres 10 Double Barrel hinta on muuttunut.</p><p>34,25 € → 34,48 € (+0,23 €, +0,67 %).</p>",
+			"summary": "Tuotteen Torres 10 Double Barrel hinta on muuttunut. 34,25 € → 34,48 € (+0,23 €, +0,67 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/158577-455db7f2abd2.png",
+			"tags": [
+				"Väkevät",
+				"brandyt"
+			]
+		}
+	]
+}
