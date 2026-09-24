@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import type { AvailabilityStore } from '$lib/types';
 	import {
 		formatStoreDistance,
@@ -8,7 +7,6 @@
 		isStoreOpen
 	} from '$lib/utils/availability';
 	import { requestSettingsOpen } from '$lib/utils/settings';
-	import { sendAnalyticsEvent } from '$lib/utils/helpers';
 	import { components } from '$lib/utils/styles';
 	import Icon from '../widgets/Icon.svelte';
 	import { twMerge } from 'tailwind-merge';
@@ -32,10 +30,6 @@
 	const COLLAPSED_COUNT = 5;
 	let expanded = $state(false);
 	const visibleStores = $derived(expanded ? stores : stores.slice(0, COLLAPSED_COUNT));
-
-	onMount(() => {
-		sendAnalyticsEvent('show_availability', { product_number: productNumber });
-	});
 </script>
 
 <section {id} class={twMerge('flex flex-col overflow-hidden rounded border border-primary bg-secondary scroll-mt-4', _class)}>
@@ -93,7 +87,7 @@
 				onclick={() => (expanded = !expanded)}
 			>
 				<span>{expanded ? 'Näytä vähemmän' : `Näytä kaikki ${stores.length} myymälää`}</span>
-				<Icon name="chevron_down" class={expanded ? 'rotate-180' : ''} />
+				<Icon name={`chevron_${expanded ? 'up' : 'down'}`} />
 			</button>
 		</div>
 	{/if}

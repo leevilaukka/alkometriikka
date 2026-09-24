@@ -20,7 +20,7 @@
 			{[
 				product[AllColumns.Manufacturer],
 				product[AllColumns.Country],
-				product[AllColumns.Type],
+				product[AllColumns.SubType] ? product[AllColumns.SubType] : product[AllColumns.Type],
 				product[AllColumns.RemovedFromSelection] ? 'Poistunut valikoimasta' : product[AllColumns.Availability]
 			]
 				.filter(Boolean)

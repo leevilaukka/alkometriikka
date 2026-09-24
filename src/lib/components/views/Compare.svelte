@@ -86,7 +86,7 @@
 		</div>
 	{:else}
 		<p class="text-sm text-secondary">
-			{products.length}/{MAX_COMPARE_PRODUCTS} tuotetta vertailussa. Kunkin rivin paras arvo on korostettu, kun sillä on objektiivisesti paras vaihtoehto.
+			{products.length}/{MAX_COMPARE_PRODUCTS} tuotetta vertailussa. Kunkin rivin paras arvo on korostettu, kun mahdollista.
 		</p>
 		<div class="overflow-x-auto rounded border border-primary">
 			<div

@@ -67,10 +67,12 @@ export function computeQualityMetrics(
 	product: PriceListItem,
 	kaljakori: Kaljakori
 ): QualityMetricsResult {
-	const category = product[AllColumns.Type];
+	const CATEGORY_COLUMN = AllColumns.SubType in product ? AllColumns.SubType : AllColumns.Type;
+
+	const category = product[CATEGORY_COLUMN];
 	const peers = kaljakori.data.filter(
 		(item) =>
-			item[AllColumns.Type] === category &&
+			item[CATEGORY_COLUMN] === category &&
 			item[AllColumns.Number] !== product[AllColumns.Number]
 	);
 	const sampleSize = peers.length;
