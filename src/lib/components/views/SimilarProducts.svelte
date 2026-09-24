@@ -7,7 +7,8 @@
 	import { AllColumns } from '$lib/utils/constants';
 	import type { ListObj, PriceListItem } from '$lib/types';
 	import { components } from '$lib/utils/styles';
-	import { isMobile } from '$lib/global.svelte';
+	import { compareProductIds, isMobile } from '$lib/global.svelte';
+	import { toggleCompare, MAX_COMPARE_PRODUCTS } from '$lib/utils/compare';
 	import Icon from '../widgets/Icon.svelte';
 	import Popup from '../widgets/Popup.svelte';
 	import AllLists from '../widgets/AllLists.svelte';
@@ -48,6 +49,14 @@
 	function handleBack() {
 		if (window.history.length > 1) window.history.back();
 		else goto('/');
+	}
+
+	const inCompare = $derived(compareProductIds.includes(product[AllColumns.Number]));
+
+	function handleToggleCompare() {
+		if (!toggleCompare(product[AllColumns.Number])) {
+			alert(`Voit vertailla korkeintaan ${MAX_COMPARE_PRODUCTS} tuotetta kerrallaan.`);
+		}
 	}
 
     onMount(() => {
@@ -123,7 +132,17 @@
                             </div>
                             <div class="flex w-full flex-col justify-between gap-3">
                                 <div class="flex flex-col gap-2">
-                                    <h2 class="text-lg font-bold md:text-xl">Samankaltaisia tuotteita kuin:</h2>
+                                    <div class="flex w-full items-start justify-between gap-3">
+                                        <h2 class="text-lg font-bold md:text-xl">Samankaltaisia tuotteita kuin:</h2>
+                                        <button
+                                            type="button"
+                                            onclick={handleToggleCompare}
+                                            class={twMerge(components.button({ size: 'sm', type: inCompare ? 'positive' : 'primary' }), 'shrink-0')}
+                                        >
+                                            <Icon name="compare" />
+                                            <span>{inCompare ? 'Vertailussa' : 'Vertaile'}</span>
+                                        </button>
+                                    </div>
                                     <h1 class="text-2xl font-bold md:text-3xl">
 										<a href={`/tuotteet/${product[AllColumns.Number]}/`} class="hover:underline">
 											{product[AllColumns.Name]}

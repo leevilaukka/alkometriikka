@@ -1,72 +1,34 @@
 <script lang="ts">
-	import {
-		AllColumns,
-		DatasetColumns,
-		DrunkColumns,
-		hideFromProductPageStats,
-
-		timeConfig
-
-	} from '$lib/utils/constants';
-	import {
-		generateTitle,
-		sendAnalyticsEvent,
-		setSEO,
-		isNullish,
-		valueToString,
-		handleShare
-
-	} from '$lib/utils/helpers';
-	import { formatValue } from '$lib/utils/format';
+	import { AllColumns } from '$lib/utils/constants';
+	import { generateTitle, sendAnalyticsEvent, setSEO, handleShare } from '$lib/utils/helpers';
 	import { formatCampaignWindow, getSaleInfo } from '$lib/utils/sales';
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/styles';
 	import Icon from '../widgets/Icon.svelte';
-	import Popup from '../widgets/Popup.svelte';
-	import AllLists from '../widgets/AllLists.svelte';
-	import { type AvailabilityStore, type ListObj, type PriceListItem } from '$lib/types';
-	import { addToList } from '$lib/utils/lists';
-	import BadgeList from '../widgets/BadgeList.svelte';
+	import { type AvailabilityStore, type PriceListItem } from '$lib/types';
 	import { afterNavigate } from '$app/navigation';
 	import type { Kaljakori } from '$lib/alko';
-	import { findDifferentSizeOfProduct, findSimilarProducts } from '$lib/utils/filters';
+	import { buildSizeOptions, findSimilarProducts } from '$lib/utils/filters';
 	import {
 		formatStoreDistance,
 		getStoreDistance,
-		getTodaysOpeningHours,
-		isStoreOpen,
 		rankStoresByDistance
 	} from '$lib/utils/availability';
-	import { requestSettingsOpen } from '$lib/utils/settings';
-	import ProductImage from '../widgets/ProductImage.svelte';
 	import { generateImageUrl } from '$lib/utils/image';
-	import {
-		Chart,
-		CategoryScale,
-		LinearScale,
-		PointElement,
-		LineElement,
-		Title,
-		Tooltip,
-		Legend,
-		LineController,
-		Filler
-	} from 'chart.js';
-	
-	import { dev } from '$app/environment';
 
-	// Register Chart.js components
-	Chart.register(
-		CategoryScale,
-		LinearScale,
-		PointElement,
-		LineElement,
-		Title,
-		Tooltip,
-		Legend,
-		LineController,
-		Filler
-	);
+	import ProductBreadcrumb from '../product/ProductBreadcrumb.svelte';
+	import ProductGallery from '../product/ProductGallery.svelte';
+	import ProductBadgesHeader from '../product/ProductBadgesHeader.svelte';
+	import ProductPriceStoreBanner from '../product/ProductPriceStoreBanner.svelte';
+	import ProductSizeDropdown from '../product/ProductSizeDropdown.svelte';
+	import ProductSizeHook from '../product/ProductSizeHook.svelte';
+	import ProductQuickStats from '../product/ProductQuickStats.svelte';
+	import ProductPricePanel from '../product/ProductPricePanel.svelte';
+	import ProductQualityMetrics from '../product/ProductQualityMetrics.svelte';
+	import ProductSimilar from '../product/ProductSimilar.svelte';
+	import ProductPriceHistory from '../product/ProductPriceHistory.svelte';
+	import ProductDetailsTable from '../product/ProductDetailsTable.svelte';
+	import ProductStoreAvailability from '../product/ProductStoreAvailability.svelte';
 
 	const {
 		product,
@@ -97,7 +59,10 @@
 
 	let productElement: HTMLDivElement;
 
-	let similarProducts = $derived(
+	const sizeOptions = $derived(buildSizeOptions(product, kaljakori));
+	const cheapestSize = $derived(sizeOptions.find((size) => size.isBestValue));
+
+	const similarProducts = $derived(
 		findSimilarProducts(
 			product,
 			kaljakori,
@@ -113,229 +78,22 @@
 				AllColumns.GrapeVarieties,
 				AllColumns.Description
 			]),
-			20
+			24
 		)
 	);
 
-	let historyChartElem: HTMLCanvasElement | null = $state(null);
-	$effect(() => {
-		if (!historyChartElem) return;
-
-		const history = product[AllColumns.History] ?? [];
-		const dates = history.map((entry) => entry.date);
-		const isSaleEntry = (entry: {
-			price: number;
-			normalPrice?: number;
-		}): entry is { price: number; normalPrice: number } =>
-			entry.normalPrice != null && entry.price < entry.normalPrice;
-
-		// Sale periods are built from the price-history data (recorded at sync
-		// time) merged with the product's currently active campaign window, so
-		// ongoing sales appear on the chart even before the next price change
-		// records a new point.
-		const windows: { start: string; end: string }[] = [];
-		let run: { start: string; end: string } | null = null;
-		history.forEach((entry) => {
-			if (isSaleEntry(entry)) {
-				if (!run) run = { start: entry.date, end: entry.date };
-				else run.end = entry.date;
-				if (entry.campaignStart && entry.campaignStart < run.start) run.start = entry.campaignStart;
-				if (entry.campaignEnd && entry.campaignEnd > run.end) run.end = entry.campaignEnd;
-			} else if (run) {
-				windows.push(run);
-				run = null;
-			}
-		});
-		if (run) windows.push(run);
-
-		const currentSale = getSaleInfo({
+	const sale = $derived(
+		getSaleInfo({
 			price: product[AllColumns.Price],
 			normalPrice: product[AllColumns.NormalPrice],
 			campaignStart: product[AllColumns.CampaignStart],
 			campaignEnd: product[AllColumns.CampaignEnd]
-		});
-		if (currentSale) {
-			windows.push({
-				start: currentSale.campaignStart ?? history[0]?.date ?? '',
-				end: currentSale.campaignEnd ?? ''
-			});
-		}
-
-		const firstIndexFor = (date: string) => {
-			for (let i = 0; i < dates.length; i++) {
-				if (dates[i] >= date) return i;
-			}
-			return Math.max(0, dates.length - 1);
-		};
-		const lastIndexFor = (date: string) => {
-			for (let i = dates.length - 1; i >= 0; i--) {
-				if (dates[i] <= date) return i;
-			}
-			return 0;
-		};
-
-		// The end marker is only drawn once the campaign has really ended and
-		// its end date is in the past; while the sale is still running only the
-		// start marker is shown.
-		const now = new Date();
-		const todayISO = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(
-			now.getDate()
-		).padStart(2, '0')}`;
-
-		// Vertical "Kampanja" marker lines: one at the campaign start date and
-		// another at the end date once it is known.
-		const campaignLinePlugin = {
-			id: 'campaignLinePlugin',
-			afterDatasetsDraw(chart: any) {
-				const { ctx, chartArea, scales } = chart;
-				const xScale = scales.x;
-				if (!chartArea || !xScale || windows.length === 0) return;
-				ctx.save();
-				ctx.strokeStyle = 'rgba(239, 68, 68, 0.9)';
-				ctx.fillStyle = 'rgba(239, 68, 68, 0.9)';
-				ctx.lineWidth = 1.5;
-				ctx.font = '12px Inter, system-ui, sans-serif';
-				for (const window of windows) {
-					const drawMarker = (date: string, index: number, label: string) => {
-						const x = Math.max(
-							chartArea.left,
-							Math.min(chartArea.right, xScale.getPixelForValue(index))
-						);
-						const labelGap = 22;
-						ctx.setLineDash([6, 4]);
-						ctx.beginPath();
-						ctx.moveTo(x, chartArea.top + labelGap);
-						ctx.lineTo(x, chartArea.bottom);
-						ctx.stroke();
-						ctx.setLineDash([]);
-						ctx.textAlign = 'center';
-						ctx.textBaseline = 'top';
-						const halfWidth = ctx.measureText(label).width / 2;
-						const textX = Math.max(
-							chartArea.left + halfWidth + 4,
-							Math.min(chart.width - halfWidth - 4, x)
-						);
-						ctx.fillText(label, textX, chartArea.top + 3);
-					};
-					if (window.start) drawMarker(window.start, firstIndexFor(window.start), 'Kampanja alkaa');
-					if (window.end && window.end < todayISO)
-						drawMarker(window.end, lastIndexFor(window.end), 'Kampanja päättyy');
-				}
-				ctx.restore();
-			}
-		};
-
-		const chart = new Chart(historyChartElem, {
-			type: 'line',
-			data: {
-				labels: dates.map((date) => new Date(date).toLocaleDateString('fi-FI')),
-				datasets: [
-					{
-						label: 'Hinta',
-						data: history.map((entry) => entry.price),
-						borderColor: 'rgba(75, 192, 192, 1)',
-						backgroundColor: 'rgba(75, 192, 192, 0.2)',
-						fill: true,
-						tension: 0.1,
-						pointRadius: history.map((entry) => (isSaleEntry(entry) ? 5 : 3)),
-						pointBackgroundColor: history.map((entry) =>
-							isSaleEntry(entry) ? 'rgba(239, 68, 68, 1)' : 'rgba(75, 192, 192, 1)'
-						),
-						pointBorderColor: history.map((entry) =>
-							isSaleEntry(entry) ? 'rgba(255, 255, 255, 1)' : 'rgba(75, 192, 192, 1)'
-						),
-						tooltip: {
-							callbacks: {
-								label: function (context: any) {
-									const entry = history[context.dataIndex];
-									if (!entry) return '';
-									const label = `Hinta: ${formatValue(entry.price, AllColumns.Price)}`;
-									if (isSaleEntry(entry)) {
-										const discount = Math.round((1 - entry.price / entry.normalPrice) * 100);
-										return `${label} · Normaalihinta ${formatValue(
-											entry.normalPrice,
-											AllColumns.NormalPrice
-										)} · Alennus ${discount}%`;
-									}
-									return label;
-								}
-							}
-						}
-					}
-				]
-			},
-			options: {
-				scales: {	
-					x: {
-						title: {
-							display: true,
-							text: 'Päivämäärä'
-						}
-					},
-					y: {
-						ticks: {
-							callback: function (value) {
-								return String(formatValue(Number(value), AllColumns.Price));
-							}
-						},
-						title: {
-							display: true,
-							text: 'Hinta (€)',
-						},
-					}
-				},
-
-				plugins: {
-					legend: {
-						display: false,
-						position: 'top'
-					},
-					title: {
-						display: false
-					},
-					tooltip: {
-						enabled: true,
-						mode: 'index',
-						intersect: false
-					}
-				}
-			},
-			plugins: [campaignLinePlugin]
-		});
-
-		return () => chart.destroy();
-	});
+		})
+	);
+	const campaignWindow = $derived(sale ? formatCampaignWindow(sale) : null);
 
 	afterNavigate(() => {
 		productElement?.scrollIntoView({ behavior: 'smooth' });
-	});
-
-	function sideScroll(node: HTMLElement) {
-		function handleScroll(event: WheelEvent) {
-			if (event.deltaY == 0) return;
-			event.preventDefault();
-			node.scrollBy({ left: event.deltaY });
-		}
-
-		node.addEventListener('wheel', handleScroll);
-
-		return {
-			destroy() {
-				node.removeEventListener('wheel', handleScroll);
-			}
-		};
-	}
-
-	type OpenedDetails = {
-		sizes: boolean;
-		history: boolean;
-		availability: boolean;
-	};
-
-	let opened: OpenedDetails = $state({
-		sizes: false,
-		history: false,
-		availability: false
 	});
 
 	$effect(() => {
@@ -361,19 +119,6 @@
 			keywords: `${product[AllColumns.Name]}, ${product[AllColumns.Manufacturer]}, ${product[AllColumns.Type]}, ${product[AllColumns.SubType]}, ${[...(product[AllColumns.Description] || [])].join(', ').toLocaleLowerCase()}`
 		});
 	});
-
-	const differentSizesOfProduct = $derived(findDifferentSizeOfProduct(product, kaljakori));
-
-	const sale = $derived(
-		getSaleInfo({
-			price: product[AllColumns.Price],
-			normalPrice: product[AllColumns.NormalPrice],
-			campaignStart: product[AllColumns.CampaignStart],
-			campaignEnd: product[AllColumns.CampaignEnd]
-		})
-	);
-	const campaignWindow = $derived(sale ? formatCampaignWindow(sale) : null);
-
 </script>
 
 <svelte:head>
@@ -382,16 +127,13 @@
 
 <div
 	bind:this={productElement}
-	class={twMerge('mx-auto flex w-full max-w-[120ch] flex-col flex-nowrap gap-6 p-6')}
+	class={twMerge('mx-auto flex w-full max-w-7xl flex-col flex-nowrap gap-6 p-6')}
 >
-	<div class="flex w-full items-center gap-4">
-		<a href="/" class={twMerge(components.button({ size: 'md' }))}>
-			<Icon name={'home'} class="inline-block" />
-			<span>Etusivulle</span>
-		</a>
+	<div class="flex w-full items-center gap-3.5">
+		<ProductBreadcrumb {product} class="min-w-0 flex-1" />
 		<button
 			type="button"
-			class={twMerge(components.button({ size: 'md', type: "positive" }), 'flex flex-row ml-auto items-center gap-2')}
+			class={twMerge(components.button({ size: 'sm', type: 'positive' }), 'ml-auto flex shrink-0 items-center gap-2')}
 			onclick={async () => {
 				const shared = await handleShare({
 					type: 'product',
@@ -399,367 +141,74 @@
 					url: location.href,
 					title: `Alkometriikka - ${product[AllColumns.Name]}`,
 					includeSID: true
-				})
+				});
 
 				if (!shared) {
-					alert("Linkki kopioitu leikepöydälle!");
+					alert('Linkki kopioitu leikepöydälle!');
 				}
 			}}
-			> 
-			<Icon name="share" class="inline-block" />
-			<span>Jaa tuote</span>
+		>
+			<Icon name="share" />
+			<span class="hidden sm:inline">Jaa tuote</span>
 		</button>
 	</div>
-	<header class="grid w-full grid-cols-1 gap-6 md:grid-cols-[auto_1fr]">
-		<div class="flex aspect-square h-96 w-full max-w-full rounded bg-white p-6 md:w-fit">
-			<ProductImage
-				number={product[AllColumns.Number]}
-				name={product[AllColumns.Name]}
-				transform="medium"
-				alt={product[AllColumns.Name]}
+
+	<div class="grid w-full grid-cols-1 gap-6 lg:grid-cols-[360px_minmax(0,1fr)_320px] lg:items-start">
+		<ProductGallery {product} {sale} />
+
+		<div class="flex flex-col gap-4">
+			<ProductBadgesHeader {product} {sale} />
+
+			<ProductPriceStoreBanner
+				class="lg:hidden"
+				{product}
+				{sale}
+				{campaignWindow}
+				{preferredStore}
+				{availableInPreferredStore}
+				{closestAvailableStore}
+				{closestAvailableDistance}
 			/>
+
+			<ProductSizeDropdown {product} sizes={sizeOptions} />
+
+			<ProductQuickStats {product} />
 		</div>
-		<div class="flex w-full flex-col justify-between gap-3">
-			<div class="flex flex-col gap-2">
-				<h1 class="text-2xl font-bold md:text-3xl" data-product={product[AllColumns.Name]}>
-					{product[AllColumns.Name]}
-				</h1>
-				<span>
-					{valueToString(product[AllColumns.Manufacturer], AllColumns.Manufacturer)} | {valueToString(
-						product[AllColumns.BottleSize],
-						AllColumns.BottleSize
-					)} | {valueToString(product[AllColumns.AlcoholPercentage], AllColumns.AlcoholPercentage)}
-					{product[AllColumns.Vintage] !== ''
-						? `| ${valueToString(product[AllColumns.Vintage], AllColumns.Vintage)}`
-						: ''}
-				</span>
-				<p class="w-fit rounded bg-gray-100 px-1 dark:bg-zinc-700 dark:text-white">
-					{product[AllColumns.RemovedFromSelection]
-						? 'Poistunut valikoimasta'
-						: product[AllColumns.Availability]}
-				</p>
-				<div class="flex w-full flex-row gap-2 md:flex-row">
-					<BadgeList item={product} isProductPage={true} />
-				</div>
-			</div>
-			<div class="flex flex-col items-end gap-1">
-				<div class="flex flex-row items-end gap-2">
-					{#if sale}
-						<span class="text-2xl text-secondary line-through">
-							{formatValue(sale.normalPrice, AllColumns.NormalPrice)}
-						</span>
-					{/if}
-					<p class="text-4xl font-bold" data-price={`${formatValue(product[AllColumns.Price], AllColumns.Price)}`}>
-						{formatValue(product[AllColumns.Price], AllColumns.Price)}
-					</p>
-				</div>
-				{#if sale}
-					<p class="text-sm font-semibold text-red-700 dark:text-red-400">
-						Alennus {sale.discountPercent} % normaalihinnasta
-						{formatValue(sale.normalPrice, AllColumns.NormalPrice)}{campaignWindow
-							? `, voimassa ${campaignWindow}`
-							: ''}
-					</p>
-				{/if}
-				<span class="text-sm text-secondary">
-					({formatValue(product[AllColumns.PricePerLiter], AllColumns.PricePerLiter)})
-				</span>
-			</div>
-		</div>
-	</header>
-	<div class="grid w-full grid-cols-1 gap-4 md:grid-cols-[2fr_1fr] md:justify-end">
-		<Popup class="gap-4 p-4">
-			{#snippet renderButton(dialogElement: HTMLDialogElement)}
-				<button
-					class={twMerge(
-						components.button({ type: 'positive', size: 'lg' }),
-						'w-full justify-between px-5 py-3 text-xl'
-					)}
-					onclick={() => dialogElement.showModal()}
-				>
-					<span>Lisää listaan ja vertaa!</span>
-					<Icon name="plus" />
-				</button>
-			{/snippet}
-			{#snippet renderContent(dialogElement: HTMLDialogElement)}
-				<h2 class="text-xl">Valitse lista</h2>
-				<AllLists
-					action={(list: ListObj) => {
-						addToList(list, product[AllColumns.Number]);
-						dialogElement.close();
-					}}
-				/>
-			{/snippet}
-		</Popup>
-		<a
-			href={`https://www.alko.fi/tuotteet/${product[AllColumns.Number]}`}
-			target="_blank"
-			rel="noopener noreferrer"
-			referrerpolicy="no-referrer"
-			class={twMerge(components.button({ size: 'md' }), 'w-full px-5 py-3 text-xl', product[AllColumns.RemovedFromSelection] ? 'pointer-events-none opacity-50' : '')}
-		>
-			<span>{product[AllColumns.RemovedFromSelection] ? 'Poistunut valikoimasta' : 'Alkon tuotesivu'}</span>
-			{#if !product[AllColumns.RemovedFromSelection]}
-			 <Icon name="link_external" class="inline-block" />
-			{/if}
-		</a>
+
+		<ProductPricePanel
+			class="hidden lg:flex"
+			{product}
+			{sale}
+			{campaignWindow}
+			{preferredStore}
+			{availableInPreferredStore}
+			{closestAvailableStore}
+			{closestAvailableDistance}
+			{cheapestSize}
+		/>
 	</div>
-	{#if preferredStore}
-		<section class="flex w-full items-center justify-start gap-3 rounded border border-primary bg-secondary px-4 py-3 text-2xl">
-				<div class="flex flex-col w-full items-center justify-between gap-2 sm:flex-row sm:items-center sm:gap-3">
-					<div class="flex w-full items-center gap-3">
-						<Icon
-							name={availableInPreferredStore ? 'check_circle' : 'x_circle'}
-							class={availableInPreferredStore
-								? 'text-green-700 dark:text-green-400'
-								: 'text-red-700 dark:text-red-400'}
-						/>
-						<div class="flex flex-col gap-0.5">
-							<span
-								class={availableInPreferredStore
-									? 'text-sm text-green-700 dark:text-green-400'
-									: 'text-sm text-red-700 dark:text-red-400'}
-							>
-								{availableInPreferredStore
-									? 'Saatavilla valitusta myymälästä'
-									: 'Ei saatavilla valitusta myymälästä'}
-							</span>
-							<strong class="text-lg">{preferredStore.name}</strong>
-							{#if !availableInPreferredStore && closestAvailableStore}
-								<span class="text-sm text-secondary">
-									Lähin saatavilla: {closestAvailableStore.name}{closestAvailableDistance
-										? ` (${closestAvailableDistance})`
-										: ''}
-								</span>
-							{/if}
-						</div>
-					</div>
-					<button
-						type="button"
-						class={twMerge(components.button({ size: 'sm' }), 'w-full sm:w-fit shrink-0')}
-						onclick={requestSettingsOpen}
-					>
-						Vaihda myymälää
-					</button>
-				</div>
-		</section>
+
+	{#if cheapestSize && !cheapestSize.isCurrent}
+		<ProductSizeHook size={cheapestSize} class="lg:hidden" />
 	{/if}
-	<div class="flex w-full flex-col gap-4 rounded border border-primary bg-secondary p-4">
-		<div class="flex flex-col items-start gap-0.5 md:flex-row md:gap-3">
-			<div class="flex flex-col gap-0.5 md:gap-1">
-				<h2 class="text-xl font-bold">Perustiedot</h2>
-				{#each Object.entries(DatasetColumns) as [_, value]}
-					{@const rawValue = product[value]}
-					{@const hasValue =
-						!isNullish(rawValue) &&
-						(!(rawValue instanceof Set) || rawValue.size > 0) &&
-						(!Array.isArray(rawValue) || rawValue.length > 0) &&
-						(typeof rawValue !== 'string' || rawValue.trim().length > 0)
-					}
-					{#if hasValue && !hideFromProductPageStats.has(value as (typeof DatasetColumns)[keyof typeof DatasetColumns])}
-						<p>
-							{valueToString(
-								rawValue as string | number | boolean | Set<string>,
-								value as (typeof DatasetColumns)[keyof typeof DatasetColumns]
-							)}
-						</p>
-					{/if}
-				{/each}
-			</div>
+
+	<ProductQualityMetrics {product} {kaljakori} />
+
+	<ProductSimilar {product} candidates={similarProducts} />
+
+	<div class="grid w-full grid-cols-1 gap-6 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] lg:items-start">
+		<div class="flex flex-col gap-6">
+			<ProductPriceHistory {product} />
+			<ProductDetailsTable {product} class="hidden lg:block" />
 		</div>
-		<div class="flex flex-col gap-0.5 md:gap-1">
-			<h2 class="text-xl font-bold">Laskennalliset tiedot</h2>
-			{#each Object.entries(DrunkColumns) as [_, value]}
-				{#if product[value] !== null && product[value] !== undefined}
-					<p class="flex flex-row items-center gap-2">
-						{valueToString(
-							product[value],
-							value
-						)}
-					</p>
-				{/if}
-			{/each}
-		</div>
+		<ProductStoreAvailability
+			id="myymalasaatavuus"
+			productNumber={product[AllColumns.Number]}
+			stores={rankedAvailabilityStores}
+			{preferredStore}
+			{availabilityUpdated}
+		/>
 	</div>
-	<section class="w-full overflow-hidden rounded border border-primary bg-secondary">
-		<details>
-			<summary class="m-2 text-2xl font-bold" onclick={(e) => {
-				if (!opened.availability) sendAnalyticsEvent('show_availability', { product_number: product[AllColumns.Number] });
-				opened.availability = true;
-			}}>
-				Myymäläsaatavuus
-			</summary>
-			{#if !preferredStore}
-				<div class="border-t border-primary px-4 py-3">
-					<button
-						type="button"
-						class={twMerge(components.button({ type: 'positive', size: 'md' }), 'w-full')}
-						onclick={requestSettingsOpen}
-					>
-						Valitse ensisijainen myymälä
-					</button>
-				</div>
-			{/if}
-			<div class="border-t border-primary flex flex-row justify-between gap-0.5">
-				<p class="px-4 py-2">
-					Tuotetta on saatavilla seuraavissa myymälöissä:
-				</p>
-				{#if availabilityUpdated}
-					<p class="px-4 py-2 my-auto text-secondary text-sm">
-						Päivitetty viimeksi: {availabilityUpdated.toLocaleString('fi-FI')}
-					</p>
-				{/if}
-			</div>
-			<div class="max-h-128 overflow-y-auto border-t border-primary">
-				{#if rankedAvailabilityStores.length > 0}
-					<ul>
-						{#each rankedAvailabilityStores as store (store.id)}
-							{@const distance = formatStoreDistance(getStoreDistance(preferredStore, store))}
-							{@const openingHours = getTodaysOpeningHours(store)}
-							{@const storeOpen = isStoreOpen(store)}
-							<li class="flex gap-3 border-b border-primary px-4 py-3 last:border-b-0">
-								<div class="flex min-w-0 flex-1 flex-col gap-0.5">
-									<a href={`/myymalat/${store.id}/`} class="w-fit font-semibold hover:underline">
-										{store.name}
-									</a>
-									{#if store.address || store.postalCode || store.postOffice}
-										<span class="text-sm text-secondary">
-											{[store.address, [store.postalCode, store.postOffice].filter(Boolean).join(' ')]
-												.filter(Boolean)
-												.join(', ')}
-										</span>
-									{/if}
-									{#if openingHours}
-										<span class="text-sm text-secondary">
-											{storeOpen
-												? `Avoinna tänään ${openingHours}`
-												: `Suljettu`}
-										</span>
-									{/if}
-								</div>
-								{#if distance}
-									<span class="shrink-0 text-sm text-secondary">{distance}</span>
-								{/if}
-							</li>
-						{/each}
-					</ul>
-				{:else}
-					<p class="px-4 py-3 text-secondary">Ei saatavilla myymälöissä.</p>
-				{/if}
-			</div>
-		</details>
-	</section>
-	{#if dev || product[AllColumns.History]?.length > 1}
-		<details class="w-full rounded border border-primary bg-secondary">
-			<summary
-				class="m-2 text-2xl font-bold"
-				onclick={(e) => {
-					if (!opened.history)
-						sendAnalyticsEvent('show_price_history', {
-							product_number: product[AllColumns.Number]
-						});
-					opened.history = true;
-				}}
-			>
-				Hintahistoria
-			</summary>
-			<canvas bind:this={historyChartElem} class="max-w-full"></canvas>
-		</details>
-	{/if}
-	{#if differentSizesOfProduct.length}
-		<details>
-			<summary
-				class="mb-2 text-2xl font-bold"
-				onclick={(e) => {
-					if (!opened.sizes)
-						sendAnalyticsEvent('view_sizes', { product_number: product[AllColumns.Number] });
-					opened.sizes = true;
-				}}
-			>
-				Muut koot
-			</summary>
-			<div class="flex max-w-full flex-col flex-nowrap gap-3">
-				{#each differentSizesOfProduct.sort((a, b) => a[AllColumns.BottleSize] - b[AllColumns.BottleSize]) as differentSizeProduct}
-					<a
-						href={`/tuotteet/${differentSizeProduct[AllColumns.Number]}/`}
-						class="flex shrink-0 flex-row gap-3 rounded-lg border border-primary p-4"
-					>
-						<div class="flex aspect-square h-36 w-fit shrink-0 rounded bg-white p-2 md:max-w-fit">
-							<ProductImage
-								number={differentSizeProduct[AllColumns.Number]}
-								name={differentSizeProduct[AllColumns.Name]}
-								alt={differentSizeProduct[AllColumns.Name]}
-								class="block aspect-square h-full w-full object-contain"
-							/>
-						</div>
-						<div class="flex flex-col gap-2">
-							<h2 class="line-clamp-3 text-xl font-bold md:text-2xl">
-								{`${differentSizeProduct[AllColumns.Name]} (${formatValue(differentSizeProduct[AllColumns.BottleSize], AllColumns.BottleSize)})`}
-							</h2>
-							<span>
-								{formatValue(
-									differentSizeProduct[AllColumns.AlcoholPercentage],
-									AllColumns.AlcoholPercentage
-								)}
-							</span>
-							<p class="text-3xl font-bold drop-shadow-lg">
-								{formatValue(differentSizeProduct[AllColumns.Price], AllColumns.Price)}
-							</p>
-							<span class="text-sm text-secondary">
-								{formatValue(differentSizeProduct[AllColumns.BottleSize], AllColumns.BottleSize)} ({formatValue(differentSizeProduct[AllColumns.PricePerLiter], AllColumns.PricePerLiter)})
-							</span>
-						</div>
-					</a>
-				{/each}
-			</div>
-		</details>
-	{/if}
-	{#if similarProducts.length}
-		<div class="flex items-center justify-between">
-			<h2 class="text-2xl font-bold">Samankaltaisia tuotteita</h2>
-			<a
-				class={twMerge(components.button({ size: 'md' }), 'flex flex-row items-center gap-2')}
-				href={`/vastaavat/${product[AllColumns.Number]}`}
-			>
-				<span>Lisää samankaltaisia</span>
-				<Icon name="arrow_right" />
-			</a>
-		</div>
-		<div class="flex max-w-full flex-row flex-nowrap gap-3 overflow-x-auto" use:sideScroll>
-			{#each similarProducts as similarProduct}
-				<a
-					href={`/tuotteet/${similarProduct[AllColumns.Number]}/`}
-					class="flex w-48 shrink-0 flex-col gap-3 rounded-lg border border-primary p-4"
-				>
-					<div class="flex h-[calc(3_*_2.5rem)] flex-col gap-2 md:h-[calc(3_*_2.75rem)]">
-						<h2 class="line-clamp-3 text-xl font-bold md:text-2xl">
-							{similarProduct[AllColumns.Name]}
-						</h2>
-						<span>
-							{formatValue(
-								similarProduct[AllColumns.AlcoholPercentage],
-								AllColumns.AlcoholPercentage
-							)}
-						</span>
-					</div>
-					<div class="flex aspect-square w-full shrink-0 rounded bg-white p-2 md:max-w-fit">
-						<ProductImage
-							number={similarProduct[AllColumns.Number]}
-							name={similarProduct[AllColumns.Name]}
-							alt={similarProduct[AllColumns.Name]}
-							class="block aspect-square h-full w-full object-contain"
-						/>
-					</div>
-					<div class="flex flex-col gap-2">
-						<p class="text-3xl font-bold drop-shadow-lg">
-							{formatValue(similarProduct[AllColumns.Price], AllColumns.Price)}
-						</p>
-						<span class="text-sm text-secondary">
-							{formatValue(similarProduct[AllColumns.BottleSize], AllColumns.BottleSize)} ({formatValue(similarProduct[AllColumns.PricePerLiter], AllColumns.PricePerLiter)})
-						</span>
-					</div>
-				</a>
-			{/each}
-		</div>
-	{/if}
+
+	<ProductDetailsTable {product} asDetails class="lg:hidden" />
 </div>

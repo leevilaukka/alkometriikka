@@ -304,6 +304,7 @@ export const LocalStorageKeys = {
 	CurrentFilters: 'current_filters',
 	Theme: 'theme',
 	ViewedShares: 'viewed_shares',
+	CompareProducts: 'compare_products',
 	DailyGame: 'alkometriikka-daily-v1',
 	DailyStreak: 'alkometriikka-daily-streak-v1',
 	DailyUnlimitedRun: 'alkometriikka-daily-unlimited-v1',
@@ -318,6 +319,7 @@ export const ShareTypes = {
 	Product: 'product',
 	Filters: 'filters',
 	Similar: 'similar',
+	Compare: 'compare',
 	DailyGame: 'daily_game'
 } as const;
 

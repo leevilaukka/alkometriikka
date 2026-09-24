@@ -154,6 +154,43 @@ export function getComparableProductName(product: PriceListItem): string {
 	return out;
 }
 
+export type SizeOption = {
+	product: PriceListItem;
+	isCurrent: boolean;
+	isBestValue: boolean;
+	barPercent: number;
+};
+
+/**
+ * Builds the sorted (by BottleSize asc) size-comparison list for the
+ * "Pakkauskoko" size selector, including `product` itself alongside the
+ * other pack sizes found by {@link findDifferentSizeOfProduct}.
+ */
+export function buildSizeOptions(product: PriceListItem, kaljakori: Kaljakori): SizeOption[] {
+	const byId = new Map<string, PriceListItem>();
+	byId.set(product[AllColumns.Number], product);
+	for (const item of findDifferentSizeOfProduct(product, kaljakori)) {
+		byId.set(item[AllColumns.Number], item);
+	}
+	const all = [...byId.values()].sort(
+		(a, b) => a[AllColumns.BottleSize] - b[AllColumns.BottleSize]
+	);
+	const prices = all.map((item) => item[AllColumns.PricePerLiter]);
+	const min = Math.min(...prices);
+	const max = Math.max(...prices);
+	return all.map((item) => {
+		const pricePerLiter = item[AllColumns.PricePerLiter];
+		const barPercent =
+			max === min ? 100 : Math.round((1 - (pricePerLiter - min) / (max - min)) * 100);
+		return {
+			product: item,
+			isCurrent: item[AllColumns.Number] === product[AllColumns.Number],
+			isBestValue: pricePerLiter === min,
+			barPercent
+		};
+	});
+}
+
 export function findDifferentSizeOfProduct(
 	product: PriceListItem,
 	kaljakori: Kaljakori

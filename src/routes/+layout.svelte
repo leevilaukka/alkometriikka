@@ -2,7 +2,7 @@
 	import '../app.css';
 	import { dev } from '$app/environment';
 	import { ContextKeys, LocalStorageKeys } from '$lib/utils/constants';
-	import { isMobile, isLaptop, lists, personalInfo, preferredStoreId, searchQuery, theme } from '$lib/global.svelte';
+	import { compareProductIds, isMobile, isLaptop, lists, personalInfo, preferredStoreId, searchQuery, theme } from '$lib/global.svelte';
 	import logo from '$lib/assets/images/Logo/0.5x/Logo_rounded@0.5x.png';
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/styles';
@@ -13,6 +13,8 @@
 	import { markRouterReady, shareTypeFromRoute, trackSharedView } from '$lib/utils/helpers';
 	import { setContext } from 'svelte';
 	import Settings from '$lib/components/widgets/Settings/Index.svelte';
+	import CompareBar from '$lib/components/widgets/CompareBar.svelte';
+	import ProductMobileCta from '$lib/components/product/ProductMobileCta.svelte';
 	import { LocalStorageManager } from '$lib/utils/storage';
 	import type { IconName } from '$lib/icons';
 
@@ -34,6 +36,10 @@
 
 	$effect(() => {
 		LocalStorageManager.setItem(LocalStorageKeys.PreferredStore, $preferredStoreId);
+	});
+
+	$effect(() => {
+		LocalStorageManager.setItem(LocalStorageKeys.CompareProducts, compareProductIds);
 	});
 
 	$effect(() => {
@@ -102,7 +108,7 @@
 		name: 'Tilastot'
 	}];
 
-	const noSearchPages: typeof page.route.id[] = ['/daily/arkisto', '/laskin', '/tilastot', '/listat', '/daily', '/daily/arkisto/[date]', '/tuotteet/[...id]'];
+	const noSearchPages: typeof page.route.id[] = ['/daily/arkisto', '/laskin', '/tilastot', '/listat', '/daily', '/daily/arkisto/[date]', '/tuotteet/[...id]', '/vertailu/[ids]'];
 </script>
 
 <svelte:window onclick={handleDocumentClick} />
@@ -181,6 +187,16 @@
 		<div class="flex max-h-full overflow-y-auto overflow-x-hidden flex-auto flex-col">
 			{@render children?.()}
 		</div>
+		{#if page.route.id !== '/vertailu/[ids]'}
+			<CompareBar kaljakori={alko.kaljakori} />
+		{/if}
+		{#if page.route.id === '/tuotteet/[...id]'}
+			{@const productId = page.params.id?.split('/')[0]}
+			{@const product = productId ? alko.kaljakori.findById(productId) : undefined}
+			{#if product}
+				<ProductMobileCta {product} class="lg:hidden" />
+			{/if}
+		{/if}
 	</div>
 {:catch error}
 	{shiftLoader()}

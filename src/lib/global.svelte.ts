@@ -6,6 +6,9 @@ export let personalInfo = $state(
 	LocalStorageManager.getItem(LocalStorageKeys.PersonalInfo) || { gender: null, weight: null }
 );
 export let lists = $state(LocalStorageManager.getItem(LocalStorageKeys.Lists) || []);
+export let compareProductIds = $state<string[]>(
+	LocalStorageManager.getItem(LocalStorageKeys.CompareProducts) || []
+);
 
 export let searchQuery = writable(new URLSearchParams(location.search).get('q') || '');
 
