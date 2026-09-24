@@ -140,6 +140,14 @@ function num(value: unknown): number | null {
 	return typeof value === 'number' && Number.isFinite(value) ? value : null;
 }
 
+/** Beer measurements are 0 rather than missing for other products; report those as unknown. */
+function measurement(value: unknown): number | null {
+	return num(value) || null;
+}
+
+/** The area part of a region value ("Champagne - AC Champagne" → "champagne"). */
+const regionArea = (value: string) => normalize(value.split(' - ')[0]!);
+
 function list(value: unknown): string[] {
 	return value instanceof Set ? [...value].filter((v): v is string => typeof v === 'string') : [];
 }
@@ -158,6 +166,27 @@ export function parseProductId(input: string): string | null {
 	const fromUrl = trimmed.match(/tuotteet\/(\d+)/);
 	if (fromUrl) return fromUrl[1]!;
 	return /^\d+$/.test(trimmed) ? trimmed : null;
+}
+
+/**
+ * Merges values that differ only in case or surrounding whitespace (Alko's data has
+ * e.g. "AC Champagne" and "AC CHampagne "), keeping the most common spelling. Filtering
+ * with any spelling already matches all variants.
+ */
+function mergeSpellingVariants(values: { value: string; count: number }[]) {
+	const merged = new Map<string, { value: string; count: number; top: number }>();
+	for (const { value, count } of values) {
+		const key = normalize(value);
+		const entry = merged.get(key);
+		if (!entry) merged.set(key, { value: value.trim(), count, top: count });
+		else {
+			entry.count += count;
+			if (count > entry.top) Object.assign(entry, { value: value.trim(), top: count });
+		}
+	}
+	return [...merged.values()]
+		.map(({ value, count }) => ({ value, count }))
+		.sort((a, b) => b.count - a.count || a.value.localeCompare(b.value, 'fi'));
 }
 
 export class Catalog {
@@ -297,7 +326,7 @@ export class Catalog {
 			product: {
 				...this.summary(item),
 				region: text(item[AllColumns.Region]),
-				beer_style: text(item[AllColumns.BeerType]),
+				style: text(item[AllColumns.BeerType]),
 				// Kaljakori parses numeric-looking strings, so a vintage arrives as a number.
 				vintage:
 					typeof item[AllColumns.Vintage] === 'number'
@@ -316,9 +345,9 @@ export class Catalog {
 				sugar_g_per_l: num(item[AllColumns.Sugar]),
 				acids_g_per_l: num(item[AllColumns.Acidity]),
 				energy_kcal_per_100ml: num(item[AllColumns.Energy]),
-				original_gravity_plato: num(item[AllColumns.OriginalGravity]),
-				color_ebc: num(item[AllColumns.ColorEBC]),
-				bitterness_ebu: num(item[AllColumns.BitternessEBU]),
+				original_gravity_plato: measurement(item[AllColumns.OriginalGravity]),
+				color_ebc: measurement(item[AllColumns.ColorEBC]),
+				bitterness_ebu: measurement(item[AllColumns.BitternessEBU]),
 				sale: sale
 					? {
 							sale_price_eur: sale.salePrice,
@@ -676,6 +705,7 @@ export class Catalog {
 				this.kaljakori.data,
 				FILTER_FIELDS[field as keyof typeof FILTER_FIELDS]
 			).map(({ key, count }) => ({ value: key, count }));
+			values = mergeSpellingVariants(values);
 		}
 
 		const matching = query
@@ -726,7 +756,13 @@ export class Catalog {
 				exact.forEach((value) => resolved.add(value));
 				continue;
 			}
-			const partial = candidates.filter((candidate) => normalize(candidate).includes(q));
+			let partial = candidates.filter((candidate) => normalize(candidate).includes(q));
+			// Regions are "Area - appellation"; prefer the area so "Champagne" does not also
+			// match "Cognac - AC Cognac Grande Champagne".
+			if (field === 'region') {
+				const byArea = partial.filter((candidate) => regionArea(candidate).includes(q));
+				if (byArea.length) partial = byArea;
+			}
 			if (partial.length === 0) {
 				const scored = candidates
 					.map((candidate) => ({ candidate, score: similarity(normalize(candidate), q) }))

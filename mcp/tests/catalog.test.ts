@@ -39,6 +39,14 @@ describe('search', () => {
 		expect(ids(catalog.search({ country: ['ranska'], region: ['bordeaux'] }))).toEqual(['300003']);
 	});
 
+	it('matches regions by area before appellation', () => {
+		const result = catalog.search({ region: ['champagne'] });
+		expect(ids(result).sort()).toEqual(['008003', '400004']);
+		expect(result.applied_filters.region).not.toContain('Cognac - AC Cognac Grande Champagne');
+		// Falls back to the appellation when no area matches.
+		expect(ids(catalog.search({ region: ['grande champagne'] }))).toEqual(['100001']);
+	});
+
 	it('tolerates Finnish inflection with a single close match', () => {
 		const result = catalog.search({ subcategory: ['olut'] });
 		expect(result.applied_filters.subcategory).toEqual(['Oluet']);
@@ -134,6 +142,23 @@ describe('getProduct', () => {
 			alko_url: 'https://www.alko.fi/tuotteet/300003'
 		});
 		expect(dataset.last_updated).toBe('2026-09-20T10:00:00.000Z');
+	});
+
+	it('reports style under a neutral key and beer measurements only for beer', () => {
+		const wine = catalog.getProduct('300003').product;
+		expect(wine.style).toBe('Pehmeä & hedelmäinen');
+		expect(wine).not.toHaveProperty('beer_style');
+		expect(wine).toMatchObject({
+			original_gravity_plato: null,
+			color_ebc: null,
+			bitterness_ebu: null
+		});
+		expect(catalog.getProduct('200002').product).toMatchObject({
+			style: 'Lager',
+			original_gravity_plato: 11,
+			color_ebc: 8,
+			bitterness_ebu: 18
+		});
 	});
 
 	it('computes metrics with the existing Alkometriikka implementation', () => {
@@ -324,6 +349,10 @@ describe('statistics and filter values', () => {
 		expect(catalog.filterValues('country').values).toContainEqual({ value: 'Suomi', count: 3 });
 		expect(catalog.filterValues('grape', 'pinot').values).toEqual([
 			{ value: 'Pinot Grigio', count: 1 }
+		]);
+		expect(catalog.filterValues('region', 'champagne').values).toEqual([
+			{ value: 'Champagne - AC Champagne', count: 2 },
+			{ value: 'Cognac - AC Cognac Grande Champagne', count: 1 }
 		]);
 		const stores = catalog.filterValues('store', 'tampere');
 		expect(stores.values.map((v) => v.store_id)).toEqual(['2202', '2201']);
