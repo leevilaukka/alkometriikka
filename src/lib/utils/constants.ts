@@ -384,6 +384,19 @@ export const defaultSEOData = {
 		'alkometriikka, alko, alkometri, promillelaskuri, promillet, juomat, suodattaminen, suodatus, hinnat, vertailu, alkoholi, viina, viinit, oluet, siiderit, lonkerot, juomalistat, listat, jaa, myymälät'
 } as const satisfies Parameters<typeof setSEO>[0];
 
+// Matches the "N-pack" convention Alko uses in product names for multi-packs,
+// e.g. "Karhu 4,6% 6-pack tölkki" or "Sandels 4,7% 24-pack tölkki".
+const PACK_COUNT_RE = /(\d+)\s*-?\s*pack\b/i;
+
+/**
+ * Number of individual bottles/cans in a product, parsed from its name.
+ * Returns 1 when the product isn't a multi-pack (or the count can't be determined).
+ */
+export function getPackCount(product: PriceListItem): number {
+	const match = product[DatasetColumns.Name].match(PACK_COUNT_RE);
+	return match ? Number(match[1]) : 1;
+}
+
 /** Column to badge mapping
  * Maps static dataset columns and their values to their corresponding badge configurations.
  *
@@ -462,6 +475,10 @@ export function DynamicColumnToBadgeMap<T extends PriceListItem>(item: T): Colum
 	}
 	if (Number(item[DatasetColumns.Sugar]) === 0) {
 		map[DatasetColumns.Sugar] = { text: 'Sokeriton', color: 'gray' };
+	}
+	const packCount = getPackCount(item);
+	if (packCount > 1) {
+		map[DatasetColumns.Name] = { text: `${packCount}-pack`, color: 'gray', icon: 'package' };
 	}
 	if (item[DatasetColumns.New].toLowerCase() === 'uutuus') {
 		map[DatasetColumns.New] = { text: 'Uutuus', color: 'red', icon: 'pencil_sparkles' };

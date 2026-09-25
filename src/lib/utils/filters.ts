@@ -1,6 +1,6 @@
 import type { Kaljakori } from '$lib/alko';
 import type { ColumnNames, FilterValue, FilterValues, PriceListItem } from '$lib/types';
-import { AllColumns, shownFilters, subCategoryMap } from './constants';
+import { AllColumns, getPackCount, shownFilters, subCategoryMap } from './constants';
 import { isSimilarTokenized } from './search';
 
 export function initFilterValues(
@@ -164,6 +164,7 @@ export type SizeOption = {
 	isCurrent: boolean;
 	isBestValue: boolean;
 	barPercent: number;
+	packCount: number;
 };
 
 /**
@@ -178,7 +179,10 @@ export function buildSizeOptions(product: PriceListItem, kaljakori: Kaljakori): 
 		byId.set(item[AllColumns.Number], item);
 	}
 	const all = [...byId.values()].sort(
-		(a, b) => a[AllColumns.BottleSize] - b[AllColumns.BottleSize]
+		(a, b) =>
+			getPackCount(a) - getPackCount(b) ||
+			a[AllColumns.BottleSize] - b[AllColumns.BottleSize] ||
+			a[AllColumns.Price] - b[AllColumns.Price]
 	);
 	const prices = all.map((item) => item[AllColumns.PricePerLiter]);
 	const min = Math.min(...prices);
@@ -191,7 +195,8 @@ export function buildSizeOptions(product: PriceListItem, kaljakori: Kaljakori): 
 			product: item,
 			isCurrent: item[AllColumns.Number] === product[AllColumns.Number],
 			isBestValue: pricePerLiter === min,
-			barPercent
+			barPercent,
+			packCount: getPackCount(item)
 		};
 	});
 }

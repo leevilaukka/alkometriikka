@@ -15,6 +15,11 @@
 	}: { product: PriceListItem; sizes: SizeOption[]; class?: string } = $props();
 
 	const current = $derived(sizes.find((size) => size.isCurrent));
+	// Sizes are pre-sorted by pack count then bottle size, so the multi-pack group
+	// (if any) is a single contiguous run at the end of the list.
+	const hasSingleAndMultiPack = $derived(
+		sizes.some((size) => size.packCount === 1) && sizes.some((size) => size.packCount > 1)
+	);
 
 	let detailsEl: HTMLDetailsElement | undefined = $state();
 
@@ -57,7 +62,10 @@
 		<div
 			class="absolute top-full left-0 z-20 mt-2 flex w-full min-w-72 flex-col overflow-hidden rounded border border-primary bg-primary shadow-lg"
 		>
-			{#each sizes as size (size.product[AllColumns.Number])}
+			{#each sizes as size, i (size.product[AllColumns.Number])}
+				{#if hasSingleAndMultiPack && size.packCount > 1 && (i === 0 || sizes[i - 1].packCount === 1)}
+					<div class="bg-secondary px-3 py-1 text-xs font-medium text-secondary">Monipakkaukset</div>
+				{/if}
 				<svelte:element
 					this={size.isCurrent ? 'div' : 'a'}
 					href={size.isCurrent ? undefined : `/tuotteet/${size.product[AllColumns.Number]}/`}
@@ -74,7 +82,9 @@
 					></span>
 					<span class="flex min-w-0 items-baseline gap-1.5">
 						<strong class="text-sm">{formatValue(size.product[AllColumns.BottleSize], AllColumns.BottleSize)}</strong>
-						{#if size.product[AllColumns.PackagingType]}
+						{#if size.packCount > 1}
+							<span class="truncate text-xs text-secondary">{size.packCount}-pack</span>
+						{:else if size.product[AllColumns.PackagingType]}
 							<span class="truncate text-xs text-secondary">{size.product[AllColumns.PackagingType]}</span>
 						{/if}
 					</span>
@@ -85,7 +95,7 @@
 					{/if}
 					<span class="ml-auto flex shrink-0 items-center gap-2.5">
 						<span class="flex items-center gap-1.5">
-							<span class="flex h-1 w-10 overflow-hidden rounded-full bg-gray-200 dark:bg-zinc-700">
+							<span class="flex h-1 w-10 shrink-0 overflow-hidden rounded-full bg-gray-200 dark:bg-zinc-700">
 								<span
 									class={twMerge(
 										'h-full rounded-full',
@@ -94,11 +104,13 @@
 									style={`width: ${size.barPercent}%`}
 								></span>
 							</span>
-							<span class="text-xs text-secondary">
+							<span class="w-16 shrink-0 text-right text-xs tabular-nums text-secondary">
 								{formatValue(size.product[AllColumns.PricePerLiter], AllColumns.PricePerLiter)}
 							</span>
 						</span>
-						<strong class="text-sm">{formatValue(size.product[AllColumns.Price], AllColumns.Price)}</strong>
+						<strong class="w-14 shrink-0 text-right text-sm tabular-nums">
+							{formatValue(size.product[AllColumns.Price], AllColumns.Price)}
+						</strong>
 					</span>
 				</svelte:element>
 			{/each}
