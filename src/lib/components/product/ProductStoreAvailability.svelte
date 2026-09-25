@@ -8,7 +8,6 @@
 	} from '$lib/utils/availability';
 	import { requestSettingsOpen } from '$lib/utils/settings';
 	import { components } from '$lib/utils/styles';
-	import Icon from '../widgets/Icon.svelte';
 	import { twMerge } from 'tailwind-merge';
 
 	const {
@@ -26,10 +25,6 @@
 		availabilityUpdated: Date | undefined;
 		class?: string;
 	} = $props();
-
-	const COLLAPSED_COUNT = 5;
-	let expanded = $state(false);
-	const visibleStores = $derived(expanded ? stores : stores.slice(0, COLLAPSED_COUNT));
 </script>
 
 <section {id} class={twMerge('flex flex-col overflow-hidden rounded border border-primary bg-secondary scroll-mt-4', _class)}>
@@ -52,9 +47,9 @@
 			</button>
 		</div>
 	{/if}
-	{#if visibleStores.length > 0}
-		<ul class="bg-primary">
-			{#each visibleStores as store (store.id)}
+	{#if stores.length > 0}
+		<ul class="max-h-96 overflow-y-auto bg-primary">
+			{#each stores as store (store.id)}
 				{@const distance = formatStoreDistance(getStoreDistance(preferredStore, store))}
 				{@const openingHours = getTodaysOpeningHours(store)}
 				{@const storeOpen = isStoreOpen(store)}
@@ -78,17 +73,5 @@
 		</ul>
 	{:else}
 		<p class="bg-primary p-3.5 text-secondary">Ei saatavilla myymälöissä.</p>
-	{/if}
-	{#if stores.length > COLLAPSED_COUNT}
-		<div class="p-3.5">
-			<button
-				type="button"
-				class={twMerge(components.button({ size: 'sm' }), 'flex w-full items-center justify-center gap-2')}
-				onclick={() => (expanded = !expanded)}
-			>
-				<span>{expanded ? 'Näytä vähemmän' : `Näytä kaikki ${stores.length} myymälää`}</span>
-				<Icon name={`chevron_${expanded ? 'up' : 'down'}`} />
-			</button>
-		</div>
 	{/if}
 </section>

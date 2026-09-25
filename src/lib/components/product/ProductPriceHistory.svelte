@@ -167,6 +167,8 @@
 				]
 			},
 			options: {
+				responsive: true,
+				maintainAspectRatio: false,
 				scales: {
 					x: { title: { display: true, text: 'Päivämäärä' } },
 					y: {

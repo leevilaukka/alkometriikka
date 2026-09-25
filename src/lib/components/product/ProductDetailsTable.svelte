@@ -3,13 +3,10 @@
 	import { headerToDisplayName, isNullish } from '$lib/utils/helpers';
 	import { formatValue } from '$lib/utils/format';
 	import type { PriceListItem } from '$lib/types';
+	import Icon from '../widgets/Icon.svelte';
 	import { twMerge } from 'tailwind-merge';
 
-	const {
-		product,
-		asDetails = false,
-		class: _class = ''
-	}: { product: PriceListItem; asDetails?: boolean; class?: string } = $props();
+	const { product, class: _class = '' }: { product: PriceListItem; class?: string } = $props();
 
 	type Row = { key: string; label: string; value: string };
 
@@ -41,9 +38,11 @@
 </script>
 
 {#snippet rowsList()}
-	<div class="grid grid-cols-1 gap-x-6 bg-primary sm:grid-cols-2">
+	<div class="grid grid-cols-1 bg-primary sm:grid-cols-2">
 		{#each rows as row (row.key)}
-			<div class="grid grid-cols-[160px_minmax(0,1fr)] gap-3.5 border-b border-secondary px-4 py-3">
+			<div
+				class="grid grid-cols-[160px_minmax(0,1fr)] gap-3.5 border-b border-secondary px-4 py-3 sm:even:border-s sm:odd:pe-6 sm:even:ps-6"
+			>
 				<span class="text-sm text-secondary">{row.label}</span>
 				<span class="text-wrap-pretty">{row.value}</span>
 			</div>
@@ -51,16 +50,12 @@
 	</div>
 {/snippet}
 
-{#if asDetails}
-	<details open class={twMerge('overflow-hidden rounded border border-primary bg-secondary', _class)}>
-		<summary class="border-b border-primary p-3.5 text-lg font-bold">Tuotetiedot</summary>
-		{@render rowsList()}
-	</details>
-{:else}
-	<section class={twMerge('overflow-hidden rounded border border-primary bg-secondary', _class)}>
-		<header class="border-b border-primary p-3.5">
-			<h2 class="text-lg font-bold">Tuotetiedot</h2>
-		</header>
-		{@render rowsList()}
-	</section>
-{/if}
+<details class={twMerge('group overflow-hidden rounded border border-primary bg-secondary', _class)}>
+	<summary
+		class="flex cursor-pointer list-none items-center justify-between gap-3 p-3.5 text-lg font-bold group-open:border-b group-open:border-primary"
+	>
+		Tuotetiedot
+		<Icon name="chevron_down" class="shrink-0 transition-transform group-open:rotate-180" />
+	</summary>
+	{@render rowsList()}
+</details>

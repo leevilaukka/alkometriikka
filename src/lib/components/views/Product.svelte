@@ -210,5 +210,5 @@
 		/>
 	</div>
 
-	<ProductDetailsTable {product} asDetails class="lg:hidden" />
+	<ProductDetailsTable {product} class="lg:hidden" />
 </div>
