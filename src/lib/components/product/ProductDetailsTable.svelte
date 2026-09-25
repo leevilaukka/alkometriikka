@@ -1,12 +1,20 @@
 <script lang="ts">
-	import { DatasetColumns, DrunkColumns, hideFromProductPageStats } from '$lib/utils/constants';
-	import { headerToDisplayName, isNullish } from '$lib/utils/helpers';
+	import { AllColumns, DatasetColumns, DrunkColumns, hideFromProductPageStats } from '$lib/utils/constants';
+	import { headerToDisplayName, isNullish, sendAnalyticsEvent } from '$lib/utils/helpers';
 	import { formatValue } from '$lib/utils/format';
 	import type { PriceListItem } from '$lib/types';
 	import Icon from '../widgets/Icon.svelte';
 	import { twMerge } from 'tailwind-merge';
 
 	const { product, class: _class = '' }: { product: PriceListItem; class?: string } = $props();
+
+	let detailsEl: HTMLDetailsElement | undefined = $state();
+
+	function handleToggle() {
+		if (detailsEl?.open) {
+			sendAnalyticsEvent('show_product_details', { product_number: product[AllColumns.Number] });
+		}
+	}
 
 	type Row = { key: string; label: string; value: string };
 
@@ -50,7 +58,11 @@
 	</div>
 {/snippet}
 
-<details class={twMerge('group overflow-hidden rounded border border-primary bg-secondary', _class)}>
+<details
+	bind:this={detailsEl}
+	ontoggle={handleToggle}
+	class={twMerge('group overflow-hidden rounded border border-primary bg-secondary', _class)}
+>
 	<summary
 		class="flex cursor-pointer list-none items-center justify-between gap-3 p-3.5 text-lg font-bold group-open:border-b group-open:border-primary"
 	>

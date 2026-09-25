@@ -1,4 +1,5 @@
 import { compareProductIds } from '$lib/global.svelte';
+import { sendAnalyticsEvent } from './helpers';
 
 /** Maximum number of products that can be compared at once, to keep the comparison grid usable. */
 export const MAX_COMPARE_PRODUCTS = 6;
@@ -12,6 +13,7 @@ export function addToCompare(id: string): boolean {
 	if (compareProductIds.includes(id)) return true;
 	if (compareProductIds.length >= MAX_COMPARE_PRODUCTS) return false;
 	compareProductIds.push(id);
+	sendAnalyticsEvent('add_to_compare', { product_number: id });
 	return true;
 }
 
@@ -20,6 +22,7 @@ export function addToCompareFirst(id: string): boolean {
 	if (compareProductIds.includes(id)) return true;
 	if (compareProductIds.length >= MAX_COMPARE_PRODUCTS) return false;
 	compareProductIds.unshift(id);
+	sendAnalyticsEvent('add_to_compare', { product_number: id });
 	return true;
 }
 
@@ -42,7 +45,7 @@ export function clearCompare(): void {
 }
 
 export function compareURL(ids: string[]): string {
-	return `/vertailu/${ids.join(',')}`;
+	return `/vertailu?ids=${ids.join(',')}`;
 }
 
 export function compareIdsFromParam(param: string | undefined | null): string[] {

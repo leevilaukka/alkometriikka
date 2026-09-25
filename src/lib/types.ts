@@ -194,6 +194,9 @@ export type AnalyticsEventMap = {
 	save_list: { url?: string };
 	view_sizes: { product_number: string };
 	show_price_history: { product_number?: string; [key: string]: any };
+	show_product_details: { product_number: string };
+	add_to_compare: { product_number: string };
+	view_compare: { product_numbers: string[]; url: string };
 	scan_barcode: { ean: string; link?: string };
 	scan_qr_code: { type: string; product_number: string; link?: string };
 	preferred_store_changed: {

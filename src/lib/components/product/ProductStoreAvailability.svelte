@@ -10,6 +10,9 @@
 	import { components } from '$lib/utils/styles';
 	import { twMerge } from 'tailwind-merge';
 
+	// productNumber is threaded through for a future `show_availability` re-evaluation
+	// (see AnalyticsEventMap) - not fired here since the section is always visible now,
+	// not opened by the user, so mounting isn't a meaningful "viewed" signal.
 	const {
 		id,
 		productNumber,

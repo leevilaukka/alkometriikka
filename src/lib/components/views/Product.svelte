@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { AllColumns } from '$lib/utils/constants';
-	import { generateTitle, sendAnalyticsEvent, setSEO, handleShare } from '$lib/utils/helpers';
+	import { generateTitle, setSEO, handleShare } from '$lib/utils/helpers';
 	import { formatCampaignWindow, getSaleInfo } from '$lib/utils/sales';
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/styles';

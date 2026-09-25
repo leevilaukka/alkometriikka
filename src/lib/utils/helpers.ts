@@ -235,7 +235,7 @@ export function shareTypeFromRoute(routeId: typeof page.route.id): ShareType {
 			return ShareTypes.Product;
 		case '/vastaavat/[...id]':
 			return ShareTypes.Similar;
-		case '/vertailu/[ids]':
+		case '/vertailu':
 			return ShareTypes.Compare;
 		case "/daily":
 		case "/daily/arkisto":

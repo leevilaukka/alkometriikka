@@ -108,7 +108,7 @@
 		name: 'Tilastot'
 	}];
 
-	const noSearchPages: typeof page.route.id[] = ['/daily/arkisto', '/laskin', '/tilastot', '/listat', '/daily', '/daily/arkisto/[date]', '/tuotteet/[...id]', '/vertailu/[ids]'];
+	const noSearchPages: typeof page.route.id[] = ['/daily/arkisto', '/laskin', '/tilastot', '/listat', '/daily', '/daily/arkisto/[date]', '/tuotteet/[...id]', '/vertailu'];
 </script>
 
 <svelte:window onclick={handleDocumentClick} />
@@ -187,7 +187,7 @@
 		<div class="flex max-h-full overflow-y-auto overflow-x-hidden flex-auto flex-col">
 			{@render children?.()}
 		</div>
-		{#if page.route.id !== '/vertailu/[ids]'}
+		{#if page.route.id !== '/vertailu'}
 			<CompareBar kaljakori={alko.kaljakori} />
 		{/if}
 		{#if page.route.id === '/tuotteet/[...id]'}
