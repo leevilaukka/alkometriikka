@@ -1,7 +1,7 @@
 import type { Kaljakori } from '$lib/alko';
 import type { ColumnNames, FilterValue, FilterValues, PriceListItem } from '$lib/types';
 import { AllColumns, shownFilters, subCategoryMap } from './constants';
-import { isSimilarString } from './search';
+import { isSimilarTokenized } from './search';
 
 export function initFilterValues(
 	kaljakori: Kaljakori,
@@ -145,7 +145,12 @@ export function findSimilarProducts(
 
 export function getComparableProductName(product: PriceListItem): string {
 	let out = product[AllColumns.Name];
-	out = out.replace(/M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})/g, ''); // Remove roman numerals (before lowercase)
+	// Remove roman numerals (before lowercase). Bounded to whole words so it doesn't eat
+	// leading letters of unrelated words like "IPA" or "Lager".
+	out = out.replace(
+		/(?<![a-zA-Z])M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})(?![a-zA-Z])/g,
+		''
+	);
 	out = out.toLowerCase();
 	out = out.replace(product[AllColumns.PackagingType].toLowerCase(), ''); // Remove packaging type
 	out = out.replace(/\w+-pack/g, ''); // Remove "x-pack"
@@ -218,7 +223,7 @@ export function findDifferentSizeOfProduct(
 		.map((item) => {
 			let score = 0;
 			const compareName = getComparableProductName(item);
-			if (isSimilarString(targetName, compareName, 0.85)) score += 1;
+			if (isSimilarTokenized(targetName, compareName, 0.85)) score += 1;
 			return {
 				item,
 				score
