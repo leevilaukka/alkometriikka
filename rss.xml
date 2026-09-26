@@ -5,7 +5,7 @@
 		<link>https://alkometriikka.fi/</link>
 		<description>Uusimmat uutuudet ja hinnanmuutokset Alkon tuotevalikoimassa.</description>
 		<language>fi</language>
-		<lastBuildDate>Fri, 25 Sep 2026 12:00:00 GMT</lastBuildDate>
+		<lastBuildDate>Sat, 26 Sep 2026 12:00:00 GMT</lastBuildDate>
 		<generator>alkometriikka rss.ts</generator>
 		<docs>https://www.rssboard.org/rss-specification</docs>
 		<ttl>60</ttl>
@@ -17,16 +17,6 @@
 			<width>48</width>
 			<height>48</height>
 		</image>
-		<item>
-			<title>Pumpkin Spice Glögi</title>
-			<link>https://alkometriikka.fi/tuotteet/300071/</link>
-			<guid isPermaLink="false">alkometriikka-new-300071</guid>
-			<pubDate>Mon, 21 Sep 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Viinit / glögit</category>
-			<description><![CDATA[<p>Pumpkin Spice Glögi on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Brukett<br />Valmistusmaa: Suomi<br />Hinta: 9,98 €<br />Tilavuus: 0,75 l<br />Alkoholi: 11,0 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/300071-a9f50c9b9369.png" />
-		</item>
 		<item>
 			<title>Loimu x Kouvolan Lakritsi Glögi</title>
 			<link>https://alkometriikka.fi/tuotteet/300076/</link>
@@ -46,26 +36,6 @@
 			<category>Viinit / glögit</category>
 			<description><![CDATA[<p>Ruukin Kirsikka Glögi on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Brukett<br />Valmistusmaa: Suomi<br />Hinta: 9,98 €<br />Tilavuus: 0,75 l<br />Alkoholi: 11,0 %</p>]]></description>
 			<media:thumbnail url="https://cdn.alkometriikka.fi/products/300084-107c015bac65.png" />
-		</item>
-		<item>
-			<title>Blomberg´s glögg kartonkitölkki</title>
-			<link>https://alkometriikka.fi/tuotteet/300092/</link>
-			<guid isPermaLink="false">alkometriikka-new-300092</guid>
-			<pubDate>Mon, 21 Sep 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Viinit / muut viinijuomat</category>
-			<description><![CDATA[<p>Blomberg´s glögg kartonkitölkki on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Anora Group<br />Valmistusmaa: Ruotsi<br />Hinta: 8,79 €<br />Tilavuus: 1 l<br />Alkoholi: 8,0 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/300092-109036cde8e4.png" />
-		</item>
-		<item>
-			<title>Gato Negro Chocolate</title>
-			<link>https://alkometriikka.fi/tuotteet/600103/</link>
-			<guid isPermaLink="false">alkometriikka-new-600103</guid>
-			<pubDate>Mon, 21 Sep 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Viinit / muut viinijuomat</category>
-			<description><![CDATA[<p>Gato Negro Chocolate on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Viña San Pedro Tarapacá<br />Valmistusmaa: Chile<br />Hinta: 8,99 €<br />Tilavuus: 0,75 l<br />Alkoholi: 8,0 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/600103-9fc3ed45e22a.png" />
 		</item>
 		<item>
 			<title>Ystävän Glögi Mustikka</title>
@@ -108,16 +78,6 @@
 			<media:thumbnail url="https://cdn.alkometriikka.fi/products/700416-38deffc9b850.png" />
 		</item>
 		<item>
-			<title>Ayinger Winterbock</title>
-			<link>https://alkometriikka.fi/tuotteet/700418/</link>
-			<guid isPermaLink="false">alkometriikka-new-700418</guid>
-			<pubDate>Mon, 21 Sep 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Panimotuotteet / oluet</category>
-			<description><![CDATA[<p>Ayinger Winterbock on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Brauerei Aying<br />Valmistusmaa: Saksa<br />Hinta: 4,39 €<br />Tilavuus: 0,5 l<br />Alkoholi: 6,7 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/700418-979512b8ede1.png" />
-		</item>
-		<item>
 			<title>Fiskarsin Luostarin Talvipolku tölkki</title>
 			<link>https://alkometriikka.fi/tuotteet/700419/</link>
 			<guid isPermaLink="false">alkometriikka-new-700419</guid>
@@ -126,36 +86,6 @@
 			<category>Panimotuotteet / oluet</category>
 			<description><![CDATA[<p>Fiskarsin Luostarin Talvipolku tölkki on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Fiskarsin Panimo<br />Valmistusmaa: Suomi<br />Hinta: 5,29 €<br />Tilavuus: 0,5 l<br />Alkoholi: 6,7 %</p>]]></description>
 			<media:thumbnail url="https://cdn.alkometriikka.fi/products/700419-9d09e00761b4.png" />
-		</item>
-		<item>
-			<title>Aecht Schlenkerla Eiche</title>
-			<link>https://alkometriikka.fi/tuotteet/700422/</link>
-			<guid isPermaLink="false">alkometriikka-new-700422</guid>
-			<pubDate>Mon, 21 Sep 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Panimotuotteet / oluet</category>
-			<description><![CDATA[<p>Aecht Schlenkerla Eiche on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Heller-Trum<br />Valmistusmaa: Saksa<br />Hinta: 4,99 €<br />Tilavuus: 0,5 l<br />Alkoholi: 8,0 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/700422-2b7f58d0613d.png" />
-		</item>
-		<item>
-			<title>WIAG Rose</title>
-			<link>https://alkometriikka.fi/tuotteet/903870/</link>
-			<guid isPermaLink="false">alkometriikka-new-903870</guid>
-			<pubDate>Mon, 21 Sep 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Viinit / roseeviinit</category>
-			<description><![CDATA[<p>WIAG Rose on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: WIAG Global Wine In A Glass Pty Ltd<br />Valmistusmaa: Australia<br />Hinta: 5,45 €<br />Tilavuus: 0,19 l<br />Alkoholi: 13,0 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903870-98dc12f4454e.png" />
-		</item>
-		<item>
-			<title>Beatrice et Pascal Lambert Chinon Les Perruches 2022</title>
-			<link>https://alkometriikka.fi/tuotteet/903979/</link>
-			<guid isPermaLink="false">alkometriikka-new-903979</guid>
-			<pubDate>Mon, 21 Sep 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Viinit / punaviinit</category>
-			<description><![CDATA[<p>Beatrice et Pascal Lambert Chinon Les Perruches 2022 on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Beatrice et Pascal Lambert<br />Valmistusmaa: Ranska<br />Hinta: 27,98 €<br />Tilavuus: 0,75 l<br />Alkoholi: 14,0 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903979-562c291d729e.png" />
 		</item>
 		<item>
 			<title>Koskenkorva Gingerbread Cream</title>
@@ -176,16 +106,6 @@
 			<category>Viinit / punaviinit</category>
 			<description><![CDATA[<p>Spiritus Sanctus Cabernet Sauvignon 2024 on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Vellas Pere & Fils<br />Valmistusmaa: Ranska<br />Hinta: 19,99 €<br />Tilavuus: 0,75 l<br />Alkoholi: 14,5 %</p>]]></description>
 			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903990-65f55af2486b.png" />
-		</item>
-		<item>
-			<title>Carl Loewen Ritsch Riesling GG 2023</title>
-			<link>https://alkometriikka.fi/tuotteet/904010/</link>
-			<guid isPermaLink="false">alkometriikka-new-904010</guid>
-			<pubDate>Mon, 21 Sep 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Viinit / valkoviinit</category>
-			<description><![CDATA[<p>Carl Loewen Ritsch Riesling GG 2023 on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Carl Loewen<br />Valmistusmaa: Saksa<br />Hinta: 49,99 €<br />Tilavuus: 0,75 l<br />Alkoholi: 12,5 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/904010-e3bd35f98481.png" />
 		</item>
 		<item>
 			<title>Zaccagnini Montepulciano d&apos; Abruzzo Tralcetto Organic 2024</title>
@@ -216,46 +136,6 @@
 			<category>Viinit / punaviinit</category>
 			<description><![CDATA[<p>Gitana Winery Lupi Reserva 2018 on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Gitana Winery<br />Valmistusmaa: Moldova<br />Hinta: 70,73 €<br />Tilavuus: 0,75 l<br />Alkoholi: 14,5 %</p>]]></description>
 			<media:thumbnail url="https://cdn.alkometriikka.fi/products/904021-401819729e70.png" />
-		</item>
-		<item>
-			<title>Domaine Jamet Condrieu Vernillon 2022</title>
-			<link>https://alkometriikka.fi/tuotteet/904030/</link>
-			<guid isPermaLink="false">alkometriikka-new-904030</guid>
-			<pubDate>Mon, 21 Sep 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Viinit / valkoviinit</category>
-			<description><![CDATA[<p>Domaine Jamet Condrieu Vernillon 2022 on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Domaine Jamet<br />Valmistusmaa: Ranska<br />Hinta: 85,20 €<br />Tilavuus: 0,75 l<br />Alkoholi: 13,5 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/904030-a36ce090bb03.png" />
-		</item>
-		<item>
-			<title>Riegele Augsburger Herren Pli</title>
-			<link>https://alkometriikka.fi/tuotteet/904034/</link>
-			<guid isPermaLink="false">alkometriikka-new-904034</guid>
-			<pubDate>Mon, 21 Sep 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Panimotuotteet / oluet</category>
-			<description><![CDATA[<p>Riegele Augsburger Herren Pli on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Brauerei Riegele<br />Valmistusmaa: Saksa<br />Hinta: 4,89 €<br />Tilavuus: 0,5 l<br />Alkoholi: 4,7 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/904034-42f6936ae200.png" />
-		</item>
-		<item>
-			<title>Avignonesi Vino Nobile di Montepulciano Poggetto di Sopra 2022</title>
-			<link>https://alkometriikka.fi/tuotteet/904040/</link>
-			<guid isPermaLink="false">alkometriikka-new-904040</guid>
-			<pubDate>Mon, 21 Sep 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Viinit / punaviinit</category>
-			<description><![CDATA[<p>Avignonesi Vino Nobile di Montepulciano Poggetto di Sopra 2022 on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Avignonesi<br />Valmistusmaa: Italia<br />Hinta: 49,99 €<br />Tilavuus: 0,75 l<br />Alkoholi: 14,0 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/904040-0ef14cea178f.png" />
-		</item>
-		<item>
-			<title>Murphy Goode California Pinot Noir 2023</title>
-			<link>https://alkometriikka.fi/tuotteet/904043/</link>
-			<guid isPermaLink="false">alkometriikka-new-904043</guid>
-			<pubDate>Mon, 21 Sep 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Viinit / punaviinit</category>
-			<description><![CDATA[<p>Murphy Goode California Pinot Noir 2023 on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Murphy Goode<br />Valmistusmaa: Yhdysvallat<br />Hinta: 27,90 €<br />Tilavuus: 0,75 l<br />Alkoholi: 13,5 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/904043-fc5a32371e1e.png" />
 		</item>
 		<item>
 			<title>Unser Haus White Glühwein Organic — 8,59 € → 9,98 €</title>
@@ -343,16 +223,6 @@
 			<media:thumbnail url="https://cdn.alkometriikka.fi/products/200065-4e74a315622d.png" />
 		</item>
 		<item>
-			<title>Le Grand Noir GSM 2025</title>
-			<link>https://alkometriikka.fi/tuotteet/400464/</link>
-			<guid isPermaLink="false">alkometriikka-new-400464</guid>
-			<pubDate>Sun, 13 Sep 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Viinit / punaviinit</category>
-			<description><![CDATA[<p>Le Grand Noir GSM 2025 on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Les Celliers Jean d'Alibert<br />Valmistusmaa: Ranska<br />Hinta: 6,99 €<br />Tilavuus: 0,38 l<br />Alkoholi: 13,5 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/400464-736389689d71.png" />
-		</item>
-		<item>
 			<title>Ofrälse Big Oak Imperial Stout tölkki</title>
 			<link>https://alkometriikka.fi/tuotteet/700359/</link>
 			<guid isPermaLink="false">alkometriikka-new-700359</guid>
@@ -381,36 +251,6 @@
 			<category>Väkevät / salmiakkiliköörit</category>
 			<description><![CDATA[<p>Kouvolan Lakritsi Shot on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Lignell & Piispanen<br />Valmistusmaa: Suomi<br />Hinta: 2,99 €<br />Tilavuus: 0,05 l<br />Alkoholi: 15,0 %</p>]]></description>
 			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903952-1cef572d5a1e.png" />
-		</item>
-		<item>
-			<title>Destihl Dill Pickle Sour Beer</title>
-			<link>https://alkometriikka.fi/tuotteet/903954/</link>
-			<guid isPermaLink="false">alkometriikka-new-903954</guid>
-			<pubDate>Sun, 13 Sep 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Panimotuotteet / oluet</category>
-			<description><![CDATA[<p>Destihl Dill Pickle Sour Beer on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Destihl Brewery<br />Valmistusmaa: Yhdysvallat<br />Hinta: 5,79 €<br />Tilavuus: 0,36 l<br />Alkoholi: 5,2 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903954-ccd73c67f751.png" />
-		</item>
-		<item>
-			<title>Jymy Mäihä Sauvignon Blanc 2025</title>
-			<link>https://alkometriikka.fi/tuotteet/903962/</link>
-			<guid isPermaLink="false">alkometriikka-new-903962</guid>
-			<pubDate>Sun, 13 Sep 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Viinit / valkoviinit</category>
-			<description><![CDATA[<p>Jymy Mäihä Sauvignon Blanc 2025 on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Anne De Joyeuse<br />Valmistusmaa: Ranska<br />Hinta: 19,16 €<br />Tilavuus: 0,75 l<br />Alkoholi: 11,5 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903962-79d9c7a7681e.png" />
-		</item>
-		<item>
-			<title>Virgen Organic Red Blend 2024</title>
-			<link>https://alkometriikka.fi/tuotteet/903966/</link>
-			<guid isPermaLink="false">alkometriikka-new-903966</guid>
-			<pubDate>Sun, 13 Sep 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Viinit / punaviinit</category>
-			<description><![CDATA[<p>Virgen Organic Red Blend 2024 on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Domaine Bousquet<br />Valmistusmaa: Argentiina<br />Hinta: 14,99 €<br />Tilavuus: 0,75 l<br />Alkoholi: 13,5 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903966-2de38d88b868.png" />
 		</item>
 		<item>
 			<title>Mallassepät Solace</title>
@@ -1000,16 +840,6 @@
 			<media:thumbnail url="https://cdn.alkometriikka.fi/products/100130-ed34dd3963ba.png" />
 		</item>
 		<item>
-			<title>Cantine Valpantena Amarone  della Valpolicella Torre del Falasco 2021</title>
-			<link>https://alkometriikka.fi/tuotteet/400393/</link>
-			<guid isPermaLink="false">alkometriikka-new-400393</guid>
-			<pubDate>Fri, 04 Sep 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Viinit / punaviinit</category>
-			<description><![CDATA[<p>Cantine Valpantena Amarone  della Valpolicella Torre del Falasco 2021 on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Cantina Valpantena<br />Valmistusmaa: Italia<br />Hinta: 32,98 €<br />Tilavuus: 0,75 l<br />Alkoholi: 15,5 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/400393-fc28a4c3e12c.png" />
-		</item>
-		<item>
 			<title>Lone Palm Vineyard Hillside Shiraz 2023</title>
 			<link>https://alkometriikka.fi/tuotteet/400412/</link>
 			<guid isPermaLink="false">alkometriikka-new-400412</guid>
@@ -1028,26 +858,6 @@
 			<category>Viinit / punaviinit</category>
 			<description><![CDATA[<p>Louis Latour Corton Grand Cru Clos de la Vigne au Saint	 2020 on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Louis Latour<br />Valmistusmaa: Ranska<br />Hinta: 149,90 €<br />Tilavuus: 0,75 l<br />Alkoholi: 14,5 %</p>]]></description>
 			<media:thumbnail url="https://cdn.alkometriikka.fi/products/400573-9ed2d3b55bd8.png" />
-		</item>
-		<item>
-			<title>Emilio Rojo Ribeiro Castes Branco 2022</title>
-			<link>https://alkometriikka.fi/tuotteet/500531/</link>
-			<guid isPermaLink="false">alkometriikka-new-500531</guid>
-			<pubDate>Fri, 04 Sep 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Viinit / valkoviinit</category>
-			<description><![CDATA[<p>Emilio Rojo Ribeiro Castes Branco 2022 on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Emilio Rojo<br />Valmistusmaa: Espanja<br />Hinta: 149,99 €<br />Tilavuus: 0,75 l<br />Alkoholi: 13,0 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/500531-3a947cbfea10.png" />
-		</item>
-		<item>
-			<title>Pietralta Solivagus 2020</title>
-			<link>https://alkometriikka.fi/tuotteet/400451/</link>
-			<guid isPermaLink="false">alkometriikka-new-400451</guid>
-			<pubDate>Tue, 01 Sep 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Viinit / punaviinit</category>
-			<description><![CDATA[<p>Pietralta Solivagus 2020 on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Pietralta<br />Valmistusmaa: Italia<br />Hinta: 51,03 €<br />Tilavuus: 0,75 l<br />Alkoholi: 14,5 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/400451-75b16b34a9b4.png" />
 		</item>
 		<item>
 			<title>Hofbräu Oktoberfestbier</title>
@@ -1070,46 +880,6 @@
 			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903902-7c01ffd8386d.png" />
 		</item>
 		<item>
-			<title>Kilchoman Loch Gorm 2026 10 Year Old Single Malt</title>
-			<link>https://alkometriikka.fi/tuotteet/903904/</link>
-			<guid isPermaLink="false">alkometriikka-new-903904</guid>
-			<pubDate>Tue, 01 Sep 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Väkevät / viskit</category>
-			<description><![CDATA[<p>Kilchoman Loch Gorm 2026 10 Year Old Single Malt on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Kilchoman<br />Valmistusmaa: Skotlanti<br />Hinta: 99,98 €<br />Tilavuus: 0,7 l<br />Alkoholi: 46,0 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903904-14f216292879.png" />
-		</item>
-		<item>
-			<title>Destihl Wild Sour Series Blueberry Crumble</title>
-			<link>https://alkometriikka.fi/tuotteet/903911/</link>
-			<guid isPermaLink="false">alkometriikka-new-903911</guid>
-			<pubDate>Tue, 01 Sep 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Panimotuotteet / oluet</category>
-			<description><![CDATA[<p>Destihl Wild Sour Series Blueberry Crumble on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Destihl Brewery<br />Valmistusmaa: Yhdysvallat<br />Hinta: 5,79 €<br />Tilavuus: 0,36 l<br />Alkoholi: 5,2 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903911-f1f082de98fd.png" />
-		</item>
-		<item>
-			<title>Destihl Tourbus Double Dry Hopped Hazy IPA</title>
-			<link>https://alkometriikka.fi/tuotteet/903912/</link>
-			<guid isPermaLink="false">alkometriikka-new-903912</guid>
-			<pubDate>Tue, 01 Sep 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Panimotuotteet / oluet</category>
-			<description><![CDATA[<p>Destihl Tourbus Double Dry Hopped Hazy IPA on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Destihl Brewery<br />Valmistusmaa: Yhdysvallat<br />Hinta: 8,69 €<br />Tilavuus: 0,47 l<br />Alkoholi: 7,4 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903912-4098af9c7b9b.png" />
-		</item>
-		<item>
-			<title>Destihl Haze of the Dead Double Dry Hopped Hazy Imperial IPA</title>
-			<link>https://alkometriikka.fi/tuotteet/903916/</link>
-			<guid isPermaLink="false">alkometriikka-new-903916</guid>
-			<pubDate>Tue, 01 Sep 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Panimotuotteet / oluet</category>
-			<description><![CDATA[<p>Destihl Haze of the Dead Double Dry Hopped Hazy Imperial IPA on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Destihl Brewery<br />Valmistusmaa: Yhdysvallat<br />Hinta: 8,59 €<br />Tilavuus: 0,47 l<br />Alkoholi: 8,5 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903916-b58ca00f2c0b.png" />
-		</item>
-		<item>
 			<title>Piccini Rosa del Chianti Rosé 2025</title>
 			<link>https://alkometriikka.fi/tuotteet/903928/</link>
 			<guid isPermaLink="false">alkometriikka-new-903928</guid>
@@ -1128,36 +898,6 @@
 			<category>Viinit / roseeviinit</category>
 			<description><![CDATA[<p>Alonso & Pedrajo La Pequeñita Rosado Macerado 2021 on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Alonso & Pedrajo<br />Valmistusmaa: Espanja<br />Hinta: 43,67 €<br />Tilavuus: 0,75 l<br />Alkoholi: 13,5 %</p>]]></description>
 			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903933-eaf76d46a8af.png" />
-		</item>
-		<item>
-			<title>Domaine Faiveley Chassagne-Montrachet 2024</title>
-			<link>https://alkometriikka.fi/tuotteet/903940/</link>
-			<guid isPermaLink="false">alkometriikka-new-903940</guid>
-			<pubDate>Tue, 01 Sep 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Viinit / valkoviinit</category>
-			<description><![CDATA[<p>Domaine Faiveley Chassagne-Montrachet 2024 on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Domaine Faiveley<br />Valmistusmaa: Ranska<br />Hinta: 94,89 €<br />Tilavuus: 0,75 l<br />Alkoholi: 13,0 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903940-f8c3ecbf07ed.png" />
-		</item>
-		<item>
-			<title>Iron Maiden The Rum of The Ancient Mariner</title>
-			<link>https://alkometriikka.fi/tuotteet/903684/</link>
-			<guid isPermaLink="false">alkometriikka-new-903684</guid>
-			<pubDate>Mon, 24 Aug 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Väkevät / rommit</category>
-			<description><![CDATA[<p>Iron Maiden The Rum of The Ancient Mariner on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Sierra Madre<br />Valmistusmaa: Barbados<br />Hinta: 54,99 €<br />Tilavuus: 0,7 l<br />Alkoholi: 40,0 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903684-53672aeadeee.png" />
-		</item>
-		<item>
-			<title>Santa Julia Textual Albariño 2024</title>
-			<link>https://alkometriikka.fi/tuotteet/903851/</link>
-			<guid isPermaLink="false">alkometriikka-new-903851</guid>
-			<pubDate>Mon, 24 Aug 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Viinit / valkoviinit</category>
-			<description><![CDATA[<p>Santa Julia Textual Albariño 2024 on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Santa Julia<br />Valmistusmaa: Argentiina<br />Hinta: 15,99 €<br />Tilavuus: 0,75 l<br />Alkoholi: 13,0 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903851-3e66c30fa547.png" />
 		</item>
 		<item>
 			<title>Verrocchio Valpolicella 2025</title>
@@ -1180,26 +920,6 @@
 			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903863-19eb85617092.png" />
 		</item>
 		<item>
-			<title>Collezione Volti Pinot Grigio Terre d&apos;Abruzzo 2025</title>
-			<link>https://alkometriikka.fi/tuotteet/903864/</link>
-			<guid isPermaLink="false">alkometriikka-new-903864</guid>
-			<pubDate>Mon, 24 Aug 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Viinit / valkoviinit</category>
-			<description><![CDATA[<p>Collezione Volti Pinot Grigio Terre d'Abruzzo 2025 on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Collezione Volti / Fantini<br />Valmistusmaa: Italia<br />Hinta: 12,49 €<br />Tilavuus: 0,75 l<br />Alkoholi: 11,5 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903864-1f174c28b3b8.png" />
-		</item>
-		<item>
-			<title>Tenuta Sant Antonio Valpolicella Ripasso Superiore Monti Garbi 2022</title>
-			<link>https://alkometriikka.fi/tuotteet/903886/</link>
-			<guid isPermaLink="false">alkometriikka-new-903886</guid>
-			<pubDate>Mon, 24 Aug 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Viinit / punaviinit</category>
-			<description><![CDATA[<p>Tenuta Sant Antonio Valpolicella Ripasso Superiore Monti Garbi 2022 on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Tenuta Sant Antonio<br />Valmistusmaa: Italia<br />Hinta: 14,99 €<br />Tilavuus: 0,38 l<br />Alkoholi: 14,0 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903886-829665f8a3bc.png" />
-		</item>
-		<item>
 			<title>Signatory Vintage Tartan Army Ben Nevis 11 Year Old Single Malt</title>
 			<link>https://alkometriikka.fi/tuotteet/903899/</link>
 			<guid isPermaLink="false">alkometriikka-new-903899</guid>
@@ -1220,16 +940,6 @@
 			<media:thumbnail url="https://cdn.alkometriikka.fi/products/700407-64c5d5a0be31.png" />
 		</item>
 		<item>
-			<title>Quero Chuva Prata Cachaça</title>
-			<link>https://alkometriikka.fi/tuotteet/100132/</link>
-			<guid isPermaLink="false">alkometriikka-new-100132</guid>
-			<pubDate>Tue, 11 Aug 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Väkevät / viina</category>
-			<description><![CDATA[<p>Quero Chuva Prata Cachaça on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Bbl Brazilian Beverages & Liquor<br />Valmistusmaa: Brasilia<br />Hinta: 48,90 €<br />Tilavuus: 0,7 l<br />Alkoholi: 40,0 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/100132-d917302bfd73.png" />
-		</item>
-		<item>
 			<title>Hakata No Hana Premium Mugi 5 Year Old Shochu</title>
 			<link>https://alkometriikka.fi/tuotteet/100139/</link>
 			<guid isPermaLink="false">alkometriikka-new-100139</guid>
@@ -1238,26 +948,6 @@
 			<category>Väkevät / viina</category>
 			<description><![CDATA[<p>Hakata No Hana Premium Mugi 5 Year Old Shochu on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Kurume Distillery<br />Valmistusmaa: Japani<br />Hinta: 40,35 €<br />Tilavuus: 0,5 l<br />Alkoholi: 35,5 %</p>]]></description>
 			<media:thumbnail url="https://cdn.alkometriikka.fi/products/100139-f5de923fe5a6.png" />
-		</item>
-		<item>
-			<title>Green Spot Single Pot Still</title>
-			<link>https://alkometriikka.fi/tuotteet/200062/</link>
-			<guid isPermaLink="false">alkometriikka-new-200062</guid>
-			<pubDate>Tue, 11 Aug 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Väkevät / viskit</category>
-			<description><![CDATA[<p>Green Spot Single Pot Still on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Mitchell & Son<br />Valmistusmaa: Irlanti<br />Hinta: 60,79 €<br />Tilavuus: 0,7 l<br />Alkoholi: 40,0 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/200062-966f0da33ac5.png" />
-		</item>
-		<item>
-			<title>Buena Vista North Coast Pinot Noir 2023</title>
-			<link>https://alkometriikka.fi/tuotteet/400398/</link>
-			<guid isPermaLink="false">alkometriikka-new-400398</guid>
-			<pubDate>Tue, 11 Aug 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Viinit / punaviinit</category>
-			<description><![CDATA[<p>Buena Vista North Coast Pinot Noir 2023 on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Buena Vista Winery<br />Valmistusmaa: Yhdysvallat<br />Hinta: 28,98 €<br />Tilavuus: 0,75 l<br />Alkoholi: 13,5 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/400398-9598719dee6e.png" />
 		</item>
 		<item>
 			<title>Korrell Spätburgunder 2023</title>
@@ -1270,26 +960,6 @@
 			<media:thumbnail url="https://cdn.alkometriikka.fi/products/400399-1987f483d615.png" />
 		</item>
 		<item>
-			<title>Masca del Tacco Susumaniello 2025 hanapakkaus</title>
-			<link>https://alkometriikka.fi/tuotteet/400442/</link>
-			<guid isPermaLink="false">alkometriikka-new-400442</guid>
-			<pubDate>Tue, 11 Aug 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Viinit / punaviinit</category>
-			<description><![CDATA[<p>Masca del Tacco Susumaniello 2025 hanapakkaus on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Masca del Tacco<br />Valmistusmaa: Italia<br />Hinta: 28,99 €<br />Tilavuus: 2 l<br />Alkoholi: 14,0 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/400442-1cd72664125b.png" />
-		</item>
-		<item>
-			<title>Trumpeter Extra Brut</title>
-			<link>https://alkometriikka.fi/tuotteet/500392/</link>
-			<guid isPermaLink="false">alkometriikka-new-500392</guid>
-			<pubDate>Tue, 11 Aug 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Viinit / kuohuviinit ja samppanjat</category>
-			<description><![CDATA[<p>Trumpeter Extra Brut on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Rutini Wines<br />Valmistusmaa: Argentiina<br />Hinta: 18,99 €<br />Tilavuus: 0,75 l<br />Alkoholi: 12,0 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/500392-56ebb8bf1593.png" />
-		</item>
-		<item>
 			<title>Castoro Cellars Reserve Viognier 2025</title>
 			<link>https://alkometriikka.fi/tuotteet/500430/</link>
 			<guid isPermaLink="false">alkometriikka-new-500430</guid>
@@ -1298,56 +968,6 @@
 			<category>Viinit / valkoviinit</category>
 			<description><![CDATA[<p>Castoro Cellars Reserve Viognier 2025 on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Castoro Cellars<br />Valmistusmaa: Yhdysvallat<br />Hinta: 22,99 €<br />Tilavuus: 0,75 l<br />Alkoholi: 13,2 %</p>]]></description>
 			<media:thumbnail url="https://cdn.alkometriikka.fi/products/500430-fc03430c0641.png" />
-		</item>
-		<item>
-			<title>Pantera Negra Organic White Blend 2025 hanapakkaus</title>
-			<link>https://alkometriikka.fi/tuotteet/500445/</link>
-			<guid isPermaLink="false">alkometriikka-new-500445</guid>
-			<pubDate>Tue, 11 Aug 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Viinit / valkoviinit</category>
-			<description><![CDATA[<p>Pantera Negra Organic White Blend 2025 hanapakkaus on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Green Valley Wines<br />Valmistusmaa: Saksa<br />Hinta: 18,99 €<br />Tilavuus: 1,5 l<br />Alkoholi: 12,0 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/500445-5e5e1a4041d1.png" />
-		</item>
-		<item>
-			<title>Serre del Lago Pinot Grigio 9% 2025</title>
-			<link>https://alkometriikka.fi/tuotteet/500446/</link>
-			<guid isPermaLink="false">alkometriikka-new-500446</guid>
-			<pubDate>Tue, 11 Aug 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Viinit / valkoviinit</category>
-			<description><![CDATA[<p>Serre del Lago Pinot Grigio 9% 2025 on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: IWB Italian Wine Brands<br />Valmistusmaa: Italia<br />Hinta: 9,98 €<br />Tilavuus: 0,75 l<br />Alkoholi: 9,0 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/500446-2db892c97fa1.png" />
-		</item>
-		<item>
-			<title>Richter Dry Riesling 2025</title>
-			<link>https://alkometriikka.fi/tuotteet/500454/</link>
-			<guid isPermaLink="false">alkometriikka-new-500454</guid>
-			<pubDate>Tue, 11 Aug 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Viinit / valkoviinit</category>
-			<description><![CDATA[<p>Richter Dry Riesling 2025 on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Max Ferd. Richter<br />Valmistusmaa: Saksa<br />Hinta: 13,98 €<br />Tilavuus: 0,38 l<br />Alkoholi: 11,0 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/500454-0051fbc97bc5.png" />
-		</item>
-		<item>
-			<title>Moersleutel Meteor Map tölkki</title>
-			<link>https://alkometriikka.fi/tuotteet/700402/</link>
-			<guid isPermaLink="false">alkometriikka-new-700402</guid>
-			<pubDate>Tue, 11 Aug 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Panimotuotteet / oluet</category>
-			<description><![CDATA[<p>Moersleutel Meteor Map tölkki on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Moersleutel<br />Valmistusmaa: Alankomaat<br />Hinta: 6,99 €<br />Tilavuus: 0,44 l<br />Alkoholi: 7,5 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/700402-1003f449adb1.png" />
-		</item>
-		<item>
-			<title>Domaine d´Ardhuy Côte de Nuits Villages Le Clos Des Langres Monopole 2023</title>
-			<link>https://alkometriikka.fi/tuotteet/903811/</link>
-			<guid isPermaLink="false">alkometriikka-new-903811</guid>
-			<pubDate>Tue, 11 Aug 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Viinit / punaviinit</category>
-			<description><![CDATA[<p>Domaine d´Ardhuy Côte de Nuits Villages Le Clos Des Langres Monopole 2023 on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Domaine d´Ardhuy<br />Valmistusmaa: Ranska<br />Hinta: 94,89 €<br />Tilavuus: 0,75 l<br />Alkoholi: 13,5 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903811-26930744b56e.png" />
 		</item>
 		<item>
 			<title>Domaine d´Ardhuy Corton Grand Cru Les Renardes 2023</title>
@@ -1368,26 +988,6 @@
 			<category>Viinit / punaviinit</category>
 			<description><![CDATA[<p>Alonso & Pedrajo La Pequeñita Tinto Macerado 2020 on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Alonso & Pedrajo<br />Valmistusmaa: Espanja<br />Hinta: 57,20 €<br />Tilavuus: 0,75 l<br />Alkoholi: 15,0 %</p>]]></description>
 			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903821-c4d8de038ed6.png" />
-		</item>
-		<item>
-			<title>Fat Baron Shiraz 2025</title>
-			<link>https://alkometriikka.fi/tuotteet/903824/</link>
-			<guid isPermaLink="false">alkometriikka-new-903824</guid>
-			<pubDate>Tue, 11 Aug 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Viinit / punaviinit</category>
-			<description><![CDATA[<p>Fat Baron Shiraz 2025 on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Casa Ermelinda Freitas<br />Valmistusmaa: Portugali<br />Hinta: 14,99 €<br />Tilavuus: 0,75 l<br />Alkoholi: 14,5 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903824-67e847fc3183.png" />
-		</item>
-		<item>
-			<title>The Springs by Rapaura Springs 2025 hanapakkaus</title>
-			<link>https://alkometriikka.fi/tuotteet/500386/</link>
-			<guid isPermaLink="false">alkometriikka-new-500386</guid>
-			<pubDate>Tue, 04 Aug 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Viinit / valkoviinit</category>
-			<description><![CDATA[<p>The Springs by Rapaura Springs 2025 hanapakkaus on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Rapaura Springs<br />Valmistusmaa: Uusi-Seelanti<br />Hinta: 39,99 €<br />Tilavuus: 3 l<br />Alkoholi: 13,0 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/500386-d3a52361431d.png" />
 		</item>
 		<item>
 			<title>M Picpoul de Pinet 2025</title>
@@ -1483,16 +1083,6 @@
 			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903769-bbce5d0e3382.png" />
 		</item>
 		<item>
-			<title>Spicy Cat Sauvignon Blanc 2025</title>
-			<link>https://alkometriikka.fi/tuotteet/903783/</link>
-			<guid isPermaLink="false">alkometriikka-new-903783</guid>
-			<pubDate>Tue, 28 Jul 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Viinit / valkoviinit</category>
-			<description><![CDATA[<p>Spicy Cat Sauvignon Blanc 2025 on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Cabert<br />Valmistusmaa: Italia<br />Hinta: 12,99 €<br />Tilavuus: 0,75 l<br />Alkoholi: 12,0 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903783-4f2496017670.png" />
-		</item>
-		<item>
 			<title>Löwenschild Riesling 2024</title>
 			<link>https://alkometriikka.fi/tuotteet/903796/</link>
 			<guid isPermaLink="false">alkometriikka-new-903796</guid>
@@ -1501,46 +1091,6 @@
 			<category>Viinit / valkoviinit</category>
 			<description><![CDATA[<p>Löwenschild Riesling 2024 on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Norex Selected Brands<br />Valmistusmaa: Saksa<br />Hinta: 10,49 €<br />Tilavuus: 0,75 l<br />Alkoholi: 11,0 %</p>]]></description>
 			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903796-831ae7bb2791.png" />
-		</item>
-		<item>
-			<title>Original Long Drink Light Pineapple 6-pack tölkki</title>
-			<link>https://alkometriikka.fi/tuotteet/700393/</link>
-			<guid isPermaLink="false">alkometriikka-new-700393</guid>
-			<pubDate>Thu, 23 Jul 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Panimotuotteet / juomasekoitukset</category>
-			<description><![CDATA[<p>Original Long Drink Light Pineapple 6-pack tölkki on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Hartwall<br />Valmistusmaa: Suomi<br />Hinta: 16,74 €<br />Tilavuus: 1,98 l<br />Alkoholi: 4,5 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/700393-7958a5bfb330.png" />
-		</item>
-		<item>
-			<title>Original Long Drink Light Pineapple tölkki</title>
-			<link>https://alkometriikka.fi/tuotteet/700400/</link>
-			<guid isPermaLink="false">alkometriikka-new-700400</guid>
-			<pubDate>Thu, 23 Jul 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Panimotuotteet / juomasekoitukset</category>
-			<description><![CDATA[<p>Original Long Drink Light Pineapple tölkki on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Hartwall<br />Valmistusmaa: Suomi<br />Hinta: 4,39 €<br />Tilavuus: 0,5 l<br />Alkoholi: 4,5 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/700400-9a6cfe960cbe.png" />
-		</item>
-		<item>
-			<title>Mirabeau Belle Année 2025</title>
-			<link>https://alkometriikka.fi/tuotteet/903721/</link>
-			<guid isPermaLink="false">alkometriikka-new-903721</guid>
-			<pubDate>Tue, 21 Jul 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Viinit / roseeviinit</category>
-			<description><![CDATA[<p>Mirabeau Belle Année 2025 on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Mirabeau<br />Valmistusmaa: Ranska<br />Hinta: 11,99 €<br />Tilavuus: 0,75 l<br />Alkoholi: 12,5 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903721-f0fc446912fc.png" />
-		</item>
-		<item>
-			<title>Mirabeau X Rosé 2025</title>
-			<link>https://alkometriikka.fi/tuotteet/903723/</link>
-			<guid isPermaLink="false">alkometriikka-new-903723</guid>
-			<pubDate>Tue, 21 Jul 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Viinit / roseeviinit</category>
-			<description><![CDATA[<p>Mirabeau X Rosé 2025 on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Mirabeau<br />Valmistusmaa: Ranska<br />Hinta: 15,99 €<br />Tilavuus: 0,75 l<br />Alkoholi: 12,5 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903723-54168dfd6f3f.png" />
 		</item>
 		<item>
 			<title>Taliano Michele Vino Adesso</title>
@@ -1561,16 +1111,6 @@
 			<category>Viinit / punaviinit</category>
 			<description><![CDATA[<p>Cramele Recas Bradshaw Merlot 2025 hanapakkaus on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Cramele Recas<br />Valmistusmaa: Romania<br />Hinta: 18,49 €<br />Tilavuus: 1,5 l<br />Alkoholi: 13,5 %</p>]]></description>
 			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903751-4debd2706d73.png" />
-		</item>
-		<item>
-			<title>Pago de Carraovejas 2023</title>
-			<link>https://alkometriikka.fi/tuotteet/903759/</link>
-			<guid isPermaLink="false">alkometriikka-new-903759</guid>
-			<pubDate>Tue, 21 Jul 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Viinit / punaviinit</category>
-			<description><![CDATA[<p>Pago de Carraovejas 2023 on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Pago de Carraovejas<br />Valmistusmaa: Espanja<br />Hinta: 56,99 €<br />Tilavuus: 0,75 l<br />Alkoholi: 14,5 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903759-2a6fb537a40e.png" />
 		</item>
 		<item>
 			<title>Karhu 5,3 — 3,09 € → 3,19 €</title>
@@ -8971,34 +8511,526 @@
 			<media:thumbnail url="https://cdn.alkometriikka.fi/products/475617-4a922e962caf.png" />
 		</item>
 		<item>
-			<title>Koskenkorva Caipiroska</title>
-			<link>https://alkometriikka.fi/tuotteet/100149/</link>
-			<guid isPermaLink="false">alkometriikka-new-100149</guid>
+			<title>La Rioja Alta Lat 42 Gran Reserva 2017 — 25,46 € → 25,98 €</title>
+			<link>https://alkometriikka.fi/tuotteet/475827/</link>
+			<guid isPermaLink="false">alkometriikka-475827-2026-07-18-25.98</guid>
 			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Väkevät / maustetut viinat</category>
-			<description><![CDATA[<p>Koskenkorva Caipiroska on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Anora Group<br />Valmistusmaa: Suomi<br />Hinta: 14,98 €<br />Tilavuus: 0,5 l<br />Alkoholi: 15,0 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/100149-d6d7be6fe393.png" />
-		</item>
-		<item>
-			<title>Bowmore 9 Year Old Single Malt</title>
-			<link>https://alkometriikka.fi/tuotteet/200059/</link>
-			<guid isPermaLink="false">alkometriikka-new-200059</guid>
-			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Väkevät / viskit</category>
-			<description><![CDATA[<p>Bowmore 9 Year Old Single Malt on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Bowmore Distillery<br />Valmistusmaa: Skotlanti<br />Hinta: 44,50 €<br />Tilavuus: 0,7 l<br />Alkoholi: 40,0 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/200059-03d5410dbc6c.png" />
-		</item>
-		<item>
-			<title>Sandalwood Margaret River Cabernet Sauvignon	 2024</title>
-			<link>https://alkometriikka.fi/tuotteet/400367/</link>
-			<guid isPermaLink="false">alkometriikka-new-400367</guid>
-			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
 			<category>Viinit / punaviinit</category>
-			<description><![CDATA[<p>Sandalwood Margaret River Cabernet Sauvignon	 2024 on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Free Run Juice<br />Valmistusmaa: Australia<br />Hinta: 15,99 €<br />Tilavuus: 0,75 l<br />Alkoholi: 14,0 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/400367-5c3b90cce550.png" />
+			<description><![CDATA[<p>Tuotteen La Rioja Alta Lat 42 Gran Reserva 2017 hinta on muuttunut.</p><p>25,46 € → 25,98 € (+0,52 €, +2,04 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/475827-45f2a3e4482d.png" />
+		</item>
+		<item>
+			<title>Cognato Cabernet Sauvignon — 9,55 € → 9,59 €</title>
+			<link>https://alkometriikka.fi/tuotteet/475897/</link>
+			<guid isPermaLink="false">alkometriikka-475897-2026-07-18-9.59</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Alkoholittomat / alkoholittomat punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Cognato Cabernet Sauvignon hinta on muuttunut.</p><p>9,55 € → 9,59 € (+0,04 €, +0,42 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/475897-a268647a793f.png" />
+		</item>
+		<item>
+			<title>Hewitson Le Secateur 2024 — 19,44 € → 19,93 €</title>
+			<link>https://alkometriikka.fi/tuotteet/476347/</link>
+			<guid isPermaLink="false">alkometriikka-476347-2026-07-18-19.93</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Hewitson Le Secateur 2024 hinta on muuttunut.</p><p>19,44 € → 19,93 € (+0,49 €, +2,52 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/476347-14e5a043e8c6.png" />
+		</item>
+		<item>
+			<title>Rosière Syrah 2024 muovipullo — 10,43 € → 10,48 €</title>
+			<link>https://alkometriikka.fi/tuotteet/476497/</link>
+			<guid isPermaLink="false">alkometriikka-476497-2026-07-18-10.48</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Rosière Syrah 2024 muovipullo hinta on muuttunut.</p><p>10,43 € → 10,48 € (+0,05 €, +0,48 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/476497-ed7c92bf7e9f.png" />
+		</item>
+		<item>
+			<title>Achillea by Lenz Moser Rosé 2024 kartonkitölkki — 12,99 € → 12,45 €</title>
+			<link>https://alkometriikka.fi/tuotteet/477238/</link>
+			<guid isPermaLink="false">alkometriikka-477238-2026-07-18-12.45</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / roseeviinit</category>
+			<description><![CDATA[<p>Tuotteen Achillea by Lenz Moser Rosé 2024 kartonkitölkki hinta on muuttunut.</p><p>12,99 € → 12,45 € (−0,54 €, −4,16 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/477238-1cf13e2ac1ea.png" />
+		</item>
+		<item>
+			<title>Fontanafredda Briccotondo Piemonte Barbera 2024 — 15,45 € → 15,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/477487/</link>
+			<guid isPermaLink="false">alkometriikka-477487-2026-07-18-15.99</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Fontanafredda Briccotondo Piemonte Barbera 2024 hinta on muuttunut.</p><p>15,45 € → 15,99 € (+0,54 €, +3,50 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/477487-89fc64d8481b.png" />
+		</item>
+		<item>
+			<title>Spring Seed Scarlet Runner Shiraz 2024 — 15,48 € → 15,09 €</title>
+			<link>https://alkometriikka.fi/tuotteet/477567/</link>
+			<guid isPermaLink="false">alkometriikka-477567-2026-07-18-15.09</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Spring Seed Scarlet Runner Shiraz 2024 hinta on muuttunut.</p><p>15,48 € → 15,09 € (−0,39 €, −2,52 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/477567-4ae175de64b9.png" />
+		</item>
+		<item>
+			<title>Borsari Appassimento 2022 kartonkitölkki — 14,59 € → 13,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/477698/</link>
+			<guid isPermaLink="false">alkometriikka-477698-2026-07-18-13.99</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Borsari Appassimento 2022 kartonkitölkki hinta on muuttunut.</p><p>14,59 € → 13,99 € (−0,60 €, −4,11 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/477698-64249b5c4766.png" />
+		</item>
+		<item>
+			<title>Karl May Pinot Noir 2023 — 17,94 € → 17,98 €</title>
+			<link>https://alkometriikka.fi/tuotteet/477787/</link>
+			<guid isPermaLink="false">alkometriikka-477787-2026-07-18-17.98</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Karl May Pinot Noir 2023 hinta on muuttunut.</p><p>17,94 € → 17,98 € (+0,04 €, +0,22 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/477787-3cfc9ae725fe.png" />
+		</item>
+		<item>
+			<title>Amarone Armigero 2022 — 29,98 € → 28,98 €</title>
+			<link>https://alkometriikka.fi/tuotteet/478047/</link>
+			<guid isPermaLink="false">alkometriikka-478047-2026-07-18-28.98</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Amarone Armigero 2022 hinta on muuttunut.</p><p>29,98 € → 28,98 € (−1,00 €, −3,34 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/478047-d34858ef8c8d.png" />
+		</item>
+		<item>
+			<title>Cuma Malbec Organic 2025 — 11,45 € → 11,49 €</title>
+			<link>https://alkometriikka.fi/tuotteet/478137/</link>
+			<guid isPermaLink="false">alkometriikka-478137-2026-07-18-11.49</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Cuma Malbec Organic 2025 hinta on muuttunut.</p><p>11,45 € → 11,49 € (+0,04 €, +0,35 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/478137-4946430b2038.png" />
+		</item>
+		<item>
+			<title>Aires Del Sur Barrel Aged Organic 2024 — 11,16 € → 11,20 €</title>
+			<link>https://alkometriikka.fi/tuotteet/479167/</link>
+			<guid isPermaLink="false">alkometriikka-479167-2026-07-18-11.2</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Aires Del Sur Barrel Aged Organic 2024 hinta on muuttunut.</p><p>11,16 € → 11,20 € (+0,04 €, +0,36 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/479167-64415627d104.png" />
+		</item>
+		<item>
+			<title>Barahonda Barrica Monastrell Syrah 2022 — 16,45 € → 15,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/479447/</link>
+			<guid isPermaLink="false">alkometriikka-479447-2026-07-18-15.99</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Barahonda Barrica Monastrell Syrah 2022 hinta on muuttunut.</p><p>16,45 € → 15,99 € (−0,46 €, −2,80 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/479447-844fd0519d8c.png" />
+		</item>
+		<item>
+			<title>Ironstone Old Vine Zinfandel 2021 — 16,16 € → 15,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/479797/</link>
+			<guid isPermaLink="false">alkometriikka-479797-2026-07-18-15.99</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Ironstone Old Vine Zinfandel 2021 hinta on muuttunut.</p><p>16,16 € → 15,99 € (−0,17 €, −1,05 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/479797-486b730461dd.png" />
+		</item>
+		<item>
+			<title>Adobe Carmenere Cabernet Sauvignon Organic 2023 muovipullo — 13,59 € → 13,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/479838/</link>
+			<guid isPermaLink="false">alkometriikka-479838-2026-07-18-13.99</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Adobe Carmenere Cabernet Sauvignon Organic 2023 muovipullo hinta on muuttunut.</p><p>13,59 € → 13,99 € (+0,40 €, +2,94 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/479838-69321cfae711.png" />
+		</item>
+		<item>
+			<title>Kaiken Estate Malbec 2024 — 13,40 € → 13,98 €</title>
+			<link>https://alkometriikka.fi/tuotteet/480007/</link>
+			<guid isPermaLink="false">alkometriikka-480007-2026-07-18-13.98</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Kaiken Estate Malbec 2024 hinta on muuttunut.</p><p>13,40 € → 13,98 € (+0,58 €, +4,33 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/480007-053a71bf0b94.png" />
+		</item>
+		<item>
+			<title>Calvet d&apos;Anjou Rosé 2025 — 13,94 € → 13,98 €</title>
+			<link>https://alkometriikka.fi/tuotteet/480047/</link>
+			<guid isPermaLink="false">alkometriikka-480047-2026-07-18-13.98</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / roseeviinit</category>
+			<description><![CDATA[<p>Tuotteen Calvet d'Anjou Rosé 2025 hinta on muuttunut.</p><p>13,94 € → 13,98 € (+0,04 €, +0,29 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/480047-9ec625762756.png" />
+		</item>
+		<item>
+			<title>Joseph Drouhin Nuits-Saint-Georges 2022 — 80,44 € → 79,89 €</title>
+			<link>https://alkometriikka.fi/tuotteet/480307/</link>
+			<guid isPermaLink="false">alkometriikka-480307-2026-07-18-79.89</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Joseph Drouhin Nuits-Saint-Georges 2022 hinta on muuttunut.</p><p>80,44 € → 79,89 € (−0,55 €, −0,68 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/480307-4085a849dea3.png" />
+		</item>
+		<item>
+			<title>Roubine La Vie en Rose 2025 — 22,35 € → 22,89 €</title>
+			<link>https://alkometriikka.fi/tuotteet/480397/</link>
+			<guid isPermaLink="false">alkometriikka-480397-2026-07-18-22.89</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / roseeviinit</category>
+			<description><![CDATA[<p>Tuotteen Roubine La Vie en Rose 2025 hinta on muuttunut.</p><p>22,35 € → 22,89 € (+0,54 €, +2,42 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/480397-b5b08071dfa4.png" />
+		</item>
+		<item>
+			<title>Reguengos Reserva Dos Socios 2020 — 23,45 € → 22,98 €</title>
+			<link>https://alkometriikka.fi/tuotteet/480457/</link>
+			<guid isPermaLink="false">alkometriikka-480457-2026-07-18-22.98</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Reguengos Reserva Dos Socios 2020 hinta on muuttunut.</p><p>23,45 € → 22,98 € (−0,47 €, −2,00 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/480457-66d5215dc443.png" />
+		</item>
+		<item>
+			<title>Querciabella Chianti Classico 2022 — 34,75 € → 35,98 €</title>
+			<link>https://alkometriikka.fi/tuotteet/480617/</link>
+			<guid isPermaLink="false">alkometriikka-480617-2026-07-18-35.98</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Querciabella Chianti Classico 2022 hinta on muuttunut.</p><p>34,75 € → 35,98 € (+1,23 €, +3,54 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/480617-a0ac7be4cd43.png" />
+		</item>
+		<item>
+			<title>Verrocchio Amarone della Valpolicella Classico 2022 — 36,46 € → 35,90 €</title>
+			<link>https://alkometriikka.fi/tuotteet/480757/</link>
+			<guid isPermaLink="false">alkometriikka-480757-2026-07-18-35.9</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Verrocchio Amarone della Valpolicella Classico 2022 hinta on muuttunut.</p><p>36,46 € → 35,90 € (−0,56 €, −1,54 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/480757-b93b97b45737.png" />
+		</item>
+		<item>
+			<title>Icono Selección Especial hanapakkaus — 24,22 € → 24,49 €</title>
+			<link>https://alkometriikka.fi/tuotteet/480848/</link>
+			<guid isPermaLink="false">alkometriikka-480848-2026-07-18-24.49</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Icono Selección Especial hanapakkaus hinta on muuttunut.</p><p>24,22 € → 24,49 € (+0,27 €, +1,11 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/480848-78963bfdace3.png" />
+		</item>
+		<item>
+			<title>Escapades Grande Reserve Shiraz Cabernet Sauvignon Pinotage 2024 hanapakkaus — 39,84 € → 39,95 €</title>
+			<link>https://alkometriikka.fi/tuotteet/480948/</link>
+			<guid isPermaLink="false">alkometriikka-480948-2026-07-18-39.95</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Escapades Grande Reserve Shiraz Cabernet Sauvignon Pinotage 2024 hanapakkaus hinta on muuttunut.</p><p>39,84 € → 39,95 € (+0,11 €, +0,28 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/480948-37c26106c7da.png" />
+		</item>
+		<item>
+			<title>Bertani Valpolicella Ripasso 2023 — 19,99 € → 20,90 €</title>
+			<link>https://alkometriikka.fi/tuotteet/480977/</link>
+			<guid isPermaLink="false">alkometriikka-480977-2026-07-18-20.9</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Bertani Valpolicella Ripasso 2023 hinta on muuttunut.</p><p>19,99 € → 20,90 € (+0,91 €, +4,55 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/480977-617b5d233d66.png" />
+		</item>
+		<item>
+			<title>Barton &amp; Guestier Tourmaline Côtes de Provence 2021 — 17,46 € → 17,98 €</title>
+			<link>https://alkometriikka.fi/tuotteet/481007/</link>
+			<guid isPermaLink="false">alkometriikka-481007-2026-07-18-17.98</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / roseeviinit</category>
+			<description><![CDATA[<p>Tuotteen Barton & Guestier Tourmaline Côtes de Provence 2021 hinta on muuttunut.</p><p>17,46 € → 17,98 € (+0,52 €, +2,98 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/481007-542b47f4184e.png" />
+		</item>
+		<item>
+			<title>Allan Scott Marlborough Pinot Noir 2022 — 11,03 € → 10,57 €</title>
+			<link>https://alkometriikka.fi/tuotteet/481014/</link>
+			<guid isPermaLink="false">alkometriikka-481014-2026-07-18-10.57</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Allan Scott Marlborough Pinot Noir 2022 hinta on muuttunut.</p><p>11,03 € → 10,57 € (−0,46 €, −4,17 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/481014-f70c3a063e38.png" />
+		</item>
+		<item>
+			<title>Footmark Smooth Red 2025 — 9,46 € → 9,98 €</title>
+			<link>https://alkometriikka.fi/tuotteet/481017/</link>
+			<guid isPermaLink="false">alkometriikka-481017-2026-07-18-9.98</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Footmark Smooth Red 2025 hinta on muuttunut.</p><p>9,46 € → 9,98 € (+0,52 €, +5,50 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/481017-32f3810037a2.png" />
+		</item>
+		<item>
+			<title>Château Grand Ferrand Vin Methode Nature 2022 — 15,63 € → 15,73 €</title>
+			<link>https://alkometriikka.fi/tuotteet/482257/</link>
+			<guid isPermaLink="false">alkometriikka-482257-2026-07-18-15.73</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Château Grand Ferrand Vin Methode Nature 2022 hinta on muuttunut.</p><p>15,63 € → 15,73 € (+0,10 €, +0,64 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/482257-d577134b2137.png" />
+		</item>
+		<item>
+			<title>Cascina Bruciata Barbaresco 2019 — 38,45 € → 37,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/482917/</link>
+			<guid isPermaLink="false">alkometriikka-482917-2026-07-18-37.99</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Cascina Bruciata Barbaresco 2019 hinta on muuttunut.</p><p>38,45 € → 37,99 € (−0,46 €, −1,20 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/482917-038f52e848d9.png" />
+		</item>
+		<item>
+			<title>Bonpas Côtes-du-Rhône Rosé 2025 — 13,46 € → 13,48 €</title>
+			<link>https://alkometriikka.fi/tuotteet/483257/</link>
+			<guid isPermaLink="false">alkometriikka-483257-2026-07-18-13.48</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / roseeviinit</category>
+			<description><![CDATA[<p>Tuotteen Bonpas Côtes-du-Rhône Rosé 2025 hinta on muuttunut.</p><p>13,46 € → 13,48 € (+0,02 €, +0,15 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/483257-8c64e0126730.png" />
+		</item>
+		<item>
+			<title>Torres Natureo Rosé — 5,47 € → 5,73 €</title>
+			<link>https://alkometriikka.fi/tuotteet/483714/</link>
+			<guid isPermaLink="false">alkometriikka-483714-2026-07-18-5.73</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Alkoholittomat / alkoholittomat valko- ja roseeviinit</category>
+			<description><![CDATA[<p>Tuotteen Torres Natureo Rosé hinta on muuttunut.</p><p>5,47 € → 5,73 € (+0,26 €, +4,75 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/483714-2271c83c0b32.png" />
+		</item>
+		<item>
+			<title>Vigneti del Vulture Pipoli Aglianico 2024 — 14,25 € → 14,29 €</title>
+			<link>https://alkometriikka.fi/tuotteet/484037/</link>
+			<guid isPermaLink="false">alkometriikka-484037-2026-07-18-14.29</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Vigneti del Vulture Pipoli Aglianico 2024 hinta on muuttunut.</p><p>14,25 € → 14,29 € (+0,04 €, +0,28 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/484037-8104f0addab9.png" />
+		</item>
+		<item>
+			<title>Matsu El Picaro 2025 — 13,46 € → 13,48 €</title>
+			<link>https://alkometriikka.fi/tuotteet/484107/</link>
+			<guid isPermaLink="false">alkometriikka-484107-2026-07-18-13.48</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Matsu El Picaro 2025 hinta on muuttunut.</p><p>13,46 € → 13,48 € (+0,02 €, +0,15 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/484107-b98c9a20dabc.png" />
+		</item>
+		<item>
+			<title>Cascina Boschetti Gomba Barbera d’Alba 2023 — 9,20 € → 9,49 €</title>
+			<link>https://alkometriikka.fi/tuotteet/484694/</link>
+			<guid isPermaLink="false">alkometriikka-484694-2026-07-18-9.49</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Cascina Boschetti Gomba Barbera d’Alba 2023 hinta on muuttunut.</p><p>9,20 € → 9,49 € (+0,29 €, +3,15 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/484694-9f10a3ec7515.png" />
+		</item>
+		<item>
+			<title>Filarino Sangiovese Rosé 2024 hanapakkaus — 36,99 € → 34,98 €</title>
+			<link>https://alkometriikka.fi/tuotteet/486078/</link>
+			<guid isPermaLink="false">alkometriikka-486078-2026-07-18-34.98</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / roseeviinit</category>
+			<description><![CDATA[<p>Tuotteen Filarino Sangiovese Rosé 2024 hanapakkaus hinta on muuttunut.</p><p>36,99 € → 34,98 € (−2,01 €, −5,43 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/486078-1de2f9a7997e.png" />
+		</item>
+		<item>
+			<title>Valdelagua Syrah &amp; Merlot Organic 2024 — 10,34 € → 10,53 €</title>
+			<link>https://alkometriikka.fi/tuotteet/486137/</link>
+			<guid isPermaLink="false">alkometriikka-486137-2026-07-18-10.53</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Valdelagua Syrah & Merlot Organic 2024 hinta on muuttunut.</p><p>10,34 € → 10,53 € (+0,19 €, +1,84 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/486137-0ff168d95d18.png" />
+		</item>
+		<item>
+			<title>8K Ancient Red 2022 — 13,46 € → 13,48 €</title>
+			<link>https://alkometriikka.fi/tuotteet/486667/</link>
+			<guid isPermaLink="false">alkometriikka-486667-2026-07-18-13.48</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen 8K Ancient Red 2022 hinta on muuttunut.</p><p>13,46 € → 13,48 € (+0,02 €, +0,15 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/486667-e6af958b2bbd.png" />
+		</item>
+		<item>
+			<title>Lobetia Tempranillo Shiraz 2024 kartonkitölkki — 11,00 € → 10,98 €</title>
+			<link>https://alkometriikka.fi/tuotteet/486818/</link>
+			<guid isPermaLink="false">alkometriikka-486818-2026-07-18-10.98</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Lobetia Tempranillo Shiraz 2024 kartonkitölkki hinta on muuttunut.</p><p>11,00 € → 10,98 € (−0,02 €, −0,18 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/486818-edb17cfebce0.png" />
+		</item>
+		<item>
+			<title>Cameleon Organic Cabernet Sauvignon 2022 — 14,44 € → 14,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/487307/</link>
+			<guid isPermaLink="false">alkometriikka-487307-2026-07-18-14.99</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Cameleon Organic Cabernet Sauvignon 2022 hinta on muuttunut.</p><p>14,44 € → 14,99 € (+0,55 €, +3,81 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/487307-1ed9b316fa2b.png" />
+		</item>
+		<item>
+			<title>Château d&apos;Aqueria Tavel Rosé 2025 — 20,37 € → 20,98 €</title>
+			<link>https://alkometriikka.fi/tuotteet/487637/</link>
+			<guid isPermaLink="false">alkometriikka-487637-2026-07-18-20.98</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / roseeviinit</category>
+			<description><![CDATA[<p>Tuotteen Château d'Aqueria Tavel Rosé 2025 hinta on muuttunut.</p><p>20,37 € → 20,98 € (+0,61 €, +2,99 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/487637-613f861ad68d.png" />
+		</item>
+		<item>
+			<title>Cantina Terlano Lagrein 2024 — 25,31 € → 25,25 €</title>
+			<link>https://alkometriikka.fi/tuotteet/487647/</link>
+			<guid isPermaLink="false">alkometriikka-487647-2026-07-18-25.25</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Cantina Terlano Lagrein 2024 hinta on muuttunut.</p><p>25,31 € → 25,25 € (−0,06 €, −0,24 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/487647-082f93be2180.png" />
+		</item>
+		<item>
+			<title>Hugh Hamilton The Villain Cabernet Sauvignon 2023 — 20,48 € → 20,50 €</title>
+			<link>https://alkometriikka.fi/tuotteet/487837/</link>
+			<guid isPermaLink="false">alkometriikka-487837-2026-07-18-20.5</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Hugh Hamilton The Villain Cabernet Sauvignon 2023 hinta on muuttunut.</p><p>20,48 € → 20,50 € (+0,02 €, +0,10 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/487837-bdf6523d7cb0.png" />
+		</item>
+		<item>
+			<title>Hand Crafted by Geoff Hardy Shiraz 2021 — 16,48 € → 16,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/488837/</link>
+			<guid isPermaLink="false">alkometriikka-488837-2026-07-18-16.99</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Hand Crafted by Geoff Hardy Shiraz 2021 hinta on muuttunut.</p><p>16,48 € → 16,99 € (+0,51 €, +3,09 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/488837-5c4ac0c46edb.png" />
+		</item>
+		<item>
+			<title>Real Agrado Reserva 2019 — 20,66 € → 20,95 €</title>
+			<link>https://alkometriikka.fi/tuotteet/489047/</link>
+			<guid isPermaLink="false">alkometriikka-489047-2026-07-18-20.95</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Real Agrado Reserva 2019 hinta on muuttunut.</p><p>20,66 € → 20,95 € (+0,29 €, +1,40 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/489047-d3d5910e069d.png" />
+		</item>
+		<item>
+			<title>Château Grange-Neuve 2021 — 43,97 € → 43,50 €</title>
+			<link>https://alkometriikka.fi/tuotteet/489537/</link>
+			<guid isPermaLink="false">alkometriikka-489537-2026-07-18-43.5</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Château Grange-Neuve 2021 hinta on muuttunut.</p><p>43,97 € → 43,50 € (−0,47 €, −1,07 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/489537-7b8e46c420a1.png" />
+		</item>
+		<item>
+			<title>Maison Sichel 1883 2024 — 15,45 € → 15,49 €</title>
+			<link>https://alkometriikka.fi/tuotteet/489607/</link>
+			<guid isPermaLink="false">alkometriikka-489607-2026-07-18-15.49</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Maison Sichel 1883 2024 hinta on muuttunut.</p><p>15,45 € → 15,49 € (+0,04 €, +0,26 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/489607-589a3820825d.png" />
+		</item>
+		<item>
+			<title>Pasanau Vi de Vila Poboleda 2021 — 31,51 € → 29,46 €</title>
+			<link>https://alkometriikka.fi/tuotteet/489677/</link>
+			<guid isPermaLink="false">alkometriikka-489677-2026-07-18-29.46</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Pasanau Vi de Vila Poboleda 2021 hinta on muuttunut.</p><p>31,51 € → 29,46 € (−2,05 €, −6,51 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/489677-18f729a4b9ed.png" />
+		</item>
+		<item>
+			<title>Querciabella Ardalico Chianti Classico 2022 — 26,45 € → 25,89 €</title>
+			<link>https://alkometriikka.fi/tuotteet/490347/</link>
+			<guid isPermaLink="false">alkometriikka-490347-2026-07-18-25.89</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Querciabella Ardalico Chianti Classico 2022 hinta on muuttunut.</p><p>26,45 € → 25,89 € (−0,56 €, −2,12 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/490347-61af6950c715.png" />
+		</item>
+		<item>
+			<title>Château Ksara Reserve du Couvent 2022 — 18,44 € → 19,70 €</title>
+			<link>https://alkometriikka.fi/tuotteet/490447/</link>
+			<guid isPermaLink="false">alkometriikka-490447-2026-07-18-19.7</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Château Ksara Reserve du Couvent 2022 hinta on muuttunut.</p><p>18,44 € → 19,70 € (+1,26 €, +6,83 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/490447-f0f315c22c04.png" />
+		</item>
+		<item>
+			<title>Susana Balbo Crios Malbec 2023 — 19,95 € → 19,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/490777/</link>
+			<guid isPermaLink="false">alkometriikka-490777-2026-07-18-19.99</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Susana Balbo Crios Malbec 2023 hinta on muuttunut.</p><p>19,95 € → 19,99 € (+0,04 €, +0,20 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/490777-3a1d1b75733b.png" />
+		</item>
+		<item>
+			<title>Golpe Reserva 2021 — 19,45 € → 19,49 €</title>
+			<link>https://alkometriikka.fi/tuotteet/490807/</link>
+			<guid isPermaLink="false">alkometriikka-490807-2026-07-18-19.49</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Golpe Reserva 2021 hinta on muuttunut.</p><p>19,45 € → 19,49 € (+0,04 €, +0,21 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/490807-46f1a3625ded.png" />
+		</item>
+		<item>
+			<title>Château de Fitère Madiran Vieilles Vignes 2020 — 14,54 € → 14,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/490897/</link>
+			<guid isPermaLink="false">alkometriikka-490897-2026-07-18-14.99</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Château de Fitère Madiran Vieilles Vignes 2020 hinta on muuttunut.</p><p>14,54 € → 14,99 € (+0,45 €, +3,09 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/490897-585e9d984001.png" />
+		</item>
+		<item>
+			<title>Braun Cabernet Sauvignon 2019 — 21,46 € → 20,98 €</title>
+			<link>https://alkometriikka.fi/tuotteet/491797/</link>
+			<guid isPermaLink="false">alkometriikka-491797-2026-07-18-20.98</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Braun Cabernet Sauvignon 2019 hinta on muuttunut.</p><p>21,46 € → 20,98 € (−0,48 €, −2,24 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/491797-a0b3d60812ad.png" />
+		</item>
+		<item>
+			<title>Quinta de la Rosa Dourosa 2023 — 19,75 € → 20,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/491807/</link>
+			<guid isPermaLink="false">alkometriikka-491807-2026-07-18-20.99</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Quinta de la Rosa Dourosa 2023 hinta on muuttunut.</p><p>19,75 € → 20,99 € (+1,24 €, +6,28 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/491807-f4ebf180f544.png" />
+		</item>
+		<item>
+			<title>Domaine Maire Grand Minéral Pinot Noir 2023 — 20,44 € → 20,49 €</title>
+			<link>https://alkometriikka.fi/tuotteet/492277/</link>
+			<guid isPermaLink="false">alkometriikka-492277-2026-07-18-20.49</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Domaine Maire Grand Minéral Pinot Noir 2023 hinta on muuttunut.</p><p>20,44 € → 20,49 € (+0,05 €, +0,24 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/492277-705b2e3709a9.png" />
+		</item>
+		<item>
+			<title>Petó Organic 2023 hanapakkaus — 33,99 € → 32,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/492788/</link>
+			<guid isPermaLink="false">alkometriikka-492788-2026-07-18-32.99</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Petó Organic 2023 hanapakkaus hinta on muuttunut.</p><p>33,99 € → 32,99 € (−1,00 €, −2,94 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/492788-90148286b03d.png" />
+		</item>
+		<item>
+			<title>Pop Up Season Rosé kartonkitölkki — 10,59 € → 10,49 €</title>
+			<link>https://alkometriikka.fi/tuotteet/493028/</link>
+			<guid isPermaLink="false">alkometriikka-493028-2026-07-18-10.49</guid>
+			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / roseeviinit</category>
+			<description><![CDATA[<p>Tuotteen Pop Up Season Rosé kartonkitölkki hinta on muuttunut.</p><p>10,59 € → 10,49 € (−0,10 €, −0,94 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/493028-9ee620176ad1.png" />
 		</item>
 		<item>
 			<title>LAN Viña Lanciano Reserva 2020</title>
@@ -9011,46 +9043,6 @@
 			<media:thumbnail url="https://cdn.alkometriikka.fi/products/400429-b6fdaeaeedbe.png" />
 		</item>
 		<item>
-			<title>Cantine Povero Monferrato 2024</title>
-			<link>https://alkometriikka.fi/tuotteet/400438/</link>
-			<guid isPermaLink="false">alkometriikka-new-400438</guid>
-			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Viinit / punaviinit</category>
-			<description><![CDATA[<p>Cantine Povero Monferrato 2024 on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Cantine Povero<br />Valmistusmaa: Italia<br />Hinta: 19,99 €<br />Tilavuus: 0,75 l<br />Alkoholi: 15,0 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/400438-a8b78ce322b8.png" />
-		</item>
-		<item>
-			<title>Toneido Pineapple Soju</title>
-			<link>https://alkometriikka.fi/tuotteet/903586/</link>
-			<guid isPermaLink="false">alkometriikka-new-903586</guid>
-			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Panimotuotteet / juomasekoitukset</category>
-			<description><![CDATA[<p>Toneido Pineapple Soju on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Applease Korea Brewery<br />Valmistusmaa: Etelä-Korea<br />Hinta: 9,49 €<br />Tilavuus: 0,36 l<br />Alkoholi: 12,0 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903586-a518efa02e99.png" />
-		</item>
-		<item>
-			<title>Spoleto Trebbiano Spoletino 2023</title>
-			<link>https://alkometriikka.fi/tuotteet/903593/</link>
-			<guid isPermaLink="false">alkometriikka-new-903593</guid>
-			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Viinit / valkoviinit</category>
-			<description><![CDATA[<p>Spoleto Trebbiano Spoletino 2023 on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Fratelli Pardi<br />Valmistusmaa: Italia<br />Hinta: 17,58 €<br />Tilavuus: 0,75 l<br />Alkoholi: 13,0 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903593-8d492eb5c42e.png" />
-		</item>
-		<item>
-			<title>San Filippo Marche Bianco 2025</title>
-			<link>https://alkometriikka.fi/tuotteet/903644/</link>
-			<guid isPermaLink="false">alkometriikka-new-903644</guid>
-			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Viinit / valkoviinit</category>
-			<description><![CDATA[<p>San Filippo Marche Bianco 2025 on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: San Filippo<br />Valmistusmaa: Italia<br />Hinta: 26,91 €<br />Tilavuus: 2 l<br />Alkoholi: 12,0 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903644-307cfd72147f.png" />
-		</item>
-		<item>
 			<title>Toneido Strawberry Soju</title>
 			<link>https://alkometriikka.fi/tuotteet/903646/</link>
 			<guid isPermaLink="false">alkometriikka-new-903646</guid>
@@ -9061,26 +9053,6 @@
 			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903646-e805a5020ef4.png" />
 		</item>
 		<item>
-			<title>Carpano Rosso</title>
-			<link>https://alkometriikka.fi/tuotteet/903660/</link>
-			<guid isPermaLink="false">alkometriikka-new-903660</guid>
-			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Välituotteet / vermutit</category>
-			<description><![CDATA[<p>Carpano Rosso on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Fratelli Branca<br />Valmistusmaa: Italia<br />Hinta: 24,98 €<br />Tilavuus: 0,75 l<br />Alkoholi: 16,0 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903660-d0fb21f83ead.png" />
-		</item>
-		<item>
-			<title>Thiénot Champagne Brut Magnum</title>
-			<link>https://alkometriikka.fi/tuotteet/903688/</link>
-			<guid isPermaLink="false">alkometriikka-new-903688</guid>
-			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Viinit / kuohuviinit ja samppanjat</category>
-			<description><![CDATA[<p>Thiénot Champagne Brut Magnum on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Champagne Thiénot<br />Valmistusmaa: Ranska<br />Hinta: 121,37 €<br />Tilavuus: 1,5 l<br />Alkoholi: 12,0 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903688-56a1f831142a.png" />
-		</item>
-		<item>
 			<title>Zanchi Antichi Cloni Malvasia 2024</title>
 			<link>https://alkometriikka.fi/tuotteet/903690/</link>
 			<guid isPermaLink="false">alkometriikka-new-903690</guid>
@@ -9089,36 +9061,6 @@
 			<category>Viinit / valkoviinit</category>
 			<description><![CDATA[<p>Zanchi Antichi Cloni Malvasia 2024 on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Cantine Zanchi<br />Valmistusmaa: Italia<br />Hinta: 19,51 €<br />Tilavuus: 0,75 l<br />Alkoholi: 14,0 %</p>]]></description>
 			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903690-299f5ff9ccf3.png" />
-		</item>
-		<item>
-			<title>Bibo Runge Kleiner Revoluzzer Hallgartener Riesling Trocken 2024</title>
-			<link>https://alkometriikka.fi/tuotteet/903698/</link>
-			<guid isPermaLink="false">alkometriikka-new-903698</guid>
-			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Viinit / valkoviinit</category>
-			<description><![CDATA[<p>Bibo Runge Kleiner Revoluzzer Hallgartener Riesling Trocken 2024 on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Bibo Runge<br />Valmistusmaa: Saksa<br />Hinta: 19,90 €<br />Tilavuus: 0,75 l<br />Alkoholi: 11,5 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903698-dc300868502b.png" />
-		</item>
-		<item>
-			<title>San Polo Brunello di Montalcino 2020</title>
-			<link>https://alkometriikka.fi/tuotteet/903704/</link>
-			<guid isPermaLink="false">alkometriikka-new-903704</guid>
-			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Viinit / punaviinit</category>
-			<description><![CDATA[<p>San Polo Brunello di Montalcino 2020 on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: San Polo<br />Valmistusmaa: Italia<br />Hinta: 128,37 €<br />Tilavuus: 0,75 l<br />Alkoholi: 14,5 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903704-a657c7a08d36.png" />
-		</item>
-		<item>
-			<title>Valiano Chianti Classico 2022</title>
-			<link>https://alkometriikka.fi/tuotteet/903714/</link>
-			<guid isPermaLink="false">alkometriikka-new-903714</guid>
-			<pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
-			<category>Uutuus</category>
-			<category>Viinit / punaviinit</category>
-			<description><![CDATA[<p>Valiano Chianti Classico 2022 on uusi tuote Alkon valikoimassa.</p><p>Valmistaja: Valiano<br />Valmistusmaa: Italia<br />Hinta: 24,89 €<br />Tilavuus: 0,75 l<br />Alkoholi: 13,5 %</p>]]></description>
-			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903714-28beb8db86dc.png" />
 		</item>
 	</channel>
 </rss>
