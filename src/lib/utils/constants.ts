@@ -1,6 +1,6 @@
 import type { ColNameObj, ColumnBadgeMap, ColumnNames, PriceListItem } from '$lib/types';
 import type { setSEO } from './helpers';
-import { formatCampaignWindow, getSaleInfo } from './sales';
+import { formatCampaignWindow, getSaleInfo } from './sales.ts';
 
 /** Columns present in the Alko price list dataset
  * These are in Finnish as they are used directly from the dataset

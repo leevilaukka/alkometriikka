@@ -679,7 +679,7 @@
 				Muut koot
 			</summary>
 			<div class="flex max-w-full flex-col flex-nowrap gap-3">
-				{#each differentSizesOfProduct.sort((a, b) => a[AllColumns.BottleSize] - b[AllColumns.BottleSize]) as differentSizeProduct}
+				{#each differentSizesOfProduct as differentSizeProduct}
 					<a
 						href={`/tuotteet/${differentSizeProduct[AllColumns.Number]}/`}
 						class="flex shrink-0 flex-row gap-3 rounded-lg border border-primary p-4"

@@ -23,6 +23,7 @@ import {
 } from '../types';
 import { isSimilarString } from '$lib/utils/search';
 import { getSaleInfo } from '../utils/sales';
+import { ProductVariantIndex } from '../utils/product-variants';
 
 function toPositiveNumber(value: unknown): number | null {
 	if (typeof value === 'number') {
@@ -66,6 +67,7 @@ export class Kaljakori {
 	minAndMaxValues: ([number, number] | null)[] = [];
 	minAndMaxValuesActive: ([number, number] | null)[] = [];
 	subValues: Record<string, Record<string, Set<any>>> = {};
+	private readonly productVariants: ProductVariantIndex;
 
 	constructor(table: DatasetRow[], personalInfo?: PersonalInfo, availability?: AvailabilityData) {
 		this.personalInfo = personalInfo || { weight: null, gender: GenderOptionsMap.Unspecified };
@@ -96,6 +98,7 @@ export class Kaljakori {
 
 		const drunkValuesByColumn: any[][] = [...Array(drunkColumns.length)].map(() => []);
 		const drunkValuesByColumnActive: any[][] = [...Array(drunkColumns.length)].map(() => []);
+		const declaredBottleSizes = new Set<PriceListItem>();
 
 		const storeValuesByColumn: any[][] = [...Array(storeColumns.length)].map(() => []);
 		const storeValuesByColumnActive: any[][] = [...Array(storeColumns.length)].map(() => []);
@@ -146,6 +149,15 @@ export class Kaljakori {
 			// buckets used when removed products are hidden in the UI.
 			const isRemoved = Boolean(rows[row][datasetColumnIndexes[AllColumns.RemovedFromSelection]]);
 
+			// Inferred sizes remain useful for display/calculations, but cannot prove
+			// that two products are different packages of the same drink.
+			const rawBottleSize = rows[row][datasetColumnIndexes[AllColumns.BottleSize]];
+			if (
+				/^\d+(?:[.,]\d+)?(?:\s*l)?$/i.test(String(rawBottleSize).trim()) &&
+				toPositiveNumber(rawBottleSize) !== null
+			) {
+				declaredBottleSizes.add(item);
+			}
 			rows[row][datasetColumnIndexes[AllColumns.BottleSize]] = resolveBottleSize(
 				rows[row],
 				datasetColumnIndexes
@@ -342,7 +354,12 @@ export class Kaljakori {
 		});
 
 		this.data = this.sortBy(defaultSortingColumn);
+		this.productVariants = new ProductVariantIndex(this.data, declaredBottleSizes);
 		console.log(this.data);
+	}
+
+	findDifferentSizesOfProduct(product: PriceListItem): PriceListItem[] {
+		return this.productVariants.find(product);
 	}
 
 	getFilterKeys() {
