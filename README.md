@@ -129,6 +129,16 @@ Check formatting:
 bun run lint
 ```
 
+### Testing product size matching
+
+Run `npm test` with Node.js 24 or newer. The tests run TypeScript directly and
+need no additional test dependencies or network access.
+
+Size variants use conservative name normalization and catalogue metadata. A
+restricted Finnish lager fallback handles class suffixes only when the producer,
+strength, measurements, and tasting descriptors agree. There are no product-ID
+or brand-specific mappings. Missing/estimated sizes cannot establish a match.
+
 ## Data and generated content
 
 The repository contains scripts for maintaining the product dataset and generating derived content.
