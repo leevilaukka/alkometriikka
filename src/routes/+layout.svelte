@@ -99,6 +99,10 @@
 		icon: 'wine',
 		name: 'Kategoriat'
 	}, {
+		href: '/myymalat',
+		icon: 'store',
+		name: 'Myymälät'
+	}, {
 		href: '/daily/arkisto',
 		icon: 'archive',
 		name: 'Daily-arkisto'
