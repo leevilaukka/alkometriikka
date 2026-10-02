@@ -1,7 +1,7 @@
 <script lang="ts">
     import RecursiveFilter from "./RecursiveFilter.svelte";
 	import StringInput from "../inputs/StringInput.svelte";
-	import { subCategoryMap } from "$lib/utils/constants";
+	import { getNestedSubFilter } from "$lib/utils/filters";
 	import { headerToDisplayName } from "$lib/utils/helpers";
 	import type { FilterValues, ColumnNames } from "$lib/types";
 	import type { Kaljakori } from "$lib/alko";
@@ -18,7 +18,7 @@
 		showRemoved?: boolean;
 	} = $props();
 
-	const child = $derived(subCategoryMap[filter as keyof typeof subCategoryMap]);
+	const child = $derived(getNestedSubFilter(filter));
 </script>
 
 {#if child && filterValues[filter].length === 1}

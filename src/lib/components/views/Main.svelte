@@ -24,11 +24,15 @@
 	import Filters from '../widgets/Filters.svelte';
 	import { initFilterValues } from '$lib/utils/filters';
 	import { page } from '$app/state';
-	import { getContext, onMount, untrack } from 'svelte';
+	import { getContext, onMount, untrack, type Snippet } from 'svelte';
 	import type { SearchParamsManager } from '$lib/utils/url';
 	import ProductPreview from '../widgets/ProductPreview.svelte';
 
-	const { kaljakori }: { kaljakori: Kaljakori } = $props();
+	const {
+		kaljakori,
+		header,
+		showFilters = true
+	}: { kaljakori: Kaljakori; header?: Snippet; showFilters?: boolean } = $props();
 
 	let searchParamsManager = getContext<SearchParamsManager>(ContextKeys.SearchParamsManager);
 
@@ -36,7 +40,7 @@
 
 	let filtersComponent: Filters | null = $state(null);
 	let showRemoved = $state(false);
-	let filterValues = $state(untrack(() => initFilterValues(kaljakori, page.url.searchParams, showRemoved)));
+	let filterValues = $state(untrack(() => initFilterValues(kaljakori, showFilters ? page.url.searchParams : undefined, showRemoved)));
 	let activeFilters: ColumnNames[] = $state([])
 
 	let selectedHighlight = $state(
@@ -89,13 +93,17 @@
 	});
 </script>
 
-<div class="relative grid h-full grid-cols-[auto_1fr] max-h-full overflow-hidden">
+<div class={twMerge('relative grid h-full max-h-full overflow-hidden', showFilters ? 'grid-cols-[auto_1fr]' : 'grid-cols-1 bg-secondary')}>
+	{#if showFilters}
 	<aside
 		class="z-10 flex h-full flex-col max-h-full overflow-hidden border-primary md:w-84 md:border-r"
 	>
 		<Filters {kaljakori} bind:activeFilters bind:filterValues bind:showRemoved bind:this={filtersComponent} />
 	</aside>
-	<main class="mx-auto flex h-full w-full flex-col gap-3 bg-secondary p-4 md:gap-4 md:p-6">
+	{/if}
+	<!-- Without the filter sidebar, match the product page's width so rows don't stretch -->
+	<main class={twMerge('mx-auto flex h-full w-full flex-col gap-3 bg-secondary p-4 md:gap-4 md:p-6', !showFilters && 'max-w-7xl')}>
+		{@render header?.()}
 		<div class="flex w-full flex-col items-start gap-4">
 			<div class={twMerge('grid w-full grid-cols-2 items-end gap-2 md:w-fit')}>
 				<div class="flex flex-col">
@@ -148,7 +156,7 @@
 						{/each}
 					</select>
 				</div>
-				{#if $isMobile}
+				{#if $isMobile && showFilters}
 					<button
 						onclick={() => {
 							filtersComponent?.toggleFilterElement();

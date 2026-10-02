@@ -3,7 +3,7 @@ name: Download Price List
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */6 * * *' # Runs every 6 hours
+    - cron: '0 */6 * * *' # Runs every 6 hours (also archives any missed finished days)
   workflow_run: # Runs after page is built
     workflows: ['Build and move files to gh-pages branch']
     types:
@@ -21,21 +21,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install Bun
-        uses: oven-sh/setup-bun@v2
-
-      - name: Cache Bun dependencies
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.bun
-            node_modules
-          key: ${{ runner.os }}-bun-${{ hashFiles('bun.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-bun-
-
-      - name: Install dependencies
-        run: bun install --frozen-lockfile
+      - name: Set up Bun
+        uses: ./.github/actions/setup
 
       - name: Seed existing dataset from gh-pages
         run: |
@@ -45,12 +32,7 @@ jobs:
           fi
 
       - name: Rehash seeded dataset to current schema
-        run: |
-          if [ -f data.json ]; then
-            bun run scripts/data/rehash.ts
-          else
-            echo "ℹ️  No seeded data.json found (first run or missing gh-pages dataset); skipping rehash."
-          fi
+        uses: ./.github/actions/rehash-dataset
 
       - name: Run script to convert to JSON
         env:
@@ -93,21 +75,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install Bun
-        uses: oven-sh/setup-bun@v2
-
-      - name: Cache Bun dependencies
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.bun
-            node_modules
-          key: ${{ runner.os }}-bun-${{ hashFiles('bun.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-bun-
-
-      - name: Install dependencies
-        run: bun install --frozen-lockfile
+      - name: Set up Bun
+        uses: ./.github/actions/setup
 
       - name: Download dataset
         uses: actions/download-artifact@v4
@@ -117,9 +86,7 @@ jobs:
           merge-multiple: true
 
       - name: Check out deployed site
-        run: |
-          git fetch origin gh-pages
-          git worktree add --detach ../gh-pages origin/gh-pages
+        uses: ./.github/actions/checkout-gh-pages
 
       - name: Generate and upload OG images
         continue-on-error: true
@@ -147,21 +114,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install Bun
-        uses: oven-sh/setup-bun@v2
-
-      - name: Cache Bun dependencies
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.bun
-            node_modules
-          key: ${{ runner.os }}-bun-${{ hashFiles('bun.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-bun-
-
-      - name: Install dependencies
-        run: bun install --frozen-lockfile
+      - name: Set up Bun
+        uses: ./.github/actions/setup
 
       - name: Download dataset
         uses: actions/download-artifact@v4
@@ -194,21 +148,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install Bun
-        uses: oven-sh/setup-bun@v2
-
-      - name: Cache Bun dependencies
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.bun
-            node_modules
-          key: ${{ runner.os }}-bun-${{ hashFiles('bun.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-bun-
-
-      - name: Install dependencies
-        run: bun install --frozen-lockfile
+      - name: Set up Bun
+        uses: ./.github/actions/setup
 
       - name: Download dataset
         uses: actions/download-artifact@v4
@@ -248,21 +189,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install Bun
-        uses: oven-sh/setup-bun@v2
-
-      - name: Cache Bun dependencies
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.bun
-            node_modules
-          key: ${{ runner.os }}-bun-${{ hashFiles('bun.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-bun-
-
-      - name: Install dependencies
-        run: bun install --frozen-lockfile
+      - name: Set up Bun
+        uses: ./.github/actions/setup
 
       - name: Download all generated files
         uses: actions/download-artifact@v4
@@ -271,9 +199,50 @@ jobs:
           merge-multiple: true
 
       - name: Check out deployed site
+        uses: ./.github/actions/checkout-gh-pages
+
+      - name: Run daily game tests
+        uses: ./.github/actions/run-daily-tests
+
+      # The daily manifests are immutable pins: once baked, a date must never
+      # change. Seed the deployed manifests into the workspace before baking so
+      # the baker skips dates that already exist instead of re-rolling them with
+      # a fresh random seed (which would give players a different game mid-day).
+      - name: Seed deployed daily games
         run: |
-          git fetch origin gh-pages
-          git worktree add --detach ../gh-pages origin/gh-pages
+          set -e
+          if [ -d ../gh-pages/daily ] && [ -n "$(ls -A ../gh-pages/daily)" ]; then
+            rm -rf daily
+            cp -r ../gh-pages/daily daily
+            echo "✅ Seeded $(ls daily | wc -l) daily files from gh-pages"
+          else
+            echo "❌ daily/ missing on gh-pages — refusing to bake so no in-flight game is re-rolled."
+            exit 1
+          fi
+
+      - name: Bake daily manifests
+        run: |
+          # Bake the daily manifests here so `daily/` exists next to the copied
+          # data.json — the sync-job artifact round-trip would flatten the
+          # directory into the workspace root. Existing dates are kept as-is.
+          bun run daily
+
+      # A 6-hourly fallback for the midnight-precise run in archiveDaily.yml
+      # (which already publishes this the moment the day flips) — this just
+      # re-confirms the same content later. Best-effort: decorative, must
+      # never block the rest of the (critical) deploy job.
+      - name: Generate and publish today's Daily OG card
+        continue-on-error: true
+        uses: ./.github/actions/daily-og
+        with:
+          template: ../gh-pages/404.html
+          out-dir: ./daily
+          r2-access-key-id: ${{ secrets.CF_R2_ACCESS_KEY_ID }}
+          r2-secret-access-key: ${{ secrets.CF_R2_SECRET_ACCESS_KEY }}
+          r2-account-id: ${{ secrets.CF_R2_ACCOUNT_ID }}
+          r2-bucket: ${{ vars.CF_R2_BUCKET }}
+          r2-region: ${{ vars.CF_R2_REGION }}
+          og-cdn-base: ${{ vars.OG_CDN_BASE }}
 
       - name: Refresh product pages
         env:
@@ -282,15 +251,20 @@ jobs:
           cp og-images.json ../gh-pages/og-images.json
           bun run scripts/site/prerender-products.ts --data data.json --out ../gh-pages --template ../gh-pages/404.html --og-manifest ../gh-pages/og-images.json --manifest ../gh-pages/tuotteet-manifest.json
           cp data.json availability.json sitemap.xml rss.xml feed.json ../gh-pages/
+          # Reset first so stale manifests (and the nested archive/) actually
+          # disappear from the site instead of merging over.
+          rm -rf ../gh-pages/daily
+          cp -r daily ../gh-pages/
           rm -rf ../gh-pages/rss
           cp -r rss ../gh-pages/
+
+      - name: Configure git bot identity
+        uses: ./.github/actions/git-bot-identity
 
       - name: Commit and push downloaded file
         working-directory: ../gh-pages
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add data.json availability.json sitemap.xml rss.xml feed.json rss tuotteet tuotteet-manifest.json -f
+          git add data.json availability.json sitemap.xml rss.xml feed.json rss daily tuotteet tuotteet-manifest.json -f
           [ -f og-images.json ] && git add og-images.json -f || true
           git commit -m "Update price list and static product pages [skip ci]" || echo "No changes to commit"
           git push origin HEAD:gh-pages

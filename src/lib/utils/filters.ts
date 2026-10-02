@@ -1,7 +1,7 @@
 import type { Kaljakori } from '$lib/alko';
 import type { ColumnNames, FilterValue, FilterValues, PriceListItem } from '$lib/types';
-import { AllColumns, shownFilters, subCategoryMap } from './constants';
-import { isSimilarString } from './search';
+import { AllColumns, getPackCount, shownFilters, subCategoryMap } from './constants';
+export { getComparableProductName } from './product-variants';
 
 export function initFilterValues(
 	kaljakori: Kaljakori,
@@ -25,6 +25,48 @@ export function initFilterValues(
 		},
 		{} as Record<ColumnNames, FilterValue>
 	);
+}
+
+/**
+ * Returns the sub filter shown nested under `filter`, if any. Sub filters that are
+ * also shown on their own (e.g. Alatyyppi under Tyyppi) aren't nested.
+ */
+export function getNestedSubFilter(filter: ColumnNames): ColumnNames | undefined {
+	const child = subCategoryMap[filter as keyof typeof subCategoryMap];
+	if (!child || (shownFilters as readonly ColumnNames[]).includes(child)) return undefined;
+	return child;
+}
+
+/**
+ * Returns the parent of `filter` when both are shown on their own (e.g. Tyyppi for
+ * Alatyyppi), in which case the parent narrows the options of `filter`.
+ */
+export function getShownParentFilter(filter: ColumnNames): ColumnNames | undefined {
+	const shown = shownFilters as readonly ColumnNames[];
+	if (!shown.includes(filter)) return undefined;
+	const parent = (Object.keys(subCategoryMap) as (keyof typeof subCategoryMap)[]).find(
+		(key) => subCategoryMap[key] === filter
+	);
+	return parent && shown.includes(parent) ? parent : undefined;
+}
+
+/**
+ * Values of `filter` limited to those matching the selections of its shown parent filter.
+ */
+export function getNarrowedFilterValues(
+	filter: ColumnNames,
+	filterValues: FilterValues,
+	kaljakori: Kaljakori,
+	showRemoved: boolean = true
+) {
+	const values = kaljakori.getFilterValues(filter, showRemoved);
+	const parent = getShownParentFilter(filter);
+	const parentValue = parent && filterValues[parent];
+	if (!parent || !Array.isArray(parentValue) || !parentValue.length) return values;
+	const allowed = new Set<string | number>(
+		kaljakori.getSubFilterValues(parent, { [parent]: parentValue } as FilterValues, showRemoved)
+	);
+	return values.filter((value) => allowed.has(value));
 }
 
 export function searchParametersFromFilterValues(
@@ -143,60 +185,51 @@ export function findSimilarProducts(
 		.map(({ item }) => item);
 }
 
-export function getComparableProductName(product: PriceListItem): string {
-	let out = product[AllColumns.Name];
-	out = out.replace(/M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})/g, ''); // Remove roman numerals (before lowercase)
-	out = out.toLowerCase();
-	out = out.replace(product[AllColumns.PackagingType].toLowerCase(), ''); // Remove packaging type
-	out = out.replace(/\w+-pack/g, ''); // Remove "x-pack"
-	out = out.replace(/[\d.,%\-]+/g, ''); // Remove numbers
-	out = out.replace(/\s+/g, ' ').trim(); // Remove extra spaces
-	return out;
+export type SizeOption = {
+	product: PriceListItem;
+	isCurrent: boolean;
+	isBestValue: boolean;
+	barPercent: number;
+	packCount: number;
+};
+
+/**
+ * Builds the sorted (by BottleSize asc) size-comparison list for the
+ * "Pakkauskoko" size selector, including `product` itself alongside the
+ * other pack sizes found by {@link findDifferentSizeOfProduct}.
+ */
+export function buildSizeOptions(product: PriceListItem, kaljakori: Kaljakori): SizeOption[] {
+	const byId = new Map<string, PriceListItem>();
+	byId.set(product[AllColumns.Number], product);
+	for (const item of findDifferentSizeOfProduct(product, kaljakori)) {
+		byId.set(item[AllColumns.Number], item);
+	}
+	const all = [...byId.values()].sort(
+		(a, b) =>
+			getPackCount(a) - getPackCount(b) ||
+			a[AllColumns.BottleSize] - b[AllColumns.BottleSize] ||
+			a[AllColumns.Price] - b[AllColumns.Price]
+	);
+	const prices = all.map((item) => item[AllColumns.PricePerLiter]);
+	const min = Math.min(...prices);
+	const max = Math.max(...prices);
+	return all.map((item) => {
+		const pricePerLiter = item[AllColumns.PricePerLiter];
+		const barPercent =
+			max === min ? 100 : Math.round((1 - (pricePerLiter - min) / (max - min)) * 100);
+		return {
+			product: item,
+			isCurrent: item[AllColumns.Number] === product[AllColumns.Number],
+			isBestValue: pricePerLiter === min,
+			barPercent,
+			packCount: getPackCount(item)
+		};
+	});
 }
 
 export function findDifferentSizeOfProduct(
 	product: PriceListItem,
 	kaljakori: Kaljakori
 ): PriceListItem[] {
-	// TODO: Fix this garbage V2 algo and improve matching + performance
-	/*
-        Examples of hard to match products due to different desc name etc:
-        http://localhost:5173/tuotteet/777886 vs http://localhost:5173/tuotteet/901542 has different sugar level and desc?
-        http://localhost:5173/tuotteet/700013 name has been misspelled 
-        http://localhost:5173/tuotteet/720914 vs http://localhost:5173/tuotteet/792176 name sometimes includes % and sometimes not
-        http://localhost:5173/tuotteet/580039 vs http://localhost:5173/tuotteet/008003 different subtype
-        http://localhost:5173/tuotteet/131158 vs http://localhost:5173/tuotteet/902199 different product only difference in name
-        http://localhost:5173/tuotteet/139586 vs http://localhost:5173/tuotteet/148781 different manufacturer listed but same product
-    */
-	const targetName = getComparableProductName(product);
-	const filtered = kaljakori.filter({
-		[AllColumns.Type]: new Set([product[AllColumns.Type]]),
-		[AllColumns.AlcoholPercentage]: [
-			product[AllColumns.AlcoholPercentage],
-			product[AllColumns.AlcoholPercentage]
-		],
-		[AllColumns.Vintage]: [product[AllColumns.Vintage], product[AllColumns.Vintage]]
-	});
-	const scored = filtered
-		.map((item) => {
-			let score = 0;
-			const compareName = getComparableProductName(item);
-			if (isSimilarString(targetName, compareName, 0.85)) score += 1;
-			return {
-				item,
-				score
-			};
-		})
-		.sort((a, b) => a.score - b.score)
-		.reverse();
-	console.log('scored', scored);
-	const out = [];
-	for (let i = 0; i < scored.length; i++) {
-		const entry = scored[i];
-		if (entry.item[AllColumns.Number] === product[AllColumns.Number]) continue;
-		if (i === 0) out.push(entry.item);
-		else if (entry.score === scored[i - 1].score) out.push(entry.item);
-		else return out;
-	}
-	return out;
+	return kaljakori.findDifferentSizesOfProduct(product);
 }

@@ -2,7 +2,7 @@
 	import '../app.css';
 	import { dev } from '$app/environment';
 	import { ContextKeys, LocalStorageKeys } from '$lib/utils/constants';
-	import { isMobile, isLaptop, lists, customTemplates, personalInfo, preferredStoreId, searchQuery, theme } from '$lib/global.svelte';
+	import { compareProductIds, isMobile, isLaptop, lists, customTemplates, personalInfo, preferredStoreId, searchQuery, theme } from '$lib/global.svelte';
 	import logo from '$lib/assets/images/Logo/0.5x/Logo_rounded@0.5x.png';
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/styles';
@@ -13,12 +13,14 @@
 	import { markRouterReady, shareTypeFromRoute, trackSharedView } from '$lib/utils/helpers';
 	import { setContext } from 'svelte';
 	import Settings from '$lib/components/widgets/Settings/Index.svelte';
+	import CompareBar from '$lib/components/widgets/CompareBar.svelte';
+	import ProductMobileCta from '$lib/components/product/ProductMobileCta.svelte';
 	import { LocalStorageManager } from '$lib/utils/storage';
+	import type { IconName } from '$lib/icons';
 
 	let { children, data } = $props();
-
-	let searchParamsManager = new SearchParamsManager(page.url)
-	setContext(ContextKeys.SearchParamsManager, searchParamsManager)
+	let searchParamsManager = new SearchParamsManager(page.url);
+	setContext(ContextKeys.SearchParamsManager, searchParamsManager);
 
 	$effect(() => {
 		LocalStorageManager.setItem(LocalStorageKeys.PersonalInfo, personalInfo);
@@ -38,6 +40,10 @@
 
 	$effect(() => {
 		LocalStorageManager.setItem(LocalStorageKeys.PreferredStore, $preferredStoreId);
+	});
+
+	$effect(() => {
+		LocalStorageManager.setItem(LocalStorageKeys.CompareProducts, compareProductIds);
 	});
 
 	$effect(() => {
@@ -82,7 +88,42 @@
 	function shiftLoader() {
 		document.getElementById("main-loader")?.classList.add("shift");
 	}
+
+	let extraMenu = $state<HTMLDetailsElement>();
+	function closeExtraMenu() {
+		if (extraMenu) extraMenu.open = false;
+	}
+
+	function handleDocumentClick(event: MouseEvent) {
+		if (extraMenu?.open && !event.composedPath().includes(extraMenu)) extraMenu.open = false;
+	}
+
+	const extraItems: {href: string, icon: IconName, name: string}[] = [{
+		href: '/kategoriat/',
+		icon: 'wine',
+		name: 'Kategoriat'
+	}, {
+		href: '/myymalat',
+		icon: 'store',
+		name: 'Myymälät'
+	}, {
+		href: '/daily/arkisto',
+		icon: 'archive',
+		name: 'Daily-arkisto'
+	}, {
+		href: '/laskin',
+		icon: 'calculator',
+		name: 'Laskin'
+	}, {
+		href: '/tilastot',
+		icon: 'stats',
+		name: 'Tilastot'
+	}];
+
+	const noSearchPages: typeof page.route.id[] = ['/daily/arkisto', '/laskin', '/tilastot', '/listat', '/daily', '/daily/arkisto/[date]', '/tuotteet/[...id]', '/vertailu', '/kategoriat'];
 </script>
+
+<svelte:window onclick={handleDocumentClick} />
 
 {#await data.alko then alko}
 	{shiftLoader()}
@@ -99,7 +140,7 @@
 				/>
 				<span class="hidden text-[1.75rem] text-brand-3 dark:text-white sm:block">Alkometriikka</span>
 			</a>
-			{#if page.route.id !== '/tuotteet/[...id]'}
+			{#if page.route.id === null || !noSearchPages.includes(page.route.id)}
 				<div
 					class={twMerge(
 						'flex w-full flex-row',
@@ -129,6 +170,24 @@
 				</div>
 			{/if}
 			<div class="flex items-center gap-2 ms-auto">
+				<details bind:this={extraMenu} class="relative">
+					<summary class={twMerge(components.button(), 'list-none p-2 text-xl')}>
+						{#if !$isMobile}<span class="text-sm">Lisää</span>{/if}<Icon name="menu" />
+					</summary>
+					<div class="absolute end-0 top-full z-20 mt-2 flex min-w-40 flex-col gap-1 rounded border border-primary bg-primary p-1 shadow-lg">
+						{#each extraItems as item}
+							<a href={item.href} onclick={closeExtraMenu} class={twMerge(components.button(), 'w-full justify-start')}>
+								<Icon name={item.icon} />
+								<span>{item.name}</span>
+							</a>
+						{/each}
+					</div>
+				</details>
+				<a href="/daily">
+					<button class={twMerge(components.button(), 'p-2 text-xl')}>
+						{#if !$isMobile}<span class="text-sm">Daily</span>{/if}<Icon name="flame" />
+					</button>
+				</a>
 				<a href="/listat">
 					<button class={twMerge(components.button(), 'p-2 text-xl')}>
 						{#if !$isMobile}<span class="text-sm">Listat</span>{/if}<Icon name="list_ul" />
@@ -140,6 +199,16 @@
 		<div class="flex max-h-full overflow-y-auto overflow-x-hidden flex-auto flex-col">
 			{@render children?.()}
 		</div>
+		{#if page.route.id !== '/vertailu'}
+			<CompareBar kaljakori={alko.kaljakori} />
+		{/if}
+		{#if page.route.id === '/tuotteet/[...id]'}
+			{@const productId = page.params.id?.split('/')[0]}
+			{@const product = productId ? alko.kaljakori.findById(productId) : undefined}
+			{#if product}
+				<ProductMobileCta {product} class="lg:hidden" />
+			{/if}
+		{/if}
 	</div>
 {:catch error}
 	{shiftLoader()}

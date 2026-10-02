@@ -1,0 +1,118 @@
+name: Archive Finished Daily Games
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Midnight in Helsinki is 21:00 UTC (summer) or 22:00 UTC (winter).
+    # Runs are scheduled just after the flip in each DST period, so they bake
+    # the finished day right away without parking a waiting runner:
+    #   21:15 UTC -> archives ~00:15 HKI in summer; harmless no-op in winter.
+    #   22:15 UTC -> archives ~00:15 HKI in winter; redundant in summer.
+    - cron: '15 21 * * *'
+    - cron: '15 22 * * *'
+
+concurrency:
+  group: gh-pages-deployment
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Bun
+        uses: ./.github/actions/setup
+
+      - name: Seed dataset and current daily folder from deployed site
+        run: |
+          git fetch origin gh-pages
+          git show origin/gh-pages:data.json > data.json
+          git archive origin/gh-pages daily | tar -x
+
+      - name: Rehash seeded dataset to current schema
+        uses: ./.github/actions/rehash-dataset
+
+      - name: Run daily game tests
+        uses: ./.github/actions/run-daily-tests
+
+      - name: Bake daily manifests and archive finished days
+        run: bun run daily
+
+      - name: Backup daily archive to Cloudflare R2
+        env:
+          CF_R2_ACCESS_KEY_ID: ${{ secrets.CF_R2_ACCESS_KEY_ID }}
+          CF_R2_SECRET_ACCESS_KEY: ${{ secrets.CF_R2_SECRET_ACCESS_KEY }}
+          CF_R2_ACCOUNT_ID: ${{ secrets.CF_R2_ACCOUNT_ID }}
+          # Same source as fetchData.yml (repo variables); secrets kept as a fallback.
+          CF_R2_BUCKET: ${{ vars.CF_R2_BUCKET || secrets.CF_R2_BUCKET || 'alkometriikka-og' }}
+          CF_R2_REGION: ${{ vars.CF_R2_REGION || secrets.CF_R2_REGION }}
+        run: |
+          # Exit code 3 = backup refused because the archive shrank, i.e. gh-pages
+          # lost archive files. Fail loudly; other errors (network etc.) are soft.
+          set +e
+          bun run backup:daily
+          status=$?
+          if [ "$status" -eq 3 ]; then
+            echo "❌ Archive shrank compared to the R2 backup — refusing to publish."
+            exit 1
+          elif [ "$status" -ne 0 ]; then
+            echo "⚠️  Archive backup to R2 failed; continuing."
+          fi
+
+      - name: Check out deployed site
+        uses: ./.github/actions/checkout-gh-pages
+
+      # Generated here (not just in fetchData.yml) so the Daily share card and
+      # its page stub flip over in the same commit as the archive, right at
+      # the real midnight boundary — not up to ~3h later on fetchData.yml's
+      # next 6-hourly tick. Best-effort: decorative, must never block the
+      # archive publish below.
+      - name: Generate and publish today's Daily OG card
+        continue-on-error: true
+        uses: ./.github/actions/daily-og
+        with:
+          template: ../gh-pages/404.html
+          out-dir: ./daily
+          r2-access-key-id: ${{ secrets.CF_R2_ACCESS_KEY_ID }}
+          r2-secret-access-key: ${{ secrets.CF_R2_SECRET_ACCESS_KEY }}
+          r2-account-id: ${{ secrets.CF_R2_ACCOUNT_ID }}
+          r2-bucket: ${{ vars.CF_R2_BUCKET || secrets.CF_R2_BUCKET }}
+          r2-region: ${{ vars.CF_R2_REGION || secrets.CF_R2_REGION }}
+          og-cdn-base: ${{ vars.OG_CDN_BASE }}
+
+      - name: Publish daily folder (manifests + archive)
+        working-directory: ../gh-pages
+        run: |
+          rm -rf daily
+          cp -r "$GITHUB_WORKSPACE/daily" daily
+
+      - name: Configure git bot identity
+        uses: ./.github/actions/git-bot-identity
+
+      - name: Commit and push archive
+        working-directory: ../gh-pages
+        run: |
+          git add daily -f
+          git commit -m "Archive finished daily games [skip ci]" || echo "No changes to commit"
+          git push origin HEAD:gh-pages
+
+      - name: Purge Cloudflare cache for archive index
+        env:
+          CLOUDFLARE_PURGE_KEY: ${{ secrets.CLOUDFLARE_PURGE_KEY }}
+          CLOUDFLARE_ZONE: ${{ secrets.CF_ZONE }}
+        run: |
+          if [ -z "$CLOUDFLARE_PURGE_KEY" ] || [ -z "$CLOUDFLARE_ZONE" ]; then
+            echo "ℹ️  No purge credentials; skipping cache purge."
+            exit 0
+          fi
+          curl -sS -X POST "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE}/purge_cache" \
+            -H "Authorization: Bearer ${CLOUDFLARE_PURGE_KEY}" \
+            -H "Content-Type: application/json" \
+            --data '{"files":["https://alkometriikka.fi/daily/archive/index.json"]}' || \
+            echo "⚠️  Cache purge failed; continuing."

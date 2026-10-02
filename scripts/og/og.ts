@@ -202,14 +202,14 @@ export function ogDesignFingerprint(): Promise<string> {
 /* Rendering                                                                  */
 /* -------------------------------------------------------------------------- */
 
-const RED = '#e51b15';
-const INK = '#18181c';
-const SLATE = '#5b5b62';
+export const RED = '#e51b15';
+export const INK = '#18181c';
+export const SLATE = '#5b5b62';
 const FAINT = '#909099';
 
-type El = { type: string; props: Record<string, unknown> };
+export type El = { type: string; props: Record<string, unknown> };
 
-function el(
+export function el(
 	type: string,
 	props: Record<string, unknown>,
 	...children: Array<El | string | null | undefined>
@@ -250,7 +250,7 @@ let fontsPromise: Promise<
 	{ name: string; data: ArrayBuffer; weight: number; style: string }[]
 > | null = null;
 
-function loadFonts(): Promise<
+export function loadFonts(): Promise<
 	{ name: string; data: ArrayBuffer; weight: number; style: string }[]
 > {
 	fontsPromise ??= (async () =>
@@ -273,7 +273,7 @@ function loadFonts(): Promise<
  * is unavailable (e.g. a bare script test), in which case the caller falls back
  * to a plain monogram tile.
  */
-function loadFavicon(): Promise<ArrayBuffer | undefined> {
+export function loadFavicon(): Promise<ArrayBuffer | undefined> {
 	return (async () => {
 		const file = path.join(import.meta.dir, '..', '..', 'static/favicon.ico');
 		const data = await Bun.file(file).arrayBuffer();

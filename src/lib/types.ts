@@ -125,14 +125,14 @@ export type OgProperties = {
 	url: string;
 };
 
-export type TwitterProperties = {
+export type TwitterProperties = Partial<{
 	title: string;
 	description: string;
-	image: string;
+	image?: string;
 	card: 'summary_large_image';
 	site?: string;
 	creator?: string;
-};
+}>;
 
 export type OGImage = {
 	url: string;
@@ -162,7 +162,31 @@ export type ShareType = (typeof ShareTypes)[keyof typeof ShareTypes];
 export type ShareEvent = `share_${ShareType}`;
 export type ShareViewEvent = `shared_${ShareType}_viewed`;
 
+type ShareState = { url?: string; sid?: string; [key: string]: any }
+type Shares = {[K in ShareEvent | ShareViewEvent]: ShareState};
+
+export type GameTypes = "daily" | "unlimited" | "archive";
+type GameKeys = `${GameTypes}_game`;
+
+type GameState =
+	| {
+			state: 'started';
+			date: string;
+	  }
+	| {
+			state: 'completed';
+			date: string;
+			score: number;
+			questions_right: number;
+	  };
+
+type Games = {[K in GameKeys]: GameState;};
+
 export type AnalyticsEventMap = {
+	calculator_used: { using_saved_values: boolean, state: { percentage: number, volume: number, price: number }, result: {
+		perEuro: number
+		rawAlcohol: number
+	} };
 	open_settings: undefined;
 	export_data: undefined;
 	import_data: undefined;
@@ -172,6 +196,9 @@ export type AnalyticsEventMap = {
 	save_list_template: { name?: string };
 	view_sizes: { product_number: string };
 	show_price_history: { product_number?: string; [key: string]: any };
+	show_product_details: { product_number: string };
+	add_to_compare: { product_number: string };
+	view_compare: { product_numbers: string[]; url: string };
 	scan_barcode: { ean: string; link?: string };
 	scan_qr_code: { type: string; product_number: string; link?: string };
 	preferred_store_changed: {
@@ -181,10 +208,30 @@ export type AnalyticsEventMap = {
 		action?: 'set' | 'change';
 	};
 	show_availability: { product_number?: string; [key: string]: any };
-} & {
-	[K in ShareEvent]: { url?: string; sid?: string; [key: string]: any };
-} & {
-	[K in ShareViewEvent]: { url?: string; sid?: string; [key: string]: any };
-};
+	daily_feedback: {
+		date: string;
+		run_mode: GameTypes;
+		day_number?: number;
+		question_index: number;
+		game_hash: string;
+		wrong_answer: boolean;
+		wrong_price: boolean;
+		wrong_image: boolean;
+		unclear_question: boolean;
+		ui_bug: boolean;
+		other: boolean;
+	};
+	site_feedback: {
+		path: string;
+		version: string;
+		wrong_product_info: boolean;
+		wrong_image: boolean;
+		search_broken: boolean;
+		filters_broken: boolean;
+		page_crash: boolean;
+		ui_bug: boolean;
+		other: boolean;
+	};
+} & Shares & Games
 
 export type AnalyticsEventName = keyof AnalyticsEventMap;

@@ -16,6 +16,8 @@ feed.json
 /og-images.json
 /data.json
 /availability.json
+/daily/
+/static/daily/
 
 # Output
 .output

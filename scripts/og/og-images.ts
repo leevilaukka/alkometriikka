@@ -89,16 +89,69 @@ async function mapPool<T, R>(items: T[], limit: number, fn: (item: T) => Promise
 	return results;
 }
 
-/** Tries to delete objects not in `keep`; produces a warning, never throws. */
-async function pruneTo(client: R2S3Client, keep: Set<string>): Promise<void> {
-	try {
-		const existing = await client.listKeys(`${OG_KEY_PREFIX}/`);
-		const stale = existing.filter((key) => !keep.has(key));
-		for (const key of stale) await client.deleteObject(key);
-		if (stale.length > 0) console.log(`Pruned ${stale.length} object(s)`);
-	} catch (error) {
-		console.warn(`⚠️  Prune skipped: ${error instanceof Error ? error.message : String(error)}`);
+/**
+ * Renders an error with as much diagnostic detail as it carries — name, any
+ * `code` an S3/R2 client attaches, and a `cause` chain — instead of just
+ * `.message`, which for Bun's S3 client is often a useless, generic
+ * "an unexpected error has occurred" with no indication of what failed.
+ */
+function describeError(error: unknown): string {
+	if (!(error instanceof Error)) return String(error);
+	const code = (error as { code?: unknown }).code;
+	const parts = [`${error.name}: ${error.message}`];
+	if (code !== undefined) parts.push(`code=${String(code)}`);
+	if (error.cause !== undefined) {
+		parts.push(`cause=${error.cause instanceof Error ? describeError(error.cause) : String(error.cause)}`);
 	}
+	return parts.join(' | ');
+}
+
+/** Lists keys under `prefix`, retrying transient failures a couple of times. */
+async function listKeysWithRetry(client: R2S3Client, prefix: string): Promise<string[]> {
+	let lastError: unknown;
+	for (let attempt = 1; attempt <= 3; attempt += 1) {
+		try {
+			return await client.listKeys(prefix);
+		} catch (error) {
+			lastError = error;
+			if (attempt < 3) await new Promise((resolve) => setTimeout(resolve, attempt * 1000));
+		}
+	}
+	throw lastError;
+}
+
+/**
+ * Deletes every object not in `keep`. Never throws: each deletion is
+ * isolated (one flaky DELETE can't abort the rest of a multi-thousand-object
+ * batch) and a failed `listKeys` just skips the run with a diagnosable
+ * warning, to be retried next cycle.
+ */
+async function pruneTo(client: R2S3Client, keep: Set<string>, poolSize: number): Promise<void> {
+	let stale: string[];
+	try {
+		const existing = await listKeysWithRetry(client, `${OG_KEY_PREFIX}/`);
+		stale = existing.filter((key) => !keep.has(key));
+	} catch (error) {
+		console.warn(`⚠️  Prune skipped (could not list bucket): ${describeError(error)}`);
+		return;
+	}
+	if (stale.length === 0) return;
+
+	let deleted = 0;
+	const failedKeys: string[] = [];
+	await mapPool(stale, poolSize, async (key) => {
+		try {
+			await client.deleteObject(key);
+			deleted += 1;
+		} catch (error) {
+			failedKeys.push(key);
+			if (failedKeys.length <= 5) console.warn(`  ✗ prune ${key}: ${describeError(error)}`);
+		}
+	});
+	console.log(
+		`Pruned ${deleted}/${stale.length} object(s)` +
+			(failedKeys.length > 0 ? ` — ${failedKeys.length} failed to delete` : '')
+	);
 }
 
 async function main() {
@@ -190,7 +243,7 @@ async function main() {
 				const previousKey = manifest[id];
 				if (previousKey !== undefined) keep.add(previousKey);
 			}
-			await pruneTo(client!, keep);
+			await pruneTo(client!, keep, poolSize);
 			console.log(
 				`Upload complete: ${uploaded} uploaded, ${failed} failed | manifest → ${uploadManifest}`
 			);
@@ -311,15 +364,21 @@ async function main() {
 	process.off('SIGINT', onSignal);
 	process.off('SIGTERM', onSignal);
 
-	if (client && failures.length === 0) {
+	if (client) {
 		// Only delete objects no manifest has ever referenced. Adding *every*
 		// previous key (not just the ones still in the dataset) means a run
 		// against a partial/incomplete dataset can never prune images that the
 		// deployed site still uses — which is exactly how the bucket's storage
 		// collapsed in the first place. Prune = delete true garbage only.
+		//
+		// This is why prune can safely run even when `failures.length > 0`: a
+		// failed product's old key is already protected via `previous`, so a
+		// handful of flaky image fetches (routine at this scale, against an
+		// external CDN) can never make prune unsafe — only pointless if gated
+		// on zero failures, which is what silently blocked cleanup here.
 		const wanted = new Set(Object.values(current));
 		for (const previousKey of Object.values(previous)) wanted.add(previousKey);
-		await pruneTo(client, wanted);
+		await pruneTo(client, wanted, poolSize);
 	}
 
 	await Bun.write(targetManifest, JSON.stringify(current));

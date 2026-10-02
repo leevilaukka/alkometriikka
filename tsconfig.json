@@ -4,6 +4,7 @@
 		"types": ["bun", "svelte"], 
 		"lib": ["ESNext", "DOM"],
 		"allowJs": true,
+		"allowImportingTsExtensions": true,
 		"checkJs": true,
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,

@@ -1,0 +1,12 @@
+name: Check out deployed site
+description: >-
+  Fetches the gh-pages branch and adds it as a detached worktree at
+  ../gh-pages, so the calling job can read or copy files from the live site.
+runs:
+  using: composite
+  steps:
+    - name: Check out deployed site
+      shell: bash
+      run: |
+        git fetch origin gh-pages
+        git worktree add --detach ../gh-pages origin/gh-pages

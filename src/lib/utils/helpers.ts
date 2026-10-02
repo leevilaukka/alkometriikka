@@ -22,6 +22,7 @@ import {
 import { formatValue, type FormatOpts } from './format';
 import { LocalStorageManager } from './storage';
 import { replaceState } from '$app/navigation';
+import { page } from '$app/state';
 
 export function headerToUnitMarker(header: ColumnNames) {
 	if (Object.hasOwn(filterToUnitMarker, header))
@@ -216,14 +217,15 @@ export async function handleShare({
 		return true;
 	}
 
-	await navigator.clipboard.writeText(shareUrl);
+	const clipboardText = text.trim() ? `${text}\n\n${shareUrl}` : shareUrl;
+	await navigator.clipboard.writeText(clipboardText);
 
 	completeShare();
 
 	return false;
 }
 
-export function shareTypeFromRoute(routeId: string | null | undefined): ShareType {
+export function shareTypeFromRoute(routeId: typeof page.route.id): ShareType {
 	switch (routeId) {
 		case '/':
 			return ShareTypes.Filters;
@@ -233,6 +235,12 @@ export function shareTypeFromRoute(routeId: string | null | undefined): ShareTyp
 			return ShareTypes.Product;
 		case '/vastaavat/[...id]':
 			return ShareTypes.Similar;
+		case '/vertailu':
+			return ShareTypes.Compare;
+		case "/daily":
+		case "/daily/arkisto":
+		case "/daily/arkisto/[date]":
+			return ShareTypes.DailyGame
 		default:
 			return ShareTypes.Default;
 	}
@@ -336,9 +344,13 @@ export function setSEO({
 }) {
 	const metaDescription = document.querySelector('meta[name="description"]');
 	const metaKeywords = document.querySelector('meta[name="keywords"]');
+	
 	if (metaDescription && description) {
 		metaDescription.setAttribute('content', description);
+	} else if (metaDescription) {
+		metaDescription.setAttribute('content', defaultSEOData.description);
 	}
+
 	if (metaKeywords && keywords) {
 		metaKeywords.setAttribute('content', `${keywords}, ${defaultSEOData.keywords}`);
 	} else if (metaKeywords) {
@@ -349,6 +361,8 @@ export function setSEO({
 			const metaTag = document.querySelector(`meta[property="og:${key}"]`);
 			if (metaTag && value) {
 				metaTag.setAttribute('content', String(value));
+			} else if (metaTag && !value) {
+				metaTag.setAttribute('content', defaultSEOData.og[key as keyof typeof defaultSEOData.og] as string);
 			}
 		}
 	}
@@ -361,6 +375,8 @@ export function setSEO({
 			const metaTag = document.querySelector(`meta[property="og:image:${key}"]`);
 			if (metaTag && value) {
 				metaTag.setAttribute('content', String(value));
+			} else if (metaTag && !value) {
+				metaTag.setAttribute('content', defaultSEOData.image[key as keyof typeof defaultSEOData.image] as string);
 			}
 		}
 	}
@@ -369,6 +385,8 @@ export function setSEO({
 			const metaTag = document.querySelector(`meta[name="twitter:${key}"]`);
 			if (metaTag && value) {
 				metaTag.setAttribute('content', String(value));
+			} else if (metaTag && !value) {
+				metaTag.setAttribute('content', defaultSEOData.twitter[key as keyof typeof defaultSEOData.twitter] as string);
 			}
 		}
 	}

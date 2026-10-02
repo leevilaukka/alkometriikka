@@ -9,14 +9,19 @@
 		"build": "vite build && bun run prerender:products",
 		"prerender:products": "bun run scripts/site/prerender-products.ts",
 		"og:images": "bun run scripts/og/og-images.ts",
+		"r2": "bun run scripts/r2/cli.ts",
+		"sitemap": "bun run scripts/site/sitemap.ts",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"test": "node --test tests/product-variants.test.ts",
 		"format": "prettier --write .",
 		"lint": "prettier --check .",
 		"migrate": "bun run scripts/data/migrate.ts",
-		"sync": "bun run scripts/data/index.ts"
+		"sync": "bun run scripts/data/index.ts",
+		"daily": "bun run scripts/site/daily.ts",
+		"backup:daily": "bun run scripts/site/backup-archive.ts"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^6.1.1",

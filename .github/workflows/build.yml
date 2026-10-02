@@ -19,23 +19,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install Bun
-        uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: latest
+      - name: Set up Bun
+        uses: ./.github/actions/setup
 
-      - name: Cache Bun dependencies
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.bun
-            node_modules
-          key: ${{ runner.os }}-bun-${{ hashFiles('bun.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-bun-
-
-      - name: Install dependencies
-        run: bun i --frozen-lockfile
+      # Includes the pinned-manifest guard: a generator change without a
+      # DAILY_GAME_VERSION bump must never deploy (live manifests would stop
+      # verifying and players would get an error instead of the daily game).
+      - name: Run tests
+        run: bunx svelte-kit sync && bun test
 
       - name: Seed latest deployed dataset
         run: |
@@ -75,15 +66,42 @@ jobs:
       # must be present in the deploy even when nothing changed. Restore the
       # last deployed pages first so the incremental prerender below can skip
       # untouched products and so a skip keeps the existing pages on gh-pages.
-      - name: Restore last deployed product pages
+      - name: Restore last deployed product and category pages
         run: |
           # Restore each path separately: git archive fails as a whole when any
           # one pathspec is missing (e.g. the manifest on the first run after
           # adding it), which would otherwise silently drop the pages too.
           git archive origin/gh-pages tuotteet 2>/dev/null | tar -x -C build/ || true
           git archive origin/gh-pages tuotteet-manifest.json 2>/dev/null | tar -x -C build/ || true
+          git archive origin/gh-pages kategoriat 2>/dev/null | tar -x -C build/ || true
 
-      - name: Prerender product pages
+      # The daily manifests are immutable pins: once baked, a date must never
+      # change. Restoring them here (inside build/, same as tuotteet) — instead
+      # of later into the repo root — keeps them through the `rm -rf !(build)`
+      # pruning and the force-push, so a stale/broken restore can never wipe
+      # them and let a later bake re-seed an in-flight game. Keep the restored
+      # copy (fetchData re-bakes with the same seed because the pins exist).
+      - name: Restore pre-baked daily games into build output
+        run: |
+          set -e
+          if git archive origin/gh-pages daily 2>/dev/null | tar -x -C build/ && [ -d build/daily ] && [ -n "$(ls -A build/daily)" ]; then
+            for legacy in build/daily/arkisto build/daily/arkisto-data; do
+              if [ -d "$legacy" ]; then
+                if [ ! -d build/daily/archive ]; then
+                  mv "$legacy" build/daily/archive
+                else
+                  cp -rn "$legacy"/* build/daily/archive/ 2>/dev/null || true
+                  rm -rf "$legacy"
+                fi
+              fi
+            done
+            echo "✅ Restored $(ls build/daily | wc -l) daily files from gh-pages"
+          else
+            echo "❌ daily/ was not restored — refusing to deploy so clients never see a re-baked game."
+            exit 1
+          fi
+
+      - name: Prerender product and category pages
         if: steps.prerender-gate.outputs.changed == 'true'
         run: |
           bun run scripts/site/prerender-products.ts \
@@ -133,17 +151,18 @@ jobs:
           echo "alkometriikka.fi" > CNAME
           touch .nojekyll
 
+      - name: Configure git bot identity
+        uses: ./.github/actions/git-bot-identity
+
       - name: Push build to gh-pages branch
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git checkout -b gh-pages
           git add .
           # Runtime datasets are gitignored, so `git add .` skips them. Force-add
           # them so the force-push to gh-pages preserves the data deployed by
           # fetchData.yml instead of deleting it on every site build.
-          for f in data.json availability.json sitemap.xml rss.xml feed.json rss og-images.json tuotteet-manifest.json; do
-            if [ -f "$f" ]; then git add -f "$f"; fi
+          for f in data.json availability.json sitemap.xml rss.xml feed.json rss og-images.json daily tuotteet-manifest.json; do
+            if [ -e "$f" ]; then git add -f "$f"; fi
           done
           git commit -m "Deploy to GitHub Pages [skip ci]" || echo "No changes to commit"
           git push origin gh-pages --force

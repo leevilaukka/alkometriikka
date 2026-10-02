@@ -484,6 +484,42 @@
                     "type": "image/x-icon"
                 }
             ]
+        },
+        {
+            "name": "Laskin",
+            "short_name": "Laskin",
+            "url": "/laskin",
+            "icons": [
+                {
+                    "src": "/favicon.ico",
+                    "sizes": "256x256",
+                    "type": "image/x-icon"
+                }
+            ]
+        },
+        {
+            "name": "Tilastot",
+            "short_name": "Tilastot",
+            "url": "/tilastot",
+            "icons": [
+                {
+                    "src": "/favicon.ico",
+                    "sizes": "256x256",
+                    "type": "image/x-icon"
+                }
+            ]
+        },
+        {
+            "name": "Myymälät",
+            "short_name": "Myymälät",
+            "url": "/myymalat",
+            "icons": [
+                {
+                    "src": "/favicon.ico",
+                    "sizes": "256x256",
+                    "type": "image/x-icon"
+                }
+            ]
         }
     ]
 }

@@ -1,6 +1,7 @@
 import Bun from "bun";
-import { MigratedData } from "../data/types";
+import { MigratedData, StoreData } from "../data/types";
 import { DEV } from "../data/constants";
+import { buildCategoryTree, CATEGORY_BASE_PATH } from "../../src/lib/utils/categories.ts";
 
 type SitemapEntry = {
     loc: string;
@@ -11,15 +12,15 @@ type SitemapEntry = {
 };
 
 type StoreList = {
-    stores: Record<string, any>;
+    stores: Record<string, StoreData>;
 };
 
 async function main() {
     const productFile = Bun.file(DEV ? "./static/data.json" : "./data.json");
     const availabilityFile = Bun.file(DEV ? "./static/availability.json" : "./availability.json");
     const sitemapEntries: SitemapEntry[] = [];
-    const { products } = await productFile.json() as MigratedData;
-    const { stores } = await availabilityFile.json() as { stores: Record<string, any> };
+    const { schema, products } = await productFile.json() as MigratedData;
+    const { stores } = await availabilityFile.json() as StoreList;
 
     if (products === undefined) {
         console.error("No products found in the data file.");
@@ -38,6 +39,25 @@ async function main() {
         });
     }
 
+    const typeIndex = schema.indexOf("Tyyppi");
+    const subTypeIndex = schema.indexOf("Alatyyppi");
+    const categoryTree = buildCategoryTree(
+        Object.values(products)
+            .filter((product) => product && Array.isArray(product.values))
+            .map((product) => ({
+                type: product.values[typeIndex],
+                subType: product.values[subTypeIndex],
+                removed: Boolean(product.meta?.removedFromSelection)
+            }))
+    );
+    sitemapEntries.push({ loc: `${CATEGORY_BASE_PATH}/`, priority: 0.7, changeFreq: "weekly" });
+    for (const type of categoryTree) {
+        sitemapEntries.push({ loc: type.path, priority: 0.8, changeFreq: "daily" });
+        for (const subType of type.children) {
+            sitemapEntries.push({ loc: subType.path, priority: 0.8, changeFreq: "daily" });
+        }
+    }
+
     for (const store of Object.keys(stores)) {
         if (!store || typeof store !== "string") continue;
         sitemapEntries.push({
@@ -53,7 +73,8 @@ async function main() {
 
 
 function generateSitemapXML(entries: SitemapEntry[]) {
-    const header = `<?xml version="1.0" encoding="UTF-8"?>\n` +
+    const header = 
+    `<?xml version="1.0" encoding="UTF-8"?>\n` +
         `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n` +
         `  <url>\n` +
         `    <loc>https://alkometriikka.fi/</loc>\n` +
@@ -61,9 +82,29 @@ function generateSitemapXML(entries: SitemapEntry[]) {
         `    <changefreq>daily</changefreq>\n` +
         `  </url>\n` +
         `  <url>\n` +
+        `    <loc>https://alkometriikka.fi/daily/</loc>\n` +
+        `    <priority>0.7</priority>\n` +
+        `    <changefreq>daily</changefreq>\n` +
+        `  </url>\n` +
+        `  <url>\n` +
+        `    <loc>https://alkometriikka.fi/daily/arkisto/</loc>\n` +
+        `    <priority>0.6</priority>\n` +
+        `    <changefreq>daily</changefreq>\n` +
+        `  </url>\n` +
+        `  <url>\n` +
         `    <loc>https://alkometriikka.fi/listat/</loc>\n` +
-        `    <priority>0.8</priority>\n` +
+        `    <priority>0.6</priority>\n` +
         `    <changefreq>never</changefreq>\n` +
+        `  </url>\n` +
+        `  <url>\n` +
+        `    <loc>https://alkometriikka.fi/tilastot/</loc>\n` +
+        `    <priority>0.6</priority>\n` +
+        `    <changefreq>weekly</changefreq>\n` +
+        `  </url>\n` +
+        `  <url>\n` +
+        `    <loc>https://alkometriikka.fi/laskin/</loc>\n` +
+        `    <priority>0.6</priority>\n` +
+        `    <changefreq>weekly</changefreq>\n` +
         `  </url>\n` +
         `  <url>\n` +
         `    <loc>https://alkometriikka.fi/myymalat/</loc>\n` +
