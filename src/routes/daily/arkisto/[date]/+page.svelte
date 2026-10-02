@@ -15,7 +15,6 @@
 		saveArchiveRuns
 	} from '$lib/daily/storage';
 	import type { ArchiveGame, ArchiveIndex, ArchiveProduct } from '$lib/daily/manifest';
-	import { base } from '$app/paths';
 	import { page } from '$app/state';
 	import { generateTitle, sendAnalyticsEvent, setSEO } from '$lib/utils/helpers';
 	import ProductImage from '$lib/components/widgets/ProductImage.svelte';
@@ -78,7 +77,7 @@
 		loadError = null;
 		try {
 			if (!/^\d{4}-\d{2}-\d{2}$/.test(forDate)) throw new Error('Päivää ei ole vielä arkistoitu');
-			const response = await fetch(`${base}/daily/archive/${forDate}.json`);
+			const response = await fetch(`/daily/archive/${forDate}.json`);
 			if (response.status === 404) throw new Error('Päivää ei ole vielä arkistoitu');
 			if (!response.ok) throw new Error(`HTTP ${response.status}`);
 			let parsed: ArchiveGame;
@@ -99,7 +98,7 @@
 
 	async function loadIndex() {
 		try {
-			const response = await fetch(`${base}/daily/archive/index.json`);
+			const response = await fetch(`/daily/archive/index.json`);
 			if (response.status !== 200) {
 				index = { version: 1, dates: [] };
 				return;
