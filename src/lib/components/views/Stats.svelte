@@ -44,13 +44,23 @@ import { Kaljakori } from '$lib/alko';
 			'€/l'
 		)
 	);
-	const typeDistribution = $derived(topCategories(categoryDistribution(items, AllColumns.Type), 12));
-	const subtypeDistribution = $derived(
-		topCategories(subcategoryDistribution(items), 10)
-	);
-	const countryDistribution = $derived(
-		topCategories(categoryDistribution(items, AllColumns.Country), 12)
-	);
+	const allTypes = $derived(categoryDistribution(items, AllColumns.Type));
+	const allSubtypes = $derived(subcategoryDistribution(items));
+	const allCountries = $derived(categoryDistribution(items, AllColumns.Country));
+	const typeDistribution = $derived(topCategories(allTypes, 12));
+	const subtypeDistribution = $derived(topCategories(allSubtypes, 10));
+	const countryDistribution = $derived(topCategories(allCountries, 12));
+
+	const sumCounts = (entries: { count: number }[]) =>
+		entries.reduce((sum, entry) => sum + entry.count, 0);
+	const typeTotal = $derived(sumCounts(allTypes));
+	const subtypeTotal = $derived(sumCounts(allSubtypes));
+	const countryTotal = $derived(sumCounts(allCountries));
+
+	const formatShare = (count: number, total: number) =>
+		total > 0 ? `${formatFinNumber((count / total) * 100, 1)} %` : '–';
+	const shareLabels = (entries: { key: string; count: number }[], total: number) =>
+		entries.map((entry) => `${entry.key} (${formatShare(entry.count, total)})`);
 	const cheaps = $derived(bestValueRanks(items, 25));
 	const alcoholBands = $derived(
 		bandHistogram(
@@ -156,7 +166,8 @@ import { Kaljakori } from '$lib/alko';
 	const horizontalBarConfig = (
 		labels: string[],
 		values: number[],
-		colors: string[] | string
+		colors: string[] | string,
+		total?: number
 	): ChartConfiguration => ({
 		type: 'bar',
 		data: {
@@ -179,7 +190,10 @@ import { Kaljakori } from '$lib/alko';
 				legend: { display: false },
 				tooltip: {
 					callbacks: {
-						label: (context) => `${context.formattedValue} tuotetta`
+						label: (context) =>
+							total === undefined
+								? `${context.formattedValue} tuotetta`
+								: `${context.formattedValue} tuotetta (${formatShare(Number(context.raw), total)})`
 					}
 				}
 			},
@@ -200,7 +214,8 @@ import { Kaljakori } from '$lib/alko';
 	const doughnutConfig = (
 		labels: string[],
 		values: number[],
-		colors: string[]
+		colors: string[],
+		total: number
 	): ChartConfiguration<'doughnut'> => ({
 		type: 'doughnut',
 		data: {
@@ -226,7 +241,7 @@ import { Kaljakori } from '$lib/alko';
 				tooltip: {
 					callbacks: {
 						label: (context) =>
-							`${context.label}: ${context.formattedValue} tuotetta (${context.parsed.toLocaleString('fi-FI')})`
+							`${context.label}: ${context.formattedValue} tuotetta (${formatShare(context.parsed, total)})`
 					}
 				}
 			}
@@ -251,20 +266,25 @@ import { Kaljakori } from '$lib/alko';
 	);
 	const typeConfig = $derived(
 		barConfig(
-			typeDistribution.map((entry) => entry.key),
+			shareLabels(typeDistribution, typeTotal),
 			typeDistribution.map((entry) => entry.count),
-			barColor
+			barColor,
+			{
+				tooltipLabel: (context) =>
+					`${context.formattedValue} tuotetta (${formatShare(typeDistribution[context.dataIndex].count, typeTotal)})`
+			}
 		)
 	);
 	const subtypeConfig = $derived(
 		horizontalBarConfig(
-			subtypeDistribution.map((entry) => entry.key),
+			shareLabels(subtypeDistribution, subtypeTotal),
 			subtypeDistribution.map((entry) => entry.count),
-			barColor
+			barColor,
+			subtypeTotal
 		)
 	);
 
-	const countryConfig = $derived(doughnutConfig(countryDistribution.map((e) => e.key), countryDistribution.map((e) => e.count),
+	const countryConfig = $derived(doughnutConfig(shareLabels(countryDistribution, countryTotal), countryDistribution.map((e) => e.count),
 		[
 			'#E51B15',
 			'#EF6C00',
@@ -279,7 +299,8 @@ import { Kaljakori } from '$lib/alko';
 			'#6D4C41',
 			'#546E7A',
 			'#FF7043',
-		]
+		],
+		countryTotal
 	));
 
 	const alcoholConfig = $derived(
