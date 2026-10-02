@@ -27,6 +27,48 @@ export function initFilterValues(
 	);
 }
 
+/**
+ * Returns the sub filter shown nested under `filter`, if any. Sub filters that are
+ * also shown on their own (e.g. Alatyyppi under Tyyppi) aren't nested.
+ */
+export function getNestedSubFilter(filter: ColumnNames): ColumnNames | undefined {
+	const child = subCategoryMap[filter as keyof typeof subCategoryMap];
+	if (!child || (shownFilters as readonly ColumnNames[]).includes(child)) return undefined;
+	return child;
+}
+
+/**
+ * Returns the parent of `filter` when both are shown on their own (e.g. Tyyppi for
+ * Alatyyppi), in which case the parent narrows the options of `filter`.
+ */
+export function getShownParentFilter(filter: ColumnNames): ColumnNames | undefined {
+	const shown = shownFilters as readonly ColumnNames[];
+	if (!shown.includes(filter)) return undefined;
+	const parent = (Object.keys(subCategoryMap) as (keyof typeof subCategoryMap)[]).find(
+		(key) => subCategoryMap[key] === filter
+	);
+	return parent && shown.includes(parent) ? parent : undefined;
+}
+
+/**
+ * Values of `filter` limited to those matching the selections of its shown parent filter.
+ */
+export function getNarrowedFilterValues(
+	filter: ColumnNames,
+	filterValues: FilterValues,
+	kaljakori: Kaljakori,
+	showRemoved: boolean = true
+) {
+	const values = kaljakori.getFilterValues(filter, showRemoved);
+	const parent = getShownParentFilter(filter);
+	const parentValue = parent && filterValues[parent];
+	if (!parent || !Array.isArray(parentValue) || !parentValue.length) return values;
+	const allowed = new Set<string | number>(
+		kaljakori.getSubFilterValues(parent, { [parent]: parentValue } as FilterValues, showRemoved)
+	);
+	return values.filter((value) => allowed.has(value));
+}
+
 export function searchParametersFromFilterValues(
 	filterValues: FilterValues,
 	kaljakori: Kaljakori,

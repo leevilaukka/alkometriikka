@@ -146,12 +146,12 @@
 								{formatValue(delta.product[AllColumns.PricePerLiter], AllColumns.PricePerLiter)}
 							</span>
 						</div>
-						<div class="grid grid-cols-2 overflow-hidden rounded border border-primary">
-							<div class="flex flex-col border-r border-primary px-1.5 py-1">
+						<div class="flex flex-col overflow-hidden rounded border border-primary">
+							<div class="flex items-baseline justify-between gap-1.5 border-b border-primary px-1.5 py-1">
 								<span class="text-[10px] text-secondary">Hinta</span>
 								<strong
 									class={twMerge(
-										'text-sm',
+										'text-sm whitespace-nowrap tabular-nums',
 										delta.deltaPrice < 0
 											? 'text-green-700 dark:text-green-400'
 											: delta.deltaPrice > 0
@@ -162,11 +162,11 @@
 									{formatDelta(delta.deltaPrice, '€')}
 								</strong>
 							</div>
-							<div class="flex flex-col px-1.5 py-1">
+							<div class="flex items-baseline justify-between gap-1.5 px-1.5 py-1">
 								<span class="text-[10px] text-secondary">g/€</span>
 								<strong
 									class={twMerge(
-										'text-sm',
+										'text-sm whitespace-nowrap tabular-nums',
 										delta.deltaGramsPerEuro > 0
 											? 'text-green-700 dark:text-green-400'
 											: delta.deltaGramsPerEuro < 0

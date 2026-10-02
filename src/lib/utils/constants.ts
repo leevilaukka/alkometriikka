@@ -122,6 +122,7 @@ export const undefinedToZeroColumns = [
 export const shownFilters = [
 	AllColumns.Name,
 	AllColumns.Manufacturer,
+	AllColumns.Type,
 	AllColumns.SubType,
 	AllColumns.BottleSize,
 	AllColumns.Price,
