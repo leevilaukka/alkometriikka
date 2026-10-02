@@ -68,7 +68,8 @@ export class Kaljakori {
 	minAndMaxValues: ([number, number] | null)[] = [];
 	minAndMaxValuesActive: ([number, number] | null)[] = [];
 	subValues: Record<string, Record<string, Set<any>>> = {};
-	private readonly productVariants: ProductVariantIndex;
+	private readonly declaredBottleSizes = new Set<PriceListItem>();
+	private productVariants: ProductVariantIndex | undefined;
 	private categoryTree: CategoryNode[] | undefined;
 
 	constructor(table: DatasetRow[], personalInfo?: PersonalInfo, availability?: AvailabilityData) {
@@ -100,7 +101,7 @@ export class Kaljakori {
 
 		const drunkValuesByColumn: any[][] = [...Array(drunkColumns.length)].map(() => []);
 		const drunkValuesByColumnActive: any[][] = [...Array(drunkColumns.length)].map(() => []);
-		const declaredBottleSizes = new Set<PriceListItem>();
+		const declaredBottleSizes = this.declaredBottleSizes;
 
 		const storeValuesByColumn: any[][] = [...Array(storeColumns.length)].map(() => []);
 		const storeValuesByColumnActive: any[][] = [...Array(storeColumns.length)].map(() => []);
@@ -356,11 +357,11 @@ export class Kaljakori {
 		});
 
 		this.data = this.sortBy(defaultSortingColumn);
-		this.productVariants = new ProductVariantIndex(this.data, declaredBottleSizes);
 		console.log(this.data);
 	}
 
 	findDifferentSizesOfProduct(product: PriceListItem): PriceListItem[] {
+		this.productVariants ??= new ProductVariantIndex(this.data, this.declaredBottleSizes);
 		return this.productVariants.find(product);
 	}
 
