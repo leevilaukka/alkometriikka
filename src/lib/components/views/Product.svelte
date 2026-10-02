@@ -130,7 +130,7 @@
 	class={twMerge('mx-auto flex w-full max-w-7xl flex-col flex-nowrap gap-6 p-6')}
 >
 	<div class="flex w-full items-center gap-3.5">
-		<ProductBreadcrumb {product} class="min-w-0 flex-1" />
+		<ProductBreadcrumb {product} {kaljakori} class="min-w-0 flex-1" />
 		<button
 			type="button"
 			class={twMerge(components.button({ size: 'sm', type: 'positive' }), 'ml-auto flex shrink-0 items-center gap-2')}

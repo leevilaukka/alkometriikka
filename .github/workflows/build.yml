@@ -66,13 +66,14 @@ jobs:
       # must be present in the deploy even when nothing changed. Restore the
       # last deployed pages first so the incremental prerender below can skip
       # untouched products and so a skip keeps the existing pages on gh-pages.
-      - name: Restore last deployed product pages
+      - name: Restore last deployed product and category pages
         run: |
           # Restore each path separately: git archive fails as a whole when any
           # one pathspec is missing (e.g. the manifest on the first run after
           # adding it), which would otherwise silently drop the pages too.
           git archive origin/gh-pages tuotteet 2>/dev/null | tar -x -C build/ || true
           git archive origin/gh-pages tuotteet-manifest.json 2>/dev/null | tar -x -C build/ || true
+          git archive origin/gh-pages kategoriat 2>/dev/null | tar -x -C build/ || true
 
       # The daily manifests are immutable pins: once baked, a date must never
       # change. Restoring them here (inside build/, same as tuotteet) — instead
@@ -100,7 +101,7 @@ jobs:
             exit 1
           fi
 
-      - name: Prerender product pages
+      - name: Prerender product and category pages
         if: steps.prerender-gate.outputs.changed == 'true'
         run: |
           bun run scripts/site/prerender-products.ts \

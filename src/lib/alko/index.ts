@@ -24,6 +24,7 @@ import {
 import { isSimilarString } from '$lib/utils/search';
 import { getSaleInfo } from '../utils/sales';
 import { ProductVariantIndex } from '../utils/product-variants';
+import { buildCategoryTree, type CategoryNode } from '../utils/categories';
 
 function toPositiveNumber(value: unknown): number | null {
 	if (typeof value === 'number') {
@@ -68,6 +69,7 @@ export class Kaljakori {
 	minAndMaxValuesActive: ([number, number] | null)[] = [];
 	subValues: Record<string, Record<string, Set<any>>> = {};
 	private readonly productVariants: ProductVariantIndex;
+	private categoryTree: CategoryNode[] | undefined;
 
 	constructor(table: DatasetRow[], personalInfo?: PersonalInfo, availability?: AvailabilityData) {
 		this.personalInfo = personalInfo || { weight: null, gender: GenderOptionsMap.Unspecified };
@@ -360,6 +362,17 @@ export class Kaljakori {
 
 	findDifferentSizesOfProduct(product: PriceListItem): PriceListItem[] {
 		return this.productVariants.find(product);
+	}
+
+	getCategoryTree(): CategoryNode[] {
+		this.categoryTree ??= buildCategoryTree(
+			this.data.map((item) => ({
+				type: item[AllColumns.Type],
+				subType: item[AllColumns.SubType],
+				removed: item[AllColumns.RemovedFromSelection] === true
+			}))
+		);
+		return this.categoryTree;
 	}
 
 	getFilterKeys() {

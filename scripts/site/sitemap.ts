@@ -1,6 +1,7 @@
 import Bun from "bun";
 import { MigratedData, StoreData } from "../data/types";
 import { DEV } from "../data/constants";
+import { buildCategoryTree, CATEGORY_BASE_PATH } from "../../src/lib/utils/categories.ts";
 
 type SitemapEntry = {
     loc: string;
@@ -18,7 +19,7 @@ async function main() {
     const productFile = Bun.file(DEV ? "./static/data.json" : "./data.json");
     const availabilityFile = Bun.file(DEV ? "./static/availability.json" : "./availability.json");
     const sitemapEntries: SitemapEntry[] = [];
-    const { products } = await productFile.json() as MigratedData;
+    const { schema, products } = await productFile.json() as MigratedData;
     const { stores } = await availabilityFile.json() as StoreList;
 
     if (products === undefined) {
@@ -36,6 +37,25 @@ async function main() {
             imageLoc: generateImageLoc(product.values[0] as string),
             priority: 0.7,
         });
+    }
+
+    const typeIndex = schema.indexOf("Tyyppi");
+    const subTypeIndex = schema.indexOf("Alatyyppi");
+    const categoryTree = buildCategoryTree(
+        Object.values(products)
+            .filter((product) => product && Array.isArray(product.values))
+            .map((product) => ({
+                type: product.values[typeIndex],
+                subType: product.values[subTypeIndex],
+                removed: Boolean(product.meta?.removedFromSelection)
+            }))
+    );
+    sitemapEntries.push({ loc: `${CATEGORY_BASE_PATH}/`, priority: 0.7, changeFreq: "weekly" });
+    for (const type of categoryTree) {
+        sitemapEntries.push({ loc: type.path, priority: 0.8, changeFreq: "daily" });
+        for (const subType of type.children) {
+            sitemapEntries.push({ loc: subType.path, priority: 0.8, changeFreq: "daily" });
+        }
     }
 
     for (const store of Object.keys(stores)) {

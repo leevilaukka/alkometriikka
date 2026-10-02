@@ -4,6 +4,16 @@ import Bun, { CryptoHasher } from "bun";
 import { getSaleInfo, toISODateInTimeZone } from "../../src/lib/utils/sales.ts";
 import { ogImageUrl } from "../og/og";
 import { OG_IMAGE_WIDTH, OG_IMAGE_HEIGHT } from "../og/og";
+import {
+  buildCategoryTree,
+  categoryDescription,
+  categorySlug,
+  categoryTitle,
+  CATEGORY_BASE_PATH,
+  CATEGORY_INDEX_DESCRIPTION,
+  findProductCategoryTrail,
+  type CategoryNode
+} from "../../src/lib/utils/categories.ts";
 
 type ProductRecord = {
   values: unknown[];
@@ -28,7 +38,7 @@ type PrerenderManifest = Record<string, PrerenderManifestEntry>;
 // Bump when the page rendering logic (productHtml, minifyHtml, the SEO
 // template, ...) changes in a way that can alter existing pages without the
 // template or product data changing, forcing a full re-render.
-const RENDER_VERSION = 2;
+const RENDER_VERSION = 3;
 
 function sha256Hex(value: string): string {
   const hasher = new CryptoHasher("sha256");
@@ -39,12 +49,14 @@ function sha256Hex(value: string): string {
 // Content-addressable key for a product page. Every input that can change the
 // rendered HTML — the rendering logic version, the schema, the raw product
 // data, the page template (new JS/CSS hashes invalidate every page) and the
-// product's OG image key — is hashed, so unchanged pages can be skipped.
+// product's OG image key and category trail — is hashed, so unchanged pages
+// can be skipped.
 function productKey(
   schema: readonly string[],
   product: ProductRecord,
   templateFingerprint: string,
-  ogKey: string | null
+  ogKey: string | null,
+  categoryTrail: CategoryNode[]
 ): string {
   return sha256Hex(
     JSON.stringify([
@@ -54,7 +66,8 @@ function productKey(
       product.meta ?? null,
       product.priceHistory ?? null,
       templateFingerprint,
-      ogKey
+      ogKey,
+      categoryTrail.map((node) => [node.name, node.path])
     ])
   );
 }
@@ -314,7 +327,8 @@ function productHtml(
   template: string,
   schema: string[],
   product: ProductRecord,
-  ogImageKey: string | null
+  ogImageKey: string | null,
+  categoryTrail: CategoryNode[]
 ): { html: string; id: string } {
   const fields = Object.fromEntries(schema.map((column, index) => [column, product.values[index]]));
   const id = asText(fields.Numero);
@@ -432,18 +446,10 @@ function productHtml(
     }
   };
 
-  // Only two levels: there's no indexable category-listing page to point an
-  // intermediate crumb at (the /tuotteet route is a catch-all for individual
-  // products, not a filterable category page), and a breadcrumb item's URL
-  // must resolve to a real page.
-  const breadcrumbList = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Alkometriikka", item: `${SITE_URL}/` },
-      { "@type": "ListItem", position: 2, name, item: url }
-    ]
-  };
+  const breadcrumbList = breadcrumbJsonLd([
+    ...categoryTrail.map((node) => ({ name: node.name, url: `${SITE_URL}${node.path}` })),
+    { name, url }
+  ]);
 
   const metadata = [
     `\t<meta name="description" content="${escapeHtml(description)}" />`,
@@ -487,7 +493,7 @@ function productHtml(
 
   const fallback = `
 \t<article data-prerendered-product style="max-width:80rem;margin:0 auto;padding:2rem;font-family:sans-serif">
-\t\t<nav><a href="/">Alkometriikka</a></nav>
+\t\t${breadcrumbNav(categoryTrail)}
 \t\t<header>
 \t\t\t<h1>${escapeHtml(name)}</h1>
 \t\t\t${manufacturer ? `<p>${escapeHtml(manufacturer)}</p>` : ""}
@@ -502,6 +508,187 @@ function productHtml(
   html = html.replace(/<title>[^<]*<\/title>/, `<title>${escapeHtml(title)}</title>`);
   html = html.replace(/(<body(?:\s[^>]*)?>)/, `$1${fallback}`);
   return { html: minifyHtml(html), id };
+}
+
+function breadcrumbJsonLd(items: { name: string; url: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [{ name: "Alkometriikka", url: `${SITE_URL}/` }, ...items].map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: item.url
+    }))
+  };
+}
+
+function breadcrumbNav(trail: CategoryNode[]): string {
+  return `<nav>${[{ name: "Alkometriikka", path: "/" }, ...trail]
+    .map((node) => `<a href="${escapeHtml(node.path)}">${escapeHtml(node.name)}</a>`)
+    .join(" › ")}</nav>`;
+}
+
+type CategoryProduct = {
+  id: string;
+  name: string;
+  price: number;
+  alcoholPerEuro: number;
+  typeSlug: string;
+  subTypeSlug: string;
+};
+
+const CATEGORY_LIST_LIMIT = 100;
+const CATEGORY_ITEM_LIST_LIMIT = 20;
+
+function categoryProduct(schema: string[], product: ProductRecord): CategoryProduct | null {
+  if (product.meta?.removedFromSelection) return null;
+  const fields = Object.fromEntries(schema.map((column, index) => [column, product.values[index]]));
+  const id = asText(fields.Numero);
+  const price = asNumber(fields.Hinta);
+  if (!id || !price) return null;
+  const volume = asNumber(fields.Pullokoko) ?? 0;
+  const percentage = asNumber(fields["Alkoholi-%"]) ?? 0;
+  return {
+    id,
+    name: asText(fields.Nimi) || `Tuote ${id}`,
+    price,
+    // Same ordering as the app's default sort (alcohol grams per euro)
+    alcoholPerEuro: (volume * percentage) / price,
+    typeSlug: categorySlug(asText(fields.Tyyppi)),
+    subTypeSlug: categorySlug(asText(fields.Alatyyppi))
+  };
+}
+
+/** Renders a category page, or the /kategoriat/ index when `trail` is empty. */
+function categoryHtml(
+  template: string,
+  tree: CategoryNode[],
+  trail: CategoryNode[],
+  products: CategoryProduct[]
+): string {
+  const node = trail.at(-1);
+  const name = node ? categoryTitle(trail) : "Kategoriat";
+  const title = `${name} - Alkometriikka`;
+  const description = node ? categoryDescription(trail) : CATEGORY_INDEX_DESCRIPTION;
+  const url = `${SITE_URL}${node ? node.path : `${CATEGORY_BASE_PATH}/`}`;
+  const ogImage = `${SITE_URL}/images/og_image.png`;
+  const links = node ? (trail.length > 1 ? [] : node.children) : tree;
+  const productUrl = (product: CategoryProduct) => `${SITE_URL}/tuotteet/${encodeURIComponent(product.id)}/`;
+
+  const breadcrumbList = breadcrumbJsonLd([
+    ...(node ? [] : [{ name: "Kategoriat", url }]),
+    ...trail.map((item) => ({ name: item.name, url: `${SITE_URL}${item.path}` }))
+  ]);
+  const collectionPage = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": url,
+    url,
+    name,
+    description,
+    inLanguage: "fi-FI",
+    isPartOf: { "@type": "WebSite", name: "Alkometriikka", url: `${SITE_URL}/` },
+    ...(node
+      ? {
+          mainEntity: {
+            "@type": "ItemList",
+            numberOfItems: node.count,
+            itemListElement: products.slice(0, CATEGORY_ITEM_LIST_LIMIT).map((product, index) => ({
+              "@type": "ListItem",
+              position: index + 1,
+              name: product.name,
+              url: productUrl(product)
+            }))
+          }
+        }
+      : {})
+  };
+
+  const metadata = [
+    `\t<meta name="description" content="${escapeHtml(description)}" />`,
+    `\t<meta name="keywords" content="${escapeHtml(["alko", ...trail.map((item) => item.name)].join(", "))}" />`,
+    `\t<link rel="canonical" href="${escapeHtml(url)}" />`,
+    `\t<meta property="og:type" content="website" />`,
+    `\t<meta property="og:title" content="${escapeHtml(title)}" />`,
+    `\t<meta property="og:url" content="${escapeHtml(url)}" />`,
+    `\t<meta property="og:description" content="${escapeHtml(description)}" />`,
+    `\t<meta property="og:site_name" content="Alkometriikka" />`,
+    `\t<meta property="og:image" content="${escapeHtml(ogImage)}" />`,
+    `\t<meta property="og:image:width" content="${OG_IMAGE_WIDTH}" />`,
+    `\t<meta property="og:image:height" content="${OG_IMAGE_HEIGHT}" />`,
+    `\t<meta property="og:image:alt" content="Alkometriikka logo" />`,
+    `\t<meta name="twitter:card" content="summary_large_image" />`,
+    `\t<meta name="twitter:title" content="${escapeHtml(title)}" />`,
+    `\t<meta name="twitter:description" content="${escapeHtml(description)}" />`,
+    `\t<meta name="twitter:image" content="${escapeHtml(ogImage)}" />`,
+    `\t<script type="application/ld+json">${escapeJson(collectionPage)}</script>`,
+    `\t<script type="application/ld+json">${escapeJson(breadcrumbList)}</script>`
+  ].join("\n");
+
+  const linkList = links.length
+    ? `<ul>${links
+        .map((item) => `<li><a href="${escapeHtml(item.path)}">${escapeHtml(item.name)}</a> (${item.count})</li>`)
+        .join("")}</ul>`
+    : "";
+  const productList = products.length
+    ? `<ol>${products
+        .slice(0, CATEGORY_LIST_LIMIT)
+        .map(
+          (product) =>
+            `<li><a href="/tuotteet/${escapeHtml(encodeURIComponent(product.id))}/">${escapeHtml(product.name)}</a> ${escapeHtml(
+              formatNumber(product.price, "€")
+            )}</li>`
+        )
+        .join("")}</ol>`
+    : "";
+
+  const fallback = `
+\t<article data-prerendered-category style="max-width:80rem;margin:0 auto;padding:2rem;font-family:sans-serif">
+\t\t${breadcrumbNav(trail.slice(0, -1))}
+\t\t<h1>${escapeHtml(node ? node.name : "Kategoriat")}</h1>
+\t\t<p>${escapeHtml(description)}</p>
+\t\t${linkList}
+\t\t${productList}
+\t</article>
+\t<script>document.querySelector('[data-prerendered-category]')?.remove();document.currentScript?.remove();</script>`;
+
+  let html = replaceMarkedSection(template, metadata);
+  html = html.replace(/<title>[^<]*<\/title>/, `<title>${escapeHtml(title)}</title>`);
+  html = html.replace(/(<body(?:\s[^>]*)?>)/, `$1${fallback}`);
+  return minifyHtml(html);
+}
+
+/** Category pages are few and cheap, so they're fully regenerated every run. */
+async function renderCategoryPages(
+  outputPath: string,
+  template: string,
+  tree: CategoryNode[],
+  products: CategoryProduct[]
+): Promise<number> {
+  const categoriesPath = path.join(outputPath, ...CATEGORY_BASE_PATH.split("/").filter(Boolean));
+  await rm(categoriesPath, { recursive: true, force: true });
+  const sorted = [...products].sort((a, b) => b.alcoholPerEuro - a.alcoholPerEuro);
+
+  const pages: { trail: CategoryNode[]; products: CategoryProduct[] }[] = [{ trail: [], products: [] }];
+  for (const type of tree) {
+    pages.push({ trail: [type], products: sorted.filter((product) => product.typeSlug === type.slug) });
+    for (const subType of type.children) {
+      pages.push({
+        trail: [type, subType],
+        products: sorted.filter(
+          (product) => product.typeSlug === type.slug && product.subTypeSlug === subType.slug
+        )
+      });
+    }
+  }
+
+  for (const page of pages) {
+    const directory = path.join(categoriesPath, ...page.trail.map((node) => node.slug));
+    await mkdir(directory, { recursive: true });
+    await Bun.write(path.join(directory, "index.html"), categoryHtml(template, tree, page.trail, page.products));
+  }
+  return pages.length;
 }
 
 async function main() {
@@ -545,13 +732,31 @@ async function main() {
   const keptPageIds = new Set<string>();
   const generatedIds = new Set<string>();
 
+  const typeIndex = schema.indexOf("Tyyppi");
+  const subTypeIndex = schema.indexOf("Alatyyppi");
+  const validProducts = Object.values(products).filter(
+    (product): product is ProductRecord => !!product && Array.isArray(product.values)
+  );
+  const categoryTree = buildCategoryTree(
+    validProducts.map((product) => ({
+      type: product.values[typeIndex],
+      subType: product.values[subTypeIndex],
+      removed: Boolean(product.meta?.removedFromSelection)
+    }))
+  );
+
   let count = 0;
   let skipped = 0;
   const concurrency = Number(process.env.ALKO_PRERENDER_CONCURRENCY) || 32;
   await mapPool(Object.entries(products), concurrency, async ([productId, product]) => {
     if (!product || !Array.isArray(product.values)) return;
     const ogKey = ogManifest[productId] ?? null;
-    const key = productKey(schema, product, templateFingerprint, ogKey);
+    const categoryTrail = findProductCategoryTrail(
+      categoryTree,
+      product.values[typeIndex],
+      product.values[subTypeIndex]
+    ).trail;
+    const key = productKey(schema, product, templateFingerprint, ogKey, categoryTrail);
     const previousEntry = previous[productId];
     const previousPageId = previousEntry?.pageId;
     const previousFile = previousPageId
@@ -568,7 +773,7 @@ async function main() {
       skipped += 1;
       return;
     }
-    const rendered = productHtml(template, schema, product, ogKey);
+    const rendered = productHtml(template, schema, product, ogKey, categoryTrail);
     if (generatedIds.has(rendered.id)) throw new Error(`Duplicate product id: ${rendered.id}`);
     generatedIds.add(rendered.id);
     const directory = path.join(productsPath, rendered.id);
@@ -605,7 +810,15 @@ async function main() {
   await mkdir(path.dirname(options.manifestPath), { recursive: true });
   await Bun.write(options.manifestPath, JSON.stringify(sortedManifest));
 
+  const categoryPages = await renderCategoryPages(
+    options.outputPath,
+    template,
+    categoryTree,
+    validProducts.map((product) => categoryProduct(schema, product)).filter((product) => product !== null)
+  );
+
   console.log(
+    `Category pages: ${categoryPages.toLocaleString("en-US")} | ` +
     `Product pages: ${Object.keys(sortedManifest).length.toLocaleString("en-US")} total, ` +
       `${count.toLocaleString("en-US")} regenerated, ${skipped.toLocaleString("en-US")} unchanged | ` +
       `manifest → ${options.manifestPath}`
