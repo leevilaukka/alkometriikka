@@ -89,6 +89,10 @@
 	}
 
 	const extraItems: {href: string, icon: IconName, name: string}[] = [{
+		href: '/myymalat',
+		icon: 'store',
+		name: 'Myymälät'
+	}, {
 		href: '/daily/arkisto',
 		icon: 'archive',
 		name: 'Daily-arkisto'
