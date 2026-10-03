@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Junimperium Blended Dry Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/912716/",
+	"feed_url": "https://alkometriikka.fi/rss/912716.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Junimperium Blended Dry Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-912716-2026-09-29-58.45",
+			"url": "https://alkometriikka.fi/tuotteet/912716/",
+			"title": "Junimperium Blended Dry Gin — 57,99 € → 58,45 €",
+			"content_html": "<p>Tuotteen Junimperium Blended Dry Gin hinta on muuttunut.</p><p>57,99 € → 58,45 € (+0,46 €, +0,79 %).</p>",
+			"summary": "Tuotteen Junimperium Blended Dry Gin hinta on muuttunut. 57,99 € → 58,45 € (+0,46 €, +0,79 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/912716-08a95082e487.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

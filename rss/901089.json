@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Absolut Wild Berri – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901089/",
+	"feed_url": "https://alkometriikka.fi/rss/901089.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Absolut Wild Berri.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901089-2026-07-18-29.98",
+			"url": "https://alkometriikka.fi/tuotteet/901089/",
+			"title": "Absolut Wild Berri — 29,75 € → 29,98 €",
+			"content_html": "<p>Tuotteen Absolut Wild Berri hinta on muuttunut.</p><p>29,75 € → 29,98 € (+0,23 €, +0,77 %).</p>",
+			"summary": "Tuotteen Absolut Wild Berri hinta on muuttunut. 29,75 € → 29,98 € (+0,23 €, +0,77 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901089-7150448d13d0.png",
+			"tags": [
+				"Väkevät",
+				"maustetut vodkat"
+			]
+		}
+	]
+}

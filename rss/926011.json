@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Briza del Mar Selecció Cava Brut Rosé – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/926011/",
+	"feed_url": "https://alkometriikka.fi/rss/926011.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Briza del Mar Selecció Cava Brut Rosé.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-926011-2026-09-29-20.48",
+			"url": "https://alkometriikka.fi/tuotteet/926011/",
+			"title": "Briza del Mar Selecció Cava Brut Rosé — 18,60 € → 20,48 €",
+			"content_html": "<p>Tuotteen Briza del Mar Selecció Cava Brut Rosé hinta on muuttunut.</p><p>18,60 € → 20,48 € (+1,88 €, +10,11 %).</p>",
+			"summary": "Tuotteen Briza del Mar Selecció Cava Brut Rosé hinta on muuttunut. 18,60 € → 20,48 € (+1,88 €, +10,11 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/926011-57958b34eb74.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

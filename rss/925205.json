@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Seña 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/925205/",
+	"feed_url": "https://alkometriikka.fi/rss/925205.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Seña 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-925205-2026-09-29-220.51",
+			"url": "https://alkometriikka.fi/tuotteet/925205/",
+			"title": "Seña 2021 — 207,65 € → 220,51 €",
+			"content_html": "<p>Tuotteen Seña 2021 hinta on muuttunut.</p><p>207,65 € → 220,51 € (+12,86 €, +6,19 %).</p>",
+			"summary": "Tuotteen Seña 2021 hinta on muuttunut. 207,65 € → 220,51 € (+12,86 €, +6,19 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/925205-d5cbc2062b02.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

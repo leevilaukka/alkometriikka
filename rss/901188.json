@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Braastad XO Superior – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901188/",
+	"feed_url": "https://alkometriikka.fi/rss/901188.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Braastad XO Superior.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901188-2026-09-29-119.95",
+			"url": "https://alkometriikka.fi/tuotteet/901188/",
+			"title": "Braastad XO Superior — 115,00 € → 119,95 €",
+			"content_html": "<p>Tuotteen Braastad XO Superior hinta on muuttunut.</p><p>115,00 € → 119,95 € (+4,95 €, +4,30 %).</p>",
+			"summary": "Tuotteen Braastad XO Superior hinta on muuttunut. 115,00 € → 119,95 € (+4,95 €, +4,30 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901188-f750f29ee71b.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

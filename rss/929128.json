@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jaume Serra Bouquet Rosé Cava Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/929128/",
+	"feed_url": "https://alkometriikka.fi/rss/929128.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jaume Serra Bouquet Rosé Cava Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-929128-2026-07-18-13.98",
+			"url": "https://alkometriikka.fi/tuotteet/929128/",
+			"title": "Jaume Serra Bouquet Rosé Cava Brut — 14,44 € → 13,98 €",
+			"content_html": "<p>Tuotteen Jaume Serra Bouquet Rosé Cava Brut hinta on muuttunut.</p><p>14,44 € → 13,98 € (−0,46 €, −3,19 %).</p>",
+			"summary": "Tuotteen Jaume Serra Bouquet Rosé Cava Brut hinta on muuttunut. 14,44 € → 13,98 € (−0,46 €, −3,19 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/929128-9fe646d0feaf.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

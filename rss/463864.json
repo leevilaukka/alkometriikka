@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Penfolds Koonunga Hill Shiraz Cabernet 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/463864/",
+	"feed_url": "https://alkometriikka.fi/rss/463864.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Penfolds Koonunga Hill Shiraz Cabernet 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-463864-2026-09-29-10.79",
+			"url": "https://alkometriikka.fi/tuotteet/463864/",
+			"title": "Penfolds Koonunga Hill Shiraz Cabernet 2021 — 9,98 € → 10,79 €",
+			"content_html": "<p>Tuotteen Penfolds Koonunga Hill Shiraz Cabernet 2021 hinta on muuttunut.</p><p>9,98 € → 10,79 € (+0,81 €, +8,12 %).</p>",
+			"summary": "Tuotteen Penfolds Koonunga Hill Shiraz Cabernet 2021 hinta on muuttunut. 9,98 € → 10,79 € (+0,81 €, +8,12 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/463864-319c5b00efc8.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

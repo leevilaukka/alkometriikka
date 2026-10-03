@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Grönstedts VS – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/000831/",
+	"feed_url": "https://alkometriikka.fi/rss/000831.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Grönstedts VS.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-000831-2026-09-29-37.99",
+			"url": "https://alkometriikka.fi/tuotteet/000831/",
+			"title": "Grönstedts VS — 36,85 € → 37,99 €",
+			"content_html": "<p>Tuotteen Grönstedts VS hinta on muuttunut.</p><p>36,85 € → 37,99 € (+1,14 €, +3,09 %).</p>",
+			"summary": "Tuotteen Grönstedts VS hinta on muuttunut. 36,85 € → 37,99 € (+1,14 €, +3,09 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/000831-6c914351b37c.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

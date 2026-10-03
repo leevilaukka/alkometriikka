@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hermannin Mesi Hiisi – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/130014/",
+	"feed_url": "https://alkometriikka.fi/rss/130014.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hermannin Mesi Hiisi.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-130014-2026-09-29-25.37",
+			"url": "https://alkometriikka.fi/tuotteet/130014/",
+			"title": "Hermannin Mesi Hiisi — 25,33 € → 25,37 €",
+			"content_html": "<p>Tuotteen Hermannin Mesi Hiisi hinta on muuttunut.</p><p>25,33 € → 25,37 € (+0,04 €, +0,16 %).</p>",
+			"summary": "Tuotteen Hermannin Mesi Hiisi hinta on muuttunut. 25,33 € → 25,37 € (+0,04 €, +0,16 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/130014-6f1a80d51a1b.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

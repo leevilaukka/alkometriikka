@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gonet Sulcova Rose Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/933963/",
+	"feed_url": "https://alkometriikka.fi/rss/933963.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gonet Sulcova Rose Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-933963-2026-09-29-39.71",
+			"url": "https://alkometriikka.fi/tuotteet/933963/",
+			"title": "Gonet Sulcova Rose Champagne Brut — 38,19 € → 39,71 €",
+			"content_html": "<p>Tuotteen Gonet Sulcova Rose Champagne Brut hinta on muuttunut.</p><p>38,19 € → 39,71 € (+1,52 €, +3,98 %).</p>",
+			"summary": "Tuotteen Gonet Sulcova Rose Champagne Brut hinta on muuttunut. 38,19 € → 39,71 € (+1,52 €, +3,98 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/933963-76050935542d.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

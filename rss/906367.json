@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ratafia Champenois – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/906367/",
+	"feed_url": "https://alkometriikka.fi/rss/906367.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ratafia Champenois.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-906367-2026-09-29-49.8",
+			"url": "https://alkometriikka.fi/tuotteet/906367/",
+			"title": "Ratafia Champenois — 48,95 € → 49,80 €",
+			"content_html": "<p>Tuotteen Ratafia Champenois hinta on muuttunut.</p><p>48,95 € → 49,80 € (+0,85 €, +1,74 %).</p>",
+			"summary": "Tuotteen Ratafia Champenois hinta on muuttunut. 48,95 € → 49,80 € (+0,85 €, +1,74 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/906367-2ca67caebf0d.png",
+			"tags": [
+				"Välituotteet",
+				"väkevät viinit"
+			]
+		},
+		{
+			"id": "alkometriikka-906367-2026-07-18-48.95",
+			"url": "https://alkometriikka.fi/tuotteet/906367/",
+			"title": "Ratafia Champenois — 48,86 € → 48,95 €",
+			"content_html": "<p>Tuotteen Ratafia Champenois hinta on muuttunut.</p><p>48,86 € → 48,95 € (+0,09 €, +0,18 %).</p>",
+			"summary": "Tuotteen Ratafia Champenois hinta on muuttunut. 48,86 € → 48,95 € (+0,09 €, +0,18 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/906367-2ca67caebf0d.png",
+			"tags": [
+				"Välituotteet",
+				"väkevät viinit"
+			]
+		}
+	]
+}

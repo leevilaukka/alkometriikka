@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Spirit of Hven Organic Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/934866/",
+	"feed_url": "https://alkometriikka.fi/rss/934866.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Spirit of Hven Organic Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-934866-2026-09-29-50.52",
+			"url": "https://alkometriikka.fi/tuotteet/934866/",
+			"title": "Spirit of Hven Organic Gin — 49,43 € → 50,52 €",
+			"content_html": "<p>Tuotteen Spirit of Hven Organic Gin hinta on muuttunut.</p><p>49,43 € → 50,52 € (+1,09 €, +2,21 %).</p>",
+			"summary": "Tuotteen Spirit of Hven Organic Gin hinta on muuttunut. 49,43 € → 50,52 € (+1,09 €, +2,21 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/934866-a49dd3479656.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

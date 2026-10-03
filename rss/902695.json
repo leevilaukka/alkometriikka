@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mallaskoski Please Hold AF Lager tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902695/",
+	"feed_url": "https://alkometriikka.fi/rss/902695.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mallaskoski Please Hold AF Lager tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902695-2026-09-30-2.19",
+			"url": "https://alkometriikka.fi/tuotteet/902695/",
+			"title": "Mallaskoski Please Hold AF Lager tölkki — 1,97 € → 2,19 €",
+			"content_html": "<p>Tuotteen Mallaskoski Please Hold AF Lager tölkki hinta on muuttunut.</p><p>1,97 € → 2,19 € (+0,22 €, +11,17 %).</p>",
+			"summary": "Tuotteen Mallaskoski Please Hold AF Lager tölkki hinta on muuttunut. 1,97 € → 2,19 € (+0,22 €, +11,17 %).",
+			"date_published": "2026-09-30T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902695-e4f8f337324d.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-902695-2026-09-04-1.97",
+			"url": "https://alkometriikka.fi/tuotteet/902695/",
+			"title": "Mallaskoski Please Hold AF Lager tölkki — 2,19 € → 1,97 €",
+			"content_html": "<p>Tuotteen Mallaskoski Please Hold AF Lager tölkki hinta on muuttunut.</p><p>2,19 € → 1,97 € (−0,22 €, −10,05 %).</p>",
+			"summary": "Tuotteen Mallaskoski Please Hold AF Lager tölkki hinta on muuttunut. 2,19 € → 1,97 € (−0,22 €, −10,05 %).",
+			"date_published": "2026-09-04T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902695-e4f8f337324d.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

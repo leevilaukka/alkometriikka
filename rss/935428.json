@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Himmel Pink Riesling – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/935428/",
+	"feed_url": "https://alkometriikka.fi/rss/935428.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Himmel Pink Riesling.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-935428-2026-07-18-15.98",
+			"url": "https://alkometriikka.fi/tuotteet/935428/",
+			"title": "Himmel Pink Riesling — 16,39 € → 15,98 €",
+			"content_html": "<p>Tuotteen Himmel Pink Riesling hinta on muuttunut.</p><p>16,39 € → 15,98 € (−0,41 €, −2,50 %).</p>",
+			"summary": "Tuotteen Himmel Pink Riesling hinta on muuttunut. 16,39 € → 15,98 € (−0,41 €, −2,50 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/935428-2f93f907bd71.png",
+			"tags": [
+				"Viinit",
+				"hedelmä- ja aromatisoidut viinit"
+			]
+		}
+	]
+}

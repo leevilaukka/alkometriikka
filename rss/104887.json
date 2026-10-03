@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Laphroaig The Cask Lore Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/104887/",
+	"feed_url": "https://alkometriikka.fi/rss/104887.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Laphroaig The Cask Lore Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-104887-2026-09-29-114.42",
+			"url": "https://alkometriikka.fi/tuotteet/104887/",
+			"title": "Laphroaig The Cask Lore Single Malt — 110,27 € → 114,42 €",
+			"content_html": "<p>Tuotteen Laphroaig The Cask Lore Single Malt hinta on muuttunut.</p><p>110,27 € → 114,42 € (+4,15 €, +3,76 %).</p>",
+			"summary": "Tuotteen Laphroaig The Cask Lore Single Malt hinta on muuttunut. 110,27 € → 114,42 € (+4,15 €, +3,76 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/104887-a558583bf7e4.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

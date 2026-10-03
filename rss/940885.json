@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mauro Cosecha 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/940885/",
+	"feed_url": "https://alkometriikka.fi/rss/940885.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mauro Cosecha 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-940885-2026-09-29-59.52",
+			"url": "https://alkometriikka.fi/tuotteet/940885/",
+			"title": "Mauro Cosecha 2022 — 57,90 € → 59,52 €",
+			"content_html": "<p>Tuotteen Mauro Cosecha 2022 hinta on muuttunut.</p><p>57,90 € → 59,52 € (+1,62 €, +2,80 %).</p>",
+			"summary": "Tuotteen Mauro Cosecha 2022 hinta on muuttunut. 57,90 € → 59,52 € (+1,62 €, +2,80 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/940885-7de4339e3d60.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

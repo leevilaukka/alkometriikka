@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bushmills 10 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/001583/",
+	"feed_url": "https://alkometriikka.fi/rss/001583.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bushmills 10 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-001583-2026-09-29-61.3",
+			"url": "https://alkometriikka.fi/tuotteet/001583/",
+			"title": "Bushmills 10 Year Old Single Malt — 60,45 € → 61,30 €",
+			"content_html": "<p>Tuotteen Bushmills 10 Year Old Single Malt hinta on muuttunut.</p><p>60,45 € → 61,30 € (+0,85 €, +1,41 %).</p>",
+			"summary": "Tuotteen Bushmills 10 Year Old Single Malt hinta on muuttunut. 60,45 € → 61,30 € (+0,85 €, +1,41 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/001583-5ba7db931a7c.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

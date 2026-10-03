@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Zin Zupreme Zinfandel 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/904777/",
+	"feed_url": "https://alkometriikka.fi/rss/904777.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Zin Zupreme Zinfandel 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-904777-2026-07-18-12.49",
+			"url": "https://alkometriikka.fi/tuotteet/904777/",
+			"title": "Zin Zupreme Zinfandel 2023 — 11,95 € → 12,49 €",
+			"content_html": "<p>Tuotteen Zin Zupreme Zinfandel 2023 hinta on muuttunut.</p><p>11,95 € → 12,49 € (+0,54 €, +4,52 %).</p>",
+			"summary": "Tuotteen Zin Zupreme Zinfandel 2023 hinta on muuttunut. 11,95 € → 12,49 € (+0,54 €, +4,52 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/904777-e798b89ffac2.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

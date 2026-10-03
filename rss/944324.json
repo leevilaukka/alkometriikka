@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cortese Aranciata Rossa – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/944324/",
+	"feed_url": "https://alkometriikka.fi/rss/944324.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cortese Aranciata Rossa.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-944324-2026-09-29-3.99",
+			"url": "https://alkometriikka.fi/tuotteet/944324/",
+			"title": "Cortese Aranciata Rossa — 4,19 € → 3,99 €",
+			"content_html": "<p>Tuotteen Cortese Aranciata Rossa hinta on muuttunut.</p><p>4,19 € → 3,99 € (−0,20 €, −4,77 %).</p>",
+			"summary": "Tuotteen Cortese Aranciata Rossa hinta on muuttunut. 4,19 € → 3,99 € (−0,20 €, −4,77 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/944324-b4ef79617718.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		},
+		{
+			"id": "alkometriikka-944324-2026-07-18-4.19",
+			"url": "https://alkometriikka.fi/tuotteet/944324/",
+			"title": "Cortese Aranciata Rossa — 4,17 € → 4,19 €",
+			"content_html": "<p>Tuotteen Cortese Aranciata Rossa hinta on muuttunut.</p><p>4,17 € → 4,19 € (+0,02 €, +0,48 %).</p>",
+			"summary": "Tuotteen Cortese Aranciata Rossa hinta on muuttunut. 4,17 € → 4,19 € (+0,02 €, +0,48 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/944324-b4ef79617718.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

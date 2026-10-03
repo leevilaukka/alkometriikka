@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ararat Ani 7 Year Old – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/928155/",
+	"feed_url": "https://alkometriikka.fi/rss/928155.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ararat Ani 7 Year Old.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-928155-2026-09-29-38.78",
+			"url": "https://alkometriikka.fi/tuotteet/928155/",
+			"title": "Ararat Ani 7 Year Old — 38,50 € → 38,78 €",
+			"content_html": "<p>Tuotteen Ararat Ani 7 Year Old hinta on muuttunut.</p><p>38,50 € → 38,78 € (+0,28 €, +0,73 %).</p>",
+			"summary": "Tuotteen Ararat Ani 7 Year Old hinta on muuttunut. 38,50 € → 38,78 € (+0,28 €, +0,73 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/928155-8317d4b74be5.png",
+			"tags": [
+				"Väkevät",
+				"brandyt"
+			]
+		}
+	]
+}

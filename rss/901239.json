@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glendalough Wild Rose Irish Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901239/",
+	"feed_url": "https://alkometriikka.fi/rss/901239.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glendalough Wild Rose Irish Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901239-2026-07-18-49.98",
+			"url": "https://alkometriikka.fi/tuotteet/901239/",
+			"title": "Glendalough Wild Rose Irish Gin — 50,81 € → 49,98 €",
+			"content_html": "<p>Tuotteen Glendalough Wild Rose Irish Gin hinta on muuttunut.</p><p>50,81 € → 49,98 € (−0,83 €, −1,63 %).</p>",
+			"summary": "Tuotteen Glendalough Wild Rose Irish Gin hinta on muuttunut. 50,81 € → 49,98 € (−0,83 €, −1,63 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901239-3d12d9c4fe75.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

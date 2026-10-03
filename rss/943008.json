@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ricossa Barbera Piemonte 2022 hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/943008/",
+	"feed_url": "https://alkometriikka.fi/rss/943008.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ricossa Barbera Piemonte 2022 hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-943008-2026-09-29-40.49",
+			"url": "https://alkometriikka.fi/tuotteet/943008/",
+			"title": "Ricossa Barbera Piemonte 2022 hanapakkaus — 39,99 € → 40,49 €",
+			"content_html": "<p>Tuotteen Ricossa Barbera Piemonte 2022 hanapakkaus hinta on muuttunut.</p><p>39,99 € → 40,49 € (+0,50 €, +1,25 %).</p>",
+			"summary": "Tuotteen Ricossa Barbera Piemonte 2022 hanapakkaus hinta on muuttunut. 39,99 € → 40,49 € (+0,50 €, +1,25 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/943008-56004995a991.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

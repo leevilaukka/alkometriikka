@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – McManis Zinfandel 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/450617/",
+	"feed_url": "https://alkometriikka.fi/rss/450617.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: McManis Zinfandel 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-450617-2026-09-29-15.89",
+			"url": "https://alkometriikka.fi/tuotteet/450617/",
+			"title": "McManis Zinfandel 2022 — 15,99 € → 15,89 €",
+			"content_html": "<p>Tuotteen McManis Zinfandel 2022 hinta on muuttunut.</p><p>15,99 € → 15,89 € (−0,10 €, −0,63 %).</p>",
+			"summary": "Tuotteen McManis Zinfandel 2022 hinta on muuttunut. 15,99 € → 15,89 € (−0,10 €, −0,63 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/450617-5733eda926c3.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

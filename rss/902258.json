@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Arran Quarter Cask Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902258/",
+	"feed_url": "https://alkometriikka.fi/rss/902258.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Arran Quarter Cask Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902258-2026-09-29-91.3",
+			"url": "https://alkometriikka.fi/tuotteet/902258/",
+			"title": "Arran Quarter Cask Single Malt — 87,38 € → 91,30 €",
+			"content_html": "<p>Tuotteen Arran Quarter Cask Single Malt hinta on muuttunut.</p><p>87,38 € → 91,30 € (+3,92 €, +4,49 %).</p>",
+			"summary": "Tuotteen Arran Quarter Cask Single Malt hinta on muuttunut. 87,38 € → 91,30 € (+3,92 €, +4,49 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902258-63014081413a.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

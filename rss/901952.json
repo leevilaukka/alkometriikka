@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glenfiddich 21 Years Old Gran Reserva Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901952/",
+	"feed_url": "https://alkometriikka.fi/rss/901952.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glenfiddich 21 Years Old Gran Reserva Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901952-2026-09-29-249.99",
+			"url": "https://alkometriikka.fi/tuotteet/901952/",
+			"title": "Glenfiddich 21 Years Old Gran Reserva Single Malt — 255,08 € → 249,99 €",
+			"content_html": "<p>Tuotteen Glenfiddich 21 Years Old Gran Reserva Single Malt hinta on muuttunut.</p><p>255,08 € → 249,99 € (−5,09 €, −2,00 %).</p>",
+			"summary": "Tuotteen Glenfiddich 21 Years Old Gran Reserva Single Malt hinta on muuttunut. 255,08 € → 249,99 € (−5,09 €, −2,00 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901952-9af43a80e191.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

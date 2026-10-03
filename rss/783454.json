@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – St. Feuillien Grand Cru – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/783454/",
+	"feed_url": "https://alkometriikka.fi/rss/783454.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: St. Feuillien Grand Cru.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-783454-2026-07-18-4.77",
+			"url": "https://alkometriikka.fi/tuotteet/783454/",
+			"title": "St. Feuillien Grand Cru — 4,78 € → 4,77 €",
+			"content_html": "<p>Tuotteen St. Feuillien Grand Cru hinta on muuttunut.</p><p>4,78 € → 4,77 € (−0,01 €, −0,21 %).</p>",
+			"summary": "Tuotteen St. Feuillien Grand Cru hinta on muuttunut. 4,78 € → 4,77 € (−0,01 €, −0,21 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/783454-ffb3bc6d0cb4.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

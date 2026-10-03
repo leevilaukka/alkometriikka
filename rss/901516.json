@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Williams Orange Ginger tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901516/",
+	"feed_url": "https://alkometriikka.fi/rss/901516.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Williams Orange Ginger tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901516-2026-09-29-5.49",
+			"url": "https://alkometriikka.fi/tuotteet/901516/",
+			"title": "Williams Orange Ginger tölkki — 5,25 € → 5,49 €",
+			"content_html": "<p>Tuotteen Williams Orange Ginger tölkki hinta on muuttunut.</p><p>5,25 € → 5,49 € (+0,24 €, +4,57 %).</p>",
+			"summary": "Tuotteen Williams Orange Ginger tölkki hinta on muuttunut. 5,25 € → 5,49 € (+0,24 €, +4,57 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901516-44db0dbb87ae.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

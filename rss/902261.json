@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bumbu – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902261/",
+	"feed_url": "https://alkometriikka.fi/rss/902261.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bumbu.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902261-2026-09-29-28.99",
+			"url": "https://alkometriikka.fi/tuotteet/902261/",
+			"title": "Bumbu — 28,98 € → 28,99 €",
+			"content_html": "<p>Tuotteen Bumbu hinta on muuttunut.</p><p>28,98 € → 28,99 € (+0,01 €, +0,03 %).</p>",
+			"summary": "Tuotteen Bumbu hinta on muuttunut. 28,98 € → 28,99 € (+0,01 €, +0,03 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902261-f8841609f28e.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

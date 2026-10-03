@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Aroma de Corazón Tinto 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/933587/",
+	"feed_url": "https://alkometriikka.fi/rss/933587.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Aroma de Corazón Tinto 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-933587-2026-07-18-9.98",
+			"url": "https://alkometriikka.fi/tuotteet/933587/",
+			"title": "Aroma de Corazón Tinto 2022 — 9,46 € → 9,98 €",
+			"content_html": "<p>Tuotteen Aroma de Corazón Tinto 2022 hinta on muuttunut.</p><p>9,46 € → 9,98 € (+0,52 €, +5,50 %).</p>",
+			"summary": "Tuotteen Aroma de Corazón Tinto 2022 hinta on muuttunut. 9,46 € → 9,98 € (+0,52 €, +5,50 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/933587-45907a59d2d7.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

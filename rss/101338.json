@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Koskenkorva Viina muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/101338/",
+	"feed_url": "https://alkometriikka.fi/rss/101338.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Koskenkorva Viina muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-101338-2026-09-29-32.19",
+			"url": "https://alkometriikka.fi/tuotteet/101338/",
+			"title": "Koskenkorva Viina muovipullo — 31,98 € → 32,19 €",
+			"content_html": "<p>Tuotteen Koskenkorva Viina muovipullo hinta on muuttunut.</p><p>31,98 € → 32,19 € (+0,21 €, +0,66 %).</p>",
+			"summary": "Tuotteen Koskenkorva Viina muovipullo hinta on muuttunut. 31,98 € → 32,19 € (+0,21 €, +0,66 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/101338-23010e6c0422.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

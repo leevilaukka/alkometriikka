@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Laurent Lequart Blanc de Blancs Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/952081/",
+	"feed_url": "https://alkometriikka.fi/rss/952081.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Laurent Lequart Blanc de Blancs Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-952081-2026-09-29-65.99",
+			"url": "https://alkometriikka.fi/tuotteet/952081/",
+			"title": "Laurent Lequart Blanc de Blancs Champagne Brut — 63,46 € → 65,99 €",
+			"content_html": "<p>Tuotteen Laurent Lequart Blanc de Blancs Champagne Brut hinta on muuttunut.</p><p>63,46 € → 65,99 € (+2,53 €, +3,99 %).</p>",
+			"summary": "Tuotteen Laurent Lequart Blanc de Blancs Champagne Brut hinta on muuttunut. 63,46 € → 65,99 € (+2,53 €, +3,99 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/952081-7b663f953c50.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

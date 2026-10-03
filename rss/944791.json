@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château Godard Bellevue 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/944791/",
+	"feed_url": "https://alkometriikka.fi/rss/944791.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château Godard Bellevue 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-944791-2026-09-29-27.82",
+			"url": "https://alkometriikka.fi/tuotteet/944791/",
+			"title": "Château Godard Bellevue 2019 — 28,21 € → 27,82 €",
+			"content_html": "<p>Tuotteen Château Godard Bellevue 2019 hinta on muuttunut.</p><p>28,21 € → 27,82 € (−0,39 €, −1,38 %).</p>",
+			"summary": "Tuotteen Château Godard Bellevue 2019 hinta on muuttunut. 28,21 € → 27,82 € (−0,39 €, −1,38 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/944791-78e0b8ca9409.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

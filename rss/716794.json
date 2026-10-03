@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Maku Brewing IPA tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/716794/",
+	"feed_url": "https://alkometriikka.fi/rss/716794.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Maku Brewing IPA tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-716794-2026-07-18-3.69",
+			"url": "https://alkometriikka.fi/tuotteet/716794/",
+			"title": "Maku Brewing IPA tölkki — 3,49 € → 3,69 €",
+			"content_html": "<p>Tuotteen Maku Brewing IPA tölkki hinta on muuttunut.</p><p>3,49 € → 3,69 € (+0,20 €, +5,73 %).</p>",
+			"summary": "Tuotteen Maku Brewing IPA tölkki hinta on muuttunut. 3,49 € → 3,69 € (+0,20 €, +5,73 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/716794-02dc80b41dc9.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

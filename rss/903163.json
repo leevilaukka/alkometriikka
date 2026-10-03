@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château de Montifaud Premium L10 VSOP – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903163/",
+	"feed_url": "https://alkometriikka.fi/rss/903163.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château de Montifaud Premium L10 VSOP.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903163-2026-09-29-92.88",
+			"url": "https://alkometriikka.fi/tuotteet/903163/",
+			"title": "Château de Montifaud Premium L10 VSOP — 89,93 € → 92,88 €",
+			"content_html": "<p>Tuotteen Château de Montifaud Premium L10 VSOP hinta on muuttunut.</p><p>89,93 € → 92,88 € (+2,95 €, +3,28 %).</p>",
+			"summary": "Tuotteen Château de Montifaud Premium L10 VSOP hinta on muuttunut. 89,93 € → 92,88 € (+2,95 €, +3,28 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903163-2a3f56c19975.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

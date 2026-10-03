@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kattila Gooseberry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903512/",
+	"feed_url": "https://alkometriikka.fi/rss/903512.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kattila Gooseberry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903512-2026-09-29-39.45",
+			"url": "https://alkometriikka.fi/tuotteet/903512/",
+			"title": "Kattila Gooseberry — 38,69 € → 39,45 €",
+			"content_html": "<p>Tuotteen Kattila Gooseberry hinta on muuttunut.</p><p>38,69 € → 39,45 € (+0,76 €, +1,96 %).</p>",
+			"summary": "Tuotteen Kattila Gooseberry hinta on muuttunut. 38,69 € → 39,45 € (+0,76 €, +1,96 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903512-4aefd775c7b2.png",
+			"tags": [
+				"Väkevät",
+				"marjaliköörit"
+			]
+		}
+	]
+}

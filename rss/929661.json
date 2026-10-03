@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Guy Charlemagne Grand Cru Blanc De Blancs Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/929661/",
+	"feed_url": "https://alkometriikka.fi/rss/929661.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Guy Charlemagne Grand Cru Blanc De Blancs Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-929661-2026-09-29-59.44",
+			"url": "https://alkometriikka.fi/tuotteet/929661/",
+			"title": "Guy Charlemagne Grand Cru Blanc De Blancs Champagne Brut — 57,82 € → 59,44 €",
+			"content_html": "<p>Tuotteen Guy Charlemagne Grand Cru Blanc De Blancs Champagne Brut hinta on muuttunut.</p><p>57,82 € → 59,44 € (+1,62 €, +2,80 %).</p>",
+			"summary": "Tuotteen Guy Charlemagne Grand Cru Blanc De Blancs Champagne Brut hinta on muuttunut. 57,82 € → 59,44 € (+1,62 €, +2,80 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/929661-8067059843ce.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kizan Junmai Ginjo Nama Genshu Sake – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/951014/",
+	"feed_url": "https://alkometriikka.fi/rss/951014.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kizan Junmai Ginjo Nama Genshu Sake.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-951014-2026-09-29-48.73",
+			"url": "https://alkometriikka.fi/tuotteet/951014/",
+			"title": "Kizan Junmai Ginjo Nama Genshu Sake — 48,00 € → 48,73 €",
+			"content_html": "<p>Tuotteen Kizan Junmai Ginjo Nama Genshu Sake hinta on muuttunut.</p><p>48,00 € → 48,73 € (+0,73 €, +1,52 %).</p>",
+			"summary": "Tuotteen Kizan Junmai Ginjo Nama Genshu Sake hinta on muuttunut. 48,00 € → 48,73 € (+0,73 €, +1,52 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/951014-8f7b26bd7439.png",
+			"tags": [
+				"Viinit",
+				"saket"
+			]
+		}
+	]
+}

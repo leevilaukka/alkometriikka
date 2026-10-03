@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Yellow Tail Shiraz 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/458797/",
+	"feed_url": "https://alkometriikka.fi/rss/458797.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Yellow Tail Shiraz 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-458797-2026-09-29-11.85",
+			"url": "https://alkometriikka.fi/tuotteet/458797/",
+			"title": "Yellow Tail Shiraz 2024 — 12,30 € → 11,85 €",
+			"content_html": "<p>Tuotteen Yellow Tail Shiraz 2024 hinta on muuttunut.</p><p>12,30 € → 11,85 € (−0,45 €, −3,66 %).</p>",
+			"summary": "Tuotteen Yellow Tail Shiraz 2024 hinta on muuttunut. 12,30 € → 11,85 € (−0,45 €, −3,66 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/458797-432c1798823c.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-458797-2026-07-18-12.3",
+			"url": "https://alkometriikka.fi/tuotteet/458797/",
+			"title": "Yellow Tail Shiraz 2024 — 12,14 € → 12,30 €",
+			"content_html": "<p>Tuotteen Yellow Tail Shiraz 2024 hinta on muuttunut.</p><p>12,14 € → 12,30 € (+0,16 €, +1,32 %).</p>",
+			"summary": "Tuotteen Yellow Tail Shiraz 2024 hinta on muuttunut. 12,14 € → 12,30 € (+0,16 €, +1,32 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/458797-432c1798823c.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Don Opas 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/006594/",
+	"feed_url": "https://alkometriikka.fi/rss/006594.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Don Opas 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-006594-2026-09-29-8.38",
+			"url": "https://alkometriikka.fi/tuotteet/006594/",
+			"title": "Don Opas 2023 — 8,26 € → 8,38 €",
+			"content_html": "<p>Tuotteen Don Opas 2023 hinta on muuttunut.</p><p>8,26 € → 8,38 € (+0,12 €, +1,45 %).</p>",
+			"summary": "Tuotteen Don Opas 2023 hinta on muuttunut. 8,26 € → 8,38 € (+0,12 €, +1,45 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/006594-8f535102f14c.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-006594-2026-07-18-8.26",
+			"url": "https://alkometriikka.fi/tuotteet/006594/",
+			"title": "Don Opas 2023 — 8,36 € → 8,26 €",
+			"content_html": "<p>Tuotteen Don Opas 2023 hinta on muuttunut.</p><p>8,36 € → 8,26 € (−0,10 €, −1,20 %).</p>",
+			"summary": "Tuotteen Don Opas 2023 hinta on muuttunut. 8,36 € → 8,26 € (−0,10 €, −1,20 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/006594-8f535102f14c.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

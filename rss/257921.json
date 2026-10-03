@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Amarula muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/257921/",
+	"feed_url": "https://alkometriikka.fi/rss/257921.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Amarula muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-257921-2026-07-18-2.28",
+			"url": "https://alkometriikka.fi/tuotteet/257921/",
+			"title": "Amarula muovipullo — 2,26 € → 2,28 €",
+			"content_html": "<p>Tuotteen Amarula muovipullo hinta on muuttunut.</p><p>2,26 € → 2,28 € (+0,02 €, +0,88 %).</p>",
+			"summary": "Tuotteen Amarula muovipullo hinta on muuttunut. 2,26 € → 2,28 € (+0,02 €, +0,88 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/257921-fcde1baed581.png",
+			"tags": [
+				"Väkevät",
+				"kermaliköörit"
+			]
+		}
+	]
+}

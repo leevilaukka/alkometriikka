@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Arctic Blue Coastal Dry Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901689/",
+	"feed_url": "https://alkometriikka.fi/rss/901689.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Arctic Blue Coastal Dry Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901689-2026-09-29-49.01",
+			"url": "https://alkometriikka.fi/tuotteet/901689/",
+			"title": "Arctic Blue Coastal Dry Gin — 48,20 € → 49,01 €",
+			"content_html": "<p>Tuotteen Arctic Blue Coastal Dry Gin hinta on muuttunut.</p><p>48,20 € → 49,01 € (+0,81 €, +1,68 %).</p>",
+			"summary": "Tuotteen Arctic Blue Coastal Dry Gin hinta on muuttunut. 48,20 € → 49,01 € (+0,81 €, +1,68 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901689-4b1e273045db.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

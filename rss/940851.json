@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ambriel Classic Cuvée – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/940851/",
+	"feed_url": "https://alkometriikka.fi/rss/940851.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ambriel Classic Cuvée.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-940851-2026-09-29-51",
+			"url": "https://alkometriikka.fi/tuotteet/940851/",
+			"title": "Ambriel Classic Cuvée — 49,99 € → 51,00 €",
+			"content_html": "<p>Tuotteen Ambriel Classic Cuvée hinta on muuttunut.</p><p>49,99 € → 51,00 € (+1,01 €, +2,02 %).</p>",
+			"summary": "Tuotteen Ambriel Classic Cuvée hinta on muuttunut. 49,99 € → 51,00 € (+1,01 €, +2,02 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/940851-325d2573dfa1.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-940851-2026-07-18-49.99",
+			"url": "https://alkometriikka.fi/tuotteet/940851/",
+			"title": "Ambriel Classic Cuvée — 50,41 € → 49,99 €",
+			"content_html": "<p>Tuotteen Ambriel Classic Cuvée hinta on muuttunut.</p><p>50,41 € → 49,99 € (−0,42 €, −0,83 %).</p>",
+			"summary": "Tuotteen Ambriel Classic Cuvée hinta on muuttunut. 50,41 € → 49,99 € (−0,42 €, −0,83 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/940851-325d2573dfa1.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

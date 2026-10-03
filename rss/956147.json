@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Taylor's 20 Year Old Tawny Port – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/956147/",
+	"feed_url": "https://alkometriikka.fi/rss/956147.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Taylor's 20 Year Old Tawny Port.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-956147-2026-09-29-72.25",
+			"url": "https://alkometriikka.fi/tuotteet/956147/",
+			"title": "Taylor's 20 Year Old Tawny Port — 69,99 € → 72,25 €",
+			"content_html": "<p>Tuotteen Taylor's 20 Year Old Tawny Port hinta on muuttunut.</p><p>69,99 € → 72,25 € (+2,26 €, +3,23 %).</p>",
+			"summary": "Tuotteen Taylor's 20 Year Old Tawny Port hinta on muuttunut. 69,99 € → 72,25 € (+2,26 €, +3,23 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/956147-70baa12ea16b.png",
+			"tags": [
+				"Välituotteet",
+				"portviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Black Velvet muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/111966/",
+	"feed_url": "https://alkometriikka.fi/rss/111966.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Black Velvet muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-111966-2026-09-29-19.99",
+			"url": "https://alkometriikka.fi/tuotteet/111966/",
+			"title": "Black Velvet muovipullo — 20,99 € → 19,99 €",
+			"content_html": "<p>Tuotteen Black Velvet muovipullo hinta on muuttunut.</p><p>20,99 € → 19,99 € (−1,00 €, −4,76 %).</p>",
+			"summary": "Tuotteen Black Velvet muovipullo hinta on muuttunut. 20,99 € → 19,99 € (−1,00 €, −4,76 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/111966-e47cdf376372.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

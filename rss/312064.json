@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Burmester 20 Year Old Tawny Port – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/312064/",
+	"feed_url": "https://alkometriikka.fi/rss/312064.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Burmester 20 Year Old Tawny Port.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-312064-2026-09-29-28.24",
+			"url": "https://alkometriikka.fi/tuotteet/312064/",
+			"title": "Burmester 20 Year Old Tawny Port — 27,67 € → 28,24 €",
+			"content_html": "<p>Tuotteen Burmester 20 Year Old Tawny Port hinta on muuttunut.</p><p>27,67 € → 28,24 € (+0,57 €, +2,06 %).</p>",
+			"summary": "Tuotteen Burmester 20 Year Old Tawny Port hinta on muuttunut. 27,67 € → 28,24 € (+0,57 €, +2,06 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/312064-21ce6f73c537.png",
+			"tags": [
+				"Välituotteet",
+				"portviinit"
+			]
+		}
+	]
+}

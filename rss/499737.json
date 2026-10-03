@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Redoma Rosé 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/499737/",
+	"feed_url": "https://alkometriikka.fi/rss/499737.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Redoma Rosé 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-499737-2026-07-18-22.9",
+			"url": "https://alkometriikka.fi/tuotteet/499737/",
+			"title": "Redoma Rosé 2024 — 22,95 € → 22,90 €",
+			"content_html": "<p>Tuotteen Redoma Rosé 2024 hinta on muuttunut.</p><p>22,95 € → 22,90 € (−0,05 €, −0,22 %).</p>",
+			"summary": "Tuotteen Redoma Rosé 2024 hinta on muuttunut. 22,95 € → 22,90 € (−0,05 €, −0,22 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/499737-b2f8f20be5eb.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

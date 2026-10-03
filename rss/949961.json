@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Giuseppe Quintarelli Valpolicella Classico Superiore 2015 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/949961/",
+	"feed_url": "https://alkometriikka.fi/rss/949961.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Giuseppe Quintarelli Valpolicella Classico Superiore 2015.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-949961-2026-09-29-125.02",
+			"url": "https://alkometriikka.fi/tuotteet/949961/",
+			"title": "Giuseppe Quintarelli Valpolicella Classico Superiore 2015 — 118,79 € → 125,02 €",
+			"content_html": "<p>Tuotteen Giuseppe Quintarelli Valpolicella Classico Superiore 2015 hinta on muuttunut.</p><p>118,79 € → 125,02 € (+6,23 €, +5,24 %).</p>",
+			"summary": "Tuotteen Giuseppe Quintarelli Valpolicella Classico Superiore 2015 hinta on muuttunut. 118,79 € → 125,02 € (+6,23 €, +5,24 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/949961-83ccc606ee30.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

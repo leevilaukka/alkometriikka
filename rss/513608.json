@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Secret Valley muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/513608/",
+	"feed_url": "https://alkometriikka.fi/rss/513608.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Secret Valley muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-513608-2026-09-29-12.77",
+			"url": "https://alkometriikka.fi/tuotteet/513608/",
+			"title": "Secret Valley muovipullo — 12,58 € → 12,77 €",
+			"content_html": "<p>Tuotteen Secret Valley muovipullo hinta on muuttunut.</p><p>12,58 € → 12,77 € (+0,19 €, +1,51 %).</p>",
+			"summary": "Tuotteen Secret Valley muovipullo hinta on muuttunut. 12,58 € → 12,77 € (+0,19 €, +1,51 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/513608-0c6c1f3a2c70.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

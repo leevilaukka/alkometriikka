@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pfaff Special 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/007296/",
+	"feed_url": "https://alkometriikka.fi/rss/007296.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pfaff Special 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-007296-2026-09-29-12.99",
+			"url": "https://alkometriikka.fi/tuotteet/007296/",
+			"title": "Pfaff Special 2023 — 13,48 € → 12,99 €",
+			"content_html": "<p>Tuotteen Pfaff Special 2023 hinta on muuttunut.</p><p>13,48 € → 12,99 € (−0,49 €, −3,64 %).</p>",
+			"summary": "Tuotteen Pfaff Special 2023 hinta on muuttunut. 13,48 € → 12,99 € (−0,49 €, −3,64 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/007296-48cbbd68c656.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-007296-2026-07-18-13.48",
+			"url": "https://alkometriikka.fi/tuotteet/007296/",
+			"title": "Pfaff Special 2023 — 13,46 € → 13,48 €",
+			"content_html": "<p>Tuotteen Pfaff Special 2023 hinta on muuttunut.</p><p>13,46 € → 13,48 € (+0,02 €, +0,15 %).</p>",
+			"summary": "Tuotteen Pfaff Special 2023 hinta on muuttunut. 13,46 € → 13,48 € (+0,02 €, +0,15 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/007296-48cbbd68c656.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

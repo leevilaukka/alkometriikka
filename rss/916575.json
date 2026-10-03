@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Strega Amarelli Liquore di Liquirizia – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/916575/",
+	"feed_url": "https://alkometriikka.fi/rss/916575.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Strega Amarelli Liquore di Liquirizia.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-916575-2026-09-29-29.99",
+			"url": "https://alkometriikka.fi/tuotteet/916575/",
+			"title": "Strega Amarelli Liquore di Liquirizia — 29,98 € → 29,99 €",
+			"content_html": "<p>Tuotteen Strega Amarelli Liquore di Liquirizia hinta on muuttunut.</p><p>29,98 € → 29,99 € (+0,01 €, +0,03 %).</p>",
+			"summary": "Tuotteen Strega Amarelli Liquore di Liquirizia hinta on muuttunut. 29,98 € → 29,99 € (+0,01 €, +0,03 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/916575-7d9c9181b4e4.png",
+			"tags": [
+				"Väkevät",
+				"salmiakkiliköörit"
+			]
+		},
+		{
+			"id": "alkometriikka-916575-2026-07-18-29.98",
+			"url": "https://alkometriikka.fi/tuotteet/916575/",
+			"title": "Strega Amarelli Liquore di Liquirizia — 30,12 € → 29,98 €",
+			"content_html": "<p>Tuotteen Strega Amarelli Liquore di Liquirizia hinta on muuttunut.</p><p>30,12 € → 29,98 € (−0,14 €, −0,46 %).</p>",
+			"summary": "Tuotteen Strega Amarelli Liquore di Liquirizia hinta on muuttunut. 30,12 € → 29,98 € (−0,14 €, −0,46 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/916575-7d9c9181b4e4.png",
+			"tags": [
+				"Väkevät",
+				"salmiakkiliköörit"
+			]
+		}
+	]
+}

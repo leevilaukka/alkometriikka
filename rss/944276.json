@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lindemans Apple Lambic – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/944276/",
+	"feed_url": "https://alkometriikka.fi/rss/944276.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lindemans Apple Lambic.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-944276-2026-09-29-4.39",
+			"url": "https://alkometriikka.fi/tuotteet/944276/",
+			"title": "Lindemans Apple Lambic — 3,99 € → 4,39 €",
+			"content_html": "<p>Tuotteen Lindemans Apple Lambic hinta on muuttunut.</p><p>3,99 € → 4,39 € (+0,40 €, +10,03 %).</p>",
+			"summary": "Tuotteen Lindemans Apple Lambic hinta on muuttunut. 3,99 € → 4,39 € (+0,40 €, +10,03 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/944276-0cef23109930.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Chateau Puybarbe Le Roc 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901752/",
+	"feed_url": "https://alkometriikka.fi/rss/901752.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Chateau Puybarbe Le Roc 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901752-2026-09-29-19.99",
+			"url": "https://alkometriikka.fi/tuotteet/901752/",
+			"title": "Chateau Puybarbe Le Roc 2020 — 17,98 € → 19,99 €",
+			"content_html": "<p>Tuotteen Chateau Puybarbe Le Roc 2020 hinta on muuttunut.</p><p>17,98 € → 19,99 € (+2,01 €, +11,18 %).</p>",
+			"summary": "Tuotteen Chateau Puybarbe Le Roc 2020 hinta on muuttunut. 17,98 € → 19,99 € (+2,01 €, +11,18 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901752-e5d44e6a7164.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

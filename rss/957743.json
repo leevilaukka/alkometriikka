@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lime Time Kombucha luomu tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/957743/",
+	"feed_url": "https://alkometriikka.fi/rss/957743.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lime Time Kombucha luomu tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-957743-2026-07-18-3.69",
+			"url": "https://alkometriikka.fi/tuotteet/957743/",
+			"title": "Lime Time Kombucha luomu tölkki — 3,68 € → 3,69 €",
+			"content_html": "<p>Tuotteen Lime Time Kombucha luomu tölkki hinta on muuttunut.</p><p>3,68 € → 3,69 € (+0,01 €, +0,27 %).</p>",
+			"summary": "Tuotteen Lime Time Kombucha luomu tölkki hinta on muuttunut. 3,68 € → 3,69 € (+0,01 €, +0,27 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/957743-ba3317a49a1a.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

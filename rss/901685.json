@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Landhaus Paul Golden Donkey Eiswein 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901685/",
+	"feed_url": "https://alkometriikka.fi/rss/901685.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Landhaus Paul Golden Donkey Eiswein 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901685-2026-09-29-34.69",
+			"url": "https://alkometriikka.fi/tuotteet/901685/",
+			"title": "Landhaus Paul Golden Donkey Eiswein 2023 — 33,52 € → 34,69 €",
+			"content_html": "<p>Tuotteen Landhaus Paul Golden Donkey Eiswein 2023 hinta on muuttunut.</p><p>33,52 € → 34,69 € (+1,17 €, +3,49 %).</p>",
+			"summary": "Tuotteen Landhaus Paul Golden Donkey Eiswein 2023 hinta on muuttunut. 33,52 € → 34,69 € (+1,17 €, +3,49 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901685-b2b9ee257776.png",
+			"tags": [
+				"Viinit",
+				"jälkiruokaviinit"
+			]
+		}
+	]
+}

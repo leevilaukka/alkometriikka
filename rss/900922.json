@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Baileys Mint Chocolate – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900922/",
+	"feed_url": "https://alkometriikka.fi/rss/900922.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Baileys Mint Chocolate.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900922-2026-07-18-23.99",
+			"url": "https://alkometriikka.fi/tuotteet/900922/",
+			"title": "Baileys Mint Chocolate — 25,99 € → 23,99 €",
+			"content_html": "<p>Tuotteen Baileys Mint Chocolate hinta on muuttunut.</p><p>25,99 € → 23,99 € (−2,00 €, −7,70 %).</p>",
+			"summary": "Tuotteen Baileys Mint Chocolate hinta on muuttunut. 25,99 € → 23,99 € (−2,00 €, −7,70 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900922-19c8cac4576d.png",
+			"tags": [
+				"Väkevät",
+				"kermaliköörit"
+			]
+		}
+	]
+}

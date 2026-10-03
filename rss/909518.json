@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Thiénot x Penfolds Rosé Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/909518/",
+	"feed_url": "https://alkometriikka.fi/rss/909518.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Thiénot x Penfolds Rosé Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-909518-2026-09-29-69.98",
+			"url": "https://alkometriikka.fi/tuotteet/909518/",
+			"title": "Thiénot x Penfolds Rosé Champagne Brut — 83,98 € → 69,98 €",
+			"content_html": "<p>Tuotteen Thiénot x Penfolds Rosé Champagne Brut hinta on muuttunut.</p><p>83,98 € → 69,98 € (−14,00 €, −16,67 %).</p>",
+			"summary": "Tuotteen Thiénot x Penfolds Rosé Champagne Brut hinta on muuttunut. 83,98 € → 69,98 € (−14,00 €, −16,67 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/909518-41c0653ca272.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

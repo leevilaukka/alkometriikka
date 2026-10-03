@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – White Tropez 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900571/",
+	"feed_url": "https://alkometriikka.fi/rss/900571.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: White Tropez 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900571-2026-09-29-30.14",
+			"url": "https://alkometriikka.fi/tuotteet/900571/",
+			"title": "White Tropez 2024 — 28,88 € → 30,14 €",
+			"content_html": "<p>Tuotteen White Tropez 2024 hinta on muuttunut.</p><p>28,88 € → 30,14 € (+1,26 €, +4,36 %).</p>",
+			"summary": "Tuotteen White Tropez 2024 hinta on muuttunut. 28,88 € → 30,14 € (+1,26 €, +4,36 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900571-78d4757277f0.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

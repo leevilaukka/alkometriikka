@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Niepoort Ruby Port – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/003235/",
+	"feed_url": "https://alkometriikka.fi/rss/003235.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Niepoort Ruby Port.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-003235-2026-07-18-20.89",
+			"url": "https://alkometriikka.fi/tuotteet/003235/",
+			"title": "Niepoort Ruby Port — 20,60 € → 20,89 €",
+			"content_html": "<p>Tuotteen Niepoort Ruby Port hinta on muuttunut.</p><p>20,60 € → 20,89 € (+0,29 €, +1,41 %).</p>",
+			"summary": "Tuotteen Niepoort Ruby Port hinta on muuttunut. 20,60 € → 20,89 € (+0,29 €, +1,41 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/003235-e91be189e7bb.png",
+			"tags": [
+				"Välituotteet",
+				"portviinit"
+			]
+		}
+	]
+}

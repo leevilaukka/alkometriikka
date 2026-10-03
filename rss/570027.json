@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Leth Riesling Alte Reben 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/570027/",
+	"feed_url": "https://alkometriikka.fi/rss/570027.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Leth Riesling Alte Reben 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-570027-2026-09-29-17.98",
+			"url": "https://alkometriikka.fi/tuotteet/570027/",
+			"title": "Leth Riesling Alte Reben 2024 — 17,48 € → 17,98 €",
+			"content_html": "<p>Tuotteen Leth Riesling Alte Reben 2024 hinta on muuttunut.</p><p>17,48 € → 17,98 € (+0,50 €, +2,86 %).</p>",
+			"summary": "Tuotteen Leth Riesling Alte Reben 2024 hinta on muuttunut. 17,48 € → 17,98 € (+0,50 €, +2,86 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/570027-93f7ba97a227.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

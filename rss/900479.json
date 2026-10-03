@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vilmos – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900479/",
+	"feed_url": "https://alkometriikka.fi/rss/900479.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vilmos.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900479-2026-09-29-66.51",
+			"url": "https://alkometriikka.fi/tuotteet/900479/",
+			"title": "Vilmos — 64,32 € → 66,51 €",
+			"content_html": "<p>Tuotteen Vilmos hinta on muuttunut.</p><p>64,32 € → 66,51 € (+2,19 €, +3,40 %).</p>",
+			"summary": "Tuotteen Vilmos hinta on muuttunut. 64,32 € → 66,51 € (+2,19 €, +3,40 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900479-3aaf3b4b273a.png",
+			"tags": [
+				"Väkevät",
+				"hedelmätisleet"
+			]
+		}
+	]
+}

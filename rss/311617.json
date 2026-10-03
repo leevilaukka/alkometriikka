@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Chymos Mansikka Väkevä Marjaviini – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/311617/",
+	"feed_url": "https://alkometriikka.fi/rss/311617.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Chymos Mansikka Väkevä Marjaviini.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-311617-2026-07-18-11.98",
+			"url": "https://alkometriikka.fi/tuotteet/311617/",
+			"title": "Chymos Mansikka Väkevä Marjaviini — 12,52 € → 11,98 €",
+			"content_html": "<p>Tuotteen Chymos Mansikka Väkevä Marjaviini hinta on muuttunut.</p><p>12,52 € → 11,98 € (−0,54 €, −4,31 %).</p>",
+			"summary": "Tuotteen Chymos Mansikka Väkevä Marjaviini hinta on muuttunut. 12,52 € → 11,98 € (−0,54 €, −4,31 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/311617-df25522b0074.png",
+			"tags": [
+				"Välituotteet",
+				"väkevät viinit"
+			]
+		}
+	]
+}

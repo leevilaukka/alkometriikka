@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Beefeater London Dry Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/000533/",
+	"feed_url": "https://alkometriikka.fi/rss/000533.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Beefeater London Dry Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-000533-2026-09-29-18.49",
+			"url": "https://alkometriikka.fi/tuotteet/000533/",
+			"title": "Beefeater London Dry Gin — 18,38 € → 18,49 €",
+			"content_html": "<p>Tuotteen Beefeater London Dry Gin hinta on muuttunut.</p><p>18,38 € → 18,49 € (+0,11 €, +0,60 %).</p>",
+			"summary": "Tuotteen Beefeater London Dry Gin hinta on muuttunut. 18,38 € → 18,49 € (+0,11 €, +0,60 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/000533-8296e0709dde.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

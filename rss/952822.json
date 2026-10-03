@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nuija Dry Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/952822/",
+	"feed_url": "https://alkometriikka.fi/rss/952822.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nuija Dry Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-952822-2026-09-29-45.51",
+			"url": "https://alkometriikka.fi/tuotteet/952822/",
+			"title": "Nuija Dry Gin — 44,93 € → 45,51 €",
+			"content_html": "<p>Tuotteen Nuija Dry Gin hinta on muuttunut.</p><p>44,93 € → 45,51 € (+0,58 €, +1,29 %).</p>",
+			"summary": "Tuotteen Nuija Dry Gin hinta on muuttunut. 44,93 € → 45,51 € (+0,58 €, +1,29 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/952822-4015451f68ba.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

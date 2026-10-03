@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Thomas Henry Ginger Beer – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/928481/",
+	"feed_url": "https://alkometriikka.fi/rss/928481.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Thomas Henry Ginger Beer.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-928481-2026-07-18-1.79",
+			"url": "https://alkometriikka.fi/tuotteet/928481/",
+			"title": "Thomas Henry Ginger Beer — 1,74 € → 1,79 €",
+			"content_html": "<p>Tuotteen Thomas Henry Ginger Beer hinta on muuttunut.</p><p>1,74 € → 1,79 € (+0,05 €, +2,87 %).</p>",
+			"summary": "Tuotteen Thomas Henry Ginger Beer hinta on muuttunut. 1,74 € → 1,79 € (+0,05 €, +2,87 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/928481-82eb13677c79.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

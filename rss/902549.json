@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Godet Peardise – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902549/",
+	"feed_url": "https://alkometriikka.fi/rss/902549.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Godet Peardise.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902549-2026-09-29-50.43",
+			"url": "https://alkometriikka.fi/tuotteet/902549/",
+			"title": "Godet Peardise — 50,25 € → 50,43 €",
+			"content_html": "<p>Tuotteen Godet Peardise hinta on muuttunut.</p><p>50,25 € → 50,43 € (+0,18 €, +0,36 %).</p>",
+			"summary": "Tuotteen Godet Peardise hinta on muuttunut. 50,25 € → 50,43 € (+0,18 €, +0,36 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902549-62a153e137b6.png",
+			"tags": [
+				"Väkevät",
+				"hedelmäliköörit"
+			]
+		}
+	]
+}

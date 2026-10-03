@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Grosset Polish Hill Riesling 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901875/",
+	"feed_url": "https://alkometriikka.fi/rss/901875.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Grosset Polish Hill Riesling 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901875-2026-09-29-56.99",
+			"url": "https://alkometriikka.fi/tuotteet/901875/",
+			"title": "Grosset Polish Hill Riesling 2022 — 55,45 € → 56,99 €",
+			"content_html": "<p>Tuotteen Grosset Polish Hill Riesling 2022 hinta on muuttunut.</p><p>55,45 € → 56,99 € (+1,54 €, +2,78 %).</p>",
+			"summary": "Tuotteen Grosset Polish Hill Riesling 2022 hinta on muuttunut. 55,45 € → 56,99 € (+1,54 €, +2,78 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901875-79468f924dab.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

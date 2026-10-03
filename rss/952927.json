@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Brumont Château Bouscassé 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/952927/",
+	"feed_url": "https://alkometriikka.fi/rss/952927.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Brumont Château Bouscassé 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-952927-2026-09-29-26.98",
+			"url": "https://alkometriikka.fi/tuotteet/952927/",
+			"title": "Brumont Château Bouscassé 2019 — 26,99 € → 26,98 €",
+			"content_html": "<p>Tuotteen Brumont Château Bouscassé 2019 hinta on muuttunut.</p><p>26,99 € → 26,98 € (−0,01 €, −0,04 %).</p>",
+			"summary": "Tuotteen Brumont Château Bouscassé 2019 hinta on muuttunut. 26,99 € → 26,98 € (−0,01 €, −0,04 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/952927-d8216fcd8ccc.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

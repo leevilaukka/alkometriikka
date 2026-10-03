@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Terrazas de los Andes Grand Malbec 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/916674/",
+	"feed_url": "https://alkometriikka.fi/rss/916674.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Terrazas de los Andes Grand Malbec 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-916674-2026-09-29-57.98",
+			"url": "https://alkometriikka.fi/tuotteet/916674/",
+			"title": "Terrazas de los Andes Grand Malbec 2022 — 56,49 € → 57,98 €",
+			"content_html": "<p>Tuotteen Terrazas de los Andes Grand Malbec 2022 hinta on muuttunut.</p><p>56,49 € → 57,98 € (+1,49 €, +2,64 %).</p>",
+			"summary": "Tuotteen Terrazas de los Andes Grand Malbec 2022 hinta on muuttunut. 56,49 € → 57,98 € (+1,49 €, +2,64 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/916674-6ce315fd47c5.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-916674-2026-07-18-56.49",
+			"url": "https://alkometriikka.fi/tuotteet/916674/",
+			"title": "Terrazas de los Andes Grand Malbec 2022 — 55,45 € → 56,49 €",
+			"content_html": "<p>Tuotteen Terrazas de los Andes Grand Malbec 2022 hinta on muuttunut.</p><p>55,45 € → 56,49 € (+1,04 €, +1,88 %).</p>",
+			"summary": "Tuotteen Terrazas de los Andes Grand Malbec 2022 hinta on muuttunut. 55,45 € → 56,49 € (+1,04 €, +1,88 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/916674-6ce315fd47c5.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

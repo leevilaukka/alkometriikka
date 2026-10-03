@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Freixenet Blanc de Blancs Cava Extra Dry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/588677/",
+	"feed_url": "https://alkometriikka.fi/rss/588677.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Freixenet Blanc de Blancs Cava Extra Dry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-588677-2026-09-29-13.98",
+			"url": "https://alkometriikka.fi/tuotteet/588677/",
+			"title": "Freixenet Blanc de Blancs Cava Extra Dry — 13,21 € → 13,98 €",
+			"content_html": "<p>Tuotteen Freixenet Blanc de Blancs Cava Extra Dry hinta on muuttunut.</p><p>13,21 € → 13,98 € (+0,77 €, +5,83 %).</p>",
+			"summary": "Tuotteen Freixenet Blanc de Blancs Cava Extra Dry hinta on muuttunut. 13,21 € → 13,98 € (+0,77 €, +5,83 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/588677-193bb79395fc.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

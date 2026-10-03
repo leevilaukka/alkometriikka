@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Scandinavian Salmiak Chili – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/111887/",
+	"feed_url": "https://alkometriikka.fi/rss/111887.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Scandinavian Salmiak Chili.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-111887-2026-09-29-25.02",
+			"url": "https://alkometriikka.fi/tuotteet/111887/",
+			"title": "Scandinavian Salmiak Chili — 24,93 € → 25,02 €",
+			"content_html": "<p>Tuotteen Scandinavian Salmiak Chili hinta on muuttunut.</p><p>24,93 € → 25,02 € (+0,09 €, +0,36 %).</p>",
+			"summary": "Tuotteen Scandinavian Salmiak Chili hinta on muuttunut. 24,93 € → 25,02 € (+0,09 €, +0,36 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/111887-3dfdf45f41dc.png",
+			"tags": [
+				"Väkevät",
+				"salmiakkiliköörit"
+			]
+		}
+	]
+}

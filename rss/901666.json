@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Los Tucos Malbec 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901666/",
+	"feed_url": "https://alkometriikka.fi/rss/901666.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Los Tucos Malbec 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901666-2026-07-18-13.49",
+			"url": "https://alkometriikka.fi/tuotteet/901666/",
+			"title": "Los Tucos Malbec 2023 — 13,45 € → 13,49 €",
+			"content_html": "<p>Tuotteen Los Tucos Malbec 2023 hinta on muuttunut.</p><p>13,45 € → 13,49 € (+0,04 €, +0,30 %).</p>",
+			"summary": "Tuotteen Los Tucos Malbec 2023 hinta on muuttunut. 13,45 € → 13,49 € (+0,04 €, +0,30 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901666-8f4bc1c4cea9.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

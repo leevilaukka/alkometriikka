@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Schweppes Russchian tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/793954/",
+	"feed_url": "https://alkometriikka.fi/rss/793954.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Schweppes Russchian tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-793954-2026-07-18-1.99",
+			"url": "https://alkometriikka.fi/tuotteet/793954/",
+			"title": "Schweppes Russchian tölkki — 1,88 € → 1,99 €",
+			"content_html": "<p>Tuotteen Schweppes Russchian tölkki hinta on muuttunut.</p><p>1,88 € → 1,99 € (+0,11 €, +5,85 %).</p>",
+			"summary": "Tuotteen Schweppes Russchian tölkki hinta on muuttunut. 1,88 € → 1,99 € (+0,11 €, +5,85 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/793954-ccad97e054d4.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

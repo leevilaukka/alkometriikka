@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Taylor's Select Reserve Port – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/319554/",
+	"feed_url": "https://alkometriikka.fi/rss/319554.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Taylor's Select Reserve Port.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-319554-2026-07-18-12.29",
+			"url": "https://alkometriikka.fi/tuotteet/319554/",
+			"title": "Taylor's Select Reserve Port — 12,22 € → 12,29 €",
+			"content_html": "<p>Tuotteen Taylor's Select Reserve Port hinta on muuttunut.</p><p>12,22 € → 12,29 € (+0,07 €, +0,57 %).</p>",
+			"summary": "Tuotteen Taylor's Select Reserve Port hinta on muuttunut. 12,22 € → 12,29 € (+0,07 €, +0,57 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/319554-9eac1aef1cba.png",
+			"tags": [
+				"Välituotteet",
+				"portviinit"
+			]
+		}
+	]
+}

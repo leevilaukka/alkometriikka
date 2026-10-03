@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cutty Sark – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/200038/",
+	"feed_url": "https://alkometriikka.fi/rss/200038.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cutty Sark.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-200038-2026-09-29-26.98",
+			"url": "https://alkometriikka.fi/tuotteet/200038/",
+			"title": "Cutty Sark — 26,96 € → 26,98 €",
+			"content_html": "<p>Tuotteen Cutty Sark hinta on muuttunut.</p><p>26,96 € → 26,98 € (+0,02 €, +0,07 %).</p>",
+			"summary": "Tuotteen Cutty Sark hinta on muuttunut. 26,96 € → 26,98 € (+0,02 €, +0,07 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/200038-c77ad7d2f8b7.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

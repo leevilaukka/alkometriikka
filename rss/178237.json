@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Woodford Reserve Distiller's Select – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/178237/",
+	"feed_url": "https://alkometriikka.fi/rss/178237.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Woodford Reserve Distiller's Select.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-178237-2026-09-29-62.5",
+			"url": "https://alkometriikka.fi/tuotteet/178237/",
+			"title": "Woodford Reserve Distiller's Select — 62,98 € → 62,50 €",
+			"content_html": "<p>Tuotteen Woodford Reserve Distiller's Select hinta on muuttunut.</p><p>62,98 € → 62,50 € (−0,48 €, −0,76 %).</p>",
+			"summary": "Tuotteen Woodford Reserve Distiller's Select hinta on muuttunut. 62,98 € → 62,50 € (−0,48 €, −0,76 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/178237-4ca4d808e790.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

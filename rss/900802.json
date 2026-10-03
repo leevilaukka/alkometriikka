@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – G&J Bott Saint-Joseph 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900802/",
+	"feed_url": "https://alkometriikka.fi/rss/900802.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: G&J Bott Saint-Joseph 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900802-2026-09-30-50.99",
+			"url": "https://alkometriikka.fi/tuotteet/900802/",
+			"title": "G&J Bott Saint-Joseph 2022 — 51,96 € → 50,99 €",
+			"content_html": "<p>Tuotteen G&J Bott Saint-Joseph 2022 hinta on muuttunut.</p><p>51,96 € → 50,99 € (−0,97 €, −1,87 %).</p>",
+			"summary": "Tuotteen G&J Bott Saint-Joseph 2022 hinta on muuttunut. 51,96 € → 50,99 € (−0,97 €, −1,87 %).",
+			"date_published": "2026-09-30T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900802-00990c65e110.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

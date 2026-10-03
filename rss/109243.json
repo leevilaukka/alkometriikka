@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Renault Blue Nuit VS – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/109243/",
+	"feed_url": "https://alkometriikka.fi/rss/109243.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Renault Blue Nuit VS.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-109243-2026-09-29-17.2",
+			"url": "https://alkometriikka.fi/tuotteet/109243/",
+			"title": "Renault Blue Nuit VS — 16,98 € → 17,20 €",
+			"content_html": "<p>Tuotteen Renault Blue Nuit VS hinta on muuttunut.</p><p>16,98 € → 17,20 € (+0,22 €, +1,30 %).</p>",
+			"summary": "Tuotteen Renault Blue Nuit VS hinta on muuttunut. 16,98 € → 17,20 € (+0,22 €, +1,30 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/109243-fe83cff8ef5c.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Paddy Irish Whiskey – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/914987/",
+	"feed_url": "https://alkometriikka.fi/rss/914987.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Paddy Irish Whiskey.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-914987-2026-07-18-33.5",
+			"url": "https://alkometriikka.fi/tuotteet/914987/",
+			"title": "Paddy Irish Whiskey — 33,48 € → 33,50 €",
+			"content_html": "<p>Tuotteen Paddy Irish Whiskey hinta on muuttunut.</p><p>33,48 € → 33,50 € (+0,02 €, +0,06 %).</p>",
+			"summary": "Tuotteen Paddy Irish Whiskey hinta on muuttunut. 33,48 € → 33,50 € (+0,02 €, +0,06 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/914987-231ae4987898.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Clos des Papes Châteauneuf du Pape 2016 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903579/",
+	"feed_url": "https://alkometriikka.fi/rss/903579.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Clos des Papes Châteauneuf du Pape 2016.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903579-2026-09-29-189.59",
+			"url": "https://alkometriikka.fi/tuotteet/903579/",
+			"title": "Clos des Papes Châteauneuf du Pape 2016 — 178,81 € → 189,59 €",
+			"content_html": "<p>Tuotteen Clos des Papes Châteauneuf du Pape 2016 hinta on muuttunut.</p><p>178,81 € → 189,59 € (+10,78 €, +6,03 %).</p>",
+			"summary": "Tuotteen Clos des Papes Châteauneuf du Pape 2016 hinta on muuttunut. 178,81 € → 189,59 € (+10,78 €, +6,03 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903579-55a24c6cfbf2.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

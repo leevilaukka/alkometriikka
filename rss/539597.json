@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Loimer Lois Grüner Veltliner 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/539597/",
+	"feed_url": "https://alkometriikka.fi/rss/539597.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Loimer Lois Grüner Veltliner 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-539597-2026-07-18-19.48",
+			"url": "https://alkometriikka.fi/tuotteet/539597/",
+			"title": "Loimer Lois Grüner Veltliner 2024 — 18,45 € → 19,48 €",
+			"content_html": "<p>Tuotteen Loimer Lois Grüner Veltliner 2024 hinta on muuttunut.</p><p>18,45 € → 19,48 € (+1,03 €, +5,58 %).</p>",
+			"summary": "Tuotteen Loimer Lois Grüner Veltliner 2024 hinta on muuttunut. 18,45 € → 19,48 € (+1,03 €, +5,58 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/539597-e95b3bd8a573.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

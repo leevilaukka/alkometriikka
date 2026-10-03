@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Zhu Ye Qing Jiu – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/944502/",
+	"feed_url": "https://alkometriikka.fi/rss/944502.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Zhu Ye Qing Jiu.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-944502-2026-09-29-64.5",
+			"url": "https://alkometriikka.fi/tuotteet/944502/",
+			"title": "Zhu Ye Qing Jiu — 62,35 € → 64,50 €",
+			"content_html": "<p>Tuotteen Zhu Ye Qing Jiu hinta on muuttunut.</p><p>62,35 € → 64,50 € (+2,15 €, +3,45 %).</p>",
+			"summary": "Tuotteen Zhu Ye Qing Jiu hinta on muuttunut. 62,35 € → 64,50 € (+2,15 €, +3,45 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/944502-f99ba5b45d36.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

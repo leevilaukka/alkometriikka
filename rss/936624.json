@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Aussie Great White Chardonnay kartonkitölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/936624/",
+	"feed_url": "https://alkometriikka.fi/rss/936624.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Aussie Great White Chardonnay kartonkitölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-936624-2026-07-18-10.69",
+			"url": "https://alkometriikka.fi/tuotteet/936624/",
+			"title": "Aussie Great White Chardonnay kartonkitölkki — 10,49 € → 10,69 €",
+			"content_html": "<p>Tuotteen Aussie Great White Chardonnay kartonkitölkki hinta on muuttunut.</p><p>10,49 € → 10,69 € (+0,20 €, +1,91 %).</p>",
+			"summary": "Tuotteen Aussie Great White Chardonnay kartonkitölkki hinta on muuttunut. 10,49 € → 10,69 € (+0,20 €, +1,91 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/936624-efe0e1d6e8db.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tuori Cask & Spirit – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/934915/",
+	"feed_url": "https://alkometriikka.fi/rss/934915.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tuori Cask & Spirit.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-934915-2026-09-29-43.32",
+			"url": "https://alkometriikka.fi/tuotteet/934915/",
+			"title": "Tuori Cask & Spirit — 42,54 € → 43,32 €",
+			"content_html": "<p>Tuotteen Tuori Cask & Spirit hinta on muuttunut.</p><p>42,54 € → 43,32 € (+0,78 €, +1,83 %).</p>",
+			"summary": "Tuotteen Tuori Cask & Spirit hinta on muuttunut. 42,54 € → 43,32 € (+0,78 €, +1,83 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/934915-f24d66b0c20c.png",
+			"tags": [
+				"Väkevät",
+				"viina"
+			]
+		}
+	]
+}

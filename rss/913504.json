@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tuori Akvavit – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/913504/",
+	"feed_url": "https://alkometriikka.fi/rss/913504.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tuori Akvavit.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-913504-2026-09-29-42.87",
+			"url": "https://alkometriikka.fi/tuotteet/913504/",
+			"title": "Tuori Akvavit — 42,32 € → 42,87 €",
+			"content_html": "<p>Tuotteen Tuori Akvavit hinta on muuttunut.</p><p>42,32 € → 42,87 € (+0,55 €, +1,30 %).</p>",
+			"summary": "Tuotteen Tuori Akvavit hinta on muuttunut. 42,32 € → 42,87 € (+0,55 €, +1,30 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/913504-f3ab555e7496.png",
+			"tags": [
+				"Väkevät",
+				"akvaviitit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Fords London Dry Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/927455/",
+	"feed_url": "https://alkometriikka.fi/rss/927455.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Fords London Dry Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-927455-2026-09-29-39.99",
+			"url": "https://alkometriikka.fi/tuotteet/927455/",
+			"title": "Fords London Dry Gin — 40,99 € → 39,99 €",
+			"content_html": "<p>Tuotteen Fords London Dry Gin hinta on muuttunut.</p><p>40,99 € → 39,99 € (−1,00 €, −2,44 %).</p>",
+			"summary": "Tuotteen Fords London Dry Gin hinta on muuttunut. 40,99 € → 39,99 € (−1,00 €, −2,44 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/927455-be83ff6bec1f.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bearface Elementally Aged Triple Oak Canadian Whisky – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901210/",
+	"feed_url": "https://alkometriikka.fi/rss/901210.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bearface Elementally Aged Triple Oak Canadian Whisky.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901210-2026-07-18-49.98",
+			"url": "https://alkometriikka.fi/tuotteet/901210/",
+			"title": "Bearface Elementally Aged Triple Oak Canadian Whisky — 50,69 € → 49,98 €",
+			"content_html": "<p>Tuotteen Bearface Elementally Aged Triple Oak Canadian Whisky hinta on muuttunut.</p><p>50,69 € → 49,98 € (−0,71 €, −1,40 %).</p>",
+			"summary": "Tuotteen Bearface Elementally Aged Triple Oak Canadian Whisky hinta on muuttunut. 50,69 € → 49,98 € (−0,71 €, −1,40 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901210-c6fe484e482f.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

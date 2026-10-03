@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – GlenAllachie 9 Year Old Amontillado Cask Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902335/",
+	"feed_url": "https://alkometriikka.fi/rss/902335.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: GlenAllachie 9 Year Old Amontillado Cask Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902335-2026-09-29-79.98",
+			"url": "https://alkometriikka.fi/tuotteet/902335/",
+			"title": "GlenAllachie 9 Year Old Amontillado Cask Single Malt — 80,30 € → 79,98 €",
+			"content_html": "<p>Tuotteen GlenAllachie 9 Year Old Amontillado Cask Single Malt hinta on muuttunut.</p><p>80,30 € → 79,98 € (−0,32 €, −0,40 %).</p>",
+			"summary": "Tuotteen GlenAllachie 9 Year Old Amontillado Cask Single Malt hinta on muuttunut. 80,30 € → 79,98 € (−0,32 €, −0,40 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902335-76309ae190f1.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Palmer & Co Grands Terroirs Champagne Brut Magnum 2003 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/947164/",
+	"feed_url": "https://alkometriikka.fi/rss/947164.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Palmer & Co Grands Terroirs Champagne Brut Magnum 2003.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-947164-2026-09-29-497.75",
+			"url": "https://alkometriikka.fi/tuotteet/947164/",
+			"title": "Palmer & Co Grands Terroirs Champagne Brut Magnum 2003 — 468,00 € → 497,75 €",
+			"content_html": "<p>Tuotteen Palmer & Co Grands Terroirs Champagne Brut Magnum 2003 hinta on muuttunut.</p><p>468,00 € → 497,75 € (+29,75 €, +6,36 %).</p>",
+			"summary": "Tuotteen Palmer & Co Grands Terroirs Champagne Brut Magnum 2003 hinta on muuttunut. 468,00 € → 497,75 € (+29,75 €, +6,36 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/947164-0b7a716b3ca3.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-947164-2026-07-18-468",
+			"url": "https://alkometriikka.fi/tuotteet/947164/",
+			"title": "Palmer & Co Grands Terroirs Champagne Brut Magnum 2003 — 464,92 € → 468,00 €",
+			"content_html": "<p>Tuotteen Palmer & Co Grands Terroirs Champagne Brut Magnum 2003 hinta on muuttunut.</p><p>464,92 € → 468,00 € (+3,08 €, +0,66 %).</p>",
+			"summary": "Tuotteen Palmer & Co Grands Terroirs Champagne Brut Magnum 2003 hinta on muuttunut. 464,92 € → 468,00 € (+3,08 €, +0,66 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/947164-0b7a716b3ca3.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

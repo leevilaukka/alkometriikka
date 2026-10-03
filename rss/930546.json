@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Chateau De Fontaine-Audon Sancerre 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/930546/",
+	"feed_url": "https://alkometriikka.fi/rss/930546.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Chateau De Fontaine-Audon Sancerre 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-930546-2026-09-29-34.98",
+			"url": "https://alkometriikka.fi/tuotteet/930546/",
+			"title": "Chateau De Fontaine-Audon Sancerre 2023 — 34,99 € → 34,98 €",
+			"content_html": "<p>Tuotteen Chateau De Fontaine-Audon Sancerre 2023 hinta on muuttunut.</p><p>34,99 € → 34,98 € (−0,01 €, −0,03 %).</p>",
+			"summary": "Tuotteen Chateau De Fontaine-Audon Sancerre 2023 hinta on muuttunut. 34,99 € → 34,98 € (−0,01 €, −0,03 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/930546-d5bfddfe41c4.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

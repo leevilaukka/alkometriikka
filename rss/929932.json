@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tormaresca Calafuria 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/929932/",
+	"feed_url": "https://alkometriikka.fi/rss/929932.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tormaresca Calafuria 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-929932-2026-07-18-21.98",
+			"url": "https://alkometriikka.fi/tuotteet/929932/",
+			"title": "Tormaresca Calafuria 2025 — 22,43 € → 21,98 €",
+			"content_html": "<p>Tuotteen Tormaresca Calafuria 2025 hinta on muuttunut.</p><p>22,43 € → 21,98 € (−0,45 €, −2,01 %).</p>",
+			"summary": "Tuotteen Tormaresca Calafuria 2025 hinta on muuttunut. 22,43 € → 21,98 € (−0,45 €, −2,01 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/929932-fab11175f54f.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

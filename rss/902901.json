@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lepaan Vadelmatisle – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902901/",
+	"feed_url": "https://alkometriikka.fi/rss/902901.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lepaan Vadelmatisle.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902901-2026-09-29-46.21",
+			"url": "https://alkometriikka.fi/tuotteet/902901/",
+			"title": "Lepaan Vadelmatisle — 44,74 € → 46,21 €",
+			"content_html": "<p>Tuotteen Lepaan Vadelmatisle hinta on muuttunut.</p><p>44,74 € → 46,21 € (+1,47 €, +3,29 %).</p>",
+			"summary": "Tuotteen Lepaan Vadelmatisle hinta on muuttunut. 44,74 € → 46,21 € (+1,47 €, +3,29 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902901-80577bc838e8.png",
+			"tags": [
+				"Väkevät",
+				"hedelmätisleet"
+			]
+		}
+	]
+}

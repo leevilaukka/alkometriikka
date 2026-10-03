@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Motörhead Premium Dark Rum – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/147947/",
+	"feed_url": "https://alkometriikka.fi/rss/147947.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Motörhead Premium Dark Rum.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-147947-2026-07-18-47.99",
+			"url": "https://alkometriikka.fi/tuotteet/147947/",
+			"title": "Motörhead Premium Dark Rum — 48,25 € → 47,99 €",
+			"content_html": "<p>Tuotteen Motörhead Premium Dark Rum hinta on muuttunut.</p><p>48,25 € → 47,99 € (−0,26 €, −0,54 %).</p>",
+			"summary": "Tuotteen Motörhead Premium Dark Rum hinta on muuttunut. 48,25 € → 47,99 € (−0,26 €, −0,54 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/147947-25bb1a5a3e98.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

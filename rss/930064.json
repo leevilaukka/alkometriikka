@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Fresco di Masi Organic Bianco 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/930064/",
+	"feed_url": "https://alkometriikka.fi/rss/930064.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Fresco di Masi Organic Bianco 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-930064-2026-07-18-15.99",
+			"url": "https://alkometriikka.fi/tuotteet/930064/",
+			"title": "Fresco di Masi Organic Bianco 2023 — 15,95 € → 15,99 €",
+			"content_html": "<p>Tuotteen Fresco di Masi Organic Bianco 2023 hinta on muuttunut.</p><p>15,95 € → 15,99 € (+0,04 €, +0,25 %).</p>",
+			"summary": "Tuotteen Fresco di Masi Organic Bianco 2023 hinta on muuttunut. 15,95 € → 15,99 € (+0,04 €, +0,25 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/930064-45071bbc7f59.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

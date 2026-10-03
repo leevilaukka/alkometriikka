@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kouvolan Lakritsi Shot – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/100015/",
+	"feed_url": "https://alkometriikka.fi/rss/100015.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kouvolan Lakritsi Shot.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-100015-2026-09-29-17.98",
+			"url": "https://alkometriikka.fi/tuotteet/100015/",
+			"title": "Kouvolan Lakritsi Shot — 18,06 € → 17,98 €",
+			"content_html": "<p>Tuotteen Kouvolan Lakritsi Shot hinta on muuttunut.</p><p>18,06 € → 17,98 € (−0,08 €, −0,44 %).</p>",
+			"summary": "Tuotteen Kouvolan Lakritsi Shot hinta on muuttunut. 18,06 € → 17,98 € (−0,08 €, −0,44 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/100015-01f12c148d9b.png",
+			"tags": [
+				"Väkevät",
+				"salmiakkiliköörit"
+			]
+		}
+	]
+}

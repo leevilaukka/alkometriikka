@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Toffee muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/231164/",
+	"feed_url": "https://alkometriikka.fi/rss/231164.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Toffee muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-231164-2026-07-18-8.35",
+			"url": "https://alkometriikka.fi/tuotteet/231164/",
+			"title": "Toffee muovipullo — 8,31 € → 8,35 €",
+			"content_html": "<p>Tuotteen Toffee muovipullo hinta on muuttunut.</p><p>8,31 € → 8,35 € (+0,04 €, +0,48 %).</p>",
+			"summary": "Tuotteen Toffee muovipullo hinta on muuttunut. 8,31 € → 8,35 € (+0,04 €, +0,48 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/231164-4b37f4f78e1b.png",
+			"tags": [
+				"Väkevät",
+				"mausteliköörit"
+			]
+		}
+	]
+}

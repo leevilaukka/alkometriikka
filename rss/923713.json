@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Francis Orban Rosé Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/923713/",
+	"feed_url": "https://alkometriikka.fi/rss/923713.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Francis Orban Rosé Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-923713-2026-09-29-54.71",
+			"url": "https://alkometriikka.fi/tuotteet/923713/",
+			"title": "Francis Orban Rosé Champagne Brut — 53,43 € → 54,71 €",
+			"content_html": "<p>Tuotteen Francis Orban Rosé Champagne Brut hinta on muuttunut.</p><p>53,43 € → 54,71 € (+1,28 €, +2,40 %).</p>",
+			"summary": "Tuotteen Francis Orban Rosé Champagne Brut hinta on muuttunut. 53,43 € → 54,71 € (+1,28 €, +2,40 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/923713-0fd1a595fae1.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

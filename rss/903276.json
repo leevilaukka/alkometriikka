@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Taittinger Nocturne Rosé Champagne Sec – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903276/",
+	"feed_url": "https://alkometriikka.fi/rss/903276.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Taittinger Nocturne Rosé Champagne Sec.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903276-2026-09-29-89.94",
+			"url": "https://alkometriikka.fi/tuotteet/903276/",
+			"title": "Taittinger Nocturne Rosé Champagne Sec — 86,20 € → 89,94 €",
+			"content_html": "<p>Tuotteen Taittinger Nocturne Rosé Champagne Sec hinta on muuttunut.</p><p>86,20 € → 89,94 € (+3,74 €, +4,34 %).</p>",
+			"summary": "Tuotteen Taittinger Nocturne Rosé Champagne Sec hinta on muuttunut. 86,20 € → 89,94 € (+3,74 €, +4,34 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903276-8102f4b28b37.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

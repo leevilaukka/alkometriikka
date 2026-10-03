@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kimito Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900864/",
+	"feed_url": "https://alkometriikka.fi/rss/900864.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kimito Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900864-2026-09-29-41",
+			"url": "https://alkometriikka.fi/tuotteet/900864/",
+			"title": "Kimito Gin — 40,73 € → 41,00 €",
+			"content_html": "<p>Tuotteen Kimito Gin hinta on muuttunut.</p><p>40,73 € → 41,00 € (+0,27 €, +0,66 %).</p>",
+			"summary": "Tuotteen Kimito Gin hinta on muuttunut. 40,73 € → 41,00 € (+0,27 €, +0,66 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900864-37eb491cd8c7.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

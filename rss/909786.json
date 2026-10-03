@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nagu Oak Aged Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/909786/",
+	"feed_url": "https://alkometriikka.fi/rss/909786.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nagu Oak Aged Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-909786-2026-09-29-53.01",
+			"url": "https://alkometriikka.fi/tuotteet/909786/",
+			"title": "Nagu Oak Aged Gin — 51,92 € → 53,01 €",
+			"content_html": "<p>Tuotteen Nagu Oak Aged Gin hinta on muuttunut.</p><p>51,92 € → 53,01 € (+1,09 €, +2,10 %).</p>",
+			"summary": "Tuotteen Nagu Oak Aged Gin hinta on muuttunut. 51,92 € → 53,01 € (+1,09 €, +2,10 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/909786-c209dbcedaad.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

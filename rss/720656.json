@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Paulaner Hefe-Weissbier tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/720656/",
+	"feed_url": "https://alkometriikka.fi/rss/720656.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Paulaner Hefe-Weissbier tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-720656-2026-09-29-3.89",
+			"url": "https://alkometriikka.fi/tuotteet/720656/",
+			"title": "Paulaner Hefe-Weissbier tölkki — 3,75 € → 3,89 €",
+			"content_html": "<p>Tuotteen Paulaner Hefe-Weissbier tölkki hinta on muuttunut.</p><p>3,75 € → 3,89 € (+0,14 €, +3,73 %).</p>",
+			"summary": "Tuotteen Paulaner Hefe-Weissbier tölkki hinta on muuttunut. 3,75 € → 3,89 € (+0,14 €, +3,73 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/720656-8970ceabe0dd.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

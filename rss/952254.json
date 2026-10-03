@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Freixenet 0.0% Low Calorie Rose Sparkling – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/952254/",
+	"feed_url": "https://alkometriikka.fi/rss/952254.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Freixenet 0.0% Low Calorie Rose Sparkling.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-952254-2026-07-18-3.39",
+			"url": "https://alkometriikka.fi/tuotteet/952254/",
+			"title": "Freixenet 0.0% Low Calorie Rose Sparkling — 3,28 € → 3,39 €",
+			"content_html": "<p>Tuotteen Freixenet 0.0% Low Calorie Rose Sparkling hinta on muuttunut.</p><p>3,28 € → 3,39 € (+0,11 €, +3,35 %).</p>",
+			"summary": "Tuotteen Freixenet 0.0% Low Calorie Rose Sparkling hinta on muuttunut. 3,28 € → 3,39 € (+0,11 €, +3,35 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/952254-3396662f5b18.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat kuohuviinit"
+			]
+		}
+	]
+}

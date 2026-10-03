@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Domaine de Savagny Savagnin 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902460/",
+	"feed_url": "https://alkometriikka.fi/rss/902460.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Domaine de Savagny Savagnin 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902460-2026-09-29-38.09",
+			"url": "https://alkometriikka.fi/tuotteet/902460/",
+			"title": "Domaine de Savagny Savagnin 2020 — 37,96 € → 38,09 €",
+			"content_html": "<p>Tuotteen Domaine de Savagny Savagnin 2020 hinta on muuttunut.</p><p>37,96 € → 38,09 € (+0,13 €, +0,34 %).</p>",
+			"summary": "Tuotteen Domaine de Savagny Savagnin 2020 hinta on muuttunut. 37,96 € → 38,09 € (+0,13 €, +0,34 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902460-24e954d7397d.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

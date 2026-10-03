@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – De Saint-Gall Le Sélection Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902591/",
+	"feed_url": "https://alkometriikka.fi/rss/902591.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: De Saint-Gall Le Sélection Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902591-2026-09-29-55.71",
+			"url": "https://alkometriikka.fi/tuotteet/902591/",
+			"title": "De Saint-Gall Le Sélection Champagne Brut — 53,25 € → 55,71 €",
+			"content_html": "<p>Tuotteen De Saint-Gall Le Sélection Champagne Brut hinta on muuttunut.</p><p>53,25 € → 55,71 € (+2,46 €, +4,62 %).</p>",
+			"summary": "Tuotteen De Saint-Gall Le Sélection Champagne Brut hinta on muuttunut. 53,25 € → 55,71 € (+2,46 €, +4,62 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902591-5bdf08fc02c1.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

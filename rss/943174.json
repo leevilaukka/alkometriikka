@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mundo Tequila Blanco – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/943174/",
+	"feed_url": "https://alkometriikka.fi/rss/943174.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mundo Tequila Blanco.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-943174-2026-07-18-39.99",
+			"url": "https://alkometriikka.fi/tuotteet/943174/",
+			"title": "Mundo Tequila Blanco — 40,22 € → 39,99 €",
+			"content_html": "<p>Tuotteen Mundo Tequila Blanco hinta on muuttunut.</p><p>40,22 € → 39,99 € (−0,23 €, −0,57 %).</p>",
+			"summary": "Tuotteen Mundo Tequila Blanco hinta on muuttunut. 40,22 € → 39,99 € (−0,23 €, −0,57 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/943174-7fda20b07622.png",
+			"tags": [
+				"Väkevät",
+				"Tequilat"
+			]
+		}
+	]
+}

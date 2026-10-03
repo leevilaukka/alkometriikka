@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Izadi Selección Blanco 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/958696/",
+	"feed_url": "https://alkometriikka.fi/rss/958696.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Izadi Selección Blanco 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-958696-2026-07-18-23.3",
+			"url": "https://alkometriikka.fi/tuotteet/958696/",
+			"title": "Izadi Selección Blanco 2023 — 23,36 € → 23,30 €",
+			"content_html": "<p>Tuotteen Izadi Selección Blanco 2023 hinta on muuttunut.</p><p>23,36 € → 23,30 € (−0,06 €, −0,26 %).</p>",
+			"summary": "Tuotteen Izadi Selección Blanco 2023 hinta on muuttunut. 23,36 € → 23,30 € (−0,06 €, −0,26 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/958696-2ee377a7a9a1.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

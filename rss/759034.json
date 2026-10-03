@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Original Long Drink Vodka Lime tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/759034/",
+	"feed_url": "https://alkometriikka.fi/rss/759034.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Original Long Drink Vodka Lime tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-759034-2026-09-30-3.09",
+			"url": "https://alkometriikka.fi/tuotteet/759034/",
+			"title": "Original Long Drink Vodka Lime tölkki — 2,99 € → 3,09 €",
+			"content_html": "<p>Tuotteen Original Long Drink Vodka Lime tölkki hinta on muuttunut.</p><p>2,99 € → 3,09 € (+0,10 €, +3,34 %).</p>",
+			"summary": "Tuotteen Original Long Drink Vodka Lime tölkki hinta on muuttunut. 2,99 € → 3,09 € (+0,10 €, +3,34 %).",
+			"date_published": "2026-09-30T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/759034-54ad568e9af5.png",
+			"tags": [
+				"Panimotuotteet",
+				"juomasekoitukset"
+			]
+		}
+	]
+}

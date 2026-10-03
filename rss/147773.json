@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Chivas Regal 18 Years Old – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/147773/",
+	"feed_url": "https://alkometriikka.fi/rss/147773.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Chivas Regal 18 Years Old.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-147773-2026-09-29-31.1",
+			"url": "https://alkometriikka.fi/tuotteet/147773/",
+			"title": "Chivas Regal 18 Years Old — 29,95 € → 31,10 €",
+			"content_html": "<p>Tuotteen Chivas Regal 18 Years Old hinta on muuttunut.</p><p>29,95 € → 31,10 € (+1,15 €, +3,84 %).</p>",
+			"summary": "Tuotteen Chivas Regal 18 Years Old hinta on muuttunut. 29,95 € → 31,10 € (+1,15 €, +3,84 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/147773-3020a4471f84.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

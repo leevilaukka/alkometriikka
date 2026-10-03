@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Corona Finest Napoleon muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/169016/",
+	"feed_url": "https://alkometriikka.fi/rss/169016.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Corona Finest Napoleon muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-169016-2026-07-18-17.98",
+			"url": "https://alkometriikka.fi/tuotteet/169016/",
+			"title": "Corona Finest Napoleon muovipullo — 17,96 € → 17,98 €",
+			"content_html": "<p>Tuotteen Corona Finest Napoleon muovipullo hinta on muuttunut.</p><p>17,96 € → 17,98 € (+0,02 €, +0,11 %).</p>",
+			"summary": "Tuotteen Corona Finest Napoleon muovipullo hinta on muuttunut. 17,96 € → 17,98 € (+0,02 €, +0,11 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/169016-3f3717af2764.png",
+			"tags": [
+				"Väkevät",
+				"brandyt"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Freixenet Low Calorie White Blend 0.0% – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/954656/",
+	"feed_url": "https://alkometriikka.fi/rss/954656.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Freixenet Low Calorie White Blend 0.0%.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-954656-2026-07-18-7.69",
+			"url": "https://alkometriikka.fi/tuotteet/954656/",
+			"title": "Freixenet Low Calorie White Blend 0.0% — 7,56 € → 7,69 €",
+			"content_html": "<p>Tuotteen Freixenet Low Calorie White Blend 0.0% hinta on muuttunut.</p><p>7,56 € → 7,69 € (+0,13 €, +1,72 %).</p>",
+			"summary": "Tuotteen Freixenet Low Calorie White Blend 0.0% hinta on muuttunut. 7,56 € → 7,69 € (+0,13 €, +1,72 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/954656-41ba7abbaaa0.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat valko- ja roseeviinit"
+			]
+		}
+	]
+}

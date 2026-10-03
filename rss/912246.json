@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Smakbyns Päråla – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/912246/",
+	"feed_url": "https://alkometriikka.fi/rss/912246.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Smakbyns Päråla.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-912246-2026-09-29-78.48",
+			"url": "https://alkometriikka.fi/tuotteet/912246/",
+			"title": "Smakbyns Päråla — 75,13 € → 78,48 €",
+			"content_html": "<p>Tuotteen Smakbyns Päråla hinta on muuttunut.</p><p>75,13 € → 78,48 € (+3,35 €, +4,46 %).</p>",
+			"summary": "Tuotteen Smakbyns Päråla hinta on muuttunut. 75,13 € → 78,48 € (+3,35 €, +4,46 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/912246-ddb8d5b247e5.png",
+			"tags": [
+				"Väkevät",
+				"hedelmäliköörit"
+			]
+		}
+	]
+}

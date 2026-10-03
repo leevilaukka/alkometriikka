@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Rabo de Gala Red 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/402827/",
+	"feed_url": "https://alkometriikka.fi/rss/402827.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Rabo de Gala Red 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-402827-2026-07-18-12.49",
+			"url": "https://alkometriikka.fi/tuotteet/402827/",
+			"title": "Rabo de Gala Red 2023 — 12,38 € → 12,49 €",
+			"content_html": "<p>Tuotteen Rabo de Gala Red 2023 hinta on muuttunut.</p><p>12,38 € → 12,49 € (+0,11 €, +0,89 %).</p>",
+			"summary": "Tuotteen Rabo de Gala Red 2023 hinta on muuttunut. 12,38 € → 12,49 € (+0,11 €, +0,89 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/402827-5171ba01be6f.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

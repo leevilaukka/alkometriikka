@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Domaine d'Ardhuy Bourgogne Pinot Noir 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903030/",
+	"feed_url": "https://alkometriikka.fi/rss/903030.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Domaine d'Ardhuy Bourgogne Pinot Noir 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903030-2026-09-29-42.7",
+			"url": "https://alkometriikka.fi/tuotteet/903030/",
+			"title": "Domaine d'Ardhuy Bourgogne Pinot Noir 2023 — 42,27 € → 42,70 €",
+			"content_html": "<p>Tuotteen Domaine d'Ardhuy Bourgogne Pinot Noir 2023 hinta on muuttunut.</p><p>42,27 € → 42,70 € (+0,43 €, +1,02 %).</p>",
+			"summary": "Tuotteen Domaine d'Ardhuy Bourgogne Pinot Noir 2023 hinta on muuttunut. 42,27 € → 42,70 € (+0,43 €, +1,02 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903030-9d3641900ed5.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

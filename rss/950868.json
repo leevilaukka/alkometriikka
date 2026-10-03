@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Juicy AF 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/950868/",
+	"feed_url": "https://alkometriikka.fi/rss/950868.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Juicy AF 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-950868-2026-07-18-14.98",
+			"url": "https://alkometriikka.fi/tuotteet/950868/",
+			"title": "Juicy AF 2025 — 13,98 € → 14,98 €",
+			"content_html": "<p>Tuotteen Juicy AF 2025 hinta on muuttunut.</p><p>13,98 € → 14,98 € (+1,00 €, +7,15 %).</p>",
+			"summary": "Tuotteen Juicy AF 2025 hinta on muuttunut. 13,98 € → 14,98 € (+1,00 €, +7,15 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/950868-61589fb0f533.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

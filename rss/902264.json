@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – François Voyer Grande Champagne XO Gold – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902264/",
+	"feed_url": "https://alkometriikka.fi/rss/902264.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: François Voyer Grande Champagne XO Gold.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902264-2026-09-29-177.59",
+			"url": "https://alkometriikka.fi/tuotteet/902264/",
+			"title": "François Voyer Grande Champagne XO Gold — 168,99 € → 177,59 €",
+			"content_html": "<p>Tuotteen François Voyer Grande Champagne XO Gold hinta on muuttunut.</p><p>168,99 € → 177,59 € (+8,60 €, +5,09 %).</p>",
+			"summary": "Tuotteen François Voyer Grande Champagne XO Gold hinta on muuttunut. 168,99 € → 177,59 € (+8,60 €, +5,09 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902264-ecf692411cbf.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

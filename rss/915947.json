@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Louis Bouillot Crémant de Bourgogne Perle de Vigne Grande Reserve Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/915947/",
+	"feed_url": "https://alkometriikka.fi/rss/915947.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Louis Bouillot Crémant de Bourgogne Perle de Vigne Grande Reserve Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-915947-2026-07-18-21.99",
+			"url": "https://alkometriikka.fi/tuotteet/915947/",
+			"title": "Louis Bouillot Crémant de Bourgogne Perle de Vigne Grande Reserve Brut — 21,49 € → 21,99 €",
+			"content_html": "<p>Tuotteen Louis Bouillot Crémant de Bourgogne Perle de Vigne Grande Reserve Brut hinta on muuttunut.</p><p>21,49 € → 21,99 € (+0,50 €, +2,33 %).</p>",
+			"summary": "Tuotteen Louis Bouillot Crémant de Bourgogne Perle de Vigne Grande Reserve Brut hinta on muuttunut. 21,49 € → 21,99 € (+0,50 €, +2,33 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/915947-23e13989078c.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

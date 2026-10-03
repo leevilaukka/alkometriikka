@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Junimperium Summer Edition – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/929858/",
+	"feed_url": "https://alkometriikka.fi/rss/929858.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Junimperium Summer Edition.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-929858-2026-09-29-60.69",
+			"url": "https://alkometriikka.fi/tuotteet/929858/",
+			"title": "Junimperium Summer Edition — 59,99 € → 60,69 €",
+			"content_html": "<p>Tuotteen Junimperium Summer Edition hinta on muuttunut.</p><p>59,99 € → 60,69 € (+0,70 €, +1,17 %).</p>",
+			"summary": "Tuotteen Junimperium Summer Edition hinta on muuttunut. 59,99 € → 60,69 € (+0,70 €, +1,17 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/929858-a300453badbd.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

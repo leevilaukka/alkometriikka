@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gato Negro Cabernet Sauvignon 8% – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/413447/",
+	"feed_url": "https://alkometriikka.fi/rss/413447.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gato Negro Cabernet Sauvignon 8%.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-413447-2026-09-29-7.29",
+			"url": "https://alkometriikka.fi/tuotteet/413447/",
+			"title": "Gato Negro Cabernet Sauvignon 8% — 6,95 € → 7,29 €",
+			"content_html": "<p>Tuotteen Gato Negro Cabernet Sauvignon 8% hinta on muuttunut.</p><p>6,95 € → 7,29 € (+0,34 €, +4,89 %).</p>",
+			"summary": "Tuotteen Gato Negro Cabernet Sauvignon 8% hinta on muuttunut. 6,95 € → 7,29 € (+0,34 €, +4,89 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/413447-6862151deacc.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

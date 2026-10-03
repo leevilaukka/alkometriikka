@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – E. Guigal Condrieu La Doriane 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/946238/",
+	"feed_url": "https://alkometriikka.fi/rss/946238.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: E. Guigal Condrieu La Doriane 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-946238-2026-09-29-124.89",
+			"url": "https://alkometriikka.fi/tuotteet/946238/",
+			"title": "E. Guigal Condrieu La Doriane 2023 — 114,94 € → 124,89 €",
+			"content_html": "<p>Tuotteen E. Guigal Condrieu La Doriane 2023 hinta on muuttunut.</p><p>114,94 € → 124,89 € (+9,95 €, +8,66 %).</p>",
+			"summary": "Tuotteen E. Guigal Condrieu La Doriane 2023 hinta on muuttunut. 114,94 € → 124,89 € (+9,95 €, +8,66 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/946238-e97b15f88af8.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

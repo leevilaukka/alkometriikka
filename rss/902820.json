@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Uno Grande Appassimento – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902820/",
+	"feed_url": "https://alkometriikka.fi/rss/902820.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Uno Grande Appassimento.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902820-2026-09-29-9.28",
+			"url": "https://alkometriikka.fi/tuotteet/902820/",
+			"title": "Uno Grande Appassimento — 8,38 € → 9,28 €",
+			"content_html": "<p>Tuotteen Uno Grande Appassimento hinta on muuttunut.</p><p>8,38 € → 9,28 € (+0,90 €, +10,74 %).</p>",
+			"summary": "Tuotteen Uno Grande Appassimento hinta on muuttunut. 8,38 € → 9,28 € (+0,90 €, +10,74 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902820-244a4048f642.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

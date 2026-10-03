@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Huani Blanco Tequila – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/102201/",
+	"feed_url": "https://alkometriikka.fi/rss/102201.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Huani Blanco Tequila.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-102201-2026-09-29-15.08",
+			"url": "https://alkometriikka.fi/tuotteet/102201/",
+			"title": "Huani Blanco Tequila — 14,30 € → 15,08 €",
+			"content_html": "<p>Tuotteen Huani Blanco Tequila hinta on muuttunut.</p><p>14,30 € → 15,08 € (+0,78 €, +5,45 %).</p>",
+			"summary": "Tuotteen Huani Blanco Tequila hinta on muuttunut. 14,30 € → 15,08 € (+0,78 €, +5,45 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/102201-9c614f25d702.png",
+			"tags": [
+				"Väkevät",
+				"Tequilat"
+			]
+		}
+	]
+}

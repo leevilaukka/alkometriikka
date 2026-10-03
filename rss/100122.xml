@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Gabriel Boudier Fleurs de Sureau Elderflower – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/100122/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Gabriel Boudier Fleurs de Sureau Elderflower.</description>
+		<language>fi</language>
+		<lastBuildDate>Sat, 03 Oct 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/100122.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Gabriel Boudier Fleurs de Sureau Elderflower – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Gabriel Boudier Fleurs de Sureau Elderflower — 26,98 € → 27,00 €</title>
+			<link>https://alkometriikka.fi/tuotteet/100122/</link>
+			<guid isPermaLink="false">alkometriikka-100122-2026-09-29-27</guid>
+			<pubDate>Tue, 29 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / mausteliköörit</category>
+			<description><![CDATA[<p>Tuotteen Gabriel Boudier Fleurs de Sureau Elderflower hinta on muuttunut.</p><p>26,98 € → 27,00 € (+0,02 €, +0,07 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/100122-9c5ba8a4cf33.png" />
+		</item>
+	</channel>
+</rss>

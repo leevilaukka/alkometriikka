@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nehrer Sauvignon Blanc Privat 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/913875/",
+	"feed_url": "https://alkometriikka.fi/rss/913875.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nehrer Sauvignon Blanc Privat 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-913875-2026-09-29-50.22",
+			"url": "https://alkometriikka.fi/tuotteet/913875/",
+			"title": "Nehrer Sauvignon Blanc Privat 2021 — 49,21 € → 50,22 €",
+			"content_html": "<p>Tuotteen Nehrer Sauvignon Blanc Privat 2021 hinta on muuttunut.</p><p>49,21 € → 50,22 € (+1,01 €, +2,05 %).</p>",
+			"summary": "Tuotteen Nehrer Sauvignon Blanc Privat 2021 hinta on muuttunut. 49,21 € → 50,22 € (+1,01 €, +2,05 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/913875-c030506ca8cd.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

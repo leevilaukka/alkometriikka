@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Petri Scheurebe 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/939601/",
+	"feed_url": "https://alkometriikka.fi/rss/939601.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Petri Scheurebe 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-939601-2026-07-18-26.28",
+			"url": "https://alkometriikka.fi/tuotteet/939601/",
+			"title": "Petri Scheurebe 2022 — 23,74 € → 26,28 €",
+			"content_html": "<p>Tuotteen Petri Scheurebe 2022 hinta on muuttunut.</p><p>23,74 € → 26,28 € (+2,54 €, +10,70 %).</p>",
+			"summary": "Tuotteen Petri Scheurebe 2022 hinta on muuttunut. 23,74 € → 26,28 € (+2,54 €, +10,70 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/939601-6b24b88dab84.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Panyolai Elixir Kajszibarack – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903048/",
+	"feed_url": "https://alkometriikka.fi/rss/903048.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Panyolai Elixir Kajszibarack.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903048-2026-09-29-9.15",
+			"url": "https://alkometriikka.fi/tuotteet/903048/",
+			"title": "Panyolai Elixir Kajszibarack — 8,77 € → 9,15 €",
+			"content_html": "<p>Tuotteen Panyolai Elixir Kajszibarack hinta on muuttunut.</p><p>8,77 € → 9,15 € (+0,38 €, +4,33 %).</p>",
+			"summary": "Tuotteen Panyolai Elixir Kajszibarack hinta on muuttunut. 8,77 € → 9,15 € (+0,38 €, +4,33 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903048-1d3884a36b1a.png",
+			"tags": [
+				"Väkevät",
+				"hedelmätisleet"
+			]
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Santa Clara Blanc de Blancs – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/531047/",
+	"feed_url": "https://alkometriikka.fi/rss/531047.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Santa Clara Blanc de Blancs.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-531047-2026-02-02-15.86",
+			"url": "https://alkometriikka.fi/tuotteet/531047/",
+			"title": "Santa Clara Blanc de Blancs — 15,96 € → 15,86 €",
+			"content_html": "<p>Tuotteen Santa Clara Blanc de Blancs hinta on muuttunut.</p><p>15,96 € → 15,86 € (−0,10 €, −0,63 %).</p>",
+			"summary": "Tuotteen Santa Clara Blanc de Blancs hinta on muuttunut. 15,96 € → 15,86 € (−0,10 €, −0,63 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/531047-919eb89a7229.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-531047-2026-02-02-15.96",
+			"url": "https://alkometriikka.fi/tuotteet/531047/",
+			"title": "Santa Clara Blanc de Blancs — 15,86 € → 15,96 €",
+			"content_html": "<p>Tuotteen Santa Clara Blanc de Blancs hinta on muuttunut.</p><p>15,86 € → 15,96 € (+0,10 €, +0,63 %).</p>",
+			"summary": "Tuotteen Santa Clara Blanc de Blancs hinta on muuttunut. 15,86 € → 15,96 € (+0,10 €, +0,63 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/531047-919eb89a7229.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

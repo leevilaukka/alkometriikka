@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Dalmore 12 Year Old Sherry Cask Select Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/138287/",
+	"feed_url": "https://alkometriikka.fi/rss/138287.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Dalmore 12 Year Old Sherry Cask Select Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-138287-2026-09-29-102.9",
+			"url": "https://alkometriikka.fi/tuotteet/138287/",
+			"title": "The Dalmore 12 Year Old Sherry Cask Select Single Malt — 99,26 € → 102,90 €",
+			"content_html": "<p>Tuotteen The Dalmore 12 Year Old Sherry Cask Select Single Malt hinta on muuttunut.</p><p>99,26 € → 102,90 € (+3,64 €, +3,67 %).</p>",
+			"summary": "Tuotteen The Dalmore 12 Year Old Sherry Cask Select Single Malt hinta on muuttunut. 99,26 € → 102,90 € (+3,64 €, +3,67 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/138287-10af963f80bf.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

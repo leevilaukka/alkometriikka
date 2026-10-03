@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Villa Wolf Pinot Noir 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/921496/",
+	"feed_url": "https://alkometriikka.fi/rss/921496.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Villa Wolf Pinot Noir 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-921496-2026-09-29-14.79",
+			"url": "https://alkometriikka.fi/tuotteet/921496/",
+			"title": "Villa Wolf Pinot Noir 2024 — 14,48 € → 14,79 €",
+			"content_html": "<p>Tuotteen Villa Wolf Pinot Noir 2024 hinta on muuttunut.</p><p>14,48 € → 14,79 € (+0,31 €, +2,14 %).</p>",
+			"summary": "Tuotteen Villa Wolf Pinot Noir 2024 hinta on muuttunut. 14,48 € → 14,79 € (+0,31 €, +2,14 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/921496-334a8a3807ce.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

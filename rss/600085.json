@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Birdcage Rhubarb Tonic Zero – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/600085/",
+	"feed_url": "https://alkometriikka.fi/rss/600085.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Birdcage Rhubarb Tonic Zero.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-600085-2026-09-29-3.49",
+			"url": "https://alkometriikka.fi/tuotteet/600085/",
+			"title": "Birdcage Rhubarb Tonic Zero — 3,85 € → 3,49 €",
+			"content_html": "<p>Tuotteen Birdcage Rhubarb Tonic Zero hinta on muuttunut.</p><p>3,85 € → 3,49 € (−0,36 €, −9,35 %).</p>",
+			"summary": "Tuotteen Birdcage Rhubarb Tonic Zero hinta on muuttunut. 3,85 € → 3,49 € (−0,36 €, −9,35 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600085-97820d15f106.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

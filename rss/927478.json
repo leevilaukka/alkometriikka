@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Henriet-Bazin Grand Cru Arsène Champagne Extra Brut 2016 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/927478/",
+	"feed_url": "https://alkometriikka.fi/rss/927478.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Henriet-Bazin Grand Cru Arsène Champagne Extra Brut 2016.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-927478-2026-09-29-109.98",
+			"url": "https://alkometriikka.fi/tuotteet/927478/",
+			"title": "Henriet-Bazin Grand Cru Arsène Champagne Extra Brut 2016 — 103,46 € → 109,98 €",
+			"content_html": "<p>Tuotteen Henriet-Bazin Grand Cru Arsène Champagne Extra Brut 2016 hinta on muuttunut.</p><p>103,46 € → 109,98 € (+6,52 €, +6,30 %).</p>",
+			"summary": "Tuotteen Henriet-Bazin Grand Cru Arsène Champagne Extra Brut 2016 hinta on muuttunut. 103,46 € → 109,98 € (+6,52 €, +6,30 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/927478-a8bb4f381cbf.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

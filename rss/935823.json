@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Noita Space Echo 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/935823/",
+	"feed_url": "https://alkometriikka.fi/rss/935823.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Noita Space Echo 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-935823-2026-07-18-17.99",
+			"url": "https://alkometriikka.fi/tuotteet/935823/",
+			"title": "Noita Space Echo 2019 — 17,74 € → 17,99 €",
+			"content_html": "<p>Tuotteen Noita Space Echo 2019 hinta on muuttunut.</p><p>17,74 € → 17,99 € (+0,25 €, +1,41 %).</p>",
+			"summary": "Tuotteen Noita Space Echo 2019 hinta on muuttunut. 17,74 € → 17,99 € (+0,25 €, +1,41 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/935823-84648ec1fdfa.png",
+			"tags": [
+				"Viinit",
+				"hedelmä- ja aromatisoidut viinit"
+			]
+		}
+	]
+}

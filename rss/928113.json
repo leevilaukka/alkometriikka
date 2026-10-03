@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Castell d'Encus Saktih 2016 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/928113/",
+	"feed_url": "https://alkometriikka.fi/rss/928113.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Castell d'Encus Saktih 2016.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-928113-2026-09-29-201.77",
+			"url": "https://alkometriikka.fi/tuotteet/928113/",
+			"title": "Castell d'Encus Saktih 2016 — 190,16 € → 201,77 €",
+			"content_html": "<p>Tuotteen Castell d'Encus Saktih 2016 hinta on muuttunut.</p><p>190,16 € → 201,77 € (+11,61 €, +6,11 %).</p>",
+			"summary": "Tuotteen Castell d'Encus Saktih 2016 hinta on muuttunut. 190,16 € → 201,77 € (+11,61 €, +6,11 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/928113-0d3af9b775b1.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

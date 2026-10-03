@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Santa Cecilia Chardonnay 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/008072/",
+	"feed_url": "https://alkometriikka.fi/rss/008072.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Santa Cecilia Chardonnay 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-008072-2026-07-18-8.49",
+			"url": "https://alkometriikka.fi/tuotteet/008072/",
+			"title": "Santa Cecilia Chardonnay 2025 — 8,59 € → 8,49 €",
+			"content_html": "<p>Tuotteen Santa Cecilia Chardonnay 2025 hinta on muuttunut.</p><p>8,59 € → 8,49 € (−0,10 €, −1,16 %).</p>",
+			"summary": "Tuotteen Santa Cecilia Chardonnay 2025 hinta on muuttunut. 8,59 € → 8,49 € (−0,10 €, −1,16 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/008072-86c11525ea22.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

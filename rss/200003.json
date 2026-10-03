@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Evan Williams – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/200003/",
+	"feed_url": "https://alkometriikka.fi/rss/200003.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Evan Williams.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-200003-2026-09-29-38.99",
+			"url": "https://alkometriikka.fi/tuotteet/200003/",
+			"title": "Evan Williams — 38,75 € → 38,99 €",
+			"content_html": "<p>Tuotteen Evan Williams hinta on muuttunut.</p><p>38,75 € → 38,99 € (+0,24 €, +0,62 %).</p>",
+			"summary": "Tuotteen Evan Williams hinta on muuttunut. 38,75 € → 38,99 € (+0,24 €, +0,62 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/200003-439d057605c0.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Underberg 3-pack – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/002394/",
+	"feed_url": "https://alkometriikka.fi/rss/002394.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Underberg 3-pack.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-002394-2026-07-18-7.29",
+			"url": "https://alkometriikka.fi/tuotteet/002394/",
+			"title": "Underberg 3-pack — 7,35 € → 7,29 €",
+			"content_html": "<p>Tuotteen Underberg 3-pack hinta on muuttunut.</p><p>7,35 € → 7,29 € (−0,06 €, −0,82 %).</p>",
+			"summary": "Tuotteen Underberg 3-pack hinta on muuttunut. 7,35 € → 7,29 € (−0,06 €, −0,82 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/002394-0e8d230094a3.png",
+			"tags": [
+				"Väkevät",
+				"maha- ja maustekatkerot"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vilarnau Rose Sparkling Alcohol Free 0% – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/919702/",
+	"feed_url": "https://alkometriikka.fi/rss/919702.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vilarnau Rose Sparkling Alcohol Free 0%.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-919702-2026-07-18-8.99",
+			"url": "https://alkometriikka.fi/tuotteet/919702/",
+			"title": "Vilarnau Rose Sparkling Alcohol Free 0% — 8,92 € → 8,99 €",
+			"content_html": "<p>Tuotteen Vilarnau Rose Sparkling Alcohol Free 0% hinta on muuttunut.</p><p>8,92 € → 8,99 € (+0,07 €, +0,78 %).</p>",
+			"summary": "Tuotteen Vilarnau Rose Sparkling Alcohol Free 0% hinta on muuttunut. 8,92 € → 8,99 € (+0,07 €, +0,78 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/919702-35c636d03bab.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat kuohuviinit"
+			]
+		}
+	]
+}

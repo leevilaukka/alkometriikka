@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pfaff Crémant d'Alsace Blanc de Blancs Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/579917/",
+	"feed_url": "https://alkometriikka.fi/rss/579917.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pfaff Crémant d'Alsace Blanc de Blancs Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-579917-2026-07-18-17.98",
+			"url": "https://alkometriikka.fi/tuotteet/579917/",
+			"title": "Pfaff Crémant d'Alsace Blanc de Blancs Brut — 17,46 € → 17,98 €",
+			"content_html": "<p>Tuotteen Pfaff Crémant d'Alsace Blanc de Blancs Brut hinta on muuttunut.</p><p>17,46 € → 17,98 € (+0,52 €, +2,98 %).</p>",
+			"summary": "Tuotteen Pfaff Crémant d'Alsace Blanc de Blancs Brut hinta on muuttunut. 17,46 € → 17,98 € (+0,52 €, +2,98 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/579917-a4086b7db216.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Appassinero Appassimento hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902821/",
+	"feed_url": "https://alkometriikka.fi/rss/902821.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Appassinero Appassimento hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902821-2026-09-29-32.99",
+			"url": "https://alkometriikka.fi/tuotteet/902821/",
+			"title": "Appassinero Appassimento hanapakkaus — 32,49 € → 32,99 €",
+			"content_html": "<p>Tuotteen Appassinero Appassimento hanapakkaus hinta on muuttunut.</p><p>32,49 € → 32,99 € (+0,50 €, +1,54 %).</p>",
+			"summary": "Tuotteen Appassinero Appassimento hanapakkaus hinta on muuttunut. 32,49 € → 32,99 € (+0,50 €, +1,54 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902821-714d6ee6c8be.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

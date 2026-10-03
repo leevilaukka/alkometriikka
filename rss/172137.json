@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Barceló Blanco Añejado – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/172137/",
+	"feed_url": "https://alkometriikka.fi/rss/172137.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Barceló Blanco Añejado.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-172137-2026-09-29-25.85",
+			"url": "https://alkometriikka.fi/tuotteet/172137/",
+			"title": "Barceló Blanco Añejado — 25,98 € → 25,85 €",
+			"content_html": "<p>Tuotteen Barceló Blanco Añejado hinta on muuttunut.</p><p>25,98 € → 25,85 € (−0,13 €, −0,50 %).</p>",
+			"summary": "Tuotteen Barceló Blanco Añejado hinta on muuttunut. 25,98 € → 25,85 € (−0,13 €, −0,50 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/172137-7133b6d751cc.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

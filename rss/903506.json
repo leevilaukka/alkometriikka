@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dingle Grianstad an Tsamhraidh Single Pot Still – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903506/",
+	"feed_url": "https://alkometriikka.fi/rss/903506.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dingle Grianstad an Tsamhraidh Single Pot Still.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903506-2026-09-29-103.21",
+			"url": "https://alkometriikka.fi/tuotteet/903506/",
+			"title": "Dingle Grianstad an Tsamhraidh Single Pot Still — 99,99 € → 103,21 €",
+			"content_html": "<p>Tuotteen Dingle Grianstad an Tsamhraidh Single Pot Still hinta on muuttunut.</p><p>99,99 € → 103,21 € (+3,22 €, +3,22 %).</p>",
+			"summary": "Tuotteen Dingle Grianstad an Tsamhraidh Single Pot Still hinta on muuttunut. 99,99 € → 103,21 € (+3,22 €, +3,22 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903506-053c00505c2a.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

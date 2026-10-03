@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Benromach 10 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900974/",
+	"feed_url": "https://alkometriikka.fi/rss/900974.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Benromach 10 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900974-2026-09-29-71.43",
+			"url": "https://alkometriikka.fi/tuotteet/900974/",
+			"title": "Benromach 10 Year Old Single Malt — 70,01 € → 71,43 €",
+			"content_html": "<p>Tuotteen Benromach 10 Year Old Single Malt hinta on muuttunut.</p><p>70,01 € → 71,43 € (+1,42 €, +2,03 %).</p>",
+			"summary": "Tuotteen Benromach 10 Year Old Single Malt hinta on muuttunut. 70,01 € → 71,43 € (+1,42 €, +2,03 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900974-e98d2bdfd1bd.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

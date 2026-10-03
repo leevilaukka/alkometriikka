@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Strekov 1075 Pinot Noir 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900899/",
+	"feed_url": "https://alkometriikka.fi/rss/900899.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Strekov 1075 Pinot Noir 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900899-2026-09-29-42.22",
+			"url": "https://alkometriikka.fi/tuotteet/900899/",
+			"title": "Strekov 1075 Pinot Noir 2022 — 41,79 € → 42,22 €",
+			"content_html": "<p>Tuotteen Strekov 1075 Pinot Noir 2022 hinta on muuttunut.</p><p>41,79 € → 42,22 € (+0,43 €, +1,03 %).</p>",
+			"summary": "Tuotteen Strekov 1075 Pinot Noir 2022 hinta on muuttunut. 41,79 € → 42,22 € (+0,43 €, +1,03 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900899-797441ec72ac.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

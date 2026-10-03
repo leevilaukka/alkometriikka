@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Stag's Leap Wine Cellars Karia Chardonnay 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901449/",
+	"feed_url": "https://alkometriikka.fi/rss/901449.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Stag's Leap Wine Cellars Karia Chardonnay 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901449-2026-09-29-54.9",
+			"url": "https://alkometriikka.fi/tuotteet/901449/",
+			"title": "Stag's Leap Wine Cellars Karia Chardonnay 2024 — 52,99 € → 54,90 €",
+			"content_html": "<p>Tuotteen Stag's Leap Wine Cellars Karia Chardonnay 2024 hinta on muuttunut.</p><p>52,99 € → 54,90 € (+1,91 €, +3,60 %).</p>",
+			"summary": "Tuotteen Stag's Leap Wine Cellars Karia Chardonnay 2024 hinta on muuttunut. 52,99 € → 54,90 € (+1,91 €, +3,60 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901449-93f1eeb3b6d1.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-901449-2026-07-18-52.99",
+			"url": "https://alkometriikka.fi/tuotteet/901449/",
+			"title": "Stag's Leap Wine Cellars Karia Chardonnay 2024 — 50,43 € → 52,99 €",
+			"content_html": "<p>Tuotteen Stag's Leap Wine Cellars Karia Chardonnay 2024 hinta on muuttunut.</p><p>50,43 € → 52,99 € (+2,56 €, +5,08 %).</p>",
+			"summary": "Tuotteen Stag's Leap Wine Cellars Karia Chardonnay 2024 hinta on muuttunut. 50,43 € → 52,99 € (+2,56 €, +5,08 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901449-93f1eeb3b6d1.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

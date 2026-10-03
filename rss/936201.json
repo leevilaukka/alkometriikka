@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Montalbera Grignè Grignolino D'Asti 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/936201/",
+	"feed_url": "https://alkometriikka.fi/rss/936201.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Montalbera Grignè Grignolino D'Asti 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-936201-2026-02-02-12.88",
+			"url": "https://alkometriikka.fi/tuotteet/936201/",
+			"title": "Montalbera Grignè Grignolino D'Asti 2023 — 12,98 € → 12,88 €",
+			"content_html": "<p>Tuotteen Montalbera Grignè Grignolino D'Asti 2023 hinta on muuttunut.</p><p>12,98 € → 12,88 € (−0,10 €, −0,77 %).</p>",
+			"summary": "Tuotteen Montalbera Grignè Grignolino D'Asti 2023 hinta on muuttunut. 12,98 € → 12,88 € (−0,10 €, −0,77 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/936201-07b73462ca23.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-936201-2026-02-02-12.98",
+			"url": "https://alkometriikka.fi/tuotteet/936201/",
+			"title": "Montalbera Grignè Grignolino D'Asti 2023 — 12,88 € → 12,98 €",
+			"content_html": "<p>Tuotteen Montalbera Grignè Grignolino D'Asti 2023 hinta on muuttunut.</p><p>12,88 € → 12,98 € (+0,10 €, +0,78 %).</p>",
+			"summary": "Tuotteen Montalbera Grignè Grignolino D'Asti 2023 hinta on muuttunut. 12,88 € → 12,98 € (+0,10 €, +0,78 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/936201-07b73462ca23.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

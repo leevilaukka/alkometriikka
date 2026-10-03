@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Koskenkorva Strawberry muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/264377/",
+	"feed_url": "https://alkometriikka.fi/rss/264377.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Koskenkorva Strawberry muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-264377-2026-07-18-17.98",
+			"url": "https://alkometriikka.fi/tuotteet/264377/",
+			"title": "Koskenkorva Strawberry muovipullo — 17,96 € → 17,98 €",
+			"content_html": "<p>Tuotteen Koskenkorva Strawberry muovipullo hinta on muuttunut.</p><p>17,96 € → 17,98 € (+0,02 €, +0,11 %).</p>",
+			"summary": "Tuotteen Koskenkorva Strawberry muovipullo hinta on muuttunut. 17,96 € → 17,98 € (+0,02 €, +0,11 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/264377-28ddb85c15f1.png",
+			"tags": [
+				"Väkevät",
+				"marjaliköörit"
+			]
+		}
+	]
+}

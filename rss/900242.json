@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vinory Nizza Bricco 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900242/",
+	"feed_url": "https://alkometriikka.fi/rss/900242.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vinory Nizza Bricco 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900242-2026-09-29-50.82",
+			"url": "https://alkometriikka.fi/tuotteet/900242/",
+			"title": "Vinory Nizza Bricco 2020 — 48,90 € → 50,82 €",
+			"content_html": "<p>Tuotteen Vinory Nizza Bricco 2020 hinta on muuttunut.</p><p>48,90 € → 50,82 € (+1,92 €, +3,93 %).</p>",
+			"summary": "Tuotteen Vinory Nizza Bricco 2020 hinta on muuttunut. 48,90 € → 50,82 € (+1,92 €, +3,93 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900242-0b992fcb2ae0.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

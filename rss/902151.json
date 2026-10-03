@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Macallan Classic Cut 2025 Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902151/",
+	"feed_url": "https://alkometriikka.fi/rss/902151.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Macallan Classic Cut 2025 Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902151-2026-09-29-163.45",
+			"url": "https://alkometriikka.fi/tuotteet/902151/",
+			"title": "The Macallan Classic Cut 2025 Single Malt — 156,18 € → 163,45 €",
+			"content_html": "<p>Tuotteen The Macallan Classic Cut 2025 Single Malt hinta on muuttunut.</p><p>156,18 € → 163,45 € (+7,27 €, +4,65 %).</p>",
+			"summary": "Tuotteen The Macallan Classic Cut 2025 Single Malt hinta on muuttunut. 156,18 € → 163,45 € (+7,27 €, +4,65 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902151-8c23a7227d39.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Farmers Market Organic Red – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/909627/",
+	"feed_url": "https://alkometriikka.fi/rss/909627.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Farmers Market Organic Red.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-909627-2026-07-18-10.98",
+			"url": "https://alkometriikka.fi/tuotteet/909627/",
+			"title": "Farmers Market Organic Red — 10,44 € → 10,98 €",
+			"content_html": "<p>Tuotteen Farmers Market Organic Red hinta on muuttunut.</p><p>10,44 € → 10,98 € (+0,54 €, +5,17 %).</p>",
+			"summary": "Tuotteen Farmers Market Organic Red hinta on muuttunut. 10,44 € → 10,98 € (+0,54 €, +5,17 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/909627-b0aeb80afb57.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

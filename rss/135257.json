@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Captain Morgan Black Spiced – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/135257/",
+	"feed_url": "https://alkometriikka.fi/rss/135257.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Captain Morgan Black Spiced.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-135257-2026-07-18-37.48",
+			"url": "https://alkometriikka.fi/tuotteet/135257/",
+			"title": "Captain Morgan Black Spiced — 37,26 € → 37,48 €",
+			"content_html": "<p>Tuotteen Captain Morgan Black Spiced hinta on muuttunut.</p><p>37,26 € → 37,48 € (+0,22 €, +0,59 %).</p>",
+			"summary": "Tuotteen Captain Morgan Black Spiced hinta on muuttunut. 37,26 € → 37,48 € (+0,22 €, +0,59 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/135257-74c39ff34050.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

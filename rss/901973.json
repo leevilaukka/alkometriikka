@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Francesco Rinaldi & Figli Barolo 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901973/",
+	"feed_url": "https://alkometriikka.fi/rss/901973.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Francesco Rinaldi & Figli Barolo 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901973-2026-09-29-86.75",
+			"url": "https://alkometriikka.fi/tuotteet/901973/",
+			"title": "Francesco Rinaldi & Figli Barolo 2021 — 83,26 € → 86,75 €",
+			"content_html": "<p>Tuotteen Francesco Rinaldi & Figli Barolo 2021 hinta on muuttunut.</p><p>83,26 € → 86,75 € (+3,49 €, +4,19 %).</p>",
+			"summary": "Tuotteen Francesco Rinaldi & Figli Barolo 2021 hinta on muuttunut. 83,26 € → 86,75 € (+3,49 €, +4,19 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901973-daae4be26d45.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Legendary Dark Silkie Smoky Irish Whiskey – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/922458/",
+	"feed_url": "https://alkometriikka.fi/rss/922458.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Legendary Dark Silkie Smoky Irish Whiskey.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-922458-2026-09-29-55.22",
+			"url": "https://alkometriikka.fi/tuotteet/922458/",
+			"title": "Legendary Dark Silkie Smoky Irish Whiskey — 54,97 € → 55,22 €",
+			"content_html": "<p>Tuotteen Legendary Dark Silkie Smoky Irish Whiskey hinta on muuttunut.</p><p>54,97 € → 55,22 € (+0,25 €, +0,45 %).</p>",
+			"summary": "Tuotteen Legendary Dark Silkie Smoky Irish Whiskey hinta on muuttunut. 54,97 € → 55,22 € (+0,25 €, +0,45 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/922458-88df0b49bdd1.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

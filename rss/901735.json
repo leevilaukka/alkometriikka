@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Besini Rose 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901735/",
+	"feed_url": "https://alkometriikka.fi/rss/901735.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Besini Rose 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901735-2026-07-18-15.84",
+			"url": "https://alkometriikka.fi/tuotteet/901735/",
+			"title": "Besini Rose 2024 — 14,45 € → 15,84 €",
+			"content_html": "<p>Tuotteen Besini Rose 2024 hinta on muuttunut.</p><p>14,45 € → 15,84 € (+1,39 €, +9,62 %).</p>",
+			"summary": "Tuotteen Besini Rose 2024 hinta on muuttunut. 14,45 € → 15,84 € (+1,39 €, +9,62 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901735-e2375d6df6ec.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Martini Vermouth Bianco – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/003065/",
+	"feed_url": "https://alkometriikka.fi/rss/003065.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Martini Vermouth Bianco.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-003065-2026-07-18-11.99",
+			"url": "https://alkometriikka.fi/tuotteet/003065/",
+			"title": "Martini Vermouth Bianco — 11,67 € → 11,99 €",
+			"content_html": "<p>Tuotteen Martini Vermouth Bianco hinta on muuttunut.</p><p>11,67 € → 11,99 € (+0,32 €, +2,74 %).</p>",
+			"summary": "Tuotteen Martini Vermouth Bianco hinta on muuttunut. 11,67 € → 11,99 € (+0,32 €, +2,74 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/003065-9d059f3d2943.png",
+			"tags": [
+				"Välituotteet",
+				"vermutit"
+			]
+		}
+	]
+}

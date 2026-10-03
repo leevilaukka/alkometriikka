@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Louis Jadot Chablis 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/914847/",
+	"feed_url": "https://alkometriikka.fi/rss/914847.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Louis Jadot Chablis 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-914847-2026-07-18-32.98",
+			"url": "https://alkometriikka.fi/tuotteet/914847/",
+			"title": "Louis Jadot Chablis 2024 — 33,27 € → 32,98 €",
+			"content_html": "<p>Tuotteen Louis Jadot Chablis 2024 hinta on muuttunut.</p><p>33,27 € → 32,98 € (−0,29 €, −0,87 %).</p>",
+			"summary": "Tuotteen Louis Jadot Chablis 2024 hinta on muuttunut. 33,27 € → 32,98 € (−0,29 €, −0,87 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/914847-58e6148818ae.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

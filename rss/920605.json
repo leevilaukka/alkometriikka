@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – San Luis Silver Tequila – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/920605/",
+	"feed_url": "https://alkometriikka.fi/rss/920605.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: San Luis Silver Tequila.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-920605-2026-07-18-30.9",
+			"url": "https://alkometriikka.fi/tuotteet/920605/",
+			"title": "San Luis Silver Tequila — 30,73 € → 30,90 €",
+			"content_html": "<p>Tuotteen San Luis Silver Tequila hinta on muuttunut.</p><p>30,73 € → 30,90 € (+0,17 €, +0,55 %).</p>",
+			"summary": "Tuotteen San Luis Silver Tequila hinta on muuttunut. 30,73 € → 30,90 € (+0,17 €, +0,55 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/920605-8fbf804d3554.png",
+			"tags": [
+				"Väkevät",
+				"Tequilat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – FiShot Vodka Shot – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/156567/",
+	"feed_url": "https://alkometriikka.fi/rss/156567.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: FiShot Vodka Shot.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-156567-2026-07-18-24.98",
+			"url": "https://alkometriikka.fi/tuotteet/156567/",
+			"title": "FiShot Vodka Shot — 24,82 € → 24,98 €",
+			"content_html": "<p>Tuotteen FiShot Vodka Shot hinta on muuttunut.</p><p>24,82 € → 24,98 € (+0,16 €, +0,64 %).</p>",
+			"summary": "Tuotteen FiShot Vodka Shot hinta on muuttunut. 24,82 € → 24,98 € (+0,16 €, +0,64 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/156567-9d3a7d11ad54.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

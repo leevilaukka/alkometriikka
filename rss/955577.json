@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glenfiddich 18 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/955577/",
+	"feed_url": "https://alkometriikka.fi/rss/955577.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glenfiddich 18 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-955577-2026-09-29-129.49",
+			"url": "https://alkometriikka.fi/tuotteet/955577/",
+			"title": "Glenfiddich 18 Year Old Single Malt — 124,94 € → 129,49 €",
+			"content_html": "<p>Tuotteen Glenfiddich 18 Year Old Single Malt hinta on muuttunut.</p><p>124,94 € → 129,49 € (+4,55 €, +3,64 %).</p>",
+			"summary": "Tuotteen Glenfiddich 18 Year Old Single Malt hinta on muuttunut. 124,94 € → 129,49 € (+4,55 €, +3,64 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/955577-2a1fc915e593.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

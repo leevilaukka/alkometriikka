@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Zonin Cuvèe 1821 Prosecco Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/939657/",
+	"feed_url": "https://alkometriikka.fi/rss/939657.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Zonin Cuvèe 1821 Prosecco Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-939657-2026-09-29-14.99",
+			"url": "https://alkometriikka.fi/tuotteet/939657/",
+			"title": "Zonin Cuvèe 1821 Prosecco Brut — 14,95 € → 14,99 €",
+			"content_html": "<p>Tuotteen Zonin Cuvèe 1821 Prosecco Brut hinta on muuttunut.</p><p>14,95 € → 14,99 € (+0,04 €, +0,27 %).</p>",
+			"summary": "Tuotteen Zonin Cuvèe 1821 Prosecco Brut hinta on muuttunut. 14,95 € → 14,99 € (+0,04 €, +0,27 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/939657-677e9c22db86.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

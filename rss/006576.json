@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Campo Viejo Reserva 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/006576/",
+	"feed_url": "https://alkometriikka.fi/rss/006576.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Campo Viejo Reserva 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-006576-2026-09-29-17.98",
+			"url": "https://alkometriikka.fi/tuotteet/006576/",
+			"title": "Campo Viejo Reserva 2020 — 17,50 € → 17,98 €",
+			"content_html": "<p>Tuotteen Campo Viejo Reserva 2020 hinta on muuttunut.</p><p>17,50 € → 17,98 € (+0,48 €, +2,74 %).</p>",
+			"summary": "Tuotteen Campo Viejo Reserva 2020 hinta on muuttunut. 17,50 € → 17,98 € (+0,48 €, +2,74 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/006576-55dd6daa1511.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-006576-2026-07-18-17.5",
+			"url": "https://alkometriikka.fi/tuotteet/006576/",
+			"title": "Campo Viejo Reserva 2020 — 17,46 € → 17,50 €",
+			"content_html": "<p>Tuotteen Campo Viejo Reserva 2020 hinta on muuttunut.</p><p>17,46 € → 17,50 € (+0,04 €, +0,23 %).</p>",
+			"summary": "Tuotteen Campo Viejo Reserva 2020 hinta on muuttunut. 17,46 € → 17,50 € (+0,04 €, +0,23 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/006576-55dd6daa1511.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

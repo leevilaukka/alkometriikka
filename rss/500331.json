@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Brilla! Prosecco Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/500331/",
+	"feed_url": "https://alkometriikka.fi/rss/500331.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Brilla! Prosecco Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-500331-2026-09-29-12.99",
+			"url": "https://alkometriikka.fi/tuotteet/500331/",
+			"title": "Brilla! Prosecco Brut — 11,89 € → 12,99 €",
+			"content_html": "<p>Tuotteen Brilla! Prosecco Brut hinta on muuttunut.</p><p>11,89 € → 12,99 € (+1,10 €, +9,25 %).</p>",
+			"summary": "Tuotteen Brilla! Prosecco Brut hinta on muuttunut. 11,89 € → 12,99 € (+1,10 €, +9,25 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/500331-cbb464f50060.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Taittinger Réserve Champagne Brut Jeroboam – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/902571/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Taittinger Réserve Champagne Brut Jeroboam.</description>
+		<language>fi</language>
+		<lastBuildDate>Sat, 03 Oct 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/902571.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Taittinger Réserve Champagne Brut Jeroboam – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Taittinger Réserve Champagne Brut Jeroboam — 499,99 € → 526,59 €</title>
+			<link>https://alkometriikka.fi/tuotteet/902571/</link>
+			<guid isPermaLink="false">alkometriikka-902571-2026-09-29-526.59</guid>
+			<pubDate>Tue, 29 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / kuohuviinit ja samppanjat</category>
+			<description><![CDATA[<p>Tuotteen Taittinger Réserve Champagne Brut Jeroboam hinta on muuttunut.</p><p>499,99 € → 526,59 € (+26,60 €, +5,32 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/902571-80d92c06aedd.png" />
+		</item>
+	</channel>
+</rss>

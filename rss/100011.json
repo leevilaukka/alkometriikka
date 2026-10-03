@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bacardi Limón – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/100011/",
+	"feed_url": "https://alkometriikka.fi/rss/100011.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bacardi Limón.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-100011-2026-09-29-24.98",
+			"url": "https://alkometriikka.fi/tuotteet/100011/",
+			"title": "Bacardi Limón — 26,98 € → 24,98 €",
+			"content_html": "<p>Tuotteen Bacardi Limón hinta on muuttunut.</p><p>26,98 € → 24,98 € (−2,00 €, −7,41 %).</p>",
+			"summary": "Tuotteen Bacardi Limón hinta on muuttunut. 26,98 € → 24,98 € (−2,00 €, −7,41 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/100011-2ec0e4d46dda.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Revenant Brewing Project Embrace the Uncertainty Imperial Stout tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902400/",
+	"feed_url": "https://alkometriikka.fi/rss/902400.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Revenant Brewing Project Embrace the Uncertainty Imperial Stout tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902400-2026-09-29-9.97",
+			"url": "https://alkometriikka.fi/tuotteet/902400/",
+			"title": "Revenant Brewing Project Embrace the Uncertainty Imperial Stout tölkki — 9,98 € → 9,97 €",
+			"content_html": "<p>Tuotteen Revenant Brewing Project Embrace the Uncertainty Imperial Stout tölkki hinta on muuttunut.</p><p>9,98 € → 9,97 € (−0,01 €, −0,10 %).</p>",
+			"summary": "Tuotteen Revenant Brewing Project Embrace the Uncertainty Imperial Stout tölkki hinta on muuttunut. 9,98 € → 9,97 € (−0,01 €, −0,10 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902400-18f43ab1c6e4.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

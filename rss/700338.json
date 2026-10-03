@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Original Long Drink 12-pack tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/700338/",
+	"feed_url": "https://alkometriikka.fi/rss/700338.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Original Long Drink 12-pack tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-700338-2026-09-29-37.08",
+			"url": "https://alkometriikka.fi/tuotteet/700338/",
+			"title": "Original Long Drink 12-pack tölkki — 35,88 € → 37,08 €",
+			"content_html": "<p>Tuotteen Original Long Drink 12-pack tölkki hinta on muuttunut.</p><p>35,88 € → 37,08 € (+1,20 €, +3,34 %).</p>",
+			"summary": "Tuotteen Original Long Drink 12-pack tölkki hinta on muuttunut. 35,88 € → 37,08 € (+1,20 €, +3,34 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/700338-9b4be7848272.png",
+			"tags": [
+				"Panimotuotteet",
+				"juomasekoitukset"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Il Poderaccio Chianti Colli Senesi 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/951718/",
+	"feed_url": "https://alkometriikka.fi/rss/951718.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Il Poderaccio Chianti Colli Senesi 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-951718-2026-07-18-27.8",
+			"url": "https://alkometriikka.fi/tuotteet/951718/",
+			"title": "Il Poderaccio Chianti Colli Senesi 2021 — 27,26 € → 27,80 €",
+			"content_html": "<p>Tuotteen Il Poderaccio Chianti Colli Senesi 2021 hinta on muuttunut.</p><p>27,26 € → 27,80 € (+0,54 €, +1,98 %).</p>",
+			"summary": "Tuotteen Il Poderaccio Chianti Colli Senesi 2021 hinta on muuttunut. 27,26 € → 27,80 € (+0,54 €, +1,98 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/951718-73aed7d0f0a5.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

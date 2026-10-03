@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Knoll Loibner Riesling Federspiel 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900314/",
+	"feed_url": "https://alkometriikka.fi/rss/900314.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Knoll Loibner Riesling Federspiel 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900314-2026-09-29-39.9",
+			"url": "https://alkometriikka.fi/tuotteet/900314/",
+			"title": "Knoll Loibner Riesling Federspiel 2024 — 36,98 € → 39,90 €",
+			"content_html": "<p>Tuotteen Knoll Loibner Riesling Federspiel 2024 hinta on muuttunut.</p><p>36,98 € → 39,90 € (+2,92 €, +7,90 %).</p>",
+			"summary": "Tuotteen Knoll Loibner Riesling Federspiel 2024 hinta on muuttunut. 36,98 € → 39,90 € (+2,92 €, +7,90 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900314-ee71b5b0d5d2.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

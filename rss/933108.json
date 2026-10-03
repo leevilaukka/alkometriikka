@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pagos del Rey Condado de Oriza Gran Reserva 2016 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/933108/",
+	"feed_url": "https://alkometriikka.fi/rss/933108.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pagos del Rey Condado de Oriza Gran Reserva 2016.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-933108-2026-07-18-24.99",
+			"url": "https://alkometriikka.fi/tuotteet/933108/",
+			"title": "Pagos del Rey Condado de Oriza Gran Reserva 2016 — 24,73 € → 24,99 €",
+			"content_html": "<p>Tuotteen Pagos del Rey Condado de Oriza Gran Reserva 2016 hinta on muuttunut.</p><p>24,73 € → 24,99 € (+0,26 €, +1,05 %).</p>",
+			"summary": "Tuotteen Pagos del Rey Condado de Oriza Gran Reserva 2016 hinta on muuttunut. 24,73 € → 24,99 € (+0,26 €, +1,05 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/933108-99fcc8db0f2a.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

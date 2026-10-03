@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Scarlett Gold 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/946591/",
+	"feed_url": "https://alkometriikka.fi/rss/946591.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Scarlett Gold 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-946591-2026-09-29-13.4",
+			"url": "https://alkometriikka.fi/tuotteet/946591/",
+			"title": "Scarlett Gold 2023 — 13,42 € → 13,40 €",
+			"content_html": "<p>Tuotteen Scarlett Gold 2023 hinta on muuttunut.</p><p>13,42 € → 13,40 € (−0,02 €, −0,15 %).</p>",
+			"summary": "Tuotteen Scarlett Gold 2023 hinta on muuttunut. 13,42 € → 13,40 € (−0,02 €, −0,15 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/946591-6f61c565f508.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

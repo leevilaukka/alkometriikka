@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cassagnau Chardonnay La Chapelle 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902604/",
+	"feed_url": "https://alkometriikka.fi/rss/902604.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cassagnau Chardonnay La Chapelle 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902604-2026-09-29-19.07",
+			"url": "https://alkometriikka.fi/tuotteet/902604/",
+			"title": "Cassagnau Chardonnay La Chapelle 2023 — 17,35 € → 19,07 €",
+			"content_html": "<p>Tuotteen Cassagnau Chardonnay La Chapelle 2023 hinta on muuttunut.</p><p>17,35 € → 19,07 € (+1,72 €, +9,91 %).</p>",
+			"summary": "Tuotteen Cassagnau Chardonnay La Chapelle 2023 hinta on muuttunut. 17,35 € → 19,07 € (+1,72 €, +9,91 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902604-f7aa76580d43.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

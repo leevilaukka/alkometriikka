@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Huber Grüner Veltliner Eiswein 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/300030/",
+	"feed_url": "https://alkometriikka.fi/rss/300030.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Huber Grüner Veltliner Eiswein 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-300030-2026-09-29-29.15",
+			"url": "https://alkometriikka.fi/tuotteet/300030/",
+			"title": "Huber Grüner Veltliner Eiswein 2023 — 28,20 € → 29,15 €",
+			"content_html": "<p>Tuotteen Huber Grüner Veltliner Eiswein 2023 hinta on muuttunut.</p><p>28,20 € → 29,15 € (+0,95 €, +3,37 %).</p>",
+			"summary": "Tuotteen Huber Grüner Veltliner Eiswein 2023 hinta on muuttunut. 28,20 € → 29,15 € (+0,95 €, +3,37 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/300030-dcf07d6d1b4e.png",
+			"tags": [
+				"Viinit",
+				"hedelmä- ja aromatisoidut viinit"
+			]
+		}
+	]
+}

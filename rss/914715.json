@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Torii Mor Pinot Gris 2017 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/914715/",
+	"feed_url": "https://alkometriikka.fi/rss/914715.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Torii Mor Pinot Gris 2017.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-914715-2026-09-29-36.91",
+			"url": "https://alkometriikka.fi/tuotteet/914715/",
+			"title": "Torii Mor Pinot Gris 2017 — 33,72 € → 36,91 €",
+			"content_html": "<p>Tuotteen Torii Mor Pinot Gris 2017 hinta on muuttunut.</p><p>33,72 € → 36,91 € (+3,19 €, +9,46 %).</p>",
+			"summary": "Tuotteen Torii Mor Pinot Gris 2017 hinta on muuttunut. 33,72 € → 36,91 € (+3,19 €, +9,46 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/914715-5f441f18b9a0.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

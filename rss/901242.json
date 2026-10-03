@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Villa S. Anna Vino Nobile di Montepulciano  2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901242/",
+	"feed_url": "https://alkometriikka.fi/rss/901242.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Villa S. Anna Vino Nobile di Montepulciano  2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901242-2026-09-29-20.69",
+			"url": "https://alkometriikka.fi/tuotteet/901242/",
+			"title": "Villa S. Anna Vino Nobile di Montepulciano  2021 — 20,52 € → 20,69 €",
+			"content_html": "<p>Tuotteen Villa S. Anna Vino Nobile di Montepulciano  2021 hinta on muuttunut.</p><p>20,52 € → 20,69 € (+0,17 €, +0,83 %).</p>",
+			"summary": "Tuotteen Villa S. Anna Vino Nobile di Montepulciano 2021 hinta on muuttunut. 20,52 € → 20,69 € (+0,17 €, +0,83 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901242-547a7ffc18a0.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

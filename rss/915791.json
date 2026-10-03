@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Black Tower Rosé 2023 viinipussi – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/915791/",
+	"feed_url": "https://alkometriikka.fi/rss/915791.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Black Tower Rosé 2023 viinipussi.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-915791-2026-07-18-21.48",
+			"url": "https://alkometriikka.fi/tuotteet/915791/",
+			"title": "Black Tower Rosé 2023 viinipussi — 21,19 € → 21,48 €",
+			"content_html": "<p>Tuotteen Black Tower Rosé 2023 viinipussi hinta on muuttunut.</p><p>21,19 € → 21,48 € (+0,29 €, +1,37 %).</p>",
+			"summary": "Tuotteen Black Tower Rosé 2023 viinipussi hinta on muuttunut. 21,19 € → 21,48 € (+0,29 €, +1,37 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/915791-77b7a68c055e.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Terre Nere San Lorenzo 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901554/",
+	"feed_url": "https://alkometriikka.fi/rss/901554.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Terre Nere San Lorenzo 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901554-2026-09-29-79.99",
+			"url": "https://alkometriikka.fi/tuotteet/901554/",
+			"title": "Terre Nere San Lorenzo 2024 — 78,99 € → 79,99 €",
+			"content_html": "<p>Tuotteen Terre Nere San Lorenzo 2024 hinta on muuttunut.</p><p>78,99 € → 79,99 € (+1,00 €, +1,27 %).</p>",
+			"summary": "Tuotteen Terre Nere San Lorenzo 2024 hinta on muuttunut. 78,99 € → 79,99 € (+1,00 €, +1,27 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901554-86efab09c3a1.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

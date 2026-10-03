@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Amaro Montenegro – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/924988/",
+	"feed_url": "https://alkometriikka.fi/rss/924988.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Amaro Montenegro.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-924988-2026-07-18-34",
+			"url": "https://alkometriikka.fi/tuotteet/924988/",
+			"title": "Amaro Montenegro — 34,06 € → 34,00 €",
+			"content_html": "<p>Tuotteen Amaro Montenegro hinta on muuttunut.</p><p>34,06 € → 34,00 € (−0,06 €, −0,18 %).</p>",
+			"summary": "Tuotteen Amaro Montenegro hinta on muuttunut. 34,06 € → 34,00 € (−0,06 €, −0,18 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/924988-bdee5a47eb82.png",
+			"tags": [
+				"Väkevät",
+				"yrttiliköörit"
+			]
+		}
+	]
+}

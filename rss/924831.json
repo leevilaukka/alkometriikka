@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Veuve du Vernay Ice Demi-Sec – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/924831/",
+	"feed_url": "https://alkometriikka.fi/rss/924831.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Veuve du Vernay Ice Demi-Sec.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-924831-2026-09-29-4.04",
+			"url": "https://alkometriikka.fi/tuotteet/924831/",
+			"title": "Veuve du Vernay Ice Demi-Sec — 3,98 € → 4,04 €",
+			"content_html": "<p>Tuotteen Veuve du Vernay Ice Demi-Sec hinta on muuttunut.</p><p>3,98 € → 4,04 € (+0,06 €, +1,51 %).</p>",
+			"summary": "Tuotteen Veuve du Vernay Ice Demi-Sec hinta on muuttunut. 3,98 € → 4,04 € (+0,06 €, +1,51 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/924831-a07f6a0f77b6.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jaume Serra Cava Brut Nature Reserva Magnum – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/937891/",
+	"feed_url": "https://alkometriikka.fi/rss/937891.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jaume Serra Cava Brut Nature Reserva Magnum.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-937891-2026-07-18-31.98",
+			"url": "https://alkometriikka.fi/tuotteet/937891/",
+			"title": "Jaume Serra Cava Brut Nature Reserva Magnum — 31,90 € → 31,98 €",
+			"content_html": "<p>Tuotteen Jaume Serra Cava Brut Nature Reserva Magnum hinta on muuttunut.</p><p>31,90 € → 31,98 € (+0,08 €, +0,25 %).</p>",
+			"summary": "Tuotteen Jaume Serra Cava Brut Nature Reserva Magnum hinta on muuttunut. 31,90 € → 31,98 € (+0,08 €, +0,25 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/937891-9feeb69e11a0.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

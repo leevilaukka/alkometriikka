@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Trascuevas Blanco 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901686/",
+	"feed_url": "https://alkometriikka.fi/rss/901686.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Trascuevas Blanco 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901686-2026-09-29-42.32",
+			"url": "https://alkometriikka.fi/tuotteet/901686/",
+			"title": "Trascuevas Blanco 2021 — 41,91 € → 42,32 €",
+			"content_html": "<p>Tuotteen Trascuevas Blanco 2021 hinta on muuttunut.</p><p>41,91 € → 42,32 € (+0,41 €, +0,98 %).</p>",
+			"summary": "Tuotteen Trascuevas Blanco 2021 hinta on muuttunut. 41,91 € → 42,32 € (+0,41 €, +0,98 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901686-31d276fd9cbf.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-901686-2026-07-18-41.91",
+			"url": "https://alkometriikka.fi/tuotteet/901686/",
+			"title": "Trascuevas Blanco 2021 — 41,23 € → 41,91 €",
+			"content_html": "<p>Tuotteen Trascuevas Blanco 2021 hinta on muuttunut.</p><p>41,23 € → 41,91 € (+0,68 €, +1,65 %).</p>",
+			"summary": "Tuotteen Trascuevas Blanco 2021 hinta on muuttunut. 41,23 € → 41,91 € (+0,68 €, +1,65 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901686-31d276fd9cbf.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Banshee Santa Barbara Pinot Noir 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/400027/",
+	"feed_url": "https://alkometriikka.fi/rss/400027.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Banshee Santa Barbara Pinot Noir 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-400027-2026-09-29-31.02",
+			"url": "https://alkometriikka.fi/tuotteet/400027/",
+			"title": "Banshee Santa Barbara Pinot Noir 2021 — 30,84 € → 31,02 €",
+			"content_html": "<p>Tuotteen Banshee Santa Barbara Pinot Noir 2021 hinta on muuttunut.</p><p>30,84 € → 31,02 € (+0,18 €, +0,58 %).</p>",
+			"summary": "Tuotteen Banshee Santa Barbara Pinot Noir 2021 hinta on muuttunut. 30,84 € → 31,02 € (+0,18 €, +0,58 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/400027-95a7ec10ae28.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

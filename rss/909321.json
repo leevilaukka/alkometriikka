@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gustav Blueberry & Raspberry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/909321/",
+	"feed_url": "https://alkometriikka.fi/rss/909321.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gustav Blueberry & Raspberry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-909321-2026-07-18-17.48",
+			"url": "https://alkometriikka.fi/tuotteet/909321/",
+			"title": "Gustav Blueberry & Raspberry — 17,40 € → 17,48 €",
+			"content_html": "<p>Tuotteen Gustav Blueberry & Raspberry hinta on muuttunut.</p><p>17,40 € → 17,48 € (+0,08 €, +0,46 %).</p>",
+			"summary": "Tuotteen Gustav Blueberry & Raspberry hinta on muuttunut. 17,40 € → 17,48 € (+0,08 €, +0,46 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/909321-e2db210f5225.png",
+			"tags": [
+				"Väkevät",
+				"marjaliköörit"
+			]
+		}
+	]
+}

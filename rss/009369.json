@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Saku Tume – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/009369/",
+	"feed_url": "https://alkometriikka.fi/rss/009369.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Saku Tume.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-009369-2026-07-18-4.09",
+			"url": "https://alkometriikka.fi/tuotteet/009369/",
+			"title": "Saku Tume — 3,99 € → 4,09 €",
+			"content_html": "<p>Tuotteen Saku Tume hinta on muuttunut.</p><p>3,99 € → 4,09 € (+0,10 €, +2,51 %).</p>",
+			"summary": "Tuotteen Saku Tume hinta on muuttunut. 3,99 € → 4,09 € (+0,10 €, +2,51 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/009369-d0ca7fbfac8c.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

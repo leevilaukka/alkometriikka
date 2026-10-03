@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Manousakis Hartman Molavi Extra Brut 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/932891/",
+	"feed_url": "https://alkometriikka.fi/rss/932891.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Manousakis Hartman Molavi Extra Brut 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-932891-2026-09-29-50.47",
+			"url": "https://alkometriikka.fi/tuotteet/932891/",
+			"title": "Manousakis Hartman Molavi Extra Brut 2018 — 48,90 € → 50,47 €",
+			"content_html": "<p>Tuotteen Manousakis Hartman Molavi Extra Brut 2018 hinta on muuttunut.</p><p>48,90 € → 50,47 € (+1,57 €, +3,21 %).</p>",
+			"summary": "Tuotteen Manousakis Hartman Molavi Extra Brut 2018 hinta on muuttunut. 48,90 € → 50,47 € (+1,57 €, +3,21 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/932891-8705a84bef4a.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

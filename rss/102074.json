@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kaatoryyppy muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/102074/",
+	"feed_url": "https://alkometriikka.fi/rss/102074.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kaatoryyppy muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-102074-2026-07-18-10.28",
+			"url": "https://alkometriikka.fi/tuotteet/102074/",
+			"title": "Kaatoryyppy muovipullo — 10,30 € → 10,28 €",
+			"content_html": "<p>Tuotteen Kaatoryyppy muovipullo hinta on muuttunut.</p><p>10,30 € → 10,28 € (−0,02 €, −0,19 %).</p>",
+			"summary": "Tuotteen Kaatoryyppy muovipullo hinta on muuttunut. 10,30 € → 10,28 € (−0,02 €, −0,19 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/102074-1f8778790d69.png",
+			"tags": [
+				"Väkevät",
+				"viina"
+			]
+		}
+	]
+}

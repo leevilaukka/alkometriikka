@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tenute Sella Lessona San Sebastiano allo Zoppo 2013 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900263/",
+	"feed_url": "https://alkometriikka.fi/rss/900263.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tenute Sella Lessona San Sebastiano allo Zoppo 2013.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900263-2026-09-29-63",
+			"url": "https://alkometriikka.fi/tuotteet/900263/",
+			"title": "Tenute Sella Lessona San Sebastiano allo Zoppo 2013 — 60,22 € → 63,00 €",
+			"content_html": "<p>Tuotteen Tenute Sella Lessona San Sebastiano allo Zoppo 2013 hinta on muuttunut.</p><p>60,22 € → 63,00 € (+2,78 €, +4,62 %).</p>",
+			"summary": "Tuotteen Tenute Sella Lessona San Sebastiano allo Zoppo 2013 hinta on muuttunut. 60,22 € → 63,00 € (+2,78 €, +4,62 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900263-0978728bd79f.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

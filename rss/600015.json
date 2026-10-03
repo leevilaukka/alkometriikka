@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Red Bull Sugarfree 4-Pack tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/600015/",
+	"feed_url": "https://alkometriikka.fi/rss/600015.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Red Bull Sugarfree 4-Pack tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-600015-2026-07-18-7.09",
+			"url": "https://alkometriikka.fi/tuotteet/600015/",
+			"title": "Red Bull Sugarfree 4-Pack tölkki — 6,97 € → 7,09 €",
+			"content_html": "<p>Tuotteen Red Bull Sugarfree 4-Pack tölkki hinta on muuttunut.</p><p>6,97 € → 7,09 € (+0,12 €, +1,72 %).</p>",
+			"summary": "Tuotteen Red Bull Sugarfree 4-Pack tölkki hinta on muuttunut. 6,97 € → 7,09 € (+0,12 €, +1,72 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600015-819c5d432bab.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

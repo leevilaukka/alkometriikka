@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glasgow 1770 Peated Cask Strength Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903538/",
+	"feed_url": "https://alkometriikka.fi/rss/903538.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glasgow 1770 Peated Cask Strength Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903538-2026-09-29-121.9",
+			"url": "https://alkometriikka.fi/tuotteet/903538/",
+			"title": "Glasgow 1770 Peated Cask Strength Single Malt — 117,70 € → 121,90 €",
+			"content_html": "<p>Tuotteen Glasgow 1770 Peated Cask Strength Single Malt hinta on muuttunut.</p><p>117,70 € → 121,90 € (+4,20 €, +3,57 %).</p>",
+			"summary": "Tuotteen Glasgow 1770 Peated Cask Strength Single Malt hinta on muuttunut. 117,70 € → 121,90 € (+4,20 €, +3,57 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903538-bf91f652f3e1.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glenmorangie A Tale of Spices Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901920/",
+	"feed_url": "https://alkometriikka.fi/rss/901920.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glenmorangie A Tale of Spices Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901920-2026-09-29-134.96",
+			"url": "https://alkometriikka.fi/tuotteet/901920/",
+			"title": "Glenmorangie A Tale of Spices Single Malt — 129,30 € → 134,96 €",
+			"content_html": "<p>Tuotteen Glenmorangie A Tale of Spices Single Malt hinta on muuttunut.</p><p>129,30 € → 134,96 € (+5,66 €, +4,38 %).</p>",
+			"summary": "Tuotteen Glenmorangie A Tale of Spices Single Malt hinta on muuttunut. 129,30 € → 134,96 € (+5,66 €, +4,38 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901920-a31949d6faa9.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

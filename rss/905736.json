@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Raimat El Moli Cabernet Sauvignon Syrah 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/905736/",
+	"feed_url": "https://alkometriikka.fi/rss/905736.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Raimat El Moli Cabernet Sauvignon Syrah 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-905736-2026-07-18-17.98",
+			"url": "https://alkometriikka.fi/tuotteet/905736/",
+			"title": "Raimat El Moli Cabernet Sauvignon Syrah 2020 — 18,35 € → 17,98 €",
+			"content_html": "<p>Tuotteen Raimat El Moli Cabernet Sauvignon Syrah 2020 hinta on muuttunut.</p><p>18,35 € → 17,98 € (−0,37 €, −2,02 %).</p>",
+			"summary": "Tuotteen Raimat El Moli Cabernet Sauvignon Syrah 2020 hinta on muuttunut. 18,35 € → 17,98 € (−0,37 €, −2,02 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/905736-e7b1ebcb39ae.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

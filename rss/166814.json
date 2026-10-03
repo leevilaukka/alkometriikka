@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Barra Oak Bay White muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/166814/",
+	"feed_url": "https://alkometriikka.fi/rss/166814.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Barra Oak Bay White muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-166814-2026-07-18-13.49",
+			"url": "https://alkometriikka.fi/tuotteet/166814/",
+			"title": "Barra Oak Bay White muovipullo — 13,47 € → 13,49 €",
+			"content_html": "<p>Tuotteen Barra Oak Bay White muovipullo hinta on muuttunut.</p><p>13,47 € → 13,49 € (+0,02 €, +0,15 %).</p>",
+			"summary": "Tuotteen Barra Oak Bay White muovipullo hinta on muuttunut. 13,47 € → 13,49 € (+0,02 €, +0,15 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/166814-2e10a25022c4.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

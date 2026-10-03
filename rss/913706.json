@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Rivesaltes 20 Ans d´Elevage en Barrique – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/913706/",
+	"feed_url": "https://alkometriikka.fi/rss/913706.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Rivesaltes 20 Ans d´Elevage en Barrique.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-913706-2026-09-29-44.42",
+			"url": "https://alkometriikka.fi/tuotteet/913706/",
+			"title": "Rivesaltes 20 Ans d´Elevage en Barrique — 44,12 € → 44,42 €",
+			"content_html": "<p>Tuotteen Rivesaltes 20 Ans d´Elevage en Barrique hinta on muuttunut.</p><p>44,12 € → 44,42 € (+0,30 €, +0,68 %).</p>",
+			"summary": "Tuotteen Rivesaltes 20 Ans d´Elevage en Barrique hinta on muuttunut. 44,12 € → 44,42 € (+0,30 €, +0,68 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/913706-ee667941ce6e.png",
+			"tags": [
+				"Välituotteet",
+				"väkevät viinit"
+			]
+		}
+	]
+}

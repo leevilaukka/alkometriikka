@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château Beaumont 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/905742/",
+	"feed_url": "https://alkometriikka.fi/rss/905742.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château Beaumont 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-905742-2026-09-29-36.91",
+			"url": "https://alkometriikka.fi/tuotteet/905742/",
+			"title": "Château Beaumont 2021 — 31,55 € → 36,91 €",
+			"content_html": "<p>Tuotteen Château Beaumont 2021 hinta on muuttunut.</p><p>31,55 € → 36,91 € (+5,36 €, +16,99 %).</p>",
+			"summary": "Tuotteen Château Beaumont 2021 hinta on muuttunut. 31,55 € → 36,91 € (+5,36 €, +16,99 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/905742-2da1a85da353.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

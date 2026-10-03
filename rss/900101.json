@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ferrand Dry Curaçao – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900101/",
+	"feed_url": "https://alkometriikka.fi/rss/900101.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ferrand Dry Curaçao.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900101-2026-07-18-38.98",
+			"url": "https://alkometriikka.fi/tuotteet/900101/",
+			"title": "Ferrand Dry Curaçao — 38,96 € → 38,98 €",
+			"content_html": "<p>Tuotteen Ferrand Dry Curaçao hinta on muuttunut.</p><p>38,96 € → 38,98 € (+0,02 €, +0,05 %).</p>",
+			"summary": "Tuotteen Ferrand Dry Curaçao hinta on muuttunut. 38,96 € → 38,98 € (+0,02 €, +0,05 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900101-75c899c38cc0.png",
+			"tags": [
+				"Väkevät",
+				"hedelmäliköörit"
+			]
+		}
+	]
+}

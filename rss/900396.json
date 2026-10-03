@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – De Chanceny Cremant de Loire Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900396/",
+	"feed_url": "https://alkometriikka.fi/rss/900396.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: De Chanceny Cremant de Loire Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900396-2026-07-18-14.48",
+			"url": "https://alkometriikka.fi/tuotteet/900396/",
+			"title": "De Chanceny Cremant de Loire Brut — 14,39 € → 14,48 €",
+			"content_html": "<p>Tuotteen De Chanceny Cremant de Loire Brut hinta on muuttunut.</p><p>14,39 € → 14,48 € (+0,09 €, +0,63 %).</p>",
+			"summary": "Tuotteen De Chanceny Cremant de Loire Brut hinta on muuttunut. 14,39 € → 14,48 € (+0,09 €, +0,63 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900396-a410d484cb3b.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

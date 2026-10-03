@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Biondi-Santi Rosso di Montalcino 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902239/",
+	"feed_url": "https://alkometriikka.fi/rss/902239.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Biondi-Santi Rosso di Montalcino 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902239-2026-09-29-120",
+			"url": "https://alkometriikka.fi/tuotteet/902239/",
+			"title": "Biondi-Santi Rosso di Montalcino 2020 — 99,98 € → 120,00 €",
+			"content_html": "<p>Tuotteen Biondi-Santi Rosso di Montalcino 2020 hinta on muuttunut.</p><p>99,98 € → 120,00 € (+20,02 €, +20,02 %).</p>",
+			"summary": "Tuotteen Biondi-Santi Rosso di Montalcino 2020 hinta on muuttunut. 99,98 € → 120,00 € (+20,02 €, +20,02 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902239-e0cb7182ac29.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

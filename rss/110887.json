@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Courriere XO – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/110887/",
+	"feed_url": "https://alkometriikka.fi/rss/110887.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Courriere XO.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-110887-2026-09-29-28.49",
+			"url": "https://alkometriikka.fi/tuotteet/110887/",
+			"title": "Courriere XO — 28,98 € → 28,49 €",
+			"content_html": "<p>Tuotteen Courriere XO hinta on muuttunut.</p><p>28,98 € → 28,49 € (−0,49 €, −1,69 %).</p>",
+			"summary": "Tuotteen Courriere XO hinta on muuttunut. 28,98 € → 28,49 € (−0,49 €, −1,69 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/110887-e96005dcd234.png",
+			"tags": [
+				"Väkevät",
+				"brandyt"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – 19 Crimes Tempranillo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901303/",
+	"feed_url": "https://alkometriikka.fi/rss/901303.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: 19 Crimes Tempranillo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901303-2026-09-29-13.48",
+			"url": "https://alkometriikka.fi/tuotteet/901303/",
+			"title": "19 Crimes Tempranillo — 12,99 € → 13,48 €",
+			"content_html": "<p>Tuotteen 19 Crimes Tempranillo hinta on muuttunut.</p><p>12,99 € → 13,48 € (+0,49 €, +3,77 %).</p>",
+			"summary": "Tuotteen 19 Crimes Tempranillo hinta on muuttunut. 12,99 € → 13,48 € (+0,49 €, +3,77 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901303-7c56b659b99f.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

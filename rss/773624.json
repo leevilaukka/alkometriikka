@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Original Long Drink Grapefruit 0,0% tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/773624/",
+	"feed_url": "https://alkometriikka.fi/rss/773624.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Original Long Drink Grapefruit 0,0% tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-773624-2026-07-18-1.99",
+			"url": "https://alkometriikka.fi/tuotteet/773624/",
+			"title": "Original Long Drink Grapefruit 0,0% tölkki — 1,88 € → 1,99 €",
+			"content_html": "<p>Tuotteen Original Long Drink Grapefruit 0,0% tölkki hinta on muuttunut.</p><p>1,88 € → 1,99 € (+0,11 €, +5,85 %).</p>",
+			"summary": "Tuotteen Original Long Drink Grapefruit 0,0% tölkki hinta on muuttunut. 1,88 € → 1,99 € (+0,11 €, +5,85 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/773624-cd8a64ca3d23.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

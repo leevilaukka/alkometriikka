@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Veuve Clicquot Champagne Brut Jeroboam – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/955871/",
+	"feed_url": "https://alkometriikka.fi/rss/955871.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Veuve Clicquot Champagne Brut Jeroboam.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-955871-2026-09-29-612.98",
+			"url": "https://alkometriikka.fi/tuotteet/955871/",
+			"title": "Veuve Clicquot Champagne Brut Jeroboam — 578,99 € → 612,98 €",
+			"content_html": "<p>Tuotteen Veuve Clicquot Champagne Brut Jeroboam hinta on muuttunut.</p><p>578,99 € → 612,98 € (+33,99 €, +5,87 %).</p>",
+			"summary": "Tuotteen Veuve Clicquot Champagne Brut Jeroboam hinta on muuttunut. 578,99 € → 612,98 € (+33,99 €, +5,87 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/955871-541d91a02cce.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-955871-2026-07-18-578.99",
+			"url": "https://alkometriikka.fi/tuotteet/955871/",
+			"title": "Veuve Clicquot Champagne Brut Jeroboam — 567,63 € → 578,99 €",
+			"content_html": "<p>Tuotteen Veuve Clicquot Champagne Brut Jeroboam hinta on muuttunut.</p><p>567,63 € → 578,99 € (+11,36 €, +2,00 %).</p>",
+			"summary": "Tuotteen Veuve Clicquot Champagne Brut Jeroboam hinta on muuttunut. 567,63 € → 578,99 € (+11,36 €, +2,00 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/955871-541d91a02cce.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

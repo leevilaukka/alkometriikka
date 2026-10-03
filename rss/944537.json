@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Protos Reserva 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/944537/",
+	"feed_url": "https://alkometriikka.fi/rss/944537.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Protos Reserva 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-944537-2026-09-29-40.51",
+			"url": "https://alkometriikka.fi/tuotteet/944537/",
+			"title": "Protos Reserva 2020 — 40,22 € → 40,51 €",
+			"content_html": "<p>Tuotteen Protos Reserva 2020 hinta on muuttunut.</p><p>40,22 € → 40,51 € (+0,29 €, +0,72 %).</p>",
+			"summary": "Tuotteen Protos Reserva 2020 hinta on muuttunut. 40,22 € → 40,51 € (+0,29 €, +0,72 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/944537-d8edf7d9fa73.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

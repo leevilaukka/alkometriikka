@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ultimate Provence Rosé 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/947453/",
+	"feed_url": "https://alkometriikka.fi/rss/947453.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ultimate Provence Rosé 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-947453-2026-07-18-19.98",
+			"url": "https://alkometriikka.fi/tuotteet/947453/",
+			"title": "Ultimate Provence Rosé 2023 — 20,20 € → 19,98 €",
+			"content_html": "<p>Tuotteen Ultimate Provence Rosé 2023 hinta on muuttunut.</p><p>20,20 € → 19,98 € (−0,22 €, −1,09 %).</p>",
+			"summary": "Tuotteen Ultimate Provence Rosé 2023 hinta on muuttunut. 20,20 € → 19,98 € (−0,22 €, −1,09 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/947453-395320a463c8.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

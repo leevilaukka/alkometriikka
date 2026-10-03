@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Roggio del Filare 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/912917/",
+	"feed_url": "https://alkometriikka.fi/rss/912917.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Roggio del Filare 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-912917-2026-09-29-50.82",
+			"url": "https://alkometriikka.fi/tuotteet/912917/",
+			"title": "Roggio del Filare 2019 — 49,81 € → 50,82 €",
+			"content_html": "<p>Tuotteen Roggio del Filare 2019 hinta on muuttunut.</p><p>49,81 € → 50,82 € (+1,01 €, +2,03 %).</p>",
+			"summary": "Tuotteen Roggio del Filare 2019 hinta on muuttunut. 49,81 € → 50,82 € (+1,01 €, +2,03 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/912917-c7481f99e458.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

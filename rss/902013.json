@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Macallan Art is the Flower – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902013/",
+	"feed_url": "https://alkometriikka.fi/rss/902013.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Macallan Art is the Flower.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902013-2026-09-29-1085.27",
+			"url": "https://alkometriikka.fi/tuotteet/902013/",
+			"title": "The Macallan Art is the Flower — 1 016,73 € → 1 085,27 €",
+			"content_html": "<p>Tuotteen The Macallan Art is the Flower hinta on muuttunut.</p><p>1 016,73 € → 1 085,27 € (+68,54 €, +6,74 %).</p>",
+			"summary": "Tuotteen The Macallan Art is the Flower hinta on muuttunut. 1 016,73 € → 1 085,27 € (+68,54 €, +6,74 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902013-53714ebee818.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

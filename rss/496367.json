@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kalleske Greenock Shiraz 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/496367/",
+	"feed_url": "https://alkometriikka.fi/rss/496367.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kalleske Greenock Shiraz 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-496367-2026-07-18-32.99",
+			"url": "https://alkometriikka.fi/tuotteet/496367/",
+			"title": "Kalleske Greenock Shiraz 2023 — 32,95 € → 32,99 €",
+			"content_html": "<p>Tuotteen Kalleske Greenock Shiraz 2023 hinta on muuttunut.</p><p>32,95 € → 32,99 € (+0,04 €, +0,12 %).</p>",
+			"summary": "Tuotteen Kalleske Greenock Shiraz 2023 hinta on muuttunut. 32,95 € → 32,99 € (+0,04 €, +0,12 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/496367-9062501e501f.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

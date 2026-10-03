@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – High Coast Sherry Embers Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903222/",
+	"feed_url": "https://alkometriikka.fi/rss/903222.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: High Coast Sherry Embers Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903222-2026-09-29-109.16",
+			"url": "https://alkometriikka.fi/tuotteet/903222/",
+			"title": "High Coast Sherry Embers Single Malt — 105,45 € → 109,16 €",
+			"content_html": "<p>Tuotteen High Coast Sherry Embers Single Malt hinta on muuttunut.</p><p>105,45 € → 109,16 € (+3,71 €, +3,52 %).</p>",
+			"summary": "Tuotteen High Coast Sherry Embers Single Malt hinta on muuttunut. 105,45 € → 109,16 € (+3,71 €, +3,52 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903222-6e12f5319e05.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

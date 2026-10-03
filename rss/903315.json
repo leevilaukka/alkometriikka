@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nikka Miyagikyo 10 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903315/",
+	"feed_url": "https://alkometriikka.fi/rss/903315.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nikka Miyagikyo 10 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903315-2026-09-29-158.1",
+			"url": "https://alkometriikka.fi/tuotteet/903315/",
+			"title": "Nikka Miyagikyo 10 Year Old Single Malt — 149,98 € → 158,10 €",
+			"content_html": "<p>Tuotteen Nikka Miyagikyo 10 Year Old Single Malt hinta on muuttunut.</p><p>149,98 € → 158,10 € (+8,12 €, +5,41 %).</p>",
+			"summary": "Tuotteen Nikka Miyagikyo 10 Year Old Single Malt hinta on muuttunut. 149,98 € → 158,10 € (+8,12 €, +5,41 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903315-1e5d5d6e8fde.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

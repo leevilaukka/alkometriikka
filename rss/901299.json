@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glasgow 1770 Oloroso Sherry Cask – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901299/",
+	"feed_url": "https://alkometriikka.fi/rss/901299.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glasgow 1770 Oloroso Sherry Cask.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901299-2026-09-29-140.62",
+			"url": "https://alkometriikka.fi/tuotteet/901299/",
+			"title": "Glasgow 1770 Oloroso Sherry Cask — 134,97 € → 140,62 €",
+			"content_html": "<p>Tuotteen Glasgow 1770 Oloroso Sherry Cask hinta on muuttunut.</p><p>134,97 € → 140,62 € (+5,65 €, +4,19 %).</p>",
+			"summary": "Tuotteen Glasgow 1770 Oloroso Sherry Cask hinta on muuttunut. 134,97 € → 140,62 € (+5,65 €, +4,19 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901299-bc4632067b4a.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

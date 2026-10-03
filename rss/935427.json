@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hine XO Premier Cru – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/935427/",
+	"feed_url": "https://alkometriikka.fi/rss/935427.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hine XO Premier Cru.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-935427-2026-09-29-199.99",
+			"url": "https://alkometriikka.fi/tuotteet/935427/",
+			"title": "Hine XO Premier Cru — 214,99 € → 199,99 €",
+			"content_html": "<p>Tuotteen Hine XO Premier Cru hinta on muuttunut.</p><p>214,99 € → 199,99 € (−15,00 €, −6,98 %).</p>",
+			"summary": "Tuotteen Hine XO Premier Cru hinta on muuttunut. 214,99 € → 199,99 € (−15,00 €, −6,98 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/935427-5f1595181ee3.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

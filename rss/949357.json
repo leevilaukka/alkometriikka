@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Zazazu Demi Sec – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/949357/",
+	"feed_url": "https://alkometriikka.fi/rss/949357.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Zazazu Demi Sec.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-949357-2026-07-18-18.99",
+			"url": "https://alkometriikka.fi/tuotteet/949357/",
+			"title": "Zazazu Demi Sec — 18,45 € → 18,99 €",
+			"content_html": "<p>Tuotteen Zazazu Demi Sec hinta on muuttunut.</p><p>18,45 € → 18,99 € (+0,54 €, +2,93 %).</p>",
+			"summary": "Tuotteen Zazazu Demi Sec hinta on muuttunut. 18,45 € → 18,99 € (+0,54 €, +2,93 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/949357-e0aed2314292.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

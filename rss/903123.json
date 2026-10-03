@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Quinta do Crasto Vintage Port 2016 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903123/",
+	"feed_url": "https://alkometriikka.fi/rss/903123.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Quinta do Crasto Vintage Port 2016.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903123-2026-09-29-65.16",
+			"url": "https://alkometriikka.fi/tuotteet/903123/",
+			"title": "Quinta do Crasto Vintage Port 2016 — 63,40 € → 65,16 €",
+			"content_html": "<p>Tuotteen Quinta do Crasto Vintage Port 2016 hinta on muuttunut.</p><p>63,40 € → 65,16 € (+1,76 €, +2,78 %).</p>",
+			"summary": "Tuotteen Quinta do Crasto Vintage Port 2016 hinta on muuttunut. 63,40 € → 65,16 € (+1,76 €, +2,78 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903123-d4f87b190f88.png",
+			"tags": [
+				"Välituotteet",
+				"portviinit"
+			]
+		}
+	]
+}

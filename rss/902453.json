@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Prunotto Bricco Colma 2015 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902453/",
+	"feed_url": "https://alkometriikka.fi/rss/902453.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Prunotto Bricco Colma 2015.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902453-2026-09-29-54.9",
+			"url": "https://alkometriikka.fi/tuotteet/902453/",
+			"title": "Prunotto Bricco Colma 2015 — 53,44 € → 54,90 €",
+			"content_html": "<p>Tuotteen Prunotto Bricco Colma 2015 hinta on muuttunut.</p><p>53,44 € → 54,90 € (+1,46 €, +2,73 %).</p>",
+			"summary": "Tuotteen Prunotto Bricco Colma 2015 hinta on muuttunut. 53,44 € → 54,90 € (+1,46 €, +2,73 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902453-688e1ccbecbd.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

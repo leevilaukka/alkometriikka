@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Christian Tschida Felsen I 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900502/",
+	"feed_url": "https://alkometriikka.fi/rss/900502.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Christian Tschida Felsen I 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900502-2026-09-29-91.02",
+			"url": "https://alkometriikka.fi/tuotteet/900502/",
+			"title": "Christian Tschida Felsen I 2023 — 87,16 € → 91,02 €",
+			"content_html": "<p>Tuotteen Christian Tschida Felsen I 2023 hinta on muuttunut.</p><p>87,16 € → 91,02 € (+3,86 €, +4,43 %).</p>",
+			"summary": "Tuotteen Christian Tschida Felsen I 2023 hinta on muuttunut. 87,16 € → 91,02 € (+3,86 €, +4,43 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900502-1f5231a32c5f.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

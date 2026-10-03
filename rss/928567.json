@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Marchese Antinori Cuvée Royale Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/928567/",
+	"feed_url": "https://alkometriikka.fi/rss/928567.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Marchese Antinori Cuvée Royale Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-928567-2026-07-18-39.98",
+			"url": "https://alkometriikka.fi/tuotteet/928567/",
+			"title": "Marchese Antinori Cuvée Royale Brut — 40,44 € → 39,98 €",
+			"content_html": "<p>Tuotteen Marchese Antinori Cuvée Royale Brut hinta on muuttunut.</p><p>40,44 € → 39,98 € (−0,46 €, −1,14 %).</p>",
+			"summary": "Tuotteen Marchese Antinori Cuvée Royale Brut hinta on muuttunut. 40,44 € → 39,98 € (−0,46 €, −1,14 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/928567-71b1c56d22da.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

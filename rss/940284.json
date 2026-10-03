@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Sanpellegrino Aranciata tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/940284/",
+	"feed_url": "https://alkometriikka.fi/rss/940284.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Sanpellegrino Aranciata tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-940284-2026-09-29-2.45",
+			"url": "https://alkometriikka.fi/tuotteet/940284/",
+			"title": "Sanpellegrino Aranciata tölkki — 2,44 € → 2,45 €",
+			"content_html": "<p>Tuotteen Sanpellegrino Aranciata tölkki hinta on muuttunut.</p><p>2,44 € → 2,45 € (+0,01 €, +0,41 %).</p>",
+			"summary": "Tuotteen Sanpellegrino Aranciata tölkki hinta on muuttunut. 2,44 € → 2,45 € (+0,01 €, +0,41 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/940284-0379d978b038.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

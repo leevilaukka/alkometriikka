@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château Pradeaux Bandol Rosé 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901285/",
+	"feed_url": "https://alkometriikka.fi/rss/901285.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château Pradeaux Bandol Rosé 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901285-2026-09-29-39.19",
+			"url": "https://alkometriikka.fi/tuotteet/901285/",
+			"title": "Château Pradeaux Bandol Rosé 2024 — 39,03 € → 39,19 €",
+			"content_html": "<p>Tuotteen Château Pradeaux Bandol Rosé 2024 hinta on muuttunut.</p><p>39,03 € → 39,19 € (+0,16 €, +0,41 %).</p>",
+			"summary": "Tuotteen Château Pradeaux Bandol Rosé 2024 hinta on muuttunut. 39,03 € → 39,19 € (+0,16 €, +0,41 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901285-7e4021367a79.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

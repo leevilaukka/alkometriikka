@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château de Plaisance Ronceray 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/944764/",
+	"feed_url": "https://alkometriikka.fi/rss/944764.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château de Plaisance Ronceray 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-944764-2026-09-29-44.6",
+			"url": "https://alkometriikka.fi/tuotteet/944764/",
+			"title": "Château de Plaisance Ronceray 2023 — 43,98 € → 44,60 €",
+			"content_html": "<p>Tuotteen Château de Plaisance Ronceray 2023 hinta on muuttunut.</p><p>43,98 € → 44,60 € (+0,62 €, +1,41 %).</p>",
+			"summary": "Tuotteen Château de Plaisance Ronceray 2023 hinta on muuttunut. 43,98 € → 44,60 € (+0,62 €, +1,41 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/944764-b221c01ccc2e.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Clément Martinique VSOP Vieux Agricole – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902828/",
+	"feed_url": "https://alkometriikka.fi/rss/902828.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Clément Martinique VSOP Vieux Agricole.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902828-2026-09-29-64.98",
+			"url": "https://alkometriikka.fi/tuotteet/902828/",
+			"title": "Clément Martinique VSOP Vieux Agricole — 63,99 € → 64,98 €",
+			"content_html": "<p>Tuotteen Clément Martinique VSOP Vieux Agricole hinta on muuttunut.</p><p>63,99 € → 64,98 € (+0,99 €, +1,55 %).</p>",
+			"summary": "Tuotteen Clément Martinique VSOP Vieux Agricole hinta on muuttunut. 63,99 € → 64,98 € (+0,99 €, +1,55 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902828-ef3d6322ffbd.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

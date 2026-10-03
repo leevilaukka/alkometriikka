@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jacob's Creek UnVined Shiraz – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/455017/",
+	"feed_url": "https://alkometriikka.fi/rss/455017.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jacob's Creek UnVined Shiraz.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-455017-2026-07-18-7.99",
+			"url": "https://alkometriikka.fi/tuotteet/455017/",
+			"title": "Jacob's Creek UnVined Shiraz — 7,92 € → 7,99 €",
+			"content_html": "<p>Tuotteen Jacob's Creek UnVined Shiraz hinta on muuttunut.</p><p>7,92 € → 7,99 € (+0,07 €, +0,88 %).</p>",
+			"summary": "Tuotteen Jacob's Creek UnVined Shiraz hinta on muuttunut. 7,92 € → 7,99 € (+0,07 €, +0,88 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/455017-86c6235286eb.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat punaviinit"
+			]
+		}
+	]
+}

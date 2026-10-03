@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Domaine Billaud-Simon Chablis 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903182/",
+	"feed_url": "https://alkometriikka.fi/rss/903182.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Domaine Billaud-Simon Chablis 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903182-2026-09-29-23.25",
+			"url": "https://alkometriikka.fi/tuotteet/903182/",
+			"title": "Domaine Billaud-Simon Chablis 2023 — 22,90 € → 23,25 €",
+			"content_html": "<p>Tuotteen Domaine Billaud-Simon Chablis 2023 hinta on muuttunut.</p><p>22,90 € → 23,25 € (+0,35 €, +1,53 %).</p>",
+			"summary": "Tuotteen Domaine Billaud-Simon Chablis 2023 hinta on muuttunut. 22,90 € → 23,25 € (+0,35 €, +1,53 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903182-4aa321b735c5.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

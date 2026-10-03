@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Guado al Melo Atis 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900837/",
+	"feed_url": "https://alkometriikka.fi/rss/900837.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Guado al Melo Atis 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900837-2026-09-29-58.65",
+			"url": "https://alkometriikka.fi/tuotteet/900837/",
+			"title": "Guado al Melo Atis 2019 — 57,09 € → 58,65 €",
+			"content_html": "<p>Tuotteen Guado al Melo Atis 2019 hinta on muuttunut.</p><p>57,09 € → 58,65 € (+1,56 €, +2,73 %).</p>",
+			"summary": "Tuotteen Guado al Melo Atis 2019 hinta on muuttunut. 57,09 € → 58,65 € (+1,56 €, +2,73 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900837-5025d21c29fa.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

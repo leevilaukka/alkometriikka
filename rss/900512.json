@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Le Bullet Rosé Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900512/",
+	"feed_url": "https://alkometriikka.fi/rss/900512.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Le Bullet Rosé Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900512-2026-09-29-40.99",
+			"url": "https://alkometriikka.fi/tuotteet/900512/",
+			"title": "Le Bullet Rosé Brut — 39,98 € → 40,99 €",
+			"content_html": "<p>Tuotteen Le Bullet Rosé Brut hinta on muuttunut.</p><p>39,98 € → 40,99 € (+1,01 €, +2,53 %).</p>",
+			"summary": "Tuotteen Le Bullet Rosé Brut hinta on muuttunut. 39,98 € → 40,99 € (+1,01 €, +2,53 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900512-cadc6322b4a3.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

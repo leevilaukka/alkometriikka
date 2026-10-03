@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Chymos Ruska Väkevä Marjaviini – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/348707/",
+	"feed_url": "https://alkometriikka.fi/rss/348707.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Chymos Ruska Väkevä Marjaviini.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-348707-2026-07-18-11.98",
+			"url": "https://alkometriikka.fi/tuotteet/348707/",
+			"title": "Chymos Ruska Väkevä Marjaviini — 12,52 € → 11,98 €",
+			"content_html": "<p>Tuotteen Chymos Ruska Väkevä Marjaviini hinta on muuttunut.</p><p>12,52 € → 11,98 € (−0,54 €, −4,31 %).</p>",
+			"summary": "Tuotteen Chymos Ruska Väkevä Marjaviini hinta on muuttunut. 12,52 € → 11,98 € (−0,54 €, −4,31 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/348707-d1015a2c0b0c.png",
+			"tags": [
+				"Välituotteet",
+				"väkevät viinit"
+			]
+		}
+	]
+}

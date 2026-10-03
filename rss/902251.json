@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Benjamin Leroux Volnay Premier Cru Les Santenots 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902251/",
+	"feed_url": "https://alkometriikka.fi/rss/902251.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Benjamin Leroux Volnay Premier Cru Les Santenots 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902251-2026-09-29-158.51",
+			"url": "https://alkometriikka.fi/tuotteet/902251/",
+			"title": "Benjamin Leroux Volnay Premier Cru Les Santenots 2018 — 149,95 € → 158,51 €",
+			"content_html": "<p>Tuotteen Benjamin Leroux Volnay Premier Cru Les Santenots 2018 hinta on muuttunut.</p><p>149,95 € → 158,51 € (+8,56 €, +5,71 %).</p>",
+			"summary": "Tuotteen Benjamin Leroux Volnay Premier Cru Les Santenots 2018 hinta on muuttunut. 149,95 € → 158,51 € (+8,56 €, +5,71 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902251-4e1ed51b50cd.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

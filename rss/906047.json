@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Poli Elisir Limone – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/906047/",
+	"feed_url": "https://alkometriikka.fi/rss/906047.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Poli Elisir Limone.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-906047-2026-07-18-33.99",
+			"url": "https://alkometriikka.fi/tuotteet/906047/",
+			"title": "Poli Elisir Limone — 33,10 € → 33,99 €",
+			"content_html": "<p>Tuotteen Poli Elisir Limone hinta on muuttunut.</p><p>33,10 € → 33,99 € (+0,89 €, +2,69 %).</p>",
+			"summary": "Tuotteen Poli Elisir Limone hinta on muuttunut. 33,10 € → 33,99 € (+0,89 €, +2,69 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/906047-caf767e0d10f.png",
+			"tags": [
+				"Väkevät",
+				"hedelmäliköörit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Karhu 8,0% 6-pack tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/700331/",
+	"feed_url": "https://alkometriikka.fi/rss/700331.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Karhu 8,0% 6-pack tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-700331-2026-09-29-15.72",
+			"url": "https://alkometriikka.fi/tuotteet/700331/",
+			"title": "Karhu 8,0% 6-pack tölkki — 15,42 € → 15,72 €",
+			"content_html": "<p>Tuotteen Karhu 8,0% 6-pack tölkki hinta on muuttunut.</p><p>15,42 € → 15,72 € (+0,30 €, +1,95 %).</p>",
+			"summary": "Tuotteen Karhu 8,0% 6-pack tölkki hinta on muuttunut. 15,42 € → 15,72 € (+0,30 €, +1,95 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/700331-200991cfc33c.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

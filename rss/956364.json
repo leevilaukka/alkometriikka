@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Smöla – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/956364/",
+	"feed_url": "https://alkometriikka.fi/rss/956364.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Smöla.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-956364-2026-09-29-26.28",
+			"url": "https://alkometriikka.fi/tuotteet/956364/",
+			"title": "Smöla — 26,18 € → 26,28 €",
+			"content_html": "<p>Tuotteen Smöla hinta on muuttunut.</p><p>26,18 € → 26,28 € (+0,10 €, +0,38 %).</p>",
+			"summary": "Tuotteen Smöla hinta on muuttunut. 26,18 € → 26,28 € (+0,10 €, +0,38 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/956364-9aefe0fa2c79.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – François Voyer Grande Champagne Extra – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902265/",
+	"feed_url": "https://alkometriikka.fi/rss/902265.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: François Voyer Grande Champagne Extra.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902265-2026-09-29-370.41",
+			"url": "https://alkometriikka.fi/tuotteet/902265/",
+			"title": "François Voyer Grande Champagne Extra — 348,99 € → 370,41 €",
+			"content_html": "<p>Tuotteen François Voyer Grande Champagne Extra hinta on muuttunut.</p><p>348,99 € → 370,41 € (+21,42 €, +6,14 %).</p>",
+			"summary": "Tuotteen François Voyer Grande Champagne Extra hinta on muuttunut. 348,99 € → 370,41 € (+21,42 €, +6,14 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902265-caaead23f761.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

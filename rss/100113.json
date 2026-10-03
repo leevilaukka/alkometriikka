@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gustav Tilli Vodka muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/100113/",
+	"feed_url": "https://alkometriikka.fi/rss/100113.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gustav Tilli Vodka muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-100113-2026-09-29-3.99",
+			"url": "https://alkometriikka.fi/tuotteet/100113/",
+			"title": "Gustav Tilli Vodka muovipullo — 4,05 € → 3,99 €",
+			"content_html": "<p>Tuotteen Gustav Tilli Vodka muovipullo hinta on muuttunut.</p><p>4,05 € → 3,99 € (−0,06 €, −1,48 %).</p>",
+			"summary": "Tuotteen Gustav Tilli Vodka muovipullo hinta on muuttunut. 4,05 € → 3,99 € (−0,06 €, −1,48 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/100113-badf75952558.png",
+			"tags": [
+				"Väkevät",
+				"maustetut vodkat"
+			]
+		}
+	]
+}

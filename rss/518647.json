@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pol Roger Réserve Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/518647/",
+	"feed_url": "https://alkometriikka.fi/rss/518647.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pol Roger Réserve Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-518647-2026-09-29-64.98",
+			"url": "https://alkometriikka.fi/tuotteet/518647/",
+			"title": "Pol Roger Réserve Champagne Brut — 62,98 € → 64,98 €",
+			"content_html": "<p>Tuotteen Pol Roger Réserve Champagne Brut hinta on muuttunut.</p><p>62,98 € → 64,98 € (+2,00 €, +3,18 %).</p>",
+			"summary": "Tuotteen Pol Roger Réserve Champagne Brut hinta on muuttunut. 62,98 € → 64,98 € (+2,00 €, +3,18 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/518647-66acb6f06fe5.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

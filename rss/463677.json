@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ricossa Piemonte Nebbiolo Rosato 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/463677/",
+	"feed_url": "https://alkometriikka.fi/rss/463677.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ricossa Piemonte Nebbiolo Rosato 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-463677-2026-09-29-12.59",
+			"url": "https://alkometriikka.fi/tuotteet/463677/",
+			"title": "Ricossa Piemonte Nebbiolo Rosato 2025 — 12,45 € → 12,59 €",
+			"content_html": "<p>Tuotteen Ricossa Piemonte Nebbiolo Rosato 2025 hinta on muuttunut.</p><p>12,45 € → 12,59 € (+0,14 €, +1,12 %).</p>",
+			"summary": "Tuotteen Ricossa Piemonte Nebbiolo Rosato 2025 hinta on muuttunut. 12,45 € → 12,59 € (+0,14 €, +1,12 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/463677-5e99d35e6e8d.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

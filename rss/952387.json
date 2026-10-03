@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dangin-Fays Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/952387/",
+	"feed_url": "https://alkometriikka.fi/rss/952387.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dangin-Fays Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-952387-2026-09-29-40.21",
+			"url": "https://alkometriikka.fi/tuotteet/952387/",
+			"title": "Dangin-Fays Champagne Brut — 39,94 € → 40,21 €",
+			"content_html": "<p>Tuotteen Dangin-Fays Champagne Brut hinta on muuttunut.</p><p>39,94 € → 40,21 € (+0,27 €, +0,68 %).</p>",
+			"summary": "Tuotteen Dangin-Fays Champagne Brut hinta on muuttunut. 39,94 € → 40,21 € (+0,27 €, +0,68 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/952387-b871e4ee2dd5.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

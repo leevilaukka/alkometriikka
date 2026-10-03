@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kyrö’s Choice Scottish Peat – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/944898/",
+	"feed_url": "https://alkometriikka.fi/rss/944898.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kyrö’s Choice Scottish Peat.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-944898-2026-09-29-81.2",
+			"url": "https://alkometriikka.fi/tuotteet/944898/",
+			"title": "Kyrö’s Choice Scottish Peat — 78,43 € → 81,20 €",
+			"content_html": "<p>Tuotteen Kyrö’s Choice Scottish Peat hinta on muuttunut.</p><p>78,43 € → 81,20 € (+2,77 €, +3,53 %).</p>",
+			"summary": "Tuotteen Kyrö’s Choice Scottish Peat hinta on muuttunut. 78,43 € → 81,20 € (+2,77 €, +3,53 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/944898-70c30115c6d4.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Smakbyns Apelbrand – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/956316/",
+	"feed_url": "https://alkometriikka.fi/rss/956316.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Smakbyns Apelbrand.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-956316-2026-09-29-134.55",
+			"url": "https://alkometriikka.fi/tuotteet/956316/",
+			"title": "Smakbyns Apelbrand — 127,94 € → 134,55 €",
+			"content_html": "<p>Tuotteen Smakbyns Apelbrand hinta on muuttunut.</p><p>127,94 € → 134,55 € (+6,61 €, +5,17 %).</p>",
+			"summary": "Tuotteen Smakbyns Apelbrand hinta on muuttunut. 127,94 € → 134,55 € (+6,61 €, +5,17 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/956316-aa39c1de1af2.png",
+			"tags": [
+				"Väkevät",
+				"hedelmätisleet"
+			]
+		}
+	]
+}

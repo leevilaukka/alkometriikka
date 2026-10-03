@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Thorn-Clarke Sandpiper Merlot 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901264/",
+	"feed_url": "https://alkometriikka.fi/rss/901264.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Thorn-Clarke Sandpiper Merlot 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901264-2026-07-18-19.99",
+			"url": "https://alkometriikka.fi/tuotteet/901264/",
+			"title": "Thorn-Clarke Sandpiper Merlot 2021 — 20,26 € → 19,99 €",
+			"content_html": "<p>Tuotteen Thorn-Clarke Sandpiper Merlot 2021 hinta on muuttunut.</p><p>20,26 € → 19,99 € (−0,27 €, −1,33 %).</p>",
+			"summary": "Tuotteen Thorn-Clarke Sandpiper Merlot 2021 hinta on muuttunut. 20,26 € → 19,99 € (−0,27 €, −1,33 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901264-66415b7dae90.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

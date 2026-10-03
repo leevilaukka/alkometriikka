@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kajo Arctic Cloudberry Liqueur – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/949694/",
+	"feed_url": "https://alkometriikka.fi/rss/949694.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kajo Arctic Cloudberry Liqueur.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-949694-2026-07-18-17.36",
+			"url": "https://alkometriikka.fi/tuotteet/949694/",
+			"title": "Kajo Arctic Cloudberry Liqueur — 15,45 € → 17,36 €",
+			"content_html": "<p>Tuotteen Kajo Arctic Cloudberry Liqueur hinta on muuttunut.</p><p>15,45 € → 17,36 € (+1,91 €, +12,36 %).</p>",
+			"summary": "Tuotteen Kajo Arctic Cloudberry Liqueur hinta on muuttunut. 15,45 € → 17,36 € (+1,91 €, +12,36 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/949694-c1817277e238.png",
+			"tags": [
+				"Väkevät",
+				"marjaliköörit"
+			]
+		}
+	]
+}

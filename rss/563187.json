@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pra' Otto Soave Classico 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/563187/",
+	"feed_url": "https://alkometriikka.fi/rss/563187.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pra' Otto Soave Classico 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-563187-2026-09-29-19.99",
+			"url": "https://alkometriikka.fi/tuotteet/563187/",
+			"title": "Pra' Otto Soave Classico 2024 — 21,46 € → 19,99 €",
+			"content_html": "<p>Tuotteen Pra' Otto Soave Classico 2024 hinta on muuttunut.</p><p>21,46 € → 19,99 € (−1,47 €, −6,85 %).</p>",
+			"summary": "Tuotteen Pra' Otto Soave Classico 2024 hinta on muuttunut. 21,46 € → 19,99 € (−1,47 €, −6,85 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/563187-43209fce4f89.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

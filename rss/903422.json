@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Chassenay d'Arce Selection Blanche Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903422/",
+	"feed_url": "https://alkometriikka.fi/rss/903422.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Chassenay d'Arce Selection Blanche Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903422-2026-09-29-51",
+			"url": "https://alkometriikka.fi/tuotteet/903422/",
+			"title": "Chassenay d'Arce Selection Blanche Champagne Brut — 49,99 € → 51,00 €",
+			"content_html": "<p>Tuotteen Chassenay d'Arce Selection Blanche Champagne Brut hinta on muuttunut.</p><p>49,99 € → 51,00 € (+1,01 €, +2,02 %).</p>",
+			"summary": "Tuotteen Chassenay d'Arce Selection Blanche Champagne Brut hinta on muuttunut. 49,99 € → 51,00 € (+1,01 €, +2,02 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903422-df4436aff8c3.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

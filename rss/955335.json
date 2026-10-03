@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Fallet Dart Cuvée de Réserve Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/955335/",
+	"feed_url": "https://alkometriikka.fi/rss/955335.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Fallet Dart Cuvée de Réserve Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-955335-2026-09-29-60.99",
+			"url": "https://alkometriikka.fi/tuotteet/955335/",
+			"title": "Fallet Dart Cuvée de Réserve Champagne Brut — 58,44 € → 60,99 €",
+			"content_html": "<p>Tuotteen Fallet Dart Cuvée de Réserve Champagne Brut hinta on muuttunut.</p><p>58,44 € → 60,99 € (+2,55 €, +4,36 %).</p>",
+			"summary": "Tuotteen Fallet Dart Cuvée de Réserve Champagne Brut hinta on muuttunut. 58,44 € → 60,99 € (+2,55 €, +4,36 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/955335-2e1d6bc263e9.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

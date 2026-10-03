@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Graffigna Elixio Cabernet Sauvignon 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/498507/",
+	"feed_url": "https://alkometriikka.fi/rss/498507.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Graffigna Elixio Cabernet Sauvignon 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-498507-2026-09-29-9.98",
+			"url": "https://alkometriikka.fi/tuotteet/498507/",
+			"title": "Graffigna Elixio Cabernet Sauvignon 2023 — 9,96 € → 9,98 €",
+			"content_html": "<p>Tuotteen Graffigna Elixio Cabernet Sauvignon 2023 hinta on muuttunut.</p><p>9,96 € → 9,98 € (+0,02 €, +0,20 %).</p>",
+			"summary": "Tuotteen Graffigna Elixio Cabernet Sauvignon 2023 hinta on muuttunut. 9,96 € → 9,98 € (+0,02 €, +0,20 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/498507-dd1f1cbe0ccb.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

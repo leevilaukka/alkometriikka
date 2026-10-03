@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vintense Les Galets Alcohol Free – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/948152/",
+	"feed_url": "https://alkometriikka.fi/rss/948152.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vintense Les Galets Alcohol Free.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-948152-2026-07-18-12.95",
+			"url": "https://alkometriikka.fi/tuotteet/948152/",
+			"title": "Vintense Les Galets Alcohol Free — 12,94 € → 12,95 €",
+			"content_html": "<p>Tuotteen Vintense Les Galets Alcohol Free hinta on muuttunut.</p><p>12,94 € → 12,95 € (+0,01 €, +0,08 %).</p>",
+			"summary": "Tuotteen Vintense Les Galets Alcohol Free hinta on muuttunut. 12,94 € → 12,95 € (+0,01 €, +0,08 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/948152-9507e119a63b.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat punaviinit"
+			]
+		}
+	]
+}

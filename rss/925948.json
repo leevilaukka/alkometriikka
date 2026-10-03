@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Alvaro Palacios Finca Dofi 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/925948/",
+	"feed_url": "https://alkometriikka.fi/rss/925948.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Alvaro Palacios Finca Dofi 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-925948-2026-09-29-90",
+			"url": "https://alkometriikka.fi/tuotteet/925948/",
+			"title": "Alvaro Palacios Finca Dofi 2021 — 86,35 € → 90,00 €",
+			"content_html": "<p>Tuotteen Alvaro Palacios Finca Dofi 2021 hinta on muuttunut.</p><p>86,35 € → 90,00 € (+3,65 €, +4,23 %).</p>",
+			"summary": "Tuotteen Alvaro Palacios Finca Dofi 2021 hinta on muuttunut. 86,35 € → 90,00 € (+3,65 €, +4,23 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/925948-b276b0aedc9b.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

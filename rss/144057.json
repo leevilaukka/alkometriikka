@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Naud Ron Venezuela 12 Años – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/144057/",
+	"feed_url": "https://alkometriikka.fi/rss/144057.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Naud Ron Venezuela 12 Años.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-144057-2026-09-29-42.31",
+			"url": "https://alkometriikka.fi/tuotteet/144057/",
+			"title": "Naud Ron Venezuela 12 Años — 41,25 € → 42,31 €",
+			"content_html": "<p>Tuotteen Naud Ron Venezuela 12 Años hinta on muuttunut.</p><p>41,25 € → 42,31 € (+1,06 €, +2,57 %).</p>",
+			"summary": "Tuotteen Naud Ron Venezuela 12 Años hinta on muuttunut. 41,25 € → 42,31 € (+1,06 €, +2,57 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/144057-2739c46e92cb.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

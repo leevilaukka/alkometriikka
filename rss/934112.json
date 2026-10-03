@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Beefeater Crown Jewel London Dry Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/934112/",
+	"feed_url": "https://alkometriikka.fi/rss/934112.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Beefeater Crown Jewel London Dry Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-934112-2026-09-29-115.99",
+			"url": "https://alkometriikka.fi/tuotteet/934112/",
+			"title": "Beefeater Crown Jewel London Dry Gin — 112,99 € → 115,99 €",
+			"content_html": "<p>Tuotteen Beefeater Crown Jewel London Dry Gin hinta on muuttunut.</p><p>112,99 € → 115,99 € (+3,00 €, +2,66 %).</p>",
+			"summary": "Tuotteen Beefeater Crown Jewel London Dry Gin hinta on muuttunut. 112,99 € → 115,99 € (+3,00 €, +2,66 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/934112-11aba773edc9.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

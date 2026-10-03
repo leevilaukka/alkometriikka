@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Il Poggione Brunello di Montalcino Double Magnum 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903533/",
+	"feed_url": "https://alkometriikka.fi/rss/903533.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Il Poggione Brunello di Montalcino Double Magnum 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903533-2026-09-29-224.93",
+			"url": "https://alkometriikka.fi/tuotteet/903533/",
+			"title": "Il Poggione Brunello di Montalcino Double Magnum 2020 — 219,37 € → 224,93 €",
+			"content_html": "<p>Tuotteen Il Poggione Brunello di Montalcino Double Magnum 2020 hinta on muuttunut.</p><p>219,37 € → 224,93 € (+5,56 €, +2,53 %).</p>",
+			"summary": "Tuotteen Il Poggione Brunello di Montalcino Double Magnum 2020 hinta on muuttunut. 219,37 € → 224,93 € (+5,56 €, +2,53 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903533-9e7b3bb2b8db.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

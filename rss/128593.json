@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hayman's London Dry Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/128593/",
+	"feed_url": "https://alkometriikka.fi/rss/128593.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hayman's London Dry Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-128593-2026-09-29-14.08",
+			"url": "https://alkometriikka.fi/tuotteet/128593/",
+			"title": "Hayman's London Dry Gin — 13,98 € → 14,08 €",
+			"content_html": "<p>Tuotteen Hayman's London Dry Gin hinta on muuttunut.</p><p>13,98 € → 14,08 € (+0,10 €, +0,72 %).</p>",
+			"summary": "Tuotteen Hayman's London Dry Gin hinta on muuttunut. 13,98 € → 14,08 € (+0,10 €, +0,72 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/128593-0cdc9ba46161.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

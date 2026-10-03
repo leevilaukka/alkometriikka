@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Elisabetta Abrami Franciacorta Rosé Brut 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900355/",
+	"feed_url": "https://alkometriikka.fi/rss/900355.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Elisabetta Abrami Franciacorta Rosé Brut 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900355-2026-09-29-53.33",
+			"url": "https://alkometriikka.fi/tuotteet/900355/",
+			"title": "Elisabetta Abrami Franciacorta Rosé Brut 2020 — 52,15 € → 53,33 €",
+			"content_html": "<p>Tuotteen Elisabetta Abrami Franciacorta Rosé Brut 2020 hinta on muuttunut.</p><p>52,15 € → 53,33 € (+1,18 €, +2,26 %).</p>",
+			"summary": "Tuotteen Elisabetta Abrami Franciacorta Rosé Brut 2020 hinta on muuttunut. 52,15 € → 53,33 € (+1,18 €, +2,26 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900355-98671f4fb509.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

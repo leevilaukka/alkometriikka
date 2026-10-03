@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Era Grüner Veltliner 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/920065/",
+	"feed_url": "https://alkometriikka.fi/rss/920065.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Era Grüner Veltliner 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-920065-2026-07-18-11.99",
+			"url": "https://alkometriikka.fi/tuotteet/920065/",
+			"title": "Era Grüner Veltliner 2024 — 10,44 € → 11,99 €",
+			"content_html": "<p>Tuotteen Era Grüner Veltliner 2024 hinta on muuttunut.</p><p>10,44 € → 11,99 € (+1,55 €, +14,85 %).</p>",
+			"summary": "Tuotteen Era Grüner Veltliner 2024 hinta on muuttunut. 10,44 € → 11,99 € (+1,55 €, +14,85 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/920065-9458cb7fed7d.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

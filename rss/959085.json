@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Casa Charlize Passonata Cuvée Forte – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/959085/",
+	"feed_url": "https://alkometriikka.fi/rss/959085.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Casa Charlize Passonata Cuvée Forte.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-959085-2026-09-29-12.99",
+			"url": "https://alkometriikka.fi/tuotteet/959085/",
+			"title": "Casa Charlize Passonata Cuvée Forte — 12,49 € → 12,99 €",
+			"content_html": "<p>Tuotteen Casa Charlize Passonata Cuvée Forte hinta on muuttunut.</p><p>12,49 € → 12,99 € (+0,50 €, +4,00 %).</p>",
+			"summary": "Tuotteen Casa Charlize Passonata Cuvée Forte hinta on muuttunut. 12,49 € → 12,99 € (+0,50 €, +4,00 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/959085-cf7d384be5a1.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Federalist Chardonnay 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901659/",
+	"feed_url": "https://alkometriikka.fi/rss/901659.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Federalist Chardonnay 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901659-2026-07-18-29.95",
+			"url": "https://alkometriikka.fi/tuotteet/901659/",
+			"title": "Federalist Chardonnay 2023 — 30,46 € → 29,95 €",
+			"content_html": "<p>Tuotteen Federalist Chardonnay 2023 hinta on muuttunut.</p><p>30,46 € → 29,95 € (−0,51 €, −1,67 %).</p>",
+			"summary": "Tuotteen Federalist Chardonnay 2023 hinta on muuttunut. 30,46 € → 29,95 € (−0,51 €, −1,67 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901659-808edec89b31.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

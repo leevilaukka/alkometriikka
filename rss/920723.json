@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Apotheke Riesling Auslese 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/920723/",
+	"feed_url": "https://alkometriikka.fi/rss/920723.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Apotheke Riesling Auslese 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-920723-2026-09-29-13.29",
+			"url": "https://alkometriikka.fi/tuotteet/920723/",
+			"title": "Apotheke Riesling Auslese 2022 — 13,59 € → 13,29 €",
+			"content_html": "<p>Tuotteen Apotheke Riesling Auslese 2022 hinta on muuttunut.</p><p>13,59 € → 13,29 € (−0,30 €, −2,21 %).</p>",
+			"summary": "Tuotteen Apotheke Riesling Auslese 2022 hinta on muuttunut. 13,59 € → 13,29 € (−0,30 €, −2,21 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/920723-7a80ac831ca6.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

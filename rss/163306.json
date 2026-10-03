@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gammel Dansk muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/163306/",
+	"feed_url": "https://alkometriikka.fi/rss/163306.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gammel Dansk muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-163306-2026-09-29-25.68",
+			"url": "https://alkometriikka.fi/tuotteet/163306/",
+			"title": "Gammel Dansk muovipullo — 25,58 € → 25,68 €",
+			"content_html": "<p>Tuotteen Gammel Dansk muovipullo hinta on muuttunut.</p><p>25,58 € → 25,68 € (+0,10 €, +0,39 %).</p>",
+			"summary": "Tuotteen Gammel Dansk muovipullo hinta on muuttunut. 25,58 € → 25,68 € (+0,10 €, +0,39 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/163306-2fe6ac1e42e7.png",
+			"tags": [
+				"Väkevät",
+				"maha- ja maustekatkerot"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Le Sirop de Monin Mango – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/908115/",
+	"feed_url": "https://alkometriikka.fi/rss/908115.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Le Sirop de Monin Mango.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-908115-2026-07-18-21.49",
+			"url": "https://alkometriikka.fi/tuotteet/908115/",
+			"title": "Le Sirop de Monin Mango — 21,11 € → 21,49 €",
+			"content_html": "<p>Tuotteen Le Sirop de Monin Mango hinta on muuttunut.</p><p>21,11 € → 21,49 € (+0,38 €, +1,80 %).</p>",
+			"summary": "Tuotteen Le Sirop de Monin Mango hinta on muuttunut. 21,11 € → 21,49 € (+0,38 €, +1,80 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/908115-23fe47f99cfb.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

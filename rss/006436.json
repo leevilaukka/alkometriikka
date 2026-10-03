@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bouchard Bourgogne Chardonnay 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/006436/",
+	"feed_url": "https://alkometriikka.fi/rss/006436.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bouchard Bourgogne Chardonnay 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-006436-2026-07-18-28.48",
+			"url": "https://alkometriikka.fi/tuotteet/006436/",
+			"title": "Bouchard Bourgogne Chardonnay 2021 — 28,46 € → 28,48 €",
+			"content_html": "<p>Tuotteen Bouchard Bourgogne Chardonnay 2021 hinta on muuttunut.</p><p>28,46 € → 28,48 € (+0,02 €, +0,07 %).</p>",
+			"summary": "Tuotteen Bouchard Bourgogne Chardonnay 2021 hinta on muuttunut. 28,46 € → 28,48 € (+0,02 €, +0,07 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/006436-0c64be3da125.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

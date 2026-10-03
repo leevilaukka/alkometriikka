@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Beringer Private Reserve Cabernet Sauvignon 2016 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/918805/",
+	"feed_url": "https://alkometriikka.fi/rss/918805.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Beringer Private Reserve Cabernet Sauvignon 2016.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-918805-2026-09-29-224.07",
+			"url": "https://alkometriikka.fi/tuotteet/918805/",
+			"title": "Beringer Private Reserve Cabernet Sauvignon 2016 — 210,86 € → 224,07 €",
+			"content_html": "<p>Tuotteen Beringer Private Reserve Cabernet Sauvignon 2016 hinta on muuttunut.</p><p>210,86 € → 224,07 € (+13,21 €, +6,26 %).</p>",
+			"summary": "Tuotteen Beringer Private Reserve Cabernet Sauvignon 2016 hinta on muuttunut. 210,86 € → 224,07 € (+13,21 €, +6,26 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/918805-a6ce0865c566.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

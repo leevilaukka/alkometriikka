@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Smokehead Sherry Cask Blast Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/933825/",
+	"feed_url": "https://alkometriikka.fi/rss/933825.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Smokehead Sherry Cask Blast Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-933825-2026-09-29-62.98",
+			"url": "https://alkometriikka.fi/tuotteet/933825/",
+			"title": "Smokehead Sherry Cask Blast Single Malt — 70,79 € → 62,98 €",
+			"content_html": "<p>Tuotteen Smokehead Sherry Cask Blast Single Malt hinta on muuttunut.</p><p>70,79 € → 62,98 € (−7,81 €, −11,03 %).</p>",
+			"summary": "Tuotteen Smokehead Sherry Cask Blast Single Malt hinta on muuttunut. 70,79 € → 62,98 € (−7,81 €, −11,03 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/933825-bf395e543b75.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		},
+		{
+			"id": "alkometriikka-933825-2026-07-18-70.79",
+			"url": "https://alkometriikka.fi/tuotteet/933825/",
+			"title": "Smokehead Sherry Cask Blast Single Malt — 88,24 € → 70,79 €",
+			"content_html": "<p>Tuotteen Smokehead Sherry Cask Blast Single Malt hinta on muuttunut.</p><p>88,24 € → 70,79 € (−17,45 €, −19,78 %).</p>",
+			"summary": "Tuotteen Smokehead Sherry Cask Blast Single Malt hinta on muuttunut. 88,24 € → 70,79 € (−17,45 €, −19,78 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/933825-bf395e543b75.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

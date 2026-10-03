@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Frey Grauer Burgunder 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/530474/",
+	"feed_url": "https://alkometriikka.fi/rss/530474.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Frey Grauer Burgunder 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-530474-2026-09-29-8.89",
+			"url": "https://alkometriikka.fi/tuotteet/530474/",
+			"title": "Frey Grauer Burgunder 2024 — 8,70 € → 8,89 €",
+			"content_html": "<p>Tuotteen Frey Grauer Burgunder 2024 hinta on muuttunut.</p><p>8,70 € → 8,89 € (+0,19 €, +2,18 %).</p>",
+			"summary": "Tuotteen Frey Grauer Burgunder 2024 hinta on muuttunut. 8,70 € → 8,89 € (+0,19 €, +2,18 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/530474-9d337ab6b2f2.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

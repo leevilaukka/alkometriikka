@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Torres 15 Brandy – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/939943/",
+	"feed_url": "https://alkometriikka.fi/rss/939943.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Torres 15 Brandy.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-939943-2026-09-29-37.99",
+			"url": "https://alkometriikka.fi/tuotteet/939943/",
+			"title": "Torres 15 Brandy — 36,49 € → 37,99 €",
+			"content_html": "<p>Tuotteen Torres 15 Brandy hinta on muuttunut.</p><p>36,49 € → 37,99 € (+1,50 €, +4,11 %).</p>",
+			"summary": "Tuotteen Torres 15 Brandy hinta on muuttunut. 36,49 € → 37,99 € (+1,50 €, +4,11 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/939943-15bb62f9e038.png",
+			"tags": [
+				"Väkevät",
+				"brandyt"
+			]
+		},
+		{
+			"id": "alkometriikka-939943-2026-07-18-36.49",
+			"url": "https://alkometriikka.fi/tuotteet/939943/",
+			"title": "Torres 15 Brandy — 36,26 € → 36,49 €",
+			"content_html": "<p>Tuotteen Torres 15 Brandy hinta on muuttunut.</p><p>36,26 € → 36,49 € (+0,23 €, +0,63 %).</p>",
+			"summary": "Tuotteen Torres 15 Brandy hinta on muuttunut. 36,26 € → 36,49 € (+0,23 €, +0,63 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/939943-15bb62f9e038.png",
+			"tags": [
+				"Väkevät",
+				"brandyt"
+			]
+		}
+	]
+}

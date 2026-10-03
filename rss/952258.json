@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Delavenne Grand Cru L´île Champagne Demi-Sec – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/952258/",
+	"feed_url": "https://alkometriikka.fi/rss/952258.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Delavenne Grand Cru L´île Champagne Demi-Sec.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-952258-2026-09-29-58.56",
+			"url": "https://alkometriikka.fi/tuotteet/952258/",
+			"title": "Delavenne Grand Cru L´île Champagne Demi-Sec — 56,99 € → 58,56 €",
+			"content_html": "<p>Tuotteen Delavenne Grand Cru L´île Champagne Demi-Sec hinta on muuttunut.</p><p>56,99 € → 58,56 € (+1,57 €, +2,75 %).</p>",
+			"summary": "Tuotteen Delavenne Grand Cru L´île Champagne Demi-Sec hinta on muuttunut. 56,99 € → 58,56 € (+1,57 €, +2,75 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/952258-eb39b91d0e91.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-952258-2026-07-18-56.99",
+			"url": "https://alkometriikka.fi/tuotteet/952258/",
+			"title": "Delavenne Grand Cru L´île Champagne Demi-Sec — 57,46 € → 56,99 €",
+			"content_html": "<p>Tuotteen Delavenne Grand Cru L´île Champagne Demi-Sec hinta on muuttunut.</p><p>57,46 € → 56,99 € (−0,47 €, −0,82 %).</p>",
+			"summary": "Tuotteen Delavenne Grand Cru L´île Champagne Demi-Sec hinta on muuttunut. 57,46 € → 56,99 € (−0,47 €, −0,82 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/952258-eb39b91d0e91.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

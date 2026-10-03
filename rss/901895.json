@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gaja Conteisa Barolo 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901895/",
+	"feed_url": "https://alkometriikka.fi/rss/901895.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gaja Conteisa Barolo 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901895-2026-09-29-574.9",
+			"url": "https://alkometriikka.fi/tuotteet/901895/",
+			"title": "Gaja Conteisa Barolo 2021 — 530,45 € → 574,90 €",
+			"content_html": "<p>Tuotteen Gaja Conteisa Barolo 2021 hinta on muuttunut.</p><p>530,45 € → 574,90 € (+44,45 €, +8,38 %).</p>",
+			"summary": "Tuotteen Gaja Conteisa Barolo 2021 hinta on muuttunut. 530,45 € → 574,90 € (+44,45 €, +8,38 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901895-c29d5bf31313.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

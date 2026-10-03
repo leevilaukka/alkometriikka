@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cathedral Cellar Triptych 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/004909/",
+	"feed_url": "https://alkometriikka.fi/rss/004909.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cathedral Cellar Triptych 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-004909-2026-07-18-20.49",
+			"url": "https://alkometriikka.fi/tuotteet/004909/",
+			"title": "Cathedral Cellar Triptych 2022 — 20,45 € → 20,49 €",
+			"content_html": "<p>Tuotteen Cathedral Cellar Triptych 2022 hinta on muuttunut.</p><p>20,45 € → 20,49 € (+0,04 €, +0,20 %).</p>",
+			"summary": "Tuotteen Cathedral Cellar Triptych 2022 hinta on muuttunut. 20,45 € → 20,49 € (+0,04 €, +0,20 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/004909-e1c9509845d1.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

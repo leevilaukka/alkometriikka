@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Catoctin Creek Roundstone Rye Single Barrel – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/944971/",
+	"feed_url": "https://alkometriikka.fi/rss/944971.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Catoctin Creek Roundstone Rye Single Barrel.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-944971-2026-09-29-73.88",
+			"url": "https://alkometriikka.fi/tuotteet/944971/",
+			"title": "Catoctin Creek Roundstone Rye Single Barrel — 72,20 € → 73,88 €",
+			"content_html": "<p>Tuotteen Catoctin Creek Roundstone Rye Single Barrel hinta on muuttunut.</p><p>72,20 € → 73,88 € (+1,68 €, +2,33 %).</p>",
+			"summary": "Tuotteen Catoctin Creek Roundstone Rye Single Barrel hinta on muuttunut. 72,20 € → 73,88 € (+1,68 €, +2,33 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/944971-f1ee577b70e2.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

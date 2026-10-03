@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Seña 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/939703/",
+	"feed_url": "https://alkometriikka.fi/rss/939703.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Seña 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-939703-2026-09-29-228.24",
+			"url": "https://alkometriikka.fi/tuotteet/939703/",
+			"title": "Seña 2020 — 214,78 € → 228,24 €",
+			"content_html": "<p>Tuotteen Seña 2020 hinta on muuttunut.</p><p>214,78 € → 228,24 € (+13,46 €, +6,27 %).</p>",
+			"summary": "Tuotteen Seña 2020 hinta on muuttunut. 214,78 € → 228,24 € (+13,46 €, +6,27 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/939703-0bbbb4d0e088.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Deutz Rosé Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/526094/",
+	"feed_url": "https://alkometriikka.fi/rss/526094.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Deutz Rosé Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-526094-2026-09-29-37.1",
+			"url": "https://alkometriikka.fi/tuotteet/526094/",
+			"title": "Deutz Rosé Champagne Brut — 35,78 € → 37,10 €",
+			"content_html": "<p>Tuotteen Deutz Rosé Champagne Brut hinta on muuttunut.</p><p>35,78 € → 37,10 € (+1,32 €, +3,69 %).</p>",
+			"summary": "Tuotteen Deutz Rosé Champagne Brut hinta on muuttunut. 35,78 € → 37,10 € (+1,32 €, +3,69 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/526094-43ebe835d2af.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

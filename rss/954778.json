@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Rathfinny Classic Cuvée Brut 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/954778/",
+	"feed_url": "https://alkometriikka.fi/rss/954778.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Rathfinny Classic Cuvée Brut 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-954778-2026-09-29-48.31",
+			"url": "https://alkometriikka.fi/tuotteet/954778/",
+			"title": "Rathfinny Classic Cuvée Brut 2018 — 47,46 € → 48,31 €",
+			"content_html": "<p>Tuotteen Rathfinny Classic Cuvée Brut 2018 hinta on muuttunut.</p><p>47,46 € → 48,31 € (+0,85 €, +1,79 %).</p>",
+			"summary": "Tuotteen Rathfinny Classic Cuvée Brut 2018 hinta on muuttunut. 47,46 € → 48,31 € (+0,85 €, +1,79 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/954778-55774f204878.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

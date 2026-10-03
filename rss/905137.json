@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Zensa Pinot Grigio Organico 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/905137/",
+	"feed_url": "https://alkometriikka.fi/rss/905137.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Zensa Pinot Grigio Organico 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-905137-2026-09-29-12.28",
+			"url": "https://alkometriikka.fi/tuotteet/905137/",
+			"title": "Zensa Pinot Grigio Organico 2025 — 12,26 € → 12,28 €",
+			"content_html": "<p>Tuotteen Zensa Pinot Grigio Organico 2025 hinta on muuttunut.</p><p>12,26 € → 12,28 € (+0,02 €, +0,16 %).</p>",
+			"summary": "Tuotteen Zensa Pinot Grigio Organico 2025 hinta on muuttunut. 12,26 € → 12,28 € (+0,02 €, +0,16 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/905137-615a25b2f1ff.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

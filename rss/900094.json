@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vinory Monferrato Rosso Mandragola 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900094/",
+	"feed_url": "https://alkometriikka.fi/rss/900094.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vinory Monferrato Rosso Mandragola 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900094-2026-09-29-30.53",
+			"url": "https://alkometriikka.fi/tuotteet/900094/",
+			"title": "Vinory Monferrato Rosso Mandragola 2022 — 29,56 € → 30,53 €",
+			"content_html": "<p>Tuotteen Vinory Monferrato Rosso Mandragola 2022 hinta on muuttunut.</p><p>29,56 € → 30,53 € (+0,97 €, +3,28 %).</p>",
+			"summary": "Tuotteen Vinory Monferrato Rosso Mandragola 2022 hinta on muuttunut. 29,56 € → 30,53 € (+0,97 €, +3,28 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900094-b8efd8f7fe53.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

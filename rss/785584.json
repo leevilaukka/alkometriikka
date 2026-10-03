@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kakola Lauha Imperial Stout – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/785584/",
+	"feed_url": "https://alkometriikka.fi/rss/785584.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kakola Lauha Imperial Stout.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-785584-2026-07-18-8.08",
+			"url": "https://alkometriikka.fi/tuotteet/785584/",
+			"title": "Kakola Lauha Imperial Stout — 8,07 € → 8,08 €",
+			"content_html": "<p>Tuotteen Kakola Lauha Imperial Stout hinta on muuttunut.</p><p>8,07 € → 8,08 € (+0,01 €, +0,12 %).</p>",
+			"summary": "Tuotteen Kakola Lauha Imperial Stout hinta on muuttunut. 8,07 € → 8,08 € (+0,01 €, +0,12 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/785584-58c885e98ea9.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

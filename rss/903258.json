@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Philippe Pacalet Gevrey-Chambertin 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903258/",
+	"feed_url": "https://alkometriikka.fi/rss/903258.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Philippe Pacalet Gevrey-Chambertin 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903258-2026-09-29-153.49",
+			"url": "https://alkometriikka.fi/tuotteet/903258/",
+			"title": "Philippe Pacalet Gevrey-Chambertin 2022 — 145,30 € → 153,49 €",
+			"content_html": "<p>Tuotteen Philippe Pacalet Gevrey-Chambertin 2022 hinta on muuttunut.</p><p>145,30 € → 153,49 € (+8,19 €, +5,64 %).</p>",
+			"summary": "Tuotteen Philippe Pacalet Gevrey-Chambertin 2022 hinta on muuttunut. 145,30 € → 153,49 € (+8,19 €, +5,64 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903258-961bdb77e83f.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

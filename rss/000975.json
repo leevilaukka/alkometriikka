@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Apteekkarin Cognac VSOP – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/000975/",
+	"feed_url": "https://alkometriikka.fi/rss/000975.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Apteekkarin Cognac VSOP.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-000975-2026-07-18-36.99",
+			"url": "https://alkometriikka.fi/tuotteet/000975/",
+			"title": "Apteekkarin Cognac VSOP — 36,70 € → 36,99 €",
+			"content_html": "<p>Tuotteen Apteekkarin Cognac VSOP hinta on muuttunut.</p><p>36,70 € → 36,99 € (+0,29 €, +0,79 %).</p>",
+			"summary": "Tuotteen Apteekkarin Cognac VSOP hinta on muuttunut. 36,70 € → 36,99 € (+0,29 €, +0,79 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/000975-fd3f145e20ad.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Grant's Family Reserve – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/141538/",
+	"feed_url": "https://alkometriikka.fi/rss/141538.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Grant's Family Reserve.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-141538-2026-07-18-249.5",
+			"url": "https://alkometriikka.fi/tuotteet/141538/",
+			"title": "Grant's Family Reserve — 249,44 € → 249,50 €",
+			"content_html": "<p>Tuotteen Grant's Family Reserve hinta on muuttunut.</p><p>249,44 € → 249,50 € (+0,06 €, +0,02 %).</p>",
+			"summary": "Tuotteen Grant's Family Reserve hinta on muuttunut. 249,44 € → 249,50 € (+0,06 €, +0,02 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/141538-9c308163a5c6.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

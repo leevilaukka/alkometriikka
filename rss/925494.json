@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Belvedere Organic Vodka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/925494/",
+	"feed_url": "https://alkometriikka.fi/rss/925494.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Belvedere Organic Vodka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-925494-2026-09-29-723.98",
+			"url": "https://alkometriikka.fi/tuotteet/925494/",
+			"title": "Belvedere Organic Vodka — 699,99 € → 723,98 €",
+			"content_html": "<p>Tuotteen Belvedere Organic Vodka hinta on muuttunut.</p><p>699,99 € → 723,98 € (+23,99 €, +3,43 %).</p>",
+			"summary": "Tuotteen Belvedere Organic Vodka hinta on muuttunut. 699,99 € → 723,98 € (+23,99 €, +3,43 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/925494-c62010048dc6.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		},
+		{
+			"id": "alkometriikka-925494-2026-07-18-699.99",
+			"url": "https://alkometriikka.fi/tuotteet/925494/",
+			"title": "Belvedere Organic Vodka — 692,34 € → 699,99 €",
+			"content_html": "<p>Tuotteen Belvedere Organic Vodka hinta on muuttunut.</p><p>692,34 € → 699,99 € (+7,65 €, +1,10 %).</p>",
+			"summary": "Tuotteen Belvedere Organic Vodka hinta on muuttunut. 692,34 € → 699,99 € (+7,65 €, +1,10 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/925494-c62010048dc6.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

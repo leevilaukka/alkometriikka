@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Eylenbosch Wild Blond – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900971/",
+	"feed_url": "https://alkometriikka.fi/rss/900971.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Eylenbosch Wild Blond.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900971-2026-09-29-31.99",
+			"url": "https://alkometriikka.fi/tuotteet/900971/",
+			"title": "Eylenbosch Wild Blond — 32,35 € → 31,99 €",
+			"content_html": "<p>Tuotteen Eylenbosch Wild Blond hinta on muuttunut.</p><p>32,35 € → 31,99 € (−0,36 €, −1,11 %).</p>",
+			"summary": "Tuotteen Eylenbosch Wild Blond hinta on muuttunut. 32,35 € → 31,99 € (−0,36 €, −1,11 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900971-57ee8fa844b4.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

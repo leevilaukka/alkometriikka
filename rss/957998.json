@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Chateau de Montifaud Napoléon Ariane – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/957998/",
+	"feed_url": "https://alkometriikka.fi/rss/957998.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Chateau de Montifaud Napoléon Ariane.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-957998-2026-09-29-343.49",
+			"url": "https://alkometriikka.fi/tuotteet/957998/",
+			"title": "Chateau de Montifaud Napoléon Ariane — 327,49 € → 343,49 €",
+			"content_html": "<p>Tuotteen Chateau de Montifaud Napoléon Ariane hinta on muuttunut.</p><p>327,49 € → 343,49 € (+16,00 €, +4,89 %).</p>",
+			"summary": "Tuotteen Chateau de Montifaud Napoléon Ariane hinta on muuttunut. 327,49 € → 343,49 € (+16,00 €, +4,89 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/957998-98718889b197.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

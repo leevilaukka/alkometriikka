@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vault City Crunch Imperial Pastry Stout tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901779/",
+	"feed_url": "https://alkometriikka.fi/rss/901779.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vault City Crunch Imperial Pastry Stout tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901779-2026-07-18-11.49",
+			"url": "https://alkometriikka.fi/tuotteet/901779/",
+			"title": "Vault City Crunch Imperial Pastry Stout tölkki — 11,50 € → 11,49 €",
+			"content_html": "<p>Tuotteen Vault City Crunch Imperial Pastry Stout tölkki hinta on muuttunut.</p><p>11,50 € → 11,49 € (−0,01 €, −0,09 %).</p>",
+			"summary": "Tuotteen Vault City Crunch Imperial Pastry Stout tölkki hinta on muuttunut. 11,50 € → 11,49 € (−0,01 €, −0,09 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901779-4fb290ead0c6.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

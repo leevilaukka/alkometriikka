@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Courriere Napoleon Finest VSOP muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/111473/",
+	"feed_url": "https://alkometriikka.fi/rss/111473.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Courriere Napoleon Finest VSOP muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-111473-2026-07-18-7.69",
+			"url": "https://alkometriikka.fi/tuotteet/111473/",
+			"title": "Courriere Napoleon Finest VSOP muovipullo — 7,67 € → 7,69 €",
+			"content_html": "<p>Tuotteen Courriere Napoleon Finest VSOP muovipullo hinta on muuttunut.</p><p>7,67 € → 7,69 € (+0,02 €, +0,26 %).</p>",
+			"summary": "Tuotteen Courriere Napoleon Finest VSOP muovipullo hinta on muuttunut. 7,67 € → 7,69 € (+0,02 €, +0,26 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/111473-25e7f3094e6a.png",
+			"tags": [
+				"Väkevät",
+				"brandyt"
+			]
+		}
+	]
+}

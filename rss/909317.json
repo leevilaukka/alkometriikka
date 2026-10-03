@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bestheim Pinot Gris Premium Réserve 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/909317/",
+	"feed_url": "https://alkometriikka.fi/rss/909317.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bestheim Pinot Gris Premium Réserve 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-909317-2026-07-18-14.99",
+			"url": "https://alkometriikka.fi/tuotteet/909317/",
+			"title": "Bestheim Pinot Gris Premium Réserve 2022 — 14,39 € → 14,99 €",
+			"content_html": "<p>Tuotteen Bestheim Pinot Gris Premium Réserve 2022 hinta on muuttunut.</p><p>14,39 € → 14,99 € (+0,60 €, +4,17 %).</p>",
+			"summary": "Tuotteen Bestheim Pinot Gris Premium Réserve 2022 hinta on muuttunut. 14,39 € → 14,99 € (+0,60 €, +4,17 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/909317-dbc79b18f1d6.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

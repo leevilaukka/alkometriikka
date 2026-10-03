@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Prunotto Barbaresco Bric Turot 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902422/",
+	"feed_url": "https://alkometriikka.fi/rss/902422.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Prunotto Barbaresco Bric Turot 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902422-2026-09-29-65.4",
+			"url": "https://alkometriikka.fi/tuotteet/902422/",
+			"title": "Prunotto Barbaresco Bric Turot 2022 — 63,37 € → 65,40 €",
+			"content_html": "<p>Tuotteen Prunotto Barbaresco Bric Turot 2022 hinta on muuttunut.</p><p>63,37 € → 65,40 € (+2,03 €, +3,20 %).</p>",
+			"summary": "Tuotteen Prunotto Barbaresco Bric Turot 2022 hinta on muuttunut. 63,37 € → 65,40 € (+2,03 €, +3,20 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902422-93492225d0a3.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

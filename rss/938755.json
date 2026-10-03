@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Equiano Light Rum – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/938755/",
+	"feed_url": "https://alkometriikka.fi/rss/938755.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Equiano Light Rum.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-938755-2026-07-18-47.99",
+			"url": "https://alkometriikka.fi/tuotteet/938755/",
+			"title": "Equiano Light Rum — 49,95 € → 47,99 €",
+			"content_html": "<p>Tuotteen Equiano Light Rum hinta on muuttunut.</p><p>49,95 € → 47,99 € (−1,96 €, −3,92 %).</p>",
+			"summary": "Tuotteen Equiano Light Rum hinta on muuttunut. 49,95 € → 47,99 € (−1,96 €, −3,92 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/938755-e8d9c85b4cb3.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

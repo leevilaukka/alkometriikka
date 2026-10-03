@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Bitter Truth Black Cherry Bitters – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902269/",
+	"feed_url": "https://alkometriikka.fi/rss/902269.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Bitter Truth Black Cherry Bitters.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902269-2026-09-29-22.98",
+			"url": "https://alkometriikka.fi/tuotteet/902269/",
+			"title": "The Bitter Truth Black Cherry Bitters — 22,58 € → 22,98 €",
+			"content_html": "<p>Tuotteen The Bitter Truth Black Cherry Bitters hinta on muuttunut.</p><p>22,58 € → 22,98 € (+0,40 €, +1,77 %).</p>",
+			"summary": "Tuotteen The Bitter Truth Black Cherry Bitters hinta on muuttunut. 22,58 € → 22,98 € (+0,40 €, +1,77 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902269-3ec2de7b6ef5.png",
+			"tags": [
+				"Väkevät",
+				"maha- ja maustekatkerot"
+			]
+		}
+	]
+}

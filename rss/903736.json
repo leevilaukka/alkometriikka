@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Koskenkorva Salmiakki Raspberry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903736/",
+	"feed_url": "https://alkometriikka.fi/rss/903736.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Koskenkorva Salmiakki Raspberry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903736-2026-07-18-17.99",
+			"url": "https://alkometriikka.fi/tuotteet/903736/",
+			"title": "Koskenkorva Salmiakki Raspberry — 17,98 € → 17,99 €",
+			"content_html": "<p>Tuotteen Koskenkorva Salmiakki Raspberry hinta on muuttunut.</p><p>17,98 € → 17,99 € (+0,01 €, +0,06 %).</p>",
+			"summary": "Tuotteen Koskenkorva Salmiakki Raspberry hinta on muuttunut. 17,98 € → 17,99 € (+0,01 €, +0,06 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903736-9e0e4b030012.png",
+			"tags": [
+				"Väkevät",
+				"salmiakkiliköörit"
+			]
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nikka Taketsuru Pure Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900320/",
+	"feed_url": "https://alkometriikka.fi/rss/900320.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nikka Taketsuru Pure Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900320-2026-09-29-79.98",
+			"url": "https://alkometriikka.fi/tuotteet/900320/",
+			"title": "Nikka Taketsuru Pure Malt — 74,98 € → 79,98 €",
+			"content_html": "<p>Tuotteen Nikka Taketsuru Pure Malt hinta on muuttunut.</p><p>74,98 € → 79,98 € (+5,00 €, +6,67 %).</p>",
+			"summary": "Tuotteen Nikka Taketsuru Pure Malt hinta on muuttunut. 74,98 € → 79,98 € (+5,00 €, +6,67 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900320-fed945a103ac.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		},
+		{
+			"id": "alkometriikka-900320-2026-07-18-74.98",
+			"url": "https://alkometriikka.fi/tuotteet/900320/",
+			"title": "Nikka Taketsuru Pure Malt — 77,52 € → 74,98 €",
+			"content_html": "<p>Tuotteen Nikka Taketsuru Pure Malt hinta on muuttunut.</p><p>77,52 € → 74,98 € (−2,54 €, −3,28 %).</p>",
+			"summary": "Tuotteen Nikka Taketsuru Pure Malt hinta on muuttunut. 77,52 € → 74,98 € (−2,54 €, −3,28 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900320-fed945a103ac.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

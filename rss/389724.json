@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kopke 20 Years Old Tawny – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/389724/",
+	"feed_url": "https://alkometriikka.fi/rss/389724.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kopke 20 Years Old Tawny.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-389724-2026-09-29-31.92",
+			"url": "https://alkometriikka.fi/tuotteet/389724/",
+			"title": "Kopke 20 Years Old Tawny — 31,08 € → 31,92 €",
+			"content_html": "<p>Tuotteen Kopke 20 Years Old Tawny hinta on muuttunut.</p><p>31,08 € → 31,92 € (+0,84 €, +2,70 %).</p>",
+			"summary": "Tuotteen Kopke 20 Years Old Tawny hinta on muuttunut. 31,08 € → 31,92 € (+0,84 €, +2,70 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/389724-0bfb2d26739f.png",
+			"tags": [
+				"Välituotteet",
+				"portviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cuvée Antoinette Crémant de Luxembourg Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/951983/",
+	"feed_url": "https://alkometriikka.fi/rss/951983.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cuvée Antoinette Crémant de Luxembourg Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-951983-2026-07-18-16.98",
+			"url": "https://alkometriikka.fi/tuotteet/951983/",
+			"title": "Cuvée Antoinette Crémant de Luxembourg Brut — 16,44 € → 16,98 €",
+			"content_html": "<p>Tuotteen Cuvée Antoinette Crémant de Luxembourg Brut hinta on muuttunut.</p><p>16,44 € → 16,98 € (+0,54 €, +3,28 %).</p>",
+			"summary": "Tuotteen Cuvée Antoinette Crémant de Luxembourg Brut hinta on muuttunut. 16,44 € → 16,98 € (+0,54 €, +3,28 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/951983-ea8b9de30961.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

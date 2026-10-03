@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jinro Grapefruit Soju – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/700091/",
+	"feed_url": "https://alkometriikka.fi/rss/700091.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jinro Grapefruit Soju.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-700091-2026-09-29-9.97",
+			"url": "https://alkometriikka.fi/tuotteet/700091/",
+			"title": "Jinro Grapefruit Soju — 9,03 € → 9,97 €",
+			"content_html": "<p>Tuotteen Jinro Grapefruit Soju hinta on muuttunut.</p><p>9,03 € → 9,97 € (+0,94 €, +10,41 %).</p>",
+			"summary": "Tuotteen Jinro Grapefruit Soju hinta on muuttunut. 9,03 € → 9,97 € (+0,94 €, +10,41 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/700091-47b1f6424683.png",
+			"tags": [
+				"Panimotuotteet",
+				"juomasekoitukset"
+			]
+		}
+	]
+}

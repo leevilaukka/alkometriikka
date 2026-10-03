@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hernö Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/105496/",
+	"feed_url": "https://alkometriikka.fi/rss/105496.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hernö Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-105496-2026-09-29-41.98",
+			"url": "https://alkometriikka.fi/tuotteet/105496/",
+			"title": "Hernö Gin — 41,89 € → 41,98 €",
+			"content_html": "<p>Tuotteen Hernö Gin hinta on muuttunut.</p><p>41,89 € → 41,98 € (+0,09 €, +0,21 %).</p>",
+			"summary": "Tuotteen Hernö Gin hinta on muuttunut. 41,89 € → 41,98 € (+0,09 €, +0,21 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/105496-56336451a345.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

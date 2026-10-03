@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Small Wonder Pinot Noir 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900136/",
+	"feed_url": "https://alkometriikka.fi/rss/900136.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Small Wonder Pinot Noir 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900136-2026-07-18-26.9",
+			"url": "https://alkometriikka.fi/tuotteet/900136/",
+			"title": "Small Wonder Pinot Noir 2024 — 29,89 € → 26,90 €",
+			"content_html": "<p>Tuotteen Small Wonder Pinot Noir 2024 hinta on muuttunut.</p><p>29,89 € → 26,90 € (−2,99 €, −10,00 %).</p>",
+			"summary": "Tuotteen Small Wonder Pinot Noir 2024 hinta on muuttunut. 29,89 € → 26,90 € (−2,99 €, −10,00 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900136-92d4637c3c95.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

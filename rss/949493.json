@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Medici Ermete i Quercioli Reggiano Lambrusco – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/949493/",
+	"feed_url": "https://alkometriikka.fi/rss/949493.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Medici Ermete i Quercioli Reggiano Lambrusco.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-949493-2026-07-18-13.98",
+			"url": "https://alkometriikka.fi/tuotteet/949493/",
+			"title": "Medici Ermete i Quercioli Reggiano Lambrusco — 13,40 € → 13,98 €",
+			"content_html": "<p>Tuotteen Medici Ermete i Quercioli Reggiano Lambrusco hinta on muuttunut.</p><p>13,40 € → 13,98 € (+0,58 €, +4,33 %).</p>",
+			"summary": "Tuotteen Medici Ermete i Quercioli Reggiano Lambrusco hinta on muuttunut. 13,40 € → 13,98 € (+0,58 €, +4,33 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/949493-8be3c40692e6.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

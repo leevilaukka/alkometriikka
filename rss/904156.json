@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jägermeister – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/904156/",
+	"feed_url": "https://alkometriikka.fi/rss/904156.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jägermeister.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-904156-2026-02-02-19.89",
+			"url": "https://alkometriikka.fi/tuotteet/904156/",
+			"title": "Jägermeister — 19,99 € → 19,89 €",
+			"content_html": "<p>Tuotteen Jägermeister hinta on muuttunut.</p><p>19,99 € → 19,89 € (−0,10 €, −0,50 %).</p>",
+			"summary": "Tuotteen Jägermeister hinta on muuttunut. 19,99 € → 19,89 € (−0,10 €, −0,50 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/904156-1887afcb8231.png",
+			"tags": [
+				"Väkevät",
+				"yrttiliköörit"
+			]
+		},
+		{
+			"id": "alkometriikka-904156-2026-02-02-19.99",
+			"url": "https://alkometriikka.fi/tuotteet/904156/",
+			"title": "Jägermeister — 19,89 € → 19,99 €",
+			"content_html": "<p>Tuotteen Jägermeister hinta on muuttunut.</p><p>19,89 € → 19,99 € (+0,10 €, +0,50 %).</p>",
+			"summary": "Tuotteen Jägermeister hinta on muuttunut. 19,89 € → 19,99 € (+0,10 €, +0,50 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/904156-1887afcb8231.png",
+			"tags": [
+				"Väkevät",
+				"yrttiliköörit"
+			]
+		}
+	]
+}

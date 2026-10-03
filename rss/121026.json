@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Monkey 47 Schwarzwald Dry Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/121026/",
+	"feed_url": "https://alkometriikka.fi/rss/121026.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Monkey 47 Schwarzwald Dry Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-121026-2026-09-29-49.98",
+			"url": "https://alkometriikka.fi/tuotteet/121026/",
+			"title": "Monkey 47 Schwarzwald Dry Gin — 49,99 € → 49,98 €",
+			"content_html": "<p>Tuotteen Monkey 47 Schwarzwald Dry Gin hinta on muuttunut.</p><p>49,99 € → 49,98 € (−0,01 €, −0,02 %).</p>",
+			"summary": "Tuotteen Monkey 47 Schwarzwald Dry Gin hinta on muuttunut. 49,99 € → 49,98 € (−0,01 €, −0,02 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/121026-7552e0e161a9.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

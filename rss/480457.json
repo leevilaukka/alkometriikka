@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Reguengos Reserva Dos Socios 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/480457/",
+	"feed_url": "https://alkometriikka.fi/rss/480457.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Reguengos Reserva Dos Socios 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-480457-2026-07-18-22.98",
+			"url": "https://alkometriikka.fi/tuotteet/480457/",
+			"title": "Reguengos Reserva Dos Socios 2020 — 23,45 € → 22,98 €",
+			"content_html": "<p>Tuotteen Reguengos Reserva Dos Socios 2020 hinta on muuttunut.</p><p>23,45 € → 22,98 € (−0,47 €, −2,00 %).</p>",
+			"summary": "Tuotteen Reguengos Reserva Dos Socios 2020 hinta on muuttunut. 23,45 € → 22,98 € (−0,47 €, −2,00 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/480457-66d5215dc443.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

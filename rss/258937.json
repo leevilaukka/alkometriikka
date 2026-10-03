@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Koskenkorva Salted Caramel – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/258937/",
+	"feed_url": "https://alkometriikka.fi/rss/258937.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Koskenkorva Salted Caramel.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-258937-2026-09-29-20.79",
+			"url": "https://alkometriikka.fi/tuotteet/258937/",
+			"title": "Koskenkorva Salted Caramel — 20,59 € → 20,79 €",
+			"content_html": "<p>Tuotteen Koskenkorva Salted Caramel hinta on muuttunut.</p><p>20,59 € → 20,79 € (+0,20 €, +0,97 %).</p>",
+			"summary": "Tuotteen Koskenkorva Salted Caramel hinta on muuttunut. 20,59 € → 20,79 € (+0,20 €, +0,97 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/258937-3f722c897496.png",
+			"tags": [
+				"Väkevät",
+				"kermaliköörit"
+			]
+		}
+	]
+}

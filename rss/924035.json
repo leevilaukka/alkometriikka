@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Rathfinny Rosé Brut 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/924035/",
+	"feed_url": "https://alkometriikka.fi/rss/924035.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Rathfinny Rosé Brut 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-924035-2026-09-29-54.75",
+			"url": "https://alkometriikka.fi/tuotteet/924035/",
+			"title": "Rathfinny Rosé Brut 2018 — 53,46 € → 54,75 €",
+			"content_html": "<p>Tuotteen Rathfinny Rosé Brut 2018 hinta on muuttunut.</p><p>53,46 € → 54,75 € (+1,29 €, +2,41 %).</p>",
+			"summary": "Tuotteen Rathfinny Rosé Brut 2018 hinta on muuttunut. 53,46 € → 54,75 € (+1,29 €, +2,41 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/924035-0e8dca36f3d4.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

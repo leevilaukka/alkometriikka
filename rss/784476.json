@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Samuel Smith Organic Cider – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/784476/",
+	"feed_url": "https://alkometriikka.fi/rss/784476.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Samuel Smith Organic Cider.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-784476-2026-09-29-6.29",
+			"url": "https://alkometriikka.fi/tuotteet/784476/",
+			"title": "Samuel Smith Organic Cider — 5,99 € → 6,29 €",
+			"content_html": "<p>Tuotteen Samuel Smith Organic Cider hinta on muuttunut.</p><p>5,99 € → 6,29 € (+0,30 €, +5,01 %).</p>",
+			"summary": "Tuotteen Samuel Smith Organic Cider hinta on muuttunut. 5,99 € → 6,29 € (+0,30 €, +5,01 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/784476-2062ada51ff7.png",
+			"tags": [
+				"Panimotuotteet",
+				"siiderit"
+			]
+		}
+	]
+}

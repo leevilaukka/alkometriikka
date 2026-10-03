@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Teerenpeli Savu Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/167756/",
+	"feed_url": "https://alkometriikka.fi/rss/167756.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Teerenpeli Savu Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-167756-2026-09-29-57.98",
+			"url": "https://alkometriikka.fi/tuotteet/167756/",
+			"title": "Teerenpeli Savu Single Malt — 58,01 € → 57,98 €",
+			"content_html": "<p>Tuotteen Teerenpeli Savu Single Malt hinta on muuttunut.</p><p>58,01 € → 57,98 € (−0,03 €, −0,05 %).</p>",
+			"summary": "Tuotteen Teerenpeli Savu Single Malt hinta on muuttunut. 58,01 € → 57,98 € (−0,03 €, −0,05 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/167756-845222164124.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

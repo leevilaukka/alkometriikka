@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Canard-Duchêne P181 Cuvée Organic Champagne Extra Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901428/",
+	"feed_url": "https://alkometriikka.fi/rss/901428.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Canard-Duchêne P181 Cuvée Organic Champagne Extra Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901428-2026-09-29-60.9",
+			"url": "https://alkometriikka.fi/tuotteet/901428/",
+			"title": "Canard-Duchêne P181 Cuvée Organic Champagne Extra Brut — 58,99 € → 60,90 €",
+			"content_html": "<p>Tuotteen Canard-Duchêne P181 Cuvée Organic Champagne Extra Brut hinta on muuttunut.</p><p>58,99 € → 60,90 € (+1,91 €, +3,24 %).</p>",
+			"summary": "Tuotteen Canard-Duchêne P181 Cuvée Organic Champagne Extra Brut hinta on muuttunut. 58,99 € → 60,90 € (+1,91 €, +3,24 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901428-748e175b4dc8.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-901428-2026-07-18-58.99",
+			"url": "https://alkometriikka.fi/tuotteet/901428/",
+			"title": "Canard-Duchêne P181 Cuvée Organic Champagne Extra Brut — 58,43 € → 58,99 €",
+			"content_html": "<p>Tuotteen Canard-Duchêne P181 Cuvée Organic Champagne Extra Brut hinta on muuttunut.</p><p>58,43 € → 58,99 € (+0,56 €, +0,96 %).</p>",
+			"summary": "Tuotteen Canard-Duchêne P181 Cuvée Organic Champagne Extra Brut hinta on muuttunut. 58,43 € → 58,99 € (+0,56 €, +0,96 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901428-748e175b4dc8.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bernard-Massard Premium Dry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/959617/",
+	"feed_url": "https://alkometriikka.fi/rss/959617.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bernard-Massard Premium Dry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-959617-2026-09-29-16.98",
+			"url": "https://alkometriikka.fi/tuotteet/959617/",
+			"title": "Bernard-Massard Premium Dry — 16,49 € → 16,98 €",
+			"content_html": "<p>Tuotteen Bernard-Massard Premium Dry hinta on muuttunut.</p><p>16,49 € → 16,98 € (+0,49 €, +2,97 %).</p>",
+			"summary": "Tuotteen Bernard-Massard Premium Dry hinta on muuttunut. 16,49 € → 16,98 € (+0,49 €, +2,97 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/959617-c000d32732e4.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-959617-2026-07-18-16.49",
+			"url": "https://alkometriikka.fi/tuotteet/959617/",
+			"title": "Bernard-Massard Premium Dry — 15,95 € → 16,49 €",
+			"content_html": "<p>Tuotteen Bernard-Massard Premium Dry hinta on muuttunut.</p><p>15,95 € → 16,49 € (+0,54 €, +3,39 %).</p>",
+			"summary": "Tuotteen Bernard-Massard Premium Dry hinta on muuttunut. 15,95 € → 16,49 € (+0,54 €, +3,39 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/959617-c000d32732e4.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

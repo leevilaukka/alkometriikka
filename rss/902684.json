@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Goodday Strawberry Soju – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902684/",
+	"feed_url": "https://alkometriikka.fi/rss/902684.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Goodday Strawberry Soju.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902684-2026-09-29-9.97",
+			"url": "https://alkometriikka.fi/tuotteet/902684/",
+			"title": "Goodday Strawberry Soju — 9,99 € → 9,97 €",
+			"content_html": "<p>Tuotteen Goodday Strawberry Soju hinta on muuttunut.</p><p>9,99 € → 9,97 € (−0,02 €, −0,20 %).</p>",
+			"summary": "Tuotteen Goodday Strawberry Soju hinta on muuttunut. 9,99 € → 9,97 € (−0,02 €, −0,20 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902684-b172e6f0dddc.png",
+			"tags": [
+				"Panimotuotteet",
+				"juomasekoitukset"
+			]
+		}
+	]
+}

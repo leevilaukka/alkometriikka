@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Manousakis Mrs. 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/912603/",
+	"feed_url": "https://alkometriikka.fi/rss/912603.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Manousakis Mrs. 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-912603-2026-09-29-28.69",
+			"url": "https://alkometriikka.fi/tuotteet/912603/",
+			"title": "Manousakis Mrs. 2023 — 27,53 € → 28,69 €",
+			"content_html": "<p>Tuotteen Manousakis Mrs. 2023 hinta on muuttunut.</p><p>27,53 € → 28,69 € (+1,16 €, +4,21 %).</p>",
+			"summary": "Tuotteen Manousakis Mrs. 2023 hinta on muuttunut. 27,53 € → 28,69 € (+1,16 €, +4,21 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/912603-721ffb4dd285.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

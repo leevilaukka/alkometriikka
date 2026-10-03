@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Godet Creme de la Creme – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902546/",
+	"feed_url": "https://alkometriikka.fi/rss/902546.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Godet Creme de la Creme.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902546-2026-09-29-40.36",
+			"url": "https://alkometriikka.fi/tuotteet/902546/",
+			"title": "Godet Creme de la Creme — 40,08 € → 40,36 €",
+			"content_html": "<p>Tuotteen Godet Creme de la Creme hinta on muuttunut.</p><p>40,08 € → 40,36 € (+0,28 €, +0,70 %).</p>",
+			"summary": "Tuotteen Godet Creme de la Creme hinta on muuttunut. 40,08 € → 40,36 € (+0,28 €, +0,70 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902546-b527024d497d.png",
+			"tags": [
+				"Väkevät",
+				"kermaliköörit"
+			]
+		}
+	]
+}

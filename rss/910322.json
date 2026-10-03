@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gonet Sulcova Grand Cru Champagne Extra Brut 2012 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/910322/",
+	"feed_url": "https://alkometriikka.fi/rss/910322.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gonet Sulcova Grand Cru Champagne Extra Brut 2012.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-910322-2026-09-29-73.63",
+			"url": "https://alkometriikka.fi/tuotteet/910322/",
+			"title": "Gonet Sulcova Grand Cru Champagne Extra Brut 2012 — 62,02 € → 73,63 €",
+			"content_html": "<p>Tuotteen Gonet Sulcova Grand Cru Champagne Extra Brut 2012 hinta on muuttunut.</p><p>62,02 € → 73,63 € (+11,61 €, +18,72 %).</p>",
+			"summary": "Tuotteen Gonet Sulcova Grand Cru Champagne Extra Brut 2012 hinta on muuttunut. 62,02 € → 73,63 € (+11,61 €, +18,72 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/910322-ec87d151bd6d.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

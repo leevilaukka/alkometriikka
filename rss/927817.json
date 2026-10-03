@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Loredan Gasparini Asolo Superiore Prosecco Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/927817/",
+	"feed_url": "https://alkometriikka.fi/rss/927817.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Loredan Gasparini Asolo Superiore Prosecco Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-927817-2026-09-29-17.95",
+			"url": "https://alkometriikka.fi/tuotteet/927817/",
+			"title": "Loredan Gasparini Asolo Superiore Prosecco Brut — 18,01 € → 17,95 €",
+			"content_html": "<p>Tuotteen Loredan Gasparini Asolo Superiore Prosecco Brut hinta on muuttunut.</p><p>18,01 € → 17,95 € (−0,06 €, −0,33 %).</p>",
+			"summary": "Tuotteen Loredan Gasparini Asolo Superiore Prosecco Brut hinta on muuttunut. 18,01 € → 17,95 € (−0,06 €, −0,33 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/927817-45a797018b5a.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

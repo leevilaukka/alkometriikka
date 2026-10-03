@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – François Voyer Grande Champagne VSOP – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902260/",
+	"feed_url": "https://alkometriikka.fi/rss/902260.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: François Voyer Grande Champagne VSOP.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902260-2026-09-29-71.53",
+			"url": "https://alkometriikka.fi/tuotteet/902260/",
+			"title": "François Voyer Grande Champagne VSOP — 69,99 € → 71,53 €",
+			"content_html": "<p>Tuotteen François Voyer Grande Champagne VSOP hinta on muuttunut.</p><p>69,99 € → 71,53 € (+1,54 €, +2,20 %).</p>",
+			"summary": "Tuotteen François Voyer Grande Champagne VSOP hinta on muuttunut. 69,99 € → 71,53 € (+1,54 €, +2,20 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902260-d373320ed3ce.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

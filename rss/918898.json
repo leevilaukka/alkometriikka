@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Marques de Riscal Reserva Magnum 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/918898/",
+	"feed_url": "https://alkometriikka.fi/rss/918898.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Marques de Riscal Reserva Magnum 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-918898-2026-07-18-64.99",
+			"url": "https://alkometriikka.fi/tuotteet/918898/",
+			"title": "Marques de Riscal Reserva Magnum 2020 — 55,90 € → 64,99 €",
+			"content_html": "<p>Tuotteen Marques de Riscal Reserva Magnum 2020 hinta on muuttunut.</p><p>55,90 € → 64,99 € (+9,09 €, +16,26 %).</p>",
+			"summary": "Tuotteen Marques de Riscal Reserva Magnum 2020 hinta on muuttunut. 55,90 € → 64,99 € (+9,09 €, +16,26 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/918898-3ba0d9cbc33e.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

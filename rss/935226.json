@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Clos Manou 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/935226/",
+	"feed_url": "https://alkometriikka.fi/rss/935226.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Clos Manou 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-935226-2026-09-29-52.37",
+			"url": "https://alkometriikka.fi/tuotteet/935226/",
+			"title": "Clos Manou 2021 — 44,78 € → 52,37 €",
+			"content_html": "<p>Tuotteen Clos Manou 2021 hinta on muuttunut.</p><p>44,78 € → 52,37 € (+7,59 €, +16,95 %).</p>",
+			"summary": "Tuotteen Clos Manou 2021 hinta on muuttunut. 44,78 € → 52,37 € (+7,59 €, +16,95 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/935226-9960688860ea.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

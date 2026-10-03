@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ullens Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/932538/",
+	"feed_url": "https://alkometriikka.fi/rss/932538.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ullens Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-932538-2026-09-29-72.04",
+			"url": "https://alkometriikka.fi/tuotteet/932538/",
+			"title": "Ullens Champagne Brut — 69,53 € → 72,04 €",
+			"content_html": "<p>Tuotteen Ullens Champagne Brut hinta on muuttunut.</p><p>69,53 € → 72,04 € (+2,51 €, +3,61 %).</p>",
+			"summary": "Tuotteen Ullens Champagne Brut hinta on muuttunut. 69,53 € → 72,04 € (+2,51 €, +3,61 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/932538-2cf4b54e7d5d.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Coquerel XO Calvados – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902268/",
+	"feed_url": "https://alkometriikka.fi/rss/902268.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Coquerel XO Calvados.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902268-2026-09-29-59.98",
+			"url": "https://alkometriikka.fi/tuotteet/902268/",
+			"title": "Coquerel XO Calvados — 60,26 € → 59,98 €",
+			"content_html": "<p>Tuotteen Coquerel XO Calvados hinta on muuttunut.</p><p>60,26 € → 59,98 € (−0,28 €, −0,46 %).</p>",
+			"summary": "Tuotteen Coquerel XO Calvados hinta on muuttunut. 60,26 € → 59,98 € (−0,28 €, −0,46 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902268-d1d0f7bef93c.png",
+			"tags": [
+				"Väkevät",
+				"calvadosit"
+			]
+		}
+	]
+}

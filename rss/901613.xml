@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Mastroberardino Radici Taurasi 2019 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/901613/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Mastroberardino Radici Taurasi 2019.</description>
+		<language>fi</language>
+		<lastBuildDate>Sat, 03 Oct 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/901613.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Mastroberardino Radici Taurasi 2019 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Mastroberardino Radici Taurasi 2019 — 54,79 € → 56,18 €</title>
+			<link>https://alkometriikka.fi/tuotteet/901613/</link>
+			<guid isPermaLink="false">alkometriikka-901613-2026-09-29-56.18</guid>
+			<pubDate>Tue, 29 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Mastroberardino Radici Taurasi 2019 hinta on muuttunut.</p><p>54,79 € → 56,18 € (+1,39 €, +2,54 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/901613-ca297f381a61.png" />
+		</item>
+	</channel>
+</rss>

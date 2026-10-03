@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Verrocchio Prosecco Extra Dry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/928493/",
+	"feed_url": "https://alkometriikka.fi/rss/928493.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Verrocchio Prosecco Extra Dry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-928493-2026-07-18-4.99",
+			"url": "https://alkometriikka.fi/tuotteet/928493/",
+			"title": "Verrocchio Prosecco Extra Dry — 5,03 € → 4,99 €",
+			"content_html": "<p>Tuotteen Verrocchio Prosecco Extra Dry hinta on muuttunut.</p><p>5,03 € → 4,99 € (−0,04 €, −0,80 %).</p>",
+			"summary": "Tuotteen Verrocchio Prosecco Extra Dry hinta on muuttunut. 5,03 € → 4,99 € (−0,04 €, −0,80 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/928493-4ee394d51f52.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

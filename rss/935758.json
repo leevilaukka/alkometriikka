@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – El Esteco Malbec 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/935758/",
+	"feed_url": "https://alkometriikka.fi/rss/935758.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: El Esteco Malbec 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-935758-2026-07-18-18.99",
+			"url": "https://alkometriikka.fi/tuotteet/935758/",
+			"title": "El Esteco Malbec 2023 — 18,95 € → 18,99 €",
+			"content_html": "<p>Tuotteen El Esteco Malbec 2023 hinta on muuttunut.</p><p>18,95 € → 18,99 € (+0,04 €, +0,21 %).</p>",
+			"summary": "Tuotteen El Esteco Malbec 2023 hinta on muuttunut. 18,95 € → 18,99 € (+0,04 €, +0,21 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/935758-2eeaf00a3859.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

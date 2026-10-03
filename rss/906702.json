@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Clos des Papes Châteauneuf du Pape 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/906702/",
+	"feed_url": "https://alkometriikka.fi/rss/906702.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Clos des Papes Châteauneuf du Pape 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-906702-2026-09-29-132.01",
+			"url": "https://alkometriikka.fi/tuotteet/906702/",
+			"title": "Clos des Papes Châteauneuf du Pape 2022 — 125,35 € → 132,01 €",
+			"content_html": "<p>Tuotteen Clos des Papes Châteauneuf du Pape 2022 hinta on muuttunut.</p><p>125,35 € → 132,01 € (+6,66 €, +5,31 %).</p>",
+			"summary": "Tuotteen Clos des Papes Châteauneuf du Pape 2022 hinta on muuttunut. 125,35 € → 132,01 € (+6,66 €, +5,31 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/906702-0e88c882e8ef.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

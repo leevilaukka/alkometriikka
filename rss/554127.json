@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Graf von Schönborn Riesling Trocken 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/554127/",
+	"feed_url": "https://alkometriikka.fi/rss/554127.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Graf von Schönborn Riesling Trocken 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-554127-2026-07-18-16.49",
+			"url": "https://alkometriikka.fi/tuotteet/554127/",
+			"title": "Graf von Schönborn Riesling Trocken 2022 — 16,45 € → 16,49 €",
+			"content_html": "<p>Tuotteen Graf von Schönborn Riesling Trocken 2022 hinta on muuttunut.</p><p>16,45 € → 16,49 € (+0,04 €, +0,24 %).</p>",
+			"summary": "Tuotteen Graf von Schönborn Riesling Trocken 2022 hinta on muuttunut. 16,45 € → 16,49 € (+0,04 €, +0,24 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/554127-f01e58e950f4.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

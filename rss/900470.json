@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bruichladdich 18 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900470/",
+	"feed_url": "https://alkometriikka.fi/rss/900470.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bruichladdich 18 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900470-2026-09-29-176.98",
+			"url": "https://alkometriikka.fi/tuotteet/900470/",
+			"title": "Bruichladdich 18 Year Old Single Malt — 169,00 € → 176,98 €",
+			"content_html": "<p>Tuotteen Bruichladdich 18 Year Old Single Malt hinta on muuttunut.</p><p>169,00 € → 176,98 € (+7,98 €, +4,72 %).</p>",
+			"summary": "Tuotteen Bruichladdich 18 Year Old Single Malt hinta on muuttunut. 169,00 € → 176,98 € (+7,98 €, +4,72 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900470-45f786af10fb.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

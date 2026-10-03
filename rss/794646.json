@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Schneider Weisse Tap 6 Mein Aventinus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/794646/",
+	"feed_url": "https://alkometriikka.fi/rss/794646.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Schneider Weisse Tap 6 Mein Aventinus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-794646-2026-09-29-4.99",
+			"url": "https://alkometriikka.fi/tuotteet/794646/",
+			"title": "Schneider Weisse Tap 6 Mein Aventinus — 5,39 € → 4,99 €",
+			"content_html": "<p>Tuotteen Schneider Weisse Tap 6 Mein Aventinus hinta on muuttunut.</p><p>5,39 € → 4,99 € (−0,40 €, −7,42 %).</p>",
+			"summary": "Tuotteen Schneider Weisse Tap 6 Mein Aventinus hinta on muuttunut. 5,39 € → 4,99 € (−0,40 €, −7,42 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/794646-11e6f3187b91.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

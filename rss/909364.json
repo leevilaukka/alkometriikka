@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Foradori Morei 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/909364/",
+	"feed_url": "https://alkometriikka.fi/rss/909364.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Foradori Morei 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-909364-2026-09-29-62.17",
+			"url": "https://alkometriikka.fi/tuotteet/909364/",
+			"title": "Foradori Morei 2021 — 60,35 € → 62,17 €",
+			"content_html": "<p>Tuotteen Foradori Morei 2021 hinta on muuttunut.</p><p>60,35 € → 62,17 € (+1,82 €, +3,02 %).</p>",
+			"summary": "Tuotteen Foradori Morei 2021 hinta on muuttunut. 60,35 € → 62,17 € (+1,82 €, +3,02 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/909364-c5dd842fa29b.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Koskenkorva Rhubarb Pomegranate muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/236336/",
+	"feed_url": "https://alkometriikka.fi/rss/236336.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Koskenkorva Rhubarb Pomegranate muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-236336-2026-07-18-13.99",
+			"url": "https://alkometriikka.fi/tuotteet/236336/",
+			"title": "Koskenkorva Rhubarb Pomegranate muovipullo — 13,47 € → 13,99 €",
+			"content_html": "<p>Tuotteen Koskenkorva Rhubarb Pomegranate muovipullo hinta on muuttunut.</p><p>13,47 € → 13,99 € (+0,52 €, +3,86 %).</p>",
+			"summary": "Tuotteen Koskenkorva Rhubarb Pomegranate muovipullo hinta on muuttunut. 13,47 € → 13,99 € (+0,52 €, +3,86 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/236336-9439c6315857.png",
+			"tags": [
+				"Väkevät",
+				"hedelmäliköörit"
+			]
+		}
+	]
+}

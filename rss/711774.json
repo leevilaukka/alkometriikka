@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mallaskoski Barley Wine – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/711774/",
+	"feed_url": "https://alkometriikka.fi/rss/711774.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mallaskoski Barley Wine.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-711774-2026-07-18-5.27",
+			"url": "https://alkometriikka.fi/tuotteet/711774/",
+			"title": "Mallaskoski Barley Wine — 5,28 € → 5,27 €",
+			"content_html": "<p>Tuotteen Mallaskoski Barley Wine hinta on muuttunut.</p><p>5,28 € → 5,27 € (−0,01 €, −0,19 %).</p>",
+			"summary": "Tuotteen Mallaskoski Barley Wine hinta on muuttunut. 5,28 € → 5,27 € (−0,01 €, −0,19 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/711774-17f1d756d60d.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

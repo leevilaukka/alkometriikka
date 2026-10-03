@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pieropan Soave Classico 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/503974/",
+	"feed_url": "https://alkometriikka.fi/rss/503974.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pieropan Soave Classico 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-503974-2026-09-29-12.99",
+			"url": "https://alkometriikka.fi/tuotteet/503974/",
+			"title": "Pieropan Soave Classico 2025 — 12,89 € → 12,99 €",
+			"content_html": "<p>Tuotteen Pieropan Soave Classico 2025 hinta on muuttunut.</p><p>12,89 € → 12,99 € (+0,10 €, +0,78 %).</p>",
+			"summary": "Tuotteen Pieropan Soave Classico 2025 hinta on muuttunut. 12,89 € → 12,99 € (+0,10 €, +0,78 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/503974-fe281932fd80.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

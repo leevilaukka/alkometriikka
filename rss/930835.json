@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mallaskoski Orion Kyrö Barrel Aged Imperial Stout – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/930835/",
+	"feed_url": "https://alkometriikka.fi/rss/930835.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mallaskoski Orion Kyrö Barrel Aged Imperial Stout.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-930835-2026-07-18-5.98",
+			"url": "https://alkometriikka.fi/tuotteet/930835/",
+			"title": "Mallaskoski Orion Kyrö Barrel Aged Imperial Stout — 5,99 € → 5,98 €",
+			"content_html": "<p>Tuotteen Mallaskoski Orion Kyrö Barrel Aged Imperial Stout hinta on muuttunut.</p><p>5,99 € → 5,98 € (−0,01 €, −0,17 %).</p>",
+			"summary": "Tuotteen Mallaskoski Orion Kyrö Barrel Aged Imperial Stout hinta on muuttunut. 5,99 € → 5,98 € (−0,01 €, −0,17 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/930835-aa63dede5465.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Valamo Luostariviski – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/939638/",
+	"feed_url": "https://alkometriikka.fi/rss/939638.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Valamo Luostariviski.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-939638-2026-09-29-57.62",
+			"url": "https://alkometriikka.fi/tuotteet/939638/",
+			"title": "Valamo Luostariviski — 56,10 € → 57,62 €",
+			"content_html": "<p>Tuotteen Valamo Luostariviski hinta on muuttunut.</p><p>56,10 € → 57,62 € (+1,52 €, +2,71 %).</p>",
+			"summary": "Tuotteen Valamo Luostariviski hinta on muuttunut. 56,10 € → 57,62 € (+1,52 €, +2,71 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/939638-cf39f877aa5c.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

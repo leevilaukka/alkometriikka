@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Minttu Twist Karamel – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/944605/",
+	"feed_url": "https://alkometriikka.fi/rss/944605.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Minttu Twist Karamel.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-944605-2026-09-29-15.58",
+			"url": "https://alkometriikka.fi/tuotteet/944605/",
+			"title": "Minttu Twist Karamel — 15,49 € → 15,58 €",
+			"content_html": "<p>Tuotteen Minttu Twist Karamel hinta on muuttunut.</p><p>15,49 € → 15,58 € (+0,09 €, +0,58 %).</p>",
+			"summary": "Tuotteen Minttu Twist Karamel hinta on muuttunut. 15,49 € → 15,58 € (+0,09 €, +0,58 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/944605-28d9de414d64.png",
+			"tags": [
+				"Väkevät",
+				"mausteliköörit"
+			]
+		}
+	]
+}

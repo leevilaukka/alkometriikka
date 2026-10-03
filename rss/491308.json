@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Alma Portuguesa 2023 muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/491308/",
+	"feed_url": "https://alkometriikka.fi/rss/491308.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Alma Portuguesa 2023 muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-491308-2026-09-29-13.99",
+			"url": "https://alkometriikka.fi/tuotteet/491308/",
+			"title": "Alma Portuguesa 2023 muovipullo — 14,40 € → 13,99 €",
+			"content_html": "<p>Tuotteen Alma Portuguesa 2023 muovipullo hinta on muuttunut.</p><p>14,40 € → 13,99 € (−0,41 €, −2,85 %).</p>",
+			"summary": "Tuotteen Alma Portuguesa 2023 muovipullo hinta on muuttunut. 14,40 € → 13,99 € (−0,41 €, −2,85 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/491308-5adcff663a30.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

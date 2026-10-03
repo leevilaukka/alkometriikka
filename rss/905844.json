@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Busnel 12 Ans Calvados – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/905844/",
+	"feed_url": "https://alkometriikka.fi/rss/905844.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Busnel 12 Ans Calvados.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-905844-2026-09-29-56.7",
+			"url": "https://alkometriikka.fi/tuotteet/905844/",
+			"title": "Busnel 12 Ans Calvados — 56,25 € → 56,70 €",
+			"content_html": "<p>Tuotteen Busnel 12 Ans Calvados hinta on muuttunut.</p><p>56,25 € → 56,70 € (+0,45 €, +0,80 %).</p>",
+			"summary": "Tuotteen Busnel 12 Ans Calvados hinta on muuttunut. 56,25 € → 56,70 € (+0,45 €, +0,80 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/905844-9ad4cd723b57.png",
+			"tags": [
+				"Väkevät",
+				"calvadosit"
+			]
+		}
+	]
+}

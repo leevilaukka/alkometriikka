@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – JP. Chenet Grande Noblesse VSOP – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/104956/",
+	"feed_url": "https://alkometriikka.fi/rss/104956.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: JP. Chenet Grande Noblesse VSOP.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-104956-2026-09-29-18.38",
+			"url": "https://alkometriikka.fi/tuotteet/104956/",
+			"title": "JP. Chenet Grande Noblesse VSOP — 18,15 € → 18,38 €",
+			"content_html": "<p>Tuotteen JP. Chenet Grande Noblesse VSOP hinta on muuttunut.</p><p>18,15 € → 18,38 € (+0,23 €, +1,27 %).</p>",
+			"summary": "Tuotteen JP. Chenet Grande Noblesse VSOP hinta on muuttunut. 18,15 € → 18,38 € (+0,23 €, +1,27 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/104956-81044cfa0a40.png",
+			"tags": [
+				"Väkevät",
+				"brandyt"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Noé Pedro Ximénez VORS – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902619/",
+	"feed_url": "https://alkometriikka.fi/rss/902619.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Noé Pedro Ximénez VORS.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902619-2026-09-29-41.98",
+			"url": "https://alkometriikka.fi/tuotteet/902619/",
+			"title": "Noé Pedro Ximénez VORS — 38,99 € → 41,98 €",
+			"content_html": "<p>Tuotteen Noé Pedro Ximénez VORS hinta on muuttunut.</p><p>38,99 € → 41,98 € (+2,99 €, +7,67 %).</p>",
+			"summary": "Tuotteen Noé Pedro Ximénez VORS hinta on muuttunut. 38,99 € → 41,98 € (+2,99 €, +7,67 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902619-52bba9b128fd.png",
+			"tags": [
+				"Välituotteet",
+				"sherryt"
+			]
+		}
+	]
+}

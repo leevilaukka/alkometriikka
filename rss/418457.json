@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Zensa Rosso Organico 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/418457/",
+	"feed_url": "https://alkometriikka.fi/rss/418457.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Zensa Rosso Organico 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-418457-2026-09-29-10.98",
+			"url": "https://alkometriikka.fi/tuotteet/418457/",
+			"title": "Zensa Rosso Organico 2024 — 10,79 € → 10,98 €",
+			"content_html": "<p>Tuotteen Zensa Rosso Organico 2024 hinta on muuttunut.</p><p>10,79 € → 10,98 € (+0,19 €, +1,76 %).</p>",
+			"summary": "Tuotteen Zensa Rosso Organico 2024 hinta on muuttunut. 10,79 € → 10,98 € (+0,19 €, +1,76 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/418457-49ff896e3d11.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

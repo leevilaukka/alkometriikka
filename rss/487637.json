@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château d'Aqueria Tavel Rosé 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/487637/",
+	"feed_url": "https://alkometriikka.fi/rss/487637.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château d'Aqueria Tavel Rosé 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-487637-2026-09-29-21.15",
+			"url": "https://alkometriikka.fi/tuotteet/487637/",
+			"title": "Château d'Aqueria Tavel Rosé 2025 — 20,98 € → 21,15 €",
+			"content_html": "<p>Tuotteen Château d'Aqueria Tavel Rosé 2025 hinta on muuttunut.</p><p>20,98 € → 21,15 € (+0,17 €, +0,81 %).</p>",
+			"summary": "Tuotteen Château d'Aqueria Tavel Rosé 2025 hinta on muuttunut. 20,98 € → 21,15 € (+0,17 €, +0,81 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/487637-06790a8a6cf8.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-487637-2026-07-18-20.98",
+			"url": "https://alkometriikka.fi/tuotteet/487637/",
+			"title": "Château d'Aqueria Tavel Rosé 2025 — 20,37 € → 20,98 €",
+			"content_html": "<p>Tuotteen Château d'Aqueria Tavel Rosé 2025 hinta on muuttunut.</p><p>20,37 € → 20,98 € (+0,61 €, +2,99 %).</p>",
+			"summary": "Tuotteen Château d'Aqueria Tavel Rosé 2025 hinta on muuttunut. 20,37 € → 20,98 € (+0,61 €, +2,99 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/487637-06790a8a6cf8.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lanson Le Rosé Création Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/927277/",
+	"feed_url": "https://alkometriikka.fi/rss/927277.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lanson Le Rosé Création Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-927277-2026-09-29-88.6",
+			"url": "https://alkometriikka.fi/tuotteet/927277/",
+			"title": "Lanson Le Rosé Création Champagne Brut — 84,97 € → 88,60 €",
+			"content_html": "<p>Tuotteen Lanson Le Rosé Création Champagne Brut hinta on muuttunut.</p><p>84,97 € → 88,60 € (+3,63 €, +4,27 %).</p>",
+			"summary": "Tuotteen Lanson Le Rosé Création Champagne Brut hinta on muuttunut. 84,97 € → 88,60 € (+3,63 €, +4,27 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/927277-daa5145d2893.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

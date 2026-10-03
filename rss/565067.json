@@ -1,0 +1,50 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – KWV Day Dream Collection 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/565067/",
+	"feed_url": "https://alkometriikka.fi/rss/565067.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: KWV Day Dream Collection 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-565067-2026-07-18-11.29",
+			"url": "https://alkometriikka.fi/tuotteet/565067/",
+			"title": "KWV Day Dream Collection 2023 — 11,26 € → 11,29 €",
+			"content_html": "<p>Tuotteen KWV Day Dream Collection 2023 hinta on muuttunut.</p><p>11,26 € → 11,29 € (+0,03 €, +0,27 %).</p>",
+			"summary": "Tuotteen KWV Day Dream Collection 2023 hinta on muuttunut. 11,26 € → 11,29 € (+0,03 €, +0,27 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/565067-4450332401bc.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-565067-2026-02-02-11.16",
+			"url": "https://alkometriikka.fi/tuotteet/565067/",
+			"title": "KWV Day Dream Collection 2023 — 11,26 € → 11,16 €",
+			"content_html": "<p>Tuotteen KWV Day Dream Collection 2023 hinta on muuttunut.</p><p>11,26 € → 11,16 € (−0,10 €, −0,89 %).</p>",
+			"summary": "Tuotteen KWV Day Dream Collection 2023 hinta on muuttunut. 11,26 € → 11,16 € (−0,10 €, −0,89 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/565067-4450332401bc.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-565067-2026-02-02-11.26",
+			"url": "https://alkometriikka.fi/tuotteet/565067/",
+			"title": "KWV Day Dream Collection 2023 — 11,16 € → 11,26 €",
+			"content_html": "<p>Tuotteen KWV Day Dream Collection 2023 hinta on muuttunut.</p><p>11,16 € → 11,26 € (+0,10 €, +0,90 %).</p>",
+			"summary": "Tuotteen KWV Day Dream Collection 2023 hinta on muuttunut. 11,16 € → 11,26 € (+0,10 €, +0,90 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/565067-4450332401bc.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

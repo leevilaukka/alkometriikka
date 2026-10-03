@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Ricossa Barbera Nebbiolo 2024 hanapakkaus – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/469998/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Ricossa Barbera Nebbiolo 2024 hanapakkaus.</description>
+		<language>fi</language>
+		<lastBuildDate>Sat, 03 Oct 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/469998.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Ricossa Barbera Nebbiolo 2024 hanapakkaus – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Ricossa Barbera Nebbiolo 2024 hanapakkaus — 37,44 € → 37,69 €</title>
+			<link>https://alkometriikka.fi/tuotteet/469998/</link>
+			<guid isPermaLink="false">alkometriikka-469998-2026-09-29-37.69</guid>
+			<pubDate>Tue, 29 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Ricossa Barbera Nebbiolo 2024 hanapakkaus hinta on muuttunut.</p><p>37,44 € → 37,69 € (+0,25 €, +0,67 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/469998-7dcca0f56fcf.png" />
+		</item>
+	</channel>
+</rss>

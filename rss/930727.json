@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Marion-Bosser Premier Cru Rosé Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/930727/",
+	"feed_url": "https://alkometriikka.fi/rss/930727.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Marion-Bosser Premier Cru Rosé Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-930727-2026-09-29-73.99",
+			"url": "https://alkometriikka.fi/tuotteet/930727/",
+			"title": "Marion-Bosser Premier Cru Rosé Champagne Brut — 68,45 € → 73,99 €",
+			"content_html": "<p>Tuotteen Marion-Bosser Premier Cru Rosé Champagne Brut hinta on muuttunut.</p><p>68,45 € → 73,99 € (+5,54 €, +8,09 %).</p>",
+			"summary": "Tuotteen Marion-Bosser Premier Cru Rosé Champagne Brut hinta on muuttunut. 68,45 € → 73,99 € (+5,54 €, +8,09 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/930727-85765ffc177c.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

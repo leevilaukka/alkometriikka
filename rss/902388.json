@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ciacci Piccolomini Brunello di Montalcino 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902388/",
+	"feed_url": "https://alkometriikka.fi/rss/902388.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ciacci Piccolomini Brunello di Montalcino 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902388-2026-09-29-61.74",
+			"url": "https://alkometriikka.fi/tuotteet/902388/",
+			"title": "Ciacci Piccolomini Brunello di Montalcino 2020 — 59,98 € → 61,74 €",
+			"content_html": "<p>Tuotteen Ciacci Piccolomini Brunello di Montalcino 2020 hinta on muuttunut.</p><p>59,98 € → 61,74 € (+1,76 €, +2,93 %).</p>",
+			"summary": "Tuotteen Ciacci Piccolomini Brunello di Montalcino 2020 hinta on muuttunut. 59,98 € → 61,74 € (+1,76 €, +2,93 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902388-f5e12fbfa620.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

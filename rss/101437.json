@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Fettercairn 12 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/101437/",
+	"feed_url": "https://alkometriikka.fi/rss/101437.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Fettercairn 12 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-101437-2026-09-29-68.98",
+			"url": "https://alkometriikka.fi/tuotteet/101437/",
+			"title": "Fettercairn 12 Year Old Single Malt — 66,99 € → 68,98 €",
+			"content_html": "<p>Tuotteen Fettercairn 12 Year Old Single Malt hinta on muuttunut.</p><p>66,99 € → 68,98 € (+1,99 €, +2,97 %).</p>",
+			"summary": "Tuotteen Fettercairn 12 Year Old Single Malt hinta on muuttunut. 66,99 € → 68,98 € (+1,99 €, +2,97 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/101437-e081dd7c7eaf.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

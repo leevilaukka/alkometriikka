@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – 1800 Añejo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/909831/",
+	"feed_url": "https://alkometriikka.fi/rss/909831.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: 1800 Añejo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-909831-2026-09-29-57.85",
+			"url": "https://alkometriikka.fi/tuotteet/909831/",
+			"title": "1800 Añejo — 57,16 € → 57,85 €",
+			"content_html": "<p>Tuotteen 1800 Añejo hinta on muuttunut.</p><p>57,16 € → 57,85 € (+0,69 €, +1,21 %).</p>",
+			"summary": "Tuotteen 1800 Añejo hinta on muuttunut. 57,16 € → 57,85 € (+0,69 €, +1,21 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/909831-ba3ea2255d50.png",
+			"tags": [
+				"Väkevät",
+				"Tequilat"
+			]
+		}
+	]
+}

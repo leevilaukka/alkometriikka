@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Giesen Chardonnay 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/509837/",
+	"feed_url": "https://alkometriikka.fi/rss/509837.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Giesen Chardonnay 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-509837-2026-07-18-16.98",
+			"url": "https://alkometriikka.fi/tuotteet/509837/",
+			"title": "Giesen Chardonnay 2023 — 17,17 € → 16,98 €",
+			"content_html": "<p>Tuotteen Giesen Chardonnay 2023 hinta on muuttunut.</p><p>17,17 € → 16,98 € (−0,19 €, −1,11 %).</p>",
+			"summary": "Tuotteen Giesen Chardonnay 2023 hinta on muuttunut. 17,17 € → 16,98 € (−0,19 €, −1,11 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/509837-097e654916d3.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

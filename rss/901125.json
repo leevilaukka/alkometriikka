@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mauro Veglio Barolo Arborina 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901125/",
+	"feed_url": "https://alkometriikka.fi/rss/901125.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mauro Veglio Barolo Arborina 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901125-2026-09-29-70.64",
+			"url": "https://alkometriikka.fi/tuotteet/901125/",
+			"title": "Mauro Veglio Barolo Arborina 2021 — 68,22 € → 70,64 €",
+			"content_html": "<p>Tuotteen Mauro Veglio Barolo Arborina 2021 hinta on muuttunut.</p><p>68,22 € → 70,64 € (+2,42 €, +3,55 %).</p>",
+			"summary": "Tuotteen Mauro Veglio Barolo Arborina 2021 hinta on muuttunut. 68,22 € → 70,64 € (+2,42 €, +3,55 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901125-09a213ea5777.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

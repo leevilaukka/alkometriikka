@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pere Ventura Tresor Reserva Cava Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/591364/",
+	"feed_url": "https://alkometriikka.fi/rss/591364.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pere Ventura Tresor Reserva Cava Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-591364-2026-07-18-11.29",
+			"url": "https://alkometriikka.fi/tuotteet/591364/",
+			"title": "Pere Ventura Tresor Reserva Cava Brut — 11,21 € → 11,29 €",
+			"content_html": "<p>Tuotteen Pere Ventura Tresor Reserva Cava Brut hinta on muuttunut.</p><p>11,21 € → 11,29 € (+0,08 €, +0,71 %).</p>",
+			"summary": "Tuotteen Pere Ventura Tresor Reserva Cava Brut hinta on muuttunut. 11,21 € → 11,29 € (+0,08 €, +0,71 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/591364-4adbb8cdd75e.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

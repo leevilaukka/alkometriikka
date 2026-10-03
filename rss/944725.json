@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vallein Tercinier Pineau Des Charentes Blanc – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/944725/",
+	"feed_url": "https://alkometriikka.fi/rss/944725.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vallein Tercinier Pineau Des Charentes Blanc.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-944725-2026-09-29-33.98",
+			"url": "https://alkometriikka.fi/tuotteet/944725/",
+			"title": "Vallein Tercinier Pineau Des Charentes Blanc — 33,90 € → 33,98 €",
+			"content_html": "<p>Tuotteen Vallein Tercinier Pineau Des Charentes Blanc hinta on muuttunut.</p><p>33,90 € → 33,98 € (+0,08 €, +0,24 %).</p>",
+			"summary": "Tuotteen Vallein Tercinier Pineau Des Charentes Blanc hinta on muuttunut. 33,90 € → 33,98 € (+0,08 €, +0,24 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/944725-666161c8c69c.png",
+			"tags": [
+				"Välituotteet",
+				"väkevät viinit"
+			]
+		},
+		{
+			"id": "alkometriikka-944725-2026-07-18-33.9",
+			"url": "https://alkometriikka.fi/tuotteet/944725/",
+			"title": "Vallein Tercinier Pineau Des Charentes Blanc — 31,99 € → 33,90 €",
+			"content_html": "<p>Tuotteen Vallein Tercinier Pineau Des Charentes Blanc hinta on muuttunut.</p><p>31,99 € → 33,90 € (+1,91 €, +5,97 %).</p>",
+			"summary": "Tuotteen Vallein Tercinier Pineau Des Charentes Blanc hinta on muuttunut. 31,99 € → 33,90 € (+1,91 €, +5,97 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/944725-666161c8c69c.png",
+			"tags": [
+				"Välituotteet",
+				"väkevät viinit"
+			]
+		}
+	]
+}

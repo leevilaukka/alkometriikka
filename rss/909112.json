@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mauro Veglio Barolo 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/909112/",
+	"feed_url": "https://alkometriikka.fi/rss/909112.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mauro Veglio Barolo 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-909112-2026-09-29-49.7",
+			"url": "https://alkometriikka.fi/tuotteet/909112/",
+			"title": "Mauro Veglio Barolo 2020 — 48,78 € → 49,70 €",
+			"content_html": "<p>Tuotteen Mauro Veglio Barolo 2020 hinta on muuttunut.</p><p>48,78 € → 49,70 € (+0,92 €, +1,89 %).</p>",
+			"summary": "Tuotteen Mauro Veglio Barolo 2020 hinta on muuttunut. 48,78 € → 49,70 € (+0,92 €, +1,89 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/909112-e75e6cdb532f.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

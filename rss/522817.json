@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nugan Estate Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/522817/",
+	"feed_url": "https://alkometriikka.fi/rss/522817.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nugan Estate Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-522817-2026-07-18-17.98",
+			"url": "https://alkometriikka.fi/tuotteet/522817/",
+			"title": "Nugan Estate Brut — 17,44 € → 17,98 €",
+			"content_html": "<p>Tuotteen Nugan Estate Brut hinta on muuttunut.</p><p>17,44 € → 17,98 € (+0,54 €, +3,10 %).</p>",
+			"summary": "Tuotteen Nugan Estate Brut hinta on muuttunut. 17,44 € → 17,98 € (+0,54 €, +3,10 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/522817-77cc5dce277e.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

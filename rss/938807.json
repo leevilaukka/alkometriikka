@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Coquerel VSOP Calvados – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/938807/",
+	"feed_url": "https://alkometriikka.fi/rss/938807.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Coquerel VSOP Calvados.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-938807-2026-09-29-49.99",
+			"url": "https://alkometriikka.fi/tuotteet/938807/",
+			"title": "Coquerel VSOP Calvados — 49,98 € → 49,99 €",
+			"content_html": "<p>Tuotteen Coquerel VSOP Calvados hinta on muuttunut.</p><p>49,98 € → 49,99 € (+0,01 €, +0,02 %).</p>",
+			"summary": "Tuotteen Coquerel VSOP Calvados hinta on muuttunut. 49,98 € → 49,99 € (+0,01 €, +0,02 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/938807-72ba8a41ab03.png",
+			"tags": [
+				"Väkevät",
+				"calvadosit"
+			]
+		},
+		{
+			"id": "alkometriikka-938807-2026-07-18-49.98",
+			"url": "https://alkometriikka.fi/tuotteet/938807/",
+			"title": "Coquerel VSOP Calvados — 49,27 € → 49,98 €",
+			"content_html": "<p>Tuotteen Coquerel VSOP Calvados hinta on muuttunut.</p><p>49,27 € → 49,98 € (+0,71 €, +1,44 %).</p>",
+			"summary": "Tuotteen Coquerel VSOP Calvados hinta on muuttunut. 49,27 € → 49,98 € (+0,71 €, +1,44 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/938807-72ba8a41ab03.png",
+			"tags": [
+				"Väkevät",
+				"calvadosit"
+			]
+		}
+	]
+}

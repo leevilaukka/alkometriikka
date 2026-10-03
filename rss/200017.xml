@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Loch Lomond Heavily Peated Single Malt – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/200017/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Loch Lomond Heavily Peated Single Malt.</description>
+		<language>fi</language>
+		<lastBuildDate>Sat, 03 Oct 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/200017.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Loch Lomond Heavily Peated Single Malt – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Loch Lomond Heavily Peated Single Malt — 39,18 € → 38,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/200017/</link>
+			<guid isPermaLink="false">alkometriikka-200017-2026-09-29-38.99</guid>
+			<pubDate>Tue, 29 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / viskit</category>
+			<description><![CDATA[<p>Tuotteen Loch Lomond Heavily Peated Single Malt hinta on muuttunut.</p><p>39,18 € → 38,99 € (−0,19 €, −0,48 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/200017-958111c508d8.png" />
+		</item>
+	</channel>
+</rss>

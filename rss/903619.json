@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Artemis Karamolegos Fletos  2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903619/",
+	"feed_url": "https://alkometriikka.fi/rss/903619.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Artemis Karamolegos Fletos  2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903619-2026-09-29-115.41",
+			"url": "https://alkometriikka.fi/tuotteet/903619/",
+			"title": "Artemis Karamolegos Fletos  2021 — 109,90 € → 115,41 €",
+			"content_html": "<p>Tuotteen Artemis Karamolegos Fletos  2021 hinta on muuttunut.</p><p>109,90 € → 115,41 € (+5,51 €, +5,01 %).</p>",
+			"summary": "Tuotteen Artemis Karamolegos Fletos 2021 hinta on muuttunut. 109,90 € → 115,41 € (+5,51 €, +5,01 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903619-1d13214baf9a.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

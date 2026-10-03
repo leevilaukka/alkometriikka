@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Courvoisier VS – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/000841/",
+	"feed_url": "https://alkometriikka.fi/rss/000841.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Courvoisier VS.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-000841-2026-09-29-49.99",
+			"url": "https://alkometriikka.fi/tuotteet/000841/",
+			"title": "Courvoisier VS — 49,98 € → 49,99 €",
+			"content_html": "<p>Tuotteen Courvoisier VS hinta on muuttunut.</p><p>49,98 € → 49,99 € (+0,01 €, +0,02 %).</p>",
+			"summary": "Tuotteen Courvoisier VS hinta on muuttunut. 49,98 € → 49,99 € (+0,01 €, +0,02 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/000841-17c7679b3888.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

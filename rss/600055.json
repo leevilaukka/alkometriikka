@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Battery Sugar Free tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/600055/",
+	"feed_url": "https://alkometriikka.fi/rss/600055.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Battery Sugar Free tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-600055-2026-09-29-2.85",
+			"url": "https://alkometriikka.fi/tuotteet/600055/",
+			"title": "Battery Sugar Free tölkki — 2,79 € → 2,85 €",
+			"content_html": "<p>Tuotteen Battery Sugar Free tölkki hinta on muuttunut.</p><p>2,79 € → 2,85 € (+0,06 €, +2,15 %).</p>",
+			"summary": "Tuotteen Battery Sugar Free tölkki hinta on muuttunut. 2,79 € → 2,85 € (+0,06 €, +2,15 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600055-b84d8c503c53.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

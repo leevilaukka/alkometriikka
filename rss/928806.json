@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Villa Puccini Vermentino 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/928806/",
+	"feed_url": "https://alkometriikka.fi/rss/928806.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Villa Puccini Vermentino 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-928806-2026-07-18-12.99",
+			"url": "https://alkometriikka.fi/tuotteet/928806/",
+			"title": "Villa Puccini Vermentino 2025 — 13,96 € → 12,99 €",
+			"content_html": "<p>Tuotteen Villa Puccini Vermentino 2025 hinta on muuttunut.</p><p>13,96 € → 12,99 € (−0,97 €, −6,95 %).</p>",
+			"summary": "Tuotteen Villa Puccini Vermentino 2025 hinta on muuttunut. 13,96 € → 12,99 € (−0,97 €, −6,95 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/928806-b1f2320c33e7.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

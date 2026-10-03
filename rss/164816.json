@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Teerenpeli Pyygin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/164816/",
+	"feed_url": "https://alkometriikka.fi/rss/164816.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Teerenpeli Pyygin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-164816-2026-09-29-39.49",
+			"url": "https://alkometriikka.fi/tuotteet/164816/",
+			"title": "Teerenpeli Pyygin — 39,17 € → 39,49 €",
+			"content_html": "<p>Tuotteen Teerenpeli Pyygin hinta on muuttunut.</p><p>39,17 € → 39,49 € (+0,32 €, +0,82 %).</p>",
+			"summary": "Tuotteen Teerenpeli Pyygin hinta on muuttunut. 39,17 € → 39,49 € (+0,32 €, +0,82 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/164816-b3cec6e73a3f.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

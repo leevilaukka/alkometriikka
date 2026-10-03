@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Disfrutand 0,0 Verdejo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/534557/",
+	"feed_url": "https://alkometriikka.fi/rss/534557.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Disfrutand 0,0 Verdejo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-534557-2026-07-18-9.99",
+			"url": "https://alkometriikka.fi/tuotteet/534557/",
+			"title": "Disfrutand 0,0 Verdejo — 9,95 € → 9,99 €",
+			"content_html": "<p>Tuotteen Disfrutand 0,0 Verdejo hinta on muuttunut.</p><p>9,95 € → 9,99 € (+0,04 €, +0,40 %).</p>",
+			"summary": "Tuotteen Disfrutand 0,0 Verdejo hinta on muuttunut. 9,95 € → 9,99 € (+0,04 €, +0,40 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/534557-d770f9ee1a31.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat valko- ja roseeviinit"
+			]
+		}
+	]
+}

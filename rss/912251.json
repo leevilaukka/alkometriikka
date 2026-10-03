@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Smål Boosted Aperitivo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/912251/",
+	"feed_url": "https://alkometriikka.fi/rss/912251.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Smål Boosted Aperitivo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-912251-2026-09-29-21.77",
+			"url": "https://alkometriikka.fi/tuotteet/912251/",
+			"title": "Smål Boosted Aperitivo — 21,02 € → 21,77 €",
+			"content_html": "<p>Tuotteen Smål Boosted Aperitivo hinta on muuttunut.</p><p>21,02 € → 21,77 € (+0,75 €, +3,57 %).</p>",
+			"summary": "Tuotteen Smål Boosted Aperitivo hinta on muuttunut. 21,02 € → 21,77 € (+0,75 €, +3,57 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/912251-7cc00252addb.png",
+			"tags": [
+				"Väkevät",
+				"grogikatkerot"
+			]
+		}
+	]
+}

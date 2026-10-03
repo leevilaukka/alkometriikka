@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Allegrini Amarone della Valpolicella Classico 2017 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/927066/",
+	"feed_url": "https://alkometriikka.fi/rss/927066.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Allegrini Amarone della Valpolicella Classico 2017.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-927066-2026-09-29-123.51",
+			"url": "https://alkometriikka.fi/tuotteet/927066/",
+			"title": "Allegrini Amarone della Valpolicella Classico 2017 — 117,37 € → 123,51 €",
+			"content_html": "<p>Tuotteen Allegrini Amarone della Valpolicella Classico 2017 hinta on muuttunut.</p><p>117,37 € → 123,51 € (+6,14 €, +5,23 %).</p>",
+			"summary": "Tuotteen Allegrini Amarone della Valpolicella Classico 2017 hinta on muuttunut. 117,37 € → 123,51 € (+6,14 €, +5,23 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/927066-9b9d4179b89f.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

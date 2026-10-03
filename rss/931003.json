@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Loriot-Pagel Rosé Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/931003/",
+	"feed_url": "https://alkometriikka.fi/rss/931003.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Loriot-Pagel Rosé Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-931003-2026-09-29-65.99",
+			"url": "https://alkometriikka.fi/tuotteet/931003/",
+			"title": "Loriot-Pagel Rosé Champagne Brut — 63,44 € → 65,99 €",
+			"content_html": "<p>Tuotteen Loriot-Pagel Rosé Champagne Brut hinta on muuttunut.</p><p>63,44 € → 65,99 € (+2,55 €, +4,02 %).</p>",
+			"summary": "Tuotteen Loriot-Pagel Rosé Champagne Brut hinta on muuttunut. 63,44 € → 65,99 € (+2,55 €, +4,02 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/931003-2811d18a86d5.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

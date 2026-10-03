@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Orin Swift Blank Stare 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903014/",
+	"feed_url": "https://alkometriikka.fi/rss/903014.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Orin Swift Blank Stare 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903014-2026-09-29-52.99",
+			"url": "https://alkometriikka.fi/tuotteet/903014/",
+			"title": "Orin Swift Blank Stare 2023 — 51,45 € → 52,99 €",
+			"content_html": "<p>Tuotteen Orin Swift Blank Stare 2023 hinta on muuttunut.</p><p>51,45 € → 52,99 € (+1,54 €, +2,99 %).</p>",
+			"summary": "Tuotteen Orin Swift Blank Stare 2023 hinta on muuttunut. 51,45 € → 52,99 € (+1,54 €, +2,99 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903014-374586f9565e.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

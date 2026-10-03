@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ruukki Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/920638/",
+	"feed_url": "https://alkometriikka.fi/rss/920638.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ruukki Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-920638-2026-09-29-47.45",
+			"url": "https://alkometriikka.fi/tuotteet/920638/",
+			"title": "Ruukki Gin — 46,71 € → 47,45 €",
+			"content_html": "<p>Tuotteen Ruukki Gin hinta on muuttunut.</p><p>46,71 € → 47,45 € (+0,74 €, +1,58 %).</p>",
+			"summary": "Tuotteen Ruukki Gin hinta on muuttunut. 46,71 € → 47,45 € (+0,74 €, +1,58 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/920638-5c14df550905.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

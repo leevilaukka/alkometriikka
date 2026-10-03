@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – 1000 Lakes Barrel Aged Navy Strength Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/947941/",
+	"feed_url": "https://alkometriikka.fi/rss/947941.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: 1000 Lakes Barrel Aged Navy Strength Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-947941-2026-09-29-59.42",
+			"url": "https://alkometriikka.fi/tuotteet/947941/",
+			"title": "1000 Lakes Barrel Aged Navy Strength Gin — 58,12 € → 59,42 €",
+			"content_html": "<p>Tuotteen 1000 Lakes Barrel Aged Navy Strength Gin hinta on muuttunut.</p><p>58,12 € → 59,42 € (+1,30 €, +2,24 %).</p>",
+			"summary": "Tuotteen 1000 Lakes Barrel Aged Navy Strength Gin hinta on muuttunut. 58,12 € → 59,42 € (+1,30 €, +2,24 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/947941-c43344438226.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

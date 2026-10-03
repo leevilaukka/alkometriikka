@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château Monbrison 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/418417/",
+	"feed_url": "https://alkometriikka.fi/rss/418417.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château Monbrison 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-418417-2026-09-29-57.96",
+			"url": "https://alkometriikka.fi/tuotteet/418417/",
+			"title": "Château Monbrison 2021 — 55,45 € → 57,96 €",
+			"content_html": "<p>Tuotteen Château Monbrison 2021 hinta on muuttunut.</p><p>55,45 € → 57,96 € (+2,51 €, +4,53 %).</p>",
+			"summary": "Tuotteen Château Monbrison 2021 hinta on muuttunut. 55,45 € → 57,96 € (+2,51 €, +4,53 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/418417-0c6e1b0b6cb2.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

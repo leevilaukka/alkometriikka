@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Manousakis Tsikoudia – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901562/",
+	"feed_url": "https://alkometriikka.fi/rss/901562.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Manousakis Tsikoudia.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901562-2026-09-29-45.8",
+			"url": "https://alkometriikka.fi/tuotteet/901562/",
+			"title": "Manousakis Tsikoudia — 45,01 € → 45,80 €",
+			"content_html": "<p>Tuotteen Manousakis Tsikoudia hinta on muuttunut.</p><p>45,01 € → 45,80 € (+0,79 €, +1,76 %).</p>",
+			"summary": "Tuotteen Manousakis Tsikoudia hinta on muuttunut. 45,01 € → 45,80 € (+0,79 €, +1,76 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901562-bd0232a59a1a.png",
+			"tags": [
+				"Väkevät",
+				"hedelmätisleet"
+			]
+		}
+	]
+}

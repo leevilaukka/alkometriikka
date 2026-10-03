@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dupont Givre Cidre de Glace 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/933721/",
+	"feed_url": "https://alkometriikka.fi/rss/933721.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dupont Givre Cidre de Glace 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-933721-2026-09-29-40.8",
+			"url": "https://alkometriikka.fi/tuotteet/933721/",
+			"title": "Dupont Givre Cidre de Glace 2022 — 39,21 € → 40,80 €",
+			"content_html": "<p>Tuotteen Dupont Givre Cidre de Glace 2022 hinta on muuttunut.</p><p>39,21 € → 40,80 € (+1,59 €, +4,06 %).</p>",
+			"summary": "Tuotteen Dupont Givre Cidre de Glace 2022 hinta on muuttunut. 39,21 € → 40,80 € (+1,59 €, +4,06 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/933721-ebf4e4597056.png",
+			"tags": [
+				"Viinit",
+				"hedelmä- ja aromatisoidut viinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Basil Hayden's Kentucky Straight Bourbon – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/958797/",
+	"feed_url": "https://alkometriikka.fi/rss/958797.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Basil Hayden's Kentucky Straight Bourbon.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-958797-2026-09-29-71",
+			"url": "https://alkometriikka.fi/tuotteet/958797/",
+			"title": "Basil Hayden's Kentucky Straight Bourbon — 69,51 € → 71,00 €",
+			"content_html": "<p>Tuotteen Basil Hayden's Kentucky Straight Bourbon hinta on muuttunut.</p><p>69,51 € → 71,00 € (+1,49 €, +2,14 %).</p>",
+			"summary": "Tuotteen Basil Hayden's Kentucky Straight Bourbon hinta on muuttunut. 69,51 € → 71,00 € (+1,49 €, +2,14 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/958797-5a11113dc8be.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

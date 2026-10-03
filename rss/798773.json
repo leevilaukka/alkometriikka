@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lindemans Kriek – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/798773/",
+	"feed_url": "https://alkometriikka.fi/rss/798773.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lindemans Kriek.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-798773-2026-09-29-3.65",
+			"url": "https://alkometriikka.fi/tuotteet/798773/",
+			"title": "Lindemans Kriek — 3,25 € → 3,65 €",
+			"content_html": "<p>Tuotteen Lindemans Kriek hinta on muuttunut.</p><p>3,25 € → 3,65 € (+0,40 €, +12,31 %).</p>",
+			"summary": "Tuotteen Lindemans Kriek hinta on muuttunut. 3,25 € → 3,65 € (+0,40 €, +12,31 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/798773-c0d51f195289.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

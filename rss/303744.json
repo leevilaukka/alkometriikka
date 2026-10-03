@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Porto Messias 20 Anos – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/303744/",
+	"feed_url": "https://alkometriikka.fi/rss/303744.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Porto Messias 20 Anos.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-303744-2026-09-29-36.99",
+			"url": "https://alkometriikka.fi/tuotteet/303744/",
+			"title": "Porto Messias 20 Anos — 35,99 € → 36,99 €",
+			"content_html": "<p>Tuotteen Porto Messias 20 Anos hinta on muuttunut.</p><p>35,99 € → 36,99 € (+1,00 €, +2,78 %).</p>",
+			"summary": "Tuotteen Porto Messias 20 Anos hinta on muuttunut. 35,99 € → 36,99 € (+1,00 €, +2,78 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/303744-1e10ea571926.png",
+			"tags": [
+				"Välituotteet",
+				"portviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-303744-2026-07-18-35.99",
+			"url": "https://alkometriikka.fi/tuotteet/303744/",
+			"title": "Porto Messias 20 Anos — 35,05 € → 35,99 €",
+			"content_html": "<p>Tuotteen Porto Messias 20 Anos hinta on muuttunut.</p><p>35,05 € → 35,99 € (+0,94 €, +2,68 %).</p>",
+			"summary": "Tuotteen Porto Messias 20 Anos hinta on muuttunut. 35,05 € → 35,99 € (+0,94 €, +2,68 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/303744-1e10ea571926.png",
+			"tags": [
+				"Välituotteet",
+				"portviinit"
+			]
+		}
+	]
+}

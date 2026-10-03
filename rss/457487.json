@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Piedemonte Reserva 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/457487/",
+	"feed_url": "https://alkometriikka.fi/rss/457487.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Piedemonte Reserva 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-457487-2026-07-18-13.98",
+			"url": "https://alkometriikka.fi/tuotteet/457487/",
+			"title": "Piedemonte Reserva 2021 — 13,09 € → 13,98 €",
+			"content_html": "<p>Tuotteen Piedemonte Reserva 2021 hinta on muuttunut.</p><p>13,09 € → 13,98 € (+0,89 €, +6,80 %).</p>",
+			"summary": "Tuotteen Piedemonte Reserva 2021 hinta on muuttunut. 13,09 € → 13,98 € (+0,89 €, +6,80 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/457487-2f1aa9aedb2b.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – No 3 London Dry Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/108587/",
+	"feed_url": "https://alkometriikka.fi/rss/108587.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: No 3 London Dry Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-108587-2026-07-18-39.99",
+			"url": "https://alkometriikka.fi/tuotteet/108587/",
+			"title": "No 3 London Dry Gin — 47,01 € → 39,99 €",
+			"content_html": "<p>Tuotteen No 3 London Dry Gin hinta on muuttunut.</p><p>47,01 € → 39,99 € (−7,02 €, −14,93 %).</p>",
+			"summary": "Tuotteen No 3 London Dry Gin hinta on muuttunut. 47,01 € → 39,99 € (−7,02 €, −14,93 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/108587-58e0702c2a03.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

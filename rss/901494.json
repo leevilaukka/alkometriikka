@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Paul Jaboulet Aîné Hermitage la Maison Bleue 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901494/",
+	"feed_url": "https://alkometriikka.fi/rss/901494.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Paul Jaboulet Aîné Hermitage la Maison Bleue 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901494-2026-09-29-109.99",
+			"url": "https://alkometriikka.fi/tuotteet/901494/",
+			"title": "Paul Jaboulet Aîné Hermitage la Maison Bleue 2022 — 105,99 € → 109,99 €",
+			"content_html": "<p>Tuotteen Paul Jaboulet Aîné Hermitage la Maison Bleue 2022 hinta on muuttunut.</p><p>105,99 € → 109,99 € (+4,00 €, +3,77 %).</p>",
+			"summary": "Tuotteen Paul Jaboulet Aîné Hermitage la Maison Bleue 2022 hinta on muuttunut. 105,99 € → 109,99 € (+4,00 €, +3,77 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901494-1bc1c1449554.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

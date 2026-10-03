@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Terralsole Brunello di Montalcino 2017 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/491757/",
+	"feed_url": "https://alkometriikka.fi/rss/491757.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Terralsole Brunello di Montalcino 2017.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-491757-2026-09-29-62.27",
+			"url": "https://alkometriikka.fi/tuotteet/491757/",
+			"title": "Terralsole Brunello di Montalcino 2017 — 60,45 € → 62,27 €",
+			"content_html": "<p>Tuotteen Terralsole Brunello di Montalcino 2017 hinta on muuttunut.</p><p>60,45 € → 62,27 € (+1,82 €, +3,01 %).</p>",
+			"summary": "Tuotteen Terralsole Brunello di Montalcino 2017 hinta on muuttunut. 60,45 € → 62,27 € (+1,82 €, +3,01 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/491757-8ae0c6f9b1ae.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bodegas Papiamento Caribbean Carnival – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/916076/",
+	"feed_url": "https://alkometriikka.fi/rss/916076.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bodegas Papiamento Caribbean Carnival.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-916076-2026-09-29-50.39",
+			"url": "https://alkometriikka.fi/tuotteet/916076/",
+			"title": "Bodegas Papiamento Caribbean Carnival — 50,27 € → 50,39 €",
+			"content_html": "<p>Tuotteen Bodegas Papiamento Caribbean Carnival hinta on muuttunut.</p><p>50,27 € → 50,39 € (+0,12 €, +0,24 %).</p>",
+			"summary": "Tuotteen Bodegas Papiamento Caribbean Carnival hinta on muuttunut. 50,27 € → 50,39 € (+0,12 €, +0,24 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/916076-c949d92fa29b.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

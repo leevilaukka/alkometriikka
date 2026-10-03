@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dingle Cónocht An Earraigh Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902208/",
+	"feed_url": "https://alkometriikka.fi/rss/902208.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dingle Cónocht An Earraigh Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902208-2026-09-29-99.98",
+			"url": "https://alkometriikka.fi/tuotteet/902208/",
+			"title": "Dingle Cónocht An Earraigh Single Malt — 105,35 € → 99,98 €",
+			"content_html": "<p>Tuotteen Dingle Cónocht An Earraigh Single Malt hinta on muuttunut.</p><p>105,35 € → 99,98 € (−5,37 €, −5,10 %).</p>",
+			"summary": "Tuotteen Dingle Cónocht An Earraigh Single Malt hinta on muuttunut. 105,35 € → 99,98 € (−5,37 €, −5,10 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902208-9fc2b579cde9.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

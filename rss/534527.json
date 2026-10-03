@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Faustino Cava Extra Seco – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/534527/",
+	"feed_url": "https://alkometriikka.fi/rss/534527.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Faustino Cava Extra Seco.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-534527-2026-07-18-14.48",
+			"url": "https://alkometriikka.fi/tuotteet/534527/",
+			"title": "Faustino Cava Extra Seco — 13,40 € → 14,48 €",
+			"content_html": "<p>Tuotteen Faustino Cava Extra Seco hinta on muuttunut.</p><p>13,40 € → 14,48 € (+1,08 €, +8,06 %).</p>",
+			"summary": "Tuotteen Faustino Cava Extra Seco hinta on muuttunut. 13,40 € → 14,48 € (+1,08 €, +8,06 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/534527-3e0a8845e135.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

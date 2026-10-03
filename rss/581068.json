@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Frontera Chardonnay 2025 hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/581068/",
+	"feed_url": "https://alkometriikka.fi/rss/581068.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Frontera Chardonnay 2025 hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-581068-2026-07-18-32.79",
+			"url": "https://alkometriikka.fi/tuotteet/581068/",
+			"title": "Frontera Chardonnay 2025 hanapakkaus — 32,49 € → 32,79 €",
+			"content_html": "<p>Tuotteen Frontera Chardonnay 2025 hanapakkaus hinta on muuttunut.</p><p>32,49 € → 32,79 € (+0,30 €, +0,92 %).</p>",
+			"summary": "Tuotteen Frontera Chardonnay 2025 hanapakkaus hinta on muuttunut. 32,49 € → 32,79 € (+0,30 €, +0,92 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/581068-0ac1d615f2fc.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

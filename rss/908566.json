@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château Maucoil Châteauneuf-du-Pape Tradition 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/908566/",
+	"feed_url": "https://alkometriikka.fi/rss/908566.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château Maucoil Châteauneuf-du-Pape Tradition 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-908566-2026-09-29-50.99",
+			"url": "https://alkometriikka.fi/tuotteet/908566/",
+			"title": "Château Maucoil Châteauneuf-du-Pape Tradition 2024 — 49,98 € → 50,99 €",
+			"content_html": "<p>Tuotteen Château Maucoil Châteauneuf-du-Pape Tradition 2024 hinta on muuttunut.</p><p>49,98 € → 50,99 € (+1,01 €, +2,02 %).</p>",
+			"summary": "Tuotteen Château Maucoil Châteauneuf-du-Pape Tradition 2024 hinta on muuttunut. 49,98 € → 50,99 € (+1,01 €, +2,02 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/908566-7b9639bb65ca.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-908566-2026-07-18-49.98",
+			"url": "https://alkometriikka.fi/tuotteet/908566/",
+			"title": "Château Maucoil Châteauneuf-du-Pape Tradition 2024 — 50,45 € → 49,98 €",
+			"content_html": "<p>Tuotteen Château Maucoil Châteauneuf-du-Pape Tradition 2024 hinta on muuttunut.</p><p>50,45 € → 49,98 € (−0,47 €, −0,93 %).</p>",
+			"summary": "Tuotteen Château Maucoil Châteauneuf-du-Pape Tradition 2024 hinta on muuttunut. 50,45 € → 49,98 € (−0,47 €, −0,93 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/908566-7b9639bb65ca.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

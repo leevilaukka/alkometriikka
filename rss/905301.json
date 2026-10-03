@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Creation Reserve Syrah 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/905301/",
+	"feed_url": "https://alkometriikka.fi/rss/905301.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Creation Reserve Syrah 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-905301-2026-07-18-41.99",
+			"url": "https://alkometriikka.fi/tuotteet/905301/",
+			"title": "Creation Reserve Syrah 2018 — 41,46 € → 41,99 €",
+			"content_html": "<p>Tuotteen Creation Reserve Syrah 2018 hinta on muuttunut.</p><p>41,46 € → 41,99 € (+0,53 €, +1,28 %).</p>",
+			"summary": "Tuotteen Creation Reserve Syrah 2018 hinta on muuttunut. 41,46 € → 41,99 € (+0,53 €, +1,28 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/905301-3d173c864904.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

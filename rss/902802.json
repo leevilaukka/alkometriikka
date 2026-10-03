@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Georges Vesselle Grand Cru Champagne Brut 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902802/",
+	"feed_url": "https://alkometriikka.fi/rss/902802.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Georges Vesselle Grand Cru Champagne Brut 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902802-2026-09-29-67.69",
+			"url": "https://alkometriikka.fi/tuotteet/902802/",
+			"title": "Georges Vesselle Grand Cru Champagne Brut 2018 — 62,02 € → 67,69 €",
+			"content_html": "<p>Tuotteen Georges Vesselle Grand Cru Champagne Brut 2018 hinta on muuttunut.</p><p>62,02 € → 67,69 € (+5,67 €, +9,14 %).</p>",
+			"summary": "Tuotteen Georges Vesselle Grand Cru Champagne Brut 2018 hinta on muuttunut. 62,02 € → 67,69 € (+5,67 €, +9,14 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902802-0767fcbf30dc.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

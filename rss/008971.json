@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Castellblanc Cava Dry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/008971/",
+	"feed_url": "https://alkometriikka.fi/rss/008971.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Castellblanc Cava Dry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-008971-2026-07-18-13.98",
+			"url": "https://alkometriikka.fi/tuotteet/008971/",
+			"title": "Castellblanc Cava Dry — 13,48 € → 13,98 €",
+			"content_html": "<p>Tuotteen Castellblanc Cava Dry hinta on muuttunut.</p><p>13,48 € → 13,98 € (+0,50 €, +3,71 %).</p>",
+			"summary": "Tuotteen Castellblanc Cava Dry hinta on muuttunut. 13,48 € → 13,98 € (+0,50 €, +3,71 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/008971-a0e182467bfa.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

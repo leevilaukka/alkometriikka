@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Badagoni Maestro Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/925176/",
+	"feed_url": "https://alkometriikka.fi/rss/925176.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Badagoni Maestro Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-925176-2026-09-29-17.71",
+			"url": "https://alkometriikka.fi/tuotteet/925176/",
+			"title": "Badagoni Maestro Brut — 18,66 € → 17,71 €",
+			"content_html": "<p>Tuotteen Badagoni Maestro Brut hinta on muuttunut.</p><p>18,66 € → 17,71 € (−0,95 €, −5,09 %).</p>",
+			"summary": "Tuotteen Badagoni Maestro Brut hinta on muuttunut. 18,66 € → 17,71 € (−0,95 €, −5,09 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/925176-6924c9e1ec6f.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Seedlip Grove 42 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/919633/",
+	"feed_url": "https://alkometriikka.fi/rss/919633.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Seedlip Grove 42.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-919633-2026-07-18-29.99",
+			"url": "https://alkometriikka.fi/tuotteet/919633/",
+			"title": "Seedlip Grove 42 — 29,67 € → 29,99 €",
+			"content_html": "<p>Tuotteen Seedlip Grove 42 hinta on muuttunut.</p><p>29,67 € → 29,99 € (+0,32 €, +1,08 %).</p>",
+			"summary": "Tuotteen Seedlip Grove 42 hinta on muuttunut. 29,67 € → 29,99 € (+0,32 €, +1,08 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/919633-fbff25fadbe5.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kalleske Florentine Chenin Blanc 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/591717/",
+	"feed_url": "https://alkometriikka.fi/rss/591717.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kalleske Florentine Chenin Blanc 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-591717-2026-02-02-19.7",
+			"url": "https://alkometriikka.fi/tuotteet/591717/",
+			"title": "Kalleske Florentine Chenin Blanc 2021 — 19,80 € → 19,70 €",
+			"content_html": "<p>Tuotteen Kalleske Florentine Chenin Blanc 2021 hinta on muuttunut.</p><p>19,80 € → 19,70 € (−0,10 €, −0,51 %).</p>",
+			"summary": "Tuotteen Kalleske Florentine Chenin Blanc 2021 hinta on muuttunut. 19,80 € → 19,70 € (−0,10 €, −0,51 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/591717-5240f3910332.png",
+			"tags": [
+				"valkoviinit",
+				"Vivahteikas & Ryhdikäs"
+			]
+		},
+		{
+			"id": "alkometriikka-591717-2026-02-02-19.8",
+			"url": "https://alkometriikka.fi/tuotteet/591717/",
+			"title": "Kalleske Florentine Chenin Blanc 2021 — 19,70 € → 19,80 €",
+			"content_html": "<p>Tuotteen Kalleske Florentine Chenin Blanc 2021 hinta on muuttunut.</p><p>19,70 € → 19,80 € (+0,10 €, +0,51 %).</p>",
+			"summary": "Tuotteen Kalleske Florentine Chenin Blanc 2021 hinta on muuttunut. 19,70 € → 19,80 € (+0,10 €, +0,51 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/591717-5240f3910332.png",
+			"tags": [
+				"valkoviinit",
+				"Vivahteikas & Ryhdikäs"
+			]
+		}
+	]
+}

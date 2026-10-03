@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Castillo de Anna Appasanto Tempranillo hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/426918/",
+	"feed_url": "https://alkometriikka.fi/rss/426918.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Castillo de Anna Appasanto Tempranillo hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-426918-2026-07-18-32.49",
+			"url": "https://alkometriikka.fi/tuotteet/426918/",
+			"title": "Castillo de Anna Appasanto Tempranillo hanapakkaus — 31,84 € → 32,49 €",
+			"content_html": "<p>Tuotteen Castillo de Anna Appasanto Tempranillo hanapakkaus hinta on muuttunut.</p><p>31,84 € → 32,49 € (+0,65 €, +2,04 %).</p>",
+			"summary": "Tuotteen Castillo de Anna Appasanto Tempranillo hanapakkaus hinta on muuttunut. 31,84 € → 32,49 € (+0,65 €, +2,04 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/426918-5393253f4180.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

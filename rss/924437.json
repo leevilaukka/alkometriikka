@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Josetta Saffirio Barolo 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/924437/",
+	"feed_url": "https://alkometriikka.fi/rss/924437.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Josetta Saffirio Barolo 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-924437-2026-09-29-75.56",
+			"url": "https://alkometriikka.fi/tuotteet/924437/",
+			"title": "Josetta Saffirio Barolo 2018 — 72,82 € → 75,56 €",
+			"content_html": "<p>Tuotteen Josetta Saffirio Barolo 2018 hinta on muuttunut.</p><p>72,82 € → 75,56 € (+2,74 €, +3,76 %).</p>",
+			"summary": "Tuotteen Josetta Saffirio Barolo 2018 hinta on muuttunut. 72,82 € → 75,56 € (+2,74 €, +3,76 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/924437-e0bfe3d66d6e.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

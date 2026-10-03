@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – To Øl Lost All Reason tölkki – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/700171/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: To Øl Lost All Reason tölkki.</description>
+		<language>fi</language>
+		<lastBuildDate>Sat, 03 Oct 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/700171.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – To Øl Lost All Reason tölkki – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>To Øl Lost All Reason tölkki — 5,98 € → 5,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/700171/</link>
+			<guid isPermaLink="false">alkometriikka-700171-2026-09-29-5.99</guid>
+			<pubDate>Tue, 29 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Panimotuotteet / oluet</category>
+			<description><![CDATA[<p>Tuotteen To Øl Lost All Reason tölkki hinta on muuttunut.</p><p>5,98 € → 5,99 € (+0,01 €, +0,17 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/700171-4b960e77ae16.png" />
+		</item>
+	</channel>
+</rss>

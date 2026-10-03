@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château Martinet Saint-Émilion Grand Cru 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902021/",
+	"feed_url": "https://alkometriikka.fi/rss/902021.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château Martinet Saint-Émilion Grand Cru 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902021-2026-09-29-45.6",
+			"url": "https://alkometriikka.fi/tuotteet/902021/",
+			"title": "Château Martinet Saint-Émilion Grand Cru 2019 — 44,95 € → 45,60 €",
+			"content_html": "<p>Tuotteen Château Martinet Saint-Émilion Grand Cru 2019 hinta on muuttunut.</p><p>44,95 € → 45,60 € (+0,65 €, +1,45 %).</p>",
+			"summary": "Tuotteen Château Martinet Saint-Émilion Grand Cru 2019 hinta on muuttunut. 44,95 € → 45,60 € (+0,65 €, +1,45 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902021-f478a8c8c036.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

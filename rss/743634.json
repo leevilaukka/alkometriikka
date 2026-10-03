@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ambar Triple Zero Gluten free 0,0% – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/743634/",
+	"feed_url": "https://alkometriikka.fi/rss/743634.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ambar Triple Zero Gluten free 0,0%.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-743634-2026-07-18-2.35",
+			"url": "https://alkometriikka.fi/tuotteet/743634/",
+			"title": "Ambar Triple Zero Gluten free 0,0% — 2,34 € → 2,35 €",
+			"content_html": "<p>Tuotteen Ambar Triple Zero Gluten free 0,0% hinta on muuttunut.</p><p>2,34 € → 2,35 € (+0,01 €, +0,43 %).</p>",
+			"summary": "Tuotteen Ambar Triple Zero Gluten free 0,0% hinta on muuttunut. 2,34 € → 2,35 € (+0,01 €, +0,43 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/743634-9a9c24b2e610.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat oluet"
+			]
+		}
+	]
+}

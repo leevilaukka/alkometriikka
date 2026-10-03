@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pople Ginger Glow muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/100043/",
+	"feed_url": "https://alkometriikka.fi/rss/100043.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pople Ginger Glow muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-100043-2026-07-18-9.99",
+			"url": "https://alkometriikka.fi/tuotteet/100043/",
+			"title": "Pople Ginger Glow muovipullo — 9,95 € → 9,99 €",
+			"content_html": "<p>Tuotteen Pople Ginger Glow muovipullo hinta on muuttunut.</p><p>9,95 € → 9,99 € (+0,04 €, +0,40 %).</p>",
+			"summary": "Tuotteen Pople Ginger Glow muovipullo hinta on muuttunut. 9,95 € → 9,99 € (+0,04 €, +0,40 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/100043-d05beda53cd2.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

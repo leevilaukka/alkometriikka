@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Teerenpeli Palo Peated Sherry Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/188466/",
+	"feed_url": "https://alkometriikka.fi/rss/188466.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Teerenpeli Palo Peated Sherry Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-188466-2026-09-29-60.06",
+			"url": "https://alkometriikka.fi/tuotteet/188466/",
+			"title": "Teerenpeli Palo Peated Sherry Single Malt — 59,41 € → 60,06 €",
+			"content_html": "<p>Tuotteen Teerenpeli Palo Peated Sherry Single Malt hinta on muuttunut.</p><p>59,41 € → 60,06 € (+0,65 €, +1,09 %).</p>",
+			"summary": "Tuotteen Teerenpeli Palo Peated Sherry Single Malt hinta on muuttunut. 59,41 € → 60,06 € (+0,65 €, +1,09 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/188466-433daa15ce42.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

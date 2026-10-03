@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Crazy Cat Cava Semi Seco – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/922632/",
+	"feed_url": "https://alkometriikka.fi/rss/922632.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Crazy Cat Cava Semi Seco.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-922632-2026-07-18-10.98",
+			"url": "https://alkometriikka.fi/tuotteet/922632/",
+			"title": "Crazy Cat Cava Semi Seco — 10,44 € → 10,98 €",
+			"content_html": "<p>Tuotteen Crazy Cat Cava Semi Seco hinta on muuttunut.</p><p>10,44 € → 10,98 € (+0,54 €, +5,17 %).</p>",
+			"summary": "Tuotteen Crazy Cat Cava Semi Seco hinta on muuttunut. 10,44 € → 10,98 € (+0,54 €, +5,17 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/922632-8e10e83d87a6.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Claymore – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/001297/",
+	"feed_url": "https://alkometriikka.fi/rss/001297.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Claymore.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-001297-2026-09-29-25.74",
+			"url": "https://alkometriikka.fi/tuotteet/001297/",
+			"title": "The Claymore — 25,70 € → 25,74 €",
+			"content_html": "<p>Tuotteen The Claymore hinta on muuttunut.</p><p>25,70 € → 25,74 € (+0,04 €, +0,16 %).</p>",
+			"summary": "Tuotteen The Claymore hinta on muuttunut. 25,70 € → 25,74 € (+0,04 €, +0,16 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/001297-02092a8036ab.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

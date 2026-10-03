@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Alte Grafschaft Kaffelstein Pinot Noir 2020 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/900701/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Alte Grafschaft Kaffelstein Pinot Noir 2020.</description>
+		<language>fi</language>
+		<lastBuildDate>Sat, 03 Oct 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/900701.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Alte Grafschaft Kaffelstein Pinot Noir 2020 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Alte Grafschaft Kaffelstein Pinot Noir 2020 — 67,41 € → 69,76 €</title>
+			<link>https://alkometriikka.fi/tuotteet/900701/</link>
+			<guid isPermaLink="false">alkometriikka-900701-2026-09-29-69.76</guid>
+			<pubDate>Tue, 29 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Alte Grafschaft Kaffelstein Pinot Noir 2020 hinta on muuttunut.</p><p>67,41 € → 69,76 € (+2,35 €, +3,49 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/900701-677a55d56ef4.png" />
+		</item>
+	</channel>
+</rss>

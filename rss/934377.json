@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Moenchberg Riesling Grand Cru 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/934377/",
+	"feed_url": "https://alkometriikka.fi/rss/934377.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Moenchberg Riesling Grand Cru 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-934377-2026-09-29-48.81",
+			"url": "https://alkometriikka.fi/tuotteet/934377/",
+			"title": "Moenchberg Riesling Grand Cru 2021 — 47,93 € → 48,81 €",
+			"content_html": "<p>Tuotteen Moenchberg Riesling Grand Cru 2021 hinta on muuttunut.</p><p>47,93 € → 48,81 € (+0,88 €, +1,84 %).</p>",
+			"summary": "Tuotteen Moenchberg Riesling Grand Cru 2021 hinta on muuttunut. 47,93 € → 48,81 € (+0,88 €, +1,84 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/934377-0a880ef869a1.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

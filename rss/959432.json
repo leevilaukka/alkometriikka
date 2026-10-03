@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kilchoman 100% Islay 13th Edition Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/959432/",
+	"feed_url": "https://alkometriikka.fi/rss/959432.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kilchoman 100% Islay 13th Edition Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-959432-2026-07-18-99.99",
+			"url": "https://alkometriikka.fi/tuotteet/959432/",
+			"title": "Kilchoman 100% Islay 13th Edition Single Malt — 104,29 € → 99,99 €",
+			"content_html": "<p>Tuotteen Kilchoman 100% Islay 13th Edition Single Malt hinta on muuttunut.</p><p>104,29 € → 99,99 € (−4,30 €, −4,12 %).</p>",
+			"summary": "Tuotteen Kilchoman 100% Islay 13th Edition Single Malt hinta on muuttunut. 104,29 € → 99,99 € (−4,30 €, −4,12 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/959432-6d91dfd6e120.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

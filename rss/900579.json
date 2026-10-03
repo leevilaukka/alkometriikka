@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bonvalet Blanc Suprême Champagne Extra Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900579/",
+	"feed_url": "https://alkometriikka.fi/rss/900579.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bonvalet Blanc Suprême Champagne Extra Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900579-2026-09-29-68.21",
+			"url": "https://alkometriikka.fi/tuotteet/900579/",
+			"title": "Bonvalet Blanc Suprême Champagne Extra Brut — 65,97 € → 68,21 €",
+			"content_html": "<p>Tuotteen Bonvalet Blanc Suprême Champagne Extra Brut hinta on muuttunut.</p><p>65,97 € → 68,21 € (+2,24 €, +3,40 %).</p>",
+			"summary": "Tuotteen Bonvalet Blanc Suprême Champagne Extra Brut hinta on muuttunut. 65,97 € → 68,21 € (+2,24 €, +3,40 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900579-c0b2407de9bb.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

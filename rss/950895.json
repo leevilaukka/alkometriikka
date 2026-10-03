@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lyre's Italian Spritz – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/950895/",
+	"feed_url": "https://alkometriikka.fi/rss/950895.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lyre's Italian Spritz.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-950895-2026-07-18-33.35",
+			"url": "https://alkometriikka.fi/tuotteet/950895/",
+			"title": "Lyre's Italian Spritz — 32,22 € → 33,35 €",
+			"content_html": "<p>Tuotteen Lyre's Italian Spritz hinta on muuttunut.</p><p>32,22 € → 33,35 € (+1,13 €, +3,51 %).</p>",
+			"summary": "Tuotteen Lyre's Italian Spritz hinta on muuttunut. 32,22 € → 33,35 € (+1,13 €, +3,51 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/950895-6294a8c66629.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

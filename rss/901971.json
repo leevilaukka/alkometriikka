@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Abasolo Corn Whisky – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901971/",
+	"feed_url": "https://alkometriikka.fi/rss/901971.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Abasolo Corn Whisky.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901971-2026-09-29-59.54",
+			"url": "https://alkometriikka.fi/tuotteet/901971/",
+			"title": "Abasolo Corn Whisky — 58,91 € → 59,54 €",
+			"content_html": "<p>Tuotteen Abasolo Corn Whisky hinta on muuttunut.</p><p>58,91 € → 59,54 € (+0,63 €, +1,07 %).</p>",
+			"summary": "Tuotteen Abasolo Corn Whisky hinta on muuttunut. 58,91 € → 59,54 € (+0,63 €, +1,07 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901971-74393be426b1.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

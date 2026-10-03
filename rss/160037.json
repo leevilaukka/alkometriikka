@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Sailor Jerry Spiced – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/160037/",
+	"feed_url": "https://alkometriikka.fi/rss/160037.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Sailor Jerry Spiced.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-160037-2026-09-29-35.5",
+			"url": "https://alkometriikka.fi/tuotteet/160037/",
+			"title": "Sailor Jerry Spiced — 35,70 € → 35,50 €",
+			"content_html": "<p>Tuotteen Sailor Jerry Spiced hinta on muuttunut.</p><p>35,70 € → 35,50 € (−0,20 €, −0,56 %).</p>",
+			"summary": "Tuotteen Sailor Jerry Spiced hinta on muuttunut. 35,70 € → 35,50 € (−0,20 €, −0,56 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/160037-3e6f18010a69.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

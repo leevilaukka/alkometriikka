@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – BlueWhite Lightly Peated – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/906815/",
+	"feed_url": "https://alkometriikka.fi/rss/906815.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: BlueWhite Lightly Peated.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-906815-2026-09-29-38.15",
+			"url": "https://alkometriikka.fi/tuotteet/906815/",
+			"title": "BlueWhite Lightly Peated — 38,00 € → 38,15 €",
+			"content_html": "<p>Tuotteen BlueWhite Lightly Peated hinta on muuttunut.</p><p>38,00 € → 38,15 € (+0,15 €, +0,39 %).</p>",
+			"summary": "Tuotteen BlueWhite Lightly Peated hinta on muuttunut. 38,00 € → 38,15 € (+0,15 €, +0,39 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/906815-c5a03facc5fa.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

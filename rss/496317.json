@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – JP. Chenet Merlot 8% – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/496317/",
+	"feed_url": "https://alkometriikka.fi/rss/496317.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: JP. Chenet Merlot 8%.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-496317-2026-09-29-9.29",
+			"url": "https://alkometriikka.fi/tuotteet/496317/",
+			"title": "JP. Chenet Merlot 8% — 9,19 € → 9,29 €",
+			"content_html": "<p>Tuotteen JP. Chenet Merlot 8% hinta on muuttunut.</p><p>9,19 € → 9,29 € (+0,10 €, +1,09 %).</p>",
+			"summary": "Tuotteen JP. Chenet Merlot 8% hinta on muuttunut. 9,19 € → 9,29 € (+0,10 €, +1,09 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/496317-be20855e76cb.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

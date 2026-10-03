@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Concorde VSOP 5 Years muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/118356/",
+	"feed_url": "https://alkometriikka.fi/rss/118356.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Concorde VSOP 5 Years muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-118356-2026-07-18-18.49",
+			"url": "https://alkometriikka.fi/tuotteet/118356/",
+			"title": "Concorde VSOP 5 Years muovipullo — 18,36 € → 18,49 €",
+			"content_html": "<p>Tuotteen Concorde VSOP 5 Years muovipullo hinta on muuttunut.</p><p>18,36 € → 18,49 € (+0,13 €, +0,71 %).</p>",
+			"summary": "Tuotteen Concorde VSOP 5 Years muovipullo hinta on muuttunut. 18,36 € → 18,49 € (+0,13 €, +0,71 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/118356-0b61e46c1a15.png",
+			"tags": [
+				"Väkevät",
+				"brandyt"
+			]
+		}
+	]
+}

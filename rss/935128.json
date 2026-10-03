@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bruno Rocca Fralu Nebbiolo 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/935128/",
+	"feed_url": "https://alkometriikka.fi/rss/935128.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bruno Rocca Fralu Nebbiolo 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-935128-2026-09-29-44.69",
+			"url": "https://alkometriikka.fi/tuotteet/935128/",
+			"title": "Bruno Rocca Fralu Nebbiolo 2020 — 44,10 € → 44,69 €",
+			"content_html": "<p>Tuotteen Bruno Rocca Fralu Nebbiolo 2020 hinta on muuttunut.</p><p>44,10 € → 44,69 € (+0,59 €, +1,34 %).</p>",
+			"summary": "Tuotteen Bruno Rocca Fralu Nebbiolo 2020 hinta on muuttunut. 44,10 € → 44,69 € (+0,59 €, +1,34 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/935128-a81e7004158e.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Petri Riesling Honigsack 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/920695/",
+	"feed_url": "https://alkometriikka.fi/rss/920695.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Petri Riesling Honigsack 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-920695-2026-07-18-29.97",
+			"url": "https://alkometriikka.fi/tuotteet/920695/",
+			"title": "Petri Riesling Honigsack 2019 — 28,15 € → 29,97 €",
+			"content_html": "<p>Tuotteen Petri Riesling Honigsack 2019 hinta on muuttunut.</p><p>28,15 € → 29,97 € (+1,82 €, +6,47 %).</p>",
+			"summary": "Tuotteen Petri Riesling Honigsack 2019 hinta on muuttunut. 28,15 € → 29,97 € (+1,82 €, +6,47 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/920695-6af78bf833b3.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

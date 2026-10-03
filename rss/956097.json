@@ -1,0 +1,50 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tanqueray Rangpur Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/956097/",
+	"feed_url": "https://alkometriikka.fi/rss/956097.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tanqueray Rangpur Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-956097-2026-07-18-40.49",
+			"url": "https://alkometriikka.fi/tuotteet/956097/",
+			"title": "Tanqueray Rangpur Gin — 40,27 € → 40,49 €",
+			"content_html": "<p>Tuotteen Tanqueray Rangpur Gin hinta on muuttunut.</p><p>40,27 € → 40,49 € (+0,22 €, +0,55 %).</p>",
+			"summary": "Tuotteen Tanqueray Rangpur Gin hinta on muuttunut. 40,27 € → 40,49 € (+0,22 €, +0,55 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/956097-f30d1d7b0db5.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		},
+		{
+			"id": "alkometriikka-956097-2026-02-02-40.17",
+			"url": "https://alkometriikka.fi/tuotteet/956097/",
+			"title": "Tanqueray Rangpur Gin — 40,27 € → 40,17 €",
+			"content_html": "<p>Tuotteen Tanqueray Rangpur Gin hinta on muuttunut.</p><p>40,27 € → 40,17 € (−0,10 €, −0,25 %).</p>",
+			"summary": "Tuotteen Tanqueray Rangpur Gin hinta on muuttunut. 40,27 € → 40,17 € (−0,10 €, −0,25 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/956097-f30d1d7b0db5.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		},
+		{
+			"id": "alkometriikka-956097-2026-02-02-40.27",
+			"url": "https://alkometriikka.fi/tuotteet/956097/",
+			"title": "Tanqueray Rangpur Gin — 40,17 € → 40,27 €",
+			"content_html": "<p>Tuotteen Tanqueray Rangpur Gin hinta on muuttunut.</p><p>40,17 € → 40,27 € (+0,10 €, +0,25 %).</p>",
+			"summary": "Tuotteen Tanqueray Rangpur Gin hinta on muuttunut. 40,17 € → 40,27 € (+0,10 €, +0,25 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/956097-f30d1d7b0db5.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

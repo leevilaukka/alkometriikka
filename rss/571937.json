@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Wolfberger Muscat 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/571937/",
+	"feed_url": "https://alkometriikka.fi/rss/571937.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Wolfberger Muscat 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-571937-2026-07-18-16.49",
+			"url": "https://alkometriikka.fi/tuotteet/571937/",
+			"title": "Wolfberger Muscat 2023 — 16,45 € → 16,49 €",
+			"content_html": "<p>Tuotteen Wolfberger Muscat 2023 hinta on muuttunut.</p><p>16,45 € → 16,49 € (+0,04 €, +0,24 %).</p>",
+			"summary": "Tuotteen Wolfberger Muscat 2023 hinta on muuttunut. 16,45 € → 16,49 € (+0,04 €, +0,24 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/571937-4df7988a1a66.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

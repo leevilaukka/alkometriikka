@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Domaine Billaud-Simon Chablis 1er Cru Montee de Tonnerre 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903183/",
+	"feed_url": "https://alkometriikka.fi/rss/903183.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Domaine Billaud-Simon Chablis 1er Cru Montee de Tonnerre 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903183-2026-09-29-71.69",
+			"url": "https://alkometriikka.fi/tuotteet/903183/",
+			"title": "Domaine Billaud-Simon Chablis 1er Cru Montee de Tonnerre 2023 — 69,23 € → 71,69 €",
+			"content_html": "<p>Tuotteen Domaine Billaud-Simon Chablis 1er Cru Montee de Tonnerre 2023 hinta on muuttunut.</p><p>69,23 € → 71,69 € (+2,46 €, +3,55 %).</p>",
+			"summary": "Tuotteen Domaine Billaud-Simon Chablis 1er Cru Montee de Tonnerre 2023 hinta on muuttunut. 69,23 € → 71,69 € (+2,46 €, +3,55 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903183-3ac9524f9c97.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

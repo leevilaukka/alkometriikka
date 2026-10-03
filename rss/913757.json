@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – 50 Degree Riesling 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/913757/",
+	"feed_url": "https://alkometriikka.fi/rss/913757.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: 50 Degree Riesling 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-913757-2026-09-29-14.75",
+			"url": "https://alkometriikka.fi/tuotteet/913757/",
+			"title": "50 Degree Riesling 2025 — 14,97 € → 14,75 €",
+			"content_html": "<p>Tuotteen 50 Degree Riesling 2025 hinta on muuttunut.</p><p>14,97 € → 14,75 € (−0,22 €, −1,47 %).</p>",
+			"summary": "Tuotteen 50 Degree Riesling 2025 hinta on muuttunut. 14,97 € → 14,75 € (−0,22 €, −1,47 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/913757-9e107a819510.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

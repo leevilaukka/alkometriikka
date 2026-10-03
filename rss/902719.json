@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nostos Blend 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902719/",
+	"feed_url": "https://alkometriikka.fi/rss/902719.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nostos Blend 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902719-2026-09-29-49.47",
+			"url": "https://alkometriikka.fi/tuotteet/902719/",
+			"title": "Nostos Blend 2020 — 48,55 € → 49,47 €",
+			"content_html": "<p>Tuotteen Nostos Blend 2020 hinta on muuttunut.</p><p>48,55 € → 49,47 € (+0,92 €, +1,89 %).</p>",
+			"summary": "Tuotteen Nostos Blend 2020 hinta on muuttunut. 48,55 € → 49,47 € (+0,92 €, +1,89 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902719-8ba2994dcd68.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

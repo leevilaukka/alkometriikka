@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bienfait des Pradeaux 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902855/",
+	"feed_url": "https://alkometriikka.fi/rss/902855.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bienfait des Pradeaux 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902855-2026-09-29-37.58",
+			"url": "https://alkometriikka.fi/tuotteet/902855/",
+			"title": "Bienfait des Pradeaux 2024 — 37,50 € → 37,58 €",
+			"content_html": "<p>Tuotteen Bienfait des Pradeaux 2024 hinta on muuttunut.</p><p>37,50 € → 37,58 € (+0,08 €, +0,21 %).</p>",
+			"summary": "Tuotteen Bienfait des Pradeaux 2024 hinta on muuttunut. 37,50 € → 37,58 € (+0,08 €, +0,21 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902855-f0fdde9ba4e7.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

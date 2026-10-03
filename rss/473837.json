@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cono Sur Ocio 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/473837/",
+	"feed_url": "https://alkometriikka.fi/rss/473837.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cono Sur Ocio 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-473837-2026-09-29-59.99",
+			"url": "https://alkometriikka.fi/tuotteet/473837/",
+			"title": "Cono Sur Ocio 2020 — 59,98 € → 59,99 €",
+			"content_html": "<p>Tuotteen Cono Sur Ocio 2020 hinta on muuttunut.</p><p>59,98 € → 59,99 € (+0,01 €, +0,02 %).</p>",
+			"summary": "Tuotteen Cono Sur Ocio 2020 hinta on muuttunut. 59,98 € → 59,99 € (+0,01 €, +0,02 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/473837-598ddfed5775.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

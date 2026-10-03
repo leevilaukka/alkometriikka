@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Stift Klosterneuburg Grüner Veltliner Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/500119/",
+	"feed_url": "https://alkometriikka.fi/rss/500119.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Stift Klosterneuburg Grüner Veltliner Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-500119-2026-09-29-15.49",
+			"url": "https://alkometriikka.fi/tuotteet/500119/",
+			"title": "Stift Klosterneuburg Grüner Veltliner Brut — 15,45 € → 15,49 €",
+			"content_html": "<p>Tuotteen Stift Klosterneuburg Grüner Veltliner Brut hinta on muuttunut.</p><p>15,45 € → 15,49 € (+0,04 €, +0,26 %).</p>",
+			"summary": "Tuotteen Stift Klosterneuburg Grüner Veltliner Brut hinta on muuttunut. 15,45 € → 15,49 € (+0,04 €, +0,26 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/500119-9dbac7dd2f11.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

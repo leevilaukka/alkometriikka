@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Frank Phélan 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/956152/",
+	"feed_url": "https://alkometriikka.fi/rss/956152.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Frank Phélan 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-956152-2026-09-30-54.3",
+			"url": "https://alkometriikka.fi/tuotteet/956152/",
+			"title": "Frank Phélan 2020 — 53,06 € → 54,30 €",
+			"content_html": "<p>Tuotteen Frank Phélan 2020 hinta on muuttunut.</p><p>53,06 € → 54,30 € (+1,24 €, +2,34 %).</p>",
+			"summary": "Tuotteen Frank Phélan 2020 hinta on muuttunut. 53,06 € → 54,30 € (+1,24 €, +2,34 %).",
+			"date_published": "2026-09-30T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/956152-3564abf7be1f.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Antinori Solaia 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/932421/",
+	"feed_url": "https://alkometriikka.fi/rss/932421.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Antinori Solaia 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-932421-2026-09-29-460",
+			"url": "https://alkometriikka.fi/tuotteet/932421/",
+			"title": "Antinori Solaia 2021 — 430,44 € → 460,00 €",
+			"content_html": "<p>Tuotteen Antinori Solaia 2021 hinta on muuttunut.</p><p>430,44 € → 460,00 € (+29,56 €, +6,87 %).</p>",
+			"summary": "Tuotteen Antinori Solaia 2021 hinta on muuttunut. 430,44 € → 460,00 € (+29,56 €, +6,87 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/932421-b8a5d6bd487e.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

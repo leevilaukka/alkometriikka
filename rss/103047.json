@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lafontan Bas-Armagnac 1987 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/103047/",
+	"feed_url": "https://alkometriikka.fi/rss/103047.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lafontan Bas-Armagnac 1987.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-103047-2026-09-29-127.52",
+			"url": "https://alkometriikka.fi/tuotteet/103047/",
+			"title": "Lafontan Bas-Armagnac 1987 — 122,23 € → 127,52 €",
+			"content_html": "<p>Tuotteen Lafontan Bas-Armagnac 1987 hinta on muuttunut.</p><p>122,23 € → 127,52 € (+5,29 €, +4,33 %).</p>",
+			"summary": "Tuotteen Lafontan Bas-Armagnac 1987 hinta on muuttunut. 122,23 € → 127,52 € (+5,29 €, +4,33 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/103047-8ec228c3a365.png",
+			"tags": [
+				"Väkevät",
+				"armanjakit"
+			]
+		},
+		{
+			"id": "alkometriikka-103047-2026-07-18-122.23",
+			"url": "https://alkometriikka.fi/tuotteet/103047/",
+			"title": "Lafontan Bas-Armagnac 1987 — 121,41 € → 122,23 €",
+			"content_html": "<p>Tuotteen Lafontan Bas-Armagnac 1987 hinta on muuttunut.</p><p>121,41 € → 122,23 € (+0,82 €, +0,68 %).</p>",
+			"summary": "Tuotteen Lafontan Bas-Armagnac 1987 hinta on muuttunut. 121,41 € → 122,23 € (+0,82 €, +0,68 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/103047-8ec228c3a365.png",
+			"tags": [
+				"Väkevät",
+				"armanjakit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hélène Beaugrand Le Grand Carré Blanc de Blancs Champagne Extra Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/911086/",
+	"feed_url": "https://alkometriikka.fi/rss/911086.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hélène Beaugrand Le Grand Carré Blanc de Blancs Champagne Extra Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-911086-2026-09-29-77.11",
+			"url": "https://alkometriikka.fi/tuotteet/911086/",
+			"title": "Hélène Beaugrand Le Grand Carré Blanc de Blancs Champagne Extra Brut — 74,26 € → 77,11 €",
+			"content_html": "<p>Tuotteen Hélène Beaugrand Le Grand Carré Blanc de Blancs Champagne Extra Brut hinta on muuttunut.</p><p>74,26 € → 77,11 € (+2,85 €, +3,84 %).</p>",
+			"summary": "Tuotteen Hélène Beaugrand Le Grand Carré Blanc de Blancs Champagne Extra Brut hinta on muuttunut. 74,26 € → 77,11 € (+2,85 €, +3,84 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/911086-f5d5e5aab5a9.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

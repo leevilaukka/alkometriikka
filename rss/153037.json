@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Monnet XXO – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/153037/",
+	"feed_url": "https://alkometriikka.fi/rss/153037.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Monnet XXO.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-153037-2026-09-29-249.99",
+			"url": "https://alkometriikka.fi/tuotteet/153037/",
+			"title": "Monnet XXO — 249,98 € → 249,99 €",
+			"content_html": "<p>Tuotteen Monnet XXO hinta on muuttunut.</p><p>249,98 € → 249,99 € (+0,01 €, +0,00 %).</p>",
+			"summary": "Tuotteen Monnet XXO hinta on muuttunut. 249,98 € → 249,99 € (+0,01 €, +0,00 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/153037-b007dbaace8d.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

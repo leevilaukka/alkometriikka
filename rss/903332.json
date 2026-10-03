@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Philippe Pacalet Ladoix 1er Cru Les Joyeuses 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903332/",
+	"feed_url": "https://alkometriikka.fi/rss/903332.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Philippe Pacalet Ladoix 1er Cru Les Joyeuses 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903332-2026-09-29-157.08",
+			"url": "https://alkometriikka.fi/tuotteet/903332/",
+			"title": "Philippe Pacalet Ladoix 1er Cru Les Joyeuses 2022 — 148,60 € → 157,08 €",
+			"content_html": "<p>Tuotteen Philippe Pacalet Ladoix 1er Cru Les Joyeuses 2022 hinta on muuttunut.</p><p>148,60 € → 157,08 € (+8,48 €, +5,71 %).</p>",
+			"summary": "Tuotteen Philippe Pacalet Ladoix 1er Cru Les Joyeuses 2022 hinta on muuttunut. 148,60 € → 157,08 € (+8,48 €, +5,71 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903332-015776c50501.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

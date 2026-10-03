@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – LaCheteau Grolleau Rosé 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901159/",
+	"feed_url": "https://alkometriikka.fi/rss/901159.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: LaCheteau Grolleau Rosé 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901159-2026-07-18-11.99",
+			"url": "https://alkometriikka.fi/tuotteet/901159/",
+			"title": "LaCheteau Grolleau Rosé 2024 — 11,45 € → 11,99 €",
+			"content_html": "<p>Tuotteen LaCheteau Grolleau Rosé 2024 hinta on muuttunut.</p><p>11,45 € → 11,99 € (+0,54 €, +4,72 %).</p>",
+			"summary": "Tuotteen LaCheteau Grolleau Rosé 2024 hinta on muuttunut. 11,45 € → 11,99 € (+0,54 €, +4,72 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901159-b39ffe75e5b0.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

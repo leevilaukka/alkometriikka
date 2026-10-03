@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Neurita Picante Tequila – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903469/",
+	"feed_url": "https://alkometriikka.fi/rss/903469.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Neurita Picante Tequila.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903469-2026-09-29-57.67",
+			"url": "https://alkometriikka.fi/tuotteet/903469/",
+			"title": "Neurita Picante Tequila — 56,90 € → 57,67 €",
+			"content_html": "<p>Tuotteen Neurita Picante Tequila hinta on muuttunut.</p><p>56,90 € → 57,67 € (+0,77 €, +1,35 %).</p>",
+			"summary": "Tuotteen Neurita Picante Tequila hinta on muuttunut. 56,90 € → 57,67 € (+0,77 €, +1,35 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903469-f8c53586f52a.png",
+			"tags": [
+				"Väkevät",
+				"Tequilat"
+			]
+		}
+	]
+}

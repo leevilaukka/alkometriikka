@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Orin Swift Papillon 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902184/",
+	"feed_url": "https://alkometriikka.fi/rss/902184.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Orin Swift Papillon 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902184-2026-09-29-119.98",
+			"url": "https://alkometriikka.fi/tuotteet/902184/",
+			"title": "Orin Swift Papillon 2022 — 114,49 € → 119,98 €",
+			"content_html": "<p>Tuotteen Orin Swift Papillon 2022 hinta on muuttunut.</p><p>114,49 € → 119,98 € (+5,49 €, +4,80 %).</p>",
+			"summary": "Tuotteen Orin Swift Papillon 2022 hinta on muuttunut. 114,49 € → 119,98 € (+5,49 €, +4,80 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902184-76ae56efe993.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Elena Walch Schiava 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/925201/",
+	"feed_url": "https://alkometriikka.fi/rss/925201.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Elena Walch Schiava 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-925201-2026-09-29-21.98",
+			"url": "https://alkometriikka.fi/tuotteet/925201/",
+			"title": "Elena Walch Schiava 2024 — 21,46 € → 21,98 €",
+			"content_html": "<p>Tuotteen Elena Walch Schiava 2024 hinta on muuttunut.</p><p>21,46 € → 21,98 € (+0,52 €, +2,42 %).</p>",
+			"summary": "Tuotteen Elena Walch Schiava 2024 hinta on muuttunut. 21,46 € → 21,98 € (+0,52 €, +2,42 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/925201-99d4401283a5.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

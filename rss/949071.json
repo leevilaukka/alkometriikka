@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tohi Aronia Infused Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/949071/",
+	"feed_url": "https://alkometriikka.fi/rss/949071.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tohi Aronia Infused Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-949071-2026-09-29-51.33",
+			"url": "https://alkometriikka.fi/tuotteet/949071/",
+			"title": "Tohi Aronia Infused Gin — 50,15 € → 51,33 €",
+			"content_html": "<p>Tuotteen Tohi Aronia Infused Gin hinta on muuttunut.</p><p>50,15 € → 51,33 € (+1,18 €, +2,35 %).</p>",
+			"summary": "Tuotteen Tohi Aronia Infused Gin hinta on muuttunut. 50,15 € → 51,33 € (+1,18 €, +2,35 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/949071-6edd29afc685.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

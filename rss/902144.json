@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Banfi Poggio alle Mura Brunello di Montalcino 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902144/",
+	"feed_url": "https://alkometriikka.fi/rss/902144.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Banfi Poggio alle Mura Brunello di Montalcino 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902144-2026-09-29-79.99",
+			"url": "https://alkometriikka.fi/tuotteet/902144/",
+			"title": "Banfi Poggio alle Mura Brunello di Montalcino 2020 — 79,98 € → 79,99 €",
+			"content_html": "<p>Tuotteen Banfi Poggio alle Mura Brunello di Montalcino 2020 hinta on muuttunut.</p><p>79,98 € → 79,99 € (+0,01 €, +0,01 %).</p>",
+			"summary": "Tuotteen Banfi Poggio alle Mura Brunello di Montalcino 2020 hinta on muuttunut. 79,98 € → 79,99 € (+0,01 €, +0,01 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902144-74398dc58431.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

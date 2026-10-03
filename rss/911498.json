@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Rivetto Barolo del Comune di Serralunga d'Alba 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/911498/",
+	"feed_url": "https://alkometriikka.fi/rss/911498.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Rivetto Barolo del Comune di Serralunga d'Alba 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-911498-2026-09-29-72.53",
+			"url": "https://alkometriikka.fi/tuotteet/911498/",
+			"title": "Rivetto Barolo del Comune di Serralunga d'Alba 2022 — 69,99 € → 72,53 €",
+			"content_html": "<p>Tuotteen Rivetto Barolo del Comune di Serralunga d'Alba 2022 hinta on muuttunut.</p><p>69,99 € → 72,53 € (+2,54 €, +3,63 %).</p>",
+			"summary": "Tuotteen Rivetto Barolo del Comune di Serralunga d'Alba 2022 hinta on muuttunut. 69,99 € → 72,53 € (+2,54 €, +3,63 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/911498-f9f11b416640.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-911498-2026-07-18-69.99",
+			"url": "https://alkometriikka.fi/tuotteet/911498/",
+			"title": "Rivetto Barolo del Comune di Serralunga d'Alba 2022 — 70,44 € → 69,99 €",
+			"content_html": "<p>Tuotteen Rivetto Barolo del Comune di Serralunga d'Alba 2022 hinta on muuttunut.</p><p>70,44 € → 69,99 € (−0,45 €, −0,64 %).</p>",
+			"summary": "Tuotteen Rivetto Barolo del Comune di Serralunga d'Alba 2022 hinta on muuttunut. 70,44 € → 69,99 € (−0,45 €, −0,64 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/911498-f9f11b416640.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

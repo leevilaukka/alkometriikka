@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vinory Barolo San Pietro 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900109/",
+	"feed_url": "https://alkometriikka.fi/rss/900109.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vinory Barolo San Pietro 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900109-2026-09-29-104.55",
+			"url": "https://alkometriikka.fi/tuotteet/900109/",
+			"title": "Vinory Barolo San Pietro 2020 — 98,00 € → 104,55 €",
+			"content_html": "<p>Tuotteen Vinory Barolo San Pietro 2020 hinta on muuttunut.</p><p>98,00 € → 104,55 € (+6,55 €, +6,68 %).</p>",
+			"summary": "Tuotteen Vinory Barolo San Pietro 2020 hinta on muuttunut. 98,00 € → 104,55 € (+6,55 €, +6,68 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900109-301562cff8e8.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

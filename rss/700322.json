@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Crowmoor Dry Apple tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/700322/",
+	"feed_url": "https://alkometriikka.fi/rss/700322.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Crowmoor Dry Apple tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-700322-2026-09-29-4.39",
+			"url": "https://alkometriikka.fi/tuotteet/700322/",
+			"title": "Crowmoor Dry Apple tölkki — 4,29 € → 4,39 €",
+			"content_html": "<p>Tuotteen Crowmoor Dry Apple tölkki hinta on muuttunut.</p><p>4,29 € → 4,39 € (+0,10 €, +2,33 %).</p>",
+			"summary": "Tuotteen Crowmoor Dry Apple tölkki hinta on muuttunut. 4,29 € → 4,39 € (+0,10 €, +2,33 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/700322-379b793a11a8.png",
+			"tags": [
+				"Panimotuotteet",
+				"siiderit"
+			]
+		}
+	]
+}

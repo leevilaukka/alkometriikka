@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Zenato Alanera Rosso Veronese 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/909697/",
+	"feed_url": "https://alkometriikka.fi/rss/909697.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Zenato Alanera Rosso Veronese 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-909697-2026-07-18-17.98",
+			"url": "https://alkometriikka.fi/tuotteet/909697/",
+			"title": "Zenato Alanera Rosso Veronese 2022 — 17,34 € → 17,98 €",
+			"content_html": "<p>Tuotteen Zenato Alanera Rosso Veronese 2022 hinta on muuttunut.</p><p>17,34 € → 17,98 € (+0,64 €, +3,69 %).</p>",
+			"summary": "Tuotteen Zenato Alanera Rosso Veronese 2022 hinta on muuttunut. 17,34 € → 17,98 € (+0,64 €, +3,69 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/909697-7def0ce9c829.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

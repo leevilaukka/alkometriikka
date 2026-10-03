@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Escada Touriga Nacional 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/931347/",
+	"feed_url": "https://alkometriikka.fi/rss/931347.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Escada Touriga Nacional 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-931347-2026-07-18-11.98",
+			"url": "https://alkometriikka.fi/tuotteet/931347/",
+			"title": "Escada Touriga Nacional 2024 — 12,38 € → 11,98 €",
+			"content_html": "<p>Tuotteen Escada Touriga Nacional 2024 hinta on muuttunut.</p><p>12,38 € → 11,98 € (−0,40 €, −3,23 %).</p>",
+			"summary": "Tuotteen Escada Touriga Nacional 2024 hinta on muuttunut. 12,38 € → 11,98 € (−0,40 €, −3,23 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/931347-b64bcd19cb75.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

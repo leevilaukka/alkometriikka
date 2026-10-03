@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Panyolai Rubinmeggy – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902372/",
+	"feed_url": "https://alkometriikka.fi/rss/902372.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Panyolai Rubinmeggy.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902372-2026-09-29-60.66",
+			"url": "https://alkometriikka.fi/tuotteet/902372/",
+			"title": "Panyolai Rubinmeggy — 58,88 € → 60,66 €",
+			"content_html": "<p>Tuotteen Panyolai Rubinmeggy hinta on muuttunut.</p><p>58,88 € → 60,66 € (+1,78 €, +3,02 %).</p>",
+			"summary": "Tuotteen Panyolai Rubinmeggy hinta on muuttunut. 58,88 € → 60,66 € (+1,78 €, +3,02 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902372-857a9235b3f1.png",
+			"tags": [
+				"Väkevät",
+				"hedelmätisleet"
+			]
+		}
+	]
+}

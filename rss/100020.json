@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jose Cuervo Especial Silver Tequila – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/100020/",
+	"feed_url": "https://alkometriikka.fi/rss/100020.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jose Cuervo Especial Silver Tequila.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-100020-2026-09-29-26.49",
+			"url": "https://alkometriikka.fi/tuotteet/100020/",
+			"title": "Jose Cuervo Especial Silver Tequila — 26,47 € → 26,49 €",
+			"content_html": "<p>Tuotteen Jose Cuervo Especial Silver Tequila hinta on muuttunut.</p><p>26,47 € → 26,49 € (+0,02 €, +0,08 %).</p>",
+			"summary": "Tuotteen Jose Cuervo Especial Silver Tequila hinta on muuttunut. 26,47 € → 26,49 € (+0,02 €, +0,08 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/100020-d01f685207a0.png",
+			"tags": [
+				"Väkevät",
+				"Tequilat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hibiki Japanese Harmony – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/910957/",
+	"feed_url": "https://alkometriikka.fi/rss/910957.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hibiki Japanese Harmony.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-910957-2026-09-29-124.65",
+			"url": "https://alkometriikka.fi/tuotteet/910957/",
+			"title": "Hibiki Japanese Harmony — 119,71 € → 124,65 €",
+			"content_html": "<p>Tuotteen Hibiki Japanese Harmony hinta on muuttunut.</p><p>119,71 € → 124,65 € (+4,94 €, +4,13 %).</p>",
+			"summary": "Tuotteen Hibiki Japanese Harmony hinta on muuttunut. 119,71 € → 124,65 € (+4,94 €, +4,13 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/910957-87ea1cadae9e.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kasteel Donker – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/009686/",
+	"feed_url": "https://alkometriikka.fi/rss/009686.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kasteel Donker.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-009686-2026-09-29-4.99",
+			"url": "https://alkometriikka.fi/tuotteet/009686/",
+			"title": "Kasteel Donker — 5,29 € → 4,99 €",
+			"content_html": "<p>Tuotteen Kasteel Donker hinta on muuttunut.</p><p>5,29 € → 4,99 € (−0,30 €, −5,67 %).</p>",
+			"summary": "Tuotteen Kasteel Donker hinta on muuttunut. 5,29 € → 4,99 € (−0,30 €, −5,67 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/009686-eae185dbfc30.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

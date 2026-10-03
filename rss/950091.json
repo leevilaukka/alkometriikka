@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kyrö Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/950091/",
+	"feed_url": "https://alkometriikka.fi/rss/950091.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kyrö Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-950091-2026-09-29-56.99",
+			"url": "https://alkometriikka.fi/tuotteet/950091/",
+			"title": "Kyrö Malt — 55,49 € → 56,99 €",
+			"content_html": "<p>Tuotteen Kyrö Malt hinta on muuttunut.</p><p>55,49 € → 56,99 € (+1,50 €, +2,70 %).</p>",
+			"summary": "Tuotteen Kyrö Malt hinta on muuttunut. 55,49 € → 56,99 € (+1,50 €, +2,70 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/950091-9988a65d524a.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

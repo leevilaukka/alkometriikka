@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tenute Sella Lessona 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900265/",
+	"feed_url": "https://alkometriikka.fi/rss/900265.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tenute Sella Lessona 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900265-2026-09-29-48.5",
+			"url": "https://alkometriikka.fi/tuotteet/900265/",
+			"title": "Tenute Sella Lessona 2018 — 44,05 € → 48,50 €",
+			"content_html": "<p>Tuotteen Tenute Sella Lessona 2018 hinta on muuttunut.</p><p>44,05 € → 48,50 € (+4,45 €, +10,10 %).</p>",
+			"summary": "Tuotteen Tenute Sella Lessona 2018 hinta on muuttunut. 44,05 € → 48,50 € (+4,45 €, +10,10 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900265-53e5dd34a2f5.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

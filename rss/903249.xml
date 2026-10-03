@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – L&apos;Intemporelle Maily Grand Cru Champagne Brut 2019 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/903249/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: L&apos;Intemporelle Maily Grand Cru Champagne Brut 2019.</description>
+		<language>fi</language>
+		<lastBuildDate>Sat, 03 Oct 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/903249.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – L&apos;Intemporelle Maily Grand Cru Champagne Brut 2019 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>L&apos;Intemporelle Maily Grand Cru Champagne Brut 2019 — 111,49 € → 117,16 €</title>
+			<link>https://alkometriikka.fi/tuotteet/903249/</link>
+			<guid isPermaLink="false">alkometriikka-903249-2026-09-29-117.16</guid>
+			<pubDate>Tue, 29 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / kuohuviinit ja samppanjat</category>
+			<description><![CDATA[<p>Tuotteen L'Intemporelle Maily Grand Cru Champagne Brut 2019 hinta on muuttunut.</p><p>111,49 € → 117,16 € (+5,67 €, +5,09 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903249-124b4a8dc577.png" />
+		</item>
+	</channel>
+</rss>

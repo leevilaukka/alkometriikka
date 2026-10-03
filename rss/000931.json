@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Albert Jarraud VSOP – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/000931/",
+	"feed_url": "https://alkometriikka.fi/rss/000931.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Albert Jarraud VSOP.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-000931-2026-07-18-44.98",
+			"url": "https://alkometriikka.fi/tuotteet/000931/",
+			"title": "Albert Jarraud VSOP — 44,77 € → 44,98 €",
+			"content_html": "<p>Tuotteen Albert Jarraud VSOP hinta on muuttunut.</p><p>44,77 € → 44,98 € (+0,21 €, +0,47 %).</p>",
+			"summary": "Tuotteen Albert Jarraud VSOP hinta on muuttunut. 44,77 € → 44,98 € (+0,21 €, +0,47 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/000931-be9d47961156.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

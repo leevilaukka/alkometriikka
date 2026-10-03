@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Steininger Grüner Veltliner Kamptal 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/526567/",
+	"feed_url": "https://alkometriikka.fi/rss/526567.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Steininger Grüner Veltliner Kamptal 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-526567-2026-07-18-14.99",
+			"url": "https://alkometriikka.fi/tuotteet/526567/",
+			"title": "Steininger Grüner Veltliner Kamptal 2025 — 14,75 € → 14,99 €",
+			"content_html": "<p>Tuotteen Steininger Grüner Veltliner Kamptal 2025 hinta on muuttunut.</p><p>14,75 € → 14,99 € (+0,24 €, +1,63 %).</p>",
+			"summary": "Tuotteen Steininger Grüner Veltliner Kamptal 2025 hinta on muuttunut. 14,75 € → 14,99 € (+0,24 €, +1,63 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/526567-710f42e6f004.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

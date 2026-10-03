@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Arpepe Sassella Rocce Rosse Riserva 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/911556/",
+	"feed_url": "https://alkometriikka.fi/rss/911556.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Arpepe Sassella Rocce Rosse Riserva 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-911556-2026-09-29-111.2",
+			"url": "https://alkometriikka.fi/tuotteet/911556/",
+			"title": "Arpepe Sassella Rocce Rosse Riserva 2018 — 105,90 € → 111,20 €",
+			"content_html": "<p>Tuotteen Arpepe Sassella Rocce Rosse Riserva 2018 hinta on muuttunut.</p><p>105,90 € → 111,20 € (+5,30 €, +5,00 %).</p>",
+			"summary": "Tuotteen Arpepe Sassella Rocce Rosse Riserva 2018 hinta on muuttunut. 105,90 € → 111,20 € (+5,30 €, +5,00 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/911556-ad894464f8fa.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-911556-2026-07-18-105.9",
+			"url": "https://alkometriikka.fi/tuotteet/911556/",
+			"title": "Arpepe Sassella Rocce Rosse Riserva 2018 — 105,86 € → 105,90 €",
+			"content_html": "<p>Tuotteen Arpepe Sassella Rocce Rosse Riserva 2018 hinta on muuttunut.</p><p>105,86 € → 105,90 € (+0,04 €, +0,04 %).</p>",
+			"summary": "Tuotteen Arpepe Sassella Rocce Rosse Riserva 2018 hinta on muuttunut. 105,86 € → 105,90 € (+0,04 €, +0,04 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/911556-ad894464f8fa.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

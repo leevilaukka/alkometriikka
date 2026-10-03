@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Teerenpeli Kaski Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/143666/",
+	"feed_url": "https://alkometriikka.fi/rss/143666.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Teerenpeli Kaski Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-143666-2026-09-29-59.9",
+			"url": "https://alkometriikka.fi/tuotteet/143666/",
+			"title": "Teerenpeli Kaski Single Malt — 58,99 € → 59,90 €",
+			"content_html": "<p>Tuotteen Teerenpeli Kaski Single Malt hinta on muuttunut.</p><p>58,99 € → 59,90 € (+0,91 €, +1,54 %).</p>",
+			"summary": "Tuotteen Teerenpeli Kaski Single Malt hinta on muuttunut. 58,99 € → 59,90 € (+0,91 €, +1,54 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/143666-c8876f72c14a.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

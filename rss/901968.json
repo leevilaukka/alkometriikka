@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Krug Clos du Mesnil Blanc de Blanc Champagne Brut 2006 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901968/",
+	"feed_url": "https://alkometriikka.fi/rss/901968.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Krug Clos du Mesnil Blanc de Blanc Champagne Brut 2006.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901968-2026-09-29-1932.99",
+			"url": "https://alkometriikka.fi/tuotteet/901968/",
+			"title": "Krug Clos du Mesnil Blanc de Blanc Champagne Brut 2006 — 1 800,46 € → 1 932,99 €",
+			"content_html": "<p>Tuotteen Krug Clos du Mesnil Blanc de Blanc Champagne Brut 2006 hinta on muuttunut.</p><p>1 800,46 € → 1 932,99 € (+132,53 €, +7,36 %).</p>",
+			"summary": "Tuotteen Krug Clos du Mesnil Blanc de Blanc Champagne Brut 2006 hinta on muuttunut. 1 800,46 € → 1 932,99 € (+132,53 €, +7,36 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901968-41092a547ac2.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

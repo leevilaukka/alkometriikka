@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Faustino Tempranillo hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/917408/",
+	"feed_url": "https://alkometriikka.fi/rss/917408.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Faustino Tempranillo hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-917408-2026-09-29-46.89",
+			"url": "https://alkometriikka.fi/tuotteet/917408/",
+			"title": "Faustino Tempranillo hanapakkaus — 46,79 € → 46,89 €",
+			"content_html": "<p>Tuotteen Faustino Tempranillo hanapakkaus hinta on muuttunut.</p><p>46,79 € → 46,89 € (+0,10 €, +0,21 %).</p>",
+			"summary": "Tuotteen Faustino Tempranillo hanapakkaus hinta on muuttunut. 46,79 € → 46,89 € (+0,10 €, +0,21 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/917408-e408d26e8af3.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

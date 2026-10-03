@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Zuccardi Finca Piedra Infinita 2017 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/909613/",
+	"feed_url": "https://alkometriikka.fi/rss/909613.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Zuccardi Finca Piedra Infinita 2017.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-909613-2026-07-18-169.98",
+			"url": "https://alkometriikka.fi/tuotteet/909613/",
+			"title": "Zuccardi Finca Piedra Infinita 2017 — 170,45 € → 169,98 €",
+			"content_html": "<p>Tuotteen Zuccardi Finca Piedra Infinita 2017 hinta on muuttunut.</p><p>170,45 € → 169,98 € (−0,47 €, −0,28 %).</p>",
+			"summary": "Tuotteen Zuccardi Finca Piedra Infinita 2017 hinta on muuttunut. 170,45 € → 169,98 € (−0,47 €, −0,28 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/909613-d942a5f6b6fa.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

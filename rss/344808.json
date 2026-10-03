@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Martini Rosso – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/344808/",
+	"feed_url": "https://alkometriikka.fi/rss/344808.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Martini Rosso.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-344808-2026-07-18-21.98",
+			"url": "https://alkometriikka.fi/tuotteet/344808/",
+			"title": "Martini Rosso — 22,09 € → 21,98 €",
+			"content_html": "<p>Tuotteen Martini Rosso hinta on muuttunut.</p><p>22,09 € → 21,98 € (−0,11 €, −0,50 %).</p>",
+			"summary": "Tuotteen Martini Rosso hinta on muuttunut. 22,09 € → 21,98 € (−0,11 €, −0,50 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/344808-b66c9eb61f23.png",
+			"tags": [
+				"Välituotteet",
+				"vermutit"
+			]
+		}
+	]
+}

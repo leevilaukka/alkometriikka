@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Wanted Zin 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/441547/",
+	"feed_url": "https://alkometriikka.fi/rss/441547.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Wanted Zin 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-441547-2026-09-29-12.99",
+			"url": "https://alkometriikka.fi/tuotteet/441547/",
+			"title": "The Wanted Zin 2024 — 12,98 € → 12,99 €",
+			"content_html": "<p>Tuotteen The Wanted Zin 2024 hinta on muuttunut.</p><p>12,98 € → 12,99 € (+0,01 €, +0,08 %).</p>",
+			"summary": "Tuotteen The Wanted Zin 2024 hinta on muuttunut. 12,98 € → 12,99 € (+0,01 €, +0,08 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/441547-c7bac8b8bf3b.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Condado de Oriza Crianza 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/400093/",
+	"feed_url": "https://alkometriikka.fi/rss/400093.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Condado de Oriza Crianza 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-400093-2026-07-18-15.49",
+			"url": "https://alkometriikka.fi/tuotteet/400093/",
+			"title": "Condado de Oriza Crianza 2023 — 15,45 € → 15,49 €",
+			"content_html": "<p>Tuotteen Condado de Oriza Crianza 2023 hinta on muuttunut.</p><p>15,45 € → 15,49 € (+0,04 €, +0,26 %).</p>",
+			"summary": "Tuotteen Condado de Oriza Crianza 2023 hinta on muuttunut. 15,45 € → 15,49 € (+0,04 €, +0,26 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/400093-4cdaf8f8ac66.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

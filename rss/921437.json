@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – El Miracle Organic Cava Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/921437/",
+	"feed_url": "https://alkometriikka.fi/rss/921437.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: El Miracle Organic Cava Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-921437-2026-09-29-17.87",
+			"url": "https://alkometriikka.fi/tuotteet/921437/",
+			"title": "El Miracle Organic Cava Brut — 17,46 € → 17,87 €",
+			"content_html": "<p>Tuotteen El Miracle Organic Cava Brut hinta on muuttunut.</p><p>17,46 € → 17,87 € (+0,41 €, +2,35 %).</p>",
+			"summary": "Tuotteen El Miracle Organic Cava Brut hinta on muuttunut. 17,46 € → 17,87 € (+0,41 €, +2,35 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/921437-0524fe4aaceb.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

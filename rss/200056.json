@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Michter's Small Batch US 1 Bourbon – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/200056/",
+	"feed_url": "https://alkometriikka.fi/rss/200056.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Michter's Small Batch US 1 Bourbon.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-200056-2026-09-29-63.83",
+			"url": "https://alkometriikka.fi/tuotteet/200056/",
+			"title": "Michter's Small Batch US 1 Bourbon — 62,98 € → 63,83 €",
+			"content_html": "<p>Tuotteen Michter's Small Batch US 1 Bourbon hinta on muuttunut.</p><p>62,98 € → 63,83 € (+0,85 €, +1,35 %).</p>",
+			"summary": "Tuotteen Michter's Small Batch US 1 Bourbon hinta on muuttunut. 62,98 € → 63,83 € (+0,85 €, +1,35 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/200056-07b4f72cc5be.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

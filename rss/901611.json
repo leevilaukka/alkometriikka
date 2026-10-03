@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Maison Leroy Bourgogne Rouge En Hommage a l'An 2000 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901611/",
+	"feed_url": "https://alkometriikka.fi/rss/901611.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Maison Leroy Bourgogne Rouge En Hommage a l'An 2000.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901611-2026-09-29-460.5",
+			"url": "https://alkometriikka.fi/tuotteet/901611/",
+			"title": "Maison Leroy Bourgogne Rouge En Hommage a l'An 2000 — 430,60 € → 460,50 €",
+			"content_html": "<p>Tuotteen Maison Leroy Bourgogne Rouge En Hommage a l'An 2000 hinta on muuttunut.</p><p>430,60 € → 460,50 € (+29,90 €, +6,94 %).</p>",
+			"summary": "Tuotteen Maison Leroy Bourgogne Rouge En Hommage a l'An 2000 hinta on muuttunut. 430,60 € → 460,50 € (+29,90 €, +6,94 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901611-2174d8f94f13.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

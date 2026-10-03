@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bernardi Millesimato Prosecco Dry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/588754/",
+	"feed_url": "https://alkometriikka.fi/rss/588754.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bernardi Millesimato Prosecco Dry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-588754-2026-02-02-11.1",
+			"url": "https://alkometriikka.fi/tuotteet/588754/",
+			"title": "Bernardi Millesimato Prosecco Dry — 11,20 € → 11,10 €",
+			"content_html": "<p>Tuotteen Bernardi Millesimato Prosecco Dry hinta on muuttunut.</p><p>11,20 € → 11,10 € (−0,10 €, −0,89 %).</p>",
+			"summary": "Tuotteen Bernardi Millesimato Prosecco Dry hinta on muuttunut. 11,20 € → 11,10 € (−0,10 €, −0,89 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/588754-ae5216a7f399.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-588754-2026-02-02-11.2",
+			"url": "https://alkometriikka.fi/tuotteet/588754/",
+			"title": "Bernardi Millesimato Prosecco Dry — 11,10 € → 11,20 €",
+			"content_html": "<p>Tuotteen Bernardi Millesimato Prosecco Dry hinta on muuttunut.</p><p>11,10 € → 11,20 € (+0,10 €, +0,90 %).</p>",
+			"summary": "Tuotteen Bernardi Millesimato Prosecco Dry hinta on muuttunut. 11,10 € → 11,20 € (+0,10 €, +0,90 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/588754-ae5216a7f399.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

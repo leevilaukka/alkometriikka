@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Arctic Blue Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/959621/",
+	"feed_url": "https://alkometriikka.fi/rss/959621.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Arctic Blue Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-959621-2026-09-29-22.2",
+			"url": "https://alkometriikka.fi/tuotteet/959621/",
+			"title": "Arctic Blue Gin — 21,69 € → 22,20 €",
+			"content_html": "<p>Tuotteen Arctic Blue Gin hinta on muuttunut.</p><p>21,69 € → 22,20 € (+0,51 €, +2,35 %).</p>",
+			"summary": "Tuotteen Arctic Blue Gin hinta on muuttunut. 21,69 € → 22,20 € (+0,51 €, +2,35 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/959621-7c0efd9292ea.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

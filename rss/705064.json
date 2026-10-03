@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Original Long Drink Cranberry tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/705064/",
+	"feed_url": "https://alkometriikka.fi/rss/705064.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Original Long Drink Cranberry tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-705064-2026-09-29-3.09",
+			"url": "https://alkometriikka.fi/tuotteet/705064/",
+			"title": "Original Long Drink Cranberry tölkki — 2,99 € → 3,09 €",
+			"content_html": "<p>Tuotteen Original Long Drink Cranberry tölkki hinta on muuttunut.</p><p>2,99 € → 3,09 € (+0,10 €, +3,34 %).</p>",
+			"summary": "Tuotteen Original Long Drink Cranberry tölkki hinta on muuttunut. 2,99 € → 3,09 € (+0,10 €, +3,34 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/705064-6594e9a95380.png",
+			"tags": [
+				"Panimotuotteet",
+				"juomasekoitukset"
+			]
+		}
+	]
+}

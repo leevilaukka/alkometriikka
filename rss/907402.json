@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tomintoul 10 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/907402/",
+	"feed_url": "https://alkometriikka.fi/rss/907402.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tomintoul 10 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-907402-2026-09-29-57.26",
+			"url": "https://alkometriikka.fi/tuotteet/907402/",
+			"title": "Tomintoul 10 Year Old Single Malt — 56,67 € → 57,26 €",
+			"content_html": "<p>Tuotteen Tomintoul 10 Year Old Single Malt hinta on muuttunut.</p><p>56,67 € → 57,26 € (+0,59 €, +1,04 %).</p>",
+			"summary": "Tuotteen Tomintoul 10 Year Old Single Malt hinta on muuttunut. 56,67 € → 57,26 € (+0,59 €, +1,04 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/907402-d43a711b53cd.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

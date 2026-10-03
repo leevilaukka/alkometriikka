@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ardnahoe Bholsa Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902566/",
+	"feed_url": "https://alkometriikka.fi/rss/902566.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ardnahoe Bholsa Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902566-2026-09-29-97.26",
+			"url": "https://alkometriikka.fi/tuotteet/902566/",
+			"title": "Ardnahoe Bholsa Single Malt — 94,33 € → 97,26 €",
+			"content_html": "<p>Tuotteen Ardnahoe Bholsa Single Malt hinta on muuttunut.</p><p>94,33 € → 97,26 € (+2,93 €, +3,11 %).</p>",
+			"summary": "Tuotteen Ardnahoe Bholsa Single Malt hinta on muuttunut. 94,33 € → 97,26 € (+2,93 €, +3,11 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902566-d52cb877b99f.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

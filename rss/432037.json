@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Joseph Drouhin Moulin-à-Vent 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/432037/",
+	"feed_url": "https://alkometriikka.fi/rss/432037.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Joseph Drouhin Moulin-à-Vent 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-432037-2026-07-18-26.99",
+			"url": "https://alkometriikka.fi/tuotteet/432037/",
+			"title": "Joseph Drouhin Moulin-à-Vent 2022 — 26,37 € → 26,99 €",
+			"content_html": "<p>Tuotteen Joseph Drouhin Moulin-à-Vent 2022 hinta on muuttunut.</p><p>26,37 € → 26,99 € (+0,62 €, +2,35 %).</p>",
+			"summary": "Tuotteen Joseph Drouhin Moulin-à-Vent 2022 hinta on muuttunut. 26,37 € → 26,99 € (+0,62 €, +2,35 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/432037-b30c3d3fb817.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

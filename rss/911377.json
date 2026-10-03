@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Compass Box Great King St Glasgow Blend – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/911377/",
+	"feed_url": "https://alkometriikka.fi/rss/911377.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Compass Box Great King St Glasgow Blend.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-911377-2026-09-29-59.16",
+			"url": "https://alkometriikka.fi/tuotteet/911377/",
+			"title": "Compass Box Great King St Glasgow Blend — 58,56 € → 59,16 €",
+			"content_html": "<p>Tuotteen Compass Box Great King St Glasgow Blend hinta on muuttunut.</p><p>58,56 € → 59,16 € (+0,60 €, +1,02 %).</p>",
+			"summary": "Tuotteen Compass Box Great King St Glasgow Blend hinta on muuttunut. 58,56 € → 59,16 € (+0,60 €, +1,02 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/911377-ce41b4ac4316.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

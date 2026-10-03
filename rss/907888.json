@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Petri Spätburgunder 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/907888/",
+	"feed_url": "https://alkometriikka.fi/rss/907888.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Petri Spätburgunder 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-907888-2026-07-18-24.54",
+			"url": "https://alkometriikka.fi/tuotteet/907888/",
+			"title": "Petri Spätburgunder 2022 — 23,09 € → 24,54 €",
+			"content_html": "<p>Tuotteen Petri Spätburgunder 2022 hinta on muuttunut.</p><p>23,09 € → 24,54 € (+1,45 €, +6,28 %).</p>",
+			"summary": "Tuotteen Petri Spätburgunder 2022 hinta on muuttunut. 23,09 € → 24,54 € (+1,45 €, +6,28 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/907888-ad95d8d064b9.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

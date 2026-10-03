@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château Ksara Blanc de Blancs 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/522847/",
+	"feed_url": "https://alkometriikka.fi/rss/522847.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château Ksara Blanc de Blancs 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-522847-2026-07-18-21.9",
+			"url": "https://alkometriikka.fi/tuotteet/522847/",
+			"title": "Château Ksara Blanc de Blancs 2023 — 20,26 € → 21,90 €",
+			"content_html": "<p>Tuotteen Château Ksara Blanc de Blancs 2023 hinta on muuttunut.</p><p>20,26 € → 21,90 € (+1,64 €, +8,09 %).</p>",
+			"summary": "Tuotteen Château Ksara Blanc de Blancs 2023 hinta on muuttunut. 20,26 € → 21,90 € (+1,64 €, +8,09 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/522847-9a2a7402ae5e.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

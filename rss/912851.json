@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Van Zellers & Co 30 Years Old Tawny Port & Co – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/912851/",
+	"feed_url": "https://alkometriikka.fi/rss/912851.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Van Zellers & Co 30 Years Old Tawny Port & Co.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-912851-2026-09-29-133.26",
+			"url": "https://alkometriikka.fi/tuotteet/912851/",
+			"title": "Van Zellers & Co 30 Years Old Tawny Port & Co — 126,72 € → 133,26 €",
+			"content_html": "<p>Tuotteen Van Zellers & Co 30 Years Old Tawny Port & Co hinta on muuttunut.</p><p>126,72 € → 133,26 € (+6,54 €, +5,16 %).</p>",
+			"summary": "Tuotteen Van Zellers & Co 30 Years Old Tawny Port & Co hinta on muuttunut. 126,72 € → 133,26 € (+6,54 €, +5,16 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/912851-b588f92b0279.png",
+			"tags": [
+				"Välituotteet",
+				"portviinit"
+			]
+		}
+	]
+}

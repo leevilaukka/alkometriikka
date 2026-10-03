@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Zonin Prosecco Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/538714/",
+	"feed_url": "https://alkometriikka.fi/rss/538714.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Zonin Prosecco Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-538714-2026-07-18-7.39",
+			"url": "https://alkometriikka.fi/tuotteet/538714/",
+			"title": "Zonin Prosecco Brut — 7,19 € → 7,39 €",
+			"content_html": "<p>Tuotteen Zonin Prosecco Brut hinta on muuttunut.</p><p>7,19 € → 7,39 € (+0,20 €, +2,78 %).</p>",
+			"summary": "Tuotteen Zonin Prosecco Brut hinta on muuttunut. 7,19 € → 7,39 € (+0,20 €, +2,78 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/538714-a4559fe32d09.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

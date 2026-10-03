@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Sogatia Chianti Riserva 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/944932/",
+	"feed_url": "https://alkometriikka.fi/rss/944932.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Sogatia Chianti Riserva 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-944932-2026-07-18-13.48",
+			"url": "https://alkometriikka.fi/tuotteet/944932/",
+			"title": "Sogatia Chianti Riserva 2022 — 13,40 € → 13,48 €",
+			"content_html": "<p>Tuotteen Sogatia Chianti Riserva 2022 hinta on muuttunut.</p><p>13,40 € → 13,48 € (+0,08 €, +0,60 %).</p>",
+			"summary": "Tuotteen Sogatia Chianti Riserva 2022 hinta on muuttunut. 13,40 € → 13,48 € (+0,08 €, +0,60 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/944932-38c9ef1e6360.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

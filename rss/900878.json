@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Laurent Ponsot Meursault Cuvee du Pandorea 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900878/",
+	"feed_url": "https://alkometriikka.fi/rss/900878.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Laurent Ponsot Meursault Cuvee du Pandorea 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900878-2026-09-29-128.75",
+			"url": "https://alkometriikka.fi/tuotteet/900878/",
+			"title": "Laurent Ponsot Meursault Cuvee du Pandorea 2022 — 122,25 € → 128,75 €",
+			"content_html": "<p>Tuotteen Laurent Ponsot Meursault Cuvee du Pandorea 2022 hinta on muuttunut.</p><p>122,25 € → 128,75 € (+6,50 €, +5,32 %).</p>",
+			"summary": "Tuotteen Laurent Ponsot Meursault Cuvee du Pandorea 2022 hinta on muuttunut. 122,25 € → 128,75 € (+6,50 €, +5,32 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900878-5167e1cf8554.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

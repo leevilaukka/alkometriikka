@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pata Negra Organic Cava Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901977/",
+	"feed_url": "https://alkometriikka.fi/rss/901977.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pata Negra Organic Cava Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901977-2026-09-29-12.99",
+			"url": "https://alkometriikka.fi/tuotteet/901977/",
+			"title": "Pata Negra Organic Cava Brut — 13,69 € → 12,99 €",
+			"content_html": "<p>Tuotteen Pata Negra Organic Cava Brut hinta on muuttunut.</p><p>13,69 € → 12,99 € (−0,70 €, −5,11 %).</p>",
+			"summary": "Tuotteen Pata Negra Organic Cava Brut hinta on muuttunut. 13,69 € → 12,99 € (−0,70 €, −5,11 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901977-fe43e1496a96.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

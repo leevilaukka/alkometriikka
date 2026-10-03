@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nonino Grappa Chardonnay 12 mesi – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/958883/",
+	"feed_url": "https://alkometriikka.fi/rss/958883.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nonino Grappa Chardonnay 12 mesi.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-958883-2026-09-29-45.69",
+			"url": "https://alkometriikka.fi/tuotteet/958883/",
+			"title": "Nonino Grappa Chardonnay 12 mesi — 45,00 € → 45,69 €",
+			"content_html": "<p>Tuotteen Nonino Grappa Chardonnay 12 mesi hinta on muuttunut.</p><p>45,00 € → 45,69 € (+0,69 €, +1,53 %).</p>",
+			"summary": "Tuotteen Nonino Grappa Chardonnay 12 mesi hinta on muuttunut. 45,00 € → 45,69 € (+0,69 €, +1,53 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/958883-9c169a3e213d.png",
+			"tags": [
+				"Väkevät",
+				"grapat"
+			]
+		}
+	]
+}

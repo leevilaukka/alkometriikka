@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bulleit Bourbon – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/176527/",
+	"feed_url": "https://alkometriikka.fi/rss/176527.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bulleit Bourbon.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-176527-2026-07-18-40.99",
+			"url": "https://alkometriikka.fi/tuotteet/176527/",
+			"title": "Bulleit Bourbon — 44,30 € → 40,99 €",
+			"content_html": "<p>Tuotteen Bulleit Bourbon hinta on muuttunut.</p><p>44,30 € → 40,99 € (−3,31 €, −7,47 %).</p>",
+			"summary": "Tuotteen Bulleit Bourbon hinta on muuttunut. 44,30 € → 40,99 € (−3,31 €, −7,47 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/176527-76a554c006de.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

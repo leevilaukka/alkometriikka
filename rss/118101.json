@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Berneroy XO Calvados – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/118101/",
+	"feed_url": "https://alkometriikka.fi/rss/118101.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Berneroy XO Calvados.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-118101-2026-09-29-4.98",
+			"url": "https://alkometriikka.fi/tuotteet/118101/",
+			"title": "Berneroy XO Calvados — 4,90 € → 4,98 €",
+			"content_html": "<p>Tuotteen Berneroy XO Calvados hinta on muuttunut.</p><p>4,90 € → 4,98 € (+0,08 €, +1,63 %).</p>",
+			"summary": "Tuotteen Berneroy XO Calvados hinta on muuttunut. 4,90 € → 4,98 € (+0,08 €, +1,63 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/118101-f38abd47be46.png",
+			"tags": [
+				"Väkevät",
+				"calvadosit"
+			]
+		}
+	]
+}

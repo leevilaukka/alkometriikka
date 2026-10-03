@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – LAN Culmen 2017 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/908925/",
+	"feed_url": "https://alkometriikka.fi/rss/908925.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: LAN Culmen 2017.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-908925-2026-09-29-81.59",
+			"url": "https://alkometriikka.fi/tuotteet/908925/",
+			"title": "LAN Culmen 2017 — 78,42 € → 81,59 €",
+			"content_html": "<p>Tuotteen LAN Culmen 2017 hinta on muuttunut.</p><p>78,42 € → 81,59 € (+3,17 €, +4,04 %).</p>",
+			"summary": "Tuotteen LAN Culmen 2017 hinta on muuttunut. 78,42 € → 81,59 € (+3,17 €, +4,04 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/908925-5e56b2febd69.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Macallan M Copper 2023 Release Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/944885/",
+	"feed_url": "https://alkometriikka.fi/rss/944885.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Macallan M Copper 2023 Release Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-944885-2026-09-29-9092.82",
+			"url": "https://alkometriikka.fi/tuotteet/944885/",
+			"title": "The Macallan M Copper 2023 Release Single Malt — 8 488,05 € → 9 092,82 €",
+			"content_html": "<p>Tuotteen The Macallan M Copper 2023 Release Single Malt hinta on muuttunut.</p><p>8 488,05 € → 9 092,82 € (+604,77 €, +7,12 %).</p>",
+			"summary": "Tuotteen The Macallan M Copper 2023 Release Single Malt hinta on muuttunut. 8 488,05 € → 9 092,82 € (+604,77 €, +7,12 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/944885-5a6d383b8a31.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

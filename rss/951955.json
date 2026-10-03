@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dourakis Euphoria 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/951955/",
+	"feed_url": "https://alkometriikka.fi/rss/951955.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dourakis Euphoria 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-951955-2026-09-29-58.12",
+			"url": "https://alkometriikka.fi/tuotteet/951955/",
+			"title": "Dourakis Euphoria 2024 — 55,74 € → 58,12 €",
+			"content_html": "<p>Tuotteen Dourakis Euphoria 2024 hinta on muuttunut.</p><p>55,74 € → 58,12 € (+2,38 €, +4,27 %).</p>",
+			"summary": "Tuotteen Dourakis Euphoria 2024 hinta on muuttunut. 55,74 € → 58,12 € (+2,38 €, +4,27 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/951955-af6bdd602e09.png",
+			"tags": [
+				"Viinit",
+				"jälkiruokaviinit"
+			]
+		}
+	]
+}

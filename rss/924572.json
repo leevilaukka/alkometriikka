@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – ISH Mexican Agave – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/924572/",
+	"feed_url": "https://alkometriikka.fi/rss/924572.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: ISH Mexican Agave.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-924572-2026-07-18-19.99",
+			"url": "https://alkometriikka.fi/tuotteet/924572/",
+			"title": "ISH Mexican Agave — 19,87 € → 19,99 €",
+			"content_html": "<p>Tuotteen ISH Mexican Agave hinta on muuttunut.</p><p>19,87 € → 19,99 € (+0,12 €, +0,60 %).</p>",
+			"summary": "Tuotteen ISH Mexican Agave hinta on muuttunut. 19,87 € → 19,99 € (+0,12 €, +0,60 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/924572-8828bccc2c7e.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

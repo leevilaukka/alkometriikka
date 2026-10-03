@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Laherte Freres Champagne Extra-Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901366/",
+	"feed_url": "https://alkometriikka.fi/rss/901366.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Laherte Freres Champagne Extra-Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901366-2026-09-29-64.82",
+			"url": "https://alkometriikka.fi/tuotteet/901366/",
+			"title": "Laherte Freres Champagne Extra-Brut — 62,81 € → 64,82 €",
+			"content_html": "<p>Tuotteen Laherte Freres Champagne Extra-Brut hinta on muuttunut.</p><p>62,81 € → 64,82 € (+2,01 €, +3,20 %).</p>",
+			"summary": "Tuotteen Laherte Freres Champagne Extra-Brut hinta on muuttunut. 62,81 € → 64,82 € (+2,01 €, +3,20 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901366-fbf0fbf65ed4.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

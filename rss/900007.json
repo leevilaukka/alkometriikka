@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mallaskoski Imperial Red Ale – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900007/",
+	"feed_url": "https://alkometriikka.fi/rss/900007.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mallaskoski Imperial Red Ale.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900007-2026-07-18-4.89",
+			"url": "https://alkometriikka.fi/tuotteet/900007/",
+			"title": "Mallaskoski Imperial Red Ale — 4,90 € → 4,89 €",
+			"content_html": "<p>Tuotteen Mallaskoski Imperial Red Ale hinta on muuttunut.</p><p>4,90 € → 4,89 € (−0,01 €, −0,20 %).</p>",
+			"summary": "Tuotteen Mallaskoski Imperial Red Ale hinta on muuttunut. 4,90 € → 4,89 € (−0,01 €, −0,20 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900007-91f9e52d68d1.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

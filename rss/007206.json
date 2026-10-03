@@ -1,0 +1,50 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – JP. Chenet Colombard-Sauvignon 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/007206/",
+	"feed_url": "https://alkometriikka.fi/rss/007206.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: JP. Chenet Colombard-Sauvignon 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-007206-2026-07-18-4.18",
+			"url": "https://alkometriikka.fi/tuotteet/007206/",
+			"title": "JP. Chenet Colombard-Sauvignon 2023 — 4,14 € → 4,18 €",
+			"content_html": "<p>Tuotteen JP. Chenet Colombard-Sauvignon 2023 hinta on muuttunut.</p><p>4,14 € → 4,18 € (+0,04 €, +0,97 %).</p>",
+			"summary": "Tuotteen JP. Chenet Colombard-Sauvignon 2023 hinta on muuttunut. 4,14 € → 4,18 € (+0,04 €, +0,97 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/007206-c30df9094fd1.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-007206-2026-02-02-4.04",
+			"url": "https://alkometriikka.fi/tuotteet/007206/",
+			"title": "JP. Chenet Colombard-Sauvignon 2023 — 4,14 € → 4,04 €",
+			"content_html": "<p>Tuotteen JP. Chenet Colombard-Sauvignon 2023 hinta on muuttunut.</p><p>4,14 € → 4,04 € (−0,10 €, −2,42 %).</p>",
+			"summary": "Tuotteen JP. Chenet Colombard-Sauvignon 2023 hinta on muuttunut. 4,14 € → 4,04 € (−0,10 €, −2,42 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/007206-c30df9094fd1.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-007206-2026-02-02-4.14",
+			"url": "https://alkometriikka.fi/tuotteet/007206/",
+			"title": "JP. Chenet Colombard-Sauvignon 2023 — 4,04 € → 4,14 €",
+			"content_html": "<p>Tuotteen JP. Chenet Colombard-Sauvignon 2023 hinta on muuttunut.</p><p>4,04 € → 4,14 € (+0,10 €, +2,48 %).</p>",
+			"summary": "Tuotteen JP. Chenet Colombard-Sauvignon 2023 hinta on muuttunut. 4,04 € → 4,14 € (+0,10 €, +2,48 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/007206-c30df9094fd1.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – JP. Chenet Cabernet Syrah 2023 viinipussi – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/420672/",
+	"feed_url": "https://alkometriikka.fi/rss/420672.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: JP. Chenet Cabernet Syrah 2023 viinipussi.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-420672-2026-09-29-3.39",
+			"url": "https://alkometriikka.fi/tuotteet/420672/",
+			"title": "JP. Chenet Cabernet Syrah 2023 viinipussi — 3,29 € → 3,39 €",
+			"content_html": "<p>Tuotteen JP. Chenet Cabernet Syrah 2023 viinipussi hinta on muuttunut.</p><p>3,29 € → 3,39 € (+0,10 €, +3,04 %).</p>",
+			"summary": "Tuotteen JP. Chenet Cabernet Syrah 2023 viinipussi hinta on muuttunut. 3,29 € → 3,39 € (+0,10 €, +3,04 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/420672-2b7ce08f2169.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Boizel Rosé Absolu Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/919414/",
+	"feed_url": "https://alkometriikka.fi/rss/919414.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Boizel Rosé Absolu Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-919414-2026-09-29-71.49",
+			"url": "https://alkometriikka.fi/tuotteet/919414/",
+			"title": "Boizel Rosé Absolu Champagne Brut — 68,49 € → 71,49 €",
+			"content_html": "<p>Tuotteen Boizel Rosé Absolu Champagne Brut hinta on muuttunut.</p><p>68,49 € → 71,49 € (+3,00 €, +4,38 %).</p>",
+			"summary": "Tuotteen Boizel Rosé Absolu Champagne Brut hinta on muuttunut. 68,49 € → 71,49 € (+3,00 €, +4,38 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/919414-c9ed5f5f436c.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-919414-2026-07-18-68.49",
+			"url": "https://alkometriikka.fi/tuotteet/919414/",
+			"title": "Boizel Rosé Absolu Champagne Brut — 68,46 € → 68,49 €",
+			"content_html": "<p>Tuotteen Boizel Rosé Absolu Champagne Brut hinta on muuttunut.</p><p>68,46 € → 68,49 € (+0,03 €, +0,04 %).</p>",
+			"summary": "Tuotteen Boizel Rosé Absolu Champagne Brut hinta on muuttunut. 68,46 € → 68,49 € (+0,03 €, +0,04 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/919414-c9ed5f5f436c.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

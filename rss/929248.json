@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Casa Elemental Ron Blanco Artesanal – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/929248/",
+	"feed_url": "https://alkometriikka.fi/rss/929248.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Casa Elemental Ron Blanco Artesanal.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-929248-2026-09-29-65.73",
+			"url": "https://alkometriikka.fi/tuotteet/929248/",
+			"title": "Casa Elemental Ron Blanco Artesanal — 64,66 € → 65,73 €",
+			"content_html": "<p>Tuotteen Casa Elemental Ron Blanco Artesanal hinta on muuttunut.</p><p>64,66 € → 65,73 € (+1,07 €, +1,65 %).</p>",
+			"summary": "Tuotteen Casa Elemental Ron Blanco Artesanal hinta on muuttunut. 64,66 € → 65,73 € (+1,07 €, +1,65 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/929248-7639b5cc540e.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

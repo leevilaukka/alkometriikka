@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Arancione Originale Valpolicella Ripasso Superiore 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/406937/",
+	"feed_url": "https://alkometriikka.fi/rss/406937.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Arancione Originale Valpolicella Ripasso Superiore 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-406937-2026-02-02-14.89",
+			"url": "https://alkometriikka.fi/tuotteet/406937/",
+			"title": "Arancione Originale Valpolicella Ripasso Superiore 2023 — 14,99 € → 14,89 €",
+			"content_html": "<p>Tuotteen Arancione Originale Valpolicella Ripasso Superiore 2023 hinta on muuttunut.</p><p>14,99 € → 14,89 € (−0,10 €, −0,67 %).</p>",
+			"summary": "Tuotteen Arancione Originale Valpolicella Ripasso Superiore 2023 hinta on muuttunut. 14,99 € → 14,89 € (−0,10 €, −0,67 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/406937-e6f7a7367bd2.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-406937-2026-02-02-14.99",
+			"url": "https://alkometriikka.fi/tuotteet/406937/",
+			"title": "Arancione Originale Valpolicella Ripasso Superiore 2023 — 14,89 € → 14,99 €",
+			"content_html": "<p>Tuotteen Arancione Originale Valpolicella Ripasso Superiore 2023 hinta on muuttunut.</p><p>14,89 € → 14,99 € (+0,10 €, +0,67 %).</p>",
+			"summary": "Tuotteen Arancione Originale Valpolicella Ripasso Superiore 2023 hinta on muuttunut. 14,89 € → 14,99 € (+0,10 €, +0,67 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/406937-e6f7a7367bd2.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

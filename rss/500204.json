@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Silver Reign Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/500204/",
+	"feed_url": "https://alkometriikka.fi/rss/500204.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Silver Reign Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-500204-2026-09-29-19.99",
+			"url": "https://alkometriikka.fi/tuotteet/500204/",
+			"title": "Silver Reign Brut — 19,98 € → 19,99 €",
+			"content_html": "<p>Tuotteen Silver Reign Brut hinta on muuttunut.</p><p>19,98 € → 19,99 € (+0,01 €, +0,05 %).</p>",
+			"summary": "Tuotteen Silver Reign Brut hinta on muuttunut. 19,98 € → 19,99 € (+0,01 €, +0,05 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/500204-b04580a4c048.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

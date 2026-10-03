@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Penfolds Yattarna Chardonnay 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900716/",
+	"feed_url": "https://alkometriikka.fi/rss/900716.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Penfolds Yattarna Chardonnay 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900716-2026-09-29-239.98",
+			"url": "https://alkometriikka.fi/tuotteet/900716/",
+			"title": "Penfolds Yattarna Chardonnay 2022 — 225,00 € → 239,98 €",
+			"content_html": "<p>Tuotteen Penfolds Yattarna Chardonnay 2022 hinta on muuttunut.</p><p>225,00 € → 239,98 € (+14,98 €, +6,66 %).</p>",
+			"summary": "Tuotteen Penfolds Yattarna Chardonnay 2022 hinta on muuttunut. 225,00 € → 239,98 € (+14,98 €, +6,66 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900716-15017ea88ec7.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

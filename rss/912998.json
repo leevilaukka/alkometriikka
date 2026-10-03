@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Glenrothes 18 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/912998/",
+	"feed_url": "https://alkometriikka.fi/rss/912998.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Glenrothes 18 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-912998-2026-09-29-188.52",
+			"url": "https://alkometriikka.fi/tuotteet/912998/",
+			"title": "The Glenrothes 18 Year Old Single Malt — 179,29 € → 188,52 €",
+			"content_html": "<p>Tuotteen The Glenrothes 18 Year Old Single Malt hinta on muuttunut.</p><p>179,29 € → 188,52 € (+9,23 €, +5,15 %).</p>",
+			"summary": "Tuotteen The Glenrothes 18 Year Old Single Malt hinta on muuttunut. 179,29 € → 188,52 € (+9,23 €, +5,15 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/912998-4f69e60c04cf.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

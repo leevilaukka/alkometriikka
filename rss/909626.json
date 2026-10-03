@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – 1000 Lakes Forest Vodka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/909626/",
+	"feed_url": "https://alkometriikka.fi/rss/909626.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: 1000 Lakes Forest Vodka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-909626-2026-09-29-49.97",
+			"url": "https://alkometriikka.fi/tuotteet/909626/",
+			"title": "1000 Lakes Forest Vodka — 49,06 € → 49,97 €",
+			"content_html": "<p>Tuotteen 1000 Lakes Forest Vodka hinta on muuttunut.</p><p>49,06 € → 49,97 € (+0,91 €, +1,85 %).</p>",
+			"summary": "Tuotteen 1000 Lakes Forest Vodka hinta on muuttunut. 49,06 € → 49,97 € (+0,91 €, +1,85 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/909626-a4dcaacc2fce.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

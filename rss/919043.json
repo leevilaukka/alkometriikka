@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kamnik The Orange 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/919043/",
+	"feed_url": "https://alkometriikka.fi/rss/919043.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kamnik The Orange 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-919043-2026-09-29-38.1",
+			"url": "https://alkometriikka.fi/tuotteet/919043/",
+			"title": "Kamnik The Orange 2022 — 36,98 € → 38,10 €",
+			"content_html": "<p>Tuotteen Kamnik The Orange 2022 hinta on muuttunut.</p><p>36,98 € → 38,10 € (+1,12 €, +3,03 %).</p>",
+			"summary": "Tuotteen Kamnik The Orange 2022 hinta on muuttunut. 36,98 € → 38,10 € (+1,12 €, +3,03 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/919043-34ff1fae46f8.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

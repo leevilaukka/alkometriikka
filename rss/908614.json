@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vain Keskiluokkajutut Valkoviini 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/908614/",
+	"feed_url": "https://alkometriikka.fi/rss/908614.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vain Keskiluokkajutut Valkoviini 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-908614-2026-07-18-9.98",
+			"url": "https://alkometriikka.fi/tuotteet/908614/",
+			"title": "Vain Keskiluokkajutut Valkoviini 2023 — 15,45 € → 9,98 €",
+			"content_html": "<p>Tuotteen Vain Keskiluokkajutut Valkoviini 2023 hinta on muuttunut.</p><p>15,45 € → 9,98 € (−5,47 €, −35,40 %).</p>",
+			"summary": "Tuotteen Vain Keskiluokkajutut Valkoviini 2023 hinta on muuttunut. 15,45 € → 9,98 € (−5,47 €, −35,40 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/908614-06b21c36a759.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

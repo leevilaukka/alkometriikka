@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Aranleón Sólo Cava Orgánico Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/956342/",
+	"feed_url": "https://alkometriikka.fi/rss/956342.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Aranleón Sólo Cava Orgánico Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-956342-2026-07-18-16.98",
+			"url": "https://alkometriikka.fi/tuotteet/956342/",
+			"title": "Aranleón Sólo Cava Orgánico Brut — 16,44 € → 16,98 €",
+			"content_html": "<p>Tuotteen Aranleón Sólo Cava Orgánico Brut hinta on muuttunut.</p><p>16,44 € → 16,98 € (+0,54 €, +3,28 %).</p>",
+			"summary": "Tuotteen Aranleón Sólo Cava Orgánico Brut hinta on muuttunut. 16,44 € → 16,98 € (+0,54 €, +3,28 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/956342-82e4535574bf.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

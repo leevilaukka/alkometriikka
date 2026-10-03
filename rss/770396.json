@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Holba Premium – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/770396/",
+	"feed_url": "https://alkometriikka.fi/rss/770396.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Holba Premium.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-770396-2026-07-18-3.59",
+			"url": "https://alkometriikka.fi/tuotteet/770396/",
+			"title": "Holba Premium — 3,39 € → 3,59 €",
+			"content_html": "<p>Tuotteen Holba Premium hinta on muuttunut.</p><p>3,39 € → 3,59 € (+0,20 €, +5,90 %).</p>",
+			"summary": "Tuotteen Holba Premium hinta on muuttunut. 3,39 € → 3,59 € (+0,20 €, +5,90 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/770396-311d47941afe.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

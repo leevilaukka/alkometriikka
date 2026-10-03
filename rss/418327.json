@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – La Petite Gargotte Cinsault Rose 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/418327/",
+	"feed_url": "https://alkometriikka.fi/rss/418327.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: La Petite Gargotte Cinsault Rose 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-418327-2026-02-02-9.88",
+			"url": "https://alkometriikka.fi/tuotteet/418327/",
+			"title": "La Petite Gargotte Cinsault Rose 2025 — 9,98 € → 9,88 €",
+			"content_html": "<p>Tuotteen La Petite Gargotte Cinsault Rose 2025 hinta on muuttunut.</p><p>9,98 € → 9,88 € (−0,10 €, −1,00 %).</p>",
+			"summary": "Tuotteen La Petite Gargotte Cinsault Rose 2025 hinta on muuttunut. 9,98 € → 9,88 € (−0,10 €, −1,00 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/418327-0f51f3696c29.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-418327-2026-02-02-9.98",
+			"url": "https://alkometriikka.fi/tuotteet/418327/",
+			"title": "La Petite Gargotte Cinsault Rose 2025 — 9,88 € → 9,98 €",
+			"content_html": "<p>Tuotteen La Petite Gargotte Cinsault Rose 2025 hinta on muuttunut.</p><p>9,88 € → 9,98 € (+0,10 €, +1,01 %).</p>",
+			"summary": "Tuotteen La Petite Gargotte Cinsault Rose 2025 hinta on muuttunut. 9,88 € → 9,98 € (+0,10 €, +1,01 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/418327-0f51f3696c29.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Halve Maan Straffe Hendrik Tripel – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/740424/",
+	"feed_url": "https://alkometriikka.fi/rss/740424.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Halve Maan Straffe Hendrik Tripel.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-740424-2026-09-29-7.37",
+			"url": "https://alkometriikka.fi/tuotteet/740424/",
+			"title": "Halve Maan Straffe Hendrik Tripel — 6,78 € → 7,37 €",
+			"content_html": "<p>Tuotteen Halve Maan Straffe Hendrik Tripel hinta on muuttunut.</p><p>6,78 € → 7,37 € (+0,59 €, +8,70 %).</p>",
+			"summary": "Tuotteen Halve Maan Straffe Hendrik Tripel hinta on muuttunut. 6,78 € → 7,37 € (+0,59 €, +8,70 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/740424-068dfedc38bb.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

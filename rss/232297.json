@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dry Sack Medium Dry Sherry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/232297/",
+	"feed_url": "https://alkometriikka.fi/rss/232297.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dry Sack Medium Dry Sherry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-232297-2026-09-29-17.45",
+			"url": "https://alkometriikka.fi/tuotteet/232297/",
+			"title": "Dry Sack Medium Dry Sherry — 16,94 € → 17,45 €",
+			"content_html": "<p>Tuotteen Dry Sack Medium Dry Sherry hinta on muuttunut.</p><p>16,94 € → 17,45 € (+0,51 €, +3,01 %).</p>",
+			"summary": "Tuotteen Dry Sack Medium Dry Sherry hinta on muuttunut. 16,94 € → 17,45 € (+0,51 €, +3,01 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/232297-6f82495982f0.png",
+			"tags": [
+				"Välituotteet",
+				"sherryt"
+			]
+		}
+	]
+}

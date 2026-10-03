@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Faustino Garnacha 2023 hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/430558/",
+	"feed_url": "https://alkometriikka.fi/rss/430558.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Faustino Garnacha 2023 hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-430558-2026-09-29-39.89",
+			"url": "https://alkometriikka.fi/tuotteet/430558/",
+			"title": "Faustino Garnacha 2023 hanapakkaus — 39,80 € → 39,89 €",
+			"content_html": "<p>Tuotteen Faustino Garnacha 2023 hanapakkaus hinta on muuttunut.</p><p>39,80 € → 39,89 € (+0,09 €, +0,23 %).</p>",
+			"summary": "Tuotteen Faustino Garnacha 2023 hanapakkaus hinta on muuttunut. 39,80 € → 39,89 € (+0,09 €, +0,23 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/430558-8da58bebb8c6.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

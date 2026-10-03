@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – De Kuyper Crème de Cassis – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/949352/",
+	"feed_url": "https://alkometriikka.fi/rss/949352.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: De Kuyper Crème de Cassis.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-949352-2026-07-18-14.99",
+			"url": "https://alkometriikka.fi/tuotteet/949352/",
+			"title": "De Kuyper Crème de Cassis — 14,97 € → 14,99 €",
+			"content_html": "<p>Tuotteen De Kuyper Crème de Cassis hinta on muuttunut.</p><p>14,97 € → 14,99 € (+0,02 €, +0,13 %).</p>",
+			"summary": "Tuotteen De Kuyper Crème de Cassis hinta on muuttunut. 14,97 € → 14,99 € (+0,02 €, +0,13 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/949352-25f1d9ab2231.png",
+			"tags": [
+				"Väkevät",
+				"marjaliköörit"
+			]
+		}
+	]
+}

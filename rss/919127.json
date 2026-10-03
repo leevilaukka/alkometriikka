@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Freixenet Ice Cuvée Especial Cava Semi Seco – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/919127/",
+	"feed_url": "https://alkometriikka.fi/rss/919127.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Freixenet Ice Cuvée Especial Cava Semi Seco.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-919127-2026-09-29-14.48",
+			"url": "https://alkometriikka.fi/tuotteet/919127/",
+			"title": "Freixenet Ice Cuvée Especial Cava Semi Seco — 14,21 € → 14,48 €",
+			"content_html": "<p>Tuotteen Freixenet Ice Cuvée Especial Cava Semi Seco hinta on muuttunut.</p><p>14,21 € → 14,48 € (+0,27 €, +1,90 %).</p>",
+			"summary": "Tuotteen Freixenet Ice Cuvée Especial Cava Semi Seco hinta on muuttunut. 14,21 € → 14,48 € (+0,27 €, +1,90 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/919127-277457f1ba0b.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

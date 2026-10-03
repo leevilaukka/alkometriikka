@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Laporte Pouilly-Fumé la Vigne de Beaussoppet 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/953861/",
+	"feed_url": "https://alkometriikka.fi/rss/953861.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Laporte Pouilly-Fumé la Vigne de Beaussoppet 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-953861-2026-07-18-39.98",
+			"url": "https://alkometriikka.fi/tuotteet/953861/",
+			"title": "Laporte Pouilly-Fumé la Vigne de Beaussoppet 2022 — 37,96 € → 39,98 €",
+			"content_html": "<p>Tuotteen Laporte Pouilly-Fumé la Vigne de Beaussoppet 2022 hinta on muuttunut.</p><p>37,96 € → 39,98 € (+2,02 €, +5,32 %).</p>",
+			"summary": "Tuotteen Laporte Pouilly-Fumé la Vigne de Beaussoppet 2022 hinta on muuttunut. 37,96 € → 39,98 € (+2,02 €, +5,32 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/953861-9d27c056b1cc.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

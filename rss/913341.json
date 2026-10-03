@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Waris-Larmandier Racines de Trois Champagne Extra Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/913341/",
+	"feed_url": "https://alkometriikka.fi/rss/913341.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Waris-Larmandier Racines de Trois Champagne Extra Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-913341-2026-09-29-69.95",
+			"url": "https://alkometriikka.fi/tuotteet/913341/",
+			"title": "Waris-Larmandier Racines de Trois Champagne Extra Brut — 65,97 € → 69,95 €",
+			"content_html": "<p>Tuotteen Waris-Larmandier Racines de Trois Champagne Extra Brut hinta on muuttunut.</p><p>65,97 € → 69,95 € (+3,98 €, +6,03 %).</p>",
+			"summary": "Tuotteen Waris-Larmandier Racines de Trois Champagne Extra Brut hinta on muuttunut. 65,97 € → 69,95 € (+3,98 €, +6,03 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/913341-713fcf844eb7.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

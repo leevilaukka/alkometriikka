@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Paul Blanck Riesling Wineck-Schlossberg Grand Cru 2017 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/915034/",
+	"feed_url": "https://alkometriikka.fi/rss/915034.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Paul Blanck Riesling Wineck-Schlossberg Grand Cru 2017.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-915034-2026-09-29-56.64",
+			"url": "https://alkometriikka.fi/tuotteet/915034/",
+			"title": "Paul Blanck Riesling Wineck-Schlossberg Grand Cru 2017 — 55,20 € → 56,64 €",
+			"content_html": "<p>Tuotteen Paul Blanck Riesling Wineck-Schlossberg Grand Cru 2017 hinta on muuttunut.</p><p>55,20 € → 56,64 € (+1,44 €, +2,61 %).</p>",
+			"summary": "Tuotteen Paul Blanck Riesling Wineck-Schlossberg Grand Cru 2017 hinta on muuttunut. 55,20 € → 56,64 € (+1,44 €, +2,61 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/915034-c2b7b96c1508.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

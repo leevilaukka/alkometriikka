@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – 1000 Lakes Willow Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903313/",
+	"feed_url": "https://alkometriikka.fi/rss/903313.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: 1000 Lakes Willow Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903313-2026-09-29-65.52",
+			"url": "https://alkometriikka.fi/tuotteet/903313/",
+			"title": "1000 Lakes Willow Gin — 64,48 € → 65,52 €",
+			"content_html": "<p>Tuotteen 1000 Lakes Willow Gin hinta on muuttunut.</p><p>64,48 € → 65,52 € (+1,04 €, +1,61 %).</p>",
+			"summary": "Tuotteen 1000 Lakes Willow Gin hinta on muuttunut. 64,48 € → 65,52 € (+1,04 €, +1,61 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903313-b1b69b62d705.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

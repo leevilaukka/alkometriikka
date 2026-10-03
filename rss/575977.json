@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Casa Marin Cartagena Riesling 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/575977/",
+	"feed_url": "https://alkometriikka.fi/rss/575977.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Casa Marin Cartagena Riesling 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-575977-2026-09-29-15.76",
+			"url": "https://alkometriikka.fi/tuotteet/575977/",
+			"title": "Casa Marin Cartagena Riesling 2023 — 16,01 € → 15,76 €",
+			"content_html": "<p>Tuotteen Casa Marin Cartagena Riesling 2023 hinta on muuttunut.</p><p>16,01 € → 15,76 € (−0,25 €, −1,56 %).</p>",
+			"summary": "Tuotteen Casa Marin Cartagena Riesling 2023 hinta on muuttunut. 16,01 € → 15,76 € (−0,25 €, −1,56 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/575977-3fa87a064ebb.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bonvalet Marpésia Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900581/",
+	"feed_url": "https://alkometriikka.fi/rss/900581.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bonvalet Marpésia Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900581-2026-09-29-72.52",
+			"url": "https://alkometriikka.fi/tuotteet/900581/",
+			"title": "Bonvalet Marpésia Champagne Brut — 69,99 € → 72,52 €",
+			"content_html": "<p>Tuotteen Bonvalet Marpésia Champagne Brut hinta on muuttunut.</p><p>69,99 € → 72,52 € (+2,53 €, +3,61 %).</p>",
+			"summary": "Tuotteen Bonvalet Marpésia Champagne Brut hinta on muuttunut. 69,99 € → 72,52 € (+2,53 €, +3,61 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900581-f0ac81a50323.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-900581-2026-07-18-69.99",
+			"url": "https://alkometriikka.fi/tuotteet/900581/",
+			"title": "Bonvalet Marpésia Champagne Brut — 71,27 € → 69,99 €",
+			"content_html": "<p>Tuotteen Bonvalet Marpésia Champagne Brut hinta on muuttunut.</p><p>71,27 € → 69,99 € (−1,28 €, −1,80 %).</p>",
+			"summary": "Tuotteen Bonvalet Marpésia Champagne Brut hinta on muuttunut. 71,27 € → 69,99 € (−1,28 €, −1,80 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900581-f0ac81a50323.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

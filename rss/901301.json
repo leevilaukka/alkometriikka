@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Shoutoku Junmai Ginjo Karaku Amakuchi – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901301/",
+	"feed_url": "https://alkometriikka.fi/rss/901301.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Shoutoku Junmai Ginjo Karaku Amakuchi.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901301-2026-09-29-34",
+			"url": "https://alkometriikka.fi/tuotteet/901301/",
+			"title": "Shoutoku Junmai Ginjo Karaku Amakuchi — 37,00 € → 34,00 €",
+			"content_html": "<p>Tuotteen Shoutoku Junmai Ginjo Karaku Amakuchi hinta on muuttunut.</p><p>37,00 € → 34,00 € (−3,00 €, −8,11 %).</p>",
+			"summary": "Tuotteen Shoutoku Junmai Ginjo Karaku Amakuchi hinta on muuttunut. 37,00 € → 34,00 € (−3,00 €, −8,11 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901301-1293712098e0.png",
+			"tags": [
+				"Viinit",
+				"saket"
+			]
+		}
+	]
+}

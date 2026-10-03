@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Olivier Leflaive Montagny 1er Cru 'Bonneveaux' 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901339/",
+	"feed_url": "https://alkometriikka.fi/rss/901339.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Olivier Leflaive Montagny 1er Cru 'Bonneveaux' 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901339-2026-09-29-60.95",
+			"url": "https://alkometriikka.fi/tuotteet/901339/",
+			"title": "Olivier Leflaive Montagny 1er Cru 'Bonneveaux' 2020 — 58,99 € → 60,95 €",
+			"content_html": "<p>Tuotteen Olivier Leflaive Montagny 1er Cru 'Bonneveaux' 2020 hinta on muuttunut.</p><p>58,99 € → 60,95 € (+1,96 €, +3,32 %).</p>",
+			"summary": "Tuotteen Olivier Leflaive Montagny 1er Cru 'Bonneveaux' 2020 hinta on muuttunut. 58,99 € → 60,95 € (+1,96 €, +3,32 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901339-fa346c720986.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

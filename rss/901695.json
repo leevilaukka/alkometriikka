@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Åland Rosé Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901695/",
+	"feed_url": "https://alkometriikka.fi/rss/901695.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Åland Rosé Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901695-2026-09-29-45.21",
+			"url": "https://alkometriikka.fi/tuotteet/901695/",
+			"title": "Åland Rosé Gin — 44,63 € → 45,21 €",
+			"content_html": "<p>Tuotteen Åland Rosé Gin hinta on muuttunut.</p><p>44,63 € → 45,21 € (+0,58 €, +1,30 %).</p>",
+			"summary": "Tuotteen Åland Rosé Gin hinta on muuttunut. 44,63 € → 45,21 € (+0,58 €, +1,30 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901695-f91eeec8a509.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

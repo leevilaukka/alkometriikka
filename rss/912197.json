@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Impromptu Rosé 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/912197/",
+	"feed_url": "https://alkometriikka.fi/rss/912197.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Impromptu Rosé 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-912197-2026-09-29-37.99",
+			"url": "https://alkometriikka.fi/tuotteet/912197/",
+			"title": "Impromptu Rosé 2024 — 36,89 € → 37,99 €",
+			"content_html": "<p>Tuotteen Impromptu Rosé 2024 hinta on muuttunut.</p><p>36,89 € → 37,99 € (+1,10 €, +2,98 %).</p>",
+			"summary": "Tuotteen Impromptu Rosé 2024 hinta on muuttunut. 36,89 € → 37,99 € (+1,10 €, +2,98 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/912197-f47b606b5f32.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Koff Long Drink tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/732144/",
+	"feed_url": "https://alkometriikka.fi/rss/732144.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Koff Long Drink tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-732144-2026-09-29-2.73",
+			"url": "https://alkometriikka.fi/tuotteet/732144/",
+			"title": "Koff Long Drink tölkki — 2,69 € → 2,73 €",
+			"content_html": "<p>Tuotteen Koff Long Drink tölkki hinta on muuttunut.</p><p>2,69 € → 2,73 € (+0,04 €, +1,49 %).</p>",
+			"summary": "Tuotteen Koff Long Drink tölkki hinta on muuttunut. 2,69 € → 2,73 € (+0,04 €, +1,49 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/732144-b242a744ece1.png",
+			"tags": [
+				"Panimotuotteet",
+				"juomasekoitukset"
+			]
+		}
+	]
+}

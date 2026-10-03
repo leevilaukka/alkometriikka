@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Petri Rosé 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/929638/",
+	"feed_url": "https://alkometriikka.fi/rss/929638.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Petri Rosé 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-929638-2026-07-18-27.41",
+			"url": "https://alkometriikka.fi/tuotteet/929638/",
+			"title": "Petri Rosé 2022 — 25,47 € → 27,41 €",
+			"content_html": "<p>Tuotteen Petri Rosé 2022 hinta on muuttunut.</p><p>25,47 € → 27,41 € (+1,94 €, +7,62 %).</p>",
+			"summary": "Tuotteen Petri Rosé 2022 hinta on muuttunut. 25,47 € → 27,41 € (+1,94 €, +7,62 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/929638-2fc1b4cd3c26.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

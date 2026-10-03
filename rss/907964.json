@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Norton Altura Malbec 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/907964/",
+	"feed_url": "https://alkometriikka.fi/rss/907964.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Norton Altura Malbec 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-907964-2026-07-18-19.49",
+			"url": "https://alkometriikka.fi/tuotteet/907964/",
+			"title": "Norton Altura Malbec 2024 — 19,47 € → 19,49 €",
+			"content_html": "<p>Tuotteen Norton Altura Malbec 2024 hinta on muuttunut.</p><p>19,47 € → 19,49 € (+0,02 €, +0,10 %).</p>",
+			"summary": "Tuotteen Norton Altura Malbec 2024 hinta on muuttunut. 19,47 € → 19,49 € (+0,02 €, +0,10 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/907964-8089eed40672.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

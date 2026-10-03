@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Corvezzo Magnum Organic Prosecco Extra Dry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/508998/",
+	"feed_url": "https://alkometriikka.fi/rss/508998.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Corvezzo Magnum Organic Prosecco Extra Dry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-508998-2026-07-18-36.98",
+			"url": "https://alkometriikka.fi/tuotteet/508998/",
+			"title": "Corvezzo Magnum Organic Prosecco Extra Dry — 36,91 € → 36,98 €",
+			"content_html": "<p>Tuotteen Corvezzo Magnum Organic Prosecco Extra Dry hinta on muuttunut.</p><p>36,91 € → 36,98 € (+0,07 €, +0,19 %).</p>",
+			"summary": "Tuotteen Corvezzo Magnum Organic Prosecco Extra Dry hinta on muuttunut. 36,91 € → 36,98 € (+0,07 €, +0,19 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/508998-0ce6804d2352.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

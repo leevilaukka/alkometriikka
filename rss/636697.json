@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gato Negro Rosé 8% – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/636697/",
+	"feed_url": "https://alkometriikka.fi/rss/636697.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gato Negro Rosé 8%.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-636697-2026-09-29-7.29",
+			"url": "https://alkometriikka.fi/tuotteet/636697/",
+			"title": "Gato Negro Rosé 8% — 6,95 € → 7,29 €",
+			"content_html": "<p>Tuotteen Gato Negro Rosé 8% hinta on muuttunut.</p><p>6,95 € → 7,29 € (+0,34 €, +4,89 %).</p>",
+			"summary": "Tuotteen Gato Negro Rosé 8% hinta on muuttunut. 6,95 € → 7,29 € (+0,34 €, +4,89 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/636697-a9cd58e11b54.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

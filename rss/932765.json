@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Macallan Harmony Collection Amber Meadow Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/932765/",
+	"feed_url": "https://alkometriikka.fi/rss/932765.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Macallan Harmony Collection Amber Meadow Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-932765-2026-09-29-211.96",
+			"url": "https://alkometriikka.fi/tuotteet/932765/",
+			"title": "The Macallan Harmony Collection Amber Meadow Single Malt — 201,22 € → 211,96 €",
+			"content_html": "<p>Tuotteen The Macallan Harmony Collection Amber Meadow Single Malt hinta on muuttunut.</p><p>201,22 € → 211,96 € (+10,74 €, +5,34 %).</p>",
+			"summary": "Tuotteen The Macallan Harmony Collection Amber Meadow Single Malt hinta on muuttunut. 201,22 € → 211,96 € (+10,74 €, +5,34 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/932765-ce8882f19500.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Settesoli Rosso  kartonkitölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/400289/",
+	"feed_url": "https://alkometriikka.fi/rss/400289.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Settesoli Rosso  kartonkitölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-400289-2026-09-29-10.49",
+			"url": "https://alkometriikka.fi/tuotteet/400289/",
+			"title": "Settesoli Rosso  kartonkitölkki — 9,49 € → 10,49 €",
+			"content_html": "<p>Tuotteen Settesoli Rosso  kartonkitölkki hinta on muuttunut.</p><p>9,49 € → 10,49 € (+1,00 €, +10,54 %).</p>",
+			"summary": "Tuotteen Settesoli Rosso kartonkitölkki hinta on muuttunut. 9,49 € → 10,49 € (+1,00 €, +10,54 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/400289-6b034825bf18.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

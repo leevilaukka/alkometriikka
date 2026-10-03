@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Larsen VSOP muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/144611/",
+	"feed_url": "https://alkometriikka.fi/rss/144611.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Larsen VSOP muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-144611-2026-09-29-3.79",
+			"url": "https://alkometriikka.fi/tuotteet/144611/",
+			"title": "Larsen VSOP muovipullo — 3,70 € → 3,79 €",
+			"content_html": "<p>Tuotteen Larsen VSOP muovipullo hinta on muuttunut.</p><p>3,70 € → 3,79 € (+0,09 €, +2,43 %).</p>",
+			"summary": "Tuotteen Larsen VSOP muovipullo hinta on muuttunut. 3,70 € → 3,79 € (+0,09 €, +2,43 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/144611-298e01b1bcc6.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

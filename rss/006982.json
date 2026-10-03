@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Sangre de Toro Original 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/006982/",
+	"feed_url": "https://alkometriikka.fi/rss/006982.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Sangre de Toro Original 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-006982-2026-07-18-7.1",
+			"url": "https://alkometriikka.fi/tuotteet/006982/",
+			"title": "Sangre de Toro Original 2024 — 7,02 € → 7,10 €",
+			"content_html": "<p>Tuotteen Sangre de Toro Original 2024 hinta on muuttunut.</p><p>7,02 € → 7,10 € (+0,08 €, +1,14 %).</p>",
+			"summary": "Tuotteen Sangre de Toro Original 2024 hinta on muuttunut. 7,02 € → 7,10 € (+0,08 €, +1,14 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/006982-7e661d1c92ab.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

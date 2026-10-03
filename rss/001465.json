@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Laphroaig 10 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/001465/",
+	"feed_url": "https://alkometriikka.fi/rss/001465.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Laphroaig 10 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-001465-2026-09-29-59.98",
+			"url": "https://alkometriikka.fi/tuotteet/001465/",
+			"title": "Laphroaig 10 Year Old Single Malt — 60,60 € → 59,98 €",
+			"content_html": "<p>Tuotteen Laphroaig 10 Year Old Single Malt hinta on muuttunut.</p><p>60,60 € → 59,98 € (−0,62 €, −1,02 %).</p>",
+			"summary": "Tuotteen Laphroaig 10 Year Old Single Malt hinta on muuttunut. 60,60 € → 59,98 € (−0,62 €, −1,02 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/001465-a3dba52310b2.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Citadelle Vive Le Cornichon Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902463/",
+	"feed_url": "https://alkometriikka.fi/rss/902463.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Citadelle Vive Le Cornichon Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902463-2026-09-29-45.98",
+			"url": "https://alkometriikka.fi/tuotteet/902463/",
+			"title": "Citadelle Vive Le Cornichon Gin — 45,96 € → 45,98 €",
+			"content_html": "<p>Tuotteen Citadelle Vive Le Cornichon Gin hinta on muuttunut.</p><p>45,96 € → 45,98 € (+0,02 €, +0,04 %).</p>",
+			"summary": "Tuotteen Citadelle Vive Le Cornichon Gin hinta on muuttunut. 45,96 € → 45,98 € (+0,02 €, +0,04 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902463-2cd60e1cf27c.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

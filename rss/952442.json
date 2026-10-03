@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Macallan Double Cask 18 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/952442/",
+	"feed_url": "https://alkometriikka.fi/rss/952442.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Macallan Double Cask 18 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-952442-2026-09-29-410.6",
+			"url": "https://alkometriikka.fi/tuotteet/952442/",
+			"title": "The Macallan Double Cask 18 Year Old Single Malt — 386,49 € → 410,60 €",
+			"content_html": "<p>Tuotteen The Macallan Double Cask 18 Year Old Single Malt hinta on muuttunut.</p><p>386,49 € → 410,60 € (+24,11 €, +6,24 %).</p>",
+			"summary": "Tuotteen The Macallan Double Cask 18 Year Old Single Malt hinta on muuttunut. 386,49 € → 410,60 € (+24,11 €, +6,24 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/952442-c8b7863af4a8.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

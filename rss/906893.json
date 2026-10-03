@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – 1800 Coconut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/906893/",
+	"feed_url": "https://alkometriikka.fi/rss/906893.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: 1800 Coconut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-906893-2026-09-29-62.2",
+			"url": "https://alkometriikka.fi/tuotteet/906893/",
+			"title": "1800 Coconut — 61,24 € → 62,20 €",
+			"content_html": "<p>Tuotteen 1800 Coconut hinta on muuttunut.</p><p>61,24 € → 62,20 € (+0,96 €, +1,57 %).</p>",
+			"summary": "Tuotteen 1800 Coconut hinta on muuttunut. 61,24 € → 62,20 € (+0,96 €, +1,57 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/906893-9120a9a16b4b.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

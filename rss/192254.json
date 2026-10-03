@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Planteray Barbados 20th Anniversary XO – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/192254/",
+	"feed_url": "https://alkometriikka.fi/rss/192254.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Planteray Barbados 20th Anniversary XO.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-192254-2026-09-29-31.5",
+			"url": "https://alkometriikka.fi/tuotteet/192254/",
+			"title": "Planteray Barbados 20th Anniversary XO — 30,98 € → 31,50 €",
+			"content_html": "<p>Tuotteen Planteray Barbados 20th Anniversary XO hinta on muuttunut.</p><p>30,98 € → 31,50 € (+0,52 €, +1,68 %).</p>",
+			"summary": "Tuotteen Planteray Barbados 20th Anniversary XO hinta on muuttunut. 30,98 € → 31,50 € (+0,52 €, +1,68 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/192254-59794ec62a21.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

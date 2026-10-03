@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lyre's Orange Sec – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/933074/",
+	"feed_url": "https://alkometriikka.fi/rss/933074.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lyre's Orange Sec.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-933074-2026-07-18-33.35",
+			"url": "https://alkometriikka.fi/tuotteet/933074/",
+			"title": "Lyre's Orange Sec — 32,22 € → 33,35 €",
+			"content_html": "<p>Tuotteen Lyre's Orange Sec hinta on muuttunut.</p><p>32,22 € → 33,35 € (+1,13 €, +3,51 %).</p>",
+			"summary": "Tuotteen Lyre's Orange Sec hinta on muuttunut. 32,22 € → 33,35 € (+1,13 €, +3,51 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/933074-bb3fecfb549f.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

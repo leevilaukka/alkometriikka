@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Finlandia Botanical Cucumber and Mint – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/926851/",
+	"feed_url": "https://alkometriikka.fi/rss/926851.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Finlandia Botanical Cucumber and Mint.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-926851-2026-07-18-25.99",
+			"url": "https://alkometriikka.fi/tuotteet/926851/",
+			"title": "Finlandia Botanical Cucumber and Mint — 29,38 € → 25,99 €",
+			"content_html": "<p>Tuotteen Finlandia Botanical Cucumber and Mint hinta on muuttunut.</p><p>29,38 € → 25,99 € (−3,39 €, −11,54 %).</p>",
+			"summary": "Tuotteen Finlandia Botanical Cucumber and Mint hinta on muuttunut. 29,38 € → 25,99 € (−3,39 €, −11,54 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/926851-65d62f8105e4.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

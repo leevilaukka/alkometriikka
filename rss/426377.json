@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Rioja Vega Gran Reserva 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/426377/",
+	"feed_url": "https://alkometriikka.fi/rss/426377.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Rioja Vega Gran Reserva 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-426377-2026-07-18-34.95",
+			"url": "https://alkometriikka.fi/tuotteet/426377/",
+			"title": "Rioja Vega Gran Reserva 2018 — 34,45 € → 34,95 €",
+			"content_html": "<p>Tuotteen Rioja Vega Gran Reserva 2018 hinta on muuttunut.</p><p>34,45 € → 34,95 € (+0,50 €, +1,45 %).</p>",
+			"summary": "Tuotteen Rioja Vega Gran Reserva 2018 hinta on muuttunut. 34,45 € → 34,95 € (+0,50 €, +1,45 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/426377-c9ec478eefe3.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Goodday Tropical Soju – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902685/",
+	"feed_url": "https://alkometriikka.fi/rss/902685.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Goodday Tropical Soju.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902685-2026-09-29-9.98",
+			"url": "https://alkometriikka.fi/tuotteet/902685/",
+			"title": "Goodday Tropical Soju — 9,99 € → 9,98 €",
+			"content_html": "<p>Tuotteen Goodday Tropical Soju hinta on muuttunut.</p><p>9,99 € → 9,98 € (−0,01 €, −0,10 %).</p>",
+			"summary": "Tuotteen Goodday Tropical Soju hinta on muuttunut. 9,99 € → 9,98 € (−0,01 €, −0,10 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902685-20ffb839181b.png",
+			"tags": [
+				"Panimotuotteet",
+				"juomasekoitukset"
+			]
+		}
+	]
+}

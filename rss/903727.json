@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Deutz Blanc de Blancs Champagne Brut 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903727/",
+	"feed_url": "https://alkometriikka.fi/rss/903727.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Deutz Blanc de Blancs Champagne Brut 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903727-2026-09-29-112.12",
+			"url": "https://alkometriikka.fi/tuotteet/903727/",
+			"title": "Deutz Blanc de Blancs Champagne Brut 2018 — 106,76 € → 112,12 €",
+			"content_html": "<p>Tuotteen Deutz Blanc de Blancs Champagne Brut 2018 hinta on muuttunut.</p><p>106,76 € → 112,12 € (+5,36 €, +5,02 %).</p>",
+			"summary": "Tuotteen Deutz Blanc de Blancs Champagne Brut 2018 hinta on muuttunut. 106,76 € → 112,12 € (+5,36 €, +5,02 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903727-490bedfe33ca.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Avancia Godello 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902818/",
+	"feed_url": "https://alkometriikka.fi/rss/902818.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Avancia Godello 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902818-2026-09-29-57.47",
+			"url": "https://alkometriikka.fi/tuotteet/902818/",
+			"title": "Avancia Godello 2024 — 55,98 € → 57,47 €",
+			"content_html": "<p>Tuotteen Avancia Godello 2024 hinta on muuttunut.</p><p>55,98 € → 57,47 € (+1,49 €, +2,66 %).</p>",
+			"summary": "Tuotteen Avancia Godello 2024 hinta on muuttunut. 55,98 € → 57,47 € (+1,49 €, +2,66 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902818-17645be782ab.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

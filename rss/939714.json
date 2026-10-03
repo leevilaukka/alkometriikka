@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tommasi Le Fornaci Lugana 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/939714/",
+	"feed_url": "https://alkometriikka.fi/rss/939714.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tommasi Le Fornaci Lugana 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-939714-2026-09-29-18.99",
+			"url": "https://alkometriikka.fi/tuotteet/939714/",
+			"title": "Tommasi Le Fornaci Lugana 2025 — 18,89 € → 18,99 €",
+			"content_html": "<p>Tuotteen Tommasi Le Fornaci Lugana 2025 hinta on muuttunut.</p><p>18,89 € → 18,99 € (+0,10 €, +0,53 %).</p>",
+			"summary": "Tuotteen Tommasi Le Fornaci Lugana 2025 hinta on muuttunut. 18,89 € → 18,99 € (+0,10 €, +0,53 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/939714-194d414d231c.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-939714-2026-07-18-18.89",
+			"url": "https://alkometriikka.fi/tuotteet/939714/",
+			"title": "Tommasi Le Fornaci Lugana 2025 — 19,16 € → 18,89 €",
+			"content_html": "<p>Tuotteen Tommasi Le Fornaci Lugana 2025 hinta on muuttunut.</p><p>19,16 € → 18,89 € (−0,27 €, −1,41 %).</p>",
+			"summary": "Tuotteen Tommasi Le Fornaci Lugana 2025 hinta on muuttunut. 19,16 € → 18,89 € (−0,27 €, −1,41 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/939714-194d414d231c.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

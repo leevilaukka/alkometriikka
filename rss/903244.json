@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jean Vesselle Coeur de Bacchus Champagne Extra-Brut 2013 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903244/",
+	"feed_url": "https://alkometriikka.fi/rss/903244.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jean Vesselle Coeur de Bacchus Champagne Extra-Brut 2013.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903244-2026-09-29-286.53",
+			"url": "https://alkometriikka.fi/tuotteet/903244/",
+			"title": "Jean Vesselle Coeur de Bacchus Champagne Extra-Brut 2013 — 269,00 € → 286,53 €",
+			"content_html": "<p>Tuotteen Jean Vesselle Coeur de Bacchus Champagne Extra-Brut 2013 hinta on muuttunut.</p><p>269,00 € → 286,53 € (+17,53 €, +6,52 %).</p>",
+			"summary": "Tuotteen Jean Vesselle Coeur de Bacchus Champagne Extra-Brut 2013 hinta on muuttunut. 269,00 € → 286,53 € (+17,53 €, +6,52 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903244-63b2801a1b86.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

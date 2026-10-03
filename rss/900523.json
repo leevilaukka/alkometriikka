@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bowmore 15 Year Old Sherry Oak Cask Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900523/",
+	"feed_url": "https://alkometriikka.fi/rss/900523.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bowmore 15 Year Old Sherry Oak Cask Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900523-2026-09-29-137.15",
+			"url": "https://alkometriikka.fi/tuotteet/900523/",
+			"title": "Bowmore 15 Year Old Sherry Oak Cask Single Malt — 131,38 € → 137,15 €",
+			"content_html": "<p>Tuotteen Bowmore 15 Year Old Sherry Oak Cask Single Malt hinta on muuttunut.</p><p>131,38 € → 137,15 € (+5,77 €, +4,39 %).</p>",
+			"summary": "Tuotteen Bowmore 15 Year Old Sherry Oak Cask Single Malt hinta on muuttunut. 131,38 € → 137,15 € (+5,77 €, +4,39 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900523-0b496bc944bc.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

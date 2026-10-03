@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – BrewDog Punk IPA tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/700183/",
+	"feed_url": "https://alkometriikka.fi/rss/700183.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: BrewDog Punk IPA tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-700183-2026-09-29-3.69",
+			"url": "https://alkometriikka.fi/tuotteet/700183/",
+			"title": "BrewDog Punk IPA tölkki — 3,49 € → 3,69 €",
+			"content_html": "<p>Tuotteen BrewDog Punk IPA tölkki hinta on muuttunut.</p><p>3,49 € → 3,69 € (+0,20 €, +5,73 %).</p>",
+			"summary": "Tuotteen BrewDog Punk IPA tölkki hinta on muuttunut. 3,49 € → 3,69 € (+0,20 €, +5,73 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/700183-bec6214cd786.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Domaine Gèrard Millet Sancerre 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901106/",
+	"feed_url": "https://alkometriikka.fi/rss/901106.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Domaine Gèrard Millet Sancerre 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901106-2026-09-29-37.29",
+			"url": "https://alkometriikka.fi/tuotteet/901106/",
+			"title": "Domaine Gèrard Millet Sancerre 2023 — 37,23 € → 37,29 €",
+			"content_html": "<p>Tuotteen Domaine Gèrard Millet Sancerre 2023 hinta on muuttunut.</p><p>37,23 € → 37,29 € (+0,06 €, +0,16 %).</p>",
+			"summary": "Tuotteen Domaine Gèrard Millet Sancerre 2023 hinta on muuttunut. 37,23 € → 37,29 € (+0,06 €, +0,16 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901106-ca0aeb01bb0f.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

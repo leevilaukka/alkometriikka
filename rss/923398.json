@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bernard-Massard Chardonnay Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/923398/",
+	"feed_url": "https://alkometriikka.fi/rss/923398.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bernard-Massard Chardonnay Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-923398-2026-07-18-18.99",
+			"url": "https://alkometriikka.fi/tuotteet/923398/",
+			"title": "Bernard-Massard Chardonnay Brut — 18,44 € → 18,99 €",
+			"content_html": "<p>Tuotteen Bernard-Massard Chardonnay Brut hinta on muuttunut.</p><p>18,44 € → 18,99 € (+0,55 €, +2,98 %).</p>",
+			"summary": "Tuotteen Bernard-Massard Chardonnay Brut hinta on muuttunut. 18,44 € → 18,99 € (+0,55 €, +2,98 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/923398-a158d74ce1e6.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

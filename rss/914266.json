@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jim Barry The Armagh Shiraz 2014 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/914266/",
+	"feed_url": "https://alkometriikka.fi/rss/914266.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jim Barry The Armagh Shiraz 2014.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-914266-2026-09-29-167.72",
+			"url": "https://alkometriikka.fi/tuotteet/914266/",
+			"title": "Jim Barry The Armagh Shiraz 2014 — 158,54 € → 167,72 €",
+			"content_html": "<p>Tuotteen Jim Barry The Armagh Shiraz 2014 hinta on muuttunut.</p><p>158,54 € → 167,72 € (+9,18 €, +5,79 %).</p>",
+			"summary": "Tuotteen Jim Barry The Armagh Shiraz 2014 hinta on muuttunut. 158,54 € → 167,72 € (+9,18 €, +5,79 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/914266-803373a7d94b.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

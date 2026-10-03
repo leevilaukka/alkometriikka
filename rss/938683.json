@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – That´s Neiss Tinto Réserve 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/938683/",
+	"feed_url": "https://alkometriikka.fi/rss/938683.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: That´s Neiss Tinto Réserve 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-938683-2026-07-18-17.49",
+			"url": "https://alkometriikka.fi/tuotteet/938683/",
+			"title": "That´s Neiss Tinto Réserve 2021 — 17,16 € → 17,49 €",
+			"content_html": "<p>Tuotteen That´s Neiss Tinto Réserve 2021 hinta on muuttunut.</p><p>17,16 € → 17,49 € (+0,33 €, +1,92 %).</p>",
+			"summary": "Tuotteen That´s Neiss Tinto Réserve 2021 hinta on muuttunut. 17,16 € → 17,49 € (+0,33 €, +1,92 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/938683-750ed9205506.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Torii Mor Pinot Noir 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/929065/",
+	"feed_url": "https://alkometriikka.fi/rss/929065.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Torii Mor Pinot Noir 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-929065-2026-09-29-42.8",
+			"url": "https://alkometriikka.fi/tuotteet/929065/",
+			"title": "Torii Mor Pinot Noir 2020 — 42,36 € → 42,80 €",
+			"content_html": "<p>Tuotteen Torii Mor Pinot Noir 2020 hinta on muuttunut.</p><p>42,36 € → 42,80 € (+0,44 €, +1,04 %).</p>",
+			"summary": "Tuotteen Torii Mor Pinot Noir 2020 hinta on muuttunut. 42,36 € → 42,80 € (+0,44 €, +1,04 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/929065-7400ffdc5be4.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

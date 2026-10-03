@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vellamo mineraalivesi hiilihapotettu – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/908413/",
+	"feed_url": "https://alkometriikka.fi/rss/908413.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vellamo mineraalivesi hiilihapotettu.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-908413-2026-07-18-3.99",
+			"url": "https://alkometriikka.fi/tuotteet/908413/",
+			"title": "Vellamo mineraalivesi hiilihapotettu — 3,97 € → 3,99 €",
+			"content_html": "<p>Tuotteen Vellamo mineraalivesi hiilihapotettu hinta on muuttunut.</p><p>3,97 € → 3,99 € (+0,02 €, +0,50 %).</p>",
+			"summary": "Tuotteen Vellamo mineraalivesi hiilihapotettu hinta on muuttunut. 3,97 € → 3,99 € (+0,02 €, +0,50 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/908413-9d2bddfcfe2c.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

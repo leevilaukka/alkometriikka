@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Aalborg Jubilæums Akvavit – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/104417/",
+	"feed_url": "https://alkometriikka.fi/rss/104417.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Aalborg Jubilæums Akvavit.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-104417-2026-07-18-32.99",
+			"url": "https://alkometriikka.fi/tuotteet/104417/",
+			"title": "Aalborg Jubilæums Akvavit — 32,86 € → 32,99 €",
+			"content_html": "<p>Tuotteen Aalborg Jubilæums Akvavit hinta on muuttunut.</p><p>32,86 € → 32,99 € (+0,13 €, +0,40 %).</p>",
+			"summary": "Tuotteen Aalborg Jubilæums Akvavit hinta on muuttunut. 32,86 € → 32,99 € (+0,13 €, +0,40 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/104417-8174d773fe4c.png",
+			"tags": [
+				"Väkevät",
+				"akvaviitit"
+			]
+		}
+	]
+}

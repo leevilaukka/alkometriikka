@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château du Breuil VSOP Calvados – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/938622/",
+	"feed_url": "https://alkometriikka.fi/rss/938622.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château du Breuil VSOP Calvados.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-938622-2026-09-29-26.19",
+			"url": "https://alkometriikka.fi/tuotteet/938622/",
+			"title": "Château du Breuil VSOP Calvados — 25,98 € → 26,19 €",
+			"content_html": "<p>Tuotteen Château du Breuil VSOP Calvados hinta on muuttunut.</p><p>25,98 € → 26,19 € (+0,21 €, +0,81 %).</p>",
+			"summary": "Tuotteen Château du Breuil VSOP Calvados hinta on muuttunut. 25,98 € → 26,19 € (+0,21 €, +0,81 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/938622-a53d6fa66fbb.png",
+			"tags": [
+				"Väkevät",
+				"calvadosit"
+			]
+		},
+		{
+			"id": "alkometriikka-938622-2026-07-18-25.98",
+			"url": "https://alkometriikka.fi/tuotteet/938622/",
+			"title": "Château du Breuil VSOP Calvados — 25,37 € → 25,98 €",
+			"content_html": "<p>Tuotteen Château du Breuil VSOP Calvados hinta on muuttunut.</p><p>25,37 € → 25,98 € (+0,61 €, +2,40 %).</p>",
+			"summary": "Tuotteen Château du Breuil VSOP Calvados hinta on muuttunut. 25,37 € → 25,98 € (+0,61 €, +2,40 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/938622-a53d6fa66fbb.png",
+			"tags": [
+				"Väkevät",
+				"calvadosit"
+			]
+		}
+	]
+}

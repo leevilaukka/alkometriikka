@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Artik Aito Rye Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903409/",
+	"feed_url": "https://alkometriikka.fi/rss/903409.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Artik Aito Rye Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903409-2026-09-29-72.54",
+			"url": "https://alkometriikka.fi/tuotteet/903409/",
+			"title": "Artik Aito Rye Gin — 69,95 € → 72,54 €",
+			"content_html": "<p>Tuotteen Artik Aito Rye Gin hinta on muuttunut.</p><p>69,95 € → 72,54 € (+2,59 €, +3,70 %).</p>",
+			"summary": "Tuotteen Artik Aito Rye Gin hinta on muuttunut. 69,95 € → 72,54 € (+2,59 €, +3,70 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903409-265135d0c921.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

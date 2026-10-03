@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bivrost Yggdrasil 2025 Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900451/",
+	"feed_url": "https://alkometriikka.fi/rss/900451.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bivrost Yggdrasil 2025 Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900451-2026-09-29-93.61",
+			"url": "https://alkometriikka.fi/tuotteet/900451/",
+			"title": "Bivrost Yggdrasil 2025 Single Malt — 89,81 € → 93,61 €",
+			"content_html": "<p>Tuotteen Bivrost Yggdrasil 2025 Single Malt hinta on muuttunut.</p><p>89,81 € → 93,61 € (+3,80 €, +4,23 %).</p>",
+			"summary": "Tuotteen Bivrost Yggdrasil 2025 Single Malt hinta on muuttunut. 89,81 € → 93,61 € (+3,80 €, +4,23 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900451-9d297f6f6aa9.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

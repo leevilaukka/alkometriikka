@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – D'Arenberg The Bonsai Vine 2017 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/913835/",
+	"feed_url": "https://alkometriikka.fi/rss/913835.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: D'Arenberg The Bonsai Vine 2017.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-913835-2026-09-29-23.97",
+			"url": "https://alkometriikka.fi/tuotteet/913835/",
+			"title": "D'Arenberg The Bonsai Vine 2017 — 23,45 € → 23,97 €",
+			"content_html": "<p>Tuotteen D'Arenberg The Bonsai Vine 2017 hinta on muuttunut.</p><p>23,45 € → 23,97 € (+0,52 €, +2,22 %).</p>",
+			"summary": "Tuotteen D'Arenberg The Bonsai Vine 2017 hinta on muuttunut. 23,45 € → 23,97 € (+0,52 €, +2,22 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/913835-0f3598dcc0c6.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

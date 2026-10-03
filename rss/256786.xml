@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Kåska Casual Spirit – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/256786/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Kåska Casual Spirit.</description>
+		<language>fi</language>
+		<lastBuildDate>Sat, 03 Oct 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/256786.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Kåska Casual Spirit – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Kåska Casual Spirit — 28,77 € → 28,93 €</title>
+			<link>https://alkometriikka.fi/tuotteet/256786/</link>
+			<guid isPermaLink="false">alkometriikka-256786-2026-09-29-28.93</guid>
+			<pubDate>Tue, 29 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / maustetut viinat</category>
+			<description><![CDATA[<p>Tuotteen Kåska Casual Spirit hinta on muuttunut.</p><p>28,77 € → 28,93 € (+0,16 €, +0,56 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/256786-5fc2d3b3ea65.png" />
+		</item>
+	</channel>
+</rss>

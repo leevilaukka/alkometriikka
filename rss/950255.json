@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – S.Pellegrino – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/950255/",
+	"feed_url": "https://alkometriikka.fi/rss/950255.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: S.Pellegrino.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-950255-2026-07-18-3.09",
+			"url": "https://alkometriikka.fi/tuotteet/950255/",
+			"title": "S.Pellegrino — 3,08 € → 3,09 €",
+			"content_html": "<p>Tuotteen S.Pellegrino hinta on muuttunut.</p><p>3,08 € → 3,09 € (+0,01 €, +0,32 %).</p>",
+			"summary": "Tuotteen S.Pellegrino hinta on muuttunut. 3,08 € → 3,09 € (+0,01 €, +0,32 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/950255-9847a5e4a85b.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

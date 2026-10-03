@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Domaine Laroche Chablis Saint Martin 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/592617/",
+	"feed_url": "https://alkometriikka.fi/rss/592617.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Domaine Laroche Chablis Saint Martin 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-592617-2026-07-18-29.98",
+			"url": "https://alkometriikka.fi/tuotteet/592617/",
+			"title": "Domaine Laroche Chablis Saint Martin 2025 — 29,94 € → 29,98 €",
+			"content_html": "<p>Tuotteen Domaine Laroche Chablis Saint Martin 2025 hinta on muuttunut.</p><p>29,94 € → 29,98 € (+0,04 €, +0,13 %).</p>",
+			"summary": "Tuotteen Domaine Laroche Chablis Saint Martin 2025 hinta on muuttunut. 29,94 € → 29,98 € (+0,04 €, +0,13 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/592617-c1da1bea4864.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

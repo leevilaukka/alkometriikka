@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Frontaal Brewery Juice Punch tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/931702/",
+	"feed_url": "https://alkometriikka.fi/rss/931702.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Frontaal Brewery Juice Punch tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-931702-2026-07-18-4.59",
+			"url": "https://alkometriikka.fi/tuotteet/931702/",
+			"title": "Frontaal Brewery Juice Punch tölkki — 4,89 € → 4,59 €",
+			"content_html": "<p>Tuotteen Frontaal Brewery Juice Punch tölkki hinta on muuttunut.</p><p>4,89 € → 4,59 € (−0,30 €, −6,13 %).</p>",
+			"summary": "Tuotteen Frontaal Brewery Juice Punch tölkki hinta on muuttunut. 4,89 € → 4,59 € (−0,30 €, −6,13 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/931702-b8269ef54542.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

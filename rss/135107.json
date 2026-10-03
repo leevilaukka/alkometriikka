@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Havana Club Añejo 7 Años – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/135107/",
+	"feed_url": "https://alkometriikka.fi/rss/135107.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Havana Club Añejo 7 Años.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-135107-2026-07-18-37.28",
+			"url": "https://alkometriikka.fi/tuotteet/135107/",
+			"title": "Havana Club Añejo 7 Años — 37,26 € → 37,28 €",
+			"content_html": "<p>Tuotteen Havana Club Añejo 7 Años hinta on muuttunut.</p><p>37,26 € → 37,28 € (+0,02 €, +0,05 %).</p>",
+			"summary": "Tuotteen Havana Club Añejo 7 Años hinta on muuttunut. 37,26 € → 37,28 € (+0,02 €, +0,05 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/135107-396f041d44aa.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

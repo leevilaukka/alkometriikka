@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gonet Sulcova Réserve Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/933201/",
+	"feed_url": "https://alkometriikka.fi/rss/933201.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gonet Sulcova Réserve Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-933201-2026-09-29-54.3",
+			"url": "https://alkometriikka.fi/tuotteet/933201/",
+			"title": "Gonet Sulcova Réserve Champagne Brut — 49,44 € → 54,30 €",
+			"content_html": "<p>Tuotteen Gonet Sulcova Réserve Champagne Brut hinta on muuttunut.</p><p>49,44 € → 54,30 € (+4,86 €, +9,83 %).</p>",
+			"summary": "Tuotteen Gonet Sulcova Réserve Champagne Brut hinta on muuttunut. 49,44 € → 54,30 € (+4,86 €, +9,83 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/933201-956a136f970f.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

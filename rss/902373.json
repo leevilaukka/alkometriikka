@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Panyolai Aranykörte – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902373/",
+	"feed_url": "https://alkometriikka.fi/rss/902373.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Panyolai Aranykörte.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902373-2026-09-29-60.47",
+			"url": "https://alkometriikka.fi/tuotteet/902373/",
+			"title": "Panyolai Aranykörte — 58,70 € → 60,47 €",
+			"content_html": "<p>Tuotteen Panyolai Aranykörte hinta on muuttunut.</p><p>58,70 € → 60,47 € (+1,77 €, +3,02 %).</p>",
+			"summary": "Tuotteen Panyolai Aranykörte hinta on muuttunut. 58,70 € → 60,47 € (+1,77 €, +3,02 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902373-d25e7da52c30.png",
+			"tags": [
+				"Väkevät",
+				"hedelmätisleet"
+			]
+		}
+	]
+}

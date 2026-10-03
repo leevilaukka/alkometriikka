@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Besini Kindzmarauli 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/954254/",
+	"feed_url": "https://alkometriikka.fi/rss/954254.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Besini Kindzmarauli 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-954254-2026-07-18-16.54",
+			"url": "https://alkometriikka.fi/tuotteet/954254/",
+			"title": "Besini Kindzmarauli 2025 — 16,15 € → 16,54 €",
+			"content_html": "<p>Tuotteen Besini Kindzmarauli 2025 hinta on muuttunut.</p><p>16,15 € → 16,54 € (+0,39 €, +2,41 %).</p>",
+			"summary": "Tuotteen Besini Kindzmarauli 2025 hinta on muuttunut. 16,15 € → 16,54 € (+0,39 €, +2,41 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/954254-dd5d88f30055.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

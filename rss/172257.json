@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kilchoman Machir Bay Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/172257/",
+	"feed_url": "https://alkometriikka.fi/rss/172257.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kilchoman Machir Bay Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-172257-2026-07-18-69.98",
+			"url": "https://alkometriikka.fi/tuotteet/172257/",
+			"title": "Kilchoman Machir Bay Single Malt — 72,11 € → 69,98 €",
+			"content_html": "<p>Tuotteen Kilchoman Machir Bay Single Malt hinta on muuttunut.</p><p>72,11 € → 69,98 € (−2,13 €, −2,95 %).</p>",
+			"summary": "Tuotteen Kilchoman Machir Bay Single Malt hinta on muuttunut. 72,11 € → 69,98 € (−2,13 €, −2,95 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/172257-d6d1b654796c.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

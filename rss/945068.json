@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Soalheiro Rosé Bruto – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/945068/",
+	"feed_url": "https://alkometriikka.fi/rss/945068.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Soalheiro Rosé Bruto.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-945068-2026-07-18-25",
+			"url": "https://alkometriikka.fi/tuotteet/945068/",
+			"title": "Soalheiro Rosé Bruto — 24,96 € → 25,00 €",
+			"content_html": "<p>Tuotteen Soalheiro Rosé Bruto hinta on muuttunut.</p><p>24,96 € → 25,00 € (+0,04 €, +0,16 %).</p>",
+			"summary": "Tuotteen Soalheiro Rosé Bruto hinta on muuttunut. 24,96 € → 25,00 € (+0,04 €, +0,16 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/945068-9c8fc5723c7a.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

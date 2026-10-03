@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Paulaner Münchner Hell tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/718816/",
+	"feed_url": "https://alkometriikka.fi/rss/718816.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Paulaner Münchner Hell tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-718816-2026-09-29-3.29",
+			"url": "https://alkometriikka.fi/tuotteet/718816/",
+			"title": "Paulaner Münchner Hell tölkki — 3,35 € → 3,29 €",
+			"content_html": "<p>Tuotteen Paulaner Münchner Hell tölkki hinta on muuttunut.</p><p>3,35 € → 3,29 € (−0,06 €, −1,79 %).</p>",
+			"summary": "Tuotteen Paulaner Münchner Hell tölkki hinta on muuttunut. 3,35 € → 3,29 € (−0,06 €, −1,79 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/718816-878fe33ed3a5.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

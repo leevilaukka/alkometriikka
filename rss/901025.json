@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Castell D'Encus Ekam 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901025/",
+	"feed_url": "https://alkometriikka.fi/rss/901025.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Castell D'Encus Ekam 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901025-2026-09-29-44.54",
+			"url": "https://alkometriikka.fi/tuotteet/901025/",
+			"title": "Castell D'Encus Ekam 2022 — 43,98 € → 44,54 €",
+			"content_html": "<p>Tuotteen Castell D'Encus Ekam 2022 hinta on muuttunut.</p><p>43,98 € → 44,54 € (+0,56 €, +1,27 %).</p>",
+			"summary": "Tuotteen Castell D'Encus Ekam 2022 hinta on muuttunut. 43,98 € → 44,54 € (+0,56 €, +1,27 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901025-cff17520c331.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

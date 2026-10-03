@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vinory Barbaresco Riserva San Cristoforo 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900091/",
+	"feed_url": "https://alkometriikka.fi/rss/900091.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vinory Barbaresco Riserva San Cristoforo 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900091-2026-09-29-92.95",
+			"url": "https://alkometriikka.fi/tuotteet/900091/",
+			"title": "Vinory Barbaresco Riserva San Cristoforo 2020 — 87,18 € → 92,95 €",
+			"content_html": "<p>Tuotteen Vinory Barbaresco Riserva San Cristoforo 2020 hinta on muuttunut.</p><p>87,18 € → 92,95 € (+5,77 €, +6,62 %).</p>",
+			"summary": "Tuotteen Vinory Barbaresco Riserva San Cristoforo 2020 hinta on muuttunut. 87,18 € → 92,95 € (+5,77 €, +6,62 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900091-98b21fd2f262.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

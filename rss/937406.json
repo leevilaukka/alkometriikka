@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Fallet Dart Champagne Rosé Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/937406/",
+	"feed_url": "https://alkometriikka.fi/rss/937406.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Fallet Dart Champagne Rosé Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-937406-2026-09-29-62.98",
+			"url": "https://alkometriikka.fi/tuotteet/937406/",
+			"title": "Fallet Dart Champagne Rosé Brut — 60,45 € → 62,98 €",
+			"content_html": "<p>Tuotteen Fallet Dart Champagne Rosé Brut hinta on muuttunut.</p><p>60,45 € → 62,98 € (+2,53 €, +4,19 %).</p>",
+			"summary": "Tuotteen Fallet Dart Champagne Rosé Brut hinta on muuttunut. 60,45 € → 62,98 € (+2,53 €, +4,19 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/937406-fc576b77de28.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

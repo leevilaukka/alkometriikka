@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Grand Vin de Leoville du Marquis de Las Cases 2010 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/936905/",
+	"feed_url": "https://alkometriikka.fi/rss/936905.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Grand Vin de Leoville du Marquis de Las Cases 2010.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-936905-2026-09-29-578.06",
+			"url": "https://alkometriikka.fi/tuotteet/936905/",
+			"title": "Grand Vin de Leoville du Marquis de Las Cases 2010 — 540,12 € → 578,06 €",
+			"content_html": "<p>Tuotteen Grand Vin de Leoville du Marquis de Las Cases 2010 hinta on muuttunut.</p><p>540,12 € → 578,06 € (+37,94 €, +7,02 %).</p>",
+			"summary": "Tuotteen Grand Vin de Leoville du Marquis de Las Cases 2010 hinta on muuttunut. 540,12 € → 578,06 € (+37,94 €, +7,02 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/936905-ed7fb6e96330.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

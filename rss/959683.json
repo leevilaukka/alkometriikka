@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Masi Mazzano Amarone della Valpolicella Classico 2013 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/959683/",
+	"feed_url": "https://alkometriikka.fi/rss/959683.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Masi Mazzano Amarone della Valpolicella Classico 2013.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-959683-2026-09-29-176.47",
+			"url": "https://alkometriikka.fi/tuotteet/959683/",
+			"title": "Masi Mazzano Amarone della Valpolicella Classico 2013 — 166,69 € → 176,47 €",
+			"content_html": "<p>Tuotteen Masi Mazzano Amarone della Valpolicella Classico 2013 hinta on muuttunut.</p><p>166,69 € → 176,47 € (+9,78 €, +5,87 %).</p>",
+			"summary": "Tuotteen Masi Mazzano Amarone della Valpolicella Classico 2013 hinta on muuttunut. 166,69 € → 176,47 € (+9,78 €, +5,87 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/959683-010744e4f3c8.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

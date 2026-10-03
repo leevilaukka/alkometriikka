@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Spring Seed Scarlet Runner Shiraz 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/477567/",
+	"feed_url": "https://alkometriikka.fi/rss/477567.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Spring Seed Scarlet Runner Shiraz 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-477567-2026-09-29-12.98",
+			"url": "https://alkometriikka.fi/tuotteet/477567/",
+			"title": "Spring Seed Scarlet Runner Shiraz 2024 — 15,09 € → 12,98 €",
+			"content_html": "<p>Tuotteen Spring Seed Scarlet Runner Shiraz 2024 hinta on muuttunut.</p><p>15,09 € → 12,98 € (−2,11 €, −13,98 %).</p>",
+			"summary": "Tuotteen Spring Seed Scarlet Runner Shiraz 2024 hinta on muuttunut. 15,09 € → 12,98 € (−2,11 €, −13,98 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/477567-4bb41699248f.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-477567-2026-07-18-15.09",
+			"url": "https://alkometriikka.fi/tuotteet/477567/",
+			"title": "Spring Seed Scarlet Runner Shiraz 2024 — 15,48 € → 15,09 €",
+			"content_html": "<p>Tuotteen Spring Seed Scarlet Runner Shiraz 2024 hinta on muuttunut.</p><p>15,48 € → 15,09 € (−0,39 €, −2,52 %).</p>",
+			"summary": "Tuotteen Spring Seed Scarlet Runner Shiraz 2024 hinta on muuttunut. 15,48 € → 15,09 € (−0,39 €, −2,52 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/477567-4bb41699248f.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

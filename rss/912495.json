@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Coco Rotie 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/912495/",
+	"feed_url": "https://alkometriikka.fi/rss/912495.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Coco Rotie 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-912495-2026-09-29-19.99",
+			"url": "https://alkometriikka.fi/tuotteet/912495/",
+			"title": "Coco Rotie 2024 — 19,45 € → 19,99 €",
+			"content_html": "<p>Tuotteen Coco Rotie 2024 hinta on muuttunut.</p><p>19,45 € → 19,99 € (+0,54 €, +2,78 %).</p>",
+			"summary": "Tuotteen Coco Rotie 2024 hinta on muuttunut. 19,45 € → 19,99 € (+0,54 €, +2,78 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/912495-87fd07b67465.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

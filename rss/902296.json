@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Helsinki Applejack – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902296/",
+	"feed_url": "https://alkometriikka.fi/rss/902296.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Helsinki Applejack.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902296-2026-09-29-55.99",
+			"url": "https://alkometriikka.fi/tuotteet/902296/",
+			"title": "Helsinki Applejack — 54,98 € → 55,99 €",
+			"content_html": "<p>Tuotteen Helsinki Applejack hinta on muuttunut.</p><p>54,98 € → 55,99 € (+1,01 €, +1,84 %).</p>",
+			"summary": "Tuotteen Helsinki Applejack hinta on muuttunut. 54,98 € → 55,99 € (+1,01 €, +1,84 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902296-34c1498bfb45.png",
+			"tags": [
+				"Väkevät",
+				"hedelmätisleet"
+			]
+		},
+		{
+			"id": "alkometriikka-902296-2026-07-18-54.98",
+			"url": "https://alkometriikka.fi/tuotteet/902296/",
+			"title": "Helsinki Applejack — 59,99 € → 54,98 €",
+			"content_html": "<p>Tuotteen Helsinki Applejack hinta on muuttunut.</p><p>59,99 € → 54,98 € (−5,01 €, −8,35 %).</p>",
+			"summary": "Tuotteen Helsinki Applejack hinta on muuttunut. 59,99 € → 54,98 € (−5,01 €, −8,35 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902296-34c1498bfb45.png",
+			"tags": [
+				"Väkevät",
+				"hedelmätisleet"
+			]
+		}
+	]
+}

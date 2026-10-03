@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kalevala Runoi Rum – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/940921/",
+	"feed_url": "https://alkometriikka.fi/rss/940921.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kalevala Runoi Rum.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-940921-2026-09-29-53.47",
+			"url": "https://alkometriikka.fi/tuotteet/940921/",
+			"title": "Kalevala Runoi Rum — 52,17 € → 53,47 €",
+			"content_html": "<p>Tuotteen Kalevala Runoi Rum hinta on muuttunut.</p><p>52,17 € → 53,47 € (+1,30 €, +2,49 %).</p>",
+			"summary": "Tuotteen Kalevala Runoi Rum hinta on muuttunut. 52,17 € → 53,47 € (+1,30 €, +2,49 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/940921-49edce94889a.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

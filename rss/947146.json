@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pirkka Amarone della Valpolicella Classico 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/947146/",
+	"feed_url": "https://alkometriikka.fi/rss/947146.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pirkka Amarone della Valpolicella Classico 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-947146-2026-09-29-44.96",
+			"url": "https://alkometriikka.fi/tuotteet/947146/",
+			"title": "Pirkka Amarone della Valpolicella Classico 2018 — 44,34 € → 44,96 €",
+			"content_html": "<p>Tuotteen Pirkka Amarone della Valpolicella Classico 2018 hinta on muuttunut.</p><p>44,34 € → 44,96 € (+0,62 €, +1,40 %).</p>",
+			"summary": "Tuotteen Pirkka Amarone della Valpolicella Classico 2018 hinta on muuttunut. 44,34 € → 44,96 € (+0,62 €, +1,40 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/947146-f29f5da3c7e9.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

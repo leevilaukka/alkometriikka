@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Quiet Man – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/121106/",
+	"feed_url": "https://alkometriikka.fi/rss/121106.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Quiet Man.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-121106-2026-07-18-32.98",
+			"url": "https://alkometriikka.fi/tuotteet/121106/",
+			"title": "The Quiet Man — 33,18 € → 32,98 €",
+			"content_html": "<p>Tuotteen The Quiet Man hinta on muuttunut.</p><p>33,18 € → 32,98 € (−0,20 €, −0,60 %).</p>",
+			"summary": "Tuotteen The Quiet Man hinta on muuttunut. 33,18 € → 32,98 € (−0,20 €, −0,60 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/121106-13a941a2df46.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

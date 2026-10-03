@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Barbanera Vino Nobile di Montepulciano 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/937076/",
+	"feed_url": "https://alkometriikka.fi/rss/937076.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Barbanera Vino Nobile di Montepulciano 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-937076-2026-07-18-19.99",
+			"url": "https://alkometriikka.fi/tuotteet/937076/",
+			"title": "Barbanera Vino Nobile di Montepulciano 2022 — 20,45 € → 19,99 €",
+			"content_html": "<p>Tuotteen Barbanera Vino Nobile di Montepulciano 2022 hinta on muuttunut.</p><p>20,45 € → 19,99 € (−0,46 €, −2,25 %).</p>",
+			"summary": "Tuotteen Barbanera Vino Nobile di Montepulciano 2022 hinta on muuttunut. 20,45 € → 19,99 € (−0,46 €, −2,25 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/937076-4e086de43c09.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

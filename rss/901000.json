@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Don Simon Premium Sangria – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901000/",
+	"feed_url": "https://alkometriikka.fi/rss/901000.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Don Simon Premium Sangria.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901000-2026-07-18-11.99",
+			"url": "https://alkometriikka.fi/tuotteet/901000/",
+			"title": "Don Simon Premium Sangria — 12,45 € → 11,99 €",
+			"content_html": "<p>Tuotteen Don Simon Premium Sangria hinta on muuttunut.</p><p>12,45 € → 11,99 € (−0,46 €, −3,69 %).</p>",
+			"summary": "Tuotteen Don Simon Premium Sangria hinta on muuttunut. 12,45 € → 11,99 € (−0,46 €, −3,69 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901000-25f3eef39f8c.png",
+			"tags": [
+				"Viinit",
+				"hedelmä- ja aromatisoidut viinit"
+			]
+		}
+	]
+}

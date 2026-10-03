@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Noble House Beerenauslese 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/942834/",
+	"feed_url": "https://alkometriikka.fi/rss/942834.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Noble House Beerenauslese 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-942834-2026-09-29-22.82",
+			"url": "https://alkometriikka.fi/tuotteet/942834/",
+			"title": "Noble House Beerenauslese 2020 — 22,50 € → 22,82 €",
+			"content_html": "<p>Tuotteen Noble House Beerenauslese 2020 hinta on muuttunut.</p><p>22,50 € → 22,82 € (+0,32 €, +1,42 %).</p>",
+			"summary": "Tuotteen Noble House Beerenauslese 2020 hinta on muuttunut. 22,50 € → 22,82 € (+0,32 €, +1,42 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/942834-50c4a9b11955.png",
+			"tags": [
+				"Viinit",
+				"jälkiruokaviinit"
+			]
+		}
+	]
+}

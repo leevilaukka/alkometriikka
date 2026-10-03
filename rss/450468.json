@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Katse Rosé 2025 hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/450468/",
+	"feed_url": "https://alkometriikka.fi/rss/450468.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Katse Rosé 2025 hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-450468-2026-07-18-33.99",
+			"url": "https://alkometriikka.fi/tuotteet/450468/",
+			"title": "Katse Rosé 2025 hanapakkaus — 35,84 € → 33,99 €",
+			"content_html": "<p>Tuotteen Katse Rosé 2025 hanapakkaus hinta on muuttunut.</p><p>35,84 € → 33,99 € (−1,85 €, −5,16 %).</p>",
+			"summary": "Tuotteen Katse Rosé 2025 hanapakkaus hinta on muuttunut. 35,84 € → 33,99 € (−1,85 €, −5,16 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/450468-9e50629e06ed.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

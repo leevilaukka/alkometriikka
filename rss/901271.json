@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Montepalacio Vino Tinto – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901271/",
+	"feed_url": "https://alkometriikka.fi/rss/901271.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Montepalacio Vino Tinto.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901271-2026-07-18-8.49",
+			"url": "https://alkometriikka.fi/tuotteet/901271/",
+			"title": "Montepalacio Vino Tinto — 7,99 € → 8,49 €",
+			"content_html": "<p>Tuotteen Montepalacio Vino Tinto hinta on muuttunut.</p><p>7,99 € → 8,49 € (+0,50 €, +6,26 %).</p>",
+			"summary": "Tuotteen Montepalacio Vino Tinto hinta on muuttunut. 7,99 € → 8,49 € (+0,50 €, +6,26 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901271-0ce39ba6fb66.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

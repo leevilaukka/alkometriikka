@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Louis M. Martini Napa Valley Cabernet Sauvignon 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901860/",
+	"feed_url": "https://alkometriikka.fi/rss/901860.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Louis M. Martini Napa Valley Cabernet Sauvignon 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901860-2026-09-29-64.99",
+			"url": "https://alkometriikka.fi/tuotteet/901860/",
+			"title": "Louis M. Martini Napa Valley Cabernet Sauvignon 2022 — 55,00 € → 64,99 €",
+			"content_html": "<p>Tuotteen Louis M. Martini Napa Valley Cabernet Sauvignon 2022 hinta on muuttunut.</p><p>55,00 € → 64,99 € (+9,99 €, +18,16 %).</p>",
+			"summary": "Tuotteen Louis M. Martini Napa Valley Cabernet Sauvignon 2022 hinta on muuttunut. 55,00 € → 64,99 € (+9,99 €, +18,16 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901860-c369d691f6f2.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

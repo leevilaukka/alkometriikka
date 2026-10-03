@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Soalheiro Mar – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901506/",
+	"feed_url": "https://alkometriikka.fi/rss/901506.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Soalheiro Mar.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901506-2026-07-18-17.39",
+			"url": "https://alkometriikka.fi/tuotteet/901506/",
+			"title": "Soalheiro Mar — 17,36 € → 17,39 €",
+			"content_html": "<p>Tuotteen Soalheiro Mar hinta on muuttunut.</p><p>17,36 € → 17,39 € (+0,03 €, +0,17 %).</p>",
+			"summary": "Tuotteen Soalheiro Mar hinta on muuttunut. 17,36 € → 17,39 € (+0,03 €, +0,17 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901506-ac186ef538e3.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

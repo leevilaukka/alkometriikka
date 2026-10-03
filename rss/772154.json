@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Brooklyn Lager – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/772154/",
+	"feed_url": "https://alkometriikka.fi/rss/772154.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Brooklyn Lager.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-772154-2026-09-29-4.19",
+			"url": "https://alkometriikka.fi/tuotteet/772154/",
+			"title": "Brooklyn Lager — 4,09 € → 4,19 €",
+			"content_html": "<p>Tuotteen Brooklyn Lager hinta on muuttunut.</p><p>4,09 € → 4,19 € (+0,10 €, +2,44 %).</p>",
+			"summary": "Tuotteen Brooklyn Lager hinta on muuttunut. 4,09 € → 4,19 € (+0,10 €, +2,44 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/772154-1c60f2298013.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-772154-2026-07-18-4.09",
+			"url": "https://alkometriikka.fi/tuotteet/772154/",
+			"title": "Brooklyn Lager — 3,99 € → 4,09 €",
+			"content_html": "<p>Tuotteen Brooklyn Lager hinta on muuttunut.</p><p>3,99 € → 4,09 € (+0,10 €, +2,51 %).</p>",
+			"summary": "Tuotteen Brooklyn Lager hinta on muuttunut. 3,99 € → 4,09 € (+0,10 €, +2,51 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/772154-1c60f2298013.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

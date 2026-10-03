@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Enzo Bartoli Cortese 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/934888/",
+	"feed_url": "https://alkometriikka.fi/rss/934888.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Enzo Bartoli Cortese 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-934888-2026-07-18-15.39",
+			"url": "https://alkometriikka.fi/tuotteet/934888/",
+			"title": "Enzo Bartoli Cortese 2019 — 15,43 € → 15,39 €",
+			"content_html": "<p>Tuotteen Enzo Bartoli Cortese 2019 hinta on muuttunut.</p><p>15,43 € → 15,39 € (−0,04 €, −0,26 %).</p>",
+			"summary": "Tuotteen Enzo Bartoli Cortese 2019 hinta on muuttunut. 15,43 € → 15,39 € (−0,04 €, −0,26 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/934888-c54f9704e4b3.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

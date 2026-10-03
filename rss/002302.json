@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gammel Dansk – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/002302/",
+	"feed_url": "https://alkometriikka.fi/rss/002302.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gammel Dansk.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-002302-2026-09-29-18.59",
+			"url": "https://alkometriikka.fi/tuotteet/002302/",
+			"title": "Gammel Dansk — 18,49 € → 18,59 €",
+			"content_html": "<p>Tuotteen Gammel Dansk hinta on muuttunut.</p><p>18,49 € → 18,59 € (+0,10 €, +0,54 %).</p>",
+			"summary": "Tuotteen Gammel Dansk hinta on muuttunut. 18,49 € → 18,59 € (+0,10 €, +0,54 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/002302-63cccfc88ab6.png",
+			"tags": [
+				"Väkevät",
+				"maha- ja maustekatkerot"
+			]
+		}
+	]
+}

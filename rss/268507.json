@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pople Strawberry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/268507/",
+	"feed_url": "https://alkometriikka.fi/rss/268507.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pople Strawberry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-268507-2026-07-18-17.5",
+			"url": "https://alkometriikka.fi/tuotteet/268507/",
+			"title": "Pople Strawberry — 17,29 € → 17,50 €",
+			"content_html": "<p>Tuotteen Pople Strawberry hinta on muuttunut.</p><p>17,29 € → 17,50 € (+0,21 €, +1,21 %).</p>",
+			"summary": "Tuotteen Pople Strawberry hinta on muuttunut. 17,29 € → 17,50 € (+0,21 €, +1,21 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/268507-a5173fe74f26.png",
+			"tags": [
+				"Väkevät",
+				"marjaliköörit"
+			]
+		}
+	]
+}

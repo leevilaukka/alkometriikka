@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – A. Le Coq Long Drink Grapefruit Alcohol-free tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/790214/",
+	"feed_url": "https://alkometriikka.fi/rss/790214.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: A. Le Coq Long Drink Grapefruit Alcohol-free tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-790214-2026-07-18-2.19",
+			"url": "https://alkometriikka.fi/tuotteet/790214/",
+			"title": "A. Le Coq Long Drink Grapefruit Alcohol-free tölkki — 1,74 € → 2,19 €",
+			"content_html": "<p>Tuotteen A. Le Coq Long Drink Grapefruit Alcohol-free tölkki hinta on muuttunut.</p><p>1,74 € → 2,19 € (+0,45 €, +25,86 %).</p>",
+			"summary": "Tuotteen A. Le Coq Long Drink Grapefruit Alcohol-free tölkki hinta on muuttunut. 1,74 € → 2,19 € (+0,45 €, +25,86 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/790214-e23c9c21c52b.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

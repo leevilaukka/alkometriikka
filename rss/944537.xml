@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Protos Reserva 2020 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/944537/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Protos Reserva 2020.</description>
+		<language>fi</language>
+		<lastBuildDate>Sat, 03 Oct 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/944537.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Protos Reserva 2020 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Protos Reserva 2020 — 40,22 € → 40,51 €</title>
+			<link>https://alkometriikka.fi/tuotteet/944537/</link>
+			<guid isPermaLink="false">alkometriikka-944537-2026-09-29-40.51</guid>
+			<pubDate>Tue, 29 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Protos Reserva 2020 hinta on muuttunut.</p><p>40,22 € → 40,51 € (+0,29 €, +0,72 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/944537-d8edf7d9fa73.png" />
+		</item>
+	</channel>
+</rss>

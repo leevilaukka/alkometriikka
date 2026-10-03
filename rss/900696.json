@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Domaine Laroche Chablis Saint Martin Magnum 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900696/",
+	"feed_url": "https://alkometriikka.fi/rss/900696.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Domaine Laroche Chablis Saint Martin Magnum 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900696-2026-07-18-63.48",
+			"url": "https://alkometriikka.fi/tuotteet/900696/",
+			"title": "Domaine Laroche Chablis Saint Martin Magnum 2024 — 63,40 € → 63,48 €",
+			"content_html": "<p>Tuotteen Domaine Laroche Chablis Saint Martin Magnum 2024 hinta on muuttunut.</p><p>63,40 € → 63,48 € (+0,08 €, +0,13 %).</p>",
+			"summary": "Tuotteen Domaine Laroche Chablis Saint Martin Magnum 2024 hinta on muuttunut. 63,40 € → 63,48 € (+0,08 €, +0,13 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900696-ba34175ac3ff.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

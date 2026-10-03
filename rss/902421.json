@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Prunotto Barolo Bussia 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902421/",
+	"feed_url": "https://alkometriikka.fi/rss/902421.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Prunotto Barolo Bussia 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902421-2026-09-29-103.16",
+			"url": "https://alkometriikka.fi/tuotteet/902421/",
+			"title": "Prunotto Barolo Bussia 2020 — 98,46 € → 103,16 €",
+			"content_html": "<p>Tuotteen Prunotto Barolo Bussia 2020 hinta on muuttunut.</p><p>98,46 € → 103,16 € (+4,70 €, +4,77 %).</p>",
+			"summary": "Tuotteen Prunotto Barolo Bussia 2020 hinta on muuttunut. 98,46 € → 103,16 € (+4,70 €, +4,77 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902421-ce5a609eee9f.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

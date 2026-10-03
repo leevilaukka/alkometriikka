@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – La Trappe Isid'or – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/948023/",
+	"feed_url": "https://alkometriikka.fi/rss/948023.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: La Trappe Isid'or.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-948023-2026-07-18-11.49",
+			"url": "https://alkometriikka.fi/tuotteet/948023/",
+			"title": "La Trappe Isid'or — 11,39 € → 11,49 €",
+			"content_html": "<p>Tuotteen La Trappe Isid'or hinta on muuttunut.</p><p>11,39 € → 11,49 € (+0,10 €, +0,88 %).</p>",
+			"summary": "Tuotteen La Trappe Isid'or hinta on muuttunut. 11,39 € → 11,49 € (+0,10 €, +0,88 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/948023-e093ffe98851.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

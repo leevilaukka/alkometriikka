@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mazzei Badiola Chianti Classico Gran Selezione 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/914043/",
+	"feed_url": "https://alkometriikka.fi/rss/914043.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mazzei Badiola Chianti Classico Gran Selezione 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-914043-2026-09-29-73.01",
+			"url": "https://alkometriikka.fi/tuotteet/914043/",
+			"title": "Mazzei Badiola Chianti Classico Gran Selezione 2020 — 70,46 € → 73,01 €",
+			"content_html": "<p>Tuotteen Mazzei Badiola Chianti Classico Gran Selezione 2020 hinta on muuttunut.</p><p>70,46 € → 73,01 € (+2,55 €, +3,62 %).</p>",
+			"summary": "Tuotteen Mazzei Badiola Chianti Classico Gran Selezione 2020 hinta on muuttunut. 70,46 € → 73,01 € (+2,55 €, +3,62 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/914043-de277560b6be.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

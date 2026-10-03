@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Baltic Dark muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/108217/",
+	"feed_url": "https://alkometriikka.fi/rss/108217.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Baltic Dark muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-108217-2026-07-18-23.39",
+			"url": "https://alkometriikka.fi/tuotteet/108217/",
+			"title": "Baltic Dark muovipullo — 23,18 € → 23,39 €",
+			"content_html": "<p>Tuotteen Baltic Dark muovipullo hinta on muuttunut.</p><p>23,18 € → 23,39 € (+0,21 €, +0,91 %).</p>",
+			"summary": "Tuotteen Baltic Dark muovipullo hinta on muuttunut. 23,18 € → 23,39 € (+0,21 €, +0,91 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/108217-c946ae9d4b0f.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

@@ -1,0 +1,50 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jahti Yrttisnapsi muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/169843/",
+	"feed_url": "https://alkometriikka.fi/rss/169843.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jahti Yrttisnapsi muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-169843-2026-07-18-8.44",
+			"url": "https://alkometriikka.fi/tuotteet/169843/",
+			"title": "Jahti Yrttisnapsi muovipullo — 8,41 € → 8,44 €",
+			"content_html": "<p>Tuotteen Jahti Yrttisnapsi muovipullo hinta on muuttunut.</p><p>8,41 € → 8,44 € (+0,03 €, +0,36 %).</p>",
+			"summary": "Tuotteen Jahti Yrttisnapsi muovipullo hinta on muuttunut. 8,41 € → 8,44 € (+0,03 €, +0,36 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/169843-f5d4c25597ee.png",
+			"tags": [
+				"Väkevät",
+				"yrttiliköörit"
+			]
+		},
+		{
+			"id": "alkometriikka-169843-2026-02-02-8.31",
+			"url": "https://alkometriikka.fi/tuotteet/169843/",
+			"title": "Jahti Yrttisnapsi muovipullo — 8,41 € → 8,31 €",
+			"content_html": "<p>Tuotteen Jahti Yrttisnapsi muovipullo hinta on muuttunut.</p><p>8,41 € → 8,31 € (−0,10 €, −1,19 %).</p>",
+			"summary": "Tuotteen Jahti Yrttisnapsi muovipullo hinta on muuttunut. 8,41 € → 8,31 € (−0,10 €, −1,19 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/169843-f5d4c25597ee.png",
+			"tags": [
+				"Väkevät",
+				"yrttiliköörit"
+			]
+		},
+		{
+			"id": "alkometriikka-169843-2026-02-02-8.41",
+			"url": "https://alkometriikka.fi/tuotteet/169843/",
+			"title": "Jahti Yrttisnapsi muovipullo — 8,31 € → 8,41 €",
+			"content_html": "<p>Tuotteen Jahti Yrttisnapsi muovipullo hinta on muuttunut.</p><p>8,31 € → 8,41 € (+0,10 €, +1,20 %).</p>",
+			"summary": "Tuotteen Jahti Yrttisnapsi muovipullo hinta on muuttunut. 8,31 € → 8,41 € (+0,10 €, +1,20 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/169843-f5d4c25597ee.png",
+			"tags": [
+				"Väkevät",
+				"yrttiliköörit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Coquerel VS Calvados – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/000622/",
+	"feed_url": "https://alkometriikka.fi/rss/000622.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Coquerel VS Calvados.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-000622-2026-07-18-19.98",
+			"url": "https://alkometriikka.fi/tuotteet/000622/",
+			"title": "Coquerel VS Calvados — 20,13 € → 19,98 €",
+			"content_html": "<p>Tuotteen Coquerel VS Calvados hinta on muuttunut.</p><p>20,13 € → 19,98 € (−0,15 €, −0,75 %).</p>",
+			"summary": "Tuotteen Coquerel VS Calvados hinta on muuttunut. 20,13 € → 19,98 € (−0,15 €, −0,75 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/000622-9f37f248861c.png",
+			"tags": [
+				"Väkevät",
+				"calvadosit"
+			]
+		}
+	]
+}

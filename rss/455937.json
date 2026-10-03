@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Joseph Drouhin Gevrey-Chambertin 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/455937/",
+	"feed_url": "https://alkometriikka.fi/rss/455937.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Joseph Drouhin Gevrey-Chambertin 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-455937-2026-09-29-83.95",
+			"url": "https://alkometriikka.fi/tuotteet/455937/",
+			"title": "Joseph Drouhin Gevrey-Chambertin 2023 — 80,00 € → 83,95 €",
+			"content_html": "<p>Tuotteen Joseph Drouhin Gevrey-Chambertin 2023 hinta on muuttunut.</p><p>80,00 € → 83,95 € (+3,95 €, +4,94 %).</p>",
+			"summary": "Tuotteen Joseph Drouhin Gevrey-Chambertin 2023 hinta on muuttunut. 80,00 € → 83,95 € (+3,95 €, +4,94 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/455937-c2620d46802f.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-455937-2026-07-18-80",
+			"url": "https://alkometriikka.fi/tuotteet/455937/",
+			"title": "Joseph Drouhin Gevrey-Chambertin 2023 — 80,44 € → 80,00 €",
+			"content_html": "<p>Tuotteen Joseph Drouhin Gevrey-Chambertin 2023 hinta on muuttunut.</p><p>80,44 € → 80,00 € (−0,44 €, −0,55 %).</p>",
+			"summary": "Tuotteen Joseph Drouhin Gevrey-Chambertin 2023 hinta on muuttunut. 80,44 € → 80,00 € (−0,44 €, −0,55 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/455937-c2620d46802f.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

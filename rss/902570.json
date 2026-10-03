@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Taittinger Réserve Champagne Brut Nabuchadnezzar – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902570/",
+	"feed_url": "https://alkometriikka.fi/rss/902570.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Taittinger Réserve Champagne Brut Nabuchadnezzar.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902570-2026-09-29-2644.82",
+			"url": "https://alkometriikka.fi/tuotteet/902570/",
+			"title": "Taittinger Réserve Champagne Brut Nabuchadnezzar — 2 509,06 € → 2 644,82 €",
+			"content_html": "<p>Tuotteen Taittinger Réserve Champagne Brut Nabuchadnezzar hinta on muuttunut.</p><p>2 509,06 € → 2 644,82 € (+135,76 €, +5,41 %).</p>",
+			"summary": "Tuotteen Taittinger Réserve Champagne Brut Nabuchadnezzar hinta on muuttunut. 2 509,06 € → 2 644,82 € (+135,76 €, +5,41 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902570-7d55844d9049.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

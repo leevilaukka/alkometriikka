@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Corte Rugolin Amarone Crosara de le Strie 2019 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/406867/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Corte Rugolin Amarone Crosara de le Strie 2019.</description>
+		<language>fi</language>
+		<lastBuildDate>Sat, 03 Oct 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/406867.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Corte Rugolin Amarone Crosara de le Strie 2019 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Corte Rugolin Amarone Crosara de le Strie 2019 — 64,07 € → 66,17 €</title>
+			<link>https://alkometriikka.fi/tuotteet/406867/</link>
+			<guid isPermaLink="false">alkometriikka-406867-2026-09-29-66.17</guid>
+			<pubDate>Tue, 29 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Corte Rugolin Amarone Crosara de le Strie 2019 hinta on muuttunut.</p><p>64,07 € → 66,17 € (+2,10 €, +3,28 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/406867-73e7b79fcb6c.png" />
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Planeta Alastro 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/925671/",
+	"feed_url": "https://alkometriikka.fi/rss/925671.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Planeta Alastro 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-925671-2026-07-18-22.49",
+			"url": "https://alkometriikka.fi/tuotteet/925671/",
+			"title": "Planeta Alastro 2023 — 22,45 € → 22,49 €",
+			"content_html": "<p>Tuotteen Planeta Alastro 2023 hinta on muuttunut.</p><p>22,45 € → 22,49 € (+0,04 €, +0,18 %).</p>",
+			"summary": "Tuotteen Planeta Alastro 2023 hinta on muuttunut. 22,45 € → 22,49 € (+0,04 €, +0,18 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/925671-3adb06cff485.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

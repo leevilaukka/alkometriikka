@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bollinger Special Cuvée Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/008715/",
+	"feed_url": "https://alkometriikka.fi/rss/008715.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bollinger Special Cuvée Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-008715-2026-09-29-79.98",
+			"url": "https://alkometriikka.fi/tuotteet/008715/",
+			"title": "Bollinger Special Cuvée Champagne Brut — 79,99 € → 79,98 €",
+			"content_html": "<p>Tuotteen Bollinger Special Cuvée Champagne Brut hinta on muuttunut.</p><p>79,99 € → 79,98 € (−0,01 €, −0,01 %).</p>",
+			"summary": "Tuotteen Bollinger Special Cuvée Champagne Brut hinta on muuttunut. 79,99 € → 79,98 € (−0,01 €, −0,01 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/008715-79d5f48c3fa1.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-008715-2026-07-18-79.99",
+			"url": "https://alkometriikka.fi/tuotteet/008715/",
+			"title": "Bollinger Special Cuvée Champagne Brut — 79,45 € → 79,99 €",
+			"content_html": "<p>Tuotteen Bollinger Special Cuvée Champagne Brut hinta on muuttunut.</p><p>79,45 € → 79,99 € (+0,54 €, +0,68 %).</p>",
+			"summary": "Tuotteen Bollinger Special Cuvée Champagne Brut hinta on muuttunut. 79,45 € → 79,99 € (+0,54 €, +0,68 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/008715-79d5f48c3fa1.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

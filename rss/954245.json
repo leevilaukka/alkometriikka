@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Petri Spätburgunder Honigsack 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/954245/",
+	"feed_url": "https://alkometriikka.fi/rss/954245.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Petri Spätburgunder Honigsack 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-954245-2026-07-18-29.97",
+			"url": "https://alkometriikka.fi/tuotteet/954245/",
+			"title": "Petri Spätburgunder Honigsack 2022 — 29,21 € → 29,97 €",
+			"content_html": "<p>Tuotteen Petri Spätburgunder Honigsack 2022 hinta on muuttunut.</p><p>29,21 € → 29,97 € (+0,76 €, +2,60 %).</p>",
+			"summary": "Tuotteen Petri Spätburgunder Honigsack 2022 hinta on muuttunut. 29,21 € → 29,97 € (+0,76 €, +2,60 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/954245-9dc6b4180e32.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

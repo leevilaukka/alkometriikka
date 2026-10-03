@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Prantner Kékfrankos 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902664/",
+	"feed_url": "https://alkometriikka.fi/rss/902664.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Prantner Kékfrankos 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902664-2026-09-29-46.38",
+			"url": "https://alkometriikka.fi/tuotteet/902664/",
+			"title": "Prantner Kékfrankos 2022 — 45,68 € → 46,38 €",
+			"content_html": "<p>Tuotteen Prantner Kékfrankos 2022 hinta on muuttunut.</p><p>45,68 € → 46,38 € (+0,70 €, +1,53 %).</p>",
+			"summary": "Tuotteen Prantner Kékfrankos 2022 hinta on muuttunut. 45,68 € → 46,38 € (+0,70 €, +1,53 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902664-8575f2594039.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

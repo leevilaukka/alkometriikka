@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nokkos Vodka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/936846/",
+	"feed_url": "https://alkometriikka.fi/rss/936846.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nokkos Vodka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-936846-2026-09-29-55.35",
+			"url": "https://alkometriikka.fi/tuotteet/936846/",
+			"title": "Nokkos Vodka — 54,97 € → 55,35 €",
+			"content_html": "<p>Tuotteen Nokkos Vodka hinta on muuttunut.</p><p>54,97 € → 55,35 € (+0,38 €, +0,69 %).</p>",
+			"summary": "Tuotteen Nokkos Vodka hinta on muuttunut. 54,97 € → 55,35 € (+0,38 €, +0,69 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/936846-366878f2722e.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vinedos Lacalle & Laorden Viña El Pison 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903143/",
+	"feed_url": "https://alkometriikka.fi/rss/903143.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vinedos Lacalle & Laorden Viña El Pison 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903143-2026-09-29-373.58",
+			"url": "https://alkometriikka.fi/tuotteet/903143/",
+			"title": "Vinedos Lacalle & Laorden Viña El Pison 2019 — 349,90 € → 373,58 €",
+			"content_html": "<p>Tuotteen Vinedos Lacalle & Laorden Viña El Pison 2019 hinta on muuttunut.</p><p>349,90 € → 373,58 € (+23,68 €, +6,77 %).</p>",
+			"summary": "Tuotteen Vinedos Lacalle & Laorden Viña El Pison 2019 hinta on muuttunut. 349,90 € → 373,58 € (+23,68 €, +6,77 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903143-cc03f3e6a694.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gabriel Boudier Dijon Créme de Cassis – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901118/",
+	"feed_url": "https://alkometriikka.fi/rss/901118.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gabriel Boudier Dijon Créme de Cassis.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901118-2026-07-18-27.9",
+			"url": "https://alkometriikka.fi/tuotteet/901118/",
+			"title": "Gabriel Boudier Dijon Créme de Cassis — 27,09 € → 27,90 €",
+			"content_html": "<p>Tuotteen Gabriel Boudier Dijon Créme de Cassis hinta on muuttunut.</p><p>27,09 € → 27,90 € (+0,81 €, +2,99 %).</p>",
+			"summary": "Tuotteen Gabriel Boudier Dijon Créme de Cassis hinta on muuttunut. 27,09 € → 27,90 € (+0,81 €, +2,99 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901118-144afbafead4.png",
+			"tags": [
+				"Väkevät",
+				"marjaliköörit"
+			]
+		}
+	]
+}

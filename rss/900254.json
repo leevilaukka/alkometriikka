@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tahko Whiskey Organic #T2 Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900254/",
+	"feed_url": "https://alkometriikka.fi/rss/900254.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tahko Whiskey Organic #T2 Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900254-2026-09-29-93.5",
+			"url": "https://alkometriikka.fi/tuotteet/900254/",
+			"title": "Tahko Whiskey Organic #T2 Single Malt — 89,98 € → 93,50 €",
+			"content_html": "<p>Tuotteen Tahko Whiskey Organic #T2 Single Malt hinta on muuttunut.</p><p>89,98 € → 93,50 € (+3,52 €, +3,91 %).</p>",
+			"summary": "Tuotteen Tahko Whiskey Organic #T2 Single Malt hinta on muuttunut. 89,98 € → 93,50 € (+3,52 €, +3,91 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900254-6eec64679155.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kingsbarns VYS Single Cask Release Bourbon Barrel Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/959992/",
+	"feed_url": "https://alkometriikka.fi/rss/959992.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kingsbarns VYS Single Cask Release Bourbon Barrel Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-959992-2026-09-29-102.96",
+			"url": "https://alkometriikka.fi/tuotteet/959992/",
+			"title": "Kingsbarns VYS Single Cask Release Bourbon Barrel Single Malt — 99,98 € → 102,96 €",
+			"content_html": "<p>Tuotteen Kingsbarns VYS Single Cask Release Bourbon Barrel Single Malt hinta on muuttunut.</p><p>99,98 € → 102,96 € (+2,98 €, +2,98 %).</p>",
+			"summary": "Tuotteen Kingsbarns VYS Single Cask Release Bourbon Barrel Single Malt hinta on muuttunut. 99,98 € → 102,96 € (+2,98 €, +2,98 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/959992-08df9e785547.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		},
+		{
+			"id": "alkometriikka-959992-2026-07-18-99.98",
+			"url": "https://alkometriikka.fi/tuotteet/959992/",
+			"title": "Kingsbarns VYS Single Cask Release Bourbon Barrel Single Malt — 100,39 € → 99,98 €",
+			"content_html": "<p>Tuotteen Kingsbarns VYS Single Cask Release Bourbon Barrel Single Malt hinta on muuttunut.</p><p>100,39 € → 99,98 € (−0,41 €, −0,41 %).</p>",
+			"summary": "Tuotteen Kingsbarns VYS Single Cask Release Bourbon Barrel Single Malt hinta on muuttunut. 100,39 € → 99,98 € (−0,41 €, −0,41 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/959992-08df9e785547.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pol Roger Champagne Brut Réserve Magnum – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/940718/",
+	"feed_url": "https://alkometriikka.fi/rss/940718.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pol Roger Champagne Brut Réserve Magnum.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-940718-2026-09-29-149",
+			"url": "https://alkometriikka.fi/tuotteet/940718/",
+			"title": "Pol Roger Champagne Brut Réserve Magnum — 142,90 € → 149,00 €",
+			"content_html": "<p>Tuotteen Pol Roger Champagne Brut Réserve Magnum hinta on muuttunut.</p><p>142,90 € → 149,00 € (+6,10 €, +4,27 %).</p>",
+			"summary": "Tuotteen Pol Roger Champagne Brut Réserve Magnum hinta on muuttunut. 142,90 € → 149,00 € (+6,10 €, +4,27 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/940718-b9910a181d35.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-940718-2026-07-18-142.9",
+			"url": "https://alkometriikka.fi/tuotteet/940718/",
+			"title": "Pol Roger Champagne Brut Réserve Magnum — 146,91 € → 142,90 €",
+			"content_html": "<p>Tuotteen Pol Roger Champagne Brut Réserve Magnum hinta on muuttunut.</p><p>146,91 € → 142,90 € (−4,01 €, −2,73 %).</p>",
+			"summary": "Tuotteen Pol Roger Champagne Brut Réserve Magnum hinta on muuttunut. 146,91 € → 142,90 € (−4,01 €, −2,73 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/940718-b9910a181d35.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

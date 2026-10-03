@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cuvée L’Envol Bleu Eiffel Champagne Extra Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902569/",
+	"feed_url": "https://alkometriikka.fi/rss/902569.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cuvée L’Envol Bleu Eiffel Champagne Extra Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902569-2026-09-29-104.07",
+			"url": "https://alkometriikka.fi/tuotteet/902569/",
+			"title": "Cuvée L’Envol Bleu Eiffel Champagne Extra Brut — 99,30 € → 104,07 €",
+			"content_html": "<p>Tuotteen Cuvée L’Envol Bleu Eiffel Champagne Extra Brut hinta on muuttunut.</p><p>99,30 € → 104,07 € (+4,77 €, +4,80 %).</p>",
+			"summary": "Tuotteen Cuvée L’Envol Bleu Eiffel Champagne Extra Brut hinta on muuttunut. 99,30 € → 104,07 € (+4,77 €, +4,80 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902569-c761b542bdfc.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hotti Hedelmä-Salmiakki muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/243476/",
+	"feed_url": "https://alkometriikka.fi/rss/243476.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hotti Hedelmä-Salmiakki muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-243476-2026-07-18-10.7",
+			"url": "https://alkometriikka.fi/tuotteet/243476/",
+			"title": "Hotti Hedelmä-Salmiakki muovipullo — 10,66 € → 10,70 €",
+			"content_html": "<p>Tuotteen Hotti Hedelmä-Salmiakki muovipullo hinta on muuttunut.</p><p>10,66 € → 10,70 € (+0,04 €, +0,38 %).</p>",
+			"summary": "Tuotteen Hotti Hedelmä-Salmiakki muovipullo hinta on muuttunut. 10,66 € → 10,70 € (+0,04 €, +0,38 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/243476-c774afe71e63.png",
+			"tags": [
+				"Väkevät",
+				"mausteliköörit"
+			]
+		}
+	]
+}

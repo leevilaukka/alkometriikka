@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Takasago Tokubetsu Junmai Dry Sake – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/625474/",
+	"feed_url": "https://alkometriikka.fi/rss/625474.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Takasago Tokubetsu Junmai Dry Sake.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-625474-2026-09-29-11.25",
+			"url": "https://alkometriikka.fi/tuotteet/625474/",
+			"title": "Takasago Tokubetsu Junmai Dry Sake — 10,50 € → 11,25 €",
+			"content_html": "<p>Tuotteen Takasago Tokubetsu Junmai Dry Sake hinta on muuttunut.</p><p>10,50 € → 11,25 € (+0,75 €, +7,14 %).</p>",
+			"summary": "Tuotteen Takasago Tokubetsu Junmai Dry Sake hinta on muuttunut. 10,50 € → 11,25 € (+0,75 €, +7,14 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/625474-ee139b80df59.png",
+			"tags": [
+				"Viinit",
+				"saket"
+			]
+		}
+	]
+}

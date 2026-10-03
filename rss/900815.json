@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – La Rioja Alta Viña Ardanza Reserva 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900815/",
+	"feed_url": "https://alkometriikka.fi/rss/900815.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: La Rioja Alta Viña Ardanza Reserva 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900815-2026-09-29-39.98",
+			"url": "https://alkometriikka.fi/tuotteet/900815/",
+			"title": "La Rioja Alta Viña Ardanza Reserva 2020 — 39,99 € → 39,98 €",
+			"content_html": "<p>Tuotteen La Rioja Alta Viña Ardanza Reserva 2020 hinta on muuttunut.</p><p>39,99 € → 39,98 € (−0,01 €, −0,03 %).</p>",
+			"summary": "Tuotteen La Rioja Alta Viña Ardanza Reserva 2020 hinta on muuttunut. 39,99 € → 39,98 € (−0,01 €, −0,03 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900815-0c28fc36810b.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

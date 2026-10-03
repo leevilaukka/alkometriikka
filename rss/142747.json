@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Loch Lomond Reserve – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/142747/",
+	"feed_url": "https://alkometriikka.fi/rss/142747.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Loch Lomond Reserve.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-142747-2026-09-29-28.49",
+			"url": "https://alkometriikka.fi/tuotteet/142747/",
+			"title": "Loch Lomond Reserve — 29,99 € → 28,49 €",
+			"content_html": "<p>Tuotteen Loch Lomond Reserve hinta on muuttunut.</p><p>29,99 € → 28,49 € (−1,50 €, −5,00 %).</p>",
+			"summary": "Tuotteen Loch Lomond Reserve hinta on muuttunut. 29,99 € → 28,49 € (−1,50 €, −5,00 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/142747-881526993e82.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

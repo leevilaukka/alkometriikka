@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Louis Latour Corton-Charlemagne Grand Cru 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/924991/",
+	"feed_url": "https://alkometriikka.fi/rss/924991.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Louis Latour Corton-Charlemagne Grand Cru 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-924991-2026-09-29-319.95",
+			"url": "https://alkometriikka.fi/tuotteet/924991/",
+			"title": "Louis Latour Corton-Charlemagne Grand Cru 2022 — 285,44 € → 319,95 €",
+			"content_html": "<p>Tuotteen Louis Latour Corton-Charlemagne Grand Cru 2022 hinta on muuttunut.</p><p>285,44 € → 319,95 € (+34,51 €, +12,09 %).</p>",
+			"summary": "Tuotteen Louis Latour Corton-Charlemagne Grand Cru 2022 hinta on muuttunut. 285,44 € → 319,95 € (+34,51 €, +12,09 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/924991-530f32ba7ac7.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

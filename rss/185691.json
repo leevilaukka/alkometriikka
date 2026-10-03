@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – O.P. Anderson Aquavit – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/185691/",
+	"feed_url": "https://alkometriikka.fi/rss/185691.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: O.P. Anderson Aquavit.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-185691-2026-09-29-4.28",
+			"url": "https://alkometriikka.fi/tuotteet/185691/",
+			"title": "O.P. Anderson Aquavit — 4,19 € → 4,28 €",
+			"content_html": "<p>Tuotteen O.P. Anderson Aquavit hinta on muuttunut.</p><p>4,19 € → 4,28 € (+0,09 €, +2,15 %).</p>",
+			"summary": "Tuotteen O.P. Anderson Aquavit hinta on muuttunut. 4,19 € → 4,28 € (+0,09 €, +2,15 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/185691-eff119208ec5.png",
+			"tags": [
+				"Väkevät",
+				"akvaviitit"
+			]
+		}
+	]
+}

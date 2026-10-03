@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Becker Kammerberg Zensiert 2016 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/949754/",
+	"feed_url": "https://alkometriikka.fi/rss/949754.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Becker Kammerberg Zensiert 2016.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-949754-2026-09-29-111.8",
+			"url": "https://alkometriikka.fi/tuotteet/949754/",
+			"title": "Becker Kammerberg Zensiert 2016 — 106,54 € → 111,80 €",
+			"content_html": "<p>Tuotteen Becker Kammerberg Zensiert 2016 hinta on muuttunut.</p><p>106,54 € → 111,80 € (+5,26 €, +4,94 %).</p>",
+			"summary": "Tuotteen Becker Kammerberg Zensiert 2016 hinta on muuttunut. 106,54 € → 111,80 € (+5,26 €, +4,94 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/949754-d15fd8a1641e.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

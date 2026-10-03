@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château Montifaud Petite Champagne XO – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/934843/",
+	"feed_url": "https://alkometriikka.fi/rss/934843.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château Montifaud Petite Champagne XO.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-934843-2026-09-29-206.96",
+			"url": "https://alkometriikka.fi/tuotteet/934843/",
+			"title": "Château Montifaud Petite Champagne XO — 196,38 € → 206,96 €",
+			"content_html": "<p>Tuotteen Château Montifaud Petite Champagne XO hinta on muuttunut.</p><p>196,38 € → 206,96 € (+10,58 €, +5,39 %).</p>",
+			"summary": "Tuotteen Château Montifaud Petite Champagne XO hinta on muuttunut. 196,38 € → 206,96 € (+10,58 €, +5,39 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/934843-2c2bdfbe8faa.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

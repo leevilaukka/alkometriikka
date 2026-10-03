@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cameleon Organic Cabernet Sauvignon 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/487307/",
+	"feed_url": "https://alkometriikka.fi/rss/487307.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cameleon Organic Cabernet Sauvignon 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-487307-2026-07-18-14.99",
+			"url": "https://alkometriikka.fi/tuotteet/487307/",
+			"title": "Cameleon Organic Cabernet Sauvignon 2022 — 14,44 € → 14,99 €",
+			"content_html": "<p>Tuotteen Cameleon Organic Cabernet Sauvignon 2022 hinta on muuttunut.</p><p>14,44 € → 14,99 € (+0,55 €, +3,81 %).</p>",
+			"summary": "Tuotteen Cameleon Organic Cabernet Sauvignon 2022 hinta on muuttunut. 14,44 € → 14,99 € (+0,55 €, +3,81 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/487307-1ed9b316fa2b.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

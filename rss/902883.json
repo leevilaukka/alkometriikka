@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Marolo Grappa di Moscato – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902883/",
+	"feed_url": "https://alkometriikka.fi/rss/902883.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Marolo Grappa di Moscato.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902883-2026-09-29-82.05",
+			"url": "https://alkometriikka.fi/tuotteet/902883/",
+			"title": "Marolo Grappa di Moscato — 79,90 € → 82,05 €",
+			"content_html": "<p>Tuotteen Marolo Grappa di Moscato hinta on muuttunut.</p><p>79,90 € → 82,05 € (+2,15 €, +2,69 %).</p>",
+			"summary": "Tuotteen Marolo Grappa di Moscato hinta on muuttunut. 79,90 € → 82,05 € (+2,15 €, +2,69 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902883-b57bf2220a58.png",
+			"tags": [
+				"Väkevät",
+				"grapat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Domaine Chantal Lescure Meursault Les Pellands 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903054/",
+	"feed_url": "https://alkometriikka.fi/rss/903054.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Domaine Chantal Lescure Meursault Les Pellands 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903054-2026-09-29-104.55",
+			"url": "https://alkometriikka.fi/tuotteet/903054/",
+			"title": "Domaine Chantal Lescure Meursault Les Pellands 2023 — 99,78 € → 104,55 €",
+			"content_html": "<p>Tuotteen Domaine Chantal Lescure Meursault Les Pellands 2023 hinta on muuttunut.</p><p>99,78 € → 104,55 € (+4,77 €, +4,78 %).</p>",
+			"summary": "Tuotteen Domaine Chantal Lescure Meursault Les Pellands 2023 hinta on muuttunut. 99,78 € → 104,55 € (+4,77 €, +4,78 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903054-e734e3665cfe.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

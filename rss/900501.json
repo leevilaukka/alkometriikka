@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Leyda Lot 21 Pinot Noir 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900501/",
+	"feed_url": "https://alkometriikka.fi/rss/900501.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Leyda Lot 21 Pinot Noir 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900501-2026-09-29-37.53",
+			"url": "https://alkometriikka.fi/tuotteet/900501/",
+			"title": "Leyda Lot 21 Pinot Noir 2022 — 37,44 € → 37,53 €",
+			"content_html": "<p>Tuotteen Leyda Lot 21 Pinot Noir 2022 hinta on muuttunut.</p><p>37,44 € → 37,53 € (+0,09 €, +0,24 %).</p>",
+			"summary": "Tuotteen Leyda Lot 21 Pinot Noir 2022 hinta on muuttunut. 37,44 € → 37,53 € (+0,09 €, +0,24 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900501-fbd27f403f98.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

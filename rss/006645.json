@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Viña Albali Reserva 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/006645/",
+	"feed_url": "https://alkometriikka.fi/rss/006645.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Viña Albali Reserva 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-006645-2026-07-18-11.29",
+			"url": "https://alkometriikka.fi/tuotteet/006645/",
+			"title": "Viña Albali Reserva 2020 — 11,16 € → 11,29 €",
+			"content_html": "<p>Tuotteen Viña Albali Reserva 2020 hinta on muuttunut.</p><p>11,16 € → 11,29 € (+0,13 €, +1,16 %).</p>",
+			"summary": "Tuotteen Viña Albali Reserva 2020 hinta on muuttunut. 11,16 € → 11,29 € (+0,13 €, +1,16 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/006645-d76cdf07d621.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

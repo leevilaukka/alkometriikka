@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Le Contesse Rosato Frizzante – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/937482/",
+	"feed_url": "https://alkometriikka.fi/rss/937482.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Le Contesse Rosato Frizzante.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-937482-2026-07-18-12.49",
+			"url": "https://alkometriikka.fi/tuotteet/937482/",
+			"title": "Le Contesse Rosato Frizzante — 12,45 € → 12,49 €",
+			"content_html": "<p>Tuotteen Le Contesse Rosato Frizzante hinta on muuttunut.</p><p>12,45 € → 12,49 € (+0,04 €, +0,32 %).</p>",
+			"summary": "Tuotteen Le Contesse Rosato Frizzante hinta on muuttunut. 12,45 € → 12,49 € (+0,04 €, +0,32 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/937482-af8afa152fbc.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

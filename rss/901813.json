@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Torii Mor Riesling 2015 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901813/",
+	"feed_url": "https://alkometriikka.fi/rss/901813.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Torii Mor Riesling 2015.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901813-2026-09-29-40.77",
+			"url": "https://alkometriikka.fi/tuotteet/901813/",
+			"title": "Torii Mor Riesling 2015 — 39,56 € → 40,77 €",
+			"content_html": "<p>Tuotteen Torii Mor Riesling 2015 hinta on muuttunut.</p><p>39,56 € → 40,77 € (+1,21 €, +3,06 %).</p>",
+			"summary": "Tuotteen Torii Mor Riesling 2015 hinta on muuttunut. 39,56 € → 40,77 € (+1,21 €, +3,06 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901813-3d8774cf04cf.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

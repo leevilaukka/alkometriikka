@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kyrö Napue Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/197626/",
+	"feed_url": "https://alkometriikka.fi/rss/197626.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kyrö Napue Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-197626-2026-09-29-38.98",
+			"url": "https://alkometriikka.fi/tuotteet/197626/",
+			"title": "Kyrö Napue Gin — 39,99 € → 38,98 €",
+			"content_html": "<p>Tuotteen Kyrö Napue Gin hinta on muuttunut.</p><p>39,99 € → 38,98 € (−1,01 €, −2,53 %).</p>",
+			"summary": "Tuotteen Kyrö Napue Gin hinta on muuttunut. 39,99 € → 38,98 € (−1,01 €, −2,53 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/197626-43c4ccc54689.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Macallan Harmony Phoenix Honey Orchid Tea Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902255/",
+	"feed_url": "https://alkometriikka.fi/rss/902255.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Macallan Harmony Phoenix Honey Orchid Tea Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902255-2026-09-29-212.04",
+			"url": "https://alkometriikka.fi/tuotteet/902255/",
+			"title": "The Macallan Harmony Phoenix Honey Orchid Tea Single Malt — 201,28 € → 212,04 €",
+			"content_html": "<p>Tuotteen The Macallan Harmony Phoenix Honey Orchid Tea Single Malt hinta on muuttunut.</p><p>201,28 € → 212,04 € (+10,76 €, +5,35 %).</p>",
+			"summary": "Tuotteen The Macallan Harmony Phoenix Honey Orchid Tea Single Malt hinta on muuttunut. 201,28 € → 212,04 € (+10,76 €, +5,35 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902255-02b7a4611a18.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Athénaïs Bourgogne Aligoté 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902503/",
+	"feed_url": "https://alkometriikka.fi/rss/902503.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Athénaïs Bourgogne Aligoté 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902503-2026-09-29-63.96",
+			"url": "https://alkometriikka.fi/tuotteet/902503/",
+			"title": "Athénaïs Bourgogne Aligoté 2023 — 62,02 € → 63,96 €",
+			"content_html": "<p>Tuotteen Athénaïs Bourgogne Aligoté 2023 hinta on muuttunut.</p><p>62,02 € → 63,96 € (+1,94 €, +3,13 %).</p>",
+			"summary": "Tuotteen Athénaïs Bourgogne Aligoté 2023 hinta on muuttunut. 62,02 € → 63,96 € (+1,94 €, +3,13 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902503-f56545beafa8.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Prince Hubert de Polignac VS – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/946084/",
+	"feed_url": "https://alkometriikka.fi/rss/946084.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Prince Hubert de Polignac VS.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-946084-2026-09-29-54.03",
+			"url": "https://alkometriikka.fi/tuotteet/946084/",
+			"title": "Prince Hubert de Polignac VS — 53,66 € → 54,03 €",
+			"content_html": "<p>Tuotteen Prince Hubert de Polignac VS hinta on muuttunut.</p><p>53,66 € → 54,03 € (+0,37 €, +0,69 %).</p>",
+			"summary": "Tuotteen Prince Hubert de Polignac VS hinta on muuttunut. 53,66 € → 54,03 € (+0,37 €, +0,69 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/946084-f1d416b6a4f4.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

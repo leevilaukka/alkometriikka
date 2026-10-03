@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Fen Jiu Qinghua 20 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/911226/",
+	"feed_url": "https://alkometriikka.fi/rss/911226.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Fen Jiu Qinghua 20.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-911226-2026-09-29-85.49",
+			"url": "https://alkometriikka.fi/tuotteet/911226/",
+			"title": "Fen Jiu Qinghua 20 — 81,97 € → 85,49 €",
+			"content_html": "<p>Tuotteen Fen Jiu Qinghua 20 hinta on muuttunut.</p><p>81,97 € → 85,49 € (+3,52 €, +4,29 %).</p>",
+			"summary": "Tuotteen Fen Jiu Qinghua 20 hinta on muuttunut. 81,97 € → 85,49 € (+3,52 €, +4,29 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/911226-60fabca3fb84.png",
+			"tags": [
+				"Väkevät",
+				"viina"
+			]
+		}
+	]
+}

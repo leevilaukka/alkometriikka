@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hans Family Estate Zweigelt 2014 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900127/",
+	"feed_url": "https://alkometriikka.fi/rss/900127.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hans Family Estate Zweigelt 2014.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900127-2026-09-29-42.15",
+			"url": "https://alkometriikka.fi/tuotteet/900127/",
+			"title": "Hans Family Estate Zweigelt 2014 — 41,74 € → 42,15 €",
+			"content_html": "<p>Tuotteen Hans Family Estate Zweigelt 2014 hinta on muuttunut.</p><p>41,74 € → 42,15 € (+0,41 €, +0,98 %).</p>",
+			"summary": "Tuotteen Hans Family Estate Zweigelt 2014 hinta on muuttunut. 41,74 € → 42,15 € (+0,41 €, +0,98 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900127-06454deefe8b.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

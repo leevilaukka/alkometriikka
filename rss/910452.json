@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – I.L.O. Aglianico del Vulture 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/910452/",
+	"feed_url": "https://alkometriikka.fi/rss/910452.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: I.L.O. Aglianico del Vulture 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-910452-2026-07-18-16.59",
+			"url": "https://alkometriikka.fi/tuotteet/910452/",
+			"title": "I.L.O. Aglianico del Vulture 2022 — 16,45 € → 16,59 €",
+			"content_html": "<p>Tuotteen I.L.O. Aglianico del Vulture 2022 hinta on muuttunut.</p><p>16,45 € → 16,59 € (+0,14 €, +0,85 %).</p>",
+			"summary": "Tuotteen I.L.O. Aglianico del Vulture 2022 hinta on muuttunut. 16,45 € → 16,59 € (+0,14 €, +0,85 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/910452-807f359b349a.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

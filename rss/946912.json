@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lumo White Semi-Dry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/946912/",
+	"feed_url": "https://alkometriikka.fi/rss/946912.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lumo White Semi-Dry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-946912-2026-07-18-17.59",
+			"url": "https://alkometriikka.fi/tuotteet/946912/",
+			"title": "Lumo White Semi-Dry — 16,82 € → 17,59 €",
+			"content_html": "<p>Tuotteen Lumo White Semi-Dry hinta on muuttunut.</p><p>16,82 € → 17,59 € (+0,77 €, +4,58 %).</p>",
+			"summary": "Tuotteen Lumo White Semi-Dry hinta on muuttunut. 16,82 € → 17,59 € (+0,77 €, +4,58 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/946912-9e33c93f8cb9.png",
+			"tags": [
+				"Viinit",
+				"hedelmä- ja aromatisoidut viinit"
+			]
+		}
+	]
+}

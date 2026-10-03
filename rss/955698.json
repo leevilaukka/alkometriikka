@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Chateau Marsyas B-Qa Rouge 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/955698/",
+	"feed_url": "https://alkometriikka.fi/rss/955698.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Chateau Marsyas B-Qa Rouge 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-955698-2026-09-29-39.8",
+			"url": "https://alkometriikka.fi/tuotteet/955698/",
+			"title": "Chateau Marsyas B-Qa Rouge 2020 — 39,56 € → 39,80 €",
+			"content_html": "<p>Tuotteen Chateau Marsyas B-Qa Rouge 2020 hinta on muuttunut.</p><p>39,56 € → 39,80 € (+0,24 €, +0,61 %).</p>",
+			"summary": "Tuotteen Chateau Marsyas B-Qa Rouge 2020 hinta on muuttunut. 39,56 € → 39,80 € (+0,24 €, +0,61 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/955698-a2cd408b66cf.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

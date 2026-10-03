@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Antica Formula Vermouth – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/327084/",
+	"feed_url": "https://alkometriikka.fi/rss/327084.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Antica Formula Vermouth.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-327084-2026-09-29-21.65",
+			"url": "https://alkometriikka.fi/tuotteet/327084/",
+			"title": "Antica Formula Vermouth — 21,35 € → 21,65 €",
+			"content_html": "<p>Tuotteen Antica Formula Vermouth hinta on muuttunut.</p><p>21,35 € → 21,65 € (+0,30 €, +1,41 %).</p>",
+			"summary": "Tuotteen Antica Formula Vermouth hinta on muuttunut. 21,35 € → 21,65 € (+0,30 €, +1,41 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/327084-9c65a5548506.png",
+			"tags": [
+				"Välituotteet",
+				"vermutit"
+			]
+		}
+	]
+}

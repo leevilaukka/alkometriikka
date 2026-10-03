@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Meikle Toir The Sherry 5 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901600/",
+	"feed_url": "https://alkometriikka.fi/rss/901600.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Meikle Toir The Sherry 5 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901600-2026-09-29-68.99",
+			"url": "https://alkometriikka.fi/tuotteet/901600/",
+			"title": "Meikle Toir The Sherry 5 Year Old Single Malt — 67,99 € → 68,99 €",
+			"content_html": "<p>Tuotteen Meikle Toir The Sherry 5 Year Old Single Malt hinta on muuttunut.</p><p>67,99 € → 68,99 € (+1,00 €, +1,47 %).</p>",
+			"summary": "Tuotteen Meikle Toir The Sherry 5 Year Old Single Malt hinta on muuttunut. 67,99 € → 68,99 € (+1,00 €, +1,47 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901600-2fbfeff1e481.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Damilano Langhe Marghe Nebbiolo 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902270/",
+	"feed_url": "https://alkometriikka.fi/rss/902270.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Damilano Langhe Marghe Nebbiolo 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902270-2026-09-29-32",
+			"url": "https://alkometriikka.fi/tuotteet/902270/",
+			"title": "Damilano Langhe Marghe Nebbiolo 2023 — 31,71 € → 32,00 €",
+			"content_html": "<p>Tuotteen Damilano Langhe Marghe Nebbiolo 2023 hinta on muuttunut.</p><p>31,71 € → 32,00 € (+0,29 €, +0,91 %).</p>",
+			"summary": "Tuotteen Damilano Langhe Marghe Nebbiolo 2023 hinta on muuttunut. 31,71 € → 32,00 € (+0,29 €, +0,91 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902270-8d3ceada6378.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

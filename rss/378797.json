@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Chymos Kirsikka Väkevä Marjaviini – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/378797/",
+	"feed_url": "https://alkometriikka.fi/rss/378797.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Chymos Kirsikka Väkevä Marjaviini.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-378797-2026-07-18-11.98",
+			"url": "https://alkometriikka.fi/tuotteet/378797/",
+			"title": "Chymos Kirsikka Väkevä Marjaviini — 12,52 € → 11,98 €",
+			"content_html": "<p>Tuotteen Chymos Kirsikka Väkevä Marjaviini hinta on muuttunut.</p><p>12,52 € → 11,98 € (−0,54 €, −4,31 %).</p>",
+			"summary": "Tuotteen Chymos Kirsikka Väkevä Marjaviini hinta on muuttunut. 12,52 € → 11,98 € (−0,54 €, −4,31 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/378797-0381216ec68f.png",
+			"tags": [
+				"Välituotteet",
+				"väkevät viinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cognac Park Mizunara Aged 10 Years – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/918943/",
+	"feed_url": "https://alkometriikka.fi/rss/918943.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cognac Park Mizunara Aged 10 Years.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-918943-2026-09-29-99.32",
+			"url": "https://alkometriikka.fi/tuotteet/918943/",
+			"title": "Cognac Park Mizunara Aged 10 Years — 96,08 € → 99,32 €",
+			"content_html": "<p>Tuotteen Cognac Park Mizunara Aged 10 Years hinta on muuttunut.</p><p>96,08 € → 99,32 € (+3,24 €, +3,37 %).</p>",
+			"summary": "Tuotteen Cognac Park Mizunara Aged 10 Years hinta on muuttunut. 96,08 € → 99,32 € (+3,24 €, +3,37 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/918943-161da1fc1b66.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

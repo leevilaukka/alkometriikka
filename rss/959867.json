@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gustav Blueberry Vodka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/959867/",
+	"feed_url": "https://alkometriikka.fi/rss/959867.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gustav Blueberry Vodka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-959867-2026-07-18-32.5",
+			"url": "https://alkometriikka.fi/tuotteet/959867/",
+			"title": "Gustav Blueberry Vodka — 32,52 € → 32,50 €",
+			"content_html": "<p>Tuotteen Gustav Blueberry Vodka hinta on muuttunut.</p><p>32,52 € → 32,50 € (−0,02 €, −0,06 %).</p>",
+			"summary": "Tuotteen Gustav Blueberry Vodka hinta on muuttunut. 32,52 € → 32,50 € (−0,02 €, −0,06 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/959867-40f359b0615e.png",
+			"tags": [
+				"Väkevät",
+				"maustetut vodkat"
+			]
+		}
+	]
+}

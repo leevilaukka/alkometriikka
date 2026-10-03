@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Paloma Garnacha 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/400121/",
+	"feed_url": "https://alkometriikka.fi/rss/400121.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Paloma Garnacha 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-400121-2026-09-29-12.8",
+			"url": "https://alkometriikka.fi/tuotteet/400121/",
+			"title": "Paloma Garnacha 2024 — 12,49 € → 12,80 €",
+			"content_html": "<p>Tuotteen Paloma Garnacha 2024 hinta on muuttunut.</p><p>12,49 € → 12,80 € (+0,31 €, +2,48 %).</p>",
+			"summary": "Tuotteen Paloma Garnacha 2024 hinta on muuttunut. 12,49 € → 12,80 € (+0,31 €, +2,48 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/400121-b0e6b53ebb1c.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-400121-2026-07-18-12.49",
+			"url": "https://alkometriikka.fi/tuotteet/400121/",
+			"title": "Paloma Garnacha 2024 — 12,45 € → 12,49 €",
+			"content_html": "<p>Tuotteen Paloma Garnacha 2024 hinta on muuttunut.</p><p>12,45 € → 12,49 € (+0,04 €, +0,32 %).</p>",
+			"summary": "Tuotteen Paloma Garnacha 2024 hinta on muuttunut. 12,45 € → 12,49 € (+0,04 €, +0,32 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/400121-b0e6b53ebb1c.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

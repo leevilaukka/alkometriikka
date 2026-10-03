@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nunzi Conti Chianti Classico 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/935784/",
+	"feed_url": "https://alkometriikka.fi/rss/935784.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nunzi Conti Chianti Classico 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-935784-2026-07-18-31.98",
+			"url": "https://alkometriikka.fi/tuotteet/935784/",
+			"title": "Nunzi Conti Chianti Classico 2020 — 31,96 € → 31,98 €",
+			"content_html": "<p>Tuotteen Nunzi Conti Chianti Classico 2020 hinta on muuttunut.</p><p>31,96 € → 31,98 € (+0,02 €, +0,06 %).</p>",
+			"summary": "Tuotteen Nunzi Conti Chianti Classico 2020 hinta on muuttunut. 31,96 € → 31,98 € (+0,02 €, +0,06 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/935784-f4cfd8aee065.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kronenbourg 1664 Blanc – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/785294/",
+	"feed_url": "https://alkometriikka.fi/rss/785294.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kronenbourg 1664 Blanc.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-785294-2026-09-29-3.05",
+			"url": "https://alkometriikka.fi/tuotteet/785294/",
+			"title": "Kronenbourg 1664 Blanc — 2,99 € → 3,05 €",
+			"content_html": "<p>Tuotteen Kronenbourg 1664 Blanc hinta on muuttunut.</p><p>2,99 € → 3,05 € (+0,06 €, +2,01 %).</p>",
+			"summary": "Tuotteen Kronenbourg 1664 Blanc hinta on muuttunut. 2,99 € → 3,05 € (+0,06 €, +2,01 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/785294-58cd8907f5e1.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

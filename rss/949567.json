@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Seaman's Shot Extra Hot – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/949567/",
+	"feed_url": "https://alkometriikka.fi/rss/949567.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Seaman's Shot Extra Hot.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-949567-2026-07-18-27.89",
+			"url": "https://alkometriikka.fi/tuotteet/949567/",
+			"title": "Seaman's Shot Extra Hot — 27,68 € → 27,89 €",
+			"content_html": "<p>Tuotteen Seaman's Shot Extra Hot hinta on muuttunut.</p><p>27,68 € → 27,89 € (+0,21 €, +0,76 %).</p>",
+			"summary": "Tuotteen Seaman's Shot Extra Hot hinta on muuttunut. 27,68 € → 27,89 € (+0,21 €, +0,76 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/949567-210d072fb70f.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

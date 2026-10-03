@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Peddlers Shanghai Barrel Aged Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/919766/",
+	"feed_url": "https://alkometriikka.fi/rss/919766.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Peddlers Shanghai Barrel Aged Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-919766-2026-09-29-55.92",
+			"url": "https://alkometriikka.fi/tuotteet/919766/",
+			"title": "Peddlers Shanghai Barrel Aged Gin — 55,67 € → 55,92 €",
+			"content_html": "<p>Tuotteen Peddlers Shanghai Barrel Aged Gin hinta on muuttunut.</p><p>55,67 € → 55,92 € (+0,25 €, +0,45 %).</p>",
+			"summary": "Tuotteen Peddlers Shanghai Barrel Aged Gin hinta on muuttunut. 55,67 € → 55,92 € (+0,25 €, +0,45 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/919766-987458b37ae1.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

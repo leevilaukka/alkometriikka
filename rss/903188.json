@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Domaine Billaud-Simon Chablis Grand Cru Les Clos 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903188/",
+	"feed_url": "https://alkometriikka.fi/rss/903188.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Domaine Billaud-Simon Chablis Grand Cru Les Clos 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903188-2026-09-29-136.44",
+			"url": "https://alkometriikka.fi/tuotteet/903188/",
+			"title": "Domaine Billaud-Simon Chablis Grand Cru Les Clos 2023 — 129,45 € → 136,44 €",
+			"content_html": "<p>Tuotteen Domaine Billaud-Simon Chablis Grand Cru Les Clos 2023 hinta on muuttunut.</p><p>129,45 € → 136,44 € (+6,99 €, +5,40 %).</p>",
+			"summary": "Tuotteen Domaine Billaud-Simon Chablis Grand Cru Les Clos 2023 hinta on muuttunut. 129,45 € → 136,44 € (+6,99 €, +5,40 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903188-7128ff046484.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – La Crema Kelli Ann Vineyard Chardonnay 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/947412/",
+	"feed_url": "https://alkometriikka.fi/rss/947412.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: La Crema Kelli Ann Vineyard Chardonnay 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-947412-2026-09-29-81.36",
+			"url": "https://alkometriikka.fi/tuotteet/947412/",
+			"title": "La Crema Kelli Ann Vineyard Chardonnay 2022 — 78,19 € → 81,36 €",
+			"content_html": "<p>Tuotteen La Crema Kelli Ann Vineyard Chardonnay 2022 hinta on muuttunut.</p><p>78,19 € → 81,36 € (+3,17 €, +4,05 %).</p>",
+			"summary": "Tuotteen La Crema Kelli Ann Vineyard Chardonnay 2022 hinta on muuttunut. 78,19 € → 81,36 € (+3,17 €, +4,05 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/947412-1ebe3e0cc1ca.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – My Way Chardonnay – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900415/",
+	"feed_url": "https://alkometriikka.fi/rss/900415.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: My Way Chardonnay.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900415-2026-09-29-20.5",
+			"url": "https://alkometriikka.fi/tuotteet/900415/",
+			"title": "My Way Chardonnay — 20,44 € → 20,50 €",
+			"content_html": "<p>Tuotteen My Way Chardonnay hinta on muuttunut.</p><p>20,44 € → 20,50 € (+0,06 €, +0,29 %).</p>",
+			"summary": "Tuotteen My Way Chardonnay hinta on muuttunut. 20,44 € → 20,50 € (+0,06 €, +0,29 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900415-3a11d11088e6.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

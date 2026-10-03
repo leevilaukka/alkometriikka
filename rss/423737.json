@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Besini Qvevri 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/423737/",
+	"feed_url": "https://alkometriikka.fi/rss/423737.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Besini Qvevri 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-423737-2026-07-18-21.47",
+			"url": "https://alkometriikka.fi/tuotteet/423737/",
+			"title": "Besini Qvevri 2025 — 20,44 € → 21,47 €",
+			"content_html": "<p>Tuotteen Besini Qvevri 2025 hinta on muuttunut.</p><p>20,44 € → 21,47 € (+1,03 €, +5,04 %).</p>",
+			"summary": "Tuotteen Besini Qvevri 2025 hinta on muuttunut. 20,44 € → 21,47 € (+1,03 €, +5,04 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/423737-c27c2ec9b394.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

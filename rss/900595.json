@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Caiarossa 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900595/",
+	"feed_url": "https://alkometriikka.fi/rss/900595.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Caiarossa 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900595-2026-09-29-100.1",
+			"url": "https://alkometriikka.fi/tuotteet/900595/",
+			"title": "Caiarossa 2020 — 95,61 € → 100,10 €",
+			"content_html": "<p>Tuotteen Caiarossa 2020 hinta on muuttunut.</p><p>95,61 € → 100,10 € (+4,49 €, +4,70 %).</p>",
+			"summary": "Tuotteen Caiarossa 2020 hinta on muuttunut. 95,61 € → 100,10 € (+4,49 €, +4,70 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900595-37c0f82973e9.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

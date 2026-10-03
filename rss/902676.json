@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Humalove X: Tenator – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902676/",
+	"feed_url": "https://alkometriikka.fi/rss/902676.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Humalove X: Tenator.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902676-2026-09-29-6.99",
+			"url": "https://alkometriikka.fi/tuotteet/902676/",
+			"title": "Humalove X: Tenator — 6,98 € → 6,99 €",
+			"content_html": "<p>Tuotteen Humalove X: Tenator hinta on muuttunut.</p><p>6,98 € → 6,99 € (+0,01 €, +0,14 %).</p>",
+			"summary": "Tuotteen Humalove X: Tenator hinta on muuttunut. 6,98 € → 6,99 € (+0,01 €, +0,14 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902676-ef7058915956.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

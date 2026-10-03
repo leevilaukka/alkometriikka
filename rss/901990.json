@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Barone Pizzini Franciacorta Golf 1927 Extra Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901990/",
+	"feed_url": "https://alkometriikka.fi/rss/901990.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Barone Pizzini Franciacorta Golf 1927 Extra Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901990-2026-09-29-45.64",
+			"url": "https://alkometriikka.fi/tuotteet/901990/",
+			"title": "Barone Pizzini Franciacorta Golf 1927 Extra Brut — 44,99 € → 45,64 €",
+			"content_html": "<p>Tuotteen Barone Pizzini Franciacorta Golf 1927 Extra Brut hinta on muuttunut.</p><p>44,99 € → 45,64 € (+0,65 €, +1,44 %).</p>",
+			"summary": "Tuotteen Barone Pizzini Franciacorta Golf 1927 Extra Brut hinta on muuttunut. 44,99 € → 45,64 € (+0,65 €, +1,44 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901990-799c013008a1.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

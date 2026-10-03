@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Xavier Châteauneuf-du-Pape 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/943427/",
+	"feed_url": "https://alkometriikka.fi/rss/943427.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Xavier Châteauneuf-du-Pape 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-943427-2026-09-29-54.78",
+			"url": "https://alkometriikka.fi/tuotteet/943427/",
+			"title": "Xavier Châteauneuf-du-Pape 2022 — 53,50 € → 54,78 €",
+			"content_html": "<p>Tuotteen Xavier Châteauneuf-du-Pape 2022 hinta on muuttunut.</p><p>53,50 € → 54,78 € (+1,28 €, +2,39 %).</p>",
+			"summary": "Tuotteen Xavier Châteauneuf-du-Pape 2022 hinta on muuttunut. 53,50 € → 54,78 € (+1,28 €, +2,39 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/943427-fd747f0cbee8.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

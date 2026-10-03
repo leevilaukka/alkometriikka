@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Panyolai Mézes Meggy – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902472/",
+	"feed_url": "https://alkometriikka.fi/rss/902472.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Panyolai Mézes Meggy.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902472-2026-09-29-49.74",
+			"url": "https://alkometriikka.fi/tuotteet/902472/",
+			"title": "Panyolai Mézes Meggy — 48,50 € → 49,74 €",
+			"content_html": "<p>Tuotteen Panyolai Mézes Meggy hinta on muuttunut.</p><p>48,50 € → 49,74 € (+1,24 €, +2,56 %).</p>",
+			"summary": "Tuotteen Panyolai Mézes Meggy hinta on muuttunut. 48,50 € → 49,74 € (+1,24 €, +2,56 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902472-4fa243bfa926.png",
+			"tags": [
+				"Väkevät",
+				"marjaliköörit"
+			]
+		}
+	]
+}

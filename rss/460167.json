@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château Tayac Cuvée Nicolas 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/460167/",
+	"feed_url": "https://alkometriikka.fi/rss/460167.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château Tayac Cuvée Nicolas 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-460167-2026-07-18-34.99",
+			"url": "https://alkometriikka.fi/tuotteet/460167/",
+			"title": "Château Tayac Cuvée Nicolas 2021 — 35,45 € → 34,99 €",
+			"content_html": "<p>Tuotteen Château Tayac Cuvée Nicolas 2021 hinta on muuttunut.</p><p>35,45 € → 34,99 € (−0,46 €, −1,30 %).</p>",
+			"summary": "Tuotteen Château Tayac Cuvée Nicolas 2021 hinta on muuttunut. 35,45 € → 34,99 € (−0,46 €, −1,30 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/460167-5b814f6c0e48.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

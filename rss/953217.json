@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – I Castei Valpolicella Ripasso Classico Superiore 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/953217/",
+	"feed_url": "https://alkometriikka.fi/rss/953217.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: I Castei Valpolicella Ripasso Classico Superiore 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-953217-2026-09-29-18.99",
+			"url": "https://alkometriikka.fi/tuotteet/953217/",
+			"title": "I Castei Valpolicella Ripasso Classico Superiore 2019 — 20,45 € → 18,99 €",
+			"content_html": "<p>Tuotteen I Castei Valpolicella Ripasso Classico Superiore 2019 hinta on muuttunut.</p><p>20,45 € → 18,99 € (−1,46 €, −7,14 %).</p>",
+			"summary": "Tuotteen I Castei Valpolicella Ripasso Classico Superiore 2019 hinta on muuttunut. 20,45 € → 18,99 € (−1,46 €, −7,14 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/953217-c2ec6d1dbfa3.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

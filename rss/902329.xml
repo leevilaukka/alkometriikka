@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Bruichladdich Classic Laddie – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/902329/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Bruichladdich Classic Laddie.</description>
+		<language>fi</language>
+		<lastBuildDate>Sat, 03 Oct 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/902329.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Bruichladdich Classic Laddie – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Bruichladdich Classic Laddie — 425,99 € → 429,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/902329/</link>
+			<guid isPermaLink="false">alkometriikka-902329-2026-09-29-429.99</guid>
+			<pubDate>Tue, 29 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / viskit</category>
+			<description><![CDATA[<p>Tuotteen Bruichladdich Classic Laddie hinta on muuttunut.</p><p>425,99 € → 429,99 € (+4,00 €, +0,94 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/902329-1c9f0b4531d6.png" />
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Red Bull Energy Drink tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/600018/",
+	"feed_url": "https://alkometriikka.fi/rss/600018.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Red Bull Energy Drink tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-600018-2026-07-18-1.99",
+			"url": "https://alkometriikka.fi/tuotteet/600018/",
+			"title": "Red Bull Energy Drink tölkki — 1,88 € → 1,99 €",
+			"content_html": "<p>Tuotteen Red Bull Energy Drink tölkki hinta on muuttunut.</p><p>1,88 € → 1,99 € (+0,11 €, +5,85 %).</p>",
+			"summary": "Tuotteen Red Bull Energy Drink tölkki hinta on muuttunut. 1,88 € → 1,99 € (+0,11 €, +5,85 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600018-5ea8a2d7cc12.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

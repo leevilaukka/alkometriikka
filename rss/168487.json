@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mount Gay XO Triple Cask Blend – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/168487/",
+	"feed_url": "https://alkometriikka.fi/rss/168487.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mount Gay XO Triple Cask Blend.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-168487-2026-09-29-71.49",
+			"url": "https://alkometriikka.fi/tuotteet/168487/",
+			"title": "Mount Gay XO Triple Cask Blend — 69,99 € → 71,49 €",
+			"content_html": "<p>Tuotteen Mount Gay XO Triple Cask Blend hinta on muuttunut.</p><p>69,99 € → 71,49 € (+1,50 €, +2,14 %).</p>",
+			"summary": "Tuotteen Mount Gay XO Triple Cask Blend hinta on muuttunut. 69,99 € → 71,49 € (+1,50 €, +2,14 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/168487-3c32affdf651.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

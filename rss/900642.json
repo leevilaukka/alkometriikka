@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Balvenie 16 Years Old French Oak Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900642/",
+	"feed_url": "https://alkometriikka.fi/rss/900642.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Balvenie 16 Years Old French Oak Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900642-2026-09-29-225",
+			"url": "https://alkometriikka.fi/tuotteet/900642/",
+			"title": "The Balvenie 16 Years Old French Oak Single Malt — 199,49 € → 225,00 €",
+			"content_html": "<p>Tuotteen The Balvenie 16 Years Old French Oak Single Malt hinta on muuttunut.</p><p>199,49 € → 225,00 € (+25,51 €, +12,79 %).</p>",
+			"summary": "Tuotteen The Balvenie 16 Years Old French Oak Single Malt hinta on muuttunut. 199,49 € → 225,00 € (+25,51 €, +12,79 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900642-0ac0a041ebc0.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Panyolai Elixir Birsalma – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903309/",
+	"feed_url": "https://alkometriikka.fi/rss/903309.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Panyolai Elixir Birsalma.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903309-2026-09-29-9.15",
+			"url": "https://alkometriikka.fi/tuotteet/903309/",
+			"title": "Panyolai Elixir Birsalma — 8,77 € → 9,15 €",
+			"content_html": "<p>Tuotteen Panyolai Elixir Birsalma hinta on muuttunut.</p><p>8,77 € → 9,15 € (+0,38 €, +4,33 %).</p>",
+			"summary": "Tuotteen Panyolai Elixir Birsalma hinta on muuttunut. 8,77 € → 9,15 € (+0,38 €, +4,33 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903309-bfa170376048.png",
+			"tags": [
+				"Väkevät",
+				"hedelmätisleet"
+			]
+		}
+	]
+}

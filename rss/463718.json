@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Barrelito Red Blend 2023 hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/463718/",
+	"feed_url": "https://alkometriikka.fi/rss/463718.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Barrelito Red Blend 2023 hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-463718-2026-09-29-33.09",
+			"url": "https://alkometriikka.fi/tuotteet/463718/",
+			"title": "Barrelito Red Blend 2023 hanapakkaus — 32,49 € → 33,09 €",
+			"content_html": "<p>Tuotteen Barrelito Red Blend 2023 hanapakkaus hinta on muuttunut.</p><p>32,49 € → 33,09 € (+0,60 €, +1,85 %).</p>",
+			"summary": "Tuotteen Barrelito Red Blend 2023 hanapakkaus hinta on muuttunut. 32,49 € → 33,09 € (+0,60 €, +1,85 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/463718-63be35827541.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-463718-2026-07-18-32.49",
+			"url": "https://alkometriikka.fi/tuotteet/463718/",
+			"title": "Barrelito Red Blend 2023 hanapakkaus — 31,84 € → 32,49 €",
+			"content_html": "<p>Tuotteen Barrelito Red Blend 2023 hanapakkaus hinta on muuttunut.</p><p>31,84 € → 32,49 € (+0,65 €, +2,04 %).</p>",
+			"summary": "Tuotteen Barrelito Red Blend 2023 hanapakkaus hinta on muuttunut. 31,84 € → 32,49 € (+0,65 €, +2,04 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/463718-63be35827541.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

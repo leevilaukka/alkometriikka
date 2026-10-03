@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ararat 5 Year Old – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903982/",
+	"feed_url": "https://alkometriikka.fi/rss/903982.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ararat 5 Year Old.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903982-2026-09-29-36.9",
+			"url": "https://alkometriikka.fi/tuotteet/903982/",
+			"title": "Ararat 5 Year Old — 36,75 € → 36,90 €",
+			"content_html": "<p>Tuotteen Ararat 5 Year Old hinta on muuttunut.</p><p>36,75 € → 36,90 € (+0,15 €, +0,41 %).</p>",
+			"summary": "Tuotteen Ararat 5 Year Old hinta on muuttunut. 36,75 € → 36,90 € (+0,15 €, +0,41 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903982-060187797fe4.png",
+			"tags": [
+				"Väkevät",
+				"brandyt"
+			]
+		}
+	]
+}

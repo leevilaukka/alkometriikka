@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Macallan A Night On Earth The First Light Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902581/",
+	"feed_url": "https://alkometriikka.fi/rss/902581.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Macallan A Night On Earth The First Light Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902581-2026-09-29-154.88",
+			"url": "https://alkometriikka.fi/tuotteet/902581/",
+			"title": "The Macallan A Night On Earth The First Light Single Malt — 147,87 € → 154,88 €",
+			"content_html": "<p>Tuotteen The Macallan A Night On Earth The First Light Single Malt hinta on muuttunut.</p><p>147,87 € → 154,88 € (+7,01 €, +4,74 %).</p>",
+			"summary": "Tuotteen The Macallan A Night On Earth The First Light Single Malt hinta on muuttunut. 147,87 € → 154,88 € (+7,01 €, +4,74 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902581-350e6ea22617.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

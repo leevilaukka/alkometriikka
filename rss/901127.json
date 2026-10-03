@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Domaine Rolet Crémant du Jura Blanc Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901127/",
+	"feed_url": "https://alkometriikka.fi/rss/901127.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Domaine Rolet Crémant du Jura Blanc Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901127-2026-07-18-26.99",
+			"url": "https://alkometriikka.fi/tuotteet/901127/",
+			"title": "Domaine Rolet Crémant du Jura Blanc Brut — 26,95 € → 26,99 €",
+			"content_html": "<p>Tuotteen Domaine Rolet Crémant du Jura Blanc Brut hinta on muuttunut.</p><p>26,95 € → 26,99 € (+0,04 €, +0,15 %).</p>",
+			"summary": "Tuotteen Domaine Rolet Crémant du Jura Blanc Brut hinta on muuttunut. 26,95 € → 26,99 € (+0,04 €, +0,15 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901127-c0d1157d7fa0.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

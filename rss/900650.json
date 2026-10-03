@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Brill Särgabarack Palinka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900650/",
+	"feed_url": "https://alkometriikka.fi/rss/900650.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Brill Särgabarack Palinka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900650-2026-09-29-82.87",
+			"url": "https://alkometriikka.fi/tuotteet/900650/",
+			"title": "Brill Särgabarack Palinka — 78,94 € → 82,87 €",
+			"content_html": "<p>Tuotteen Brill Särgabarack Palinka hinta on muuttunut.</p><p>78,94 € → 82,87 € (+3,93 €, +4,98 %).</p>",
+			"summary": "Tuotteen Brill Särgabarack Palinka hinta on muuttunut. 78,94 € → 82,87 € (+3,93 €, +4,98 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900650-acab5d77b97a.png",
+			"tags": [
+				"Väkevät",
+				"hedelmätisleet"
+			]
+		}
+	]
+}

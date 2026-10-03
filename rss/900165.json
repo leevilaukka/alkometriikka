@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vinory Roero Arneis 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900165/",
+	"feed_url": "https://alkometriikka.fi/rss/900165.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vinory Roero Arneis 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900165-2026-09-29-29.17",
+			"url": "https://alkometriikka.fi/tuotteet/900165/",
+			"title": "Vinory Roero Arneis 2023 — 28,21 € → 29,17 €",
+			"content_html": "<p>Tuotteen Vinory Roero Arneis 2023 hinta on muuttunut.</p><p>28,21 € → 29,17 € (+0,96 €, +3,40 %).</p>",
+			"summary": "Tuotteen Vinory Roero Arneis 2023 hinta on muuttunut. 28,21 € → 29,17 € (+0,96 €, +3,40 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900165-319a17497ec1.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

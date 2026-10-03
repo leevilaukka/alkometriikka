@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hatozaki Pure Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/162147/",
+	"feed_url": "https://alkometriikka.fi/rss/162147.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hatozaki Pure Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-162147-2026-09-29-67.47",
+			"url": "https://alkometriikka.fi/tuotteet/162147/",
+			"title": "Hatozaki Pure Malt — 66,41 € → 67,47 €",
+			"content_html": "<p>Tuotteen Hatozaki Pure Malt hinta on muuttunut.</p><p>66,41 € → 67,47 € (+1,06 €, +1,60 %).</p>",
+			"summary": "Tuotteen Hatozaki Pure Malt hinta on muuttunut. 66,41 € → 67,47 € (+1,06 €, +1,60 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/162147-aaa097ea58ee.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

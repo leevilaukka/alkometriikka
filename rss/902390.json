@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Two Stacks Double Irish Cream tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902390/",
+	"feed_url": "https://alkometriikka.fi/rss/902390.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Two Stacks Double Irish Cream tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902390-2026-09-29-6.03",
+			"url": "https://alkometriikka.fi/tuotteet/902390/",
+			"title": "Two Stacks Double Irish Cream tölkki — 5,99 € → 6,03 €",
+			"content_html": "<p>Tuotteen Two Stacks Double Irish Cream tölkki hinta on muuttunut.</p><p>5,99 € → 6,03 € (+0,04 €, +0,67 %).</p>",
+			"summary": "Tuotteen Two Stacks Double Irish Cream tölkki hinta on muuttunut. 5,99 € → 6,03 € (+0,04 €, +0,67 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902390-bdd6cdbe5ab0.png",
+			"tags": [
+				"Väkevät",
+				"kermaliköörit"
+			]
+		}
+	]
+}

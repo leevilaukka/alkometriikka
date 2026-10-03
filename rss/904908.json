@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Châteu Marsyas 2016 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/904908/",
+	"feed_url": "https://alkometriikka.fi/rss/904908.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Châteu Marsyas 2016.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-904908-2026-09-29-40.19",
+			"url": "https://alkometriikka.fi/tuotteet/904908/",
+			"title": "Châteu Marsyas 2016 — 39,92 € → 40,19 €",
+			"content_html": "<p>Tuotteen Châteu Marsyas 2016 hinta on muuttunut.</p><p>39,92 € → 40,19 € (+0,27 €, +0,68 %).</p>",
+			"summary": "Tuotteen Châteu Marsyas 2016 hinta on muuttunut. 39,92 € → 40,19 € (+0,27 €, +0,68 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/904908-4a99968e9df2.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-904908-2026-07-18-39.92",
+			"url": "https://alkometriikka.fi/tuotteet/904908/",
+			"title": "Châteu Marsyas 2016 — 39,95 € → 39,92 €",
+			"content_html": "<p>Tuotteen Châteu Marsyas 2016 hinta on muuttunut.</p><p>39,95 € → 39,92 € (−0,03 €, −0,08 %).</p>",
+			"summary": "Tuotteen Châteu Marsyas 2016 hinta on muuttunut. 39,95 € → 39,92 € (−0,03 €, −0,08 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/904908-4a99968e9df2.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

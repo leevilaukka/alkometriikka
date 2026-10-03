@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Saunalahden Viina muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/159097/",
+	"feed_url": "https://alkometriikka.fi/rss/159097.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Saunalahden Viina muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-159097-2026-09-29-22.2",
+			"url": "https://alkometriikka.fi/tuotteet/159097/",
+			"title": "Saunalahden Viina muovipullo — 21,97 € → 22,20 €",
+			"content_html": "<p>Tuotteen Saunalahden Viina muovipullo hinta on muuttunut.</p><p>21,97 € → 22,20 € (+0,23 €, +1,05 %).</p>",
+			"summary": "Tuotteen Saunalahden Viina muovipullo hinta on muuttunut. 21,97 € → 22,20 € (+0,23 €, +1,05 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/159097-817211488e57.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

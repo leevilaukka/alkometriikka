@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Santa Helena Chardonnay 2023 kartonkitölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/517276/",
+	"feed_url": "https://alkometriikka.fi/rss/517276.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Santa Helena Chardonnay 2023 kartonkitölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-517276-2026-09-29-6.48",
+			"url": "https://alkometriikka.fi/tuotteet/517276/",
+			"title": "Santa Helena Chardonnay 2023 kartonkitölkki — 6,29 € → 6,48 €",
+			"content_html": "<p>Tuotteen Santa Helena Chardonnay 2023 kartonkitölkki hinta on muuttunut.</p><p>6,29 € → 6,48 € (+0,19 €, +3,02 %).</p>",
+			"summary": "Tuotteen Santa Helena Chardonnay 2023 kartonkitölkki hinta on muuttunut. 6,29 € → 6,48 € (+0,19 €, +3,02 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/517276-704491e7abd4.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

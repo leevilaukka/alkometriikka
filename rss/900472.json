@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Alma Pálinka  Jonagold – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900472/",
+	"feed_url": "https://alkometriikka.fi/rss/900472.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Alma Pálinka  Jonagold.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900472-2026-09-29-74.4",
+			"url": "https://alkometriikka.fi/tuotteet/900472/",
+			"title": "Alma Pálinka  Jonagold — 71,05 € → 74,40 €",
+			"content_html": "<p>Tuotteen Alma Pálinka  Jonagold hinta on muuttunut.</p><p>71,05 € → 74,40 € (+3,35 €, +4,71 %).</p>",
+			"summary": "Tuotteen Alma Pálinka Jonagold hinta on muuttunut. 71,05 € → 74,40 € (+3,35 €, +4,71 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900472-16735c7c235d.png",
+			"tags": [
+				"Väkevät",
+				"hedelmätisleet"
+			]
+		}
+	]
+}

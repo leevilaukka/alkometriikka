@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Naud Ron Panamá 15 Años – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/151867/",
+	"feed_url": "https://alkometriikka.fi/rss/151867.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Naud Ron Panamá 15 Años.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-151867-2026-09-29-50.68",
+			"url": "https://alkometriikka.fi/tuotteet/151867/",
+			"title": "Naud Ron Panamá 15 Años — 50,58 € → 50,68 €",
+			"content_html": "<p>Tuotteen Naud Ron Panamá 15 Años hinta on muuttunut.</p><p>50,58 € → 50,68 € (+0,10 €, +0,20 %).</p>",
+			"summary": "Tuotteen Naud Ron Panamá 15 Años hinta on muuttunut. 50,58 € → 50,68 € (+0,10 €, +0,20 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/151867-64fc4f0b83fb.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

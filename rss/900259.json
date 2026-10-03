@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nederburg Manor House Chardonnay 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900259/",
+	"feed_url": "https://alkometriikka.fi/rss/900259.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nederburg Manor House Chardonnay 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900259-2026-07-18-16.48",
+			"url": "https://alkometriikka.fi/tuotteet/900259/",
+			"title": "Nederburg Manor House Chardonnay 2021 — 16,44 € → 16,48 €",
+			"content_html": "<p>Tuotteen Nederburg Manor House Chardonnay 2021 hinta on muuttunut.</p><p>16,44 € → 16,48 € (+0,04 €, +0,24 %).</p>",
+			"summary": "Tuotteen Nederburg Manor House Chardonnay 2021 hinta on muuttunut. 16,44 € → 16,48 € (+0,04 €, +0,24 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900259-cac20a6cb375.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

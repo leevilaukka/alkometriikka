@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Col d'Orcia Brunello di Montalcino 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/922837/",
+	"feed_url": "https://alkometriikka.fi/rss/922837.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Col d'Orcia Brunello di Montalcino 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-922837-2026-09-29-60.06",
+			"url": "https://alkometriikka.fi/tuotteet/922837/",
+			"title": "Col d'Orcia Brunello di Montalcino 2021 — 55,86 € → 60,06 €",
+			"content_html": "<p>Tuotteen Col d'Orcia Brunello di Montalcino 2021 hinta on muuttunut.</p><p>55,86 € → 60,06 € (+4,20 €, +7,52 %).</p>",
+			"summary": "Tuotteen Col d'Orcia Brunello di Montalcino 2021 hinta on muuttunut. 55,86 € → 60,06 € (+4,20 €, +7,52 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/922837-2d147f8ec0b4.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

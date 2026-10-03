@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lingoncello muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902636/",
+	"feed_url": "https://alkometriikka.fi/rss/902636.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lingoncello muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902636-2026-09-29-3.99",
+			"url": "https://alkometriikka.fi/tuotteet/902636/",
+			"title": "Lingoncello muovipullo — 4,09 € → 3,99 €",
+			"content_html": "<p>Tuotteen Lingoncello muovipullo hinta on muuttunut.</p><p>4,09 € → 3,99 € (−0,10 €, −2,44 %).</p>",
+			"summary": "Tuotteen Lingoncello muovipullo hinta on muuttunut. 4,09 € → 3,99 € (−0,10 €, −2,44 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902636-1bfecf063bfd.png",
+			"tags": [
+				"Väkevät",
+				"marjaliköörit"
+			]
+		}
+	]
+}

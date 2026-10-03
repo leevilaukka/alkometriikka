@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mont-Redon Côtes-du-Rhône Réserve Blanc 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/909232/",
+	"feed_url": "https://alkometriikka.fi/rss/909232.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mont-Redon Côtes-du-Rhône Réserve Blanc 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-909232-2026-09-29-12.89",
+			"url": "https://alkometriikka.fi/tuotteet/909232/",
+			"title": "Mont-Redon Côtes-du-Rhône Réserve Blanc 2024 — 10,76 € → 12,89 €",
+			"content_html": "<p>Tuotteen Mont-Redon Côtes-du-Rhône Réserve Blanc 2024 hinta on muuttunut.</p><p>10,76 € → 12,89 € (+2,13 €, +19,80 %).</p>",
+			"summary": "Tuotteen Mont-Redon Côtes-du-Rhône Réserve Blanc 2024 hinta on muuttunut. 10,76 € → 12,89 € (+2,13 €, +19,80 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/909232-8943a00bc99c.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-909232-2026-07-18-10.76",
+			"url": "https://alkometriikka.fi/tuotteet/909232/",
+			"title": "Mont-Redon Côtes-du-Rhône Réserve Blanc 2024 — 10,89 € → 10,76 €",
+			"content_html": "<p>Tuotteen Mont-Redon Côtes-du-Rhône Réserve Blanc 2024 hinta on muuttunut.</p><p>10,89 € → 10,76 € (−0,13 €, −1,19 %).</p>",
+			"summary": "Tuotteen Mont-Redon Côtes-du-Rhône Réserve Blanc 2024 hinta on muuttunut. 10,89 € → 10,76 € (−0,13 €, −1,19 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/909232-8943a00bc99c.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

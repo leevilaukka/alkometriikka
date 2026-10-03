@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Scarabus Batch Strength Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903546/",
+	"feed_url": "https://alkometriikka.fi/rss/903546.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Scarabus Batch Strength Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903546-2026-09-29-74.93",
+			"url": "https://alkometriikka.fi/tuotteet/903546/",
+			"title": "Scarabus Batch Strength Single Malt — 73,73 € → 74,93 €",
+			"content_html": "<p>Tuotteen Scarabus Batch Strength Single Malt hinta on muuttunut.</p><p>73,73 € → 74,93 € (+1,20 €, +1,63 %).</p>",
+			"summary": "Tuotteen Scarabus Batch Strength Single Malt hinta on muuttunut. 73,73 € → 74,93 € (+1,20 €, +1,63 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903546-410fcff5bb64.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

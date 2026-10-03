@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nihonbashi Nigori Sake – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/611894/",
+	"feed_url": "https://alkometriikka.fi/rss/611894.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nihonbashi Nigori Sake.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-611894-2026-09-29-9.72",
+			"url": "https://alkometriikka.fi/tuotteet/611894/",
+			"title": "Nihonbashi Nigori Sake — 14,73 € → 9,72 €",
+			"content_html": "<p>Tuotteen Nihonbashi Nigori Sake hinta on muuttunut.</p><p>14,73 € → 9,72 € (−5,01 €, −34,01 %).</p>",
+			"summary": "Tuotteen Nihonbashi Nigori Sake hinta on muuttunut. 14,73 € → 9,72 € (−5,01 €, −34,01 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/611894-b7b865e1d0cb.png",
+			"tags": [
+				"Viinit",
+				"saket"
+			]
+		},
+		{
+			"id": "alkometriikka-611894-2026-07-18-14.73",
+			"url": "https://alkometriikka.fi/tuotteet/611894/",
+			"title": "Nihonbashi Nigori Sake — 21,03 € → 14,73 €",
+			"content_html": "<p>Tuotteen Nihonbashi Nigori Sake hinta on muuttunut.</p><p>21,03 € → 14,73 € (−6,30 €, −29,96 %).</p>",
+			"summary": "Tuotteen Nihonbashi Nigori Sake hinta on muuttunut. 21,03 € → 14,73 € (−6,30 €, −29,96 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/611894-b7b865e1d0cb.png",
+			"tags": [
+				"Viinit",
+				"saket"
+			]
+		}
+	]
+}

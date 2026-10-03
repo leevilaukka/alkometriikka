@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Marquês de Borba Reserva 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901892/",
+	"feed_url": "https://alkometriikka.fi/rss/901892.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Marquês de Borba Reserva 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901892-2026-09-29-89",
+			"url": "https://alkometriikka.fi/tuotteet/901892/",
+			"title": "Marquês de Borba Reserva 2021 — 74,39 € → 89,00 €",
+			"content_html": "<p>Tuotteen Marquês de Borba Reserva 2021 hinta on muuttunut.</p><p>74,39 € → 89,00 € (+14,61 €, +19,64 %).</p>",
+			"summary": "Tuotteen Marquês de Borba Reserva 2021 hinta on muuttunut. 74,39 € → 89,00 € (+14,61 €, +19,64 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901892-1ff17240bdb9.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

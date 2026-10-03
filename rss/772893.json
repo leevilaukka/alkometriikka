@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Thomas Henry Tonic Water – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/772893/",
+	"feed_url": "https://alkometriikka.fi/rss/772893.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Thomas Henry Tonic Water.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-772893-2026-07-18-1.79",
+			"url": "https://alkometriikka.fi/tuotteet/772893/",
+			"title": "Thomas Henry Tonic Water — 1,78 € → 1,79 €",
+			"content_html": "<p>Tuotteen Thomas Henry Tonic Water hinta on muuttunut.</p><p>1,78 € → 1,79 € (+0,01 €, +0,56 %).</p>",
+			"summary": "Tuotteen Thomas Henry Tonic Water hinta on muuttunut. 1,78 € → 1,79 € (+0,01 €, +0,56 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/772893-9c959e32ac91.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

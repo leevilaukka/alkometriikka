@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kyrö Dairy Cream – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/223876/",
+	"feed_url": "https://alkometriikka.fi/rss/223876.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kyrö Dairy Cream.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-223876-2026-09-29-23.66",
+			"url": "https://alkometriikka.fi/tuotteet/223876/",
+			"title": "Kyrö Dairy Cream — 24,98 € → 23,66 €",
+			"content_html": "<p>Tuotteen Kyrö Dairy Cream hinta on muuttunut.</p><p>24,98 € → 23,66 € (−1,32 €, −5,28 %).</p>",
+			"summary": "Tuotteen Kyrö Dairy Cream hinta on muuttunut. 24,98 € → 23,66 € (−1,32 €, −5,28 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/223876-a9f1751b0193.png",
+			"tags": [
+				"Väkevät",
+				"kermaliköörit"
+			]
+		}
+	]
+}

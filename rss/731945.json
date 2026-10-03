@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Northern Monk Faith Hazy Pale Ale tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/731945/",
+	"feed_url": "https://alkometriikka.fi/rss/731945.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Northern Monk Faith Hazy Pale Ale tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-731945-2026-09-29-4.69",
+			"url": "https://alkometriikka.fi/tuotteet/731945/",
+			"title": "Northern Monk Faith Hazy Pale Ale tölkki — 4,39 € → 4,69 €",
+			"content_html": "<p>Tuotteen Northern Monk Faith Hazy Pale Ale tölkki hinta on muuttunut.</p><p>4,39 € → 4,69 € (+0,30 €, +6,83 %).</p>",
+			"summary": "Tuotteen Northern Monk Faith Hazy Pale Ale tölkki hinta on muuttunut. 4,39 € → 4,69 € (+0,30 €, +6,83 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/731945-8d499288fae3.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

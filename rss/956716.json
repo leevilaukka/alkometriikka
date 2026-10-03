@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Prinz Von Hessen Dachsfilet 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/956716/",
+	"feed_url": "https://alkometriikka.fi/rss/956716.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Prinz Von Hessen Dachsfilet 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-956716-2026-07-18-33.9",
+			"url": "https://alkometriikka.fi/tuotteet/956716/",
+			"title": "Prinz Von Hessen Dachsfilet 2022 — 33,33 € → 33,90 €",
+			"content_html": "<p>Tuotteen Prinz Von Hessen Dachsfilet 2022 hinta on muuttunut.</p><p>33,33 € → 33,90 € (+0,57 €, +1,71 %).</p>",
+			"summary": "Tuotteen Prinz Von Hessen Dachsfilet 2022 hinta on muuttunut. 33,33 € → 33,90 € (+0,57 €, +1,71 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/956716-9fb17aea3311.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

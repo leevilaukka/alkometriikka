@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hörner Chardonnay Widder 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/500328/",
+	"feed_url": "https://alkometriikka.fi/rss/500328.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hörner Chardonnay Widder 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-500328-2026-09-29-18.99",
+			"url": "https://alkometriikka.fi/tuotteet/500328/",
+			"title": "Hörner Chardonnay Widder 2024 — 18,79 € → 18,99 €",
+			"content_html": "<p>Tuotteen Hörner Chardonnay Widder 2024 hinta on muuttunut.</p><p>18,79 € → 18,99 € (+0,20 €, +1,06 %).</p>",
+			"summary": "Tuotteen Hörner Chardonnay Widder 2024 hinta on muuttunut. 18,79 € → 18,99 € (+0,20 €, +1,06 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/500328-e76d3c855df7.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

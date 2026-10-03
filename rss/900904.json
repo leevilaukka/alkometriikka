@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Joseph Perrier Cuvée Royale Champagne Demi-Sec – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900904/",
+	"feed_url": "https://alkometriikka.fi/rss/900904.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Joseph Perrier Cuvée Royale Champagne Demi-Sec.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900904-2026-09-29-52.99",
+			"url": "https://alkometriikka.fi/tuotteet/900904/",
+			"title": "Joseph Perrier Cuvée Royale Champagne Demi-Sec — 51,98 € → 52,99 €",
+			"content_html": "<p>Tuotteen Joseph Perrier Cuvée Royale Champagne Demi-Sec hinta on muuttunut.</p><p>51,98 € → 52,99 € (+1,01 €, +1,94 %).</p>",
+			"summary": "Tuotteen Joseph Perrier Cuvée Royale Champagne Demi-Sec hinta on muuttunut. 51,98 € → 52,99 € (+1,01 €, +1,94 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900904-03585505eb55.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

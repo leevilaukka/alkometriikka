@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ayinger Jahrhundert Bier – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/740536/",
+	"feed_url": "https://alkometriikka.fi/rss/740536.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ayinger Jahrhundert Bier.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-740536-2026-02-02-4.45",
+			"url": "https://alkometriikka.fi/tuotteet/740536/",
+			"title": "Ayinger Jahrhundert Bier — 4,55 € → 4,45 €",
+			"content_html": "<p>Tuotteen Ayinger Jahrhundert Bier hinta on muuttunut.</p><p>4,55 € → 4,45 € (−0,10 €, −2,20 %).</p>",
+			"summary": "Tuotteen Ayinger Jahrhundert Bier hinta on muuttunut. 4,55 € → 4,45 € (−0,10 €, −2,20 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/740536-177160c7e795.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-740536-2026-02-02-4.55",
+			"url": "https://alkometriikka.fi/tuotteet/740536/",
+			"title": "Ayinger Jahrhundert Bier — 4,45 € → 4,55 €",
+			"content_html": "<p>Tuotteen Ayinger Jahrhundert Bier hinta on muuttunut.</p><p>4,45 € → 4,55 € (+0,10 €, +2,25 %).</p>",
+			"summary": "Tuotteen Ayinger Jahrhundert Bier hinta on muuttunut. 4,45 € → 4,55 € (+0,10 €, +2,25 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/740536-177160c7e795.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

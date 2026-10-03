@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jack Daniel's Single Barrel Select – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/174167/",
+	"feed_url": "https://alkometriikka.fi/rss/174167.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jack Daniel's Single Barrel Select.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-174167-2026-09-29-74.95",
+			"url": "https://alkometriikka.fi/tuotteet/174167/",
+			"title": "Jack Daniel's Single Barrel Select — 74,00 € → 74,95 €",
+			"content_html": "<p>Tuotteen Jack Daniel's Single Barrel Select hinta on muuttunut.</p><p>74,00 € → 74,95 € (+0,95 €, +1,28 %).</p>",
+			"summary": "Tuotteen Jack Daniel's Single Barrel Select hinta on muuttunut. 74,00 € → 74,95 € (+0,95 €, +1,28 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/174167-f075c8666d3c.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

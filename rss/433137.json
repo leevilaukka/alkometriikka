@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Garzón Tannat Reserva 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/433137/",
+	"feed_url": "https://alkometriikka.fi/rss/433137.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Garzón Tannat Reserva 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-433137-2026-09-29-19.99",
+			"url": "https://alkometriikka.fi/tuotteet/433137/",
+			"title": "Garzón Tannat Reserva 2023 — 17,98 € → 19,99 €",
+			"content_html": "<p>Tuotteen Garzón Tannat Reserva 2023 hinta on muuttunut.</p><p>17,98 € → 19,99 € (+2,01 €, +11,18 %).</p>",
+			"summary": "Tuotteen Garzón Tannat Reserva 2023 hinta on muuttunut. 17,98 € → 19,99 € (+2,01 €, +11,18 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/433137-fe567d8c6b9e.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-433137-2026-07-18-17.98",
+			"url": "https://alkometriikka.fi/tuotteet/433137/",
+			"title": "Garzón Tannat Reserva 2023 — 17,94 € → 17,98 €",
+			"content_html": "<p>Tuotteen Garzón Tannat Reserva 2023 hinta on muuttunut.</p><p>17,94 € → 17,98 € (+0,04 €, +0,22 %).</p>",
+			"summary": "Tuotteen Garzón Tannat Reserva 2023 hinta on muuttunut. 17,94 € → 17,98 € (+0,04 €, +0,22 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/433137-fe567d8c6b9e.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

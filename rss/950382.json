@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jakob Jung Riesling Classic 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/950382/",
+	"feed_url": "https://alkometriikka.fi/rss/950382.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jakob Jung Riesling Classic 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-950382-2026-09-29-21.4",
+			"url": "https://alkometriikka.fi/tuotteet/950382/",
+			"title": "Jakob Jung Riesling Classic 2024 — 21,17 € → 21,40 €",
+			"content_html": "<p>Tuotteen Jakob Jung Riesling Classic 2024 hinta on muuttunut.</p><p>21,17 € → 21,40 € (+0,23 €, +1,09 %).</p>",
+			"summary": "Tuotteen Jakob Jung Riesling Classic 2024 hinta on muuttunut. 21,17 € → 21,40 € (+0,23 €, +1,09 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/950382-994cadaaa351.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

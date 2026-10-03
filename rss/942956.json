@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Highland Park Cask Strength Release No. 5 Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/942956/",
+	"feed_url": "https://alkometriikka.fi/rss/942956.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Highland Park Cask Strength Release No. 5 Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-942956-2026-09-29-107.07",
+			"url": "https://alkometriikka.fi/tuotteet/942956/",
+			"title": "Highland Park Cask Strength Release No. 5 Single Malt — 103,98 € → 107,07 €",
+			"content_html": "<p>Tuotteen Highland Park Cask Strength Release No. 5 Single Malt hinta on muuttunut.</p><p>103,98 € → 107,07 € (+3,09 €, +2,97 %).</p>",
+			"summary": "Tuotteen Highland Park Cask Strength Release No. 5 Single Malt hinta on muuttunut. 103,98 € → 107,07 € (+3,09 €, +2,97 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/942956-2e95e6091545.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

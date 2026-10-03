@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Beaulieu Vineyard Napa Valley Cabernet Sauvignon 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902096/",
+	"feed_url": "https://alkometriikka.fi/rss/902096.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Beaulieu Vineyard Napa Valley Cabernet Sauvignon 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902096-2026-09-29-61.98",
+			"url": "https://alkometriikka.fi/tuotteet/902096/",
+			"title": "Beaulieu Vineyard Napa Valley Cabernet Sauvignon 2021 — 60,00 € → 61,98 €",
+			"content_html": "<p>Tuotteen Beaulieu Vineyard Napa Valley Cabernet Sauvignon 2021 hinta on muuttunut.</p><p>60,00 € → 61,98 € (+1,98 €, +3,30 %).</p>",
+			"summary": "Tuotteen Beaulieu Vineyard Napa Valley Cabernet Sauvignon 2021 hinta on muuttunut. 60,00 € → 61,98 € (+1,98 €, +3,30 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902096-81d744f9c941.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

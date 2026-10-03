@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – H! Barcelona Cava Organic Rose Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901265/",
+	"feed_url": "https://alkometriikka.fi/rss/901265.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: H! Barcelona Cava Organic Rose Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901265-2026-07-18-14.48",
+			"url": "https://alkometriikka.fi/tuotteet/901265/",
+			"title": "H! Barcelona Cava Organic Rose Brut — 14,42 € → 14,48 €",
+			"content_html": "<p>Tuotteen H! Barcelona Cava Organic Rose Brut hinta on muuttunut.</p><p>14,42 € → 14,48 € (+0,06 €, +0,42 %).</p>",
+			"summary": "Tuotteen H! Barcelona Cava Organic Rose Brut hinta on muuttunut. 14,42 € → 14,48 € (+0,06 €, +0,42 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901265-f4e04ae3cf24.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

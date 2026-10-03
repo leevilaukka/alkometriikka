@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Yellow Rose Outlaw Bourbon – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/946826/",
+	"feed_url": "https://alkometriikka.fi/rss/946826.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Yellow Rose Outlaw Bourbon.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-946826-2026-09-29-85.5",
+			"url": "https://alkometriikka.fi/tuotteet/946826/",
+			"title": "Yellow Rose Outlaw Bourbon — 82,90 € → 85,50 €",
+			"content_html": "<p>Tuotteen Yellow Rose Outlaw Bourbon hinta on muuttunut.</p><p>82,90 € → 85,50 € (+2,60 €, +3,14 %).</p>",
+			"summary": "Tuotteen Yellow Rose Outlaw Bourbon hinta on muuttunut. 82,90 € → 85,50 € (+2,60 €, +3,14 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/946826-a13f7e782f52.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

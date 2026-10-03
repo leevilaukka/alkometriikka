@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pagos De Viña Real 2015 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/927077/",
+	"feed_url": "https://alkometriikka.fi/rss/927077.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pagos De Viña Real 2015.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-927077-2026-09-29-94.5",
+			"url": "https://alkometriikka.fi/tuotteet/927077/",
+			"title": "Pagos De Viña Real 2015 — 90,45 € → 94,50 €",
+			"content_html": "<p>Tuotteen Pagos De Viña Real 2015 hinta on muuttunut.</p><p>90,45 € → 94,50 € (+4,05 €, +4,48 %).</p>",
+			"summary": "Tuotteen Pagos De Viña Real 2015 hinta on muuttunut. 90,45 € → 94,50 € (+4,05 €, +4,48 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/927077-f72f93f75ce6.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

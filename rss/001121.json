@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – St-Rémy Authentic VSOP – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/001121/",
+	"feed_url": "https://alkometriikka.fi/rss/001121.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: St-Rémy Authentic VSOP.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-001121-2026-09-29-25.98",
+			"url": "https://alkometriikka.fi/tuotteet/001121/",
+			"title": "St-Rémy Authentic VSOP — 25,99 € → 25,98 €",
+			"content_html": "<p>Tuotteen St-Rémy Authentic VSOP hinta on muuttunut.</p><p>25,99 € → 25,98 € (−0,01 €, −0,04 %).</p>",
+			"summary": "Tuotteen St-Rémy Authentic VSOP hinta on muuttunut. 25,99 € → 25,98 € (−0,01 €, −0,04 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/001121-80d04dae8368.png",
+			"tags": [
+				"Väkevät",
+				"brandyt"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Chambord Black Raspberry Liqueur – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/209146/",
+	"feed_url": "https://alkometriikka.fi/rss/209146.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Chambord Black Raspberry Liqueur.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-209146-2026-09-29-30.5",
+			"url": "https://alkometriikka.fi/tuotteet/209146/",
+			"title": "Chambord Black Raspberry Liqueur — 29,98 € → 30,50 €",
+			"content_html": "<p>Tuotteen Chambord Black Raspberry Liqueur hinta on muuttunut.</p><p>29,98 € → 30,50 € (+0,52 €, +1,73 %).</p>",
+			"summary": "Tuotteen Chambord Black Raspberry Liqueur hinta on muuttunut. 29,98 € → 30,50 € (+0,52 €, +1,73 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/209146-6ae6a649231f.png",
+			"tags": [
+				"Väkevät",
+				"marjaliköörit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tenuta Aquilaia Vermentino 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/924565/",
+	"feed_url": "https://alkometriikka.fi/rss/924565.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tenuta Aquilaia Vermentino 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-924565-2026-07-18-19.9",
+			"url": "https://alkometriikka.fi/tuotteet/924565/",
+			"title": "Tenuta Aquilaia Vermentino 2025 — 19,67 € → 19,90 €",
+			"content_html": "<p>Tuotteen Tenuta Aquilaia Vermentino 2025 hinta on muuttunut.</p><p>19,67 € → 19,90 € (+0,23 €, +1,17 %).</p>",
+			"summary": "Tuotteen Tenuta Aquilaia Vermentino 2025 hinta on muuttunut. 19,67 € → 19,90 € (+0,23 €, +1,17 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/924565-15c9f5ffeb33.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nuija Distilled Dry Gin muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901696/",
+	"feed_url": "https://alkometriikka.fi/rss/901696.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nuija Distilled Dry Gin muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901696-2026-09-29-5.06",
+			"url": "https://alkometriikka.fi/tuotteet/901696/",
+			"title": "Nuija Distilled Dry Gin muovipullo — 4,96 € → 5,06 €",
+			"content_html": "<p>Tuotteen Nuija Distilled Dry Gin muovipullo hinta on muuttunut.</p><p>4,96 € → 5,06 € (+0,10 €, +2,02 %).</p>",
+			"summary": "Tuotteen Nuija Distilled Dry Gin muovipullo hinta on muuttunut. 4,96 € → 5,06 € (+0,10 €, +2,02 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901696-ca6b71a0a086.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

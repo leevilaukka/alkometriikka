@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nagu Akvavit – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/938574/",
+	"feed_url": "https://alkometriikka.fi/rss/938574.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nagu Akvavit.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-938574-2026-09-29-52.5",
+			"url": "https://alkometriikka.fi/tuotteet/938574/",
+			"title": "Nagu Akvavit — 52,20 € → 52,50 €",
+			"content_html": "<p>Tuotteen Nagu Akvavit hinta on muuttunut.</p><p>52,20 € → 52,50 € (+0,30 €, +0,57 %).</p>",
+			"summary": "Tuotteen Nagu Akvavit hinta on muuttunut. 52,20 € → 52,50 € (+0,30 €, +0,57 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/938574-48010a77d25d.png",
+			"tags": [
+				"Väkevät",
+				"akvaviitit"
+			]
+		}
+	]
+}

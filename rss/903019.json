@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Julien Sunier Morgon 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903019/",
+	"feed_url": "https://alkometriikka.fi/rss/903019.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Julien Sunier Morgon 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903019-2026-09-29-39.13",
+			"url": "https://alkometriikka.fi/tuotteet/903019/",
+			"title": "Julien Sunier Morgon 2023 — 38,91 € → 39,13 €",
+			"content_html": "<p>Tuotteen Julien Sunier Morgon 2023 hinta on muuttunut.</p><p>38,91 € → 39,13 € (+0,22 €, +0,57 %).</p>",
+			"summary": "Tuotteen Julien Sunier Morgon 2023 hinta on muuttunut. 38,91 € → 39,13 € (+0,22 €, +0,57 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903019-b769cb22b53d.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

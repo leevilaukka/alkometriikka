@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Koskenkorva Vodka 60% muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/946328/",
+	"feed_url": "https://alkometriikka.fi/rss/946328.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Koskenkorva Vodka 60% muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-946328-2026-07-18-29.99",
+			"url": "https://alkometriikka.fi/tuotteet/946328/",
+			"title": "Koskenkorva Vodka 60% muovipullo — 29,97 € → 29,99 €",
+			"content_html": "<p>Tuotteen Koskenkorva Vodka 60% muovipullo hinta on muuttunut.</p><p>29,97 € → 29,99 € (+0,02 €, +0,07 %).</p>",
+			"summary": "Tuotteen Koskenkorva Vodka 60% muovipullo hinta on muuttunut. 29,97 € → 29,99 € (+0,02 €, +0,07 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/946328-04471bdf91e1.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

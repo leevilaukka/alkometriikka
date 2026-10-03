@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glen Moray Our Classic Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902346/",
+	"feed_url": "https://alkometriikka.fi/rss/902346.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glen Moray Our Classic Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902346-2026-09-29-38.55",
+			"url": "https://alkometriikka.fi/tuotteet/902346/",
+			"title": "Glen Moray Our Classic Single Malt — 38,87 € → 38,55 €",
+			"content_html": "<p>Tuotteen Glen Moray Our Classic Single Malt hinta on muuttunut.</p><p>38,87 € → 38,55 € (−0,32 €, −0,82 %).</p>",
+			"summary": "Tuotteen Glen Moray Our Classic Single Malt hinta on muuttunut. 38,87 € → 38,55 € (−0,32 €, −0,82 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902346-a6bbae03756c.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tsingtao Strong Lager tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/700123/",
+	"feed_url": "https://alkometriikka.fi/rss/700123.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tsingtao Strong Lager tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-700123-2026-09-29-3.99",
+			"url": "https://alkometriikka.fi/tuotteet/700123/",
+			"title": "Tsingtao Strong Lager tölkki — 3,89 € → 3,99 €",
+			"content_html": "<p>Tuotteen Tsingtao Strong Lager tölkki hinta on muuttunut.</p><p>3,89 € → 3,99 € (+0,10 €, +2,57 %).</p>",
+			"summary": "Tuotteen Tsingtao Strong Lager tölkki hinta on muuttunut. 3,89 € → 3,99 € (+0,10 €, +2,57 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/700123-baa0d376e8be.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

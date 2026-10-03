@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glenglassaugh Sandend Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/928824/",
+	"feed_url": "https://alkometriikka.fi/rss/928824.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glenglassaugh Sandend Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-928824-2026-09-29-82",
+			"url": "https://alkometriikka.fi/tuotteet/928824/",
+			"title": "Glenglassaugh Sandend Single Malt — 79,99 € → 82,00 €",
+			"content_html": "<p>Tuotteen Glenglassaugh Sandend Single Malt hinta on muuttunut.</p><p>79,99 € → 82,00 € (+2,01 €, +2,51 %).</p>",
+			"summary": "Tuotteen Glenglassaugh Sandend Single Malt hinta on muuttunut. 79,99 € → 82,00 € (+2,01 €, +2,51 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/928824-9daeaf761af7.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

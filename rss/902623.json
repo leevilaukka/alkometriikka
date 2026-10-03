@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kontyos Eper Édes Güymölcsbor – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902623/",
+	"feed_url": "https://alkometriikka.fi/rss/902623.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kontyos Eper Édes Güymölcsbor.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902623-2026-09-29-37.29",
+			"url": "https://alkometriikka.fi/tuotteet/902623/",
+			"title": "Kontyos Eper Édes Güymölcsbor — 37,23 € → 37,29 €",
+			"content_html": "<p>Tuotteen Kontyos Eper Édes Güymölcsbor hinta on muuttunut.</p><p>37,23 € → 37,29 € (+0,06 €, +0,16 %).</p>",
+			"summary": "Tuotteen Kontyos Eper Édes Güymölcsbor hinta on muuttunut. 37,23 € → 37,29 € (+0,06 €, +0,16 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902623-e42847388fa2.png",
+			"tags": [
+				"Viinit",
+				"hedelmä- ja aromatisoidut viinit"
+			]
+		}
+	]
+}

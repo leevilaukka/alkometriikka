@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château Les Reuilles Cuvée Todesco\t\t\t\t\t\t\t\t 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902029/",
+	"feed_url": "https://alkometriikka.fi/rss/902029.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château Les Reuilles Cuvée Todesco\t\t\t\t\t\t\t\t 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902029-2026-09-29-15.98",
+			"url": "https://alkometriikka.fi/tuotteet/902029/",
+			"title": "Château Les Reuilles Cuvée Todesco\t\t\t\t\t\t\t\t 2023 — 15,46 € → 15,98 €",
+			"content_html": "<p>Tuotteen Château Les Reuilles Cuvée Todesco\t\t\t\t\t\t\t\t 2023 hinta on muuttunut.</p><p>15,46 € → 15,98 € (+0,52 €, +3,36 %).</p>",
+			"summary": "Tuotteen Château Les Reuilles Cuvée Todesco 2023 hinta on muuttunut. 15,46 € → 15,98 € (+0,52 €, +3,36 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902029-38729ba8e099.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

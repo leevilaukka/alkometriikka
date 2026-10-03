@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Justino's Malvasia 10 Years Old Madeira – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/394354/",
+	"feed_url": "https://alkometriikka.fi/rss/394354.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Justino's Malvasia 10 Years Old Madeira.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-394354-2026-09-29-25.54",
+			"url": "https://alkometriikka.fi/tuotteet/394354/",
+			"title": "Justino's Malvasia 10 Years Old Madeira — 25,16 € → 25,54 €",
+			"content_html": "<p>Tuotteen Justino's Malvasia 10 Years Old Madeira hinta on muuttunut.</p><p>25,16 € → 25,54 € (+0,38 €, +1,51 %).</p>",
+			"summary": "Tuotteen Justino's Malvasia 10 Years Old Madeira hinta on muuttunut. 25,16 € → 25,54 € (+0,38 €, +1,51 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/394354-70519c017893.png",
+			"tags": [
+				"Välituotteet",
+				"madeirat"
+			]
+		}
+	]
+}

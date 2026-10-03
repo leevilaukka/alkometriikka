@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Labiette Castille XO Bas-Armagnac – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/110076/",
+	"feed_url": "https://alkometriikka.fi/rss/110076.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Labiette Castille XO Bas-Armagnac.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-110076-2026-09-29-38.64",
+			"url": "https://alkometriikka.fi/tuotteet/110076/",
+			"title": "Labiette Castille XO Bas-Armagnac — 38,39 € → 38,64 €",
+			"content_html": "<p>Tuotteen Labiette Castille XO Bas-Armagnac hinta on muuttunut.</p><p>38,39 € → 38,64 € (+0,25 €, +0,65 %).</p>",
+			"summary": "Tuotteen Labiette Castille XO Bas-Armagnac hinta on muuttunut. 38,39 € → 38,64 € (+0,25 €, +0,65 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/110076-46c59909e0ce.png",
+			"tags": [
+				"Väkevät",
+				"armanjakit"
+			]
+		}
+	]
+}

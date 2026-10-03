@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Romano Levi Grappa Bianca – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/925038/",
+	"feed_url": "https://alkometriikka.fi/rss/925038.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Romano Levi Grappa Bianca.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-925038-2026-09-29-75.57",
+			"url": "https://alkometriikka.fi/tuotteet/925038/",
+			"title": "Romano Levi Grappa Bianca — 73,95 € → 75,57 €",
+			"content_html": "<p>Tuotteen Romano Levi Grappa Bianca hinta on muuttunut.</p><p>73,95 € → 75,57 € (+1,62 €, +2,19 %).</p>",
+			"summary": "Tuotteen Romano Levi Grappa Bianca hinta on muuttunut. 73,95 € → 75,57 € (+1,62 €, +2,19 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/925038-cd8c2498260f.png",
+			"tags": [
+				"Väkevät",
+				"grapat"
+			]
+		}
+	]
+}

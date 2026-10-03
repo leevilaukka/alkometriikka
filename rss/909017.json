@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Compass Box The Peat Monster Blended Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/909017/",
+	"feed_url": "https://alkometriikka.fi/rss/909017.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Compass Box The Peat Monster Blended Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-909017-2026-09-29-75.52",
+			"url": "https://alkometriikka.fi/tuotteet/909017/",
+			"title": "Compass Box The Peat Monster Blended Malt — 73,91 € → 75,52 €",
+			"content_html": "<p>Tuotteen Compass Box The Peat Monster Blended Malt hinta on muuttunut.</p><p>73,91 € → 75,52 € (+1,61 €, +2,18 %).</p>",
+			"summary": "Tuotteen Compass Box The Peat Monster Blended Malt hinta on muuttunut. 73,91 € → 75,52 € (+1,61 €, +2,18 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/909017-a27e70c1d686.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

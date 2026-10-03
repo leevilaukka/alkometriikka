@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Plymouth Gin Navy Strength – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/134487/",
+	"feed_url": "https://alkometriikka.fi/rss/134487.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Plymouth Gin Navy Strength.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-134487-2026-09-29-59.28",
+			"url": "https://alkometriikka.fi/tuotteet/134487/",
+			"title": "Plymouth Gin Navy Strength — 58,99 € → 59,28 €",
+			"content_html": "<p>Tuotteen Plymouth Gin Navy Strength hinta on muuttunut.</p><p>58,99 € → 59,28 € (+0,29 €, +0,49 %).</p>",
+			"summary": "Tuotteen Plymouth Gin Navy Strength hinta on muuttunut. 58,99 € → 59,28 € (+0,29 €, +0,49 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/134487-5c9d5a10ee24.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		},
+		{
+			"id": "alkometriikka-134487-2026-07-18-58.99",
+			"url": "https://alkometriikka.fi/tuotteet/134487/",
+			"title": "Plymouth Gin Navy Strength — 58,87 € → 58,99 €",
+			"content_html": "<p>Tuotteen Plymouth Gin Navy Strength hinta on muuttunut.</p><p>58,87 € → 58,99 € (+0,12 €, +0,20 %).</p>",
+			"summary": "Tuotteen Plymouth Gin Navy Strength hinta on muuttunut. 58,87 € → 58,99 € (+0,12 €, +0,20 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/134487-5c9d5a10ee24.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Stateless Banana Flavour Spirit Drink – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/195117/",
+	"feed_url": "https://alkometriikka.fi/rss/195117.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Stateless Banana Flavour Spirit Drink.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-195117-2026-09-29-32.32",
+			"url": "https://alkometriikka.fi/tuotteet/195117/",
+			"title": "Stateless Banana Flavour Spirit Drink — 35,36 € → 32,32 €",
+			"content_html": "<p>Tuotteen Stateless Banana Flavour Spirit Drink hinta on muuttunut.</p><p>35,36 € → 32,32 € (−3,04 €, −8,60 %).</p>",
+			"summary": "Tuotteen Stateless Banana Flavour Spirit Drink hinta on muuttunut. 35,36 € → 32,32 € (−3,04 €, −8,60 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/195117-2e2bd3551607.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

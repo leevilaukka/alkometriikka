@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – De Saint-Gall Le Blanc de Blancs Premier Cru Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903235/",
+	"feed_url": "https://alkometriikka.fi/rss/903235.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: De Saint-Gall Le Blanc de Blancs Premier Cru Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903235-2026-09-29-66.09",
+			"url": "https://alkometriikka.fi/tuotteet/903235/",
+			"title": "De Saint-Gall Le Blanc de Blancs Premier Cru Champagne Brut — 63,99 € → 66,09 €",
+			"content_html": "<p>Tuotteen De Saint-Gall Le Blanc de Blancs Premier Cru Champagne Brut hinta on muuttunut.</p><p>63,99 € → 66,09 € (+2,10 €, +3,28 %).</p>",
+			"summary": "Tuotteen De Saint-Gall Le Blanc de Blancs Premier Cru Champagne Brut hinta on muuttunut. 63,99 € → 66,09 € (+2,10 €, +3,28 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903235-2663f836536e.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

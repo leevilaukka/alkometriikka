@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Moutard - Dangin La Croix aux Cures Champagne Brut Nature – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903125/",
+	"feed_url": "https://alkometriikka.fi/rss/903125.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Moutard - Dangin La Croix aux Cures Champagne Brut Nature.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903125-2026-09-29-85.03",
+			"url": "https://alkometriikka.fi/tuotteet/903125/",
+			"title": "Moutard - Dangin La Croix aux Cures Champagne Brut Nature — 81,61 € → 85,03 €",
+			"content_html": "<p>Tuotteen Moutard - Dangin La Croix aux Cures Champagne Brut Nature hinta on muuttunut.</p><p>81,61 € → 85,03 € (+3,42 €, +4,19 %).</p>",
+			"summary": "Tuotteen Moutard - Dangin La Croix aux Cures Champagne Brut Nature hinta on muuttunut. 81,61 € → 85,03 € (+3,42 €, +4,19 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903125-362a6425f8f0.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

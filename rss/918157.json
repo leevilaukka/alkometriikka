@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Elisabeth XO Organic Fine Cognac – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/918157/",
+	"feed_url": "https://alkometriikka.fi/rss/918157.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Elisabeth XO Organic Fine Cognac.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-918157-2026-09-29-95.56",
+			"url": "https://alkometriikka.fi/tuotteet/918157/",
+			"title": "Elisabeth XO Organic Fine Cognac — 92,45 € → 95,56 €",
+			"content_html": "<p>Tuotteen Elisabeth XO Organic Fine Cognac hinta on muuttunut.</p><p>92,45 € → 95,56 € (+3,11 €, +3,36 %).</p>",
+			"summary": "Tuotteen Elisabeth XO Organic Fine Cognac hinta on muuttunut. 92,45 € → 95,56 € (+3,11 €, +3,36 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/918157-f9fda6b32682.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

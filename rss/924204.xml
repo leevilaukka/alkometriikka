@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Pinocchio Vino Rosso d&apos;Italia – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/924204/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Pinocchio Vino Rosso d&apos;Italia.</description>
+		<language>fi</language>
+		<lastBuildDate>Sat, 03 Oct 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/924204.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Pinocchio Vino Rosso d&apos;Italia – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Pinocchio Vino Rosso d&apos;Italia — 15,45 € → 15,49 €</title>
+			<link>https://alkometriikka.fi/tuotteet/924204/</link>
+			<guid isPermaLink="false">alkometriikka-924204-2026-09-29-15.49</guid>
+			<pubDate>Tue, 29 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Pinocchio Vino Rosso d'Italia hinta on muuttunut.</p><p>15,45 € → 15,49 € (+0,04 €, +0,26 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/924204-170c28fdd5d1.png" />
+		</item>
+	</channel>
+</rss>

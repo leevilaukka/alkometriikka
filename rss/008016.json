@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pasqua Chardonnay 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/008016/",
+	"feed_url": "https://alkometriikka.fi/rss/008016.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pasqua Chardonnay 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-008016-2026-09-29-10.79",
+			"url": "https://alkometriikka.fi/tuotteet/008016/",
+			"title": "Pasqua Chardonnay 2025 — 10,69 € → 10,79 €",
+			"content_html": "<p>Tuotteen Pasqua Chardonnay 2025 hinta on muuttunut.</p><p>10,69 € → 10,79 € (+0,10 €, +0,94 %).</p>",
+			"summary": "Tuotteen Pasqua Chardonnay 2025 hinta on muuttunut. 10,69 € → 10,79 € (+0,10 €, +0,94 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/008016-1f53f6818c04.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-008016-2026-07-18-10.69",
+			"url": "https://alkometriikka.fi/tuotteet/008016/",
+			"title": "Pasqua Chardonnay 2025 — 10,44 € → 10,69 €",
+			"content_html": "<p>Tuotteen Pasqua Chardonnay 2025 hinta on muuttunut.</p><p>10,44 € → 10,69 € (+0,25 €, +2,39 %).</p>",
+			"summary": "Tuotteen Pasqua Chardonnay 2025 hinta on muuttunut. 10,44 € → 10,69 € (+0,25 €, +2,39 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/008016-1f53f6818c04.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

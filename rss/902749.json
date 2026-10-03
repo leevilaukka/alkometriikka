@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Penfolds Grange 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902749/",
+	"feed_url": "https://alkometriikka.fi/rss/902749.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Penfolds Grange 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902749-2026-09-29-949.98",
+			"url": "https://alkometriikka.fi/tuotteet/902749/",
+			"title": "Penfolds Grange 2021 — 889,98 € → 949,98 €",
+			"content_html": "<p>Tuotteen Penfolds Grange 2021 hinta on muuttunut.</p><p>889,98 € → 949,98 € (+60,00 €, +6,74 %).</p>",
+			"summary": "Tuotteen Penfolds Grange 2021 hinta on muuttunut. 889,98 € → 949,98 € (+60,00 €, +6,74 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902749-6cdf08ba4a92.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

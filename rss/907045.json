@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hven Hvenus Rye Whisky – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/907045/",
+	"feed_url": "https://alkometriikka.fi/rss/907045.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hven Hvenus Rye Whisky.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-907045-2026-09-29-58.45",
+			"url": "https://alkometriikka.fi/tuotteet/907045/",
+			"title": "Hven Hvenus Rye Whisky — 56,99 € → 58,45 €",
+			"content_html": "<p>Tuotteen Hven Hvenus Rye Whisky hinta on muuttunut.</p><p>56,99 € → 58,45 € (+1,46 €, +2,56 %).</p>",
+			"summary": "Tuotteen Hven Hvenus Rye Whisky hinta on muuttunut. 56,99 € → 58,45 € (+1,46 €, +2,56 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/907045-60a2a08c8687.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

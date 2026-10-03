@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Terrazas de los Andes Malbec 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/911007/",
+	"feed_url": "https://alkometriikka.fi/rss/911007.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Terrazas de los Andes Malbec 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-911007-2026-07-18-27.99",
+			"url": "https://alkometriikka.fi/tuotteet/911007/",
+			"title": "Terrazas de los Andes Malbec 2023 — 26,85 € → 27,99 €",
+			"content_html": "<p>Tuotteen Terrazas de los Andes Malbec 2023 hinta on muuttunut.</p><p>26,85 € → 27,99 € (+1,14 €, +4,25 %).</p>",
+			"summary": "Tuotteen Terrazas de los Andes Malbec 2023 hinta on muuttunut. 26,85 € → 27,99 € (+1,14 €, +4,25 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/911007-1ea04939dbe7.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Fentimans Ginger Beer – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/794383/",
+	"feed_url": "https://alkometriikka.fi/rss/794383.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Fentimans Ginger Beer.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-794383-2026-07-18-2.49",
+			"url": "https://alkometriikka.fi/tuotteet/794383/",
+			"title": "Fentimans Ginger Beer — 2,24 € → 2,49 €",
+			"content_html": "<p>Tuotteen Fentimans Ginger Beer hinta on muuttunut.</p><p>2,24 € → 2,49 € (+0,25 €, +11,16 %).</p>",
+			"summary": "Tuotteen Fentimans Ginger Beer hinta on muuttunut. 2,24 € → 2,49 € (+0,25 €, +11,16 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/794383-9ded55a2f194.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

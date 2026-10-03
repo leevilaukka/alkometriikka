@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Uljas Dry Gin muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/940958/",
+	"feed_url": "https://alkometriikka.fi/rss/940958.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Uljas Dry Gin muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-940958-2026-09-29-48.07",
+			"url": "https://alkometriikka.fi/tuotteet/940958/",
+			"title": "Uljas Dry Gin muovipullo — 47,29 € → 48,07 €",
+			"content_html": "<p>Tuotteen Uljas Dry Gin muovipullo hinta on muuttunut.</p><p>47,29 € → 48,07 € (+0,78 €, +1,65 %).</p>",
+			"summary": "Tuotteen Uljas Dry Gin muovipullo hinta on muuttunut. 47,29 € → 48,07 € (+0,78 €, +1,65 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/940958-36aba2fa2ddd.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

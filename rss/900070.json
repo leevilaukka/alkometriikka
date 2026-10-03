@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Macallan Time : Space Mastery Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900070/",
+	"feed_url": "https://alkometriikka.fi/rss/900070.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Macallan Time : Space Mastery Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900070-2026-09-29-1494.21",
+			"url": "https://alkometriikka.fi/tuotteet/900070/",
+			"title": "The Macallan Time : Space Mastery Single Malt — 1 398,02 € → 1 494,21 €",
+			"content_html": "<p>Tuotteen The Macallan Time : Space Mastery Single Malt hinta on muuttunut.</p><p>1 398,02 € → 1 494,21 € (+96,19 €, +6,88 %).</p>",
+			"summary": "Tuotteen The Macallan Time : Space Mastery Single Malt hinta on muuttunut. 1 398,02 € → 1 494,21 € (+96,19 €, +6,88 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900070-c36f5c5fc318.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

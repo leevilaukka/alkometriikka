@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Autréau de Champillon Réserve Grand Cru Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/906607/",
+	"feed_url": "https://alkometriikka.fi/rss/906607.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Autréau de Champillon Réserve Grand Cru Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-906607-2026-09-29-48.98",
+			"url": "https://alkometriikka.fi/tuotteet/906607/",
+			"title": "Autréau de Champillon Réserve Grand Cru Champagne Brut — 47,99 € → 48,98 €",
+			"content_html": "<p>Tuotteen Autréau de Champillon Réserve Grand Cru Champagne Brut hinta on muuttunut.</p><p>47,99 € → 48,98 € (+0,99 €, +2,06 %).</p>",
+			"summary": "Tuotteen Autréau de Champillon Réserve Grand Cru Champagne Brut hinta on muuttunut. 47,99 € → 48,98 € (+0,99 €, +2,06 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/906607-f849f4ef765d.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

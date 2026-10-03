@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pierre Mignon Cuvée Pure Champagne Zero Dosage – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/936928/",
+	"feed_url": "https://alkometriikka.fi/rss/936928.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pierre Mignon Cuvée Pure Champagne Zero Dosage.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-936928-2026-09-29-77.78",
+			"url": "https://alkometriikka.fi/tuotteet/936928/",
+			"title": "Pierre Mignon Cuvée Pure Champagne Zero Dosage — 74,86 € → 77,78 €",
+			"content_html": "<p>Tuotteen Pierre Mignon Cuvée Pure Champagne Zero Dosage hinta on muuttunut.</p><p>74,86 € → 77,78 € (+2,92 €, +3,90 %).</p>",
+			"summary": "Tuotteen Pierre Mignon Cuvée Pure Champagne Zero Dosage hinta on muuttunut. 74,86 € → 77,78 € (+2,92 €, +3,90 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/936928-3bdf3d30d70a.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

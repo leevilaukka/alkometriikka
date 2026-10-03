@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nuija Ronja 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902369/",
+	"feed_url": "https://alkometriikka.fi/rss/902369.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nuija Ronja 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902369-2026-09-29-37.52",
+			"url": "https://alkometriikka.fi/tuotteet/902369/",
+			"title": "Nuija Ronja 2024 — 37,31 € → 37,52 €",
+			"content_html": "<p>Tuotteen Nuija Ronja 2024 hinta on muuttunut.</p><p>37,31 € → 37,52 € (+0,21 €, +0,56 %).</p>",
+			"summary": "Tuotteen Nuija Ronja 2024 hinta on muuttunut. 37,31 € → 37,52 € (+0,21 €, +0,56 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902369-061a2fc6cf54.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

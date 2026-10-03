@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – To Øl #DIPA tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/701975/",
+	"feed_url": "https://alkometriikka.fi/rss/701975.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: To Øl #DIPA tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-701975-2026-09-29-5.98",
+			"url": "https://alkometriikka.fi/tuotteet/701975/",
+			"title": "To Øl #DIPA tölkki — 5,96 € → 5,98 €",
+			"content_html": "<p>Tuotteen To Øl #DIPA tölkki hinta on muuttunut.</p><p>5,96 € → 5,98 € (+0,02 €, +0,34 %).</p>",
+			"summary": "Tuotteen To Øl #DIPA tölkki hinta on muuttunut. 5,96 € → 5,98 € (+0,02 €, +0,34 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/701975-373c2deb3538.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-701975-2026-07-18-5.96",
+			"url": "https://alkometriikka.fi/tuotteet/701975/",
+			"title": "To Øl #DIPA tölkki — 5,99 € → 5,96 €",
+			"content_html": "<p>Tuotteen To Øl #DIPA tölkki hinta on muuttunut.</p><p>5,99 € → 5,96 € (−0,03 €, −0,50 %).</p>",
+			"summary": "Tuotteen To Øl #DIPA tölkki hinta on muuttunut. 5,99 € → 5,96 € (−0,03 €, −0,50 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/701975-373c2deb3538.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

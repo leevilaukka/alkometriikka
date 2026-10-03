@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Aldo Conterno Barolo Granbussia 2000 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/945258/",
+	"feed_url": "https://alkometriikka.fi/rss/945258.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Aldo Conterno Barolo Granbussia 2000.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-945258-2026-09-29-5354.83",
+			"url": "https://alkometriikka.fi/tuotteet/945258/",
+			"title": "Aldo Conterno Barolo Granbussia 2000 — 4 995,34 € → 5 354,83 €",
+			"content_html": "<p>Tuotteen Aldo Conterno Barolo Granbussia 2000 hinta on muuttunut.</p><p>4 995,34 € → 5 354,83 € (+359,49 €, +7,20 %).</p>",
+			"summary": "Tuotteen Aldo Conterno Barolo Granbussia 2000 hinta on muuttunut. 4 995,34 € → 5 354,83 € (+359,49 €, +7,20 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/945258-ba427a3e5713.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Silvio Grasso Barolo 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/409344/",
+	"feed_url": "https://alkometriikka.fi/rss/409344.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Silvio Grasso Barolo 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-409344-2026-09-29-21.19",
+			"url": "https://alkometriikka.fi/tuotteet/409344/",
+			"title": "Silvio Grasso Barolo 2022 — 20,99 € → 21,19 €",
+			"content_html": "<p>Tuotteen Silvio Grasso Barolo 2022 hinta on muuttunut.</p><p>20,99 € → 21,19 € (+0,20 €, +0,95 %).</p>",
+			"summary": "Tuotteen Silvio Grasso Barolo 2022 hinta on muuttunut. 20,99 € → 21,19 € (+0,20 €, +0,95 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/409344-11908c8f4907.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Passento kartonkitölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/438238/",
+	"feed_url": "https://alkometriikka.fi/rss/438238.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Passento kartonkitölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-438238-2026-09-29-10.98",
+			"url": "https://alkometriikka.fi/tuotteet/438238/",
+			"title": "Passento kartonkitölkki — 11,48 € → 10,98 €",
+			"content_html": "<p>Tuotteen Passento kartonkitölkki hinta on muuttunut.</p><p>11,48 € → 10,98 € (−0,50 €, −4,36 %).</p>",
+			"summary": "Tuotteen Passento kartonkitölkki hinta on muuttunut. 11,48 € → 10,98 € (−0,50 €, −4,36 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/438238-0e2ae9998416.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-438238-2026-07-18-11.48",
+			"url": "https://alkometriikka.fi/tuotteet/438238/",
+			"title": "Passento kartonkitölkki — 11,59 € → 11,48 €",
+			"content_html": "<p>Tuotteen Passento kartonkitölkki hinta on muuttunut.</p><p>11,59 € → 11,48 € (−0,11 €, −0,95 %).</p>",
+			"summary": "Tuotteen Passento kartonkitölkki hinta on muuttunut. 11,59 € → 11,48 € (−0,11 €, −0,95 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/438238-0e2ae9998416.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

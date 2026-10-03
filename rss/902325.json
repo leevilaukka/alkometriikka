@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ardbeg Anthology The Beithir's Tale 15 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902325/",
+	"feed_url": "https://alkometriikka.fi/rss/902325.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ardbeg Anthology The Beithir's Tale 15 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902325-2026-09-29-211.99",
+			"url": "https://alkometriikka.fi/tuotteet/902325/",
+			"title": "Ardbeg Anthology The Beithir's Tale 15 Year Old Single Malt — 199,99 € → 211,99 €",
+			"content_html": "<p>Tuotteen Ardbeg Anthology The Beithir's Tale 15 Year Old Single Malt hinta on muuttunut.</p><p>199,99 € → 211,99 € (+12,00 €, +6,00 %).</p>",
+			"summary": "Tuotteen Ardbeg Anthology The Beithir's Tale 15 Year Old Single Malt hinta on muuttunut. 199,99 € → 211,99 € (+12,00 €, +6,00 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902325-2b0012eed4c6.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

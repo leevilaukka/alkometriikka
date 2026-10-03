@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ural Mocca muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/100024/",
+	"feed_url": "https://alkometriikka.fi/rss/100024.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ural Mocca muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-100024-2026-07-18-14.98",
+			"url": "https://alkometriikka.fi/tuotteet/100024/",
+			"title": "Ural Mocca muovipullo — 14,68 € → 14,98 €",
+			"content_html": "<p>Tuotteen Ural Mocca muovipullo hinta on muuttunut.</p><p>14,68 € → 14,98 € (+0,30 €, +2,04 %).</p>",
+			"summary": "Tuotteen Ural Mocca muovipullo hinta on muuttunut. 14,68 € → 14,98 € (+0,30 €, +2,04 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/100024-7f28504373e3.png",
+			"tags": [
+				"Väkevät",
+				"kahviliköörit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Fallet Dart Cuvée de Réserve Champagne Demi-Sec – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/944368/",
+	"feed_url": "https://alkometriikka.fi/rss/944368.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Fallet Dart Cuvée de Réserve Champagne Demi-Sec.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-944368-2026-09-29-60.99",
+			"url": "https://alkometriikka.fi/tuotteet/944368/",
+			"title": "Fallet Dart Cuvée de Réserve Champagne Demi-Sec — 58,44 € → 60,99 €",
+			"content_html": "<p>Tuotteen Fallet Dart Cuvée de Réserve Champagne Demi-Sec hinta on muuttunut.</p><p>58,44 € → 60,99 € (+2,55 €, +4,36 %).</p>",
+			"summary": "Tuotteen Fallet Dart Cuvée de Réserve Champagne Demi-Sec hinta on muuttunut. 58,44 € → 60,99 € (+2,55 €, +4,36 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/944368-b366e9fcaee2.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

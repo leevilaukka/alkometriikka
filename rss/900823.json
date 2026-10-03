@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kattila Absinthe – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900823/",
+	"feed_url": "https://alkometriikka.fi/rss/900823.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kattila Absinthe.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900823-2026-09-29-63",
+			"url": "https://alkometriikka.fi/tuotteet/900823/",
+			"title": "Kattila Absinthe — 60,70 € → 63,00 €",
+			"content_html": "<p>Tuotteen Kattila Absinthe hinta on muuttunut.</p><p>60,70 € → 63,00 € (+2,30 €, +3,79 %).</p>",
+			"summary": "Tuotteen Kattila Absinthe hinta on muuttunut. 60,70 € → 63,00 € (+2,30 €, +3,79 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900823-7a6258af39bf.png",
+			"tags": [
+				"Väkevät",
+				"anistisleet"
+			]
+		}
+	]
+}

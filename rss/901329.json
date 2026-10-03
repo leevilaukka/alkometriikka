@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Irroy Champagne Extra Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901329/",
+	"feed_url": "https://alkometriikka.fi/rss/901329.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Irroy Champagne Extra Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901329-2026-09-29-45.99",
+			"url": "https://alkometriikka.fi/tuotteet/901329/",
+			"title": "Irroy Champagne Extra Brut — 45,41 € → 45,99 €",
+			"content_html": "<p>Tuotteen Irroy Champagne Extra Brut hinta on muuttunut.</p><p>45,41 € → 45,99 € (+0,58 €, +1,28 %).</p>",
+			"summary": "Tuotteen Irroy Champagne Extra Brut hinta on muuttunut. 45,41 € → 45,99 € (+0,58 €, +1,28 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901329-7e6845bf0ef9.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Birdcage Indian Tonic Zero – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/600084/",
+	"feed_url": "https://alkometriikka.fi/rss/600084.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Birdcage Indian Tonic Zero.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-600084-2026-09-29-3.49",
+			"url": "https://alkometriikka.fi/tuotteet/600084/",
+			"title": "Birdcage Indian Tonic Zero — 3,85 € → 3,49 €",
+			"content_html": "<p>Tuotteen Birdcage Indian Tonic Zero hinta on muuttunut.</p><p>3,85 € → 3,49 € (−0,36 €, −9,35 %).</p>",
+			"summary": "Tuotteen Birdcage Indian Tonic Zero hinta on muuttunut. 3,85 € → 3,49 € (−0,36 €, −9,35 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600084-a228473531f6.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

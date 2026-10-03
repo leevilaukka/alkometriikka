@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Loriot-Pagel Cuvée de Reserve Champagne Brut 2014 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/925873/",
+	"feed_url": "https://alkometriikka.fi/rss/925873.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Loriot-Pagel Cuvée de Reserve Champagne Brut 2014.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-925873-2026-09-29-79.99",
+			"url": "https://alkometriikka.fi/tuotteet/925873/",
+			"title": "Loriot-Pagel Cuvée de Reserve Champagne Brut 2014 — 75,16 € → 79,99 €",
+			"content_html": "<p>Tuotteen Loriot-Pagel Cuvée de Reserve Champagne Brut 2014 hinta on muuttunut.</p><p>75,16 € → 79,99 € (+4,83 €, +6,43 %).</p>",
+			"summary": "Tuotteen Loriot-Pagel Cuvée de Reserve Champagne Brut 2014 hinta on muuttunut. 75,16 € → 79,99 € (+4,83 €, +6,43 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/925873-089b455cb9fd.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

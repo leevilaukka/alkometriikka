@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cuvée Celeste Blanc de Blancs Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/911298/",
+	"feed_url": "https://alkometriikka.fi/rss/911298.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cuvée Celeste Blanc de Blancs Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-911298-2026-07-18-11.99",
+			"url": "https://alkometriikka.fi/tuotteet/911298/",
+			"title": "Cuvée Celeste Blanc de Blancs Brut — 11,45 € → 11,99 €",
+			"content_html": "<p>Tuotteen Cuvée Celeste Blanc de Blancs Brut hinta on muuttunut.</p><p>11,45 € → 11,99 € (+0,54 €, +4,72 %).</p>",
+			"summary": "Tuotteen Cuvée Celeste Blanc de Blancs Brut hinta on muuttunut. 11,45 € → 11,99 € (+0,54 €, +4,72 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/911298-41258cbe961d.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glenfiddich 15 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/955417/",
+	"feed_url": "https://alkometriikka.fi/rss/955417.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glenfiddich 15 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-955417-2026-09-29-94.5",
+			"url": "https://alkometriikka.fi/tuotteet/955417/",
+			"title": "Glenfiddich 15 Year Old Single Malt — 89,89 € → 94,50 €",
+			"content_html": "<p>Tuotteen Glenfiddich 15 Year Old Single Malt hinta on muuttunut.</p><p>89,89 € → 94,50 € (+4,61 €, +5,13 %).</p>",
+			"summary": "Tuotteen Glenfiddich 15 Year Old Single Malt hinta on muuttunut. 89,89 € → 94,50 € (+4,61 €, +5,13 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/955417-cc470099e842.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

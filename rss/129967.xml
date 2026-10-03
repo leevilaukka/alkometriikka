@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Bruichladdich The Classic Laddie Single Malt – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/129967/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Bruichladdich The Classic Laddie Single Malt.</description>
+		<language>fi</language>
+		<lastBuildDate>Sat, 03 Oct 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/129967.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Bruichladdich The Classic Laddie Single Malt – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Bruichladdich The Classic Laddie Single Malt — 69,98 € → 71,49 €</title>
+			<link>https://alkometriikka.fi/tuotteet/129967/</link>
+			<guid isPermaLink="false">alkometriikka-129967-2026-09-29-71.49</guid>
+			<pubDate>Tue, 29 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / viskit</category>
+			<description><![CDATA[<p>Tuotteen Bruichladdich The Classic Laddie Single Malt hinta on muuttunut.</p><p>69,98 € → 71,49 € (+1,51 €, +2,16 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/129967-bd9fd3298155.png" />
+		</item>
+	</channel>
+</rss>

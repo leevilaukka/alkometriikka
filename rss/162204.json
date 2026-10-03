@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hermannin Kulda Lempo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/162204/",
+	"feed_url": "https://alkometriikka.fi/rss/162204.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hermannin Kulda Lempo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-162204-2026-09-29-25.4",
+			"url": "https://alkometriikka.fi/tuotteet/162204/",
+			"title": "Hermannin Kulda Lempo — 25,33 € → 25,40 €",
+			"content_html": "<p>Tuotteen Hermannin Kulda Lempo hinta on muuttunut.</p><p>25,33 € → 25,40 € (+0,07 €, +0,28 %).</p>",
+			"summary": "Tuotteen Hermannin Kulda Lempo hinta on muuttunut. 25,33 € → 25,40 € (+0,07 €, +0,28 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/162204-a27cac2a3a19.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

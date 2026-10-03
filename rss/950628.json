@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bruery Mash & Coconut 2017 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/950628/",
+	"feed_url": "https://alkometriikka.fi/rss/950628.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bruery Mash & Coconut 2017.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-950628-2026-07-18-20.21",
+			"url": "https://alkometriikka.fi/tuotteet/950628/",
+			"title": "Bruery Mash & Coconut 2017 — 20,24 € → 20,21 €",
+			"content_html": "<p>Tuotteen Bruery Mash & Coconut 2017 hinta on muuttunut.</p><p>20,24 € → 20,21 € (−0,03 €, −0,15 %).</p>",
+			"summary": "Tuotteen Bruery Mash & Coconut 2017 hinta on muuttunut. 20,24 € → 20,21 € (−0,03 €, −0,15 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/950628-2ced50fc6e3c.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

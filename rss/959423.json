@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Messias Unoaked 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/959423/",
+	"feed_url": "https://alkometriikka.fi/rss/959423.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Messias Unoaked 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-959423-2026-07-18-16.48",
+			"url": "https://alkometriikka.fi/tuotteet/959423/",
+			"title": "Messias Unoaked 2019 — 16,44 € → 16,48 €",
+			"content_html": "<p>Tuotteen Messias Unoaked 2019 hinta on muuttunut.</p><p>16,44 € → 16,48 € (+0,04 €, +0,24 %).</p>",
+			"summary": "Tuotteen Messias Unoaked 2019 hinta on muuttunut. 16,44 € → 16,48 € (+0,04 €, +0,24 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/959423-e7b6169f23ec.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

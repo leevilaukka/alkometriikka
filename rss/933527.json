@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Avgvstvs Cabernet Franc 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/933527/",
+	"feed_url": "https://alkometriikka.fi/rss/933527.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Avgvstvs Cabernet Franc 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-933527-2026-07-18-27.49",
+			"url": "https://alkometriikka.fi/tuotteet/933527/",
+			"title": "Avgvstvs Cabernet Franc 2022 — 27,45 € → 27,49 €",
+			"content_html": "<p>Tuotteen Avgvstvs Cabernet Franc 2022 hinta on muuttunut.</p><p>27,45 € → 27,49 € (+0,04 €, +0,15 %).</p>",
+			"summary": "Tuotteen Avgvstvs Cabernet Franc 2022 hinta on muuttunut. 27,45 € → 27,49 € (+0,04 €, +0,15 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/933527-b9c3c17b0ca1.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

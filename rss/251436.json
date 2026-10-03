@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pople Strawberry Ice Cream muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/251436/",
+	"feed_url": "https://alkometriikka.fi/rss/251436.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pople Strawberry Ice Cream muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-251436-2026-07-18-14.98",
+			"url": "https://alkometriikka.fi/tuotteet/251436/",
+			"title": "Pople Strawberry Ice Cream muovipullo — 14,87 € → 14,98 €",
+			"content_html": "<p>Tuotteen Pople Strawberry Ice Cream muovipullo hinta on muuttunut.</p><p>14,87 € → 14,98 € (+0,11 €, +0,74 %).</p>",
+			"summary": "Tuotteen Pople Strawberry Ice Cream muovipullo hinta on muuttunut. 14,87 € → 14,98 € (+0,11 €, +0,74 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/251436-022d89ac5140.png",
+			"tags": [
+				"Väkevät",
+				"kermaliköörit"
+			]
+		}
+	]
+}

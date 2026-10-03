@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Famille Moussé Eugène Champagne Extra-Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903219/",
+	"feed_url": "https://alkometriikka.fi/rss/903219.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Famille Moussé Eugène Champagne Extra-Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903219-2026-09-29-61.45",
+			"url": "https://alkometriikka.fi/tuotteet/903219/",
+			"title": "Famille Moussé Eugène Champagne Extra-Brut — 59,70 € → 61,45 €",
+			"content_html": "<p>Tuotteen Famille Moussé Eugène Champagne Extra-Brut hinta on muuttunut.</p><p>59,70 € → 61,45 € (+1,75 €, +2,93 %).</p>",
+			"summary": "Tuotteen Famille Moussé Eugène Champagne Extra-Brut hinta on muuttunut. 59,70 € → 61,45 € (+1,75 €, +2,93 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903219-f96428495d33.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

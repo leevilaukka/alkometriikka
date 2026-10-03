@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Brill Meggy Pálinka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900649/",
+	"feed_url": "https://alkometriikka.fi/rss/900649.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Brill Meggy Pálinka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900649-2026-09-29-80.04",
+			"url": "https://alkometriikka.fi/tuotteet/900649/",
+			"title": "Brill Meggy Pálinka — 76,31 € → 80,04 €",
+			"content_html": "<p>Tuotteen Brill Meggy Pálinka hinta on muuttunut.</p><p>76,31 € → 80,04 € (+3,73 €, +4,89 %).</p>",
+			"summary": "Tuotteen Brill Meggy Pálinka hinta on muuttunut. 76,31 € → 80,04 € (+3,73 €, +4,89 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900649-ef61ebe1622a.png",
+			"tags": [
+				"Väkevät",
+				"hedelmätisleet"
+			]
+		}
+	]
+}

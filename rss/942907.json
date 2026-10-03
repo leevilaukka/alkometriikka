@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Marion-Bosser Premier Cru Champagne Extra Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/942907/",
+	"feed_url": "https://alkometriikka.fi/rss/942907.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Marion-Bosser Premier Cru Champagne Extra Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-942907-2026-09-29-71.98",
+			"url": "https://alkometriikka.fi/tuotteet/942907/",
+			"title": "Marion-Bosser Premier Cru Champagne Extra Brut — 68,86 € → 71,98 €",
+			"content_html": "<p>Tuotteen Marion-Bosser Premier Cru Champagne Extra Brut hinta on muuttunut.</p><p>68,86 € → 71,98 € (+3,12 €, +4,53 %).</p>",
+			"summary": "Tuotteen Marion-Bosser Premier Cru Champagne Extra Brut hinta on muuttunut. 68,86 € → 71,98 € (+3,12 €, +4,53 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/942907-a8bbf933fbde.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

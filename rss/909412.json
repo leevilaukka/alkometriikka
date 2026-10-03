@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lignell & Piispanen Finna Lakka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/909412/",
+	"feed_url": "https://alkometriikka.fi/rss/909412.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lignell & Piispanen Finna Lakka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-909412-2026-07-18-12.49",
+			"url": "https://alkometriikka.fi/tuotteet/909412/",
+			"title": "Lignell & Piispanen Finna Lakka — 11,94 € → 12,49 €",
+			"content_html": "<p>Tuotteen Lignell & Piispanen Finna Lakka hinta on muuttunut.</p><p>11,94 € → 12,49 € (+0,55 €, +4,61 %).</p>",
+			"summary": "Tuotteen Lignell & Piispanen Finna Lakka hinta on muuttunut. 11,94 € → 12,49 € (+0,55 €, +4,61 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/909412-86309a21d638.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat kuohuviinit"
+			]
+		}
+	]
+}

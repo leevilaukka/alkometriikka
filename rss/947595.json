@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vale D. Maria Tinto Magnum 2013 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/947595/",
+	"feed_url": "https://alkometriikka.fi/rss/947595.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vale D. Maria Tinto Magnum 2013.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-947595-2026-09-29-344.1",
+			"url": "https://alkometriikka.fi/tuotteet/947595/",
+			"title": "Vale D. Maria Tinto Magnum 2013 — 325,03 € → 344,10 €",
+			"content_html": "<p>Tuotteen Vale D. Maria Tinto Magnum 2013 hinta on muuttunut.</p><p>325,03 € → 344,10 € (+19,07 €, +5,87 %).</p>",
+			"summary": "Tuotteen Vale D. Maria Tinto Magnum 2013 hinta on muuttunut. 325,03 € → 344,10 € (+19,07 €, +5,87 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/947595-8b1e49a48ef3.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

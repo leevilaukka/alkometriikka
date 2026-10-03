@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Los Tres Toños Añejo Tequila – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/919443/",
+	"feed_url": "https://alkometriikka.fi/rss/919443.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Los Tres Toños Añejo Tequila.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-919443-2026-09-29-62.36",
+			"url": "https://alkometriikka.fi/tuotteet/919443/",
+			"title": "Los Tres Toños Añejo Tequila — 60,48 € → 62,36 €",
+			"content_html": "<p>Tuotteen Los Tres Toños Añejo Tequila hinta on muuttunut.</p><p>60,48 € → 62,36 € (+1,88 €, +3,11 %).</p>",
+			"summary": "Tuotteen Los Tres Toños Añejo Tequila hinta on muuttunut. 60,48 € → 62,36 € (+1,88 €, +3,11 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/919443-d36a79b2c597.png",
+			"tags": [
+				"Väkevät",
+				"Tequilat"
+			]
+		}
+	]
+}

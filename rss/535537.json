@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Clos Joanne D'Orion Pouilly-Fumé 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/535537/",
+	"feed_url": "https://alkometriikka.fi/rss/535537.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Clos Joanne D'Orion Pouilly-Fumé 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-535537-2026-09-29-31.19",
+			"url": "https://alkometriikka.fi/tuotteet/535537/",
+			"title": "Clos Joanne D'Orion Pouilly-Fumé 2022 — 30,19 € → 31,19 €",
+			"content_html": "<p>Tuotteen Clos Joanne D'Orion Pouilly-Fumé 2022 hinta on muuttunut.</p><p>30,19 € → 31,19 € (+1,00 €, +3,31 %).</p>",
+			"summary": "Tuotteen Clos Joanne D'Orion Pouilly-Fumé 2022 hinta on muuttunut. 30,19 € → 31,19 € (+1,00 €, +3,31 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/535537-f3b6684c38e4.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

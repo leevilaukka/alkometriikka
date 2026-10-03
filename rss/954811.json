@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Planteray Isle of Fiji – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/954811/",
+	"feed_url": "https://alkometriikka.fi/rss/954811.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Planteray Isle of Fiji.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-954811-2026-09-29-39.99",
+			"url": "https://alkometriikka.fi/tuotteet/954811/",
+			"title": "Planteray Isle of Fiji — 39,95 € → 39,99 €",
+			"content_html": "<p>Tuotteen Planteray Isle of Fiji hinta on muuttunut.</p><p>39,95 € → 39,99 € (+0,04 €, +0,10 %).</p>",
+			"summary": "Tuotteen Planteray Isle of Fiji hinta on muuttunut. 39,95 € → 39,99 € (+0,04 €, +0,10 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/954811-d6fc6dbc2e26.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

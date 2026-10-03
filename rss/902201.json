@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Octomore 16.1 Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902201/",
+	"feed_url": "https://alkometriikka.fi/rss/902201.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Octomore 16.1 Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902201-2026-09-29-205.99",
+			"url": "https://alkometriikka.fi/tuotteet/902201/",
+			"title": "Octomore 16.1 Single Malt — 196,00 € → 205,99 €",
+			"content_html": "<p>Tuotteen Octomore 16.1 Single Malt hinta on muuttunut.</p><p>196,00 € → 205,99 € (+9,99 €, +5,10 %).</p>",
+			"summary": "Tuotteen Octomore 16.1 Single Malt hinta on muuttunut. 196,00 € → 205,99 € (+9,99 €, +5,10 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902201-e67219ead764.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

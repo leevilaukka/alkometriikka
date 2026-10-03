@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Baud l'Etoile 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/562397/",
+	"feed_url": "https://alkometriikka.fi/rss/562397.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Baud l'Etoile 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-562397-2026-07-18-25.49",
+			"url": "https://alkometriikka.fi/tuotteet/562397/",
+			"title": "Baud l'Etoile 2023 — 25,68 € → 25,49 €",
+			"content_html": "<p>Tuotteen Baud l'Etoile 2023 hinta on muuttunut.</p><p>25,68 € → 25,49 € (−0,19 €, −0,74 %).</p>",
+			"summary": "Tuotteen Baud l'Etoile 2023 hinta on muuttunut. 25,68 € → 25,49 € (−0,19 €, −0,74 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/562397-0610c39e101a.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

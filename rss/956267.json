@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Valduero Reserva Tierra Alta de 2 cotas 2017 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/956267/",
+	"feed_url": "https://alkometriikka.fi/rss/956267.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Valduero Reserva Tierra Alta de 2 cotas 2017.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-956267-2026-09-29-60.1",
+			"url": "https://alkometriikka.fi/tuotteet/956267/",
+			"title": "Valduero Reserva Tierra Alta de 2 cotas 2017 — 58,42 € → 60,10 €",
+			"content_html": "<p>Tuotteen Valduero Reserva Tierra Alta de 2 cotas 2017 hinta on muuttunut.</p><p>58,42 € → 60,10 € (+1,68 €, +2,88 %).</p>",
+			"summary": "Tuotteen Valduero Reserva Tierra Alta de 2 cotas 2017 hinta on muuttunut. 58,42 € → 60,10 € (+1,68 €, +2,88 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/956267-f5ed31345356.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gonet Sulcova Cuvée Sakura Champagne Extra Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/908366/",
+	"feed_url": "https://alkometriikka.fi/rss/908366.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gonet Sulcova Cuvée Sakura Champagne Extra Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-908366-2026-09-29-75.56",
+			"url": "https://alkometriikka.fi/tuotteet/908366/",
+			"title": "Gonet Sulcova Cuvée Sakura Champagne Extra Brut — 63,81 € → 75,56 €",
+			"content_html": "<p>Tuotteen Gonet Sulcova Cuvée Sakura Champagne Extra Brut hinta on muuttunut.</p><p>63,81 € → 75,56 € (+11,75 €, +18,41 %).</p>",
+			"summary": "Tuotteen Gonet Sulcova Cuvée Sakura Champagne Extra Brut hinta on muuttunut. 63,81 € → 75,56 € (+11,75 €, +18,41 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/908366-9685d479f2d2.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

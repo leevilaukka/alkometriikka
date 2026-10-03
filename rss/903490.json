@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Neurita Blanco Tequila – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903490/",
+	"feed_url": "https://alkometriikka.fi/rss/903490.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Neurita Blanco Tequila.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903490-2026-09-29-60.71",
+			"url": "https://alkometriikka.fi/tuotteet/903490/",
+			"title": "Neurita Blanco Tequila — 59,90 € → 60,71 €",
+			"content_html": "<p>Tuotteen Neurita Blanco Tequila hinta on muuttunut.</p><p>59,90 € → 60,71 € (+0,81 €, +1,35 %).</p>",
+			"summary": "Tuotteen Neurita Blanco Tequila hinta on muuttunut. 59,90 € → 60,71 € (+0,81 €, +1,35 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903490-4647662ffc2c.png",
+			"tags": [
+				"Väkevät",
+				"Tequilat"
+			]
+		}
+	]
+}

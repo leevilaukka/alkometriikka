@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Chymos Vadelma Kimara muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/358817/",
+	"feed_url": "https://alkometriikka.fi/rss/358817.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Chymos Vadelma Kimara muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-358817-2026-09-29-9.78",
+			"url": "https://alkometriikka.fi/tuotteet/358817/",
+			"title": "Chymos Vadelma Kimara muovipullo — 9,59 € → 9,78 €",
+			"content_html": "<p>Tuotteen Chymos Vadelma Kimara muovipullo hinta on muuttunut.</p><p>9,59 € → 9,78 € (+0,19 €, +1,98 %).</p>",
+			"summary": "Tuotteen Chymos Vadelma Kimara muovipullo hinta on muuttunut. 9,59 € → 9,78 € (+0,19 €, +1,98 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/358817-ae92b5f15ffd.png",
+			"tags": [
+				"Välituotteet",
+				"väkevät viinit"
+			]
+		}
+	]
+}

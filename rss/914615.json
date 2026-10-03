@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Leitz Zero Point Five Cabernet Sauvignon Alcohol Free – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/914615/",
+	"feed_url": "https://alkometriikka.fi/rss/914615.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Leitz Zero Point Five Cabernet Sauvignon Alcohol Free.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-914615-2026-07-18-9.99",
+			"url": "https://alkometriikka.fi/tuotteet/914615/",
+			"title": "Leitz Zero Point Five Cabernet Sauvignon Alcohol Free — 9,85 € → 9,99 €",
+			"content_html": "<p>Tuotteen Leitz Zero Point Five Cabernet Sauvignon Alcohol Free hinta on muuttunut.</p><p>9,85 € → 9,99 € (+0,14 €, +1,42 %).</p>",
+			"summary": "Tuotteen Leitz Zero Point Five Cabernet Sauvignon Alcohol Free hinta on muuttunut. 9,85 € → 9,99 € (+0,14 €, +1,42 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/914615-759207d4d7ef.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat punaviinit"
+			]
+		}
+	]
+}

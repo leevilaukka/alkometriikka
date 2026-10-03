@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Panyolai Elixir Fürtös Meggy Pálinka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/923295/",
+	"feed_url": "https://alkometriikka.fi/rss/923295.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Panyolai Elixir Fürtös Meggy Pálinka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-923295-2026-09-29-61.13",
+			"url": "https://alkometriikka.fi/tuotteet/923295/",
+			"title": "Panyolai Elixir Fürtös Meggy Pálinka — 59,36 € → 61,13 €",
+			"content_html": "<p>Tuotteen Panyolai Elixir Fürtös Meggy Pálinka hinta on muuttunut.</p><p>59,36 € → 61,13 € (+1,77 €, +2,98 %).</p>",
+			"summary": "Tuotteen Panyolai Elixir Fürtös Meggy Pálinka hinta on muuttunut. 59,36 € → 61,13 € (+1,77 €, +2,98 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/923295-82a506c9bb0e.png",
+			"tags": [
+				"Väkevät",
+				"hedelmätisleet"
+			]
+		}
+	]
+}

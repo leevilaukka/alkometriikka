@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Trois Citrus – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/936117/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Trois Citrus.</description>
+		<language>fi</language>
+		<lastBuildDate>Sat, 03 Oct 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/936117.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Trois Citrus – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Trois Citrus — 38,29 € → 39,04 €</title>
+			<link>https://alkometriikka.fi/tuotteet/936117/</link>
+			<guid isPermaLink="false">alkometriikka-936117-2026-09-29-39.04</guid>
+			<pubDate>Tue, 29 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / hedelmäliköörit</category>
+			<description><![CDATA[<p>Tuotteen Trois Citrus hinta on muuttunut.</p><p>38,29 € → 39,04 € (+0,75 €, +1,96 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/936117-d2b7e198b957.png" />
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Laua Viin muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/951038/",
+	"feed_url": "https://alkometriikka.fi/rss/951038.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Laua Viin muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-951038-2026-09-29-16.87",
+			"url": "https://alkometriikka.fi/tuotteet/951038/",
+			"title": "Laua Viin muovipullo — 16,75 € → 16,87 €",
+			"content_html": "<p>Tuotteen Laua Viin muovipullo hinta on muuttunut.</p><p>16,75 € → 16,87 € (+0,12 €, +0,72 %).</p>",
+			"summary": "Tuotteen Laua Viin muovipullo hinta on muuttunut. 16,75 € → 16,87 € (+0,12 €, +0,72 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/951038-466994528d97.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

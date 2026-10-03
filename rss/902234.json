@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Sassicaia 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902234/",
+	"feed_url": "https://alkometriikka.fi/rss/902234.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Sassicaia 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902234-2026-09-29-399.99",
+			"url": "https://alkometriikka.fi/tuotteet/902234/",
+			"title": "Sassicaia 2022 — 380,44 € → 399,99 €",
+			"content_html": "<p>Tuotteen Sassicaia 2022 hinta on muuttunut.</p><p>380,44 € → 399,99 € (+19,55 €, +5,14 %).</p>",
+			"summary": "Tuotteen Sassicaia 2022 hinta on muuttunut. 380,44 € → 399,99 € (+19,55 €, +5,14 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902234-ca0717a62c32.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

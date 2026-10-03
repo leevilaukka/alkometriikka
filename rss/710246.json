@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Fever-Tree Light Indian Tonic Water – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/710246/",
+	"feed_url": "https://alkometriikka.fi/rss/710246.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Fever-Tree Light Indian Tonic Water.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-710246-2026-07-18-4.35",
+			"url": "https://alkometriikka.fi/tuotteet/710246/",
+			"title": "Fever-Tree Light Indian Tonic Water — 4,17 € → 4,35 €",
+			"content_html": "<p>Tuotteen Fever-Tree Light Indian Tonic Water hinta on muuttunut.</p><p>4,17 € → 4,35 € (+0,18 €, +4,32 %).</p>",
+			"summary": "Tuotteen Fever-Tree Light Indian Tonic Water hinta on muuttunut. 4,17 € → 4,35 € (+0,18 €, +4,32 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/710246-b4f615c217f3.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

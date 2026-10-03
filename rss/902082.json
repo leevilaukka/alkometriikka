@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Planteray Mister Fogg Navy Rum – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902082/",
+	"feed_url": "https://alkometriikka.fi/rss/902082.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Planteray Mister Fogg Navy Rum.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902082-2026-09-29-57.99",
+			"url": "https://alkometriikka.fi/tuotteet/902082/",
+			"title": "Planteray Mister Fogg Navy Rum — 57,97 € → 57,99 €",
+			"content_html": "<p>Tuotteen Planteray Mister Fogg Navy Rum hinta on muuttunut.</p><p>57,97 € → 57,99 € (+0,02 €, +0,03 %).</p>",
+			"summary": "Tuotteen Planteray Mister Fogg Navy Rum hinta on muuttunut. 57,97 € → 57,99 € (+0,02 €, +0,03 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902082-1d235c19c1df.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

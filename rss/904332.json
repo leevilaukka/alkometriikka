@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bruno Paillard Blanc de Blancs Grand Cru Champagne Extra Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/904332/",
+	"feed_url": "https://alkometriikka.fi/rss/904332.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bruno Paillard Blanc de Blancs Grand Cru Champagne Extra Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-904332-2026-09-29-120.98",
+			"url": "https://alkometriikka.fi/tuotteet/904332/",
+			"title": "Bruno Paillard Blanc de Blancs Grand Cru Champagne Extra Brut — 115,04 € → 120,98 €",
+			"content_html": "<p>Tuotteen Bruno Paillard Blanc de Blancs Grand Cru Champagne Extra Brut hinta on muuttunut.</p><p>115,04 € → 120,98 € (+5,94 €, +5,16 %).</p>",
+			"summary": "Tuotteen Bruno Paillard Blanc de Blancs Grand Cru Champagne Extra Brut hinta on muuttunut. 115,04 € → 120,98 € (+5,94 €, +5,16 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/904332-c4cbb684585b.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

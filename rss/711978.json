@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Olvi Lonkero Greippi 6-pack tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/711978/",
+	"feed_url": "https://alkometriikka.fi/rss/711978.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Olvi Lonkero Greippi 6-pack tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-711978-2026-07-18-11.94",
+			"url": "https://alkometriikka.fi/tuotteet/711978/",
+			"title": "Olvi Lonkero Greippi 6-pack tölkki — 11,70 € → 11,94 €",
+			"content_html": "<p>Tuotteen Olvi Lonkero Greippi 6-pack tölkki hinta on muuttunut.</p><p>11,70 € → 11,94 € (+0,24 €, +2,05 %).</p>",
+			"summary": "Tuotteen Olvi Lonkero Greippi 6-pack tölkki hinta on muuttunut. 11,70 € → 11,94 € (+0,24 €, +2,05 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/711978-090eb306738d.png",
+			"tags": [
+				"Panimotuotteet",
+				"juomasekoitukset"
+			]
+		}
+	]
+}

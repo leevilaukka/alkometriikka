@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – La Trappe Blond – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900141/",
+	"feed_url": "https://alkometriikka.fi/rss/900141.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: La Trappe Blond.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900141-2026-07-18-3.99",
+			"url": "https://alkometriikka.fi/tuotteet/900141/",
+			"title": "La Trappe Blond — 3,89 € → 3,99 €",
+			"content_html": "<p>Tuotteen La Trappe Blond hinta on muuttunut.</p><p>3,89 € → 3,99 € (+0,10 €, +2,57 %).</p>",
+			"summary": "Tuotteen La Trappe Blond hinta on muuttunut. 3,89 € → 3,99 € (+0,10 €, +2,57 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900141-f9f845160dc8.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Yuzusyu Yuzu Sake – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/905414/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Yuzusyu Yuzu Sake.</description>
+		<language>fi</language>
+		<lastBuildDate>Sat, 03 Oct 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/905414.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Yuzusyu Yuzu Sake – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Yuzusyu Yuzu Sake — 28,72 € → 28,80 €</title>
+			<link>https://alkometriikka.fi/tuotteet/905414/</link>
+			<guid isPermaLink="false">alkometriikka-905414-2026-09-29-28.8</guid>
+			<pubDate>Tue, 29 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / saket</category>
+			<description><![CDATA[<p>Tuotteen Yuzusyu Yuzu Sake hinta on muuttunut.</p><p>28,72 € → 28,80 € (+0,08 €, +0,28 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/905414-fb8eec41932f.png" />
+		</item>
+	</channel>
+</rss>

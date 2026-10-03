@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hartwall Hard Seltzer Veriappelsiini tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/700201/",
+	"feed_url": "https://alkometriikka.fi/rss/700201.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hartwall Hard Seltzer Veriappelsiini tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-700201-2026-02-02-2.24",
+			"url": "https://alkometriikka.fi/tuotteet/700201/",
+			"title": "Hartwall Hard Seltzer Veriappelsiini tölkki — 2,39 € → 2,24 €",
+			"content_html": "<p>Tuotteen Hartwall Hard Seltzer Veriappelsiini tölkki hinta on muuttunut.</p><p>2,39 € → 2,24 € (−0,15 €, −6,28 %).</p>",
+			"summary": "Tuotteen Hartwall Hard Seltzer Veriappelsiini tölkki hinta on muuttunut. 2,39 € → 2,24 € (−0,15 €, −6,28 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/700201-9711dd352fac.png",
+			"tags": [
+				"Panimotuotteet",
+				"juomasekoitukset"
+			]
+		},
+		{
+			"id": "alkometriikka-700201-2026-02-02-2.39",
+			"url": "https://alkometriikka.fi/tuotteet/700201/",
+			"title": "Hartwall Hard Seltzer Veriappelsiini tölkki — 2,24 € → 2,39 €",
+			"content_html": "<p>Tuotteen Hartwall Hard Seltzer Veriappelsiini tölkki hinta on muuttunut.</p><p>2,24 € → 2,39 € (+0,15 €, +6,70 %).</p>",
+			"summary": "Tuotteen Hartwall Hard Seltzer Veriappelsiini tölkki hinta on muuttunut. 2,24 € → 2,39 € (+0,15 €, +6,70 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/700201-9711dd352fac.png",
+			"tags": [
+				"Panimotuotteet",
+				"juomasekoitukset"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ki No Bi Kyoto Dry Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900828/",
+	"feed_url": "https://alkometriikka.fi/rss/900828.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ki No Bi Kyoto Dry Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900828-2026-09-29-85.98",
+			"url": "https://alkometriikka.fi/tuotteet/900828/",
+			"title": "Ki No Bi Kyoto Dry Gin — 82,99 € → 85,98 €",
+			"content_html": "<p>Tuotteen Ki No Bi Kyoto Dry Gin hinta on muuttunut.</p><p>82,99 € → 85,98 € (+2,99 €, +3,60 %).</p>",
+			"summary": "Tuotteen Ki No Bi Kyoto Dry Gin hinta on muuttunut. 82,99 € → 85,98 € (+2,99 €, +3,60 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900828-5dfd2b40bc91.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

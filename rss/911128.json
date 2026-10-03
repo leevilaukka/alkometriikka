@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gorghi Tondi Rajàh 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/911128/",
+	"feed_url": "https://alkometriikka.fi/rss/911128.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gorghi Tondi Rajàh 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-911128-2026-09-29-36.94",
+			"url": "https://alkometriikka.fi/tuotteet/911128/",
+			"title": "Gorghi Tondi Rajàh 2019 — 36,90 € → 36,94 €",
+			"content_html": "<p>Tuotteen Gorghi Tondi Rajàh 2019 hinta on muuttunut.</p><p>36,90 € → 36,94 € (+0,04 €, +0,11 %).</p>",
+			"summary": "Tuotteen Gorghi Tondi Rajàh 2019 hinta on muuttunut. 36,90 € → 36,94 € (+0,04 €, +0,11 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/911128-eb728ae11b4a.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

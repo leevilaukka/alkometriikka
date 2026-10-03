@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Il Poggione Brunello di Montalcino Riserva Vigna Paganelli 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900793/",
+	"feed_url": "https://alkometriikka.fi/rss/900793.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Il Poggione Brunello di Montalcino Riserva Vigna Paganelli 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900793-2026-09-29-111.31",
+			"url": "https://alkometriikka.fi/tuotteet/900793/",
+			"title": "Il Poggione Brunello di Montalcino Riserva Vigna Paganelli 2019 — 106,08 € → 111,31 €",
+			"content_html": "<p>Tuotteen Il Poggione Brunello di Montalcino Riserva Vigna Paganelli 2019 hinta on muuttunut.</p><p>106,08 € → 111,31 € (+5,23 €, +4,93 %).</p>",
+			"summary": "Tuotteen Il Poggione Brunello di Montalcino Riserva Vigna Paganelli 2019 hinta on muuttunut. 106,08 € → 111,31 € (+5,23 €, +4,93 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900793-10bc38f012f5.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

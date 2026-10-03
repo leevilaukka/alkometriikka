@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Panyolai Elixir Vilmoskörte – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903308/",
+	"feed_url": "https://alkometriikka.fi/rss/903308.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Panyolai Elixir Vilmoskörte.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903308-2026-09-29-9.15",
+			"url": "https://alkometriikka.fi/tuotteet/903308/",
+			"title": "Panyolai Elixir Vilmoskörte — 8,77 € → 9,15 €",
+			"content_html": "<p>Tuotteen Panyolai Elixir Vilmoskörte hinta on muuttunut.</p><p>8,77 € → 9,15 € (+0,38 €, +4,33 %).</p>",
+			"summary": "Tuotteen Panyolai Elixir Vilmoskörte hinta on muuttunut. 8,77 € → 9,15 € (+0,38 €, +4,33 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903308-5de961650e75.png",
+			"tags": [
+				"Väkevät",
+				"hedelmätisleet"
+			]
+		}
+	]
+}

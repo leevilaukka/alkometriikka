@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Felix Solis Mucho Más Blanco – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/926376/",
+	"feed_url": "https://alkometriikka.fi/rss/926376.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Felix Solis Mucho Más Blanco.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-926376-2026-07-18-12.59",
+			"url": "https://alkometriikka.fi/tuotteet/926376/",
+			"title": "Felix Solis Mucho Más Blanco — 12,45 € → 12,59 €",
+			"content_html": "<p>Tuotteen Felix Solis Mucho Más Blanco hinta on muuttunut.</p><p>12,45 € → 12,59 € (+0,14 €, +1,12 %).</p>",
+			"summary": "Tuotteen Felix Solis Mucho Más Blanco hinta on muuttunut. 12,45 € → 12,59 € (+0,14 €, +1,12 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/926376-ebe2d3283ccd.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

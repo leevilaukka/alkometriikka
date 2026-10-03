@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vellamo mineraalivesi still muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/935744/",
+	"feed_url": "https://alkometriikka.fi/rss/935744.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vellamo mineraalivesi still muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-935744-2026-07-18-1.99",
+			"url": "https://alkometriikka.fi/tuotteet/935744/",
+			"title": "Vellamo mineraalivesi still muovipullo — 1,98 € → 1,99 €",
+			"content_html": "<p>Tuotteen Vellamo mineraalivesi still muovipullo hinta on muuttunut.</p><p>1,98 € → 1,99 € (+0,01 €, +0,51 %).</p>",
+			"summary": "Tuotteen Vellamo mineraalivesi still muovipullo hinta on muuttunut. 1,98 € → 1,99 € (+0,01 €, +0,51 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/935744-8a4ad1072ada.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Marskin Ryyppy – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/000412/",
+	"feed_url": "https://alkometriikka.fi/rss/000412.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Marskin Ryyppy.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-000412-2026-07-18-25.48",
+			"url": "https://alkometriikka.fi/tuotteet/000412/",
+			"title": "Marskin Ryyppy — 25,38 € → 25,48 €",
+			"content_html": "<p>Tuotteen Marskin Ryyppy hinta on muuttunut.</p><p>25,38 € → 25,48 € (+0,10 €, +0,39 %).</p>",
+			"summary": "Tuotteen Marskin Ryyppy hinta on muuttunut. 25,38 € → 25,48 € (+0,10 €, +0,39 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/000412-ab2719fb6aac.png",
+			"tags": [
+				"Väkevät",
+				"maustetut vodkat"
+			]
+		}
+	]
+}

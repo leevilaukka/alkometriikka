@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gonzalez Byass Matusalem Oloroso Sherry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/943383/",
+	"feed_url": "https://alkometriikka.fi/rss/943383.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gonzalez Byass Matusalem Oloroso Sherry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-943383-2026-09-29-39.98",
+			"url": "https://alkometriikka.fi/tuotteet/943383/",
+			"title": "Gonzalez Byass Matusalem Oloroso Sherry — 37,80 € → 39,98 €",
+			"content_html": "<p>Tuotteen Gonzalez Byass Matusalem Oloroso Sherry hinta on muuttunut.</p><p>37,80 € → 39,98 € (+2,18 €, +5,77 %).</p>",
+			"summary": "Tuotteen Gonzalez Byass Matusalem Oloroso Sherry hinta on muuttunut. 37,80 € → 39,98 € (+2,18 €, +5,77 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/943383-73af9f17b810.png",
+			"tags": [
+				"Välituotteet",
+				"sherryt"
+			]
+		}
+	]
+}

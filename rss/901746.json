@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Maisel's Weisse Original – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901746/",
+	"feed_url": "https://alkometriikka.fi/rss/901746.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Maisel's Weisse Original.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901746-2026-09-29-5.09",
+			"url": "https://alkometriikka.fi/tuotteet/901746/",
+			"title": "Maisel's Weisse Original — 4,99 € → 5,09 €",
+			"content_html": "<p>Tuotteen Maisel's Weisse Original hinta on muuttunut.</p><p>4,99 € → 5,09 € (+0,10 €, +2,00 %).</p>",
+			"summary": "Tuotteen Maisel's Weisse Original hinta on muuttunut. 4,99 € → 5,09 € (+0,10 €, +2,00 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901746-af531ab6a1a4.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Brumont Torus 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/921214/",
+	"feed_url": "https://alkometriikka.fi/rss/921214.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Brumont Torus 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-921214-2026-07-18-19.98",
+			"url": "https://alkometriikka.fi/tuotteet/921214/",
+			"title": "Brumont Torus 2023 — 20,44 € → 19,98 €",
+			"content_html": "<p>Tuotteen Brumont Torus 2023 hinta on muuttunut.</p><p>20,44 € → 19,98 € (−0,46 €, −2,25 %).</p>",
+			"summary": "Tuotteen Brumont Torus 2023 hinta on muuttunut. 20,44 € → 19,98 € (−0,46 €, −2,25 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/921214-2fbf6abd7d0f.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

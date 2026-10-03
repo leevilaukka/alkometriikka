@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cesari Jèma Corvina 2017 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/952047/",
+	"feed_url": "https://alkometriikka.fi/rss/952047.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cesari Jèma Corvina 2017.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-952047-2026-09-29-30.2",
+			"url": "https://alkometriikka.fi/tuotteet/952047/",
+			"title": "Cesari Jèma Corvina 2017 — 29,98 € → 30,20 €",
+			"content_html": "<p>Tuotteen Cesari Jèma Corvina 2017 hinta on muuttunut.</p><p>29,98 € → 30,20 € (+0,22 €, +0,73 %).</p>",
+			"summary": "Tuotteen Cesari Jèma Corvina 2017 hinta on muuttunut. 29,98 € → 30,20 € (+0,22 €, +0,73 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/952047-dab947da4842.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

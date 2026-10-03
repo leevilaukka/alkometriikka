@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lignell & Piispanen Lakka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/959704/",
+	"feed_url": "https://alkometriikka.fi/rss/959704.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lignell & Piispanen Lakka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-959704-2026-07-18-16.99",
+			"url": "https://alkometriikka.fi/tuotteet/959704/",
+			"title": "Lignell & Piispanen Lakka — 16,94 € → 16,99 €",
+			"content_html": "<p>Tuotteen Lignell & Piispanen Lakka hinta on muuttunut.</p><p>16,94 € → 16,99 € (+0,05 €, +0,30 %).</p>",
+			"summary": "Tuotteen Lignell & Piispanen Lakka hinta on muuttunut. 16,94 € → 16,99 € (+0,05 €, +0,30 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/959704-f0a329db1cbb.png",
+			"tags": [
+				"Väkevät",
+				"marjaliköörit"
+			]
+		}
+	]
+}

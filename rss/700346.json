@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Original Long Drink tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/700346/",
+	"feed_url": "https://alkometriikka.fi/rss/700346.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Original Long Drink tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-700346-2026-09-29-4.69",
+			"url": "https://alkometriikka.fi/tuotteet/700346/",
+			"title": "Original Long Drink tölkki — 4,49 € → 4,69 €",
+			"content_html": "<p>Tuotteen Original Long Drink tölkki hinta on muuttunut.</p><p>4,49 € → 4,69 € (+0,20 €, +4,45 %).</p>",
+			"summary": "Tuotteen Original Long Drink tölkki hinta on muuttunut. 4,49 € → 4,69 € (+0,20 €, +4,45 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/700346-a6c752081f38.png",
+			"tags": [
+				"Panimotuotteet",
+				"juomasekoitukset"
+			]
+		}
+	]
+}

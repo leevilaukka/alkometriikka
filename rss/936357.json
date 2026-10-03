@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gratiot-Pillière Blanc de Blancs Champagne Brut 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/936357/",
+	"feed_url": "https://alkometriikka.fi/rss/936357.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gratiot-Pillière Blanc de Blancs Champagne Brut 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-936357-2026-09-29-76.9",
+			"url": "https://alkometriikka.fi/tuotteet/936357/",
+			"title": "Gratiot-Pillière Blanc de Blancs Champagne Brut 2020 — 73,99 € → 76,90 €",
+			"content_html": "<p>Tuotteen Gratiot-Pillière Blanc de Blancs Champagne Brut 2020 hinta on muuttunut.</p><p>73,99 € → 76,90 € (+2,91 €, +3,93 %).</p>",
+			"summary": "Tuotteen Gratiot-Pillière Blanc de Blancs Champagne Brut 2020 hinta on muuttunut. 73,99 € → 76,90 € (+2,91 €, +3,93 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/936357-a7868117b738.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-936357-2026-07-18-73.99",
+			"url": "https://alkometriikka.fi/tuotteet/936357/",
+			"title": "Gratiot-Pillière Blanc de Blancs Champagne Brut 2020 — 73,95 € → 73,99 €",
+			"content_html": "<p>Tuotteen Gratiot-Pillière Blanc de Blancs Champagne Brut 2020 hinta on muuttunut.</p><p>73,95 € → 73,99 € (+0,04 €, +0,05 %).</p>",
+			"summary": "Tuotteen Gratiot-Pillière Blanc de Blancs Champagne Brut 2020 hinta on muuttunut. 73,95 € → 73,99 € (+0,04 €, +0,05 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/936357-a7868117b738.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

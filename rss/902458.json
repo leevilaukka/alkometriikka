@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château Croix de Labrie Saint Emilion Grand Cru Classé 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902458/",
+	"feed_url": "https://alkometriikka.fi/rss/902458.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château Croix de Labrie Saint Emilion Grand Cru Classé 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902458-2026-09-30-189.75",
+			"url": "https://alkometriikka.fi/tuotteet/902458/",
+			"title": "Château Croix de Labrie Saint Emilion Grand Cru Classé 2022 — 178,96 € → 189,75 €",
+			"content_html": "<p>Tuotteen Château Croix de Labrie Saint Emilion Grand Cru Classé 2022 hinta on muuttunut.</p><p>178,96 € → 189,75 € (+10,79 €, +6,03 %).</p>",
+			"summary": "Tuotteen Château Croix de Labrie Saint Emilion Grand Cru Classé 2022 hinta on muuttunut. 178,96 € → 189,75 € (+10,79 €, +6,03 %).",
+			"date_published": "2026-09-30T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902458-c306e80f2c23.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

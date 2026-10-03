@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bushmills 16 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/118427/",
+	"feed_url": "https://alkometriikka.fi/rss/118427.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bushmills 16 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-118427-2026-09-29-127.9",
+			"url": "https://alkometriikka.fi/tuotteet/118427/",
+			"title": "Bushmills 16 Year Old Single Malt — 122,55 € → 127,90 €",
+			"content_html": "<p>Tuotteen Bushmills 16 Year Old Single Malt hinta on muuttunut.</p><p>122,55 € → 127,90 € (+5,35 €, +4,37 %).</p>",
+			"summary": "Tuotteen Bushmills 16 Year Old Single Malt hinta on muuttunut. 122,55 € → 127,90 € (+5,35 €, +4,37 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/118427-4744333ad51c.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

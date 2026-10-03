@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ardnahoe Infinite Loch – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900646/",
+	"feed_url": "https://alkometriikka.fi/rss/900646.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ardnahoe Infinite Loch.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900646-2026-09-29-91.24",
+			"url": "https://alkometriikka.fi/tuotteet/900646/",
+			"title": "Ardnahoe Infinite Loch — 88,72 € → 91,24 €",
+			"content_html": "<p>Tuotteen Ardnahoe Infinite Loch hinta on muuttunut.</p><p>88,72 € → 91,24 € (+2,52 €, +2,84 %).</p>",
+			"summary": "Tuotteen Ardnahoe Infinite Loch hinta on muuttunut. 88,72 € → 91,24 € (+2,52 €, +2,84 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900646-800a9b48c187.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

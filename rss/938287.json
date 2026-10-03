@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ron Matusalem Gran Reserva Solera 15 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/938287/",
+	"feed_url": "https://alkometriikka.fi/rss/938287.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ron Matusalem Gran Reserva Solera 15.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-938287-2026-09-29-60.81",
+			"url": "https://alkometriikka.fi/tuotteet/938287/",
+			"title": "Ron Matusalem Gran Reserva Solera 15 — 60,00 € → 60,81 €",
+			"content_html": "<p>Tuotteen Ron Matusalem Gran Reserva Solera 15 hinta on muuttunut.</p><p>60,00 € → 60,81 € (+0,81 €, +1,35 %).</p>",
+			"summary": "Tuotteen Ron Matusalem Gran Reserva Solera 15 hinta on muuttunut. 60,00 € → 60,81 € (+0,81 €, +1,35 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/938287-057f6668d9e4.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

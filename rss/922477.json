@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ca' Vendri Amarone della Valpolicella 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/922477/",
+	"feed_url": "https://alkometriikka.fi/rss/922477.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ca' Vendri Amarone della Valpolicella 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-922477-2026-07-18-33.9",
+			"url": "https://alkometriikka.fi/tuotteet/922477/",
+			"title": "Ca' Vendri Amarone della Valpolicella 2023 — 34,36 € → 33,90 €",
+			"content_html": "<p>Tuotteen Ca' Vendri Amarone della Valpolicella 2023 hinta on muuttunut.</p><p>34,36 € → 33,90 € (−0,46 €, −1,34 %).</p>",
+			"summary": "Tuotteen Ca' Vendri Amarone della Valpolicella 2023 hinta on muuttunut. 34,36 € → 33,90 € (−0,46 €, −1,34 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/922477-1e268ef52c8d.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

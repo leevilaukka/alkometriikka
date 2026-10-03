@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Veuve Clicquot Magnum Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/008603/",
+	"feed_url": "https://alkometriikka.fi/rss/008603.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Veuve Clicquot Magnum Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-008603-2026-09-29-169.99",
+			"url": "https://alkometriikka.fi/tuotteet/008603/",
+			"title": "Veuve Clicquot Magnum Champagne Brut — 163,90 € → 169,99 €",
+			"content_html": "<p>Tuotteen Veuve Clicquot Magnum Champagne Brut hinta on muuttunut.</p><p>163,90 € → 169,99 € (+6,09 €, +3,72 %).</p>",
+			"summary": "Tuotteen Veuve Clicquot Magnum Champagne Brut hinta on muuttunut. 163,90 € → 169,99 € (+6,09 €, +3,72 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/008603-63a346c40320.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-008603-2026-07-18-163.9",
+			"url": "https://alkometriikka.fi/tuotteet/008603/",
+			"title": "Veuve Clicquot Magnum Champagne Brut — 159,82 € → 163,90 €",
+			"content_html": "<p>Tuotteen Veuve Clicquot Magnum Champagne Brut hinta on muuttunut.</p><p>159,82 € → 163,90 € (+4,08 €, +2,55 %).</p>",
+			"summary": "Tuotteen Veuve Clicquot Magnum Champagne Brut hinta on muuttunut. 159,82 € → 163,90 € (+4,08 €, +2,55 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/008603-63a346c40320.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

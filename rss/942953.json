@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pfaffl Zweigelt vom HAUS 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/942953/",
+	"feed_url": "https://alkometriikka.fi/rss/942953.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pfaffl Zweigelt vom HAUS 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-942953-2026-07-18-15.98",
+			"url": "https://alkometriikka.fi/tuotteet/942953/",
+			"title": "Pfaffl Zweigelt vom HAUS 2023 — 17,45 € → 15,98 €",
+			"content_html": "<p>Tuotteen Pfaffl Zweigelt vom HAUS 2023 hinta on muuttunut.</p><p>17,45 € → 15,98 € (−1,47 €, −8,42 %).</p>",
+			"summary": "Tuotteen Pfaffl Zweigelt vom HAUS 2023 hinta on muuttunut. 17,45 € → 15,98 € (−1,47 €, −8,42 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/942953-b68a3828dd26.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

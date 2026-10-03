@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Sauvignon Blanc by Gillot 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/538907/",
+	"feed_url": "https://alkometriikka.fi/rss/538907.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Sauvignon Blanc by Gillot 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-538907-2026-09-29-17.49",
+			"url": "https://alkometriikka.fi/tuotteet/538907/",
+			"title": "Sauvignon Blanc by Gillot 2023 — 17,45 € → 17,49 €",
+			"content_html": "<p>Tuotteen Sauvignon Blanc by Gillot 2023 hinta on muuttunut.</p><p>17,45 € → 17,49 € (+0,04 €, +0,23 %).</p>",
+			"summary": "Tuotteen Sauvignon Blanc by Gillot 2023 hinta on muuttunut. 17,45 € → 17,49 € (+0,04 €, +0,23 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/538907-7d1dd6a18226.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

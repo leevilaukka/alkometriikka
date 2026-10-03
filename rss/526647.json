@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Don Luciano Semi Seco – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/526647/",
+	"feed_url": "https://alkometriikka.fi/rss/526647.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Don Luciano Semi Seco.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-526647-2026-09-29-10.48",
+			"url": "https://alkometriikka.fi/tuotteet/526647/",
+			"title": "Don Luciano Semi Seco — 9,98 € → 10,48 €",
+			"content_html": "<p>Tuotteen Don Luciano Semi Seco hinta on muuttunut.</p><p>9,98 € → 10,48 € (+0,50 €, +5,01 %).</p>",
+			"summary": "Tuotteen Don Luciano Semi Seco hinta on muuttunut. 9,98 € → 10,48 € (+0,50 €, +5,01 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/526647-e16e33534071.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-526647-2026-07-18-9.98",
+			"url": "https://alkometriikka.fi/tuotteet/526647/",
+			"title": "Don Luciano Semi Seco — 10,44 € → 9,98 €",
+			"content_html": "<p>Tuotteen Don Luciano Semi Seco hinta on muuttunut.</p><p>10,44 € → 9,98 € (−0,46 €, −4,41 %).</p>",
+			"summary": "Tuotteen Don Luciano Semi Seco hinta on muuttunut. 10,44 € → 9,98 € (−0,46 €, −4,41 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/526647-e16e33534071.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lójhtu Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/958875/",
+	"feed_url": "https://alkometriikka.fi/rss/958875.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lójhtu Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-958875-2026-09-29-50.61",
+			"url": "https://alkometriikka.fi/tuotteet/958875/",
+			"title": "Lójhtu Gin — 49,67 € → 50,61 €",
+			"content_html": "<p>Tuotteen Lójhtu Gin hinta on muuttunut.</p><p>49,67 € → 50,61 € (+0,94 €, +1,89 %).</p>",
+			"summary": "Tuotteen Lójhtu Gin hinta on muuttunut. 49,67 € → 50,61 € (+0,94 €, +1,89 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/958875-0b4b2226705a.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

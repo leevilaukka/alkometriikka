@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – André Clouet The V6 Experience Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903191/",
+	"feed_url": "https://alkometriikka.fi/rss/903191.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: André Clouet The V6 Experience Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903191-2026-09-29-56.29",
+			"url": "https://alkometriikka.fi/tuotteet/903191/",
+			"title": "André Clouet The V6 Experience Champagne Brut — 54,90 € → 56,29 €",
+			"content_html": "<p>Tuotteen André Clouet The V6 Experience Champagne Brut hinta on muuttunut.</p><p>54,90 € → 56,29 € (+1,39 €, +2,53 %).</p>",
+			"summary": "Tuotteen André Clouet The V6 Experience Champagne Brut hinta on muuttunut. 54,90 € → 56,29 € (+1,39 €, +2,53 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903191-7d48620a472a.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Scapa 10 Year OId Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/200041/",
+	"feed_url": "https://alkometriikka.fi/rss/200041.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Scapa 10 Year OId Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-200041-2026-09-29-59.98",
+			"url": "https://alkometriikka.fi/tuotteet/200041/",
+			"title": "Scapa 10 Year OId Single Malt — 59,99 € → 59,98 €",
+			"content_html": "<p>Tuotteen Scapa 10 Year OId Single Malt hinta on muuttunut.</p><p>59,99 € → 59,98 € (−0,01 €, −0,02 %).</p>",
+			"summary": "Tuotteen Scapa 10 Year OId Single Malt hinta on muuttunut. 59,99 € → 59,98 € (−0,01 €, −0,02 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/200041-3a02f224d9f6.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

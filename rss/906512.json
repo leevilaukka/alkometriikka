@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – La Unica – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/906512/",
+	"feed_url": "https://alkometriikka.fi/rss/906512.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: La Unica.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-906512-2026-09-29-59.58",
+			"url": "https://alkometriikka.fi/tuotteet/906512/",
+			"title": "La Unica — 57,96 € → 59,58 €",
+			"content_html": "<p>Tuotteen La Unica hinta on muuttunut.</p><p>57,96 € → 59,58 € (+1,62 €, +2,80 %).</p>",
+			"summary": "Tuotteen La Unica hinta on muuttunut. 57,96 € → 59,58 € (+1,62 €, +2,80 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/906512-cc8ff06ffaa9.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Henriot Cuvée Hemera Champagne Brut 2013 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/916102/",
+	"feed_url": "https://alkometriikka.fi/rss/916102.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Henriot Cuvée Hemera Champagne Brut 2013.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-916102-2026-09-29-234.3",
+			"url": "https://alkometriikka.fi/tuotteet/916102/",
+			"title": "Henriot Cuvée Hemera Champagne Brut 2013 — 220,45 € → 234,30 €",
+			"content_html": "<p>Tuotteen Henriot Cuvée Hemera Champagne Brut 2013 hinta on muuttunut.</p><p>220,45 € → 234,30 € (+13,85 €, +6,28 %).</p>",
+			"summary": "Tuotteen Henriot Cuvée Hemera Champagne Brut 2013 hinta on muuttunut. 220,45 € → 234,30 € (+13,85 €, +6,28 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/916102-618a874cb1df.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

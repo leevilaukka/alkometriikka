@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ruffino Orvieto Classico 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/008351/",
+	"feed_url": "https://alkometriikka.fi/rss/008351.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ruffino Orvieto Classico 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-008351-2026-07-18-13.98",
+			"url": "https://alkometriikka.fi/tuotteet/008351/",
+			"title": "Ruffino Orvieto Classico 2025 — 14,15 € → 13,98 €",
+			"content_html": "<p>Tuotteen Ruffino Orvieto Classico 2025 hinta on muuttunut.</p><p>14,15 € → 13,98 € (−0,17 €, −1,20 %).</p>",
+			"summary": "Tuotteen Ruffino Orvieto Classico 2025 hinta on muuttunut. 14,15 € → 13,98 € (−0,17 €, −1,20 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/008351-b1dfe1aa8e15.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

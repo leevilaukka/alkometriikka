@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Carpano Dry Vermouth – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/939045/",
+	"feed_url": "https://alkometriikka.fi/rss/939045.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Carpano Dry Vermouth.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-939045-2026-09-29-25.39",
+			"url": "https://alkometriikka.fi/tuotteet/939045/",
+			"title": "Carpano Dry Vermouth — 24,98 € → 25,39 €",
+			"content_html": "<p>Tuotteen Carpano Dry Vermouth hinta on muuttunut.</p><p>24,98 € → 25,39 € (+0,41 €, +1,64 %).</p>",
+			"summary": "Tuotteen Carpano Dry Vermouth hinta on muuttunut. 24,98 € → 25,39 € (+0,41 €, +1,64 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/939045-5cfa5d35cbfa.png",
+			"tags": [
+				"Välituotteet",
+				"vermutit"
+			]
+		}
+	]
+}

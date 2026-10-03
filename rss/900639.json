@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Península das Vinhas Vinho Verde – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900639/",
+	"feed_url": "https://alkometriikka.fi/rss/900639.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Península das Vinhas Vinho Verde.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900639-2026-07-18-11.49",
+			"url": "https://alkometriikka.fi/tuotteet/900639/",
+			"title": "Península das Vinhas Vinho Verde — 11,45 € → 11,49 €",
+			"content_html": "<p>Tuotteen Península das Vinhas Vinho Verde hinta on muuttunut.</p><p>11,45 € → 11,49 € (+0,04 €, +0,35 %).</p>",
+			"summary": "Tuotteen Península das Vinhas Vinho Verde hinta on muuttunut. 11,45 € → 11,49 € (+0,04 €, +0,35 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900639-834d1a6aa5ab.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

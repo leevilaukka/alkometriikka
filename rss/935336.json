@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tania hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/935336/",
+	"feed_url": "https://alkometriikka.fi/rss/935336.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tania hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-935336-2026-07-18-34.89",
+			"url": "https://alkometriikka.fi/tuotteet/935336/",
+			"title": "Tania hanapakkaus — 34,83 € → 34,89 €",
+			"content_html": "<p>Tuotteen Tania hanapakkaus hinta on muuttunut.</p><p>34,83 € → 34,89 € (+0,06 €, +0,17 %).</p>",
+			"summary": "Tuotteen Tania hanapakkaus hinta on muuttunut. 34,83 € → 34,89 € (+0,06 €, +0,17 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/935336-577a9a1f2a16.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Teo Costa Barolo Monroj 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/956412/",
+	"feed_url": "https://alkometriikka.fi/rss/956412.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Teo Costa Barolo Monroj 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-956412-2026-09-29-62.03",
+			"url": "https://alkometriikka.fi/tuotteet/956412/",
+			"title": "Teo Costa Barolo Monroj 2020 — 58,97 € → 62,03 €",
+			"content_html": "<p>Tuotteen Teo Costa Barolo Monroj 2020 hinta on muuttunut.</p><p>58,97 € → 62,03 € (+3,06 €, +5,19 %).</p>",
+			"summary": "Tuotteen Teo Costa Barolo Monroj 2020 hinta on muuttunut. 58,97 € → 62,03 € (+3,06 €, +5,19 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/956412-a18104769a85.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

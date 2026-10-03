@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Rickhouse Cask Strenght VYS Single Barrel Straight Bourbon – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900345/",
+	"feed_url": "https://alkometriikka.fi/rss/900345.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Rickhouse Cask Strenght VYS Single Barrel Straight Bourbon.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900345-2026-09-29-103.05",
+			"url": "https://alkometriikka.fi/tuotteet/900345/",
+			"title": "Rickhouse Cask Strenght VYS Single Barrel Straight Bourbon — 99,98 € → 103,05 €",
+			"content_html": "<p>Tuotteen Rickhouse Cask Strenght VYS Single Barrel Straight Bourbon hinta on muuttunut.</p><p>99,98 € → 103,05 € (+3,07 €, +3,07 %).</p>",
+			"summary": "Tuotteen Rickhouse Cask Strenght VYS Single Barrel Straight Bourbon hinta on muuttunut. 99,98 € → 103,05 € (+3,07 €, +3,07 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900345-083ecff468cf.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		},
+		{
+			"id": "alkometriikka-900345-2026-07-18-99.98",
+			"url": "https://alkometriikka.fi/tuotteet/900345/",
+			"title": "Rickhouse Cask Strenght VYS Single Barrel Straight Bourbon — 95,37 € → 99,98 €",
+			"content_html": "<p>Tuotteen Rickhouse Cask Strenght VYS Single Barrel Straight Bourbon hinta on muuttunut.</p><p>95,37 € → 99,98 € (+4,61 €, +4,83 %).</p>",
+			"summary": "Tuotteen Rickhouse Cask Strenght VYS Single Barrel Straight Bourbon hinta on muuttunut. 95,37 € → 99,98 € (+4,61 €, +4,83 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900345-083ecff468cf.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

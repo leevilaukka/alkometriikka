@@ -1,0 +1,50 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Wynns Coonawarra The Gables 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/449477/",
+	"feed_url": "https://alkometriikka.fi/rss/449477.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Wynns Coonawarra The Gables 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-449477-2026-07-18-18.99",
+			"url": "https://alkometriikka.fi/tuotteet/449477/",
+			"title": "Wynns Coonawarra The Gables 2022 — 18,44 € → 18,99 €",
+			"content_html": "<p>Tuotteen Wynns Coonawarra The Gables 2022 hinta on muuttunut.</p><p>18,44 € → 18,99 € (+0,55 €, +2,98 %).</p>",
+			"summary": "Tuotteen Wynns Coonawarra The Gables 2022 hinta on muuttunut. 18,44 € → 18,99 € (+0,55 €, +2,98 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/449477-2a240bb9e015.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-449477-2026-02-02-18.34",
+			"url": "https://alkometriikka.fi/tuotteet/449477/",
+			"title": "Wynns Coonawarra The Gables 2022 — 18,44 € → 18,34 €",
+			"content_html": "<p>Tuotteen Wynns Coonawarra The Gables 2022 hinta on muuttunut.</p><p>18,44 € → 18,34 € (−0,10 €, −0,54 %).</p>",
+			"summary": "Tuotteen Wynns Coonawarra The Gables 2022 hinta on muuttunut. 18,44 € → 18,34 € (−0,10 €, −0,54 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/449477-2a240bb9e015.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-449477-2026-02-02-18.44",
+			"url": "https://alkometriikka.fi/tuotteet/449477/",
+			"title": "Wynns Coonawarra The Gables 2022 — 18,34 € → 18,44 €",
+			"content_html": "<p>Tuotteen Wynns Coonawarra The Gables 2022 hinta on muuttunut.</p><p>18,34 € → 18,44 € (+0,10 €, +0,55 %).</p>",
+			"summary": "Tuotteen Wynns Coonawarra The Gables 2022 hinta on muuttunut. 18,34 € → 18,44 € (+0,10 €, +0,55 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/449477-2a240bb9e015.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

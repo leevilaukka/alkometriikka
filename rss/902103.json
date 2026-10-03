@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château Castera Cru Bourgeois 2017 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902103/",
+	"feed_url": "https://alkometriikka.fi/rss/902103.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château Castera Cru Bourgeois 2017.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902103-2026-09-29-31.3",
+			"url": "https://alkometriikka.fi/tuotteet/902103/",
+			"title": "Château Castera Cru Bourgeois 2017 — 31,26 € → 31,30 €",
+			"content_html": "<p>Tuotteen Château Castera Cru Bourgeois 2017 hinta on muuttunut.</p><p>31,26 € → 31,30 € (+0,04 €, +0,13 %).</p>",
+			"summary": "Tuotteen Château Castera Cru Bourgeois 2017 hinta on muuttunut. 31,26 € → 31,30 € (+0,04 €, +0,13 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902103-e027cd289a30.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lignell & Piispanen Kuopio Wine – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/918827/",
+	"feed_url": "https://alkometriikka.fi/rss/918827.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lignell & Piispanen Kuopio Wine.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-918827-2026-07-18-14.99",
+			"url": "https://alkometriikka.fi/tuotteet/918827/",
+			"title": "Lignell & Piispanen Kuopio Wine — 14,86 € → 14,99 €",
+			"content_html": "<p>Tuotteen Lignell & Piispanen Kuopio Wine hinta on muuttunut.</p><p>14,86 € → 14,99 € (+0,13 €, +0,87 %).</p>",
+			"summary": "Tuotteen Lignell & Piispanen Kuopio Wine hinta on muuttunut. 14,86 € → 14,99 € (+0,13 €, +0,87 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/918827-6db8ad91461d.png",
+			"tags": [
+				"Välituotteet",
+				"väkevät viinit"
+			]
+		}
+	]
+}

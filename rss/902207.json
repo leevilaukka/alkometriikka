@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Le Contesse Prosecco Brut Organic – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902207/",
+	"feed_url": "https://alkometriikka.fi/rss/902207.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Le Contesse Prosecco Brut Organic.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902207-2026-07-18-14.99",
+			"url": "https://alkometriikka.fi/tuotteet/902207/",
+			"title": "Le Contesse Prosecco Brut Organic — 15,45 € → 14,99 €",
+			"content_html": "<p>Tuotteen Le Contesse Prosecco Brut Organic hinta on muuttunut.</p><p>15,45 € → 14,99 € (−0,46 €, −2,98 %).</p>",
+			"summary": "Tuotteen Le Contesse Prosecco Brut Organic hinta on muuttunut. 15,45 € → 14,99 € (−0,46 €, −2,98 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902207-04b050991895.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

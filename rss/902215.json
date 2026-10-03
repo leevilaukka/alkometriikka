@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Aalto PS 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902215/",
+	"feed_url": "https://alkometriikka.fi/rss/902215.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Aalto PS 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902215-2026-09-29-128.48",
+			"url": "https://alkometriikka.fi/tuotteet/902215/",
+			"title": "Aalto PS 2023 — 122,99 € → 128,48 €",
+			"content_html": "<p>Tuotteen Aalto PS 2023 hinta on muuttunut.</p><p>122,99 € → 128,48 € (+5,49 €, +4,46 %).</p>",
+			"summary": "Tuotteen Aalto PS 2023 hinta on muuttunut. 122,99 € → 128,48 € (+5,49 €, +4,46 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902215-5a367ad718d5.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

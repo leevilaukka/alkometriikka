@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Monkey Shoulder The Original Blended Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903609/",
+	"feed_url": "https://alkometriikka.fi/rss/903609.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Monkey Shoulder The Original Blended Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903609-2026-09-29-14.54",
+			"url": "https://alkometriikka.fi/tuotteet/903609/",
+			"title": "Monkey Shoulder The Original Blended Malt — 14,50 € → 14,54 €",
+			"content_html": "<p>Tuotteen Monkey Shoulder The Original Blended Malt hinta on muuttunut.</p><p>14,50 € → 14,54 € (+0,04 €, +0,28 %).</p>",
+			"summary": "Tuotteen Monkey Shoulder The Original Blended Malt hinta on muuttunut. 14,50 € → 14,54 € (+0,04 €, +0,28 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903609-9f9848aa6d2e.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

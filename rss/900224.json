@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – G&J Condrieu 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900224/",
+	"feed_url": "https://alkometriikka.fi/rss/900224.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: G&J Condrieu 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900224-2026-09-29-83.19",
+			"url": "https://alkometriikka.fi/tuotteet/900224/",
+			"title": "G&J Condrieu 2023 — 81,63 € → 83,19 €",
+			"content_html": "<p>Tuotteen G&J Condrieu 2023 hinta on muuttunut.</p><p>81,63 € → 83,19 € (+1,56 €, +1,91 %).</p>",
+			"summary": "Tuotteen G&J Condrieu 2023 hinta on muuttunut. 81,63 € → 83,19 € (+1,56 €, +1,91 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900224-67ef20c1c07a.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

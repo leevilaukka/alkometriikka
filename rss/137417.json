@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Rampur Double Cask Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/137417/",
+	"feed_url": "https://alkometriikka.fi/rss/137417.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Rampur Double Cask Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-137417-2026-09-29-83.6",
+			"url": "https://alkometriikka.fi/tuotteet/137417/",
+			"title": "Rampur Double Cask Single Malt — 81,40 € → 83,60 €",
+			"content_html": "<p>Tuotteen Rampur Double Cask Single Malt hinta on muuttunut.</p><p>81,40 € → 83,60 € (+2,20 €, +2,70 %).</p>",
+			"summary": "Tuotteen Rampur Double Cask Single Malt hinta on muuttunut. 81,40 € → 83,60 € (+2,20 €, +2,70 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/137417-f7ead9b86362.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

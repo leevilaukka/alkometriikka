@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Richter Estate Riesling 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/595947/",
+	"feed_url": "https://alkometriikka.fi/rss/595947.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Richter Estate Riesling 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-595947-2026-07-18-19.98",
+			"url": "https://alkometriikka.fi/tuotteet/595947/",
+			"title": "Richter Estate Riesling 2025 — 19,96 € → 19,98 €",
+			"content_html": "<p>Tuotteen Richter Estate Riesling 2025 hinta on muuttunut.</p><p>19,96 € → 19,98 € (+0,02 €, +0,10 %).</p>",
+			"summary": "Tuotteen Richter Estate Riesling 2025 hinta on muuttunut. 19,96 € → 19,98 € (+0,02 €, +0,10 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/595947-df878e740d48.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – To Øl Lost All Reason tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/700171/",
+	"feed_url": "https://alkometriikka.fi/rss/700171.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: To Øl Lost All Reason tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-700171-2026-09-29-5.99",
+			"url": "https://alkometriikka.fi/tuotteet/700171/",
+			"title": "To Øl Lost All Reason tölkki — 5,98 € → 5,99 €",
+			"content_html": "<p>Tuotteen To Øl Lost All Reason tölkki hinta on muuttunut.</p><p>5,98 € → 5,99 € (+0,01 €, +0,17 %).</p>",
+			"summary": "Tuotteen To Øl Lost All Reason tölkki hinta on muuttunut. 5,98 € → 5,99 € (+0,01 €, +0,17 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/700171-4b960e77ae16.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

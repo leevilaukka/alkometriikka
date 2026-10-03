@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Faustino I Gran Reserva Blanco 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902378/",
+	"feed_url": "https://alkometriikka.fi/rss/902378.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Faustino I Gran Reserva Blanco 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902378-2026-09-29-29.89",
+			"url": "https://alkometriikka.fi/tuotteet/902378/",
+			"title": "Faustino I Gran Reserva Blanco 2021 — 28,74 € → 29,89 €",
+			"content_html": "<p>Tuotteen Faustino I Gran Reserva Blanco 2021 hinta on muuttunut.</p><p>28,74 € → 29,89 € (+1,15 €, +4,00 %).</p>",
+			"summary": "Tuotteen Faustino I Gran Reserva Blanco 2021 hinta on muuttunut. 28,74 € → 29,89 € (+1,15 €, +4,00 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902378-de6ef3cb481d.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

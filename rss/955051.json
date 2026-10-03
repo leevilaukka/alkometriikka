@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Orenda Cabernet Franc 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/955051/",
+	"feed_url": "https://alkometriikka.fi/rss/955051.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Orenda Cabernet Franc 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-955051-2026-09-29-73.63",
+			"url": "https://alkometriikka.fi/tuotteet/955051/",
+			"title": "Orenda Cabernet Franc 2018 — 71,01 € → 73,63 €",
+			"content_html": "<p>Tuotteen Orenda Cabernet Franc 2018 hinta on muuttunut.</p><p>71,01 € → 73,63 € (+2,62 €, +3,69 %).</p>",
+			"summary": "Tuotteen Orenda Cabernet Franc 2018 hinta on muuttunut. 71,01 € → 73,63 € (+2,62 €, +3,69 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/955051-b7b7d20cad4c.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Glendronach Ode To The Dark Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901501/",
+	"feed_url": "https://alkometriikka.fi/rss/901501.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Glendronach Ode To The Dark Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901501-2026-09-29-87.99",
+			"url": "https://alkometriikka.fi/tuotteet/901501/",
+			"title": "The Glendronach Ode To The Dark Single Malt — 85,00 € → 87,99 €",
+			"content_html": "<p>Tuotteen The Glendronach Ode To The Dark Single Malt hinta on muuttunut.</p><p>85,00 € → 87,99 € (+2,99 €, +3,52 %).</p>",
+			"summary": "Tuotteen The Glendronach Ode To The Dark Single Malt hinta on muuttunut. 85,00 € → 87,99 € (+2,99 €, +3,52 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901501-ffcee2d82b32.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

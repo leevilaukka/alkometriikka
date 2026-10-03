@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Åland Distillery Dry Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901060/",
+	"feed_url": "https://alkometriikka.fi/rss/901060.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Åland Distillery Dry Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901060-2026-09-29-41.69",
+			"url": "https://alkometriikka.fi/tuotteet/901060/",
+			"title": "Åland Distillery Dry Gin — 41,38 € → 41,69 €",
+			"content_html": "<p>Tuotteen Åland Distillery Dry Gin hinta on muuttunut.</p><p>41,38 € → 41,69 € (+0,31 €, +0,75 %).</p>",
+			"summary": "Tuotteen Åland Distillery Dry Gin hinta on muuttunut. 41,38 € → 41,69 € (+0,31 €, +0,75 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901060-7b85e57dd0a9.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

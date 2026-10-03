@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ararat Apricot – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/957832/",
+	"feed_url": "https://alkometriikka.fi/rss/957832.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ararat Apricot.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-957832-2026-09-29-35.24",
+			"url": "https://alkometriikka.fi/tuotteet/957832/",
+			"title": "Ararat Apricot — 35,01 € → 35,24 €",
+			"content_html": "<p>Tuotteen Ararat Apricot hinta on muuttunut.</p><p>35,01 € → 35,24 € (+0,23 €, +0,66 %).</p>",
+			"summary": "Tuotteen Ararat Apricot hinta on muuttunut. 35,01 € → 35,24 € (+0,23 €, +0,66 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/957832-e3b90254a2b7.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

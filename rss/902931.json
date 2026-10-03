@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mallassepät Umbra with Tonka Beans – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902931/",
+	"feed_url": "https://alkometriikka.fi/rss/902931.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mallassepät Umbra with Tonka Beans.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902931-2026-09-29-22.3",
+			"url": "https://alkometriikka.fi/tuotteet/902931/",
+			"title": "Mallassepät Umbra with Tonka Beans — 21,95 € → 22,30 €",
+			"content_html": "<p>Tuotteen Mallassepät Umbra with Tonka Beans hinta on muuttunut.</p><p>21,95 € → 22,30 € (+0,35 €, +1,59 %).</p>",
+			"summary": "Tuotteen Mallassepät Umbra with Tonka Beans hinta on muuttunut. 21,95 € → 22,30 € (+0,35 €, +1,59 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902931-b23022f490e0.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

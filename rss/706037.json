@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Martini Vibrante – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/706037/",
+	"feed_url": "https://alkometriikka.fi/rss/706037.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Martini Vibrante.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-706037-2026-07-18-10.89",
+			"url": "https://alkometriikka.fi/tuotteet/706037/",
+			"title": "Martini Vibrante — 10,81 € → 10,89 €",
+			"content_html": "<p>Tuotteen Martini Vibrante hinta on muuttunut.</p><p>10,81 € → 10,89 € (+0,08 €, +0,74 %).</p>",
+			"summary": "Tuotteen Martini Vibrante hinta on muuttunut. 10,81 € → 10,89 € (+0,08 €, +0,74 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/706037-2258ac06daf1.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

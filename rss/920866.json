@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Alexandre Bonnet Blanc de Noirs Champagne Extra Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/920866/",
+	"feed_url": "https://alkometriikka.fi/rss/920866.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Alexandre Bonnet Blanc de Noirs Champagne Extra Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-920866-2026-09-29-59.99",
+			"url": "https://alkometriikka.fi/tuotteet/920866/",
+			"title": "Alexandre Bonnet Blanc de Noirs Champagne Extra Brut — 59,98 € → 59,99 €",
+			"content_html": "<p>Tuotteen Alexandre Bonnet Blanc de Noirs Champagne Extra Brut hinta on muuttunut.</p><p>59,98 € → 59,99 € (+0,01 €, +0,02 %).</p>",
+			"summary": "Tuotteen Alexandre Bonnet Blanc de Noirs Champagne Extra Brut hinta on muuttunut. 59,98 € → 59,99 € (+0,01 €, +0,02 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/920866-bceba7d22429.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

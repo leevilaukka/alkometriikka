@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dr. Zenzen Riesling hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901566/",
+	"feed_url": "https://alkometriikka.fi/rss/901566.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dr. Zenzen Riesling hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901566-2026-09-29-35.99",
+			"url": "https://alkometriikka.fi/tuotteet/901566/",
+			"title": "Dr. Zenzen Riesling hanapakkaus — 34,98 € → 35,99 €",
+			"content_html": "<p>Tuotteen Dr. Zenzen Riesling hanapakkaus hinta on muuttunut.</p><p>34,98 € → 35,99 € (+1,01 €, +2,89 %).</p>",
+			"summary": "Tuotteen Dr. Zenzen Riesling hanapakkaus hinta on muuttunut. 34,98 € → 35,99 € (+1,01 €, +2,89 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901566-83e6d0a3ac01.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

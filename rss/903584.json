@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kimito Dill Akvavit – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903584/",
+	"feed_url": "https://alkometriikka.fi/rss/903584.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kimito Dill Akvavit.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903584-2026-09-29-38.49",
+			"url": "https://alkometriikka.fi/tuotteet/903584/",
+			"title": "Kimito Dill Akvavit — 38,20 € → 38,49 €",
+			"content_html": "<p>Tuotteen Kimito Dill Akvavit hinta on muuttunut.</p><p>38,20 € → 38,49 € (+0,29 €, +0,76 %).</p>",
+			"summary": "Tuotteen Kimito Dill Akvavit hinta on muuttunut. 38,20 € → 38,49 € (+0,29 €, +0,76 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903584-afe454e9a64d.png",
+			"tags": [
+				"Väkevät",
+				"akvaviitit"
+			]
+		}
+	]
+}

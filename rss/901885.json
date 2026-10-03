@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Unico Reserva Especial – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901885/",
+	"feed_url": "https://alkometriikka.fi/rss/901885.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Unico Reserva Especial.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901885-2026-09-29-562.35",
+			"url": "https://alkometriikka.fi/tuotteet/901885/",
+			"title": "Unico Reserva Especial — 525,45 € → 562,35 €",
+			"content_html": "<p>Tuotteen Unico Reserva Especial hinta on muuttunut.</p><p>525,45 € → 562,35 € (+36,90 €, +7,02 %).</p>",
+			"summary": "Tuotteen Unico Reserva Especial hinta on muuttunut. 525,45 € → 562,35 € (+36,90 €, +7,02 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901885-22ee408c02ff.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

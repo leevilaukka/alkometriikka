@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glasgow 1770 Ruby Port Cask Finish Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901938/",
+	"feed_url": "https://alkometriikka.fi/rss/901938.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glasgow 1770 Ruby Port Cask Finish Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901938-2026-09-29-106.68",
+			"url": "https://alkometriikka.fi/tuotteet/901938/",
+			"title": "Glasgow 1770 Ruby Port Cask Finish Single Malt — 103,31 € → 106,68 €",
+			"content_html": "<p>Tuotteen Glasgow 1770 Ruby Port Cask Finish Single Malt hinta on muuttunut.</p><p>103,31 € → 106,68 € (+3,37 €, +3,26 %).</p>",
+			"summary": "Tuotteen Glasgow 1770 Ruby Port Cask Finish Single Malt hinta on muuttunut. 103,31 € → 106,68 € (+3,37 €, +3,26 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901938-b8cb06320ecc.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

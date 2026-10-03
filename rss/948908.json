@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – G.H. Martel & Co Prestige Magnum Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/948908/",
+	"feed_url": "https://alkometriikka.fi/rss/948908.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: G.H. Martel & Co Prestige Magnum Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-948908-2026-09-29-89.5",
+			"url": "https://alkometriikka.fi/tuotteet/948908/",
+			"title": "G.H. Martel & Co Prestige Magnum Champagne Brut — 79,00 € → 89,50 €",
+			"content_html": "<p>Tuotteen G.H. Martel & Co Prestige Magnum Champagne Brut hinta on muuttunut.</p><p>79,00 € → 89,50 € (+10,50 €, +13,29 %).</p>",
+			"summary": "Tuotteen G.H. Martel & Co Prestige Magnum Champagne Brut hinta on muuttunut. 79,00 € → 89,50 € (+10,50 €, +13,29 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/948908-83c7021f440d.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-948908-2026-07-18-79",
+			"url": "https://alkometriikka.fi/tuotteet/948908/",
+			"title": "G.H. Martel & Co Prestige Magnum Champagne Brut — 87,81 € → 79,00 €",
+			"content_html": "<p>Tuotteen G.H. Martel & Co Prestige Magnum Champagne Brut hinta on muuttunut.</p><p>87,81 € → 79,00 € (−8,81 €, −10,03 %).</p>",
+			"summary": "Tuotteen G.H. Martel & Co Prestige Magnum Champagne Brut hinta on muuttunut. 87,81 € → 79,00 € (−8,81 €, −10,03 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/948908-83c7021f440d.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

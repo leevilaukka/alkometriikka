@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Penfolds Bin 28 Shiraz 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/455607/",
+	"feed_url": "https://alkometriikka.fi/rss/455607.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Penfolds Bin 28 Shiraz 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-455607-2026-09-29-39.98",
+			"url": "https://alkometriikka.fi/tuotteet/455607/",
+			"title": "Penfolds Bin 28 Shiraz 2024 — 42,49 € → 39,98 €",
+			"content_html": "<p>Tuotteen Penfolds Bin 28 Shiraz 2024 hinta on muuttunut.</p><p>42,49 € → 39,98 € (−2,51 €, −5,91 %).</p>",
+			"summary": "Tuotteen Penfolds Bin 28 Shiraz 2024 hinta on muuttunut. 42,49 € → 39,98 € (−2,51 €, −5,91 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/455607-e2e9bb1b0344.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-455607-2026-07-18-42.49",
+			"url": "https://alkometriikka.fi/tuotteet/455607/",
+			"title": "Penfolds Bin 28 Shiraz 2024 — 42,46 € → 42,49 €",
+			"content_html": "<p>Tuotteen Penfolds Bin 28 Shiraz 2024 hinta on muuttunut.</p><p>42,46 € → 42,49 € (+0,03 €, +0,07 %).</p>",
+			"summary": "Tuotteen Penfolds Bin 28 Shiraz 2024 hinta on muuttunut. 42,46 € → 42,49 € (+0,03 €, +0,07 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/455607-e2e9bb1b0344.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

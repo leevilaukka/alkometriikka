@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dr. Bürklin-Wolf Wachenheimer Böhlig P.C. 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/916211/",
+	"feed_url": "https://alkometriikka.fi/rss/916211.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dr. Bürklin-Wolf Wachenheimer Böhlig P.C. 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-916211-2026-09-29-49.99",
+			"url": "https://alkometriikka.fi/tuotteet/916211/",
+			"title": "Dr. Bürklin-Wolf Wachenheimer Böhlig P.C. 2020 — 49,98 € → 49,99 €",
+			"content_html": "<p>Tuotteen Dr. Bürklin-Wolf Wachenheimer Böhlig P.C. 2020 hinta on muuttunut.</p><p>49,98 € → 49,99 € (+0,01 €, +0,02 %).</p>",
+			"summary": "Tuotteen Dr. Bürklin-Wolf Wachenheimer Böhlig P.C. 2020 hinta on muuttunut. 49,98 € → 49,99 € (+0,01 €, +0,02 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/916211-e6d76aa41f05.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-916211-2026-07-18-49.98",
+			"url": "https://alkometriikka.fi/tuotteet/916211/",
+			"title": "Dr. Bürklin-Wolf Wachenheimer Böhlig P.C. 2020 — 50,45 € → 49,98 €",
+			"content_html": "<p>Tuotteen Dr. Bürklin-Wolf Wachenheimer Böhlig P.C. 2020 hinta on muuttunut.</p><p>50,45 € → 49,98 € (−0,47 €, −0,93 %).</p>",
+			"summary": "Tuotteen Dr. Bürklin-Wolf Wachenheimer Böhlig P.C. 2020 hinta on muuttunut. 50,45 € → 49,98 € (−0,47 €, −0,93 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/916211-e6d76aa41f05.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

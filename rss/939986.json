@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Smakbyns Ål-Meister Bongo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/939986/",
+	"feed_url": "https://alkometriikka.fi/rss/939986.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Smakbyns Ål-Meister Bongo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-939986-2026-09-29-85.72",
+			"url": "https://alkometriikka.fi/tuotteet/939986/",
+			"title": "Smakbyns Ål-Meister Bongo — 82,37 € → 85,72 €",
+			"content_html": "<p>Tuotteen Smakbyns Ål-Meister Bongo hinta on muuttunut.</p><p>82,37 € → 85,72 € (+3,35 €, +4,07 %).</p>",
+			"summary": "Tuotteen Smakbyns Ål-Meister Bongo hinta on muuttunut. 82,37 € → 85,72 € (+3,35 €, +4,07 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/939986-2f4d7fb0db61.png",
+			"tags": [
+				"Väkevät",
+				"yrttiliköörit"
+			]
+		}
+	]
+}

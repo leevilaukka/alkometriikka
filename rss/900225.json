@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – G&J Bott Cornas 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900225/",
+	"feed_url": "https://alkometriikka.fi/rss/900225.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: G&J Bott Cornas 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900225-2026-09-29-83.19",
+			"url": "https://alkometriikka.fi/tuotteet/900225/",
+			"title": "G&J Bott Cornas 2022 — 81,63 € → 83,19 €",
+			"content_html": "<p>Tuotteen G&J Bott Cornas 2022 hinta on muuttunut.</p><p>81,63 € → 83,19 € (+1,56 €, +1,91 %).</p>",
+			"summary": "Tuotteen G&J Bott Cornas 2022 hinta on muuttunut. 81,63 € → 83,19 € (+1,56 €, +1,91 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900225-80998e472464.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

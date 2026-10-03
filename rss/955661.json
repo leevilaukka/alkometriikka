@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Valamon Serafi Mesimarjakuohuviini – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/955661/",
+	"feed_url": "https://alkometriikka.fi/rss/955661.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Valamon Serafi Mesimarjakuohuviini.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-955661-2026-09-29-36.8",
+			"url": "https://alkometriikka.fi/tuotteet/955661/",
+			"title": "Valamon Serafi Mesimarjakuohuviini — 36,76 € → 36,80 €",
+			"content_html": "<p>Tuotteen Valamon Serafi Mesimarjakuohuviini hinta on muuttunut.</p><p>36,76 € → 36,80 € (+0,04 €, +0,11 %).</p>",
+			"summary": "Tuotteen Valamon Serafi Mesimarjakuohuviini hinta on muuttunut. 36,76 € → 36,80 € (+0,04 €, +0,11 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/955661-1ac5514aaadd.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

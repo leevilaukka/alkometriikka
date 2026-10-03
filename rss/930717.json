@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Coto Real 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/930717/",
+	"feed_url": "https://alkometriikka.fi/rss/930717.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Coto Real 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-930717-2026-07-18-34.9",
+			"url": "https://alkometriikka.fi/tuotteet/930717/",
+			"title": "Coto Real 2020 — 34,92 € → 34,90 €",
+			"content_html": "<p>Tuotteen Coto Real 2020 hinta on muuttunut.</p><p>34,92 € → 34,90 € (−0,02 €, −0,06 %).</p>",
+			"summary": "Tuotteen Coto Real 2020 hinta on muuttunut. 34,92 € → 34,90 € (−0,02 €, −0,06 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/930717-6b9d71ee57ef.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

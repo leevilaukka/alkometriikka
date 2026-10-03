@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Chateau Ste Michelle Chardonnay 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/957925/",
+	"feed_url": "https://alkometriikka.fi/rss/957925.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Chateau Ste Michelle Chardonnay 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-957925-2026-07-18-18.99",
+			"url": "https://alkometriikka.fi/tuotteet/957925/",
+			"title": "Chateau Ste Michelle Chardonnay 2020 — 18,96 € → 18,99 €",
+			"content_html": "<p>Tuotteen Chateau Ste Michelle Chardonnay 2020 hinta on muuttunut.</p><p>18,96 € → 18,99 € (+0,03 €, +0,16 %).</p>",
+			"summary": "Tuotteen Chateau Ste Michelle Chardonnay 2020 hinta on muuttunut. 18,96 € → 18,99 € (+0,03 €, +0,16 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/957925-0d2b041e9f8c.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

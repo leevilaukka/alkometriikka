@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Good Cider of San Sebastian Apple – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/792054/",
+	"feed_url": "https://alkometriikka.fi/rss/792054.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Good Cider of San Sebastian Apple.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-792054-2026-07-18-2.46",
+			"url": "https://alkometriikka.fi/tuotteet/792054/",
+			"title": "The Good Cider of San Sebastian Apple — 2,28 € → 2,46 €",
+			"content_html": "<p>Tuotteen The Good Cider of San Sebastian Apple hinta on muuttunut.</p><p>2,28 € → 2,46 € (+0,18 €, +7,89 %).</p>",
+			"summary": "Tuotteen The Good Cider of San Sebastian Apple hinta on muuttunut. 2,28 € → 2,46 € (+0,18 €, +7,89 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/792054-67c71cbe00de.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat siiderit"
+			]
+		}
+	]
+}

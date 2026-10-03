@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Latour-Giraud Pommard Carmen 2021 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/900232/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Latour-Giraud Pommard Carmen 2021.</description>
+		<language>fi</language>
+		<lastBuildDate>Sat, 03 Oct 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/900232.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Latour-Giraud Pommard Carmen 2021 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Latour-Giraud Pommard Carmen 2021 — 72,45 € → 75,10 €</title>
+			<link>https://alkometriikka.fi/tuotteet/900232/</link>
+			<guid isPermaLink="false">alkometriikka-900232-2026-09-29-75.1</guid>
+			<pubDate>Tue, 29 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Latour-Giraud Pommard Carmen 2021 hinta on muuttunut.</p><p>72,45 € → 75,10 € (+2,65 €, +3,66 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/900232-505ec45d8309.png" />
+		</item>
+	</channel>
+</rss>

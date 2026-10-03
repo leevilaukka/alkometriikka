@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Terrae Laboriae Vardi Rosato 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902056/",
+	"feed_url": "https://alkometriikka.fi/rss/902056.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Terrae Laboriae Vardi Rosato 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902056-2026-09-29-45.32",
+			"url": "https://alkometriikka.fi/tuotteet/902056/",
+			"title": "Terrae Laboriae Vardi Rosato 2023 — 44,66 € → 45,32 €",
+			"content_html": "<p>Tuotteen Terrae Laboriae Vardi Rosato 2023 hinta on muuttunut.</p><p>44,66 € → 45,32 € (+0,66 €, +1,48 %).</p>",
+			"summary": "Tuotteen Terrae Laboriae Vardi Rosato 2023 hinta on muuttunut. 44,66 € → 45,32 € (+0,66 €, +1,48 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902056-e17a2672a8ab.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

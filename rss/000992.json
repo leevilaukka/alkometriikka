@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Meukow VS – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/000992/",
+	"feed_url": "https://alkometriikka.fi/rss/000992.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Meukow VS.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-000992-2026-09-29-22.9",
+			"url": "https://alkometriikka.fi/tuotteet/000992/",
+			"title": "Meukow VS — 22,99 € → 22,90 €",
+			"content_html": "<p>Tuotteen Meukow VS hinta on muuttunut.</p><p>22,99 € → 22,90 € (−0,09 €, −0,39 %).</p>",
+			"summary": "Tuotteen Meukow VS hinta on muuttunut. 22,99 € → 22,90 € (−0,09 €, −0,39 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/000992-0672d9e8a369.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

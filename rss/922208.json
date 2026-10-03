@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château de Montifaud Héritage Louis Vallet L50 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/922208/",
+	"feed_url": "https://alkometriikka.fi/rss/922208.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château de Montifaud Héritage Louis Vallet L50.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-922208-2026-09-29-1029.8",
+			"url": "https://alkometriikka.fi/tuotteet/922208/",
+			"title": "Château de Montifaud Héritage Louis Vallet L50 — 964,51 € → 1 029,80 €",
+			"content_html": "<p>Tuotteen Château de Montifaud Héritage Louis Vallet L50 hinta on muuttunut.</p><p>964,51 € → 1 029,80 € (+65,29 €, +6,77 %).</p>",
+			"summary": "Tuotteen Château de Montifaud Héritage Louis Vallet L50 hinta on muuttunut. 964,51 € → 1 029,80 € (+65,29 €, +6,77 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/922208-a93ad0ed3c39.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

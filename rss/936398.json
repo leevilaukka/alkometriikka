@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Beck Pink 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/936398/",
+	"feed_url": "https://alkometriikka.fi/rss/936398.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Beck Pink 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-936398-2026-07-18-19.99",
+			"url": "https://alkometriikka.fi/tuotteet/936398/",
+			"title": "Beck Pink 2023 — 20,44 € → 19,99 €",
+			"content_html": "<p>Tuotteen Beck Pink 2023 hinta on muuttunut.</p><p>20,44 € → 19,99 € (−0,45 €, −2,20 %).</p>",
+			"summary": "Tuotteen Beck Pink 2023 hinta on muuttunut. 20,44 € → 19,99 € (−0,45 €, −2,20 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/936398-55d00ad0c673.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

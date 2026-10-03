@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Casa di Malia Organic Prosecco Frizzante – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/942267/",
+	"feed_url": "https://alkometriikka.fi/rss/942267.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Casa di Malia Organic Prosecco Frizzante.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-942267-2026-09-29-13.38",
+			"url": "https://alkometriikka.fi/tuotteet/942267/",
+			"title": "Casa di Malia Organic Prosecco Frizzante — 13,19 € → 13,38 €",
+			"content_html": "<p>Tuotteen Casa di Malia Organic Prosecco Frizzante hinta on muuttunut.</p><p>13,19 € → 13,38 € (+0,19 €, +1,44 %).</p>",
+			"summary": "Tuotteen Casa di Malia Organic Prosecco Frizzante hinta on muuttunut. 13,19 € → 13,38 € (+0,19 €, +1,44 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/942267-0620ecda7fe1.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

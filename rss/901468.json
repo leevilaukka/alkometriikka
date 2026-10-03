@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Koskenkorva Salmiakki Cream – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901468/",
+	"feed_url": "https://alkometriikka.fi/rss/901468.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Koskenkorva Salmiakki Cream.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901468-2026-07-18-17.98",
+			"url": "https://alkometriikka.fi/tuotteet/901468/",
+			"title": "Koskenkorva Salmiakki Cream — 17,79 € → 17,98 €",
+			"content_html": "<p>Tuotteen Koskenkorva Salmiakki Cream hinta on muuttunut.</p><p>17,79 € → 17,98 € (+0,19 €, +1,07 %).</p>",
+			"summary": "Tuotteen Koskenkorva Salmiakki Cream hinta on muuttunut. 17,79 € → 17,98 € (+0,19 €, +1,07 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901468-67d37a60333d.png",
+			"tags": [
+				"Väkevät",
+				"kermaliköörit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mionetto Aperitivo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/759246/",
+	"feed_url": "https://alkometriikka.fi/rss/759246.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mionetto Aperitivo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-759246-2026-09-29-17.05",
+			"url": "https://alkometriikka.fi/tuotteet/759246/",
+			"title": "Mionetto Aperitivo — 16,53 € → 17,05 €",
+			"content_html": "<p>Tuotteen Mionetto Aperitivo hinta on muuttunut.</p><p>16,53 € → 17,05 € (+0,52 €, +3,15 %).</p>",
+			"summary": "Tuotteen Mionetto Aperitivo hinta on muuttunut. 16,53 € → 17,05 € (+0,52 €, +3,15 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/759246-620c39683dc2.png",
+			"tags": [
+				"Panimotuotteet",
+				"juomasekoitukset"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Beaumont des Crayères Grande Reserve Champagne Brut Magnum – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/951283/",
+	"feed_url": "https://alkometriikka.fi/rss/951283.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Beaumont des Crayères Grande Reserve Champagne Brut Magnum.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-951283-2026-09-29-98.29",
+			"url": "https://alkometriikka.fi/tuotteet/951283/",
+			"title": "Beaumont des Crayères Grande Reserve Champagne Brut Magnum — 96,45 € → 98,29 €",
+			"content_html": "<p>Tuotteen Beaumont des Crayères Grande Reserve Champagne Brut Magnum hinta on muuttunut.</p><p>96,45 € → 98,29 € (+1,84 €, +1,91 %).</p>",
+			"summary": "Tuotteen Beaumont des Crayères Grande Reserve Champagne Brut Magnum hinta on muuttunut. 96,45 € → 98,29 € (+1,84 €, +1,91 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/951283-5d193b06db25.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

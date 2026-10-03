@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kyrö Malt muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/926582/",
+	"feed_url": "https://alkometriikka.fi/rss/926582.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kyrö Malt muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-926582-2026-09-29-6.89",
+			"url": "https://alkometriikka.fi/tuotteet/926582/",
+			"title": "Kyrö Malt muovipullo — 6,99 € → 6,89 €",
+			"content_html": "<p>Tuotteen Kyrö Malt muovipullo hinta on muuttunut.</p><p>6,99 € → 6,89 € (−0,10 €, −1,43 %).</p>",
+			"summary": "Tuotteen Kyrö Malt muovipullo hinta on muuttunut. 6,99 € → 6,89 € (−0,10 €, −1,43 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/926582-85b6fbf6d534.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

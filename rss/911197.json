@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Viré-Clessé Cuvée E.J. Thevenet 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/911197/",
+	"feed_url": "https://alkometriikka.fi/rss/911197.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Viré-Clessé Cuvée E.J. Thevenet 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-911197-2026-09-29-48.29",
+			"url": "https://alkometriikka.fi/tuotteet/911197/",
+			"title": "Viré-Clessé Cuvée E.J. Thevenet 2021 — 47,45 € → 48,29 €",
+			"content_html": "<p>Tuotteen Viré-Clessé Cuvée E.J. Thevenet 2021 hinta on muuttunut.</p><p>47,45 € → 48,29 € (+0,84 €, +1,77 %).</p>",
+			"summary": "Tuotteen Viré-Clessé Cuvée E.J. Thevenet 2021 hinta on muuttunut. 47,45 € → 48,29 € (+0,84 €, +1,77 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/911197-dd52e41f94ed.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

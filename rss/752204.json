@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Põhjala Gimme Danger – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/752204/",
+	"feed_url": "https://alkometriikka.fi/rss/752204.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Põhjala Gimme Danger.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-752204-2026-07-18-5.78",
+			"url": "https://alkometriikka.fi/tuotteet/752204/",
+			"title": "Põhjala Gimme Danger — 5,79 € → 5,78 €",
+			"content_html": "<p>Tuotteen Põhjala Gimme Danger hinta on muuttunut.</p><p>5,79 € → 5,78 € (−0,01 €, −0,17 %).</p>",
+			"summary": "Tuotteen Põhjala Gimme Danger hinta on muuttunut. 5,79 € → 5,78 € (−0,01 €, −0,17 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/752204-8798308013e0.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

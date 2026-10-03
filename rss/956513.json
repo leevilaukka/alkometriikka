@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jean-Paul Brun Morgon Côte du Py Javernières 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/956513/",
+	"feed_url": "https://alkometriikka.fi/rss/956513.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jean-Paul Brun Morgon Côte du Py Javernières 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-956513-2026-09-29-42.9",
+			"url": "https://alkometriikka.fi/tuotteet/956513/",
+			"title": "Jean-Paul Brun Morgon Côte du Py Javernières 2023 — 42,40 € → 42,90 €",
+			"content_html": "<p>Tuotteen Jean-Paul Brun Morgon Côte du Py Javernières 2023 hinta on muuttunut.</p><p>42,40 € → 42,90 € (+0,50 €, +1,18 %).</p>",
+			"summary": "Tuotteen Jean-Paul Brun Morgon Côte du Py Javernières 2023 hinta on muuttunut. 42,40 € → 42,90 € (+0,50 €, +1,18 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/956513-d7e3dbdcc6d1.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-956513-2026-07-18-42.4",
+			"url": "https://alkometriikka.fi/tuotteet/956513/",
+			"title": "Jean-Paul Brun Morgon Côte du Py Javernières 2023 — 40,45 € → 42,40 €",
+			"content_html": "<p>Tuotteen Jean-Paul Brun Morgon Côte du Py Javernières 2023 hinta on muuttunut.</p><p>40,45 € → 42,40 € (+1,95 €, +4,82 %).</p>",
+			"summary": "Tuotteen Jean-Paul Brun Morgon Côte du Py Javernières 2023 hinta on muuttunut. 40,45 € → 42,40 € (+1,95 €, +4,82 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/956513-d7e3dbdcc6d1.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

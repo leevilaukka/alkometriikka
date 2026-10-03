@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Montes Alpha Syrah 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/434987/",
+	"feed_url": "https://alkometriikka.fi/rss/434987.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Montes Alpha Syrah 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-434987-2026-07-18-21.98",
+			"url": "https://alkometriikka.fi/tuotteet/434987/",
+			"title": "Montes Alpha Syrah 2022 — 21,40 € → 21,98 €",
+			"content_html": "<p>Tuotteen Montes Alpha Syrah 2022 hinta on muuttunut.</p><p>21,40 € → 21,98 € (+0,58 €, +2,71 %).</p>",
+			"summary": "Tuotteen Montes Alpha Syrah 2022 hinta on muuttunut. 21,40 € → 21,98 € (+0,58 €, +2,71 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/434987-008ed4cd07e5.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

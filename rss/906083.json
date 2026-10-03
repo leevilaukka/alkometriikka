@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Maison Sinnae Les Corréges 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/906083/",
+	"feed_url": "https://alkometriikka.fi/rss/906083.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Maison Sinnae Les Corréges 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-906083-2026-09-29-65.15",
+			"url": "https://alkometriikka.fi/tuotteet/906083/",
+			"title": "Maison Sinnae Les Corréges 2021 — 63,12 € → 65,15 €",
+			"content_html": "<p>Tuotteen Maison Sinnae Les Corréges 2021 hinta on muuttunut.</p><p>63,12 € → 65,15 € (+2,03 €, +3,22 %).</p>",
+			"summary": "Tuotteen Maison Sinnae Les Corréges 2021 hinta on muuttunut. 63,12 € → 65,15 € (+2,03 €, +3,22 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/906083-23cb247faa8c.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

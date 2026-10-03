@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tamdhu 21 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902009/",
+	"feed_url": "https://alkometriikka.fi/rss/902009.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tamdhu 21 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902009-2026-09-29-379.95",
+			"url": "https://alkometriikka.fi/tuotteet/902009/",
+			"title": "Tamdhu 21 Year Old Single Malt — 349,99 € → 379,95 €",
+			"content_html": "<p>Tuotteen Tamdhu 21 Year Old Single Malt hinta on muuttunut.</p><p>349,99 € → 379,95 € (+29,96 €, +8,56 %).</p>",
+			"summary": "Tuotteen Tamdhu 21 Year Old Single Malt hinta on muuttunut. 349,99 € → 379,95 € (+29,96 €, +8,56 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902009-4ebfcb9166fb.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

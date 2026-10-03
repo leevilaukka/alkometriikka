@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – 9.0 Original Strong Beer tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901732/",
+	"feed_url": "https://alkometriikka.fi/rss/901732.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: 9.0 Original Strong Beer tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901732-2026-09-29-5.17",
+			"url": "https://alkometriikka.fi/tuotteet/901732/",
+			"title": "9.0 Original Strong Beer tölkki — 4,85 € → 5,17 €",
+			"content_html": "<p>Tuotteen 9.0 Original Strong Beer tölkki hinta on muuttunut.</p><p>4,85 € → 5,17 € (+0,32 €, +6,60 %).</p>",
+			"summary": "Tuotteen 9.0 Original Strong Beer tölkki hinta on muuttunut. 4,85 € → 5,17 € (+0,32 €, +6,60 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901732-3a6d1ec5b90d.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

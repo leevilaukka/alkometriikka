@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pierre Mignon Gold Prestige Cuvée Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/934623/",
+	"feed_url": "https://alkometriikka.fi/rss/934623.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pierre Mignon Gold Prestige Cuvée Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-934623-2026-09-29-114.21",
+			"url": "https://alkometriikka.fi/tuotteet/934623/",
+			"title": "Pierre Mignon Gold Prestige Cuvée Champagne Brut — 108,76 € → 114,21 €",
+			"content_html": "<p>Tuotteen Pierre Mignon Gold Prestige Cuvée Champagne Brut hinta on muuttunut.</p><p>108,76 € → 114,21 € (+5,45 €, +5,01 %).</p>",
+			"summary": "Tuotteen Pierre Mignon Gold Prestige Cuvée Champagne Brut hinta on muuttunut. 108,76 € → 114,21 € (+5,45 €, +5,01 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/934623-b5a8356bd52f.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

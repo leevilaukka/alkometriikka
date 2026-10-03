@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gorghi Tondi Sorante 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/948935/",
+	"feed_url": "https://alkometriikka.fi/rss/948935.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gorghi Tondi Sorante 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-948935-2026-09-29-43.03",
+			"url": "https://alkometriikka.fi/tuotteet/948935/",
+			"title": "Gorghi Tondi Sorante 2018 — 42,57 € → 43,03 €",
+			"content_html": "<p>Tuotteen Gorghi Tondi Sorante 2018 hinta on muuttunut.</p><p>42,57 € → 43,03 € (+0,46 €, +1,08 %).</p>",
+			"summary": "Tuotteen Gorghi Tondi Sorante 2018 hinta on muuttunut. 42,57 € → 43,03 € (+0,46 €, +1,08 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/948935-b5c3d45c6cf3.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

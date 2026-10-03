@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Balvenie Carribean Cask 14 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903075/",
+	"feed_url": "https://alkometriikka.fi/rss/903075.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Balvenie Carribean Cask 14 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903075-2026-09-29-119.58",
+			"url": "https://alkometriikka.fi/tuotteet/903075/",
+			"title": "The Balvenie Carribean Cask 14 Year Old Single Malt — 114,95 € → 119,58 €",
+			"content_html": "<p>Tuotteen The Balvenie Carribean Cask 14 Year Old Single Malt hinta on muuttunut.</p><p>114,95 € → 119,58 € (+4,63 €, +4,03 %).</p>",
+			"summary": "Tuotteen The Balvenie Carribean Cask 14 Year Old Single Malt hinta on muuttunut. 114,95 € → 119,58 € (+4,63 €, +4,03 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903075-185f6ca9dfce.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

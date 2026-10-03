@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Steininger Riesling 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/929064/",
+	"feed_url": "https://alkometriikka.fi/rss/929064.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Steininger Riesling 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-929064-2026-07-18-10.69",
+			"url": "https://alkometriikka.fi/tuotteet/929064/",
+			"title": "Steininger Riesling 2025 — 10,11 € → 10,69 €",
+			"content_html": "<p>Tuotteen Steininger Riesling 2025 hinta on muuttunut.</p><p>10,11 € → 10,69 € (+0,58 €, +5,74 %).</p>",
+			"summary": "Tuotteen Steininger Riesling 2025 hinta on muuttunut. 10,11 € → 10,69 € (+0,58 €, +5,74 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/929064-90d6ca3c53b8.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

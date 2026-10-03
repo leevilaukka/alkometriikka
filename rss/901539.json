@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Soalheiro 9% Alvarinho 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901539/",
+	"feed_url": "https://alkometriikka.fi/rss/901539.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Soalheiro 9% Alvarinho 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901539-2026-07-18-23.8",
+			"url": "https://alkometriikka.fi/tuotteet/901539/",
+			"title": "Soalheiro 9% Alvarinho 2022 — 23,76 € → 23,80 €",
+			"content_html": "<p>Tuotteen Soalheiro 9% Alvarinho 2022 hinta on muuttunut.</p><p>23,76 € → 23,80 € (+0,04 €, +0,17 %).</p>",
+			"summary": "Tuotteen Soalheiro 9% Alvarinho 2022 hinta on muuttunut. 23,76 € → 23,80 € (+0,04 €, +0,17 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901539-891287eeaf52.png",
+			"tags": [
+				"Viinit",
+				"jälkiruokaviinit"
+			]
+		}
+	]
+}

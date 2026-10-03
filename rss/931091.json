@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Scandinavian Coconut Laku Shot muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/931091/",
+	"feed_url": "https://alkometriikka.fi/rss/931091.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Scandinavian Coconut Laku Shot muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-931091-2026-09-29-16.18",
+			"url": "https://alkometriikka.fi/tuotteet/931091/",
+			"title": "Scandinavian Coconut Laku Shot muovipullo — 16,08 € → 16,18 €",
+			"content_html": "<p>Tuotteen Scandinavian Coconut Laku Shot muovipullo hinta on muuttunut.</p><p>16,08 € → 16,18 € (+0,10 €, +0,62 %).</p>",
+			"summary": "Tuotteen Scandinavian Coconut Laku Shot muovipullo hinta on muuttunut. 16,08 € → 16,18 € (+0,10 €, +0,62 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/931091-89a139297ffc.png",
+			"tags": [
+				"Väkevät",
+				"salmiakkiliköörit"
+			]
+		}
+	]
+}

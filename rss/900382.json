@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Grava Pinot Noir 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900382/",
+	"feed_url": "https://alkometriikka.fi/rss/900382.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Grava Pinot Noir 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900382-2026-09-29-36.83",
+			"url": "https://alkometriikka.fi/tuotteet/900382/",
+			"title": "Grava Pinot Noir 2020 — 36,81 € → 36,83 €",
+			"content_html": "<p>Tuotteen Grava Pinot Noir 2020 hinta on muuttunut.</p><p>36,81 € → 36,83 € (+0,02 €, +0,05 %).</p>",
+			"summary": "Tuotteen Grava Pinot Noir 2020 hinta on muuttunut. 36,81 € → 36,83 € (+0,02 €, +0,05 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900382-c66e86b5cb53.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

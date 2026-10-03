@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vinhos Messias Murtelas – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900046/",
+	"feed_url": "https://alkometriikka.fi/rss/900046.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vinhos Messias Murtelas.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900046-2026-07-18-11.49",
+			"url": "https://alkometriikka.fi/tuotteet/900046/",
+			"title": "Vinhos Messias Murtelas — 11,45 € → 11,49 €",
+			"content_html": "<p>Tuotteen Vinhos Messias Murtelas hinta on muuttunut.</p><p>11,45 € → 11,49 € (+0,04 €, +0,35 %).</p>",
+			"summary": "Tuotteen Vinhos Messias Murtelas hinta on muuttunut. 11,45 € → 11,49 € (+0,04 €, +0,35 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900046-efd23711ea6b.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

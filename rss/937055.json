@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Giuseppe Quintarelli Primofiore 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/937055/",
+	"feed_url": "https://alkometriikka.fi/rss/937055.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Giuseppe Quintarelli Primofiore 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-937055-2026-09-29-77.88",
+			"url": "https://alkometriikka.fi/tuotteet/937055/",
+			"title": "Giuseppe Quintarelli Primofiore 2019 — 74,95 € → 77,88 €",
+			"content_html": "<p>Tuotteen Giuseppe Quintarelli Primofiore 2019 hinta on muuttunut.</p><p>74,95 € → 77,88 € (+2,93 €, +3,91 %).</p>",
+			"summary": "Tuotteen Giuseppe Quintarelli Primofiore 2019 hinta on muuttunut. 74,95 € → 77,88 € (+2,93 €, +3,91 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/937055-720ce00ad1ce.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

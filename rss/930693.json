@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Anna de Codorníu Blanc de Blancs Cava Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/930693/",
+	"feed_url": "https://alkometriikka.fi/rss/930693.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Anna de Codorníu Blanc de Blancs Cava Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-930693-2026-07-18-5.99",
+			"url": "https://alkometriikka.fi/tuotteet/930693/",
+			"title": "Anna de Codorníu Blanc de Blancs Cava Brut — 6,09 € → 5,99 €",
+			"content_html": "<p>Tuotteen Anna de Codorníu Blanc de Blancs Cava Brut hinta on muuttunut.</p><p>6,09 € → 5,99 € (−0,10 €, −1,64 %).</p>",
+			"summary": "Tuotteen Anna de Codorníu Blanc de Blancs Cava Brut hinta on muuttunut. 6,09 € → 5,99 € (−0,10 €, −1,64 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/930693-76c52702337a.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

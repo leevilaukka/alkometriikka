@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Col d'Orcia Brunello di Montalcino Magnum 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/957703/",
+	"feed_url": "https://alkometriikka.fi/rss/957703.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Col d'Orcia Brunello di Montalcino Magnum 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-957703-2026-09-29-118.76",
+			"url": "https://alkometriikka.fi/tuotteet/957703/",
+			"title": "Col d'Orcia Brunello di Montalcino Magnum 2020 — 110,60 € → 118,76 €",
+			"content_html": "<p>Tuotteen Col d'Orcia Brunello di Montalcino Magnum 2020 hinta on muuttunut.</p><p>110,60 € → 118,76 € (+8,16 €, +7,38 %).</p>",
+			"summary": "Tuotteen Col d'Orcia Brunello di Montalcino Magnum 2020 hinta on muuttunut. 110,60 € → 118,76 € (+8,16 €, +7,38 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/957703-d4a0064607e6.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

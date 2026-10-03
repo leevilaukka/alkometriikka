@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Joseph Perrier Cuvée Royale Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/565013/",
+	"feed_url": "https://alkometriikka.fi/rss/565013.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Joseph Perrier Cuvée Royale Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-565013-2026-09-29-14.98",
+			"url": "https://alkometriikka.fi/tuotteet/565013/",
+			"title": "Joseph Perrier Cuvée Royale Champagne Brut — 13,99 € → 14,98 €",
+			"content_html": "<p>Tuotteen Joseph Perrier Cuvée Royale Champagne Brut hinta on muuttunut.</p><p>13,99 € → 14,98 € (+0,99 €, +7,08 %).</p>",
+			"summary": "Tuotteen Joseph Perrier Cuvée Royale Champagne Brut hinta on muuttunut. 13,99 € → 14,98 € (+0,99 €, +7,08 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/565013-2ee22861ad7a.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

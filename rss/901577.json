@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château de Maligny Chablis 1er Cru L'Homme Mort 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901577/",
+	"feed_url": "https://alkometriikka.fi/rss/901577.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château de Maligny Chablis 1er Cru L'Homme Mort 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901577-2026-09-29-50.63",
+			"url": "https://alkometriikka.fi/tuotteet/901577/",
+			"title": "Château de Maligny Chablis 1er Cru L'Homme Mort 2023 — 48,74 € → 50,63 €",
+			"content_html": "<p>Tuotteen Château de Maligny Chablis 1er Cru L'Homme Mort 2023 hinta on muuttunut.</p><p>48,74 € → 50,63 € (+1,89 €, +3,88 %).</p>",
+			"summary": "Tuotteen Château de Maligny Chablis 1er Cru L'Homme Mort 2023 hinta on muuttunut. 48,74 € → 50,63 € (+1,89 €, +3,88 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901577-76beef393f9e.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-901577-2026-07-18-48.74",
+			"url": "https://alkometriikka.fi/tuotteet/901577/",
+			"title": "Château de Maligny Chablis 1er Cru L'Homme Mort 2023 — 43,03 € → 48,74 €",
+			"content_html": "<p>Tuotteen Château de Maligny Chablis 1er Cru L'Homme Mort 2023 hinta on muuttunut.</p><p>43,03 € → 48,74 € (+5,71 €, +13,27 %).</p>",
+			"summary": "Tuotteen Château de Maligny Chablis 1er Cru L'Homme Mort 2023 hinta on muuttunut. 43,03 € → 48,74 € (+5,71 €, +13,27 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901577-76beef393f9e.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

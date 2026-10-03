@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Laherte Freres Rose De Meunier Champagne Extra Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/930358/",
+	"feed_url": "https://alkometriikka.fi/rss/930358.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Laherte Freres Rose De Meunier Champagne Extra Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-930358-2026-09-29-76.41",
+			"url": "https://alkometriikka.fi/tuotteet/930358/",
+			"title": "Laherte Freres Rose De Meunier Champagne Extra Brut — 73,60 € → 76,41 €",
+			"content_html": "<p>Tuotteen Laherte Freres Rose De Meunier Champagne Extra Brut hinta on muuttunut.</p><p>73,60 € → 76,41 € (+2,81 €, +3,82 %).</p>",
+			"summary": "Tuotteen Laherte Freres Rose De Meunier Champagne Extra Brut hinta on muuttunut. 73,60 € → 76,41 € (+2,81 €, +3,82 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/930358-4c6f7db11572.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

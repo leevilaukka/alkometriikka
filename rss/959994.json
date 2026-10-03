@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tua Rita Per Sempre Syrah 2015 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/959994/",
+	"feed_url": "https://alkometriikka.fi/rss/959994.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tua Rita Per Sempre Syrah 2015.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-959994-2026-09-29-307.48",
+			"url": "https://alkometriikka.fi/tuotteet/959994/",
+			"title": "Tua Rita Per Sempre Syrah 2015 — 288,45 € → 307,48 €",
+			"content_html": "<p>Tuotteen Tua Rita Per Sempre Syrah 2015 hinta on muuttunut.</p><p>288,45 € → 307,48 € (+19,03 €, +6,60 %).</p>",
+			"summary": "Tuotteen Tua Rita Per Sempre Syrah 2015 hinta on muuttunut. 288,45 € → 307,48 € (+19,03 €, +6,60 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/959994-f0e9d9ccea95.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

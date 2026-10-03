@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Benromach Contrasts Peat Smoke Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/200036/",
+	"feed_url": "https://alkometriikka.fi/rss/200036.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Benromach Contrasts Peat Smoke Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-200036-2026-09-29-66.55",
+			"url": "https://alkometriikka.fi/tuotteet/200036/",
+			"title": "Benromach Contrasts Peat Smoke Single Malt — 65,53 € → 66,55 €",
+			"content_html": "<p>Tuotteen Benromach Contrasts Peat Smoke Single Malt hinta on muuttunut.</p><p>65,53 € → 66,55 € (+1,02 €, +1,56 %).</p>",
+			"summary": "Tuotteen Benromach Contrasts Peat Smoke Single Malt hinta on muuttunut. 65,53 € → 66,55 € (+1,02 €, +1,56 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/200036-b3385b54db8a.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Osborne Carlos I Solera Gran Reserva – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/949487/",
+	"feed_url": "https://alkometriikka.fi/rss/949487.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Osborne Carlos I Solera Gran Reserva.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-949487-2026-09-29-49.98",
+			"url": "https://alkometriikka.fi/tuotteet/949487/",
+			"title": "Osborne Carlos I Solera Gran Reserva — 49,99 € → 49,98 €",
+			"content_html": "<p>Tuotteen Osborne Carlos I Solera Gran Reserva hinta on muuttunut.</p><p>49,99 € → 49,98 € (−0,01 €, −0,02 %).</p>",
+			"summary": "Tuotteen Osborne Carlos I Solera Gran Reserva hinta on muuttunut. 49,99 € → 49,98 € (−0,01 €, −0,02 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/949487-2d790ff4a65d.png",
+			"tags": [
+				"Väkevät",
+				"brandyt"
+			]
+		}
+	]
+}

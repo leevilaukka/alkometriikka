@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nicolas Feuillatte Réserve Exclusive Champagne Brut Magnum – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901298/",
+	"feed_url": "https://alkometriikka.fi/rss/901298.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nicolas Feuillatte Réserve Exclusive Champagne Brut Magnum.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901298-2026-09-29-110.99",
+			"url": "https://alkometriikka.fi/tuotteet/901298/",
+			"title": "Nicolas Feuillatte Réserve Exclusive Champagne Brut Magnum — 109,90 € → 110,99 €",
+			"content_html": "<p>Tuotteen Nicolas Feuillatte Réserve Exclusive Champagne Brut Magnum hinta on muuttunut.</p><p>109,90 € → 110,99 € (+1,09 €, +0,99 %).</p>",
+			"summary": "Tuotteen Nicolas Feuillatte Réserve Exclusive Champagne Brut Magnum hinta on muuttunut. 109,90 € → 110,99 € (+1,09 €, +0,99 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901298-d59bef4a196a.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

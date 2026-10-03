@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glencadam 10 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/928415/",
+	"feed_url": "https://alkometriikka.fi/rss/928415.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glencadam 10 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-928415-2026-09-29-66.08",
+			"url": "https://alkometriikka.fi/tuotteet/928415/",
+			"title": "Glencadam 10 Year Old Single Malt — 65,10 € → 66,08 €",
+			"content_html": "<p>Tuotteen Glencadam 10 Year Old Single Malt hinta on muuttunut.</p><p>65,10 € → 66,08 € (+0,98 €, +1,51 %).</p>",
+			"summary": "Tuotteen Glencadam 10 Year Old Single Malt hinta on muuttunut. 65,10 € → 66,08 € (+0,98 €, +1,51 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/928415-0d7a44f7430a.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

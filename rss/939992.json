@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pérez Barquero G1 Brut Nature – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/939992/",
+	"feed_url": "https://alkometriikka.fi/rss/939992.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pérez Barquero G1 Brut Nature.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-939992-2026-07-18-29.99",
+			"url": "https://alkometriikka.fi/tuotteet/939992/",
+			"title": "Pérez Barquero G1 Brut Nature — 30,45 € → 29,99 €",
+			"content_html": "<p>Tuotteen Pérez Barquero G1 Brut Nature hinta on muuttunut.</p><p>30,45 € → 29,99 € (−0,46 €, −1,51 %).</p>",
+			"summary": "Tuotteen Pérez Barquero G1 Brut Nature hinta on muuttunut. 30,45 € → 29,99 € (−0,46 €, −1,51 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/939992-1ca1919c16c7.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Macallan Harmony Collection Vibrant Oak Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/925291/",
+	"feed_url": "https://alkometriikka.fi/rss/925291.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Macallan Harmony Collection Vibrant Oak Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-925291-2026-09-29-211.96",
+			"url": "https://alkometriikka.fi/tuotteet/925291/",
+			"title": "The Macallan Harmony Collection Vibrant Oak Single Malt — 201,22 € → 211,96 €",
+			"content_html": "<p>Tuotteen The Macallan Harmony Collection Vibrant Oak Single Malt hinta on muuttunut.</p><p>201,22 € → 211,96 € (+10,74 €, +5,34 %).</p>",
+			"summary": "Tuotteen The Macallan Harmony Collection Vibrant Oak Single Malt hinta on muuttunut. 201,22 € → 211,96 € (+10,74 €, +5,34 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/925291-2eccf3306b4b.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

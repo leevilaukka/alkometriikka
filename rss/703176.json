@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Früh Kölsch tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/703176/",
+	"feed_url": "https://alkometriikka.fi/rss/703176.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Früh Kölsch tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-703176-2026-09-29-4.69",
+			"url": "https://alkometriikka.fi/tuotteet/703176/",
+			"title": "Früh Kölsch tölkki — 4,29 € → 4,69 €",
+			"content_html": "<p>Tuotteen Früh Kölsch tölkki hinta on muuttunut.</p><p>4,29 € → 4,69 € (+0,40 €, +9,32 %).</p>",
+			"summary": "Tuotteen Früh Kölsch tölkki hinta on muuttunut. 4,29 € → 4,69 € (+0,40 €, +9,32 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/703176-30755fe44681.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

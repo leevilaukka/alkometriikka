@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Authors' Soju – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/919683/",
+	"feed_url": "https://alkometriikka.fi/rss/919683.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Authors' Soju.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-919683-2026-07-18-20",
+			"url": "https://alkometriikka.fi/tuotteet/919683/",
+			"title": "Authors' Soju — 19,47 € → 20,00 €",
+			"content_html": "<p>Tuotteen Authors' Soju hinta on muuttunut.</p><p>19,47 € → 20,00 € (+0,53 €, +2,72 %).</p>",
+			"summary": "Tuotteen Authors' Soju hinta on muuttunut. 19,47 € → 20,00 € (+0,53 €, +2,72 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/919683-699485369af9.png",
+			"tags": [
+				"Väkevät",
+				"viina"
+			]
+		}
+	]
+}

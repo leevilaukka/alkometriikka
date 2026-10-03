@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château Maucamps 2011 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/950054/",
+	"feed_url": "https://alkometriikka.fi/rss/950054.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château Maucamps 2011.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-950054-2026-07-18-27.49",
+			"url": "https://alkometriikka.fi/tuotteet/950054/",
+			"title": "Château Maucamps 2011 — 27,45 € → 27,49 €",
+			"content_html": "<p>Tuotteen Château Maucamps 2011 hinta on muuttunut.</p><p>27,45 € → 27,49 € (+0,04 €, +0,15 %).</p>",
+			"summary": "Tuotteen Château Maucamps 2011 hinta on muuttunut. 27,45 € → 27,49 € (+0,04 €, +0,15 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/950054-96d948af4037.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

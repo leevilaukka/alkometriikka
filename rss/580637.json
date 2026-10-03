@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Weinreich Grauburgunder 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/580637/",
+	"feed_url": "https://alkometriikka.fi/rss/580637.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Weinreich Grauburgunder 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-580637-2026-09-29-17.5",
+			"url": "https://alkometriikka.fi/tuotteet/580637/",
+			"title": "Weinreich Grauburgunder 2024 — 17,46 € → 17,50 €",
+			"content_html": "<p>Tuotteen Weinreich Grauburgunder 2024 hinta on muuttunut.</p><p>17,46 € → 17,50 € (+0,04 €, +0,23 %).</p>",
+			"summary": "Tuotteen Weinreich Grauburgunder 2024 hinta on muuttunut. 17,46 € → 17,50 € (+0,04 €, +0,23 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/580637-a0881409309f.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

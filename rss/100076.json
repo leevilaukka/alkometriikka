@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Leijona Viina 37,5% muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/100076/",
+	"feed_url": "https://alkometriikka.fi/rss/100076.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Leijona Viina 37,5% muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-100076-2026-09-29-21.89",
+			"url": "https://alkometriikka.fi/tuotteet/100076/",
+			"title": "Leijona Viina 37,5% muovipullo — 21,69 € → 21,89 €",
+			"content_html": "<p>Tuotteen Leijona Viina 37,5% muovipullo hinta on muuttunut.</p><p>21,69 € → 21,89 € (+0,20 €, +0,92 %).</p>",
+			"summary": "Tuotteen Leijona Viina 37,5% muovipullo hinta on muuttunut. 21,69 € → 21,89 € (+0,20 €, +0,92 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/100076-d084c7d7066b.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

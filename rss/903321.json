@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Chairman's Reserve 1931 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903321/",
+	"feed_url": "https://alkometriikka.fi/rss/903321.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Chairman's Reserve 1931.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903321-2026-09-29-132.4",
+			"url": "https://alkometriikka.fi/tuotteet/903321/",
+			"title": "Chairman's Reserve 1931 — 127,01 € → 132,40 €",
+			"content_html": "<p>Tuotteen Chairman's Reserve 1931 hinta on muuttunut.</p><p>127,01 € → 132,40 € (+5,39 €, +4,24 %).</p>",
+			"summary": "Tuotteen Chairman's Reserve 1931 hinta on muuttunut. 127,01 € → 132,40 € (+5,39 €, +4,24 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903321-c4be2527741d.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

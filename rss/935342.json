@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Georg Mosbacher Riesling Trocken 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/935342/",
+	"feed_url": "https://alkometriikka.fi/rss/935342.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Georg Mosbacher Riesling Trocken 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-935342-2026-07-18-29.5",
+			"url": "https://alkometriikka.fi/tuotteet/935342/",
+			"title": "Georg Mosbacher Riesling Trocken 2024 — 29,44 € → 29,50 €",
+			"content_html": "<p>Tuotteen Georg Mosbacher Riesling Trocken 2024 hinta on muuttunut.</p><p>29,44 € → 29,50 € (+0,06 €, +0,20 %).</p>",
+			"summary": "Tuotteen Georg Mosbacher Riesling Trocken 2024 hinta on muuttunut. 29,44 € → 29,50 € (+0,06 €, +0,20 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/935342-5a3c7696c55c.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

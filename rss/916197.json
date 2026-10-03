@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Impromptu Sauvignon Blanc 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/916197/",
+	"feed_url": "https://alkometriikka.fi/rss/916197.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Impromptu Sauvignon Blanc 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-916197-2026-09-29-37.99",
+			"url": "https://alkometriikka.fi/tuotteet/916197/",
+			"title": "Impromptu Sauvignon Blanc 2023 — 36,89 € → 37,99 €",
+			"content_html": "<p>Tuotteen Impromptu Sauvignon Blanc 2023 hinta on muuttunut.</p><p>36,89 € → 37,99 € (+1,10 €, +2,98 %).</p>",
+			"summary": "Tuotteen Impromptu Sauvignon Blanc 2023 hinta on muuttunut. 36,89 € → 37,99 € (+1,10 €, +2,98 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/916197-fb777846cc61.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

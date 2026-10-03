@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Noita Hex Bag 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/912188/",
+	"feed_url": "https://alkometriikka.fi/rss/912188.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Noita Hex Bag 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-912188-2026-02-02-19.89",
+			"url": "https://alkometriikka.fi/tuotteet/912188/",
+			"title": "Noita Hex Bag 2025 — 19,99 € → 19,89 €",
+			"content_html": "<p>Tuotteen Noita Hex Bag 2025 hinta on muuttunut.</p><p>19,99 € → 19,89 € (−0,10 €, −0,50 %).</p>",
+			"summary": "Tuotteen Noita Hex Bag 2025 hinta on muuttunut. 19,99 € → 19,89 € (−0,10 €, −0,50 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/912188-5de834506aba.png",
+			"tags": [
+				"Viinit",
+				"hedelmä- ja aromatisoidut viinit"
+			]
+		},
+		{
+			"id": "alkometriikka-912188-2026-02-02-19.99",
+			"url": "https://alkometriikka.fi/tuotteet/912188/",
+			"title": "Noita Hex Bag 2025 — 19,89 € → 19,99 €",
+			"content_html": "<p>Tuotteen Noita Hex Bag 2025 hinta on muuttunut.</p><p>19,89 € → 19,99 € (+0,10 €, +0,50 %).</p>",
+			"summary": "Tuotteen Noita Hex Bag 2025 hinta on muuttunut. 19,89 € → 19,99 € (+0,10 €, +0,50 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/912188-5de834506aba.png",
+			"tags": [
+				"Viinit",
+				"hedelmä- ja aromatisoidut viinit"
+			]
+		}
+	]
+}

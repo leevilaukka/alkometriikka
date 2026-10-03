@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Craven Cinsaut 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901281/",
+	"feed_url": "https://alkometriikka.fi/rss/901281.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Craven Cinsaut 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901281-2026-07-18-24.99",
+			"url": "https://alkometriikka.fi/tuotteet/901281/",
+			"title": "Craven Cinsaut 2023 — 23,98 € → 24,99 €",
+			"content_html": "<p>Tuotteen Craven Cinsaut 2023 hinta on muuttunut.</p><p>23,98 € → 24,99 € (+1,01 €, +4,21 %).</p>",
+			"summary": "Tuotteen Craven Cinsaut 2023 hinta on muuttunut. 23,98 € → 24,99 € (+1,01 €, +4,21 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901281-9d242848dd66.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

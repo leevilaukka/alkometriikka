@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Castillo Ygay Gran Reserva Especial 2012 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/934858/",
+	"feed_url": "https://alkometriikka.fi/rss/934858.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Castillo Ygay Gran Reserva Especial 2012.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-934858-2026-09-29-299.95",
+			"url": "https://alkometriikka.fi/tuotteet/934858/",
+			"title": "Castillo Ygay Gran Reserva Especial 2012 — 259,99 € → 299,95 €",
+			"content_html": "<p>Tuotteen Castillo Ygay Gran Reserva Especial 2012 hinta on muuttunut.</p><p>259,99 € → 299,95 € (+39,96 €, +15,37 %).</p>",
+			"summary": "Tuotteen Castillo Ygay Gran Reserva Especial 2012 hinta on muuttunut. 259,99 € → 299,95 € (+39,96 €, +15,37 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/934858-c5316bc0bf38.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

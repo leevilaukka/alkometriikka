@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Alonso & Pedrajo Valdinero Tinto Reserva 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903284/",
+	"feed_url": "https://alkometriikka.fi/rss/903284.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Alonso & Pedrajo Valdinero Tinto Reserva 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903284-2026-09-29-93.92",
+			"url": "https://alkometriikka.fi/tuotteet/903284/",
+			"title": "Alonso & Pedrajo Valdinero Tinto Reserva 2019 — 89,89 € → 93,92 €",
+			"content_html": "<p>Tuotteen Alonso & Pedrajo Valdinero Tinto Reserva 2019 hinta on muuttunut.</p><p>89,89 € → 93,92 € (+4,03 €, +4,48 %).</p>",
+			"summary": "Tuotteen Alonso & Pedrajo Valdinero Tinto Reserva 2019 hinta on muuttunut. 89,89 € → 93,92 € (+4,03 €, +4,48 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903284-8d7b9cdab256.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cognac Park Mizunara – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/926948/",
+	"feed_url": "https://alkometriikka.fi/rss/926948.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cognac Park Mizunara.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-926948-2026-09-29-76.88",
+			"url": "https://alkometriikka.fi/tuotteet/926948/",
+			"title": "Cognac Park Mizunara — 75,12 € → 76,88 €",
+			"content_html": "<p>Tuotteen Cognac Park Mizunara hinta on muuttunut.</p><p>75,12 € → 76,88 € (+1,76 €, +2,34 %).</p>",
+			"summary": "Tuotteen Cognac Park Mizunara hinta on muuttunut. 75,12 € → 76,88 € (+1,76 €, +2,34 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/926948-bd381821a91c.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

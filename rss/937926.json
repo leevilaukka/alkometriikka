@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Laurent Ponsot Echezeaux Cuvée de l'Érable 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/937926/",
+	"feed_url": "https://alkometriikka.fi/rss/937926.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Laurent Ponsot Echezeaux Cuvée de l'Érable 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-937926-2026-09-29-636.04",
+			"url": "https://alkometriikka.fi/tuotteet/937926/",
+			"title": "Laurent Ponsot Echezeaux Cuvée de l'Érable 2021 — 593,85 € → 636,04 €",
+			"content_html": "<p>Tuotteen Laurent Ponsot Echezeaux Cuvée de l'Érable 2021 hinta on muuttunut.</p><p>593,85 € → 636,04 € (+42,19 €, +7,10 %).</p>",
+			"summary": "Tuotteen Laurent Ponsot Echezeaux Cuvée de l'Érable 2021 hinta on muuttunut. 593,85 € → 636,04 € (+42,19 €, +7,10 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/937926-d4cbe94c81fa.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

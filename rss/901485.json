@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Uncorked Côtes du Rhone Cuvée Spéciale hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901485/",
+	"feed_url": "https://alkometriikka.fi/rss/901485.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Uncorked Côtes du Rhone Cuvée Spéciale hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901485-2026-07-18-38.97",
+			"url": "https://alkometriikka.fi/tuotteet/901485/",
+			"title": "Uncorked Côtes du Rhone Cuvée Spéciale hanapakkaus — 39,84 € → 38,97 €",
+			"content_html": "<p>Tuotteen Uncorked Côtes du Rhone Cuvée Spéciale hanapakkaus hinta on muuttunut.</p><p>39,84 € → 38,97 € (−0,87 €, −2,18 %).</p>",
+			"summary": "Tuotteen Uncorked Côtes du Rhone Cuvée Spéciale hanapakkaus hinta on muuttunut. 39,84 € → 38,97 € (−0,87 €, −2,18 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901485-4f7160daadb9.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

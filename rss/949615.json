@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Orenda Syrah 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/949615/",
+	"feed_url": "https://alkometriikka.fi/rss/949615.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Orenda Syrah 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-949615-2026-09-29-67.83",
+			"url": "https://alkometriikka.fi/tuotteet/949615/",
+			"title": "Orenda Syrah 2019 — 65,45 € → 67,83 €",
+			"content_html": "<p>Tuotteen Orenda Syrah 2019 hinta on muuttunut.</p><p>65,45 € → 67,83 € (+2,38 €, +3,64 %).</p>",
+			"summary": "Tuotteen Orenda Syrah 2019 hinta on muuttunut. 65,45 € → 67,83 € (+2,38 €, +3,64 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/949615-8ea94c4c3259.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

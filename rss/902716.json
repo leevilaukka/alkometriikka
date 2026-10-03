@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – E. Guigal Crozes-Hermitage 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902716/",
+	"feed_url": "https://alkometriikka.fi/rss/902716.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: E. Guigal Crozes-Hermitage 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902716-2026-09-29-32.68",
+			"url": "https://alkometriikka.fi/tuotteet/902716/",
+			"title": "E. Guigal Crozes-Hermitage 2022 — 32,48 € → 32,68 €",
+			"content_html": "<p>Tuotteen E. Guigal Crozes-Hermitage 2022 hinta on muuttunut.</p><p>32,48 € → 32,68 € (+0,20 €, +0,62 %).</p>",
+			"summary": "Tuotteen E. Guigal Crozes-Hermitage 2022 hinta on muuttunut. 32,48 € → 32,68 € (+0,20 €, +0,62 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902716-339639a405f7.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

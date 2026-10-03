@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Sidewood Pinot Noir 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/451727/",
+	"feed_url": "https://alkometriikka.fi/rss/451727.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Sidewood Pinot Noir 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-451727-2026-02-02-20.54",
+			"url": "https://alkometriikka.fi/tuotteet/451727/",
+			"title": "Sidewood Pinot Noir 2023 — 20,64 € → 20,54 €",
+			"content_html": "<p>Tuotteen Sidewood Pinot Noir 2023 hinta on muuttunut.</p><p>20,64 € → 20,54 € (−0,10 €, −0,48 %).</p>",
+			"summary": "Tuotteen Sidewood Pinot Noir 2023 hinta on muuttunut. 20,64 € → 20,54 € (−0,10 €, −0,48 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/451727-b5d660605d98.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-451727-2026-02-02-20.64",
+			"url": "https://alkometriikka.fi/tuotteet/451727/",
+			"title": "Sidewood Pinot Noir 2023 — 20,54 € → 20,64 €",
+			"content_html": "<p>Tuotteen Sidewood Pinot Noir 2023 hinta on muuttunut.</p><p>20,54 € → 20,64 € (+0,10 €, +0,49 %).</p>",
+			"summary": "Tuotteen Sidewood Pinot Noir 2023 hinta on muuttunut. 20,54 € → 20,64 € (+0,10 €, +0,49 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/451727-b5d660605d98.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

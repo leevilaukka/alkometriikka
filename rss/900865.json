@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – NOY Classic – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900865/",
+	"feed_url": "https://alkometriikka.fi/rss/900865.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: NOY Classic.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900865-2026-09-29-49.23",
+			"url": "https://alkometriikka.fi/tuotteet/900865/",
+			"title": "NOY Classic — 48,25 € → 49,23 €",
+			"content_html": "<p>Tuotteen NOY Classic hinta on muuttunut.</p><p>48,25 € → 49,23 € (+0,98 €, +2,03 %).</p>",
+			"summary": "Tuotteen NOY Classic hinta on muuttunut. 48,25 € → 49,23 € (+0,98 €, +2,03 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900865-65aa4b40a450.png",
+			"tags": [
+				"Väkevät",
+				"brandyt"
+			]
+		}
+	]
+}

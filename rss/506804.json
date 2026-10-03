@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Joseph Drouhin Pouilly-Vinzelles 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/506804/",
+	"feed_url": "https://alkometriikka.fi/rss/506804.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Joseph Drouhin Pouilly-Vinzelles 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-506804-2026-07-18-17.98",
+			"url": "https://alkometriikka.fi/tuotteet/506804/",
+			"title": "Joseph Drouhin Pouilly-Vinzelles 2019 — 17,71 € → 17,98 €",
+			"content_html": "<p>Tuotteen Joseph Drouhin Pouilly-Vinzelles 2019 hinta on muuttunut.</p><p>17,71 € → 17,98 € (+0,27 €, +1,52 %).</p>",
+			"summary": "Tuotteen Joseph Drouhin Pouilly-Vinzelles 2019 hinta on muuttunut. 17,71 € → 17,98 € (+0,27 €, +1,52 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/506804-f0c2510a6dab.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

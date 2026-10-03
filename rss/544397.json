@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gisselbrecht Riesling Organic 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/544397/",
+	"feed_url": "https://alkometriikka.fi/rss/544397.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gisselbrecht Riesling Organic 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-544397-2026-07-18-14.48",
+			"url": "https://alkometriikka.fi/tuotteet/544397/",
+			"title": "Gisselbrecht Riesling Organic 2023 — 14,44 € → 14,48 €",
+			"content_html": "<p>Tuotteen Gisselbrecht Riesling Organic 2023 hinta on muuttunut.</p><p>14,44 € → 14,48 € (+0,04 €, +0,28 %).</p>",
+			"summary": "Tuotteen Gisselbrecht Riesling Organic 2023 hinta on muuttunut. 14,44 € → 14,48 € (+0,04 €, +0,28 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/544397-cf0a8cafd9b2.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

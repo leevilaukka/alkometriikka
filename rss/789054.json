@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Koff tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/789054/",
+	"feed_url": "https://alkometriikka.fi/rss/789054.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Koff tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-789054-2026-09-29-1.69",
+			"url": "https://alkometriikka.fi/tuotteet/789054/",
+			"title": "Koff tölkki — 1,68 € → 1,69 €",
+			"content_html": "<p>Tuotteen Koff tölkki hinta on muuttunut.</p><p>1,68 € → 1,69 € (+0,01 €, +0,60 %).</p>",
+			"summary": "Tuotteen Koff tölkki hinta on muuttunut. 1,68 € → 1,69 € (+0,01 €, +0,60 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/789054-fa167c998d14.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-789054-2026-07-18-1.68",
+			"url": "https://alkometriikka.fi/tuotteet/789054/",
+			"title": "Koff tölkki — 1,65 € → 1,68 €",
+			"content_html": "<p>Tuotteen Koff tölkki hinta on muuttunut.</p><p>1,65 € → 1,68 € (+0,03 €, +1,82 %).</p>",
+			"summary": "Tuotteen Koff tölkki hinta on muuttunut. 1,65 € → 1,68 € (+0,03 €, +1,82 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/789054-fa167c998d14.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Famous Grouse – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/953188/",
+	"feed_url": "https://alkometriikka.fi/rss/953188.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Famous Grouse.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-953188-2026-09-29-224.99",
+			"url": "https://alkometriikka.fi/tuotteet/953188/",
+			"title": "The Famous Grouse — 219,95 € → 224,99 €",
+			"content_html": "<p>Tuotteen The Famous Grouse hinta on muuttunut.</p><p>219,95 € → 224,99 € (+5,04 €, +2,29 %).</p>",
+			"summary": "Tuotteen The Famous Grouse hinta on muuttunut. 219,95 € → 224,99 € (+5,04 €, +2,29 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/953188-d051bb686921.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

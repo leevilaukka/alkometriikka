@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Olvi Tuplapukki 6-pack tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/792848/",
+	"feed_url": "https://alkometriikka.fi/rss/792848.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Olvi Tuplapukki 6-pack tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-792848-2026-02-02-24.9",
+			"url": "https://alkometriikka.fi/tuotteet/792848/",
+			"title": "Olvi Tuplapukki 6-pack tölkki — 25,80 € → 24,90 €",
+			"content_html": "<p>Tuotteen Olvi Tuplapukki 6-pack tölkki hinta on muuttunut.</p><p>25,80 € → 24,90 € (−0,90 €, −3,49 %).</p>",
+			"summary": "Tuotteen Olvi Tuplapukki 6-pack tölkki hinta on muuttunut. 25,80 € → 24,90 € (−0,90 €, −3,49 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/792848-794ad7da279e.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-792848-2026-02-02-25.8",
+			"url": "https://alkometriikka.fi/tuotteet/792848/",
+			"title": "Olvi Tuplapukki 6-pack tölkki — 24,90 € → 25,80 €",
+			"content_html": "<p>Tuotteen Olvi Tuplapukki 6-pack tölkki hinta on muuttunut.</p><p>24,90 € → 25,80 € (+0,90 €, +3,61 %).</p>",
+			"summary": "Tuotteen Olvi Tuplapukki 6-pack tölkki hinta on muuttunut. 24,90 € → 25,80 € (+0,90 €, +3,61 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/792848-794ad7da279e.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

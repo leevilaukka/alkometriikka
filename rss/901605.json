@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glen Dochus Highland Blend – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901605/",
+	"feed_url": "https://alkometriikka.fi/rss/901605.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glen Dochus Highland Blend.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901605-2026-07-18-28.99",
+			"url": "https://alkometriikka.fi/tuotteet/901605/",
+			"title": "Glen Dochus Highland Blend — 31,27 € → 28,99 €",
+			"content_html": "<p>Tuotteen Glen Dochus Highland Blend hinta on muuttunut.</p><p>31,27 € → 28,99 € (−2,28 €, −7,29 %).</p>",
+			"summary": "Tuotteen Glen Dochus Highland Blend hinta on muuttunut. 31,27 € → 28,99 € (−2,28 €, −7,29 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901605-1ea4bd6beaa8.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

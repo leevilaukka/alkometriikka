@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jack Daniel's Bonded – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/927183/",
+	"feed_url": "https://alkometriikka.fi/rss/927183.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jack Daniel's Bonded.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-927183-2026-09-30-62.98",
+			"url": "https://alkometriikka.fi/tuotteet/927183/",
+			"title": "Jack Daniel's Bonded — 59,99 € → 62,98 €",
+			"content_html": "<p>Tuotteen Jack Daniel's Bonded hinta on muuttunut.</p><p>59,99 € → 62,98 € (+2,99 €, +4,98 %).</p>",
+			"summary": "Tuotteen Jack Daniel's Bonded hinta on muuttunut. 59,99 € → 62,98 € (+2,99 €, +4,98 %).",
+			"date_published": "2026-09-30T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/927183-8fded30908f9.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

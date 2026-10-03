@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lanson Le Black Création Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/008681/",
+	"feed_url": "https://alkometriikka.fi/rss/008681.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lanson Le Black Création Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-008681-2026-09-29-58.99",
+			"url": "https://alkometriikka.fi/tuotteet/008681/",
+			"title": "Lanson Le Black Création Champagne Brut — 56,99 € → 58,99 €",
+			"content_html": "<p>Tuotteen Lanson Le Black Création Champagne Brut hinta on muuttunut.</p><p>56,99 € → 58,99 € (+2,00 €, +3,51 %).</p>",
+			"summary": "Tuotteen Lanson Le Black Création Champagne Brut hinta on muuttunut. 56,99 € → 58,99 € (+2,00 €, +3,51 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/008681-a236838c862d.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

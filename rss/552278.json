@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – André Clouet Grande Reserve Blanc de Noirs Magnum Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/552278/",
+	"feed_url": "https://alkometriikka.fi/rss/552278.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: André Clouet Grande Reserve Blanc de Noirs Magnum Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-552278-2026-09-29-85.99",
+			"url": "https://alkometriikka.fi/tuotteet/552278/",
+			"title": "André Clouet Grande Reserve Blanc de Noirs Magnum Champagne Brut — 84,98 € → 85,99 €",
+			"content_html": "<p>Tuotteen André Clouet Grande Reserve Blanc de Noirs Magnum Champagne Brut hinta on muuttunut.</p><p>84,98 € → 85,99 € (+1,01 €, +1,19 %).</p>",
+			"summary": "Tuotteen André Clouet Grande Reserve Blanc de Noirs Magnum Champagne Brut hinta on muuttunut. 84,98 € → 85,99 € (+1,01 €, +1,19 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/552278-348ccfaa3ce5.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-552278-2026-07-18-84.98",
+			"url": "https://alkometriikka.fi/tuotteet/552278/",
+			"title": "André Clouet Grande Reserve Blanc de Noirs Magnum Champagne Brut — 82,91 € → 84,98 €",
+			"content_html": "<p>Tuotteen André Clouet Grande Reserve Blanc de Noirs Magnum Champagne Brut hinta on muuttunut.</p><p>82,91 € → 84,98 € (+2,07 €, +2,50 %).</p>",
+			"summary": "Tuotteen André Clouet Grande Reserve Blanc de Noirs Magnum Champagne Brut hinta on muuttunut. 82,91 € → 84,98 € (+2,07 €, +2,50 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/552278-348ccfaa3ce5.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Scandinavian Sitruuna LakuShot muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/290256/",
+	"feed_url": "https://alkometriikka.fi/rss/290256.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Scandinavian Sitruuna LakuShot muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-290256-2026-09-29-13.05",
+			"url": "https://alkometriikka.fi/tuotteet/290256/",
+			"title": "Scandinavian Sitruuna LakuShot muovipullo — 12,96 € → 13,05 €",
+			"content_html": "<p>Tuotteen Scandinavian Sitruuna LakuShot muovipullo hinta on muuttunut.</p><p>12,96 € → 13,05 € (+0,09 €, +0,69 %).</p>",
+			"summary": "Tuotteen Scandinavian Sitruuna LakuShot muovipullo hinta on muuttunut. 12,96 € → 13,05 € (+0,09 €, +0,69 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/290256-fe5be21fd450.png",
+			"tags": [
+				"Väkevät",
+				"salmiakkiliköörit"
+			]
+		}
+	]
+}

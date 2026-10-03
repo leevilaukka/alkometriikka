@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tormaresca Chardonnay 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901211/",
+	"feed_url": "https://alkometriikka.fi/rss/901211.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tormaresca Chardonnay 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901211-2026-07-18-17.48",
+			"url": "https://alkometriikka.fi/tuotteet/901211/",
+			"title": "Tormaresca Chardonnay 2025 — 17,44 € → 17,48 €",
+			"content_html": "<p>Tuotteen Tormaresca Chardonnay 2025 hinta on muuttunut.</p><p>17,44 € → 17,48 € (+0,04 €, +0,23 %).</p>",
+			"summary": "Tuotteen Tormaresca Chardonnay 2025 hinta on muuttunut. 17,44 € → 17,48 € (+0,04 €, +0,23 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901211-3a8b7479f170.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

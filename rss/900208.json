@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Macallan A Night on Earth in Jerez De La Frontera Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900208/",
+	"feed_url": "https://alkometriikka.fi/rss/900208.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Macallan A Night on Earth in Jerez De La Frontera Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900208-2026-09-29-154.45",
+			"url": "https://alkometriikka.fi/tuotteet/900208/",
+			"title": "The Macallan A Night on Earth in Jerez De La Frontera Single Malt — 147,46 € → 154,45 €",
+			"content_html": "<p>Tuotteen The Macallan A Night on Earth in Jerez De La Frontera Single Malt hinta on muuttunut.</p><p>147,46 € → 154,45 € (+6,99 €, +4,74 %).</p>",
+			"summary": "Tuotteen The Macallan A Night on Earth in Jerez De La Frontera Single Malt hinta on muuttunut. 147,46 € → 154,45 € (+6,99 €, +4,74 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900208-cdf630b4a633.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

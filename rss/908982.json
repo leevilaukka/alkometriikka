@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The GlenDronach Revival 15 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/908982/",
+	"feed_url": "https://alkometriikka.fi/rss/908982.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The GlenDronach Revival 15 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-908982-2026-09-29-93",
+			"url": "https://alkometriikka.fi/tuotteet/908982/",
+			"title": "The GlenDronach Revival 15 Year Old Single Malt — 90,00 € → 93,00 €",
+			"content_html": "<p>Tuotteen The GlenDronach Revival 15 Year Old Single Malt hinta on muuttunut.</p><p>90,00 € → 93,00 € (+3,00 €, +3,33 %).</p>",
+			"summary": "Tuotteen The GlenDronach Revival 15 Year Old Single Malt hinta on muuttunut. 90,00 € → 93,00 € (+3,00 €, +3,33 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/908982-2f353a3b63ab.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Connemara Peated Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/189227/",
+	"feed_url": "https://alkometriikka.fi/rss/189227.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Connemara Peated Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-189227-2026-09-29-49.82",
+			"url": "https://alkometriikka.fi/tuotteet/189227/",
+			"title": "Connemara Peated Single Malt — 49,72 € → 49,82 €",
+			"content_html": "<p>Tuotteen Connemara Peated Single Malt hinta on muuttunut.</p><p>49,72 € → 49,82 € (+0,10 €, +0,20 %).</p>",
+			"summary": "Tuotteen Connemara Peated Single Malt hinta on muuttunut. 49,72 € → 49,82 € (+0,10 €, +0,20 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/189227-dd213b323e1e.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

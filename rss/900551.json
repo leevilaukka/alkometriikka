@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Michter's Small Batch Sour Mash – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900551/",
+	"feed_url": "https://alkometriikka.fi/rss/900551.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Michter's Small Batch Sour Mash.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900551-2026-09-29-79.9",
+			"url": "https://alkometriikka.fi/tuotteet/900551/",
+			"title": "Michter's Small Batch Sour Mash — 78,19 € → 79,90 €",
+			"content_html": "<p>Tuotteen Michter's Small Batch Sour Mash hinta on muuttunut.</p><p>78,19 € → 79,90 € (+1,71 €, +2,19 %).</p>",
+			"summary": "Tuotteen Michter's Small Batch Sour Mash hinta on muuttunut. 78,19 € → 79,90 € (+1,71 €, +2,19 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900551-0ef4da76406c.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		},
+		{
+			"id": "alkometriikka-900551-2026-07-18-78.19",
+			"url": "https://alkometriikka.fi/tuotteet/900551/",
+			"title": "Michter's Small Batch Sour Mash — 78,27 € → 78,19 €",
+			"content_html": "<p>Tuotteen Michter's Small Batch Sour Mash hinta on muuttunut.</p><p>78,27 € → 78,19 € (−0,08 €, −0,10 %).</p>",
+			"summary": "Tuotteen Michter's Small Batch Sour Mash hinta on muuttunut. 78,27 € → 78,19 € (−0,08 €, −0,10 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900551-0ef4da76406c.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Come Hell Or High Water Reserva Honey & Orange – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/931723/",
+	"feed_url": "https://alkometriikka.fi/rss/931723.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Come Hell Or High Water Reserva Honey & Orange.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-931723-2026-09-29-49.99",
+			"url": "https://alkometriikka.fi/tuotteet/931723/",
+			"title": "Come Hell Or High Water Reserva Honey & Orange — 49,90 € → 49,99 €",
+			"content_html": "<p>Tuotteen Come Hell Or High Water Reserva Honey & Orange hinta on muuttunut.</p><p>49,90 € → 49,99 € (+0,09 €, +0,18 %).</p>",
+			"summary": "Tuotteen Come Hell Or High Water Reserva Honey & Orange hinta on muuttunut. 49,90 € → 49,99 € (+0,09 €, +0,18 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/931723-45964f76b24b.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		},
+		{
+			"id": "alkometriikka-931723-2026-07-18-49.9",
+			"url": "https://alkometriikka.fi/tuotteet/931723/",
+			"title": "Come Hell Or High Water Reserva Honey & Orange — 50,21 € → 49,90 €",
+			"content_html": "<p>Tuotteen Come Hell Or High Water Reserva Honey & Orange hinta on muuttunut.</p><p>50,21 € → 49,90 € (−0,31 €, −0,62 %).</p>",
+			"summary": "Tuotteen Come Hell Or High Water Reserva Honey & Orange hinta on muuttunut. 50,21 € → 49,90 € (−0,31 €, −0,62 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/931723-45964f76b24b.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

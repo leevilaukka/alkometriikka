@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Porto Gran Cruz Aged 40 Years – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/931897/",
+	"feed_url": "https://alkometriikka.fi/rss/931897.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Porto Gran Cruz Aged 40 Years.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-931897-2026-09-29-125.5",
+			"url": "https://alkometriikka.fi/tuotteet/931897/",
+			"title": "Porto Gran Cruz Aged 40 Years — 119,46 € → 125,50 €",
+			"content_html": "<p>Tuotteen Porto Gran Cruz Aged 40 Years hinta on muuttunut.</p><p>119,46 € → 125,50 € (+6,04 €, +5,06 %).</p>",
+			"summary": "Tuotteen Porto Gran Cruz Aged 40 Years hinta on muuttunut. 119,46 € → 125,50 € (+6,04 €, +5,06 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/931897-f17fee60114d.png",
+			"tags": [
+				"Välituotteet",
+				"portviinit"
+			]
+		}
+	]
+}

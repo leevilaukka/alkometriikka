@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Campillo Blanco Fermentado en Barrica 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/950033/",
+	"feed_url": "https://alkometriikka.fi/rss/950033.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Campillo Blanco Fermentado en Barrica 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-950033-2026-09-29-17.48",
+			"url": "https://alkometriikka.fi/tuotteet/950033/",
+			"title": "Campillo Blanco Fermentado en Barrica 2024 — 17,40 € → 17,48 €",
+			"content_html": "<p>Tuotteen Campillo Blanco Fermentado en Barrica 2024 hinta on muuttunut.</p><p>17,40 € → 17,48 € (+0,08 €, +0,46 %).</p>",
+			"summary": "Tuotteen Campillo Blanco Fermentado en Barrica 2024 hinta on muuttunut. 17,40 € → 17,48 € (+0,08 €, +0,46 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/950033-b95acdb5c42b.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

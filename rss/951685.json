@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bernhard Wineck-Schlossberg Grand Cru 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/951685/",
+	"feed_url": "https://alkometriikka.fi/rss/951685.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bernhard Wineck-Schlossberg Grand Cru 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-951685-2026-09-29-37.2",
+			"url": "https://alkometriikka.fi/tuotteet/951685/",
+			"title": "Bernhard Wineck-Schlossberg Grand Cru 2021 — 37,13 € → 37,20 €",
+			"content_html": "<p>Tuotteen Bernhard Wineck-Schlossberg Grand Cru 2021 hinta on muuttunut.</p><p>37,13 € → 37,20 € (+0,07 €, +0,19 %).</p>",
+			"summary": "Tuotteen Bernhard Wineck-Schlossberg Grand Cru 2021 hinta on muuttunut. 37,13 € → 37,20 € (+0,07 €, +0,19 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/951685-77a804a0c679.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

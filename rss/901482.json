@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kingpin Premium White Blend hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901482/",
+	"feed_url": "https://alkometriikka.fi/rss/901482.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kingpin Premium White Blend hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901482-2026-07-18-28.98",
+			"url": "https://alkometriikka.fi/tuotteet/901482/",
+			"title": "Kingpin Premium White Blend hanapakkaus — 29,36 € → 28,98 €",
+			"content_html": "<p>Tuotteen Kingpin Premium White Blend hanapakkaus hinta on muuttunut.</p><p>29,36 € → 28,98 € (−0,38 €, −1,29 %).</p>",
+			"summary": "Tuotteen Kingpin Premium White Blend hanapakkaus hinta on muuttunut. 29,36 € → 28,98 € (−0,38 €, −1,29 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901482-86c9f713633b.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

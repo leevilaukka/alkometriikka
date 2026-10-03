@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ruinart Rosé Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/958807/",
+	"feed_url": "https://alkometriikka.fi/rss/958807.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ruinart Rosé Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-958807-2026-09-29-113.59",
+			"url": "https://alkometriikka.fi/tuotteet/958807/",
+			"title": "Ruinart Rosé Champagne Brut — 107,98 € → 113,59 €",
+			"content_html": "<p>Tuotteen Ruinart Rosé Champagne Brut hinta on muuttunut.</p><p>107,98 € → 113,59 € (+5,61 €, +5,20 %).</p>",
+			"summary": "Tuotteen Ruinart Rosé Champagne Brut hinta on muuttunut. 107,98 € → 113,59 € (+5,61 €, +5,20 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/958807-d758d996384f.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-958807-2026-07-18-107.98",
+			"url": "https://alkometriikka.fi/tuotteet/958807/",
+			"title": "Ruinart Rosé Champagne Brut — 106,25 € → 107,98 €",
+			"content_html": "<p>Tuotteen Ruinart Rosé Champagne Brut hinta on muuttunut.</p><p>106,25 € → 107,98 € (+1,73 €, +1,63 %).</p>",
+			"summary": "Tuotteen Ruinart Rosé Champagne Brut hinta on muuttunut. 106,25 € → 107,98 € (+1,73 €, +1,63 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/958807-d758d996384f.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Barons de Rothschild Blanc de Blanc Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/907473/",
+	"feed_url": "https://alkometriikka.fi/rss/907473.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Barons de Rothschild Blanc de Blanc Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-907473-2026-09-29-110.8",
+			"url": "https://alkometriikka.fi/tuotteet/907473/",
+			"title": "Barons de Rothschild Blanc de Blanc Champagne Brut — 105,59 € → 110,80 €",
+			"content_html": "<p>Tuotteen Barons de Rothschild Blanc de Blanc Champagne Brut hinta on muuttunut.</p><p>105,59 € → 110,80 € (+5,21 €, +4,93 %).</p>",
+			"summary": "Tuotteen Barons de Rothschild Blanc de Blanc Champagne Brut hinta on muuttunut. 105,59 € → 110,80 € (+5,21 €, +4,93 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/907473-acac0ff23ad5.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

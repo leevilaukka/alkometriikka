@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mallassepät Umbra – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902920/",
+	"feed_url": "https://alkometriikka.fi/rss/902920.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mallassepät Umbra.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902920-2026-09-29-22.3",
+			"url": "https://alkometriikka.fi/tuotteet/902920/",
+			"title": "Mallassepät Umbra — 21,95 € → 22,30 €",
+			"content_html": "<p>Tuotteen Mallassepät Umbra hinta on muuttunut.</p><p>21,95 € → 22,30 € (+0,35 €, +1,59 %).</p>",
+			"summary": "Tuotteen Mallassepät Umbra hinta on muuttunut. 21,95 € → 22,30 € (+0,35 €, +1,59 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902920-910a2ccce9f3.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

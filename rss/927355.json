@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Thornbridge Cocoa Wonderland Chocolate Porter tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/927355/",
+	"feed_url": "https://alkometriikka.fi/rss/927355.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Thornbridge Cocoa Wonderland Chocolate Porter tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-927355-2026-07-18-4.69",
+			"url": "https://alkometriikka.fi/tuotteet/927355/",
+			"title": "Thornbridge Cocoa Wonderland Chocolate Porter tölkki — 4,59 € → 4,69 €",
+			"content_html": "<p>Tuotteen Thornbridge Cocoa Wonderland Chocolate Porter tölkki hinta on muuttunut.</p><p>4,59 € → 4,69 € (+0,10 €, +2,18 %).</p>",
+			"summary": "Tuotteen Thornbridge Cocoa Wonderland Chocolate Porter tölkki hinta on muuttunut. 4,59 € → 4,69 € (+0,10 €, +2,18 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/927355-51b7aab263b5.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

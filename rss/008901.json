@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gancia Asti Dolce – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/008901/",
+	"feed_url": "https://alkometriikka.fi/rss/008901.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gancia Asti Dolce.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-008901-2026-07-18-13.29",
+			"url": "https://alkometriikka.fi/tuotteet/008901/",
+			"title": "Gancia Asti Dolce — 12,99 € → 13,29 €",
+			"content_html": "<p>Tuotteen Gancia Asti Dolce hinta on muuttunut.</p><p>12,99 € → 13,29 € (+0,30 €, +2,31 %).</p>",
+			"summary": "Tuotteen Gancia Asti Dolce hinta on muuttunut. 12,99 € → 13,29 € (+0,30 €, +2,31 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/008901-406f6e564182.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

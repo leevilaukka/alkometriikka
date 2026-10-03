@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Heidell Barrel Aged Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/946628/",
+	"feed_url": "https://alkometriikka.fi/rss/946628.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Heidell Barrel Aged Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-946628-2026-09-29-48.95",
+			"url": "https://alkometriikka.fi/tuotteet/946628/",
+			"title": "Heidell Barrel Aged Gin — 48,01 € → 48,95 €",
+			"content_html": "<p>Tuotteen Heidell Barrel Aged Gin hinta on muuttunut.</p><p>48,01 € → 48,95 € (+0,94 €, +1,96 %).</p>",
+			"summary": "Tuotteen Heidell Barrel Aged Gin hinta on muuttunut. 48,01 € → 48,95 € (+0,94 €, +1,96 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/946628-0b7b60900f20.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		},
+		{
+			"id": "alkometriikka-946628-2026-07-18-48.01",
+			"url": "https://alkometriikka.fi/tuotteet/946628/",
+			"title": "Heidell Barrel Aged Gin — 47,36 € → 48,01 €",
+			"content_html": "<p>Tuotteen Heidell Barrel Aged Gin hinta on muuttunut.</p><p>47,36 € → 48,01 € (+0,65 €, +1,37 %).</p>",
+			"summary": "Tuotteen Heidell Barrel Aged Gin hinta on muuttunut. 47,36 € → 48,01 € (+0,65 €, +1,37 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/946628-0b7b60900f20.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

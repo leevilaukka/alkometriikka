@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Montes Reserva Merlot 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901781/",
+	"feed_url": "https://alkometriikka.fi/rss/901781.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Montes Reserva Merlot 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901781-2026-07-18-14.99",
+			"url": "https://alkometriikka.fi/tuotteet/901781/",
+			"title": "Montes Reserva Merlot 2023 — 14,39 € → 14,99 €",
+			"content_html": "<p>Tuotteen Montes Reserva Merlot 2023 hinta on muuttunut.</p><p>14,39 € → 14,99 € (+0,60 €, +4,17 %).</p>",
+			"summary": "Tuotteen Montes Reserva Merlot 2023 hinta on muuttunut. 14,39 € → 14,99 € (+0,60 €, +4,17 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901781-9cb261700f29.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

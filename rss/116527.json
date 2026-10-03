@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Renault XO Carte d’Argent – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/116527/",
+	"feed_url": "https://alkometriikka.fi/rss/116527.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Renault XO Carte d’Argent.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-116527-2026-09-29-179.98",
+			"url": "https://alkometriikka.fi/tuotteet/116527/",
+			"title": "Renault XO Carte d’Argent — 177,30 € → 179,98 €",
+			"content_html": "<p>Tuotteen Renault XO Carte d’Argent hinta on muuttunut.</p><p>177,30 € → 179,98 € (+2,68 €, +1,51 %).</p>",
+			"summary": "Tuotteen Renault XO Carte d’Argent hinta on muuttunut. 177,30 € → 179,98 € (+2,68 €, +1,51 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/116527-d1f5efe15096.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

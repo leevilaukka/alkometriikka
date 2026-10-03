@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pommery POP It's A Boy Champagne Extra Dry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/927546/",
+	"feed_url": "https://alkometriikka.fi/rss/927546.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pommery POP It's A Boy Champagne Extra Dry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-927546-2026-09-29-20.58",
+			"url": "https://alkometriikka.fi/tuotteet/927546/",
+			"title": "Pommery POP It's A Boy Champagne Extra Dry — 19,82 € → 20,58 €",
+			"content_html": "<p>Tuotteen Pommery POP It's A Boy Champagne Extra Dry hinta on muuttunut.</p><p>19,82 € → 20,58 € (+0,76 €, +3,83 %).</p>",
+			"summary": "Tuotteen Pommery POP It's A Boy Champagne Extra Dry hinta on muuttunut. 19,82 € → 20,58 € (+0,76 €, +3,83 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/927546-947822265edc.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

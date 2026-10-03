@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lapponia Polar Karpalo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/237716/",
+	"feed_url": "https://alkometriikka.fi/rss/237716.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lapponia Polar Karpalo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-237716-2026-07-18-16.49",
+			"url": "https://alkometriikka.fi/tuotteet/237716/",
+			"title": "Lapponia Polar Karpalo — 16,58 € → 16,49 €",
+			"content_html": "<p>Tuotteen Lapponia Polar Karpalo hinta on muuttunut.</p><p>16,58 € → 16,49 € (−0,09 €, −0,54 %).</p>",
+			"summary": "Tuotteen Lapponia Polar Karpalo hinta on muuttunut. 16,58 € → 16,49 € (−0,09 €, −0,54 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/237716-699c51d01e5a.png",
+			"tags": [
+				"Väkevät",
+				"marjaliköörit"
+			]
+		}
+	]
+}

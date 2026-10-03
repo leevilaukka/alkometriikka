@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – The GlenDronach 12 Year Old Single Malt – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/905597/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: The GlenDronach 12 Year Old Single Malt.</description>
+		<language>fi</language>
+		<lastBuildDate>Sat, 03 Oct 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/905597.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – The GlenDronach 12 Year Old Single Malt – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>The GlenDronach 12 Year Old Single Malt — 64,98 € → 65,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/905597/</link>
+			<guid isPermaLink="false">alkometriikka-905597-2026-09-29-65.99</guid>
+			<pubDate>Tue, 29 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / viskit</category>
+			<description><![CDATA[<p>Tuotteen The GlenDronach 12 Year Old Single Malt hinta on muuttunut.</p><p>64,98 € → 65,99 € (+1,01 €, +1,55 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/905597-522b805f81f2.png" />
+		</item>
+	</channel>
+</rss>

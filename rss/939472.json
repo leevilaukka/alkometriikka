@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vilarnau Sparkling Alcohol Free 0% – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/939472/",
+	"feed_url": "https://alkometriikka.fi/rss/939472.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vilarnau Sparkling Alcohol Free 0%.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-939472-2026-07-18-8.99",
+			"url": "https://alkometriikka.fi/tuotteet/939472/",
+			"title": "Vilarnau Sparkling Alcohol Free 0% — 8,92 € → 8,99 €",
+			"content_html": "<p>Tuotteen Vilarnau Sparkling Alcohol Free 0% hinta on muuttunut.</p><p>8,92 € → 8,99 € (+0,07 €, +0,78 %).</p>",
+			"summary": "Tuotteen Vilarnau Sparkling Alcohol Free 0% hinta on muuttunut. 8,92 € → 8,99 € (+0,07 €, +0,78 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/939472-b62318256f6f.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat kuohuviinit"
+			]
+		}
+	]
+}

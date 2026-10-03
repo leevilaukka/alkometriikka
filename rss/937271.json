@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Domaine Belle Hermitage Blanc 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/937271/",
+	"feed_url": "https://alkometriikka.fi/rss/937271.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Domaine Belle Hermitage Blanc 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-937271-2026-09-29-126.2",
+			"url": "https://alkometriikka.fi/tuotteet/937271/",
+			"title": "Domaine Belle Hermitage Blanc 2022 — 121,30 € → 126,20 €",
+			"content_html": "<p>Tuotteen Domaine Belle Hermitage Blanc 2022 hinta on muuttunut.</p><p>121,30 € → 126,20 € (+4,90 €, +4,04 %).</p>",
+			"summary": "Tuotteen Domaine Belle Hermitage Blanc 2022 hinta on muuttunut. 121,30 € → 126,20 € (+4,90 €, +4,04 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/937271-ca6ed55fe240.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

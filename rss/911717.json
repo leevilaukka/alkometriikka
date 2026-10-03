@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tedeschi Amarone della Valpolicella Classico 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/911717/",
+	"feed_url": "https://alkometriikka.fi/rss/911717.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tedeschi Amarone della Valpolicella Classico 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-911717-2026-09-29-57.9",
+			"url": "https://alkometriikka.fi/tuotteet/911717/",
+			"title": "Tedeschi Amarone della Valpolicella Classico 2022 — 56,39 € → 57,90 €",
+			"content_html": "<p>Tuotteen Tedeschi Amarone della Valpolicella Classico 2022 hinta on muuttunut.</p><p>56,39 € → 57,90 € (+1,51 €, +2,68 %).</p>",
+			"summary": "Tuotteen Tedeschi Amarone della Valpolicella Classico 2022 hinta on muuttunut. 56,39 € → 57,90 € (+1,51 €, +2,68 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/911717-b8c8cb75854f.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

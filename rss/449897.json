@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Barone Ricasoli Brolio Chianti Classico 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/449897/",
+	"feed_url": "https://alkometriikka.fi/rss/449897.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Barone Ricasoli Brolio Chianti Classico 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-449897-2026-09-29-24.04",
+			"url": "https://alkometriikka.fi/tuotteet/449897/",
+			"title": "Barone Ricasoli Brolio Chianti Classico 2024 — 23,50 € → 24,04 €",
+			"content_html": "<p>Tuotteen Barone Ricasoli Brolio Chianti Classico 2024 hinta on muuttunut.</p><p>23,50 € → 24,04 € (+0,54 €, +2,30 %).</p>",
+			"summary": "Tuotteen Barone Ricasoli Brolio Chianti Classico 2024 hinta on muuttunut. 23,50 € → 24,04 € (+0,54 €, +2,30 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/449897-73539b3d9285.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

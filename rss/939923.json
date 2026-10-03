@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dom Potier Cava Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/939923/",
+	"feed_url": "https://alkometriikka.fi/rss/939923.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dom Potier Cava Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-939923-2026-07-18-12.98",
+			"url": "https://alkometriikka.fi/tuotteet/939923/",
+			"title": "Dom Potier Cava Brut — 13,39 € → 12,98 €",
+			"content_html": "<p>Tuotteen Dom Potier Cava Brut hinta on muuttunut.</p><p>13,39 € → 12,98 € (−0,41 €, −3,06 %).</p>",
+			"summary": "Tuotteen Dom Potier Cava Brut hinta on muuttunut. 13,39 € → 12,98 € (−0,41 €, −3,06 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/939923-b72f053e5851.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

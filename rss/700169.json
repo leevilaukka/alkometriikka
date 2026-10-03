@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Moersleutel Extravagant Long Boil tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/700169/",
+	"feed_url": "https://alkometriikka.fi/rss/700169.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Moersleutel Extravagant Long Boil tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-700169-2026-09-29-5.98",
+			"url": "https://alkometriikka.fi/tuotteet/700169/",
+			"title": "Moersleutel Extravagant Long Boil tölkki — 5,96 € → 5,98 €",
+			"content_html": "<p>Tuotteen Moersleutel Extravagant Long Boil tölkki hinta on muuttunut.</p><p>5,96 € → 5,98 € (+0,02 €, +0,34 %).</p>",
+			"summary": "Tuotteen Moersleutel Extravagant Long Boil tölkki hinta on muuttunut. 5,96 € → 5,98 € (+0,02 €, +0,34 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/700169-4c6935d6b745.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

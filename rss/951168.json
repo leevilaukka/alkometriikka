@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Põhjala Baltic Porter Day 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/951168/",
+	"feed_url": "https://alkometriikka.fi/rss/951168.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Põhjala Baltic Porter Day 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-951168-2026-07-18-8.07",
+			"url": "https://alkometriikka.fi/tuotteet/951168/",
+			"title": "Põhjala Baltic Porter Day 2024 — 8,08 € → 8,07 €",
+			"content_html": "<p>Tuotteen Põhjala Baltic Porter Day 2024 hinta on muuttunut.</p><p>8,08 € → 8,07 € (−0,01 €, −0,12 %).</p>",
+			"summary": "Tuotteen Põhjala Baltic Porter Day 2024 hinta on muuttunut. 8,08 € → 8,07 € (−0,01 €, −0,12 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/951168-e8d3f3e790a1.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

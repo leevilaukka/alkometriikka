@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glenfarclas 30 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/919691/",
+	"feed_url": "https://alkometriikka.fi/rss/919691.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glenfarclas 30 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-919691-2026-09-29-740.63",
+			"url": "https://alkometriikka.fi/tuotteet/919691/",
+			"title": "Glenfarclas 30 Year Old Single Malt — 694,61 € → 740,63 €",
+			"content_html": "<p>Tuotteen Glenfarclas 30 Year Old Single Malt hinta on muuttunut.</p><p>694,61 € → 740,63 € (+46,02 €, +6,63 %).</p>",
+			"summary": "Tuotteen Glenfarclas 30 Year Old Single Malt hinta on muuttunut. 694,61 € → 740,63 € (+46,02 €, +6,63 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/919691-eec563932473.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

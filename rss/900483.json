@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Crafter's Wild Forest Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900483/",
+	"feed_url": "https://alkometriikka.fi/rss/900483.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Crafter's Wild Forest Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900483-2026-09-29-40.14",
+			"url": "https://alkometriikka.fi/tuotteet/900483/",
+			"title": "Crafter's Wild Forest Gin — 39,99 € → 40,14 €",
+			"content_html": "<p>Tuotteen Crafter's Wild Forest Gin hinta on muuttunut.</p><p>39,99 € → 40,14 € (+0,15 €, +0,38 %).</p>",
+			"summary": "Tuotteen Crafter's Wild Forest Gin hinta on muuttunut. 39,99 € → 40,14 € (+0,15 €, +0,38 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900483-1354262d8900.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

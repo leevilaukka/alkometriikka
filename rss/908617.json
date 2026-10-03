@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bottega Gold Brut 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/908617/",
+	"feed_url": "https://alkometriikka.fi/rss/908617.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bottega Gold Brut 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-908617-2026-07-18-29.99",
+			"url": "https://alkometriikka.fi/tuotteet/908617/",
+			"title": "Bottega Gold Brut 2024 — 29,70 € → 29,99 €",
+			"content_html": "<p>Tuotteen Bottega Gold Brut 2024 hinta on muuttunut.</p><p>29,70 € → 29,99 € (+0,29 €, +0,98 %).</p>",
+			"summary": "Tuotteen Bottega Gold Brut 2024 hinta on muuttunut. 29,70 € → 29,99 € (+0,29 €, +0,98 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/908617-34bceea5425c.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

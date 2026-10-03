@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Belvedere 10 Vodka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902011/",
+	"feed_url": "https://alkometriikka.fi/rss/902011.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Belvedere 10 Vodka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902011-2026-09-29-243.99",
+			"url": "https://alkometriikka.fi/tuotteet/902011/",
+			"title": "Belvedere 10 Vodka — 230,26 € → 243,99 €",
+			"content_html": "<p>Tuotteen Belvedere 10 Vodka hinta on muuttunut.</p><p>230,26 € → 243,99 € (+13,73 €, +5,96 %).</p>",
+			"summary": "Tuotteen Belvedere 10 Vodka hinta on muuttunut. 230,26 € → 243,99 € (+13,73 €, +5,96 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902011-34ea8f04a78c.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

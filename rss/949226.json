@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gillardi Langhe Harys 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/949226/",
+	"feed_url": "https://alkometriikka.fi/rss/949226.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gillardi Langhe Harys 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-949226-2026-09-29-81.63",
+			"url": "https://alkometriikka.fi/tuotteet/949226/",
+			"title": "Gillardi Langhe Harys 2018 — 78,45 € → 81,63 €",
+			"content_html": "<p>Tuotteen Gillardi Langhe Harys 2018 hinta on muuttunut.</p><p>78,45 € → 81,63 € (+3,18 €, +4,05 %).</p>",
+			"summary": "Tuotteen Gillardi Langhe Harys 2018 hinta on muuttunut. 78,45 € → 81,63 € (+3,18 €, +4,05 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/949226-41883fa8d9af.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Santa Tresa Rina Ianca Grillo Viognier Organic 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900085/",
+	"feed_url": "https://alkometriikka.fi/rss/900085.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Santa Tresa Rina Ianca Grillo Viognier Organic 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900085-2026-07-18-19.98",
+			"url": "https://alkometriikka.fi/tuotteet/900085/",
+			"title": "Santa Tresa Rina Ianca Grillo Viognier Organic 2023 — 22,43 € → 19,98 €",
+			"content_html": "<p>Tuotteen Santa Tresa Rina Ianca Grillo Viognier Organic 2023 hinta on muuttunut.</p><p>22,43 € → 19,98 € (−2,45 €, −10,92 %).</p>",
+			"summary": "Tuotteen Santa Tresa Rina Ianca Grillo Viognier Organic 2023 hinta on muuttunut. 22,43 € → 19,98 € (−2,45 €, −10,92 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900085-cab0ec751034.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

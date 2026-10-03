@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Safari Exotic Fruit Liqueur – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901139/",
+	"feed_url": "https://alkometriikka.fi/rss/901139.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Safari Exotic Fruit Liqueur.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901139-2026-07-18-24.99",
+			"url": "https://alkometriikka.fi/tuotteet/901139/",
+			"title": "Safari Exotic Fruit Liqueur — 25,03 € → 24,99 €",
+			"content_html": "<p>Tuotteen Safari Exotic Fruit Liqueur hinta on muuttunut.</p><p>25,03 € → 24,99 € (−0,04 €, −0,16 %).</p>",
+			"summary": "Tuotteen Safari Exotic Fruit Liqueur hinta on muuttunut. 25,03 € → 24,99 € (−0,04 €, −0,16 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901139-9f1f58b54949.png",
+			"tags": [
+				"Väkevät",
+				"hedelmäliköörit"
+			]
+		}
+	]
+}

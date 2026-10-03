@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Meukow VSOP Superior – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/000941/",
+	"feed_url": "https://alkometriikka.fi/rss/000941.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Meukow VSOP Superior.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-000941-2026-09-29-49.98",
+			"url": "https://alkometriikka.fi/tuotteet/000941/",
+			"title": "Meukow VSOP Superior — 49,99 € → 49,98 €",
+			"content_html": "<p>Tuotteen Meukow VSOP Superior hinta on muuttunut.</p><p>49,99 € → 49,98 € (−0,01 €, −0,02 %).</p>",
+			"summary": "Tuotteen Meukow VSOP Superior hinta on muuttunut. 49,99 € → 49,98 € (−0,01 €, −0,02 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/000941-6d39d8582f7e.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

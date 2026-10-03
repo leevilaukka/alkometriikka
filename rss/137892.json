@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Reviseur VSOP – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/137892/",
+	"feed_url": "https://alkometriikka.fi/rss/137892.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Reviseur VSOP.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-137892-2026-09-29-9.89",
+			"url": "https://alkometriikka.fi/tuotteet/137892/",
+			"title": "Reviseur VSOP — 10,90 € → 9,89 €",
+			"content_html": "<p>Tuotteen Reviseur VSOP hinta on muuttunut.</p><p>10,90 € → 9,89 € (−1,01 €, −9,27 %).</p>",
+			"summary": "Tuotteen Reviseur VSOP hinta on muuttunut. 10,90 € → 9,89 € (−1,01 €, −9,27 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/137892-c7ec3b66cecb.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

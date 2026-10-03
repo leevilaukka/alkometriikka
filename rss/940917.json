@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Scacciadiavoli Montefalco Sagrantino 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/940917/",
+	"feed_url": "https://alkometriikka.fi/rss/940917.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Scacciadiavoli Montefalco Sagrantino 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-940917-2026-09-29-48.5",
+			"url": "https://alkometriikka.fi/tuotteet/940917/",
+			"title": "Scacciadiavoli Montefalco Sagrantino 2018 — 47,66 € → 48,50 €",
+			"content_html": "<p>Tuotteen Scacciadiavoli Montefalco Sagrantino 2018 hinta on muuttunut.</p><p>47,66 € → 48,50 € (+0,84 €, +1,76 %).</p>",
+			"summary": "Tuotteen Scacciadiavoli Montefalco Sagrantino 2018 hinta on muuttunut. 47,66 € → 48,50 € (+0,84 €, +1,76 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/940917-cf7bdb21d9c9.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

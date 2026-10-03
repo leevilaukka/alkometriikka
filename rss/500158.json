@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pratsch Grüner Veltliner 8% 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/500158/",
+	"feed_url": "https://alkometriikka.fi/rss/500158.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pratsch Grüner Veltliner 8% 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-500158-2026-09-29-10.49",
+			"url": "https://alkometriikka.fi/tuotteet/500158/",
+			"title": "Pratsch Grüner Veltliner 8% 2024 — 12,79 € → 10,49 €",
+			"content_html": "<p>Tuotteen Pratsch Grüner Veltliner 8% 2024 hinta on muuttunut.</p><p>12,79 € → 10,49 € (−2,30 €, −17,98 %).</p>",
+			"summary": "Tuotteen Pratsch Grüner Veltliner 8% 2024 hinta on muuttunut. 12,79 € → 10,49 € (−2,30 €, −17,98 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/500158-611ff472441e.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

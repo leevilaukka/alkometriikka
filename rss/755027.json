@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gambina Aperitivo muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/755027/",
+	"feed_url": "https://alkometriikka.fi/rss/755027.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gambina Aperitivo muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-755027-2026-07-18-12.98",
+			"url": "https://alkometriikka.fi/tuotteet/755027/",
+			"title": "Gambina Aperitivo muovipullo — 13,14 € → 12,98 €",
+			"content_html": "<p>Tuotteen Gambina Aperitivo muovipullo hinta on muuttunut.</p><p>13,14 € → 12,98 € (−0,16 €, −1,22 %).</p>",
+			"summary": "Tuotteen Gambina Aperitivo muovipullo hinta on muuttunut. 13,14 € → 12,98 € (−0,16 €, −1,22 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/755027-d9ebaa03aec4.png",
+			"tags": [
+				"Panimotuotteet",
+				"juomasekoitukset"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Muri Passing Clouds – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/946974/",
+	"feed_url": "https://alkometriikka.fi/rss/946974.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Muri Passing Clouds.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-946974-2026-07-18-27.75",
+			"url": "https://alkometriikka.fi/tuotteet/946974/",
+			"title": "Muri Passing Clouds — 27,68 € → 27,75 €",
+			"content_html": "<p>Tuotteen Muri Passing Clouds hinta on muuttunut.</p><p>27,68 € → 27,75 € (+0,07 €, +0,25 %).</p>",
+			"summary": "Tuotteen Muri Passing Clouds hinta on muuttunut. 27,68 € → 27,75 € (+0,07 €, +0,25 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/946974-1311b08b1903.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat kuohuviinit"
+			]
+		}
+	]
+}

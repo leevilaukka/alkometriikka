@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tenute Silvio Nardi Brunello di Montalcino 2017 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/904317/",
+	"feed_url": "https://alkometriikka.fi/rss/904317.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tenute Silvio Nardi Brunello di Montalcino 2017.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-904317-2026-09-29-60.08",
+			"url": "https://alkometriikka.fi/tuotteet/904317/",
+			"title": "Tenute Silvio Nardi Brunello di Montalcino 2017 — 58,40 € → 60,08 €",
+			"content_html": "<p>Tuotteen Tenute Silvio Nardi Brunello di Montalcino 2017 hinta on muuttunut.</p><p>58,40 € → 60,08 € (+1,68 €, +2,88 %).</p>",
+			"summary": "Tuotteen Tenute Silvio Nardi Brunello di Montalcino 2017 hinta on muuttunut. 58,40 € → 60,08 € (+1,68 €, +2,88 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/904317-20e5091824aa.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

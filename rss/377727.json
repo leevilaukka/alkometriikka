@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Niepoort Dry White Port – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/377727/",
+	"feed_url": "https://alkometriikka.fi/rss/377727.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Niepoort Dry White Port.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-377727-2026-07-18-20.89",
+			"url": "https://alkometriikka.fi/tuotteet/377727/",
+			"title": "Niepoort Dry White Port — 20,70 € → 20,89 €",
+			"content_html": "<p>Tuotteen Niepoort Dry White Port hinta on muuttunut.</p><p>20,70 € → 20,89 € (+0,19 €, +0,92 %).</p>",
+			"summary": "Tuotteen Niepoort Dry White Port hinta on muuttunut. 20,70 € → 20,89 € (+0,19 €, +0,92 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/377727-facac3c6bbde.png",
+			"tags": [
+				"Välituotteet",
+				"portviinit"
+			]
+		}
+	]
+}

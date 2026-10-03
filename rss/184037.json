@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tomintoul 16 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/184037/",
+	"feed_url": "https://alkometriikka.fi/rss/184037.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tomintoul 16 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-184037-2026-09-29-108.49",
+			"url": "https://alkometriikka.fi/tuotteet/184037/",
+			"title": "Tomintoul 16 Year Old Single Malt — 104,49 € → 108,49 €",
+			"content_html": "<p>Tuotteen Tomintoul 16 Year Old Single Malt hinta on muuttunut.</p><p>104,49 € → 108,49 € (+4,00 €, +3,83 %).</p>",
+			"summary": "Tuotteen Tomintoul 16 Year Old Single Malt hinta on muuttunut. 104,49 € → 108,49 € (+4,00 €, +3,83 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/184037-ef4241c33ad1.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		},
+		{
+			"id": "alkometriikka-184037-2026-07-18-104.49",
+			"url": "https://alkometriikka.fi/tuotteet/184037/",
+			"title": "Tomintoul 16 Year Old Single Malt — 104,54 € → 104,49 €",
+			"content_html": "<p>Tuotteen Tomintoul 16 Year Old Single Malt hinta on muuttunut.</p><p>104,54 € → 104,49 € (−0,05 €, −0,05 %).</p>",
+			"summary": "Tuotteen Tomintoul 16 Year Old Single Malt hinta on muuttunut. 104,54 € → 104,49 € (−0,05 €, −0,05 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/184037-ef4241c33ad1.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

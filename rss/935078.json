@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Magical Mango Kombucha luomu tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/935078/",
+	"feed_url": "https://alkometriikka.fi/rss/935078.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Magical Mango Kombucha luomu tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-935078-2026-07-18-3.79",
+			"url": "https://alkometriikka.fi/tuotteet/935078/",
+			"title": "Magical Mango Kombucha luomu tölkki — 3,68 € → 3,79 €",
+			"content_html": "<p>Tuotteen Magical Mango Kombucha luomu tölkki hinta on muuttunut.</p><p>3,68 € → 3,79 € (+0,11 €, +2,99 %).</p>",
+			"summary": "Tuotteen Magical Mango Kombucha luomu tölkki hinta on muuttunut. 3,68 € → 3,79 € (+0,11 €, +2,99 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/935078-19325e91fd64.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

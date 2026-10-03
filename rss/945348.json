@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Antica Formula – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/945348/",
+	"feed_url": "https://alkometriikka.fi/rss/945348.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Antica Formula.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-945348-2026-09-29-52.79",
+			"url": "https://alkometriikka.fi/tuotteet/945348/",
+			"title": "Antica Formula — 52,48 € → 52,79 €",
+			"content_html": "<p>Tuotteen Antica Formula hinta on muuttunut.</p><p>52,48 € → 52,79 € (+0,31 €, +0,59 %).</p>",
+			"summary": "Tuotteen Antica Formula hinta on muuttunut. 52,48 € → 52,79 € (+0,31 €, +0,59 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/945348-a98d9d5b90b4.png",
+			"tags": [
+				"Välituotteet",
+				"vermutit"
+			]
+		}
+	]
+}

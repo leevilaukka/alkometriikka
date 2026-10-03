@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pansal del Calas 2013 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/931676/",
+	"feed_url": "https://alkometriikka.fi/rss/931676.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pansal del Calas 2013.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-931676-2026-09-29-30.32",
+			"url": "https://alkometriikka.fi/tuotteet/931676/",
+			"title": "Pansal del Calas 2013 — 30,06 € → 30,32 €",
+			"content_html": "<p>Tuotteen Pansal del Calas 2013 hinta on muuttunut.</p><p>30,06 € → 30,32 € (+0,26 €, +0,86 %).</p>",
+			"summary": "Tuotteen Pansal del Calas 2013 hinta on muuttunut. 30,06 € → 30,32 € (+0,26 €, +0,86 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/931676-1f1f638c3c12.png",
+			"tags": [
+				"Välituotteet",
+				"väkevät viinit"
+			]
+		}
+	]
+}

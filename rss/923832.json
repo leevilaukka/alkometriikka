@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kyrö Pink Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/923832/",
+	"feed_url": "https://alkometriikka.fi/rss/923832.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kyrö Pink Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-923832-2026-09-29-35.17",
+			"url": "https://alkometriikka.fi/tuotteet/923832/",
+			"title": "Kyrö Pink Gin — 34,98 € → 35,17 €",
+			"content_html": "<p>Tuotteen Kyrö Pink Gin hinta on muuttunut.</p><p>34,98 € → 35,17 € (+0,19 €, +0,54 %).</p>",
+			"summary": "Tuotteen Kyrö Pink Gin hinta on muuttunut. 34,98 € → 35,17 € (+0,19 €, +0,54 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/923832-05921b90a1f4.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

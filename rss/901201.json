@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Rombauer Zinfandel 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901201/",
+	"feed_url": "https://alkometriikka.fi/rss/901201.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Rombauer Zinfandel 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901201-2026-09-29-54",
+			"url": "https://alkometriikka.fi/tuotteet/901201/",
+			"title": "Rombauer Zinfandel 2021 — 49,99 € → 54,00 €",
+			"content_html": "<p>Tuotteen Rombauer Zinfandel 2021 hinta on muuttunut.</p><p>49,99 € → 54,00 € (+4,01 €, +8,02 %).</p>",
+			"summary": "Tuotteen Rombauer Zinfandel 2021 hinta on muuttunut. 49,99 € → 54,00 € (+4,01 €, +8,02 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901201-6b89b199b4f4.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

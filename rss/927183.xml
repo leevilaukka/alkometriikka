@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Jack Daniel&apos;s Bonded – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/927183/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Jack Daniel&apos;s Bonded.</description>
+		<language>fi</language>
+		<lastBuildDate>Sat, 03 Oct 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/927183.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Jack Daniel&apos;s Bonded – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Jack Daniel&apos;s Bonded — 59,99 € → 62,98 €</title>
+			<link>https://alkometriikka.fi/tuotteet/927183/</link>
+			<guid isPermaLink="false">alkometriikka-927183-2026-09-30-62.98</guid>
+			<pubDate>Wed, 30 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / viskit</category>
+			<description><![CDATA[<p>Tuotteen Jack Daniel's Bonded hinta on muuttunut.</p><p>59,99 € → 62,98 € (+2,99 €, +4,98 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/927183-8fded30908f9.png" />
+		</item>
+	</channel>
+</rss>

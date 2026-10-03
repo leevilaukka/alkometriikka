@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Los Tres Toños Reposado Tequila – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/177027/",
+	"feed_url": "https://alkometriikka.fi/rss/177027.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Los Tres Toños Reposado Tequila.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-177027-2026-09-29-49.56",
+			"url": "https://alkometriikka.fi/tuotteet/177027/",
+			"title": "Los Tres Toños Reposado Tequila — 49,42 € → 49,56 €",
+			"content_html": "<p>Tuotteen Los Tres Toños Reposado Tequila hinta on muuttunut.</p><p>49,42 € → 49,56 € (+0,14 €, +0,28 %).</p>",
+			"summary": "Tuotteen Los Tres Toños Reposado Tequila hinta on muuttunut. 49,42 € → 49,56 € (+0,14 €, +0,28 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/177027-2cda90403384.png",
+			"tags": [
+				"Väkevät",
+				"Tequilat"
+			]
+		}
+	]
+}

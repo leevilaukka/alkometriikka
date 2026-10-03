@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Castell d'Encus Quest 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900763/",
+	"feed_url": "https://alkometriikka.fi/rss/900763.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Castell d'Encus Quest 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900763-2026-09-29-71.6",
+			"url": "https://alkometriikka.fi/tuotteet/900763/",
+			"title": "Castell d'Encus Quest 2018 — 69,15 € → 71,60 €",
+			"content_html": "<p>Tuotteen Castell d'Encus Quest 2018 hinta on muuttunut.</p><p>69,15 € → 71,60 € (+2,45 €, +3,54 %).</p>",
+			"summary": "Tuotteen Castell d'Encus Quest 2018 hinta on muuttunut. 69,15 € → 71,60 € (+2,45 €, +3,54 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900763-4716cb38ec3f.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

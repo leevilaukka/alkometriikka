@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Deutz Champagne Demi-Sec – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/943566/",
+	"feed_url": "https://alkometriikka.fi/rss/943566.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Deutz Champagne Demi-Sec.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-943566-2026-09-29-62.03",
+			"url": "https://alkometriikka.fi/tuotteet/943566/",
+			"title": "Deutz Champagne Demi-Sec — 60,22 € → 62,03 €",
+			"content_html": "<p>Tuotteen Deutz Champagne Demi-Sec hinta on muuttunut.</p><p>60,22 € → 62,03 € (+1,81 €, +3,01 %).</p>",
+			"summary": "Tuotteen Deutz Champagne Demi-Sec hinta on muuttunut. 60,22 € → 62,03 € (+1,81 €, +3,01 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/943566-f73bcdc00ffb.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

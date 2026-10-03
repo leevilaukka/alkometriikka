@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Merino Organic 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/451237/",
+	"feed_url": "https://alkometriikka.fi/rss/451237.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Merino Organic 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-451237-2026-07-18-13.98",
+			"url": "https://alkometriikka.fi/tuotteet/451237/",
+			"title": "Merino Organic 2023 — 13,28 € → 13,98 €",
+			"content_html": "<p>Tuotteen Merino Organic 2023 hinta on muuttunut.</p><p>13,28 € → 13,98 € (+0,70 €, +5,27 %).</p>",
+			"summary": "Tuotteen Merino Organic 2023 hinta on muuttunut. 13,28 € → 13,98 € (+0,70 €, +5,27 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/451237-f69c263277e0.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – La Roncaia Ramandolo 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/933845/",
+	"feed_url": "https://alkometriikka.fi/rss/933845.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: La Roncaia Ramandolo 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-933845-2026-09-29-41.98",
+			"url": "https://alkometriikka.fi/tuotteet/933845/",
+			"title": "La Roncaia Ramandolo 2018 — 37,81 € → 41,98 €",
+			"content_html": "<p>Tuotteen La Roncaia Ramandolo 2018 hinta on muuttunut.</p><p>37,81 € → 41,98 € (+4,17 €, +11,03 %).</p>",
+			"summary": "Tuotteen La Roncaia Ramandolo 2018 hinta on muuttunut. 37,81 € → 41,98 € (+4,17 €, +11,03 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/933845-ea502b5e7250.png",
+			"tags": [
+				"Viinit",
+				"jälkiruokaviinit"
+			]
+		}
+	]
+}

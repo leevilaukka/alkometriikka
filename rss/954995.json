@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Fütyülös Kékáfonya Mézzel (Whistling Blueberry with Honey) – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/954995/",
+	"feed_url": "https://alkometriikka.fi/rss/954995.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Fütyülös Kékáfonya Mézzel (Whistling Blueberry with Honey).",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-954995-2026-09-29-41.02",
+			"url": "https://alkometriikka.fi/tuotteet/954995/",
+			"title": "Fütyülös Kékáfonya Mézzel (Whistling Blueberry with Honey) — 40,23 € → 41,02 €",
+			"content_html": "<p>Tuotteen Fütyülös Kékáfonya Mézzel (Whistling Blueberry with Honey) hinta on muuttunut.</p><p>40,23 € → 41,02 € (+0,79 €, +1,96 %).</p>",
+			"summary": "Tuotteen Fütyülös Kékáfonya Mézzel (Whistling Blueberry with Honey) hinta on muuttunut. 40,23 € → 41,02 € (+0,79 €, +1,96 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/954995-02125081796f.png",
+			"tags": [
+				"Väkevät",
+				"marjaliköörit"
+			]
+		}
+	]
+}

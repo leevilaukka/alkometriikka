@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Black Tower Riesling Gewürztraminer 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/596147/",
+	"feed_url": "https://alkometriikka.fi/rss/596147.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Black Tower Riesling Gewürztraminer 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-596147-2026-09-29-11.68",
+			"url": "https://alkometriikka.fi/tuotteet/596147/",
+			"title": "Black Tower Riesling Gewürztraminer 2025 — 11,58 € → 11,68 €",
+			"content_html": "<p>Tuotteen Black Tower Riesling Gewürztraminer 2025 hinta on muuttunut.</p><p>11,58 € → 11,68 € (+0,10 €, +0,86 %).</p>",
+			"summary": "Tuotteen Black Tower Riesling Gewürztraminer 2025 hinta on muuttunut. 11,58 € → 11,68 € (+0,10 €, +0,86 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/596147-a7ef9947f1f4.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-596147-2026-07-18-11.58",
+			"url": "https://alkometriikka.fi/tuotteet/596147/",
+			"title": "Black Tower Riesling Gewürztraminer 2025 — 11,64 € → 11,58 €",
+			"content_html": "<p>Tuotteen Black Tower Riesling Gewürztraminer 2025 hinta on muuttunut.</p><p>11,64 € → 11,58 € (−0,06 €, −0,52 %).</p>",
+			"summary": "Tuotteen Black Tower Riesling Gewürztraminer 2025 hinta on muuttunut. 11,64 € → 11,58 € (−0,06 €, −0,52 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/596147-a7ef9947f1f4.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

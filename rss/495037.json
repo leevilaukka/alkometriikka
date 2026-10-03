@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Signorelli Valpolicella Ripasso Superiore 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/495037/",
+	"feed_url": "https://alkometriikka.fi/rss/495037.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Signorelli Valpolicella Ripasso Superiore 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-495037-2026-07-18-14.99",
+			"url": "https://alkometriikka.fi/tuotteet/495037/",
+			"title": "Signorelli Valpolicella Ripasso Superiore 2023 — 14,98 € → 14,99 €",
+			"content_html": "<p>Tuotteen Signorelli Valpolicella Ripasso Superiore 2023 hinta on muuttunut.</p><p>14,98 € → 14,99 € (+0,01 €, +0,07 %).</p>",
+			"summary": "Tuotteen Signorelli Valpolicella Ripasso Superiore 2023 hinta on muuttunut. 14,98 € → 14,99 € (+0,01 €, +0,07 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/495037-4bc567708adf.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

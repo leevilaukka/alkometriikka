@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Boffa Dolcetto d’Alba 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/940226/",
+	"feed_url": "https://alkometriikka.fi/rss/940226.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Boffa Dolcetto d’Alba 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-940226-2026-09-29-24.98",
+			"url": "https://alkometriikka.fi/tuotteet/940226/",
+			"title": "Boffa Dolcetto d’Alba 2024 — 24,99 € → 24,98 €",
+			"content_html": "<p>Tuotteen Boffa Dolcetto d’Alba 2024 hinta on muuttunut.</p><p>24,99 € → 24,98 € (−0,01 €, −0,04 %).</p>",
+			"summary": "Tuotteen Boffa Dolcetto d’Alba 2024 hinta on muuttunut. 24,99 € → 24,98 € (−0,01 €, −0,04 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/940226-b64b2f963a81.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

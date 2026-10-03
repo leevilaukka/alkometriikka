@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Che Guava Radical Lager tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/937115/",
+	"feed_url": "https://alkometriikka.fi/rss/937115.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Che Guava Radical Lager tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-937115-2026-09-29-5.29",
+			"url": "https://alkometriikka.fi/tuotteet/937115/",
+			"title": "Che Guava Radical Lager tölkki — 5,15 € → 5,29 €",
+			"content_html": "<p>Tuotteen Che Guava Radical Lager tölkki hinta on muuttunut.</p><p>5,15 € → 5,29 € (+0,14 €, +2,72 %).</p>",
+			"summary": "Tuotteen Che Guava Radical Lager tölkki hinta on muuttunut. 5,15 € → 5,29 € (+0,14 €, +2,72 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/937115-6fbcfe7e0893.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

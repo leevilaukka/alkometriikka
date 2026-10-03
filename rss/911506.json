@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jaloviina Myrsky – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/911506/",
+	"feed_url": "https://alkometriikka.fi/rss/911506.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jaloviina Myrsky.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-911506-2026-09-29-21.28",
+			"url": "https://alkometriikka.fi/tuotteet/911506/",
+			"title": "Jaloviina Myrsky — 21,09 € → 21,28 €",
+			"content_html": "<p>Tuotteen Jaloviina Myrsky hinta on muuttunut.</p><p>21,09 € → 21,28 € (+0,19 €, +0,90 %).</p>",
+			"summary": "Tuotteen Jaloviina Myrsky hinta on muuttunut. 21,09 € → 21,28 € (+0,19 €, +0,90 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/911506-604834a75ff8.png",
+			"tags": [
+				"Väkevät",
+				"mausteliköörit"
+			]
+		}
+	]
+}

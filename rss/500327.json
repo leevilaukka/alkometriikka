@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ackerman Crémant de Loire Brut Nature – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/500327/",
+	"feed_url": "https://alkometriikka.fi/rss/500327.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ackerman Crémant de Loire Brut Nature.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-500327-2026-09-29-17.98",
+			"url": "https://alkometriikka.fi/tuotteet/500327/",
+			"title": "Ackerman Crémant de Loire Brut Nature — 17,40 € → 17,98 €",
+			"content_html": "<p>Tuotteen Ackerman Crémant de Loire Brut Nature hinta on muuttunut.</p><p>17,40 € → 17,98 € (+0,58 €, +3,33 %).</p>",
+			"summary": "Tuotteen Ackerman Crémant de Loire Brut Nature hinta on muuttunut. 17,40 € → 17,98 € (+0,58 €, +3,33 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/500327-7eaf957a52c5.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

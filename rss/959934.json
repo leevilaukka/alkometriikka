@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bollinger PN AYC21 Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/959934/",
+	"feed_url": "https://alkometriikka.fi/rss/959934.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bollinger PN AYC21 Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-959934-2026-09-29-139.98",
+			"url": "https://alkometriikka.fi/tuotteet/959934/",
+			"title": "Bollinger PN AYC21 Champagne Brut — 138,90 € → 139,98 €",
+			"content_html": "<p>Tuotteen Bollinger PN AYC21 Champagne Brut hinta on muuttunut.</p><p>138,90 € → 139,98 € (+1,08 €, +0,78 %).</p>",
+			"summary": "Tuotteen Bollinger PN AYC21 Champagne Brut hinta on muuttunut. 138,90 € → 139,98 € (+1,08 €, +0,78 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/959934-8615706132c6.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

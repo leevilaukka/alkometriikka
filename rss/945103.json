@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pascal Costeau Côtes du Rhône Grande Réserve 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/945103/",
+	"feed_url": "https://alkometriikka.fi/rss/945103.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pascal Costeau Côtes du Rhône Grande Réserve 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-945103-2026-09-29-12.99",
+			"url": "https://alkometriikka.fi/tuotteet/945103/",
+			"title": "Pascal Costeau Côtes du Rhône Grande Réserve 2024 — 11,99 € → 12,99 €",
+			"content_html": "<p>Tuotteen Pascal Costeau Côtes du Rhône Grande Réserve 2024 hinta on muuttunut.</p><p>11,99 € → 12,99 € (+1,00 €, +8,34 %).</p>",
+			"summary": "Tuotteen Pascal Costeau Côtes du Rhône Grande Réserve 2024 hinta on muuttunut. 11,99 € → 12,99 € (+1,00 €, +8,34 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/945103-4ebe8ce4309e.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-945103-2026-07-18-11.99",
+			"url": "https://alkometriikka.fi/tuotteet/945103/",
+			"title": "Pascal Costeau Côtes du Rhône Grande Réserve 2024 — 11,45 € → 11,99 €",
+			"content_html": "<p>Tuotteen Pascal Costeau Côtes du Rhône Grande Réserve 2024 hinta on muuttunut.</p><p>11,45 € → 11,99 € (+0,54 €, +4,72 %).</p>",
+			"summary": "Tuotteen Pascal Costeau Côtes du Rhône Grande Réserve 2024 hinta on muuttunut. 11,45 € → 11,99 € (+0,54 €, +4,72 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/945103-4ebe8ce4309e.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

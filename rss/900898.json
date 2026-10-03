@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gerard Bertrand Orange Gold 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900898/",
+	"feed_url": "https://alkometriikka.fi/rss/900898.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gerard Bertrand Orange Gold 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900898-2026-07-18-21.9",
+			"url": "https://alkometriikka.fi/tuotteet/900898/",
+			"title": "Gerard Bertrand Orange Gold 2023 — 21,36 € → 21,90 €",
+			"content_html": "<p>Tuotteen Gerard Bertrand Orange Gold 2023 hinta on muuttunut.</p><p>21,36 € → 21,90 € (+0,54 €, +2,53 %).</p>",
+			"summary": "Tuotteen Gerard Bertrand Orange Gold 2023 hinta on muuttunut. 21,36 € → 21,90 € (+0,54 €, +2,53 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900898-833f5e777b09.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

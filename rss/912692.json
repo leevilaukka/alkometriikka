@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Koblevo Chardonnay 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/912692/",
+	"feed_url": "https://alkometriikka.fi/rss/912692.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Koblevo Chardonnay 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-912692-2026-09-30-14.49",
+			"url": "https://alkometriikka.fi/tuotteet/912692/",
+			"title": "Koblevo Chardonnay 2023 — 14,43 € → 14,49 €",
+			"content_html": "<p>Tuotteen Koblevo Chardonnay 2023 hinta on muuttunut.</p><p>14,43 € → 14,49 € (+0,06 €, +0,42 %).</p>",
+			"summary": "Tuotteen Koblevo Chardonnay 2023 hinta on muuttunut. 14,43 € → 14,49 € (+0,06 €, +0,42 %).",
+			"date_published": "2026-09-30T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/912692-3e54431af69c.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

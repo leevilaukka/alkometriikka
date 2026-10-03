@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lan Crianza 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/914297/",
+	"feed_url": "https://alkometriikka.fi/rss/914297.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lan Crianza 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-914297-2026-07-18-17.48",
+			"url": "https://alkometriikka.fi/tuotteet/914297/",
+			"title": "Lan Crianza 2021 — 17,46 € → 17,48 €",
+			"content_html": "<p>Tuotteen Lan Crianza 2021 hinta on muuttunut.</p><p>17,46 € → 17,48 € (+0,02 €, +0,11 %).</p>",
+			"summary": "Tuotteen Lan Crianza 2021 hinta on muuttunut. 17,46 € → 17,48 € (+0,02 €, +0,11 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/914297-7c6261899eeb.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

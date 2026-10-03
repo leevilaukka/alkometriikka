@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jau Orange 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902376/",
+	"feed_url": "https://alkometriikka.fi/rss/902376.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jau Orange 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902376-2026-09-29-20.67",
+			"url": "https://alkometriikka.fi/tuotteet/902376/",
+			"title": "Jau Orange 2024 — 20,09 € → 20,67 €",
+			"content_html": "<p>Tuotteen Jau Orange 2024 hinta on muuttunut.</p><p>20,09 € → 20,67 € (+0,58 €, +2,89 %).</p>",
+			"summary": "Tuotteen Jau Orange 2024 hinta on muuttunut. 20,09 € → 20,67 € (+0,58 €, +2,89 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902376-b33dc121f9e5.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

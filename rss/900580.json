@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bonvalet Horae Champagne Extra Brut 2014 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900580/",
+	"feed_url": "https://alkometriikka.fi/rss/900580.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bonvalet Horae Champagne Extra Brut 2014.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900580-2026-09-29-87.04",
+			"url": "https://alkometriikka.fi/tuotteet/900580/",
+			"title": "Bonvalet Horae Champagne Extra Brut 2014 — 83,48 € → 87,04 €",
+			"content_html": "<p>Tuotteen Bonvalet Horae Champagne Extra Brut 2014 hinta on muuttunut.</p><p>83,48 € → 87,04 € (+3,56 €, +4,26 %).</p>",
+			"summary": "Tuotteen Bonvalet Horae Champagne Extra Brut 2014 hinta on muuttunut. 83,48 € → 87,04 € (+3,56 €, +4,26 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900580-722c4ff5d798.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

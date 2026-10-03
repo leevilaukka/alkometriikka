@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ferrari Perlé Brut 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902109/",
+	"feed_url": "https://alkometriikka.fi/rss/902109.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ferrari Perlé Brut 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902109-2026-09-29-51.99",
+			"url": "https://alkometriikka.fi/tuotteet/902109/",
+			"title": "Ferrari Perlé Brut 2019 — 46,93 € → 51,99 €",
+			"content_html": "<p>Tuotteen Ferrari Perlé Brut 2019 hinta on muuttunut.</p><p>46,93 € → 51,99 € (+5,06 €, +10,78 %).</p>",
+			"summary": "Tuotteen Ferrari Perlé Brut 2019 hinta on muuttunut. 46,93 € → 51,99 € (+5,06 €, +10,78 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902109-e4c25c9c9643.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

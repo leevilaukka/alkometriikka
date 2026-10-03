@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Prunotto Barbaresco Secondine 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902423/",
+	"feed_url": "https://alkometriikka.fi/rss/902423.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Prunotto Barbaresco Secondine 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902423-2026-09-29-120",
+			"url": "https://alkometriikka.fi/tuotteet/902423/",
+			"title": "Prunotto Barbaresco Secondine 2020 — 120,47 € → 120,00 €",
+			"content_html": "<p>Tuotteen Prunotto Barbaresco Secondine 2020 hinta on muuttunut.</p><p>120,47 € → 120,00 € (−0,47 €, −0,39 %).</p>",
+			"summary": "Tuotteen Prunotto Barbaresco Secondine 2020 hinta on muuttunut. 120,47 € → 120,00 € (−0,47 €, −0,39 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902423-a8b8ff6be908.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

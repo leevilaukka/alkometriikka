@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mallassepät Riptide West Coast Double IPA tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900888/",
+	"feed_url": "https://alkometriikka.fi/rss/900888.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mallassepät Riptide West Coast Double IPA tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900888-2026-07-18-5.91",
+			"url": "https://alkometriikka.fi/tuotteet/900888/",
+			"title": "Mallassepät Riptide West Coast Double IPA tölkki — 5,90 € → 5,91 €",
+			"content_html": "<p>Tuotteen Mallassepät Riptide West Coast Double IPA tölkki hinta on muuttunut.</p><p>5,90 € → 5,91 € (+0,01 €, +0,17 %).</p>",
+			"summary": "Tuotteen Mallassepät Riptide West Coast Double IPA tölkki hinta on muuttunut. 5,90 € → 5,91 € (+0,01 €, +0,17 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900888-f68092d699b0.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

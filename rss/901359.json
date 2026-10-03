@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gaja Camarcanda Magnum 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901359/",
+	"feed_url": "https://alkometriikka.fi/rss/901359.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gaja Camarcanda Magnum 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901359-2026-09-29-510.96",
+			"url": "https://alkometriikka.fi/tuotteet/901359/",
+			"title": "Gaja Camarcanda Magnum 2019 — 479,00 € → 510,96 €",
+			"content_html": "<p>Tuotteen Gaja Camarcanda Magnum 2019 hinta on muuttunut.</p><p>479,00 € → 510,96 € (+31,96 €, +6,67 %).</p>",
+			"summary": "Tuotteen Gaja Camarcanda Magnum 2019 hinta on muuttunut. 479,00 € → 510,96 € (+31,96 €, +6,67 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901359-eb798417beb8.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-901359-2026-07-18-479",
+			"url": "https://alkometriikka.fi/tuotteet/901359/",
+			"title": "Gaja Camarcanda Magnum 2019 — 482,91 € → 479,00 €",
+			"content_html": "<p>Tuotteen Gaja Camarcanda Magnum 2019 hinta on muuttunut.</p><p>482,91 € → 479,00 € (−3,91 €, −0,81 %).</p>",
+			"summary": "Tuotteen Gaja Camarcanda Magnum 2019 hinta on muuttunut. 482,91 € → 479,00 € (−3,91 €, −0,81 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901359-eb798417beb8.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

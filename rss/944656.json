@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Henriet-Bazin Premier Cru Blanc de Blancs Champagne Extra Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/944656/",
+	"feed_url": "https://alkometriikka.fi/rss/944656.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Henriet-Bazin Premier Cru Blanc de Blancs Champagne Extra Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-944656-2026-09-29-66.98",
+			"url": "https://alkometriikka.fi/tuotteet/944656/",
+			"title": "Henriet-Bazin Premier Cru Blanc de Blancs Champagne Extra Brut — 64,44 € → 66,98 €",
+			"content_html": "<p>Tuotteen Henriet-Bazin Premier Cru Blanc de Blancs Champagne Extra Brut hinta on muuttunut.</p><p>64,44 € → 66,98 € (+2,54 €, +3,94 %).</p>",
+			"summary": "Tuotteen Henriet-Bazin Premier Cru Blanc de Blancs Champagne Extra Brut hinta on muuttunut. 64,44 € → 66,98 € (+2,54 €, +3,94 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/944656-896a1dc40cf6.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

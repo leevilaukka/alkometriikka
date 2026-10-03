@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Teerenpeli 10 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/121246/",
+	"feed_url": "https://alkometriikka.fi/rss/121246.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Teerenpeli 10 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-121246-2026-09-29-83.98",
+			"url": "https://alkometriikka.fi/tuotteet/121246/",
+			"title": "Teerenpeli 10 Year Old Single Malt — 83,80 € → 83,98 €",
+			"content_html": "<p>Tuotteen Teerenpeli 10 Year Old Single Malt hinta on muuttunut.</p><p>83,80 € → 83,98 € (+0,18 €, +0,21 %).</p>",
+			"summary": "Tuotteen Teerenpeli 10 Year Old Single Malt hinta on muuttunut. 83,80 € → 83,98 € (+0,18 €, +0,21 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/121246-672cb06ea4d4.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

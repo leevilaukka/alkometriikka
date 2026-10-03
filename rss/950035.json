@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dourakis Monoceros Grenache Rouge Merlot 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/950035/",
+	"feed_url": "https://alkometriikka.fi/rss/950035.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dourakis Monoceros Grenache Rouge Merlot 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-950035-2026-09-29-27.43",
+			"url": "https://alkometriikka.fi/tuotteet/950035/",
+			"title": "Dourakis Monoceros Grenache Rouge Merlot 2022 — 26,08 € → 27,43 €",
+			"content_html": "<p>Tuotteen Dourakis Monoceros Grenache Rouge Merlot 2022 hinta on muuttunut.</p><p>26,08 € → 27,43 € (+1,35 €, +5,18 %).</p>",
+			"summary": "Tuotteen Dourakis Monoceros Grenache Rouge Merlot 2022 hinta on muuttunut. 26,08 € → 27,43 € (+1,35 €, +5,18 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/950035-bd0b23c36ec8.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ainoa Silkki 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/684087/",
+	"feed_url": "https://alkometriikka.fi/rss/684087.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ainoa Silkki 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-684087-2026-09-29-25.9",
+			"url": "https://alkometriikka.fi/tuotteet/684087/",
+			"title": "Ainoa Silkki 2024 — 25,40 € → 25,90 €",
+			"content_html": "<p>Tuotteen Ainoa Silkki 2024 hinta on muuttunut.</p><p>25,40 € → 25,90 € (+0,50 €, +1,97 %).</p>",
+			"summary": "Tuotteen Ainoa Silkki 2024 hinta on muuttunut. 25,40 € → 25,90 € (+0,50 €, +1,97 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/684087-46211466dac9.png",
+			"tags": [
+				"Viinit",
+				"hedelmä- ja aromatisoidut viinit"
+			]
+		}
+	]
+}

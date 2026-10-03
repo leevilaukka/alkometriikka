@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Terre del Barolo Biologico Barolo 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/946637/",
+	"feed_url": "https://alkometriikka.fi/rss/946637.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Terre del Barolo Biologico Barolo 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-946637-2026-09-29-36.98",
+			"url": "https://alkometriikka.fi/tuotteet/946637/",
+			"title": "Terre del Barolo Biologico Barolo 2018 — 36,90 € → 36,98 €",
+			"content_html": "<p>Tuotteen Terre del Barolo Biologico Barolo 2018 hinta on muuttunut.</p><p>36,90 € → 36,98 € (+0,08 €, +0,22 %).</p>",
+			"summary": "Tuotteen Terre del Barolo Biologico Barolo 2018 hinta on muuttunut. 36,90 € → 36,98 € (+0,08 €, +0,22 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/946637-66ff2d95fa51.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

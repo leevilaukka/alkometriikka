@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Taittinger Les Folies de la Marquetterie Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/912957/",
+	"feed_url": "https://alkometriikka.fi/rss/912957.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Taittinger Les Folies de la Marquetterie Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-912957-2026-09-29-90.21",
+			"url": "https://alkometriikka.fi/tuotteet/912957/",
+			"title": "Taittinger Les Folies de la Marquetterie Champagne Brut — 86,45 € → 90,21 €",
+			"content_html": "<p>Tuotteen Taittinger Les Folies de la Marquetterie Champagne Brut hinta on muuttunut.</p><p>86,45 € → 90,21 € (+3,76 €, +4,35 %).</p>",
+			"summary": "Tuotteen Taittinger Les Folies de la Marquetterie Champagne Brut hinta on muuttunut. 86,45 € → 90,21 € (+3,76 €, +4,35 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/912957-e895d0504ce8.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

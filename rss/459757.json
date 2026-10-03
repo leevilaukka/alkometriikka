@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pelissero Barbera d'Alba Tulin 2012 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/459757/",
+	"feed_url": "https://alkometriikka.fi/rss/459757.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pelissero Barbera d'Alba Tulin 2012.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-459757-2026-09-29-38.86",
+			"url": "https://alkometriikka.fi/tuotteet/459757/",
+			"title": "Pelissero Barbera d'Alba Tulin 2012 — 38,69 € → 38,86 €",
+			"content_html": "<p>Tuotteen Pelissero Barbera d'Alba Tulin 2012 hinta on muuttunut.</p><p>38,69 € → 38,86 € (+0,17 €, +0,44 %).</p>",
+			"summary": "Tuotteen Pelissero Barbera d'Alba Tulin 2012 hinta on muuttunut. 38,69 € → 38,86 € (+0,17 €, +0,44 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/459757-ab31590c7219.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

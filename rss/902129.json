@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Orin Swift Palermo 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902129/",
+	"feed_url": "https://alkometriikka.fi/rss/902129.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Orin Swift Palermo 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902129-2026-09-29-94.99",
+			"url": "https://alkometriikka.fi/tuotteet/902129/",
+			"title": "Orin Swift Palermo 2022 — 89,99 € → 94,99 €",
+			"content_html": "<p>Tuotteen Orin Swift Palermo 2022 hinta on muuttunut.</p><p>89,99 € → 94,99 € (+5,00 €, +5,56 %).</p>",
+			"summary": "Tuotteen Orin Swift Palermo 2022 hinta on muuttunut. 89,99 € → 94,99 € (+5,00 €, +5,56 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902129-f3ab101fd753.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

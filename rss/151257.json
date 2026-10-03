@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vecchia Romagna Etichetta Nera – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/151257/",
+	"feed_url": "https://alkometriikka.fi/rss/151257.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vecchia Romagna Etichetta Nera.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-151257-2026-07-18-29.98",
+			"url": "https://alkometriikka.fi/tuotteet/151257/",
+			"title": "Vecchia Romagna Etichetta Nera — 30,24 € → 29,98 €",
+			"content_html": "<p>Tuotteen Vecchia Romagna Etichetta Nera hinta on muuttunut.</p><p>30,24 € → 29,98 € (−0,26 €, −0,86 %).</p>",
+			"summary": "Tuotteen Vecchia Romagna Etichetta Nera hinta on muuttunut. 30,24 € → 29,98 € (−0,26 €, −0,86 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/151257-67d88de247f4.png",
+			"tags": [
+				"Väkevät",
+				"brandyt"
+			]
+		}
+	]
+}

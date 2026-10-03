@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Georges Duboeuf Beaujolais-Villages 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/006102/",
+	"feed_url": "https://alkometriikka.fi/rss/006102.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Georges Duboeuf Beaujolais-Villages 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-006102-2026-07-18-17.9",
+			"url": "https://alkometriikka.fi/tuotteet/006102/",
+			"title": "Georges Duboeuf Beaujolais-Villages 2023 — 18,27 € → 17,90 €",
+			"content_html": "<p>Tuotteen Georges Duboeuf Beaujolais-Villages 2023 hinta on muuttunut.</p><p>18,27 € → 17,90 € (−0,37 €, −2,03 %).</p>",
+			"summary": "Tuotteen Georges Duboeuf Beaujolais-Villages 2023 hinta on muuttunut. 18,27 € → 17,90 € (−0,37 €, −2,03 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/006102-d06a381afe31.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nozeco Fine Sparkling Alcohol Free – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/951394/",
+	"feed_url": "https://alkometriikka.fi/rss/951394.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nozeco Fine Sparkling Alcohol Free.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-951394-2026-09-13-6.99",
+			"url": "https://alkometriikka.fi/tuotteet/951394/",
+			"title": "Nozeco Fine Sparkling Alcohol Free — 6,96 € → 6,99 €",
+			"content_html": "<p>Tuotteen Nozeco Fine Sparkling Alcohol Free hinta on muuttunut.</p><p>6,96 € → 6,99 € (+0,03 €, +0,43 %).</p>",
+			"summary": "Tuotteen Nozeco Fine Sparkling Alcohol Free hinta on muuttunut. 6,96 € → 6,99 € (+0,03 €, +0,43 %).",
+			"date_published": "2026-09-13T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/951394-146e9f4daff2.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat kuohuviinit"
+			]
+		}
+	]
+}

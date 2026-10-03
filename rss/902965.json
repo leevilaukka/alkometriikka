@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Wanted Pinot Noir 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902965/",
+	"feed_url": "https://alkometriikka.fi/rss/902965.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Wanted Pinot Noir 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902965-2026-09-29-12.78",
+			"url": "https://alkometriikka.fi/tuotteet/902965/",
+			"title": "The Wanted Pinot Noir 2024 — 12,69 € → 12,78 €",
+			"content_html": "<p>Tuotteen The Wanted Pinot Noir 2024 hinta on muuttunut.</p><p>12,69 € → 12,78 € (+0,09 €, +0,71 %).</p>",
+			"summary": "Tuotteen The Wanted Pinot Noir 2024 hinta on muuttunut. 12,69 € → 12,78 € (+0,09 €, +0,71 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902965-b80bab2214fe.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

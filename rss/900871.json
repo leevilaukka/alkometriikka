@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – GlenAllachie 18 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900871/",
+	"feed_url": "https://alkometriikka.fi/rss/900871.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: GlenAllachie 18 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900871-2026-07-18-159.99",
+			"url": "https://alkometriikka.fi/tuotteet/900871/",
+			"title": "GlenAllachie 18 Year Old Single Malt — 169,99 € → 159,99 €",
+			"content_html": "<p>Tuotteen GlenAllachie 18 Year Old Single Malt hinta on muuttunut.</p><p>169,99 € → 159,99 € (−10,00 €, −5,88 %).</p>",
+			"summary": "Tuotteen GlenAllachie 18 Year Old Single Malt hinta on muuttunut. 169,99 € → 159,99 € (−10,00 €, −5,88 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900871-493ebbdc79f2.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

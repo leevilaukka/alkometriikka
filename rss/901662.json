@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Don Simon Seleccion Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901662/",
+	"feed_url": "https://alkometriikka.fi/rss/901662.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Don Simon Seleccion Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901662-2026-09-29-9.98",
+			"url": "https://alkometriikka.fi/tuotteet/901662/",
+			"title": "Don Simon Seleccion Brut — 8,99 € → 9,98 €",
+			"content_html": "<p>Tuotteen Don Simon Seleccion Brut hinta on muuttunut.</p><p>8,99 € → 9,98 € (+0,99 €, +11,01 %).</p>",
+			"summary": "Tuotteen Don Simon Seleccion Brut hinta on muuttunut. 8,99 € → 9,98 € (+0,99 €, +11,01 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901662-3a564611436d.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

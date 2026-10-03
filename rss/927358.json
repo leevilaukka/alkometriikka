@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Fütyülös Barack (Whistling Abricot) – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/927358/",
+	"feed_url": "https://alkometriikka.fi/rss/927358.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Fütyülös Barack (Whistling Abricot).",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-927358-2026-09-29-44.55",
+			"url": "https://alkometriikka.fi/tuotteet/927358/",
+			"title": "Fütyülös Barack (Whistling Abricot) — 43,76 € → 44,55 €",
+			"content_html": "<p>Tuotteen Fütyülös Barack (Whistling Abricot) hinta on muuttunut.</p><p>43,76 € → 44,55 € (+0,79 €, +1,81 %).</p>",
+			"summary": "Tuotteen Fütyülös Barack (Whistling Abricot) hinta on muuttunut. 43,76 € → 44,55 € (+0,79 €, +1,81 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/927358-4e9127cb45ce.png",
+			"tags": [
+				"Väkevät",
+				"hedelmätisleet"
+			]
+		}
+	]
+}

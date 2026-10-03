@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Takamaka Extra Noir – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903382/",
+	"feed_url": "https://alkometriikka.fi/rss/903382.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Takamaka Extra Noir.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903382-2026-09-29-51.07",
+			"url": "https://alkometriikka.fi/tuotteet/903382/",
+			"title": "Takamaka Extra Noir — 51,01 € → 51,07 €",
+			"content_html": "<p>Tuotteen Takamaka Extra Noir hinta on muuttunut.</p><p>51,01 € → 51,07 € (+0,06 €, +0,12 %).</p>",
+			"summary": "Tuotteen Takamaka Extra Noir hinta on muuttunut. 51,01 € → 51,07 € (+0,06 €, +0,12 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903382-044599a1e10b.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

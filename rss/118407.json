@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gustav Tilli Vodka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/118407/",
+	"feed_url": "https://alkometriikka.fi/rss/118407.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gustav Tilli Vodka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-118407-2026-07-18-32.5",
+			"url": "https://alkometriikka.fi/tuotteet/118407/",
+			"title": "Gustav Tilli Vodka — 32,52 € → 32,50 €",
+			"content_html": "<p>Tuotteen Gustav Tilli Vodka hinta on muuttunut.</p><p>32,52 € → 32,50 € (−0,02 €, −0,06 %).</p>",
+			"summary": "Tuotteen Gustav Tilli Vodka hinta on muuttunut. 32,52 € → 32,50 € (−0,02 €, −0,06 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/118407-195baca93498.png",
+			"tags": [
+				"Väkevät",
+				"maustetut vodkat"
+			]
+		}
+	]
+}

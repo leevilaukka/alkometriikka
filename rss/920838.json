@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – La Chouette de Champillon Champagne Brut Jeroboam – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/920838/",
+	"feed_url": "https://alkometriikka.fi/rss/920838.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: La Chouette de Champillon Champagne Brut Jeroboam.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-920838-2026-09-29-299.99",
+			"url": "https://alkometriikka.fi/tuotteet/920838/",
+			"title": "La Chouette de Champillon Champagne Brut Jeroboam — 299,98 € → 299,99 €",
+			"content_html": "<p>Tuotteen La Chouette de Champillon Champagne Brut Jeroboam hinta on muuttunut.</p><p>299,98 € → 299,99 € (+0,01 €, +0,00 %).</p>",
+			"summary": "Tuotteen La Chouette de Champillon Champagne Brut Jeroboam hinta on muuttunut. 299,98 € → 299,99 € (+0,01 €, +0,00 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/920838-e0bbecead262.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

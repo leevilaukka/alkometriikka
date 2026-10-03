@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Castaño GSM – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/933523/",
+	"feed_url": "https://alkometriikka.fi/rss/933523.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Castaño GSM.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-933523-2026-07-18-14.49",
+			"url": "https://alkometriikka.fi/tuotteet/933523/",
+			"title": "Castaño GSM — 14,45 € → 14,49 €",
+			"content_html": "<p>Tuotteen Castaño GSM hinta on muuttunut.</p><p>14,45 € → 14,49 € (+0,04 €, +0,28 %).</p>",
+			"summary": "Tuotteen Castaño GSM hinta on muuttunut. 14,45 € → 14,49 € (+0,04 €, +0,28 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/933523-0c31cf70c844.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

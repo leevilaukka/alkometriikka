@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pardas Collita Roja 2016 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/926786/",
+	"feed_url": "https://alkometriikka.fi/rss/926786.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pardas Collita Roja 2016.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-926786-2026-09-29-50.3",
+			"url": "https://alkometriikka.fi/tuotteet/926786/",
+			"title": "Pardas Collita Roja 2016 — 49,33 € → 50,30 €",
+			"content_html": "<p>Tuotteen Pardas Collita Roja 2016 hinta on muuttunut.</p><p>49,33 € → 50,30 € (+0,97 €, +1,97 %).</p>",
+			"summary": "Tuotteen Pardas Collita Roja 2016 hinta on muuttunut. 49,33 € → 50,30 € (+0,97 €, +1,97 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/926786-555152efe088.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

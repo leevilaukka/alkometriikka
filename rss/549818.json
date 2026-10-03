@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Magyar Fehér Bor hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/549818/",
+	"feed_url": "https://alkometriikka.fi/rss/549818.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Magyar Fehér Bor hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-549818-2026-07-18-32.99",
+			"url": "https://alkometriikka.fi/tuotteet/549818/",
+			"title": "Magyar Fehér Bor hanapakkaus — 32,79 € → 32,99 €",
+			"content_html": "<p>Tuotteen Magyar Fehér Bor hanapakkaus hinta on muuttunut.</p><p>32,79 € → 32,99 € (+0,20 €, +0,61 %).</p>",
+			"summary": "Tuotteen Magyar Fehér Bor hanapakkaus hinta on muuttunut. 32,79 € → 32,99 € (+0,20 €, +0,61 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/549818-2454c5bed2bc.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

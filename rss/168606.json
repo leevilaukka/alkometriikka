@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Un Peureux Absinthe – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/168606/",
+	"feed_url": "https://alkometriikka.fi/rss/168606.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Un Peureux Absinthe.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-168606-2026-09-29-39.68",
+			"url": "https://alkometriikka.fi/tuotteet/168606/",
+			"title": "Un Peureux Absinthe — 39,57 € → 39,68 €",
+			"content_html": "<p>Tuotteen Un Peureux Absinthe hinta on muuttunut.</p><p>39,57 € → 39,68 € (+0,11 €, +0,28 %).</p>",
+			"summary": "Tuotteen Un Peureux Absinthe hinta on muuttunut. 39,57 € → 39,68 € (+0,11 €, +0,28 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/168606-45c2b0389d65.png",
+			"tags": [
+				"Väkevät",
+				"anistisleet"
+			]
+		}
+	]
+}

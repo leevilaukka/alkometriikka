@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Macallan Classic Cut 2024 Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/946373/",
+	"feed_url": "https://alkometriikka.fi/rss/946373.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Macallan Classic Cut 2024 Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-946373-2026-09-29-163.61",
+			"url": "https://alkometriikka.fi/tuotteet/946373/",
+			"title": "The Macallan Classic Cut 2024 Single Malt — 156,38 € → 163,61 €",
+			"content_html": "<p>Tuotteen The Macallan Classic Cut 2024 Single Malt hinta on muuttunut.</p><p>156,38 € → 163,61 € (+7,23 €, +4,62 %).</p>",
+			"summary": "Tuotteen The Macallan Classic Cut 2024 Single Malt hinta on muuttunut. 156,38 € → 163,61 € (+7,23 €, +4,62 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/946373-57bdf4c72b46.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

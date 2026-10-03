@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Petra Unger Zweigelt Rosé 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/937375/",
+	"feed_url": "https://alkometriikka.fi/rss/937375.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Petra Unger Zweigelt Rosé 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-937375-2026-09-29-20.17",
+			"url": "https://alkometriikka.fi/tuotteet/937375/",
+			"title": "Petra Unger Zweigelt Rosé 2024 — 19,71 € → 20,17 €",
+			"content_html": "<p>Tuotteen Petra Unger Zweigelt Rosé 2024 hinta on muuttunut.</p><p>19,71 € → 20,17 € (+0,46 €, +2,33 %).</p>",
+			"summary": "Tuotteen Petra Unger Zweigelt Rosé 2024 hinta on muuttunut. 19,71 € → 20,17 € (+0,46 €, +2,33 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/937375-3086b0aedc43.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

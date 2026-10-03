@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tenuta Ferrante Bacche di Ametista 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900315/",
+	"feed_url": "https://alkometriikka.fi/rss/900315.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tenuta Ferrante Bacche di Ametista 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900315-2026-09-29-26.86",
+			"url": "https://alkometriikka.fi/tuotteet/900315/",
+			"title": "Tenuta Ferrante Bacche di Ametista 2023 — 25,89 € → 26,86 €",
+			"content_html": "<p>Tuotteen Tenuta Ferrante Bacche di Ametista 2023 hinta on muuttunut.</p><p>25,89 € → 26,86 € (+0,97 €, +3,75 %).</p>",
+			"summary": "Tuotteen Tenuta Ferrante Bacche di Ametista 2023 hinta on muuttunut. 25,89 € → 26,86 € (+0,97 €, +3,75 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900315-a3abc76dbc74.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

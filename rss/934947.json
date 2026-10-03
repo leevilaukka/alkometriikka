@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – I Heart Prosecco Extra Dry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/934947/",
+	"feed_url": "https://alkometriikka.fi/rss/934947.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: I Heart Prosecco Extra Dry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-934947-2026-09-29-12.99",
+			"url": "https://alkometriikka.fi/tuotteet/934947/",
+			"title": "I Heart Prosecco Extra Dry — 15,22 € → 12,99 €",
+			"content_html": "<p>Tuotteen I Heart Prosecco Extra Dry hinta on muuttunut.</p><p>15,22 € → 12,99 € (−2,23 €, −14,65 %).</p>",
+			"summary": "Tuotteen I Heart Prosecco Extra Dry hinta on muuttunut. 15,22 € → 12,99 € (−2,23 €, −14,65 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/934947-ba7aca45b465.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

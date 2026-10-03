@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hinch Small Batch – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/952965/",
+	"feed_url": "https://alkometriikka.fi/rss/952965.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hinch Small Batch.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-952965-2026-09-29-44.23",
+			"url": "https://alkometriikka.fi/tuotteet/952965/",
+			"title": "Hinch Small Batch — 55,29 € → 44,23 €",
+			"content_html": "<p>Tuotteen Hinch Small Batch hinta on muuttunut.</p><p>55,29 € → 44,23 € (−11,06 €, −20,00 %).</p>",
+			"summary": "Tuotteen Hinch Small Batch hinta on muuttunut. 55,29 € → 44,23 € (−11,06 €, −20,00 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/952965-894b589c7c36.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

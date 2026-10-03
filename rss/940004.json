@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Manousakis Nostos Pink 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/940004/",
+	"feed_url": "https://alkometriikka.fi/rss/940004.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Manousakis Nostos Pink 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-940004-2026-09-29-33.04",
+			"url": "https://alkometriikka.fi/tuotteet/940004/",
+			"title": "Manousakis Nostos Pink 2025 — 31,26 € → 33,04 €",
+			"content_html": "<p>Tuotteen Manousakis Nostos Pink 2025 hinta on muuttunut.</p><p>31,26 € → 33,04 € (+1,78 €, +5,69 %).</p>",
+			"summary": "Tuotteen Manousakis Nostos Pink 2025 hinta on muuttunut. 31,26 € → 33,04 € (+1,78 €, +5,69 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/940004-0b06692a5d60.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

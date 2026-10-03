@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gwynt y Ddraig Black Dragon – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/924774/",
+	"feed_url": "https://alkometriikka.fi/rss/924774.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gwynt y Ddraig Black Dragon.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-924774-2026-09-29-6.99",
+			"url": "https://alkometriikka.fi/tuotteet/924774/",
+			"title": "Gwynt y Ddraig Black Dragon — 6,55 € → 6,99 €",
+			"content_html": "<p>Tuotteen Gwynt y Ddraig Black Dragon hinta on muuttunut.</p><p>6,55 € → 6,99 € (+0,44 €, +6,72 %).</p>",
+			"summary": "Tuotteen Gwynt y Ddraig Black Dragon hinta on muuttunut. 6,55 € → 6,99 € (+0,44 €, +6,72 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/924774-760ca1cd3886.png",
+			"tags": [
+				"Panimotuotteet",
+				"siiderit"
+			]
+		}
+	]
+}

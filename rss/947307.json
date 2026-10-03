@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Zensa Organico Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/947307/",
+	"feed_url": "https://alkometriikka.fi/rss/947307.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Zensa Organico Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-947307-2026-09-29-13.98",
+			"url": "https://alkometriikka.fi/tuotteet/947307/",
+			"title": "Zensa Organico Brut — 13,90 € → 13,98 €",
+			"content_html": "<p>Tuotteen Zensa Organico Brut hinta on muuttunut.</p><p>13,90 € → 13,98 € (+0,08 €, +0,58 %).</p>",
+			"summary": "Tuotteen Zensa Organico Brut hinta on muuttunut. 13,90 € → 13,98 € (+0,08 €, +0,58 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/947307-b1b395202180.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

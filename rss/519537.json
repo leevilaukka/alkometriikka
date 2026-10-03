@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dominio de la Vega No23 Expression Cava Reserva Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/519537/",
+	"feed_url": "https://alkometriikka.fi/rss/519537.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dominio de la Vega No23 Expression Cava Reserva Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-519537-2026-07-18-19.89",
+			"url": "https://alkometriikka.fi/tuotteet/519537/",
+			"title": "Dominio de la Vega No23 Expression Cava Reserva Brut — 19,45 € → 19,89 €",
+			"content_html": "<p>Tuotteen Dominio de la Vega No23 Expression Cava Reserva Brut hinta on muuttunut.</p><p>19,45 € → 19,89 € (+0,44 €, +2,26 %).</p>",
+			"summary": "Tuotteen Dominio de la Vega No23 Expression Cava Reserva Brut hinta on muuttunut. 19,45 € → 19,89 € (+0,44 €, +2,26 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/519537-8a25d92bb0ff.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

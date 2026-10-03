@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Christian Drouin Calvados Sélection – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902005/",
+	"feed_url": "https://alkometriikka.fi/rss/902005.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Christian Drouin Calvados Sélection.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902005-2026-09-29-51.99",
+			"url": "https://alkometriikka.fi/tuotteet/902005/",
+			"title": "Christian Drouin Calvados Sélection — 57,18 € → 51,99 €",
+			"content_html": "<p>Tuotteen Christian Drouin Calvados Sélection hinta on muuttunut.</p><p>57,18 € → 51,99 € (−5,19 €, −9,08 %).</p>",
+			"summary": "Tuotteen Christian Drouin Calvados Sélection hinta on muuttunut. 57,18 € → 51,99 € (−5,19 €, −9,08 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902005-f303fad73366.png",
+			"tags": [
+				"Väkevät",
+				"calvadosit"
+			]
+		}
+	]
+}

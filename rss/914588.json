@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Shafer Relentless 2017 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/914588/",
+	"feed_url": "https://alkometriikka.fi/rss/914588.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Shafer Relentless 2017.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-914588-2026-09-29-137.58",
+			"url": "https://alkometriikka.fi/tuotteet/914588/",
+			"title": "Shafer Relentless 2017 — 130,45 € → 137,58 €",
+			"content_html": "<p>Tuotteen Shafer Relentless 2017 hinta on muuttunut.</p><p>130,45 € → 137,58 € (+7,13 €, +5,47 %).</p>",
+			"summary": "Tuotteen Shafer Relentless 2017 hinta on muuttunut. 130,45 € → 137,58 € (+7,13 €, +5,47 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/914588-5e36b8ba93a1.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

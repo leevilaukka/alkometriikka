@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Saku Porter – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/730856/",
+	"feed_url": "https://alkometriikka.fi/rss/730856.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Saku Porter.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-730856-2026-07-18-4.29",
+			"url": "https://alkometriikka.fi/tuotteet/730856/",
+			"title": "Saku Porter — 4,19 € → 4,29 €",
+			"content_html": "<p>Tuotteen Saku Porter hinta on muuttunut.</p><p>4,19 € → 4,29 € (+0,10 €, +2,39 %).</p>",
+			"summary": "Tuotteen Saku Porter hinta on muuttunut. 4,19 € → 4,29 € (+0,10 €, +2,39 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/730856-2b6e518ecee5.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

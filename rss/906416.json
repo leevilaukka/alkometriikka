@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Drappier Rosé de Saignée Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/906416/",
+	"feed_url": "https://alkometriikka.fi/rss/906416.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Drappier Rosé de Saignée Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-906416-2026-09-29-54.99",
+			"url": "https://alkometriikka.fi/tuotteet/906416/",
+			"title": "Drappier Rosé de Saignée Champagne Brut — 54,98 € → 54,99 €",
+			"content_html": "<p>Tuotteen Drappier Rosé de Saignée Champagne Brut hinta on muuttunut.</p><p>54,98 € → 54,99 € (+0,01 €, +0,02 %).</p>",
+			"summary": "Tuotteen Drappier Rosé de Saignée Champagne Brut hinta on muuttunut. 54,98 € → 54,99 € (+0,01 €, +0,02 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/906416-ed1c38b82c27.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

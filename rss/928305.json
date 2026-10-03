@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Delavenne Grand Cru Nature Champagne Non Dosé – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/928305/",
+	"feed_url": "https://alkometriikka.fi/rss/928305.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Delavenne Grand Cru Nature Champagne Non Dosé.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-928305-2026-09-29-59.67",
+			"url": "https://alkometriikka.fi/tuotteet/928305/",
+			"title": "Delavenne Grand Cru Nature Champagne Non Dosé — 57,80 € → 59,67 €",
+			"content_html": "<p>Tuotteen Delavenne Grand Cru Nature Champagne Non Dosé hinta on muuttunut.</p><p>57,80 € → 59,67 € (+1,87 €, +3,24 %).</p>",
+			"summary": "Tuotteen Delavenne Grand Cru Nature Champagne Non Dosé hinta on muuttunut. 57,80 € → 59,67 € (+1,87 €, +3,24 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/928305-729b6cb4cb9a.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

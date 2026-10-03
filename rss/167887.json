@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Evan Williams Bottled-in-Bond – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/167887/",
+	"feed_url": "https://alkometriikka.fi/rss/167887.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Evan Williams Bottled-in-Bond.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-167887-2026-09-29-44.3",
+			"url": "https://alkometriikka.fi/tuotteet/167887/",
+			"title": "Evan Williams Bottled-in-Bond — 43,99 € → 44,30 €",
+			"content_html": "<p>Tuotteen Evan Williams Bottled-in-Bond hinta on muuttunut.</p><p>43,99 € → 44,30 € (+0,31 €, +0,70 %).</p>",
+			"summary": "Tuotteen Evan Williams Bottled-in-Bond hinta on muuttunut. 43,99 € → 44,30 € (+0,31 €, +0,70 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/167887-70a0074277c8.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

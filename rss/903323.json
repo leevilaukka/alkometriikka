@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Marolo Grappa di Barolo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903323/",
+	"feed_url": "https://alkometriikka.fi/rss/903323.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Marolo Grappa di Barolo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903323-2026-09-29-97.94",
+			"url": "https://alkometriikka.fi/tuotteet/903323/",
+			"title": "Marolo Grappa di Barolo — 94,98 € → 97,94 €",
+			"content_html": "<p>Tuotteen Marolo Grappa di Barolo hinta on muuttunut.</p><p>94,98 € → 97,94 € (+2,96 €, +3,12 %).</p>",
+			"summary": "Tuotteen Marolo Grappa di Barolo hinta on muuttunut. 94,98 € → 97,94 € (+2,96 €, +3,12 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903323-e1932ff55c2e.png",
+			"tags": [
+				"Väkevät",
+				"grapat"
+			]
+		}
+	]
+}

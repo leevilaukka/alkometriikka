@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jaloviina Extra 2026 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/168397/",
+	"feed_url": "https://alkometriikka.fi/rss/168397.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jaloviina Extra 2026.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-168397-2026-07-18-34.99",
+			"url": "https://alkometriikka.fi/tuotteet/168397/",
+			"title": "Jaloviina Extra 2026 — 34,97 € → 34,99 €",
+			"content_html": "<p>Tuotteen Jaloviina Extra 2026 hinta on muuttunut.</p><p>34,97 € → 34,99 € (+0,02 €, +0,06 %).</p>",
+			"summary": "Tuotteen Jaloviina Extra 2026 hinta on muuttunut. 34,97 € → 34,99 € (+0,02 €, +0,06 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/168397-d56a408b7f1f.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

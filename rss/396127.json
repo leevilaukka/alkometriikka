@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dow's Crusted Port – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/396127/",
+	"feed_url": "https://alkometriikka.fi/rss/396127.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dow's Crusted Port.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-396127-2026-09-29-36.99",
+			"url": "https://alkometriikka.fi/tuotteet/396127/",
+			"title": "Dow's Crusted Port — 36,39 € → 36,99 €",
+			"content_html": "<p>Tuotteen Dow's Crusted Port hinta on muuttunut.</p><p>36,39 € → 36,99 € (+0,60 €, +1,65 %).</p>",
+			"summary": "Tuotteen Dow's Crusted Port hinta on muuttunut. 36,39 € → 36,99 € (+0,60 €, +1,65 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/396127-aeb359fff7cc.png",
+			"tags": [
+				"Välituotteet",
+				"portviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-396127-2026-07-18-36.39",
+			"url": "https://alkometriikka.fi/tuotteet/396127/",
+			"title": "Dow's Crusted Port — 36,10 € → 36,39 €",
+			"content_html": "<p>Tuotteen Dow's Crusted Port hinta on muuttunut.</p><p>36,10 € → 36,39 € (+0,29 €, +0,80 %).</p>",
+			"summary": "Tuotteen Dow's Crusted Port hinta on muuttunut. 36,10 € → 36,39 € (+0,29 €, +0,80 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/396127-aeb359fff7cc.png",
+			"tags": [
+				"Välituotteet",
+				"portviinit"
+			]
+		}
+	]
+}

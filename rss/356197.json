@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Chymos Karpalo Väkevä Marjaviini – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/356197/",
+	"feed_url": "https://alkometriikka.fi/rss/356197.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Chymos Karpalo Väkevä Marjaviini.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-356197-2026-07-18-11.98",
+			"url": "https://alkometriikka.fi/tuotteet/356197/",
+			"title": "Chymos Karpalo Väkevä Marjaviini — 12,41 € → 11,98 €",
+			"content_html": "<p>Tuotteen Chymos Karpalo Väkevä Marjaviini hinta on muuttunut.</p><p>12,41 € → 11,98 € (−0,43 €, −3,46 %).</p>",
+			"summary": "Tuotteen Chymos Karpalo Väkevä Marjaviini hinta on muuttunut. 12,41 € → 11,98 € (−0,43 €, −3,46 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/356197-6607ef34365c.png",
+			"tags": [
+				"Välituotteet",
+				"väkevät viinit"
+			]
+		}
+	]
+}

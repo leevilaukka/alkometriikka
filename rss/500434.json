@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Yuntero Frizzante – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/500434/",
+	"feed_url": "https://alkometriikka.fi/rss/500434.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Yuntero Frizzante.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-500434-2026-09-29-8.29",
+			"url": "https://alkometriikka.fi/tuotteet/500434/",
+			"title": "Yuntero Frizzante — 8,49 € → 8,29 €",
+			"content_html": "<p>Tuotteen Yuntero Frizzante hinta on muuttunut.</p><p>8,49 € → 8,29 € (−0,20 €, −2,36 %).</p>",
+			"summary": "Tuotteen Yuntero Frizzante hinta on muuttunut. 8,49 € → 8,29 € (−0,20 €, −2,36 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/500434-0000dd3d72b7.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

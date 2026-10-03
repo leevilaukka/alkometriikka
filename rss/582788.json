@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Taittinger Réserve Magnum Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/582788/",
+	"feed_url": "https://alkometriikka.fi/rss/582788.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Taittinger Réserve Magnum Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-582788-2026-09-29-139.69",
+			"url": "https://alkometriikka.fi/tuotteet/582788/",
+			"title": "Taittinger Réserve Magnum Champagne Brut — 135,51 € → 139,69 €",
+			"content_html": "<p>Tuotteen Taittinger Réserve Magnum Champagne Brut hinta on muuttunut.</p><p>135,51 € → 139,69 € (+4,18 €, +3,08 %).</p>",
+			"summary": "Tuotteen Taittinger Réserve Magnum Champagne Brut hinta on muuttunut. 135,51 € → 139,69 € (+4,18 €, +3,08 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/582788-9b113a416f76.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – La Noblaie Les Blancs Manteaux 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902412/",
+	"feed_url": "https://alkometriikka.fi/rss/902412.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: La Noblaie Les Blancs Manteaux 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902412-2026-09-29-32.07",
+			"url": "https://alkometriikka.fi/tuotteet/902412/",
+			"title": "La Noblaie Les Blancs Manteaux 2022 — 31,61 € → 32,07 €",
+			"content_html": "<p>Tuotteen La Noblaie Les Blancs Manteaux 2022 hinta on muuttunut.</p><p>31,61 € → 32,07 € (+0,46 €, +1,46 %).</p>",
+			"summary": "Tuotteen La Noblaie Les Blancs Manteaux 2022 hinta on muuttunut. 31,61 € → 32,07 € (+0,46 €, +1,46 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902412-46e4fae914ea.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

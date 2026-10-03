@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dupont 15 Ans Calvados – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/954523/",
+	"feed_url": "https://alkometriikka.fi/rss/954523.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dupont 15 Ans Calvados.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-954523-2026-09-29-104.58",
+			"url": "https://alkometriikka.fi/tuotteet/954523/",
+			"title": "Dupont 15 Ans Calvados — 99,99 € → 104,58 €",
+			"content_html": "<p>Tuotteen Dupont 15 Ans Calvados hinta on muuttunut.</p><p>99,99 € → 104,58 € (+4,59 €, +4,59 %).</p>",
+			"summary": "Tuotteen Dupont 15 Ans Calvados hinta on muuttunut. 99,99 € → 104,58 € (+4,59 €, +4,59 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/954523-0887e91c91e9.png",
+			"tags": [
+				"Väkevät",
+				"calvadosit"
+			]
+		}
+	]
+}

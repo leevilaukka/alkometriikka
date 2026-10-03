@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Benjamin Leroux Pommard 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902281/",
+	"feed_url": "https://alkometriikka.fi/rss/902281.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Benjamin Leroux Pommard 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902281-2026-09-29-131.61",
+			"url": "https://alkometriikka.fi/tuotteet/902281/",
+			"title": "Benjamin Leroux Pommard 2021 — 124,96 € → 131,61 €",
+			"content_html": "<p>Tuotteen Benjamin Leroux Pommard 2021 hinta on muuttunut.</p><p>124,96 € → 131,61 € (+6,65 €, +5,32 %).</p>",
+			"summary": "Tuotteen Benjamin Leroux Pommard 2021 hinta on muuttunut. 124,96 € → 131,61 € (+6,65 €, +5,32 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902281-1d31faacad02.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

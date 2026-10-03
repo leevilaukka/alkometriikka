@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tuori Original Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/905126/",
+	"feed_url": "https://alkometriikka.fi/rss/905126.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tuori Original Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-905126-2026-09-29-42.41",
+			"url": "https://alkometriikka.fi/tuotteet/905126/",
+			"title": "Tuori Original Gin — 42,02 € → 42,41 €",
+			"content_html": "<p>Tuotteen Tuori Original Gin hinta on muuttunut.</p><p>42,02 € → 42,41 € (+0,39 €, +0,93 %).</p>",
+			"summary": "Tuotteen Tuori Original Gin hinta on muuttunut. 42,02 € → 42,41 € (+0,39 €, +0,93 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/905126-347999f40fa3.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

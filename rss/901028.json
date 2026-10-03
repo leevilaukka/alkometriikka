@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Castell D'Encus Acusp 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901028/",
+	"feed_url": "https://alkometriikka.fi/rss/901028.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Castell D'Encus Acusp 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901028-2026-09-29-64.43",
+			"url": "https://alkometriikka.fi/tuotteet/901028/",
+			"title": "Castell D'Encus Acusp 2021 — 62,47 € → 64,43 €",
+			"content_html": "<p>Tuotteen Castell D'Encus Acusp 2021 hinta on muuttunut.</p><p>62,47 € → 64,43 € (+1,96 €, +3,14 %).</p>",
+			"summary": "Tuotteen Castell D'Encus Acusp 2021 hinta on muuttunut. 62,47 € → 64,43 € (+1,96 €, +3,14 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901028-71f57b613440.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

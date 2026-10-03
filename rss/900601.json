@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Planeta La Segreta Rosso Bio 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900601/",
+	"feed_url": "https://alkometriikka.fi/rss/900601.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Planeta La Segreta Rosso Bio 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900601-2026-07-18-17.49",
+			"url": "https://alkometriikka.fi/tuotteet/900601/",
+			"title": "Planeta La Segreta Rosso Bio 2023 — 17,45 € → 17,49 €",
+			"content_html": "<p>Tuotteen Planeta La Segreta Rosso Bio 2023 hinta on muuttunut.</p><p>17,45 € → 17,49 € (+0,04 €, +0,23 %).</p>",
+			"summary": "Tuotteen Planeta La Segreta Rosso Bio 2023 hinta on muuttunut. 17,45 € → 17,49 € (+0,04 €, +0,23 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900601-949794cdfc4d.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

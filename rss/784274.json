@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Brooklyn Bel Air Sour – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/784274/",
+	"feed_url": "https://alkometriikka.fi/rss/784274.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Brooklyn Bel Air Sour.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-784274-2026-09-29-3.99",
+			"url": "https://alkometriikka.fi/tuotteet/784274/",
+			"title": "Brooklyn Bel Air Sour — 3,89 € → 3,99 €",
+			"content_html": "<p>Tuotteen Brooklyn Bel Air Sour hinta on muuttunut.</p><p>3,89 € → 3,99 € (+0,10 €, +2,57 %).</p>",
+			"summary": "Tuotteen Brooklyn Bel Air Sour hinta on muuttunut. 3,89 € → 3,99 € (+0,10 €, +2,57 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/784274-7c9f213fbe08.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-784274-2026-07-18-3.89",
+			"url": "https://alkometriikka.fi/tuotteet/784274/",
+			"title": "Brooklyn Bel Air Sour — 3,79 € → 3,89 €",
+			"content_html": "<p>Tuotteen Brooklyn Bel Air Sour hinta on muuttunut.</p><p>3,79 € → 3,89 € (+0,10 €, +2,64 %).</p>",
+			"summary": "Tuotteen Brooklyn Bel Air Sour hinta on muuttunut. 3,79 € → 3,89 € (+0,10 €, +2,64 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/784274-7c9f213fbe08.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

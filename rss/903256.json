@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Philippe Pacalet Echezeaux Grand Cru 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903256/",
+	"feed_url": "https://alkometriikka.fi/rss/903256.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Philippe Pacalet Echezeaux Grand Cru 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903256-2026-09-29-641.45",
+			"url": "https://alkometriikka.fi/tuotteet/903256/",
+			"title": "Philippe Pacalet Echezeaux Grand Cru 2021 — 598,90 € → 641,45 €",
+			"content_html": "<p>Tuotteen Philippe Pacalet Echezeaux Grand Cru 2021 hinta on muuttunut.</p><p>598,90 € → 641,45 € (+42,55 €, +7,10 %).</p>",
+			"summary": "Tuotteen Philippe Pacalet Echezeaux Grand Cru 2021 hinta on muuttunut. 598,90 € → 641,45 € (+42,55 €, +7,10 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903256-9ded42d5dfe9.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

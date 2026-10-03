@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – La Crema Saralee&apos;s Vineyard Chardonnay 2021 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/948175/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: La Crema Saralee&apos;s Vineyard Chardonnay 2021.</description>
+		<language>fi</language>
+		<lastBuildDate>Sat, 03 Oct 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/948175.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – La Crema Saralee&apos;s Vineyard Chardonnay 2021 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>La Crema Saralee&apos;s Vineyard Chardonnay 2021 — 78,19 € → 81,36 €</title>
+			<link>https://alkometriikka.fi/tuotteet/948175/</link>
+			<guid isPermaLink="false">alkometriikka-948175-2026-09-29-81.36</guid>
+			<pubDate>Tue, 29 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / valkoviinit</category>
+			<description><![CDATA[<p>Tuotteen La Crema Saralee's Vineyard Chardonnay 2021 hinta on muuttunut.</p><p>78,19 € → 81,36 € (+3,17 €, +4,05 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/948175-13c392b28acc.png" />
+		</item>
+	</channel>
+</rss>

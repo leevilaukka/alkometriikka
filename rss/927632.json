@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Penfolds Bin 311 Chardonnay 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/927632/",
+	"feed_url": "https://alkometriikka.fi/rss/927632.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Penfolds Bin 311 Chardonnay 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-927632-2026-09-29-40.87",
+			"url": "https://alkometriikka.fi/tuotteet/927632/",
+			"title": "Penfolds Bin 311 Chardonnay 2022 — 40,55 € → 40,87 €",
+			"content_html": "<p>Tuotteen Penfolds Bin 311 Chardonnay 2022 hinta on muuttunut.</p><p>40,55 € → 40,87 € (+0,32 €, +0,79 %).</p>",
+			"summary": "Tuotteen Penfolds Bin 311 Chardonnay 2022 hinta on muuttunut. 40,55 € → 40,87 € (+0,32 €, +0,79 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/927632-7b291cae786b.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

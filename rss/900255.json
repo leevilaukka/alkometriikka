@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mesquida Mora Sincronia Negre 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900255/",
+	"feed_url": "https://alkometriikka.fi/rss/900255.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mesquida Mora Sincronia Negre 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900255-2026-07-18-26.8",
+			"url": "https://alkometriikka.fi/tuotteet/900255/",
+			"title": "Mesquida Mora Sincronia Negre 2022 — 26,76 € → 26,80 €",
+			"content_html": "<p>Tuotteen Mesquida Mora Sincronia Negre 2022 hinta on muuttunut.</p><p>26,76 € → 26,80 € (+0,04 €, +0,15 %).</p>",
+			"summary": "Tuotteen Mesquida Mora Sincronia Negre 2022 hinta on muuttunut. 26,76 € → 26,80 € (+0,04 €, +0,15 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900255-809858a0c626.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

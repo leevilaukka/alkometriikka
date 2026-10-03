@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – 400 Conejos Joven Mezcal – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/176137/",
+	"feed_url": "https://alkometriikka.fi/rss/176137.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: 400 Conejos Joven Mezcal.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-176137-2026-09-29-57.7",
+			"url": "https://alkometriikka.fi/tuotteet/176137/",
+			"title": "400 Conejos Joven Mezcal — 56,98 € → 57,70 €",
+			"content_html": "<p>Tuotteen 400 Conejos Joven Mezcal hinta on muuttunut.</p><p>56,98 € → 57,70 € (+0,72 €, +1,26 %).</p>",
+			"summary": "Tuotteen 400 Conejos Joven Mezcal hinta on muuttunut. 56,98 € → 57,70 € (+0,72 €, +1,26 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/176137-27b4acce6993.png",
+			"tags": [
+				"Väkevät",
+				"Tequilat"
+			]
+		}
+	]
+}

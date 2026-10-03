@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Rocca di Castagnoli Chianti Classico Riserva Poggio A´Frati 2021 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/902626/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Rocca di Castagnoli Chianti Classico Riserva Poggio A´Frati 2021.</description>
+		<language>fi</language>
+		<lastBuildDate>Sat, 03 Oct 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/902626.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Rocca di Castagnoli Chianti Classico Riserva Poggio A´Frati 2021 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Rocca di Castagnoli Chianti Classico Riserva Poggio A´Frati 2021 — 39,98 € → 40,25 €</title>
+			<link>https://alkometriikka.fi/tuotteet/902626/</link>
+			<guid isPermaLink="false">alkometriikka-902626-2026-09-29-40.25</guid>
+			<pubDate>Tue, 29 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Rocca di Castagnoli Chianti Classico Riserva Poggio A´Frati 2021 hinta on muuttunut.</p><p>39,98 € → 40,25 € (+0,27 €, +0,68 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/902626-c745f75a2913.png" />
+		</item>
+	</channel>
+</rss>

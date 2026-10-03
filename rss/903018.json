@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Michel Fonne Crémant d'Alsace Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903018/",
+	"feed_url": "https://alkometriikka.fi/rss/903018.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Michel Fonne Crémant d'Alsace Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903018-2026-09-29-26.55",
+			"url": "https://alkometriikka.fi/tuotteet/903018/",
+			"title": "Michel Fonne Crémant d'Alsace Brut — 23,65 € → 26,55 €",
+			"content_html": "<p>Tuotteen Michel Fonne Crémant d'Alsace Brut hinta on muuttunut.</p><p>23,65 € → 26,55 € (+2,90 €, +12,26 %).</p>",
+			"summary": "Tuotteen Michel Fonne Crémant d'Alsace Brut hinta on muuttunut. 23,65 € → 26,55 € (+2,90 €, +12,26 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903018-0737db756d6a.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

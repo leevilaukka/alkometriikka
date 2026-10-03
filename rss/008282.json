@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Zenato Soave Classico 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/008282/",
+	"feed_url": "https://alkometriikka.fi/rss/008282.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Zenato Soave Classico 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-008282-2026-07-18-13.48",
+			"url": "https://alkometriikka.fi/tuotteet/008282/",
+			"title": "Zenato Soave Classico 2025 — 13,44 € → 13,48 €",
+			"content_html": "<p>Tuotteen Zenato Soave Classico 2025 hinta on muuttunut.</p><p>13,44 € → 13,48 € (+0,04 €, +0,30 %).</p>",
+			"summary": "Tuotteen Zenato Soave Classico 2025 hinta on muuttunut. 13,44 € → 13,48 € (+0,04 €, +0,30 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/008282-0ae1a7179ca1.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

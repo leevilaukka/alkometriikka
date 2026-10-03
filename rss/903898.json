@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mumm Cordon Rouge Magnum Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903898/",
+	"feed_url": "https://alkometriikka.fi/rss/903898.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mumm Cordon Rouge Magnum Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903898-2026-09-29-122.89",
+			"url": "https://alkometriikka.fi/tuotteet/903898/",
+			"title": "Mumm Cordon Rouge Magnum Champagne Brut — 118,40 € → 122,89 €",
+			"content_html": "<p>Tuotteen Mumm Cordon Rouge Magnum Champagne Brut hinta on muuttunut.</p><p>118,40 € → 122,89 € (+4,49 €, +3,79 %).</p>",
+			"summary": "Tuotteen Mumm Cordon Rouge Magnum Champagne Brut hinta on muuttunut. 118,40 € → 122,89 € (+4,49 €, +3,79 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903898-29e31d96541b.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

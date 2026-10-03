@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gustav Arctic Vodka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/926777/",
+	"feed_url": "https://alkometriikka.fi/rss/926777.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gustav Arctic Vodka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-926777-2026-07-18-30.49",
+			"url": "https://alkometriikka.fi/tuotteet/926777/",
+			"title": "Gustav Arctic Vodka — 30,57 € → 30,49 €",
+			"content_html": "<p>Tuotteen Gustav Arctic Vodka hinta on muuttunut.</p><p>30,57 € → 30,49 € (−0,08 €, −0,26 %).</p>",
+			"summary": "Tuotteen Gustav Arctic Vodka hinta on muuttunut. 30,57 € → 30,49 € (−0,08 €, −0,26 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/926777-8acdd9cf147c.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

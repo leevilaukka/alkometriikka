@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Taittinger Réserve Champagne Brut Jeroboam – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902571/",
+	"feed_url": "https://alkometriikka.fi/rss/902571.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Taittinger Réserve Champagne Brut Jeroboam.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902571-2026-09-29-526.59",
+			"url": "https://alkometriikka.fi/tuotteet/902571/",
+			"title": "Taittinger Réserve Champagne Brut Jeroboam — 499,99 € → 526,59 €",
+			"content_html": "<p>Tuotteen Taittinger Réserve Champagne Brut Jeroboam hinta on muuttunut.</p><p>499,99 € → 526,59 € (+26,60 €, +5,32 %).</p>",
+			"summary": "Tuotteen Taittinger Réserve Champagne Brut Jeroboam hinta on muuttunut. 499,99 € → 526,59 € (+26,60 €, +5,32 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902571-80d92c06aedd.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

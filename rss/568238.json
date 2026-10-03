@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hardys VR Chardonnay 2024 hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/568238/",
+	"feed_url": "https://alkometriikka.fi/rss/568238.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hardys VR Chardonnay 2024 hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-568238-2026-07-18-35.99",
+			"url": "https://alkometriikka.fi/tuotteet/568238/",
+			"title": "Hardys VR Chardonnay 2024 hanapakkaus — 34,83 € → 35,99 €",
+			"content_html": "<p>Tuotteen Hardys VR Chardonnay 2024 hanapakkaus hinta on muuttunut.</p><p>34,83 € → 35,99 € (+1,16 €, +3,33 %).</p>",
+			"summary": "Tuotteen Hardys VR Chardonnay 2024 hanapakkaus hinta on muuttunut. 34,83 € → 35,99 € (+1,16 €, +3,33 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/568238-cecf14ce56bb.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Equis Cornas 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/929094/",
+	"feed_url": "https://alkometriikka.fi/rss/929094.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Equis Cornas 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-929094-2026-09-29-75.19",
+			"url": "https://alkometriikka.fi/tuotteet/929094/",
+			"title": "Equis Cornas 2019 — 72,47 € → 75,19 €",
+			"content_html": "<p>Tuotteen Equis Cornas 2019 hinta on muuttunut.</p><p>72,47 € → 75,19 € (+2,72 €, +3,75 %).</p>",
+			"summary": "Tuotteen Equis Cornas 2019 hinta on muuttunut. 72,47 € → 75,19 € (+2,72 €, +3,75 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/929094-9330502b5583.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

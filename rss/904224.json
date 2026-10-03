@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Små Sure Sour Shot Cola muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/904224/",
+	"feed_url": "https://alkometriikka.fi/rss/904224.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Små Sure Sour Shot Cola muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-904224-2026-07-18-13.98",
+			"url": "https://alkometriikka.fi/tuotteet/904224/",
+			"title": "Små Sure Sour Shot Cola muovipullo — 13,06 € → 13,98 €",
+			"content_html": "<p>Tuotteen Små Sure Sour Shot Cola muovipullo hinta on muuttunut.</p><p>13,06 € → 13,98 € (+0,92 €, +7,04 %).</p>",
+			"summary": "Tuotteen Små Sure Sour Shot Cola muovipullo hinta on muuttunut. 13,06 € → 13,98 € (+0,92 €, +7,04 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/904224-ad9be7478537.png",
+			"tags": [
+				"Väkevät",
+				"mausteliköörit"
+			]
+		}
+	]
+}

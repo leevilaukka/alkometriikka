@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Chateau de Montifaud Ariane XO Petite Champagne – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/927641/",
+	"feed_url": "https://alkometriikka.fi/rss/927641.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Chateau de Montifaud Ariane XO Petite Champagne.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-927641-2026-09-29-148.56",
+			"url": "https://alkometriikka.fi/tuotteet/927641/",
+			"title": "Chateau de Montifaud Ariane XO Petite Champagne — 141,89 € → 148,56 €",
+			"content_html": "<p>Tuotteen Chateau de Montifaud Ariane XO Petite Champagne hinta on muuttunut.</p><p>141,89 € → 148,56 € (+6,67 €, +4,70 %).</p>",
+			"summary": "Tuotteen Chateau de Montifaud Ariane XO Petite Champagne hinta on muuttunut. 141,89 € → 148,56 € (+6,67 €, +4,70 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/927641-7c8c58c193a6.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

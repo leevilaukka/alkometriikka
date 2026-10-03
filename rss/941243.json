@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château de l'Orangerie Aigle d'Orange 2014 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/941243/",
+	"feed_url": "https://alkometriikka.fi/rss/941243.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château de l'Orangerie Aigle d'Orange 2014.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-941243-2026-09-29-19.99",
+			"url": "https://alkometriikka.fi/tuotteet/941243/",
+			"title": "Château de l'Orangerie Aigle d'Orange 2014 — 24,96 € → 19,99 €",
+			"content_html": "<p>Tuotteen Château de l'Orangerie Aigle d'Orange 2014 hinta on muuttunut.</p><p>24,96 € → 19,99 € (−4,97 €, −19,91 %).</p>",
+			"summary": "Tuotteen Château de l'Orangerie Aigle d'Orange 2014 hinta on muuttunut. 24,96 € → 19,99 € (−4,97 €, −19,91 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/941243-8e2b882a68eb.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

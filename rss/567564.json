@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Deutz Classic Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/567564/",
+	"feed_url": "https://alkometriikka.fi/rss/567564.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Deutz Classic Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-567564-2026-09-29-32.42",
+			"url": "https://alkometriikka.fi/tuotteet/567564/",
+			"title": "Deutz Classic Champagne Brut — 31,42 € → 32,42 €",
+			"content_html": "<p>Tuotteen Deutz Classic Champagne Brut hinta on muuttunut.</p><p>31,42 € → 32,42 € (+1,00 €, +3,18 %).</p>",
+			"summary": "Tuotteen Deutz Classic Champagne Brut hinta on muuttunut. 31,42 € → 32,42 € (+1,00 €, +3,18 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/567564-c1a8c810a5aa.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

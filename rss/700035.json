@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Fuerst Wiacek Hop Asteroid IPA tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/700035/",
+	"feed_url": "https://alkometriikka.fi/rss/700035.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Fuerst Wiacek Hop Asteroid IPA tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-700035-2026-07-18-6.72",
+			"url": "https://alkometriikka.fi/tuotteet/700035/",
+			"title": "Fuerst Wiacek Hop Asteroid IPA tölkki — 7,99 € → 6,72 €",
+			"content_html": "<p>Tuotteen Fuerst Wiacek Hop Asteroid IPA tölkki hinta on muuttunut.</p><p>7,99 € → 6,72 € (−1,27 €, −15,89 %).</p>",
+			"summary": "Tuotteen Fuerst Wiacek Hop Asteroid IPA tölkki hinta on muuttunut. 7,99 € → 6,72 € (−1,27 €, −15,89 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/700035-3cb9dd5df78f.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

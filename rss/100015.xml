@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Kouvolan Lakritsi Shot – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/100015/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Kouvolan Lakritsi Shot.</description>
+		<language>fi</language>
+		<lastBuildDate>Sat, 03 Oct 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/100015.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Kouvolan Lakritsi Shot – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Kouvolan Lakritsi Shot — 18,06 € → 17,98 €</title>
+			<link>https://alkometriikka.fi/tuotteet/100015/</link>
+			<guid isPermaLink="false">alkometriikka-100015-2026-09-29-17.98</guid>
+			<pubDate>Tue, 29 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / salmiakkiliköörit</category>
+			<description><![CDATA[<p>Tuotteen Kouvolan Lakritsi Shot hinta on muuttunut.</p><p>18,06 € → 17,98 € (−0,08 €, −0,44 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/100015-01f12c148d9b.png" />
+		</item>
+	</channel>
+</rss>

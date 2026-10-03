@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Steininger Zweigelt 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/937167/",
+	"feed_url": "https://alkometriikka.fi/rss/937167.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Steininger Zweigelt 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-937167-2026-07-18-19.39",
+			"url": "https://alkometriikka.fi/tuotteet/937167/",
+			"title": "Steininger Zweigelt 2022 — 19,35 € → 19,39 €",
+			"content_html": "<p>Tuotteen Steininger Zweigelt 2022 hinta on muuttunut.</p><p>19,35 € → 19,39 € (+0,04 €, +0,21 %).</p>",
+			"summary": "Tuotteen Steininger Zweigelt 2022 hinta on muuttunut. 19,35 € → 19,39 € (+0,04 €, +0,21 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/937167-4597ce16b00e.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Idda Bianco 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901291/",
+	"feed_url": "https://alkometriikka.fi/rss/901291.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Idda Bianco 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901291-2026-09-29-64.99",
+			"url": "https://alkometriikka.fi/tuotteet/901291/",
+			"title": "Idda Bianco 2023 — 62,19 € → 64,99 €",
+			"content_html": "<p>Tuotteen Idda Bianco 2023 hinta on muuttunut.</p><p>62,19 € → 64,99 € (+2,80 €, +4,50 %).</p>",
+			"summary": "Tuotteen Idda Bianco 2023 hinta on muuttunut. 62,19 € → 64,99 € (+2,80 €, +4,50 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901291-ee36340c3d4c.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

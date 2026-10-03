@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Castell d'Encus Thalarn 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902983/",
+	"feed_url": "https://alkometriikka.fi/rss/902983.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Castell d'Encus Thalarn 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902983-2026-09-29-63.44",
+			"url": "https://alkometriikka.fi/tuotteet/902983/",
+			"title": "Castell d'Encus Thalarn 2019 — 61,49 € → 63,44 €",
+			"content_html": "<p>Tuotteen Castell d'Encus Thalarn 2019 hinta on muuttunut.</p><p>61,49 € → 63,44 € (+1,95 €, +3,17 %).</p>",
+			"summary": "Tuotteen Castell d'Encus Thalarn 2019 hinta on muuttunut. 61,49 € → 63,44 € (+1,95 €, +3,17 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902983-4d9ff20db2b6.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

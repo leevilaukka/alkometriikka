@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Raimat Cava Brut Nature – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/958023/",
+	"feed_url": "https://alkometriikka.fi/rss/958023.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Raimat Cava Brut Nature.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-958023-2026-07-18-14.99",
+			"url": "https://alkometriikka.fi/tuotteet/958023/",
+			"title": "Raimat Cava Brut Nature — 14,93 € → 14,99 €",
+			"content_html": "<p>Tuotteen Raimat Cava Brut Nature hinta on muuttunut.</p><p>14,93 € → 14,99 € (+0,06 €, +0,40 %).</p>",
+			"summary": "Tuotteen Raimat Cava Brut Nature hinta on muuttunut. 14,93 € → 14,99 € (+0,06 €, +0,40 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/958023-0e2b2039e95b.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

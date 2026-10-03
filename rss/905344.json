@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mauro Veglio Cascina Nuova 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/905344/",
+	"feed_url": "https://alkometriikka.fi/rss/905344.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mauro Veglio Cascina Nuova 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-905344-2026-09-29-44.39",
+			"url": "https://alkometriikka.fi/tuotteet/905344/",
+			"title": "Mauro Veglio Cascina Nuova 2022 — 43,83 € → 44,39 €",
+			"content_html": "<p>Tuotteen Mauro Veglio Cascina Nuova 2022 hinta on muuttunut.</p><p>43,83 € → 44,39 € (+0,56 €, +1,28 %).</p>",
+			"summary": "Tuotteen Mauro Veglio Cascina Nuova 2022 hinta on muuttunut. 43,83 € → 44,39 € (+0,56 €, +1,28 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/905344-2045da70366c.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

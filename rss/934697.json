@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vanità Nero d'Avola Organico 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/934697/",
+	"feed_url": "https://alkometriikka.fi/rss/934697.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vanità Nero d'Avola Organico 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-934697-2026-07-18-14.99",
+			"url": "https://alkometriikka.fi/tuotteet/934697/",
+			"title": "Vanità Nero d'Avola Organico 2021 — 15,04 € → 14,99 €",
+			"content_html": "<p>Tuotteen Vanità Nero d'Avola Organico 2021 hinta on muuttunut.</p><p>15,04 € → 14,99 € (−0,05 €, −0,33 %).</p>",
+			"summary": "Tuotteen Vanità Nero d'Avola Organico 2021 hinta on muuttunut. 15,04 € → 14,99 € (−0,05 €, −0,33 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/934697-4400cc83bbe4.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

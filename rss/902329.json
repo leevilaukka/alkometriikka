@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bruichladdich Classic Laddie – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902329/",
+	"feed_url": "https://alkometriikka.fi/rss/902329.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bruichladdich Classic Laddie.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902329-2026-09-29-429.99",
+			"url": "https://alkometriikka.fi/tuotteet/902329/",
+			"title": "Bruichladdich Classic Laddie — 425,99 € → 429,99 €",
+			"content_html": "<p>Tuotteen Bruichladdich Classic Laddie hinta on muuttunut.</p><p>425,99 € → 429,99 € (+4,00 €, +0,94 %).</p>",
+			"summary": "Tuotteen Bruichladdich Classic Laddie hinta on muuttunut. 425,99 € → 429,99 € (+4,00 €, +0,94 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902329-1c9f0b4531d6.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

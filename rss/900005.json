@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dal Forno Romano Amarone della Valpolicella 2017 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900005/",
+	"feed_url": "https://alkometriikka.fi/rss/900005.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dal Forno Romano Amarone della Valpolicella 2017.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900005-2026-09-29-355.76",
+			"url": "https://alkometriikka.fi/tuotteet/900005/",
+			"title": "Dal Forno Romano Amarone della Valpolicella 2017 — 333,46 € → 355,76 €",
+			"content_html": "<p>Tuotteen Dal Forno Romano Amarone della Valpolicella 2017 hinta on muuttunut.</p><p>333,46 € → 355,76 € (+22,30 €, +6,69 %).</p>",
+			"summary": "Tuotteen Dal Forno Romano Amarone della Valpolicella 2017 hinta on muuttunut. 333,46 € → 355,76 € (+22,30 €, +6,69 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900005-7dd77638ab12.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

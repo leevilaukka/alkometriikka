@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Áster One 1 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/936027/",
+	"feed_url": "https://alkometriikka.fi/rss/936027.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Áster One 1 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-936027-2026-07-18-15.99",
+			"url": "https://alkometriikka.fi/tuotteet/936027/",
+			"title": "Áster One 1 2022 — 15,95 € → 15,99 €",
+			"content_html": "<p>Tuotteen Áster One 1 2022 hinta on muuttunut.</p><p>15,95 € → 15,99 € (+0,04 €, +0,25 %).</p>",
+			"summary": "Tuotteen Áster One 1 2022 hinta on muuttunut. 15,95 € → 15,99 € (+0,04 €, +0,25 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/936027-d483b1ab175a.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

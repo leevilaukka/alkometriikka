@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Philippe Pacalet Moulin à Vent 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903279/",
+	"feed_url": "https://alkometriikka.fi/rss/903279.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Philippe Pacalet Moulin à Vent 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903279-2026-09-29-80.37",
+			"url": "https://alkometriikka.fi/tuotteet/903279/",
+			"title": "Philippe Pacalet Moulin à Vent 2021 — 77,30 € → 80,37 €",
+			"content_html": "<p>Tuotteen Philippe Pacalet Moulin à Vent 2021 hinta on muuttunut.</p><p>77,30 € → 80,37 € (+3,07 €, +3,97 %).</p>",
+			"summary": "Tuotteen Philippe Pacalet Moulin à Vent 2021 hinta on muuttunut. 77,30 € → 80,37 € (+3,07 €, +3,97 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903279-179ba5d56021.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

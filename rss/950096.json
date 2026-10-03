@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Boker's Bitters – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/950096/",
+	"feed_url": "https://alkometriikka.fi/rss/950096.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Boker's Bitters.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-950096-2026-09-29-22.59",
+			"url": "https://alkometriikka.fi/tuotteet/950096/",
+			"title": "Boker's Bitters — 21,51 € → 22,59 €",
+			"content_html": "<p>Tuotteen Boker's Bitters hinta on muuttunut.</p><p>21,51 € → 22,59 € (+1,08 €, +5,02 %).</p>",
+			"summary": "Tuotteen Boker's Bitters hinta on muuttunut. 21,51 € → 22,59 € (+1,08 €, +5,02 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/950096-20444b74efa0.png",
+			"tags": [
+				"Väkevät",
+				"maha- ja maustekatkerot"
+			]
+		}
+	]
+}

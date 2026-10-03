@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Redbreast 12 Year Old Single Pot Still – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/926897/",
+	"feed_url": "https://alkometriikka.fi/rss/926897.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Redbreast 12 Year Old Single Pot Still.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-926897-2026-09-29-71.99",
+			"url": "https://alkometriikka.fi/tuotteet/926897/",
+			"title": "Redbreast 12 Year Old Single Pot Still — 69,98 € → 71,99 €",
+			"content_html": "<p>Tuotteen Redbreast 12 Year Old Single Pot Still hinta on muuttunut.</p><p>69,98 € → 71,99 € (+2,01 €, +2,87 %).</p>",
+			"summary": "Tuotteen Redbreast 12 Year Old Single Pot Still hinta on muuttunut. 69,98 € → 71,99 € (+2,01 €, +2,87 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/926897-c7a6efb141e5.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

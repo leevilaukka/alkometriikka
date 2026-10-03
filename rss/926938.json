@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Casa Nostra Appassimento hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/926938/",
+	"feed_url": "https://alkometriikka.fi/rss/926938.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Casa Nostra Appassimento hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-926938-2026-07-18-33.48",
+			"url": "https://alkometriikka.fi/tuotteet/926938/",
+			"title": "Casa Nostra Appassimento hanapakkaus — 33,33 € → 33,48 €",
+			"content_html": "<p>Tuotteen Casa Nostra Appassimento hanapakkaus hinta on muuttunut.</p><p>33,33 € → 33,48 € (+0,15 €, +0,45 %).</p>",
+			"summary": "Tuotteen Casa Nostra Appassimento hanapakkaus hinta on muuttunut. 33,33 € → 33,48 € (+0,15 €, +0,45 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/926938-9efd4c17f14a.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

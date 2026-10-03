@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gran Mirador Reserva 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/904084/",
+	"feed_url": "https://alkometriikka.fi/rss/904084.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gran Mirador Reserva 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-904084-2026-07-18-13.98",
+			"url": "https://alkometriikka.fi/tuotteet/904084/",
+			"title": "Gran Mirador Reserva 2019 — 13,75 € → 13,98 €",
+			"content_html": "<p>Tuotteen Gran Mirador Reserva 2019 hinta on muuttunut.</p><p>13,75 € → 13,98 € (+0,23 €, +1,67 %).</p>",
+			"summary": "Tuotteen Gran Mirador Reserva 2019 hinta on muuttunut. 13,75 € → 13,98 € (+0,23 €, +1,67 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/904084-0f4dddffb745.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

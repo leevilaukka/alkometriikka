@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Melchiori Zingy Organic – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/937106/",
+	"feed_url": "https://alkometriikka.fi/rss/937106.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Melchiori Zingy Organic.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-937106-2026-09-29-6.39",
+			"url": "https://alkometriikka.fi/tuotteet/937106/",
+			"title": "Melchiori Zingy Organic — 5,69 € → 6,39 €",
+			"content_html": "<p>Tuotteen Melchiori Zingy Organic hinta on muuttunut.</p><p>5,69 € → 6,39 € (+0,70 €, +12,30 %).</p>",
+			"summary": "Tuotteen Melchiori Zingy Organic hinta on muuttunut. 5,69 € → 6,39 € (+0,70 €, +12,30 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/937106-5981c08e9cb8.png",
+			"tags": [
+				"Panimotuotteet",
+				"siiderit"
+			]
+		}
+	]
+}

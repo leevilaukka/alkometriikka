@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Graham's 10 Years Old Tawny Port – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/315583/",
+	"feed_url": "https://alkometriikka.fi/rss/315583.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Graham's 10 Years Old Tawny Port.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-315583-2026-09-29-14.19",
+			"url": "https://alkometriikka.fi/tuotteet/315583/",
+			"title": "Graham's 10 Years Old Tawny Port — 13,90 € → 14,19 €",
+			"content_html": "<p>Tuotteen Graham's 10 Years Old Tawny Port hinta on muuttunut.</p><p>13,90 € → 14,19 € (+0,29 €, +2,09 %).</p>",
+			"summary": "Tuotteen Graham's 10 Years Old Tawny Port hinta on muuttunut. 13,90 € → 14,19 € (+0,29 €, +2,09 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/315583-67351eda8b03.png",
+			"tags": [
+				"Välituotteet",
+				"portviinit"
+			]
+		}
+	]
+}

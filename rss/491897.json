@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kakheti Co. Saperavi Qvevri 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/491897/",
+	"feed_url": "https://alkometriikka.fi/rss/491897.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kakheti Co. Saperavi Qvevri 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-491897-2026-02-02-20.5",
+			"url": "https://alkometriikka.fi/tuotteet/491897/",
+			"title": "Kakheti Co. Saperavi Qvevri 2019 — 20,60 € → 20,50 €",
+			"content_html": "<p>Tuotteen Kakheti Co. Saperavi Qvevri 2019 hinta on muuttunut.</p><p>20,60 € → 20,50 € (−0,10 €, −0,49 %).</p>",
+			"summary": "Tuotteen Kakheti Co. Saperavi Qvevri 2019 hinta on muuttunut. 20,60 € → 20,50 € (−0,10 €, −0,49 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/491897-a0b3f40b4213.png",
+			"tags": [
+				"punaviinit",
+				"Vivahteikas & Kehittynyt"
+			]
+		},
+		{
+			"id": "alkometriikka-491897-2026-02-02-20.6",
+			"url": "https://alkometriikka.fi/tuotteet/491897/",
+			"title": "Kakheti Co. Saperavi Qvevri 2019 — 20,50 € → 20,60 €",
+			"content_html": "<p>Tuotteen Kakheti Co. Saperavi Qvevri 2019 hinta on muuttunut.</p><p>20,50 € → 20,60 € (+0,10 €, +0,49 %).</p>",
+			"summary": "Tuotteen Kakheti Co. Saperavi Qvevri 2019 hinta on muuttunut. 20,50 € → 20,60 € (+0,10 €, +0,49 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/491897-a0b3f40b4213.png",
+			"tags": [
+				"punaviinit",
+				"Vivahteikas & Kehittynyt"
+			]
+		}
+	]
+}

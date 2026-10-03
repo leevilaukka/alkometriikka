@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – La Roncaia Picolit 2017 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/912175/",
+	"feed_url": "https://alkometriikka.fi/rss/912175.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: La Roncaia Picolit 2017.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-912175-2026-09-29-42.85",
+			"url": "https://alkometriikka.fi/tuotteet/912175/",
+			"title": "La Roncaia Picolit 2017 — 41,12 € → 42,85 €",
+			"content_html": "<p>Tuotteen La Roncaia Picolit 2017 hinta on muuttunut.</p><p>41,12 € → 42,85 € (+1,73 €, +4,21 %).</p>",
+			"summary": "Tuotteen La Roncaia Picolit 2017 hinta on muuttunut. 41,12 € → 42,85 € (+1,73 €, +4,21 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/912175-5745552984a0.png",
+			"tags": [
+				"Viinit",
+				"jälkiruokaviinit"
+			]
+		}
+	]
+}

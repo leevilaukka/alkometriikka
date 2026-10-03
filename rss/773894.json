@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Original Long Drink Gin & Lemonade tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/773894/",
+	"feed_url": "https://alkometriikka.fi/rss/773894.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Original Long Drink Gin & Lemonade tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-773894-2026-09-29-3.09",
+			"url": "https://alkometriikka.fi/tuotteet/773894/",
+			"title": "Original Long Drink Gin & Lemonade tölkki — 2,99 € → 3,09 €",
+			"content_html": "<p>Tuotteen Original Long Drink Gin & Lemonade tölkki hinta on muuttunut.</p><p>2,99 € → 3,09 € (+0,10 €, +3,34 %).</p>",
+			"summary": "Tuotteen Original Long Drink Gin & Lemonade tölkki hinta on muuttunut. 2,99 € → 3,09 € (+0,10 €, +3,34 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/773894-28fb94f85382.png",
+			"tags": [
+				"Panimotuotteet",
+				"juomasekoitukset"
+			]
+		}
+	]
+}

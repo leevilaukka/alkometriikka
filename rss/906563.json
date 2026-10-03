@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Benriach 16 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/906563/",
+	"feed_url": "https://alkometriikka.fi/rss/906563.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Benriach 16 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-906563-2026-09-29-125.98",
+			"url": "https://alkometriikka.fi/tuotteet/906563/",
+			"title": "The Benriach 16 Year Old Single Malt — 120,00 € → 125,98 €",
+			"content_html": "<p>Tuotteen The Benriach 16 Year Old Single Malt hinta on muuttunut.</p><p>120,00 € → 125,98 € (+5,98 €, +4,98 %).</p>",
+			"summary": "Tuotteen The Benriach 16 Year Old Single Malt hinta on muuttunut. 120,00 € → 125,98 € (+5,98 €, +4,98 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/906563-834049883d90.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Glenrothes 42 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/928584/",
+	"feed_url": "https://alkometriikka.fi/rss/928584.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Glenrothes 42 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-928584-2026-09-29-8949.43",
+			"url": "https://alkometriikka.fi/tuotteet/928584/",
+			"title": "The Glenrothes 42 Year Old Single Malt — 8 354,25 € → 8 949,43 €",
+			"content_html": "<p>Tuotteen The Glenrothes 42 Year Old Single Malt hinta on muuttunut.</p><p>8 354,25 € → 8 949,43 € (+595,18 €, +7,12 %).</p>",
+			"summary": "Tuotteen The Glenrothes 42 Year Old Single Malt hinta on muuttunut. 8 354,25 € → 8 949,43 € (+595,18 €, +7,12 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/928584-5d8ecf7c1ef2.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

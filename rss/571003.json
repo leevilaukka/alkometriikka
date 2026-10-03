@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Rotari Rosé Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/571003/",
+	"feed_url": "https://alkometriikka.fi/rss/571003.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Rotari Rosé Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-571003-2026-07-18-7.48",
+			"url": "https://alkometriikka.fi/tuotteet/571003/",
+			"title": "Rotari Rosé Brut — 7,12 € → 7,48 €",
+			"content_html": "<p>Tuotteen Rotari Rosé Brut hinta on muuttunut.</p><p>7,12 € → 7,48 € (+0,36 €, +5,06 %).</p>",
+			"summary": "Tuotteen Rotari Rosé Brut hinta on muuttunut. 7,12 € → 7,48 € (+0,36 €, +5,06 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/571003-c7289943a8f7.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

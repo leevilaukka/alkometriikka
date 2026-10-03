@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Karhu 4,6 18-pack tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/799424/",
+	"feed_url": "https://alkometriikka.fi/rss/799424.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Karhu 4,6 18-pack tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-799424-2026-09-29-26.82",
+			"url": "https://alkometriikka.fi/tuotteet/799424/",
+			"title": "Karhu 4,6 18-pack tölkki — 26,28 € → 26,82 €",
+			"content_html": "<p>Tuotteen Karhu 4,6 18-pack tölkki hinta on muuttunut.</p><p>26,28 € → 26,82 € (+0,54 €, +2,05 %).</p>",
+			"summary": "Tuotteen Karhu 4,6 18-pack tölkki hinta on muuttunut. 26,28 € → 26,82 € (+0,54 €, +2,05 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/799424-189eb493f385.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-799424-2026-07-18-26.28",
+			"url": "https://alkometriikka.fi/tuotteet/799424/",
+			"title": "Karhu 4,6 18-pack tölkki — 25,38 € → 26,28 €",
+			"content_html": "<p>Tuotteen Karhu 4,6 18-pack tölkki hinta on muuttunut.</p><p>25,38 € → 26,28 € (+0,90 €, +3,55 %).</p>",
+			"summary": "Tuotteen Karhu 4,6 18-pack tölkki hinta on muuttunut. 25,38 € → 26,28 € (+0,90 €, +3,55 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/799424-189eb493f385.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

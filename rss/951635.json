@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dictador Icon Reserve 20 Year Old – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/951635/",
+	"feed_url": "https://alkometriikka.fi/rss/951635.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dictador Icon Reserve 20 Year Old.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-951635-2026-09-29-97.4",
+			"url": "https://alkometriikka.fi/tuotteet/951635/",
+			"title": "Dictador Icon Reserve 20 Year Old — 94,19 € → 97,40 €",
+			"content_html": "<p>Tuotteen Dictador Icon Reserve 20 Year Old hinta on muuttunut.</p><p>94,19 € → 97,40 € (+3,21 €, +3,41 %).</p>",
+			"summary": "Tuotteen Dictador Icon Reserve 20 Year Old hinta on muuttunut. 94,19 € → 97,40 € (+3,21 €, +3,41 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/951635-25b427232956.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		},
+		{
+			"id": "alkometriikka-951635-2026-07-18-94.19",
+			"url": "https://alkometriikka.fi/tuotteet/951635/",
+			"title": "Dictador Icon Reserve 20 Year Old — 94,17 € → 94,19 €",
+			"content_html": "<p>Tuotteen Dictador Icon Reserve 20 Year Old hinta on muuttunut.</p><p>94,17 € → 94,19 € (+0,02 €, +0,02 %).</p>",
+			"summary": "Tuotteen Dictador Icon Reserve 20 Year Old hinta on muuttunut. 94,17 € → 94,19 € (+0,02 €, +0,02 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/951635-25b427232956.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

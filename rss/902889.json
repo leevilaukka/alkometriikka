@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Domaine d'Henri 8.21 Blanc de Blancs de Chardonnay Brut Nature – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902889/",
+	"feed_url": "https://alkometriikka.fi/rss/902889.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Domaine d'Henri 8.21 Blanc de Blancs de Chardonnay Brut Nature.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902889-2026-09-29-38.9",
+			"url": "https://alkometriikka.fi/tuotteet/902889/",
+			"title": "Domaine d'Henri 8.21 Blanc de Blancs de Chardonnay Brut Nature — 38,70 € → 38,90 €",
+			"content_html": "<p>Tuotteen Domaine d'Henri 8.21 Blanc de Blancs de Chardonnay Brut Nature hinta on muuttunut.</p><p>38,70 € → 38,90 € (+0,20 €, +0,52 %).</p>",
+			"summary": "Tuotteen Domaine d'Henri 8.21 Blanc de Blancs de Chardonnay Brut Nature hinta on muuttunut. 38,70 € → 38,90 € (+0,20 €, +0,52 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902889-44bca3fdf323.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

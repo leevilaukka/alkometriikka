@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – ÀN 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900990/",
+	"feed_url": "https://alkometriikka.fi/rss/900990.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: ÀN 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900990-2026-09-29-69.4",
+			"url": "https://alkometriikka.fi/tuotteet/900990/",
+			"title": "ÀN 2022 — 67,07 € → 69,40 €",
+			"content_html": "<p>Tuotteen ÀN 2022 hinta on muuttunut.</p><p>67,07 € → 69,40 € (+2,33 €, +3,47 %).</p>",
+			"summary": "Tuotteen ÀN 2022 hinta on muuttunut. 67,07 € → 69,40 € (+2,33 €, +3,47 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900990-ac7ce405f0bc.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

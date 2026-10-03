@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Koto Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/941581/",
+	"feed_url": "https://alkometriikka.fi/rss/941581.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Koto Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-941581-2026-09-29-47.99",
+			"url": "https://alkometriikka.fi/tuotteet/941581/",
+			"title": "Koto Gin — 47,27 € → 47,99 €",
+			"content_html": "<p>Tuotteen Koto Gin hinta on muuttunut.</p><p>47,27 € → 47,99 € (+0,72 €, +1,52 %).</p>",
+			"summary": "Tuotteen Koto Gin hinta on muuttunut. 47,27 € → 47,99 € (+0,72 €, +1,52 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/941581-46fd17bdae15.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

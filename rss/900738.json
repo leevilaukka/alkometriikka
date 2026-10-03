@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Perelada Finca Espolla 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900738/",
+	"feed_url": "https://alkometriikka.fi/rss/900738.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Perelada Finca Espolla 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900738-2026-09-29-39.9",
+			"url": "https://alkometriikka.fi/tuotteet/900738/",
+			"title": "Perelada Finca Espolla 2018 — 38,98 € → 39,90 €",
+			"content_html": "<p>Tuotteen Perelada Finca Espolla 2018 hinta on muuttunut.</p><p>38,98 € → 39,90 € (+0,92 €, +2,36 %).</p>",
+			"summary": "Tuotteen Perelada Finca Espolla 2018 hinta on muuttunut. 38,98 € → 39,90 € (+0,92 €, +2,36 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900738-f6831e5986db.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-900738-2026-07-18-38.98",
+			"url": "https://alkometriikka.fi/tuotteet/900738/",
+			"title": "Perelada Finca Espolla 2018 — 40,42 € → 38,98 €",
+			"content_html": "<p>Tuotteen Perelada Finca Espolla 2018 hinta on muuttunut.</p><p>40,42 € → 38,98 € (−1,44 €, −3,56 %).</p>",
+			"summary": "Tuotteen Perelada Finca Espolla 2018 hinta on muuttunut. 40,42 € → 38,98 € (−1,44 €, −3,56 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900738-f6831e5986db.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

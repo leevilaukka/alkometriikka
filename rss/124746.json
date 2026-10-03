@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kalle Viina muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/124746/",
+	"feed_url": "https://alkometriikka.fi/rss/124746.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kalle Viina muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-124746-2026-07-18-20.68",
+			"url": "https://alkometriikka.fi/tuotteet/124746/",
+			"title": "Kalle Viina muovipullo — 20,53 € → 20,68 €",
+			"content_html": "<p>Tuotteen Kalle Viina muovipullo hinta on muuttunut.</p><p>20,53 € → 20,68 € (+0,15 €, +0,73 %).</p>",
+			"summary": "Tuotteen Kalle Viina muovipullo hinta on muuttunut. 20,53 € → 20,68 € (+0,15 €, +0,73 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/124746-1fec31878de1.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

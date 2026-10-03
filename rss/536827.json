@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Chateau Tanunda Grand Barossa Chardonnay 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/536827/",
+	"feed_url": "https://alkometriikka.fi/rss/536827.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Chateau Tanunda Grand Barossa Chardonnay 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-536827-2026-09-29-15.85",
+			"url": "https://alkometriikka.fi/tuotteet/536827/",
+			"title": "Chateau Tanunda Grand Barossa Chardonnay 2023 — 14,69 € → 15,85 €",
+			"content_html": "<p>Tuotteen Chateau Tanunda Grand Barossa Chardonnay 2023 hinta on muuttunut.</p><p>14,69 € → 15,85 € (+1,16 €, +7,90 %).</p>",
+			"summary": "Tuotteen Chateau Tanunda Grand Barossa Chardonnay 2023 hinta on muuttunut. 14,69 € → 15,85 € (+1,16 €, +7,90 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/536827-1f8db3ccab2b.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

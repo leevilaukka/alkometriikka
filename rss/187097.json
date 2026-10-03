@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Southern Comfort Black – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/187097/",
+	"feed_url": "https://alkometriikka.fi/rss/187097.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Southern Comfort Black.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-187097-2026-09-29-29.98",
+			"url": "https://alkometriikka.fi/tuotteet/187097/",
+			"title": "Southern Comfort Black — 30,25 € → 29,98 €",
+			"content_html": "<p>Tuotteen Southern Comfort Black hinta on muuttunut.</p><p>30,25 € → 29,98 € (−0,27 €, −0,89 %).</p>",
+			"summary": "Tuotteen Southern Comfort Black hinta on muuttunut. 30,25 € → 29,98 € (−0,27 €, −0,89 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/187097-52cac738a14b.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

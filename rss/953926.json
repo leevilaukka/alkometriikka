@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Akarua Pinot Noir 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/953926/",
+	"feed_url": "https://alkometriikka.fi/rss/953926.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Akarua Pinot Noir 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-953926-2026-09-29-48.48",
+			"url": "https://alkometriikka.fi/tuotteet/953926/",
+			"title": "Akarua Pinot Noir 2021 — 47,64 € → 48,48 €",
+			"content_html": "<p>Tuotteen Akarua Pinot Noir 2021 hinta on muuttunut.</p><p>47,64 € → 48,48 € (+0,84 €, +1,76 %).</p>",
+			"summary": "Tuotteen Akarua Pinot Noir 2021 hinta on muuttunut. 47,64 € → 48,48 € (+0,84 €, +1,76 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/953926-7e2f3b14882c.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dreissigacker Vintages Riesling – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/922016/",
+	"feed_url": "https://alkometriikka.fi/rss/922016.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dreissigacker Vintages Riesling.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-922016-2026-07-18-27.98",
+			"url": "https://alkometriikka.fi/tuotteet/922016/",
+			"title": "Dreissigacker Vintages Riesling — 27,94 € → 27,98 €",
+			"content_html": "<p>Tuotteen Dreissigacker Vintages Riesling hinta on muuttunut.</p><p>27,94 € → 27,98 € (+0,04 €, +0,14 %).</p>",
+			"summary": "Tuotteen Dreissigacker Vintages Riesling hinta on muuttunut. 27,94 € → 27,98 € (+0,04 €, +0,14 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/922016-847970ee5655.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

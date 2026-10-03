@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ca di Pian Barbera d'Asti 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/921927/",
+	"feed_url": "https://alkometriikka.fi/rss/921927.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ca di Pian Barbera d'Asti 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-921927-2026-07-18-31",
+			"url": "https://alkometriikka.fi/tuotteet/921927/",
+			"title": "Ca di Pian Barbera d'Asti 2023 — 30,46 € → 31,00 €",
+			"content_html": "<p>Tuotteen Ca di Pian Barbera d'Asti 2023 hinta on muuttunut.</p><p>30,46 € → 31,00 € (+0,54 €, +1,77 %).</p>",
+			"summary": "Tuotteen Ca di Pian Barbera d'Asti 2023 hinta on muuttunut. 30,46 € → 31,00 € (+0,54 €, +1,77 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/921927-7df8e2ba05c3.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

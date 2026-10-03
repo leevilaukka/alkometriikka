@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Catoctin Creek Watershed American Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/933148/",
+	"feed_url": "https://alkometriikka.fi/rss/933148.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Catoctin Creek Watershed American Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-933148-2026-09-29-61.88",
+			"url": "https://alkometriikka.fi/tuotteet/933148/",
+			"title": "Catoctin Creek Watershed American Gin — 61,21 € → 61,88 €",
+			"content_html": "<p>Tuotteen Catoctin Creek Watershed American Gin hinta on muuttunut.</p><p>61,21 € → 61,88 € (+0,67 €, +1,09 %).</p>",
+			"summary": "Tuotteen Catoctin Creek Watershed American Gin hinta on muuttunut. 61,21 € → 61,88 € (+0,67 €, +1,09 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/933148-35e9fa98ef47.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

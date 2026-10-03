@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Domaine d´Ardhuy Aloxe-Corton Premier Cru Les Chaillots 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902306/",
+	"feed_url": "https://alkometriikka.fi/rss/902306.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Domaine d´Ardhuy Aloxe-Corton Premier Cru Les Chaillots 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902306-2026-09-29-104.16",
+			"url": "https://alkometriikka.fi/tuotteet/902306/",
+			"title": "Domaine d´Ardhuy Aloxe-Corton Premier Cru Les Chaillots 2022 — 99,41 € → 104,16 €",
+			"content_html": "<p>Tuotteen Domaine d´Ardhuy Aloxe-Corton Premier Cru Les Chaillots 2022 hinta on muuttunut.</p><p>99,41 € → 104,16 € (+4,75 €, +4,78 %).</p>",
+			"summary": "Tuotteen Domaine d´Ardhuy Aloxe-Corton Premier Cru Les Chaillots 2022 hinta on muuttunut. 99,41 € → 104,16 € (+4,75 €, +4,78 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902306-fdab1c20d67d.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

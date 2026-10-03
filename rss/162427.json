@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bunnahabhain 12 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/162427/",
+	"feed_url": "https://alkometriikka.fi/rss/162427.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bunnahabhain 12 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-162427-2026-09-29-69.99",
+			"url": "https://alkometriikka.fi/tuotteet/162427/",
+			"title": "Bunnahabhain 12 Year Old Single Malt — 76,95 € → 69,99 €",
+			"content_html": "<p>Tuotteen Bunnahabhain 12 Year Old Single Malt hinta on muuttunut.</p><p>76,95 € → 69,99 € (−6,96 €, −9,04 %).</p>",
+			"summary": "Tuotteen Bunnahabhain 12 Year Old Single Malt hinta on muuttunut. 76,95 € → 69,99 € (−6,96 €, −9,04 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/162427-152a2e42817c.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

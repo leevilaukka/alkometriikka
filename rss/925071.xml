@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Laurent Lequart Blanc de Meunier Champagne Brut Nature – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/925071/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Laurent Lequart Blanc de Meunier Champagne Brut Nature.</description>
+		<language>fi</language>
+		<lastBuildDate>Sat, 03 Oct 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/925071.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Laurent Lequart Blanc de Meunier Champagne Brut Nature – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Laurent Lequart Blanc de Meunier Champagne Brut Nature — 63,36 € → 65,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/925071/</link>
+			<guid isPermaLink="false">alkometriikka-925071-2026-09-29-65.99</guid>
+			<pubDate>Tue, 29 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / kuohuviinit ja samppanjat</category>
+			<description><![CDATA[<p>Tuotteen Laurent Lequart Blanc de Meunier Champagne Brut Nature hinta on muuttunut.</p><p>63,36 € → 65,99 € (+2,63 €, +4,15 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/925071-382eb79617f2.png" />
+		</item>
+	</channel>
+</rss>

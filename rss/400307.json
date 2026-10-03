@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Allumea Nero d'Avola Organic 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/400307/",
+	"feed_url": "https://alkometriikka.fi/rss/400307.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Allumea Nero d'Avola Organic 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-400307-2026-09-29-10.58",
+			"url": "https://alkometriikka.fi/tuotteet/400307/",
+			"title": "Allumea Nero d'Avola Organic 2024 — 10,56 € → 10,58 €",
+			"content_html": "<p>Tuotteen Allumea Nero d'Avola Organic 2024 hinta on muuttunut.</p><p>10,56 € → 10,58 € (+0,02 €, +0,19 %).</p>",
+			"summary": "Tuotteen Allumea Nero d'Avola Organic 2024 hinta on muuttunut. 10,56 € → 10,58 € (+0,02 €, +0,19 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/400307-84d796bab2d4.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

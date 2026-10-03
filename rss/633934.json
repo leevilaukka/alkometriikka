@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Yamada Nishiki Sake – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/633934/",
+	"feed_url": "https://alkometriikka.fi/rss/633934.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Yamada Nishiki Sake.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-633934-2026-09-29-13.98",
+			"url": "https://alkometriikka.fi/tuotteet/633934/",
+			"title": "Yamada Nishiki Sake — 13,36 € → 13,98 €",
+			"content_html": "<p>Tuotteen Yamada Nishiki Sake hinta on muuttunut.</p><p>13,36 € → 13,98 € (+0,62 €, +4,64 %).</p>",
+			"summary": "Tuotteen Yamada Nishiki Sake hinta on muuttunut. 13,36 € → 13,98 € (+0,62 €, +4,64 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/633934-04ccd7664f1b.png",
+			"tags": [
+				"Viinit",
+				"saket"
+			]
+		}
+	]
+}

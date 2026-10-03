@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Koto Paradise Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901716/",
+	"feed_url": "https://alkometriikka.fi/rss/901716.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Koto Paradise Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901716-2026-09-29-37.96",
+			"url": "https://alkometriikka.fi/tuotteet/901716/",
+			"title": "Koto Paradise Gin — 37,71 € → 37,96 €",
+			"content_html": "<p>Tuotteen Koto Paradise Gin hinta on muuttunut.</p><p>37,71 € → 37,96 € (+0,25 €, +0,66 %).</p>",
+			"summary": "Tuotteen Koto Paradise Gin hinta on muuttunut. 37,71 € → 37,96 € (+0,25 €, +0,66 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901716-6ead927eed82.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

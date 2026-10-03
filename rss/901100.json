@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bodegas Montecillo Gran Reserva Magnum  1994 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901100/",
+	"feed_url": "https://alkometriikka.fi/rss/901100.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bodegas Montecillo Gran Reserva Magnum  1994.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901100-2026-09-29-339.7",
+			"url": "https://alkometriikka.fi/tuotteet/901100/",
+			"title": "Bodegas Montecillo Gran Reserva Magnum  1994 — 320,89 € → 339,70 €",
+			"content_html": "<p>Tuotteen Bodegas Montecillo Gran Reserva Magnum  1994 hinta on muuttunut.</p><p>320,89 € → 339,70 € (+18,81 €, +5,86 %).</p>",
+			"summary": "Tuotteen Bodegas Montecillo Gran Reserva Magnum 1994 hinta on muuttunut. 320,89 € → 339,70 € (+18,81 €, +5,86 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901100-4e29b89a4ea0.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

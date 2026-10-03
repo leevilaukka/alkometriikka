@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château d'Yquem 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/945092/",
+	"feed_url": "https://alkometriikka.fi/rss/945092.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château d'Yquem 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-945092-2026-09-29-692.09",
+			"url": "https://alkometriikka.fi/tuotteet/945092/",
+			"title": "Château d'Yquem 2022 — 646,15 € → 692,09 €",
+			"content_html": "<p>Tuotteen Château d'Yquem 2022 hinta on muuttunut.</p><p>646,15 € → 692,09 € (+45,94 €, +7,11 %).</p>",
+			"summary": "Tuotteen Château d'Yquem 2022 hinta on muuttunut. 646,15 € → 692,09 € (+45,94 €, +7,11 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/945092-3ae7970f4b7b.png",
+			"tags": [
+				"Viinit",
+				"jälkiruokaviinit"
+			]
+		}
+	]
+}

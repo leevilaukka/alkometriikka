@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Teo Costa Sanmice Barbera d'Alba 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/904548/",
+	"feed_url": "https://alkometriikka.fi/rss/904548.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Teo Costa Sanmice Barbera d'Alba 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-904548-2026-09-29-25.12",
+			"url": "https://alkometriikka.fi/tuotteet/904548/",
+			"title": "Teo Costa Sanmice Barbera d'Alba 2022 — 24,54 € → 25,12 €",
+			"content_html": "<p>Tuotteen Teo Costa Sanmice Barbera d'Alba 2022 hinta on muuttunut.</p><p>24,54 € → 25,12 € (+0,58 €, +2,36 %).</p>",
+			"summary": "Tuotteen Teo Costa Sanmice Barbera d'Alba 2022 hinta on muuttunut. 24,54 € → 25,12 € (+0,58 €, +2,36 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/904548-3ef0ac83d4e1.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

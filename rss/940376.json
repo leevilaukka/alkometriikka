@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Verla XO – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/940376/",
+	"feed_url": "https://alkometriikka.fi/rss/940376.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Verla XO.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-940376-2026-09-29-62.32",
+			"url": "https://alkometriikka.fi/tuotteet/940376/",
+			"title": "Verla XO — 60,39 € → 62,32 €",
+			"content_html": "<p>Tuotteen Verla XO hinta on muuttunut.</p><p>60,39 € → 62,32 € (+1,93 €, +3,20 %).</p>",
+			"summary": "Tuotteen Verla XO hinta on muuttunut. 60,39 € → 62,32 € (+1,93 €, +3,20 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/940376-c377a58793b6.png",
+			"tags": [
+				"Väkevät",
+				"hedelmätisleet"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – La Fée Absinthe Supérieure – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/177913/",
+	"feed_url": "https://alkometriikka.fi/rss/177913.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: La Fée Absinthe Supérieure.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-177913-2026-09-29-19.35",
+			"url": "https://alkometriikka.fi/tuotteet/177913/",
+			"title": "La Fée Absinthe Supérieure — 19,27 € → 19,35 €",
+			"content_html": "<p>Tuotteen La Fée Absinthe Supérieure hinta on muuttunut.</p><p>19,27 € → 19,35 € (+0,08 €, +0,42 %).</p>",
+			"summary": "Tuotteen La Fée Absinthe Supérieure hinta on muuttunut. 19,27 € → 19,35 € (+0,08 €, +0,42 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/177913-a17917c4fd31.png",
+			"tags": [
+				"Väkevät",
+				"anistisleet"
+			]
+		}
+	]
+}

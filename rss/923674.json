@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lindemans Tarot Noir – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/923674/",
+	"feed_url": "https://alkometriikka.fi/rss/923674.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lindemans Tarot Noir.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-923674-2026-09-29-5.99",
+			"url": "https://alkometriikka.fi/tuotteet/923674/",
+			"title": "Lindemans Tarot Noir — 5,79 € → 5,99 €",
+			"content_html": "<p>Tuotteen Lindemans Tarot Noir hinta on muuttunut.</p><p>5,79 € → 5,99 € (+0,20 €, +3,45 %).</p>",
+			"summary": "Tuotteen Lindemans Tarot Noir hinta on muuttunut. 5,79 € → 5,99 € (+0,20 €, +3,45 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/923674-e21d80d7977d.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

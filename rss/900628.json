@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Braastad VSOP Organic – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900628/",
+	"feed_url": "https://alkometriikka.fi/rss/900628.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Braastad VSOP Organic.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900628-2026-09-29-34.99",
+			"url": "https://alkometriikka.fi/tuotteet/900628/",
+			"title": "Braastad VSOP Organic — 34,98 € → 34,99 €",
+			"content_html": "<p>Tuotteen Braastad VSOP Organic hinta on muuttunut.</p><p>34,98 € → 34,99 € (+0,01 €, +0,03 %).</p>",
+			"summary": "Tuotteen Braastad VSOP Organic hinta on muuttunut. 34,98 € → 34,99 € (+0,01 €, +0,03 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900628-7dcffd23a180.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

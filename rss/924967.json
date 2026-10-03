@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Avignonesi Vino Nobile di Montepulciano 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/924967/",
+	"feed_url": "https://alkometriikka.fi/rss/924967.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Avignonesi Vino Nobile di Montepulciano 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-924967-2026-07-18-29.99",
+			"url": "https://alkometriikka.fi/tuotteet/924967/",
+			"title": "Avignonesi Vino Nobile di Montepulciano 2022 — 32,44 € → 29,99 €",
+			"content_html": "<p>Tuotteen Avignonesi Vino Nobile di Montepulciano 2022 hinta on muuttunut.</p><p>32,44 € → 29,99 € (−2,45 €, −7,55 %).</p>",
+			"summary": "Tuotteen Avignonesi Vino Nobile di Montepulciano 2022 hinta on muuttunut. 32,44 € → 29,99 € (−2,45 €, −7,55 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/924967-704d9bb09222.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

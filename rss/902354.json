@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bruichladdich Micro Provenance Single Cask #1558 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902354/",
+	"feed_url": "https://alkometriikka.fi/rss/902354.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bruichladdich Micro Provenance Single Cask #1558.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902354-2026-09-29-219.99",
+			"url": "https://alkometriikka.fi/tuotteet/902354/",
+			"title": "Bruichladdich Micro Provenance Single Cask #1558 — 209,98 € → 219,99 €",
+			"content_html": "<p>Tuotteen Bruichladdich Micro Provenance Single Cask #1558 hinta on muuttunut.</p><p>209,98 € → 219,99 € (+10,01 €, +4,77 %).</p>",
+			"summary": "Tuotteen Bruichladdich Micro Provenance Single Cask #1558 hinta on muuttunut. 209,98 € → 219,99 € (+10,01 €, +4,77 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902354-b2c2ac830a83.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

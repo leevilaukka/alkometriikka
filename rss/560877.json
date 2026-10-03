@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Poikain Parhaat Niitty Juhlakuohu – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/560877/",
+	"feed_url": "https://alkometriikka.fi/rss/560877.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Poikain Parhaat Niitty Juhlakuohu.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-560877-2026-07-18-13.39",
+			"url": "https://alkometriikka.fi/tuotteet/560877/",
+			"title": "Poikain Parhaat Niitty Juhlakuohu — 13,10 € → 13,39 €",
+			"content_html": "<p>Tuotteen Poikain Parhaat Niitty Juhlakuohu hinta on muuttunut.</p><p>13,10 € → 13,39 € (+0,29 €, +2,21 %).</p>",
+			"summary": "Tuotteen Poikain Parhaat Niitty Juhlakuohu hinta on muuttunut. 13,10 € → 13,39 € (+0,29 €, +2,21 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/560877-55412c83b96e.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat kuohuviinit"
+			]
+		}
+	]
+}

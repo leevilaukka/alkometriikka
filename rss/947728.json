@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Henriet-Bazin Grand Cru Léonard Rosé Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/947728/",
+	"feed_url": "https://alkometriikka.fi/rss/947728.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Henriet-Bazin Grand Cru Léonard Rosé Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-947728-2026-09-29-68.99",
+			"url": "https://alkometriikka.fi/tuotteet/947728/",
+			"title": "Henriet-Bazin Grand Cru Léonard Rosé Champagne Brut — 66,45 € → 68,99 €",
+			"content_html": "<p>Tuotteen Henriet-Bazin Grand Cru Léonard Rosé Champagne Brut hinta on muuttunut.</p><p>66,45 € → 68,99 € (+2,54 €, +3,82 %).</p>",
+			"summary": "Tuotteen Henriet-Bazin Grand Cru Léonard Rosé Champagne Brut hinta on muuttunut. 66,45 € → 68,99 € (+2,54 €, +3,82 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/947728-f973446e801e.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

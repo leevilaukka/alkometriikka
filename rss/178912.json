@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Two Stacks Double Barrel Single Malt tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/178912/",
+	"feed_url": "https://alkometriikka.fi/rss/178912.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Two Stacks Double Barrel Single Malt tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-178912-2026-09-29-8.05",
+			"url": "https://alkometriikka.fi/tuotteet/178912/",
+			"title": "Two Stacks Double Barrel Single Malt tölkki — 7,99 € → 8,05 €",
+			"content_html": "<p>Tuotteen Two Stacks Double Barrel Single Malt tölkki hinta on muuttunut.</p><p>7,99 € → 8,05 € (+0,06 €, +0,75 %).</p>",
+			"summary": "Tuotteen Two Stacks Double Barrel Single Malt tölkki hinta on muuttunut. 7,99 € → 8,05 € (+0,06 €, +0,75 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/178912-ef06783094d8.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		},
+		{
+			"id": "alkometriikka-178912-2026-07-18-7.99",
+			"url": "https://alkometriikka.fi/tuotteet/178912/",
+			"title": "Two Stacks Double Barrel Single Malt tölkki — 7,53 € → 7,99 €",
+			"content_html": "<p>Tuotteen Two Stacks Double Barrel Single Malt tölkki hinta on muuttunut.</p><p>7,53 € → 7,99 € (+0,46 €, +6,11 %).</p>",
+			"summary": "Tuotteen Two Stacks Double Barrel Single Malt tölkki hinta on muuttunut. 7,53 € → 7,99 € (+0,46 €, +6,11 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/178912-ef06783094d8.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

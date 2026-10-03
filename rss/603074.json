@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Sho-Une Junmai Daiginjo Sake – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/603074/",
+	"feed_url": "https://alkometriikka.fi/rss/603074.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Sho-Une Junmai Daiginjo Sake.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-603074-2026-09-29-17.5",
+			"url": "https://alkometriikka.fi/tuotteet/603074/",
+			"title": "Sho-Une Junmai Daiginjo Sake — 17,09 € → 17,50 €",
+			"content_html": "<p>Tuotteen Sho-Une Junmai Daiginjo Sake hinta on muuttunut.</p><p>17,09 € → 17,50 € (+0,41 €, +2,40 %).</p>",
+			"summary": "Tuotteen Sho-Une Junmai Daiginjo Sake hinta on muuttunut. 17,09 € → 17,50 € (+0,41 €, +2,40 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/603074-1a2ae2c298b6.png",
+			"tags": [
+				"Viinit",
+				"saket"
+			]
+		}
+	]
+}

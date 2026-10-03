@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lumoava Mustikka glögi – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/910987/",
+	"feed_url": "https://alkometriikka.fi/rss/910987.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lumoava Mustikka glögi.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-910987-2026-07-18-11.98",
+			"url": "https://alkometriikka.fi/tuotteet/910987/",
+			"title": "Lumoava Mustikka glögi — 12,05 € → 11,98 €",
+			"content_html": "<p>Tuotteen Lumoava Mustikka glögi hinta on muuttunut.</p><p>12,05 € → 11,98 € (−0,07 €, −0,58 %).</p>",
+			"summary": "Tuotteen Lumoava Mustikka glögi hinta on muuttunut. 12,05 € → 11,98 € (−0,07 €, −0,58 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/910987-4d0f85ca6bb2.png",
+			"tags": [
+				"Välituotteet",
+				"glögit"
+			]
+		}
+	]
+}

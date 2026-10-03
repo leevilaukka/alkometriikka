@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ridgeview Bloomsbury Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/910152/",
+	"feed_url": "https://alkometriikka.fi/rss/910152.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ridgeview Bloomsbury Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-910152-2026-09-29-29.99",
+			"url": "https://alkometriikka.fi/tuotteet/910152/",
+			"title": "Ridgeview Bloomsbury Brut — 29,98 € → 29,99 €",
+			"content_html": "<p>Tuotteen Ridgeview Bloomsbury Brut hinta on muuttunut.</p><p>29,98 € → 29,99 € (+0,01 €, +0,03 %).</p>",
+			"summary": "Tuotteen Ridgeview Bloomsbury Brut hinta on muuttunut. 29,98 € → 29,99 € (+0,01 €, +0,03 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/910152-6ead0d29cf9d.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

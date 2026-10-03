@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – BenMarco Malbec 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/446837/",
+	"feed_url": "https://alkometriikka.fi/rss/446837.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: BenMarco Malbec 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-446837-2026-07-18-24.98",
+			"url": "https://alkometriikka.fi/tuotteet/446837/",
+			"title": "BenMarco Malbec 2022 — 25,36 € → 24,98 €",
+			"content_html": "<p>Tuotteen BenMarco Malbec 2022 hinta on muuttunut.</p><p>25,36 € → 24,98 € (−0,38 €, −1,50 %).</p>",
+			"summary": "Tuotteen BenMarco Malbec 2022 hinta on muuttunut. 25,36 € → 24,98 € (−0,38 €, −1,50 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/446837-e5ca6e29bb01.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

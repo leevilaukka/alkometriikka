@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Chateau Carbonnieux Rouge Grand Cru Classé de Graves 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902452/",
+	"feed_url": "https://alkometriikka.fi/rss/902452.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Chateau Carbonnieux Rouge Grand Cru Classé de Graves 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902452-2026-09-29-71.39",
+			"url": "https://alkometriikka.fi/tuotteet/902452/",
+			"title": "Chateau Carbonnieux Rouge Grand Cru Classé de Graves 2022 — 68,94 € → 71,39 €",
+			"content_html": "<p>Tuotteen Chateau Carbonnieux Rouge Grand Cru Classé de Graves 2022 hinta on muuttunut.</p><p>68,94 € → 71,39 € (+2,45 €, +3,55 %).</p>",
+			"summary": "Tuotteen Chateau Carbonnieux Rouge Grand Cru Classé de Graves 2022 hinta on muuttunut. 68,94 € → 71,39 € (+2,45 €, +3,55 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902452-c26065ca08a2.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

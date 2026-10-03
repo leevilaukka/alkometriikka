@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ayala Champagne Brut Nature – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900258/",
+	"feed_url": "https://alkometriikka.fi/rss/900258.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ayala Champagne Brut Nature.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900258-2026-09-29-63.98",
+			"url": "https://alkometriikka.fi/tuotteet/900258/",
+			"title": "Ayala Champagne Brut Nature — 61,60 € → 63,98 €",
+			"content_html": "<p>Tuotteen Ayala Champagne Brut Nature hinta on muuttunut.</p><p>61,60 € → 63,98 € (+2,38 €, +3,86 %).</p>",
+			"summary": "Tuotteen Ayala Champagne Brut Nature hinta on muuttunut. 61,60 € → 63,98 € (+2,38 €, +3,86 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900258-9eeeb050d16f.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

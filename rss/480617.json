@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Querciabella Chianti Classico 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/480617/",
+	"feed_url": "https://alkometriikka.fi/rss/480617.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Querciabella Chianti Classico 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-480617-2026-07-18-35.98",
+			"url": "https://alkometriikka.fi/tuotteet/480617/",
+			"title": "Querciabella Chianti Classico 2022 — 34,75 € → 35,98 €",
+			"content_html": "<p>Tuotteen Querciabella Chianti Classico 2022 hinta on muuttunut.</p><p>34,75 € → 35,98 € (+1,23 €, +3,54 %).</p>",
+			"summary": "Tuotteen Querciabella Chianti Classico 2022 hinta on muuttunut. 34,75 € → 35,98 € (+1,23 €, +3,54 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/480617-a0ac7be4cd43.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

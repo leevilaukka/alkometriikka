@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Xanté – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/134236/",
+	"feed_url": "https://alkometriikka.fi/rss/134236.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Xanté.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-134236-2026-07-18-27.99",
+			"url": "https://alkometriikka.fi/tuotteet/134236/",
+			"title": "Xanté — 27,85 € → 27,99 €",
+			"content_html": "<p>Tuotteen Xanté hinta on muuttunut.</p><p>27,85 € → 27,99 € (+0,14 €, +0,50 %).</p>",
+			"summary": "Tuotteen Xanté hinta on muuttunut. 27,85 € → 27,99 € (+0,14 €, +0,50 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/134236-cae2ef83ac02.png",
+			"tags": [
+				"Väkevät",
+				"hedelmäliköörit"
+			]
+		}
+	]
+}

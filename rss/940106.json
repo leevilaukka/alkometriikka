@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Joseph Scharsch GW Pétillant Naturel – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/940106/",
+	"feed_url": "https://alkometriikka.fi/rss/940106.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Joseph Scharsch GW Pétillant Naturel.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-940106-2026-07-18-33.1",
+			"url": "https://alkometriikka.fi/tuotteet/940106/",
+			"title": "Joseph Scharsch GW Pétillant Naturel — 33,06 € → 33,10 €",
+			"content_html": "<p>Tuotteen Joseph Scharsch GW Pétillant Naturel hinta on muuttunut.</p><p>33,06 € → 33,10 € (+0,04 €, +0,12 %).</p>",
+			"summary": "Tuotteen Joseph Scharsch GW Pétillant Naturel hinta on muuttunut. 33,06 € → 33,10 € (+0,04 €, +0,12 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/940106-677620b437d8.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

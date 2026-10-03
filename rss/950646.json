@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Peat's Beast Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/950646/",
+	"feed_url": "https://alkometriikka.fi/rss/950646.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Peat's Beast Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-950646-2026-09-29-65.67",
+			"url": "https://alkometriikka.fi/tuotteet/950646/",
+			"title": "Peat's Beast Single Malt — 64,74 € → 65,67 €",
+			"content_html": "<p>Tuotteen Peat's Beast Single Malt hinta on muuttunut.</p><p>64,74 € → 65,67 € (+0,93 €, +1,44 %).</p>",
+			"summary": "Tuotteen Peat's Beast Single Malt hinta on muuttunut. 64,74 € → 65,67 € (+0,93 €, +1,44 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/950646-3120bb4c3f69.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

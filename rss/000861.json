@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Frapin Château Fontpinot XO – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/000861/",
+	"feed_url": "https://alkometriikka.fi/rss/000861.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Frapin Château Fontpinot XO.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-000861-2026-09-29-123.89",
+			"url": "https://alkometriikka.fi/tuotteet/000861/",
+			"title": "Frapin Château Fontpinot XO — 120,99 € → 123,89 €",
+			"content_html": "<p>Tuotteen Frapin Château Fontpinot XO hinta on muuttunut.</p><p>120,99 € → 123,89 € (+2,90 €, +2,40 %).</p>",
+			"summary": "Tuotteen Frapin Château Fontpinot XO hinta on muuttunut. 120,99 € → 123,89 € (+2,90 €, +2,40 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/000861-8194f9cb5f24.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

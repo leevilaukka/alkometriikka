@@ -1,0 +1,35 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Val de France L'Authentique French Cider Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/913784/",
+	"feed_url": "https://alkometriikka.fi/rss/913784.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Val de France L'Authentique French Cider Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-913784-2026-02-02-3.69",
+			"url": "https://alkometriikka.fi/tuotteet/913784/",
+			"title": "Val de France L'Authentique French Cider Brut — 3,79 € → 3,69 €",
+			"content_html": "<p>Tuotteen Val de France L'Authentique French Cider Brut hinta on muuttunut.</p><p>3,79 € → 3,69 € (−0,10 €, −2,64 %).</p>",
+			"summary": "Tuotteen Val de France L'Authentique French Cider Brut hinta on muuttunut. 3,79 € → 3,69 € (−0,10 €, −2,64 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/913784-293dc69354e1.png",
+			"tags": [
+				"siiderit"
+			]
+		},
+		{
+			"id": "alkometriikka-913784-2026-02-02-3.79",
+			"url": "https://alkometriikka.fi/tuotteet/913784/",
+			"title": "Val de France L'Authentique French Cider Brut — 3,69 € → 3,79 €",
+			"content_html": "<p>Tuotteen Val de France L'Authentique French Cider Brut hinta on muuttunut.</p><p>3,69 € → 3,79 € (+0,10 €, +2,71 %).</p>",
+			"summary": "Tuotteen Val de France L'Authentique French Cider Brut hinta on muuttunut. 3,69 € → 3,79 € (+0,10 €, +2,71 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/913784-293dc69354e1.png",
+			"tags": [
+				"siiderit"
+			]
+		}
+	]
+}

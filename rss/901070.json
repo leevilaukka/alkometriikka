@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pauwel Kwak – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901070/",
+	"feed_url": "https://alkometriikka.fi/rss/901070.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pauwel Kwak.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901070-2026-09-29-7.58",
+			"url": "https://alkometriikka.fi/tuotteet/901070/",
+			"title": "Pauwel Kwak — 7,10 € → 7,58 €",
+			"content_html": "<p>Tuotteen Pauwel Kwak hinta on muuttunut.</p><p>7,10 € → 7,58 € (+0,48 €, +6,76 %).</p>",
+			"summary": "Tuotteen Pauwel Kwak hinta on muuttunut. 7,10 € → 7,58 € (+0,48 €, +6,76 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901070-a321bc323ec8.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Rigal 646 Malbec 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/910493/",
+	"feed_url": "https://alkometriikka.fi/rss/910493.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Rigal 646 Malbec 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-910493-2026-07-18-16.49",
+			"url": "https://alkometriikka.fi/tuotteet/910493/",
+			"title": "Rigal 646 Malbec 2022 — 15,95 € → 16,49 €",
+			"content_html": "<p>Tuotteen Rigal 646 Malbec 2022 hinta on muuttunut.</p><p>15,95 € → 16,49 € (+0,54 €, +3,39 %).</p>",
+			"summary": "Tuotteen Rigal 646 Malbec 2022 hinta on muuttunut. 15,95 € → 16,49 € (+0,54 €, +3,39 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/910493-1e35047336fc.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

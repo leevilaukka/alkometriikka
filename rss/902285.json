@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Perrier-Jouët Blanc de Blancs Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902285/",
+	"feed_url": "https://alkometriikka.fi/rss/902285.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Perrier-Jouët Blanc de Blancs Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902285-2026-09-29-91.87",
+			"url": "https://alkometriikka.fi/tuotteet/902285/",
+			"title": "Perrier-Jouët Blanc de Blancs Champagne Brut — 87,98 € → 91,87 €",
+			"content_html": "<p>Tuotteen Perrier-Jouët Blanc de Blancs Champagne Brut hinta on muuttunut.</p><p>87,98 € → 91,87 € (+3,89 €, +4,42 %).</p>",
+			"summary": "Tuotteen Perrier-Jouët Blanc de Blancs Champagne Brut hinta on muuttunut. 87,98 € → 91,87 € (+3,89 €, +4,42 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902285-d80a8286d868.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

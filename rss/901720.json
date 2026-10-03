@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tiempo de Diversion Red hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901720/",
+	"feed_url": "https://alkometriikka.fi/rss/901720.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tiempo de Diversion Red hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901720-2026-07-18-33.48",
+			"url": "https://alkometriikka.fi/tuotteet/901720/",
+			"title": "Tiempo de Diversion Red hanapakkaus — 34,83 € → 33,48 €",
+			"content_html": "<p>Tuotteen Tiempo de Diversion Red hanapakkaus hinta on muuttunut.</p><p>34,83 € → 33,48 € (−1,35 €, −3,88 %).</p>",
+			"summary": "Tuotteen Tiempo de Diversion Red hanapakkaus hinta on muuttunut. 34,83 € → 33,48 € (−1,35 €, −3,88 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901720-de13122d4ed2.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

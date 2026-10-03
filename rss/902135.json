@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cucielo Bianco Vermouth di Torino – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902135/",
+	"feed_url": "https://alkometriikka.fi/rss/902135.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cucielo Bianco Vermouth di Torino.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902135-2026-09-29-33.99",
+			"url": "https://alkometriikka.fi/tuotteet/902135/",
+			"title": "Cucielo Bianco Vermouth di Torino — 34,10 € → 33,99 €",
+			"content_html": "<p>Tuotteen Cucielo Bianco Vermouth di Torino hinta on muuttunut.</p><p>34,10 € → 33,99 € (−0,11 €, −0,32 %).</p>",
+			"summary": "Tuotteen Cucielo Bianco Vermouth di Torino hinta on muuttunut. 34,10 € → 33,99 € (−0,11 €, −0,32 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902135-ebb76d4f531d.png",
+			"tags": [
+				"Välituotteet",
+				"vermutit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Combe d'Argent 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/436137/",
+	"feed_url": "https://alkometriikka.fi/rss/436137.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Combe d'Argent 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-436137-2026-09-29-13.99",
+			"url": "https://alkometriikka.fi/tuotteet/436137/",
+			"title": "Combe d'Argent 2021 — 13,89 € → 13,99 €",
+			"content_html": "<p>Tuotteen Combe d'Argent 2021 hinta on muuttunut.</p><p>13,89 € → 13,99 € (+0,10 €, +0,72 %).</p>",
+			"summary": "Tuotteen Combe d'Argent 2021 hinta on muuttunut. 13,89 € → 13,99 € (+0,10 €, +0,72 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/436137-f94848c8431d.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

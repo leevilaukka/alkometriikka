@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Compass Box This Is Not A Blend – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902616/",
+	"feed_url": "https://alkometriikka.fi/rss/902616.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Compass Box This Is Not A Blend.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902616-2026-09-29-141.5",
+			"url": "https://alkometriikka.fi/tuotteet/902616/",
+			"title": "Compass Box This Is Not A Blend — 135,60 € → 141,50 €",
+			"content_html": "<p>Tuotteen Compass Box This Is Not A Blend hinta on muuttunut.</p><p>135,60 € → 141,50 € (+5,90 €, +4,35 %).</p>",
+			"summary": "Tuotteen Compass Box This Is Not A Blend hinta on muuttunut. 135,60 € → 141,50 € (+5,90 €, +4,35 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902616-af1b318fb0bc.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

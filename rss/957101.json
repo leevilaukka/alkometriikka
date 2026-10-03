@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Alcymist Amaretto – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/957101/",
+	"feed_url": "https://alkometriikka.fi/rss/957101.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Alcymist Amaretto.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-957101-2026-07-18-14.5",
+			"url": "https://alkometriikka.fi/tuotteet/957101/",
+			"title": "Alcymist Amaretto — 14,08 € → 14,50 €",
+			"content_html": "<p>Tuotteen Alcymist Amaretto hinta on muuttunut.</p><p>14,08 € → 14,50 € (+0,42 €, +2,98 %).</p>",
+			"summary": "Tuotteen Alcymist Amaretto hinta on muuttunut. 14,08 € → 14,50 € (+0,42 €, +2,98 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/957101-dd6d246ceb37.png",
+			"tags": [
+				"Väkevät",
+				"mausteliköörit"
+			]
+		}
+	]
+}

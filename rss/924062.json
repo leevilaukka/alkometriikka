@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Thomas Henry Cherry Blossom Tonic – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/924062/",
+	"feed_url": "https://alkometriikka.fi/rss/924062.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Thomas Henry Cherry Blossom Tonic.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-924062-2026-07-18-1.79",
+			"url": "https://alkometriikka.fi/tuotteet/924062/",
+			"title": "Thomas Henry Cherry Blossom Tonic — 1,64 € → 1,79 €",
+			"content_html": "<p>Tuotteen Thomas Henry Cherry Blossom Tonic hinta on muuttunut.</p><p>1,64 € → 1,79 € (+0,15 €, +9,15 %).</p>",
+			"summary": "Tuotteen Thomas Henry Cherry Blossom Tonic hinta on muuttunut. 1,64 € → 1,79 € (+0,15 €, +9,15 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/924062-623eae6a993c.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Barahonda Rosado Organic 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901336/",
+	"feed_url": "https://alkometriikka.fi/rss/901336.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Barahonda Rosado Organic 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901336-2026-07-18-12.48",
+			"url": "https://alkometriikka.fi/tuotteet/901336/",
+			"title": "Barahonda Rosado Organic 2024 — 12,44 € → 12,48 €",
+			"content_html": "<p>Tuotteen Barahonda Rosado Organic 2024 hinta on muuttunut.</p><p>12,44 € → 12,48 € (+0,04 €, +0,32 %).</p>",
+			"summary": "Tuotteen Barahonda Rosado Organic 2024 hinta on muuttunut. 12,44 € → 12,48 € (+0,04 €, +0,32 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901336-26b054e80693.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

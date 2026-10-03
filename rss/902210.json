@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Nikka Tailored – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902210/",
+	"feed_url": "https://alkometriikka.fi/rss/902210.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Nikka Tailored.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902210-2026-09-29-109.99",
+			"url": "https://alkometriikka.fi/tuotteet/902210/",
+			"title": "The Nikka Tailored — 109,98 € → 109,99 €",
+			"content_html": "<p>Tuotteen The Nikka Tailored hinta on muuttunut.</p><p>109,98 € → 109,99 € (+0,01 €, +0,01 %).</p>",
+			"summary": "Tuotteen The Nikka Tailored hinta on muuttunut. 109,98 € → 109,99 € (+0,01 €, +0,01 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902210-9969dd9f6763.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

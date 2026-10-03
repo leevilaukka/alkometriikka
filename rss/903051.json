@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Benromach Uisge 2011 Single Cask Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903051/",
+	"feed_url": "https://alkometriikka.fi/rss/903051.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Benromach Uisge 2011 Single Cask Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903051-2026-09-29-156.36",
+			"url": "https://alkometriikka.fi/tuotteet/903051/",
+			"title": "Benromach Uisge 2011 Single Cask Single Malt — 149,78 € → 156,36 €",
+			"content_html": "<p>Tuotteen Benromach Uisge 2011 Single Cask Single Malt hinta on muuttunut.</p><p>149,78 € → 156,36 € (+6,58 €, +4,39 %).</p>",
+			"summary": "Tuotteen Benromach Uisge 2011 Single Cask Single Malt hinta on muuttunut. 149,78 € → 156,36 € (+6,58 €, +4,39 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903051-54e8cd51d8b4.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

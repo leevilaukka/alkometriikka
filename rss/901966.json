@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Il Capolavoro Zinfandel – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901966/",
+	"feed_url": "https://alkometriikka.fi/rss/901966.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Il Capolavoro Zinfandel.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901966-2026-09-29-9.98",
+			"url": "https://alkometriikka.fi/tuotteet/901966/",
+			"title": "Il Capolavoro Zinfandel — 9,96 € → 9,98 €",
+			"content_html": "<p>Tuotteen Il Capolavoro Zinfandel hinta on muuttunut.</p><p>9,96 € → 9,98 € (+0,02 €, +0,20 %).</p>",
+			"summary": "Tuotteen Il Capolavoro Zinfandel hinta on muuttunut. 9,96 € → 9,98 € (+0,02 €, +0,20 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901966-383f336f4264.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

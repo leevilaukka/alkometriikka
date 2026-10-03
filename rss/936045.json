@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Aldo Conterno Il Favot 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/936045/",
+	"feed_url": "https://alkometriikka.fi/rss/936045.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Aldo Conterno Il Favot 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-936045-2026-09-29-85.22",
+			"url": "https://alkometriikka.fi/tuotteet/936045/",
+			"title": "Aldo Conterno Il Favot 2020 — 81,79 € → 85,22 €",
+			"content_html": "<p>Tuotteen Aldo Conterno Il Favot 2020 hinta on muuttunut.</p><p>81,79 € → 85,22 € (+3,43 €, +4,19 %).</p>",
+			"summary": "Tuotteen Aldo Conterno Il Favot 2020 hinta on muuttunut. 81,79 € → 85,22 € (+3,43 €, +4,19 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/936045-5c82a90546ab.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

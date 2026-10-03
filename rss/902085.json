@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lepaa Premium Apple Spirit – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902085/",
+	"feed_url": "https://alkometriikka.fi/rss/902085.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lepaa Premium Apple Spirit.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902085-2026-09-29-70.85",
+			"url": "https://alkometriikka.fi/tuotteet/902085/",
+			"title": "Lepaa Premium Apple Spirit — 68,43 € → 70,85 €",
+			"content_html": "<p>Tuotteen Lepaa Premium Apple Spirit hinta on muuttunut.</p><p>68,43 € → 70,85 € (+2,42 €, +3,54 %).</p>",
+			"summary": "Tuotteen Lepaa Premium Apple Spirit hinta on muuttunut. 68,43 € → 70,85 € (+2,42 €, +3,54 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902085-95435c193752.png",
+			"tags": [
+				"Väkevät",
+				"hedelmätisleet"
+			]
+		}
+	]
+}

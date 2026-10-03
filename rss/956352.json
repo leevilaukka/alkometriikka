@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – De Kuyper Crème de Menthe – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/956352/",
+	"feed_url": "https://alkometriikka.fi/rss/956352.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: De Kuyper Crème de Menthe.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-956352-2026-07-18-16.99",
+			"url": "https://alkometriikka.fi/tuotteet/956352/",
+			"title": "De Kuyper Crème de Menthe — 17,09 € → 16,99 €",
+			"content_html": "<p>Tuotteen De Kuyper Crème de Menthe hinta on muuttunut.</p><p>17,09 € → 16,99 € (−0,10 €, −0,59 %).</p>",
+			"summary": "Tuotteen De Kuyper Crème de Menthe hinta on muuttunut. 17,09 € → 16,99 € (−0,10 €, −0,59 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/956352-b6ede1acc8ee.png",
+			"tags": [
+				"Väkevät",
+				"mausteliköörit"
+			]
+		}
+	]
+}

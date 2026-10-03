@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cantina Terlan St. Magdalener Alto Adige 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/956473/",
+	"feed_url": "https://alkometriikka.fi/rss/956473.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cantina Terlan St. Magdalener Alto Adige 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-956473-2026-09-29-24.47",
+			"url": "https://alkometriikka.fi/tuotteet/956473/",
+			"title": "Cantina Terlan St. Magdalener Alto Adige 2023 — 24,48 € → 24,47 €",
+			"content_html": "<p>Tuotteen Cantina Terlan St. Magdalener Alto Adige 2023 hinta on muuttunut.</p><p>24,48 € → 24,47 € (−0,01 €, −0,04 %).</p>",
+			"summary": "Tuotteen Cantina Terlan St. Magdalener Alto Adige 2023 hinta on muuttunut. 24,48 € → 24,47 € (−0,01 €, −0,04 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/956473-fb85b56bfcaf.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-956473-2026-07-18-24.48",
+			"url": "https://alkometriikka.fi/tuotteet/956473/",
+			"title": "Cantina Terlan St. Magdalener Alto Adige 2023 — 25,41 € → 24,48 €",
+			"content_html": "<p>Tuotteen Cantina Terlan St. Magdalener Alto Adige 2023 hinta on muuttunut.</p><p>25,41 € → 24,48 € (−0,93 €, −3,66 %).</p>",
+			"summary": "Tuotteen Cantina Terlan St. Magdalener Alto Adige 2023 hinta on muuttunut. 25,41 € → 24,48 € (−0,93 €, −3,66 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/956473-fb85b56bfcaf.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glen Garioch 1797 Founder's Reserve – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/175937/",
+	"feed_url": "https://alkometriikka.fi/rss/175937.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glen Garioch 1797 Founder's Reserve.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-175937-2026-09-29-64.12",
+			"url": "https://alkometriikka.fi/tuotteet/175937/",
+			"title": "Glen Garioch 1797 Founder's Reserve — 63,35 € → 64,12 €",
+			"content_html": "<p>Tuotteen Glen Garioch 1797 Founder's Reserve hinta on muuttunut.</p><p>63,35 € → 64,12 € (+0,77 €, +1,22 %).</p>",
+			"summary": "Tuotteen Glen Garioch 1797 Founder's Reserve hinta on muuttunut. 63,35 € → 64,12 € (+0,77 €, +1,22 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/175937-dddeb5d9cacf.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Père Magloire VSOP Smoky Islay Cask Finish Calvados – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902958/",
+	"feed_url": "https://alkometriikka.fi/rss/902958.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Père Magloire VSOP Smoky Islay Cask Finish Calvados.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902958-2026-09-29-64.98",
+			"url": "https://alkometriikka.fi/tuotteet/902958/",
+			"title": "Père Magloire VSOP Smoky Islay Cask Finish Calvados — 59,99 € → 64,98 €",
+			"content_html": "<p>Tuotteen Père Magloire VSOP Smoky Islay Cask Finish Calvados hinta on muuttunut.</p><p>59,99 € → 64,98 € (+4,99 €, +8,32 %).</p>",
+			"summary": "Tuotteen Père Magloire VSOP Smoky Islay Cask Finish Calvados hinta on muuttunut. 59,99 € → 64,98 € (+4,99 €, +8,32 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902958-124c182de27f.png",
+			"tags": [
+				"Väkevät",
+				"calvadosit"
+			]
+		}
+	]
+}

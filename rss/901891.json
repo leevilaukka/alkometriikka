@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Oremus Mandolás Tokaji Furmint 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901891/",
+	"feed_url": "https://alkometriikka.fi/rss/901891.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Oremus Mandolás Tokaji Furmint 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901891-2026-09-29-39.98",
+			"url": "https://alkometriikka.fi/tuotteet/901891/",
+			"title": "Oremus Mandolás Tokaji Furmint 2022 — 37,98 € → 39,98 €",
+			"content_html": "<p>Tuotteen Oremus Mandolás Tokaji Furmint 2022 hinta on muuttunut.</p><p>37,98 € → 39,98 € (+2,00 €, +5,27 %).</p>",
+			"summary": "Tuotteen Oremus Mandolás Tokaji Furmint 2022 hinta on muuttunut. 37,98 € → 39,98 € (+2,00 €, +5,27 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901891-14aafc4608a3.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-901891-2026-07-18-37.98",
+			"url": "https://alkometriikka.fi/tuotteet/901891/",
+			"title": "Oremus Mandolás Tokaji Furmint 2022 — 36,45 € → 37,98 €",
+			"content_html": "<p>Tuotteen Oremus Mandolás Tokaji Furmint 2022 hinta on muuttunut.</p><p>36,45 € → 37,98 € (+1,53 €, +4,20 %).</p>",
+			"summary": "Tuotteen Oremus Mandolás Tokaji Furmint 2022 hinta on muuttunut. 36,45 € → 37,98 € (+1,53 €, +4,20 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901891-14aafc4608a3.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

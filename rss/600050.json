@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Thr3 Monkeys Fresh & Fruity hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/600050/",
+	"feed_url": "https://alkometriikka.fi/rss/600050.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Thr3 Monkeys Fresh & Fruity hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-600050-2026-07-18-29.99",
+			"url": "https://alkometriikka.fi/tuotteet/600050/",
+			"title": "Thr3 Monkeys Fresh & Fruity hanapakkaus — 28,79 € → 29,99 €",
+			"content_html": "<p>Tuotteen Thr3 Monkeys Fresh & Fruity hanapakkaus hinta on muuttunut.</p><p>28,79 € → 29,99 € (+1,20 €, +4,17 %).</p>",
+			"summary": "Tuotteen Thr3 Monkeys Fresh & Fruity hanapakkaus hinta on muuttunut. 28,79 € → 29,99 € (+1,20 €, +4,17 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600050-570d0b0bf0e5.png",
+			"tags": [
+				"Viinit",
+				"muut viinijuomat"
+			]
+		}
+	]
+}

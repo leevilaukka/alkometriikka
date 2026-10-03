@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Antologia Barolo Riserva 2017 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/906036/",
+	"feed_url": "https://alkometriikka.fi/rss/906036.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Antologia Barolo Riserva 2017.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-906036-2026-09-29-37.48",
+			"url": "https://alkometriikka.fi/tuotteet/906036/",
+			"title": "Antologia Barolo Riserva 2017 — 37,38 € → 37,48 €",
+			"content_html": "<p>Tuotteen Antologia Barolo Riserva 2017 hinta on muuttunut.</p><p>37,38 € → 37,48 € (+0,10 €, +0,27 %).</p>",
+			"summary": "Tuotteen Antologia Barolo Riserva 2017 hinta on muuttunut. 37,38 € → 37,48 € (+0,10 €, +0,27 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/906036-270e196aea39.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Monte Del Frá Monastero Passito Bianco 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/945544/",
+	"feed_url": "https://alkometriikka.fi/rss/945544.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Monte Del Frá Monastero Passito Bianco 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-945544-2026-09-29-27.15",
+			"url": "https://alkometriikka.fi/tuotteet/945544/",
+			"title": "Monte Del Frá Monastero Passito Bianco 2022 — 26,53 € → 27,15 €",
+			"content_html": "<p>Tuotteen Monte Del Frá Monastero Passito Bianco 2022 hinta on muuttunut.</p><p>26,53 € → 27,15 € (+0,62 €, +2,34 %).</p>",
+			"summary": "Tuotteen Monte Del Frá Monastero Passito Bianco 2022 hinta on muuttunut. 26,53 € → 27,15 € (+0,62 €, +2,34 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/945544-ba663a67ddc0.png",
+			"tags": [
+				"Viinit",
+				"jälkiruokaviinit"
+			]
+		}
+	]
+}

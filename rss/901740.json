@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Besini Mukuzani 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901740/",
+	"feed_url": "https://alkometriikka.fi/rss/901740.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Besini Mukuzani 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901740-2026-07-18-15.99",
+			"url": "https://alkometriikka.fi/tuotteet/901740/",
+			"title": "Besini Mukuzani 2023 — 15,55 € → 15,99 €",
+			"content_html": "<p>Tuotteen Besini Mukuzani 2023 hinta on muuttunut.</p><p>15,55 € → 15,99 € (+0,44 €, +2,83 %).</p>",
+			"summary": "Tuotteen Besini Mukuzani 2023 hinta on muuttunut. 15,55 € → 15,99 € (+0,44 €, +2,83 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901740-e763aff84dbb.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

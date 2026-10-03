@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Wolfberger Crémant d'Alsace Magnum Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/919098/",
+	"feed_url": "https://alkometriikka.fi/rss/919098.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Wolfberger Crémant d'Alsace Magnum Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-919098-2026-07-18-39.98",
+			"url": "https://alkometriikka.fi/tuotteet/919098/",
+			"title": "Wolfberger Crémant d'Alsace Magnum Brut — 40,91 € → 39,98 €",
+			"content_html": "<p>Tuotteen Wolfberger Crémant d'Alsace Magnum Brut hinta on muuttunut.</p><p>40,91 € → 39,98 € (−0,93 €, −2,27 %).</p>",
+			"summary": "Tuotteen Wolfberger Crémant d'Alsace Magnum Brut hinta on muuttunut. 40,91 € → 39,98 € (−0,93 €, −2,27 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/919098-1503abbf1f30.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Maison Leroy Nuits Saint Georges Rouge 2013 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901532/",
+	"feed_url": "https://alkometriikka.fi/rss/901532.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Maison Leroy Nuits Saint Georges Rouge 2013.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901532-2026-09-29-2204.7",
+			"url": "https://alkometriikka.fi/tuotteet/901532/",
+			"title": "Maison Leroy Nuits Saint Georges Rouge 2013 — 2 053,27 € → 2 204,70 €",
+			"content_html": "<p>Tuotteen Maison Leroy Nuits Saint Georges Rouge 2013 hinta on muuttunut.</p><p>2 053,27 € → 2 204,70 € (+151,43 €, +7,38 %).</p>",
+			"summary": "Tuotteen Maison Leroy Nuits Saint Georges Rouge 2013 hinta on muuttunut. 2 053,27 € → 2 204,70 € (+151,43 €, +7,38 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901532-44c8672784bf.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

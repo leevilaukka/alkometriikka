@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Laugar Aupa Tovarisch Oloroso Barrel Aged – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/923382/",
+	"feed_url": "https://alkometriikka.fi/rss/923382.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Laugar Aupa Tovarisch Oloroso Barrel Aged.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-923382-2026-07-18-10.78",
+			"url": "https://alkometriikka.fi/tuotteet/923382/",
+			"title": "Laugar Aupa Tovarisch Oloroso Barrel Aged — 10,77 € → 10,78 €",
+			"content_html": "<p>Tuotteen Laugar Aupa Tovarisch Oloroso Barrel Aged hinta on muuttunut.</p><p>10,77 € → 10,78 € (+0,01 €, +0,09 %).</p>",
+			"summary": "Tuotteen Laugar Aupa Tovarisch Oloroso Barrel Aged hinta on muuttunut. 10,77 € → 10,78 € (+0,01 €, +0,09 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/923382-aeb8df40b48e.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

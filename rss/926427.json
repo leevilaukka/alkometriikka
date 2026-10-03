@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Casa Vinironia Prosecco Vino Biologico Extra Dry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/926427/",
+	"feed_url": "https://alkometriikka.fi/rss/926427.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Casa Vinironia Prosecco Vino Biologico Extra Dry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-926427-2026-07-18-13.48",
+			"url": "https://alkometriikka.fi/tuotteet/926427/",
+			"title": "Casa Vinironia Prosecco Vino Biologico Extra Dry — 13,98 € → 13,48 €",
+			"content_html": "<p>Tuotteen Casa Vinironia Prosecco Vino Biologico Extra Dry hinta on muuttunut.</p><p>13,98 € → 13,48 € (−0,50 €, −3,58 %).</p>",
+			"summary": "Tuotteen Casa Vinironia Prosecco Vino Biologico Extra Dry hinta on muuttunut. 13,98 € → 13,48 € (−0,50 €, −3,58 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/926427-6fd92e6dbd54.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

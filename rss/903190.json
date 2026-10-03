@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Finca Rodma Avizor 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903190/",
+	"feed_url": "https://alkometriikka.fi/rss/903190.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Finca Rodma Avizor 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903190-2026-09-29-58.94",
+			"url": "https://alkometriikka.fi/tuotteet/903190/",
+			"title": "Finca Rodma Avizor 2021 — 57,37 € → 58,94 €",
+			"content_html": "<p>Tuotteen Finca Rodma Avizor 2021 hinta on muuttunut.</p><p>57,37 € → 58,94 € (+1,57 €, +2,74 %).</p>",
+			"summary": "Tuotteen Finca Rodma Avizor 2021 hinta on muuttunut. 57,37 € → 58,94 € (+1,57 €, +2,74 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903190-93163a6b2258.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

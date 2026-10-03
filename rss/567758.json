@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Grapeful Chardonnay 2023 kartonkitölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/567758/",
+	"feed_url": "https://alkometriikka.fi/rss/567758.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Grapeful Chardonnay 2023 kartonkitölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-567758-2026-09-29-9.99",
+			"url": "https://alkometriikka.fi/tuotteet/567758/",
+			"title": "Grapeful Chardonnay 2023 kartonkitölkki — 11,59 € → 9,99 €",
+			"content_html": "<p>Tuotteen Grapeful Chardonnay 2023 kartonkitölkki hinta on muuttunut.</p><p>11,59 € → 9,99 € (−1,60 €, −13,81 %).</p>",
+			"summary": "Tuotteen Grapeful Chardonnay 2023 kartonkitölkki hinta on muuttunut. 11,59 € → 9,99 € (−1,60 €, −13,81 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/567758-4d480dc30db2.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

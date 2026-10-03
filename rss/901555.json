@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bernard Robert Rosé Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901555/",
+	"feed_url": "https://alkometriikka.fi/rss/901555.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bernard Robert Rosé Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901555-2026-09-29-45.95",
+			"url": "https://alkometriikka.fi/tuotteet/901555/",
+			"title": "Bernard Robert Rosé Champagne Brut — 44,99 € → 45,95 €",
+			"content_html": "<p>Tuotteen Bernard Robert Rosé Champagne Brut hinta on muuttunut.</p><p>44,99 € → 45,95 € (+0,96 €, +2,13 %).</p>",
+			"summary": "Tuotteen Bernard Robert Rosé Champagne Brut hinta on muuttunut. 44,99 € → 45,95 € (+0,96 €, +2,13 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901555-0961a3cd9fa0.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

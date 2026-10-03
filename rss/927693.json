@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jaume Serra Cava Brut Nature – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/927693/",
+	"feed_url": "https://alkometriikka.fi/rss/927693.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jaume Serra Cava Brut Nature.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-927693-2026-07-18-7.98",
+			"url": "https://alkometriikka.fi/tuotteet/927693/",
+			"title": "Jaume Serra Cava Brut Nature — 8,21 € → 7,98 €",
+			"content_html": "<p>Tuotteen Jaume Serra Cava Brut Nature hinta on muuttunut.</p><p>8,21 € → 7,98 € (−0,23 €, −2,80 %).</p>",
+			"summary": "Tuotteen Jaume Serra Cava Brut Nature hinta on muuttunut. 8,21 € → 7,98 € (−0,23 €, −2,80 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/927693-7d9c13f9dd18.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

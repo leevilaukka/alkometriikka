@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Orin Swift Mannequin 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902183/",
+	"feed_url": "https://alkometriikka.fi/rss/902183.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Orin Swift Mannequin 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902183-2026-09-29-64.99",
+			"url": "https://alkometriikka.fi/tuotteet/902183/",
+			"title": "Orin Swift Mannequin 2022 — 58,39 € → 64,99 €",
+			"content_html": "<p>Tuotteen Orin Swift Mannequin 2022 hinta on muuttunut.</p><p>58,39 € → 64,99 € (+6,60 €, +11,30 %).</p>",
+			"summary": "Tuotteen Orin Swift Mannequin 2022 hinta on muuttunut. 58,39 € → 64,99 € (+6,60 €, +11,30 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902183-16a013b3f753.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

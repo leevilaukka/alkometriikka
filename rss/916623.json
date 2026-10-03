@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Maison Sinnae Les Traverses Gigondas 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/916623/",
+	"feed_url": "https://alkometriikka.fi/rss/916623.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Maison Sinnae Les Traverses Gigondas 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-916623-2026-09-29-45.55",
+			"url": "https://alkometriikka.fi/tuotteet/916623/",
+			"title": "Maison Sinnae Les Traverses Gigondas 2021 — 44,90 € → 45,55 €",
+			"content_html": "<p>Tuotteen Maison Sinnae Les Traverses Gigondas 2021 hinta on muuttunut.</p><p>44,90 € → 45,55 € (+0,65 €, +1,45 %).</p>",
+			"summary": "Tuotteen Maison Sinnae Les Traverses Gigondas 2021 hinta on muuttunut. 44,90 € → 45,55 € (+0,65 €, +1,45 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/916623-0465b4c60580.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

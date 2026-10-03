@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lanson Green Label Bio-Organic Champagne Extra Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/556197/",
+	"feed_url": "https://alkometriikka.fi/rss/556197.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lanson Green Label Bio-Organic Champagne Extra Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-556197-2026-09-29-72.5",
+			"url": "https://alkometriikka.fi/tuotteet/556197/",
+			"title": "Lanson Green Label Bio-Organic Champagne Extra Brut — 69,98 € → 72,50 €",
+			"content_html": "<p>Tuotteen Lanson Green Label Bio-Organic Champagne Extra Brut hinta on muuttunut.</p><p>69,98 € → 72,50 € (+2,52 €, +3,60 %).</p>",
+			"summary": "Tuotteen Lanson Green Label Bio-Organic Champagne Extra Brut hinta on muuttunut. 69,98 € → 72,50 € (+2,52 €, +3,60 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/556197-c0f4bb5f2cb1.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

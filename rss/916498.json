@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gorghi Tondi Segreante 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/916498/",
+	"feed_url": "https://alkometriikka.fi/rss/916498.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gorghi Tondi Segreante 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-916498-2026-09-29-43.03",
+			"url": "https://alkometriikka.fi/tuotteet/916498/",
+			"title": "Gorghi Tondi Segreante 2018 — 42,57 € → 43,03 €",
+			"content_html": "<p>Tuotteen Gorghi Tondi Segreante 2018 hinta on muuttunut.</p><p>42,57 € → 43,03 € (+0,46 €, +1,08 %).</p>",
+			"summary": "Tuotteen Gorghi Tondi Segreante 2018 hinta on muuttunut. 42,57 € → 43,03 € (+0,46 €, +1,08 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/916498-e35255b0f84f.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

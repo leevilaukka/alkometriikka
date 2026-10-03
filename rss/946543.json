@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Domaine Zinck Riesling Grand Cru Eichberg 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/946543/",
+	"feed_url": "https://alkometriikka.fi/rss/946543.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Domaine Zinck Riesling Grand Cru Eichberg 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-946543-2026-09-29-45.05",
+			"url": "https://alkometriikka.fi/tuotteet/946543/",
+			"title": "Domaine Zinck Riesling Grand Cru Eichberg 2019 — 44,45 € → 45,05 €",
+			"content_html": "<p>Tuotteen Domaine Zinck Riesling Grand Cru Eichberg 2019 hinta on muuttunut.</p><p>44,45 € → 45,05 € (+0,60 €, +1,35 %).</p>",
+			"summary": "Tuotteen Domaine Zinck Riesling Grand Cru Eichberg 2019 hinta on muuttunut. 44,45 € → 45,05 € (+0,60 €, +1,35 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/946543-2facc7abefb3.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

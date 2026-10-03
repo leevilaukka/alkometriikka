@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Guerrieri Rizzardi Recioto di Soave Classico 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/926762/",
+	"feed_url": "https://alkometriikka.fi/rss/926762.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Guerrieri Rizzardi Recioto di Soave Classico 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-926762-2026-09-29-35.13",
+			"url": "https://alkometriikka.fi/tuotteet/926762/",
+			"title": "Guerrieri Rizzardi Recioto di Soave Classico 2022 — 33,95 € → 35,13 €",
+			"content_html": "<p>Tuotteen Guerrieri Rizzardi Recioto di Soave Classico 2022 hinta on muuttunut.</p><p>33,95 € → 35,13 € (+1,18 €, +3,48 %).</p>",
+			"summary": "Tuotteen Guerrieri Rizzardi Recioto di Soave Classico 2022 hinta on muuttunut. 33,95 € → 35,13 € (+1,18 €, +3,48 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/926762-c6ccf8807264.png",
+			"tags": [
+				"Viinit",
+				"jälkiruokaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-926762-2026-07-18-33.95",
+			"url": "https://alkometriikka.fi/tuotteet/926762/",
+			"title": "Guerrieri Rizzardi Recioto di Soave Classico 2022 — 33,58 € → 33,95 €",
+			"content_html": "<p>Tuotteen Guerrieri Rizzardi Recioto di Soave Classico 2022 hinta on muuttunut.</p><p>33,58 € → 33,95 € (+0,37 €, +1,10 %).</p>",
+			"summary": "Tuotteen Guerrieri Rizzardi Recioto di Soave Classico 2022 hinta on muuttunut. 33,58 € → 33,95 € (+0,37 €, +1,10 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/926762-c6ccf8807264.png",
+			"tags": [
+				"Viinit",
+				"jälkiruokaviinit"
+			]
+		}
+	]
+}

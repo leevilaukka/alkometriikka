@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Merry's Irish Cream – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/258807/",
+	"feed_url": "https://alkometriikka.fi/rss/258807.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Merry's Irish Cream.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-258807-2026-09-29-20.9",
+			"url": "https://alkometriikka.fi/tuotteet/258807/",
+			"title": "Merry's Irish Cream — 19,98 € → 20,90 €",
+			"content_html": "<p>Tuotteen Merry's Irish Cream hinta on muuttunut.</p><p>19,98 € → 20,90 € (+0,92 €, +4,60 %).</p>",
+			"summary": "Tuotteen Merry's Irish Cream hinta on muuttunut. 19,98 € → 20,90 € (+0,92 €, +4,60 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/258807-47097dccbcb2.png",
+			"tags": [
+				"Väkevät",
+				"kermaliköörit"
+			]
+		}
+	]
+}

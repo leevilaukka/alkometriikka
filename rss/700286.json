@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Koff Long Drink Twist Pineapple-Strawberry-Lemon  tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/700286/",
+	"feed_url": "https://alkometriikka.fi/rss/700286.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Koff Long Drink Twist Pineapple-Strawberry-Lemon  tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-700286-2026-09-30-2.73",
+			"url": "https://alkometriikka.fi/tuotteet/700286/",
+			"title": "Koff Long Drink Twist Pineapple-Strawberry-Lemon  tölkki — 2,69 € → 2,73 €",
+			"content_html": "<p>Tuotteen Koff Long Drink Twist Pineapple-Strawberry-Lemon  tölkki hinta on muuttunut.</p><p>2,69 € → 2,73 € (+0,04 €, +1,49 %).</p>",
+			"summary": "Tuotteen Koff Long Drink Twist Pineapple-Strawberry-Lemon tölkki hinta on muuttunut. 2,69 € → 2,73 € (+0,04 €, +1,49 %).",
+			"date_published": "2026-09-30T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/700286-1b2f104185fe.png",
+			"tags": [
+				"Panimotuotteet",
+				"juomasekoitukset"
+			]
+		}
+	]
+}

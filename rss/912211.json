@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jackson Estate Stich Sauvignon Blanc 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/912211/",
+	"feed_url": "https://alkometriikka.fi/rss/912211.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jackson Estate Stich Sauvignon Blanc 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-912211-2026-09-29-9.98",
+			"url": "https://alkometriikka.fi/tuotteet/912211/",
+			"title": "Jackson Estate Stich Sauvignon Blanc 2025 — 9,90 € → 9,98 €",
+			"content_html": "<p>Tuotteen Jackson Estate Stich Sauvignon Blanc 2025 hinta on muuttunut.</p><p>9,90 € → 9,98 € (+0,08 €, +0,81 %).</p>",
+			"summary": "Tuotteen Jackson Estate Stich Sauvignon Blanc 2025 hinta on muuttunut. 9,90 € → 9,98 € (+0,08 €, +0,81 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/912211-9cb4e18fd0c5.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-912211-2026-07-18-9.9",
+			"url": "https://alkometriikka.fi/tuotteet/912211/",
+			"title": "Jackson Estate Stich Sauvignon Blanc 2025 — 10,21 € → 9,90 €",
+			"content_html": "<p>Tuotteen Jackson Estate Stich Sauvignon Blanc 2025 hinta on muuttunut.</p><p>10,21 € → 9,90 € (−0,31 €, −3,04 %).</p>",
+			"summary": "Tuotteen Jackson Estate Stich Sauvignon Blanc 2025 hinta on muuttunut. 10,21 € → 9,90 € (−0,31 €, −3,04 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/912211-9cb4e18fd0c5.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

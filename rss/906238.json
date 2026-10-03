@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Inama Vin Soave 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/906238/",
+	"feed_url": "https://alkometriikka.fi/rss/906238.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Inama Vin Soave 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-906238-2026-07-18-22.99",
+			"url": "https://alkometriikka.fi/tuotteet/906238/",
+			"title": "Inama Vin Soave 2025 — 22,45 € → 22,99 €",
+			"content_html": "<p>Tuotteen Inama Vin Soave 2025 hinta on muuttunut.</p><p>22,45 € → 22,99 € (+0,54 €, +2,41 %).</p>",
+			"summary": "Tuotteen Inama Vin Soave 2025 hinta on muuttunut. 22,45 € → 22,99 € (+0,54 €, +2,41 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/906238-b9f142d09f51.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

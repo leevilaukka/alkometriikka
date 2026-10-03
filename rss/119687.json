@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Planat XO Imperial – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/119687/",
+	"feed_url": "https://alkometriikka.fi/rss/119687.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Planat XO Imperial.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-119687-2026-09-29-74.99",
+			"url": "https://alkometriikka.fi/tuotteet/119687/",
+			"title": "Planat XO Imperial — 72,90 € → 74,99 €",
+			"content_html": "<p>Tuotteen Planat XO Imperial hinta on muuttunut.</p><p>72,90 € → 74,99 € (+2,09 €, +2,87 %).</p>",
+			"summary": "Tuotteen Planat XO Imperial hinta on muuttunut. 72,90 € → 74,99 € (+2,09 €, +2,87 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/119687-246106637f2f.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

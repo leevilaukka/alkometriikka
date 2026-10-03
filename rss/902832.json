@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Uljas Sea Buckthorn – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902832/",
+	"feed_url": "https://alkometriikka.fi/rss/902832.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Uljas Sea Buckthorn.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902832-2026-09-29-43.48",
+			"url": "https://alkometriikka.fi/tuotteet/902832/",
+			"title": "Uljas Sea Buckthorn — 42,42 € → 43,48 €",
+			"content_html": "<p>Tuotteen Uljas Sea Buckthorn hinta on muuttunut.</p><p>42,42 € → 43,48 € (+1,06 €, +2,50 %).</p>",
+			"summary": "Tuotteen Uljas Sea Buckthorn hinta on muuttunut. 42,42 € → 43,48 € (+1,06 €, +2,50 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902832-99d1c374658a.png",
+			"tags": [
+				"Väkevät",
+				"marjaliköörit"
+			]
+		}
+	]
+}

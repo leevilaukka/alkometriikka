@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pannonhalmi Apátsági Infusio  2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902100/",
+	"feed_url": "https://alkometriikka.fi/rss/902100.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pannonhalmi Apátsági Infusio  2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902100-2026-09-29-62.22",
+			"url": "https://alkometriikka.fi/tuotteet/902100/",
+			"title": "Pannonhalmi Apátsági Infusio  2023 — 60,41 € → 62,22 €",
+			"content_html": "<p>Tuotteen Pannonhalmi Apátsági Infusio  2023 hinta on muuttunut.</p><p>60,41 € → 62,22 € (+1,81 €, +3,00 %).</p>",
+			"summary": "Tuotteen Pannonhalmi Apátsági Infusio 2023 hinta on muuttunut. 60,41 € → 62,22 € (+1,81 €, +3,00 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902100-45d83d0f6f85.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glenwood muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/909914/",
+	"feed_url": "https://alkometriikka.fi/rss/909914.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glenwood muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-909914-2026-07-18-13.69",
+			"url": "https://alkometriikka.fi/tuotteet/909914/",
+			"title": "Glenwood muovipullo — 13,52 € → 13,69 €",
+			"content_html": "<p>Tuotteen Glenwood muovipullo hinta on muuttunut.</p><p>13,52 € → 13,69 € (+0,17 €, +1,26 %).</p>",
+			"summary": "Tuotteen Glenwood muovipullo hinta on muuttunut. 13,52 € → 13,69 € (+0,17 €, +1,26 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/909914-9b05a7a1f6af.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

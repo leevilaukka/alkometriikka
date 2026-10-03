@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Thiénot NV Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902156/",
+	"feed_url": "https://alkometriikka.fi/rss/902156.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Thiénot NV Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902156-2026-09-29-56.89",
+			"url": "https://alkometriikka.fi/tuotteet/902156/",
+			"title": "Thiénot NV Champagne Brut — 55,45 € → 56,89 €",
+			"content_html": "<p>Tuotteen Thiénot NV Champagne Brut hinta on muuttunut.</p><p>55,45 € → 56,89 € (+1,44 €, +2,60 %).</p>",
+			"summary": "Tuotteen Thiénot NV Champagne Brut hinta on muuttunut. 55,45 € → 56,89 € (+1,44 €, +2,60 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902156-fd6c2772da2c.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

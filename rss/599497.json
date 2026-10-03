@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bruno Paillard Première Cuvée Champagne Extra Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/599497/",
+	"feed_url": "https://alkometriikka.fi/rss/599497.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bruno Paillard Première Cuvée Champagne Extra Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-599497-2026-09-29-84.52",
+			"url": "https://alkometriikka.fi/tuotteet/599497/",
+			"title": "Bruno Paillard Première Cuvée Champagne Extra Brut — 81,12 € → 84,52 €",
+			"content_html": "<p>Tuotteen Bruno Paillard Première Cuvée Champagne Extra Brut hinta on muuttunut.</p><p>81,12 € → 84,52 € (+3,40 €, +4,19 %).</p>",
+			"summary": "Tuotteen Bruno Paillard Première Cuvée Champagne Extra Brut hinta on muuttunut. 81,12 € → 84,52 € (+3,40 €, +4,19 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/599497-57f38dbc1c46.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Smakbyns Röd Granit – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/947696/",
+	"feed_url": "https://alkometriikka.fi/rss/947696.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Smakbyns Röd Granit.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-947696-2026-09-29-79.01",
+			"url": "https://alkometriikka.fi/tuotteet/947696/",
+			"title": "Smakbyns Röd Granit — 75,66 € → 79,01 €",
+			"content_html": "<p>Tuotteen Smakbyns Röd Granit hinta on muuttunut.</p><p>75,66 € → 79,01 € (+3,35 €, +4,43 %).</p>",
+			"summary": "Tuotteen Smakbyns Röd Granit hinta on muuttunut. 75,66 € → 79,01 € (+3,35 €, +4,43 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/947696-a79e5ffb3f3e.png",
+			"tags": [
+				"Väkevät",
+				"marjaliköörit"
+			]
+		}
+	]
+}

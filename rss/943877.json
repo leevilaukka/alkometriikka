@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ron Matusalem 23 Gran Reserva – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/943877/",
+	"feed_url": "https://alkometriikka.fi/rss/943877.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ron Matusalem 23 Gran Reserva.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-943877-2026-09-29-103.57",
+			"url": "https://alkometriikka.fi/tuotteet/943877/",
+			"title": "Ron Matusalem 23 Gran Reserva — 99,90 € → 103,57 €",
+			"content_html": "<p>Tuotteen Ron Matusalem 23 Gran Reserva hinta on muuttunut.</p><p>99,90 € → 103,57 € (+3,67 €, +3,67 %).</p>",
+			"summary": "Tuotteen Ron Matusalem 23 Gran Reserva hinta on muuttunut. 99,90 € → 103,57 € (+3,67 €, +3,67 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/943877-28d82a72cbff.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

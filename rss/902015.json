@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glendalough Single Cask Calvados XO Finish – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902015/",
+	"feed_url": "https://alkometriikka.fi/rss/902015.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glendalough Single Cask Calvados XO Finish.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902015-2026-09-29-61",
+			"url": "https://alkometriikka.fi/tuotteet/902015/",
+			"title": "Glendalough Single Cask Calvados XO Finish — 60,27 € → 61,00 €",
+			"content_html": "<p>Tuotteen Glendalough Single Cask Calvados XO Finish hinta on muuttunut.</p><p>60,27 € → 61,00 € (+0,73 €, +1,21 %).</p>",
+			"summary": "Tuotteen Glendalough Single Cask Calvados XO Finish hinta on muuttunut. 60,27 € → 61,00 € (+0,73 €, +1,21 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902015-650d91f53980.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

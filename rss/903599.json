@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jean de la Fontaine L'Indisciplinée Blanc de Blanc Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903599/",
+	"feed_url": "https://alkometriikka.fi/rss/903599.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jean de la Fontaine L'Indisciplinée Blanc de Blanc Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903599-2026-09-29-61.65",
+			"url": "https://alkometriikka.fi/tuotteet/903599/",
+			"title": "Jean de la Fontaine L'Indisciplinée Blanc de Blanc Champagne Brut — 59,89 € → 61,65 €",
+			"content_html": "<p>Tuotteen Jean de la Fontaine L'Indisciplinée Blanc de Blanc Champagne Brut hinta on muuttunut.</p><p>59,89 € → 61,65 € (+1,76 €, +2,94 %).</p>",
+			"summary": "Tuotteen Jean de la Fontaine L'Indisciplinée Blanc de Blanc Champagne Brut hinta on muuttunut. 59,89 € → 61,65 € (+1,76 €, +2,94 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903599-99bd4c4fdd56.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

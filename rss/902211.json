@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Super Nikka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902211/",
+	"feed_url": "https://alkometriikka.fi/rss/902211.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Super Nikka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902211-2026-09-29-69.99",
+			"url": "https://alkometriikka.fi/tuotteet/902211/",
+			"title": "Super Nikka — 69,98 € → 69,99 €",
+			"content_html": "<p>Tuotteen Super Nikka hinta on muuttunut.</p><p>69,98 € → 69,99 € (+0,01 €, +0,01 %).</p>",
+			"summary": "Tuotteen Super Nikka hinta on muuttunut. 69,98 € → 69,99 € (+0,01 €, +0,01 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902211-94ffa1db2970.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

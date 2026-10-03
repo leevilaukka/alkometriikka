@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vinory Nizza Saline 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900166/",
+	"feed_url": "https://alkometriikka.fi/rss/900166.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vinory Nizza Saline 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900166-2026-09-29-42.32",
+			"url": "https://alkometriikka.fi/tuotteet/900166/",
+			"title": "Vinory Nizza Saline 2020 — 41,00 € → 42,32 €",
+			"content_html": "<p>Tuotteen Vinory Nizza Saline 2020 hinta on muuttunut.</p><p>41,00 € → 42,32 € (+1,32 €, +3,22 %).</p>",
+			"summary": "Tuotteen Vinory Nizza Saline 2020 hinta on muuttunut. 41,00 € → 42,32 € (+1,32 €, +3,22 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900166-55c273f5f6e3.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

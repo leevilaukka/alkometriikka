@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kåska Casual Spirit – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/256786/",
+	"feed_url": "https://alkometriikka.fi/rss/256786.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kåska Casual Spirit.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-256786-2026-09-29-28.93",
+			"url": "https://alkometriikka.fi/tuotteet/256786/",
+			"title": "Kåska Casual Spirit — 28,77 € → 28,93 €",
+			"content_html": "<p>Tuotteen Kåska Casual Spirit hinta on muuttunut.</p><p>28,77 € → 28,93 € (+0,16 €, +0,56 %).</p>",
+			"summary": "Tuotteen Kåska Casual Spirit hinta on muuttunut. 28,77 € → 28,93 € (+0,16 €, +0,56 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/256786-5fc2d3b3ea65.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

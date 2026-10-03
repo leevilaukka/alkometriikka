@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Le Sirop de Monin Roasted Hazelnut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/948506/",
+	"feed_url": "https://alkometriikka.fi/rss/948506.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Le Sirop de Monin Roasted Hazelnut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-948506-2026-07-18-19.99",
+			"url": "https://alkometriikka.fi/tuotteet/948506/",
+			"title": "Le Sirop de Monin Roasted Hazelnut — 19,77 € → 19,99 €",
+			"content_html": "<p>Tuotteen Le Sirop de Monin Roasted Hazelnut hinta on muuttunut.</p><p>19,77 € → 19,99 € (+0,22 €, +1,11 %).</p>",
+			"summary": "Tuotteen Le Sirop de Monin Roasted Hazelnut hinta on muuttunut. 19,77 € → 19,99 € (+0,22 €, +1,11 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/948506-c5b5cdccedb0.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

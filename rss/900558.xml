@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Ojo De Dios Joven Mezcal – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/900558/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Ojo De Dios Joven Mezcal.</description>
+		<language>fi</language>
+		<lastBuildDate>Sat, 03 Oct 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/900558.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Ojo De Dios Joven Mezcal – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Ojo De Dios Joven Mezcal — 81,29 € → 83,50 €</title>
+			<link>https://alkometriikka.fi/tuotteet/900558/</link>
+			<guid isPermaLink="false">alkometriikka-900558-2026-09-29-83.5</guid>
+			<pubDate>Tue, 29 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / Tequilat</category>
+			<description><![CDATA[<p>Tuotteen Ojo De Dios Joven Mezcal hinta on muuttunut.</p><p>81,29 € → 83,50 € (+2,21 €, +2,72 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/900558-869cdd23343b.png" />
+		</item>
+	</channel>
+</rss>

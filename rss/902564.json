@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jinro Soju – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902564/",
+	"feed_url": "https://alkometriikka.fi/rss/902564.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jinro Soju.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902564-2026-09-29-9.99",
+			"url": "https://alkometriikka.fi/tuotteet/902564/",
+			"title": "Jinro Soju — 10,05 € → 9,99 €",
+			"content_html": "<p>Tuotteen Jinro Soju hinta on muuttunut.</p><p>10,05 € → 9,99 € (−0,06 €, −0,60 %).</p>",
+			"summary": "Tuotteen Jinro Soju hinta on muuttunut. 10,05 € → 9,99 € (−0,06 €, −0,60 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902564-a9d95a93ac66.png",
+			"tags": [
+				"Väkevät",
+				"viina"
+			]
+		}
+	]
+}

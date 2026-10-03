@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Leroy Bourgogne Blanc Fleurs de Vignes – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901479/",
+	"feed_url": "https://alkometriikka.fi/rss/901479.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Leroy Bourgogne Blanc Fleurs de Vignes.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901479-2026-09-29-499.59",
+			"url": "https://alkometriikka.fi/tuotteet/901479/",
+			"title": "Leroy Bourgogne Blanc Fleurs de Vignes — 467,17 € → 499,59 €",
+			"content_html": "<p>Tuotteen Leroy Bourgogne Blanc Fleurs de Vignes hinta on muuttunut.</p><p>467,17 € → 499,59 € (+32,42 €, +6,94 %).</p>",
+			"summary": "Tuotteen Leroy Bourgogne Blanc Fleurs de Vignes hinta on muuttunut. 467,17 € → 499,59 € (+32,42 €, +6,94 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901479-09145aff50b7.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

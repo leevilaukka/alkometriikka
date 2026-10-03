@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – La Horra Corimbo 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/918084/",
+	"feed_url": "https://alkometriikka.fi/rss/918084.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: La Horra Corimbo 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-918084-2026-09-29-40.38",
+			"url": "https://alkometriikka.fi/tuotteet/918084/",
+			"title": "La Horra Corimbo 2022 — 38,37 € → 40,38 €",
+			"content_html": "<p>Tuotteen La Horra Corimbo 2022 hinta on muuttunut.</p><p>38,37 € → 40,38 € (+2,01 €, +5,24 %).</p>",
+			"summary": "Tuotteen La Horra Corimbo 2022 hinta on muuttunut. 38,37 € → 40,38 € (+2,01 €, +5,24 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/918084-f61fff94264e.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

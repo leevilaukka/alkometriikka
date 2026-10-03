@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Juliette Avril Cairanne 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901830/",
+	"feed_url": "https://alkometriikka.fi/rss/901830.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Juliette Avril Cairanne 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901830-2026-07-18-22.9",
+			"url": "https://alkometriikka.fi/tuotteet/901830/",
+			"title": "Juliette Avril Cairanne 2022 — 22,38 € → 22,90 €",
+			"content_html": "<p>Tuotteen Juliette Avril Cairanne 2022 hinta on muuttunut.</p><p>22,38 € → 22,90 € (+0,52 €, +2,32 %).</p>",
+			"summary": "Tuotteen Juliette Avril Cairanne 2022 hinta on muuttunut. 22,38 € → 22,90 € (+0,52 €, +2,32 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901830-2cfb9edb336c.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

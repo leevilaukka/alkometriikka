@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Compass Box The Peat Monster Blended Malt – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/909017/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Compass Box The Peat Monster Blended Malt.</description>
+		<language>fi</language>
+		<lastBuildDate>Sat, 03 Oct 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/909017.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Compass Box The Peat Monster Blended Malt – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Compass Box The Peat Monster Blended Malt — 73,91 € → 75,52 €</title>
+			<link>https://alkometriikka.fi/tuotteet/909017/</link>
+			<guid isPermaLink="false">alkometriikka-909017-2026-09-29-75.52</guid>
+			<pubDate>Tue, 29 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / viskit</category>
+			<description><![CDATA[<p>Tuotteen Compass Box The Peat Monster Blended Malt hinta on muuttunut.</p><p>73,91 € → 75,52 € (+1,61 €, +2,18 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/909017-a27e70c1d686.png" />
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jam Shed Shiraz – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/495437/",
+	"feed_url": "https://alkometriikka.fi/rss/495437.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jam Shed Shiraz.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-495437-2026-09-29-10.98",
+			"url": "https://alkometriikka.fi/tuotteet/495437/",
+			"title": "Jam Shed Shiraz — 10,91 € → 10,98 €",
+			"content_html": "<p>Tuotteen Jam Shed Shiraz hinta on muuttunut.</p><p>10,91 € → 10,98 € (+0,07 €, +0,64 %).</p>",
+			"summary": "Tuotteen Jam Shed Shiraz hinta on muuttunut. 10,91 € → 10,98 € (+0,07 €, +0,64 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/495437-98b162bf429a.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Deya Chelt Vegas tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/934718/",
+	"feed_url": "https://alkometriikka.fi/rss/934718.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Deya Chelt Vegas tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-934718-2026-07-18-15.51",
+			"url": "https://alkometriikka.fi/tuotteet/934718/",
+			"title": "Deya Chelt Vegas tölkki — 15,48 € → 15,51 €",
+			"content_html": "<p>Tuotteen Deya Chelt Vegas tölkki hinta on muuttunut.</p><p>15,48 € → 15,51 € (+0,03 €, +0,19 %).</p>",
+			"summary": "Tuotteen Deya Chelt Vegas tölkki hinta on muuttunut. 15,48 € → 15,51 € (+0,03 €, +0,19 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/934718-90cfb9f52340.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

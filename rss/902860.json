@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Weinrieder Beerenauslese Chardonnay Ried Hohenleiten 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902860/",
+	"feed_url": "https://alkometriikka.fi/rss/902860.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Weinrieder Beerenauslese Chardonnay Ried Hohenleiten 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902860-2026-09-29-36.21",
+			"url": "https://alkometriikka.fi/tuotteet/902860/",
+			"title": "Weinrieder Beerenauslese Chardonnay Ried Hohenleiten 2020 — 34,95 € → 36,21 €",
+			"content_html": "<p>Tuotteen Weinrieder Beerenauslese Chardonnay Ried Hohenleiten 2020 hinta on muuttunut.</p><p>34,95 € → 36,21 € (+1,26 €, +3,61 %).</p>",
+			"summary": "Tuotteen Weinrieder Beerenauslese Chardonnay Ried Hohenleiten 2020 hinta on muuttunut. 34,95 € → 36,21 € (+1,26 €, +3,61 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902860-ddb8b1a491f5.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

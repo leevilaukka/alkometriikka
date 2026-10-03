@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Minuty Prestige Rosé 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/910095/",
+	"feed_url": "https://alkometriikka.fi/rss/910095.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Minuty Prestige Rosé 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-910095-2026-07-18-28.9",
+			"url": "https://alkometriikka.fi/tuotteet/910095/",
+			"title": "Minuty Prestige Rosé 2025 — 28,40 € → 28,90 €",
+			"content_html": "<p>Tuotteen Minuty Prestige Rosé 2025 hinta on muuttunut.</p><p>28,40 € → 28,90 € (+0,50 €, +1,76 %).</p>",
+			"summary": "Tuotteen Minuty Prestige Rosé 2025 hinta on muuttunut. 28,40 € → 28,90 € (+0,50 €, +1,76 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/910095-a147f4cc9f21.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

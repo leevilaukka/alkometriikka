@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Blue Nun Gold Edition – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/580287/",
+	"feed_url": "https://alkometriikka.fi/rss/580287.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Blue Nun Gold Edition.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-580287-2026-07-18-13.48",
+			"url": "https://alkometriikka.fi/tuotteet/580287/",
+			"title": "Blue Nun Gold Edition — 13,38 € → 13,48 €",
+			"content_html": "<p>Tuotteen Blue Nun Gold Edition hinta on muuttunut.</p><p>13,38 € → 13,48 € (+0,10 €, +0,75 %).</p>",
+			"summary": "Tuotteen Blue Nun Gold Edition hinta on muuttunut. 13,38 € → 13,48 € (+0,10 €, +0,75 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/580287-1baf8f806d21.png",
+			"tags": [
+				"Viinit",
+				"hedelmä- ja aromatisoidut viinit"
+			]
+		}
+	]
+}

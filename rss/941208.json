@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château la Bienveillance Rouge 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/941208/",
+	"feed_url": "https://alkometriikka.fi/rss/941208.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château la Bienveillance Rouge 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-941208-2026-09-29-24.5",
+			"url": "https://alkometriikka.fi/tuotteet/941208/",
+			"title": "Château la Bienveillance Rouge 2019 — 21,48 € → 24,50 €",
+			"content_html": "<p>Tuotteen Château la Bienveillance Rouge 2019 hinta on muuttunut.</p><p>21,48 € → 24,50 € (+3,02 €, +14,06 %).</p>",
+			"summary": "Tuotteen Château la Bienveillance Rouge 2019 hinta on muuttunut. 21,48 € → 24,50 € (+3,02 €, +14,06 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/941208-10d0b7a01405.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Black Snake Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/950447/",
+	"feed_url": "https://alkometriikka.fi/rss/950447.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Black Snake Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-950447-2026-09-29-105.16",
+			"url": "https://alkometriikka.fi/tuotteet/950447/",
+			"title": "Black Snake Single Malt — 102,04 € → 105,16 €",
+			"content_html": "<p>Tuotteen Black Snake Single Malt hinta on muuttunut.</p><p>102,04 € → 105,16 € (+3,12 €, +3,06 %).</p>",
+			"summary": "Tuotteen Black Snake Single Malt hinta on muuttunut. 102,04 € → 105,16 € (+3,12 €, +3,06 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/950447-8ae8054daa11.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

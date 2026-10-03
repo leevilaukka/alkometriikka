@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Karhu Kupari tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/743526/",
+	"feed_url": "https://alkometriikka.fi/rss/743526.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Karhu Kupari tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-743526-2026-09-29-3.59",
+			"url": "https://alkometriikka.fi/tuotteet/743526/",
+			"title": "Karhu Kupari tölkki — 3,49 € → 3,59 €",
+			"content_html": "<p>Tuotteen Karhu Kupari tölkki hinta on muuttunut.</p><p>3,49 € → 3,59 € (+0,10 €, +2,87 %).</p>",
+			"summary": "Tuotteen Karhu Kupari tölkki hinta on muuttunut. 3,49 € → 3,59 € (+0,10 €, +2,87 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/743526-94c46bf7fc4f.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-743526-2026-07-18-3.49",
+			"url": "https://alkometriikka.fi/tuotteet/743526/",
+			"title": "Karhu Kupari tölkki — 3,39 € → 3,49 €",
+			"content_html": "<p>Tuotteen Karhu Kupari tölkki hinta on muuttunut.</p><p>3,39 € → 3,49 € (+0,10 €, +2,95 %).</p>",
+			"summary": "Tuotteen Karhu Kupari tölkki hinta on muuttunut. 3,39 € → 3,49 € (+0,10 €, +2,95 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/743526-94c46bf7fc4f.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

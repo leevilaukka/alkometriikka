@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Plener Eggstra 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/930632/",
+	"feed_url": "https://alkometriikka.fi/rss/930632.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Plener Eggstra 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-930632-2026-09-29-98.75",
+			"url": "https://alkometriikka.fi/tuotteet/930632/",
+			"title": "Plener Eggstra 2019 — 94,38 € → 98,75 €",
+			"content_html": "<p>Tuotteen Plener Eggstra 2019 hinta on muuttunut.</p><p>94,38 € → 98,75 € (+4,37 €, +4,63 %).</p>",
+			"summary": "Tuotteen Plener Eggstra 2019 hinta on muuttunut. 94,38 € → 98,75 € (+4,37 €, +4,63 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/930632-919350c935bf.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

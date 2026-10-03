@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Steininger Muskateller Sekt 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/921973/",
+	"feed_url": "https://alkometriikka.fi/rss/921973.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Steininger Muskateller Sekt 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-921973-2026-07-18-29.98",
+			"url": "https://alkometriikka.fi/tuotteet/921973/",
+			"title": "Steininger Muskateller Sekt 2022 — 30,39 € → 29,98 €",
+			"content_html": "<p>Tuotteen Steininger Muskateller Sekt 2022 hinta on muuttunut.</p><p>30,39 € → 29,98 € (−0,41 €, −1,35 %).</p>",
+			"summary": "Tuotteen Steininger Muskateller Sekt 2022 hinta on muuttunut. 30,39 € → 29,98 € (−0,41 €, −1,35 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/921973-1064d8d93fb6.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

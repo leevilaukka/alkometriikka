@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Perrier-Jouët Blason Rosé Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903333/",
+	"feed_url": "https://alkometriikka.fi/rss/903333.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Perrier-Jouët Blason Rosé Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903333-2026-09-29-79.98",
+			"url": "https://alkometriikka.fi/tuotteet/903333/",
+			"title": "Perrier-Jouët Blason Rosé Champagne Brut — 79,99 € → 79,98 €",
+			"content_html": "<p>Tuotteen Perrier-Jouët Blason Rosé Champagne Brut hinta on muuttunut.</p><p>79,99 € → 79,98 € (−0,01 €, −0,01 %).</p>",
+			"summary": "Tuotteen Perrier-Jouët Blason Rosé Champagne Brut hinta on muuttunut. 79,99 € → 79,98 € (−0,01 €, −0,01 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903333-3545846a7fd2.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

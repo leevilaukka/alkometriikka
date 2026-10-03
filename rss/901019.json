@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hardy Millésime 1995 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901019/",
+	"feed_url": "https://alkometriikka.fi/rss/901019.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hardy Millésime 1995.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901019-2026-09-29-226.99",
+			"url": "https://alkometriikka.fi/tuotteet/901019/",
+			"title": "Hardy Millésime 1995 — 215,00 € → 226,99 €",
+			"content_html": "<p>Tuotteen Hardy Millésime 1995 hinta on muuttunut.</p><p>215,00 € → 226,99 € (+11,99 €, +5,58 %).</p>",
+			"summary": "Tuotteen Hardy Millésime 1995 hinta on muuttunut. 215,00 € → 226,99 € (+11,99 €, +5,58 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901019-9ca3fabb8867.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		},
+		{
+			"id": "alkometriikka-901019-2026-07-18-215",
+			"url": "https://alkometriikka.fi/tuotteet/901019/",
+			"title": "Hardy Millésime 1995 — 211,76 € → 215,00 €",
+			"content_html": "<p>Tuotteen Hardy Millésime 1995 hinta on muuttunut.</p><p>211,76 € → 215,00 € (+3,24 €, +1,53 %).</p>",
+			"summary": "Tuotteen Hardy Millésime 1995 hinta on muuttunut. 211,76 € → 215,00 € (+3,24 €, +1,53 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901019-9ca3fabb8867.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

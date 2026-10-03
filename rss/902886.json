@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Franco Conterno Barolo Panerole 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902886/",
+	"feed_url": "https://alkometriikka.fi/rss/902886.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Franco Conterno Barolo Panerole 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902886-2026-09-29-50.96",
+			"url": "https://alkometriikka.fi/tuotteet/902886/",
+			"title": "Franco Conterno Barolo Panerole 2020 — 49,95 € → 50,96 €",
+			"content_html": "<p>Tuotteen Franco Conterno Barolo Panerole 2020 hinta on muuttunut.</p><p>49,95 € → 50,96 € (+1,01 €, +2,02 %).</p>",
+			"summary": "Tuotteen Franco Conterno Barolo Panerole 2020 hinta on muuttunut. 49,95 € → 50,96 € (+1,01 €, +2,02 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902886-13c19d03c0bd.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

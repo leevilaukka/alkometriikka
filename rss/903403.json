@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Two Stacks Fruit Drops Apricot Brandy Cask tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903403/",
+	"feed_url": "https://alkometriikka.fi/rss/903403.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Two Stacks Fruit Drops Apricot Brandy Cask tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903403-2026-09-29-10.16",
+			"url": "https://alkometriikka.fi/tuotteet/903403/",
+			"title": "Two Stacks Fruit Drops Apricot Brandy Cask tölkki — 9,99 € → 10,16 €",
+			"content_html": "<p>Tuotteen Two Stacks Fruit Drops Apricot Brandy Cask tölkki hinta on muuttunut.</p><p>9,99 € → 10,16 € (+0,17 €, +1,70 %).</p>",
+			"summary": "Tuotteen Two Stacks Fruit Drops Apricot Brandy Cask tölkki hinta on muuttunut. 9,99 € → 10,16 € (+0,17 €, +1,70 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903403-f315b41bef99.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

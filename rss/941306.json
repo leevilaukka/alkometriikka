@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vignai da Duline Pinot Grigio 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/941306/",
+	"feed_url": "https://alkometriikka.fi/rss/941306.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vignai da Duline Pinot Grigio 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-941306-2026-09-29-44.83",
+			"url": "https://alkometriikka.fi/tuotteet/941306/",
+			"title": "Vignai da Duline Pinot Grigio 2022 — 44,24 € → 44,83 €",
+			"content_html": "<p>Tuotteen Vignai da Duline Pinot Grigio 2022 hinta on muuttunut.</p><p>44,24 € → 44,83 € (+0,59 €, +1,33 %).</p>",
+			"summary": "Tuotteen Vignai da Duline Pinot Grigio 2022 hinta on muuttunut. 44,24 € → 44,83 € (+0,59 €, +1,33 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/941306-483c8bc812d7.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

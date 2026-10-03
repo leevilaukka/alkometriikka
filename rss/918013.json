@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – St. Bernardus Prior 8 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/918013/",
+	"feed_url": "https://alkometriikka.fi/rss/918013.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: St. Bernardus Prior 8.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-918013-2026-07-18-11.49",
+			"url": "https://alkometriikka.fi/tuotteet/918013/",
+			"title": "St. Bernardus Prior 8 — 10,49 € → 11,49 €",
+			"content_html": "<p>Tuotteen St. Bernardus Prior 8 hinta on muuttunut.</p><p>10,49 € → 11,49 € (+1,00 €, +9,53 %).</p>",
+			"summary": "Tuotteen St. Bernardus Prior 8 hinta on muuttunut. 10,49 € → 11,49 € (+1,00 €, +9,53 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/918013-eb1c15b98d5a.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

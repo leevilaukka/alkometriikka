@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Old Buck Batch No. 41 Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900695/",
+	"feed_url": "https://alkometriikka.fi/rss/900695.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Old Buck Batch No. 41 Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900695-2026-09-29-167.37",
+			"url": "https://alkometriikka.fi/tuotteet/900695/",
+			"title": "Old Buck Batch No. 41 Single Malt — 158,96 € → 167,37 €",
+			"content_html": "<p>Tuotteen Old Buck Batch No. 41 Single Malt hinta on muuttunut.</p><p>158,96 € → 167,37 € (+8,41 €, +5,29 %).</p>",
+			"summary": "Tuotteen Old Buck Batch No. 41 Single Malt hinta on muuttunut. 158,96 € → 167,37 € (+8,41 €, +5,29 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900695-633bbff2d377.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

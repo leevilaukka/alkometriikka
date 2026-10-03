@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Petri Chardonnay Im Barrique Gereift 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/940814/",
+	"feed_url": "https://alkometriikka.fi/rss/940814.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Petri Chardonnay Im Barrique Gereift 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-940814-2026-07-18-32.85",
+			"url": "https://alkometriikka.fi/tuotteet/940814/",
+			"title": "Petri Chardonnay Im Barrique Gereift 2022 — 29,77 € → 32,85 €",
+			"content_html": "<p>Tuotteen Petri Chardonnay Im Barrique Gereift 2022 hinta on muuttunut.</p><p>29,77 € → 32,85 € (+3,08 €, +10,35 %).</p>",
+			"summary": "Tuotteen Petri Chardonnay Im Barrique Gereift 2022 hinta on muuttunut. 29,77 € → 32,85 € (+3,08 €, +10,35 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/940814-d1635bdad504.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

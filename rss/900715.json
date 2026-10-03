@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Penfolds BIN 798 RWT 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900715/",
+	"feed_url": "https://alkometriikka.fi/rss/900715.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Penfolds BIN 798 RWT 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900715-2026-09-29-219.98",
+			"url": "https://alkometriikka.fi/tuotteet/900715/",
+			"title": "Penfolds BIN 798 RWT 2023 — 203,46 € → 219,98 €",
+			"content_html": "<p>Tuotteen Penfolds BIN 798 RWT 2023 hinta on muuttunut.</p><p>203,46 € → 219,98 € (+16,52 €, +8,12 %).</p>",
+			"summary": "Tuotteen Penfolds BIN 798 RWT 2023 hinta on muuttunut. 203,46 € → 219,98 € (+16,52 €, +8,12 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900715-b027b35589e2.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

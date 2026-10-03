@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Valdespino Solera 1842 Medium Sweet VOS Sherry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902146/",
+	"feed_url": "https://alkometriikka.fi/rss/902146.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Valdespino Solera 1842 Medium Sweet VOS Sherry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902146-2026-09-29-50.5",
+			"url": "https://alkometriikka.fi/tuotteet/902146/",
+			"title": "Valdespino Solera 1842 Medium Sweet VOS Sherry — 49,98 € → 50,50 €",
+			"content_html": "<p>Tuotteen Valdespino Solera 1842 Medium Sweet VOS Sherry hinta on muuttunut.</p><p>49,98 € → 50,50 € (+0,52 €, +1,04 %).</p>",
+			"summary": "Tuotteen Valdespino Solera 1842 Medium Sweet VOS Sherry hinta on muuttunut. 49,98 € → 50,50 € (+0,52 €, +1,04 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902146-bef08af63bc5.png",
+			"tags": [
+				"Välituotteet",
+				"sherryt"
+			]
+		}
+	]
+}

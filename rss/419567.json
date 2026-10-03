@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Le Carré 2016 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/419567/",
+	"feed_url": "https://alkometriikka.fi/rss/419567.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Le Carré 2016.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-419567-2026-09-29-119.83",
+			"url": "https://alkometriikka.fi/tuotteet/419567/",
+			"title": "Le Carré 2016 — 113,95 € → 119,83 €",
+			"content_html": "<p>Tuotteen Le Carré 2016 hinta on muuttunut.</p><p>113,95 € → 119,83 € (+5,88 €, +5,16 %).</p>",
+			"summary": "Tuotteen Le Carré 2016 hinta on muuttunut. 113,95 € → 119,83 € (+5,88 €, +5,16 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/419567-a2fc66361db2.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

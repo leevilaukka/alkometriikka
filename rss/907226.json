@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hey French You Could Have Made This But You Didn’t – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/907226/",
+	"feed_url": "https://alkometriikka.fi/rss/907226.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hey French You Could Have Made This But You Didn’t.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-907226-2026-09-29-39.15",
+			"url": "https://alkometriikka.fi/tuotteet/907226/",
+			"title": "Hey French You Could Have Made This But You Didn’t — 38,95 € → 39,15 €",
+			"content_html": "<p>Tuotteen Hey French You Could Have Made This But You Didn’t hinta on muuttunut.</p><p>38,95 € → 39,15 € (+0,20 €, +0,51 %).</p>",
+			"summary": "Tuotteen Hey French You Could Have Made This But You Didn’t hinta on muuttunut. 38,95 € → 39,15 € (+0,20 €, +0,51 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/907226-a91ebb62df35.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

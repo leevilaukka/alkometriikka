@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Torii Mor Olson Estate Pinot Noir 2018 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/952975/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Torii Mor Olson Estate Pinot Noir 2018.</description>
+		<language>fi</language>
+		<lastBuildDate>Sat, 03 Oct 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/952975.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Torii Mor Olson Estate Pinot Noir 2018 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Torii Mor Olson Estate Pinot Noir 2018 — 65,45 € → 67,83 €</title>
+			<link>https://alkometriikka.fi/tuotteet/952975/</link>
+			<guid isPermaLink="false">alkometriikka-952975-2026-09-29-67.83</guid>
+			<pubDate>Tue, 29 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Torii Mor Olson Estate Pinot Noir 2018 hinta on muuttunut.</p><p>65,45 € → 67,83 € (+2,38 €, +3,64 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/952975-e4d2aa5970d1.png" />
+		</item>
+	</channel>
+</rss>

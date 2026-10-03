@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dream Rosé 2025 hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/400291/",
+	"feed_url": "https://alkometriikka.fi/rss/400291.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dream Rosé 2025 hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-400291-2026-09-29-31.99",
+			"url": "https://alkometriikka.fi/tuotteet/400291/",
+			"title": "Dream Rosé 2025 hanapakkaus — 31,79 € → 31,99 €",
+			"content_html": "<p>Tuotteen Dream Rosé 2025 hanapakkaus hinta on muuttunut.</p><p>31,79 € → 31,99 € (+0,20 €, +0,63 %).</p>",
+			"summary": "Tuotteen Dream Rosé 2025 hanapakkaus hinta on muuttunut. 31,79 € → 31,99 € (+0,20 €, +0,63 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/400291-9d977601eb7e.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Highland Park 25 Year Old 2022 Release Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/958431/",
+	"feed_url": "https://alkometriikka.fi/rss/958431.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Highland Park 25 Year Old 2022 Release Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-958431-2026-09-29-638.98",
+			"url": "https://alkometriikka.fi/tuotteet/958431/",
+			"title": "Highland Park 25 Year Old 2022 Release Single Malt — 599,98 € → 638,98 €",
+			"content_html": "<p>Tuotteen Highland Park 25 Year Old 2022 Release Single Malt hinta on muuttunut.</p><p>599,98 € → 638,98 € (+39,00 €, +6,50 %).</p>",
+			"summary": "Tuotteen Highland Park 25 Year Old 2022 Release Single Malt hinta on muuttunut. 599,98 € → 638,98 € (+39,00 €, +6,50 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/958431-ca724788117a.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		},
+		{
+			"id": "alkometriikka-958431-2026-07-18-599.98",
+			"url": "https://alkometriikka.fi/tuotteet/958431/",
+			"title": "Highland Park 25 Year Old 2022 Release Single Malt — 707,56 € → 599,98 €",
+			"content_html": "<p>Tuotteen Highland Park 25 Year Old 2022 Release Single Malt hinta on muuttunut.</p><p>707,56 € → 599,98 € (−107,58 €, −15,20 %).</p>",
+			"summary": "Tuotteen Highland Park 25 Year Old 2022 Release Single Malt hinta on muuttunut. 707,56 € → 599,98 € (−107,58 €, −15,20 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/958431-ca724788117a.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

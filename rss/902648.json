@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Panyolai Spiced Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902648/",
+	"feed_url": "https://alkometriikka.fi/rss/902648.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Panyolai Spiced Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902648-2026-09-29-55.32",
+			"url": "https://alkometriikka.fi/tuotteet/902648/",
+			"title": "Panyolai Spiced Gin — 53,90 € → 55,32 €",
+			"content_html": "<p>Tuotteen Panyolai Spiced Gin hinta on muuttunut.</p><p>53,90 € → 55,32 € (+1,42 €, +2,63 %).</p>",
+			"summary": "Tuotteen Panyolai Spiced Gin hinta on muuttunut. 53,90 € → 55,32 € (+1,42 €, +2,63 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902648-af74675bca79.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

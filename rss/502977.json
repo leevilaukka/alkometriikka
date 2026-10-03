@@ -1,0 +1,50 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Neiss Grauburgunder vom Kalkstein 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/502977/",
+	"feed_url": "https://alkometriikka.fi/rss/502977.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Neiss Grauburgunder vom Kalkstein 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-502977-2026-07-18-16.49",
+			"url": "https://alkometriikka.fi/tuotteet/502977/",
+			"title": "Neiss Grauburgunder vom Kalkstein 2024 — 16,45 € → 16,49 €",
+			"content_html": "<p>Tuotteen Neiss Grauburgunder vom Kalkstein 2024 hinta on muuttunut.</p><p>16,45 € → 16,49 € (+0,04 €, +0,24 %).</p>",
+			"summary": "Tuotteen Neiss Grauburgunder vom Kalkstein 2024 hinta on muuttunut. 16,45 € → 16,49 € (+0,04 €, +0,24 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/502977-e5d9c80f6900.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-502977-2026-02-02-16.35",
+			"url": "https://alkometriikka.fi/tuotteet/502977/",
+			"title": "Neiss Grauburgunder vom Kalkstein 2024 — 16,45 € → 16,35 €",
+			"content_html": "<p>Tuotteen Neiss Grauburgunder vom Kalkstein 2024 hinta on muuttunut.</p><p>16,45 € → 16,35 € (−0,10 €, −0,61 %).</p>",
+			"summary": "Tuotteen Neiss Grauburgunder vom Kalkstein 2024 hinta on muuttunut. 16,45 € → 16,35 € (−0,10 €, −0,61 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/502977-e5d9c80f6900.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-502977-2026-02-02-16.45",
+			"url": "https://alkometriikka.fi/tuotteet/502977/",
+			"title": "Neiss Grauburgunder vom Kalkstein 2024 — 16,35 € → 16,45 €",
+			"content_html": "<p>Tuotteen Neiss Grauburgunder vom Kalkstein 2024 hinta on muuttunut.</p><p>16,35 € → 16,45 € (+0,10 €, +0,61 %).</p>",
+			"summary": "Tuotteen Neiss Grauburgunder vom Kalkstein 2024 hinta on muuttunut. 16,35 € → 16,45 € (+0,10 €, +0,61 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/502977-e5d9c80f6900.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

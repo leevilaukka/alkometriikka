@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château de Jau JauJau 1er Blanc 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/947891/",
+	"feed_url": "https://alkometriikka.fi/rss/947891.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château de Jau JauJau 1er Blanc 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-947891-2026-09-29-26.86",
+			"url": "https://alkometriikka.fi/tuotteet/947891/",
+			"title": "Château de Jau JauJau 1er Blanc 2022 — 26,57 € → 26,86 €",
+			"content_html": "<p>Tuotteen Château de Jau JauJau 1er Blanc 2022 hinta on muuttunut.</p><p>26,57 € → 26,86 € (+0,29 €, +1,09 %).</p>",
+			"summary": "Tuotteen Château de Jau JauJau 1er Blanc 2022 hinta on muuttunut. 26,57 € → 26,86 € (+0,29 €, +1,09 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/947891-0c73b5684c91.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

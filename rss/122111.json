@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lignell & Piispanen Lakka muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/122111/",
+	"feed_url": "https://alkometriikka.fi/rss/122111.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lignell & Piispanen Lakka muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-122111-2026-07-18-3.5",
+			"url": "https://alkometriikka.fi/tuotteet/122111/",
+			"title": "Lignell & Piispanen Lakka muovipullo — 3,41 € → 3,50 €",
+			"content_html": "<p>Tuotteen Lignell & Piispanen Lakka muovipullo hinta on muuttunut.</p><p>3,41 € → 3,50 € (+0,09 €, +2,64 %).</p>",
+			"summary": "Tuotteen Lignell & Piispanen Lakka muovipullo hinta on muuttunut. 3,41 € → 3,50 € (+0,09 €, +2,64 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/122111-354ca2310ee8.png",
+			"tags": [
+				"Väkevät",
+				"marjaliköörit"
+			]
+		}
+	]
+}

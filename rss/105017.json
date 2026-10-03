@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Highland Park 18 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/105017/",
+	"feed_url": "https://alkometriikka.fi/rss/105017.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Highland Park 18 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-105017-2026-09-29-135.33",
+			"url": "https://alkometriikka.fi/tuotteet/105017/",
+			"title": "Highland Park 18 Year Old Single Malt — 129,64 € → 135,33 €",
+			"content_html": "<p>Tuotteen Highland Park 18 Year Old Single Malt hinta on muuttunut.</p><p>129,64 € → 135,33 € (+5,69 €, +4,39 %).</p>",
+			"summary": "Tuotteen Highland Park 18 Year Old Single Malt hinta on muuttunut. 129,64 € → 135,33 € (+5,69 €, +4,39 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/105017-b0ce7a756ac2.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

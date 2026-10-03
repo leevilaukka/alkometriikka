@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Steinschaden Classic Gemischter Satz 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/920405/",
+	"feed_url": "https://alkometriikka.fi/rss/920405.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Steinschaden Classic Gemischter Satz 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-920405-2026-07-18-15.5",
+			"url": "https://alkometriikka.fi/tuotteet/920405/",
+			"title": "Steinschaden Classic Gemischter Satz 2025 — 15,46 € → 15,50 €",
+			"content_html": "<p>Tuotteen Steinschaden Classic Gemischter Satz 2025 hinta on muuttunut.</p><p>15,46 € → 15,50 € (+0,04 €, +0,26 %).</p>",
+			"summary": "Tuotteen Steinschaden Classic Gemischter Satz 2025 hinta on muuttunut. 15,46 € → 15,50 € (+0,04 €, +0,26 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/920405-3c7d9a5e4224.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

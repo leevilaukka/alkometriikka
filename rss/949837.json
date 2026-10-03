@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Porto Gran Cruz Vintage 2011 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/949837/",
+	"feed_url": "https://alkometriikka.fi/rss/949837.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Porto Gran Cruz Vintage 2011.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-949837-2026-09-29-42.99",
+			"url": "https://alkometriikka.fi/tuotteet/949837/",
+			"title": "Porto Gran Cruz Vintage 2011 — 41,99 € → 42,99 €",
+			"content_html": "<p>Tuotteen Porto Gran Cruz Vintage 2011 hinta on muuttunut.</p><p>41,99 € → 42,99 € (+1,00 €, +2,38 %).</p>",
+			"summary": "Tuotteen Porto Gran Cruz Vintage 2011 hinta on muuttunut. 41,99 € → 42,99 € (+1,00 €, +2,38 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/949837-3cde306ce4c4.png",
+			"tags": [
+				"Välituotteet",
+				"portviinit"
+			]
+		}
+	]
+}

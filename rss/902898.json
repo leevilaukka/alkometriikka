@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ardnahoe Oloroso Quarter Cask Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902898/",
+	"feed_url": "https://alkometriikka.fi/rss/902898.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ardnahoe Oloroso Quarter Cask Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902898-2026-09-29-148.06",
+			"url": "https://alkometriikka.fi/tuotteet/902898/",
+			"title": "Ardnahoe Oloroso Quarter Cask Single Malt — 142,10 € → 148,06 €",
+			"content_html": "<p>Tuotteen Ardnahoe Oloroso Quarter Cask Single Malt hinta on muuttunut.</p><p>142,10 € → 148,06 € (+5,96 €, +4,19 %).</p>",
+			"summary": "Tuotteen Ardnahoe Oloroso Quarter Cask Single Malt hinta on muuttunut. 142,10 € → 148,06 € (+5,96 €, +4,19 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902898-5d8fcac3fcaa.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Hey French You Could Have Made This But You Didn’t – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/907226/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Hey French You Could Have Made This But You Didn’t.</description>
+		<language>fi</language>
+		<lastBuildDate>Sat, 03 Oct 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/907226.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Hey French You Could Have Made This But You Didn’t – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Hey French You Could Have Made This But You Didn’t — 38,95 € → 39,15 €</title>
+			<link>https://alkometriikka.fi/tuotteet/907226/</link>
+			<guid isPermaLink="false">alkometriikka-907226-2026-09-29-39.15</guid>
+			<pubDate>Tue, 29 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / valkoviinit</category>
+			<description><![CDATA[<p>Tuotteen Hey French You Could Have Made This But You Didn’t hinta on muuttunut.</p><p>38,95 € → 39,15 € (+0,20 €, +0,51 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/907226-a91ebb62df35.png" />
+		</item>
+	</channel>
+</rss>

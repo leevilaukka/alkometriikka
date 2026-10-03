@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bernard-Massard Cuvée de l'Ecusson Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/925673/",
+	"feed_url": "https://alkometriikka.fi/rss/925673.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bernard-Massard Cuvée de l'Ecusson Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-925673-2026-09-29-5.99",
+			"url": "https://alkometriikka.fi/tuotteet/925673/",
+			"title": "Bernard-Massard Cuvée de l'Ecusson Brut — 5,49 € → 5,99 €",
+			"content_html": "<p>Tuotteen Bernard-Massard Cuvée de l'Ecusson Brut hinta on muuttunut.</p><p>5,49 € → 5,99 € (+0,50 €, +9,11 %).</p>",
+			"summary": "Tuotteen Bernard-Massard Cuvée de l'Ecusson Brut hinta on muuttunut. 5,49 € → 5,99 € (+0,50 €, +9,11 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/925673-d3176e5f03f3.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

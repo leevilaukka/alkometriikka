@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Original Long Drink Peach Ice Tea tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/700244/",
+	"feed_url": "https://alkometriikka.fi/rss/700244.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Original Long Drink Peach Ice Tea tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-700244-2026-09-29-4.69",
+			"url": "https://alkometriikka.fi/tuotteet/700244/",
+			"title": "Original Long Drink Peach Ice Tea tölkki — 4,49 € → 4,69 €",
+			"content_html": "<p>Tuotteen Original Long Drink Peach Ice Tea tölkki hinta on muuttunut.</p><p>4,49 € → 4,69 € (+0,20 €, +4,45 %).</p>",
+			"summary": "Tuotteen Original Long Drink Peach Ice Tea tölkki hinta on muuttunut. 4,49 € → 4,69 € (+0,20 €, +4,45 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/700244-983db7383c7b.png",
+			"tags": [
+				"Panimotuotteet",
+				"juomasekoitukset"
+			]
+		}
+	]
+}

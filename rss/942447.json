@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hisenda Miret Garnatxa Organic 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/942447/",
+	"feed_url": "https://alkometriikka.fi/rss/942447.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hisenda Miret Garnatxa Organic 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-942447-2026-09-29-39.98",
+			"url": "https://alkometriikka.fi/tuotteet/942447/",
+			"title": "Hisenda Miret Garnatxa Organic 2021 — 39,47 € → 39,98 €",
+			"content_html": "<p>Tuotteen Hisenda Miret Garnatxa Organic 2021 hinta on muuttunut.</p><p>39,47 € → 39,98 € (+0,51 €, +1,29 %).</p>",
+			"summary": "Tuotteen Hisenda Miret Garnatxa Organic 2021 hinta on muuttunut. 39,47 € → 39,98 € (+0,51 €, +1,29 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/942447-611ce2440e76.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

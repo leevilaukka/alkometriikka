@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Rémy Martin La Coupe 300 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900343/",
+	"feed_url": "https://alkometriikka.fi/rss/900343.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Rémy Martin La Coupe 300.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900343-2026-09-29-2689.99",
+			"url": "https://alkometriikka.fi/tuotteet/900343/",
+			"title": "Rémy Martin La Coupe 300 — 2 690,00 € → 2 689,99 €",
+			"content_html": "<p>Tuotteen Rémy Martin La Coupe 300 hinta on muuttunut.</p><p>2 690,00 € → 2 689,99 € (−0,01 €, −0,00 %).</p>",
+			"summary": "Tuotteen Rémy Martin La Coupe 300 hinta on muuttunut. 2 690,00 € → 2 689,99 € (−0,01 €, −0,00 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900343-250522e9ceca.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kilchoman Savu Small Batch Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/200048/",
+	"feed_url": "https://alkometriikka.fi/rss/200048.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kilchoman Savu Small Batch Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-200048-2026-09-29-89.99",
+			"url": "https://alkometriikka.fi/tuotteet/200048/",
+			"title": "Kilchoman Savu Small Batch Single Malt — 89,98 € → 89,99 €",
+			"content_html": "<p>Tuotteen Kilchoman Savu Small Batch Single Malt hinta on muuttunut.</p><p>89,98 € → 89,99 € (+0,01 €, +0,01 %).</p>",
+			"summary": "Tuotteen Kilchoman Savu Small Batch Single Malt hinta on muuttunut. 89,98 € → 89,99 € (+0,01 €, +0,01 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/200048-2de96d5264c7.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

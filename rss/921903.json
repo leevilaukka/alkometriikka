@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lillet – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/921903/",
+	"feed_url": "https://alkometriikka.fi/rss/921903.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lillet.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-921903-2026-07-18-23.79",
+			"url": "https://alkometriikka.fi/tuotteet/921903/",
+			"title": "Lillet — 23,60 € → 23,79 €",
+			"content_html": "<p>Tuotteen Lillet hinta on muuttunut.</p><p>23,60 € → 23,79 € (+0,19 €, +0,81 %).</p>",
+			"summary": "Tuotteen Lillet hinta on muuttunut. 23,60 € → 23,79 € (+0,19 €, +0,81 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/921903-e4ab9c9491f2.png",
+			"tags": [
+				"Välituotteet",
+				"vermutit"
+			]
+		}
+	]
+}

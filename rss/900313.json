@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gitana Winery Manastirea 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900313/",
+	"feed_url": "https://alkometriikka.fi/rss/900313.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gitana Winery Manastirea 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900313-2026-09-29-49.27",
+			"url": "https://alkometriikka.fi/tuotteet/900313/",
+			"title": "Gitana Winery Manastirea 2020 — 48,36 € → 49,27 €",
+			"content_html": "<p>Tuotteen Gitana Winery Manastirea 2020 hinta on muuttunut.</p><p>48,36 € → 49,27 € (+0,91 €, +1,88 %).</p>",
+			"summary": "Tuotteen Gitana Winery Manastirea 2020 hinta on muuttunut. 48,36 € → 49,27 € (+0,91 €, +1,88 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900313-829de121fb34.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lyrarakis Psarades Dafni 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/929903/",
+	"feed_url": "https://alkometriikka.fi/rss/929903.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lyrarakis Psarades Dafni 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-929903-2026-07-18-23.99",
+			"url": "https://alkometriikka.fi/tuotteet/929903/",
+			"title": "Lyrarakis Psarades Dafni 2025 — 23,45 € → 23,99 €",
+			"content_html": "<p>Tuotteen Lyrarakis Psarades Dafni 2025 hinta on muuttunut.</p><p>23,45 € → 23,99 € (+0,54 €, +2,30 %).</p>",
+			"summary": "Tuotteen Lyrarakis Psarades Dafni 2025 hinta on muuttunut. 23,45 € → 23,99 € (+0,54 €, +2,30 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/929903-c6b95df7f32a.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

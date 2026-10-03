@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nc'Nean Organic Scotch Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901508/",
+	"feed_url": "https://alkometriikka.fi/rss/901508.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nc'Nean Organic Scotch Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901508-2026-09-29-78.99",
+			"url": "https://alkometriikka.fi/tuotteet/901508/",
+			"title": "Nc'Nean Organic Scotch Single Malt — 76,99 € → 78,99 €",
+			"content_html": "<p>Tuotteen Nc'Nean Organic Scotch Single Malt hinta on muuttunut.</p><p>76,99 € → 78,99 € (+2,00 €, +2,60 %).</p>",
+			"summary": "Tuotteen Nc'Nean Organic Scotch Single Malt hinta on muuttunut. 76,99 € → 78,99 € (+2,00 €, +2,60 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901508-9f0f7e20365a.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

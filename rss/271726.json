@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ninki Umeshu – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/271726/",
+	"feed_url": "https://alkometriikka.fi/rss/271726.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ninki Umeshu.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-271726-2026-09-29-25.99",
+			"url": "https://alkometriikka.fi/tuotteet/271726/",
+			"title": "Ninki Umeshu — 25,22 € → 25,99 €",
+			"content_html": "<p>Tuotteen Ninki Umeshu hinta on muuttunut.</p><p>25,22 € → 25,99 € (+0,77 €, +3,05 %).</p>",
+			"summary": "Tuotteen Ninki Umeshu hinta on muuttunut. 25,22 € → 25,99 € (+0,77 €, +3,05 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/271726-1eca73f5acfd.png",
+			"tags": [
+				"Väkevät",
+				"hedelmäliköörit"
+			]
+		}
+	]
+}

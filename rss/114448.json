@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Soerlie VS – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/114448/",
+	"feed_url": "https://alkometriikka.fi/rss/114448.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Soerlie VS.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-114448-2026-09-29-59.98",
+			"url": "https://alkometriikka.fi/tuotteet/114448/",
+			"title": "Soerlie VS — 59,28 € → 59,98 €",
+			"content_html": "<p>Tuotteen Soerlie VS hinta on muuttunut.</p><p>59,28 € → 59,98 € (+0,70 €, +1,18 %).</p>",
+			"summary": "Tuotteen Soerlie VS hinta on muuttunut. 59,28 € → 59,98 € (+0,70 €, +1,18 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/114448-e89bbc23d9a6.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

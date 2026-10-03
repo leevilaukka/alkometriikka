@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pitars Prosecco Brut Nature 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/567527/",
+	"feed_url": "https://alkometriikka.fi/rss/567527.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pitars Prosecco Brut Nature 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-567527-2026-07-18-14.99",
+			"url": "https://alkometriikka.fi/tuotteet/567527/",
+			"title": "Pitars Prosecco Brut Nature 2025 — 14,93 € → 14,99 €",
+			"content_html": "<p>Tuotteen Pitars Prosecco Brut Nature 2025 hinta on muuttunut.</p><p>14,93 € → 14,99 € (+0,06 €, +0,40 %).</p>",
+			"summary": "Tuotteen Pitars Prosecco Brut Nature 2025 hinta on muuttunut. 14,93 € → 14,99 € (+0,06 €, +0,40 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/567527-900364e08bc3.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

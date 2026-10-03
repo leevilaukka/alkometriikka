@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Torres Gran Coronas Cabernet Sauvignon Reserva 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/006454/",
+	"feed_url": "https://alkometriikka.fi/rss/006454.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Torres Gran Coronas Cabernet Sauvignon Reserva 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-006454-2026-07-18-16.49",
+			"url": "https://alkometriikka.fi/tuotteet/006454/",
+			"title": "Torres Gran Coronas Cabernet Sauvignon Reserva 2022 — 16,45 € → 16,49 €",
+			"content_html": "<p>Tuotteen Torres Gran Coronas Cabernet Sauvignon Reserva 2022 hinta on muuttunut.</p><p>16,45 € → 16,49 € (+0,04 €, +0,24 %).</p>",
+			"summary": "Tuotteen Torres Gran Coronas Cabernet Sauvignon Reserva 2022 hinta on muuttunut. 16,45 € → 16,49 € (+0,04 €, +0,24 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/006454-ebde869573fc.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

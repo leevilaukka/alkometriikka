@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Casa Relvas Touriga Nacional 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901130/",
+	"feed_url": "https://alkometriikka.fi/rss/901130.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Casa Relvas Touriga Nacional 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901130-2026-09-29-13.48",
+			"url": "https://alkometriikka.fi/tuotteet/901130/",
+			"title": "Casa Relvas Touriga Nacional 2023 — 13,46 € → 13,48 €",
+			"content_html": "<p>Tuotteen Casa Relvas Touriga Nacional 2023 hinta on muuttunut.</p><p>13,46 € → 13,48 € (+0,02 €, +0,15 %).</p>",
+			"summary": "Tuotteen Casa Relvas Touriga Nacional 2023 hinta on muuttunut. 13,46 € → 13,48 € (+0,02 €, +0,15 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901130-f6230f441d19.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

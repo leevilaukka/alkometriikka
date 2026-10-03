@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lyre's White Cane Spirit – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/914528/",
+	"feed_url": "https://alkometriikka.fi/rss/914528.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lyre's White Cane Spirit.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-914528-2026-07-18-33.35",
+			"url": "https://alkometriikka.fi/tuotteet/914528/",
+			"title": "Lyre's White Cane Spirit — 32,22 € → 33,35 €",
+			"content_html": "<p>Tuotteen Lyre's White Cane Spirit hinta on muuttunut.</p><p>32,22 € → 33,35 € (+1,13 €, +3,51 %).</p>",
+			"summary": "Tuotteen Lyre's White Cane Spirit hinta on muuttunut. 32,22 € → 33,35 € (+1,13 €, +3,51 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/914528-f89068ec25e5.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Berneroy Pomme Captive – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/956516/",
+	"feed_url": "https://alkometriikka.fi/rss/956516.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Berneroy Pomme Captive.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-956516-2026-09-29-89.9",
+			"url": "https://alkometriikka.fi/tuotteet/956516/",
+			"title": "Berneroy Pomme Captive — 87,95 € → 89,90 €",
+			"content_html": "<p>Tuotteen Berneroy Pomme Captive hinta on muuttunut.</p><p>87,95 € → 89,90 € (+1,95 €, +2,22 %).</p>",
+			"summary": "Tuotteen Berneroy Pomme Captive hinta on muuttunut. 87,95 € → 89,90 € (+1,95 €, +2,22 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/956516-54bc1c44fe5b.png",
+			"tags": [
+				"Väkevät",
+				"calvadosit"
+			]
+		},
+		{
+			"id": "alkometriikka-956516-2026-07-18-87.95",
+			"url": "https://alkometriikka.fi/tuotteet/956516/",
+			"title": "Berneroy Pomme Captive — 87,25 € → 87,95 €",
+			"content_html": "<p>Tuotteen Berneroy Pomme Captive hinta on muuttunut.</p><p>87,25 € → 87,95 € (+0,70 €, +0,80 %).</p>",
+			"summary": "Tuotteen Berneroy Pomme Captive hinta on muuttunut. 87,25 € → 87,95 € (+0,70 €, +0,80 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/956516-54bc1c44fe5b.png",
+			"tags": [
+				"Väkevät",
+				"calvadosit"
+			]
+		}
+	]
+}

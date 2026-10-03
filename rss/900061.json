@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – La Rioja Alta Gran Reserva 904 Selección Especial  2015 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900061/",
+	"feed_url": "https://alkometriikka.fi/rss/900061.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: La Rioja Alta Gran Reserva 904 Selección Especial  2015.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900061-2026-09-29-97.42",
+			"url": "https://alkometriikka.fi/tuotteet/900061/",
+			"title": "La Rioja Alta Gran Reserva 904 Selección Especial  2015 — 93,17 € → 97,42 €",
+			"content_html": "<p>Tuotteen La Rioja Alta Gran Reserva 904 Selección Especial  2015 hinta on muuttunut.</p><p>93,17 € → 97,42 € (+4,25 €, +4,56 %).</p>",
+			"summary": "Tuotteen La Rioja Alta Gran Reserva 904 Selección Especial 2015 hinta on muuttunut. 93,17 € → 97,42 € (+4,25 €, +4,56 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900061-bf0929a3e0ca.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

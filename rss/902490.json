@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bundaberg Brewed Lemonade – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902490/",
+	"feed_url": "https://alkometriikka.fi/rss/902490.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bundaberg Brewed Lemonade.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902490-2026-09-29-3.55",
+			"url": "https://alkometriikka.fi/tuotteet/902490/",
+			"title": "Bundaberg Brewed Lemonade — 3,39 € → 3,55 €",
+			"content_html": "<p>Tuotteen Bundaberg Brewed Lemonade hinta on muuttunut.</p><p>3,39 € → 3,55 € (+0,16 €, +4,72 %).</p>",
+			"summary": "Tuotteen Bundaberg Brewed Lemonade hinta on muuttunut. 3,39 € → 3,55 € (+0,16 €, +4,72 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902490-8e1828e1f654.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		},
+		{
+			"id": "alkometriikka-902490-2026-07-18-3.39",
+			"url": "https://alkometriikka.fi/tuotteet/902490/",
+			"title": "Bundaberg Brewed Lemonade — 3,38 € → 3,39 €",
+			"content_html": "<p>Tuotteen Bundaberg Brewed Lemonade hinta on muuttunut.</p><p>3,38 € → 3,39 € (+0,01 €, +0,30 %).</p>",
+			"summary": "Tuotteen Bundaberg Brewed Lemonade hinta on muuttunut. 3,38 € → 3,39 € (+0,01 €, +0,30 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902490-8e1828e1f654.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

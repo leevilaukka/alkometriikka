@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kolima Lakritsi – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901379/",
+	"feed_url": "https://alkometriikka.fi/rss/901379.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kolima Lakritsi.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901379-2026-07-18-19.99",
+			"url": "https://alkometriikka.fi/tuotteet/901379/",
+			"title": "Kolima Lakritsi — 20,08 € → 19,99 €",
+			"content_html": "<p>Tuotteen Kolima Lakritsi hinta on muuttunut.</p><p>20,08 € → 19,99 € (−0,09 €, −0,45 %).</p>",
+			"summary": "Tuotteen Kolima Lakritsi hinta on muuttunut. 20,08 € → 19,99 € (−0,09 €, −0,45 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901379-39b02cba5a8b.png",
+			"tags": [
+				"Väkevät",
+				"salmiakkiliköörit"
+			]
+		}
+	]
+}

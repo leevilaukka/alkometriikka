@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Suomi Viina muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/103817/",
+	"feed_url": "https://alkometriikka.fi/rss/103817.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Suomi Viina muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-103817-2026-09-29-18.95",
+			"url": "https://alkometriikka.fi/tuotteet/103817/",
+			"title": "Suomi Viina muovipullo — 18,68 € → 18,95 €",
+			"content_html": "<p>Tuotteen Suomi Viina muovipullo hinta on muuttunut.</p><p>18,68 € → 18,95 € (+0,27 €, +1,45 %).</p>",
+			"summary": "Tuotteen Suomi Viina muovipullo hinta on muuttunut. 18,68 € → 18,95 € (+0,27 €, +1,45 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/103817-ca996a1dea1b.png",
+			"tags": [
+				"Väkevät",
+				"viina"
+			]
+		}
+	]
+}

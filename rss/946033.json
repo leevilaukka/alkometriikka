@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ferrer Bobet Selecció Especial Vinyes Velles 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/946033/",
+	"feed_url": "https://alkometriikka.fi/rss/946033.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ferrer Bobet Selecció Especial Vinyes Velles 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-946033-2026-09-29-100.56",
+			"url": "https://alkometriikka.fi/tuotteet/946033/",
+			"title": "Ferrer Bobet Selecció Especial Vinyes Velles 2019 — 96,02 € → 100,56 €",
+			"content_html": "<p>Tuotteen Ferrer Bobet Selecció Especial Vinyes Velles 2019 hinta on muuttunut.</p><p>96,02 € → 100,56 € (+4,54 €, +4,73 %).</p>",
+			"summary": "Tuotteen Ferrer Bobet Selecció Especial Vinyes Velles 2019 hinta on muuttunut. 96,02 € → 100,56 € (+4,54 €, +4,73 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/946033-92b9b32244d3.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

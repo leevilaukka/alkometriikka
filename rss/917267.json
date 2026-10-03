@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Skyy Vodka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/917267/",
+	"feed_url": "https://alkometriikka.fi/rss/917267.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Skyy Vodka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-917267-2026-09-29-30.9",
+			"url": "https://alkometriikka.fi/tuotteet/917267/",
+			"title": "Skyy Vodka — 29,98 € → 30,90 €",
+			"content_html": "<p>Tuotteen Skyy Vodka hinta on muuttunut.</p><p>29,98 € → 30,90 € (+0,92 €, +3,07 %).</p>",
+			"summary": "Tuotteen Skyy Vodka hinta on muuttunut. 29,98 € → 30,90 € (+0,92 €, +3,07 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/917267-9e3af9ad52a7.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

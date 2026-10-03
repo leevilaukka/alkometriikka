@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vietti Barolo Lazzarito 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902723/",
+	"feed_url": "https://alkometriikka.fi/rss/902723.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vietti Barolo Lazzarito 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902723-2026-09-29-298.46",
+			"url": "https://alkometriikka.fi/tuotteet/902723/",
+			"title": "Vietti Barolo Lazzarito 2021 — 279,99 € → 298,46 €",
+			"content_html": "<p>Tuotteen Vietti Barolo Lazzarito 2021 hinta on muuttunut.</p><p>279,99 € → 298,46 € (+18,47 €, +6,60 %).</p>",
+			"summary": "Tuotteen Vietti Barolo Lazzarito 2021 hinta on muuttunut. 279,99 € → 298,46 € (+18,47 €, +6,60 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902723-0ecad853885c.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

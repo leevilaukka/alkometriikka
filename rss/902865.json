@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Meikle Toir The Chinquapin 5 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902865/",
+	"feed_url": "https://alkometriikka.fi/rss/902865.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Meikle Toir The Chinquapin 5 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902865-2026-09-29-68.99",
+			"url": "https://alkometriikka.fi/tuotteet/902865/",
+			"title": "Meikle Toir The Chinquapin 5 Year Old Single Malt — 67,99 € → 68,99 €",
+			"content_html": "<p>Tuotteen Meikle Toir The Chinquapin 5 Year Old Single Malt hinta on muuttunut.</p><p>67,99 € → 68,99 € (+1,00 €, +1,47 %).</p>",
+			"summary": "Tuotteen Meikle Toir The Chinquapin 5 Year Old Single Malt hinta on muuttunut. 67,99 € → 68,99 € (+1,00 €, +1,47 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902865-8b3dd261587c.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

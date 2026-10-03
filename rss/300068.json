@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ainoa Ilta 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/300068/",
+	"feed_url": "https://alkometriikka.fi/rss/300068.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ainoa Ilta 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-300068-2026-09-29-24.99",
+			"url": "https://alkometriikka.fi/tuotteet/300068/",
+			"title": "Ainoa Ilta 2022 — 22,42 € → 24,99 €",
+			"content_html": "<p>Tuotteen Ainoa Ilta 2022 hinta on muuttunut.</p><p>22,42 € → 24,99 € (+2,57 €, +11,46 %).</p>",
+			"summary": "Tuotteen Ainoa Ilta 2022 hinta on muuttunut. 22,42 € → 24,99 € (+2,57 €, +11,46 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/300068-d7c3a2e97f09.png",
+			"tags": [
+				"Viinit",
+				"jälkiruokaviinit"
+			]
+		}
+	]
+}

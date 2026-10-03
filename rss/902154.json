@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Volcan X.A Tequila – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902154/",
+	"feed_url": "https://alkometriikka.fi/rss/902154.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Volcan X.A Tequila.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902154-2026-09-29-296.98",
+			"url": "https://alkometriikka.fi/tuotteet/902154/",
+			"title": "Volcan X.A Tequila — 280,27 € → 296,98 €",
+			"content_html": "<p>Tuotteen Volcan X.A Tequila hinta on muuttunut.</p><p>280,27 € → 296,98 € (+16,71 €, +5,96 %).</p>",
+			"summary": "Tuotteen Volcan X.A Tequila hinta on muuttunut. 280,27 € → 296,98 € (+16,71 €, +5,96 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902154-1744977d18d5.png",
+			"tags": [
+				"Väkevät",
+				"Tequilat"
+			]
+		}
+	]
+}

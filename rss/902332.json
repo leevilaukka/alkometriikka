@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Highland Park Between You & I Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902332/",
+	"feed_url": "https://alkometriikka.fi/rss/902332.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Highland Park Between You & I Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902332-2026-09-29-183.43",
+			"url": "https://alkometriikka.fi/tuotteet/902332/",
+			"title": "Highland Park Between You & I Single Malt — 174,72 € → 183,43 €",
+			"content_html": "<p>Tuotteen Highland Park Between You & I Single Malt hinta on muuttunut.</p><p>174,72 € → 183,43 € (+8,71 €, +4,99 %).</p>",
+			"summary": "Tuotteen Highland Park Between You & I Single Malt hinta on muuttunut. 174,72 € → 183,43 € (+8,71 €, +4,99 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902332-ac2a9bc84bd5.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vietti Barolo Cerequio 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902706/",
+	"feed_url": "https://alkometriikka.fi/rss/902706.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vietti Barolo Cerequio 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902706-2026-09-29-297.5",
+			"url": "https://alkometriikka.fi/tuotteet/902706/",
+			"title": "Vietti Barolo Cerequio 2021 — 278,99 € → 297,50 €",
+			"content_html": "<p>Tuotteen Vietti Barolo Cerequio 2021 hinta on muuttunut.</p><p>278,99 € → 297,50 € (+18,51 €, +6,63 %).</p>",
+			"summary": "Tuotteen Vietti Barolo Cerequio 2021 hinta on muuttunut. 278,99 € → 297,50 € (+18,51 €, +6,63 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902706-b23daa4bf3f8.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

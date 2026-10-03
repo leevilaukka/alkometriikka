@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Greenfield Organic Brandy muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/131957/",
+	"feed_url": "https://alkometriikka.fi/rss/131957.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Greenfield Organic Brandy muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-131957-2026-09-29-24.99",
+			"url": "https://alkometriikka.fi/tuotteet/131957/",
+			"title": "Greenfield Organic Brandy muovipullo — 24,90 € → 24,99 €",
+			"content_html": "<p>Tuotteen Greenfield Organic Brandy muovipullo hinta on muuttunut.</p><p>24,90 € → 24,99 € (+0,09 €, +0,36 %).</p>",
+			"summary": "Tuotteen Greenfield Organic Brandy muovipullo hinta on muuttunut. 24,90 € → 24,99 € (+0,09 €, +0,36 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/131957-f1a1f2c1b0ae.png",
+			"tags": [
+				"Väkevät",
+				"brandyt"
+			]
+		},
+		{
+			"id": "alkometriikka-131957-2026-07-18-24.9",
+			"url": "https://alkometriikka.fi/tuotteet/131957/",
+			"title": "Greenfield Organic Brandy muovipullo — 24,24 € → 24,90 €",
+			"content_html": "<p>Tuotteen Greenfield Organic Brandy muovipullo hinta on muuttunut.</p><p>24,24 € → 24,90 € (+0,66 €, +2,72 %).</p>",
+			"summary": "Tuotteen Greenfield Organic Brandy muovipullo hinta on muuttunut. 24,24 € → 24,90 € (+0,66 €, +2,72 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/131957-f1a1f2c1b0ae.png",
+			"tags": [
+				"Väkevät",
+				"brandyt"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Maschio Prosecco Extra Dry Biologico – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/905728/",
+	"feed_url": "https://alkometriikka.fi/rss/905728.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Maschio Prosecco Extra Dry Biologico.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-905728-2026-07-18-15.99",
+			"url": "https://alkometriikka.fi/tuotteet/905728/",
+			"title": "Maschio Prosecco Extra Dry Biologico — 15,45 € → 15,99 €",
+			"content_html": "<p>Tuotteen Maschio Prosecco Extra Dry Biologico hinta on muuttunut.</p><p>15,45 € → 15,99 € (+0,54 €, +3,50 %).</p>",
+			"summary": "Tuotteen Maschio Prosecco Extra Dry Biologico hinta on muuttunut. 15,45 € → 15,99 € (+0,54 €, +3,50 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/905728-345b3243429b.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

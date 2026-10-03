@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Claude Chatelier XO – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/170396/",
+	"feed_url": "https://alkometriikka.fi/rss/170396.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Claude Chatelier XO.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-170396-2026-09-29-47.99",
+			"url": "https://alkometriikka.fi/tuotteet/170396/",
+			"title": "Claude Chatelier XO — 46,79 € → 47,99 €",
+			"content_html": "<p>Tuotteen Claude Chatelier XO hinta on muuttunut.</p><p>46,79 € → 47,99 € (+1,20 €, +2,56 %).</p>",
+			"summary": "Tuotteen Claude Chatelier XO hinta on muuttunut. 46,79 € → 47,99 € (+1,20 €, +2,56 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/170396-708be5bfea7d.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

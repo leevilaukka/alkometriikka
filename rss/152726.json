@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Finlandia Lime – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/152726/",
+	"feed_url": "https://alkometriikka.fi/rss/152726.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Finlandia Lime.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-152726-2026-07-18-22.19",
+			"url": "https://alkometriikka.fi/tuotteet/152726/",
+			"title": "Finlandia Lime — 22,17 € → 22,19 €",
+			"content_html": "<p>Tuotteen Finlandia Lime hinta on muuttunut.</p><p>22,17 € → 22,19 € (+0,02 €, +0,09 %).</p>",
+			"summary": "Tuotteen Finlandia Lime hinta on muuttunut. 22,17 € → 22,19 € (+0,02 €, +0,09 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/152726-58fddd98c30c.png",
+			"tags": [
+				"Väkevät",
+				"maustetut vodkat"
+			]
+		}
+	]
+}

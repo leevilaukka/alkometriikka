@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Panyolai Aranyalma – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902360/",
+	"feed_url": "https://alkometriikka.fi/rss/902360.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Panyolai Aranyalma.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902360-2026-09-29-60.66",
+			"url": "https://alkometriikka.fi/tuotteet/902360/",
+			"title": "Panyolai Aranyalma — 58,69 € → 60,66 €",
+			"content_html": "<p>Tuotteen Panyolai Aranyalma hinta on muuttunut.</p><p>58,69 € → 60,66 € (+1,97 €, +3,36 %).</p>",
+			"summary": "Tuotteen Panyolai Aranyalma hinta on muuttunut. 58,69 € → 60,66 € (+1,97 €, +3,36 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902360-fedc9d03c3d7.png",
+			"tags": [
+				"Väkevät",
+				"hedelmätisleet"
+			]
+		}
+	]
+}

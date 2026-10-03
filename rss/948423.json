@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The BenRiach 10 Year Old Smoky Ten Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/948423/",
+	"feed_url": "https://alkometriikka.fi/rss/948423.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The BenRiach 10 Year Old Smoky Ten Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-948423-2026-09-29-65.98",
+			"url": "https://alkometriikka.fi/tuotteet/948423/",
+			"title": "The BenRiach 10 Year Old Smoky Ten Single Malt — 64,98 € → 65,98 €",
+			"content_html": "<p>Tuotteen The BenRiach 10 Year Old Smoky Ten Single Malt hinta on muuttunut.</p><p>64,98 € → 65,98 € (+1,00 €, +1,54 %).</p>",
+			"summary": "Tuotteen The BenRiach 10 Year Old Smoky Ten Single Malt hinta on muuttunut. 64,98 € → 65,98 € (+1,00 €, +1,54 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/948423-d12bf39a70b2.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

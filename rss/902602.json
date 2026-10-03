@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cassagnau Rouge La Chapelle 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902602/",
+	"feed_url": "https://alkometriikka.fi/rss/902602.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cassagnau Rouge La Chapelle 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902602-2026-09-29-18.47",
+			"url": "https://alkometriikka.fi/tuotteet/902602/",
+			"title": "Cassagnau Rouge La Chapelle 2023 — 17,35 € → 18,47 €",
+			"content_html": "<p>Tuotteen Cassagnau Rouge La Chapelle 2023 hinta on muuttunut.</p><p>17,35 € → 18,47 € (+1,12 €, +6,46 %).</p>",
+			"summary": "Tuotteen Cassagnau Rouge La Chapelle 2023 hinta on muuttunut. 17,35 € → 18,47 € (+1,12 €, +6,46 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902602-056c7abfa3ed.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

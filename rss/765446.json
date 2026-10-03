@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gwynt y Ddraig Farmhouse Cloudy Scrumpy Cider – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/765446/",
+	"feed_url": "https://alkometriikka.fi/rss/765446.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gwynt y Ddraig Farmhouse Cloudy Scrumpy Cider.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-765446-2026-09-29-5.89",
+			"url": "https://alkometriikka.fi/tuotteet/765446/",
+			"title": "Gwynt y Ddraig Farmhouse Cloudy Scrumpy Cider — 5,55 € → 5,89 €",
+			"content_html": "<p>Tuotteen Gwynt y Ddraig Farmhouse Cloudy Scrumpy Cider hinta on muuttunut.</p><p>5,55 € → 5,89 € (+0,34 €, +6,13 %).</p>",
+			"summary": "Tuotteen Gwynt y Ddraig Farmhouse Cloudy Scrumpy Cider hinta on muuttunut. 5,55 € → 5,89 € (+0,34 €, +6,13 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/765446-0536c29d7001.png",
+			"tags": [
+				"Panimotuotteet",
+				"siiderit"
+			]
+		}
+	]
+}

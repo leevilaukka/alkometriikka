@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Arlay Pinot Noir 2017 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902035/",
+	"feed_url": "https://alkometriikka.fi/rss/902035.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Arlay Pinot Noir 2017.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902035-2026-09-29-46.67",
+			"url": "https://alkometriikka.fi/tuotteet/902035/",
+			"title": "Arlay Pinot Noir 2017 — 45,94 € → 46,67 €",
+			"content_html": "<p>Tuotteen Arlay Pinot Noir 2017 hinta on muuttunut.</p><p>45,94 € → 46,67 € (+0,73 €, +1,59 %).</p>",
+			"summary": "Tuotteen Arlay Pinot Noir 2017 hinta on muuttunut. 45,94 € → 46,67 € (+0,73 €, +1,59 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902035-2540ca7b7c7c.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Anselmann Gewürztraminer Trocken 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/539227/",
+	"feed_url": "https://alkometriikka.fi/rss/539227.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Anselmann Gewürztraminer Trocken 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-539227-2026-09-29-14.99",
+			"url": "https://alkometriikka.fi/tuotteet/539227/",
+			"title": "Anselmann Gewürztraminer Trocken 2025 — 14,48 € → 14,99 €",
+			"content_html": "<p>Tuotteen Anselmann Gewürztraminer Trocken 2025 hinta on muuttunut.</p><p>14,48 € → 14,99 € (+0,51 €, +3,52 %).</p>",
+			"summary": "Tuotteen Anselmann Gewürztraminer Trocken 2025 hinta on muuttunut. 14,48 € → 14,99 € (+0,51 €, +3,52 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/539227-9a56ddbce894.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-539227-2026-07-18-14.48",
+			"url": "https://alkometriikka.fi/tuotteet/539227/",
+			"title": "Anselmann Gewürztraminer Trocken 2025 — 14,44 € → 14,48 €",
+			"content_html": "<p>Tuotteen Anselmann Gewürztraminer Trocken 2025 hinta on muuttunut.</p><p>14,44 € → 14,48 € (+0,04 €, +0,28 %).</p>",
+			"summary": "Tuotteen Anselmann Gewürztraminer Trocken 2025 hinta on muuttunut. 14,44 € → 14,48 € (+0,04 €, +0,28 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/539227-9a56ddbce894.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

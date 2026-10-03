@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Louers Vodka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/952956/",
+	"feed_url": "https://alkometriikka.fi/rss/952956.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Louers Vodka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-952956-2026-09-29-152.68",
+			"url": "https://alkometriikka.fi/tuotteet/952956/",
+			"title": "Louers Vodka — 146,81 € → 152,68 €",
+			"content_html": "<p>Tuotteen Louers Vodka hinta on muuttunut.</p><p>146,81 € → 152,68 € (+5,87 €, +4,00 %).</p>",
+			"summary": "Tuotteen Louers Vodka hinta on muuttunut. 146,81 € → 152,68 € (+5,87 €, +4,00 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/952956-2a616be3b823.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

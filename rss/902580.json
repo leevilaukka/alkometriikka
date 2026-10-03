@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Laphroaig 18 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902580/",
+	"feed_url": "https://alkometriikka.fi/rss/902580.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Laphroaig 18 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902580-2026-09-29-223.73",
+			"url": "https://alkometriikka.fi/tuotteet/902580/",
+			"title": "Laphroaig 18 Year Old Single Malt — 212,29 € → 223,73 €",
+			"content_html": "<p>Tuotteen Laphroaig 18 Year Old Single Malt hinta on muuttunut.</p><p>212,29 € → 223,73 € (+11,44 €, +5,39 %).</p>",
+			"summary": "Tuotteen Laphroaig 18 Year Old Single Malt hinta on muuttunut. 212,29 € → 223,73 € (+11,44 €, +5,39 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902580-bfd08aeb2e72.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

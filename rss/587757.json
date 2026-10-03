@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jacob's Creek Riesling 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/587757/",
+	"feed_url": "https://alkometriikka.fi/rss/587757.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jacob's Creek Riesling 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-587757-2026-09-29-11.99",
+			"url": "https://alkometriikka.fi/tuotteet/587757/",
+			"title": "Jacob's Creek Riesling 2024 — 11,95 € → 11,99 €",
+			"content_html": "<p>Tuotteen Jacob's Creek Riesling 2024 hinta on muuttunut.</p><p>11,95 € → 11,99 € (+0,04 €, +0,33 %).</p>",
+			"summary": "Tuotteen Jacob's Creek Riesling 2024 hinta on muuttunut. 11,95 € → 11,99 € (+0,04 €, +0,33 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/587757-d2faef142e91.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

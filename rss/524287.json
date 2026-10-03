@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lanson Le White Label Sec – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/524287/",
+	"feed_url": "https://alkometriikka.fi/rss/524287.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lanson Le White Label Sec.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-524287-2026-09-29-59.98",
+			"url": "https://alkometriikka.fi/tuotteet/524287/",
+			"title": "Lanson Le White Label Sec — 59,99 € → 59,98 €",
+			"content_html": "<p>Tuotteen Lanson Le White Label Sec hinta on muuttunut.</p><p>59,99 € → 59,98 € (−0,01 €, −0,02 %).</p>",
+			"summary": "Tuotteen Lanson Le White Label Sec hinta on muuttunut. 59,99 € → 59,98 € (−0,01 €, −0,02 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/524287-9cf69fd28e28.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

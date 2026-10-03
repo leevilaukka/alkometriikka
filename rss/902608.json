@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Panyolai Mézes Barack – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902608/",
+	"feed_url": "https://alkometriikka.fi/rss/902608.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Panyolai Mézes Barack.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902608-2026-09-29-50.12",
+			"url": "https://alkometriikka.fi/tuotteet/902608/",
+			"title": "Panyolai Mézes Barack — 48,86 € → 50,12 €",
+			"content_html": "<p>Tuotteen Panyolai Mézes Barack hinta on muuttunut.</p><p>48,86 € → 50,12 € (+1,26 €, +2,58 %).</p>",
+			"summary": "Tuotteen Panyolai Mézes Barack hinta on muuttunut. 48,86 € → 50,12 € (+1,26 €, +2,58 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902608-33fb6a881384.png",
+			"tags": [
+				"Väkevät",
+				"hedelmäliköörit"
+			]
+		}
+	]
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Laphroaig 10 Year Old Single Malt – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/001465/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Laphroaig 10 Year Old Single Malt.</description>
+		<language>fi</language>
+		<lastBuildDate>Sat, 03 Oct 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/001465.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Laphroaig 10 Year Old Single Malt – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Laphroaig 10 Year Old Single Malt — 60,60 € → 59,98 €</title>
+			<link>https://alkometriikka.fi/tuotteet/001465/</link>
+			<guid isPermaLink="false">alkometriikka-001465-2026-09-29-59.98</guid>
+			<pubDate>Tue, 29 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / viskit</category>
+			<description><![CDATA[<p>Tuotteen Laphroaig 10 Year Old Single Malt hinta on muuttunut.</p><p>60,60 € → 59,98 € (−0,62 €, −1,02 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/001465-a3dba52310b2.png" />
+		</item>
+	</channel>
+</rss>

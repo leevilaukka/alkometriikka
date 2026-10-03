@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dr. Loosen Riesling Sparkling Alcohol-Free – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/599437/",
+	"feed_url": "https://alkometriikka.fi/rss/599437.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dr. Loosen Riesling Sparkling Alcohol-Free.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-599437-2026-07-18-12.46",
+			"url": "https://alkometriikka.fi/tuotteet/599437/",
+			"title": "Dr. Loosen Riesling Sparkling Alcohol-Free — 11,94 € → 12,46 €",
+			"content_html": "<p>Tuotteen Dr. Loosen Riesling Sparkling Alcohol-Free hinta on muuttunut.</p><p>11,94 € → 12,46 € (+0,52 €, +4,36 %).</p>",
+			"summary": "Tuotteen Dr. Loosen Riesling Sparkling Alcohol-Free hinta on muuttunut. 11,94 € → 12,46 € (+0,52 €, +4,36 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/599437-45bc23792092.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat kuohuviinit"
+			]
+		}
+	]
+}

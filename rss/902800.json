@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Georges Vesselle Grand Cru Rose Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902800/",
+	"feed_url": "https://alkometriikka.fi/rss/902800.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Georges Vesselle Grand Cru Rose Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902800-2026-09-29-65.9",
+			"url": "https://alkometriikka.fi/tuotteet/902800/",
+			"title": "Georges Vesselle Grand Cru Rose Champagne Brut — 59,70 € → 65,90 €",
+			"content_html": "<p>Tuotteen Georges Vesselle Grand Cru Rose Champagne Brut hinta on muuttunut.</p><p>59,70 € → 65,90 € (+6,20 €, +10,39 %).</p>",
+			"summary": "Tuotteen Georges Vesselle Grand Cru Rose Champagne Brut hinta on muuttunut. 59,70 € → 65,90 € (+6,20 €, +10,39 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902800-ab587c64049d.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

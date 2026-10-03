@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Torii Mor Chardonnay 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/945343/",
+	"feed_url": "https://alkometriikka.fi/rss/945343.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Torii Mor Chardonnay 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-945343-2026-09-29-50.43",
+			"url": "https://alkometriikka.fi/tuotteet/945343/",
+			"title": "Torii Mor Chardonnay 2018 — 48,74 € → 50,43 €",
+			"content_html": "<p>Tuotteen Torii Mor Chardonnay 2018 hinta on muuttunut.</p><p>48,74 € → 50,43 € (+1,69 €, +3,47 %).</p>",
+			"summary": "Tuotteen Torii Mor Chardonnay 2018 hinta on muuttunut. 48,74 € → 50,43 € (+1,69 €, +3,47 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/945343-dd546b9ac45c.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

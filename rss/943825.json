@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pato & Wouters DNMC Baga 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/943825/",
+	"feed_url": "https://alkometriikka.fi/rss/943825.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pato & Wouters DNMC Baga 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-943825-2026-09-29-23.98",
+			"url": "https://alkometriikka.fi/tuotteet/943825/",
+			"title": "Pato & Wouters DNMC Baga 2025 — 23,90 € → 23,98 €",
+			"content_html": "<p>Tuotteen Pato & Wouters DNMC Baga 2025 hinta on muuttunut.</p><p>23,90 € → 23,98 € (+0,08 €, +0,33 %).</p>",
+			"summary": "Tuotteen Pato & Wouters DNMC Baga 2025 hinta on muuttunut. 23,90 € → 23,98 € (+0,08 €, +0,33 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/943825-608c8afe5e72.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Antinori Solaia Magnum 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901620/",
+	"feed_url": "https://alkometriikka.fi/rss/901620.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Antinori Solaia Magnum 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901620-2026-09-29-1267.88",
+			"url": "https://alkometriikka.fi/tuotteet/901620/",
+			"title": "Antinori Solaia Magnum 2019 — 1 183,78 € → 1 267,88 €",
+			"content_html": "<p>Tuotteen Antinori Solaia Magnum 2019 hinta on muuttunut.</p><p>1 183,78 € → 1 267,88 € (+84,10 €, +7,10 %).</p>",
+			"summary": "Tuotteen Antinori Solaia Magnum 2019 hinta on muuttunut. 1 183,78 € → 1 267,88 € (+84,10 €, +7,10 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901620-7f18d5688d3f.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

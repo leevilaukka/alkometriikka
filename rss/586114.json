@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Veuve Clicquot Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/586114/",
+	"feed_url": "https://alkometriikka.fi/rss/586114.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Veuve Clicquot Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-586114-2026-09-29-41.75",
+			"url": "https://alkometriikka.fi/tuotteet/586114/",
+			"title": "Veuve Clicquot Champagne Brut — 39,99 € → 41,75 €",
+			"content_html": "<p>Tuotteen Veuve Clicquot Champagne Brut hinta on muuttunut.</p><p>39,99 € → 41,75 € (+1,76 €, +4,40 %).</p>",
+			"summary": "Tuotteen Veuve Clicquot Champagne Brut hinta on muuttunut. 39,99 € → 41,75 € (+1,76 €, +4,40 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/586114-9adcb3664071.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-586114-2026-07-18-39.99",
+			"url": "https://alkometriikka.fi/tuotteet/586114/",
+			"title": "Veuve Clicquot Champagne Brut — 39,60 € → 39,99 €",
+			"content_html": "<p>Tuotteen Veuve Clicquot Champagne Brut hinta on muuttunut.</p><p>39,60 € → 39,99 € (+0,39 €, +0,98 %).</p>",
+			"summary": "Tuotteen Veuve Clicquot Champagne Brut hinta on muuttunut. 39,60 € → 39,99 € (+0,39 €, +0,98 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/586114-9adcb3664071.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

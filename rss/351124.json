@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lustau San Emilio Pedro Ximénez Sherry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/351124/",
+	"feed_url": "https://alkometriikka.fi/rss/351124.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lustau San Emilio Pedro Ximénez Sherry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-351124-2026-09-29-22.14",
+			"url": "https://alkometriikka.fi/tuotteet/351124/",
+			"title": "Lustau San Emilio Pedro Ximénez Sherry — 21,99 € → 22,14 €",
+			"content_html": "<p>Tuotteen Lustau San Emilio Pedro Ximénez Sherry hinta on muuttunut.</p><p>21,99 € → 22,14 € (+0,15 €, +0,68 %).</p>",
+			"summary": "Tuotteen Lustau San Emilio Pedro Ximénez Sherry hinta on muuttunut. 21,99 € → 22,14 € (+0,15 €, +0,68 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/351124-76ec28b5d6ba.png",
+			"tags": [
+				"Välituotteet",
+				"sherryt"
+			]
+		}
+	]
+}

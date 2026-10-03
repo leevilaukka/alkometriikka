@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Teo Costa Ligabue Nebbiolo d'Alba 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/915862/",
+	"feed_url": "https://alkometriikka.fi/rss/915862.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Teo Costa Ligabue Nebbiolo d'Alba 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-915862-2026-09-29-31.11",
+			"url": "https://alkometriikka.fi/tuotteet/915862/",
+			"title": "Teo Costa Ligabue Nebbiolo d'Alba 2021 — 30,89 € → 31,11 €",
+			"content_html": "<p>Tuotteen Teo Costa Ligabue Nebbiolo d'Alba 2021 hinta on muuttunut.</p><p>30,89 € → 31,11 € (+0,22 €, +0,71 %).</p>",
+			"summary": "Tuotteen Teo Costa Ligabue Nebbiolo d'Alba 2021 hinta on muuttunut. 30,89 € → 31,11 € (+0,22 €, +0,71 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/915862-13784e3db6c5.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

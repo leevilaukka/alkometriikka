@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Orenda Balance 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/934166/",
+	"feed_url": "https://alkometriikka.fi/rss/934166.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Orenda Balance 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-934166-2026-09-29-60.1",
+			"url": "https://alkometriikka.fi/tuotteet/934166/",
+			"title": "Orenda Balance 2018 — 58,08 € → 60,10 €",
+			"content_html": "<p>Tuotteen Orenda Balance 2018 hinta on muuttunut.</p><p>58,08 € → 60,10 € (+2,02 €, +3,48 %).</p>",
+			"summary": "Tuotteen Orenda Balance 2018 hinta on muuttunut. 58,08 € → 60,10 € (+2,02 €, +3,48 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/934166-013570b7ca92.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

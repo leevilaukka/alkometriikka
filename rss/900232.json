@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Latour-Giraud Pommard Carmen 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900232/",
+	"feed_url": "https://alkometriikka.fi/rss/900232.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Latour-Giraud Pommard Carmen 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900232-2026-09-29-75.1",
+			"url": "https://alkometriikka.fi/tuotteet/900232/",
+			"title": "Latour-Giraud Pommard Carmen 2021 — 72,45 € → 75,10 €",
+			"content_html": "<p>Tuotteen Latour-Giraud Pommard Carmen 2021 hinta on muuttunut.</p><p>72,45 € → 75,10 € (+2,65 €, +3,66 %).</p>",
+			"summary": "Tuotteen Latour-Giraud Pommard Carmen 2021 hinta on muuttunut. 72,45 € → 75,10 € (+2,65 €, +3,66 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900232-505ec45d8309.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

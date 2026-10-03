@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mossburn Speyside Blended Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/150187/",
+	"feed_url": "https://alkometriikka.fi/rss/150187.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mossburn Speyside Blended Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-150187-2026-09-29-54.22",
+			"url": "https://alkometriikka.fi/tuotteet/150187/",
+			"title": "Mossburn Speyside Blended Malt — 54,03 € → 54,22 €",
+			"content_html": "<p>Tuotteen Mossburn Speyside Blended Malt hinta on muuttunut.</p><p>54,03 € → 54,22 € (+0,19 €, +0,35 %).</p>",
+			"summary": "Tuotteen Mossburn Speyside Blended Malt hinta on muuttunut. 54,03 € → 54,22 € (+0,19 €, +0,35 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/150187-aa28cc801330.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

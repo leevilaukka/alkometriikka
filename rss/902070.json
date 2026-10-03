@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Saint-Péray Blanc Les Pins 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902070/",
+	"feed_url": "https://alkometriikka.fi/rss/902070.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Saint-Péray Blanc Les Pins 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902070-2026-09-29-40.75",
+			"url": "https://alkometriikka.fi/tuotteet/902070/",
+			"title": "Saint-Péray Blanc Les Pins 2023 — 40,45 € → 40,75 €",
+			"content_html": "<p>Tuotteen Saint-Péray Blanc Les Pins 2023 hinta on muuttunut.</p><p>40,45 € → 40,75 € (+0,30 €, +0,74 %).</p>",
+			"summary": "Tuotteen Saint-Péray Blanc Les Pins 2023 hinta on muuttunut. 40,45 € → 40,75 € (+0,30 €, +0,74 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902070-681af2750d70.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

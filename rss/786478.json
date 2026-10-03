@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hartwall Pommac muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/786478/",
+	"feed_url": "https://alkometriikka.fi/rss/786478.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hartwall Pommac muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-786478-2026-07-18-4.24",
+			"url": "https://alkometriikka.fi/tuotteet/786478/",
+			"title": "Hartwall Pommac muovipullo — 3,98 € → 4,24 €",
+			"content_html": "<p>Tuotteen Hartwall Pommac muovipullo hinta on muuttunut.</p><p>3,98 € → 4,24 € (+0,26 €, +6,53 %).</p>",
+			"summary": "Tuotteen Hartwall Pommac muovipullo hinta on muuttunut. 3,98 € → 4,24 € (+0,26 €, +6,53 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/786478-a093036ba58e.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

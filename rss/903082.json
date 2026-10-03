@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Domaine Chantal Lescure Nuits-Saint-Georges 1er Cru Les Vallerots 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903082/",
+	"feed_url": "https://alkometriikka.fi/rss/903082.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Domaine Chantal Lescure Nuits-Saint-Georges 1er Cru Les Vallerots 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903082-2026-09-29-123.88",
+			"url": "https://alkometriikka.fi/tuotteet/903082/",
+			"title": "Domaine Chantal Lescure Nuits-Saint-Georges 1er Cru Les Vallerots 2021 — 117,71 € → 123,88 €",
+			"content_html": "<p>Tuotteen Domaine Chantal Lescure Nuits-Saint-Georges 1er Cru Les Vallerots 2021 hinta on muuttunut.</p><p>117,71 € → 123,88 € (+6,17 €, +5,24 %).</p>",
+			"summary": "Tuotteen Domaine Chantal Lescure Nuits-Saint-Georges 1er Cru Les Vallerots 2021 hinta on muuttunut. 117,71 € → 123,88 € (+6,17 €, +5,24 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903082-c6e5c1dfdb49.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

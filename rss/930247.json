@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Casa Gheller Prosecco Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/930247/",
+	"feed_url": "https://alkometriikka.fi/rss/930247.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Casa Gheller Prosecco Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-930247-2026-07-18-16.9",
+			"url": "https://alkometriikka.fi/tuotteet/930247/",
+			"title": "Casa Gheller Prosecco Brut — 17,36 € → 16,90 €",
+			"content_html": "<p>Tuotteen Casa Gheller Prosecco Brut hinta on muuttunut.</p><p>17,36 € → 16,90 € (−0,46 €, −2,65 %).</p>",
+			"summary": "Tuotteen Casa Gheller Prosecco Brut hinta on muuttunut. 17,36 € → 16,90 € (−0,46 €, −2,65 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/930247-9fbfacdff438.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

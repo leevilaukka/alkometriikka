@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Benromach Uisge 2011 Single Cask Single Malt – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/903051/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Benromach Uisge 2011 Single Cask Single Malt.</description>
+		<language>fi</language>
+		<lastBuildDate>Sat, 03 Oct 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/903051.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Benromach Uisge 2011 Single Cask Single Malt – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Benromach Uisge 2011 Single Cask Single Malt — 149,78 € → 156,36 €</title>
+			<link>https://alkometriikka.fi/tuotteet/903051/</link>
+			<guid isPermaLink="false">alkometriikka-903051-2026-09-29-156.36</guid>
+			<pubDate>Tue, 29 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Väkevät / viskit</category>
+			<description><![CDATA[<p>Tuotteen Benromach Uisge 2011 Single Cask Single Malt hinta on muuttunut.</p><p>149,78 € → 156,36 € (+6,58 €, +4,39 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903051-54e8cd51d8b4.png" />
+		</item>
+	</channel>
+</rss>

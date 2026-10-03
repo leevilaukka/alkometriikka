@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Northern Monk Northern Star Chocolate, Caramel & Biscuit Porter tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/720285/",
+	"feed_url": "https://alkometriikka.fi/rss/720285.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Northern Monk Northern Star Chocolate, Caramel & Biscuit Porter tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-720285-2026-09-29-4.49",
+			"url": "https://alkometriikka.fi/tuotteet/720285/",
+			"title": "Northern Monk Northern Star Chocolate, Caramel & Biscuit Porter tölkki — 3,99 € → 4,49 €",
+			"content_html": "<p>Tuotteen Northern Monk Northern Star Chocolate, Caramel & Biscuit Porter tölkki hinta on muuttunut.</p><p>3,99 € → 4,49 € (+0,50 €, +12,53 %).</p>",
+			"summary": "Tuotteen Northern Monk Northern Star Chocolate, Caramel & Biscuit Porter tölkki hinta on muuttunut. 3,99 € → 4,49 € (+0,50 €, +12,53 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/720285-5c9548dd0175.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

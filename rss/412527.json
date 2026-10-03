@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kleine Rust Pinotage Rosé 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/412527/",
+	"feed_url": "https://alkometriikka.fi/rss/412527.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kleine Rust Pinotage Rosé 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-412527-2026-09-29-11.99",
+			"url": "https://alkometriikka.fi/tuotteet/412527/",
+			"title": "Kleine Rust Pinotage Rosé 2025 — 12,94 € → 11,99 €",
+			"content_html": "<p>Tuotteen Kleine Rust Pinotage Rosé 2025 hinta on muuttunut.</p><p>12,94 € → 11,99 € (−0,95 €, −7,34 %).</p>",
+			"summary": "Tuotteen Kleine Rust Pinotage Rosé 2025 hinta on muuttunut. 12,94 € → 11,99 € (−0,95 €, −7,34 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/412527-3af7f8b685d3.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – BenRiach The Twelve 12 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/121607/",
+	"feed_url": "https://alkometriikka.fi/rss/121607.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: BenRiach The Twelve 12 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-121607-2026-09-29-67.99",
+			"url": "https://alkometriikka.fi/tuotteet/121607/",
+			"title": "BenRiach The Twelve 12 Year Old Single Malt — 66,95 € → 67,99 €",
+			"content_html": "<p>Tuotteen BenRiach The Twelve 12 Year Old Single Malt hinta on muuttunut.</p><p>66,95 € → 67,99 € (+1,04 €, +1,55 %).</p>",
+			"summary": "Tuotteen BenRiach The Twelve 12 Year Old Single Malt hinta on muuttunut. 66,95 € → 67,99 € (+1,04 €, +1,55 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/121607-640148908cec.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hola! Monastrell Organic 2024 hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/400141/",
+	"feed_url": "https://alkometriikka.fi/rss/400141.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hola! Monastrell Organic 2024 hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-400141-2026-09-29-36.78",
+			"url": "https://alkometriikka.fi/tuotteet/400141/",
+			"title": "Hola! Monastrell Organic 2024 hanapakkaus — 36,72 € → 36,78 €",
+			"content_html": "<p>Tuotteen Hola! Monastrell Organic 2024 hanapakkaus hinta on muuttunut.</p><p>36,72 € → 36,78 € (+0,06 €, +0,16 %).</p>",
+			"summary": "Tuotteen Hola! Monastrell Organic 2024 hanapakkaus hinta on muuttunut. 36,72 € → 36,78 € (+0,06 €, +0,16 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/400141-ffec765e46bd.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kattila Akvavit – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900825/",
+	"feed_url": "https://alkometriikka.fi/rss/900825.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kattila Akvavit.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900825-2026-09-29-43.54",
+			"url": "https://alkometriikka.fi/tuotteet/900825/",
+			"title": "Kattila Akvavit — 42,94 € → 43,54 €",
+			"content_html": "<p>Tuotteen Kattila Akvavit hinta on muuttunut.</p><p>42,94 € → 43,54 € (+0,60 €, +1,40 %).</p>",
+			"summary": "Tuotteen Kattila Akvavit hinta on muuttunut. 42,94 € → 43,54 € (+0,60 €, +1,40 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900825-1137e467ecf6.png",
+			"tags": [
+				"Väkevät",
+				"akvaviitit"
+			]
+		}
+	]
+}

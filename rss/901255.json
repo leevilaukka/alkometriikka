@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Halve Maan Blanche de Bruges – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901255/",
+	"feed_url": "https://alkometriikka.fi/rss/901255.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Halve Maan Blanche de Bruges.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901255-2026-09-29-7.29",
+			"url": "https://alkometriikka.fi/tuotteet/901255/",
+			"title": "Halve Maan Blanche de Bruges — 7,75 € → 7,29 €",
+			"content_html": "<p>Tuotteen Halve Maan Blanche de Bruges hinta on muuttunut.</p><p>7,75 € → 7,29 € (−0,46 €, −5,94 %).</p>",
+			"summary": "Tuotteen Halve Maan Blanche de Bruges hinta on muuttunut. 7,75 € → 7,29 € (−0,46 €, −5,94 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901255-af9ef9f8a5dd.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

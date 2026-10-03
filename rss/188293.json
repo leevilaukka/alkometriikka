@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Scandinavian Kulta Terwa – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/188293/",
+	"feed_url": "https://alkometriikka.fi/rss/188293.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Scandinavian Kulta Terwa.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-188293-2026-09-29-9.18",
+			"url": "https://alkometriikka.fi/tuotteet/188293/",
+			"title": "Scandinavian Kulta Terwa — 8,77 € → 9,18 €",
+			"content_html": "<p>Tuotteen Scandinavian Kulta Terwa hinta on muuttunut.</p><p>8,77 € → 9,18 € (+0,41 €, +4,68 %).</p>",
+			"summary": "Tuotteen Scandinavian Kulta Terwa hinta on muuttunut. 8,77 € → 9,18 € (+0,41 €, +4,68 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/188293-7c3a0580ca2e.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

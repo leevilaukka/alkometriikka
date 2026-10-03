@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Devaux & Michel Chapoutier Sténopé Champagne Extra Brut 2013 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903336/",
+	"feed_url": "https://alkometriikka.fi/rss/903336.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Devaux & Michel Chapoutier Sténopé Champagne Extra Brut 2013.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903336-2026-09-29-136.99",
+			"url": "https://alkometriikka.fi/tuotteet/903336/",
+			"title": "Devaux & Michel Chapoutier Sténopé Champagne Extra Brut 2013 — 129,99 € → 136,99 €",
+			"content_html": "<p>Tuotteen Devaux & Michel Chapoutier Sténopé Champagne Extra Brut 2013 hinta on muuttunut.</p><p>129,99 € → 136,99 € (+7,00 €, +5,39 %).</p>",
+			"summary": "Tuotteen Devaux & Michel Chapoutier Sténopé Champagne Extra Brut 2013 hinta on muuttunut. 129,99 € → 136,99 € (+7,00 €, +5,39 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903336-6c1e754da62a.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

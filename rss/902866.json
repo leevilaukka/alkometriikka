@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – White Heather 15 Year Old – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902866/",
+	"feed_url": "https://alkometriikka.fi/rss/902866.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: White Heather 15 Year Old.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902866-2026-09-29-66.98",
+			"url": "https://alkometriikka.fi/tuotteet/902866/",
+			"title": "White Heather 15 Year Old — 65,99 € → 66,98 €",
+			"content_html": "<p>Tuotteen White Heather 15 Year Old hinta on muuttunut.</p><p>65,99 € → 66,98 € (+0,99 €, +1,50 %).</p>",
+			"summary": "Tuotteen White Heather 15 Year Old hinta on muuttunut. 65,99 € → 66,98 € (+0,99 €, +1,50 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902866-eff49ce7b067.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

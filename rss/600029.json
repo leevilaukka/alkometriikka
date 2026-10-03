@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Coca-Cola tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/600029/",
+	"feed_url": "https://alkometriikka.fi/rss/600029.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Coca-Cola tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-600029-2026-07-18-1.19",
+			"url": "https://alkometriikka.fi/tuotteet/600029/",
+			"title": "Coca-Cola tölkki — 0,99 € → 1,19 €",
+			"content_html": "<p>Tuotteen Coca-Cola tölkki hinta on muuttunut.</p><p>0,99 € → 1,19 € (+0,20 €, +20,20 %).</p>",
+			"summary": "Tuotteen Coca-Cola tölkki hinta on muuttunut. 0,99 € → 1,19 € (+0,20 €, +20,20 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600029-5e0199aa8a28.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

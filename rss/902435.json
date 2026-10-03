@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Agricole Selvi Il Bianco Toscana 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902435/",
+	"feed_url": "https://alkometriikka.fi/rss/902435.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Agricole Selvi Il Bianco Toscana 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902435-2026-09-29-25.15",
+			"url": "https://alkometriikka.fi/tuotteet/902435/",
+			"title": "Agricole Selvi Il Bianco Toscana 2022 — 23,57 € → 25,15 €",
+			"content_html": "<p>Tuotteen Agricole Selvi Il Bianco Toscana 2022 hinta on muuttunut.</p><p>23,57 € → 25,15 € (+1,58 €, +6,70 %).</p>",
+			"summary": "Tuotteen Agricole Selvi Il Bianco Toscana 2022 hinta on muuttunut. 23,57 € → 25,15 € (+1,58 €, +6,70 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902435-0c617ed52d75.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

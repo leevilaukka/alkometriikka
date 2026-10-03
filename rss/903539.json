@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glasgow 1770 The Original Cask Strength Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903539/",
+	"feed_url": "https://alkometriikka.fi/rss/903539.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glasgow 1770 The Original Cask Strength Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903539-2026-09-29-118.2",
+			"url": "https://alkometriikka.fi/tuotteet/903539/",
+			"title": "Glasgow 1770 The Original Cask Strength Single Malt — 114,21 € → 118,20 €",
+			"content_html": "<p>Tuotteen Glasgow 1770 The Original Cask Strength Single Malt hinta on muuttunut.</p><p>114,21 € → 118,20 € (+3,99 €, +3,49 %).</p>",
+			"summary": "Tuotteen Glasgow 1770 The Original Cask Strength Single Malt hinta on muuttunut. 114,21 € → 118,20 € (+3,99 €, +3,49 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903539-14545d281c19.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

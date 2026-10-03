@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bacardi Reserva Ocho – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/120537/",
+	"feed_url": "https://alkometriikka.fi/rss/120537.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bacardi Reserva Ocho.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-120537-2026-07-18-39.99",
+			"url": "https://alkometriikka.fi/tuotteet/120537/",
+			"title": "Bacardi Reserva Ocho — 38,26 € → 39,99 €",
+			"content_html": "<p>Tuotteen Bacardi Reserva Ocho hinta on muuttunut.</p><p>38,26 € → 39,99 € (+1,73 €, +4,52 %).</p>",
+			"summary": "Tuotteen Bacardi Reserva Ocho hinta on muuttunut. 38,26 € → 39,99 € (+1,73 €, +4,52 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/120537-2d0cdaa9a923.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

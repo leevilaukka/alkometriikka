@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – De Kuyper Passion Fruit – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/944942/",
+	"feed_url": "https://alkometriikka.fi/rss/944942.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: De Kuyper Passion Fruit.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-944942-2026-07-18-19.98",
+			"url": "https://alkometriikka.fi/tuotteet/944942/",
+			"title": "De Kuyper Passion Fruit — 19,97 € → 19,98 €",
+			"content_html": "<p>Tuotteen De Kuyper Passion Fruit hinta on muuttunut.</p><p>19,97 € → 19,98 € (+0,01 €, +0,05 %).</p>",
+			"summary": "Tuotteen De Kuyper Passion Fruit hinta on muuttunut. 19,97 € → 19,98 € (+0,01 €, +0,05 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/944942-bd83899d6a06.png",
+			"tags": [
+				"Väkevät",
+				"hedelmäliköörit"
+			]
+		}
+	]
+}

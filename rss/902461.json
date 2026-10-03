@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Fat Barrel 07: Imperial Stout B.A. Peat Smoke – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902461/",
+	"feed_url": "https://alkometriikka.fi/rss/902461.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Fat Barrel 07: Imperial Stout B.A. Peat Smoke.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902461-2026-09-29-14.92",
+			"url": "https://alkometriikka.fi/tuotteet/902461/",
+			"title": "Fat Barrel 07: Imperial Stout B.A. Peat Smoke — 14,94 € → 14,92 €",
+			"content_html": "<p>Tuotteen Fat Barrel 07: Imperial Stout B.A. Peat Smoke hinta on muuttunut.</p><p>14,94 € → 14,92 € (−0,02 €, −0,13 %).</p>",
+			"summary": "Tuotteen Fat Barrel 07: Imperial Stout B.A. Peat Smoke hinta on muuttunut. 14,94 € → 14,92 € (−0,02 €, −0,13 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902461-35b372f588a6.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

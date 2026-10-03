@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Stroh 60 % muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/111053/",
+	"feed_url": "https://alkometriikka.fi/rss/111053.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Stroh 60 % muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-111053-2026-09-29-15.25",
+			"url": "https://alkometriikka.fi/tuotteet/111053/",
+			"title": "Stroh 60 % muovipullo — 15,09 € → 15,25 €",
+			"content_html": "<p>Tuotteen Stroh 60 % muovipullo hinta on muuttunut.</p><p>15,09 € → 15,25 € (+0,16 €, +1,06 %).</p>",
+			"summary": "Tuotteen Stroh 60 % muovipullo hinta on muuttunut. 15,09 € → 15,25 € (+0,16 €, +1,06 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/111053-b7b801a50a27.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

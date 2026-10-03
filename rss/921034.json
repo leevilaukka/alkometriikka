@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Penfolds Bin 2 Shiraz Mataro 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/921034/",
+	"feed_url": "https://alkometriikka.fi/rss/921034.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Penfolds Bin 2 Shiraz Mataro 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-921034-2026-09-29-40.25",
+			"url": "https://alkometriikka.fi/tuotteet/921034/",
+			"title": "Penfolds Bin 2 Shiraz Mataro 2020 — 39,98 € → 40,25 €",
+			"content_html": "<p>Tuotteen Penfolds Bin 2 Shiraz Mataro 2020 hinta on muuttunut.</p><p>39,98 € → 40,25 € (+0,27 €, +0,68 %).</p>",
+			"summary": "Tuotteen Penfolds Bin 2 Shiraz Mataro 2020 hinta on muuttunut. 39,98 € → 40,25 € (+0,27 €, +0,68 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/921034-99e3ef6372a6.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

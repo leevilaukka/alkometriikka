@@ -1,0 +1,50 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Don Simon Nature Chardonnay – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/940258/",
+	"feed_url": "https://alkometriikka.fi/rss/940258.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Don Simon Nature Chardonnay.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-940258-2026-07-18-9.98",
+			"url": "https://alkometriikka.fi/tuotteet/940258/",
+			"title": "Don Simon Nature Chardonnay — 9,46 € → 9,98 €",
+			"content_html": "<p>Tuotteen Don Simon Nature Chardonnay hinta on muuttunut.</p><p>9,46 € → 9,98 € (+0,52 €, +5,50 %).</p>",
+			"summary": "Tuotteen Don Simon Nature Chardonnay hinta on muuttunut. 9,46 € → 9,98 € (+0,52 €, +5,50 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/940258-b3de59e955e6.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-940258-2026-02-02-9.36",
+			"url": "https://alkometriikka.fi/tuotteet/940258/",
+			"title": "Don Simon Nature Chardonnay — 9,46 € → 9,36 €",
+			"content_html": "<p>Tuotteen Don Simon Nature Chardonnay hinta on muuttunut.</p><p>9,46 € → 9,36 € (−0,10 €, −1,06 %).</p>",
+			"summary": "Tuotteen Don Simon Nature Chardonnay hinta on muuttunut. 9,46 € → 9,36 € (−0,10 €, −1,06 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/940258-b3de59e955e6.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-940258-2026-02-02-9.46",
+			"url": "https://alkometriikka.fi/tuotteet/940258/",
+			"title": "Don Simon Nature Chardonnay — 9,36 € → 9,46 €",
+			"content_html": "<p>Tuotteen Don Simon Nature Chardonnay hinta on muuttunut.</p><p>9,36 € → 9,46 € (+0,10 €, +1,07 %).</p>",
+			"summary": "Tuotteen Don Simon Nature Chardonnay hinta on muuttunut. 9,36 € → 9,46 € (+0,10 €, +1,07 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/940258-b3de59e955e6.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

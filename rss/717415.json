@@ -1,0 +1,35 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lofotpils Shattered Dreams DIPA tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/717415/",
+	"feed_url": "https://alkometriikka.fi/rss/717415.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lofotpils Shattered Dreams DIPA tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-717415-2026-02-02-5.4",
+			"url": "https://alkometriikka.fi/tuotteet/717415/",
+			"title": "Lofotpils Shattered Dreams DIPA tölkki — 5,55 € → 5,40 €",
+			"content_html": "<p>Tuotteen Lofotpils Shattered Dreams DIPA tölkki hinta on muuttunut.</p><p>5,55 € → 5,40 € (−0,15 €, −2,70 %).</p>",
+			"summary": "Tuotteen Lofotpils Shattered Dreams DIPA tölkki hinta on muuttunut. 5,55 € → 5,40 € (−0,15 €, −2,70 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/717415-3935e3a9a955.png",
+			"tags": [
+				"oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-717415-2026-02-02-5.55",
+			"url": "https://alkometriikka.fi/tuotteet/717415/",
+			"title": "Lofotpils Shattered Dreams DIPA tölkki — 5,40 € → 5,55 €",
+			"content_html": "<p>Tuotteen Lofotpils Shattered Dreams DIPA tölkki hinta on muuttunut.</p><p>5,40 € → 5,55 € (+0,15 €, +2,78 %).</p>",
+			"summary": "Tuotteen Lofotpils Shattered Dreams DIPA tölkki hinta on muuttunut. 5,40 € → 5,55 € (+0,15 €, +2,78 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/717415-3935e3a9a955.png",
+			"tags": [
+				"oluet"
+			]
+		}
+	]
+}

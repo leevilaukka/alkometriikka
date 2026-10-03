@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – La Bioca Barbaresco Riserva La Secondine 2017 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/904533/",
+	"feed_url": "https://alkometriikka.fi/rss/904533.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: La Bioca Barbaresco Riserva La Secondine 2017.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-904533-2026-09-29-65.9",
+			"url": "https://alkometriikka.fi/tuotteet/904533/",
+			"title": "La Bioca Barbaresco Riserva La Secondine 2017 — 63,81 € → 65,90 €",
+			"content_html": "<p>Tuotteen La Bioca Barbaresco Riserva La Secondine 2017 hinta on muuttunut.</p><p>63,81 € → 65,90 € (+2,09 €, +3,28 %).</p>",
+			"summary": "Tuotteen La Bioca Barbaresco Riserva La Secondine 2017 hinta on muuttunut. 63,81 € → 65,90 € (+2,09 €, +3,28 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/904533-6327b8c68cf4.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

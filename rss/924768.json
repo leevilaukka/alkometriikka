@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nixta Licor de Elote – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/924768/",
+	"feed_url": "https://alkometriikka.fi/rss/924768.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nixta Licor de Elote.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-924768-2026-09-29-53.49",
+			"url": "https://alkometriikka.fi/tuotteet/924768/",
+			"title": "Nixta Licor de Elote — 52,82 € → 53,49 €",
+			"content_html": "<p>Tuotteen Nixta Licor de Elote hinta on muuttunut.</p><p>52,82 € → 53,49 € (+0,67 €, +1,27 %).</p>",
+			"summary": "Tuotteen Nixta Licor de Elote hinta on muuttunut. 52,82 € → 53,49 € (+0,67 €, +1,27 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/924768-06a2009458e5.png",
+			"tags": [
+				"Väkevät",
+				"mausteliköörit"
+			]
+		}
+	]
+}

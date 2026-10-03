@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Monnet VSOP – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/001011/",
+	"feed_url": "https://alkometriikka.fi/rss/001011.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Monnet VSOP.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-001011-2026-07-18-48.99",
+			"url": "https://alkometriikka.fi/tuotteet/001011/",
+			"title": "Monnet VSOP — 49,96 € → 48,99 €",
+			"content_html": "<p>Tuotteen Monnet VSOP hinta on muuttunut.</p><p>49,96 € → 48,99 € (−0,97 €, −1,94 %).</p>",
+			"summary": "Tuotteen Monnet VSOP hinta on muuttunut. 49,96 € → 48,99 € (−0,97 €, −1,94 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/001011-0bac0b514c74.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

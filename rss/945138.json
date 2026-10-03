@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Spirit of Raskasta Joulua – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/945138/",
+	"feed_url": "https://alkometriikka.fi/rss/945138.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Spirit of Raskasta Joulua.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-945138-2026-09-29-47.38",
+			"url": "https://alkometriikka.fi/tuotteet/945138/",
+			"title": "Spirit of Raskasta Joulua — 46,62 € → 47,38 €",
+			"content_html": "<p>Tuotteen Spirit of Raskasta Joulua hinta on muuttunut.</p><p>46,62 € → 47,38 € (+0,76 €, +1,63 %).</p>",
+			"summary": "Tuotteen Spirit of Raskasta Joulua hinta on muuttunut. 46,62 € → 47,38 € (+0,76 €, +1,63 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/945138-67f800792432.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

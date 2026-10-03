@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Flatio Amarone della Valpolicella Classico 2016 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/957751/",
+	"feed_url": "https://alkometriikka.fi/rss/957751.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Flatio Amarone della Valpolicella Classico 2016.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-957751-2026-09-29-52.37",
+			"url": "https://alkometriikka.fi/tuotteet/957751/",
+			"title": "Flatio Amarone della Valpolicella Classico 2016 — 51,23 € → 52,37 €",
+			"content_html": "<p>Tuotteen Flatio Amarone della Valpolicella Classico 2016 hinta on muuttunut.</p><p>51,23 € → 52,37 € (+1,14 €, +2,23 %).</p>",
+			"summary": "Tuotteen Flatio Amarone della Valpolicella Classico 2016 hinta on muuttunut. 51,23 € → 52,37 € (+1,14 €, +2,23 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/957751-c07bcfeeed5f.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

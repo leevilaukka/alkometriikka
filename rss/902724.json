@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Adrianna Vineyard River Malbec 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902724/",
+	"feed_url": "https://alkometriikka.fi/rss/902724.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Adrianna Vineyard River Malbec 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902724-2026-09-29-185.4",
+			"url": "https://alkometriikka.fi/tuotteet/902724/",
+			"title": "Adrianna Vineyard River Malbec 2022 — 174,99 € → 185,40 €",
+			"content_html": "<p>Tuotteen Adrianna Vineyard River Malbec 2022 hinta on muuttunut.</p><p>174,99 € → 185,40 € (+10,41 €, +5,95 %).</p>",
+			"summary": "Tuotteen Adrianna Vineyard River Malbec 2022 hinta on muuttunut. 174,99 € → 185,40 € (+10,41 €, +5,95 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902724-2597c14358f3.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

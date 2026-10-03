@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – LAT 42 Albariño 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/906964/",
+	"feed_url": "https://alkometriikka.fi/rss/906964.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: LAT 42 Albariño 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-906964-2026-07-18-17.48",
+			"url": "https://alkometriikka.fi/tuotteet/906964/",
+			"title": "LAT 42 Albariño 2024 — 17,46 € → 17,48 €",
+			"content_html": "<p>Tuotteen LAT 42 Albariño 2024 hinta on muuttunut.</p><p>17,46 € → 17,48 € (+0,02 €, +0,11 %).</p>",
+			"summary": "Tuotteen LAT 42 Albariño 2024 hinta on muuttunut. 17,46 € → 17,48 € (+0,02 €, +0,11 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/906964-9e483a9b3efb.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Westbourne Duppy Share White – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901364/",
+	"feed_url": "https://alkometriikka.fi/rss/901364.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Westbourne Duppy Share White.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901364-2026-07-18-39.29",
+			"url": "https://alkometriikka.fi/tuotteet/901364/",
+			"title": "Westbourne Duppy Share White — 39,18 € → 39,29 €",
+			"content_html": "<p>Tuotteen Westbourne Duppy Share White hinta on muuttunut.</p><p>39,18 € → 39,29 € (+0,11 €, +0,28 %).</p>",
+			"summary": "Tuotteen Westbourne Duppy Share White hinta on muuttunut. 39,18 € → 39,29 € (+0,11 €, +0,28 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901364-838fde4f96cf.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Whistle Pig 10 Year Old Straight Rye – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/133827/",
+	"feed_url": "https://alkometriikka.fi/rss/133827.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Whistle Pig 10 Year Old Straight Rye.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-133827-2026-07-18-124.98",
+			"url": "https://alkometriikka.fi/tuotteet/133827/",
+			"title": "Whistle Pig 10 Year Old Straight Rye — 124,82 € → 124,98 €",
+			"content_html": "<p>Tuotteen Whistle Pig 10 Year Old Straight Rye hinta on muuttunut.</p><p>124,82 € → 124,98 € (+0,16 €, +0,13 %).</p>",
+			"summary": "Tuotteen Whistle Pig 10 Year Old Straight Rye hinta on muuttunut. 124,82 € → 124,98 € (+0,16 €, +0,13 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/133827-1b6f376f02b1.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

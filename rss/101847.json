@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Villa Massa Amaretto – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/101847/",
+	"feed_url": "https://alkometriikka.fi/rss/101847.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Villa Massa Amaretto.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-101847-2026-09-29-29.89",
+			"url": "https://alkometriikka.fi/tuotteet/101847/",
+			"title": "Villa Massa Amaretto — 29,70 € → 29,89 €",
+			"content_html": "<p>Tuotteen Villa Massa Amaretto hinta on muuttunut.</p><p>29,70 € → 29,89 € (+0,19 €, +0,64 %).</p>",
+			"summary": "Tuotteen Villa Massa Amaretto hinta on muuttunut. 29,70 € → 29,89 € (+0,19 €, +0,64 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/101847-8c94a65e4164.png",
+			"tags": [
+				"Väkevät",
+				"mausteliköörit"
+			]
+		}
+	]
+}

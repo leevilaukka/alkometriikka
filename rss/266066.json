@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Saltkis Salty Caramel & Choco Cookie Shot muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/266066/",
+	"feed_url": "https://alkometriikka.fi/rss/266066.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Saltkis Salty Caramel & Choco Cookie Shot muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-266066-2026-07-18-12.48",
+			"url": "https://alkometriikka.fi/tuotteet/266066/",
+			"title": "Saltkis Salty Caramel & Choco Cookie Shot muovipullo — 12,33 € → 12,48 €",
+			"content_html": "<p>Tuotteen Saltkis Salty Caramel & Choco Cookie Shot muovipullo hinta on muuttunut.</p><p>12,33 € → 12,48 € (+0,15 €, +1,22 %).</p>",
+			"summary": "Tuotteen Saltkis Salty Caramel & Choco Cookie Shot muovipullo hinta on muuttunut. 12,33 € → 12,48 € (+0,15 €, +1,22 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/266066-d6c7e8b70600.png",
+			"tags": [
+				"Väkevät",
+				"mausteliköörit"
+			]
+		}
+	]
+}

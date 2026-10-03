@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Henkell Rosé Sekt Dry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/957242/",
+	"feed_url": "https://alkometriikka.fi/rss/957242.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Henkell Rosé Sekt Dry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-957242-2026-09-29-11.49",
+			"url": "https://alkometriikka.fi/tuotteet/957242/",
+			"title": "Henkell Rosé Sekt Dry — 11,45 € → 11,49 €",
+			"content_html": "<p>Tuotteen Henkell Rosé Sekt Dry hinta on muuttunut.</p><p>11,45 € → 11,49 € (+0,04 €, +0,35 %).</p>",
+			"summary": "Tuotteen Henkell Rosé Sekt Dry hinta on muuttunut. 11,45 € → 11,49 € (+0,04 €, +0,35 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/957242-1ae7bd46b589.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Verrocchio Prosecco Rosè Extra Dry 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/944724/",
+	"feed_url": "https://alkometriikka.fi/rss/944724.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Verrocchio Prosecco Rosè Extra Dry 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-944724-2026-07-18-5.2",
+			"url": "https://alkometriikka.fi/tuotteet/944724/",
+			"title": "Verrocchio Prosecco Rosè Extra Dry 2022 — 5,11 € → 5,20 €",
+			"content_html": "<p>Tuotteen Verrocchio Prosecco Rosè Extra Dry 2022 hinta on muuttunut.</p><p>5,11 € → 5,20 € (+0,09 €, +1,76 %).</p>",
+			"summary": "Tuotteen Verrocchio Prosecco Rosè Extra Dry 2022 hinta on muuttunut. 5,11 € → 5,20 € (+0,09 €, +1,76 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/944724-dd7eae15dcbe.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

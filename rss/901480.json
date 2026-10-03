@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Assuli N Nero d’Avola Organic 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901480/",
+	"feed_url": "https://alkometriikka.fi/rss/901480.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Assuli N Nero d’Avola Organic 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901480-2026-09-29-15.98",
+			"url": "https://alkometriikka.fi/tuotteet/901480/",
+			"title": "Assuli N Nero d’Avola Organic 2020 — 15,21 € → 15,98 €",
+			"content_html": "<p>Tuotteen Assuli N Nero d’Avola Organic 2020 hinta on muuttunut.</p><p>15,21 € → 15,98 € (+0,77 €, +5,06 %).</p>",
+			"summary": "Tuotteen Assuli N Nero d’Avola Organic 2020 hinta on muuttunut. 15,21 € → 15,98 € (+0,77 €, +5,06 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901480-523f6085475b.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

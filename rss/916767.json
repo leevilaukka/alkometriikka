@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Monistrol Selección Especial Rosé Cava Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/916767/",
+	"feed_url": "https://alkometriikka.fi/rss/916767.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Monistrol Selección Especial Rosé Cava Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-916767-2026-07-18-11.99",
+			"url": "https://alkometriikka.fi/tuotteet/916767/",
+			"title": "Monistrol Selección Especial Rosé Cava Brut — 11,95 € → 11,99 €",
+			"content_html": "<p>Tuotteen Monistrol Selección Especial Rosé Cava Brut hinta on muuttunut.</p><p>11,95 € → 11,99 € (+0,04 €, +0,33 %).</p>",
+			"summary": "Tuotteen Monistrol Selección Especial Rosé Cava Brut hinta on muuttunut. 11,95 € → 11,99 € (+0,04 €, +0,33 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/916767-368b9eec4746.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

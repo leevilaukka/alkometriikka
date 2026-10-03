@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Renault Carte Noire VSOP – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/931177/",
+	"feed_url": "https://alkometriikka.fi/rss/931177.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Renault Carte Noire VSOP.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-931177-2026-09-29-54.99",
+			"url": "https://alkometriikka.fi/tuotteet/931177/",
+			"title": "Renault Carte Noire VSOP — 67,98 € → 54,99 €",
+			"content_html": "<p>Tuotteen Renault Carte Noire VSOP hinta on muuttunut.</p><p>67,98 € → 54,99 € (−12,99 €, −19,11 %).</p>",
+			"summary": "Tuotteen Renault Carte Noire VSOP hinta on muuttunut. 67,98 € → 54,99 € (−12,99 €, −19,11 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/931177-36738737e4ca.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

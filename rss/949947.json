@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hugel Classic Riesling 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/949947/",
+	"feed_url": "https://alkometriikka.fi/rss/949947.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hugel Classic Riesling 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-949947-2026-07-18-25.99",
+			"url": "https://alkometriikka.fi/tuotteet/949947/",
+			"title": "Hugel Classic Riesling 2023 — 26,45 € → 25,99 €",
+			"content_html": "<p>Tuotteen Hugel Classic Riesling 2023 hinta on muuttunut.</p><p>26,45 € → 25,99 € (−0,46 €, −1,74 %).</p>",
+			"summary": "Tuotteen Hugel Classic Riesling 2023 hinta on muuttunut. 26,45 € → 25,99 € (−0,46 €, −1,74 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/949947-b4ac4f2ef4a1.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

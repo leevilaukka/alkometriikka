@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Courvoisier XO Royal – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/914772/",
+	"feed_url": "https://alkometriikka.fi/rss/914772.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Courvoisier XO Royal.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-914772-2026-09-29-359.99",
+			"url": "https://alkometriikka.fi/tuotteet/914772/",
+			"title": "Courvoisier XO Royal — 340,00 € → 359,99 €",
+			"content_html": "<p>Tuotteen Courvoisier XO Royal hinta on muuttunut.</p><p>340,00 € → 359,99 € (+19,99 €, +5,88 %).</p>",
+			"summary": "Tuotteen Courvoisier XO Royal hinta on muuttunut. 340,00 € → 359,99 € (+19,99 €, +5,88 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/914772-e42e05f232a1.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

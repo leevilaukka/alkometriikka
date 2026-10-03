@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Guy Charlemagne Champagne Brut Nature – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/957551/",
+	"feed_url": "https://alkometriikka.fi/rss/957551.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Guy Charlemagne Champagne Brut Nature.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-957551-2026-09-29-54.57",
+			"url": "https://alkometriikka.fi/tuotteet/957551/",
+			"title": "Guy Charlemagne Champagne Brut Nature — 53,29 € → 54,57 €",
+			"content_html": "<p>Tuotteen Guy Charlemagne Champagne Brut Nature hinta on muuttunut.</p><p>53,29 € → 54,57 € (+1,28 €, +2,40 %).</p>",
+			"summary": "Tuotteen Guy Charlemagne Champagne Brut Nature hinta on muuttunut. 53,29 € → 54,57 € (+1,28 €, +2,40 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/957551-a4478c8aa10f.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

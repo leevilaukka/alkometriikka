@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Elijah Craig Small Batch – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/147447/",
+	"feed_url": "https://alkometriikka.fi/rss/147447.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Elijah Craig Small Batch.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-147447-2026-09-29-59.46",
+			"url": "https://alkometriikka.fi/tuotteet/147447/",
+			"title": "Elijah Craig Small Batch — 58,79 € → 59,46 €",
+			"content_html": "<p>Tuotteen Elijah Craig Small Batch hinta on muuttunut.</p><p>58,79 € → 59,46 € (+0,67 €, +1,14 %).</p>",
+			"summary": "Tuotteen Elijah Craig Small Batch hinta on muuttunut. 58,79 € → 59,46 € (+0,67 €, +1,14 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/147447-915abfda7fc7.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

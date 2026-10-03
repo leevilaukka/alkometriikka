@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Laurent-Perrier Magnum Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/950778/",
+	"feed_url": "https://alkometriikka.fi/rss/950778.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Laurent-Perrier Magnum Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-950778-2026-09-29-124.98",
+			"url": "https://alkometriikka.fi/tuotteet/950778/",
+			"title": "Laurent-Perrier Magnum Champagne Brut — 119,99 € → 124,98 €",
+			"content_html": "<p>Tuotteen Laurent-Perrier Magnum Champagne Brut hinta on muuttunut.</p><p>119,99 € → 124,98 € (+4,99 €, +4,16 %).</p>",
+			"summary": "Tuotteen Laurent-Perrier Magnum Champagne Brut hinta on muuttunut. 119,99 € → 124,98 € (+4,99 €, +4,16 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/950778-74e24a060f7b.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tanqueray Blackcurrant Royale – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/161957/",
+	"feed_url": "https://alkometriikka.fi/rss/161957.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tanqueray Blackcurrant Royale.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-161957-2026-09-29-40.49",
+			"url": "https://alkometriikka.fi/tuotteet/161957/",
+			"title": "Tanqueray Blackcurrant Royale — 40,27 € → 40,49 €",
+			"content_html": "<p>Tuotteen Tanqueray Blackcurrant Royale hinta on muuttunut.</p><p>40,27 € → 40,49 € (+0,22 €, +0,55 %).</p>",
+			"summary": "Tuotteen Tanqueray Blackcurrant Royale hinta on muuttunut. 40,27 € → 40,49 € (+0,22 €, +0,55 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/161957-fc8696ebfcf6.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

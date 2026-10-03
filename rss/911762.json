@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Metté Liqueur de Safran – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/911762/",
+	"feed_url": "https://alkometriikka.fi/rss/911762.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Metté Liqueur de Safran.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-911762-2026-09-29-48.54",
+			"url": "https://alkometriikka.fi/tuotteet/911762/",
+			"title": "Metté Liqueur de Safran — 51,30 € → 48,54 €",
+			"content_html": "<p>Tuotteen Metté Liqueur de Safran hinta on muuttunut.</p><p>51,30 € → 48,54 € (−2,76 €, −5,38 %).</p>",
+			"summary": "Tuotteen Metté Liqueur de Safran hinta on muuttunut. 51,30 € → 48,54 € (−2,76 €, −5,38 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/911762-9795c294a34c.png",
+			"tags": [
+				"Väkevät",
+				"yrttiliköörit"
+			]
+		}
+	]
+}

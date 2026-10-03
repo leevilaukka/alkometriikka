@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Domaine Laroche Chablis L 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/007973/",
+	"feed_url": "https://alkometriikka.fi/rss/007973.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Domaine Laroche Chablis L 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-007973-2026-07-18-28.48",
+			"url": "https://alkometriikka.fi/tuotteet/007973/",
+			"title": "Domaine Laroche Chablis L 2025 — 28,46 € → 28,48 €",
+			"content_html": "<p>Tuotteen Domaine Laroche Chablis L 2025 hinta on muuttunut.</p><p>28,46 € → 28,48 € (+0,02 €, +0,07 %).</p>",
+			"summary": "Tuotteen Domaine Laroche Chablis L 2025 hinta on muuttunut. 28,46 € → 28,48 € (+0,02 €, +0,07 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/007973-46ae0e87ab88.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

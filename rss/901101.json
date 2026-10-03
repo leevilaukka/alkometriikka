@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Torres Clos Ancestral 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901101/",
+	"feed_url": "https://alkometriikka.fi/rss/901101.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Torres Clos Ancestral 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901101-2026-07-18-18.89",
+			"url": "https://alkometriikka.fi/tuotteet/901101/",
+			"title": "Torres Clos Ancestral 2023 — 18,87 € → 18,89 €",
+			"content_html": "<p>Tuotteen Torres Clos Ancestral 2023 hinta on muuttunut.</p><p>18,87 € → 18,89 € (+0,02 €, +0,11 %).</p>",
+			"summary": "Tuotteen Torres Clos Ancestral 2023 hinta on muuttunut. 18,87 € → 18,89 € (+0,02 €, +0,11 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901101-bec731ad8af6.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

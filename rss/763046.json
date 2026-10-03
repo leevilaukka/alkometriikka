@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Andechs Bergbock Hell – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/763046/",
+	"feed_url": "https://alkometriikka.fi/rss/763046.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Andechs Bergbock Hell.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-763046-2026-07-18-5.39",
+			"url": "https://alkometriikka.fi/tuotteet/763046/",
+			"title": "Andechs Bergbock Hell — 5,29 € → 5,39 €",
+			"content_html": "<p>Tuotteen Andechs Bergbock Hell hinta on muuttunut.</p><p>5,29 € → 5,39 € (+0,10 €, +1,89 %).</p>",
+			"summary": "Tuotteen Andechs Bergbock Hell hinta on muuttunut. 5,29 € → 5,39 € (+0,10 €, +1,89 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/763046-594e6427ae6a.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

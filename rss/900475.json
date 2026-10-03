@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Brill Körte Pálinka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900475/",
+	"feed_url": "https://alkometriikka.fi/rss/900475.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Brill Körte Pálinka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900475-2026-09-29-76.28",
+			"url": "https://alkometriikka.fi/tuotteet/900475/",
+			"title": "Brill Körte Pálinka — 72,79 € → 76,28 €",
+			"content_html": "<p>Tuotteen Brill Körte Pálinka hinta on muuttunut.</p><p>72,79 € → 76,28 € (+3,49 €, +4,79 %).</p>",
+			"summary": "Tuotteen Brill Körte Pálinka hinta on muuttunut. 72,79 € → 76,28 € (+3,49 €, +4,79 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900475-20fc76eefb28.png",
+			"tags": [
+				"Väkevät",
+				"hedelmätisleet"
+			]
+		}
+	]
+}

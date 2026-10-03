@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Châteauneuf-du-Pape Le Moulin Teyroud 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/006911/",
+	"feed_url": "https://alkometriikka.fi/rss/006911.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Châteauneuf-du-Pape Le Moulin Teyroud 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-006911-2026-07-18-36.48",
+			"url": "https://alkometriikka.fi/tuotteet/006911/",
+			"title": "Châteauneuf-du-Pape Le Moulin Teyroud 2023 — 36,44 € → 36,48 €",
+			"content_html": "<p>Tuotteen Châteauneuf-du-Pape Le Moulin Teyroud 2023 hinta on muuttunut.</p><p>36,44 € → 36,48 € (+0,04 €, +0,11 %).</p>",
+			"summary": "Tuotteen Châteauneuf-du-Pape Le Moulin Teyroud 2023 hinta on muuttunut. 36,44 € → 36,48 € (+0,04 €, +0,11 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/006911-4462161ef19d.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

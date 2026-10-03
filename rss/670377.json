@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hakutsuru Superior Junmai Ginjo Sake – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/670377/",
+	"feed_url": "https://alkometriikka.fi/rss/670377.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hakutsuru Superior Junmai Ginjo Sake.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-670377-2026-09-29-29.98",
+			"url": "https://alkometriikka.fi/tuotteet/670377/",
+			"title": "Hakutsuru Superior Junmai Ginjo Sake — 30,17 € → 29,98 €",
+			"content_html": "<p>Tuotteen Hakutsuru Superior Junmai Ginjo Sake hinta on muuttunut.</p><p>30,17 € → 29,98 € (−0,19 €, −0,63 %).</p>",
+			"summary": "Tuotteen Hakutsuru Superior Junmai Ginjo Sake hinta on muuttunut. 30,17 € → 29,98 € (−0,19 €, −0,63 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/670377-076d04aebff0.png",
+			"tags": [
+				"Viinit",
+				"saket"
+			]
+		}
+	]
+}

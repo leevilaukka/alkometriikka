@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Obolon Premium Lager tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/957896/",
+	"feed_url": "https://alkometriikka.fi/rss/957896.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Obolon Premium Lager tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-957896-2026-02-02-3.2",
+			"url": "https://alkometriikka.fi/tuotteet/957896/",
+			"title": "Obolon Premium Lager tölkki — 3,35 € → 3,20 €",
+			"content_html": "<p>Tuotteen Obolon Premium Lager tölkki hinta on muuttunut.</p><p>3,35 € → 3,20 € (−0,15 €, −4,48 %).</p>",
+			"summary": "Tuotteen Obolon Premium Lager tölkki hinta on muuttunut. 3,35 € → 3,20 € (−0,15 €, −4,48 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/957896-5ca5af3962f3.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		},
+		{
+			"id": "alkometriikka-957896-2026-02-02-3.35",
+			"url": "https://alkometriikka.fi/tuotteet/957896/",
+			"title": "Obolon Premium Lager tölkki — 3,20 € → 3,35 €",
+			"content_html": "<p>Tuotteen Obolon Premium Lager tölkki hinta on muuttunut.</p><p>3,20 € → 3,35 € (+0,15 €, +4,69 %).</p>",
+			"summary": "Tuotteen Obolon Premium Lager tölkki hinta on muuttunut. 3,20 € → 3,35 € (+0,15 €, +4,69 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/957896-5ca5af3962f3.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

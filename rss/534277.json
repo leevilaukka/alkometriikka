@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Txomin Etxaniz Txakoli 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/534277/",
+	"feed_url": "https://alkometriikka.fi/rss/534277.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Txomin Etxaniz Txakoli 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-534277-2026-07-18-19.99",
+			"url": "https://alkometriikka.fi/tuotteet/534277/",
+			"title": "Txomin Etxaniz Txakoli 2025 — 19,45 € → 19,99 €",
+			"content_html": "<p>Tuotteen Txomin Etxaniz Txakoli 2025 hinta on muuttunut.</p><p>19,45 € → 19,99 € (+0,54 €, +2,78 %).</p>",
+			"summary": "Tuotteen Txomin Etxaniz Txakoli 2025 hinta on muuttunut. 19,45 € → 19,99 € (+0,54 €, +2,78 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/534277-89ff6d8b1b41.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

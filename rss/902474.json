@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Louis Latour Corton Grand Cru Domaine Latour 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902474/",
+	"feed_url": "https://alkometriikka.fi/rss/902474.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Louis Latour Corton Grand Cru Domaine Latour 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902474-2026-09-29-126.7",
+			"url": "https://alkometriikka.fi/tuotteet/902474/",
+			"title": "Louis Latour Corton Grand Cru Domaine Latour 2023 — 119,46 € → 126,70 €",
+			"content_html": "<p>Tuotteen Louis Latour Corton Grand Cru Domaine Latour 2023 hinta on muuttunut.</p><p>119,46 € → 126,70 € (+7,24 €, +6,06 %).</p>",
+			"summary": "Tuotteen Louis Latour Corton Grand Cru Domaine Latour 2023 hinta on muuttunut. 119,46 € → 126,70 € (+7,24 €, +6,06 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902474-d4776d270303.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

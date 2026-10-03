@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bruichladdich Islay Barley 2014 Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900471/",
+	"feed_url": "https://alkometriikka.fi/rss/900471.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bruichladdich Islay Barley 2014 Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900471-2026-09-29-102.98",
+			"url": "https://alkometriikka.fi/tuotteet/900471/",
+			"title": "Bruichladdich Islay Barley 2014 Single Malt — 99,99 € → 102,98 €",
+			"content_html": "<p>Tuotteen Bruichladdich Islay Barley 2014 Single Malt hinta on muuttunut.</p><p>99,99 € → 102,98 € (+2,99 €, +2,99 %).</p>",
+			"summary": "Tuotteen Bruichladdich Islay Barley 2014 Single Malt hinta on muuttunut. 99,99 € → 102,98 € (+2,99 €, +2,99 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900471-29d90b55ffce.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

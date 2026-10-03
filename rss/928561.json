@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tarkiainen Dry Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/928561/",
+	"feed_url": "https://alkometriikka.fi/rss/928561.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tarkiainen Dry Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-928561-2026-09-29-46.7",
+			"url": "https://alkometriikka.fi/tuotteet/928561/",
+			"title": "Tarkiainen Dry Gin — 45,83 € → 46,70 €",
+			"content_html": "<p>Tuotteen Tarkiainen Dry Gin hinta on muuttunut.</p><p>45,83 € → 46,70 € (+0,87 €, +1,90 %).</p>",
+			"summary": "Tuotteen Tarkiainen Dry Gin hinta on muuttunut. 45,83 € → 46,70 € (+0,87 €, +1,90 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/928561-8248d868d39e.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

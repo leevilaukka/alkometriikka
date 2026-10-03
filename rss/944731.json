@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dos Lusiadas Eleivera branco 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/944731/",
+	"feed_url": "https://alkometriikka.fi/rss/944731.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dos Lusiadas Eleivera branco 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-944731-2026-09-29-16.5",
+			"url": "https://alkometriikka.fi/tuotteet/944731/",
+			"title": "Dos Lusiadas Eleivera branco 2019 — 16,44 € → 16,50 €",
+			"content_html": "<p>Tuotteen Dos Lusiadas Eleivera branco 2019 hinta on muuttunut.</p><p>16,44 € → 16,50 € (+0,06 €, +0,36 %).</p>",
+			"summary": "Tuotteen Dos Lusiadas Eleivera branco 2019 hinta on muuttunut. 16,44 € → 16,50 € (+0,06 €, +0,36 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/944731-00331e6ecedd.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

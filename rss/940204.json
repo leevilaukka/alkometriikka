@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Caroline Parent Gevrey Chambertin 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/940204/",
+	"feed_url": "https://alkometriikka.fi/rss/940204.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Caroline Parent Gevrey Chambertin 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-940204-2026-09-29-124.48",
+			"url": "https://alkometriikka.fi/tuotteet/940204/",
+			"title": "Caroline Parent Gevrey Chambertin 2020 — 118,28 € → 124,48 €",
+			"content_html": "<p>Tuotteen Caroline Parent Gevrey Chambertin 2020 hinta on muuttunut.</p><p>118,28 € → 124,48 € (+6,20 €, +5,24 %).</p>",
+			"summary": "Tuotteen Caroline Parent Gevrey Chambertin 2020 hinta on muuttunut. 118,28 € → 124,48 € (+6,20 €, +5,24 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/940204-ae02b8d39e16.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

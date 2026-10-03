@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Santa Helena Reserva Carmenère 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/456497/",
+	"feed_url": "https://alkometriikka.fi/rss/456497.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Santa Helena Reserva Carmenère 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-456497-2026-09-29-12.99",
+			"url": "https://alkometriikka.fi/tuotteet/456497/",
+			"title": "Santa Helena Reserva Carmenère 2022 — 12,86 € → 12,99 €",
+			"content_html": "<p>Tuotteen Santa Helena Reserva Carmenère 2022 hinta on muuttunut.</p><p>12,86 € → 12,99 € (+0,13 €, +1,01 %).</p>",
+			"summary": "Tuotteen Santa Helena Reserva Carmenère 2022 hinta on muuttunut. 12,86 € → 12,99 € (+0,13 €, +1,01 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/456497-b95d12e3e47a.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

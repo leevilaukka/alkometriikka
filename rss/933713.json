@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gibson's London Dry Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/933713/",
+	"feed_url": "https://alkometriikka.fi/rss/933713.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gibson's London Dry Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-933713-2026-09-29-25.25",
+			"url": "https://alkometriikka.fi/tuotteet/933713/",
+			"title": "Gibson's London Dry Gin — 25,23 € → 25,25 €",
+			"content_html": "<p>Tuotteen Gibson's London Dry Gin hinta on muuttunut.</p><p>25,23 € → 25,25 € (+0,02 €, +0,08 %).</p>",
+			"summary": "Tuotteen Gibson's London Dry Gin hinta on muuttunut. 25,23 € → 25,25 € (+0,02 €, +0,08 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/933713-1cc7b11e4690.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

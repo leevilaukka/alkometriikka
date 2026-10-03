@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – La Marca Prosecco – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/008485/",
+	"feed_url": "https://alkometriikka.fi/rss/008485.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: La Marca Prosecco.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-008485-2026-07-18-13.98",
+			"url": "https://alkometriikka.fi/tuotteet/008485/",
+			"title": "La Marca Prosecco — 14,44 € → 13,98 €",
+			"content_html": "<p>Tuotteen La Marca Prosecco hinta on muuttunut.</p><p>14,44 € → 13,98 € (−0,46 €, −3,19 %).</p>",
+			"summary": "Tuotteen La Marca Prosecco hinta on muuttunut. 14,44 € → 13,98 € (−0,46 €, −3,19 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/008485-e5949ea94888.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

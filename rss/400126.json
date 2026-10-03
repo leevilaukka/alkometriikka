@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – La Chiazza Cabernet Franc 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/400126/",
+	"feed_url": "https://alkometriikka.fi/rss/400126.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: La Chiazza Cabernet Franc 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-400126-2026-07-18-18.89",
+			"url": "https://alkometriikka.fi/tuotteet/400126/",
+			"title": "La Chiazza Cabernet Franc 2023 — 19,35 € → 18,89 €",
+			"content_html": "<p>Tuotteen La Chiazza Cabernet Franc 2023 hinta on muuttunut.</p><p>19,35 € → 18,89 € (−0,46 €, −2,38 %).</p>",
+			"summary": "Tuotteen La Chiazza Cabernet Franc 2023 hinta on muuttunut. 19,35 € → 18,89 € (−0,46 €, −2,38 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/400126-b5354c94041b.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

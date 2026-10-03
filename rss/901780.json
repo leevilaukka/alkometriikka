@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Billecart-Salmon Cuvée Nicolas François Champagne Extra Brut 2012 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901780/",
+	"feed_url": "https://alkometriikka.fi/rss/901780.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Billecart-Salmon Cuvée Nicolas François Champagne Extra Brut 2012.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901780-2026-09-29-204.7",
+			"url": "https://alkometriikka.fi/tuotteet/901780/",
+			"title": "Billecart-Salmon Cuvée Nicolas François Champagne Extra Brut 2012 — 192,95 € → 204,70 €",
+			"content_html": "<p>Tuotteen Billecart-Salmon Cuvée Nicolas François Champagne Extra Brut 2012 hinta on muuttunut.</p><p>192,95 € → 204,70 € (+11,75 €, +6,09 %).</p>",
+			"summary": "Tuotteen Billecart-Salmon Cuvée Nicolas François Champagne Extra Brut 2012 hinta on muuttunut. 192,95 € → 204,70 € (+11,75 €, +6,09 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901780-64a60c0dba81.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

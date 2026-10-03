@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Blandy's 5 Year Old Bual Madeira – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/391854/",
+	"feed_url": "https://alkometriikka.fi/rss/391854.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Blandy's 5 Year Old Bual Madeira.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-391854-2026-09-29-20",
+			"url": "https://alkometriikka.fi/tuotteet/391854/",
+			"title": "Blandy's 5 Year Old Bual Madeira — 19,13 € → 20,00 €",
+			"content_html": "<p>Tuotteen Blandy's 5 Year Old Bual Madeira hinta on muuttunut.</p><p>19,13 € → 20,00 € (+0,87 €, +4,55 %).</p>",
+			"summary": "Tuotteen Blandy's 5 Year Old Bual Madeira hinta on muuttunut. 19,13 € → 20,00 € (+0,87 €, +4,55 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/391854-fbaf34e415f3.png",
+			"tags": [
+				"Välituotteet",
+				"madeirat"
+			]
+		}
+	]
+}

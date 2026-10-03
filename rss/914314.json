@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bucah Sambuca Coffee – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/914314/",
+	"feed_url": "https://alkometriikka.fi/rss/914314.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bucah Sambuca Coffee.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-914314-2026-07-18-35.98",
+			"url": "https://alkometriikka.fi/tuotteet/914314/",
+			"title": "Bucah Sambuca Coffee — 35,24 € → 35,98 €",
+			"content_html": "<p>Tuotteen Bucah Sambuca Coffee hinta on muuttunut.</p><p>35,24 € → 35,98 € (+0,74 €, +2,10 %).</p>",
+			"summary": "Tuotteen Bucah Sambuca Coffee hinta on muuttunut. 35,24 € → 35,98 € (+0,74 €, +2,10 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/914314-fd60f3ef5810.png",
+			"tags": [
+				"Väkevät",
+				"mausteliköörit"
+			]
+		}
+	]
+}

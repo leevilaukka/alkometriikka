@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Délice de Viognier 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/516667/",
+	"feed_url": "https://alkometriikka.fi/rss/516667.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Délice de Viognier 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-516667-2026-07-18-17.98",
+			"url": "https://alkometriikka.fi/tuotteet/516667/",
+			"title": "Délice de Viognier 2025 — 17,46 € → 17,98 €",
+			"content_html": "<p>Tuotteen Délice de Viognier 2025 hinta on muuttunut.</p><p>17,46 € → 17,98 € (+0,52 €, +2,98 %).</p>",
+			"summary": "Tuotteen Délice de Viognier 2025 hinta on muuttunut. 17,46 € → 17,98 € (+0,52 €, +2,98 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/516667-8f1be5438cf2.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

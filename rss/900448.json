@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Fernet-Branca – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900448/",
+	"feed_url": "https://alkometriikka.fi/rss/900448.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Fernet-Branca.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900448-2026-09-29-182",
+			"url": "https://alkometriikka.fi/tuotteet/900448/",
+			"title": "Fernet-Branca — 181,49 € → 182,00 €",
+			"content_html": "<p>Tuotteen Fernet-Branca hinta on muuttunut.</p><p>181,49 € → 182,00 € (+0,51 €, +0,28 %).</p>",
+			"summary": "Tuotteen Fernet-Branca hinta on muuttunut. 181,49 € → 182,00 € (+0,51 €, +0,28 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900448-c802faf0b105.png",
+			"tags": [
+				"Väkevät",
+				"maha- ja maustekatkerot"
+			]
+		}
+	]
+}

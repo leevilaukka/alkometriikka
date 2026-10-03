@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Caroline Parent Vosne Romanee 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/945161/",
+	"feed_url": "https://alkometriikka.fi/rss/945161.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Caroline Parent Vosne Romanee 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-945161-2026-09-29-155.03",
+			"url": "https://alkometriikka.fi/tuotteet/945161/",
+			"title": "Caroline Parent Vosne Romanee 2020 — 146,67 € → 155,03 €",
+			"content_html": "<p>Tuotteen Caroline Parent Vosne Romanee 2020 hinta on muuttunut.</p><p>146,67 € → 155,03 € (+8,36 €, +5,70 %).</p>",
+			"summary": "Tuotteen Caroline Parent Vosne Romanee 2020 hinta on muuttunut. 146,67 € → 155,03 € (+8,36 €, +5,70 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/945161-86d4c405903b.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

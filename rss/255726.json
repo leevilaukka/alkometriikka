@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Minttu Cream Chocolate & Mint – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/255726/",
+	"feed_url": "https://alkometriikka.fi/rss/255726.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Minttu Cream Chocolate & Mint.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-255726-2026-07-18-18.39",
+			"url": "https://alkometriikka.fi/tuotteet/255726/",
+			"title": "Minttu Cream Chocolate & Mint — 18,35 € → 18,39 €",
+			"content_html": "<p>Tuotteen Minttu Cream Chocolate & Mint hinta on muuttunut.</p><p>18,35 € → 18,39 € (+0,04 €, +0,22 %).</p>",
+			"summary": "Tuotteen Minttu Cream Chocolate & Mint hinta on muuttunut. 18,35 € → 18,39 € (+0,04 €, +0,22 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/255726-4a339f9fa8f0.png",
+			"tags": [
+				"Väkevät",
+				"kermaliköörit"
+			]
+		}
+	]
+}

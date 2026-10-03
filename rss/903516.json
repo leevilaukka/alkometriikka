@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glasgow 1770 Amarone Cask Finish Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903516/",
+	"feed_url": "https://alkometriikka.fi/rss/903516.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glasgow 1770 Amarone Cask Finish Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903516-2026-09-29-119.45",
+			"url": "https://alkometriikka.fi/tuotteet/903516/",
+			"title": "Glasgow 1770 Amarone Cask Finish Single Malt — 115,18 € → 119,45 €",
+			"content_html": "<p>Tuotteen Glasgow 1770 Amarone Cask Finish Single Malt hinta on muuttunut.</p><p>115,18 € → 119,45 € (+4,27 €, +3,71 %).</p>",
+			"summary": "Tuotteen Glasgow 1770 Amarone Cask Finish Single Malt hinta on muuttunut. 115,18 € → 119,45 € (+4,27 €, +3,71 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903516-bb0088a376df.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Laurent Lequart Blanc de Meunier Champagne Brut Nature – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/925071/",
+	"feed_url": "https://alkometriikka.fi/rss/925071.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Laurent Lequart Blanc de Meunier Champagne Brut Nature.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-925071-2026-09-29-65.99",
+			"url": "https://alkometriikka.fi/tuotteet/925071/",
+			"title": "Laurent Lequart Blanc de Meunier Champagne Brut Nature — 63,36 € → 65,99 €",
+			"content_html": "<p>Tuotteen Laurent Lequart Blanc de Meunier Champagne Brut Nature hinta on muuttunut.</p><p>63,36 € → 65,99 € (+2,63 €, +4,15 %).</p>",
+			"summary": "Tuotteen Laurent Lequart Blanc de Meunier Champagne Brut Nature hinta on muuttunut. 63,36 € → 65,99 € (+2,63 €, +4,15 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/925071-382eb79617f2.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

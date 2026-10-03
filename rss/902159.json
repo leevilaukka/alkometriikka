@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Christophe Crochet Blanc De Blancs Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902159/",
+	"feed_url": "https://alkometriikka.fi/rss/902159.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Christophe Crochet Blanc De Blancs Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902159-2026-09-29-47.21",
+			"url": "https://alkometriikka.fi/tuotteet/902159/",
+			"title": "Christophe Crochet Blanc De Blancs Champagne Brut — 46,44 € → 47,21 €",
+			"content_html": "<p>Tuotteen Christophe Crochet Blanc De Blancs Champagne Brut hinta on muuttunut.</p><p>46,44 € → 47,21 € (+0,77 €, +1,66 %).</p>",
+			"summary": "Tuotteen Christophe Crochet Blanc De Blancs Champagne Brut hinta on muuttunut. 46,44 € → 47,21 € (+0,77 €, +1,66 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902159-28567a9b0925.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

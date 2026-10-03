@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Barra Oak Bay Dark muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/914242/",
+	"feed_url": "https://alkometriikka.fi/rss/914242.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Barra Oak Bay Dark muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-914242-2026-07-18-18.29",
+			"url": "https://alkometriikka.fi/tuotteet/914242/",
+			"title": "Barra Oak Bay Dark muovipullo — 18,27 € → 18,29 €",
+			"content_html": "<p>Tuotteen Barra Oak Bay Dark muovipullo hinta on muuttunut.</p><p>18,27 € → 18,29 € (+0,02 €, +0,11 %).</p>",
+			"summary": "Tuotteen Barra Oak Bay Dark muovipullo hinta on muuttunut. 18,27 € → 18,29 € (+0,02 €, +0,11 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/914242-62903c892b84.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Meukow VS muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/200000/",
+	"feed_url": "https://alkometriikka.fi/rss/200000.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Meukow VS muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-200000-2026-09-29-28.89",
+			"url": "https://alkometriikka.fi/tuotteet/200000/",
+			"title": "Meukow VS muovipullo — 28,99 € → 28,89 €",
+			"content_html": "<p>Tuotteen Meukow VS muovipullo hinta on muuttunut.</p><p>28,99 € → 28,89 € (−0,10 €, −0,34 %).</p>",
+			"summary": "Tuotteen Meukow VS muovipullo hinta on muuttunut. 28,99 € → 28,89 € (−0,10 €, −0,34 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/200000-519f3dca9f9f.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

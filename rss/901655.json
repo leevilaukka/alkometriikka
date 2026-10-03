@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Wanderer Chardonnay – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901655/",
+	"feed_url": "https://alkometriikka.fi/rss/901655.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Wanderer Chardonnay.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901655-2026-07-18-18.89",
+			"url": "https://alkometriikka.fi/tuotteet/901655/",
+			"title": "The Wanderer Chardonnay — 18,35 € → 18,89 €",
+			"content_html": "<p>Tuotteen The Wanderer Chardonnay hinta on muuttunut.</p><p>18,35 € → 18,89 € (+0,54 €, +2,94 %).</p>",
+			"summary": "Tuotteen The Wanderer Chardonnay hinta on muuttunut. 18,35 € → 18,89 € (+0,54 €, +2,94 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901655-aadb2b2e101f.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

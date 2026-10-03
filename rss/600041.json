@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nocco Berruba tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/600041/",
+	"feed_url": "https://alkometriikka.fi/rss/600041.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nocco Berruba tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-600041-2026-07-18-2.79",
+			"url": "https://alkometriikka.fi/tuotteet/600041/",
+			"title": "Nocco Berruba tölkki — 2,64 € → 2,79 €",
+			"content_html": "<p>Tuotteen Nocco Berruba tölkki hinta on muuttunut.</p><p>2,64 € → 2,79 € (+0,15 €, +5,68 %).</p>",
+			"summary": "Tuotteen Nocco Berruba tölkki hinta on muuttunut. 2,64 € → 2,79 € (+0,15 €, +5,68 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600041-166c7077a624.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

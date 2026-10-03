@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Chateau de Montifaud Reserve Special Little Millenium – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/935081/",
+	"feed_url": "https://alkometriikka.fi/rss/935081.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Chateau de Montifaud Reserve Special Little Millenium.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-935081-2026-09-29-45.74",
+			"url": "https://alkometriikka.fi/tuotteet/935081/",
+			"title": "Chateau de Montifaud Reserve Special Little Millenium — 43,61 € → 45,74 €",
+			"content_html": "<p>Tuotteen Chateau de Montifaud Reserve Special Little Millenium hinta on muuttunut.</p><p>43,61 € → 45,74 € (+2,13 €, +4,88 %).</p>",
+			"summary": "Tuotteen Chateau de Montifaud Reserve Special Little Millenium hinta on muuttunut. 43,61 € → 45,74 € (+2,13 €, +4,88 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/935081-3056f97b8472.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

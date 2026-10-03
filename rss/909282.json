@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Yalumba The Caley Cabernet Shiraz 2012 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/909282/",
+	"feed_url": "https://alkometriikka.fi/rss/909282.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Yalumba The Caley Cabernet Shiraz 2012.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-909282-2026-09-29-349.93",
+			"url": "https://alkometriikka.fi/tuotteet/909282/",
+			"title": "Yalumba The Caley Cabernet Shiraz 2012 — 328,00 € → 349,93 €",
+			"content_html": "<p>Tuotteen Yalumba The Caley Cabernet Shiraz 2012 hinta on muuttunut.</p><p>328,00 € → 349,93 € (+21,93 €, +6,69 %).</p>",
+			"summary": "Tuotteen Yalumba The Caley Cabernet Shiraz 2012 hinta on muuttunut. 328,00 € → 349,93 € (+21,93 €, +6,69 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/909282-75860b192c0d.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

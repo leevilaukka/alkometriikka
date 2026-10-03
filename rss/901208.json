@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Woven Superblend – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901208/",
+	"feed_url": "https://alkometriikka.fi/rss/901208.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Woven Superblend.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901208-2026-09-29-65.98",
+			"url": "https://alkometriikka.fi/tuotteet/901208/",
+			"title": "Woven Superblend — 64,99 € → 65,98 €",
+			"content_html": "<p>Tuotteen Woven Superblend hinta on muuttunut.</p><p>64,99 € → 65,98 € (+0,99 €, +1,52 %).</p>",
+			"summary": "Tuotteen Woven Superblend hinta on muuttunut. 64,99 € → 65,98 € (+0,99 €, +1,52 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901208-2421eece1248.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

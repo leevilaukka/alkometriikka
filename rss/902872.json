@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cuvée Clément Vin Orange 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902872/",
+	"feed_url": "https://alkometriikka.fi/rss/902872.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cuvée Clément Vin Orange 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902872-2026-09-29-14.99",
+			"url": "https://alkometriikka.fi/tuotteet/902872/",
+			"title": "Cuvée Clément Vin Orange 2024 — 16,98 € → 14,99 €",
+			"content_html": "<p>Tuotteen Cuvée Clément Vin Orange 2024 hinta on muuttunut.</p><p>16,98 € → 14,99 € (−1,99 €, −11,72 %).</p>",
+			"summary": "Tuotteen Cuvée Clément Vin Orange 2024 hinta on muuttunut. 16,98 € → 14,99 € (−1,99 €, −11,72 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902872-9a419b031018.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

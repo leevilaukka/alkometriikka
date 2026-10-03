@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vegyes Gyümölcspálinka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900474/",
+	"feed_url": "https://alkometriikka.fi/rss/900474.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vegyes Gyümölcspálinka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900474-2026-09-29-115.21",
+			"url": "https://alkometriikka.fi/tuotteet/900474/",
+			"title": "Vegyes Gyümölcspálinka — 112,16 € → 115,21 €",
+			"content_html": "<p>Tuotteen Vegyes Gyümölcspálinka hinta on muuttunut.</p><p>112,16 € → 115,21 € (+3,05 €, +2,72 %).</p>",
+			"summary": "Tuotteen Vegyes Gyümölcspálinka hinta on muuttunut. 112,16 € → 115,21 € (+3,05 €, +2,72 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900474-5517aa45ae81.png",
+			"tags": [
+				"Väkevät",
+				"hedelmätisleet"
+			]
+		}
+	]
+}

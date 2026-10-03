@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mucho Mas Rosé – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901180/",
+	"feed_url": "https://alkometriikka.fi/rss/901180.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mucho Mas Rosé.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901180-2026-07-18-12.59",
+			"url": "https://alkometriikka.fi/tuotteet/901180/",
+			"title": "Mucho Mas Rosé — 12,45 € → 12,59 €",
+			"content_html": "<p>Tuotteen Mucho Mas Rosé hinta on muuttunut.</p><p>12,45 € → 12,59 € (+0,14 €, +1,12 %).</p>",
+			"summary": "Tuotteen Mucho Mas Rosé hinta on muuttunut. 12,45 € → 12,59 € (+0,14 €, +1,12 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901180-81ec83acc06f.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Macallan Sherry Oak 12 Years Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/927221/",
+	"feed_url": "https://alkometriikka.fi/rss/927221.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Macallan Sherry Oak 12 Years Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-927221-2026-09-29-93.92",
+			"url": "https://alkometriikka.fi/tuotteet/927221/",
+			"title": "The Macallan Sherry Oak 12 Years Old Single Malt — 90,87 € → 93,92 €",
+			"content_html": "<p>Tuotteen The Macallan Sherry Oak 12 Years Old Single Malt hinta on muuttunut.</p><p>90,87 € → 93,92 € (+3,05 €, +3,36 %).</p>",
+			"summary": "Tuotteen The Macallan Sherry Oak 12 Years Old Single Malt hinta on muuttunut. 90,87 € → 93,92 € (+3,05 €, +3,36 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/927221-ddbb9be96353.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

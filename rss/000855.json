@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Monnet XO Flamboyant – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/000855/",
+	"feed_url": "https://alkometriikka.fi/rss/000855.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Monnet XO Flamboyant.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-000855-2026-09-29-129.98",
+			"url": "https://alkometriikka.fi/tuotteet/000855/",
+			"title": "Monnet XO Flamboyant — 139,98 € → 129,98 €",
+			"content_html": "<p>Tuotteen Monnet XO Flamboyant hinta on muuttunut.</p><p>139,98 € → 129,98 € (−10,00 €, −7,14 %).</p>",
+			"summary": "Tuotteen Monnet XO Flamboyant hinta on muuttunut. 139,98 € → 129,98 € (−10,00 €, −7,14 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/000855-3dfc9fa9d226.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

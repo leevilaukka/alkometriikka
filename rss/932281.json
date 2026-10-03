@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Terada Honke Katori Junmai Muroka Sake – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/932281/",
+	"feed_url": "https://alkometriikka.fi/rss/932281.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Terada Honke Katori Junmai Muroka Sake.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-932281-2026-09-29-41.46",
+			"url": "https://alkometriikka.fi/tuotteet/932281/",
+			"title": "Terada Honke Katori Junmai Muroka Sake — 41,01 € → 41,46 €",
+			"content_html": "<p>Tuotteen Terada Honke Katori Junmai Muroka Sake hinta on muuttunut.</p><p>41,01 € → 41,46 € (+0,45 €, +1,10 %).</p>",
+			"summary": "Tuotteen Terada Honke Katori Junmai Muroka Sake hinta on muuttunut. 41,01 € → 41,46 € (+0,45 €, +1,10 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/932281-83eb91039ac8.png",
+			"tags": [
+				"Viinit",
+				"saket"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Segura Viudas Organic Cava Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/907624/",
+	"feed_url": "https://alkometriikka.fi/rss/907624.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Segura Viudas Organic Cava Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-907624-2026-09-29-15.49",
+			"url": "https://alkometriikka.fi/tuotteet/907624/",
+			"title": "Segura Viudas Organic Cava Brut — 15,45 € → 15,49 €",
+			"content_html": "<p>Tuotteen Segura Viudas Organic Cava Brut hinta on muuttunut.</p><p>15,45 € → 15,49 € (+0,04 €, +0,26 %).</p>",
+			"summary": "Tuotteen Segura Viudas Organic Cava Brut hinta on muuttunut. 15,45 € → 15,49 € (+0,04 €, +0,26 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/907624-37609d077a49.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

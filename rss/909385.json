@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Planeta Rose Organic 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/909385/",
+	"feed_url": "https://alkometriikka.fi/rss/909385.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Planeta Rose Organic 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-909385-2026-07-18-17.49",
+			"url": "https://alkometriikka.fi/tuotteet/909385/",
+			"title": "Planeta Rose Organic 2025 — 17,45 € → 17,49 €",
+			"content_html": "<p>Tuotteen Planeta Rose Organic 2025 hinta on muuttunut.</p><p>17,45 € → 17,49 € (+0,04 €, +0,23 %).</p>",
+			"summary": "Tuotteen Planeta Rose Organic 2025 hinta on muuttunut. 17,45 € → 17,49 € (+0,04 €, +0,23 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/909385-553b39b42829.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

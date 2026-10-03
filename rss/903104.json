@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Azelia Langhe Nebbiolo 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903104/",
+	"feed_url": "https://alkometriikka.fi/rss/903104.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Azelia Langhe Nebbiolo 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903104-2026-09-29-38.84",
+			"url": "https://alkometriikka.fi/tuotteet/903104/",
+			"title": "Azelia Langhe Nebbiolo 2024 — 38,66 € → 38,84 €",
+			"content_html": "<p>Tuotteen Azelia Langhe Nebbiolo 2024 hinta on muuttunut.</p><p>38,66 € → 38,84 € (+0,18 €, +0,47 %).</p>",
+			"summary": "Tuotteen Azelia Langhe Nebbiolo 2024 hinta on muuttunut. 38,66 € → 38,84 € (+0,18 €, +0,47 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903104-b583c9cdf8fd.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Black Tears Dry Spiced – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/100058/",
+	"feed_url": "https://alkometriikka.fi/rss/100058.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Black Tears Dry Spiced.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-100058-2026-09-29-34.99",
+			"url": "https://alkometriikka.fi/tuotteet/100058/",
+			"title": "Black Tears Dry Spiced — 35,28 € → 34,99 €",
+			"content_html": "<p>Tuotteen Black Tears Dry Spiced hinta on muuttunut.</p><p>35,28 € → 34,99 € (−0,29 €, −0,82 %).</p>",
+			"summary": "Tuotteen Black Tears Dry Spiced hinta on muuttunut. 35,28 € → 34,99 € (−0,29 €, −0,82 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/100058-9cc1ce671b96.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		},
+		{
+			"id": "alkometriikka-100058-2026-07-18-35.28",
+			"url": "https://alkometriikka.fi/tuotteet/100058/",
+			"title": "Black Tears Dry Spiced — 35,17 € → 35,28 €",
+			"content_html": "<p>Tuotteen Black Tears Dry Spiced hinta on muuttunut.</p><p>35,17 € → 35,28 € (+0,11 €, +0,31 %).</p>",
+			"summary": "Tuotteen Black Tears Dry Spiced hinta on muuttunut. 35,17 € → 35,28 € (+0,11 €, +0,31 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/100058-9cc1ce671b96.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

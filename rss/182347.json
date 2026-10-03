@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vikingfjord Vodka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/182347/",
+	"feed_url": "https://alkometriikka.fi/rss/182347.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vikingfjord Vodka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-182347-2026-07-18-26.99",
+			"url": "https://alkometriikka.fi/tuotteet/182347/",
+			"title": "Vikingfjord Vodka — 26,95 € → 26,99 €",
+			"content_html": "<p>Tuotteen Vikingfjord Vodka hinta on muuttunut.</p><p>26,95 € → 26,99 € (+0,04 €, +0,15 %).</p>",
+			"summary": "Tuotteen Vikingfjord Vodka hinta on muuttunut. 26,95 € → 26,99 € (+0,04 €, +0,15 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/182347-6238449d6935.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

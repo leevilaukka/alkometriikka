@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tohi Admiral´s Reserve Navy Strength Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/917652/",
+	"feed_url": "https://alkometriikka.fi/rss/917652.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tohi Admiral´s Reserve Navy Strength Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-917652-2026-09-29-47.9",
+			"url": "https://alkometriikka.fi/tuotteet/917652/",
+			"title": "Tohi Admiral´s Reserve Navy Strength Gin — 55,27 € → 47,90 €",
+			"content_html": "<p>Tuotteen Tohi Admiral´s Reserve Navy Strength Gin hinta on muuttunut.</p><p>55,27 € → 47,90 € (−7,37 €, −13,33 %).</p>",
+			"summary": "Tuotteen Tohi Admiral´s Reserve Navy Strength Gin hinta on muuttunut. 55,27 € → 47,90 € (−7,37 €, −13,33 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/917652-c9bc97bdbbc4.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

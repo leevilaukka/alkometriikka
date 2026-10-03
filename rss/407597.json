@@ -1,0 +1,50 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kanonkop Kadette Pinotage 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/407597/",
+	"feed_url": "https://alkometriikka.fi/rss/407597.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kanonkop Kadette Pinotage 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-407597-2026-07-18-19.99",
+			"url": "https://alkometriikka.fi/tuotteet/407597/",
+			"title": "Kanonkop Kadette Pinotage 2020 — 18,99 € → 19,99 €",
+			"content_html": "<p>Tuotteen Kanonkop Kadette Pinotage 2020 hinta on muuttunut.</p><p>18,99 € → 19,99 € (+1,00 €, +5,27 %).</p>",
+			"summary": "Tuotteen Kanonkop Kadette Pinotage 2020 hinta on muuttunut. 18,99 € → 19,99 € (+1,00 €, +5,27 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/407597-b05de8367bb1.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-407597-2026-02-02-18.89",
+			"url": "https://alkometriikka.fi/tuotteet/407597/",
+			"title": "Kanonkop Kadette Pinotage 2020 — 18,99 € → 18,89 €",
+			"content_html": "<p>Tuotteen Kanonkop Kadette Pinotage 2020 hinta on muuttunut.</p><p>18,99 € → 18,89 € (−0,10 €, −0,53 %).</p>",
+			"summary": "Tuotteen Kanonkop Kadette Pinotage 2020 hinta on muuttunut. 18,99 € → 18,89 € (−0,10 €, −0,53 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/407597-b05de8367bb1.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-407597-2026-02-02-18.99",
+			"url": "https://alkometriikka.fi/tuotteet/407597/",
+			"title": "Kanonkop Kadette Pinotage 2020 — 18,89 € → 18,99 €",
+			"content_html": "<p>Tuotteen Kanonkop Kadette Pinotage 2020 hinta on muuttunut.</p><p>18,89 € → 18,99 € (+0,10 €, +0,53 %).</p>",
+			"summary": "Tuotteen Kanonkop Kadette Pinotage 2020 hinta on muuttunut. 18,89 € → 18,99 € (+0,10 €, +0,53 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/407597-b05de8367bb1.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Soerlie XO Organic Reserve – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/113496/",
+	"feed_url": "https://alkometriikka.fi/rss/113496.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Soerlie XO Organic Reserve.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-113496-2026-09-29-52.99",
+			"url": "https://alkometriikka.fi/tuotteet/113496/",
+			"title": "Soerlie XO Organic Reserve — 49,98 € → 52,99 €",
+			"content_html": "<p>Tuotteen Soerlie XO Organic Reserve hinta on muuttunut.</p><p>49,98 € → 52,99 € (+3,01 €, +6,02 %).</p>",
+			"summary": "Tuotteen Soerlie XO Organic Reserve hinta on muuttunut. 49,98 € → 52,99 € (+3,01 €, +6,02 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/113496-0f54a33dbf46.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

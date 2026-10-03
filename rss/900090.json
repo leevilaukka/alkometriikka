@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vinory Barbaresco Riserva Serragrilli 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900090/",
+	"feed_url": "https://alkometriikka.fi/rss/900090.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vinory Barbaresco Riserva Serragrilli 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900090-2026-09-29-92.95",
+			"url": "https://alkometriikka.fi/tuotteet/900090/",
+			"title": "Vinory Barbaresco Riserva Serragrilli 2020 — 87,18 € → 92,95 €",
+			"content_html": "<p>Tuotteen Vinory Barbaresco Riserva Serragrilli 2020 hinta on muuttunut.</p><p>87,18 € → 92,95 € (+5,77 €, +6,62 %).</p>",
+			"summary": "Tuotteen Vinory Barbaresco Riserva Serragrilli 2020 hinta on muuttunut. 87,18 € → 92,95 € (+5,77 €, +6,62 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900090-4bd854c56a29.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Viñas del Jaro Chafandín 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902130/",
+	"feed_url": "https://alkometriikka.fi/rss/902130.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Viñas del Jaro Chafandín 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902130-2026-09-29-51.5",
+			"url": "https://alkometriikka.fi/tuotteet/902130/",
+			"title": "Viñas del Jaro Chafandín 2022 — 50,45 € → 51,50 €",
+			"content_html": "<p>Tuotteen Viñas del Jaro Chafandín 2022 hinta on muuttunut.</p><p>50,45 € → 51,50 € (+1,05 €, +2,08 %).</p>",
+			"summary": "Tuotteen Viñas del Jaro Chafandín 2022 hinta on muuttunut. 50,45 € → 51,50 € (+1,05 €, +2,08 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902130-d603cf040fcf.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

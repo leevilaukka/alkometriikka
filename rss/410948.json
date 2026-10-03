@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pirkko Shiraz 2023 kartonkitölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/410948/",
+	"feed_url": "https://alkometriikka.fi/rss/410948.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pirkko Shiraz 2023 kartonkitölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-410948-2026-09-29-11.98",
+			"url": "https://alkometriikka.fi/tuotteet/410948/",
+			"title": "Pirkko Shiraz 2023 kartonkitölkki — 10,98 € → 11,98 €",
+			"content_html": "<p>Tuotteen Pirkko Shiraz 2023 kartonkitölkki hinta on muuttunut.</p><p>10,98 € → 11,98 € (+1,00 €, +9,11 %).</p>",
+			"summary": "Tuotteen Pirkko Shiraz 2023 kartonkitölkki hinta on muuttunut. 10,98 € → 11,98 € (+1,00 €, +9,11 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/410948-0692c99f3868.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

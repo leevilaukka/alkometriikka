@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Brancamenta – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/148636/",
+	"feed_url": "https://alkometriikka.fi/rss/148636.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Brancamenta.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-148636-2026-09-29-24.65",
+			"url": "https://alkometriikka.fi/tuotteet/148636/",
+			"title": "Brancamenta — 24,48 € → 24,65 €",
+			"content_html": "<p>Tuotteen Brancamenta hinta on muuttunut.</p><p>24,48 € → 24,65 € (+0,17 €, +0,69 %).</p>",
+			"summary": "Tuotteen Brancamenta hinta on muuttunut. 24,48 € → 24,65 € (+0,17 €, +0,69 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/148636-d2f5d6e76be1.png",
+			"tags": [
+				"Väkevät",
+				"yrttiliköörit"
+			]
+		}
+	]
+}

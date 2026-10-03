@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Borgo Salcetino I Salci Gran Selezione 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/928032/",
+	"feed_url": "https://alkometriikka.fi/rss/928032.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Borgo Salcetino I Salci Gran Selezione 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-928032-2026-09-29-64.99",
+			"url": "https://alkometriikka.fi/tuotteet/928032/",
+			"title": "Borgo Salcetino I Salci Gran Selezione 2018 — 61,35 € → 64,99 €",
+			"content_html": "<p>Tuotteen Borgo Salcetino I Salci Gran Selezione 2018 hinta on muuttunut.</p><p>61,35 € → 64,99 € (+3,64 €, +5,93 %).</p>",
+			"summary": "Tuotteen Borgo Salcetino I Salci Gran Selezione 2018 hinta on muuttunut. 61,35 € → 64,99 € (+3,64 €, +5,93 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/928032-20d3956fafb6.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

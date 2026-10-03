@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Domaine la Boutiniere Tradition Blanc Chateauneuf du Pape 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/939018/",
+	"feed_url": "https://alkometriikka.fi/rss/939018.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Domaine la Boutiniere Tradition Blanc Chateauneuf du Pape 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-939018-2026-09-29-41.59",
+			"url": "https://alkometriikka.fi/tuotteet/939018/",
+			"title": "Domaine la Boutiniere Tradition Blanc Chateauneuf du Pape 2021 — 41,23 € → 41,59 €",
+			"content_html": "<p>Tuotteen Domaine la Boutiniere Tradition Blanc Chateauneuf du Pape 2021 hinta on muuttunut.</p><p>41,23 € → 41,59 € (+0,36 €, +0,87 %).</p>",
+			"summary": "Tuotteen Domaine la Boutiniere Tradition Blanc Chateauneuf du Pape 2021 hinta on muuttunut. 41,23 € → 41,59 € (+0,36 €, +0,87 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/939018-8f6c6197b85f.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

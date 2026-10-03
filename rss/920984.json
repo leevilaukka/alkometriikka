@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glenfarclas 2003 Single Cask – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/920984/",
+	"feed_url": "https://alkometriikka.fi/rss/920984.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glenfarclas 2003 Single Cask.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-920984-2026-09-29-284.32",
+			"url": "https://alkometriikka.fi/tuotteet/920984/",
+			"title": "Glenfarclas 2003 Single Cask — 269,12 € → 284,32 €",
+			"content_html": "<p>Tuotteen Glenfarclas 2003 Single Cask hinta on muuttunut.</p><p>269,12 € → 284,32 € (+15,20 €, +5,65 %).</p>",
+			"summary": "Tuotteen Glenfarclas 2003 Single Cask hinta on muuttunut. 269,12 € → 284,32 € (+15,20 €, +5,65 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/920984-b7dcf6a03057.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

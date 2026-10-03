@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lyme Bay Covepoint Pinot Noir 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902020/",
+	"feed_url": "https://alkometriikka.fi/rss/902020.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lyme Bay Covepoint Pinot Noir 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902020-2026-09-29-40.67",
+			"url": "https://alkometriikka.fi/tuotteet/902020/",
+			"title": "Lyme Bay Covepoint Pinot Noir 2023 — 40,34 € → 40,67 €",
+			"content_html": "<p>Tuotteen Lyme Bay Covepoint Pinot Noir 2023 hinta on muuttunut.</p><p>40,34 € → 40,67 € (+0,33 €, +0,82 %).</p>",
+			"summary": "Tuotteen Lyme Bay Covepoint Pinot Noir 2023 hinta on muuttunut. 40,34 € → 40,67 € (+0,33 €, +0,82 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902020-91b258b358c4.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

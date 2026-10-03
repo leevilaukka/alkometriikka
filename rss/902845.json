@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Coppa Cocktails Strawberry Daiquiri – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902845/",
+	"feed_url": "https://alkometriikka.fi/rss/902845.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Coppa Cocktails Strawberry Daiquiri.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902845-2026-09-29-19.48",
+			"url": "https://alkometriikka.fi/tuotteet/902845/",
+			"title": "Coppa Cocktails Strawberry Daiquiri — 18,98 € → 19,48 €",
+			"content_html": "<p>Tuotteen Coppa Cocktails Strawberry Daiquiri hinta on muuttunut.</p><p>18,98 € → 19,48 € (+0,50 €, +2,63 %).</p>",
+			"summary": "Tuotteen Coppa Cocktails Strawberry Daiquiri hinta on muuttunut. 18,98 € → 19,48 € (+0,50 €, +2,63 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902845-ba4987c443bb.png",
+			"tags": [
+				"Panimotuotteet",
+				"juomasekoitukset"
+			]
+		}
+	]
+}

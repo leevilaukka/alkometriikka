@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Écusson Bio Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/008695/",
+	"feed_url": "https://alkometriikka.fi/rss/008695.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Écusson Bio Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-008695-2026-09-29-8.49",
+			"url": "https://alkometriikka.fi/tuotteet/008695/",
+			"title": "Écusson Bio Brut — 7,99 € → 8,49 €",
+			"content_html": "<p>Tuotteen Écusson Bio Brut hinta on muuttunut.</p><p>7,99 € → 8,49 € (+0,50 €, +6,26 %).</p>",
+			"summary": "Tuotteen Écusson Bio Brut hinta on muuttunut. 7,99 € → 8,49 € (+0,50 €, +6,26 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/008695-f1b40de0afd5.png",
+			"tags": [
+				"Panimotuotteet",
+				"siiderit"
+			]
+		}
+	]
+}

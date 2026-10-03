@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Philippe Varone Johannisberg Goutte d'Or 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/946715/",
+	"feed_url": "https://alkometriikka.fi/rss/946715.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Philippe Varone Johannisberg Goutte d'Or 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-946715-2026-09-29-42.7",
+			"url": "https://alkometriikka.fi/tuotteet/946715/",
+			"title": "Philippe Varone Johannisberg Goutte d'Or 2023 — 42,27 € → 42,70 €",
+			"content_html": "<p>Tuotteen Philippe Varone Johannisberg Goutte d'Or 2023 hinta on muuttunut.</p><p>42,27 € → 42,70 € (+0,43 €, +1,02 %).</p>",
+			"summary": "Tuotteen Philippe Varone Johannisberg Goutte d'Or 2023 hinta on muuttunut. 42,27 € → 42,70 € (+0,43 €, +1,02 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/946715-4c963e006e32.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-946715-2026-07-18-42.27",
+			"url": "https://alkometriikka.fi/tuotteet/946715/",
+			"title": "Philippe Varone Johannisberg Goutte d'Or 2023 — 40,83 € → 42,27 €",
+			"content_html": "<p>Tuotteen Philippe Varone Johannisberg Goutte d'Or 2023 hinta on muuttunut.</p><p>40,83 € → 42,27 € (+1,44 €, +3,53 %).</p>",
+			"summary": "Tuotteen Philippe Varone Johannisberg Goutte d'Or 2023 hinta on muuttunut. 40,83 € → 42,27 € (+1,44 €, +3,53 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/946715-4c963e006e32.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

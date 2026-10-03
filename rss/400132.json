@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Segredos de São Miguel 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/400132/",
+	"feed_url": "https://alkometriikka.fi/rss/400132.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Segredos de São Miguel 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-400132-2026-09-29-8.99",
+			"url": "https://alkometriikka.fi/tuotteet/400132/",
+			"title": "Segredos de São Miguel 2025 — 8,45 € → 8,99 €",
+			"content_html": "<p>Tuotteen Segredos de São Miguel 2025 hinta on muuttunut.</p><p>8,45 € → 8,99 € (+0,54 €, +6,39 %).</p>",
+			"summary": "Tuotteen Segredos de São Miguel 2025 hinta on muuttunut. 8,45 € → 8,99 € (+0,54 €, +6,39 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/400132-4c1cac47c342.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

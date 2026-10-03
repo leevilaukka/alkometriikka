@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Christophe Semaska Elixir d'Ariane Côte Rôtie 2015 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/945355/",
+	"feed_url": "https://alkometriikka.fi/rss/945355.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Christophe Semaska Elixir d'Ariane Côte Rôtie 2015.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-945355-2026-09-29-368.34",
+			"url": "https://alkometriikka.fi/tuotteet/945355/",
+			"title": "Christophe Semaska Elixir d'Ariane Côte Rôtie 2015 — 345,00 € → 368,34 €",
+			"content_html": "<p>Tuotteen Christophe Semaska Elixir d'Ariane Côte Rôtie 2015 hinta on muuttunut.</p><p>345,00 € → 368,34 € (+23,34 €, +6,77 %).</p>",
+			"summary": "Tuotteen Christophe Semaska Elixir d'Ariane Côte Rôtie 2015 hinta on muuttunut. 345,00 € → 368,34 € (+23,34 €, +6,77 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/945355-90058827ac37.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-945355-2026-07-18-345",
+			"url": "https://alkometriikka.fi/tuotteet/945355/",
+			"title": "Christophe Semaska Elixir d'Ariane Côte Rôtie 2015 — 344,46 € → 345,00 €",
+			"content_html": "<p>Tuotteen Christophe Semaska Elixir d'Ariane Côte Rôtie 2015 hinta on muuttunut.</p><p>344,46 € → 345,00 € (+0,54 €, +0,16 %).</p>",
+			"summary": "Tuotteen Christophe Semaska Elixir d'Ariane Côte Rôtie 2015 hinta on muuttunut. 344,46 € → 345,00 € (+0,54 €, +0,16 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/945355-90058827ac37.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

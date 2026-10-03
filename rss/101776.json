@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Finlandia Vodka muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/101776/",
+	"feed_url": "https://alkometriikka.fi/rss/101776.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Finlandia Vodka muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-101776-2026-09-29-20.89",
+			"url": "https://alkometriikka.fi/tuotteet/101776/",
+			"title": "Finlandia Vodka muovipullo — 20,49 € → 20,89 €",
+			"content_html": "<p>Tuotteen Finlandia Vodka muovipullo hinta on muuttunut.</p><p>20,49 € → 20,89 € (+0,40 €, +1,95 %).</p>",
+			"summary": "Tuotteen Finlandia Vodka muovipullo hinta on muuttunut. 20,49 € → 20,89 € (+0,40 €, +1,95 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/101776-24e557bacb49.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		},
+		{
+			"id": "alkometriikka-101776-2026-07-18-20.49",
+			"url": "https://alkometriikka.fi/tuotteet/101776/",
+			"title": "Finlandia Vodka muovipullo — 20,18 € → 20,49 €",
+			"content_html": "<p>Tuotteen Finlandia Vodka muovipullo hinta on muuttunut.</p><p>20,18 € → 20,49 € (+0,31 €, +1,54 %).</p>",
+			"summary": "Tuotteen Finlandia Vodka muovipullo hinta on muuttunut. 20,18 € → 20,49 € (+0,31 €, +1,54 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/101776-24e557bacb49.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

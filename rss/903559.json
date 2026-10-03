@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Tottori – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903559/",
+	"feed_url": "https://alkometriikka.fi/rss/903559.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Tottori.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903559-2026-09-29-57.33",
+			"url": "https://alkometriikka.fi/tuotteet/903559/",
+			"title": "The Tottori — 55,88 € → 57,33 €",
+			"content_html": "<p>Tuotteen The Tottori hinta on muuttunut.</p><p>55,88 € → 57,33 € (+1,45 €, +2,59 %).</p>",
+			"summary": "Tuotteen The Tottori hinta on muuttunut. 55,88 € → 57,33 € (+1,45 €, +2,59 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903559-658729ee9bcf.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

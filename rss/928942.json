@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cossy Cuvee Eclat Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/928942/",
+	"feed_url": "https://alkometriikka.fi/rss/928942.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cossy Cuvee Eclat Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-928942-2026-09-29-45.48",
+			"url": "https://alkometriikka.fi/tuotteet/928942/",
+			"title": "Cossy Cuvee Eclat Champagne Brut — 44,82 € → 45,48 €",
+			"content_html": "<p>Tuotteen Cossy Cuvee Eclat Champagne Brut hinta on muuttunut.</p><p>44,82 € → 45,48 € (+0,66 €, +1,47 %).</p>",
+			"summary": "Tuotteen Cossy Cuvee Eclat Champagne Brut hinta on muuttunut. 44,82 € → 45,48 € (+0,66 €, +1,47 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/928942-757383e4ab9b.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

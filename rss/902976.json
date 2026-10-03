@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – St. Bernardus Abt 12 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902976/",
+	"feed_url": "https://alkometriikka.fi/rss/902976.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: St. Bernardus Abt 12.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902976-2026-07-18-12.96",
+			"url": "https://alkometriikka.fi/tuotteet/902976/",
+			"title": "St. Bernardus Abt 12 — 12,98 € → 12,96 €",
+			"content_html": "<p>Tuotteen St. Bernardus Abt 12 hinta on muuttunut.</p><p>12,98 € → 12,96 € (−0,02 €, −0,15 %).</p>",
+			"summary": "Tuotteen St. Bernardus Abt 12 hinta on muuttunut. 12,98 € → 12,96 € (−0,02 €, −0,15 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902976-b037476b9434.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

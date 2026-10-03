@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Clément Créole Shrubb D'Orange – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902829/",
+	"feed_url": "https://alkometriikka.fi/rss/902829.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Clément Créole Shrubb D'Orange.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902829-2026-09-29-49.98",
+			"url": "https://alkometriikka.fi/tuotteet/902829/",
+			"title": "Clément Créole Shrubb D'Orange — 49,99 € → 49,98 €",
+			"content_html": "<p>Tuotteen Clément Créole Shrubb D'Orange hinta on muuttunut.</p><p>49,99 € → 49,98 € (−0,01 €, −0,02 %).</p>",
+			"summary": "Tuotteen Clément Créole Shrubb D'Orange hinta on muuttunut. 49,99 € → 49,98 € (−0,01 €, −0,02 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902829-27b1c31cad3d.png",
+			"tags": [
+				"Väkevät",
+				"hedelmäliköörit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vadelma Väkevä Viini muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/367657/",
+	"feed_url": "https://alkometriikka.fi/rss/367657.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vadelma Väkevä Viini muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-367657-2026-07-18-11.29",
+			"url": "https://alkometriikka.fi/tuotteet/367657/",
+			"title": "Vadelma Väkevä Viini muovipullo — 11,06 € → 11,29 €",
+			"content_html": "<p>Tuotteen Vadelma Väkevä Viini muovipullo hinta on muuttunut.</p><p>11,06 € → 11,29 € (+0,23 €, +2,08 %).</p>",
+			"summary": "Tuotteen Vadelma Väkevä Viini muovipullo hinta on muuttunut. 11,06 € → 11,29 € (+0,23 €, +2,08 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/367657-efb70f187f61.png",
+			"tags": [
+				"Välituotteet",
+				"väkevät viinit"
+			]
+		}
+	]
+}

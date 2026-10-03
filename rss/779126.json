@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Suomenlinnan Nordic Chaos Imperial Stout tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/779126/",
+	"feed_url": "https://alkometriikka.fi/rss/779126.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Suomenlinnan Nordic Chaos Imperial Stout tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-779126-2026-07-18-5.97",
+			"url": "https://alkometriikka.fi/tuotteet/779126/",
+			"title": "Suomenlinnan Nordic Chaos Imperial Stout tölkki — 5,98 € → 5,97 €",
+			"content_html": "<p>Tuotteen Suomenlinnan Nordic Chaos Imperial Stout tölkki hinta on muuttunut.</p><p>5,98 € → 5,97 € (−0,01 €, −0,17 %).</p>",
+			"summary": "Tuotteen Suomenlinnan Nordic Chaos Imperial Stout tölkki hinta on muuttunut. 5,98 € → 5,97 € (−0,01 €, −0,17 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/779126-a76fa5e2d88e.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

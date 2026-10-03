@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Aldo Conterno Il Favot 2020 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/936045/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Aldo Conterno Il Favot 2020.</description>
+		<language>fi</language>
+		<lastBuildDate>Sat, 03 Oct 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/936045.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Aldo Conterno Il Favot 2020 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Aldo Conterno Il Favot 2020 — 81,79 € → 85,22 €</title>
+			<link>https://alkometriikka.fi/tuotteet/936045/</link>
+			<guid isPermaLink="false">alkometriikka-936045-2026-09-29-85.22</guid>
+			<pubDate>Tue, 29 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Aldo Conterno Il Favot 2020 hinta on muuttunut.</p><p>81,79 € → 85,22 € (+3,43 €, +4,19 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/936045-5c82a90546ab.png" />
+		</item>
+	</channel>
+</rss>

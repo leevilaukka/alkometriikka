@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Silver Dry Gin muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/100052/",
+	"feed_url": "https://alkometriikka.fi/rss/100052.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Silver Dry Gin muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-100052-2026-07-18-24.38",
+			"url": "https://alkometriikka.fi/tuotteet/100052/",
+			"title": "Silver Dry Gin muovipullo — 24,69 € → 24,38 €",
+			"content_html": "<p>Tuotteen Silver Dry Gin muovipullo hinta on muuttunut.</p><p>24,69 € → 24,38 € (−0,31 €, −1,26 %).</p>",
+			"summary": "Tuotteen Silver Dry Gin muovipullo hinta on muuttunut. 24,69 € → 24,38 € (−0,31 €, −1,26 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/100052-4d5f760f4f37.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

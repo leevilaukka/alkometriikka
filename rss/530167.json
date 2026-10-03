@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Alexis Lichine Crémant de Bordeaux Brut Rosé – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/530167/",
+	"feed_url": "https://alkometriikka.fi/rss/530167.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Alexis Lichine Crémant de Bordeaux Brut Rosé.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-530167-2026-07-18-14.99",
+			"url": "https://alkometriikka.fi/tuotteet/530167/",
+			"title": "Alexis Lichine Crémant de Bordeaux Brut Rosé — 15,45 € → 14,99 €",
+			"content_html": "<p>Tuotteen Alexis Lichine Crémant de Bordeaux Brut Rosé hinta on muuttunut.</p><p>15,45 € → 14,99 € (−0,46 €, −2,98 %).</p>",
+			"summary": "Tuotteen Alexis Lichine Crémant de Bordeaux Brut Rosé hinta on muuttunut. 15,45 € → 14,99 € (−0,46 €, −2,98 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/530167-cbad61e5a3fd.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

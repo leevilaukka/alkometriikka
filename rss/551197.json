@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Charlier & Fils Spécial Club Champagne Brut 2015 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/551197/",
+	"feed_url": "https://alkometriikka.fi/rss/551197.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Charlier & Fils Spécial Club Champagne Brut 2015.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-551197-2026-09-29-79.58",
+			"url": "https://alkometriikka.fi/tuotteet/551197/",
+			"title": "Charlier & Fils Spécial Club Champagne Brut 2015 — 76,54 € → 79,58 €",
+			"content_html": "<p>Tuotteen Charlier & Fils Spécial Club Champagne Brut 2015 hinta on muuttunut.</p><p>76,54 € → 79,58 € (+3,04 €, +3,97 %).</p>",
+			"summary": "Tuotteen Charlier & Fils Spécial Club Champagne Brut 2015 hinta on muuttunut. 76,54 € → 79,58 € (+3,04 €, +3,97 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/551197-887829afe0c7.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

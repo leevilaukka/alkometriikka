@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Linie Aquavit – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/104737/",
+	"feed_url": "https://alkometriikka.fi/rss/104737.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Linie Aquavit.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-104737-2026-09-29-34.48",
+			"url": "https://alkometriikka.fi/tuotteet/104737/",
+			"title": "Linie Aquavit — 34,28 € → 34,48 €",
+			"content_html": "<p>Tuotteen Linie Aquavit hinta on muuttunut.</p><p>34,28 € → 34,48 € (+0,20 €, +0,58 %).</p>",
+			"summary": "Tuotteen Linie Aquavit hinta on muuttunut. 34,28 € → 34,48 € (+0,20 €, +0,58 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/104737-aab26ce1fd17.png",
+			"tags": [
+				"Väkevät",
+				"akvaviitit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château Kirwan 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/954338/",
+	"feed_url": "https://alkometriikka.fi/rss/954338.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château Kirwan 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-954338-2026-09-29-117.99",
+			"url": "https://alkometriikka.fi/tuotteet/954338/",
+			"title": "Château Kirwan 2018 — 112,99 € → 117,99 €",
+			"content_html": "<p>Tuotteen Château Kirwan 2018 hinta on muuttunut.</p><p>112,99 € → 117,99 € (+5,00 €, +4,43 %).</p>",
+			"summary": "Tuotteen Château Kirwan 2018 hinta on muuttunut. 112,99 € → 117,99 € (+5,00 €, +4,43 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/954338-4ffe87fd5de5.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

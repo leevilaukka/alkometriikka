@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Limoncello di Sorrento – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/123086/",
+	"feed_url": "https://alkometriikka.fi/rss/123086.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Limoncello di Sorrento.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-123086-2026-07-18-22.98",
+			"url": "https://alkometriikka.fi/tuotteet/123086/",
+			"title": "Limoncello di Sorrento — 22,13 € → 22,98 €",
+			"content_html": "<p>Tuotteen Limoncello di Sorrento hinta on muuttunut.</p><p>22,13 € → 22,98 € (+0,85 €, +3,84 %).</p>",
+			"summary": "Tuotteen Limoncello di Sorrento hinta on muuttunut. 22,13 € → 22,98 € (+0,85 €, +3,84 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/123086-c4b53ed07035.png",
+			"tags": [
+				"Väkevät",
+				"hedelmäliköörit"
+			]
+		}
+	]
+}

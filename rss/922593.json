@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bruno Rocca Barbaresco 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/922593/",
+	"feed_url": "https://alkometriikka.fi/rss/922593.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bruno Rocca Barbaresco 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-922593-2026-09-29-71.52",
+			"url": "https://alkometriikka.fi/tuotteet/922593/",
+			"title": "Bruno Rocca Barbaresco 2021 — 65,72 € → 71,52 €",
+			"content_html": "<p>Tuotteen Bruno Rocca Barbaresco 2021 hinta on muuttunut.</p><p>65,72 € → 71,52 € (+5,80 €, +8,83 %).</p>",
+			"summary": "Tuotteen Bruno Rocca Barbaresco 2021 hinta on muuttunut. 65,72 € → 71,52 € (+5,80 €, +8,83 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/922593-27f22be411f1.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

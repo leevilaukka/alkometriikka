@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – En v*ttu Tiiä Extra Dry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/930816/",
+	"feed_url": "https://alkometriikka.fi/rss/930816.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: En v*ttu Tiiä Extra Dry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-930816-2026-07-18-12.98",
+			"url": "https://alkometriikka.fi/tuotteet/930816/",
+			"title": "En v*ttu Tiiä Extra Dry — 13,74 € → 12,98 €",
+			"content_html": "<p>Tuotteen En v*ttu Tiiä Extra Dry hinta on muuttunut.</p><p>13,74 € → 12,98 € (−0,76 €, −5,53 %).</p>",
+			"summary": "Tuotteen En v*ttu Tiiä Extra Dry hinta on muuttunut. 13,74 € → 12,98 € (−0,76 €, −5,53 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/930816-f34a3cfa70c1.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

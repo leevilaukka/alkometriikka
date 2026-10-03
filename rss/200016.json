@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Davidsen's XO Limited Release Blend 17 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/200016/",
+	"feed_url": "https://alkometriikka.fi/rss/200016.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Davidsen's XO Limited Release Blend 17.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-200016-2026-09-29-91.25",
+			"url": "https://alkometriikka.fi/tuotteet/200016/",
+			"title": "Davidsen's XO Limited Release Blend 17 — 88,40 € → 91,25 €",
+			"content_html": "<p>Tuotteen Davidsen's XO Limited Release Blend 17 hinta on muuttunut.</p><p>88,40 € → 91,25 € (+2,85 €, +3,22 %).</p>",
+			"summary": "Tuotteen Davidsen's XO Limited Release Blend 17 hinta on muuttunut. 88,40 € → 91,25 € (+2,85 €, +3,22 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/200016-2a063927c4a4.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

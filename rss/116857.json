@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – 1800 Reserva Silver Tequila – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/116857/",
+	"feed_url": "https://alkometriikka.fi/rss/116857.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: 1800 Reserva Silver Tequila.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-116857-2026-09-29-48.1",
+			"url": "https://alkometriikka.fi/tuotteet/116857/",
+			"title": "1800 Reserva Silver Tequila — 48,06 € → 48,10 €",
+			"content_html": "<p>Tuotteen 1800 Reserva Silver Tequila hinta on muuttunut.</p><p>48,06 € → 48,10 € (+0,04 €, +0,08 %).</p>",
+			"summary": "Tuotteen 1800 Reserva Silver Tequila hinta on muuttunut. 48,06 € → 48,10 € (+0,04 €, +0,08 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/116857-93c6e877d78a.png",
+			"tags": [
+				"Väkevät",
+				"Tequilat"
+			]
+		}
+	]
+}

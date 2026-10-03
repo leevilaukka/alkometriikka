@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Frison Riesling Sauvignon Blanc 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/581647/",
+	"feed_url": "https://alkometriikka.fi/rss/581647.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Frison Riesling Sauvignon Blanc 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-581647-2026-02-02-11.19",
+			"url": "https://alkometriikka.fi/tuotteet/581647/",
+			"title": "Frison Riesling Sauvignon Blanc 2023 — 11,29 € → 11,19 €",
+			"content_html": "<p>Tuotteen Frison Riesling Sauvignon Blanc 2023 hinta on muuttunut.</p><p>11,29 € → 11,19 € (−0,10 €, −0,89 %).</p>",
+			"summary": "Tuotteen Frison Riesling Sauvignon Blanc 2023 hinta on muuttunut. 11,29 € → 11,19 € (−0,10 €, −0,89 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/581647-440696332d03.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-581647-2026-02-02-11.29",
+			"url": "https://alkometriikka.fi/tuotteet/581647/",
+			"title": "Frison Riesling Sauvignon Blanc 2023 — 11,19 € → 11,29 €",
+			"content_html": "<p>Tuotteen Frison Riesling Sauvignon Blanc 2023 hinta on muuttunut.</p><p>11,19 € → 11,29 € (+0,10 €, +0,89 %).</p>",
+			"summary": "Tuotteen Frison Riesling Sauvignon Blanc 2023 hinta on muuttunut. 11,19 € → 11,29 € (+0,10 €, +0,89 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/581647-440696332d03.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

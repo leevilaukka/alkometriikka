@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dingle Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/930923/",
+	"feed_url": "https://alkometriikka.fi/rss/930923.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dingle Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-930923-2026-07-18-63.99",
+			"url": "https://alkometriikka.fi/tuotteet/930923/",
+			"title": "Dingle Single Malt — 65,98 € → 63,99 €",
+			"content_html": "<p>Tuotteen Dingle Single Malt hinta on muuttunut.</p><p>65,98 € → 63,99 € (−1,99 €, −3,02 %).</p>",
+			"summary": "Tuotteen Dingle Single Malt hinta on muuttunut. 65,98 € → 63,99 € (−1,99 €, −3,02 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/930923-386cec7c1e53.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

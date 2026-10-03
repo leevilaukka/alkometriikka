@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Berris Sour Vadelma-Karpalo muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/251516/",
+	"feed_url": "https://alkometriikka.fi/rss/251516.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Berris Sour Vadelma-Karpalo muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-251516-2026-07-18-9.98",
+			"url": "https://alkometriikka.fi/tuotteet/251516/",
+			"title": "Berris Sour Vadelma-Karpalo muovipullo — 9,83 € → 9,98 €",
+			"content_html": "<p>Tuotteen Berris Sour Vadelma-Karpalo muovipullo hinta on muuttunut.</p><p>9,83 € → 9,98 € (+0,15 €, +1,53 %).</p>",
+			"summary": "Tuotteen Berris Sour Vadelma-Karpalo muovipullo hinta on muuttunut. 9,83 € → 9,98 € (+0,15 €, +1,53 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/251516-0da2ec86ef1c.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

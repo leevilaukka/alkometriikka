@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Laurent Ponsot Blanc Cuvée du Perce-Neige 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/946924/",
+	"feed_url": "https://alkometriikka.fi/rss/946924.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Laurent Ponsot Blanc Cuvée du Perce-Neige 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-946924-2026-09-29-64.93",
+			"url": "https://alkometriikka.fi/tuotteet/946924/",
+			"title": "Laurent Ponsot Blanc Cuvée du Perce-Neige 2023 — 62,91 € → 64,93 €",
+			"content_html": "<p>Tuotteen Laurent Ponsot Blanc Cuvée du Perce-Neige 2023 hinta on muuttunut.</p><p>62,91 € → 64,93 € (+2,02 €, +3,21 %).</p>",
+			"summary": "Tuotteen Laurent Ponsot Blanc Cuvée du Perce-Neige 2023 hinta on muuttunut. 62,91 € → 64,93 € (+2,02 €, +3,21 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/946924-ebb0e221813d.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

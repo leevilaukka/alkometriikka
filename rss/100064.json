@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Koskenkorva Metsämarja muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/100064/",
+	"feed_url": "https://alkometriikka.fi/rss/100064.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Koskenkorva Metsämarja muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-100064-2026-07-18-14.99",
+			"url": "https://alkometriikka.fi/tuotteet/100064/",
+			"title": "Koskenkorva Metsämarja muovipullo — 14,63 € → 14,99 €",
+			"content_html": "<p>Tuotteen Koskenkorva Metsämarja muovipullo hinta on muuttunut.</p><p>14,63 € → 14,99 € (+0,36 €, +2,46 %).</p>",
+			"summary": "Tuotteen Koskenkorva Metsämarja muovipullo hinta on muuttunut. 14,63 € → 14,99 € (+0,36 €, +2,46 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/100064-506718d93023.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

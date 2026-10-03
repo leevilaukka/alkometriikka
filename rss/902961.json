@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glen Scotia Victoriana Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902961/",
+	"feed_url": "https://alkometriikka.fi/rss/902961.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glen Scotia Victoriana Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902961-2026-09-29-99.98",
+			"url": "https://alkometriikka.fi/tuotteet/902961/",
+			"title": "Glen Scotia Victoriana Single Malt — 99,89 € → 99,98 €",
+			"content_html": "<p>Tuotteen Glen Scotia Victoriana Single Malt hinta on muuttunut.</p><p>99,89 € → 99,98 € (+0,09 €, +0,09 %).</p>",
+			"summary": "Tuotteen Glen Scotia Victoriana Single Malt hinta on muuttunut. 99,89 € → 99,98 € (+0,09 €, +0,09 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902961-17ad1d68a283.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

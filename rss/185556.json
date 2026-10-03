@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Isidoros Arvanitis Ouzo of Plomari – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/185556/",
+	"feed_url": "https://alkometriikka.fi/rss/185556.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Isidoros Arvanitis Ouzo of Plomari.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-185556-2026-07-18-22.99",
+			"url": "https://alkometriikka.fi/tuotteet/185556/",
+			"title": "Isidoros Arvanitis Ouzo of Plomari — 22,97 € → 22,99 €",
+			"content_html": "<p>Tuotteen Isidoros Arvanitis Ouzo of Plomari hinta on muuttunut.</p><p>22,97 € → 22,99 € (+0,02 €, +0,09 %).</p>",
+			"summary": "Tuotteen Isidoros Arvanitis Ouzo of Plomari hinta on muuttunut. 22,97 € → 22,99 € (+0,02 €, +0,09 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/185556-c338e5124f33.png",
+			"tags": [
+				"Väkevät",
+				"anistisleet"
+			]
+		}
+	]
+}

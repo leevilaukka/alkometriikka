@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – BlueWhite Mil Fhluraichean Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/923566/",
+	"feed_url": "https://alkometriikka.fi/rss/923566.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: BlueWhite Mil Fhluraichean Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-923566-2026-09-29-75.4",
+			"url": "https://alkometriikka.fi/tuotteet/923566/",
+			"title": "BlueWhite Mil Fhluraichean Malt — 73,11 € → 75,40 €",
+			"content_html": "<p>Tuotteen BlueWhite Mil Fhluraichean Malt hinta on muuttunut.</p><p>73,11 € → 75,40 € (+2,29 €, +3,13 %).</p>",
+			"summary": "Tuotteen BlueWhite Mil Fhluraichean Malt hinta on muuttunut. 73,11 € → 75,40 € (+2,29 €, +3,13 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/923566-e22ae1d32bab.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

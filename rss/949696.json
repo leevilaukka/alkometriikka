@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Van Nahmen Sparkling Juicy Tea White Tea-Tahiti Vanilla-Quince – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/949696/",
+	"feed_url": "https://alkometriikka.fi/rss/949696.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Van Nahmen Sparkling Juicy Tea White Tea-Tahiti Vanilla-Quince.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-949696-2026-07-18-18.69",
+			"url": "https://alkometriikka.fi/tuotteet/949696/",
+			"title": "Van Nahmen Sparkling Juicy Tea White Tea-Tahiti Vanilla-Quince — 18,62 € → 18,69 €",
+			"content_html": "<p>Tuotteen Van Nahmen Sparkling Juicy Tea White Tea-Tahiti Vanilla-Quince hinta on muuttunut.</p><p>18,62 € → 18,69 € (+0,07 €, +0,38 %).</p>",
+			"summary": "Tuotteen Van Nahmen Sparkling Juicy Tea White Tea-Tahiti Vanilla-Quince hinta on muuttunut. 18,62 € → 18,69 € (+0,07 €, +0,38 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/949696-b53dabbba383.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Torbreck The Steading 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/928722/",
+	"feed_url": "https://alkometriikka.fi/rss/928722.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Torbreck The Steading 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-928722-2026-09-29-47.21",
+			"url": "https://alkometriikka.fi/tuotteet/928722/",
+			"title": "Torbreck The Steading 2022 — 46,44 € → 47,21 €",
+			"content_html": "<p>Tuotteen Torbreck The Steading 2022 hinta on muuttunut.</p><p>46,44 € → 47,21 € (+0,77 €, +1,66 %).</p>",
+			"summary": "Tuotteen Torbreck The Steading 2022 hinta on muuttunut. 46,44 € → 47,21 € (+0,77 €, +1,66 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/928722-9ec7f9226acb.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jose Cuervo Especial Reposado Tequila – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/100021/",
+	"feed_url": "https://alkometriikka.fi/rss/100021.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jose Cuervo Especial Reposado Tequila.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-100021-2026-09-29-26.49",
+			"url": "https://alkometriikka.fi/tuotteet/100021/",
+			"title": "Jose Cuervo Especial Reposado Tequila — 26,47 € → 26,49 €",
+			"content_html": "<p>Tuotteen Jose Cuervo Especial Reposado Tequila hinta on muuttunut.</p><p>26,47 € → 26,49 € (+0,02 €, +0,08 %).</p>",
+			"summary": "Tuotteen Jose Cuervo Especial Reposado Tequila hinta on muuttunut. 26,47 € → 26,49 € (+0,02 €, +0,08 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/100021-dc3f3c6aa6c0.png",
+			"tags": [
+				"Väkevät",
+				"Tequilat"
+			]
+		}
+	]
+}

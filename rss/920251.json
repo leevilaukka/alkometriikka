@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tohi Cloudberry Mist Nordic Dry Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/920251/",
+	"feed_url": "https://alkometriikka.fi/rss/920251.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tohi Cloudberry Mist Nordic Dry Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-920251-2026-09-29-48.03",
+			"url": "https://alkometriikka.fi/tuotteet/920251/",
+			"title": "Tohi Cloudberry Mist Nordic Dry Gin — 47,20 € → 48,03 €",
+			"content_html": "<p>Tuotteen Tohi Cloudberry Mist Nordic Dry Gin hinta on muuttunut.</p><p>47,20 € → 48,03 € (+0,83 €, +1,76 %).</p>",
+			"summary": "Tuotteen Tohi Cloudberry Mist Nordic Dry Gin hinta on muuttunut. 47,20 € → 48,03 € (+0,83 €, +1,76 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/920251-d8610695949f.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

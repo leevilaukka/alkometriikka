@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Kraken Black Spiced – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/172657/",
+	"feed_url": "https://alkometriikka.fi/rss/172657.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Kraken Black Spiced.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-172657-2026-07-18-41.2",
+			"url": "https://alkometriikka.fi/tuotteet/172657/",
+			"title": "The Kraken Black Spiced — 41,18 € → 41,20 €",
+			"content_html": "<p>Tuotteen The Kraken Black Spiced hinta on muuttunut.</p><p>41,18 € → 41,20 € (+0,02 €, +0,05 %).</p>",
+			"summary": "Tuotteen The Kraken Black Spiced hinta on muuttunut. 41,18 € → 41,20 € (+0,02 €, +0,05 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/172657-5a24ab8b4f38.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

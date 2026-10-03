@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Apteekkarin Cognac VS – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/000945/",
+	"feed_url": "https://alkometriikka.fi/rss/000945.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Apteekkarin Cognac VS.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-000945-2026-07-18-30.98",
+			"url": "https://alkometriikka.fi/tuotteet/000945/",
+			"title": "Apteekkarin Cognac VS — 30,19 € → 30,98 €",
+			"content_html": "<p>Tuotteen Apteekkarin Cognac VS hinta on muuttunut.</p><p>30,19 € → 30,98 € (+0,79 €, +2,62 %).</p>",
+			"summary": "Tuotteen Apteekkarin Cognac VS hinta on muuttunut. 30,19 € → 30,98 € (+0,79 €, +2,62 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/000945-840fc63d1af3.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

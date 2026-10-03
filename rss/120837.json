@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Au Bubblegum – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/120837/",
+	"feed_url": "https://alkometriikka.fi/rss/120837.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Au Bubblegum.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-120837-2026-09-29-48.81",
+			"url": "https://alkometriikka.fi/tuotteet/120837/",
+			"title": "Au Bubblegum — 48,65 € → 48,81 €",
+			"content_html": "<p>Tuotteen Au Bubblegum hinta on muuttunut.</p><p>48,65 € → 48,81 € (+0,16 €, +0,33 %).</p>",
+			"summary": "Tuotteen Au Bubblegum hinta on muuttunut. 48,65 € → 48,81 € (+0,16 €, +0,33 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/120837-2dd6c4d3da19.png",
+			"tags": [
+				"Väkevät",
+				"mausteliköörit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Strekov 1075 Rizling  2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900486/",
+	"feed_url": "https://alkometriikka.fi/rss/900486.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Strekov 1075 Rizling  2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900486-2026-09-29-42.13",
+			"url": "https://alkometriikka.fi/tuotteet/900486/",
+			"title": "Strekov 1075 Rizling  2022 — 41,69 € → 42,13 €",
+			"content_html": "<p>Tuotteen Strekov 1075 Rizling  2022 hinta on muuttunut.</p><p>41,69 € → 42,13 € (+0,44 €, +1,06 %).</p>",
+			"summary": "Tuotteen Strekov 1075 Rizling 2022 hinta on muuttunut. 41,69 € → 42,13 € (+0,44 €, +1,06 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900486-d8a661f4d480.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mironia Reserva 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/425067/",
+	"feed_url": "https://alkometriikka.fi/rss/425067.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mironia Reserva 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-425067-2026-07-18-25.48",
+			"url": "https://alkometriikka.fi/tuotteet/425067/",
+			"title": "Mironia Reserva 2018 — 25,46 € → 25,48 €",
+			"content_html": "<p>Tuotteen Mironia Reserva 2018 hinta on muuttunut.</p><p>25,46 € → 25,48 € (+0,02 €, +0,08 %).</p>",
+			"summary": "Tuotteen Mironia Reserva 2018 hinta on muuttunut. 25,46 € → 25,48 € (+0,02 €, +0,08 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/425067-991058bdc25c.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

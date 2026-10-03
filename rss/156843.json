@@ -1,0 +1,50 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hienoa Cognac VS muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/156843/",
+	"feed_url": "https://alkometriikka.fi/rss/156843.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hienoa Cognac VS muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-156843-2026-07-18-13.7",
+			"url": "https://alkometriikka.fi/tuotteet/156843/",
+			"title": "Hienoa Cognac VS muovipullo — 13,64 € → 13,70 €",
+			"content_html": "<p>Tuotteen Hienoa Cognac VS muovipullo hinta on muuttunut.</p><p>13,64 € → 13,70 € (+0,06 €, +0,44 %).</p>",
+			"summary": "Tuotteen Hienoa Cognac VS muovipullo hinta on muuttunut. 13,64 € → 13,70 € (+0,06 €, +0,44 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/156843-1150b4385038.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		},
+		{
+			"id": "alkometriikka-156843-2026-02-02-13.54",
+			"url": "https://alkometriikka.fi/tuotteet/156843/",
+			"title": "Hienoa Cognac VS muovipullo — 13,64 € → 13,54 €",
+			"content_html": "<p>Tuotteen Hienoa Cognac VS muovipullo hinta on muuttunut.</p><p>13,64 € → 13,54 € (−0,10 €, −0,73 %).</p>",
+			"summary": "Tuotteen Hienoa Cognac VS muovipullo hinta on muuttunut. 13,64 € → 13,54 € (−0,10 €, −0,73 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/156843-1150b4385038.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		},
+		{
+			"id": "alkometriikka-156843-2026-02-02-13.64",
+			"url": "https://alkometriikka.fi/tuotteet/156843/",
+			"title": "Hienoa Cognac VS muovipullo — 13,54 € → 13,64 €",
+			"content_html": "<p>Tuotteen Hienoa Cognac VS muovipullo hinta on muuttunut.</p><p>13,54 € → 13,64 € (+0,10 €, +0,74 %).</p>",
+			"summary": "Tuotteen Hienoa Cognac VS muovipullo hinta on muuttunut. 13,54 € → 13,64 € (+0,10 €, +0,74 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/156843-1150b4385038.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

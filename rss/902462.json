@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Beehive XO Gold Edition – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902462/",
+	"feed_url": "https://alkometriikka.fi/rss/902462.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Beehive XO Gold Edition.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902462-2026-09-29-49.99",
+			"url": "https://alkometriikka.fi/tuotteet/902462/",
+			"title": "Beehive XO Gold Edition — 49,97 € → 49,99 €",
+			"content_html": "<p>Tuotteen Beehive XO Gold Edition hinta on muuttunut.</p><p>49,97 € → 49,99 € (+0,02 €, +0,04 %).</p>",
+			"summary": "Tuotteen Beehive XO Gold Edition hinta on muuttunut. 49,97 € → 49,99 € (+0,02 €, +0,04 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902462-d826ff6e3d81.png",
+			"tags": [
+				"Väkevät",
+				"brandyt"
+			]
+		}
+	]
+}

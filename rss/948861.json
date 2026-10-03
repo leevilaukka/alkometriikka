@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Konnevesi Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/948861/",
+	"feed_url": "https://alkometriikka.fi/rss/948861.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Konnevesi Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-948861-2026-09-29-48.39",
+			"url": "https://alkometriikka.fi/tuotteet/948861/",
+			"title": "Konnevesi Gin — 47,54 € → 48,39 €",
+			"content_html": "<p>Tuotteen Konnevesi Gin hinta on muuttunut.</p><p>47,54 € → 48,39 € (+0,85 €, +1,79 %).</p>",
+			"summary": "Tuotteen Konnevesi Gin hinta on muuttunut. 47,54 € → 48,39 € (+0,85 €, +1,79 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/948861-99406cb034c4.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

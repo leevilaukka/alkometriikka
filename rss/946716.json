@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Domaine Pattes Loup Chablis 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/946716/",
+	"feed_url": "https://alkometriikka.fi/rss/946716.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Domaine Pattes Loup Chablis 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-946716-2026-09-29-70.21",
+			"url": "https://alkometriikka.fi/tuotteet/946716/",
+			"title": "Domaine Pattes Loup Chablis 2021 — 67,84 € → 70,21 €",
+			"content_html": "<p>Tuotteen Domaine Pattes Loup Chablis 2021 hinta on muuttunut.</p><p>67,84 € → 70,21 € (+2,37 €, +3,49 %).</p>",
+			"summary": "Tuotteen Domaine Pattes Loup Chablis 2021 hinta on muuttunut. 67,84 € → 70,21 € (+2,37 €, +3,49 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/946716-a07333d59594.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

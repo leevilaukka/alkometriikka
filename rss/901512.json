@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nittenauer Weissbier – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901512/",
+	"feed_url": "https://alkometriikka.fi/rss/901512.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nittenauer Weissbier.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901512-2026-09-29-7.69",
+			"url": "https://alkometriikka.fi/tuotteet/901512/",
+			"title": "Nittenauer Weissbier — 8,19 € → 7,69 €",
+			"content_html": "<p>Tuotteen Nittenauer Weissbier hinta on muuttunut.</p><p>8,19 € → 7,69 € (−0,50 €, −6,11 %).</p>",
+			"summary": "Tuotteen Nittenauer Weissbier hinta on muuttunut. 8,19 € → 7,69 € (−0,50 €, −6,11 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901512-fcd299a05ec2.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

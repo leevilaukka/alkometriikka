@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château Maison Blanche 2000 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/906683/",
+	"feed_url": "https://alkometriikka.fi/rss/906683.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château Maison Blanche 2000.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-906683-2026-09-29-69.76",
+			"url": "https://alkometriikka.fi/tuotteet/906683/",
+			"title": "Château Maison Blanche 2000 — 67,41 € → 69,76 €",
+			"content_html": "<p>Tuotteen Château Maison Blanche 2000 hinta on muuttunut.</p><p>67,41 € → 69,76 € (+2,35 €, +3,49 %).</p>",
+			"summary": "Tuotteen Château Maison Blanche 2000 hinta on muuttunut. 67,41 € → 69,76 € (+2,35 €, +3,49 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/906683-b0fca589f5c7.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

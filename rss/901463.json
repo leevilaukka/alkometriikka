@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Koskenkorva Salmiakki-Minttu – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901463/",
+	"feed_url": "https://alkometriikka.fi/rss/901463.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Koskenkorva Salmiakki-Minttu.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901463-2026-07-18-17.99",
+			"url": "https://alkometriikka.fi/tuotteet/901463/",
+			"title": "Koskenkorva Salmiakki-Minttu — 17,14 € → 17,99 €",
+			"content_html": "<p>Tuotteen Koskenkorva Salmiakki-Minttu hinta on muuttunut.</p><p>17,14 € → 17,99 € (+0,85 €, +4,96 %).</p>",
+			"summary": "Tuotteen Koskenkorva Salmiakki-Minttu hinta on muuttunut. 17,14 € → 17,99 € (+0,85 €, +4,96 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901463-407547cd09f2.png",
+			"tags": [
+				"Väkevät",
+				"salmiakkiliköörit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Planet Romeiko 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901929/",
+	"feed_url": "https://alkometriikka.fi/rss/901929.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Planet Romeiko 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901929-2026-09-29-47.25",
+			"url": "https://alkometriikka.fi/tuotteet/901929/",
+			"title": "Planet Romeiko 2025 — 45,22 € → 47,25 €",
+			"content_html": "<p>Tuotteen Planet Romeiko 2025 hinta on muuttunut.</p><p>45,22 € → 47,25 € (+2,03 €, +4,49 %).</p>",
+			"summary": "Tuotteen Planet Romeiko 2025 hinta on muuttunut. 45,22 € → 47,25 € (+2,03 €, +4,49 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901929-245df9c9b014.png",
+			"tags": [
+				"Viinit",
+				"jälkiruokaviinit"
+			]
+		}
+	]
+}

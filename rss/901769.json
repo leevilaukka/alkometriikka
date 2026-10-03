@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bel Colle Barolo 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901769/",
+	"feed_url": "https://alkometriikka.fi/rss/901769.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bel Colle Barolo 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901769-2026-09-29-25.99",
+			"url": "https://alkometriikka.fi/tuotteet/901769/",
+			"title": "Bel Colle Barolo 2022 — 24,99 € → 25,99 €",
+			"content_html": "<p>Tuotteen Bel Colle Barolo 2022 hinta on muuttunut.</p><p>24,99 € → 25,99 € (+1,00 €, +4,00 %).</p>",
+			"summary": "Tuotteen Bel Colle Barolo 2022 hinta on muuttunut. 24,99 € → 25,99 € (+1,00 €, +4,00 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901769-812a892e6e2a.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

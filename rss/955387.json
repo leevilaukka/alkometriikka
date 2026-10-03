@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Trimbach Riesling 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/955387/",
+	"feed_url": "https://alkometriikka.fi/rss/955387.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Trimbach Riesling 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-955387-2026-07-18-26.5",
+			"url": "https://alkometriikka.fi/tuotteet/955387/",
+			"title": "Trimbach Riesling 2023 — 26,45 € → 26,50 €",
+			"content_html": "<p>Tuotteen Trimbach Riesling 2023 hinta on muuttunut.</p><p>26,45 € → 26,50 € (+0,05 €, +0,19 %).</p>",
+			"summary": "Tuotteen Trimbach Riesling 2023 hinta on muuttunut. 26,45 € → 26,50 € (+0,05 €, +0,19 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/955387-6a5a604f01ca.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pasanau Vi de Paratge Los Torrents 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900928/",
+	"feed_url": "https://alkometriikka.fi/rss/900928.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pasanau Vi de Paratge Los Torrents 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900928-2026-09-29-47.33",
+			"url": "https://alkometriikka.fi/tuotteet/900928/",
+			"title": "Pasanau Vi de Paratge Los Torrents 2020 — 46,56 € → 47,33 €",
+			"content_html": "<p>Tuotteen Pasanau Vi de Paratge Los Torrents 2020 hinta on muuttunut.</p><p>46,56 € → 47,33 € (+0,77 €, +1,65 %).</p>",
+			"summary": "Tuotteen Pasanau Vi de Paratge Los Torrents 2020 hinta on muuttunut. 46,56 € → 47,33 € (+0,77 €, +1,65 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900928-68dd08ff72bd.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

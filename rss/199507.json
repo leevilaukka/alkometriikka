@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Whyte & Mackay – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/199507/",
+	"feed_url": "https://alkometriikka.fi/rss/199507.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Whyte & Mackay.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-199507-2026-09-29-36.15",
+			"url": "https://alkometriikka.fi/tuotteet/199507/",
+			"title": "Whyte & Mackay — 30,24 € → 36,15 €",
+			"content_html": "<p>Tuotteen Whyte & Mackay hinta on muuttunut.</p><p>30,24 € → 36,15 € (+5,91 €, +19,54 %).</p>",
+			"summary": "Tuotteen Whyte & Mackay hinta on muuttunut. 30,24 € → 36,15 € (+5,91 €, +19,54 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/199507-38c035c6b0c3.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

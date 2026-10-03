@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kyrö Dark Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/188476/",
+	"feed_url": "https://alkometriikka.fi/rss/188476.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kyrö Dark Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-188476-2026-09-29-44.78",
+			"url": "https://alkometriikka.fi/tuotteet/188476/",
+			"title": "Kyrö Dark Gin — 43,98 € → 44,78 €",
+			"content_html": "<p>Tuotteen Kyrö Dark Gin hinta on muuttunut.</p><p>43,98 € → 44,78 € (+0,80 €, +1,82 %).</p>",
+			"summary": "Tuotteen Kyrö Dark Gin hinta on muuttunut. 43,98 € → 44,78 € (+0,80 €, +1,82 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/188476-4fb518669360.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

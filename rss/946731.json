@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Arnaud Margaine Le Caractère M de Margaine Premier Cru Champagne Extra Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/946731/",
+	"feed_url": "https://alkometriikka.fi/rss/946731.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Arnaud Margaine Le Caractère M de Margaine Premier Cru Champagne Extra Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-946731-2026-09-29-77.49",
+			"url": "https://alkometriikka.fi/tuotteet/946731/",
+			"title": "Arnaud Margaine Le Caractère M de Margaine Premier Cru Champagne Extra Brut — 74,63 € → 77,49 €",
+			"content_html": "<p>Tuotteen Arnaud Margaine Le Caractère M de Margaine Premier Cru Champagne Extra Brut hinta on muuttunut.</p><p>74,63 € → 77,49 € (+2,86 €, +3,83 %).</p>",
+			"summary": "Tuotteen Arnaud Margaine Le Caractère M de Margaine Premier Cru Champagne Extra Brut hinta on muuttunut. 74,63 € → 77,49 € (+2,86 €, +3,83 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/946731-313928ebffe2.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

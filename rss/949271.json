@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Rivo Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/949271/",
+	"feed_url": "https://alkometriikka.fi/rss/949271.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Rivo Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-949271-2026-09-29-55.38",
+			"url": "https://alkometriikka.fi/tuotteet/949271/",
+			"title": "Rivo Gin — 54,02 € → 55,38 €",
+			"content_html": "<p>Tuotteen Rivo Gin hinta on muuttunut.</p><p>54,02 € → 55,38 € (+1,36 €, +2,52 %).</p>",
+			"summary": "Tuotteen Rivo Gin hinta on muuttunut. 54,02 € → 55,38 € (+1,36 €, +2,52 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/949271-7657db4ab508.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

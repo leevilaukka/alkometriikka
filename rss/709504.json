@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hiisi Päivä Bock – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/709504/",
+	"feed_url": "https://alkometriikka.fi/rss/709504.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hiisi Päivä Bock.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-709504-2026-02-02-4.5",
+			"url": "https://alkometriikka.fi/tuotteet/709504/",
+			"title": "Hiisi Päivä Bock — 4,60 € → 4,50 €",
+			"content_html": "<p>Tuotteen Hiisi Päivä Bock hinta on muuttunut.</p><p>4,60 € → 4,50 € (−0,10 €, −2,17 %).</p>",
+			"summary": "Tuotteen Hiisi Päivä Bock hinta on muuttunut. 4,60 € → 4,50 € (−0,10 €, −2,17 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/709504-c3f7d52af91b.png",
+			"tags": [
+				"oluet",
+				"Vahva lager"
+			]
+		},
+		{
+			"id": "alkometriikka-709504-2026-02-02-4.6",
+			"url": "https://alkometriikka.fi/tuotteet/709504/",
+			"title": "Hiisi Päivä Bock — 4,50 € → 4,60 €",
+			"content_html": "<p>Tuotteen Hiisi Päivä Bock hinta on muuttunut.</p><p>4,50 € → 4,60 € (+0,10 €, +2,22 %).</p>",
+			"summary": "Tuotteen Hiisi Päivä Bock hinta on muuttunut. 4,50 € → 4,60 € (+0,10 €, +2,22 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/709504-c3f7d52af91b.png",
+			"tags": [
+				"oluet",
+				"Vahva lager"
+			]
+		}
+	]
+}

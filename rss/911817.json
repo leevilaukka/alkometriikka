@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tanca Farrá 2017 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/911817/",
+	"feed_url": "https://alkometriikka.fi/rss/911817.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tanca Farrá 2017.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-911817-2026-09-29-37.48",
+			"url": "https://alkometriikka.fi/tuotteet/911817/",
+			"title": "Tanca Farrá 2017 — 37,40 € → 37,48 €",
+			"content_html": "<p>Tuotteen Tanca Farrá 2017 hinta on muuttunut.</p><p>37,40 € → 37,48 € (+0,08 €, +0,21 %).</p>",
+			"summary": "Tuotteen Tanca Farrá 2017 hinta on muuttunut. 37,40 € → 37,48 € (+0,08 €, +0,21 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/911817-0fe20a89f286.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

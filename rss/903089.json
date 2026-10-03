@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Azelia Barolo Margheria 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903089/",
+	"feed_url": "https://alkometriikka.fi/rss/903089.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Azelia Barolo Margheria 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903089-2026-09-29-126",
+			"url": "https://alkometriikka.fi/tuotteet/903089/",
+			"title": "Azelia Barolo Margheria 2021 — 119,73 € → 126,00 €",
+			"content_html": "<p>Tuotteen Azelia Barolo Margheria 2021 hinta on muuttunut.</p><p>119,73 € → 126,00 € (+6,27 €, +5,24 %).</p>",
+			"summary": "Tuotteen Azelia Barolo Margheria 2021 hinta on muuttunut. 119,73 € → 126,00 € (+6,27 €, +5,24 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903089-fea627928029.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

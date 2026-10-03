@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Masi Brolo Campofiorin 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/916917/",
+	"feed_url": "https://alkometriikka.fi/rss/916917.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Masi Brolo Campofiorin 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-916917-2026-07-18-25.5",
+			"url": "https://alkometriikka.fi/tuotteet/916917/",
+			"title": "Masi Brolo Campofiorin 2020 — 25,46 € → 25,50 €",
+			"content_html": "<p>Tuotteen Masi Brolo Campofiorin 2020 hinta on muuttunut.</p><p>25,46 € → 25,50 € (+0,04 €, +0,16 %).</p>",
+			"summary": "Tuotteen Masi Brolo Campofiorin 2020 hinta on muuttunut. 25,46 € → 25,50 € (+0,04 €, +0,16 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/916917-8c6cdffd6966.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Shafer Hillside Select 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/918873/",
+	"feed_url": "https://alkometriikka.fi/rss/918873.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Shafer Hillside Select 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-918873-2026-09-29-449.29",
+			"url": "https://alkometriikka.fi/tuotteet/918873/",
+			"title": "Shafer Hillside Select 2018 — 420,46 € → 449,29 €",
+			"content_html": "<p>Tuotteen Shafer Hillside Select 2018 hinta on muuttunut.</p><p>420,46 € → 449,29 € (+28,83 €, +6,86 %).</p>",
+			"summary": "Tuotteen Shafer Hillside Select 2018 hinta on muuttunut. 420,46 € → 449,29 € (+28,83 €, +6,86 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/918873-1f7aea7ff29e.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

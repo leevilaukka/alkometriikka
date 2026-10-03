@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château de Seguin Cuvée Prestige 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/005406/",
+	"feed_url": "https://alkometriikka.fi/rss/005406.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château de Seguin Cuvée Prestige 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-005406-2026-07-18-21.9",
+			"url": "https://alkometriikka.fi/tuotteet/005406/",
+			"title": "Château de Seguin Cuvée Prestige 2022 — 21,75 € → 21,90 €",
+			"content_html": "<p>Tuotteen Château de Seguin Cuvée Prestige 2022 hinta on muuttunut.</p><p>21,75 € → 21,90 € (+0,15 €, +0,69 %).</p>",
+			"summary": "Tuotteen Château de Seguin Cuvée Prestige 2022 hinta on muuttunut. 21,75 € → 21,90 € (+0,15 €, +0,69 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/005406-7b47eaf3195d.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

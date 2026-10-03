@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Le Mixer by Monin Pina Colada  muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901794/",
+	"feed_url": "https://alkometriikka.fi/rss/901794.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Le Mixer by Monin Pina Colada  muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901794-2026-07-18-22.35",
+			"url": "https://alkometriikka.fi/tuotteet/901794/",
+			"title": "Le Mixer by Monin Pina Colada  muovipullo — 21,87 € → 22,35 €",
+			"content_html": "<p>Tuotteen Le Mixer by Monin Pina Colada  muovipullo hinta on muuttunut.</p><p>21,87 € → 22,35 € (+0,48 €, +2,19 %).</p>",
+			"summary": "Tuotteen Le Mixer by Monin Pina Colada muovipullo hinta on muuttunut. 21,87 € → 22,35 € (+0,48 €, +2,19 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901794-2dbafbb6c831.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

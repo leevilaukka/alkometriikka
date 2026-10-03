@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – EPC Blanc de Blancs Champagne Brut Nature – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902982/",
+	"feed_url": "https://alkometriikka.fi/rss/902982.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: EPC Blanc de Blancs Champagne Brut Nature.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902982-2026-09-29-62.98",
+			"url": "https://alkometriikka.fi/tuotteet/902982/",
+			"title": "EPC Blanc de Blancs Champagne Brut Nature — 62,99 € → 62,98 €",
+			"content_html": "<p>Tuotteen EPC Blanc de Blancs Champagne Brut Nature hinta on muuttunut.</p><p>62,99 € → 62,98 € (−0,01 €, −0,02 %).</p>",
+			"summary": "Tuotteen EPC Blanc de Blancs Champagne Brut Nature hinta on muuttunut. 62,99 € → 62,98 € (−0,01 €, −0,02 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902982-34f189f04be8.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

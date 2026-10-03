@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Passo del Sud Appassimento 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/942343/",
+	"feed_url": "https://alkometriikka.fi/rss/942343.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Passo del Sud Appassimento 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-942343-2026-07-18-17.98",
+			"url": "https://alkometriikka.fi/tuotteet/942343/",
+			"title": "Passo del Sud Appassimento 2023 — 17,44 € → 17,98 €",
+			"content_html": "<p>Tuotteen Passo del Sud Appassimento 2023 hinta on muuttunut.</p><p>17,44 € → 17,98 € (+0,54 €, +3,10 %).</p>",
+			"summary": "Tuotteen Passo del Sud Appassimento 2023 hinta on muuttunut. 17,44 € → 17,98 € (+0,54 €, +3,10 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/942343-39f7758de700.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

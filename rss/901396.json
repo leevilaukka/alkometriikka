@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vve Fourny & Fils Cuvée R Blanc de Blancs Premier Cru Champagne Extra Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901396/",
+	"feed_url": "https://alkometriikka.fi/rss/901396.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vve Fourny & Fils Cuvée R Blanc de Blancs Premier Cru Champagne Extra Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901396-2026-09-29-75.74",
+			"url": "https://alkometriikka.fi/tuotteet/901396/",
+			"title": "Vve Fourny & Fils Cuvée R Blanc de Blancs Premier Cru Champagne Extra Brut — 72,99 € → 75,74 €",
+			"content_html": "<p>Tuotteen Vve Fourny & Fils Cuvée R Blanc de Blancs Premier Cru Champagne Extra Brut hinta on muuttunut.</p><p>72,99 € → 75,74 € (+2,75 €, +3,77 %).</p>",
+			"summary": "Tuotteen Vve Fourny & Fils Cuvée R Blanc de Blancs Premier Cru Champagne Extra Brut hinta on muuttunut. 72,99 € → 75,74 € (+2,75 €, +3,77 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901396-52d2de221eae.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-901396-2026-07-18-72.99",
+			"url": "https://alkometriikka.fi/tuotteet/901396/",
+			"title": "Vve Fourny & Fils Cuvée R Blanc de Blancs Premier Cru Champagne Extra Brut — 73,54 € → 72,99 €",
+			"content_html": "<p>Tuotteen Vve Fourny & Fils Cuvée R Blanc de Blancs Premier Cru Champagne Extra Brut hinta on muuttunut.</p><p>73,54 € → 72,99 € (−0,55 €, −0,75 %).</p>",
+			"summary": "Tuotteen Vve Fourny & Fils Cuvée R Blanc de Blancs Premier Cru Champagne Extra Brut hinta on muuttunut. 73,54 € → 72,99 € (−0,55 €, −0,75 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901396-52d2de221eae.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

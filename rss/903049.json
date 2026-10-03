@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Signatory Vintage Benriach 2013 12 Year Old – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903049/",
+	"feed_url": "https://alkometriikka.fi/rss/903049.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Signatory Vintage Benriach 2013 12 Year Old.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903049-2026-09-29-92.3",
+			"url": "https://alkometriikka.fi/tuotteet/903049/",
+			"title": "Signatory Vintage Benriach 2013 12 Year Old — 89,97 € → 92,30 €",
+			"content_html": "<p>Tuotteen Signatory Vintage Benriach 2013 12 Year Old hinta on muuttunut.</p><p>89,97 € → 92,30 € (+2,33 €, +2,59 %).</p>",
+			"summary": "Tuotteen Signatory Vintage Benriach 2013 12 Year Old hinta on muuttunut. 89,97 € → 92,30 € (+2,33 €, +2,59 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903049-d0f279b173e1.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

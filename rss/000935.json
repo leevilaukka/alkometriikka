@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Larsen VS – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/000935/",
+	"feed_url": "https://alkometriikka.fi/rss/000935.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Larsen VS.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-000935-2026-09-29-41.99",
+			"url": "https://alkometriikka.fi/tuotteet/000935/",
+			"title": "Larsen VS — 43,76 € → 41,99 €",
+			"content_html": "<p>Tuotteen Larsen VS hinta on muuttunut.</p><p>43,76 € → 41,99 € (−1,77 €, −4,04 %).</p>",
+			"summary": "Tuotteen Larsen VS hinta on muuttunut. 43,76 € → 41,99 € (−1,77 €, −4,04 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/000935-72086e64ad34.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

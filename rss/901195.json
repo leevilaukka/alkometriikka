@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lancewood Private Collection Tempranillo 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901195/",
+	"feed_url": "https://alkometriikka.fi/rss/901195.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lancewood Private Collection Tempranillo 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901195-2026-09-29-8.99",
+			"url": "https://alkometriikka.fi/tuotteet/901195/",
+			"title": "Lancewood Private Collection Tempranillo 2024 — 8,49 € → 8,99 €",
+			"content_html": "<p>Tuotteen Lancewood Private Collection Tempranillo 2024 hinta on muuttunut.</p><p>8,49 € → 8,99 € (+0,50 €, +5,89 %).</p>",
+			"summary": "Tuotteen Lancewood Private Collection Tempranillo 2024 hinta on muuttunut. 8,49 € → 8,99 € (+0,50 €, +5,89 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901195-ee5eb7a57aa5.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-901195-2026-07-18-8.49",
+			"url": "https://alkometriikka.fi/tuotteet/901195/",
+			"title": "Lancewood Private Collection Tempranillo 2024 — 8,24 € → 8,49 €",
+			"content_html": "<p>Tuotteen Lancewood Private Collection Tempranillo 2024 hinta on muuttunut.</p><p>8,24 € → 8,49 € (+0,25 €, +3,03 %).</p>",
+			"summary": "Tuotteen Lancewood Private Collection Tempranillo 2024 hinta on muuttunut. 8,24 € → 8,49 € (+0,25 €, +3,03 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901195-ee5eb7a57aa5.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

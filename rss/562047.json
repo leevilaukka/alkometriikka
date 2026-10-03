@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Louis Roederer Cristal Champagne Brut 2016 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/562047/",
+	"feed_url": "https://alkometriikka.fi/rss/562047.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Louis Roederer Cristal Champagne Brut 2016.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-562047-2026-07-18-364.99",
+			"url": "https://alkometriikka.fi/tuotteet/562047/",
+			"title": "Louis Roederer Cristal Champagne Brut 2016 — 360,45 € → 364,99 €",
+			"content_html": "<p>Tuotteen Louis Roederer Cristal Champagne Brut 2016 hinta on muuttunut.</p><p>360,45 € → 364,99 € (+4,54 €, +1,26 %).</p>",
+			"summary": "Tuotteen Louis Roederer Cristal Champagne Brut 2016 hinta on muuttunut. 360,45 € → 364,99 € (+4,54 €, +1,26 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/562047-65c7746afca0.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

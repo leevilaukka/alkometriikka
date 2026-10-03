@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gramona Imperial Corpinnat Brut 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/540777/",
+	"feed_url": "https://alkometriikka.fi/rss/540777.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gramona Imperial Corpinnat Brut 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-540777-2026-09-29-40.8",
+			"url": "https://alkometriikka.fi/tuotteet/540777/",
+			"title": "Gramona Imperial Corpinnat Brut 2019 — 40,45 € → 40,80 €",
+			"content_html": "<p>Tuotteen Gramona Imperial Corpinnat Brut 2019 hinta on muuttunut.</p><p>40,45 € → 40,80 € (+0,35 €, +0,87 %).</p>",
+			"summary": "Tuotteen Gramona Imperial Corpinnat Brut 2019 hinta on muuttunut. 40,45 € → 40,80 € (+0,35 €, +0,87 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/540777-086b76eed82a.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

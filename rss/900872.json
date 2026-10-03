@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Dandy Costaross Prosecco Extra Dry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900872/",
+	"feed_url": "https://alkometriikka.fi/rss/900872.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Dandy Costaross Prosecco Extra Dry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900872-2026-09-29-5.98",
+			"url": "https://alkometriikka.fi/tuotteet/900872/",
+			"title": "The Dandy Costaross Prosecco Extra Dry — 5,82 € → 5,98 €",
+			"content_html": "<p>Tuotteen The Dandy Costaross Prosecco Extra Dry hinta on muuttunut.</p><p>5,82 € → 5,98 € (+0,16 €, +2,75 %).</p>",
+			"summary": "Tuotteen The Dandy Costaross Prosecco Extra Dry hinta on muuttunut. 5,82 € → 5,98 € (+0,16 €, +2,75 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900872-285ab00df93d.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

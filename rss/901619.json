@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gran Feudo Dulce de Moscatel 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901619/",
+	"feed_url": "https://alkometriikka.fi/rss/901619.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gran Feudo Dulce de Moscatel 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901619-2026-09-29-15.8",
+			"url": "https://alkometriikka.fi/tuotteet/901619/",
+			"title": "Gran Feudo Dulce de Moscatel 2023 — 15,78 € → 15,80 €",
+			"content_html": "<p>Tuotteen Gran Feudo Dulce de Moscatel 2023 hinta on muuttunut.</p><p>15,78 € → 15,80 € (+0,02 €, +0,13 %).</p>",
+			"summary": "Tuotteen Gran Feudo Dulce de Moscatel 2023 hinta on muuttunut. 15,78 € → 15,80 € (+0,02 €, +0,13 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901619-c8f8ae846fb5.png",
+			"tags": [
+				"Viinit",
+				"jälkiruokaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Niemelän Mansikkakuohu – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/957171/",
+	"feed_url": "https://alkometriikka.fi/rss/957171.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Niemelän Mansikkakuohu.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-957171-2026-07-18-14.89",
+			"url": "https://alkometriikka.fi/tuotteet/957171/",
+			"title": "Niemelän Mansikkakuohu — 14,83 € → 14,89 €",
+			"content_html": "<p>Tuotteen Niemelän Mansikkakuohu hinta on muuttunut.</p><p>14,83 € → 14,89 € (+0,06 €, +0,40 %).</p>",
+			"summary": "Tuotteen Niemelän Mansikkakuohu hinta on muuttunut. 14,83 € → 14,89 € (+0,06 €, +0,40 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/957171-45c66a38dd0e.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lanson Noble Champagne Brut Vintage 2012 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900435/",
+	"feed_url": "https://alkometriikka.fi/rss/900435.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lanson Noble Champagne Brut Vintage 2012.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900435-2026-09-29-264",
+			"url": "https://alkometriikka.fi/tuotteet/900435/",
+			"title": "Lanson Noble Champagne Brut Vintage 2012 — 246,01 € → 264,00 €",
+			"content_html": "<p>Tuotteen Lanson Noble Champagne Brut Vintage 2012 hinta on muuttunut.</p><p>246,01 € → 264,00 € (+17,99 €, +7,31 %).</p>",
+			"summary": "Tuotteen Lanson Noble Champagne Brut Vintage 2012 hinta on muuttunut. 246,01 € → 264,00 € (+17,99 €, +7,31 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900435-1b16b0d5964c.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

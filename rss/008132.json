@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – JP. Chenet Medium Sweet 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/008132/",
+	"feed_url": "https://alkometriikka.fi/rss/008132.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: JP. Chenet Medium Sweet 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-008132-2026-07-18-4.18",
+			"url": "https://alkometriikka.fi/tuotteet/008132/",
+			"title": "JP. Chenet Medium Sweet 2023 — 4,14 € → 4,18 €",
+			"content_html": "<p>Tuotteen JP. Chenet Medium Sweet 2023 hinta on muuttunut.</p><p>4,14 € → 4,18 € (+0,04 €, +0,97 %).</p>",
+			"summary": "Tuotteen JP. Chenet Medium Sweet 2023 hinta on muuttunut. 4,14 € → 4,18 € (+0,04 €, +0,97 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/008132-14b1562852bb.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

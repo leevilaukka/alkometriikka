@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Beefeater Zesty Lemon – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902276/",
+	"feed_url": "https://alkometriikka.fi/rss/902276.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Beefeater Zesty Lemon.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902276-2026-07-18-37.68",
+			"url": "https://alkometriikka.fi/tuotteet/902276/",
+			"title": "Beefeater Zesty Lemon — 37,64 € → 37,68 €",
+			"content_html": "<p>Tuotteen Beefeater Zesty Lemon hinta on muuttunut.</p><p>37,64 € → 37,68 € (+0,04 €, +0,11 %).</p>",
+			"summary": "Tuotteen Beefeater Zesty Lemon hinta on muuttunut. 37,64 € → 37,68 € (+0,04 €, +0,11 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902276-a4ef7678ef91.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

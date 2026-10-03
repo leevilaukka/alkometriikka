@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Latium Morini Leon Amarone Della Valpolicella 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/947518/",
+	"feed_url": "https://alkometriikka.fi/rss/947518.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Latium Morini Leon Amarone Della Valpolicella 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-947518-2026-09-29-65.9",
+			"url": "https://alkometriikka.fi/tuotteet/947518/",
+			"title": "Latium Morini Leon Amarone Della Valpolicella 2018 — 63,81 € → 65,90 €",
+			"content_html": "<p>Tuotteen Latium Morini Leon Amarone Della Valpolicella 2018 hinta on muuttunut.</p><p>63,81 € → 65,90 € (+2,09 €, +3,28 %).</p>",
+			"summary": "Tuotteen Latium Morini Leon Amarone Della Valpolicella 2018 hinta on muuttunut. 63,81 € → 65,90 € (+2,09 €, +3,28 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/947518-29056b396e2e.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

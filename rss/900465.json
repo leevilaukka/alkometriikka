@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bruichladdich Bere Barley 2013 Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900465/",
+	"feed_url": "https://alkometriikka.fi/rss/900465.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bruichladdich Bere Barley 2013 Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900465-2026-09-29-140.99",
+			"url": "https://alkometriikka.fi/tuotteet/900465/",
+			"title": "Bruichladdich Bere Barley 2013 Single Malt — 135,98 € → 140,99 €",
+			"content_html": "<p>Tuotteen Bruichladdich Bere Barley 2013 Single Malt hinta on muuttunut.</p><p>135,98 € → 140,99 € (+5,01 €, +3,68 %).</p>",
+			"summary": "Tuotteen Bruichladdich Bere Barley 2013 Single Malt hinta on muuttunut. 135,98 € → 140,99 € (+5,01 €, +3,68 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900465-64c4b94daa69.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

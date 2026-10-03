@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tenuta Ferrante Desiderio 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900308/",
+	"feed_url": "https://alkometriikka.fi/rss/900308.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tenuta Ferrante Desiderio 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900308-2026-09-29-33.81",
+			"url": "https://alkometriikka.fi/tuotteet/900308/",
+			"title": "Tenuta Ferrante Desiderio 2022 — 33,04 € → 33,81 €",
+			"content_html": "<p>Tuotteen Tenuta Ferrante Desiderio 2022 hinta on muuttunut.</p><p>33,04 € → 33,81 € (+0,77 €, +2,33 %).</p>",
+			"summary": "Tuotteen Tenuta Ferrante Desiderio 2022 hinta on muuttunut. 33,04 € → 33,81 € (+0,77 €, +2,33 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900308-59c9765209b8.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

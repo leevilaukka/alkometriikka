@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dupont Fine Calvados – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/000646/",
+	"feed_url": "https://alkometriikka.fi/rss/000646.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dupont Fine Calvados.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-000646-2026-09-29-35.35",
+			"url": "https://alkometriikka.fi/tuotteet/000646/",
+			"title": "Dupont Fine Calvados — 34,98 € → 35,35 €",
+			"content_html": "<p>Tuotteen Dupont Fine Calvados hinta on muuttunut.</p><p>34,98 € → 35,35 € (+0,37 €, +1,06 %).</p>",
+			"summary": "Tuotteen Dupont Fine Calvados hinta on muuttunut. 34,98 € → 35,35 € (+0,37 €, +1,06 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/000646-3e280307776d.png",
+			"tags": [
+				"Väkevät",
+				"calvadosit"
+			]
+		}
+	]
+}

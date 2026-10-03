@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cali by Snoop Red – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/935082/",
+	"feed_url": "https://alkometriikka.fi/rss/935082.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cali by Snoop Red.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-935082-2026-07-18-16.49",
+			"url": "https://alkometriikka.fi/tuotteet/935082/",
+			"title": "Cali by Snoop Red — 16,45 € → 16,49 €",
+			"content_html": "<p>Tuotteen Cali by Snoop Red hinta on muuttunut.</p><p>16,45 € → 16,49 € (+0,04 €, +0,24 %).</p>",
+			"summary": "Tuotteen Cali by Snoop Red hinta on muuttunut. 16,45 € → 16,49 € (+0,04 €, +0,24 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/935082-909d9c08274d.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

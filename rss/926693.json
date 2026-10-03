@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bruno Giacosa Nebbiolo d’Alba Vigna Valmaggiore 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/926693/",
+	"feed_url": "https://alkometriikka.fi/rss/926693.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bruno Giacosa Nebbiolo d’Alba Vigna Valmaggiore 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-926693-2026-09-29-70.88",
+			"url": "https://alkometriikka.fi/tuotteet/926693/",
+			"title": "Bruno Giacosa Nebbiolo d’Alba Vigna Valmaggiore 2021 — 68,45 € → 70,88 €",
+			"content_html": "<p>Tuotteen Bruno Giacosa Nebbiolo d’Alba Vigna Valmaggiore 2021 hinta on muuttunut.</p><p>68,45 € → 70,88 € (+2,43 €, +3,55 %).</p>",
+			"summary": "Tuotteen Bruno Giacosa Nebbiolo d’Alba Vigna Valmaggiore 2021 hinta on muuttunut. 68,45 € → 70,88 € (+2,43 €, +3,55 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/926693-06fd909b412e.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

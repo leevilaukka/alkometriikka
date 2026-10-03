@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – La Rioja Alta Gran Reserva 890 Magnum 2010 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900012/",
+	"feed_url": "https://alkometriikka.fi/rss/900012.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: La Rioja Alta Gran Reserva 890 Magnum 2010.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900012-2026-09-29-455.53",
+			"url": "https://alkometriikka.fi/tuotteet/900012/",
+			"title": "La Rioja Alta Gran Reserva 890 Magnum 2010 — 428,65 € → 455,53 €",
+			"content_html": "<p>Tuotteen La Rioja Alta Gran Reserva 890 Magnum 2010 hinta on muuttunut.</p><p>428,65 € → 455,53 € (+26,88 €, +6,27 %).</p>",
+			"summary": "Tuotteen La Rioja Alta Gran Reserva 890 Magnum 2010 hinta on muuttunut. 428,65 € → 455,53 € (+26,88 €, +6,27 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900012-753aa9ca04b2.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

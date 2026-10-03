@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – André Clouet Grande Réserve Blanc de Noirs Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/537517/",
+	"feed_url": "https://alkometriikka.fi/rss/537517.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: André Clouet Grande Réserve Blanc de Noirs Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-537517-2026-09-29-39.99",
+			"url": "https://alkometriikka.fi/tuotteet/537517/",
+			"title": "André Clouet Grande Réserve Blanc de Noirs Champagne Brut — 39,98 € → 39,99 €",
+			"content_html": "<p>Tuotteen André Clouet Grande Réserve Blanc de Noirs Champagne Brut hinta on muuttunut.</p><p>39,98 € → 39,99 € (+0,01 €, +0,03 %).</p>",
+			"summary": "Tuotteen André Clouet Grande Réserve Blanc de Noirs Champagne Brut hinta on muuttunut. 39,98 € → 39,99 € (+0,01 €, +0,03 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/537517-611c5c1c5c42.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

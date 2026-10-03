@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Glendronach Ode To The Valley Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901504/",
+	"feed_url": "https://alkometriikka.fi/rss/901504.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Glendronach Ode To The Valley Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901504-2026-09-29-88",
+			"url": "https://alkometriikka.fi/tuotteet/901504/",
+			"title": "The Glendronach Ode To The Valley Single Malt — 85,00 € → 88,00 €",
+			"content_html": "<p>Tuotteen The Glendronach Ode To The Valley Single Malt hinta on muuttunut.</p><p>85,00 € → 88,00 € (+3,00 €, +3,53 %).</p>",
+			"summary": "Tuotteen The Glendronach Ode To The Valley Single Malt hinta on muuttunut. 85,00 € → 88,00 € (+3,00 €, +3,53 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901504-bb88533264c4.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – BlueWhite Pääesiintyjät – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/921608/",
+	"feed_url": "https://alkometriikka.fi/rss/921608.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: BlueWhite Pääesiintyjät.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-921608-2026-09-29-44.09",
+			"url": "https://alkometriikka.fi/tuotteet/921608/",
+			"title": "BlueWhite Pääesiintyjät — 43,54 € → 44,09 €",
+			"content_html": "<p>Tuotteen BlueWhite Pääesiintyjät hinta on muuttunut.</p><p>43,54 € → 44,09 € (+0,55 €, +1,26 %).</p>",
+			"summary": "Tuotteen BlueWhite Pääesiintyjät hinta on muuttunut. 43,54 € → 44,09 € (+0,55 €, +1,26 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/921608-dc4abcd9fdca.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Essenze Barolo di Barolo 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/939497/",
+	"feed_url": "https://alkometriikka.fi/rss/939497.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Essenze Barolo di Barolo 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-939497-2026-09-29-48.95",
+			"url": "https://alkometriikka.fi/tuotteet/939497/",
+			"title": "Essenze Barolo di Barolo 2019 — 47,44 € → 48,95 €",
+			"content_html": "<p>Tuotteen Essenze Barolo di Barolo 2019 hinta on muuttunut.</p><p>47,44 € → 48,95 € (+1,51 €, +3,18 %).</p>",
+			"summary": "Tuotteen Essenze Barolo di Barolo 2019 hinta on muuttunut. 47,44 € → 48,95 € (+1,51 €, +3,18 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/939497-756ba31bf992.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

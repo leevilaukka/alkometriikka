@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lindores Thiron 2024 Vintage Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901279/",
+	"feed_url": "https://alkometriikka.fi/rss/901279.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lindores Thiron 2024 Vintage Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901279-2026-09-29-79.99",
+			"url": "https://alkometriikka.fi/tuotteet/901279/",
+			"title": "Lindores Thiron 2024 Vintage Single Malt — 77,99 € → 79,99 €",
+			"content_html": "<p>Tuotteen Lindores Thiron 2024 Vintage Single Malt hinta on muuttunut.</p><p>77,99 € → 79,99 € (+2,00 €, +2,56 %).</p>",
+			"summary": "Tuotteen Lindores Thiron 2024 Vintage Single Malt hinta on muuttunut. 77,99 € → 79,99 € (+2,00 €, +2,56 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901279-b08b76634989.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

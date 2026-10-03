@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Farmers Market Organic Rosé – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/946973/",
+	"feed_url": "https://alkometriikka.fi/rss/946973.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Farmers Market Organic Rosé.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-946973-2026-07-18-10.98",
+			"url": "https://alkometriikka.fi/tuotteet/946973/",
+			"title": "Farmers Market Organic Rosé — 10,44 € → 10,98 €",
+			"content_html": "<p>Tuotteen Farmers Market Organic Rosé hinta on muuttunut.</p><p>10,44 € → 10,98 € (+0,54 €, +5,17 %).</p>",
+			"summary": "Tuotteen Farmers Market Organic Rosé hinta on muuttunut. 10,44 € → 10,98 € (+0,54 €, +5,17 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/946973-7d21f261818c.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

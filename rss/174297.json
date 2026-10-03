@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – 1800 Reposado Tequila – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/174297/",
+	"feed_url": "https://alkometriikka.fi/rss/174297.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: 1800 Reposado Tequila.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-174297-2026-09-29-55.89",
+			"url": "https://alkometriikka.fi/tuotteet/174297/",
+			"title": "1800 Reposado Tequila — 55,35 € → 55,89 €",
+			"content_html": "<p>Tuotteen 1800 Reposado Tequila hinta on muuttunut.</p><p>55,35 € → 55,89 € (+0,54 €, +0,98 %).</p>",
+			"summary": "Tuotteen 1800 Reposado Tequila hinta on muuttunut. 55,35 € → 55,89 € (+0,54 €, +0,98 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/174297-1384ccb32141.png",
+			"tags": [
+				"Väkevät",
+				"Tequilat"
+			]
+		}
+	]
+}

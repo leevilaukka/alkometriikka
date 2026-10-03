@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pheasant's Sail Pinot Noir 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/496937/",
+	"feed_url": "https://alkometriikka.fi/rss/496937.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pheasant's Sail Pinot Noir 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-496937-2026-09-29-21.9",
+			"url": "https://alkometriikka.fi/tuotteet/496937/",
+			"title": "Pheasant's Sail Pinot Noir 2020 — 20,40 € → 21,90 €",
+			"content_html": "<p>Tuotteen Pheasant's Sail Pinot Noir 2020 hinta on muuttunut.</p><p>20,40 € → 21,90 € (+1,50 €, +7,35 %).</p>",
+			"summary": "Tuotteen Pheasant's Sail Pinot Noir 2020 hinta on muuttunut. 20,40 € → 21,90 € (+1,50 €, +7,35 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/496937-2fffcc3c11ab.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

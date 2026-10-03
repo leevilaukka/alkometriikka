@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Huyghe Delirium Argentum – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/929265/",
+	"feed_url": "https://alkometriikka.fi/rss/929265.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Huyghe Delirium Argentum.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-929265-2026-07-18-5.39",
+			"url": "https://alkometriikka.fi/tuotteet/929265/",
+			"title": "Huyghe Delirium Argentum — 5,35 € → 5,39 €",
+			"content_html": "<p>Tuotteen Huyghe Delirium Argentum hinta on muuttunut.</p><p>5,35 € → 5,39 € (+0,04 €, +0,75 %).</p>",
+			"summary": "Tuotteen Huyghe Delirium Argentum hinta on muuttunut. 5,35 € → 5,39 € (+0,04 €, +0,75 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/929265-b9262473ce90.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

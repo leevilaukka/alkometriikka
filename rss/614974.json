@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ainoa Valokki 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/614974/",
+	"feed_url": "https://alkometriikka.fi/rss/614974.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ainoa Valokki 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-614974-2026-09-29-29.99",
+			"url": "https://alkometriikka.fi/tuotteet/614974/",
+			"title": "Ainoa Valokki 2022 — 29,20 € → 29,99 €",
+			"content_html": "<p>Tuotteen Ainoa Valokki 2022 hinta on muuttunut.</p><p>29,20 € → 29,99 € (+0,79 €, +2,71 %).</p>",
+			"summary": "Tuotteen Ainoa Valokki 2022 hinta on muuttunut. 29,20 € → 29,99 € (+0,79 €, +2,71 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/614974-a204b1603443.png",
+			"tags": [
+				"Viinit",
+				"jälkiruokaviinit"
+			]
+		}
+	]
+}

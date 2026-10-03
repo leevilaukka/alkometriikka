@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Infinitea Black Tea – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/536507/",
+	"feed_url": "https://alkometriikka.fi/rss/536507.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Infinitea Black Tea.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-536507-2026-07-18-12.05",
+			"url": "https://alkometriikka.fi/tuotteet/536507/",
+			"title": "Infinitea Black Tea — 11,90 € → 12,05 €",
+			"content_html": "<p>Tuotteen Infinitea Black Tea hinta on muuttunut.</p><p>11,90 € → 12,05 € (+0,15 €, +1,26 %).</p>",
+			"summary": "Tuotteen Infinitea Black Tea hinta on muuttunut. 11,90 € → 12,05 € (+0,15 €, +1,26 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/536507-e1d1c2714f61.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat kuohuviinit"
+			]
+		}
+	]
+}

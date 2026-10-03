@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – High Coast Berg Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903221/",
+	"feed_url": "https://alkometriikka.fi/rss/903221.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: High Coast Berg Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903221-2026-09-29-81.13",
+			"url": "https://alkometriikka.fi/tuotteet/903221/",
+			"title": "High Coast Berg Single Malt — 79,29 € → 81,13 €",
+			"content_html": "<p>Tuotteen High Coast Berg Single Malt hinta on muuttunut.</p><p>79,29 € → 81,13 € (+1,84 €, +2,32 %).</p>",
+			"summary": "Tuotteen High Coast Berg Single Malt hinta on muuttunut. 79,29 € → 81,13 € (+1,84 €, +2,32 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903221-ab000e26a822.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

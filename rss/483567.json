@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Giacomo Fenocchio Barolo Bussia 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/483567/",
+	"feed_url": "https://alkometriikka.fi/rss/483567.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Giacomo Fenocchio Barolo Bussia 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-483567-2026-09-29-71.33",
+			"url": "https://alkometriikka.fi/tuotteet/483567/",
+			"title": "Giacomo Fenocchio Barolo Bussia 2020 — 68,89 € → 71,33 €",
+			"content_html": "<p>Tuotteen Giacomo Fenocchio Barolo Bussia 2020 hinta on muuttunut.</p><p>68,89 € → 71,33 € (+2,44 €, +3,54 %).</p>",
+			"summary": "Tuotteen Giacomo Fenocchio Barolo Bussia 2020 hinta on muuttunut. 68,89 € → 71,33 € (+2,44 €, +3,54 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/483567-46dd8a5b8794.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

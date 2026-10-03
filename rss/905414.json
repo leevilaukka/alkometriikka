@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Yuzusyu Yuzu Sake – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/905414/",
+	"feed_url": "https://alkometriikka.fi/rss/905414.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Yuzusyu Yuzu Sake.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-905414-2026-09-29-28.8",
+			"url": "https://alkometriikka.fi/tuotteet/905414/",
+			"title": "Yuzusyu Yuzu Sake — 28,72 € → 28,80 €",
+			"content_html": "<p>Tuotteen Yuzusyu Yuzu Sake hinta on muuttunut.</p><p>28,72 € → 28,80 € (+0,08 €, +0,28 %).</p>",
+			"summary": "Tuotteen Yuzusyu Yuzu Sake hinta on muuttunut. 28,72 € → 28,80 € (+0,08 €, +0,28 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/905414-fb8eec41932f.png",
+			"tags": [
+				"Viinit",
+				"saket"
+			]
+		}
+	]
+}

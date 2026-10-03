@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Matsu El Recio 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/940217/",
+	"feed_url": "https://alkometriikka.fi/rss/940217.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Matsu El Recio 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-940217-2026-07-18-23.49",
+			"url": "https://alkometriikka.fi/tuotteet/940217/",
+			"title": "Matsu El Recio 2023 — 23,47 € → 23,49 €",
+			"content_html": "<p>Tuotteen Matsu El Recio 2023 hinta on muuttunut.</p><p>23,47 € → 23,49 € (+0,02 €, +0,09 %).</p>",
+			"summary": "Tuotteen Matsu El Recio 2023 hinta on muuttunut. 23,47 € → 23,49 € (+0,02 €, +0,09 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/940217-c8a021073b2f.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

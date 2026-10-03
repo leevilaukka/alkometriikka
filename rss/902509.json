@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cervaro Della Sala 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902509/",
+	"feed_url": "https://alkometriikka.fi/rss/902509.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cervaro Della Sala 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902509-2026-09-29-89",
+			"url": "https://alkometriikka.fi/tuotteet/902509/",
+			"title": "Cervaro Della Sala 2024 — 85,46 € → 89,00 €",
+			"content_html": "<p>Tuotteen Cervaro Della Sala 2024 hinta on muuttunut.</p><p>85,46 € → 89,00 € (+3,54 €, +4,14 %).</p>",
+			"summary": "Tuotteen Cervaro Della Sala 2024 hinta on muuttunut. 85,46 € → 89,00 € (+3,54 €, +4,14 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902509-b30c85dc7500.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

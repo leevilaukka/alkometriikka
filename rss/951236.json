@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Passo del Sud Lunare hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/951236/",
+	"feed_url": "https://alkometriikka.fi/rss/951236.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Passo del Sud Lunare hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-951236-2026-07-18-39.99",
+			"url": "https://alkometriikka.fi/tuotteet/951236/",
+			"title": "Passo del Sud Lunare hanapakkaus — 41,82 € → 39,99 €",
+			"content_html": "<p>Tuotteen Passo del Sud Lunare hanapakkaus hinta on muuttunut.</p><p>41,82 € → 39,99 € (−1,83 €, −4,38 %).</p>",
+			"summary": "Tuotteen Passo del Sud Lunare hanapakkaus hinta on muuttunut. 41,82 € → 39,99 € (−1,83 €, −4,38 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/951236-c7343e21e571.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

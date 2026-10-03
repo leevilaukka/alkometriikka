@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Trimbach Pinot Gris Réserve 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/571257/",
+	"feed_url": "https://alkometriikka.fi/rss/571257.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Trimbach Pinot Gris Réserve 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-571257-2026-07-18-28.98",
+			"url": "https://alkometriikka.fi/tuotteet/571257/",
+			"title": "Trimbach Pinot Gris Réserve 2018 — 28,46 € → 28,98 €",
+			"content_html": "<p>Tuotteen Trimbach Pinot Gris Réserve 2018 hinta on muuttunut.</p><p>28,46 € → 28,98 € (+0,52 €, +1,83 %).</p>",
+			"summary": "Tuotteen Trimbach Pinot Gris Réserve 2018 hinta on muuttunut. 28,46 € → 28,98 € (+0,52 €, +1,83 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/571257-f114137fd477.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

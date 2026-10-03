@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kyrö Dairy Cream muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902834/",
+	"feed_url": "https://alkometriikka.fi/rss/902834.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kyrö Dairy Cream muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902834-2026-09-29-4.65",
+			"url": "https://alkometriikka.fi/tuotteet/902834/",
+			"title": "Kyrö Dairy Cream muovipullo — 4,50 € → 4,65 €",
+			"content_html": "<p>Tuotteen Kyrö Dairy Cream muovipullo hinta on muuttunut.</p><p>4,50 € → 4,65 € (+0,15 €, +3,33 %).</p>",
+			"summary": "Tuotteen Kyrö Dairy Cream muovipullo hinta on muuttunut. 4,50 € → 4,65 € (+0,15 €, +3,33 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902834-0c5513a4db83.png",
+			"tags": [
+				"Väkevät",
+				"kermaliköörit"
+			]
+		}
+	]
+}

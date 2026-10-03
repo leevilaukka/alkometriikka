@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Braastad Extra – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/956691/",
+	"feed_url": "https://alkometriikka.fi/rss/956691.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Braastad Extra.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-956691-2026-09-29-295",
+			"url": "https://alkometriikka.fi/tuotteet/956691/",
+			"title": "Braastad Extra — 284,99 € → 295,00 €",
+			"content_html": "<p>Tuotteen Braastad Extra hinta on muuttunut.</p><p>284,99 € → 295,00 € (+10,01 €, +3,51 %).</p>",
+			"summary": "Tuotteen Braastad Extra hinta on muuttunut. 284,99 € → 295,00 € (+10,01 €, +3,51 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/956691-bd26a32c6214.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

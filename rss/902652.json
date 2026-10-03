@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Foradori Sgarzon Teroldego 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902652/",
+	"feed_url": "https://alkometriikka.fi/rss/902652.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Foradori Sgarzon Teroldego 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902652-2026-09-29-73.63",
+			"url": "https://alkometriikka.fi/tuotteet/902652/",
+			"title": "Foradori Sgarzon Teroldego 2023 — 71,01 € → 73,63 €",
+			"content_html": "<p>Tuotteen Foradori Sgarzon Teroldego 2023 hinta on muuttunut.</p><p>71,01 € → 73,63 € (+2,62 €, +3,69 %).</p>",
+			"summary": "Tuotteen Foradori Sgarzon Teroldego 2023 hinta on muuttunut. 71,01 € → 73,63 € (+2,62 €, +3,69 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902652-d33342dd167e.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

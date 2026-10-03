@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mars Maltage Cosmo Blended Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902343/",
+	"feed_url": "https://alkometriikka.fi/rss/902343.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mars Maltage Cosmo Blended Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902343-2026-09-29-69.98",
+			"url": "https://alkometriikka.fi/tuotteet/902343/",
+			"title": "Mars Maltage Cosmo Blended Malt — 69,29 € → 69,98 €",
+			"content_html": "<p>Tuotteen Mars Maltage Cosmo Blended Malt hinta on muuttunut.</p><p>69,29 € → 69,98 € (+0,69 €, +1,00 %).</p>",
+			"summary": "Tuotteen Mars Maltage Cosmo Blended Malt hinta on muuttunut. 69,29 € → 69,98 € (+0,69 €, +1,00 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902343-03c19991df00.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

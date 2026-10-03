@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Meikle Toir The Original 5 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902349/",
+	"feed_url": "https://alkometriikka.fi/rss/902349.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Meikle Toir The Original 5 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902349-2026-09-29-69.98",
+			"url": "https://alkometriikka.fi/tuotteet/902349/",
+			"title": "Meikle Toir The Original 5 Year Old Single Malt — 69,34 € → 69,98 €",
+			"content_html": "<p>Tuotteen Meikle Toir The Original 5 Year Old Single Malt hinta on muuttunut.</p><p>69,34 € → 69,98 € (+0,64 €, +0,92 %).</p>",
+			"summary": "Tuotteen Meikle Toir The Original 5 Year Old Single Malt hinta on muuttunut. 69,34 € → 69,98 € (+0,64 €, +0,92 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902349-71a998bf15aa.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

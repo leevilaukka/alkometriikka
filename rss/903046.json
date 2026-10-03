@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Black Tot Finest Carribean Rum – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903046/",
+	"feed_url": "https://alkometriikka.fi/rss/903046.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Black Tot Finest Carribean Rum.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903046-2026-09-29-70.91",
+			"url": "https://alkometriikka.fi/tuotteet/903046/",
+			"title": "Black Tot Finest Carribean Rum — 69,61 € → 70,91 €",
+			"content_html": "<p>Tuotteen Black Tot Finest Carribean Rum hinta on muuttunut.</p><p>69,61 € → 70,91 € (+1,30 €, +1,87 %).</p>",
+			"summary": "Tuotteen Black Tot Finest Carribean Rum hinta on muuttunut. 69,61 € → 70,91 € (+1,30 €, +1,87 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903046-77fbcb6985c8.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Giant Steps Yarra Valley Chardonnay 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900704/",
+	"feed_url": "https://alkometriikka.fi/rss/900704.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Giant Steps Yarra Valley Chardonnay 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900704-2026-09-29-39.8",
+			"url": "https://alkometriikka.fi/tuotteet/900704/",
+			"title": "Giant Steps Yarra Valley Chardonnay 2022 — 39,56 € → 39,80 €",
+			"content_html": "<p>Tuotteen Giant Steps Yarra Valley Chardonnay 2022 hinta on muuttunut.</p><p>39,56 € → 39,80 € (+0,24 €, +0,61 %).</p>",
+			"summary": "Tuotteen Giant Steps Yarra Valley Chardonnay 2022 hinta on muuttunut. 39,56 € → 39,80 € (+0,24 €, +0,61 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900704-f7ad5825472e.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-900704-2026-07-18-39.56",
+			"url": "https://alkometriikka.fi/tuotteet/900704/",
+			"title": "Giant Steps Yarra Valley Chardonnay 2022 — 41,34 € → 39,56 €",
+			"content_html": "<p>Tuotteen Giant Steps Yarra Valley Chardonnay 2022 hinta on muuttunut.</p><p>41,34 € → 39,56 € (−1,78 €, −4,31 %).</p>",
+			"summary": "Tuotteen Giant Steps Yarra Valley Chardonnay 2022 hinta on muuttunut. 41,34 € → 39,56 € (−1,78 €, −4,31 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900704-f7ad5825472e.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

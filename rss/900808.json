@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – G&J Bott Crozes-Hermitage Blanc 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900808/",
+	"feed_url": "https://alkometriikka.fi/rss/900808.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: G&J Bott Crozes-Hermitage Blanc 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900808-2026-09-29-45.6",
+			"url": "https://alkometriikka.fi/tuotteet/900808/",
+			"title": "G&J Bott Crozes-Hermitage Blanc 2023 — 44,95 € → 45,60 €",
+			"content_html": "<p>Tuotteen G&J Bott Crozes-Hermitage Blanc 2023 hinta on muuttunut.</p><p>44,95 € → 45,60 € (+0,65 €, +1,45 %).</p>",
+			"summary": "Tuotteen G&J Bott Crozes-Hermitage Blanc 2023 hinta on muuttunut. 44,95 € → 45,60 € (+0,65 €, +1,45 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900808-3b5fd77b836a.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

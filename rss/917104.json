@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Torres Viña Sol 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/917104/",
+	"feed_url": "https://alkometriikka.fi/rss/917104.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Torres Viña Sol 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-917104-2026-07-18-3.99",
+			"url": "https://alkometriikka.fi/tuotteet/917104/",
+			"title": "Torres Viña Sol 2024 — 3,91 € → 3,99 €",
+			"content_html": "<p>Tuotteen Torres Viña Sol 2024 hinta on muuttunut.</p><p>3,91 € → 3,99 € (+0,08 €, +2,05 %).</p>",
+			"summary": "Tuotteen Torres Viña Sol 2024 hinta on muuttunut. 3,91 € → 3,99 € (+0,08 €, +2,05 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/917104-61a87018b9e3.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

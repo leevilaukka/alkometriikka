@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – La Roncaia Refosco 2017 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/929725/",
+	"feed_url": "https://alkometriikka.fi/rss/929725.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: La Roncaia Refosco 2017.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-929725-2026-09-29-43.5",
+			"url": "https://alkometriikka.fi/tuotteet/929725/",
+			"title": "La Roncaia Refosco 2017 — 42,31 € → 43,50 €",
+			"content_html": "<p>Tuotteen La Roncaia Refosco 2017 hinta on muuttunut.</p><p>42,31 € → 43,50 € (+1,19 €, +2,81 %).</p>",
+			"summary": "Tuotteen La Roncaia Refosco 2017 hinta on muuttunut. 42,31 € → 43,50 € (+1,19 €, +2,81 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/929725-99dc9ee615aa.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

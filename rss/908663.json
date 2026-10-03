@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hans Baer Riesling 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/908663/",
+	"feed_url": "https://alkometriikka.fi/rss/908663.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hans Baer Riesling 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-908663-2026-07-18-4.78",
+			"url": "https://alkometriikka.fi/tuotteet/908663/",
+			"title": "Hans Baer Riesling 2024 — 4,74 € → 4,78 €",
+			"content_html": "<p>Tuotteen Hans Baer Riesling 2024 hinta on muuttunut.</p><p>4,74 € → 4,78 € (+0,04 €, +0,84 %).</p>",
+			"summary": "Tuotteen Hans Baer Riesling 2024 hinta on muuttunut. 4,74 € → 4,78 € (+0,04 €, +0,84 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/908663-9dcc380b31b0.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

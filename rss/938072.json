@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glenglassaugh Portsoy Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/938072/",
+	"feed_url": "https://alkometriikka.fi/rss/938072.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glenglassaugh Portsoy Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-938072-2026-09-29-93",
+			"url": "https://alkometriikka.fi/tuotteet/938072/",
+			"title": "Glenglassaugh Portsoy Single Malt — 89,98 € → 93,00 €",
+			"content_html": "<p>Tuotteen Glenglassaugh Portsoy Single Malt hinta on muuttunut.</p><p>89,98 € → 93,00 € (+3,02 €, +3,36 %).</p>",
+			"summary": "Tuotteen Glenglassaugh Portsoy Single Malt hinta on muuttunut. 89,98 € → 93,00 € (+3,02 €, +3,36 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/938072-3732bf3dd62f.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

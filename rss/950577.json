@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Zensa Primitivo Organico 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/950577/",
+	"feed_url": "https://alkometriikka.fi/rss/950577.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Zensa Primitivo Organico 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-950577-2026-09-29-13.48",
+			"url": "https://alkometriikka.fi/tuotteet/950577/",
+			"title": "Zensa Primitivo Organico 2024 — 13,38 € → 13,48 €",
+			"content_html": "<p>Tuotteen Zensa Primitivo Organico 2024 hinta on muuttunut.</p><p>13,38 € → 13,48 € (+0,10 €, +0,75 %).</p>",
+			"summary": "Tuotteen Zensa Primitivo Organico 2024 hinta on muuttunut. 13,38 € → 13,48 € (+0,10 €, +0,75 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/950577-cfd7ac4b4b7e.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Zensa Primitivo Organico 2022 hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/956572/",
+	"feed_url": "https://alkometriikka.fi/rss/956572.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Zensa Primitivo Organico 2022 hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-956572-2026-09-29-38.89",
+			"url": "https://alkometriikka.fi/tuotteet/956572/",
+			"title": "Zensa Primitivo Organico 2022 hanapakkaus — 38,83 € → 38,89 €",
+			"content_html": "<p>Tuotteen Zensa Primitivo Organico 2022 hanapakkaus hinta on muuttunut.</p><p>38,83 € → 38,89 € (+0,06 €, +0,15 %).</p>",
+			"summary": "Tuotteen Zensa Primitivo Organico 2022 hanapakkaus hinta on muuttunut. 38,83 € → 38,89 € (+0,06 €, +0,15 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/956572-f5ea7697f79e.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

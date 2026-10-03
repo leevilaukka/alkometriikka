@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Orin Swift Abstract 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902185/",
+	"feed_url": "https://alkometriikka.fi/rss/902185.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Orin Swift Abstract 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902185-2026-09-29-57.98",
+			"url": "https://alkometriikka.fi/tuotteet/902185/",
+			"title": "Orin Swift Abstract 2023 — 55,00 € → 57,98 €",
+			"content_html": "<p>Tuotteen Orin Swift Abstract 2023 hinta on muuttunut.</p><p>55,00 € → 57,98 € (+2,98 €, +5,42 %).</p>",
+			"summary": "Tuotteen Orin Swift Abstract 2023 hinta on muuttunut. 55,00 € → 57,98 € (+2,98 €, +5,42 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902185-fcfab2e23631.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

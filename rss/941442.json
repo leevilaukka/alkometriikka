@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château de la Terriere Brouilly Tradition 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/941442/",
+	"feed_url": "https://alkometriikka.fi/rss/941442.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château de la Terriere Brouilly Tradition 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-941442-2026-07-18-23.49",
+			"url": "https://alkometriikka.fi/tuotteet/941442/",
+			"title": "Château de la Terriere Brouilly Tradition 2022 — 23,45 € → 23,49 €",
+			"content_html": "<p>Tuotteen Château de la Terriere Brouilly Tradition 2022 hinta on muuttunut.</p><p>23,45 € → 23,49 € (+0,04 €, +0,17 %).</p>",
+			"summary": "Tuotteen Château de la Terriere Brouilly Tradition 2022 hinta on muuttunut. 23,45 € → 23,49 € (+0,04 €, +0,17 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/941442-cf5d6e710e4f.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

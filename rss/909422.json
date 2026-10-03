@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kolima Vodka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/909422/",
+	"feed_url": "https://alkometriikka.fi/rss/909422.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kolima Vodka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-909422-2026-09-29-39.25",
+			"url": "https://alkometriikka.fi/tuotteet/909422/",
+			"title": "Kolima Vodka — 38,98 € → 39,25 €",
+			"content_html": "<p>Tuotteen Kolima Vodka hinta on muuttunut.</p><p>38,98 € → 39,25 € (+0,27 €, +0,69 %).</p>",
+			"summary": "Tuotteen Kolima Vodka hinta on muuttunut. 38,98 € → 39,25 € (+0,27 €, +0,69 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/909422-a15bc1106606.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		},
+		{
+			"id": "alkometriikka-909422-2026-07-18-38.98",
+			"url": "https://alkometriikka.fi/tuotteet/909422/",
+			"title": "Kolima Vodka — 39,19 € → 38,98 €",
+			"content_html": "<p>Tuotteen Kolima Vodka hinta on muuttunut.</p><p>39,19 € → 38,98 € (−0,21 €, −0,54 %).</p>",
+			"summary": "Tuotteen Kolima Vodka hinta on muuttunut. 39,19 € → 38,98 € (−0,21 €, −0,54 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/909422-a15bc1106606.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

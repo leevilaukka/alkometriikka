@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Matthias Gaul Le Grand Fumé 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901575/",
+	"feed_url": "https://alkometriikka.fi/rss/901575.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Matthias Gaul Le Grand Fumé 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901575-2026-09-29-30.98",
+			"url": "https://alkometriikka.fi/tuotteet/901575/",
+			"title": "Matthias Gaul Le Grand Fumé 2022 — 30,46 € → 30,98 €",
+			"content_html": "<p>Tuotteen Matthias Gaul Le Grand Fumé 2022 hinta on muuttunut.</p><p>30,46 € → 30,98 € (+0,52 €, +1,71 %).</p>",
+			"summary": "Tuotteen Matthias Gaul Le Grand Fumé 2022 hinta on muuttunut. 30,46 € → 30,98 € (+0,52 €, +1,71 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901575-11cbd16b7040.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Freemark Abbey Cabernet Sauvignon Bosché 2017 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/904608/",
+	"feed_url": "https://alkometriikka.fi/rss/904608.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Freemark Abbey Cabernet Sauvignon Bosché 2017.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-904608-2026-09-29-211.81",
+			"url": "https://alkometriikka.fi/tuotteet/904608/",
+			"title": "Freemark Abbey Cabernet Sauvignon Bosché 2017 — 199,47 € → 211,81 €",
+			"content_html": "<p>Tuotteen Freemark Abbey Cabernet Sauvignon Bosché 2017 hinta on muuttunut.</p><p>199,47 € → 211,81 € (+12,34 €, +6,19 %).</p>",
+			"summary": "Tuotteen Freemark Abbey Cabernet Sauvignon Bosché 2017 hinta on muuttunut. 199,47 € → 211,81 € (+12,34 €, +6,19 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/904608-d29d830b4534.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-904608-2026-07-18-199.47",
+			"url": "https://alkometriikka.fi/tuotteet/904608/",
+			"title": "Freemark Abbey Cabernet Sauvignon Bosché 2017 — 212,96 € → 199,47 €",
+			"content_html": "<p>Tuotteen Freemark Abbey Cabernet Sauvignon Bosché 2017 hinta on muuttunut.</p><p>212,96 € → 199,47 € (−13,49 €, −6,33 %).</p>",
+			"summary": "Tuotteen Freemark Abbey Cabernet Sauvignon Bosché 2017 hinta on muuttunut. 212,96 € → 199,47 € (−13,49 €, −6,33 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/904608-d29d830b4534.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

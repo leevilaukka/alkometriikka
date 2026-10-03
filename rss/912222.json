@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Woven Homemade – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/912222/",
+	"feed_url": "https://alkometriikka.fi/rss/912222.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Woven Homemade.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-912222-2026-09-29-49.99",
+			"url": "https://alkometriikka.fi/tuotteet/912222/",
+			"title": "Woven Homemade — 48,99 € → 49,99 €",
+			"content_html": "<p>Tuotteen Woven Homemade hinta on muuttunut.</p><p>48,99 € → 49,99 € (+1,00 €, +2,04 %).</p>",
+			"summary": "Tuotteen Woven Homemade hinta on muuttunut. 48,99 € → 49,99 € (+1,00 €, +2,04 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/912222-7a828b436605.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

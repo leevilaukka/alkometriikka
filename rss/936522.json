@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Allram Grauburgunder Auslese 2015 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/936522/",
+	"feed_url": "https://alkometriikka.fi/rss/936522.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Allram Grauburgunder Auslese 2015.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-936522-2026-09-29-36.55",
+			"url": "https://alkometriikka.fi/tuotteet/936522/",
+			"title": "Allram Grauburgunder Auslese 2015 — 35,18 € → 36,55 €",
+			"content_html": "<p>Tuotteen Allram Grauburgunder Auslese 2015 hinta on muuttunut.</p><p>35,18 € → 36,55 € (+1,37 €, +3,89 %).</p>",
+			"summary": "Tuotteen Allram Grauburgunder Auslese 2015 hinta on muuttunut. 35,18 € → 36,55 € (+1,37 €, +3,89 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/936522-354f23745ab6.png",
+			"tags": [
+				"Viinit",
+				"jälkiruokaviinit"
+			]
+		}
+	]
+}

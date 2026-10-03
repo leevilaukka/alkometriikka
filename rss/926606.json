@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kweichow Moutai Flying Fairy – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/926606/",
+	"feed_url": "https://alkometriikka.fi/rss/926606.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kweichow Moutai Flying Fairy.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-926606-2026-09-29-416.74",
+			"url": "https://alkometriikka.fi/tuotteet/926606/",
+			"title": "Kweichow Moutai Flying Fairy — 389,71 € → 416,74 €",
+			"content_html": "<p>Tuotteen Kweichow Moutai Flying Fairy hinta on muuttunut.</p><p>389,71 € → 416,74 € (+27,03 €, +6,94 %).</p>",
+			"summary": "Tuotteen Kweichow Moutai Flying Fairy hinta on muuttunut. 389,71 € → 416,74 € (+27,03 €, +6,94 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/926606-9fcac916de8e.png",
+			"tags": [
+				"Väkevät",
+				"viina"
+			]
+		}
+	]
+}

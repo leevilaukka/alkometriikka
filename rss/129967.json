@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bruichladdich The Classic Laddie Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/129967/",
+	"feed_url": "https://alkometriikka.fi/rss/129967.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bruichladdich The Classic Laddie Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-129967-2026-09-29-71.49",
+			"url": "https://alkometriikka.fi/tuotteet/129967/",
+			"title": "Bruichladdich The Classic Laddie Single Malt — 69,98 € → 71,49 €",
+			"content_html": "<p>Tuotteen Bruichladdich The Classic Laddie Single Malt hinta on muuttunut.</p><p>69,98 € → 71,49 € (+1,51 €, +2,16 %).</p>",
+			"summary": "Tuotteen Bruichladdich The Classic Laddie Single Malt hinta on muuttunut. 69,98 € → 71,49 € (+1,51 €, +2,16 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/129967-bd9fd3298155.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

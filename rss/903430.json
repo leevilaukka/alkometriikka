@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jägermeister Manifest – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903430/",
+	"feed_url": "https://alkometriikka.fi/rss/903430.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jägermeister Manifest.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903430-2026-09-29-40.41",
+			"url": "https://alkometriikka.fi/tuotteet/903430/",
+			"title": "Jägermeister Manifest — 39,98 € → 40,41 €",
+			"content_html": "<p>Tuotteen Jägermeister Manifest hinta on muuttunut.</p><p>39,98 € → 40,41 € (+0,43 €, +1,08 %).</p>",
+			"summary": "Tuotteen Jägermeister Manifest hinta on muuttunut. 39,98 € → 40,41 € (+0,43 €, +1,08 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903430-a15252b5f8be.png",
+			"tags": [
+				"Väkevät",
+				"yrttiliköörit"
+			]
+		}
+	]
+}

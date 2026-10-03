@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Säde Demi-Sec – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/564797/",
+	"feed_url": "https://alkometriikka.fi/rss/564797.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Säde Demi-Sec.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-564797-2026-07-18-24.99",
+			"url": "https://alkometriikka.fi/tuotteet/564797/",
+			"title": "Säde Demi-Sec — 24,16 € → 24,99 €",
+			"content_html": "<p>Tuotteen Säde Demi-Sec hinta on muuttunut.</p><p>24,16 € → 24,99 € (+0,83 €, +3,44 %).</p>",
+			"summary": "Tuotteen Säde Demi-Sec hinta on muuttunut. 24,16 € → 24,99 € (+0,83 €, +3,44 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/564797-cb2b5ae55529.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Original Long Drink Pink Raspberry 0% tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/600003/",
+	"feed_url": "https://alkometriikka.fi/rss/600003.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Original Long Drink Pink Raspberry 0% tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-600003-2026-07-18-1.99",
+			"url": "https://alkometriikka.fi/tuotteet/600003/",
+			"title": "Original Long Drink Pink Raspberry 0% tölkki — 1,88 € → 1,99 €",
+			"content_html": "<p>Tuotteen Original Long Drink Pink Raspberry 0% tölkki hinta on muuttunut.</p><p>1,88 € → 1,99 € (+0,11 €, +5,85 %).</p>",
+			"summary": "Tuotteen Original Long Drink Pink Raspberry 0% tölkki hinta on muuttunut. 1,88 € → 1,99 € (+0,11 €, +5,85 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600003-a2734dce0478.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jean Loron Les Vieux Murs Pouilly-Fuissé 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/913265/",
+	"feed_url": "https://alkometriikka.fi/rss/913265.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jean Loron Les Vieux Murs Pouilly-Fuissé 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-913265-2026-07-18-23.79",
+			"url": "https://alkometriikka.fi/tuotteet/913265/",
+			"title": "Jean Loron Les Vieux Murs Pouilly-Fuissé 2020 — 23,72 € → 23,79 €",
+			"content_html": "<p>Tuotteen Jean Loron Les Vieux Murs Pouilly-Fuissé 2020 hinta on muuttunut.</p><p>23,72 € → 23,79 € (+0,07 €, +0,30 %).</p>",
+			"summary": "Tuotteen Jean Loron Les Vieux Murs Pouilly-Fuissé 2020 hinta on muuttunut. 23,72 € → 23,79 € (+0,07 €, +0,30 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/913265-566ac12e0fa6.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

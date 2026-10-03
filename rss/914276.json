@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Helsinki Whiskey Rye Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/914276/",
+	"feed_url": "https://alkometriikka.fi/rss/914276.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Helsinki Whiskey Rye Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-914276-2026-07-18-7.99",
+			"url": "https://alkometriikka.fi/tuotteet/914276/",
+			"title": "Helsinki Whiskey Rye Malt — 7,92 € → 7,99 €",
+			"content_html": "<p>Tuotteen Helsinki Whiskey Rye Malt hinta on muuttunut.</p><p>7,92 € → 7,99 € (+0,07 €, +0,88 %).</p>",
+			"summary": "Tuotteen Helsinki Whiskey Rye Malt hinta on muuttunut. 7,92 € → 7,99 € (+0,07 €, +0,88 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/914276-0a2631cba239.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

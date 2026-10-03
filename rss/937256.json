@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Famous Grouse Sherry Cask Finish – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/937256/",
+	"feed_url": "https://alkometriikka.fi/rss/937256.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Famous Grouse Sherry Cask Finish.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-937256-2026-09-29-37.5",
+			"url": "https://alkometriikka.fi/tuotteet/937256/",
+			"title": "The Famous Grouse Sherry Cask Finish — 36,50 € → 37,50 €",
+			"content_html": "<p>Tuotteen The Famous Grouse Sherry Cask Finish hinta on muuttunut.</p><p>36,50 € → 37,50 € (+1,00 €, +2,74 %).</p>",
+			"summary": "Tuotteen The Famous Grouse Sherry Cask Finish hinta on muuttunut. 36,50 € → 37,50 € (+1,00 €, +2,74 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/937256-5971dad6527b.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Enzo Bartoli Barolo 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/950292/",
+	"feed_url": "https://alkometriikka.fi/rss/950292.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Enzo Bartoli Barolo 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-950292-2026-09-29-29.49",
+			"url": "https://alkometriikka.fi/tuotteet/950292/",
+			"title": "Enzo Bartoli Barolo 2021 — 29,39 € → 29,49 €",
+			"content_html": "<p>Tuotteen Enzo Bartoli Barolo 2021 hinta on muuttunut.</p><p>29,39 € → 29,49 € (+0,10 €, +0,34 %).</p>",
+			"summary": "Tuotteen Enzo Bartoli Barolo 2021 hinta on muuttunut. 29,39 € → 29,49 € (+0,10 €, +0,34 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/950292-e0972fc3db4f.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

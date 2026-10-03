@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Godet VS Classique – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902575/",
+	"feed_url": "https://alkometriikka.fi/rss/902575.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Godet VS Classique.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902575-2026-09-29-59.99",
+			"url": "https://alkometriikka.fi/tuotteet/902575/",
+			"title": "Godet VS Classique — 60,26 € → 59,99 €",
+			"content_html": "<p>Tuotteen Godet VS Classique hinta on muuttunut.</p><p>60,26 € → 59,99 € (−0,27 €, −0,45 %).</p>",
+			"summary": "Tuotteen Godet VS Classique hinta on muuttunut. 60,26 € → 59,99 € (−0,27 €, −0,45 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902575-2365d7413b0e.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

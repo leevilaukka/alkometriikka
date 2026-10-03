@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ullins Bittersweet Longshot muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/917541/",
+	"feed_url": "https://alkometriikka.fi/rss/917541.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ullins Bittersweet Longshot muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-917541-2026-07-18-7.99",
+			"url": "https://alkometriikka.fi/tuotteet/917541/",
+			"title": "Ullins Bittersweet Longshot muovipullo — 7,94 € → 7,99 €",
+			"content_html": "<p>Tuotteen Ullins Bittersweet Longshot muovipullo hinta on muuttunut.</p><p>7,94 € → 7,99 € (+0,05 €, +0,63 %).</p>",
+			"summary": "Tuotteen Ullins Bittersweet Longshot muovipullo hinta on muuttunut. 7,94 € → 7,99 € (+0,05 €, +0,63 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/917541-b900ab98cbc2.png",
+			"tags": [
+				"Väkevät",
+				"yrttiliköörit"
+			]
+		}
+	]
+}

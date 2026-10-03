@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mauro Molino Barbera d’Alba  2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900541/",
+	"feed_url": "https://alkometriikka.fi/rss/900541.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mauro Molino Barbera d’Alba  2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900541-2026-09-29-22.3",
+			"url": "https://alkometriikka.fi/tuotteet/900541/",
+			"title": "Mauro Molino Barbera d’Alba  2024 — 22,07 € → 22,30 €",
+			"content_html": "<p>Tuotteen Mauro Molino Barbera d’Alba  2024 hinta on muuttunut.</p><p>22,07 € → 22,30 € (+0,23 €, +1,04 %).</p>",
+			"summary": "Tuotteen Mauro Molino Barbera d’Alba 2024 hinta on muuttunut. 22,07 € → 22,30 € (+0,23 €, +1,04 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900541-0af4f7b5b5de.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

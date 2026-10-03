@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – David Sterza Recioto della Valpolicella Classico 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902241/",
+	"feed_url": "https://alkometriikka.fi/rss/902241.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: David Sterza Recioto della Valpolicella Classico 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902241-2026-09-29-45.35",
+			"url": "https://alkometriikka.fi/tuotteet/902241/",
+			"title": "David Sterza Recioto della Valpolicella Classico 2022 — 44,03 € → 45,35 €",
+			"content_html": "<p>Tuotteen David Sterza Recioto della Valpolicella Classico 2022 hinta on muuttunut.</p><p>44,03 € → 45,35 € (+1,32 €, +3,00 %).</p>",
+			"summary": "Tuotteen David Sterza Recioto della Valpolicella Classico 2022 hinta on muuttunut. 44,03 € → 45,35 € (+1,32 €, +3,00 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902241-77b54d26110b.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tullamore D.E.W. muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/200054/",
+	"feed_url": "https://alkometriikka.fi/rss/200054.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tullamore D.E.W. muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-200054-2026-07-18-23.5",
+			"url": "https://alkometriikka.fi/tuotteet/200054/",
+			"title": "Tullamore D.E.W. muovipullo — 22,99 € → 23,50 €",
+			"content_html": "<p>Tuotteen Tullamore D.E.W. muovipullo hinta on muuttunut.</p><p>22,99 € → 23,50 € (+0,51 €, +2,22 %).</p>",
+			"summary": "Tuotteen Tullamore D.E.W. muovipullo hinta on muuttunut. 22,99 € → 23,50 € (+0,51 €, +2,22 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/200054-6475d42337f5.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

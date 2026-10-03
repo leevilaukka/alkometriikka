@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tenuta Friggiali Brunello di Montalcino 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/925331/",
+	"feed_url": "https://alkometriikka.fi/rss/925331.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tenuta Friggiali Brunello di Montalcino 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-925331-2026-09-29-36.99",
+			"url": "https://alkometriikka.fi/tuotteet/925331/",
+			"title": "Tenuta Friggiali Brunello di Montalcino 2020 — 34,98 € → 36,99 €",
+			"content_html": "<p>Tuotteen Tenuta Friggiali Brunello di Montalcino 2020 hinta on muuttunut.</p><p>34,98 € → 36,99 € (+2,01 €, +5,75 %).</p>",
+			"summary": "Tuotteen Tenuta Friggiali Brunello di Montalcino 2020 hinta on muuttunut. 34,98 € → 36,99 € (+2,01 €, +5,75 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/925331-1facd7fad7ce.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

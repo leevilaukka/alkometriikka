@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Soufrandiere Pouilly-Vinzelles 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/959183/",
+	"feed_url": "https://alkometriikka.fi/rss/959183.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Soufrandiere Pouilly-Vinzelles 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-959183-2026-09-29-52.99",
+			"url": "https://alkometriikka.fi/tuotteet/959183/",
+			"title": "Soufrandiere Pouilly-Vinzelles 2023 — 48,90 € → 52,99 €",
+			"content_html": "<p>Tuotteen Soufrandiere Pouilly-Vinzelles 2023 hinta on muuttunut.</p><p>48,90 € → 52,99 € (+4,09 €, +8,36 %).</p>",
+			"summary": "Tuotteen Soufrandiere Pouilly-Vinzelles 2023 hinta on muuttunut. 48,90 € → 52,99 € (+4,09 €, +8,36 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/959183-ad730b18585a.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

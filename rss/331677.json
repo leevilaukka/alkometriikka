@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Sol de Málaga – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/331677/",
+	"feed_url": "https://alkometriikka.fi/rss/331677.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Sol de Málaga.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-331677-2026-09-29-18.99",
+			"url": "https://alkometriikka.fi/tuotteet/331677/",
+			"title": "Sol de Málaga — 18,57 € → 18,99 €",
+			"content_html": "<p>Tuotteen Sol de Málaga hinta on muuttunut.</p><p>18,57 € → 18,99 € (+0,42 €, +2,26 %).</p>",
+			"summary": "Tuotteen Sol de Málaga hinta on muuttunut. 18,57 € → 18,99 € (+0,42 €, +2,26 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/331677-a36359f0534c.png",
+			"tags": [
+				"Välituotteet",
+				"väkevät viinit"
+			]
+		}
+	]
+}

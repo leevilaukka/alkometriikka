@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Etienne Calsac Cuvée Rosé De Craie Champagne Extra Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/945323/",
+	"feed_url": "https://alkometriikka.fi/rss/945323.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Etienne Calsac Cuvée Rosé De Craie Champagne Extra Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-945323-2026-09-29-84.2",
+			"url": "https://alkometriikka.fi/tuotteet/945323/",
+			"title": "Etienne Calsac Cuvée Rosé De Craie Champagne Extra Brut — 80,87 € → 84,20 €",
+			"content_html": "<p>Tuotteen Etienne Calsac Cuvée Rosé De Craie Champagne Extra Brut hinta on muuttunut.</p><p>80,87 € → 84,20 € (+3,33 €, +4,12 %).</p>",
+			"summary": "Tuotteen Etienne Calsac Cuvée Rosé De Craie Champagne Extra Brut hinta on muuttunut. 80,87 € → 84,20 € (+3,33 €, +4,12 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/945323-c18052ffd22d.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

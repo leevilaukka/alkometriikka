@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Barth Pinot Rosé Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/938707/",
+	"feed_url": "https://alkometriikka.fi/rss/938707.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Barth Pinot Rosé Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-938707-2026-09-29-32.7",
+			"url": "https://alkometriikka.fi/tuotteet/938707/",
+			"title": "Barth Pinot Rosé Brut — 32,99 € → 32,70 €",
+			"content_html": "<p>Tuotteen Barth Pinot Rosé Brut hinta on muuttunut.</p><p>32,99 € → 32,70 € (−0,29 €, −0,88 %).</p>",
+			"summary": "Tuotteen Barth Pinot Rosé Brut hinta on muuttunut. 32,99 € → 32,70 € (−0,29 €, −0,88 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/938707-de3064078e9d.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-938707-2026-07-18-32.99",
+			"url": "https://alkometriikka.fi/tuotteet/938707/",
+			"title": "Barth Pinot Rosé Brut — 32,45 € → 32,99 €",
+			"content_html": "<p>Tuotteen Barth Pinot Rosé Brut hinta on muuttunut.</p><p>32,45 € → 32,99 € (+0,54 €, +1,66 %).</p>",
+			"summary": "Tuotteen Barth Pinot Rosé Brut hinta on muuttunut. 32,45 € → 32,99 € (+0,54 €, +1,66 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/938707-de3064078e9d.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

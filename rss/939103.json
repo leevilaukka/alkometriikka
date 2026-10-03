@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pop Corn Shot muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/939103/",
+	"feed_url": "https://alkometriikka.fi/rss/939103.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pop Corn Shot muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-939103-2026-09-29-16.18",
+			"url": "https://alkometriikka.fi/tuotteet/939103/",
+			"title": "Pop Corn Shot muovipullo — 16,08 € → 16,18 €",
+			"content_html": "<p>Tuotteen Pop Corn Shot muovipullo hinta on muuttunut.</p><p>16,08 € → 16,18 € (+0,10 €, +0,62 %).</p>",
+			"summary": "Tuotteen Pop Corn Shot muovipullo hinta on muuttunut. 16,08 € → 16,18 € (+0,10 €, +0,62 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/939103-e8d171c5955d.png",
+			"tags": [
+				"Väkevät",
+				"mausteliköörit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Domaine Belle Crozes-Hermitage Roche Blanche 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/925302/",
+	"feed_url": "https://alkometriikka.fi/rss/925302.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Domaine Belle Crozes-Hermitage Roche Blanche 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-925302-2026-09-29-58.98",
+			"url": "https://alkometriikka.fi/tuotteet/925302/",
+			"title": "Domaine Belle Crozes-Hermitage Roche Blanche 2022 — 57,41 € → 58,98 €",
+			"content_html": "<p>Tuotteen Domaine Belle Crozes-Hermitage Roche Blanche 2022 hinta on muuttunut.</p><p>57,41 € → 58,98 € (+1,57 €, +2,73 %).</p>",
+			"summary": "Tuotteen Domaine Belle Crozes-Hermitage Roche Blanche 2022 hinta on muuttunut. 57,41 € → 58,98 € (+1,57 €, +2,73 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/925302-d19bd68f0015.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

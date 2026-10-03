@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – JM Sélèque Solessence Champagne Extra Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/940081/",
+	"feed_url": "https://alkometriikka.fi/rss/940081.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: JM Sélèque Solessence Champagne Extra Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-940081-2026-09-29-61.98",
+			"url": "https://alkometriikka.fi/tuotteet/940081/",
+			"title": "JM Sélèque Solessence Champagne Extra Brut — 59,98 € → 61,98 €",
+			"content_html": "<p>Tuotteen JM Sélèque Solessence Champagne Extra Brut hinta on muuttunut.</p><p>59,98 € → 61,98 € (+2,00 €, +3,33 %).</p>",
+			"summary": "Tuotteen JM Sélèque Solessence Champagne Extra Brut hinta on muuttunut. 59,98 € → 61,98 € (+2,00 €, +3,33 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/940081-42e3ff4abb40.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-940081-2026-07-18-59.98",
+			"url": "https://alkometriikka.fi/tuotteet/940081/",
+			"title": "JM Sélèque Solessence Champagne Extra Brut — 58,99 € → 59,98 €",
+			"content_html": "<p>Tuotteen JM Sélèque Solessence Champagne Extra Brut hinta on muuttunut.</p><p>58,99 € → 59,98 € (+0,99 €, +1,68 %).</p>",
+			"summary": "Tuotteen JM Sélèque Solessence Champagne Extra Brut hinta on muuttunut. 58,99 € → 59,98 € (+0,99 €, +1,68 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/940081-42e3ff4abb40.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

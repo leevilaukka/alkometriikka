@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Reviseur XO Single Estate Petite Champagne – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/933526/",
+	"feed_url": "https://alkometriikka.fi/rss/933526.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Reviseur XO Single Estate Petite Champagne.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-933526-2026-09-29-159.9",
+			"url": "https://alkometriikka.fi/tuotteet/933526/",
+			"title": "Reviseur XO Single Estate Petite Champagne — 168,99 € → 159,90 €",
+			"content_html": "<p>Tuotteen Reviseur XO Single Estate Petite Champagne hinta on muuttunut.</p><p>168,99 € → 159,90 € (−9,09 €, −5,38 %).</p>",
+			"summary": "Tuotteen Reviseur XO Single Estate Petite Champagne hinta on muuttunut. 168,99 € → 159,90 € (−9,09 €, −5,38 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/933526-86e26fd2b71c.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

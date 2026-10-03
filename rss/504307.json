@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Schloss Johannisberger Riesling Bronzelack Trocken 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/504307/",
+	"feed_url": "https://alkometriikka.fi/rss/504307.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Schloss Johannisberger Riesling Bronzelack Trocken 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-504307-2026-09-29-40.88",
+			"url": "https://alkometriikka.fi/tuotteet/504307/",
+			"title": "Schloss Johannisberger Riesling Bronzelack Trocken 2023 — 40,56 € → 40,88 €",
+			"content_html": "<p>Tuotteen Schloss Johannisberger Riesling Bronzelack Trocken 2023 hinta on muuttunut.</p><p>40,56 € → 40,88 € (+0,32 €, +0,79 %).</p>",
+			"summary": "Tuotteen Schloss Johannisberger Riesling Bronzelack Trocken 2023 hinta on muuttunut. 40,56 € → 40,88 € (+0,32 €, +0,79 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/504307-9b2504c2ed36.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-504307-2026-07-18-40.56",
+			"url": "https://alkometriikka.fi/tuotteet/504307/",
+			"title": "Schloss Johannisberger Riesling Bronzelack Trocken 2023 — 39,67 € → 40,56 €",
+			"content_html": "<p>Tuotteen Schloss Johannisberger Riesling Bronzelack Trocken 2023 hinta on muuttunut.</p><p>39,67 € → 40,56 € (+0,89 €, +2,24 %).</p>",
+			"summary": "Tuotteen Schloss Johannisberger Riesling Bronzelack Trocken 2023 hinta on muuttunut. 39,67 € → 40,56 € (+0,89 €, +2,24 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/504307-9b2504c2ed36.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

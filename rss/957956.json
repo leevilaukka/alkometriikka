@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Chateau Clarke 2015 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/957956/",
+	"feed_url": "https://alkometriikka.fi/rss/957956.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Chateau Clarke 2015.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-957956-2026-09-29-27.15",
+			"url": "https://alkometriikka.fi/tuotteet/957956/",
+			"title": "Chateau Clarke 2015 — 25,27 € → 27,15 €",
+			"content_html": "<p>Tuotteen Chateau Clarke 2015 hinta on muuttunut.</p><p>25,27 € → 27,15 € (+1,88 €, +7,44 %).</p>",
+			"summary": "Tuotteen Chateau Clarke 2015 hinta on muuttunut. 25,27 € → 27,15 € (+1,88 €, +7,44 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/957956-cb743fddc0a8.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

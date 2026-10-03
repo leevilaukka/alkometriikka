@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Frapin 1270 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/919046/",
+	"feed_url": "https://alkometriikka.fi/rss/919046.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Frapin 1270.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-919046-2026-09-29-62.99",
+			"url": "https://alkometriikka.fi/tuotteet/919046/",
+			"title": "Frapin 1270 — 61,98 € → 62,99 €",
+			"content_html": "<p>Tuotteen Frapin 1270 hinta on muuttunut.</p><p>61,98 € → 62,99 € (+1,01 €, +1,63 %).</p>",
+			"summary": "Tuotteen Frapin 1270 hinta on muuttunut. 61,98 € → 62,99 € (+1,01 €, +1,63 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/919046-7424a53bcaf6.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

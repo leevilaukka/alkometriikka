@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dingle 10 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902778/",
+	"feed_url": "https://alkometriikka.fi/rss/902778.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dingle 10 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902778-2026-09-29-99.99",
+			"url": "https://alkometriikka.fi/tuotteet/902778/",
+			"title": "Dingle 10 Year Old Single Malt — 99,98 € → 99,99 €",
+			"content_html": "<p>Tuotteen Dingle 10 Year Old Single Malt hinta on muuttunut.</p><p>99,98 € → 99,99 € (+0,01 €, +0,01 %).</p>",
+			"summary": "Tuotteen Dingle 10 Year Old Single Malt hinta on muuttunut. 99,98 € → 99,99 € (+0,01 €, +0,01 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902778-416e7c4ce8e2.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

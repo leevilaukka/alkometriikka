@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Aldea Frizzante White Muscat – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/931891/",
+	"feed_url": "https://alkometriikka.fi/rss/931891.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Aldea Frizzante White Muscat.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-931891-2026-09-29-12.99",
+			"url": "https://alkometriikka.fi/tuotteet/931891/",
+			"title": "Aldea Frizzante White Muscat — 12,70 € → 12,99 €",
+			"content_html": "<p>Tuotteen Aldea Frizzante White Muscat hinta on muuttunut.</p><p>12,70 € → 12,99 € (+0,29 €, +2,28 %).</p>",
+			"summary": "Tuotteen Aldea Frizzante White Muscat hinta on muuttunut. 12,70 € → 12,99 € (+0,29 €, +2,28 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/931891-2fae29c494f7.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat kuohuviinit"
+			]
+		}
+	]
+}

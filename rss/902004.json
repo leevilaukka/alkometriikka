@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Belle de Brillet Liqueur – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902004/",
+	"feed_url": "https://alkometriikka.fi/rss/902004.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Belle de Brillet Liqueur.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902004-2026-09-29-26.49",
+			"url": "https://alkometriikka.fi/tuotteet/902004/",
+			"title": "Belle de Brillet Liqueur — 25,98 € → 26,49 €",
+			"content_html": "<p>Tuotteen Belle de Brillet Liqueur hinta on muuttunut.</p><p>25,98 € → 26,49 € (+0,51 €, +1,96 %).</p>",
+			"summary": "Tuotteen Belle de Brillet Liqueur hinta on muuttunut. 25,98 € → 26,49 € (+0,51 €, +1,96 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902004-1a775e34489a.png",
+			"tags": [
+				"Väkevät",
+				"hedelmäliköörit"
+			]
+		}
+	]
+}

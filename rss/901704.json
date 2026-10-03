@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Una volta, per sempre IFK Maremma Toscana 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901704/",
+	"feed_url": "https://alkometriikka.fi/rss/901704.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Una volta, per sempre IFK Maremma Toscana 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901704-2026-07-18-18.48",
+			"url": "https://alkometriikka.fi/tuotteet/901704/",
+			"title": "Una volta, per sempre IFK Maremma Toscana 2021 — 18,95 € → 18,48 €",
+			"content_html": "<p>Tuotteen Una volta, per sempre IFK Maremma Toscana 2021 hinta on muuttunut.</p><p>18,95 € → 18,48 € (−0,47 €, −2,48 %).</p>",
+			"summary": "Tuotteen Una volta, per sempre IFK Maremma Toscana 2021 hinta on muuttunut. 18,95 € → 18,48 € (−0,47 €, −2,48 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901704-4cc409f1eea2.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

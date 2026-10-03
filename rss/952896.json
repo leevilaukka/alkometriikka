@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – SanPellegrino Aranciata Rossa tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/952896/",
+	"feed_url": "https://alkometriikka.fi/rss/952896.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: SanPellegrino Aranciata Rossa tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-952896-2026-07-18-2.19",
+			"url": "https://alkometriikka.fi/tuotteet/952896/",
+			"title": "SanPellegrino Aranciata Rossa tölkki — 2,08 € → 2,19 €",
+			"content_html": "<p>Tuotteen SanPellegrino Aranciata Rossa tölkki hinta on muuttunut.</p><p>2,08 € → 2,19 € (+0,11 €, +5,29 %).</p>",
+			"summary": "Tuotteen SanPellegrino Aranciata Rossa tölkki hinta on muuttunut. 2,08 € → 2,19 € (+0,11 €, +5,29 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/952896-616772e71069.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

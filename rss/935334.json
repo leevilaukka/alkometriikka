@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Säde Arctic Sparkling Wine Sec – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/935334/",
+	"feed_url": "https://alkometriikka.fi/rss/935334.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Säde Arctic Sparkling Wine Sec.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-935334-2026-07-18-24.99",
+			"url": "https://alkometriikka.fi/tuotteet/935334/",
+			"title": "Säde Arctic Sparkling Wine Sec — 24,24 € → 24,99 €",
+			"content_html": "<p>Tuotteen Säde Arctic Sparkling Wine Sec hinta on muuttunut.</p><p>24,24 € → 24,99 € (+0,75 €, +3,09 %).</p>",
+			"summary": "Tuotteen Säde Arctic Sparkling Wine Sec hinta on muuttunut. 24,24 € → 24,99 € (+0,75 €, +3,09 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/935334-abef3c5d1810.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

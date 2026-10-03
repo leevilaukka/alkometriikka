@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Martes Santo Añejo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/924801/",
+	"feed_url": "https://alkometriikka.fi/rss/924801.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Martes Santo Añejo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-924801-2026-09-29-55.42",
+			"url": "https://alkometriikka.fi/tuotteet/924801/",
+			"title": "Martes Santo Añejo — 54,97 € → 55,42 €",
+			"content_html": "<p>Tuotteen Martes Santo Añejo hinta on muuttunut.</p><p>54,97 € → 55,42 € (+0,45 €, +0,82 %).</p>",
+			"summary": "Tuotteen Martes Santo Añejo hinta on muuttunut. 54,97 € → 55,42 € (+0,45 €, +0,82 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/924801-ba926fde227e.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

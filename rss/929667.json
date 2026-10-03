@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cono Sur Silencio Cabernet Sauvignon 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/929667/",
+	"feed_url": "https://alkometriikka.fi/rss/929667.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cono Sur Silencio Cabernet Sauvignon 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-929667-2026-09-29-109.99",
+			"url": "https://alkometriikka.fi/tuotteet/929667/",
+			"title": "Cono Sur Silencio Cabernet Sauvignon 2018 — 109,98 € → 109,99 €",
+			"content_html": "<p>Tuotteen Cono Sur Silencio Cabernet Sauvignon 2018 hinta on muuttunut.</p><p>109,98 € → 109,99 € (+0,01 €, +0,01 %).</p>",
+			"summary": "Tuotteen Cono Sur Silencio Cabernet Sauvignon 2018 hinta on muuttunut. 109,98 € → 109,99 € (+0,01 €, +0,01 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/929667-7a25270e1858.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

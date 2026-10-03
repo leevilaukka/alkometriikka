@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dourakis Impromptu Mandilari 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/908948/",
+	"feed_url": "https://alkometriikka.fi/rss/908948.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dourakis Impromptu Mandilari 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-908948-2026-09-29-44.5",
+			"url": "https://alkometriikka.fi/tuotteet/908948/",
+			"title": "Dourakis Impromptu Mandilari 2021 — 43,94 € → 44,50 €",
+			"content_html": "<p>Tuotteen Dourakis Impromptu Mandilari 2021 hinta on muuttunut.</p><p>43,94 € → 44,50 € (+0,56 €, +1,27 %).</p>",
+			"summary": "Tuotteen Dourakis Impromptu Mandilari 2021 hinta on muuttunut. 43,94 € → 44,50 € (+0,56 €, +1,27 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/908948-f2f91482ba65.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

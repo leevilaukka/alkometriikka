@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Viña Maipo Carmenere 2025 hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/400004/",
+	"feed_url": "https://alkometriikka.fi/rss/400004.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Viña Maipo Carmenere 2025 hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-400004-2026-07-18-32.79",
+			"url": "https://alkometriikka.fi/tuotteet/400004/",
+			"title": "Viña Maipo Carmenere 2025 hanapakkaus — 31,79 € → 32,79 €",
+			"content_html": "<p>Tuotteen Viña Maipo Carmenere 2025 hanapakkaus hinta on muuttunut.</p><p>31,79 € → 32,79 € (+1,00 €, +3,15 %).</p>",
+			"summary": "Tuotteen Viña Maipo Carmenere 2025 hanapakkaus hinta on muuttunut. 31,79 € → 32,79 € (+1,00 €, +3,15 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/400004-7144a1cae806.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

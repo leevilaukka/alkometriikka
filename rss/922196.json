@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – BlueWhite All Malt Heavy Peated – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/922196/",
+	"feed_url": "https://alkometriikka.fi/rss/922196.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: BlueWhite All Malt Heavy Peated.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-922196-2026-09-29-50.17",
+			"url": "https://alkometriikka.fi/tuotteet/922196/",
+			"title": "BlueWhite All Malt Heavy Peated — 49,14 € → 50,17 €",
+			"content_html": "<p>Tuotteen BlueWhite All Malt Heavy Peated hinta on muuttunut.</p><p>49,14 € → 50,17 € (+1,03 €, +2,10 %).</p>",
+			"summary": "Tuotteen BlueWhite All Malt Heavy Peated hinta on muuttunut. 49,14 € → 50,17 € (+1,03 €, +2,10 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/922196-7578573bcc7d.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

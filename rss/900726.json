@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Da Vinci I Capolavori Brunello di Montalcino 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900726/",
+	"feed_url": "https://alkometriikka.fi/rss/900726.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Da Vinci I Capolavori Brunello di Montalcino 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900726-2026-09-29-58.55",
+			"url": "https://alkometriikka.fi/tuotteet/900726/",
+			"title": "Da Vinci I Capolavori Brunello di Montalcino 2020 — 56,99 € → 58,55 €",
+			"content_html": "<p>Tuotteen Da Vinci I Capolavori Brunello di Montalcino 2020 hinta on muuttunut.</p><p>56,99 € → 58,55 € (+1,56 €, +2,74 %).</p>",
+			"summary": "Tuotteen Da Vinci I Capolavori Brunello di Montalcino 2020 hinta on muuttunut. 56,99 € → 58,55 € (+1,56 €, +2,74 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900726-b3d7395f699e.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-900726-2026-07-18-56.99",
+			"url": "https://alkometriikka.fi/tuotteet/900726/",
+			"title": "Da Vinci I Capolavori Brunello di Montalcino 2020 — 57,44 € → 56,99 €",
+			"content_html": "<p>Tuotteen Da Vinci I Capolavori Brunello di Montalcino 2020 hinta on muuttunut.</p><p>57,44 € → 56,99 € (−0,45 €, −0,78 %).</p>",
+			"summary": "Tuotteen Da Vinci I Capolavori Brunello di Montalcino 2020 hinta on muuttunut. 57,44 € → 56,99 € (−0,45 €, −0,78 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900726-b3d7395f699e.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

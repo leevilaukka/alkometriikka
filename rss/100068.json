@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Koskenkorva Minttu 21% – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/100068/",
+	"feed_url": "https://alkometriikka.fi/rss/100068.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Koskenkorva Minttu 21%.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-100068-2026-09-29-1.98",
+			"url": "https://alkometriikka.fi/tuotteet/100068/",
+			"title": "Koskenkorva Minttu 21% — 2,48 € → 1,98 €",
+			"content_html": "<p>Tuotteen Koskenkorva Minttu 21% hinta on muuttunut.</p><p>2,48 € → 1,98 € (−0,50 €, −20,16 %).</p>",
+			"summary": "Tuotteen Koskenkorva Minttu 21% hinta on muuttunut. 2,48 € → 1,98 € (−0,50 €, −20,16 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/100068-912517f5ce15.png",
+			"tags": [
+				"Väkevät",
+				"mausteliköörit"
+			]
+		}
+	]
+}

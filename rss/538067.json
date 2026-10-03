@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jacob's Creek UnVined Riesling – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/538067/",
+	"feed_url": "https://alkometriikka.fi/rss/538067.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jacob's Creek UnVined Riesling.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-538067-2026-07-18-7.49",
+			"url": "https://alkometriikka.fi/tuotteet/538067/",
+			"title": "Jacob's Creek UnVined Riesling — 7,36 € → 7,49 €",
+			"content_html": "<p>Tuotteen Jacob's Creek UnVined Riesling hinta on muuttunut.</p><p>7,36 € → 7,49 € (+0,13 €, +1,77 %).</p>",
+			"summary": "Tuotteen Jacob's Creek UnVined Riesling hinta on muuttunut. 7,36 € → 7,49 € (+0,13 €, +1,77 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/538067-570fbace26ae.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat valko- ja roseeviinit"
+			]
+		}
+	]
+}

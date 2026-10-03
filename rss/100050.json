@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Karpalet muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/100050/",
+	"feed_url": "https://alkometriikka.fi/rss/100050.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Karpalet muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-100050-2026-07-18-7.88",
+			"url": "https://alkometriikka.fi/tuotteet/100050/",
+			"title": "Karpalet muovipullo — 7,74 € → 7,88 €",
+			"content_html": "<p>Tuotteen Karpalet muovipullo hinta on muuttunut.</p><p>7,74 € → 7,88 € (+0,14 €, +1,81 %).</p>",
+			"summary": "Tuotteen Karpalet muovipullo hinta on muuttunut. 7,74 € → 7,88 € (+0,14 €, +1,81 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/100050-4bd5fbc3985b.png",
+			"tags": [
+				"Väkevät",
+				"maustetut viinat"
+			]
+		}
+	]
+}

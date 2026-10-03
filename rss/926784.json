@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Koto Dry Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/926784/",
+	"feed_url": "https://alkometriikka.fi/rss/926784.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Koto Dry Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-926784-2026-09-29-37.8",
+			"url": "https://alkometriikka.fi/tuotteet/926784/",
+			"title": "Koto Dry Gin — 37,57 € → 37,80 €",
+			"content_html": "<p>Tuotteen Koto Dry Gin hinta on muuttunut.</p><p>37,57 € → 37,80 € (+0,23 €, +0,61 %).</p>",
+			"summary": "Tuotteen Koto Dry Gin hinta on muuttunut. 37,57 € → 37,80 € (+0,23 €, +0,61 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/926784-783d543e8de4.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

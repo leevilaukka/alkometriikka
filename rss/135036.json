@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Valamo Absinthe – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/135036/",
+	"feed_url": "https://alkometriikka.fi/rss/135036.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Valamo Absinthe.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-135036-2026-09-29-61.39",
+			"url": "https://alkometriikka.fi/tuotteet/135036/",
+			"title": "Valamo Absinthe — 60,22 € → 61,39 €",
+			"content_html": "<p>Tuotteen Valamo Absinthe hinta on muuttunut.</p><p>60,22 € → 61,39 € (+1,17 €, +1,94 %).</p>",
+			"summary": "Tuotteen Valamo Absinthe hinta on muuttunut. 60,22 € → 61,39 € (+1,17 €, +1,94 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/135036-c515a1f2f14f.png",
+			"tags": [
+				"Väkevät",
+				"anistisleet"
+			]
+		}
+	]
+}

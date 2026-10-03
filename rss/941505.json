@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Plener Pinot Noir 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/941505/",
+	"feed_url": "https://alkometriikka.fi/rss/941505.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Plener Pinot Noir 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-941505-2026-09-29-77.49",
+			"url": "https://alkometriikka.fi/tuotteet/941505/",
+			"title": "Plener Pinot Noir 2018 — 74,63 € → 77,49 €",
+			"content_html": "<p>Tuotteen Plener Pinot Noir 2018 hinta on muuttunut.</p><p>74,63 € → 77,49 € (+2,86 €, +3,83 %).</p>",
+			"summary": "Tuotteen Plener Pinot Noir 2018 hinta on muuttunut. 74,63 € → 77,49 € (+2,86 €, +3,83 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/941505-9dc8a8551a59.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

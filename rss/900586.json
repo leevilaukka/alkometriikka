@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Masseto 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900586/",
+	"feed_url": "https://alkometriikka.fi/rss/900586.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Masseto 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900586-2026-09-29-1148.21",
+			"url": "https://alkometriikka.fi/tuotteet/900586/",
+			"title": "Masseto 2020 — 1 070,28 € → 1 148,21 €",
+			"content_html": "<p>Tuotteen Masseto 2020 hinta on muuttunut.</p><p>1 070,28 € → 1 148,21 € (+77,93 €, +7,28 %).</p>",
+			"summary": "Tuotteen Masseto 2020 hinta on muuttunut. 1 070,28 € → 1 148,21 € (+77,93 €, +7,28 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900586-bc2c978b27b1.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

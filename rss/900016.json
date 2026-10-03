@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Leth Grüner Veltliner Klassik Organic 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900016/",
+	"feed_url": "https://alkometriikka.fi/rss/900016.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Leth Grüner Veltliner Klassik Organic 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900016-2026-09-29-12.99",
+			"url": "https://alkometriikka.fi/tuotteet/900016/",
+			"title": "Leth Grüner Veltliner Klassik Organic 2025 — 12,90 € → 12,99 €",
+			"content_html": "<p>Tuotteen Leth Grüner Veltliner Klassik Organic 2025 hinta on muuttunut.</p><p>12,90 € → 12,99 € (+0,09 €, +0,70 %).</p>",
+			"summary": "Tuotteen Leth Grüner Veltliner Klassik Organic 2025 hinta on muuttunut. 12,90 € → 12,99 € (+0,09 €, +0,70 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900016-dfc22730e38b.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-900016-2026-07-18-12.9",
+			"url": "https://alkometriikka.fi/tuotteet/900016/",
+			"title": "Leth Grüner Veltliner Klassik Organic 2025 — 12,38 € → 12,90 €",
+			"content_html": "<p>Tuotteen Leth Grüner Veltliner Klassik Organic 2025 hinta on muuttunut.</p><p>12,38 € → 12,90 € (+0,52 €, +4,20 %).</p>",
+			"summary": "Tuotteen Leth Grüner Veltliner Klassik Organic 2025 hinta on muuttunut. 12,38 € → 12,90 € (+0,52 €, +4,20 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900016-dfc22730e38b.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

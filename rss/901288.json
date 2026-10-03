@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Le Lys de Château Pradeaux Bandol 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901288/",
+	"feed_url": "https://alkometriikka.fi/rss/901288.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Le Lys de Château Pradeaux Bandol 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901288-2026-09-29-40.25",
+			"url": "https://alkometriikka.fi/tuotteet/901288/",
+			"title": "Le Lys de Château Pradeaux Bandol 2023 — 41,00 € → 40,25 €",
+			"content_html": "<p>Tuotteen Le Lys de Château Pradeaux Bandol 2023 hinta on muuttunut.</p><p>41,00 € → 40,25 € (−0,75 €, −1,83 %).</p>",
+			"summary": "Tuotteen Le Lys de Château Pradeaux Bandol 2023 hinta on muuttunut. 41,00 € → 40,25 € (−0,75 €, −1,83 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901288-fa4d1a6fcade.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

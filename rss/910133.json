@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Riffel Zero Riesling Alcohol Free – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/910133/",
+	"feed_url": "https://alkometriikka.fi/rss/910133.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Riffel Zero Riesling Alcohol Free.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-910133-2026-07-18-14.99",
+			"url": "https://alkometriikka.fi/tuotteet/910133/",
+			"title": "Riffel Zero Riesling Alcohol Free — 14,93 € → 14,99 €",
+			"content_html": "<p>Tuotteen Riffel Zero Riesling Alcohol Free hinta on muuttunut.</p><p>14,93 € → 14,99 € (+0,06 €, +0,40 %).</p>",
+			"summary": "Tuotteen Riffel Zero Riesling Alcohol Free hinta on muuttunut. 14,93 € → 14,99 € (+0,06 €, +0,40 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/910133-921c363ebd57.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat valko- ja roseeviinit"
+			]
+		}
+	]
+}

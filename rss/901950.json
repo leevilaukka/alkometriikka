@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kattila Rhubarb – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901950/",
+	"feed_url": "https://alkometriikka.fi/rss/901950.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kattila Rhubarb.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901950-2026-09-29-39.1",
+			"url": "https://alkometriikka.fi/tuotteet/901950/",
+			"title": "Kattila Rhubarb — 38,34 € → 39,10 €",
+			"content_html": "<p>Tuotteen Kattila Rhubarb hinta on muuttunut.</p><p>38,34 € → 39,10 € (+0,76 €, +1,98 %).</p>",
+			"summary": "Tuotteen Kattila Rhubarb hinta on muuttunut. 38,34 € → 39,10 € (+0,76 €, +1,98 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901950-75cb60479bd3.png",
+			"tags": [
+				"Väkevät",
+				"hedelmäliköörit"
+			]
+		}
+	]
+}

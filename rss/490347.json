@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Querciabella Ardalico Chianti Classico 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/490347/",
+	"feed_url": "https://alkometriikka.fi/rss/490347.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Querciabella Ardalico Chianti Classico 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-490347-2026-07-18-25.89",
+			"url": "https://alkometriikka.fi/tuotteet/490347/",
+			"title": "Querciabella Ardalico Chianti Classico 2022 — 26,45 € → 25,89 €",
+			"content_html": "<p>Tuotteen Querciabella Ardalico Chianti Classico 2022 hinta on muuttunut.</p><p>26,45 € → 25,89 € (−0,56 €, −2,12 %).</p>",
+			"summary": "Tuotteen Querciabella Ardalico Chianti Classico 2022 hinta on muuttunut. 26,45 € → 25,89 € (−0,56 €, −2,12 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/490347-61af6950c715.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

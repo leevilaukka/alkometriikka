@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bertina Elderflower – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/909202/",
+	"feed_url": "https://alkometriikka.fi/rss/909202.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bertina Elderflower.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-909202-2026-09-29-24.92",
+			"url": "https://alkometriikka.fi/tuotteet/909202/",
+			"title": "Bertina Elderflower — 25,33 € → 24,92 €",
+			"content_html": "<p>Tuotteen Bertina Elderflower hinta on muuttunut.</p><p>25,33 € → 24,92 € (−0,41 €, −1,62 %).</p>",
+			"summary": "Tuotteen Bertina Elderflower hinta on muuttunut. 25,33 € → 24,92 € (−0,41 €, −1,62 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/909202-92b159a9f6d7.png",
+			"tags": [
+				"Väkevät",
+				"mausteliköörit"
+			]
+		}
+	]
+}

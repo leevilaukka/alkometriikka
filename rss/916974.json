@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Helsinki Barrel Aged Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/916974/",
+	"feed_url": "https://alkometriikka.fi/rss/916974.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Helsinki Barrel Aged Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-916974-2026-07-18-49.65",
+			"url": "https://alkometriikka.fi/tuotteet/916974/",
+			"title": "Helsinki Barrel Aged Gin — 49,21 € → 49,65 €",
+			"content_html": "<p>Tuotteen Helsinki Barrel Aged Gin hinta on muuttunut.</p><p>49,21 € → 49,65 € (+0,44 €, +0,89 %).</p>",
+			"summary": "Tuotteen Helsinki Barrel Aged Gin hinta on muuttunut. 49,21 € → 49,65 € (+0,44 €, +0,89 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/916974-48c9fb5dac0f.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Verrocchio Amarone della Valpolicella Classico 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/908814/",
+	"feed_url": "https://alkometriikka.fi/rss/908814.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Verrocchio Amarone della Valpolicella Classico 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-908814-2026-09-29-21.98",
+			"url": "https://alkometriikka.fi/tuotteet/908814/",
+			"title": "Verrocchio Amarone della Valpolicella Classico 2019 — 21,99 € → 21,98 €",
+			"content_html": "<p>Tuotteen Verrocchio Amarone della Valpolicella Classico 2019 hinta on muuttunut.</p><p>21,99 € → 21,98 € (−0,01 €, −0,05 %).</p>",
+			"summary": "Tuotteen Verrocchio Amarone della Valpolicella Classico 2019 hinta on muuttunut. 21,99 € → 21,98 € (−0,01 €, −0,05 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/908814-91d9d00595e0.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pra' Soave Classico Monte Grande 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/500411/",
+	"feed_url": "https://alkometriikka.fi/rss/500411.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pra' Soave Classico Monte Grande 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-500411-2026-09-29-40.23",
+			"url": "https://alkometriikka.fi/tuotteet/500411/",
+			"title": "Pra' Soave Classico Monte Grande 2023 — 39,95 € → 40,23 €",
+			"content_html": "<p>Tuotteen Pra' Soave Classico Monte Grande 2023 hinta on muuttunut.</p><p>39,95 € → 40,23 € (+0,28 €, +0,70 %).</p>",
+			"summary": "Tuotteen Pra' Soave Classico Monte Grande 2023 hinta on muuttunut. 39,95 € → 40,23 € (+0,28 €, +0,70 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/500411-048b6ef15f2c.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

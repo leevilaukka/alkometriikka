@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Periquita White 2024 hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902111/",
+	"feed_url": "https://alkometriikka.fi/rss/902111.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Periquita White 2024 hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902111-2026-09-29-35.99",
+			"url": "https://alkometriikka.fi/tuotteet/902111/",
+			"title": "Periquita White 2024 hanapakkaus — 36,01 € → 35,99 €",
+			"content_html": "<p>Tuotteen Periquita White 2024 hanapakkaus hinta on muuttunut.</p><p>36,01 € → 35,99 € (−0,02 €, −0,06 %).</p>",
+			"summary": "Tuotteen Periquita White 2024 hanapakkaus hinta on muuttunut. 36,01 € → 35,99 € (−0,02 €, −0,06 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902111-a11bd69f6710.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

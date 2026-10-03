@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Benjamin Leroux Nuits Saint Georges 2017 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902252/",
+	"feed_url": "https://alkometriikka.fi/rss/902252.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Benjamin Leroux Nuits Saint Georges 2017.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902252-2026-09-29-118.08",
+			"url": "https://alkometriikka.fi/tuotteet/902252/",
+			"title": "Benjamin Leroux Nuits Saint Georges 2017 — 112,36 € → 118,08 €",
+			"content_html": "<p>Tuotteen Benjamin Leroux Nuits Saint Georges 2017 hinta on muuttunut.</p><p>112,36 € → 118,08 € (+5,72 €, +5,09 %).</p>",
+			"summary": "Tuotteen Benjamin Leroux Nuits Saint Georges 2017 hinta on muuttunut. 112,36 € → 118,08 € (+5,72 €, +5,09 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902252-00005fdc11a7.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

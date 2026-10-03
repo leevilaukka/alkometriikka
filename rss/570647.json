@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – 1+1=3 Cava Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/570647/",
+	"feed_url": "https://alkometriikka.fi/rss/570647.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: 1+1=3 Cava Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-570647-2026-07-18-14.48",
+			"url": "https://alkometriikka.fi/tuotteet/570647/",
+			"title": "1+1=3 Cava Brut — 14,44 € → 14,48 €",
+			"content_html": "<p>Tuotteen 1+1=3 Cava Brut hinta on muuttunut.</p><p>14,44 € → 14,48 € (+0,04 €, +0,28 %).</p>",
+			"summary": "Tuotteen 1+1=3 Cava Brut hinta on muuttunut. 14,44 € → 14,48 € (+0,04 €, +0,28 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/570647-4aeea5b9a423.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

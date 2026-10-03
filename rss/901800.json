@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Le Dive Blanc de Blancs Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901800/",
+	"feed_url": "https://alkometriikka.fi/rss/901800.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Le Dive Blanc de Blancs Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901800-2026-09-29-11.49",
+			"url": "https://alkometriikka.fi/tuotteet/901800/",
+			"title": "Le Dive Blanc de Blancs Brut — 11,39 € → 11,49 €",
+			"content_html": "<p>Tuotteen Le Dive Blanc de Blancs Brut hinta on muuttunut.</p><p>11,39 € → 11,49 € (+0,10 €, +0,88 %).</p>",
+			"summary": "Tuotteen Le Dive Blanc de Blancs Brut hinta on muuttunut. 11,39 € → 11,49 € (+0,10 €, +0,88 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901800-adea13c178e0.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

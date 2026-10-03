@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Freixenet Mía Blanco 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/598837/",
+	"feed_url": "https://alkometriikka.fi/rss/598837.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Freixenet Mía Blanco 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-598837-2026-07-18-11.85",
+			"url": "https://alkometriikka.fi/tuotteet/598837/",
+			"title": "Freixenet Mía Blanco 2023 — 10,98 € → 11,85 €",
+			"content_html": "<p>Tuotteen Freixenet Mía Blanco 2023 hinta on muuttunut.</p><p>10,98 € → 11,85 € (+0,87 €, +7,92 %).</p>",
+			"summary": "Tuotteen Freixenet Mía Blanco 2023 hinta on muuttunut. 10,98 € → 11,85 € (+0,87 €, +7,92 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/598837-c4860218d850.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

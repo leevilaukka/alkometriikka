@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Athénaïs AmalGamay 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902401/",
+	"feed_url": "https://alkometriikka.fi/rss/902401.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Athénaïs AmalGamay 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902401-2026-09-29-68.79",
+			"url": "https://alkometriikka.fi/tuotteet/902401/",
+			"title": "Athénaïs AmalGamay 2023 — 66,06 € → 68,79 €",
+			"content_html": "<p>Tuotteen Athénaïs AmalGamay 2023 hinta on muuttunut.</p><p>66,06 € → 68,79 € (+2,73 €, +4,13 %).</p>",
+			"summary": "Tuotteen Athénaïs AmalGamay 2023 hinta on muuttunut. 66,06 € → 68,79 € (+2,73 €, +4,13 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902401-4477858be674.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Domaine Jamet Côte-Rôtie 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903260/",
+	"feed_url": "https://alkometriikka.fi/rss/903260.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Domaine Jamet Côte-Rôtie 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903260-2026-09-29-71.56",
+			"url": "https://alkometriikka.fi/tuotteet/903260/",
+			"title": "Domaine Jamet Côte-Rôtie 2023 — 67,80 € → 71,56 €",
+			"content_html": "<p>Tuotteen Domaine Jamet Côte-Rôtie 2023 hinta on muuttunut.</p><p>67,80 € → 71,56 € (+3,76 €, +5,55 %).</p>",
+			"summary": "Tuotteen Domaine Jamet Côte-Rôtie 2023 hinta on muuttunut. 67,80 € → 71,56 € (+3,76 €, +5,55 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903260-97984cf948ac.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

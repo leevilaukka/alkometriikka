@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Metté Spiritueuse au Poivre de Sichuan – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/933422/",
+	"feed_url": "https://alkometriikka.fi/rss/933422.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Metté Spiritueuse au Poivre de Sichuan.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-933422-2026-09-29-64.07",
+			"url": "https://alkometriikka.fi/tuotteet/933422/",
+			"title": "Metté Spiritueuse au Poivre de Sichuan — 62,22 € → 64,07 €",
+			"content_html": "<p>Tuotteen Metté Spiritueuse au Poivre de Sichuan hinta on muuttunut.</p><p>62,22 € → 64,07 € (+1,85 €, +2,97 %).</p>",
+			"summary": "Tuotteen Metté Spiritueuse au Poivre de Sichuan hinta on muuttunut. 62,22 € → 64,07 € (+1,85 €, +2,97 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/933422-8cb14b4f2ef9.png",
+			"tags": [
+				"Väkevät",
+				"hedelmätisleet"
+			]
+		}
+	]
+}

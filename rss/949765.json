@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cuvée Perpetuelle Non Dosé – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/949765/",
+	"feed_url": "https://alkometriikka.fi/rss/949765.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cuvée Perpetuelle Non Dosé.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-949765-2026-09-29-68.99",
+			"url": "https://alkometriikka.fi/tuotteet/949765/",
+			"title": "Cuvée Perpetuelle Non Dosé — 65,97 € → 68,99 €",
+			"content_html": "<p>Tuotteen Cuvée Perpetuelle Non Dosé hinta on muuttunut.</p><p>65,97 € → 68,99 € (+3,02 €, +4,58 %).</p>",
+			"summary": "Tuotteen Cuvée Perpetuelle Non Dosé hinta on muuttunut. 65,97 € → 68,99 € (+3,02 €, +4,58 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/949765-915759a348ab.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jackson Estate Watercourse Cabernet Merlot Malbec 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/956224/",
+	"feed_url": "https://alkometriikka.fi/rss/956224.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jackson Estate Watercourse Cabernet Merlot Malbec 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-956224-2026-09-29-9.98",
+			"url": "https://alkometriikka.fi/tuotteet/956224/",
+			"title": "Jackson Estate Watercourse Cabernet Merlot Malbec 2020 — 9,90 € → 9,98 €",
+			"content_html": "<p>Tuotteen Jackson Estate Watercourse Cabernet Merlot Malbec 2020 hinta on muuttunut.</p><p>9,90 € → 9,98 € (+0,08 €, +0,81 %).</p>",
+			"summary": "Tuotteen Jackson Estate Watercourse Cabernet Merlot Malbec 2020 hinta on muuttunut. 9,90 € → 9,98 € (+0,08 €, +0,81 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/956224-2d032177f21b.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-956224-2026-07-18-9.9",
+			"url": "https://alkometriikka.fi/tuotteet/956224/",
+			"title": "Jackson Estate Watercourse Cabernet Merlot Malbec 2020 — 10,21 € → 9,90 €",
+			"content_html": "<p>Tuotteen Jackson Estate Watercourse Cabernet Merlot Malbec 2020 hinta on muuttunut.</p><p>10,21 € → 9,90 € (−0,31 €, −3,04 %).</p>",
+			"summary": "Tuotteen Jackson Estate Watercourse Cabernet Merlot Malbec 2020 hinta on muuttunut. 10,21 € → 9,90 € (−0,31 €, −3,04 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/956224-2d032177f21b.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

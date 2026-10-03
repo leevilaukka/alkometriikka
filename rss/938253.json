@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kopparberg Cider With Blueberry & Lime Alkoholiton tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/938253/",
+	"feed_url": "https://alkometriikka.fi/rss/938253.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kopparberg Cider With Blueberry & Lime Alkoholiton tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-938253-2026-07-18-2.49",
+			"url": "https://alkometriikka.fi/tuotteet/938253/",
+			"title": "Kopparberg Cider With Blueberry & Lime Alkoholiton tölkki — 1,48 € → 2,49 €",
+			"content_html": "<p>Tuotteen Kopparberg Cider With Blueberry & Lime Alkoholiton tölkki hinta on muuttunut.</p><p>1,48 € → 2,49 € (+1,01 €, +68,24 %).</p>",
+			"summary": "Tuotteen Kopparberg Cider With Blueberry & Lime Alkoholiton tölkki hinta on muuttunut. 1,48 € → 2,49 € (+1,01 €, +68,24 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/938253-32b67d576b4c.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat siiderit"
+			]
+		}
+	]
+}

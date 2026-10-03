@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Muros Antigos Alvarinho 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/585154/",
+	"feed_url": "https://alkometriikka.fi/rss/585154.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Muros Antigos Alvarinho 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-585154-2026-07-18-9.98",
+			"url": "https://alkometriikka.fi/tuotteet/585154/",
+			"title": "Muros Antigos Alvarinho 2021 — 11,21 € → 9,98 €",
+			"content_html": "<p>Tuotteen Muros Antigos Alvarinho 2021 hinta on muuttunut.</p><p>11,21 € → 9,98 € (−1,23 €, −10,97 %).</p>",
+			"summary": "Tuotteen Muros Antigos Alvarinho 2021 hinta on muuttunut. 11,21 € → 9,98 € (−1,23 €, −10,97 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/585154-8b1942ec3450.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Zensa Fiano Organico 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/949997/",
+	"feed_url": "https://alkometriikka.fi/rss/949997.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Zensa Fiano Organico 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-949997-2026-09-29-11.39",
+			"url": "https://alkometriikka.fi/tuotteet/949997/",
+			"title": "Zensa Fiano Organico 2024 — 11,35 € → 11,39 €",
+			"content_html": "<p>Tuotteen Zensa Fiano Organico 2024 hinta on muuttunut.</p><p>11,35 € → 11,39 € (+0,04 €, +0,35 %).</p>",
+			"summary": "Tuotteen Zensa Fiano Organico 2024 hinta on muuttunut. 11,35 € → 11,39 € (+0,04 €, +0,35 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/949997-455f2f6efc0e.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

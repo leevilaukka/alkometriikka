@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Minttu Twist Polka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/926296/",
+	"feed_url": "https://alkometriikka.fi/rss/926296.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Minttu Twist Polka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-926296-2026-09-29-15.58",
+			"url": "https://alkometriikka.fi/tuotteet/926296/",
+			"title": "Minttu Twist Polka — 15,49 € → 15,58 €",
+			"content_html": "<p>Tuotteen Minttu Twist Polka hinta on muuttunut.</p><p>15,49 € → 15,58 € (+0,09 €, +0,58 %).</p>",
+			"summary": "Tuotteen Minttu Twist Polka hinta on muuttunut. 15,49 € → 15,58 € (+0,09 €, +0,58 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/926296-9c902db7a94e.png",
+			"tags": [
+				"Väkevät",
+				"mausteliköörit"
+			]
+		}
+	]
+}

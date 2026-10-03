@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Domaine Chantal Lescure Volnay 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903084/",
+	"feed_url": "https://alkometriikka.fi/rss/903084.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Domaine Chantal Lescure Volnay 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903084-2026-09-29-72.27",
+			"url": "https://alkometriikka.fi/tuotteet/903084/",
+			"title": "Domaine Chantal Lescure Volnay 2023 — 69,75 € → 72,27 €",
+			"content_html": "<p>Tuotteen Domaine Chantal Lescure Volnay 2023 hinta on muuttunut.</p><p>69,75 € → 72,27 € (+2,52 €, +3,61 %).</p>",
+			"summary": "Tuotteen Domaine Chantal Lescure Volnay 2023 hinta on muuttunut. 69,75 € → 72,27 € (+2,52 €, +3,61 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903084-6f688d4c66fc.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

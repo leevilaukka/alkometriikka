@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Loch Lomond Original Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/959245/",
+	"feed_url": "https://alkometriikka.fi/rss/959245.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Loch Lomond Original Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-959245-2026-07-18-39.49",
+			"url": "https://alkometriikka.fi/tuotteet/959245/",
+			"title": "Loch Lomond Original Single Malt — 41,26 € → 39,49 €",
+			"content_html": "<p>Tuotteen Loch Lomond Original Single Malt hinta on muuttunut.</p><p>41,26 € → 39,49 € (−1,77 €, −4,29 %).</p>",
+			"summary": "Tuotteen Loch Lomond Original Single Malt hinta on muuttunut. 41,26 € → 39,49 € (−1,77 €, −4,29 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/959245-b224fcb518ec.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

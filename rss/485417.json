@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Caprili Brunello di Montalcino 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/485417/",
+	"feed_url": "https://alkometriikka.fi/rss/485417.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Caprili Brunello di Montalcino 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-485417-2026-09-29-42.98",
+			"url": "https://alkometriikka.fi/tuotteet/485417/",
+			"title": "Caprili Brunello di Montalcino 2020 — 42,51 € → 42,98 €",
+			"content_html": "<p>Tuotteen Caprili Brunello di Montalcino 2020 hinta on muuttunut.</p><p>42,51 € → 42,98 € (+0,47 €, +1,11 %).</p>",
+			"summary": "Tuotteen Caprili Brunello di Montalcino 2020 hinta on muuttunut. 42,51 € → 42,98 € (+0,47 €, +1,11 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/485417-aded3d0c0ced.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Krombacher Pils – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/909685/",
+	"feed_url": "https://alkometriikka.fi/rss/909685.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Krombacher Pils.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-909685-2026-07-18-3.59",
+			"url": "https://alkometriikka.fi/tuotteet/909685/",
+			"title": "Krombacher Pils — 3,49 € → 3,59 €",
+			"content_html": "<p>Tuotteen Krombacher Pils hinta on muuttunut.</p><p>3,49 € → 3,59 € (+0,10 €, +2,87 %).</p>",
+			"summary": "Tuotteen Krombacher Pils hinta on muuttunut. 3,49 € → 3,59 € (+0,10 €, +2,87 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/909685-3de4ba70f825.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

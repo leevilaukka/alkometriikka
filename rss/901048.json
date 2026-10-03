@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Catena Zapata Malbec Argentino 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901048/",
+	"feed_url": "https://alkometriikka.fi/rss/901048.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Catena Zapata Malbec Argentino 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901048-2026-09-29-99.49",
+			"url": "https://alkometriikka.fi/tuotteet/901048/",
+			"title": "Catena Zapata Malbec Argentino 2022 — 94,99 € → 99,49 €",
+			"content_html": "<p>Tuotteen Catena Zapata Malbec Argentino 2022 hinta on muuttunut.</p><p>94,99 € → 99,49 € (+4,50 €, +4,74 %).</p>",
+			"summary": "Tuotteen Catena Zapata Malbec Argentino 2022 hinta on muuttunut. 94,99 € → 99,49 € (+4,50 €, +4,74 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901048-4b1bb13e9ee1.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

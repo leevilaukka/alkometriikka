@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Rémy Martin 1738 Accord Royal – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/192907/",
+	"feed_url": "https://alkometriikka.fi/rss/192907.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Rémy Martin 1738 Accord Royal.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-192907-2026-09-29-82.49",
+			"url": "https://alkometriikka.fi/tuotteet/192907/",
+			"title": "Rémy Martin 1738 Accord Royal — 79,99 € → 82,49 €",
+			"content_html": "<p>Tuotteen Rémy Martin 1738 Accord Royal hinta on muuttunut.</p><p>79,99 € → 82,49 € (+2,50 €, +3,13 %).</p>",
+			"summary": "Tuotteen Rémy Martin 1738 Accord Royal hinta on muuttunut. 79,99 € → 82,49 € (+2,50 €, +3,13 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/192907-841a1ea878dd.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

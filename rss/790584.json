@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Happy Joe Dry Apple Cider tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/790584/",
+	"feed_url": "https://alkometriikka.fi/rss/790584.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Happy Joe Dry Apple Cider tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-790584-2026-02-02-2.54",
+			"url": "https://alkometriikka.fi/tuotteet/790584/",
+			"title": "Happy Joe Dry Apple Cider tölkki — 2,69 € → 2,54 €",
+			"content_html": "<p>Tuotteen Happy Joe Dry Apple Cider tölkki hinta on muuttunut.</p><p>2,69 € → 2,54 € (−0,15 €, −5,58 %).</p>",
+			"summary": "Tuotteen Happy Joe Dry Apple Cider tölkki hinta on muuttunut. 2,69 € → 2,54 € (−0,15 €, −5,58 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/790584-f72bef2a42d4.png",
+			"tags": [
+				"Panimotuotteet",
+				"siiderit"
+			]
+		},
+		{
+			"id": "alkometriikka-790584-2026-02-02-2.69",
+			"url": "https://alkometriikka.fi/tuotteet/790584/",
+			"title": "Happy Joe Dry Apple Cider tölkki — 2,54 € → 2,69 €",
+			"content_html": "<p>Tuotteen Happy Joe Dry Apple Cider tölkki hinta on muuttunut.</p><p>2,54 € → 2,69 € (+0,15 €, +5,91 %).</p>",
+			"summary": "Tuotteen Happy Joe Dry Apple Cider tölkki hinta on muuttunut. 2,54 € → 2,69 € (+0,15 €, +5,91 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/790584-f72bef2a42d4.png",
+			"tags": [
+				"Panimotuotteet",
+				"siiderit"
+			]
+		}
+	]
+}

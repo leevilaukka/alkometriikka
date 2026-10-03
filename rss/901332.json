@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ascaïr Red 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901332/",
+	"feed_url": "https://alkometriikka.fi/rss/901332.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ascaïr Red 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901332-2026-07-18-18.99",
+			"url": "https://alkometriikka.fi/tuotteet/901332/",
+			"title": "Ascaïr Red 2022 — 19,45 € → 18,99 €",
+			"content_html": "<p>Tuotteen Ascaïr Red 2022 hinta on muuttunut.</p><p>19,45 € → 18,99 € (−0,46 €, −2,37 %).</p>",
+			"summary": "Tuotteen Ascaïr Red 2022 hinta on muuttunut. 19,45 € → 18,99 € (−0,46 €, −2,37 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901332-1405d517a009.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

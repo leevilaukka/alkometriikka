@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Casal Garcia Rosé – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/935452/",
+	"feed_url": "https://alkometriikka.fi/rss/935452.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Casal Garcia Rosé.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-935452-2026-07-18-6.48",
+			"url": "https://alkometriikka.fi/tuotteet/935452/",
+			"title": "Casal Garcia Rosé — 6,21 € → 6,48 €",
+			"content_html": "<p>Tuotteen Casal Garcia Rosé hinta on muuttunut.</p><p>6,21 € → 6,48 € (+0,27 €, +4,35 %).</p>",
+			"summary": "Tuotteen Casal Garcia Rosé hinta on muuttunut. 6,21 € → 6,48 € (+0,27 €, +4,35 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/935452-ad107fa0b5a6.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

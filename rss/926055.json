@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Finca de Los Locos 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/926055/",
+	"feed_url": "https://alkometriikka.fi/rss/926055.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Finca de Los Locos 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-926055-2026-07-18-32.99",
+			"url": "https://alkometriikka.fi/tuotteet/926055/",
+			"title": "Finca de Los Locos 2023 — 32,37 € → 32,99 €",
+			"content_html": "<p>Tuotteen Finca de Los Locos 2023 hinta on muuttunut.</p><p>32,37 € → 32,99 € (+0,62 €, +1,92 %).</p>",
+			"summary": "Tuotteen Finca de Los Locos 2023 hinta on muuttunut. 32,37 € → 32,99 € (+0,62 €, +1,92 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/926055-bc5bc0d05091.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

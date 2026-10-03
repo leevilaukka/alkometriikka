@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Palmer & Co La Réserve Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/909223/",
+	"feed_url": "https://alkometriikka.fi/rss/909223.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Palmer & Co La Réserve Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-909223-2026-09-29-30.89",
+			"url": "https://alkometriikka.fi/tuotteet/909223/",
+			"title": "Palmer & Co La Réserve Champagne Brut — 29,99 € → 30,89 €",
+			"content_html": "<p>Tuotteen Palmer & Co La Réserve Champagne Brut hinta on muuttunut.</p><p>29,99 € → 30,89 € (+0,90 €, +3,00 %).</p>",
+			"summary": "Tuotteen Palmer & Co La Réserve Champagne Brut hinta on muuttunut. 29,99 € → 30,89 € (+0,90 €, +3,00 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/909223-d9c02c8cadf0.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

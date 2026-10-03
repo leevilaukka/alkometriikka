@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Calvet Réserve du Ciron Sauternes 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/914184/",
+	"feed_url": "https://alkometriikka.fi/rss/914184.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Calvet Réserve du Ciron Sauternes 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-914184-2026-07-18-17.49",
+			"url": "https://alkometriikka.fi/tuotteet/914184/",
+			"title": "Calvet Réserve du Ciron Sauternes 2023 — 17,20 € → 17,49 €",
+			"content_html": "<p>Tuotteen Calvet Réserve du Ciron Sauternes 2023 hinta on muuttunut.</p><p>17,20 € → 17,49 € (+0,29 €, +1,69 %).</p>",
+			"summary": "Tuotteen Calvet Réserve du Ciron Sauternes 2023 hinta on muuttunut. 17,20 € → 17,49 € (+0,29 €, +1,69 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/914184-fab2fa9c7c0e.png",
+			"tags": [
+				"Viinit",
+				"jälkiruokaviinit"
+			]
+		}
+	]
+}

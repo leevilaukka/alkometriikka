@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – J. Charpentier Millésime Champagne Brut 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/558187/",
+	"feed_url": "https://alkometriikka.fi/rss/558187.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: J. Charpentier Millésime Champagne Brut 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-558187-2026-09-29-51.9",
+			"url": "https://alkometriikka.fi/tuotteet/558187/",
+			"title": "J. Charpentier Millésime Champagne Brut 2019 — 51,89 € → 51,90 €",
+			"content_html": "<p>Tuotteen J. Charpentier Millésime Champagne Brut 2019 hinta on muuttunut.</p><p>51,89 € → 51,90 € (+0,01 €, +0,02 %).</p>",
+			"summary": "Tuotteen J. Charpentier Millésime Champagne Brut 2019 hinta on muuttunut. 51,89 € → 51,90 € (+0,01 €, +0,02 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/558187-2ee2cb315708.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

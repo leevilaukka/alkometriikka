@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Montes Folly 2017 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902942/",
+	"feed_url": "https://alkometriikka.fi/rss/902942.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Montes Folly 2017.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902942-2026-09-29-89.98",
+			"url": "https://alkometriikka.fi/tuotteet/902942/",
+			"title": "Montes Folly 2017 — 87,00 € → 89,98 €",
+			"content_html": "<p>Tuotteen Montes Folly 2017 hinta on muuttunut.</p><p>87,00 € → 89,98 € (+2,98 €, +3,43 %).</p>",
+			"summary": "Tuotteen Montes Folly 2017 hinta on muuttunut. 87,00 € → 89,98 € (+2,98 €, +3,43 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902942-4f990a1c4791.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

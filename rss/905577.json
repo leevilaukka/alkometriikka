@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nantou Omar Sherry Cask Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/905577/",
+	"feed_url": "https://alkometriikka.fi/rss/905577.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nantou Omar Sherry Cask Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-905577-2026-09-29-95.09",
+			"url": "https://alkometriikka.fi/tuotteet/905577/",
+			"title": "Nantou Omar Sherry Cask Single Malt — 92,17 € → 95,09 €",
+			"content_html": "<p>Tuotteen Nantou Omar Sherry Cask Single Malt hinta on muuttunut.</p><p>92,17 € → 95,09 € (+2,92 €, +3,17 %).</p>",
+			"summary": "Tuotteen Nantou Omar Sherry Cask Single Malt hinta on muuttunut. 92,17 € → 95,09 € (+2,92 €, +3,17 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/905577-164e1fb9a25e.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

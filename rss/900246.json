@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lindores 1494 Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900246/",
+	"feed_url": "https://alkometriikka.fi/rss/900246.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lindores 1494 Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900246-2026-09-29-65.98",
+			"url": "https://alkometriikka.fi/tuotteet/900246/",
+			"title": "Lindores 1494 Single Malt — 64,99 € → 65,98 €",
+			"content_html": "<p>Tuotteen Lindores 1494 Single Malt hinta on muuttunut.</p><p>64,99 € → 65,98 € (+0,99 €, +1,52 %).</p>",
+			"summary": "Tuotteen Lindores 1494 Single Malt hinta on muuttunut. 64,99 € → 65,98 € (+0,99 €, +1,52 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900246-655d66a377b6.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

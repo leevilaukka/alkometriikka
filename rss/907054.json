@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bellissima Rosé Organic Zero Sugar Extra Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/907054/",
+	"feed_url": "https://alkometriikka.fi/rss/907054.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bellissima Rosé Organic Zero Sugar Extra Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-907054-2026-09-29-15.39",
+			"url": "https://alkometriikka.fi/tuotteet/907054/",
+			"title": "Bellissima Rosé Organic Zero Sugar Extra Brut — 15,35 € → 15,39 €",
+			"content_html": "<p>Tuotteen Bellissima Rosé Organic Zero Sugar Extra Brut hinta on muuttunut.</p><p>15,35 € → 15,39 € (+0,04 €, +0,26 %).</p>",
+			"summary": "Tuotteen Bellissima Rosé Organic Zero Sugar Extra Brut hinta on muuttunut. 15,35 € → 15,39 € (+0,04 €, +0,26 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/907054-bff9d5f110e0.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

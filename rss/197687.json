@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Olmeca Altos Añejo Tequila – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/197687/",
+	"feed_url": "https://alkometriikka.fi/rss/197687.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Olmeca Altos Añejo Tequila.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-197687-2026-09-29-55.99",
+			"url": "https://alkometriikka.fi/tuotteet/197687/",
+			"title": "Olmeca Altos Añejo Tequila — 55,78 € → 55,99 €",
+			"content_html": "<p>Tuotteen Olmeca Altos Añejo Tequila hinta on muuttunut.</p><p>55,78 € → 55,99 € (+0,21 €, +0,38 %).</p>",
+			"summary": "Tuotteen Olmeca Altos Añejo Tequila hinta on muuttunut. 55,78 € → 55,99 € (+0,21 €, +0,38 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/197687-23679c76fa6e.png",
+			"tags": [
+				"Väkevät",
+				"Tequilat"
+			]
+		},
+		{
+			"id": "alkometriikka-197687-2026-07-18-55.78",
+			"url": "https://alkometriikka.fi/tuotteet/197687/",
+			"title": "Olmeca Altos Añejo Tequila — 55,76 € → 55,78 €",
+			"content_html": "<p>Tuotteen Olmeca Altos Añejo Tequila hinta on muuttunut.</p><p>55,76 € → 55,78 € (+0,02 €, +0,04 %).</p>",
+			"summary": "Tuotteen Olmeca Altos Añejo Tequila hinta on muuttunut. 55,76 € → 55,78 € (+0,02 €, +0,04 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/197687-23679c76fa6e.png",
+			"tags": [
+				"Väkevät",
+				"Tequilat"
+			]
+		}
+	]
+}

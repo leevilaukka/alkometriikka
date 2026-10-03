@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Louis Massing Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/915145/",
+	"feed_url": "https://alkometriikka.fi/rss/915145.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Louis Massing Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-915145-2026-07-18-34.99",
+			"url": "https://alkometriikka.fi/tuotteet/915145/",
+			"title": "Louis Massing Champagne Brut — 34,39 € → 34,99 €",
+			"content_html": "<p>Tuotteen Louis Massing Champagne Brut hinta on muuttunut.</p><p>34,39 € → 34,99 € (+0,60 €, +1,74 %).</p>",
+			"summary": "Tuotteen Louis Massing Champagne Brut hinta on muuttunut. 34,39 € → 34,99 € (+0,60 €, +1,74 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/915145-b6ba85fa672c.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

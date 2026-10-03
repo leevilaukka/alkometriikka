@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – K Charlotte Magnum 2015 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/933705/",
+	"feed_url": "https://alkometriikka.fi/rss/933705.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: K Charlotte Magnum 2015.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-933705-2026-09-29-154.78",
+			"url": "https://alkometriikka.fi/tuotteet/933705/",
+			"title": "K Charlotte Magnum 2015 — 149,07 € → 154,78 €",
+			"content_html": "<p>Tuotteen K Charlotte Magnum 2015 hinta on muuttunut.</p><p>149,07 € → 154,78 € (+5,71 €, +3,83 %).</p>",
+			"summary": "Tuotteen K Charlotte Magnum 2015 hinta on muuttunut. 149,07 € → 154,78 € (+5,71 €, +3,83 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/933705-119503396188.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lindeman's Riesling Gewürztraminer hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/550858/",
+	"feed_url": "https://alkometriikka.fi/rss/550858.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lindeman's Riesling Gewürztraminer hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-550858-2026-07-18-21.99",
+			"url": "https://alkometriikka.fi/tuotteet/550858/",
+			"title": "Lindeman's Riesling Gewürztraminer hanapakkaus — 21,89 € → 21,99 €",
+			"content_html": "<p>Tuotteen Lindeman's Riesling Gewürztraminer hanapakkaus hinta on muuttunut.</p><p>21,89 € → 21,99 € (+0,10 €, +0,46 %).</p>",
+			"summary": "Tuotteen Lindeman's Riesling Gewürztraminer hanapakkaus hinta on muuttunut. 21,89 € → 21,99 € (+0,10 €, +0,46 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/550858-8424516077cd.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

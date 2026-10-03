@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Dourakis Euphoria 2024 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/951955/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Dourakis Euphoria 2024.</description>
+		<language>fi</language>
+		<lastBuildDate>Sat, 03 Oct 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/951955.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Dourakis Euphoria 2024 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Dourakis Euphoria 2024 — 55,74 € → 58,12 €</title>
+			<link>https://alkometriikka.fi/tuotteet/951955/</link>
+			<guid isPermaLink="false">alkometriikka-951955-2026-09-29-58.12</guid>
+			<pubDate>Tue, 29 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / jälkiruokaviinit</category>
+			<description><![CDATA[<p>Tuotteen Dourakis Euphoria 2024 hinta on muuttunut.</p><p>55,74 € → 58,12 € (+2,38 €, +4,27 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/951955-af6bdd602e09.png" />
+		</item>
+	</channel>
+</rss>

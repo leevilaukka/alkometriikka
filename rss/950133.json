@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dal Forno Romano Valpolicella Superiore 2017 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/950133/",
+	"feed_url": "https://alkometriikka.fi/rss/950133.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dal Forno Romano Valpolicella Superiore 2017.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-950133-2026-09-29-126.78",
+			"url": "https://alkometriikka.fi/tuotteet/950133/",
+			"title": "Dal Forno Romano Valpolicella Superiore 2017 — 120,46 € → 126,78 €",
+			"content_html": "<p>Tuotteen Dal Forno Romano Valpolicella Superiore 2017 hinta on muuttunut.</p><p>120,46 € → 126,78 € (+6,32 €, +5,25 %).</p>",
+			"summary": "Tuotteen Dal Forno Romano Valpolicella Superiore 2017 hinta on muuttunut. 120,46 € → 126,78 € (+6,32 €, +5,25 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/950133-be6a6ed79306.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

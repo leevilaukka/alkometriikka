@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hiruzta Txakolina 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/565877/",
+	"feed_url": "https://alkometriikka.fi/rss/565877.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hiruzta Txakolina 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-565877-2026-07-18-20.99",
+			"url": "https://alkometriikka.fi/tuotteet/565877/",
+			"title": "Hiruzta Txakolina 2025 — 20,44 € → 20,99 €",
+			"content_html": "<p>Tuotteen Hiruzta Txakolina 2025 hinta on muuttunut.</p><p>20,44 € → 20,99 € (+0,55 €, +2,69 %).</p>",
+			"summary": "Tuotteen Hiruzta Txakolina 2025 hinta on muuttunut. 20,44 € → 20,99 € (+0,55 €, +2,69 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/565877-7599a08cb49b.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Aranleón Blés Roble 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/427207/",
+	"feed_url": "https://alkometriikka.fi/rss/427207.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Aranleón Blés Roble 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-427207-2026-07-18-13.98",
+			"url": "https://alkometriikka.fi/tuotteet/427207/",
+			"title": "Aranleón Blés Roble 2020 — 13,94 € → 13,98 €",
+			"content_html": "<p>Tuotteen Aranleón Blés Roble 2020 hinta on muuttunut.</p><p>13,94 € → 13,98 € (+0,04 €, +0,29 %).</p>",
+			"summary": "Tuotteen Aranleón Blés Roble 2020 hinta on muuttunut. 13,94 € → 13,98 € (+0,04 €, +0,29 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/427207-30b17ee7243f.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

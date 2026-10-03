@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gaja Rossj Bass 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900609/",
+	"feed_url": "https://alkometriikka.fi/rss/900609.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gaja Rossj Bass 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900609-2026-09-29-116.5",
+			"url": "https://alkometriikka.fi/tuotteet/900609/",
+			"title": "Gaja Rossj Bass 2023 — 110,00 € → 116,50 €",
+			"content_html": "<p>Tuotteen Gaja Rossj Bass 2023 hinta on muuttunut.</p><p>110,00 € → 116,50 € (+6,50 €, +5,91 %).</p>",
+			"summary": "Tuotteen Gaja Rossj Bass 2023 hinta on muuttunut. 110,00 € → 116,50 € (+6,50 €, +5,91 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900609-72c2d3a3e6fc.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

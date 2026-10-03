@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Highland Park Cask Strength Heather Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902370/",
+	"feed_url": "https://alkometriikka.fi/rss/902370.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Highland Park Cask Strength Heather Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902370-2026-09-29-108",
+			"url": "https://alkometriikka.fi/tuotteet/902370/",
+			"title": "Highland Park Cask Strength Heather Single Malt — 104,80 € → 108,00 €",
+			"content_html": "<p>Tuotteen Highland Park Cask Strength Heather Single Malt hinta on muuttunut.</p><p>104,80 € → 108,00 € (+3,20 €, +3,05 %).</p>",
+			"summary": "Tuotteen Highland Park Cask Strength Heather Single Malt hinta on muuttunut. 104,80 € → 108,00 € (+3,20 €, +3,05 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902370-ac11a5917185.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

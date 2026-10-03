@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Guy Charlemagne Mesnillèsime Champagne Brut 2014 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/949127/",
+	"feed_url": "https://alkometriikka.fi/rss/949127.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Guy Charlemagne Mesnillèsime Champagne Brut 2014.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-949127-2026-09-29-100.28",
+			"url": "https://alkometriikka.fi/tuotteet/949127/",
+			"title": "Guy Charlemagne Mesnillèsime Champagne Brut 2014 — 95,77 € → 100,28 €",
+			"content_html": "<p>Tuotteen Guy Charlemagne Mesnillèsime Champagne Brut 2014 hinta on muuttunut.</p><p>95,77 € → 100,28 € (+4,51 €, +4,71 %).</p>",
+			"summary": "Tuotteen Guy Charlemagne Mesnillèsime Champagne Brut 2014 hinta on muuttunut. 95,77 € → 100,28 € (+4,51 €, +4,71 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/949127-7f8ea8c93ec9.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

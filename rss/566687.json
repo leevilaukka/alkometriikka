@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Retsina Lafazanis – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/566687/",
+	"feed_url": "https://alkometriikka.fi/rss/566687.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Retsina Lafazanis.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-566687-2026-07-18-13.49",
+			"url": "https://alkometriikka.fi/tuotteet/566687/",
+			"title": "Retsina Lafazanis — 14,44 € → 13,49 €",
+			"content_html": "<p>Tuotteen Retsina Lafazanis hinta on muuttunut.</p><p>14,44 € → 13,49 € (−0,95 €, −6,58 %).</p>",
+			"summary": "Tuotteen Retsina Lafazanis hinta on muuttunut. 14,44 € → 13,49 € (−0,95 €, −6,58 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/566687-4399d0571326.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

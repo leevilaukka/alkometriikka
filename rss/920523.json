@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bestheim Riesling Premium Réserve 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/920523/",
+	"feed_url": "https://alkometriikka.fi/rss/920523.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bestheim Riesling Premium Réserve 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-920523-2026-07-18-13.98",
+			"url": "https://alkometriikka.fi/tuotteet/920523/",
+			"title": "Bestheim Riesling Premium Réserve 2023 — 13,94 € → 13,98 €",
+			"content_html": "<p>Tuotteen Bestheim Riesling Premium Réserve 2023 hinta on muuttunut.</p><p>13,94 € → 13,98 € (+0,04 €, +0,29 %).</p>",
+			"summary": "Tuotteen Bestheim Riesling Premium Réserve 2023 hinta on muuttunut. 13,94 € → 13,98 € (+0,04 €, +0,29 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/920523-4ac94b0b0dd3.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Castelvecchio Carso Terrano 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/917253/",
+	"feed_url": "https://alkometriikka.fi/rss/917253.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Castelvecchio Carso Terrano 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-917253-2026-07-18-29.99",
+			"url": "https://alkometriikka.fi/tuotteet/917253/",
+			"title": "Castelvecchio Carso Terrano 2019 — 30,45 € → 29,99 €",
+			"content_html": "<p>Tuotteen Castelvecchio Carso Terrano 2019 hinta on muuttunut.</p><p>30,45 € → 29,99 € (−0,46 €, −1,51 %).</p>",
+			"summary": "Tuotteen Castelvecchio Carso Terrano 2019 hinta on muuttunut. 30,45 € → 29,99 € (−0,46 €, −1,51 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/917253-9bc0b817c646.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

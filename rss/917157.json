@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gratavinum 2PR 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/917157/",
+	"feed_url": "https://alkometriikka.fi/rss/917157.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gratavinum 2PR 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-917157-2026-07-18-36.99",
+			"url": "https://alkometriikka.fi/tuotteet/917157/",
+			"title": "Gratavinum 2PR 2021 — 37,44 € → 36,99 €",
+			"content_html": "<p>Tuotteen Gratavinum 2PR 2021 hinta on muuttunut.</p><p>37,44 € → 36,99 € (−0,45 €, −1,20 %).</p>",
+			"summary": "Tuotteen Gratavinum 2PR 2021 hinta on muuttunut. 37,44 € → 36,99 € (−0,45 €, −1,20 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/917157-f2f0c111d93b.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

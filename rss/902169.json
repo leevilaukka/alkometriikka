@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – La Caña Navia Albariño 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902169/",
+	"feed_url": "https://alkometriikka.fi/rss/902169.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: La Caña Navia Albariño 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902169-2026-09-29-61.74",
+			"url": "https://alkometriikka.fi/tuotteet/902169/",
+			"title": "La Caña Navia Albariño 2024 — 59,98 € → 61,74 €",
+			"content_html": "<p>Tuotteen La Caña Navia Albariño 2024 hinta on muuttunut.</p><p>59,98 € → 61,74 € (+1,76 €, +2,93 %).</p>",
+			"summary": "Tuotteen La Caña Navia Albariño 2024 hinta on muuttunut. 59,98 € → 61,74 € (+1,76 €, +2,93 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902169-bdc253821417.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

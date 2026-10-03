@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dingle Single Pot Still – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902774/",
+	"feed_url": "https://alkometriikka.fi/rss/902774.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dingle Single Pot Still.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902774-2026-09-29-67.99",
+			"url": "https://alkometriikka.fi/tuotteet/902774/",
+			"title": "Dingle Single Pot Still — 66,98 € → 67,99 €",
+			"content_html": "<p>Tuotteen Dingle Single Pot Still hinta on muuttunut.</p><p>66,98 € → 67,99 € (+1,01 €, +1,51 %).</p>",
+			"summary": "Tuotteen Dingle Single Pot Still hinta on muuttunut. 66,98 € → 67,99 € (+1,01 €, +1,51 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902774-8753634636d3.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

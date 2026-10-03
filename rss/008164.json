@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jacob's Creek Organic Chardonnay 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/008164/",
+	"feed_url": "https://alkometriikka.fi/rss/008164.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jacob's Creek Organic Chardonnay 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-008164-2026-09-29-12.49",
+			"url": "https://alkometriikka.fi/tuotteet/008164/",
+			"title": "Jacob's Creek Organic Chardonnay 2023 — 12,26 € → 12,49 €",
+			"content_html": "<p>Tuotteen Jacob's Creek Organic Chardonnay 2023 hinta on muuttunut.</p><p>12,26 € → 12,49 € (+0,23 €, +1,88 %).</p>",
+			"summary": "Tuotteen Jacob's Creek Organic Chardonnay 2023 hinta on muuttunut. 12,26 € → 12,49 € (+0,23 €, +1,88 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/008164-7c4887cc81a4.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

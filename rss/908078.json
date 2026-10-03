@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mionetto Treviso Prosecco Magnum Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/908078/",
+	"feed_url": "https://alkometriikka.fi/rss/908078.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mionetto Treviso Prosecco Magnum Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-908078-2026-07-18-32.75",
+			"url": "https://alkometriikka.fi/tuotteet/908078/",
+			"title": "Mionetto Treviso Prosecco Magnum Brut — 32,50 € → 32,75 €",
+			"content_html": "<p>Tuotteen Mionetto Treviso Prosecco Magnum Brut hinta on muuttunut.</p><p>32,50 € → 32,75 € (+0,25 €, +0,77 %).</p>",
+			"summary": "Tuotteen Mionetto Treviso Prosecco Magnum Brut hinta on muuttunut. 32,50 € → 32,75 € (+0,25 €, +0,77 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/908078-e0e8e38fd445.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

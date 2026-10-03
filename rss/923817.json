@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Banfi La Pettegola Vermentino 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/923817/",
+	"feed_url": "https://alkometriikka.fi/rss/923817.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Banfi La Pettegola Vermentino 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-923817-2026-09-29-21.99",
+			"url": "https://alkometriikka.fi/tuotteet/923817/",
+			"title": "Banfi La Pettegola Vermentino 2025 — 21,49 € → 21,99 €",
+			"content_html": "<p>Tuotteen Banfi La Pettegola Vermentino 2025 hinta on muuttunut.</p><p>21,49 € → 21,99 € (+0,50 €, +2,33 %).</p>",
+			"summary": "Tuotteen Banfi La Pettegola Vermentino 2025 hinta on muuttunut. 21,49 € → 21,99 € (+0,50 €, +2,33 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/923817-7e22707dc28b.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-923817-2026-07-18-21.49",
+			"url": "https://alkometriikka.fi/tuotteet/923817/",
+			"title": "Banfi La Pettegola Vermentino 2025 — 21,45 € → 21,49 €",
+			"content_html": "<p>Tuotteen Banfi La Pettegola Vermentino 2025 hinta on muuttunut.</p><p>21,45 € → 21,49 € (+0,04 €, +0,19 %).</p>",
+			"summary": "Tuotteen Banfi La Pettegola Vermentino 2025 hinta on muuttunut. 21,45 € → 21,49 € (+0,04 €, +0,19 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/923817-7e22707dc28b.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

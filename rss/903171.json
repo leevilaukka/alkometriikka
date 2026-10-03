@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mailly Grand Cru Blanc de Pinot Noir Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903171/",
+	"feed_url": "https://alkometriikka.fi/rss/903171.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mailly Grand Cru Blanc de Pinot Noir Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903171-2026-09-29-72.51",
+			"url": "https://alkometriikka.fi/tuotteet/903171/",
+			"title": "Mailly Grand Cru Blanc de Pinot Noir Champagne Brut — 69,98 € → 72,51 €",
+			"content_html": "<p>Tuotteen Mailly Grand Cru Blanc de Pinot Noir Champagne Brut hinta on muuttunut.</p><p>69,98 € → 72,51 € (+2,53 €, +3,62 %).</p>",
+			"summary": "Tuotteen Mailly Grand Cru Blanc de Pinot Noir Champagne Brut hinta on muuttunut. 69,98 € → 72,51 € (+2,53 €, +3,62 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903171-88b78637caed.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

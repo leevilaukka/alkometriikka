@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Codorníu Ars Collecta Josep Raventos Gran Reserva Cava Brut 2015 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900020/",
+	"feed_url": "https://alkometriikka.fi/rss/900020.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Codorníu Ars Collecta Josep Raventos Gran Reserva Cava Brut 2015.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900020-2026-09-29-42.98",
+			"url": "https://alkometriikka.fi/tuotteet/900020/",
+			"title": "Codorníu Ars Collecta Josep Raventos Gran Reserva Cava Brut 2015 — 42,29 € → 42,98 €",
+			"content_html": "<p>Tuotteen Codorníu Ars Collecta Josep Raventos Gran Reserva Cava Brut 2015 hinta on muuttunut.</p><p>42,29 € → 42,98 € (+0,69 €, +1,63 %).</p>",
+			"summary": "Tuotteen Codorníu Ars Collecta Josep Raventos Gran Reserva Cava Brut 2015 hinta on muuttunut. 42,29 € → 42,98 € (+0,69 €, +1,63 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900020-aed5e629667f.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

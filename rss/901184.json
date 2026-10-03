@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Aires de Arriba Petit Verdot 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901184/",
+	"feed_url": "https://alkometriikka.fi/rss/901184.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Aires de Arriba Petit Verdot 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901184-2026-07-18-29.91",
+			"url": "https://alkometriikka.fi/tuotteet/901184/",
+			"title": "Aires de Arriba Petit Verdot 2021 — 30,36 € → 29,91 €",
+			"content_html": "<p>Tuotteen Aires de Arriba Petit Verdot 2021 hinta on muuttunut.</p><p>30,36 € → 29,91 € (−0,45 €, −1,48 %).</p>",
+			"summary": "Tuotteen Aires de Arriba Petit Verdot 2021 hinta on muuttunut. 30,36 € → 29,91 € (−0,45 €, −1,48 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901184-a2b315836768.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

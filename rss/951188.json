@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Autréau de Champillon Premier Cru Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/951188/",
+	"feed_url": "https://alkometriikka.fi/rss/951188.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Autréau de Champillon Premier Cru Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-951188-2026-09-29-47.98",
+			"url": "https://alkometriikka.fi/tuotteet/951188/",
+			"title": "Autréau de Champillon Premier Cru Champagne Brut — 46,98 € → 47,98 €",
+			"content_html": "<p>Tuotteen Autréau de Champillon Premier Cru Champagne Brut hinta on muuttunut.</p><p>46,98 € → 47,98 € (+1,00 €, +2,13 %).</p>",
+			"summary": "Tuotteen Autréau de Champillon Premier Cru Champagne Brut hinta on muuttunut. 46,98 € → 47,98 € (+1,00 €, +2,13 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/951188-594c9d710875.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

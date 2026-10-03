@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Koff Long Drink Lime & Vodka tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/795034/",
+	"feed_url": "https://alkometriikka.fi/rss/795034.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Koff Long Drink Lime & Vodka tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-795034-2026-09-29-2.73",
+			"url": "https://alkometriikka.fi/tuotteet/795034/",
+			"title": "Koff Long Drink Lime & Vodka tölkki — 2,69 € → 2,73 €",
+			"content_html": "<p>Tuotteen Koff Long Drink Lime & Vodka tölkki hinta on muuttunut.</p><p>2,69 € → 2,73 € (+0,04 €, +1,49 %).</p>",
+			"summary": "Tuotteen Koff Long Drink Lime & Vodka tölkki hinta on muuttunut. 2,69 € → 2,73 € (+0,04 €, +1,49 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/795034-88f9ff880a90.png",
+			"tags": [
+				"Panimotuotteet",
+				"juomasekoitukset"
+			]
+		}
+	]
+}

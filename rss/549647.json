@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Zeno Alcohol Liberated Sparkling – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/549647/",
+	"feed_url": "https://alkometriikka.fi/rss/549647.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Zeno Alcohol Liberated Sparkling.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-549647-2026-07-18-13.29",
+			"url": "https://alkometriikka.fi/tuotteet/549647/",
+			"title": "Zeno Alcohol Liberated Sparkling — 13,24 € → 13,29 €",
+			"content_html": "<p>Tuotteen Zeno Alcohol Liberated Sparkling hinta on muuttunut.</p><p>13,24 € → 13,29 € (+0,05 €, +0,38 %).</p>",
+			"summary": "Tuotteen Zeno Alcohol Liberated Sparkling hinta on muuttunut. 13,24 € → 13,29 € (+0,05 €, +0,38 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/549647-2530264ae67c.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat kuohuviinit"
+			]
+		}
+	]
+}

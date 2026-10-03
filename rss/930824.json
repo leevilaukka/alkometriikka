@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Merlet C2 Café Liqueur – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/930824/",
+	"feed_url": "https://alkometriikka.fi/rss/930824.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Merlet C2 Café Liqueur.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-930824-2026-09-29-51.58",
+			"url": "https://alkometriikka.fi/tuotteet/930824/",
+			"title": "Merlet C2 Café Liqueur — 51,14 € → 51,58 €",
+			"content_html": "<p>Tuotteen Merlet C2 Café Liqueur hinta on muuttunut.</p><p>51,14 € → 51,58 € (+0,44 €, +0,86 %).</p>",
+			"summary": "Tuotteen Merlet C2 Café Liqueur hinta on muuttunut. 51,14 € → 51,58 € (+0,44 €, +0,86 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/930824-6fb7ab9813b8.png",
+			"tags": [
+				"Väkevät",
+				"kahviliköörit"
+			]
+		}
+	]
+}

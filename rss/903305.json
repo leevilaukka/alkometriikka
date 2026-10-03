@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – High Coast Timmer Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903305/",
+	"feed_url": "https://alkometriikka.fi/rss/903305.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: High Coast Timmer Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903305-2026-09-29-80.14",
+			"url": "https://alkometriikka.fi/tuotteet/903305/",
+			"title": "High Coast Timmer Single Malt — 78,30 € → 80,14 €",
+			"content_html": "<p>Tuotteen High Coast Timmer Single Malt hinta on muuttunut.</p><p>78,30 € → 80,14 € (+1,84 €, +2,35 %).</p>",
+			"summary": "Tuotteen High Coast Timmer Single Malt hinta on muuttunut. 78,30 € → 80,14 € (+1,84 €, +2,35 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903305-b8b02ba65cde.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Albino Rocca Nebbiolo d´Alba  2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903152/",
+	"feed_url": "https://alkometriikka.fi/rss/903152.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Albino Rocca Nebbiolo d´Alba  2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903152-2026-09-29-36.91",
+			"url": "https://alkometriikka.fi/tuotteet/903152/",
+			"title": "Albino Rocca Nebbiolo d´Alba  2024 — 36,86 € → 36,91 €",
+			"content_html": "<p>Tuotteen Albino Rocca Nebbiolo d´Alba  2024 hinta on muuttunut.</p><p>36,86 € → 36,91 € (+0,05 €, +0,14 %).</p>",
+			"summary": "Tuotteen Albino Rocca Nebbiolo d´Alba 2024 hinta on muuttunut. 36,86 € → 36,91 € (+0,05 €, +0,14 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903152-1728620de8ee.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

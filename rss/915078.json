@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mission St. Vincent Crémant de Bordeaux Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/915078/",
+	"feed_url": "https://alkometriikka.fi/rss/915078.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mission St. Vincent Crémant de Bordeaux Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-915078-2026-07-18-16.49",
+			"url": "https://alkometriikka.fi/tuotteet/915078/",
+			"title": "Mission St. Vincent Crémant de Bordeaux Brut — 16,45 € → 16,49 €",
+			"content_html": "<p>Tuotteen Mission St. Vincent Crémant de Bordeaux Brut hinta on muuttunut.</p><p>16,45 € → 16,49 € (+0,04 €, +0,24 %).</p>",
+			"summary": "Tuotteen Mission St. Vincent Crémant de Bordeaux Brut hinta on muuttunut. 16,45 € → 16,49 € (+0,04 €, +0,24 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/915078-c62e7a011f13.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Montalto Rosso Organic 2020 muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/421287/",
+	"feed_url": "https://alkometriikka.fi/rss/421287.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Montalto Rosso Organic 2020 muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-421287-2026-02-02-9.69",
+			"url": "https://alkometriikka.fi/tuotteet/421287/",
+			"title": "Montalto Rosso Organic 2020 muovipullo — 9,89 € → 9,69 €",
+			"content_html": "<p>Tuotteen Montalto Rosso Organic 2020 muovipullo hinta on muuttunut.</p><p>9,89 € → 9,69 € (−0,20 €, −2,02 %).</p>",
+			"summary": "Tuotteen Montalto Rosso Organic 2020 muovipullo hinta on muuttunut. 9,89 € → 9,69 € (−0,20 €, −2,02 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/421287-46d1d7226da8.png",
+			"tags": [
+				"punaviinit",
+				"Mehevä & Hilloinen"
+			]
+		},
+		{
+			"id": "alkometriikka-421287-2026-02-02-9.89",
+			"url": "https://alkometriikka.fi/tuotteet/421287/",
+			"title": "Montalto Rosso Organic 2020 muovipullo — 9,69 € → 9,89 €",
+			"content_html": "<p>Tuotteen Montalto Rosso Organic 2020 muovipullo hinta on muuttunut.</p><p>9,69 € → 9,89 € (+0,20 €, +2,06 %).</p>",
+			"summary": "Tuotteen Montalto Rosso Organic 2020 muovipullo hinta on muuttunut. 9,69 € → 9,89 € (+0,20 €, +2,06 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/421287-46d1d7226da8.png",
+			"tags": [
+				"punaviinit",
+				"Mehevä & Hilloinen"
+			]
+		}
+	]
+}

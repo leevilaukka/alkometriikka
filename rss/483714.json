@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Torres Natureo Rosé – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/483714/",
+	"feed_url": "https://alkometriikka.fi/rss/483714.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Torres Natureo Rosé.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-483714-2026-09-29-5.75",
+			"url": "https://alkometriikka.fi/tuotteet/483714/",
+			"title": "Torres Natureo Rosé — 5,73 € → 5,75 €",
+			"content_html": "<p>Tuotteen Torres Natureo Rosé hinta on muuttunut.</p><p>5,73 € → 5,75 € (+0,02 €, +0,35 %).</p>",
+			"summary": "Tuotteen Torres Natureo Rosé hinta on muuttunut. 5,73 € → 5,75 € (+0,02 €, +0,35 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/483714-c102abc53b5d.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat valko- ja roseeviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-483714-2026-07-18-5.73",
+			"url": "https://alkometriikka.fi/tuotteet/483714/",
+			"title": "Torres Natureo Rosé — 5,47 € → 5,73 €",
+			"content_html": "<p>Tuotteen Torres Natureo Rosé hinta on muuttunut.</p><p>5,47 € → 5,73 € (+0,26 €, +4,75 %).</p>",
+			"summary": "Tuotteen Torres Natureo Rosé hinta on muuttunut. 5,47 € → 5,73 € (+0,26 €, +4,75 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/483714-c102abc53b5d.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat valko- ja roseeviinit"
+			]
+		}
+	]
+}

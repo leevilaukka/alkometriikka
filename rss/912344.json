@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Glenrothes Whisky Maker's Cut Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/912344/",
+	"feed_url": "https://alkometriikka.fi/rss/912344.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Glenrothes Whisky Maker's Cut Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-912344-2026-09-29-94.45",
+			"url": "https://alkometriikka.fi/tuotteet/912344/",
+			"title": "The Glenrothes Whisky Maker's Cut Single Malt — 91,70 € → 94,45 €",
+			"content_html": "<p>Tuotteen The Glenrothes Whisky Maker's Cut Single Malt hinta on muuttunut.</p><p>91,70 € → 94,45 € (+2,75 €, +3,00 %).</p>",
+			"summary": "Tuotteen The Glenrothes Whisky Maker's Cut Single Malt hinta on muuttunut. 91,70 € → 94,45 € (+2,75 €, +3,00 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/912344-c7b77c9afc12.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

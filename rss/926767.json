@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Leth Zweigelt Rosé 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/926767/",
+	"feed_url": "https://alkometriikka.fi/rss/926767.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Leth Zweigelt Rosé 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-926767-2026-09-29-14.99",
+			"url": "https://alkometriikka.fi/tuotteet/926767/",
+			"title": "Leth Zweigelt Rosé 2025 — 14,98 € → 14,99 €",
+			"content_html": "<p>Tuotteen Leth Zweigelt Rosé 2025 hinta on muuttunut.</p><p>14,98 € → 14,99 € (+0,01 €, +0,07 %).</p>",
+			"summary": "Tuotteen Leth Zweigelt Rosé 2025 hinta on muuttunut. 14,98 € → 14,99 € (+0,01 €, +0,07 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/926767-dbcf338fb997.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

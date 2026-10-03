@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Arctic Blue Gin Cask – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/945753/",
+	"feed_url": "https://alkometriikka.fi/rss/945753.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Arctic Blue Gin Cask.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-945753-2026-09-29-52.82",
+			"url": "https://alkometriikka.fi/tuotteet/945753/",
+			"title": "Arctic Blue Gin Cask — 51,99 € → 52,82 €",
+			"content_html": "<p>Tuotteen Arctic Blue Gin Cask hinta on muuttunut.</p><p>51,99 € → 52,82 € (+0,83 €, +1,60 %).</p>",
+			"summary": "Tuotteen Arctic Blue Gin Cask hinta on muuttunut. 51,99 € → 52,82 € (+0,83 €, +1,60 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/945753-d24b85a6736e.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

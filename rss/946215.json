@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nuija Barrel Aged Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/946215/",
+	"feed_url": "https://alkometriikka.fi/rss/946215.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nuija Barrel Aged Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-946215-2026-09-29-46.79",
+			"url": "https://alkometriikka.fi/tuotteet/946215/",
+			"title": "Nuija Barrel Aged Gin — 46,07 € → 46,79 €",
+			"content_html": "<p>Tuotteen Nuija Barrel Aged Gin hinta on muuttunut.</p><p>46,07 € → 46,79 € (+0,72 €, +1,56 %).</p>",
+			"summary": "Tuotteen Nuija Barrel Aged Gin hinta on muuttunut. 46,07 € → 46,79 € (+0,72 €, +1,56 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/946215-33fa4cc13719.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

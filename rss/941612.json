@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Le Sirop de Monin Muscovado Sugar – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/941612/",
+	"feed_url": "https://alkometriikka.fi/rss/941612.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Le Sirop de Monin Muscovado Sugar.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-941612-2026-07-18-20.49",
+			"url": "https://alkometriikka.fi/tuotteet/941612/",
+			"title": "Le Sirop de Monin Muscovado Sugar — 20,17 € → 20,49 €",
+			"content_html": "<p>Tuotteen Le Sirop de Monin Muscovado Sugar hinta on muuttunut.</p><p>20,17 € → 20,49 € (+0,32 €, +1,59 %).</p>",
+			"summary": "Tuotteen Le Sirop de Monin Muscovado Sugar hinta on muuttunut. 20,17 € → 20,49 € (+0,32 €, +1,59 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/941612-5dfa33745176.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – San Giovanni Della Sala 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902536/",
+	"feed_url": "https://alkometriikka.fi/rss/902536.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: San Giovanni Della Sala 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902536-2026-09-29-28.5",
+			"url": "https://alkometriikka.fi/tuotteet/902536/",
+			"title": "San Giovanni Della Sala 2024 — 28,45 € → 28,50 €",
+			"content_html": "<p>Tuotteen San Giovanni Della Sala 2024 hinta on muuttunut.</p><p>28,45 € → 28,50 € (+0,05 €, +0,18 %).</p>",
+			"summary": "Tuotteen San Giovanni Della Sala 2024 hinta on muuttunut. 28,45 € → 28,50 € (+0,05 €, +0,18 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902536-e75c44a35543.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

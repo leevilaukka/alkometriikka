@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Shake-It Mixer Grenadine – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/919961/",
+	"feed_url": "https://alkometriikka.fi/rss/919961.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Shake-It Mixer Grenadine.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-919961-2026-07-18-9.19",
+			"url": "https://alkometriikka.fi/tuotteet/919961/",
+			"title": "Shake-It Mixer Grenadine — 9,21 € → 9,19 €",
+			"content_html": "<p>Tuotteen Shake-It Mixer Grenadine hinta on muuttunut.</p><p>9,21 € → 9,19 € (−0,02 €, −0,22 %).</p>",
+			"summary": "Tuotteen Shake-It Mixer Grenadine hinta on muuttunut. 9,21 € → 9,19 € (−0,02 €, −0,22 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/919961-bcfabf1d2304.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

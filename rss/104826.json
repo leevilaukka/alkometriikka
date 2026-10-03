@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Rönnvikin Kamrer Schrey – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/104826/",
+	"feed_url": "https://alkometriikka.fi/rss/104826.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Rönnvikin Kamrer Schrey.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-104826-2026-09-29-55.33",
+			"url": "https://alkometriikka.fi/tuotteet/104826/",
+			"title": "Rönnvikin Kamrer Schrey — 53,93 € → 55,33 €",
+			"content_html": "<p>Tuotteen Rönnvikin Kamrer Schrey hinta on muuttunut.</p><p>53,93 € → 55,33 € (+1,40 €, +2,60 %).</p>",
+			"summary": "Tuotteen Rönnvikin Kamrer Schrey hinta on muuttunut. 53,93 € → 55,33 € (+1,40 €, +2,60 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/104826-c7fdd338b795.png",
+			"tags": [
+				"Väkevät",
+				"hedelmätisleet"
+			]
+		}
+	]
+}

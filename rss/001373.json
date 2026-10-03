@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hankey Bannister – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/001373/",
+	"feed_url": "https://alkometriikka.fi/rss/001373.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hankey Bannister.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-001373-2026-09-29-26.89",
+			"url": "https://alkometriikka.fi/tuotteet/001373/",
+			"title": "Hankey Bannister — 26,87 € → 26,89 €",
+			"content_html": "<p>Tuotteen Hankey Bannister hinta on muuttunut.</p><p>26,87 € → 26,89 € (+0,02 €, +0,07 %).</p>",
+			"summary": "Tuotteen Hankey Bannister hinta on muuttunut. 26,87 € → 26,89 € (+0,02 €, +0,07 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/001373-2cb5355eb0a5.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

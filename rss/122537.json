@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Espolon Blanco Tequila – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/122537/",
+	"feed_url": "https://alkometriikka.fi/rss/122537.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Espolon Blanco Tequila.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-122537-2026-09-29-49.99",
+			"url": "https://alkometriikka.fi/tuotteet/122537/",
+			"title": "Espolon Blanco Tequila — 49,98 € → 49,99 €",
+			"content_html": "<p>Tuotteen Espolon Blanco Tequila hinta on muuttunut.</p><p>49,98 € → 49,99 € (+0,01 €, +0,02 %).</p>",
+			"summary": "Tuotteen Espolon Blanco Tequila hinta on muuttunut. 49,98 € → 49,99 € (+0,01 €, +0,02 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/122537-ea5ecc5c2ca0.png",
+			"tags": [
+				"Väkevät",
+				"Tequilat"
+			]
+		}
+	]
+}

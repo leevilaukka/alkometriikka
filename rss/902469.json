@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nc'nean Organic Huntress Lemon Meadow Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902469/",
+	"feed_url": "https://alkometriikka.fi/rss/902469.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nc'nean Organic Huntress Lemon Meadow Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902469-2026-09-29-124.98",
+			"url": "https://alkometriikka.fi/tuotteet/902469/",
+			"title": "Nc'nean Organic Huntress Lemon Meadow Single Malt — 120,32 € → 124,98 €",
+			"content_html": "<p>Tuotteen Nc'nean Organic Huntress Lemon Meadow Single Malt hinta on muuttunut.</p><p>120,32 € → 124,98 € (+4,66 €, +3,87 %).</p>",
+			"summary": "Tuotteen Nc'nean Organic Huntress Lemon Meadow Single Malt hinta on muuttunut. 120,32 € → 124,98 € (+4,66 €, +3,87 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902469-d295c4135329.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

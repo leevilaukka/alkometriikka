@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Foradori Morei 2021 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/909364/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Foradori Morei 2021.</description>
+		<language>fi</language>
+		<lastBuildDate>Sat, 03 Oct 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/909364.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Foradori Morei 2021 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Foradori Morei 2021 — 60,35 € → 62,17 €</title>
+			<link>https://alkometriikka.fi/tuotteet/909364/</link>
+			<guid isPermaLink="false">alkometriikka-909364-2026-09-29-62.17</guid>
+			<pubDate>Tue, 29 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / punaviinit</category>
+			<description><![CDATA[<p>Tuotteen Foradori Morei 2021 hinta on muuttunut.</p><p>60,35 € → 62,17 € (+1,82 €, +3,02 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/909364-c5dd842fa29b.png" />
+		</item>
+	</channel>
+</rss>

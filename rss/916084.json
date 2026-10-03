@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Paul Blanck Furstentum Grand Cru Riesling 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/916084/",
+	"feed_url": "https://alkometriikka.fi/rss/916084.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Paul Blanck Furstentum Grand Cru Riesling 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-916084-2026-09-29-56.64",
+			"url": "https://alkometriikka.fi/tuotteet/916084/",
+			"title": "Paul Blanck Furstentum Grand Cru Riesling 2019 — 55,20 € → 56,64 €",
+			"content_html": "<p>Tuotteen Paul Blanck Furstentum Grand Cru Riesling 2019 hinta on muuttunut.</p><p>55,20 € → 56,64 € (+1,44 €, +2,61 %).</p>",
+			"summary": "Tuotteen Paul Blanck Furstentum Grand Cru Riesling 2019 hinta on muuttunut. 55,20 € → 56,64 € (+1,44 €, +2,61 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/916084-a3c4ece2e81e.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

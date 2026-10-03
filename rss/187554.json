@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Soerlie VSOP – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/187554/",
+	"feed_url": "https://alkometriikka.fi/rss/187554.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Soerlie VSOP.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-187554-2026-09-29-29.99",
+			"url": "https://alkometriikka.fi/tuotteet/187554/",
+			"title": "Soerlie VSOP — 29,98 € → 29,99 €",
+			"content_html": "<p>Tuotteen Soerlie VSOP hinta on muuttunut.</p><p>29,98 € → 29,99 € (+0,01 €, +0,03 %).</p>",
+			"summary": "Tuotteen Soerlie VSOP hinta on muuttunut. 29,98 € → 29,99 € (+0,01 €, +0,03 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/187554-f64b0478af0d.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

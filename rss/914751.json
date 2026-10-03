@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Petri Pinot Madeleine 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/914751/",
+	"feed_url": "https://alkometriikka.fi/rss/914751.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Petri Pinot Madeleine 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-914751-2026-07-18-27.24",
+			"url": "https://alkometriikka.fi/tuotteet/914751/",
+			"title": "Petri Pinot Madeleine 2022 — 25,71 € → 27,24 €",
+			"content_html": "<p>Tuotteen Petri Pinot Madeleine 2022 hinta on muuttunut.</p><p>25,71 € → 27,24 € (+1,53 €, +5,95 %).</p>",
+			"summary": "Tuotteen Petri Pinot Madeleine 2022 hinta on muuttunut. 25,71 € → 27,24 € (+1,53 €, +5,95 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/914751-1c19618023b3.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château Clerc Milon 2017 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/475957/",
+	"feed_url": "https://alkometriikka.fi/rss/475957.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château Clerc Milon 2017.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-475957-2026-09-29-120.72",
+			"url": "https://alkometriikka.fi/tuotteet/475957/",
+			"title": "Château Clerc Milon 2017 — 114,79 € → 120,72 €",
+			"content_html": "<p>Tuotteen Château Clerc Milon 2017 hinta on muuttunut.</p><p>114,79 € → 120,72 € (+5,93 €, +5,17 %).</p>",
+			"summary": "Tuotteen Château Clerc Milon 2017 hinta on muuttunut. 114,79 € → 120,72 € (+5,93 €, +5,17 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/475957-e0a6ef89ea9f.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

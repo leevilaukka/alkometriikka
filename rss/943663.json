@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Allram Grüner Veltliner Strass 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/943663/",
+	"feed_url": "https://alkometriikka.fi/rss/943663.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Allram Grüner Veltliner Strass 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-943663-2026-09-29-24.92",
+			"url": "https://alkometriikka.fi/tuotteet/943663/",
+			"title": "Allram Grüner Veltliner Strass 2025 — 24,85 € → 24,92 €",
+			"content_html": "<p>Tuotteen Allram Grüner Veltliner Strass 2025 hinta on muuttunut.</p><p>24,85 € → 24,92 € (+0,07 €, +0,28 %).</p>",
+			"summary": "Tuotteen Allram Grüner Veltliner Strass 2025 hinta on muuttunut. 24,85 € → 24,92 € (+0,07 €, +0,28 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/943663-a2c001e8102e.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

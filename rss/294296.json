@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Sour Fisk Sour Cola – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/294296/",
+	"feed_url": "https://alkometriikka.fi/rss/294296.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Sour Fisk Sour Cola.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-294296-2026-09-29-14.99",
+			"url": "https://alkometriikka.fi/tuotteet/294296/",
+			"title": "Sour Fisk Sour Cola — 14,84 € → 14,99 €",
+			"content_html": "<p>Tuotteen Sour Fisk Sour Cola hinta on muuttunut.</p><p>14,84 € → 14,99 € (+0,15 €, +1,01 %).</p>",
+			"summary": "Tuotteen Sour Fisk Sour Cola hinta on muuttunut. 14,84 € → 14,99 € (+0,15 €, +1,01 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/294296-4469e8f4d5b6.png",
+			"tags": [
+				"Väkevät",
+				"mausteliköörit"
+			]
+		}
+	]
+}

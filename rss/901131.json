@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bassanoshiro Bianco Organic 2025 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901131/",
+	"feed_url": "https://alkometriikka.fi/rss/901131.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bassanoshiro Bianco Organic 2025.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901131-2026-09-29-8.98",
+			"url": "https://alkometriikka.fi/tuotteet/901131/",
+			"title": "Bassanoshiro Bianco Organic 2025 — 8,99 € → 8,98 €",
+			"content_html": "<p>Tuotteen Bassanoshiro Bianco Organic 2025 hinta on muuttunut.</p><p>8,99 € → 8,98 € (−0,01 €, −0,11 %).</p>",
+			"summary": "Tuotteen Bassanoshiro Bianco Organic 2025 hinta on muuttunut. 8,99 € → 8,98 € (−0,01 €, −0,11 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901131-23f51fbdb8b9.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

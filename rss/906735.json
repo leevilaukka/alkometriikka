@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Scrimaglio Barolo 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/906735/",
+	"feed_url": "https://alkometriikka.fi/rss/906735.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Scrimaglio Barolo 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-906735-2026-09-29-39.98",
+			"url": "https://alkometriikka.fi/tuotteet/906735/",
+			"title": "Scrimaglio Barolo 2020 — 38,99 € → 39,98 €",
+			"content_html": "<p>Tuotteen Scrimaglio Barolo 2020 hinta on muuttunut.</p><p>38,99 € → 39,98 € (+0,99 €, +2,54 %).</p>",
+			"summary": "Tuotteen Scrimaglio Barolo 2020 hinta on muuttunut. 38,99 € → 39,98 € (+0,99 €, +2,54 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/906735-a5dddeb6021d.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

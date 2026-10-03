@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Castillo de Sajazarra Reserva 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902425/",
+	"feed_url": "https://alkometriikka.fi/rss/902425.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Castillo de Sajazarra Reserva 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902425-2026-09-29-40.33",
+			"url": "https://alkometriikka.fi/tuotteet/902425/",
+			"title": "Castillo de Sajazarra Reserva 2019 — 36,13 € → 40,33 €",
+			"content_html": "<p>Tuotteen Castillo de Sajazarra Reserva 2019 hinta on muuttunut.</p><p>36,13 € → 40,33 € (+4,20 €, +11,62 %).</p>",
+			"summary": "Tuotteen Castillo de Sajazarra Reserva 2019 hinta on muuttunut. 36,13 € → 40,33 € (+4,20 €, +11,62 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902425-e728666cb1b2.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

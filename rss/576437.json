@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bestheim Crémant D'Alsace Demi-Sec – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/576437/",
+	"feed_url": "https://alkometriikka.fi/rss/576437.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bestheim Crémant D'Alsace Demi-Sec.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-576437-2026-07-18-17.48",
+			"url": "https://alkometriikka.fi/tuotteet/576437/",
+			"title": "Bestheim Crémant D'Alsace Demi-Sec — 17,44 € → 17,48 €",
+			"content_html": "<p>Tuotteen Bestheim Crémant D'Alsace Demi-Sec hinta on muuttunut.</p><p>17,44 € → 17,48 € (+0,04 €, +0,23 %).</p>",
+			"summary": "Tuotteen Bestheim Crémant D'Alsace Demi-Sec hinta on muuttunut. 17,44 € → 17,48 € (+0,04 €, +0,23 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/576437-e05bc92fd323.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

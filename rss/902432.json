@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château Prieuré-Lichine 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902432/",
+	"feed_url": "https://alkometriikka.fi/rss/902432.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château Prieuré-Lichine 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902432-2026-09-29-81.11",
+			"url": "https://alkometriikka.fi/tuotteet/902432/",
+			"title": "Château Prieuré-Lichine 2022 — 77,96 € → 81,11 €",
+			"content_html": "<p>Tuotteen Château Prieuré-Lichine 2022 hinta on muuttunut.</p><p>77,96 € → 81,11 € (+3,15 €, +4,04 %).</p>",
+			"summary": "Tuotteen Château Prieuré-Lichine 2022 hinta on muuttunut. 77,96 € → 81,11 € (+3,15 €, +4,04 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902432-2652983ce6ab.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

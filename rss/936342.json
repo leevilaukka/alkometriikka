@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Knoll Loibenberg Riesling Smaragd 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/936342/",
+	"feed_url": "https://alkometriikka.fi/rss/936342.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Knoll Loibenberg Riesling Smaragd 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-936342-2026-09-29-69.9",
+			"url": "https://alkometriikka.fi/tuotteet/936342/",
+			"title": "Knoll Loibenberg Riesling Smaragd 2023 — 62,99 € → 69,90 €",
+			"content_html": "<p>Tuotteen Knoll Loibenberg Riesling Smaragd 2023 hinta on muuttunut.</p><p>62,99 € → 69,90 € (+6,91 €, +10,97 %).</p>",
+			"summary": "Tuotteen Knoll Loibenberg Riesling Smaragd 2023 hinta on muuttunut. 62,99 € → 69,90 € (+6,91 €, +10,97 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/936342-03bce8e56644.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

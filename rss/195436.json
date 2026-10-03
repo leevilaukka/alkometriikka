@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Finlandia Cranberry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/195436/",
+	"feed_url": "https://alkometriikka.fi/rss/195436.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Finlandia Cranberry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-195436-2026-07-18-22.19",
+			"url": "https://alkometriikka.fi/tuotteet/195436/",
+			"title": "Finlandia Cranberry — 22,17 € → 22,19 €",
+			"content_html": "<p>Tuotteen Finlandia Cranberry hinta on muuttunut.</p><p>22,17 € → 22,19 € (+0,02 €, +0,09 %).</p>",
+			"summary": "Tuotteen Finlandia Cranberry hinta on muuttunut. 22,17 € → 22,19 € (+0,02 €, +0,09 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/195436-909906830c87.png",
+			"tags": [
+				"Väkevät",
+				"maustetut vodkat"
+			]
+		}
+	]
+}

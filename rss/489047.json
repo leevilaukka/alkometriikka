@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Real Agrado Reserva 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/489047/",
+	"feed_url": "https://alkometriikka.fi/rss/489047.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Real Agrado Reserva 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-489047-2026-07-18-20.95",
+			"url": "https://alkometriikka.fi/tuotteet/489047/",
+			"title": "Real Agrado Reserva 2019 — 20,66 € → 20,95 €",
+			"content_html": "<p>Tuotteen Real Agrado Reserva 2019 hinta on muuttunut.</p><p>20,66 € → 20,95 € (+0,29 €, +1,40 %).</p>",
+			"summary": "Tuotteen Real Agrado Reserva 2019 hinta on muuttunut. 20,66 € → 20,95 € (+0,29 €, +1,40 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/489047-d3d5910e069d.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

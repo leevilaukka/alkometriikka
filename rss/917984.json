@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Le Sirop de Monin Chocolate – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/917984/",
+	"feed_url": "https://alkometriikka.fi/rss/917984.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Le Sirop de Monin Chocolate.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-917984-2026-07-18-10.49",
+			"url": "https://alkometriikka.fi/tuotteet/917984/",
+			"title": "Le Sirop de Monin Chocolate — 10,35 € → 10,49 €",
+			"content_html": "<p>Tuotteen Le Sirop de Monin Chocolate hinta on muuttunut.</p><p>10,35 € → 10,49 € (+0,14 €, +1,35 %).</p>",
+			"summary": "Tuotteen Le Sirop de Monin Chocolate hinta on muuttunut. 10,35 € → 10,49 € (+0,14 €, +1,35 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/917984-a4fc870fe485.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

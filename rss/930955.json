@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Punt e Mes – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/930955/",
+	"feed_url": "https://alkometriikka.fi/rss/930955.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Punt e Mes.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-930955-2026-09-29-24.25",
+			"url": "https://alkometriikka.fi/tuotteet/930955/",
+			"title": "Punt e Mes — 23,99 € → 24,25 €",
+			"content_html": "<p>Tuotteen Punt e Mes hinta on muuttunut.</p><p>23,99 € → 24,25 € (+0,26 €, +1,08 %).</p>",
+			"summary": "Tuotteen Punt e Mes hinta on muuttunut. 23,99 € → 24,25 € (+0,26 €, +1,08 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/930955-c786b05e8c40.png",
+			"tags": [
+				"Välituotteet",
+				"vermutit"
+			]
+		}
+	]
+}

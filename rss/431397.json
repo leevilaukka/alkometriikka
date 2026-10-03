@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Le Dôme 2016 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/431397/",
+	"feed_url": "https://alkometriikka.fi/rss/431397.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Le Dôme 2016.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-431397-2026-09-29-230.96",
+			"url": "https://alkometriikka.fi/tuotteet/431397/",
+			"title": "Le Dôme 2016 — 217,33 € → 230,96 €",
+			"content_html": "<p>Tuotteen Le Dôme 2016 hinta on muuttunut.</p><p>217,33 € → 230,96 € (+13,63 €, +6,27 %).</p>",
+			"summary": "Tuotteen Le Dôme 2016 hinta on muuttunut. 217,33 € → 230,96 € (+13,63 €, +6,27 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/431397-b4a36571c810.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

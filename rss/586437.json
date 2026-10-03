@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Montaudon le Grande Rosé Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/586437/",
+	"feed_url": "https://alkometriikka.fi/rss/586437.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Montaudon le Grande Rosé Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-586437-2026-02-02-47.16",
+			"url": "https://alkometriikka.fi/tuotteet/586437/",
+			"title": "Montaudon le Grande Rosé Champagne Brut — 47,26 € → 47,16 €",
+			"content_html": "<p>Tuotteen Montaudon le Grande Rosé Champagne Brut hinta on muuttunut.</p><p>47,26 € → 47,16 € (−0,10 €, −0,21 %).</p>",
+			"summary": "Tuotteen Montaudon le Grande Rosé Champagne Brut hinta on muuttunut. 47,26 € → 47,16 € (−0,10 €, −0,21 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/586437-d307050409ba.png",
+			"tags": [
+				"kuohuviinit ja samppanjat",
+				"Vivahteikas & ryhdikäs"
+			]
+		},
+		{
+			"id": "alkometriikka-586437-2026-02-02-47.26",
+			"url": "https://alkometriikka.fi/tuotteet/586437/",
+			"title": "Montaudon le Grande Rosé Champagne Brut — 47,16 € → 47,26 €",
+			"content_html": "<p>Tuotteen Montaudon le Grande Rosé Champagne Brut hinta on muuttunut.</p><p>47,16 € → 47,26 € (+0,10 €, +0,21 %).</p>",
+			"summary": "Tuotteen Montaudon le Grande Rosé Champagne Brut hinta on muuttunut. 47,16 € → 47,26 € (+0,10 €, +0,21 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/586437-d307050409ba.png",
+			"tags": [
+				"kuohuviinit ja samppanjat",
+				"Vivahteikas & ryhdikäs"
+			]
+		}
+	]
+}

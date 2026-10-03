@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Aberlour 18 Year Old Double Sherry Cask Finish Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/939854/",
+	"feed_url": "https://alkometriikka.fi/rss/939854.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Aberlour 18 Year Old Double Sherry Cask Finish Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-939854-2026-09-29-169.98",
+			"url": "https://alkometriikka.fi/tuotteet/939854/",
+			"title": "Aberlour 18 Year Old Double Sherry Cask Finish Single Malt — 159,98 € → 169,98 €",
+			"content_html": "<p>Tuotteen Aberlour 18 Year Old Double Sherry Cask Finish Single Malt hinta on muuttunut.</p><p>159,98 € → 169,98 € (+10,00 €, +6,25 %).</p>",
+			"summary": "Tuotteen Aberlour 18 Year Old Double Sherry Cask Finish Single Malt hinta on muuttunut. 159,98 € → 169,98 € (+10,00 €, +6,25 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/939854-92ecbfa26304.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

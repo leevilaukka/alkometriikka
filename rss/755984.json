@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – La Quince & Cervesa Guineu Vanilla Black Velvet – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/755984/",
+	"feed_url": "https://alkometriikka.fi/rss/755984.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: La Quince & Cervesa Guineu Vanilla Black Velvet.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-755984-2026-07-18-7.15",
+			"url": "https://alkometriikka.fi/tuotteet/755984/",
+			"title": "La Quince & Cervesa Guineu Vanilla Black Velvet — 7,14 € → 7,15 €",
+			"content_html": "<p>Tuotteen La Quince & Cervesa Guineu Vanilla Black Velvet hinta on muuttunut.</p><p>7,14 € → 7,15 € (+0,01 €, +0,14 %).</p>",
+			"summary": "Tuotteen La Quince & Cervesa Guineu Vanilla Black Velvet hinta on muuttunut. 7,14 € → 7,15 € (+0,01 €, +0,14 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/755984-e3965fdb4c94.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

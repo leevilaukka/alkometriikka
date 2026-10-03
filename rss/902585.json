@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Larsen Drakkar Christmas – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902585/",
+	"feed_url": "https://alkometriikka.fi/rss/902585.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Larsen Drakkar Christmas.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902585-2026-09-29-291.54",
+			"url": "https://alkometriikka.fi/tuotteet/902585/",
+			"title": "Larsen Drakkar Christmas — 275,26 € → 291,54 €",
+			"content_html": "<p>Tuotteen Larsen Drakkar Christmas hinta on muuttunut.</p><p>275,26 € → 291,54 € (+16,28 €, +5,91 %).</p>",
+			"summary": "Tuotteen Larsen Drakkar Christmas hinta on muuttunut. 275,26 € → 291,54 € (+16,28 €, +5,91 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902585-742fbb79539b.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

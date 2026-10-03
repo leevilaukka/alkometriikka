@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Drappier Carte d'Or Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/945177/",
+	"feed_url": "https://alkometriikka.fi/rss/945177.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Drappier Carte d'Or Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-945177-2026-09-29-48.98",
+			"url": "https://alkometriikka.fi/tuotteet/945177/",
+			"title": "Drappier Carte d'Or Champagne Brut — 48,99 € → 48,98 €",
+			"content_html": "<p>Tuotteen Drappier Carte d'Or Champagne Brut hinta on muuttunut.</p><p>48,99 € → 48,98 € (−0,01 €, −0,02 %).</p>",
+			"summary": "Tuotteen Drappier Carte d'Or Champagne Brut hinta on muuttunut. 48,99 € → 48,98 € (−0,01 €, −0,02 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/945177-dabbfb65a635.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Carillo muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/133287/",
+	"feed_url": "https://alkometriikka.fi/rss/133287.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Carillo muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-133287-2026-09-29-16.74",
+			"url": "https://alkometriikka.fi/tuotteet/133287/",
+			"title": "Carillo muovipullo — 16,59 € → 16,74 €",
+			"content_html": "<p>Tuotteen Carillo muovipullo hinta on muuttunut.</p><p>16,59 € → 16,74 € (+0,15 €, +0,90 %).</p>",
+			"summary": "Tuotteen Carillo muovipullo hinta on muuttunut. 16,59 € → 16,74 € (+0,15 €, +0,90 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/133287-4835fb590233.png",
+			"tags": [
+				"Väkevät",
+				"grogikatkerot"
+			]
+		},
+		{
+			"id": "alkometriikka-133287-2026-07-18-16.59",
+			"url": "https://alkometriikka.fi/tuotteet/133287/",
+			"title": "Carillo muovipullo — 16,57 € → 16,59 €",
+			"content_html": "<p>Tuotteen Carillo muovipullo hinta on muuttunut.</p><p>16,57 € → 16,59 € (+0,02 €, +0,12 %).</p>",
+			"summary": "Tuotteen Carillo muovipullo hinta on muuttunut. 16,57 € → 16,59 € (+0,02 €, +0,12 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/133287-4835fb590233.png",
+			"tags": [
+				"Väkevät",
+				"grogikatkerot"
+			]
+		}
+	]
+}

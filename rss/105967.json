@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Rémy Martin XO – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/105967/",
+	"feed_url": "https://alkometriikka.fi/rss/105967.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Rémy Martin XO.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-105967-2026-09-29-209.99",
+			"url": "https://alkometriikka.fi/tuotteet/105967/",
+			"title": "Rémy Martin XO — 199,98 € → 209,99 €",
+			"content_html": "<p>Tuotteen Rémy Martin XO hinta on muuttunut.</p><p>199,98 € → 209,99 € (+10,01 €, +5,01 %).</p>",
+			"summary": "Tuotteen Rémy Martin XO hinta on muuttunut. 199,98 € → 209,99 € (+10,01 €, +5,01 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/105967-0e481f8ab164.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

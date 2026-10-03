@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Herbert Beaufort Blanc de Noirs Grand Cru à Bouzy Champagne Brut – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/911105/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Herbert Beaufort Blanc de Noirs Grand Cru à Bouzy Champagne Brut.</description>
+		<language>fi</language>
+		<lastBuildDate>Sat, 03 Oct 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/911105.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Herbert Beaufort Blanc de Noirs Grand Cru à Bouzy Champagne Brut – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Herbert Beaufort Blanc de Noirs Grand Cru à Bouzy Champagne Brut — 76,39 € → 79,42 €</title>
+			<link>https://alkometriikka.fi/tuotteet/911105/</link>
+			<guid isPermaLink="false">alkometriikka-911105-2026-09-29-79.42</guid>
+			<pubDate>Tue, 29 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / kuohuviinit ja samppanjat</category>
+			<description><![CDATA[<p>Tuotteen Herbert Beaufort Blanc de Noirs Grand Cru à Bouzy Champagne Brut hinta on muuttunut.</p><p>76,39 € → 79,42 € (+3,03 €, +3,97 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/911105-5766cd3a8207.png" />
+		</item>
+	</channel>
+</rss>

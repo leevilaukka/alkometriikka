@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nozeco Fine Sparkling Rosé Alcohol Free – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/904344/",
+	"feed_url": "https://alkometriikka.fi/rss/904344.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nozeco Fine Sparkling Rosé Alcohol Free.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-904344-2026-09-13-7.59",
+			"url": "https://alkometriikka.fi/tuotteet/904344/",
+			"title": "Nozeco Fine Sparkling Rosé Alcohol Free — 7,46 € → 7,59 €",
+			"content_html": "<p>Tuotteen Nozeco Fine Sparkling Rosé Alcohol Free hinta on muuttunut.</p><p>7,46 € → 7,59 € (+0,13 €, +1,74 %).</p>",
+			"summary": "Tuotteen Nozeco Fine Sparkling Rosé Alcohol Free hinta on muuttunut. 7,46 € → 7,59 € (+0,13 €, +1,74 %).",
+			"date_published": "2026-09-13T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/904344-9db5dddda379.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat kuohuviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ramos Pinto Fine White – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/952654/",
+	"feed_url": "https://alkometriikka.fi/rss/952654.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ramos Pinto Fine White.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-952654-2026-07-18-23.99",
+			"url": "https://alkometriikka.fi/tuotteet/952654/",
+			"title": "Ramos Pinto Fine White — 23,59 € → 23,99 €",
+			"content_html": "<p>Tuotteen Ramos Pinto Fine White hinta on muuttunut.</p><p>23,59 € → 23,99 € (+0,40 €, +1,70 %).</p>",
+			"summary": "Tuotteen Ramos Pinto Fine White hinta on muuttunut. 23,59 € → 23,99 € (+0,40 €, +1,70 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/952654-ad98aecd8578.png",
+			"tags": [
+				"Välituotteet",
+				"portviinit"
+			]
+		}
+	]
+}

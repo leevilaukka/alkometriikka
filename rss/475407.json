@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Zenato Rosso Veneto 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/475407/",
+	"feed_url": "https://alkometriikka.fi/rss/475407.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Zenato Rosso Veneto 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-475407-2026-07-18-14.6",
+			"url": "https://alkometriikka.fi/tuotteet/475407/",
+			"title": "Zenato Rosso Veneto 2021 — 14,42 € → 14,60 €",
+			"content_html": "<p>Tuotteen Zenato Rosso Veneto 2021 hinta on muuttunut.</p><p>14,42 € → 14,60 € (+0,18 €, +1,25 %).</p>",
+			"summary": "Tuotteen Zenato Rosso Veneto 2021 hinta on muuttunut. 14,42 € → 14,60 € (+0,18 €, +1,25 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/475407-8d10db1a847b.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

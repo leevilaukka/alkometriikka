@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Derzhava – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/922943/",
+	"feed_url": "https://alkometriikka.fi/rss/922943.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Derzhava.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-922943-2026-09-29-21.67",
+			"url": "https://alkometriikka.fi/tuotteet/922943/",
+			"title": "Derzhava — 23,27 € → 21,67 €",
+			"content_html": "<p>Tuotteen Derzhava hinta on muuttunut.</p><p>23,27 € → 21,67 € (−1,60 €, −6,88 %).</p>",
+			"summary": "Tuotteen Derzhava hinta on muuttunut. 23,27 € → 21,67 € (−1,60 €, −6,88 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/922943-df09a9fde049.png",
+			"tags": [
+				"Väkevät",
+				"vodka"
+			]
+		}
+	]
+}

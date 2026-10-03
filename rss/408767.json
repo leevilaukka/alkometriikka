@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Marques de Arienzo Gran Reserva 2009 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/408767/",
+	"feed_url": "https://alkometriikka.fi/rss/408767.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Marques de Arienzo Gran Reserva 2009.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-408767-2026-07-18-20.98",
+			"url": "https://alkometriikka.fi/tuotteet/408767/",
+			"title": "Marques de Arienzo Gran Reserva 2009 — 19,99 € → 20,98 €",
+			"content_html": "<p>Tuotteen Marques de Arienzo Gran Reserva 2009 hinta on muuttunut.</p><p>19,99 € → 20,98 € (+0,99 €, +4,95 %).</p>",
+			"summary": "Tuotteen Marques de Arienzo Gran Reserva 2009 hinta on muuttunut. 19,99 € → 20,98 € (+0,99 €, +4,95 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/408767-3f99b107134c.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

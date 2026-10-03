@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – La Chouette de Champillon Premier Cru Rosé Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/956457/",
+	"feed_url": "https://alkometriikka.fi/rss/956457.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: La Chouette de Champillon Premier Cru Rosé Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-956457-2026-09-29-48.95",
+			"url": "https://alkometriikka.fi/tuotteet/956457/",
+			"title": "La Chouette de Champillon Premier Cru Rosé Champagne Brut — 47,99 € → 48,95 €",
+			"content_html": "<p>Tuotteen La Chouette de Champillon Premier Cru Rosé Champagne Brut hinta on muuttunut.</p><p>47,99 € → 48,95 € (+0,96 €, +2,00 %).</p>",
+			"summary": "Tuotteen La Chouette de Champillon Premier Cru Rosé Champagne Brut hinta on muuttunut. 47,99 € → 48,95 € (+0,96 €, +2,00 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/956457-76ef27405483.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

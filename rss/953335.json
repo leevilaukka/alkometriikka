@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pierre Mignon Grande Réserve Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/953335/",
+	"feed_url": "https://alkometriikka.fi/rss/953335.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pierre Mignon Grande Réserve Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-953335-2026-09-29-73.63",
+			"url": "https://alkometriikka.fi/tuotteet/953335/",
+			"title": "Pierre Mignon Grande Réserve Champagne Brut — 71,01 € → 73,63 €",
+			"content_html": "<p>Tuotteen Pierre Mignon Grande Réserve Champagne Brut hinta on muuttunut.</p><p>71,01 € → 73,63 € (+2,62 €, +3,69 %).</p>",
+			"summary": "Tuotteen Pierre Mignon Grande Réserve Champagne Brut hinta on muuttunut. 71,01 € → 73,63 € (+2,62 €, +3,69 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/953335-5f878bd9de64.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

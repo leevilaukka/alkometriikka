@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Famous Grouse Smoky Black – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/920717/",
+	"feed_url": "https://alkometriikka.fi/rss/920717.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Famous Grouse Smoky Black.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-920717-2026-09-29-37.49",
+			"url": "https://alkometriikka.fi/tuotteet/920717/",
+			"title": "The Famous Grouse Smoky Black — 36,75 € → 37,49 €",
+			"content_html": "<p>Tuotteen The Famous Grouse Smoky Black hinta on muuttunut.</p><p>36,75 € → 37,49 € (+0,74 €, +2,01 %).</p>",
+			"summary": "Tuotteen The Famous Grouse Smoky Black hinta on muuttunut. 36,75 € → 37,49 € (+0,74 €, +2,01 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/920717-ce40139236d0.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

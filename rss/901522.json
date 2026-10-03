@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mallaskoski Kronos Rum Barrel Aged Barley Wine – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901522/",
+	"feed_url": "https://alkometriikka.fi/rss/901522.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mallaskoski Kronos Rum Barrel Aged Barley Wine.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901522-2026-07-18-6.85",
+			"url": "https://alkometriikka.fi/tuotteet/901522/",
+			"title": "Mallaskoski Kronos Rum Barrel Aged Barley Wine — 6,86 € → 6,85 €",
+			"content_html": "<p>Tuotteen Mallaskoski Kronos Rum Barrel Aged Barley Wine hinta on muuttunut.</p><p>6,86 € → 6,85 € (−0,01 €, −0,15 %).</p>",
+			"summary": "Tuotteen Mallaskoski Kronos Rum Barrel Aged Barley Wine hinta on muuttunut. 6,86 € → 6,85 € (−0,01 €, −0,15 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901522-372dea0ce0eb.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

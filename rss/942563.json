@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Planteray Sealander – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/942563/",
+	"feed_url": "https://alkometriikka.fi/rss/942563.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Planteray Sealander.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-942563-2026-09-29-49.99",
+			"url": "https://alkometriikka.fi/tuotteet/942563/",
+			"title": "Planteray Sealander — 49,98 € → 49,99 €",
+			"content_html": "<p>Tuotteen Planteray Sealander hinta on muuttunut.</p><p>49,98 € → 49,99 € (+0,01 €, +0,02 %).</p>",
+			"summary": "Tuotteen Planteray Sealander hinta on muuttunut. 49,98 € → 49,99 € (+0,01 €, +0,02 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/942563-2a5a4a666092.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

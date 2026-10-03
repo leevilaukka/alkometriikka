@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Rhum Negrita Dark Signature – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/001687/",
+	"feed_url": "https://alkometriikka.fi/rss/001687.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Rhum Negrita Dark Signature.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-001687-2026-07-18-23.38",
+			"url": "https://alkometriikka.fi/tuotteet/001687/",
+			"title": "Rhum Negrita Dark Signature — 23,44 € → 23,38 €",
+			"content_html": "<p>Tuotteen Rhum Negrita Dark Signature hinta on muuttunut.</p><p>23,44 € → 23,38 € (−0,06 €, −0,26 %).</p>",
+			"summary": "Tuotteen Rhum Negrita Dark Signature hinta on muuttunut. 23,44 € → 23,38 € (−0,06 €, −0,26 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/001687-8dfd6ead4791.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

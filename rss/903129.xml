@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Niepoort 10 Years Old White Port – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/903129/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Niepoort 10 Years Old White Port.</description>
+		<language>fi</language>
+		<lastBuildDate>Sat, 03 Oct 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/903129.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Niepoort 10 Years Old White Port – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Niepoort 10 Years Old White Port — 49,99 € → 50,75 €</title>
+			<link>https://alkometriikka.fi/tuotteet/903129/</link>
+			<guid isPermaLink="false">alkometriikka-903129-2026-09-29-50.75</guid>
+			<pubDate>Tue, 29 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Välituotteet / portviinit</category>
+			<description><![CDATA[<p>Tuotteen Niepoort 10 Years Old White Port hinta on muuttunut.</p><p>49,99 € → 50,75 € (+0,76 €, +1,52 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/903129-b7f94c0fe0ab.png" />
+		</item>
+	</channel>
+</rss>

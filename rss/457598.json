@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hayes Ranch Cabernet Sauvignon 2021 hanapakkaus – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/457598/",
+	"feed_url": "https://alkometriikka.fi/rss/457598.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hayes Ranch Cabernet Sauvignon 2021 hanapakkaus.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-457598-2026-07-18-21.5",
+			"url": "https://alkometriikka.fi/tuotteet/457598/",
+			"title": "Hayes Ranch Cabernet Sauvignon 2021 hanapakkaus — 26,90 € → 21,50 €",
+			"content_html": "<p>Tuotteen Hayes Ranch Cabernet Sauvignon 2021 hanapakkaus hinta on muuttunut.</p><p>26,90 € → 21,50 € (−5,40 €, −20,07 %).</p>",
+			"summary": "Tuotteen Hayes Ranch Cabernet Sauvignon 2021 hanapakkaus hinta on muuttunut. 26,90 € → 21,50 € (−5,40 €, −20,07 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/457598-f9e5ed2b3a74.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

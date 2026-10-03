@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Macallan Diamonds Are Forever Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902896/",
+	"feed_url": "https://alkometriikka.fi/rss/902896.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Macallan Diamonds Are Forever Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902896-2026-09-29-744.46",
+			"url": "https://alkometriikka.fi/tuotteet/902896/",
+			"title": "The Macallan Diamonds Are Forever Single Malt — 698,29 € → 744,46 €",
+			"content_html": "<p>Tuotteen The Macallan Diamonds Are Forever Single Malt hinta on muuttunut.</p><p>698,29 € → 744,46 € (+46,17 €, +6,61 %).</p>",
+			"summary": "Tuotteen The Macallan Diamonds Are Forever Single Malt hinta on muuttunut. 698,29 € → 744,46 € (+46,17 €, +6,61 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902896-f27df08971b0.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

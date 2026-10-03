@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dourakis Cassiopeia Romeiko Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/906264/",
+	"feed_url": "https://alkometriikka.fi/rss/906264.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dourakis Cassiopeia Romeiko Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-906264-2026-09-29-45.41",
+			"url": "https://alkometriikka.fi/tuotteet/906264/",
+			"title": "Dourakis Cassiopeia Romeiko Brut — 42,00 € → 45,41 €",
+			"content_html": "<p>Tuotteen Dourakis Cassiopeia Romeiko Brut hinta on muuttunut.</p><p>42,00 € → 45,41 € (+3,41 €, +8,12 %).</p>",
+			"summary": "Tuotteen Dourakis Cassiopeia Romeiko Brut hinta on muuttunut. 42,00 € → 45,41 € (+3,41 €, +8,12 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/906264-9571cc41ad75.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

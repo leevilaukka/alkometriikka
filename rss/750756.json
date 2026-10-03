@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Benediktiner Weissbier – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/750756/",
+	"feed_url": "https://alkometriikka.fi/rss/750756.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Benediktiner Weissbier.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-750756-2026-09-29-4.39",
+			"url": "https://alkometriikka.fi/tuotteet/750756/",
+			"title": "Benediktiner Weissbier — 4,09 € → 4,39 €",
+			"content_html": "<p>Tuotteen Benediktiner Weissbier hinta on muuttunut.</p><p>4,09 € → 4,39 € (+0,30 €, +7,33 %).</p>",
+			"summary": "Tuotteen Benediktiner Weissbier hinta on muuttunut. 4,09 € → 4,39 € (+0,30 €, +7,33 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/750756-c79370dd3a52.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

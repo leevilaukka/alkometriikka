@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Casters Liébart Coeur de Cuvée Cécile Pur Meunier Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902165/",
+	"feed_url": "https://alkometriikka.fi/rss/902165.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Casters Liébart Coeur de Cuvée Cécile Pur Meunier Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902165-2026-09-29-50.82",
+			"url": "https://alkometriikka.fi/tuotteet/902165/",
+			"title": "Casters Liébart Coeur de Cuvée Cécile Pur Meunier Champagne Brut — 49,81 € → 50,82 €",
+			"content_html": "<p>Tuotteen Casters Liébart Coeur de Cuvée Cécile Pur Meunier Champagne Brut hinta on muuttunut.</p><p>49,81 € → 50,82 € (+1,01 €, +2,03 %).</p>",
+			"summary": "Tuotteen Casters Liébart Coeur de Cuvée Cécile Pur Meunier Champagne Brut hinta on muuttunut. 49,81 € → 50,82 € (+1,01 €, +2,03 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902165-f04b487c301f.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

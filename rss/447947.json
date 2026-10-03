@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Santa Caterina Vino Nobile di Montepulciano DOCG 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/447947/",
+	"feed_url": "https://alkometriikka.fi/rss/447947.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Santa Caterina Vino Nobile di Montepulciano DOCG 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-447947-2026-09-29-26.99",
+			"url": "https://alkometriikka.fi/tuotteet/447947/",
+			"title": "Santa Caterina Vino Nobile di Montepulciano DOCG 2023 — 25,98 € → 26,99 €",
+			"content_html": "<p>Tuotteen Santa Caterina Vino Nobile di Montepulciano DOCG 2023 hinta on muuttunut.</p><p>25,98 € → 26,99 € (+1,01 €, +3,89 %).</p>",
+			"summary": "Tuotteen Santa Caterina Vino Nobile di Montepulciano DOCG 2023 hinta on muuttunut. 25,98 € → 26,99 € (+1,01 €, +3,89 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/447947-9372584204f6.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

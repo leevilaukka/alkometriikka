@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Codorníu Clasico Rosé Cava Seco – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/516904/",
+	"feed_url": "https://alkometriikka.fi/rss/516904.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Codorníu Clasico Rosé Cava Seco.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-516904-2026-07-18-8.18",
+			"url": "https://alkometriikka.fi/tuotteet/516904/",
+			"title": "Codorníu Clasico Rosé Cava Seco — 7,70 € → 8,18 €",
+			"content_html": "<p>Tuotteen Codorníu Clasico Rosé Cava Seco hinta on muuttunut.</p><p>7,70 € → 8,18 € (+0,48 €, +6,23 %).</p>",
+			"summary": "Tuotteen Codorníu Clasico Rosé Cava Seco hinta on muuttunut. 7,70 € → 8,18 € (+0,48 €, +6,23 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/516904-354b205a8689.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

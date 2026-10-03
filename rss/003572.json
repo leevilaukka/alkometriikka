@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tío Pepe Fino Sherry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/003572/",
+	"feed_url": "https://alkometriikka.fi/rss/003572.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tío Pepe Fino Sherry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-003572-2026-09-29-16.98",
+			"url": "https://alkometriikka.fi/tuotteet/003572/",
+			"title": "Tío Pepe Fino Sherry — 16,54 € → 16,98 €",
+			"content_html": "<p>Tuotteen Tío Pepe Fino Sherry hinta on muuttunut.</p><p>16,54 € → 16,98 € (+0,44 €, +2,66 %).</p>",
+			"summary": "Tuotteen Tío Pepe Fino Sherry hinta on muuttunut. 16,54 € → 16,98 € (+0,44 €, +2,66 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/003572-581be3a03a89.png",
+			"tags": [
+				"Välituotteet",
+				"sherryt"
+			]
+		}
+	]
+}

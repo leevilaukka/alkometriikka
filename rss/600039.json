@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nocco Focus Grand Sour tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/600039/",
+	"feed_url": "https://alkometriikka.fi/rss/600039.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nocco Focus Grand Sour tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-600039-2026-07-18-2.79",
+			"url": "https://alkometriikka.fi/tuotteet/600039/",
+			"title": "Nocco Focus Grand Sour tölkki — 2,64 € → 2,79 €",
+			"content_html": "<p>Tuotteen Nocco Focus Grand Sour tölkki hinta on muuttunut.</p><p>2,64 € → 2,79 € (+0,15 €, +5,68 %).</p>",
+			"summary": "Tuotteen Nocco Focus Grand Sour tölkki hinta on muuttunut. 2,64 € → 2,79 € (+0,15 €, +5,68 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600039-26de56fe26d0.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

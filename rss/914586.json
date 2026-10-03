@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glenglassaugh 12 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/914586/",
+	"feed_url": "https://alkometriikka.fi/rss/914586.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glenglassaugh 12 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-914586-2026-09-29-70.99",
+			"url": "https://alkometriikka.fi/tuotteet/914586/",
+			"title": "Glenglassaugh 12 Year Old Single Malt — 69,49 € → 70,99 €",
+			"content_html": "<p>Tuotteen Glenglassaugh 12 Year Old Single Malt hinta on muuttunut.</p><p>69,49 € → 70,99 € (+1,50 €, +2,16 %).</p>",
+			"summary": "Tuotteen Glenglassaugh 12 Year Old Single Malt hinta on muuttunut. 69,49 € → 70,99 € (+1,50 €, +2,16 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/914586-cccf94b06c24.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

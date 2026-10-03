@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Laugar Funeralopolis Russian Imperial Stout – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/915921/",
+	"feed_url": "https://alkometriikka.fi/rss/915921.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Laugar Funeralopolis Russian Imperial Stout.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-915921-2026-07-18-8.74",
+			"url": "https://alkometriikka.fi/tuotteet/915921/",
+			"title": "Laugar Funeralopolis Russian Imperial Stout — 8,73 € → 8,74 €",
+			"content_html": "<p>Tuotteen Laugar Funeralopolis Russian Imperial Stout hinta on muuttunut.</p><p>8,73 € → 8,74 € (+0,01 €, +0,11 %).</p>",
+			"summary": "Tuotteen Laugar Funeralopolis Russian Imperial Stout hinta on muuttunut. 8,73 € → 8,74 € (+0,01 €, +0,11 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/915921-c62f2e1b4058.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

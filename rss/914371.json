@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Penfolds Bin 707 Cabernet Sauvignon 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/914371/",
+	"feed_url": "https://alkometriikka.fi/rss/914371.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Penfolds Bin 707 Cabernet Sauvignon 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-914371-2026-09-29-639.99",
+			"url": "https://alkometriikka.fi/tuotteet/914371/",
+			"title": "Penfolds Bin 707 Cabernet Sauvignon 2019 — 599,48 € → 639,99 €",
+			"content_html": "<p>Tuotteen Penfolds Bin 707 Cabernet Sauvignon 2019 hinta on muuttunut.</p><p>599,48 € → 639,99 € (+40,51 €, +6,76 %).</p>",
+			"summary": "Tuotteen Penfolds Bin 707 Cabernet Sauvignon 2019 hinta on muuttunut. 599,48 € → 639,99 € (+40,51 €, +6,76 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/914371-1e313598ef29.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

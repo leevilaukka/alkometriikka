@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Schweppes Citrus Zero tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/600096/",
+	"feed_url": "https://alkometriikka.fi/rss/600096.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Schweppes Citrus Zero tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-600096-2026-09-29-2.25",
+			"url": "https://alkometriikka.fi/tuotteet/600096/",
+			"title": "Schweppes Citrus Zero tölkki — 2,19 € → 2,25 €",
+			"content_html": "<p>Tuotteen Schweppes Citrus Zero tölkki hinta on muuttunut.</p><p>2,19 € → 2,25 € (+0,06 €, +2,74 %).</p>",
+			"summary": "Tuotteen Schweppes Citrus Zero tölkki hinta on muuttunut. 2,19 € → 2,25 € (+0,06 €, +2,74 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/600096-5c9c7e0baa30.png",
+			"tags": [
+				"Alkoholittomat",
+				"vedet, mehut ja muut alkoholittomat"
+			]
+		}
+	]
+}

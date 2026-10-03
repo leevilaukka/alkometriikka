@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bowmore 12 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901915/",
+	"feed_url": "https://alkometriikka.fi/rss/901915.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bowmore 12 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901915-2026-09-29-60.85",
+			"url": "https://alkometriikka.fi/tuotteet/901915/",
+			"title": "Bowmore 12 Year Old Single Malt — 60,03 € → 60,85 €",
+			"content_html": "<p>Tuotteen Bowmore 12 Year Old Single Malt hinta on muuttunut.</p><p>60,03 € → 60,85 € (+0,82 €, +1,37 %).</p>",
+			"summary": "Tuotteen Bowmore 12 Year Old Single Malt hinta on muuttunut. 60,03 € → 60,85 € (+0,82 €, +1,37 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901915-503559ab6b54.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

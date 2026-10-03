@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Le Sirop de Monin Chai Tea – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/919102/",
+	"feed_url": "https://alkometriikka.fi/rss/919102.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Le Sirop de Monin Chai Tea.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-919102-2026-07-18-22.29",
+			"url": "https://alkometriikka.fi/tuotteet/919102/",
+			"title": "Le Sirop de Monin Chai Tea — 21,96 € → 22,29 €",
+			"content_html": "<p>Tuotteen Le Sirop de Monin Chai Tea hinta on muuttunut.</p><p>21,96 € → 22,29 € (+0,33 €, +1,50 %).</p>",
+			"summary": "Tuotteen Le Sirop de Monin Chai Tea hinta on muuttunut. 21,96 € → 22,29 € (+0,33 €, +1,50 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/919102-d2d1d0691c72.png",
+			"tags": [
+				"Alkoholittomat",
+				"mikserit"
+			]
+		}
+	]
+}

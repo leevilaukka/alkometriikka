@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Thiénot Vintage Champagne Brut 2015 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902212/",
+	"feed_url": "https://alkometriikka.fi/rss/902212.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Thiénot Vintage Champagne Brut 2015.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902212-2026-09-29-73.01",
+			"url": "https://alkometriikka.fi/tuotteet/902212/",
+			"title": "Thiénot Vintage Champagne Brut 2015 — 70,46 € → 73,01 €",
+			"content_html": "<p>Tuotteen Thiénot Vintage Champagne Brut 2015 hinta on muuttunut.</p><p>70,46 € → 73,01 € (+2,55 €, +3,62 %).</p>",
+			"summary": "Tuotteen Thiénot Vintage Champagne Brut 2015 hinta on muuttunut. 70,46 € → 73,01 € (+2,55 €, +3,62 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902212-1c2d8ee50192.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Mundo Reposado Tequila – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903975/",
+	"feed_url": "https://alkometriikka.fi/rss/903975.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Mundo Reposado Tequila.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903975-2026-09-29-60.96",
+			"url": "https://alkometriikka.fi/tuotteet/903975/",
+			"title": "Mundo Reposado Tequila — 59,98 € → 60,96 €",
+			"content_html": "<p>Tuotteen Mundo Reposado Tequila hinta on muuttunut.</p><p>59,98 € → 60,96 € (+0,98 €, +1,63 %).</p>",
+			"summary": "Tuotteen Mundo Reposado Tequila hinta on muuttunut. 59,98 € → 60,96 € (+0,98 €, +1,63 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903975-7b607b135d79.png",
+			"tags": [
+				"Väkevät",
+				"Tequilat"
+			]
+		},
+		{
+			"id": "alkometriikka-903975-2026-07-18-59.98",
+			"url": "https://alkometriikka.fi/tuotteet/903975/",
+			"title": "Mundo Reposado Tequila — 60,23 € → 59,98 €",
+			"content_html": "<p>Tuotteen Mundo Reposado Tequila hinta on muuttunut.</p><p>60,23 € → 59,98 € (−0,25 €, −0,42 %).</p>",
+			"summary": "Tuotteen Mundo Reposado Tequila hinta on muuttunut. 60,23 € → 59,98 € (−0,25 €, −0,42 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903975-7b607b135d79.png",
+			"tags": [
+				"Väkevät",
+				"Tequilat"
+			]
+		}
+	]
+}

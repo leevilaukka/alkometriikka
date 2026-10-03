@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Thörle Riesling Feinherb 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/939037/",
+	"feed_url": "https://alkometriikka.fi/rss/939037.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Thörle Riesling Feinherb 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-939037-2026-07-18-18.49",
+			"url": "https://alkometriikka.fi/tuotteet/939037/",
+			"title": "Thörle Riesling Feinherb 2023 — 18,45 € → 18,49 €",
+			"content_html": "<p>Tuotteen Thörle Riesling Feinherb 2023 hinta on muuttunut.</p><p>18,45 € → 18,49 € (+0,04 €, +0,22 %).</p>",
+			"summary": "Tuotteen Thörle Riesling Feinherb 2023 hinta on muuttunut. 18,45 € → 18,49 € (+0,04 €, +0,22 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/939037-475c5fa15387.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tenuta Ferrante Arche 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900301/",
+	"feed_url": "https://alkometriikka.fi/rss/900301.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tenuta Ferrante Arche 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900301-2026-09-29-21.64",
+			"url": "https://alkometriikka.fi/tuotteet/900301/",
+			"title": "Tenuta Ferrante Arche 2023 — 20,86 € → 21,64 €",
+			"content_html": "<p>Tuotteen Tenuta Ferrante Arche 2023 hinta on muuttunut.</p><p>20,86 € → 21,64 € (+0,78 €, +3,74 %).</p>",
+			"summary": "Tuotteen Tenuta Ferrante Arche 2023 hinta on muuttunut. 20,86 € → 21,64 € (+0,78 €, +3,74 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900301-6ccfc5528272.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

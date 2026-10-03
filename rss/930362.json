@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Aspasie Réserve Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/930362/",
+	"feed_url": "https://alkometriikka.fi/rss/930362.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Aspasie Réserve Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-930362-2026-09-29-48.5",
+			"url": "https://alkometriikka.fi/tuotteet/930362/",
+			"title": "Aspasie Réserve Champagne Brut — 47,66 € → 48,50 €",
+			"content_html": "<p>Tuotteen Aspasie Réserve Champagne Brut hinta on muuttunut.</p><p>47,66 € → 48,50 € (+0,84 €, +1,76 %).</p>",
+			"summary": "Tuotteen Aspasie Réserve Champagne Brut hinta on muuttunut. 47,66 € → 48,50 € (+0,84 €, +1,76 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/930362-e252d0fa5fea.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

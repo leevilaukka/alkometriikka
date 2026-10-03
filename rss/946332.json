@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Francis Orban Vieilles Vignes Réserve Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/946332/",
+	"feed_url": "https://alkometriikka.fi/rss/946332.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Francis Orban Vieilles Vignes Réserve Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-946332-2026-09-29-54.71",
+			"url": "https://alkometriikka.fi/tuotteet/946332/",
+			"title": "Francis Orban Vieilles Vignes Réserve Champagne Brut — 53,43 € → 54,71 €",
+			"content_html": "<p>Tuotteen Francis Orban Vieilles Vignes Réserve Champagne Brut hinta on muuttunut.</p><p>53,43 € → 54,71 € (+1,28 €, +2,40 %).</p>",
+			"summary": "Tuotteen Francis Orban Vieilles Vignes Réserve Champagne Brut hinta on muuttunut. 53,43 € → 54,71 € (+1,28 €, +2,40 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/946332-dfd9a32843c3.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

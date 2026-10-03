@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bottega Vino Biologico Prosecco Extra dry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/927163/",
+	"feed_url": "https://alkometriikka.fi/rss/927163.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bottega Vino Biologico Prosecco Extra dry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-927163-2026-07-18-19.98",
+			"url": "https://alkometriikka.fi/tuotteet/927163/",
+			"title": "Bottega Vino Biologico Prosecco Extra dry — 20,39 € → 19,98 €",
+			"content_html": "<p>Tuotteen Bottega Vino Biologico Prosecco Extra dry hinta on muuttunut.</p><p>20,39 € → 19,98 € (−0,41 €, −2,01 %).</p>",
+			"summary": "Tuotteen Bottega Vino Biologico Prosecco Extra dry hinta on muuttunut. 20,39 € → 19,98 € (−0,41 €, −2,01 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/927163-455c176af952.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

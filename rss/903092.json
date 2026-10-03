@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Domaine Chantal Lescure Pommard 1er Cru Les Bertins 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903092/",
+	"feed_url": "https://alkometriikka.fi/rss/903092.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Domaine Chantal Lescure Pommard 1er Cru Les Bertins 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903092-2026-09-29-102.62",
+			"url": "https://alkometriikka.fi/tuotteet/903092/",
+			"title": "Domaine Chantal Lescure Pommard 1er Cru Les Bertins 2022 — 98,00 € → 102,62 €",
+			"content_html": "<p>Tuotteen Domaine Chantal Lescure Pommard 1er Cru Les Bertins 2022 hinta on muuttunut.</p><p>98,00 € → 102,62 € (+4,62 €, +4,71 %).</p>",
+			"summary": "Tuotteen Domaine Chantal Lescure Pommard 1er Cru Les Bertins 2022 hinta on muuttunut. 98,00 € → 102,62 € (+4,62 €, +4,71 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903092-5725b39a802b.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

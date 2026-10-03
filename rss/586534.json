@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Papet del Mas Cava Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/586534/",
+	"feed_url": "https://alkometriikka.fi/rss/586534.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Papet del Mas Cava Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-586534-2026-09-29-9.21",
+			"url": "https://alkometriikka.fi/tuotteet/586534/",
+			"title": "Papet del Mas Cava Brut — 8,63 € → 9,21 €",
+			"content_html": "<p>Tuotteen Papet del Mas Cava Brut hinta on muuttunut.</p><p>8,63 € → 9,21 € (+0,58 €, +6,72 %).</p>",
+			"summary": "Tuotteen Papet del Mas Cava Brut hinta on muuttunut. 8,63 € → 9,21 € (+0,58 €, +6,72 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/586534-6f0484795a94.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

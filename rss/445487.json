@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Montes Alpha Cabernet Sauvignon 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/445487/",
+	"feed_url": "https://alkometriikka.fi/rss/445487.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Montes Alpha Cabernet Sauvignon 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-445487-2026-07-18-21.98",
+			"url": "https://alkometriikka.fi/tuotteet/445487/",
+			"title": "Montes Alpha Cabernet Sauvignon 2018 — 21,40 € → 21,98 €",
+			"content_html": "<p>Tuotteen Montes Alpha Cabernet Sauvignon 2018 hinta on muuttunut.</p><p>21,40 € → 21,98 € (+0,58 €, +2,71 %).</p>",
+			"summary": "Tuotteen Montes Alpha Cabernet Sauvignon 2018 hinta on muuttunut. 21,40 € → 21,98 € (+0,58 €, +2,71 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/445487-01a7b35ed2c6.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

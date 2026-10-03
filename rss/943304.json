@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cocchi Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/943304/",
+	"feed_url": "https://alkometriikka.fi/rss/943304.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cocchi Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-943304-2026-09-29-24.99",
+			"url": "https://alkometriikka.fi/tuotteet/943304/",
+			"title": "Cocchi Brut — 26,49 € → 24,99 €",
+			"content_html": "<p>Tuotteen Cocchi Brut hinta on muuttunut.</p><p>26,49 € → 24,99 € (−1,50 €, −5,66 %).</p>",
+			"summary": "Tuotteen Cocchi Brut hinta on muuttunut. 26,49 € → 24,99 € (−1,50 €, −5,66 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/943304-f86a46235f14.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-943304-2026-07-18-26.49",
+			"url": "https://alkometriikka.fi/tuotteet/943304/",
+			"title": "Cocchi Brut — 26,45 € → 26,49 €",
+			"content_html": "<p>Tuotteen Cocchi Brut hinta on muuttunut.</p><p>26,45 € → 26,49 € (+0,04 €, +0,15 %).</p>",
+			"summary": "Tuotteen Cocchi Brut hinta on muuttunut. 26,45 € → 26,49 € (+0,04 €, +0,15 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/943304-f86a46235f14.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

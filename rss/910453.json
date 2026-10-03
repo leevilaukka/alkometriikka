@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Chartreuse Jaune – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/910453/",
+	"feed_url": "https://alkometriikka.fi/rss/910453.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Chartreuse Jaune.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-910453-2026-09-29-60.48",
+			"url": "https://alkometriikka.fi/tuotteet/910453/",
+			"title": "Chartreuse Jaune — 59,78 € → 60,48 €",
+			"content_html": "<p>Tuotteen Chartreuse Jaune hinta on muuttunut.</p><p>59,78 € → 60,48 € (+0,70 €, +1,17 %).</p>",
+			"summary": "Tuotteen Chartreuse Jaune hinta on muuttunut. 59,78 € → 60,48 € (+0,70 €, +1,17 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/910453-d8bf8fe11ddd.png",
+			"tags": [
+				"Väkevät",
+				"yrttiliköörit"
+			]
+		}
+	]
+}

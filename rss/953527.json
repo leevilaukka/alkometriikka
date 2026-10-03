@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Divici Organic Prosecco Extra Dry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/953527/",
+	"feed_url": "https://alkometriikka.fi/rss/953527.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Divici Organic Prosecco Extra Dry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-953527-2026-09-29-13.59",
+			"url": "https://alkometriikka.fi/tuotteet/953527/",
+			"title": "Divici Organic Prosecco Extra Dry — 13,46 € → 13,59 €",
+			"content_html": "<p>Tuotteen Divici Organic Prosecco Extra Dry hinta on muuttunut.</p><p>13,46 € → 13,59 € (+0,13 €, +0,97 %).</p>",
+			"summary": "Tuotteen Divici Organic Prosecco Extra Dry hinta on muuttunut. 13,46 € → 13,59 € (+0,13 €, +0,97 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/953527-9f6ec6756419.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

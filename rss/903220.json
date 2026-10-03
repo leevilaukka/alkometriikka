@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Famille Moussé L'Esquisse Champagne Extra-Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903220/",
+	"feed_url": "https://alkometriikka.fi/rss/903220.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Famille Moussé L'Esquisse Champagne Extra-Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903220-2026-09-29-50.8",
+			"url": "https://alkometriikka.fi/tuotteet/903220/",
+			"title": "Famille Moussé L'Esquisse Champagne Extra-Brut — 49,80 € → 50,80 €",
+			"content_html": "<p>Tuotteen Famille Moussé L'Esquisse Champagne Extra-Brut hinta on muuttunut.</p><p>49,80 € → 50,80 € (+1,00 €, +2,01 %).</p>",
+			"summary": "Tuotteen Famille Moussé L'Esquisse Champagne Extra-Brut hinta on muuttunut. 49,80 € → 50,80 € (+1,00 €, +2,01 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903220-d74bec17cac6.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

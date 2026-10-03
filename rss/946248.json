@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pasqua Morago Bianco 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/946248/",
+	"feed_url": "https://alkometriikka.fi/rss/946248.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pasqua Morago Bianco 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-946248-2026-07-18-17.98",
+			"url": "https://alkometriikka.fi/tuotteet/946248/",
+			"title": "Pasqua Morago Bianco 2021 — 17,94 € → 17,98 €",
+			"content_html": "<p>Tuotteen Pasqua Morago Bianco 2021 hinta on muuttunut.</p><p>17,94 € → 17,98 € (+0,04 €, +0,22 %).</p>",
+			"summary": "Tuotteen Pasqua Morago Bianco 2021 hinta on muuttunut. 17,94 € → 17,98 € (+0,04 €, +0,22 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/946248-6eaeb8dc24fd.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

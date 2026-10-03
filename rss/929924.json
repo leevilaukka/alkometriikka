@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gut Hermannsberg Riesling Kupfergrube GG 2017 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/929924/",
+	"feed_url": "https://alkometriikka.fi/rss/929924.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gut Hermannsberg Riesling Kupfergrube GG 2017.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-929924-2026-09-29-100.19",
+			"url": "https://alkometriikka.fi/tuotteet/929924/",
+			"title": "Gut Hermannsberg Riesling Kupfergrube GG 2017 — 95,69 € → 100,19 €",
+			"content_html": "<p>Tuotteen Gut Hermannsberg Riesling Kupfergrube GG 2017 hinta on muuttunut.</p><p>95,69 € → 100,19 € (+4,50 €, +4,70 %).</p>",
+			"summary": "Tuotteen Gut Hermannsberg Riesling Kupfergrube GG 2017 hinta on muuttunut. 95,69 € → 100,19 € (+4,50 €, +4,70 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/929924-7fa94c059572.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

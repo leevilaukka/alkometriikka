@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nemiroff Flavoured Burning Pear Vodka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/937356/",
+	"feed_url": "https://alkometriikka.fi/rss/937356.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nemiroff Flavoured Burning Pear Vodka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-937356-2026-07-18-29.98",
+			"url": "https://alkometriikka.fi/tuotteet/937356/",
+			"title": "Nemiroff Flavoured Burning Pear Vodka — 30,25 € → 29,98 €",
+			"content_html": "<p>Tuotteen Nemiroff Flavoured Burning Pear Vodka hinta on muuttunut.</p><p>30,25 € → 29,98 € (−0,27 €, −0,89 %).</p>",
+			"summary": "Tuotteen Nemiroff Flavoured Burning Pear Vodka hinta on muuttunut. 30,25 € → 29,98 € (−0,27 €, −0,89 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/937356-54a9bb5ff179.png",
+			"tags": [
+				"Väkevät",
+				"maustetut vodkat"
+			]
+		}
+	]
+}

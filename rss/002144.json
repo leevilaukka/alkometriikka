@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vana Tallinn – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/002144/",
+	"feed_url": "https://alkometriikka.fi/rss/002144.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vana Tallinn.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-002144-2026-02-02-20.58",
+			"url": "https://alkometriikka.fi/tuotteet/002144/",
+			"title": "Vana Tallinn — 20,68 € → 20,58 €",
+			"content_html": "<p>Tuotteen Vana Tallinn hinta on muuttunut.</p><p>20,68 € → 20,58 € (−0,10 €, −0,48 %).</p>",
+			"summary": "Tuotteen Vana Tallinn hinta on muuttunut. 20,68 € → 20,58 € (−0,10 €, −0,48 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/002144-8f04ec4122d3.png",
+			"tags": [
+				"Väkevät",
+				"yrttiliköörit"
+			]
+		},
+		{
+			"id": "alkometriikka-002144-2026-02-02-20.68",
+			"url": "https://alkometriikka.fi/tuotteet/002144/",
+			"title": "Vana Tallinn — 20,58 € → 20,68 €",
+			"content_html": "<p>Tuotteen Vana Tallinn hinta on muuttunut.</p><p>20,58 € → 20,68 € (+0,10 €, +0,49 %).</p>",
+			"summary": "Tuotteen Vana Tallinn hinta on muuttunut. 20,58 € → 20,68 € (+0,10 €, +0,49 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/002144-8f04ec4122d3.png",
+			"tags": [
+				"Väkevät",
+				"yrttiliköörit"
+			]
+		}
+	]
+}

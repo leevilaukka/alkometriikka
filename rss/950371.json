@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Masi Campolongo di Torbe Amarone della Valpolicella Classico 2015 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/950371/",
+	"feed_url": "https://alkometriikka.fi/rss/950371.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Masi Campolongo di Torbe Amarone della Valpolicella Classico 2015.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-950371-2026-09-29-175.76",
+			"url": "https://alkometriikka.fi/tuotteet/950371/",
+			"title": "Masi Campolongo di Torbe Amarone della Valpolicella Classico 2015 — 166,01 € → 175,76 €",
+			"content_html": "<p>Tuotteen Masi Campolongo di Torbe Amarone della Valpolicella Classico 2015 hinta on muuttunut.</p><p>166,01 € → 175,76 € (+9,75 €, +5,87 %).</p>",
+			"summary": "Tuotteen Masi Campolongo di Torbe Amarone della Valpolicella Classico 2015 hinta on muuttunut. 166,01 € → 175,76 € (+9,75 €, +5,87 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/950371-bc046144d56f.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

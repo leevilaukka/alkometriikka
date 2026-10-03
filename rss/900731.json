@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Christian Tschida Non Tradition 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900731/",
+	"feed_url": "https://alkometriikka.fi/rss/900731.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Christian Tschida Non Tradition 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900731-2026-09-29-91.02",
+			"url": "https://alkometriikka.fi/tuotteet/900731/",
+			"title": "Christian Tschida Non Tradition 2023 — 87,16 € → 91,02 €",
+			"content_html": "<p>Tuotteen Christian Tschida Non Tradition 2023 hinta on muuttunut.</p><p>87,16 € → 91,02 € (+3,86 €, +4,43 %).</p>",
+			"summary": "Tuotteen Christian Tschida Non Tradition 2023 hinta on muuttunut. 87,16 € → 91,02 € (+3,86 €, +4,43 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900731-435db6f0378b.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

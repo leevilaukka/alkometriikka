@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Georges Vesselle Cuvee Juline Grand Cru Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902799/",
+	"feed_url": "https://alkometriikka.fi/rss/902799.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Georges Vesselle Cuvee Juline Grand Cru Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902799-2026-09-29-84.7",
+			"url": "https://alkometriikka.fi/tuotteet/902799/",
+			"title": "Georges Vesselle Cuvee Juline Grand Cru Champagne Brut — 76,85 € → 84,70 €",
+			"content_html": "<p>Tuotteen Georges Vesselle Cuvee Juline Grand Cru Champagne Brut hinta on muuttunut.</p><p>76,85 € → 84,70 € (+7,85 €, +10,21 %).</p>",
+			"summary": "Tuotteen Georges Vesselle Cuvee Juline Grand Cru Champagne Brut hinta on muuttunut. 76,85 € → 84,70 € (+7,85 €, +10,21 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902799-b02135117913.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

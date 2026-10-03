@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Prantner Sauvignon Blanc 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902589/",
+	"feed_url": "https://alkometriikka.fi/rss/902589.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Prantner Sauvignon Blanc 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902589-2026-09-29-39.8",
+			"url": "https://alkometriikka.fi/tuotteet/902589/",
+			"title": "Prantner Sauvignon Blanc 2023 — 39,56 € → 39,80 €",
+			"content_html": "<p>Tuotteen Prantner Sauvignon Blanc 2023 hinta on muuttunut.</p><p>39,56 € → 39,80 € (+0,24 €, +0,61 %).</p>",
+			"summary": "Tuotteen Prantner Sauvignon Blanc 2023 hinta on muuttunut. 39,56 € → 39,80 € (+0,24 €, +0,61 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902589-7027f6201819.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Penfolds Bin 389 Cabernet Sauvignon Shiraz 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902969/",
+	"feed_url": "https://alkometriikka.fi/rss/902969.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Penfolds Bin 389 Cabernet Sauvignon Shiraz 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902969-2026-09-29-104.98",
+			"url": "https://alkometriikka.fi/tuotteet/902969/",
+			"title": "Penfolds Bin 389 Cabernet Sauvignon Shiraz 2023 — 99,98 € → 104,98 €",
+			"content_html": "<p>Tuotteen Penfolds Bin 389 Cabernet Sauvignon Shiraz 2023 hinta on muuttunut.</p><p>99,98 € → 104,98 € (+5,00 €, +5,00 %).</p>",
+			"summary": "Tuotteen Penfolds Bin 389 Cabernet Sauvignon Shiraz 2023 hinta on muuttunut. 99,98 € → 104,98 € (+5,00 €, +5,00 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902969-fec242a8337d.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

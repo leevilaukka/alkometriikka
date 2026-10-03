@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Vieux Château Mazerat 2016 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/477147/",
+	"feed_url": "https://alkometriikka.fi/rss/477147.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Vieux Château Mazerat 2016.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-477147-2026-09-29-153.17",
+			"url": "https://alkometriikka.fi/tuotteet/477147/",
+			"title": "Vieux Château Mazerat 2016 — 145,00 € → 153,17 €",
+			"content_html": "<p>Tuotteen Vieux Château Mazerat 2016 hinta on muuttunut.</p><p>145,00 € → 153,17 € (+8,17 €, +5,63 %).</p>",
+			"summary": "Tuotteen Vieux Château Mazerat 2016 hinta on muuttunut. 145,00 € → 153,17 € (+8,17 €, +5,63 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/477147-e7620e18989d.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Kentucky Gentleman – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/001516/",
+	"feed_url": "https://alkometriikka.fi/rss/001516.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Kentucky Gentleman.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-001516-2026-07-18-28.39",
+			"url": "https://alkometriikka.fi/tuotteet/001516/",
+			"title": "Kentucky Gentleman — 28,43 € → 28,39 €",
+			"content_html": "<p>Tuotteen Kentucky Gentleman hinta on muuttunut.</p><p>28,43 € → 28,39 € (−0,04 €, −0,14 %).</p>",
+			"summary": "Tuotteen Kentucky Gentleman hinta on muuttunut. 28,43 € → 28,39 € (−0,04 €, −0,14 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/001516-75b5f5485be3.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

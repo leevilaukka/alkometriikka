@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Laphroaig Quarter Cask Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/133727/",
+	"feed_url": "https://alkometriikka.fi/rss/133727.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Laphroaig Quarter Cask Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-133727-2026-09-29-69.98",
+			"url": "https://alkometriikka.fi/tuotteet/133727/",
+			"title": "Laphroaig Quarter Cask Single Malt — 70,86 € → 69,98 €",
+			"content_html": "<p>Tuotteen Laphroaig Quarter Cask Single Malt hinta on muuttunut.</p><p>70,86 € → 69,98 € (−0,88 €, −1,24 %).</p>",
+			"summary": "Tuotteen Laphroaig Quarter Cask Single Malt hinta on muuttunut. 70,86 € → 69,98 € (−0,88 €, −1,24 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/133727-0fcbd7bb16d1.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

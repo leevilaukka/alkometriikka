@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Los Siete Misterios Doba-Yej Mezcal – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900519/",
+	"feed_url": "https://alkometriikka.fi/rss/900519.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Los Siete Misterios Doba-Yej Mezcal.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900519-2026-07-18-69.98",
+			"url": "https://alkometriikka.fi/tuotteet/900519/",
+			"title": "Los Siete Misterios Doba-Yej Mezcal — 70,29 € → 69,98 €",
+			"content_html": "<p>Tuotteen Los Siete Misterios Doba-Yej Mezcal hinta on muuttunut.</p><p>70,29 € → 69,98 € (−0,31 €, −0,44 %).</p>",
+			"summary": "Tuotteen Los Siete Misterios Doba-Yej Mezcal hinta on muuttunut. 70,29 € → 69,98 € (−0,31 €, −0,44 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900519-f3d72581b607.png",
+			"tags": [
+				"Väkevät",
+				"Tequilat"
+			]
+		}
+	]
+}

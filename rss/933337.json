@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Masi Riserva di Costasera Amarone Classico 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/933337/",
+	"feed_url": "https://alkometriikka.fi/rss/933337.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Masi Riserva di Costasera Amarone Classico 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-933337-2026-09-29-74.98",
+			"url": "https://alkometriikka.fi/tuotteet/933337/",
+			"title": "Masi Riserva di Costasera Amarone Classico 2018 — 73,69 € → 74,98 €",
+			"content_html": "<p>Tuotteen Masi Riserva di Costasera Amarone Classico 2018 hinta on muuttunut.</p><p>73,69 € → 74,98 € (+1,29 €, +1,75 %).</p>",
+			"summary": "Tuotteen Masi Riserva di Costasera Amarone Classico 2018 hinta on muuttunut. 73,69 € → 74,98 € (+1,29 €, +1,75 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/933337-3f222f770a4d.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glenmorangie Lasanta 15 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901115/",
+	"feed_url": "https://alkometriikka.fi/rss/901115.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glenmorangie Lasanta 15 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901115-2026-09-29-92.98",
+			"url": "https://alkometriikka.fi/tuotteet/901115/",
+			"title": "Glenmorangie Lasanta 15 Year Old Single Malt — 89,99 € → 92,98 €",
+			"content_html": "<p>Tuotteen Glenmorangie Lasanta 15 Year Old Single Malt hinta on muuttunut.</p><p>89,99 € → 92,98 € (+2,99 €, +3,32 %).</p>",
+			"summary": "Tuotteen Glenmorangie Lasanta 15 Year Old Single Malt hinta on muuttunut. 89,99 € → 92,98 € (+2,99 €, +3,32 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901115-40105ba0d0a7.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		},
+		{
+			"id": "alkometriikka-901115-2026-07-18-89.99",
+			"url": "https://alkometriikka.fi/tuotteet/901115/",
+			"title": "Glenmorangie Lasanta 15 Year Old Single Malt — 92,33 € → 89,99 €",
+			"content_html": "<p>Tuotteen Glenmorangie Lasanta 15 Year Old Single Malt hinta on muuttunut.</p><p>92,33 € → 89,99 € (−2,34 €, −2,53 %).</p>",
+			"summary": "Tuotteen Glenmorangie Lasanta 15 Year Old Single Malt hinta on muuttunut. 92,33 € → 89,99 € (−2,34 €, −2,53 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901115-40105ba0d0a7.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

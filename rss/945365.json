@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nik Weis Pinot Noir 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/945365/",
+	"feed_url": "https://alkometriikka.fi/rss/945365.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nik Weis Pinot Noir 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-945365-2026-09-29-28.95",
+			"url": "https://alkometriikka.fi/tuotteet/945365/",
+			"title": "Nik Weis Pinot Noir 2020 — 28,37 € → 28,95 €",
+			"content_html": "<p>Tuotteen Nik Weis Pinot Noir 2020 hinta on muuttunut.</p><p>28,37 € → 28,95 € (+0,58 €, +2,04 %).</p>",
+			"summary": "Tuotteen Nik Weis Pinot Noir 2020 hinta on muuttunut. 28,37 € → 28,95 € (+0,58 €, +2,04 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/945365-d18a3da9f0cc.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

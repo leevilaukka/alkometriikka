@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Hotti Chili-Vadelma Shotti muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/268886/",
+	"feed_url": "https://alkometriikka.fi/rss/268886.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Hotti Chili-Vadelma Shotti muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-268886-2026-07-18-10.7",
+			"url": "https://alkometriikka.fi/tuotteet/268886/",
+			"title": "Hotti Chili-Vadelma Shotti muovipullo — 10,66 € → 10,70 €",
+			"content_html": "<p>Tuotteen Hotti Chili-Vadelma Shotti muovipullo hinta on muuttunut.</p><p>10,66 € → 10,70 € (+0,04 €, +0,38 %).</p>",
+			"summary": "Tuotteen Hotti Chili-Vadelma Shotti muovipullo hinta on muuttunut. 10,66 € → 10,70 € (+0,04 €, +0,38 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/268886-5307f521769f.png",
+			"tags": [
+				"Väkevät",
+				"mausteliköörit"
+			]
+		}
+	]
+}

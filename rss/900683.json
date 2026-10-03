@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Rosé D'été – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900683/",
+	"feed_url": "https://alkometriikka.fi/rss/900683.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Rosé D'été.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900683-2026-07-18-12.99",
+			"url": "https://alkometriikka.fi/tuotteet/900683/",
+			"title": "Rosé D'été — 12,96 € → 12,99 €",
+			"content_html": "<p>Tuotteen Rosé D'été hinta on muuttunut.</p><p>12,96 € → 12,99 € (+0,03 €, +0,23 %).</p>",
+			"summary": "Tuotteen Rosé D'été hinta on muuttunut. 12,96 € → 12,99 € (+0,03 €, +0,23 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900683-91316747c0e7.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

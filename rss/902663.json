@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Prantner Cabernet Franc 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902663/",
+	"feed_url": "https://alkometriikka.fi/rss/902663.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Prantner Cabernet Franc 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902663-2026-09-29-46.43",
+			"url": "https://alkometriikka.fi/tuotteet/902663/",
+			"title": "Prantner Cabernet Franc 2021 — 45,74 € → 46,43 €",
+			"content_html": "<p>Tuotteen Prantner Cabernet Franc 2021 hinta on muuttunut.</p><p>45,74 € → 46,43 € (+0,69 €, +1,51 %).</p>",
+			"summary": "Tuotteen Prantner Cabernet Franc 2021 hinta on muuttunut. 45,74 € → 46,43 € (+0,69 €, +1,51 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902663-42c3d862f79a.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

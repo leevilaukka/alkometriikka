@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Malmgård Strong Lager tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/703246/",
+	"feed_url": "https://alkometriikka.fi/rss/703246.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Malmgård Strong Lager tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-703246-2026-07-18-4.03",
+			"url": "https://alkometriikka.fi/tuotteet/703246/",
+			"title": "Malmgård Strong Lager tölkki — 4,04 € → 4,03 €",
+			"content_html": "<p>Tuotteen Malmgård Strong Lager tölkki hinta on muuttunut.</p><p>4,04 € → 4,03 € (−0,01 €, −0,25 %).</p>",
+			"summary": "Tuotteen Malmgård Strong Lager tölkki hinta on muuttunut. 4,04 € → 4,03 € (−0,01 €, −0,25 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/703246-ee2b1515e5f0.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

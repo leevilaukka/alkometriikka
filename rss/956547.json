@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Indigena Organic 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/956547/",
+	"feed_url": "https://alkometriikka.fi/rss/956547.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Indigena Organic 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-956547-2026-07-18-21.98",
+			"url": "https://alkometriikka.fi/tuotteet/956547/",
+			"title": "Indigena Organic 2022 — 21,96 € → 21,98 €",
+			"content_html": "<p>Tuotteen Indigena Organic 2022 hinta on muuttunut.</p><p>21,96 € → 21,98 € (+0,02 €, +0,09 %).</p>",
+			"summary": "Tuotteen Indigena Organic 2022 hinta on muuttunut. 21,96 € → 21,98 € (+0,02 €, +0,09 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/956547-34e52467c98b.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

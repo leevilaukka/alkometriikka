@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – De Kuyper Wild Strawberry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/950488/",
+	"feed_url": "https://alkometriikka.fi/rss/950488.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: De Kuyper Wild Strawberry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-950488-2026-07-18-14.99",
+			"url": "https://alkometriikka.fi/tuotteet/950488/",
+			"title": "De Kuyper Wild Strawberry — 14,97 € → 14,99 €",
+			"content_html": "<p>Tuotteen De Kuyper Wild Strawberry hinta on muuttunut.</p><p>14,97 € → 14,99 € (+0,02 €, +0,13 %).</p>",
+			"summary": "Tuotteen De Kuyper Wild Strawberry hinta on muuttunut. 14,97 € → 14,99 € (+0,02 €, +0,13 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/950488-847db99abe81.png",
+			"tags": [
+				"Väkevät",
+				"hedelmäliköörit"
+			]
+		}
+	]
+}

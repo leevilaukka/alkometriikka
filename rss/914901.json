@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Smokehead Twisted Stout Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/914901/",
+	"feed_url": "https://alkometriikka.fi/rss/914901.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Smokehead Twisted Stout Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-914901-2026-09-29-62.98",
+			"url": "https://alkometriikka.fi/tuotteet/914901/",
+			"title": "Smokehead Twisted Stout Single Malt — 70,89 € → 62,98 €",
+			"content_html": "<p>Tuotteen Smokehead Twisted Stout Single Malt hinta on muuttunut.</p><p>70,89 € → 62,98 € (−7,91 €, −11,16 %).</p>",
+			"summary": "Tuotteen Smokehead Twisted Stout Single Malt hinta on muuttunut. 70,89 € → 62,98 € (−7,91 €, −11,16 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/914901-1479890878c4.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		},
+		{
+			"id": "alkometriikka-914901-2026-07-18-70.89",
+			"url": "https://alkometriikka.fi/tuotteet/914901/",
+			"title": "Smokehead Twisted Stout Single Malt — 88,37 € → 70,89 €",
+			"content_html": "<p>Tuotteen Smokehead Twisted Stout Single Malt hinta on muuttunut.</p><p>88,37 € → 70,89 € (−17,48 €, −19,78 %).</p>",
+			"summary": "Tuotteen Smokehead Twisted Stout Single Malt hinta on muuttunut. 88,37 € → 70,89 € (−17,48 €, −19,78 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/914901-1479890878c4.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

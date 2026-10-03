@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Roberto Sarotto Barbaresco Riserva 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/454967/",
+	"feed_url": "https://alkometriikka.fi/rss/454967.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Roberto Sarotto Barbaresco Riserva 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-454967-2026-09-29-26.6",
+			"url": "https://alkometriikka.fi/tuotteet/454967/",
+			"title": "Roberto Sarotto Barbaresco Riserva 2020 — 26,50 € → 26,60 €",
+			"content_html": "<p>Tuotteen Roberto Sarotto Barbaresco Riserva 2020 hinta on muuttunut.</p><p>26,50 € → 26,60 € (+0,10 €, +0,38 %).</p>",
+			"summary": "Tuotteen Roberto Sarotto Barbaresco Riserva 2020 hinta on muuttunut. 26,50 € → 26,60 € (+0,10 €, +0,38 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/454967-a338d3322bb9.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

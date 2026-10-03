@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Castelmondo Valpolicella Ripasso Superiore 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/940511/",
+	"feed_url": "https://alkometriikka.fi/rss/940511.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Castelmondo Valpolicella Ripasso Superiore 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-940511-2026-07-18-15.49",
+			"url": "https://alkometriikka.fi/tuotteet/940511/",
+			"title": "Castelmondo Valpolicella Ripasso Superiore 2022 — 14,97 € → 15,49 €",
+			"content_html": "<p>Tuotteen Castelmondo Valpolicella Ripasso Superiore 2022 hinta on muuttunut.</p><p>14,97 € → 15,49 € (+0,52 €, +3,47 %).</p>",
+			"summary": "Tuotteen Castelmondo Valpolicella Ripasso Superiore 2022 hinta on muuttunut. 14,97 € → 15,49 € (+0,52 €, +3,47 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/940511-313fc4b0bc12.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

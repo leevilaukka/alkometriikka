@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Van Zellers &amp; Co Very Old Tawny Colheita Port 1934 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/900600/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Van Zellers &amp; Co Very Old Tawny Colheita Port 1934.</description>
+		<language>fi</language>
+		<lastBuildDate>Sat, 03 Oct 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/900600.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Van Zellers &amp; Co Very Old Tawny Colheita Port 1934 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Van Zellers &amp; Co Very Old Tawny Colheita Port 1934 — 1 073,87 € → 1 151,80 €</title>
+			<link>https://alkometriikka.fi/tuotteet/900600/</link>
+			<guid isPermaLink="false">alkometriikka-900600-2026-09-29-1151.8</guid>
+			<pubDate>Tue, 29 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Välituotteet / portviinit</category>
+			<description><![CDATA[<p>Tuotteen Van Zellers & Co Very Old Tawny Colheita Port 1934 hinta on muuttunut.</p><p>1 073,87 € → 1 151,80 € (+77,93 €, +7,26 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/900600-b710f2e3c5db.png" />
+		</item>
+	</channel>
+</rss>

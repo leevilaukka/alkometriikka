@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Domaine Laroche Chablis 1er Cru Les Vaudevey 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/585597/",
+	"feed_url": "https://alkometriikka.fi/rss/585597.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Domaine Laroche Chablis 1er Cru Les Vaudevey 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-585597-2026-09-29-37.48",
+			"url": "https://alkometriikka.fi/tuotteet/585597/",
+			"title": "Domaine Laroche Chablis 1er Cru Les Vaudevey 2023 — 36,98 € → 37,48 €",
+			"content_html": "<p>Tuotteen Domaine Laroche Chablis 1er Cru Les Vaudevey 2023 hinta on muuttunut.</p><p>36,98 € → 37,48 € (+0,50 €, +1,35 %).</p>",
+			"summary": "Tuotteen Domaine Laroche Chablis 1er Cru Les Vaudevey 2023 hinta on muuttunut. 36,98 € → 37,48 € (+0,50 €, +1,35 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/585597-a501cf4ee12d.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-585597-2026-07-18-36.98",
+			"url": "https://alkometriikka.fi/tuotteet/585597/",
+			"title": "Domaine Laroche Chablis 1er Cru Les Vaudevey 2023 — 37,46 € → 36,98 €",
+			"content_html": "<p>Tuotteen Domaine Laroche Chablis 1er Cru Les Vaudevey 2023 hinta on muuttunut.</p><p>37,46 € → 36,98 € (−0,48 €, −1,28 %).</p>",
+			"summary": "Tuotteen Domaine Laroche Chablis 1er Cru Les Vaudevey 2023 hinta on muuttunut. 37,46 € → 36,98 € (−0,48 €, −1,28 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/585597-a501cf4ee12d.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

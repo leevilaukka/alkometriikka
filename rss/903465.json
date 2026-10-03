@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Neurita Rosa Tequila – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903465/",
+	"feed_url": "https://alkometriikka.fi/rss/903465.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Neurita Rosa Tequila.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903465-2026-09-29-57.67",
+			"url": "https://alkometriikka.fi/tuotteet/903465/",
+			"title": "Neurita Rosa Tequila — 56,90 € → 57,67 €",
+			"content_html": "<p>Tuotteen Neurita Rosa Tequila hinta on muuttunut.</p><p>56,90 € → 57,67 € (+0,77 €, +1,35 %).</p>",
+			"summary": "Tuotteen Neurita Rosa Tequila hinta on muuttunut. 56,90 € → 57,67 € (+0,77 €, +1,35 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903465-a0f83631d8ae.png",
+			"tags": [
+				"Väkevät",
+				"Tequilat"
+			]
+		}
+	]
+}

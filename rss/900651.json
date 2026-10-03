@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Three times Three Vol 5 tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900651/",
+	"feed_url": "https://alkometriikka.fi/rss/900651.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Three times Three Vol 5 tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900651-2026-07-18-9.97",
+			"url": "https://alkometriikka.fi/tuotteet/900651/",
+			"title": "Three times Three Vol 5 tölkki — 9,98 € → 9,97 €",
+			"content_html": "<p>Tuotteen Three times Three Vol 5 tölkki hinta on muuttunut.</p><p>9,98 € → 9,97 € (−0,01 €, −0,10 %).</p>",
+			"summary": "Tuotteen Three times Three Vol 5 tölkki hinta on muuttunut. 9,98 € → 9,97 € (−0,01 €, −0,10 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900651-e6255e46bcf9.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

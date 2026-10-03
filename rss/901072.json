@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Michel Gonet Vindey Montgueux Blanc de Blancs Extra Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901072/",
+	"feed_url": "https://alkometriikka.fi/rss/901072.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Michel Gonet Vindey Montgueux Blanc de Blancs Extra Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901072-2026-09-29-54.9",
+			"url": "https://alkometriikka.fi/tuotteet/901072/",
+			"title": "Michel Gonet Vindey Montgueux Blanc de Blancs Extra Brut — 53,99 € → 54,90 €",
+			"content_html": "<p>Tuotteen Michel Gonet Vindey Montgueux Blanc de Blancs Extra Brut hinta on muuttunut.</p><p>53,99 € → 54,90 € (+0,91 €, +1,69 %).</p>",
+			"summary": "Tuotteen Michel Gonet Vindey Montgueux Blanc de Blancs Extra Brut hinta on muuttunut. 53,99 € → 54,90 € (+0,91 €, +1,69 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901072-08e29a45cad7.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Magners Irish Pear Cider – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/790154/",
+	"feed_url": "https://alkometriikka.fi/rss/790154.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Magners Irish Pear Cider.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-790154-2026-07-18-3.69",
+			"url": "https://alkometriikka.fi/tuotteet/790154/",
+			"title": "Magners Irish Pear Cider — 3,49 € → 3,69 €",
+			"content_html": "<p>Tuotteen Magners Irish Pear Cider hinta on muuttunut.</p><p>3,49 € → 3,69 € (+0,20 €, +5,73 %).</p>",
+			"summary": "Tuotteen Magners Irish Pear Cider hinta on muuttunut. 3,49 € → 3,69 € (+0,20 €, +5,73 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/790154-78b5188fc736.png",
+			"tags": [
+				"Panimotuotteet",
+				"siiderit"
+			]
+		}
+	]
+}

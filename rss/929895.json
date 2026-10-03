@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Valamo Black Tea Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/929895/",
+	"feed_url": "https://alkometriikka.fi/rss/929895.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Valamo Black Tea Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-929895-2026-09-29-51.05",
+			"url": "https://alkometriikka.fi/tuotteet/929895/",
+			"title": "Valamo Black Tea Gin — 50,14 € → 51,05 €",
+			"content_html": "<p>Tuotteen Valamo Black Tea Gin hinta on muuttunut.</p><p>50,14 € → 51,05 € (+0,91 €, +1,81 %).</p>",
+			"summary": "Tuotteen Valamo Black Tea Gin hinta on muuttunut. 50,14 € → 51,05 € (+0,91 €, +1,81 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/929895-f43556c7106d.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

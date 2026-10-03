@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Alonso & Pedrajo Suañé Tinto Reserva 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903282/",
+	"feed_url": "https://alkometriikka.fi/rss/903282.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Alonso & Pedrajo Suañé Tinto Reserva 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903282-2026-09-29-50.99",
+			"url": "https://alkometriikka.fi/tuotteet/903282/",
+			"title": "Alonso & Pedrajo Suañé Tinto Reserva 2020 — 49,98 € → 50,99 €",
+			"content_html": "<p>Tuotteen Alonso & Pedrajo Suañé Tinto Reserva 2020 hinta on muuttunut.</p><p>49,98 € → 50,99 € (+1,01 €, +2,02 %).</p>",
+			"summary": "Tuotteen Alonso & Pedrajo Suañé Tinto Reserva 2020 hinta on muuttunut. 49,98 € → 50,99 € (+1,01 €, +2,02 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903282-31ce8abf9337.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

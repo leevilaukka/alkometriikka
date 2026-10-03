@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Saku Kuld – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/722356/",
+	"feed_url": "https://alkometriikka.fi/rss/722356.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Saku Kuld.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-722356-2026-07-18-3.89",
+			"url": "https://alkometriikka.fi/tuotteet/722356/",
+			"title": "Saku Kuld — 3,79 € → 3,89 €",
+			"content_html": "<p>Tuotteen Saku Kuld hinta on muuttunut.</p><p>3,79 € → 3,89 € (+0,10 €, +2,64 %).</p>",
+			"summary": "Tuotteen Saku Kuld hinta on muuttunut. 3,79 € → 3,89 € (+0,10 €, +2,64 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/722356-9673c02d12de.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

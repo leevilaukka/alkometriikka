@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Gustav Arctic Lingonberry – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/915445/",
+	"feed_url": "https://alkometriikka.fi/rss/915445.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Gustav Arctic Lingonberry.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-915445-2026-07-18-17.49",
+			"url": "https://alkometriikka.fi/tuotteet/915445/",
+			"title": "Gustav Arctic Lingonberry — 17,41 € → 17,49 €",
+			"content_html": "<p>Tuotteen Gustav Arctic Lingonberry hinta on muuttunut.</p><p>17,41 € → 17,49 € (+0,08 €, +0,46 %).</p>",
+			"summary": "Tuotteen Gustav Arctic Lingonberry hinta on muuttunut. 17,41 € → 17,49 € (+0,08 €, +0,46 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/915445-44a9c41c7c48.png",
+			"tags": [
+				"Väkevät",
+				"marjaliköörit"
+			]
+		}
+	]
+}

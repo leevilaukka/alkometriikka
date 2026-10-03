@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pusser's Original – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/957376/",
+	"feed_url": "https://alkometriikka.fi/rss/957376.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pusser's Original.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-957376-2026-09-29-47.32",
+			"url": "https://alkometriikka.fi/tuotteet/957376/",
+			"title": "Pusser's Original — 46,76 € → 47,32 €",
+			"content_html": "<p>Tuotteen Pusser's Original hinta on muuttunut.</p><p>46,76 € → 47,32 € (+0,56 €, +1,20 %).</p>",
+			"summary": "Tuotteen Pusser's Original hinta on muuttunut. 46,76 € → 47,32 € (+0,56 €, +1,20 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/957376-ed6adf476e3d.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		},
+		{
+			"id": "alkometriikka-957376-2026-07-18-46.76",
+			"url": "https://alkometriikka.fi/tuotteet/957376/",
+			"title": "Pusser's Original — 45,44 € → 46,76 €",
+			"content_html": "<p>Tuotteen Pusser's Original hinta on muuttunut.</p><p>45,44 € → 46,76 € (+1,32 €, +2,90 %).</p>",
+			"summary": "Tuotteen Pusser's Original hinta on muuttunut. 45,44 € → 46,76 € (+1,32 €, +2,90 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/957376-ed6adf476e3d.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

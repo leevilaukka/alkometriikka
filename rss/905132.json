@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Små Sure Bubble Fizz muovipullo – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/905132/",
+	"feed_url": "https://alkometriikka.fi/rss/905132.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Små Sure Bubble Fizz muovipullo.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-905132-2026-07-18-13.98",
+			"url": "https://alkometriikka.fi/tuotteet/905132/",
+			"title": "Små Sure Bubble Fizz muovipullo — 13,06 € → 13,98 €",
+			"content_html": "<p>Tuotteen Små Sure Bubble Fizz muovipullo hinta on muuttunut.</p><p>13,06 € → 13,98 € (+0,92 €, +7,04 %).</p>",
+			"summary": "Tuotteen Små Sure Bubble Fizz muovipullo hinta on muuttunut. 13,06 € → 13,98 € (+0,92 €, +7,04 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/905132-26a3b4b2790d.png",
+			"tags": [
+				"Väkevät",
+				"mausteliköörit"
+			]
+		}
+	]
+}

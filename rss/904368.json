@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Schloss Vollrads Riesling Trocken Organic 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/904368/",
+	"feed_url": "https://alkometriikka.fi/rss/904368.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Schloss Vollrads Riesling Trocken Organic 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-904368-2026-09-29-19.99",
+			"url": "https://alkometriikka.fi/tuotteet/904368/",
+			"title": "Schloss Vollrads Riesling Trocken Organic 2024 — 19,98 € → 19,99 €",
+			"content_html": "<p>Tuotteen Schloss Vollrads Riesling Trocken Organic 2024 hinta on muuttunut.</p><p>19,98 € → 19,99 € (+0,01 €, +0,05 %).</p>",
+			"summary": "Tuotteen Schloss Vollrads Riesling Trocken Organic 2024 hinta on muuttunut. 19,98 € → 19,99 € (+0,01 €, +0,05 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/904368-93a97a7efe5b.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-904368-2026-07-18-19.98",
+			"url": "https://alkometriikka.fi/tuotteet/904368/",
+			"title": "Schloss Vollrads Riesling Trocken Organic 2024 — 20,44 € → 19,98 €",
+			"content_html": "<p>Tuotteen Schloss Vollrads Riesling Trocken Organic 2024 hinta on muuttunut.</p><p>20,44 € → 19,98 € (−0,46 €, −2,25 %).</p>",
+			"summary": "Tuotteen Schloss Vollrads Riesling Trocken Organic 2024 hinta on muuttunut. 20,44 € → 19,98 € (−0,46 €, −2,25 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/904368-93a97a7efe5b.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nemiroff Flavoured Bold Orange Vodka – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/913331/",
+	"feed_url": "https://alkometriikka.fi/rss/913331.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nemiroff Flavoured Bold Orange Vodka.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-913331-2026-07-18-29.98",
+			"url": "https://alkometriikka.fi/tuotteet/913331/",
+			"title": "Nemiroff Flavoured Bold Orange Vodka — 30,26 € → 29,98 €",
+			"content_html": "<p>Tuotteen Nemiroff Flavoured Bold Orange Vodka hinta on muuttunut.</p><p>30,26 € → 29,98 € (−0,28 €, −0,93 %).</p>",
+			"summary": "Tuotteen Nemiroff Flavoured Bold Orange Vodka hinta on muuttunut. 30,26 € → 29,98 € (−0,28 €, −0,93 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/913331-318d73f49f43.png",
+			"tags": [
+				"Väkevät",
+				"maustetut vodkat"
+			]
+		}
+	]
+}

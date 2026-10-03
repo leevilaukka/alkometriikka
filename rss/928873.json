@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lepola Vega Ice Cider – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/928873/",
+	"feed_url": "https://alkometriikka.fi/rss/928873.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lepola Vega Ice Cider.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-928873-2026-09-29-29.05",
+			"url": "https://alkometriikka.fi/tuotteet/928873/",
+			"title": "Lepola Vega Ice Cider — 28,20 € → 29,05 €",
+			"content_html": "<p>Tuotteen Lepola Vega Ice Cider hinta on muuttunut.</p><p>28,20 € → 29,05 € (+0,85 €, +3,01 %).</p>",
+			"summary": "Tuotteen Lepola Vega Ice Cider hinta on muuttunut. 28,20 € → 29,05 € (+0,85 €, +3,01 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/928873-cbf579b4b446.png",
+			"tags": [
+				"Viinit",
+				"jälkiruokaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Jim Beam – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/001527/",
+	"feed_url": "https://alkometriikka.fi/rss/001527.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Jim Beam.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-001527-2026-09-29-29.98",
+			"url": "https://alkometriikka.fi/tuotteet/001527/",
+			"title": "Jim Beam — 33,10 € → 29,98 €",
+			"content_html": "<p>Tuotteen Jim Beam hinta on muuttunut.</p><p>33,10 € → 29,98 € (−3,12 €, −9,43 %).</p>",
+			"summary": "Tuotteen Jim Beam hinta on muuttunut. 33,10 € → 29,98 € (−3,12 €, −9,43 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/001527-ae553ad32dc2.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

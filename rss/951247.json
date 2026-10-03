@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Taittinger Prélude Grands Crus Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/951247/",
+	"feed_url": "https://alkometriikka.fi/rss/951247.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Taittinger Prélude Grands Crus Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-951247-2026-09-29-90.21",
+			"url": "https://alkometriikka.fi/tuotteet/951247/",
+			"title": "Taittinger Prélude Grands Crus Champagne Brut — 86,45 € → 90,21 €",
+			"content_html": "<p>Tuotteen Taittinger Prélude Grands Crus Champagne Brut hinta on muuttunut.</p><p>86,45 € → 90,21 € (+3,76 €, +4,35 %).</p>",
+			"summary": "Tuotteen Taittinger Prélude Grands Crus Champagne Brut hinta on muuttunut. 86,45 € → 90,21 € (+3,76 €, +4,35 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/951247-72306f4b9265.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

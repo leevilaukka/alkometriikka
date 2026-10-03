@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Aresca Barolo Costareto 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902428/",
+	"feed_url": "https://alkometriikka.fi/rss/902428.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Aresca Barolo Costareto 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902428-2026-09-29-35.91",
+			"url": "https://alkometriikka.fi/tuotteet/902428/",
+			"title": "Aresca Barolo Costareto 2021 — 35,36 € → 35,91 €",
+			"content_html": "<p>Tuotteen Aresca Barolo Costareto 2021 hinta on muuttunut.</p><p>35,36 € → 35,91 € (+0,55 €, +1,56 %).</p>",
+			"summary": "Tuotteen Aresca Barolo Costareto 2021 hinta on muuttunut. 35,36 € → 35,91 € (+0,55 €, +1,56 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902428-86705aedbb51.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

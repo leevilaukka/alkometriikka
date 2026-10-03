@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – La Crema Saralee's Vineyard Chardonnay 2021 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/948175/",
+	"feed_url": "https://alkometriikka.fi/rss/948175.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: La Crema Saralee's Vineyard Chardonnay 2021.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-948175-2026-09-29-81.36",
+			"url": "https://alkometriikka.fi/tuotteet/948175/",
+			"title": "La Crema Saralee's Vineyard Chardonnay 2021 — 78,19 € → 81,36 €",
+			"content_html": "<p>Tuotteen La Crema Saralee's Vineyard Chardonnay 2021 hinta on muuttunut.</p><p>78,19 € → 81,36 € (+3,17 €, +4,05 %).</p>",
+			"summary": "Tuotteen La Crema Saralee's Vineyard Chardonnay 2021 hinta on muuttunut. 78,19 € → 81,36 € (+3,17 €, +4,05 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/948175-13c392b28acc.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

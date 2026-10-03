@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Soerlie Selection Madeira Cask Finish – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/124137/",
+	"feed_url": "https://alkometriikka.fi/rss/124137.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Soerlie Selection Madeira Cask Finish.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-124137-2026-09-29-61.99",
+			"url": "https://alkometriikka.fi/tuotteet/124137/",
+			"title": "Soerlie Selection Madeira Cask Finish — 59,99 € → 61,99 €",
+			"content_html": "<p>Tuotteen Soerlie Selection Madeira Cask Finish hinta on muuttunut.</p><p>59,99 € → 61,99 € (+2,00 €, +3,33 %).</p>",
+			"summary": "Tuotteen Soerlie Selection Madeira Cask Finish hinta on muuttunut. 59,99 € → 61,99 € (+2,00 €, +3,33 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/124137-16a4178f10ac.png",
+			"tags": [
+				"Väkevät",
+				"konjakit"
+			]
+		}
+	]
+}

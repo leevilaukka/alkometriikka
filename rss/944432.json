@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Warner’s London Dry Gin – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/944432/",
+	"feed_url": "https://alkometriikka.fi/rss/944432.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Warner’s London Dry Gin.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-944432-2026-09-29-50.03",
+			"url": "https://alkometriikka.fi/tuotteet/944432/",
+			"title": "Warner’s London Dry Gin — 49,99 € → 50,03 €",
+			"content_html": "<p>Tuotteen Warner’s London Dry Gin hinta on muuttunut.</p><p>49,99 € → 50,03 € (+0,04 €, +0,08 %).</p>",
+			"summary": "Tuotteen Warner’s London Dry Gin hinta on muuttunut. 49,99 € → 50,03 € (+0,04 €, +0,08 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/944432-6efddc86f367.png",
+			"tags": [
+				"Väkevät",
+				"ginit"
+			]
+		}
+	]
+}

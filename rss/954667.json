@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bollinger Rosé Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/954667/",
+	"feed_url": "https://alkometriikka.fi/rss/954667.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bollinger Rosé Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-954667-2026-09-29-108.9",
+			"url": "https://alkometriikka.fi/tuotteet/954667/",
+			"title": "Bollinger Rosé Champagne Brut — 105,48 € → 108,90 €",
+			"content_html": "<p>Tuotteen Bollinger Rosé Champagne Brut hinta on muuttunut.</p><p>105,48 € → 108,90 € (+3,42 €, +3,24 %).</p>",
+			"summary": "Tuotteen Bollinger Rosé Champagne Brut hinta on muuttunut. 105,48 € → 108,90 € (+3,42 €, +3,24 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/954667-1c1d4526331b.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-954667-2026-07-18-105.48",
+			"url": "https://alkometriikka.fi/tuotteet/954667/",
+			"title": "Bollinger Rosé Champagne Brut — 102,99 € → 105,48 €",
+			"content_html": "<p>Tuotteen Bollinger Rosé Champagne Brut hinta on muuttunut.</p><p>102,99 € → 105,48 € (+2,49 €, +2,42 %).</p>",
+			"summary": "Tuotteen Bollinger Rosé Champagne Brut hinta on muuttunut. 102,99 € → 105,48 € (+2,49 €, +2,42 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/954667-1c1d4526331b.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

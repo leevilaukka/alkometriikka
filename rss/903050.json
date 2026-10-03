@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Glenfarclas 70 Year Old Single Malt (saatavuus 1 plo) – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903050/",
+	"feed_url": "https://alkometriikka.fi/rss/903050.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Glenfarclas 70 Year Old Single Malt (saatavuus 1 plo).",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903050-2026-09-29-25175.24",
+			"url": "https://alkometriikka.fi/tuotteet/903050/",
+			"title": "Glenfarclas 70 Year Old Single Malt (saatavuus 1 plo) — 23 498,33 € → 25 175,24 €",
+			"content_html": "<p>Tuotteen Glenfarclas 70 Year Old Single Malt (saatavuus 1 plo) hinta on muuttunut.</p><p>23 498,33 € → 25 175,24 € (+1 676,91 €, +7,14 %).</p>",
+			"summary": "Tuotteen Glenfarclas 70 Year Old Single Malt (saatavuus 1 plo) hinta on muuttunut. 23 498,33 € → 25 175,24 € (+1 676,91 €, +7,14 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903050-67c14bb015c0.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Fütyülös Epres Rozé – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901114/",
+	"feed_url": "https://alkometriikka.fi/rss/901114.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Fütyülös Epres Rozé.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901114-2026-09-29-53.45",
+			"url": "https://alkometriikka.fi/tuotteet/901114/",
+			"title": "Fütyülös Epres Rozé — 51,85 € → 53,45 €",
+			"content_html": "<p>Tuotteen Fütyülös Epres Rozé hinta on muuttunut.</p><p>51,85 € → 53,45 € (+1,60 €, +3,09 %).</p>",
+			"summary": "Tuotteen Fütyülös Epres Rozé hinta on muuttunut. 51,85 € → 53,45 € (+1,60 €, +3,09 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901114-cd4ff3f8eaca.png",
+			"tags": [
+				"Väkevät",
+				"hedelmäliköörit"
+			]
+		}
+	]
+}

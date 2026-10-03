@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – La Chouette de Champillon Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/937114/",
+	"feed_url": "https://alkometriikka.fi/rss/937114.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: La Chouette de Champillon Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-937114-2026-09-29-24.9",
+			"url": "https://alkometriikka.fi/tuotteet/937114/",
+			"title": "La Chouette de Champillon Champagne Brut — 23,98 € → 24,90 €",
+			"content_html": "<p>Tuotteen La Chouette de Champillon Champagne Brut hinta on muuttunut.</p><p>23,98 € → 24,90 € (+0,92 €, +3,84 %).</p>",
+			"summary": "Tuotteen La Chouette de Champillon Champagne Brut hinta on muuttunut. 23,98 € → 24,90 € (+0,92 €, +3,84 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/937114-dd2023fb840d.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

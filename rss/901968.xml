@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Alkometriikka – Krug Clos du Mesnil Blanc de Blanc Champagne Brut 2006 – hintamuutokset</title>
+		<link>https://alkometriikka.fi/tuotteet/901968/</link>
+		<description>Uusimmat hinnanmuutokset tuotteelle: Krug Clos du Mesnil Blanc de Blanc Champagne Brut 2006.</description>
+		<language>fi</language>
+		<lastBuildDate>Sat, 03 Oct 2026 12:00:00 GMT</lastBuildDate>
+		<generator>alkometriikka rss.ts</generator>
+		<docs>https://www.rssboard.org/rss-specification</docs>
+		<ttl>60</ttl>
+		<atom:link href="https://alkometriikka.fi/rss/901968.xml" rel="self" type="application/rss+xml" />
+		<image>
+			<url>https://alkometriikka.fi/favicon.ico</url>
+			<title>Alkometriikka – Krug Clos du Mesnil Blanc de Blanc Champagne Brut 2006 – hintamuutokset</title>
+			<link>https://alkometriikka.fi/</link>
+			<width>48</width>
+			<height>48</height>
+		</image>
+		<item>
+			<title>Krug Clos du Mesnil Blanc de Blanc Champagne Brut 2006 — 1 800,46 € → 1 932,99 €</title>
+			<link>https://alkometriikka.fi/tuotteet/901968/</link>
+			<guid isPermaLink="false">alkometriikka-901968-2026-09-29-1932.99</guid>
+			<pubDate>Tue, 29 Sep 2026 12:00:00 GMT</pubDate>
+			<category>Viinit / kuohuviinit ja samppanjat</category>
+			<description><![CDATA[<p>Tuotteen Krug Clos du Mesnil Blanc de Blanc Champagne Brut 2006 hinta on muuttunut.</p><p>1 800,46 € → 1 932,99 € (+132,53 €, +7,36 %).</p>]]></description>
+			<media:thumbnail url="https://cdn.alkometriikka.fi/products/901968-41092a547ac2.png" />
+		</item>
+	</channel>
+</rss>

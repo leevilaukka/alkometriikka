@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Dugges Mega Imperial Stout tölkki – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/700170/",
+	"feed_url": "https://alkometriikka.fi/rss/700170.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Dugges Mega Imperial Stout tölkki.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-700170-2026-09-29-5.98",
+			"url": "https://alkometriikka.fi/tuotteet/700170/",
+			"title": "Dugges Mega Imperial Stout tölkki — 5,99 € → 5,98 €",
+			"content_html": "<p>Tuotteen Dugges Mega Imperial Stout tölkki hinta on muuttunut.</p><p>5,99 € → 5,98 € (−0,01 €, −0,17 %).</p>",
+			"summary": "Tuotteen Dugges Mega Imperial Stout tölkki hinta on muuttunut. 5,99 € → 5,98 € (−0,01 €, −0,17 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/700170-020c6284e5fd.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

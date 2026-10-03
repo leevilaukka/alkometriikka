@@ -1,0 +1,50 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Tariquet Hors d'Age Bas-Armagnac – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/114646/",
+	"feed_url": "https://alkometriikka.fi/rss/114646.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Tariquet Hors d'Age Bas-Armagnac.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-114646-2026-07-18-36.99",
+			"url": "https://alkometriikka.fi/tuotteet/114646/",
+			"title": "Tariquet Hors d'Age Bas-Armagnac — 36,80 € → 36,99 €",
+			"content_html": "<p>Tuotteen Tariquet Hors d'Age Bas-Armagnac hinta on muuttunut.</p><p>36,80 € → 36,99 € (+0,19 €, +0,52 %).</p>",
+			"summary": "Tuotteen Tariquet Hors d'Age Bas-Armagnac hinta on muuttunut. 36,80 € → 36,99 € (+0,19 €, +0,52 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/114646-615e3c77c492.png",
+			"tags": [
+				"Väkevät",
+				"armanjakit"
+			]
+		},
+		{
+			"id": "alkometriikka-114646-2026-02-02-36.7",
+			"url": "https://alkometriikka.fi/tuotteet/114646/",
+			"title": "Tariquet Hors d'Age Bas-Armagnac — 36,80 € → 36,70 €",
+			"content_html": "<p>Tuotteen Tariquet Hors d'Age Bas-Armagnac hinta on muuttunut.</p><p>36,80 € → 36,70 € (−0,10 €, −0,27 %).</p>",
+			"summary": "Tuotteen Tariquet Hors d'Age Bas-Armagnac hinta on muuttunut. 36,80 € → 36,70 € (−0,10 €, −0,27 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/114646-615e3c77c492.png",
+			"tags": [
+				"Väkevät",
+				"armanjakit"
+			]
+		},
+		{
+			"id": "alkometriikka-114646-2026-02-02-36.8",
+			"url": "https://alkometriikka.fi/tuotteet/114646/",
+			"title": "Tariquet Hors d'Age Bas-Armagnac — 36,70 € → 36,80 €",
+			"content_html": "<p>Tuotteen Tariquet Hors d'Age Bas-Armagnac hinta on muuttunut.</p><p>36,70 € → 36,80 € (+0,10 €, +0,27 %).</p>",
+			"summary": "Tuotteen Tariquet Hors d'Age Bas-Armagnac hinta on muuttunut. 36,70 € → 36,80 € (+0,10 €, +0,27 %).",
+			"date_published": "2026-02-02T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/114646-615e3c77c492.png",
+			"tags": [
+				"Väkevät",
+				"armanjakit"
+			]
+		}
+	]
+}

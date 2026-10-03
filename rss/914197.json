@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Emilio Moro 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/914197/",
+	"feed_url": "https://alkometriikka.fi/rss/914197.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Emilio Moro 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-914197-2026-07-18-34.7",
+			"url": "https://alkometriikka.fi/tuotteet/914197/",
+			"title": "Emilio Moro 2023 — 34,66 € → 34,70 €",
+			"content_html": "<p>Tuotteen Emilio Moro 2023 hinta on muuttunut.</p><p>34,66 € → 34,70 € (+0,04 €, +0,12 %).</p>",
+			"summary": "Tuotteen Emilio Moro 2023 hinta on muuttunut. 34,66 € → 34,70 € (+0,04 €, +0,12 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/914197-ab1cff739299.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

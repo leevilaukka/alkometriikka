@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Panama 1914 Edición Gatún Rum – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903223/",
+	"feed_url": "https://alkometriikka.fi/rss/903223.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Panama 1914 Edición Gatún Rum.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903223-2026-09-29-82.1",
+			"url": "https://alkometriikka.fi/tuotteet/903223/",
+			"title": "Panama 1914 Edición Gatún Rum — 79,89 € → 82,10 €",
+			"content_html": "<p>Tuotteen Panama 1914 Edición Gatún Rum hinta on muuttunut.</p><p>79,89 € → 82,10 € (+2,21 €, +2,77 %).</p>",
+			"summary": "Tuotteen Panama 1914 Edición Gatún Rum hinta on muuttunut. 79,89 € → 82,10 € (+2,21 €, +2,77 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903223-02cb8957e557.png",
+			"tags": [
+				"Väkevät",
+				"rommit"
+			]
+		}
+	]
+}

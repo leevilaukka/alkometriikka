@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nou Crémant Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/500207/",
+	"feed_url": "https://alkometriikka.fi/rss/500207.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nou Crémant Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-500207-2026-09-29-17.94",
+			"url": "https://alkometriikka.fi/tuotteet/500207/",
+			"title": "Nou Crémant Brut — 17,95 € → 17,94 €",
+			"content_html": "<p>Tuotteen Nou Crémant Brut hinta on muuttunut.</p><p>17,95 € → 17,94 € (−0,01 €, −0,06 %).</p>",
+			"summary": "Tuotteen Nou Crémant Brut hinta on muuttunut. 17,95 € → 17,94 € (−0,01 €, −0,06 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/500207-8c292c06b0db.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

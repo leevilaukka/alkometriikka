@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lehtikuohu – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/525997/",
+	"feed_url": "https://alkometriikka.fi/rss/525997.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lehtikuohu.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-525997-2026-07-18-13.89",
+			"url": "https://alkometriikka.fi/tuotteet/525997/",
+			"title": "Lehtikuohu — 13,94 € → 13,89 €",
+			"content_html": "<p>Tuotteen Lehtikuohu hinta on muuttunut.</p><p>13,94 € → 13,89 € (−0,05 €, −0,36 %).</p>",
+			"summary": "Tuotteen Lehtikuohu hinta on muuttunut. 13,94 € → 13,89 € (−0,05 €, −0,36 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/525997-a5da2f2e8c0a.png",
+			"tags": [
+				"Alkoholittomat",
+				"alkoholittomat kuohuviinit"
+			]
+		}
+	]
+}

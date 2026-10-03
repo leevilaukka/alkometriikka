@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Baron de Ley Reserva Magnum 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900489/",
+	"feed_url": "https://alkometriikka.fi/rss/900489.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Baron de Ley Reserva Magnum 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900489-2026-07-18-42.99",
+			"url": "https://alkometriikka.fi/tuotteet/900489/",
+			"title": "Baron de Ley Reserva Magnum 2020 — 42,90 € → 42,99 €",
+			"content_html": "<p>Tuotteen Baron de Ley Reserva Magnum 2020 hinta on muuttunut.</p><p>42,90 € → 42,99 € (+0,09 €, +0,21 %).</p>",
+			"summary": "Tuotteen Baron de Ley Reserva Magnum 2020 hinta on muuttunut. 42,90 € → 42,99 € (+0,09 €, +0,21 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900489-3b012a816dc8.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

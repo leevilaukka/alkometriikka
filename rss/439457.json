@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château Haut-Monplaisir 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/439457/",
+	"feed_url": "https://alkometriikka.fi/rss/439457.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château Haut-Monplaisir 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-439457-2026-09-29-19.99",
+			"url": "https://alkometriikka.fi/tuotteet/439457/",
+			"title": "Château Haut-Monplaisir 2022 — 19,80 € → 19,99 €",
+			"content_html": "<p>Tuotteen Château Haut-Monplaisir 2022 hinta on muuttunut.</p><p>19,80 € → 19,99 € (+0,19 €, +0,96 %).</p>",
+			"summary": "Tuotteen Château Haut-Monplaisir 2022 hinta on muuttunut. 19,80 € → 19,99 € (+0,19 €, +0,96 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/439457-d877a1fec05c.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-439457-2026-07-18-19.8",
+			"url": "https://alkometriikka.fi/tuotteet/439457/",
+			"title": "Château Haut-Monplaisir 2022 — 18,89 € → 19,80 €",
+			"content_html": "<p>Tuotteen Château Haut-Monplaisir 2022 hinta on muuttunut.</p><p>18,89 € → 19,80 € (+0,91 €, +4,82 %).</p>",
+			"summary": "Tuotteen Château Haut-Monplaisir 2022 hinta on muuttunut. 18,89 € → 19,80 € (+0,91 €, +4,82 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/439457-d877a1fec05c.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

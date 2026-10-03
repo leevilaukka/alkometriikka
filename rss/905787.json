@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Armand de Brignac Gold Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/905787/",
+	"feed_url": "https://alkometriikka.fi/rss/905787.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Armand de Brignac Gold Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-905787-2026-09-29-459.9",
+			"url": "https://alkometriikka.fi/tuotteet/905787/",
+			"title": "Armand de Brignac Gold Champagne Brut — 429,99 € → 459,90 €",
+			"content_html": "<p>Tuotteen Armand de Brignac Gold Champagne Brut hinta on muuttunut.</p><p>429,99 € → 459,90 € (+29,91 €, +6,96 %).</p>",
+			"summary": "Tuotteen Armand de Brignac Gold Champagne Brut hinta on muuttunut. 429,99 € → 459,90 € (+29,91 €, +6,96 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/905787-06d224b7e211.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		},
+		{
+			"id": "alkometriikka-905787-2026-07-18-429.99",
+			"url": "https://alkometriikka.fi/tuotteet/905787/",
+			"title": "Armand de Brignac Gold Champagne Brut — 398,35 € → 429,99 €",
+			"content_html": "<p>Tuotteen Armand de Brignac Gold Champagne Brut hinta on muuttunut.</p><p>398,35 € → 429,99 € (+31,64 €, +7,94 %).</p>",
+			"summary": "Tuotteen Armand de Brignac Gold Champagne Brut hinta on muuttunut. 398,35 € → 429,99 € (+31,64 €, +7,94 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/905787-06d224b7e211.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

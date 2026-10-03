@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Terre Nere Etna Bianco 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/947857/",
+	"feed_url": "https://alkometriikka.fi/rss/947857.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Terre Nere Etna Bianco 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-947857-2026-09-29-34.95",
+			"url": "https://alkometriikka.fi/tuotteet/947857/",
+			"title": "Terre Nere Etna Bianco 2023 — 33,99 € → 34,95 €",
+			"content_html": "<p>Tuotteen Terre Nere Etna Bianco 2023 hinta on muuttunut.</p><p>33,99 € → 34,95 € (+0,96 €, +2,82 %).</p>",
+			"summary": "Tuotteen Terre Nere Etna Bianco 2023 hinta on muuttunut. 33,99 € → 34,95 € (+0,96 €, +2,82 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/947857-98152d009587.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

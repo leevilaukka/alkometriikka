@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ota Shuzo Kokoro Junmai Nama Genshu Sake – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/920178/",
+	"feed_url": "https://alkometriikka.fi/rss/920178.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ota Shuzo Kokoro Junmai Nama Genshu Sake.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-920178-2026-09-29-44.56",
+			"url": "https://alkometriikka.fi/tuotteet/920178/",
+			"title": "Ota Shuzo Kokoro Junmai Nama Genshu Sake — 44,13 € → 44,56 €",
+			"content_html": "<p>Tuotteen Ota Shuzo Kokoro Junmai Nama Genshu Sake hinta on muuttunut.</p><p>44,13 € → 44,56 € (+0,43 €, +0,97 %).</p>",
+			"summary": "Tuotteen Ota Shuzo Kokoro Junmai Nama Genshu Sake hinta on muuttunut. 44,13 € → 44,56 € (+0,43 €, +0,97 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/920178-701c5f597f8e.png",
+			"tags": [
+				"Viinit",
+				"saket"
+			]
+		}
+	]
+}

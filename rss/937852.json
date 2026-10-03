@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – High Coast Hav Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/937852/",
+	"feed_url": "https://alkometriikka.fi/rss/937852.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: High Coast Hav Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-937852-2026-09-29-76.83",
+			"url": "https://alkometriikka.fi/tuotteet/937852/",
+			"title": "High Coast Hav Single Malt — 74,20 € → 76,83 €",
+			"content_html": "<p>Tuotteen High Coast Hav Single Malt hinta on muuttunut.</p><p>74,20 € → 76,83 € (+2,63 €, +3,54 %).</p>",
+			"summary": "Tuotteen High Coast Hav Single Malt hinta on muuttunut. 74,20 € → 76,83 € (+2,63 €, +3,54 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/937852-497319366b86.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

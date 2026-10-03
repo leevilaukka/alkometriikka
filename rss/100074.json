@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Berneroy Fine Calvados – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/100074/",
+	"feed_url": "https://alkometriikka.fi/rss/100074.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Berneroy Fine Calvados.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-100074-2026-09-29-33.99",
+			"url": "https://alkometriikka.fi/tuotteet/100074/",
+			"title": "Berneroy Fine Calvados — 33,27 € → 33,99 €",
+			"content_html": "<p>Tuotteen Berneroy Fine Calvados hinta on muuttunut.</p><p>33,27 € → 33,99 € (+0,72 €, +2,16 %).</p>",
+			"summary": "Tuotteen Berneroy Fine Calvados hinta on muuttunut. 33,27 € → 33,99 € (+0,72 €, +2,16 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/100074-8a1cdf17f821.png",
+			"tags": [
+				"Väkevät",
+				"calvadosit"
+			]
+		}
+	]
+}

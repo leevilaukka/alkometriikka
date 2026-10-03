@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Henriot L'Inattendue Grand Cru Champagne Brut 2016 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/935174/",
+	"feed_url": "https://alkometriikka.fi/rss/935174.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Henriot L'Inattendue Grand Cru Champagne Brut 2016.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-935174-2026-09-29-122.99",
+			"url": "https://alkometriikka.fi/tuotteet/935174/",
+			"title": "Henriot L'Inattendue Grand Cru Champagne Brut 2016 — 116,95 € → 122,99 €",
+			"content_html": "<p>Tuotteen Henriot L'Inattendue Grand Cru Champagne Brut 2016 hinta on muuttunut.</p><p>116,95 € → 122,99 € (+6,04 €, +5,16 %).</p>",
+			"summary": "Tuotteen Henriot L'Inattendue Grand Cru Champagne Brut 2016 hinta on muuttunut. 116,95 € → 122,99 € (+6,04 €, +5,16 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/935174-3f906a3db612.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

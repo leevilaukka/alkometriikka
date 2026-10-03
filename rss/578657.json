@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Pol Roger Rich Champagne Demi-Sec – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/578657/",
+	"feed_url": "https://alkometriikka.fi/rss/578657.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Pol Roger Rich Champagne Demi-Sec.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-578657-2026-09-29-66.49",
+			"url": "https://alkometriikka.fi/tuotteet/578657/",
+			"title": "Pol Roger Rich Champagne Demi-Sec — 63,99 € → 66,49 €",
+			"content_html": "<p>Tuotteen Pol Roger Rich Champagne Demi-Sec hinta on muuttunut.</p><p>63,99 € → 66,49 € (+2,50 €, +3,91 %).</p>",
+			"summary": "Tuotteen Pol Roger Rich Champagne Demi-Sec hinta on muuttunut. 63,99 € → 66,49 € (+2,50 €, +3,91 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/578657-cb436af4d3a7.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

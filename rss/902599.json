@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Château du Neurin 2018 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902599/",
+	"feed_url": "https://alkometriikka.fi/rss/902599.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Château du Neurin 2018.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902599-2026-09-29-23.38",
+			"url": "https://alkometriikka.fi/tuotteet/902599/",
+			"title": "Château du Neurin 2018 — 21,25 € → 23,38 €",
+			"content_html": "<p>Tuotteen Château du Neurin 2018 hinta on muuttunut.</p><p>21,25 € → 23,38 € (+2,13 €, +10,02 %).</p>",
+			"summary": "Tuotteen Château du Neurin 2018 hinta on muuttunut. 21,25 € → 23,38 € (+2,13 €, +10,02 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902599-b8aeb13e30f9.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

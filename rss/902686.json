@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Goodday Blueberry Soju – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902686/",
+	"feed_url": "https://alkometriikka.fi/rss/902686.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Goodday Blueberry Soju.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902686-2026-09-29-9.97",
+			"url": "https://alkometriikka.fi/tuotteet/902686/",
+			"title": "Goodday Blueberry Soju — 9,99 € → 9,97 €",
+			"content_html": "<p>Tuotteen Goodday Blueberry Soju hinta on muuttunut.</p><p>9,99 € → 9,97 € (−0,02 €, −0,20 %).</p>",
+			"summary": "Tuotteen Goodday Blueberry Soju hinta on muuttunut. 9,99 € → 9,97 € (−0,02 €, −0,20 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902686-4e42afe07ff8.png",
+			"tags": [
+				"Panimotuotteet",
+				"juomasekoitukset"
+			]
+		}
+	]
+}

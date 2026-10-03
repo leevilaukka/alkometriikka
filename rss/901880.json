@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Travaglini Gattinara Riserva 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901880/",
+	"feed_url": "https://alkometriikka.fi/rss/901880.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Travaglini Gattinara Riserva 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901880-2026-09-29-60.12",
+			"url": "https://alkometriikka.fi/tuotteet/901880/",
+			"title": "Travaglini Gattinara Riserva 2019 — 58,45 € → 60,12 €",
+			"content_html": "<p>Tuotteen Travaglini Gattinara Riserva 2019 hinta on muuttunut.</p><p>58,45 € → 60,12 € (+1,67 €, +2,86 %).</p>",
+			"summary": "Tuotteen Travaglini Gattinara Riserva 2019 hinta on muuttunut. 58,45 € → 60,12 € (+1,67 €, +2,86 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901880-7a0c81d04d4a.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

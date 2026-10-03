@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Humalove Dame Barley English Barleywine – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/935901/",
+	"feed_url": "https://alkometriikka.fi/rss/935901.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Humalove Dame Barley English Barleywine.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-935901-2026-07-18-7.02",
+			"url": "https://alkometriikka.fi/tuotteet/935901/",
+			"title": "Humalove Dame Barley English Barleywine — 7,01 € → 7,02 €",
+			"content_html": "<p>Tuotteen Humalove Dame Barley English Barleywine hinta on muuttunut.</p><p>7,01 € → 7,02 € (+0,01 €, +0,14 %).</p>",
+			"summary": "Tuotteen Humalove Dame Barley English Barleywine hinta on muuttunut. 7,01 € → 7,02 € (+0,01 €, +0,14 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/935901-d06024da78ca.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Karl Haidle Ritzling Riesling 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/903073/",
+	"feed_url": "https://alkometriikka.fi/rss/903073.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Karl Haidle Ritzling Riesling 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-903073-2026-07-18-24.99",
+			"url": "https://alkometriikka.fi/tuotteet/903073/",
+			"title": "Karl Haidle Ritzling Riesling 2024 — 24,45 € → 24,99 €",
+			"content_html": "<p>Tuotteen Karl Haidle Ritzling Riesling 2024 hinta on muuttunut.</p><p>24,45 € → 24,99 € (+0,54 €, +2,21 %).</p>",
+			"summary": "Tuotteen Karl Haidle Ritzling Riesling 2024 hinta on muuttunut. 24,45 € → 24,99 € (+0,54 €, +2,21 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/903073-5239c07e9436.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

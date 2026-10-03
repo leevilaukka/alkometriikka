@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Rodenbach Grand Cru – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/750434/",
+	"feed_url": "https://alkometriikka.fi/rss/750434.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Rodenbach Grand Cru.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-750434-2026-07-18-4.49",
+			"url": "https://alkometriikka.fi/tuotteet/750434/",
+			"title": "Rodenbach Grand Cru — 4,45 € → 4,49 €",
+			"content_html": "<p>Tuotteen Rodenbach Grand Cru hinta on muuttunut.</p><p>4,45 € → 4,49 € (+0,04 €, +0,90 %).</p>",
+			"summary": "Tuotteen Rodenbach Grand Cru hinta on muuttunut. 4,45 € → 4,49 € (+0,04 €, +0,90 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/750434-85b57fe53326.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

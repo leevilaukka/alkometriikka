@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Il Volpetto Chianti Classico 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902351/",
+	"feed_url": "https://alkometriikka.fi/rss/902351.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Il Volpetto Chianti Classico 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902351-2026-09-29-15.98",
+			"url": "https://alkometriikka.fi/tuotteet/902351/",
+			"title": "Il Volpetto Chianti Classico 2023 — 15,30 € → 15,98 €",
+			"content_html": "<p>Tuotteen Il Volpetto Chianti Classico 2023 hinta on muuttunut.</p><p>15,30 € → 15,98 € (+0,68 €, +4,44 %).</p>",
+			"summary": "Tuotteen Il Volpetto Chianti Classico 2023 hinta on muuttunut. 15,30 € → 15,98 € (+0,68 €, +4,44 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902351-6fe033b517e4.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Arnaud Margaine Premier Cru Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/956776/",
+	"feed_url": "https://alkometriikka.fi/rss/956776.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Arnaud Margaine Premier Cru Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-956776-2026-09-29-53.47",
+			"url": "https://alkometriikka.fi/tuotteet/956776/",
+			"title": "Arnaud Margaine Premier Cru Champagne Brut — 52,28 € → 53,47 €",
+			"content_html": "<p>Tuotteen Arnaud Margaine Premier Cru Champagne Brut hinta on muuttunut.</p><p>52,28 € → 53,47 € (+1,19 €, +2,28 %).</p>",
+			"summary": "Tuotteen Arnaud Margaine Premier Cru Champagne Brut hinta on muuttunut. 52,28 € → 53,47 € (+1,19 €, +2,28 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/956776-70a2cad73c35.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

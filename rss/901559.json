@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Le Rosé Gaul 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/901559/",
+	"feed_url": "https://alkometriikka.fi/rss/901559.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Le Rosé Gaul 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-901559-2026-09-29-19.9",
+			"url": "https://alkometriikka.fi/tuotteet/901559/",
+			"title": "Le Rosé Gaul 2023 — 19,46 € → 19,90 €",
+			"content_html": "<p>Tuotteen Le Rosé Gaul 2023 hinta on muuttunut.</p><p>19,46 € → 19,90 € (+0,44 €, +2,26 %).</p>",
+			"summary": "Tuotteen Le Rosé Gaul 2023 hinta on muuttunut. 19,46 € → 19,90 € (+0,44 €, +2,26 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/901559-f0213f53aa48.png",
+			"tags": [
+				"Viinit",
+				"roseeviinit"
+			]
+		}
+	]
+}

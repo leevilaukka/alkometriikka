@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Stoli Salted Karamel – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/173977/",
+	"feed_url": "https://alkometriikka.fi/rss/173977.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Stoli Salted Karamel.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-173977-2026-07-18-27.75",
+			"url": "https://alkometriikka.fi/tuotteet/173977/",
+			"title": "Stoli Salted Karamel — 27,58 € → 27,75 €",
+			"content_html": "<p>Tuotteen Stoli Salted Karamel hinta on muuttunut.</p><p>27,58 € → 27,75 € (+0,17 €, +0,62 %).</p>",
+			"summary": "Tuotteen Stoli Salted Karamel hinta on muuttunut. 27,58 € → 27,75 € (+0,17 €, +0,62 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/173977-ec4a6c0f248e.png",
+			"tags": [
+				"Väkevät",
+				"maustetut vodkat"
+			]
+		}
+	]
+}

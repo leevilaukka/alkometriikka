@@ -1,0 +1,37 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nittnaus Beerenauslese Rosé Exquisit 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/923114/",
+	"feed_url": "https://alkometriikka.fi/rss/923114.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nittnaus Beerenauslese Rosé Exquisit 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-923114-2026-09-29-21.55",
+			"url": "https://alkometriikka.fi/tuotteet/923114/",
+			"title": "Nittnaus Beerenauslese Rosé Exquisit 2023 — 21,31 € → 21,55 €",
+			"content_html": "<p>Tuotteen Nittnaus Beerenauslese Rosé Exquisit 2023 hinta on muuttunut.</p><p>21,31 € → 21,55 € (+0,24 €, +1,13 %).</p>",
+			"summary": "Tuotteen Nittnaus Beerenauslese Rosé Exquisit 2023 hinta on muuttunut. 21,31 € → 21,55 € (+0,24 €, +1,13 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/923114-f757e7a05cfd.png",
+			"tags": [
+				"Viinit",
+				"jälkiruokaviinit"
+			]
+		},
+		{
+			"id": "alkometriikka-923114-2026-07-18-21.31",
+			"url": "https://alkometriikka.fi/tuotteet/923114/",
+			"title": "Nittnaus Beerenauslese Rosé Exquisit 2023 — 20,93 € → 21,31 €",
+			"content_html": "<p>Tuotteen Nittnaus Beerenauslese Rosé Exquisit 2023 hinta on muuttunut.</p><p>20,93 € → 21,31 € (+0,38 €, +1,82 %).</p>",
+			"summary": "Tuotteen Nittnaus Beerenauslese Rosé Exquisit 2023 hinta on muuttunut. 20,93 € → 21,31 € (+0,38 €, +1,82 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/923114-f757e7a05cfd.png",
+			"tags": [
+				"Viinit",
+				"jälkiruokaviinit"
+			]
+		}
+	]
+}

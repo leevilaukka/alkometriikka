@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Nittenauer Stockenfelser Geisterbräu – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902084/",
+	"feed_url": "https://alkometriikka.fi/rss/902084.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Nittenauer Stockenfelser Geisterbräu.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902084-2026-09-29-4.99",
+			"url": "https://alkometriikka.fi/tuotteet/902084/",
+			"title": "Nittenauer Stockenfelser Geisterbräu — 5,45 € → 4,99 €",
+			"content_html": "<p>Tuotteen Nittenauer Stockenfelser Geisterbräu hinta on muuttunut.</p><p>5,45 € → 4,99 € (−0,46 €, −8,44 %).</p>",
+			"summary": "Tuotteen Nittenauer Stockenfelser Geisterbräu hinta on muuttunut. 5,45 € → 4,99 € (−0,46 €, −8,44 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902084-455339352999.png",
+			"tags": [
+				"Panimotuotteet",
+				"oluet"
+			]
+		}
+	]
+}

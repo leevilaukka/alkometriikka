@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Laurent-Perrier Millésimé Magnum Champagne Brut 2015 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/572378/",
+	"feed_url": "https://alkometriikka.fi/rss/572378.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Laurent-Perrier Millésimé Magnum Champagne Brut 2015.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-572378-2026-09-29-249.89",
+			"url": "https://alkometriikka.fi/tuotteet/572378/",
+			"title": "Laurent-Perrier Millésimé Magnum Champagne Brut 2015 — 219,90 € → 249,89 €",
+			"content_html": "<p>Tuotteen Laurent-Perrier Millésimé Magnum Champagne Brut 2015 hinta on muuttunut.</p><p>219,90 € → 249,89 € (+29,99 €, +13,64 %).</p>",
+			"summary": "Tuotteen Laurent-Perrier Millésimé Magnum Champagne Brut 2015 hinta on muuttunut. 219,90 € → 249,89 € (+29,99 €, +13,64 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/572378-0591b9be937e.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

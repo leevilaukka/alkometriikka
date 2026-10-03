@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Il Poggione Brunello di Montalcino 2019 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/900791/",
+	"feed_url": "https://alkometriikka.fi/rss/900791.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Il Poggione Brunello di Montalcino 2019.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-900791-2026-09-29-61.74",
+			"url": "https://alkometriikka.fi/tuotteet/900791/",
+			"title": "Il Poggione Brunello di Montalcino 2019 — 62,82 € → 61,74 €",
+			"content_html": "<p>Tuotteen Il Poggione Brunello di Montalcino 2019 hinta on muuttunut.</p><p>62,82 € → 61,74 € (−1,08 €, −1,72 %).</p>",
+			"summary": "Tuotteen Il Poggione Brunello di Montalcino 2019 hinta on muuttunut. 62,82 € → 61,74 € (−1,08 €, −1,72 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/900791-44d59450c6e4.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

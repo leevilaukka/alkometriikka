@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Domaine Des Tourettes Hermitage 2023 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/955011/",
+	"feed_url": "https://alkometriikka.fi/rss/955011.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Domaine Des Tourettes Hermitage 2023.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-955011-2026-09-29-100.68",
+			"url": "https://alkometriikka.fi/tuotteet/955011/",
+			"title": "Domaine Des Tourettes Hermitage 2023 — 96,16 € → 100,68 €",
+			"content_html": "<p>Tuotteen Domaine Des Tourettes Hermitage 2023 hinta on muuttunut.</p><p>96,16 € → 100,68 € (+4,52 €, +4,70 %).</p>",
+			"summary": "Tuotteen Domaine Des Tourettes Hermitage 2023 hinta on muuttunut. 96,16 € → 100,68 € (+4,52 €, +4,70 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/955011-425cf7017b9b.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

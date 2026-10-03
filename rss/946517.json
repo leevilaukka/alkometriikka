@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The Macallan Rare Cask Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/946517/",
+	"feed_url": "https://alkometriikka.fi/rss/946517.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The Macallan Rare Cask Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-946517-2026-09-29-386.52",
+			"url": "https://alkometriikka.fi/tuotteet/946517/",
+			"title": "The Macallan Rare Cask Single Malt — 364,15 € → 386,52 €",
+			"content_html": "<p>Tuotteen The Macallan Rare Cask Single Malt hinta on muuttunut.</p><p>364,15 € → 386,52 € (+22,37 €, +6,14 %).</p>",
+			"summary": "Tuotteen The Macallan Rare Cask Single Malt hinta on muuttunut. 364,15 € → 386,52 € (+22,37 €, +6,14 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/946517-5563f0529870.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

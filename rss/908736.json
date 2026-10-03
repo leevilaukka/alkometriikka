@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Ainoa Haave 2022 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/908736/",
+	"feed_url": "https://alkometriikka.fi/rss/908736.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Ainoa Haave 2022.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-908736-2026-09-29-28.01",
+			"url": "https://alkometriikka.fi/tuotteet/908736/",
+			"title": "Ainoa Haave 2022 — 27,22 € → 28,01 €",
+			"content_html": "<p>Tuotteen Ainoa Haave 2022 hinta on muuttunut.</p><p>27,22 € → 28,01 € (+0,79 €, +2,90 %).</p>",
+			"summary": "Tuotteen Ainoa Haave 2022 hinta on muuttunut. 27,22 € → 28,01 € (+0,79 €, +2,90 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/908736-a15c5ce3db85.png",
+			"tags": [
+				"Viinit",
+				"hedelmä- ja aromatisoidut viinit"
+			]
+		}
+	]
+}

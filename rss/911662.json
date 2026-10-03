@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Aranleón Sólo Tinto – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/911662/",
+	"feed_url": "https://alkometriikka.fi/rss/911662.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Aranleón Sólo Tinto.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-911662-2026-07-18-16.98",
+			"url": "https://alkometriikka.fi/tuotteet/911662/",
+			"title": "Aranleón Sólo Tinto — 16,44 € → 16,98 €",
+			"content_html": "<p>Tuotteen Aranleón Sólo Tinto hinta on muuttunut.</p><p>16,44 € → 16,98 € (+0,54 €, +3,28 %).</p>",
+			"summary": "Tuotteen Aranleón Sólo Tinto hinta on muuttunut. 16,44 € → 16,98 € (+0,54 €, +3,28 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/911662-72c02082f91c.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

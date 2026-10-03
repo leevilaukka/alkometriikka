@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cafaggio Chianti Classico Riserva 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/905357/",
+	"feed_url": "https://alkometriikka.fi/rss/905357.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cafaggio Chianti Classico Riserva 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-905357-2026-07-18-33.99",
+			"url": "https://alkometriikka.fi/tuotteet/905357/",
+			"title": "Cafaggio Chianti Classico Riserva 2020 — 33,45 € → 33,99 €",
+			"content_html": "<p>Tuotteen Cafaggio Chianti Classico Riserva 2020 hinta on muuttunut.</p><p>33,45 € → 33,99 € (+0,54 €, +1,61 %).</p>",
+			"summary": "Tuotteen Cafaggio Chianti Classico Riserva 2020 hinta on muuttunut. 33,45 € → 33,99 € (+0,54 €, +1,61 %).",
+			"date_published": "2026-07-18T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/905357-f47eaf2d9ead.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Lo Alto Tardana 2024 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/902413/",
+	"feed_url": "https://alkometriikka.fi/rss/902413.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Lo Alto Tardana 2024.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-902413-2026-09-29-29.45",
+			"url": "https://alkometriikka.fi/tuotteet/902413/",
+			"title": "Lo Alto Tardana 2024 — 29,70 € → 29,45 €",
+			"content_html": "<p>Tuotteen Lo Alto Tardana 2024 hinta on muuttunut.</p><p>29,70 € → 29,45 € (−0,25 €, −0,84 %).</p>",
+			"summary": "Tuotteen Lo Alto Tardana 2024 hinta on muuttunut. 29,70 € → 29,45 € (−0,25 €, −0,84 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/902413-c0a03704f777.png",
+			"tags": [
+				"Viinit",
+				"valkoviinit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – The GlenDronach 12 Year Old Single Malt – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/905597/",
+	"feed_url": "https://alkometriikka.fi/rss/905597.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: The GlenDronach 12 Year Old Single Malt.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-905597-2026-09-29-65.99",
+			"url": "https://alkometriikka.fi/tuotteet/905597/",
+			"title": "The GlenDronach 12 Year Old Single Malt — 64,98 € → 65,99 €",
+			"content_html": "<p>Tuotteen The GlenDronach 12 Year Old Single Malt hinta on muuttunut.</p><p>64,98 € → 65,99 € (+1,01 €, +1,55 %).</p>",
+			"summary": "Tuotteen The GlenDronach 12 Year Old Single Malt hinta on muuttunut. 64,98 € → 65,99 € (+1,01 €, +1,55 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/905597-522b805f81f2.png",
+			"tags": [
+				"Väkevät",
+				"viskit"
+			]
+		}
+	]
+}

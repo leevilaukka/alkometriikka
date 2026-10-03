@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Cointreau – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/159221/",
+	"feed_url": "https://alkometriikka.fi/rss/159221.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Cointreau.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-159221-2026-09-29-4.29",
+			"url": "https://alkometriikka.fi/tuotteet/159221/",
+			"title": "Cointreau — 3,99 € → 4,29 €",
+			"content_html": "<p>Tuotteen Cointreau hinta on muuttunut.</p><p>3,99 € → 4,29 € (+0,30 €, +7,52 %).</p>",
+			"summary": "Tuotteen Cointreau hinta on muuttunut. 3,99 € → 4,29 € (+0,30 €, +7,52 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/159221-3eb9f930ca1a.png",
+			"tags": [
+				"Väkevät",
+				"hedelmäliköörit"
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – I Castei Amarone della Valpolicella Classico 2020 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/455007/",
+	"feed_url": "https://alkometriikka.fi/rss/455007.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: I Castei Amarone della Valpolicella Classico 2020.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-455007-2026-09-29-41.56",
+			"url": "https://alkometriikka.fi/tuotteet/455007/",
+			"title": "I Castei Amarone della Valpolicella Classico 2020 — 41,18 € → 41,56 €",
+			"content_html": "<p>Tuotteen I Castei Amarone della Valpolicella Classico 2020 hinta on muuttunut.</p><p>41,18 € → 41,56 € (+0,38 €, +0,92 %).</p>",
+			"summary": "Tuotteen I Castei Amarone della Valpolicella Classico 2020 hinta on muuttunut. 41,18 € → 41,56 € (+0,38 €, +0,92 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/455007-09b52a480a72.png",
+			"tags": [
+				"Viinit",
+				"punaviinit"
+			]
+		}
+	]
+}

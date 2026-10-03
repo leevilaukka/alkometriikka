@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Bernard Robert Réserve Champagne Brut – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/932188/",
+	"feed_url": "https://alkometriikka.fi/rss/932188.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Bernard Robert Réserve Champagne Brut.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-932188-2026-09-29-25.9",
+			"url": "https://alkometriikka.fi/tuotteet/932188/",
+			"title": "Bernard Robert Réserve Champagne Brut — 24,95 € → 25,90 €",
+			"content_html": "<p>Tuotteen Bernard Robert Réserve Champagne Brut hinta on muuttunut.</p><p>24,95 € → 25,90 € (+0,95 €, +3,81 %).</p>",
+			"summary": "Tuotteen Bernard Robert Réserve Champagne Brut hinta on muuttunut. 24,95 € → 25,90 € (+0,95 €, +3,81 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/932188-d559035ee00b.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}

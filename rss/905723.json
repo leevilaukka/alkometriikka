@@ -1,0 +1,24 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Alkometriikka – Special Club Premier Cru 2016 Brut 2016 – hintamuutokset",
+	"home_page_url": "https://alkometriikka.fi/tuotteet/905723/",
+	"feed_url": "https://alkometriikka.fi/rss/905723.json",
+	"description": "Uusimmat hinnanmuutokset tuotteelle: Special Club Premier Cru 2016 Brut 2016.",
+	"language": "fi",
+	"favicon": "https://alkometriikka.fi/favicon.ico",
+	"items": [
+		{
+			"id": "alkometriikka-905723-2026-09-29-104.99",
+			"url": "https://alkometriikka.fi/tuotteet/905723/",
+			"title": "Special Club Premier Cru 2016 Brut 2016 — 98,06 € → 104,99 €",
+			"content_html": "<p>Tuotteen Special Club Premier Cru 2016 Brut 2016 hinta on muuttunut.</p><p>98,06 € → 104,99 € (+6,93 €, +7,07 %).</p>",
+			"summary": "Tuotteen Special Club Premier Cru 2016 Brut 2016 hinta on muuttunut. 98,06 € → 104,99 € (+6,93 €, +7,07 %).",
+			"date_published": "2026-09-29T12:00:00Z",
+			"image": "https://cdn.alkometriikka.fi/products/905723-68e955e9d059.png",
+			"tags": [
+				"Viinit",
+				"kuohuviinit ja samppanjat"
+			]
+		}
+	]
+}
