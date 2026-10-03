@@ -5,6 +5,7 @@ import { dailyOgKey, dailyOgSvg } from './og-daily-card';
 import { R2S3Client } from '../r2/client';
 import { toISODateInTimeZone } from '../../src/lib/utils/sales';
 import { dayNumberForDate } from '../../src/lib/daily/dayNumber';
+import { readOption } from '../lib/cli';
 
 /**
  * Renders today's generic Daily share card and uploads it to R2 at
@@ -13,11 +14,6 @@ import { dayNumberForDate } from '../../src/lib/daily/dayNumber';
  * (re)renders and overwrites — a rerun mid-day is harmless and self-healing
  * if a previous run's upload failed.
  */
-
-function readOption(name: string): string | undefined {
-	const index = process.argv.indexOf(name);
-	return index === -1 ? undefined : process.argv[index + 1];
-}
 
 /** Retries transient R2 blips (matches the backoff shape used for product image fetches). */
 async function withRetry<T>(fn: () => Promise<T>, attempts = 3): Promise<T> {

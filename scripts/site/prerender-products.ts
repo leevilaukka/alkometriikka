@@ -14,19 +14,10 @@ import {
   findProductCategoryTrail,
   type CategoryNode
 } from "../../src/lib/utils/categories.ts";
-
-type ProductRecord = {
-  values: unknown[];
-  meta?: {
-    removedFromSelection?: string;
-  };
-  priceHistory?: { date: string; price: number }[];
-};
-
-type Dataset = {
-  schema?: unknown;
-  products?: Record<string, ProductRecord>;
-};
+import { readOption } from "../lib/cli";
+import type { StoredDataset, StoredProduct } from "../../src/lib/utils/dataset.ts";
+import { mapPool } from "../lib/async";
+import { escapeHtml, escapeJson, replaceMarkedSection } from "../lib/html";
 
 type PrerenderManifestEntry = {
   key: string;
@@ -53,7 +44,7 @@ function sha256Hex(value: string): string {
 // can be skipped.
 function productKey(
   schema: readonly string[],
-  product: ProductRecord,
+  product: StoredProduct,
   templateFingerprint: string,
   ogKey: string | null,
   categoryTrail: CategoryNode[]
@@ -81,13 +72,6 @@ type Options = {
 };
 
 const SITE_URL = "https://alkometriikka.fi";
-const SEO_START = "<!-- Dynamic SEO data start -->";
-const SEO_END = "<!-- Dynamic SEO data end -->";
-
-function readOption(name: string): string | undefined {
-  const index = process.argv.indexOf(name);
-  return index === -1 ? undefined : process.argv[index + 1];
-}
 
 async function readManifest(filePath: string): Promise<PrerenderManifest> {
   return Bun.file(filePath)
@@ -107,19 +91,6 @@ function resolveOptions(): Options {
     ogManifestPath: path.resolve(readOption("--og-manifest") ?? path.join(outputPath, "og-images.json")),
     manifestPath: path.resolve(readOption("--manifest") ?? path.join(outputPath, "tuotteet-manifest.json"))
   };
-}
-
-function escapeHtml(value: unknown): string {
-  return String(value ?? "")
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#39;");
-}
-
-function escapeJson(value: unknown): string {
-  return JSON.stringify(value).replaceAll("<", "\\u003c");
 }
 
 // Collapses whitespace runs to a single space while leaving quoted strings and
@@ -283,37 +254,6 @@ function parsePrice(value: unknown, productId: string): number {
   return price;
 }
 
-/** Runs `fn` over `items` with at most `limit` concurrent workers. A failure stops scheduling. */
-async function mapPool<T, R>(items: T[], limit: number, fn: (item: T) => Promise<R>): Promise<R[]> {
-  const results = new Array<R>(items.length);
-  let next = 0;
-  let failed = false;
-  async function worker() {
-    while (!failed && next < items.length) {
-      const index = next;
-      next += 1;
-      try {
-        results[index] = await fn(items[index]);
-      } catch (error) {
-        failed = true;
-        throw error;
-      }
-    }
-  }
-  await Promise.all(Array.from({ length: Math.min(limit, items.length) }, () => worker()));
-  return results;
-}
-
-function replaceMarkedSection(template: string, content: string): string {
-  const start = template.indexOf(SEO_START);
-  const end = template.indexOf(SEO_END, start);
-  if (start === -1 || end === -1) {
-    throw new Error(`SEO markers are missing from the template`);
-  }
-
-  return `${template.slice(0, start)}${SEO_START}\n${content}\n\t${template.slice(end)}`;
-}
-
 /** True when a per-product RSS feed has at least one recorded price change to list. */
 function hasPriceChange(history?: { date: string; price: number }[]): boolean {
   if (!Array.isArray(history) || history.length < 2) return false;
@@ -326,7 +266,7 @@ function hasPriceChange(history?: { date: string; price: number }[]): boolean {
 function productHtml(
   template: string,
   schema: string[],
-  product: ProductRecord,
+  product: StoredProduct,
   ogImageKey: string | null,
   categoryTrail: CategoryNode[]
 ): { html: string; id: string } {
@@ -541,7 +481,7 @@ type CategoryProduct = {
 const CATEGORY_LIST_LIMIT = 100;
 const CATEGORY_ITEM_LIST_LIMIT = 20;
 
-function categoryProduct(schema: string[], product: ProductRecord): CategoryProduct | null {
+function categoryProduct(schema: string[], product: StoredProduct): CategoryProduct | null {
   if (product.meta?.removedFromSelection) return null;
   const fields = Object.fromEntries(schema.map((column, index) => [column, product.values[index]]));
   const id = asText(fields.Numero);
@@ -707,7 +647,7 @@ async function main() {
   }
 
   const [dataset, template, ogManifest] = await Promise.all([
-    Bun.file(options.dataPath).json() as Promise<Dataset>,
+    Bun.file(options.dataPath).json() as Promise<StoredDataset>,
     Bun.file(options.templatePath).text(),
     Bun.file(options.ogManifestPath)
       .json()
@@ -735,7 +675,7 @@ async function main() {
   const typeIndex = schema.indexOf("Tyyppi");
   const subTypeIndex = schema.indexOf("Alatyyppi");
   const validProducts = Object.values(products).filter(
-    (product): product is ProductRecord => !!product && Array.isArray(product.values)
+    (product): product is StoredProduct => !!product && Array.isArray(product.values)
   );
   const categoryTree = buildCategoryTree(
     validProducts.map((product) => ({

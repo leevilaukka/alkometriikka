@@ -2,12 +2,8 @@
 	import { AllColumns } from '$lib/utils/constants';
 	import { components } from '$lib/utils/styles';
 	import { questionPoints } from '$lib/daily/scoring';
-	import type {
-		ArchivedScores,
-		ArchiveRunState,
-		ArchiveRuns,
-		Question
-	} from '$lib/daily/questions';
+	import type { Question } from '$lib/daily/questions';
+	import type { ArchivedScores, ArchiveRunState, ArchiveRuns } from '$lib/daily/types';
 	import {
 		loadArchivedScores,
 		loadArchiveRuns,

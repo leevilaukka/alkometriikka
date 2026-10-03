@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { ArchiveIndex } from '$lib/daily/manifest';
-	import type { ArchivedScores, ArchiveRuns } from '$lib/daily/questions';
+	import type { ArchivedScores, ArchiveRuns } from '$lib/daily/types';
 	import { loadArchivedScores, loadArchiveRuns } from '$lib/daily/storage';
 	import { generateTitle, setSEO } from '$lib/utils/helpers';
 	import { components } from '$lib/utils/styles';

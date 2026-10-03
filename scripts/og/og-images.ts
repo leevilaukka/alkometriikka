@@ -11,52 +11,18 @@ import {
 } from './og';
 import { R2S3Client } from '../r2/client';
 import { ogPlaceholderPng } from './og-placeholder';
+import { hasFlag, readNumberOption, readOption } from '../lib/cli';
+import { mapPool } from '../lib/async';
+import { fetchProductImage as fetchAlkoImage } from '../lib/alko-image';
 
-const REQUEST_HEADERS = {
-	'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0'
-};
+const fetchProductImage = (id: string) =>
+	fetchAlkoImage(id, { attempts: 3, timeoutMs: 20_000, backoffMs: (attempt) => 500 * (attempt + 1) });
 
 const MANIFEST_FILE = 'og-images.json';
 
 type ProductRecord = { values?: unknown[] };
 type Dataset = { schema?: string[]; products?: Record<string, ProductRecord> };
 type Manifest = Record<string, string>;
-
-function readOption(name: string): string | undefined {
-	const index = process.argv.indexOf(name);
-	return index === -1 ? undefined : process.argv[index + 1];
-}
-
-function readNumberOption(name: string, fallback: number): number {
-	const value = Number(readOption(name));
-	return Number.isInteger(value) && value > 0 ? value : fallback;
-}
-
-function hasFlag(name: string): boolean {
-	return process.argv.includes(name);
-}
-
-async function fetchProductImage(id: string): Promise<ArrayBuffer | null> {
-	const url = `https://images.alko.fi/images/cs_srgb,f_auto,t_medium/cdn/${encodeURIComponent(id)}/kuva.jpg`;
-	let lastError: unknown;
-	for (let attempt = 0; attempt < 3; attempt += 1) {
-		try {
-			const response = await fetch(url, {
-				headers: REQUEST_HEADERS,
-				signal: AbortSignal.timeout(20_000)
-			});
-			// No photo exists for this product — callers fall back to a
-			// placeholder rather than failing the product forever.
-			if (response.status >= 400 && response.status < 500) return null;
-			if (!response.ok) throw new Error(`Alko image HTTP ${response.status}`);
-			return await response.arrayBuffer();
-		} catch (error) {
-			lastError = error;
-			await new Promise((resolve) => setTimeout(resolve, 500 * (attempt + 1)));
-		}
-	}
-	throw lastError instanceof Error ? lastError : new Error('image fetch failed');
-}
 
 async function readManifest(pathName: string): Promise<Manifest> {
 	try {
@@ -72,21 +38,6 @@ async function readDataset(pathName: string): Promise<Dataset> {
 	} catch {
 		return {};
 	}
-}
-
-/** Runs `fn` over `items` with at most `limit` concurrent workers. */
-async function mapPool<T, R>(items: T[], limit: number, fn: (item: T) => Promise<R>): Promise<R[]> {
-	const results = new Array<R>(items.length);
-	let next = 0;
-	async function worker() {
-		while (next < items.length) {
-			const index = next;
-			next += 1;
-			results[index] = await fn(items[index]);
-		}
-	}
-	await Promise.all(Array.from({ length: Math.min(limit, items.length) }, () => worker()));
-	return results;
 }
 
 /**

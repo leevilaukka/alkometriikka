@@ -4,6 +4,7 @@ import path from 'node:path';
 import { MigratedData } from '../data/types';
 import { DEV } from '../data/constants';
 import { ogImageUrl } from '../og/og';
+import type { StoredProduct } from '../../src/lib/utils/dataset';
 
 /** Max items in the aggregate (whole-catalog) feed. */
 const RSS_LIMIT = 1000;
@@ -13,8 +14,6 @@ const SITE_URL = 'https://alkometriikka.fi';
 const RSS_AGGREGATE_PATH = 'rss.xml';
 const RSS_DIR = 'rss';
 const FEED_AGGREGATE_PATH = 'feed.json';
-
-type PricePoint = { date: string; price: number };
 
 type FeedItem = {
 	guid: string;
@@ -27,11 +26,6 @@ type FeedItem = {
 	name: string;
 	category: string;
 	tags: string[];
-};
-
-type ProductRecord = {
-	values: unknown[];
-	priceHistory?: PricePoint[];
 };
 
 function escapeXml(value: unknown): string {
@@ -113,7 +107,7 @@ function alkoImageUrl(productId: string): string {
  */
 function collectPerProductItems(
 	schema: string[],
-	products: Record<string, ProductRecord>,
+	products: Record<string, StoredProduct>,
 	ogManifest: Record<string, string>
 ): Map<string, FeedItem[]> {
 	const byProduct = new Map<string, FeedItem[]>();
@@ -173,7 +167,7 @@ function collectPerProductItems(
  */
 function collectNewProductItems(
 	schema: string[],
-	products: Record<string, ProductRecord>,
+	products: Record<string, StoredProduct>,
 	ogManifest: Record<string, string>
 ): FeedItem[] {
 	const items: FeedItem[] = [];

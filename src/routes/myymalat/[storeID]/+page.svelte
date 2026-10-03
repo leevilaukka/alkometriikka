@@ -9,8 +9,6 @@
 	import { twMerge } from 'tailwind-merge';
 
 	let { data } = $props();
-	
-	$effect(() => console.log(data));
 
 	function formatDate(date: string) {
 		return new Intl.DateTimeFormat('fi-FI', {

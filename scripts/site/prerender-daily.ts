@@ -4,6 +4,8 @@ import { OG_IMAGE_WIDTH, OG_IMAGE_HEIGHT } from '../og/og';
 import { dailyOgUrl } from '../og/og-daily-card';
 import { toISODateInTimeZone } from '../../src/lib/utils/sales';
 import { dayNumberForDate } from '../../src/lib/daily/dayNumber';
+import { readOption } from '../lib/cli';
+import { escapeHtml, escapeJson, replaceMarkedSection } from '../lib/html';
 
 /**
  * Writes a static `daily/index.html` stub, mirroring scripts/site/prerender-products.ts.
@@ -18,38 +20,9 @@ import { dayNumberForDate } from '../../src/lib/daily/dayNumber';
  */
 
 const SITE_URL = 'https://alkometriikka.fi';
-const SEO_START = '<!-- Dynamic SEO data start -->';
-const SEO_END = '<!-- Dynamic SEO data end -->';
 const TITLE = 'Daily - Alkometriikka';
 const DESCRIPTION =
 	'Alkometriikka Daily on seitsemän kysymyksen tietovisa Alkon valikoimasta. Testaa Alko(holi) tuntemuksesi!';
-
-function readOption(name: string): string | undefined {
-	const index = process.argv.indexOf(name);
-	return index === -1 ? undefined : process.argv[index + 1];
-}
-
-function escapeHtml(value: unknown): string {
-	return String(value ?? '')
-		.replaceAll('&', '&amp;')
-		.replaceAll('<', '&lt;')
-		.replaceAll('>', '&gt;')
-		.replaceAll('"', '&quot;')
-		.replaceAll("'", '&#39;');
-}
-
-function escapeJson(value: unknown): string {
-	return JSON.stringify(value).replaceAll('<', '\\u003c');
-}
-
-function replaceMarkedSection(template: string, content: string): string {
-	const start = template.indexOf(SEO_START);
-	const end = template.indexOf(SEO_END, start);
-	if (start === -1 || end === -1) {
-		throw new Error('SEO markers are missing from the template');
-	}
-	return `${template.slice(0, start)}${SEO_START}\n${content}\n\t${template.slice(end)}`;
-}
 
 async function main() {
 	const templatePath = path.resolve(readOption('--template') ?? 'build/404.html');

@@ -47,6 +47,8 @@ import type {
 	StoreData,
 	StoresApiResponse
 } from './types.ts';
+import { isMigratedProduct } from './guards.ts';
+import { toNumber } from '../../src/lib/utils/number.ts';
 
 // ============================================================================
 // CONFIG & CONSTANTS
@@ -207,24 +209,6 @@ function valuesEqual(a: unknown, b: unknown): boolean {
 // ============================================================================
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-
-function toNumber(value: unknown): number | null {
-	if (typeof value === 'number' && Number.isFinite(value)) return value;
-	if (typeof value === 'string') {
-		const normalized = Number(value.replace(',', '.').trim());
-		if (Number.isFinite(normalized)) return normalized;
-	}
-	return null;
-}
-
-function isMigratedProduct(entry: unknown): entry is MigratedProduct {
-	return (
-		!!entry &&
-		typeof entry === 'object' &&
-		typeof (entry as MigratedProduct).hash === 'string' &&
-		Array.isArray((entry as MigratedProduct).values)
-	);
-}
 
 /**
  * Extracts the sale/campaign info stored in a product's legacy `values` array

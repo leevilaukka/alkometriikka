@@ -28,18 +28,10 @@
 
 import { DEV, HASH_VERSION, alignValues, getHash, getHashValues } from './constants.ts';
 import type { MigratedData, MigratedProduct } from './types.ts';
+import { isMigratedProduct } from './guards.ts';
 
 /** When running with `--dev` we operate on the local static folder. Mirrors index.ts. */
 const DATA_PATH = DEV ? './static/data.json' : './data.json';
-
-function isMigratedProduct(entry: unknown): entry is MigratedProduct {
-	return (
-		!!entry &&
-		typeof entry === 'object' &&
-		typeof (entry as MigratedProduct).hash === 'string' &&
-		Array.isArray((entry as MigratedProduct).values)
-	);
-}
 
 async function rehash(): Promise<void> {
 	const file = Bun.file(DATA_PATH);

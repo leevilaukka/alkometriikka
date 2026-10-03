@@ -17,6 +17,7 @@
 
 import {DEV, FIELD_TO_LEGACY_SCHEMA, LEGACY_HEADERS, getHash, getHashValues} from "./constants.ts";
 import type {MigratedData, MigratedProduct} from "./types.ts";
+import { toNumber } from "../../src/lib/utils/number.ts";
 
 const LEGACY_JSON_URL = "https://raw.githubusercontent.com/leevilaukka/alkometriikka/dfbaa4c24221a1844388fcc53d361add4019b6c2/data.json";
 
@@ -36,19 +37,6 @@ type LegacyPricePoint = {
 type LegacyData = {
     table?: unknown[][];
 };
-
-function toNumber(value: unknown): number | null {
-    if (typeof value === "number" && Number.isFinite(value)) {
-        return value;
-    }
-    if (typeof value === "string") {
-        const normalized = Number(value.replace(",", ".").trim());
-        if (Number.isFinite(normalized)) {
-            return normalized;
-        }
-    }
-    return null;
-}
 
 function normalizeHistory(history: unknown, fallbackPrice: unknown): { date: string; price: number }[] {
     if (Array.isArray(history)) {

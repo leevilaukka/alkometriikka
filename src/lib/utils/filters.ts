@@ -178,7 +178,6 @@ export function findSimilarProducts(
 		return { item, score };
 	});
 	scored.sort((a, b) => b.score - a.score);
-	console.log(scored.slice(0, 20));
 	return scored
 		.filter(({ item }) => item[AllColumns.Number] !== product[AllColumns.Number])
 		.slice(0, limit)

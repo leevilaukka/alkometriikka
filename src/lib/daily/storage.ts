@@ -1,16 +1,13 @@
 import { LocalStorageKeys } from '$lib/utils/constants';
 import { LocalStorageManager } from '$lib/utils/storage';
-import {
-	DAILY_GAME_VERSION,
-	DAILY_QUESTION_COUNT,
-	type ArchivedScores,
-	type ArchiveRuns,
-	type DailyStreak,
-	type SavedDailyGame
-} from './questions';
-import type { UnlimitedRunState } from './questions';
-
-export type { DailyStreak, SavedDailyGame, UnlimitedRunState } from './questions';
+import { DAILY_GAME_VERSION, DAILY_QUESTION_COUNT } from './questions';
+import type {
+	ArchivedScores,
+	ArchiveRuns,
+	DailyStreak,
+	SavedDailyGame,
+	UnlimitedRunState
+} from './types';
 
 export function loadSavedGame(date: string): SavedDailyGame | null {
 	const saved = LocalStorageManager.getItem(LocalStorageKeys.DailyGame);

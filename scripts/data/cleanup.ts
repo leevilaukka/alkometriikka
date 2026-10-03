@@ -11,19 +11,11 @@
 
 import { isIrrelevantMainGroup, isIrrelevantStoredValues, REQUEST_HEADERS, SEARCH_URL } from "./constants.ts";
 import type { MigratedData, MigratedProduct, SearchApiResponse, SearchProductData } from "./types.ts";
+import { isMigratedProduct } from "./guards.ts";
 
 const DATA_PATH = "./data-migrated.json";
 const PAGE_SIZE = 1000;
 
-
-function isMigratedProduct(entry: unknown): entry is MigratedProduct {
-  return (
-    !!entry &&
-    typeof entry === "object" &&
-    typeof (entry as MigratedProduct).hash === "string" &&
-    Array.isArray((entry as MigratedProduct).values)
-  );
-}
 
 /** Fetches every product from the paginated search API. */
 async function loadSearchProducts(): Promise<SearchProductData[]> {

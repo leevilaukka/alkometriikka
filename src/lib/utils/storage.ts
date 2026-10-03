@@ -5,7 +5,7 @@ import type {
 	DailyStreak,
 	SavedDailyGame,
 	UnlimitedRunState
-} from '$lib/daily/questions';
+} from '$lib/daily/types';
 import { LocalStorageKeys } from './constants';
 
 type LocalStorageValueMap = {

@@ -5,9 +5,10 @@
 	import { createRng } from '$lib/daily/rng';
 	import { reconstructDailyGame, type DailyGameManifest, type DailyProduct } from '$lib/daily/manifest';
 	import { dayNumberForDate } from '$lib/daily/dayNumber';
-	import { DAILY_GAME_VERSION, DAILY_QUESTION_COUNT, generateDailyGame, type GeneratedGame, type Question, type UnlimitedRunState } from '$lib/daily/questions';
+	import { DAILY_GAME_VERSION, DAILY_QUESTION_COUNT, generateDailyGame, type GeneratedGame, type Question } from '$lib/daily/questions';
+	import type { DailyStreak, SavedDailyGame, UnlimitedRunState } from '$lib/daily/types';
 	import { questionPoints } from '$lib/daily/scoring';
-	import { clearUnlimitedProgress, completeGame, loadSavedGame, loadStreak, loadUnlimitedProgress, resetDailyGame, saveGame, saveUnlimitedProgress, type DailyStreak, type SavedDailyGame } from '$lib/daily/storage';
+	import { clearUnlimitedProgress, completeGame, loadSavedGame, loadStreak, loadUnlimitedProgress, resetDailyGame, saveGame, saveUnlimitedProgress } from '$lib/daily/storage';
 	import { LocalStorageManager } from '$lib/utils/storage';
 	import { dev } from '$app/environment';
 	import { base } from '$app/paths';

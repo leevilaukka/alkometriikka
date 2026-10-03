@@ -196,8 +196,6 @@ export class Kaljakori {
 				else if (undefinedToZeroColumns.includes(key as any)) value = 0;
 				else value = '';
 
-				if (value instanceof Set && value.has('Null')) console.log(key, value);
-
 				item[key] = value;
 				if (
 					isNumber(value) ||
@@ -357,7 +355,6 @@ export class Kaljakori {
 		});
 
 		this.data = this.sortBy(defaultSortingColumn);
-		console.log(this.data);
 	}
 
 	findDifferentSizesOfProduct(product: PriceListItem): PriceListItem[] {
@@ -498,7 +495,7 @@ export class Kaljakori {
 
 	filter(filters: Record<string, any>) {
 		filters = Object.fromEntries(
-			Object.entries(filters).filter(([key, value]) => {
+			Object.entries(filters).filter(([, value]) => {
 				if (value instanceof Set) return value.size > 0;
 				return value.length > 0;
 			})

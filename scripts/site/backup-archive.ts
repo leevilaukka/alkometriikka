@@ -12,15 +12,10 @@ import { existsSync, mkdtempSync, readdirSync, readFileSync, rmSync } from 'node
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { R2S3Client } from '../r2/client';
+import { readOption } from '../lib/cli';
 
 export const DEFAULT_BACKUP_KEY = 'daily-archive.tar.gz';
 export const DEFAULT_BUCKET = 'alkometriikka-og';
-
-/** Reads command-line option value (e.g. `--out backup.tar.gz` -> `backup.tar.gz`). */
-export function readOption(name: string): string | undefined {
-	const index = process.argv.indexOf(name);
-	return index === -1 ? undefined : process.argv[index + 1];
-}
 
 /**
  * Creates a gzipped tarball from all files in the given directory using `Bun.Archive`.

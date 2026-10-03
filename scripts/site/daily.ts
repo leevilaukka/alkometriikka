@@ -37,6 +37,7 @@ import {
 } from 'node:fs';
 import { join } from 'node:path';
 import { Kaljakori } from '../../src/lib/alko/index.ts';
+import { parseDataset } from '../../src/lib/utils/dataset.ts';
 import { DAILY_GAME_VERSION } from '../../src/lib/daily/questions';
 import {
 	ARCHIVE_INDEX_VERSION,
@@ -62,18 +63,6 @@ const DATA_PATH = DEV ? './static/data.json' : './data.json';
 const DAILY_DIR = DEV ? './static/daily' : './daily';
 /** Directory immutable archive records of finished days are written to. */
 const ARCHIVE_DIR = DEV ? './static/daily/archive' : './daily/archive';
-
-type MigratedProduct = { values: unknown[] };
-
-/** Mirrors the client `+layout.ts` loader so the baked games match exactly. */
-function formatDatasetToJSON(data: string) {
-	const { schema, products = {} } = JSON.parse(data);
-	const header = [...schema, 'Hintahistoria', 'Poistunut valikoimasta'];
-	const rows = Object.values(products as Record<string, MigratedProduct>)
-		.filter((product) => product && typeof product === 'object' && Array.isArray(product.values))
-		.map((product) => [...product.values, [], Boolean(false)]);
-	return { table: [header, ...rows] };
-}
 
 function addDaysUTC(isoDate: string, days: number): string {
 	const [year, month, day] = isoDate.split('-').map(Number);
@@ -167,7 +156,7 @@ async function bake(): Promise<void> {
 		throw new Error(`Dataset not found at ${DATA_PATH}. Run the sync first.`);
 	}
 
-	const { table } = formatDatasetToJSON(await Bun.file(DATA_PATH).text());
+	const { table } = parseDataset(await Bun.file(DATA_PATH).text());
 	const catalog = new Kaljakori(table, { weight: null, gender: null }, { stores: {}, product: {} })
 		.data;
 	// Baking without the previously deployed manifests would re-roll dates that
