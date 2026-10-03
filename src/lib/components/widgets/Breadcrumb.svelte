@@ -1,8 +1,7 @@
 <script lang="ts">
+	import type { BreadcrumbItem } from '$lib/types';
 	import Icon from './Icon.svelte';
 	import { twMerge } from 'tailwind-merge';
-
-	export type BreadcrumbItem = { label: string; href?: string };
 
 	const {
 		items,

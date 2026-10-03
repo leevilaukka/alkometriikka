@@ -39,6 +39,8 @@ export type PersonalInfo = {
 	gender: GenderOptions | undefined | null;
 };
 
+export type BreadcrumbItem = { label: string; href?: string };
+
 export type AvailabilityStore = {
 	id: string;
 	name: string;

@@ -5,7 +5,6 @@
 	import { formatValue } from '$lib/utils/format';
 	import { Kaljakori } from '$lib/alko';
 	import {
-		getItemQuantity,
 		getListById,
 		getListItem,
 		listToURI,
@@ -164,11 +163,7 @@
 	}
 
 	function modifyQuantity(item: PriceListItem, delta: number) {
-		updateQuantity(
-			list,
-			item[AllColumns.Number],
-			getItemQuantity(list, item[AllColumns.Number]) + delta
-		);
+		updateQuantity(list, item[AllColumns.Number], delta);
 	}
 
 	$effect(() => {

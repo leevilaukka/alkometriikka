@@ -3,8 +3,9 @@
 	import type { PriceListItem } from '$lib/types';
 	import type { Kaljakori } from '$lib/alko';
 	import { findProductCategoryTrail } from '$lib/utils/categories';
-	import Breadcrumb, { type BreadcrumbItem } from '../widgets/Breadcrumb.svelte';
-
+	import Breadcrumb from '../widgets/Breadcrumb.svelte';
+	import type { BreadcrumbItem } from '$lib/types';
+	
 	const {
 		product,
 		kaljakori,

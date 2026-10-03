@@ -1,12 +1,12 @@
 import type { ListObj } from '$lib/types.js';
-import { validateList } from '$lib/utils/lists.js';
+import { validateListFromURI } from '$lib/utils/lists.js';
 import { error } from '@sveltejs/kit';
 import { decompressFromEncodedURIComponent } from 'lz-string';
 
 export async function load({ parent, url }) {
     const data = await parent();
     const listParam = url.searchParams.get('list');
-    const isValid = listParam && validateList(listParam);
+    const isValid = listParam && validateListFromURI(listParam);
     const list: ListObj | null = isValid ? JSON.parse(decompressFromEncodedURIComponent(listParam)) : null;
 
     if (listParam && !isValid) {
