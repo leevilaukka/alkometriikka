@@ -70,15 +70,21 @@
 		$isLaptop = window.matchMedia('(width < 1280px)').matches;
 	});
 
-	beforeNavigate(({ to }) => {
+	beforeNavigate(({ to, type }) => {
 		if(!to) return
 		if(to.url.origin !== window.location.origin) return
 		searchParamsManager.setParametersFromURL(to.url)
+		// Back/forward restores the search from the URL before the page mounts, otherwise the
+		// page would sync an empty search into the URL first
+		if(type === 'popstate') $searchQuery = to.url.searchParams.get('q') ?? ''
 		searchParamsManager.update()
 	});
 
-	afterNavigate(() => {
+	afterNavigate(({ from, to, type }) => {
 		markRouterReady();
+		// The search belongs to the page it was typed on, so any path change other than
+		// back/forward drops it. Done after navigating so the page being left keeps its q.
+		if(type !== 'popstate' && from?.url.pathname !== to?.url.pathname) $searchQuery = '';
 	});
 
 	function shiftLoader() {
@@ -140,6 +146,8 @@
 		name: 'Tilastot'
 	}];
 
+	const inCategory = $derived(page.route.id === '/kategoriat/[type]/[[subtype]]');
+
 	const noSearchPages: typeof page.route.id[] = ['/daily/arkisto', '/laskin', '/tilastot', '/listat', '/daily', '/daily/arkisto/[date]', '/tuotteet/[...id]', '/vertailu', '/kategoriat'];
 </script>
 
@@ -182,14 +190,14 @@
 						<input
 							id="searchQuery"
 							type="text"
-							aria-label="Hae nimellä"
+							aria-label={inCategory ? 'Hae nimellä tästä kategoriasta' : 'Hae nimellä'}
 							aria-keyshortcuts="/"
 							bind:value={$searchQuery}
 							class={twMerge(
 								components.input(),
 								'peer text-md w-full gap-2 rounded-s-none border-0 border-s hover:border-primary lg:pe-9'
 							)}
-							placeholder="Hae nimellä..."
+							placeholder={inCategory ? 'Hae tästä kategoriasta...' : 'Hae nimellä...'}
 						/>
 						<kbd class="pointer-events-none absolute end-2 top-1/2 hidden size-5 -translate-y-1/2 items-center justify-center rounded border border-current text-[11px] font-semibold leading-none text-secondary lg:flex peer-focus:hidden">/</kbd>
 					</div>

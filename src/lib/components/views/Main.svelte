@@ -20,7 +20,7 @@
 	import Popup from '../widgets/Popup.svelte';
 	import AllLists from '../widgets/AllLists.svelte';
 	import { addToList } from '$lib/utils/lists';
-	import { isMobile, searchQuery } from '$lib/global.svelte';
+	import { isLaptop, isMobile, searchQuery } from '$lib/global.svelte';
 	import Filters from '../widgets/Filters.svelte';
 	import { initFilterValues } from '$lib/utils/filters';
 	import { page } from '$app/state';
@@ -31,8 +31,12 @@
 	const {
 		kaljakori,
 		header,
+		footer,
 		showFilters = true
-	}: { kaljakori: Kaljakori; header?: Snippet; showFilters?: boolean } = $props();
+	}: { kaljakori: Kaljakori; header?: Snippet; footer?: Snippet; showFilters?: boolean } = $props();
+
+	// Without the filter sidebar, wide screens show the header in a sidebar of its own
+	const sidebarHeader = $derived(!!header && !showFilters && !$isLaptop);
 
 	let searchParamsManager = getContext<SearchParamsManager>(ContextKeys.SearchParamsManager);
 
@@ -98,7 +102,19 @@
 	});
 </script>
 
-<div class={twMerge('relative grid h-full max-h-full overflow-hidden', showFilters ? 'grid-cols-[auto_1fr]' : 'grid-cols-1 bg-secondary')}>
+<div class={twMerge('relative grid h-full max-h-full overflow-hidden', showFilters ? 'grid-cols-[auto_1fr]' : 'bg-secondary', !showFilters && (sidebarHeader ? 'grid-cols-[20rem_1fr]' : 'grid-cols-1'))}>
+	{#if sidebarHeader}
+		<aside class="flex max-h-full flex-col overflow-hidden border-e border-primary bg-primary">
+			<div class="flex flex-auto flex-col gap-3 overflow-y-auto p-4">
+				{@render header?.()}
+			</div>
+			{#if footer}
+				<div class="border-t border-primary p-4">
+					{@render footer()}
+				</div>
+			{/if}
+		</aside>
+	{/if}
 	{#if showFilters}
 	<aside
 		class="z-10 flex h-full flex-col max-h-full overflow-hidden border-primary md:w-84 md:border-r"
@@ -108,10 +124,11 @@
 	</aside>
 	{/if}
 	<!-- Without the filter sidebar, match the product page's width so rows don't stretch -->
-	<main id="results" tabindex="-1" class={twMerge('mx-auto flex h-full w-full flex-col gap-3 bg-secondary outline-none p-4 md:gap-4 md:p-6', !showFilters && 'max-w-7xl')}>
-		{#if header}
+	<main id="results" tabindex="-1" class={twMerge('mx-auto flex h-full w-full flex-col gap-3 bg-secondary outline-none p-4 md:gap-4 md:p-6', !showFilters && !sidebarHeader && 'max-w-7xl')}>
+		{#if header && !sidebarHeader}
 			{@render header()}
-		{:else}
+			{@render footer?.()}
+		{:else if !header}
 			<h1 class="sr-only">Alkon tuotteet</h1>
 		{/if}
 		<div class="flex w-full flex-col items-start gap-4">

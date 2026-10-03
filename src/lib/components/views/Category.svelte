@@ -8,6 +8,8 @@
 	import { personalInfo } from '$lib/global.svelte';
 	import { twMerge } from 'tailwind-merge';
 	import Main from './Main.svelte';
+	import { components } from '$lib/utils/styles';
+	import Icon from '../widgets/Icon.svelte';
 	import Breadcrumb from '../widgets/Breadcrumb.svelte';
 
 	const {
@@ -69,6 +71,14 @@
 	const chips = $derived(parent ? parent.children : node.children);
 	const siblingTypes = $derived(parent ? [] : tree.filter((type) => type.slug !== node.slug));
 
+	// The main list with this category preselected, for narrowing it down with the filters
+	const filterHref = $derived.by(() => {
+		const params = new URLSearchParams();
+		params.set(AllColumns.Type, trail[0].name);
+		if (trail[1]) params.set(AllColumns.SubType, trail[1].name);
+		return `/?${params}`;
+	});
+
 	const description = $derived(categoryDescription(trail));
 
 	$effect(() => {
@@ -88,7 +98,7 @@
 
 {#snippet stat(label: string, value: string, product?: PriceListItem)}
 	{@const content = `${product ? product[AllColumns.Name] : ''}`}
-	<div class="flex min-w-48 shrink-0 flex-col gap-0.5 rounded border border-primary bg-primary px-3 py-2 text-sm sm:shrink">
+	<div class="flex min-w-48 shrink-0 flex-col xl:min-w-0 gap-0.5 rounded border border-primary bg-primary px-3 py-2 text-sm sm:shrink">
 		<span class="text-xs text-secondary">{label}</span>
 		{#if product}
 			<a href={`/tuotteet/${product[AllColumns.Number]}/`} class="truncate font-bold hover:underline" title={content}>
@@ -107,7 +117,7 @@
 			<span class="text-sm text-secondary">{node.count.toLocaleString('fi-FI')} tuotetta valikoimassa</span>
 		</div>
 		{#if chips.length > 1 || siblingTypes.length}
-			<div class="-mx-4 flex gap-2 overflow-x-auto px-4 pb-0.5 md:mx-0 md:flex-wrap md:px-0">
+			<div class="-mx-4 flex gap-2 overflow-x-auto px-4 pb-0.5 md:mx-0 md:flex-wrap md:px-0 xl:overflow-visible">
 				{#each chips as chip (chip.slug)}
 					{@const selected = chip.slug === node.slug}
 					<a
@@ -134,7 +144,7 @@
 				{/each}
 			</div>
 		{/if}
-		<div class="-mx-4 flex gap-2 overflow-x-auto px-4 pb-0.5 md:mx-0 md:px-0">
+		<div class="-mx-4 flex gap-2 overflow-x-auto px-4 pb-0.5 md:mx-0 md:px-0 xl:flex-col xl:overflow-visible">
 			{#if cheapest}
 				{@render stat('Halvin', formatValue(cheapest[AllColumns.Price], AllColumns.Price) as string, cheapest)}
 			{/if}
@@ -151,6 +161,13 @@
 	</div>
 {/snippet}
 
+{#snippet footer()}
+	<a href={filterHref} class={twMerge(components.button(), 'w-full')}>
+		<Icon name="filter" />
+		<span>Suodata tarkemmin</span>
+	</a>
+{/snippet}
+
 {#key node.path}
-	<Main {kaljakori} {header} showFilters={false} />
+	<Main {kaljakori} {header} {footer} showFilters={false} />
 {/key}
