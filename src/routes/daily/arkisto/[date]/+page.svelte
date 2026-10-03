@@ -607,11 +607,11 @@
 					</div>
 					<h2 class="mt-5 text-2xl font-bold">Arvaa tuotteen hinta</h2>
 					<form class="mt-6 flex flex-col gap-3 sm:flex-row" onsubmit={submitEstimate}>
-						<label class="flex flex-1 items-center gap-2 rounded border border-primary px-3 py-2">
+						<label class="flex flex-1 items-center gap-2 rounded border border-primary px-3 py-2 focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-brand-1">
 							<span>€</span>
 							<input
 								name="estimate"
-								class="w-full border-0 bg-transparent text-lg focus:ring-0"
+								class="w-full border-0 bg-transparent text-lg focus:ring-0 focus-visible:outline-none"
 								type="number"
 								min="0"
 								step="0.01"

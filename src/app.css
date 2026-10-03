@@ -73,14 +73,12 @@ body {
 /* Visible keyboard focus. Inputs hidden with sr-only (radios, checkboxes) show
    it on their wrapping label instead. */
 :focus-visible,
-label:has(input:focus-visible) {
+label:has(> input.sr-only:focus-visible) {
     outline: 2px solid var(--color-brand-1);
     outline-offset: 2px;
 }
 
-/* The wrapping label already shows the ring, so don't draw a second one on the input. */
-input.sr-only:focus-visible,
-label:has(input:focus-visible) input:focus-visible {
+input.sr-only:focus-visible {
     outline: none;
 }
 
