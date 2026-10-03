@@ -44,6 +44,6 @@
 			{step}
 			class={twMerge(components.input(), 'w-full')}
 		/>
-		<button class={twMerge(components.button())} onclick={() => (value = [min, max])}><Icon name="refresh_ccw" /></button>
+		<button class={twMerge(components.button())} aria-label="Nollaa" onclick={() => (value = [min, max])}><Icon name="refresh_ccw" /></button>
 	</div>
 </div>

@@ -10,8 +10,10 @@
 	import { questionPoints } from '$lib/daily/scoring';
 	import { clearUnlimitedProgress, completeGame, loadSavedGame, loadStreak, loadUnlimitedProgress, resetDailyGame, saveGame, saveUnlimitedProgress } from '$lib/daily/storage';
 	import { LocalStorageManager } from '$lib/utils/storage';
+	import { tick } from 'svelte';
 	import { dev } from '$app/environment';
 	import { base } from '$app/paths';
+	import { goto } from '$app/navigation';
 	import { generateTitle, handleShare, sendAnalyticsEvent, setSEO } from '$lib/utils/helpers';
 	import ProductImage from '$lib/components/widgets/ProductImage.svelte';
 	import { twMerge } from 'tailwind-merge';
@@ -278,6 +280,8 @@
 		correctAnswers = [...correctAnswers, question.type === 'estimate' ? Number(value) === question.correctPrice : answerPoints === 100];
 		answered = true;
 		saved = { ...saved!, currentIndex, points, correctAnswers, selectedAnswer, answered, answerPoints };
+		// The answer buttons are now disabled, so move focus to the continue button instead of dropping it.
+		tick().then(() => document.getElementById('daily-continue')?.focus());
 		if (runMode === 'daily') saveGame(saved);
 		else persistUnlimitedProgress();
 	}
@@ -312,6 +316,67 @@
 		saved = { ...saved!, currentIndex, points, correctAnswers, selectedAnswer: null, answered: false, answerPoints: 0 };
 		if (runMode === 'daily') saveGame(saved);
 		else persistUnlimitedProgress();
+	}
+
+	function currentOptions(): (string | number)[] {
+		if (!question) return [];
+		if (question.type === 'price' || question.type === 'choice') return question.options;
+		if (question.type === 'estimate') return [];
+		return question.productIds;
+	}
+
+	function handleKeydown(event: KeyboardEvent) {
+		if (event.metaKey || event.ctrlKey || event.altKey) return;
+		const target = event.target as HTMLElement | null;
+		if (target?.closest('input, textarea, select, dialog, [role="dialog"]')) return;
+
+		if (runMode === 'unlimited' && event.key.toLowerCase() === 'l') {
+			event.preventDefault();
+			exitUnlimited();
+			return;
+		}
+
+		if (finished) {
+			const key = event.key.toLowerCase();
+			if (key === 'enter' && target?.closest('a, button')) return;
+			if (key === 'enter' || key === 'n' || key === 'u') {
+				if (!unlimitedEnabled) return;
+				event.preventDefault();
+				startUnlimited();
+			} else if (key === 'a') {
+				event.preventDefault();
+				goto('/daily/arkisto');
+			} else if (key === 'escape' || key === 'b') {
+				event.preventDefault();
+				goto('/');
+			}
+			return;
+		}
+		if (!game || !question) return;
+
+		if (answered) {
+			if (event.key === 'Enter' || event.key === ' ' || event.key === 'ArrowRight') {
+				event.preventDefault();
+				continueGame();
+			}
+			return;
+		}
+
+		if (question.type === 'estimate') {
+			if (/^[0-9]$/.test(event.key)) document.querySelector<HTMLInputElement>('input[name="estimate"]')?.focus();
+			return;
+		}
+
+		const options = currentOptions();
+		let index = /^[1-9]$/.test(event.key) ? Number(event.key) - 1 : -1;
+		if (options.length === 2) {
+			if (event.key === 'ArrowLeft') index = 0;
+			else if (event.key === 'ArrowRight') index = 1;
+		}
+		if (index >= 0 && index < options.length) {
+			event.preventDefault();
+			answer(options[index]);
+		}
 	}
 
 	function answerLabel(value: number) {
@@ -456,6 +521,8 @@
 	<title>{generateTitle('Daily')}</title>
 </svelte:head>
 
+<svelte:window onkeydown={handleKeydown} />
+
 {#await data.alko then alko}
 	<main class="mx-auto flex w-full max-w-4xl flex-col gap-6 p-4 md:p-8 lg:gap-8 lg:p-10">
 		<header class="flex flex-col gap-2 border-b border-primary pb-5">
@@ -472,7 +539,7 @@
 						<span class="rounded bg-brand-4 px-3 py-2 text-sm font-bold text-white">{displayDate}{#if dayNumber} · #{dayNumber}{/if}</span>
 					{/if}
 					{#if runMode === 'unlimited'}
-						<button class={twMerge(components.button(), 'px-3 py-2')} onclick={exitUnlimited}> <span class="flex items-center gap-2"> <Icon name="exit"/>Lopeta</span> </button>
+						<button class={twMerge(components.button(), 'px-3 py-2')} onclick={exitUnlimited}> <span class="flex items-center gap-2"> <Icon name="exit"/>Lopeta<kbd class="ms-2 hidden h-5 items-center justify-center rounded border border-current px-1 text-[11px] font-semibold leading-none opacity-60 lg:inline-flex">L</kbd></span> </button>
 					{/if}
 					{#if dev}
 						<button class={twMerge(components.button({ size: 'xs' }), 'border-red-300 px-2 py-1 text-xs')} onclick={resetGame}>Nollaa peli</button>
@@ -530,16 +597,23 @@
 					{/if}
 					<div class="flex w-full max-w-md flex-col items-center gap-2">
 						{#if unlimitedEnabled}
-							<button class={twMerge(components.button({ type: 'negative', size: 'md' }), 'w-full px-4 py-2')} onclick={startUnlimited}> <span class="flex items-center gap-2"> <Icon name="repeat_alt_2"/>{runMode === 'daily' ? 'Pelaa rajattomasti' : 'Uusi kierros'}</span> </button>
+							<button class={twMerge(components.button({ type: 'negative', size: 'md' }), 'w-full px-4 py-2')} onclick={startUnlimited}> <span class="flex items-center gap-2"> <Icon name="repeat_alt_2"/>{runMode === 'daily' ? 'Pelaa rajattomasti' : 'Uusi kierros'}<kbd class="ms-2 hidden h-5 items-center justify-center rounded border border-current px-1 text-[11px] font-semibold leading-none opacity-60 lg:inline-flex">↵</kbd></span> </button>
 						{/if}
 						<div class="grid w-full grid-cols-2 gap-2">
-							<a href="/daily/arkisto" class={twMerge(components.button({ size: 'md' }), 'w-full px-4 py-2')}> <span class="flex items-center gap-2"> <Icon name="archive"/>Arkisto</span> </a>
-							<a href="/" class={twMerge(components.button({ size: 'md' }), 'w-full px-4 py-2')}>Takaisin Alkometriikkaan</a>
+							<a href="/daily/arkisto" class={twMerge(components.button({ size: 'md' }), 'w-full px-4 py-2')}> <span class="flex items-center gap-2"> <Icon name="archive"/>Arkisto<kbd class="ms-2 hidden h-5 items-center justify-center rounded border border-current px-1 text-[11px] font-semibold leading-none opacity-60 lg:inline-flex">A</kbd></span> </a>
+							<a href="/" class={twMerge(components.button({ size: 'md' }), 'w-full px-4 py-2')}><span class="flex items-center gap-2">Takaisin Alkometriikkaan<kbd class="ms-2 hidden h-5 items-center justify-center rounded border border-current px-1 text-[11px] font-semibold leading-none opacity-60 lg:inline-flex">Esc</kbd></span></a>
 						</div>
 					</div>
 				</div>
 			</section>
 		{:else if game && question}
+			{#snippet answerMark(value: string | number)}
+				{#if answered && isCorrect(value)}
+					<span class="ms-2 inline-flex items-center"><Icon name="check_circle" /><span class="sr-only">(oikea vastaus)</span></span>
+				{:else if answered && selectedAnswer === value}
+					<span class="ms-2 inline-flex items-center"><Icon name="block" /><span class="sr-only">(valintasi, väärin)</span></span>
+				{/if}
+			{/snippet}
 			<section class="flex flex-col gap-5">
 				<div class="flex items-center justify-between text-sm font-bold">
 					<span>Kysymys {currentIndex + 1} / {game.questions.length}</span>
@@ -559,22 +633,23 @@
 							</div>
 						</div>
 						<div class="mt-6 grid grid-cols-2 gap-3">
-							{#each question.options as option (option)}
-								<button class={twMerge(components.button(), 'min-h-12 w-full text-lg', answered && (isCorrect(option) ? 'border-green-600 bg-green-100 text-green-900' : selectedAnswer === option ? 'border-red-600 bg-red-100 text-red-900' : 'opacity-60'))} disabled={answered} onclick={() => answer(option)}>{answerLabel(option)}</button>
+							{#each question.options as option, i (option)}
+								<button class={twMerge(components.button(), 'relative min-h-12 w-full text-lg', answered && (isCorrect(option) ? 'border-green-600 bg-green-100 text-green-900' : selectedAnswer === option ? 'border-red-600 bg-red-100 text-red-900' : 'opacity-60'))} disabled={answered} onclick={() => answer(option)}><kbd class="pointer-events-none absolute right-1.5 top-1.5 hidden size-5 items-center justify-center rounded border border-current text-[11px] font-semibold leading-none opacity-40 lg:flex">{i + 1}</kbd>{answerLabel(option)}{@render answerMark(option)}</button>
 							{/each}
 						</div>
 					{:else if question.type === 'cheaper' || question.type === 'efficiency' || question.type === 'attribute'}
 						<h2 class="text-2xl font-bold">{question.type === 'cheaper' ? 'Kumpi tuote on halvempi?' : question.type === 'efficiency' ? 'Kummasta saat enemmän puhdasta alkoholia eurolla?' : attributeTitle(question.metric)}</h2>
 						<div class="mt-6 grid gap-3 sm:grid-cols-2">
-							{#each question.productIds as id (id)}
+							{#each question.productIds as id, i (id)}
 								{@const comparedProduct = findProduct(id)}
-								<button class={twMerge(components.button(), 'min-h-40 w-full justify-start p-3 text-left', answered && (isCorrect(id) ? 'border-green-600 bg-green-100 text-green-900' : selectedAnswer === id ? 'border-red-600 bg-red-100 text-red-900' : 'opacity-60'))} disabled={answered} onclick={() => answer(id)}>
+								<button class={twMerge(components.button(), 'relative min-h-40 w-full justify-start p-3 text-left', answered && (isCorrect(id) ? 'border-green-600 bg-green-100 text-green-900' : selectedAnswer === id ? 'border-red-600 bg-red-100 text-red-900' : 'opacity-60'))} disabled={answered} onclick={() => answer(id)}>
 									<div class="h-32 w-24 shrink-0 rounded bg-white p-1">
 										<ProductImage number={id} name={productName(id)} transform="medium" />
 									</div>
-									<span class="min-w-0">{comparedProduct?.[AllColumns.Name] ?? productName(id)}</span>
+									<span class="min-w-0"><kbd class="pointer-events-none absolute right-1.5 top-1.5 hidden size-5 items-center justify-center rounded border border-current text-[11px] font-semibold leading-none opacity-40 lg:flex">{i + 1}</kbd>{comparedProduct?.[AllColumns.Name] ?? productName(id)}</span>
 									{#if answered && question.type === 'efficiency'}<span class="ms-auto text-sm">{efficiency(question.efficiency[id])}</span>{/if}
 									{#if answered && question.type === 'attribute'}<span class="ms-auto text-sm">{attributeValueLabel(question.metric, question.values[id])}</span>{/if}
+										{@render answerMark(id)}
 								</button>
 							{/each}
 						</div>
@@ -592,8 +667,8 @@
 							</div>
 						</div>
 						<div class="mt-6 grid grid-cols-2 gap-3">
-							{#each question.options as option (option)}
-								<button class={twMerge(components.button(), 'min-h-12 w-full text-left', answered && (isCorrect(option) ? 'border-green-600 bg-green-100 text-green-900' : selectedAnswer === option ? 'border-red-600 bg-red-100 text-red-900' : 'opacity-60'))} disabled={answered} onclick={() => answer(option)}>{option}</button>
+							{#each question.options as option, i (option)}
+								<button class={twMerge(components.button(), 'relative min-h-12 w-full text-left', answered && (isCorrect(option) ? 'border-green-600 bg-green-100 text-green-900' : selectedAnswer === option ? 'border-red-600 bg-red-100 text-red-900' : 'opacity-60'))} disabled={answered} onclick={() => answer(option)}><kbd class="pointer-events-none absolute right-1.5 top-1.5 hidden size-5 items-center justify-center rounded border border-current text-[11px] font-semibold leading-none opacity-40 lg:flex">{i + 1}</kbd>{option}{@render answerMark(option)}</button>
 							{/each}
 						</div>
 					{:else if question.type === 'estimate'}
@@ -619,7 +694,7 @@
 							<p class="text-lg font-bold">{question.type === 'estimate' ? (estimateWasExact() ? 'Oikein!' : answerPoints > 0 ? 'Hyvä arvio!' : 'Ei aivan.') : answerPoints > 0 ? 'Oikein!' : 'Ei aivan.'} <span class="text-secondary">+{answerPoints} pistettä</span></p>
 							<p class="mt-2 text-secondary">Oikea vastaus: {correctAnswerText(question)}</p>
 							{#if question.type === 'efficiency'}<p class="mt-1 text-sm text-secondary">Lasku: tilavuus × alkoholiprosentti × 10 / hinta.</p>{/if}
-							<button class={twMerge(components.button({ type: 'negative', size: 'md' }), 'mt-4 px-4 py-2')} onclick={continueGame}>{currentIndex === game.questions.length - 1 ? 'Näytä tulos' : 'Jatka'}</button>
+							<button class={twMerge(components.button({ type: 'negative', size: 'md' }), 'mt-4 px-4 py-2')} id="daily-continue" onclick={continueGame}>{currentIndex === game.questions.length - 1 ? 'Näytä tulos' : 'Jatka'}<kbd class="ms-2 hidden h-5 items-center justify-center rounded border border-current px-1 text-[11px] font-semibold leading-none opacity-60 lg:inline-flex">↵</kbd></button>
 						</div>
 					{/if}
 				</div>

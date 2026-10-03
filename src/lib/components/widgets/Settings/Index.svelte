@@ -59,6 +59,7 @@
 		<button
 			class={twMerge(components.button(), 'p-2 text-xl')}
 			onclick={openSettings}
+			aria-label="Asetukset"
 		>
 			{#if !$isMobile}<span class="text-sm">Asetukset</span>{/if}<Icon name="cog" />
 		</button>
@@ -74,7 +75,7 @@
 						type="radio"
 						id={tabOption.id}
 						name="tab"
-						class="hidden"
+						class="sr-only"
 						value={tabOption.id}
 						bind:group={tab}
 					/>

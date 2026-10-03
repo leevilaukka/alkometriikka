@@ -121,11 +121,7 @@
 					<Icon name="calendar" />
 				</div>
 			</div>
-			<a href="/daily">
-				<button class={twMerge(components.button(), 'px-3 py-2')}>
-					<span class="flex items-center gap-2"><Icon name="flame" />Päivän peli</span>
-				</button>
-			</a>
+			<a href="/daily" class={twMerge(components.button(), 'px-3 py-2')}><span class="flex items-center gap-2"><Icon name="flame" />Päivän peli</span></a>
 		</div>
 		{#if index}
 			<p class="text-sm text-secondary">

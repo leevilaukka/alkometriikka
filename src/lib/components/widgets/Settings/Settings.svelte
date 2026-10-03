@@ -18,7 +18,7 @@
 						for="system"
 						class={twMerge(components.button(), 'rounded-e-none', 'has-checked:bg-secondary')}
 					>
-						<input type="radio" id="system" value={''} class="hidden" bind:group={$theme} />
+						<input type="radio" id="system" value={''} class="sr-only" bind:group={$theme} />
 						<Icon name={$isMobile ? 'mobile' : $isLaptop ? 'laptop' : 'desktop'} />
 						<span>Järjestelmä</span>
 					</label>
@@ -30,14 +30,14 @@
 							'has-checked:bg-secondary'
 						)}
 					>
-						<input type="radio" id="light" value={'light'} class="hidden" bind:group={$theme} />
+						<input type="radio" id="light" value={'light'} class="sr-only" bind:group={$theme} />
 						<Icon name="sun" /> <span>Vaalea</span>
 					</label>
 					<label
 						for="dark"
 						class={twMerge(components.button(), 'rounded-s-none', 'has-checked:bg-secondary')}
 					>
-						<input type="radio" id="dark" value={'dark'} class="hidden" bind:group={$theme} />
+						<input type="radio" id="dark" value={'dark'} class="sr-only" bind:group={$theme} />
 						<Icon name="moon" /> <span>Tumma</span>
 					</label>
 				</div>

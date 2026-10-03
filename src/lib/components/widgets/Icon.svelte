@@ -5,7 +5,7 @@
     const { name, class: _class = "" }: { name: IconName; class?: string } = $props();
 </script>
 
-<span class={twMerge("icon", _class)}>{name}</span>
+<span aria-hidden="true" class={twMerge("icon", _class)}>{name}</span>
 
 <style>
     .icon {

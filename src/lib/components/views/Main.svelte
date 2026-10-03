@@ -79,6 +79,11 @@
 		return maxValue > 0 ? maxValue : null;
 	});
 
+	function skipToResults(event: MouseEvent) {
+		event.preventDefault();
+		document.getElementById('results')?.focus();
+	}
+
 	onMount(() => {
 		const ascParam = searchParamsManager.getParameter('asc') === "true";
 		if(ascParam !== asc) asc = ascParam
@@ -98,12 +103,17 @@
 	<aside
 		class="z-10 flex h-full flex-col max-h-full overflow-hidden border-primary md:w-84 md:border-r"
 	>
+		<a href="#results" onclick={skipToResults} class="sr-only bg-primary px-4 py-2 font-bold focus:not-sr-only">Ohita suodattimet</a>
 		<Filters {kaljakori} bind:activeFilters bind:filterValues bind:showRemoved bind:this={filtersComponent} />
 	</aside>
 	{/if}
 	<!-- Without the filter sidebar, match the product page's width so rows don't stretch -->
-	<main class={twMerge('mx-auto flex h-full w-full flex-col gap-3 bg-secondary p-4 md:gap-4 md:p-6', !showFilters && 'max-w-7xl')}>
-		{@render header?.()}
+	<main id="results" tabindex="-1" class={twMerge('mx-auto flex h-full w-full flex-col gap-3 bg-secondary outline-none p-4 md:gap-4 md:p-6', !showFilters && 'max-w-7xl')}>
+		{#if header}
+			{@render header()}
+		{:else}
+			<h1 class="sr-only">Alkon tuotteet</h1>
+		{/if}
 		<div class="flex w-full flex-col items-start gap-4">
 			<div class={twMerge('grid w-full grid-cols-2 items-end gap-2 md:w-fit')}>
 				<div class="flex flex-col">
@@ -130,6 +140,7 @@
 									asc = !asc;
 									listRef?.scroll({ index: 0, smoothScroll: false });
 								}}
+								aria-label={`Järjestys: ${sortingOrderToString(asc, selectedSortingColumn)}`}
 								class={twMerge(components.button(), 'rounded-none rounded-e border-s-0')}
 							>
 								<span class="hidden whitespace-nowrap md:block">
@@ -161,6 +172,7 @@
 						onclick={() => {
 							filtersComponent?.toggleFilterElement();
 						}}
+						aria-haspopup="dialog"
 						class={twMerge(components.button(), 'col-span-full w-full')}
 					>
 						<span>Näytä suodattimet {activeFilters.length > 0 ? `(${activeFilters.length} valittu)` : ""}</span>
