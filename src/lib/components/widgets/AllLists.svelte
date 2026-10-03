@@ -22,32 +22,26 @@
     {#if lists.length > 0}
         <div class="flex flex-col gap-4">
             {#each lists.filter(list => { return (useSearch && $searchQuery) ? isSimilarString(list.name, $searchQuery) : true }) as list}
-                <a 
-                    href={`/listat?list=${listToURI(list)}`} 
-                    class="flex justify-between items-center gap-2 p-2 border rounded border-primary" 
-                    onclick={(e) => {
-                        if(action && typeof action === "function") {
-                            e.preventDefault();
-                            action(list) 
-                        }
-                    }} 
-                    onkeydown={() => {}} 
-                    tabindex="0"
-                >
+                <div class="relative flex justify-between items-center gap-2 p-2 border rounded border-primary focus-within:outline-2 focus-within:outline-brand-1">
                     <div class="flex flex-col">
-                        <p aria-label={list.name} class={twMerge("w-full justify-start text-lg")}>
-                            <span>{list.name}</span>
-                        </p>
-                        <p aria-label={list.name} class={twMerge("w-full justify-start text-secondary text-sm")}>
-                            <span>{`Tuotteet: ${list.items.length}`}</span>
-                        </p>
+                        <a
+                            href={`/listat?list=${listToURI(list)}`}
+                            class="text-lg after:absolute after:inset-0 focus-visible:outline-none"
+                            onclick={(e) => {
+                                if(action && typeof action === "function") {
+                                    e.preventDefault();
+                                    action(list)
+                                }
+                            }}
+                        >{list.name}</a>
+                        <p class="w-full justify-start text-secondary text-sm">{`Tuotteet: ${list.items.length}`}</p>
                     </div>
                     <div class="flex items-center gap-3">
                         {#if show?.share}
                             <button
                                 class={twMerge(
                                     components.button({ type: 'positive', size: 'md' }),
-                                    'aspect-square md:aspect-auto'
+                                    'relative aspect-square md:aspect-auto'
                                 )}
                                 onclick={async (e) => {
                                     e.preventDefault();
@@ -72,13 +66,13 @@
                                     e.stopPropagation();
                                     deleteList(list)
                                 }}
-                                aria-label={list.name} class={twMerge(components.button({ type: "negative", size: "md" }), "aspect-square w-fit")}
+                                aria-label={`Poista lista ${list.name}`} class={twMerge(components.button({ type: "negative", size: "md" }), "relative aspect-square w-fit")}
                             >
                                 <Icon name="trash" />
                             </button>
                         {/if}
                     </div>
-                </a>
+                </div>
             {/each}
         </div>
     {:else}

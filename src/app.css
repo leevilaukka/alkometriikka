@@ -66,8 +66,18 @@ body {
     font-weight: 500;
 }
 
-input:focus {
-    outline: 0;
+/* Visible keyboard focus. Inputs hidden with sr-only (radios, checkboxes) show
+   it on their wrapping label instead. */
+:focus-visible,
+label:has(input:focus-visible) {
+    outline: 2px solid var(--color-brand-1);
+    outline-offset: 2px;
+}
+
+/* The wrapping label already shows the ring, so don't draw a second one on the input. */
+input.sr-only:focus-visible,
+label:has(input:focus-visible) input:focus-visible {
+    outline: none;
 }
 
 .even>*:nth-child(odd) {
@@ -92,4 +102,15 @@ dialog[open] {
 
 .hide-number-input[type=number] {
     -moz-appearance:textfield; /* Firefox */
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }

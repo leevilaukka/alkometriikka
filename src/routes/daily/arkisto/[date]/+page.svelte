@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { tick } from 'svelte';
 	import { AllColumns } from '$lib/utils/constants';
 	import { components } from '$lib/utils/styles';
 	import { questionPoints } from '$lib/daily/scoring';
@@ -233,6 +234,7 @@
 			correctAnswers: [...(run?.correctAnswers ?? []), correct],
 			answers: [...(run?.answers ?? []), value]
 		});
+		tick().then(() => document.getElementById('archive-continue')?.focus());
 	}
 
 	function submitEstimate(event: SubmitEvent) {
@@ -285,26 +287,14 @@
 <main class="mx-auto flex w-full max-w-4xl flex-col gap-6 p-4 md:p-8 lg:gap-8 lg:p-10">
 	<header class="flex flex-col gap-2 border-b border-primary pb-5">
 		<div class="flex items-center justify-between gap-4">
-			<a href="/daily/arkisto">
-				<button class={twMerge(components.button(), 'px-3 py-2')}>
-					<span class="flex items-center gap-2"><Icon name="calendar" />Kalenteri</span>
-				</button>
-			</a>
+			<a href="/daily/arkisto" class={twMerge(components.button(), 'px-3 py-2')}><span class="flex items-center gap-2"><Icon name="calendar" />Kalenteri</span></a>
 			{#if archive}
 				<div class="flex items-center gap-2">
 					{#if previousDate}
-						<a href={`/daily/arkisto/${previousDate}`}>
-							<button class={twMerge(components.button(), 'px-3 py-2')} aria-label="Edellinen päivä">
-								<Icon name="chevron_left" />{shortDate(previousDate)}
-							</button>
-						</a>
+						<a href={`/daily/arkisto/${previousDate}`} class={twMerge(components.button(), 'px-3 py-2')} aria-label="Edellinen päivä"><Icon name="chevron_left" />{shortDate(previousDate)}</a>
 					{/if}
 					{#if nextDate}
-						<a href={`/daily/arkisto/${nextDate}`}>
-							<button class={twMerge(components.button(), 'px-3 py-2')} aria-label="Seuraava päivä">
-								{shortDate(nextDate)}<Icon name="chevron_right" />
-							</button>
-						</a>
+						<a href={`/daily/arkisto/${nextDate}`} class={twMerge(components.button(), 'px-3 py-2')} aria-label="Seuraava päivä">{shortDate(nextDate)}<Icon name="chevron_right" /></a>
 					{/if}
 					<DailyFeedback
 						{date}
@@ -326,11 +316,7 @@
 	{#if loadError && !archive}
 		<section class="flex flex-col items-center gap-4 rounded border border-primary bg-secondary p-8 text-center">
 			<p class="text-lg font-bold">{loadError}</p>
-			<a href="/daily/arkisto">
-				<button class={twMerge(components.button({ type: 'negative', size: 'md' }), 'px-4 py-2')}>
-					Takaisin kalenteriin
-				</button>
-			</a>
+			<a href="/daily/arkisto" class={twMerge(components.button({ type: 'negative', size: 'md' }), 'px-4 py-2')}>Takaisin kalenteriin</a>
 		</section>
 	{:else if !archive}
 		<section class="rounded border border-primary bg-secondary p-5 text-center">
@@ -340,9 +326,7 @@
 		<section class="flex flex-col gap-5">
 			<div class="flex items-center justify-between">
 				<h2 class="text-xl font-bold">Tulokset</h2>
-				<a href="/daily/arkisto">
-					<button class={twMerge(components.button(), 'px-3 py-2')}>Kalenteri</button>
-				</a>
+				<a href="/daily/arkisto" class={twMerge(components.button(), 'px-3 py-2')}>Kalenteri</a>
 			</div>
 			<section class="flex flex-col gap-5 rounded border border-primary bg-secondary p-5 text-center md:p-8">
 				<p class="text-lg font-bold">
@@ -670,6 +654,7 @@
 						{/if}
 						<p class="mt-2 text-secondary">Oikea vastaus: {correctAnswerLabel(question)}</p>
 						<button
+							id="archive-continue"
 							class={twMerge(components.button({ type: 'negative', size: 'md' }), 'mt-4 px-4 py-2')}
 							onclick={continueGame}
 						>

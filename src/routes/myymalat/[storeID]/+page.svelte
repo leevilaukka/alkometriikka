@@ -68,12 +68,8 @@
 					<Icon name="home" class="inline-block" />
 					<span>Etusivulle</span>
 				</a>
-				<a href="/myymalat">
-					<button class={twMerge(components.button({ size: 'md' }))}>
-						<Icon name="map_pin" />
-						<span>Myymälät</span>
-					</button>
-				</a>
+				<a href="/myymalat" class={twMerge(components.button({ size: 'md' }))}><Icon name="map_pin" />
+						<span>Myymälät</span></a>
 			</div>
 		</div>
 		
@@ -171,12 +167,8 @@
 					<Icon name="home" class="inline-block" />
 					<span>Etusivulle</span>
 				</a>
-				<a href="/myymalat">
-					<button class={twMerge(components.button({ size: 'md' }))}>
-						<Icon name="map_pin" />
-						<span>Myymälät</span>
-					</button>
-				</a>
+				<a href="/myymalat" class={twMerge(components.button({ size: 'md' }))}><Icon name="map_pin" />
+						<span>Myymälät</span></a>
 			</div>
 		</div>
 		<div class="flex flex-col gap-2">

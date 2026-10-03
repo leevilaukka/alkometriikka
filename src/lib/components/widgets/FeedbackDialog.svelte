@@ -68,6 +68,7 @@
 				<h2 class="text-lg font-bold">{title}</h2>
 				<button
 					onclick={() => dialogElement?.close()}
+					aria-label="Sulje"
 					class={twMerge(components.button({ type: 'noborder' }))}
 				>
 					<Icon name="x" />

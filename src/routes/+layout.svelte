@@ -84,6 +84,30 @@
 		if (extraMenu) extraMenu.open = false;
 	}
 
+	function handleExtraMenuKeydown(event: KeyboardEvent) {
+		if (event.key !== 'Escape' || !extraMenu?.open) return;
+		extraMenu.open = false;
+		extraMenu.querySelector('summary')?.focus();
+	}
+
+	function handleExtraMenuFocusout(event: FocusEvent) {
+		if (extraMenu?.open && event.relatedTarget && !extraMenu.contains(event.relatedTarget as Node)) extraMenu.open = false;
+	}
+
+	function skipToContent(event: MouseEvent) {
+		event.preventDefault();
+		document.getElementById('main-content')?.focus();
+	}
+
+	function handleGlobalKeydown(event: KeyboardEvent) {
+		if (event.key !== '/' || event.metaKey || event.ctrlKey || event.altKey) return;
+		if ((event.target as HTMLElement | null)?.closest('input, textarea, select, dialog, [contenteditable]')) return;
+		const search = document.getElementById('searchQuery');
+		if (!search) return;
+		event.preventDefault();
+		search.focus();
+	}
+
 	function handleDocumentClick(event: MouseEvent) {
 		if (extraMenu?.open && !event.composedPath().includes(extraMenu)) extraMenu.open = false;
 	}
@@ -109,7 +133,7 @@
 	const noSearchPages: typeof page.route.id[] = ['/daily/arkisto', '/laskin', '/tilastot', '/listat', '/daily', '/daily/arkisto/[date]', '/tuotteet/[...id]'];
 </script>
 
-<svelte:window onclick={handleDocumentClick} />
+<svelte:window onclick={handleDocumentClick} onkeydown={handleGlobalKeydown} />
 
 {#await data.alko then alko}
 	{shiftLoader()}
@@ -117,6 +141,7 @@
 		{#if dev}
 			<span class="bg-brand-3 px-1.5 py-0.5 text-center text-sm text-white">DEV</span>
 		{/if}
+		<a href="#main-content" onclick={skipToContent} class="sr-only bg-primary px-4 py-2 font-bold focus:not-sr-only">Siirry sisältöön</a>
 		<header class="relative flex h-fit items-center gap-2 md:gap-4 bg-primary border-b border-primary py-2 px-4">
 			<a href="/" class="flex shrink-0 flex-row items-center gap-3 bg-primary">
 				<img
@@ -143,21 +168,27 @@
 					>
 						<Icon name="search" />
 					</div>
-					<input
-						id="searchQuery"
-						type="text"
-						bind:value={$searchQuery}
-						class={twMerge(
-							components.input(),
-							'text-md w-full gap-2 rounded-s-none border-0 border-s hover:border-primary'
-						)}
-						placeholder="Hae nimellä..."
-					/>
+					<div class="relative flex w-full">
+						<input
+							id="searchQuery"
+							type="text"
+							aria-label="Hae nimellä"
+							aria-keyshortcuts="/"
+							bind:value={$searchQuery}
+							class={twMerge(
+								components.input(),
+								'peer text-md w-full gap-2 rounded-s-none border-0 border-s hover:border-primary lg:pe-9'
+							)}
+							placeholder="Hae nimellä..."
+						/>
+						<kbd class="pointer-events-none absolute end-2 top-1/2 hidden size-5 -translate-y-1/2 items-center justify-center rounded border border-current text-[11px] font-semibold leading-none text-secondary lg:flex peer-focus:hidden">/</kbd>
+					</div>
 				</div>
 			{/if}
 			<div class="flex items-center gap-2 ms-auto">
-				<details bind:this={extraMenu} class="relative">
-					<summary class={twMerge(components.button(), 'list-none p-2 text-xl')}>
+				<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+				<details bind:this={extraMenu} class="relative" onkeydown={handleExtraMenuKeydown} onfocusout={handleExtraMenuFocusout}>
+					<summary aria-label="Lisää" class={twMerge(components.button(), 'list-none p-2 text-xl')}>
 						{#if !$isMobile}<span class="text-sm">Lisää</span>{/if}<Icon name="menu" />
 					</summary>
 					<div class="absolute end-0 top-full z-20 mt-2 flex min-w-40 flex-col gap-1 rounded border border-primary bg-primary p-1 shadow-lg">
@@ -169,20 +200,12 @@
 						{/each}
 					</div>
 				</details>
-				<a href="/daily">
-					<button class={twMerge(components.button(), 'p-2 text-xl')}>
-						{#if !$isMobile}<span class="text-sm">Daily</span>{/if}<Icon name="flame" />
-					</button>
-				</a>
-				<a href="/listat">
-					<button class={twMerge(components.button(), 'p-2 text-xl')}>
-						{#if !$isMobile}<span class="text-sm">Listat</span>{/if}<Icon name="list_ul" />
-					</button>
-				</a>
+				<a href="/daily" aria-label="Daily" class={twMerge(components.button(), 'p-2 text-xl')}>{#if !$isMobile}<span class="text-sm">Daily</span>{/if}<Icon name="flame" /></a>
+				<a href="/listat" aria-label="Listat" class={twMerge(components.button(), 'p-2 text-xl')}>{#if !$isMobile}<span class="text-sm">Listat</span>{/if}<Icon name="list_ul" /></a>
 				<Settings {alko} />
 			</div>
 		</header>
-		<div class="flex max-h-full overflow-y-auto overflow-x-hidden flex-auto flex-col">
+		<div id="main-content" tabindex="-1" class="flex max-h-full overflow-y-auto overflow-x-hidden flex-auto flex-col outline-none">
 			{@render children?.()}
 		</div>
 	</div>
