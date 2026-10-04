@@ -67,15 +67,19 @@ body {
 }
 
 /* Visible keyboard focus. Inputs hidden with sr-only (radios, checkboxes) show
-   it on their wrapping label instead. */
-:focus-visible,
-label:has(> input.sr-only:focus-visible) {
-    outline: 2px solid var(--color-brand-1);
-    outline-offset: 2px;
-}
+   it on their wrapping label instead. Kept in the base layer so utilities such as
+   focus-visible:outline-none can still opt out (an unlayered rule would always win);
+   the repeated pseudo-class outranks the forms plugin's [type='text']:focus reset. */
+@layer base {
+    :focus-visible:focus-visible:focus-visible,
+    label:has(> input.sr-only:focus-visible) {
+        outline: 1px solid var(--color-brand-1);
+        outline-offset: 2px;
+    }
 
-input.sr-only:focus-visible {
-    outline: none;
+    input.sr-only:focus-visible:focus-visible:focus-visible {
+        outline: none;
+    }
 }
 
 .even>*:nth-child(odd) {
