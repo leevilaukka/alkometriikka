@@ -60,7 +60,7 @@
 					</p>
 				</details>
 			</div>
-			<div class="flex flex-row items-center gap-2">
+			<div class="flex flex-row flex-wrap items-center gap-2">
 				<a
 					href={githubRepoBase}
 					target="_blank"
@@ -78,7 +78,7 @@
 					<span>Sähköposti</span>
 				</a>
 				<SiteFeedback />
-				<div class="flex flex-1">
+				<div class="flex">
 					<a
 						href="https://alkometriikka.fi/rss.xml"
 						target="_blank"
