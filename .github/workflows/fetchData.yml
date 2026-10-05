@@ -101,11 +101,28 @@ jobs:
           bun run scripts/og/og-images.ts --data data.json --manifest ../gh-pages/og-images.json
           cp ../gh-pages/og-images.json og-images.json
 
+      # Category page cards: own script, `categories/` key prefix and manifest, so
+      # they can never re-key or prune the product images above
+      - name: Generate and upload category OG images
+        continue-on-error: true
+        env:
+          CF_R2_ACCESS_KEY_ID: ${{ secrets.CF_R2_ACCESS_KEY_ID }}
+          CF_R2_SECRET_ACCESS_KEY: ${{ secrets.CF_R2_SECRET_ACCESS_KEY }}
+          CF_R2_ACCOUNT_ID: ${{ secrets.CF_R2_ACCOUNT_ID }}
+          CF_R2_BUCKET: ${{ vars.CF_R2_BUCKET }}
+          CF_R2_REGION: ${{ vars.CF_R2_REGION }}
+          OG_CDN_BASE: ${{ vars.OG_CDN_BASE }}
+        run: |
+          bun run scripts/og/og-categories.ts --data data.json --manifest ../gh-pages/og-categories.json
+          cp ../gh-pages/og-categories.json og-categories.json
+
       - name: Upload updated OG image manifest
         uses: actions/upload-artifact@v4
         with:
           name: og-images
-          path: og-images.json
+          path: |
+            og-images.json
+            og-categories.json
 
   sitemap:
     needs: sync
@@ -249,6 +266,7 @@ jobs:
           ALKO_PRERENDER_CONCURRENCY: '32'
         run: |
           cp og-images.json ../gh-pages/og-images.json
+          [ -f og-categories.json ] && cp og-categories.json ../gh-pages/og-categories.json || true
           bun run scripts/site/prerender-products.ts --data data.json --out ../gh-pages --template ../gh-pages/404.html --og-manifest ../gh-pages/og-images.json --manifest ../gh-pages/tuotteet-manifest.json
           cp data.json availability.json sitemap.xml rss.xml feed.json ../gh-pages/
           # Reset first so stale manifests (and the nested archive/) actually
@@ -264,7 +282,8 @@ jobs:
       - name: Commit and push downloaded file
         working-directory: ../gh-pages
         run: |
-          git add data.json availability.json sitemap.xml rss.xml feed.json rss daily tuotteet tuotteet-manifest.json -f
+          git add data.json availability.json sitemap.xml rss.xml feed.json rss daily tuotteet tuotteet-manifest.json kategoriat -f
           [ -f og-images.json ] && git add og-images.json -f || true
+          [ -f og-categories.json ] && git add og-categories.json -f || true
           git commit -m "Update price list and static product pages [skip ci]" || echo "No changes to commit"
           git push origin HEAD:gh-pages

@@ -12,8 +12,10 @@ feed.json
 /static/sitemap.xml
 /static/rss.xml
 /static/og-images.json
+/static/og-categories.json
 
 /og-images.json
+/og-categories.json
 /data.json
 /availability.json
 /daily/

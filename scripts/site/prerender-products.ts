@@ -4,6 +4,7 @@ import Bun, { CryptoHasher } from "bun";
 import { getSaleInfo, toISODateInTimeZone } from "../../src/lib/utils/sales.ts";
 import { ogImageUrl } from "../og/og";
 import { OG_IMAGE_WIDTH, OG_IMAGE_HEIGHT } from "../og/og";
+import { CATEGORY_OG_MANIFEST_FILE, categoryOgUrl, type CategoryOgManifest } from "../og/og-category-card";
 import {
   buildCategoryTree,
   categoryDescription,
@@ -69,6 +70,7 @@ type Options = {
   outputPath: string;
   templatePath: string;
   ogManifestPath: string;
+  ogCategoriesManifestPath: string;
   manifestPath: string;
 };
 
@@ -90,6 +92,9 @@ function resolveOptions(): Options {
     outputPath,
     templatePath: path.resolve(readOption("--template") ?? path.join(outputPath, "404.html")),
     ogManifestPath: path.resolve(readOption("--og-manifest") ?? path.join(outputPath, "og-images.json")),
+    ogCategoriesManifestPath: path.resolve(
+      readOption("--og-categories-manifest") ?? path.join(outputPath, CATEGORY_OG_MANIFEST_FILE)
+    ),
     manifestPath: path.resolve(readOption("--manifest") ?? path.join(outputPath, "tuotteet-manifest.json"))
   };
 }
@@ -506,14 +511,17 @@ function categoryHtml(
   template: string,
   tree: CategoryNode[],
   trail: CategoryNode[],
-  products: CategoryProduct[]
+  products: CategoryProduct[],
+  ogKey: string | undefined
 ): string {
   const node = trail.at(-1);
   const name = node ? categoryTitle(trail) : "Kategoriat";
   const title = `${name} - Alkometriikka`;
   const description = node ? categoryDescription(trail) : CATEGORY_INDEX_DESCRIPTION;
   const url = `${SITE_URL}${node ? node.path : `${CATEGORY_BASE_PATH}/`}`;
-  const ogImage = `${SITE_URL}/images/og_image.png`;
+  // The page's own card from og-categories.json, else the generic image (e.g. before the first card run)
+  const ogImage = ogKey ? categoryOgUrl(ogKey) : `${SITE_URL}/images/og_image.png`;
+  const ogImageAlt = ogKey ? `${name} – Alkometriikka` : "Alkometriikka logo";
   const links = node ? (trail.length > 1 ? [] : node.children) : tree;
   const productUrl = (product: CategoryProduct) => `${SITE_URL}/tuotteet/${encodeURIComponent(product.id)}/`;
 
@@ -565,7 +573,7 @@ function categoryHtml(
     `\t<meta property="og:image" content="${escapeHtml(ogImage)}" />`,
     `\t<meta property="og:image:width" content="${OG_IMAGE_WIDTH}" />`,
     `\t<meta property="og:image:height" content="${OG_IMAGE_HEIGHT}" />`,
-    `\t<meta property="og:image:alt" content="Alkometriikka logo" />`,
+    `\t<meta property="og:image:alt" content="${escapeHtml(ogImageAlt)}" />`,
     `\t<meta name="twitter:card" content="summary_large_image" />`,
     `\t<meta name="twitter:title" content="${escapeHtml(title)}" />`,
     `\t<meta name="twitter:description" content="${escapeHtml(description)}" />`,
@@ -612,7 +620,8 @@ async function renderCategoryPages(
   outputPath: string,
   template: string,
   tree: CategoryNode[],
-  products: CategoryProduct[]
+  products: CategoryProduct[],
+  ogManifest: CategoryOgManifest
 ): Promise<number> {
   const categoriesPath = path.join(outputPath, ...CATEGORY_BASE_PATH.split("/").filter(Boolean));
   await rm(categoriesPath, { recursive: true, force: true });
@@ -634,7 +643,11 @@ async function renderCategoryPages(
   for (const page of pages) {
     const directory = path.join(categoriesPath, ...page.trail.map((node) => node.slug));
     await mkdir(directory, { recursive: true });
-    await Bun.write(path.join(directory, "index.html"), categoryHtml(template, tree, page.trail, page.products));
+    const pagePath = page.trail.at(-1)?.path ?? `${CATEGORY_BASE_PATH}/`;
+    await Bun.write(
+      path.join(directory, "index.html"),
+      categoryHtml(template, tree, page.trail, page.products, ogManifest[pagePath])
+    );
   }
   return pages.length;
 }
@@ -762,7 +775,11 @@ async function main() {
     options.outputPath,
     template,
     categoryTree,
-    validProducts.map((product) => categoryProduct(schema, product)).filter((product) => product !== null)
+    validProducts.map((product) => categoryProduct(schema, product)).filter((product) => product !== null),
+    await Bun.file(options.ogCategoriesManifestPath)
+      .json()
+      .then((value) => value as CategoryOgManifest)
+      .catch(() => ({}) as CategoryOgManifest)
   );
 
   console.log(
