@@ -85,6 +85,9 @@
 
 	afterNavigate(({ from, to, type }) => {
 		markRouterReady();
+		// Feed links baked into prerendered pages belong to the first page only; from here on
+		// each page adds its own through <svelte:head>, so drop them to avoid stale duplicates
+		document.head.querySelectorAll('link[data-prerendered]').forEach((link) => link.remove());
 		// The search belongs to the page it was typed on, so any path change other than
 		// back/forward drops it. Done after navigating so the page being left keeps its q.
 		// The initial load ('enter') has no previous page (`from.url` is null) and keeps ?q= from the link.

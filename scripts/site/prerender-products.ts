@@ -7,6 +7,7 @@ import { OG_IMAGE_WIDTH, OG_IMAGE_HEIGHT } from "../og/og";
 import {
   buildCategoryTree,
   categoryDescription,
+  categoryFeedPath,
   categorySlug,
   categoryTitle,
   CATEGORY_BASE_PATH,
@@ -29,7 +30,7 @@ type PrerenderManifest = Record<string, PrerenderManifestEntry>;
 // Bump when the page rendering logic (productHtml, minifyHtml, the SEO
 // template, ...) changes in a way that can alter existing pages without the
 // template or product data changing, forcing a full re-render.
-const RENDER_VERSION = 3;
+const RENDER_VERSION = 4;
 
 function sha256Hex(value: string): string {
   const hasher = new CryptoHasher("sha256");
@@ -397,7 +398,7 @@ function productHtml(
     `\t<link rel="canonical" href="${escapeHtml(url)}" />`,
     ...(hasPriceChange(product.priceHistory)
       ? [
-          `\t<link rel="alternate" type="application/rss+xml" title="${escapeHtml(
+          `\t<link rel="alternate" type="application/rss+xml" data-prerendered title="${escapeHtml(
             `${name} – hintamuutokset`
           )}" href="${escapeHtml(`${SITE_URL}/rss/${encodeURIComponent(id)}.xml`)}" />`
         ]
@@ -549,6 +550,13 @@ function categoryHtml(
     `\t<meta name="description" content="${escapeHtml(description)}" />`,
     `\t<meta name="keywords" content="${escapeHtml(["alko", ...trail.map((item) => item.name)].join(", "))}" />`,
     `\t<link rel="canonical" href="${escapeHtml(url)}" />`,
+    ...(node
+      ? [
+          `\t<link rel="alternate" type="application/rss+xml" data-prerendered title="${escapeHtml(
+            `${name} – uutuudet ja hinnanmuutokset`
+          )}" href="${escapeHtml(`${SITE_URL}${categoryFeedPath(trail[0].slug, trail[1]?.slug)}.xml`)}" />`
+        ]
+      : []),
     `\t<meta property="og:type" content="website" />`,
     `\t<meta property="og:title" content="${escapeHtml(title)}" />`,
     `\t<meta property="og:url" content="${escapeHtml(url)}" />`,

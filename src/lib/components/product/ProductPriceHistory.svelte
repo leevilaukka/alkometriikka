@@ -7,6 +7,7 @@
 	import type { PriceHistoryEntry, PriceListItem } from '$lib/types';
 	import type { ChartConfiguration } from 'chart.js';
 	import ChartCard from '../widgets/ChartCard.svelte';
+	import Icon from '../widgets/Icon.svelte';
 	import { components } from '$lib/utils/styles';
 	import { twMerge } from 'tailwind-merge';
 	import { dev } from '$app/environment';
@@ -24,6 +25,12 @@
 	let selectedRange: RangeKey = $state('kaikki');
 
 	const fullHistory = $derived(product[AllColumns.History] ?? []);
+	// Same rule as scripts/site/rss.ts: a product gets a feed once its price has changed
+	const feedHref = $derived(
+		fullHistory.some((entry, index) => index > 0 && entry.price !== fullHistory[index - 1].price)
+			? `/rss/${encodeURIComponent(product[AllColumns.Number])}.xml`
+			: undefined
+	);
 	const filteredHistory = $derived.by(() => {
 		const range = ranges.find((r) => r.key === selectedRange);
 		if (!range || range.days === null) return fullHistory;
@@ -49,8 +56,14 @@
 		let run: { start: string; end: string } | null = null;
 		history.forEach((entry) => {
 			if (isSaleEntry(entry)) {
-				if (!run) run = { start: entry.date, end: entry.date };
-				else run.end = entry.date;
+				// The point may be recorded before the campaign starts, so prefer the real start date.
+				if (!run) {
+					const start =
+						entry.campaignStart && entry.campaignStart > entry.date
+							? entry.campaignStart
+							: entry.date;
+					run = { start, end: entry.date };
+				} else run.end = entry.date;
 				if (entry.campaignStart && entry.campaignStart < run.start) run.start = entry.campaignStart;
 				if (entry.campaignEnd && entry.campaignEnd > run.end) run.end = entry.campaignEnd;
 			} else if (run) {
@@ -197,23 +210,47 @@
 	});
 </script>
 
+<svelte:head>
+	{#if feedHref}
+		<link
+			rel="alternate"
+			type="application/rss+xml"
+			title={`${product[AllColumns.Name]} – hintamuutokset`}
+			href={feedHref}
+		/>
+	{/if}
+</svelte:head>
+
 {#if dev || fullHistory.length > 1}
 	<div class={_class}>
 		<ChartCard title="Hintahistoria" {config}>
 			{#snippet headerEnd()}
-				<div class="flex overflow-hidden rounded border border-primary bg-primary">
-					{#each ranges as range (range.key)}
-						<button
-							type="button"
-							class={twMerge(
-								'px-2.5 py-1 text-sm',
-								selectedRange === range.key ? 'bg-secondary font-bold' : 'hover:bg-secondary'
-							)}
-							onclick={() => (selectedRange = range.key)}
+				<div class="flex items-center gap-2">
+					{#if feedHref}
+						<a
+							href={feedHref}
+							class="flex items-center gap-1 rounded px-1.5 py-1 text-sm text-secondary hover:bg-primary"
+							title="Tilaa tuotteen hinnanmuutokset RSS-syötteenä"
+							aria-label="Tilaa tuotteen hinnanmuutokset RSS-syötteenä"
 						>
-							{range.label}
-						</button>
-					{/each}
+							<Icon name="rss" />
+							<span class="hidden sm:inline">RSS</span>
+						</a>
+					{/if}
+					<div class="flex overflow-hidden rounded border border-primary bg-primary">
+						{#each ranges as range (range.key)}
+							<button
+								type="button"
+								class={twMerge(
+									'px-2.5 py-1 text-sm',
+									selectedRange === range.key ? 'bg-secondary font-bold' : 'hover:bg-secondary'
+								)}
+								onclick={() => (selectedRange = range.key)}
+							>
+								{range.label}
+							</button>
+						{/each}
+					</div>
 				</div>
 			{/snippet}
 		</ChartCard>
