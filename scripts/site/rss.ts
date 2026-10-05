@@ -332,25 +332,16 @@ async function writePerProductFeeds(
 			link: feed[0]?.link ?? `${SITE_URL}/tuotteet/${encodeURIComponent(productId)}/`,
 			selfUrl: `${SITE_URL}/rss/${encodeURIComponent(productId)}.xml`
 		};
-		await Promise.all([
-			Bun.write(
-				path.join(RSS_DIR, `${productId}.xml`),
-				generateRssXml(feed, channel, lastBuildDateISO)
-			),
-			Bun.write(
-				path.join(RSS_DIR, `${productId}.json`),
-				generateJsonFeed(feed, {
-					...channel,
-					selfUrl: `${SITE_URL}/rss/${encodeURIComponent(productId)}.json`
-				})
-			)
-		]);
+		await Bun.write(
+			path.join(RSS_DIR, `${productId}.xml`),
+			generateRssXml(feed, channel, lastBuildDateISO)
+		);
 		writtenIds.add(productId);
 	}
 
 	// Prune stale per-product feeds for products that dropped out of the
 	// dataset, so an old feed never lingers on the deployed site.
-	const expected = new Set([...writtenIds].flatMap((id) => [`${id}.xml`, `${id}.json`]));
+	const expected = new Set([...writtenIds].map((id) => `${id}.xml`));
 	let existing: string[] = [];
 	try {
 		existing = await readdir(RSS_DIR);
@@ -415,7 +406,7 @@ async function main() {
 
 	console.log(
 		`RSS: aggregate ${aggregate.length} of ${totalChanges} price changes + ${newItems.length} new products → ${RSS_AGGREGATE_PATH}+${FEED_AGGREGATE_PATH}; ` +
-			`${productFeedCount} per-product feeds (xml+json) → ${RSS_DIR}/`
+			`${productFeedCount} per-product feeds (xml) → ${RSS_DIR}/`
 	);
 }
 
