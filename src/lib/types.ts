@@ -207,6 +207,7 @@ export type AnalyticsEventMap = {
 		city?: string;
 		action?: 'set' | 'change';
 	};
+	store_compass_opened: { storeId: string; storeName: string };
 	show_availability: { product_number?: string; [key: string]: any };
 	daily_feedback: {
 		date: string;

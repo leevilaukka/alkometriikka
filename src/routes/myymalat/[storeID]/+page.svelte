@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Icon from '$lib/components/widgets/Icon.svelte';
+	import StoreCompass from '$lib/components/widgets/StoreCompass.svelte';
 	import { preferredStoreId } from '$lib/global.svelte';
 	import type { AvailabilityStore } from '$lib/types';
 	import { getStoreCity, isStoreOpen } from '$lib/utils/availability.js';
@@ -125,6 +126,7 @@
 				<Icon name="link_external" />
 			</a>
 		</div>
+		<StoreCompass {store} />
 		<a
 				href={`/?${AllColumns.StoreAvailability}=${encodeURIComponent(store.name)}`}
 				class={twMerge(components.button({ size: 'md' }), 'w-full px-5 py-3 text-xl')}
