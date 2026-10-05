@@ -5,6 +5,7 @@
 	import { version } from '$app/environment';
 	import { timeConfig } from '$lib/utils/constants';
 	import SiteFeedback from './SiteFeedback.svelte';
+	import { sendAnalyticsEvent } from '$lib/utils/helpers';
 	const { alko, dialogElement, githubRepoBase, githubFileBase, gitCommitHash } = $props();
 </script>
 
@@ -36,7 +37,7 @@
 					<a href="mailto:contact@alkometriikka.fi">contact@alkometriikka.fi</a>.
 				</p>
 				<p>
-					Voit tilata hintamuutos- ja uutuustuotetiedot <a href="https://alkometriikka.fi/rss.xml" target="_blank">RSS-</a> tai <a href="https://alkometriikka.fi/feed.json" target="_blank">JSON-syötteen</a> kautta.
+					Voit tilata hintamuutos- ja uutuustuotetiedot <a href="https://alkometriikka.fi/rss.xml" target="_blank" onclick={() => sendAnalyticsEvent('click_feed', { feed: 'site', location: 'info_text' })}>RSS-</a> tai <a href="https://alkometriikka.fi/feed.json" target="_blank" onclick={() => sendAnalyticsEvent('click_feed', { feed: 'json', location: 'info_text' })}>JSON-syötteen</a> kautta.
 				</p>
 				<details>
 					<summary class="cursor-pointer">Tietolähteet</summary>
@@ -82,6 +83,7 @@
 					<a
 						href="https://alkometriikka.fi/rss.xml"
 						target="_blank"
+						onclick={() => sendAnalyticsEvent('click_feed', { feed: 'site', location: 'info_button' })}
 						class={twMerge(components.button(), "rounded-e-none")}
 					>
 						<Icon name="rss" class="inline-block" />
@@ -90,6 +92,7 @@
 					<a
 						href="https://alkometriikka.fi/feed.json"
 						target="_blank"
+						onclick={() => sendAnalyticsEvent('click_feed', { feed: 'json', location: 'info_button' })}
 						class={twMerge(components.button(), "rounded-s-none border-s-0")}
 					>
 						<Icon name="bracket_curly" class="inline-block" />

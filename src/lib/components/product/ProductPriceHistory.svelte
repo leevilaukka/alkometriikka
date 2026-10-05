@@ -233,6 +233,7 @@
 					{#if feedHref}
 						<a
 							href={feedHref}
+							onclick={() => sendAnalyticsEvent('click_feed', { feed: 'product', location: 'price_history' })}
 							class="flex items-center gap-1 rounded px-1.5 py-1 text-sm text-secondary hover:bg-primary"
 							title="Tilaa tuotteen hinnanmuutokset RSS-syötteenä"
 							aria-label="Tilaa tuotteen hinnanmuutokset RSS-syötteenä"

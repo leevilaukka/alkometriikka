@@ -170,6 +170,8 @@ type Shares = {[K in ShareEvent | ShareViewEvent]: ShareState};
 export type GameTypes = "daily" | "unlimited" | "archive";
 type GameKeys = `${GameTypes}_game`;
 
+type RSSFeed = 'site' | 'category' | 'product' | 'json'
+
 type GameState =
 	| {
 			state: 'started';
@@ -222,6 +224,7 @@ export type AnalyticsEventMap = {
 		ui_bug: boolean;
 		other: boolean;
 	};
+	click_feed: { feed: RSSFeed; location: string };
 	site_feedback: {
 		path: string;
 		version: string;

@@ -5,7 +5,7 @@
 	import type { AvailabilityData } from '$lib/types';
 	import { AllColumns, AUTO_STORE_ID, ContextKeys } from '$lib/utils/constants';
 	import { categoryFeedPath, categoryTitle, type CategoryNode } from '$lib/utils/categories';
-	import { generateTitle, setSEO } from '$lib/utils/helpers';
+	import { generateTitle, sendAnalyticsEvent, setSEO } from '$lib/utils/helpers';
 	import { recentPriceChanges } from '$lib/utils/metrics';
 	import {
 		countPriceChangesByCategory,
@@ -233,6 +233,7 @@
 					<a
 						href={`${categoryFeedPath(typeNode.slug, subTypeNode?.slug)}.xml`}
 						class="group flex items-center gap-1"
+						onclick={() => sendAnalyticsEvent('click_feed', { feed: 'category', location: 'price_changes' })}
 						title="Tilaa kategorian uutuudet ja hinnanmuutokset RSS-syötteenä"
 					>
 						<Icon name="rss" />
@@ -242,6 +243,7 @@
 				<a
 					href={SITE_FEED}
 					class="group flex items-center gap-1"
+					onclick={() => sendAnalyticsEvent('click_feed', { feed: 'site', location: 'price_changes' })}
 					title="Tilaa koko valikoiman uutuudet ja hinnanmuutokset RSS-syötteenä"
 				>
 					<Icon name="rss" />

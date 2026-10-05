@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { PriceListItem } from '$lib/types';
+	import { sendAnalyticsEvent } from '$lib/utils/helpers';
 	import { recentPriceChanges } from '$lib/utils/metrics';
 	import { isPriceDrop, priceChangeSince } from '$lib/utils/priceChanges';
 	import Icon from '../widgets/Icon.svelte';
@@ -19,6 +20,7 @@
 		<h2 class="text-sm font-bold">Hinnanmuutokset ({WINDOW_DAYS} pv)</h2>
 		<a
 			href={feedHref}
+			onclick={() => sendAnalyticsEvent('click_feed', { feed: 'category', location: 'category_page' })}
 			class="group flex items-center gap-1 text-xs text-secondary"
 			title="Tilaa kategorian uutuudet ja hinnanmuutokset RSS-syötteenä"
 		>
