@@ -88,15 +88,15 @@
 		<p class="text-sm text-secondary">
 			{products.length}/{MAX_COMPARE_PRODUCTS} tuotetta vertailussa. Kunkin rivin paras arvo on korostettu, kun mahdollista.
 		</p>
-		<div class="overflow-x-auto rounded border border-primary">
+		<div class="max-h-[calc(100dvh-8rem)] overflow-auto rounded border border-primary">
 			<div
-				class="grid w-fit min-w-full"
-				style={`grid-template-columns: 160px repeat(${products.length}, minmax(220px, 1fr));`}
+				class="grid w-fit min-w-full text-sm md:text-base [--cw:140px] [--lw:84px] md:[--cw:220px] md:[--lw:160px]"
+				style={`grid-template-columns: var(--lw) repeat(${products.length}, minmax(var(--cw), 1fr));`}
 			>
 				<!-- Header row: product image, name, remove -->
-				<div class="sticky left-0 z-10 border-b border-primary bg-secondary p-3"></div>
+				<div class="sticky top-0 left-0 z-30 border-b border-primary bg-secondary p-2 md:p-3"></div>
 				{#each products as product (product[AllColumns.Number])}
-					<div class="relative flex flex-col items-center gap-2 border-b border-s border-primary bg-primary p-3">
+					<div class="sticky top-0 z-20 flex flex-col items-center gap-2 border-b border-s border-primary bg-primary p-2 md:p-3">
 						<button
 							aria-label={`Poista ${product[AllColumns.Name]} vertailusta`}
 							onclick={() => handleRemove(product[AllColumns.Number])}
@@ -104,13 +104,13 @@
 						>
 							<Icon name="x" />
 						</button>
-						<div class="flex aspect-square w-24 shrink-0 rounded bg-white p-1.5">
+						<div class="flex aspect-square w-16 md:w-24 shrink-0 rounded bg-white p-1.5">
 							<ProductImage number={product[AllColumns.Number]} name={product[AllColumns.Name]} />
 						</div>
-						<a href={`/tuotteet/${product[AllColumns.Number]}/`} class="text-center font-bold hover:underline">
+						<a href={`/tuotteet/${product[AllColumns.Number]}/`} class="text-center text-sm font-bold hover:underline md:text-base">
 							{product[AllColumns.Name]}
 						</a>
-						<span class="text-center text-sm text-secondary">
+						<span class="text-center text-xs text-secondary md:text-sm">
 							{product[AllColumns.Manufacturer]}
 						</span>
 						<div class="flex flex-row flex-wrap items-center justify-center gap-1.5">
@@ -120,7 +120,7 @@
 				{/each}
 
 				<!-- Price row -->
-				<div class="sticky left-0 z-10 flex items-center border-b border-primary bg-secondary p-3 text-sm text-secondary">
+				<div class="sticky left-0 z-10 flex items-center border-b border-primary bg-secondary p-2 md:p-3 text-xs md:text-sm text-secondary wrap-anywhere">
 					Hinta
 				</div>
 				{#each products as product (product[AllColumns.Number])}
@@ -133,7 +133,7 @@
 					{@const isBest = bestPrice.has(product[AllColumns.Number])}
 					<div
 						class={twMerge(
-							'flex flex-col items-center gap-0.5 border-b border-s border-primary p-3',
+							'flex flex-col items-center gap-0.5 border-b border-s border-primary p-2 md:p-3',
 							isBest && 'bg-green-50 dark:bg-green-950'
 						)}
 					>
@@ -143,7 +143,7 @@
 									{formatValue(sale.normalPrice, AllColumns.NormalPrice)}
 								</span>
 							{/if}
-							<strong class="text-xl">{formatValue(product[AllColumns.Price], AllColumns.Price)}</strong>
+							<strong class="text-lg md:text-xl">{formatValue(product[AllColumns.Price], AllColumns.Price)}</strong>
 						</div>
 						{#if isBest}
 							<span class={twMerge(components.badge({ color: 'green' }), 'w-fit')}>Halvin</span>
@@ -152,14 +152,14 @@
 				{/each}
 
 				<!-- Price per liter row -->
-				<div class="sticky left-0 z-10 flex items-center border-b border-primary bg-secondary p-3 text-sm text-secondary">
+				<div class="sticky left-0 z-10 flex items-center border-b border-primary bg-secondary p-2 md:p-3 text-xs md:text-sm text-secondary wrap-anywhere">
 					Litrahinta
 				</div>
 				{#each products as product (product[AllColumns.Number])}
 					{@const isBest = bestPricePerLiter.has(product[AllColumns.Number])}
 					<div
 						class={twMerge(
-							'flex flex-col items-center gap-0.5 border-b border-s border-primary p-3',
+							'flex flex-col items-center gap-0.5 border-b border-s border-primary p-2 md:p-3',
 							isBest && 'bg-green-50 dark:bg-green-950'
 						)}
 					>
@@ -171,34 +171,34 @@
 				{/each}
 
 				<!-- Bottle size row -->
-				<div class="sticky left-0 z-10 flex items-center border-b border-primary bg-secondary p-3 text-sm text-secondary">
+				<div class="sticky left-0 z-10 flex items-center border-b border-primary bg-secondary p-2 md:p-3 text-xs md:text-sm text-secondary wrap-anywhere">
 					Pakkauskoko
 				</div>
 				{#each products as product (product[AllColumns.Number])}
-					<div class="flex items-center justify-center border-b border-s border-primary p-3">
+					<div class="flex items-center justify-center border-b border-s border-primary p-2 md:p-3">
 						{formatValue(product[AllColumns.BottleSize], AllColumns.BottleSize)}
 					</div>
 				{/each}
 
 				<!-- Alcohol percentage row -->
-				<div class="sticky left-0 z-10 flex items-center border-b border-primary bg-secondary p-3 text-sm text-secondary">
+				<div class="sticky left-0 z-10 flex items-center border-b border-primary bg-secondary p-2 md:p-3 text-xs md:text-sm text-secondary wrap-anywhere">
 					Alkoholi
 				</div>
 				{#each products as product (product[AllColumns.Number])}
-					<div class="flex items-center justify-center border-b border-s border-primary p-3">
+					<div class="flex items-center justify-center border-b border-s border-primary p-2 md:p-3">
 						{formatValue(product[AllColumns.AlcoholPercentage], AllColumns.AlcoholPercentage)}
 					</div>
 				{/each}
 
 				<!-- Remaining rows generated from the full dataset -->
 				{#each rows as row (row.key)}
-					<div class="sticky left-0 z-10 flex items-center border-b border-primary bg-secondary p-3 text-sm text-secondary">
+					<div class="sticky left-0 z-10 flex items-center border-b border-primary bg-secondary p-2 md:p-3 text-xs md:text-sm text-secondary wrap-anywhere">
 						{row.label}
 					</div>
 					{#each row.cells as cell (cell.product[AllColumns.Number])}
 						<div
 							class={twMerge(
-								'flex items-center justify-center border-b border-s border-primary p-3 text-center text-wrap-pretty',
+								'flex items-center justify-center border-b border-s border-primary p-2 md:p-3 text-center text-wrap-pretty',
 								cell.isBest && 'bg-green-50 dark:bg-green-950'
 							)}
 						>
