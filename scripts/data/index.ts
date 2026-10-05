@@ -216,12 +216,19 @@ const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
  * captured. Returns `null` when the product is not on sale.
  */
 function salesInfoFromValues(values: unknown[]): SaleInfo | null {
-	return getSaleInfo({
+	const item = {
 		price: values[HINTA_INDEX],
 		normalPrice: values[NORMAL_PRICE_INDEX],
 		campaignStart: values[CAMPAIGN_START_INDEX],
 		campaignEnd: values[CAMPAIGN_END_INDEX]
-	});
+	};
+	// A campaign that hasn't started yet isn't "active", but the price point
+	// recorded now is the only one we get: nothing re-fetches the product when
+	// the start date arrives. Evaluate it as of its start date so the campaign
+	// window is stored with the point.
+	const start = typeof item.campaignStart === 'string' ? item.campaignStart.trim() : '';
+	const today = new Date().toISOString().slice(0, 10);
+	return getSaleInfo(item, start > today ? start : undefined);
 }
 
 /**
