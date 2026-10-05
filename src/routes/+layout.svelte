@@ -136,6 +136,10 @@
 		icon: 'wine',
 		name: 'Kategoriat'
 	}, {
+		href: '/hinnanmuutokset',
+		icon: 'trending_down',
+		name: 'Hinnanmuutokset'
+	}, {
 		href: '/myymalat',
 		icon: 'store',
 		name: 'Myymälät'

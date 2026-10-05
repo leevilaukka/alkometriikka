@@ -74,6 +74,8 @@ async function main() {
         priority: 0.7,
         changeFreq: "weekly"
     });
+    // Lists recent price changes across the selection, so it changes with the newest one
+    sitemapEntries.push({ loc: "/hinnanmuutokset", lastMod: categoryLastMod.get(""), priority: 0.6, changeFreq: "daily" });
     for (const type of categoryTree) {
         sitemapEntries.push({ loc: type.path, lastMod: categoryLastMod.get(type.slug), priority: 0.8, changeFreq: "daily" });
         for (const subType of type.children) {
