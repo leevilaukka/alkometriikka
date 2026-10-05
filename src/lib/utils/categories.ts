@@ -37,6 +37,16 @@ export function categoryPath(typeSlug: string, subTypeSlug?: string): string {
 		: `${CATEGORY_BASE_PATH}/${typeSlug}/`;
 }
 
+/** Directory of the per-category RSS feeds, relative to the site root. */
+export const CATEGORY_FEED_DIR = 'rss/kategoriat';
+
+/** Site path of a category's RSS feed, without the `.xml` extension. */
+export function categoryFeedPath(typeSlug: string, subTypeSlug?: string): string {
+	return subTypeSlug
+		? `/${CATEGORY_FEED_DIR}/${typeSlug}/${subTypeSlug}`
+		: `/${CATEGORY_FEED_DIR}/${typeSlug}`;
+}
+
 function asName(value: unknown): string {
 	return typeof value === 'string' ? value.trim() : '';
 }

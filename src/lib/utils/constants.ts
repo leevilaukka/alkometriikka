@@ -299,6 +299,7 @@ export const filterRenameMap = {
 export const LocalStorageKeys = {
 	PersonalInfo: 'personal_info',
 	PreferredStore: 'preferred_store',
+	OnlyPreferredStore: 'only_preferred_store',
 	Lists: 'lists',
 	ListsVersion: 'lists_version',
 	AppVersion: 'app_version',

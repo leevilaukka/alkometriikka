@@ -2,7 +2,7 @@
 	import '../app.css';
 	import { dev } from '$app/environment';
 	import { ContextKeys, LocalStorageKeys } from '$lib/utils/constants';
-	import { compareProductIds, isMobile, isLaptop, lists, pageBottomBar, personalInfo, preferredStoreId, searchQuery, theme } from '$lib/global.svelte';
+	import { compareProductIds, isMobile, isLaptop, lists, onlyPreferredStore, pageBottomBar, personalInfo, preferredStoreId, searchQuery, theme } from '$lib/global.svelte';
 	import logo from '$lib/assets/images/Logo/0.5x/Logo_rounded@0.5x.png';
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/styles';
@@ -35,6 +35,10 @@
 
 	$effect(() => {
 		LocalStorageManager.setItem(LocalStorageKeys.PreferredStore, $preferredStoreId);
+	});
+
+	$effect(() => {
+		LocalStorageManager.setItem(LocalStorageKeys.OnlyPreferredStore, $onlyPreferredStore);
 	});
 
 	$effect(() => {

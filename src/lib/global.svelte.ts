@@ -20,6 +20,10 @@ export let theme = writable(LocalStorageManager.getItem(LocalStorageKeys.Theme) 
 export let preferredStoreId = writable(
 	LocalStorageManager.getItem(LocalStorageKeys.PreferredStore) ?? ''
 );
+/** Category pages show only products available in the preferred store. */
+export let onlyPreferredStore = writable<boolean>(
+	LocalStorageManager.getItem(LocalStorageKeys.OnlyPreferredStore) ?? false
+);
 
 export let isMobile = writable(window.matchMedia('(width < 48rem)').matches);
 export let isLaptop = writable(window.matchMedia('(width < 1280px)').matches);

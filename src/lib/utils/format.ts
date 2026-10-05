@@ -82,3 +82,12 @@ export function formatValue(
 
 	return value;
 }
+
+/** Price per liter without decimals, e.g. "24 €/L", for compact chart labels. */
+export function formatRoundedPricePerLiter(value: number): string {
+	return String(
+		formatValue(value, AllColumns.PricePerLiter, {
+			numberFormatOptions: { minimumFractionDigits: 0, maximumFractionDigits: 0 }
+		})
+	);
+}

@@ -17,6 +17,8 @@ export type QualityMetricsResult = {
 	metrics: QualityMetric[];
 	sampleSize: number;
 	categoryLabel: string;
+	/** Median price per liter of the same peer group (product included) the percentiles use. */
+	medianPricePerLiter: number | null;
 };
 
 type MetricDefinition = {
@@ -78,7 +80,12 @@ export function computeQualityMetrics(
 	const sampleSize = peers.length;
 
 	if (sampleSize === 0) {
-		return { metrics: [], sampleSize: 0, categoryLabel: category };
+		return {
+			metrics: [],
+			sampleSize: 0,
+			categoryLabel: category,
+			medianPricePerLiter: null
+		};
 	}
 
 	const metrics = metricDefinitions.map((def) => {
@@ -99,7 +106,12 @@ export function computeQualityMetrics(
 		};
 	});
 
-	return { metrics, sampleSize, categoryLabel: category };
+	return {
+		metrics,
+		sampleSize,
+		categoryLabel: category,
+		medianPricePerLiter: median(positiveValues([product, ...peers], AllColumns.PricePerLiter))
+	};
 }
 
 export type SimilarProductDelta = {
@@ -261,4 +273,137 @@ export function computeComparisonRows(products: PriceListItem[]): ComparisonRow[
 	}
 
 	return rows;
+}
+
+function median(values: number[]): number | null {
+	if (values.length === 0) return null;
+	const sorted = [...values].sort((a, b) => a - b);
+	const middle = Math.floor(sorted.length / 2);
+	return sorted.length % 2 ? sorted[middle] : (sorted[middle - 1] + sorted[middle]) / 2;
+}
+
+function positiveValues(products: PriceListItem[], key: ColumnNames): number[] {
+	return products.map((product) => Number(product[key])).filter((value) => Number.isFinite(value) && value > 0);
+}
+
+export type HistogramBin = { from: number; to: number; count: number };
+
+/**
+ * Splits `values` into `binCount` equal-width bins between the 5th and 95th
+ * percentile, so a few extreme bottles don't flatten the rest into one bar.
+ * Values outside that range are counted in the first or last bin.
+ */
+export function histogram(values: number[], binCount = 10): HistogramBin[] {
+	if (values.length === 0) return [];
+	const sorted = [...values].sort((a, b) => a - b);
+	const min = sorted[Math.floor((sorted.length - 1) * 0.05)];
+	const max = sorted[Math.ceil((sorted.length - 1) * 0.95)];
+	if (max <= min) return [{ from: min, to: max, count: values.length }];
+
+	const width = (max - min) / binCount;
+	const bins = Array.from({ length: binCount }, (_, index) => ({
+		from: min + index * width,
+		to: min + (index + 1) * width,
+		count: 0
+	}));
+	for (const value of sorted) {
+		const index = Math.min(binCount - 1, Math.max(0, Math.floor((value - min) / width)));
+		bins[index].count += 1;
+	}
+	return bins;
+}
+
+/** Index of the bin `value` falls in, with values outside the range clamped to the edge bins. */
+export function histogramBinIndex(bins: HistogramBin[], value: number): number {
+	if (bins.length === 0) return -1;
+	const index = bins.findIndex((bin) => value < bin.to);
+	return index === -1 ? bins.length - 1 : index;
+}
+
+export type CategoryStats = {
+	medianPrice: number | null;
+	medianPricePerLiter: number | null;
+	medianAlcoholPercentage: number | null;
+	medianAlcoholGramsPerEuro: number | null;
+	pricePerLiterHistogram: HistogramBin[];
+};
+
+/** Medians and the price-per-liter spread of a category's products. */
+export function computeCategoryStats(products: PriceListItem[]): CategoryStats {
+	const pricePerLiter = positiveValues(products, AllColumns.PricePerLiter);
+	return {
+		medianPrice: median(positiveValues(products, AllColumns.Price)),
+		medianPricePerLiter: median(pricePerLiter),
+		medianAlcoholPercentage: median(positiveValues(products, AllColumns.AlcoholPercentage)),
+		medianAlcoholGramsPerEuro: median(positiveValues(products, AllColumns.AlcoholGramsPerEuro)),
+		pricePerLiterHistogram: histogram(pricePerLiter)
+	};
+}
+
+export type PriceChange = {
+	product: PriceListItem;
+	date: string;
+	from: number;
+	to: number;
+	percent: number;
+	/** The new price is a campaign price below the normal price. */
+	sale: boolean;
+};
+
+/**
+ * Each product's latest price change on or after `since` (YYYY-MM-DD),
+ * newest first. Products without a change in that window are left out.
+ */
+export function recentPriceChanges(products: PriceListItem[], since: string): PriceChange[] {
+	const changes: PriceChange[] = [];
+	for (const product of products) {
+		const history = product[AllColumns.History] ?? [];
+		for (let index = history.length - 1; index > 0; index -= 1) {
+			const current = history[index];
+			if (current.date < since) break;
+			const previous = history[index - 1];
+			if (previous.price === current.price || !previous.price) continue;
+			changes.push({
+				product,
+				date: current.date,
+				from: previous.price,
+				to: current.price,
+				percent: ((current.price - previous.price) / previous.price) * 100,
+				sale: current.normalPrice != null && current.price < current.normalPrice
+			});
+			break;
+		}
+	}
+	return changes.sort(
+		(a, b) => b.date.localeCompare(a.date) || a.percent - b.percent
+	);
+}
+
+/**
+ * A handful of a category's standout products for the comparison view: the
+ * most alcohol per euro, the cheapest and the lowest price per liter, topped
+ * up with the next best by alcohol per euro.
+ */
+export function pickCategoryHighlights(products: PriceListItem[], limit: number): PriceListItem[] {
+	const valid = products.filter((product) => Number(product[AllColumns.Price]) > 0);
+	const byAlcoholPerEuro = [...valid].sort(
+		(a, b) => b[AllColumns.AlcoholGramsPerEuro] - a[AllColumns.AlcoholGramsPerEuro]
+	);
+	const lowest = (key: ColumnNames) =>
+		valid.reduce<PriceListItem | undefined>(
+			(best, product) => (!best || Number(product[key]) < Number(best[key]) ? product : best),
+			undefined
+		);
+
+	const picks = new Map<string, PriceListItem>();
+	for (const product of [
+		byAlcoholPerEuro[0],
+		lowest(AllColumns.Price),
+		lowest(AllColumns.PricePerLiter),
+		...byAlcoholPerEuro.slice(1)
+	]) {
+		if (picks.size >= limit) break;
+		if (product) picks.set(product[AllColumns.Number], product);
+	}
+	return [...picks.values()];
 }
