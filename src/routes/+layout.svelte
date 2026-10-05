@@ -2,7 +2,7 @@
 	import '../app.css';
 	import { dev } from '$app/environment';
 	import { ContextKeys, LocalStorageKeys } from '$lib/utils/constants';
-	import { compareProductIds, isMobile, isLaptop, lists, personalInfo, preferredStoreId, searchQuery, theme } from '$lib/global.svelte';
+	import { compareProductIds, isMobile, isLaptop, lists, pageBottomBar, personalInfo, preferredStoreId, searchQuery, theme } from '$lib/global.svelte';
 	import logo from '$lib/assets/images/Logo/0.5x/Logo_rounded@0.5x.png';
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/styles';
@@ -14,7 +14,6 @@
 	import { setContext } from 'svelte';
 	import Settings from '$lib/components/widgets/Settings/Index.svelte';
 	import CompareBar from '$lib/components/widgets/CompareBar.svelte';
-	import ProductMobileCta from '$lib/components/product/ProductMobileCta.svelte';
 	import { LocalStorageManager } from '$lib/utils/storage';
 	import type { IconName } from '$lib/icons';
 
@@ -230,13 +229,8 @@
 		{#if page.route.id !== '/vertailu'}
 			<CompareBar kaljakori={alko.kaljakori} />
 		{/if}
-		{#if page.route.id === '/tuotteet/[...id]'}
-			{@const productId = page.params.id?.split('/')[0]}
-			{@const product = productId ? alko.kaljakori.findById(productId) : undefined}
-			{#if product}
-				<ProductMobileCta {product} class="lg:hidden" />
-			{/if}
-		{/if}
+		<!-- Pages hand their mobile action bar here (see pageBottomBar) so it sits below the compare bar -->
+		{@render pageBottomBar.snippet?.()}
 	</div>
 {:catch error}
 	{shiftLoader()}

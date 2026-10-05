@@ -20,13 +20,15 @@
 	import Popup from '../widgets/Popup.svelte';
 	import AllLists from '../widgets/AllLists.svelte';
 	import { addToList } from '$lib/utils/lists';
-	import { isLaptop, isMobile, searchQuery } from '$lib/global.svelte';
+	import { isLaptop, isMobile, pageBottomBar, searchQuery } from '$lib/global.svelte';
 	import Filters from '../widgets/Filters.svelte';
 	import { initFilterValues } from '$lib/utils/filters';
 	import { page } from '$app/state';
 	import { getContext, onMount, untrack, type Snippet } from 'svelte';
 	import type { SearchParamsManager } from '$lib/utils/url';
 	import ProductPreview from '../widgets/ProductPreview.svelte';
+	import BottomBar from '../widgets/BottomBar.svelte';
+	import FilterButton from '../widgets/FilterButton.svelte';
 
 	const {
 		kaljakori,
@@ -100,7 +102,23 @@
 		asc !== !!defaultSortingOrderMap[selectedSortingColumn as keyof typeof defaultSortingOrderMap] ? searchParamsManager.setParameter('asc', String(asc)) : searchParamsManager.setParameter('asc', "");
 		searchParamsManager.update();
 	});
+
+	// On phones the filter toggle lives in a bottom bar, next to where the filter dialog's own
+	// close and clear buttons are, instead of above the list
+	$effect(() => {
+		if (!$isMobile || !showFilters) return;
+		pageBottomBar.snippet = filterBar;
+		return () => {
+			if (pageBottomBar.snippet === filterBar) pageBottomBar.snippet = undefined;
+		};
+	});
 </script>
+
+{#snippet filterBar()}
+	<BottomBar class="md:hidden">
+		<FilterButton activeCount={activeFilters.length} onclick={() => filtersComponent?.toggleFilterElement()} />
+	</BottomBar>
+{/snippet}
 
 <div class={twMerge('relative grid h-full max-h-full overflow-hidden', showFilters ? 'grid-cols-[auto_1fr]' : 'bg-secondary', !showFilters && (sidebarHeader ? 'grid-cols-[20rem_1fr]' : 'grid-cols-1'))}>
 	{#if sidebarHeader}
@@ -184,19 +202,6 @@
 						{/each}
 					</select>
 				</div>
-				{#if $isMobile && showFilters}
-					<button
-						onclick={() => {
-							filtersComponent?.toggleFilterElement();
-						}}
-						aria-haspopup="dialog"
-						class={twMerge(components.button(), 'col-span-full w-full')}
-					>
-						<span>Näytä suodattimet {activeFilters.length > 0 ? `(${activeFilters.length} valittu)` : ""}</span>
-					
-						<Icon name={'filter'} />
-					</button>
-				{/if}
 			</div>
 		</div>
 		<div class="flex flex-row flex-wrap items-center justify-between gap-2">
@@ -211,7 +216,7 @@
 				<span>{$isMobile ? 'Alkuun' : 'Hyppää alkuun'}</span>
 			</button>
 		</div>
-		<div class="flex flex-auto flex-col">
+		<div class="flex min-h-0 flex-auto flex-col">
 			<SvelteVirtualList items={rows} bind:this={listRef} itemsClass={'flex flex-col gap-3'}>
 				{#snippet renderItem(item, idx: number)}
 					<ProductPreview product={item} highlight={selectedHighlight} {kaljakori} highlightMax={highlightMax}>

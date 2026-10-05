@@ -10,6 +10,7 @@
 	import Popup from '../widgets/Popup.svelte';
 	import AllLists from '../widgets/AllLists.svelte';
 	import { twMerge } from 'tailwind-merge';
+	import BottomBar from '../widgets/BottomBar.svelte';
 
 	const { product, class: _class = '' }: { product: PriceListItem; class?: string } = $props();
 
@@ -22,12 +23,7 @@
 	}
 </script>
 
-<div
-	class={twMerge(
-		'flex items-center gap-2.5 border-t border-primary bg-primary px-4 py-2.5 shadow-[0_-4px_12px_rgba(0,0,0,0.06)]',
-		_class
-	)}
->
+<BottomBar class={_class}>
 	<div class="flex shrink-0 flex-col">
 		<strong class="text-lg leading-tight">{formatValue(product[AllColumns.Price], AllColumns.Price)}</strong>
 		<span class="text-xs text-secondary">
@@ -77,4 +73,4 @@
 			/>
 		{/snippet}
 	</Popup>
-</div>
+</BottomBar>

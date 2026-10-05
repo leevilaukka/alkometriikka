@@ -29,6 +29,8 @@
 	import ProductPriceHistory from '../product/ProductPriceHistory.svelte';
 	import ProductDetailsTable from '../product/ProductDetailsTable.svelte';
 	import ProductStoreAvailability from '../product/ProductStoreAvailability.svelte';
+	import ProductMobileCta from '../product/ProductMobileCta.svelte';
+	import { pageBottomBar } from '$lib/global.svelte';
 
 	const {
 		product,
@@ -119,7 +121,20 @@
 			keywords: `${product[AllColumns.Name]}, ${product[AllColumns.Manufacturer]}, ${product[AllColumns.Type]}, ${product[AllColumns.SubType]}, ${[...(product[AllColumns.Description] || [])].join(', ').toLocaleLowerCase()}`
 		});
 	});
+
+	// Price, compare and add-to-list bar for screens without the side price panel
+	$effect(() => {
+		if (!product) return;
+		pageBottomBar.snippet = mobileCta;
+		return () => {
+			if (pageBottomBar.snippet === mobileCta) pageBottomBar.snippet = undefined;
+		};
+	});
 </script>
+
+{#snippet mobileCta()}
+	<ProductMobileCta {product} class="lg:hidden" />
+{/snippet}
 
 <svelte:head>
 	<title>{generateTitle(`${product[AllColumns.Name]}`)}</title>

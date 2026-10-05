@@ -1,3 +1,4 @@
+import type { Snippet } from 'svelte';
 import { writable } from 'svelte/store';
 import { LocalStorageKeys } from './utils/constants';
 import { LocalStorageManager } from './utils/storage';
@@ -9,6 +10,9 @@ export let lists = $state(LocalStorageManager.getItem(LocalStorageKeys.Lists) ||
 export let compareProductIds = $state<string[]>(
 	LocalStorageManager.getItem(LocalStorageKeys.CompareProducts) || []
 );
+
+/** A page's mobile action bar, rendered by the layout at the very bottom like the product page's. */
+export const pageBottomBar = $state<{ snippet?: Snippet }>({});
 
 export let searchQuery = writable(new URLSearchParams(location.search).get('q') || '');
 
