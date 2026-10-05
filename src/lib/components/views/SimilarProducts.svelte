@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { findSimilarProducts } from '$lib/utils/filters';
+	import { findSimilarProducts, SIMILAR_PRODUCT_COLUMNS } from '$lib/utils/filters';
 	import SvelteVirtualList from '@humanspeak/svelte-virtual-list';
 	import ProductPreview from '../widgets/ProductPreview.svelte';
 	import { twMerge } from 'tailwind-merge';
@@ -30,18 +30,7 @@
 		findSimilarProducts(
 			product,
 			kaljakori,
-			new Set([
-				AllColumns.Type,
-				AllColumns.SubType,
-				AllColumns.BeerType,
-				AllColumns.Price,
-				AllColumns.BottleSize,
-				AllColumns.Sugar,
-				AllColumns.PackagingType,
-				AllColumns.AlcoholGramsPerEuro,
-				AllColumns.GrapeVarieties,
-				AllColumns.Description
-			]),
+			SIMILAR_PRODUCT_COLUMNS,
 			kaljakori.data.length
 		)
 	);

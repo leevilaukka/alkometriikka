@@ -128,10 +128,24 @@ export function generateSimilarProductsFilter(
 	);
 }
 
+/** Columns the product page and the similar-products page score similarity on. */
+export const SIMILAR_PRODUCT_COLUMNS: ReadonlySet<ColumnNames> = new Set([
+	AllColumns.Type,
+	AllColumns.SubType,
+	AllColumns.BeerType,
+	AllColumns.Price,
+	AllColumns.BottleSize,
+	AllColumns.Sugar,
+	AllColumns.PackagingType,
+	AllColumns.AlcoholGramsPerEuro,
+	AllColumns.GrapeVarieties,
+	AllColumns.Description
+]);
+
 export function findSimilarProducts(
 	product: PriceListItem,
 	kaljakori: Kaljakori,
-	restrictions: Set<ColumnNames>,
+	restrictions: ReadonlySet<ColumnNames>,
 	limit: number
 ): PriceListItem[] {
 	const scored = kaljakori.data.map((item) => {
@@ -195,12 +209,15 @@ export type SizeOption = {
 /**
  * Builds the sorted (by BottleSize asc) size-comparison list for the
  * "Pakkauskoko" size selector, including `product` itself alongside the
- * other pack sizes found by {@link findDifferentSizeOfProduct}.
+ * other pack sizes found by {@link findDifferentSizeOfProduct} that are
+ * still in the selection.
  */
 export function buildSizeOptions(product: PriceListItem, kaljakori: Kaljakori): SizeOption[] {
 	const byId = new Map<string, PriceListItem>();
 	byId.set(product[AllColumns.Number], product);
 	for (const item of findDifferentSizeOfProduct(product, kaljakori)) {
+		// Removed sizes can't be bought, so they must not be offered (or flagged as the best value)
+		if (item[AllColumns.RemovedFromSelection]) continue;
 		byId.set(item[AllColumns.Number], item);
 	}
 	const all = [...byId.values()].sort(

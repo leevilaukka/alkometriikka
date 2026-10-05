@@ -37,7 +37,11 @@
 		const cutoff = new Date();
 		cutoff.setDate(cutoff.getDate() - range.days);
 		const cutoffISO = cutoff.toISOString().slice(0, 10);
-		return fullHistory.filter((entry) => entry.date >= cutoffISO);
+		const inRange = fullHistory.filter((entry) => entry.date >= cutoffISO);
+		// Start the range with the price that was in effect at its start, so a range
+		// without recent price changes still shows the current price instead of nothing
+		const previous = fullHistory.findLast((entry) => entry.date < cutoffISO);
+		return previous ? [{ ...previous, date: cutoffISO }, ...inRange] : inRange;
 	});
 
 	function isSaleEntry(entry: PriceHistoryEntry): entry is PriceHistoryEntry & { normalPrice: number } {
@@ -241,6 +245,7 @@
 						{#each ranges as range (range.key)}
 							<button
 								type="button"
+								aria-pressed={selectedRange === range.key}
 								class={twMerge(
 									'px-2.5 py-1 text-sm',
 									selectedRange === range.key ? 'bg-secondary font-bold' : 'hover:bg-secondary'

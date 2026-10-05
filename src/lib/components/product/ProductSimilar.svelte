@@ -5,7 +5,11 @@
 	import type { PriceListItem } from '$lib/types';
 	import { computeSimilarProductDeltas, groupSimilarProductsBySubType } from '$lib/utils/metrics';
 	import { compareProductIds } from '$lib/global.svelte';
-	import { addToCompareFirst, toggleCompare, MAX_COMPARE_PRODUCTS } from '$lib/utils/compare';
+	import {
+		addToCompareWithReference,
+		removeFromCompare,
+		MAX_COMPARE_PRODUCTS
+	} from '$lib/utils/compare';
 	import ProductImage from '../widgets/ProductImage.svelte';
 	import Icon from '../widgets/Icon.svelte';
 	import { twMerge } from 'tailwind-merge';
@@ -25,16 +29,15 @@
 	const deltas = $derived(computeSimilarProductDeltas(product, filteredCandidates));
 
 	function handleToggleCompare(number: string) {
-		const wasInCompare = compareProductIds.includes(number);
-		if (!toggleCompare(number)) {
-			alert(`Voit vertailla korkeintaan ${MAX_COMPARE_PRODUCTS} tuotetta kerrallaan.`);
+		if (compareProductIds.includes(number)) {
+			removeFromCompare(number);
 			return;
 		}
 		// Selecting a candidate to compare implicitly compares it against the
-		// product currently being viewed, so make sure that product is included
-		// too - anchored first since it's the reference the deltas are shown against.
-		if (!wasInCompare && !compareProductIds.includes(product[AllColumns.Number])) {
-			addToCompareFirst(product[AllColumns.Number]);
+		// product currently being viewed, so that product goes in first - anchored
+		// as the reference the deltas are shown against - and only if both fit.
+		if (!addToCompareWithReference(product[AllColumns.Number], number)) {
+			alert(`Voit vertailla korkeintaan ${MAX_COMPARE_PRODUCTS} tuotetta kerrallaan.`);
 		}
 	}
 
@@ -46,7 +49,10 @@
 
 	function sideScroll(node: HTMLElement) {
 		function handleScroll(event: WheelEvent) {
-			if (event.deltaY == 0) return;
+			if (event.deltaY == 0 || event.deltaX != 0) return;
+			// Let the page scroll once the row can't scroll any further that way
+			const maxScroll = node.scrollWidth - node.clientWidth;
+			if (event.deltaY < 0 ? node.scrollLeft <= 0 : node.scrollLeft >= maxScroll - 1) return;
 			event.preventDefault();
 			node.scrollBy({ left: event.deltaY });
 		}
@@ -87,6 +93,7 @@
 				{#each chips as chip (chip.value ?? '__all__')}
 					<button
 						type="button"
+						aria-pressed={selectedChip === chip.value}
 						class={twMerge(
 							'flex shrink-0 items-center gap-1.5 rounded px-2.5 py-1 text-sm',
 							selectedChip === chip.value
@@ -121,7 +128,7 @@
 								<span>Paras g/€</span>
 							</span>
 						{/if}
-						<a href={`/tuotteet/${delta.product[AllColumns.Number]}/`} class="flex aspect-square w-full rounded bg-white p-1.5">
+						<a href={`/tuotteet/${delta.product[AllColumns.Number]}/`} tabindex="-1" aria-hidden="true" class="flex aspect-square w-full rounded bg-white p-1.5">
 							<ProductImage
 								number={delta.product[AllColumns.Number]}
 								name={delta.product[AllColumns.Name]}
@@ -180,6 +187,8 @@
 						</div>
 						<button
 							type="button"
+							aria-pressed={compareProductIds.includes(delta.product[AllColumns.Number])}
+							aria-label={`Vertaile: ${delta.product[AllColumns.Name]}`}
 							class={twMerge(
 								'mt-auto flex items-center justify-center gap-1.5 rounded px-2 py-1 text-sm',
 								compareProductIds.includes(delta.product[AllColumns.Number])

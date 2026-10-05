@@ -5,7 +5,8 @@ import type { PriceListItem } from '$lib/types';
 // helpers.ts pulls in browser globals and SvelteKit modules through global.svelte.ts
 mock.module('./helpers', () => ({
 	headerToDisplayName: (header: string) => header,
-	isNullish: (value: unknown) => value === null || value === undefined
+	isNullish: (value: unknown) => value === null || value === undefined,
+	sendAnalyticsEvent: () => {}
 }));
 const { computeCategoryStats, histogram, histogramBinIndex, pickCategoryHighlights, recentPriceChanges } =
 	await import('./metrics');

@@ -82,6 +82,8 @@
 								? ` (${closestAvailableDistance})`
 								: ''}
 						</span>
+					{:else if !availableInPreferredStore}
+						<span class="text-sm text-secondary">Ei saatavilla muista myymälöistä</span>
 					{/if}
 				</div>
 				<button
@@ -92,7 +94,7 @@
 					Vaihda
 				</button>
 			</div>
-			{#if !availableInPreferredStore}
+			{#if !availableInPreferredStore && closestAvailableStore}
 				<button
 					type="button"
 					class={twMerge(components.button({ size: 'sm' }), 'flex w-full items-center justify-center gap-2')}

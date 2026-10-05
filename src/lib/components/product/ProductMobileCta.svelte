@@ -33,16 +33,20 @@
 			)}
 		</span>
 	</div>
-	<a
-		href={`https://www.alko.fi/tuotteet/${product[AllColumns.Number]}`}
-		target="_blank"
-		rel="noopener noreferrer"
-		referrerpolicy="no-referrer"
-		class={twMerge(components.button({ size: 'lg' }), 'ml-auto h-11 aspect-square shrink-0')}
-		aria-label="Alkon tuotesivu"
-	>
-		<Icon name="link_external" />
-	</a>
+	{#if !product[AllColumns.RemovedFromSelection]}
+		<a
+			href={`https://www.alko.fi/tuotteet/${product[AllColumns.Number]}`}
+			target="_blank"
+			rel="noopener noreferrer"
+			referrerpolicy="no-referrer"
+			class={twMerge(components.button({ size: 'lg' }), 'ml-auto h-11 aspect-square shrink-0')}
+			aria-label="Alkon tuotesivu"
+		>
+			<Icon name="link_external" />
+		</a>
+	{:else}
+		<span class="ml-auto"></span>
+	{/if}
 	<button
 		type="button"
 		onclick={handleToggleCompare}
@@ -57,6 +61,7 @@
 			<button
 				type="button"
 				class={twMerge(components.button({ type: 'positive', size: 'lg' }), 'h-11 w-20 sm:w-full')}
+				aria-label="Lisää listaan"
 				onclick={() => dialogElement.showModal()}
 			>
 				<span class="hidden sm:inline">Lisää listaan</span>

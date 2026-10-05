@@ -34,6 +34,12 @@
 		if (detailsEl?.open && !event.composedPath().includes(detailsEl)) detailsEl.open = false;
 	}
 
+	function handleKeydown(event: KeyboardEvent) {
+		if (event.key !== 'Escape' || !detailsEl?.open) return;
+		detailsEl.open = false;
+		detailsEl.querySelector('summary')?.focus();
+	}
+
 	function handleToggle() {
 		if (detailsEl?.open) {
 			sendAnalyticsEvent('view_sizes', { product_number: product[AllColumns.Number] });
@@ -41,7 +47,7 @@
 	}
 </script>
 
-<svelte:window onclick={handleDocumentClick} />
+<svelte:window onclick={handleDocumentClick} onkeydown={handleKeydown} />
 
 {#if sizes.length > 1 && current}
 	<details bind:this={detailsEl} class={twMerge('relative', _class)} ontoggle={handleToggle}>
@@ -60,7 +66,7 @@
 			<Icon name="chevron_down" class="ml-auto shrink-0" />
 		</summary>
 		<div
-			class="absolute top-full left-0 z-20 mt-2 flex w-full min-w-72 flex-col overflow-hidden rounded border border-primary bg-primary shadow-lg"
+			class="absolute top-full left-0 z-20 mt-2 flex w-full flex-col overflow-hidden rounded border border-primary bg-primary shadow-lg"
 		>
 			{#each sizes as size, i (size.product[AllColumns.Number])}
 				{#if hasSingleAndMultiPack && size.packCount > 1 && (i === 0 || sizes[i - 1].packCount === 1)}
@@ -69,6 +75,7 @@
 				<svelte:element
 					this={size.isCurrent ? 'div' : 'a'}
 					href={size.isCurrent ? undefined : `/tuotteet/${size.product[AllColumns.Number]}/`}
+					aria-current={size.isCurrent ? 'true' : undefined}
 					class={twMerge(
 						'flex flex-wrap items-center gap-x-3 gap-y-1 border-b border-primary px-3 py-2 text-left last:border-b-0',
 						size.isCurrent ? 'bg-secondary' : 'hover:bg-secondary'
@@ -108,7 +115,7 @@
 								{formatValue(size.product[AllColumns.PricePerLiter], AllColumns.PricePerLiter)}
 							</span>
 						</span>
-						<strong class="w-14 shrink-0 text-right text-sm tabular-nums">
+						<strong class="min-w-14 shrink-0 text-right text-sm whitespace-nowrap tabular-nums">
 							{formatValue(size.product[AllColumns.Price], AllColumns.Price)}
 						</strong>
 					</span>

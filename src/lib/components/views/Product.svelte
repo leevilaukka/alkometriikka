@@ -8,7 +8,7 @@
 	import { type AvailabilityStore, type PriceListItem } from '$lib/types';
 	import { afterNavigate } from '$app/navigation';
 	import type { Kaljakori } from '$lib/alko';
-	import { buildSizeOptions, findSimilarProducts } from '$lib/utils/filters';
+	import { buildSizeOptions, findSimilarProducts, SIMILAR_PRODUCT_COLUMNS } from '$lib/utils/filters';
 	import {
 		formatStoreDistance,
 		getStoreDistance,
@@ -64,24 +64,11 @@
 	const sizeOptions = $derived(buildSizeOptions(product, kaljakori));
 	const cheapestSize = $derived(sizeOptions.find((size) => size.isBestValue));
 
+	// Removed products can't be bought, so they make no sense as alternatives here
 	const similarProducts = $derived(
-		findSimilarProducts(
-			product,
-			kaljakori,
-			new Set([
-				AllColumns.Type,
-				AllColumns.SubType,
-				AllColumns.BeerType,
-				AllColumns.Price,
-				AllColumns.BottleSize,
-				AllColumns.Sugar,
-				AllColumns.PackagingType,
-				AllColumns.AlcoholGramsPerEuro,
-				AllColumns.GrapeVarieties,
-				AllColumns.Description
-			]),
-			24
-		)
+		findSimilarProducts(product, kaljakori, SIMILAR_PRODUCT_COLUMNS, kaljakori.data.length)
+			.filter((item) => !item[AllColumns.RemovedFromSelection])
+			.slice(0, 24)
 	);
 
 	const sale = $derived(

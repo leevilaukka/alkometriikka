@@ -95,22 +95,22 @@
 		<ProductSizeHook size={cheapestSize} />
 	{/if}
 
-	<a
-		href={`https://www.alko.fi/tuotteet/${product[AllColumns.Number]}`}
-		target="_blank"
-		rel="noopener noreferrer"
-		referrerpolicy="no-referrer"
-		class={twMerge(
-			components.button({ size: 'lg' }),
-			'w-full px-4 py-2.5',
-			product[AllColumns.RemovedFromSelection] ? 'pointer-events-none opacity-50' : ''
-		)}
-	>
-		<span>{product[AllColumns.RemovedFromSelection] ? 'Poistunut valikoimasta' : 'Alkon tuotesivu'}</span>
-		{#if !product[AllColumns.RemovedFromSelection]}
+	{#if product[AllColumns.RemovedFromSelection]}
+		<span class={twMerge(components.button({ size: 'lg' }), 'w-full cursor-default px-4 py-2.5 opacity-50')}>
+			Poistunut valikoimasta
+		</span>
+	{:else}
+		<a
+			href={`https://www.alko.fi/tuotteet/${product[AllColumns.Number]}`}
+			target="_blank"
+			rel="noopener noreferrer"
+			referrerpolicy="no-referrer"
+			class={twMerge(components.button({ size: 'lg' }), 'w-full px-4 py-2.5')}
+		>
+			<span>Alkon tuotesivu</span>
 			<Icon name="link_external" />
-		{/if}
-	</a>
+		</a>
+	{/if}
 
 	<p class="text-xs text-secondary text-wrap-pretty">
 		Alkometriikka ei myy alkoholia. Tiedot päivittyvät Alkon hinnastosta.

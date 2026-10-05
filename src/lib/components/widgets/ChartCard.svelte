@@ -68,7 +68,7 @@ $effect(() => {
 </script>
 
 <section class="overflow-hidden rounded border border-primary bg-secondary">
-	<header class="flex items-center gap-3 border-b border-primary px-4 py-3">
+	<header class="flex flex-wrap items-center gap-3 border-b border-primary px-4 py-3">
 		<div class="flex flex-col gap-0.5">
 			<h2 class="text-lg font-semibold">{title}</h2>
 			{#if subtitle}<p class="text-sm text-secondary">{subtitle}</p>{/if}

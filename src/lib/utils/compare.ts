@@ -26,6 +26,21 @@ export function addToCompareFirst(id: string): boolean {
 	return true;
 }
 
+/**
+ * Adds `candidateId` to the comparison together with `referenceId`, the product it is
+ * being compared against. The reference is anchored first and added before the candidate,
+ * and nothing is added unless both fit. Returns false if the selection would overflow.
+ */
+export function addToCompareWithReference(referenceId: string, candidateId: string): boolean {
+	const missing = new Set(
+		[referenceId, candidateId].filter((id) => !compareProductIds.includes(id))
+	);
+	if (compareProductIds.length + missing.size > MAX_COMPARE_PRODUCTS) return false;
+	addToCompareFirst(referenceId);
+	addToCompare(candidateId);
+	return true;
+}
+
 export function removeFromCompare(id: string): void {
 	const index = compareProductIds.indexOf(id);
 	if (index !== -1) compareProductIds.splice(index, 1);
