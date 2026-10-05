@@ -3,15 +3,26 @@ import { AllColumns } from '$lib/utils/constants';
 import type { PriceListItem } from '$lib/types';
 
 // helpers.ts pulls in browser globals and SvelteKit modules through global.svelte.ts
-mock.module('./helpers', () => ({
+mock.module('$lib/utils/helpers', () => ({
 	headerToDisplayName: (header: string) => header,
 	isNullish: (value: unknown) => value === null || value === undefined,
 	sendAnalyticsEvent: () => {}
 }));
-const { computeCategoryStats, histogram, histogramBinIndex, pickCategoryHighlights, recentPriceChanges } =
-	await import('./metrics');
+const {
+	computeCategoryStats,
+	histogram,
+	histogramBinIndex,
+	pickCategoryHighlights,
+	recentPriceChanges
+} = await import('$lib/utils/metrics');
 
-const product = (id: string, price: number, volume: number, alcohol: number, history: unknown[] = []) =>
+const product = (
+	id: string,
+	price: number,
+	volume: number,
+	alcohol: number,
+	history: unknown[] = []
+) =>
 	({
 		[AllColumns.Number]: id,
 		[AllColumns.Name]: `Product ${id}`,
@@ -25,7 +36,11 @@ const product = (id: string, price: number, volume: number, alcohol: number, his
 
 describe('category stats', () => {
 	it('computes medians', () => {
-		const stats = computeCategoryStats([product('1', 10, 1, 5), product('2', 20, 1, 10), product('3', 30, 1, 40)]);
+		const stats = computeCategoryStats([
+			product('1', 10, 1, 5),
+			product('2', 20, 1, 10),
+			product('3', 30, 1, 40)
+		]);
 		expect(stats.medianPrice).toBe(20);
 		expect(stats.medianPricePerLiter).toBe(20);
 		expect(stats.medianAlcoholPercentage).toBe(10);

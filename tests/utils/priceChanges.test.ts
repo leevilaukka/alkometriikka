@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'bun:test';
 import { AllColumns } from '$lib/utils/constants';
 import type { PriceListItem } from '$lib/types';
-import type { PriceChange } from './metrics';
+import type { PriceChange } from '$lib/utils/metrics';
 import {
 	countPriceChangesByCategory,
 	DEFAULT_PRICE_CHANGE_WINDOW,
@@ -12,7 +12,7 @@ import {
 	parsePriceChangeParams,
 	priceChangeParams,
 	priceChangeSince
-} from './priceChanges';
+} from '$lib/utils/priceChanges';
 
 const product = (id: string, type: string, subType = '') =>
 	({
@@ -60,7 +60,12 @@ describe('price change filters', () => {
 
 describe('price change params', () => {
 	it('round-trips through the URL', () => {
-		const options = { days: 7 as const, direction: 'down' as const, typeSlug: 'oluet', subTypeSlug: 'lager' };
+		const options = {
+			days: 7 as const,
+			direction: 'down' as const,
+			typeSlug: 'oluet',
+			subTypeSlug: 'lager'
+		};
 		const params = new URLSearchParams(priceChangeParams(options));
 		expect(params.get('suunta')).toBe('halpeni');
 		expect(parsePriceChangeParams(params)).toEqual(options);
@@ -73,7 +78,9 @@ describe('price change params', () => {
 			tyyppi: '',
 			alatyyppi: ''
 		});
-		expect(parsePriceChangeParams(new URLSearchParams('pv=12&suunta=sivulle&alatyyppi=lager'))).toEqual({
+		expect(
+			parsePriceChangeParams(new URLSearchParams('pv=12&suunta=sivulle&alatyyppi=lager'))
+		).toEqual({
 			days: DEFAULT_PRICE_CHANGE_WINDOW,
 			direction: 'all',
 			typeSlug: undefined,

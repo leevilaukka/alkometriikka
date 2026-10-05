@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'bun:test';
 import type { Kaljakori } from '$lib/alko';
 import type { PriceListItem } from '$lib/types';
-import { AllColumns } from './constants';
-import { buildSizeOptions, findSimilarProducts, SIMILAR_PRODUCT_COLUMNS } from './filters';
+import { AllColumns } from '$lib/utils/constants';
+import { buildSizeOptions, findSimilarProducts, SIMILAR_PRODUCT_COLUMNS } from '$lib/utils/filters';
 
 type Fields = {
 	name: string;

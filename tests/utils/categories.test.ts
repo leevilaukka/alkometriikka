@@ -9,11 +9,15 @@ import {
 	findProductCategoryTrail,
 	MIN_CATEGORY_PRODUCTS,
 	type CategoryEntry
-} from './categories';
+} from '$lib/utils/categories';
 
 /** `count` active products of the given Tyyppi / Alatyyppi. */
-const entries = (type: unknown, subType: unknown, count: number, removed = false): CategoryEntry[] =>
-	Array.from({ length: count }, () => ({ type, subType, removed }));
+const entries = (
+	type: unknown,
+	subType: unknown,
+	count: number,
+	removed = false
+): CategoryEntry[] => Array.from({ length: count }, () => ({ type, subType, removed }));
 
 describe('categorySlug', () => {
 	it('strips Finnish diacritics and joins words with dashes', () => {
@@ -66,7 +70,11 @@ describe('buildCategoryTree', () => {
 	it('drops small and catch-all subtypes and sorts the rest by size', () => {
 		const wines = tree.find((node) => node.slug === 'viinit');
 		expect(wines?.children.map((child) => child.slug)).toEqual(['punaviinit', 'valkoviinit']);
-		expect(wines?.children[0]).toMatchObject({ name: 'Punaviinit', count: 8, path: '/kategoriat/viinit/punaviinit/' });
+		expect(wines?.children[0]).toMatchObject({
+			name: 'Punaviinit',
+			count: 8,
+			path: '/kategoriat/viinit/punaviinit/'
+		});
 	});
 });
 
@@ -97,9 +105,9 @@ describe('category lookups', () => {
 			trail: findCategoryBySlugs(tree, 'viinit', 'punaviinit')!,
 			legacy: false
 		});
-		expect(findProductCategoryTrail(tree, 'viinit', 'harvinaiset').trail.map((node) => node.slug)).toEqual([
-			'viinit'
-		]);
+		expect(
+			findProductCategoryTrail(tree, 'viinit', 'harvinaiset').trail.map((node) => node.slug)
+		).toEqual(['viinit']);
 		expect(findProductCategoryTrail(tree, '', 'punaviinit')).toEqual({ trail: [], legacy: false });
 	});
 
@@ -109,6 +117,9 @@ describe('category lookups', () => {
 		expect(legacy.legacy).toBe(true);
 		expect(legacy.trail.map((node) => node.slug)).toEqual(['viinit', 'punaviinit']);
 		// "glögit" exists under two types, so there's no single page to point at
-		expect(findProductCategoryTrail(tree, 'glögit', undefined)).toEqual({ trail: [], legacy: true });
+		expect(findProductCategoryTrail(tree, 'glögit', undefined)).toEqual({
+			trail: [],
+			legacy: true
+		});
 	});
 });

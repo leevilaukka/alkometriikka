@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test';
-import { categoryOgDisplays, categoryOgKey, median } from './og-category-card';
+import { categoryOgDisplays, categoryOgKey, median } from '../../scripts/og/og-category-card';
 
 const schema = ['Numero', 'Tyyppi', 'Alatyyppi', 'Hinta', 'Litrahinta'];
 const row = (id: number, type: string, subType: string, price: number, removed = false) => ({
@@ -27,7 +27,12 @@ describe('category OG cards', () => {
 
 	it('counts and medians only products still in the selection', () => {
 		const red = displays.find((display) => display.path === '/kategoriat/viinit/punaviinit/')!;
-		expect(red).toMatchObject({ name: 'Punaviinit', parent: 'Viinit', count: 6, medianPrice: 12.5 });
+		expect(red).toMatchObject({
+			name: 'Punaviinit',
+			parent: 'Viinit',
+			count: 6,
+			medianPrice: 12.5
+		});
 		expect(red.medianPricePerLiter).toBe(16.67);
 		expect(displays[1].children).toEqual(['Punaviinit', 'Valkoviinit']);
 	});

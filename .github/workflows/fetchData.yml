@@ -24,6 +24,11 @@ jobs:
       - name: Set up Bun
         uses: ./.github/actions/setup
 
+      # The sync rewrites the dataset the whole site reads: never run it with
+      # lifecycle/schema code that fails its tests.
+      - name: Run data and dataset tests
+        run: bunx svelte-kit sync && bun test tests/data tests/alko
+
       - name: Seed existing dataset from gh-pages
         run: |
           git fetch origin gh-pages || true

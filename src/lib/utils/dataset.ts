@@ -73,7 +73,8 @@ export function parseDataset(data: string) {
 
 		// Prefer the dataset's recorded last-modified date; fall back to the
 		// newest price-history entry for older datasets without metadata.
-		const metadata = datasetMeta ? { ...datasetMeta } : {};
+		const metadata: NonNullable<StoredDataset['metadata']> = { ...datasetMeta };
+		if (!metadata.LastUpdated && latestDate) metadata.LastUpdated = latestDate;
 
 		return {
 			table: [header, ...rows],

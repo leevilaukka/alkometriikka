@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'bun:test';
 import { AllColumns } from '$lib/utils/constants';
 import type { PriceListItem } from '$lib/types';
-import { createRng } from './rng';
-import { DAILY_GAME_VERSION, DAILY_QUESTION_COUNT, generateDailyGame } from './questions';
+import { createRng } from '$lib/daily/rng';
+import { DAILY_GAME_VERSION, DAILY_QUESTION_COUNT, generateDailyGame } from '$lib/daily/questions';
 import pinnedManifest from './fixtures/pinned-manifest.json';
 import {
 	ARCHIVE_INDEX_VERSION,
@@ -15,7 +15,7 @@ import {
 	sha256Hex,
 	trimProduct,
 	type DailyGameManifest
-} from './manifest';
+} from '$lib/daily/manifest';
 
 const product = (id: string, price: number, volume = 0.7, alcohol = 12, history: unknown[] = []) =>
 	({

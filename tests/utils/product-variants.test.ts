@@ -1,11 +1,7 @@
-import assert from 'node:assert/strict';
-import { test } from 'node:test';
-import type { PriceListItem } from '../src/lib/types';
-import { AllColumns as C } from '../src/lib/utils/constants.ts';
-import {
-	getComparableProductName,
-	ProductVariantIndex
-} from '../src/lib/utils/product-variants.ts';
+import { expect, test } from 'bun:test';
+import type { PriceListItem } from '$lib/types';
+import { AllColumns as C } from '$lib/utils/constants.ts';
+import { getComparableProductName, ProductVariantIndex } from '$lib/utils/product-variants.ts';
 
 function product(id: string, name: string, overrides: Partial<PriceListItem> = {}): PriceListItem {
 	return {
@@ -57,7 +53,7 @@ test('G, R and W stay separate, even if their package sizes differ', () => {
 		})
 	);
 	const matcher = index(products);
-	for (const p of products) assert.deepEqual(matcher.find(p), []);
+	for (const p of products) expect(matcher.find(p)).toEqual([]);
 });
 
 test('long shared prefixes cannot hide different beer styles or extra identity words', () => {
@@ -66,7 +62,7 @@ test('long shared prefixes cannot hide different beer styles or extra identity w
 	const c = product('3', 'Suomenlinnan Ton Alkoholiton IPA Special tölkki', {
 		[C.BottleSize]: 0.75
 	});
-	assert.deepEqual(index([a, b, c]).find(a), []);
+	expect(index([a, b, c]).find(a)).toEqual([]);
 });
 
 test('ages and release numbers remain part of identity', () => {
@@ -79,9 +75,8 @@ test('ages and release numbers remain part of identity', () => {
 		[C.Type]: 'Väkevät',
 		[C.BottleSize]: 0.7
 	});
-	assert.deepEqual(ids(index([a, b, c]).find(a)), ['3']);
-	assert.notEqual(
-		getComparableProductName(product('4', 'Waterford Gaia 1.2 Single Malt')),
+	expect(ids(index([a, b, c]).find(a))).toEqual(['3']);
+	expect(getComparableProductName(product('4', 'Waterford Gaia 1.2 Single Malt'))).not.toBe(
 		getComparableProductName(product('5', 'Waterford Gaia 2.1 Single Malt'))
 	);
 });
@@ -96,9 +91,8 @@ test('Roman editions and letters inside words are preserved', () => {
 		[C.Vintage]: '2023',
 		[C.BottleSize]: 0.75
 	});
-	assert.deepEqual(index([a, b]).find(a), []);
-	assert.equal(
-		getComparableProductName(product('3', 'Valhalla IPA Lager Single Malt')),
+	expect(index([a, b]).find(a)).toEqual([]);
+	expect(getComparableProductName(product('3', 'Valhalla IPA Lager Single Malt'))).toBe(
 		'valhalla ipa lager single malt'
 	);
 });
@@ -109,15 +103,15 @@ test('package annotations, verified ABV and repeated packaging labels normalize 
 		[C.AlcoholPercentage]: 5,
 		[C.BottleSize]: 1.98
 	});
-	assert.equal(getComparableProductName(a), '1664 blanc');
-	assert.deepEqual(ids(index([a, b]).find(a)), ['2']);
+	expect(getComparableProductName(a)).toBe('1664 blanc');
+	expect(ids(index([a, b]).find(a))).toEqual(['2']);
 });
 
 test('can and bottle of the same volume are package variants, identical packages are not', () => {
 	const a = product('1', 'Karhu 4,6 tölkki');
 	const b = product('2', 'Karhu 4,6', { [C.PackagingType]: 'Lasipullo' });
 	const duplicate = product('3', 'Karhu 4,6 tölkki');
-	assert.deepEqual(ids(index([a, b, duplicate]).find(a)), ['2']);
+	expect(ids(index([a, b, duplicate]).find(a))).toEqual(['2']);
 });
 
 test('validated unit volumes and multipack notation retain package count', () => {
@@ -126,8 +120,8 @@ test('validated unit volumes and multipack notation retain package count', () =>
 	const c = product('3', 'Example 6-pack 50 cl tölkki', { [C.BottleSize]: 3 });
 	const d = product('4', 'Example 10-pack 30 cl tölkki', { [C.BottleSize]: 3 });
 	const matcher = index([a, b, c, d]);
-	assert.deepEqual(ids(matcher.find(a)), ['2', '3', '4']);
-	assert.deepEqual(ids(matcher.find(b)), ['1', '4']);
+	expect(ids(matcher.find(a))).toEqual(['2', '3', '4']);
+	expect(ids(matcher.find(b))).toEqual(['1', '4']);
 });
 
 test('contradictory or unverified annotations cannot disappear into a match', () => {
@@ -139,12 +133,11 @@ test('contradictory or unverified annotations cannot disappear into a match', ()
 		product('4', 'Example 6-pack 12-pack', { [C.BottleSize]: 0.5 }),
 		product('5', 'Example 6 x 0,5 l', { [C.BottleSize]: 0.5 })
 	];
-	assert.deepEqual(index(products).find(a), []);
+	expect(index(products).find(a)).toEqual([]);
 });
 
 test('packaging removal respects word boundaries and preserves nonnumeric pack names', () => {
-	assert.equal(
-		getComparableProductName(product('1', 'Tölkkinen Wolf-pack tölkki')),
+	expect(getComparableProductName(product('1', 'Tölkkinen Wolf-pack tölkki'))).toBe(
 		'tölkkinen wolf-pack'
 	);
 });
@@ -152,7 +145,7 @@ test('packaging removal respects word boundaries and preserves nonnumeric pack n
 test('blank canonical names never match', () => {
 	const a = product('1', '4,6% tölkki');
 	const b = product('2', '4.6% tölkki', { [C.BottleSize]: 0.5 });
-	assert.deepEqual(index([a, b]).find(a), []);
+	expect(index([a, b]).find(a)).toEqual([]);
 });
 
 test('accent equivalence finds names through the index while preserving Finnish letters', () => {
@@ -161,9 +154,9 @@ test('accent equivalence finds names through the index while preserving Finnish 
 	const c = product('3', 'Vara');
 	const e = product('4', 'Värä', { [C.BottleSize]: 0.5 });
 	const matcher = index([e, b, c, a]);
-	assert.deepEqual(ids(matcher.find(a)), ['2']);
-	assert.deepEqual(ids(matcher.find(b)), ['1']);
-	assert.deepEqual(matcher.find(c), []);
+	expect(ids(matcher.find(a))).toEqual(['2']);
+	expect(ids(matcher.find(b))).toEqual(['1']);
+	expect(matcher.find(c)).toEqual([]);
 });
 
 test('ABV, vintage, category, beer style and country conflicts veto identity', () => {
@@ -181,20 +174,20 @@ test('ABV, vintage, category, beer style and country conflicts veto identity', (
 			...change,
 			[C.BottleSize]: 0.5
 		} as Partial<PriceListItem>);
-		assert.deepEqual(index([a, b]).find(a), [], JSON.stringify(change));
+		expect(index([a, b]).find(a)).toEqual([]);
 	}
 });
 
 test('known vintage and absent vintage are not treated as equivalent', () => {
 	const a = product('1', 'Example 2025', { [C.Vintage]: '2025' });
 	const b = product('2', 'Example', { [C.BottleSize]: 0.5 });
-	assert.deepEqual(index([a, b]).find(a), []);
+	expect(index([a, b]).find(a)).toEqual([]);
 });
 
 test('matching category labels can bridge the legacy category hierarchy', () => {
 	const a = product('1', 'Example', { [C.Type]: 'Oluet', [C.SubType]: 'Lager' });
 	const b = product('2', 'Example', { [C.BottleSize]: 0.5 });
-	assert.deepEqual(ids(index([a, b]).find(a)), ['2']);
+	expect(ids(index([a, b]).find(a))).toEqual(['2']);
 });
 
 test('distinctive exact names survive producer changes and measurement variation', () => {
@@ -204,7 +197,7 @@ test('distinctive exact names survive producer changes and measurement variation
 		[C.Sugar]: 124,
 		[C.BottleSize]: 0.04
 	});
-	assert.deepEqual(ids(index([a, b]).find(a)), ['2']);
+	expect(ids(index([a, b]).find(a))).toEqual(['2']);
 });
 
 test('generic grape names need producer agreement', () => {
@@ -213,15 +206,15 @@ test('generic grape names need producer agreement', () => {
 		[C.Manufacturer]: 'One'
 	});
 	const b = product('2', 'Merlot', { [C.Manufacturer]: 'Two', [C.BottleSize]: 0.5 });
-	assert.deepEqual(index([a, b]).find(a), []);
+	expect(index([a, b]).find(a)).toEqual([]);
 });
 
 test('estimated or absent bottle sizes cannot prove package differences', () => {
 	const a = product('1', 'Example');
 	const b = product('2', 'Example', { [C.BottleSize]: 1 });
 	const matcher = index([a, b], [b]);
-	assert.deepEqual(matcher.find(a), []);
-	assert.deepEqual(matcher.find(b), []);
+	expect(matcher.find(a)).toEqual([]);
+	expect(matcher.find(b)).toEqual([]);
 });
 
 test('accent variations of generic names cannot bypass producer checks', () => {
@@ -231,8 +224,8 @@ test('accent variations of generic names cannot bypass producer checks', () => {
 	});
 	const b = product('2', 'Merlot', { [C.Manufacturer]: 'Two', [C.BottleSize]: 0.5 });
 	const matcher = index([a, b]);
-	assert.deepEqual(matcher.find(a), []);
-	assert.deepEqual(matcher.find(b), []);
+	expect(matcher.find(a)).toEqual([]);
+	expect(matcher.find(b)).toEqual([]);
 });
 
 test('Karhu III recovers all sizes symmetrically without a brand-specific rule', () => {
@@ -247,8 +240,8 @@ test('Karhu III recovers all sizes symmetrically without a brand-specific rule',
 			product('5', `${brand} 4,6`, { [C.PackagingType]: 'Lasipullo' })
 		];
 		const matcher = index(products);
-		assert.deepEqual(new Set(ids(matcher.find(keg))), new Set(['1', '2', '3', '4', '5']));
-		for (const p of products.slice(1)) assert.ok(matcher.find(p).includes(keg));
+		expect(new Set(ids(matcher.find(keg)))).toEqual(new Set(['1', '2', '3', '4', '5']));
+		for (const p of products.slice(1)) expect(matcher.find(p).includes(keg)).toBeTruthy();
 	}
 });
 
@@ -258,9 +251,9 @@ test('a class qualifier can be recognized without touching numbers inside the na
 		[C.AlcoholPercentage]: 5.2
 	});
 	const b = product('2', 'Example 5,2 tölkki', { [C.AlcoholPercentage]: 5.2 });
-	assert.deepEqual(ids(index([a, b]).find(a)), ['2']);
+	expect(ids(index([a, b]).find(a))).toEqual(['2']);
 	const c = product('3', 'Example IV A Barrel Edition', { [C.BottleSize]: 0.5 });
-	assert.deepEqual(index([b, c]).find(b), []);
+	expect(index([b, c]).find(b)).toEqual([]);
 });
 
 test('fallback rejects missing, default-zero or conflicting measurements and descriptions', () => {
@@ -284,7 +277,7 @@ test('fallback rejects missing, default-zero or conflicting measurements and des
 		}
 	]) {
 		const b = product('2', 'Example 4,6', change as Partial<PriceListItem>);
-		assert.deepEqual(index([a, b]).find(a), [], JSON.stringify(change));
+		expect(index([a, b]).find(a)).toEqual([]);
 	}
 });
 
@@ -295,7 +288,7 @@ test('fallback normalizes descriptor order and string/array legacy representatio
 			'kevYEN maltainen, hedelmäinen, keskiasteisesti humaloitu, keskitäyteläinen, kellanruskea'
 		])
 	});
-	assert.deepEqual(ids(index([a, b]).find(a)), ['2']);
+	expect(ids(index([a, b]).find(a))).toEqual(['2']);
 });
 
 test('fallback remains restricted to Finnish lagers', () => {
@@ -306,7 +299,7 @@ test('fallback remains restricted to Finnish lagers', () => {
 	]) {
 		const a = product('1', 'Example III', { ...change, [C.BottleSize]: 30 });
 		const b = product('2', 'Example 4,6', change);
-		assert.deepEqual(index([a, b]).find(a), []);
+		expect(index([a, b]).find(a)).toEqual([]);
 	}
 });
 
@@ -319,7 +312,7 @@ test('competing Roman editions block the fallback, including same-size competito
 		[c, b, a]
 	]) {
 		const matcher = index(products);
-		for (const p of products) assert.deepEqual(matcher.find(p), []);
+		for (const p of products) expect(matcher.find(p)).toEqual([]);
 	}
 });
 
@@ -327,7 +320,7 @@ test('numeric ages and arbitrary one-letter identifiers never enter the suffix f
 	for (const ending of ['12', 'G', 'R', 'W']) {
 		const a = product('1', `Example ${ending}`, { [C.BottleSize]: 30 });
 		const b = product('2', 'Example 4,6');
-		assert.deepEqual(index([a, b]).find(a), []);
+		expect(index([a, b]).find(a)).toEqual([]);
 	}
 });
 
@@ -336,9 +329,9 @@ test('results are deterministic, exclude self, and can be sorted without mutatin
 	const b = product('3', 'Example', { [C.BottleSize]: 0.5 });
 	const c = product('2', 'Example', { [C.BottleSize]: 0.5 });
 	const matcher = index([b, a, c]);
-	assert.deepEqual(ids(matcher.find(a)), ['2', '3']);
+	expect(ids(matcher.find(a))).toEqual(['2', '3']);
 	matcher.find(a).reverse();
-	assert.deepEqual(ids(matcher.find(a)), ['2', '3']);
-	assert.deepEqual(ids(index([c, a, b]).find(a)), ['2', '3']);
-	assert.deepEqual(matcher.find(product('unknown', 'Example')), []);
+	expect(ids(matcher.find(a))).toEqual(['2', '3']);
+	expect(ids(index([c, a, b]).find(a))).toEqual(['2', '3']);
+	expect(matcher.find(product('unknown', 'Example'))).toEqual([]);
 });

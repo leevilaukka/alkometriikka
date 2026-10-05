@@ -1,33 +1,46 @@
 import { beforeEach, describe, expect, it } from 'bun:test';
 import { AllColumns } from '$lib/utils/constants';
 import type { PriceListItem } from '$lib/types';
-import { createRng } from './rng';
-import { DAILY_QUESTION_COUNT, generateDailyGame, pureAlcoholPerEuro } from './questions';
-import { completeGame, loadArchivedScores, loadSavedGame, saveGame } from './storage';
+import { createRng } from '$lib/daily/rng';
+import { DAILY_QUESTION_COUNT, generateDailyGame, pureAlcoholPerEuro } from '$lib/daily/questions';
+import { completeGame, loadArchivedScores, loadSavedGame, saveGame } from '$lib/daily/storage';
 
-const product = (id: string, price: number, volume = 0.7, alcohol = 12, history: unknown[] = []) => ({
-	[AllColumns.Number]: id,
-	[AllColumns.Name]: `Product ${id}`,
-	[AllColumns.Price]: price,
-	[AllColumns.BottleSize]: volume,
-	[AllColumns.PricePerLiter]: price / volume,
-	[AllColumns.AlcoholPercentage]: alcohol,
-	[AllColumns.Manufacturer]: `Maker ${id}`,
-	[AllColumns.Country]: `Country ${id}`,
-	[AllColumns.Type]: `Type ${id}`,
-	[AllColumns.Sugar]: Number(id),
-	[AllColumns.Energy]: 100 + Number(id),
-	[AllColumns.NormalPrice]: price + 2,
-	[AllColumns.AlcoholGramsPerEuro]: volume * alcohol * 10 / price,
-	[AllColumns.History]: history
-}) as unknown as PriceListItem;
+const product = (id: string, price: number, volume = 0.7, alcohol = 12, history: unknown[] = []) =>
+	({
+		[AllColumns.Number]: id,
+		[AllColumns.Name]: `Product ${id}`,
+		[AllColumns.Price]: price,
+		[AllColumns.BottleSize]: volume,
+		[AllColumns.PricePerLiter]: price / volume,
+		[AllColumns.AlcoholPercentage]: alcohol,
+		[AllColumns.Manufacturer]: `Maker ${id}`,
+		[AllColumns.Country]: `Country ${id}`,
+		[AllColumns.Type]: `Type ${id}`,
+		[AllColumns.Sugar]: Number(id),
+		[AllColumns.Energy]: 100 + Number(id),
+		[AllColumns.NormalPrice]: price + 2,
+		[AllColumns.AlcoholGramsPerEuro]: (volume * alcohol * 10) / price,
+		[AllColumns.History]: history
+	}) as unknown as PriceListItem;
 
-const products = [product('1', 8), product('2', 12, 0.5, 5), product('3', 18, 0.75, 40), product('4', 25, 0.7, 13), product('5', 32, 0.75, 14, [{ date: '2025-01-01', price: 29 }])];
+const products = [
+	product('1', 8),
+	product('2', 12, 0.5, 5),
+	product('3', 18, 0.75, 40),
+	product('4', 25, 0.7, 13),
+	product('5', 32, 0.75, 14, [{ date: '2025-01-01', price: 29 }])
+];
 
 describe('daily game generation', () => {
 	it('is deterministic for a date and dataset', () => {
-		const first = generateDailyGame('2026-09-22', products, createRng('alkometriikka-daily-v1-2026-09-22'));
-		expect(first).toEqual(generateDailyGame('2026-09-22', products, createRng('alkometriikka-daily-v1-2026-09-22')));
+		const first = generateDailyGame(
+			'2026-09-22',
+			products,
+			createRng('alkometriikka-daily-v1-2026-09-22')
+		);
+		expect(first).toEqual(
+			generateDailyGame('2026-09-22', products, createRng('alkometriikka-daily-v1-2026-09-22'))
+		);
 	});
 
 	it('does not depend on the engine sort algorithm (fixed RNG consumption for options)', () => {
@@ -36,7 +49,11 @@ describe('daily game generation', () => {
 		// comparator makes the number of RNG draws engine-specific (V8 vs
 		// JavaScriptCore vs SpiderMonkey), so the same date would produce
 		// different questions on different devices.
-		const game = generateDailyGame('2026-09-22', products, createRng('alkometriikka-daily-v1-2026-09-22'));
+		const game = generateDailyGame(
+			'2026-09-22',
+			products,
+			createRng('alkometriikka-daily-v1-2026-09-22')
+		);
 		expect(game.questions).toEqual([
 			{
 				type: 'choice',
@@ -98,21 +115,41 @@ describe('daily game generation', () => {
 		const first = generateDailyGame('2026-09-22', products, createRng('date-one'));
 		const same = generateDailyGame('2026-09-22', products, createRng('date-one'));
 		const next = generateDailyGame('2026-09-23', products, createRng('date-two'));
-		expect(first.questions.map((question) => question.type)).toEqual(same.questions.map((question) => question.type));
-		expect(first.questions.map((question) => question.type)).not.toEqual(next.questions.map((question) => question.type));
+		expect(first.questions.map((question) => question.type)).toEqual(
+			same.questions.map((question) => question.type)
+		);
+		expect(first.questions.map((question) => question.type)).not.toEqual(
+			next.questions.map((question) => question.type)
+		);
 	});
 
 	it('excludes invalid products and keeps answer keys correct', () => {
-		const game = generateDailyGame('2026-09-22', [...products, product('bad', 0), product('', 4)], createRng('test'));
+		const game = generateDailyGame(
+			'2026-09-22',
+			[...products, product('bad', 0), product('', 4)],
+			createRng('test')
+		);
 		for (const question of game.questions) {
 			expect(JSON.stringify(question)).not.toContain('bad');
 			if (question.type === 'price') expect(question.options).toContain(question.correctPrice);
 			if (question.type === 'cheaper') {
-				const [first, second] = question.productIds.map((id) => products.find((item) => item[AllColumns.Number] === id)!);
-				expect(question.correctProductId).toBe(first[AllColumns.Price] <= second[AllColumns.Price] ? question.productIds[0] : question.productIds[1]);
+				const [first, second] = question.productIds.map((id) =>
+					products.find((item) => item[AllColumns.Number] === id)!
+				);
+				expect(question.correctProductId).toBe(
+					first[AllColumns.Price] <= second[AllColumns.Price]
+						? question.productIds[0]
+						: question.productIds[1]
+				);
 			}
-			if (question.type === 'efficiency') expect(question.correctProductId).toBe(Object.entries(question.efficiency).sort((a, b) => b[1] - a[1])[0][0]);
-			if (question.type === 'attribute') expect(question.values[question.productIds[0]]).not.toBe(question.values[question.productIds[1]]);
+			if (question.type === 'efficiency')
+				expect(question.correctProductId).toBe(
+					Object.entries(question.efficiency).sort((a, b) => b[1] - a[1])[0][0]
+				);
+			if (question.type === 'attribute')
+				expect(question.values[question.productIds[0]]).not.toBe(
+					question.values[question.productIds[1]]
+				);
 		}
 	});
 
@@ -121,8 +158,13 @@ describe('daily game generation', () => {
 			const game = generateDailyGame(`cheaper-${seed}`, products, createRng(`cheaper-${seed}`));
 			for (const question of game.questions) {
 				if (question.type !== 'cheaper') continue;
-				const [first, second] = question.productIds.map((id) => products.find((item) => item[AllColumns.Number] === id)!);
-				const expected = first[AllColumns.Price] < second[AllColumns.Price] ? question.productIds[0] : question.productIds[1];
+				const [first, second] = question.productIds.map((id) =>
+					products.find((item) => item[AllColumns.Number] === id)!
+				);
+				const expected =
+					first[AllColumns.Price] < second[AllColumns.Price]
+						? question.productIds[0]
+						: question.productIds[1];
 				expect(question.correctProductId).toBe(expected);
 			}
 		}
@@ -130,7 +172,14 @@ describe('daily game generation', () => {
 
 	it('never repeats a price option when products share a price', () => {
 		// Options are rendered in a keyed {#each}; a duplicate key crashes the page.
-		const samePriced = [product('1', 1.99), product('2', 1.99), product('3', 1.99), product('4', 1.99), product('5', 4.99), product('6', 9.99)];
+		const samePriced = [
+			product('1', 1.99),
+			product('2', 1.99),
+			product('3', 1.99),
+			product('4', 1.99),
+			product('5', 4.99),
+			product('6', 9.99)
+		];
 		for (let seed = 0; seed < 200; seed += 1) {
 			const game = generateDailyGame(`dupes-${seed}`, samePriced, createRng(`dupes-${seed}`));
 			for (const question of game.questions) {
@@ -141,7 +190,8 @@ describe('daily game generation', () => {
 		}
 	});
 
-	it('calculates pure alcohol efficiency', () => expect(pureAlcoholPerEuro(products[0])).toBeCloseTo(10.5));
+	it('calculates pure alcohol efficiency', () =>
+		expect(pureAlcoholPerEuro(products[0])).toBeCloseTo(10.5));
 });
 
 describe('daily persistence and streaks', () => {
@@ -160,7 +210,16 @@ describe('daily persistence and streaks', () => {
 
 	it('reuses a saved date and generates a new date separately', () => {
 		const game = generateDailyGame('2026-09-22', products, createRng('same'));
-		saveGame({ date: game.date, game, currentIndex: 2, points: [100, 0], correctAnswers: [true, false], answered: true, selectedAnswer: '1', answerPoints: 0 });
+		saveGame({
+			date: game.date,
+			game,
+			currentIndex: 2,
+			points: [100, 0],
+			correctAnswers: [true, false],
+			answered: true,
+			selectedAnswer: '1',
+			answerPoints: 0
+		});
 		const saved = loadSavedGame('2026-09-22');
 		expect(saved?.game).toEqual(game);
 		expect(saved?.currentIndex).toBe(2);
@@ -184,7 +243,11 @@ describe('daily persistence and streaks', () => {
 			completeGame({ date, game }, 100, 1);
 		}
 		const game = generateDailyGame('2026-10-03', products, createRng('gap'));
-		expect(completeGame({ date: '2026-10-03', game }, 100, 1)).toEqual({ current: 1, best: 2, completedDate: '2026-10-03' });
+		expect(completeGame({ date: '2026-10-03', game }, 100, 1)).toEqual({
+			current: 1,
+			best: 2,
+			completedDate: '2026-10-03'
+		});
 	});
 
 	it('records live completions so the archive treats the day as finished', () => {

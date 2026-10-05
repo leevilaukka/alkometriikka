@@ -17,8 +17,6 @@
  * Muistiinpanot -> notes/notes.md
  */
 
-import { getSaleInfo } from '../../src/lib/utils/sales.ts';
-import type { SaleInfo } from '../../src/lib/utils/sales.ts';
 import {
 	DEV,
 	HASH_VERSION,
@@ -31,7 +29,6 @@ import {
 	getHash,
 	getHashValues,
 	isIrrelevantMainGroup,
-	isIrrelevantStoredValues,
 	productDetailsUrl
 } from './constants.ts';
 import type {
@@ -39,15 +36,26 @@ import type {
 	DetailedProductData,
 	MigratedData,
 	MigratedProduct,
-	PricePoint,
 	ProductDetailsApiResponse,
-	ProductMeta,
 	SearchApiResponse,
 	SearchProductData,
 	StoreData,
 	StoresApiResponse
 } from './types.ts';
 import { isMigratedProduct } from './guards.ts';
+import {
+	HINTA_INDEX,
+	NIMI_INDEX,
+	carryOverMissingProducts,
+	clearRemovedFlag,
+	detailVerifyAgeDays,
+	isDetailVerifyCandidate,
+	mergeProduct,
+	salesInfoFromValues,
+	updatePriceHistory,
+	valuesEqual,
+	withoutRemovedFlag
+} from './lifecycle.ts';
 import { toNumber } from '../../src/lib/utils/number.ts';
 
 // ============================================================================
@@ -93,14 +101,6 @@ const DEFAULT_DETAIL_VERIFY_COOLDOWN_DAYS = 30;
 const DEFAULT_DETAIL_VERIFY_BATCH = 200;
 
 const VERBOSE = truthyEnvVar('VERBOSE');
-
-/** Column indices we read back out of a stored `values` array. */
-const NUMERO_INDEX = LEGACY_HEADERS.indexOf('Numero');
-const NIMI_INDEX = LEGACY_HEADERS.indexOf('Nimi');
-const HINTA_INDEX = LEGACY_HEADERS.indexOf('Hinta');
-const NORMAL_PRICE_INDEX = LEGACY_HEADERS.indexOf('Normaalihinta');
-const CAMPAIGN_START_INDEX = LEGACY_HEADERS.indexOf('Kampanja alkaa');
-const CAMPAIGN_END_INDEX = LEGACY_HEADERS.indexOf('Kampanja päättyy');
 
 interface Config {
 	detailConcurrency: number;
@@ -157,112 +157,11 @@ interface SyncStats {
 	verifyFailed: number;
 }
 
-/** Returns a copy of `meta` without the `removedFromSelection` flag, or `undefined` if nothing remains. */
-function withoutRemovedFlag(meta: ProductMeta | undefined): ProductMeta | undefined {
-	if (!meta) return undefined;
-	const { removedFromSelection, ...rest } = meta;
-	return Object.keys(rest).length > 0 ? rest : undefined;
-}
-
-/** Clears the `removedFromSelection` flag on a product that is back in the selection. */
-function clearRemovedFlag(product: MigratedProduct): MigratedProduct {
-	if (!product.meta?.removedFromSelection) return product;
-	const meta = withoutRemovedFlag(product.meta);
-	const { meta: _omit, ...rest } = product;
-	return meta ? { ...rest, meta } : rest;
-}
-
-const DAY_MS = 24 * 60 * 60 * 1000;
-
-/**
- * Number of days since the product's last detail verification. Products that
- * have never been verified sort as infinitely stale, so bootstrapping or
- * migrated datasets drain oldest-first across successive runs.
- */
-function detailVerifyAgeDays(product: MigratedProduct): number {
-	const checkedAt = product.meta?.detailCheckedAt;
-	const timestamp = checkedAt ? Date.parse(checkedAt) : NaN;
-	if (Number.isNaN(timestamp)) return Infinity;
-	return (Date.now() - timestamp) / DAY_MS;
-}
-
-/** True when a product is stale enough to warrant a detail re-verification. */
-function isDetailVerifyCandidate(product: MigratedProduct, cooldownDays: number): boolean {
-	return detailVerifyAgeDays(product) > cooldownDays;
-}
-
-/**
- * Deep value equality between two `values` cells. Array-shaped fields (such as
- * `taste`/Luonnehdinta) are produced as a fresh array on every build, so a
- * reference comparison would falsely flag identical content as a change.
- */
-function valuesEqual(a: unknown, b: unknown): boolean {
-	if (Array.isArray(a) && Array.isArray(b)) {
-		if (a.length !== b.length) return false;
-		return a.every((item, index) => valuesEqual(item, b[index]));
-	}
-	return Object.is(a, b);
-}
-
 // ============================================================================
 // HELPERS
 // ============================================================================
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-
-/**
- * Extracts the sale/campaign info stored in a product's legacy `values` array
- * and detects whether the product was on sale at the time the values were
- * captured. Returns `null` when the product is not on sale.
- */
-function salesInfoFromValues(values: unknown[]): SaleInfo | null {
-	const item = {
-		price: values[HINTA_INDEX],
-		normalPrice: values[NORMAL_PRICE_INDEX],
-		campaignStart: values[CAMPAIGN_START_INDEX],
-		campaignEnd: values[CAMPAIGN_END_INDEX]
-	};
-	// A campaign that hasn't started yet isn't "active", but the price point
-	// recorded now is the only one we get: nothing re-fetches the product when
-	// the start date arrives. Evaluate it as of its start date so the campaign
-	// window is stored with the point.
-	const start = typeof item.campaignStart === 'string' ? item.campaignStart.trim() : '';
-	const today = new Date().toISOString().slice(0, 10);
-	return getSaleInfo(item, start > today ? start : undefined);
-}
-
-/**
- * Appends today's price to the product's history when it differs from the most
- * recent recorded price. Existing history is preserved untouched otherwise.
- *
- * When the product is on sale (`sale` is non-null) the recorded point also
- * carries the reference price and campaign window, so the chart can later show
- * the sale period.
- */
-function updatePriceHistory(
-	previous: PricePoint[] | undefined,
-	price: number | null,
-	sale: SaleInfo | null
-): PricePoint[] {
-	const history = Array.isArray(previous) ? [...previous] : [];
-	if (price === null) return history;
-
-	const last = history[history.length - 1];
-	if (!last || last.price !== price) {
-		history.push({
-			date: new Date().toISOString().slice(0, 10),
-			price,
-			...(sale
-				? {
-						normalPrice: sale.normalPrice,
-						campaignStart: sale.campaignStart,
-						campaignEnd: sale.campaignEnd
-					}
-				: {})
-		});
-	}
-	return history;
-}
 
 /**
  * Runs `worker` over `items` with at most `limit` promises in flight at once.
@@ -563,33 +462,6 @@ async function loadExistingData(): Promise<MigratedData> {
 			products: {}
 		};
 	}
-}
-
-/**
- * Merges the search and detail payloads into a single object the schema can
- * read from. Detail-API keys win over search-API keys (see notes), while
- * price/abv/volume remain search-only fields and are preserved.
- *
- * The campaign fields are an exception: the search and detail endpoints report
- * them in different formats, and the search format is the canonical one — the
- * search API returns `lowest_30d_price` as a euro string ("1.1900") and the
- * campaign dates as plain `YYYY-MM-DD`, whereas the detail API returns the
- * price as an integer in cents (179 = 1.79 €) and the dates as ISO timestamps.
- * Keeping the search values protects the normal price from being read as a
- * 100×-too-large reference price and the campaign window from being
- * unparseable.
- */
-const SEARCH_WINS_KEYS = ['lowest_30d_price', 'campaign_start_date', 'campaign_end_date'] as const;
-
-function mergeProduct(
-	search: SearchProductData,
-	details: DetailedProductData
-): Record<string, unknown> {
-	const merged: Record<string, unknown> = { ...search, ...details };
-	for (const key of SEARCH_WINS_KEYS) {
-		if (search[key] != null) merged[key] = search[key];
-	}
-	return merged;
 }
 
 // ============================================================================
@@ -913,39 +785,15 @@ async function sync(): Promise<void> {
 	// otherwise), so the API id set can be trusted for removal detection.
 	const apiIds = new Set(searchProducts.map((product) => product.id));
 	const today = new Date().toISOString().slice(0, 10);
-
-	for (const [id, previous] of Object.entries(existingProducts)) {
-		// Already rebuilt as an active product from the API response this run.
-		if (id in products) continue;
-		if (!isMigratedProduct(previous)) continue;
-
-		// Drop any existing gifts & drinking accessories: matched by the API's
-		// classification (by id) or, for items no longer in the API, by the stored
-		// main-group name. These are excluded from the dataset, not "removed".
-		if (irrelevantIds.has(id) || isIrrelevantStoredValues(previous.values)) {
-			stats.filteredRemoved++;
-			continue;
-		}
-
-		if (apiIds.has(id)) {
-			// Still present in the API response: keep it active, clear any stale flag.
-			products[id] = clearRemovedFlag(previous);
-		} else if (previous.meta?.removedFromSelection) {
-			// Missing from the API and already flagged in an earlier run: keep the
-			// original removal date.
-			products[id] = previous;
-			products[id]['values'][LEGACY_HEADERS.indexOf('Uutuus')] = null; // Clear the "Uutuus" field for removed products
-		} else {
-			// Present in the existing dataset but absent from the API response: this
-			// is a newly removed product, flag it with today's date.
-			products[id] = {
-				...previous,
-				meta: { ...previous.meta, removedFromSelection: today }
-			};
-			products[id]['values'][LEGACY_HEADERS.indexOf('Uutuus')] = null; // Clear the "Uutuus" field for removed products
-			stats.removed++;
-		}
-	}
+	const carried = carryOverMissingProducts(
+		existingProducts,
+		products,
+		apiIds,
+		irrelevantIds,
+		today
+	);
+	stats.removed += carried.removed;
+	stats.filteredRemoved += carried.filteredRemoved;
 
 	const now = new Date().toISOString();
 	// `LastSynced` records every fetch; `LastUpdated` only moves when an actual

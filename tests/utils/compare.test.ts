@@ -4,12 +4,12 @@ import { beforeEach, describe, expect, it, mock } from 'bun:test';
 const compareProductIds: string[] = [];
 mock.module('$lib/global.svelte', () => ({ compareProductIds }));
 // Bun shares module mocks between test files, so this matches the helpers mock in metrics.test.ts
-mock.module('./helpers', () => ({
+mock.module('$lib/utils/helpers', () => ({
 	headerToDisplayName: (header: string) => header,
 	isNullish: (value: unknown) => value === null || value === undefined,
 	sendAnalyticsEvent: () => {}
 }));
-const { addToCompareWithReference, MAX_COMPARE_PRODUCTS } = await import('./compare');
+const { addToCompareWithReference, MAX_COMPARE_PRODUCTS } = await import('$lib/utils/compare');
 
 function fill(count: number) {
 	compareProductIds.push(...Array.from({ length: count }, (_, i) => `other-${i}`));
