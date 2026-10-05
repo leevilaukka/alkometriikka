@@ -17,8 +17,10 @@
 		onlyPreferredStore,
 		pageBottomBar,
 		personalInfo,
-		preferredStoreId
+		preferredStoreId,
+		userLocation
 	} from '$lib/global.svelte';
+	import { resolvePreferredStore } from '$lib/utils/availability';
 	import { compareURL, MAX_COMPARE_PRODUCTS } from '$lib/utils/compare';
 	import { pickCategoryHighlights } from '$lib/utils/metrics';
 	import { twMerge } from 'tailwind-merge';
@@ -46,7 +48,9 @@
 	const node = $derived(trail[trail.length - 1]);
 	const parent = $derived(trail.length > 1 ? trail[0] : undefined);
 
-	const preferredStore = $derived(availability.stores[$preferredStoreId]);
+	const preferredStore = $derived(
+		resolvePreferredStore(availability.stores, $preferredStoreId, $userLocation)
+	);
 	const storeFilter = $derived($onlyPreferredStore && preferredStore ? preferredStore.id : undefined);
 
 	// A Kaljakori of just this category, so the list, filter options and number

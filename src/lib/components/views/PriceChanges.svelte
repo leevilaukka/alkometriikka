@@ -19,7 +19,8 @@
 		type PriceChangeDirection
 	} from '$lib/utils/priceChanges';
 	import type { SearchParamsManager } from '$lib/utils/url';
-	import { onlyPreferredStore, preferredStoreId, searchQuery } from '$lib/global.svelte';
+	import { onlyPreferredStore, preferredStoreId, searchQuery, userLocation } from '$lib/global.svelte';
+	import { resolvePreferredStore } from '$lib/utils/availability';
 	import { twMerge } from 'tailwind-merge';
 	import Icon from '../widgets/Icon.svelte';
 	import Breadcrumb from '../widgets/Breadcrumb.svelte';
@@ -47,7 +48,9 @@
 	const subTypeNode = $derived(typeNode?.children.find((node) => node.slug === subTypeSlug));
 	const trail = $derived([typeNode, subTypeNode].filter((node): node is CategoryNode => !!node));
 
-	const preferredStore = $derived(availability.stores[$preferredStoreId]);
+	const preferredStore = $derived(
+		resolvePreferredStore(availability.stores, $preferredStoreId, $userLocation)
+	);
 	const storeFilter = $derived($onlyPreferredStore && preferredStore ? preferredStore.id : undefined);
 
 	// Every change in the window, before the category, direction and name filters,

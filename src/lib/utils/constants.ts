@@ -295,11 +295,15 @@ export const filterRenameMap = {
 	[AllColumns.BitternessEBU]: 'Katkeroaineet'
 } as const satisfies ColNameObj<string>;
 
+/** Value of the preferred store setting that follows the store nearest to the user. */
+export const AUTO_STORE_ID = 'auto';
+
 /** Keys used for storing data in localStorage */
 export const LocalStorageKeys = {
 	PersonalInfo: 'personal_info',
 	PreferredStore: 'preferred_store',
 	OnlyPreferredStore: 'only_preferred_store',
+	UserLocation: 'user_location',
 	Lists: 'lists',
 	ListsVersion: 'lists_version',
 	AppVersion: 'app_version',

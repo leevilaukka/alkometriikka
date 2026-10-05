@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { preferredStoreId } from '$lib/global.svelte';
+	import { AUTO_STORE_ID } from '$lib/utils/constants';
+	import { requestUserLocation } from '$lib/utils/location';
 	import type { AvailabilityStore } from '$lib/types';
 	import { getStoreCity, isStoreOpen } from '$lib/utils/availability.js';
 	import { generateTitle, sendAnalyticsEvent, setSEO } from '$lib/utils/helpers';
@@ -67,6 +69,22 @@
 			<h1 class="text-2xl font-bold md:text-3xl">Myymälät</h1>
 			<p class="text-secondary">Selaa Alkon myymälöitä ja valitse ensisijainen myymälä.</p>
 		</header>
+
+		<button
+			type="button"
+			class={twMerge(
+				components.button({ type: $preferredStoreId === AUTO_STORE_ID ? 'positive' : 'primary' }),
+				'self-start'
+			)}
+			disabled={$preferredStoreId === AUTO_STORE_ID}
+			onclick={() => {
+				$preferredStoreId = AUTO_STORE_ID;
+				requestUserLocation();
+				sendAnalyticsEvent('preferred_store_changed', { storeId: AUTO_STORE_ID, storeName: 'Auto' });
+			}}
+		>
+			{$preferredStoreId === AUTO_STORE_ID ? 'Automaattinen valinta käytössä' : 'Valitse lähin myymälä automaattisesti'}
+		</button>
 
 		<label class="flex flex-col gap-2" for="store-search">
 			<span class="font-semibold">Hae myymälää</span>

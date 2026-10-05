@@ -22,7 +22,7 @@
     {#if lists.length > 0}
         <div class="flex flex-col gap-4">
             {#each lists.filter(list => { return (useSearch && $searchQuery) ? isSimilarString(list.name, $searchQuery) : true }) as list}
-                <div class="relative flex justify-between items-center gap-2 p-2 border rounded border-primary focus-within:outline-2 focus-within:outline-brand-1">
+                <div class="relative flex justify-between items-center gap-2 p-2 border rounded border-primary focus-within:outline-1 focus-within:outline-brand-1">
                     <div class="flex flex-col">
                         <a
                             href={`/listat?list=${listToURI(list)}`}
