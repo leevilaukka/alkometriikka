@@ -3,7 +3,7 @@
 	import { getContext, untrack } from 'svelte';
 	import type { Kaljakori } from '$lib/alko';
 	import type { AvailabilityData } from '$lib/types';
-	import { AllColumns, ContextKeys } from '$lib/utils/constants';
+	import { AllColumns, AUTO_STORE_ID, ContextKeys } from '$lib/utils/constants';
 	import { categoryFeedPath, categoryTitle, type CategoryNode } from '$lib/utils/categories';
 	import { generateTitle, setSEO } from '$lib/utils/helpers';
 	import { recentPriceChanges } from '$lib/utils/metrics';
@@ -21,6 +21,7 @@
 	import type { SearchParamsManager } from '$lib/utils/url';
 	import { onlyPreferredStore, preferredStoreId, searchQuery, userLocation } from '$lib/global.svelte';
 	import { resolvePreferredStore } from '$lib/utils/availability';
+	import { keepAutoLocationFresh } from '$lib/utils/location';
 	import { twMerge } from 'tailwind-merge';
 	import Icon from '../widgets/Icon.svelte';
 	import Breadcrumb from '../widgets/Breadcrumb.svelte';
@@ -47,6 +48,10 @@
 	const typeNode = $derived(tree.find((node) => node.slug === typeSlug));
 	const subTypeNode = $derived(typeNode?.children.find((node) => node.slug === subTypeSlug));
 	const trail = $derived([typeNode, subTypeNode].filter((node): node is CategoryNode => !!node));
+
+	$effect(() => {
+		if ($preferredStoreId === AUTO_STORE_ID) return keepAutoLocationFresh();
+	});
 
 	const preferredStore = $derived(
 		resolvePreferredStore(availability.stores, $preferredStoreId, $userLocation)

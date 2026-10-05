@@ -304,6 +304,7 @@ export const LocalStorageKeys = {
 	PreferredStore: 'preferred_store',
 	OnlyPreferredStore: 'only_preferred_store',
 	UserLocation: 'user_location',
+	UserLocationUpdatedAt: 'user_location_updated_at',
 	Lists: 'lists',
 	ListsVersion: 'lists_version',
 	AppVersion: 'app_version',

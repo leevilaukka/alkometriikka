@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Kaljakori } from '$lib/alko';
 	import type { AvailabilityData, PriceListItem } from '$lib/types';
-	import { AllColumns } from '$lib/utils/constants';
+	import { AllColumns, AUTO_STORE_ID } from '$lib/utils/constants';
 	import {
 		categoryDescription,
 		categoryFeedPath,
@@ -21,6 +21,7 @@
 		userLocation
 	} from '$lib/global.svelte';
 	import { resolvePreferredStore } from '$lib/utils/availability';
+	import { keepAutoLocationFresh } from '$lib/utils/location';
 	import { compareURL, MAX_COMPARE_PRODUCTS } from '$lib/utils/compare';
 	import { pickCategoryHighlights } from '$lib/utils/metrics';
 	import { twMerge } from 'tailwind-merge';
@@ -47,6 +48,10 @@
 
 	const node = $derived(trail[trail.length - 1]);
 	const parent = $derived(trail.length > 1 ? trail[0] : undefined);
+
+	$effect(() => {
+		if ($preferredStoreId === AUTO_STORE_ID) return keepAutoLocationFresh();
+	});
 
 	const preferredStore = $derived(
 		resolvePreferredStore(availability.stores, $preferredStoreId, $userLocation)

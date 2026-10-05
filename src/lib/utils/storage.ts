@@ -13,6 +13,7 @@ type LocalStorageValueMap = {
 	[LocalStorageKeys.PreferredStore]: string;
 	[LocalStorageKeys.OnlyPreferredStore]: boolean;
 	[LocalStorageKeys.UserLocation]: { latitude: number; longitude: number };
+	[LocalStorageKeys.UserLocationUpdatedAt]: number;
 	[LocalStorageKeys.Lists]: ListObj[];
 	[LocalStorageKeys.ListsVersion]: number;
 	[LocalStorageKeys.AppVersion]: string;

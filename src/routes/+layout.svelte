@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	import { dev } from '$app/environment';
-	import { ContextKeys, LocalStorageKeys, AUTO_STORE_ID } from '$lib/utils/constants';
+	import { ContextKeys, LocalStorageKeys } from '$lib/utils/constants';
 	import { compareProductIds, isMobile, isLaptop, lists, onlyPreferredStore, pageBottomBar, personalInfo, preferredStoreId, searchQuery, theme, userLocation } from '$lib/global.svelte';
 	import logo from '$lib/assets/images/Logo/0.5x/Logo_rounded@0.5x.png';
 	import { twMerge } from 'tailwind-merge';
@@ -15,8 +15,7 @@
 	import Settings from '$lib/components/widgets/Settings/Index.svelte';
 	import CompareBar from '$lib/components/widgets/CompareBar.svelte';
 	import { LocalStorageManager } from '$lib/utils/storage';
-	import { requestUserLocation } from '$lib/utils/location';
-	import type { IconName } from '$lib/icons';
+		import type { IconName } from '$lib/icons';
 
 	let { children, data } = $props();
 	let searchParamsManager = new SearchParamsManager(page.url);
@@ -44,18 +43,6 @@
 
 	$effect(() => {
 		LocalStorageManager.setItem(LocalStorageKeys.CompareProducts, compareProductIds);
-	});
-
-	$effect(() => {
-		if ($preferredStoreId !== AUTO_STORE_ID) return;
-
-		requestUserLocation();
-		// Refresh when the tab regains focus, since the user may have moved in the meantime.
-		const refresh = () => {
-			if (document.visibilityState === 'visible') requestUserLocation();
-		};
-		document.addEventListener('visibilitychange', refresh);
-		return () => document.removeEventListener('visibilitychange', refresh);
 	});
 
 	$effect(() => {

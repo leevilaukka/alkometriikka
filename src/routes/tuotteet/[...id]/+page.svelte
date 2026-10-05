@@ -3,9 +3,16 @@
 	import { page } from '$app/state';
 	import { preferredStoreId, userLocation } from '$lib/global.svelte';
 	import { resolvePreferredStore } from '$lib/utils/availability';
+	import { AUTO_STORE_ID } from '$lib/utils/constants';
+	import { keepAutoLocationFresh } from '$lib/utils/location';
 	import type { AvailabilityStore, PriceListItem } from '$lib/types.js';
 
 	let { data } = $props(); 
+
+	$effect(() => {
+		if ($preferredStoreId === AUTO_STORE_ID) return keepAutoLocationFresh();
+	});
+
 	let id = $derived(page.params.id?.split('/')[0]); // Handle both /tuotteet/123 and /tuotteet/123/extra paths
 </script>
 
