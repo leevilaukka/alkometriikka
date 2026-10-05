@@ -3,7 +3,6 @@ import path from "node:path";
 import Bun, { CryptoHasher } from "bun";
 import { getSaleInfo, toISODateInTimeZone } from "../../src/lib/utils/sales.ts";
 import { ogImageUrl } from "../og/og";
-import { OG_IMAGE_WIDTH, OG_IMAGE_HEIGHT } from "../og/og";
 import { CATEGORY_OG_MANIFEST_FILE, categoryOgUrl, type CategoryOgManifest } from "../og/og-category-card";
 import {
   buildCategoryTree,
@@ -19,7 +18,9 @@ import {
 import { readOption } from "../lib/cli";
 import type { StoredDataset, StoredProduct } from "../../src/lib/utils/dataset.ts";
 import { mapPool } from "../lib/async";
-import { escapeHtml, escapeJson, replaceMarkedSection } from "../lib/html";
+import { escapeHtml } from "../lib/html";
+import { breadcrumbJsonLd, breadcrumbNav, renderStub, SITE_URL, type StubPage } from "../lib/stub";
+import { productDescription } from "../../src/lib/utils/seo.ts";
 
 type PrerenderManifestEntry = {
   key: string;
@@ -31,7 +32,7 @@ type PrerenderManifest = Record<string, PrerenderManifestEntry>;
 // Bump when the page rendering logic (productHtml, minifyHtml, the SEO
 // template, ...) changes in a way that can alter existing pages without the
 // template or product data changing, forcing a full re-render.
-const RENDER_VERSION = 4;
+const RENDER_VERSION = 5;
 
 function sha256Hex(value: string): string {
   const hasher = new CryptoHasher("sha256");
@@ -42,14 +43,16 @@ function sha256Hex(value: string): string {
 // Content-addressable key for a product page. Every input that can change the
 // rendered HTML — the rendering logic version, the schema, the raw product
 // data, the page template (new JS/CSS hashes invalidate every page) and the
-// product's OG image key and category trail — is hashed, so unchanged pages
-// can be skipped.
+// product's OG image key and category trail, plus today's date for products
+// with a campaign (their sale state is date-dependent) — is hashed, so unchanged
+// pages can be skipped.
 function productKey(
   schema: readonly string[],
   product: StoredProduct,
   templateFingerprint: string,
   ogKey: string | null,
-  categoryTrail: CategoryNode[]
+  categoryTrail: CategoryNode[],
+  saleDay: string | null
 ): string {
   return sha256Hex(
     JSON.stringify([
@@ -60,7 +63,8 @@ function productKey(
       product.priceHistory ?? null,
       templateFingerprint,
       ogKey,
-      categoryTrail.map((node) => [node.name, node.path])
+      categoryTrail.map((node) => [node.name, node.path]),
+      saleDay
     ])
   );
 }
@@ -73,8 +77,6 @@ type Options = {
   ogCategoriesManifestPath: string;
   manifestPath: string;
 };
-
-const SITE_URL = "https://alkometriikka.fi";
 
 async function readManifest(filePath: string): Promise<PrerenderManifest> {
   return Bun.file(filePath)
@@ -99,131 +101,6 @@ function resolveOptions(): Options {
   };
 }
 
-// Collapses whitespace runs to a single space while leaving quoted strings and
-// CSS comments untouched (internal whitespace there is significant).
-function collapseCssWhitespace(css: string): string {
-  let out = "";
-  let mode: "code" | "string" | "comment" = "code";
-  let quote = "";
-  let i = 0;
-  while (i < css.length) {
-    const char = css[i];
-    if (mode === "comment") {
-      out += char;
-      i += 1;
-      if (char === "*" && css[i] === "/") {
-        out += "/";
-        i += 1;
-        mode = "code";
-      }
-      continue;
-    }
-    if (mode === "string") {
-      out += char;
-      i += 1;
-      if (char === quote) {
-        mode = "code";
-      } else if (char === "\\") {
-        out += css[i] ?? "";
-        i += 1;
-      }
-      continue;
-    }
-    if (char === '"' || char === "'") {
-      mode = "string";
-      quote = char;
-      out += char;
-      i += 1;
-      continue;
-    }
-    if (char === "/" && css[i + 1] === "*") {
-      mode = "comment";
-      out += "/*";
-      i += 2;
-      continue;
-    }
-    if (/[ \t\r\n]/.test(char)) {
-      while (i < css.length && /[ \t\r\n]/.test(css[i])) i += 1;
-      out += " ";
-      continue;
-    }
-    out += char;
-    i += 1;
-  }
-  return out;
-}
-
-// Collapses whitespace runs between attributes to a single space, keeping
-// quoted attribute values untouched.
-function collapseTagWhitespace(tag: string): string {
-  let out = "";
-  let quote = "";
-  for (let i = 0; i < tag.length; i += 1) {
-    const char = tag[i];
-    if (quote) {
-      out += char;
-      if (char === quote) quote = "";
-      continue;
-    }
-    if (char === '"' || char === "'") {
-      quote = char;
-      out += char;
-      continue;
-    }
-    if (/[ \t\r\n]/.test(char)) {
-      while (i < tag.length && /[ \t\r\n]/.test(tag[i])) i += 1;
-      out += " ";
-      i -= 1;
-      continue;
-    }
-    out += char;
-  }
-  return out;
-}
-
-// Whitespace-collapsing HTML minifier. Runs of whitespace between tags and
-// between attributes become a single space (quoted values and text content are
-// preserved). The text content of script/pre/textarea elements is kept
-// byte-for-byte untouched; style content is collapsed as CSS. Comments are left
-// in place.
-function minifyHtml(html: string): string {
-  const preserved = new Set(["script", "style", "pre", "textarea"]);
-  let result = "";
-  let position = 0;
-  while (position < html.length) {
-    if (html.startsWith("<!--", position)) {
-      const end = html.indexOf("-->", position + 4);
-      position = end === -1 ? html.length : end + 3;
-      continue;
-    }
-    if (html[position] === "<") {
-      const end = html.indexOf(">", position);
-      if (end === -1) {
-        result += html.slice(position);
-        break;
-      }
-      const tag = html.slice(position, end + 1);
-      const name = (/^<\s*([a-zA-Z0-9]+)/.exec(tag) || [])[1]?.toLowerCase();
-      result += collapseTagWhitespace(tag);
-      position = end + 1;
-      if (name && preserved.has(name)) {
-        const closing = html.indexOf(`</${name}`, position);
-        if (closing === -1) {
-          result += html.slice(position);
-          break;
-        }
-        result += name === "style" ? collapseCssWhitespace(html.slice(position, closing)) : html.slice(position, closing);
-        position = closing;
-      }
-      continue;
-    }
-    const next = html.indexOf("<", position);
-    const text = html.slice(position, next === -1 ? html.length : next);
-    result += text.replace(/[ \t\r\n]+/g, " ");
-    position = next === -1 ? html.length : next;
-  }
-  return result;
-}
 
 function asText(value: unknown): string {
   if (Array.isArray(value)) return value.map((item) => String(item).trim()).filter(Boolean).join(", ");
@@ -285,7 +162,6 @@ function productHtml(
   const type = asText(fields.Tyyppi);
   const subtype = asText(fields.Alatyyppi);
   const descriptionValue = asText(fields.Luonnehdinta);
-  const description = `Katso ${name} -tuotteen tiedot, hinnat ja vastaavat tuotteet Alkometriikasta.`;
   const title = `${name} - Alkometriikka`;
   const url = `${SITE_URL}/tuotteet/${encodeURIComponent(id)}/`;
   const image = `https://images.alko.fi/images/cs_srgb,f_auto,t_medium/cdn/${encodeURIComponent(id)}/kuva.jpg`;
@@ -299,6 +175,14 @@ function productHtml(
   const category = [type, subtype].filter(Boolean).join(" / ");
   const volume = asNumber(fields.Pullokoko);
   const pricePerLitre = asNumber(fields.Litrahinta);
+  const metaDescription = productDescription({
+    name,
+    category,
+    volume,
+    alcoholPercentage: asNumber(fields["Alkoholi-%"]),
+    price,
+    pricePerLitre
+  });
   const sale = getSaleInfo(
     {
       price,
@@ -334,7 +218,7 @@ function productHtml(
     sku: id,
     url,
     image: imageVariants,
-    description: descriptionValue || description,
+    description: descriptionValue || metaDescription,
     hasAdultConsideration: "https://schema.org/AlcoholConsideration",
     ...(manufacturer ? { brand: { "@type": "Brand", name: manufacturer } } : {}),
     ...(asText(fields.Valmistusmaa) ? { countryOfOrigin: asText(fields.Valmistusmaa) } : {}),
@@ -397,34 +281,6 @@ function productHtml(
     { name, url }
   ]);
 
-  const metadata = [
-    `\t<meta name="description" content="${escapeHtml(description)}" />`,
-    `\t<meta name="keywords" content="${escapeHtml(keywords)}" />`,
-    `\t<link rel="canonical" href="${escapeHtml(url)}" />`,
-    ...(hasPriceChange(product.priceHistory)
-      ? [
-          `\t<link rel="alternate" type="application/rss+xml" data-prerendered title="${escapeHtml(
-            `${name} – hintamuutokset`
-          )}" href="${escapeHtml(`${SITE_URL}/rss/${encodeURIComponent(id)}.xml`)}" />`
-        ]
-      : []),
-    `\t<meta property="og:type" content="product" />`,
-    `\t<meta property="og:title" content="${escapeHtml(title)}" />`,
-    `\t<meta property="og:url" content="${escapeHtml(url)}" />`,
-    `\t<meta property="og:description" content="${escapeHtml(description)}" />`,
-    `\t<meta property="og:site_name" content="Alkometriikka" />`,
-    `\t<meta property="og:image" content="${escapeHtml(ogImage)}" />`,
-    `\t<meta property="og:image:width" content="${OG_IMAGE_WIDTH}" />`,
-    `\t<meta property="og:image:height" content="${OG_IMAGE_HEIGHT}" />`,
-    `\t<meta property="og:image:alt" content="${escapeHtml(name)}" />`,
-    `\t<meta name="twitter:card" content="summary_large_image" />`,
-    `\t<meta name="twitter:title" content="${escapeHtml(title)}" />`,
-    `\t<meta name="twitter:description" content="${escapeHtml(description)}" />`,
-    `\t<meta name="twitter:image" content="${escapeHtml(ogImage)}" />`,
-    `\t<script type="application/ld+json">${escapeJson(jsonLd)}</script>`,
-    `\t<script type="application/ld+json">${escapeJson(breadcrumbList)}</script>`
-  ].join("\n");
-
   const facts = [
     ["Valmistaja", manufacturer],
     ["Tuotetyyppi", category],
@@ -437,42 +293,37 @@ function productHtml(
     ["Valikoima", asText(fields.Valikoima)]
   ].filter((entry) => entry[1]);
 
-  const fallback = `
-\t<article data-prerendered-product style="max-width:80rem;margin:0 auto;padding:2rem;font-family:sans-serif">
-\t\t${breadcrumbNav(categoryTrail)}
+  const page: StubPage = {
+    title,
+    description: metaDescription,
+    url,
+    keywords,
+    ogType: "product",
+    ogImage,
+    ogImageAlt: name,
+    alternates: hasPriceChange(product.priceHistory)
+      ? [
+          `\t<link rel="alternate" type="application/rss+xml" data-prerendered title="${escapeHtml(
+            `${name} – hintamuutokset`
+          )}" href="${escapeHtml(`${SITE_URL}/rss/${encodeURIComponent(id)}.xml`)}" />`
+        ]
+      : [],
+    ogExtra: [
+      `\t<meta property="product:price:amount" content="${price}" />`,
+      `\t<meta property="product:price:currency" content="EUR" />`
+    ],
+    jsonLd: [jsonLd, breadcrumbList],
+    fallbackName: "product",
+    fallbackHtml: `\t\t${breadcrumbNav(categoryTrail)}
 \t\t<header>
 \t\t\t<h1>${escapeHtml(name)}</h1>
 \t\t\t${manufacturer ? `<p>${escapeHtml(manufacturer)}</p>` : ""}
 \t\t</header>
 \t\t<img src="${escapeHtml(image)}" alt="${escapeHtml(name)}" width="320" height="384" />
 \t\t${descriptionValue ? `<p>${escapeHtml(descriptionValue)}</p>` : ""}
-\t\t<dl>${facts.map(([label, value]) => `<dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd>`).join("")}</dl>
-\t</article>
-\t<script>document.querySelector('[data-prerendered-product]')?.remove();document.currentScript?.remove();</script>`;
-
-  let html = replaceMarkedSection(template, metadata);
-  html = html.replace(/<title>[^<]*<\/title>/, `<title>${escapeHtml(title)}</title>`);
-  html = html.replace(/(<body(?:\s[^>]*)?>)/, `$1${fallback}`);
-  return { html: minifyHtml(html), id };
-}
-
-function breadcrumbJsonLd(items: { name: string; url: string }[]) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [{ name: "Alkometriikka", url: `${SITE_URL}/` }, ...items].map((item, index) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      name: item.name,
-      item: item.url
-    }))
+\t\t<dl>${facts.map(([label, value]) => `<dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd>`).join("")}</dl>`
   };
-}
-
-function breadcrumbNav(trail: CategoryNode[]): string {
-  return `<nav>${[{ name: "Alkometriikka", path: "/" }, ...trail]
-    .map((node) => `<a href="${escapeHtml(node.path)}">${escapeHtml(node.name)}</a>`)
-    .join(" › ")}</nav>`;
+  return { html: renderStub(template, page), id };
 }
 
 type CategoryProduct = {
@@ -554,34 +405,6 @@ function categoryHtml(
       : {})
   };
 
-  const metadata = [
-    `\t<meta name="description" content="${escapeHtml(description)}" />`,
-    `\t<meta name="keywords" content="${escapeHtml(["alko", ...trail.map((item) => item.name)].join(", "))}" />`,
-    `\t<link rel="canonical" href="${escapeHtml(url)}" />`,
-    ...(node
-      ? [
-          `\t<link rel="alternate" type="application/rss+xml" data-prerendered title="${escapeHtml(
-            `${name} – uutuudet ja hinnanmuutokset`
-          )}" href="${escapeHtml(`${SITE_URL}${categoryFeedPath(trail[0].slug, trail[1]?.slug)}.xml`)}" />`
-        ]
-      : []),
-    `\t<meta property="og:type" content="website" />`,
-    `\t<meta property="og:title" content="${escapeHtml(title)}" />`,
-    `\t<meta property="og:url" content="${escapeHtml(url)}" />`,
-    `\t<meta property="og:description" content="${escapeHtml(description)}" />`,
-    `\t<meta property="og:site_name" content="Alkometriikka" />`,
-    `\t<meta property="og:image" content="${escapeHtml(ogImage)}" />`,
-    `\t<meta property="og:image:width" content="${OG_IMAGE_WIDTH}" />`,
-    `\t<meta property="og:image:height" content="${OG_IMAGE_HEIGHT}" />`,
-    `\t<meta property="og:image:alt" content="${escapeHtml(ogImageAlt)}" />`,
-    `\t<meta name="twitter:card" content="summary_large_image" />`,
-    `\t<meta name="twitter:title" content="${escapeHtml(title)}" />`,
-    `\t<meta name="twitter:description" content="${escapeHtml(description)}" />`,
-    `\t<meta name="twitter:image" content="${escapeHtml(ogImage)}" />`,
-    `\t<script type="application/ld+json">${escapeJson(collectionPage)}</script>`,
-    `\t<script type="application/ld+json">${escapeJson(breadcrumbList)}</script>`
-  ].join("\n");
-
   const linkList = links.length
     ? `<ul>${links
         .map((item) => `<li><a href="${escapeHtml(item.path)}">${escapeHtml(item.name)}</a> (${item.count})</li>`)
@@ -599,20 +422,29 @@ function categoryHtml(
         .join("")}</ol>`
     : "";
 
-  const fallback = `
-\t<article data-prerendered-category style="max-width:80rem;margin:0 auto;padding:2rem;font-family:sans-serif">
-\t\t${breadcrumbNav(trail.slice(0, -1))}
+  const page: StubPage = {
+    title,
+    description,
+    url,
+    keywords: ["alko", ...trail.map((item) => item.name)].join(", "),
+    ogImage,
+    ogImageAlt,
+    alternates: node
+      ? [
+          `\t<link rel="alternate" type="application/rss+xml" data-prerendered title="${escapeHtml(
+            `${name} – uutuudet ja hinnanmuutokset`
+          )}" href="${escapeHtml(`${SITE_URL}${categoryFeedPath(trail[0].slug, trail[1]?.slug)}.xml`)}" />`
+        ]
+      : [],
+    jsonLd: [collectionPage, breadcrumbList],
+    fallbackName: "category",
+    fallbackHtml: `\t\t${breadcrumbNav(trail.slice(0, -1))}
 \t\t<h1>${escapeHtml(node ? node.name : "Kategoriat")}</h1>
 \t\t<p>${escapeHtml(description)}</p>
 \t\t${linkList}
-\t\t${productList}
-\t</article>
-\t<script>document.querySelector('[data-prerendered-category]')?.remove();document.currentScript?.remove();</script>`;
-
-  let html = replaceMarkedSection(template, metadata);
-  html = html.replace(/<title>[^<]*<\/title>/, `<title>${escapeHtml(title)}</title>`);
-  html = html.replace(/(<body(?:\s[^>]*)?>)/, `$1${fallback}`);
-  return minifyHtml(html);
+\t\t${productList}`
+  };
+  return renderStub(template, page);
 }
 
 /** Category pages are few and cheap, so they're fully regenerated every run. */
@@ -693,6 +525,8 @@ async function main() {
   const keptPageIds = new Set<string>();
   const generatedIds = new Set<string>();
 
+  const today = toISODateInTimeZone("Europe/Helsinki");
+  const campaignIndexes = ["Kampanja alkaa", "Kampanja päättyy"].map((column) => schema.indexOf(column));
   const typeIndex = schema.indexOf("Tyyppi");
   const subTypeIndex = schema.indexOf("Alatyyppi");
   const validProducts = Object.values(products).filter(
@@ -717,7 +551,10 @@ async function main() {
       product.values[typeIndex],
       product.values[subTypeIndex]
     ).trail;
-    const key = productKey(schema, product, templateFingerprint, ogKey, categoryTrail);
+    // Sale state depends on today's date, so a campaign starting or ending
+    // without a data change must still re-render the page.
+    const hasCampaign = campaignIndexes.some((index) => asText(product.values[index]));
+    const key = productKey(schema, product, templateFingerprint, ogKey, categoryTrail, hasCampaign ? today : null);
     const previousEntry = previous[productId];
     const previousPageId = previousEntry?.pageId;
     const previousFile = previousPageId

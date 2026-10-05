@@ -1,18 +1,16 @@
 <script lang="ts">
 	import Stats from '$lib/components/views/Stats.svelte';
 	import { generateTitle, setSEO } from '$lib/utils/helpers';
+	import { staticPage } from '$lib/utils/seo';
 
 	const { data } = $props();
 
 	$effect(() => {
+		const { description, keywords } = staticPage('/tilastot/');
 		setSEO({
-			description: 'Alkon valikoima numeroina ja kuvaajina.',
-			og: {
-				title: generateTitle('Tilastot'),
-				description: 'Alkon valikoima numeroina ja kuvaajina.',
-				url: window.location.href
-			},
-			keywords: 'tilastot, kuvaajat, hinnat, alkoholi'
+			description,
+			og: { title: generateTitle('Tilastot'), description, url: window.location.href },
+			keywords
 		});
 	});
 </script>

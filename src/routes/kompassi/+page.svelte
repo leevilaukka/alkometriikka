@@ -12,6 +12,7 @@
 		rankStoresByDistance
 	} from '$lib/utils/availability';
 	import { generateTitle, setSEO } from '$lib/utils/helpers';
+	import { staticPage } from '$lib/utils/seo';
 	import { requestUserLocation } from '$lib/utils/location';
 	import {
 		needsOrientationPermission,
@@ -77,14 +78,11 @@
 		skipped = [];
 	}
 
+	const { description, keywords } = staticPage('/kompassi/');
 	setSEO({
-		og: {
-			title: generateTitle('Kompassi'),
-			description: 'Löydä lähin Alko kompassin avulla.',
-			url: window.location.href
-		},
-		keywords: 'Alko, kompassi, lähin myymälä',
-		description: 'Löydä lähin Alko kompassin avulla.'
+		og: { title: generateTitle('Kompassi'), description, url: window.location.href },
+		keywords,
+		description
 	});
 </script>
 

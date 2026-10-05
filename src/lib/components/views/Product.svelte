@@ -15,6 +15,7 @@
 		rankStoresByDistance
 	} from '$lib/utils/availability';
 	import { generateImageUrl } from '$lib/utils/image';
+	import { productDescription } from '$lib/utils/seo';
 
 	import ProductBreadcrumb from '../product/ProductBreadcrumb.svelte';
 	import ProductGallery from '../product/ProductGallery.svelte';
@@ -86,11 +87,19 @@
 	});
 
 	$effect(() => {
+		const description = productDescription({
+			name: product[AllColumns.Name],
+			category: [product[AllColumns.Type], product[AllColumns.SubType]].filter(Boolean).join(' / '),
+			volume: product[AllColumns.BottleSize],
+			alcoholPercentage: product[AllColumns.AlcoholPercentage],
+			price: product[AllColumns.Price],
+			pricePerLitre: product[AllColumns.PricePerLiter]
+		});
 		setSEO({
-			description: `Katso ${product[AllColumns.Name]} -tuotteen tiedot, hinnat ja vastaavat tuotteet Alkometriikasta.`,
+			description,
 			og: {
 				title: generateTitle(`${product[AllColumns.Name]}`),
-				description: `Katso ${product[AllColumns.Name]} -tuotteen tiedot, hinnat ja vastaavat tuotteet Alkometriikasta.`,
+				description,
 				url: `https://alkometriikka.fi/tuotteet/${product[AllColumns.Number]}/`
 			},
 			image: {
@@ -102,7 +111,7 @@
 			twitter: {
 				card: 'summary_large_image',
 				title: generateTitle(`${product[AllColumns.Name]}`),
-				description: `Katso ${product[AllColumns.Name]} -tuotteen tiedot, hinnat ja vastaavat tuotteet Alkometriikasta.`,
+				description,
 				image: generateImageUrl(product[AllColumns.Number], 'medium')
 			},
 			keywords: `${product[AllColumns.Name]}, ${product[AllColumns.Manufacturer]}, ${product[AllColumns.Type]}, ${product[AllColumns.SubType]}, ${[...(product[AllColumns.Description] || [])].join(', ').toLocaleLowerCase()}`

@@ -113,6 +113,15 @@ jobs:
             --template build/404.html \
             --og-manifest build/og-images.json
 
+      # Cheap (a few hundred files), so always regenerated: the pages embed the
+      # built page shell and the store list from availability.json.
+      - name: Prerender static and store pages
+        run: |
+          bun run scripts/site/prerender-static.ts \
+            --out build \
+            --template build/404.html \
+            --availability build/availability.json
+
       - name: Delete all files except build directory
         run: |
           shopt -s extglob

@@ -6,6 +6,7 @@
 	import { AllColumns, AUTO_STORE_ID, ContextKeys } from '$lib/utils/constants';
 	import { categoryFeedPath, categoryTitle, type CategoryNode } from '$lib/utils/categories';
 	import { generateTitle, sendAnalyticsEvent, setSEO } from '$lib/utils/helpers';
+	import { staticPage } from '$lib/utils/seo';
 	import { recentPriceChanges } from '$lib/utils/metrics';
 	import {
 		countPriceChangesByCategory,
@@ -30,8 +31,7 @@
 	const { kaljakori, availability }: { kaljakori: Kaljakori; availability: AvailabilityData } = $props();
 
 	const TITLE = 'Hinnanmuutokset';
-	const DESCRIPTION =
-		'Alkon tuotteiden viimeisimmät hinnanmuutokset: mitkä tuotteet halpenivat ja mitkä kallistuivat. Rajaa tyypin, myymälän ja aikavälin mukaan.';
+	const { description: DESCRIPTION, keywords: KEYWORDS } = staticPage('/hinnanmuutokset/');
 	const SITE_FEED = 'https://alkometriikka.fi/rss.xml';
 	/** Rows rendered at a time; a 90-day window can have thousands of changes. */
 	const PAGE_SIZE = 100;
@@ -119,7 +119,7 @@
 			description: DESCRIPTION,
 			og: { title, description: DESCRIPTION, url: 'https://alkometriikka.fi/hinnanmuutokset' },
 			twitter: { title, description: DESCRIPTION },
-			keywords: 'hinnanmuutokset, hinnanalennukset, hinnankorotukset, Alko, hinnat'
+			keywords: KEYWORDS
 		});
 	});
 </script>

@@ -274,6 +274,7 @@ jobs:
           [ -f og-categories.json ] && cp og-categories.json ../gh-pages/og-categories.json || true
           bun run scripts/site/prerender-products.ts --data data.json --out ../gh-pages --template ../gh-pages/404.html --og-manifest ../gh-pages/og-images.json --manifest ../gh-pages/tuotteet-manifest.json
           cp data.json availability.json sitemap.xml rss.xml feed.json ../gh-pages/
+          bun run scripts/site/prerender-static.ts --out ../gh-pages --template ../gh-pages/404.html --availability availability.json
           # Reset first so stale manifests (and the nested archive/) actually
           # disappear from the site instead of merging over.
           rm -rf ../gh-pages/daily
@@ -287,7 +288,7 @@ jobs:
       - name: Commit and push downloaded file
         working-directory: ../gh-pages
         run: |
-          git add data.json availability.json sitemap.xml rss.xml feed.json rss daily tuotteet tuotteet-manifest.json kategoriat -f
+          git add data.json availability.json sitemap.xml rss.xml feed.json rss daily tuotteet tuotteet-manifest.json kategoriat -f myymalat laskin tilastot kompassi hinnanmuutokset
           [ -f og-images.json ] && git add og-images.json -f || true
           [ -f og-categories.json ] && git add og-categories.json -f || true
           git commit -m "Update price list and static product pages [skip ci]" || echo "No changes to commit"
