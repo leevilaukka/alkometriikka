@@ -164,11 +164,16 @@ export type SimilarProductChip = {
 	count: number;
 };
 
+/** The chip value a product falls under: its Alatyyppi (SubType), or "Muut" when it has none. */
+export function similarProductSubType(product: PriceListItem): string {
+	return product[AllColumns.SubType] || 'Muut';
+}
+
 /** Groups `candidates` by Alatyyppi (SubType) with counts, plus a leading "Kaikki" chip. */
 export function groupSimilarProductsBySubType(candidates: PriceListItem[]): SimilarProductChip[] {
 	const counts = new Map<string, number>();
 	for (const product of candidates) {
-		const subType = product[AllColumns.SubType] || 'Muut';
+		const subType = similarProductSubType(product);
 		counts.set(subType, (counts.get(subType) ?? 0) + 1);
 	}
 	const chips: SimilarProductChip[] = [{ label: 'Kaikki', value: null, count: candidates.length }];

@@ -77,7 +77,7 @@
 					href={size.isCurrent ? undefined : `/tuotteet/${size.product[AllColumns.Number]}/`}
 					aria-current={size.isCurrent ? 'true' : undefined}
 					class={twMerge(
-						'flex flex-wrap items-center gap-x-3 gap-y-1 border-b border-primary px-3 py-2 text-left last:border-b-0',
+						'grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3 border-b border-primary px-3 py-2 text-left last:border-b-0',
 						size.isCurrent ? 'bg-secondary' : 'hover:bg-secondary'
 					)}
 				>
@@ -87,20 +87,23 @@
 							size.isCurrent ? 'border-brand-3 bg-brand-3' : 'border-gray-300 dark:border-zinc-600'
 						)}
 					></span>
-					<span class="flex min-w-0 items-baseline gap-1.5">
-						<strong class="text-sm">{formatValue(size.product[AllColumns.BottleSize], AllColumns.BottleSize)}</strong>
-						{#if size.packCount > 1}
-							<span class="truncate text-xs text-secondary">{size.packCount}-pack</span>
-						{:else if size.product[AllColumns.PackagingType]}
-							<span class="truncate text-xs text-secondary">{size.product[AllColumns.PackagingType]}</span>
+					<!-- The badge wraps under the name when space runs out, so the prices stay aligned -->
+					<span class="flex min-w-0 flex-wrap items-center gap-x-1.5 gap-y-0.5">
+						<span class="flex min-w-0 items-baseline gap-1.5">
+							<strong class="text-sm whitespace-nowrap">{formatValue(size.product[AllColumns.BottleSize], AllColumns.BottleSize)}</strong>
+							{#if size.packCount > 1}
+								<span class="truncate text-xs text-secondary">{size.packCount}-pack</span>
+							{:else if size.product[AllColumns.PackagingType]}
+								<span class="truncate text-xs text-secondary">{size.product[AllColumns.PackagingType]}</span>
+							{/if}
+						</span>
+						{#if size.isBestValue}
+							<span class="shrink-0 rounded bg-green-300 px-1.5 text-xs whitespace-nowrap text-green-800 dark:bg-green-800/40 dark:text-green-300">
+								Paras €/L
+							</span>
 						{/if}
 					</span>
-					{#if size.isBestValue}
-						<span class="rounded bg-green-300 px-1.5 text-xs text-green-800 dark:bg-green-800/40 dark:text-green-300">
-							Paras €/L
-						</span>
-					{/if}
-					<span class="ml-auto flex shrink-0 items-center gap-2.5">
+					<span class="flex items-center gap-2.5">
 						<span class="flex items-center gap-1.5">
 							<span class="flex h-1 w-10 shrink-0 overflow-hidden rounded-full bg-gray-200 dark:bg-zinc-700">
 								<span

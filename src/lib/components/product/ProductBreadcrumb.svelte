@@ -9,8 +9,15 @@
 	const {
 		product,
 		kaljakori,
+		page,
 		class: _class = ''
-	}: { product: PriceListItem; kaljakori: Kaljakori; class?: string } = $props();
+	}: {
+		product: PriceListItem;
+		kaljakori: Kaljakori;
+		/** Subpage of the product (e.g. "Vastaavat"), which links the product itself as a crumb. */
+		page?: string;
+		class?: string;
+	} = $props();
 
 	const items = $derived.by(() => {
 		const type = product[AllColumns.Type];
@@ -20,8 +27,9 @@
 		// Categories too small for a page of their own are still shown, just not linked
 		if (!trail.length && type) items.push({ label: type });
 		if (!legacy && items.length < 2 && subType) items.push({ label: subType });
+		if (page) items.push({ label: product[AllColumns.Name], href: `/tuotteet/${product[AllColumns.Number]}/` });
 		return items;
 	});
 </script>
 
-<Breadcrumb {items} current={product[AllColumns.Name]} class={_class} />
+<Breadcrumb {items} current={page ?? product[AllColumns.Name]} class={_class} />
