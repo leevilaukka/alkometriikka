@@ -47,7 +47,15 @@
 	});
 
 	$effect(() => {
-		if ($preferredStoreId === AUTO_STORE_ID) requestUserLocation();
+		if ($preferredStoreId !== AUTO_STORE_ID) return;
+
+		requestUserLocation();
+		// Refresh when the tab regains focus, since the user may have moved in the meantime.
+		const refresh = () => {
+			if (document.visibilityState === 'visible') requestUserLocation();
+		};
+		document.addEventListener('visibilitychange', refresh);
+		return () => document.removeEventListener('visibilitychange', refresh);
 	});
 
 	$effect(() => {
