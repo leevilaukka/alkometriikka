@@ -84,7 +84,8 @@
 		markRouterReady();
 		// The search belongs to the page it was typed on, so any path change other than
 		// back/forward drops it. Done after navigating so the page being left keeps its q.
-		if(type !== 'popstate' && from?.url.pathname !== to?.url.pathname) $searchQuery = '';
+		// The initial load ('enter') has no previous page (`from.url` is null) and keeps ?q= from the link.
+		if(type !== 'enter' && type !== 'popstate' && from?.url?.pathname !== to?.url?.pathname) $searchQuery = '';
 	});
 
 	function shiftLoader() {
