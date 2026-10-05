@@ -1,7 +1,7 @@
 import Bun from "bun";
 import { MigratedData, StoreData } from "../data/types";
 import { DEV } from "../data/constants";
-import { buildCategoryTree, CATEGORY_BASE_PATH } from "../../src/lib/utils/categories.ts";
+import { buildCategoryTree, categorySlug, CATEGORY_BASE_PATH } from "../../src/lib/utils/categories.ts";
 
 type SitemapEntry = {
     loc: string;
@@ -50,11 +50,39 @@ async function main() {
                 removed: Boolean(product.meta?.removedFromSelection)
             }))
     );
-    sitemapEntries.push({ loc: `${CATEGORY_BASE_PATH}/`, priority: 0.7, changeFreq: "weekly" });
+
+    // A category page changes when one of its products changes price or a new one appears,
+    // so its lastmod is the newest price-history date among its current products
+    const categoryLastMod = new Map<string, string>();
+    const bumpLastMod = (key: string, date: string) => {
+        if (date > (categoryLastMod.get(key) ?? "")) categoryLastMod.set(key, date);
+    };
+    for (const product of Object.values(products)) {
+        if (!product || !Array.isArray(product.values) || product.meta?.removedFromSelection) continue;
+        const date = product.priceHistory?.at(-1)?.date;
+        if (!date) continue;
+        const typeSlug = categorySlug(String(product.values[typeIndex] ?? ""));
+        const subTypeSlug = categorySlug(String(product.values[subTypeIndex] ?? ""));
+        bumpLastMod("", date);
+        bumpLastMod(typeSlug, date);
+        bumpLastMod(`${typeSlug}/${subTypeSlug}`, date);
+    }
+
+    sitemapEntries.push({
+        loc: `${CATEGORY_BASE_PATH}/`,
+        lastMod: categoryLastMod.get(""),
+        priority: 0.7,
+        changeFreq: "weekly"
+    });
     for (const type of categoryTree) {
-        sitemapEntries.push({ loc: type.path, priority: 0.8, changeFreq: "daily" });
+        sitemapEntries.push({ loc: type.path, lastMod: categoryLastMod.get(type.slug), priority: 0.8, changeFreq: "daily" });
         for (const subType of type.children) {
-            sitemapEntries.push({ loc: subType.path, priority: 0.8, changeFreq: "daily" });
+            sitemapEntries.push({
+                loc: subType.path,
+                lastMod: categoryLastMod.get(`${type.slug}/${subType.slug}`),
+                priority: 0.8,
+                changeFreq: "daily"
+            });
         }
     }
 
