@@ -9,6 +9,7 @@
 		removeFromCompare,
 		MAX_COMPARE_PRODUCTS
 	} from '$lib/utils/compare';
+	import { components } from '$lib/utils/styles';
 	import ProductImage from '../widgets/ProductImage.svelte';
 	import Icon from '../widgets/Icon.svelte';
 	import { twMerge } from 'tailwind-merge';
@@ -42,7 +43,7 @@
 	}
 </script>
 
-<div class={twMerge('relative flex flex-col gap-2.5 rounded-lg border border-primary p-3.5', _class)}>
+<div class={twMerge('relative flex flex-col gap-2.5 rounded border border-primary p-3.5', _class)}>
 	{#if delta.isBestValue}
 		<span
 			class="absolute top-3.5 left-3.5 z-10 flex items-center gap-1 rounded bg-green-300 px-1.5 text-xs text-green-800 dark:bg-green-800/40 dark:text-green-300"
@@ -112,13 +113,10 @@
 		type="button"
 		aria-pressed={inCompare}
 		aria-label={`Vertaile: ${delta.product[AllColumns.Name]}`}
-		class={twMerge(
-			'mt-auto flex items-center justify-center gap-1.5 rounded px-2 py-1 text-sm',
-			inCompare ? 'bg-brand-3 text-white' : 'border border-primary bg-primary hover:bg-secondary'
-		)}
+		class={twMerge(components.button({ size: 'sm', type: inCompare ? 'positive' : 'primary' }), 'mt-auto w-full')}
 		onclick={handleToggleCompare}
 	>
 		<Icon name="compare" />
-		<span>{inCompare ? 'Valittu' : 'Vertaile'}</span>
+		<span>{inCompare ? 'Vertailussa' : 'Vertaile'}</span>
 	</button>
 </div>
