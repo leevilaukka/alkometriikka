@@ -16,13 +16,18 @@ export function readHeading(event: Event): number | null {
 	return null;
 }
 
+// Recent Chromium also exposes requestPermission, so the API alone doesn't identify iOS.
+const isIOS = () =>
+	/iPad|iPhone|iPod/.test(navigator.userAgent) ||
+	(navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
 /** True on iOS, where sensor data is only released after a permission prompt from a tap. */
-export const needsOrientationPermission = () => Boolean(permissionApi());
+export const needsOrientationPermission = () => isIOS() && Boolean(permissionApi());
 
 /** Asks for motion access where required (must be called from a tap). Resolves true if allowed. */
 export async function requestOrientationPermission(): Promise<boolean> {
 	const request = permissionApi();
-	if (!request) return true;
+	if (!request || !isIOS()) return true;
 	return (await request.call(DeviceOrientationEvent).catch(() => 'denied')) === 'granted';
 }
 
