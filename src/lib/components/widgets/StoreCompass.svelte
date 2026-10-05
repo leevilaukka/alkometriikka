@@ -39,7 +39,7 @@
 		{#snippet renderButton(dialogElement: HTMLDialogElement)}
 			<button
 				type="button"
-				class={twMerge(components.button({ size: 'md' }), 'w-full px-5 py-3 text-xl')}
+				class={twMerge(components.button({ size: 'md' }), 'w-full justify-center px-3 py-2.5 text-base sm:px-5 sm:py-3 sm:text-lg')}
 				onclick={() => openCompass(dialogElement)}
 			>
 				<Icon name="compass" />
