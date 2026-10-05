@@ -1,7 +1,8 @@
 <script lang="ts">
 	import Product from '$lib/components/views/Product.svelte';
 	import { page } from '$app/state';
-	import { preferredStoreId } from '$lib/global.svelte';
+	import { preferredStoreId, userLocation } from '$lib/global.svelte';
+	import { resolvePreferredStore } from '$lib/utils/availability';
 	import type { AvailabilityStore, PriceListItem } from '$lib/types.js';
 
 	let { data } = $props(); 
@@ -22,7 +23,7 @@
 	{@const availabilityStores = (alko.availability.product[id as string] ?? [])
 		.map((storeId: string) => alko.availability.stores[storeId])
 		.filter((store: AvailabilityStore | undefined): store is AvailabilityStore => Boolean(store))}
-	{@const preferredStore = alko.availability.stores[$preferredStoreId]}
+	{@const preferredStore = resolvePreferredStore(alko.availability.stores, $preferredStoreId, $userLocation)}
 	{@const availabilityUpdated = alko.availability?.lastUpdated ? new Date(alko.availability.lastUpdated) : undefined}
 	<Product product={product} kaljakori={alko.kaljakori} {availabilityStores} {preferredStore} availabilityUpdated={availabilityUpdated} />
 {/await}

@@ -11,6 +11,7 @@ import { LocalStorageKeys } from './constants';
 type LocalStorageValueMap = {
 	[LocalStorageKeys.PersonalInfo]: PersonalInfo;
 	[LocalStorageKeys.PreferredStore]: string;
+	[LocalStorageKeys.UserLocation]: { latitude: number; longitude: number };
 	[LocalStorageKeys.Lists]: ListObj[];
 	[LocalStorageKeys.ListsVersion]: number;
 	[LocalStorageKeys.AppVersion]: string;

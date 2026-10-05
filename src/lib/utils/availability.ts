@@ -1,4 +1,5 @@
 import type { AvailabilityStore } from '$lib/types';
+import { AUTO_STORE_ID } from './constants';
 
 type Coordinates = {
 	latitude: number;
@@ -68,6 +69,21 @@ export function getStoreDistance(
 		Math.cos(originLatitude) * Math.cos(destinationLatitude) * Math.sin(longitudeDelta / 2) ** 2;
 
 	return EARTH_RADIUS_KM * 2 * Math.atan2(Math.sqrt(haversine), Math.sqrt(1 - haversine));
+}
+
+/** Resolves the preferred store setting, where `AUTO_STORE_ID` means the store nearest to `location`. */
+export function resolvePreferredStore(
+	stores: Record<string, AvailabilityStore>,
+	preferredStoreId: string,
+	location: Coordinates | null
+): AvailabilityStore | undefined {
+	if (preferredStoreId !== AUTO_STORE_ID) return stores[preferredStoreId];
+	if (!location) return undefined;
+
+	const origin = { id: '', name: '', ...location };
+	return rankStoresByDistance(Object.values(stores), origin).find((store) =>
+		hasCoordinates(store)
+	);
 }
 
 export function rankStoresByDistance(

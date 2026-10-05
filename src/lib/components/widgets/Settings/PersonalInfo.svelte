@@ -1,13 +1,23 @@
 <script lang="ts">
 	import { components } from '$lib/utils/styles';
 	import { twMerge } from 'tailwind-merge';
-	import { personalInfo, preferredStoreId } from '$lib/global.svelte';
-	import { GenderOptionsMap } from '$lib/utils/constants';
+	import { personalInfo, locationDenied, preferredStoreId, userLocation } from '$lib/global.svelte';
+	import { AUTO_STORE_ID, GenderOptionsMap } from '$lib/utils/constants';
 	import { sendAnalyticsEvent } from '$lib/utils/helpers';
-	import { getStoreCity } from '$lib/utils/availability';
+	import { getStoreCity, resolvePreferredStore } from '$lib/utils/availability';
+	import { requestUserLocation } from '$lib/utils/location';
 	import type { AvailabilityStore } from '$lib/types';
 	let { dialogElement, stores }: { dialogElement: HTMLDialogElement; stores: AvailabilityStore[] } = $props();
 
+    const nearestStore = $derived(
+        $preferredStoreId === AUTO_STORE_ID
+            ? resolvePreferredStore(
+                  Object.fromEntries(stores.map((store) => [store.id, store])),
+                  AUTO_STORE_ID,
+                  $userLocation
+              )
+            : undefined
+    );
     const weightOK = $derived(personalInfo.weight == null || personalInfo.weight >= 1);
 </script>
 
@@ -59,6 +69,11 @@
         bind:value={$preferredStoreId}
         class={twMerge(components.input(), 'w-full')}
         onchange={() => {
+            if ($preferredStoreId === AUTO_STORE_ID) {
+                requestUserLocation();
+                sendAnalyticsEvent('preferred_store_changed', { storeId: AUTO_STORE_ID, storeName: 'Auto' });
+                return;
+            }
             const selectedStore = stores.find(store => store.id === $preferredStoreId);
             if (selectedStore) {
                 sendAnalyticsEvent('preferred_store_changed', {
@@ -69,10 +84,23 @@
             }
         }}>
         <option value="">Ei valittua myymälää</option>
+        <option value={AUTO_STORE_ID}>Automaattinen (lähin myymälä)</option>
         {#each stores as store (store.id)}
             <option value={store.id}>{store.name}</option>
         {/each}
     </select>
+    {#if $preferredStoreId === AUTO_STORE_ID}
+        <p class="text-xs text-secondary">
+            {#if $locationDenied}
+                Sijaintilupa on estetty. Salli sijainti selaimen asetuksista
+                {nearestStore ? `päivittääksesi lähimmän myymälän. Käytetään viimeksi tallennettua sijaintia: ${nearestStore.name}.` : 'jotta lähin myymälä voidaan valita.'}
+            {:else if nearestStore}
+                Lähin myymälä: <strong>{nearestStore.name}</strong>. Sijaintia käytetään vain laitteellasi.
+            {:else}
+                Odotetaan sijaintilupaa. Salli sijainti selaimesta, jotta lähin myymälä voidaan valita.
+            {/if}
+        </p>
+    {/if}
     <p class="text-xs text-secondary">
         Tuotesivu näyttää tuotteen saatavuuden valitsemassasi myymälässä.
     </p>

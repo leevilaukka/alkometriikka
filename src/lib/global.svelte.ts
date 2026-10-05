@@ -13,6 +13,12 @@ export let theme = writable(LocalStorageManager.getItem(LocalStorageKeys.Theme) 
 export let preferredStoreId = writable(
 	LocalStorageManager.getItem(LocalStorageKeys.PreferredStore) ?? ''
 );
+/** Last known device location, used to resolve the "auto" preferred store. */
+export let userLocation = writable<{ latitude: number; longitude: number } | null>(
+	LocalStorageManager.getItem(LocalStorageKeys.UserLocation) ?? null
+);
+/** True when the browser denied the location permission. */
+export let locationDenied = writable(false);
 
 export let isMobile = writable(window.matchMedia('(width < 48rem)').matches);
 export let isLaptop = writable(window.matchMedia('(width < 1280px)').matches);

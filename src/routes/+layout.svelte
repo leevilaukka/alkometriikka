@@ -1,8 +1,8 @@
 <script lang="ts">
 	import '../app.css';
 	import { dev } from '$app/environment';
-	import { ContextKeys, LocalStorageKeys } from '$lib/utils/constants';
-	import { isMobile, isLaptop, lists, personalInfo, preferredStoreId, searchQuery, theme } from '$lib/global.svelte';
+	import { ContextKeys, LocalStorageKeys, AUTO_STORE_ID } from '$lib/utils/constants';
+	import { isMobile, isLaptop, lists, personalInfo, preferredStoreId, searchQuery, theme, userLocation } from '$lib/global.svelte';
 	import logo from '$lib/assets/images/Logo/0.5x/Logo_rounded@0.5x.png';
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/styles';
@@ -14,6 +14,7 @@
 	import { setContext } from 'svelte';
 	import Settings from '$lib/components/widgets/Settings/Index.svelte';
 	import { LocalStorageManager } from '$lib/utils/storage';
+	import { requestUserLocation } from '$lib/utils/location';
 	import type { IconName } from '$lib/icons';
 
 	let { children, data } = $props();
@@ -34,6 +35,14 @@
 
 	$effect(() => {
 		LocalStorageManager.setItem(LocalStorageKeys.PreferredStore, $preferredStoreId);
+	});
+
+	$effect(() => {
+		if ($preferredStoreId === AUTO_STORE_ID) requestUserLocation();
+	});
+
+	$effect(() => {
+		if ($userLocation) LocalStorageManager.setItem(LocalStorageKeys.UserLocation, $userLocation);
 	});
 
 	$effect(() => {
