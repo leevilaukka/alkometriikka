@@ -1,11 +1,10 @@
 <script lang="ts">
-	import { isLaptop, personalInfo, searchQuery, isMobile } from '$lib/global.svelte';
+	import { isLaptop, pageBottomBar, personalInfo, searchQuery, isMobile } from '$lib/global.svelte';
 	import { components } from '$lib/utils/styles';
 	import { handleShare, productIdsToDataset, sendAnalyticsEvent } from '$lib/utils/helpers';
 	import { formatValue } from '$lib/utils/format';
 	import { Kaljakori } from '$lib/alko';
 	import {
-		getItemQuantity,
 		getListById,
 		getListItem,
 		listToURI,
@@ -39,6 +38,9 @@
 	import { initFilterValues } from '$lib/utils/filters';
 	import type { SearchParamsManager } from '$lib/utils/url';
 	import ProductPreview from '../widgets/ProductPreview.svelte';
+	import BottomBar from '../widgets/BottomBar.svelte';
+	import FilterButton from '../widgets/FilterButton.svelte';
+	import { compareURL, MAX_COMPARE_PRODUCTS } from '$lib/utils/compare';
 
 	let activeFilters: ColumnNames[] = $state([]);
 
@@ -158,23 +160,119 @@
 
 	let details = $derived.by(getListDetails);
 
+	// Compares the products in their current order, capped to what the comparison view fits
+	const compareIds = $derived(rows.slice(0, MAX_COMPARE_PRODUCTS).map((item) => item[AllColumns.Number]));
+	const compareTruncated = $derived(rows.length > MAX_COMPARE_PRODUCTS);
+
 	function validateListName(name: string) {
 		if (name.trim().length === 0) list.name = 'Nimetön lista';
 		else list.name = name.trim();
 	}
 
 	function modifyQuantity(item: PriceListItem, delta: number) {
-		updateQuantity(
-			list,
-			item[AllColumns.Number],
-			getItemQuantity(list, item[AllColumns.Number]) + delta
-		);
+		updateQuantity(list, item[AllColumns.Number], delta);
 	}
 
 	$effect(() => {
 		searchParamsManager.setParameter('list', listToURI(list));
 	});
+
+	// On phones the list's actions live in a bottom bar, like on category pages; wider screens
+	// keep them in the header. Filters only exist for lists of two or more.
+	$effect(() => {
+		if (!$isMobile || (kaljakori.data.length === 0 && existingList)) return;
+		pageBottomBar.snippet = actionBar;
+		return () => {
+			if (pageBottomBar.snippet === actionBar) pageBottomBar.snippet = undefined;
+		};
+	});
 </script>
+
+<!-- The list's actions, shared by the header (wide screens) and the bottom bar -->
+{#snippet shareButton(inBar: boolean)}
+	{#if existingList && list.items.length > 0}
+		<button
+			aria-label="Jaa lista"
+			class={twMerge(
+				components.button({ type: 'positive', size: inBar ? 'lg' : 'md' }),
+				inBar ? 'h-11 aspect-square sm:aspect-auto' : 'aspect-square md:aspect-auto'
+			)}
+			onclick={async (e) => {
+				// Omit SID from the URL if shift key is held down
+				const includeSID = !e.shiftKey;
+
+				const shared = await handleShare({
+					type: 'list',
+					title: `Alkometriikka - ${list.name}`,
+					text: `Katso lista: ${list.name}`,
+					url: `${location.origin}/listat?list=${listToURI(list)}`,
+					includeSID
+				});
+
+				if (!shared) alert('Linkki kopioitu leikepöydälle!');
+			}}
+		>
+			<Icon name="share" class="inline-block " /><span class={inBar ? 'hidden sm:inline' : 'hidden md:block'}>Jaa</span>
+		</button>
+	{/if}
+{/snippet}
+
+{#snippet saveButton(inBar: boolean)}
+	{#if !existingList}
+		<button
+			class={twMerge(components.button({ type: 'positive', size: inBar ? 'lg' : 'md' }), inBar && 'h-11 flex-1')}
+			onclick={() => {
+				sendAnalyticsEvent('save_list', { url: location.href });
+				const saved = saveList(list);
+				goto(`?list=${listToURI(saved)}`);
+			}}
+		>
+			<span>{inBar ? 'Tallenna' : 'Tallenna lista'}</span>
+			<Icon name="save" />
+		</button>
+	{/if}
+{/snippet}
+
+{#snippet compareButton(inBar: boolean)}
+	{#if compareIds.length > 1}
+		<a
+			href={compareURL(compareIds)}
+			aria-label="Vertaile listan tuotteita"
+			title={compareTruncated
+				? `Vertaile ${MAX_COMPARE_PRODUCTS} ensimmäistä tuotetta nykyisessä järjestyksessä`
+				: 'Vertaile listan tuotteita rinnakkain'}
+			class={twMerge(
+				components.button({ size: inBar ? 'lg' : 'md' }),
+				inBar ? 'h-11 aspect-square sm:aspect-auto' : 'aspect-square md:aspect-auto'
+			)}
+		>
+			<Icon name="compare" class="inline-block" />
+			<span class={inBar ? 'hidden sm:inline' : 'hidden md:block'}>Vertaile</span>
+		</a>
+	{/if}
+{/snippet}
+
+{#snippet actionBar()}
+	<BottomBar class="md:hidden">
+		{#if kaljakori.data.length > 0}
+			<button
+				type="button"
+				aria-haspopup="dialog"
+				class={twMerge(components.button({ size: 'lg' }), 'h-11 flex-1')}
+				onclick={() => toggleDetailsElement()}
+			>
+				<Icon name="info_circle" />
+				<span>Tiedot</span>
+			</button>
+		{/if}
+		{#if kaljakori.data.length > 1}
+			<FilterButton activeCount={activeFilters.length} onclick={() => filtersComponent?.toggleFilterElement()} />
+		{/if}
+		{@render compareButton(true)}
+		{@render shareButton(true)}
+		{@render saveButton(true)}
+	</BottomBar>
+{/snippet}
 
 <div class="flex flex-row items-center justify-between gap-4 border-b border-primary p-3 md:p-4">
 	<button
@@ -192,7 +290,13 @@
 			class="w-full border-none bg-transparent p-0 text-2xl leading-none focus:ring-0"
 			bind:value={list.name}
 		/>
-		{#if list.items.length > 0}
+	{:else}
+		<!-- Fills the row like the name input, so the buttons stay grouped on the right -->
+		<h2 class="min-w-0 flex-1 truncate text-lg leading-none md:text-2xl">{list.name}</h2>
+	{/if}
+	<!-- Phones have these in the bottom bar -->
+	{#if !$isMobile}
+		{#if existingList && list.items.length > 0}
 			<button
 				class={twMerge(components.button({ size: 'md' }), 'aspect-square md:aspect-auto')}
 				onclick={() => {
@@ -202,42 +306,10 @@
 				<Icon name="sidebar" class="inline-block " />
 				<span class="hidden md:block"> Tiedot </span>
 			</button>
-			<button
-				class={twMerge(
-					components.button({ type: 'positive', size: 'md' }),
-					'aspect-square md:aspect-auto'
-				)}
-				onclick={async (e) => {
-					// Omit SID from the URL if shift key is held down
-					const includeSID = !e.shiftKey;
-					
-					const shared = await handleShare({
-						type: 'list',
-						title: `Alkometriikka - ${list.name}`,
-						text: `Katso lista: ${list.name}`,
-						url: `${location.origin}/listat?list=${listToURI(list)}`,
-						includeSID
-					});
-
-					if (!shared) alert('Linkki kopioitu leikepöydälle!');
-				}}
-			>
-				<Icon name="share" class="inline-block " /><span class="hidden md:block">Jaa</span>
-			</button>
 		{/if}
-	{:else}
-		<h2 class="text-lg leading-none md:text-2xl">{list.name}</h2>
-		<button
-			class={twMerge(components.button({ type: 'positive', size: 'md' }))}
-			onclick={() => {
-				sendAnalyticsEvent('save_list', { url: location.href });
-				const saved = saveList(list);
-				goto(`?list=${listToURI(saved)}`);
-			}}
-		>
-			<span>Tallenna lista</span>
-			<Icon name="save" />
-		</button>
+		{@render shareButton(false)}
+		{@render saveButton(false)}
+		{@render compareButton(false)}
 	{/if}
 </div>
 <div
@@ -327,17 +399,6 @@
 				</div>
 			</div>
 			<div class="flex flex-row flex-nowrap items-center justify-between gap-2">
-				{#if $isMobile}
-					<button
-						onclick={() => {
-							filtersComponent?.toggleFilterElement();
-						}}
-						class={twMerge(components.button(), 'w-full')}
-					>
-						<span>Näytä suodattimet</span>
-						<Icon name={'filter'} />
-					</button>
-				{/if}
 				<button
 					onclick={() => {
 						listRef?.scroll({ index: 0, smoothScroll: false });
@@ -451,8 +512,11 @@
 		>
 			<dialog
 				bind:this={detailsElement}
+				closedby={$isLaptop ? 'any' : 'none'}
 				class={twMerge(
-					'fixed m-auto hidden h-full w-full flex-col gap-4 rounded-lg bg-primary border border-primary p-4 backdrop:backdrop-blur-sm open:flex xl:relative xl:w-84 xl:rounded-none xl:border-0 transition-transform open:starting:scale-0 md:open:starting:scale-100 open:scale-100'
+					// A bottom sheet like the category Tiedot sheet; on wide screens an inline sidebar
+					'fixed m-auto mb-0 hidden max-h-[85dvh] w-full max-w-none flex-col gap-4 overflow-y-auto rounded-t-lg border border-primary bg-primary p-4 backdrop:backdrop-blur-sm open:flex transition-transform open:starting:translate-y-full open:translate-y-0',
+					'xl:relative xl:m-0 xl:h-full xl:max-h-none xl:w-84 xl:overflow-visible xl:rounded-none xl:border-0 xl:open:starting:translate-y-0'
 				)}
 			>
 				<h2 class="text-2xl font-bold">Listan tiedot</h2>
@@ -465,21 +529,22 @@
 					<p>Alkoholia per euro: {formatValue(details.totalAlcoholGramsPerEuro, AllColumns.AlcoholGramsPerEuro)} g</p>
 					<p>Arvioitu promillemäärä: {formatValue(details.totalBAC, AllColumns.PromillePerEuro)}</p>
 					<div
-						class={twMerge(components.button({ size: "lg" }), "w-full mt-auto hover:cursor-default")}
+						class={twMerge(components.button({ size: "lg" }), "w-full xl:mt-auto hover:cursor-default")}
 					>
 						<Icon name="shopping_bag" />
 						<h2>Yhteensä: {formatValue(details.totalPrice, AllColumns.Price)}</h2>
 					</div>
 				</div>
 				{#if $isLaptop}
-					<div class="flex flex-row flex-wrap justify-end gap-4">
+					<!-- Pinned to the bottom of the scrolling sheet, where the Tiedot button that opened it was -->
+					<div class="sticky bottom-0 -mx-4 -mb-4 bg-primary px-4 py-2.5 shadow-[0_-4px_12px_rgba(0,0,0,0.06)]">
 						<button
-							onclick={() => {
-								toggleDetailsElement();
-							}}
-							class={twMerge(components.button({ type: 'negative' }))}
+							type="button"
+							class={twMerge(components.button({ size: 'lg' }), 'h-11 w-full')}
+							onclick={() => toggleDetailsElement()}
 						>
-							Sulje
+							<Icon name="x" />
+							<span>Sulje</span>
 						</button>
 					</div>
 				{/if}

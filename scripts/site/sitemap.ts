@@ -1,6 +1,7 @@
 import Bun from "bun";
 import { MigratedData, StoreData } from "../data/types";
 import { DEV } from "../data/constants";
+import { buildCategoryTree, categorySlug, CATEGORY_BASE_PATH } from "../../src/lib/utils/categories.ts";
 
 type SitemapEntry = {
     loc: string;
@@ -18,7 +19,7 @@ async function main() {
     const productFile = Bun.file(DEV ? "./static/data.json" : "./data.json");
     const availabilityFile = Bun.file(DEV ? "./static/availability.json" : "./availability.json");
     const sitemapEntries: SitemapEntry[] = [];
-    const { products } = await productFile.json() as MigratedData;
+    const { schema, products } = await productFile.json() as MigratedData;
     const { stores } = await availabilityFile.json() as StoreList;
 
     if (products === undefined) {
@@ -36,6 +37,55 @@ async function main() {
             imageLoc: generateImageLoc(product.values[0] as string),
             priority: 0.7,
         });
+    }
+
+    const typeIndex = schema.indexOf("Tyyppi");
+    const subTypeIndex = schema.indexOf("Alatyyppi");
+    const categoryTree = buildCategoryTree(
+        Object.values(products)
+            .filter((product) => product && Array.isArray(product.values))
+            .map((product) => ({
+                type: product.values[typeIndex],
+                subType: product.values[subTypeIndex],
+                removed: Boolean(product.meta?.removedFromSelection)
+            }))
+    );
+
+    // A category page changes when one of its products changes price or a new one appears,
+    // so its lastmod is the newest price-history date among its current products
+    const categoryLastMod = new Map<string, string>();
+    const bumpLastMod = (key: string, date: string) => {
+        if (date > (categoryLastMod.get(key) ?? "")) categoryLastMod.set(key, date);
+    };
+    for (const product of Object.values(products)) {
+        if (!product || !Array.isArray(product.values) || product.meta?.removedFromSelection) continue;
+        const date = product.priceHistory?.at(-1)?.date;
+        if (!date) continue;
+        const typeSlug = categorySlug(String(product.values[typeIndex] ?? ""));
+        const subTypeSlug = categorySlug(String(product.values[subTypeIndex] ?? ""));
+        bumpLastMod("", date);
+        bumpLastMod(typeSlug, date);
+        bumpLastMod(`${typeSlug}/${subTypeSlug}`, date);
+    }
+
+    sitemapEntries.push({
+        loc: `${CATEGORY_BASE_PATH}/`,
+        lastMod: categoryLastMod.get(""),
+        priority: 0.7,
+        changeFreq: "weekly"
+    });
+    // Lists recent price changes across the selection, so it changes with the newest one
+    sitemapEntries.push({ loc: "/hinnanmuutokset", lastMod: categoryLastMod.get(""), priority: 0.6, changeFreq: "daily" });
+    for (const type of categoryTree) {
+        sitemapEntries.push({ loc: type.path, lastMod: categoryLastMod.get(type.slug), priority: 0.8, changeFreq: "daily" });
+        for (const subType of type.children) {
+            sitemapEntries.push({
+                loc: subType.path,
+                lastMod: categoryLastMod.get(`${type.slug}/${subType.slug}`),
+                priority: 0.8,
+                changeFreq: "daily"
+            });
+        }
     }
 
     for (const store of Object.keys(stores)) {

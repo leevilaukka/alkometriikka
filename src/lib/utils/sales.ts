@@ -6,6 +6,8 @@
  * when its current price is below that reference price.
  */
 
+import { toNumber } from './number.ts';
+
 export type SaleInfo = {
 	salePrice: number;
 	normalPrice: number;
@@ -14,15 +16,6 @@ export type SaleInfo = {
 	campaignStart?: string;
 	campaignEnd?: string;
 };
-
-function toNumber(value: unknown): number | null {
-	if (typeof value === 'number' && Number.isFinite(value)) return value;
-	if (typeof value === 'string') {
-		const normalized = Number(value.replace(',', '.').trim());
-		if (Number.isFinite(normalized)) return normalized;
-	}
-	return null;
-}
 
 function toDateString(value: unknown): string | undefined {
 	if (typeof value !== 'string') return undefined;

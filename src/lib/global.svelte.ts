@@ -1,3 +1,4 @@
+import type { Snippet } from 'svelte';
 import { writable } from 'svelte/store';
 import { LocalStorageKeys } from './utils/constants';
 import { LocalStorageManager } from './utils/storage';
@@ -6,12 +7,22 @@ export let personalInfo = $state(
 	LocalStorageManager.getItem(LocalStorageKeys.PersonalInfo) || { gender: null, weight: null }
 );
 export let lists = $state(LocalStorageManager.getItem(LocalStorageKeys.Lists) || []);
+export let compareProductIds = $state<string[]>(
+	LocalStorageManager.getItem(LocalStorageKeys.CompareProducts) || []
+);
+
+/** A page's mobile action bar, rendered by the layout at the very bottom like the product page's. */
+export const pageBottomBar = $state<{ snippet?: Snippet }>({});
 
 export let searchQuery = writable(new URLSearchParams(location.search).get('q') || '');
 
 export let theme = writable(LocalStorageManager.getItem(LocalStorageKeys.Theme) ?? '');
 export let preferredStoreId = writable(
 	LocalStorageManager.getItem(LocalStorageKeys.PreferredStore) ?? ''
+);
+/** Category pages show only products available in the preferred store. */
+export let onlyPreferredStore = writable<boolean>(
+	LocalStorageManager.getItem(LocalStorageKeys.OnlyPreferredStore) ?? false
 );
 /** Last known device location, used to resolve the "auto" preferred store. */
 export let userLocation = writable<{ latitude: number; longitude: number } | null>(

@@ -146,19 +146,6 @@ export function bandHistogram(
 	});
 }
 
-/** Unit marker (€, €/l, …) for the column, or an empty string when unknown. */
-function markerFor(key: ColumnNames): string {
-	switch (key) {
-		case AllColumns.Price:
-		case AllColumns.PricePerLiter:
-			return '€';
-		case AllColumns.AlcoholPercentage:
-			return '%';
-		default:
-			return '';
-	}
-}
-
 /** Aggregates products by a categorical column, sorted by count descending. */
 export function categoryDistribution(
 	items: PriceListItem[],

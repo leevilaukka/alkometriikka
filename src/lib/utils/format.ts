@@ -9,9 +9,6 @@ export type FormatOpts = {
 const formatters = new Map<ColumnNames, Intl.NumberFormat>();
 const extraFormatters = new Map<string, Intl.NumberFormat>();
 
-console.log('formatters', formatters);
-console.log('extraFormatters', extraFormatters);
-
 const defaultNumberFormatOptions: Intl.NumberFormatOptions = {
 	maximumFractionDigits: 3,
 	minimumFractionDigits: 0
@@ -72,14 +69,6 @@ export function formatValue(
 		} else {
 			const key = `${header ?? 'default'}-${JSON.stringify(numberFormatOptions)}`;
 			if (!extraFormatters.has(key)) {
-				console.log(
-					'Creating new formatter for key',
-					key,
-					'with options',
-					numberFormatOptions,
-					'caller',
-					new Error().stack
-				);
 				extraFormatters.set(key, new Intl.NumberFormat('fi-FI', numberFormatOptions));
 			}
 			const formatter = extraFormatters.get(key);
@@ -92,4 +81,13 @@ export function formatValue(
 	}
 
 	return value;
+}
+
+/** Price per liter without decimals, e.g. "24 €/L", for compact chart labels. */
+export function formatRoundedPricePerLiter(value: number): string {
+	return String(
+		formatValue(value, AllColumns.PricePerLiter, {
+			numberFormatOptions: { minimumFractionDigits: 0, maximumFractionDigits: 0 }
+		})
+	);
 }

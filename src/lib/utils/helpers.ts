@@ -16,8 +16,7 @@ import {
 	filterToUnitMarker,
 	LocalStorageKeys,
 	ShareTypes,
-	sortingOrderDescriptionMap,
-	AllColumns
+	sortingOrderDescriptionMap
 } from './constants';
 import { formatValue, type FormatOpts } from './format';
 import { LocalStorageManager } from './storage';
@@ -235,6 +234,8 @@ export function shareTypeFromRoute(routeId: typeof page.route.id): ShareType {
 			return ShareTypes.Product;
 		case '/vastaavat/[...id]':
 			return ShareTypes.Similar;
+		case '/vertailu':
+			return ShareTypes.Compare;
 		case "/daily":
 		case "/daily/arkisto":
 		case "/daily/arkisto/[date]":
@@ -280,7 +281,6 @@ export function trackSharedView(type: ShareType = ShareTypes.Default) {
 	const url = new URL(location.href);
 	const sid = url.searchParams.get('sid');
 	if (sid) {
-		console.log(`Tracking shared view for ${type} with SID: ${sid}`);
 		const viewedShares = LocalStorageManager.getItem(LocalStorageKeys.ViewedShares) || [];
 		url.searchParams.delete('sid');
 
@@ -304,8 +304,7 @@ export function mergeFilterParameters(
 	filterValues: Record<ColumnNames, any[]>
 ) {
 	oldParameters = new URLSearchParams(
-		[...oldParameters.entries()].filter(([key, value]) => {
-			// TODO: Make this better
+		[...oldParameters.entries()].filter(([key]) => {
 			return !Object.hasOwn(filterValues, key);
 		})
 	);

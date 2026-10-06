@@ -34,9 +34,17 @@ export function getListItem(list: ListObj, itemNumber: string) {
     return null
 }
 
-export function updateQuantity(list: ListObj, itemNumber: string, newQuantity: number) {
+export function setQuantity(list: ListObj, itemNumber: string, newQuantity: number) {
     const item = list.items.find(i => i.id === itemNumber);
     if (item) item.q = newQuantity;
+}
+
+export function updateQuantity(list: ListObj, itemNumber: string, delta: number) {
+    const item = list.items.find(i => i.id === itemNumber);
+    if (!item) return;
+
+    item.q += delta;
+    if (item.q <= 0) removeFromList(list, itemNumber);
 }
 
 export function getItemQuantity(list: ListObj, itemNumber: string) {
@@ -57,18 +65,14 @@ export function inLists(itemNumber: string) {
 }
 
 export function addToList(list: ListObj, itemNumber: string) {
-    if (list.items.some(item => item.id === itemNumber)) {
-        updateQuantity(list, itemNumber, (list.items.find(i => i.id === itemNumber)?.q || 0) + 1);
+    if (isInList(list, itemNumber)) {
+        updateQuantity(list, itemNumber, 1);
     } else {
         list.items.push({ id: itemNumber, q: 1 });
     }
 }
 
 export function removeFromList(list: ListObj, itemNumber: string) {
-    if (list.items.some(item => item.id === itemNumber)) {
-        const item = list.items.find(i => i.id === itemNumber);
-        if (item) item.q -= 1;
-    }
     list.items = list.items.filter(item => item.id !== itemNumber);
 }
 
@@ -76,7 +80,7 @@ export function listToURI(list: ListObj) {
     return compressToEncodedURIComponent(JSON.stringify(list));
 }
 
-export function URIToList(uri: string) {
+export function URIToList(uri: string): ListObj | null {
     try {
         const decoded = JSON.parse(decompressFromEncodedURIComponent(uri));
         return Array.isArray(decoded.items) ? decoded : null;
@@ -85,10 +89,14 @@ export function URIToList(uri: string) {
     }
 }
 
-export function validateList(uri: string) {
+export function validateListFromURI(uri: string) {
     const list = URIToList(uri);
     if (!list) return false;
 
+    return isValidList(list);
+}
+
+export function isValidList(list: ListObj): list is ListObj {
     // Check if all required fields are present
     const requiredFields = ['id', 'name', 'items'];
     for (const field of requiredFields) {

@@ -41,6 +41,17 @@
 		if (value.length === 0) list = strOptions.map((option) => ({ value: option, selected: false }));
 	});
 
+	$effect(() => {
+		// Options can change (e.g. "show removed" or a parent filter narrowing them),
+		// so rebuild the list while keeping the current selections
+		const options = strOptions;
+		untrack(() => {
+			if (options.length === list.length && options.every((option, i) => list[i].value === option)) return;
+			const selected = new Set(value ?? []);
+			list = options.map((option) => ({ value: option, selected: selected.has(option) }));
+		});
+	});
+
 	const text = $derived.by(() => {
 		if (!value) return 'Ei valintoja';
 		if (value.length > 1) return `${value.length} valittu`;

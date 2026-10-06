@@ -24,6 +24,7 @@ import {
 import { isSimilarString } from '$lib/utils/search';
 import { getSaleInfo } from '../utils/sales';
 import { ProductVariantIndex } from '../utils/product-variants';
+import { buildCategoryTree, type CategoryNode } from '../utils/categories';
 
 function toPositiveNumber(value: unknown): number | null {
 	if (typeof value === 'number') {
@@ -67,7 +68,9 @@ export class Kaljakori {
 	minAndMaxValues: ([number, number] | null)[] = [];
 	minAndMaxValuesActive: ([number, number] | null)[] = [];
 	subValues: Record<string, Record<string, Set<any>>> = {};
-	private readonly productVariants: ProductVariantIndex;
+	private readonly declaredBottleSizes = new Set<PriceListItem>();
+	private productVariants: ProductVariantIndex | undefined;
+	private categoryTree: CategoryNode[] | undefined;
 
 	constructor(table: DatasetRow[], personalInfo?: PersonalInfo, availability?: AvailabilityData) {
 		this.personalInfo = personalInfo || { weight: null, gender: GenderOptionsMap.Unspecified };
@@ -98,7 +101,7 @@ export class Kaljakori {
 
 		const drunkValuesByColumn: any[][] = [...Array(drunkColumns.length)].map(() => []);
 		const drunkValuesByColumnActive: any[][] = [...Array(drunkColumns.length)].map(() => []);
-		const declaredBottleSizes = new Set<PriceListItem>();
+		const declaredBottleSizes = this.declaredBottleSizes;
 
 		const storeValuesByColumn: any[][] = [...Array(storeColumns.length)].map(() => []);
 		const storeValuesByColumnActive: any[][] = [...Array(storeColumns.length)].map(() => []);
@@ -192,8 +195,6 @@ export class Kaljakori {
 				else if (typeof value === 'string') value = toFormattedStringValue(value);
 				else if (undefinedToZeroColumns.includes(key as any)) value = 0;
 				else value = '';
-
-				if (value instanceof Set && value.has('Null')) console.log(key, value);
 
 				item[key] = value;
 				if (
@@ -354,12 +355,22 @@ export class Kaljakori {
 		});
 
 		this.data = this.sortBy(defaultSortingColumn);
-		this.productVariants = new ProductVariantIndex(this.data, declaredBottleSizes);
-		console.log(this.data);
 	}
 
 	findDifferentSizesOfProduct(product: PriceListItem): PriceListItem[] {
+		this.productVariants ??= new ProductVariantIndex(this.data, this.declaredBottleSizes);
 		return this.productVariants.find(product);
+	}
+
+	getCategoryTree(): CategoryNode[] {
+		this.categoryTree ??= buildCategoryTree(
+			this.data.map((item) => ({
+				type: item[AllColumns.Type],
+				subType: item[AllColumns.SubType],
+				removed: item[AllColumns.RemovedFromSelection] === true
+			}))
+		);
+		return this.categoryTree;
 	}
 
 	getFilterKeys() {
@@ -484,7 +495,7 @@ export class Kaljakori {
 
 	filter(filters: Record<string, any>) {
 		filters = Object.fromEntries(
-			Object.entries(filters).filter(([key, value]) => {
+			Object.entries(filters).filter(([, value]) => {
 				if (value instanceof Set) return value.size > 0;
 				return value.length > 0;
 			})

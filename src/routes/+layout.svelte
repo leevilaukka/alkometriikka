@@ -2,7 +2,7 @@
 	import '../app.css';
 	import { dev } from '$app/environment';
 	import { ContextKeys, LocalStorageKeys } from '$lib/utils/constants';
-	import { isMobile, isLaptop, lists, personalInfo, preferredStoreId, searchQuery, theme, userLocation } from '$lib/global.svelte';
+	import { compareProductIds, isMobile, isLaptop, lists, onlyPreferredStore, pageBottomBar, personalInfo, preferredStoreId, searchQuery, theme, userLocation } from '$lib/global.svelte';
 	import logo from '$lib/assets/images/Logo/0.5x/Logo_rounded@0.5x.png';
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/styles';
@@ -13,6 +13,7 @@
 	import { markRouterReady, shareTypeFromRoute, trackSharedView } from '$lib/utils/helpers';
 	import { setContext } from 'svelte';
 	import Settings from '$lib/components/widgets/Settings/Index.svelte';
+	import CompareBar from '$lib/components/widgets/CompareBar.svelte';
 	import { LocalStorageManager } from '$lib/utils/storage';
 		import type { IconName } from '$lib/icons';
 
@@ -34,6 +35,14 @@
 
 	$effect(() => {
 		LocalStorageManager.setItem(LocalStorageKeys.PreferredStore, $preferredStoreId);
+	});
+
+	$effect(() => {
+		LocalStorageManager.setItem(LocalStorageKeys.OnlyPreferredStore, $onlyPreferredStore);
+	});
+
+	$effect(() => {
+		LocalStorageManager.setItem(LocalStorageKeys.CompareProducts, compareProductIds);
 	});
 
 	$effect(() => {
@@ -68,15 +77,25 @@
 		$isLaptop = window.matchMedia('(width < 1280px)').matches;
 	});
 
-	beforeNavigate(({ to }) => {
+	beforeNavigate(({ to, type }) => {
 		if(!to) return
 		if(to.url.origin !== window.location.origin) return
 		searchParamsManager.setParametersFromURL(to.url)
+		// Back/forward restores the search from the URL before the page mounts, otherwise the
+		// page would sync an empty search into the URL first
+		if(type === 'popstate') $searchQuery = to.url.searchParams.get('q') ?? ''
 		searchParamsManager.update()
 	});
 
-	afterNavigate(() => {
+	afterNavigate(({ from, to, type }) => {
 		markRouterReady();
+		// Feed links baked into prerendered pages belong to the first page only; from here on
+		// each page adds its own through <svelte:head>, so drop them to avoid stale duplicates
+		document.head.querySelectorAll('link[data-prerendered]').forEach((link) => link.remove());
+		// The search belongs to the page it was typed on, so any path change other than
+		// back/forward drops it. Done after navigating so the page being left keeps its q.
+		// The initial load ('enter') has no previous page (`from.url` is null) and keeps ?q= from the link.
+		if(type !== 'enter' && type !== 'popstate' && from?.url?.pathname !== to?.url?.pathname) $searchQuery = '';
 	});
 
 	function shiftLoader() {
@@ -117,6 +136,14 @@
 	}
 
 	const extraItems: {href: string, icon: IconName, name: string}[] = [{
+		href: '/kategoriat/',
+		icon: 'wine',
+		name: 'Kategoriat'
+	}, {
+		href: '/hinnanmuutokset',
+		icon: 'trending_down',
+		name: 'Hinnanmuutokset'
+	}, {
 		href: '/myymalat',
 		icon: 'store',
 		name: 'Myymälät'
@@ -134,7 +161,9 @@
 		name: 'Tilastot'
 	}];
 
-	const noSearchPages: typeof page.route.id[] = ['/daily/arkisto', '/laskin', '/tilastot', '/listat', '/daily', '/daily/arkisto/[date]', '/tuotteet/[...id]'];
+	const inCategory = $derived(page.route.id === '/kategoriat/[type]/[[subtype]]');
+
+	const noSearchPages: typeof page.route.id[] = ['/daily/arkisto', '/laskin', '/tilastot', '/listat', '/daily', '/daily/arkisto/[date]', '/tuotteet/[...id]', '/vertailu', '/kategoriat', '/myymalat', '/myymalat/[storeID]'];
 </script>
 
 <svelte:window onclick={handleDocumentClick} onkeydown={handleGlobalKeydown} />
@@ -176,14 +205,14 @@
 						<input
 							id="searchQuery"
 							type="text"
-							aria-label="Hae nimellä"
+							aria-label={inCategory ? 'Hae nimellä tästä kategoriasta' : 'Hae nimellä'}
 							aria-keyshortcuts="/"
 							bind:value={$searchQuery}
 							class={twMerge(
 								components.input(),
 								'peer text-md w-full gap-2 rounded-s-none border-0 border-s hover:border-primary lg:pe-9'
 							)}
-							placeholder="Hae nimellä..."
+							placeholder={inCategory ? 'Hae tästä kategoriasta...' : 'Hae nimellä...'}
 						/>
 						<kbd class="pointer-events-none absolute end-2 top-1/2 hidden size-5 -translate-y-1/2 items-center justify-center rounded border border-current text-[11px] font-semibold leading-none text-secondary lg:flex peer-focus:hidden">/</kbd>
 					</div>
@@ -212,6 +241,11 @@
 		<div id="main-content" tabindex="-1" class="flex max-h-full overflow-y-auto overflow-x-hidden flex-auto flex-col outline-none">
 			{@render children?.()}
 		</div>
+		{#if page.route.id !== '/vertailu'}
+			<CompareBar kaljakori={alko.kaljakori} />
+		{/if}
+		<!-- Pages hand their mobile action bar here (see pageBottomBar) so it sits below the compare bar -->
+		{@render pageBottomBar.snippet?.()}
 	</div>
 {:catch error}
 	{shiftLoader()}

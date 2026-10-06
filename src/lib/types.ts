@@ -39,6 +39,8 @@ export type PersonalInfo = {
 	gender: GenderOptions | undefined | null;
 };
 
+export type BreadcrumbItem = { label: string; href?: string };
+
 export type AvailabilityStore = {
 	id: string;
 	name: string;
@@ -168,6 +170,8 @@ type Shares = {[K in ShareEvent | ShareViewEvent]: ShareState};
 export type GameTypes = "daily" | "unlimited" | "archive";
 type GameKeys = `${GameTypes}_game`;
 
+type RSSFeed = 'site' | 'category' | 'product' | 'json'
+
 type GameState =
 	| {
 			state: 'started';
@@ -194,6 +198,9 @@ export type AnalyticsEventMap = {
 	save_list: { url?: string };
 	view_sizes: { product_number: string };
 	show_price_history: { product_number?: string; [key: string]: any };
+	show_product_details: { product_number: string };
+	add_to_compare: { product_number: string };
+	view_compare: { product_numbers: string[]; url: string };
 	scan_barcode: { ean: string; link?: string };
 	scan_qr_code: { type: string; product_number: string; link?: string };
 	preferred_store_changed: {
@@ -217,6 +224,7 @@ export type AnalyticsEventMap = {
 		ui_bug: boolean;
 		other: boolean;
 	};
+	click_feed: { feed: RSSFeed; location: string };
 	site_feedback: {
 		path: string;
 		version: string;

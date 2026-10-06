@@ -40,6 +40,9 @@ jobs:
           if git show origin/gh-pages:og-images.json > /tmp/og-images.json 2>/dev/null; then
             mv /tmp/og-images.json static/og-images.json
           fi
+          if git show origin/gh-pages:og-categories.json > /tmp/og-categories.json 2>/dev/null; then
+            mv /tmp/og-categories.json static/og-categories.json
+          fi
 
       - name: Build site assets
         env:
@@ -66,13 +69,14 @@ jobs:
       # must be present in the deploy even when nothing changed. Restore the
       # last deployed pages first so the incremental prerender below can skip
       # untouched products and so a skip keeps the existing pages on gh-pages.
-      - name: Restore last deployed product pages
+      - name: Restore last deployed product and category pages
         run: |
           # Restore each path separately: git archive fails as a whole when any
           # one pathspec is missing (e.g. the manifest on the first run after
           # adding it), which would otherwise silently drop the pages too.
           git archive origin/gh-pages tuotteet 2>/dev/null | tar -x -C build/ || true
           git archive origin/gh-pages tuotteet-manifest.json 2>/dev/null | tar -x -C build/ || true
+          git archive origin/gh-pages kategoriat 2>/dev/null | tar -x -C build/ || true
 
       # The daily manifests are immutable pins: once baked, a date must never
       # change. Restoring them here (inside build/, same as tuotteet) — instead
@@ -100,7 +104,7 @@ jobs:
             exit 1
           fi
 
-      - name: Prerender product pages
+      - name: Prerender product and category pages
         if: steps.prerender-gate.outputs.changed == 'true'
         run: |
           bun run scripts/site/prerender-products.ts \
@@ -108,6 +112,15 @@ jobs:
             --data build/data.json \
             --template build/404.html \
             --og-manifest build/og-images.json
+
+      # Cheap (a few hundred files), so always regenerated: the pages embed the
+      # built page shell and the store list from availability.json.
+      - name: Prerender static and store pages
+        run: |
+          bun run scripts/site/prerender-static.ts \
+            --out build \
+            --template build/404.html \
+            --availability build/availability.json
 
       - name: Delete all files except build directory
         run: |
@@ -160,7 +173,7 @@ jobs:
           # Runtime datasets are gitignored, so `git add .` skips them. Force-add
           # them so the force-push to gh-pages preserves the data deployed by
           # fetchData.yml instead of deleting it on every site build.
-          for f in data.json availability.json sitemap.xml rss.xml feed.json rss og-images.json daily tuotteet-manifest.json; do
+          for f in data.json availability.json sitemap.xml rss.xml feed.json rss og-images.json og-categories.json daily tuotteet-manifest.json; do
             if [ -e "$f" ]; then git add -f "$f"; fi
           done
           git commit -m "Deploy to GitHub Pages [skip ci]" || echo "No changes to commit"

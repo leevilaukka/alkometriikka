@@ -1,8 +1,7 @@
 <script lang="ts">
 	import type { ArchiveIndex } from '$lib/daily/manifest';
-	import type { ArchivedScores, ArchiveRuns } from '$lib/daily/questions';
+	import type { ArchivedScores, ArchiveRuns } from '$lib/daily/types';
 	import { loadArchivedScores, loadArchiveRuns } from '$lib/daily/storage';
-	import { base } from '$app/paths';
 	import { generateTitle, setSEO } from '$lib/utils/helpers';
 	import { components } from '$lib/utils/styles';
 	import { twMerge } from 'tailwind-merge';
@@ -58,7 +57,7 @@
 	async function loadIndex() {
 		loadError = null;
 		try {
-			const response = await fetch(`${base}/daily/archive/index.json`);
+			const response = await fetch(`/daily/archive/index.json`);
 			if (response.status === 404) {
 				index = { version: 1, dates: [] };
 				return;
@@ -173,7 +172,7 @@
 				{@const dayNumber = iso ? dayNumberForDate(iso) : 0}
 				{#if iso && available.has(iso)}
 					<a
-						href={`${base}/daily/arkisto/${iso}`}
+						href={`/daily/arkisto/${iso}`}
 						class="relative flex min-h-14 flex-col items-center justify-center gap-0.5 rounded border border-primary bg-primary p-1.5 transition-colors hover:border-brand-2"
 					>
 						{#if dayNumber >= 1}

@@ -5,12 +5,13 @@ import type {
 	DailyStreak,
 	SavedDailyGame,
 	UnlimitedRunState
-} from '$lib/daily/questions';
+} from '$lib/daily/types';
 import { LocalStorageKeys } from './constants';
 
 type LocalStorageValueMap = {
 	[LocalStorageKeys.PersonalInfo]: PersonalInfo;
 	[LocalStorageKeys.PreferredStore]: string;
+	[LocalStorageKeys.OnlyPreferredStore]: boolean;
 	[LocalStorageKeys.UserLocation]: { latitude: number; longitude: number };
 	[LocalStorageKeys.UserLocationUpdatedAt]: number;
 	[LocalStorageKeys.Lists]: ListObj[];
@@ -19,6 +20,7 @@ type LocalStorageValueMap = {
 	[LocalStorageKeys.CurrentFilters]: FilterValues;
 	[LocalStorageKeys.Theme]: '' | 'dark' | 'light';
 	[LocalStorageKeys.ViewedShares]: string[];
+	[LocalStorageKeys.CompareProducts]: string[];
 	[LocalStorageKeys.DailyGame]: SavedDailyGame;
 	[LocalStorageKeys.DailyStreak]: DailyStreak;
 	[LocalStorageKeys.DailyUnlimitedRun]: UnlimitedRunState;

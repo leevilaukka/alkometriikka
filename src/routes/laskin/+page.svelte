@@ -4,6 +4,7 @@
 	import { components } from '$lib/utils/styles';
 	import { formatValue } from '$lib/utils/format';
 	import { generateTitle, sendAnalyticsEvent, setSEO } from '$lib/utils/helpers';
+	import { staticPage } from '$lib/utils/seo';
 	import { personalInfo } from '$lib/global.svelte';
 	import type { GenderOptions } from '$lib/types';
 	import { twMerge } from 'tailwind-merge';
@@ -121,10 +122,8 @@
 	] as const;
 
 	$effect(() => {
-		setSEO({
-			description: 'Laske juoman alkoholimäärä, annokset ja promillearvio omilla arvoillasi.',
-			keywords: 'laskin, promillelaskuri, alkoholi, annokset'
-		});
+		const { description, keywords } = staticPage('/laskin/');
+		setSEO({ description, keywords });
 	});
 
 	$effect(() => {

@@ -7,7 +7,7 @@ import {
 	countTarballFiles,
 	createArchiveTarball,
 	extractArchiveTarball
-} from '../../../scripts/site/backup-archive';
+} from '../../scripts/site/backup-archive';
 
 describe('daily archive backup', () => {
 	it('packs and extracts daily archive files without loss', async () => {

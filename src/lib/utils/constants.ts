@@ -122,6 +122,7 @@ export const undefinedToZeroColumns = [
 export const shownFilters = [
 	AllColumns.Name,
 	AllColumns.Manufacturer,
+	AllColumns.Type,
 	AllColumns.SubType,
 	AllColumns.BottleSize,
 	AllColumns.Price,
@@ -301,6 +302,7 @@ export const AUTO_STORE_ID = 'auto';
 export const LocalStorageKeys = {
 	PersonalInfo: 'personal_info',
 	PreferredStore: 'preferred_store',
+	OnlyPreferredStore: 'only_preferred_store',
 	UserLocation: 'user_location',
 	UserLocationUpdatedAt: 'user_location_updated_at',
 	Lists: 'lists',
@@ -309,6 +311,7 @@ export const LocalStorageKeys = {
 	CurrentFilters: 'current_filters',
 	Theme: 'theme',
 	ViewedShares: 'viewed_shares',
+	CompareProducts: 'compare_products',
 	DailyGame: 'alkometriikka-daily-v1',
 	DailyStreak: 'alkometriikka-daily-streak-v1',
 	DailyUnlimitedRun: 'alkometriikka-daily-unlimited-v1',
@@ -323,6 +326,7 @@ export const ShareTypes = {
 	Product: 'product',
 	Filters: 'filters',
 	Similar: 'similar',
+	Compare: 'compare',
 	DailyGame: 'daily_game'
 } as const;
 
@@ -386,6 +390,19 @@ export const defaultSEOData = {
 	keywords:
 		'alkometriikka, alko, alkometri, promillelaskuri, promillet, juomat, suodattaminen, suodatus, hinnat, vertailu, alkoholi, viina, viinit, oluet, siiderit, lonkerot, juomalistat, listat, jaa, myymälät'
 } as const satisfies Parameters<typeof setSEO>[0];
+
+// Matches the "N-pack" convention Alko uses in product names for multi-packs,
+// e.g. "Karhu 4,6% 6-pack tölkki" or "Sandels 4,7% 24-pack tölkki".
+const PACK_COUNT_RE = /(\d+)\s*-?\s*pack\b/i;
+
+/**
+ * Number of individual bottles/cans in a product, parsed from its name.
+ * Returns 1 when the product isn't a multi-pack (or the count can't be determined).
+ */
+export function getPackCount(product: PriceListItem): number {
+	const match = product[DatasetColumns.Name].match(PACK_COUNT_RE);
+	return match ? Number(match[1]) : 1;
+}
 
 /** Column to badge mapping
  * Maps static dataset columns and their values to their corresponding badge configurations.
@@ -465,6 +482,10 @@ export function DynamicColumnToBadgeMap<T extends PriceListItem>(item: T): Colum
 	}
 	if (Number(item[DatasetColumns.Sugar]) === 0) {
 		map[DatasetColumns.Sugar] = { text: 'Sokeriton', color: 'gray' };
+	}
+	const packCount = getPackCount(item);
+	if (packCount > 1) {
+		map[DatasetColumns.Name] = { text: `${packCount}-pack`, color: 'gray', icon: 'package' };
 	}
 	if (item[DatasetColumns.New].toLowerCase() === 'uutuus') {
 		map[DatasetColumns.New] = { text: 'Uutuus', color: 'red', icon: 'pencil_sparkles' };

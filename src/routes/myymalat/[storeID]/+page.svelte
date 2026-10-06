@@ -6,11 +6,12 @@
 	import { getStoreCity, isStoreOpen } from '$lib/utils/availability.js';
 	import { AllColumns } from '$lib/utils/constants';
 	import { generateTitle, sendAnalyticsEvent, setSEO } from '$lib/utils/helpers';
+	import { storeDescription } from '$lib/utils/seo';
 	import { components } from '$lib/utils/styles';
 	import { twMerge } from 'tailwind-merge';
 
 	let { data } = $props();
-	
+
 	function formatDate(date: string) {
 		return new Intl.DateTimeFormat('fi-FI', {
 			weekday: 'long',
@@ -32,12 +33,12 @@
 	$effect(() => data.store && setSEO({
 		og: {
 			title: generateTitle(`Myymälä - ${data.store.name}`),
-			description: `Alkon myymälä - ${data.store.name}. Katso aukioloajat, osoite ja valikoima Alkometriikasta!`,
+			description: storeDescription(data.store),
 			url: window.location.href,
 			type: 'website',
 		},
 		keywords: `Alko, myymälä, ${data.store.name}, ${data.store.address}, ${data.store.postalCode}, ${data.store.postOffice}`,
-		description: `Alkon myymälä - ${data.store.name}.`,
+		description: storeDescription(data.store),
 	}));
 </script>
 

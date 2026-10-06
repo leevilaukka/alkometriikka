@@ -1,6 +1,8 @@
 import { R2S3Client } from './client';
 import { DAILY_OG_KEY_PREFIX } from '../og/og-daily-card';
 import { dateForDayNumber } from '../../src/lib/daily/dayNumber';
+import { hasFlag, readNumberOption, readOption } from '../lib/cli';
+import { mapPool } from '../lib/async';
 
 /**
  * Small unified CLI for ad hoc maintenance of the Alkometriikka R2 bucket
@@ -15,20 +17,6 @@ import { dateForDayNumber } from '../../src/lib/daily/dayNumber';
  *   bun run r2 rm <key...>
  *   bun run r2 prune-daily --before <YYYY-MM-DD> | --before-game <n> [--delete]
  */
-
-function readOption(name: string): string | undefined {
-	const index = process.argv.indexOf(name);
-	return index === -1 ? undefined : process.argv[index + 1];
-}
-
-function readNumberOption(name: string, fallback: number): number {
-	const value = Number(readOption(name));
-	return Number.isInteger(value) && value > 0 ? value : fallback;
-}
-
-function hasFlag(name: string): boolean {
-	return process.argv.includes(name);
-}
 
 /** Positional args, i.e. argv entries that aren't a flag or a flag's value. */
 function positionals(...flagsWithValues: string[]): string[] {
@@ -56,21 +44,6 @@ function clientFromEnv(): R2S3Client {
 		);
 	}
 	return new R2S3Client({ accessKeyId, secretAccessKey, accountId, bucket, region });
-}
-
-/** Runs `fn` over `items` with at most `limit` concurrent workers. */
-async function mapPool<T, R>(items: T[], limit: number, fn: (item: T) => Promise<R>): Promise<R[]> {
-	const results = new Array<R>(items.length);
-	let next = 0;
-	async function worker() {
-		while (next < items.length) {
-			const index = next;
-			next += 1;
-			results[index] = await fn(items[index]);
-		}
-	}
-	await Promise.all(Array.from({ length: Math.min(limit, items.length) }, () => worker()));
-	return results;
 }
 
 async function count(prefix: string): Promise<void> {

@@ -6,6 +6,7 @@
 	import type { AvailabilityStore } from '$lib/types';
 	import { getStoreCity, isStoreOpen } from '$lib/utils/availability.js';
 	import { generateTitle, sendAnalyticsEvent, setSEO } from '$lib/utils/helpers';
+	import { staticPage } from '$lib/utils/seo';
 	import { components } from '$lib/utils/styles';
 	import { twMerge } from 'tailwind-merge';
 
@@ -27,14 +28,11 @@
 		});
 	}
 
+	const { description, keywords } = staticPage('/myymalat/');
 	setSEO({
-		og: {
-			title: generateTitle('Myymälät'),
-			description: 'Selaa Alkon myymälöitä ja valitse ensisijainen myymälä.',
-			url: window.location.href,
-		},
-		keywords: 'Alko, myymälät, myymälä, aukioloajat, osoite, valikoima',
-		description: 'Selaa Alkon myymälöitä ja valitse ensisijainen myymälä.',
+		og: { title: generateTitle('Myymälät'), description, url: window.location.href },
+		keywords,
+		description
 	});
 </script>
 

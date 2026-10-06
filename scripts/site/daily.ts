@@ -26,25 +26,11 @@
  * replaying even after products leave the live catalog). Old manifests are kept
  * forever — they are tiny (~6 KB) and they are the only way to rebuild past days.
  */
-import {
-	copyFileSync,
-	existsSync,
-	mkdirSync,
-	readdirSync,
-	readFileSync,
-	rmSync,
-	writeFileSync
-} from 'node:fs';
-import { join } from 'node:path';
+import { existsSync } from 'node:fs';
 import { Kaljakori } from '../../src/lib/alko/index.ts';
-import { DAILY_GAME_VERSION } from '../../src/lib/daily/questions';
-import {
-	ARCHIVE_INDEX_VERSION,
-	buildArchiveGame,
-	generateDailyGameManifest,
-	type DailyGameManifest
-} from '../../src/lib/daily/manifest';
+import { parseDataset } from '../../src/lib/utils/dataset.ts';
 import { toISODateInTimeZone } from '../../src/lib/utils/sales';
+import { bakeArchive, bakeManifests } from './daily-bake.ts';
 
 /** When running with `--dev` we operate on the local static folder. Mirrors the sync scripts. */
 const DEV = process.argv.includes('--dev');
@@ -63,111 +49,12 @@ const DAILY_DIR = DEV ? './static/daily' : './daily';
 /** Directory immutable archive records of finished days are written to. */
 const ARCHIVE_DIR = DEV ? './static/daily/archive' : './daily/archive';
 
-type MigratedProduct = { values: unknown[] };
-
-/** Mirrors the client `+layout.ts` loader so the baked games match exactly. */
-function formatDatasetToJSON(data: string) {
-	const { schema, products = {} } = JSON.parse(data);
-	const header = [...schema, 'Hintahistoria', 'Poistunut valikoimasta'];
-	const rows = Object.values(products as Record<string, MigratedProduct>)
-		.filter((product) => product && typeof product === 'object' && Array.isArray(product.values))
-		.map((product) => [...product.values, [], Boolean(false)]);
-	return { table: [header, ...rows] };
-}
-
-function addDaysUTC(isoDate: string, days: number): string {
-	const [year, month, day] = isoDate.split('-').map(Number);
-	return toISODateInTimeZone('UTC', new Date(Date.UTC(year!, month! - 1, day! + days)));
-}
-
-function isCurrentVersion(path: string): boolean {
-	try {
-		const manifest = JSON.parse(readFileSync(path, 'utf8')) as DailyGameManifest;
-		return manifest?.version === DAILY_GAME_VERSION;
-	} catch {
-		return false;
-	}
-}
-
-const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
-const ARCHIVE_DIR_NAME = ARCHIVE_DIR.split('/').pop();
-
-/**
- * Archives finished days (any manifest date before today) that are not archived
- * yet. Once written, an archive file is immutable — it must never be rewritten,
- * because it pins the exact game to its date; later format/generator changes
- * must not touch history. Re-runs only fill in missing dates and refresh the
- * index of available archives.
- */
-async function bakeArchive(today: string): Promise<void> {
-	mkdirSync(ARCHIVE_DIR, { recursive: true });
-
-	const legacyDirs = DEV
-		? ['./static/daily/arkisto', './static/daily/arkisto-data']
-		: ['./daily/arkisto', './daily/arkisto-data'];
-	for (const legacyDir of legacyDirs) {
-		if (existsSync(legacyDir)) {
-			try {
-				for (const file of readdirSync(legacyDir)) {
-					const src = join(legacyDir, file);
-					const dest = join(ARCHIVE_DIR, file);
-					if (!existsSync(dest)) {
-						copyFileSync(src, dest);
-					}
-				}
-				rmSync(legacyDir, { recursive: true, force: true });
-			} catch {}
-		}
-	}
-
-	const existing = readdirSync(DAILY_DIR)
-		.filter((file) => file.endsWith('.json'))
-		.map((file) => file.slice(0, 10))
-		.filter((date) => ISO_DATE.test(date) && date < today);
-	const current = new Set(
-		readdirSync(ARCHIVE_DIR)
-			.filter((file) => file.endsWith('.json'))
-			.map((file) => file.slice(0, 10))
-	);
-	let archived = 0;
-
-	for (const date of existing) {
-		if (current.has(date)) continue;
-		const manifestPath = join(DAILY_DIR, `${date}.json`);
-		let manifest: DailyGameManifest;
-		try {
-			manifest = JSON.parse(readFileSync(manifestPath, 'utf8')) as DailyGameManifest;
-		} catch {
-			continue;
-		}
-		if (manifest?.version !== DAILY_GAME_VERSION || manifest.date !== date) continue;
-		const archive = await buildArchiveGame(manifest);
-		if (!archive) continue;
-		writeFileSync(join(ARCHIVE_DIR, `${date}.json`), JSON.stringify(archive));
-		archived++;
-		console.log(`🗄️  Archived ${date} (${archive.game.questions.length} questions)`);
-	}
-
-	const index = {
-		version: ARCHIVE_INDEX_VERSION,
-		dates: readdirSync(ARCHIVE_DIR)
-			.filter((file) => file.endsWith('.json') && file !== 'index.json')
-			.map((file) => file.slice(0, 10))
-			.filter((date) => ISO_DATE.test(date))
-			.sort((a, b) => b.localeCompare(a))
-	};
-	writeFileSync(join(ARCHIVE_DIR, 'index.json'), JSON.stringify(index));
-	console.log(
-		`📋 Archive index: ${index.dates.length} day(s) available (${archived} newly archived in ${ARCHIVE_DIR_NAME}/)`
-	);
-}
-
 async function bake(): Promise<void> {
 	if (!existsSync(DATA_PATH)) {
 		throw new Error(`Dataset not found at ${DATA_PATH}. Run the sync first.`);
 	}
 
-	const { table } = formatDatasetToJSON(await Bun.file(DATA_PATH).text());
+	const { table } = parseDataset(await Bun.file(DATA_PATH).text());
 	const catalog = new Kaljakori(table, { weight: null, gender: null }, { stores: {}, product: {} })
 		.data;
 	// Baking without the previously deployed manifests would re-roll dates that
@@ -178,29 +65,23 @@ async function bake(): Promise<void> {
 			`${DAILY_DIR} not found. Seed it from the deployed site before baking (or set DAILY_ALLOW_EMPTY=1).`
 		);
 	}
-	mkdirSync(DAILY_DIR, { recursive: true });
-
 	const today = toISODateInTimeZone('Europe/Helsinki');
-	const existing = new Set(readdirSync(DAILY_DIR));
-	let written = 0;
+	const written = await bakeManifests({
+		dailyDir: DAILY_DIR,
+		today,
+		aheadDays: AHEAD_DAYS,
+		catalog
+	});
 
-	for (let offset = 0; offset <= AHEAD_DAYS; offset++) {
-		const date = addDaysUTC(today, offset);
-		const path = join(DAILY_DIR, `${date}.json`);
-		if (existing.has(`${date}.json`) && isCurrentVersion(path)) {
-			console.log(`⏭️  ${date} already baked (v${DAILY_GAME_VERSION})`);
-			continue;
-		}
-		const manifest = await generateDailyGameManifest(date, catalog);
-		writeFileSync(path, JSON.stringify(manifest));
-		written++;
-		console.log(
-			`📅 Baked ${date} (pool: ${manifest.products.length}, ${manifest.gameHash.slice(0, 12)}…, v${DAILY_GAME_VERSION})`
-		);
-	}
-
-	console.log(`✅ ${written} new daily manifest(s) written to ${DAILY_DIR}`);
-	await bakeArchive(today);
+	console.log(`✅ ${written.length} new daily manifest(s) written to ${DAILY_DIR}`);
+	await bakeArchive({
+		dailyDir: DAILY_DIR,
+		archiveDir: ARCHIVE_DIR,
+		today,
+		legacyDirs: DEV
+			? ['./static/daily/arkisto', './static/daily/arkisto-data']
+			: ['./daily/arkisto', './daily/arkisto-data']
+	});
 }
 
 await bake();

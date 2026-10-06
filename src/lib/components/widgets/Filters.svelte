@@ -2,12 +2,12 @@
 	import type { Kaljakori } from '$lib/alko';
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/styles';
-	import { ContextKeys, shownFilters as filters, subCategoryMap, AllColumns } from '$lib/utils/constants';
+	import { ContextKeys, shownFilters as filters, AllColumns } from '$lib/utils/constants';
 	import NumberInput from '../inputs/NumberInput.svelte';
 	import StringInput from '../inputs/StringInput.svelte';
 	import Icon from './Icon.svelte';
 	import { isMobile } from '$lib/global.svelte';
-	import { initFilterValues, searchParametersFromFilterValues } from '$lib/utils/filters';
+	import { getNarrowedFilterValues, getNestedSubFilter, getShownParentFilter, initFilterValues, searchParametersFromFilterValues } from '$lib/utils/filters';
 	import type { ColumnNames, FilterValues } from '$lib/types';
 	import { getContext, untrack } from 'svelte';
 	import { get } from 'svelte/store';
@@ -65,9 +65,20 @@
 	$effect(() => {
 		// Reset sub filters when parent filter is changed
 		filterValues && (Object.keys(filterValues) as ColumnNames[]).forEach((filter) => {
-			if(Object.hasOwn(subCategoryMap, filter) && filterValues[filter].length !== 1 && filterValues[subCategoryMap[filter as keyof typeof subCategoryMap]]?.length)  {
-				filterValues[subCategoryMap[filter as keyof typeof subCategoryMap]] = []
+			const child = getNestedSubFilter(filter)
+			if(child && filterValues[filter].length !== 1 && filterValues[child]?.length)  {
+				filterValues[child] = []
 			}
+		})
+	});
+
+	$effect(() => {
+		// Drop selections that no longer match the selections of a shown parent filter
+		filters.forEach((filter) => {
+			const value = filterValues[filter]
+			if(!getShownParentFilter(filter) || !Array.isArray(value) || !value.length) return
+			const allowed = new Set(getNarrowedFilterValues(filter, filterValues, kaljakori, showRemoved))
+			if(value.some((v) => !allowed.has(v))) filterValues[filter] = value.filter((v) => allowed.has(v))
 		})
 	});
 
@@ -80,8 +91,15 @@
 		if (currentShowRemoved === previousShowRemoved) return;
 		untrack(() => {
 			(Object.keys(filterValues) as ColumnNames[]).forEach((filter) => {
-				if (kaljakori.getFilterType(filter) !== 'number') return;
 				const value = filterValues[filter];
+				// Drop selections that only exist on removed products, as they'd match nothing
+				if (kaljakori.getFilterType(filter) === 'string' && !currentShowRemoved && Array.isArray(value) && value.length) {
+					const activeValues = new Set(kaljakori.getFilterValues(filter, false));
+					if (value.some((v) => !activeValues.has(v)))
+						filterValues[filter] = value.filter((v) => activeValues.has(v));
+					return;
+				}
+				if (kaljakori.getFilterType(filter) !== 'number') return;
 				if (!Array.isArray(value)) return;
 				const oldDefault = kaljakori.getMinAndMaxValues(filter, previousShowRemoved);
 				if (value[0] === oldDefault[0] && value[1] === oldDefault[1])
@@ -108,7 +126,7 @@
 	onclose={() => (showFilters = false)}
 >
 	{#each filters as filter}
-		{@const possibleValues = kaljakori.getFilterValues(filter, showRemoved)}
+		{@const possibleValues = getNarrowedFilterValues(filter, filterValues, kaljakori, showRemoved)}
 		{@const type = kaljakori.getFilterType(filter)}
 		{#if !pillFilters.includes(filter) && possibleValues.length > 1}
 			<div class="flex w-full flex-col text-sm gap-2">
