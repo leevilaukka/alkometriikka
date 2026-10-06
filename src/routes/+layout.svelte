@@ -163,7 +163,7 @@
 
 	const inCategory = $derived(page.route.id === '/kategoriat/[type]/[[subtype]]');
 
-	const noSearchPages: typeof page.route.id[] = ['/daily/arkisto', '/laskin', '/tilastot', '/listat', '/daily', '/daily/arkisto/[date]', '/tuotteet/[...id]', '/vertailu', '/kategoriat'];
+	const noSearchPages: typeof page.route.id[] = ['/daily/arkisto', '/laskin', '/tilastot', '/listat', '/daily', '/daily/arkisto/[date]', '/tuotteet/[...id]', '/vertailu', '/kategoriat', '/myymalat', '/myymalat/[storeID]'];
 </script>
 
 <svelte:window onclick={handleDocumentClick} onkeydown={handleGlobalKeydown} />
