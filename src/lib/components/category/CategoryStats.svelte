@@ -4,8 +4,9 @@
 	import { formatRoundedPricePerLiter, formatValue } from '$lib/utils/format';
 	import { computeCategoryStats } from '$lib/utils/metrics';
 	import Histogram from '../widgets/Histogram.svelte';
+	import CategorySection from './CategorySection.svelte';
 
-	const { products }: { products: PriceListItem[] } = $props();
+	const { products, open = false }: { products: PriceListItem[]; open?: boolean } = $props();
 
 	const stats = $derived(computeCategoryStats(products));
 	const bins = $derived(stats.pricePerLiterHistogram);
@@ -20,8 +21,7 @@
 	);
 </script>
 
-<section class="flex flex-col gap-3">
-	<h2 class="text-sm font-bold">Mediaanituote</h2>
+<CategorySection title="Mediaanituote" {open}>
 	<dl class="grid grid-cols-2 gap-2 text-sm">
 		{#each medians as item (item.key)}
 			<div class="flex flex-col rounded border border-primary bg-primary px-3 py-2">
@@ -41,4 +41,4 @@
 			/>
 		</figure>
 	{/if}
-</section>
+</CategorySection>

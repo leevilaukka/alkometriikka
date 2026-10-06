@@ -47,7 +47,7 @@
 	<title>{generateTitle('Tuotevertailu')}</title>
 </svelte:head>
 
-<div class="mx-auto flex w-full max-w-350 flex-col gap-6 p-4 md:p-6">
+<div class="flex w-full flex-col gap-6 p-4 md:p-6">
 	<div class="flex w-full flex-wrap items-center gap-3.5">
 		<button onclick={handleBack} class={twMerge(components.button({ size: 'md' }))}>
 			<Icon name={window.history.length > 1 ? 'arrow_back' : 'home'} class="inline-block" />

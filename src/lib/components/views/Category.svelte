@@ -33,6 +33,7 @@
 	import BottomBar from '../widgets/BottomBar.svelte';
 	import CategoryStats from '../category/CategoryStats.svelte';
 	import CategoryPriceChanges from '../category/CategoryPriceChanges.svelte';
+	import CategorySection from '../category/CategorySection.svelte';
 
 	const {
 		trail,
@@ -166,28 +167,41 @@
 	</div>
 {/snippet}
 
-<!-- Stat cards, stats and price changes: the sidebar on wide screens, the "Tiedot" sheet otherwise -->
+<!-- Stat cards, stats and price changes: the sidebar on wide screens, the "Tiedot" sheet otherwise.
+     Collapsed in the sidebar so it stays short, open in the sheet that was opened to see them. -->
 {#snippet insights(inSheet: boolean)}
-	<div class={twMerge('flex flex-col gap-2', inSheet && 'grid grid-cols-2')}>
-		{#if cheapest}
-			{@render stat('Halvin', formatValue(cheapest[AllColumns.Price], AllColumns.Price) as string, cheapest)}
+	<div class="flex flex-col">
+		{#if cheapest || mostAlcoholPerEuro || onSaleCount > 0 || newCount > 0}
+			<CategorySection title="Kohokohdat" open={inSheet}>
+				<div class={twMerge('flex flex-col gap-2', inSheet && 'grid grid-cols-2')}>
+					{#if cheapest}
+						{@render stat('Halvin', formatValue(cheapest[AllColumns.Price], AllColumns.Price) as string, cheapest)}
+					{/if}
+					{#if mostAlcoholPerEuro}
+						{@render stat(
+							'Eniten alkoholia eurolla',
+							formatValue(mostAlcoholPerEuro[AllColumns.AlcoholGramsPerEuro], AllColumns.AlcoholGramsPerEuro) as string,
+							mostAlcoholPerEuro
+						)}
+					{/if}
+					{#if onSaleCount > 0}
+						{@render stat('Alennuksessa', `${onSaleCount} tuotetta`)}
+					{/if}
+					{#if newCount > 0}
+						{@render stat('Uutuuksia', `${newCount} tuotetta`)}
+					{/if}
+				</div>
+			</CategorySection>
 		{/if}
-		{#if mostAlcoholPerEuro}
-			{@render stat(
-				'Eniten alkoholia eurolla',
-				formatValue(mostAlcoholPerEuro[AllColumns.AlcoholGramsPerEuro], AllColumns.AlcoholGramsPerEuro) as string,
-				mostAlcoholPerEuro
-			)}
-		{/if}
-		{#if onSaleCount > 0}
-			{@render stat('Alennuksessa', `${onSaleCount} tuotetta`)}
-		{/if}
-		{#if newCount > 0}
-			{@render stat('Uutuuksia', `${newCount} tuotetta`)}
-		{/if}
+		<CategoryStats products={active} open={inSheet} />
+		<CategoryPriceChanges
+			products={active}
+			typeSlug={trail[0].slug}
+			subTypeSlug={trail[1]?.slug}
+			feedHref={`${feedPath}.xml`}
+			open={inSheet}
+		/>
 	</div>
-	<CategoryStats products={active} />
-	<CategoryPriceChanges products={active} feedHref={`${feedPath}.xml`} />
 {/snippet}
 
 {#snippet filterLink()}

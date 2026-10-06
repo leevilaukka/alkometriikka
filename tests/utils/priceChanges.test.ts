@@ -6,11 +6,13 @@ import {
 	countPriceChangesByCategory,
 	DEFAULT_PRICE_CHANGE_WINDOW,
 	filterPriceChangesByDirection,
+	formatPriceChangeAmount,
 	formatPriceChangeDate,
 	formatPriceChangePercent,
 	isInCategory,
 	parsePriceChangeParams,
 	priceChangeParams,
+	priceChangesURL,
 	priceChangeSince
 } from '$lib/utils/priceChanges';
 
@@ -87,6 +89,16 @@ describe('price change params', () => {
 			subTypeSlug: undefined
 		});
 	});
+
+	it('links to the page with only the non-default choices', () => {
+		expect(priceChangesURL({ days: DEFAULT_PRICE_CHANGE_WINDOW, direction: 'all' })).toBe('/hinnanmuutokset');
+		expect(
+			priceChangesURL({ days: DEFAULT_PRICE_CHANGE_WINDOW, direction: 'all', typeSlug: 'viinit', subTypeSlug: 'punaviinit' })
+		).toBe('/hinnanmuutokset?tyyppi=viinit&alatyyppi=punaviinit');
+		expect(priceChangesURL({ days: 7, direction: 'down', typeSlug: 'oluet' })).toBe(
+			'/hinnanmuutokset?pv=7&suunta=halpeni&tyyppi=oluet'
+		);
+	});
 });
 
 describe('price change formatting', () => {
@@ -99,5 +111,11 @@ describe('price change formatting', () => {
 		expect(formatPriceChangeDate('2026-03-05')).toBe('5.3.');
 		expect(formatPriceChangePercent(12.4)).toBe('+12 %');
 		expect(formatPriceChangePercent(-5)).toBe('\u22125 %'); // fi-FI uses the Unicode minus sign
+	});
+
+	it('formats the change in euros with a sign', () => {
+		const item = product('1', 'Viinit');
+		expect(formatPriceChangeAmount(change(item, 40.17, 35.98))).toBe('\u22124,19 €');
+		expect(formatPriceChangeAmount(change(item, 9.99, 12))).toBe('+2,01 €');
 	});
 });

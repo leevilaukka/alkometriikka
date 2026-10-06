@@ -100,6 +100,14 @@ export function priceChangeParams(options: {
 	};
 }
 
+/** Link to the price changes page with these choices, e.g. `/hinnanmuutokset?tyyppi=viinit`. */
+export function priceChangesURL(options: Parameters<typeof priceChangeParams>[0]): string {
+	const params = new URLSearchParams(
+		Object.entries(priceChangeParams(options)).filter(([, value]) => value)
+	).toString();
+	return params ? `/hinnanmuutokset?${params}` : '/hinnanmuutokset';
+}
+
 /** "2026-10-05" → "5.10." */
 export function formatPriceChangeDate(date: string): string {
 	const [, month, day] = date.split('-');
@@ -109,4 +117,10 @@ export function formatPriceChangeDate(date: string): string {
 /** 12.4 → "+12 %", -5 → "−5 %" (fi-FI uses the Unicode minus sign) */
 export function formatPriceChangePercent(percent: number): string {
 	return `${percent > 0 ? '+' : ''}${percent.toLocaleString('fi-FI', { maximumFractionDigits: 0 })} %`;
+}
+
+/** 40.17 → 35.98 gives "−4,19 €", a rise gets a "+" sign. */
+export function formatPriceChangeAmount(change: PriceChange): string {
+	const amount = change.to - change.from;
+	return `${amount > 0 ? '+' : ''}${amount.toLocaleString('fi-FI', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} €`;
 }
