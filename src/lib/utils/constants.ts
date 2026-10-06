@@ -168,6 +168,7 @@ const { AND, OR } = FilterAnnotations;
  */
 export const filterAnnotationsToFilter = {
 	[AllColumns.Name]: OR,
+	[AllColumns.Type]: OR,
 	[AllColumns.Manufacturer]: OR,
 	[AllColumns.SubType]: OR,
 	[AllColumns.Country]: OR,
