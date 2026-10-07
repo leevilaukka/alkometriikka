@@ -104,6 +104,7 @@
 				Versio: <a href={`${githubRepoBase}/commit/${version}`} target="_blank">
 					{gitCommitHash}
 				</a>
+				| <a href="/muutosloki" onclick={() => dialogElement.close()}>Muutosloki</a>
 				{#if alko.dataset.metadata.LastUpdated && alko.dataset.metadata.LastSynced}
 					<br />
 				{@const lastSynced = `${new Date(alko.dataset.metadata.LastSynced).toLocaleDateString('fi-FI')} klo ${new Date(alko.dataset.metadata.LastSynced).toLocaleTimeString('fi-FI', timeConfig)}`}

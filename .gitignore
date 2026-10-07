@@ -22,6 +22,8 @@ feed.json
 /availability.json
 /daily/
 /static/daily/
+/CHANGELOG.md
+/CHANGELOG.md.tmp
 
 # Output
 .output

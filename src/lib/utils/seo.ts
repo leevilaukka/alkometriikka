@@ -90,6 +90,12 @@ export const STATIC_PAGES: StaticPageSeo[] = [
 		title: 'Hinnanmuutokset',
 		description: PRICE_CHANGES_DESCRIPTION,
 		keywords: 'hinnanmuutokset, hinnanalennukset, hinnankorotukset, Alko, hinnat'
+	},
+	{
+		path: '/muutosloki/',
+		title: 'Muutosloki',
+		description: 'Alkometriikan uudet ominaisuudet, korjaukset ja parannukset kuukausittain.',
+		keywords: 'muutosloki, päivitykset, uutta, Alkometriikka'
 	}
 ];
 

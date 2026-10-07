@@ -1,0 +1,124 @@
+# git-cliff config for the user-facing changelog rendered at /muutosloki/.
+# Generate with `bun run changelog` (writes CHANGELOG.md, which is gitignored and
+# rebuilt on every build). https://git-cliff.org/docs/configuration
+#
+# The repo has no release tags, so entries are grouped by month instead of by
+# version. Only conventional `feat`, `fix` and `perf` commits are listed; add
+# `[skip changelog]` to a commit body to leave it out. Commits with a body are
+# rendered as a <details> element that opens to show it.
+#
+# Entries are the English commit subjects. To lead with a Finnish entry, end the
+# commit message with a trailer; the original subject is still shown under it:
+#
+#   feat(store): add auto nearest-store option to store picker
+#
+#   log: Myymälävalitsin voi nyt valita lähimmän myymälän automaattisesti
+#
+#   Lines after the trailer's first line become the Finnish body, shown before
+#   the English one. Blank lines and paragraphs are fine, but a line starting
+#   with `Word:` begins a new trailer and ends it.
+
+[changelog]
+# The page at src/routes/muutosloki renders its own title.
+header = ""
+# Collect the months first (commits arrive newest first), then list each
+# month's commits by group so a group heading is only printed when it has entries.
+body = """
+{%- set_global months = [] -%}
+{%- for commit in commits -%}
+    {%- set month = commit.committer.timestamp | date(format="%Y-%m") -%}
+    {%- if month not in months -%}
+        {%- set_global months = months | concat(with=month) -%}
+    {%- endif -%}
+{%- endfor -%}
+{%- set repo = "https://github.com/leevilaukka/alkometriikka" -%}
+{%- set month_names = ["Tammikuu", "Helmikuu", "Maaliskuu", "Huhtikuu", "Toukokuu", "Kesäkuu", "Heinäkuu", "Elokuu", "Syyskuu", "Lokakuu", "Marraskuu", "Joulukuu"] -%}
+{%- for month in months %}
+{%- set parts = month | split(pat="-") -%}
+{%- set month_index = parts.1 | int - 1 %}
+## {{ month_names[month_index] }} {{ parts.0 }}
+{% for group, group_commits in commits | group_by(attribute="group") -%}
+    {%- set_global heading = false -%}
+    {%- for commit in group_commits -%}
+        {%- if commit.committer.timestamp | date(format="%Y-%m") == month -%}
+            {%- if not heading %}
+### {{ group | striptags | trim }}
+{% set_global heading = true -%}
+            {%- endif -%}
+            {%- set_global finnish = "" -%}
+            {%- for footer in commit.footers -%}
+                {%- if footer.token | lower == "log" %}{% set_global finnish = footer.value | trim %}{% endif -%}
+            {%- endfor -%}
+            {%- set subject = commit.message | split(pat="\n") | first | trim | upper_first -%}
+            {%- if commit.scope %}{% set subject = "**" ~ commit.scope ~ ":** " ~ subject %}{% endif -%}
+            {%- set english_body = commit.body | default(value="") | trim -%}
+            {%- if finnish -%}
+                {%- set finnish_lines = finnish | split(pat="\n") -%}
+                {%- set title = finnish_lines | first | trim | upper_first -%}
+                {%- set finnish_body = finnish_lines | slice(start=1) | join(sep="\n") | trim -%}
+            {%- else -%}
+                {%- set title = subject -%}
+                {%- set finnish_body = "" -%}
+            {%- endif -%}
+            {%- set short_id = commit.id | truncate(length=7, end="") -%}
+            {%- set title = title ~ ' <a class="commit" href="' ~ repo ~ '/commit/' ~ commit.id ~ '" target="_blank" rel="noopener">' ~ short_id ~ '</a>' -%}
+            {#- With a Finnish trailer, the original English message is shown under it -#}
+            {%- if finnish_body or english_body %}
+- <details>
+  <summary>
+
+  {{ title }}
+{%- if finnish %}
+  <span class="original" lang="en">{{ subject }}</span>
+{%- endif %}
+
+  </summary>
+{% if finnish_body %}
+  {{ finnish_body | indent(prefix="  ") }}
+{% endif -%}
+{%- if english_body and finnish %}
+  <div class="original" lang="en">
+
+  {{ english_body | indent(prefix="  ") }}
+
+  </div>
+{% elif english_body %}
+  {{ english_body | indent(prefix="  ") }}
+{% endif %}
+  </details>
+{% else %}
+- {{ title }}
+{%- if finnish %}
+  <span class="original" lang="en">{{ subject }}</span>
+{%- endif -%}
+{%- endif -%}
+{%- endif -%}
+    {%- endfor -%}
+    {%- if heading %}
+{% endif -%}
+{%- endfor -%}
+{%- endfor %}
+"""
+footer = ""
+trim = false
+
+[git]
+conventional_commits = true
+filter_unconventional = true
+split_commits = false
+protect_breaking_commits = false
+filter_commits = true
+# The <!-- n --> prefixes fix the section order; they are stripped in the template.
+commit_parsers = [
+  { body = "\\[skip changelog\\]", skip = true },
+  { message = "^[a-z]+\\((ci|build|scripts|analytics|deps)\\)", skip = true },
+  # SEO and social preview work is invisible to visitors
+  { message = "^[a-z]+\\((seo|og|sitemap|prerender)\\)", skip = true },
+  { message = "(?i)\\b(seo|sitemap|json-ld|structured data|og (tags|data|images?)|og:|meta tags|robots\\.txt|prerender)", skip = true },
+  { message = "^feat", group = "<!-- 0 -->Uutta" },
+  { message = "^fix", group = "<!-- 1 -->Korjauksia" },
+  { message = "^perf", group = "<!-- 2 -->Suorituskyky" },
+  { message = ".*", skip = true },
+]
+tag_pattern = "v[0-9].*"
+sort_commits = "newest"

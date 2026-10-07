@@ -140,6 +140,11 @@ function generateSitemapXML(entries: SitemapEntry[]) {
         `    <loc>https://alkometriikka.fi/myymalat/</loc>\n` +
         `    <priority>0.6</priority>\n` +
         `    <changefreq>monthly</changefreq>\n` +
+        `  </url>\n` +
+        `  <url>\n` +
+        `    <loc>https://alkometriikka.fi/muutosloki/</loc>\n` +
+        `    <priority>0.4</priority>\n` +
+        `    <changefreq>weekly</changefreq>\n` +
         `  </url>\n`;
     
     const body = entries.map((entry) => {
