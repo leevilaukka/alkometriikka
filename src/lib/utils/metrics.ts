@@ -1,5 +1,6 @@
 import type { Kaljakori } from '$lib/alko';
 import type { ColumnNames, PriceListItem } from '$lib/types';
+import { categorySlug, findProductCategoryTrail } from './categories';
 import { AllColumns, DatasetColumns, DrunkColumns, hideFromProductPageStats } from './constants';
 import { formatValue } from './format';
 import { headerToDisplayName, isNullish } from './helpers';
@@ -69,12 +70,27 @@ export function computeQualityMetrics(
 	product: PriceListItem,
 	kaljakori: Kaljakori
 ): QualityMetricsResult {
-	const CATEGORY_COLUMN = AllColumns.SubType in product ? AllColumns.SubType : AllColumns.Type;
+	// Same trail the "Selaa kategoriaa" link uses, so the compared group is the category page's products
+	const { trail } = findProductCategoryTrail(
+		kaljakori.getCategoryTree(),
+		product[AllColumns.Type],
+		product[AllColumns.SubType]
+	);
+	const typeNode = trail[0];
+	const subTypeNode = trail[1];
+	const category = String(
+		(subTypeNode ?? typeNode)?.name ?? product[AllColumns.SubType] ?? product[AllColumns.Type]
+	);
 
-	const category = product[CATEGORY_COLUMN];
+	const sameCategory = (item: PriceListItem) => {
+		if (!typeNode) return item[AllColumns.Type] === product[AllColumns.Type];
+		if (categorySlug(String(item[AllColumns.Type] ?? '')) !== typeNode.slug) return false;
+		return !subTypeNode || categorySlug(String(item[AllColumns.SubType] ?? '')) === subTypeNode.slug;
+	};
 	const peers = kaljakori.data.filter(
 		(item) =>
-			item[CATEGORY_COLUMN] === category &&
+			sameCategory(item) &&
+			item[AllColumns.RemovedFromSelection] !== true &&
 			item[AllColumns.Number] !== product[AllColumns.Number]
 	);
 	const sampleSize = peers.length;
