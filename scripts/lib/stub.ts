@@ -29,10 +29,13 @@ export type StubPage = {
 };
 
 export function breadcrumbJsonLd(items: { name: string; url: string }[]) {
+  const trail = [{ name: "Alkometriikka", url: `${SITE_URL}/` }, ...items];
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    itemListElement: [{ name: "Alkometriikka", url: `${SITE_URL}/` }, ...items].map((item, index) => ({
+    // Search Console labels each BreadcrumbList by its own name, showing "N/A" without one
+    name: trail.map((item) => item.name).join(" › "),
+    itemListElement: trail.map((item, index) => ({
       "@type": "ListItem",
       position: index + 1,
       name: item.name,
