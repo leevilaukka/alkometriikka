@@ -200,6 +200,8 @@ export type AnalyticsEventMap = {
 	show_price_history: { product_number?: string; [key: string]: any };
 	show_product_details: { product_number: string };
 	add_to_compare: { product_number: string };
+	command_palette_open: undefined;
+	command_palette_select: { kind: string; scope: string; query_length: number };
 	view_compare: { product_numbers: string[]; url: string };
 	scan_barcode: { ean: string; link?: string };
 	scan_qr_code: { type: string; product_number: string; link?: string };

@@ -14,6 +14,7 @@
 	import { setContext } from 'svelte';
 	import Settings from '$lib/components/widgets/Settings/Index.svelte';
 	import CompareBar from '$lib/components/widgets/CompareBar.svelte';
+	import CommandPalette from '$lib/components/widgets/CommandPalette.svelte';
 	import { LocalStorageManager } from '$lib/utils/storage';
 		import type { IconName } from '$lib/icons';
 
@@ -164,6 +165,10 @@
 	const inCategory = $derived(page.route.id === '/kategoriat/[type]/[[subtype]]');
 
 	const noSearchPages: typeof page.route.id[] = ['/daily/arkisto', '/laskin', '/tilastot', '/listat', '/daily', '/daily/arkisto/[date]', '/tuotteet/[...id]', '/vertailu', '/kategoriat', '/myymalat', '/myymalat/[storeID]'];
+	const hasSearch = $derived(page.route.id === null || !noSearchPages.includes(page.route.id));
+
+	let commandPalette = $state<ReturnType<typeof CommandPalette>>();
+	const paletteShortcut = /Mac|iPhone|iPad/.test(navigator.userAgent) ? '⌘K' : 'Ctrl K';
 </script>
 
 <svelte:window onclick={handleDocumentClick} onkeydown={handleGlobalKeydown} />
@@ -184,14 +189,18 @@
 				/>
 				<span class="hidden text-[1.75rem] text-brand-3 dark:text-white sm:block">Alkometriikka</span>
 			</a>
-			{#if page.route.id === null || !noSearchPages.includes(page.route.id)}
+			{#if hasSearch}
 				<div
 					class={twMerge(
 						'flex w-full flex-row',
 						'rounded border border-primary'
 					)}
 				>
-					<div
+					<button
+						type="button"
+						onclick={() => commandPalette?.openPalette()}
+						aria-label="Hae kaikkialta"
+						title={`Hae kaikkialta (${paletteShortcut})`}
 						class={twMerge(
 							components.button(),
 							'aspect-square border-0 bg-white text-black',
@@ -200,7 +209,7 @@
 						)}
 					>
 						<Icon name="search" />
-					</div>
+					</button>
 					<div class="relative flex w-full">
 						<input
 							id="searchQuery"
@@ -219,6 +228,7 @@
 				</div>
 			{/if}
 			<div class="flex items-center gap-2 ms-auto">
+				<CommandPalette bind:this={commandPalette} kaljakori={alko.kaljakori} availability={alko.availability} showButton={!hasSearch} />
 				<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 				<details bind:this={extraMenu} class="relative" onkeydown={handleExtraMenuKeydown} onfocusout={handleExtraMenuFocusout}>
 					<summary aria-label="Lisää" class={twMerge(components.button(), 'list-none p-2 text-xl')}>

@@ -9,6 +9,7 @@
 		triggerLabel = 'Palaute',
 		triggerIcon = 'bug',
 		triggerClass = '',
+		showTrigger = true,
 		dialogClass = '',
 		title,
 		description,
@@ -19,6 +20,8 @@
 		triggerLabel?: string;
 		triggerIcon?: IconName;
 		triggerClass?: string;
+		/** False when something else opens the dialog through `open()` */
+		showTrigger?: boolean;
 		dialogClass?: string;
 		title: string;
 		description: string;
@@ -43,6 +46,10 @@
 		sent = false;
 	}
 
+	export function open() {
+		dialogElement?.showModal();
+	}
+
 	async function submit() {
 		if (!anySelected || sending) return;
 		sending = true;
@@ -54,13 +61,15 @@
 
 <Popup bind:dialogElement class={twMerge('w-[min(50ch,100%)] gap-4 p-4', dialogClass)} onClose={reset}>
 	{#snippet renderButton(dialogElement: HTMLDialogElement)}
-		<button
-			class={twMerge(components.button(), triggerClass)}
-			onclick={() => dialogElement?.showModal()}
-			aria-label="Lähetä palautetta"
-		>
-			<span class="flex items-center gap-2"><Icon name={triggerIcon} />{triggerLabel}</span>
-		</button>
+		{#if showTrigger}
+			<button
+				class={twMerge(components.button(), triggerClass)}
+				onclick={() => dialogElement?.showModal()}
+				aria-label="Lähetä palautetta"
+			>
+				<span class="flex items-center gap-2"><Icon name={triggerIcon} />{triggerLabel}</span>
+			</button>
+		{/if}
 	{/snippet}
 	{#snippet renderContent(dialogElement: HTMLDialogElement)}
 		<div class="flex flex-col gap-4">
