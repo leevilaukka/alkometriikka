@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, spyOn } from 'bun:test';
-import { Kaljakori } from '$lib/alko';
+import { DATASET_INDEX_VERSION, Kaljakori } from '$lib/alko';
 import { AllColumns, DatasetColumns, GenderOptionsMap } from '$lib/utils/constants';
 import type { AvailabilityData, DatasetRow } from '$lib/types';
 import { parseDataset } from '$lib/utils/dataset';
@@ -246,6 +246,18 @@ describe('Kaljakori querying', () => {
 		).toEqual(['3']);
 	});
 
+	it('fuzzy-matches every word of a value, not just the first', () => {
+		const k = alko();
+		// "kultta" is a typo of the second word of "Lapin Kulta"
+		expect(
+			k.fuzzySearch(column(AllColumns.Name), 'kultta').map((i) => i[AllColumns.Number])
+		).toEqual(['2']);
+		expect(k.fuzzySearch(column(AllColumns.Name), 'lapn').map((i) => i[AllColumns.Number])).toEqual(
+			['2']
+		);
+		expect(k.fuzzySearch(column(AllColumns.Name), 'xyzzy')).toEqual([]);
+	});
+
 	it('looks products up and sorts in both directions', () => {
 		const k = alko();
 		expect(k.findById('2')![AllColumns.Name]).toBe('Lapin Kulta');
@@ -298,5 +310,171 @@ describe('dataset → Kaljakori round trip', () => {
 		expect(alko.findById('1')![AllColumns.History]).toEqual([{ date: '2026-09-01', price: 2 }]);
 		expect(alko.findById('1')![AllColumns.RemovedFromSelection]).toBe(false);
 		expect(alko.findById('2')![AllColumns.RemovedFromSelection]).toBe(true);
+	});
+});
+
+describe('Kaljakori store availability loaded later', () => {
+	const availability = {
+		stores: { s1: { id: 's1', name: 'Alko Kamppi' }, s2: { id: 's2', name: 'Alko Kallio' } },
+		product: { '1': ['s1', 's2'], '2': ['s2'] }
+	} as unknown as AvailabilityData;
+	const rows = () => [base('1'), base('2', { RemovedFromSelection: true }), base('3')];
+
+	it('ends up the same as passing availability to the constructor', () => {
+		const upfront = build(rows(), availability);
+		const later = build(rows());
+		expect(later.getFilterValues(column(AllColumns.StoreAvailability))).toEqual([]);
+		later.setAvailability(availability);
+
+		const stores = (k: Kaljakori) =>
+			k.data.map((item) => [item[AllColumns.Number], [...item[AllColumns.StoreAvailability]]]);
+		expect(stores(later)).toEqual(stores(upfront));
+		for (const showRemoved of [true, false])
+			expect(later.getFilterValues(column(AllColumns.StoreAvailability), showRemoved)).toEqual(
+				upfront.getFilterValues(column(AllColumns.StoreAvailability), showRemoved)
+			);
+		expect(later.getFilterValues(column(AllColumns.StoreAvailability), false)).toEqual([
+			'Alko Kallio',
+			'Alko Kamppi'
+		]);
+		expect(
+			later
+				.fuzzySearchAndFilter('', { [AllColumns.StoreAvailability]: new Set(['Alko Kamppi']) })
+				.map((item) => item[AllColumns.Number])
+		).toEqual(['1']);
+	});
+});
+
+describe('Kaljakori subsets and late store availability', () => {
+	it('updates the store filter of subsets made before availability loaded', () => {
+		const p = build([base('1'), base('2')]);
+		const heavy = p.subset(p.data, { weight: 150, gender: GenderOptionsMap.Male });
+		const same = p.subset(p.data.slice(0, 1));
+		expect(heavy.getFilterValues(column(AllColumns.StoreAvailability))).toEqual([]);
+		expect(same.getFilterValues(column(AllColumns.StoreAvailability))).toEqual([]);
+
+		p.setAvailability({
+			stores: { s1: { id: 's1', name: 'Alko Kamppi' }, s2: { id: 's2', name: 'Alko Kallio' } },
+			product: { '1': ['s1'], '2': ['s2'] }
+		} as unknown as AvailabilityData);
+
+		expect(heavy.getFilterValues(column(AllColumns.StoreAvailability))).toEqual([
+			'Alko Kallio',
+			'Alko Kamppi'
+		]);
+		expect(same.getFilterValues(column(AllColumns.StoreAvailability))).toEqual(['Alko Kamppi']);
+		expect(
+			heavy
+				.fuzzySearchAndFilter('', { [AllColumns.StoreAvailability]: new Set(['Alko Kallio']) })
+				.map((item) => item[AllColumns.Number])
+		).toEqual(['2']);
+	});
+});
+
+describe('Kaljakori subsets', () => {
+	const parent = () =>
+		build([
+			base('1', { Country: 'Suomi', Price: 2 }),
+			base('2', { Country: 'Saksa', Price: 4 }),
+			base('3', { Country: 'Ranska', Price: 9, RemovedFromSelection: true })
+		]);
+
+	it('matches a Kaljakori built from just those rows', () => {
+		const rows = [
+			base('1', { Country: 'Suomi', Price: 2 }),
+			base('3', { Country: 'Ranska', Price: 9, RemovedFromSelection: true })
+		];
+		const direct = build(rows);
+		const p = parent();
+		const subset = p.subset(p.data.filter((item) => item[AllColumns.Number] !== '2'));
+
+		expect(subset.data).toEqual(direct.data);
+		for (const key of [AllColumns.Country, AllColumns.Price, AllColumns.AlcoholGramsPerEuro]) {
+			expect(subset.getFilterType(column(key))).toBe(direct.getFilterType(column(key)));
+			for (const showRemoved of [true, false]) {
+				expect(subset.getFilterValues(column(key), showRemoved)).toEqual(
+					direct.getFilterValues(column(key), showRemoved)
+				);
+				expect(subset.getMinAndMaxValues(column(key), showRemoved)).toEqual(
+					direct.getMinAndMaxValues(column(key), showRemoved)
+				);
+			}
+		}
+		// The parent keeps its own values
+		expect(p.getFilterValues(column(AllColumns.Country))).toEqual(['Ranska', 'Saksa', 'Suomi']);
+	});
+
+	it('recomputes drunk values when personal info changed, leaving the parent as is', () => {
+		const p = parent();
+		const before = p.findById('1')![AllColumns.EstimatedPromille];
+		const heavy = p.subset(p.data, { weight: 150, gender: GenderOptionsMap.Male });
+		expect(heavy.findById('1')![AllColumns.EstimatedPromille]).toBeLessThan(before);
+		expect(p.findById('1')![AllColumns.EstimatedPromille]).toBe(before);
+		// Same personal info shares the product objects
+		expect(p.subset(p.data).findById('1')).toBe(p.findById('1'));
+	});
+});
+
+describe('Kaljakori precomputed dataset index', () => {
+	const table = () => [
+		header as unknown as DatasetRow,
+		base('1', { Country: 'Suomi', Description: 'Raikas, Humalainen' }),
+		base('2', { Country: 'Saksa', Price: 7, RemovedFromSelection: true }),
+		base('3', { Type: '', SubType: '', Country: 'Suomi', Price: 3 })
+	];
+	const datasetColumns = header.filter(Boolean) as string[];
+	const indexFrom = (k: Kaljakori, overrides: Record<string, unknown> = {}) => ({
+		version: DATASET_INDEX_VERSION,
+		columns: datasetColumns,
+		count: k.data.length,
+		removedCount: 1,
+		possibleValues: Object.fromEntries(datasetColumns.map((c) => [c, [...k.possibleValues[c]]])),
+		possibleValuesActive: Object.fromEntries(
+			datasetColumns.map((c) => [c, [...k.possibleValuesActive[c]]])
+		),
+		...overrides
+	});
+
+	it('gives the same filter values, types and ranges as computing them', () => {
+		const computed = new Kaljakori(table());
+		const indexed = new Kaljakori(table(), undefined, undefined, indexFrom(computed));
+		expect((indexed as any).datasetIndex).toBeDefined();
+		for (const key of indexed.getFilterKeys()) {
+			expect(indexed.getFilterType(key)).toBe(computed.getFilterType(key));
+			for (const showRemoved of [true, false]) {
+				expect(indexed.getFilterValues(key, showRemoved)).toEqual(
+					computed.getFilterValues(key, showRemoved)
+				);
+				expect(indexed.getMinAndMaxValues(key, showRemoved)).toEqual(
+					computed.getMinAndMaxValues(key, showRemoved)
+				);
+			}
+		}
+	});
+
+	it('uses the precomputed values', () => {
+		const computed = new Kaljakori(table());
+		const index = indexFrom(computed);
+		index.possibleValues[AllColumns.Country] = ['Marker'];
+		const indexed = new Kaljakori(table(), undefined, undefined, index);
+		expect(indexed.getFilterValues(column(AllColumns.Country))).toEqual(['Marker']);
+	});
+
+	it('ignores an index that does not match the dataset', () => {
+		const computed = new Kaljakori(table());
+		const marked = (overrides: Record<string, unknown>) => {
+			const index = indexFrom(computed, overrides);
+			index.possibleValues[AllColumns.Country] = ['Marker'];
+			return new Kaljakori(table(), undefined, undefined, index).getFilterValues(
+				column(AllColumns.Country)
+			);
+		};
+		const expected = ['Saksa', 'Suomi'];
+		expect(marked({ count: 99 })).toEqual(expected);
+		expect(marked({ removedCount: 0 })).toEqual(expected);
+		expect(marked({ columns: datasetColumns.slice(1) })).toEqual(expected);
+		expect(marked({ version: 0 })).toEqual(expected);
+		expect(marked({ possibleValuesActive: undefined })).toEqual(expected);
+		expect(new Kaljakori(table(), undefined, undefined, 'garbage').data).toHaveLength(3);
 	});
 });

@@ -1,7 +1,9 @@
 import { resolve } from '$app/paths';
 import { parseDataset } from '$lib/utils/dataset';
-import type { AvailabilityData, AvailabilityStore } from '$lib/types';
+import { parseAvailability } from '$lib/utils/availability';
+import type { AvailabilityData } from '$lib/types';
 import { Kaljakori } from '$lib/alko';
+import { LazyAvailability } from '$lib/alko/availability.svelte';
 import { personalInfo } from '$lib/global.svelte';
 import { dev } from '$app/env';
 
@@ -29,74 +31,69 @@ async function fetchAlkoPriceList({ fetch }: { fetch: Fetch }) {
 	return text;
 }
 
-async function fetchAvailability({ fetch }: { fetch: Fetch }): Promise<AvailabilityData> {
-	const req = await fetch(getAvailabilityURL());
-	if (!req.ok) {
-		throw new Error(`Saatavuustietojen lataaminen epäonnistui: ${req.status} ${req.statusText}`);
-	}
-
-	const data = (await req.json()) as Partial<AvailabilityData>;
-	if (!data || typeof data !== 'object' || !data.stores || !data.product) {
-		throw new Error('Saatavuustiedot ovat tyhjät tai väärässä muodossa');
-	}
-
-	const stores = Object.fromEntries(
-		Object.entries(data.stores).filter(
-			(entry): entry is [string, AvailabilityStore] =>
-				!!entry[1] &&
-				typeof entry[1] === 'object' &&
-				typeof entry[1].id === 'string' &&
-				typeof entry[1].name === 'string' &&
-				entry[1].outletType !== '2'
-		)
-	);
-	const product = Object.fromEntries(
-		Object.entries(data.product).filter(
-			(entry): entry is [string, string[]] =>
-				Array.isArray(entry[1]) && entry[1].every((storeId) => typeof storeId === 'string')
-		)
-	);
-
-	return { lastUpdated: data.lastUpdated, stores, product };
-}
-
 async function getDataset({ fetch }: { fetch: Fetch }) {
 	const data = await fetchAlkoPriceList({ fetch });
 	const json = parseDataset(data);
 	return json;
 }
 
-async function getAvailability({ fetch }: { fetch: Fetch }): Promise<AvailabilityData> {
+async function readAvailability(request: Promise<Response>): Promise<AvailabilityData> {
 	try {
-		return await fetchAvailability({ fetch });
+		const req = await request;
+		if (!req.ok) {
+			throw new Error(`Saatavuustietojen lataaminen epäonnistui: ${req.status} ${req.statusText}`);
+		}
+		return parseAvailability(await req.json());
 	} catch (error) {
 		console.warn(error);
 		return { stores: {}, product: {} };
 	}
 }
 
+/** Resolves after the browser has had a chance to paint. */
+function afterPaint() {
+	return new Promise<void>((resolve) => requestAnimationFrame(() => setTimeout(resolve)));
+}
+
 async function getData({ fetch }: { fetch: Fetch }) {
-	return new Promise<{
-		dataset: { table: any[]; metadata: Record<string, unknown> };
-		availability: AvailabilityData;
-		kaljakori: Kaljakori;
-	}>(async (resolve, reject) => {
-		try {
-			const [dataset, availability] = await Promise.all([
-				getDataset({ fetch }),
-				getAvailability({ fetch })
-			]);
-			resolve({
-				dataset,
-				availability,
-				kaljakori: new Kaljakori(dataset.table, personalInfo, availability)
-			});
-		} catch (error) {
-			reject(error);
-		}
+	// Both files download in parallel, but only the price list blocks rendering.
+	// Store availability is needed for store filters and store pages, so it is
+	// parsed after the first paint and filled in when ready.
+	const availabilityRequest = fetch(getAvailabilityURL());
+	availabilityRequest.catch(() => {}); // handled in readAvailability
+
+	const dataset = await getDataset({ fetch });
+	const kaljakori = new Kaljakori(dataset.table, personalInfo, undefined, dataset.index);
+	const availability = new LazyAvailability(async () => {
+		await afterPaint();
+		const data = await readAvailability(availabilityRequest);
+		kaljakori.setAvailability(data);
+		return data;
 	});
+
+	return {
+		dataset,
+		kaljakori,
+		/** Empty until availability.json has loaded; reactive in templates and deriveds. */
+		get availability() {
+			return availability.current;
+		},
+		get availabilityLoaded() {
+			return availability.loaded;
+		},
+		/** For code that can't render without store data. */
+		availabilityReady: availability.ready
+	};
 }
 
 export async function load({ fetch }: { fetch: Fetch }) {
-	return { alko: getData({ fetch }) };
+	const alko = getData({ fetch });
+	// The same data, resolved only once store availability has loaded too, for
+	// pages that can't be shown without it
+	const alkoWithStores = alko.then(async (data) => {
+		await data.availabilityReady;
+		return data;
+	});
+	alkoWithStores.catch(() => {}); // errors are shown through `alko`
+	return { alko, alkoWithStores };
 }

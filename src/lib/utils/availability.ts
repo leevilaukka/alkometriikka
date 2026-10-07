@@ -1,4 +1,4 @@
-import type { AvailabilityStore } from '$lib/types';
+import type { AvailabilityData, AvailabilityStore } from '$lib/types';
 import { AUTO_STORE_ID } from './constants';
 
 type Coordinates = {
@@ -172,4 +172,34 @@ export function getStoreCity(store: AvailabilityStore): string {
 	}
 
 	return '';
+}
+
+/**
+ * Validates a parsed `availability.json`: drops malformed stores and product
+ * entries, and stores of outlet type 2 (not shown in the app).
+ */
+export function parseAvailability(data: unknown): AvailabilityData {
+	const raw = data as Partial<AvailabilityData> | null;
+	if (!raw || typeof raw !== 'object' || !raw.stores || !raw.product) {
+		throw new Error('Saatavuustiedot ovat tyhjät tai väärässä muodossa');
+	}
+
+	const stores = Object.fromEntries(
+		Object.entries(raw.stores).filter(
+			(entry): entry is [string, AvailabilityStore] =>
+				!!entry[1] &&
+				typeof entry[1] === 'object' &&
+				typeof entry[1].id === 'string' &&
+				typeof entry[1].name === 'string' &&
+				entry[1].outletType !== '2'
+		)
+	);
+	const product = Object.fromEntries(
+		Object.entries(raw.product).filter(
+			(entry): entry is [string, string[]] =>
+				Array.isArray(entry[1]) && entry[1].every((storeId) => typeof storeId === 'string')
+		)
+	);
+
+	return { lastUpdated: raw.lastUpdated, stores, product };
 }

@@ -29,5 +29,5 @@
 		</div>
 	</div>
 {:then alko}
-	<Stats dataset={alko.dataset.table} availability={alko.availability} personalInfo={alko.kaljakori.personalInfo} />
+	<Stats kaljakori={alko.kaljakori} personalInfo={alko.kaljakori.personalInfo} />
 {/await}

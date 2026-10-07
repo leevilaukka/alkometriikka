@@ -29,6 +29,7 @@
 import { DEV, HASH_VERSION, alignValues, getHash, getHashValues } from './constants.ts';
 import type { MigratedData, MigratedProduct } from './types.ts';
 import { isMigratedProduct } from './guards.ts';
+import { withDatasetIndex } from './dataset-index.ts';
 
 /** When running with `--dev` we operate on the local static folder. Mirrors index.ts. */
 const DATA_PATH = DEV ? './static/data.json' : './data.json';
@@ -75,7 +76,8 @@ async function rehash(): Promise<void> {
 
 	if (shouldRehash) data.metadata = { ...data.metadata, HashVersion: HASH_VERSION };
 
-	await Bun.write(DATA_PATH, JSON.stringify(data));
+	// Values may have been realigned, so the precomputed filter index is rebuilt too
+	await Bun.write(DATA_PATH, JSON.stringify(withDatasetIndex(data)));
 	console.log(
 		shouldRehash
 			? `✅ Rehash valmis (${DATA_PATH}): ${changed} hashia päivitetty, ${aligned} riviä täsmäytetty, ${unchanged} ennallaan.`

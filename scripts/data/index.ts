@@ -57,6 +57,7 @@ import {
 	withoutRemovedFlag
 } from './lifecycle.ts';
 import { toNumber } from '../../src/lib/utils/number.ts';
+import { withDatasetIndex } from './dataset-index.ts';
 
 // ============================================================================
 // CONFIG & CONSTANTS
@@ -834,7 +835,7 @@ async function sync(): Promise<void> {
 	};
 
 	await Promise.all([
-		Bun.write(DATA_PATH, JSON.stringify(result)),
+		Bun.write(DATA_PATH, JSON.stringify(withDatasetIndex(result))),
 		Bun.write(AVAILABILITY_PATH, JSON.stringify(availability))
 	]);
 	printSummary(stats, Object.keys(products).length);
