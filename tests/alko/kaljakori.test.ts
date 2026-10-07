@@ -329,6 +329,17 @@ describe('Kaljakori store availability loaded later', () => {
 	} as unknown as AvailabilityData;
 	const rows = () => [base('1'), base('2', { RemovedFromSelection: true }), base('3')];
 
+	it('reports whether availability has been applied, for subsets too', () => {
+		expect(build(rows(), availability).availabilityLoaded).toBe(true);
+		const later = build(rows());
+		const subset = later.subset(later.data);
+		expect(later.availabilityLoaded).toBe(false);
+		expect(subset.availabilityLoaded).toBe(false);
+		later.setAvailability({ stores: {}, product: {} });
+		expect(later.availabilityLoaded).toBe(true);
+		expect(subset.availabilityLoaded).toBe(true);
+	});
+
 	it('ends up the same as passing availability to the constructor', () => {
 		const upfront = build(rows(), availability);
 		const later = build(rows());

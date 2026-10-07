@@ -165,6 +165,7 @@ export class Kaljakori {
 	// Store availability can arrive after construction (see setAvailability); this
 	// lets Svelte effects and deriveds that filter by store re-run when it does.
 	private availabilityVersion = 0;
+	private hasAvailability = false;
 	private valueIndexVersion = 0;
 	private availabilityUpdate: (() => void) | undefined;
 	private readonly availabilitySubscriber = createSubscriber((update) => {
@@ -303,7 +304,10 @@ export class Kaljakori {
 			if (valid) this.datasetIndex = index;
 		}
 
-		if (availability) this.applyAvailability(availability);
+		if (availability) {
+			this.applyAvailability(availability);
+			this.hasAvailability = true;
+		}
 
 		this.data = this.sortBy(defaultSortingColumn);
 	}
@@ -340,8 +344,18 @@ export class Kaljakori {
 	 */
 	setAvailability(availability: AvailabilityData) {
 		this.applyAvailability(availability);
+		this.hasAvailability = true;
 		this.availabilityVersion++;
 		this.availabilityUpdate?.();
+	}
+
+	/**
+	 * Whether store availability has been applied yet (also when it failed to load
+	 * and came back empty). Reactive in Svelte effects, deriveds and templates.
+	 */
+	get availabilityLoaded(): boolean {
+		this.trackAvailability();
+		return this.root.hasAvailability;
 	}
 
 	/** Makes the calling Svelte effect or derived re-run when store availability changes. */
