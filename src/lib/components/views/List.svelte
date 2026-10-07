@@ -104,6 +104,20 @@
 		return temp;
 	});
 
+	// A new search, filter or sort gives a different list, so start it from the top. The
+	// virtual list keeps the old scroll position otherwise, and once a short result list
+	// has scrolled it to the bottom it stays pinned there as more results come back.
+	let listInputs: string | undefined;
+	$effect(() => {
+		const inputs = JSON.stringify(
+			[$searchQuery, $state.snapshot(filterValues), selectedSortingColumn, asc],
+			(_, value) => (value instanceof Set ? [...value] : value)
+		);
+		if (listInputs !== undefined && inputs !== listInputs)
+			untrack(() => listRef)?.scroll({ index: 0, smoothScroll: false });
+		listInputs = inputs;
+	});
+
 	let highlightMax = $derived.by(() => {
 		if (!selectedHighlight) return null;
 		const maxValue = rows.reduce((max, item) => {

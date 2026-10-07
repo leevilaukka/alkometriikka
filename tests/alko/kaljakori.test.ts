@@ -258,6 +258,15 @@ describe('Kaljakori querying', () => {
 		expect(k.fuzzySearch(column(AllColumns.Name), 'xyzzy')).toEqual([]);
 	});
 
+	it('only fuzzy-matches queries of four or more letters', () => {
+		const k = build([base('1', { Name: 'Sol' })]);
+		const ids = (query: string) =>
+			k.fuzzySearch(column(AllColumns.Name), query).map((i) => i[AllColumns.Number]);
+		expect(ids('so')).toEqual(['1']); // still matches as a substring
+		expect(ids('sal')).toEqual([]); // a typo, but too short to match loosely
+		expect(ids('sool')).toEqual(['1']);
+	});
+
 	it('looks products up and sorts in both directions', () => {
 		const k = alko();
 		expect(k.findById('2')![AllColumns.Name]).toBe('Lapin Kulta');

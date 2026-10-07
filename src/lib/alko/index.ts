@@ -124,6 +124,9 @@ function minAndMax(values: Set<any>): [number, number] {
 	return [min, max];
 }
 
+/** Queries shorter than this only match values that contain them, without typo tolerance. */
+const MIN_FUZZY_QUERY_LENGTH = 4;
+
 const drunkColumns = Object.values(DrunkColumns);
 const storeColumns = Object.values(StoreColumns);
 const calculatedColumns = Object.values(CalculatedColumns);
@@ -564,10 +567,13 @@ export class Kaljakori {
 		// Every value contains the empty string
 		if (!query) return this.data.filter((item) => item[key]);
 		const lowerQuery = query.toLowerCase();
+		// Short queries match too many words loosely, so they only match exactly
+		const fuzzy = lowerQuery.length >= MIN_FUZZY_QUERY_LENGTH;
 		return this.data.filter((item) => {
 			if (!item[key]) return false;
 			const value = item[key].toString().toLowerCase();
 			if (value.includes(lowerQuery)) return true;
+			if (!fuzzy) return false;
 			return value.split(' ').some((word) => {
 				// Words whose length differs too much can't pass isSimilarString (the edit
 				// distance is at least the length difference), so skip calling it
