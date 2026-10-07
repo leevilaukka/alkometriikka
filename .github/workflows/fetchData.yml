@@ -35,6 +35,11 @@ jobs:
           if git show origin/gh-pages:data.json > /tmp/data.json 2>/dev/null; then
             mv /tmp/data.json data.json
           fi
+          # Change-detection hashes live next to data.json (scripts/data/dataset-file.ts).
+          # If missing, they're recomputed from data.json, so this never forces a full refetch.
+          if git show origin/gh-pages:hashes.json > /tmp/hashes.json 2>/dev/null; then
+            mv /tmp/hashes.json hashes.json
+          fi
 
       - name: Rehash seeded dataset to current schema
         uses: ./.github/actions/rehash-dataset
@@ -65,7 +70,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: data
-          path: data.json
+          path: |
+            data.json
+            hashes.json
 
       - name: Upload availability data
         uses: actions/upload-artifact@v4
@@ -273,7 +280,7 @@ jobs:
           cp og-images.json ../gh-pages/og-images.json
           [ -f og-categories.json ] && cp og-categories.json ../gh-pages/og-categories.json || true
           bun run scripts/site/prerender-products.ts --data data.json --out ../gh-pages --template ../gh-pages/404.html --og-manifest ../gh-pages/og-images.json --manifest ../gh-pages/tuotteet-manifest.json
-          cp data.json availability.json sitemap.xml rss.xml feed.json ../gh-pages/
+          cp data.json hashes.json availability.json sitemap.xml rss.xml feed.json ../gh-pages/
           bun run scripts/site/prerender-static.ts --out ../gh-pages --template ../gh-pages/404.html --availability availability.json
           # Reset first so stale manifests (and the nested archive/) actually
           # disappear from the site instead of merging over.
@@ -288,7 +295,7 @@ jobs:
       - name: Commit and push downloaded file
         working-directory: ../gh-pages
         run: |
-          git add data.json availability.json sitemap.xml rss.xml feed.json rss daily tuotteet tuotteet-manifest.json kategoriat -f myymalat laskin tilastot kompassi hinnanmuutokset
+          git add data.json hashes.json availability.json sitemap.xml rss.xml feed.json rss daily tuotteet tuotteet-manifest.json kategoriat -f myymalat laskin tilastot kompassi hinnanmuutokset
           [ -f og-images.json ] && git add og-images.json -f || true
           [ -f og-categories.json ] && git add og-categories.json -f || true
           git commit -m "Update price list and static product pages [skip ci]" || echo "No changes to commit"

@@ -4,7 +4,7 @@ export const trailingSlash = 'always';
 
 export async function load({ parent, params }) {
 	const data = await parent();
-	const alko = await data.alko;
+	const alko = await data.alkoWithStores;
 	const storeId = params.storeID;
 
 	if (!storeId) redirect(300, '/');
@@ -15,5 +15,5 @@ export async function load({ parent, params }) {
 		});
 	}
 	
-	return { store: (await data.alko).availability.stores[storeId], storeId };
+	return { store: alko.availability.stores[storeId], storeId };
 }

@@ -84,6 +84,8 @@ export type MigratedData = {
 		};
 	};
 	products?: Record<string, MigratedProduct>;
+	/** Precomputed filter values for the app, see dataset-index.ts. Rebuilt on every write. */
+	index?: unknown;
 };
 
 export type FieldToArrayOrder<T extends FullProductData> = [

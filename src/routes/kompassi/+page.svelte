@@ -61,7 +61,7 @@
 	onMount(() => {
 		permissionNeeded = needsOrientationPermission();
 		requestUserLocation();
-		data.alko.then((alko) => (stores = Object.values(alko.availability.stores)));
+		data.alkoWithStores.then((alko) => (stores = Object.values(alko.availability.stores)));
 	});
 
 	async function enableCompass() {

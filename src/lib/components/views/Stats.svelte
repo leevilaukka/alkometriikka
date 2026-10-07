@@ -1,10 +1,10 @@
 <script lang="ts">
 	import type { ChartConfiguration } from 'chart.js';
-import { Kaljakori } from '$lib/alko';
+import type { Kaljakori } from '$lib/alko';
 	import { AllColumns } from '$lib/utils/constants';
 	import { formatValue } from '$lib/utils/format';
 	import { theme } from '$lib/global.svelte';
-	import type { AvailabilityData, ColumnNames, PersonalInfo } from '$lib/types';
+	import type { ColumnNames, PersonalInfo } from '$lib/types';
 	import {
 		bandHistogram,
 		bestValueRanks,
@@ -17,17 +17,15 @@ import { Kaljakori } from '$lib/alko';
 	import ChartCard from '$lib/components/widgets/ChartCard.svelte';
 
 	const {
-		dataset,
-		availability,
+		kaljakori: source,
 		personalInfo
 	}: {
-		dataset: any[][];
-		availability: AvailabilityData;
+		kaljakori: Kaljakori;
 		personalInfo: PersonalInfo;
 	} = $props();
 
-	const kaljakori = $derived(new Kaljakori(dataset, personalInfo, availability));
-	const items = $derived(kaljakori.data);
+	// Follows personal info changes made after the data was loaded
+	const items = $derived(source.subset(source.data, personalInfo).data);
 
 	const summary = $derived(computeSummary(items));
 

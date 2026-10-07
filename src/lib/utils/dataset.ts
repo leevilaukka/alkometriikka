@@ -22,11 +22,21 @@ export type StoredDataset = {
 	schema?: unknown;
 	metadata?: { LastUpdated?: string; LastSynced?: string };
 	products?: Record<string, StoredProduct>;
+	/**
+	 * Filter values precomputed by the sync (`DatasetIndex` in $lib/alko). Optional:
+	 * older datasets lack it, and Kaljakori ignores one that doesn't match the products.
+	 */
+	index?: unknown;
 };
 
 export function parseDataset(data: string) {
 	try {
-		const { schema, metadata: datasetMeta, products = {} } = JSON.parse(data) as StoredDataset;
+		const {
+			schema,
+			metadata: datasetMeta,
+			products = {},
+			index
+		} = JSON.parse(data) as StoredDataset;
 		if (!Array.isArray(schema) || schema.length === 0) {
 			throw new Error('Hinnasto on tyhjä tai väärässä muodossa');
 		}
@@ -78,7 +88,8 @@ export function parseDataset(data: string) {
 
 		return {
 			table: [header, ...rows],
-			metadata
+			metadata,
+			index
 		};
 	} catch (e) {
 		if (e instanceof Error) throw e;

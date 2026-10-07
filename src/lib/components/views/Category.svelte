@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Kaljakori } from '$lib/alko';
+	import type { Kaljakori } from '$lib/alko';
 	import type { AvailabilityData, PriceListItem } from '$lib/types';
 	import { AllColumns, AUTO_STORE_ID } from '$lib/utils/constants';
 	import {
@@ -37,11 +37,14 @@
 
 	const {
 		trail,
+		kaljakori: source,
 		table,
 		availability,
 		tree
 	}: {
 		trail: CategoryNode[];
+		kaljakori: Kaljakori;
+		/** The raw dataset rows, which the category is matched on. */
 		table: any[][];
 		availability: AvailabilityData;
 		tree: CategoryNode[];
@@ -68,18 +71,19 @@
 		const subTypeIndex = header.indexOf(AllColumns.SubType);
 		const numberIndex = header.indexOf(AllColumns.Number);
 		const [type, subType] = trail;
-		return new Kaljakori(
-			[
-				header,
-				...rows.filter(
+		const ids = new Set(
+			rows
+				.filter(
 					(row) =>
 						categorySlug(String(row[typeIndex] ?? '')) === type.slug &&
 						(!subType || categorySlug(String(row[subTypeIndex] ?? '')) === subType.slug) &&
 						(!storeFilter || (availability.product[String(row[numberIndex])] ?? []).includes(storeFilter))
 				)
-			],
-			personalInfo,
-			availability
+				.map((row) => String(row[numberIndex]))
+		);
+		return source.subset(
+			source.data.filter((item) => ids.has(item[AllColumns.Number])),
+			personalInfo
 		);
 	});
 

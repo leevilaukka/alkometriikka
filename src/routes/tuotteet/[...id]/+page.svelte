@@ -16,7 +16,7 @@
 	let id = $derived(page.params.id?.split('/')[0]); // Handle both /tuotteet/123 and /tuotteet/123/extra paths
 </script>
 
-{#await data.alko}
+{#await data.alkoWithStores}
 	<div class="grid h-full w-full place-content-center">
 		<div class="flex flex-col items-center gap-3">
 			<span
