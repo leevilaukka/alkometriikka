@@ -50,22 +50,25 @@ async function readAvailability(request: Promise<Response>): Promise<Availabilit
 	}
 }
 
-/** Resolves after the browser has had a chance to paint. */
-function afterPaint() {
-	return new Promise<void>((resolve) => requestAnimationFrame(() => setTimeout(resolve)));
+/** Resolves once the first render is done and the main thread is free. */
+function whenIdle() {
+	return new Promise<void>((resolve) => {
+		if ('requestIdleCallback' in window) requestIdleCallback(() => resolve(), { timeout: 3000 });
+		else setTimeout(resolve, 500);
+	});
 }
 
 async function getData({ fetch }: { fetch: Fetch }) {
 	// Both files download in parallel, but only the price list blocks rendering.
 	// Store availability is needed for store filters and store pages, so it is
-	// parsed after the first paint and filled in when ready.
+	// parsed once the first render is done and filled in when ready.
 	const availabilityRequest = fetch(getAvailabilityURL());
 	availabilityRequest.catch(() => {}); // handled in readAvailability
 
 	const dataset = await getDataset({ fetch });
 	const kaljakori = new Kaljakori(dataset.table, personalInfo, undefined, dataset.index);
 	const availability = new LazyAvailability(async () => {
-		await afterPaint();
+		await whenIdle();
 		const data = await readAvailability(availabilityRequest);
 		kaljakori.setAvailability(data);
 		return data;

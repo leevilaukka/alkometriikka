@@ -157,8 +157,6 @@ export class Kaljakori {
 	private productVariants: ProductVariantIndex | undefined;
 	private categoryTree: CategoryNode[] | undefined;
 	private subValuesCache: Record<string, Record<string, Set<any>>> | undefined;
-	/** Lowercased values and their words per searched column, for fuzzySearch. */
-	private searchCache = new Map<string, WeakMap<object, { lower: string; words: string[] }>>();
 	/** The Kaljakori this one is a subset of, or itself. Owns the store availability. */
 	private root: Kaljakori = this;
 	// Store availability can arrive after construction (see setAvailability); this
@@ -563,18 +561,20 @@ export class Kaljakori {
 
 	/** Matches values containing `query`, or with any word similar to it (to tolerate typos). */
 	fuzzySearch(key: ColumnNames, query: string) {
+		// Every value contains the empty string
+		if (!query) return this.data.filter((item) => item[key]);
 		const lowerQuery = query.toLowerCase();
-		let cache = this.searchCache.get(key);
-		if (!cache) this.searchCache.set(key, (cache = new WeakMap()));
 		return this.data.filter((item) => {
 			if (!item[key]) return false;
-			let entry = cache.get(item);
-			if (!entry) {
-				const lower = item[key].toString().toLowerCase();
-				cache.set(item, (entry = { lower, words: lower.split(' ') }));
-			}
-			if (entry.lower.includes(lowerQuery)) return true;
-			return entry.words.some((word) => isSimilarString(word, lowerQuery, 0.6));
+			const value = item[key].toString().toLowerCase();
+			if (value.includes(lowerQuery)) return true;
+			return value.split(' ').some((word) => {
+				// Words whose length differs too much can't pass isSimilarString (the edit
+				// distance is at least the length difference), so skip calling it
+				const longer = Math.max(word.length, lowerQuery.length);
+				if (Math.abs(word.length - lowerQuery.length) > Math.ceil(longer * 0.4)) return false;
+				return isSimilarString(word, lowerQuery, 0.6);
+			});
 		});
 	}
 
@@ -611,9 +611,13 @@ export class Kaljakori {
 			})
 		);
 
+		const keys = Object.keys(filters);
+		const types = Object.fromEntries(
+			keys.map((key) => [key, this.getFilterType(key as ColumnNames)])
+		);
 		return result.filter((item) => {
-			const temp = Object.keys(filters).every((key) => {
-				const type = this.getFilterType(key as ColumnNames);
+			const temp = keys.every((key) => {
+				const type = types[key];
 				if (type === 'number' && Array.isArray(filters[key]) && filters[key].length === 2) {
 					return item[key] >= filters[key][0] && item[key] <= filters[key][1];
 				} else if (type === 'object' && item[key] instanceof Set && filters[key] instanceof Set) {
@@ -641,9 +645,13 @@ export class Kaljakori {
 				return value.length > 0;
 			})
 		);
+		const keys = Object.keys(filters);
+		const types = Object.fromEntries(
+			keys.map((key) => [key, this.getFilterType(key as ColumnNames)])
+		);
 		return this.data.filter((item) => {
-			return Object.keys(filters).every((key) => {
-				const type = this.getFilterType(key as ColumnNames);
+			return keys.every((key) => {
+				const type = types[key];
 				if (type === 'number' && Array.isArray(filters[key]) && filters[key].length === 2) {
 					return item[key] >= filters[key][0] && item[key] <= filters[key][1];
 				} else if (filters[key] instanceof Set) {
