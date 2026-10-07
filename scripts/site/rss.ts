@@ -251,18 +251,18 @@ function generateRssXml(
 	const itemsXml = items
 		.map(
 			(item) =>
-				`\t\t<item>\n` +
-				`\t\t\t<title>${escapeXml(item.title)}</title>\n` +
-				`\t\t\t<link>${escapeXml(item.link)}</link>\n` +
-				`\t\t\t<guid isPermaLink="false">${escapeXml(item.guid)}</guid>\n` +
-				`\t\t\t<pubDate>${escapeXml(item.pubDate)}</pubDate>\n` +
+				`<item>` +
+				`<title>${escapeXml(item.title)}</title>` +
+				`<link>${escapeXml(item.link)}</link>` +
+				`<guid isPermaLink="false">${escapeXml(item.guid)}</guid>` +
+				`<pubDate>${escapeXml(item.pubDate)}</pubDate>` +
 				[...item.tags, item.category]
 					.filter(Boolean)
-					.map((category) => `\t\t\t<category>${escapeXml(category)}</category>\n`)
+					.map((category) => `<category>${escapeXml(category)}</category>`)
 					.join('') +
-				`\t\t\t<description><![CDATA[${item.description}]]></description>\n` +
-				(item.image ? `\t\t\t<media:thumbnail url="${escapeXml(item.image)}" />\n` : '') +
-				`\t\t</item>\n`
+				`<description><![CDATA[${item.description}]]></description>` +
+				(item.image ? `<media:thumbnail url="${escapeXml(item.image)}" />` : '') +
+				`</item>`
 		)
 		.join('');
 
@@ -271,28 +271,28 @@ function generateRssXml(
 		: new Date().toUTCString();
 
 	return (
-		`<?xml version="1.0" encoding="UTF-8"?>\n` +
-		`<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">\n` +
-		`\t<channel>\n` +
-		`\t\t<title>${escapeXml(channel.title)}</title>\n` +
-		`\t\t<link>${escapeXml(channel.link)}</link>\n` +
-		`\t\t<description>${escapeXml(channel.description)}</description>\n` +
-		`\t\t<language>fi</language>\n` +
-		`\t\t<lastBuildDate>${lastBuildDate}</lastBuildDate>\n` +
-		`\t\t<generator>alkometriikka rss.ts</generator>\n` +
-		`\t\t<docs>https://www.rssboard.org/rss-specification</docs>\n` +
-		`\t\t<ttl>60</ttl>\n` +
-		`\t\t<atom:link href="${escapeXml(channel.selfUrl)}" rel="self" type="application/rss+xml" />\n` +
-		`\t\t<image>\n` +
-		`\t\t\t<url>${SITE_URL}/favicon.ico</url>\n` +
-		`\t\t\t<title>${escapeXml(channel.title)}</title>\n` +
-		`\t\t\t<link>${SITE_URL}/</link>\n` +
-		`\t\t\t<width>48</width>\n` +
-		`\t\t\t<height>48</height>\n` +
-		`\t\t</image>\n` +
+		`<?xml version="1.0" encoding="UTF-8"?>` +
+		`<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">` +
+		`<channel>` +
+		`<title>${escapeXml(channel.title)}</title>` +
+		`<link>${escapeXml(channel.link)}</link>` +
+		`<description>${escapeXml(channel.description)}</description>` +
+		`<language>fi</language>` +
+		`<lastBuildDate>${lastBuildDate}</lastBuildDate>` +
+		`<generator>alkometriikka rss.ts</generator>` +
+		`<docs>https://www.rssboard.org/rss-specification</docs>` +
+		`<ttl>60</ttl>` +
+		`<atom:link href="${escapeXml(channel.selfUrl)}" rel="self" type="application/rss+xml" />` +
+		`<image>` +
+		`<url>${SITE_URL}/favicon.ico</url>` +
+		`<title>${escapeXml(channel.title)}</title>` +
+		`<link>${SITE_URL}/</link>` +
+		`<width>48</width>` +
+		`<height>48</height>` +
+		`</image>` +
 		itemsXml +
-		`\t</channel>\n` +
-		`</rss>\n`
+		`</channel>` +
+		`</rss>`
 	);
 }
 
@@ -322,9 +322,7 @@ function generateJsonFeed(items: FeedItem[], channel: ChannelInfo): string {
 				entry.tags = [...item.tags, ...item.category.split(' / ')].filter(Boolean);
 				return entry;
 			})
-		},
-		null,
-		'\t'
+		}
 	);
 }
 

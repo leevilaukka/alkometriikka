@@ -158,7 +158,8 @@ function generateSitemapXML(entries: SitemapEntry[]) {
 
     const footer = `</urlset>`;
 
-    return header + body + footer;
+    // Minify: drop the indentation and newlines between tags
+    return (header + body + footer).replace(/>\s+</g, "><");
 }
 
 await main();
