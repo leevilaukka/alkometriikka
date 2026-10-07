@@ -128,7 +128,16 @@
 	{#each filters as filter}
 		{@const possibleValues = getNarrowedFilterValues(filter, filterValues, kaljakori, showRemoved)}
 		{@const type = kaljakori.getFilterType(filter)}
-		{#if !pillFilters.includes(filter) && possibleValues.length > 1}
+		{#if filter === AllColumns.StoreAvailability && !kaljakori.availabilityLoaded}
+			<!-- availability.json loads after the products; hold the store filter's place until then -->
+			<div class="flex w-full flex-col text-sm gap-2" aria-busy="true">
+				<span>{headerToDisplayName(filter)}</span>
+				<button disabled class={twMerge(components.button(), 'w-full justify-start gap-2 cursor-wait text-secondary')}>
+					<span class="block h-4 w-4 shrink-0 animate-spin rounded-full border-2 border-red-600 border-b-transparent" aria-hidden="true"></span>
+					<span>Ladataan myymälöitä…</span>
+				</button>
+			</div>
+		{:else if !pillFilters.includes(filter) && possibleValues.length > 1}
 			<div class="flex w-full flex-col text-sm gap-2">
 				{#if type === 'number'}
 					{@const [min, max] = kaljakori.getMinAndMaxValues(filter, showRemoved)}

@@ -8,6 +8,8 @@ feed.json
 
 /static/data.json
 /static/availability.json
+/hashes.json
+/static/hashes.json
 /static/data-migrate.json
 /static/sitemap.xml
 /static/rss.xml

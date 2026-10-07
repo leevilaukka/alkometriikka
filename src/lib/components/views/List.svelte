@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { isLaptop, pageBottomBar, personalInfo, searchQuery, isMobile } from '$lib/global.svelte';
 	import { components } from '$lib/utils/styles';
-	import { handleShare, productIdsToDataset, sendAnalyticsEvent } from '$lib/utils/helpers';
+	import { handleShare, sendAnalyticsEvent } from '$lib/utils/helpers';
 	import { formatValue } from '$lib/utils/format';
-	import { Kaljakori } from '$lib/alko';
+	import type { Kaljakori } from '$lib/alko';
 	import {
 		getListById,
 		getListItem,
@@ -15,7 +15,7 @@
 	import Icon from '../widgets/Icon.svelte';
 	import SvelteVirtualList from '@humanspeak/svelte-virtual-list';
 	import { twMerge } from 'tailwind-merge';
-	import type { AvailabilityData, ColumnNames, ListObj, PriceListItem } from '$lib/types';
+	import type { ColumnNames, ListObj, PriceListItem } from '$lib/types';
 	import {
 		shownColumnsToHighlight,
 		defaultSortingColumn,
@@ -44,25 +44,22 @@
 
 	let activeFilters: ColumnNames[] = $state([]);
 
-	const {
-		list: importedList,
-		dataset,
-		availability
-	}: { list: ListObj; dataset: string[][]; availability?: AvailabilityData } = $props();
+	const { list: importedList, kaljakori: source }: { list: ListObj; kaljakori: Kaljakori } =
+		$props();
 
 	let searchParamsManager = getContext<SearchParamsManager>(ContextKeys.SearchParamsManager);
 
 	const existingList = untrack(() => getListById(importedList.id));
 	const list = untrack(() => existingList || importedList);
 
-	const listDataset = $derived.by(() => {
-		return productIdsToDataset(
-			dataset,
-			list.items.map((i) => i.id)
+	// The list's products, with filter values and ranges covering just them
+	const kaljakori = $derived.by(() => {
+		const ids = new Set(list.items.map((i) => i.id));
+		return source.subset(
+			source.data.filter((item) => ids.has(item[AllColumns.Number])),
+			personalInfo
 		);
 	});
-
-	const kaljakori = $derived(new Kaljakori(listDataset, personalInfo, availability));
 
 	let listRef: SvelteVirtualList<PriceListItem> | null = $state(null);
 
@@ -105,6 +102,20 @@
 			temp = temp.sort((a, b) => (a[selectedSortingColumn] > b[selectedSortingColumn] ? 1 : -1));
 		if (!asc) temp = temp.reverse();
 		return temp;
+	});
+
+	// A new search, filter or sort gives a different list, so start it from the top. The
+	// virtual list keeps the old scroll position otherwise, and once a short result list
+	// has scrolled it to the bottom it stays pinned there as more results come back.
+	let listInputs: string | undefined;
+	$effect(() => {
+		const inputs = JSON.stringify(
+			[$searchQuery, $state.snapshot(filterValues), selectedSortingColumn, asc],
+			(_, value) => (value instanceof Set ? [...value] : value)
+		);
+		if (listInputs !== undefined && inputs !== listInputs)
+			untrack(() => listRef)?.scroll({ index: 0, smoothScroll: false });
+		listInputs = inputs;
 	});
 
 	let highlightMax = $derived.by(() => {

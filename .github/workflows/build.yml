@@ -136,6 +136,14 @@ jobs:
         run: |
           cp 404.html index.html
 
+      # The sync's change-detection hashes (not used by the site). Without this the
+      # force-push below would drop them; the sync would then recompute them.
+      - name: Restore hashes.json from existing gh-pages
+        run: |
+          if git show origin/gh-pages:hashes.json > /tmp/hashes.json 2>/dev/null; then
+            mv /tmp/hashes.json hashes.json
+          fi
+
       - name: Restore sitemap.xml from existing gh-pages
         run: |
           if git show origin/gh-pages:sitemap.xml > /tmp/sitemap.xml 2>/dev/null; then
@@ -173,7 +181,7 @@ jobs:
           # Runtime datasets are gitignored, so `git add .` skips them. Force-add
           # them so the force-push to gh-pages preserves the data deployed by
           # fetchData.yml instead of deleting it on every site build.
-          for f in data.json availability.json sitemap.xml rss.xml feed.json rss og-images.json og-categories.json daily tuotteet-manifest.json; do
+          for f in data.json hashes.json availability.json sitemap.xml rss.xml feed.json rss og-images.json og-categories.json daily tuotteet-manifest.json; do
             if [ -e "$f" ]; then git add -f "$f"; fi
           done
           git commit -m "Deploy to GitHub Pages [skip ci]" || echo "No changes to commit"

@@ -33,6 +33,7 @@ jobs:
         run: |
           git fetch origin gh-pages
           git show origin/gh-pages:data.json > data.json
+          git show origin/gh-pages:hashes.json > hashes.json 2>/dev/null || rm -f hashes.json
           git archive origin/gh-pages daily | tar -x
 
       - name: Rehash seeded dataset to current schema
