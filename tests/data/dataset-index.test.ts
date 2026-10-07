@@ -1,7 +1,7 @@
 import { describe, expect, it, spyOn } from 'bun:test';
 import { buildDatasetIndex, withDatasetIndex } from '../../scripts/data/dataset-index';
 import { Kaljakori } from '$lib/alko';
-import { parseDataset } from '$lib/utils/dataset';
+import { parseDataset, type StoredProduct } from '$lib/utils/dataset';
 import { parseAvailability } from '$lib/utils/availability';
 import { AllColumns, DatasetColumns } from '$lib/utils/constants';
 import type { DatasetRow } from '$lib/types';
@@ -18,7 +18,7 @@ function values(fields: Partial<Record<keyof typeof DatasetColumns, unknown>>) {
 }
 
 function dataset(productCount = 40) {
-	const products: Record<string, unknown> = {};
+	const products: Record<string, StoredProduct & { hash: string }> = {};
 	for (let i = 0; i < productCount; i++) {
 		products[String(1000 + i)] = {
 			hash: 'h',
@@ -76,14 +76,14 @@ describe('precomputed dataset index', () => {
 	});
 
 	it('replaces a stale index instead of reusing it', () => {
-		const data = { ...dataset(), index: { stale: true } };
+		const data = { ...dataset(), index: { stale: true } as unknown };
 		const rebuilt = withDatasetIndex(data);
 		expect(rebuilt.index).toEqual(buildDatasetIndex(dataset()));
 	});
 
 	it('is ignored by the reader when the products changed after it was built', () => {
 		const data = withDatasetIndex(dataset());
-		delete (data.products as Record<string, unknown>)['1005'];
+		delete data.products['1005'];
 		expect((kaljakori(JSON.stringify(data)) as any).datasetIndex).toBeUndefined();
 	});
 
