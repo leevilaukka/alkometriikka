@@ -21,26 +21,24 @@
  * padded with null) on every run, and the recomputed `hash` is written back
  * only when the version gate allows it; everything else is left untouched.
  *
+ * Hashes are stored in hashes.json next to data.json (see dataset-file.ts).
+ *
  * Usage:
- *   bun run scripts/data/rehash.ts          # rewrites ./data.json
- *   bun run scripts/data/rehash.ts --dev    # rewrites ./static/data.json
+ *   bun run scripts/data/rehash.ts          # rewrites ./data.json and ./hashes.json
+ *   bun run scripts/data/rehash.ts --dev    # rewrites ./static/data.json and ./static/hashes.json
  */
 
-import { DEV, HASH_VERSION, alignValues, getHash, getHashValues } from './constants.ts';
-import type { MigratedData, MigratedProduct } from './types.ts';
+import { HASH_VERSION, alignValues, getHash, getHashValues } from './constants.ts';
+import type { MigratedProduct } from './types.ts';
 import { isMigratedProduct } from './guards.ts';
-import { withDatasetIndex } from './dataset-index.ts';
-
-/** When running with `--dev` we operate on the local static folder. Mirrors index.ts. */
-const DATA_PATH = DEV ? './static/data.json' : './data.json';
+import { DATA_PATH, HASHES_PATH, readDataset, writeDataset } from './dataset-file.ts';
 
 async function rehash(): Promise<void> {
-	const file = Bun.file(DATA_PATH);
-	if (!(await file.exists())) {
+	// Hashes are kept in a separate file; readDataset merges them back in
+	const data = await readDataset(DATA_PATH, HASHES_PATH);
+	if (!data) {
 		throw new Error(`Dataset not found: ${DATA_PATH}`);
 	}
-
-	const data = (await file.json()) as MigratedData;
 	const products = data.products ?? {};
 
 	// Only rewrite hashes when the hash algorithm/field set has changed. Those
@@ -77,7 +75,7 @@ async function rehash(): Promise<void> {
 	if (shouldRehash) data.metadata = { ...data.metadata, HashVersion: HASH_VERSION };
 
 	// Values may have been realigned, so the precomputed filter index is rebuilt too
-	await Bun.write(DATA_PATH, JSON.stringify(withDatasetIndex(data)));
+	await writeDataset(data, DATA_PATH, HASHES_PATH);
 	console.log(
 		shouldRehash
 			? `✅ Rehash valmis (${DATA_PATH}): ${changed} hashia päivitetty, ${aligned} riviä täsmäytetty, ${unchanged} ennallaan.`

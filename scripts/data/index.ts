@@ -57,14 +57,12 @@ import {
 	withoutRemovedFlag
 } from './lifecycle.ts';
 import { toNumber } from '../../src/lib/utils/number.ts';
-import { withDatasetIndex } from './dataset-index.ts';
+import { DATA_PATH, HASHES_PATH, readDataset, writeDataset } from './dataset-file.ts';
 
 // ============================================================================
 // CONFIG & CONSTANTS
 // ============================================================================
 
-/** Where the dataset is read from and written to. Mirrors the legacy setup.ts convention. */
-const DATA_PATH = DEV ? './static/data.json' : './data.json';
 /** Store and per-product availability generated from the same complete search sweep. */
 const AVAILABILITY_PATH = DEV ? './static/availability.json' : './availability.json';
 /** Fallback base dataset used when no synced `data.json` exists yet (produced by migrate.ts). */
@@ -412,24 +410,23 @@ async function loadStores(config: Config): Promise<Record<string, StoreData> | n
 // ============================================================================
 
 async function loadExistingData(): Promise<MigratedData> {
-	let file = Bun.file(DATA_PATH);
 	let sourcePath = DATA_PATH;
 
-	// Fall back to the migration output when no synced dataset exists yet.
-	if (!(await file.exists())) {
-		const migrated = Bun.file(MIGRATED_DATA_PATH);
-		if (await migrated.exists()) {
-			file = migrated;
-			sourcePath = MIGRATED_DATA_PATH;
-		}
-	}
-
-	if (VERBOSE) {
-		console.log(`  📂 Loading existing dataset from ${sourcePath}...`);
-	}
-
 	try {
-		const parsed = (await file.json()) as MigratedData;
+		// Hashes live in a separate file next to data.json (see dataset-file.ts);
+		// readDataset merges them back in.
+		let parsed = await readDataset(DATA_PATH, HASHES_PATH);
+
+		// Fall back to the migration output when no synced dataset exists yet.
+		if (parsed === null && (await Bun.file(MIGRATED_DATA_PATH).exists())) {
+			sourcePath = MIGRATED_DATA_PATH;
+			parsed = await readDataset(MIGRATED_DATA_PATH, `${MIGRATED_DATA_PATH}.hashes`);
+		}
+
+		if (VERBOSE) {
+			console.log(`  📂 Loading existing dataset from ${sourcePath}...`);
+		}
+
 		if (!parsed || !Array.isArray(parsed.schema)) {
 			console.warn('⚠️  Existing dataset has no schema, starting fresh');
 			const now = new Date().toISOString();
@@ -441,7 +438,7 @@ async function loadExistingData(): Promise<MigratedData> {
 		}
 		if (VERBOSE) {
 			console.log(
-				`  ✅ Loaded file: ${sourcePath} with ${Object.keys(parsed.products ?? {}).length} products - File size: ${file.size} bytes`
+				`  ✅ Loaded file: ${sourcePath} with ${Object.keys(parsed.products ?? {}).length} products - File size: ${Bun.file(sourcePath).size} bytes`
 			);
 		}
 
@@ -835,7 +832,7 @@ async function sync(): Promise<void> {
 	};
 
 	await Promise.all([
-		Bun.write(DATA_PATH, JSON.stringify(withDatasetIndex(result))),
+		writeDataset(result, DATA_PATH, HASHES_PATH),
 		Bun.write(AVAILABILITY_PATH, JSON.stringify(availability))
 	]);
 	printSummary(stats, Object.keys(products).length);
@@ -856,7 +853,7 @@ function printSummary(stats: SyncStats, total: number): void {
 	console.log(`  ❌ Failed:    ${stats.failed}`);
 	console.log(`  ❌ Verify failed: ${stats.verifyFailed}`);
 	console.log(`  📦 Total:     ${total}\n`);
-	console.log(`✅ Saved ${DATA_PATH}`);
+	console.log(`✅ Saved ${DATA_PATH} and ${HASHES_PATH}`);
 }
 
 sync().catch((error) => {

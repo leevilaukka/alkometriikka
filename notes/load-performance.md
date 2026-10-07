@@ -60,6 +60,12 @@ unchanged), and availability parsing (~0.6 s at 4x), which now waits for
 - **Web Worker:** time to content would still wait for the data, and
   structured-cloning 13.7k products (with Sets) back to the main thread is a
   large main-thread cost of its own.
-- **The per-product `hash` field** is ~33% of the gzipped data.json and unused
-  by the app. Moving it to a sync-only file would cut ~630 KB per load, but
-  needs workflow changes.
+
+## Change-detection hashes moved out of data.json
+
+The per-product `hash` (64 hex characters each, barely compressible) was ~⅓ of
+the gzipped data.json and is only used by the sync. It now lives in
+`hashes.json` next to data.json (see `scripts/data/dataset-file.ts` and
+`notes/deployment.md`). On the real data: data.json 1.92 MB → 1.31 MB gzipped
+(8.7 MB → 7.8 MB raw), including the ~30 KB filter index; hashes.json is
+0.55 MB gzipped and is never loaded by the site.
