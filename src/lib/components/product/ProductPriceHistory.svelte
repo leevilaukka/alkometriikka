@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import { AllColumns } from '$lib/utils/constants';
 	import { formatValue } from '$lib/utils/format';
 	import { getSaleInfo } from '$lib/utils/sales';
@@ -205,12 +204,6 @@
 			},
 			plugins: [campaignLinePlugin]
 		};
-	});
-
-	onMount(() => {
-		if (fullHistory.length > 1) {
-			sendAnalyticsEvent('show_price_history', { product_number: product[AllColumns.Number] });
-		}
 	});
 </script>
 
