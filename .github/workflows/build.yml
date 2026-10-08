@@ -188,3 +188,20 @@ jobs:
           git push origin gh-pages --force
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Notices are edited on main and deployed with the site; purge so a new
+      # notice reaches visitors right away instead of after the edge cache expires.
+      - name: Purge Cloudflare cache for notices
+        env:
+          CLOUDFLARE_PURGE_KEY: ${{ secrets.CLOUDFLARE_PURGE_KEY }}
+          CLOUDFLARE_ZONE: ${{ secrets.CF_ZONE }}
+        run: |
+          if [ -z "$CLOUDFLARE_PURGE_KEY" ] || [ -z "$CLOUDFLARE_ZONE" ]; then
+            echo "ℹ️  No purge credentials; skipping cache purge."
+            exit 0
+          fi
+          curl -sS -X POST "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE}/purge_cache" \
+            -H "Authorization: Bearer ${CLOUDFLARE_PURGE_KEY}" \
+            -H "Content-Type: application/json" \
+            --data '{"files":["https://alkometriikka.fi/notices.json"]}' || \
+            echo "⚠️  Cache purge failed; continuing."

@@ -21,6 +21,7 @@ type LocalStorageValueMap = {
 	[LocalStorageKeys.Theme]: '' | 'dark' | 'light';
 	[LocalStorageKeys.ViewedShares]: string[];
 	[LocalStorageKeys.CompareProducts]: string[];
+	[LocalStorageKeys.DismissedNotices]: string[];
 	[LocalStorageKeys.DailyGame]: SavedDailyGame;
 	[LocalStorageKeys.DailyStreak]: DailyStreak;
 	[LocalStorageKeys.DailyUnlimitedRun]: UnlimitedRunState;
