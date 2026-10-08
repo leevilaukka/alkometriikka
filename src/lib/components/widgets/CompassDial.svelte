@@ -22,9 +22,13 @@
 			? { latitude: store.latitude, longitude: store.longitude }
 			: null
 	);
-	const bearing = $derived($userLocation && destination ? getBearing($userLocation, destination) : null);
+	const bearing = $derived(
+		$userLocation && destination ? getBearing($userLocation, destination) : null
+	);
 	const distance = $derived(
-		$userLocation && destination ? getStoreDistance({ id: '', name: '', ...$userLocation }, store) : null
+		$userLocation && destination
+			? getStoreDistance({ id: '', name: '', ...$userLocation }, store)
+			: null
 	);
 	const arrived = $derived(distance !== null && distance < ARRIVED_KM);
 
@@ -63,16 +67,18 @@
 </script>
 
 <div class="flex flex-col items-center gap-4">
-	<div class="relative grid h-64 w-64 place-content-center rounded-full border-4 border-primary bg-secondary">
+	<div
+		class="relative grid h-64 w-64 place-content-center rounded-full border-4 border-primary bg-secondary"
+	>
 		<div
 			class="absolute inset-0 transition-transform duration-300 ease-out"
 			style:transform={`rotate(${ring}deg)`}
 			aria-hidden="true"
 		>
-			<span class="absolute left-1/2 top-2 -translate-x-1/2 font-bold text-brand-1">N</span>
+			<span class="absolute top-2 left-1/2 -translate-x-1/2 font-bold text-brand-1">N</span>
 			<span class="absolute bottom-2 left-1/2 -translate-x-1/2 text-sm text-secondary">S</span>
-			<span class="absolute left-3 top-1/2 -translate-y-1/2 text-sm text-secondary">W</span>
-			<span class="absolute right-3 top-1/2 -translate-y-1/2 text-sm text-secondary">E</span>
+			<span class="absolute top-1/2 left-3 -translate-y-1/2 text-sm text-secondary">W</span>
+			<span class="absolute top-1/2 right-3 -translate-y-1/2 text-sm text-secondary">E</span>
 		</div>
 		{#if arrived}
 			<span class="text-6xl motion-safe:animate-bounce" role="img" aria-label="Perillä">🍻</span>
@@ -82,8 +88,12 @@
 				style:transform={`rotate(${needle}deg)`}
 				aria-hidden="true"
 			>
-				<div class="absolute left-1/2 top-6 h-28 w-3 -translate-x-1/2 rounded-full bg-brand-1 [clip-path:polygon(50%_0,100%_100%,0_100%)]"></div>
-				<div class="absolute left-1/2 top-[8.5rem] h-14 w-3 -translate-x-1/2 rounded-full bg-gray-400 opacity-60 [clip-path:polygon(0_0,100%_0,50%_100%)]"></div>
+				<div
+					class="absolute top-6 left-1/2 h-28 w-3 -translate-x-1/2 rounded-full bg-brand-1 [clip-path:polygon(50%_0,100%_100%,0_100%)]"
+				></div>
+				<div
+					class="absolute top-[8.5rem] left-1/2 h-14 w-3 -translate-x-1/2 rounded-full bg-gray-400 opacity-60 [clip-path:polygon(0_0,100%_0,50%_100%)]"
+				></div>
 			</div>
 		{:else}
 			<span class="animate-pulse text-secondary">Haetaan sijaintia…</span>
@@ -92,7 +102,9 @@
 
 	<div class="text-center" aria-live="polite">
 		{#if denied || $locationDenied}
-			<p class="text-sm text-red-600">Sijaintilupa on estetty. Salli sijainti selaimen asetuksista.</p>
+			<p class="text-sm text-red-600">
+				Sijaintilupa on estetty. Salli sijainti selaimen asetuksista.
+			</p>
 		{:else if arrived}
 			<p class="text-lg font-bold">Perillä!</p>
 			<a
@@ -107,7 +119,9 @@
 			<p class="text-secondary">
 				Kulje {formatDirection(bearing)}
 				{#if heading === null}
-					<span class="block text-xs">Kompassin suuntaa ei saatu, nuoli osoittaa pohjoiseen nähden.</span>
+					<span class="block text-xs"
+						>Kompassin suuntaa ei saatu, nuoli osoittaa pohjoiseen nähden.</span
+					>
 				{/if}
 			</p>
 		{/if}

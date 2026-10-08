@@ -11,10 +11,7 @@
 		ContextKeys
 	} from '$lib/utils/constants';
 	import { components } from '$lib/utils/styles';
-	import {
-		headerToDisplayName,
-		sortingOrderToString,
-	} from '$lib/utils/helpers';
+	import { headerToDisplayName, sortingOrderToString } from '$lib/utils/helpers';
 	import Icon from '../widgets/Icon.svelte';
 	import type { Kaljakori } from '$lib/alko';
 	import Popup from '../widgets/Popup.svelte';
@@ -46,8 +43,12 @@
 
 	let filtersComponent: Filters | null = $state(null);
 	let showRemoved = $state(false);
-	let filterValues = $state(untrack(() => initFilterValues(kaljakori, showFilters ? page.url.searchParams : undefined, showRemoved)));
-	let activeFilters: ColumnNames[] = $state([])
+	let filterValues = $state(
+		untrack(() =>
+			initFilterValues(kaljakori, showFilters ? page.url.searchParams : undefined, showRemoved)
+		)
+	);
+	let activeFilters: ColumnNames[] = $state([]);
 
 	let selectedHighlight = $state(
 		searchParamsManager.getParameter('highlight') || defaultSortingColumn
@@ -105,15 +106,21 @@
 	}
 
 	onMount(() => {
-		const ascParam = searchParamsManager.getParameter('asc') === "true";
-		if(ascParam !== asc) asc = ascParam
+		const ascParam = searchParamsManager.getParameter('asc') === 'true';
+		if (ascParam !== asc) asc = ascParam;
 	});
 
 	$effect(() => {
 		searchParamsManager.setParameter('q', $searchQuery);
-		selectedHighlight !== defaultSortingColumn ? searchParamsManager.setParameter('highlight', selectedHighlight) : searchParamsManager.setParameter('highlight', "");
-		selectedSortingColumn !== defaultSortingColumn ? searchParamsManager.setParameter('sort', selectedSortingColumn) : searchParamsManager.setParameter('sort', "");
-		asc !== !!defaultSortingOrderMap[selectedSortingColumn as keyof typeof defaultSortingOrderMap] ? searchParamsManager.setParameter('asc', String(asc)) : searchParamsManager.setParameter('asc', "");
+		selectedHighlight !== defaultSortingColumn
+			? searchParamsManager.setParameter('highlight', selectedHighlight)
+			: searchParamsManager.setParameter('highlight', '');
+		selectedSortingColumn !== defaultSortingColumn
+			? searchParamsManager.setParameter('sort', selectedSortingColumn)
+			: searchParamsManager.setParameter('sort', '');
+		asc !== !!defaultSortingOrderMap[selectedSortingColumn as keyof typeof defaultSortingOrderMap]
+			? searchParamsManager.setParameter('asc', String(asc))
+			: searchParamsManager.setParameter('asc', '');
 		searchParamsManager.update();
 	});
 
@@ -130,11 +137,20 @@
 
 {#snippet filterBar()}
 	<BottomBar class="md:hidden">
-		<FilterButton activeCount={activeFilters.length} onclick={() => filtersComponent?.toggleFilterElement()} />
+		<FilterButton
+			activeCount={activeFilters.length}
+			onclick={() => filtersComponent?.toggleFilterElement()}
+		/>
 	</BottomBar>
 {/snippet}
 
-<div class={twMerge('relative grid h-full max-h-full overflow-hidden', showFilters ? 'grid-cols-[auto_1fr]' : 'bg-secondary', !showFilters && (sidebarHeader ? 'grid-cols-[20rem_1fr]' : 'grid-cols-1'))}>
+<div
+	class={twMerge(
+		'relative grid h-full max-h-full overflow-hidden',
+		showFilters ? 'grid-cols-[auto_1fr]' : 'bg-secondary',
+		!showFilters && (sidebarHeader ? 'grid-cols-[20rem_1fr]' : 'grid-cols-1')
+	)}
+>
 	{#if sidebarHeader}
 		<aside class="flex max-h-full flex-col overflow-hidden border-e border-primary bg-primary">
 			<div class="flex flex-auto flex-col gap-3 overflow-y-auto p-4">
@@ -148,15 +164,32 @@
 		</aside>
 	{/if}
 	{#if showFilters}
-	<aside
-		class="z-10 flex h-full flex-col max-h-full overflow-hidden border-primary md:w-84 md:border-r"
-	>
-		<a href="#results" onclick={skipToResults} class="sr-only bg-primary px-4 py-2 font-bold focus:not-sr-only">Ohita suodattimet</a>
-		<Filters {kaljakori} bind:activeFilters bind:filterValues bind:showRemoved bind:this={filtersComponent} />
-	</aside>
+		<aside
+			class="z-10 flex h-full max-h-full flex-col overflow-hidden border-primary md:w-84 md:border-r"
+		>
+			<a
+				href="#results"
+				onclick={skipToResults}
+				class="sr-only bg-primary px-4 py-2 font-bold focus:not-sr-only">Ohita suodattimet</a
+			>
+			<Filters
+				{kaljakori}
+				bind:activeFilters
+				bind:filterValues
+				bind:showRemoved
+				bind:this={filtersComponent}
+			/>
+		</aside>
 	{/if}
 	<!-- Without the filter sidebar, match the product page's width so rows don't stretch -->
-	<main id="results" tabindex="-1" class={twMerge('mx-auto flex h-full w-full flex-col gap-3 bg-secondary outline-none p-4 md:gap-4 md:p-6', !showFilters && !sidebarHeader && 'max-w-7xl')}>
+	<main
+		id="results"
+		tabindex="-1"
+		class={twMerge(
+			'mx-auto flex h-full w-full flex-col gap-3 bg-secondary p-4 outline-none md:gap-4 md:p-6',
+			!showFilters && !sidebarHeader && 'max-w-7xl'
+		)}
+	>
 		{#if header && !sidebarHeader}
 			{@render header()}
 			{@render footer?.()}
@@ -233,13 +266,13 @@
 		<div class="flex min-h-0 flex-auto flex-col">
 			<SvelteVirtualList items={rows} bind:this={listRef} itemsClass={'flex flex-col gap-3'}>
 				{#snippet renderItem(item, idx: number)}
-					<ProductPreview product={item} highlight={selectedHighlight} {kaljakori} highlightMax={highlightMax}>
+					<ProductPreview product={item} highlight={selectedHighlight} {kaljakori} {highlightMax}>
 						{#snippet renderExtras()}
 							<div
-								class="absolute top-0 left-0 flex flex-nowrap items-center gap-0.5 rounded-br bg-gray-100 dark:bg-zinc-700 px-1.5 py-0.5 text-sm text-secondary"
+								class="absolute top-0 left-0 flex flex-nowrap items-center gap-0.5 rounded-br bg-gray-100 px-1.5 py-0.5 text-sm text-secondary dark:bg-zinc-700"
 							>
 								<Icon name="hashtag" />
-								<span>{`${(idx + 1)}`}</span>
+								<span>{`${idx + 1}`}</span>
 							</div>
 							<Popup class="gap-4 p-4">
 								{#snippet renderButton(dialogElement: HTMLDialogElement)}

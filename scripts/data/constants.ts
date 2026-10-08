@@ -1,4 +1,5 @@
 import { CryptoHasher } from 'bun';
+import { formatFoodPairings } from '../../src/lib/utils/food.ts';
 
 export const LEGACY_HEADERS = [
 	'Numero',
@@ -33,7 +34,8 @@ export const LEGACY_HEADERS = [
 	'EAN',
 	'Normaalihinta',
 	'Kampanja alkaa',
-	'Kampanja päättyy'
+	'Kampanja päättyy',
+	'Ruokasuositukset'
 ] as const;
 
 export const DEV = process.argv.includes('--dev');
@@ -358,7 +360,22 @@ export const FIELD_TO_LEGACY_SCHEMA: ProductFieldMapping[] = [
 		legacyKey: 'Kampanja päättyy',
 		usedForHashing: true,
 		preprocessor: (value) => value ?? null
+	},
+	{
+		newPropertyKey: 'foodSymbolId',
+		legacyKey: 'Ruokasuositukset',
+		usedForHashing: false,
+		preprocessor: formatFoodPairings
 	}
+];
+
+/**
+ * Search-API columns refreshed on every sync, even for products whose hash is
+ * unchanged. They aren't hashed (a change shouldn't cost a detail fetch), so
+ * without this they'd only update when something else about the product changes.
+ */
+export const SEARCH_REFRESHED_COLUMNS: readonly (typeof LEGACY_HEADERS)[number][] = [
+	'Ruokasuositukset'
 ];
 
 /**

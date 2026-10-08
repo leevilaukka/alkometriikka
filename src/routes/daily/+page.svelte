@@ -3,12 +3,31 @@
 	import { components } from '$lib/utils/styles';
 	import type { PriceListItem } from '$lib/types';
 	import { createRng } from '$lib/daily/rng';
-	import { reconstructDailyGame, type DailyGameManifest, type DailyProduct } from '$lib/daily/manifest';
+	import {
+		reconstructDailyGame,
+		type DailyGameManifest,
+		type DailyProduct
+	} from '$lib/daily/manifest';
 	import { dayNumberForDate } from '$lib/daily/dayNumber';
-	import { DAILY_GAME_VERSION, DAILY_QUESTION_COUNT, generateDailyGame, type GeneratedGame, type Question } from '$lib/daily/questions';
+	import {
+		DAILY_GAME_VERSION,
+		DAILY_QUESTION_COUNT,
+		generateDailyGame,
+		type GeneratedGame,
+		type Question
+	} from '$lib/daily/questions';
 	import type { DailyStreak, SavedDailyGame, UnlimitedRunState } from '$lib/daily/types';
 	import { questionPoints } from '$lib/daily/scoring';
-	import { clearUnlimitedProgress, completeGame, loadSavedGame, loadStreak, loadUnlimitedProgress, resetDailyGame, saveGame, saveUnlimitedProgress } from '$lib/daily/storage';
+	import {
+		clearUnlimitedProgress,
+		completeGame,
+		loadSavedGame,
+		loadStreak,
+		loadUnlimitedProgress,
+		resetDailyGame,
+		saveGame,
+		saveUnlimitedProgress
+	} from '$lib/daily/storage';
 	import { LocalStorageManager } from '$lib/utils/storage';
 	import { tick } from 'svelte';
 	import { dev } from '$app/environment';
@@ -39,15 +58,19 @@
 	let unlimitedEnabled = $state(true);
 	let dailyError = $state<string | null>(null);
 	const MANIFEST_ATTEMPTS = 3;
-    
-    const date = new Intl.DateTimeFormat('en-CA', {
-        timeZone: 'Europe/Helsinki',
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit'
-    }).format(new Date());	
 
-    const displayDate = new Intl.DateTimeFormat('fi-FI', { day: 'numeric', month: 'numeric', year: 'numeric' }).format(new Date(`${date}T12:00:00`));
+	const date = new Intl.DateTimeFormat('en-CA', {
+		timeZone: 'Europe/Helsinki',
+		year: 'numeric',
+		month: '2-digit',
+		day: '2-digit'
+	}).format(new Date());
+
+	const displayDate = new Intl.DateTimeFormat('fi-FI', {
+		day: 'numeric',
+		month: 'numeric',
+		year: 'numeric'
+	}).format(new Date(`${date}T12:00:00`));
 	const question = $derived(game?.questions[currentIndex]);
 	const currentProduct = $derived(question ? findProduct(productIdFor(question)) : undefined);
 	const finished = $derived(saved?.completed === true);
@@ -55,16 +78,29 @@
 	const totalCorrect = $derived(saved?.correct ?? correctAnswers.filter(Boolean).length);
 	const showcasedProducts = $derived.by(() => {
 		if (!game) return [];
-		const ids = game.questions.flatMap((currentQuestion) => currentQuestion.type === 'cheaper' || currentQuestion.type === 'efficiency' || currentQuestion.type === 'attribute' ? currentQuestion.productIds : [currentQuestion.productId]);
-		return [...new Set(ids)].map((id) => findProduct(id)).filter((product): product is PriceListItem => Boolean(product));
+		const ids = game.questions.flatMap((currentQuestion) =>
+			currentQuestion.type === 'cheaper' ||
+			currentQuestion.type === 'efficiency' ||
+			currentQuestion.type === 'attribute'
+				? currentQuestion.productIds
+				: [currentQuestion.productId]
+		);
+		return [...new Set(ids)]
+			.map((id) => findProduct(id))
+			.filter((product): product is PriceListItem => Boolean(product));
 	});
 
 	function productIdFor(currentQuestion: Question): string {
-		return currentQuestion.type === 'cheaper' || currentQuestion.type === 'efficiency' || currentQuestion.type === 'attribute' ? currentQuestion.productIds[0] : currentQuestion.productId;
+		return currentQuestion.type === 'cheaper' ||
+			currentQuestion.type === 'efficiency' ||
+			currentQuestion.type === 'attribute'
+			? currentQuestion.productIds[0]
+			: currentQuestion.productId;
 	}
 
 	function findProduct(id: string): PriceListItem | undefined {
-		const frozen = runMode === 'daily' ? pool.find((product) => product[AllColumns.Number] === id) : undefined;
+		const frozen =
+			runMode === 'daily' ? pool.find((product) => product[AllColumns.Number] === id) : undefined;
 		return frozen ?? products.find((product) => product[AllColumns.Number] === id);
 	}
 
@@ -97,32 +133,56 @@
 			volume: 'Kummassa on suurempi pakkaus?',
 			literPrice: 'Kumpi on litrahinnaltaan halvempi?',
 			sugar: 'Kummassa on enemmän sokeria?',
-			energy: 'Kummassa on enemmän energiaa?',
+			energy: 'Kummassa on enemmän energiaa?'
 		}[metric];
 	}
 
-	function attributeValueLabel(metric: 'alcohol' | 'volume' | 'literPrice' | 'sugar' | 'energy', value: number) {
-		const decimals = metric === 'volume' || metric === 'literPrice' ? 2 : metric === 'alcohol' ? 1 : 0;
+	function attributeValueLabel(
+		metric: 'alcohol' | 'volume' | 'literPrice' | 'sugar' | 'energy',
+		value: number
+	) {
+		const decimals =
+			metric === 'volume' || metric === 'literPrice' ? 2 : metric === 'alcohol' ? 1 : 0;
 		const formatted = value.toFixed(decimals).replace('.', ',');
-		return metric === 'alcohol' ? `${formatted} %` : metric === 'volume' ? `${formatted} l` : metric === 'literPrice' ? `${formatted} €/l` : metric === 'sugar' ? `${formatted} g/l` : metric === 'energy' ? `${formatted} kcal/100 ml` : `${formatted} merkintää`;
+		return metric === 'alcohol'
+			? `${formatted} %`
+			: metric === 'volume'
+				? `${formatted} l`
+				: metric === 'literPrice'
+					? `${formatted} €/l`
+					: metric === 'sugar'
+						? `${formatted} g/l`
+						: metric === 'energy'
+							? `${formatted} kcal/100 ml`
+							: `${formatted} merkintää`;
 	}
 
 	function choiceTitle(field: 'country' | 'manufacturer' | 'category') {
-		return field === 'country' ? 'Mistä maasta tämä tuote on?' : field === 'manufacturer' ? 'Kuka valmistaa tämän tuotteen?' : 'Mihin kategoriaan tämä tuote kuuluu?';
+		return field === 'country'
+			? 'Mistä maasta tämä tuote on?'
+			: field === 'manufacturer'
+				? 'Kuka valmistaa tämän tuotteen?'
+				: 'Mihin kategoriaan tämä tuote kuuluu?';
 	}
 
 	function manufacturerParts(product: PriceListItem | undefined) {
 		if (!product) return null;
 		const name = product[AllColumns.Name];
 		const manufacturer = product[AllColumns.Manufacturer];
-		if (typeof name !== 'string' || typeof manufacturer !== 'string' || !manufacturer.trim()) return null;
+		if (typeof name !== 'string' || typeof manufacturer !== 'string' || !manufacturer.trim())
+			return null;
 		const start = name.toLocaleLowerCase().indexOf(manufacturer.toLocaleLowerCase());
 		if (start < 0) return null;
 		return { before: name.slice(0, start), after: name.slice(start + manufacturer.length) };
 	}
 
 	function correctAnswerText(currentQuestion: Question) {
-		if (currentQuestion.type === 'cheaper' || currentQuestion.type === 'efficiency' || currentQuestion.type === 'attribute') return productName(currentQuestion.correctProductId);
+		if (
+			currentQuestion.type === 'cheaper' ||
+			currentQuestion.type === 'efficiency' ||
+			currentQuestion.type === 'attribute'
+		)
+			return productName(currentQuestion.correctProductId);
 		if (currentQuestion.type === 'choice') return currentQuestion.correctValue;
 		if (currentQuestion.type === 'price') return price(currentQuestion.correctPrice);
 		return price(currentQuestion.correctPrice);
@@ -131,7 +191,8 @@
 	function initialize(catalog: PriceListItem[]) {
 		if (game) return;
 		products = catalog;
-		unlimitedEnabled = LocalStorageManager.getItem(LocalStorageKeys.DailyUnlimitedEnabled) !== false;
+		unlimitedEnabled =
+			LocalStorageManager.getItem(LocalStorageKeys.DailyUnlimitedEnabled) !== false;
 		const existing = loadSavedGame(date);
 		if (existing) {
 			runMode = 'daily';
@@ -159,7 +220,15 @@
 			.then(({ game: generated, products: frozen }) => {
 				game = generated;
 				pool = frozen as unknown as PriceListItem[];
-				saved = { date, game: generated, products: frozen, currentIndex: 0, points: [], correctAnswers: [], answered: false };
+				saved = {
+					date,
+					game: generated,
+					products: frozen,
+					currentIndex: 0,
+					points: [],
+					correctAnswers: [],
+					answered: false
+				};
 				saveGame(saved);
 			})
 			.catch((error) => {
@@ -167,16 +236,27 @@
 			});
 	}
 
-	function isValidManifest(value: DailyGameManifest | null, date: string): value is DailyGameManifest {
-		return value !== null
-			&& value.version === DAILY_GAME_VERSION
-			&& value.date === date
-			&& typeof value.seed === 'string' && value.seed.length > 0
-			&& typeof value.gameHash === 'string' && value.gameHash.length > 0
-			&& Array.isArray(value.products) && value.products.length >= 2;
+	function isValidManifest(
+		value: DailyGameManifest | null,
+		date: string
+	): value is DailyGameManifest {
+		return (
+			value !== null &&
+			value.version === DAILY_GAME_VERSION &&
+			value.date === date &&
+			typeof value.seed === 'string' &&
+			value.seed.length > 0 &&
+			typeof value.gameHash === 'string' &&
+			value.gameHash.length > 0 &&
+			Array.isArray(value.products) &&
+			value.products.length >= 2
+		);
 	}
 
-	async function loadDailyGame(date: string, catalog: PriceListItem[]): Promise<{ game: GeneratedGame; products: DailyProduct[] }> {
+	async function loadDailyGame(
+		date: string,
+		catalog: PriceListItem[]
+	): Promise<{ game: GeneratedGame; products: DailyProduct[] }> {
 		// The day's questions are pre-baked by the data pipeline into
 		// `/daily/<date>.json` so every visitor gets the exact same game and it
 		// is already available the moment a new day starts. The file never
@@ -205,17 +285,34 @@
 				break;
 			} catch (error) {
 				if (dev) console.warn(`[daily] manifest unavailable (attempt ${attempt})`, error);
-				if (attempt < MANIFEST_ATTEMPTS) await new Promise((resolve) => setTimeout(resolve, attempt * 1000));
+				if (attempt < MANIFEST_ATTEMPTS)
+					await new Promise((resolve) => setTimeout(resolve, attempt * 1000));
 			}
 		}
-		if (dev) return { game: generateDailyGame(date, catalog, createRng(`alkometriikka-daily-v1-${date}`)), products: [] };
+		if (dev)
+			return {
+				game: generateDailyGame(date, catalog, createRng(`alkometriikka-daily-v1-${date}`)),
+				products: []
+			};
 		throw new Error('Päivän peliä ei voitu ladata.');
 	}
 
 	function restoreUnlimited(state: UnlimitedRunState) {
 		runMode = 'unlimited';
 		game = state.game;
-		saved = { date, game: state.game, currentIndex: state.currentIndex, points: state.points, correctAnswers: state.correctAnswers, selectedAnswer: state.selectedAnswer, answered: state.answered, answerPoints: state.answerPoints, completed: state.completed, score: state.score, correct: state.correct };
+		saved = {
+			date,
+			game: state.game,
+			currentIndex: state.currentIndex,
+			points: state.points,
+			correctAnswers: state.correctAnswers,
+			selectedAnswer: state.selectedAnswer,
+			answered: state.answered,
+			answerPoints: state.answerPoints,
+			completed: state.completed,
+			score: state.score,
+			correct: state.correct
+		};
 		currentIndex = state.currentIndex;
 		selectedAnswer = state.selectedAnswer;
 		answered = state.answered;
@@ -226,7 +323,18 @@
 
 	function persistUnlimitedProgress() {
 		if (runMode !== 'unlimited' || !game || !saved) return;
-		const state: UnlimitedRunState = { game, currentIndex, selectedAnswer, answered, answerPoints, points, correctAnswers, completed: saved.completed, score: saved.score, correct: saved.correct };
+		const state: UnlimitedRunState = {
+			game,
+			currentIndex,
+			selectedAnswer,
+			answered,
+			answerPoints,
+			points,
+			correctAnswers,
+			completed: saved.completed,
+			score: saved.score,
+			correct: saved.correct
+		};
 		saveUnlimitedProgress(state);
 	}
 
@@ -272,14 +380,28 @@
 	function answer(value: string | number) {
 		if (answered || !question) return;
 		if (points.length === 0) {
-			sendAnalyticsEvent(runMode === 'daily' ? 'daily_game' : 'unlimited_game', { state: 'started', date });
+			sendAnalyticsEvent(runMode === 'daily' ? 'daily_game' : 'unlimited_game', {
+				state: 'started',
+				date
+			});
 		}
 		selectedAnswer = value;
 		answerPoints = questionPoints(question, value);
 		points = [...points, answerPoints];
-		correctAnswers = [...correctAnswers, question.type === 'estimate' ? Number(value) === question.correctPrice : answerPoints === 100];
+		correctAnswers = [
+			...correctAnswers,
+			question.type === 'estimate' ? Number(value) === question.correctPrice : answerPoints === 100
+		];
 		answered = true;
-		saved = { ...saved!, currentIndex, points, correctAnswers, selectedAnswer, answered, answerPoints };
+		saved = {
+			...saved!,
+			currentIndex,
+			points,
+			correctAnswers,
+			selectedAnswer,
+			answered,
+			answerPoints
+		};
 		// The answer buttons are now disabled, so move focus to the continue button instead of dropping it.
 		tick().then(() => document.getElementById('daily-continue')?.focus());
 		if (runMode === 'daily') saveGame(saved);
@@ -302,10 +424,20 @@
 			if (runMode === 'daily') {
 				saveGame(saved);
 				streak = completeGame(saved, score, correct);
-				sendAnalyticsEvent('daily_game', {state: 'completed', date, score, questions_right: correct });
+				sendAnalyticsEvent('daily_game', {
+					state: 'completed',
+					date,
+					score,
+					questions_right: correct
+				});
 			} else {
 				clearUnlimitedProgress();
-				sendAnalyticsEvent('unlimited_game', {state: "completed", date, score, questions_right: correct });
+				sendAnalyticsEvent('unlimited_game', {
+					state: 'completed',
+					date,
+					score,
+					questions_right: correct
+				});
 			}
 			return;
 		}
@@ -313,7 +445,15 @@
 		selectedAnswer = null;
 		answerPoints = 0;
 		answered = false;
-		saved = { ...saved!, currentIndex, points, correctAnswers, selectedAnswer: null, answered: false, answerPoints: 0 };
+		saved = {
+			...saved!,
+			currentIndex,
+			points,
+			correctAnswers,
+			selectedAnswer: null,
+			answered: false,
+			answerPoints: 0
+		};
 		if (runMode === 'daily') saveGame(saved);
 		else persistUnlimitedProgress();
 	}
@@ -363,7 +503,8 @@
 		}
 
 		if (question.type === 'estimate') {
-			if (/^[0-9]$/.test(event.key)) document.querySelector<HTMLInputElement>('input[name="estimate"]')?.focus();
+			if (/^[0-9]$/.test(event.key))
+				document.querySelector<HTMLInputElement>('input[name="estimate"]')?.focus();
 			return;
 		}
 
@@ -407,11 +548,11 @@
 	async function shareResult() {
 		const text = shareText();
 		const shared = await handleShare({
-            type: "daily_game",
+			type: 'daily_game',
 			title: 'Alkometriikka Daily',
 			text,
 			url: `${window.location.origin}/daily/`,
-            includeSID: true
+			includeSID: true
 		});
 		if (!shared) shareStatus = 'Linkki kopioitu leikepöydälle';
 	}
@@ -421,100 +562,100 @@
 		location.reload();
 	}
 
-    function getFinnishDate() {
-        return new Intl.DateTimeFormat('en-CA', {
-            timeZone: 'Europe/Helsinki',
-            year: 'numeric',
-            month: '2-digit',
-            day: '2-digit'
-        }).format(new Date());
-    }
+	function getFinnishDate() {
+		return new Intl.DateTimeFormat('en-CA', {
+			timeZone: 'Europe/Helsinki',
+			year: 'numeric',
+			month: '2-digit',
+			day: '2-digit'
+		}).format(new Date());
+	}
 
-    function helsinkiOffsetMinutes(at: Date) {
-        const offset = new Intl.DateTimeFormat('en-US', {
-            timeZone: 'Europe/Helsinki',
-            timeZoneName: 'longOffset'
-        })
-            .formatToParts(at)
-            .find(part => part.type === 'timeZoneName')
-            ?.value ?? 'GMT+02:00';
+	function helsinkiOffsetMinutes(at: Date) {
+		const offset =
+			new Intl.DateTimeFormat('en-US', {
+				timeZone: 'Europe/Helsinki',
+				timeZoneName: 'longOffset'
+			})
+				.formatToParts(at)
+				.find((part) => part.type === 'timeZoneName')?.value ?? 'GMT+02:00';
 
-        const match = offset.match(/GMT([+-])(\d{2}):(\d{2})/);
+		const match = offset.match(/GMT([+-])(\d{2}):(\d{2})/);
 
-        return match
-            ? (Number(match[2]) * 60 + Number(match[3])) *
-            (match[1] === '+' ? 1 : -1)
-            : 120;
-    }
+		return match ? (Number(match[2]) * 60 + Number(match[3])) * (match[1] === '+' ? 1 : -1) : 120;
+	}
 
-    function timeTillNextDaily() {
-        const now = new Date();
+	function timeTillNextDaily() {
+		const now = new Date();
 
-        const parts = new Intl.DateTimeFormat('en-CA', {
-            timeZone: 'Europe/Helsinki',
-            year: 'numeric',
-            month: '2-digit',
-            day: '2-digit'
-        }).formatToParts(now);
+		const parts = new Intl.DateTimeFormat('en-CA', {
+			timeZone: 'Europe/Helsinki',
+			year: 'numeric',
+			month: '2-digit',
+			day: '2-digit'
+		}).formatToParts(now);
 
-        const get = (type: string) => Number(
-            parts.find(part => part.type === type)?.value
-        );
+		const get = (type: string) => Number(parts.find((part) => part.type === type)?.value);
 
-        const year = get('year');
-        const month = get('month');
-        const day = get('day');
+		const year = get('year');
+		const month = get('month');
+		const day = get('day');
 
-        // Finnish midnight at the start of tomorrow. Use the offset in effect
-        // *at* that midnight, not now: on DST change days they differ.
-        const nextMidnightUtc = Date.UTC(year, month - 1, day + 1);
-        const guess = nextMidnightUtc - helsinkiOffsetMinutes(now) * 60_000;
-        const nextDaily = nextMidnightUtc - helsinkiOffsetMinutes(new Date(guess)) * 60_000;
-        const diff = Math.max(0, nextDaily - now.getTime());
+		// Finnish midnight at the start of tomorrow. Use the offset in effect
+		// *at* that midnight, not now: on DST change days they differ.
+		const nextMidnightUtc = Date.UTC(year, month - 1, day + 1);
+		const guess = nextMidnightUtc - helsinkiOffsetMinutes(now) * 60_000;
+		const nextDaily = nextMidnightUtc - helsinkiOffsetMinutes(new Date(guess)) * 60_000;
+		const diff = Math.max(0, nextDaily - now.getTime());
 
-        const hours = Math.floor(diff / 3_600_000);
-        const minutes = Math.floor((diff % 3_600_000) / 60_000);
-        const seconds = Math.floor((diff % 60_000) / 1_000);
+		const hours = Math.floor(diff / 3_600_000);
+		const minutes = Math.floor((diff % 3_600_000) / 60_000);
+		const seconds = Math.floor((diff % 60_000) / 1_000);
 
-        return `${String(hours).padStart(2, '0')}.${String(minutes).padStart(2, '0')}.${String(seconds).padStart(2, '0')}`;
-    }
+		return `${String(hours).padStart(2, '0')}.${String(minutes).padStart(2, '0')}.${String(seconds).padStart(2, '0')}`;
+	}
 
-    let dailyDate = getFinnishDate();
-    let dailyCountdown = $state(timeTillNextDaily());
-    let newDayAvailable = $state(false);
-    const dayNumber = dayNumberForDate(date);
+	let dailyDate = getFinnishDate();
+	let dailyCountdown = $state(timeTillNextDaily());
+	let newDayAvailable = $state(false);
+	const dayNumber = dayNumberForDate(date);
 
-    $effect(() => {
-        const interval = setInterval(() => {
-            const newDate = getFinnishDate();
+	$effect(() => {
+		const interval = setInterval(() => {
+			const newDate = getFinnishDate();
 
-            dailyCountdown = timeTillNextDaily();
+			dailyCountdown = timeTillNextDaily();
 
-            if (newDate !== dailyDate && !newDayAvailable) {
-                // Never yank a half-played run away at midnight: let the player
-                // finish (yesterday's game still scores for yesterday) and offer
-                // the new day instead of reloading.
-                if (points.length > 0 && !saved?.completed) newDayAvailable = true;
-                else location.reload();
-            }
-        }, 1000);
-        return () => clearInterval(interval);
-    });
+			if (newDate !== dailyDate && !newDayAvailable) {
+				// Never yank a half-played run away at midnight: let the player
+				// finish (yesterday's game still scores for yesterday) and offer
+				// the new day instead of reloading.
+				if (points.length > 0 && !saved?.completed) newDayAvailable = true;
+				else location.reload();
+			}
+		}, 1000);
+		return () => clearInterval(interval);
+	});
 
-    $effect(() => setSEO({
-        description: `Alkometriikka Daily on seitsemän kysymyksen tietovisa Alkon valikoimasta. Testaa Alko(holi) tuntemuksesi!`,
-        keywords: 'alkometriikka, alkometriikka daily, alkometriikka unlimited, tietovisa, alkometriikka kysymykset, alkometriikka kysymys, daily, game, peli',
-        og: {
-            description: "Alkometriikka Daily on seitsemän kysymyksen tietovisa Alkon valikoimasta. Testaa Alko(holi) tuntemuksesi!",
-            title: "Alkometriikka Daily",
-            url: window.location.href,
-            type: 'website',
-        },
-        twitter: {
-            description: "Alkometriikka Daily on seitsemän kysymyksen tietovisa Alkon valikoimasta. Testaa Alko(holi) tuntemuksesi!",
-            title: "Alkometriikka Daily"
-        }
-    }));
+	$effect(() =>
+		setSEO({
+			description: `Alkometriikka Daily on seitsemän kysymyksen tietovisa Alkon valikoimasta. Testaa Alko(holi) tuntemuksesi!`,
+			keywords:
+				'alkometriikka, alkometriikka daily, alkometriikka unlimited, tietovisa, alkometriikka kysymykset, alkometriikka kysymys, daily, game, peli',
+			og: {
+				description:
+					'Alkometriikka Daily on seitsemän kysymyksen tietovisa Alkon valikoimasta. Testaa Alko(holi) tuntemuksesi!',
+				title: 'Alkometriikka Daily',
+				url: window.location.href,
+				type: 'website'
+			},
+			twitter: {
+				description:
+					'Alkometriikka Daily on seitsemän kysymyksen tietovisa Alkon valikoimasta. Testaa Alko(holi) tuntemuksesi!',
+				title: 'Alkometriikka Daily'
+			}
+		})
+	);
 </script>
 
 <svelte:head>
@@ -528,38 +669,69 @@
 		<header class="flex flex-col gap-2 border-b border-primary pb-5">
 			<div class="flex items-center justify-between gap-4">
 				<div>
-					<p class="text-sm font-bold uppercase tracking-widest text-brand-2">Alkometriikka {runMode === "unlimited" ? "Daily" : ""}</p>
+					<p class="text-sm font-bold tracking-widest text-brand-2 uppercase">
+						Alkometriikka {runMode === 'unlimited' ? 'Daily' : ''}
+					</p>
 					<div class="flex items-center gap-2">
-						<h1 class="text-3xl font-bold md:text-4xl">{runMode === 'daily' ? 'Daily' : 'Unlimited'}</h1>
-						<span class="rounded border border-brand-2 px-1.5 py-0.5 text-xs font-bold uppercase tracking-wide text-brand-2">Beta</span>
+						<h1 class="text-3xl font-bold md:text-4xl">
+							{runMode === 'daily' ? 'Daily' : 'Unlimited'}
+						</h1>
+						<span
+							class="rounded border border-brand-2 px-1.5 py-0.5 text-xs font-bold tracking-wide text-brand-2 uppercase"
+							>Beta</span
+						>
 					</div>
 				</div>
 				<div class="flex items-center gap-2">
 					{#if runMode === 'daily'}
-						<span class="rounded bg-brand-4 px-3 py-2 text-sm font-bold text-white">{displayDate}{#if dayNumber} · #{dayNumber}{/if}</span>
+						<span class="rounded bg-brand-4 px-3 py-2 text-sm font-bold text-white"
+							>{displayDate}{#if dayNumber}
+								· #{dayNumber}{/if}</span
+						>
 					{/if}
 					{#if runMode === 'unlimited'}
-						<button class={twMerge(components.button(), 'px-3 py-2')} onclick={exitUnlimited}> <span class="flex items-center gap-2"> <Icon name="exit"/>Lopeta<kbd class="ms-2 hidden h-5 items-center justify-center rounded border border-current px-1 text-[11px] font-semibold leading-none opacity-60 lg:inline-flex">L</kbd></span> </button>
+						<button class={twMerge(components.button(), 'px-3 py-2')} onclick={exitUnlimited}>
+							<span class="flex items-center gap-2">
+								<Icon name="exit" />Lopeta<kbd
+									class="ms-2 hidden h-5 items-center justify-center rounded border border-current px-1 text-[11px] leading-none font-semibold opacity-60 lg:inline-flex"
+									>L</kbd
+								></span
+							>
+						</button>
 					{/if}
 					{#if dev}
-						<button class={twMerge(components.button({ size: 'xs' }), 'border-red-300 px-2 py-1 text-xs')} onclick={resetGame}>Nollaa peli</button>
+						<button
+							class={twMerge(components.button({ size: 'xs' }), 'border-red-300 px-2 py-1 text-xs')}
+							onclick={resetGame}>Nollaa peli</button
+						>
 					{/if}
-					<DailyFeedback {date} runMode={runMode} {dayNumber} questionIndex={currentIndex} {game} />
+					<DailyFeedback {date} {runMode} {dayNumber} questionIndex={currentIndex} {game} />
 				</div>
 			</div>
-			<p class="text-secondary">Seitsemän kysymystä Alkon valikoimasta. Testaa Alko(holi)tuntemuksesi!</p>
+			<p class="text-secondary">
+				Seitsemän kysymystä Alkon valikoimasta. Testaa Alko(holi)tuntemuksesi!
+			</p>
 		</header>
 
 		{#if newDayAvailable}
-			<section class="flex flex-col items-center justify-between gap-3 rounded border border-brand-2 bg-secondary p-4 sm:flex-row">
+			<section
+				class="flex flex-col items-center justify-between gap-3 rounded border border-brand-2 bg-secondary p-4 sm:flex-row"
+			>
 				<p class="font-bold">Uusi päivän peli on saatavilla.</p>
-				<button class={twMerge(components.button({ type: 'negative', size: 'md' }), 'px-4 py-2')} onclick={() => location.reload()}>Siirry uuteen peliin</button>
+				<button
+					class={twMerge(components.button({ type: 'negative', size: 'md' }), 'px-4 py-2')}
+					onclick={() => location.reload()}>Siirry uuteen peliin</button
+				>
 			</section>
 		{/if}
 
 		{#if finished && saved}
-			<section class="flex flex-col gap-5 rounded border border-primary bg-secondary p-5 text-center md:p-8 lg:p-10">
-				<p class="text-sm font-bold uppercase tracking-widest text-brand-2">{runMode === 'daily' ? 'Alkometriikka Daily' : 'Alkometriikka Unlimited'}</p>
+			<section
+				class="flex flex-col gap-5 rounded border border-primary bg-secondary p-5 text-center md:p-8 lg:p-10"
+			>
+				<p class="text-sm font-bold tracking-widest text-brand-2 uppercase">
+					{runMode === 'daily' ? 'Alkometriikka Daily' : 'Alkometriikka Unlimited'}
+				</p>
 				<div>
 					<p class="text-5xl font-bold">{saved.correct} / {DAILY_QUESTION_COUNT}</p>
 					<p class="mt-2 text-2xl font-bold">{saved.score} pistettä</p>
@@ -567,23 +739,34 @@
 				{#if runMode === 'daily'}
 					<p class="text-lg font-bold">🔥 {streak.current} päivän putki</p>
 					<p class="text-secondary">Päivän peli on jo suoritettu. Tule takaisin huomenna.</p>
-                    {#if !newDayAvailable}
-                        <div>
-                            <p class="text-sm text-secondary">Seuraava peli aukeaa:</p>
-                            <p class="text-lg font-bold">{dailyCountdown}</p>
-                        </div>
-                    {/if}
-                    <p class="text-secondary">Voit myös harjoitella Unlimited-tilassa tai pelata aiempien päivien pelejä alta.</p>
+					{#if !newDayAvailable}
+						<div>
+							<p class="text-sm text-secondary">Seuraava peli aukeaa:</p>
+							<p class="text-lg font-bold">{dailyCountdown}</p>
+						</div>
+					{/if}
+					<p class="text-secondary">
+						Voit myös harjoitella Unlimited-tilassa tai pelata aiempien päivien pelejä alta.
+					</p>
 				{:else}
 					<p class="text-secondary">Rajattoman pelin tuloksia ei tallenneta.</p>
 				{/if}
 				<section class="border-t border-primary pt-5 text-left">
-					<h2 class="text-lg font-bold">{runMode === 'daily' ? 'Tämän päivän tuotteet' : 'Tämän kierroksen tuotteet'}</h2>
+					<h2 class="text-lg font-bold">
+						{runMode === 'daily' ? 'Tämän päivän tuotteet' : 'Tämän kierroksen tuotteet'}
+					</h2>
 					<div class="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
 						{#each showcasedProducts as product (product[AllColumns.Number])}
-							<a href={`/tuotteet/${product[AllColumns.Number]}/`} class="flex min-w-0 items-center gap-2 rounded border border-primary bg-primary p-2 hover:border-brand-2">
+							<a
+								href={`/tuotteet/${product[AllColumns.Number]}/`}
+								class="flex min-w-0 items-center gap-2 rounded border border-primary bg-primary p-2 hover:border-brand-2"
+							>
 								<div class="h-20 w-14 shrink-0 rounded bg-white p-1">
-									<ProductImage number={product[AllColumns.Number]} name={product[AllColumns.Name]} transform="medium" />
+									<ProductImage
+										number={product[AllColumns.Number]}
+										name={product[AllColumns.Name]}
+										transform="medium"
+									/>
 								</div>
 								<span class="min-w-0 text-sm">{product[AllColumns.Name]}</span>
 							</a>
@@ -592,16 +775,55 @@
 				</section>
 				<div class="flex flex-col items-center gap-3">
 					{#if runMode === 'daily'}
-						<button class={twMerge(components.button({ type: 'positive', size: 'md' }), 'px-4 py-2')} onclick={shareResult}> <span class="flex items-center gap-2"> <Icon name="share"/>Jaa tulos</span> </button>
-						{#if shareStatus}<p class="whitespace-pre-wrap text-left text-sm text-secondary">{shareStatus}</p>{/if}
+						<button
+							class={twMerge(components.button({ type: 'positive', size: 'md' }), 'px-4 py-2')}
+							onclick={shareResult}
+						>
+							<span class="flex items-center gap-2"> <Icon name="share" />Jaa tulos</span>
+						</button>
+						{#if shareStatus}<p class="text-left text-sm whitespace-pre-wrap text-secondary">
+								{shareStatus}
+							</p>{/if}
 					{/if}
 					<div class="flex w-full max-w-md flex-col items-center gap-2">
 						{#if unlimitedEnabled}
-							<button class={twMerge(components.button({ type: 'negative', size: 'md' }), 'w-full px-4 py-2')} onclick={startUnlimited}> <span class="flex items-center gap-2"> <Icon name="repeat_alt_2"/>{runMode === 'daily' ? 'Pelaa rajattomasti' : 'Uusi kierros'}<kbd class="ms-2 hidden h-5 items-center justify-center rounded border border-current px-1 text-[11px] font-semibold leading-none opacity-60 lg:inline-flex">↵</kbd></span> </button>
+							<button
+								class={twMerge(
+									components.button({ type: 'negative', size: 'md' }),
+									'w-full px-4 py-2'
+								)}
+								onclick={startUnlimited}
+							>
+								<span class="flex items-center gap-2">
+									<Icon name="repeat_alt_2" />{runMode === 'daily'
+										? 'Pelaa rajattomasti'
+										: 'Uusi kierros'}<kbd
+										class="ms-2 hidden h-5 items-center justify-center rounded border border-current px-1 text-[11px] leading-none font-semibold opacity-60 lg:inline-flex"
+										>↵</kbd
+									></span
+								>
+							</button>
 						{/if}
 						<div class="grid w-full grid-cols-2 gap-2">
-							<a href="/daily/arkisto" class={twMerge(components.button({ size: 'md' }), 'w-full px-4 py-2')}> <span class="flex items-center gap-2"> <Icon name="archive"/>Arkisto<kbd class="ms-2 hidden h-5 items-center justify-center rounded border border-current px-1 text-[11px] font-semibold leading-none opacity-60 lg:inline-flex">A</kbd></span> </a>
-							<a href="/" class={twMerge(components.button({ size: 'md' }), 'w-full px-4 py-2')}><span class="flex items-center gap-2">Takaisin Alkometriikkaan<kbd class="ms-2 hidden h-5 items-center justify-center rounded border border-current px-1 text-[11px] font-semibold leading-none opacity-60 lg:inline-flex">Esc</kbd></span></a>
+							<a
+								href="/daily/arkisto"
+								class={twMerge(components.button({ size: 'md' }), 'w-full px-4 py-2')}
+							>
+								<span class="flex items-center gap-2">
+									<Icon name="archive" />Arkisto<kbd
+										class="ms-2 hidden h-5 items-center justify-center rounded border border-current px-1 text-[11px] leading-none font-semibold opacity-60 lg:inline-flex"
+										>A</kbd
+									></span
+								>
+							</a>
+							<a href="/" class={twMerge(components.button({ size: 'md' }), 'w-full px-4 py-2')}
+								><span class="flex items-center gap-2"
+									>Takaisin Alkometriikkaan<kbd
+										class="ms-2 hidden h-5 items-center justify-center rounded border border-current px-1 text-[11px] leading-none font-semibold opacity-60 lg:inline-flex"
+										>Esc</kbd
+									></span
+								></a
+							>
 						</div>
 					</div>
 				</div>
@@ -609,9 +831,13 @@
 		{:else if game && question}
 			{#snippet answerMark(value: string | number)}
 				{#if answered && isCorrect(value)}
-					<span class="ms-2 inline-flex items-center"><Icon name="check_circle" /><span class="sr-only">(oikea vastaus)</span></span>
+					<span class="ms-2 inline-flex items-center"
+						><Icon name="check_circle" /><span class="sr-only">(oikea vastaus)</span></span
+					>
 				{:else if answered && selectedAnswer === value}
-					<span class="ms-2 inline-flex items-center"><Icon name="block" /><span class="sr-only">(valintasi, väärin)</span></span>
+					<span class="ms-2 inline-flex items-center"
+						><Icon name="block" /><span class="sr-only">(valintasi, väärin)</span></span
+					>
 				{/if}
 			{/snippet}
 			<section class="flex flex-col gap-5">
@@ -619,13 +845,22 @@
 					<span>Kysymys {currentIndex + 1} / {game.questions.length}</span>
 					<span class="text-secondary">{totalScore} pistettä</span>
 				</div>
-				<div class="h-2 overflow-hidden rounded bg-secondary"><div class="h-full bg-brand-2 transition-all" style={`width: ${((currentIndex + 1) / game.questions.length) * 100}%`}></div></div>
+				<div class="h-2 overflow-hidden rounded bg-secondary">
+					<div
+						class="h-full bg-brand-2 transition-all"
+						style={`width: ${((currentIndex + 1) / game.questions.length) * 100}%`}
+					></div>
+				</div>
 
 				<div class="rounded border border-primary bg-primary p-5 md:p-8 lg:p-10">
 					{#if question.type === 'price'}
 						<div class="flex items-center gap-4">
 							<div class="h-40 w-28 shrink-0 rounded bg-white p-2">
-								<ProductImage number={question.productId} name={currentProduct?.[AllColumns.Name] ?? 'Tuote'} transform="medium" />
+								<ProductImage
+									number={question.productId}
+									name={currentProduct?.[AllColumns.Name] ?? 'Tuote'}
+									transform="medium"
+								/>
 							</div>
 							<div class="min-w-0">
 								<p class="text-lg font-bold">{currentProduct?.[AllColumns.Name]}</p>
@@ -634,76 +869,198 @@
 						</div>
 						<div class="mt-6 grid grid-cols-2 gap-3">
 							{#each question.options as option, i (option)}
-								<button class={twMerge(components.button(), 'relative min-h-12 w-full text-lg', answered && (isCorrect(option) ? 'border-green-600 bg-green-100 text-green-900' : selectedAnswer === option ? 'border-red-600 bg-red-100 text-red-900' : 'opacity-60'))} disabled={answered} onclick={() => answer(option)}><kbd class="pointer-events-none absolute right-1.5 top-1.5 hidden size-5 items-center justify-center rounded border border-current text-[11px] font-semibold leading-none opacity-40 lg:flex">{i + 1}</kbd>{answerLabel(option)}{@render answerMark(option)}</button>
+								<button
+									class={twMerge(
+										components.button(),
+										'relative min-h-12 w-full text-lg',
+										answered &&
+											(isCorrect(option)
+												? 'border-green-600 bg-green-100 text-green-900'
+												: selectedAnswer === option
+													? 'border-red-600 bg-red-100 text-red-900'
+													: 'opacity-60')
+									)}
+									disabled={answered}
+									onclick={() => answer(option)}
+									><kbd
+										class="pointer-events-none absolute top-1.5 right-1.5 hidden size-5 items-center justify-center rounded border border-current text-[11px] leading-none font-semibold opacity-40 lg:flex"
+										>{i + 1}</kbd
+									>{answerLabel(option)}{@render answerMark(option)}</button
+								>
 							{/each}
 						</div>
 					{:else if question.type === 'cheaper' || question.type === 'efficiency' || question.type === 'attribute'}
-						<h2 class="text-2xl font-bold">{question.type === 'cheaper' ? 'Kumpi tuote on halvempi?' : question.type === 'efficiency' ? 'Kummasta saat enemmän puhdasta alkoholia eurolla?' : attributeTitle(question.metric)}</h2>
+						<h2 class="text-2xl font-bold">
+							{question.type === 'cheaper'
+								? 'Kumpi tuote on halvempi?'
+								: question.type === 'efficiency'
+									? 'Kummasta saat enemmän puhdasta alkoholia eurolla?'
+									: attributeTitle(question.metric)}
+						</h2>
 						<div class="mt-6 grid gap-3 sm:grid-cols-2">
 							{#each question.productIds as id, i (id)}
 								{@const comparedProduct = findProduct(id)}
-								<button class={twMerge(components.button(), 'relative min-h-40 w-full justify-start p-3 text-left', answered && (isCorrect(id) ? 'border-green-600 bg-green-100 text-green-900' : selectedAnswer === id ? 'border-red-600 bg-red-100 text-red-900' : 'opacity-60'))} disabled={answered} onclick={() => answer(id)}>
+								<button
+									class={twMerge(
+										components.button(),
+										'relative min-h-40 w-full justify-start p-3 text-left',
+										answered &&
+											(isCorrect(id)
+												? 'border-green-600 bg-green-100 text-green-900'
+												: selectedAnswer === id
+													? 'border-red-600 bg-red-100 text-red-900'
+													: 'opacity-60')
+									)}
+									disabled={answered}
+									onclick={() => answer(id)}
+								>
 									<div class="h-32 w-24 shrink-0 rounded bg-white p-1">
 										<ProductImage number={id} name={productName(id)} transform="medium" />
 									</div>
-									<span class="min-w-0"><kbd class="pointer-events-none absolute right-1.5 top-1.5 hidden size-5 items-center justify-center rounded border border-current text-[11px] font-semibold leading-none opacity-40 lg:flex">{i + 1}</kbd>{comparedProduct?.[AllColumns.Name] ?? productName(id)}</span>
-									{#if answered && question.type === 'efficiency'}<span class="ms-auto text-sm">{efficiency(question.efficiency[id])}</span>{/if}
-									{#if answered && question.type === 'attribute'}<span class="ms-auto text-sm">{attributeValueLabel(question.metric, question.values[id])}</span>{/if}
-										{@render answerMark(id)}
+									<span class="min-w-0"
+										><kbd
+											class="pointer-events-none absolute top-1.5 right-1.5 hidden size-5 items-center justify-center rounded border border-current text-[11px] leading-none font-semibold opacity-40 lg:flex"
+											>{i + 1}</kbd
+										>{comparedProduct?.[AllColumns.Name] ?? productName(id)}</span
+									>
+									{#if answered && question.type === 'efficiency'}<span class="ms-auto text-sm"
+											>{efficiency(question.efficiency[id])}</span
+										>{/if}
+									{#if answered && question.type === 'attribute'}<span class="ms-auto text-sm"
+											>{attributeValueLabel(question.metric, question.values[id])}</span
+										>{/if}
+									{@render answerMark(id)}
 								</button>
 							{/each}
 						</div>
 					{:else if question.type === 'choice'}
-						{@const titleParts = question.field === 'manufacturer' ? manufacturerParts(currentProduct) : null}
+						{@const titleParts =
+							question.field === 'manufacturer' ? manufacturerParts(currentProduct) : null}
 						<div class="flex items-center gap-4">
 							<div class="h-40 w-28 shrink-0 rounded bg-white p-2">
-								<ProductImage number={question.productId} name={currentProduct?.[AllColumns.Name] ?? 'Tuote'} transform="medium" />
+								<ProductImage
+									number={question.productId}
+									name={currentProduct?.[AllColumns.Name] ?? 'Tuote'}
+									transform="medium"
+								/>
 							</div>
 							<div class="min-w-0">
 								<p class="text-lg font-bold">
-									{#if titleParts}{titleParts.before}<span class="select-none blur-sm">██████</span>{titleParts.after}{:else}{currentProduct?.[AllColumns.Name]}{/if}
+									{#if titleParts}{titleParts.before}<span class="blur-sm select-none">██████</span
+										>{titleParts.after}{:else}{currentProduct?.[AllColumns.Name]}{/if}
 								</p>
 								<h2 class="mt-2 text-2xl font-bold">{choiceTitle(question.field)}</h2>
 							</div>
 						</div>
 						<div class="mt-6 grid grid-cols-2 gap-3">
 							{#each question.options as option, i (option)}
-								<button class={twMerge(components.button(), 'relative min-h-12 w-full text-left', answered && (isCorrect(option) ? 'border-green-600 bg-green-100 text-green-900' : selectedAnswer === option ? 'border-red-600 bg-red-100 text-red-900' : 'opacity-60'))} disabled={answered} onclick={() => answer(option)}><kbd class="pointer-events-none absolute right-1.5 top-1.5 hidden size-5 items-center justify-center rounded border border-current text-[11px] font-semibold leading-none opacity-40 lg:flex">{i + 1}</kbd>{option}{@render answerMark(option)}</button>
+								<button
+									class={twMerge(
+										components.button(),
+										'relative min-h-12 w-full text-left',
+										answered &&
+											(isCorrect(option)
+												? 'border-green-600 bg-green-100 text-green-900'
+												: selectedAnswer === option
+													? 'border-red-600 bg-red-100 text-red-900'
+													: 'opacity-60')
+									)}
+									disabled={answered}
+									onclick={() => answer(option)}
+									><kbd
+										class="pointer-events-none absolute top-1.5 right-1.5 hidden size-5 items-center justify-center rounded border border-current text-[11px] leading-none font-semibold opacity-40 lg:flex"
+										>{i + 1}</kbd
+									>{option}{@render answerMark(option)}</button
+								>
 							{/each}
 						</div>
 					{:else if question.type === 'estimate'}
 						<div class="flex gap-4">
 							<div class="h-40 w-28 shrink-0 rounded bg-white p-2">
-								<ProductImage number={question.productId} name={currentProduct?.[AllColumns.Name] ?? 'Tuote'} transform="medium" />
+								<ProductImage
+									number={question.productId}
+									name={currentProduct?.[AllColumns.Name] ?? 'Tuote'}
+									transform="medium"
+								/>
 							</div>
 							<div class="min-w-0">
 								<p class="text-lg font-bold">{currentProduct?.[AllColumns.Name]}</p>
-								{#if estimateDetails(currentProduct)}<p class="mt-1 text-sm text-secondary">{estimateDetails(currentProduct)}</p>{/if}
-								<p class="mt-2 text-secondary">{question.alcoholPercentage}% · {question.volume} L</p>
+								{#if estimateDetails(currentProduct)}<p class="mt-1 text-sm text-secondary">
+										{estimateDetails(currentProduct)}
+									</p>{/if}
+								<p class="mt-2 text-secondary">
+									{question.alcoholPercentage}% · {question.volume} L
+								</p>
 							</div>
 						</div>
 						<h2 class="mt-5 text-2xl font-bold">Arvaa tuotteen hinta</h2>
 						<form class="mt-6 flex flex-col gap-3 sm:flex-row" onsubmit={submitEstimate}>
-							<label class="flex flex-1 items-center gap-2 rounded border border-primary px-3 py-2 focus-within:outline-1 focus-within:outline-offset-2 focus-within:outline-brand-1"><span>€</span><input name="estimate" class="w-full border-0 bg-transparent text-lg focus:ring-0 focus-visible:outline-none" type="number" min="0" step="0.01" required disabled={answered} aria-label="Arvioitu hinta" /></label>
-							<button class={twMerge(components.button({ type: 'negative', size: 'md' }), 'justify-center px-5 py-2')} disabled={answered}>Vastaa</button>
+							<label
+								class="flex flex-1 items-center gap-2 rounded border border-primary px-3 py-2 focus-within:outline-1 focus-within:outline-offset-2 focus-within:outline-brand-1"
+								><span>€</span><input
+									name="estimate"
+									class="w-full border-0 bg-transparent text-lg focus:ring-0 focus-visible:outline-none"
+									type="number"
+									min="0"
+									step="0.01"
+									required
+									disabled={answered}
+									aria-label="Arvioitu hinta"
+								/></label
+							>
+							<button
+								class={twMerge(
+									components.button({ type: 'negative', size: 'md' }),
+									'justify-center px-5 py-2'
+								)}
+								disabled={answered}>Vastaa</button
+							>
 						</form>
 					{/if}
 
 					{#if answered}
 						<div class="mt-6 border-t border-primary pt-5" aria-live="polite">
-							<p class="text-lg font-bold">{question.type === 'estimate' ? (estimateWasExact() ? 'Oikein!' : answerPoints > 0 ? 'Hyvä arvio!' : 'Ei aivan.') : answerPoints > 0 ? 'Oikein!' : 'Ei aivan.'} <span class="text-secondary">+{answerPoints} pistettä</span></p>
+							<p class="text-lg font-bold">
+								{question.type === 'estimate'
+									? estimateWasExact()
+										? 'Oikein!'
+										: answerPoints > 0
+											? 'Hyvä arvio!'
+											: 'Ei aivan.'
+									: answerPoints > 0
+										? 'Oikein!'
+										: 'Ei aivan.'} <span class="text-secondary">+{answerPoints} pistettä</span>
+							</p>
 							<p class="mt-2 text-secondary">Oikea vastaus: {correctAnswerText(question)}</p>
-							{#if question.type === 'efficiency'}<p class="mt-1 text-sm text-secondary">Lasku: tilavuus × alkoholiprosentti × 10 / hinta.</p>{/if}
-							<button class={twMerge(components.button({ type: 'negative', size: 'md' }), 'mt-4 px-4 py-2')} id="daily-continue" onclick={continueGame}>{currentIndex === game.questions.length - 1 ? 'Näytä tulos' : 'Jatka'}<kbd class="ms-2 hidden h-5 items-center justify-center rounded border border-current px-1 text-[11px] font-semibold leading-none opacity-60 lg:inline-flex">↵</kbd></button>
+							{#if question.type === 'efficiency'}<p class="mt-1 text-sm text-secondary">
+									Lasku: tilavuus × alkoholiprosentti × 10 / hinta.
+								</p>{/if}
+							<button
+								class={twMerge(
+									components.button({ type: 'negative', size: 'md' }),
+									'mt-4 px-4 py-2'
+								)}
+								id="daily-continue"
+								onclick={continueGame}
+								>{currentIndex === game.questions.length - 1 ? 'Näytä tulos' : 'Jatka'}<kbd
+									class="ms-2 hidden h-5 items-center justify-center rounded border border-current px-1 text-[11px] leading-none font-semibold opacity-60 lg:inline-flex"
+									>↵</kbd
+								></button
+							>
 						</div>
 					{/if}
 				</div>
 			</section>
 		{:else if dailyError}
-			<section class="flex flex-col items-center gap-4 rounded border border-primary bg-secondary p-8 text-center">
+			<section
+				class="flex flex-col items-center gap-4 rounded border border-primary bg-secondary p-8 text-center"
+			>
 				<p class="text-lg font-bold">{dailyError}</p>
 				<p class="text-secondary">Tarkista verkkoyhteys ja yritä hetken päästä uudelleen.</p>
-				<button class={twMerge(components.button({ type: 'negative', size: 'md' }), 'px-4 py-2')} onclick={() => startDaily(products)}>Yritä uudelleen</button>
+				<button
+					class={twMerge(components.button({ type: 'negative', size: 'md' }), 'px-4 py-2')}
+					onclick={() => startDaily(products)}>Yritä uudelleen</button
+				>
 			</section>
 		{/if}
 	</main>

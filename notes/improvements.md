@@ -1,6 +1,7 @@
 # Readability & Quality Improvements for `scripts/new-setup.ts`
 
 ## 1. Break up the giant `createProductRow` function
+
 This is the biggest readability win. It's ~120 lines mixing extraction, business logic, and assignment.
 
 - **Extract per-field getters**: `getTypeName()`, `getSubtype()`, `getRegion()`, `getCountryName()`, `getPackageSize()`, `getAlcohol()`, `getClosure()`, `getLabels()`, `getProducer()`, `getEnergyPer100ml()`, `getGroupCode()`, etc. Each takes `(details, search)` and returns its value.
@@ -8,13 +9,17 @@ This is the biggest readability win. It's ~120 lines mixing extraction, business
 - **Extract price-history handling** into `updatePriceHistory(previousRow, headers, computedPrice)`.
 
 ## 2. Replace the long `if/else if` header chain with a lookup map
+
 The 30-branch `if (header === ...) else if ...` block is hard to scan and O(n) per field. Instead build a `Record<string, () => any>` (a field-builder map keyed by header name), then:
+
 ```
 row[i] = (fieldBuilders[header]?.() ?? row[i]) ?? ""
 ```
+
 This makes each field a single named entry and removes the repetitive string comparisons.
 
 ### Reuse the existing `FIELD_TO_LEGACY_SCHEMA` pattern
+
 `scripts/new-2026/constants.ts` already implements this exact idea declaratively: an array of
 `{ newPropertyKey, legacyKey, usedForHashing, preprocessor }` entries that map each source field to a
 legacy column via a small `preprocessor` function. This is the table-driven equivalent of the
@@ -38,12 +43,15 @@ reusable even if the individual `preprocessor` bodies differ; ideally factor the
 module so both scripts stay in sync.
 
 ## 3. Centralize the "magic" header strings
+
 Headers like `"Pullokoko"`, `"Hinta"`, `"Numero"`, `"Hintahistoria"` are repeated as string literals throughout (`indexOf("Hinta")`, etc.). Define a `HEADERS` const object/enum so typos are caught and renames are single-point.
 
 ## 4. Precompute header indices once
+
 `createLookupMap`, `createProductRow`, `isSparseRow`, `hasRequiredFields`, and the removal loop all call `headers.indexOf(...)` repeatedly (some inside loops). Build an index map (`{ Numero: 0, Nimi: 1, ... }`) once and reuse it. Improves both readability and performance.
 
 ## 5. Split `scrapeAndMerge` into smaller units
+
 This function is very long and holds ~10 mutable counters. Suggestions:
 
 - Group counters into a single `stats` object (or a small `ScrapeStats` class) instead of 10 separate `let` variables.
@@ -53,18 +61,23 @@ This function is very long and holds ~10 mutable counters. Suggestions:
 - Extract the **summary printing** into `printSummary(stats)`.
 
 ## 6. Configuration/env parsing in one place
+
 Env vars (`OUTPUT_MODE`, `ALKO_MAX_PAGES`, `ALKO_DETAIL_CONCURRENCY`, `ALKO_REFRESH_SPARSE`) are read in scattered spots. Consolidate into a single `loadConfig()` returning a typed `Config` object.
 
 ## 7. Reduce `as any` casts
+
 There are many `(search as any).xxx` and `(details as any).xxx` accesses. Extend the `SearchProduct` / `ProductDetails` interfaces with the real optional fields (`abv`, `countryName`, `seasonalProductId`, `containerOptions`, `scales`, `productionSites`, etc.). This improves both safety and self-documentation.
 
 ## 8. Extract the manual worker-pool into a reusable helper
+
 The `cursor`/`workers`/`Array.from({length: concurrency})` pattern is a hand-rolled concurrency limiter. A small `mapWithConcurrency(items, limit, fn)` helper would make the intent clear and be reusable.
 
 ## 9. Magic numbers → named constants
+
 Values like `>= 12` (sparse threshold), `pageSize = 1000`, backoff `2000`, `60000`, delays `500/1000/2000/5000`, `pageCount > 8` should become named constants (`SPARSE_EMPTY_THRESHOLD`, `PAGE_SIZE`, `MAX_BACKOFF_MS`, etc.) with brief rationale.
 
 ## 10. Minor cleanups
+
 - Stray lone `;` after the `ProductRow` interface.
 - `EAN` field just copies `row[i]` back to itself — worth a comment explaining why (it's never sourced from the API) or handling explicitly.
 - Duplicate delay logic: there's a page delay at the top of the loop **and** at the bottom — consolidate to avoid double-sleeping.
@@ -185,8 +198,8 @@ forcing a re-fetch every run — (b) change meaningfully over the lifecycle, and
 Fixed a bug where the first sync after migration re-fetched details for **every** product instead of
 only the changed ones.
 
-**Root cause:** `migrate.ts` and `index.ts` computed the change-detection hash over *different
-representations* of the same fields, so the stored migration hash could never equal the sync hash.
+**Root cause:** `migrate.ts` and `index.ts` computed the change-detection hash over _different
+representations_ of the same fields, so the stored migration hash could never equal the sync hash.
 
 - `migrate.ts` built `values` straight from the **raw legacy columns** and hashed them as-is, so the
   hashed fields were legacy strings: `price` `"14.97"`, `abv` `"38.0"`, `taste`
@@ -211,4 +224,3 @@ never equals the array. Every migrated hash mismatched → details fetched for a
 - The match relies on the legacy `Luonnehdinta` text and `Valikoima` value being identical to the API's
   for unchanged products. Any product where those genuinely differ (e.g. a real price change) is still
   refetched — which is the correct behavior, since those are hash fields.
-

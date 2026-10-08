@@ -11,9 +11,9 @@ export async function load({ parent, params }) {
 
 	if (!alko.availability.stores[storeId]) {
 		throw error(404, {
-			message: 'Myymälää ei löytynyt',
+			message: 'Myymälää ei löytynyt'
 		});
 	}
-	
+
 	return { store: alko.availability.stores[storeId], storeId };
 }

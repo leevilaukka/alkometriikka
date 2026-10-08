@@ -1,77 +1,77 @@
-import { isNullish, updateURL } from "./helpers";
+import { isNullish, updateURL } from './helpers';
 
 export class SearchParamsManager {
-    params = new URLSearchParams();
-    persistentParams = new URLSearchParams();
-    mergedParams = new URLSearchParams();
+	params = new URLSearchParams();
+	persistentParams = new URLSearchParams();
+	mergedParams = new URLSearchParams();
 
-    constructor(url: URL) {
-        this.params = url.searchParams;
-    }
+	constructor(url: URL) {
+		this.params = url.searchParams;
+	}
 
-    update() {
-        this.mergedParams = new URLSearchParams([...this.params, ...this.persistentParams]);
-        let url = window.location.pathname
-        if(this.mergedParams.size) url += `?${this.mergedParams.toString()}`;
-        updateURL(url);
-    }
+	update() {
+		this.mergedParams = new URLSearchParams([...this.params, ...this.persistentParams]);
+		let url = window.location.pathname;
+		if (this.mergedParams.size) url += `?${this.mergedParams.toString()}`;
+		updateURL(url);
+	}
 
-    reset() {
-        this.params = new URLSearchParams();
-    }
+	reset() {
+		this.params = new URLSearchParams();
+	}
 
-    addParameter(key: string, value: string) {
-        if(!isNullish(value)) this.params.append(key, value) 
-        else this.params.delete(key)
-        return this;
-    }
+	addParameter(key: string, value: string) {
+		if (!isNullish(value)) this.params.append(key, value);
+		else this.params.delete(key);
+		return this;
+	}
 
-    setParameter(key: string, value: string) {
-        if(!isNullish(value)) this.params.set(key, value) 
-        else this.params.delete(key)
-        return this;
-    }
+	setParameter(key: string, value: string) {
+		if (!isNullish(value)) this.params.set(key, value);
+		else this.params.delete(key);
+		return this;
+	}
 
-    setParametersFromObject(object: Record<string, string | string[]>) {
-        Object.entries(object).forEach(([key, value]) => {
-            this.params.delete(key)
-            if(Array.isArray(value)) value.forEach(v => this.addParameter(key, v))
-            else this.addParameter(key, value)
-        })
-        return this;
-    }
+	setParametersFromObject(object: Record<string, string | string[]>) {
+		Object.entries(object).forEach(([key, value]) => {
+			this.params.delete(key);
+			if (Array.isArray(value)) value.forEach((v) => this.addParameter(key, v));
+			else this.addParameter(key, value);
+		});
+		return this;
+	}
 
-    setParametersFromURL(url: URL) {
-        this.params = url.searchParams
-    }
-    
-    addPersistentParameter(key: string, value?: string) {
-        this.persistentParams.append(key, value ?? "")
-        return this;
-    }
+	setParametersFromURL(url: URL) {
+		this.params = url.searchParams;
+	}
 
-    setPersistentParameter(key: string, newValue: string) {
-        this.persistentParams.set(key, newValue)
-        return this;
-    }
+	addPersistentParameter(key: string, value?: string) {
+		this.persistentParams.append(key, value ?? '');
+		return this;
+	}
 
-    getParameter(key: string) {
-        return this.params.get(key)
-    }
+	setPersistentParameter(key: string, newValue: string) {
+		this.persistentParams.set(key, newValue);
+		return this;
+	}
 
-    getAllParameters(key: string) {
-        return this.params.getAll(key)
-    }
+	getParameter(key: string) {
+		return this.params.get(key);
+	}
 
-    getAll() {
-        return this.mergedParams;
-    }
+	getAllParameters(key: string) {
+		return this.params.getAll(key);
+	}
 
-    getPersistentParameter(key: string) {
-        return this.persistentParams.get(key)
-    }
+	getAll() {
+		return this.mergedParams;
+	}
 
-    getAllPersistentParameters(key: string) {
-        return this.persistentParams.getAll(key)
-    }
+	getPersistentParameter(key: string) {
+		return this.persistentParams.get(key);
+	}
+
+	getAllPersistentParameters(key: string) {
+		return this.persistentParams.getAll(key);
+	}
 }

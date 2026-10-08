@@ -81,7 +81,9 @@ async function rm(keys: string[]): Promise<void> {
 			console.warn(`  ✗ ${key}: ${error instanceof Error ? error.message : String(error)}`);
 		}
 	});
-	console.log(`Deleted ${deleted}/${keys.length}` + (failed.length > 0 ? ` — ${failed.length} failed` : ''));
+	console.log(
+		`Deleted ${deleted}/${keys.length}` + (failed.length > 0 ? ` — ${failed.length} failed` : '')
+	);
 }
 
 const DAILY_KEY_PATTERN = new RegExp(`^${DAILY_OG_KEY_PREFIX}/(\\d{4}-\\d{2}-\\d{2})\\.png$`);
@@ -141,7 +143,10 @@ async function pruneDaily(): Promise<void> {
 			console.warn(`  ✗ ${key}: ${error instanceof Error ? error.message : String(error)}`);
 		}
 	});
-	console.log(`\nDeleted ${deleted}/${stale.length} object(s)` + (failed.length > 0 ? ` — ${failed.length} failed` : ''));
+	console.log(
+		`\nDeleted ${deleted}/${stale.length} object(s)` +
+			(failed.length > 0 ? ` — ${failed.length} failed` : '')
+	);
 }
 
 function usage(): string {

@@ -86,6 +86,7 @@ export interface PriceListItem extends Record<DrunkColumnNames, number> {
 	Huomautus: Set<string>;
 	Rypäleet: Set<string>;
 	Luonnehdinta: Set<string>;
+	Ruokasuositukset: Set<string>;
 	Pakkaustyyppi: string;
 	'Alkoholi-%': number;
 	'Hapot g/l': number;
@@ -164,13 +165,13 @@ export type ShareType = (typeof ShareTypes)[keyof typeof ShareTypes];
 export type ShareEvent = `share_${ShareType}`;
 export type ShareViewEvent = `shared_${ShareType}_viewed`;
 
-type ShareState = { url?: string; sid?: string; [key: string]: any }
-type Shares = {[K in ShareEvent | ShareViewEvent]: ShareState};
+type ShareState = { url?: string; sid?: string; [key: string]: any };
+type Shares = { [K in ShareEvent | ShareViewEvent]: ShareState };
 
-export type GameTypes = "daily" | "unlimited" | "archive";
+export type GameTypes = 'daily' | 'unlimited' | 'archive';
 type GameKeys = `${GameTypes}_game`;
 
-type RSSFeed = 'site' | 'category' | 'product' | 'json'
+type RSSFeed = 'site' | 'category' | 'product' | 'json';
 
 type GameState =
 	| {
@@ -184,13 +185,17 @@ type GameState =
 			questions_right: number;
 	  };
 
-type Games = {[K in GameKeys]: GameState;};
+type Games = { [K in GameKeys]: GameState };
 
 export type AnalyticsEventMap = {
-	calculator_used: { using_saved_values: boolean, state: { percentage: number, volume: number, price: number }, result: {
-		perEuro: number
-		rawAlcohol: number
-	} };
+	calculator_used: {
+		using_saved_values: boolean;
+		state: { percentage: number; volume: number; price: number };
+		result: {
+			perEuro: number;
+			rawAlcohol: number;
+		};
+	};
 	open_settings: undefined;
 	export_data: undefined;
 	import_data: undefined;
@@ -238,6 +243,7 @@ export type AnalyticsEventMap = {
 		ui_bug: boolean;
 		other: boolean;
 	};
-} & Shares & Games
+} & Shares &
+	Games;
 
 export type AnalyticsEventName = keyof AnalyticsEventMap;

@@ -14,7 +14,9 @@
 <!-- Named groups, so hovering the section doesn't trigger the `group-hover` links inside it -->
 <details class="group/section border-b border-primary first:border-t" {open}>
 	<!-- Only the title is underlined on hover, not the count or the arrow -->
-	<summary class="group/summary flex cursor-pointer list-none items-center gap-2 py-2.5 text-sm font-bold">
+	<summary
+		class="group/summary flex cursor-pointer list-none items-center gap-2 py-2.5 text-sm font-bold"
+	>
 		<span class="flex-1 group-hover/summary:underline">{title}</span>
 		{#if hint}
 			<span class="text-xs font-normal text-secondary">{hint}</span>

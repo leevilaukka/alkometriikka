@@ -81,9 +81,7 @@ export function resolvePreferredStore(
 	if (!location) return undefined;
 
 	const origin = { id: '', name: '', ...location };
-	return rankStoresByDistance(Object.values(stores), origin).find((store) =>
-		hasCoordinates(store)
-	);
+	return rankStoresByDistance(Object.values(stores), origin).find((store) => hasCoordinates(store));
 }
 
 export function rankStoresByDistance(

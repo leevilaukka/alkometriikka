@@ -25,10 +25,7 @@
 		ContextKeys,
 		GenderOptionsMap
 	} from '$lib/utils/constants';
-	import {
-		headerToDisplayName,
-		sortingOrderToString,
-	} from '$lib/utils/helpers';
+	import { headerToDisplayName, sortingOrderToString } from '$lib/utils/helpers';
 	import Popup from '../widgets/Popup.svelte';
 	import AllLists from '../widgets/AllLists.svelte';
 	import { addToList } from '$lib/utils/lists';
@@ -172,7 +169,9 @@
 	let details = $derived.by(getListDetails);
 
 	// Compares the products in their current order, capped to what the comparison view fits
-	const compareIds = $derived(rows.slice(0, MAX_COMPARE_PRODUCTS).map((item) => item[AllColumns.Number]));
+	const compareIds = $derived(
+		rows.slice(0, MAX_COMPARE_PRODUCTS).map((item) => item[AllColumns.Number])
+	);
 	const compareTruncated = $derived(rows.length > MAX_COMPARE_PRODUCTS);
 
 	function validateListName(name: string) {
@@ -206,7 +205,7 @@
 			aria-label="Jaa lista"
 			class={twMerge(
 				components.button({ type: 'positive', size: inBar ? 'lg' : 'md' }),
-				inBar ? 'h-11 aspect-square sm:aspect-auto' : 'aspect-square md:aspect-auto'
+				inBar ? 'aspect-square h-11 sm:aspect-auto' : 'aspect-square md:aspect-auto'
 			)}
 			onclick={async (e) => {
 				// Omit SID from the URL if shift key is held down
@@ -223,7 +222,9 @@
 				if (!shared) alert('Linkki kopioitu leikepöydälle!');
 			}}
 		>
-			<Icon name="share" class="inline-block " /><span class={inBar ? 'hidden sm:inline' : 'hidden md:block'}>Jaa</span>
+			<Icon name="share" class="inline-block " /><span
+				class={inBar ? 'hidden sm:inline' : 'hidden md:block'}>Jaa</span
+			>
 		</button>
 	{/if}
 {/snippet}
@@ -231,7 +232,10 @@
 {#snippet saveButton(inBar: boolean)}
 	{#if !existingList}
 		<button
-			class={twMerge(components.button({ type: 'positive', size: inBar ? 'lg' : 'md' }), inBar && 'h-11 flex-1')}
+			class={twMerge(
+				components.button({ type: 'positive', size: inBar ? 'lg' : 'md' }),
+				inBar && 'h-11 flex-1'
+			)}
 			onclick={() => {
 				sendAnalyticsEvent('save_list', { url: location.href });
 				const saved = saveList(list);
@@ -254,7 +258,7 @@
 				: 'Vertaile listan tuotteita rinnakkain'}
 			class={twMerge(
 				components.button({ size: inBar ? 'lg' : 'md' }),
-				inBar ? 'h-11 aspect-square sm:aspect-auto' : 'aspect-square md:aspect-auto'
+				inBar ? 'aspect-square h-11 sm:aspect-auto' : 'aspect-square md:aspect-auto'
 			)}
 		>
 			<Icon name="compare" class="inline-block" />
@@ -277,7 +281,10 @@
 			</button>
 		{/if}
 		{#if kaljakori.data.length > 1}
-			<FilterButton activeCount={activeFilters.length} onclick={() => filtersComponent?.toggleFilterElement()} />
+			<FilterButton
+				activeCount={activeFilters.length}
+				onclick={() => filtersComponent?.toggleFilterElement()}
+			/>
 		{/if}
 		{@render compareButton(true)}
 		{@render shareButton(true)}
@@ -331,7 +338,7 @@
 >
 	{#if kaljakori.data.length === 0}
 		<div class="grid flex-auto place-content-center">
-			<div class="mx-auto prose dark:prose-invert text-center">
+			<div class="mx-auto prose text-center dark:prose-invert">
 				<h2>Lista on tyhjä!</h2>
 				<p>Lisää tuotteita listaan tuotevalikosta!</p>
 				<a href="/" class={twMerge(components.button({ type: 'positive' }), 'mx-auto w-full')}>
@@ -424,14 +431,20 @@
 				<SvelteVirtualList items={rows} bind:this={listRef} itemsClass={'flex flex-col gap-3'}>
 					{#snippet renderItem(item, idx: number)}
 						{@const listItem = getListItem(list, item[AllColumns.Number])}
-						<ProductPreview product={item} quantity={listItem?.q} highlight={selectedHighlight} {kaljakori} highlightMax={highlightMax}>
+						<ProductPreview
+							product={item}
+							quantity={listItem?.q}
+							highlight={selectedHighlight}
+							{kaljakori}
+							{highlightMax}
+						>
 							{#snippet renderExtras()}
 								<div
-									class="absolute top-0 left-0 flex flex-nowrap items-center gap-0.5 rounded-br bg-gray-100 dark:bg-zinc-700 px-1.5 py-0.5 text-sm text-secondary"
+									class="absolute top-0 left-0 flex flex-nowrap items-center gap-0.5 rounded-br bg-gray-100 px-1.5 py-0.5 text-sm text-secondary dark:bg-zinc-700"
 								>
 									<Icon name="hashtag" />
-									<span>{`${(idx + 1)}`}</span>
-								</div>	
+									<span>{`${idx + 1}`}</span>
+								</div>
 								{#if listItem}
 									<div class={twMerge('flex flex-row')}>
 										<button
@@ -526,7 +539,7 @@
 				closedby={$isLaptop ? 'any' : 'none'}
 				class={twMerge(
 					// A bottom sheet like the category Tiedot sheet; on wide screens an inline sidebar
-					'fixed m-auto mb-0 hidden max-h-[85dvh] w-full max-w-none flex-col gap-4 overflow-y-auto rounded-t-lg border border-primary bg-primary p-4 backdrop:backdrop-blur-sm open:flex transition-transform open:starting:translate-y-full open:translate-y-0',
+					'fixed m-auto mb-0 hidden max-h-[85dvh] w-full max-w-none flex-col gap-4 overflow-y-auto rounded-t-lg border border-primary bg-primary p-4 transition-transform backdrop:backdrop-blur-sm open:flex open:translate-y-0 open:starting:translate-y-full',
 					'xl:relative xl:m-0 xl:h-full xl:max-h-none xl:w-84 xl:overflow-visible xl:rounded-none xl:border-0 xl:open:starting:translate-y-0'
 				)}
 			>
@@ -534,13 +547,27 @@
 				<div class="flex flex-auto flex-col gap-4">
 					<p>Tuotteita listassa: {details.totalItems}</p>
 					<p>Kokonaismäärä: {formatValue(details.totalVolume, AllColumns.BottleSize)}</p>
-					<p>Yhteensä alkoholia: {formatValue(details.totalAlcoholGrams, AllColumns.AlcoholGrams)}</p>
+					<p>
+						Yhteensä alkoholia: {formatValue(details.totalAlcoholGrams, AllColumns.AlcoholGrams)}
+					</p>
 					<p>Sokeria: {formatValue(details.totalSugarPerLitre, AllColumns.Sugar)}</p>
-					<p>Yhteensä sokeria: {formatValue(details.totalSugar, AllColumns.Sugar, {includeUnit: false})} g</p>
-					<p>Alkoholia per euro: {formatValue(details.totalAlcoholGramsPerEuro, AllColumns.AlcoholGramsPerEuro)} g</p>
+					<p>
+						Yhteensä sokeria: {formatValue(details.totalSugar, AllColumns.Sugar, {
+							includeUnit: false
+						})} g
+					</p>
+					<p>
+						Alkoholia per euro: {formatValue(
+							details.totalAlcoholGramsPerEuro,
+							AllColumns.AlcoholGramsPerEuro
+						)} g
+					</p>
 					<p>Arvioitu promillemäärä: {formatValue(details.totalBAC, AllColumns.PromillePerEuro)}</p>
 					<div
-						class={twMerge(components.button({ size: "lg" }), "w-full xl:mt-auto hover:cursor-default")}
+						class={twMerge(
+							components.button({ size: 'lg' }),
+							'w-full hover:cursor-default xl:mt-auto'
+						)}
 					>
 						<Icon name="shopping_bag" />
 						<h2>Yhteensä: {formatValue(details.totalPrice, AllColumns.Price)}</h2>
@@ -548,7 +575,9 @@
 				</div>
 				{#if $isLaptop}
 					<!-- Pinned to the bottom of the scrolling sheet, where the Tiedot button that opened it was -->
-					<div class="sticky bottom-0 -mx-4 -mb-4 bg-primary px-4 py-2.5 shadow-[0_-4px_12px_rgba(0,0,0,0.06)]">
+					<div
+						class="sticky bottom-0 -mx-4 -mb-4 bg-primary px-4 py-2.5 shadow-[0_-4px_12px_rgba(0,0,0,0.06)]"
+					>
 						<button
 							type="button"
 							class={twMerge(components.button({ size: 'lg' }), 'h-11 w-full')}

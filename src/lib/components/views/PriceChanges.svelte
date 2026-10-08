@@ -47,7 +47,8 @@
 	import BottomBar from '../widgets/BottomBar.svelte';
 	import FilterButton from '../widgets/FilterButton.svelte';
 
-	const { kaljakori, availability }: { kaljakori: Kaljakori; availability: AvailabilityData } = $props();
+	const { kaljakori, availability }: { kaljakori: Kaljakori; availability: AvailabilityData } =
+		$props();
 
 	const TITLE = 'Hinnanmuutokset';
 	const { description: DESCRIPTION, keywords: KEYWORDS } = staticPage('/hinnanmuutokset/');
@@ -75,7 +76,9 @@
 	const preferredStore = $derived(
 		resolvePreferredStore(availability.stores, $preferredStoreId, $userLocation)
 	);
-	const storeFilter = $derived($onlyPreferredStore && preferredStore ? preferredStore.id : undefined);
+	const storeFilter = $derived(
+		$onlyPreferredStore && preferredStore ? preferredStore.id : undefined
+	);
 
 	// Every change in the window, before the category, direction and name filters,
 	// so the chips can show how many each choice has
@@ -83,7 +86,8 @@
 		const products = kaljakori.data.filter(
 			(item) =>
 				item[AllColumns.RemovedFromSelection] !== true &&
-				(!storeFilter || (availability.product[item[AllColumns.Number]] ?? []).includes(storeFilter))
+				(!storeFilter ||
+					(availability.product[item[AllColumns.Number]] ?? []).includes(storeFilter))
 		);
 		return recentPriceChanges(products, priceChangeSince(days));
 	});
@@ -135,7 +139,9 @@
 
 	// The store toggle is a setting of its own, so it neither counts as a filter nor gets cleared
 	const activeFilterCount = $derived(
-		[typeNode, subTypeNode, direction !== 'all', days !== DEFAULT_PRICE_CHANGE_WINDOW].filter(Boolean).length
+		[typeNode, subTypeNode, direction !== 'all', days !== DEFAULT_PRICE_CHANGE_WINDOW].filter(
+			Boolean
+		).length
 	);
 
 	function clearFilters() {
@@ -157,7 +163,12 @@
 	$effect(() => {
 		searchParamsManager
 			.setParametersFromObject(
-				priceChangeParams({ days, direction, typeSlug: typeNode?.slug, subTypeSlug: subTypeNode?.slug })
+				priceChangeParams({
+					days,
+					direction,
+					typeSlug: typeNode?.slug,
+					subTypeSlug: subTypeNode?.slug
+				})
 			)
 			.setParameter('q', $searchQuery);
 		searchParamsManager.update();
@@ -176,7 +187,12 @@
 
 <svelte:head>
 	<title>{generateTitle(TITLE)}</title>
-	<link rel="alternate" type="application/rss+xml" title="Alkometriikka – uutuudet ja hinnanmuutokset" href={SITE_FEED} />
+	<link
+		rel="alternate"
+		type="application/rss+xml"
+		title="Alkometriikka – uutuudet ja hinnanmuutokset"
+		href={SITE_FEED}
+	/>
 </svelte:head>
 
 {#snippet chip(label: string, count: number, selected: boolean, onclick: () => void)}
@@ -190,7 +206,12 @@
 		)}
 	>
 		<span>{label}</span>
-		<span class={twMerge('rounded px-1 text-xs', selected ? 'bg-white/20' : 'bg-secondary text-secondary')}>
+		<span
+			class={twMerge(
+				'rounded px-1 text-xs',
+				selected ? 'bg-white/20' : 'bg-secondary text-secondary'
+			)}
+		>
 			{count.toLocaleString('fi-FI')}
 		</span>
 	</button>
@@ -202,7 +223,7 @@
 		aria-pressed={selected}
 		{onclick}
 		class={twMerge(
-			'flex-1 cursor-pointer whitespace-nowrap border-s border-primary px-2.5 py-1.5 text-sm first:border-s-0 md:py-1',
+			'flex-1 cursor-pointer border-s border-primary px-2.5 py-1.5 text-sm whitespace-nowrap first:border-s-0 md:py-1',
 			selected ? 'bg-brand-3 text-white' : 'bg-primary hover:bg-secondary'
 		)}
 	>
@@ -217,8 +238,8 @@
 		<div class="flex flex-col gap-1">
 			<h1 class="text-2xl font-bold">{TITLE}</h1>
 			<p class="text-sm text-secondary">
-				Alkon valikoiman tuotteet, joiden hinta on muuttunut viime aikoina. Jokaisesta tuotteesta näytetään
-				sen viimeisin muutos, uusimmat ensin.
+				Alkon valikoiman tuotteet, joiden hinta on muuttunut viime aikoina. Jokaisesta tuotteesta
+				näytetään sen viimeisin muutos, uusimmat ensin.
 			</p>
 		</div>
 	</div>
@@ -234,7 +255,9 @@
 				{#each tree as type (type.slug)}
 					{@const count = categoryCounts.get(type.slug) ?? 0}
 					{#if count > 0 || type.slug === typeNode?.slug}
-						{@render chip(type.name, count, type.slug === typeNode?.slug, () => selectType(type.slug))}
+						{@render chip(type.name, count, type.slug === typeNode?.slug, () =>
+							selectType(type.slug)
+						)}
 					{/if}
 				{/each}
 			</div>
@@ -243,11 +266,21 @@
 			<div class="flex flex-col gap-1">
 				<span id="price-change-subtype" class="text-sm">Tyyppi</span>
 				<div class="flex flex-wrap gap-2" role="group" aria-labelledby="price-change-subtype">
-					{@render chip(`Kaikki ${typeNode.name.toLocaleLowerCase('fi-FI')}`, categoryCounts.get(typeNode.slug) ?? 0, !subTypeNode, () => (subTypeSlug = undefined))}
+					{@render chip(
+						`Kaikki ${typeNode.name.toLocaleLowerCase('fi-FI')}`,
+						categoryCounts.get(typeNode.slug) ?? 0,
+						!subTypeNode,
+						() => (subTypeSlug = undefined)
+					)}
 					{#each typeNode.children as child (child.slug)}
 						{@const count = categoryCounts.get(`${typeNode.slug}/${child.slug}`) ?? 0}
 						{#if count > 0 || child.slug === subTypeNode?.slug}
-							{@render chip(child.name, count, child.slug === subTypeNode?.slug, () => (subTypeSlug = child.slug))}
+							{@render chip(
+								child.name,
+								count,
+								child.slug === subTypeNode?.slug,
+								() => (subTypeSlug = child.slug)
+							)}
 						{/if}
 					{/each}
 				</div>
@@ -256,15 +289,27 @@
 
 		<div class="flex flex-col gap-1">
 			<span id="price-change-direction" class="text-sm">Suunta</span>
-			<div class="flex overflow-hidden rounded border border-primary" role="group" aria-labelledby="price-change-direction">
+			<div
+				class="flex overflow-hidden rounded border border-primary"
+				role="group"
+				aria-labelledby="price-change-direction"
+			>
 				{#each directions as option (option.value)}
-					{@render segment(option.label, direction === option.value, () => (direction = option.value))}
+					{@render segment(
+						option.label,
+						direction === option.value,
+						() => (direction = option.value)
+					)}
 				{/each}
 			</div>
 		</div>
 		<div class="flex flex-col gap-1">
 			<span id="price-change-window" class="text-sm">Aikaväli</span>
-			<div class="flex overflow-hidden rounded border border-primary" role="group" aria-labelledby="price-change-window">
+			<div
+				class="flex overflow-hidden rounded border border-primary"
+				role="group"
+				aria-labelledby="price-change-window"
+			>
 				{#each PRICE_CHANGE_WINDOWS as value (value)}
 					{@render segment(`${value} pv`, days === value, () => (days = value))}
 				{/each}
@@ -274,7 +319,9 @@
 		{#if preferredStore}
 			<label class="flex cursor-pointer items-center gap-2 text-sm">
 				<input type="checkbox" bind:checked={$onlyPreferredStore} class="shrink-0 rounded" />
-				<span class="min-w-0 truncate">Vain myymälässäni: <strong>{preferredStore.name}</strong></span>
+				<span class="min-w-0 truncate"
+					>Vain myymälässäni: <strong>{preferredStore.name}</strong></span
+				>
 			</label>
 		{:else if Object.keys(availability.stores).length}
 			<a href="/myymalat" class="group flex w-fit items-center gap-1 text-sm text-secondary">
@@ -289,7 +336,9 @@
 	<div class="flex flex-row flex-wrap items-center justify-between gap-2">
 		<p class="text-sm text-secondary">
 			{#if query}{`Haku ”${$searchQuery.trim()}”: `}{/if}{inCategory.length.toLocaleString('fi-FI')} tuotetta
-			{days} päivän aikana: {drops.toLocaleString('fi-FI')} halpeni, {(inCategory.length - drops).toLocaleString('fi-FI')} kallistui
+			{days} päivän aikana: {drops.toLocaleString('fi-FI')} halpeni, {(
+				inCategory.length - drops
+			).toLocaleString('fi-FI')} kallistui
 		</p>
 		<div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-secondary">
 			{#if typeNode}
@@ -300,7 +349,8 @@
 				<a
 					href={`${categoryFeedPath(typeNode.slug, subTypeNode?.slug)}.xml`}
 					class="group flex items-center gap-1"
-					onclick={() => sendAnalyticsEvent('click_feed', { feed: 'category', location: 'price_changes' })}
+					onclick={() =>
+						sendAnalyticsEvent('click_feed', { feed: 'category', location: 'price_changes' })}
 					title="Tilaa kategorian uutuudet ja hinnanmuutokset RSS-syötteenä"
 				>
 					<Icon name="rss" />
@@ -310,7 +360,8 @@
 			<a
 				href={SITE_FEED}
 				class="group flex items-center gap-1"
-				onclick={() => sendAnalyticsEvent('click_feed', { feed: 'site', location: 'price_changes' })}
+				onclick={() =>
+					sendAnalyticsEvent('click_feed', { feed: 'site', location: 'price_changes' })}
 				title="Tilaa koko valikoiman uutuudet ja hinnanmuutokset RSS-syötteenä"
 			>
 				<Icon name="rss" />
@@ -353,7 +404,9 @@
 
 {#snippet bottomBar()}
 	<BottomBar class="xl:hidden">
-		<Popup class="mb-0 max-h-[85dvh] w-full max-w-none gap-4 overflow-y-auto rounded-b-none p-4 open:starting:translate-y-full open:starting:scale-100 open:translate-y-0">
+		<Popup
+			class="mb-0 max-h-[85dvh] w-full max-w-none gap-4 overflow-y-auto rounded-b-none p-4 open:translate-y-0 open:starting:translate-y-full open:starting:scale-100"
+		>
 			{#snippet renderButton(dialogElement: HTMLDialogElement)}
 				<FilterButton activeCount={activeFilterCount} onclick={() => dialogElement.showModal()} />
 			{/snippet}
@@ -361,7 +414,9 @@
 				<h2 class="text-xl font-bold">Suodattimet</h2>
 				{@render filters()}
 				<!-- Pinned to the bottom of the scrolling sheet, where the button that opened it was -->
-				<div class="sticky bottom-0 -mx-4 -mb-4 flex gap-2.5 bg-primary px-4 py-2.5 shadow-[0_-4px_12px_rgba(0,0,0,0.06)]">
+				<div
+					class="sticky bottom-0 -mx-4 -mb-4 flex gap-2.5 bg-primary px-4 py-2.5 shadow-[0_-4px_12px_rgba(0,0,0,0.06)]"
+				>
 					{#if activeFilterCount > 0}
 						<button
 							type="button"
@@ -386,14 +441,25 @@
 	</BottomBar>
 {/snippet}
 
-<div class={twMerge('relative grid h-full max-h-full overflow-hidden', $isLaptop ? 'grid-cols-1' : 'grid-cols-[auto_1fr]')}>
+<div
+	class={twMerge(
+		'relative grid h-full max-h-full overflow-hidden',
+		$isLaptop ? 'grid-cols-1' : 'grid-cols-[auto_1fr]'
+	)}
+>
 	{#if !$isLaptop}
-		<aside class="flex max-h-full w-84 flex-col gap-3 overflow-y-auto border-e border-primary bg-primary p-4">
+		<aside
+			class="flex max-h-full w-84 flex-col gap-3 overflow-y-auto border-e border-primary bg-primary p-4"
+		>
 			{@render intro()}
 			{@render filters()}
 		</aside>
 	{/if}
-	<main id="results" tabindex="-1" class="flex h-full w-full min-w-0 flex-col gap-3 overflow-y-auto bg-secondary p-4 outline-none md:gap-4 md:p-6">
+	<main
+		id="results"
+		tabindex="-1"
+		class="flex h-full w-full min-w-0 flex-col gap-3 overflow-y-auto bg-secondary p-4 outline-none md:gap-4 md:p-6"
+	>
 		{#if !$isLaptop}
 			{@render summary()}
 		{/if}
@@ -402,10 +468,16 @@
 				{@render intro()}
 				{@render summary()}
 			{/if}
-			<div class="flex flex-col items-start gap-2 rounded border border-primary bg-primary p-4 text-sm">
+			<div
+				class="flex flex-col items-start gap-2 rounded border border-primary bg-primary p-4 text-sm"
+			>
 				<p>Ei hinnanmuutoksia valituilla rajauksilla.</p>
 				{#if typeNode || direction !== 'all' || query}
-					<button type="button" class="cursor-pointer text-secondary hover:underline" onclick={resetFilters}>
+					<button
+						type="button"
+						class="cursor-pointer text-secondary hover:underline"
+						onclick={resetFilters}
+					>
 						Näytä kaikki muutokset
 					</button>
 				{/if}

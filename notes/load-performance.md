@@ -12,24 +12,24 @@ bun run scripts/bench/load-bench.ts                     # synthetic data
 bun run scripts/bench/load-bench.ts --data static/data.json --availability static/availability.json [--with-index]
 ```
 
-| Step                                    | Before   | After                          |
-| --------------------------------------- | -------- | ------------------------------ |
-| parseDataset (incl. JSON.parse)         | ~60 ms   | ~60 ms                         |
-| `new Kaljakori`, no availability        | ~540 ms  | ~200 ms                        |
-| `new Kaljakori`, with availability      | ~640 ms  | ~260 ms                        |
-| Filter values/types/ranges (lazy)       | included | ~110 ms with index, ~200 ms without |
-| `fuzzySearchAndFilter('')`              | ~12 ms   | ~3 ms                          |
-| `fuzzySearchAndFilter('lapin')`         | ~24 ms   | ~40–55 ms (now matches every word, see below) |
+| Step                               | Before   | After                                         |
+| ---------------------------------- | -------- | --------------------------------------------- |
+| parseDataset (incl. JSON.parse)    | ~60 ms   | ~60 ms                                        |
+| `new Kaljakori`, no availability   | ~540 ms  | ~200 ms                                       |
+| `new Kaljakori`, with availability | ~640 ms  | ~260 ms                                       |
+| Filter values/types/ranges (lazy)  | included | ~110 ms with index, ~200 ms without           |
+| `fuzzySearchAndFilter('')`         | ~12 ms   | ~3 ms                                         |
+| `fuzzySearchAndFilter('lapin')`    | ~24 ms   | ~40–55 ms (now matches every word, see below) |
 
 ## Browser (Chromium, 4x CPU throttling, local server, time to first content, medians)
 
-| Page                                     | Before  | After   |
-| ---------------------------------------- | ------- | ------- |
-| `/` main list                            | ~8.6 s  | ~8.7 s  |
-| `/?Myymälät=…` (store filter in URL)     | ~8.7 s  | ~7.5 s  |
-| `/kategoriat/viinit/`                    | ~12.1 s | ~9.8 s  |
-| `/tilastot/`                             | ~16.8 s | ~12.5 s |
-| `/tuotteet/100001/`                      | ~10.0 s | ~9.6 s  |
+| Page                                 | Before  | After   |
+| ------------------------------------ | ------- | ------- |
+| `/` main list                        | ~8.6 s  | ~8.7 s  |
+| `/?Myymälät=…` (store filter in URL) | ~8.7 s  | ~7.5 s  |
+| `/kategoriat/viinit/`                | ~12.1 s | ~9.8 s  |
+| `/tilastot/`                         | ~16.8 s | ~12.5 s |
+| `/tuotteet/100001/`                  | ~10.0 s | ~9.6 s  |
 
 Profiles show ~1.5 s less main-thread work before the main list appears
 (Kaljakori ~3.8 s → ~1.4 s + ~1.1 s lazy filter index at 4x), but time to

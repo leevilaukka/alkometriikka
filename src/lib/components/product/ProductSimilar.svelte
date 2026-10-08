@@ -76,7 +76,10 @@
 								{similarProduct[AllColumns.Name]}
 							</h3>
 							<span>
-								{formatValue(similarProduct[AllColumns.AlcoholPercentage], AllColumns.AlcoholPercentage)}
+								{formatValue(
+									similarProduct[AllColumns.AlcoholPercentage],
+									AllColumns.AlcoholPercentage
+								)}
 							</span>
 						</div>
 						<div class="flex aspect-square w-full shrink-0 rounded bg-white p-2 md:max-w-fit">
@@ -103,7 +106,10 @@
 						type="button"
 						aria-pressed={inCompare}
 						aria-label={`Vertaile: ${similarProduct[AllColumns.Name]}`}
-						class={twMerge(components.button({ size: 'sm', type: inCompare ? 'positive' : 'primary' }), 'mt-auto w-full')}
+						class={twMerge(
+							components.button({ size: 'sm', type: inCompare ? 'positive' : 'primary' }),
+							'mt-auto w-full'
+						)}
 						onclick={() => handleToggleCompare(number)}
 					>
 						<Icon name="compare" />

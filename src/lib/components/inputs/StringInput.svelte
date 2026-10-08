@@ -10,7 +10,15 @@
 	import { untrack } from 'svelte';
 	import type { FilterValue } from '$lib/types';
 
-	let { defaultValue = [], value = $bindable(defaultValue), modified = $bindable(false), options = [], label, name, ...rest } : {
+	let {
+		defaultValue = [],
+		value = $bindable(defaultValue),
+		modified = $bindable(false),
+		options = [],
+		label,
+		name,
+		...rest
+	}: {
 		defaultValue?: FilterValue;
 		value?: FilterValue;
 		modified?: boolean;
@@ -21,20 +29,22 @@
 	} = $props();
 
 	const strOptions = $derived(options.map(String));
-	
-	const inputId = "stringinput-" + getRandom();
+
+	const inputId = 'stringinput-' + getRandom();
 
 	type ListItem = {
 		value: string;
 		selected: boolean;
 	};
 
-	let list = $state<ListItem[]>(untrack(() => strOptions.map((option) => ({ value: option, selected: value.includes(option) }))));
+	let list = $state<ListItem[]>(
+		untrack(() => strOptions.map((option) => ({ value: option, selected: value.includes(option) })))
+	);
 
 	$effect(() => {
-		const set = new Set(value).difference(new Set(defaultValue))
-		modified = !!set.size
-	})
+		const set = new Set(value).difference(new Set(defaultValue));
+		modified = !!set.size;
+	});
 
 	$effect(() => {
 		if (!value) return;
@@ -46,7 +56,8 @@
 		// so rebuild the list while keeping the current selections
 		const options = strOptions;
 		untrack(() => {
-			if (options.length === list.length && options.every((option, i) => list[i].value === option)) return;
+			if (options.length === list.length && options.every((option, i) => list[i].value === option))
+				return;
 			const selected = new Set(value ?? []);
 			list = options.map((option) => ({ value: option, selected: selected.has(option) }));
 		});
@@ -63,23 +74,21 @@
 	let isOpen = $state(false);
 
 	const originalFilter = $derived.by(() => {
-		const original = (Object.keys(filterRenameMap) as (keyof typeof filterRenameMap)[]).find((key) => filterRenameMap[key] === label);
+		const original = (Object.keys(filterRenameMap) as (keyof typeof filterRenameMap)[]).find(
+			(key) => filterRenameMap[key] === label
+		);
 		return filterAnnotationsToFilter[(original ?? label) as keyof typeof filterAnnotationsToFilter];
 	});
 
 	const filteredList = $derived.by(() =>
-		query
-			? list.filter((item) => item.value.toLowerCase().includes(query.toLowerCase()))
-			: list
+		query ? list.filter((item) => item.value.toLowerCase().includes(query.toLowerCase())) : list
 	);
 </script>
 
-<div class={twMerge("flex", strOptions.length > 1 ? "flex-col" : "items-center")}>
+<div class={twMerge('flex', strOptions.length > 1 ? 'flex-col' : 'items-center')}>
 	{#if strOptions.length === 1}
 		{@const isChecked = value?.includes(strOptions[0]) ?? false}
-		<label
-			class={twMerge(components.button(), 'w-fit justify-start gap-2')}
-		>
+		<label class={twMerge(components.button(), 'w-fit justify-start gap-2')}>
 			<Icon
 				name={isChecked ? 'checkbox_checked' : 'checkbox'}
 				class={isChecked ? 'text-brand-1' : 'text-secondary'}
@@ -99,7 +108,7 @@
 	{:else}
 		<label for={inputId}>{label}</label>
 		<Popup
-			class={twMerge("p-4 gap-4", $isSafari && "h-auto")}
+			class={twMerge('gap-4 p-4', $isSafari && 'h-auto')}
 			onOpen={() => (isOpen = true)}
 			onClose={() => (isOpen = false)}
 		>
@@ -108,14 +117,15 @@
 					{name}
 					class={twMerge(components.button(), 'w-full justify-start')}
 					onclick={() => dialogElement.showModal()}
-					title={value && `${value.slice(0, 3).join(', ')}${value.length > 3 ? ` + ${value.length - 3} muuta` : ''}`}
+					title={value &&
+						`${value.slice(0, 3).join(', ')}${value.length > 3 ? ` + ${value.length - 3} muuta` : ''}`}
 				>
 					{text}
 				</button>
 			{/snippet}
 			{#snippet renderContent(dialogElement: HTMLDialogElement)}
-				<div class="flex h-full max-h-full overflow-hidden flex-col gap-4">
-					<div class="flex flex-row items-center align-middle justify-between gap-4">
+				<div class="flex h-full max-h-full flex-col gap-4 overflow-hidden">
+					<div class="flex flex-row items-center justify-between gap-4 align-middle">
 						<h2 class="font-semibold">{label}</h2>
 						<button
 							onclick={() => {
@@ -146,7 +156,9 @@
 						>
 							Valitse kaikki
 						</button>
-						<span class="flex flex-row gap-2 ml-auto my-auto text-sm text-gray-500 dark:text-gray-400">
+						<span
+							class="my-auto ml-auto flex flex-row gap-2 text-sm text-gray-500 dark:text-gray-400"
+						>
 							{list.filter((option) => option.selected).length} / {list.length} valittu
 						</span>
 					</div>
@@ -154,7 +166,7 @@
 						type="text"
 						bind:value={query}
 						placeholder="Hae..."
-						class={twMerge(components.input(), "w-full")}
+						class={twMerge(components.input(), 'w-full')}
 					/>
 					<div
 						class="order-4 col-span-full flex h-[var(--height)] max-h-full flex-col overflow-auto rounded border border-primary lg:order-3 lg:col-span-1"
@@ -164,17 +176,21 @@
 						     while the dialog is display:none makes the list measure a 0px viewport
 						     and render only a tiny window, hiding later options until scrolled. -->
 						{#if isOpen}
-							<SvelteVirtualList
-								items={filteredList}
-								bufferSize={30}
-							>
+							<SvelteVirtualList items={filteredList} bufferSize={30}>
 								{#snippet renderItem(item: ListItem, index: number)}
 									<button
 										onclick={() => {
 											item.selected = !item.selected;
-											value = list.filter((option) => option.selected).map((option) => option.value);
+											value = list
+												.filter((option) => option.selected)
+												.map((option) => option.value);
 										}}
-										class={twMerge(components.button(), 'w-full rounded-none border-none', index % 2 === 0 && 'bg-gray-200 dark:bg-zinc-900', item.selected ? 'font-bold' : '')}
+										class={twMerge(
+											components.button(),
+											'w-full rounded-none border-none',
+											index % 2 === 0 && 'bg-gray-200 dark:bg-zinc-900',
+											item.selected ? 'font-bold' : ''
+										)}
 									>
 										<span
 											class="max-w-full overflow-hidden overflow-ellipsis whitespace-nowrap"
@@ -190,8 +206,12 @@
 					</div>
 				</div>
 				<div class="flex flex-row flex-wrap justify-end gap-4">
-					<span class="flex flex-row gap-2 mr-auto my-auto text-sm text-gray-500 dark:text-gray-400" title={originalFilter?.description || ''}>
-						<Icon name={originalFilter?.icon || 'list'} /> {originalFilter?.title || ''}
+					<span
+						class="my-auto mr-auto flex flex-row gap-2 text-sm text-gray-500 dark:text-gray-400"
+						title={originalFilter?.description || ''}
+					>
+						<Icon name={originalFilter?.icon || 'list'} />
+						{originalFilter?.title || ''}
 					</span>
 					<button
 						onclick={() => {

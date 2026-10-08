@@ -1,5 +1,5 @@
-import type { DrunkColumnNames } from "$lib/types";
-import { DrunkColumns, GenderOptionsMap} from "./constants";
+import type { DrunkColumnNames } from '$lib/types';
+import { DrunkColumns, GenderOptionsMap } from './constants';
 
 /**
  * Laskee alkoholin määrän, känni per euro ja BAC-arvot.
@@ -16,7 +16,7 @@ export function calculateDrunkValue(
 	volume: number,
 	percentage: number,
 	price: number,
-	gender: typeof GenderOptionsMap[keyof typeof GenderOptionsMap] = GenderOptionsMap.Unspecified,
+	gender: (typeof GenderOptionsMap)[keyof typeof GenderOptionsMap] = GenderOptionsMap.Unspecified,
 	weight?: number,
 	itemName?: string
 ): Record<DrunkColumnNames, number> {
@@ -43,18 +43,22 @@ export function calculateDrunkValue(
 	const alcoholPerEuro = price > 0 && Number.isFinite(price) ? pureAlcoholGrams / price : 0;
 
 	// Lasketaan arvioitu BAC (‰) ja estetään negatiiviset arvot (ei negatiivista promillea)
-	const estimatedBACRaw = pureAlcoholGrams / (weight * r)
+	const estimatedBACRaw = pureAlcoholGrams / (weight * r);
 	const estimatedBAC = Number.isFinite(estimatedBACRaw) ? Math.max(0, estimatedBACRaw) : 0;
 
 	// Lasketaan promillea per euro (ei jaeta nollalla)
-	const bacPerEuro = price > 0 && Number.isFinite(price) && Number.isFinite(estimatedBAC) ? estimatedBAC / price : 0;
+	const bacPerEuro =
+		price > 0 && Number.isFinite(price) && Number.isFinite(estimatedBAC) ? estimatedBAC / price : 0;
 
 	// Lasketaan annokset (1 annos = 12g)
 	const servings = pureAlcoholGrams / 12;
 
 	// € per litra raakaa alkoholia (varmistetaan, että nimittäjä ei ole nolla)
 	const alcoholLiters = volume * (percentage / 100);
-	const euroPerLiter = alcoholLiters > 0 && Number.isFinite(alcoholLiters) && Number.isFinite(price) ? price / alcoholLiters : 0;
+	const euroPerLiter =
+		alcoholLiters > 0 && Number.isFinite(alcoholLiters) && Number.isFinite(price)
+			? price / alcoholLiters
+			: 0;
 
 	if (
 		!Number.isFinite(pureAlcoholGrams) ||
@@ -64,7 +68,18 @@ export function calculateDrunkValue(
 		!Number.isFinite(servings) ||
 		!Number.isFinite(euroPerLiter)
 	) {
-		console.log("Invalid input values. Please ensure volume, percentage, price, and weight are valid numbers., Item: " + (itemName || "Unknown") + ", Volume: " + volume + ", Percentage: " + percentage + ", Price: " + price + ", Weight: " + weight);
+		console.log(
+			'Invalid input values. Please ensure volume, percentage, price, and weight are valid numbers., Item: ' +
+				(itemName || 'Unknown') +
+				', Volume: ' +
+				volume +
+				', Percentage: ' +
+				percentage +
+				', Price: ' +
+				price +
+				', Weight: ' +
+				weight
+		);
 	}
 
 	return {

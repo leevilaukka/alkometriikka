@@ -25,21 +25,24 @@
 		sendAnalyticsEvent('preferred_store_changed', {
 			storeId: store.id,
 			storeName: store.name,
-			city: getStoreCity(store),
+			city: getStoreCity(store)
 		});
 	}
 
-
-	$effect(() => data.store && setSEO({
-		og: {
-			title: generateTitle(`Myymälä - ${data.store.name}`),
-			description: storeDescription(data.store),
-			url: window.location.href,
-			type: 'website',
-		},
-		keywords: `Alko, myymälä, ${data.store.name}, ${data.store.address}, ${data.store.postalCode}, ${data.store.postOffice}`,
-		description: storeDescription(data.store),
-	}));
+	$effect(
+		() =>
+			data.store &&
+			setSEO({
+				og: {
+					title: generateTitle(`Myymälä - ${data.store.name}`),
+					description: storeDescription(data.store),
+					url: window.location.href,
+					type: 'website'
+				},
+				keywords: `Alko, myymälä, ${data.store.name}, ${data.store.address}, ${data.store.postalCode}, ${data.store.postOffice}`,
+				description: storeDescription(data.store)
+			})
+	);
 </script>
 
 <svelte:head>
@@ -99,10 +102,15 @@
 				</span>
 			</div>
 
-			<div class="grid grid-cols-2 gap-2 border-t border-primary pt-4 sm:flex sm:flex-wrap sm:gap-3">
+			<div
+				class="grid grid-cols-2 gap-2 border-t border-primary pt-4 sm:flex sm:flex-wrap sm:gap-3"
+			>
 				<a
 					href={`/?${AllColumns.StoreAvailability}=${encodeURIComponent(store.name)}`}
-					class={twMerge(components.button({ size: 'md' }), 'col-span-2 w-full sm:w-auto justify-center sm:col-span-1 px-3 py-2.5 text-base sm:px-5 sm:py-3 sm:text-lg')}
+					class={twMerge(
+						components.button({ size: 'md' }),
+						'col-span-2 w-full justify-center px-3 py-2.5 text-base sm:col-span-1 sm:w-auto sm:px-5 sm:py-3 sm:text-lg'
+					)}
 				>
 					<Icon name="list" />
 					<span>Myymälän valikoima</span>
@@ -111,7 +119,7 @@
 					type="button"
 					class={twMerge(
 						components.button({ size: 'md', type: isPreferred ? 'positive' : 'primary' }),
-						'col-span-2 w-full sm:w-auto justify-center sm:col-span-1 px-3 py-2.5 text-base sm:px-5 sm:py-3 sm:text-lg'
+						'col-span-2 w-full justify-center px-3 py-2.5 text-base sm:col-span-1 sm:w-auto sm:px-5 sm:py-3 sm:text-lg'
 					)}
 					disabled={isPreferred}
 					onclick={() => selectPreferredStore(store)}
@@ -122,7 +130,10 @@
 					href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(directionsQuery)}`}
 					target="_blank"
 					rel="noopener noreferrer"
-					class={twMerge(components.button({ size: 'md' }), 'w-full sm:w-auto justify-center px-3 py-2.5 text-base sm:px-5 sm:py-3 sm:text-lg')}
+					class={twMerge(
+						components.button({ size: 'md' }),
+						'w-full justify-center px-3 py-2.5 text-base sm:w-auto sm:px-5 sm:py-3 sm:text-lg'
+					)}
 				>
 					<Icon name="map_pin" />
 					<span class="sm:hidden">Kartta</span>
@@ -134,7 +145,10 @@
 					target="_blank"
 					rel="noopener noreferrer"
 					referrerpolicy="no-referrer"
-					class={twMerge(components.button({ size: 'md' }), 'w-full sm:w-auto justify-center px-3 py-2.5 text-base sm:px-5 sm:py-3 sm:text-lg')}
+					class={twMerge(
+						components.button({ size: 'md' }),
+						'w-full justify-center px-3 py-2.5 text-base sm:w-auto sm:px-5 sm:py-3 sm:text-lg'
+					)}
 				>
 					<span>Alkon sivu</span>
 					<Icon name="link_external" />
@@ -184,7 +198,9 @@
 		{@render nav()}
 		<div class="flex flex-col gap-2">
 			<h1 class="text-2xl font-bold md:text-3xl">Myymälää ei löytynyt</h1>
-			<p class="text-secondary">Valitettavasti myymälää ei löytynyt. Tarkista osoite ja yritä uudelleen.</p>
+			<p class="text-secondary">
+				Valitettavasti myymälää ei löytynyt. Tarkista osoite ja yritä uudelleen.
+			</p>
 		</div>
 	</div>
 {/if}

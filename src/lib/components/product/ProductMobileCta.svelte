@@ -25,7 +25,9 @@
 
 <BottomBar class={_class}>
 	<div class="flex shrink-0 flex-col">
-		<strong class="text-lg leading-tight">{formatValue(product[AllColumns.Price], AllColumns.Price)}</strong>
+		<strong class="text-lg leading-tight"
+			>{formatValue(product[AllColumns.Price], AllColumns.Price)}</strong
+		>
 		<span class="text-xs text-secondary">
 			{formatValue(product[AllColumns.BottleSize], AllColumns.BottleSize)} · {formatValue(
 				product[AllColumns.PricePerLiter],
@@ -39,7 +41,7 @@
 			target="_blank"
 			rel="noopener noreferrer"
 			referrerpolicy="no-referrer"
-			class={twMerge(components.button({ size: 'lg' }), 'ml-auto h-11 aspect-square shrink-0')}
+			class={twMerge(components.button({ size: 'lg' }), 'ml-auto aspect-square h-11 shrink-0')}
 			aria-label="Alkon tuotesivu"
 		>
 			<Icon name="link_external" />
@@ -51,7 +53,10 @@
 		type="button"
 		onclick={handleToggleCompare}
 		aria-label={inCompare ? 'Poista vertailusta' : 'Lisää vertailuun'}
-		class={twMerge(components.button({ type: inCompare ? 'positive' : 'primary', size: 'lg' }), 'h-11 aspect-square shrink-0 sm:aspect-auto')}
+		class={twMerge(
+			components.button({ type: inCompare ? 'positive' : 'primary', size: 'lg' }),
+			'aspect-square h-11 shrink-0 sm:aspect-auto'
+		)}
 	>
 		<span class="hidden sm:inline">{inCompare ? 'Vertailussa' : 'Vertaile'}</span>
 		<Icon name="compare" />

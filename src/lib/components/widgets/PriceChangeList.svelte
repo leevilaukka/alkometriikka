@@ -2,7 +2,11 @@
 	import { AllColumns } from '$lib/utils/constants';
 	import { formatValue } from '$lib/utils/format';
 	import type { PriceChange } from '$lib/utils/metrics';
-	import { formatPriceChangeDate, formatPriceChangePercent, isPriceDrop } from '$lib/utils/priceChanges';
+	import {
+		formatPriceChangeDate,
+		formatPriceChangePercent,
+		isPriceDrop
+	} from '$lib/utils/priceChanges';
 	import { twMerge } from 'tailwind-merge';
 
 	/** Rows of price changes, newest first. */

@@ -18,13 +18,20 @@
 
 	// The product's category page, for browsing the products it's compared against
 	const categoryNode = $derived(
-		findProductCategoryTrail(kaljakori.getCategoryTree(), product[AllColumns.Type], product[AllColumns.SubType]).trail.at(-1)
+		findProductCategoryTrail(
+			kaljakori.getCategoryTree(),
+			product[AllColumns.Type],
+			product[AllColumns.SubType]
+		).trail.at(-1)
 	);
 </script>
 
 {#snippet categoryLink(className: string)}
 	{#if categoryNode}
-		<a href={categoryNode.path} class={twMerge('group items-center gap-1 text-sm text-secondary', className)}>
+		<a
+			href={categoryNode.path}
+			class={twMerge('group items-center gap-1 text-sm text-secondary', className)}
+		>
 			<span class="group-hover:underline">Selaa kategoriaa {categoryNode.name}</span>
 			<Icon name="chevron_right" />
 		</a>
@@ -43,14 +50,18 @@
 		</div>
 		<div class="grid grid-cols-2 gap-3.5 lg:grid-cols-4">
 			{#each result.metrics as metric (metric.key)}
-				{@const showMedian = metric.key === AllColumns.PricePerLiter && result.medianPricePerLiter !== null}
+				{@const showMedian =
+					metric.key === AllColumns.PricePerLiter && result.medianPricePerLiter !== null}
 				<div class="flex flex-col gap-2 rounded border border-primary bg-primary p-3.5">
 					<span class="text-sm text-secondary">{metric.label}</span>
 					<strong class="text-2xl leading-tight font-bold">{metric.value}</strong>
 					<div class="h-1.5 overflow-hidden rounded-full bg-secondary">
-						<div class="h-full rounded-full bg-brand-3" style={`width: ${metric.barPercent}%`}></div>
+						<div
+							class="h-full rounded-full bg-brand-3"
+							style={`width: ${metric.barPercent}%`}
+						></div>
 					</div>
-					<span class="text-sm text-secondary text-wrap-pretty">
+					<span class="text-wrap-pretty text-sm text-secondary">
 						{metric.note}{#if showMedian}. Mediaani {formatRoundedPricePerLiter(
 								result.medianPricePerLiter as number
 							)}{/if}

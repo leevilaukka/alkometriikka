@@ -14,10 +14,7 @@
 	import { generateTitle, setSEO } from '$lib/utils/helpers';
 	import { staticPage } from '$lib/utils/seo';
 	import { requestUserLocation } from '$lib/utils/location';
-	import {
-		needsOrientationPermission,
-		requestOrientationPermission
-	} from '$lib/utils/orientation';
+	import { needsOrientationPermission, requestOrientationPermission } from '$lib/utils/orientation';
 	import { components } from '$lib/utils/styles';
 
 	let { data } = $props();
@@ -143,14 +140,22 @@
 			{#key target.id}
 				<CompassDial store={target} />
 			{/key}
-			<button type="button" class={components.button({ size: 'md' })} onclick={() => skipTarget(target)}>
+			<button
+				type="button"
+				class={components.button({ size: 'md' })}
+				onclick={() => skipTarget(target)}
+			>
 				<Icon name="skip_next" />
 				<span>Seuraava lähin</span>
 			</button>
 		{:else if candidates.length === 0}
 			<p class="text-secondary">Sopivia myymälöitä ei löytynyt.</p>
 			{#if skipped.length}
-				<button type="button" class={components.button({ size: 'md' })} onclick={() => resetFilters(onlyOpen)}>
+				<button
+					type="button"
+					class={components.button({ size: 'md' })}
+					onclick={() => resetFilters(onlyOpen)}
+				>
 					Aloita alusta
 				</button>
 			{/if}

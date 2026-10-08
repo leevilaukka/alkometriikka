@@ -23,7 +23,7 @@
 	let { product, kaljakori } = $props();
 
 	let listRef: SvelteVirtualList<PriceListItem | null> | null = $state(null);
-    let showScrollToTopButton = $state(false);
+	let showScrollToTopButton = $state(false);
 
 	let similarProducts = $derived(
 		findSimilarProducts(
@@ -50,13 +50,13 @@
 		else goto('/');
 	}
 
-    onMount(() => {
-        const viewport = document.getElementById("virtual-list-viewport")
-        viewport?.addEventListener("scroll", () => {
-            if(viewport.scrollTop > 0) showScrollToTopButton = true;
-            else showScrollToTopButton = false;
-        })
-    })
+	onMount(() => {
+		const viewport = document.getElementById('virtual-list-viewport');
+		viewport?.addEventListener('scroll', () => {
+			if (viewport.scrollTop > 0) showScrollToTopButton = true;
+			else showScrollToTopButton = false;
+		});
+	});
 
 	$effect(() => {
 		setSEO({
@@ -71,7 +71,7 @@
 				title: `Samankaltaisia tuotteita kuin ${product[AllColumns.Name]} | Alkometriikka`,
 				description: `Katso samankaltaisia tuotteita kuin ${product[AllColumns.Name]} Alkometriikasta. Vertaa hintoja, ominaisuuksia ja löydä parhaat vaihtoehdot.`,
 				image: generateImageUrl(product[AllColumns.Number], 'medium'),
-				card: "summary_large_image"
+				card: 'summary_large_image'
 			},
 			image: {
 				url: generateImageUrl(product[AllColumns.Number], 'medium'),
@@ -79,29 +79,33 @@
 				height: 192,
 				width: 160
 			}
-		})
+		});
 	});
 </script>
 
-<div class={twMerge('mx-auto flex w-full max-w-[120ch] flex-auto flex-col flex-nowrap p-4 gap-4 md:p-6')}>
+<div
+	class={twMerge(
+		'mx-auto flex w-full max-w-[120ch] flex-auto flex-col flex-nowrap gap-4 p-4 md:p-6'
+	)}
+>
 	<div class="flex w-full items-center justify-between gap-4">
 		<button onclick={() => handleBack()} class={twMerge(components.button({ size: 'md' }))}>
 			<Icon name={window.history.length > 1 ? 'arrow_back' : 'home'} class="inline-block" />
 			<span>{window.history.length > 1 ? 'Takaisin' : 'Etusivulle'}</span>
 		</button>
-        {#if showScrollToTopButton}
-            <button
-                in:fade={{ duration: 200 }}
-                out:fade={{ duration: 200 }}
-                onclick={() => {
-                    listRef?.scroll({ index: 0, smoothScroll: false });
-                }}
-                class={twMerge(components.button({ size: 'md' }))}
-            >
-                <Icon name={'arrow_to_top'} />
-                <span>{$isMobile ? 'Alkuun' : 'Hyppää alkuun'}</span>
-            </button>
-        {/if}
+		{#if showScrollToTopButton}
+			<button
+				in:fade={{ duration: 200 }}
+				out:fade={{ duration: 200 }}
+				onclick={() => {
+					listRef?.scroll({ index: 0, smoothScroll: false });
+				}}
+				class={twMerge(components.button({ size: 'md' }))}
+			>
+				<Icon name={'arrow_to_top'} />
+				<span>{$isMobile ? 'Alkuun' : 'Hyppää alkuun'}</span>
+			</button>
+		{/if}
 	</div>
 	<div class="flex max-h-full flex-auto flex-col overflow-hidden">
 		<SvelteVirtualList
@@ -111,62 +115,67 @@
 		>
 			{#snippet renderItem(item, idx: number)}
 				{#if idx === 0}
-                    <div class="flex w-full flex-col gap-3">
-                        <div class="grid w-full grid-cols-1 md:grid-cols-[auto_1fr] gap-6">
-                            <div class="flex aspect-square h-56 w-full max-w-full p-6 md:w-fit bg-white rounded">
-                                <ProductImage
-                                    number={product[AllColumns.Number]}
-                                    name={product[AllColumns.Name]}
-                                    transform="medium"
-                                    alt={product[AllColumns.Name]}
-                                />
-                            </div>
-                            <div class="flex w-full flex-col justify-between gap-3">
-                                <div class="flex flex-col gap-2">
-                                    <h2 class="text-lg font-bold md:text-xl">Samankaltaisia tuotteita kuin:</h2>
-                                    <h1 class="text-2xl font-bold md:text-3xl">
+					<div class="flex w-full flex-col gap-3">
+						<div class="grid w-full grid-cols-1 gap-6 md:grid-cols-[auto_1fr]">
+							<div class="flex aspect-square h-56 w-full max-w-full rounded bg-white p-6 md:w-fit">
+								<ProductImage
+									number={product[AllColumns.Number]}
+									name={product[AllColumns.Name]}
+									transform="medium"
+									alt={product[AllColumns.Name]}
+								/>
+							</div>
+							<div class="flex w-full flex-col justify-between gap-3">
+								<div class="flex flex-col gap-2">
+									<h2 class="text-lg font-bold md:text-xl">Samankaltaisia tuotteita kuin:</h2>
+									<h1 class="text-2xl font-bold md:text-3xl">
 										<a href={`/tuotteet/${product[AllColumns.Number]}/`} class="hover:underline">
 											{product[AllColumns.Name]}
 										</a>
-                                    </h1>
-                                    <span>
-                                        {valueToString(product[AllColumns.Manufacturer], AllColumns.Manufacturer)} | {valueToString(
-                                            product[AllColumns.BottleSize],
-                                            AllColumns.BottleSize
-                                        )} | {valueToString(
-                                            product[AllColumns.AlcoholPercentage],
-                                            AllColumns.AlcoholPercentage
-                                        )}
-                                        {product[AllColumns.Vintage] !== ''
-                                            ? `| ${valueToString(product[AllColumns.Vintage], AllColumns.Vintage)}`
-                                            : ''}</span
-                                    >
-                                    <p class="w-fit rounded bg-gray-100 dark:bg-zinc-700 dark:text-white px-1">{product[AllColumns.Availability]}</p>
-                                    <div class="flex w-full flex-row gap-2 md:flex-row">
-                                        <BadgeList item={product} />
-                                    </div>
-                                </div>
-                                <div class="flex flex-col items-end gap-1">
+									</h1>
+									<span>
+										{valueToString(product[AllColumns.Manufacturer], AllColumns.Manufacturer)} | {valueToString(
+											product[AllColumns.BottleSize],
+											AllColumns.BottleSize
+										)} | {valueToString(
+											product[AllColumns.AlcoholPercentage],
+											AllColumns.AlcoholPercentage
+										)}
+										{product[AllColumns.Vintage] !== ''
+											? `| ${valueToString(product[AllColumns.Vintage], AllColumns.Vintage)}`
+											: ''}</span
+									>
+									<p class="w-fit rounded bg-gray-100 px-1 dark:bg-zinc-700 dark:text-white">
+										{product[AllColumns.Availability]}
+									</p>
+									<div class="flex w-full flex-row gap-2 md:flex-row">
+										<BadgeList item={product} />
+									</div>
+								</div>
+								<div class="flex flex-col items-end gap-1">
 									<p class="text-4xl font-bold">
 										{formatValue(product[AllColumns.Price], AllColumns.Price)}
-                                    </p>
-                                    <span class="text-sm text-secondary">
-                                        ({formatValue(product[AllColumns.BottleSize], AllColumns.BottleSize)} | {formatValue(product[AllColumns.PricePerLiter], AllColumns.PricePerLiter)})
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-[1fr_auto_1fr] items-center gap-3">
-                            <hr class="border-primary">
-                            <span class="text-sm text-secondary">Vastaavin ensin</span>
-                            <hr class="border-primary">
-                        </div>
-                    </div>
+									</p>
+									<span class="text-sm text-secondary">
+										({formatValue(product[AllColumns.BottleSize], AllColumns.BottleSize)} | {formatValue(
+											product[AllColumns.PricePerLiter],
+											AllColumns.PricePerLiter
+										)})
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="grid grid-cols-[1fr_auto_1fr] items-center gap-3">
+							<hr class="border-primary" />
+							<span class="text-sm text-secondary">Vastaavin ensin</span>
+							<hr class="border-primary" />
+						</div>
+					</div>
 				{:else}
 					<ProductPreview product={item} {kaljakori}>
 						{#snippet renderExtras()}
 							<div
-								class="absolute top-0 left-0 flex flex-nowrap items-center gap-0.5 rounded-br bg-gray-100 dark:bg-zinc-700 px-1.5 py-0.5 text-sm text-secondary"
+								class="absolute top-0 left-0 flex flex-nowrap items-center gap-0.5 rounded-br bg-gray-100 px-1.5 py-0.5 text-sm text-secondary dark:bg-zinc-700"
 							>
 								<Icon name="hashtag" />
 								<span>{`${idx}`}</span>
