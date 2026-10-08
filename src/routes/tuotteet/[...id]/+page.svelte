@@ -7,7 +7,7 @@
 	import { keepAutoLocationFresh } from '$lib/utils/location';
 	import type { AvailabilityStore, PriceListItem } from '$lib/types.js';
 
-	let { data } = $props(); 
+	let { data } = $props();
 
 	$effect(() => {
 		if ($preferredStoreId === AUTO_STORE_ID) return keepAutoLocationFresh();
@@ -30,7 +30,19 @@
 	{@const availabilityStores = (alko.availability.product[id as string] ?? [])
 		.map((storeId: string) => alko.availability.stores[storeId])
 		.filter((store: AvailabilityStore | undefined): store is AvailabilityStore => Boolean(store))}
-	{@const preferredStore = resolvePreferredStore(alko.availability.stores, $preferredStoreId, $userLocation)}
-	{@const availabilityUpdated = alko.availability?.lastUpdated ? new Date(alko.availability.lastUpdated) : undefined}
-	<Product product={product} kaljakori={alko.kaljakori} {availabilityStores} {preferredStore} availabilityUpdated={availabilityUpdated} />
+	{@const preferredStore = resolvePreferredStore(
+		alko.availability.stores,
+		$preferredStoreId,
+		$userLocation
+	)}
+	{@const availabilityUpdated = alko.availability?.lastUpdated
+		? new Date(alko.availability.lastUpdated)
+		: undefined}
+	<Product
+		{product}
+		kaljakori={alko.kaljakori}
+		{availabilityStores}
+		{preferredStore}
+		{availabilityUpdated}
+	/>
 {/await}

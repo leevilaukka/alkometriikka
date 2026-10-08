@@ -3,7 +3,7 @@
 	import type { PriceListItem } from '$lib/types.js';
 	import SimilarProducts from '$lib/components/views/SimilarProducts.svelte';
 
-	let { data } = $props(); 
+	let { data } = $props();
 	let id = $derived(page.params.id?.split('/')[0]); // Handle both /tuotteet/123 and /tuotteet/123/extra paths
 </script>
 
@@ -18,5 +18,5 @@
 	</div>
 {:then alko}
 	{@const product = alko.kaljakori.findById(id as string) as PriceListItem}
-	<SimilarProducts product={product} kaljakori={alko.kaljakori} />
+	<SimilarProducts {product} kaljakori={alko.kaljakori} />
 {/await}

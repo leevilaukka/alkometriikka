@@ -85,7 +85,9 @@ export function computeQualityMetrics(
 	const sameCategory = (item: PriceListItem) => {
 		if (!typeNode) return item[AllColumns.Type] === product[AllColumns.Type];
 		if (categorySlug(String(item[AllColumns.Type] ?? '')) !== typeNode.slug) return false;
-		return !subTypeNode || categorySlug(String(item[AllColumns.SubType] ?? '')) === subTypeNode.slug;
+		return (
+			!subTypeNode || categorySlug(String(item[AllColumns.SubType] ?? '')) === subTypeNode.slug
+		);
 	};
 	const peers = kaljakori.data.filter(
 		(item) =>
@@ -203,7 +205,10 @@ function hasComparableValue(value: unknown): boolean {
  * row are flagged using {@link getBestProductNumbers}.
  */
 export function computeComparisonRows(products: PriceListItem[]): ComparisonRow[] {
-	const columns = [...Object.values(DatasetColumns), ...Object.values(DrunkColumns)] as ColumnNames[];
+	const columns = [
+		...Object.values(DatasetColumns),
+		...Object.values(DrunkColumns)
+	] as ColumnNames[];
 
 	const rows: ComparisonRow[] = [];
 
@@ -235,7 +240,9 @@ function median(values: number[]): number | null {
 }
 
 function positiveValues(products: PriceListItem[], key: ColumnNames): number[] {
-	return products.map((product) => Number(product[key])).filter((value) => Number.isFinite(value) && value > 0);
+	return products
+		.map((product) => Number(product[key]))
+		.filter((value) => Number.isFinite(value) && value > 0);
 }
 
 export type HistogramBin = { from: number; to: number; count: number };
@@ -326,9 +333,7 @@ export function recentPriceChanges(products: PriceListItem[], since: string): Pr
 			break;
 		}
 	}
-	return changes.sort(
-		(a, b) => b.date.localeCompare(a.date) || a.percent - b.percent
-	);
+	return changes.sort((a, b) => b.date.localeCompare(a.date) || a.percent - b.percent);
 }
 
 /**

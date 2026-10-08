@@ -117,7 +117,9 @@ export function categoryOgDisplays(
 		name,
 		...(parent ? { parent } : {}),
 		count,
-		medianPricePerLiter: cents(median(items.flatMap((item) => (item.perLiter ? [item.perLiter] : [])))),
+		medianPricePerLiter: cents(
+			median(items.flatMap((item) => (item.perLiter ? [item.perLiter] : [])))
+		),
 		medianPrice: cents(median(items.flatMap((item) => (item.price ? [item.price] : [])))),
 		children: children.slice(0, MAX_CHILDREN).map((child) => child.name)
 	});
@@ -168,7 +170,11 @@ export function categoryOgDesignFingerprint(): Promise<string> {
 	designFingerprintPromise ??= (async () => {
 		try {
 			const parts: string[] = [CATEGORY_OG_DESIGN_VERSION];
-			parts.push(sha256Hex(normalizeSource(await Bun.file(path.join(import.meta.dir, 'og-category-card.ts')).text())));
+			parts.push(
+				sha256Hex(
+					normalizeSource(await Bun.file(path.join(import.meta.dir, 'og-category-card.ts')).text())
+				)
+			);
 			const favicon = await loadFavicon();
 			if (favicon) parts.push(sha256Hex(favicon));
 			for (const font of await loadFonts()) parts.push(sha256Hex(font.data));
@@ -182,10 +188,7 @@ export function categoryOgDesignFingerprint(): Promise<string> {
 
 /** `/kategoriat/viinit/punaviinit/` → `viinit--punaviinit`, the index → `index`. */
 function pageSlug(pagePath: string): string {
-	const parts = pagePath
-		.slice(CATEGORY_BASE_PATH.length)
-		.split('/')
-		.filter(Boolean);
+	const parts = pagePath.slice(CATEGORY_BASE_PATH.length).split('/').filter(Boolean);
 	return parts.length ? parts.join('--') : 'index';
 }
 
@@ -238,7 +241,11 @@ function stat(label: string, value: string, width: number): El {
 export async function categoryOgSvg(display: CategoryOgDisplay): Promise<string> {
 	const [fonts, favicon] = await Promise.all([loadFonts(), loadFavicon()]);
 	const isIndex = display.path === `${CATEGORY_BASE_PATH}/`;
-	const eyebrow = isIndex ? 'Alkon valikoima' : display.parent ? `Kategoriat › ${display.parent}` : 'Kategoriat';
+	const eyebrow = isIndex
+		? 'Alkon valikoima'
+		: display.parent
+			? `Kategoriat › ${display.parent}`
+			: 'Kategoriat';
 	const nameSize = display.name.length > 22 ? 64 : 84;
 
 	const values: [string, string][] = [
@@ -246,7 +253,8 @@ export async function categoryOgSvg(display: CategoryOgDisplay): Promise<string>
 	];
 	if (display.medianPricePerLiter !== undefined)
 		values.push(['Litrahinnan mediaani', `${formatEuro(display.medianPricePerLiter)}/l`]);
-	if (display.medianPrice !== undefined) values.push(['Hinnan mediaani', formatEuro(display.medianPrice)]);
+	if (display.medianPrice !== undefined)
+		values.push(['Hinnan mediaani', formatEuro(display.medianPrice)]);
 	const statWidth = Math.floor((CONTENT_WIDTH - STAT_GAP * (values.length - 1)) / values.length);
 	const stats = values.map(([label, value]) => stat(label, value, statWidth));
 
@@ -329,7 +337,16 @@ export async function categoryOgSvg(display: CategoryOgDisplay): Promise<string>
 				display.children.length
 					? el(
 							'div',
-							{ style: { display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: 10, height: 46, overflow: 'hidden' } },
+							{
+								style: {
+									display: 'flex',
+									flexDirection: 'row',
+									flexWrap: 'wrap',
+									gap: 10,
+									height: 46,
+									overflow: 'hidden'
+								}
+							},
 							...display.children.map((child) =>
 								el(
 									'span',

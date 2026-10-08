@@ -5,7 +5,7 @@
 	import { page } from '$app/state';
 	import { AllColumns } from '$lib/utils/constants';
 
-	let  { data }: PageProps = $props();
+	let { data }: PageProps = $props();
 	resetSEO();
 
 	// A store filter from the URL needs store availability, or the list would start out empty

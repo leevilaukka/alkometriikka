@@ -52,7 +52,11 @@
 	}
 </script>
 
-<Popup bind:dialogElement class={twMerge('w-[min(50ch,100%)] gap-4 p-4', dialogClass)} onClose={reset}>
+<Popup
+	bind:dialogElement
+	class={twMerge('w-[min(50ch,100%)] gap-4 p-4', dialogClass)}
+	onClose={reset}
+>
 	{#snippet renderButton(dialogElement: HTMLDialogElement)}
 		<button
 			class={twMerge(components.button(), triggerClass)}
@@ -97,7 +101,10 @@
 					{/each}
 				</div>
 				<button
-					class={twMerge(components.button({ type: 'negative', size: 'md' }), 'justify-center px-4 py-2')}
+					class={twMerge(
+						components.button({ type: 'negative', size: 'md' }),
+						'justify-center px-4 py-2'
+					)}
 					disabled={!anySelected || sending}
 					onclick={submit}
 				>

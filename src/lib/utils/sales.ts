@@ -77,12 +77,15 @@ function formatISODate(date?: string): string | null {
  * Returns `null` when the product is not on sale.
  */
 
-export function getSaleInfo(item: {
-	price?: unknown;
-	normalPrice?: unknown;
-	campaignStart?: unknown;
-	campaignEnd?: unknown;
-}, today?: string): SaleInfo | null {
+export function getSaleInfo(
+	item: {
+		price?: unknown;
+		normalPrice?: unknown;
+		campaignStart?: unknown;
+		campaignEnd?: unknown;
+	},
+	today?: string
+): SaleInfo | null {
 	const salePrice = toNumber(item.price);
 	const normalPrice = toNumber(item.normalPrice);
 	if (salePrice === null || normalPrice === null || salePrice <= 0 || normalPrice <= salePrice) {

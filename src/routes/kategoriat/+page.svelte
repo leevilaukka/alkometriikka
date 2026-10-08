@@ -45,7 +45,8 @@
 									class="flex items-center gap-1.5 rounded border border-primary bg-primary px-3 py-2 text-sm hover:bg-secondary md:px-2.5 md:py-1"
 								>
 									<span>{child.name}</span>
-									<span class="rounded bg-secondary px-1 text-xs text-secondary">{child.count}</span>
+									<span class="rounded bg-secondary px-1 text-xs text-secondary">{child.count}</span
+									>
 								</a>
 							</li>
 						{/each}

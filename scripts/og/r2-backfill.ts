@@ -25,7 +25,11 @@ import { fetchProductImage as fetchAlkoImage } from '../lib/alko-image';
  */
 
 const fetchProductImage = (id: string) =>
-	fetchAlkoImage(id, { attempts: 5, timeoutMs: 30_000, backoffMs: (attempt) => 1000 * 2 ** attempt });
+	fetchAlkoImage(id, {
+		attempts: 5,
+		timeoutMs: 30_000,
+		backoffMs: (attempt) => 1000 * 2 ** attempt
+	});
 
 const MANIFEST_FILE = 'og-images.json';
 

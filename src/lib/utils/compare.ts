@@ -64,5 +64,12 @@ export function compareURL(ids: string[]): string {
 }
 
 export function compareIdsFromParam(param: string | undefined | null): string[] {
-	return [...new Set((param ?? '').split(',').map((id) => id.trim()).filter(Boolean))];
+	return [
+		...new Set(
+			(param ?? '')
+				.split(',')
+				.map((id) => id.trim())
+				.filter(Boolean)
+		)
+	];
 }

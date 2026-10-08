@@ -3,7 +3,10 @@
 // Kept free of `$lib` imports so the scripts can import it.
 
 const number = (value: number, maxDigits: number, minDigits = 0) =>
-	value.toLocaleString('fi-FI', { minimumFractionDigits: minDigits, maximumFractionDigits: maxDigits });
+	value.toLocaleString('fi-FI', {
+		minimumFractionDigits: minDigits,
+		maximumFractionDigits: maxDigits
+	});
 
 export type ProductSeoInput = {
 	name: string;
@@ -18,7 +21,9 @@ export type ProductSeoInput = {
 export function productDescription(input: ProductSeoInput): string {
 	const price = input.price && input.price > 0 ? `${number(input.price, 2, 2)} €` : '';
 	const facts = [
-		input.alcoholPercentage && input.alcoholPercentage > 0 ? `${number(input.alcoholPercentage, 1)} %` : '',
+		input.alcoholPercentage && input.alcoholPercentage > 0
+			? `${number(input.alcoholPercentage, 1)} %`
+			: '',
 		input.volume && input.volume > 0 ? `${number(input.volume, 3)} l` : '',
 		price && input.pricePerLitre && input.pricePerLitre > 0
 			? `${price} (${number(input.pricePerLitre, 2, 2)} €/l)`
@@ -38,7 +43,10 @@ export type StoreSeoInput = {
 };
 
 export function storeAddress(store: StoreSeoInput): string {
-	return [store.address, [store.postalCode, store.city || store.postOffice].filter(Boolean).join(' ')]
+	return [
+		store.address,
+		[store.postalCode, store.city || store.postOffice].filter(Boolean).join(' ')
+	]
 		.filter(Boolean)
 		.join(', ');
 }

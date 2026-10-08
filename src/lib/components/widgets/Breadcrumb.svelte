@@ -15,7 +15,9 @@
 	} = $props();
 </script>
 
-<nav class={twMerge('flex min-w-0 items-center gap-2 overflow-hidden text-sm text-secondary', _class)}>
+<nav
+	class={twMerge('flex min-w-0 items-center gap-2 overflow-hidden text-sm text-secondary', _class)}
+>
 	<a href="/" class="flex shrink-0 items-center gap-1 hover:text-black dark:hover:text-white">
 		<Icon name="home" class="text-base" />
 		<span class="hidden sm:inline">Etusivu</span>

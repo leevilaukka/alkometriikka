@@ -24,7 +24,7 @@
 		sendAnalyticsEvent('preferred_store_changed', {
 			storeId: store.id,
 			storeName: store.name,
-			city: getStoreCity(store),
+			city: getStoreCity(store)
 		});
 	}
 
@@ -61,7 +61,6 @@
 			.toLocaleLowerCase('fi-FI')
 			.includes(normalizedQuery)
 	)}
-	
 
 	<div class="mx-auto flex w-full max-w-[120ch] flex-col gap-6 p-6">
 		<header class="flex flex-col gap-2">
@@ -72,15 +71,22 @@
 		<div class="flex flex-wrap gap-2">
 			<button
 				type="button"
-				class={components.button({ type: $preferredStoreId === AUTO_STORE_ID ? 'positive' : 'primary' })}
+				class={components.button({
+					type: $preferredStoreId === AUTO_STORE_ID ? 'positive' : 'primary'
+				})}
 				disabled={$preferredStoreId === AUTO_STORE_ID}
 				onclick={() => {
 					$preferredStoreId = AUTO_STORE_ID;
 					requestUserLocation();
-					sendAnalyticsEvent('preferred_store_changed', { storeId: AUTO_STORE_ID, storeName: 'Auto' });
+					sendAnalyticsEvent('preferred_store_changed', {
+						storeId: AUTO_STORE_ID,
+						storeName: 'Auto'
+					});
 				}}
 			>
-				{$preferredStoreId === AUTO_STORE_ID ? 'Automaattinen valinta käytössä' : 'Valitse lähin myymälä automaattisesti'}
+				{$preferredStoreId === AUTO_STORE_ID
+					? 'Automaattinen valinta käytössä'
+					: 'Valitse lähin myymälä automaattisesti'}
 			</button>
 			<a href="/kompassi" class={components.button({ size: 'md' })}>
 				<Icon name="compass" />
@@ -108,7 +114,9 @@
 					{#each filteredStores as store (store.id)}
 						{@const address = formatAddress(store)}
 						{@const storeOpen = isStoreOpen(store)}
-						<li class="flex flex-col gap-3 border-b border-primary px-4 py-3 last:border-b-0 sm:flex-row sm:items-center">
+						<li
+							class="flex flex-col gap-3 border-b border-primary px-4 py-3 last:border-b-0 sm:flex-row sm:items-center"
+						>
 							<a href={`/myymalat/${store.id}/`} class="min-w-0 flex-1 hover:underline">
 								<span class="block font-semibold">{store.name}</span>
 								{#if address}
@@ -126,7 +134,10 @@
 								<button
 									type="button"
 									class={twMerge(
-										components.button({ size: 'sm', type: store.id === $preferredStoreId ? 'positive' : 'primary' }),
+										components.button({
+											size: 'sm',
+											type: store.id === $preferredStoreId ? 'positive' : 'primary'
+										}),
 										'shrink-0'
 									)}
 									disabled={store.id === $preferredStoreId}

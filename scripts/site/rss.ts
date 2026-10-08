@@ -298,32 +298,30 @@ function generateRssXml(
 
 /** Serializes feed items to the JSON Feed 1.1 format (https://jsonfeed.org). */
 function generateJsonFeed(items: FeedItem[], channel: ChannelInfo): string {
-	return JSON.stringify(
-		{
-			version: 'https://jsonfeed.org/version/1.1',
-			title: channel.title,
-			home_page_url: channel.link,
-			feed_url: channel.selfUrl,
-			description: channel.description,
-			language: 'fi',
-			favicon: `${SITE_URL}/favicon.ico`,
-			items: items.map((item) => {
-				const entry: Record<string, string | string[]> = {
-					id: item.guid,
-					url: item.link,
-					title: item.title,
-					content_html: item.description,
-					summary: stripHtml(item.description),
-					date_published: toIsoDate(item.date)
-				};
-				if (item.image) entry.image = item.image;
-				// Split the hierarchical "Tyyppi / Alatyyppi" category into flat tags,
-				// prefixed with any item tags ("Uutuus" for new products).
-				entry.tags = [...item.tags, ...item.category.split(' / ')].filter(Boolean);
-				return entry;
-			})
-		}
-	);
+	return JSON.stringify({
+		version: 'https://jsonfeed.org/version/1.1',
+		title: channel.title,
+		home_page_url: channel.link,
+		feed_url: channel.selfUrl,
+		description: channel.description,
+		language: 'fi',
+		favicon: `${SITE_URL}/favicon.ico`,
+		items: items.map((item) => {
+			const entry: Record<string, string | string[]> = {
+				id: item.guid,
+				url: item.link,
+				title: item.title,
+				content_html: item.description,
+				summary: stripHtml(item.description),
+				date_published: toIsoDate(item.date)
+			};
+			if (item.image) entry.image = item.image;
+			// Split the hierarchical "Tyyppi / Alatyyppi" category into flat tags,
+			// prefixed with any item tags ("Uutuus" for new products).
+			entry.tags = [...item.tags, ...item.category.split(' / ')].filter(Boolean);
+			return entry;
+		})
+	});
 }
 
 async function writePerProductFeeds(
@@ -397,7 +395,8 @@ async function writeCategoryFeeds(
 			const feed = items
 				.filter(
 					(item) =>
-						item.typeSlug === typeNode.slug && (!subTypeNode || item.subTypeSlug === subTypeNode.slug)
+						item.typeSlug === typeNode.slug &&
+						(!subTypeNode || item.subTypeSlug === subTypeNode.slug)
 				)
 				.slice(0, PER_CATEGORY_LIMIT);
 			if (feed.length === 0) continue;

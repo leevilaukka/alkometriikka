@@ -76,7 +76,10 @@ export function categoryDescription(trail: CategoryNode[]): string {
  * Nodes below {@link MIN_CATEGORY_PRODUCTS} are dropped.
  */
 export function buildCategoryTree(entries: Iterable<CategoryEntry>): CategoryNode[] {
-	const types = new Map<string, { name: string; count: number; children: Map<string, CategoryNode> }>();
+	const types = new Map<
+		string,
+		{ name: string; count: number; children: Map<string, CategoryNode> }
+	>();
 	for (const entry of entries) {
 		if (entry.removed) continue;
 		const type = asName(entry.type);

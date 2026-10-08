@@ -1,5 +1,10 @@
 <script lang="ts">
-	import { AllColumns, DatasetColumns, DrunkColumns, hideFromProductPageStats } from '$lib/utils/constants';
+	import {
+		AllColumns,
+		DatasetColumns,
+		DrunkColumns,
+		hideFromProductPageStats
+	} from '$lib/utils/constants';
 	import { headerToDisplayName, isNullish, sendAnalyticsEvent } from '$lib/utils/helpers';
 	import { formatValue } from '$lib/utils/format';
 	import type { PriceListItem } from '$lib/types';
@@ -38,7 +43,11 @@
 		for (const value of Object.values(DrunkColumns)) {
 			const rawValue = product[value];
 			if (rawValue !== null && rawValue !== undefined) {
-				out.push({ key: value, label: headerToDisplayName(value), value: String(formatValue(rawValue, value)) });
+				out.push({
+					key: value,
+					label: headerToDisplayName(value),
+					value: String(formatValue(rawValue, value))
+				});
 			}
 		}
 		return out;
@@ -49,7 +58,7 @@
 	<div class="grid grid-cols-1 bg-primary sm:grid-cols-2">
 		{#each rows as row (row.key)}
 			<div
-				class="grid grid-cols-[160px_minmax(0,1fr)] gap-3.5 border-b border-secondary px-4 py-3 sm:even:border-s sm:odd:pe-6 sm:even:ps-6"
+				class="grid grid-cols-[160px_minmax(0,1fr)] gap-3.5 border-b border-secondary px-4 py-3 sm:odd:pe-6 sm:even:border-s sm:even:ps-6"
 			>
 				<span class="text-sm text-secondary">{row.label}</span>
 				<span class="text-wrap-pretty">{row.value}</span>

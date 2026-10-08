@@ -28,7 +28,7 @@
 		component: Component<any>;
 	}[];
 
-	type tabId = typeof tabs[number]['id'];
+	type tabId = (typeof tabs)[number]['id'];
 
 	let tab = $state<tabId>('personal');
 	let dialogElement: HTMLDialogElement | undefined = $state();
@@ -51,7 +51,8 @@
 	);
 
 	const githubRepoBase = 'https://github.com/leevilaukka/alkometriikka';
-	const githubFileBase = 'https://raw.githubusercontent.com/leevilaukka/alkometriikka/refs/heads/gh-pages';
+	const githubFileBase =
+		'https://raw.githubusercontent.com/leevilaukka/alkometriikka/refs/heads/gh-pages';
 </script>
 
 <Popup bind:dialogElement class="gap-4 p-4">
@@ -85,15 +86,9 @@
 			{/each}
 		</div>
 		<!-- Render the active tab component, sourced from the tabs array -->
-		{@const ActiveTab = tabs.find(tabOption => tabOption.id === tab)?.component}
+		{@const ActiveTab = tabs.find((tabOption) => tabOption.id === tab)?.component}
 		{#if ActiveTab}
-			<ActiveTab
-				dialogElement={dialogElement}
-				stores={stores}
-				alko={alko}
-				githubRepoBase={githubRepoBase}
-				githubFileBase={githubFileBase}
-				gitCommitHash={gitCommitHash}
+			<ActiveTab {dialogElement} {stores} {alko} {githubRepoBase} {githubFileBase} {gitCommitHash}
 			></ActiveTab>
 		{/if}
 	{/snippet}

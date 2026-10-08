@@ -27,7 +27,9 @@
 	const changes = $derived(recentPriceChanges(products, since));
 	const drops = $derived(changes.filter(isPriceDrop).length);
 	// The same window on the price changes page, narrowed to this category
-	const pageHref = $derived(priceChangesURL({ days: WINDOW_DAYS, direction: 'all', typeSlug, subTypeSlug }));
+	const pageHref = $derived(
+		priceChangesURL({ days: WINDOW_DAYS, direction: 'all', typeSlug, subTypeSlug })
+	);
 </script>
 
 <CategorySection
@@ -53,7 +55,8 @@
 		{/if}
 		<a
 			href={feedHref}
-			onclick={() => sendAnalyticsEvent('click_feed', { feed: 'category', location: 'category_page' })}
+			onclick={() =>
+				sendAnalyticsEvent('click_feed', { feed: 'category', location: 'category_page' })}
 			class="group flex items-center gap-1 text-secondary"
 			title="Tilaa kategorian uutuudet ja hinnanmuutokset RSS-syötteenä"
 		>
