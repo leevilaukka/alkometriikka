@@ -59,6 +59,7 @@ import {
 } from './lifecycle.ts';
 import { toNumber } from '../../src/lib/utils/number.ts';
 import { DATA_PATH, HASHES_PATH, readDataset, writeDataset } from './dataset-file.ts';
+import { checkSyncSafety, missingCriticalColumns, restoreCriticalColumns } from './safeguards.ts';
 
 // ============================================================================
 // CONFIG & CONSTANTS
@@ -101,6 +102,10 @@ const DEFAULT_DETAIL_VERIFY_COOLDOWN_DAYS = 30;
 const DEFAULT_DETAIL_VERIFY_BATCH = 200;
 
 const VERBOSE = truthyEnvVar('VERBOSE');
+/** Writes the dataset even when the safeguards reject it, for legitimate large changes. */
+const FORCE = truthyEnvVar('ALKO_SYNC_FORCE');
+/** Exit code for a sync refused by the safeguards; the workflow doesn't retry it. */
+const EXIT_UNSAFE = 3;
 
 interface Config {
 	detailConcurrency: number;
@@ -571,6 +576,17 @@ async function sync(): Promise<void> {
 		process.exit(1);
 	}
 
+	// In CI the existing dataset is seeded from the deployed site. Starting fresh
+	// there means the seed failed, and writing would drop every removed product
+	// and all price history, so only allow it locally or when forced.
+	if (!DEV && !FORCE && Object.keys(existingProducts).length === 0) {
+		console.warn(
+			'\n🛑 No existing dataset was loaded. Refusing to replace the deployed data with a fresh ' +
+				'one; re-run with ALKO_SYNC_FORCE=1 if that is intended.'
+		);
+		process.exit(EXIT_UNSAFE);
+	}
+
 	console.log(
 		`\n📦 ${searchProducts.length} products from API, ${Object.keys(existingProducts).length} in existing dataset\n`
 	);
@@ -599,6 +615,10 @@ async function sync(): Promise<void> {
 	// Ids the API classifies as irrelevant (gifts & drinking accessories).
 	const irrelevantIds = new Set<string>();
 
+	// Every existing product rebuilt from the API this run, for the safeguards'
+	// check that no column is being wiped out by a renamed field.
+	const rewrites: Array<{ previous: unknown[]; values: unknown[] }> = [];
+
 	for (const product of searchProducts) {
 		// Drop gifts & drinking accessories entirely: they never enter the dataset.
 		if (isIrrelevantMainGroup(product as unknown as Record<string, unknown>)) {
@@ -614,6 +634,8 @@ async function sync(): Promise<void> {
 		if (isMigratedProduct(previous) && previous.hash === searchHash) {
 			// Back in (or still in) the selection: keep it, but drop any stale removed flag.
 			const kept = refreshSearchColumns(clearRemovedFlag(previous), searchValues);
+			if (kept.values !== previous.values)
+				rewrites.push({ previous: previous.values, values: kept.values });
 			products[product.id] = kept;
 			stats.unchanged++;
 			if (isDetailVerifyCandidate(kept, config.detailVerifyCooldownDays)) {
@@ -640,13 +662,39 @@ async function sync(): Promise<void> {
 		config.detailConcurrency,
 		async ({ product, hash, previous }) => {
 			const details = await fetchProductDetails(product.id, config);
+			processed++;
+			if (processed === totalPending || processed % PROGRESS_LOG_INTERVAL === 0) {
+				console.log(`  📥 ${processed}/${totalPending} details fetched`);
+			}
 			if (!details) {
 				stats.failed++;
 				// Keep the previous entry so a transient failure never drops a product.
 				// It's still in the selection, so clear any stale removed flag.
 				if (previous) products[product.id] = clearRemovedFlag(previous);
 			} else {
-				const values = buildLegacyValues(mergeProduct(product, details));
+				const built = buildLegacyValues(mergeProduct(product, details));
+				let values = built;
+				if (previous) {
+					rewrites.push({ previous: previous.values, values: built });
+					// Never let a blank core field from the API erase what we had.
+					const restored = restoreCriticalColumns(built, previous.values);
+					values = restored.values;
+					if (restored.restored.length > 0) {
+						console.warn(
+							`  ⚠️  ${product.id} came back without ${restored.restored.join(', ')}; kept the previous value`
+						);
+					}
+				} else {
+					// A new product without its core fields isn't usable: retry it next run.
+					const missing = missingCriticalColumns(built);
+					if (missing.length > 0) {
+						stats.failed++;
+						console.warn(
+							`  ⚠️  New product ${product.id} is missing ${missing.join(', ')}; skipped`
+						);
+						return;
+					}
+				}
 				const price = toNumber(values[HINTA_INDEX]);
 				const priceHistory = updatePriceHistory(
 					previous?.priceHistory,
@@ -684,11 +732,6 @@ async function sync(): Promise<void> {
 				} else {
 					stats.added++;
 				}
-			}
-
-			processed++;
-			if (processed === totalPending || processed % PROGRESS_LOG_INTERVAL === 0) {
-				console.log(`  📥 ${processed}/${totalPending} details fetched`);
 			}
 		}
 	);
@@ -732,7 +775,15 @@ async function sync(): Promise<void> {
 					return;
 				}
 
-				const values = buildLegacyValues(mergeProduct(product, details));
+				const built = buildLegacyValues(mergeProduct(product, details));
+				rewrites.push({ previous: previous.values, values: built });
+				// Same as above: a blank core field never erases the stored one.
+				const { values, restored } = restoreCriticalColumns(built, previous.values);
+				if (restored.length > 0) {
+					console.warn(
+						`  ⚠️  ${product.id} came back without ${restored.join(', ')}; kept the previous value`
+					);
+				}
 				const changedFields = values.reduce<string[]>((acc, value, index) => {
 					if (!valuesEqual(previous.values[index], value)) {
 						acc.push(LEGACY_HEADERS[index]);
@@ -792,6 +843,29 @@ async function sync(): Promise<void> {
 	);
 	stats.removed += carried.removed;
 	stats.filteredRemoved += carried.filteredRemoved;
+
+	// Last line of defence before anything is written: refuse results that look
+	// like the API changed rather than the selection.
+	const relevantApiProducts = searchProducts.filter((product) => !irrelevantIds.has(product.id));
+	const problems = checkSyncSafety({
+		existingProducts,
+		products,
+		rewrites,
+		apiProducts: relevantApiProducts.length,
+		stockedApiProducts: relevantApiProducts.filter((product) => product.storeId?.length > 0).length
+	});
+	if (problems.length > 0) {
+		console.warn(
+			`\n🛑 Safeguards rejected this sync:\n${problems.map((p) => `  • ${p}`).join('\n')}`
+		);
+		if (!FORCE) {
+			console.warn(
+				'Leaving the existing data untouched. If the change is real, re-run with ALKO_SYNC_FORCE=1.'
+			);
+			process.exit(EXIT_UNSAFE);
+		}
+		console.warn('ALKO_SYNC_FORCE is set, writing anyway.');
+	}
 
 	const now = new Date().toISOString();
 	// `LastSynced` records every fetch; `LastUpdated` only moves when an actual
