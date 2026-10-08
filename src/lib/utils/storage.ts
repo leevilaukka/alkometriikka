@@ -39,7 +39,14 @@ type LocalStorageArrayItem<K extends LocalStorageArrayKey> =
 
 export class LocalStorageManager {
 	static getItem<K extends LocalStorageKey>(key: K): LocalStorageValueMap[K] | null {
-		const item = localStorage.getItem(key);
+		let item: string | null;
+		try {
+			item = localStorage.getItem(key);
+		} catch (e) {
+			// Throws a SecurityError when storage is blocked
+			console.error(`Error reading localStorage item for key "${key}":`, e);
+			return null;
+		}
 		if (item) {
 			try {
 				return JSON.parse(item) as LocalStorageValueMap[K];
