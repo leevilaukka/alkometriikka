@@ -43,6 +43,7 @@ export const DatasetColumns = Object.freeze({
 	NormalPrice: 'Normaalihinta',
 	CampaignStart: 'Kampanja alkaa',
 	CampaignEnd: 'Kampanja päättyy',
+	FoodPairings: 'Ruokasuositukset',
 	History: 'Hintahistoria',
 	RemovedFromSelection: 'Poistunut valikoimasta'
 } as const);
@@ -104,6 +105,7 @@ export const columnsHandledAsSet = [
 	AllColumns.Description,
 	AllColumns.Note,
 	AllColumns.GrapeVarieties,
+	AllColumns.FoodPairings,
 	AllColumns.StoreAvailability
 ] as const satisfies readonly ColumnNames[];
 
@@ -138,6 +140,7 @@ export const shownFilters = [
 	AllColumns.Description,
 	AllColumns.Note,
 	AllColumns.GrapeVarieties,
+	AllColumns.FoodPairings,
 	AllColumns.New,
 	AllColumns.OnSale
 ] as const satisfies readonly ColumnNames[];
@@ -178,7 +181,8 @@ export const filterAnnotationsToFilter = {
 	[AllColumns.StoreAvailability]: OR,
 	[AllColumns.Description]: AND,
 	[AllColumns.Note]: AND,
-	[AllColumns.GrapeVarieties]: AND
+	[AllColumns.GrapeVarieties]: AND,
+	[AllColumns.FoodPairings]: AND
 } as const satisfies Partial<Record<ColumnNames, typeof AND | typeof OR>>;
 
 /**
@@ -362,6 +366,8 @@ export const hideFromProductPageStats = new Set<ColumnNames>([
 	DatasetColumns.NormalPrice,
 	DatasetColumns.CampaignStart,
 	DatasetColumns.CampaignEnd,
+	// Shown as a row of links at the bottom of the table
+	DatasetColumns.FoodPairings,
 	// Hide Uutuus as it is currently kinda bugged and not very useful on the product page stats. It is still shown in the list view and can be used for filtering.
 	DatasetColumns.New,
 	DatasetColumns.History

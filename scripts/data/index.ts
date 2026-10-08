@@ -51,6 +51,7 @@ import {
 	detailVerifyAgeDays,
 	isDetailVerifyCandidate,
 	mergeProduct,
+	refreshSearchColumns,
 	salesInfoFromValues,
 	updatePriceHistory,
 	valuesEqual,
@@ -606,14 +607,13 @@ async function sync(): Promise<void> {
 			continue;
 		}
 
-		const searchHash = getHash(
-			getHashValues(buildLegacyValues(product as unknown as Record<string, unknown>))
-		);
+		const searchValues = buildLegacyValues(product as unknown as Record<string, unknown>);
+		const searchHash = getHash(getHashValues(searchValues));
 		const previous = existingProducts[product.id];
 
 		if (isMigratedProduct(previous) && previous.hash === searchHash) {
 			// Back in (or still in) the selection: keep it, but drop any stale removed flag.
-			const kept = clearRemovedFlag(previous);
+			const kept = refreshSearchColumns(clearRemovedFlag(previous), searchValues);
 			products[product.id] = kept;
 			stats.unchanged++;
 			if (isDetailVerifyCandidate(kept, config.detailVerifyCooldownDays)) {

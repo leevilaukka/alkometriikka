@@ -86,6 +86,7 @@ export interface PriceListItem extends Record<DrunkColumnNames, number> {
 	Huomautus: Set<string>;
 	Rypäleet: Set<string>;
 	Luonnehdinta: Set<string>;
+	Ruokasuositukset: Set<string>;
 	Pakkaustyyppi: string;
 	'Alkoholi-%': number;
 	'Hapot g/l': number;
