@@ -27,6 +27,7 @@
 	import Settings from '$lib/components/widgets/Settings/Index.svelte';
 	import CompareBar from '$lib/components/widgets/CompareBar.svelte';
 	import CommandPalette from '$lib/components/widgets/CommandPalette.svelte';
+	import NoticeBanner from '$lib/components/widgets/NoticeBanner.svelte';
 	import { LocalStorageManager } from '$lib/utils/storage';
 	import type { IconName } from '$lib/icons';
 
@@ -311,6 +312,7 @@
 				<Settings {alko} />
 			</div>
 		</header>
+		<NoticeBanner lastSynced={alko.dataset.metadata.LastSynced} />
 		<div
 			id="main-content"
 			tabindex="-1"
