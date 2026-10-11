@@ -11,6 +11,25 @@
 	}: { product: PriceListItem; sale: SaleInfo | null; class?: string } = $props();
 
 	const description = $derived([...(product[AllColumns.Description] ?? [])].join(', '));
+
+	// The main list narrowed to the same producer's products
+	const manufacturerHref = $derived.by(() => {
+		const params = new URLSearchParams();
+		params.set(AllColumns.Manufacturer, product[AllColumns.Manufacturer]);
+		return `/?${params}`;
+	});
+
+	const details = $derived(
+		[
+			product[AllColumns.Country],
+			product[AllColumns.SubType] ? product[AllColumns.SubType] : product[AllColumns.Type],
+			product[AllColumns.RemovedFromSelection]
+				? 'Poistunut valikoimasta'
+				: product[AllColumns.Availability]
+		]
+			.filter(Boolean)
+			.join(' · ')
+	);
 </script>
 
 <div class={twMerge('flex flex-col gap-4', _class)}>
@@ -22,16 +41,14 @@
 			{product[AllColumns.Name]}
 		</h1>
 		<p class="text-secondary">
-			{[
-				product[AllColumns.Manufacturer],
-				product[AllColumns.Country],
-				product[AllColumns.SubType] ? product[AllColumns.SubType] : product[AllColumns.Type],
-				product[AllColumns.RemovedFromSelection]
-					? 'Poistunut valikoimasta'
-					: product[AllColumns.Availability]
-			]
-				.filter(Boolean)
-				.join(' · ')}
+			{#if product[AllColumns.Manufacturer]}
+				<a
+					href={manufacturerHref}
+					class="hover:underline"
+					title={`Kaikki valmistajan ${product[AllColumns.Manufacturer]} tuotteet`}
+					>{product[AllColumns.Manufacturer]}</a
+				>{#if details}{' · '}{/if}
+			{/if}{details}
 		</p>
 	</div>
 	<div class="flex flex-wrap gap-2">
