@@ -11,7 +11,6 @@
 	.icon {
 		user-select: none;
 		font-family: 'icons';
-		font-size: 1em;
 		line-height: 1em;
 		display: grid;
 		place-content: center;
