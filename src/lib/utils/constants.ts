@@ -103,6 +103,7 @@ export const columnsHandledAsString = [
 // Columns that should be handled as sets (arrays) rather than single values.
 export const columnsHandledAsSet = [
 	AllColumns.Description,
+	AllColumns.SpecialGroup,
 	AllColumns.Note,
 	AllColumns.GrapeVarieties,
 	AllColumns.FoodPairings,
@@ -419,10 +420,9 @@ export function getPackCount(product: PriceListItem): number {
  * @see DynamicColumnToBadgeMap for generating dynamic badge mappings based on product properties.
  */
 export const ColumnToBadgeMap: ColumnBadgeMap = {
+	// The other certificates (vegan, biodynamic, ...) are also listed in Huomautus and badged from there
 	[DatasetColumns.SpecialGroup]: {
-		Luomu: { text: 'Luomu', color: 'green', icon: 'plant_pot' },
-		Alkuviini: { text: 'Alkuviini', color: 'violet', icon: 'wine' },
-		Biodynaaminen: { text: 'Biodynaaminen', color: 'emerald', icon: 'yin_yang' }
+		Luomu: { text: 'Luomu', color: 'green', icon: 'plant_pot' }
 	},
 	[DatasetColumns.Availability]: {
 		kausituote: { text: 'Kausituote', color: 'orange', icon: 'tree' },
@@ -449,7 +449,8 @@ export const ColumnToBadgeMap: ColumnBadgeMap = {
 			icon: 'gift',
 			tooltip: 'Myydään lahjapakkauksessa'
 		},
-		Laktoositon: { text: 'Laktoositon', color: 'cyan', icon: 'milk_bottle' }
+		Laktoositon: { text: 'Laktoositon', color: 'cyan', icon: 'milk_bottle' },
+		Gluteeniton: { text: 'Gluteeniton', color: 'amber', icon: 'baguette' }
 	}
 };
 
