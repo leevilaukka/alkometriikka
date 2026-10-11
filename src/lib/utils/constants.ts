@@ -103,6 +103,7 @@ export const columnsHandledAsString = [
 // Columns that should be handled as sets (arrays) rather than single values.
 export const columnsHandledAsSet = [
 	AllColumns.Description,
+	AllColumns.SpecialGroup,
 	AllColumns.Note,
 	AllColumns.GrapeVarieties,
 	AllColumns.FoodPairings,
@@ -117,6 +118,12 @@ export const undefinedToZeroColumns = [
 	AllColumns.BitternessEBU,
 	AllColumns.Energy
 ] as const satisfies readonly ColumnNames[];
+
+/**
+ * Key for the set of {@link undefinedToZeroColumns} that had no value in the dataset, so a filled
+ * in zero can be told apart from a real one. A symbol survives spreads but stays out of Object.keys.
+ */
+export const MissingValues = Symbol('missingValues');
 
 /**
  * Columns to be shown in the filter area.
@@ -317,6 +324,7 @@ export const LocalStorageKeys = {
 	Theme: 'theme',
 	ViewedShares: 'viewed_shares',
 	CompareProducts: 'compare_products',
+	CompareHighlightDifferences: 'compare_highlight_differences',
 	DismissedNotices: 'dismissed_notices',
 	DailyGame: 'alkometriikka-daily-v1',
 	DailyStreak: 'alkometriikka-daily-streak-v1',
@@ -418,10 +426,9 @@ export function getPackCount(product: PriceListItem): number {
  * @see DynamicColumnToBadgeMap for generating dynamic badge mappings based on product properties.
  */
 export const ColumnToBadgeMap: ColumnBadgeMap = {
+	// The other certificates (vegan, biodynamic, ...) are also listed in Huomautus and badged from there
 	[DatasetColumns.SpecialGroup]: {
-		Luomu: { text: 'Luomu', color: 'green', icon: 'plant_pot' },
-		Alkuviini: { text: 'Alkuviini', color: 'violet', icon: 'wine' },
-		Biodynaaminen: { text: 'Biodynaaminen', color: 'emerald', icon: 'yin_yang' }
+		Luomu: { text: 'Luomu', color: 'green', icon: 'plant_pot' }
 	},
 	[DatasetColumns.Availability]: {
 		kausituote: { text: 'Kausituote', color: 'orange', icon: 'tree' },
@@ -448,7 +455,19 @@ export const ColumnToBadgeMap: ColumnBadgeMap = {
 			icon: 'gift',
 			tooltip: 'Myydään lahjapakkauksessa'
 		},
-		Laktoositon: { text: 'Laktoositon', color: 'cyan', icon: 'milk_bottle' }
+		Laktoositon: { text: 'Laktoositon', color: 'cyan', icon: 'milk_bottle' },
+		Gluteeniton: { text: 'Gluteeniton', color: 'amber', icon: 'baguette' },
+		'Matala-alkoholinen': { text: 'Matala-alkoholinen', color: 'blue', icon: 'balloon' },
+		Jälkiruokaviini: { text: 'Jälkiruokaviini', color: 'pink', icon: 'cake_slice' },
+		Oranssiviini: { text: 'Oranssiviini', color: 'orange', icon: 'wine_alt' },
+		'Rajallinen säilyvyys': { text: 'Rajallinen säilyvyys', color: 'yellow', icon: 'hourglass' },
+		Kosher: { text: 'Kosher', color: 'indigo', icon: 'certification' },
+		'Puinen kuljetuspakkaus': {
+			text: 'Puulaatikko',
+			color: 'gray',
+			icon: 'box',
+			tooltip: 'Puinen kuljetuspakkaus'
+		}
 	}
 };
 
@@ -488,7 +507,8 @@ export function DynamicColumnToBadgeMap<T extends PriceListItem>(item: T): Colum
 			})} €${campaignWindow ? ` · voimassa ${campaignWindow}` : ''}`
 		};
 	}
-	if (Number(item[DatasetColumns.Sugar]) === 0) {
+	const missing = (item as { [MissingValues]?: Set<ColumnNames> })[MissingValues];
+	if (Number(item[DatasetColumns.Sugar]) === 0 && !missing?.has(DatasetColumns.Sugar)) {
 		map[DatasetColumns.Sugar] = { text: 'Sokeriton', color: 'gray' };
 	}
 	const packCount = getPackCount(item);

@@ -65,6 +65,7 @@ export const components = {
 					indigo: 'bg-indigo-300 text-indigo-800',
 					violet: 'bg-violet-300 text-violet-800',
 					yellow: 'bg-yellow-300 text-yellow-800',
+					amber: 'bg-amber-200 text-amber-900',
 					gray: 'bg-gray-300 text-gray-500 dark:bg-zinc-600 dark:text-zinc-300'
 				}
 			}

@@ -77,7 +77,7 @@ export interface PriceListItem extends Record<DrunkColumnNames, number> {
 	Hinnastojärjestyskoodi: string;
 	Tyyppi: string;
 	Alatyyppi: string;
-	Erityisryhmä: string;
+	Erityisryhmä: Set<string>;
 	Oluttyyppi: string;
 	Valmistusmaa: string;
 	Alue: string;

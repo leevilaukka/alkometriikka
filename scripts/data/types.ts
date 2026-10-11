@@ -103,6 +103,9 @@ export interface SearchProductData {
 	productCommunicationEthical: string | null;
 	productCommunicationProduction: string | null;
 	productCommunicationCultivation: string | null;
+	/** Certificates as `certificateId|<id>|<label>`, e.g. `certificateId|certificate_001|Luomu`. Missing when the product has none. */
+	certificateClass?: string[];
+	certificateId?: string[];
 	closures: string[];
 	closureId: string[];
 	country: string;
