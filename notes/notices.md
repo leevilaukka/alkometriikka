@@ -47,5 +47,29 @@ file would be dropped by the parser.
 | `startsAt`/`expiresAt` | —       | ISO timestamps. Expired notices disappear on their own.                       |
 | `dismissible`          | `true`  | `false` keeps the notice up.                                                  |
 | `replacesStaleWarning` | `false` | Hides the automatic stale warning while active, to explain an outage instead. |
+| `urlParams`            | —       | Only shown to visitors who landed with these query params. See below.         |
 
 Malformed entries are skipped, and a missing or broken file just shows no notices.
+
+## Notices for a specific link
+
+`urlParams` aims a notice at people arriving through a particular link, such as
+a welcome for a group you share `https://alkometriikka.fi/?utm_source=kilta&utm_campaign=fuksit`
+with:
+
+```json
+{
+	"id": "welcome-fuksit-2026",
+	"message": "Tervetuloa fuksit! Hauska nähdä teitä täällä.",
+	"urlParams": { "utm_campaign": "fuksit" },
+	"expiresAt": "2026-12-31T00:00:00Z"
+}
+```
+
+Every key must be present in the URL, and a list (`{ "utm_source": ["kilta", "discord"] }`)
+accepts any of its values. Values are matched case-insensitively. Any query param
+works, not just `utm_*`.
+
+The params the visitor landed with are remembered for the browser session, so the
+notice stays up as they move around the site until they dismiss it. A malformed
+`urlParams` drops the notice rather than showing it to everyone.

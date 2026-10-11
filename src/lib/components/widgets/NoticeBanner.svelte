@@ -1,3 +1,27 @@
+<script lang="ts" module>
+	const LANDING_PARAMS_KEY = 'notice_landing_params';
+
+	/**
+	 * The query params the visitor arrived with, read once per page load so campaign notices
+	 * stay up after client-side navigation drops them from the URL. Kept for the session so a
+	 * reload on another page doesn't lose them either.
+	 */
+	function readLandingParams(): URLSearchParams {
+		const params = new URLSearchParams(location.search);
+		try {
+			const stored = new URLSearchParams(sessionStorage.getItem(LANDING_PARAMS_KEY) ?? '');
+			for (const [key, value] of params) stored.set(key, value);
+			sessionStorage.setItem(LANDING_PARAMS_KEY, stored.toString());
+			return stored;
+		} catch {
+			// Storage blocked; the current URL is all there is
+			return params;
+		}
+	}
+
+	const landingParams = readLandingParams();
+</script>
+
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { resolve } from '$app/paths';
@@ -24,6 +48,7 @@
 			lastSynced,
 			dismissed,
 			now: Date.now(),
+			params: landingParams,
 			staleMessage: `Alkon tietoja ei ole saatu päivitettyä ${lastSyncedLabel} jälkeen. Hinnat ja saatavuus voivat olla vanhentuneita.`
 		})
 	);

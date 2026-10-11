@@ -20,6 +20,11 @@ export type Notice = {
 	dismissible: boolean;
 	/** Hides the automatic stale-data warning while this notice is shown, e.g. to explain the outage. */
 	replacesStaleWarning: boolean;
+	/**
+	 * Only shown to visitors who landed with all of these query params, e.g. a welcome for
+	 * `?utm_campaign=kilta`. Each value is one or more accepted values, matched case-insensitively.
+	 */
+	urlParams?: Record<string, string[]>;
 };
 
 /** The sync runs every 6 hours, so this allows a few failed runs before warning. */
@@ -44,6 +49,26 @@ function parseLink(value: unknown): Notice['link'] {
 	return { href, label: label.trim() };
 }
 
+/**
+ * `null` when present but malformed, so a broken filter hides the notice
+ * instead of showing it to everyone.
+ */
+function parseUrlParams(value: unknown): Notice['urlParams'] | null {
+	if (value === undefined) return undefined;
+	if (!isRecord(value)) return null;
+	const entries = Object.entries(value);
+	if (!entries.length) return null;
+	const params: Record<string, string[]> = {};
+	for (const [key, raw] of entries) {
+		const values = (Array.isArray(raw) ? raw : [raw]).map((v) =>
+			typeof v === 'string' ? v.trim().toLowerCase() : ''
+		);
+		if (!key.trim() || !values.length || values.some((v) => !v)) return null;
+		params[key.trim()] = values;
+	}
+	return params;
+}
+
 /** Validates a parsed `notices.json`, dropping malformed entries instead of failing the whole file. */
 export function parseNotices(raw: unknown): Notice[] {
 	const list = isRecord(raw) ? raw.notices : undefined;
@@ -55,6 +80,8 @@ export function parseNotices(raw: unknown): Notice[] {
 		const { id, level, message, startsAt, expiresAt, dismissible, replacesStaleWarning } = entry;
 		if (typeof id !== 'string' || !id.trim() || seen.has(id)) continue;
 		if (typeof message !== 'string' || !message.trim()) continue;
+		const urlParams = parseUrlParams(entry.urlParams);
+		if (urlParams === null) continue;
 		seen.add(id);
 		notices.push({
 			id,
@@ -64,7 +91,8 @@ export function parseNotices(raw: unknown): Notice[] {
 			startsAt: isValidDate(startsAt) ? startsAt : undefined,
 			expiresAt: isValidDate(expiresAt) ? expiresAt : undefined,
 			dismissible: dismissible !== false,
-			replacesStaleWarning: replacesStaleWarning === true
+			replacesStaleWarning: replacesStaleWarning === true,
+			urlParams
 		});
 	}
 	return notices;
@@ -76,6 +104,14 @@ export function isNoticeActive(notice: Notice, now: number): boolean {
 	return true;
 }
 
+/** True when the notice targets no one in particular, or every one of its params matches. */
+export function matchesUrlParams(notice: Notice, params: URLSearchParams): boolean {
+	if (!notice.urlParams) return true;
+	return Object.entries(notice.urlParams).every(([key, values]) =>
+		params.getAll(key).some((value) => values.includes(value.trim().toLowerCase()))
+	);
+}
+
 /** True when the last successful sync is older than {@link STALE_AFTER_MS}. Unknown is not stale. */
 export function isDataStale(lastSynced: string | undefined, now: number): boolean {
 	if (!isValidDate(lastSynced)) return false;
@@ -83,8 +119,8 @@ export function isDataStale(lastSynced: string | undefined, now: number): boolea
 }
 
 /**
- * The notices to show: active manual notices not yet dismissed, preceded by the
- * stale-data warning unless a manual notice replaces it. The stale warning's id
+ * The notices to show: active manual notices aimed at this visitor and not yet
+ * dismissed, preceded by the stale-data warning unless a manual notice replaces it. The stale warning's id
  * includes the sync time, so dismissing it only lasts until the data changes.
  */
 export function visibleNotices(
@@ -93,10 +129,20 @@ export function visibleNotices(
 		lastSynced,
 		dismissed,
 		now,
-		staleMessage
-	}: { lastSynced?: string; dismissed: Set<string>; now: number; staleMessage: string }
+		staleMessage,
+		params = new URLSearchParams()
+	}: {
+		lastSynced?: string;
+		dismissed: Set<string>;
+		now: number;
+		staleMessage: string;
+		/** The params the visitor landed with, for notices aimed at a campaign link. */
+		params?: URLSearchParams;
+	}
 ): Notice[] {
-	const active = notices.filter((notice) => isNoticeActive(notice, now));
+	const active = notices.filter(
+		(notice) => isNoticeActive(notice, now) && matchesUrlParams(notice, params)
+	);
 	const visible = active.filter((notice) => !notice.dismissible || !dismissed.has(notice.id));
 	const staleId = `${STALE_NOTICE_ID}:${lastSynced}`;
 	if (

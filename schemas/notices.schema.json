@@ -72,6 +72,21 @@
 					"type": "boolean",
 					"default": false,
 					"description": "Hide the automatic stale-data warning while this notice is shown, e.g. to explain an outage."
+				},
+				"urlParams": {
+					"type": "object",
+					"minProperties": 1,
+					"description": "Only show the notice to visitors who landed with all of these query params, e.g. `{ \"utm_campaign\": \"kilta\" }` for a welcome on a campaign link. A list accepts any of its values. Matched case-insensitively.",
+					"additionalProperties": {
+						"oneOf": [
+							{ "type": "string", "minLength": 1 },
+							{
+								"type": "array",
+								"minItems": 1,
+								"items": { "type": "string", "minLength": 1 }
+							}
+						]
+					}
 				}
 			}
 		}
