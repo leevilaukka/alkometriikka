@@ -11,6 +11,7 @@ mock.module('$lib/utils/helpers', () => ({
 const {
 	computeCategoryStats,
 	computeComparisonRows,
+	computeQualityMetrics,
 	histogram,
 	histogramBinIndex,
 	pickCategoryHighlights,
@@ -128,5 +129,44 @@ describe('comparison differences', () => {
 		const differs = (key: string) => rows.find((row) => row.key === key)?.differs;
 		expect(differs(AllColumns.AlcoholGramsPerEuro)).toBe(true);
 		expect(differs(AllColumns.Country)).toBe(false);
+	});
+});
+
+describe('computeQualityMetrics', () => {
+	const inCategory = (item: PriceListItem, type: string, subType: string) =>
+		({ ...item, [AllColumns.Type]: type, [AllColumns.SubType]: subType }) as PriceListItem;
+	const node = (name: string, children: unknown[] = []) => ({
+		name,
+		slug: name.toLowerCase(),
+		path: `/kategoriat/${name.toLowerCase()}`,
+		count: 0,
+		children
+	});
+
+	const target = inCategory(product('target', 10, 0.75, 13), 'Viinit', 'Punaviinit');
+	const kaljakori = {
+		data: [
+			target,
+			inCategory(product('red', 12, 0.75, 13), 'Viinit', 'Punaviinit'),
+			inCategory(product('white-1', 9, 0.75, 12), 'Viinit', 'Valkoviinit'),
+			inCategory(product('white-2', 11, 0.75, 12), 'Viinit', 'Valkoviinit'),
+			inCategory(product('beer', 3, 0.33, 5), 'Oluet', 'Lager')
+		],
+		getCategoryTree: () => [
+			node('Viinit', [node('Punaviinit'), node('Valkoviinit')]),
+			node('Oluet', [node('Lager')])
+		]
+	} as unknown as Parameters<typeof computeQualityMetrics>[1];
+
+	it('compares against the subcategory by default', () => {
+		const result = computeQualityMetrics(target, kaljakori);
+		expect(result.categoryLabel).toBe('Punaviinit');
+		expect(result.sampleSize).toBe(1);
+	});
+
+	it('compares against the whole parent category with parentCategory', () => {
+		const result = computeQualityMetrics(target, kaljakori, { parentCategory: true });
+		expect(result.categoryLabel).toBe('Viinit');
+		expect(result.sampleSize).toBe(3);
 	});
 });

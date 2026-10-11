@@ -63,12 +63,14 @@ const metricDefinitions: MetricDefinition[] = [
 
 /**
  * Computes percentile-based "Hinta-laatu" metrics for `product` against other
- * products sharing the same `Tyyppi` (category). Returns an empty `metrics`
- * array when there are no comparable peers, so callers can hide the section.
+ * products in its category: the `Alatyyppi` when it has one, or the whole
+ * `Tyyppi` with `parentCategory`. Returns an empty `metrics` array when there
+ * are no comparable peers, so callers can hide the section.
  */
 export function computeQualityMetrics(
 	product: PriceListItem,
-	kaljakori: Kaljakori
+	kaljakori: Kaljakori,
+	{ parentCategory = false }: { parentCategory?: boolean } = {}
 ): QualityMetricsResult {
 	// Same trail the "Selaa kategoriaa" link uses, so the compared group is the category page's products
 	const { trail } = findProductCategoryTrail(
@@ -77,7 +79,7 @@ export function computeQualityMetrics(
 		product[AllColumns.SubType]
 	);
 	const typeNode = trail[0];
-	const subTypeNode = trail[1];
+	const subTypeNode = parentCategory ? undefined : trail[1];
 	const category = String(
 		(subTypeNode ?? typeNode)?.name ?? product[AllColumns.SubType] ?? product[AllColumns.Type]
 	);

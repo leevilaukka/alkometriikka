@@ -14,16 +14,25 @@
 		class: _class = ''
 	}: { product: PriceListItem; kaljakori: Kaljakori; class?: string } = $props();
 
-	const result = $derived(computeQualityMetrics(product, kaljakori));
-
-	// The product's category page, for browsing the products it's compared against
-	const categoryNode = $derived(
+	const trail = $derived(
 		findProductCategoryTrail(
 			kaljakori.getCategoryTree(),
 			product[AllColumns.Type],
 			product[AllColumns.SubType]
-		).trail.at(-1)
+		).trail
 	);
+	// Only products in a subcategory have a wider category to compare against
+	const hasParentCategory = $derived(trail.length > 1);
+	let compareToParent = $state(false);
+
+	const result = $derived(
+		computeQualityMetrics(product, kaljakori, {
+			parentCategory: hasParentCategory && compareToParent
+		})
+	);
+
+	// The category page of the compared products, for browsing them
+	const categoryNode = $derived(hasParentCategory && compareToParent ? trail[0] : trail.at(-1));
 </script>
 
 {#snippet categoryLink(className: string)}
@@ -38,12 +47,43 @@
 	{/if}
 {/snippet}
 
+{#snippet categorySegment(label: string, selected: boolean, onclick: () => void)}
+	<button
+		type="button"
+		aria-pressed={selected}
+		{onclick}
+		class={selected
+			? 'font-semibold text-black dark:text-white'
+			: 'cursor-pointer underline decoration-dotted underline-offset-2 hover:text-black dark:hover:text-white'}
+	>
+		{label}
+	</button>
+{/snippet}
+
 {#if result.metrics.length > 0}
 	<section class={twMerge('flex flex-col gap-3', _class)}>
 		<div class="flex flex-wrap items-baseline gap-x-2 gap-y-1">
 			<h2 class="text-2xl font-bold">Hinta-laatu</h2>
 			<span class="text-sm text-secondary">
-				verrattuna muihin ryhmän "{result.categoryLabel}" tuotteisiin (n = {result.sampleSize})
+				verrattuna muihin ryhmän
+				{#if hasParentCategory}
+					<span role="group" aria-label="Vertailuryhmä">
+						{@render categorySegment(
+							trail[1].name,
+							!compareToParent,
+							() => (compareToParent = false)
+						)}
+						/
+						{@render categorySegment(
+							trail[0].name,
+							compareToParent,
+							() => (compareToParent = true)
+						)}
+					</span>
+				{:else}
+					"{result.categoryLabel}"
+				{/if}
+				tuotteisiin <span class="whitespace-nowrap">(n = {result.sampleSize})</span>
 			</span>
 			<!-- Next to the heading on wider screens; phones have no room, so it goes below the cards -->
 			{@render categoryLink('ml-auto hidden md:flex')}
