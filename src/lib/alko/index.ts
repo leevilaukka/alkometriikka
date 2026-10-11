@@ -5,6 +5,7 @@ import {
 	GenderOptionsMap,
 	subCategoryMap,
 	undefinedToZeroColumns,
+	MissingValues,
 	DrunkColumns,
 	StoreColumns,
 	columnsHandledAsString,
@@ -262,7 +263,10 @@ export class Kaljakori {
 						if (isNumber(value)) item[datasetColumns[col]] = Number.parseFloat(String(value));
 						else if (typeof value === 'string')
 							item[datasetColumns[col]] = toFormattedStringValue(value);
-						else item[datasetColumns[col]] = kinds[col] === Kind.OtherZero ? 0 : '';
+						else if (kinds[col] === Kind.OtherZero) {
+							item[datasetColumns[col]] = 0;
+							(item[MissingValues] ??= new Set()).add(datasetColumns[col]);
+						} else item[datasetColumns[col]] = '';
 				}
 			}
 
