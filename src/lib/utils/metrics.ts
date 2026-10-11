@@ -186,7 +186,17 @@ export type ComparisonRow = {
 	key: ColumnNames;
 	label: string;
 	cells: ComparisonCell[];
+	/** True when the displayed values are not identical across the compared products. */
+	differs: boolean;
 };
+
+/** True when `key` is displayed differently for at least two of `products`. */
+export function valuesDiffer(products: PriceListItem[], key: ColumnNames): boolean {
+	const values = products.map((product) =>
+		String(formatValue(product[key] as string | number | boolean | Set<string>, key))
+	);
+	return new Set(values).size > 1;
+}
 
 function hasComparableValue(value: unknown): boolean {
 	return (
@@ -217,15 +227,17 @@ export function computeComparisonRows(products: PriceListItem[]): ComparisonRow[
 		if (!products.some((product) => hasComparableValue(product[key]))) continue;
 
 		const bestProductNumbers = getBestProductNumbers(products, key);
+		const cells = products.map((product) => ({
+			product,
+			value: String(formatValue(product[key] as string | number | boolean | Set<string>, key)),
+			isBest: bestProductNumbers.has(product[AllColumns.Number])
+		}));
 
 		rows.push({
 			key,
 			label: headerToDisplayName(key),
-			cells: products.map((product) => ({
-				product,
-				value: String(formatValue(product[key] as string | number | boolean | Set<string>, key)),
-				isBest: bestProductNumbers.has(product[AllColumns.Number])
-			}))
+			cells,
+			differs: new Set(cells.map((cell) => cell.value)).size > 1
 		});
 	}
 

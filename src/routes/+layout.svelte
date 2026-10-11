@@ -3,6 +3,7 @@
 	import { dev } from '$app/environment';
 	import { ContextKeys, LocalStorageKeys } from '$lib/utils/constants';
 	import {
+		compareHighlightDifferences,
 		compareProductIds,
 		isMobile,
 		isLaptop,
@@ -56,6 +57,13 @@
 
 	$effect(() => {
 		LocalStorageManager.setItem(LocalStorageKeys.CompareProducts, compareProductIds);
+	});
+
+	$effect(() => {
+		LocalStorageManager.setItem(
+			LocalStorageKeys.CompareHighlightDifferences,
+			$compareHighlightDifferences
+		);
 	});
 
 	$effect(() => {

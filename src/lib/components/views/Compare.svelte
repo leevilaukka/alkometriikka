@@ -4,8 +4,9 @@
 	import { getSaleInfo } from '$lib/utils/sales';
 	import { generateTitle, handleShare, setSEO } from '$lib/utils/helpers';
 	import { components } from '$lib/utils/styles';
-	import { computeComparisonRows, getBestProductNumbers } from '$lib/utils/metrics';
+	import { computeComparisonRows, getBestProductNumbers, valuesDiffer } from '$lib/utils/metrics';
 	import { compareURL, removeFromCompare, MAX_COMPARE_PRODUCTS } from '$lib/utils/compare';
+	import { compareHighlightDifferences } from '$lib/global.svelte';
 	import { goto } from '$app/navigation';
 	import { twMerge } from 'tailwind-merge';
 	import type { PriceListItem } from '$lib/types';
@@ -18,6 +19,21 @@
 	const bestPrice = $derived(getBestProductNumbers(products, AllColumns.Price));
 	const bestPricePerLiter = $derived(getBestProductNumbers(products, AllColumns.PricePerLiter));
 	const rows = $derived(computeComparisonRows(products));
+	const highlightDifferences = $derived($compareHighlightDifferences && products.length > 1);
+	const differs = $derived({
+		price: valuesDiffer(products, AllColumns.Price),
+		pricePerLiter: valuesDiffer(products, AllColumns.PricePerLiter),
+		bottleSize: valuesDiffer(products, AllColumns.BottleSize),
+		alcohol: valuesDiffer(products, AllColumns.AlcoholPercentage)
+	});
+
+	/**
+	 * Fades the contents of value cells in rows that are identical across products while
+	 * highlighting differences. Only the children fade so the cell borders stay intact.
+	 */
+	function dimIfSame(rowDiffers: boolean) {
+		return highlightDifferences && !rowDiffers && '*:opacity-40';
+	}
 
 	function handleBack() {
 		if (window.history.length > 1) window.history.back();
@@ -42,6 +58,17 @@
 		});
 	});
 </script>
+
+{#snippet rowLabel(label: string, rowDiffers: boolean)}
+	<div
+		class={twMerge(
+			'sticky left-0 z-10 flex items-center border-b border-primary bg-secondary p-2 text-xs wrap-anywhere md:p-3 md:text-sm',
+			highlightDifferences && rowDiffers ? 'font-bold' : 'text-secondary'
+		)}
+	>
+		{label}
+	</div>
+{/snippet}
 
 <svelte:head>
 	<title>{generateTitle('Tuotevertailu')}</title>
@@ -88,10 +115,25 @@
 			</a>
 		</div>
 	{:else}
-		<p class="text-sm text-secondary">
-			{products.length}/{MAX_COMPARE_PRODUCTS} tuotetta vertailussa. Kunkin rivin paras arvo on korostettu,
-			kun mahdollista.
-		</p>
+		<div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
+			<p class="text-sm text-secondary">
+				{products.length}/{MAX_COMPARE_PRODUCTS} tuotetta vertailussa. Kunkin rivin paras arvo on korostettu,
+				kun mahdollista.
+			</p>
+			{#if products.length > 1}
+				<label class={twMerge(components.button(), 'w-fit shrink-0 justify-start gap-2')}>
+					<Icon
+						name={$compareHighlightDifferences ? 'checkbox_checked' : 'checkbox'}
+						class={twMerge(
+							'text-lg',
+							$compareHighlightDifferences ? 'text-brand-1' : 'text-secondary'
+						)}
+					/>
+					<span>Korosta erot</span>
+					<input type="checkbox" class="sr-only" bind:checked={$compareHighlightDifferences} />
+				</label>
+			{/if}
+		</div>
 		<div class="max-h-[calc(100dvh-8rem)] overflow-auto rounded border border-primary">
 			<div
 				class="grid w-fit min-w-full text-sm [--cw:140px] [--lw:84px] md:text-base md:[--cw:220px] md:[--lw:160px]"
@@ -129,11 +171,7 @@
 				{/each}
 
 				<!-- Price row -->
-				<div
-					class="sticky left-0 z-10 flex items-center border-b border-primary bg-secondary p-2 text-xs wrap-anywhere text-secondary md:p-3 md:text-sm"
-				>
-					Hinta
-				</div>
+				{@render rowLabel('Hinta', differs.price)}
 				{#each products as product (product[AllColumns.Number])}
 					{@const sale = getSaleInfo({
 						price: product[AllColumns.Price],
@@ -145,7 +183,8 @@
 					<div
 						class={twMerge(
 							'flex flex-col items-center gap-0.5 border-s border-b border-primary p-2 md:p-3',
-							isBest && 'bg-green-50 dark:bg-green-950'
+							isBest && 'bg-green-50 dark:bg-green-950',
+							dimIfSame(differs.price)
 						)}
 					>
 						<div class="flex items-center gap-2">
@@ -165,17 +204,14 @@
 				{/each}
 
 				<!-- Price per liter row -->
-				<div
-					class="sticky left-0 z-10 flex items-center border-b border-primary bg-secondary p-2 text-xs wrap-anywhere text-secondary md:p-3 md:text-sm"
-				>
-					Litrahinta
-				</div>
+				{@render rowLabel('Litrahinta', differs.pricePerLiter)}
 				{#each products as product (product[AllColumns.Number])}
 					{@const isBest = bestPricePerLiter.has(product[AllColumns.Number])}
 					<div
 						class={twMerge(
 							'flex flex-col items-center gap-0.5 border-s border-b border-primary p-2 md:p-3',
-							isBest && 'bg-green-50 dark:bg-green-950'
+							isBest && 'bg-green-50 dark:bg-green-950',
+							dimIfSame(differs.pricePerLiter)
 						)}
 					>
 						<span>{formatValue(product[AllColumns.PricePerLiter], AllColumns.PricePerLiter)}</span>
@@ -186,44 +222,48 @@
 				{/each}
 
 				<!-- Bottle size row -->
-				<div
-					class="sticky left-0 z-10 flex items-center border-b border-primary bg-secondary p-2 text-xs wrap-anywhere text-secondary md:p-3 md:text-sm"
-				>
-					Pakkauskoko
-				</div>
+				{@render rowLabel('Pakkauskoko', differs.bottleSize)}
 				{#each products as product (product[AllColumns.Number])}
-					<div class="flex items-center justify-center border-s border-b border-primary p-2 md:p-3">
-						{formatValue(product[AllColumns.BottleSize], AllColumns.BottleSize)}
+					<div
+						class={twMerge(
+							'flex items-center justify-center border-s border-b border-primary p-2 md:p-3',
+							dimIfSame(differs.bottleSize)
+						)}
+					>
+						<span>{formatValue(product[AllColumns.BottleSize], AllColumns.BottleSize)}</span>
 					</div>
 				{/each}
 
 				<!-- Alcohol percentage row -->
-				<div
-					class="sticky left-0 z-10 flex items-center border-b border-primary bg-secondary p-2 text-xs wrap-anywhere text-secondary md:p-3 md:text-sm"
-				>
-					Alkoholi
-				</div>
+				{@render rowLabel('Alkoholi', differs.alcohol)}
 				{#each products as product (product[AllColumns.Number])}
-					<div class="flex items-center justify-center border-s border-b border-primary p-2 md:p-3">
-						{formatValue(product[AllColumns.AlcoholPercentage], AllColumns.AlcoholPercentage)}
+					<div
+						class={twMerge(
+							'flex items-center justify-center border-s border-b border-primary p-2 md:p-3',
+							dimIfSame(differs.alcohol)
+						)}
+					>
+						<span
+							>{formatValue(
+								product[AllColumns.AlcoholPercentage],
+								AllColumns.AlcoholPercentage
+							)}</span
+						>
 					</div>
 				{/each}
 
 				<!-- Remaining rows generated from the full dataset -->
 				{#each rows as row (row.key)}
-					<div
-						class="sticky left-0 z-10 flex items-center border-b border-primary bg-secondary p-2 text-xs wrap-anywhere text-secondary md:p-3 md:text-sm"
-					>
-						{row.label}
-					</div>
+					{@render rowLabel(row.label, row.differs)}
 					{#each row.cells as cell (cell.product[AllColumns.Number])}
 						<div
 							class={twMerge(
 								'text-wrap-pretty flex items-center justify-center border-s border-b border-primary p-2 text-center md:p-3',
-								cell.isBest && 'bg-green-50 dark:bg-green-950'
+								cell.isBest && 'bg-green-50 dark:bg-green-950',
+								dimIfSame(row.differs)
 							)}
 						>
-							{cell.value}
+							<span>{cell.value}</span>
 						</div>
 					{/each}
 				{/each}

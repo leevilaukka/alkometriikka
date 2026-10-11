@@ -317,6 +317,7 @@ export const LocalStorageKeys = {
 	Theme: 'theme',
 	ViewedShares: 'viewed_shares',
 	CompareProducts: 'compare_products',
+	CompareHighlightDifferences: 'compare_highlight_differences',
 	DismissedNotices: 'dismissed_notices',
 	DailyGame: 'alkometriikka-daily-v1',
 	DailyStreak: 'alkometriikka-daily-streak-v1',

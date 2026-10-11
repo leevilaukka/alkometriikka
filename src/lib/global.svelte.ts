@@ -10,6 +10,10 @@ export let lists = $state(LocalStorageManager.getItem(LocalStorageKeys.Lists) ||
 export let compareProductIds = $state<string[]>(
 	LocalStorageManager.getItem(LocalStorageKeys.CompareProducts) || []
 );
+/** The comparison table emphasizes rows whose values differ between the products. */
+export let compareHighlightDifferences = writable<boolean>(
+	LocalStorageManager.getItem(LocalStorageKeys.CompareHighlightDifferences) ?? false
+);
 
 /** A page's mobile action bar, rendered by the layout at the very bottom like the product page's. */
 export const pageBottomBar = $state<{ snippet?: Snippet }>({});

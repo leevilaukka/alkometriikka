@@ -10,10 +10,12 @@ mock.module('$lib/utils/helpers', () => ({
 }));
 const {
 	computeCategoryStats,
+	computeComparisonRows,
 	histogram,
 	histogramBinIndex,
 	pickCategoryHighlights,
-	recentPriceChanges
+	recentPriceChanges,
+	valuesDiffer
 } = await import('$lib/utils/metrics');
 
 const product = (
@@ -104,5 +106,27 @@ describe('pickCategoryHighlights', () => {
 		const ids = pickCategoryHighlights(products, 4).map((item) => item[AllColumns.Number]);
 		expect(ids.slice(0, 3)).toEqual(['value', 'cheap', 'liter']);
 		expect(new Set(ids).size).toBe(4);
+	});
+});
+
+describe('comparison differences', () => {
+	const a = product('a', 10, 0.5, 5);
+	const b = product('b', 12, 0.5, 5);
+
+	it('detects values that differ between products', () => {
+		expect(valuesDiffer([a, b], AllColumns.Price)).toBe(true);
+		expect(valuesDiffer([a, b], AllColumns.BottleSize)).toBe(false);
+	});
+
+	it('never reports a difference for a single product', () => {
+		expect(valuesDiffer([a], AllColumns.Price)).toBe(false);
+	});
+
+	it('flags only the comparison rows whose values differ', () => {
+		const withCountry = (item: PriceListItem) => ({ ...item, [AllColumns.Country]: 'Suomi' });
+		const rows = computeComparisonRows([withCountry(a), withCountry(b)]);
+		const differs = (key: string) => rows.find((row) => row.key === key)?.differs;
+		expect(differs(AllColumns.AlcoholGramsPerEuro)).toBe(true);
+		expect(differs(AllColumns.Country)).toBe(false);
 	});
 });
