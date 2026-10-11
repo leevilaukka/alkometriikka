@@ -3,6 +3,7 @@ import {
 	STALE_AFTER_MS,
 	isDataStale,
 	isNoticeActive,
+	matchesUrlParams,
 	parseNotices,
 	visibleNotices,
 	type Notice
@@ -77,6 +78,42 @@ describe('parseNotices', () => {
 			undefined
 		]);
 	});
+
+	it('normalizes url params and drops notices whose params are malformed', () => {
+		const parsed = parseNotices({
+			notices: [
+				{ id: 'a', message: 'm', urlParams: { utm_source: ' Kilta ', ref: ['x', 'Y'] } },
+				{ id: 'b', message: 'm', urlParams: {} },
+				{ id: 'c', message: 'm', urlParams: { utm_source: '' } },
+				{ id: 'd', message: 'm', urlParams: { utm_source: [] } },
+				{ id: 'e', message: 'm', urlParams: { utm_source: 1 } },
+				{ id: 'f', message: 'm', urlParams: 'utm_source=kilta' }
+			]
+		});
+		expect(parsed).toEqual([
+			notice({ id: 'a', message: 'm', urlParams: { utm_source: ['kilta'], ref: ['x', 'y'] } })
+		]);
+	});
+});
+
+describe('matchesUrlParams', () => {
+	const targeted = notice({
+		urlParams: { utm_source: ['kilta', 'discord'], utm_campaign: ['fuksit'] }
+	});
+
+	it('shows untargeted notices to everyone', () => {
+		expect(matchesUrlParams(notice(), new URLSearchParams())).toBe(true);
+	});
+
+	it('needs every param to match one of its values', () => {
+		expect(
+			matchesUrlParams(targeted, new URLSearchParams('utm_source=Discord&utm_campaign=FUKSIT'))
+		).toBe(true);
+		expect(matchesUrlParams(targeted, new URLSearchParams('utm_source=kilta'))).toBe(false);
+		expect(
+			matchesUrlParams(targeted, new URLSearchParams('utm_source=reddit&utm_campaign=fuksit'))
+		).toBe(false);
+	});
 });
 
 describe('isNoticeActive', () => {
@@ -131,6 +168,17 @@ describe('visibleNotices', () => {
 		]);
 	});
 
+	it('only shows targeted notices to visitors with matching params', () => {
+		const welcome = notice({ id: 'welcome', urlParams: { utm_campaign: ['fuksit'] } });
+		expect(visibleNotices([welcome], base)).toEqual([]);
+		expect(
+			visibleNotices([welcome], {
+				...base,
+				params: new URLSearchParams('utm_campaign=fuksit')
+			}).map((n) => n.id)
+		).toEqual(['welcome']);
+	});
+
 	it('hides dismissed notices unless they cannot be dismissed', () => {
 		const dismissed = new Set(['n1', 'n2', `stale-data:${staleSync}`]);
 		const visible = visibleNotices([notice(), notice({ id: 'n2', dismissible: false })], {
@@ -165,7 +213,8 @@ describe('notices.json', () => {
 					message: 'm',
 					link: { href: '/', label: 'l' },
 					startsAt: '2026-01-01T00:00:00Z',
-					expiresAt: '2026-01-02T00:00:00Z'
+					expiresAt: '2026-01-02T00:00:00Z',
+					urlParams: { utm_source: 'x' }
 				}
 			]
 		});
