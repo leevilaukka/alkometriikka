@@ -23,6 +23,7 @@
 </script>
 
 <script lang="ts">
+	import { appPath } from '$lib/utils/paths';
 	import { onMount } from 'svelte';
 	import { resolve } from '$app/paths';
 	import { twMerge } from 'tailwind-merge';
@@ -96,7 +97,7 @@
 			{notice.message}
 			{#if notice.link}
 				<a
-					href={notice.link.href}
+					href={notice.link.href.startsWith('/') ? appPath(notice.link.href) : notice.link.href}
 					target={notice.link.href.startsWith('/') ? undefined : '_blank'}
 					class="font-semibold underline">{notice.link.label}</a
 				>

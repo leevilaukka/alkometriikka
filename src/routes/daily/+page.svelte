@@ -31,7 +31,7 @@
 	import { LocalStorageManager } from '$lib/utils/storage';
 	import { tick } from 'svelte';
 	import { dev } from '$app/environment';
-	import { base } from '$app/paths';
+	import { base, resolve } from '$app/paths';
 	import { goto } from '$app/navigation';
 	import { generateTitle, handleShare, sendAnalyticsEvent, setSEO } from '$lib/utils/helpers';
 	import ProductImage from '$lib/components/widgets/ProductImage.svelte';
@@ -485,10 +485,10 @@
 				startUnlimited();
 			} else if (key === 'a') {
 				event.preventDefault();
-				goto('/daily/arkisto');
+				goto(resolve('/daily/arkisto'));
 			} else if (key === 'escape' || key === 'b') {
 				event.preventDefault();
-				goto('/');
+				goto(resolve('/'));
 			}
 			return;
 		}
@@ -758,7 +758,7 @@
 					<div class="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
 						{#each showcasedProducts as product (product[AllColumns.Number])}
 							<a
-								href={`/tuotteet/${product[AllColumns.Number]}/`}
+								href={resolve(`/tuotteet/${product[AllColumns.Number]}/`)}
 								class="flex min-w-0 items-center gap-2 rounded border border-primary bg-primary p-2 hover:border-brand-2"
 							>
 								<div class="h-20 w-14 shrink-0 rounded bg-white p-1">
@@ -806,7 +806,7 @@
 						{/if}
 						<div class="grid w-full grid-cols-2 gap-2">
 							<a
-								href="/daily/arkisto"
+								href={resolve('/daily/arkisto')}
 								class={twMerge(components.button({ size: 'md' }), 'w-full px-4 py-2')}
 							>
 								<span class="flex items-center gap-2">
@@ -816,7 +816,9 @@
 									></span
 								>
 							</a>
-							<a href="/" class={twMerge(components.button({ size: 'md' }), 'w-full px-4 py-2')}
+							<a
+								href={resolve('/')}
+								class={twMerge(components.button({ size: 'md' }), 'w-full px-4 py-2')}
 								><span class="flex items-center gap-2"
 									>Takaisin Alkometriikkaan<kbd
 										class="ms-2 hidden h-5 items-center justify-center rounded border border-current px-1 text-[11px] leading-none font-semibold opacity-60 lg:inline-flex"

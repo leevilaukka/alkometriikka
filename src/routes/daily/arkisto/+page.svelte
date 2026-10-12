@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { asset, resolve } from '$app/paths';
 	import type { ArchiveIndex } from '$lib/daily/manifest';
 	import type { ArchivedScores, ArchiveRuns } from '$lib/daily/types';
 	import { loadArchivedScores, loadArchiveRuns } from '$lib/daily/storage';
@@ -59,7 +60,7 @@
 	async function loadIndex() {
 		loadError = null;
 		try {
-			const response = await fetch(`/daily/archive/index.json`);
+			const response = await fetch(asset(`/daily/archive/index.json`));
 			if (response.status === 404) {
 				index = { version: 1, dates: [] };
 				return;
@@ -123,7 +124,7 @@
 					<Icon name="calendar" />
 				</div>
 			</div>
-			<a href="/daily" class={twMerge(components.button(), 'px-3 py-2')}
+			<a href={resolve('/daily')} class={twMerge(components.button(), 'px-3 py-2')}
 				><span class="flex items-center gap-2"><Icon name="flame" />Päivän peli</span></a
 			>
 		</div>
@@ -184,7 +185,7 @@
 					{@const dayNumber = iso ? dayNumberForDate(iso) : 0}
 					{#if iso && available.has(iso)}
 						<a
-							href={`/daily/arkisto/${iso}`}
+							href={resolve(`/daily/arkisto/${iso}`)}
 							class="relative flex min-h-14 flex-col items-center justify-center gap-0.5 rounded border border-primary bg-primary p-1.5 transition-colors hover:border-brand-2"
 						>
 							{#if dayNumber >= 1}
@@ -205,7 +206,7 @@
 						</a>
 					{:else if iso === todayISO}
 						<a
-							href="/daily"
+							href={resolve('/daily')}
 							class="relative flex min-h-14 flex-col items-center justify-center gap-0.5 rounded border border-dashed border-brand-2 bg-secondary p-1.5 transition-colors hover:bg-primary"
 						>
 							{#if dayNumber >= 1}

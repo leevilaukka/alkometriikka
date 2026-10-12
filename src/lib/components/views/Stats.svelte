@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import type { ChartConfiguration } from 'chart.js';
 	import type { Kaljakori } from '$lib/alko';
 	import { AllColumns } from '$lib/utils/constants';
@@ -443,7 +444,7 @@
 					<li class="flex items-center gap-3 border-b border-primary px-4 py-2 last:border-b-0">
 						<span class="w-6 shrink-0 text-sm text-secondary">{index + 1}.</span>
 						<a
-							href={`/tuotteet/${product.number}/`}
+							href={resolve(`/tuotteet/${product.number}/`)}
 							class="min-w-0 flex-1 truncate hover:underline"
 							title={product.name}
 						>

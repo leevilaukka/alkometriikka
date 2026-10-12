@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import { AllColumns } from '$lib/utils/constants';
 	import type { PriceListItem } from '$lib/types';
 	import type { SaleInfo } from '$lib/utils/sales';
@@ -16,7 +17,7 @@
 	const manufacturerHref = $derived.by(() => {
 		const params = new URLSearchParams();
 		params.set(AllColumns.Manufacturer, product[AllColumns.Manufacturer]);
-		return `/?${params}`;
+		return resolve(`/?${params}`);
 	});
 
 	const details = $derived(

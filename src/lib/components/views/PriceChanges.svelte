@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { appPath } from '$lib/utils/paths';
+	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
 	import { getContext, untrack } from 'svelte';
 	import SvelteVirtualList from '@humanspeak/svelte-virtual-list';
@@ -324,7 +326,10 @@
 				>
 			</label>
 		{:else if Object.keys(availability.stores).length}
-			<a href="/myymalat" class="group flex w-fit items-center gap-1 text-sm text-secondary">
+			<a
+				href={resolve('/myymalat')}
+				class="group flex w-fit items-center gap-1 text-sm text-secondary"
+			>
 				<Icon name="map_pin" />
 				<span class="group-hover:underline">Valitse myymälä nähdäksesi sen valikoiman</span>
 			</a>
@@ -342,7 +347,7 @@
 		</p>
 		<div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-secondary">
 			{#if typeNode}
-				<a href={(subTypeNode ?? typeNode).path} class="group flex items-center gap-1">
+				<a href={appPath((subTypeNode ?? typeNode).path)} class="group flex items-center gap-1">
 					<span class="group-hover:underline">{categoryTitle(trail)}</span>
 					<Icon name="chevron_right" />
 				</a>

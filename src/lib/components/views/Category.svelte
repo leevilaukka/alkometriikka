@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { appPath } from '$lib/utils/paths';
+	import { resolve } from '$app/paths';
 	import type { Kaljakori } from '$lib/alko';
 	import type { AvailabilityData, PriceListItem } from '$lib/types';
 	import { AllColumns, AUTO_STORE_ID } from '$lib/utils/constants';
@@ -121,7 +123,7 @@
 		const params = new URLSearchParams();
 		params.set(AllColumns.Type, trail[0].name);
 		if (trail[1]) params.set(AllColumns.SubType, trail[1].name);
-		return `/?${params}`;
+		return resolve(`/?${params}`);
 	});
 
 	const feedPath = $derived(categoryFeedPath(trail[0].slug, trail[1]?.slug));
@@ -129,7 +131,9 @@
 	// A few standout products to open side by side
 	const compareHref = $derived.by(() => {
 		const picks = pickCategoryHighlights(active, Math.min(4, MAX_COMPARE_PRODUCTS));
-		return picks.length > 1 ? compareURL(picks.map((item) => item[AllColumns.Number])) : undefined;
+		return picks.length > 1
+			? resolve(compareURL(picks.map((item) => item[AllColumns.Number])))
+			: undefined;
 	});
 
 	const description = $derived(categoryDescription(trail));
@@ -172,7 +176,7 @@
 		<span class="text-xs text-secondary">{label}</span>
 		{#if product}
 			<a
-				href={`/tuotteet/${product[AllColumns.Number]}/`}
+				href={resolve(`/tuotteet/${product[AllColumns.Number]}/`)}
 				class="truncate font-bold hover:underline"
 				title={content}
 			>
@@ -271,7 +275,7 @@
 				>
 			</label>
 		{:else if Object.keys(availability.stores).length}
-			<a href="/myymalat" class="group flex items-center gap-1 text-sm text-secondary">
+			<a href={resolve('/myymalat')} class="group flex items-center gap-1 text-sm text-secondary">
 				<Icon name="map_pin" />
 				<span class="group-hover:underline">Valitse myymälä nähdäksesi sen valikoiman</span>
 			</a>
@@ -283,7 +287,7 @@
 				{#each chips as chip (chip.slug)}
 					{@const selected = chip.slug === node.slug}
 					<a
-						href={chip.path}
+						href={appPath(chip.path)}
 						aria-current={selected ? 'page' : undefined}
 						class={twMerge(
 							'flex shrink-0 items-center gap-1.5 rounded px-2.5 py-1 text-sm',
@@ -305,7 +309,7 @@
 				{/each}
 				{#each siblingTypes as type (type.slug)}
 					<a
-						href={type.path}
+						href={appPath(type.path)}
 						class="flex shrink-0 items-center gap-1.5 rounded border border-dashed border-primary px-2.5 py-1 text-sm text-secondary hover:bg-secondary"
 					>
 						{type.name}
