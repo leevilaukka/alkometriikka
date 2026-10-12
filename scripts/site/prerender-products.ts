@@ -142,10 +142,16 @@ function property(
 	return text ? { '@type': 'PropertyValue', name, value: text } : null;
 }
 
-function parsePrice(value: unknown, productId: string): number {
+/**
+ * The product's price, or null when Alko lists none (e.g. a 0 € placeholder).
+ * One unpriced product must never abort the whole prerender — its page is
+ * still written, just without the price in the offer and OG tags.
+ */
+function parsePrice(value: unknown, productId: string): number | null {
 	const price = typeof value === 'number' ? value : Number(asText(value).replace(',', '.'));
 	if (!Number.isFinite(price) || price <= 0) {
-		throw new Error(`Invalid price for product ${productId}: ${asText(value) || '(empty)'}`);
+		console.warn(`⚠️  No valid price for product ${productId}: ${asText(value) || '(empty)'}`);
+		return null;
 	}
 	return price;
 }
@@ -244,9 +250,7 @@ function productHtml(
 		offers: {
 			'@type': 'Offer',
 			url,
-			price,
-			priceCurrency: 'EUR',
-			valueAddedTaxIncluded: true,
+			...(price !== null ? { price, priceCurrency: 'EUR', valueAddedTaxIncluded: true } : {}),
 			seller: { '@type': 'Organization', name: 'Alko', url: 'https://www.alko.fi' },
 			...(sale && (sale.campaignStart || sale.campaignEnd)
 				? {
@@ -303,7 +307,7 @@ function productHtml(
 		['Alue', asText(fields.Alue)],
 		['Pullokoko', formatNumber(fields.Pullokoko, 'l')],
 		['Alkoholia', formatNumber(fields['Alkoholi-%'], '%')],
-		['Hinta', formatNumber(fields.Hinta, '€')],
+		['Hinta', price !== null ? formatNumber(fields.Hinta, '€') : ''],
 		['Litrahinta', formatNumber(fields.Litrahinta, '€/l')],
 		['Valikoima', asText(fields.Valikoima)]
 	].filter((entry) => entry[1]);
@@ -323,10 +327,13 @@ function productHtml(
 					)}" href="${escapeHtml(`${SITE_URL}/rss/${encodeURIComponent(id)}.xml`)}" />`
 				]
 			: [],
-		ogExtra: [
-			`\t<meta property="product:price:amount" content="${price}" />`,
-			`\t<meta property="product:price:currency" content="EUR" />`
-		],
+		ogExtra:
+			price !== null
+				? [
+						`\t<meta property="product:price:amount" content="${price}" />`,
+						`\t<meta property="product:price:currency" content="EUR" />`
+					]
+				: [],
 		jsonLd: [jsonLd, breadcrumbList],
 		fallbackName: 'product',
 		fallbackHtml: `\t\t${breadcrumbNav(categoryTrail)}
