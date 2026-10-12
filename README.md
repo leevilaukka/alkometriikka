@@ -204,11 +204,16 @@ the gap between request starts and serial cache writes.
 Successive runs continue filling the cache. `--limit 0` removes the page budget,
 `--force` refreshes the index and selected reviews, and `--data` / `--out` override
 the catalog and cache paths. Failed pages are retried after a day. A rate-limit
-response pauses the batch immediately; three consecutive network/server failures
+or access-denied response pauses the batch immediately; three consecutive network/server failures
 also pause it. Missing or changed individual pages are skipped. The index and
 review lists are saved every 50 attempts, so interrupted runs retain their
 progress. Old reviews, including previously collected vintages, are retained on
 source failures. Products without a matching source review remain without one.
+
+Development HTML omits the analytics scripts in `src/app.html` via the
+`analytics:start` / `analytics:end` markers and the server hook. Use `vite dev`
+(or `dev:no-sync`) for phone tunnels. Generated review JSON and build output
+are excluded from the dev file watcher; reload the page to pick up new reviews.
 
 The six-hour data workflow seeds, updates, and publishes this cache for active
 and archived products separately

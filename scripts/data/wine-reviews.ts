@@ -62,6 +62,9 @@ class ReviewRequestError extends Error {
 			this.status === undefined || this.status === 408 || this.status === 429 || this.status >= 500
 		);
 	}
+	get pauseImmediately() {
+		return this.status === 401 || this.status === 403 || this.status === 429;
+	}
 }
 
 function object(value: unknown): Record<string, unknown> {
@@ -429,7 +432,7 @@ export async function syncWineReviews(options: ReviewSyncOptions) {
 				try {
 					return { html: await (await request(wineReviewUrl(entry.slug))).text() };
 				} catch (error) {
-					if (error instanceof ReviewRequestError && error.status === 429) paused = true;
+					if (error instanceof ReviewRequestError && error.pauseImmediately) paused = true;
 					return { error };
 				}
 			})
@@ -453,11 +456,11 @@ export async function syncWineReviews(options: ReviewSyncOptions) {
 			consecutiveFailures = retryable ? consecutiveFailures + 1 : 0;
 			log(`Review ${entry.id} unchanged: ${String(error)}`);
 			if (
-				(error instanceof ReviewRequestError && error.status === 429) ||
+				(error instanceof ReviewRequestError && error.pauseImmediately) ||
 				consecutiveFailures >= 3
 			) {
 				log(
-					'Pausing requests because the source is unavailable or rate limited; cached reviews are preserved'
+					'Pausing requests because the source is unavailable, access denied, or rate limited; cached reviews are preserved'
 				);
 				paused = true;
 			}

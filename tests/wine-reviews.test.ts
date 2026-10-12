@@ -323,8 +323,8 @@ test('all-product sync includes archived SKUs and continues past invalid individ
 	}
 });
 
-test('rate limits pause immediately and repeated server failures pause after three requests', async () => {
-	for (const status of [429, 503]) {
+test('access denials and rate limits pause immediately; repeated server failures pause after three requests', async () => {
+	for (const status of [401, 403, 429, 503]) {
 		const dir = await mkdtemp(path.join(tmpdir(), 'alkometriikka-reviews-'));
 		try {
 			const entries = ['100001', '100002', '100003', '100004'].map((sku) => ({
@@ -349,7 +349,7 @@ test('rate limits pause immediately and repeated server failures pause after thr
 					return new Response('Unavailable', { status });
 				}
 			});
-			assert.equal(requests, status === 429 ? 1 : 3);
+			assert.equal(requests, status === 503 ? 3 : 1);
 			assert.equal(result.failed, requests);
 			assert.equal(result.pending, 4);
 			assert.deepEqual(JSON.parse(await readFile(path.join(dir, 'skus.json'), 'utf8')), []);
