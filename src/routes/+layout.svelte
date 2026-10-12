@@ -89,6 +89,10 @@
 	}
 
 	const extraItems: {href: string, icon: IconName, name: string}[] = [{
+		href: '/arvostelut/viinit/',
+		icon: 'star',
+		name: 'Arvostelut'
+	}, {
 		href: '/daily/arkisto',
 		icon: 'archive',
 		name: 'Daily-arkisto'
@@ -102,7 +106,7 @@
 		name: 'Tilastot'
 	}];
 
-	const noSearchPages: typeof page.route.id[] = ['/daily/arkisto', '/laskin', '/tilastot', '/listat', '/daily', '/daily/arkisto/[date]', '/tuotteet/[...id]'];
+	const noSearchPages: typeof page.route.id[] = ['/arvostelut/viinit', '/daily/arkisto', '/laskin', '/tilastot', '/listat', '/daily', '/daily/arkisto/[date]', '/tuotteet/[...id]'];
 </script>
 
 <svelte:window onclick={handleDocumentClick} />

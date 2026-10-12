@@ -1,4 +1,4 @@
-import { mkdir, readFile, rename, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, readdir, rename, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import {
 	isReviewSlug,
@@ -7,6 +7,7 @@ import {
 	VIINILEHTI_ORIGIN,
 	wineReviewUrl,
 	type WineReview,
+	type WineReviewCollection,
 	type ProductWineReviews
 } from '../../src/lib/utils/wine-reviews.ts';
 
@@ -36,6 +37,8 @@ export type ReviewSyncOptions = {
 	limit?: number;
 	skus?: Set<string>;
 	force?: boolean;
+	includeRemoved?: boolean;
+	concurrency?: number;
 	fetcher?: ReviewFetcher;
 	now?: Date;
 	delayMs?: number;
@@ -47,6 +50,19 @@ export type ReviewFetcher = (input: RequestInfo | URL, init?: RequestInit) => Pr
 const DAY = 86_400_000;
 const INDEX_MAX_AGE = DAY;
 const REVIEW_MAX_AGE = 30 * DAY;
+
+class ReviewRequestError extends Error {
+	readonly status?: number;
+	constructor(message: string, status?: number) {
+		super(message);
+		this.status = status;
+	}
+	get retryable() {
+		return (
+			this.status === undefined || this.status === 408 || this.status === 429 || this.status >= 500
+		);
+	}
+}
 
 function object(value: unknown): Record<string, unknown> {
 	return value && typeof value === 'object' && !Array.isArray(value)
@@ -201,6 +217,48 @@ async function writeJson(file: string, value: unknown): Promise<void> {
 	await rename(`${file}.tmp`, file);
 }
 
+/** Publish collected reviews, including preserved historical vintages. */
+export async function publishReviewCollection(
+	outputDir: string,
+	log: (message: string) => void = console.warn
+): Promise<WineReviewCollection> {
+	await mkdir(outputDir, { recursive: true });
+	const reviews: WineReview[] = [];
+	const ids = new Set<string>();
+	const files = (await readdir(outputDir, { withFileTypes: true }))
+		.filter((file) => file.isFile() && /^\d{6}\.json$/.test(file.name))
+		.sort((a, b) => a.name.localeCompare(b.name));
+	for (const file of files) {
+		const sku = file.name.slice(0, -5);
+		try {
+			const cached = readProductWineReviews(await readJson(path.join(outputDir, file.name)), sku);
+			for (const review of cached) {
+				const key = `${sku}:${review.id}`;
+				if (ids.has(key)) continue;
+				ids.add(key);
+				reviews.push(review);
+			}
+		} catch (error) {
+			if (!(error instanceof SyntaxError)) throw error;
+			log(`Skipping invalid review cache ${file.name}: ${String(error)}`);
+		}
+	}
+	reviews.sort(
+		(a, b) =>
+			a.sku.localeCompare(b.sku) ||
+			(b.vintage ?? '').localeCompare(a.vintage ?? '') ||
+			a.id.localeCompare(b.id)
+	);
+	const collection: WineReviewCollection = {
+		version: 1,
+		skus: [...new Set(reviews.map((review) => review.sku))].sort(),
+		reviews
+	};
+	await writeJson(path.join(outputDir, 'all.json'), collection);
+	await writeJson(path.join(outputDir, 'skus.json'), collection.skus);
+	return collection;
+}
+
 function fresh(date: string | undefined, now: number, age: number): boolean {
 	const parsed = Date.parse(date ?? '');
 	return Number.isFinite(parsed) && parsed <= now && now - parsed < age;
@@ -217,22 +275,27 @@ export async function syncWineReviews(options: ReviewSyncOptions) {
 		log = console.log
 	} = options;
 	const limit = options.limit ?? 200;
+	const concurrency = options.concurrency ?? 1;
 	if (!Number.isSafeInteger(limit) || limit < 0)
 		throw new Error('Review limit must be a nonnegative integer');
+	if (!Number.isInteger(concurrency) || concurrency < 1 || concurrency > 4)
+		throw new Error('Review concurrency must be between 1 and 4');
 	if (!catalog.products || Object.keys(catalog.products).length === 0)
 		throw new Error('Product catalog is empty');
-	const activeSkus = new Set(
+	const selectedSkus = new Set(
 		Object.entries(catalog.products)
 			.filter(
 				([sku, product]) =>
 					/^\d{6}$/.test(sku) &&
-					!product.meta?.removedFromSelection &&
+					(options.includeRemoved || !product.meta?.removedFromSelection) &&
 					(!options.skus || options.skus.has(sku))
 			)
 			.map(([sku]) => sku)
 	);
 	await mkdir(outputDir, { recursive: true });
 	const indexPath = path.join(outputDir, '_index.json');
+	// Existing reviews remain discoverable even when the source is down.
+	await publishReviewCollection(outputDir, log);
 	const saved = object(await readJson(indexPath));
 	let index: IndexCache | undefined;
 	if (saved.version === 1 && typeof saved.fetchedAt === 'string' && Array.isArray(saved.entries)) {
@@ -260,14 +323,20 @@ export async function syncWineReviews(options: ReviewSyncOptions) {
 		}
 	}
 	const request = async (url: string) => {
-		const response = await fetcher(url, {
-			headers: {
-				Accept: 'application/json, text/html',
-				'User-Agent': 'Alkometriikka/1.0 (+https://alkometriikka.fi)'
-			},
-			signal: AbortSignal.timeout(20_000)
-		});
-		if (!response.ok) throw new Error(`Viinilehti returned HTTP ${response.status}`);
+		let response: Response;
+		try {
+			response = await fetcher(url, {
+				headers: {
+					Accept: 'application/json, text/html',
+					'User-Agent': 'Alkometriikka/1.0 (+https://alkometriikka.fi)'
+				},
+				signal: AbortSignal.timeout(20_000)
+			});
+		} catch (error) {
+			throw new ReviewRequestError(`Viinilehti request failed: ${String(error)}`);
+		}
+		if (!response.ok)
+			throw new ReviewRequestError(`Viinilehti returned HTTP ${response.status}`, response.status);
 		return response;
 	};
 	if (force || !index || !fresh(index.fetchedAt, now.getTime(), INDEX_MAX_AGE)) {
@@ -302,7 +371,7 @@ export async function syncWineReviews(options: ReviewSyncOptions) {
 	const documents = new Map<string, ProductWineReviews>();
 	const pending: WineIndexEntry[] = [];
 	for (const entry of index.entries) {
-		if (!activeSkus.has(entry.sku)) continue;
+		if (!selectedSkus.has(entry.sku)) continue;
 		let document = documents.get(entry.sku);
 		if (!document) {
 			document = {
@@ -335,17 +404,65 @@ export async function syncWineReviews(options: ReviewSyncOptions) {
 		);
 	});
 	const batch = limit === 0 ? pending : pending.slice(0, limit);
+	log(`Review batch: ${batch.length} pages to fetch (${pending.length} pending)`);
 	let fetched = 0;
 	let failed = 0;
 	let consecutiveFailures = 0;
-	for (const entry of batch) {
-		if (delayMs > 0) await new Promise((resolve) => setTimeout(resolve, delayMs));
+	const checkpoint = async () => {
+		await writeJson(indexPath, index);
+		await publishReviewCollection(outputDir, log);
+	};
+	// Prefetch a bounded number of pages. Request starts remain spaced apart,
+	// while parsing and cache writes stay sequential (including same-SKU vintages).
+	type PageResult = { html: string } | { error: unknown } | { cancelled: true };
+	const pages: Promise<PageResult>[] = [];
+	let pacing = Promise.resolve();
+	let paused = false;
+	const enqueue = () => {
+		const entry = batch[pages.length];
+		pacing = pacing.then(async () => {
+			if (delayMs > 0) await new Promise((resolve) => setTimeout(resolve, delayMs));
+		});
+		pages.push(
+			pacing.then(async (): Promise<PageResult> => {
+				if (paused) return { cancelled: true };
+				try {
+					return { html: await (await request(wineReviewUrl(entry.slug))).text() };
+				} catch (error) {
+					if (error instanceof ReviewRequestError && error.status === 429) paused = true;
+					return { error };
+				}
+			})
+		);
+	};
+	for (let i = 0; i < Math.min(concurrency, batch.length); i++) enqueue();
+	for (let i = 0; i < pages.length; i++) {
+		const entry = batch[i];
+		const page = await pages[i];
+		if ('cancelled' in page) continue;
+		let review: WineReview | undefined;
+		let receivingPage = true;
 		try {
-			const review = parseWineReview(
-				await (await request(wineReviewUrl(entry.slug))).text(),
-				entry,
-				now.toISOString()
-			);
+			if ('error' in page) throw page.error;
+			receivingPage = false;
+			review = parseWineReview(page.html, entry, now.toISOString());
+		} catch (error) {
+			index.failures[entry.id] = now.toISOString();
+			failed++;
+			const retryable = error instanceof ReviewRequestError ? error.retryable : receivingPage;
+			consecutiveFailures = retryable ? consecutiveFailures + 1 : 0;
+			log(`Review ${entry.id} unchanged: ${String(error)}`);
+			if (
+				(error instanceof ReviewRequestError && error.status === 429) ||
+				consecutiveFailures >= 3
+			) {
+				log(
+					'Pausing requests because the source is unavailable or rate limited; cached reviews are preserved'
+				);
+				paused = true;
+			}
+		}
+		if (review) {
 			const document = documents.get(entry.sku)!;
 			const updated: ProductWineReviews = {
 				...document,
@@ -356,18 +473,16 @@ export async function syncWineReviews(options: ReviewSyncOptions) {
 			delete index.failures[entry.id];
 			fetched++;
 			consecutiveFailures = 0;
-		} catch (error) {
-			index.failures[entry.id] = now.toISOString();
-			failed++;
-			consecutiveFailures++;
-			log(`Review ${entry.id} unchanged: ${String(error)}`);
-			if (consecutiveFailures >= 3) {
-				log('Stopping after three consecutive failures; cached reviews are preserved');
-				break;
-			}
 		}
+		const completed = fetched + failed;
+		if (completed % 10 === 0)
+			log(
+				`Review progress: ${completed}/${batch.length} attempted, ${fetched} fetched, ${failed} failed`
+			);
+		if (completed % 50 === 0) await checkpoint();
+		if (!paused && pages.length < batch.length) enqueue();
 	}
-	await writeJson(indexPath, index);
+	await checkpoint();
 	const remaining = pending.length - fetched;
 	log(`Wine reviews: ${fetched} fetched, ${failed} failed, ${remaining} pending`);
 	return { fetched, failed, pending: remaining, indexUnavailable: false };

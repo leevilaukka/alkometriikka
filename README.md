@@ -175,17 +175,43 @@ bun run sync:reviews --dev --sku 431777 --sku 590857
 The sync script also runs directly with Node.js 24+: `node scripts/data/reviews.ts --dev`.
 Open `/tuotteet/431777/` or `/tuotteet/590857/` after syncing to inspect the review.
 
+The **Arvostelut** page at `/arvostelut/viinit/` lists all collected reviews,
+including historical vintages, with full text, search, rating filters, sorting,
+pagination, and product links. It is linked from the navigation menu.
+Every review sync also generates `reviews/skus.json` (a sorted JSON array of
+six-digit SKU strings with collected reviews) and `reviews/all.json` (the full
+collection loaded by the review page in one request). These files describe the
+collected cache. To rebuild them from existing files without network requests:
+
+```sh
+bun run sync:reviews --dev --catalog-only
+```
+
+To collect all indexed reviews for the whole catalog, including products removed
+from sale:
+
+```sh
+bun run sync:reviews --dev --limit 0 --include-removed --concurrency 4
+```
+
 The sync fetches Viinilehti's public search index at most once a day, matches
-active Alko SKUs, and extracts the structured review JSON from matched pages.
+Alko SKUs, and extracts the structured review JSON from matched pages. By default
+it selects active products; `--include-removed` includes the archived catalog too.
 It fetches up to 200 pages per run, spaced 500 ms apart. Missing reviews are
 filled first; cached text is refreshed after 30 days or a changed slug/rating.
+`--concurrency 1` (default) through `4` controls pages in flight while preserving
+the gap between request starts and serial cache writes.
 Successive runs continue filling the cache. `--limit 0` removes the page budget,
 `--force` refreshes the index and selected reviews, and `--data` / `--out` override
-the catalog and cache paths. Failed pages are retried after a day; three consecutive
-failures stop the batch. Old reviews, including previously collected vintages,
-are retained on source failures.
+the catalog and cache paths. Failed pages are retried after a day. A rate-limit
+response pauses the batch immediately; three consecutive network/server failures
+also pause it. Missing or changed individual pages are skipped. The index and
+review lists are saved every 50 attempts, so interrupted runs retain their
+progress. Old reviews, including previously collected vintages, are retained on
+source failures. Products without a matching source review remain without one.
 
-The six-hour data workflow seeds, updates, and publishes this cache separately
+The six-hour data workflow seeds, updates, and publishes this cache for active
+and archived products separately
 from Alko's dataset. Review sync errors do not block the product-data update.
 Site builds preserve the deployed review cache. Generated files are ignored by
 Git on feature branches. These source interfaces are undocumented; extraction

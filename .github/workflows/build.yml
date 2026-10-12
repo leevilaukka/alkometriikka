@@ -44,6 +44,9 @@ jobs:
           # copies static/ so a site rebuild never discards collected reviews.
           git archive origin/gh-pages reviews 2>/dev/null | tar -x -C static || true
 
+      - name: Generate review catalog from cached reviews
+        run: bun run sync:reviews --dev --catalog-only
+
       - name: Build site assets
         env:
           BASE_PATH: ''

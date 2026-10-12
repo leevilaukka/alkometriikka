@@ -7,6 +7,7 @@ import {
 	embeddedWineData,
 	parseWineIndex,
 	parseWineReview,
+	publishReviewCollection,
 	reviewText,
 	syncWineReviews,
 	type WineIndexEntry,
@@ -14,6 +15,7 @@ import {
 } from '../scripts/data/wine-reviews.ts';
 import {
 	readProductWineReviews,
+	readWineReviewCollection,
 	selectWineReview,
 	wineReviewUrl,
 	type WineReview
@@ -145,6 +147,77 @@ test('client rejects cross-product, unsafe, and incomplete cached records', () =
 	);
 });
 
+test('review catalogs list only valid collected SKUs and preserve leading zeroes and vintages', async () => {
+	const dir = await mkdtemp(path.join(tmpdir(), 'alkometriikka-reviews-'));
+	try {
+		const current = review();
+		const historical = review({ id: '123456_2023', vintage: '2023' });
+		const leadingZero = review({ id: '000123_2024', sku: '000123' });
+		await writeFile(
+			path.join(dir, '123456.json'),
+			JSON.stringify({ version: 1, sku: '123456', reviews: [current, historical, current] })
+		);
+		await writeFile(
+			path.join(dir, '000123.json'),
+			JSON.stringify({ version: 1, sku: '000123', reviews: [leadingZero] })
+		);
+		await writeFile(
+			path.join(dir, '654321.json'),
+			JSON.stringify({ version: 1, sku: '123456', reviews: [current] })
+		);
+		await writeFile(path.join(dir, '333333.json'), '{broken json');
+		await writeFile(
+			path.join(dir, '999999.json.tmp'),
+			JSON.stringify({ version: 1, sku: '999999', reviews: [review({ sku: '999999' })] })
+		);
+		await writeFile(
+			path.join(dir, '_index.json'),
+			JSON.stringify({ entries: [{ sku: '222222' }] })
+		);
+		const warnings: string[] = [];
+		const collection = await publishReviewCollection(dir, (message) => warnings.push(message));
+		assert.deepEqual(collection.skus, ['000123', '123456']);
+		assert.equal(collection.reviews.length, 3);
+		assert.equal(warnings.length, 1);
+		assert.deepEqual(
+			JSON.parse(await readFile(path.join(dir, 'skus.json'), 'utf8')),
+			collection.skus
+		);
+		assert.deepEqual(
+			readWineReviewCollection(JSON.parse(await readFile(path.join(dir, 'all.json'), 'utf8'))),
+			collection
+		);
+		assert.deepEqual(await publishReviewCollection(dir, () => {}), collection);
+	} finally {
+		await rm(dir, { recursive: true, force: true });
+	}
+});
+
+test('a fresh cache publishes valid empty lists without source requests', async () => {
+	const dir = await mkdtemp(path.join(tmpdir(), 'alkometriikka-reviews-'));
+	try {
+		const collection = await publishReviewCollection(dir);
+		assert.deepEqual(collection, { version: 1, skus: [], reviews: [] });
+		assert.deepEqual(readWineReviewCollection(collection), collection);
+		assert.equal(await readFile(path.join(dir, 'skus.json'), 'utf8'), '[]');
+	} finally {
+		await rm(dir, { recursive: true, force: true });
+	}
+});
+
+test('aggregate validation rejects inconsistent SKU lists and malformed or duplicate reviews', () => {
+	const valid = review();
+	const collection = { version: 1, skus: ['123456'], reviews: [valid] };
+	assert.deepEqual(readWineReviewCollection(collection), collection);
+	assert.equal(readWineReviewCollection({ ...collection, skus: ['123456', '123456'] }), null);
+	assert.equal(readWineReviewCollection({ ...collection, skus: ['123456', '654321'] }), null);
+	assert.equal(readWineReviewCollection({ ...collection, reviews: [valid, valid] }), null);
+	assert.equal(
+		readWineReviewCollection({ ...collection, reviews: [review({ slug: '../bad' })] }),
+		null
+	);
+});
+
 test('sync fills only matching active SKUs and reuses fresh index and page cache', async () => {
 	const dir = await mkdtemp(path.join(tmpdir(), 'alkometriikka-reviews-'));
 	try {
@@ -189,6 +262,183 @@ test('sync fills only matching active SKUs and reuses fresh index and page cache
 		requests.length = 0;
 		assert.equal((await syncWineReviews(options)).fetched, 0);
 		assert.equal(requests.length, 0);
+	} finally {
+		await rm(dir, { recursive: true, force: true });
+	}
+});
+
+test('all-product sync includes archived SKUs and continues past invalid individual pages', async () => {
+	const dir = await mkdtemp(path.join(tmpdir(), 'alkometriikka-reviews-'));
+	try {
+		const entries = ['100001', '100002', '100003', '100004', '100005'].map((sku) => ({
+			...entry,
+			id: `${sku}_2024`,
+			sku,
+			slug: `wine-${sku}`
+		}));
+		await writeFile(
+			path.join(dir, '_index.json'),
+			JSON.stringify({
+				version: 1,
+				fetchedAt: now.toISOString(),
+				entries,
+				failures: {}
+			})
+		);
+		const requests: string[] = [];
+		const result = await syncWineReviews({
+			catalog: {
+				products: {
+					'100001': {},
+					'100002': {},
+					'100003': {},
+					'100004': { meta: { removedFromSelection: '2026-01-01' } }
+				}
+			},
+			outputDir: dir,
+			now,
+			delayMs: 0,
+			limit: 0,
+			includeRemoved: true,
+			log: () => {},
+			fetcher: async (input) => {
+				requests.push(String(input));
+				return new Response(
+					String(input).includes('100004')
+						? html({ alkonumber: '100004' })
+						: '<html>Review unavailable</html>'
+				);
+			}
+		});
+		assert.deepEqual(result, { fetched: 1, failed: 3, pending: 3, indexUnavailable: false });
+		assert.equal(requests.length, 4);
+		assert.deepEqual(JSON.parse(await readFile(path.join(dir, 'skus.json'), 'utf8')), ['100004']);
+		assert.equal(
+			Object.keys(JSON.parse(await readFile(path.join(dir, '_index.json'), 'utf8')).failures)
+				.length,
+			3
+		);
+	} finally {
+		await rm(dir, { recursive: true, force: true });
+	}
+});
+
+test('rate limits pause immediately and repeated server failures pause after three requests', async () => {
+	for (const status of [429, 503]) {
+		const dir = await mkdtemp(path.join(tmpdir(), 'alkometriikka-reviews-'));
+		try {
+			const entries = ['100001', '100002', '100003', '100004'].map((sku) => ({
+				...entry,
+				id: `${sku}_2024`,
+				sku
+			}));
+			await writeFile(
+				path.join(dir, '_index.json'),
+				JSON.stringify({ version: 1, fetchedAt: now.toISOString(), entries, failures: {} })
+			);
+			let requests = 0;
+			const result = await syncWineReviews({
+				catalog: { products: Object.fromEntries(entries.map(({ sku }) => [sku, {}])) },
+				outputDir: dir,
+				now,
+				delayMs: 0,
+				limit: 0,
+				log: () => {},
+				fetcher: async () => {
+					requests++;
+					return new Response('Unavailable', { status });
+				}
+			});
+			assert.equal(requests, status === 429 ? 1 : 3);
+			assert.equal(result.failed, requests);
+			assert.equal(result.pending, 4);
+			assert.deepEqual(JSON.parse(await readFile(path.join(dir, 'skus.json'), 'utf8')), []);
+		} finally {
+			await rm(dir, { recursive: true, force: true });
+		}
+	}
+});
+
+test('long batches publish collected reviews before the batch ends', async () => {
+	const dir = await mkdtemp(path.join(tmpdir(), 'alkometriikka-reviews-'));
+	try {
+		const entries = Array.from({ length: 51 }, (_, i) => {
+			const sku = String(100000 + i);
+			return { ...entry, id: `${sku}_2024`, sku, slug: `wine-${sku}` };
+		});
+		await writeFile(
+			path.join(dir, '_index.json'),
+			JSON.stringify({ version: 1, fetchedAt: now.toISOString(), entries, failures: {} })
+		);
+		let requests = 0;
+		await syncWineReviews({
+			catalog: { products: Object.fromEntries(entries.map(({ sku }) => [sku, {}])) },
+			outputDir: dir,
+			now,
+			delayMs: 0,
+			limit: 0,
+			log: () => {},
+			fetcher: async (input) => {
+				requests++;
+				if (requests === 51) {
+					const collection = JSON.parse(await readFile(path.join(dir, 'all.json'), 'utf8'));
+					assert.equal(collection.reviews.length, 50);
+				}
+				const sku = /wine-(\d{6})/.exec(String(input))![1];
+				return new Response(html({ alkonumber: sku }));
+			}
+		});
+		assert.equal(requests, 51);
+		assert.equal(JSON.parse(await readFile(path.join(dir, 'all.json'), 'utf8')).reviews.length, 51);
+	} finally {
+		await rm(dir, { recursive: true, force: true });
+	}
+});
+
+test('bounded concurrent requests preserve every vintage when responses finish out of order', async () => {
+	const dir = await mkdtemp(path.join(tmpdir(), 'alkometriikka-reviews-'));
+	try {
+		const entries = ['2021', '2022', '2023', '2024'].map((vintage) => ({
+			...entry,
+			id: `123456_${vintage}`,
+			vintage,
+			slug: `wine-${vintage}`
+		}));
+		await writeFile(
+			path.join(dir, '_index.json'),
+			JSON.stringify({ version: 1, fetchedAt: now.toISOString(), entries, failures: {} })
+		);
+		let active = 0;
+		let maximum = 0;
+		const result = await syncWineReviews({
+			catalog: { products: { '123456': {} } },
+			outputDir: dir,
+			now,
+			delayMs: 0,
+			concurrency: 4,
+			limit: 0,
+			log: () => {},
+			fetcher: async (input) => {
+				active++;
+				maximum = Math.max(maximum, active);
+				const vintage = /wine-(\d{4})/.exec(String(input))![1];
+				await new Promise((resolve) => setTimeout(resolve, vintage === '2021' ? 20 : 1));
+				active--;
+				return new Response(html({ vintage }));
+			}
+		});
+		assert.equal(maximum, 4);
+		assert.equal(result.fetched, 4);
+		const document = readProductWineReviews(
+			JSON.parse(await readFile(path.join(dir, '123456.json'), 'utf8')),
+			'123456'
+		);
+		assert.deepEqual(document.map(({ vintage }) => vintage).sort(), [
+			'2021',
+			'2022',
+			'2023',
+			'2024'
+		]);
 	} finally {
 		await rm(dir, { recursive: true, force: true });
 	}
@@ -278,6 +528,11 @@ test('source failures and incomplete index preserve previously collected review 
 		});
 		assert.equal(failed.failed, 1);
 		assert.equal(await readFile(path.join(dir, '123456.json'), 'utf8'), old);
+		assert.deepEqual(JSON.parse(await readFile(path.join(dir, 'skus.json'), 'utf8')), ['123456']);
+		assert.equal(
+			JSON.parse(await readFile(path.join(dir, 'all.json'), 'utf8')).reviews[0].text,
+			review().text
+		);
 		let calls = 0;
 		await syncWineReviews({
 			...options,

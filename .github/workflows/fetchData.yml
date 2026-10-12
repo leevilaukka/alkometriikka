@@ -62,7 +62,7 @@ jobs:
       # batch fills missing reviews over successive runs without blocking Alko.
       - name: Sync Viinilehti reviews
         continue-on-error: true
-        run: bun run sync:reviews --limit 200
+        run: bun run sync:reviews --limit 200 --include-removed
 
       - name: Upload wine review cache
         uses: actions/upload-artifact@v4
