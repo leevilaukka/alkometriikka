@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import type { AvailabilityStore } from '$lib/types';
 	import {
 		formatStoreDistance,
@@ -65,7 +66,7 @@
 				{@const storeOpen = isStoreOpen(store)}
 				<li class="flex gap-2.5 border-b border-primary p-3.5 last:border-b-0">
 					<div class="flex min-w-0 flex-1 flex-col gap-0.5">
-						<a href={`/myymalat/${store.id}/`} class="w-fit font-bold hover:underline"
+						<a href={resolve(`/myymalat/${store.id}/`)} class="w-fit font-bold hover:underline"
 							>{store.name}</a
 						>
 						{#if store.address}

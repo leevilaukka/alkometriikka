@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { appPath } from '$lib/utils/paths';
+	import { resolve } from '$app/paths';
 	import '../app.css';
 	import { dev } from '$app/environment';
 	import { ContextKeys, LocalStorageKeys } from '$lib/utils/constants';
@@ -228,7 +230,7 @@
 		<header
 			class="relative flex h-fit items-center gap-2 border-b border-primary bg-primary px-4 py-2 md:gap-4"
 		>
-			<a href="/" class="flex shrink-0 flex-row items-center gap-3 bg-primary">
+			<a href={resolve('/')} class="flex shrink-0 flex-row items-center gap-3 bg-primary">
 				<img
 					src={logo}
 					alt="Alkometriikka Logo"
@@ -286,7 +288,7 @@
 					>
 						{#each extraItems as item}
 							<a
-								href={item.href}
+								href={appPath(item.href)}
 								onclick={closeExtraMenu}
 								class={twMerge(components.button(), 'w-full justify-start')}
 							>
@@ -296,10 +298,16 @@
 						{/each}
 					</div>
 				</details>
-				<a href="/daily" aria-label="Daily" class={twMerge(components.button(), 'p-2 text-xl')}
+				<a
+					href={resolve('/daily')}
+					aria-label="Daily"
+					class={twMerge(components.button(), 'p-2 text-xl')}
 					>{#if !$isMobile}<span class="text-sm">Daily</span>{/if}<Icon name="flame" /></a
 				>
-				<a href="/listat" aria-label="Listat" class={twMerge(components.button(), 'p-2 text-xl')}
+				<a
+					href={resolve('/listat')}
+					aria-label="Listat"
+					class={twMerge(components.button(), 'p-2 text-xl')}
 					>{#if !$isMobile}<span class="text-sm">Listat</span>{/if}<Icon name="list_ul" /></a
 				>
 				<Settings {alko} />

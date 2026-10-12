@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import { AllColumns } from '$lib/utils/constants';
 	import { headerToDisplayName, valueToString } from '$lib/utils/helpers';
 	import { formatValue } from '$lib/utils/format';
@@ -57,7 +58,7 @@
 			</div>
 			<div class="flex w-full flex-col gap-2">
 				<div class="flex flex-row items-center gap-3">
-					<a href={`/tuotteet/${product[AllColumns.Number]}/`} class="hover:underline">
+					<a href={resolve(`/tuotteet/${product[AllColumns.Number]}/`)} class="hover:underline">
 						<h2 class="text-xl font-bold md:text-2xl">
 							{product[AllColumns.Name]} ({formatValue(
 								product[AllColumns.BottleSize],

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { asset, resolve } from '$app/paths';
 	import { tick } from 'svelte';
 	import { AllColumns } from '$lib/utils/constants';
 	import { components } from '$lib/utils/styles';
@@ -76,7 +77,7 @@
 		loadError = null;
 		try {
 			if (!/^\d{4}-\d{2}-\d{2}$/.test(forDate)) throw new Error('Päivää ei ole vielä arkistoitu');
-			const response = await fetch(`/daily/archive/${forDate}.json`);
+			const response = await fetch(asset(`/daily/archive/${forDate}.json`));
 			if (response.status === 404) throw new Error('Päivää ei ole vielä arkistoitu');
 			if (!response.ok) throw new Error(`HTTP ${response.status}`);
 			let parsed: ArchiveGame;
@@ -97,7 +98,7 @@
 
 	async function loadIndex() {
 		try {
-			const response = await fetch(`/daily/archive/index.json`);
+			const response = await fetch(asset(`/daily/archive/index.json`));
 			if (response.status !== 200) {
 				index = { version: 1, dates: [] };
 				return;
@@ -290,21 +291,21 @@
 <main class="mx-auto flex w-full max-w-4xl flex-col gap-6 p-4 md:p-8 lg:gap-8 lg:p-10">
 	<header class="flex flex-col gap-2 border-b border-primary pb-5">
 		<div class="flex items-center justify-between gap-4">
-			<a href="/daily/arkisto" class={twMerge(components.button(), 'px-3 py-2')}
+			<a href={resolve('/daily/arkisto')} class={twMerge(components.button(), 'px-3 py-2')}
 				><span class="flex items-center gap-2"><Icon name="calendar" />Kalenteri</span></a
 			>
 			{#if archive}
 				<div class="flex items-center gap-2">
 					{#if previousDate}
 						<a
-							href={`/daily/arkisto/${previousDate}`}
+							href={resolve(`/daily/arkisto/${previousDate}`)}
 							class={twMerge(components.button(), 'px-3 py-2')}
 							aria-label="Edellinen päivä"><Icon name="chevron_left" />{shortDate(previousDate)}</a
 						>
 					{/if}
 					{#if nextDate}
 						<a
-							href={`/daily/arkisto/${nextDate}`}
+							href={resolve(`/daily/arkisto/${nextDate}`)}
 							class={twMerge(components.button(), 'px-3 py-2')}
 							aria-label="Seuraava päivä">{shortDate(nextDate)}<Icon name="chevron_right" /></a
 						>
@@ -332,7 +333,7 @@
 		>
 			<p class="text-lg font-bold">{loadError}</p>
 			<a
-				href="/daily/arkisto"
+				href={resolve('/daily/arkisto')}
 				class={twMerge(components.button({ type: 'negative', size: 'md' }), 'px-4 py-2')}
 				>Takaisin kalenteriin</a
 			>
@@ -345,7 +346,9 @@
 		<section class="flex flex-col gap-5">
 			<div class="flex items-center justify-between">
 				<h2 class="text-xl font-bold">Tulokset</h2>
-				<a href="/daily/arkisto" class={twMerge(components.button(), 'px-3 py-2')}>Kalenteri</a>
+				<a href={resolve('/daily/arkisto')} class={twMerge(components.button(), 'px-3 py-2')}
+					>Kalenteri</a
+				>
 			</div>
 			<section
 				class="flex flex-col gap-5 rounded border border-primary bg-secondary p-5 text-center md:p-8"

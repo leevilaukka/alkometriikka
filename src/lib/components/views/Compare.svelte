@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import { AllColumns } from '$lib/utils/constants';
 	import { formatValue } from '$lib/utils/format';
 	import { getSaleInfo } from '$lib/utils/sales';
@@ -37,14 +38,15 @@
 
 	function handleBack() {
 		if (window.history.length > 1) window.history.back();
-		else goto('/');
+		else goto(resolve('/'));
 	}
 
 	function handleRemove(id: string) {
 		removeFromCompare(id);
 		const remaining = products.map((p) => p[AllColumns.Number]).filter((n) => n !== id);
-		if (remaining.length === 0) goto('/');
-		else goto(compareURL(remaining), { replaceState: true, noScroll: true, keepFocus: true });
+		if (remaining.length === 0) goto(resolve('/'));
+		else
+			goto(resolve(compareURL(remaining)), { replaceState: true, noScroll: true, keepFocus: true });
 	}
 
 	$effect(() => {
@@ -109,7 +111,10 @@
 		<div class="mx-auto prose flex flex-col items-center gap-4 py-16 text-center dark:prose-invert">
 			<h2>Vertailu on tyhjä</h2>
 			<p>Lisää tuotteita vertailuun tuotevalikosta "Vertaile"-painikkeella.</p>
-			<a href="/" class={twMerge(components.button({ type: 'positive' }), 'mx-auto w-fit')}>
+			<a
+				href={resolve('/')}
+				class={twMerge(components.button({ type: 'positive' }), 'mx-auto w-fit')}
+			>
 				<span>Tuotevalikkoon</span>
 				<Icon name="arrow_right_stroke" />
 			</a>
@@ -156,7 +161,7 @@
 							<ProductImage number={product[AllColumns.Number]} name={product[AllColumns.Name]} />
 						</div>
 						<a
-							href={`/tuotteet/${product[AllColumns.Number]}/`}
+							href={resolve(`/tuotteet/${product[AllColumns.Number]}/`)}
 							class="text-center text-sm font-bold hover:underline md:text-base"
 						>
 							{product[AllColumns.Name]}

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import Icon from '$lib/components/widgets/Icon.svelte';
 	import { preferredStoreId } from '$lib/global.svelte';
 	import { AUTO_STORE_ID } from '$lib/utils/constants';
@@ -88,7 +89,7 @@
 					? 'Automaattinen valinta käytössä'
 					: 'Valitse lähin myymälä automaattisesti'}
 			</button>
-			<a href="/kompassi" class={components.button({ size: 'md' })}>
+			<a href={resolve('/kompassi')} class={components.button({ size: 'md' })}>
 				<Icon name="compass" />
 				<span>Kompassi lähimpään myymälään</span>
 			</a>
@@ -117,7 +118,7 @@
 						<li
 							class="flex flex-col gap-3 border-b border-primary px-4 py-3 last:border-b-0 sm:flex-row sm:items-center"
 						>
-							<a href={`/myymalat/${store.id}/`} class="min-w-0 flex-1 hover:underline">
+							<a href={resolve(`/myymalat/${store.id}/`)} class="min-w-0 flex-1 hover:underline">
 								<span class="block font-semibold">{store.name}</span>
 								{#if address}
 									<span class="block text-sm text-secondary">{address}</span>

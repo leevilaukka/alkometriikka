@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import { AllColumns } from '$lib/utils/constants';
 	import { formatValue } from '$lib/utils/format';
 	import type { SizeOption } from '$lib/utils/filters';
@@ -9,7 +10,7 @@
 </script>
 
 <a
-	href={`/tuotteet/${size.product[AllColumns.Number]}/`}
+	href={resolve(`/tuotteet/${size.product[AllColumns.Number]}/`)}
 	class={twMerge(
 		'flex min-h-11 w-full items-center gap-3 rounded border border-primary bg-primary p-3 text-left hover:border-green-600',
 		_class

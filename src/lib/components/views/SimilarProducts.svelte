@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import { findSimilarProducts } from '$lib/utils/filters';
 	import SvelteVirtualList from '@humanspeak/svelte-virtual-list';
 	import ProductPreview from '../widgets/ProductPreview.svelte';
@@ -47,7 +48,7 @@
 
 	function handleBack() {
 		if (window.history.length > 1) window.history.back();
-		else goto('/');
+		else goto(resolve('/'));
 	}
 
 	onMount(() => {
@@ -129,7 +130,10 @@
 								<div class="flex flex-col gap-2">
 									<h2 class="text-lg font-bold md:text-xl">Samankaltaisia tuotteita kuin:</h2>
 									<h1 class="text-2xl font-bold md:text-3xl">
-										<a href={`/tuotteet/${product[AllColumns.Number]}/`} class="hover:underline">
+										<a
+											href={resolve(`/tuotteet/${product[AllColumns.Number]}/`)}
+											class="hover:underline"
+										>
 											{product[AllColumns.Name]}
 										</a>
 									</h1>
