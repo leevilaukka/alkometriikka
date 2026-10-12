@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import { reviewVintage, wineReviewUrl, type WineReview } from '$lib/utils/wine-reviews';
+	import { components } from '$lib/utils/styles';
 	import Icon from './Icon.svelte';
 
 	let {
@@ -67,8 +68,8 @@
 			{#if review.valueDescription}<p><strong>Hinta-laatusuhde:</strong> {review.valueDescription}</p>{/if}
 		</div>
 	{/if}
-	<a href={wineReviewUrl(review.slug)} target="_blank" rel="noopener noreferrer" class="flex w-fit items-center gap-2 font-semibold text-brand-3 hover:underline dark:text-red-400">
-		<span>Lähde: Viinilehti — lue alkuperäinen arvio</span>
-		<Icon name="link_external" />
+	<a href={wineReviewUrl(review.slug)} target="_blank" rel="noopener noreferrer" class={components.button()}>
+		<span>Lue viinilehdessä</span>
+		<span aria-hidden="true"><Icon name="link_external" /></span>
 	</a>
 </section>
