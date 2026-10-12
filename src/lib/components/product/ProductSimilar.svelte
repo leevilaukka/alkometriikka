@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import { AllColumns } from '$lib/utils/constants';
 	import { formatValue } from '$lib/utils/format';
 	import { components } from '$lib/utils/styles';
@@ -57,7 +58,7 @@
 		<div class="flex flex-wrap items-center justify-between gap-3.5">
 			<h2 class="text-2xl font-bold">Samankaltaisia tuotteita</h2>
 			<a
-				href={`/vastaavat/${product[AllColumns.Number]}`}
+				href={resolve(`/vastaavat/${product[AllColumns.Number]}`)}
 				class={twMerge(components.button({ size: 'sm' }), 'flex items-center gap-2')}
 			>
 				<span>Lisää samankaltaisia</span>
@@ -70,7 +71,7 @@
 				{@const number = similarProduct[AllColumns.Number]}
 				{@const inCompare = compareProductIds.includes(number)}
 				<div class="flex w-48 shrink-0 flex-col gap-3 rounded-lg border border-primary p-4">
-					<a href={`/tuotteet/${number}/`} class="flex flex-col gap-3">
+					<a href={resolve(`/tuotteet/${number}/`)} class="flex flex-col gap-3">
 						<div class="flex h-30 flex-col gap-2 md:h-33">
 							<h3 class="line-clamp-3 text-xl font-bold md:text-2xl">
 								{similarProduct[AllColumns.Name]}

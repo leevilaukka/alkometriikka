@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import Icon from '$lib/components/widgets/Icon.svelte';
 	import StoreCompass from '$lib/components/widgets/StoreCompass.svelte';
 	import { preferredStoreId } from '$lib/global.svelte';
@@ -51,11 +52,11 @@
 
 {#snippet nav()}
 	<nav class="flex items-center gap-2">
-		<a href="/" class={twMerge(components.button({ size: 'md' }))}>
+		<a href={resolve('/')} class={twMerge(components.button({ size: 'md' }))}>
 			<Icon name="home" class="inline-block" />
 			<span>Etusivulle</span>
 		</a>
-		<a href="/myymalat" class={twMerge(components.button({ size: 'md' }))}>
+		<a href={resolve('/myymalat')} class={twMerge(components.button({ size: 'md' }))}>
 			<Icon name="map_pin" />
 			<span>Myymälät</span>
 		</a>
@@ -106,7 +107,7 @@
 				class="grid grid-cols-2 gap-2 border-t border-primary pt-4 sm:flex sm:flex-wrap sm:gap-3"
 			>
 				<a
-					href={`/?${AllColumns.StoreAvailability}=${encodeURIComponent(store.name)}`}
+					href={resolve(`/?${AllColumns.StoreAvailability}=${encodeURIComponent(store.name)}`)}
 					class={twMerge(
 						components.button({ size: 'md' }),
 						'col-span-2 w-full justify-center px-3 py-2.5 text-base sm:col-span-1 sm:w-auto sm:px-5 sm:py-3 sm:text-lg'

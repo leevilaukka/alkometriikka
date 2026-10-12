@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { appPath } from '$lib/utils/paths';
 	import type { Kaljakori } from '$lib/alko';
 	import type { PriceListItem } from '$lib/types';
 	import { findProductCategoryTrail } from '$lib/utils/categories';
@@ -38,7 +39,7 @@
 {#snippet categoryLink(className: string)}
 	{#if categoryNode}
 		<a
-			href={categoryNode.path}
+			href={appPath(categoryNode.path)}
 			class={twMerge('group items-center gap-1 text-sm text-secondary', className)}
 		>
 			<span class="group-hover:underline">Selaa kategoriaa {categoryNode.name}</span>

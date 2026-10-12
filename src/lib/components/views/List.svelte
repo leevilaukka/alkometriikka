@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import { isLaptop, pageBottomBar, personalInfo, searchQuery, isMobile } from '$lib/global.svelte';
 	import { components } from '$lib/utils/styles';
 	import { handleShare, sendAnalyticsEvent } from '$lib/utils/helpers';
@@ -251,7 +252,7 @@
 {#snippet compareButton(inBar: boolean)}
 	{#if compareIds.length > 1}
 		<a
-			href={compareURL(compareIds)}
+			href={resolve(compareURL(compareIds))}
 			aria-label="Vertaile listan tuotteita"
 			title={compareTruncated
 				? `Vertaile ${MAX_COMPARE_PRODUCTS} ensimmäistä tuotetta nykyisessä järjestyksessä`
@@ -294,7 +295,7 @@
 
 <div class="flex flex-row items-center justify-between gap-4 border-b border-primary p-3 md:p-4">
 	<button
-		onclick={() => (window.history.length > 1 ? window.history.back() : goto('/'))}
+		onclick={() => (window.history.length > 1 ? window.history.back() : goto(resolve('/')))}
 		class={twMerge(components.button({ size: 'md' }), 'aspect-square md:aspect-auto')}
 	>
 		<Icon name="arrow_back" class="inline-block" />
@@ -341,7 +342,10 @@
 			<div class="mx-auto prose text-center dark:prose-invert">
 				<h2>Lista on tyhjä!</h2>
 				<p>Lisää tuotteita listaan tuotevalikosta!</p>
-				<a href="/" class={twMerge(components.button({ type: 'positive' }), 'mx-auto w-full')}>
+				<a
+					href={resolve('/')}
+					class={twMerge(components.button({ type: 'positive' }), 'mx-auto w-full')}
+				>
 					<span>Tuotevalikkoon</span>
 					<Icon name="arrow_right_stroke" />
 				</a>

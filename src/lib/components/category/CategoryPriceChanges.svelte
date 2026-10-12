@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { appPath } from '$lib/utils/paths';
 	import type { PriceListItem } from '$lib/types';
 	import { sendAnalyticsEvent } from '$lib/utils/helpers';
 	import { recentPriceChanges } from '$lib/utils/metrics';
@@ -48,7 +49,7 @@
 	{/if}
 	<div class="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-xs">
 		{#if changes.length > 0}
-			<a href={pageHref} class="group flex items-center gap-1">
+			<a href={appPath(pageHref)} class="group flex items-center gap-1">
 				<span class="group-hover:underline">Kaikki kategorian hinnanmuutokset</span>
 				<Icon name="chevron_right" />
 			</a>

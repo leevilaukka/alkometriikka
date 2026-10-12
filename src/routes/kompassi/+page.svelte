@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import { onMount } from 'svelte';
 	import { twMerge } from 'tailwind-merge';
 	import CompassDial from '$lib/components/widgets/CompassDial.svelte';
@@ -123,7 +124,7 @@
 
 		{#if target}
 			<div class="flex flex-col items-center gap-1 text-center">
-				<a href={`/myymalat/${target.id}/`} class="text-xl font-bold hover:underline">
+				<a href={resolve(`/myymalat/${target.id}/`)} class="text-xl font-bold hover:underline">
 					{target.name}
 				</a>
 				<p class="text-sm text-secondary">

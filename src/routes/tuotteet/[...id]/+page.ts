@@ -1,3 +1,4 @@
+import { resolve } from '$app/paths';
 import { error, redirect } from '@sveltejs/kit';
 
 export const trailingSlash = 'always';
@@ -8,7 +9,7 @@ export async function load({ parent, params }) {
 
 	const id = params.id?.split('/')[0];
 
-	if (!id) redirect(300, '/');
+	if (!id) redirect(300, resolve('/'));
 
 	if (!alko.kaljakori.findById(id)) {
 		error(404, {

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import { compareProductIds } from '$lib/global.svelte';
 	import { AllColumns } from '$lib/utils/constants';
 	import { components } from '$lib/utils/styles';
@@ -59,7 +60,7 @@
 				<span class="hidden sm:inline">Tyhjennä</span>
 			</button>
 			<button
-				onclick={() => goto(compareURL(compareProductIds))}
+				onclick={() => goto(resolve(compareURL(compareProductIds)))}
 				class={twMerge(components.button({ type: 'positive' }))}
 			>
 				<span>Vertaile</span>

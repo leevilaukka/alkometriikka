@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import {
 		AllColumns,
 		DatasetColumns,
@@ -30,7 +31,7 @@
 		const params = new URLSearchParams();
 		params.set(AllColumns.FoodPairings, pairing);
 		if (product[AllColumns.Type]) params.set(AllColumns.Type, product[AllColumns.Type]);
-		return `/?${params}`;
+		return resolve(`/?${params}`);
 	}
 
 	const rows = $derived.by<Row[]>(() => {

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import { twMerge } from 'tailwind-merge';
 	import Icon from '$lib/components/widgets/Icon.svelte';
 	import { locationDenied, userLocation } from '$lib/global.svelte';
@@ -108,7 +109,7 @@
 		{:else if arrived}
 			<p class="text-lg font-bold">Perillä!</p>
 			<a
-				href="/listat"
+				href={resolve('/listat')}
 				class={twMerge(components.button({ type: 'positive', size: 'md' }), 'mt-2 px-5 py-3')}
 			>
 				<Icon name="list" />

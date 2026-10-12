@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import { generateTitle } from '$lib/utils/helpers';
 	import { page } from '$app/state';
 	import { twMerge } from 'tailwind-merge';
@@ -17,13 +18,13 @@
 		<p>{page.error?.message}</p>
 
 		<div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-center">
-			<a href="/" class={twMerge(components.button({ size: 'md' }))}>
+			<a href={resolve('/')} class={twMerge(components.button({ size: 'md' }))}>
 				<Icon name="arrow_left" class="inline-block" />
 				<span>Palaa etusivulle</span>
 			</a>
 
 			{#if page.route.id === '/myymalat/[storeID]'}
-				<a href="/myymalat" class={twMerge(components.button({ size: 'md' }))}>
+				<a href={resolve('/myymalat')} class={twMerge(components.button({ size: 'md' }))}>
 					<Icon name="map_pin" class="inline-block" />
 					<span>Takaisin myymälälistaan</span>
 				</a>

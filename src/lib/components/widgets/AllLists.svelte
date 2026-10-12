@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import { lists, searchQuery } from '$lib/global.svelte';
 	import { createList, deleteList, listToURI } from '$lib/utils/lists';
 	import { components } from '$lib/utils/styles';
@@ -43,7 +44,7 @@
 				>
 					<div class="flex flex-col">
 						<a
-							href={`/listat?list=${listToURI(list)}`}
+							href={resolve(`/listat?list=${listToURI(list)}`)}
 							class="text-lg after:absolute after:inset-0 focus-visible:outline-none"
 							onclick={(e) => {
 								if (action && typeof action === 'function') {

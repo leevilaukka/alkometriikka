@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { appPath } from '$lib/utils/paths';
 	import { generateTitle, setSEO } from '$lib/utils/helpers';
 	import { CATEGORY_INDEX_DESCRIPTION } from '$lib/utils/categories';
 	import Breadcrumb from '$lib/components/widgets/Breadcrumb.svelte';
@@ -28,7 +29,7 @@
 			{#each alko.kaljakori.getCategoryTree() as type (type.slug)}
 				<section class="flex flex-col gap-3 rounded-lg border border-primary bg-primary p-4">
 					<a
-						href={type.path}
+						href={appPath(type.path)}
 						class="-m-2 flex items-center justify-between gap-2 rounded p-2 hover:bg-secondary"
 					>
 						<h2 class="text-xl font-bold">{type.name}</h2>
@@ -41,7 +42,7 @@
 						{#each type.children as child (child.slug)}
 							<li>
 								<a
-									href={child.path}
+									href={appPath(child.path)}
 									class="flex items-center gap-1.5 rounded border border-primary bg-primary px-3 py-2 text-sm hover:bg-secondary md:px-2.5 md:py-1"
 								>
 									<span>{child.name}</span>

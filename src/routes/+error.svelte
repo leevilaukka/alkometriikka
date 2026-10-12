@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import { generateTitle } from '$lib/utils/helpers';
 	import { page } from '$app/state';
 	import { twMerge } from 'tailwind-merge';
@@ -14,7 +15,7 @@
 		<h1 class="text-5xl text-red-600">{page.status}</h1>
 		<h2 class="text-xl font-bold">Tapahtui virhe</h2>
 		<p>{page.error?.message}</p>
-		<a href="/" class={twMerge(components.button({ size: 'md' }))}>
+		<a href={resolve('/')} class={twMerge(components.button({ size: 'md' }))}>
 			<Icon name="arrow_left" class="inline-block" />
 			<span>Palaa etusivulle</span>
 		</a>
