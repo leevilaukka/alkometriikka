@@ -395,6 +395,65 @@ test('long batches publish collected reviews before the batch ends', async () =>
 	}
 });
 
+test('stale index vintages use the actual same-SKU page vintage, reuse the cache, and preserve history', async () => {
+	const dir = await mkdtemp(path.join(tmpdir(), 'alkometriikka-reviews-'));
+	try {
+		let vintage = 2023;
+		let requests = 0;
+		const options = {
+			catalog: { products: { '123456': {} } },
+			outputDir: dir,
+			now,
+			delayMs: 0,
+			log: () => {},
+			fetcher: (async (input) => {
+				requests++;
+				const url = String(input);
+				if (url.includes('sl_nonces'))
+					return Response.json({ success: true, data: { search: 'test' } });
+				if (url.includes('sl_wine_search')) return Response.json(sourceIndex());
+				return new Response(html({ vintage, title: `Test Wine ${vintage}` }));
+			}) as ReviewFetcher
+		};
+		assert.equal((await syncWineReviews(options)).fetched, 1);
+		let document = readProductWineReviews(
+			JSON.parse(await readFile(path.join(dir, '123456.json'), 'utf8')),
+			'123456'
+		);
+		assert.equal(document[0].vintage, '2023');
+		assert.equal(document[0].id, '123456_2023');
+		assert.equal(document[0].indexId, entry.id);
+		assert.equal(document[0].title, 'Test Wine 2023');
+		requests = 0;
+		assert.equal((await syncWineReviews(options)).fetched, 0);
+		assert.equal(requests, 0);
+		vintage = 2024;
+		assert.equal((await syncWineReviews({ ...options, force: true })).fetched, 1);
+		document = readProductWineReviews(
+			JSON.parse(await readFile(path.join(dir, '123456.json'), 'utf8')),
+			'123456'
+		);
+		assert.equal(document.length, 2);
+		assert.equal(selectWineReview(document, '2023')?.id, '123456_2023');
+		assert.equal(selectWineReview(document, '2024')?.id, '123456_2024');
+		requests = 0;
+		assert.equal((await syncWineReviews(options)).fetched, 0);
+		assert.equal(requests, 0);
+		assert.throws(
+			() =>
+				parseWineReview(
+					html({ alkonumber: '654321', vintage: 2023 }),
+					entry,
+					now.toISOString(),
+					true
+				),
+			/SKU or vintage/
+		);
+	} finally {
+		await rm(dir, { recursive: true, force: true });
+	}
+});
+
 test('bounded concurrent requests preserve every vintage when responses finish out of order', async () => {
 	const dir = await mkdtemp(path.join(tmpdir(), 'alkometriikka-reviews-'));
 	try {

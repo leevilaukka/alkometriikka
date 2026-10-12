@@ -134,10 +134,13 @@ export function embeddedWineData(html: string): Record<string, unknown> {
 export function parseWineReview(
 	html: string,
 	entry: WineIndexEntry,
-	fetchedAt: string
+	fetchedAt: string,
+	allowIndexVintageDrift = false
 ): WineReview {
 	const wine = embeddedWineData(html);
-	if (String(wine.alkonumber) !== entry.sku || reviewVintage(wine.vintage) !== entry.vintage) {
+	const vintage = reviewVintage(wine.vintage);
+	const drift = vintage !== entry.vintage;
+	if (String(wine.alkonumber) !== entry.sku || (drift && (!allowIndexVintageDrift || !vintage))) {
 		throw new Error('Review SKU or vintage differs from the index');
 	}
 	const review = object(wine.review);
@@ -157,9 +160,10 @@ export function parseWineReview(
 	const publishedAt =
 		typeof date === 'string' && /^\d{4}-\d{2}-\d{2}/.test(date) ? date.slice(0, 10) : null;
 	return {
-		id: entry.id,
+		id: drift ? `${entry.sku}_${vintage}` : entry.id,
+		...(drift ? { indexId: entry.id } : {}),
 		sku: entry.sku,
-		vintage: entry.vintage,
+		vintage,
 		title: reviewText(wine.title) || entry.title,
 		slug: entry.slug,
 		text,
@@ -265,6 +269,15 @@ export async function publishReviewCollection(
 function fresh(date: string | undefined, now: number, age: number): boolean {
 	const parsed = Date.parse(date ?? '');
 	return Number.isFinite(parsed) && parsed <= now && now - parsed < age;
+}
+
+function cachedReview(document: ProductWineReviews | undefined, entry: WineIndexEntry) {
+	return (
+		document?.reviews.find((review) => review.id === entry.id) ??
+		document?.reviews
+			.filter((review) => review.indexId === entry.id)
+			.sort((a, b) => b.fetchedAt.localeCompare(a.fetchedAt))[0]
+	);
 }
 
 export async function syncWineReviews(options: ReviewSyncOptions) {
@@ -387,7 +400,7 @@ export async function syncWineReviews(options: ReviewSyncOptions) {
 			};
 			documents.set(entry.sku, document);
 		}
-		const cached = document.reviews.find((review) => review.id === entry.id);
+		const cached = cachedReview(document, entry);
 		if (!force && fresh(index.failures[entry.id], now.getTime(), DAY)) continue;
 		if (
 			force ||
@@ -400,8 +413,8 @@ export async function syncWineReviews(options: ReviewSyncOptions) {
 	}
 	// Populate missing reviews first; refresh the oldest cached reviews afterwards.
 	pending.sort((a, b) => {
-		const cachedA = documents.get(a.sku)?.reviews.find((review) => review.id === a.id);
-		const cachedB = documents.get(b.sku)?.reviews.find((review) => review.id === b.id);
+		const cachedA = cachedReview(documents.get(a.sku), a);
+		const cachedB = cachedReview(documents.get(b.sku), b);
 		return (
 			(cachedA?.fetchedAt ?? '').localeCompare(cachedB?.fetchedAt ?? '') || a.id.localeCompare(b.id)
 		);
@@ -448,7 +461,11 @@ export async function syncWineReviews(options: ReviewSyncOptions) {
 		try {
 			if ('error' in page) throw page.error;
 			receivingPage = false;
-			review = parseWineReview(page.html, entry, now.toISOString());
+			review = parseWineReview(page.html, entry, now.toISOString(), true);
+			if (review.indexId)
+				log(
+					`Review ${entry.id}: source page is vintage ${review.vintage}; storing its actual vintage`
+				);
 		} catch (error) {
 			index.failures[entry.id] = now.toISOString();
 			failed++;

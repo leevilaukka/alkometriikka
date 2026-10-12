@@ -158,6 +158,9 @@ Product pages load optional, locally hosted `reviews/<Alko SKU>.json` files with
 Viinilehti's full review, stars, food pairing, review date, and source link. An
 exact vintage match is preferred; when the available review covers another
 vintage, the page labels the difference. Review text is rendered as plain text.
+If a search link redirects to a different vintage of the same SKU, the importer
+stores the page's actual vintage and keeps the index ID as an alias for cache
+refreshes. Pages for another SKU are rejected.
 
 Populate the local development cache after obtaining `static/data.json`:
 

@@ -2,6 +2,8 @@ export const VIINILEHTI_ORIGIN = 'https://viinilehti.fi';
 
 export type WineReview = {
 	id: string;
+	/** Original search-index ID when its vintage differs from the page. */
+	indexId?: string;
 	sku: string;
 	vintage: string | null;
 	title: string;
@@ -51,6 +53,10 @@ export function readProductWineReviews(value: unknown, sku: string): WineReview[
 		return (
 			review.sku === sku &&
 			typeof review.id === 'string' &&
+			(review.indexId === undefined ||
+				(typeof review.indexId === 'string' &&
+					review.indexId.startsWith(`${sku}_`) &&
+					/^(?:0|(?:19|20)\d{2})$/.test(review.indexId.slice(7)))) &&
 			isReviewSlug(review.slug) &&
 			(review.vintage === null || reviewVintage(review.vintage) === review.vintage) &&
 			[
