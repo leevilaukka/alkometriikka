@@ -6,7 +6,7 @@
 
 import { getSaleInfo } from '../../src/lib/utils/sales.ts';
 import type { SaleInfo } from '../../src/lib/utils/sales.ts';
-import { LEGACY_HEADERS, isIrrelevantStoredValues } from './constants.ts';
+import { LEGACY_HEADERS, SEARCH_REFRESHED_COLUMNS, isIrrelevantStoredValues } from './constants.ts';
 import type {
 	DetailedProductData,
 	MigratedProduct,
@@ -40,6 +40,28 @@ export function clearRemovedFlag(product: MigratedProduct): MigratedProduct {
 	const meta = withoutRemovedFlag(product.meta);
 	const { meta: _omit, ...rest } = product;
 	return meta ? { ...rest, meta } : rest;
+}
+
+const SEARCH_REFRESHED_INDICES = SEARCH_REFRESHED_COLUMNS.map((column) =>
+	LEGACY_HEADERS.indexOf(column)
+);
+
+/**
+ * Copies the always-refreshed search columns (see `SEARCH_REFRESHED_COLUMNS`)
+ * from freshly built search values into a stored product. Returns the product
+ * itself when nothing changed.
+ */
+export function refreshSearchColumns(
+	product: MigratedProduct,
+	searchValues: unknown[]
+): MigratedProduct {
+	const changed = SEARCH_REFRESHED_INDICES.filter(
+		(index) => !valuesEqual(product.values[index], searchValues[index])
+	);
+	if (changed.length === 0) return product;
+	const values = [...product.values];
+	for (const index of changed) values[index] = searchValues[index];
+	return { ...product, values };
 }
 
 /**

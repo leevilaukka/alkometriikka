@@ -15,8 +15,16 @@
 		[
 			{ label: 'Hinta', value: stats.medianPrice, key: AllColumns.Price },
 			{ label: 'Litrahinta', value: stats.medianPricePerLiter, key: AllColumns.PricePerLiter },
-			{ label: 'Alkoholi', value: stats.medianAlcoholPercentage, key: AllColumns.AlcoholPercentage },
-			{ label: 'Alkoholia eurolla', value: stats.medianAlcoholGramsPerEuro, key: AllColumns.AlcoholGramsPerEuro }
+			{
+				label: 'Alkoholi',
+				value: stats.medianAlcoholPercentage,
+				key: AllColumns.AlcoholPercentage
+			},
+			{
+				label: 'Alkoholia eurolla',
+				value: stats.medianAlcoholGramsPerEuro,
+				key: AllColumns.AlcoholGramsPerEuro
+			}
 		].filter((item) => item.value !== null)
 	);
 </script>

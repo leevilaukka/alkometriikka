@@ -11,12 +11,12 @@ object carries two timestamps.
 
 ```ts
 export type MigratedData = {
-  schema: readonly string[];
-  metadata: {
-    LastUpdated: string; // when the last actual change in the data was detected
-    LastSynced: string;  // when the data was last fetched from Alko
-  };
-  products?: Record<string, MigratedProduct>;
+	schema: readonly string[];
+	metadata: {
+		LastUpdated: string; // when the last actual change in the data was detected
+		LastSynced: string; // when the data was last fetched from Alko
+	};
+	products?: Record<string, MigratedProduct>;
 };
 ```
 
@@ -97,7 +97,7 @@ product was needlessly re-fetched. Whitespace drift from the untrimmed
 `possibleValues` (and therefore every filter dropdown) is built once in the
 `Kaljakori` constructor from **all** products, including those flagged
 `RemovedFromSelection`. When the UI hides removed products (`showRemoved === false`,
-the default in `Main.svelte`), some filter options no longer match any *visible*
+the default in `Main.svelte`), some filter options no longer match any _visible_
 product, so selecting them returns an empty result set.
 
 This is made worse by dataset drift: a categorical value can be **renamed** in
@@ -144,7 +144,7 @@ removed products are hidden (the default).
 #### Notes / scope
 
 - This addresses the binary removed/active split only. It does **not** hide
-  values that become irrelevant because of *other* active filters — that is a
+  values that become irrelevant because of _other_ active filters — that is a
   separate, pre-existing concern (Plan B territory).
 - A previously-selected stale value (e.g. loaded from URL params) is not
   auto-cleared when `showRemoved` flips off; it simply no longer appears as a
@@ -153,10 +153,9 @@ removed products are hidden (the default).
 #### Alternatives considered (not taken)
 
 - **Plan B — derive options reactively from the visible dataset.** Single source
-  of truth; also fixes empty results from *any* filter combination. Rejected for
+  of truth; also fixes empty results from _any_ filter combination. Rejected for
   now due to per-interaction rescans (O(rows) per column) versus Plan A's O(1)
   precomputed lookups.
 - **Plan C — build possible values from active products only (single set).**
   Smallest diff, but removes the ability to filter by removed-only values when
   the user opts in via `showRemoved`.
-

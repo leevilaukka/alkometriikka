@@ -1,6 +1,15 @@
 export type Point = { latitude: number; longitude: number };
 
-const DIRECTIONS = ['pohjoiseen', 'koilliseen', 'itään', 'kaakkoon', 'etelään', 'lounaaseen', 'länteen', 'luoteeseen'];
+const DIRECTIONS = [
+	'pohjoiseen',
+	'koilliseen',
+	'itään',
+	'kaakkoon',
+	'etelään',
+	'lounaaseen',
+	'länteen',
+	'luoteeseen'
+];
 
 const toRadians = (degrees: number) => degrees * (Math.PI / 180);
 
@@ -14,7 +23,7 @@ export function getBearing(from: Point, to: Point): number {
 		Math.cos(fromLatitude) * Math.sin(toLatitude) -
 		Math.sin(fromLatitude) * Math.cos(toLatitude) * Math.cos(longitudeDelta);
 
-	return (((Math.atan2(y, x) * 180) / Math.PI) % 360 + 360) % 360;
+	return ((((Math.atan2(y, x) * 180) / Math.PI) % 360) + 360) % 360;
 }
 
 /** Finnish direction word (in the "-an" form, e.g. "koilliseen") for a bearing in degrees. */

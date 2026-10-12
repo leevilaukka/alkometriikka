@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { appPath } from '$lib/utils/paths';
+	import { resolve } from '$app/paths';
 	import type { Kaljakori } from '$lib/alko';
 	import type { AvailabilityData, PriceListItem } from '$lib/types';
 	import { AllColumns, AUTO_STORE_ID } from '$lib/utils/constants';
@@ -60,7 +62,9 @@
 	const preferredStore = $derived(
 		resolvePreferredStore(availability.stores, $preferredStoreId, $userLocation)
 	);
-	const storeFilter = $derived($onlyPreferredStore && preferredStore ? preferredStore.id : undefined);
+	const storeFilter = $derived(
+		$onlyPreferredStore && preferredStore ? preferredStore.id : undefined
+	);
 
 	// A Kaljakori of just this category, so the list, filter options and number
 	// ranges all match the category instead of the whole selection. With the store
@@ -77,7 +81,8 @@
 					(row) =>
 						categorySlug(String(row[typeIndex] ?? '')) === type.slug &&
 						(!subType || categorySlug(String(row[subTypeIndex] ?? '')) === subType.slug) &&
-						(!storeFilter || (availability.product[String(row[numberIndex])] ?? []).includes(storeFilter))
+						(!storeFilter ||
+							(availability.product[String(row[numberIndex])] ?? []).includes(storeFilter))
 				)
 				.map((row) => String(row[numberIndex]))
 		);
@@ -91,7 +96,10 @@
 		kaljakori.data.filter((item) => item[AllColumns.RemovedFromSelection] !== true)
 	);
 
-	function best(key: typeof AllColumns.Price | typeof AllColumns.AlcoholGramsPerEuro, lowest: boolean) {
+	function best(
+		key: typeof AllColumns.Price | typeof AllColumns.AlcoholGramsPerEuro,
+		lowest: boolean
+	) {
 		let result: PriceListItem | undefined;
 		for (const item of active) {
 			const value = Number(item[key]);
@@ -115,7 +123,7 @@
 		const params = new URLSearchParams();
 		params.set(AllColumns.Type, trail[0].name);
 		if (trail[1]) params.set(AllColumns.SubType, trail[1].name);
-		return `/?${params}`;
+		return resolve(`/?${params}`);
 	});
 
 	const feedPath = $derived(categoryFeedPath(trail[0].slug, trail[1]?.slug));
@@ -123,7 +131,9 @@
 	// A few standout products to open side by side
 	const compareHref = $derived.by(() => {
 		const picks = pickCategoryHighlights(active, Math.min(4, MAX_COMPARE_PRODUCTS));
-		return picks.length > 1 ? compareURL(picks.map((item) => item[AllColumns.Number])) : undefined;
+		return picks.length > 1
+			? resolve(compareURL(picks.map((item) => item[AllColumns.Number])))
+			: undefined;
 	});
 
 	const description = $derived(categoryDescription(trail));
@@ -160,10 +170,16 @@
 
 {#snippet stat(label: string, value: string, product?: PriceListItem)}
 	{@const content = `${product ? product[AllColumns.Name] : ''}`}
-	<div class="flex min-w-0 flex-col gap-0.5 rounded border border-primary bg-primary px-3 py-2 text-sm">
+	<div
+		class="flex min-w-0 flex-col gap-0.5 rounded border border-primary bg-primary px-3 py-2 text-sm"
+	>
 		<span class="text-xs text-secondary">{label}</span>
 		{#if product}
-			<a href={`/tuotteet/${product[AllColumns.Number]}/`} class="truncate font-bold hover:underline" title={content}>
+			<a
+				href={resolve(`/tuotteet/${product[AllColumns.Number]}/`)}
+				class="truncate font-bold hover:underline"
+				title={content}
+			>
 				{content}
 			</a>
 		{/if}
@@ -179,12 +195,19 @@
 			<CategorySection title="Kohokohdat" open={inSheet}>
 				<div class={twMerge('flex flex-col gap-2', inSheet && 'grid grid-cols-2')}>
 					{#if cheapest}
-						{@render stat('Halvin', formatValue(cheapest[AllColumns.Price], AllColumns.Price) as string, cheapest)}
+						{@render stat(
+							'Halvin',
+							formatValue(cheapest[AllColumns.Price], AllColumns.Price) as string,
+							cheapest
+						)}
 					{/if}
 					{#if mostAlcoholPerEuro}
 						{@render stat(
 							'Eniten alkoholia eurolla',
-							formatValue(mostAlcoholPerEuro[AllColumns.AlcoholGramsPerEuro], AllColumns.AlcoholGramsPerEuro) as string,
+							formatValue(
+								mostAlcoholPerEuro[AllColumns.AlcoholGramsPerEuro],
+								AllColumns.AlcoholGramsPerEuro
+							) as string,
 							mostAlcoholPerEuro
 						)}
 					{/if}
@@ -230,7 +253,10 @@
 
 {#snippet header()}
 	<div class="flex w-full flex-col gap-3">
-		<Breadcrumb items={trail.slice(0, -1).map((item) => ({ label: item.name, href: item.path }))} current={node.name} />
+		<Breadcrumb
+			items={trail.slice(0, -1).map((item) => ({ label: item.name, href: item.path }))}
+			current={node.name}
+		/>
 		<div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
 			<h1 class="text-2xl font-bold">{node.name}</h1>
 			<span class="text-sm text-secondary">
@@ -244,35 +270,46 @@
 		{#if preferredStore}
 			<label class="flex cursor-pointer items-center gap-2 text-sm">
 				<input type="checkbox" bind:checked={$onlyPreferredStore} class="shrink-0 rounded" />
-				<span class="min-w-0 truncate">Vain myymälässäni: <strong>{preferredStore.name}</strong></span>
+				<span class="min-w-0 truncate"
+					>Vain myymälässäni: <strong>{preferredStore.name}</strong></span
+				>
 			</label>
 		{:else if Object.keys(availability.stores).length}
-			<a href="/myymalat" class="group flex items-center gap-1 text-sm text-secondary">
+			<a href={resolve('/myymalat')} class="group flex items-center gap-1 text-sm text-secondary">
 				<Icon name="map_pin" />
 				<span class="group-hover:underline">Valitse myymälä nähdäksesi sen valikoiman</span>
 			</a>
 		{/if}
 		{#if chips.length > 1 || siblingTypes.length}
-			<div class="-mx-4 flex gap-2 overflow-x-auto px-4 pb-0.5 md:mx-0 md:flex-wrap md:px-0 xl:overflow-visible">
+			<div
+				class="-mx-4 flex gap-2 overflow-x-auto px-4 pb-0.5 md:mx-0 md:flex-wrap md:px-0 xl:overflow-visible"
+			>
 				{#each chips as chip (chip.slug)}
 					{@const selected = chip.slug === node.slug}
 					<a
-						href={chip.path}
+						href={appPath(chip.path)}
 						aria-current={selected ? 'page' : undefined}
 						class={twMerge(
 							'flex shrink-0 items-center gap-1.5 rounded px-2.5 py-1 text-sm',
-							selected ? 'bg-brand-3 text-white' : 'border border-primary bg-primary hover:bg-secondary'
+							selected
+								? 'bg-brand-3 text-white'
+								: 'border border-primary bg-primary hover:bg-secondary'
 						)}
 					>
 						<span>{chip.name}</span>
-						<span class={twMerge('rounded px-1 text-xs', selected ? 'bg-white/20' : 'bg-secondary text-secondary')}>
+						<span
+							class={twMerge(
+								'rounded px-1 text-xs',
+								selected ? 'bg-white/20' : 'bg-secondary text-secondary'
+							)}
+						>
 							{chip.count}
 						</span>
 					</a>
 				{/each}
 				{#each siblingTypes as type (type.slug)}
 					<a
-						href={type.path}
+						href={appPath(type.path)}
 						class="flex shrink-0 items-center gap-1.5 rounded border border-dashed border-primary px-2.5 py-1 text-sm text-secondary hover:bg-secondary"
 					>
 						{type.name}
@@ -296,7 +333,9 @@
 <!-- Below the sidebar breakpoint the actions live in a bottom bar, the same as on product pages -->
 {#snippet bottomBar()}
 	<BottomBar class="xl:hidden">
-		<Popup class="mb-0 max-h-[85dvh] w-full max-w-none gap-4 overflow-y-auto rounded-b-none p-4 open:starting:translate-y-full open:starting:scale-100 open:translate-y-0">
+		<Popup
+			class="mb-0 max-h-[85dvh] w-full max-w-none gap-4 overflow-y-auto rounded-b-none p-4 open:translate-y-0 open:starting:translate-y-full open:starting:scale-100"
+		>
 			{#snippet renderButton(dialogElement: HTMLDialogElement)}
 				<button
 					type="button"
@@ -311,7 +350,9 @@
 				<h2 class="text-xl font-bold">{node.name}</h2>
 				{@render insights(true)}
 				<!-- Pinned to the bottom of the scrolling sheet, where the Tiedot button that opened it was -->
-				<div class="sticky bottom-0 -mx-4 -mb-4 bg-primary px-4 py-2.5 shadow-[0_-4px_12px_rgba(0,0,0,0.06)]">
+				<div
+					class="sticky bottom-0 -mx-4 -mb-4 bg-primary px-4 py-2.5 shadow-[0_-4px_12px_rgba(0,0,0,0.06)]"
+				>
 					<button
 						type="button"
 						class={twMerge(components.button({ size: 'lg' }), 'h-11 w-full')}

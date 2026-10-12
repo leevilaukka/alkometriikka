@@ -54,11 +54,11 @@
 	let canvas: HTMLCanvasElement | undefined = $state();
 	let chart = $state<Chart | undefined>();
 
-$effect(() => {
+	$effect(() => {
 		if (!canvas) return;
 		// Config objects are usually built via helper functions that return a
 		// ChartConfiguration union; Chart accepts any of them.
-	chart = new Chart(canvas, config as ConstructorParameters<typeof Chart>[1]) as Chart;
+		chart = new Chart(canvas, config as ConstructorParameters<typeof Chart>[1]) as Chart;
 
 		return () => {
 			chart?.destroy();

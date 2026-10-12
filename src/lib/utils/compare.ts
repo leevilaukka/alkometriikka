@@ -59,10 +59,17 @@ export function clearCompare(): void {
 	compareProductIds.length = 0;
 }
 
-export function compareURL(ids: string[]): string {
+export function compareURL(ids: string[]): `/vertailu?ids=${string}` {
 	return `/vertailu?ids=${ids.join(',')}`;
 }
 
 export function compareIdsFromParam(param: string | undefined | null): string[] {
-	return [...new Set((param ?? '').split(',').map((id) => id.trim()).filter(Boolean))];
+	return [
+		...new Set(
+			(param ?? '')
+				.split(',')
+				.map((id) => id.trim())
+				.filter(Boolean)
+		)
+	];
 }

@@ -1,3 +1,4 @@
+import { resolve } from '$app/paths';
 import { error, redirect } from '@sveltejs/kit';
 
 export const trailingSlash = 'always';
@@ -7,13 +8,13 @@ export async function load({ parent, params }) {
 	const alko = await data.alkoWithStores;
 	const storeId = params.storeID;
 
-	if (!storeId) redirect(300, '/');
+	if (!storeId) redirect(300, resolve('/'));
 
 	if (!alko.availability.stores[storeId]) {
 		throw error(404, {
-			message: 'Myymälää ei löytynyt',
+			message: 'Myymälää ei löytynyt'
 		});
 	}
-	
+
 	return { store: alko.availability.stores[storeId], storeId };
 }

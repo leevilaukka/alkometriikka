@@ -6,6 +6,7 @@ import {
 	detailVerifyAgeDays,
 	isDetailVerifyCandidate,
 	mergeProduct,
+	refreshSearchColumns,
 	salesInfoFromValues,
 	updatePriceHistory,
 	valuesEqual,
@@ -324,5 +325,24 @@ describe('mergeProduct', () => {
 		expect(merged.campaign_start_date).toBe('2026-09-20');
 		// Search has no end date, so the detail value is used.
 		expect(merged.campaign_end_date).toBe('2026-10-10T00:00:00Z');
+	});
+});
+
+describe('refreshSearchColumns', () => {
+	it('copies the refreshed search columns into an unchanged product', () => {
+		const previous = stored('1', { Ruokasuositukset: null });
+		const refreshed = refreshSearchColumns(
+			previous,
+			values({ Nimi: 'Other name', Ruokasuositukset: 'Porsas, Nauta' })
+		);
+		expect(refreshed.values[col('Ruokasuositukset')]).toBe('Porsas, Nauta');
+		// Only the refreshed columns are touched
+		expect(refreshed.values[col('Nimi')]).toBe('Product 1');
+		expect(previous.values[col('Ruokasuositukset')]).toBeNull();
+	});
+
+	it('returns the same product when nothing changed', () => {
+		const previous = stored('1', { Ruokasuositukset: 'Porsas' });
+		expect(refreshSearchColumns(previous, values({ Ruokasuositukset: 'Porsas' }))).toBe(previous);
 	});
 });

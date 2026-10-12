@@ -232,10 +232,10 @@ export function shareTypeFromRoute(routeId: typeof page.route.id): ShareType {
 			return ShareTypes.Similar;
 		case '/vertailu':
 			return ShareTypes.Compare;
-		case "/daily":
-		case "/daily/arkisto":
-		case "/daily/arkisto/[date]":
-			return ShareTypes.DailyGame
+		case '/daily':
+		case '/daily/arkisto':
+		case '/daily/arkisto/[date]':
+			return ShareTypes.DailyGame;
 		default:
 			return ShareTypes.Default;
 	}
@@ -337,7 +337,7 @@ export function setSEO({
 }) {
 	const metaDescription = document.querySelector('meta[name="description"]');
 	const metaKeywords = document.querySelector('meta[name="keywords"]');
-	
+
 	if (metaDescription && description) {
 		metaDescription.setAttribute('content', description);
 	} else if (metaDescription) {
@@ -355,7 +355,10 @@ export function setSEO({
 			if (metaTag && value) {
 				metaTag.setAttribute('content', String(value));
 			} else if (metaTag && !value) {
-				metaTag.setAttribute('content', defaultSEOData.og[key as keyof typeof defaultSEOData.og] as string);
+				metaTag.setAttribute(
+					'content',
+					defaultSEOData.og[key as keyof typeof defaultSEOData.og] as string
+				);
 			}
 		}
 	}
@@ -369,7 +372,10 @@ export function setSEO({
 			if (metaTag && value) {
 				metaTag.setAttribute('content', String(value));
 			} else if (metaTag && !value) {
-				metaTag.setAttribute('content', defaultSEOData.image[key as keyof typeof defaultSEOData.image] as string);
+				metaTag.setAttribute(
+					'content',
+					defaultSEOData.image[key as keyof typeof defaultSEOData.image] as string
+				);
 			}
 		}
 	}
@@ -379,7 +385,10 @@ export function setSEO({
 			if (metaTag && value) {
 				metaTag.setAttribute('content', String(value));
 			} else if (metaTag && !value) {
-				metaTag.setAttribute('content', defaultSEOData.twitter[key as keyof typeof defaultSEOData.twitter] as string);
+				metaTag.setAttribute(
+					'content',
+					defaultSEOData.twitter[key as keyof typeof defaultSEOData.twitter] as string
+				);
 			}
 		}
 	}

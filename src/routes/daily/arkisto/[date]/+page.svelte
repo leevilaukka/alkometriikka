@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { asset, resolve } from '$app/paths';
 	import { tick } from 'svelte';
 	import { AllColumns } from '$lib/utils/constants';
 	import { components } from '$lib/utils/styles';
@@ -52,7 +53,9 @@
 	const answeredCorrectly = $derived(
 		run?.answered === true && run.correctAnswers[run.currentIndex] === true
 	);
-	const lastQuestion = $derived(archive ? questionIndex === archive.game.questions.length - 1 : false);
+	const lastQuestion = $derived(
+		archive ? questionIndex === archive.game.questions.length - 1 : false
+	);
 	const progressPercent = $derived(
 		archive ? ((questionIndex + 1) / archive.game.questions.length) * 100 : 0
 	);
@@ -74,7 +77,7 @@
 		loadError = null;
 		try {
 			if (!/^\d{4}-\d{2}-\d{2}$/.test(forDate)) throw new Error('Päivää ei ole vielä arkistoitu');
-			const response = await fetch(`/daily/archive/${forDate}.json`);
+			const response = await fetch(asset(`/daily/archive/${forDate}.json`));
 			if (response.status === 404) throw new Error('Päivää ei ole vielä arkistoitu');
 			if (!response.ok) throw new Error(`HTTP ${response.status}`);
 			let parsed: ArchiveGame;
@@ -95,7 +98,7 @@
 
 	async function loadIndex() {
 		try {
-			const response = await fetch(`/daily/archive/index.json`);
+			const response = await fetch(asset(`/daily/archive/index.json`));
 			if (response.status !== 200) {
 				index = { version: 1, dates: [] };
 				return;
@@ -153,7 +156,8 @@
 		metric: 'alcohol' | 'volume' | 'literPrice' | 'sugar' | 'energy',
 		value: number
 	) {
-		const decimals = metric === 'volume' || metric === 'literPrice' ? 2 : metric === 'alcohol' ? 1 : 0;
+		const decimals =
+			metric === 'volume' || metric === 'literPrice' ? 2 : metric === 'alcohol' ? 1 : 0;
 		const formatted = value.toFixed(decimals).replace('.', ',');
 		return metric === 'alcohol'
 			? `${formatted} %`
@@ -247,7 +251,12 @@
 			updateRun({ completed: true, score, correct });
 			recordArchivedScore(date, score, correct);
 			scores = loadArchivedScores();
-			sendAnalyticsEvent('archive_game', { state: 'completed', date, score, questions_right: correct });
+			sendAnalyticsEvent('archive_game', {
+				state: 'completed',
+				date,
+				score,
+				questions_right: correct
+			});
 			return;
 		}
 		updateRun({
@@ -282,14 +291,24 @@
 <main class="mx-auto flex w-full max-w-4xl flex-col gap-6 p-4 md:p-8 lg:gap-8 lg:p-10">
 	<header class="flex flex-col gap-2 border-b border-primary pb-5">
 		<div class="flex items-center justify-between gap-4">
-			<a href="/daily/arkisto" class={twMerge(components.button(), 'px-3 py-2')}><span class="flex items-center gap-2"><Icon name="calendar" />Kalenteri</span></a>
+			<a href={resolve('/daily/arkisto')} class={twMerge(components.button(), 'px-3 py-2')}
+				><span class="flex items-center gap-2"><Icon name="calendar" />Kalenteri</span></a
+			>
 			{#if archive}
 				<div class="flex items-center gap-2">
 					{#if previousDate}
-						<a href={`/daily/arkisto/${previousDate}`} class={twMerge(components.button(), 'px-3 py-2')} aria-label="Edellinen päivä"><Icon name="chevron_left" />{shortDate(previousDate)}</a>
+						<a
+							href={resolve(`/daily/arkisto/${previousDate}`)}
+							class={twMerge(components.button(), 'px-3 py-2')}
+							aria-label="Edellinen päivä"><Icon name="chevron_left" />{shortDate(previousDate)}</a
+						>
 					{/if}
 					{#if nextDate}
-						<a href={`/daily/arkisto/${nextDate}`} class={twMerge(components.button(), 'px-3 py-2')} aria-label="Seuraava päivä">{shortDate(nextDate)}<Icon name="chevron_right" /></a>
+						<a
+							href={resolve(`/daily/arkisto/${nextDate}`)}
+							class={twMerge(components.button(), 'px-3 py-2')}
+							aria-label="Seuraava päivä">{shortDate(nextDate)}<Icon name="chevron_right" /></a
+						>
 					{/if}
 					<DailyFeedback
 						{date}
@@ -301,7 +320,7 @@
 			{/if}
 		</div>
 		<div>
-			<p class="text-sm font-bold uppercase tracking-widest text-brand-2">Alkometriikka Daily</p>
+			<p class="text-sm font-bold tracking-widest text-brand-2 uppercase">Alkometriikka Daily</p>
 			<div class="flex items-center gap-2">
 				<h1 class="text-3xl font-bold md:text-4xl">{date ? formatDate(date) : 'Arkisto'}</h1>
 			</div>
@@ -309,9 +328,15 @@
 	</header>
 
 	{#if loadError && !archive}
-		<section class="flex flex-col items-center gap-4 rounded border border-primary bg-secondary p-8 text-center">
+		<section
+			class="flex flex-col items-center gap-4 rounded border border-primary bg-secondary p-8 text-center"
+		>
 			<p class="text-lg font-bold">{loadError}</p>
-			<a href="/daily/arkisto" class={twMerge(components.button({ type: 'negative', size: 'md' }), 'px-4 py-2')}>Takaisin kalenteriin</a>
+			<a
+				href={resolve('/daily/arkisto')}
+				class={twMerge(components.button({ type: 'negative', size: 'md' }), 'px-4 py-2')}
+				>Takaisin kalenteriin</a
+			>
 		</section>
 	{:else if !archive}
 		<section class="rounded border border-primary bg-secondary p-5 text-center">
@@ -321,9 +346,13 @@
 		<section class="flex flex-col gap-5">
 			<div class="flex items-center justify-between">
 				<h2 class="text-xl font-bold">Tulokset</h2>
-				<a href="/daily/arkisto" class={twMerge(components.button(), 'px-3 py-2')}>Kalenteri</a>
+				<a href={resolve('/daily/arkisto')} class={twMerge(components.button(), 'px-3 py-2')}
+					>Kalenteri</a
+				>
 			</div>
-			<section class="flex flex-col gap-5 rounded border border-primary bg-secondary p-5 text-center md:p-8">
+			<section
+				class="flex flex-col gap-5 rounded border border-primary bg-secondary p-5 text-center md:p-8"
+			>
 				<p class="text-lg font-bold">
 					{result?.correct}/{archive.game.questions.length} oikein ·{' '}
 					{result?.score} pistettä
@@ -386,7 +415,9 @@
 											)}
 										>
 											{price(option)}
-											{#if correct}<Icon name="check_circle" />{:else if picked}<Icon name="block" />{/if}
+											{#if correct}<Icon name="check_circle" />{:else if picked}<Icon
+													name="block"
+												/>{/if}
 										</div>
 									{/each}
 								</div>
@@ -411,7 +442,9 @@
 												<ProductImage number={id} name={productName(id)} transform="medium" />
 											</div>
 											<span class="min-w-0">{productName(id)}</span>
-											{#if correct}<Icon name="check_circle" />{:else if picked}<Icon name="block" />{/if}
+											{#if correct}<Icon name="check_circle" />{:else if picked}<Icon
+													name="block"
+												/>{/if}
 										</div>
 									{/each}
 								</div>
@@ -453,7 +486,9 @@
 											)}
 										>
 											{option}
-											{#if correct}<Icon name="check_circle" />{:else if picked}<Icon name="block" />{/if}
+											{#if correct}<Icon name="check_circle" />{:else if picked}<Icon
+													name="block"
+												/>{/if}
 										</div>
 									{/each}
 								</div>
@@ -495,7 +530,9 @@
 										</span>
 									</div>
 								{/if}
-								<div class="mt-3 rounded border border-green-600 bg-green-100 p-3 text-lg font-bold text-green-900">
+								<div
+									class="mt-3 rounded border border-green-600 bg-green-100 p-3 text-lg font-bold text-green-900"
+								>
 									<span class="flex items-center gap-2">
 										<Icon name="check_circle" />Oikea hinta: {price(currentQuestion.correctPrice)}
 									</span>
@@ -513,10 +550,7 @@
 				<span class="text-secondary">{runningTotal} pistettä</span>
 			</div>
 			<div class="h-2 overflow-hidden rounded bg-secondary">
-				<div
-					class="h-full bg-brand-2 transition-all"
-					style={`width: ${progressPercent}%`}
-				></div>
+				<div class="h-full bg-brand-2 transition-all" style={`width: ${progressPercent}%`}></div>
 			</div>
 
 			<div class="rounded border border-primary bg-primary p-5 md:p-8 lg:p-10">
@@ -607,7 +641,9 @@
 					</div>
 					<h2 class="mt-5 text-2xl font-bold">Arvaa tuotteen hinta</h2>
 					<form class="mt-6 flex flex-col gap-3 sm:flex-row" onsubmit={submitEstimate}>
-						<label class="flex flex-1 items-center gap-2 rounded border border-primary px-3 py-2 focus-within:outline-1 focus-within:outline-offset-2 focus-within:outline-brand-1">
+						<label
+							class="flex flex-1 items-center gap-2 rounded border border-primary px-3 py-2 focus-within:outline-1 focus-within:outline-offset-2 focus-within:outline-brand-1"
+						>
 							<span>€</span>
 							<input
 								name="estimate"
@@ -621,7 +657,10 @@
 							/>
 						</label>
 						<button
-							class={twMerge(components.button({ type: 'negative', size: 'md' }), 'justify-center px-5 py-2')}
+							class={twMerge(
+								components.button({ type: 'negative', size: 'md' }),
+								'justify-center px-5 py-2'
+							)}
 							disabled={run?.answered}
 						>
 							Vastaa

@@ -2,6 +2,11 @@ name: Download Price List
 
 on:
   workflow_dispatch:
+    inputs:
+      force:
+        description: 'Write the dataset even if the sync safeguards reject it (only for a real large selection change)'
+        type: boolean
+        default: false
   schedule:
     - cron: '0 */6 * * *' # Runs every 6 hours (also archives any missed finished days)
   workflow_run: # Runs after page is built
@@ -50,12 +55,23 @@ jobs:
           CLOUDFLARE_ZONE: ${{ secrets.CF_ZONE }}
           ALKO_DETAIL_CONCURRENCY: '8'
           ALKO_SEARCH_CONCURRENCY: '3'
+          ALKO_SYNC_FORCE: ${{ inputs.force && '1' || '' }}
         run: |
           for attempt in 1 2 3; do
             echo "▶️  Sync attempt $attempt..."
-            if bun run scripts/data/index.ts; then
+            set +e
+            bun run scripts/data/index.ts
+            code=$?
+            set -e
+            if [ "$code" -eq 0 ]; then
               echo "✅ Sync succeeded on attempt $attempt"
               exit 0
+            fi
+            # Exit code 3 = the safeguards rejected the API's data; retrying won't change that.
+            if [ "$code" -eq 3 ]; then
+              echo "❌ Safeguards rejected the sync — leaving existing dataset untouched."
+              echo "   If the change is real, re-run this workflow manually with 'force' checked."
+              exit 1
             fi
             echo "⚠️  Sync failed on attempt $attempt (incomplete fetch or error)"
             if [ "$attempt" -lt 3 ]; then

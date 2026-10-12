@@ -12,12 +12,12 @@ The function is named `findDifferentSizeOfProduct` in `src/lib/utils/filters.ts`
 
 I ran the actual `Kaljakori`, normalization, similarity, and size-matching functions against the local `static/data.json`: 13,319 products, last synced 2026-08-14. I also inspected the live page for product 900960 and confirmed that it lists Sober Spirits W and R under “Muut koot”.
 
-| Product pair | Current normalized-name similarity | Problem |
-| --- | --- | --- |
-| Sober Spirits G 900960 / R 901132 | 0.9333 | A single letter identifies a different drink. |
-| Sober Spirits G 900960 / W 901133 | 0.9333 | Same issue; all three are already 0.5 L glass bottles. |
-| Suomenlinnan Ton Alkoholiton IPA 901982 / Lager 901981 | 0.8788 | Roman-numeral removal damages IPA and Lager; shared text dominates the score. Both are 0.33 L cans. |
-| Glenfiddich 12 001417 / 15 955417 / 18 955577 | 1.0000 | Removing all numbers erases the age. |
+| Product pair                                           | Current normalized-name similarity | Problem                                                                                             |
+| ------------------------------------------------------ | ---------------------------------- | --------------------------------------------------------------------------------------------------- |
+| Sober Spirits G 900960 / R 901132                      | 0.9333                             | A single letter identifies a different drink.                                                       |
+| Sober Spirits G 900960 / W 901133                      | 0.9333                             | Same issue; all three are already 0.5 L glass bottles.                                              |
+| Suomenlinnan Ton Alkoholiton IPA 901982 / Lager 901981 | 0.8788                             | Roman-numeral removal damages IPA and Lager; shared text dominates the score. Both are 0.33 L cans. |
+| Glenfiddich 12 001417 / 15 955417 / 18 955577          | 1.0000                             | Removing all numbers erases the age.                                                                |
 
 The last failure also crosses actual sizes: Glenfiddich 12 (0.7 L, 001417) matches Glenfiddich 18 (0.05 L, 200050). Requiring a different volume alone does not solve product identity.
 

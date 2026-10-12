@@ -70,7 +70,9 @@
 		>
 			{#each sizes as size, i (size.product[AllColumns.Number])}
 				{#if hasSingleAndMultiPack && size.packCount > 1 && (i === 0 || sizes[i - 1].packCount === 1)}
-					<div class="bg-secondary px-3 py-1 text-xs font-medium text-secondary">Monipakkaukset</div>
+					<div class="bg-secondary px-3 py-1 text-xs font-medium text-secondary">
+						Monipakkaukset
+					</div>
 				{/if}
 				<svelte:element
 					this={size.isCurrent ? 'div' : 'a'}
@@ -90,22 +92,30 @@
 					<!-- The badge wraps under the name when space runs out, so the prices stay aligned -->
 					<span class="flex min-w-0 flex-wrap items-center gap-x-1.5 gap-y-0.5">
 						<span class="flex min-w-0 items-baseline gap-1.5">
-							<strong class="text-sm whitespace-nowrap">{formatValue(size.product[AllColumns.BottleSize], AllColumns.BottleSize)}</strong>
+							<strong class="text-sm whitespace-nowrap"
+								>{formatValue(size.product[AllColumns.BottleSize], AllColumns.BottleSize)}</strong
+							>
 							{#if size.packCount > 1}
 								<span class="truncate text-xs text-secondary">{size.packCount}-pack</span>
 							{:else if size.product[AllColumns.PackagingType]}
-								<span class="truncate text-xs text-secondary">{size.product[AllColumns.PackagingType]}</span>
+								<span class="truncate text-xs text-secondary"
+									>{size.product[AllColumns.PackagingType]}</span
+								>
 							{/if}
 						</span>
 						{#if size.isBestValue}
-							<span class="shrink-0 rounded bg-green-300 px-1.5 text-xs whitespace-nowrap text-green-800 dark:bg-green-800/40 dark:text-green-300">
+							<span
+								class="shrink-0 rounded bg-green-300 px-1.5 text-xs whitespace-nowrap text-green-800 dark:bg-green-800/40 dark:text-green-300"
+							>
 								Paras €/L
 							</span>
 						{/if}
 					</span>
 					<span class="flex items-center gap-2.5">
 						<span class="flex items-center gap-1.5">
-							<span class="flex h-1 w-10 shrink-0 overflow-hidden rounded-full bg-gray-200 dark:bg-zinc-700">
+							<span
+								class="flex h-1 w-10 shrink-0 overflow-hidden rounded-full bg-gray-200 dark:bg-zinc-700"
+							>
 								<span
 									class={twMerge(
 										'h-full rounded-full',
@@ -114,7 +124,7 @@
 									style={`width: ${size.barPercent}%`}
 								></span>
 							</span>
-							<span class="w-16 shrink-0 text-right text-xs tabular-nums text-secondary">
+							<span class="w-16 shrink-0 text-right text-xs text-secondary tabular-nums">
 								{formatValue(size.product[AllColumns.PricePerLiter], AllColumns.PricePerLiter)}
 							</span>
 						</span>

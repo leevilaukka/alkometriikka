@@ -1,6 +1,7 @@
 # Alko API – endpoint walkthrough
 
 > Compiled 2026-09-14 by reverse-engineering:
+>
 > - alko.fi's own Next.js SPA bundles (`_next/static/chunks/*.js`, mainly `8175-f677ecb5a418ca88.js` which contains the whole API client module)
 > - direct HTTP probes with curl
 >
@@ -20,28 +21,29 @@
 
 The SPA client module (`8175-f677ecb5a418ca88.js`) wires up the services like this:
 
-| Service           | Base path                 | SPA class |
-|-------------------|---------------------------|-----------|
-| searchApi         | `/api/search`             | `A`       |
-| contentApi        | `/api/content`            | `U`       |
-| contentSearchApi  | `/api/content-search`     | `P`       |
-| productApi        | `/api/product-api`        | `k`       |
-| storesApi         | `/api/stores`             | `W`       |
-| intershopApi      | `/api/intershop`          | `v`       |
-| deliveryPricingApi| `/api/delivery-pricing`   | `o`       |
-| cmdApi            | `/api/cmd`                | `s`       |
-| localisationApi   | `/api/localisation`       | `w`       |
-| userApi           | `/api/user`               | `j`       |
-| (auth)            | `/api/auth/*`             | NextAuth  |
+| Service            | Base path               | SPA class |
+| ------------------ | ----------------------- | --------- |
+| searchApi          | `/api/search`           | `A`       |
+| contentApi         | `/api/content`          | `U`       |
+| contentSearchApi   | `/api/content-search`   | `P`       |
+| productApi         | `/api/product-api`      | `k`       |
+| storesApi          | `/api/stores`           | `W`       |
+| intershopApi       | `/api/intershop`        | `v`       |
+| deliveryPricingApi | `/api/delivery-pricing` | `o`       |
+| cmdApi             | `/api/cmd`              | `s`       |
+| localisationApi    | `/api/localisation`     | `w`       |
+| userApi            | `/api/user`             | `j`       |
+| (auth)             | `/api/auth/*`           | NextAuth  |
 
 ---
 
 ## 2. Search API – `/api/search`
 
 ### `POST /api/search/product?lang=<locale>` – product search (used by sync)
+
 - Body: `{ top: 1000, skip: 0, seed?: 1337 }`
 - Response: `{ "@odata.count": 11209, "@search.facets": {...}, value: [SearchProductData, ...] }`
-- `seed` – a fixed `seed` makes paging deterministic (without it the API returns only ~7000–7700 *distinct* products and pads the rest with duplicates despite advertising the full `@odata.count`). Already documented in the `scripts/data/index.ts` comments.
+- `seed` – a fixed `seed` makes paging deterministic (without it the API returns only ~7000–7700 _distinct_ products and pads the rest with duplicates despite advertising the full `@odata.count`). Already documented in the `scripts/data/index.ts` comments.
 - Per-product response fields (verified via live call):
   ```json
   {
@@ -80,6 +82,7 @@ The SPA client module (`8175-f677ecb5a418ca88.js`) wires up the services like th
   - Body params `storeId`, `store`, `availability` have **no effect** (verified – response is identical).
 
 ### `POST /api/search/count?lang=` – result count for a search
+
 ### `POST /api/search/translation?lang=` – search term translations
 
 ---
@@ -87,10 +90,12 @@ The SPA client module (`8175-f677ecb5a418ca88.js`) wires up the services like th
 ## 3. Product API – `/api/product-api`
 
 ### `GET /api/product-api/products/{productId}` – full product details (used by sync)
+
 - Response: `{ data: DetailedProductData }` – e.g. `producer`, `vintage`, `grapeVarieties`, `productionSites`, `nutrition`, `taste`, etc. Not present in the search API.
 - Used by `fetchProductDetails` in `scripts/data/index.ts`.
 
 ### `GET /api/product-api/products?id=<id>[&lang=<locale>]` – batch-ish helper
+
 - The SPA's `getProductsByIds` uses `URLSearchParams.stringify({ id, lang })`.
 - Verified: a single `id=480307` returns a **flat product object** (search-API shaped; no `data` wrapper, no `items` list).
 - `id=480307%3A100001` (colon-joined) returned `{"items":[]}` → multiple ids don't work as a colon-joined `id` param; if multi-id works at all it's likely `id[]=...` style (URLSearchParams with an array). **No per-store amounts here either.**
@@ -100,6 +105,7 @@ The SPA client module (`8175-f677ecb5a418ca88.js`) wires up the services like th
 ## 4. Stores API – `/api/stores`
 
 ### `GET /api/stores[?search=<query>]` – all stores (used by sync)
+
 - Response: `{ data: [StoreData], totalAmount: 359 }` (StoreData has `id`, an `outletType` flag; `outletType === "2"` = pickup point, which the sync filters out).
 - StoreData fields include:
   ```json
@@ -121,17 +127,26 @@ The SPA client module (`8175-f677ecb5a418ca88.js`) wires up the services like th
 ## 5. Intershop API – `/api/intershop` (webshop/cart/ordering)
 
 ### Availability
+
 - **`GET /api/intershop/availability/webshop/<sku1>:<sku2>:<sku3>...`** ← ⭐ key new find
   - Returns **online-warehouse** availability for **many products in one call** (colon-separated in the path). The SPA itself batches this way.
   - Response: `{ success, elements: [ { ... ALKO_ProductOnlineDataRO } ] }`, per element:
     ```json
     {
-      "type": "ALKO_ProductOnlineDataRO",
-      "buyable": true, "messageCode": "200", "productAvailability": "0",
-      "maxOrderQuantity": 0, "inCart": false, "inWishlist": false, "inStore": true,
-      "estimatedAvailabilityAmount": 6, "estimatedAvailabilityDate": "2026-09-14",
-      "maxAmountLimeGreen": 46, "hasSupplierStock": true,
-      "sku": "480307", "availabilityColor": "green"
+    	"type": "ALKO_ProductOnlineDataRO",
+    	"buyable": true,
+    	"messageCode": "200",
+    	"productAvailability": "0",
+    	"maxOrderQuantity": 0,
+    	"inCart": false,
+    	"inWishlist": false,
+    	"inStore": true,
+    	"estimatedAvailabilityAmount": 6,
+    	"estimatedAvailabilityDate": "2026-09-14",
+    	"maxAmountLimeGreen": 46,
+    	"hasSupplierStock": true,
+    	"sku": "480307",
+    	"availabilityColor": "green"
     }
     ```
   - `estimatedAvailabilityAmount` ≈ webshop balance, `maxAmountLimeGreen` ≈ webshop + lime restock.
@@ -139,26 +154,30 @@ The SPA client module (`8175-f677ecb5a418ca88.js`) wires up the services like th
   - **Usefulness for this project:** ~11,000 products / ~200–500 per URL length → ~30–60 requests for the whole catalogue's online balances.
 
 ### Cart (`/api/intershop/cart*`)
-| Method | Endpoint | Notes |
-|--------|----------|-------|
-| POST   | `/api/intershop/cart/add` | `{ productId, quantity, lang }` |
-| POST   | `/api/intershop/cart/add-gift-card` | `{ giftCard, lang }` |
-| GET    | `/api/intershop/cart[?lang=]` | fetch cart |
-| PUT    | `/api/intershop/cart/update` | item quantity |
-| DELETE | `/api/intershop/cart/remove` | remove item |
-| PUT    | `/api/intershop/cart/update/basket-details` | addresses/shipping/storeId/delivery date |
-| PATCH  | `/api/intershop/cart/payment-method` | payment method |
-| DELETE | `/api/intershop/cart/delete` | clear cart |
-| OPTIONS| `/api/intershop/cart/options` | cart options |
+
+| Method  | Endpoint                                    | Notes                                    |
+| ------- | ------------------------------------------- | ---------------------------------------- |
+| POST    | `/api/intershop/cart/add`                   | `{ productId, quantity, lang }`          |
+| POST    | `/api/intershop/cart/add-gift-card`         | `{ giftCard, lang }`                     |
+| GET     | `/api/intershop/cart[?lang=]`               | fetch cart                               |
+| PUT     | `/api/intershop/cart/update`                | item quantity                            |
+| DELETE  | `/api/intershop/cart/remove`                | remove item                              |
+| PUT     | `/api/intershop/cart/update/basket-details` | addresses/shipping/storeId/delivery date |
+| PATCH   | `/api/intershop/cart/payment-method`        | payment method                           |
+| DELETE  | `/api/intershop/cart/delete`                | clear cart                               |
+| OPTIONS | `/api/intershop/cart/options`               | cart options                             |
 
 ### Gift card
+
 - **`POST /api/intershop/gift-card/check-balance`** – balance check
 
 ### Orders
+
 - **`GET /api/intershop/orders/{orderId}`** – order details
 - **`POST /api/intershop/orders`** – initiate order
 
 ### Wishlists
+
 - **`GET /api/intershop/wishlists`** – own lists
 - **`GET /api/intershop/wishlists/shared-lists`**
 - **`POST /api/intershop/wishlists`** – `{ wishlistName, shared }`
@@ -171,13 +190,16 @@ The SPA client module (`8175-f677ecb5a418ca88.js`) wires up the services like th
 - **`GET /api/intershop/wishlists/{wishlistId}`** – items on a list
 
 ### Alcohol permits
+
 - **`GET /api/intershop/alcohol-permits`** – user's permits
 
 ### Reviews
+
 - **`POST /api/intershop/products/reviewbatch`** – `{ productIds }`
 - **`POST /api/intershop/products/{productId}/reviews`** – `{ reviewInput }`
 
 ### Stock notifications
+
 - **`POST /api/intershop/notifications/stock`** – create notification
 - **`GET /api/intershop/notifications/stock?productId=<id>`** – notification status
 - (overview strings in the bundle: `"/notifications/stock"` and `"/notifications/stock?productId="`)
@@ -187,17 +209,21 @@ The SPA client module (`8175-f677ecb5a418ca88.js`) wires up the services like th
 ## 6. Content / localisation / cmd / user / auth
 
 ### `/api/content`
+
 - `GET /api/content/recipes/food-recipes?...&locale=&page=` – food recipes
 - `GET /api/content/recipes/drink-recipes?...&locale=&page=` – drink recipes
 - `GET /api/content/microcopies?locale=` – micro-copy texts (insights etc.)
 
 ### `/api/content-search`
+
 - `POST /api/content-search` – content search (recipes/articles/stores)
 
 ### `/api/localisation`
+
 - `GET /api/localisation?path=<path>&contentId=<id>` – locale mapping for a URL path
 
 ### `/api/cmd` (customer/company data, B2C/B2B)
+
 - `GET /api/cmd/customers?select=alkoId,...` – logged-in user's data
 - `PATCH /api/cmd/customers` – favorite stores (`{ stores }`)
 - `POST /api/cmd/customers/recipes` – add favorite recipe
@@ -207,12 +233,15 @@ The SPA client module (`8175-f677ecb5a418ca88.js`) wires up the services like th
 - `GET /api/cmd/company/{companyAlkoId}/addresses` – company addresses
 
 ### `/api/delivery-pricing`
+
 - `POST /api/delivery-pricing` – `{ body }` delivery prices
 
 ### `/api/user`
+
 - `POST /api/user/me/profile` – update profile
 
 ### `/api/auth/*` (NextAuth)
+
 - `GET /api/auth/csrf`
 - `GET /api/auth/session`
 - `GET/POST /api/auth/signin?`, `/api/auth/signout?callbackUrl=`, `/api/auth/callback?from=`
@@ -221,32 +250,32 @@ The SPA client module (`8175-f677ecb5a418ca88.js`) wires up the services like th
 
 ## 7. Frontend routes (SPA route map, chunk `1518-0b490c6299c084f8.js`)
 
-| Route key | fi | sv | en |
-|-----------|----|----|----|
-| root | `/` | `/` | `/` |
-| SEARCH_RESULTS | `/hakutulokset` | `/sokresultat` | `/search-results` |
-| SEARCH_RESULTS_BY_CATEGORY | `/hakutulokset/[category]` | `/sokresultat/[category]` | `/search-results/[category]` |
-| STORES | `/myymalat-palvelut` | `/butiker-tjanster` | `/stores-services` |
-| STORE_BY_ID | `/myymalat-palvelut/[storeId]` | `/butiker-tjanster/[storeId]` | `/stores-services/[storeId]` |
-| PRODUCTS | `/tuotteet` | `/produkter` | `/products` |
-| SPECIAL_EDITIONS | `/tuotteet/erikoiserat` | `/produkter/specialpartier` | `/products/special-editions` |
-| PRODUCTS_BY_CATEGORY | `/tuotteet/[category]` | `/produkter/[category]` | `/products/[category]` |
-| PRODUCT_BY_ID | `/tuotteet/[productId]/[productName]` | `/produkter/...` | `/products/[productId]/[productName]` |
-| RECIPES | `/reseptit` | `/recept` | `/recipes` |
-| FOOD_RECIPES | `/reseptit/ruokareseptit` | `/recept/matrecept` | `/recipes/food-recipes` |
-| DRINK_RECIPES | `/reseptit/juomareseptit` | `/recept/dryck-recept` | `/recipes/drink-recipes` |
-| DRINK_RECIPE_BY_SLUG_ID | `/reseptit/juomareseptit/[recipeSlugId]` | ... | `/recipes/drink-recipes/[recipeSlugId]` |
-| FOOD_RECIPE_BY_SLUG_ID | `/reseptit/ruokareseptit/[recipeSlugId]` | ... | `/recipes/food-recipes/[recipeSlugId]` |
-| ARTICLE_BY_SLUG | `/artikkelit/[slug]` | `/artiklar/[slug]` | `/articles/[slug]` |
-| PAGE_BY_SLUG | `/sivu/[slug]` | `/sida/[slug]` | `/page/[slug]` |
-| CHECK_OUT | `/kassa` | `/kassa` | `/checkout` |
-| SHOPPING_CART_LOGIN | `/ostoskori-kirjautuminen` | `/kundvagn-inloggning` | `/shopping-cart-login` |
-| GIFT_CARD | `/lahjakortti` | `/presentkort` | `/gift-card` |
-| GIFT_CARD_BALANCE_CHECK | `/lahjakortti/tarkista-saldo` | ... | `/gift-card/check-balance` |
-| STRONG_AUTHENTICATION | `/vahva-tunnistautuminen` | `/stark-autentisering` | `/strong-authentication` |
-| ORDER_CONFIRMATION | `/tilausvahvistus` | `/orderbekraftelse` | `/order-confirmation` |
-| IDENTIFICATION_UPDATE | `/tunnistautumisen-paivitys` | ... | `/identification-update` |
-| CUSTOMER_SERVICE | `/palvelut/asiakaspalvelu` | `/tjanster/kundtjanst` | `/services/customer-service` |
+| Route key                  | fi                                       | sv                            | en                                      |
+| -------------------------- | ---------------------------------------- | ----------------------------- | --------------------------------------- |
+| root                       | `/`                                      | `/`                           | `/`                                     |
+| SEARCH_RESULTS             | `/hakutulokset`                          | `/sokresultat`                | `/search-results`                       |
+| SEARCH_RESULTS_BY_CATEGORY | `/hakutulokset/[category]`               | `/sokresultat/[category]`     | `/search-results/[category]`            |
+| STORES                     | `/myymalat-palvelut`                     | `/butiker-tjanster`           | `/stores-services`                      |
+| STORE_BY_ID                | `/myymalat-palvelut/[storeId]`           | `/butiker-tjanster/[storeId]` | `/stores-services/[storeId]`            |
+| PRODUCTS                   | `/tuotteet`                              | `/produkter`                  | `/products`                             |
+| SPECIAL_EDITIONS           | `/tuotteet/erikoiserat`                  | `/produkter/specialpartier`   | `/products/special-editions`            |
+| PRODUCTS_BY_CATEGORY       | `/tuotteet/[category]`                   | `/produkter/[category]`       | `/products/[category]`                  |
+| PRODUCT_BY_ID              | `/tuotteet/[productId]/[productName]`    | `/produkter/...`              | `/products/[productId]/[productName]`   |
+| RECIPES                    | `/reseptit`                              | `/recept`                     | `/recipes`                              |
+| FOOD_RECIPES               | `/reseptit/ruokareseptit`                | `/recept/matrecept`           | `/recipes/food-recipes`                 |
+| DRINK_RECIPES              | `/reseptit/juomareseptit`                | `/recept/dryck-recept`        | `/recipes/drink-recipes`                |
+| DRINK_RECIPE_BY_SLUG_ID    | `/reseptit/juomareseptit/[recipeSlugId]` | ...                           | `/recipes/drink-recipes/[recipeSlugId]` |
+| FOOD_RECIPE_BY_SLUG_ID     | `/reseptit/ruokareseptit/[recipeSlugId]` | ...                           | `/recipes/food-recipes/[recipeSlugId]`  |
+| ARTICLE_BY_SLUG            | `/artikkelit/[slug]`                     | `/artiklar/[slug]`            | `/articles/[slug]`                      |
+| PAGE_BY_SLUG               | `/sivu/[slug]`                           | `/sida/[slug]`                | `/page/[slug]`                          |
+| CHECK_OUT                  | `/kassa`                                 | `/kassa`                      | `/checkout`                             |
+| SHOPPING_CART_LOGIN        | `/ostoskori-kirjautuminen`               | `/kundvagn-inloggning`        | `/shopping-cart-login`                  |
+| GIFT_CARD                  | `/lahjakortti`                           | `/presentkort`                | `/gift-card`                            |
+| GIFT_CARD_BALANCE_CHECK    | `/lahjakortti/tarkista-saldo`            | ...                           | `/gift-card/check-balance`              |
+| STRONG_AUTHENTICATION      | `/vahva-tunnistautuminen`                | `/stark-autentisering`        | `/strong-authentication`                |
+| ORDER_CONFIRMATION         | `/tilausvahvistus`                       | `/orderbekraftelse`           | `/order-confirmation`                   |
+| IDENTIFICATION_UPDATE      | `/tunnistautumisen-paivitys`             | ...                           | `/identification-update`                |
+| CUSTOMER_SERVICE           | `/palvelut/asiakaspalvelu`               | `/tjanster/kundtjanst`        | `/services/customer-service`            |
 
 Also: `/kaupat/{id}` 301 → `/fi/kaupat/{id}` (old store path; the new one is `/myymalat-palvelut`).
 

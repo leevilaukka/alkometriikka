@@ -6,7 +6,8 @@ import {
 	alignValues,
 	buildLegacyValues,
 	getHash,
-	getHashValues
+	getHashValues,
+	upgradeStoredValues
 } from '../../scripts/data/constants';
 import { carryOverMissingProducts, updatePriceHistory } from '../../scripts/data/lifecycle';
 import type { MigratedData, MigratedProduct } from '../../scripts/data/types';
@@ -99,6 +100,20 @@ describe('alignValues', () => {
 		const exact = row({ Numero: '1' });
 		expect(alignValues(exact)).toBe(exact);
 		expect(alignValues([...exact, 'extra'])).toEqual(exact);
+	});
+});
+
+describe('upgradeStoredValues', () => {
+	it('converts the old vegan flag in Erityisryhmä to certificate labels', () => {
+		expect(upgradeStoredValues(row({ Erityisryhmä: true }))).toEqual(
+			row({ Erityisryhmä: 'Vegaaneille soveltuva tuote' })
+		);
+		expect(upgradeStoredValues(row({ Erityisryhmä: false }))).toEqual(row());
+	});
+
+	it('keeps already upgraded values as-is', () => {
+		const current = row({ Erityisryhmä: 'Luomu' });
+		expect(upgradeStoredValues(current)).toBe(current);
 	});
 });
 

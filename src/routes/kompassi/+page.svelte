@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import { onMount } from 'svelte';
 	import { twMerge } from 'tailwind-merge';
 	import CompassDial from '$lib/components/widgets/CompassDial.svelte';
@@ -14,10 +15,7 @@
 	import { generateTitle, setSEO } from '$lib/utils/helpers';
 	import { staticPage } from '$lib/utils/seo';
 	import { requestUserLocation } from '$lib/utils/location';
-	import {
-		needsOrientationPermission,
-		requestOrientationPermission
-	} from '$lib/utils/orientation';
+	import { needsOrientationPermission, requestOrientationPermission } from '$lib/utils/orientation';
 	import { components } from '$lib/utils/styles';
 
 	let { data } = $props();
@@ -126,7 +124,7 @@
 
 		{#if target}
 			<div class="flex flex-col items-center gap-1 text-center">
-				<a href={`/myymalat/${target.id}/`} class="text-xl font-bold hover:underline">
+				<a href={resolve(`/myymalat/${target.id}/`)} class="text-xl font-bold hover:underline">
 					{target.name}
 				</a>
 				<p class="text-sm text-secondary">
@@ -143,14 +141,22 @@
 			{#key target.id}
 				<CompassDial store={target} />
 			{/key}
-			<button type="button" class={components.button({ size: 'md' })} onclick={() => skipTarget(target)}>
+			<button
+				type="button"
+				class={components.button({ size: 'md' })}
+				onclick={() => skipTarget(target)}
+			>
 				<Icon name="skip_next" />
 				<span>Seuraava lähin</span>
 			</button>
 		{:else if candidates.length === 0}
 			<p class="text-secondary">Sopivia myymälöitä ei löytynyt.</p>
 			{#if skipped.length}
-				<button type="button" class={components.button({ size: 'md' })} onclick={() => resetFilters(onlyOpen)}>
+				<button
+					type="button"
+					class={components.button({ size: 'md' })}
+					onclick={() => resetFilters(onlyOpen)}
+				>
 					Aloita alusta
 				</button>
 			{/if}

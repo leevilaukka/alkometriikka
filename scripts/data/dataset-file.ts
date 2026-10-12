@@ -18,7 +18,7 @@
  * products whose stored values hash differently from the search payload, the
  * same one-off cost as a hash version bump.
  */
-import { DEV, alignValues, getHash, getHashValues } from './constants.ts';
+import { DEV, alignValues, getHash, getHashValues, upgradeStoredValues } from './constants.ts';
 import { withDatasetIndex } from './dataset-index.ts';
 import type { MigratedData } from './types.ts';
 
@@ -96,6 +96,11 @@ export async function readDataset(
 ): Promise<MigratedData | null> {
 	const data = await readJson<MigratedData>(dataPath);
 	if (!data || typeof data !== 'object') return data;
+	for (const product of Object.values(data.products ?? {})) {
+		if (product && typeof product === 'object' && Array.isArray(product.values)) {
+			product.values = upgradeStoredValues(product.values);
+		}
+	}
 	const counts = mergeHashes(data, await readJson<HashesFile>(hashesPath));
 	if (counts.recomputed > 0) {
 		console.warn(

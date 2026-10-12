@@ -1,8 +1,14 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import { compareProductIds } from '$lib/global.svelte';
 	import { AllColumns } from '$lib/utils/constants';
 	import { components } from '$lib/utils/styles';
-	import { clearCompare, compareURL, removeFromCompare, MAX_COMPARE_PRODUCTS } from '$lib/utils/compare';
+	import {
+		clearCompare,
+		compareURL,
+		removeFromCompare,
+		MAX_COMPARE_PRODUCTS
+	} from '$lib/utils/compare';
 	import { goto } from '$app/navigation';
 	import { twMerge } from 'tailwind-merge';
 	import type { Kaljakori } from '$lib/alko';
@@ -25,7 +31,9 @@
 	>
 		<div class="flex flex-1 flex-row flex-nowrap items-center gap-2 overflow-x-auto">
 			{#each products as product (product[AllColumns.Number])}
-				<div class="relative flex shrink-0 items-center gap-2 rounded border border-primary bg-secondary py-1 ps-1 pe-2">
+				<div
+					class="relative flex shrink-0 items-center gap-2 rounded border border-primary bg-secondary py-1 ps-1 pe-2"
+				>
 					<div class="flex h-8 w-8 shrink-0 items-center justify-center rounded bg-white p-0.5">
 						<ProductImage number={product[AllColumns.Number]} name={product[AllColumns.Name]} />
 					</div>
@@ -44,12 +52,15 @@
 			<span class="hidden text-sm text-secondary md:block">
 				{products.length}/{MAX_COMPARE_PRODUCTS} valittu
 			</span>
-			<button onclick={() => clearCompare()} class={twMerge(components.button({ type: 'negative' }))}>
+			<button
+				onclick={() => clearCompare()}
+				class={twMerge(components.button({ type: 'negative' }))}
+			>
 				<Icon name="trash" />
 				<span class="hidden sm:inline">Tyhjennä</span>
 			</button>
 			<button
-				onclick={() => goto(compareURL(compareProductIds))}
+				onclick={() => goto(resolve(compareURL(compareProductIds)))}
 				class={twMerge(components.button({ type: 'positive' }))}
 			>
 				<span>Vertaile</span>

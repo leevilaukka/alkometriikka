@@ -1,16 +1,16 @@
 <script lang="ts">
-    import RecursiveFilter from "./RecursiveFilter.svelte";
-	import StringInput from "../inputs/StringInput.svelte";
-	import { getNestedSubFilter } from "$lib/utils/filters";
-	import { headerToDisplayName } from "$lib/utils/helpers";
-	import type { FilterValues, ColumnNames } from "$lib/types";
-	import type { Kaljakori } from "$lib/alko";
+	import RecursiveFilter from './RecursiveFilter.svelte';
+	import StringInput from '../inputs/StringInput.svelte';
+	import { getNestedSubFilter } from '$lib/utils/filters';
+	import { headerToDisplayName } from '$lib/utils/helpers';
+	import type { FilterValues, ColumnNames } from '$lib/types';
+	import type { Kaljakori } from '$lib/alko';
 
 	let {
 		filter,
 		filterValues = $bindable(),
 		kaljakori,
-		showRemoved = true,
+		showRemoved = true
 	}: {
 		filter: ColumnNames;
 		filterValues: FilterValues;
@@ -34,11 +34,6 @@
 		/>
 
 		<!-- Render the next level -->
-		<RecursiveFilter
-            bind:filterValues
-            {kaljakori}
-            {showRemoved}
-            filter={child}
-        />
+		<RecursiveFilter bind:filterValues {kaljakori} {showRemoved} filter={child} />
 	{/if}
 {/if}

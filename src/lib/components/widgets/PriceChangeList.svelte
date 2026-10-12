@@ -1,8 +1,13 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import { AllColumns } from '$lib/utils/constants';
 	import { formatValue } from '$lib/utils/format';
 	import type { PriceChange } from '$lib/utils/metrics';
-	import { formatPriceChangeDate, formatPriceChangePercent, isPriceDrop } from '$lib/utils/priceChanges';
+	import {
+		formatPriceChangeDate,
+		formatPriceChangePercent,
+		isPriceDrop
+	} from '$lib/utils/priceChanges';
 	import { twMerge } from 'tailwind-merge';
 
 	/** Rows of price changes, newest first. */
@@ -15,7 +20,7 @@
 		<li class="flex items-center gap-2 border-t border-primary px-3 py-2 first:border-t-0">
 			<div class="flex min-w-0 flex-1 flex-col">
 				<a
-					href={`/tuotteet/${change.product[AllColumns.Number]}/`}
+					href={resolve(`/tuotteet/${change.product[AllColumns.Number]}/`)}
 					class="truncate hover:underline"
 					title={change.product[AllColumns.Name]}
 				>

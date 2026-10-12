@@ -46,7 +46,8 @@ async function main() {
 	const poolSize = readNumberOption('--concurrency', 8);
 	const localOnly = hasFlag('--local');
 
-	if (localOnly && !renderDir) throw new Error('--local requires --render <dir> (nothing would be rendered)');
+	if (localOnly && !renderDir)
+		throw new Error('--local requires --render <dir> (nothing would be rendered)');
 
 	const accessKeyId = process.env.CF_R2_ACCESS_KEY_ID;
 	const secretAccessKey = process.env.CF_R2_SECRET_ACCESS_KEY;
@@ -69,7 +70,8 @@ async function main() {
 	}
 
 	const manifestPath = path.resolve(
-		explicitManifest ?? (renderDir ? path.join(renderDir, CATEGORY_OG_MANIFEST_FILE) : CATEGORY_OG_MANIFEST_FILE)
+		explicitManifest ??
+			(renderDir ? path.join(renderDir, CATEGORY_OG_MANIFEST_FILE) : CATEGORY_OG_MANIFEST_FILE)
 	);
 	const previous = await readJson<CategoryOgManifest>(manifestPath, {});
 
@@ -109,7 +111,8 @@ async function main() {
 			failures.push(`${display.path}: ${error instanceof Error ? error.message : String(error)}`);
 			// A failed card keeps its previous image when that still exists
 			const previousKey = previous[display.path];
-			if (previousKey && (existing === null || existing.has(previousKey))) current[display.path] = previousKey;
+			if (previousKey && (existing === null || existing.has(previousKey)))
+				current[display.path] = previousKey;
 		}
 	});
 

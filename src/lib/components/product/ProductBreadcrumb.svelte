@@ -5,7 +5,7 @@
 	import { findProductCategoryTrail } from '$lib/utils/categories';
 	import Breadcrumb from '../widgets/Breadcrumb.svelte';
 	import type { BreadcrumbItem } from '$lib/types';
-	
+
 	const {
 		product,
 		kaljakori,

@@ -45,7 +45,12 @@
 	}
 </script>
 
-<aside class={twMerge('flex w-full flex-col gap-4 rounded border border-primary bg-secondary p-4', _class)}>
+<aside
+	class={twMerge(
+		'flex w-full flex-col gap-4 rounded border border-primary bg-secondary p-4',
+		_class
+	)}
+>
 	<ProductPriceStoreBanner
 		{product}
 		{sale}
@@ -61,7 +66,10 @@
 			{#snippet renderButton(dialogElement: HTMLDialogElement)}
 				<button
 					type="button"
-					class={twMerge(components.button({ size: 'lg' }), 'w-full flex-1 justify-between px-4 py-2.5')}
+					class={twMerge(
+						components.button({ size: 'lg' }),
+						'w-full flex-1 justify-between px-4 py-2.5'
+					)}
 					onclick={() => dialogElement.showModal()}
 				>
 					<span>Lisää listaan</span>
@@ -96,7 +104,12 @@
 	{/if}
 
 	{#if product[AllColumns.RemovedFromSelection]}
-		<span class={twMerge(components.button({ size: 'lg' }), 'w-full cursor-default px-4 py-2.5 opacity-50')}>
+		<span
+			class={twMerge(
+				components.button({ size: 'lg' }),
+				'w-full cursor-default px-4 py-2.5 opacity-50'
+			)}
+		>
 			Poistunut valikoimasta
 		</span>
 	{:else}
@@ -112,7 +125,7 @@
 		</a>
 	{/if}
 
-	<p class="text-xs text-secondary text-wrap-pretty">
+	<p class="text-wrap-pretty text-xs text-secondary">
 		Alkometriikka ei myy alkoholia. Tiedot päivittyvät Alkon hinnastosta.
 	</p>
 </aside>

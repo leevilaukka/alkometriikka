@@ -8,7 +8,11 @@ const MAX_LOCATION_AGE_MS = 10 * 60 * 1000;
 
 function hasFreshLocation() {
 	const updatedAt = LocalStorageManager.getItem(LocalStorageKeys.UserLocationUpdatedAt);
-	return !!get(userLocation) && typeof updatedAt === 'number' && Date.now() - updatedAt < MAX_LOCATION_AGE_MS;
+	return (
+		!!get(userLocation) &&
+		typeof updatedAt === 'number' &&
+		Date.now() - updatedAt < MAX_LOCATION_AGE_MS
+	);
 }
 
 /**

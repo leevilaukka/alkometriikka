@@ -9,86 +9,95 @@
  * Usage: bun scripts/new-2026/cleanup.ts
  */
 
-import { isIrrelevantMainGroup, isIrrelevantStoredValues, REQUEST_HEADERS, SEARCH_URL } from "./constants.ts";
-import type { MigratedData, MigratedProduct, SearchApiResponse, SearchProductData } from "./types.ts";
-import { isMigratedProduct } from "./guards.ts";
+import {
+	isIrrelevantMainGroup,
+	isIrrelevantStoredValues,
+	REQUEST_HEADERS,
+	SEARCH_URL
+} from './constants.ts';
+import type {
+	MigratedData,
+	MigratedProduct,
+	SearchApiResponse,
+	SearchProductData
+} from './types.ts';
+import { isMigratedProduct } from './guards.ts';
 
-const DATA_PATH = "./data-migrated.json";
+const DATA_PATH = './data-migrated.json';
 const PAGE_SIZE = 1000;
-
 
 /** Fetches every product from the paginated search API. */
 async function loadSearchProducts(): Promise<SearchProductData[]> {
-  const products: SearchProductData[] = [];
+	const products: SearchProductData[] = [];
 
-  for (let page = 0; ; page++) {
-    const response = await fetch(SEARCH_URL, {
-      method: "POST",
-      headers: REQUEST_HEADERS,
-      body: JSON.stringify({ top: PAGE_SIZE, skip: page * PAGE_SIZE }),
-    });
+	for (let page = 0; ; page++) {
+		const response = await fetch(SEARCH_URL, {
+			method: 'POST',
+			headers: REQUEST_HEADERS,
+			body: JSON.stringify({ top: PAGE_SIZE, skip: page * PAGE_SIZE })
+		});
 
-    if (!response.ok) {
-      throw new Error(`Search API failed: HTTP ${response.status} ${response.statusText}`);
-    }
+		if (!response.ok) {
+			throw new Error(`Search API failed: HTTP ${response.status} ${response.statusText}`);
+		}
 
-    const batch = ((await response.json()) as SearchApiResponse).value ?? [];
-    if (batch.length === 0) break;
+		const batch = ((await response.json()) as SearchApiResponse).value ?? [];
+		if (batch.length === 0) break;
 
-    products.push(...batch);
-    console.log(`  📦 Fetched ${products.length} products (page ${page + 1})`);
+		products.push(...batch);
+		console.log(`  📦 Fetched ${products.length} products (page ${page + 1})`);
 
-    if (batch.length < PAGE_SIZE) break;
-  }
+		if (batch.length < PAGE_SIZE) break;
+	}
 
-  return products;
+	return products;
 }
 
 async function cleanup(): Promise<void> {
-  console.log("🧹 Starting cleanup of irrelevant products...\n");
+	console.log('🧹 Starting cleanup of irrelevant products...\n');
 
-  const file = Bun.file(DATA_PATH);
-  if (!(await file.exists())) {
-    console.error(`❌ ${DATA_PATH} not found`);
-    process.exit(1);
-  }
+	const file = Bun.file(DATA_PATH);
+	if (!(await file.exists())) {
+		console.error(`❌ ${DATA_PATH} not found`);
+		process.exit(1);
+	}
 
-  const data = (await file.json()) as MigratedData;
-  const products = data.products ?? {};
+	const data = (await file.json()) as MigratedData;
+	const products = data.products ?? {};
 
-  const searchProducts = await loadSearchProducts();
-  const irrelevantIds = new Set<string>();
-  for (const product of searchProducts) {
-    if (isIrrelevantMainGroup(product as unknown as Record<string, unknown>)) {
-      irrelevantIds.add(product.id);
-    }
-  }
-  console.log(`\n🔎 API classifies ${irrelevantIds.size} products as irrelevant\n`);
+	const searchProducts = await loadSearchProducts();
+	const irrelevantIds = new Set<string>();
+	for (const product of searchProducts) {
+		if (isIrrelevantMainGroup(product as unknown as Record<string, unknown>)) {
+			irrelevantIds.add(product.id);
+		}
+	}
+	console.log(`\n🔎 API classifies ${irrelevantIds.size} products as irrelevant\n`);
 
-  const removed: string[] = [];
-  for (const id of Object.keys(products)) {
-    const entry = products[id];
-    if (!isMigratedProduct(entry)) continue;
+	const removed: string[] = [];
+	for (const id of Object.keys(products)) {
+		const entry = products[id];
+		if (!isMigratedProduct(entry)) continue;
 
-    if (irrelevantIds.has(id) || isIrrelevantStoredValues(entry.values)) {
-      const name = String(entry.values[1] ?? "").trim() || "(nimetön)";
-      console.log(`  🗑️  Removing ${id} — ${name}`);
-      removed.push(id);
-      delete products[id];
-    }
-  }
+		if (irrelevantIds.has(id) || isIrrelevantStoredValues(entry.values)) {
+			const name = String(entry.values[1] ?? '').trim() || '(nimetön)';
+			console.log(`  🗑️  Removing ${id} — ${name}`);
+			removed.push(id);
+			delete products[id];
+		}
+	}
 
-  if (removed.length === 0) {
-    console.log("✅ Nothing to clean up — no irrelevant products found");
-    return;
-  }
+	if (removed.length === 0) {
+		console.log('✅ Nothing to clean up — no irrelevant products found');
+		return;
+	}
 
-  await Bun.write(DATA_PATH, JSON.stringify(data));
-  console.log(`\n📊 Unrelevant filtered items (removed by cleanup): ${removed.length}`);
-  console.log(`✅ Saved ${DATA_PATH}`);
+	await Bun.write(DATA_PATH, JSON.stringify(data));
+	console.log(`\n📊 Unrelevant filtered items (removed by cleanup): ${removed.length}`);
+	console.log(`✅ Saved ${DATA_PATH}`);
 }
 
 cleanup().catch((error) => {
-  console.error("❌ Fatal error:", error);
-  process.exit(1);
+	console.error('❌ Fatal error:', error);
+	process.exit(1);
 });

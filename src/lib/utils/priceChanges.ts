@@ -41,7 +41,11 @@ export function filterPriceChangesByDirection(
  * Whether a product belongs to a category, matched by slug like the category
  * pages do. Without a type slug every product matches.
  */
-export function isInCategory(product: PriceListItem, typeSlug?: string, subTypeSlug?: string): boolean {
+export function isInCategory(
+	product: PriceListItem,
+	typeSlug?: string,
+	subTypeSlug?: string
+): boolean {
 	if (!typeSlug) return true;
 	return (
 		categorySlug(String(product[AllColumns.Type] ?? '')) === typeSlug &&
@@ -79,7 +83,11 @@ export function parsePriceChangeParams(params: URLSearchParams): {
 	return {
 		days: PRICE_CHANGE_WINDOWS.find((value) => value === days) ?? DEFAULT_PRICE_CHANGE_WINDOW,
 		direction:
-			direction === DIRECTION_PARAMS.down ? 'down' : direction === DIRECTION_PARAMS.up ? 'up' : 'all',
+			direction === DIRECTION_PARAMS.down
+				? 'down'
+				: direction === DIRECTION_PARAMS.up
+					? 'up'
+					: 'all',
 		typeSlug,
 		subTypeSlug: (typeSlug && params.get('alatyyppi')) || undefined
 	};

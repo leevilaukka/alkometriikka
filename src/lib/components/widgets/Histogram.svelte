@@ -27,7 +27,10 @@
 		<div class="flex h-20 items-end gap-0.5" role="img" aria-label={label}>
 			{#each bins as bin, index (index)}
 				<div
-					class={twMerge('flex-1 rounded-t-sm bg-brand-3/40', index === highlightIndex && 'bg-brand-3')}
+					class={twMerge(
+						'flex-1 rounded-t-sm bg-brand-3/40',
+						index === highlightIndex && 'bg-brand-3'
+					)}
 					style:height={`${Math.max(2, (bin.count / maxCount) * 100)}%`}
 					title={`${format(bin.from)}–${format(bin.to)}: ${bin.count} tuotetta`}
 				></div>

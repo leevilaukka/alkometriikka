@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { appPath } from '$lib/utils/paths';
 	import type { PriceListItem } from '$lib/types';
 	import { sendAnalyticsEvent } from '$lib/utils/helpers';
 	import { recentPriceChanges } from '$lib/utils/metrics';
@@ -27,7 +28,9 @@
 	const changes = $derived(recentPriceChanges(products, since));
 	const drops = $derived(changes.filter(isPriceDrop).length);
 	// The same window on the price changes page, narrowed to this category
-	const pageHref = $derived(priceChangesURL({ days: WINDOW_DAYS, direction: 'all', typeSlug, subTypeSlug }));
+	const pageHref = $derived(
+		priceChangesURL({ days: WINDOW_DAYS, direction: 'all', typeSlug, subTypeSlug })
+	);
 </script>
 
 <CategorySection
@@ -46,14 +49,15 @@
 	{/if}
 	<div class="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-xs">
 		{#if changes.length > 0}
-			<a href={pageHref} class="group flex items-center gap-1">
+			<a href={appPath(pageHref)} class="group flex items-center gap-1">
 				<span class="group-hover:underline">Kaikki kategorian hinnanmuutokset</span>
 				<Icon name="chevron_right" />
 			</a>
 		{/if}
 		<a
 			href={feedHref}
-			onclick={() => sendAnalyticsEvent('click_feed', { feed: 'category', location: 'category_page' })}
+			onclick={() =>
+				sendAnalyticsEvent('click_feed', { feed: 'category', location: 'category_page' })}
 			class="group flex items-center gap-1 text-secondary"
 			title="Tilaa kategorian uutuudet ja hinnanmuutokset RSS-syötteenä"
 		>

@@ -1,4 +1,5 @@
 import { CryptoHasher } from 'bun';
+import { formatFoodPairings } from '../../src/lib/utils/food.ts';
 
 export const LEGACY_HEADERS = [
 	'Numero',
@@ -33,7 +34,8 @@ export const LEGACY_HEADERS = [
 	'EAN',
 	'Normaalihinta',
 	'Kampanja alkaa',
-	'Kampanja päättyy'
+	'Kampanja päättyy',
+	'Ruokasuositukset'
 ] as const;
 
 export const DEV = process.argv.includes('--dev');
@@ -72,6 +74,17 @@ export const REQUEST_HEADERS: Record<string, string> = {
 function toStringList(value: unknown): string[] {
 	if (Array.isArray(value)) return value.filter((item): item is string => typeof item === 'string');
 	return typeof value === 'string' ? [value] : [];
+}
+
+/**
+ * Turns the search API's `certificateClass` entries (`certificateId|certificate_001|Luomu`)
+ * into a comma separated list of their labels, e.g. `Luomu, Vegaaneille soveltuva tuote`.
+ */
+function formatCertificates(value: unknown): string | null {
+	const labels = toStringList(value)
+		.map((entry) => entry.split('|')[2]?.trim())
+		.filter((label): label is string => Boolean(label));
+	return labels.length ? [...new Set(labels)].join(', ') : null;
 }
 
 /** Converts an unknown field into a finite number or null. Handles the string prices the API returns. */
@@ -206,10 +219,10 @@ export const FIELD_TO_LEGACY_SCHEMA: ProductFieldMapping[] = [
 		preprocessor: (value) => value
 	},
 	{
-		newPropertyKey: 'certificateId',
+		newPropertyKey: 'certificateClass',
 		legacyKey: 'Erityisryhmä',
 		usedForHashing: false,
-		preprocessor: (value) => (Array.isArray(value) ? value.includes('certificate_005') : false)
+		preprocessor: formatCertificates
 	},
 	{
 		newPropertyKey: 'flavorTag',
@@ -358,7 +371,23 @@ export const FIELD_TO_LEGACY_SCHEMA: ProductFieldMapping[] = [
 		legacyKey: 'Kampanja päättyy',
 		usedForHashing: true,
 		preprocessor: (value) => value ?? null
+	},
+	{
+		newPropertyKey: 'foodSymbolId',
+		legacyKey: 'Ruokasuositukset',
+		usedForHashing: false,
+		preprocessor: formatFoodPairings
 	}
+];
+
+/**
+ * Search-API columns refreshed on every sync, even for products whose hash is
+ * unchanged. They aren't hashed (a change shouldn't cost a detail fetch), so
+ * without this they'd only update when something else about the product changes.
+ */
+export const SEARCH_REFRESHED_COLUMNS: readonly (typeof LEGACY_HEADERS)[number][] = [
+	'Erityisryhmä',
+	'Ruokasuositukset'
 ];
 
 /**
@@ -389,6 +418,22 @@ export function alignValues(values: unknown[]): unknown[] {
 		return [...values, ...Array(LEGACY_HEADERS.length - values.length).fill(null)];
 	}
 	return values.slice(0, LEGACY_HEADERS.length);
+}
+
+const SPECIAL_GROUP_INDEX = LEGACY_HEADERS.indexOf('Erityisryhmä');
+
+/**
+ * Converts values stored in an older format to the current one. Erityisryhmä
+ * used to be a vegan flag (certificate_005), now it's the label list built by
+ * `formatCertificates`. Products still in the selection get refreshed from the
+ * search API anyway, so this mostly matters for removed ones.
+ */
+export function upgradeStoredValues(values: unknown[]): unknown[] {
+	const specialGroup = values[SPECIAL_GROUP_INDEX];
+	if (typeof specialGroup !== 'boolean') return values;
+	const upgraded = [...values];
+	upgraded[SPECIAL_GROUP_INDEX] = specialGroup ? 'Vegaaneille soveltuva tuote' : null;
+	return upgraded;
 }
 
 /**

@@ -91,9 +91,16 @@ describe('price change params', () => {
 	});
 
 	it('links to the page with only the non-default choices', () => {
-		expect(priceChangesURL({ days: DEFAULT_PRICE_CHANGE_WINDOW, direction: 'all' })).toBe('/hinnanmuutokset');
+		expect(priceChangesURL({ days: DEFAULT_PRICE_CHANGE_WINDOW, direction: 'all' })).toBe(
+			'/hinnanmuutokset'
+		);
 		expect(
-			priceChangesURL({ days: DEFAULT_PRICE_CHANGE_WINDOW, direction: 'all', typeSlug: 'viinit', subTypeSlug: 'punaviinit' })
+			priceChangesURL({
+				days: DEFAULT_PRICE_CHANGE_WINDOW,
+				direction: 'all',
+				typeSlug: 'viinit',
+				subTypeSlug: 'punaviinit'
+			})
 		).toBe('/hinnanmuutokset?tyyppi=viinit&alatyyppi=punaviinit');
 		expect(priceChangesURL({ days: 7, direction: 'down', typeSlug: 'oluet' })).toBe(
 			'/hinnanmuutokset?pv=7&suunta=halpeni&tyyppi=oluet'

@@ -4,16 +4,18 @@ import { error } from '@sveltejs/kit';
 import { decompressFromEncodedURIComponent } from 'lz-string';
 
 export async function load({ parent, url }) {
-    const data = await parent();
-    const listParam = url.searchParams.get('list');
-    const isValid = listParam && validateListFromURI(listParam);
-    const list: ListObj | null = isValid ? JSON.parse(decompressFromEncodedURIComponent(listParam)) : null;
+	const data = await parent();
+	const listParam = url.searchParams.get('list');
+	const isValid = listParam && validateListFromURI(listParam);
+	const list: ListObj | null = isValid
+		? JSON.parse(decompressFromEncodedURIComponent(listParam))
+		: null;
 
-    if (listParam && !isValid) {
+	if (listParam && !isValid) {
 		error(400, {
 			message: 'Listan tietoja ei voida lukea. Tarkista linkki.'
 		});
 	}
 
-    return { ...data, list };
+	return { ...data, list };
 }

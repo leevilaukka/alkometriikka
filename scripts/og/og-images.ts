@@ -16,7 +16,11 @@ import { mapPool } from '../lib/async';
 import { fetchProductImage as fetchAlkoImage } from '../lib/alko-image';
 
 const fetchProductImage = (id: string) =>
-	fetchAlkoImage(id, { attempts: 3, timeoutMs: 20_000, backoffMs: (attempt) => 500 * (attempt + 1) });
+	fetchAlkoImage(id, {
+		attempts: 3,
+		timeoutMs: 20_000,
+		backoffMs: (attempt) => 500 * (attempt + 1)
+	});
 
 const MANIFEST_FILE = 'og-images.json';
 
@@ -52,7 +56,9 @@ function describeError(error: unknown): string {
 	const parts = [`${error.name}: ${error.message}`];
 	if (code !== undefined) parts.push(`code=${String(code)}`);
 	if (error.cause !== undefined) {
-		parts.push(`cause=${error.cause instanceof Error ? describeError(error.cause) : String(error.cause)}`);
+		parts.push(
+			`cause=${error.cause instanceof Error ? describeError(error.cause) : String(error.cause)}`
+		);
 	}
 	return parts.join(' | ');
 }

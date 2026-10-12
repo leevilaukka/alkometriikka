@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import { BarcodeDetector } from 'barcode-detector/ponyfill';
 	import type { DetectedBarcode } from 'barcode-detector/ponyfill';
 	import Popup from './Popup.svelte';
@@ -18,7 +19,7 @@
 	function loadDeviceCameraStream(): Promise<MediaStream> {
 		return navigator.mediaDevices.getUserMedia({
 			video: { facingMode: 'environment', height: 1080, width: 1920, autoGainControl: true },
-            audio: false
+			audio: false
 		});
 	}
 
@@ -99,7 +100,7 @@
 		const productCode = rawValue;
 		const products = kaljakori.findByColumn(AllColumns.EAN, productCode);
 		if (products.length !== 1) throw 'Tuotetta ei löytynyt';
-		const link = `/tuotteet/${products[0][AllColumns.Number]}/`;
+		const link = resolve(`/tuotteet/${products[0][AllColumns.Number]}/`);
 		sendAnalyticsEvent('scan_barcode', { ean: productCode, link });
 		goto(link, { replaceState: true });
 	}
@@ -107,13 +108,17 @@
 	function handleQRCode({ rawValue }: DetectedBarcode) {
 		try {
 			const url = new URL(rawValue);
-			if (url.host === "www.alko.fi" && url.pathname.startsWith("/tuotteet/")) {
+			if (url.host === 'www.alko.fi' && url.pathname.startsWith('/tuotteet/')) {
 				// Alko product link
-				const productNumber = url.pathname.split("/tuotteet/")[1].split("/")[0];
+				const productNumber = url.pathname.split('/tuotteet/')[1].split('/')[0];
 				const products = kaljakori.findByColumn(AllColumns.Number, productNumber);
 				if (products.length !== 1) throw 'Tuotetta ei löytynyt';
-				const link = `/tuotteet/${products[0][AllColumns.Number]}/`;
-				sendAnalyticsEvent('scan_qr_code', { type: 'alko_product_qr', product_number: productNumber, link });
+				const link = resolve(`/tuotteet/${products[0][AllColumns.Number]}/`);
+				sendAnalyticsEvent('scan_qr_code', {
+					type: 'alko_product_qr',
+					product_number: productNumber,
+					link
+				});
 				goto(link, { replaceState: true });
 				return;
 			}
@@ -161,10 +166,8 @@
 				</label>
 			</div>
 			{#if cameraFailed}
-				<div
-					class="flex flex-col items-center text-center p-4"
-				>
-					<p class="mb-2 text-red-600 text-balance">
+				<div class="flex flex-col items-center p-4 text-center">
+					<p class="mb-2 text-balance text-red-600">
 						Kameran käyttö epäonnistui. Varmista, että laitteessasi on kamera ja selaimellasi on
 						lupa käyttää sitä.
 					</p>

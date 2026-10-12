@@ -36,7 +36,10 @@
 <div class={twMerge('flex flex-col gap-4', _class)}>
 	<div class="flex flex-col gap-0.5">
 		<div class="flex items-end gap-2">
-			<p class="text-[38px] leading-none font-bold" data-price={formatValue(product[AllColumns.Price], AllColumns.Price)}>
+			<p
+				class="text-[38px] leading-none font-bold"
+				data-price={formatValue(product[AllColumns.Price], AllColumns.Price)}
+			>
 				{formatValue(product[AllColumns.Price], AllColumns.Price)}
 			</p>
 			{#if sale}
@@ -73,7 +76,9 @@
 							? 'text-sm text-green-700 dark:text-green-400'
 							: 'text-sm text-red-700 dark:text-red-400'}
 					>
-						{availableInPreferredStore ? 'Saatavilla valitusta myymälästä' : 'Ei saatavilla valitusta myymälästä'}
+						{availableInPreferredStore
+							? 'Saatavilla valitusta myymälästä'
+							: 'Ei saatavilla valitusta myymälästä'}
 					</span>
 					<strong class="text-sm">{preferredStore.name}</strong>
 					{#if !availableInPreferredStore && closestAvailableStore}
@@ -97,7 +102,10 @@
 			{#if !availableInPreferredStore && closestAvailableStore}
 				<button
 					type="button"
-					class={twMerge(components.button({ size: 'sm' }), 'flex w-full items-center justify-center gap-2')}
+					class={twMerge(
+						components.button({ size: 'sm' }),
+						'flex w-full items-center justify-center gap-2'
+					)}
 					onclick={scrollToAvailability}
 				>
 					<span>Katso muut myymälät</span>

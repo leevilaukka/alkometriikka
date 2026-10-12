@@ -1,5 +1,11 @@
 import { describe, expect, it } from 'bun:test';
-import { productDescription, staticPage, storeAddress, storeDescription, STATIC_PAGES } from '$lib/utils/seo';
+import {
+	productDescription,
+	staticPage,
+	storeAddress,
+	storeDescription,
+	STATIC_PAGES
+} from '$lib/utils/seo';
 
 describe('productDescription', () => {
 	it('lists abv, size, price, litre price and category', () => {
@@ -28,7 +34,13 @@ describe('productDescription', () => {
 });
 
 describe('store copy', () => {
-	const store = { name: 'Helsinki Arkadia', address: 'Salomonkatu 1', postalCode: '00100', postOffice: 'HELSINKI', city: 'Helsinki' };
+	const store = {
+		name: 'Helsinki Arkadia',
+		address: 'Salomonkatu 1',
+		postalCode: '00100',
+		postOffice: 'HELSINKI',
+		city: 'Helsinki'
+	};
 
 	it('prefers the city over the upper-cased post office', () => {
 		expect(storeAddress(store)).toBe('Salomonkatu 1, 00100 Helsinki');

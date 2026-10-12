@@ -8,7 +8,11 @@
 	import { type AvailabilityStore, type PriceListItem } from '$lib/types';
 	import { afterNavigate } from '$app/navigation';
 	import type { Kaljakori } from '$lib/alko';
-	import { buildSizeOptions, findSimilarProducts, SIMILAR_PRODUCT_COLUMNS } from '$lib/utils/filters';
+	import {
+		buildSizeOptions,
+		findSimilarProducts,
+		SIMILAR_PRODUCT_COLUMNS
+	} from '$lib/utils/filters';
 	import {
 		formatStoreDistance,
 		getStoreDistance,
@@ -51,9 +55,7 @@
 		rankStoresByDistance(availabilityStores, preferredStore)
 	);
 	const availableInPreferredStore = $derived(
-		preferredStore
-			? availabilityStores.some((store) => store.id === preferredStore.id)
-			: false
+		preferredStore ? availabilityStores.some((store) => store.id === preferredStore.id) : false
 	);
 	const closestAvailableStore = $derived(rankedAvailabilityStores[0]);
 	const closestAvailableDistance = $derived(
@@ -144,7 +146,10 @@
 		<ProductBreadcrumb {product} {kaljakori} class="min-w-0 flex-1" />
 		<button
 			type="button"
-			class={twMerge(components.button({ size: 'sm', type: 'positive' }), 'ml-auto flex shrink-0 items-center gap-2')}
+			class={twMerge(
+				components.button({ size: 'sm', type: 'positive' }),
+				'ml-auto flex shrink-0 items-center gap-2'
+			)}
 			onclick={async () => {
 				const shared = await handleShare({
 					type: 'product',
@@ -164,7 +169,9 @@
 		</button>
 	</div>
 
-	<div class="grid w-full grid-cols-1 gap-6 lg:grid-cols-[360px_minmax(0,1fr)_320px] lg:items-start">
+	<div
+		class="grid w-full grid-cols-1 gap-6 lg:grid-cols-[360px_minmax(0,1fr)_320px] lg:items-start"
+	>
 		<ProductGallery {product} {sale} />
 
 		<div class="flex flex-col gap-4">
@@ -207,7 +214,9 @@
 
 	<ProductSimilar {product} candidates={similarProducts} />
 
-	<div class="grid w-full grid-cols-1 gap-6 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] lg:items-start">
+	<div
+		class="grid w-full grid-cols-1 gap-6 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] lg:items-start"
+	>
 		<div class="flex flex-col gap-6">
 			<ProductPriceHistory {product} />
 			<ProductDetailsTable {product} class="hidden lg:block" />

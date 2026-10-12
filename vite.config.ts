@@ -27,7 +27,7 @@ function changelog(): Plugin {
 
 export default defineConfig({
 	esbuild: {
-		drop: process.argv.includes('dev') ? [] : ["console"]
+		drop: process.argv.includes('dev') ? [] : ['console']
 	},
 	server: {},
 	plugins: [changelog(), tailwindcss(), sveltekit()]
