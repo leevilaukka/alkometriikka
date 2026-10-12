@@ -6,6 +6,7 @@
 	import { timeConfig } from '$lib/utils/constants';
 	import SiteFeedback from './SiteFeedback.svelte';
 	import { sendAnalyticsEvent } from '$lib/utils/helpers';
+	import { resolve } from '$app/paths';
 	const { alko, dialogElement, githubRepoBase, githubFileBase, gitCommitHash } = $props();
 </script>
 
@@ -104,7 +105,7 @@
 				Versio: <a href={`${githubRepoBase}/commit/${version}`} target="_blank">
 					{gitCommitHash}
 				</a>
-				| <a href="/muutosloki" onclick={() => dialogElement.close()}>Muutosloki</a>
+				| <a href={resolve('/muutosloki')} onclick={() => dialogElement.close()}>Muutosloki</a>
 				{#if alko.dataset.metadata.LastUpdated && alko.dataset.metadata.LastSynced}
 					<br />
 				{@const lastSynced = `${new Date(alko.dataset.metadata.LastSynced).toLocaleDateString('fi-FI')} klo ${new Date(alko.dataset.metadata.LastSynced).toLocaleTimeString('fi-FI', timeConfig)}`}
