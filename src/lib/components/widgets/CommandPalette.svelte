@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
 	import { tick } from 'svelte';
 	import { twMerge } from 'tailwind-merge';
@@ -36,6 +37,7 @@
 		type SearchEntry,
 		type SearchScope
 	} from '$lib/utils/commandPalette';
+	import { appPath } from '$lib/utils/paths';
 	import { components } from '$lib/utils/styles';
 	import Icon from './Icon.svelte';
 	import ProductImage from './ProductImage.svelte';
@@ -153,7 +155,7 @@
 			kind: 'page',
 			label: 'Etusivu',
 			icon: 'home',
-			href: '/',
+			href: resolve('/'),
 			keywords: 'tuotteet hinnasto haku'
 		},
 		{
@@ -161,7 +163,7 @@
 			kind: 'page',
 			label: 'Listat',
 			icon: 'list_ul',
-			href: '/listat',
+			href: resolve('/listat'),
 			keywords: 'ostoslista'
 		},
 		{
@@ -169,7 +171,7 @@
 			kind: 'page',
 			label: 'Daily',
 			icon: 'flame',
-			href: '/daily',
+			href: resolve('/daily'),
 			keywords: 'peli visa'
 		},
 		{
@@ -177,7 +179,7 @@
 			kind: 'page',
 			label: 'Kategoriat',
 			icon: 'wine',
-			href: '/kategoriat/',
+			href: resolve('/kategoriat/'),
 			keywords: 'tyypit'
 		},
 		{
@@ -185,7 +187,7 @@
 			kind: 'page',
 			label: 'Hinnanmuutokset',
 			icon: 'trending_down',
-			href: '/hinnanmuutokset',
+			href: resolve('/hinnanmuutokset'),
 			keywords: 'alennukset halpenivat kallistuivat'
 		},
 		{
@@ -193,7 +195,7 @@
 			kind: 'page',
 			label: 'Myymälät',
 			icon: 'store',
-			href: '/myymalat',
+			href: resolve('/myymalat'),
 			keywords: 'alko kaupat aukioloajat'
 		},
 		{
@@ -201,7 +203,7 @@
 			kind: 'page',
 			label: 'Kompassi',
 			icon: 'compass',
-			href: '/kompassi/',
+			href: resolve('/kompassi'),
 			keywords: 'lähin myymälä'
 		},
 		{
@@ -209,7 +211,7 @@
 			kind: 'page',
 			label: 'Daily-arkisto',
 			icon: 'archive',
-			href: '/daily/arkisto',
+			href: resolve('/daily/arkisto'),
 			keywords: 'peli'
 		},
 		{
@@ -217,7 +219,7 @@
 			kind: 'page',
 			label: 'Laskin',
 			icon: 'calculator',
-			href: '/laskin',
+			href: resolve('/laskin'),
 			keywords: 'promille annokset'
 		},
 		{
@@ -225,7 +227,7 @@
 			kind: 'page',
 			label: 'Tilastot',
 			icon: 'stats',
-			href: '/tilastot',
+			href: resolve('/tilastot'),
 			keywords: 'kuvaajat'
 		}
 	];
@@ -278,14 +280,14 @@
 						kind: 'action',
 						label: 'Takaisin tuotesivulle',
 						icon: 'wine',
-						href: `/tuotteet/${number}/`
+						href: resolve(`/tuotteet/${number}/`)
 					}
 				: {
 						id: 'action:product-similar',
 						kind: 'action',
 						label: 'Näytä vastaavat tuotteet',
 						icon: 'shuffle',
-						href: `/vastaavat/${number}/`,
+						href: resolve(`/vastaavat/${number}/`),
 						keywords: 'samankaltaiset korvaava'
 					},
 			{
@@ -310,7 +312,7 @@
 			(product) => !product[AllColumns.RemovedFromSelection]
 		);
 		const product = activeProducts[Math.floor(Math.random() * activeProducts.length)];
-		if (product) goto(`/tuotteet/${product[AllColumns.Number]}/`);
+		if (product) goto(resolve(`/tuotteet/${product[AllColumns.Number]}/`));
 	}
 
 	async function sharePage() {
@@ -334,7 +336,7 @@
 		createList(name);
 		const list = lists[lists.length - 1];
 		sendAnalyticsEvent('create_list');
-		goto(`/listat?list=${listToURI(list)}`);
+		goto(resolve(`/listat?list=${listToURI(list)}`));
 	}
 
 	const actions = $derived<PaletteItem[]>([
@@ -346,7 +348,7 @@
 					label: 'Oma myymälä',
 					detail: preferredStore.name,
 					icon: 'store',
-					href: `/myymalat/${preferredStore.id}/`,
+					href: resolve(`/myymalat/${preferredStore.id}/`),
 					keywords: 'suosikki myymälä aukioloajat'
 				}
 			: {
@@ -354,7 +356,7 @@
 					kind: 'action',
 					label: 'Valitse oma myymälä',
 					icon: 'store',
-					href: '/myymalat',
+					href: resolve('/myymalat'),
 					keywords: 'suosikki myymälä'
 				},
 		{
@@ -410,7 +412,7 @@
 						label: 'Avaa vertailu',
 						detail: `${compareProductIds.length} tuotetta`,
 						icon: 'git_compare' as const,
-						href: compareURL(compareProductIds),
+						href: resolve(compareURL(compareProductIds)),
 						keywords: 'vertaa'
 					},
 					{
@@ -476,7 +478,7 @@
 			detail,
 			badge: product[AllColumns.RemovedFromSelection] ? 'Poistunut' : undefined,
 			productNumber: number,
-			href: `/tuotteet/${number}/`
+			href: resolve(`/tuotteet/${number}/`)
 		};
 	}
 
@@ -506,7 +508,7 @@
 					label: type.name,
 					detail: `${type.count.toLocaleString('fi-FI')} tuotetta`,
 					icon: 'wine',
-					href: type.path
+					href: appPath(type.path)
 				},
 				keys: [normalizeSearchText(type.name)]
 			},
@@ -517,7 +519,7 @@
 					label: sub.name,
 					detail: `${type.name} · ${sub.count.toLocaleString('fi-FI')} tuotetta`,
 					icon: 'wine',
-					href: sub.path
+					href: appPath(sub.path)
 				},
 				keys: [normalizeSearchText(sub.name), normalizeSearchText(`${sub.name} ${type.name}`)]
 			}))
@@ -535,7 +537,7 @@
 					detail: [store.address, store.postOffice].filter(Boolean).join(', '),
 					badge: isPreferred ? 'Oma myymälä' : undefined,
 					icon: 'store',
-					href: `/myymalat/${store.id}/`
+					href: resolve(`/myymalat/${store.id}/`)
 				},
 				keys: [
 					normalizeSearchText(store.name),
@@ -554,7 +556,7 @@
 			label: list.name,
 			detail: `${count} ${count === 1 ? 'tuote' : 'tuotetta'}`,
 			icon: 'list_ul',
-			href: `/listat?list=${listToURI(list)}`
+			href: resolve(`/listat?list=${listToURI(list)}`)
 		};
 	}
 
@@ -693,7 +695,7 @@
 	});
 
 	async function searchProducts(value: string) {
-		if (page.url.pathname !== '/') await goto('/');
+		if (page.route.id !== '/') await goto(resolve('/'));
 		$searchQuery = value;
 	}
 
