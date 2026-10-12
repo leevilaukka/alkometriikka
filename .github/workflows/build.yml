@@ -40,6 +40,9 @@ jobs:
           if git show origin/gh-pages:og-images.json > /tmp/og-images.json 2>/dev/null; then
             mv /tmp/og-images.json static/og-images.json
           fi
+          # Review files also hold the sync cache. Restore them before Vite
+          # copies static/ so a site rebuild never discards collected reviews.
+          git archive origin/gh-pages reviews 2>/dev/null | tar -x -C static || true
 
       - name: Build site assets
         env:
@@ -160,7 +163,7 @@ jobs:
           # Runtime datasets are gitignored, so `git add .` skips them. Force-add
           # them so the force-push to gh-pages preserves the data deployed by
           # fetchData.yml instead of deleting it on every site build.
-          for f in data.json availability.json sitemap.xml rss.xml feed.json rss og-images.json daily tuotteet-manifest.json; do
+          for f in data.json availability.json sitemap.xml rss.xml feed.json rss og-images.json daily tuotteet-manifest.json reviews; do
             if [ -e "$f" ]; then git add -f "$f"; fi
           done
           git commit -m "Deploy to GitHub Pages [skip ci]" || echo "No changes to commit"

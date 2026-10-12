@@ -16,6 +16,8 @@ feed.json
 /og-images.json
 /data.json
 /availability.json
+/reviews/
+/static/reviews/
 /daily/
 /static/daily/
 

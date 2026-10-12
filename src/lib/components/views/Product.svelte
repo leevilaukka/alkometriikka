@@ -39,6 +39,7 @@
 	} from '$lib/utils/availability';
 	import { requestSettingsOpen } from '$lib/utils/settings';
 	import ProductImage from '../widgets/ProductImage.svelte';
+	import WineReview from '../widgets/WineReview.svelte';
 	import { generateImageUrl } from '$lib/utils/image';
 	import {
 		Chart,
@@ -581,6 +582,7 @@
 			{/each}
 		</div>
 	</div>
+	<WineReview sku={product[AllColumns.Number]} vintage={product[AllColumns.Vintage]} />
 	<section class="w-full overflow-hidden rounded border border-primary bg-secondary">
 		<details>
 			<summary class="m-2 text-2xl font-bold" onclick={(e) => {

@@ -152,6 +152,45 @@ bun run migrate
 
 `sync` handles the product data pipeline, while `migrate` is used for data migrations between schema versions.
 
+### Viinilehti wine reviews
+
+Product pages load optional, locally hosted `reviews/<Alko SKU>.json` files with
+Viinilehti's full review, stars, food pairing, review date, and source link. An
+exact vintage match is preferred; when the available review covers another
+vintage, the page labels the difference. Review text is rendered as plain text.
+
+Populate the local development cache after obtaining `static/data.json`:
+
+```sh
+bun run sync:reviews --dev
+bun run dev:no-sync
+```
+
+For a quick manual check of specific products:
+
+```sh
+bun run sync:reviews --dev --sku 431777 --sku 590857
+```
+
+The sync script also runs directly with Node.js 24+: `node scripts/data/reviews.ts --dev`.
+Open `/tuotteet/431777/` or `/tuotteet/590857/` after syncing to inspect the review.
+
+The sync fetches Viinilehti's public search index at most once a day, matches
+active Alko SKUs, and extracts the structured review JSON from matched pages.
+It fetches up to 200 pages per run, spaced 500 ms apart. Missing reviews are
+filled first; cached text is refreshed after 30 days or a changed slug/rating.
+Successive runs continue filling the cache. `--limit 0` removes the page budget,
+`--force` refreshes the index and selected reviews, and `--data` / `--out` override
+the catalog and cache paths. Failed pages are retried after a day; three consecutive
+failures stop the batch. Old reviews, including previously collected vintages,
+are retained on source failures.
+
+The six-hour data workflow seeds, updates, and publishes this cache separately
+from Alko's dataset. Review sync errors do not block the product-data update.
+Site builds preserve the deployed review cache. Generated files are ignored by
+Git on feature branches. These source interfaces are undocumented; extraction
+failures leave cached reviews intact. Browsers only request our static files.
+
 ### Site generation
 
 ```sh

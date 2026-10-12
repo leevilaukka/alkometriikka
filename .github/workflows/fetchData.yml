@@ -30,6 +30,8 @@ jobs:
           if git show origin/gh-pages:data.json > /tmp/data.json 2>/dev/null; then
             mv /tmp/data.json data.json
           fi
+          mkdir -p reviews
+          git archive origin/gh-pages reviews 2>/dev/null | tar -x || true
 
       - name: Rehash seeded dataset to current schema
         uses: ./.github/actions/rehash-dataset
@@ -55,6 +57,19 @@ jobs:
           done
           echo "❌ All sync attempts failed — leaving existing dataset untouched."
           exit 1
+
+      # Optional enrichment: retain the deployed cache on failures. The bounded
+      # batch fills missing reviews over successive runs without blocking Alko.
+      - name: Sync Viinilehti reviews
+        continue-on-error: true
+        run: bun run sync:reviews --limit 200
+
+      - name: Upload wine review cache
+        uses: actions/upload-artifact@v4
+        with:
+          name: wine-reviews
+          path: reviews
+          if-no-files-found: ignore
 
       - name: Upload dataset
         uses: actions/upload-artifact@v4
@@ -198,6 +213,15 @@ jobs:
           path: ./
           merge-multiple: true
 
+      # Directory artifacts are rooted at their contents. Restore this one
+      # explicitly into reviews/ instead of relying on the merged download.
+      - name: Download wine review cache into its directory
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: wine-reviews
+          path: reviews
+
       - name: Check out deployed site
         uses: ./.github/actions/checkout-gh-pages
 
@@ -251,6 +275,10 @@ jobs:
           cp og-images.json ../gh-pages/og-images.json
           bun run scripts/site/prerender-products.ts --data data.json --out ../gh-pages --template ../gh-pages/404.html --og-manifest ../gh-pages/og-images.json --manifest ../gh-pages/tuotteet-manifest.json
           cp data.json availability.json sitemap.xml rss.xml feed.json ../gh-pages/
+          if [ -d reviews ]; then
+            mkdir -p ../gh-pages/reviews
+            cp -R reviews/. ../gh-pages/reviews/
+          fi
           # Reset first so stale manifests (and the nested archive/) actually
           # disappear from the site instead of merging over.
           rm -rf ../gh-pages/daily
@@ -265,6 +293,7 @@ jobs:
         working-directory: ../gh-pages
         run: |
           git add data.json availability.json sitemap.xml rss.xml feed.json rss daily tuotteet tuotteet-manifest.json -f
+          [ -d reviews ] && git add reviews -f || true
           [ -f og-images.json ] && git add og-images.json -f || true
           git commit -m "Update price list and static product pages [skip ci]" || echo "No changes to commit"
           git push origin HEAD:gh-pages

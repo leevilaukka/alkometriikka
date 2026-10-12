@@ -15,11 +15,12 @@
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"test": "node --test tests/product-variants.test.ts",
+		"test": "node --test tests/*.test.ts",
 		"format": "prettier --write .",
 		"lint": "prettier --check .",
 		"migrate": "bun run scripts/data/migrate.ts",
 		"sync": "bun run scripts/data/index.ts",
+		"sync:reviews": "bun run scripts/data/reviews.ts",
 		"daily": "bun run scripts/site/daily.ts",
 		"backup:daily": "bun run scripts/site/backup-archive.ts"
 	},
