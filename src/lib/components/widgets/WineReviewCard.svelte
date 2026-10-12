@@ -28,11 +28,6 @@
 		<div class="flex min-w-0 flex-col gap-1">
 			<h2 id={headingId} class="text-xl font-bold">{heading}</h2>
 			{#if heading !== review.title}<p class="text-sm text-secondary">{review.title}</p>{/if}
-			{#if showProductLink}
-				<a href={`${resolve('/')}tuotteet/${review.sku}/`} class="w-fit text-sm font-semibold text-brand-3 hover:underline dark:text-red-400">
-					Tuotesivu · Alko {review.sku}
-				</a>
-			{/if}
 			{#if review.publishedAt}
 				<time datetime={review.publishedAt} class="text-sm text-secondary">
 					{new Date(`${review.publishedAt}T12:00:00`).toLocaleDateString('fi-FI')}
@@ -68,8 +63,15 @@
 			{#if review.valueDescription}<p><strong>Hinta-laatusuhde:</strong> {review.valueDescription}</p>{/if}
 		</div>
 	{/if}
-	<a href={wineReviewUrl(review.slug)} target="_blank" rel="noopener noreferrer" class={components.button()}>
-		<span>Lue viinilehdessä</span>
-		<span aria-hidden="true"><Icon name="link_external" /></span>
-	</a>
+	<div class="flex flex-wrap gap-2">
+		{#if showProductLink}
+			<a href={`${resolve('/')}tuotteet/${review.sku}/`} class={components.button()}>
+				Katso tuote
+			</a>
+		{/if}
+		<a href={wineReviewUrl(review.slug)} target="_blank" rel="noopener noreferrer" class={components.button()}>
+			<span>Lue viinilehdessä</span>
+			<span aria-hidden="true"><Icon name="link_external" /></span>
+		</a>
+	</div>
 </section>
