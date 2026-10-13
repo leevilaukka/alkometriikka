@@ -469,60 +469,6 @@ async function loadExistingData(): Promise<MigratedData> {
 }
 
 // ============================================================================
-// CACHE
-// ============================================================================
-
-/**
- * Purges the deployed data.json from Cloudflare's cache so visitors receive the
- * freshly published dataset. Skipped in dev and when no purge key is configured.
- */
-async function purgeCache(): Promise<void> {
-	if (DEV) return;
-
-	const purgeKey = process.env.CLOUDFLARE_PURGE_KEY;
-	if (!purgeKey) {
-		console.warn('⚠️  CLOUDFLARE_PURGE_KEY is not set. Skipping cache purge.');
-		return;
-	}
-
-	console.log('🧹 Purging Cloudflare cache...');
-	try {
-		const response = await fetch(
-			`https://api.cloudflare.com/client/v4/zones/${process.env.CLOUDFLARE_ZONE}/purge_cache`,
-			{
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-					Authorization: `Bearer ${purgeKey}`
-				},
-				body: JSON.stringify({
-					files: [
-						'https://alkometriikka.fi/data.json',
-						'https://alkometriikka.fi/availability.json',
-						'https://alkometriikka.fi/rss.xml',
-						'https://alkometriikka.fi/feed.json'
-					]
-				})
-			}
-		);
-
-		if (!response.ok) {
-			throw new Error(`Cache purge failed: ${response.status} ${response.statusText}`);
-		}
-		if (VERBOSE) {
-			console.log('  ✅ Cache purge successful.', await response.json());
-		} else {
-			console.log(
-				'✅ Cache purge successful.',
-				`Status: ${response.status} ${response.statusText}`
-			);
-		}
-	} catch (error) {
-		console.error('❌ Error during cache purge:', error);
-	}
-}
-
-// ============================================================================
 // SYNC
 // ============================================================================
 
@@ -911,8 +857,8 @@ async function sync(): Promise<void> {
 	]);
 	printSummary(stats, Object.keys(products).length);
 	console.log(`✅ Saved ${AVAILABILITY_PATH}`);
-
-	await purgeCache();
+	// The deployed copies are purged from Cloudflare's cache by fetchData.yml once
+	// the new files are pushed; purging here would run before they're live.
 }
 
 function printSummary(stats: SyncStats, total: number): void {

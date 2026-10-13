@@ -51,8 +51,6 @@ jobs:
 
       - name: Run script to convert to JSON
         env:
-          CLOUDFLARE_PURGE_KEY: ${{ secrets.CLOUDFLARE_PURGE_KEY }}
-          CLOUDFLARE_ZONE: ${{ secrets.CF_ZONE }}
           ALKO_DETAIL_CONCURRENCY: '8'
           ALKO_SEARCH_CONCURRENCY: '3'
           ALKO_SYNC_FORCE: ${{ inputs.force && '1' || '' }}
@@ -316,3 +314,20 @@ jobs:
           [ -f og-categories.json ] && git add og-categories.json -f || true
           git commit -m "Update price list and static product pages [skip ci]" || echo "No changes to commit"
           git push origin HEAD:gh-pages
+
+      # Only after the push: purging any earlier lets a request in between
+      # re-cache the old files at the edge until their cache lifetime runs out.
+      - name: Purge Cloudflare cache for data files
+        env:
+          CLOUDFLARE_PURGE_KEY: ${{ secrets.CLOUDFLARE_PURGE_KEY }}
+          CLOUDFLARE_ZONE: ${{ secrets.CF_ZONE }}
+        run: |
+          if [ -z "$CLOUDFLARE_PURGE_KEY" ] || [ -z "$CLOUDFLARE_ZONE" ]; then
+            echo "ℹ️  No purge credentials; skipping cache purge."
+            exit 0
+          fi
+          curl -sS -X POST "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE}/purge_cache" \
+            -H "Authorization: Bearer ${CLOUDFLARE_PURGE_KEY}" \
+            -H "Content-Type: application/json" \
+            --data '{"files":["https://alkometriikka.fi/data.json","https://alkometriikka.fi/availability.json","https://alkometriikka.fi/rss.xml","https://alkometriikka.fi/feed.json"]}' || \
+            echo "⚠️  Cache purge failed; continuing."
