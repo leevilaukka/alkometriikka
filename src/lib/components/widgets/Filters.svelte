@@ -20,20 +20,30 @@
 	import type { SearchParamsManager } from '$lib/utils/url';
 	import { headerToDisplayName } from '$lib/utils/helpers';
 	import RecursiveFilter from '../inputs/RecursiveFilter.svelte';
+	import { trackFilterUsage } from '$lib/utils/filterAnalytics.svelte';
 
 	let {
 		kaljakori,
 		filterValues = $bindable(),
 		activeFilters = $bindable([]),
 		showRemoved = $bindable(false),
-		useURLParams = true
+		useURLParams = true,
+		resultCount
 	}: {
 		kaljakori: Kaljakori;
 		filterValues: FilterValues;
 		activeFilters: ColumnNames[];
 		showRemoved?: boolean;
 		useURLParams?: boolean;
+		/** Number of results the filters give, sent with the filter usage analytics */
+		resultCount?: number;
 	} = $props();
+
+	trackFilterUsage(
+		untrack(() => (useURLParams ? 'products' : 'list')),
+		() => searchParametersFromFilterValues(filterValues, kaljakori, showRemoved),
+		() => resultCount
+	);
 
 	let searchParamsManager = getContext<SearchParamsManager>(ContextKeys.SearchParamsManager);
 	let filtersElement: HTMLDialogElement;

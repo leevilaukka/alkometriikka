@@ -178,6 +178,7 @@
 				bind:filterValues
 				bind:showRemoved
 				bind:this={filtersComponent}
+				resultCount={rows.length}
 			/>
 		</aside>
 	{/if}

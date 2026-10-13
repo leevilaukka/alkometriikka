@@ -230,6 +230,16 @@ export type AnalyticsEventMap = {
 		other: boolean;
 	};
 	click_feed: { feed: RSSFeed; location: string };
+	/** One per filtering session, with the selection of each active filter under its column name. */
+	filters_used: {
+		source: 'products' | 'list';
+		exit: 'product' | 'navigate' | 'hidden';
+		filters: string[];
+		filter_count: number;
+		changes: number;
+		results?: number;
+		[filter: string]: string | string[] | number | undefined;
+	};
 	site_feedback: {
 		path: string;
 		version: string;

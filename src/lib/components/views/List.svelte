@@ -359,6 +359,7 @@
 					bind:filterValues
 					bind:activeFilters
 					bind:this={filtersComponent}
+					resultCount={rows.length}
 					useURLParams={false}
 				/>
 			</aside>
