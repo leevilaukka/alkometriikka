@@ -58,7 +58,7 @@
 		<div class="flex flex-wrap items-center justify-between gap-3.5">
 			<h2 class="text-2xl font-bold">Samankaltaisia tuotteita</h2>
 			<a
-				href={resolve(`/vastaavat/${product[AllColumns.Number]}`)}
+				href={resolve(`/vastaavat/${product[AllColumns.Number]}/`)}
 				class={twMerge(components.button({ size: 'sm' }), 'flex items-center gap-2')}
 			>
 				<span>Lisää samankaltaisia</span>

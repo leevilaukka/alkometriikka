@@ -180,7 +180,7 @@
 		const title = generateTitle(TITLE);
 		setSEO({
 			description: DESCRIPTION,
-			og: { title, description: DESCRIPTION, url: 'https://alkometriikka.fi/hinnanmuutokset' },
+			og: { title, description: DESCRIPTION, url: 'https://alkometriikka.fi/hinnanmuutokset/' },
 			twitter: { title, description: DESCRIPTION },
 			keywords: KEYWORDS
 		});
@@ -327,7 +327,7 @@
 			</label>
 		{:else if Object.keys(availability.stores).length}
 			<a
-				href={resolve('/myymalat')}
+				href={resolve('/myymalat/')}
 				class="group flex w-fit items-center gap-1 text-sm text-secondary"
 			>
 				<Icon name="map_pin" />

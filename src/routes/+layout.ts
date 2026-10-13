@@ -9,6 +9,9 @@ import { dev } from '$app/env';
 
 export const ssr = false;
 export const prerender = false;
+// Stubs are `<path>/index.html` files that GitHub Pages serves at `<path>/`, and their
+// canonicals and the sitemap use that URL, so the router must not strip the slash on load
+export const trailingSlash = 'always';
 
 function getDatasetURL() {
 	return resolve('/') + 'data.json';

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
+	import { appPath } from '$lib/utils/paths';
 	import { lists, searchQuery } from '$lib/global.svelte';
 	import { createList, deleteList, listToURI } from '$lib/utils/lists';
 	import { components } from '$lib/utils/styles';
@@ -44,7 +44,7 @@
 				>
 					<div class="flex flex-col">
 						<a
-							href={resolve(`/listat?list=${listToURI(list)}`)}
+							href={appPath(`/listat/?list=${listToURI(list)}`)}
 							class="text-lg after:absolute after:inset-0 focus-visible:outline-none"
 							onclick={(e) => {
 								if (action && typeof action === 'function') {
@@ -70,7 +70,7 @@
 									const shared = await handleShare({
 										title: `Alkometriikka - ${list.name}`,
 										text: `Katso lista: ${list.name}`,
-										url: `${location.origin}/listat?list=${listToURI(list)}`,
+										url: `${location.origin}/listat/?list=${listToURI(list)}`,
 										includeSID: true
 									});
 

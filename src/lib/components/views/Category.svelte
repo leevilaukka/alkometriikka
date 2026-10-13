@@ -275,7 +275,7 @@
 				>
 			</label>
 		{:else if Object.keys(availability.stores).length}
-			<a href={resolve('/myymalat')} class="group flex items-center gap-1 text-sm text-secondary">
+			<a href={resolve('/myymalat/')} class="group flex items-center gap-1 text-sm text-secondary">
 				<Icon name="map_pin" />
 				<span class="group-hover:underline">Valitse myymälä nähdäksesi sen valikoiman</span>
 			</a>

@@ -216,7 +216,7 @@
 					type: 'list',
 					title: `Alkometriikka - ${list.name}`,
 					text: `Katso lista: ${list.name}`,
-					url: `${location.origin}/listat?list=${listToURI(list)}`,
+					url: `${location.origin}/listat/?list=${listToURI(list)}`,
 					includeSID
 				});
 

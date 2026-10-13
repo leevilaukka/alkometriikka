@@ -171,27 +171,27 @@
 			name: 'Kategoriat'
 		},
 		{
-			href: '/hinnanmuutokset',
+			href: '/hinnanmuutokset/',
 			icon: 'trending_down',
 			name: 'Hinnanmuutokset'
 		},
 		{
-			href: '/myymalat',
+			href: '/myymalat/',
 			icon: 'store',
 			name: 'Myymälät'
 		},
 		{
-			href: '/daily/arkisto',
+			href: '/daily/arkisto/',
 			icon: 'archive',
 			name: 'Daily-arkisto'
 		},
 		{
-			href: '/laskin',
+			href: '/laskin/',
 			icon: 'calculator',
 			name: 'Laskin'
 		},
 		{
-			href: '/tilastot',
+			href: '/tilastot/',
 			icon: 'stats',
 			name: 'Tilastot'
 		}
@@ -299,13 +299,13 @@
 					</div>
 				</details>
 				<a
-					href={resolve('/daily')}
+					href={resolve('/daily/')}
 					aria-label="Daily"
 					class={twMerge(components.button(), 'p-2 text-xl')}
 					>{#if !$isMobile}<span class="text-sm">Daily</span>{/if}<Icon name="flame" /></a
 				>
 				<a
-					href={resolve('/listat')}
+					href={resolve('/listat/')}
 					aria-label="Listat"
 					class={twMerge(components.button(), 'p-2 text-xl')}
 					>{#if !$isMobile}<span class="text-sm">Listat</span>{/if}<Icon name="list_ul" /></a

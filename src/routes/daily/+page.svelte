@@ -485,7 +485,7 @@
 				startUnlimited();
 			} else if (key === 'a') {
 				event.preventDefault();
-				goto(resolve('/daily/arkisto'));
+				goto(resolve('/daily/arkisto/'));
 			} else if (key === 'escape' || key === 'b') {
 				event.preventDefault();
 				goto(resolve('/'));
@@ -806,7 +806,7 @@
 						{/if}
 						<div class="grid w-full grid-cols-2 gap-2">
 							<a
-								href={resolve('/daily/arkisto')}
+								href={resolve('/daily/arkisto/')}
 								class={twMerge(components.button({ size: 'md' }), 'w-full px-4 py-2')}
 							>
 								<span class="flex items-center gap-2">

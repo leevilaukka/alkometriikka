@@ -17,12 +17,17 @@ SPA. TypeScript throughout, Tailwind v4 for styling.
 
 ## Loading the data
 
-Every route sits under `src/routes/+layout.ts`, which sets `ssr = false` and `prerender = false`
-and returns two promises:
+Every route sits under `src/routes/+layout.ts`, which sets `ssr = false`, `prerender = false` and
+`trailingSlash = 'always'`, and returns two promises:
 
 ```ts
 return { alko, alkoWithStores };
 ```
+
+`trailingSlash = 'always'` is there for the [prerendered stubs](../site-generation.md#prerendered-stubs):
+each is a `<path>/index.html` that GitHub Pages serves at `<path>/` (and 301s `<path>` to), with a
+canonical link to that URL. With the default `'never'` the router would rewrite the address bar to
+`<path>` on load, so the visible URL would redirect when shared and disagree with the canonical.
 
 - **`alko`** resolves once `data.json` is downloaded, parsed (`parseDataset`) and indexed into a
   `Kaljakori`. It also carries the parsed `dataset` (table + metadata) and a lazily filled
@@ -56,7 +61,7 @@ bar.
 | Route                             | Page                                   | Loader notes                                                                           |
 | --------------------------------- | -------------------------------------- | -------------------------------------------------------------------------------------- |
 | `/`                               | Product list with search and filters   |                                                                                        |
-| `/tuotteet/[...id]/`              | Product page                           | 404 if the id isn't in the catalog. Trailing slash enforced                            |
+| `/tuotteet/[...id]/`              | Product page                           | 404 if the id isn't in the catalog                                                     |
 | `/[lang]/tuotteet/[...id]`        | Redirect to `/tuotteet/[id]/`          | Mirrors alko.fi's `/fi/tuotteet/…` paths, so swapping the domain in an Alko link works |
 | `/vastaavat/[...id]`              | Similar products                       | 404 if the id is unknown                                                               |
 | `/vertailu?ids=a,b,c`             | Side-by-side comparison                | Redirects to `/` without `ids`                                                         |

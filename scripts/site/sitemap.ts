@@ -81,7 +81,7 @@ async function main() {
 	});
 	// Lists recent price changes across the selection, so it changes with the newest one
 	sitemapEntries.push({
-		loc: '/hinnanmuutokset',
+		loc: '/hinnanmuutokset/',
 		lastMod: categoryLastMod.get(''),
 		priority: 0.6,
 		changeFreq: 'daily'

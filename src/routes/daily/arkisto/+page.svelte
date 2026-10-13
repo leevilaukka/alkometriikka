@@ -124,7 +124,7 @@
 					<Icon name="calendar" />
 				</div>
 			</div>
-			<a href={resolve('/daily')} class={twMerge(components.button(), 'px-3 py-2')}
+			<a href={resolve('/daily/')} class={twMerge(components.button(), 'px-3 py-2')}
 				><span class="flex items-center gap-2"><Icon name="flame" />Päivän peli</span></a
 			>
 		</div>
@@ -185,7 +185,7 @@
 					{@const dayNumber = iso ? dayNumberForDate(iso) : 0}
 					{#if iso && available.has(iso)}
 						<a
-							href={resolve(`/daily/arkisto/${iso}`)}
+							href={resolve(`/daily/arkisto/${iso}/`)}
 							class="relative flex min-h-14 flex-col items-center justify-center gap-0.5 rounded border border-primary bg-primary p-1.5 transition-colors hover:border-brand-2"
 						>
 							{#if dayNumber >= 1}
@@ -206,7 +206,7 @@
 						</a>
 					{:else if iso === todayISO}
 						<a
-							href={resolve('/daily')}
+							href={resolve('/daily/')}
 							class="relative flex min-h-14 flex-col items-center justify-center gap-0.5 rounded border border-dashed border-brand-2 bg-secondary p-1.5 transition-colors hover:bg-primary"
 						>
 							{#if dayNumber >= 1}

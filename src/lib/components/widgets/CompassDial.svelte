@@ -109,7 +109,7 @@
 		{:else if arrived}
 			<p class="text-lg font-bold">Perillä!</p>
 			<a
-				href={resolve('/listat')}
+				href={resolve('/listat/')}
 				class={twMerge(components.button({ type: 'positive', size: 'md' }), 'mt-2 px-5 py-3')}
 			>
 				<Icon name="list" />

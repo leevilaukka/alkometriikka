@@ -108,12 +108,12 @@ export function priceChangeParams(options: {
 	};
 }
 
-/** Link to the price changes page with these choices, e.g. `/hinnanmuutokset?tyyppi=viinit`. */
+/** Link to the price changes page with these choices, e.g. `/hinnanmuutokset/?tyyppi=viinit`. */
 export function priceChangesURL(options: Parameters<typeof priceChangeParams>[0]): string {
 	const params = new URLSearchParams(
 		Object.entries(priceChangeParams(options)).filter(([, value]) => value)
 	).toString();
-	return params ? `/hinnanmuutokset?${params}` : '/hinnanmuutokset';
+	return params ? `/hinnanmuutokset/?${params}` : '/hinnanmuutokset/';
 }
 
 /** "2026-10-05" → "5.10." */
