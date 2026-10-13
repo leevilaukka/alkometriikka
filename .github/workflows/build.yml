@@ -132,10 +132,6 @@ jobs:
           mv build/* .
           rm -rf build
 
-      - name: Copy 404.html to index.html
-        run: |
-          cp 404.html index.html
-
       # The sync's change-detection hashes (not used by the site). Without this the
       # force-push below would drop them; the sync would then recompute them.
       - name: Restore hashes.json from existing gh-pages

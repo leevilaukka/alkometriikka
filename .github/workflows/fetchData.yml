@@ -309,7 +309,7 @@ jobs:
       - name: Commit and push downloaded file
         working-directory: ../gh-pages
         run: |
-          git add data.json hashes.json availability.json sitemap.xml rss.xml feed.json rss daily tuotteet tuotteet-manifest.json kategoriat -f myymalat laskin tilastot kompassi hinnanmuutokset
+          git add data.json hashes.json availability.json sitemap.xml rss.xml feed.json rss daily tuotteet tuotteet-manifest.json kategoriat -f index.html myymalat laskin tilastot kompassi hinnanmuutokset listat
           [ -f og-images.json ] && git add og-images.json -f || true
           [ -f og-categories.json ] && git add og-categories.json -f || true
           git commit -m "Update price list and static product pages [skip ci]" || echo "No changes to commit"

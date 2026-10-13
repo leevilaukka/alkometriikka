@@ -52,11 +52,16 @@ fallback list, category RSS alternates and the category OG card from `og-categor
 
 `scripts/site/prerender-static.ts --out <dir> --template <404.html> --availability <availability.json>`
 
-Writes stubs for the routes in `STATIC_PAGES` (`/laskin/`, `/tilastot/`, `/myymalat/`,
-`/kompassi/`, `/hinnanmuutokset/`) and one `myymalat/<id>/index.html` per store with `LiquorStore`
+Writes the front page stub (`index.html`, from `HOME_PAGE`), stubs for the routes in
+`STATIC_PAGES` (`/laskin/`, `/tilastot/`, `/myymalat/`, `/kompassi/`, `/hinnanmuutokset/`,
+`/listat/`) and one `myymalat/<id>/index.html` per store with `LiquorStore`
 JSON-LD (address, coordinates, weekly opening hours). Output is deterministic: opening hours use
 the regular weekly pattern, not Alko's rolling two-week calendar, so unchanged stores produce
 byte-identical files and don't add commits to `gh-pages`. Fully regenerated on every run.
+
+The front page stub matters for more than its tags: every filtered view (`/?Tyyppi=…`, linked from
+product, category and store pages) is served the same file, so its canonical link folds them all
+into `/`. Without it Google picks a filtered URL as the front page's canonical.
 
 ### Daily page
 

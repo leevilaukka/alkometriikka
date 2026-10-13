@@ -7,6 +7,11 @@
 	let id = $derived(page.params.id?.split('/')[0]); // Handle both /tuotteet/123 and /tuotteet/123/extra paths
 </script>
 
+<!-- No stub behind this route, so crawlers would only see near-identical generated lists -->
+<svelte:head>
+	<meta name="robots" content="noindex" />
+</svelte:head>
+
 {#await data.alko}
 	<div class="grid h-full w-full place-content-center">
 		<div class="flex flex-col items-center gap-3">

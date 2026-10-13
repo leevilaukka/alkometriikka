@@ -78,6 +78,14 @@ flowchart LR
 - **Cloudflare** sits in front of the domain. The workflows purge specific URLs
   (`data.json`, `availability.json`, `rss.xml`, `feed.json`, `notices.json`,
   `daily/archive/index.json`) after pushing to `gh-pages` so visitors don't get a stale edge copy.
+  Zone settings that affect the site:
+  - **Always Use HTTPS** is on, so `http://` URLs redirect instead of serving duplicates.
+  - A **URL rewrite rule** ("Rewrite SPA routes to the shell") serves `/404.html` with a 200 status
+    for SPA routes that have no stub: `/vastaavat/*` and `/daily/*` (except `/daily/` and
+    `.json` files). It must target `/404.html`, not `/`, or those routes
+    inherit the front page's canonical. Any route that gets a stub must be removed from the rule,
+    or the stub is never served.
+- **www.alkometriikka.fi** redirects to the bare domain (redirect rule).
 - **Cloudflare R2** (bucket `alkometriikka-og`, custom domain `cdn.alkometriikka.fi`) holds the OG
   share images and a tarball backup of the Daily archive. Images are content-addressed, so a
   Cloudflare Cache Rule serves them as immutable.

@@ -1,6 +1,7 @@
 import type { ColNameObj, ColumnBadgeMap, ColumnNames, PriceListItem } from '$lib/types';
 import type { setSEO } from './helpers';
 import { formatCampaignWindow, getSaleInfo } from './sales.ts';
+import { HOME_PAGE } from './seo.ts';
 
 /** Columns present in the Alko price list dataset
  * These are in Finnish as they are used directly from the dataset
@@ -383,8 +384,7 @@ export const hideFromProductPageStats = new Set<ColumnNames>([
 ]);
 
 export const defaultSEOData = {
-	description:
-		'Vertaa kuin ammattilainen: Selvitä juomien todellinen hinta-tehosuhde. Tee viisaita valintoja ja jaa valmiit tuotelistat yhdellä klikkauksella!',
+	description: HOME_PAGE.description,
 	og: {
 		title: 'Alkometriikka',
 		description: 'Selaa Alkon tuotevalikoimaa, ja luo jaettavia listoja helposti!',
@@ -403,8 +403,7 @@ export const defaultSEOData = {
 		image: '/images/twitter_image.png',
 		description: 'Selaa Alkon tuotevalikoimaa, ja luo jaettavia listoja helposti!'
 	},
-	keywords:
-		'alkometriikka, alko, alkometri, promillelaskuri, promillet, juomat, suodattaminen, suodatus, hinnat, vertailu, alkoholi, viina, viinit, oluet, siiderit, lonkerot, juomalistat, listat, jaa, myymälät'
+	keywords: HOME_PAGE.keywords
 } as const satisfies Parameters<typeof setSEO>[0];
 
 // Matches the "N-pack" convention Alko uses in product names for multi-packs,

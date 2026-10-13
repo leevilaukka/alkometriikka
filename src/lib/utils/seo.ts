@@ -67,6 +67,16 @@ export type StaticPageSeo = {
 export const PRICE_CHANGES_DESCRIPTION =
 	'Alkon tuotteiden viimeisimmät hinnanmuutokset: mitkä tuotteet halpenivat ja mitkä kallistuivat. Rajaa tyypin, myymälän ja aikavälin mukaan.';
 
+/** The front page. Its stub gives every `/?filters…` variant a canonical pointing back to `/`. */
+export const HOME_PAGE = {
+	path: '/',
+	title: 'Alkometriikka',
+	description:
+		'Vertaa kuin ammattilainen: Selvitä juomien todellinen hinta-tehosuhde. Tee viisaita valintoja ja jaa valmiit tuotelistat yhdellä klikkauksella!',
+	keywords:
+		'alkometriikka, alko, alkometri, promillelaskuri, promillet, juomat, suodattaminen, suodatus, hinnat, vertailu, alkoholi, viina, viinit, oluet, siiderit, lonkerot, juomalistat, listat, jaa, myymälät'
+} satisfies StaticPageSeo;
+
 /** Routes that are plain client-rendered pages, each given a prerendered stub. */
 export const STATIC_PAGES: StaticPageSeo[] = [
 	{
@@ -98,6 +108,12 @@ export const STATIC_PAGES: StaticPageSeo[] = [
 		title: 'Hinnanmuutokset',
 		description: PRICE_CHANGES_DESCRIPTION,
 		keywords: 'hinnanmuutokset, hinnanalennukset, hinnankorotukset, Alko, hinnat'
+	},
+	{
+		path: '/listat/',
+		title: 'Listat',
+		description: 'Selaa ja hallinnoi Alkon tuotteita sisältäviä listoja.',
+		keywords: 'listat, juomalistat, jaa, Alko'
 	}
 ];
 

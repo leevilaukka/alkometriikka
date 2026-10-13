@@ -30,7 +30,7 @@ flowchart LR
 working copies from it, so it is effectively the database.
 
 ```
-/                      404.html (SPA shell), index.html (copy of 404.html), _app/ (JS/CSS),
+/                      404.html (SPA shell), index.html (front page stub), _app/ (JS/CSS),
                        static/ files, CNAME, .nojekyll
 data.json              dataset (fetchData)
 hashes.json            change-detection hashes (fetchData)
@@ -74,7 +74,7 @@ Deploys a new version of the app. The site code changes, but the data must not.
    games in progress.
 7. Prerender product and category pages if the gate said so. Always prerender static and store
    pages (cheap, and they embed the new page shell).
-8. Delete everything except `build/`, move `build/*` to the root, copy `404.html` to `index.html`.
+8. Delete everything except `build/`, move `build/*` to the root.
 9. Restore `hashes.json`, `sitemap.xml`, `rss.xml`, `feed.json` and `rss/` from `gh-pages`.
 10. Write `CNAME` (`alkometriikka.fi`) and `.nojekyll`.
 11. Commit to a fresh `gh-pages` branch and **force-push** it.
