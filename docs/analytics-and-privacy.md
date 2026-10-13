@@ -7,11 +7,11 @@ the visitor's browser. Usage is measured with privacy-focused analytics.
 
 All three are loaded from `src/app.html`:
 
-| Provider                 | Loaded from                                    | Notes                                                                                                                                                                               |
-| ------------------------ | ---------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Umami (self-hosted)      | `https://analytics.alkometriikka.fi/script.js` | Main event analytics. `data-exclude-search` (query strings aren't recorded with pageviews), `data-do-not-track`, performance metrics on. Also loads the Umami session `recorder.js` |
-| Simple Analytics         | `scripts.simpleanalyticscdn.com/latest.js`     | Plus `static/scripts/simpleanalytics/auto-events.js`, their auto-events script for outbound links, email links and downloads                                                        |
-| Cloudflare Web Analytics | `static.cloudflareinsights.com/beacon.min.js`  | Page loads and web vitals                                                                                                                                                           |
+| Provider                 | Loaded from                                    | Notes                                                                                                                                                                                |
+| ------------------------ | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Umami (self-hosted)      | `https://analytics.alkometriikka.fi/script.js` | Main event analytics. `data-exclude-search` (query strings aren't recorded with pageviews), `data-do-not-track`, performance metrics on. Also loads the Umami session `recorder.js`  |
+| Simple Analytics         | `scripts.simpleanalyticscdn.com/latest.js`     | Plus `static/scripts/simpleanalytics/auto-events.js`, a local copy of their auto-events script for outbound links, email links and downloads (see [Outbound links](#outbound-links)) |
+| Cloudflare Web Analytics | `static.cloudflareinsights.com/beacon.min.js`  | Page loads and web vitals                                                                                                                                                            |
 
 In `vite dev`, the layout sets `localStorage['umami.disabled'] = '1'` and `sendAnalyticsEvent`
 only logs to the console, so local work never reaches the dashboards.
@@ -78,6 +78,13 @@ sent anywhere; distances are computed in the browser.
 
 ## Outbound links
 
-External links go through `/linkki.html?to=<url>`, which strips the referrer unless the link
-asks to keep it, only redirects to http(s) URLs on other hosts, and lets Simple Analytics record
-the `to` parameter. It is excluded from indexing with `noindex`.
+Clicks on external links are recorded by `static/scripts/simpleanalytics/auto-events.js`, a
+copy of Simple Analytics' auto-events script that is served from the site itself rather than
+their CDN. It listens for clicks on outbound, `mailto:` and download links and sends events named
+like `outbound_www_alko_fi`, with the link URL as metadata. The links themselves are ordinary
+links, so no redirect is involved.
+
+`static/linkki.html` (with `generateOutLink()` in `src/lib/utils/helpers.ts`) is the older
+approach: a `noindex` redirect page that Simple Analytics recorded. It strips the referrer unless
+the link passes `&referrer=1`, and only redirects to http(s) URLs on other hosts. Nothing links
+through it at the moment, but it is kept for possible future use.

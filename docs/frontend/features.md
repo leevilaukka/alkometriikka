@@ -202,11 +202,13 @@ sharer's own sid is remembered so their visit isn't counted.
 
 ## Outbound links
 
-`static/linkki.html`
+External links are plain links. Clicks on them are recorded by the local copy of Simple
+Analytics' auto-events script (`static/scripts/simpleanalytics/auto-events.js`), see
+[Analytics and privacy](../analytics-and-privacy.md#outbound-links).
 
-External links go through `/linkki.html?to=<url>` (`generateOutLink()`), which redirects with
-`noopener noreferrer` (the referrer is kept only with `&referrer=1`) and only to http(s) URLs on
-other hosts. Simple Analytics records the redirect.
+`static/linkki.html` and `generateOutLink()` in `src/lib/utils/helpers.ts` are an older
+redirect page for tracking outbound clicks. Nothing in the app links through them at the moment;
+they are kept for possible future use.
 
 ## Feedback
 
