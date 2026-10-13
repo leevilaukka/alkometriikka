@@ -85,7 +85,10 @@ flowchart LR
     `.json` files). It must target `/404.html`, not `/`, or those routes
     inherit the front page's canonical. Any route that gets a stub must be removed from the rule,
     or the stub is never served.
-- **www.alkometriikka.fi** redirects to the bare domain (redirect rule).
+  - **Redirect rules**: `www.alkometriikka.fi` → the bare domain, and Alko-style product links
+    (`/fi|sv|en/tuotteet/<id>[/…]`, what you get by swapping the domain in an alko.fi link) →
+    `/tuotteet/<id>/` with a 301. The `[lang]` route still redirects client-side, but without
+    the rule crawlers only saw its 404 status.
 - **Cloudflare R2** (bucket `alkometriikka-og`, custom domain `cdn.alkometriikka.fi`) holds the OG
   share images and a tarball backup of the Daily archive. Images are content-addressed, so a
   Cloudflare Cache Rule serves them as immutable.
