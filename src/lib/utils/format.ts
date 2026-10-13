@@ -91,3 +91,20 @@ export function formatRoundedPricePerLiter(value: number): string {
 		})
 	);
 }
+
+const relativeTimeFormatter = new Intl.RelativeTimeFormat('fi-FI', { numeric: 'auto' });
+
+const relativeTimeUnits: [Intl.RelativeTimeFormatUnit, number][] = [
+	['day', 86_400_000],
+	['hour', 3_600_000],
+	['minute', 60_000]
+];
+
+/** Relative time in Finnish, e.g. "3 tuntia sitten" or "eilen". */
+export function formatRelativeTime(date: Date, now: Date = new Date()): string {
+	const diff = date.getTime() - now.getTime();
+	for (const [unit, ms] of relativeTimeUnits) {
+		if (Math.abs(diff) >= ms) return relativeTimeFormatter.format(Math.round(diff / ms), unit);
+	}
+	return 'juuri nyt';
+}

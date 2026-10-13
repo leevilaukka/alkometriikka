@@ -7,6 +7,7 @@
 		getTodaysOpeningHours,
 		isStoreOpen
 	} from '$lib/utils/availability';
+	import { formatRelativeTime } from '$lib/utils/format';
 	import { requestSettingsOpen } from '$lib/utils/settings';
 	import { components } from '$lib/utils/styles';
 	import { twMerge } from 'tailwind-merge';
@@ -29,6 +30,22 @@
 		availabilityUpdated: Date | undefined;
 		class?: string;
 	} = $props();
+
+	const HOUR_MS = 3_600_000;
+	let now = $state(new Date());
+
+	// Keep the minute-level "päivitetty x minuuttia sitten" label ticking. Past the
+	// first hour the label only changes hourly, so stop refreshing.
+	$effect(() => {
+		if (!availabilityUpdated) return;
+		const updated = availabilityUpdated.getTime();
+		if (Date.now() - updated >= HOUR_MS) return;
+		const interval = setInterval(() => {
+			now = new Date();
+			if (now.getTime() - updated >= HOUR_MS) clearInterval(interval);
+		}, 60_000);
+		return () => clearInterval(interval);
+	});
 </script>
 
 <section
@@ -42,9 +59,12 @@
 		<h2 class="text-lg font-bold">Myymäläsaatavuus</h2>
 		<p class="text-sm text-secondary">
 			{stores.length}
-			{stores.length === 1 ? 'myymälä' : 'myymälää'}{availabilityUpdated
-				? ` · päivitetty ${availabilityUpdated.toLocaleString('fi-FI')}`
-				: ''}
+			{stores.length === 1 ? 'myymälä' : 'myymälää'}{#if availabilityUpdated}
+				· <time
+					datetime={availabilityUpdated.toISOString()}
+					title={availabilityUpdated.toLocaleString('fi-FI')}
+					>päivitetty {formatRelativeTime(availabilityUpdated, now)}</time
+				>{/if}
 		</p>
 	</header>
 	{#if !preferredStore}
