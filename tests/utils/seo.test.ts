@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'bun:test';
 import {
+	pricePerServing,
 	productDescription,
 	staticPage,
 	storeAddress,
@@ -19,7 +20,7 @@ describe('productDescription', () => {
 				pricePerLitre: 9.36
 			})
 		).toBe(
-			'Original Long Drink: 5,5 % · 0,33 l · 3,19 € (9,36 €/l) · Panimotuotteet / juomasekoitukset. Vertaa hintoja ja vastaavia tuotteita Alkometriikassa.'
+			'Original Long Drink: 5,5 % · 0,33 l · 3,19 € (9,36 €/l) · 2,67 €/annos · Panimotuotteet / juomasekoitukset. Vertaa hintoja ja vastaavia tuotteita Alkometriikassa.'
 		);
 	});
 
@@ -30,6 +31,23 @@ describe('productDescription', () => {
 		expect(productDescription({ name: 'Viini', alcoholPercentage: 0, volume: null })).toBe(
 			'Viini. Vertaa hintoja ja vastaavia tuotteita Alkometriikassa.'
 		);
+	});
+});
+
+describe('pricePerServing', () => {
+	it('prices a 12 g serving like the app calculator', () => {
+		// 0.7 l × 40 % × 789 g/l = 220.92 g = 18.41 servings
+		expect(
+			pricePerServing({ name: 'Viina', volume: 0.7, alcoholPercentage: 40, price: 20 })
+		).toBeCloseTo(1.0864, 4);
+	});
+
+	it('is null without alcohol, volume or price', () => {
+		expect(
+			pricePerServing({ name: 'Alkoholiton', volume: 0.33, alcoholPercentage: 0, price: 2 })
+		).toBeNull();
+		expect(pricePerServing({ name: 'Viini', price: 10 })).toBeNull();
+		expect(pricePerServing({ name: 'Viini', volume: 0.75, alcoholPercentage: 12 })).toBeNull();
 	});
 });
 
