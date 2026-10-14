@@ -79,11 +79,70 @@ The SPA client module (`8175-f677ecb5a418ca88.js`) wires up the services like th
   - `storeId` is the **set of stores where the product is in stock** (= the whole availability matrix comes for free from this single sweep, no extra requests).
   - `webshopStock` / `limeStock` / `limeWebshopTotalStock` are **aggregated** online-shop/lime warehouse balances, **not per-store**.
   - `lowest_30d_price`, `campaign_start_date`, `campaign_end_date` only appear on products on campaign.
-  - Body params `storeId`, `store`, `availability` have **no effect** (verified – response is identical).
+  - Top-level body params `storeId`, `store`, `availability` have **no effect** (verified – response is identical). Store scoping works through `filters` instead (see below).
 
 ### `POST /api/search/count?lang=` – result count for a search
 
 ### `POST /api/search/translation?lang=` – search term translations
+
+### Backend: Azure AI Search behind a proxy (verified 2026-10-14)
+
+`/api/search/product` is a Next.js proxy in front of **Azure AI Search** (index `productsearchindex`, api-version `2019-05-06`). That's why responses carry `@odata.count` / `@search.facets`. The proxy leaks its upstream request when `top > 1000`: the response then includes `@odata.nextLink` and `@search.nextPageParameters`, e.g.
+
+```
+https://dpazsearch01prod.search.windows.net/indexes/productsearchindex/docs/search?lang=fi&api-version=2019-05-06
+queryType: full, count: true
+select:  id,statusId,selectionTypeId,…  (the 41 fields we get; not configurable)
+orderby: geo.distance(randomPoint, geography'POINT(-94.27 -55.88)') asc
+filter:  (statusId ne 'K') and (statusId ne null) and (onlineAvailabilityDatetimeTs le <now>)
+         and ((noInternet ne '1') or (id eq '833310'))
+```
+
+**Raw OData is not accepted.** `filter`, `$filter`, `select`, `orderby` in the body are silently ignored, and `$filter=` in the query string gets the WAF's "Huoltokatko" HTML page. Calling Azure Search directly needs an API key, so it isn't an option.
+
+**The proxy's own query language** (from the SPA bundle, each part verified live):
+
+```jsonc
+POST /api/search/product?lang=fi
+{
+  "top": 1000, "skip": 0, "seed": 1337,
+  "search": "koskenkorva",                 // full-text search
+  "sort": "price_desc",                    // random (default) | name_asc | name_desc | price_asc | price_desc
+  "filters": [
+    { "method": "eq", "field": "mainGroupId", "value": ["mainGroup_003"] },
+    { "method": "ge", "field": "price", "value": [500] },
+    { "method": "le", "field": "price", "value": [600] },
+    { "method": "eq", "field": "storeId", "value": ["2102"] }  // in stock in one store
+  ],
+  "includeFacets": true,                   // adds @search.facets (14 facet fields)
+  "ranges": ["abv", "price", "volume"]     // adds `ranges` = max value per field
+}
+```
+
+- `method`: `eq`, `ne`, `ge`, `le`. An `eq` value array is an OR.
+- `top` is capped at 1000; `top: 0` falls back to 10.
+- No field selection: always all 41 fields (~2 MB per 1000-row page).
+- `sort: "date_desc"` errors on products (it only works for content search).
+- Filtering on `id` returns nothing.
+
+**Why `seed` matters:** the default "random" order is `geo.distance(randomPoint, <point>)`, and the point comes from `seed`. Without a seed each page picks a new point, so pages overlap. Full-catalogue sweep comparison:
+
+| Paging strategy        | Rows  | Distinct  |
+| ---------------------- | ----- | --------- |
+| no seed                | 11385 | **7355**  |
+| `sort: price_asc`      | 11385 | 11330 (price ties have no tiebreak) |
+| `sort: name_asc`       | 11385 | 11385 (same-name ties could still shuffle) |
+| `seed: 1337` (current) | 11385 | 11385     |
+
+Keep `seed`; the sync's current paging is correct.
+
+**The hidden filter vs. removal detection.** The proxy always excludes status `K`, products whose online launch date is in the future, and `noInternet = '1'`. Because the sync flags a product as removed purely by its absence from the sweep, we checked whether this hides live products (2026-10-14, dataset from `gh-pages`):
+
+- Dataset 13817 products: 11316 active, 2501 flagged removed. Live sweep: 11385.
+- Active but missing from the sweep: 0. Flagged removed but present in the sweep: 0.
+- Looked up 688 flagged-removed products in the product API (every removal after the 2026-07-18 bulk flag, plus 150 random ones from that day). Its `status` field: **681 `Kuoletettu`** (discontinued, correct), **7 `Poistuva`** (being phased out; already hidden from alko.fi's own search, e.g. last year's seasonal glögis), **0** with a future online launch date.
+
+So "absent from the sweep" ≈ "removed" is ~99% accurate and matches what alko.fi shows. If `Poistuva` products should be shown as "phasing out", the sync could look up each newly missing product's `status` in the product API before flagging it.
 
 ---
 
@@ -92,6 +151,7 @@ The SPA client module (`8175-f677ecb5a418ca88.js`) wires up the services like th
 ### `GET /api/product-api/products/{productId}` – full product details (used by sync)
 
 - Response: `{ data: DetailedProductData }` – e.g. `producer`, `vintage`, `grapeVarieties`, `productionSites`, `nutrition`, `taste`, etc. Not present in the search API.
+- Still answers for products that have left the search index. `data.status` is a Finnish label (seen: `Kuoletettu` = discontinued, `Poistuva` = being phased out); `onlineAvailabilityDatetime` gives the online launch date.
 - Used by `fetchProductDetails` in `scripts/data/index.ts`.
 
 ### `GET /api/product-api/products?id=<id>[&lang=<locale>]` – batch-ish helper
