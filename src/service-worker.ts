@@ -38,7 +38,10 @@ sw.addEventListener('install', (event) => {
 	event.waitUntil(
 		(async () => {
 			const cache = await caches.open(APP_CACHE);
-			await cache.addAll(PRECACHE);
+			// Not addAll: a stale copy of this worker from an edge cache lists _app files the latest
+			// deploy removed, and one missing file would fail the whole install. Whatever isn't
+			// precached is fetched and cached on first use instead
+			await Promise.allSettled(PRECACHE.map((file) => cache.add(file)));
 			// Bypass the HTTP cache so the shell matches the `_app` files of this deploy. Some
 			// servers (vite preview) send it with a 404 status; it's stored as 200 either way
 			const shell = await fetch(SHELL, { cache: 'reload' });
