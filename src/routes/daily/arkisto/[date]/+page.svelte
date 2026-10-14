@@ -291,21 +291,21 @@
 <main class="mx-auto flex w-full max-w-4xl flex-col gap-6 p-4 md:p-8 lg:gap-8 lg:p-10">
 	<header class="flex flex-col gap-2 border-b border-primary pb-5">
 		<div class="flex items-center justify-between gap-4">
-			<a href={resolve('/daily/arkisto')} class={twMerge(components.button(), 'px-3 py-2')}
+			<a href={resolve('/daily/arkisto/')} class={twMerge(components.button(), 'px-3 py-2')}
 				><span class="flex items-center gap-2"><Icon name="calendar" />Kalenteri</span></a
 			>
 			{#if archive}
 				<div class="flex items-center gap-2">
 					{#if previousDate}
 						<a
-							href={resolve(`/daily/arkisto/${previousDate}`)}
+							href={resolve(`/daily/arkisto/${previousDate}/`)}
 							class={twMerge(components.button(), 'px-3 py-2')}
 							aria-label="Edellinen päivä"><Icon name="chevron_left" />{shortDate(previousDate)}</a
 						>
 					{/if}
 					{#if nextDate}
 						<a
-							href={resolve(`/daily/arkisto/${nextDate}`)}
+							href={resolve(`/daily/arkisto/${nextDate}/`)}
 							class={twMerge(components.button(), 'px-3 py-2')}
 							aria-label="Seuraava päivä">{shortDate(nextDate)}<Icon name="chevron_right" /></a
 						>
@@ -333,7 +333,7 @@
 		>
 			<p class="text-lg font-bold">{loadError}</p>
 			<a
-				href={resolve('/daily/arkisto')}
+				href={resolve('/daily/arkisto/')}
 				class={twMerge(components.button({ type: 'negative', size: 'md' }), 'px-4 py-2')}
 				>Takaisin kalenteriin</a
 			>
@@ -346,7 +346,7 @@
 		<section class="flex flex-col gap-5">
 			<div class="flex items-center justify-between">
 				<h2 class="text-xl font-bold">Tulokset</h2>
-				<a href={resolve('/daily/arkisto')} class={twMerge(components.button(), 'px-3 py-2')}
+				<a href={resolve('/daily/arkisto/')} class={twMerge(components.button(), 'px-3 py-2')}
 					>Kalenteri</a
 				>
 			</div>

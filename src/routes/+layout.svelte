@@ -31,10 +31,14 @@
 	import CompareBar from '$lib/components/widgets/CompareBar.svelte';
 	import CommandPalette from '$lib/components/widgets/CommandPalette.svelte';
 	import NoticeBanner from '$lib/components/widgets/NoticeBanner.svelte';
+	import InstallBanner from '$lib/components/widgets/InstallBanner.svelte';
 	import { LocalStorageManager } from '$lib/utils/storage';
 	import type { IconName } from '$lib/icons';
+	import { loadUpdateOnNavigate } from '$lib/utils/pwa.svelte';
+	import { loadFlags } from '$lib/utils/flags.svelte';
 
 	let { children, data } = $props();
+	loadFlags();
 	let searchParamsManager = new SearchParamsManager(page.url);
 	setContext(ContextKeys.SearchParamsManager, searchParamsManager);
 
@@ -79,9 +83,21 @@
 
 	const mql = window.matchMedia('(prefers-color-scheme: dark)');
 
+	/**
+	 * Colours the browser and system bars like the header under them. Until the loader is gone,
+	 * app.html's own theme-color tags match the loader instead, which follows the OS scheme
+	 */
+	function syncThemeColor() {
+		if (!document.getElementById('main-loader')?.classList.contains('shift')) return;
+		const color = document.documentElement.classList.contains('dark') ? '#18181b' : '#ffffff';
+		for (const meta of document.querySelectorAll<HTMLMetaElement>('meta[name="theme-color"]'))
+			meta.content = color;
+	}
+
 	function handleDarkModeChange(event: MediaQueryListEvent) {
 		if (event.matches) document.documentElement.classList.add('dark');
 		else document.documentElement.classList.remove('dark');
+		syncThemeColor();
 	}
 
 	theme.subscribe((value) => {
@@ -93,6 +109,7 @@
 			else document.documentElement.classList.remove('dark');
 			mql.addEventListener('change', handleDarkModeChange);
 		}
+		syncThemeColor();
 	});
 
 	window.addEventListener('resize', () => {
@@ -100,7 +117,9 @@
 		$isLaptop = window.matchMedia('(width < 1280px)').matches;
 	});
 
-	beforeNavigate(({ to, type }) => {
+	beforeNavigate((navigation) => {
+		loadUpdateOnNavigate(navigation);
+		const { to, type } = navigation;
 		if (!to) return;
 		if (to.url.origin !== window.location.origin) return;
 		searchParamsManager.setParametersFromURL(to.url);
@@ -124,6 +143,7 @@
 
 	function shiftLoader() {
 		document.getElementById('main-loader')?.classList.add('shift');
+		syncThemeColor();
 	}
 
 	let extraMenu = $state<HTMLDetailsElement>();
@@ -172,27 +192,27 @@
 			name: 'Kategoriat'
 		},
 		{
-			href: '/hinnanmuutokset',
+			href: '/hinnanmuutokset/',
 			icon: 'trending_down',
 			name: 'Hinnanmuutokset'
 		},
 		{
-			href: '/myymalat',
+			href: '/myymalat/',
 			icon: 'store',
 			name: 'Myymälät'
 		},
 		{
-			href: '/daily/arkisto',
+			href: '/daily/arkisto/',
 			icon: 'archive',
 			name: 'Daily-arkisto'
 		},
 		{
-			href: '/laskin',
+			href: '/laskin/',
 			icon: 'calculator',
 			name: 'Laskin'
 		},
 		{
-			href: '/tilastot',
+			href: '/tilastot/',
 			icon: 'stats',
 			name: 'Tilastot'
 		}
@@ -314,13 +334,13 @@
 					</div>
 				</details>
 				<a
-					href={resolve('/daily')}
+					href={resolve('/daily/')}
 					aria-label="Daily"
 					class={twMerge(components.button(), 'p-2 text-xl')}
 					>{#if !$isMobile}<span class="text-sm">Daily</span>{/if}<Icon name="flame" /></a
 				>
 				<a
-					href={resolve('/listat')}
+					href={resolve('/listat/')}
 					aria-label="Listat"
 					class={twMerge(components.button(), 'p-2 text-xl')}
 					>{#if !$isMobile}<span class="text-sm">Listat</span>{/if}<Icon name="list_ul" /></a
@@ -328,7 +348,8 @@
 				<Settings {alko} />
 			</div>
 		</header>
-		<NoticeBanner lastSynced={alko.dataset.metadata.LastSynced} />
+		<NoticeBanner lastSynced={alko.dataset.metadata.LastSynced} cached={alko.cached} />
+		<InstallBanner />
 		<div
 			id="main-content"
 			tabindex="-1"

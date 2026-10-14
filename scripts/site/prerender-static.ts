@@ -4,13 +4,18 @@ import Bun from 'bun';
 import { readOption } from '../lib/cli';
 import { escapeHtml } from '../lib/html';
 import { breadcrumbJsonLd, breadcrumbNav, renderStub, SITE_URL } from '../lib/stub';
-import { STATIC_PAGES, storeAddress, storeDescription } from '../../src/lib/utils/seo.ts';
+import {
+	HOME_PAGE,
+	STATIC_PAGES,
+	storeAddress,
+	storeDescription
+} from '../../src/lib/utils/seo.ts';
 import type { AvailabilityData, StoreData } from '../data/types';
 
 /**
  * Prerenders SEO stubs for the client-rendered routes that have no product
- * data behind them: the plain static pages (laskin, tilastot, …) and one page
- * per Alko store. See scripts/lib/stub.ts for why stubs exist at all.
+ * data behind them: the front page, the plain static pages (laskin, tilastot,
+ * …) and one page per Alko store. See scripts/lib/stub.ts for why stubs exist at all.
  *
  * Both sets are tiny (a few hundred files) so they are fully regenerated on
  * every run. Output is deterministic — store opening hours use the regular
@@ -188,6 +193,30 @@ function staticStub(template: string, page: (typeof STATIC_PAGES)[number]): stri
 	});
 }
 
+/**
+ * The front page. Every filtered view (`/?Tyyppi=…`) is served this same file,
+ * so its canonical folds them all into `/`. The WebSite and Organization
+ * JSON-LD already live in app.html, outside the replaced section.
+ */
+function homeStub(template: string): string {
+	const sections = [...STATIC_PAGES, { path: '/kategoriat/', title: 'Kategoriat' }];
+	return renderStub(template, {
+		title: HOME_PAGE.title,
+		description: HOME_PAGE.description,
+		url: `${SITE_URL}/`,
+		keywords: HOME_PAGE.keywords,
+		ogImage: OG_IMAGE,
+		ogImageAlt: OG_IMAGE_ALT,
+		jsonLd: [],
+		fallbackName: 'page',
+		fallbackHtml: `\t\t<h1>${escapeHtml(HOME_PAGE.title)}</h1>
+\t\t<p>${escapeHtml(HOME_PAGE.description)}</p>
+\t\t<ul>${sections
+			.map((page) => `<li><a href="${escapeHtml(page.path)}">${escapeHtml(page.title)}</a></li>`)
+			.join('')}</ul>`
+	});
+}
+
 async function writePage(outputPath: string, route: string, html: string) {
 	const directory = path.join(outputPath, ...route.split('/').filter(Boolean));
 	await mkdir(directory, { recursive: true });
@@ -209,6 +238,7 @@ async function main() {
 	if (hasAvailability)
 		await rm(path.join(outputPath, 'myymalat'), { recursive: true, force: true });
 
+	await writePage(outputPath, HOME_PAGE.path, homeStub(template));
 	for (const page of STATIC_PAGES) {
 		await writePage(outputPath, page.path, staticStub(template, page));
 	}
@@ -226,7 +256,7 @@ async function main() {
 		console.warn(`⚠️  Availability data not found at ${availabilityPath}; skipping store pages.`);
 	}
 
-	console.log(`Static pages: ${STATIC_PAGES.length} | Store pages: ${stores} → ${outputPath}`);
+	console.log(`Static pages: ${STATIC_PAGES.length + 1} | Store pages: ${stores} → ${outputPath}`);
 }
 
 await main();

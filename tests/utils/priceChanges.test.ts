@@ -92,7 +92,7 @@ describe('price change params', () => {
 
 	it('links to the page with only the non-default choices', () => {
 		expect(priceChangesURL({ days: DEFAULT_PRICE_CHANGE_WINDOW, direction: 'all' })).toBe(
-			'/hinnanmuutokset'
+			'/hinnanmuutokset/'
 		);
 		expect(
 			priceChangesURL({
@@ -101,9 +101,9 @@ describe('price change params', () => {
 				typeSlug: 'viinit',
 				subTypeSlug: 'punaviinit'
 			})
-		).toBe('/hinnanmuutokset?tyyppi=viinit&alatyyppi=punaviinit');
+		).toBe('/hinnanmuutokset/?tyyppi=viinit&alatyyppi=punaviinit');
 		expect(priceChangesURL({ days: 7, direction: 'down', typeSlug: 'oluet' })).toBe(
-			'/hinnanmuutokset?pv=7&suunta=halpeni&tyyppi=oluet'
+			'/hinnanmuutokset/?pv=7&suunta=halpeni&tyyppi=oluet'
 		);
 	});
 });

@@ -2,7 +2,8 @@
  * Site notices shown as a banner under the header. Manual notices come from
  * `notices.json`, so a message can go out without touching app code; the
  * staleness warning is derived from the dataset's `LastSynced` and needs no one
- * to notice that the sync has stopped working.
+ * to notice that the sync has stopped working. The cached-data notice says when
+ * the app is offline or showing the service worker's stored copy of the data.
  */
 
 export type NoticeLevel = 'info' | 'warning';
@@ -31,6 +32,8 @@ export type Notice = {
 export const STALE_AFTER_MS = 24 * 60 * 60 * 1000;
 
 export const STALE_NOTICE_ID = 'stale-data';
+
+export const CACHED_NOTICE_ID = 'cached-data';
 
 function isRecord(value: unknown): value is Record<string, unknown> {
 	return typeof value === 'object' && value !== null && !Array.isArray(value);
@@ -122,6 +125,9 @@ export function isDataStale(lastSynced: string | undefined, now: number): boolea
  * The notices to show: active manual notices aimed at this visitor and not yet
  * dismissed, preceded by the stale-data warning unless a manual notice replaces it. The stale warning's id
  * includes the sync time, so dismissing it only lasts until the data changes.
+ *
+ * A `cachedMessage` (offline, or showing stored data) takes the stale warning's place: old data
+ * then says nothing about the sync, and the message already gives the data's age.
  */
 export function visibleNotices(
 	notices: Notice[],
@@ -130,12 +136,14 @@ export function visibleNotices(
 		dismissed,
 		now,
 		staleMessage,
+		cachedMessage,
 		params = new URLSearchParams()
 	}: {
 		lastSynced?: string;
 		dismissed: Set<string>;
 		now: number;
 		staleMessage: string;
+		cachedMessage?: string;
 		/** The params the visitor landed with, for notices aimed at a campaign link. */
 		params?: URLSearchParams;
 	}
@@ -144,6 +152,19 @@ export function visibleNotices(
 		(notice) => isNoticeActive(notice, now) && matchesUrlParams(notice, params)
 	);
 	const visible = active.filter((notice) => !notice.dismissible || !dismissed.has(notice.id));
+	if (cachedMessage) {
+		const cachedId = `${CACHED_NOTICE_ID}:${lastSynced}`;
+		if (!dismissed.has(cachedId)) {
+			visible.unshift({
+				id: cachedId,
+				level: 'info',
+				message: cachedMessage,
+				dismissible: true,
+				replacesStaleWarning: false
+			});
+		}
+		return visible;
+	}
 	const staleId = `${STALE_NOTICE_ID}:${lastSynced}`;
 	if (
 		isDataStale(lastSynced, now) &&

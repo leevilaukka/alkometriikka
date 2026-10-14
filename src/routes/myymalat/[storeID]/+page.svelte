@@ -56,7 +56,7 @@
 			<Icon name="home" class="inline-block" />
 			<span>Etusivulle</span>
 		</a>
-		<a href={resolve('/myymalat')} class={twMerge(components.button({ size: 'md' }))}>
+		<a href={resolve('/myymalat/')} class={twMerge(components.button({ size: 'md' }))}>
 			<Icon name="map_pin" />
 			<span>Myymälät</span>
 		</a>

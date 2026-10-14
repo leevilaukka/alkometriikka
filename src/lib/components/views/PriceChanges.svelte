@@ -180,7 +180,7 @@
 		const title = generateTitle(TITLE);
 		setSEO({
 			description: DESCRIPTION,
-			og: { title, description: DESCRIPTION, url: 'https://alkometriikka.fi/hinnanmuutokset' },
+			og: { title, description: DESCRIPTION, url: 'https://alkometriikka.fi/hinnanmuutokset/' },
 			twitter: { title, description: DESCRIPTION },
 			keywords: KEYWORDS
 		});
@@ -327,7 +327,7 @@
 			</label>
 		{:else if Object.keys(availability.stores).length}
 			<a
-				href={resolve('/myymalat')}
+				href={resolve('/myymalat/')}
 				class="group flex w-fit items-center gap-1 text-sm text-secondary"
 			>
 				<Icon name="map_pin" />
@@ -418,9 +418,9 @@
 			{#snippet renderContent(dialogElement: HTMLDialogElement)}
 				<h2 class="text-xl font-bold">Suodattimet</h2>
 				{@render filters()}
-				<!-- Pinned to the bottom of the scrolling sheet, where the button that opened it was -->
+				<!-- Pinned to the bottom of the scrolling sheet, where the button that opened it was. Sticky offsets count from inside the sheet's p-4, so -bottom-4 reaches its edge -->
 				<div
-					class="sticky bottom-0 -mx-4 -mb-4 flex gap-2.5 bg-primary px-4 py-2.5 shadow-[0_-4px_12px_rgba(0,0,0,0.06)]"
+					class="sticky -bottom-4 -mx-4 -mb-4 flex gap-2.5 bg-primary px-4 pt-2.5 pb-[calc(--spacing(2.5)_+_env(safe-area-inset-bottom))] shadow-[0_-4px_12px_rgba(0,0,0,0.06)]"
 				>
 					{#if activeFilterCount > 0}
 						<button

@@ -199,6 +199,10 @@ export type AnalyticsEventMap = {
 	open_settings: undefined;
 	export_data: undefined;
 	import_data: undefined;
+	install_app: { outcome: 'accepted' | 'dismissed'; source: 'settings' | 'banner' };
+	app_installed: undefined;
+	pwa_launch: undefined;
+	dismiss_install_banner: undefined;
 	create_list: undefined;
 	save_list: { url?: string };
 	view_sizes: { product_number: string };
@@ -232,6 +236,16 @@ export type AnalyticsEventMap = {
 		other: boolean;
 	};
 	click_feed: { feed: RSSFeed; location: string };
+	/** One per filtering session, with the selection of each active filter under its column name. */
+	filters_used: {
+		source: 'products' | 'list';
+		exit: 'product' | 'navigate' | 'hidden';
+		filters: string[];
+		filter_count: number;
+		changes: number;
+		results?: number;
+		[filter: string]: string | string[] | number | undefined;
+	};
 	site_feedback: {
 		path: string;
 		version: string;

@@ -89,7 +89,7 @@
 					? 'Automaattinen valinta käytössä'
 					: 'Valitse lähin myymälä automaattisesti'}
 			</button>
-			<a href={resolve('/kompassi')} class={components.button({ size: 'md' })}>
+			<a href={resolve('/kompassi/')} class={components.button({ size: 'md' })}>
 				<Icon name="compass" />
 				<span>Kompassi lähimpään myymälään</span>
 			</a>

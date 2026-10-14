@@ -24,7 +24,7 @@
 			</a>
 
 			{#if page.route.id === '/myymalat/[storeID]'}
-				<a href={resolve('/myymalat')} class={twMerge(components.button({ size: 'md' }))}>
+				<a href={resolve('/myymalat/')} class={twMerge(components.button({ size: 'md' }))}>
 					<Icon name="map_pin" class="inline-block" />
 					<span>Takaisin myymälälistaan</span>
 				</a>

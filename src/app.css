@@ -56,7 +56,13 @@
 
 :root {
 	font-size: 14px;
+	/* Native scrollbars, form controls and autofill follow the app's theme, not just the OS one */
+	color-scheme: light;
 	@apply bg-primary text-black dark:text-zinc-200;
+}
+
+:root.dark {
+	color-scheme: dark;
 }
 
 body,
@@ -70,6 +76,12 @@ html {
 body {
 	font-family: 'Inter', sans-serif;
 	font-weight: 500;
+	/* Taps show the button's own hover/active styles instead of the browser's grey flash */
+	-webkit-tap-highlight-color: transparent;
+	/* viewport-fit=cover draws the page under the Android gesture bar (and iOS home indicator),
+	   so the page background fills it instead of a white system bar; keep content clear of it */
+	padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom)
+		env(safe-area-inset-left);
 }
 
 /* Visible keyboard focus. Inputs hidden with sr-only (radios, checkboxes) show
@@ -85,6 +97,19 @@ body {
 
 	input.sr-only:focus-visible:focus-visible:focus-visible {
 		outline: none;
+	}
+
+	/* A long press on a control opens its action, not a text selection */
+	button,
+	summary {
+		user-select: none;
+	}
+
+	/* Modals are centred in the full viewport, which now reaches under the gesture bar. Shrink the
+	   browser's default max-height by the inset on both sides so they stay clear of it. Bottom
+	   sheets set their own max-height and pad their footer instead. */
+	dialog:modal {
+		max-height: calc(100% - 2em - 6px - 2 * env(safe-area-inset-bottom));
 	}
 }
 

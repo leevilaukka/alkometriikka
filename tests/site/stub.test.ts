@@ -27,7 +27,7 @@ describe('renderStub', () => {
 		expect(html).toContain('<title>Tuote &quot;A&quot; - Alkometriikka</title>');
 		expect(html).toContain('<link rel="canonical" href="https://alkometriikka.fi/tuotteet/1/" />');
 		expect(html).toContain('<body class="x"> <article data-prerendered-product');
-		expect(html).toContain("querySelector('[data-prerendered-product]')");
+		expect(html).toContain('querySelector("[data-prerendered-product]")');
 	});
 
 	it('escapes attribute values and keeps $ sequences literal', () => {
@@ -38,6 +38,41 @@ describe('renderStub', () => {
 	it('cannot be broken out of by JSON-LD content', () => {
 		expect(html).not.toContain('</script><b>');
 		expect(html).toContain('\\u003c/script>');
+	});
+
+	it('compacts JSON-LD from the template', () => {
+		const withLd = template.replace(
+			'<title>',
+			`<script type="application/ld+json">
+		{
+			"@type": "WebSite",
+			"name": "Alko <b>"
+		}
+	</script><script type="text/template">  keep  </script><title>`
+		);
+		const out = renderStub(withLd, page);
+		expect(out).toContain(
+			'<script type="application/ld+json">{"@type":"WebSite","name":"Alko \\u003cb>"}</script>'
+		);
+		expect(out).toContain('<script type="text/template">  keep  </script>');
+	});
+
+	it('strips whitespace from inline scripts', () => {
+		const withScript = template.replace(
+			'<title>',
+			`<script>
+		const name = 'a  b';
+		start(name);
+	</script><title>`
+		);
+		expect(renderStub(withScript, page)).toContain(
+			`<script>const name="a  b";start(name);</script>`
+		);
+	});
+
+	it('leaves twitter fields to the og: tags', () => {
+		expect(html).toContain('<meta name="twitter:card" content="summary_large_image" />');
+		expect(html).not.toContain('twitter:title');
 	});
 
 	it('omits optional tags when not given', () => {
