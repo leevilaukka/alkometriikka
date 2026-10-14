@@ -185,6 +185,9 @@ sets `ALKO_SYNC_FORCE=1`. See [Operations](../operations.md#forcing-a-sync).
 - `writeDataset` splits hashes into `hashes.json` and adds a freshly built `index`.
 - `availability.json` is rebuilt from scratch: the store map plus every search product's `storeId`
   list.
+- With `ALKO_SYNC_REPORT` set, every exit (success, abort or crash) appends one JSON line with the
+  attempt's outcome, counts and phase timings (`scripts/data/sync-report.ts`). It ends up in the
+  run record, see [Run monitoring](../ci-cd.md#run-monitoring).
 - The sync doesn't purge Cloudflare's cache itself. `fetchData.yml` purges the deployed copies after
   its `deploy` job has pushed them (see [CI/CD](../ci-cd.md#fetchdatayml)).
 

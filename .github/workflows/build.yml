@@ -189,3 +189,29 @@ jobs:
       # Not deployed here: the Download Price List run that follows this one
       # (workflow_run) rebuilds the product pages on top of this push and does
       # the single Pages deploy and cache purge, so a push is never deployed twice.
+
+  # Records the run (result, timings) in R2 for build monitoring.
+  report:
+    needs: [build_site]
+    if: always()
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Bun
+        uses: ./.github/actions/setup
+
+      - name: Record run
+        uses: ./.github/actions/report-run
+        with:
+          needs: ${{ toJSON(needs) }}
+          github-token: ${{ github.token }}
+          r2-access-key-id: ${{ secrets.CF_R2_ACCESS_KEY_ID }}
+          r2-secret-access-key: ${{ secrets.CF_R2_SECRET_ACCESS_KEY }}
+          r2-account-id: ${{ secrets.CF_R2_ACCOUNT_ID }}
+          r2-bucket: ${{ vars.CF_R2_BUCKET }}
+          r2-region: ${{ vars.CF_R2_REGION }}

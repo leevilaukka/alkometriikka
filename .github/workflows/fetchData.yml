@@ -54,11 +54,13 @@ jobs:
           ALKO_DETAIL_CONCURRENCY: '8'
           ALKO_SEARCH_CONCURRENCY: '3'
           ALKO_SYNC_FORCE: ${{ inputs.force && '1' || '' }}
+          # One line per attempt, for the run record (report job below)
+          ALKO_SYNC_REPORT: sync-report.ndjson
         run: |
           for attempt in 1 2 3; do
             echo "▶️  Sync attempt $attempt..."
             set +e
-            bun run scripts/data/index.ts
+            ALKO_SYNC_ATTEMPT=$attempt bun run scripts/data/index.ts
             code=$?
             set -e
             if [ "$code" -eq 0 ]; then
@@ -79,6 +81,14 @@ jobs:
           done
           echo "❌ All sync attempts failed — leaving existing dataset untouched."
           exit 1
+
+      - name: Upload sync report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sync-report
+          path: sync-report.ndjson
+          if-no-files-found: ignore
 
       - name: Upload dataset
         uses: actions/upload-artifact@v4
@@ -342,3 +352,39 @@ jobs:
             -H "Content-Type: application/json" \
             --data '{"files":["https://alkometriikka.fi/data.json","https://alkometriikka.fi/availability.json","https://alkometriikka.fi/rss.xml","https://alkometriikka.fi/feed.json","https://alkometriikka.fi/notices.json","https://alkometriikka.fi/flags.json","https://alkometriikka.fi/service-worker.js"]}' || \
             echo "⚠️  Cache purge failed; continuing."
+
+  # Records the run (result, timings, sync attempts) in R2 for build monitoring.
+  # Skipped with the sync when the triggering build failed, so those runs
+  # don't show up as empty successes.
+  report:
+    needs: [sync, og-images, sitemap, rss, deploy]
+    if: always() && needs.sync.result != 'skipped'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Bun
+        uses: ./.github/actions/setup
+
+      - name: Download sync report
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: sync-report
+          path: ./
+
+      - name: Record run
+        uses: ./.github/actions/report-run
+        with:
+          needs: ${{ toJSON(needs) }}
+          sync-report: sync-report.ndjson
+          github-token: ${{ github.token }}
+          r2-access-key-id: ${{ secrets.CF_R2_ACCESS_KEY_ID }}
+          r2-secret-access-key: ${{ secrets.CF_R2_SECRET_ACCESS_KEY }}
+          r2-account-id: ${{ secrets.CF_R2_ACCOUNT_ID }}
+          r2-bucket: ${{ vars.CF_R2_BUCKET }}
+          r2-region: ${{ vars.CF_R2_REGION }}

@@ -90,6 +90,7 @@ Bun loads `.env` automatically. Copy `.env.example` for the R2 credentials.
 | `ALKO_DETAIL_VERIFY_COOLDOWN_DAYS`                                   | sync               | Days before an unchanged product's details are re-verified (default 30)    |
 | `ALKO_DETAIL_VERIFY_BATCH`                                           | sync               | Max re-verifications per run (default 200)                                 |
 | `ALKO_DETAIL_VERIFY_IN_DEV`                                          | sync               | Run the re-verification pass in `--dev` too                                |
+| `ALKO_SYNC_REPORT`, `ALKO_SYNC_ATTEMPT`                              | sync               | Append each attempt's outcome to this file, for run monitoring (CI only)   |
 | `ALKO_PRERENDER_CONCURRENCY`                                         | prerender-products | Parallel page writes (default 32)                                          |
 | `DAILY_AHEAD_DAYS`                                                   | daily              | Future days to pre-bake (default 2)                                        |
 | `DAILY_ALLOW_EMPTY`                                                  | daily              | Allow baking without a seeded `daily/` (new deployments only)              |
