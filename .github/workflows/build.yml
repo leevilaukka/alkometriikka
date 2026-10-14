@@ -11,11 +11,8 @@ concurrency:
 jobs:
   build_site:
     runs-on: ubuntu-latest
-    environment: github-pages
     permissions:
       contents: write
-      pages: write
-      id-token: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -189,28 +186,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # Blocks until the deploy is live, so the purge below can't let a request in
-      # between cache the old service worker at the edge again, for hours.
-      - name: Deploy to GitHub Pages
-        uses: ./.github/actions/deploy-pages
-        with:
-          path: .
-
-      # Notices are edited on main and deployed with the site; purge so a new
-      # notice reaches visitors right away instead of after the edge cache expires.
-      # The edge keeps .js for hours, and a stale service worker would try to
-      # precache _app files this deploy removed.
-      - name: Purge Cloudflare cache for notices and service worker
-        env:
-          CLOUDFLARE_PURGE_KEY: ${{ secrets.CLOUDFLARE_PURGE_KEY }}
-          CLOUDFLARE_ZONE: ${{ secrets.CF_ZONE }}
-        run: |
-          if [ -z "$CLOUDFLARE_PURGE_KEY" ] || [ -z "$CLOUDFLARE_ZONE" ]; then
-            echo "ℹ️  No purge credentials; skipping cache purge."
-            exit 0
-          fi
-          curl -sS -X POST "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE}/purge_cache" \
-            -H "Authorization: Bearer ${CLOUDFLARE_PURGE_KEY}" \
-            -H "Content-Type: application/json" \
-            --data '{"files":["https://alkometriikka.fi/notices.json","https://alkometriikka.fi/flags.json","https://alkometriikka.fi/service-worker.js"]}' || \
-            echo "⚠️  Cache purge failed; continuing."
+      # Not deployed here: the Download Price List run that follows this one
+      # (workflow_run) rebuilds the product pages on top of this push and does
+      # the single Pages deploy and cache purge, so a push is never deployed twice.
