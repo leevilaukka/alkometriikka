@@ -73,7 +73,7 @@ flowchart LR
     U --> IMG[images.alko.fi<br/>product photos]
 ```
 
-- **GitHub Pages** serves the `gh-pages` branch. The `CNAME` file points it at `alkometriikka.fi`.
+- **GitHub Pages** serves the `gh-pages` branch, deployed by our own workflows (the `.github/actions/deploy-pages` action) rather than the built-in branch deploy. The custom domain `alkometriikka.fi` is set in the repo's Pages settings.
   The branch is not built from `main` directly: workflows assemble it and push to it.
 - **Cloudflare** sits in front of the domain. The workflows purge specific URLs
   (`data.json`, `availability.json`, `rss.xml`, `feed.json`, `notices.json`,

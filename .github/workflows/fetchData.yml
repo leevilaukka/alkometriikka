@@ -225,9 +225,12 @@ jobs:
   deploy:
     needs: [sync, og-images, sitemap, rss]
     runs-on: ubuntu-latest
+    environment: github-pages
     permissions:
       contents: write
       actions: read
+      pages: write
+      id-token: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -315,7 +318,12 @@ jobs:
           git commit -m "Update price list and static product pages [skip ci]" || echo "No changes to commit"
           git push origin HEAD:gh-pages
 
-      # Only after the push: purging any earlier lets a request in between
+      - name: Deploy to GitHub Pages
+        uses: ./.github/actions/deploy-pages
+        with:
+          path: ../gh-pages
+
+      # Only after the deploy: purging any earlier lets a request in between
       # re-cache the old files at the edge until their cache lifetime runs out.
       - name: Purge Cloudflare cache for data files
         env:

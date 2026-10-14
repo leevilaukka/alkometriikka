@@ -15,15 +15,17 @@ runs:
         bun-version-file: package.json
 
     - name: Cache Bun dependencies
+      id: cache
       uses: actions/cache@v4
       with:
         path: |
-          ~/.bun
+          ~/.bun/install/cache
           node_modules
-        key: ${{ runner.os }}-bun-${{ hashFiles('bun.lock') }}
+        key: ${{ runner.os }}-bun-deps-${{ hashFiles('bun.lock') }}
         restore-keys: |
-          ${{ runner.os }}-bun-
+          ${{ runner.os }}-bun-deps-
 
     - name: Install dependencies
+      if: steps.cache.outputs.cache-hit != 'true'
       shell: bash
       run: bun install --frozen-lockfile
