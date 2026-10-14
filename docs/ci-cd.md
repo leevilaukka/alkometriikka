@@ -64,7 +64,7 @@ Deploys a new version of the app. The site code changes, but the data must not.
 1. Run the full test suite.
 2. **Seed** `static/` with the deployed `data.json`, `availability.json`, `og-images.json` and
    `og-categories.json`, so the build copies them into `build/`.
-3. `vite build` with `BASE_PATH=''`.
+3. `vite build` with `BASE_PATH=''`, then minify the vendored `auto-events.js` in the output.
 4. **Prerender gate**: compare `data.json`, `404.html` and `og-images.json` in `build/` with the
    deployed ones. If all three are byte-identical, product pages don't need regenerating.
 5. **Restore** the deployed `tuotteet/`, `tuotteet-manifest.json` and `kategoriat/` into `build/`,

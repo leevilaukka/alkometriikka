@@ -49,6 +49,9 @@ jobs:
           BASE_PATH: ''
         run: |
           bun run vite build
+          # static/ is copied as-is, so minify the vendored analytics script in the output
+          bun build static/scripts/simpleanalytics/auto-events.js --minify \
+            --outfile build/scripts/simpleanalytics/auto-events.js
 
       - name: Check if product pages need regenerating
         id: prerender-gate
