@@ -158,11 +158,15 @@ function sha256Hex(input: string | ArrayBuffer | Uint8Array): string {
 
 /** Strips comments and collapses whitespace so cosmetic edits don't re-key. */
 function normalizeSource(source: string): string {
-	return source
-		.replace(/\/\*[\s\S]*?\*\//g, ' ')
-		.replace(/^\s*\/\/.*$/gm, ' ')
-		.replace(/\s+/g, ' ')
-		.trim();
+	return (
+		source
+			.replace(/\/\*[\s\S]*?\*\//g, ' ')
+			.replace(/^\s*\/\/.*$/gm, ' ')
+			// Import paths follow file moves and say nothing about the layout
+			.replace(/^\s*import\b[\s\S]*?;\s*$/gm, ' ')
+			.replace(/\s+/g, ' ')
+			.trim()
+	);
 }
 
 let designFingerprintPromise: Promise<string> | null = null;
@@ -173,7 +177,7 @@ let designFingerprintPromise: Promise<string> | null = null;
  * the embedded fonts. Combined into the content hash, so a real layout change
  * (edit to `scripts/og/og.ts`, a new favicon, new font files) re-keys every image
  * and the next run re-renders the whole catalog — while formatting-only edits
- * (prettier, reordering, comments) leave the fingerprint, and thus all keys,
+ * (prettier, reordering, comments, import paths) leave the fingerprint, and thus all keys,
  * untouched. `OG_DESIGN_VERSION` is included as an escape hatch to force a
  * global refresh without touching the code.
  */
