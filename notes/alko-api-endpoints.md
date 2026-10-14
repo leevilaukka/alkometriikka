@@ -127,12 +127,12 @@ POST /api/search/product?lang=fi
 
 **Why `seed` matters:** the default "random" order is `geo.distance(randomPoint, <point>)`, and the point comes from `seed`. Without a seed each page picks a new point, so pages overlap. Full-catalogue sweep comparison:
 
-| Paging strategy        | Rows  | Distinct  |
-| ---------------------- | ----- | --------- |
-| no seed                | 11385 | **7355**  |
-| `sort: price_asc`      | 11385 | 11330 (price ties have no tiebreak) |
+| Paging strategy        | Rows  | Distinct                                   |
+| ---------------------- | ----- | ------------------------------------------ |
+| no seed                | 11385 | **7355**                                   |
+| `sort: price_asc`      | 11385 | 11330 (price ties have no tiebreak)        |
 | `sort: name_asc`       | 11385 | 11385 (same-name ties could still shuffle) |
-| `seed: 1337` (current) | 11385 | 11385     |
+| `seed: 1337` (current) | 11385 | 11385                                      |
 
 Keep `seed`; the sync's current paging is correct.
 
