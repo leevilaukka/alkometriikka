@@ -44,10 +44,6 @@ jobs:
             mv /tmp/og-categories.json static/og-categories.json
           fi
 
-      # SvelteKit names the service worker's version after this commit (svelte.config.js)
-      - name: Remember the deploy version
-        run: echo "DEPLOY_VERSION=$(git rev-parse --short HEAD)" >> "$GITHUB_ENV"
-
       - name: Build site assets
         env:
           BASE_PATH: ''
@@ -193,19 +189,23 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # GitHub Pages publishes the push a minute or so later. Purging before that lets a request in
-      # between cache the old service worker at the edge again, for hours. A unique query string
-      # skips both edge caches to see what Pages itself serves.
+      # between cache the old service worker at the edge again, for hours. Asks GitHub rather than
+      # the site, since Cloudflare may not let the runner through.
       - name: Wait for GitHub Pages to publish this deploy
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          for i in $(seq 1 60); do
-            if curl -fsS "https://alkometriikka.fi/service-worker.js?deploy=${DEPLOY_VERSION}-${i}" \
-              | grep -q "\"${DEPLOY_VERSION}\""; then
+          deployed=$(git rev-parse HEAD)
+          for i in $(seq 1 30); do
+            build=$(gh api "repos/${{ github.repository }}/pages/builds/latest" \
+              --jq '"\(.commit) \(.status)"' 2>/dev/null || true)
+            if [ "$build" = "$deployed built" ]; then
               echo "✅ Published after about $((i * 10)) s"
               exit 0
             fi
             sleep 10
           done
-          echo "⚠️  Not published after 10 minutes; purging anyway."
+          echo "⚠️  Pages hadn't published after 5 minutes (latest build: $build); purging anyway."
 
       # Notices are edited on main and deployed with the site; purge so a new
       # notice reaches visitors right away instead of after the edge cache expires.
