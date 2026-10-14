@@ -17,9 +17,23 @@ export type ProductSeoInput = {
 	pricePerLitre?: number | null;
 };
 
-/** "Koskenkorva Vodka: 40 % · 0,7 l · 12,99 € (18,56 €/l) · Viinat / Vodkat. Vertaa…" */
+// Same constants as the app's calculator (src/lib/utils/alko.ts)
+const ETHANOL_DENSITY = 789; // g/l
+const SERVING_GRAMS = 12;
+
+/** Price of one 12 g serving, or null when it can't be computed (e.g. alcohol-free) */
+export function pricePerServing(input: ProductSeoInput): number | null {
+	const { volume, alcoholPercentage, price } = input;
+	if (!volume || volume <= 0 || !alcoholPercentage || alcoholPercentage <= 0) return null;
+	if (!price || price <= 0) return null;
+	const servings = (volume * (alcoholPercentage / 100) * ETHANOL_DENSITY) / SERVING_GRAMS;
+	return Number.isFinite(servings) && servings > 0 ? price / servings : null;
+}
+
+/** "Koskenkorva Vodka: 40 % · 0,7 l · 12,99 € (18,56 €/l) · 0,70 €/annos · Viinat / Vodkat. Vertaa…" */
 export function productDescription(input: ProductSeoInput): string {
 	const price = input.price && input.price > 0 ? `${number(input.price, 2, 2)} €` : '';
+	const servingPrice = pricePerServing(input);
 	const facts = [
 		input.alcoholPercentage && input.alcoholPercentage > 0
 			? `${number(input.alcoholPercentage, 1)} %`
@@ -28,6 +42,7 @@ export function productDescription(input: ProductSeoInput): string {
 		price && input.pricePerLitre && input.pricePerLitre > 0
 			? `${price} (${number(input.pricePerLitre, 2, 2)} €/l)`
 			: price,
+		servingPrice !== null ? `${number(servingPrice, 2, 2)} €/annos` : '',
 		input.category ?? ''
 	].filter(Boolean);
 	return `${input.name}${facts.length ? `: ${facts.join(' · ')}` : ''}. Vertaa hintoja ja vastaavia tuotteita Alkometriikassa.`;
