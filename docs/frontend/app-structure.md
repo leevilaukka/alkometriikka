@@ -7,7 +7,8 @@ SPA. TypeScript throughout, Tailwind v4 for styling.
 
 - **`svelte.config.js`**: static adapter writing to `build/` with `fallback: '404.html'`.
   `paths.base` comes from `BASE_PATH` (empty in dev). `version.name` is the short git commit
-  hash, shown in the settings dialog and sent with site feedback.
+  hash, shown in the settings dialog and sent with site feedback. `serviceWorker.files` limits
+  which `static/` files the service worker precaches, and registration is off in dev.
 - **`vite.config.ts`**: Tailwind and SvelteKit plugins. Production builds drop all `console.*`
   calls.
 - **`src/app.html`**: the page shell. It holds the default SEO tags between
@@ -55,6 +56,36 @@ If `data.json` fails to load, the layout shows the error with a retry button. If
 `+layout.svelte` awaits `data.alko`, removes the loader, and renders the header, the
 [notice banner](features.md#site-notices), the page, the compare bar and the page's mobile bottom
 bar.
+
+## Offline support
+
+`src/service-worker.ts` makes the app work offline after one online visit. It only handles
+same-origin GET requests:
+
+| Request                                                          | Strategy                                                    |
+| ---------------------------------------------------------------- | ----------------------------------------------------------- |
+| Page navigations                                                 | Network; offline, the cached `404.html` shell boots the SPA |
+| `_app/immutable/*` and the precached icons                       | Cache first (refreshed with each deploy)                    |
+| Other `.json` (`data.json`, `availability.json`, notices, Daily) | Network first, with a timeout; see below                    |
+
+On install it precaches the whole `_app` build (minus the icon font's woff and ttf fallbacks),
+the logo, favicon and manifest, and the shell, all in a cache named after `version`. The shell is
+fetched with `cache: 'reload'` so it matches that deploy's `_app` files. The new worker activates
+at once and deletes the previous version's cache. Runtime JSON lives in a separate `data` cache
+that survives deploys.
+
+Runtime JSON is fetched fresh, but once a stored copy exists the worker waits at most 5 seconds
+(`DATA_TIMEOUT_MS`) for the whole file before serving that copy instead. The download carries on
+in the background, so the next load gets fresh data. A download cut off midway also falls back to
+the stored copy. Responses from the stored copy carry an `x-alkometriikka-cached` header
+(`src/lib/utils/offline.ts`); `+layout.ts` exposes it for `data.json` as `alko.cached`, which
+[the notice banner](features.md#site-notices) uses.
+
+SvelteKit's generated tsconfig leaves the service worker out (it needs the `webworker` libs), so
+it imports from `src/lib` with relative paths, and `bun run check` doesn't type-check it.
+
+Product photos from `images.alko.fi` aren't handled: they are sent with a one-year
+`max-age`, so photos already seen load from the HTTP cache offline anyway.
 
 ## Routes
 

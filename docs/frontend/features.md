@@ -187,9 +187,13 @@ Banners under the header, from two sources:
 - **Automatic stale-data warning** when `metadata.LastSynced` is over 24 hours old (the sync runs
   every 6 hours, so several runs have failed). A manual notice with `replacesStaleWarning: true`
   hides it, to explain an outage instead.
+- **Automatic cached-data notice** when the browser is offline, or the service worker served its
+  stored copy of `data.json` because the network was too slow or failed (see
+  [Offline support](app-structure.md#offline-support)). It gives the data's sync time and takes
+  the stale warning's place, since old data then says nothing about the sync.
 
-Dismissals are stored per notice id in localStorage. The stale warning's id includes the sync
-time, so dismissing it lasts only until the data changes.
+Dismissals are stored per notice id in localStorage. The stale warning's and cached-data notice's
+ids include the sync time, so dismissing them lasts only until the data changes.
 
 ## Sharing
 

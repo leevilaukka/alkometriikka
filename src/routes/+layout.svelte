@@ -313,7 +313,7 @@
 				<Settings {alko} />
 			</div>
 		</header>
-		<NoticeBanner lastSynced={alko.dataset.metadata.LastSynced} />
+		<NoticeBanner lastSynced={alko.dataset.metadata.LastSynced} cached={alko.cached} />
 		<div
 			id="main-content"
 			tabindex="-1"

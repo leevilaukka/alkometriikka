@@ -31,6 +31,7 @@ working copies from it, so it is effectively the database.
 
 ```
 /                      404.html (SPA shell), index.html (front page stub), _app/ (JS/CSS),
+                       service-worker.js,
                        static/ files, CNAME, .nojekyll
 data.json              dataset (fetchData)
 hashes.json            change-detection hashes (fetchData)
@@ -78,7 +79,9 @@ Deploys a new version of the app. The site code changes, but the data must not.
 9. Restore `hashes.json`, `sitemap.xml`, `rss.xml`, `feed.json` and `rss/` from `gh-pages`.
 10. Write `CNAME` (`alkometriikka.fi`) and `.nojekyll`.
 11. Commit to a fresh `gh-pages` branch and **force-push** it.
-12. Purge `notices.json` from Cloudflare so a notice edited on `main` shows immediately.
+12. Purge `notices.json` and `service-worker.js` from Cloudflare, so a notice edited on `main`
+    shows immediately and browsers don't install a stale service worker that would try to
+    precache `_app` files the force-push removed.
 
 Its successful completion triggers `fetchData.yml`, which refreshes the data-dependent files with
 the new page shell.

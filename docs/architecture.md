@@ -77,7 +77,7 @@ flowchart LR
   The branch is not built from `main` directly: workflows assemble it and push to it.
 - **Cloudflare** sits in front of the domain. The workflows purge specific URLs
   (`data.json`, `availability.json`, `rss.xml`, `feed.json`, `notices.json`,
-  `daily/archive/index.json`) after pushing to `gh-pages` so visitors don't get a stale edge copy.
+  `service-worker.js`, `daily/archive/index.json`) after pushing to `gh-pages` so visitors don't get a stale edge copy.
   Zone settings that affect the site:
   - **Always Use HTTPS** is on, so `http://` URLs redirect instead of serving duplicates.
   - A **URL rewrite rule** ("Rewrite SPA routes to the shell") serves `/404.html` with a 200 status

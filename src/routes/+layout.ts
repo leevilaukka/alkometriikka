@@ -6,6 +6,7 @@ import { Kaljakori } from '$lib/alko';
 import { LazyAvailability } from '$lib/alko/availability.svelte';
 import { personalInfo } from '$lib/global.svelte';
 import { dev } from '$app/env';
+import { isCachedResponse } from '$lib/utils/offline';
 
 export const ssr = false;
 export const prerender = false;
@@ -31,13 +32,12 @@ async function fetchAlkoPriceList({ fetch }: { fetch: Fetch }) {
 		throw new Error(`Hinnaston lataaminen epäonnistui: ${req.status} ${req.statusText}`);
 	}
 	const text = await req.text();
-	return text;
+	return { text, cached: isCachedResponse(req) };
 }
 
 async function getDataset({ fetch }: { fetch: Fetch }) {
-	const data = await fetchAlkoPriceList({ fetch });
-	const json = parseDataset(data);
-	return json;
+	const { text, cached } = await fetchAlkoPriceList({ fetch });
+	return { dataset: parseDataset(text), cached };
 }
 
 async function readAvailability(request: Promise<Response>): Promise<AvailabilityData> {
@@ -68,7 +68,7 @@ async function getData({ fetch }: { fetch: Fetch }) {
 	const availabilityRequest = fetch(getAvailabilityURL());
 	availabilityRequest.catch(() => {}); // handled in readAvailability
 
-	const dataset = await getDataset({ fetch });
+	const { dataset, cached } = await getDataset({ fetch });
 	const kaljakori = new Kaljakori(dataset.table, personalInfo, undefined, dataset.index);
 	const availability = new LazyAvailability(async () => {
 		await whenIdle();
@@ -80,6 +80,8 @@ async function getData({ fetch }: { fetch: Fetch }) {
 	return {
 		dataset,
 		kaljakori,
+		/** The service worker's stored copy of data.json, served while offline or on a slow connection */
+		cached,
 		/** Empty until availability.json has loaded; reactive in templates and deriveds. */
 		get availability() {
 			return availability.current;

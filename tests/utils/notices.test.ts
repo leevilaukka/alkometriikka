@@ -196,6 +196,25 @@ describe('visibleNotices', () => {
 			visibleNotices([], { ...base, dismissed, lastSynced: laterStale }).map((n) => n.id)
 		).toEqual([`stale-data:${laterStale}`]);
 	});
+
+	it('shows the cached-data notice first in place of the stale warning', () => {
+		const visible = visibleNotices([notice()], {
+			...base,
+			lastSynced: staleSync,
+			cachedMessage: 'Ei verkkoyhteyttä'
+		});
+		expect(visible.map((n) => n.id)).toEqual([`cached-data:${staleSync}`, 'n1']);
+		expect(visible[0].message).toBe('Ei verkkoyhteyttä');
+	});
+
+	it('keeps the cached-data notice dismissed until the data changes', () => {
+		const dismissed = new Set([`cached-data:${freshSync}`]);
+		const options = { ...base, dismissed, cachedMessage: 'Ei verkkoyhteyttä' };
+		expect(visibleNotices([], { ...options, lastSynced: freshSync })).toEqual([]);
+		expect(visibleNotices([], { ...options, lastSynced: staleSync }).map((n) => n.id)).toEqual([
+			`cached-data:${staleSync}`
+		]);
+	});
 });
 
 describe('notices.json', () => {
