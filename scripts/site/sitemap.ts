@@ -1,5 +1,5 @@
 import Bun from 'bun';
-import { MigratedData, StoreData } from '../data/types';
+import type { MigratedData, StoreData } from '../data/types';
 import { DEV } from '../data/constants';
 import {
 	buildCategoryTree,

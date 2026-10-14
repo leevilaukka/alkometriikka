@@ -1,7 +1,7 @@
 import Bun from 'bun';
 import { mkdir, readdir, rm } from 'node:fs/promises';
 import path from 'node:path';
-import { MigratedData } from '../data/types';
+import type { MigratedData } from '../data/types';
 import { DEV } from '../data/constants';
 import { ogImageUrl } from '../og/og';
 import type { StoredProduct } from '../../src/lib/utils/dataset';

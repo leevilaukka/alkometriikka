@@ -53,9 +53,9 @@ them with `git add -f`.
 
 ## `test.yml`
 
-Runs `bunx svelte-kit sync && bun test`, then `bun run check` (svelte-check). Cancels
-in-progress runs for the same ref. `main` isn't tested here because `build.yml` tests before
-deploying.
+Runs `bunx svelte-kit sync && bun test`, then `bun run check` (svelte-check for `src`,
+`bun check` for `scripts`). Cancels in-progress runs for the same ref. `main` isn't tested here
+because `build.yml` tests before deploying.
 
 ## `build.yml`
 
