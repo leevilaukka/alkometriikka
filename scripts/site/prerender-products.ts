@@ -36,7 +36,7 @@ type PrerenderManifest = Record<string, PrerenderManifestEntry>;
 // Bump when the page rendering logic (productHtml, minifyHtml, the SEO
 // template, ...) changes in a way that can alter existing pages without the
 // template or product data changing, forcing a full re-render.
-const RENDER_VERSION = 6;
+const RENDER_VERSION = 7;
 
 function sha256Hex(value: string): string {
 	const hasher = new CryptoHasher('sha256');

@@ -107,11 +107,37 @@ function collapseTagWhitespace(tag: string): string {
 	return out;
 }
 
+// Re-serializes JSON without whitespace, leaving the input untouched if it
+// doesn't parse.
+function compactJson(json: string): string {
+	try {
+		return escapeJson(JSON.parse(json));
+	} catch {
+		return json;
+	}
+}
+
+const scriptTranspiler = new Bun.Transpiler({ loader: 'js', minifyWhitespace: true });
+
+// Strips whitespace from inline JavaScript and JSON-LD. Other script types are
+// returned untouched, as is anything that fails to parse.
+function minifyScript(tag: string, content: string): string {
+	const type = (/\stype\s*=\s*["']?([^"'\s>]+)/i.exec(tag) || [])[1]?.toLowerCase();
+	if (type === 'application/ld+json') return compactJson(content);
+	if (type && type !== 'module' && type !== 'text/javascript') return content;
+	if (!content.trim()) return content;
+	try {
+		return scriptTranspiler.transformSync(content);
+	} catch {
+		return content;
+	}
+}
+
 // Whitespace-collapsing HTML minifier. Runs of whitespace between tags and
 // between attributes become a single space (quoted values and text content are
-// preserved). The text content of script/pre/textarea elements is kept
-// byte-for-byte untouched; style content is collapsed as CSS. Comments are left
-// in place.
+// preserved). The text content of pre/textarea elements is kept byte-for-byte
+// untouched; inline scripts and JSON-LD have their whitespace stripped and
+// style content is collapsed as CSS. Comments are left in place.
 export function minifyHtml(html: string): string {
 	const preserved = new Set(['script', 'style', 'pre', 'textarea']);
 	let result = '';
@@ -138,10 +164,13 @@ export function minifyHtml(html: string): string {
 					result += html.slice(position);
 					break;
 				}
+				const content = html.slice(position, closing);
 				result +=
 					name === 'style'
-						? collapseCssWhitespace(html.slice(position, closing))
-						: html.slice(position, closing);
+						? collapseCssWhitespace(content)
+						: name === 'script'
+							? minifyScript(tag, content)
+							: content;
 				position = closing;
 			}
 			continue;
