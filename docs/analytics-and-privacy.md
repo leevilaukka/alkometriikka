@@ -65,6 +65,8 @@ localStorage (keys in `LocalStorageKeys`, `src/lib/utils/constants/app.ts`):
 | `compare_products`, `compare_highlight_differences` | Comparison queue and setting                                                         |
 | `theme`                                             | Light/dark/system                                                                    |
 | `dismissed_notices`                                 | Ids of dismissed notices                                                             |
+| `flag_overrides`                                    | The visitor's own `?flag=` choices ([Feature flags](#feature-flags))                 |
+| `flag_visitor_id`                                   | Random UUID placing the visitor in rollouts; only created once a rollout needs it    |
 | `viewed_shares`                                     | Share ids already counted, so views aren't counted twice                             |
 | `alkometriikka-daily-*`                             | Daily progress, streak and archive scores ([Daily game](daily-game.md#player-state)) |
 | `umami.disabled`                                    | Set in dev only                                                                      |
@@ -74,9 +76,18 @@ localStorage (keys in `LocalStorageKeys`, `src/lib/utils/constants/app.ts`):
 sessionStorage holds the query parameters the visitor landed with, so URL-targeted notices stay
 visible for the session.
 
-Users can export all of it as JSON, import it on another device, or clear it, from the settings
-dialog. Location is requested only on pages that need it (nearest store, compass) and is never
+Users can export their personal info, preferred store and lists as JSON, import them on another
+device, or clear all of localStorage (flag keys included), from the settings dialog. Location is requested only on pages that need it (nearest store, compass) and is never
 sent anywhere; distances are computed in the browser.
+
+## Feature flags
+
+Flags come from a static `flags.json` (see `src/lib/utils/flags/`). Evaluation happens entirely in
+the browser: the file is fetched without any identifier, and `flag_visitor_id` never leaves the
+device. The only thing sent is each flag that is on, as an Umami session property
+(`flag_<name>: true`, via `umami.identify`), so reports can be filtered by flag. Flags that are off
+aren't sent. A visitor who forces a flag with `?flag=name` is reported like any other visitor with
+it on, so unreleased flag names can show up in the dashboard.
 
 ## Outbound links
 
