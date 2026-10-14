@@ -118,6 +118,9 @@
 			}
 
 			#main-loader {
+				/* Follow the OS like the background below, not app.css's color-scheme: that turns light
+				   before the app adds its dark class, and the logo SVG would flash dark red meanwhile */
+				color-scheme: light dark;
 				position: fixed;
 				inset: 0;
 				z-index: 999999;
