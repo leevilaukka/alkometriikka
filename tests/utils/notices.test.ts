@@ -7,7 +7,7 @@ import {
 	parseNotices,
 	visibleNotices,
 	type Notice
-} from '$lib/utils/notices';
+} from '$lib/utils/app/notices';
 
 const now = Date.parse('2026-10-09T12:00:00.000Z');
 const hour = 60 * 60 * 1000;

@@ -1,7 +1,10 @@
 import { expect, test } from 'bun:test';
 import type { PriceListItem } from '$lib/types';
-import { AllColumns as C } from '$lib/utils/constants.ts';
-import { getComparableProductName, ProductVariantIndex } from '$lib/utils/product-variants.ts';
+import { AllColumns as C } from '$lib/utils/constants/columns';
+import {
+	getComparableProductName,
+	ProductVariantIndex
+} from '$lib/utils/catalog/productVariants.ts';
 
 function product(id: string, name: string, overrides: Partial<PriceListItem> = {}): PriceListItem {
 	return {

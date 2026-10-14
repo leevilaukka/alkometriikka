@@ -1,4 +1,6 @@
-import { isNullish, updateURL } from './helpers';
+import type { ColumnNames } from '$lib/types';
+import { replaceState } from '$app/navigation';
+import { isNullish } from '../format/labels';
 
 export class SearchParamsManager {
 	params = new URLSearchParams();
@@ -74,4 +76,60 @@ export class SearchParamsManager {
 	getAllPersistentParameters(key: string) {
 		return this.persistentParams.getAll(key);
 	}
+}
+
+let routerReady = false;
+let pendingUrl: string | null = null;
+
+/**
+ * Fired (via `afterNavigate`) once the SvelteKit router is initialized and URL
+ * replacement is allowed. Any replacements requested before the router was
+ * ready are flushed once it is.
+ */
+export function markRouterReady() {
+	routerReady = true;
+	if (pendingUrl !== null) {
+		const url = pendingUrl;
+		pendingUrl = null;
+		// Defer to a microtask so the flush runs after the router has fully
+		// initialized (it marks itself ready right after the initial navigation).
+		queueMicrotask(() => replaceState(url, {}));
+	}
+}
+
+/**
+ * Replaces the current URL, or queues the replacement until the router is ready.
+ * Before the router initializes the URL already reflects the loaded page, so a
+ * queued write only matters for edits like stripping a `sid` parameter.
+ */
+export function updateURL(url: string) {
+	if (!routerReady) {
+		pendingUrl = url;
+		return;
+	}
+	replaceState(url, {});
+}
+
+export function mergeFilterParameters(
+	oldParameters: URLSearchParams,
+	newParameters: URLSearchParams,
+	filterValues: Record<ColumnNames, any[]>
+) {
+	oldParameters = new URLSearchParams(
+		[...oldParameters.entries()].filter(([key]) => {
+			return !Object.hasOwn(filterValues, key);
+		})
+	);
+	const merged = oldParameters;
+	for (const [key, value] of newParameters.entries()) {
+		if (merged.has(key)) {
+			const existingValues = merged.getAll(key);
+			if (!existingValues.includes(value)) {
+				merged.append(key, value);
+			}
+		} else {
+			merged.append(key, value);
+		}
+	}
+	return merged;
 }

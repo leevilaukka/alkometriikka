@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { afterNavigate } from '$app/navigation';
-	import { AllColumns } from '$lib/utils/constants';
-	import { formatValue } from '$lib/utils/format';
-	import { sendAnalyticsEvent } from '$lib/utils/helpers';
+	import { AllColumns } from '$lib/utils/constants/columns';
+	import { formatValue } from '$lib/utils/format/format';
+	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 	import type { PriceListItem } from '$lib/types';
-	import type { SizeOption } from '$lib/utils/filters';
+	import type { SizeOption } from '$lib/utils/catalog/filters';
 	import Icon from '../widgets/Icon.svelte';
 	import { twMerge } from 'tailwind-merge';
 

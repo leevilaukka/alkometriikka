@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'bun:test';
-import { shareDestination } from '../../src/lib/utils/shareTarget';
+import { shareDestination } from '../../src/lib/utils/app/shareTarget';
 
 describe('shareDestination', () => {
 	test('opens the product an Alko link points to, from any field', () => {

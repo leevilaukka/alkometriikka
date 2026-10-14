@@ -1,18 +1,19 @@
 <script lang="ts">
-	import { appPath } from '$lib/utils/paths';
+	import { appPath } from '$lib/utils/app/paths';
 	import { resolve } from '$app/paths';
 	import type { Kaljakori } from '$lib/alko';
 	import type { AvailabilityData, PriceListItem } from '$lib/types';
-	import { AllColumns, AUTO_STORE_ID } from '$lib/utils/constants';
+	import { AllColumns } from '$lib/utils/constants/columns';
+	import { AUTO_STORE_ID } from '$lib/utils/constants/app';
 	import {
 		categoryDescription,
 		categoryFeedPath,
 		categorySlug,
 		categoryTitle,
 		type CategoryNode
-	} from '$lib/utils/categories';
-	import { generateTitle, setSEO } from '$lib/utils/helpers';
-	import { formatValue } from '$lib/utils/format';
+	} from '$lib/utils/catalog/categories';
+	import { generateTitle, setSEO } from '$lib/utils/app/meta';
+	import { formatValue } from '$lib/utils/format/format';
 	import {
 		compareProductIds,
 		isLaptop,
@@ -22,13 +23,13 @@
 		preferredStoreId,
 		userLocation
 	} from '$lib/global.svelte';
-	import { resolvePreferredStore } from '$lib/utils/availability';
-	import { keepAutoLocationFresh } from '$lib/utils/location';
-	import { compareURL, MAX_COMPARE_PRODUCTS } from '$lib/utils/compare';
-	import { pickCategoryHighlights } from '$lib/utils/metrics';
+	import { resolvePreferredStore } from '$lib/utils/catalog/availability';
+	import { keepAutoLocationFresh } from '$lib/utils/device/location';
+	import { compareURL, MAX_COMPARE_PRODUCTS } from '$lib/utils/user/compare';
+	import { pickCategoryHighlights } from '$lib/utils/stats/metrics';
 	import { twMerge } from 'tailwind-merge';
 	import Main from './Main.svelte';
-	import { components } from '$lib/utils/styles';
+	import { components } from '$lib/utils/ui/styles';
 	import Icon from '../widgets/Icon.svelte';
 	import Breadcrumb from '../widgets/Breadcrumb.svelte';
 	import Popup from '../widgets/Popup.svelte';

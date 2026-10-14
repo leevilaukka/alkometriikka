@@ -1,5 +1,6 @@
-import type { DrunkColumnNames } from '$lib/types';
-import { DrunkColumns, GenderOptionsMap } from './constants';
+import type { DrunkColumnNames, ImageTransform } from '$lib/types';
+import { DrunkColumns } from '../constants/columns';
+import { GenderOptionsMap } from '../constants/app';
 
 /**
  * Laskee alkoholin määrän, känni per euro ja BAC-arvot.
@@ -90,4 +91,11 @@ export function calculateDrunkValue(
 		[DrunkColumns.Servings]: parseFloat(servings.toFixed(1)),
 		[DrunkColumns.EuroPerLiterAlcohol]: parseFloat(euroPerLiter.toFixed(2))
 	};
+}
+
+export function generateImageUrl(itemNumber: string, transform?: ImageTransform): string {
+	const imageURL =
+		`https://images.alko.fi/images/cs_srgb,f_auto,t_${transform || 'products'}/cdn` as const;
+
+	return `${imageURL}/${itemNumber}/kuva.jpg` as const;
 }

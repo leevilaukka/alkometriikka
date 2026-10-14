@@ -1,7 +1,7 @@
 import { mkdir, readdir, rm } from 'node:fs/promises';
 import path from 'node:path';
 import Bun, { CryptoHasher } from 'bun';
-import { getSaleInfo, toISODateInTimeZone } from '../../src/lib/utils/sales.ts';
+import { getSaleInfo, toISODateInTimeZone } from '../../src/lib/utils/catalog/sales.ts';
 import { ogImageUrl } from '../og/og';
 import {
 	CATEGORY_OG_MANIFEST_FILE,
@@ -18,13 +18,13 @@ import {
 	CATEGORY_INDEX_DESCRIPTION,
 	findProductCategoryTrail,
 	type CategoryNode
-} from '../../src/lib/utils/categories.ts';
+} from '../../src/lib/utils/catalog/categories.ts';
 import { readOption } from '../lib/cli';
-import type { StoredDataset, StoredProduct } from '../../src/lib/utils/dataset.ts';
+import type { StoredDataset, StoredProduct } from '../../src/lib/utils/catalog/dataset.ts';
 import { mapPool } from '../lib/async';
 import { escapeHtml } from '../lib/html';
 import { breadcrumbJsonLd, breadcrumbNav, renderStub, SITE_URL, type StubPage } from '../lib/stub';
-import { productDescription } from '../../src/lib/utils/seo.ts';
+import { productDescription } from '../../src/lib/utils/app/seo.ts';
 import {
 	alcoholMetrics,
 	categoryGroups,

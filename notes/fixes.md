@@ -133,7 +133,7 @@ removed products are hidden (the default).
     - `getMinAndMaxValues(key, showRemoved = true)`
   - The default is `true` (full set) so existing call sites in `List.svelte`,
     `Main.svelte` (sort-key presence checks), `ProductPreview.svelte`, and
-    `utils/filters.ts` keep their previous behavior unchanged.
+    `utils/catalog/filters.ts` keep their previous behavior unchanged.
 
 - **`src/lib/components/widgets/Filters.svelte`**
   - Passes its existing bindable `showRemoved` prop into

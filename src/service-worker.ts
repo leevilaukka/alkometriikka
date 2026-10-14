@@ -5,7 +5,7 @@
 
 import { base, build, files, version } from '$service-worker';
 // Relative, since SvelteKit's tsconfig (and its $lib alias) leaves the service worker out
-import { CACHED_RESPONSE_HEADER } from './lib/utils/offline';
+import { CACHED_RESPONSE_HEADER } from './lib/utils/app/offline';
 
 const sw = self as unknown as ServiceWorkerGlobalScope;
 

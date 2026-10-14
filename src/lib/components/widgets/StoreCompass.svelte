@@ -5,9 +5,9 @@
 	import Popup from '$lib/components/widgets/Popup.svelte';
 	import Icon from '$lib/components/widgets/Icon.svelte';
 	import type { AvailabilityStore } from '$lib/types';
-	import { sendAnalyticsEvent } from '$lib/utils/helpers';
-	import { detectCompass, requestOrientationPermission } from '$lib/utils/orientation';
-	import { components } from '$lib/utils/styles';
+	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
+	import { detectCompass, requestOrientationPermission } from '$lib/utils/device/orientation';
+	import { components } from '$lib/utils/ui/styles';
 
 	let { store }: { store: AvailabilityStore } = $props();
 

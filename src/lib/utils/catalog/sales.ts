@@ -6,7 +6,7 @@
  * when its current price is below that reference price.
  */
 
-import { toNumber } from './number.ts';
+import { toNumber } from '../format/number';
 
 export type SaleInfo = {
 	salePrice: number;

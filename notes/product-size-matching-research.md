@@ -2,13 +2,13 @@
 
 Investigated on 2026-09-28. Recommendation: use fully automatic, conservative product identity matching, then check for a different package. No manually maintained product groups, aliases, producer mappings, or product-specific exceptions. Keep fuzzy name similarity for search and discovery.
 
-Implemented on 2026-09-28 in `src/lib/utils/product-variants.ts`, with one index per `Kaljakori` catalogue. The implementation preserves identity tokens, validates package annotations against structured fields, checks metadata, and includes the restricted Finnish lager suffix fallback below. It contains no product-ID, brand, or producer alias mappings. The research and prototype results below describe the investigation that led to this implementation.
+Implemented on 2026-09-28 in `src/lib/utils/catalog/productVariants.ts`, with one index per `Kaljakori` catalogue. The implementation preserves identity tokens, validates package annotations against structured fields, checks metadata, and includes the restricted Finnish lager suffix fallback below. It contains no product-ID, brand, or producer alias mappings. The research and prototype results below describe the investigation that led to this implementation.
 
 Validation: 26 automated regression tests pass. An integration scan of the 13,319-product local snapshot produced 1,720 directed size links, with no self-links or asymmetric links. Selected real-product checks reject Sober Spirits G/R/W and IPA/Lager, preserve whisky ages, and recover the five Karhu III package alternatives. These checks establish regression behavior, not catalogue-wide matching accuracy. The Vite production build and repository type check pass after incorporating the latest main branch. The additional Bun product-prerender step was not run because Bun is unavailable in this environment.
 
 ## Reproduced failures
 
-The function is named `findDifferentSizeOfProduct` in `src/lib/utils/filters.ts`. The product page calls it for “Muut koot”.
+The function is named `findDifferentSizeOfProduct` in `src/lib/utils/catalog/filters.ts`. The product page calls it for “Muut koot”.
 
 I ran the actual `Kaljakori`, normalization, similarity, and size-matching functions against the local `static/data.json`: 13,319 products, last synced 2026-08-14. I also inspected the live page for product 900960 and confirmed that it lists Sober Spirits W and R under “Muut koot”.
 
@@ -117,7 +117,7 @@ EAN/GTIN equality is not a replacement family key: package-volume changes requir
 
 ## Sources
 
-- Repository: `src/lib/utils/filters.ts`, `src/lib/utils/search.ts`, `src/lib/alko/index.ts`, `src/lib/components/views/Product.svelte`, `scripts/setup/types.ts`, `scripts/setup/constants.ts`, `scripts/setup/index.ts`, and the local catalogue snapshot described above.
+- Repository: `src/lib/utils/catalog/filters.ts`, `src/lib/utils/catalog/search.ts`, `src/lib/alko/index.ts`, `src/lib/components/views/Product.svelte`, `scripts/setup/types.ts`, `scripts/setup/constants.ts`, `scripts/setup/index.ts`, and the local catalogue snapshot described above.
 - [Live reported product page](https://alkometriikka.fi/tuotteet/900960/): browser inspection confirmed R and W in “Muut koot”.
 - [Alko Sober Spirits G](https://www.alko.fi/fi/tuotteet/900960/Sober-Spirits-G-0.0-/) and [Alko Sober Spirits R](https://www.alko.fi/fi/tuotteet/901132/Sober-Spirits-R-0.0-/): separate products, both 0.5 L and 0% ABV.
 - [Alko Karhu III](https://www.alko.fi/fi/tuotteet/959618/karhu-iii): the producer description names Karhu 4,6%, and the page lists the same ABV, bitterness, original gravity, energy, and tasting profile used to corroborate the local comparison. [Sinebrychoff Karhu 4,6](https://www.sinebrychoff.fi/tuotteet/karhu/karhu-4-6/) provides the matching producer product description.

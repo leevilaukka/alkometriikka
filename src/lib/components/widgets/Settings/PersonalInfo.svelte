@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { components } from '$lib/utils/styles';
+	import { components } from '$lib/utils/ui/styles';
 	import { twMerge } from 'tailwind-merge';
 	import { personalInfo, locationDenied, preferredStoreId, userLocation } from '$lib/global.svelte';
-	import { AUTO_STORE_ID, GenderOptionsMap } from '$lib/utils/constants';
-	import { sendAnalyticsEvent } from '$lib/utils/helpers';
-	import { getStoreCity, resolvePreferredStore } from '$lib/utils/availability';
-	import { requestUserLocation } from '$lib/utils/location';
+	import { AUTO_STORE_ID, GenderOptionsMap } from '$lib/utils/constants/app';
+	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
+	import { getStoreCity, resolvePreferredStore } from '$lib/utils/catalog/availability';
+	import { requestUserLocation } from '$lib/utils/device/location';
 	import type { AvailabilityStore } from '$lib/types';
 	let { dialogElement, stores }: { dialogElement: HTMLDialogElement; stores: AvailabilityStore[] } =
 		$props();

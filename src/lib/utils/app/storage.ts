@@ -1,4 +1,4 @@
-import type { FilterValues, ListObj, PersonalInfo } from '../types';
+import type { FilterValues, ListObj, PersonalInfo } from '../../types';
 import type {
 	ArchivedScores,
 	ArchiveRuns,
@@ -6,7 +6,7 @@ import type {
 	SavedDailyGame,
 	UnlimitedRunState
 } from '$lib/daily/types';
-import { LocalStorageKeys } from './constants';
+import { LocalStorageKeys } from '../constants/app';
 
 type LocalStorageValueMap = {
 	[LocalStorageKeys.PersonalInfo]: PersonalInfo;

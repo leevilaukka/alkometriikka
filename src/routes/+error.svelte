@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import { generateTitle } from '$lib/utils/helpers';
+	import { generateTitle } from '$lib/utils/app/meta';
 	import { page } from '$app/state';
 	import { twMerge } from 'tailwind-merge';
-	import { components } from '$lib/utils/styles';
+	import { components } from '$lib/utils/ui/styles';
 	import Icon from '$lib/components/widgets/Icon.svelte';
 
 	document.title = generateTitle(`Error ${page.status}`);

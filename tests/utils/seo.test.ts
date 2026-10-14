@@ -6,7 +6,7 @@ import {
 	storeAddress,
 	storeDescription,
 	STATIC_PAGES
-} from '$lib/utils/seo';
+} from '$lib/utils/app/seo';
 
 describe('productDescription', () => {
 	it('lists abv, size, price, litre price and category', () => {

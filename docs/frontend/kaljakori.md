@@ -6,7 +6,7 @@ the dataset's filter index and the Daily game's product pool, so the browser and
 parse products identically.
 
 ```ts
-const { table, metadata, index } = parseDataset(text);       // src/lib/utils/dataset.ts
+const { table, metadata, index } = parseDataset(text);       // src/lib/utils/catalog/dataset.ts
 const kaljakori = new Kaljakori(table, personalInfo, availability?, index);
 ```
 
@@ -64,7 +64,7 @@ On top of the dataset columns, every product gets:
 | `StoreColumns`      | `Myymälät`                                                                                                   | Names of the stores stocking it, filled by `setAvailability`                                              |
 
 `AllColumns` combines all four groups. Display names, units, sort labels, which columns are shown
-as filters or sort keys, and badge rules all live in `src/lib/utils/constants.ts`:
+as filters or sort keys, and badge rules all live in `src/lib/utils/constants/` (`columns.ts`, `display.ts`, `badges.ts`):
 
 | Constant                                                                   | Controls                                                                                                   |
 | -------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
@@ -133,7 +133,7 @@ that use them re-run when `setAvailability` is called.
 
 ## Filters in the URL
 
-`src/lib/utils/filters.ts` converts between filter state and query parameters:
+`src/lib/utils/catalog/filters.ts` converts between filter state and query parameters:
 
 - `initFilterValues(kaljakori, searchParams)` builds the initial state: ranges default to the
   column's min/max, selections to empty, overridden by matching URL parameters.

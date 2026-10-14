@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { appPath } from '$lib/utils/paths';
-	import { generateTitle, setSEO } from '$lib/utils/helpers';
-	import { CATEGORY_INDEX_DESCRIPTION } from '$lib/utils/categories';
+	import { appPath } from '$lib/utils/app/paths';
+	import { generateTitle, setSEO } from '$lib/utils/app/meta';
+	import { CATEGORY_INDEX_DESCRIPTION } from '$lib/utils/catalog/categories';
 	import Breadcrumb from '$lib/components/widgets/Breadcrumb.svelte';
 	import Icon from '$lib/components/widgets/Icon.svelte';
 

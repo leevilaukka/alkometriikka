@@ -2,7 +2,7 @@
 
 Banners under the header, for telling users something without changing app code
 ([`NoticeBanner.svelte`](../src/lib/components/widgets/NoticeBanner.svelte),
-logic in [`notices.ts`](../src/lib/utils/notices.ts)).
+logic in [`notices.ts`](../src/lib/utils/app/notices.ts)).
 
 ## Automatic stale-data warning
 

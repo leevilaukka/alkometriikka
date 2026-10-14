@@ -1,14 +1,14 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import { compareProductIds } from '$lib/global.svelte';
-	import { AllColumns } from '$lib/utils/constants';
-	import { components } from '$lib/utils/styles';
+	import { AllColumns } from '$lib/utils/constants/columns';
+	import { components } from '$lib/utils/ui/styles';
 	import {
 		clearCompare,
 		compareURL,
 		removeFromCompare,
 		MAX_COMPARE_PRODUCTS
-	} from '$lib/utils/compare';
+	} from '$lib/utils/user/compare';
 	import { goto } from '$app/navigation';
 	import { twMerge } from 'tailwind-merge';
 	import type { Kaljakori } from '$lib/alko';

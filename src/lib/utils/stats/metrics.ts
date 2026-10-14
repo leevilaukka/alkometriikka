@@ -1,9 +1,14 @@
 import type { Kaljakori } from '$lib/alko';
 import type { ColumnNames, PriceListItem } from '$lib/types';
-import { categorySlug, findProductCategoryTrail } from './categories';
-import { AllColumns, DatasetColumns, DrunkColumns, hideFromProductPageStats } from './constants';
-import { formatValue } from './format';
-import { headerToDisplayName, isNullish } from './helpers';
+import { categorySlug, findProductCategoryTrail } from '../catalog/categories';
+import {
+	AllColumns,
+	DatasetColumns,
+	DrunkColumns,
+	hideFromProductPageStats
+} from '../constants/columns';
+import { formatValue } from '../format/format';
+import { headerToDisplayName, isNullish } from '../format/labels';
 
 export type QualityMetric = {
 	key: ColumnNames;

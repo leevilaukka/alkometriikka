@@ -1,8 +1,8 @@
 import type { BeforeNavigate } from '@sveltejs/kit';
 import { updated } from '$app/state';
-import { sendAnalyticsEvent } from '$lib/utils/helpers';
-import { LocalStorageKeys } from '$lib/utils/constants';
-import { LocalStorageManager } from '$lib/utils/storage';
+import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
+import { LocalStorageKeys } from '$lib/utils/constants/app';
+import { LocalStorageManager } from '$lib/utils/app/storage';
 
 /** Chrome's install prompt event, which TypeScript's DOM types don't include */
 interface BeforeInstallPromptEvent extends Event {

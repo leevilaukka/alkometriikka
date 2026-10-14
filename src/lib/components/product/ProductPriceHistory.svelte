@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { AllColumns } from '$lib/utils/constants';
-	import { formatValue } from '$lib/utils/format';
-	import { getSaleInfo } from '$lib/utils/sales';
-	import { sendAnalyticsEvent } from '$lib/utils/helpers';
+	import { AllColumns } from '$lib/utils/constants/columns';
+	import { formatValue } from '$lib/utils/format/format';
+	import { getSaleInfo } from '$lib/utils/catalog/sales';
+	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 	import type { PriceHistoryEntry, PriceListItem } from '$lib/types';
 	import type { ChartConfiguration } from 'chart.js';
 	import ChartCard from '../widgets/ChartCard.svelte';
 	import Icon from '../widgets/Icon.svelte';
-	import { components } from '$lib/utils/styles';
+	import { components } from '$lib/utils/ui/styles';
 	import { twMerge } from 'tailwind-merge';
 	import { dev } from '$app/environment';
 

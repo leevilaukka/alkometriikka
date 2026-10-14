@@ -2,10 +2,10 @@
 // the site-wide /hinnanmuutokset page.
 
 import type { PriceListItem } from '$lib/types';
-import { categorySlug } from './categories';
-import { AllColumns } from './constants';
+import { categorySlug } from '../catalog/categories';
+import { AllColumns } from '../constants/columns';
 import type { PriceChange } from './metrics';
-import { toISODateInTimeZone } from './sales';
+import { toISODateInTimeZone } from '../catalog/sales';
 
 /** Window choices on the price changes page, in days. */
 export const PRICE_CHANGE_WINDOWS = [7, 30, 90] as const;

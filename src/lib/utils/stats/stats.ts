@@ -1,5 +1,5 @@
-import { AllColumns, subCategoryMap } from './constants';
-import type { ColumnNames, PriceListItem } from '../types';
+import { AllColumns, subCategoryMap } from '../constants/columns';
+import type { ColumnNames, PriceListItem } from '../../types';
 
 /** A single histogram bin, labelled with the bucket's lower / upper bound. */
 export type HistogramBin = {

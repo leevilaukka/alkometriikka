@@ -83,7 +83,7 @@ Runtime JSON is fetched fresh, but once a stored copy exists the worker waits at
 (`DATA_TIMEOUT_MS`) for the whole file before serving that copy instead. The download carries on
 in the background, so the next load gets fresh data. A download cut off midway also falls back to
 the stored copy. Responses from the stored copy carry an `x-alkometriikka-cached` header
-(`src/lib/utils/offline.ts`); `+layout.ts` exposes it for `data.json` as `alko.cached`, which
+(`src/lib/utils/app/offline.ts`); `+layout.ts` exposes it for `data.json` as `alko.cached`, which
 [the notice banner](features.md#site-notices) uses.
 
 SvelteKit's generated tsconfig leaves the service worker out (it needs the `webworker` libs), so
@@ -105,7 +105,7 @@ Product photos from `images.alko.fi` aren't handled: they are sent with a one-ye
 - **`color-scheme`** follows the app's `dark` class, so scrollbars and form controls match.
 - **Install button**: Settings → Lisäasetukset offers installing. `app.html` keeps Chrome's
   `beforeinstallprompt` event (it can fire before the app's code loads) and
-  `src/lib/utils/pwa.svelte.ts` shows its prompt from the button. iOS has no prompt, so it gets the
+  `src/lib/utils/app/pwa.svelte.ts` shows its prompt from the button. iOS has no prompt, so it gets the
   Add to Home Screen steps instead, except in apps' built-in browsers (Instagram, Facebook…), which can't add to the home screen. Inside the installed app the section is hidden. The same
   offer shows as a banner under the header (`InstallBanner.svelte`) from the second day the site
   is used on (`BANNER_AFTER_DAYS`), until it's closed or the browser's install dialog is turned
@@ -186,15 +186,15 @@ legacy EAN, since API-synced products have none.
 | `isSafari`, `isFirefox`, `isChrome` | stores   | —                               | User-agent sniffing for browser quirks                          |
 
 The layout's `$effect`s write each persisted value back to localStorage whenever it changes.
-`LocalStorageManager` (`src/lib/utils/storage.ts`) wraps localStorage with a typed key map and
+`LocalStorageManager` (`src/lib/utils/app/storage.ts`) wraps localStorage with a typed key map and
 swallows the errors browsers throw when storage is blocked. All keys are listed in
-`LocalStorageKeys` (`src/lib/utils/constants.ts`); the Daily game's own keys are described in
+`LocalStorageKeys` (`src/lib/utils/constants/app.ts`); the Daily game's own keys are described in
 [Daily game](../daily-game.md#player-state).
 
 ## URL state
 
 Shareable state lives in the query string, managed by `SearchParamsManager`
-(`src/lib/utils/url.ts`), which the layout puts in context under
+(`src/lib/utils/app/url.ts`), which the layout puts in context under
 `ContextKeys.SearchParamsManager`. Pages set parameters on it and call `update()`, which writes
 the URL with `replaceState` (no history entries). Calls made before the router is ready are
 queued and flushed by `markRouterReady()` in `afterNavigate`.
@@ -221,14 +221,14 @@ while back/forward restores it from the URL.
 - On phones, pages pass a snippet into `pageBottomBar` (filter button, product price/compare bar)
   and the layout renders it at the very bottom, below the compare bar.
 - Dark mode follows the system unless the user picks light or dark in settings.
-- `appPath()` (`src/lib/utils/paths.ts`) and `resolve()` from `$app/paths` prefix internal links
+- `appPath()` (`src/lib/utils/app/paths.ts`) and `resolve()` from `$app/paths` prefix internal links
   with the base path so branch previews built under `BASE_PATH` work.
 
 ## SEO in the client
 
-Pages call `setSEO()` (`src/lib/utils/helpers.ts`) to update the description, keywords, Open Graph
+Pages call `setSEO()` (`src/lib/utils/app/meta.ts`) to update the description, keywords, Open Graph
 and Twitter tags after navigation, and `generateTitle()` for `<title>`. Copy that both the client
 and the prerender scripts need (product descriptions, store descriptions, static page titles) is
-in `src/lib/utils/seo.ts` and `categories.ts`, so the stub a crawler sees and the tags set after
+in `src/lib/utils/app/seo.ts` and `categories.ts`, so the stub a crawler sees and the tags set after
 hydration match. Feed `<link>` tags baked into a prerendered page are removed after the first
 client-side navigation.

@@ -1,5 +1,5 @@
 import type { PriceListItem } from '$lib/types';
-import { AllColumns as C } from './constants.ts';
+import { AllColumns as C } from '../constants/columns';
 
 const collator = Intl.Collator.supportedLocalesOf(['fi']).length
 	? new Intl.Collator('fi', { usage: 'search', sensitivity: 'base', ignorePunctuation: false })

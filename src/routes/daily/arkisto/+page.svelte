@@ -3,8 +3,8 @@
 	import type { ArchiveIndex } from '$lib/daily/manifest';
 	import type { ArchivedScores, ArchiveRuns } from '$lib/daily/types';
 	import { loadArchivedScores, loadArchiveRuns } from '$lib/daily/storage';
-	import { generateTitle, setSEO } from '$lib/utils/helpers';
-	import { components } from '$lib/utils/styles';
+	import { generateTitle, setSEO } from '$lib/utils/app/meta';
+	import { components } from '$lib/utils/ui/styles';
 	import { twMerge } from 'tailwind-merge';
 	import Icon from '$lib/components/widgets/Icon.svelte';
 	import { dayNumberForDate } from '$lib/daily/dayNumber';

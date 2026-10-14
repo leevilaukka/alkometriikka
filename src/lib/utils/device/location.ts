@@ -1,7 +1,7 @@
 import { get } from 'svelte/store';
 import { locationDenied, userLocation } from '$lib/global.svelte';
-import { LocalStorageKeys } from '$lib/utils/constants';
-import { LocalStorageManager } from '$lib/utils/storage';
+import { LocalStorageKeys } from '$lib/utils/constants/app';
+import { LocalStorageManager } from '$lib/utils/app/storage';
 
 /** A saved location newer than this is reused instead of asking the browser again. */
 const MAX_LOCATION_AGE_MS = 10 * 60 * 1000;

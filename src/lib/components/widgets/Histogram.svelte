@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { HistogramBin } from '$lib/utils/metrics';
-	import { histogramBinIndex } from '$lib/utils/metrics';
+	import type { HistogramBin } from '$lib/utils/stats/metrics';
+	import { histogramBinIndex } from '$lib/utils/stats/metrics';
 	import { twMerge } from 'tailwind-merge';
 
 	const {

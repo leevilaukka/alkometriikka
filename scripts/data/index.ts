@@ -57,7 +57,7 @@ import {
 	valuesEqual,
 	withoutRemovedFlag
 } from './lifecycle.ts';
-import { toNumber } from '../../src/lib/utils/number.ts';
+import { toNumber } from '../../src/lib/utils/format/number';
 import { DATA_PATH, HASHES_PATH, readDataset, writeDataset } from './dataset-file.ts';
 import { checkSyncSafety, missingCriticalColumns, restoreCriticalColumns } from './safeguards.ts';
 

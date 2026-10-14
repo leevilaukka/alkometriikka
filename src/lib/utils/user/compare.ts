@@ -1,5 +1,5 @@
 import { compareProductIds } from '$lib/global.svelte';
-import { sendAnalyticsEvent } from './helpers';
+import { sendAnalyticsEvent } from '../app/analytics';
 
 /** Maximum number of products that can be compared at once, to keep the comparison grid usable. */
 export const MAX_COMPARE_PRODUCTS = 6;

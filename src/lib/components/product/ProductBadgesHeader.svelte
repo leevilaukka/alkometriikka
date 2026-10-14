@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import { AllColumns } from '$lib/utils/constants';
+	import { AllColumns } from '$lib/utils/constants/columns';
 	import type { PriceListItem } from '$lib/types';
-	import type { SaleInfo } from '$lib/utils/sales';
+	import type { SaleInfo } from '$lib/utils/catalog/sales';
 	import BadgeList from '../widgets/BadgeList.svelte';
 	import { twMerge } from 'tailwind-merge';
 

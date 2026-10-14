@@ -1,12 +1,7 @@
-import {
-	AllColumns,
-	DatasetColumns,
-	DrunkColumns,
-	GenderOptionsMap,
-	ShareTypes
-} from '$lib/utils/constants';
+import { AllColumns, DatasetColumns, DrunkColumns } from '$lib/utils/constants/columns';
+import { GenderOptionsMap, ShareTypes } from '$lib/utils/constants/app';
 import type { VariantProps } from 'class-variance-authority';
-import type { components } from './utils/styles';
+import type { components } from './utils/ui/styles';
 import type { IconName } from './icons';
 
 export type ColumnType =

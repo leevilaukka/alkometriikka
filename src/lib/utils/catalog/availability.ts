@@ -1,5 +1,5 @@
 import type { AvailabilityData, AvailabilityStore } from '$lib/types';
-import { AUTO_STORE_ID } from './constants';
+import { AUTO_STORE_ID } from '../constants/app';
 
 type Coordinates = {
 	latitude: number;

@@ -1,5 +1,5 @@
-import type { ColumnNames } from '../types';
-import { DatasetColumns } from './constants';
+import type { ColumnNames } from '../../types';
+import { DatasetColumns } from '../constants/columns';
 
 /**
  * Lenient view of a product as stored in `data.json`. The sync scripts write

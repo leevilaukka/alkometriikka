@@ -1,7 +1,9 @@
 import type { Kaljakori } from '$lib/alko';
 import type { ColumnNames, FilterValue, FilterValues, PriceListItem } from '$lib/types';
-import { AllColumns, getPackCount, shownFilters, subCategoryMap } from './constants';
-export { getComparableProductName } from './product-variants';
+import { AllColumns, subCategoryMap } from '../constants/columns';
+import { getPackCount } from '../constants/badges';
+import { shownFilters } from '../constants/display';
+export { getComparableProductName } from './productVariants';
 
 export function initFilterValues(
 	kaljakori: Kaljakori,

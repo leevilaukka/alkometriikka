@@ -1,13 +1,9 @@
 import { describe, expect, it, mock } from 'bun:test';
-import { AllColumns } from '$lib/utils/constants';
+import { AllColumns } from '$lib/utils/constants/columns';
 import type { PriceListItem } from '$lib/types';
 
-// helpers.ts pulls in browser globals and SvelteKit modules through global.svelte.ts
-mock.module('$lib/utils/helpers', () => ({
-	headerToDisplayName: (header: string) => header,
-	isNullish: (value: unknown) => value === null || value === undefined,
-	sendAnalyticsEvent: () => {}
-}));
+// analytics.ts pulls in SvelteKit's $app/environment
+mock.module('$lib/utils/app/analytics', () => ({ sendAnalyticsEvent: () => {} }));
 const {
 	computeCategoryStats,
 	computeComparisonRows,
@@ -17,7 +13,7 @@ const {
 	pickCategoryHighlights,
 	recentPriceChanges,
 	valuesDiffer
-} = await import('$lib/utils/metrics');
+} = await import('$lib/utils/stats/metrics');
 
 const product = (
 	id: string,

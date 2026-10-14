@@ -5,7 +5,7 @@ import {
 	isFlagOn,
 	parseFlags,
 	rolloutBucket
-} from '$lib/utils/flags';
+} from '$lib/utils/flags/flags';
 
 describe('parseFlags', () => {
 	it('reads booleans and objects', () => {

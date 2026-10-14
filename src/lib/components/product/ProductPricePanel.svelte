@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { AllColumns } from '$lib/utils/constants';
+	import { AllColumns } from '$lib/utils/constants/columns';
 	import type { AvailabilityStore, ListObj, PriceListItem } from '$lib/types';
-	import type { SaleInfo } from '$lib/utils/sales';
-	import type { SizeOption } from '$lib/utils/filters';
-	import { addToList } from '$lib/utils/lists';
-	import { components } from '$lib/utils/styles';
+	import type { SaleInfo } from '$lib/utils/catalog/sales';
+	import type { SizeOption } from '$lib/utils/catalog/filters';
+	import { addToList } from '$lib/utils/user/lists';
+	import { components } from '$lib/utils/ui/styles';
 	import { compareProductIds } from '$lib/global.svelte';
-	import { toggleCompare, MAX_COMPARE_PRODUCTS } from '$lib/utils/compare';
+	import { toggleCompare, MAX_COMPARE_PRODUCTS } from '$lib/utils/user/compare';
 	import Icon from '../widgets/Icon.svelte';
 	import Popup from '../widgets/Popup.svelte';
 	import AllLists from '../widgets/AllLists.svelte';

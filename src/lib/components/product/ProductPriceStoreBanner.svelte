@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { AllColumns } from '$lib/utils/constants';
-	import { formatValue } from '$lib/utils/format';
+	import { AllColumns } from '$lib/utils/constants/columns';
+	import { formatValue } from '$lib/utils/format/format';
 	import type { AvailabilityStore, PriceListItem } from '$lib/types';
-	import type { SaleInfo } from '$lib/utils/sales';
-	import { requestSettingsOpen } from '$lib/utils/settings';
-	import { components } from '$lib/utils/styles';
+	import type { SaleInfo } from '$lib/utils/catalog/sales';
+	import { requestSettingsOpen } from '$lib/utils/app/settings';
+	import { components } from '$lib/utils/ui/styles';
 	import Icon from '../widgets/Icon.svelte';
 	import { twMerge } from 'tailwind-merge';
 

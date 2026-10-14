@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { twMerge } from 'tailwind-merge';
 	import Icon from '$lib/components/widgets/Icon.svelte';
-	import { components } from '$lib/utils/styles';
-	import { sendAnalyticsEvent } from '$lib/utils/helpers';
-	import { install } from '$lib/utils/pwa.svelte';
+	import { components } from '$lib/utils/ui/styles';
+	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
+	import { install } from '$lib/utils/app/pwa.svelte';
 
 	function dismiss() {
 		install.dismissBanner();

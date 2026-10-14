@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { asset, resolve } from '$app/paths';
 	import { tick } from 'svelte';
-	import { AllColumns } from '$lib/utils/constants';
-	import { components } from '$lib/utils/styles';
+	import { AllColumns } from '$lib/utils/constants/columns';
+	import { components } from '$lib/utils/ui/styles';
 	import { questionPoints } from '$lib/daily/scoring';
 	import type { Question } from '$lib/daily/questions';
 	import type { ArchivedScores, ArchiveRunState, ArchiveRuns } from '$lib/daily/types';
@@ -14,7 +14,8 @@
 	} from '$lib/daily/storage';
 	import type { ArchiveGame, ArchiveIndex, ArchiveProduct } from '$lib/daily/manifest';
 	import { page } from '$app/state';
-	import { generateTitle, sendAnalyticsEvent, setSEO } from '$lib/utils/helpers';
+	import { generateTitle, setSEO } from '$lib/utils/app/meta';
+	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 	import ProductImage from '$lib/components/widgets/ProductImage.svelte';
 	import { twMerge } from 'tailwind-merge';
 	import Icon from '$lib/components/widgets/Icon.svelte';

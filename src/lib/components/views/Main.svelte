@@ -5,24 +5,24 @@
 	import {
 		shownColumnsToHighlight,
 		defaultSortingColumn,
-		AllColumns,
 		shownSortingKeys,
-		defaultSortingOrderMap,
-		ContextKeys
-	} from '$lib/utils/constants';
-	import { components } from '$lib/utils/styles';
-	import { headerToDisplayName, sortingOrderToString } from '$lib/utils/helpers';
+		defaultSortingOrderMap
+	} from '$lib/utils/constants/display';
+	import { AllColumns } from '$lib/utils/constants/columns';
+	import { ContextKeys } from '$lib/utils/constants/app';
+	import { components } from '$lib/utils/ui/styles';
+	import { headerToDisplayName, sortingOrderToString } from '$lib/utils/format/labels';
 	import Icon from '../widgets/Icon.svelte';
 	import type { Kaljakori } from '$lib/alko';
 	import Popup from '../widgets/Popup.svelte';
 	import AllLists from '../widgets/AllLists.svelte';
-	import { addToList } from '$lib/utils/lists';
+	import { addToList } from '$lib/utils/user/lists';
 	import { isLaptop, isMobile, pageBottomBar, searchQuery } from '$lib/global.svelte';
 	import Filters from '../widgets/Filters.svelte';
-	import { initFilterValues } from '$lib/utils/filters';
+	import { initFilterValues } from '$lib/utils/catalog/filters';
 	import { page } from '$app/state';
 	import { getContext, onMount, untrack, type Snippet } from 'svelte';
-	import type { SearchParamsManager } from '$lib/utils/url';
+	import type { SearchParamsManager } from '$lib/utils/app/url';
 	import ProductPreview from '../widgets/ProductPreview.svelte';
 	import BottomBar from '../widgets/BottomBar.svelte';
 	import FilterButton from '../widgets/FilterButton.svelte';

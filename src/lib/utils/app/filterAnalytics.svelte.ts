@@ -1,7 +1,7 @@
 import { beforeNavigate } from '$app/navigation';
 import { onMount } from 'svelte';
 import type { AnalyticsEventMap } from '$lib/types';
-import { sendAnalyticsEvent } from './helpers';
+import { sendAnalyticsEvent } from './analytics';
 
 type FilterParams = Record<string, string | string[]>;
 type FilterSource = AnalyticsEventMap['filters_used']['source'];

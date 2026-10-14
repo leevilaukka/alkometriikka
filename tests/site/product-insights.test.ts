@@ -6,7 +6,7 @@ import {
 	priceHistorySummary,
 	type CategoryProduct
 } from '../../scripts/site/product-insights';
-import type { CategoryNode } from '../../src/lib/utils/categories';
+import type { CategoryNode } from '../../src/lib/utils/catalog/categories';
 
 describe('alcoholMetrics', () => {
 	it('matches the app calculator for a 0.7 l 40 % bottle at 20 €', () => {

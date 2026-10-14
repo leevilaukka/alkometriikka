@@ -28,7 +28,7 @@ The home page lists every product in a virtualized list (`@humanspeak/svelte-vir
   [App structure → URL state](app-structure.md#url-state)).
 
 Filter usage is reported as one analytics event per filtering session, not per click
-(`trackFilterUsage` in `src/lib/utils/filterAnalytics.svelte.ts`).
+(`trackFilterUsage` in `src/lib/utils/app/filterAnalytics.svelte.ts`).
 
 ## Product page (`/tuotteet/[id]/`)
 
@@ -58,7 +58,7 @@ a prerendered stub for crawlers ([Site generation](../site-generation.md#product
 `routes/kategoriat/` → `views/Category.svelte`, `components/category/`
 
 The category tree (Tyyppi → Alatyyppi) is built from active products by `buildCategoryTree`
-(`src/lib/utils/categories.ts`). A category needs at least 5 active products to get a page, and a
+(`src/lib/utils/catalog/categories.ts`). A category needs at least 5 active products to get a page, and a
 subtype with the same slug as its parent (Viinit › viinit) is treated as a catch-all and skipped.
 Slugs are lower-cased and accent-stripped ("Väkevät" → `vakevat`).
 
@@ -73,7 +73,7 @@ Slugs are lower-cased and accent-stripped ("Väkevät" → `vakevat`).
 
 ## Price changes (`/hinnanmuutokset`)
 
-`views/PriceChanges.svelte`, helpers in `src/lib/utils/priceChanges.ts`
+`views/PriceChanges.svelte`, helpers in `src/lib/utils/stats/priceChanges.ts`
 
 Each active product's latest price change within the last 7, 30 (default) or 90 days, newest
 first. Filter by direction (cheaper / more expensive), category chips with counts, name search,
@@ -82,7 +82,7 @@ Links to the site RSS feed.
 
 ## Lists (`/listat`)
 
-`views/List.svelte`, `widgets/AllLists.svelte`, `src/lib/utils/lists.ts`
+`views/List.svelte`, `widgets/AllLists.svelte`, `src/lib/utils/user/lists.ts`
 
 Users create named lists of products with quantities, stored in localStorage. A list page shows
 the products with search, filters and sorting, and totals for the whole list: item count, price,
@@ -95,7 +95,7 @@ first six products in the current order can be opened in the comparison view.
 
 ## Comparison (`/vertailu?ids=…`)
 
-`views/Compare.svelte`, `widgets/CompareBar.svelte`, `src/lib/utils/compare.ts`
+`views/Compare.svelte`, `widgets/CompareBar.svelte`, `src/lib/utils/user/compare.ts`
 
 Up to 6 products side by side. Products are added from list rows, product pages and the similar
 products row. While any are queued, the compare bar is shown at the bottom of every page. The
@@ -111,7 +111,7 @@ The full ranked list of products similar to one product ([scoring](calculations.
 
 ## Statistics (`/tilastot`)
 
-`views/Stats.svelte`, `widgets/ChartCard.svelte`, `src/lib/utils/stats.ts`
+`views/Stats.svelte`, `widgets/ChartCard.svelte`, `src/lib/utils/stats/stats.ts`
 
 Catalog-wide charts with Chart.js: price, price-per-litre and ABV distributions, category,
 subcategory and country breakdowns, a price vs alcohol-per-euro scatter plot, and the best-value
@@ -127,7 +127,7 @@ calculation.
 
 ## Stores (`/myymalat`, `/myymalat/[id]/`)
 
-`routes/myymalat/`, helpers in `src/lib/utils/availability.ts`
+`routes/myymalat/`, helpers in `src/lib/utils/catalog/availability.ts`
 
 - `/myymalat` lists all stores with search, open/closed status, and a button to make one the
   preferred store.
@@ -143,13 +143,13 @@ Opening hours are evaluated in Europe/Helsinki time and accept Alko's `9–21` f
 Chosen in settings, on the store list or a store page. It can be a specific store or **auto**,
 which follows the store nearest the device's location (`resolvePreferredStore`). Location is
 requested only when needed, reused for 10 minutes, and refreshed when the tab regains focus
-(`src/lib/utils/location.ts`). The product page uses the preferred store for its availability
+(`src/lib/utils/device/location.ts`). The product page uses the preferred store for its availability
 banner and distance sorting; category and price change pages can be limited to it.
 
 ## Compass (`/kompassi`)
 
-`routes/kompassi/+page.svelte`, `widgets/CompassDial.svelte`, `src/lib/utils/compass.ts`,
-`src/lib/utils/orientation.ts`
+`routes/kompassi/+page.svelte`, `widgets/CompassDial.svelte`, `src/lib/utils/device/compass.ts`,
+`src/lib/utils/device/orientation.ts`
 
 Points the phone towards the nearest store using geolocation and the device orientation API
 (iOS asks for permission from a tap). It can be limited to open stores, a store can be skipped to
@@ -167,7 +167,7 @@ A seven-question quiz about the catalog, the same for everyone each day. Covered
 `widgets/Settings/`
 
 Opened from the cog in the header (other code can open it with `requestSettingsOpen()` from
-`src/lib/utils/settings.ts`). Three tabs:
+`src/lib/utils/app/settings.ts`). Three tabs:
 
 - **Henkilökohtaiset tiedot**: weight, gender and preferred store.
 - **Lisäasetukset**: theme (system/light/dark); export everything (personal info, preferred store,
@@ -178,7 +178,7 @@ Opened from the cog in the header (other code can open it with `requestSettingsO
 
 ## Site notices
 
-`widgets/NoticeBanner.svelte`, `src/lib/utils/notices.ts`, `static/notices.json`
+`widgets/NoticeBanner.svelte`, `src/lib/utils/app/notices.ts`, `static/notices.json`
 
 Banners under the header, from two sources:
 
@@ -197,7 +197,7 @@ ids include the sync time, so dismissing them lasts only until the data changes.
 
 ## Sharing
 
-`handleShare()` in `src/lib/utils/helpers.ts`
+`handleShare()` in `src/lib/utils/app/share.ts`
 
 Share buttons use the Web Share API where it's available (not in Firefox), otherwise copy the text
 and link to the clipboard. Shared links get a random `sid` parameter; when someone opens the link,
@@ -206,7 +206,7 @@ sharer's own sid is remembered so their visit isn't counted.
 
 The installed app is also a share target: sharing an Alko product page (from the Alko site or
 app) to Alkometriikka opens that product, and sharing plain text searches for it. The manifest
-sends shares to `/jaa/`, and `shareDestination()` in `src/lib/utils/shareTarget.ts` picks where
+sends shares to `/jaa/`, and `shareDestination()` in `src/lib/utils/app/shareTarget.ts` picks where
 they go.
 
 ## Outbound links
@@ -215,7 +215,7 @@ External links are plain links. Clicks on them are recorded by the local copy of
 Analytics' auto-events script (`static/scripts/simpleanalytics/auto-events.js`), see
 [Analytics and privacy](../analytics-and-privacy.md#outbound-links).
 
-`static/linkki.html` and `generateOutLink()` in `src/lib/utils/helpers.ts` are an older
+`static/linkki.html` and `generateOutLink()` in `src/lib/utils/app/share.ts` are an older
 redirect page for tracking outbound clicks. Nothing in the app links through them at the moment;
 they are kept for possible future use.
 

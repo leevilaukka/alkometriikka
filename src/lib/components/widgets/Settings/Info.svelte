@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { components } from '$lib/utils/styles';
+	import { components } from '$lib/utils/ui/styles';
 	import { twMerge } from 'tailwind-merge';
 	import Icon from '$lib/components/widgets/Icon.svelte';
 	import { version } from '$app/environment';
-	import { timeConfig } from '$lib/utils/constants';
+	import { timeConfig } from '$lib/utils/constants/display';
 	import SiteFeedback from './SiteFeedback.svelte';
-	import { sendAnalyticsEvent } from '$lib/utils/helpers';
+	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 	const { alko, dialogElement, githubRepoBase, githubFileBase, gitCommitHash } = $props();
 </script>
 

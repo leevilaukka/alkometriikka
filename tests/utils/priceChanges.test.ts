@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'bun:test';
-import { AllColumns } from '$lib/utils/constants';
+import { AllColumns } from '$lib/utils/constants/columns';
 import type { PriceListItem } from '$lib/types';
-import type { PriceChange } from '$lib/utils/metrics';
+import type { PriceChange } from '$lib/utils/stats/metrics';
 import {
 	countPriceChangesByCategory,
 	DEFAULT_PRICE_CHANGE_WINDOW,
@@ -14,7 +14,7 @@ import {
 	priceChangeParams,
 	priceChangesURL,
 	priceChangeSince
-} from '$lib/utils/priceChanges';
+} from '$lib/utils/stats/priceChanges';
 
 const product = (id: string, type: string, subType = '') =>
 	({

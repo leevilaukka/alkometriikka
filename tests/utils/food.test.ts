@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test';
-import { foodPairingLabel, formatFoodPairings } from '$lib/utils/food';
+import { foodPairingLabel, formatFoodPairings } from '$lib/utils/catalog/food';
 
 describe('foodPairingLabel', () => {
 	it('maps known ids to their Finnish labels', () => {

@@ -1,15 +1,15 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import { AllColumns } from '$lib/utils/constants';
-	import { formatValue } from '$lib/utils/format';
-	import { components } from '$lib/utils/styles';
+	import { AllColumns } from '$lib/utils/constants/columns';
+	import { formatValue } from '$lib/utils/format/format';
+	import { components } from '$lib/utils/ui/styles';
 	import type { PriceListItem } from '$lib/types';
 	import { compareProductIds } from '$lib/global.svelte';
 	import {
 		addToCompareWithReference,
 		removeFromCompare,
 		MAX_COMPARE_PRODUCTS
-	} from '$lib/utils/compare';
+	} from '$lib/utils/user/compare';
 	import ProductImage from '../widgets/ProductImage.svelte';
 	import Icon from '../widgets/Icon.svelte';
 	import { twMerge } from 'tailwind-merge';

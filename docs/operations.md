@@ -5,7 +5,7 @@ Common maintenance tasks and what to do when something breaks.
 ## Feature flags
 
 Edit [`static/flags.json`](../static/flags.json) on `main`; like notices, the deploy purges it from
-Cloudflare. Read a flag in a component with `flags.on('name')` (from `$lib/utils/flags.svelte`).
+Cloudflare. Read a flag in a component with `flags.on('name')` (from `$lib/utils/flags/flags.svelte`).
 Flags are off until the file has loaded, and a missing or broken entry is off too.
 
 ```json

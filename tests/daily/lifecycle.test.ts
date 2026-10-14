@@ -2,7 +2,7 @@ import { afterEach, beforeEach, describe, expect, it } from 'bun:test';
 import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { AllColumns } from '$lib/utils/constants';
+import { AllColumns } from '$lib/utils/constants/columns';
 import type { PriceListItem } from '$lib/types';
 import { DAILY_GAME_VERSION, DAILY_QUESTION_COUNT, type Question } from '$lib/daily/questions';
 import {

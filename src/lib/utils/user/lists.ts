@@ -1,7 +1,7 @@
 import { lists } from '$lib/global.svelte';
 import type { ListObj } from '$lib/types';
 import { compressToEncodedURIComponent, decompressFromEncodedURIComponent } from 'lz-string';
-import { getRandom } from './helpers';
+import { getRandom } from '../app/share';
 
 export function createListId() {
 	return `${Date.now()}-${getRandom().split('-')[0]}`;

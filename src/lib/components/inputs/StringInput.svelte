@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { components } from '$lib/utils/styles';
+	import { components } from '$lib/utils/ui/styles';
 	import SvelteVirtualList from '@humanspeak/svelte-virtual-list';
 	import { twMerge } from 'tailwind-merge';
 	import Popup from '../widgets/Popup.svelte';
-	import { getRandom } from '$lib/utils/helpers';
+	import { getRandom } from '$lib/utils/app/share';
 	import { isSafari } from '$lib/global.svelte';
-	import { filterAnnotationsToFilter, filterRenameMap } from '$lib/utils/constants';
+	import { filterAnnotationsToFilter, filterRenameMap } from '$lib/utils/constants/display';
 	import Icon from '../widgets/Icon.svelte';
 	import { untrack } from 'svelte';
 	import type { FilterValue } from '$lib/types';

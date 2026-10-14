@@ -18,7 +18,7 @@ only logs to the console, so local work never reaches the dashboards.
 
 ## Custom events
 
-All custom events go through `sendAnalyticsEvent(name, params)` in `src/lib/utils/helpers.ts`,
+All custom events go through `sendAnalyticsEvent(name, params)` in `src/lib/utils/app/analytics.ts`,
 which sends to both Simple Analytics (`sa_event`) and Umami (`umami.track`). Event names and
 payloads are typed by `AnalyticsEventMap` in `src/lib/types.ts`; add new events there first.
 
@@ -44,7 +44,7 @@ payloads are typed by `AnalyticsEventMap` in `src/lib/types.ts`; add new events 
 | `scan_barcode`, `scan_qr_code`                           | The (currently unmounted) barcode scanner finds a product                                                                                                   | Code and link                                                                               |
 
 Share types are `page`, `list`, `product`, `filters`, `similar`, `compare` and `daily_game`
-(`ShareTypes` in `src/lib/utils/constants.ts`).
+(`ShareTypes` in `src/lib/utils/constants/app.ts`).
 
 `show_price_history` and `show_availability` are declared in `AnalyticsEventMap` but nothing sends
 them since those product page sections became always visible.
@@ -54,7 +54,7 @@ from the Umami dashboard.
 
 ## What is stored in the browser
 
-localStorage (keys in `LocalStorageKeys`, `src/lib/utils/constants.ts`):
+localStorage (keys in `LocalStorageKeys`, `src/lib/utils/constants/app.ts`):
 
 | Key                                                 | Contents                                                                             |
 | --------------------------------------------------- | ------------------------------------------------------------------------------------ |
@@ -86,7 +86,7 @@ their CDN. It listens for clicks on outbound, `mailto:` and download links and s
 like `outbound_www_alko_fi`, with the link URL as metadata. The links themselves are ordinary
 links, so no redirect is involved.
 
-`static/linkki.html` (with `generateOutLink()` in `src/lib/utils/helpers.ts`) is the older
+`static/linkki.html` (with `generateOutLink()` in `src/lib/utils/app/share.ts`) is the older
 approach: a `noindex` redirect page that Simple Analytics recorded. It strips the referrer unless
 the link passes `&referrer=1`, and only redirects to http(s) URLs on other hosts. Nothing links
 through it at the moment, but it is kept for possible future use.

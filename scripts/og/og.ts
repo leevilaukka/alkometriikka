@@ -2,7 +2,7 @@ import { CryptoHasher } from 'bun';
 import path from 'node:path';
 import { Resvg } from '@resvg/resvg-js';
 import satori from 'satori';
-import { getSaleInfo, toISODateInTimeZone } from '../../src/lib/utils/sales';
+import { getSaleInfo, toISODateInTimeZone } from '../../src/lib/utils/catalog/sales';
 
 /**
  * Shared Open Graph image helpers for the Alkometriikka product pages.

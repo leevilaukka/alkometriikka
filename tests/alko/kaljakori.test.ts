@@ -1,8 +1,9 @@
 import { beforeEach, describe, expect, it, spyOn } from 'bun:test';
 import { DATASET_INDEX_VERSION, Kaljakori } from '$lib/alko';
-import { AllColumns, DatasetColumns, GenderOptionsMap } from '$lib/utils/constants';
+import { AllColumns, DatasetColumns } from '$lib/utils/constants/columns';
+import { GenderOptionsMap } from '$lib/utils/constants/app';
 import type { AvailabilityData, DatasetRow } from '$lib/types';
-import { parseDataset } from '$lib/utils/dataset';
+import { parseDataset } from '$lib/utils/catalog/dataset';
 
 const header = [...Object.values(DatasetColumns)];
 type Fields = Partial<Record<keyof typeof DatasetColumns, unknown>>;

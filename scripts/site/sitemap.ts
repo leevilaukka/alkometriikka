@@ -5,7 +5,7 @@ import {
 	buildCategoryTree,
 	categorySlug,
 	CATEGORY_BASE_PATH
-} from '../../src/lib/utils/categories.ts';
+} from '../../src/lib/utils/catalog/categories.ts';
 
 type SitemapEntry = {
 	loc: string;

@@ -1,9 +1,9 @@
 <script lang="ts">
 	import Main from '$lib/components/views/Main.svelte';
-	import { generateTitle, resetSEO } from '$lib/utils/helpers';
+	import { generateTitle, resetSEO } from '$lib/utils/app/meta';
 	import type { PageProps } from './$types';
 	import { page } from '$app/state';
-	import { AllColumns } from '$lib/utils/constants';
+	import { AllColumns } from '$lib/utils/constants/columns';
 
 	let { data }: PageProps = $props();
 	resetSEO();

@@ -1,7 +1,7 @@
 import { resolve } from '$app/paths';
 import { redirect } from '@sveltejs/kit';
 import { searchQuery } from '$lib/global.svelte';
-import { shareDestination } from '$lib/utils/shareTarget';
+import { shareDestination } from '$lib/utils/app/shareTarget';
 import type { PageLoad } from './$types';
 
 /** The manifest's share_target: opens what was shared to the installed app */

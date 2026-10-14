@@ -1,9 +1,10 @@
 <script lang="ts">
-	import { AllColumns } from '$lib/utils/constants';
-	import { generateTitle, setSEO, handleShare } from '$lib/utils/helpers';
-	import { formatCampaignWindow, getSaleInfo } from '$lib/utils/sales';
+	import { AllColumns } from '$lib/utils/constants/columns';
+	import { generateTitle, setSEO } from '$lib/utils/app/meta';
+	import { handleShare } from '$lib/utils/app/share';
+	import { formatCampaignWindow, getSaleInfo } from '$lib/utils/catalog/sales';
 	import { twMerge } from 'tailwind-merge';
-	import { components } from '$lib/utils/styles';
+	import { components } from '$lib/utils/ui/styles';
 	import Icon from '../widgets/Icon.svelte';
 	import { type AvailabilityStore, type PriceListItem } from '$lib/types';
 	import { afterNavigate } from '$app/navigation';
@@ -12,14 +13,14 @@
 		buildSizeOptions,
 		findSimilarProducts,
 		SIMILAR_PRODUCT_COLUMNS
-	} from '$lib/utils/filters';
+	} from '$lib/utils/catalog/filters';
 	import {
 		formatStoreDistance,
 		getStoreDistance,
 		rankStoresByDistance
-	} from '$lib/utils/availability';
-	import { generateImageUrl } from '$lib/utils/image';
-	import { productDescription } from '$lib/utils/seo';
+	} from '$lib/utils/catalog/availability';
+	import { generateImageUrl } from '$lib/utils/catalog/alko';
+	import { productDescription } from '$lib/utils/app/seo';
 
 	import ProductBreadcrumb from '../product/ProductBreadcrumb.svelte';
 	import ProductGallery from '../product/ProductGallery.svelte';

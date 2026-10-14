@@ -1,5 +1,6 @@
 import type { ColumnNames } from '$lib/types';
-import { AllColumns, filterToUnitMarker } from './constants';
+import { AllColumns } from '../constants/columns';
+import { filterToUnitMarker } from '../constants/display';
 
 export type FormatOpts = {
 	numberFormatOptions?: Intl.NumberFormatOptions;

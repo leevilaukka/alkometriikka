@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { appPath } from '$lib/utils/paths';
+	import { appPath } from '$lib/utils/app/paths';
 	import { resolve } from '$app/paths';
 	import '../app.css';
 	import { dev } from '$app/environment';
-	import { ContextKeys, LocalStorageKeys } from '$lib/utils/constants';
+	import { ContextKeys, LocalStorageKeys } from '$lib/utils/constants/app';
 	import {
 		compareHighlightDifferences,
 		compareProductIds,
@@ -20,21 +20,22 @@
 	} from '$lib/global.svelte';
 	import logo from '$lib/assets/images/Logo/0.5x/Logo_rounded@0.5x.png';
 	import { twMerge } from 'tailwind-merge';
-	import { components } from '$lib/utils/styles';
+	import { components } from '$lib/utils/ui/styles';
 	import Icon from '$lib/components/widgets/Icon.svelte';
 	import { beforeNavigate, afterNavigate } from '$app/navigation';
 	import { page } from '$app/state';
-	import { SearchParamsManager } from '$lib/utils/url';
-	import { markRouterReady, shareTypeFromRoute, trackSharedView } from '$lib/utils/helpers';
+	import { SearchParamsManager } from '$lib/utils/app/url';
+	import { markRouterReady } from '$lib/utils/app/url';
+	import { shareTypeFromRoute, trackSharedView } from '$lib/utils/app/share';
 	import { setContext } from 'svelte';
 	import Settings from '$lib/components/widgets/Settings/Index.svelte';
 	import CompareBar from '$lib/components/widgets/CompareBar.svelte';
 	import NoticeBanner from '$lib/components/widgets/NoticeBanner.svelte';
 	import InstallBanner from '$lib/components/widgets/InstallBanner.svelte';
-	import { LocalStorageManager } from '$lib/utils/storage';
+	import { LocalStorageManager } from '$lib/utils/app/storage';
 	import type { IconName } from '$lib/icons';
-	import { loadUpdateOnNavigate } from '$lib/utils/pwa.svelte';
-	import { loadFlags } from '$lib/utils/flags.svelte';
+	import { loadUpdateOnNavigate } from '$lib/utils/app/pwa.svelte';
+	import { loadFlags } from '$lib/utils/flags/flags.svelte';
 
 	let { children, data } = $props();
 	loadFlags();

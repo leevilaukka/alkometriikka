@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { components } from '$lib/utils/styles';
+	import { components } from '$lib/utils/ui/styles';
 	import { twMerge } from 'tailwind-merge';
 	import { isMobile } from '$lib/global.svelte';
 	import Popup from '$lib/components/widgets/Popup.svelte';
 	import Icon from '$lib/components/widgets/Icon.svelte';
 	import { version } from '$app/environment';
-	import { sendAnalyticsEvent } from '$lib/utils/helpers';
+	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 	import type { AvailabilityStore } from '$lib/types';
-	import { onSettingsOpenRequested } from '$lib/utils/settings';
+	import { onSettingsOpenRequested } from '$lib/utils/app/settings';
 	import { onMount } from 'svelte';
 	import type { Component } from 'svelte';
 	import { type IconName } from '$lib/icons';

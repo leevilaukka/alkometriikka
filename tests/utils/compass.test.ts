@@ -1,5 +1,5 @@
 import { expect, test } from 'bun:test';
-import { formatDirection, getBearing, unwrapAngle } from '$lib/utils/compass.ts';
+import { formatDirection, getBearing, unwrapAngle } from '$lib/utils/device/compass.ts';
 
 const helsinki = { latitude: 60.1699, longitude: 24.9384 };
 

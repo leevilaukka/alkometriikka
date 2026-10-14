@@ -1,7 +1,7 @@
 import { resolve } from '$app/paths';
 import { dev } from '$app/environment';
-import { LocalStorageKeys } from './constants';
-import { LocalStorageManager } from './storage';
+import { LocalStorageKeys } from '../constants/app';
+import { LocalStorageManager } from '../app/storage';
 import {
 	applyOverrideParams,
 	flagSessionData,

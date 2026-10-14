@@ -4,7 +4,7 @@ The numbers Alkometriikka derives from Alko's data, and the rules behind them.
 
 ## Drunk values
 
-`calculateDrunkValue` (`src/lib/utils/alko.ts`) computes six columns for every product, and the
+`calculateDrunkValue` (`src/lib/utils/catalog/alko.ts`) computes six columns for every product, and the
 same function powers the calculator at `/laskin`.
 
 Inputs: package size `V` (l), alcohol `p` (%), price `P` (€), and the user's weight `m` (kg) and
@@ -26,7 +26,7 @@ settings updates `personalInfo`; views that depend on it (lists, categories, sta
 
 ## Sales
 
-`getSaleInfo` (`src/lib/utils/sales.ts`), shared by the app, the sync, the prerender and RSS.
+`getSaleInfo` (`src/lib/utils/catalog/sales.ts`), shared by the app, the sync, the prerender and RSS.
 
 A product is **on sale** when:
 
@@ -41,7 +41,7 @@ periods (`ProductPriceHistory.svelte`).
 
 ## Quality metrics ("Hinta-laatu")
 
-`computeQualityMetrics` (`src/lib/utils/metrics.ts`) ranks a product against its peers on the
+`computeQualityMetrics` (`src/lib/utils/stats/metrics.ts`) ranks a product against its peers on the
 product page. Peers are the active products in the same category page (the Alatyyppi, or the whole
 Tyyppi when the user switches to the parent category).
 
@@ -64,7 +64,7 @@ percentile so a few extreme bottles don't flatten it; values outside are counted
 `pickCategoryHighlights` picks up to four products for the category's "compare highlights" link:
 most alcohol per euro, cheapest, lowest price per litre, then the next best by alcohol per euro.
 
-`src/lib/utils/stats.ts` has the whole-catalog equivalents used by `/tilastot`: banded histograms
+`src/lib/utils/stats/stats.ts` has the whole-catalog equivalents used by `/tilastot`: banded histograms
 (price, price per litre, ABV), category/subcategory/country distributions, summary totals, and
 the best-value ranking.
 
@@ -74,7 +74,7 @@ the best-value ranking.
 change on or after `since`, newest first. A change is two consecutive price-history points with
 different prices. It's flagged as a sale when the new point has a `normalPrice` above its price.
 The price changes page and the category sidebar use it; formatting and URL helpers are in
-`src/lib/utils/priceChanges.ts`.
+`src/lib/utils/stats/priceChanges.ts`.
 
 ## Comparison
 
@@ -86,7 +86,7 @@ without an objectively better direction (country, colour, bitterness…) are nev
 
 ## Similar products
 
-`findSimilarProducts` (`src/lib/utils/filters.ts`) scores every product against the target on
+`findSimilarProducts` (`src/lib/utils/catalog/filters.ts`) scores every product against the target on
 `SIMILAR_PRODUCT_COLUMNS` (Tyyppi, Alatyyppi, Oluttyyppi, Hinta, Pullokoko, Sokeri,
 Pakkaustyyppi, Alkoholigrammat / €, Rypäleet, Luonnehdinta):
 
@@ -100,7 +100,7 @@ The product page shows the top 24 active products; `/vastaavat/[id]` lists them 
 ## Other sizes
 
 The product page's size selector ("Pakkauskoko") lists other packages of the same drink, found by
-`ProductVariantIndex` (`src/lib/utils/product-variants.ts`). Fuzzy name similarity was tried and
+`ProductVariantIndex` (`src/lib/utils/catalog/productVariants.ts`). Fuzzy name similarity was tried and
 rejected: it matched different drinks whose names differ by one meaningful token (Sober Spirits
 G/R/W, IPA vs Lager, Glenfiddich 12 vs 18). The research is in
 [`notes/product-size-matching-research.md`](../../notes/product-size-matching-research.md).
