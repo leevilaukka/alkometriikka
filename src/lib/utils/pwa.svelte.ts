@@ -14,6 +14,15 @@ const isIOS =
 	/iP(hone|ad|od)/.test(navigator.platform) ||
 	(navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
 
+/**
+ * Browsers built into other apps (Instagram, Facebook, TikTok…) have no Add to Home Screen, so
+ * iOS steps would lead nowhere there. They name themselves in the user agent
+ */
+const inAppBrowser =
+	/FBAN|FBAV|FB_IAB|Instagram|LinkedInApp|TikTok|musical_ly|BytedanceWebview|Snapchat|Pinterest|Line\/|GSA\//i.test(
+		navigator.userAgent
+	);
+
 /** Caught by app.html until this module loads, then here */
 let installPrompt = $state<BeforeInstallPromptEvent | null>(
 	(window as Window & { installPrompt?: BeforeInstallPromptEvent }).installPrompt ?? null
@@ -53,7 +62,7 @@ export const install = {
 	},
 	/** iOS has no prompt, so visitors add the app from the share menu themselves */
 	get needsManualSteps() {
-		return !installed && isIOS;
+		return !installed && isIOS && !inAppBrowser;
 	},
 	/** Suggest installing to visitors who keep coming back, until they close the banner */
 	get showBanner() {

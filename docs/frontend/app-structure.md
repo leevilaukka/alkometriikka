@@ -106,7 +106,7 @@ Product photos from `images.alko.fi` aren't handled: they are sent with a one-ye
 - **Install button**: Settings → Lisäasetukset offers installing. `app.html` keeps Chrome's
   `beforeinstallprompt` event (it can fire before the app's code loads) and
   `src/lib/utils/pwa.svelte.ts` shows its prompt from the button. iOS has no prompt, so it gets the
-  Add to Home Screen steps instead; inside the installed app the section is hidden. The same
+  Add to Home Screen steps instead, except in apps' built-in browsers (Instagram, Facebook…), which can't add to the home screen. Inside the installed app the section is hidden. The same
   offer shows as a banner under the header (`InstallBanner.svelte`) from the second day the site
   is used on (`BANNER_AFTER_DAYS`), until it's closed or the browser's install dialog is turned
   down.
