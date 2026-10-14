@@ -1,4 +1,5 @@
 import type { BeforeNavigate } from '@sveltejs/kit';
+import { updated } from '$app/state';
 import { sendAnalyticsEvent } from '$lib/utils/helpers';
 import { LocalStorageKeys } from '$lib/utils/constants';
 import { LocalStorageManager } from '$lib/utils/storage';
@@ -112,7 +113,7 @@ const UPDATE_CHECK_INTERVAL_MS = 10 * 60 * 1000;
 
 let lastUpdateCheck = Date.now();
 let controlled = !!navigator.serviceWorker?.controller;
-/** A new deploy's service worker took over while this page was open */
+/** A new deploy's service worker took over while this page was open, and this page is older than it */
 let updateReady = false;
 
 // An installed app can stay open in the background for days, and the browser only checks for a
@@ -129,7 +130,13 @@ document.addEventListener('visibilitychange', () => {
 
 // The first worker taking over an uncontrolled page is just the first install, not an update
 navigator.serviceWorker?.addEventListener('controllerchange', () => {
-	if (controlled) updateReady = true;
+	// The page itself may already be from the new deploy (a new worker often takes over right
+	// after loading it), and then a full reload would be wasted, so compare versions first
+	if (controlled)
+		updated.check().then(
+			(outdated) => (updateReady = outdated),
+			() => {}
+		);
 	controlled = true;
 });
 
