@@ -50,6 +50,7 @@ bun run daily --dev
 | `daily`                                   | Bake Daily manifests and archive finished days                                  |
 | `backup:daily`                            | Upload the Daily archive tarball to R2                                          |
 | `og:images`                               | Render/upload product OG images                                                 |
+| `pwa:splash`                              | Regenerate the iOS launch screens and their script in `src/app.html`            |
 | `sitemap`                                 | Write `sitemap.xml`                                                             |
 | `prerender:products` / `prerender:static` | The two prerender steps of `build`, runnable on their own                       |
 | `r2`                                      | R2 maintenance CLI (`count`, `list`, `rm`, `prune-daily`)                       |

@@ -60,6 +60,36 @@
 		<link rel="icon" type="image/svg+xml" href="%sveltekit.assets%/images/logo/Alkometriikka.svg" />
 		<link rel="icon" type="image/png" sizes="32x32" href="%sveltekit.assets%/ios/32.png" />
 		<link rel="apple-touch-icon" sizes="180x180" href="%sveltekit.assets%/ios/180.png" />
+		<!-- iOS reads launch screens only for home screen apps that declare themselves capable -->
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-title" content="Alkometriikka" />
+		<!-- iOS splash screens start (bun run pwa:splash) -->
+		<script>
+			// Launch screens for the app installed on iOS; other browsers never use them
+			if (
+				/iP(hone|ad|od)/.test(navigator.platform) ||
+				(navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+			) {
+				const screens =
+					'440x956x3 420x912x3 402x874x3 430x932x3 393x852x3 428x926x3 390x844x3 375x812x3 414x896x3 414x896x2 414x736x3 375x667x2 320x568x2 1032x1376x2 1024x1366x2 834x1210x2 834x1194x2 820x1180x2 834x1112x2 810x1080x2 768x1024x2 744x1133x2';
+				for (const screen of screens.split(' ')) {
+					const [width, height, ratio] = screen.split('x').map(Number);
+					for (const orientation of ['portrait', 'landscape']) {
+						const [w, h] = orientation === 'portrait' ? [width, height] : [height, width];
+						for (const scheme of ['light', 'dark']) {
+							const link = document.createElement('link');
+							link.rel = 'apple-touch-startup-image';
+							// device-width and device-height stay the portrait values in landscape
+							link.media = `(device-width: ${width}px) and (device-height: ${height}px) and (-webkit-device-pixel-ratio: ${ratio}) and (orientation: ${orientation}) and (prefers-color-scheme: ${scheme})`;
+							link.href = `%sveltekit.assets%/ios/splash/${w * ratio}x${h * ratio}-${scheme}.png`;
+							document.head.append(link);
+						}
+					}
+				}
+			}
+		</script>
+		<!-- iOS splash screens end -->
 		<link rel="manifest" href="%sveltekit.assets%/manifest.json" />
 		<link
 			rel="alternate"
@@ -73,8 +103,9 @@
 			title="Alkometriikka – uutuudet ja hintamuutokset"
 			href="%sveltekit.assets%/feed.json"
 		/>
+		<!-- Match #main-loader; the layout switches both to the header colour once it's gone -->
 		<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)" />
-		<meta name="theme-color" content="#18181b" media="(prefers-color-scheme: dark)" />
+		<meta name="theme-color" content="#52000A" media="(prefers-color-scheme: dark)" />
 		<title>Alkometriikka</title>
 		%sveltekit.head%
 		<style>

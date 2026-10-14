@@ -62,17 +62,22 @@ bar.
 `src/service-worker.ts` makes the app work offline after one online visit. It only handles
 same-origin GET requests:
 
-| Request                                                          | Strategy                                                    |
-| ---------------------------------------------------------------- | ----------------------------------------------------------- |
-| Page navigations                                                 | Network; offline, the cached `404.html` shell boots the SPA |
-| `_app/immutable/*` and the precached icons                       | Cache first (refreshed with each deploy)                    |
-| Other `.json` (`data.json`, `availability.json`, notices, Daily) | Network first, with a timeout; see below                    |
+| Request                                                          | Strategy                                 |
+| ---------------------------------------------------------------- | ---------------------------------------- |
+| Page navigations                                                 | Network, with a timeout; see below       |
+| `_app/immutable/*` and the precached icons                       | Cache first (refreshed with each deploy) |
+| Other `.json` (`data.json`, `availability.json`, notices, Daily) | Network first, with a timeout; see below |
 
 On install it precaches the whole `_app` build (minus the icon font's woff and ttf fallbacks),
 the logo, favicon and manifest, and the shell, all in a cache named after `version`. The shell is
 fetched with `cache: 'reload'` so it matches that deploy's `_app` files. The new worker activates
 at once and deletes the previous version's cache. Runtime JSON lives in a separate `data` cache
 that survives deploys.
+
+Page navigations use navigation preload, so the page download starts while the worker boots. If the
+page takes longer than 3 seconds (`NAVIGATE_TIMEOUT_MS`) or the network fails, the cached shell is
+served instead and the SPA routes client-side, so launching the installed app on a weak signal
+doesn't sit on a blank screen.
 
 Runtime JSON is fetched fresh, but once a stored copy exists the worker waits at most 5 seconds
 (`DATA_TIMEOUT_MS`) for the whole file before serving that copy instead. The download carries on
@@ -86,6 +91,24 @@ it imports from `src/lib` with relative paths, and `bun run check` doesn't type-
 
 Product photos from `images.alko.fi` aren't handled: they are sent with a one-year
 `max-age`, so photos already seen load from the HTTP cache offline anyway.
+
+## Installed app
+
+- **Manifest** (`static/manifest.json`): shortcuts use the trailing-slash URLs the router expects,
+  `launch_handler` reuses an open app window, and `share_target` receives shares (see the `/jaa/`
+  route below). Its screenshots (`static/images/screenshots/`, shown in Chrome's install dialog)
+  are captured by hand from a production build in light mode: phone at 390×844 @3x, desktop at
+  1440×900 @1.5x, saved as WebP. Retake them when the pages they show change noticeably.
+- **System bar colour**: `app.html`'s `theme-color` tags match the loader (white, or `#52000A` in
+  dark mode). Once the loader is gone, `+layout.svelte` sets them to the header colour of the
+  app's own theme, which can differ from the OS one.
+- **`color-scheme`** follows the app's `dark` class, so scrollbars and form controls match.
+- **iOS launch screens**: iOS ignores the manifest's splash and needs an `apple-touch-startup-image`
+  per screen size, orientation and colour scheme. `bun run pwa:splash`
+  (`scripts/pwa/ios-splash.ts`) draws the loader's first frame into `static/ios/splash/` and
+  writes an inline script into `app.html` between its markers that adds the 88 link tags on
+  iPhones and iPads only. As plain tags they'd add ~21 KB to every prerendered page (~300 MB
+  across the site). Rerun it when Apple ships a new screen size or the loader changes.
 
 ## Routes
 
@@ -108,6 +131,7 @@ Product photos from `images.alko.fi` aren't handled: they are sent with a one-ye
 | `/daily`                          | Daily quiz                             |                                                                                        |
 | `/daily/arkisto`                  | Daily archive calendar                 |                                                                                        |
 | `/daily/arkisto/[date]`           | One archived Daily game                |                                                                                        |
+| `/jaa/?title=&text=&url=`         | Redirect for content shared to the app | Opens the product an Alko link points to, otherwise searches the shared words          |
 
 `src/routes/+error.svelte` and `src/routes/myymalat/+error.svelte` render 404s and other errors.
 Each page is described in [Features](features.md).

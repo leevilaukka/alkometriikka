@@ -2,7 +2,7 @@ import { cva } from 'class-variance-authority';
 
 export const components = {
 	button: cva(
-		'flex flex-nowrap items-center justify-center gap-2 w-fit rounded px-2 py-1 no-underline transition hover:cursor-pointer',
+		'flex flex-nowrap items-center justify-center gap-2 w-fit rounded px-2 py-1 no-underline select-none transition hover:cursor-pointer',
 		{
 			variants: {
 				type: {

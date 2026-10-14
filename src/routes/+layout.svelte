@@ -78,9 +78,21 @@
 
 	const mql = window.matchMedia('(prefers-color-scheme: dark)');
 
+	/**
+	 * Colours the browser and system bars like the header under them. Until the loader is gone,
+	 * app.html's own theme-color tags match the loader instead, which follows the OS scheme
+	 */
+	function syncThemeColor() {
+		if (!document.getElementById('main-loader')?.classList.contains('shift')) return;
+		const color = document.documentElement.classList.contains('dark') ? '#18181b' : '#ffffff';
+		for (const meta of document.querySelectorAll<HTMLMetaElement>('meta[name="theme-color"]'))
+			meta.content = color;
+	}
+
 	function handleDarkModeChange(event: MediaQueryListEvent) {
 		if (event.matches) document.documentElement.classList.add('dark');
 		else document.documentElement.classList.remove('dark');
+		syncThemeColor();
 	}
 
 	theme.subscribe((value) => {
@@ -92,6 +104,7 @@
 			else document.documentElement.classList.remove('dark');
 			mql.addEventListener('change', handleDarkModeChange);
 		}
+		syncThemeColor();
 	});
 
 	window.addEventListener('resize', () => {
@@ -123,6 +136,7 @@
 
 	function shiftLoader() {
 		document.getElementById('main-loader')?.classList.add('shift');
+		syncThemeColor();
 	}
 
 	let extraMenu = $state<HTMLDetailsElement>();

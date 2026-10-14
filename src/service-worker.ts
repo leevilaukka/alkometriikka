@@ -15,6 +15,8 @@ const APP_CACHE = `app-${version}`;
 const DATA_CACHE = 'data';
 /** How long fresh data may take to download before the stored copy is shown instead */
 const DATA_TIMEOUT_MS = 5000;
+/** How long a page may take to download before the shell is shown instead, so a weak signal doesn't hold up launch */
+const NAVIGATE_TIMEOUT_MS = 3000;
 
 /**
  * The SPA shell. Every route boots from it, and it references `_app` with absolute paths,
@@ -53,6 +55,8 @@ sw.addEventListener('activate', (event) => {
 			for (const key of await caches.keys()) {
 				if (key !== APP_CACHE && key !== DATA_CACHE) await caches.delete(key);
 			}
+			// Starts the page download while the worker boots, instead of after
+			await sw.registration.navigationPreload?.enable();
 			await sw.clients.claim();
 		})()
 	);
@@ -110,13 +114,16 @@ async function cacheFirst(event: FetchEvent) {
 }
 
 async function navigate(event: FetchEvent) {
-	try {
-		return await fetch(event.request);
-	} catch (error) {
-		const shell = await caches.match(SHELL, { cacheName: APP_CACHE });
-		if (shell) return shell;
-		throw error;
-	}
+	const page = Promise.resolve(event.preloadResponse).then(
+		(preloaded: Response | undefined) => preloaded ?? fetch(event.request)
+	);
+	const shell = await caches.match(SHELL, { cacheName: APP_CACHE });
+	if (!shell) return page;
+
+	page.catch(() => {});
+	const timeout = new Promise<undefined>((resolve) => setTimeout(resolve, NAVIGATE_TIMEOUT_MS));
+	const response = await Promise.race([page, timeout]).catch(() => undefined);
+	return response ?? shell;
 }
 
 sw.addEventListener('fetch', (event) => {
@@ -127,8 +134,8 @@ sw.addEventListener('fetch', (event) => {
 	if (url.origin !== sw.location.origin) return;
 
 	if (request.mode === 'navigate') {
-		// Pages come from the network so stubs and redirects stay current; offline, the shell
-		// boots the SPA and routes client-side
+		// Pages come from the network so stubs and redirects stay current; offline or slow, the
+		// shell boots the SPA and routes client-side
 		event.respondWith(navigate(event));
 	} else if (url.pathname.startsWith(`${base}/_app/immutable/`)) {
 		// Hashed, so a cached copy is never stale. Covers files skipped by the precache

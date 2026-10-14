@@ -204,6 +204,11 @@ and link to the clipboard. Shared links get a random `sid` parameter; when someo
 a `shared_<type>_viewed` analytics event is sent once and `sid` is removed from the URL. The
 sharer's own sid is remembered so their visit isn't counted.
 
+The installed app is also a share target: sharing an Alko product page (from the Alko site or
+app) to Alkometriikka opens that product, and sharing plain text searches for it. The manifest
+sends shares to `/jaa/`, and `shareDestination()` in `src/lib/utils/shareTarget.ts` picks where
+they go.
+
 ## Outbound links
 
 External links are plain links. Clicks on them are recorded by the local copy of Simple

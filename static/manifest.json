@@ -3,6 +3,13 @@
     "short_name": "Alkometriikka",
     "name": "Alkometriikka",
     "description": "Alkometriikka - Vertaile tuotteita helposti ja nopeasti!",
+    "lang": "fi",
+    "dir": "ltr",
+    "categories": [
+        "shopping",
+        "food",
+        "lifestyle"
+    ],
     "icons": [
         {
             "src": "windows11/SmallTile.scale-100.png",
@@ -464,128 +471,203 @@
             "src": "ios/1024.png",
             "sizes": "1024x1024"
         }
-    ], 
+    ],
     "start_url": "/",
     "scope": "/",
     "id": "/",
     "screenshots": [
         {
-            "src": "/images/visual_1.png",
-            "sizes": "1080x1920",
-            "type": "image/png"
+            "src": "/images/screenshots/narrow-1-tuotteet.webp",
+            "sizes": "1170x2532",
+            "type": "image/webp",
+            "form_factor": "narrow",
+            "label": "Koko Alkon valikoima järjestettynä alkoholigrammoina per euro"
         },
         {
-            "src": "/images/visual_2.png",
-            "sizes": "1920x1080",
-            "type": "image/png",
-            "form_factor": "wide"
+            "src": "/images/screenshots/narrow-2-tuote.webp",
+            "sizes": "1170x2532",
+            "type": "image/webp",
+            "form_factor": "narrow",
+            "label": "Tuotesivu: hinta, litrahinta ja tuotetiedot"
+        },
+        {
+            "src": "/images/screenshots/narrow-3-kategoria.webp",
+            "sizes": "1170x2532",
+            "type": "image/webp",
+            "form_factor": "narrow",
+            "label": "Kategorian parhaat tuotteet"
+        },
+        {
+            "src": "/images/screenshots/narrow-4-hinnanmuutokset.webp",
+            "sizes": "1170x2532",
+            "type": "image/webp",
+            "form_factor": "narrow",
+            "label": "Viimeisimmät hinnanmuutokset"
+        },
+        {
+            "src": "/images/screenshots/narrow-5-daily.webp",
+            "sizes": "1170x2532",
+            "type": "image/webp",
+            "form_factor": "narrow",
+            "label": "Daily: päivän Alko-visa"
+        },
+        {
+            "src": "/images/screenshots/wide-1-tuotteet.webp",
+            "sizes": "2160x1350",
+            "type": "image/webp",
+            "form_factor": "wide",
+            "label": "Suodata ja järjestä koko Alkon valikoima"
+        },
+        {
+            "src": "/images/screenshots/wide-2-tuote.webp",
+            "sizes": "2160x1350",
+            "type": "image/webp",
+            "form_factor": "wide",
+            "label": "Tuotesivu ja hinta-laatuvertailu samankaltaisiin"
+        },
+        {
+            "src": "/images/screenshots/wide-3-vertailu.webp",
+            "sizes": "2160x1350",
+            "type": "image/webp",
+            "form_factor": "wide",
+            "label": "Vertaa tuotteita rinnakkain"
+        },
+        {
+            "src": "/images/screenshots/wide-4-hinnanmuutokset.webp",
+            "sizes": "2160x1350",
+            "type": "image/webp",
+            "form_factor": "wide",
+            "label": "Viimeisimmät hinnanmuutokset"
+        },
+        {
+            "src": "/images/screenshots/wide-5-tilastot.webp",
+            "sizes": "2160x1350",
+            "type": "image/webp",
+            "form_factor": "wide",
+            "label": "Tilastoja Alkon valikoimasta"
         }
     ],
     "display": "standalone",
     "theme_color": "#ffffff",
     "background_color": "#ffffff",
-        "shortcuts": [
-            {
-                "name": "Daily",
-                "short_name": "Daily",
-                "url": "/daily",
-                "icons": [
-                    {
-                        "src": "/shortcuts/daily-96.png",
-                        "sizes": "96x96",
-                        "type": "image/png"
-                    },
-                    {
-                        "src": "/shortcuts/daily-192.png",
-                        "sizes": "192x192",
-                        "type": "image/png"
-                    }
-                ]
-            },
-            {
-                "name": "Omat listat",
-                "short_name": "Listat",
-                "url": "/listat",
-                "icons": [
-                    {
-                        "src": "/shortcuts/listat-96.png",
-                        "sizes": "96x96",
-                        "type": "image/png"
-                    },
-                    {
-                        "src": "/shortcuts/listat-192.png",
-                        "sizes": "192x192",
-                        "type": "image/png"
-                    }
-                ]
-            },
-            {
-                "name": "Myymälät",
-                "short_name": "Myymälät",
-                "url": "/myymalat",
-                "icons": [
-                    {
-                        "src": "/shortcuts/myymalat-96.png",
-                        "sizes": "96x96",
-                        "type": "image/png"
-                    },
-                    {
-                        "src": "/shortcuts/myymalat-192.png",
-                        "sizes": "192x192",
-                        "type": "image/png"
-                    }
-                ]
-            },
-            {
-                "name": "Kategoriat",
-                "short_name": "Kategoriat",
-                "url": "/kategoriat/",
-                "icons": [
-                    {
-                        "src": "/shortcuts/kategoriat-96.png",
-                        "sizes": "96x96",
-                        "type": "image/png"
-                    },
-                    {
-                        "src": "/shortcuts/kategoriat-192.png",
-                        "sizes": "192x192",
-                        "type": "image/png"
-                    }
-                ]
-            },
-            {
-                "name": "Laskin",
-                "short_name": "Laskin",
-                "url": "/laskin",
-                "icons": [
-                    {
-                        "src": "/shortcuts/laskin-96.png",
-                        "sizes": "96x96",
-                        "type": "image/png"
-                    },
-                    {
-                        "src": "/shortcuts/laskin-192.png",
-                        "sizes": "192x192",
-                        "type": "image/png"
-                    }
-                ]
-            },
-            {
-                "name": "Tilastot",
-                "short_name": "Tilastot",
-                "url": "/tilastot",
-                "icons": [
-                    {
-                        "src": "/shortcuts/tilastot-96.png",
-                        "sizes": "96x96",
-                        "type": "image/png"
-                    },
-                    {
-                        "src": "/shortcuts/tilastot-192.png",
-                        "sizes": "192x192",
-                        "type": "image/png"
-                    }
-                ]
-            }
+    "shortcuts": [
+        {
+            "name": "Daily",
+            "short_name": "Daily",
+            "url": "/daily/",
+            "icons": [
+                {
+                    "src": "/shortcuts/daily-96.png",
+                    "sizes": "96x96",
+                    "type": "image/png"
+                },
+                {
+                    "src": "/shortcuts/daily-192.png",
+                    "sizes": "192x192",
+                    "type": "image/png"
+                }
+            ]
+        },
+        {
+            "name": "Omat listat",
+            "short_name": "Listat",
+            "url": "/listat/",
+            "icons": [
+                {
+                    "src": "/shortcuts/listat-96.png",
+                    "sizes": "96x96",
+                    "type": "image/png"
+                },
+                {
+                    "src": "/shortcuts/listat-192.png",
+                    "sizes": "192x192",
+                    "type": "image/png"
+                }
+            ]
+        },
+        {
+            "name": "Myymälät",
+            "short_name": "Myymälät",
+            "url": "/myymalat/",
+            "icons": [
+                {
+                    "src": "/shortcuts/myymalat-96.png",
+                    "sizes": "96x96",
+                    "type": "image/png"
+                },
+                {
+                    "src": "/shortcuts/myymalat-192.png",
+                    "sizes": "192x192",
+                    "type": "image/png"
+                }
+            ]
+        },
+        {
+            "name": "Kategoriat",
+            "short_name": "Kategoriat",
+            "url": "/kategoriat/",
+            "icons": [
+                {
+                    "src": "/shortcuts/kategoriat-96.png",
+                    "sizes": "96x96",
+                    "type": "image/png"
+                },
+                {
+                    "src": "/shortcuts/kategoriat-192.png",
+                    "sizes": "192x192",
+                    "type": "image/png"
+                }
+            ]
+        },
+        {
+            "name": "Laskin",
+            "short_name": "Laskin",
+            "url": "/laskin/",
+            "icons": [
+                {
+                    "src": "/shortcuts/laskin-96.png",
+                    "sizes": "96x96",
+                    "type": "image/png"
+                },
+                {
+                    "src": "/shortcuts/laskin-192.png",
+                    "sizes": "192x192",
+                    "type": "image/png"
+                }
+            ]
+        },
+        {
+            "name": "Tilastot",
+            "short_name": "Tilastot",
+            "url": "/tilastot/",
+            "icons": [
+                {
+                    "src": "/shortcuts/tilastot-96.png",
+                    "sizes": "96x96",
+                    "type": "image/png"
+                },
+                {
+                    "src": "/shortcuts/tilastot-192.png",
+                    "sizes": "192x192",
+                    "type": "image/png"
+                }
+            ]
+        }
+    ],
+    "launch_handler": {
+        "client_mode": [
+            "navigate-existing",
+            "auto"
         ]
+    },
+    "share_target": {
+        "action": "/jaa/",
+        "method": "GET",
+        "enctype": "application/x-www-form-urlencoded",
+        "params": {
+            "title": "title",
+            "text": "text",
+            "url": "url"
+        }
+    }
 }
