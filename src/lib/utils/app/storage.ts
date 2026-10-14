@@ -24,7 +24,7 @@ type LocalStorageValueMap = {
 	[LocalStorageKeys.CompareHighlightDifferences]: boolean;
 	[LocalStorageKeys.DismissedNotices]: string[];
 	[LocalStorageKeys.FlagOverrides]: Record<string, boolean>;
-	/** Random and anonymous, only used to place the visitor in a flag's rollout */
+	/** Random and anonymous, only created once a flag with a rollout needs to place the visitor */
 	[LocalStorageKeys.FlagVisitorId]: string;
 	/** Recent days the site was used on (local dates), and whether the install banner was closed */
 	[LocalStorageKeys.InstallBanner]: { days: string[]; dismissed?: boolean };

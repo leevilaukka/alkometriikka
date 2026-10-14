@@ -11,6 +11,7 @@ import {
 	type Flags
 } from './flags';
 
+/** Only called once a flag with a rollout is evaluated, so visitors outside any rollout get no id. */
 function getVisitorId() {
 	let id = LocalStorageManager.getItem(LocalStorageKeys.FlagVisitorId);
 	if (!id) {
@@ -31,7 +32,6 @@ function readOverrides(): FlagOverrides {
 
 const state = $state<{ flags: Flags; loaded: boolean }>({ flags: {}, loaded: false });
 const overrides = readOverrides();
-const visitorId = getVisitorId();
 
 /**
  * Use `flags.on('name')` in templates and deriveds. Flags are off until `flags.json` has loaded
@@ -41,7 +41,7 @@ const visitorId = getVisitorId();
  */
 export const flags = {
 	on(name: string): boolean {
-		return isFlagOn(name, state.flags, overrides, visitorId);
+		return isFlagOn(name, state.flags, overrides, getVisitorId);
 	},
 	/** True once `flags.json` has loaded, for UI that shouldn't flash from the old to the new variant. */
 	get loaded() {
@@ -54,7 +54,7 @@ export const flags = {
  * events can be filtered or compared by flag. Nothing is sent while no flag is on.
  */
 function reportFlags() {
-	const data = flagSessionData(state.flags, overrides, visitorId);
+	const data = flagSessionData(state.flags, overrides, getVisitorId);
 	if (dev || !Object.keys(data).length) return;
 	const identify = () => window.umami?.identify(data);
 	// The analytics script is deferred, so it may not have run yet

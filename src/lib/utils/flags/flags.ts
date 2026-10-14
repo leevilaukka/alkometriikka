@@ -85,16 +85,22 @@ export function rolloutBucket(visitorId: string, name: string): number {
 	return (hash >>> 0) % 100;
 }
 
+/** The visitor id, or a function creating it, so it's only made once a flag needs it. */
+export type VisitorId = string | (() => string);
+
 export function isFlagOn(
 	name: string,
 	flags: Flags,
 	overrides: FlagOverrides,
-	visitorId: string
+	visitorId: VisitorId
 ): boolean {
 	if (name in overrides) return overrides[name];
 	const flag = flags[name];
 	if (!flag?.enabled) return false;
-	return flag.rollout === undefined || rolloutBucket(visitorId, name) < flag.rollout;
+	if (flag.rollout === undefined) return true;
+	return (
+		rolloutBucket(typeof visitorId === 'function' ? visitorId() : visitorId, name) < flag.rollout
+	);
 }
 
 /**
@@ -104,7 +110,7 @@ export function isFlagOn(
 export function flagSessionData(
 	flags: Flags,
 	overrides: FlagOverrides,
-	visitorId: string
+	visitorId: VisitorId
 ): Record<string, boolean> {
 	const data: Record<string, boolean> = {};
 	for (const name of new Set([...Object.keys(flags), ...Object.keys(overrides)]))
