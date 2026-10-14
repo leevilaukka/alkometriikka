@@ -43,6 +43,24 @@ addEventListener('appinstalled', () => {
 	sendAnalyticsEvent('app_installed');
 });
 
+const LAUNCH_SENT_KEY = 'pwa_launch_sent';
+
+// iOS never tells the page about installs, so count use of the installed app instead, once per
+// launch. After `load`, since the analytics scripts load async and aren't there before it
+if (installed) {
+	const sendLaunch = () => {
+		try {
+			if (sessionStorage.getItem(LAUNCH_SENT_KEY)) return;
+			sessionStorage.setItem(LAUNCH_SENT_KEY, '1');
+		} catch {
+			// Storage blocked; count every page load rather than none
+		}
+		sendAnalyticsEvent('pwa_launch');
+	};
+	if (document.readyState === 'complete') sendLaunch();
+	else addEventListener('load', sendLaunch, { once: true });
+}
+
 /** Days the site has to be used on before the banner suggests installing */
 const BANNER_AFTER_DAYS = 2;
 

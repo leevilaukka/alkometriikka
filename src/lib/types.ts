@@ -201,6 +201,7 @@ export type AnalyticsEventMap = {
 	import_data: undefined;
 	install_app: { outcome: 'accepted' | 'dismissed'; source: 'settings' | 'banner' };
 	app_installed: undefined;
+	pwa_launch: undefined;
 	dismiss_install_banner: undefined;
 	create_list: undefined;
 	save_list: { url?: string };
