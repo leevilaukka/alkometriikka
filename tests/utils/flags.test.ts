@@ -90,14 +90,14 @@ describe('isFlagOn', () => {
 });
 
 describe('flagSessionData', () => {
-	it('reports every published and overridden flag as on or off', () => {
+	it('reports only the published and overridden flags that are on', () => {
 		expect(
 			flagSessionData(
 				{ a: { enabled: true }, b: { enabled: false }, c: { enabled: true, rollout: 0 } },
 				{ b: true, d: false },
 				'v'
 			)
-		).toEqual({ flag_a: true, flag_b: true, flag_c: false, flag_d: false });
+		).toEqual({ flag_a: true, flag_b: true });
 	});
 
 	it('is empty without flags', () => {
