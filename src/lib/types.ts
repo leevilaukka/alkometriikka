@@ -199,6 +199,9 @@ export type AnalyticsEventMap = {
 	open_settings: undefined;
 	export_data: undefined;
 	import_data: undefined;
+	install_app: { outcome: 'accepted' | 'dismissed'; source: 'settings' | 'banner' };
+	app_installed: undefined;
+	dismiss_install_banner: undefined;
 	create_list: undefined;
 	save_list: { url?: string };
 	view_sizes: { product_number: string };

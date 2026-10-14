@@ -23,6 +23,8 @@ type LocalStorageValueMap = {
 	[LocalStorageKeys.CompareProducts]: string[];
 	[LocalStorageKeys.CompareHighlightDifferences]: boolean;
 	[LocalStorageKeys.DismissedNotices]: string[];
+	/** Recent days the site was used on (local dates), and whether the install banner was closed */
+	[LocalStorageKeys.InstallBanner]: { days: string[]; dismissed?: boolean };
 	[LocalStorageKeys.DailyGame]: SavedDailyGame;
 	[LocalStorageKeys.DailyStreak]: DailyStreak;
 	[LocalStorageKeys.DailyUnlimitedRun]: UnlimitedRunState;

@@ -327,6 +327,7 @@ export const LocalStorageKeys = {
 	CompareProducts: 'compare_products',
 	CompareHighlightDifferences: 'compare_highlight_differences',
 	DismissedNotices: 'dismissed_notices',
+	InstallBanner: 'install_banner',
 	DailyGame: 'alkometriikka-daily-v1',
 	DailyStreak: 'alkometriikka-daily-streak-v1',
 	DailyUnlimitedRun: 'alkometriikka-daily-unlimited-v1',

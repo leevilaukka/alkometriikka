@@ -30,8 +30,10 @@
 	import Settings from '$lib/components/widgets/Settings/Index.svelte';
 	import CompareBar from '$lib/components/widgets/CompareBar.svelte';
 	import NoticeBanner from '$lib/components/widgets/NoticeBanner.svelte';
+	import InstallBanner from '$lib/components/widgets/InstallBanner.svelte';
 	import { LocalStorageManager } from '$lib/utils/storage';
 	import type { IconName } from '$lib/icons';
+	import { loadUpdateOnNavigate } from '$lib/utils/pwa.svelte';
 
 	let { children, data } = $props();
 	let searchParamsManager = new SearchParamsManager(page.url);
@@ -112,7 +114,9 @@
 		$isLaptop = window.matchMedia('(width < 1280px)').matches;
 	});
 
-	beforeNavigate(({ to, type }) => {
+	beforeNavigate((navigation) => {
+		loadUpdateOnNavigate(navigation);
+		const { to, type } = navigation;
 		if (!to) return;
 		if (to.url.origin !== window.location.origin) return;
 		searchParamsManager.setParametersFromURL(to.url);
@@ -328,6 +332,7 @@
 			</div>
 		</header>
 		<NoticeBanner lastSynced={alko.dataset.metadata.LastSynced} cached={alko.cached} />
+		<InstallBanner />
 		<div
 			id="main-content"
 			tabindex="-1"

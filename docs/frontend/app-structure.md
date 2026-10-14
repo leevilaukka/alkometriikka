@@ -103,6 +103,17 @@ Product photos from `images.alko.fi` aren't handled: they are sent with a one-ye
   dark mode). Once the loader is gone, `+layout.svelte` sets them to the header colour of the
   app's own theme, which can differ from the OS one.
 - **`color-scheme`** follows the app's `dark` class, so scrollbars and form controls match.
+- **Install button**: Settings → Lisäasetukset offers installing. `app.html` keeps Chrome's
+  `beforeinstallprompt` event (it can fire before the app's code loads) and
+  `src/lib/utils/pwa.svelte.ts` shows its prompt from the button. iOS has no prompt, so it gets the
+  Add to Home Screen steps instead; inside the installed app the section is hidden. The same
+  offer shows as a banner under the header (`InstallBanner.svelte`) from the second day the site
+  is used on (`BANNER_AFTER_DAYS`), until it's closed or the browser's install dialog is turned
+  down.
+- **Updates while open**: an installed app can sit in the background for days, and the browser
+  only looks for a new service worker on page loads. Coming back into view checks again (at most
+  every 10 minutes). If a new deploy's worker takes over, the next in-app link does a full page
+  load, so the page doesn't keep running old code that asks for removed `_app` files.
 - **iOS launch screens**: iOS ignores the manifest's splash and needs an `apple-touch-startup-image`
   per screen size, orientation and colour scheme. `bun run pwa:splash`
   (`scripts/pwa/ios-splash.ts`) draws the loader's first frame into `static/ios/splash/` and
