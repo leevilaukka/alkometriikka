@@ -2,6 +2,30 @@
 
 Common maintenance tasks and what to do when something breaks.
 
+## Feature flags
+
+Edit [`static/flags.json`](../static/flags.json) on `main`; like notices, the deploy purges it from
+Cloudflare. Read a flag in a component with `flags.on('name')` (from `$lib/utils/flags.svelte`).
+Flags are off until the file has loaded, and a missing or broken entry is off too.
+
+```json
+{
+	"$schema": "../schemas/flags.schema.json",
+	"flags": { "new-compare": true, "beta-share": { "rollout": 20 } }
+}
+```
+
+`{ "rollout": 20 }` gives the flag to 20 % of visitors, each of whom stays in or out. Use
+`"enabled": false` to switch a flag off without losing its rollout.
+
+A visitor can override a flag for themselves with `?flag=new-compare` (on) or `?flag=-new-compare`
+(off), comma separated for several. It's remembered in the browser until `?flag=reset`. This works
+before the flag is in the file, so a feature can be tested in production first.
+
+Each visitor's Umami session is tagged with how every flag resolved for them (`flag_new-compare`
+`true`/`false`), so any report can be filtered or compared by flag. Nothing is sent while the
+file has no flags.
+
 ## Posting a notice
 
 Edit [`static/notices.json`](../static/notices.json) on `main` (the GitHub web editor is fine).

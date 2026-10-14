@@ -34,8 +34,10 @@
 	import { LocalStorageManager } from '$lib/utils/storage';
 	import type { IconName } from '$lib/icons';
 	import { loadUpdateOnNavigate } from '$lib/utils/pwa.svelte';
+	import { loadFlags } from '$lib/utils/flags.svelte';
 
 	let { children, data } = $props();
+	loadFlags();
 	let searchParamsManager = new SearchParamsManager(page.url);
 	setContext(ContextKeys.SearchParamsManager, searchParamsManager);
 
