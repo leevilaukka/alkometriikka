@@ -50,8 +50,8 @@ export const flags = {
 };
 
 /**
- * Tags the visitor's Umami session with how each flag resolved (`flag_<name>`), so traffic and
- * events can be filtered or compared by flag. Nothing is sent while no flag exists.
+ * Tags the visitor's Umami session with each flag that is on (`flag_<name>`), so traffic and
+ * events can be filtered or compared by flag. Nothing is sent while no flag is on.
  */
 function reportFlags() {
 	const data = flagSessionData(state.flags, overrides, visitorId);

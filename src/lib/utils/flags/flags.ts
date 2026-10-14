@@ -98,8 +98,8 @@ export function isFlagOn(
 }
 
 /**
- * How every flag in the file, and every one the visitor overrode, resolves for this visitor,
- * keyed for Umami's session properties (`flag_<name>`) so reports can be filtered by flag.
+ * The flags that are on for this visitor, keyed for Umami's session properties (`flag_<name>`)
+ * so reports can be filtered by flag. Flags that are available but off are left out.
  */
 export function flagSessionData(
 	flags: Flags,
@@ -108,6 +108,6 @@ export function flagSessionData(
 ): Record<string, boolean> {
 	const data: Record<string, boolean> = {};
 	for (const name of new Set([...Object.keys(flags), ...Object.keys(overrides)]))
-		data[`flag_${name}`] = isFlagOn(name, flags, overrides, visitorId);
+		if (isFlagOn(name, flags, overrides, visitorId)) data[`flag_${name}`] = true;
 	return data;
 }
