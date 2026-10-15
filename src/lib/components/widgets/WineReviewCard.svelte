@@ -3,19 +3,22 @@
 	import { reviewVintage, wineReviewUrl, type WineReview } from '$lib/utils/wine-reviews';
 	import { components } from '$lib/utils/ui/styles';
 	import Icon from './Icon.svelte';
+	import ProductImage from './ProductImage.svelte';
 
 	let {
 		review,
 		vintage,
 		heading = 'Viinilehden arvio',
 		headingId = 'wine-review-heading',
-		showProductLink = false
+		showProductLink = false,
+		showProductImage = false
 	}: {
 		review: WineReview;
 		vintage?: unknown;
 		heading?: string;
 		headingId?: string;
 		showProductLink?: boolean;
+		showProductImage?: boolean;
 	} = $props();
 	const currentVintage = $derived(reviewVintage(vintage));
 	const differentVintage = $derived(
@@ -24,24 +27,31 @@
 </script>
 
 <section aria-labelledby={headingId} class="flex w-full flex-col gap-4 rounded border border-primary bg-secondary p-4">
-	<div class="flex flex-wrap items-start justify-between gap-3">
-		<div class="flex min-w-0 flex-col gap-1">
-			<h2 id={headingId} class="text-xl font-bold">{heading}</h2>
-			{#if heading !== review.title}<p class="text-sm text-secondary">{review.title}</p>{/if}
-			{#if review.publishedAt}
-				<time datetime={review.publishedAt} class="text-sm text-secondary">
-					{new Date(`${review.publishedAt}T12:00:00`).toLocaleDateString('fi-FI')}
-				</time>
+	<div class="flex items-start gap-4">
+		{#if showProductImage}
+			<a href={`${resolve('/')}tuotteet/${review.sku}/`} aria-label={`Katso tuote: ${review.title}`} class="flex h-32 w-24 shrink-0 rounded bg-white p-2 sm:h-40 sm:w-28">
+				<ProductImage number={review.sku} name={review.title} />
+			</a>
+		{/if}
+		<div class="flex min-w-0 flex-1 flex-wrap items-start justify-between gap-3">
+			<div class="flex min-w-0 flex-col gap-1">
+				<h2 id={headingId} class="text-xl font-bold">{heading}</h2>
+				{#if heading !== review.title}<p class="text-sm text-secondary">{review.title}</p>{/if}
+				{#if review.publishedAt}
+					<time datetime={review.publishedAt} class="text-sm text-secondary">
+						{new Date(`${review.publishedAt}T12:00:00`).toLocaleDateString('fi-FI')}
+					</time>
+				{/if}
+			</div>
+			{#if review.stars !== null}
+				<div class="flex flex-col gap-1 sm:items-end">
+					<span aria-label={`${review.stars} / 5 tähteä`} class="text-2xl text-amber-600 dark:text-amber-400">
+						<span aria-hidden="true">{'★'.repeat(review.stars)}{'☆'.repeat(5 - review.stars)}</span>
+					</span>
+					{#if review.starDescription}<p class="text-sm">{review.starDescription}</p>{/if}
+				</div>
 			{/if}
 		</div>
-		{#if review.stars !== null}
-			<div class="flex flex-col gap-1 sm:items-end">
-				<span aria-label={`${review.stars} / 5 tähteä`} class="text-2xl text-amber-600 dark:text-amber-400">
-					<span aria-hidden="true">{'★'.repeat(review.stars)}{'☆'.repeat(5 - review.stars)}</span>
-				</span>
-				{#if review.starDescription}<p class="text-sm">{review.starDescription}</p>{/if}
-			</div>
-		{/if}
 	</div>
 	{#if differentVintage}
 		<p class="rounded border border-amber-300 bg-amber-50 p-3 text-sm text-amber-900 dark:border-amber-800 dark:bg-amber-950 dark:text-amber-200">

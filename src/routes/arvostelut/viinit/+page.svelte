@@ -137,7 +137,7 @@
 		{:else}
 			<div class="flex flex-col gap-6">
 				{#each visible as review (`${review.sku}:${review.id}`)}
-					<WineReviewCard {review} heading={review.title} headingId={`review-${review.sku}-${review.id}`} showProductLink={true} />
+					<WineReviewCard {review} heading={review.title} headingId={`review-${review.sku}-${review.id}`} showProductLink={true} showProductImage={true} />
 				{/each}
 			</div>
 			{#if totalPages > 1}
