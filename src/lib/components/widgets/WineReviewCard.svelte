@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import { reviewVintage, wineReviewUrl, type WineReview } from '$lib/utils/wine-reviews';
-	import { components } from '$lib/utils/styles';
+	import { components } from '$lib/utils/ui/styles';
 	import Icon from './Icon.svelte';
 
 	let {

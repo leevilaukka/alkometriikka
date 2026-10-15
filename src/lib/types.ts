@@ -1,12 +1,7 @@
-import {
-	AllColumns,
-	DatasetColumns,
-	DrunkColumns,
-	GenderOptionsMap,
-	ShareTypes
-} from '$lib/utils/constants';
+import { AllColumns, DatasetColumns, DrunkColumns } from '$lib/utils/constants/columns';
+import { GenderOptionsMap, ShareTypes } from '$lib/utils/constants/app';
 import type { VariantProps } from 'class-variance-authority';
-import type { components } from './utils/styles';
+import type { components } from './utils/ui/styles';
 import type { IconName } from './icons';
 
 export type ColumnType =
@@ -38,6 +33,8 @@ export type PersonalInfo = {
 	weight: number | null;
 	gender: GenderOptions | undefined | null;
 };
+
+export type BreadcrumbItem = { label: string; href?: string };
 
 export type AvailabilityStore = {
 	id: string;
@@ -75,7 +72,7 @@ export interface PriceListItem extends Record<DrunkColumnNames, number> {
 	Hinnastojärjestyskoodi: string;
 	Tyyppi: string;
 	Alatyyppi: string;
-	Erityisryhmä: string;
+	Erityisryhmä: Set<string>;
 	Oluttyyppi: string;
 	Valmistusmaa: string;
 	Alue: string;
@@ -84,6 +81,7 @@ export interface PriceListItem extends Record<DrunkColumnNames, number> {
 	Huomautus: Set<string>;
 	Rypäleet: Set<string>;
 	Luonnehdinta: Set<string>;
+	Ruokasuositukset: Set<string>;
 	Pakkaustyyppi: string;
 	'Alkoholi-%': number;
 	'Hapot g/l': number;
@@ -162,11 +160,13 @@ export type ShareType = (typeof ShareTypes)[keyof typeof ShareTypes];
 export type ShareEvent = `share_${ShareType}`;
 export type ShareViewEvent = `shared_${ShareType}_viewed`;
 
-type ShareState = { url?: string; sid?: string; [key: string]: any }
-type Shares = {[K in ShareEvent | ShareViewEvent]: ShareState};
+type ShareState = { url?: string; sid?: string; [key: string]: any };
+type Shares = { [K in ShareEvent | ShareViewEvent]: ShareState };
 
-export type GameTypes = "daily" | "unlimited" | "archive";
+export type GameTypes = 'daily' | 'unlimited' | 'archive';
 type GameKeys = `${GameTypes}_game`;
+
+type RSSFeed = 'site' | 'category' | 'product' | 'json';
 
 type GameState =
 	| {
@@ -180,20 +180,31 @@ type GameState =
 			questions_right: number;
 	  };
 
-type Games = {[K in GameKeys]: GameState;};
+type Games = { [K in GameKeys]: GameState };
 
 export type AnalyticsEventMap = {
-	calculator_used: { using_saved_values: boolean, state: { percentage: number, volume: number, price: number }, result: {
-		perEuro: number
-		rawAlcohol: number
-	} };
+	calculator_used: {
+		using_saved_values: boolean;
+		state: { percentage: number; volume: number; price: number };
+		result: {
+			perEuro: number;
+			rawAlcohol: number;
+		};
+	};
 	open_settings: undefined;
 	export_data: undefined;
 	import_data: undefined;
+	install_app: { outcome: 'accepted' | 'dismissed'; source: 'settings' | 'banner' };
+	app_installed: undefined;
+	pwa_launch: undefined;
+	dismiss_install_banner: undefined;
 	create_list: undefined;
 	save_list: { url?: string };
 	view_sizes: { product_number: string };
 	show_price_history: { product_number?: string; [key: string]: any };
+	show_product_details: { product_number: string };
+	add_to_compare: { product_number: string };
+	view_compare: { product_numbers: string[]; url: string };
 	scan_barcode: { ean: string; link?: string };
 	scan_qr_code: { type: string; product_number: string; link?: string };
 	preferred_store_changed: {
@@ -202,6 +213,7 @@ export type AnalyticsEventMap = {
 		city?: string;
 		action?: 'set' | 'change';
 	};
+	store_compass_opened: { storeId: string; storeName: string };
 	show_availability: { product_number?: string; [key: string]: any };
 	daily_feedback: {
 		date: string;
@@ -216,6 +228,17 @@ export type AnalyticsEventMap = {
 		ui_bug: boolean;
 		other: boolean;
 	};
+	click_feed: { feed: RSSFeed; location: string };
+	/** One per filtering session, with the selection of each active filter under its column name. */
+	filters_used: {
+		source: 'products' | 'list';
+		exit: 'product' | 'navigate' | 'hidden';
+		filters: string[];
+		filter_count: number;
+		changes: number;
+		results?: number;
+		[filter: string]: string | string[] | number | undefined;
+	};
 	site_feedback: {
 		path: string;
 		version: string;
@@ -227,6 +250,7 @@ export type AnalyticsEventMap = {
 		ui_bug: boolean;
 		other: boolean;
 	};
-} & Shares & Games
+} & Shares &
+	Games;
 
 export type AnalyticsEventName = keyof AnalyticsEventMap;

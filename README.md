@@ -10,17 +10,17 @@ Alkometriikka started as a simple way to compare the price and amount of alcohol
 
 ## Features
 
-* **Product database** — Browse and search the Alko catalog.
-* **Advanced filtering** — Find products by category, price, alcohol content, size, producer, and other properties.
-* **Product statistics** — Compare prices, alcohol content, value, and other calculated metrics.
-* **Price history** — Track how product prices have changed over time.
-* **Store availability** — See which Alko stores currently carry a product.
-* **Shareable lists** — Create and share product selections.
-* **Alkometriikka Daily** — A daily game generated from the product database.
-* **Product pages** — Individual, search-engine-friendly pages for products in the catalog.
-* **RSS feeds** — Follow catalog and product changes without visiting the site.
-* **Machine-readable data** — The underlying datasets are published for use by the website and other applications.
-* **Automated updates** — Product data and derived content are continuously processed through GitHub Actions.
+- **Product database** — Browse and search the Alko catalog.
+- **Advanced filtering** — Find products by category, price, alcohol content, size, producer, and other properties.
+- **Product statistics** — Compare prices, alcohol content, value, and other calculated metrics.
+- **Price history** — Track how product prices have changed over time.
+- **Store availability** — See which Alko stores currently carry a product.
+- **Shareable lists** — Create and share product selections.
+- **Alkometriikka Daily** — A daily game generated from the product database.
+- **Product pages** — Individual, search-engine-friendly pages for products in the catalog.
+- **RSS feeds** — Follow catalog and product changes without visiting the site.
+- **Machine-readable data** — The underlying datasets are published for use by the website and other applications.
+- **Automated updates** — Product data and derived content are continuously processed through GitHub Actions.
 
 ## Architecture
 
@@ -76,14 +76,14 @@ flowchart LR
 
 ## Tech stack
 
-* [Svelte](https://svelte.dev/)
-* [SvelteKit](https://kit.svelte.dev/)
-* [TypeScript](https://www.typescriptlang.org/)
-* [Bun](https://bun.sh/)
-* [Vite](https://vite.dev/)
-* GitHub Actions
-* GitHub Pages
-* Cloudflare
+- [Svelte](https://svelte.dev/)
+- [SvelteKit](https://kit.svelte.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Bun](https://bun.sh/)
+- [Vite](https://vite.dev/)
+- GitHub Actions
+- GitHub Pages
+- Cloudflare
 
 ## Development
 
@@ -131,8 +131,8 @@ bun run lint
 
 ### Testing product size matching
 
-Run `npm test` with Node.js 24 or newer. The tests run TypeScript directly and
-need no additional test dependencies or network access.
+Run `bun test tests/utils/product-variants.test.ts` for product size matching,
+or `bun test` for the full suite. The tests need no network access.
 
 Size variants use conservative name normalization and catalogue metadata. A
 restricted Finnish lager fallback handles class suffixes only when the producer,
@@ -251,14 +251,14 @@ Please **do not hammer the site or its data endpoints with requests**.
 
 If you are building an application that consumes Alkometriikka data:
 
-* Cache responses locally whenever possible.
-* Do not repeatedly request the same data when it has not changed.
-* Prefer the published feeds and machine-readable datasets over scraping individual pages.
-* Avoid aggressive polling and unnecessary concurrent requests.
-* Use a sensible refresh interval appropriate for your application.
-* Respect HTTP caching headers where provided.
-* If you need a large amount of data, download it once and process it locally rather than repeatedly requesting individual resources.
-* Do not build systems that continuously crawl the entire site or product catalog.
+- Cache responses locally whenever possible.
+- Do not repeatedly request the same data when it has not changed.
+- Prefer the published feeds and machine-readable datasets over scraping individual pages.
+- Avoid aggressive polling and unnecessary concurrent requests.
+- Use a sensible refresh interval appropriate for your application.
+- Respect HTTP caching headers where provided.
+- If you need a large amount of data, download it once and process it locally rather than repeatedly requesting individual resources.
+- Do not build systems that continuously crawl the entire site or product catalog.
 
 Alkometriikka is an independently maintained project with limited infrastructure. **Reasonable use helps keep the service available for everyone.**
 
@@ -270,12 +270,12 @@ Alkometriikka provides machine-readable interfaces intended to make the data use
 
 These can be used for applications such as:
 
-* RSS readers
-* Discord bots
-* Automated notifications
-* Data analysis
-* Personal projects
-* Other integrations built around Alkometriikka's data
+- RSS readers
+- Discord bots
+- Automated notifications
+- Data analysis
+- Personal projects
+- Other integrations built around Alkometriikka's data
 
 The feed infrastructure also allows changes detected by the automated data pipeline to be consumed by external applications without requiring them to continuously poll the website.
 
@@ -289,11 +289,11 @@ The generated product HTML is intentionally lightweight and acts largely as a st
 
 This approach provides:
 
-* Search-engine-friendly product URLs
-* Useful Open Graph previews when links are shared
-* Structured data for search engines
-* Fast initial page responses
-* A static deployment without requiring a traditional application server
+- Search-engine-friendly product URLs
+- Useful Open Graph previews when links are shared
+- Structured data for search engines
+- Fast initial page responses
+- A static deployment without requiring a traditional application server
 
 The generated files should therefore not be considered a separate product database or a complete server-rendered version of the application. They are primarily an SEO and metadata layer around the underlying Alkometriikka application and data.
 

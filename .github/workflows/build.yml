@@ -13,8 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      pages: write
-      id-token: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -40,8 +38,10 @@ jobs:
           if git show origin/gh-pages:og-images.json > /tmp/og-images.json 2>/dev/null; then
             mv /tmp/og-images.json static/og-images.json
           fi
-          # Review files also hold the sync cache. Restore them before Vite
-          # copies static/ so a site rebuild never discards collected reviews.
+          if git show origin/gh-pages:og-categories.json > /tmp/og-categories.json 2>/dev/null; then
+            mv /tmp/og-categories.json static/og-categories.json
+          fi
+          # Preserve collected reviews before Vite copies static/ into the output.
           git archive origin/gh-pages reviews 2>/dev/null | tar -x -C static || true
 
       - name: Generate review catalog from cached reviews
@@ -52,6 +52,9 @@ jobs:
           BASE_PATH: ''
         run: |
           bun run vite build
+          # static/ is copied as-is, so minify the vendored analytics script in the output
+          bun build static/scripts/simpleanalytics/auto-events.js --minify \
+            --outfile build/scripts/simpleanalytics/auto-events.js
 
       - name: Check if product pages need regenerating
         id: prerender-gate
@@ -72,13 +75,14 @@ jobs:
       # must be present in the deploy even when nothing changed. Restore the
       # last deployed pages first so the incremental prerender below can skip
       # untouched products and so a skip keeps the existing pages on gh-pages.
-      - name: Restore last deployed product pages
+      - name: Restore last deployed product and category pages
         run: |
           # Restore each path separately: git archive fails as a whole when any
           # one pathspec is missing (e.g. the manifest on the first run after
           # adding it), which would otherwise silently drop the pages too.
           git archive origin/gh-pages tuotteet 2>/dev/null | tar -x -C build/ || true
           git archive origin/gh-pages tuotteet-manifest.json 2>/dev/null | tar -x -C build/ || true
+          git archive origin/gh-pages kategoriat 2>/dev/null | tar -x -C build/ || true
 
       # The daily manifests are immutable pins: once baked, a date must never
       # change. Restoring them here (inside build/, same as tuotteet) — instead
@@ -106,7 +110,7 @@ jobs:
             exit 1
           fi
 
-      - name: Prerender product pages
+      - name: Prerender product and category pages
         if: steps.prerender-gate.outputs.changed == 'true'
         run: |
           bun run scripts/site/prerender-products.ts \
@@ -114,6 +118,15 @@ jobs:
             --data build/data.json \
             --template build/404.html \
             --og-manifest build/og-images.json
+
+      # Cheap (a few hundred files), so always regenerated: the pages embed the
+      # built page shell and the store list from availability.json.
+      - name: Prerender static and store pages
+        run: |
+          bun run scripts/site/prerender-static.ts \
+            --out build \
+            --template build/404.html \
+            --availability build/availability.json
 
       - name: Delete all files except build directory
         run: |
@@ -125,9 +138,13 @@ jobs:
           mv build/* .
           rm -rf build
 
-      - name: Copy 404.html to index.html
+      # The sync's change-detection hashes (not used by the site). Without this the
+      # force-push below would drop them; the sync would then recompute them.
+      - name: Restore hashes.json from existing gh-pages
         run: |
-          cp 404.html index.html
+          if git show origin/gh-pages:hashes.json > /tmp/hashes.json 2>/dev/null; then
+            mv /tmp/hashes.json hashes.json
+          fi
 
       - name: Restore sitemap.xml from existing gh-pages
         run: |
@@ -166,10 +183,40 @@ jobs:
           # Runtime datasets are gitignored, so `git add .` skips them. Force-add
           # them so the force-push to gh-pages preserves the data deployed by
           # fetchData.yml instead of deleting it on every site build.
-          for f in data.json availability.json sitemap.xml rss.xml feed.json rss og-images.json daily tuotteet-manifest.json reviews; do
+          for f in data.json hashes.json availability.json sitemap.xml rss.xml feed.json rss og-images.json og-categories.json daily tuotteet-manifest.json reviews; do
             if [ -e "$f" ]; then git add -f "$f"; fi
           done
           git commit -m "Deploy to GitHub Pages [skip ci]" || echo "No changes to commit"
           git push origin gh-pages --force
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Not deployed here: the Download Price List run that follows this one
+      # (workflow_run) rebuilds the product pages on top of this push and does
+      # the single Pages deploy and cache purge, so a push is never deployed twice.
+
+  # Records the run (result, timings) in R2 for build monitoring.
+  report:
+    needs: [build_site]
+    if: always()
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Bun
+        uses: ./.github/actions/setup
+
+      - name: Record run
+        uses: ./.github/actions/report-run
+        with:
+          needs: ${{ toJSON(needs) }}
+          github-token: ${{ github.token }}
+          r2-access-key-id: ${{ secrets.CF_R2_ACCESS_KEY_ID }}
+          r2-secret-access-key: ${{ secrets.CF_R2_SECRET_ACCESS_KEY }}
+          r2-account-id: ${{ secrets.CF_R2_ACCOUNT_ID }}
+          r2-bucket: ${{ vars.CF_R2_BUCKET }}
+          r2-region: ${{ vars.CF_R2_REGION }}

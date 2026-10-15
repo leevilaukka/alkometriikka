@@ -1,10 +1,10 @@
 <script lang="ts">
+	import { asset, resolve } from '$app/paths';
 	import type { ArchiveIndex } from '$lib/daily/manifest';
-	import type { ArchivedScores, ArchiveRuns } from '$lib/daily/questions';
+	import type { ArchivedScores, ArchiveRuns } from '$lib/daily/types';
 	import { loadArchivedScores, loadArchiveRuns } from '$lib/daily/storage';
-	import { base } from '$app/paths';
-	import { generateTitle, setSEO } from '$lib/utils/helpers';
-	import { components } from '$lib/utils/styles';
+	import { generateTitle, setSEO } from '$lib/utils/app/meta';
+	import { components } from '$lib/utils/ui/styles';
 	import { twMerge } from 'tailwind-merge';
 	import Icon from '$lib/components/widgets/Icon.svelte';
 	import { dayNumberForDate } from '$lib/daily/dayNumber';
@@ -48,7 +48,9 @@
 		return new Date(year!, month! - 1, 1, 12).getTime();
 	});
 	const canGoBack = $derived(new Date(viewYear, viewMonth, 1, 12).getTime() > minMonthStart);
-	const canGoForward = $derived(new Date(viewYear, viewMonth, 1, 12).getTime() < maxMonthStart.getTime());
+	const canGoForward = $derived(
+		new Date(viewYear, viewMonth, 1, 12).getTime() < maxMonthStart.getTime()
+	);
 
 	$effect(() => {
 		if (index || loadError) return;
@@ -58,7 +60,7 @@
 	async function loadIndex() {
 		loadError = null;
 		try {
-			const response = await fetch(`${base}/daily/archive/index.json`);
+			const response = await fetch(asset(`/daily/archive/index.json`));
 			if (response.status === 404) {
 				index = { version: 1, dates: [] };
 				return;
@@ -116,17 +118,15 @@
 	<header class="flex flex-col gap-2 border-b border-primary pb-5">
 		<div class="flex items-center justify-between gap-4">
 			<div>
-				<p class="text-sm font-bold uppercase tracking-widest text-brand-2">Alkometriikka Daily</p>
+				<p class="text-sm font-bold tracking-widest text-brand-2 uppercase">Alkometriikka Daily</p>
 				<div class="flex items-center gap-2">
 					<h1 class="text-3xl font-bold md:text-4xl">Arkisto</h1>
 					<Icon name="calendar" />
 				</div>
 			</div>
-			<a href="/daily">
-				<button class={twMerge(components.button(), 'px-3 py-2')}>
-					<span class="flex items-center gap-2"><Icon name="flame" />Päivän peli</span>
-				</button>
-			</a>
+			<a href={resolve('/daily/')} class={twMerge(components.button(), 'px-3 py-2')}
+				><span class="flex items-center gap-2"><Icon name="flame" />Päivän peli</span></a
+			>
 		</div>
 		{#if index}
 			<p class="text-sm text-secondary">
@@ -138,7 +138,9 @@
 	{#if loadError}
 		<section class="rounded border border-primary bg-secondary p-5 text-center">
 			<p>Arkistoa ei voitu ladata: {loadError}</p>
-			<button class={twMerge(components.button(), 'mt-3 px-3 py-2')} onclick={loadIndex}>Yritä uudelleen</button>
+			<button class={twMerge(components.button(), 'mt-3 px-3 py-2')} onclick={loadIndex}
+				>Yritä uudelleen</button
+			>
 		</section>
 	{:else if !index}
 		<section class="rounded border border-primary bg-secondary p-5 text-center">
@@ -148,7 +150,10 @@
 		<section class="flex flex-col gap-4">
 			<div class="flex items-center justify-between">
 				<button
-					class={twMerge(components.button(), 'px-3 py-2 disabled:opacity-40 disabled:hover:bg-white disabled:dark:hover:bg-zinc-800')}
+					class={twMerge(
+						components.button(),
+						'px-3 py-2 disabled:opacity-40 disabled:hover:bg-white disabled:dark:hover:bg-zinc-800'
+					)}
 					onclick={() => monthOffset(-1)}
 					disabled={!canGoBack}
 					aria-label="Edellinen kuukausi"
@@ -156,84 +161,97 @@
 					<Icon name="chevron_left" />
 				</button>
 				<h2 class="text-xl font-bold">{monthLabel}</h2>
-<button
-					class={twMerge(components.button(), 'px-3 py-2 disabled:opacity-40 disabled:hover:bg-white disabled:dark:hover:bg-zinc-800')}
+				<button
+					class={twMerge(
+						components.button(),
+						'px-3 py-2 disabled:opacity-40 disabled:hover:bg-white disabled:dark:hover:bg-zinc-800'
+					)}
 					onclick={() => monthOffset(1)}
 					disabled={!canGoForward}
 					aria-label="Seuraava kuukausi"
 				>
 					<Icon name="chevron_right" />
 				</button>
-		</div>
+			</div>
 
-		<div class="grid grid-cols-7 gap-1 text-center">
-			{#each weekdayLabels as label (label)}
-				<div class="py-1 text-xs font-bold uppercase text-secondary">{label}</div>
-			{/each}
-			{#each cells as day, dayIndex (dayIndex)}
-				{@const iso = day === null ? null : toISO(viewYear, viewMonth, day)}
-				{@const result = iso ? scores[iso] : undefined}
-				{@const inProgress = iso ? (runs[iso] && !runs[iso].completed ? true : false) : false}
-				{@const dayNumber = iso ? dayNumberForDate(iso) : 0}
-				{#if iso && available.has(iso)}
-					<a
-						href={`${base}/daily/arkisto/${iso}`}
-						class="relative flex min-h-14 flex-col items-center justify-center gap-0.5 rounded border border-primary bg-primary p-1.5 transition-colors hover:border-brand-2"
-					>
-						{#if dayNumber >= 1}
-							<span class="absolute right-1 top-1 text-[9px] font-bold text-secondary">#{dayNumber}</span>
-						{/if}
-						<span class="text-sm font-bold">{day}</span>
-						{#if result}
+			<div class="grid grid-cols-7 gap-1 text-center">
+				{#each weekdayLabels as label (label)}
+					<div class="py-1 text-xs font-bold text-secondary uppercase">{label}</div>
+				{/each}
+				{#each cells as day, dayIndex (dayIndex)}
+					{@const iso = day === null ? null : toISO(viewYear, viewMonth, day)}
+					{@const result = iso ? scores[iso] : undefined}
+					{@const inProgress = iso ? (runs[iso] && !runs[iso].completed ? true : false) : false}
+					{@const dayNumber = iso ? dayNumberForDate(iso) : 0}
+					{#if iso && available.has(iso)}
+						<a
+							href={resolve(`/daily/arkisto/${iso}/`)}
+							class="relative flex min-h-14 flex-col items-center justify-center gap-0.5 rounded border border-primary bg-primary p-1.5 transition-colors hover:border-brand-2"
+						>
+							{#if dayNumber >= 1}
+								<span class="absolute top-1 right-1 text-[9px] font-bold text-secondary"
+									>#{dayNumber}</span
+								>
+							{/if}
+							<span class="text-sm font-bold">{day}</span>
+							{#if result}
+								<span class="rounded bg-brand-4 px-1.5 py-0.5 text-[10px] font-bold text-white">
+									{result.score} p
+								</span>
+							{:else if inProgress}
+								<span class="text-[10px] font-bold text-brand-2">kesken</span>
+							{:else}
+								<span class="text-[10px] text-secondary">pelaa</span>
+							{/if}
+						</a>
+					{:else if iso === todayISO}
+						<a
+							href={resolve('/daily/')}
+							class="relative flex min-h-14 flex-col items-center justify-center gap-0.5 rounded border border-dashed border-brand-2 bg-secondary p-1.5 transition-colors hover:bg-primary"
+						>
+							{#if dayNumber >= 1}
+								<span class="absolute top-1 right-1 text-[9px] font-bold text-brand-2"
+									>#{dayNumber}</span
+								>
+							{/if}
+							<span class="text-sm font-bold text-brand-2">{day}</span>
+							<span class="text-[10px] font-bold text-brand-2">tänään</span>
+						</a>
+					{:else if iso && iso < todayISO && result}
+						<span
+							class="relative flex min-h-14 flex-col items-center justify-center gap-0.5 rounded border border-dashed border-primary bg-primary p-1.5 opacity-80"
+							title="Arkistoituu pian – koko kertaus tulee saataville kun päivä arkistoidaan"
+						>
+							{#if dayNumber >= 1}
+								<span class="absolute top-1 right-1 text-[9px] font-bold text-secondary"
+									>#{dayNumber}</span
+								>
+							{/if}
+							<span class="text-sm font-bold">{day}</span>
 							<span class="rounded bg-brand-4 px-1.5 py-0.5 text-[10px] font-bold text-white">
 								{result.score} p
 							</span>
-						{:else if inProgress}
-							<span class="text-[10px] font-bold text-brand-2">kesken</span>
-						{:else}
-							<span class="text-[10px] text-secondary">pelaa</span>
-						{/if}
-					</a>
-				{:else if iso === todayISO}
-					<a
-						href="/daily"
-						class="relative flex min-h-14 flex-col items-center justify-center gap-0.5 rounded border border-brand-2 border-dashed bg-secondary p-1.5 transition-colors hover:bg-primary"
-					>
-						{#if dayNumber >= 1}
-							<span class="absolute right-1 top-1 text-[9px] font-bold text-brand-2">#{dayNumber}</span>
-						{/if}
-						<span class="text-sm font-bold text-brand-2">{day}</span>
-						<span class="text-[10px] font-bold text-brand-2">tänään</span>
-					</a>
-				{:else if iso && iso < todayISO && result}
-					<span
-						class="relative flex min-h-14 flex-col items-center justify-center gap-0.5 rounded border border-dashed border-primary bg-primary p-1.5 opacity-80"
-						title="Arkistoituu pian – koko kertaus tulee saataville kun päivä arkistoidaan"
-					>
-						{#if dayNumber >= 1}
-							<span class="absolute right-1 top-1 text-[9px] font-bold text-secondary">#{dayNumber}</span>
-						{/if}
-						<span class="text-sm font-bold">{day}</span>
-						<span class="rounded bg-brand-4 px-1.5 py-0.5 text-[10px] font-bold text-white">
-							{result.score} p
 						</span>
-					</span>
-				{:else if iso && iso < todayISO && dayNumber >= 1}
-					<span
-						class="relative flex min-h-14 flex-col items-center justify-center gap-0.5 rounded border border-dashed border-primary p-1.5 opacity-60"
-						title="Päivää ei ole vielä arkistoitu – tarkista uudelleen myöhemmin"
-					>
-						<span class="absolute right-1 top-1 text-[9px] font-bold text-secondary">#{dayNumber}</span>
-						<span class="text-sm font-bold">{day}</span>
-						<span class="text-[10px] text-secondary">odottaa</span>
-					</span>
-				{:else}
-					<span class="flex min-h-14 items-center justify-center rounded p-1.5 text-sm text-secondary">
-						{day ?? ''}
-					</span>
-				{/if}
-			{/each}
-		</div>
+					{:else if iso && iso < todayISO && dayNumber >= 1}
+						<span
+							class="relative flex min-h-14 flex-col items-center justify-center gap-0.5 rounded border border-dashed border-primary p-1.5 opacity-60"
+							title="Päivää ei ole vielä arkistoitu – tarkista uudelleen myöhemmin"
+						>
+							<span class="absolute top-1 right-1 text-[9px] font-bold text-secondary"
+								>#{dayNumber}</span
+							>
+							<span class="text-sm font-bold">{day}</span>
+							<span class="text-[10px] text-secondary">odottaa</span>
+						</span>
+					{:else}
+						<span
+							class="flex min-h-14 items-center justify-center rounded p-1.5 text-sm text-secondary"
+						>
+							{day ?? ''}
+						</span>
+					{/if}
+				{/each}
+			</div>
 		</section>
 	{/if}
 </main>

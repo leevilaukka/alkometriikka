@@ -17,6 +17,14 @@ const config = {
 		},
 		version: {
 			name: child_process.execSync('git rev-parse --short HEAD').toString().trim()
+		},
+		serviceWorker: {
+			// Precache only what the shell shows itself. CI seeds the runtime data into static/,
+			// and the service worker caches that from the network instead
+			files: (file) =>
+				/^(manifest\.json|favicon\.ico|images\/(logo\/|loader-logo\.svg))/.test(file),
+			// Dev has no build output or 404.html shell to precache
+			...(process.argv.includes('dev') ? { register: false } : {})
 		}
 	}
 };

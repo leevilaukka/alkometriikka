@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { resolve } from '$app/paths';
-	import { components } from '$lib/utils/styles';
-	import { generateTitle, setSEO } from '$lib/utils/helpers';
+	import { components } from '$lib/utils/ui/styles';
+	import { generateTitle, setSEO } from '$lib/utils/app/meta';
 	import { readWineReviewCollection, type WineReviewCollection } from '$lib/utils/wine-reviews';
 	import WineReviewCard from '$lib/components/widgets/WineReviewCard.svelte';
 

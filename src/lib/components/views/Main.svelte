@@ -5,30 +5,37 @@
 	import {
 		shownColumnsToHighlight,
 		defaultSortingColumn,
-		AllColumns,
 		shownSortingKeys,
-		defaultSortingOrderMap,
-		ContextKeys
-	} from '$lib/utils/constants';
-	import { components } from '$lib/utils/styles';
-	import {
-		headerToDisplayName,
-		sortingOrderToString,
-	} from '$lib/utils/helpers';
+		defaultSortingOrderMap
+	} from '$lib/utils/constants/display';
+	import { AllColumns } from '$lib/utils/constants/columns';
+	import { ContextKeys } from '$lib/utils/constants/app';
+	import { components } from '$lib/utils/ui/styles';
+	import { headerToDisplayName, sortingOrderToString } from '$lib/utils/format/labels';
 	import Icon from '../widgets/Icon.svelte';
 	import type { Kaljakori } from '$lib/alko';
 	import Popup from '../widgets/Popup.svelte';
 	import AllLists from '../widgets/AllLists.svelte';
-	import { addToList } from '$lib/utils/lists';
-	import { isMobile, searchQuery } from '$lib/global.svelte';
+	import { addToList } from '$lib/utils/user/lists';
+	import { isLaptop, isMobile, pageBottomBar, searchQuery } from '$lib/global.svelte';
 	import Filters from '../widgets/Filters.svelte';
-	import { initFilterValues } from '$lib/utils/filters';
+	import { initFilterValues } from '$lib/utils/catalog/filters';
 	import { page } from '$app/state';
-	import { getContext, onMount, untrack } from 'svelte';
-	import type { SearchParamsManager } from '$lib/utils/url';
+	import { getContext, onMount, untrack, type Snippet } from 'svelte';
+	import type { SearchParamsManager } from '$lib/utils/app/url';
 	import ProductPreview from '../widgets/ProductPreview.svelte';
+	import BottomBar from '../widgets/BottomBar.svelte';
+	import FilterButton from '../widgets/FilterButton.svelte';
 
-	const { kaljakori }: { kaljakori: Kaljakori } = $props();
+	const {
+		kaljakori,
+		header,
+		footer,
+		showFilters = true
+	}: { kaljakori: Kaljakori; header?: Snippet; footer?: Snippet; showFilters?: boolean } = $props();
+
+	// Without the filter sidebar, wide screens show the header in a sidebar of its own
+	const sidebarHeader = $derived(!!header && !showFilters && !$isLaptop);
 
 	let searchParamsManager = getContext<SearchParamsManager>(ContextKeys.SearchParamsManager);
 
@@ -36,8 +43,12 @@
 
 	let filtersComponent: Filters | null = $state(null);
 	let showRemoved = $state(false);
-	let filterValues = $state(untrack(() => initFilterValues(kaljakori, page.url.searchParams, showRemoved)));
-	let activeFilters: ColumnNames[] = $state([])
+	let filterValues = $state(
+		untrack(() =>
+			initFilterValues(kaljakori, showFilters ? page.url.searchParams : undefined, showRemoved)
+		)
+	);
+	let activeFilters: ColumnNames[] = $state([]);
 
 	let selectedHighlight = $state(
 		searchParamsManager.getParameter('highlight') || defaultSortingColumn
@@ -66,6 +77,20 @@
 		return temp;
 	});
 
+	// A new search, filter or sort gives a different list, so start it from the top. The
+	// virtual list keeps the old scroll position otherwise, and once a short result list
+	// has scrolled it to the bottom it stays pinned there as more results come back.
+	let listInputs: string | undefined;
+	$effect(() => {
+		const inputs = JSON.stringify(
+			[$searchQuery, $state.snapshot(filterValues), selectedSortingColumn, asc, showRemoved],
+			(_, value) => (value instanceof Set ? [...value] : value)
+		);
+		if (listInputs !== undefined && inputs !== listInputs)
+			untrack(() => listRef)?.scroll({ index: 0, smoothScroll: false });
+		listInputs = inputs;
+	});
+
 	let highlightMax = $derived.by(() => {
 		if (!selectedHighlight) return null;
 		const maxValue = rows.reduce((max, item) => {
@@ -75,27 +100,103 @@
 		return maxValue > 0 ? maxValue : null;
 	});
 
+	function skipToResults(event: MouseEvent) {
+		event.preventDefault();
+		document.getElementById('results')?.focus();
+	}
+
 	onMount(() => {
-		const ascParam = searchParamsManager.getParameter('asc') === "true";
-		if(ascParam !== asc) asc = ascParam
+		const ascParam = searchParamsManager.getParameter('asc') === 'true';
+		if (ascParam !== asc) asc = ascParam;
 	});
 
 	$effect(() => {
 		searchParamsManager.setParameter('q', $searchQuery);
-		selectedHighlight !== defaultSortingColumn ? searchParamsManager.setParameter('highlight', selectedHighlight) : searchParamsManager.setParameter('highlight', "");
-		selectedSortingColumn !== defaultSortingColumn ? searchParamsManager.setParameter('sort', selectedSortingColumn) : searchParamsManager.setParameter('sort', "");
-		asc !== !!defaultSortingOrderMap[selectedSortingColumn as keyof typeof defaultSortingOrderMap] ? searchParamsManager.setParameter('asc', String(asc)) : searchParamsManager.setParameter('asc', "");
+		selectedHighlight !== defaultSortingColumn
+			? searchParamsManager.setParameter('highlight', selectedHighlight)
+			: searchParamsManager.setParameter('highlight', '');
+		selectedSortingColumn !== defaultSortingColumn
+			? searchParamsManager.setParameter('sort', selectedSortingColumn)
+			: searchParamsManager.setParameter('sort', '');
+		asc !== !!defaultSortingOrderMap[selectedSortingColumn as keyof typeof defaultSortingOrderMap]
+			? searchParamsManager.setParameter('asc', String(asc))
+			: searchParamsManager.setParameter('asc', '');
 		searchParamsManager.update();
+	});
+
+	// On phones the filter toggle lives in a bottom bar, next to where the filter dialog's own
+	// close and clear buttons are, instead of above the list
+	$effect(() => {
+		if (!$isMobile || !showFilters) return;
+		pageBottomBar.snippet = filterBar;
+		return () => {
+			if (pageBottomBar.snippet === filterBar) pageBottomBar.snippet = undefined;
+		};
 	});
 </script>
 
-<div class="relative grid h-full grid-cols-[auto_1fr] max-h-full overflow-hidden">
-	<aside
-		class="z-10 flex h-full flex-col max-h-full overflow-hidden border-primary md:w-84 md:border-r"
+{#snippet filterBar()}
+	<BottomBar class="md:hidden">
+		<FilterButton
+			activeCount={activeFilters.length}
+			onclick={() => filtersComponent?.toggleFilterElement()}
+		/>
+	</BottomBar>
+{/snippet}
+
+<div
+	class={twMerge(
+		'relative grid h-full max-h-full overflow-hidden',
+		showFilters ? 'grid-cols-[auto_1fr]' : 'bg-secondary',
+		!showFilters && (sidebarHeader ? 'grid-cols-[20rem_1fr]' : 'grid-cols-1')
+	)}
+>
+	{#if sidebarHeader}
+		<aside class="flex max-h-full flex-col overflow-hidden border-e border-primary bg-primary">
+			<div class="flex flex-auto flex-col gap-3 overflow-y-auto p-4">
+				{@render header?.()}
+			</div>
+			{#if footer}
+				<div class="border-t border-primary p-4">
+					{@render footer()}
+				</div>
+			{/if}
+		</aside>
+	{/if}
+	{#if showFilters}
+		<aside
+			class="z-10 flex h-full max-h-full flex-col overflow-hidden border-primary md:w-84 md:border-r"
+		>
+			<a
+				href="#results"
+				onclick={skipToResults}
+				class="sr-only bg-primary px-4 py-2 font-bold focus:not-sr-only">Ohita suodattimet</a
+			>
+			<Filters
+				{kaljakori}
+				bind:activeFilters
+				bind:filterValues
+				bind:showRemoved
+				bind:this={filtersComponent}
+				resultCount={rows.length}
+			/>
+		</aside>
+	{/if}
+	<!-- Without the filter sidebar, match the product page's width so rows don't stretch -->
+	<main
+		id="results"
+		tabindex="-1"
+		class={twMerge(
+			'mx-auto flex h-full w-full flex-col gap-3 bg-secondary p-4 outline-none md:gap-4 md:p-6',
+			!showFilters && !sidebarHeader && 'max-w-7xl'
+		)}
 	>
-		<Filters {kaljakori} bind:activeFilters bind:filterValues bind:showRemoved bind:this={filtersComponent} />
-	</aside>
-	<main class="mx-auto flex h-full w-full flex-col gap-3 bg-secondary p-4 md:gap-4 md:p-6">
+		{#if header && !sidebarHeader}
+			{@render header()}
+			{@render footer?.()}
+		{:else if !header}
+			<h1 class="sr-only">Alkon tuotteet</h1>
+		{/if}
 		<div class="flex w-full flex-col items-start gap-4">
 			<div class={twMerge('grid w-full grid-cols-2 items-end gap-2 md:w-fit')}>
 				<div class="flex flex-col">
@@ -122,6 +223,7 @@
 									asc = !asc;
 									listRef?.scroll({ index: 0, smoothScroll: false });
 								}}
+								aria-label={`Järjestys: ${sortingOrderToString(asc, selectedSortingColumn)}`}
 								class={twMerge(components.button(), 'rounded-none rounded-e border-s-0')}
 							>
 								<span class="hidden whitespace-nowrap md:block">
@@ -148,18 +250,6 @@
 						{/each}
 					</select>
 				</div>
-				{#if $isMobile}
-					<button
-						onclick={() => {
-							filtersComponent?.toggleFilterElement();
-						}}
-						class={twMerge(components.button(), 'col-span-full w-full')}
-					>
-						<span>Näytä suodattimet {activeFilters.length > 0 ? `(${activeFilters.length} valittu)` : ""}</span>
-					
-						<Icon name={'filter'} />
-					</button>
-				{/if}
 			</div>
 		</div>
 		<div class="flex flex-row flex-wrap items-center justify-between gap-2">
@@ -174,16 +264,16 @@
 				<span>{$isMobile ? 'Alkuun' : 'Hyppää alkuun'}</span>
 			</button>
 		</div>
-		<div class="flex flex-auto flex-col">
+		<div class="flex min-h-0 flex-auto flex-col">
 			<SvelteVirtualList items={rows} bind:this={listRef} itemsClass={'flex flex-col gap-3'}>
 				{#snippet renderItem(item, idx: number)}
-					<ProductPreview product={item} highlight={selectedHighlight} {kaljakori} highlightMax={highlightMax}>
+					<ProductPreview product={item} highlight={selectedHighlight} {kaljakori} {highlightMax}>
 						{#snippet renderExtras()}
 							<div
-								class="absolute top-0 left-0 flex flex-nowrap items-center gap-0.5 rounded-br bg-gray-100 dark:bg-zinc-700 px-1.5 py-0.5 text-sm text-secondary"
+								class="absolute top-0 left-0 flex flex-nowrap items-center gap-0.5 rounded-br bg-gray-100 px-1.5 py-0.5 text-sm text-secondary dark:bg-zinc-700"
 							>
 								<Icon name="hashtag" />
-								<span>{`${(idx + 1)}`}</span>
+								<span>{`${idx + 1}`}</span>
 							</div>
 							<Popup class="gap-4 p-4">
 								{#snippet renderButton(dialogElement: HTMLDialogElement)}

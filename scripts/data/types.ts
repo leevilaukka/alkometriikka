@@ -84,6 +84,8 @@ export type MigratedData = {
 		};
 	};
 	products?: Record<string, MigratedProduct>;
+	/** Precomputed filter values for the app, see dataset-index.ts. Rebuilt on every write. */
+	index?: unknown;
 };
 
 export type FieldToArrayOrder<T extends FullProductData> = [
@@ -101,6 +103,9 @@ export interface SearchProductData {
 	productCommunicationEthical: string | null;
 	productCommunicationProduction: string | null;
 	productCommunicationCultivation: string | null;
+	/** Certificates as `certificateId|<id>|<label>`, e.g. `certificateId|certificate_001|Luomu`. Missing when the product has none. */
+	certificateClass?: string[];
+	certificateId?: string[];
 	closures: string[];
 	closureId: string[];
 	country: string;

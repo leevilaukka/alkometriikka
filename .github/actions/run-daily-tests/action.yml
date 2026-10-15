@@ -9,4 +9,4 @@ runs:
   steps:
     - name: Run daily game tests
       shell: bash
-      run: bunx svelte-kit sync && bun test src/lib/daily
+      run: bunx svelte-kit sync && bun test tests/daily tests/site

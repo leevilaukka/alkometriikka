@@ -1,9 +1,15 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
+	import Icon from '$lib/components/widgets/Icon.svelte';
 	import { preferredStoreId } from '$lib/global.svelte';
+	import { AUTO_STORE_ID } from '$lib/utils/constants/app';
+	import { requestUserLocation } from '$lib/utils/device/location';
 	import type { AvailabilityStore } from '$lib/types';
-	import { getStoreCity, isStoreOpen } from '$lib/utils/availability.js';
-	import { generateTitle, sendAnalyticsEvent, setSEO } from '$lib/utils/helpers';
-	import { components } from '$lib/utils/styles';
+	import { getStoreCity, isStoreOpen } from '$lib/utils/catalog/availability.js';
+	import { generateTitle, setSEO } from '$lib/utils/app/meta';
+	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
+	import { staticPage } from '$lib/utils/app/seo';
+	import { components } from '$lib/utils/ui/styles';
 	import { twMerge } from 'tailwind-merge';
 
 	let { data } = $props();
@@ -20,18 +26,15 @@
 		sendAnalyticsEvent('preferred_store_changed', {
 			storeId: store.id,
 			storeName: store.name,
-			city: getStoreCity(store),
+			city: getStoreCity(store)
 		});
 	}
 
+	const { description, keywords } = staticPage('/myymalat/');
 	setSEO({
-		og: {
-			title: generateTitle('Myymälät'),
-			description: 'Selaa Alkon myymälöitä ja valitse ensisijainen myymälä.',
-			url: window.location.href,
-		},
-		keywords: 'Alko, myymälät, myymälä, aukioloajat, osoite, valikoima',
-		description: 'Selaa Alkon myymälöitä ja valitse ensisijainen myymälä.',
+		og: { title: generateTitle('Myymälät'), description, url: window.location.href },
+		keywords,
+		description
 	});
 </script>
 
@@ -39,7 +42,7 @@
 	<title>{generateTitle('Myymälät')}</title>
 </svelte:head>
 
-{#await data.alko}
+{#await data.alkoWithStores}
 	<div class="grid h-full w-full place-content-center">
 		<div class="flex flex-col items-center gap-3">
 			<span
@@ -60,13 +63,38 @@
 			.toLocaleLowerCase('fi-FI')
 			.includes(normalizedQuery)
 	)}
-	
 
 	<div class="mx-auto flex w-full max-w-[120ch] flex-col gap-6 p-6">
 		<header class="flex flex-col gap-2">
 			<h1 class="text-2xl font-bold md:text-3xl">Myymälät</h1>
 			<p class="text-secondary">Selaa Alkon myymälöitä ja valitse ensisijainen myymälä.</p>
 		</header>
+
+		<div class="flex flex-wrap gap-2">
+			<button
+				type="button"
+				class={components.button({
+					type: $preferredStoreId === AUTO_STORE_ID ? 'positive' : 'primary'
+				})}
+				disabled={$preferredStoreId === AUTO_STORE_ID}
+				onclick={() => {
+					$preferredStoreId = AUTO_STORE_ID;
+					requestUserLocation();
+					sendAnalyticsEvent('preferred_store_changed', {
+						storeId: AUTO_STORE_ID,
+						storeName: 'Auto'
+					});
+				}}
+			>
+				{$preferredStoreId === AUTO_STORE_ID
+					? 'Automaattinen valinta käytössä'
+					: 'Valitse lähin myymälä automaattisesti'}
+			</button>
+			<a href={resolve('/kompassi/')} class={components.button({ size: 'md' })}>
+				<Icon name="compass" />
+				<span>Kompassi lähimpään myymälään</span>
+			</a>
+		</div>
 
 		<label class="flex flex-col gap-2" for="store-search">
 			<span class="font-semibold">Hae myymälää</span>
@@ -88,8 +116,10 @@
 					{#each filteredStores as store (store.id)}
 						{@const address = formatAddress(store)}
 						{@const storeOpen = isStoreOpen(store)}
-						<li class="flex flex-col gap-3 border-b border-primary px-4 py-3 last:border-b-0 sm:flex-row sm:items-center">
-							<a href={`/myymalat/${store.id}/`} class="min-w-0 flex-1 hover:underline">
+						<li
+							class="flex flex-col gap-3 border-b border-primary px-4 py-3 last:border-b-0 sm:flex-row sm:items-center"
+						>
+							<a href={resolve(`/myymalat/${store.id}/`)} class="min-w-0 flex-1 hover:underline">
 								<span class="block font-semibold">{store.name}</span>
 								{#if address}
 									<span class="block text-sm text-secondary">{address}</span>
@@ -106,7 +136,10 @@
 								<button
 									type="button"
 									class={twMerge(
-										components.button({ size: 'sm', type: store.id === $preferredStoreId ? 'positive' : 'primary' }),
+										components.button({
+											size: 'sm',
+											type: store.id === $preferredStoreId ? 'positive' : 'primary'
+										}),
 										'shrink-0'
 									)}
 									disabled={store.id === $preferredStoreId}
