@@ -44,8 +44,8 @@ jobs:
           # Preserve collected reviews before Vite copies static/ into the output.
           git archive origin/gh-pages reviews 2>/dev/null | tar -x -C static || true
 
-      - name: Generate review catalog from cached reviews
-        run: bun run sync:reviews --dev --catalog-only
+      - name: Collect Viinilehti reviews
+        run: bun run collect:reviews
 
       - name: Build site assets
         env:

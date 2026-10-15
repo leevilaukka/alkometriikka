@@ -41,10 +41,11 @@ og-categories.json     category OG manifest (fetchData)
 sitemap.xml            (fetchData)
 rss.xml, feed.json     aggregate feeds (fetchData)
 rss/                   per-product and per-category feeds (fetchData)
+reviews/               full Viinilehti reviews and collection lists (build + fetchData)
 tuotteet/              product stubs (build + fetchData)
 tuotteet-manifest.json prerender keys (build + fetchData)
 kategoriat/            category stubs (build + fetchData)
-myymalat/, laskin/, tilastot/, kompassi/, hinnanmuutokset/   static stubs (build + fetchData)
+myymalat/, laskin/, tilastot/, kompassi/, hinnanmuutokset/, arvostelut/   static stubs (build + fetchData)
 daily/                 manifests, index.html stub, archive/ (fetchData + archiveDaily)
 notices.json           site notices (build, from static/)
 ```
@@ -60,11 +61,16 @@ because `build.yml` tests before deploying.
 
 ## `build.yml`
 
-Deploys a new version of the app. The site code changes, but the data must not.
+Deploys a new version of the app while preserving the deployed Alko dataset and
+incrementally updating the optional review cache.
 
 1. Run the full test suite.
 2. **Seed** `static/` with the deployed `data.json`, `availability.json`, `og-images.json` and
-   `og-categories.json`, so the build copies them into `build/`.
+   `og-categories.json`, plus the `reviews/` cache, so the build copies them into `build/`.
+   Run `bun run collect:reviews` before Vite: collect up to 200 missing or stale
+   review pages for active and archived products, then regenerate `all.json` and
+   `skus.json`. On collection failure, regenerate the lists from cached files and
+   continue. The six-hour data workflow also continues collecting reviews.
 3. `vite build` with `BASE_PATH=''`, then minify the vendored `auto-events.js` in the output.
 4. **Prerender gate**: compare `data.json`, `404.html` and `og-images.json` in `build/` with the
    deployed ones. If all three are byte-identical, product pages don't need regenerating.

@@ -184,7 +184,20 @@ pagination, and product links. It is linked from the navigation menu.
 Every review sync also generates `reviews/skus.json` (a sorted JSON array of
 six-digit SKU strings with collected reviews) and `reviews/all.json` (the full
 collection loaded by the review page in one request). These files describe the
-collected cache. To rebuild them from existing files without network requests:
+collected cache.
+
+`bun run build` runs `bun run collect:reviews` before Vite copies the static
+assets. The same collection step runs in the CI site build after restoring the
+deployed cache. It collects up to 200 missing or stale review pages per build,
+including archived products, with up to four requests in flight and 500 ms
+between request starts. If collection fails, it regenerates the lists from the
+existing cache and continues the build. The collector can also run on its own:
+
+```sh
+bun run collect:reviews
+```
+
+To rebuild the lists from existing files without network requests:
 
 ```sh
 bun run sync:reviews --dev --catalog-only
@@ -221,7 +234,7 @@ are excluded from the dev file watcher; reload the page to pick up new reviews.
 The six-hour data workflow seeds, updates, and publishes this cache for active
 and archived products separately
 from Alko's dataset. Review sync errors do not block the product-data update.
-Site builds preserve the deployed review cache. Generated files are ignored by
+Site builds preserve and incrementally update the deployed review cache. Generated files are ignored by
 Git on feature branches. These source interfaces are undocumented; extraction
 failures leave cached reviews intact. Browsers only request our static files.
 

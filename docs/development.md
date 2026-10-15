@@ -40,12 +40,14 @@ bun run daily --dev
 | ----------------------------------------- | ------------------------------------------------------------------------------- |
 | `dev`                                     | Sync in dev mode, then `vite dev --host`                                        |
 | `dev:no-sync`                             | `vite dev --host`                                                               |
-| `build`                                   | `vite build`, then product/category and static/store prerendering into `build/` |
+| `build`                                   | Collect reviews, `vite build`, then product/category and static/store prerendering into `build/` |
 | `preview`                                 | `vite preview` of the build                                                     |
 | `check` / `check:watch`                   | `svelte-kit sync` + `svelte-check`                                              |
 | `test`                                    | `bun test`                                                                      |
 | `format` / `lint`                         | Prettier write / check                                                          |
 | `sync`                                    | `scripts/data/index.ts` (add `--dev` to use `static/`)                          |
+| `sync:reviews`                            | Collect Viinilehti reviews; add `--dev` to use `static/`                        |
+| `collect:reviews`                         | Incremental collection into `static/reviews/`, with cached fallback; run before every build |
 | `migrate`                                 | One-off legacy XLSX dataset migration (`scripts/data/migrate.ts`)               |
 | `daily`                                   | Bake Daily manifests and archive finished days                                  |
 | `backup:daily`                            | Upload the Daily archive tarball to R2                                          |
