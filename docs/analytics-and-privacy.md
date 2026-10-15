@@ -34,6 +34,7 @@ payloads are typed by `AnalyticsEventMap` in `src/lib/types.ts`; add new events 
 | `store_compass_opened`                                   | The store compass is opened                                                                                                                                 | Store id and name                                                                           |
 | `open_settings`, `export_data`, `import_data`            | Settings actions                                                                                                                                            |                                                                                             |
 | `install_app`, `app_installed`, `dismiss_install_banner` | The install prompt (from Settings or the banner) is answered / the app gets installed (any way) / the install banner is closed                              | Whether the prompt was accepted, and from where                                             |
+| `change_language`, `dismiss_language_banner`             | The language is changed (in Settings or from the language suggestion) / the suggestion is answered with "keep Finnish"                                      | Old and new language, where / the suggested language                                        |
 | `pwa_launch`                                             | The site is opened as the installed app, once per launch. Counts installed-app use on every platform, iOS included, where installs themselves can't be seen |                                                                                             |
 | `click_feed`                                             | An RSS/JSON feed link is clicked                                                                                                                            | Which feed, where                                                                           |
 | `share_<type>`                                           | Something is shared                                                                                                                                         | URL and share id                                                                            |
@@ -56,20 +57,22 @@ from the Umami dashboard.
 
 localStorage (keys in `LocalStorageKeys`, `src/lib/utils/constants/app.ts`):
 
-| Key                                                 | Contents                                                                             |
-| --------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| `personal_info`                                     | Weight and gender, if entered                                                        |
-| `preferred_store`, `only_preferred_store`           | Preferred store setting                                                              |
-| `user_location`, `user_location_updated_at`         | Last device location, if the user allowed it (for the nearest store)                 |
-| `lists`                                             | Saved lists                                                                          |
-| `compare_products`, `compare_highlight_differences` | Comparison queue and setting                                                         |
-| `theme`                                             | Light/dark/system                                                                    |
-| `dismissed_notices`                                 | Ids of dismissed notices                                                             |
-| `flag_overrides`                                    | The visitor's own `?flag=` choices ([Feature flags](#feature-flags))                 |
-| `flag_visitor_id`                                   | Random UUID placing the visitor in rollouts; only created once a rollout needs it    |
-| `viewed_shares`                                     | Share ids already counted, so views aren't counted twice                             |
-| `alkometriikka-daily-*`                             | Daily progress, streak and archive scores ([Daily game](daily-game.md#player-state)) |
-| `umami.disabled`                                    | Set in dev only                                                                      |
+| Key                                                 | Contents                                                                               |
+| --------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `personal_info`                                     | Weight and gender, if entered                                                          |
+| `preferred_store`, `only_preferred_store`           | Preferred store setting                                                                |
+| `user_location`, `user_location_updated_at`         | Last device location, if the user allowed it (for the nearest store)                   |
+| `lists`                                             | Saved lists                                                                            |
+| `compare_products`, `compare_highlight_differences` | Comparison queue and setting                                                           |
+| `theme`                                             | Light/dark/system                                                                      |
+| `locale`                                            | The interface language (`fi`, `en`, `sv`), written by Paraglide ([Languages](i18n.md)) |
+| `language_banner_dismissed`                         | The language suggestion was answered                                                   |
+| `dismissed_notices`                                 | Ids of dismissed notices                                                               |
+| `flag_overrides`                                    | The visitor's own `?flag=` choices ([Feature flags](#feature-flags))                   |
+| `flag_visitor_id`                                   | Random UUID placing the visitor in rollouts; only created once a rollout needs it      |
+| `viewed_shares`                                     | Share ids already counted, so views aren't counted twice                               |
+| `alkometriikka-daily-*`                             | Daily progress, streak and archive scores ([Daily game](daily-game.md#player-state))   |
+| `umami.disabled`                                    | Set in dev only                                                                        |
 
 `lists_version`, `app_version` and `current_filters` are declared but not currently written.
 

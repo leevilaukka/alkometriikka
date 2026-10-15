@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { productName } from '$lib/i18n/values';
 	import { AllColumns } from '$lib/utils/constants/columns';
 	import { generateTitle, setSEO } from '$lib/utils/app/meta';
 	import { handleShare } from '$lib/utils/app/share';
@@ -37,6 +38,7 @@
 	import ProductStoreAvailability from '../product/ProductStoreAvailability.svelte';
 	import ProductMobileCta from '../product/ProductMobileCta.svelte';
 	import { pageBottomBar } from '$lib/global.svelte';
+	import { intlLocale, m } from '$lib/i18n';
 
 	const {
 		product,
@@ -83,7 +85,7 @@
 			campaignEnd: product[AllColumns.CampaignEnd]
 		})
 	);
-	const campaignWindow = $derived(sale ? formatCampaignWindow(sale) : null);
+	const campaignWindow = $derived(sale ? formatCampaignWindow(sale, intlLocale) : null);
 
 	afterNavigate(() => {
 		productElement?.scrollIntoView({ behavior: 'smooth' });
@@ -101,19 +103,19 @@
 		setSEO({
 			description,
 			og: {
-				title: generateTitle(`${product[AllColumns.Name]}`),
+				title: generateTitle(`${productName(product)}`),
 				description,
 				url: `https://alkometriikka.fi/tuotteet/${product[AllColumns.Number]}/`
 			},
 			image: {
-				alt: product[AllColumns.Name],
+				alt: productName(product),
 				url: generateImageUrl(product[AllColumns.Number], 'medium'),
 				width: '160',
 				height: '192'
 			},
 			twitter: {
 				card: 'summary_large_image',
-				title: generateTitle(`${product[AllColumns.Name]}`),
+				title: generateTitle(`${productName(product)}`),
 				description,
 				image: generateImageUrl(product[AllColumns.Number], 'medium')
 			},
@@ -136,7 +138,7 @@
 {/snippet}
 
 <svelte:head>
-	<title>{generateTitle(`${product[AllColumns.Name]}`)}</title>
+	<title>{generateTitle(`${productName(product)}`)}</title>
 </svelte:head>
 
 <div
@@ -154,19 +156,19 @@
 			onclick={async () => {
 				const shared = await handleShare({
 					type: 'product',
-					text: `Katso ${product[AllColumns.Name]} -tuotteen tiedot, hinnat ja vastaavat tuotteet Alkometriikasta.`,
+					text: m.product_share_text({ name: productName(product) }),
 					url: location.href,
-					title: `Alkometriikka - ${product[AllColumns.Name]}`,
+					title: `Alkometriikka - ${productName(product)}`,
 					includeSID: true
 				});
 
 				if (!shared) {
-					alert('Linkki kopioitu leikepöydälle!');
+					alert(m.share_link_copied());
 				}
 			}}
 		>
 			<Icon name="share" />
-			<span class="hidden sm:inline">Jaa tuote</span>
+			<span class="hidden sm:inline">{m.product_share()}</span>
 		</button>
 	</div>
 

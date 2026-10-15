@@ -39,6 +39,7 @@
 	import BottomBar from '../widgets/BottomBar.svelte';
 	import FilterButton from '../widgets/FilterButton.svelte';
 	import { compareURL, MAX_COMPARE_PRODUCTS } from '$lib/utils/user/compare';
+	import { m } from '$lib/i18n';
 
 	let activeFilters: ColumnNames[] = $state([]);
 
@@ -176,7 +177,7 @@
 	const compareTruncated = $derived(rows.length > MAX_COMPARE_PRODUCTS);
 
 	function validateListName(name: string) {
-		if (name.trim().length === 0) list.name = 'Nimetön lista';
+		if (name.trim().length === 0) list.name = m.list_unnamed();
 		else list.name = name.trim();
 	}
 
@@ -203,7 +204,7 @@
 {#snippet shareButton(inBar: boolean)}
 	{#if existingList && list.items.length > 0}
 		<button
-			aria-label="Jaa lista"
+			aria-label={m.list_share()}
 			class={twMerge(
 				components.button({ type: 'positive', size: inBar ? 'lg' : 'md' }),
 				inBar ? 'aspect-square h-11 sm:aspect-auto' : 'aspect-square md:aspect-auto'
@@ -215,16 +216,16 @@
 				const shared = await handleShare({
 					type: 'list',
 					title: `Alkometriikka - ${list.name}`,
-					text: `Katso lista: ${list.name}`,
+					text: m.list_share_text({ name: list.name }),
 					url: `${location.origin}/listat/?list=${listToURI(list)}`,
 					includeSID
 				});
 
-				if (!shared) alert('Linkki kopioitu leikepöydälle!');
+				if (!shared) alert(m.share_link_copied());
 			}}
 		>
 			<Icon name="share" class="inline-block " /><span
-				class={inBar ? 'hidden sm:inline' : 'hidden md:block'}>Jaa</span
+				class={inBar ? 'hidden sm:inline' : 'hidden md:block'}>{m.share_button()}</span
 			>
 		</button>
 	{/if}
@@ -243,7 +244,7 @@
 				goto(`?list=${listToURI(saved)}`);
 			}}
 		>
-			<span>{inBar ? 'Tallenna' : 'Tallenna lista'}</span>
+			<span>{inBar ? m.common_save() : m.list_save()}</span>
 			<Icon name="save" />
 		</button>
 	{/if}
@@ -253,17 +254,17 @@
 	{#if compareIds.length > 1}
 		<a
 			href={resolve(compareURL(compareIds))}
-			aria-label="Vertaile listan tuotteita"
+			aria-label={m.list_compare_label()}
 			title={compareTruncated
-				? `Vertaile ${MAX_COMPARE_PRODUCTS} ensimmäistä tuotetta nykyisessä järjestyksessä`
-				: 'Vertaile listan tuotteita rinnakkain'}
+				? m.list_compare_truncated({ count: MAX_COMPARE_PRODUCTS })
+				: m.list_compare_title()}
 			class={twMerge(
 				components.button({ size: inBar ? 'lg' : 'md' }),
 				inBar ? 'aspect-square h-11 sm:aspect-auto' : 'aspect-square md:aspect-auto'
 			)}
 		>
 			<Icon name="compare" class="inline-block" />
-			<span class={inBar ? 'hidden sm:inline' : 'hidden md:block'}>Vertaile</span>
+			<span class={inBar ? 'hidden sm:inline' : 'hidden md:block'}>{m.compare_button()}</span>
 		</a>
 	{/if}
 {/snippet}
@@ -278,7 +279,7 @@
 				onclick={() => toggleDetailsElement()}
 			>
 				<Icon name="info_circle" />
-				<span>Tiedot</span>
+				<span>{m.list_details_button()}</span>
 			</button>
 		{/if}
 		{#if kaljakori.data.length > 1}
@@ -299,7 +300,9 @@
 		class={twMerge(components.button({ size: 'md' }), 'aspect-square md:aspect-auto')}
 	>
 		<Icon name="arrow_back" class="inline-block" />
-		<span class="hidden md:block">{window.history.length > 1 ? 'Takaisin' : 'Etusivulle'}</span>
+		<span class="hidden md:block"
+			>{window.history.length > 1 ? m.common_back() : m.common_to_home()}</span
+		>
 	</button>
 	{#if existingList}
 		<input
@@ -323,7 +326,7 @@
 				}}
 			>
 				<Icon name="sidebar" class="inline-block " />
-				<span class="hidden md:block"> Tiedot </span>
+				<span class="hidden md:block">{m.list_details_button()}</span>
 			</button>
 		{/if}
 		{@render shareButton(false)}
@@ -340,13 +343,13 @@
 	{#if kaljakori.data.length === 0}
 		<div class="grid flex-auto place-content-center">
 			<div class="mx-auto prose text-center dark:prose-invert">
-				<h2>Lista on tyhjä!</h2>
-				<p>Lisää tuotteita listaan tuotevalikosta!</p>
+				<h2>{m.list_empty_title()}</h2>
+				<p>{m.list_empty_description()}</p>
 				<a
 					href={resolve('/')}
 					class={twMerge(components.button({ type: 'positive' }), 'mx-auto w-full')}
 				>
-					<span>Tuotevalikkoon</span>
+					<span>{m.list_to_catalog()}</span>
 					<Icon name="arrow_right_stroke" />
 				</a>
 			</div>
@@ -369,7 +372,7 @@
 				<div class={twMerge('grid w-full grid-cols-2 items-end gap-2 md:w-fit')}>
 					<div class="flex flex-col">
 						<label for={'sortingColumn'} class="text-sm">
-							{'Järjestys'}
+							{m.list_sort_order()}
 						</label>
 						<div class="flex flex-row flex-nowrap">
 							<select
@@ -403,7 +406,7 @@
 					</div>
 					<div class="flex flex-col">
 						<label for={'selectedHighlight'} class="text-sm">
-							{'Korostus'}
+							{m.list_highlight()}
 						</label>
 						<select
 							name="selectedHighlight"
@@ -429,7 +432,7 @@
 					class={twMerge(components.button(), 'ml-auto')}
 				>
 					<Icon name={'arrow_to_top'} />
-					<span>{$isMobile ? 'Alkuun' : 'Hyppää alkuun'}</span>
+					<span>{$isMobile ? m.list_to_top_short() : m.list_to_top()}</span>
 				</button>
 			</div>
 			<div class="flex flex-auto flex-col">
@@ -505,7 +508,7 @@
 										class={twMerge(components.button({ type: 'negative' }))}
 										onclick={() => removeFromList(list, item[AllColumns.Number])}
 									>
-										<span>Poista listasta</span>
+										<span>{m.list_remove_from()}</span>
 										<Icon name="trash" />
 									</button>
 								{:else}
@@ -515,12 +518,12 @@
 												class={twMerge(components.button({ type: 'positive' }))}
 												onclick={() => dialogElement.showModal()}
 											>
-												<span>Lisää listaan</span>
+												<span>{m.list_add_to()}</span>
 												<Icon name="plus" />
 											</button>
 										{/snippet}
 										{#snippet renderContent(dialogElement: HTMLDialogElement)}
-											<h2 class="text-xl">Valitse lista</h2>
+											<h2 class="text-xl">{m.list_choose()}</h2>
 											<AllLists
 												action={(list: ListObj) => {
 													addToList(list, item[AllColumns.Number]);
@@ -548,26 +551,39 @@
 					'xl:relative xl:m-0 xl:h-full xl:max-h-none xl:w-84 xl:overflow-visible xl:rounded-none xl:border-0 xl:open:starting:translate-y-0'
 				)}
 			>
-				<h2 class="text-2xl font-bold">Listan tiedot</h2>
+				<h2 class="text-2xl font-bold">{m.list_details_title()}</h2>
 				<div class="flex flex-auto flex-col gap-4">
-					<p>Tuotteita listassa: {details.totalItems}</p>
-					<p>Kokonaismäärä: {formatValue(details.totalVolume, AllColumns.BottleSize)}</p>
+					<p>{m.list_details_items({ count: details.totalItems })}</p>
 					<p>
-						Yhteensä alkoholia: {formatValue(details.totalAlcoholGrams, AllColumns.AlcoholGrams)}
-					</p>
-					<p>Sokeria: {formatValue(details.totalSugarPerLitre, AllColumns.Sugar)}</p>
-					<p>
-						Yhteensä sokeria: {formatValue(details.totalSugar, AllColumns.Sugar, {
-							includeUnit: false
-						})} g
+						{m.list_details_volume({
+							value: String(formatValue(details.totalVolume, AllColumns.BottleSize))
+						})}
 					</p>
 					<p>
-						Alkoholia per euro: {formatValue(
-							details.totalAlcoholGramsPerEuro,
-							AllColumns.AlcoholGramsPerEuro
-						)} g
+						{m.list_details_alcohol({
+							value: String(formatValue(details.totalAlcoholGrams, AllColumns.AlcoholGrams))
+						})}
 					</p>
-					<p>Arvioitu promillemäärä: {formatValue(details.totalBAC, AllColumns.PromillePerEuro)}</p>
+					<p>
+						{m.list_details_sugar({
+							value: String(formatValue(details.totalSugarPerLitre, AllColumns.Sugar))
+						})}
+					</p>
+					<p>
+						{m.list_details_total_sugar({
+							value: `${formatValue(details.totalSugar, AllColumns.Sugar, { includeUnit: false })} g`
+						})}
+					</p>
+					<p>
+						{m.list_details_alcohol_per_euro({
+							value: `${formatValue(details.totalAlcoholGramsPerEuro, AllColumns.AlcoholGramsPerEuro)} g`
+						})}
+					</p>
+					<p>
+						{m.list_details_promille({
+							value: String(formatValue(details.totalBAC, AllColumns.PromillePerEuro))
+						})}
+					</p>
 					<div
 						class={twMerge(
 							components.button({ size: 'lg' }),
@@ -575,7 +591,11 @@
 						)}
 					>
 						<Icon name="shopping_bag" />
-						<h2>Yhteensä: {formatValue(details.totalPrice, AllColumns.Price)}</h2>
+						<h2>
+							{m.list_details_total({
+								value: String(formatValue(details.totalPrice, AllColumns.Price))
+							})}
+						</h2>
 					</div>
 				</div>
 				{#if $isLaptop}
@@ -589,7 +609,7 @@
 							onclick={() => toggleDetailsElement()}
 						>
 							<Icon name="x" />
-							<span>Sulje</span>
+							<span>{m.common_close()}</span>
 						</button>
 					</div>
 				{/if}

@@ -46,6 +46,8 @@ bun run daily --dev
 | `test`                                    | `bun test`                                                                      |
 | `format` / `lint`                         | Prettier write / check                                                          |
 | `sync`                                    | `scripts/data/index.ts` (add `--dev` to use `static/`)                          |
+| `labels`                                  | English/Swedish value translations, `scripts/i18n/labels.ts` (`--dev` too)      |
+| `i18n`                                    | Compile `messages/*.json` into `src/lib/paraglide/` (also run by `bun install`) |
 | `migrate`                                 | One-off legacy XLSX dataset migration (`scripts/data/migrate.ts`)               |
 | `daily`                                   | Bake Daily manifests and archive finished days                                  |
 | `backup:daily`                            | Upload the Daily archive tarball to R2                                          |

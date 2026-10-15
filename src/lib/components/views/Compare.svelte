@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { productName } from '$lib/i18n/values';
 	import { resolve } from '$app/paths';
 	import { AllColumns } from '$lib/utils/constants/columns';
 	import { formatValue } from '$lib/utils/format/format';
@@ -19,6 +20,7 @@
 	import Icon from '../widgets/Icon.svelte';
 	import ProductImage from '../widgets/ProductImage.svelte';
 	import BadgeList from '../widgets/BadgeList.svelte';
+	import { m } from '$lib/i18n';
 
 	const { products }: { products: PriceListItem[] } = $props();
 
@@ -55,13 +57,12 @@
 	}
 
 	$effect(() => {
+		const description = m.compare_seo_description({
+			names: products.map((p) => productName(p)).join(', ')
+		});
 		setSEO({
-			description: `Vertaile ${products.map((p) => p[AllColumns.Name]).join(', ')} rinnakkain Alkometriikassa.`,
-			og: {
-				title: generateTitle('Tuotevertailu'),
-				url: window.location.href,
-				description: `Vertaile ${products.map((p) => p[AllColumns.Name]).join(', ')} rinnakkain Alkometriikassa.`
-			}
+			description,
+			og: { title: generateTitle(m.compare_title()), url: window.location.href, description }
 		});
 	});
 </script>
@@ -78,16 +79,16 @@
 {/snippet}
 
 <svelte:head>
-	<title>{generateTitle('Tuotevertailu')}</title>
+	<title>{generateTitle(m.compare_title())}</title>
 </svelte:head>
 
 <div class="flex w-full flex-col gap-6 p-4 md:p-6">
 	<div class="flex w-full flex-wrap items-center gap-3.5">
 		<button onclick={handleBack} class={twMerge(components.button({ size: 'md' }))}>
 			<Icon name={window.history.length > 1 ? 'arrow_back' : 'home'} class="inline-block" />
-			<span>{window.history.length > 1 ? 'Takaisin' : 'Etusivulle'}</span>
+			<span>{window.history.length > 1 ? m.common_back() : m.common_to_home()}</span>
 		</button>
-		<h1 class="text-xl font-bold md:text-2xl">Tuotevertailu</h1>
+		<h1 class="text-xl font-bold md:text-2xl">{m.compare_title()}</h1>
 		{#if products.length > 0}
 			<button
 				type="button"
@@ -98,37 +99,38 @@
 				onclick={async () => {
 					const shared = await handleShare({
 						type: 'compare',
-						text: `Vertaile: ${products.map((p) => p[AllColumns.Name]).join(', ')}`,
+						text: m.compare_product_label({
+							name: products.map((p) => productName(p)).join(', ')
+						}),
 						url: location.href,
-						title: generateTitle('Tuotevertailu'),
+						title: generateTitle(m.compare_title()),
 						includeSID: true
 					});
-					if (!shared) alert('Linkki kopioitu leikepöydälle!');
+					if (!shared) alert(m.share_link_copied());
 				}}
 			>
 				<Icon name="share" />
-				<span class="hidden sm:inline">Jaa vertailu</span>
+				<span class="hidden sm:inline">{m.compare_share()}</span>
 			</button>
 		{/if}
 	</div>
 
 	{#if products.length === 0}
 		<div class="mx-auto prose flex flex-col items-center gap-4 py-16 text-center dark:prose-invert">
-			<h2>Vertailu on tyhjä</h2>
-			<p>Lisää tuotteita vertailuun tuotevalikosta "Vertaile"-painikkeella.</p>
+			<h2>{m.compare_empty_title()}</h2>
+			<p>{m.compare_empty_description()}</p>
 			<a
 				href={resolve('/')}
 				class={twMerge(components.button({ type: 'positive' }), 'mx-auto w-fit')}
 			>
-				<span>Tuotevalikkoon</span>
+				<span>{m.list_to_catalog()}</span>
 				<Icon name="arrow_right_stroke" />
 			</a>
 		</div>
 	{:else}
 		<div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
 			<p class="text-sm text-secondary">
-				{products.length}/{MAX_COMPARE_PRODUCTS} tuotetta vertailussa. Kunkin rivin paras arvo on korostettu,
-				kun mahdollista.
+				{m.compare_summary({ selected: products.length, total: MAX_COMPARE_PRODUCTS })}
 			</p>
 			{#if products.length > 1}
 				<label class={twMerge(components.button(), 'w-fit shrink-0 justify-start gap-2')}>
@@ -139,7 +141,7 @@
 							$compareHighlightDifferences ? 'text-brand-1' : 'text-secondary'
 						)}
 					/>
-					<span>Korosta erot</span>
+					<span>{m.compare_highlight_differences()}</span>
 					<input type="checkbox" class="sr-only" bind:checked={$compareHighlightDifferences} />
 				</label>
 			{/if}
@@ -156,20 +158,20 @@
 						class="sticky top-0 z-20 flex flex-col items-center gap-2 border-s border-b border-primary bg-primary p-2 md:p-3"
 					>
 						<button
-							aria-label={`Poista ${product[AllColumns.Name]} vertailusta`}
+							aria-label={m.compare_remove_product({ name: productName(product) })}
 							onclick={() => handleRemove(product[AllColumns.Number])}
 							class="absolute inset-e-1.5 top-1.5 grid h-6 w-6 place-content-center rounded-full text-secondary hover:bg-secondary"
 						>
 							<Icon name="x" />
 						</button>
 						<div class="flex aspect-square w-16 shrink-0 rounded bg-white p-1.5 md:w-24">
-							<ProductImage number={product[AllColumns.Number]} name={product[AllColumns.Name]} />
+							<ProductImage number={product[AllColumns.Number]} name={productName(product)} />
 						</div>
 						<a
 							href={resolve(`/tuotteet/${product[AllColumns.Number]}/`)}
 							class="text-center text-sm font-bold hover:underline md:text-base"
 						>
-							{product[AllColumns.Name]}
+							{productName(product)}
 						</a>
 						<span class="text-center text-xs text-secondary md:text-sm">
 							{product[AllColumns.Manufacturer]}
@@ -181,7 +183,7 @@
 				{/each}
 
 				<!-- Price row -->
-				{@render rowLabel('Hinta', differs.price)}
+				{@render rowLabel(m.column_price(), differs.price)}
 				{#each products as product (product[AllColumns.Number])}
 					{@const sale = getSaleInfo({
 						price: product[AllColumns.Price],
@@ -208,13 +210,15 @@
 							>
 						</div>
 						{#if isBest}
-							<span class={twMerge(components.badge({ color: 'green' }), 'w-fit')}>Halvin</span>
+							<span class={twMerge(components.badge({ color: 'green' }), 'w-fit')}
+								>{m.sort_cheapest()}</span
+							>
 						{/if}
 					</div>
 				{/each}
 
 				<!-- Price per liter row -->
-				{@render rowLabel('Litrahinta', differs.pricePerLiter)}
+				{@render rowLabel(m.column_price_per_liter(), differs.pricePerLiter)}
 				{#each products as product (product[AllColumns.Number])}
 					{@const isBest = bestPricePerLiter.has(product[AllColumns.Number])}
 					<div
@@ -226,13 +230,15 @@
 					>
 						<span>{formatValue(product[AllColumns.PricePerLiter], AllColumns.PricePerLiter)}</span>
 						{#if isBest}
-							<span class={twMerge(components.badge({ color: 'green' }), 'w-fit')}>Edullisin</span>
+							<span class={twMerge(components.badge({ color: 'green' }), 'w-fit')}
+								>{m.compare_best_value()}</span
+							>
 						{/if}
 					</div>
 				{/each}
 
 				<!-- Bottle size row -->
-				{@render rowLabel('Pakkauskoko', differs.bottleSize)}
+				{@render rowLabel(m.column_bottle_size(), differs.bottleSize)}
 				{#each products as product (product[AllColumns.Number])}
 					<div
 						class={twMerge(
@@ -245,7 +251,7 @@
 				{/each}
 
 				<!-- Alcohol percentage row -->
-				{@render rowLabel('Alkoholi', differs.alcohol)}
+				{@render rowLabel(m.column_alcohol_percentage(), differs.alcohol)}
 				{#each products as product (product[AllColumns.Number])}
 					<div
 						class={twMerge(

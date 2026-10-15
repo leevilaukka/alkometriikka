@@ -36,9 +36,12 @@
 	import type { IconName } from '$lib/icons';
 	import { loadUpdateOnNavigate } from '$lib/utils/app/pwa.svelte';
 	import { loadFlags } from '$lib/utils/flags/flags.svelte';
+	import LanguageBanner from '$lib/components/widgets/LanguageBanner.svelte';
+	import { locale, m } from '$lib/i18n';
 
 	let { children, data } = $props();
 	loadFlags();
+	document.documentElement.lang = locale;
 	let searchParamsManager = new SearchParamsManager(page.url);
 	setContext(ContextKeys.SearchParamsManager, searchParamsManager);
 
@@ -189,32 +192,32 @@
 		{
 			href: '/kategoriat/',
 			icon: 'wine',
-			name: 'Kategoriat'
+			name: m.nav_categories()
 		},
 		{
 			href: '/hinnanmuutokset/',
 			icon: 'trending_down',
-			name: 'Hinnanmuutokset'
+			name: m.nav_price_changes()
 		},
 		{
 			href: '/myymalat/',
 			icon: 'store',
-			name: 'Myymälät'
+			name: m.nav_stores()
 		},
 		{
 			href: '/daily/arkisto/',
 			icon: 'archive',
-			name: 'Daily-arkisto'
+			name: m.nav_daily_archive()
 		},
 		{
 			href: '/laskin/',
 			icon: 'calculator',
-			name: 'Laskin'
+			name: m.nav_calculator()
 		},
 		{
 			href: '/tilastot/',
 			icon: 'stats',
-			name: 'Tilastot'
+			name: m.nav_stats()
 		}
 	];
 
@@ -246,7 +249,8 @@
 		<a
 			href="#main-content"
 			onclick={skipToContent}
-			class="sr-only bg-primary px-4 py-2 font-bold focus:not-sr-only">Siirry sisältöön</a
+			class="sr-only bg-primary px-4 py-2 font-bold focus:not-sr-only"
+			>{m.layout_skip_to_content()}</a
 		>
 		<header
 			class="relative flex h-fit items-center gap-2 border-b border-primary bg-primary px-4 py-2 md:gap-4"
@@ -254,7 +258,7 @@
 			<a href={resolve('/')} class="flex shrink-0 flex-row items-center gap-3 bg-primary">
 				<img
 					src={logo}
-					alt="Alkometriikka Logo"
+					alt={m.layout_logo_alt()}
 					class="aspect-square h-10 rounded object-contain"
 				/>
 				<span class="hidden text-[1.75rem] text-brand-3 sm:block dark:text-white"
@@ -277,14 +281,16 @@
 						<input
 							id="searchQuery"
 							type="text"
-							aria-label={inCategory ? 'Hae nimellä tästä kategoriasta' : 'Hae nimellä'}
+							aria-label={inCategory ? m.search_in_category_label() : m.search_by_name_label()}
 							aria-keyshortcuts="/"
 							bind:value={$searchQuery}
 							class={twMerge(
 								components.input(),
 								'peer text-md w-full gap-2 rounded-s-none border-0 border-s hover:border-primary lg:pe-9'
 							)}
-							placeholder={inCategory ? 'Hae tästä kategoriasta...' : 'Hae nimellä...'}
+							placeholder={inCategory
+								? m.search_in_category_placeholder()
+								: m.search_by_name_placeholder()}
 						/>
 						<kbd
 							class="pointer-events-none absolute end-2 top-1/2 hidden size-5 -translate-y-1/2 items-center justify-center rounded border border-current text-[11px] leading-none font-semibold text-secondary peer-focus:hidden lg:flex"
@@ -301,8 +307,11 @@
 					onkeydown={handleExtraMenuKeydown}
 					onfocusout={handleExtraMenuFocusout}
 				>
-					<summary aria-label="Lisää" class={twMerge(components.button(), 'list-none p-2 text-xl')}>
-						{#if !$isMobile}<span class="text-sm">Lisää</span>{/if}<Icon name="menu" />
+					<summary
+						aria-label={m.nav_more()}
+						class={twMerge(components.button(), 'list-none p-2 text-xl')}
+					>
+						{#if !$isMobile}<span class="text-sm">{m.nav_more()}</span>{/if}<Icon name="menu" />
 					</summary>
 					<div
 						class="absolute end-0 top-full z-20 mt-2 flex min-w-40 flex-col gap-1 rounded border border-primary bg-primary p-1 shadow-lg"
@@ -321,21 +330,24 @@
 				</details>
 				<a
 					href={resolve('/daily/')}
-					aria-label="Daily"
+					aria-label={m.nav_daily()}
 					class={twMerge(components.button(), 'p-2 text-xl')}
-					>{#if !$isMobile}<span class="text-sm">Daily</span>{/if}<Icon name="flame" /></a
+					>{#if !$isMobile}<span class="text-sm">{m.nav_daily()}</span>{/if}<Icon name="flame" /></a
 				>
 				<a
 					href={resolve('/listat/')}
-					aria-label="Listat"
+					aria-label={m.nav_lists()}
 					class={twMerge(components.button(), 'p-2 text-xl')}
-					>{#if !$isMobile}<span class="text-sm">Listat</span>{/if}<Icon name="list_ul" /></a
+					>{#if !$isMobile}<span class="text-sm">{m.nav_lists()}</span>{/if}<Icon
+						name="list_ul"
+					/></a
 				>
 				<Settings {alko} />
 			</div>
 		</header>
 		<NoticeBanner lastSynced={alko.dataset.metadata.LastSynced} cached={alko.cached} />
 		<InstallBanner />
+		<LanguageBanner />
 		<div
 			id="main-content"
 			tabindex="-1"
@@ -353,9 +365,9 @@
 	{shiftLoader()}
 	<div class="grid h-full max-h-full w-full place-content-center overflow-hidden">
 		<div class="flex flex-col items-center gap-3">
-			<p>Virhe datan lataamisessa: {error.message}</p>
+			<p>{m.layout_load_error({ message: error.message })}</p>
 			<button class="rounded bg-brand-1 px-4 py-2 text-white" onclick={() => location.reload()}>
-				Yritä uudelleen
+				{m.common_retry()}
 			</button>
 		</div>
 	</div>

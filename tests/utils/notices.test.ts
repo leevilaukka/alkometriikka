@@ -237,8 +237,57 @@ describe('notices.json', () => {
 				}
 			]
 		});
-		expect(Object.keys(schema.definitions.notice.properties).sort()).toEqual(
-			Object.keys(parsed[0]).sort()
+		// `translations` is read but folded into `message` and `link.label`
+		const inputOnly = ['translations'];
+		expect(
+			Object.keys(schema.definitions.notice.properties)
+				.filter((key) => !inputOnly.includes(key))
+				.sort()
+		).toEqual(Object.keys(parsed[0]).sort());
+	});
+});
+
+describe('parseNotices translations', () => {
+	const raw = {
+		notices: [
+			{
+				id: 'a',
+				message: 'Hei',
+				link: { href: '/', label: 'Lue lisää' },
+				translations: { en: { message: 'Hello', linkLabel: 'Read more' }, sv: { message: 'Hej' } }
+			}
+		]
+	};
+
+	it('uses the Finnish texts by default', () => {
+		const [parsed] = parseNotices(raw);
+		expect(parsed.message).toBe('Hei');
+		expect(parsed.link?.label).toBe('Lue lisää');
+	});
+
+	it('uses the translation for the given locale', () => {
+		const [parsed] = parseNotices(raw, 'en');
+		expect(parsed.message).toBe('Hello');
+		expect(parsed.link?.label).toBe('Read more');
+	});
+
+	it('falls back to the Finnish link label when only the message is translated', () => {
+		const [parsed] = parseNotices(raw, 'sv');
+		expect(parsed.message).toBe('Hej');
+		expect(parsed.link?.label).toBe('Lue lisää');
+	});
+
+	it('still requires the Finnish message', () => {
+		expect(
+			parseNotices({ notices: [{ id: 'a', translations: { en: { message: 'Hi' } } }] }, 'en')
+		).toEqual([]);
+	});
+
+	it('ignores malformed translations', () => {
+		const [parsed] = parseNotices(
+			{ notices: [{ id: 'a', message: 'Hei', translations: { en: { message: '  ' } } }] },
+			'en'
 		);
+		expect(parsed.message).toBe('Hei');
 	});
 });

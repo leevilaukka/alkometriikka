@@ -1,5 +1,6 @@
 import { resolve } from '$app/paths';
 import { error, redirect } from '@sveltejs/kit';
+import { m } from '$lib/i18n';
 
 export async function load({ parent, params }) {
 	const data = await parent();
@@ -11,7 +12,7 @@ export async function load({ parent, params }) {
 
 	if (!alko.kaljakori.findById(id)) {
 		error(404, {
-			message: 'Tuotetta ei löytynyt'
+			message: m.scan_product_not_found()
 		});
 	}
 

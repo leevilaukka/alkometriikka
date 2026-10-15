@@ -27,6 +27,7 @@ import { getSaleInfo } from '../utils/catalog/sales';
 import { ProductVariantIndex } from '../utils/catalog/productVariants';
 import { buildCategoryTree, type CategoryNode } from '../utils/catalog/categories';
 import { createSubscriber } from 'svelte/reactivity';
+import { productName } from '$lib/i18n/values';
 
 function toPositiveNumber(value: unknown): number | null {
 	if (typeof value === 'number') {
@@ -587,9 +588,8 @@ export class Kaljakori {
 		const lowerQuery = query.toLowerCase();
 		// Short queries match too many words loosely, so they only match exactly
 		const fuzzy = lowerQuery.length >= MIN_FUZZY_QUERY_LENGTH;
-		return this.data.filter((item) => {
-			if (!item[key]) return false;
-			const value = item[key].toString().toLowerCase();
+		const matches = (text: string) => {
+			const value = text.toLowerCase();
 			if (value.includes(lowerQuery)) return true;
 			if (!fuzzy) return false;
 			return value.split(' ').some((word) => {
@@ -599,6 +599,15 @@ export class Kaljakori {
 				if (Math.abs(word.length - lowerQuery.length) > Math.ceil(longer * 0.4)) return false;
 				return isSimilarString(word, lowerQuery, 0.6);
 			});
+		};
+		return this.data.filter((item) => {
+			if (!item[key]) return false;
+			const value = item[key].toString();
+			if (matches(value)) return true;
+			// Names are also searched in the language they're shown in
+			if (key !== AllColumns.Name) return false;
+			const shown = productName(item);
+			return shown !== value && matches(shown);
 		});
 	}
 

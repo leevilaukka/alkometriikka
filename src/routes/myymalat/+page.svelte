@@ -5,7 +5,13 @@
 	import { AUTO_STORE_ID } from '$lib/utils/constants/app';
 	import { requestUserLocation } from '$lib/utils/device/location';
 	import type { AvailabilityStore } from '$lib/types';
-	import { getStoreCity, isStoreOpen } from '$lib/utils/catalog/availability.js';
+	import {
+		getStoreCity,
+		isStoreOpen,
+		storeName,
+		storeText
+	} from '$lib/utils/catalog/availability.js';
+	import { intlLocale, m } from '$lib/i18n';
 	import { generateTitle, setSEO } from '$lib/utils/app/meta';
 	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 	import { staticPage } from '$lib/utils/app/seo';
@@ -16,7 +22,10 @@
 	let query = $state('');
 
 	function formatAddress(store: AvailabilityStore) {
-		return [store.address, [store.postalCode, store.postOffice].filter(Boolean).join(' ')]
+		return [
+			storeText(store, 'address'),
+			[store.postalCode, storeText(store, 'postOffice')].filter(Boolean).join(' ')
+		]
 			.filter(Boolean)
 			.join(', ');
 	}
@@ -32,14 +41,14 @@
 
 	const { description, keywords } = staticPage('/myymalat/');
 	setSEO({
-		og: { title: generateTitle('Myymälät'), description, url: window.location.href },
+		og: { title: generateTitle(m.nav_stores()), description, url: window.location.href },
 		keywords,
 		description
 	});
 </script>
 
 <svelte:head>
-	<title>{generateTitle('Myymälät')}</title>
+	<title>{generateTitle(m.nav_stores())}</title>
 </svelte:head>
 
 {#await data.alkoWithStores}
@@ -48,26 +57,34 @@
 			<span
 				class="block h-16 w-16 animate-spin rounded-full border-[0.5rem] border-red-600 border-b-transparent"
 			></span>
-			<p>Ladataan...</p>
+			<p>{m.common_loading()}</p>
 		</div>
 	</div>
 {:then alko}
 	{@const stores = Object.values(alko.availability.stores).sort((first, second) =>
-		first.name.localeCompare(second.name, 'fi')
+		storeName(first).localeCompare(storeName(second), intlLocale)
 	)}
-	{@const normalizedQuery = query.trim().toLocaleLowerCase('fi-FI')}
+	{@const normalizedQuery = query.trim().toLocaleLowerCase(intlLocale)}
 	{@const filteredStores = stores.filter((store) =>
-		[store.name, store.address, store.postalCode, store.postOffice]
+		[
+			store.name,
+			store.address,
+			store.postalCode,
+			store.postOffice,
+			store.name_sv,
+			store.address_sv,
+			store.postOffice_sv
+		]
 			.filter(Boolean)
 			.join(' ')
-			.toLocaleLowerCase('fi-FI')
+			.toLocaleLowerCase(intlLocale)
 			.includes(normalizedQuery)
 	)}
 
 	<div class="mx-auto flex w-full max-w-[120ch] flex-col gap-6 p-6">
 		<header class="flex flex-col gap-2">
-			<h1 class="text-2xl font-bold md:text-3xl">Myymälät</h1>
-			<p class="text-secondary">Selaa Alkon myymälöitä ja valitse ensisijainen myymälä.</p>
+			<h1 class="text-2xl font-bold md:text-3xl">{m.nav_stores()}</h1>
+			<p class="text-secondary">{m.stores_intro()}</p>
 		</header>
 
 		<div class="flex flex-wrap gap-2">
@@ -86,30 +103,28 @@
 					});
 				}}
 			>
-				{$preferredStoreId === AUTO_STORE_ID
-					? 'Automaattinen valinta käytössä'
-					: 'Valitse lähin myymälä automaattisesti'}
+				{$preferredStoreId === AUTO_STORE_ID ? m.stores_auto_on() : m.stores_auto_choose()}
 			</button>
 			<a href={resolve('/kompassi/')} class={components.button({ size: 'md' })}>
 				<Icon name="compass" />
-				<span>Kompassi lähimpään myymälään</span>
+				<span>{m.stores_compass_link()}</span>
 			</a>
 		</div>
 
 		<label class="flex flex-col gap-2" for="store-search">
-			<span class="font-semibold">Hae myymälää</span>
+			<span class="font-semibold">{m.stores_search()}</span>
 			<input
 				id="store-search"
 				type="search"
 				bind:value={query}
-				placeholder="Nimi, osoite tai postinumero"
+				placeholder={m.stores_search_placeholder()}
 				class={twMerge(components.input({ size: 'md' }), 'w-full')}
 			/>
 		</label>
 
 		<section class="overflow-hidden rounded border border-primary bg-secondary">
 			<div class="border-b border-primary px-4 py-3 text-sm text-secondary">
-				{filteredStores.length} myymälää
+				{m.stores_count({ count: filteredStores.length })}
 			</div>
 			{#if filteredStores.length}
 				<ul>
@@ -120,7 +135,7 @@
 							class="flex flex-col gap-3 border-b border-primary px-4 py-3 last:border-b-0 sm:flex-row sm:items-center"
 						>
 							<a href={resolve(`/myymalat/${store.id}/`)} class="min-w-0 flex-1 hover:underline">
-								<span class="block font-semibold">{store.name}</span>
+								<span class="block font-semibold">{storeName(store)}</span>
 								{#if address}
 									<span class="block text-sm text-secondary">{address}</span>
 								{/if}
@@ -131,7 +146,7 @@
 										? 'rounded bg-green-100 px-2 py-1 text-sm text-green-800 dark:bg-green-900 dark:text-green-100'
 										: 'rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-zinc-700 dark:text-zinc-100'}
 								>
-									{storeOpen ? 'Avoinna' : 'Suljettu'}
+									{storeOpen ? m.store_open() : m.store_closed_now()}
 								</span>
 								<button
 									type="button"
@@ -145,14 +160,14 @@
 									disabled={store.id === $preferredStoreId}
 									onclick={() => selectPreferredStore(store)}
 								>
-									{store.id === $preferredStoreId ? 'Valittu' : 'Valitse'}
+									{store.id === $preferredStoreId ? m.stores_selected() : m.stores_select()}
 								</button>
 							</div>
 						</li>
 					{/each}
 				</ul>
 			{:else}
-				<p class="px-4 py-3 text-secondary">Hakua vastaavia myymälöitä ei löytynyt.</p>
+				<p class="px-4 py-3 text-secondary">{m.stores_none_found()}</p>
 			{/if}
 		</section>
 	</div>

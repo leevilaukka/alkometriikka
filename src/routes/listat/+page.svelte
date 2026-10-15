@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { m } from '$lib/i18n';
 	import List from '$lib/components/views/List.svelte';
 	import AllLists from '$lib/components/widgets/AllLists.svelte';
 	import Icon from '$lib/components/widgets/Icon.svelte';
@@ -11,19 +12,22 @@
 	const { description: DESCRIPTION } = staticPage('/listat/');
 
 	$effect(() => {
+		const description = data.list ? m.list_seo_description({ name: data.list.name }) : DESCRIPTION;
 		setSEO({
-			description: data.list ? `Katso lista "${data.list.name}" Alkometriikassa.` : DESCRIPTION,
+			description,
 			og: {
-				title: data.list ? `Lista - ${data.list.name}` : 'Listat',
+				title: data.list ? m.list_page_title({ name: data.list.name }) : m.nav_lists(),
 				url: window.location.href,
-				description: data.list ? `Katso lista "${data.list.name}" Alkometriikassa.` : DESCRIPTION
+				description
 			}
 		});
 	});
 </script>
 
 <svelte:head>
-	<title>{data.list ? generateTitle(`Lista - ${data.list.name}`) : generateTitle('Listat')}</title>
+	<title
+		>{generateTitle(data.list ? m.list_page_title({ name: data.list.name }) : m.nav_lists())}</title
+	>
 </svelte:head>
 
 {#await data.alko}
@@ -32,7 +36,7 @@
 			<span
 				class="block h-16 w-16 animate-spin rounded-full border-[0.5rem] border-red-600 border-b-transparent"
 			></span>
-			<p>Ladataan...</p>
+			<p>{m.common_loading()}</p>
 		</div>
 	</div>
 {:then alko}
@@ -46,7 +50,7 @@
 					class={twMerge(components.button({ size: 'md' }))}
 				>
 					<Icon name="arrow_back" class="inline-block" />
-					<span>Takaisin</span>
+					<span>{m.common_back()}</span>
 				</button>
 			</div>
 			<div class="flex flex-auto flex-col items-center gap-4">

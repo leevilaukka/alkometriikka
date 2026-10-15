@@ -22,6 +22,7 @@ detail.
 | [Kaljakori](frontend/kaljakori.md)                | The in-browser product database: parsing, filtering, search, subsets                  |
 | [Calculations](frontend/calculations.md)          | Drunk values, sales, quality metrics, similar products, size matching                 |
 | [Features](frontend/features.md)                  | Every page and user-facing feature, one section each                                  |
+| [Languages](i18n.md)                              | Finnish, English and Swedish: interface text, Alko's data translations, what stays fi |
 | **Generated content**                             |                                                                                       |
 | [Daily game](daily-game.md)                       | Question generation, pinned manifests, archive, backups                               |
 | [Site generation](site-generation.md)             | Prerendered SEO stubs, RSS/JSON feeds, sitemap, OG images, R2                         |

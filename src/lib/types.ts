@@ -39,9 +39,17 @@ export type BreadcrumbItem = { label: string; href?: string };
 export type AvailabilityStore = {
 	id: string;
 	name: string;
+	/** Swedish versions of the texts, where Alko has one */
+	name_sv?: string;
 	address?: string;
+	address_sv?: string;
 	postalCode?: string;
 	postOffice?: string;
+	postOffice_sv?: string;
+	additional_info_sv?: string;
+	location_details_sv?: string;
+	exceptions_sv?: string;
+	unobstructured_sv?: string;
 	outletType?: string;
 	latitude?: number;
 	longitude?: number;
@@ -198,6 +206,8 @@ export type AnalyticsEventMap = {
 	app_installed: undefined;
 	pwa_launch: undefined;
 	dismiss_install_banner: undefined;
+	change_language: { from: string; to: string; location: 'settings' | 'banner' };
+	dismiss_language_banner: { suggested?: string };
 	create_list: undefined;
 	save_list: { url?: string };
 	view_sizes: { product_number: string };

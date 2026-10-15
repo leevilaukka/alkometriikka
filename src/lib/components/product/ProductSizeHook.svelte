@@ -5,6 +5,7 @@
 	import type { SizeOption } from '$lib/utils/catalog/filters';
 	import Icon from '../widgets/Icon.svelte';
 	import { twMerge } from 'tailwind-merge';
+	import { m } from '$lib/i18n';
 
 	const { size, class: _class = '' }: { size: SizeOption; class?: string } = $props();
 </script>
@@ -19,7 +20,7 @@
 	<Icon name="price_tag" class="shrink-0 text-xl text-green-700 dark:text-green-400" />
 	<div class="flex min-w-0 flex-col gap-0.5">
 		<span class="text-sm font-bold text-green-700 dark:text-green-400"
-			>Edullisempi koko saatavilla</span
+			>{m.sizes_cheaper_available()}</span
 		>
 		<strong class="text-sm leading-tight">
 			{formatValue(size.product[AllColumns.BottleSize], AllColumns.BottleSize)} · {formatValue(

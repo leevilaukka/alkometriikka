@@ -8,6 +8,7 @@
 	import { formatDirection, getBearing, unwrapAngle } from '$lib/utils/device/compass';
 	import { readHeading } from '$lib/utils/device/orientation';
 	import { components } from '$lib/utils/ui/styles';
+	import { m } from '$lib/i18n';
 
 	let { store, active = true }: { store: AvailabilityStore; active?: boolean } = $props();
 
@@ -82,7 +83,9 @@
 			<span class="absolute top-1/2 right-3 -translate-y-1/2 text-sm text-secondary">E</span>
 		</div>
 		{#if arrived}
-			<span class="text-6xl motion-safe:animate-bounce" role="img" aria-label="Perillä">🍻</span>
+			<span class="text-6xl motion-safe:animate-bounce" role="img" aria-label={m.compass_arrived()}
+				>🍻</span
+			>
 		{:else if bearing !== null}
 			<div
 				class="absolute inset-0 transition-transform duration-300 ease-out"
@@ -97,32 +100,28 @@
 				></div>
 			</div>
 		{:else}
-			<span class="animate-pulse text-secondary">Haetaan sijaintia…</span>
+			<span class="animate-pulse text-secondary">{m.compass_locating()}</span>
 		{/if}
 	</div>
 
 	<div class="text-center" aria-live="polite">
 		{#if denied || $locationDenied}
-			<p class="text-sm text-red-600">
-				Sijaintilupa on estetty. Salli sijainti selaimen asetuksista.
-			</p>
+			<p class="text-sm text-red-600">{m.compass_location_denied()}</p>
 		{:else if arrived}
-			<p class="text-lg font-bold">Perillä!</p>
+			<p class="text-lg font-bold">{m.compass_arrived_title()}</p>
 			<a
 				href={resolve('/listat/')}
 				class={twMerge(components.button({ type: 'positive', size: 'md' }), 'mt-2 px-5 py-3')}
 			>
 				<Icon name="list" />
-				<span>Avaa listasi ja tee ostokset!</span>
+				<span>{m.compass_open_lists()}</span>
 			</a>
 		{:else if distance !== null && bearing !== null}
 			<p class="text-2xl font-bold">{formatStoreDistance(distance)}</p>
 			<p class="text-secondary">
-				Kulje {formatDirection(bearing)}
+				{m.compass_walk({ direction: formatDirection(bearing) })}
 				{#if heading === null}
-					<span class="block text-xs"
-						>Kompassin suuntaa ei saatu, nuoli osoittaa pohjoiseen nähden.</span
-					>
+					<span class="block text-xs">{m.compass_no_heading()}</span>
 				{/if}
 			</p>
 		{/if}

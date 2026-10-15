@@ -70,12 +70,14 @@ into `/`. Without it Google picks a filtered URL as the front page's canonical.
 
 ## Feeds
 
-`bun run scripts/site/rss.ts` (reads `./data.json` and `./og-images.json`, or `static/` with `--dev`)
+`bun run scripts/site/rss.ts` (reads `./data.json`, `./og-images.json` and the `labels.*.json`
+value translations, or `static/` with `--dev`)
 
 | Output                                                             | Contents                                                 | Limit      |
 | ------------------------------------------------------------------ | -------------------------------------------------------- | ---------- |
 | `rss.xml`                                                          | New products and price changes across the catalog        | 1000 items |
 | `feed.json`                                                        | The same items as [JSON Feed](https://www.jsonfeed.org/) | 1000 items |
+| `rss.en.xml`, `feed.en.json`, `rss.sv.xml`, `feed.sv.json`         | The aggregate feeds in English and Swedish               | 1000 items |
 | `rss/<id>.xml`                                                     | One product's price changes                              | 20 items   |
 | `rss/kategoriat/<type>.xml`, `rss/kategoriat/<type>/<subtype>.xml` | A category's new products and price changes              | 50 items   |
 
@@ -92,8 +94,12 @@ a per-product feed only once its price has changed at least once; stale per-prod
 deleted. Item images use the product's R2 card when available. `lastBuildDate` is
 `metadata.LastUpdated`.
 
-The site links the aggregate feeds from the settings dialog and price changes page, product pages
-link their own feed, and category pages theirs.
+The English and Swedish aggregate feeds use Alko's translations of names and categories from
+`labels.<language>.json` ([Languages](i18n.md)) and are skipped when that file is missing. The
+per-product and per-category feeds are Finnish only.
+
+The site links the aggregate feeds from the settings dialog and price changes page (in the
+visitor's language), product pages link their own feed, and category pages theirs.
 
 ## Sitemap
 

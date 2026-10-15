@@ -5,8 +5,11 @@
 		formatStoreDistance,
 		getStoreDistance,
 		getTodaysOpeningHours,
-		isStoreOpen
+		isStoreOpen,
+		storeName,
+		storeText
 	} from '$lib/utils/catalog/availability';
+	import { intlLocale, m } from '$lib/i18n';
 	import { formatRelativeTime } from '$lib/utils/format/format';
 	import { requestSettingsOpen } from '$lib/utils/app/settings';
 	import { components } from '$lib/utils/ui/styles';
@@ -56,14 +59,13 @@
 	)}
 >
 	<header class="flex flex-col gap-0.5 border-b border-primary p-3.5">
-		<h2 class="text-lg font-bold">Myymäläsaatavuus</h2>
+		<h2 class="text-lg font-bold">{m.availability_title()}</h2>
 		<p class="text-sm text-secondary">
-			{stores.length}
-			{stores.length === 1 ? 'myymälä' : 'myymälää'}{#if availabilityUpdated}
+			{m.stores_count({ count: stores.length })}{#if availabilityUpdated}
 				· <time
 					datetime={availabilityUpdated.toISOString()}
-					title={availabilityUpdated.toLocaleString('fi-FI')}
-					>päivitetty {formatRelativeTime(availabilityUpdated, now)}</time
+					title={availabilityUpdated.toLocaleString(intlLocale)}
+					>{m.availability_updated({ time: formatRelativeTime(availabilityUpdated, now) })}</time
 				>{/if}
 		</p>
 	</header>
@@ -74,7 +76,7 @@
 				class={twMerge(components.button({ type: 'positive', size: 'md' }), 'w-full')}
 				onclick={requestSettingsOpen}
 			>
-				Valitse ensisijainen myymälä
+				{m.availability_choose_store()}
 			</button>
 		</div>
 	{/if}
@@ -87,14 +89,14 @@
 				<li class="flex gap-2.5 border-b border-primary p-3.5 last:border-b-0">
 					<div class="flex min-w-0 flex-1 flex-col gap-0.5">
 						<a href={resolve(`/myymalat/${store.id}/`)} class="w-fit font-bold hover:underline"
-							>{store.name}</a
+							>{storeName(store)}</a
 						>
 						{#if store.address}
-							<span class="text-sm text-secondary">{store.address}</span>
+							<span class="text-sm text-secondary">{storeText(store, 'address')}</span>
 						{/if}
 						{#if openingHours}
 							<span class="text-sm text-secondary">
-								{storeOpen ? `Avoinna tänään ${openingHours}` : 'Suljettu'}
+								{storeOpen ? m.store_open_today({ hours: openingHours }) : m.store_closed_now()}
 							</span>
 						{/if}
 					</div>
@@ -105,6 +107,6 @@
 			{/each}
 		</ul>
 	{:else}
-		<p class="bg-primary p-3.5 text-secondary">Ei saatavilla myymälöissä.</p>
+		<p class="bg-primary p-3.5 text-secondary">{m.availability_none()}</p>
 	{/if}
 </section>

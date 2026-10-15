@@ -5,6 +5,7 @@
 	import { findProductCategoryTrail } from '$lib/utils/catalog/categories';
 	import Breadcrumb from '../widgets/Breadcrumb.svelte';
 	import type { BreadcrumbItem } from '$lib/types';
+	import { productName, translateValue } from '$lib/i18n/values';
 
 	const {
 		product,
@@ -16,12 +17,16 @@
 		const type = product[AllColumns.Type];
 		const subType = product[AllColumns.SubType];
 		const { trail, legacy } = findProductCategoryTrail(kaljakori.getCategoryTree(), type, subType);
-		const items: BreadcrumbItem[] = trail.map((node) => ({ label: node.name, href: node.path }));
+		const items: BreadcrumbItem[] = trail.map((node, depth) => ({
+			label: translateValue(node.name, depth === 0 ? AllColumns.Type : AllColumns.SubType),
+			href: node.path
+		}));
 		// Categories too small for a page of their own are still shown, just not linked
-		if (!trail.length && type) items.push({ label: type });
-		if (!legacy && items.length < 2 && subType) items.push({ label: subType });
+		if (!trail.length && type) items.push({ label: translateValue(type, AllColumns.Type) });
+		if (!legacy && items.length < 2 && subType)
+			items.push({ label: translateValue(subType, AllColumns.SubType) });
 		return items;
 	});
 </script>
 
-<Breadcrumb {items} current={product[AllColumns.Name]} class={_class} />
+<Breadcrumb {items} current={productName(product)} class={_class} />

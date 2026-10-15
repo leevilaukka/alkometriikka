@@ -2,6 +2,7 @@
 	import type { HistogramBin } from '$lib/utils/stats/metrics';
 	import { histogramBinIndex } from '$lib/utils/stats/metrics';
 	import { twMerge } from 'tailwind-merge';
+	import { m } from '$lib/i18n';
 
 	const {
 		bins,
@@ -32,7 +33,7 @@
 						index === highlightIndex && 'bg-brand-3'
 					)}
 					style:height={`${Math.max(2, (bin.count / maxCount) * 100)}%`}
-					title={`${format(bin.from)}–${format(bin.to)}: ${bin.count} tuotetta`}
+					title={`${format(bin.from)}–${format(bin.to)}: ${m.products_count({ count: bin.count })}`}
 				></div>
 			{/each}
 		</div>

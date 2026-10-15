@@ -3,6 +3,7 @@
 	import { formatValue } from '$lib/utils/format/format';
 	import type { PriceListItem } from '$lib/types';
 	import { twMerge } from 'tailwind-merge';
+	import { m } from '$lib/i18n';
 
 	const { product, class: _class = '' }: { product: PriceListItem; class?: string } = $props();
 
@@ -13,15 +14,18 @@
 
 	const stats = $derived([
 		{
-			label: 'Alkoholi',
+			label: m.column_alcohol_percentage(),
 			value: formatValue(product[AllColumns.AlcoholPercentage], AllColumns.AlcoholPercentage)
 		},
-		{ label: 'Sokeri', value: formatValue(product[AllColumns.Sugar], AllColumns.Sugar) },
+		{ label: m.column_sugar(), value: formatValue(product[AllColumns.Sugar], AllColumns.Sugar) },
 		{
-			label: 'Energia',
+			label: m.column_energy(),
 			value: formatValue(product[AllColumns.Energy] as number, AllColumns.Energy)
 		},
-		{ label: 'Pakkaus', value: product[AllColumns.PackagingType] || '–' }
+		{
+			label: m.quick_stats_package(),
+			value: formatValue(product[AllColumns.PackagingType], AllColumns.PackagingType) || '–'
+		}
 	]);
 </script>
 

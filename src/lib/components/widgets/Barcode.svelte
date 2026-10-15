@@ -11,6 +11,7 @@
 	import { AllColumns } from '$lib/utils/constants/columns';
 	import { goto } from '$app/navigation';
 	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
+	import { m } from '$lib/i18n';
 
 	const barcodeDetector = new BarcodeDetector({
 		formats: ['ean_13', 'qr_code']
@@ -99,7 +100,7 @@
 	function handleEANBarcode({ rawValue }: DetectedBarcode) {
 		const productCode = rawValue;
 		const products = kaljakori.findByColumn(AllColumns.EAN, productCode);
-		if (products.length !== 1) throw 'Tuotetta ei löytynyt';
+		if (products.length !== 1) throw m.scan_product_not_found();
 		const link = resolve(`/tuotteet/${products[0][AllColumns.Number]}/`);
 		sendAnalyticsEvent('scan_barcode', { ean: productCode, link });
 		goto(link, { replaceState: true });
@@ -112,7 +113,7 @@
 				// Alko product link
 				const productNumber = url.pathname.split('/tuotteet/')[1].split('/')[0];
 				const products = kaljakori.findByColumn(AllColumns.Number, productNumber);
-				if (products.length !== 1) throw 'Tuotetta ei löytynyt';
+				if (products.length !== 1) throw m.scan_product_not_found();
 				const link = resolve(`/tuotteet/${products[0][AllColumns.Number]}/`);
 				sendAnalyticsEvent('scan_qr_code', {
 					type: 'alko_product_qr',
@@ -125,7 +126,7 @@
 			if (url.host !== window.location.host) return;
 			goto(url.pathname + url.search);
 		} catch (error) {
-			throw 'Virheellinen QR-koodi!';
+			throw m.scan_invalid_qr();
 		}
 	}
 </script>
@@ -148,31 +149,28 @@
 		>
 			<Icon name="scan" />
 			{#if !$isMobile}
-				<span>Skannaa</span>
+				<span>{m.scan_button()}</span>
 			{/if}
 		</button>
 	{/snippet}
 	{#snippet renderContent(dialogElement: HTMLDialogElement)}
 		<div class="flex flex-col gap-4 p-4">
-			<h2 class="text-center text-xl font-bold">Skannaa viivakoodi</h2>
-			<p class="text-center">Skannaa tuotteen viivakoodi kameralla tai lataa kuva viivakoodista.</p>
+			<h2 class="text-center text-xl font-bold">{m.scan_title()}</h2>
+			<p class="text-center">{m.scan_description()}</p>
 			<div class="border-2 border-dashed border-primary p-4 text-center">
 				<label class="cursor-pointer">
 					<input type="file" accept="image/*" class="hidden" onchange={handleFileUpload} />
 					<div class="flex flex-col items-center justify-center">
 						<Icon name="file" class="mb-2 text-4xl" />
-						<span class="text-blue-500 underline">Valitse kuvatiedosto</span>
+						<span class="text-blue-500 underline">{m.scan_choose_file()}</span>
 					</div>
 				</label>
 			</div>
 			{#if cameraFailed}
 				<div class="flex flex-col items-center p-4 text-center">
-					<p class="mb-2 text-balance text-red-600">
-						Kameran käyttö epäonnistui. Varmista, että laitteessasi on kamera ja selaimellasi on
-						lupa käyttää sitä.
-					</p>
+					<p class="mb-2 text-balance text-red-600">{m.scan_camera_failed()}</p>
 					<button class={twMerge(components.button(), '')} onclick={startCamera}>
-						Yritä uudelleen
+						{m.common_retry()}
 					</button>
 				</div>
 			{:else}
@@ -197,7 +195,7 @@
 				class={twMerge(components.button(), 'mt-4 w-full')}
 				onclick={() => {
 					dialogElement.close();
-				}}>Sulje</button
+				}}>{m.common_close()}</button
 			>
 		</div>
 	{/snippet}

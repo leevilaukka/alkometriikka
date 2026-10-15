@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { m } from '$lib/i18n';
 	import Product from '$lib/components/views/Product.svelte';
 	import { page } from '$app/state';
 	import { preferredStoreId, userLocation } from '$lib/global.svelte';
@@ -22,7 +23,7 @@
 			<span
 				class="block h-16 w-16 animate-spin rounded-full border-[0.5rem] border-red-600 border-b-transparent"
 			></span>
-			<p>Ladataan...</p>
+			<p>{m.common_loading()}</p>
 		</div>
 	</div>
 {:then alko}

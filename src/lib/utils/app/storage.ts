@@ -28,6 +28,8 @@ type LocalStorageValueMap = {
 	[LocalStorageKeys.FlagVisitorId]: string;
 	/** Recent days the site was used on (local dates), and whether the install banner was closed */
 	[LocalStorageKeys.InstallBanner]: { days: string[]; dismissed?: boolean };
+	/** Paraglide writes `locale` itself, as a plain string, so it isn't listed here */
+	[LocalStorageKeys.LanguageBannerDismissed]: boolean;
 	[LocalStorageKeys.DailyGame]: SavedDailyGame;
 	[LocalStorageKeys.DailyStreak]: DailyStreak;
 	[LocalStorageKeys.DailyUnlimitedRun]: UnlimitedRunState;

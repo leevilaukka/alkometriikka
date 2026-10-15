@@ -13,6 +13,19 @@
 		}
 	},
 	"definitions": {
+		"translation": {
+			"type": "object",
+			"required": ["message"],
+			"additionalProperties": false,
+			"properties": {
+				"message": { "type": "string", "minLength": 1 },
+				"linkLabel": {
+					"type": "string",
+					"minLength": 1,
+					"description": "The link's label in this language. Defaults to the Finnish one."
+				}
+			}
+		},
 		"notice": {
 			"type": "object",
 			"required": ["id", "message"],
@@ -37,7 +50,16 @@
 				"message": {
 					"type": "string",
 					"minLength": 1,
-					"description": "Plain text, in Finnish."
+					"description": "Plain text, in Finnish. Shown in every language that has no translation."
+				},
+				"translations": {
+					"type": "object",
+					"additionalProperties": false,
+					"description": "Optional English and Swedish texts, shown to visitors using that language.",
+					"properties": {
+						"en": { "$ref": "#/definitions/translation" },
+						"sv": { "$ref": "#/definitions/translation" }
+					}
 				},
 				"link": {
 					"type": "object",

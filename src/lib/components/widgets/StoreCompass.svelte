@@ -8,6 +8,7 @@
 	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 	import { detectCompass, requestOrientationPermission } from '$lib/utils/device/orientation';
 	import { components } from '$lib/utils/ui/styles';
+	import { m } from '$lib/i18n';
 
 	let { store }: { store: AvailabilityStore } = $props();
 
@@ -46,16 +47,16 @@
 				onclick={() => openCompass(dialogElement)}
 			>
 				<Icon name="compass" />
-				<span>Kompassi</span>
+				<span>{m.compass_title()}</span>
 			</button>
 		{/snippet}
 		{#snippet renderContent(dialogElement: HTMLDialogElement)}
 			<div class="flex flex-col gap-4">
 				<div class="flex w-full items-center justify-between gap-4">
-					<h2 class="text-lg font-bold">Kompassi: {store.name}</h2>
+					<h2 class="text-lg font-bold">{m.compass_store_title({ store: store.name })}</h2>
 					<button
 						onclick={() => dialogElement?.close()}
-						aria-label="Sulje"
+						aria-label={m.common_close()}
 						class={twMerge(components.button({ type: 'noborder' }))}
 					>
 						<Icon name="x" />

@@ -48,6 +48,7 @@ file would be dropped by the parser.
 | `dismissible`          | `true`  | `false` keeps the notice up.                                                  |
 | `replacesStaleWarning` | `false` | Hides the automatic stale warning while active, to explain an outage instead. |
 | `urlParams`            | —       | Only shown to visitors who landed with these query params. See below.         |
+| `translations`         | —       | `{ en: { message, linkLabel? }, sv: … }`, shown to visitors in that language. |
 
 Malformed entries are skipped, and a missing or broken file just shows no notices.
 

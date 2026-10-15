@@ -40,6 +40,8 @@ og-images.json         product OG manifest (fetchData)
 og-categories.json     category OG manifest (fetchData)
 sitemap.xml            (fetchData)
 rss.xml, feed.json     aggregate feeds (fetchData)
+rss.{en,sv}.xml, feed.{en,sv}.json   aggregate feeds in English and Swedish (fetchData)
+labels.{en,sv}.json    English and Swedish value translations (fetchData)
 rss/                   per-product and per-category feeds (fetchData)
 tuotteet/              product stubs (build + fetchData)
 tuotteet-manifest.json prerender keys (build + fetchData)
@@ -103,18 +105,22 @@ flowchart LR
 
 1. Run `tests/data` and `tests/alko`. The sync rewrites the dataset the whole site reads, so it
    never runs with lifecycle or schema code that fails its tests.
-2. Seed `data.json` and `hashes.json` from `gh-pages`.
+2. Seed `data.json`, `hashes.json` and the `labels.*.json` value translations from `gh-pages`.
 3. `scripts/data/rehash.ts` via the `rehash-dataset` action.
 4. Run the sync up to 3 times, 60 s apart. Exit code 3 (safeguards rejected the data) fails
    immediately without retrying. The **force** input sets `ALKO_SYNC_FORCE=1`. Each attempt
    appends its outcome to `sync-report.ndjson`, uploaded as an artifact even when the job fails.
 5. Upload `data.json`, `hashes.json` and `availability.json` as artifacts.
+6. Build the English and Swedish value translations (`scripts/i18n/labels.ts`,
+   `continue-on-error`) and upload them. On a failure the seeded files are uploaded unchanged, so
+   the site keeps the previous translations ([Languages](i18n.md#the-label-files)).
 
 **og-images** renders and uploads product and category OG images for changed products, updating
 the manifests checked out from `gh-pages`. Both steps are `continue-on-error`: if R2 is down, pages
 deploy with the previous manifests and fall back to Alko's photos.
 
-**sitemap** and **rss** generate `sitemap.xml` and the feeds.
+**sitemap** and **rss** generate `sitemap.xml` and the feeds. **rss** also downloads the value
+translations for the English and Swedish aggregate feeds.
 
 **deploy**
 
@@ -128,7 +134,8 @@ deploy with the previous manifests and fall back to Alko's photos.
    replace `daily/` and `rss/`.
 7. Commit "Update price list and static product pages [skip ci]" and push (a normal push, not a
    force-push).
-8. Purge `data.json`, `availability.json`, `rss.xml` and `feed.json` from Cloudflare. This runs
+8. Purge `data.json`, `availability.json`, the value translations and the aggregate feeds from
+   Cloudflare. This runs
    only after the push, so a request can't re-cache the old files between the purge and the new
    files going live.
 
@@ -178,15 +185,15 @@ in the public Actions logs.
 
 ## Composite actions
 
-| Action              | Does                                                                                                                       |
-| ------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| `setup`             | Installs Bun, restores the `~/.bun` and `node_modules` cache keyed on `bun.lock`, `bun install --frozen-lockfile`          |
-| `checkout-gh-pages` | Fetches `gh-pages` and adds it as a detached worktree at `../gh-pages`                                                     |
-| `rehash-dataset`    | Runs `scripts/data/rehash.ts` if a `data.json` was seeded                                                                  |
-| `run-daily-tests`   | `bun test tests/daily tests/site`: the pinned-manifest guard before any bake                                               |
-| `daily-og`          | Renders and uploads today's Daily card, then writes the `daily/index.html` stub. Stops before the stub if the upload fails |
-| `git-bot-identity`  | Commits as `github-actions[bot]`                                                                                           |
-| `report-run`        | Writes the run record to R2 (see [Run monitoring](#run-monitoring)). Used by each workflow's `report` job                  |
+| Action              | Does                                                                                                                                                     |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `setup`             | Installs Bun, restores the `~/.bun` and `node_modules` cache keyed on `bun.lock`, `bun install --frozen-lockfile`, compile the messages (`bun run i18n`) |
+| `checkout-gh-pages` | Fetches `gh-pages` and adds it as a detached worktree at `../gh-pages`                                                                                   |
+| `rehash-dataset`    | Runs `scripts/data/rehash.ts` if a `data.json` was seeded                                                                                                |
+| `run-daily-tests`   | `bun test tests/daily tests/site`: the pinned-manifest guard before any bake                                                                             |
+| `daily-og`          | Renders and uploads today's Daily card, then writes the `daily/index.html` stub. Stops before the stub if the upload fails                               |
+| `git-bot-identity`  | Commits as `github-actions[bot]`                                                                                                                         |
+| `report-run`        | Writes the run record to R2 (see [Run monitoring](#run-monitoring)). Used by each workflow's `report` job                                                |
 
 ## Secrets and variables
 

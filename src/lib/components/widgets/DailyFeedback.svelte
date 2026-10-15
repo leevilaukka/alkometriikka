@@ -4,6 +4,7 @@
 	import { sha256Hex } from '$lib/daily/manifest';
 	import type { GameTypes } from '$lib/types';
 	import type { GeneratedGame } from '$lib/daily/questions';
+	import { m } from '$lib/i18n';
 
 	let {
 		date,
@@ -20,12 +21,12 @@
 	} = $props();
 
 	const categories = [
-		{ key: 'wrong_answer', label: 'Vastaus on merkitty väärin' },
-		{ key: 'wrong_price', label: 'Hinta on väärä' },
-		{ key: 'wrong_image', label: 'Kuva puuttuu tai on väärä' },
-		{ key: 'unclear_question', label: 'Kysymys on epäselvä' },
-		{ key: 'ui_bug', label: 'Käyttöliittymävika' },
-		{ key: 'other', label: 'Jokin muu ongelma' }
+		{ key: 'wrong_answer', label: m.daily_feedback_wrong_answer() },
+		{ key: 'wrong_price', label: m.daily_feedback_wrong_price() },
+		{ key: 'wrong_image', label: m.site_feedback_wrong_image() },
+		{ key: 'unclear_question', label: m.daily_feedback_unclear_question() },
+		{ key: 'ui_bug', label: m.daily_feedback_ui_bug() },
+		{ key: 'other', label: m.site_feedback_other() }
 	] as const;
 
 	async function handleSubmit(selected: Record<string, boolean>) {
@@ -48,9 +49,9 @@
 
 <FeedbackDialog
 	triggerClass="px-3 py-2"
-	title="Ilmoita ongelmasta"
-	description="Daily on vielä betassa. Valitse alta, mikä meni pieleen — emme kerää vapaata tekstiä, vain valitut kohdat ja tämän pelin tunnisteen, jotta voimme jäljittää vian."
-	thankYou="Kiitos ilmoituksesta! Käytämme sitä Daily-betan kehittämiseen."
+	title={m.site_feedback_title()}
+	description={m.daily_feedback_description()}
+	thankYou={m.daily_feedback_thanks()}
 	{categories}
 	onSubmit={handleSubmit}
 />

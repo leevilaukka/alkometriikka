@@ -6,6 +6,7 @@ import { categorySlug } from '../catalog/categories';
 import { AllColumns } from '../constants/columns';
 import type { PriceChange } from './metrics';
 import { toISODateInTimeZone } from '../catalog/sales';
+import { intlLocale, locale } from '$lib/i18n';
 
 /** Window choices on the price changes page, in days. */
 export const PRICE_CHANGE_WINDOWS = [7, 30, 90] as const;
@@ -116,19 +117,25 @@ export function priceChangesURL(options: Parameters<typeof priceChangeParams>[0]
 	return params ? `/hinnanmuutokset/?${params}` : '/hinnanmuutokset/';
 }
 
-/** "2026-10-05" → "5.10." */
+/** "2026-10-05" → "5.10." in Finnish, "5 Oct" in English */
 export function formatPriceChangeDate(date: string): string {
-	const [, month, day] = date.split('-');
-	return `${Number(day)}.${Number(month)}.`;
+	const [year, month, day] = date.split('-').map(Number);
+	if (locale === 'fi') return `${day}.${month}.`;
+	return new Date(year, month - 1, day).toLocaleDateString(intlLocale, {
+		day: 'numeric',
+		month: 'short'
+	});
 }
 
-/** 12.4 → "+12 %", -5 → "−5 %" (fi-FI uses the Unicode minus sign) */
+/** 12.4 → "+12 %", -5 → "−5 %" (fi-FI uses the Unicode minus sign). English has no space: "+12%". */
 export function formatPriceChangePercent(percent: number): string {
-	return `${percent > 0 ? '+' : ''}${percent.toLocaleString('fi-FI', { maximumFractionDigits: 0 })} %`;
+	const sign = percent > 0 ? '+' : '';
+	const value = percent.toLocaleString(intlLocale, { maximumFractionDigits: 0 });
+	return locale === 'en' ? `${sign}${value}%` : `${sign}${value} %`;
 }
 
 /** 40.17 → 35.98 gives "−4,19 €", a rise gets a "+" sign. */
 export function formatPriceChangeAmount(change: PriceChange): string {
 	const amount = change.to - change.from;
-	return `${amount > 0 ? '+' : ''}${amount.toLocaleString('fi-FI', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} €`;
+	return `${amount > 0 ? '+' : ''}${amount.toLocaleString(intlLocale, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} €`;
 }

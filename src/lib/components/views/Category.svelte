@@ -37,6 +37,10 @@
 	import CategoryStats from '../category/CategoryStats.svelte';
 	import CategoryPriceChanges from '../category/CategoryPriceChanges.svelte';
 	import CategorySection from '../category/CategorySection.svelte';
+	import { formatNumber } from '$lib/utils/format/format';
+	import { storeName } from '$lib/utils/catalog/availability';
+	import { m } from '$lib/i18n';
+	import { productName, translateValue } from '$lib/i18n/values';
 
 	const {
 		trail,
@@ -55,6 +59,18 @@
 
 	const node = $derived(trail[trail.length - 1]);
 	const parent = $derived(trail.length > 1 ? trail[0] : undefined);
+
+	/** Category names are dataset values: top-level ones are types, the rest subtypes */
+	const typeName = (category: CategoryNode) => translateValue(category.name, AllColumns.Type);
+	const subTypeName = (category: CategoryNode) => translateValue(category.name, AllColumns.SubType);
+	const nodeName = $derived(parent ? subTypeName(node) : typeName(node));
+	// The same as categoryTitle(), which the prerendered pages use, with the shown names
+	const title = $derived(
+		trail
+			.map((category, depth) => (depth === 0 ? typeName(category) : subTypeName(category)))
+			.reverse()
+			.join(' - ')
+	);
 
 	$effect(() => {
 		if ($preferredStoreId === AUTO_STORE_ID) return keepAutoLocationFresh();
@@ -149,28 +165,28 @@
 	});
 
 	$effect(() => {
-		const title = generateTitle(categoryTitle(trail));
+		const pageTitle = generateTitle(title);
 		setSEO({
 			description,
-			og: { title, description, url: `https://alkometriikka.fi${node.path}` },
-			twitter: { title, description },
+			og: { title: pageTitle, description, url: `https://alkometriikka.fi${node.path}` },
+			twitter: { title: pageTitle, description },
 			keywords: trail.map((item) => item.name).join(', ')
 		});
 	});
 </script>
 
 <svelte:head>
-	<title>{generateTitle(categoryTitle(trail))}</title>
+	<title>{generateTitle(title)}</title>
 	<link
 		rel="alternate"
 		type="application/rss+xml"
-		title={`${categoryTitle(trail)} – uutuudet ja hinnanmuutokset`}
+		title={m.feed_category_title({ category: categoryTitle(trail) })}
 		href={`${feedPath}.xml`}
 	/>
 </svelte:head>
 
 {#snippet stat(label: string, value: string, product?: PriceListItem)}
-	{@const content = `${product ? product[AllColumns.Name] : ''}`}
+	{@const content = `${product ? productName(product) : ''}`}
 	<div
 		class="flex min-w-0 flex-col gap-0.5 rounded border border-primary bg-primary px-3 py-2 text-sm"
 	>
@@ -193,18 +209,18 @@
 {#snippet insights(inSheet: boolean)}
 	<div class="flex flex-col">
 		{#if cheapest || mostAlcoholPerEuro || onSaleCount > 0 || newCount > 0}
-			<CategorySection title="Kohokohdat" open={inSheet}>
+			<CategorySection title={m.category_highlights()} open={inSheet}>
 				<div class={twMerge('flex flex-col gap-2', inSheet && 'grid grid-cols-2')}>
 					{#if cheapest}
 						{@render stat(
-							'Halvin',
+							m.sort_cheapest(),
 							formatValue(cheapest[AllColumns.Price], AllColumns.Price) as string,
 							cheapest
 						)}
 					{/if}
 					{#if mostAlcoholPerEuro}
 						{@render stat(
-							'Eniten alkoholia eurolla',
+							m.category_most_alcohol_per_euro(),
 							formatValue(
 								mostAlcoholPerEuro[AllColumns.AlcoholGramsPerEuro],
 								AllColumns.AlcoholGramsPerEuro
@@ -213,10 +229,10 @@
 						)}
 					{/if}
 					{#if onSaleCount > 0}
-						{@render stat('Alennuksessa', `${onSaleCount} tuotetta`)}
+						{@render stat(m.value_on_sale(), m.products_count({ count: onSaleCount }))}
 					{/if}
 					{#if newCount > 0}
-						{@render stat('Uutuuksia', `${newCount} tuotetta`)}
+						{@render stat(m.category_new_products(), m.products_count({ count: newCount }))}
 					{/if}
 				</div>
 			</CategorySection>
@@ -235,7 +251,7 @@
 {#snippet filterLink()}
 	<a href={filterHref} class={twMerge(components.button(), 'flex-1')}>
 		<Icon name="filter" />
-		<span>Suodata tarkemmin</span>
+		<span>{m.category_filter_more()}</span>
 	</a>
 {/snippet}
 
@@ -243,11 +259,11 @@
 	{#if compareHref}
 		<a
 			href={compareHref}
-			title="Vertaile eniten alkoholia eurolla, halvimman hinnan ja halvimman litrahinnan tuotteita"
+			title={m.category_compare_best_title()}
 			class={twMerge(components.button(), 'flex-1')}
 		>
 			<Icon name="compare" />
-			<span>Vertaile parhaita</span>
+			<span>{m.category_compare_best()}</span>
 		</a>
 	{/if}
 {/snippet}
@@ -255,16 +271,19 @@
 {#snippet header()}
 	<div class="flex w-full flex-col gap-3">
 		<Breadcrumb
-			items={trail.slice(0, -1).map((item) => ({ label: item.name, href: item.path }))}
-			current={node.name}
+			items={trail.slice(0, -1).map((item) => ({ label: typeName(item), href: item.path }))}
+			current={nodeName}
 		/>
 		<div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-			<h1 class="text-2xl font-bold">{node.name}</h1>
+			<h1 class="text-2xl font-bold">{nodeName}</h1>
 			<span class="text-sm text-secondary">
 				{#if storeFilter}
-					{active.length.toLocaleString('fi-FI')} / {node.count.toLocaleString('fi-FI')} tuotetta myymälässä
+					{m.category_count_in_store({
+						shown: formatNumber(active.length),
+						count: node.count
+					})}
 				{:else}
-					{node.count.toLocaleString('fi-FI')} tuotetta valikoimassa
+					{m.category_count_in_selection({ count: node.count })}
 				{/if}
 			</span>
 		</div>
@@ -272,13 +291,13 @@
 			<label class="flex cursor-pointer items-center gap-2 text-sm">
 				<input type="checkbox" bind:checked={$onlyPreferredStore} class="shrink-0 rounded" />
 				<span class="min-w-0 truncate"
-					>Vain myymälässäni: <strong>{preferredStore.name}</strong></span
+					>{m.category_only_my_store()} <strong>{storeName(preferredStore)}</strong></span
 				>
 			</label>
 		{:else if Object.keys(availability.stores).length}
 			<a href={resolve('/myymalat/')} class="group flex items-center gap-1 text-sm text-secondary">
 				<Icon name="map_pin" />
-				<span class="group-hover:underline">Valitse myymälä nähdäksesi sen valikoiman</span>
+				<span class="group-hover:underline">{m.category_choose_store()}</span>
 			</a>
 		{/if}
 		{#if chips.length > 1 || siblingTypes.length}
@@ -297,7 +316,7 @@
 								: 'border border-primary bg-primary hover:bg-secondary'
 						)}
 					>
-						<span>{chip.name}</span>
+						<span>{subTypeName(chip)}</span>
 						<span
 							class={twMerge(
 								'rounded px-1 text-xs',
@@ -313,7 +332,7 @@
 						href={appPath(type.path)}
 						class="flex shrink-0 items-center gap-1.5 rounded border border-dashed border-primary px-2.5 py-1 text-sm text-secondary hover:bg-secondary"
 					>
-						{type.name}
+						{typeName(type)}
 					</a>
 				{/each}
 			</div>
@@ -344,11 +363,11 @@
 					onclick={() => dialogElement.showModal()}
 				>
 					<Icon name="info_circle" />
-					<span>Tiedot</span>
+					<span>{m.list_details_button()}</span>
 				</button>
 			{/snippet}
 			{#snippet renderContent(dialogElement: HTMLDialogElement)}
-				<h2 class="text-xl font-bold">{node.name}</h2>
+				<h2 class="text-xl font-bold">{nodeName}</h2>
 				{@render insights(true)}
 				<!-- Pinned to the bottom of the scrolling sheet, where the Tiedot button that opened it was. Sticky offsets count from inside the sheet's p-4, so -bottom-4 reaches its edge -->
 				<div
@@ -360,24 +379,24 @@
 						onclick={() => dialogElement.close()}
 					>
 						<Icon name="x" />
-						<span>Sulje</span>
+						<span>{m.common_close()}</span>
 					</button>
 				</div>
 			{/snippet}
 		</Popup>
 		<a href={filterHref} class={twMerge(components.button({ size: 'lg' }), 'h-11 flex-1')}>
 			<Icon name="filter" />
-			<span>Suodata</span>
+			<span>{m.category_filter()}</span>
 		</a>
 		<!-- Hidden while the comparison bar is showing, so there's only one "compare" action on screen -->
 		{#if compareHref && compareProductIds.length === 0}
 			<a
 				href={compareHref}
-				title="Vertaile eniten alkoholia eurolla, halvimman hinnan ja halvimman litrahinnan tuotteita"
+				title={m.category_compare_best_title()}
 				class={twMerge(components.button({ size: 'lg' }), 'h-11 flex-1')}
 			>
 				<Icon name="compare" />
-				<span>Parhaat</span>
+				<span>{m.category_best()}</span>
 			</a>
 		{/if}
 	</BottomBar>

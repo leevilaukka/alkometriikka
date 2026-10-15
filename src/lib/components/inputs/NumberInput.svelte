@@ -5,6 +5,7 @@
 	import { twMerge } from 'tailwind-merge';
 	import { untrack } from 'svelte';
 	import Icon from '../widgets/Icon.svelte';
+	import { locale, m } from '$lib/i18n';
 
 	let {
 		defaultValue = [0, 100],
@@ -34,7 +35,7 @@
 	</label>
 	<div class="flex w-full gap-2">
 		<input
-			lang="fi"
+			lang={locale}
 			type="number"
 			{name}
 			bind:value={value[0]}
@@ -45,7 +46,7 @@
 		/>
 		<span class="my-auto">-</span>
 		<input
-			lang="fi"
+			lang={locale}
 			type="number"
 			bind:value={value[1]}
 			min={value[0]}
@@ -55,7 +56,7 @@
 		/>
 		<button
 			class={twMerge(components.button())}
-			aria-label="Nollaa"
+			aria-label={m.common_reset()}
 			onclick={() => (value = [min, max])}><Icon name="refresh_ccw" /></button
 		>
 	</div>

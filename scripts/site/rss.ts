@@ -13,6 +13,8 @@ import {
 	categoryTitle,
 	CATEGORY_FEED_DIR
 } from '../../src/lib/utils/catalog/categories';
+import { m } from '../../src/lib/paraglide/messages.js';
+import { FINNISH, INTL_TAGS, loadTranslator, type Translator } from '../i18n/translate';
 
 /** Max items in the aggregate (whole-catalog) feed. */
 const RSS_LIMIT = 1000;
@@ -24,6 +26,13 @@ const SITE_URL = 'https://alkometriikka.fi';
 const RSS_AGGREGATE_PATH = 'rss.xml';
 const RSS_DIR = 'rss';
 const FEED_AGGREGATE_PATH = 'feed.json';
+/**
+ * Languages the aggregate feeds are also published in, as `rss.<language>.xml` and
+ * `feed.<language>.json`. Per-product and per-category feeds are Finnish only.
+ */
+const FEED_LANGUAGES = ['en', 'sv'] as const;
+const translatedPath = (path: string, language: string) =>
+	path.replace(/\.(\w+)$/, `.${language}.$1`);
 
 type FeedItem = {
 	guid: string;
@@ -59,16 +68,27 @@ function asText(value: unknown): string {
 	return value === null || value === undefined ? '' : String(value).trim();
 }
 
-function formatPrice(value: number): string {
-	return value.toLocaleString('fi-FI', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+function formatPrice(value: number, t: Translator = FINNISH): string {
+	return value.toLocaleString(INTL_TAGS[t.language], {
+		minimumFractionDigits: 2,
+		maximumFractionDigits: 2
+	});
 }
 
-function formatVolume(value: number): string {
-	return `${value.toLocaleString('fi-FI', { maximumFractionDigits: 2 })} l`;
+function formatVolume(value: number, t: Translator): string {
+	return `${value.toLocaleString(INTL_TAGS[t.language], { maximumFractionDigits: 2 })} l`;
 }
 
-function formatPercentage(value: number): string {
-	return value.toLocaleString('fi-FI', { minimumFractionDigits: 1, maximumFractionDigits: 2 });
+function formatPercentage(value: number, t: Translator): string {
+	return value.toLocaleString(INTL_TAGS[t.language], {
+		minimumFractionDigits: 1,
+		maximumFractionDigits: 2
+	});
+}
+
+/** English writes "12%", Finnish and Swedish "12 %". */
+function percentSign(t: Translator): string {
+	return t.language === 'en' ? '%' : ' %';
 }
 
 function asNumber(value: unknown): number | undefined {
@@ -80,8 +100,8 @@ function asNumber(value: unknown): number | undefined {
 	return undefined;
 }
 
-function formatSigned(value: number, suffix: string): string {
-	return `${value > 0 ? '+' : ''}${formatPrice(value)} ${suffix}`;
+function formatSigned(value: number, suffix: string, t: Translator): string {
+	return `${value > 0 ? '+' : ''}${formatPrice(value, t)} ${suffix}`;
 }
 
 function compareItemsByDate(a: FeedItem, b: FeedItem): number {
@@ -121,8 +141,10 @@ function alkoImageUrl(productId: string): string {
 function collectPerProductItems(
 	schema: string[],
 	products: Record<string, StoredProduct>,
-	ogManifest: Record<string, string>
+	ogManifest: Record<string, string>,
+	t: Translator = FINNISH
 ): Map<string, FeedItem[]> {
+	const locale = t.language;
 	const byProduct = new Map<string, FeedItem[]>();
 	for (const [productId, product] of Object.entries(products)) {
 		if (!product || !Array.isArray(product.values)) continue;
@@ -133,12 +155,15 @@ function collectPerProductItems(
 			schema.map((column, index) => [column, product.values[index]])
 		);
 		const id = asText(fields.Numero);
-		const name = asText(fields.Nimi) || `Tuote ${id}`;
+		const name = t.name(id, asText(fields.Nimi)) || m.feed_product_fallback({ id }, { locale });
 		if (!id || id !== productId) continue;
 
 		const image = ogManifest[productId] ? ogImageUrl(ogManifest[productId]) : alkoImageUrl(id);
 		const link = `${SITE_URL}/tuotteet/${encodeURIComponent(id)}/`;
-		const category = [asText(fields.Tyyppi), asText(fields.Alatyyppi)].filter(Boolean).join(' / ');
+		const category = [asText(fields.Tyyppi), asText(fields.Alatyyppi)]
+			.filter(Boolean)
+			.map(t.value)
+			.join(' / ');
 
 		const items: FeedItem[] = [];
 		for (let index = 1; index < history.length; index += 1) {
@@ -148,20 +173,20 @@ function collectPerProductItems(
 
 			const delta = current.price - previous.price;
 			const percent = previous.price !== 0 ? (delta / previous.price) * 100 : 0;
-			const signedPercent = `${percent > 0 ? '+' : ''}${percent.toLocaleString('fi-FI', {
+			const signedPercent = `${percent > 0 ? '+' : ''}${percent.toLocaleString(INTL_TAGS[locale], {
 				minimumFractionDigits: 2,
 				maximumFractionDigits: 2
-			})} %`;
+			})}${percentSign(t)}`;
+			const from = `${formatPrice(previous.price, t)} €`;
+			const to = `${formatPrice(current.price, t)} €`;
 
 			items.push({
 				guid: `alkometriikka-${id}-${current.date}-${current.price}`,
-				title: `${name} — ${formatPrice(previous.price)} € → ${formatPrice(current.price)} €`,
+				title: `${name} — ${from} → ${to}`,
 				link,
 				date: current.date,
 				pubDate: toRfc822Date(current.date),
-				description: `<p>Tuotteen ${name} hinta on muuttunut.</p><p>${formatPrice(
-					previous.price
-				)} € → ${formatPrice(current.price)} € (${formatSigned(delta, '€')}, ${signedPercent}).</p>`,
+				description: `<p>${m.feed_price_changed({ name }, { locale })}</p><p>${from} → ${to} (${formatSigned(delta, '€', t)}, ${signedPercent}).</p>`,
 				image,
 				name,
 				category,
@@ -183,8 +208,10 @@ function collectPerProductItems(
 function collectNewProductItems(
 	schema: string[],
 	products: Record<string, StoredProduct>,
-	ogManifest: Record<string, string>
+	ogManifest: Record<string, string>,
+	t: Translator = FINNISH
 ): FeedItem[] {
+	const locale = t.language;
 	const items: FeedItem[] = [];
 	for (const [productId, product] of Object.entries(products)) {
 		if (!product || !Array.isArray(product.values)) continue;
@@ -195,7 +222,7 @@ function collectNewProductItems(
 		if (asText(fields.Uutuus).toLowerCase() !== 'uutuus') continue;
 
 		const id = asText(fields.Numero);
-		const name = asText(fields.Nimi) || `Tuote ${id}`;
+		const name = t.name(id, asText(fields.Nimi)) || m.feed_product_fallback({ id }, { locale });
 		if (!id || id !== productId) continue;
 
 		const history = Array.isArray(product.priceHistory) ? product.priceHistory : [];
@@ -203,18 +230,26 @@ function collectNewProductItems(
 		if (!date) continue;
 
 		const manufacturer = asText(fields.Valmistaja);
-		const country = asText(fields.Valmistusmaa);
+		const country = t.value(asText(fields.Valmistusmaa));
 		const price = asNumber(fields.Hinta);
 		const volume = asNumber(fields.Pullokoko);
 		const abv = asNumber(fields['Alkoholi-%']);
-		const category = [asText(fields.Tyyppi), asText(fields.Alatyyppi)].filter(Boolean).join(' / ');
+		const category = [asText(fields.Tyyppi), asText(fields.Alatyyppi)]
+			.filter(Boolean)
+			.map(t.value)
+			.join(' / ');
 
 		const details: string[] = [];
-		if (manufacturer) details.push(`Valmistaja: ${manufacturer}`);
-		if (country) details.push(`Valmistusmaa: ${country}`);
-		if (price !== undefined) details.push(`Hinta: ${formatPrice(price)} €`);
-		if (volume !== undefined) details.push(`Tilavuus: ${formatVolume(volume)}`);
-		if (abv !== undefined) details.push(`Alkoholi: ${formatPercentage(abv)} %`);
+		if (manufacturer) details.push(`${m.column_manufacturer({}, { locale })}: ${manufacturer}`);
+		if (country) details.push(`${m.column_country({}, { locale })}: ${country}`);
+		if (price !== undefined)
+			details.push(`${m.column_price({}, { locale })}: ${formatPrice(price, t)} €`);
+		if (volume !== undefined)
+			details.push(`${m.feed_volume({}, { locale })}: ${formatVolume(volume, t)}`);
+		if (abv !== undefined)
+			details.push(
+				`${m.column_alcohol_percentage({}, { locale })}: ${formatPercentage(abv, t)}${percentSign(t)}`
+			);
 
 		items.push({
 			guid: `alkometriikka-new-${id}`,
@@ -223,14 +258,14 @@ function collectNewProductItems(
 			date,
 			pubDate: toRfc822Date(date),
 			description:
-				`<p>${name} on uusi tuote Alkon valikoimassa.</p>` +
+				`<p>${m.feed_new_product({ name }, { locale })}</p>` +
 				(details.length > 0 ? `<p>${details.join('<br />')}</p>` : ''),
 			image: ogManifest[productId] ? ogImageUrl(ogManifest[productId]) : alkoImageUrl(id),
 			name,
 			category,
 			typeSlug: categorySlug(asText(fields.Tyyppi)),
 			subTypeSlug: categorySlug(asText(fields.Alatyyppi)),
-			tags: ['Uutuus']
+			tags: [m.value_new({}, { locale })]
 		});
 	}
 	return items;
@@ -246,7 +281,8 @@ type ChannelInfo = {
 function generateRssXml(
 	items: FeedItem[],
 	channel: ChannelInfo,
-	lastBuildDateISO?: string
+	lastBuildDateISO?: string,
+	language = 'fi'
 ): string {
 	const itemsXml = items
 		.map(
@@ -277,7 +313,7 @@ function generateRssXml(
 		`<title>${escapeXml(channel.title)}</title>` +
 		`<link>${escapeXml(channel.link)}</link>` +
 		`<description>${escapeXml(channel.description)}</description>` +
-		`<language>fi</language>` +
+		`<language>${language}</language>` +
 		`<lastBuildDate>${lastBuildDate}</lastBuildDate>` +
 		`<generator>alkometriikka rss.ts</generator>` +
 		`<docs>https://www.rssboard.org/rss-specification</docs>` +
@@ -297,14 +333,14 @@ function generateRssXml(
 }
 
 /** Serializes feed items to the JSON Feed 1.1 format (https://jsonfeed.org). */
-function generateJsonFeed(items: FeedItem[], channel: ChannelInfo): string {
+function generateJsonFeed(items: FeedItem[], channel: ChannelInfo, language = 'fi'): string {
 	return JSON.stringify({
 		version: 'https://jsonfeed.org/version/1.1',
 		title: channel.title,
 		home_page_url: channel.link,
 		feed_url: channel.selfUrl,
 		description: channel.description,
-		language: 'fi',
+		language,
 		favicon: `${SITE_URL}/favicon.ico`,
 		items: items.map((item) => {
 			const entry: Record<string, string | string[]> = {
@@ -418,6 +454,42 @@ async function writeCategoryFeeds(
 	return count;
 }
 
+/**
+ * Reserves a slot for every currently-new product so the "uutuudet" section is never crowded
+ * out of the aggregate by price changes, then fills the remaining slots with the most recent
+ * price changes and sorts the whole mix by date.
+ */
+function aggregateItems(newItems: FeedItem[], priceChanges: FeedItem[]): FeedItem[] {
+	const priceLimit = Math.max(0, RSS_LIMIT - newItems.length);
+	return [...newItems, ...priceChanges.slice(0, priceLimit)].sort(compareItemsByDate);
+}
+
+/** `rss.xml` and `feed.json`, or `rss.<language>.xml` and `feed.<language>.json`. */
+async function writeAggregateFeeds(
+	items: FeedItem[],
+	t: Translator,
+	lastBuildDateISO: string | undefined
+) {
+	const { language } = t;
+	const rssPath =
+		language === 'fi' ? RSS_AGGREGATE_PATH : translatedPath(RSS_AGGREGATE_PATH, language);
+	const jsonPath =
+		language === 'fi' ? FEED_AGGREGATE_PATH : translatedPath(FEED_AGGREGATE_PATH, language);
+	const channel: ChannelInfo = {
+		title: m.feed_channel_title({}, { locale: language }),
+		description: m.feed_channel_description({}, { locale: language }),
+		link: `${SITE_URL}/`,
+		selfUrl: `${SITE_URL}/${rssPath}`
+	};
+	await Promise.all([
+		Bun.write(rssPath, generateRssXml(items, channel, lastBuildDateISO, language)),
+		Bun.write(
+			jsonPath,
+			generateJsonFeed(items, { ...channel, selfUrl: `${SITE_URL}/${jsonPath}` }, language)
+		)
+	]);
+}
+
 async function main() {
 	const dataFile = Bun.file(DEV ? './static/data.json' : './data.json');
 	const ogManifestFile = Bun.file(DEV ? './static/og-images.json' : './og-images.json');
@@ -444,24 +516,29 @@ async function main() {
 	const priceChanges = [...byProduct.values()].flat().sort(compareItemsByDate);
 	const lastBuildDateISO = metadata?.LastUpdated;
 
-	// Reserve a slot for every currently-new product so the "uutuudet" section is
-	// never crowded out of the aggregate by price changes, then fill the remaining
-	// slots with the most recent price changes and sort the whole mix by date.
-	const priceLimit = Math.max(0, RSS_LIMIT - newItems.length);
-	const aggregate = [...newItems, ...priceChanges.slice(0, priceLimit)].sort(compareItemsByDate);
-	const channel: ChannelInfo = {
-		title: 'Alkometriikka – uutuudet ja hintamuutokset',
-		description: 'Uusimmat uutuudet ja hinnanmuutokset Alkon tuotevalikoimassa.',
-		link: `${SITE_URL}/`,
-		selfUrl: `${SITE_URL}/rss.xml`
-	};
-	await Promise.all([
-		Bun.write(RSS_AGGREGATE_PATH, generateRssXml(aggregate, channel, lastBuildDateISO)),
-		Bun.write(
-			FEED_AGGREGATE_PATH,
-			generateJsonFeed(aggregate, { ...channel, selfUrl: `${SITE_URL}/feed.json` })
-		)
-	]);
+	const aggregate = aggregateItems(newItems, priceChanges);
+	await writeAggregateFeeds(aggregate, FINNISH, lastBuildDateISO);
+
+	// The same feeds in the other languages, from the value translations the sync wrote
+	for (const language of FEED_LANGUAGES) {
+		const labelsPath = translatedPath(DEV ? './static/labels.json' : './labels.json', language);
+		const t = await loadTranslator(language, labelsPath);
+		if (!t) {
+			console.warn(`RSS: ${labelsPath} missing, skipping the ${language} feeds`);
+			continue;
+		}
+		const translatedChanges = [...collectPerProductItems(schema, products, ogManifest, t).values()]
+			.flat()
+			.sort(compareItemsByDate);
+		const translatedNew = collectNewProductItems(schema, products, ogManifest, t).sort(
+			compareItemsByDate
+		);
+		await writeAggregateFeeds(
+			aggregateItems(translatedNew, translatedChanges),
+			t,
+			lastBuildDateISO
+		);
+	}
 
 	const productFeedCount = await writePerProductFeeds(byProduct, lastBuildDateISO);
 	const categoryFeedCount = await writeCategoryFeeds(

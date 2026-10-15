@@ -1,5 +1,6 @@
 import { AllColumns, subCategoryMap } from '../constants/columns';
 import type { ColumnNames, PriceListItem } from '../../types';
+import { intlLocale, m } from '$lib/i18n';
 
 /** A single histogram bin, labelled with the bucket's lower / upper bound. */
 export type HistogramBin = {
@@ -64,7 +65,7 @@ export function histogram(
 	if (max === min)
 		return [
 			{
-				label: clippedMax < min ? '…' : formatFinNumber(min),
+				label: clippedMax < min ? '…' : formatStatsNumber(min),
 				from: min,
 				to: max,
 				count: values.length,
@@ -81,7 +82,7 @@ export function histogram(
 	for (let from = start; from < max; from += step) {
 		const isTail = from + step >= max && clippedMax !== Infinity;
 		bins.push({
-			label: isTail ? '…' : formatFinNumber(from),
+			label: isTail ? '…' : formatStatsNumber(from),
 			from,
 			to: from + step,
 			count: 0,
@@ -123,7 +124,7 @@ export function bandHistogram(
 
 	if (values.length === 0 || edges.length < 2) return [];
 
-	const num = (value: number) => formatFinNumber(value, 1).replace(/,0$/, '');
+	const num = (value: number) => formatStatsNumber(value, 1);
 	const upper = edges[edges.length - 1];
 	return edges.slice(0, -1).map((from, i) => {
 		const to = edges[i + 1];
@@ -134,9 +135,9 @@ export function bandHistogram(
 		return {
 			label:
 				i === 0
-					? `alle ${num(to)} ${unit}`
+					? m.stats_band_under({ value: num(to), unit })
 					: isTail
-						? `yli ${num(from)} ${unit}`
+						? m.stats_band_over({ value: num(from), unit })
 						: `${num(from)}–${num(to)} ${unit}`,
 			from,
 			to,
@@ -159,15 +160,15 @@ export function categoryDistribution(
 	}
 	return [...counts.entries()]
 		.map(([key, count]) => ({ key, count }))
-		.sort((a, b) => b.count - a.count || a.key.localeCompare(b.key, 'fi'))
+		.sort((a, b) => b.count - a.count || a.key.localeCompare(b.key, intlLocale))
 		.slice(Math.max(0, excludeCount));
 }
 
-/** Truncates a distribution to `maxEntries`, collapsing the rest into "Muu". */
+/** Truncates a distribution to `maxEntries`, collapsing the rest into "Muu" (other). */
 export function topCategories(
 	distribution: CategoryDistribution,
 	maxEntries: number,
-	{ otherLabel = 'Muu' }: { otherLabel?: string } = {}
+	{ otherLabel = m.stats_other() }: { otherLabel?: string } = {}
 ): CategoryDistribution {
 	if (distribution.length <= maxEntries) return distribution;
 	const top = distribution.slice(0, maxEntries);
@@ -223,12 +224,12 @@ export function subcategoryDistribution(items: PriceListItem[]): CategoryDistrib
 	for (const item of withCategory(items, AllColumns.Type)) {
 		const sub = (item[AllColumns.SubType] as string | undefined)?.trim() ?? '';
 		if (sub.length === 0 || sub === 'Ei määritelty') continue;
-		const key = sub.includes('&') || sub.includes('–') ? 'Makuominaisuus' : sub;
+		const key = sub.includes('&') || sub.includes('–') ? m.stats_taste_profile() : sub;
 		counts.set(key, (counts.get(key) ?? 0) + 1);
 	}
 	return [...counts.entries()]
 		.map(([key, count]) => ({ key, count }))
-		.sort((a, b) => b.count - a.count || a.key.localeCompare(b.key, 'fi'));
+		.sort((a, b) => b.count - a.count || a.key.localeCompare(b.key, intlLocale));
 }
 
 /** Aggregates products by their real subcategory (e.g. punaviinit). Does not
@@ -243,7 +244,7 @@ export function categoryHierarchyDistribution(items: PriceListItem[]): CategoryD
 	}
 	return [...counts.entries()]
 		.map(([key, count]) => ({ key, count }))
-		.sort((a, b) => b.count - a.count || a.key.localeCompare(b.key, 'fi'));
+		.sort((a, b) => b.count - a.count || a.key.localeCompare(b.key, intlLocale));
 }
 
 /** Computes the overall summary statistics (averages over active products). */
@@ -297,9 +298,9 @@ export function bestValueRanks(items: PriceListItem[], limit = 50): ValueRank[] 
 		.slice(0, limit);
 }
 
-/** Formats a number with Finnish (dot-to-comma) decimal separators. */
-export function formatFinNumber(value: number, maximumFractionDigits = 2): string {
-	return value.toLocaleString('fi-FI', {
+/** Formats a number in the current language's notation, without thousands separators. */
+export function formatStatsNumber(value: number, maximumFractionDigits = 2): string {
+	return value.toLocaleString(intlLocale, {
 		maximumFractionDigits,
 		useGrouping: false
 	});

@@ -4,6 +4,7 @@
 	import type { BreadcrumbItem } from '$lib/types';
 	import Icon from './Icon.svelte';
 	import { twMerge } from 'tailwind-merge';
+	import { m } from '$lib/i18n';
 
 	const {
 		items,
@@ -25,7 +26,7 @@
 		class="flex shrink-0 items-center gap-1 hover:text-black dark:hover:text-white"
 	>
 		<Icon name="home" class="text-base" />
-		<span class="hidden sm:inline">Etusivu</span>
+		<span class="hidden sm:inline">{m.breadcrumb_home()}</span>
 	</a>
 	{#each items as item}
 		<Icon name="chevron_right" />

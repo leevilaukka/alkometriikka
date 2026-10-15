@@ -13,6 +13,8 @@
 	import ProductPriceStoreBanner from './ProductPriceStoreBanner.svelte';
 	import ProductSizeHook from './ProductSizeHook.svelte';
 	import { twMerge } from 'tailwind-merge';
+	import { alkoProductUrl } from '$lib/utils/app/alkoLinks';
+	import { m } from '$lib/i18n';
 
 	const {
 		product,
@@ -40,7 +42,7 @@
 
 	function handleToggleCompare() {
 		if (!toggleCompare(product[AllColumns.Number])) {
-			alert(`Voit vertailla korkeintaan ${MAX_COMPARE_PRODUCTS} tuotetta kerrallaan.`);
+			alert(m.compare_limit({ count: MAX_COMPARE_PRODUCTS }));
 		}
 	}
 </script>
@@ -72,12 +74,12 @@
 					)}
 					onclick={() => dialogElement.showModal()}
 				>
-					<span>Lisää listaan</span>
+					<span>{m.list_add_to()}</span>
 					<Icon name="plus" />
 				</button>
 			{/snippet}
 			{#snippet renderContent(dialogElement: HTMLDialogElement)}
-				<h2 class="text-xl">Valitse lista</h2>
+				<h2 class="text-xl">{m.list_choose()}</h2>
 				<AllLists
 					action={(list: ListObj) => {
 						addToList(list, product[AllColumns.Number]);
@@ -94,7 +96,7 @@
 				'flex-1 justify-between px-4 py-2.5'
 			)}
 		>
-			<span>{inCompare ? 'Vertailussa' : 'Vertaile'}</span>
+			<span>{inCompare ? m.compare_in_compare() : m.compare_button()}</span>
 			<Icon name="compare" />
 		</button>
 	</div>
@@ -110,22 +112,22 @@
 				'w-full cursor-default px-4 py-2.5 opacity-50'
 			)}
 		>
-			Poistunut valikoimasta
+			{m.column_removed_from_selection()}
 		</span>
 	{:else}
 		<a
-			href={`https://www.alko.fi/tuotteet/${product[AllColumns.Number]}`}
+			href={alkoProductUrl(product[AllColumns.Number])}
 			target="_blank"
 			rel="noopener noreferrer"
 			referrerpolicy="no-referrer"
 			class={twMerge(components.button({ size: 'lg' }), 'w-full px-4 py-2.5')}
 		>
-			<span>Alkon tuotesivu</span>
+			<span>{m.product_alko_page()}</span>
 			<Icon name="link_external" />
 		</a>
 	{/if}
 
 	<p class="text-wrap-pretty text-xs text-secondary">
-		Alkometriikka ei myy alkoholia. Tiedot päivittyvät Alkon hinnastosta.
+		{m.product_disclaimer()}
 	</p>
 </aside>

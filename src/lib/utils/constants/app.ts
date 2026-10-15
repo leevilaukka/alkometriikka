@@ -23,6 +23,9 @@ export const LocalStorageKeys = {
 	FlagOverrides: 'flag_overrides',
 	FlagVisitorId: 'flag_visitor_id',
 	InstallBanner: 'install_banner',
+	/** The chosen language. Read and written by Paraglide as a plain string, not JSON */
+	Locale: 'locale',
+	LanguageBannerDismissed: 'language_banner_dismissed',
 	DailyGame: 'alkometriikka-daily-v1',
 	DailyStreak: 'alkometriikka-daily-streak-v1',
 	DailyUnlimitedRun: 'alkometriikka-daily-unlimited-v1',

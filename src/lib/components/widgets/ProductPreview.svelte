@@ -11,6 +11,8 @@
 	import BadgeList from './BadgeList.svelte';
 	import ProductImage from './ProductImage.svelte';
 	import Icon from './Icon.svelte';
+	import { m } from '$lib/i18n';
+	import { productName, translateValue } from '$lib/i18n/values';
 
 	let {
 		product,
@@ -35,7 +37,7 @@
 
 	function handleToggleCompare() {
 		if (!toggleCompare(product[AllColumns.Number])) {
-			alert(`Voit vertailla korkeintaan ${MAX_COMPARE_PRODUCTS} tuotetta kerrallaan.`);
+			alert(m.compare_limit({ count: MAX_COMPARE_PRODUCTS }));
 		}
 	}
 </script>
@@ -54,13 +56,13 @@
 			<div
 				class="flex aspect-square w-40 max-w-[10rem] shrink-0 rounded bg-white p-2 md:h-full md:w-auto md:max-w-fit"
 			>
-				<ProductImage number={product[AllColumns.Number]} name={product[AllColumns.Name]} />
+				<ProductImage number={product[AllColumns.Number]} name={productName(product)} />
 			</div>
 			<div class="flex w-full flex-col gap-2">
 				<div class="flex flex-row items-center gap-3">
 					<a href={resolve(`/tuotteet/${product[AllColumns.Number]}/`)} class="hover:underline">
 						<h2 class="text-xl font-bold md:text-2xl">
-							{product[AllColumns.Name]} ({formatValue(
+							{productName(product)} ({formatValue(
 								product[AllColumns.BottleSize],
 								AllColumns.BottleSize
 							)})
@@ -96,8 +98,10 @@
 				<div class="flex items-center gap-2 text-sm text-secondary">
 					<Icon name="map_pin" />
 					<span class="text-sm">
-						{product[AllColumns.Country]}
-						{product[AllColumns.Region] ? ` - ${product[AllColumns.Region]}` : null}
+						{translateValue(product[AllColumns.Country], AllColumns.Country)}
+						{product[AllColumns.Region]
+							? ` - ${translateValue(product[AllColumns.Region], AllColumns.Region)}`
+							: null}
 					</span>
 				</div>
 				<div class="flex flex-col gap-4 lg:flex-row lg:items-center">
@@ -112,7 +116,7 @@
 						</p>
 						{#if quantity > 1}
 							<span class="text-sm text-secondary">
-								@ {formatValue(product[AllColumns.Price], AllColumns.Price)} / kpl
+								@ {formatValue(product[AllColumns.Price], AllColumns.Price)} / {m.unit_piece()}
 							</span>
 						{/if}
 						<span class="text-sm text-secondary">
@@ -129,7 +133,7 @@
 							class={twMerge(components.button({ type: inCompare ? 'positive' : 'primary' }))}
 						>
 							<Icon name="compare" />
-							<span>{inCompare ? 'Vertailussa' : 'Vertaile'}</span>
+							<span>{inCompare ? m.compare_in_compare() : m.compare_button()}</span>
 						</button>
 						{#if renderExtras}
 							{@render renderExtras()}
@@ -142,7 +146,7 @@
 	{#if highlight}
 		{@const max = highlightMax ?? (kaljakori.getMinAndMaxValues(highlight) as number[])[1]}
 		{@const multiplier = max > 0 ? Number(product[highlight]) / max : 0}
-		{@const ratings = ['Matala', 'Kohtalainen', 'Korkea']}
+		{@const ratings = [m.rating_low(), m.rating_moderate(), m.rating_high()]}
 		{@const rating = ratings[Number(((ratings.length - 1) * multiplier).toFixed(0))]}
 		<div class="relative block max-w-full">
 			<div

@@ -8,9 +8,14 @@
 	import { twMerge } from 'tailwind-merge';
 	import Icon from '$lib/components/widgets/Icon.svelte';
 	import { dayNumberForDate } from '$lib/daily/dayNumber';
+	import { intlLocale, m } from '$lib/i18n';
 
-	const weekdayLabels = ['ma', 'ti', 'ke', 'to', 'pe', 'la', 'su'];
-	const monthFormatter = new Intl.DateTimeFormat('fi-FI', {
+	// Monday first; 2024-01-01 was a Monday
+	const weekdayFormatter = new Intl.DateTimeFormat(intlLocale, { weekday: 'short' });
+	const weekdayLabels = Array.from({ length: 7 }, (_, day) =>
+		weekdayFormatter.format(new Date(2024, 0, 1 + day, 12))
+	);
+	const monthFormatter = new Intl.DateTimeFormat(intlLocale, {
 		month: 'long',
 		year: 'numeric',
 		timeZone: 'Europe/Helsinki'
@@ -67,7 +72,7 @@
 			}
 			if (!response.ok) throw new Error(`HTTP ${response.status}`);
 			const parsed = (await response.json()) as ArchiveIndex;
-			if (!parsed || !Array.isArray(parsed.dates)) throw new Error('Virheellinen indeksi');
+			if (!parsed || !Array.isArray(parsed.dates)) throw new Error(m.archive_invalid_index());
 			const newest = parsed.dates[0];
 			if (newest) {
 				const [year, month] = newest.split('-').map(Number);
@@ -78,7 +83,7 @@
 			}
 			index = parsed;
 		} catch (error) {
-			loadError = error instanceof Error ? error.message : 'Tuntematon virhe';
+			loadError = error instanceof Error ? error.message : m.archive_unknown_error();
 		}
 	}
 
@@ -96,22 +101,21 @@
 
 	$effect(() =>
 		setSEO({
-			description:
-				'Alkometriikka Daily -arkisto: pelaa aiempien päivien pelit ja selaa tuloksia Alkon valikoimasta.',
+			description: m.archive_seo_description(),
 			keywords: 'alkometriikka, daily, arkisto, aiempien päivien peli, tulokset, tietovisa',
 			og: {
-				description: 'Alkometriikka Daily -arkisto: pelaa aiempien päivien pelit.',
-				title: 'Arkisto',
+				description: m.archive_seo_og_description(),
+				title: m.daily_archive(),
 				url: window.location.href,
 				type: 'website'
 			},
-			twitter: { description: 'Alkometriikka Daily -arkisto', title: 'Arkisto' }
+			twitter: { description: m.archive_seo_title(), title: m.daily_archive() }
 		})
 	);
 </script>
 
 <svelte:head>
-	<title>{generateTitle('Arkisto')}</title>
+	<title>{generateTitle(m.daily_archive())}</title>
 </svelte:head>
 
 <main class="mx-auto flex w-full max-w-4xl flex-col gap-6 p-4 md:p-8 lg:gap-8 lg:p-10">
@@ -120,31 +124,32 @@
 			<div>
 				<p class="text-sm font-bold tracking-widest text-brand-2 uppercase">Alkometriikka Daily</p>
 				<div class="flex items-center gap-2">
-					<h1 class="text-3xl font-bold md:text-4xl">Arkisto</h1>
+					<h1 class="text-3xl font-bold md:text-4xl">{m.daily_archive()}</h1>
 					<Icon name="calendar" />
 				</div>
 			</div>
 			<a href={resolve('/daily/')} class={twMerge(components.button(), 'px-3 py-2')}
-				><span class="flex items-center gap-2"><Icon name="flame" />Päivän peli</span></a
+				><span class="flex items-center gap-2"><Icon name="flame" />{m.archive_todays_game()}</span
+				></a
 			>
 		</div>
 		{#if index}
 			<p class="text-sm text-secondary">
-				{index.dates.length} päivää arkistossa · valitse päivä pelataksesi
+				{m.archive_summary({ count: index.dates.length })}
 			</p>
 		{/if}
 	</header>
 
 	{#if loadError}
 		<section class="rounded border border-primary bg-secondary p-5 text-center">
-			<p>Arkistoa ei voitu ladata: {loadError}</p>
+			<p>{m.archive_load_error({ message: loadError })}</p>
 			<button class={twMerge(components.button(), 'mt-3 px-3 py-2')} onclick={loadIndex}
-				>Yritä uudelleen</button
+				>{m.common_retry()}</button
 			>
 		</section>
 	{:else if !index}
 		<section class="rounded border border-primary bg-secondary p-5 text-center">
-			<p>Ladataan arkistoa…</p>
+			<p>{m.archive_loading()}</p>
 		</section>
 	{:else}
 		<section class="flex flex-col gap-4">
@@ -156,7 +161,7 @@
 					)}
 					onclick={() => monthOffset(-1)}
 					disabled={!canGoBack}
-					aria-label="Edellinen kuukausi"
+					aria-label={m.archive_previous_month()}
 				>
 					<Icon name="chevron_left" />
 				</button>
@@ -168,7 +173,7 @@
 					)}
 					onclick={() => monthOffset(1)}
 					disabled={!canGoForward}
-					aria-label="Seuraava kuukausi"
+					aria-label={m.archive_next_month()}
 				>
 					<Icon name="chevron_right" />
 				</button>
@@ -196,12 +201,12 @@
 							<span class="text-sm font-bold">{day}</span>
 							{#if result}
 								<span class="rounded bg-brand-4 px-1.5 py-0.5 text-[10px] font-bold text-white">
-									{result.score} p
+									{m.archive_points_short({ score: result.score })}
 								</span>
 							{:else if inProgress}
-								<span class="text-[10px] font-bold text-brand-2">kesken</span>
+								<span class="text-[10px] font-bold text-brand-2">{m.archive_in_progress()}</span>
 							{:else}
-								<span class="text-[10px] text-secondary">pelaa</span>
+								<span class="text-[10px] text-secondary">{m.archive_play()}</span>
 							{/if}
 						</a>
 					{:else if iso === todayISO}
@@ -215,12 +220,12 @@
 								>
 							{/if}
 							<span class="text-sm font-bold text-brand-2">{day}</span>
-							<span class="text-[10px] font-bold text-brand-2">tänään</span>
+							<span class="text-[10px] font-bold text-brand-2">{m.archive_today()}</span>
 						</a>
 					{:else if iso && iso < todayISO && result}
 						<span
 							class="relative flex min-h-14 flex-col items-center justify-center gap-0.5 rounded border border-dashed border-primary bg-primary p-1.5 opacity-80"
-							title="Arkistoituu pian – koko kertaus tulee saataville kun päivä arkistoidaan"
+							title={m.archive_archiving_soon()}
 						>
 							{#if dayNumber >= 1}
 								<span class="absolute top-1 right-1 text-[9px] font-bold text-secondary"
@@ -229,19 +234,19 @@
 							{/if}
 							<span class="text-sm font-bold">{day}</span>
 							<span class="rounded bg-brand-4 px-1.5 py-0.5 text-[10px] font-bold text-white">
-								{result.score} p
+								{m.archive_points_short({ score: result.score })}
 							</span>
 						</span>
 					{:else if iso && iso < todayISO && dayNumber >= 1}
 						<span
 							class="relative flex min-h-14 flex-col items-center justify-center gap-0.5 rounded border border-dashed border-primary p-1.5 opacity-60"
-							title="Päivää ei ole vielä arkistoitu – tarkista uudelleen myöhemmin"
+							title={m.archive_not_archived_yet()}
 						>
 							<span class="absolute top-1 right-1 text-[9px] font-bold text-secondary"
 								>#{dayNumber}</span
 							>
 							<span class="text-sm font-bold">{day}</span>
-							<span class="text-[10px] text-secondary">odottaa</span>
+							<span class="text-[10px] text-secondary">{m.archive_waiting()}</span>
 						</span>
 					{:else}
 						<span

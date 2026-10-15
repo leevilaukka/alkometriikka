@@ -4,7 +4,15 @@
 	import StoreCompass from '$lib/components/widgets/StoreCompass.svelte';
 	import { preferredStoreId } from '$lib/global.svelte';
 	import type { AvailabilityStore } from '$lib/types';
-	import { getStoreCity, isStoreOpen } from '$lib/utils/catalog/availability.js';
+	import {
+		formatOpeningHours,
+		getStoreCity,
+		isStoreOpen,
+		storeName,
+		storeText
+	} from '$lib/utils/catalog/availability.js';
+	import { alkoStoreUrl } from '$lib/utils/app/alkoLinks';
+	import { intlLocale, m } from '$lib/i18n';
 	import { AllColumns } from '$lib/utils/constants/columns';
 	import { generateTitle, setSEO } from '$lib/utils/app/meta';
 	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
@@ -15,7 +23,7 @@
 	let { data } = $props();
 
 	function formatDate(date: string) {
-		return new Intl.DateTimeFormat('fi-FI', {
+		return new Intl.DateTimeFormat(intlLocale, {
 			weekday: 'long',
 			day: 'numeric',
 			month: 'numeric'
@@ -36,7 +44,7 @@
 			data.store &&
 			setSEO({
 				og: {
-					title: generateTitle(`Myymälä - ${data.store.name}`),
+					title: generateTitle(m.store_page_title({ name: storeName(data.store) })),
 					description: storeDescription(data.store),
 					url: window.location.href,
 					type: 'website'
@@ -48,33 +56,38 @@
 </script>
 
 <svelte:head>
-	<title>{generateTitle(`Myymälä - ${data.store.name}`)}</title>
+	<title
+		>{generateTitle(m.store_page_title({ name: data.store ? storeName(data.store) : '' }))}</title
+	>
 </svelte:head>
 
 {#snippet nav()}
 	<nav class="flex items-center gap-2">
 		<a href={resolve('/')} class={twMerge(components.button({ size: 'md' }))}>
 			<Icon name="home" class="inline-block" />
-			<span>Etusivulle</span>
+			<span>{m.common_to_home()}</span>
 		</a>
 		<a href={resolve('/myymalat/')} class={twMerge(components.button({ size: 'md' }))}>
 			<Icon name="map_pin" />
-			<span>Myymälät</span>
+			<span>{m.nav_stores()}</span>
 		</a>
 	</nav>
 {/snippet}
 
 {#if data.store}
 	{@const store = data.store}
-	{@const address = [store.address, [store.postalCode, store.postOffice].filter(Boolean).join(' ')]
+	{@const address = [
+		storeText(store, 'address'),
+		[store.postalCode, storeText(store, 'postOffice')].filter(Boolean).join(' ')
+	]
 		.filter(Boolean)
 		.join(', ')}
 	{@const directionsQuery = ['Alko', store.name, address].filter(Boolean).join(', ')}
 	{@const additionalDetails = [
-		store.additional_info,
-		store.location_details,
-		store.unobstructured,
-		store.exceptions
+		storeText(store, 'additional_info'),
+		storeText(store, 'location_details'),
+		storeText(store, 'unobstructured'),
+		storeText(store, 'exceptions')
 	].filter((detail): detail is string => Boolean(detail?.trim()))}
 	{@const storeOpen = isStoreOpen(store)}
 	{@const today = new Date().toLocaleDateString('sv-SE')}
@@ -86,11 +99,11 @@
 		<header class="flex flex-col gap-4 rounded border border-primary bg-secondary p-5 md:p-6">
 			<div class="flex flex-wrap items-start justify-between gap-3">
 				<div class="flex flex-col gap-1">
-					<h1 class="text-2xl font-bold md:text-4xl">{store.name}</h1>
+					<h1 class="text-2xl font-bold md:text-4xl">{storeName(store)}</h1>
 					{#if address}
 						<p class="text-lg">{address}</p>
 					{/if}
-					<span class="text-sm text-secondary">Myymälän numero: {store.id}</span>
+					<span class="text-sm text-secondary">{m.store_number({ id: store.id })}</span>
 				</div>
 				<span
 					class={twMerge(
@@ -100,7 +113,7 @@
 							: 'bg-gray-100 text-gray-700 dark:bg-zinc-700 dark:text-zinc-100'
 					)}
 				>
-					{storeOpen ? 'Avoinna' : 'Suljettu'}
+					{storeOpen ? m.store_open() : m.store_closed_now()}
 				</span>
 			</div>
 
@@ -115,7 +128,7 @@
 					)}
 				>
 					<Icon name="list" />
-					<span>Myymälän valikoima</span>
+					<span>{m.store_selection()}</span>
 				</a>
 				<button
 					type="button"
@@ -126,7 +139,7 @@
 					disabled={isPreferred}
 					onclick={() => selectPreferredStore(store)}
 				>
-					{isPreferred ? 'Ensisijainen myymälä' : 'Valitse ensisijaiseksi'}
+					{isPreferred ? m.personal_preferred_store() : m.store_set_preferred()}
 				</button>
 				<a
 					href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(directionsQuery)}`}
@@ -138,12 +151,12 @@
 					)}
 				>
 					<Icon name="map_pin" />
-					<span class="sm:hidden">Kartta</span>
-					<span class="hidden sm:inline">Näytä kartalla</span>
+					<span class="sm:hidden">{m.store_map_short()}</span>
+					<span class="hidden sm:inline">{m.store_map()}</span>
 					<Icon name="link_external" />
 				</a>
 				<a
-					href={`https://www.alko.fi/myymalat-palvelut/${store.id}`}
+					href={alkoStoreUrl(store.id)}
 					target="_blank"
 					rel="noopener noreferrer"
 					referrerpolicy="no-referrer"
@@ -152,7 +165,7 @@
 						'w-full justify-center px-3 py-2.5 text-base sm:w-auto sm:px-5 sm:py-3 sm:text-lg'
 					)}
 				>
-					<span>Alkon sivu</span>
+					<span>{m.store_alko_page()}</span>
 					<Icon name="link_external" />
 				</a>
 				<div class="col-span-2 empty:hidden sm:col-auto">
@@ -165,7 +178,7 @@
 			<div class="flex flex-col gap-6 md:col-span-3">
 				{#if additionalDetails.length}
 					<section class="flex flex-col gap-2 rounded border border-primary bg-secondary p-4">
-						<h2 class="text-xl font-bold">Lisätiedot</h2>
+						<h2 class="text-xl font-bold">{m.store_more_info()}</h2>
 						{#each additionalDetails as detail (detail)}
 							<p>{detail}</p>
 						{/each}
@@ -174,7 +187,9 @@
 			</div>
 
 			<section class="overflow-hidden rounded border border-primary bg-secondary md:col-span-2">
-				<h2 class="border-b border-primary px-4 py-3 text-xl font-bold">Aukioloajat</h2>
+				<h2 class="border-b border-primary px-4 py-3 text-xl font-bold">
+					{m.store_opening_hours()}
+				</h2>
 				{#if store.openHours?.length}
 					<ul>
 						{#each store.openHours as openingHour (openingHour.date)}
@@ -185,12 +200,12 @@
 								)}
 							>
 								<span class="capitalize">{formatDate(openingHour.date)}</span>
-								<strong>{openingHour.hours}</strong>
+								<strong>{formatOpeningHours(openingHour.hours)}</strong>
 							</li>
 						{/each}
 					</ul>
 				{:else}
-					<p class="px-4 py-3 text-secondary">Aukioloaikoja ei ole saatavilla.</p>
+					<p class="px-4 py-3 text-secondary">{m.store_no_opening_hours()}</p>
 				{/if}
 			</section>
 		</div>
@@ -199,10 +214,8 @@
 	<div class="mx-auto flex w-full max-w-[120ch] flex-col gap-6 p-4 md:p-6">
 		{@render nav()}
 		<div class="flex flex-col gap-2">
-			<h1 class="text-2xl font-bold md:text-3xl">Myymälää ei löytynyt</h1>
-			<p class="text-secondary">
-				Valitettavasti myymälää ei löytynyt. Tarkista osoite ja yritä uudelleen.
-			</p>
+			<h1 class="text-2xl font-bold md:text-3xl">{m.store_not_found_title()}</h1>
+			<p class="text-secondary">{m.store_not_found_description()}</p>
 		</div>
 	</div>
 {/if}

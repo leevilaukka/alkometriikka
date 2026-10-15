@@ -2,7 +2,7 @@ import type { ColNameObj, ColumnNames } from '$lib/types';
 
 /** Columns present in the Alko price list dataset
  * These are in Finnish as they are used directly from the dataset
- * and shown in the UI as-is or with minor modifications using `filterRenameMap`.
+ * and shown in the UI with the names in `columnDisplayNames`.
  *
  * Do not change these values unless the dataset changes.
  * In that case, update the values accordingly

@@ -1,5 +1,6 @@
 import type { AvailabilityData, AvailabilityStore } from '$lib/types';
 import { AUTO_STORE_ID } from '../constants/app';
+import { intlLocale, locale, m } from '$lib/i18n';
 
 type Coordinates = {
 	latitude: number;
@@ -93,22 +94,54 @@ export function rankStoresByDistance(
 		const secondDistance = getStoreDistance(origin, second);
 
 		if (firstDistance === null && secondDistance === null) {
-			return first.name.localeCompare(second.name, 'fi', { sensitivity: 'base' });
+			return first.name.localeCompare(second.name, intlLocale, { sensitivity: 'base' });
 		}
 		if (firstDistance === null) return 1;
 		if (secondDistance === null) return -1;
 
 		return (
 			firstDistance - secondDistance ||
-			first.name.localeCompare(second.name, 'fi', { sensitivity: 'base' })
+			first.name.localeCompare(second.name, intlLocale, { sensitivity: 'base' })
 		);
 	});
 }
 
 export function formatStoreDistance(distance: number | null): string | null {
 	if (distance === null) return null;
-	if (distance < 10) return `${distance.toLocaleString('fi-FI', { maximumFractionDigits: 1 })} km`;
-	return `${Math.round(distance).toLocaleString('fi-FI')} km`;
+	if (distance < 10)
+		return `${distance.toLocaleString(intlLocale, { maximumFractionDigits: 1 })} km`;
+	return `${Math.round(distance).toLocaleString(intlLocale)} km`;
+}
+
+type StoreTextField =
+	| 'name'
+	| 'address'
+	| 'postOffice'
+	| 'additional_info'
+	| 'location_details'
+	| 'unobstructured'
+	| 'exceptions';
+
+/**
+ * A store's name, address or post office as shown in the current language. Alko has Swedish
+ * versions of these (`name_sv`, …); English uses the Finnish ones. The Finnish `name` stays the
+ * store's identity everywhere else, e.g. in the store filter's URL values.
+ */
+export function storeText(store: AvailabilityStore, field: StoreTextField): string {
+	const finnish = store[field] ?? '';
+	if (locale !== 'sv') return finnish;
+	const swedish = store[`${field}_sv`];
+	return typeof swedish === 'string' && swedish.trim() ? swedish : finnish;
+}
+
+/** Shorthand for the store's name in the current language. */
+export function storeName(store: AvailabilityStore): string {
+	return storeText(store, 'name');
+}
+
+/** Opening hours as shown, e.g. "10–21", with Alko's "Kiinni" (closed) in the current language. */
+export function formatOpeningHours(hours: string): string {
+	return hours.trim().toLowerCase() === 'kiinni' ? m.store_closed() : hours;
 }
 
 export function getTodaysOpeningHours(
@@ -140,7 +173,7 @@ function parseClockTimeToMinutes(time: string): number | null {
 
 export function isStoreOpen(store: AvailabilityStore, date: Date = new Date()): boolean {
 	const openingHours = getTodaysOpeningHours(store, date);
-	if (openingHours === 'kiinni' || openingHours === null) return false;
+	if (openingHours === null || openingHours.toLowerCase() === 'kiinni') return false;
 
 	// Alko's API returns ranges like "9–21" (en dash, hour-only, no leading
 	// zero or minutes), but may also use a plain hyphen and/or "HH:MM" times.
@@ -179,7 +212,7 @@ export function getStoreCity(store: AvailabilityStore): string {
 export function parseAvailability(data: unknown): AvailabilityData {
 	const raw = data as Partial<AvailabilityData> | null;
 	if (!raw || typeof raw !== 'object' || !raw.stores || !raw.product) {
-		throw new Error('Saatavuustiedot ovat tyhjät tai väärässä muodossa');
+		throw new Error(m.error_availability_invalid());
 	}
 
 	const stores = Object.fromEntries(

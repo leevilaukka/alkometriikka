@@ -7,6 +7,8 @@ import { LazyAvailability } from '$lib/alko/availability.svelte';
 import { personalInfo } from '$lib/global.svelte';
 import { dev } from '$app/env';
 import { isCachedResponse } from '$lib/utils/app/offline';
+import { locale, m } from '$lib/i18n';
+import { loadValueLabels, registerStoreNames } from '$lib/i18n/values';
 
 export const ssr = false;
 export const prerender = false;
@@ -22,6 +24,10 @@ function getAvailabilityURL() {
 	return resolve('/') + 'availability.json';
 }
 
+function getValueLabelsURL() {
+	return resolve('/') + `labels.${locale}.json`;
+}
+
 if (dev) localStorage.setItem('umami.disabled', '1');
 
 type Fetch = (input: RequestInfo | URL, init?: RequestInit | undefined) => Promise<Response>;
@@ -29,7 +35,7 @@ type Fetch = (input: RequestInfo | URL, init?: RequestInit | undefined) => Promi
 async function fetchAlkoPriceList({ fetch }: { fetch: Fetch }) {
 	const req = await fetch(getDatasetURL());
 	if (!req.ok) {
-		throw new Error(`Hinnaston lataaminen epäonnistui: ${req.status} ${req.statusText}`);
+		throw new Error(m.error_price_list_load({ status: `${req.status} ${req.statusText}` }));
 	}
 	const text = await req.text();
 	return { text, cached: isCachedResponse(req) };
@@ -44,7 +50,7 @@ async function readAvailability(request: Promise<Response>): Promise<Availabilit
 	try {
 		const req = await request;
 		if (!req.ok) {
-			throw new Error(`Saatavuustietojen lataaminen epäonnistui: ${req.status} ${req.statusText}`);
+			throw new Error(m.error_availability_load({ status: `${req.status} ${req.statusText}` }));
 		}
 		return parseAvailability(await req.json());
 	} catch (error) {
@@ -68,11 +74,16 @@ async function getData({ fetch }: { fetch: Fetch }) {
 	const availabilityRequest = fetch(getAvailabilityURL());
 	availabilityRequest.catch(() => {}); // handled in readAvailability
 
+	// Small, and needed for the first render in English or Swedish, so it loads alongside
+	const valueLabels = loadValueLabels(fetch, getValueLabelsURL());
+
 	const { dataset, cached } = await getDataset({ fetch });
+	await valueLabels;
 	const kaljakori = new Kaljakori(dataset.table, personalInfo, undefined, dataset.index);
 	const availability = new LazyAvailability(async () => {
 		await whenIdle();
 		const data = await readAvailability(availabilityRequest);
+		registerStoreNames(Object.values(data.stores));
 		kaljakori.setAvailability(data);
 		return data;
 	});

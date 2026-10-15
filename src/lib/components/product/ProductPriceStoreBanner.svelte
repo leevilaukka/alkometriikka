@@ -7,6 +7,8 @@
 	import { components } from '$lib/utils/ui/styles';
 	import Icon from '../widgets/Icon.svelte';
 	import { twMerge } from 'tailwind-merge';
+	import { storeName } from '$lib/utils/catalog/availability';
+	import { m } from '$lib/i18n';
 
 	const {
 		product,
@@ -56,7 +58,9 @@
 		</span>
 		{#if sale}
 			<p class="mt-1 text-sm font-bold text-red-700 dark:text-red-400">
-				Alennus {sale.discountPercent} %{campaignWindow ? ` · voimassa ${campaignWindow}` : ''}
+				{campaignWindow
+					? m.product_sale_with_window({ percent: sale.discountPercent, window: campaignWindow })
+					: m.product_sale({ percent: sale.discountPercent })}
 			</p>
 		{/if}
 	</div>
@@ -77,18 +81,19 @@
 							: 'text-sm text-red-700 dark:text-red-400'}
 					>
 						{availableInPreferredStore
-							? 'Saatavilla valitusta myymälästä'
-							: 'Ei saatavilla valitusta myymälästä'}
+							? m.product_available_in_store()
+							: m.product_not_available_in_store()}
 					</span>
-					<strong class="text-sm">{preferredStore.name}</strong>
+					<strong class="text-sm">{storeName(preferredStore)}</strong>
 					{#if !availableInPreferredStore && closestAvailableStore}
 						<span class="text-sm text-secondary">
-							Lähin saatavilla: {closestAvailableStore.name}{closestAvailableDistance
+							{m.product_closest_available()}
+							{storeName(closestAvailableStore)}{closestAvailableDistance
 								? ` (${closestAvailableDistance})`
 								: ''}
 						</span>
 					{:else if !availableInPreferredStore}
-						<span class="text-sm text-secondary">Ei saatavilla muista myymälöistä</span>
+						<span class="text-sm text-secondary">{m.product_not_available_elsewhere()}</span>
 					{/if}
 				</div>
 				<button
@@ -96,7 +101,7 @@
 					class="ml-auto shrink-0 border-0 bg-transparent p-0 text-sm text-secondary underline"
 					onclick={requestSettingsOpen}
 				>
-					Vaihda
+					{m.product_change_store()}
 				</button>
 			</div>
 			{#if !availableInPreferredStore && closestAvailableStore}
@@ -108,7 +113,7 @@
 					)}
 					onclick={scrollToAvailability}
 				>
-					<span>Katso muut myymälät</span>
+					<span>{m.product_see_other_stores()}</span>
 					<Icon name="chevron_down" />
 				</button>
 			{/if}
@@ -123,7 +128,7 @@
 			onclick={requestSettingsOpen}
 		>
 			<Icon name="store" class="text-xl" />
-			<span>Valitse ensisijainen myymälä nähdäksesi saatavuuden</span>
+			<span>{m.product_choose_store()}</span>
 		</button>
 	{/if}
 </div>

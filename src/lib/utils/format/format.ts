@@ -1,6 +1,8 @@
 import type { ColumnNames } from '$lib/types';
 import { AllColumns } from '../constants/columns';
-import { filterToUnitMarker } from '../constants/display';
+import { filterToUnitMarker, timeConfig } from '../constants/display';
+import { intlLocale, m } from '$lib/i18n';
+import { translateValue } from '$lib/i18n/values';
 
 export type FormatOpts = {
 	numberFormatOptions?: Intl.NumberFormatOptions;
@@ -39,7 +41,7 @@ const columnNumberFormatDefaults: Partial<Record<ColumnNames, Intl.NumberFormatO
 for (const [column, options] of Object.entries(columnNumberFormatDefaults)) {
 	formatters.set(
 		column as ColumnNames,
-		new Intl.NumberFormat('fi-FI', {
+		new Intl.NumberFormat(intlLocale, {
 			...defaultNumberFormatOptions,
 			...options
 		})
@@ -51,7 +53,12 @@ export function formatValue(
 	header?: ColumnNames,
 	opts: FormatOpts = { includeUnit: true }
 ) {
-	if (value instanceof Set) return Array.from(value).join(', ');
+	// Only values of a known column are translated, so free text is never mistaken for a label
+	if (value instanceof Set)
+		return Array.from(value, (member) => (header ? translateValue(member, header) : member)).join(
+			', '
+		);
+	if (typeof value === 'string' && header) value = translateValue(value, header);
 	if (value === Infinity || value === -Infinity) value = '∞';
 
 	const includeUnit = opts.includeUnit ?? true;
@@ -70,7 +77,7 @@ export function formatValue(
 		} else {
 			const key = `${header ?? 'default'}-${JSON.stringify(numberFormatOptions)}`;
 			if (!extraFormatters.has(key)) {
-				extraFormatters.set(key, new Intl.NumberFormat('fi-FI', numberFormatOptions));
+				extraFormatters.set(key, new Intl.NumberFormat(intlLocale, numberFormatOptions));
 			}
 			const formatter = extraFormatters.get(key);
 			value = formatter!.format(value);
@@ -93,7 +100,7 @@ export function formatRoundedPricePerLiter(value: number): string {
 	);
 }
 
-const relativeTimeFormatter = new Intl.RelativeTimeFormat('fi-FI', { numeric: 'auto' });
+const relativeTimeFormatter = new Intl.RelativeTimeFormat(intlLocale, { numeric: 'auto' });
 
 const relativeTimeUnits: [Intl.RelativeTimeFormatUnit, number][] = [
 	['day', 86_400_000],
@@ -101,11 +108,34 @@ const relativeTimeUnits: [Intl.RelativeTimeFormatUnit, number][] = [
 	['minute', 60_000]
 ];
 
-/** Relative time in Finnish, e.g. "3 tuntia sitten" or "eilen". */
+/** Relative time in the current language, e.g. "3 tuntia sitten" or "eilen". */
 export function formatRelativeTime(date: Date, now: Date = new Date()): string {
 	const diff = date.getTime() - now.getTime();
 	for (const [unit, ms] of relativeTimeUnits) {
 		if (Math.abs(diff) >= ms) return relativeTimeFormatter.format(Math.round(diff / ms), unit);
 	}
-	return 'juuri nyt';
+	return m.time_just_now();
+}
+
+/** A number in the current language's notation, e.g. "1 234,5" in Finnish. */
+export function formatNumber(value: number, options?: Intl.NumberFormatOptions): string {
+	return value.toLocaleString(intlLocale, options);
+}
+
+/** A date in the current language's short notation, e.g. "15.10.2026" in Finnish. */
+export function formatDate(
+	date: Date | string | number,
+	options?: Intl.DateTimeFormatOptions
+): string {
+	return new Date(date).toLocaleDateString(intlLocale, options);
+}
+
+/** A time of day in Finnish time, e.g. "14.30" in Finnish. */
+export function formatTime(date: Date | string | number): string {
+	return new Date(date).toLocaleTimeString(intlLocale, timeConfig);
+}
+
+/** A date and time, e.g. "15.10.2026 klo 14.30" in Finnish. */
+export function formatDateTime(date: Date | string | number): string {
+	return m.date_at_time({ date: formatDate(date), time: formatTime(date) });
 }

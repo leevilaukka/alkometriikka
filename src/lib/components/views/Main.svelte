@@ -26,6 +26,7 @@
 	import ProductPreview from '../widgets/ProductPreview.svelte';
 	import BottomBar from '../widgets/BottomBar.svelte';
 	import FilterButton from '../widgets/FilterButton.svelte';
+	import { m } from '$lib/i18n';
 
 	const {
 		kaljakori,
@@ -170,7 +171,7 @@
 			<a
 				href="#results"
 				onclick={skipToResults}
-				class="sr-only bg-primary px-4 py-2 font-bold focus:not-sr-only">Ohita suodattimet</a
+				class="sr-only bg-primary px-4 py-2 font-bold focus:not-sr-only">{m.list_skip_filters()}</a
 			>
 			<Filters
 				{kaljakori}
@@ -195,13 +196,13 @@
 			{@render header()}
 			{@render footer?.()}
 		{:else if !header}
-			<h1 class="sr-only">Alkon tuotteet</h1>
+			<h1 class="sr-only">{m.main_heading()}</h1>
 		{/if}
 		<div class="flex w-full flex-col items-start gap-4">
 			<div class={twMerge('grid w-full grid-cols-2 items-end gap-2 md:w-fit')}>
 				<div class="flex flex-col">
 					<label for={'sortingColumn'} class="text-sm">
-						{'Järjestys'}
+						{m.list_sort_order()}
 					</label>
 					<div class="flex flex-row flex-nowrap">
 						<select
@@ -223,7 +224,9 @@
 									asc = !asc;
 									listRef?.scroll({ index: 0, smoothScroll: false });
 								}}
-								aria-label={`Järjestys: ${sortingOrderToString(asc, selectedSortingColumn)}`}
+								aria-label={m.list_sort_order_label({
+									order: sortingOrderToString(asc, selectedSortingColumn)
+								})}
 								class={twMerge(components.button(), 'rounded-none rounded-e border-s-0')}
 							>
 								<span class="hidden whitespace-nowrap md:block">
@@ -235,7 +238,7 @@
 					</div>
 				</div>
 				<div class="flex flex-col">
-					<label for={'selectedHighlight'} class="text-sm"> Korostus </label>
+					<label for={'selectedHighlight'} class="text-sm">{m.list_highlight()}</label>
 					<select
 						name="selectedHighlight"
 						id="selectedHighlight"
@@ -253,7 +256,7 @@
 			</div>
 		</div>
 		<div class="flex flex-row flex-wrap items-center justify-between gap-2">
-			<p>Tulosten määrä: {rows.length}</p>
+			<p>{m.list_result_count({ count: rows.length })}</p>
 			<button
 				onclick={() => {
 					listRef?.scroll({ index: 0, smoothScroll: false });
@@ -261,7 +264,7 @@
 				class={twMerge(components.button())}
 			>
 				<Icon name={'arrow_to_top'} />
-				<span>{$isMobile ? 'Alkuun' : 'Hyppää alkuun'}</span>
+				<span>{$isMobile ? m.list_to_top_short() : m.list_to_top()}</span>
 			</button>
 		</div>
 		<div class="flex min-h-0 flex-auto flex-col">
@@ -281,12 +284,12 @@
 										class={twMerge(components.button({ type: 'positive' }), 'ml-auto')}
 										onclick={() => dialogElement.showModal()}
 									>
-										<span>Lisää listaan</span>
+										<span>{m.list_add_to()}</span>
 										<Icon name="plus" />
 									</button>
 								{/snippet}
 								{#snippet renderContent(dialogElement: HTMLDialogElement)}
-									<h2 class="text-xl">Valitse lista</h2>
+									<h2 class="text-xl">{m.list_choose()}</h2>
 									<AllLists
 										action={(list: ListObj) => {
 											addToList(list, item[AllColumns.Number]);
@@ -301,7 +304,7 @@
 			</SvelteVirtualList>
 		</div>
 		{#if rows.length == 0}
-			<p>Ei tuloksia</p>
+			<p>{m.list_no_results()}</p>
 		{/if}
 	</main>
 </div>

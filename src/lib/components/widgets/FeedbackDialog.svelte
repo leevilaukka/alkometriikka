@@ -4,15 +4,16 @@
 	import Popup from '$lib/components/widgets/Popup.svelte';
 	import Icon from '$lib/components/widgets/Icon.svelte';
 	import type { IconName } from '$lib/icons';
+	import { m } from '$lib/i18n';
 
 	let {
-		triggerLabel = 'Palaute',
+		triggerLabel = m.feedback_trigger(),
 		triggerIcon = 'bug',
 		triggerClass = '',
 		dialogClass = '',
 		title,
 		description,
-		thankYou = 'Kiitos ilmoituksesta!',
+		thankYou = m.feedback_thanks(),
 		categories,
 		onSubmit
 	}: {
@@ -61,7 +62,7 @@
 		<button
 			class={twMerge(components.button(), triggerClass)}
 			onclick={() => dialogElement?.showModal()}
-			aria-label="Lähetä palautetta"
+			aria-label={m.feedback_send_label()}
 		>
 			<span class="flex items-center gap-2"><Icon name={triggerIcon} />{triggerLabel}</span>
 		</button>
@@ -72,7 +73,7 @@
 				<h2 class="text-lg font-bold">{title}</h2>
 				<button
 					onclick={() => dialogElement?.close()}
-					aria-label="Sulje"
+					aria-label={m.common_close()}
 					class={twMerge(components.button({ type: 'noborder' }))}
 				>
 					<Icon name="x" />
@@ -84,7 +85,7 @@
 					class={twMerge(components.button({ type: 'negative' }), 'self-end px-4 py-2')}
 					onclick={() => dialogElement?.close()}
 				>
-					Sulje
+					{m.common_close()}
 				</button>
 			{:else}
 				<p class="text-sm text-secondary">{description}</p>
@@ -108,7 +109,7 @@
 					disabled={!anySelected || sending}
 					onclick={submit}
 				>
-					{sending ? 'Lähetetään…' : 'Lähetä palaute'}
+					{sending ? m.feedback_sending() : m.feedback_send()}
 				</button>
 			{/if}
 		</div>

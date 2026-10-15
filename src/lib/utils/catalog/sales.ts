@@ -56,12 +56,12 @@ function isCampaignActive(start?: string, end?: string, today?: string): boolean
 	return true;
 }
 
-/** Date-safe ISO (YYYY-MM-DD) → Finnish locale formatter that avoids timezone shifts. */
-function formatISODate(date?: string): string | null {
+/** Date-safe ISO (YYYY-MM-DD) → locale formatter that avoids timezone shifts. */
+function formatISODate(date: string | undefined, locale: string): string | null {
 	if (!date || !/^\d{4}-\d{2}-\d{2}$/.test(date)) return null;
 	const [year, month, day] = date.split('-').map(Number);
 	if (!year || !month || !day) return null;
-	return new Date(year, month - 1, day).toLocaleDateString('fi-FI');
+	return new Date(year, month - 1, day).toLocaleDateString(locale);
 }
 
 /**
@@ -105,10 +105,13 @@ export function getSaleInfo(
 	};
 }
 
-/** Formats the campaign window like "2.9.2026 – 29.9.2026". */
-export function formatCampaignWindow(info: SaleInfo): string | null {
-	const start = formatISODate(info.campaignStart);
-	const end = formatISODate(info.campaignEnd);
+/**
+ * Formats the campaign window like "2.9.2026 – 29.9.2026". Takes the locale as an argument (not
+ * from the app's language) because the feed scripts use this too.
+ */
+export function formatCampaignWindow(info: SaleInfo, locale = 'fi-FI'): string | null {
+	const start = formatISODate(info.campaignStart, locale);
+	const end = formatISODate(info.campaignEnd, locale);
 	if (start && end) return `${start} – ${end}`;
 	return start ?? end ?? null;
 }

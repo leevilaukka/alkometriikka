@@ -9,6 +9,8 @@ import {
 } from '../constants/columns';
 import { formatValue } from '../format/format';
 import { headerToDisplayName, isNullish } from '../format/labels';
+import { m } from '$lib/i18n';
+import { translateValue } from '$lib/i18n/values';
 
 export type QualityMetric = {
 	key: ColumnNames;
@@ -42,27 +44,27 @@ type MetricDefinition = {
 const metricDefinitions: MetricDefinition[] = [
 	{
 		key: AllColumns.PricePerLiter,
-		label: 'Hintataso',
+		label: m.quality_price_level(),
 		higherIsBetter: false,
-		note: (p) => `Halvempi litrahinta kuin ${p} % vastaavista tuotteista`
+		note: (percent) => m.quality_price_level_note({ percent })
 	},
 	{
 		key: AllColumns.AlcoholGramsPerEuro,
-		label: 'Alkoholia rahalle',
+		label: m.quality_alcohol_for_money(),
 		higherIsBetter: true,
-		note: (p) => `Enemmän alkoholia/€ kuin ${p} %:lla vastaavista`
+		note: (percent) => m.quality_alcohol_for_money_note({ percent })
 	},
 	{
 		key: AllColumns.Sugar,
-		label: 'Sokeripitoisuus',
+		label: m.quality_sugar(),
 		higherIsBetter: false,
-		note: (p) => `Vähemmän sokeria kuin ${p} %:lla vastaavista`
+		note: (percent) => m.quality_sugar_note({ percent })
 	},
 	{
 		key: AllColumns.PromillePerEuro,
-		label: 'Promillet per euro',
+		label: m.quality_promille_per_euro(),
 		higherIsBetter: true,
-		note: (p) => `Enemmän promilleja/€ kuin ${p} %:lla vastaavista`
+		note: (percent) => m.quality_promille_per_euro_note({ percent })
 	}
 ];
 
@@ -85,9 +87,13 @@ export function computeQualityMetrics(
 	);
 	const typeNode = trail[0];
 	const subTypeNode = parentCategory ? undefined : trail[1];
-	const category = String(
-		(subTypeNode ?? typeNode)?.name ?? product[AllColumns.SubType] ?? product[AllColumns.Type]
-	);
+	const category = subTypeNode
+		? translateValue(subTypeNode.name, AllColumns.SubType)
+		: typeNode
+			? translateValue(typeNode.name, AllColumns.Type)
+			: product[AllColumns.SubType]
+				? translateValue(String(product[AllColumns.SubType]), AllColumns.SubType)
+				: translateValue(String(product[AllColumns.Type] ?? ''), AllColumns.Type);
 
 	const sameCategory = (item: PriceListItem) => {
 		if (!typeNode) return item[AllColumns.Type] === product[AllColumns.Type];

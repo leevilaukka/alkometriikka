@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { m } from '$lib/i18n';
 	import { page } from '$app/state';
 	import type { PriceListItem } from '$lib/types.js';
 	import SimilarProducts from '$lib/components/views/SimilarProducts.svelte';
@@ -18,7 +19,7 @@
 			<span
 				class="block h-16 w-16 animate-spin rounded-full border-[0.5rem] border-red-600 border-b-transparent"
 			></span>
-			<p>Ladataan...</p>
+			<p>{m.common_loading()}</p>
 		</div>
 	</div>
 {:then alko}

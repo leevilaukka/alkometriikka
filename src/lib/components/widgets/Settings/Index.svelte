@@ -14,13 +14,14 @@
 	import Info from './Info.svelte';
 	import Settings from './Settings.svelte';
 	import PersonalInfo from './PersonalInfo.svelte';
+	import { intlLocale, m } from '$lib/i18n';
 
 	// Define the available tabs for the settings dialog
 	// Each tab has an id, label, icon, and associated Svelte component
 	const tabs = [
-		{ id: 'personal', label: 'Henkilökohtaiset tiedot', icon: 'user', component: PersonalInfo },
-		{ id: 'settings', label: 'Lisäasetukset', icon: 'cog', component: Settings },
-		{ id: 'info', label: 'Tietoa', icon: 'info_circle', component: Info }
+		{ id: 'personal', label: m.settings_personal_title(), icon: 'user', component: PersonalInfo },
+		{ id: 'settings', label: m.settings_more_title(), icon: 'cog', component: Settings },
+		{ id: 'info', label: m.settings_info_title(), icon: 'info_circle', component: Info }
 	] as const satisfies readonly {
 		id: string;
 		label: string;
@@ -46,7 +47,7 @@
 	const { alko }: { alko: any } = $props();
 	const stores = $derived(
 		(Object.values(alko.availability.stores) as AvailabilityStore[]).sort((a, b) =>
-			a.name.localeCompare(b.name, 'fi', { sensitivity: 'base' })
+			a.name.localeCompare(b.name, intlLocale, { sensitivity: 'base' })
 		)
 	);
 
@@ -60,9 +61,9 @@
 		<button
 			class={twMerge(components.button(), 'p-2 text-xl')}
 			onclick={openSettings}
-			aria-label="Asetukset"
+			aria-label={m.settings_title()}
 		>
-			{#if !$isMobile}<span class="text-sm">Asetukset</span>{/if}<Icon name="cog" />
+			{#if !$isMobile}<span class="text-sm">{m.settings_title()}</span>{/if}<Icon name="cog" />
 		</button>
 	{/snippet}
 	{#snippet renderContent(dialogElement: HTMLDialogElement)}

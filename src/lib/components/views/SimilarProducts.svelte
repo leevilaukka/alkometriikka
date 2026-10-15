@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { productName } from '$lib/i18n/values';
 	import { resolve } from '$app/paths';
 	import { findSimilarProducts } from '$lib/utils/catalog/filters';
 	import SvelteVirtualList from '@humanspeak/svelte-virtual-list';
@@ -21,6 +22,7 @@
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import { generateImageUrl } from '$lib/utils/catalog/alko';
+	import { m } from '$lib/i18n';
 
 	let { product, kaljakori } = $props();
 
@@ -61,23 +63,21 @@
 	});
 
 	$effect(() => {
+		const name = productName(product);
+		const title = `${m.similar_to({ name })} | Alkometriikka`;
+		const description = m.similar_seo_description({ name });
 		setSEO({
-			description: `Katso samankaltaisia tuotteita kuin ${product[AllColumns.Name]} Alkometriikasta. Vertaa hintoja, ominaisuuksia ja löydä parhaat vaihtoehdot.`,
-			og: {
-				title: `Samankaltaisia tuotteita kuin ${product[AllColumns.Name]} | Alkometriikka`,
-				url: window.location.href,
-				type: 'website',
-				description: `Katso samankaltaisia tuotteita kuin ${product[AllColumns.Name]} Alkometriikasta. Vertaa hintoja, ominaisuuksia ja löydä parhaat vaihtoehdot.`
-			},
+			description,
+			og: { title, url: window.location.href, type: 'website', description },
 			twitter: {
-				title: `Samankaltaisia tuotteita kuin ${product[AllColumns.Name]} | Alkometriikka`,
-				description: `Katso samankaltaisia tuotteita kuin ${product[AllColumns.Name]} Alkometriikasta. Vertaa hintoja, ominaisuuksia ja löydä parhaat vaihtoehdot.`,
+				title,
+				description,
 				image: generateImageUrl(product[AllColumns.Number], 'medium'),
 				card: 'summary_large_image'
 			},
 			image: {
 				url: generateImageUrl(product[AllColumns.Number], 'medium'),
-				alt: `Samankaltaisia tuotteita kuin ${product[AllColumns.Name]} | Alkometriikka`,
+				alt: title,
 				height: 192,
 				width: 160
 			}
@@ -93,7 +93,7 @@
 	<div class="flex w-full items-center justify-between gap-4">
 		<button onclick={() => handleBack()} class={twMerge(components.button({ size: 'md' }))}>
 			<Icon name={window.history.length > 1 ? 'arrow_back' : 'home'} class="inline-block" />
-			<span>{window.history.length > 1 ? 'Takaisin' : 'Etusivulle'}</span>
+			<span>{window.history.length > 1 ? m.common_back() : m.common_to_home()}</span>
 		</button>
 		{#if showScrollToTopButton}
 			<button
@@ -105,7 +105,7 @@
 				class={twMerge(components.button({ size: 'md' }))}
 			>
 				<Icon name={'arrow_to_top'} />
-				<span>{$isMobile ? 'Alkuun' : 'Hyppää alkuun'}</span>
+				<span>{$isMobile ? m.list_to_top_short() : m.list_to_top()}</span>
 			</button>
 		{/if}
 	</div>
@@ -122,20 +122,20 @@
 							<div class="flex aspect-square h-56 w-full max-w-full rounded bg-white p-6 md:w-fit">
 								<ProductImage
 									number={product[AllColumns.Number]}
-									name={product[AllColumns.Name]}
+									name={productName(product)}
 									transform="medium"
-									alt={product[AllColumns.Name]}
+									alt={productName(product)}
 								/>
 							</div>
 							<div class="flex w-full flex-col justify-between gap-3">
 								<div class="flex flex-col gap-2">
-									<h2 class="text-lg font-bold md:text-xl">Samankaltaisia tuotteita kuin:</h2>
+									<h2 class="text-lg font-bold md:text-xl">{m.similar_to_heading()}</h2>
 									<h1 class="text-2xl font-bold md:text-3xl">
 										<a
 											href={resolve(`/tuotteet/${product[AllColumns.Number]}/`)}
 											class="hover:underline"
 										>
-											{product[AllColumns.Name]}
+											{productName(product)}
 										</a>
 									</h1>
 									<span>
@@ -151,7 +151,7 @@
 											: ''}</span
 									>
 									<p class="w-fit rounded bg-gray-100 px-1 dark:bg-zinc-700 dark:text-white">
-										{product[AllColumns.Availability]}
+										{formatValue(product[AllColumns.Availability], AllColumns.Availability)}
 									</p>
 									<div class="flex w-full flex-row gap-2 md:flex-row">
 										<BadgeList item={product} />
@@ -172,7 +172,7 @@
 						</div>
 						<div class="grid grid-cols-[1fr_auto_1fr] items-center gap-3">
 							<hr class="border-primary" />
-							<span class="text-sm text-secondary">Vastaavin ensin</span>
+							<span class="text-sm text-secondary">{m.similar_most_similar_first()}</span>
 							<hr class="border-primary" />
 						</div>
 					</div>
@@ -191,12 +191,12 @@
 										class={twMerge(components.button({ type: 'positive' }), 'ml-auto')}
 										onclick={() => dialogElement.showModal()}
 									>
-										<span>Lisää listaan</span>
+										<span>{m.list_add_to()}</span>
 										<Icon name="plus" />
 									</button>
 								{/snippet}
 								{#snippet renderContent(dialogElement: HTMLDialogElement)}
-									<h2 class="text-xl">Valitse lista</h2>
+									<h2 class="text-xl">{m.list_choose()}</h2>
 									<AllLists
 										action={(list: ListObj) => {
 											if (item) {

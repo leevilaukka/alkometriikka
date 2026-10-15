@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { m } from '$lib/i18n';
 	import Stats from '$lib/components/views/Stats.svelte';
 	import { generateTitle, setSEO } from '$lib/utils/app/meta';
 	import { staticPage } from '$lib/utils/app/seo';
@@ -9,14 +10,14 @@
 		const { description, keywords } = staticPage('/tilastot/');
 		setSEO({
 			description,
-			og: { title: generateTitle('Tilastot'), description, url: window.location.href },
+			og: { title: generateTitle(m.nav_stats()), description, url: window.location.href },
 			keywords
 		});
 	});
 </script>
 
 <svelte:head>
-	<title>{generateTitle('Tilastot')}</title>
+	<title>{generateTitle(m.nav_stats())}</title>
 </svelte:head>
 
 {#await data.alko}
@@ -25,7 +26,7 @@
 			<span
 				class="block h-16 w-16 animate-spin rounded-full border-[0.5rem] border-red-600 border-b-transparent"
 			></span>
-			<p>Ladataan...</p>
+			<p>{m.common_loading()}</p>
 		</div>
 	</div>
 {:then alko}

@@ -12,6 +12,8 @@
 	import type { PriceListItem } from '$lib/types';
 	import Icon from '../widgets/Icon.svelte';
 	import { twMerge } from 'tailwind-merge';
+	import { m } from '$lib/i18n';
+	import { translateValue } from '$lib/i18n/values';
 
 	const { product, class: _class = '' }: { product: PriceListItem; class?: string } = $props();
 
@@ -88,9 +90,11 @@
 							<a
 								href={pairingHref(pairing)}
 								class="flex items-center rounded-full border border-primary bg-secondary px-3 py-1 text-sm transition-colors hover:border-brand-2"
-								title={`Muut tuotteet, jotka sopivat yhteen: ${pairing}`}
+								title={m.product_food_pairing_link({
+									pairing: translateValue(pairing, AllColumns.FoodPairings)
+								})}
 							>
-								{pairing}
+								{translateValue(pairing, AllColumns.FoodPairings)}
 							</a>
 						</li>
 					{/each}
@@ -108,7 +112,7 @@
 	<summary
 		class="flex cursor-pointer list-none items-center justify-between gap-3 p-3.5 text-lg font-bold group-open:border-b group-open:border-primary"
 	>
-		Tuotetiedot
+		{m.product_details_title()}
 		<Icon name="chevron_down" class="shrink-0 transition-transform group-open:rotate-180" />
 	</summary>
 	{@render rowsList()}

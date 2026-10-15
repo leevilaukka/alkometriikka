@@ -1,6 +1,7 @@
 import type { ListObj } from '$lib/types.js';
 import { validateListFromURI } from '$lib/utils/user/lists.js';
 import { error } from '@sveltejs/kit';
+import { m } from '$lib/i18n';
 import { decompressFromEncodedURIComponent } from 'lz-string';
 
 export async function load({ parent, url }) {
@@ -13,7 +14,7 @@ export async function load({ parent, url }) {
 
 	if (listParam && !isValid) {
 		error(400, {
-			message: 'Listan tietoja ei voida lukea. Tarkista linkki.'
+			message: m.error_list_invalid()
 		});
 	}
 

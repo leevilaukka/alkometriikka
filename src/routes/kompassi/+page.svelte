@@ -10,8 +10,11 @@
 		getStoreCity,
 		getStoreDistance,
 		isStoreOpen,
-		rankStoresByDistance
+		rankStoresByDistance,
+		storeName,
+		storeText
 	} from '$lib/utils/catalog/availability';
+	import { m } from '$lib/i18n';
 	import { generateTitle, setSEO } from '$lib/utils/app/meta';
 	import { staticPage } from '$lib/utils/app/seo';
 	import { requestUserLocation } from '$lib/utils/device/location';
@@ -81,14 +84,14 @@
 
 	const { description, keywords } = staticPage('/kompassi/');
 	setSEO({
-		og: { title: generateTitle('Kompassi'), description, url: window.location.href },
+		og: { title: generateTitle(m.compass_title()), description, url: window.location.href },
 		keywords,
 		description
 	});
 </script>
 
 <svelte:head>
-	<title>{generateTitle('Kompassi')}</title>
+	<title>{generateTitle(m.compass_title())}</title>
 </svelte:head>
 
 {#if !stores}
@@ -100,8 +103,8 @@
 {:else}
 	<div class="mx-auto flex w-full max-w-[60ch] flex-col items-center gap-6 p-6">
 		<header class="flex flex-col gap-2 text-center">
-			<h1 class="text-2xl font-bold md:text-3xl">Kompassi</h1>
-			<p class="text-secondary">Suunta lähimpään Alkoon!</p>
+			<h1 class="text-2xl font-bold md:text-3xl">{m.compass_title()}</h1>
+			<p class="text-secondary">{m.compass_intro()}</p>
 		</header>
 
 		{#if permissionNeeded}
@@ -111,7 +114,7 @@
 				onclick={enableCompass}
 			>
 				<Icon name="compass" />
-				<span>Ota kompassi käyttöön</span>
+				<span>{m.compass_enable()}</span>
 			</button>
 		{/if}
 
@@ -122,23 +125,23 @@
 				checked={onlyOpen}
 				onchange={(event) => resetFilters(event.currentTarget.checked)}
 			/>
-			<span>Vain avoinna olevat myymälät</span>
+			<span>{m.compass_only_open()}</span>
 		</label>
 
 		{#if target}
 			<div class="flex flex-col items-center gap-1 text-center">
 				<a href={resolve(`/myymalat/${target.id}/`)} class="text-xl font-bold hover:underline">
-					{target.name}
+					{storeName(target)}
 				</a>
 				<p class="text-sm text-secondary">
-					{[target.address, getStoreCity(target)].filter(Boolean).join(', ')}
+					{[storeText(target, 'address'), getStoreCity(target)].filter(Boolean).join(', ')}
 				</p>
 				<span
 					class={isStoreOpen(target)
 						? 'rounded bg-green-100 px-2 py-1 text-sm text-green-800 dark:bg-green-900 dark:text-green-100'
 						: 'rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-zinc-700 dark:text-zinc-100'}
 				>
-					{isStoreOpen(target) ? 'Avoinna' : 'Suljettu'}
+					{isStoreOpen(target) ? m.store_open() : m.store_closed_now()}
 				</span>
 			</div>
 			{#key target.id}
@@ -150,22 +153,22 @@
 				onclick={() => skipTarget(target)}
 			>
 				<Icon name="skip_next" />
-				<span>Seuraava lähin</span>
+				<span>{m.compass_next()}</span>
 			</button>
 		{:else if candidates.length === 0}
-			<p class="text-secondary">Sopivia myymälöitä ei löytynyt.</p>
+			<p class="text-secondary">{m.compass_none()}</p>
 			{#if skipped.length}
 				<button
 					type="button"
 					class={components.button({ size: 'md' })}
 					onclick={() => resetFilters(onlyOpen)}
 				>
-					Aloita alusta
+					{m.compass_restart()}
 				</button>
 			{/if}
 		{:else}
 			<!-- No fix yet: the dial for any store would only show "locating", so keep the page simple. -->
-			<p class="animate-pulse text-secondary">Haetaan sijaintia…</p>
+			<p class="animate-pulse text-secondary">{m.compass_locating()}</p>
 		{/if}
 	</div>
 {/if}

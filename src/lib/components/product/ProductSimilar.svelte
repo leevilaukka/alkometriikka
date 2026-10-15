@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { productName } from '$lib/i18n/values';
 	import { resolve } from '$app/paths';
 	import { AllColumns } from '$lib/utils/constants/columns';
 	import { formatValue } from '$lib/utils/format/format';
@@ -13,6 +14,7 @@
 	import ProductImage from '../widgets/ProductImage.svelte';
 	import Icon from '../widgets/Icon.svelte';
 	import { twMerge } from 'tailwind-merge';
+	import { m } from '$lib/i18n';
 
 	const {
 		product,
@@ -29,7 +31,7 @@
 		// product currently being viewed, so that product goes in first - anchored
 		// as the reference - and only if both fit.
 		if (!addToCompareWithReference(product[AllColumns.Number], number)) {
-			alert(`Voit vertailla korkeintaan ${MAX_COMPARE_PRODUCTS} tuotetta kerrallaan.`);
+			alert(m.compare_limit({ count: MAX_COMPARE_PRODUCTS }));
 		}
 	}
 
@@ -56,12 +58,12 @@
 {#if candidates.length > 0}
 	<section class={twMerge('flex flex-col gap-3.5', _class)}>
 		<div class="flex flex-wrap items-center justify-between gap-3.5">
-			<h2 class="text-2xl font-bold">Samankaltaisia tuotteita</h2>
+			<h2 class="text-2xl font-bold">{m.similar_title()}</h2>
 			<a
 				href={resolve(`/vastaavat/${product[AllColumns.Number]}/`)}
 				class={twMerge(components.button({ size: 'sm' }), 'flex items-center gap-2')}
 			>
-				<span>Lisää samankaltaisia</span>
+				<span>{m.similar_more()}</span>
 				<Icon name="arrow_right" />
 			</a>
 		</div>
@@ -74,7 +76,7 @@
 					<a href={resolve(`/tuotteet/${number}/`)} class="flex flex-col gap-3">
 						<div class="flex h-30 flex-col gap-2 md:h-33">
 							<h3 class="line-clamp-3 text-xl font-bold md:text-2xl">
-								{similarProduct[AllColumns.Name]}
+								{productName(similarProduct)}
 							</h3>
 							<span>
 								{formatValue(
@@ -86,8 +88,8 @@
 						<div class="flex aspect-square w-full shrink-0 rounded bg-white p-2 md:max-w-fit">
 							<ProductImage
 								number={similarProduct[AllColumns.Number]}
-								name={similarProduct[AllColumns.Name]}
-								alt={similarProduct[AllColumns.Name]}
+								name={productName(similarProduct)}
+								alt={productName(similarProduct)}
 								class="block aspect-square h-full w-full object-contain"
 							/>
 						</div>
@@ -106,7 +108,7 @@
 					<button
 						type="button"
 						aria-pressed={inCompare}
-						aria-label={`Vertaile: ${similarProduct[AllColumns.Name]}`}
+						aria-label={m.compare_product_label({ name: productName(similarProduct) })}
 						class={twMerge(
 							components.button({ size: 'sm', type: inCompare ? 'positive' : 'primary' }),
 							'mt-auto w-full'
@@ -114,7 +116,7 @@
 						onclick={() => handleToggleCompare(number)}
 					>
 						<Icon name="compare" />
-						<span>{inCompare ? 'Vertailussa' : 'Vertaile'}</span>
+						<span>{inCompare ? m.compare_in_compare() : m.compare_button()}</span>
 					</button>
 				</div>
 			{/each}

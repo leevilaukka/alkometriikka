@@ -1,6 +1,7 @@
 import type { ColumnBadgeMap, ColumnNames, PriceListItem } from '$lib/types';
 import { formatCampaignWindow, getSaleInfo } from '../catalog/sales';
 import { DatasetColumns, MissingValues } from './columns';
+import { intlLocale, m } from '$lib/i18n';
 
 // Matches the "N-pack" convention Alko uses in product names for multi-packs,
 // e.g. "Karhu 4,6% 6-pack tölkki" or "Sandels 4,7% 24-pack tölkki".
@@ -23,45 +24,49 @@ export function getPackCount(product: PriceListItem): number {
 export const ColumnToBadgeMap: ColumnBadgeMap = {
 	// The other certificates (vegan, biodynamic, ...) are also listed in Huomautus and badged from there
 	[DatasetColumns.SpecialGroup]: {
-		Luomu: { text: 'Luomu', color: 'green', icon: 'plant_pot' }
+		Luomu: { text: m.badge_organic(), color: 'green', icon: 'plant_pot' }
 	},
 	[DatasetColumns.Availability]: {
-		kausituote: { text: 'Kausituote', color: 'orange', icon: 'tree' },
-		erikoiserä: { text: 'Erikoiserä', color: 'yellow', icon: 'star' },
-		tilausvalikoima: { text: 'Tilausvalikoima', color: 'cyan', icon: 'truck' }
+		kausituote: { text: m.badge_seasonal(), color: 'orange', icon: 'tree' },
+		erikoiserä: { text: m.badge_special_edition(), color: 'yellow', icon: 'star' },
+		tilausvalikoima: { text: m.badge_order_selection(), color: 'cyan', icon: 'truck' }
 	},
 	[DatasetColumns.Note]: {
 		'Vegaaneille soveltuva tuote': {
-			text: 'Vegaani',
+			text: m.badge_vegan(),
 			color: 'emerald',
 			icon: 'leaf',
-			tooltip: 'Vegaaneille soveltuva tuote'
+			tooltip: m.badge_vegan_tooltip()
 		},
-		Biodynaaminen: { text: 'Biodynaaminen', color: 'emerald', icon: 'yin_yang' },
-		Alkuviini: { text: 'Alkuviini', color: 'violet', icon: 'wine' },
+		Biodynaaminen: { text: m.badge_biodynamic(), color: 'emerald', icon: 'yin_yang' },
+		Alkuviini: { text: m.badge_natural_wine(), color: 'violet', icon: 'wine' },
 		'Ei lisättyä sulfiittia': {
-			text: 'Ei lisättyä sulfiittia',
+			text: m.badge_no_added_sulfites(),
 			color: 'green',
 			icon: 'check_circle'
 		},
 		'Myydään lahjapakkauksessa': {
-			text: 'Lahjapakkaus',
+			text: m.badge_gift_box(),
 			color: 'pink',
 			icon: 'gift',
-			tooltip: 'Myydään lahjapakkauksessa'
+			tooltip: m.badge_gift_box_tooltip()
 		},
-		Laktoositon: { text: 'Laktoositon', color: 'cyan', icon: 'milk_bottle' },
-		Gluteeniton: { text: 'Gluteeniton', color: 'amber', icon: 'baguette' },
-		'Matala-alkoholinen': { text: 'Matala-alkoholinen', color: 'blue', icon: 'balloon' },
-		Jälkiruokaviini: { text: 'Jälkiruokaviini', color: 'pink', icon: 'cake_slice' },
-		Oranssiviini: { text: 'Oranssiviini', color: 'orange', icon: 'wine_alt' },
-		'Rajallinen säilyvyys': { text: 'Rajallinen säilyvyys', color: 'yellow', icon: 'hourglass' },
-		Kosher: { text: 'Kosher', color: 'indigo', icon: 'certification' },
+		Laktoositon: { text: m.badge_lactose_free(), color: 'cyan', icon: 'milk_bottle' },
+		Gluteeniton: { text: m.badge_gluten_free(), color: 'amber', icon: 'baguette' },
+		'Matala-alkoholinen': { text: m.badge_low_alcohol(), color: 'blue', icon: 'balloon' },
+		Jälkiruokaviini: { text: m.badge_dessert_wine(), color: 'pink', icon: 'cake_slice' },
+		Oranssiviini: { text: m.badge_orange_wine(), color: 'orange', icon: 'wine_alt' },
+		'Rajallinen säilyvyys': {
+			text: m.badge_limited_shelf_life(),
+			color: 'yellow',
+			icon: 'hourglass'
+		},
+		Kosher: { text: m.badge_kosher(), color: 'indigo', icon: 'certification' },
 		'Puinen kuljetuspakkaus': {
-			text: 'Puulaatikko',
+			text: m.badge_wooden_box(),
 			color: 'gray',
 			icon: 'box',
-			tooltip: 'Puinen kuljetuspakkaus'
+			tooltip: m.badge_wooden_box_tooltip()
 		}
 	}
 };
@@ -79,7 +84,7 @@ export function DynamicColumnToBadgeMap<T extends PriceListItem>(item: T): Colum
 	const map: ColumnBadgeMap = { ...ColumnToBadgeMap };
 	if (item[DatasetColumns.AlcoholPercentage] === 0) {
 		map[DatasetColumns.AlcoholPercentage] = {
-			text: 'Alkoholiton',
+			text: m.badge_alcohol_free(),
 			color: 'blue',
 			icon: 'percentage'
 		};
@@ -91,35 +96,38 @@ export function DynamicColumnToBadgeMap<T extends PriceListItem>(item: T): Colum
 		campaignEnd: item[DatasetColumns.CampaignEnd]
 	});
 	if (sale) {
-		const campaignWindow = formatCampaignWindow(sale);
+		const campaignWindow = formatCampaignWindow(sale, intlLocale);
+		const normalPrice = `${sale.normalPrice.toLocaleString(intlLocale, {
+			minimumFractionDigits: 2,
+			maximumFractionDigits: 2
+		})} €`;
 		map[DatasetColumns.Price] = {
-			text: `Alennus ${sale.discountPercent}%`,
+			text: m.badge_discount({ percent: sale.discountPercent }),
 			color: 'red',
 			icon: 'price_tag',
-			tooltip: `Normaalihinta ${sale.normalPrice.toLocaleString('fi-FI', {
-				minimumFractionDigits: 2,
-				maximumFractionDigits: 2
-			})} €${campaignWindow ? ` · voimassa ${campaignWindow}` : ''}`
+			tooltip: campaignWindow
+				? m.badge_discount_tooltip_window({ price: normalPrice, window: campaignWindow })
+				: m.badge_discount_tooltip({ price: normalPrice })
 		};
 	}
 	const missing = (item as { [MissingValues]?: Set<ColumnNames> })[MissingValues];
 	if (Number(item[DatasetColumns.Sugar]) === 0 && !missing?.has(DatasetColumns.Sugar)) {
-		map[DatasetColumns.Sugar] = { text: 'Sokeriton', color: 'gray' };
+		map[DatasetColumns.Sugar] = { text: m.badge_sugar_free(), color: 'gray' };
 	}
 	const packCount = getPackCount(item);
 	if (packCount > 1) {
 		map[DatasetColumns.Name] = { text: `${packCount}-pack`, color: 'gray', icon: 'package' };
 	}
 	if (item[DatasetColumns.New].toLowerCase() === 'uutuus') {
-		map[DatasetColumns.New] = { text: 'Uutuus', color: 'red', icon: 'pencil_sparkles' };
+		map[DatasetColumns.New] = { text: m.value_new(), color: 'red', icon: 'pencil_sparkles' };
 	}
 
 	if (item[DatasetColumns.RemovedFromSelection] === true) {
 		map[DatasetColumns.RemovedFromSelection] = {
-			text: 'Poistettu valikoimasta',
+			text: m.badge_removed(),
 			color: 'red',
 			icon: 'x_circle',
-			tooltip: 'Tuote on poistettu Alkon valikoimista',
+			tooltip: m.badge_removed_tooltip(),
 			hideFromProductPage: true
 		};
 	}

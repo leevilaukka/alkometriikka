@@ -11,11 +11,14 @@
 		bestValueRanks,
 		categoryDistribution,
 		computeSummary,
-		formatFinNumber,
+		formatStatsNumber,
 		subcategoryDistribution,
 		topCategories
 	} from '$lib/utils/stats/stats';
 	import ChartCard from '$lib/components/widgets/ChartCard.svelte';
+	import { formatNumber } from '$lib/utils/format/format';
+	import { locale, m } from '$lib/i18n';
+	import { translateValue } from '$lib/i18n/values';
 
 	const {
 		kaljakori: source,
@@ -57,9 +60,20 @@
 	const countryTotal = $derived(sumCounts(allCountries));
 
 	const formatShare = (count: number, total: number) =>
-		total > 0 ? `${formatFinNumber((count / total) * 100, 1)} %` : '–';
-	const shareLabels = (entries: { key: string; count: number }[], total: number) =>
-		entries.map((entry) => `${entry.key} (${formatShare(entry.count, total)})`);
+		total > 0
+			? `${formatStatsNumber((count / total) * 100, 1)}${locale === 'en' ? '%' : ' %'}`
+			: '–';
+	/** Category names are dataset values in `column`; "other" and similar buckets pass through */
+	const shareLabels = (
+		entries: { key: string; count: number }[],
+		total: number,
+		column: ColumnNames
+	) =>
+		entries.map(
+			(entry) => `${translateValue(entry.key, column)} (${formatShare(entry.count, total)})`
+		);
+	const productCount = (formattedValue: string) =>
+		m.products_count({ count: Number(formattedValue.replace(/\D/g, '')) });
 	const cheaps = $derived(bestValueRanks(items, 25));
 	const alcoholBands = $derived(
 		bandHistogram(
@@ -110,7 +124,7 @@
 			labels,
 			datasets: [
 				{
-					label: 'Tuotteet',
+					label: m.stats_products(),
 					data: values,
 					backgroundColor: colors,
 					borderRadius: 4,
@@ -126,7 +140,7 @@
 				legend: { display: false },
 				tooltip: {
 					callbacks: {
-						label: (context) => opts.tooltipLabel?.(context) ?? `${context.formattedValue} tuotetta`
+						label: (context) => opts.tooltipLabel?.(context) ?? productCount(context.formattedValue)
 					}
 				}
 			},
@@ -142,7 +156,7 @@
 								callback: (value) => {
 									const v = Number(value);
 									if (v <= 0 || !Number.isInteger(Math.log10(v))) return '';
-									return formatFinNumber(v);
+									return formatStatsNumber(v);
 								}
 							},
 							grid: { color: gridColor }
@@ -171,7 +185,7 @@
 			labels,
 			datasets: [
 				{
-					label: 'Tuotteet',
+					label: m.stats_products(),
 					data: values,
 					backgroundColor: colors,
 					borderRadius: 4,
@@ -189,8 +203,8 @@
 					callbacks: {
 						label: (context) =>
 							total === undefined
-								? `${context.formattedValue} tuotetta`
-								: `${context.formattedValue} tuotetta (${formatShare(Number(context.raw), total)})`
+								? productCount(context.formattedValue)
+								: `${productCount(context.formattedValue)} (${formatShare(Number(context.raw), total)})`
 					}
 				}
 			},
@@ -238,7 +252,7 @@
 				tooltip: {
 					callbacks: {
 						label: (context) =>
-							`${context.label}: ${context.formattedValue} tuotetta (${formatShare(context.parsed, total)})`
+							`${context.label}: ${productCount(context.formattedValue)} (${formatShare(context.parsed, total)})`
 					}
 				}
 			}
@@ -250,7 +264,7 @@
 			priceBands.map((band) => band.label),
 			priceBands.map((band) => band.count),
 			barColor,
-			{ logY: true, tooltipLabel: (context) => `${context.formattedValue} tuotetta` }
+			{ logY: true, tooltipLabel: (context) => productCount(context.formattedValue) }
 		)
 	);
 	const literConfig = $derived(
@@ -258,23 +272,23 @@
 			literBands.map((band) => band.label),
 			literBands.map((band) => band.count),
 			barColor,
-			{ logY: true, tooltipLabel: (context) => `${context.formattedValue} tuotetta` }
+			{ logY: true, tooltipLabel: (context) => productCount(context.formattedValue) }
 		)
 	);
 	const typeConfig = $derived(
 		barConfig(
-			shareLabels(typeDistribution, typeTotal),
+			shareLabels(typeDistribution, typeTotal, AllColumns.Type),
 			typeDistribution.map((entry) => entry.count),
 			barColor,
 			{
 				tooltipLabel: (context) =>
-					`${context.formattedValue} tuotetta (${formatShare(typeDistribution[context.dataIndex].count, typeTotal)})`
+					`${productCount(context.formattedValue)} (${formatShare(typeDistribution[context.dataIndex].count, typeTotal)})`
 			}
 		)
 	);
 	const subtypeConfig = $derived(
 		horizontalBarConfig(
-			shareLabels(subtypeDistribution, subtypeTotal),
+			shareLabels(subtypeDistribution, subtypeTotal, AllColumns.SubType),
 			subtypeDistribution.map((entry) => entry.count),
 			barColor,
 			subtypeTotal
@@ -283,7 +297,7 @@
 
 	const countryConfig = $derived(
 		doughnutConfig(
-			shareLabels(countryDistribution, countryTotal),
+			shareLabels(countryDistribution, countryTotal, AllColumns.Country),
 			countryDistribution.map((e) => e.count),
 			[
 				'#E51B15',
@@ -318,7 +332,7 @@
 		data: {
 			datasets: [
 				{
-					label: 'Tuote',
+					label: m.stats_product(),
 					data: scatterPoints,
 					backgroundColor: scatterColor,
 					borderColor: scatterBorderColor,
@@ -331,13 +345,13 @@
 			maintainAspectRatio: false,
 			scales: {
 				x: {
-					title: { display: true, text: 'Alkoholigrammat / €', color: tickColor },
+					title: { display: true, text: m.column_alcohol_grams_per_euro(), color: tickColor },
 					ticks: { color: tickColor },
 					grid: { color: gridColor }
 				},
 				y: {
 					type: 'logarithmic',
-					title: { display: true, text: 'Hinta (€)', color: tickColor },
+					title: { display: true, text: m.chart_price_axis(), color: tickColor },
 					ticks: { color: tickColor },
 					grid: { color: gridColor }
 				}
@@ -348,7 +362,7 @@
 					callbacks: {
 						label: (context) => {
 							const point = scatterPoints[context.dataIndex];
-							return `${formatFinNumber(point.x, 1)} g/€ · ${formatFinNumber(point.y)} €`;
+							return `${formatStatsNumber(point.x, 1)} g/€ · ${formatStatsNumber(point.y)} €`;
 						}
 					}
 				}
@@ -364,27 +378,27 @@
 
 <div class="mx-auto flex w-full max-w-[120ch] flex-col gap-6 p-6">
 	<header class="flex flex-col gap-2">
-		<h1 class="text-2xl font-bold md:text-3xl">Tilastot</h1>
-		<p class="text-secondary">Alkon valikoima numeroina ja kuvaajina.</p>
+		<h1 class="text-2xl font-bold md:text-3xl">{m.nav_stats()}</h1>
+		<p class="text-secondary">{m.stats_intro()}</p>
 	</header>
 
 	<section class={headingGrid}>
 		<div class="rounded border border-primary bg-secondary p-4">
-			<p class="text-sm text-secondary">Tuotteita valikoimassa</p>
-			<p class="mt-1 text-2xl font-bold">{summary.total.toLocaleString('fi-FI')}</p>
+			<p class="text-sm text-secondary">{m.stats_products_in_selection()}</p>
+			<p class="mt-1 text-2xl font-bold">{formatNumber(summary.total)}</p>
 		</div>
 		<div class="rounded border border-primary bg-secondary p-4">
-			<p class="text-sm text-secondary">Keskihinta</p>
+			<p class="text-sm text-secondary">{m.stats_average_price()}</p>
 			<p class="mt-1 text-2xl font-bold">{formatOverview(summary.avgPrice, AllColumns.Price)}</p>
 		</div>
 		<div class="rounded border border-primary bg-secondary p-4">
-			<p class="text-sm text-secondary">Keskim. litrahinta</p>
+			<p class="text-sm text-secondary">{m.stats_average_price_per_liter()}</p>
 			<p class="mt-1 text-2xl font-bold">
 				{formatOverview(summary.avgPricePerLiter, AllColumns.PricePerLiter)}
 			</p>
 		</div>
 		<div class="rounded border border-primary bg-secondary p-4">
-			<p class="text-sm text-secondary">Keskim. alkoholiprosentti</p>
+			<p class="text-sm text-secondary">{m.stats_average_alcohol()}</p>
 			<p class="mt-1 text-2xl font-bold">
 				{formatOverview(summary.avgAlcoholPercentage, AllColumns.AlcoholPercentage)}
 			</p>
@@ -393,53 +407,59 @@
 
 	<div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
 		<ChartCard
-			title="Hinnat"
-			subtitle="Tuotteiden määrä hintaluokittain (logaritminen pystyasteikko)"
+			title={m.stats_prices_title()}
+			subtitle={m.stats_prices_subtitle()}
 			config={priceConfig}
 		/>
 		<ChartCard
-			title="Litrahinnat"
-			subtitle="Tuotteiden määrä litrahintaluokittain (logaritminen pystyasteikko)"
+			title={m.stats_liter_prices_title()}
+			subtitle={m.stats_liter_prices_subtitle()}
 			config={literConfig}
 		/>
 	</div>
 
-	<h2 class="text-xl font-semibold">Kategoriat</h2>
-	<p class="text-secondary">Yleisimmät tuoteryhmät valikoimassa.</p>
+	<h2 class="text-xl font-semibold">{m.nav_categories()}</h2>
+	<p class="text-secondary">{m.stats_categories_intro()}</p>
 	<div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
-		<ChartCard title="Pääkategoriat" subtitle="Tuotemäärä tuotetyypeittäin" config={typeConfig} />
 		<ChartCard
-			title="Alakategoriat"
-			subtitle="Suosituimmat alatyyypit (top 10)"
+			title={m.stats_types_title()}
+			subtitle={m.stats_types_subtitle()}
+			config={typeConfig}
+		/>
+		<ChartCard
+			title={m.stats_subtypes_title()}
+			subtitle={m.stats_subtypes_subtitle()}
 			config={subtypeConfig}
 		/>
 	</div>
 
-	<h2 class="text-xl font-semibold">Alkoholi</h2>
+	<h2 class="text-xl font-semibold">{m.column_alcohol_percentage()}</h2>
 	<div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
 		<ChartCard
-			title="Alkoholin määrä"
-			subtitle="Tuotteiden määrä alkoholiprosenttiluokittain (logaritminen pystyasteikko)"
+			title={m.stats_alcohol_title()}
+			subtitle={m.stats_alcohol_subtitle()}
 			config={alcoholConfig}
 		/>
 	</div>
 
-	<h2 class="text-xl font-semibold">Hinta vs "teho"</h2>
+	<h2 class="text-xl font-semibold">{m.stats_value_heading()}</h2>
 	<div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
 		<ChartCard
-			title={'"Tehokkuus" pistepilvenä'}
-			subtitle="Alkoholigrammat / € (vaaka) ja hinta (pysty)"
+			title={m.stats_scatter_title()}
+			subtitle={m.stats_scatter_subtitle()}
 			config={scatterConfig}
 		/>
 
 		<section class="overflow-hidden rounded border border-primary bg-secondary">
 			<header class="border-b border-primary px-4 py-3">
-				<h2 class="text-lg font-semibold">Paras hinta-tehosuhde</h2>
-				<p class="text-sm text-secondary">Top {cheaps.length} alkoholigrammat / €</p>
+				<h2 class="text-lg font-semibold">{m.stats_best_value_title()}</h2>
+				<p class="text-sm text-secondary">
+					{m.stats_best_value_subtitle({ count: cheaps.length })}
+				</p>
 			</header>
 			<ul class="max-h-80 overflow-y-auto">
 				{#each cheaps as product, index (product.number)}
-					{@const gramsPerEuro = formatFinNumber(product.gramsPerEuro, 1)}
+					{@const gramsPerEuro = formatStatsNumber(product.gramsPerEuro, 1)}
 					{@const price = formatValue(product.price, AllColumns.Price)}
 					<li class="flex items-center gap-3 border-b border-primary px-4 py-2 last:border-b-0">
 						<span class="w-6 shrink-0 text-sm text-secondary">{index + 1}.</span>
@@ -450,7 +470,7 @@
 						>
 							{product.name}
 							{#if product.removed}
-								<span class="text-xs text-secondary">(poistettu)</span>
+								<span class="text-xs text-secondary">{m.stats_removed()}</span>
 							{/if}
 						</a>
 						<span class="shrink-0 text-sm font-semibold">{gramsPerEuro} g/€</span>
@@ -461,11 +481,11 @@
 		</section>
 	</div>
 
-	<h2 class="text-xl font-semibold">Alkuperä</h2>
+	<h2 class="text-xl font-semibold">{m.stats_origin_heading()}</h2>
 	<div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
 		<ChartCard
-			title="Alkuperämaa"
-			subtitle="Tuotemäärä valmistusmaittain (top 12)"
+			title={m.stats_origin_title()}
+			subtitle={m.stats_origin_subtitle()}
 			config={countryConfig}
 		/>
 	</div>

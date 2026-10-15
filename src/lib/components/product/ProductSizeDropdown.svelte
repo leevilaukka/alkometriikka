@@ -7,6 +7,7 @@
 	import type { SizeOption } from '$lib/utils/catalog/filters';
 	import Icon from '../widgets/Icon.svelte';
 	import { twMerge } from 'tailwind-merge';
+	import { m } from '$lib/i18n';
 
 	const {
 		product,
@@ -55,7 +56,9 @@
 			class="flex cursor-pointer list-none items-center gap-3 rounded border border-primary bg-primary p-3 hover:bg-secondary"
 		>
 			<div class="flex min-w-0 flex-col">
-				<span class="text-xs text-secondary">Pakkauskoko · {sizes.length} kokoa</span>
+				<span class="text-xs text-secondary"
+					>{m.column_bottle_size()} · {m.sizes_count({ count: sizes.length })}</span
+				>
 				<strong class="text-sm">
 					{formatValue(current.product[AllColumns.BottleSize], AllColumns.BottleSize)} · {formatValue(
 						current.product[AllColumns.Price],
@@ -71,7 +74,7 @@
 			{#each sizes as size, i (size.product[AllColumns.Number])}
 				{#if hasSingleAndMultiPack && size.packCount > 1 && (i === 0 || sizes[i - 1].packCount === 1)}
 					<div class="bg-secondary px-3 py-1 text-xs font-medium text-secondary">
-						Monipakkaukset
+						{m.sizes_multipacks()}
 					</div>
 				{/if}
 				<svelte:element
@@ -99,7 +102,10 @@
 								<span class="truncate text-xs text-secondary">{size.packCount}-pack</span>
 							{:else if size.product[AllColumns.PackagingType]}
 								<span class="truncate text-xs text-secondary"
-									>{size.product[AllColumns.PackagingType]}</span
+									>{formatValue(
+										size.product[AllColumns.PackagingType],
+										AllColumns.PackagingType
+									)}</span
 								>
 							{/if}
 						</span>
@@ -107,7 +113,7 @@
 							<span
 								class="shrink-0 rounded bg-green-300 px-1.5 text-xs whitespace-nowrap text-green-800 dark:bg-green-800/40 dark:text-green-300"
 							>
-								Paras €/L
+								{m.sizes_best_value()}
 							</span>
 						{/if}
 					</span>

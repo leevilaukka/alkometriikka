@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { productName } from '$lib/i18n/values';
 	import { resolve } from '$app/paths';
 	import { AllColumns } from '$lib/utils/constants/columns';
 	import { formatValue } from '$lib/utils/format/format';
@@ -9,6 +10,7 @@
 		isPriceDrop
 	} from '$lib/utils/stats/priceChanges';
 	import { twMerge } from 'tailwind-merge';
+	import { m } from '$lib/i18n';
 
 	/** Rows of price changes, newest first. */
 	const { changes, class: _class = '' }: { changes: PriceChange[]; class?: string } = $props();
@@ -22,15 +24,15 @@
 				<a
 					href={resolve(`/tuotteet/${change.product[AllColumns.Number]}/`)}
 					class="truncate hover:underline"
-					title={change.product[AllColumns.Name]}
+					title={productName(change.product)}
 				>
-					{change.product[AllColumns.Name]}
+					{productName(change.product)}
 				</a>
 				<span class="text-xs text-secondary">
 					{formatPriceChangeDate(change.date)} · {formatValue(change.from, AllColumns.Price)} → {formatValue(
 						change.to,
 						AllColumns.Price
-					)}{change.sale ? ' · tarjous' : ''}
+					)}{change.sale ? ` · ${m.price_change_sale()}` : ''}
 				</span>
 			</div>
 			<span

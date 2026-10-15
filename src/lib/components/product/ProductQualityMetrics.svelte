@@ -8,6 +8,8 @@
 	import { computeQualityMetrics } from '$lib/utils/stats/metrics';
 	import { twMerge } from 'tailwind-merge';
 	import Icon from '../widgets/Icon.svelte';
+	import { m } from '$lib/i18n';
+	import { translateValue } from '$lib/i18n/values';
 
 	const {
 		product,
@@ -42,7 +44,14 @@
 			href={appPath(categoryNode.path)}
 			class={twMerge('group items-center gap-1 text-sm text-secondary', className)}
 		>
-			<span class="group-hover:underline">Selaa kategoriaa {categoryNode.name}</span>
+			<span class="group-hover:underline"
+				>{m.quality_browse_category({
+					category: translateValue(
+						categoryNode.name,
+						categoryNode === trail[0] ? AllColumns.Type : AllColumns.SubType
+					)
+				})}</span
+			>
 			<Icon name="chevron_right" />
 		</a>
 	{/if}
@@ -64,19 +73,19 @@
 {#if result.metrics.length > 0}
 	<section class={twMerge('flex flex-col gap-3', _class)}>
 		<div class="flex flex-wrap items-baseline gap-x-2 gap-y-1">
-			<h2 class="text-2xl font-bold">Hinta-laatu</h2>
+			<h2 class="text-2xl font-bold">{m.quality_title()}</h2>
 			<span class="text-sm text-secondary">
-				verrattuna muihin ryhmän
+				{m.quality_compared_before()}
 				{#if hasParentCategory}
-					<span role="group" aria-label="Vertailuryhmä">
+					<span role="group" aria-label={m.quality_comparison_group()}>
 						{@render categorySegment(
-							trail[1].name,
+							translateValue(trail[1].name, AllColumns.SubType),
 							!compareToParent,
 							() => (compareToParent = false)
 						)}
 						/
 						{@render categorySegment(
-							trail[0].name,
+							translateValue(trail[0].name, AllColumns.Type),
 							compareToParent,
 							() => (compareToParent = true)
 						)}
@@ -84,7 +93,8 @@
 				{:else}
 					"{result.categoryLabel}"
 				{/if}
-				tuotteisiin <span class="whitespace-nowrap">(n = {result.sampleSize})</span>
+				{m.quality_compared_after()}
+				<span class="whitespace-nowrap">(n = {result.sampleSize})</span>
 			</span>
 			<!-- Next to the heading on wider screens; phones have no room, so it goes below the cards -->
 			{@render categoryLink('ml-auto hidden md:flex')}
@@ -103,9 +113,9 @@
 						></div>
 					</div>
 					<span class="text-wrap-pretty text-sm text-secondary">
-						{metric.note}{#if showMedian}. Mediaani {formatRoundedPricePerLiter(
-								result.medianPricePerLiter as number
-							)}{/if}
+						{metric.note}{#if showMedian}. {m.quality_median({
+								value: formatRoundedPricePerLiter(result.medianPricePerLiter as number)
+							})}{/if}
 					</span>
 				</div>
 			{/each}

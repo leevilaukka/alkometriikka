@@ -43,9 +43,31 @@ function isValidDate(value: unknown): value is string {
 	return typeof value === 'string' && !Number.isNaN(Date.parse(value));
 }
 
-function parseLink(value: unknown): Notice['link'] {
+/**
+ * The message and link label in `locale`, from the notice's `translations`. Falls back to the
+ * Finnish text for anything that isn't translated.
+ */
+function localizedText(
+	entry: Record<string, unknown>,
+	locale: string
+): { message: unknown; linkLabel?: unknown } {
+	const translations = isRecord(entry.translations) ? entry.translations : undefined;
+	const translation = translations && isRecord(translations[locale]) ? translations[locale] : {};
+	const message =
+		typeof translation.message === 'string' && translation.message.trim()
+			? translation.message
+			: entry.message;
+	const linkLabel =
+		typeof translation.linkLabel === 'string' && translation.linkLabel.trim()
+			? translation.linkLabel
+			: undefined;
+	return { message, linkLabel };
+}
+
+function parseLink(value: unknown, labelOverride?: unknown): Notice['link'] {
 	if (!isRecord(value)) return undefined;
-	const { href, label } = value;
+	const { href } = value;
+	const label = typeof labelOverride === 'string' ? labelOverride : value.label;
 	if (typeof href !== 'string' || typeof label !== 'string' || !label.trim()) return undefined;
 	// Only same-site paths and https links; never javascript: or data: URLs
 	if (!href.startsWith('/') && !href.startsWith('https://')) return undefined;
@@ -72,16 +94,22 @@ function parseUrlParams(value: unknown): Notice['urlParams'] | null {
 	return params;
 }
 
-/** Validates a parsed `notices.json`, dropping malformed entries instead of failing the whole file. */
-export function parseNotices(raw: unknown): Notice[] {
+/**
+ * Validates a parsed `notices.json`, dropping malformed entries instead of failing the whole
+ * file. Texts are taken in `locale` when the notice has a translation for it.
+ */
+export function parseNotices(raw: unknown, locale = 'fi'): Notice[] {
 	const list = isRecord(raw) ? raw.notices : undefined;
 	if (!Array.isArray(list)) return [];
 	const notices: Notice[] = [];
 	const seen = new Set<string>();
 	for (const entry of list) {
 		if (!isRecord(entry)) continue;
-		const { id, level, message, startsAt, expiresAt, dismissible, replacesStaleWarning } = entry;
+		const { id, level, startsAt, expiresAt, dismissible, replacesStaleWarning } = entry;
 		if (typeof id !== 'string' || !id.trim() || seen.has(id)) continue;
+		// The Finnish message is required even when a translation is shown
+		if (typeof entry.message !== 'string' || !entry.message.trim()) continue;
+		const { message, linkLabel } = localizedText(entry, locale);
 		if (typeof message !== 'string' || !message.trim()) continue;
 		const urlParams = parseUrlParams(entry.urlParams);
 		if (urlParams === null) continue;
@@ -90,7 +118,7 @@ export function parseNotices(raw: unknown): Notice[] {
 			id,
 			level: level === 'warning' ? 'warning' : 'info',
 			message: message.trim(),
-			link: parseLink(entry.link),
+			link: parseLink(entry.link, linkLabel),
 			startsAt: isValidDate(startsAt) ? startsAt : undefined,
 			expiresAt: isValidDate(expiresAt) ? expiresAt : undefined,
 			dismissible: dismissible !== false,

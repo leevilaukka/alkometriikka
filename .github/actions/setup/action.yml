@@ -26,3 +26,9 @@ runs:
     - name: Install dependencies
       shell: bash
       run: bun install --frozen-lockfile
+
+    # The message functions in src/lib/paraglide are generated, not committed. Install's
+    # `prepare` builds them too but swallows errors; this fails loudly instead.
+    - name: Compile translations
+      shell: bash
+      run: bun run i18n

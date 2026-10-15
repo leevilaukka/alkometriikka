@@ -23,6 +23,7 @@
 	import { headerToDisplayName } from '$lib/utils/format/labels';
 	import RecursiveFilter from '../inputs/RecursiveFilter.svelte';
 	import { trackFilterUsage } from '$lib/utils/app/filterAnalytics.svelte';
+	import { m } from '$lib/i18n';
 
 	let {
 		kaljakori,
@@ -184,7 +185,7 @@
 						class="block h-4 w-4 shrink-0 animate-spin rounded-full border-2 border-red-600 border-b-transparent"
 						aria-hidden="true"
 					></span>
-					<span>Ladataan myymälöitä…</span>
+					<span>{m.filters_loading_stores()}</span>
 				</button>
 			</div>
 		{:else if !pillFilters.includes(filter) && possibleValues.length > 1}
@@ -238,7 +239,7 @@
 				class={twMerge(components.button(), 'w-full')}
 			>
 				<Icon name={showRemoved ? 'eye' : 'eye_slash'} />
-				<span>{showRemoved ? 'Piilota poistuneet tuotteet' : 'Näytä poistuneet tuotteet'}</span>
+				<span>{showRemoved ? m.filters_hide_removed() : m.filters_show_removed()}</span>
 			</button>
 		{/if}
 		<button
@@ -248,7 +249,7 @@
 			class={twMerge(components.button({ type: 'negative' }), 'w-full', 'mt-auto')}
 		>
 			<Icon name={'x_circle'} />
-			<span>Tyhjennä suodattimet</span>
+			<span>{m.filters_clear()}</span>
 		</button>
 		{#if $isMobile}
 			<button
@@ -258,7 +259,7 @@
 				}}
 				class={twMerge(components.button(), 'w-full')}
 			>
-				<span>Sulje suodattimet</span>
+				<span>{m.filters_close()}</span>
 			</button>
 		{/if}
 	</div>

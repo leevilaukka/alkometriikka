@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { productName } from '$lib/i18n/values';
 	import { resolve } from '$app/paths';
 	import { compareProductIds } from '$lib/global.svelte';
 	import { AllColumns } from '$lib/utils/constants/columns';
@@ -15,6 +16,7 @@
 	import type { PriceListItem } from '$lib/types';
 	import Icon from './Icon.svelte';
 	import ProductImage from './ProductImage.svelte';
+	import { m } from '$lib/i18n';
 
 	const { kaljakori }: { kaljakori: Kaljakori } = $props();
 
@@ -35,11 +37,11 @@
 					class="relative flex shrink-0 items-center gap-2 rounded border border-primary bg-secondary py-1 ps-1 pe-2"
 				>
 					<div class="flex h-8 w-8 shrink-0 items-center justify-center rounded bg-white p-0.5">
-						<ProductImage number={product[AllColumns.Number]} name={product[AllColumns.Name]} />
+						<ProductImage number={product[AllColumns.Number]} name={productName(product)} />
 					</div>
-					<span class="max-w-[12ch] truncate text-sm">{product[AllColumns.Name]}</span>
+					<span class="max-w-[12ch] truncate text-sm">{productName(product)}</span>
 					<button
-						aria-label={`Poista ${product[AllColumns.Name]} vertailusta`}
+						aria-label={m.compare_remove_product({ name: productName(product) })}
 						onclick={() => removeFromCompare(product[AllColumns.Number])}
 						class="grid h-5 w-5 shrink-0 place-content-center rounded-full text-secondary hover:bg-primary"
 					>
@@ -50,20 +52,20 @@
 		</div>
 		<div class="flex shrink-0 flex-row flex-nowrap items-center justify-end gap-2">
 			<span class="hidden text-sm text-secondary md:block">
-				{products.length}/{MAX_COMPARE_PRODUCTS} valittu
+				{m.compare_selected_of({ selected: products.length, total: MAX_COMPARE_PRODUCTS })}
 			</span>
 			<button
 				onclick={() => clearCompare()}
 				class={twMerge(components.button({ type: 'negative' }))}
 			>
 				<Icon name="trash" />
-				<span class="hidden sm:inline">Tyhjennä</span>
+				<span class="hidden sm:inline">{m.settings_clear_button()}</span>
 			</button>
 			<button
 				onclick={() => goto(resolve(compareURL(compareProductIds)))}
 				class={twMerge(components.button({ type: 'positive' }))}
 			>
-				<span>Vertaile</span>
+				<span>{m.compare_button()}</span>
 				<Icon name="arrow_right_stroke" />
 			</button>
 		</div>

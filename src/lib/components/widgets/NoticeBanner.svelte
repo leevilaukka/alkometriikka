@@ -30,8 +30,9 @@
 	import Icon from '$lib/components/widgets/Icon.svelte';
 	import { components } from '$lib/utils/ui/styles';
 	import { LocalStorageKeys } from '$lib/utils/constants/app';
-	import { timeConfig } from '$lib/utils/constants/display';
 	import { LocalStorageManager } from '$lib/utils/app/storage';
+	import { formatDateTime } from '$lib/utils/format/format';
+	import { locale, m } from '$lib/i18n';
 	import {
 		CACHED_NOTICE_ID,
 		STALE_NOTICE_ID,
@@ -48,15 +49,18 @@
 
 	const lastSyncedLabel = $derived.by(() => {
 		if (!lastSynced) return '';
-		const date = new Date(lastSynced);
-		return `${date.toLocaleDateString('fi-FI')} klo ${date.toLocaleTimeString('fi-FI', timeConfig)}`;
+		return formatDateTime(lastSynced);
 	});
 
 	const cachedMessage = $derived.by(() => {
-		const updated = lastSyncedLabel ? ` (päivitetty ${lastSyncedLabel})` : '';
-		if (!online) return `Ei verkkoyhteyttä. Näytetään tallennetut tiedot${updated}.`;
+		if (!online)
+			return lastSyncedLabel
+				? m.notice_offline_updated({ date: lastSyncedLabel })
+				: m.notice_offline();
 		if (cached)
-			return `Uusimpia tietoja ei saatu ladattua, joten näytetään tallennetut tiedot${updated}.`;
+			return lastSyncedLabel
+				? m.notice_cached_updated({ date: lastSyncedLabel })
+				: m.notice_cached();
 		return undefined;
 	});
 
@@ -66,7 +70,7 @@
 			dismissed,
 			now: Date.now(),
 			params: landingParams,
-			staleMessage: `Alkon tietoja ei ole saatu päivitettyä ${lastSyncedLabel} jälkeen. Hinnat ja saatavuus voivat olla vanhentuneita.`,
+			staleMessage: m.notice_stale({ date: lastSyncedLabel }),
 			cachedMessage
 		})
 	);
@@ -76,7 +80,7 @@
 		fetch(resolve('/') + 'notices.json', { cache: 'no-cache' })
 			.then((response) => (response.ok ? response.json() : Promise.reject(response.status)))
 			.then((raw) => {
-				notices = parseNotices(raw);
+				notices = parseNotices(raw, locale);
 				// Forget dismissals of notices that have been removed so the list doesn't grow forever
 				const known = new Set(notices.map((notice) => notice.id));
 				const kept = [...dismissed].filter(
@@ -127,7 +131,7 @@
 		</p>
 		{#if notice.dismissible}
 			<button
-				aria-label="Sulje ilmoitus"
+				aria-label={m.notice_close()}
 				class={twMerge(components.button({ type: 'noborder' }), 'p-1 text-current')}
 				onclick={() => dismiss(notice.id)}
 			>

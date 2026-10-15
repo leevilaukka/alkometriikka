@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { productName as localizedName } from '$lib/i18n/values';
 	import { asset, resolve } from '$app/paths';
 	import { tick } from 'svelte';
 	import { AllColumns } from '$lib/utils/constants/columns';
@@ -20,9 +21,18 @@
 	import { twMerge } from 'tailwind-merge';
 	import Icon from '$lib/components/widgets/Icon.svelte';
 	import DailyFeedback from '$lib/components/widgets/DailyFeedback.svelte';
+	import {
+		attributeValueLabel,
+		choiceLabel,
+		choiceTitle,
+		estimateDetails as estimatedWith,
+		formatPrice as price,
+		questionTitle as pairTitle
+	} from '$lib/daily/labels';
+	import { intlLocale, locale, m } from '$lib/i18n';
 
 	const date = $derived(page.params.date ?? '');
-	const dateFormatter = new Intl.DateTimeFormat('fi-FI', {
+	const dateFormatter = new Intl.DateTimeFormat(intlLocale, {
 		day: 'numeric',
 		month: 'numeric',
 		year: 'numeric'
@@ -77,23 +87,23 @@
 		archive = null;
 		loadError = null;
 		try {
-			if (!/^\d{4}-\d{2}-\d{2}$/.test(forDate)) throw new Error('Päivää ei ole vielä arkistoitu');
+			if (!/^\d{4}-\d{2}-\d{2}$/.test(forDate)) throw new Error(m.archive_day_not_archived());
 			const response = await fetch(asset(`/daily/archive/${forDate}.json`));
-			if (response.status === 404) throw new Error('Päivää ei ole vielä arkistoitu');
+			if (response.status === 404) throw new Error(m.archive_day_not_archived());
 			if (!response.ok) throw new Error(`HTTP ${response.status}`);
 			let parsed: ArchiveGame;
 			try {
 				parsed = await response.json();
 			} catch {
-				throw new Error('Päivää ei ole vielä arkistoitu');
+				throw new Error(m.archive_day_not_archived());
 			}
 			if (!parsed || parsed.date !== forDate || !Array.isArray(parsed.game?.questions))
-				throw new Error('Virheellinen arkistotiedosto');
+				throw new Error(m.archive_day_invalid());
 			if (id !== requestId) return;
 			archive = parsed;
 		} catch (error) {
 			if (id !== requestId) return;
-			loadError = error instanceof Error ? error.message : 'Päivää ei voitu ladata';
+			loadError = error instanceof Error ? error.message : m.archive_day_load_failed();
 		}
 	}
 
@@ -121,86 +131,30 @@
 
 	function shortDate(value: string) {
 		const [year, month, day] = value.split('-').map(Number);
-		return `${day}.${month}.`;
-	}
-
-	function price(value: number) {
-		return new Intl.NumberFormat('fi-FI', { style: 'currency', currency: 'EUR' }).format(value);
+		if (locale === 'fi') return `${day}.${month}.`;
+		return new Date(year, month - 1, day, 12).toLocaleDateString(intlLocale, {
+			day: 'numeric',
+			month: 'short'
+		});
 	}
 
 	function productName(id: string) {
-		return productMap.get(id)?.[AllColumns.Name] ?? 'Tuntematon tuote';
-	}
-
-	function estimatedWith(product: ArchiveProduct | undefined) {
-		if (!product) return '';
-		return [
-			product[AllColumns.Manufacturer],
-			product[AllColumns.Type],
-			product[AllColumns.PackagingType]
-		]
-			.filter((value) => typeof value === 'string' && value.trim().length > 0)
-			.join(' · ');
-	}
-
-	function attributeTitle(metric: 'alcohol' | 'volume' | 'literPrice' | 'sugar' | 'energy') {
-		return {
-			alcohol: 'Kummassa on enemmän alkoholia?',
-			volume: 'Kummassa on suurempi pakkaus?',
-			literPrice: 'Kumpi on litrahinnaltaan halvempi?',
-			sugar: 'Kummassa on enemmän sokeria?',
-			energy: 'Kummassa on enemmän energiaa?'
-		}[metric];
-	}
-
-	function attributeValueLabel(
-		metric: 'alcohol' | 'volume' | 'literPrice' | 'sugar' | 'energy',
-		value: number
-	) {
-		const decimals =
-			metric === 'volume' || metric === 'literPrice' ? 2 : metric === 'alcohol' ? 1 : 0;
-		const formatted = value.toFixed(decimals).replace('.', ',');
-		return metric === 'alcohol'
-			? `${formatted} %`
-			: metric === 'volume'
-				? `${formatted} l`
-				: metric === 'literPrice'
-					? `${formatted} €/l`
-					: metric === 'sugar'
-						? `${formatted} g/l`
-						: `${formatted} kcal/100 ml`;
-	}
-
-	function pairTitle(currentQuestion: Question) {
-		if (currentQuestion.type === 'cheaper') return 'Kumpi tuote on halvempi?';
-		if (currentQuestion.type === 'efficiency')
-			return 'Kummasta saat enemmän puhdasta alkoholia eurolla?';
-		if (currentQuestion.type === 'attribute') return attributeTitle(currentQuestion.metric);
-		if (currentQuestion.type === 'price') return 'Paljonko tämä tuote maksaa?';
-		if (currentQuestion.type === 'estimate') return 'Arvaa tuotteen hinta';
-		return 'Kumpi tuote on halvempi?';
-	}
-
-	function choiceTitle(field: 'country' | 'manufacturer' | 'category') {
-		return field === 'country'
-			? 'Mistä maasta tämä tuote on?'
-			: field === 'manufacturer'
-				? 'Kuka valmistaa tämän tuotteen?'
-				: 'Mihin kategoriaan tämä tuote kuuluu?';
+		return localizedName(productMap.get(id)) ?? m.daily_unknown_product();
 	}
 
 	function correctAnswerLabel(currentQuestion: Question) {
 		if (currentQuestion.type === 'price') return price(currentQuestion.correctPrice);
 		if (currentQuestion.type === 'cheaper')
-			return `Halvempi: ${productName(currentQuestion.correctProductId)}`;
+			return m.archive_answer_cheaper({ name: productName(currentQuestion.correctProductId) });
 		if (currentQuestion.type === 'efficiency')
-			return `Enemmän alkoholia/euro: ${productName(currentQuestion.correctProductId)}`;
+			return m.archive_answer_efficiency({ name: productName(currentQuestion.correctProductId) });
 		if (currentQuestion.type === 'attribute')
 			return `${productName(currentQuestion.correctProductId)}, ${attributeValueLabel(
 				currentQuestion.metric,
 				currentQuestion.values[currentQuestion.correctProductId]
 			)}`;
-		if (currentQuestion.type === 'choice') return currentQuestion.correctValue;
+		if (currentQuestion.type === 'choice')
+			return choiceLabel(currentQuestion.field, currentQuestion.correctValue);
 		return price(currentQuestion.correctPrice);
 	}
 
@@ -271,29 +225,30 @@
 	$effect(() =>
 		setSEO({
 			description: date
-				? `Alkometriikka Daily ${formatDate(date)}: pelaa tai katso vastaukset.`
-				: 'Alkometriikka Daily -arkisto.',
+				? m.archive_day_seo_description({ date: formatDate(date) })
+				: m.archive_seo_title(),
 			keywords: 'alkometriikka, daily, arkisto, vastaukset, tietovisa',
 			og: {
-				description: `Alkometriikka Daily ${date ? formatDate(date) : '-arkisto'}.`,
-				title: date ? `Arkisto · ${date}` : 'Arkisto',
+				description: date ? `Alkometriikka Daily ${formatDate(date)}.` : m.archive_seo_title(),
+				title: date ? `${m.daily_archive()} · ${date}` : m.daily_archive(),
 				url: window.location.href,
 				type: 'website'
 			},
-			twitter: { description: 'Alkometriikka Daily -arkisto', title: 'Arkisto' }
+			twitter: { description: m.archive_seo_title(), title: m.daily_archive() }
 		})
 	);
 </script>
 
 <svelte:head>
-	<title>{generateTitle(date ? `Arkisto · ${date}` : 'Arkisto')}</title>
+	<title>{generateTitle(date ? `${m.daily_archive()} · ${date}` : m.daily_archive())}</title>
 </svelte:head>
 
 <main class="mx-auto flex w-full max-w-4xl flex-col gap-6 p-4 md:p-8 lg:gap-8 lg:p-10">
 	<header class="flex flex-col gap-2 border-b border-primary pb-5">
 		<div class="flex items-center justify-between gap-4">
 			<a href={resolve('/daily/arkisto/')} class={twMerge(components.button(), 'px-3 py-2')}
-				><span class="flex items-center gap-2"><Icon name="calendar" />Kalenteri</span></a
+				><span class="flex items-center gap-2"><Icon name="calendar" />{m.archive_calendar()}</span
+				></a
 			>
 			{#if archive}
 				<div class="flex items-center gap-2">
@@ -301,14 +256,16 @@
 						<a
 							href={resolve(`/daily/arkisto/${previousDate}/`)}
 							class={twMerge(components.button(), 'px-3 py-2')}
-							aria-label="Edellinen päivä"><Icon name="chevron_left" />{shortDate(previousDate)}</a
+							aria-label={m.archive_previous_day()}
+							><Icon name="chevron_left" />{shortDate(previousDate)}</a
 						>
 					{/if}
 					{#if nextDate}
 						<a
 							href={resolve(`/daily/arkisto/${nextDate}/`)}
 							class={twMerge(components.button(), 'px-3 py-2')}
-							aria-label="Seuraava päivä">{shortDate(nextDate)}<Icon name="chevron_right" /></a
+							aria-label={m.archive_next_day()}
+							>{shortDate(nextDate)}<Icon name="chevron_right" /></a
 						>
 					{/if}
 					<DailyFeedback
@@ -323,7 +280,9 @@
 		<div>
 			<p class="text-sm font-bold tracking-widest text-brand-2 uppercase">Alkometriikka Daily</p>
 			<div class="flex items-center gap-2">
-				<h1 class="text-3xl font-bold md:text-4xl">{date ? formatDate(date) : 'Arkisto'}</h1>
+				<h1 class="text-3xl font-bold md:text-4xl">
+					{date ? formatDate(date) : m.daily_archive()}
+				</h1>
 			</div>
 		</div>
 	</header>
@@ -336,34 +295,36 @@
 			<a
 				href={resolve('/daily/arkisto/')}
 				class={twMerge(components.button({ type: 'negative', size: 'md' }), 'px-4 py-2')}
-				>Takaisin kalenteriin</a
+				>{m.archive_back_to_calendar()}</a
 			>
 		</section>
 	{:else if !archive}
 		<section class="rounded border border-primary bg-secondary p-5 text-center">
-			<p>Ladataan päivää…</p>
+			<p>{m.archive_day_loading()}</p>
 		</section>
 	{:else if completed}
 		<section class="flex flex-col gap-5">
 			<div class="flex items-center justify-between">
-				<h2 class="text-xl font-bold">Tulokset</h2>
+				<h2 class="text-xl font-bold">{m.calculator_results()}</h2>
 				<a href={resolve('/daily/arkisto/')} class={twMerge(components.button(), 'px-3 py-2')}
-					>Kalenteri</a
+					>{m.archive_calendar()}</a
 				>
 			</div>
 			<section
 				class="flex flex-col gap-5 rounded border border-primary bg-secondary p-5 text-center md:p-8"
 			>
 				<p class="text-lg font-bold">
-					{result?.correct}/{archive.game.questions.length} oikein ·{' '}
-					{result?.score} pistettä
+					{m.archive_result({
+						correct: result?.correct ?? 0,
+						total: archive.game.questions.length
+					})} · {m.daily_points({ count: result?.score ?? 0 })}
 				</p>
-				<p class="text-secondary">Päivä pelattu loppuun.</p>
+				<p class="text-secondary">{m.archive_day_finished()}</p>
 				<button
 					class={twMerge(components.button(), 'mx-auto px-3 py-2')}
 					onclick={() => (showAnswers = !showAnswers)}
 				>
-					{showAnswers ? 'Piilota oikeat vastaukset' : 'Näytä oikeat vastaukset'}
+					{showAnswers ? m.archive_hide_answers() : m.archive_show_answers()}
 				</button>
 			</section>
 			{#if showAnswers}
@@ -372,17 +333,22 @@
 					{@const wasCorrect = run?.correctAnswers?.[questionIndex]}
 					<div class="rounded border border-primary bg-primary p-5 md:p-8">
 						<div class="flex items-center justify-between text-sm font-bold">
-							<span>Kysymys {questionIndex + 1} / {archive.game.questions.length}</span>
+							<span
+								>{m.daily_question_progress({
+									current: questionIndex + 1,
+									total: archive.game.questions.length
+								})}</span
+							>
 							{#if wasCorrect === true}
 								<span class="flex items-center gap-1 text-green-700">
-									<Icon name="check_circle" />Oikein
+									<Icon name="check_circle" />{m.archive_correct()}
 								</span>
 							{:else if wasCorrect === false}
 								<span class="flex items-center gap-1 text-red-700">
-									<Icon name="block" />Väärin
+									<Icon name="block" />{m.archive_wrong()}
 								</span>
 							{:else}
-								<span class="text-secondary">Oikea vastaus</span>
+								<span class="text-secondary">{m.archive_correct_answer()}</span>
 							{/if}
 						</div>
 						<div class="mt-4">
@@ -391,13 +357,14 @@
 									<div class="h-40 w-28 shrink-0 rounded bg-white p-2">
 										<ProductImage
 											number={currentQuestion.productId}
-											name={productMap.get(currentQuestion.productId)?.[AllColumns.Name] ?? 'Tuote'}
+											name={localizedName(productMap.get(currentQuestion.productId)) ??
+												m.stats_product()}
 											transform="medium"
 										/>
 									</div>
 									<div class="min-w-0">
 										<p class="text-lg font-bold">{productName(currentQuestion.productId)}</p>
-										<h3 class="mt-2 text-xl font-bold">Paljonko tämä tuote maksaa?</h3>
+										<h3 class="mt-2 text-xl font-bold">{m.daily_question_price()}</h3>
 									</div>
 								</div>
 								<div class="mt-6 grid grid-cols-2 gap-3">
@@ -462,7 +429,8 @@
 									<div class="h-40 w-28 shrink-0 rounded bg-white p-2">
 										<ProductImage
 											number={currentQuestion.productId}
-											name={productMap.get(currentQuestion.productId)?.[AllColumns.Name] ?? 'Tuote'}
+											name={localizedName(productMap.get(currentQuestion.productId)) ??
+												m.stats_product()}
 											transform="medium"
 										/>
 									</div>
@@ -486,7 +454,7 @@
 														: 'opacity-70'
 											)}
 										>
-											{option}
+											{choiceLabel(currentQuestion.field, option)}
 											{#if correct}<Icon name="check_circle" />{:else if picked}<Icon
 													name="block"
 												/>{/if}
@@ -498,7 +466,8 @@
 									<div class="h-40 w-28 shrink-0 rounded bg-white p-2">
 										<ProductImage
 											number={currentQuestion.productId}
-											name={productMap.get(currentQuestion.productId)?.[AllColumns.Name] ?? 'Tuote'}
+											name={localizedName(productMap.get(currentQuestion.productId)) ??
+												m.stats_product()}
 											transform="medium"
 										/>
 									</div>
@@ -514,7 +483,7 @@
 										</p>
 									</div>
 								</div>
-								<h3 class="mt-5 text-xl font-bold">Arvaa tuotteen hinta</h3>
+								<h3 class="mt-5 text-xl font-bold">{m.daily_question_estimate()}</h3>
 								{#if given !== undefined}
 									<div
 										class={twMerge(
@@ -525,8 +494,10 @@
 										)}
 									>
 										<span class="flex items-center gap-2">
-											<Icon name={wasCorrect ? 'check_circle' : 'block'} />Sinun arviosi: {price(
-												Number(given)
+											<Icon name={wasCorrect ? 'check_circle' : 'block'} />{m.archive_your_estimate(
+												{
+													price: price(Number(given))
+												}
 											)}
 										</span>
 									</div>
@@ -535,7 +506,9 @@
 									class="mt-3 rounded border border-green-600 bg-green-100 p-3 text-lg font-bold text-green-900"
 								>
 									<span class="flex items-center gap-2">
-										<Icon name="check_circle" />Oikea hinta: {price(currentQuestion.correctPrice)}
+										<Icon name="check_circle" />{m.archive_correct_price({
+											price: price(currentQuestion.correctPrice)
+										})}
 									</span>
 								</div>
 							{/if}
@@ -547,8 +520,13 @@
 	{:else if question}
 		<section class="flex flex-col gap-5">
 			<div class="flex items-center justify-between text-sm font-bold">
-				<span>Kysymys {questionIndex + 1} / {archive.game.questions.length}</span>
-				<span class="text-secondary">{runningTotal} pistettä</span>
+				<span
+					>{m.daily_question_progress({
+						current: questionIndex + 1,
+						total: archive.game.questions.length
+					})}</span
+				>
+				<span class="text-secondary">{m.daily_points({ count: runningTotal })}</span>
 			</div>
 			<div class="h-2 overflow-hidden rounded bg-secondary">
 				<div class="h-full bg-brand-2 transition-all" style={`width: ${progressPercent}%`}></div>
@@ -560,13 +538,13 @@
 						<div class="h-40 w-28 shrink-0 rounded bg-white p-2">
 							<ProductImage
 								number={question.productId}
-								name={productMap.get(question.productId)?.[AllColumns.Name] ?? 'Tuote'}
+								name={localizedName(productMap.get(question.productId)) ?? m.stats_product()}
 								transform="medium"
 							/>
 						</div>
 						<div class="min-w-0">
 							<p class="text-lg font-bold">{productName(question.productId)}</p>
-							<h2 class="mt-2 text-2xl font-bold">Paljonko tämä tuote maksaa?</h2>
+							<h2 class="mt-2 text-2xl font-bold">{m.daily_question_price()}</h2>
 						</div>
 					</div>
 					<div class="mt-6 grid grid-cols-2 gap-3">
@@ -601,7 +579,7 @@
 						<div class="h-40 w-28 shrink-0 rounded bg-white p-2">
 							<ProductImage
 								number={question.productId}
-								name={productMap.get(question.productId)?.[AllColumns.Name] ?? 'Tuote'}
+								name={localizedName(productMap.get(question.productId)) ?? m.stats_product()}
 								transform="medium"
 							/>
 						</div>
@@ -617,7 +595,7 @@
 								disabled={run?.answered}
 								onclick={() => answer(option)}
 							>
-								{option}
+								{choiceLabel(question.field, option)}
 							</button>
 						{/each}
 					</div>
@@ -626,7 +604,7 @@
 						<div class="h-40 w-28 shrink-0 rounded bg-white p-2">
 							<ProductImage
 								number={question.productId}
-								name={productMap.get(question.productId)?.[AllColumns.Name] ?? 'Tuote'}
+								name={localizedName(productMap.get(question.productId)) ?? m.stats_product()}
 								transform="medium"
 							/>
 						</div>
@@ -640,7 +618,7 @@
 							<p class="mt-2 text-secondary">{question.alcoholPercentage}% · {question.volume} L</p>
 						</div>
 					</div>
-					<h2 class="mt-5 text-2xl font-bold">Arvaa tuotteen hinta</h2>
+					<h2 class="mt-5 text-2xl font-bold">{m.daily_question_estimate()}</h2>
 					<form class="mt-6 flex flex-col gap-3 sm:flex-row" onsubmit={submitEstimate}>
 						<label
 							class="flex flex-1 items-center gap-2 rounded border border-primary px-3 py-2 focus-within:outline-1 focus-within:outline-offset-2 focus-within:outline-brand-1"
@@ -654,7 +632,7 @@
 								step="0.01"
 								required
 								disabled={run?.answered}
-								aria-label="Arvioitu hinta"
+								aria-label={m.daily_estimate_label()}
 							/>
 						</label>
 						<button
@@ -664,7 +642,7 @@
 							)}
 							disabled={run?.answered}
 						>
-							Vastaa
+							{m.daily_answer()}
 						</button>
 					</form>
 				{/if}
@@ -674,26 +652,31 @@
 						{#if answeredCorrectly}
 							<p class="flex items-center gap-2 text-lg font-bold text-green-700">
 								<Icon name="check_circle" />
-								Oikein! <span class="text-secondary">+{run.answerPoints} pistettä</span>
+								{m.daily_correct()}
+								<span class="text-secondary">+{m.daily_points({ count: run.answerPoints })}</span>
 							</p>
 						{:else if question.type === 'estimate' && run.answerPoints > 0}
 							<p class="flex items-center gap-2 text-lg font-bold text-green-700">
 								<Icon name="check_circle" />
-								Hyvä arvio! <span class="text-secondary">+{run.answerPoints} pistettä</span>
+								{m.daily_good_estimate()}
+								<span class="text-secondary">+{m.daily_points({ count: run.answerPoints })}</span>
 							</p>
 						{:else}
 							<p class="flex items-center gap-2 text-lg font-bold text-red-700">
 								<Icon name="block" />
-								Väärin <span class="text-secondary">· {run.answerPoints} pistettä</span>
+								{m.archive_wrong()}
+								<span class="text-secondary">· {m.daily_points({ count: run.answerPoints })}</span>
 							</p>
 						{/if}
-						<p class="mt-2 text-secondary">Oikea vastaus: {correctAnswerLabel(question)}</p>
+						<p class="mt-2 text-secondary">
+							{m.daily_correct_answer({ answer: correctAnswerLabel(question) })}
+						</p>
 						<button
 							id="archive-continue"
 							class={twMerge(components.button({ type: 'negative', size: 'md' }), 'mt-4 px-4 py-2')}
 							onclick={continueGame}
 						>
-							{lastQuestion ? 'Näytä tulokset' : 'Seuraava kysymys'}
+							{lastQuestion ? m.archive_show_results() : m.archive_next_question()}
 						</button>
 					</div>
 				{/if}

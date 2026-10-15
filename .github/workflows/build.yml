@@ -159,6 +159,13 @@ jobs:
             mv /tmp/feed.json feed.json
           fi
 
+      # English and Swedish value translations and aggregate feeds (fetchData.yml builds them)
+      - name: Restore translated data and feeds from existing gh-pages
+        run: |
+          for f in labels.en.json labels.sv.json rss.en.xml rss.sv.xml feed.en.json feed.sv.json; do
+            git show "origin/gh-pages:$f" > "$f" 2>/dev/null || rm -f "$f"
+          done
+
       - name: Restore per-product rss feeds from existing gh-pages
         run: |
           git archive origin/gh-pages rss 2>/dev/null | tar -x - || true
@@ -178,7 +185,7 @@ jobs:
           # Runtime datasets are gitignored, so `git add .` skips them. Force-add
           # them so the force-push to gh-pages preserves the data deployed by
           # fetchData.yml instead of deleting it on every site build.
-          for f in data.json hashes.json availability.json sitemap.xml rss.xml feed.json rss og-images.json og-categories.json daily tuotteet-manifest.json; do
+          for f in data.json hashes.json availability.json sitemap.xml rss.xml feed.json rss og-images.json og-categories.json daily tuotteet-manifest.json labels.en.json labels.sv.json rss.en.xml rss.sv.xml feed.en.json feed.sv.json; do
             if [ -e "$f" ]; then git add -f "$f"; fi
           done
           git commit -m "Deploy to GitHub Pages [skip ci]" || echo "No changes to commit"

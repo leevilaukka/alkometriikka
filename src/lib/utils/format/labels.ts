@@ -1,6 +1,8 @@
 import type { ColumnNames } from '$lib/types';
+import { m } from '$lib/i18n';
+import { GenderOptionsMap } from '../constants/app';
 import {
-	filterRenameMap,
+	columnDisplayNames,
 	filterToUnitMarker,
 	sortingOrderDescriptionMap
 } from '../constants/display';
@@ -13,8 +15,8 @@ export function headerToUnitMarker(header: ColumnNames) {
 }
 
 export function headerToDisplayName(header: ColumnNames) {
-	if (Object.hasOwn(filterRenameMap, header))
-		return filterRenameMap[header as keyof typeof filterRenameMap];
+	if (Object.hasOwn(columnDisplayNames, header))
+		return columnDisplayNames[header as keyof typeof columnDisplayNames];
 	return header;
 }
 
@@ -28,13 +30,24 @@ export function valueToString(
 }
 
 export function sortingOrderToString(order: boolean, header?: ColumnNames) {
-	if (!header) return order ? 'Nouseva' : 'Laskeva';
+	if (!header) return order ? m.sort_ascending() : m.sort_descending();
 	if (header in sortingOrderDescriptionMap) {
 		return order
 			? sortingOrderDescriptionMap[header as keyof typeof sortingOrderDescriptionMap][0]
 			: sortingOrderDescriptionMap[header as keyof typeof sortingOrderDescriptionMap][1];
 	}
-	return order ? 'Nouseva' : 'Laskeva';
+	return order ? m.sort_ascending() : m.sort_descending();
+}
+
+const genderLabels: Record<string, () => string> = {
+	[GenderOptionsMap.Male]: m.gender_male,
+	[GenderOptionsMap.Female]: m.gender_female,
+	[GenderOptionsMap.Unspecified]: m.gender_other
+};
+
+/** The stored gender options are Finnish words; this is how each is shown. */
+export function genderLabel(value: string): string {
+	return genderLabels[value]?.() ?? value;
 }
 
 export function isNullish(value: unknown) {

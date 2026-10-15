@@ -3,11 +3,15 @@ node_modules
 sitemap.xml
 rss.xml
 feed.json
+rss.*.xml
+feed.*.json
 
 /rss/
 
 /static/data.json
 /static/availability.json
+/labels.*.json
+/static/labels.*.json
 /hashes.json
 /static/hashes.json
 /static/data-migrate.json

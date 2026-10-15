@@ -1,5 +1,6 @@
 import type { ColumnNames } from '../../types';
 import { DatasetColumns } from '../constants/columns';
+import { m } from '$lib/i18n';
 
 /**
  * Lenient view of a product as stored in `data.json`. The sync scripts write
@@ -38,15 +39,14 @@ export function parseDataset(data: string) {
 			index
 		} = JSON.parse(data) as StoredDataset;
 		if (!Array.isArray(schema) || schema.length === 0) {
-			throw new Error('Hinnasto on tyhjä tai väärässä muodossa');
+			throw new Error(m.error_price_list_invalid());
 		}
 		// Validate the dataset shape. Unknown schema columns are tolerated and
 		// merely warned about: rows are read positionally (and new columns are
 		// always appended at the end of the legacy header), so a dataset written
 		// by a newer sync can never crash an older deployed bundle during a
 		// frontend/data rollout — the extra columns are simply ignored.
-		if (schema[0] !== DatasetColumns.Number)
-			throw new Error('Hinnasto on tyhjä tai väärässä muodossa');
+		if (schema[0] !== DatasetColumns.Number) throw new Error(m.error_price_list_invalid());
 		const knownColumns = Object.values(DatasetColumns) as ColumnNames[];
 		for (const column of schema) {
 			if (!knownColumns.includes(column as ColumnNames))
@@ -78,7 +78,7 @@ export function parseDataset(data: string) {
 			});
 
 		if (rows.length === 0) {
-			throw new Error('Hinnasto on tyhjä tai väärässä muodossa');
+			throw new Error(m.error_price_list_invalid());
 		}
 
 		// Prefer the dataset's recorded last-modified date; fall back to the
@@ -93,6 +93,6 @@ export function parseDataset(data: string) {
 		};
 	} catch (e) {
 		if (e instanceof Error) throw e;
-		throw new Error('Hinnaston lataus epäonnistui');
+		throw new Error(m.error_price_list_failed());
 	}
 }

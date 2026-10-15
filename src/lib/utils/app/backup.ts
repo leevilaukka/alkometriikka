@@ -2,6 +2,7 @@ import { lists, personalInfo, preferredStoreId } from '$lib/global.svelte';
 import { get } from 'svelte/store';
 import { LocalStorageKeys } from '../constants/app';
 import { LocalStorageManager } from './storage';
+import { locale, m } from '$lib/i18n';
 
 export function handleExport() {
 	const data = {
@@ -48,10 +49,14 @@ export function handleImport() {
 }
 
 export function handleClearAll() {
-	if (
-		confirm('Haluatko varmasti tyhjentää kaikki tallennetut tiedot? Tätä toimintoa ei voi perua.')
-	) {
+	if (confirm(m.settings_clear_confirm())) {
 		LocalStorageManager.clear();
+		// The language is a display setting, not saved data, so it survives the clear
+		try {
+			if (locale !== 'fi') localStorage.setItem(LocalStorageKeys.Locale, locale);
+		} catch {
+			// Storage blocked: nothing was cleared either
+		}
 		window.location.reload();
 	}
 }

@@ -8,11 +8,7 @@
 	import type { AvailabilityData, ListObj } from '$lib/types';
 	import { AllColumns } from '$lib/utils/constants/columns';
 	import { AUTO_STORE_ID, ContextKeys } from '$lib/utils/constants/app';
-	import {
-		categoryFeedPath,
-		categoryTitle,
-		type CategoryNode
-	} from '$lib/utils/catalog/categories';
+	import { categoryFeedPath, type CategoryNode } from '$lib/utils/catalog/categories';
 	import { generateTitle, setSEO } from '$lib/utils/app/meta';
 	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 	import { formatValue } from '$lib/utils/format/format';
@@ -54,13 +50,21 @@
 	import ProductPreview from '../widgets/ProductPreview.svelte';
 	import BottomBar from '../widgets/BottomBar.svelte';
 	import FilterButton from '../widgets/FilterButton.svelte';
+	import { formatNumber } from '$lib/utils/format/format';
+	import { feedPath } from '$lib/utils/app/feeds';
+	import { storeName } from '$lib/utils/catalog/availability';
+	import { intlLocale, m } from '$lib/i18n';
+	import { productName, translateValue } from '$lib/i18n/values';
 
 	const { kaljakori, availability }: { kaljakori: Kaljakori; availability: AvailabilityData } =
 		$props();
 
-	const TITLE = 'Hinnanmuutokset';
+	const TITLE = m.nav_price_changes();
 	const { description: DESCRIPTION, keywords: KEYWORDS } = staticPage('/hinnanmuutokset/');
-	const SITE_FEED = 'https://alkometriikka.fi/rss.xml';
+	const SITE_FEED = `https://alkometriikka.fi${feedPath('rss.xml')}`;
+
+	const typeName = (node: CategoryNode) => translateValue(node.name, AllColumns.Type);
+	const subTypeName = (node: CategoryNode) => translateValue(node.name, AllColumns.SubType);
 
 	const searchParamsManager = getContext<SearchParamsManager>(ContextKeys.SearchParamsManager);
 
@@ -100,12 +104,12 @@
 		return recentPriceChanges(products, priceChangeSince(days));
 	});
 
-	const query = $derived($searchQuery.trim().toLocaleLowerCase('fi-FI'));
+	const query = $derived($searchQuery.trim().toLocaleLowerCase(intlLocale));
 	const searched = $derived(
 		query
 			? allChanges.filter((change) =>
-					String(change.product[AllColumns.Name] ?? '')
-						.toLocaleLowerCase('fi-FI')
+					String(productName(change.product) ?? '')
+						.toLocaleLowerCase(intlLocale)
 						.includes(query)
 				)
 			: allChanges
@@ -129,9 +133,9 @@
 	});
 
 	const directions: { value: PriceChangeDirection; label: string }[] = [
-		{ value: 'all', label: 'Kaikki' },
-		{ value: 'down', label: 'Halventuneet' },
-		{ value: 'up', label: 'Kallistuneet' }
+		{ value: 'all', label: m.range_all() },
+		{ value: 'down', label: m.price_changes_down() },
+		{ value: 'up', label: m.price_changes_up() }
 	];
 
 	function selectType(slug?: string) {
@@ -195,12 +199,7 @@
 
 <svelte:head>
 	<title>{generateTitle(TITLE)}</title>
-	<link
-		rel="alternate"
-		type="application/rss+xml"
-		title="Alkometriikka – uutuudet ja hinnanmuutokset"
-		href={SITE_FEED}
-	/>
+	<link rel="alternate" type="application/rss+xml" title={m.feed_site_title()} href={SITE_FEED} />
 </svelte:head>
 
 {#snippet chip(label: string, count: number, selected: boolean, onclick: () => void)}
@@ -220,7 +219,7 @@
 				selected ? 'bg-white/20' : 'bg-secondary text-secondary'
 			)}
 		>
-			{count.toLocaleString('fi-FI')}
+			{formatNumber(count)}
 		</span>
 	</button>
 {/snippet}
@@ -245,10 +244,7 @@
 		<Breadcrumb items={[]} current={TITLE} />
 		<div class="flex flex-col gap-1">
 			<h1 class="text-2xl font-bold">{TITLE}</h1>
-			<p class="text-sm text-secondary">
-				Alkon valikoiman tuotteet, joiden hinta on muuttunut viime aikoina. Jokaisesta tuotteesta
-				näytetään sen viimeisin muutos, uusimmat ensin.
-			</p>
+			<p class="text-sm text-secondary">{m.price_changes_intro()}</p>
 		</div>
 	</div>
 {/snippet}
@@ -257,13 +253,13 @@
 {#snippet filters()}
 	<div class="flex flex-col gap-3">
 		<div class="flex flex-col gap-1">
-			<span id="price-change-type" class="text-sm">Kategoria</span>
+			<span id="price-change-type" class="text-sm">{m.column_type()}</span>
 			<div class="flex flex-wrap gap-2" role="group" aria-labelledby="price-change-type">
-				{@render chip('Kaikki', searched.length, !typeNode, () => selectType(undefined))}
+				{@render chip(m.range_all(), searched.length, !typeNode, () => selectType(undefined))}
 				{#each tree as type (type.slug)}
 					{@const count = categoryCounts.get(type.slug) ?? 0}
 					{#if count > 0 || type.slug === typeNode?.slug}
-						{@render chip(type.name, count, type.slug === typeNode?.slug, () =>
+						{@render chip(typeName(type), count, type.slug === typeNode?.slug, () =>
 							selectType(type.slug)
 						)}
 					{/if}
@@ -272,10 +268,12 @@
 		</div>
 		{#if typeNode && typeNode.children.length}
 			<div class="flex flex-col gap-1">
-				<span id="price-change-subtype" class="text-sm">Tyyppi</span>
+				<span id="price-change-subtype" class="text-sm">{m.column_sub_type()}</span>
 				<div class="flex flex-wrap gap-2" role="group" aria-labelledby="price-change-subtype">
 					{@render chip(
-						`Kaikki ${typeNode.name.toLocaleLowerCase('fi-FI')}`,
+						m.price_changes_all_of_type({
+							type: typeName(typeNode).toLocaleLowerCase(intlLocale)
+						}),
 						categoryCounts.get(typeNode.slug) ?? 0,
 						!subTypeNode,
 						() => (subTypeSlug = undefined)
@@ -284,7 +282,7 @@
 						{@const count = categoryCounts.get(`${typeNode.slug}/${child.slug}`) ?? 0}
 						{#if count > 0 || child.slug === subTypeNode?.slug}
 							{@render chip(
-								child.name,
+								subTypeName(child),
 								count,
 								child.slug === subTypeNode?.slug,
 								() => (subTypeSlug = child.slug)
@@ -296,7 +294,7 @@
 		{/if}
 
 		<div class="flex flex-col gap-1">
-			<span id="price-change-direction" class="text-sm">Suunta</span>
+			<span id="price-change-direction" class="text-sm">{m.price_changes_direction()}</span>
 			<div
 				class="flex overflow-hidden rounded border border-primary"
 				role="group"
@@ -312,14 +310,14 @@
 			</div>
 		</div>
 		<div class="flex flex-col gap-1">
-			<span id="price-change-window" class="text-sm">Aikaväli</span>
+			<span id="price-change-window" class="text-sm">{m.price_changes_window()}</span>
 			<div
 				class="flex overflow-hidden rounded border border-primary"
 				role="group"
 				aria-labelledby="price-change-window"
 			>
 				{#each PRICE_CHANGE_WINDOWS as value (value)}
-					{@render segment(`${value} pv`, days === value, () => (days = value))}
+					{@render segment(m.days_short({ days: value }), days === value, () => (days = value))}
 				{/each}
 			</div>
 		</div>
@@ -328,7 +326,7 @@
 			<label class="flex cursor-pointer items-center gap-2 text-sm">
 				<input type="checkbox" bind:checked={$onlyPreferredStore} class="shrink-0 rounded" />
 				<span class="min-w-0 truncate"
-					>Vain myymälässäni: <strong>{preferredStore.name}</strong></span
+					>{m.category_only_my_store()} <strong>{storeName(preferredStore)}</strong></span
 				>
 			</label>
 		{:else if Object.keys(availability.stores).length}
@@ -337,7 +335,7 @@
 				class="group flex w-fit items-center gap-1 text-sm text-secondary"
 			>
 				<Icon name="map_pin" />
-				<span class="group-hover:underline">Valitse myymälä nähdäksesi sen valikoiman</span>
+				<span class="group-hover:underline">{m.category_choose_store()}</span>
 			</a>
 		{/if}
 	</div>
@@ -346,15 +344,24 @@
 {#snippet summary()}
 	<div class="flex flex-row flex-wrap items-center justify-between gap-2">
 		<p class="text-sm text-secondary">
-			{#if query}{`Haku ”${$searchQuery.trim()}”: `}{/if}{inCategory.length.toLocaleString('fi-FI')} tuotetta
-			{days} päivän aikana: {drops.toLocaleString('fi-FI')} halpeni, {(
-				inCategory.length - drops
-			).toLocaleString('fi-FI')} kallistui
+			{#if query}{m.price_changes_search_prefix({
+					query: $searchQuery.trim()
+				})}{/if}{m.price_changes_summary({
+				count: inCategory.length,
+				days,
+				drops: formatNumber(drops),
+				rises: formatNumber(inCategory.length - drops)
+			})}
 		</p>
 		<div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-secondary">
 			{#if typeNode}
 				<a href={appPath((subTypeNode ?? typeNode).path)} class="group flex items-center gap-1">
-					<span class="group-hover:underline">{categoryTitle(trail)}</span>
+					<span class="group-hover:underline"
+						>{trail
+							.map((node, depth) => (depth === 0 ? typeName(node) : subTypeName(node)))
+							.reverse()
+							.join(' - ')}</span
+					>
 					<Icon name="chevron_right" />
 				</a>
 				<a
@@ -362,10 +369,10 @@
 					class="group flex items-center gap-1"
 					onclick={() =>
 						sendAnalyticsEvent('click_feed', { feed: 'category', location: 'price_changes' })}
-					title="Tilaa kategorian uutuudet ja hinnanmuutokset RSS-syötteenä"
+					title={m.feed_category_subscribe()}
 				>
 					<Icon name="rss" />
-					<span class="group-hover:underline">Kategorian RSS</span>
+					<span class="group-hover:underline">{m.feed_category_rss()}</span>
 				</a>
 			{/if}
 			<a
@@ -373,7 +380,7 @@
 				class="group flex items-center gap-1"
 				onclick={() =>
 					sendAnalyticsEvent('click_feed', { feed: 'site', location: 'price_changes' })}
-				title="Tilaa koko valikoiman uutuudet ja hinnanmuutokset RSS-syötteenä"
+				title={m.feed_site_subscribe()}
 			>
 				<Icon name="rss" />
 				<span class="group-hover:underline">RSS</span>
@@ -384,7 +391,7 @@
 					class={twMerge(components.button())}
 				>
 					<Icon name="arrow_to_top" />
-					<span>Hyppää alkuun</span>
+					<span>{m.list_to_top()}</span>
 				</button>
 			{/if}
 		</div>
@@ -405,10 +412,14 @@
 			<strong class="leading-tight md:text-3xl">{formatPriceChangePercent(change.percent)}</strong>
 		</span>
 		<span class="font-semibold">{formatPriceChangeAmount(change)}</span>
-		<span class="md:text-xs">oli {formatValue(change.from, AllColumns.Price)}</span>
+		<span class="md:text-xs"
+			>{m.price_changes_was({ price: String(formatValue(change.from, AllColumns.Price)) })}</span
+		>
 		<span class="text-secondary md:text-xs">{formatPriceChangeDate(change.date)}</span>
 		{#if change.sale}
-			<span class={twMerge(components.badge({ color: 'green' }), 'md:text-xs')}>Tarjous</span>
+			<span class={twMerge(components.badge({ color: 'green' }), 'md:text-xs')}
+				>{m.price_changes_sale_badge()}</span
+			>
 		{/if}
 	</div>
 {/snippet}
@@ -422,7 +433,7 @@
 				<FilterButton activeCount={activeFilterCount} onclick={() => dialogElement.showModal()} />
 			{/snippet}
 			{#snippet renderContent(dialogElement: HTMLDialogElement)}
-				<h2 class="text-xl font-bold">Suodattimet</h2>
+				<h2 class="text-xl font-bold">{m.filters_title()}</h2>
 				{@render filters()}
 				<!-- Pinned to the bottom of the scrolling sheet, where the button that opened it was. Sticky offsets count from inside the sheet's p-4, so -bottom-4 reaches its edge -->
 				<div
@@ -435,7 +446,7 @@
 							onclick={clearFilters}
 						>
 							<Icon name="x_circle" />
-							<span>Tyhjennä</span>
+							<span>{m.settings_clear_button()}</span>
 						</button>
 					{/if}
 					<button
@@ -444,7 +455,7 @@
 						onclick={() => dialogElement.close()}
 					>
 						<Icon name="x" />
-						<span>Sulje</span>
+						<span>{m.common_close()}</span>
 					</button>
 				</div>
 			{/snippet}
@@ -482,14 +493,14 @@
 			<div
 				class="flex flex-col items-start gap-2 rounded border border-primary bg-primary p-4 text-sm"
 			>
-				<p>Ei hinnanmuutoksia valituilla rajauksilla.</p>
+				<p>{m.price_changes_none()}</p>
 				{#if typeNode || direction !== 'all' || query}
 					<button
 						type="button"
 						class="cursor-pointer text-secondary hover:underline"
 						onclick={resetFilters}
 					>
-						Näytä kaikki muutokset
+						{m.price_changes_show_all()}
 					</button>
 				{/if}
 			</div>
@@ -514,12 +525,12 @@
 												class={twMerge(components.button({ type: 'positive' }), 'ml-auto')}
 												onclick={() => dialogElement.showModal()}
 											>
-												<span>Lisää listaan</span>
+												<span>{m.list_add_to()}</span>
 												<Icon name="plus" />
 											</button>
 										{/snippet}
 										{#snippet renderContent(dialogElement: HTMLDialogElement)}
-											<h2 class="text-xl">Valitse lista</h2>
+											<h2 class="text-xl">{m.list_choose()}</h2>
 											<AllLists
 												action={(list: ListObj) => {
 													addToList(list, change.product[AllColumns.Number]);

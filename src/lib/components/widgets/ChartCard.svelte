@@ -19,6 +19,7 @@
 		Tooltip
 	} from 'chart.js';
 	import type { ChartConfiguration } from 'chart.js';
+	import { intlLocale } from '$lib/i18n';
 
 	Chart.register(
 		ArcElement,
@@ -38,6 +39,8 @@
 		Title,
 		Tooltip
 	);
+	// Numbers on the axes and in tooltips follow the app's language, not the browser's
+	Chart.defaults.locale = intlLocale;
 
 	const {
 		title,

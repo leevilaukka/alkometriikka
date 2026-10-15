@@ -5,10 +5,12 @@
 	import Popup from '../widgets/Popup.svelte';
 	import { getRandom } from '$lib/utils/app/share';
 	import { isSafari } from '$lib/global.svelte';
-	import { filterAnnotationsToFilter, filterRenameMap } from '$lib/utils/constants/display';
+	import { filterAnnotationsToFilter } from '$lib/utils/constants/display';
 	import Icon from '../widgets/Icon.svelte';
 	import { untrack } from 'svelte';
-	import type { FilterValue } from '$lib/types';
+	import type { ColumnNames, FilterValue } from '$lib/types';
+	import { intlLocale, locale, m } from '$lib/i18n';
+	import { isTranslatedColumn, translateValue } from '$lib/i18n/values';
 
 	let {
 		defaultValue = [],
@@ -28,7 +30,17 @@
 		rest?: Record<string, any>;
 	} = $props();
 
-	const strOptions = $derived(options.map(String));
+	/** The filter's column. The options are its Finnish values, which the filter keeps using. */
+	const column = $derived(name as ColumnNames | undefined);
+	const translated = $derived(locale !== 'fi' && isTranslatedColumn(column));
+	const labelOf = (option: string) => (translated ? translateValue(option, column) : option);
+
+	// Translated options are listed in the order of the names shown
+	const strOptions = $derived.by(() => {
+		const values = options.map(String);
+		if (!translated) return values;
+		return values.sort((a, b) => labelOf(a).localeCompare(labelOf(b), intlLocale));
+	});
 
 	const inputId = 'stringinput-' + getRandom();
 
@@ -64,25 +76,29 @@
 	});
 
 	const text = $derived.by(() => {
-		if (!value) return 'Ei valintoja';
-		if (value.length > 1) return `${value.length} valittu`;
-		else if (value.length == 1) return value.at(0);
-		else return 'Ei valintoja';
+		if (!value) return m.filter_no_selection();
+		if (value.length > 1) return m.filter_selected_count({ count: value.length });
+		else if (value.length == 1) return labelOf(String(value.at(0)));
+		else return m.filter_no_selection();
 	});
 
 	let query = $state('');
 	let isOpen = $state(false);
 
-	const originalFilter = $derived.by(() => {
-		const original = (Object.keys(filterRenameMap) as (keyof typeof filterRenameMap)[]).find(
-			(key) => filterRenameMap[key] === label
-		);
-		return filterAnnotationsToFilter[(original ?? label) as keyof typeof filterAnnotationsToFilter];
-	});
-
-	const filteredList = $derived.by(() =>
-		query ? list.filter((item) => item.value.toLowerCase().includes(query.toLowerCase())) : list
+	const originalFilter = $derived(
+		filterAnnotationsToFilter[column as keyof typeof filterAnnotationsToFilter]
 	);
+
+	// Matches the name shown and the Finnish value, so either one finds the option
+	const filteredList = $derived.by(() => {
+		if (!query) return list;
+		const lowerQuery = query.toLowerCase();
+		return list.filter(
+			(item) =>
+				item.value.toLowerCase().includes(lowerQuery) ||
+				labelOf(item.value).toLowerCase().includes(lowerQuery)
+		);
+	});
 </script>
 
 <div class={twMerge('flex', strOptions.length > 1 ? 'flex-col' : 'items-center')}>
@@ -118,7 +134,12 @@
 					class={twMerge(components.button(), 'w-full justify-start')}
 					onclick={() => dialogElement.showModal()}
 					title={value &&
-						`${value.slice(0, 3).join(', ')}${value.length > 3 ? ` + ${value.length - 3} muuta` : ''}`}
+						`${value
+							.slice(0, 3)
+							.map((option) => labelOf(String(option)))
+							.join(
+								', '
+							)}${value.length > 3 ? ` ${m.filter_more_selected({ count: value.length - 3 })}` : ''}`}
 				>
 					{text}
 				</button>
@@ -131,7 +152,7 @@
 							onclick={() => {
 								dialogElement?.close();
 							}}
-							aria-label="Sulje"
+							aria-label={m.common_close()}
 							class={twMerge(components.button({ type: 'noborder' }))}
 						>
 							<Icon name="x" />
@@ -145,7 +166,7 @@
 							}}
 							class={twMerge(components.button({ type: 'negative' }))}
 						>
-							Tyhjennä valinnat
+							{m.filter_clear_selection()}
 						</button>
 						<button
 							onclick={() => {
@@ -154,18 +175,21 @@
 							}}
 							class={twMerge(components.button())}
 						>
-							Valitse kaikki
+							{m.filter_select_all()}
 						</button>
 						<span
 							class="my-auto ml-auto flex flex-row gap-2 text-sm text-gray-500 dark:text-gray-400"
 						>
-							{list.filter((option) => option.selected).length} / {list.length} valittu
+							{m.filter_selected_of({
+								selected: list.filter((option) => option.selected).length,
+								total: list.length
+							})}
 						</span>
 					</div>
 					<input
 						type="text"
 						bind:value={query}
-						placeholder="Hae..."
+						placeholder={m.common_search_placeholder()}
 						class={twMerge(components.input(), 'w-full')}
 					/>
 					<div
@@ -194,9 +218,9 @@
 									>
 										<span
 											class="max-w-full overflow-hidden overflow-ellipsis whitespace-nowrap"
-											title={item.value}
+											title={labelOf(item.value)}
 										>
-											{item.value}
+											{labelOf(item.value)}
 										</span>
 										<input type="checkbox" bind:checked={item.selected} class="ml-auto" readonly />
 									</button>
@@ -219,7 +243,7 @@
 						}}
 						class={twMerge(components.button({ type: 'negative' }))}
 					>
-						Sulje
+						{m.common_close()}
 					</button>
 				</div>
 			{/snippet}

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { productName } from '$lib/i18n/values';
 	import { AllColumns } from '$lib/utils/constants/columns';
 	import { formatValue } from '$lib/utils/format/format';
 	import { getSaleInfo } from '$lib/utils/catalog/sales';
@@ -10,15 +11,17 @@
 	import { components } from '$lib/utils/ui/styles';
 	import { twMerge } from 'tailwind-merge';
 	import { dev } from '$app/environment';
+	import { formatDate } from '$lib/utils/format/format';
+	import { m } from '$lib/i18n';
 
 	const { product, class: _class = '' }: { product: PriceListItem; class?: string } = $props();
 
 	type RangeKey = '1kk' | '3kk' | '1v' | 'kaikki';
 	const ranges: { key: RangeKey; label: string; days: number | null }[] = [
-		{ key: '1kk', label: '1kk', days: 30 },
-		{ key: '3kk', label: '3kk', days: 90 },
-		{ key: '1v', label: '1v', days: 365 },
-		{ key: 'kaikki', label: 'Kaikki', days: null }
+		{ key: '1kk', label: m.range_one_month(), days: 30 },
+		{ key: '3kk', label: m.range_three_months(), days: 90 },
+		{ key: '1v', label: m.range_one_year(), days: 365 },
+		{ key: 'kaikki', label: m.range_all(), days: null }
 	];
 
 	let selectedRange: RangeKey = $state('kaikki');
@@ -144,8 +147,9 @@
 						);
 						ctx.fillText(label, textX, chartArea.top + 3);
 					};
-					if (w.start) drawMarker(w.start, firstIndexFor(w.start), 'Kampanja alkaa');
-					if (w.end && w.end < todayISO) drawMarker(w.end, lastIndexFor(w.end), 'Kampanja päättyy');
+					if (w.start) drawMarker(w.start, firstIndexFor(w.start), m.column_campaign_start());
+					if (w.end && w.end < todayISO)
+						drawMarker(w.end, lastIndexFor(w.end), m.column_campaign_end());
 				}
 				ctx.restore();
 			}
@@ -154,10 +158,10 @@
 		return {
 			type: 'line',
 			data: {
-				labels: dates.map((date) => new Date(date).toLocaleDateString('fi-FI')),
+				labels: dates.map((date) => formatDate(date)),
 				datasets: [
 					{
-						label: 'Hinta',
+						label: m.column_price(),
 						data: history.map((entry) => entry.price),
 						borderColor: 'rgba(75, 192, 192, 1)',
 						backgroundColor: 'rgba(75, 192, 192, 0.2)',
@@ -175,10 +179,12 @@
 								label: function (context: any) {
 									const entry = history[context.dataIndex];
 									if (!entry) return '';
-									const label = `Hinta: ${formatValue(entry.price, AllColumns.Price)}`;
+									const label = m.chart_price_tooltip({
+										price: String(formatValue(entry.price, AllColumns.Price))
+									});
 									if (isSaleEntry(entry)) {
 										const discount = Math.round((1 - entry.price / entry.normalPrice) * 100);
-										return `${label} · Normaalihinta ${formatValue(entry.normalPrice, AllColumns.NormalPrice)} · Alennus ${discount}%`;
+										return `${label} · ${m.badge_discount_tooltip({ price: String(formatValue(entry.normalPrice, AllColumns.NormalPrice)) })} · ${m.badge_discount({ percent: discount })}`;
 									}
 									return label;
 								}
@@ -191,14 +197,14 @@
 				responsive: true,
 				maintainAspectRatio: false,
 				scales: {
-					x: { title: { display: true, text: 'Päivämäärä' } },
+					x: { title: { display: true, text: m.chart_date() } },
 					y: {
 						ticks: {
 							callback: function (value) {
 								return String(formatValue(Number(value), AllColumns.Price));
 							}
 						},
-						title: { display: true, text: 'Hinta (€)' }
+						title: { display: true, text: m.chart_price_axis() }
 					}
 				},
 				plugins: {
@@ -217,7 +223,7 @@
 		<link
 			rel="alternate"
 			type="application/rss+xml"
-			title={`${product[AllColumns.Name]} – hintamuutokset`}
+			title={m.feed_product_title({ name: productName(product) })}
 			href={feedHref}
 		/>
 	{/if}
@@ -225,7 +231,7 @@
 
 {#if dev || fullHistory.length > 1}
 	<div class={_class}>
-		<ChartCard title="Hintahistoria" {config}>
+		<ChartCard title={m.column_history()} {config}>
 			{#snippet headerEnd()}
 				<div class="flex items-center gap-2">
 					{#if feedHref}
@@ -234,8 +240,8 @@
 							onclick={() =>
 								sendAnalyticsEvent('click_feed', { feed: 'product', location: 'price_history' })}
 							class="flex items-center gap-1 rounded px-1.5 py-1 text-sm text-secondary hover:bg-primary"
-							title="Tilaa tuotteen hinnanmuutokset RSS-syötteenä"
-							aria-label="Tilaa tuotteen hinnanmuutokset RSS-syötteenä"
+							title={m.feed_product_subscribe()}
+							aria-label={m.feed_product_subscribe()}
 						>
 							<Icon name="rss" />
 							<span class="hidden sm:inline">RSS</span>

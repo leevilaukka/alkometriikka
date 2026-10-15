@@ -11,6 +11,8 @@
 	import type { GenderOptions } from '$lib/types';
 	import { twMerge } from 'tailwind-merge';
 	import type { PageProps } from './$types';
+	import { genderLabel } from '$lib/utils/format/labels';
+	import { m } from '$lib/i18n';
 
 	const calculatorAnalytics = (() => {
 		let timeout: ReturnType<typeof setTimeout> | undefined;
@@ -122,12 +124,12 @@
 	});
 
 	const resultRows = [
-		[DrunkColumns.AlcoholGrams, 'Puhdasta alkoholia'],
-		[DrunkColumns.AlcoholGramsPerEuro, 'Alkoholia per euro (g)'],
-		[DrunkColumns.EstimatedPromille, 'Arvioidut promillet'],
-		[DrunkColumns.PromillePerEuro, 'Promillea per euro'],
-		[DrunkColumns.Servings, 'Annokset'],
-		[DrunkColumns.EuroPerLiterAlcohol, 'Hinta raakaa alkoholia kohden (€/l)']
+		[DrunkColumns.AlcoholGrams, m.calculator_pure_alcohol()],
+		[DrunkColumns.AlcoholGramsPerEuro, m.calculator_alcohol_per_euro()],
+		[DrunkColumns.EstimatedPromille, m.column_estimated_promille()],
+		[DrunkColumns.PromillePerEuro, m.calculator_promille_per_euro()],
+		[DrunkColumns.Servings, m.column_servings()],
+		[DrunkColumns.EuroPerLiterAlcohol, m.calculator_price_per_liter_alcohol()]
 	] as const;
 
 	$effect(() => {
@@ -143,15 +145,13 @@
 </script>
 
 <svelte:head>
-	<title>{generateTitle('Laskin')}</title>
+	<title>{generateTitle(m.nav_calculator())}</title>
 </svelte:head>
 
 <main class="mx-auto flex w-full max-w-5xl flex-col gap-6 p-4 md:p-8">
 	<header class="max-w-2xl">
-		<h1 class="text-2xl font-bold md:text-3xl">Laskin</h1>
-		<p class="mt-2 text-secondary">
-			Laske Alkon valikoiman ulkopuolisen juoman arvot samoilla laskukaavoilla kuin tuotesivuilla.
-		</p>
+		<h1 class="text-2xl font-bold md:text-3xl">{m.nav_calculator()}</h1>
+		<p class="mt-2 text-secondary">{m.calculator_intro()}</p>
 	</header>
 
 	<form
@@ -160,10 +160,10 @@
 		onfocusout={flushWhenLeavingCalculator}
 	>
 		<section class="flex flex-col gap-4 rounded border border-primary bg-secondary p-4 md:p-6">
-			<h2 class="text-lg font-bold">Juoman tiedot</h2>
+			<h2 class="text-lg font-bold">{m.calculator_drink_title()}</h2>
 			<div class="grid gap-4 sm:grid-cols-2">
 				<label class="flex flex-col gap-1" for="volume">
-					<span class="text-sm">Tilavuus (l)</span>
+					<span class="text-sm">{m.calculator_volume()}</span>
 					<input
 						id="volume"
 						bind:value={volume}
@@ -176,7 +176,7 @@
 					/>
 				</label>
 				<label class="flex flex-col gap-1" for="percentage">
-					<span class="text-sm">Alkoholipitoisuus (%)</span>
+					<span class="text-sm">{m.calculator_alcohol()}</span>
 					<input
 						id="percentage"
 						bind:value={percentage}
@@ -190,7 +190,7 @@
 					/>
 				</label>
 				<label class="flex flex-col gap-1" for="price">
-					<span class="text-sm">Hinta (€)</span>
+					<span class="text-sm">{m.chart_price_axis()}</span>
 					<input
 						id="price"
 						bind:value={price}
@@ -207,17 +207,15 @@
 
 		<section class="flex flex-col gap-4 rounded border border-primary bg-secondary p-4 md:p-6">
 			<div>
-				<h2 class="text-lg font-bold">Promillearvion tiedot</h2>
-				<p class="mt-1 text-sm text-secondary">
-					Paino ja sukupuoli vaikuttavat vain promillearvioihin.
-				</p>
+				<h2 class="text-lg font-bold">{m.calculator_promille_title()}</h2>
+				<p class="mt-1 text-sm text-secondary">{m.calculator_promille_description()}</p>
 			</div>
 			<label class="flex items-center gap-2 text-sm">
 				<input checked={useSavedValues} onclick={toggleSavedValues} type="checkbox" />
-				<span>Käytä tallennettuja arvoja</span>
+				<span>{m.calculator_use_saved()}</span>
 			</label>
 			<label class="flex flex-col gap-1" for="weight">
-				<span class="text-sm">Paino (kg)</span>
+				<span class="text-sm">{m.personal_weight()}</span>
 				<input
 					id="weight"
 					value={effectiveWeight ?? ''}
@@ -233,11 +231,11 @@
 					min="1"
 					max="500"
 					step="0.1"
-					placeholder="Oletusarvo"
+					placeholder={m.calculator_default_value()}
 				/>
 			</label>
 			<label class="flex flex-col gap-1" for="gender">
-				<span class="text-sm">Sukupuoli</span>
+				<span class="text-sm">{m.personal_gender()}</span>
 				<select
 					id="gender"
 					value={effectiveGender}
@@ -251,7 +249,7 @@
 					)}
 				>
 					{#each Object.values(GenderOptionsMap) as option (option)}
-						<option value={option}>{option}</option>
+						<option value={option}>{genderLabel(option)}</option>
 					{/each}
 				</select>
 			</label>
@@ -259,7 +257,7 @@
 	</form>
 
 	<section aria-live="polite" class="flex flex-col gap-4">
-		<h2 class="text-lg font-bold">Tulokset</h2>
+		<h2 class="text-lg font-bold">{m.calculator_results()}</h2>
 		{#if result}
 			<div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
 				{#each resultRows as [column, label] (column)}
@@ -272,21 +270,21 @@
 			{#await catalogRank then rank}
 				{#if rank}
 					<div class="rounded border border-brand-2 bg-brand-4 p-4 text-white">
-						<p class="text-sm text-white/75">Vertailu Alkon aktiiviseen valikoimaan</p>
-						<p class="mt-1 text-xl font-bold">Sijoittuisi sijalle {rank.rank} / {rank.total}</p>
-						<p class="mt-1 text-sm text-white/75">
-							Vertailu perustuu alkoholigrammoihin euroa kohden.
+						<p class="text-sm text-white/75">{m.calculator_rank_title()}</p>
+						<p class="mt-1 text-xl font-bold">
+							{m.calculator_rank({ rank: rank.rank, total: rank.total })}
 						</p>
+						<p class="mt-1 text-sm text-white/75">{m.calculator_rank_note()}</p>
 					</div>
 				{/if}
 			{:catch}
 				<p class="rounded border border-primary bg-secondary p-4 text-secondary">
-					Alkoholivalikoiman vertailua ei voitu ladata.
+					{m.calculator_rank_failed()}
 				</p>
 			{/await}
 		{:else}
 			<p class="rounded border border-primary bg-secondary p-4 text-secondary">
-				Anna kelvolliset arvot nähdäksesi tulokset.
+				{m.calculator_invalid()}
 			</p>
 		{/if}
 	</section>

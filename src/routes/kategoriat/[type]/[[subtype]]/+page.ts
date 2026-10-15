@@ -1,4 +1,5 @@
 import { error } from '@sveltejs/kit';
+import { m } from '$lib/i18n';
 import { findCategoryBySlugs } from '$lib/utils/catalog/categories';
 
 export async function load({ parent, params }) {
@@ -8,7 +9,7 @@ export async function load({ parent, params }) {
 	const trail = findCategoryBySlugs(alko.kaljakori.getCategoryTree(), params.type, params.subtype);
 	if (!trail) {
 		error(404, {
-			message: 'Kategoriaa ei löytynyt'
+			message: m.error_category_not_found()
 		});
 	}
 
