@@ -18,7 +18,7 @@ describe('groupOptionsByWords', () => {
 		]);
 		expect(shape(groups)).toEqual([
 			'Alajärvi',
-			{ Helsinki: ['Kallio', { keskusta: ['Arkadia', 'Kamppi'] }] },
+			{ Helsinki: ['Kallio', { Keskusta: ['Arkadia', 'Kamppi'] }] },
 			{ Kaarina: ['Kaarina', 'Piikkiö'] }
 		]);
 		const helsinki = groups[1];
@@ -33,10 +33,31 @@ describe('groupOptionsByWords', () => {
 		const groups = groupOptionsByWords(['Hyvinkää Willa Citymarket', 'Hyvinkää Willa Prisma']);
 		expect(shape(groups)).toEqual([{ 'Hyvinkää Willa': ['Citymarket', 'Prisma'] }]);
 		expect(groups[0].type === 'group' && groups[0].key).toBe('Hyvinkää Willa');
+		const lower = groupOptionsByWords(['Kemi keskusta A', 'Kemi keskusta B']);
+		expect(shape(lower)).toEqual([{ 'Kemi keskusta': ['A', 'B'] }]);
+	});
+
+	it('capitalizes the labels but keeps the values and keys as they are', () => {
+		const groups = groupOptionsByWords([
+			'Joensuu keskusta Sokos',
+			'Joensuu Pilkko Citymarket',
+			'Kajaani keskusta Citymarket',
+			'Kajaani Prisma'
+		]);
+		expect(shape(groups)).toEqual([
+			{ Joensuu: ['Keskusta Sokos', 'Pilkko Citymarket'] },
+			{ Kajaani: ['Keskusta Citymarket', 'Prisma'] }
+		]);
+		const kajaani = groups[1];
+		expect(kajaani.type === 'group' && kajaani.children[0]).toEqual({
+			type: 'option',
+			value: 'Kajaani keskusta Citymarket',
+			label: 'Keskusta Citymarket'
+		});
 	});
 
 	it('stops at the given depth', () => {
 		const groups = groupOptionsByWords(['A b c d', 'A b c e', 'A x'], 1);
-		expect(shape(groups)).toEqual([{ A: ['b c d', 'b c e', 'x'] }]);
+		expect(shape(groups)).toEqual([{ A: ['B c d', 'B c e', 'X'] }]);
 	});
 });

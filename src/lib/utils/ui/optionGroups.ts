@@ -1,7 +1,7 @@
 export type OptionLeaf = {
 	type: 'option';
 	value: string;
-	/** Text shown for the option inside its group, e.g. "Arkadia" for "Helsinki keskusta Arkadia" */
+	/** Text shown for the option inside its group, capitalized, e.g. "Arkadia" for "Helsinki keskusta Arkadia" */
 	label: string;
 };
 
@@ -9,7 +9,7 @@ export type OptionGroup = {
 	type: 'group';
 	/** Unique key of the group, the words leading to it joined with spaces, e.g. "Helsinki keskusta" */
 	key: string;
-	/** Text shown for the group inside its parent, e.g. "keskusta" */
+	/** Text shown for the group inside its parent, capitalized, e.g. "Keskusta" */
 	label: string;
 	children: OptionNode[];
 	/** Every option value under the group, nested groups included */
@@ -65,7 +65,7 @@ function groupEntries(
 		let group: OptionGroup = {
 			type: 'group',
 			key: groupPath.join(' '),
-			label: item,
+			label: capitalize(item),
 			children: groupEntries(bucket, depth + 1, maxDepth, groupPath),
 			values: bucket.map((entry) => entry.value)
 		};
@@ -73,7 +73,8 @@ function groupEntries(
 		// "Hyvinkää Willa" group
 		while (group.children.length === 1 && group.children[0].type === 'group') {
 			const only: OptionGroup = group.children[0];
-			group = { ...only, label: `${group.label} ${only.label}` };
+			// Only the first word of the merged label is capitalized
+			group = { ...only, label: `${group.label} ${only.key.slice(group.key.length + 1)}` };
 		}
 		return group;
 	});
@@ -83,6 +84,10 @@ function leaf(entry: Entry, depth: number): OptionLeaf {
 	return {
 		type: 'option',
 		value: entry.value,
-		label: entry.words.slice(depth).join(' ') || entry.value
+		label: capitalize(entry.words.slice(depth).join(' ') || entry.value)
 	};
+}
+
+function capitalize(value: string): string {
+	return value.charAt(0).toUpperCase() + value.slice(1);
 }
