@@ -28,6 +28,9 @@ export const shownFilters = [
 	AllColumns.OnSale
 ] as const satisfies readonly ColumnNames[];
 
+/** String filters whose options are grouped by their leading words in the picker, e.g. stores by city */
+export const groupedFilters: readonly ColumnNames[] = [AllColumns.StoreAvailability];
+
 /**
  * Filter annotations (AND / OR) used in the filter popups.
  */
