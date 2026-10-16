@@ -178,6 +178,19 @@
 		value = list.filter((option) => option.selected).map((option) => option.value);
 	}
 
+	const groupKeys = $derived.by(() => {
+		const keys: string[] = [];
+		const collect = (nodes: OptionNode[]) =>
+			nodes.forEach((node) => {
+				if (node.type !== 'group') return;
+				keys.push(node.key);
+				collect(node.children);
+			});
+		if (groups) collect(groups);
+		return keys;
+	});
+	const allExpanded = $derived(groupKeys.every((key) => expandedGroups.has(key)));
+
 	function toggleGroup(key: string) {
 		const next = new Set(expandedGroups);
 		if (next.has(key)) next.delete(key);
@@ -257,6 +270,17 @@
 						>
 							Valitse kaikki
 						</button>
+						{#if groupKeys.length}
+							<!-- Searching opens the groups with matches by itself -->
+							<button
+								onclick={() => (expandedGroups = allExpanded ? new Set() : new Set(groupKeys))}
+								disabled={!!query}
+								class={twMerge(components.button(), 'disabled:cursor-default disabled:opacity-50')}
+							>
+								<Icon name={allExpanded ? 'chevrons_down_up' : 'chevrons_up_down'} />
+								{allExpanded ? 'Sulje ryhmät' : 'Avaa ryhmät'}
+							</button>
+						{/if}
 						<span
 							class="my-auto ml-auto flex flex-row gap-2 text-sm text-gray-500 dark:text-gray-400"
 						>
