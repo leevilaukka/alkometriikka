@@ -84,20 +84,34 @@
 		return filterAnnotationsToFilter[(original ?? label) as keyof typeof filterAnnotationsToFilter];
 	});
 
-	const matchesQuery = (value: string) => value.toLowerCase().includes(query.toLowerCase());
+	// Every word of the query has to be found, in any order, so e.g. "Helsinki Kamppi"
+	// finds "Helsinki keskusta Kamppi"
+	const queryWords = $derived(query.toLowerCase().split(/\s+/).filter(Boolean));
+	const matchesQuery = (value: string) => {
+		const lower = value.toLowerCase();
+		return queryWords.every((word) => lower.includes(word));
+	};
 
 	const filteredList = $derived.by(() =>
 		query ? list.filter((item) => matchesQuery(item.value)) : list
 	);
 
 	type Row =
-		| { type: 'option'; item: ListItem; label: string; depth: number; striped: boolean }
+		| {
+				type: 'option';
+				item: ListItem;
+				label: string;
+				depth: number;
+				striped: boolean;
+				divider?: boolean;
+		  }
 		| {
 				type: 'group';
 				key: string;
 				label: string;
 				depth: number;
 				striped: boolean;
+				divider?: boolean;
 				items: ListItem[];
 				selectedCount: number;
 				expanded: boolean;
@@ -152,6 +166,11 @@
 			}
 		};
 		walk(groups, 0, true);
+		// Mark the end of an open group when the row after it has the same stripe color
+		rows.forEach((row, i) => {
+			const next = rows[i + 1];
+			if (next && next.depth < row.depth && next.striped === row.striped) row.divider = true;
+		});
 		return rows;
 	});
 
@@ -272,7 +291,7 @@
 										<div
 											class={twMerge(
 												components.button(),
-												'h-7 w-full rounded-none border-none py-0 pl-[calc(var(--depth)*1.25rem+0.5rem)]',
+												'relative h-7 w-full rounded-none border-none py-0 pl-[calc(var(--depth)*1.25rem+0.5rem)]',
 												row.striped && 'bg-gray-200 dark:bg-zinc-900',
 												row.selectedCount > 0 && 'font-bold'
 											)}
@@ -313,6 +332,11 @@
 												aria-label={`${allSelected ? 'Poista valinnat' : 'Valitse kaikki'}: ${row.key}`}
 												class="ml-auto cursor-pointer"
 											/>
+											{#if row.divider}
+												<span
+													class="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gray-300 dark:bg-zinc-700"
+												></span>
+											{/if}
 										</div>
 									{:else}
 										{@const item = row.item}
@@ -323,7 +347,7 @@
 											}}
 											class={twMerge(
 												components.button(),
-												'h-7 w-full rounded-none border-none py-0',
+												'relative h-7 w-full rounded-none border-none py-0',
 												groups && 'pl-[calc(var(--depth)*1.25rem+0.5rem)]',
 												row.striped && 'bg-gray-200 dark:bg-zinc-900',
 												item.selected ? 'font-bold' : ''
@@ -342,6 +366,11 @@
 												class="ml-auto"
 												readonly
 											/>
+											{#if row.divider}
+												<span
+													class="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gray-300 dark:bg-zinc-700"
+												></span>
+											{/if}
 										</button>
 									{/if}
 								{/snippet}
