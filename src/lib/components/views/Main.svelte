@@ -21,7 +21,7 @@
 	import Filters from '../widgets/Filters.svelte';
 	import { initFilterValues } from '$lib/utils/catalog/filters';
 	import { page } from '$app/state';
-	import { getContext, onMount, untrack, type Snippet } from 'svelte';
+	import { getContext, untrack, type Snippet } from 'svelte';
 	import type { SearchParamsManager } from '$lib/utils/app/url';
 	import ProductPreview from '../widgets/ProductPreview.svelte';
 	import BottomBar from '../widgets/BottomBar.svelte';
@@ -56,9 +56,18 @@
 	let selectedSortingColumn = $state(
 		searchParamsManager.getParameter('sort') || defaultSortingColumn
 	) as ColumnNames;
-	let asc: boolean = $derived(
-		defaultSortingOrderMap[selectedSortingColumn as keyof typeof defaultSortingOrderMap] || false
-	);
+	// The URL only carries `asc` when it differs from the column's default order, so a
+	// missing parameter means the default. A linked order applies to the linked column only;
+	// picking another column falls back to that column's default.
+	let linkedAsc = searchParamsManager.getParameter('asc');
+	let asc: boolean = $derived.by(() => {
+		const fallback =
+			!!defaultSortingOrderMap[selectedSortingColumn as keyof typeof defaultSortingOrderMap];
+		if (linkedAsc === null) return fallback;
+		const value = linkedAsc === 'true';
+		linkedAsc = null;
+		return value;
+	});
 
 	let rows = $derived.by(() => {
 		let filterValuesCopy: Record<string, any> = { ...filterValues };
@@ -104,11 +113,6 @@
 		event.preventDefault();
 		document.getElementById('results')?.focus();
 	}
-
-	onMount(() => {
-		const ascParam = searchParamsManager.getParameter('asc') === 'true';
-		if (ascParam !== asc) asc = ascParam;
-	});
 
 	$effect(() => {
 		searchParamsManager.setParameter('q', $searchQuery);
