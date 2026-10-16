@@ -91,12 +91,13 @@
 	);
 
 	type Row =
-		| { type: 'option'; item: ListItem; label: string; depth: number }
+		| { type: 'option'; item: ListItem; label: string; depth: number; striped: boolean }
 		| {
 				type: 'group';
 				key: string;
 				label: string;
 				depth: number;
+				striped: boolean;
 				items: ListItem[];
 				selectedCount: number;
 				expanded: boolean;
@@ -107,15 +108,26 @@
 
 	const rows = $derived.by((): Row[] => {
 		if (!groups)
-			return filteredList.map((item) => ({ type: 'option', item, label: item.value, depth: 0 }));
+			return filteredList.map((item, i) => ({
+				type: 'option',
+				item,
+				label: item.value,
+				depth: 0,
+				striped: i % 2 === 0
+			}));
 		const itemsByValue = new Map(list.map((item) => [item.value, item]));
 		const rows: Row[] = [];
-		const walk = (nodes: OptionNode[], depth: number) => {
+		// Stripes go by the position among the siblings, children continuing from their group,
+		// so opening a group doesn't flip the stripes of the rows after it
+		const walk = (nodes: OptionNode[], depth: number, firstStriped: boolean) => {
+			let striped = !firstStriped;
 			for (const node of nodes) {
 				if (node.type === 'option') {
 					const item = itemsByValue.get(node.value);
-					if (item && (!query || matchesQuery(item.value)))
-						rows.push({ type: 'option', item, label: node.label, depth });
+					if (item && (!query || matchesQuery(item.value))) {
+						striped = !striped;
+						rows.push({ type: 'option', item, label: node.label, depth, striped });
+					}
 					continue;
 				}
 				const items = node.values
@@ -123,6 +135,7 @@
 					.map((value) => itemsByValue.get(value))
 					.filter((item) => item !== undefined);
 				if (!items.length) continue;
+				striped = !striped;
 				// Searching opens every group with matches so they can be seen right away
 				const expanded = !!query || expandedGroups.has(node.key);
 				rows.push({
@@ -130,14 +143,15 @@
 					key: node.key,
 					label: node.label,
 					depth,
+					striped,
 					items,
 					selectedCount: items.filter((item) => item.selected).length,
 					expanded
 				});
-				if (expanded) walk(node.children, depth + 1);
+				if (expanded) walk(node.children, depth + 1, !striped);
 			}
 		};
-		walk(groups, 0);
+		walk(groups, 0, true);
 		return rows;
 	});
 
@@ -251,7 +265,7 @@
 								itemKey={(row: Row) =>
 									row.type === 'group' ? `group:${row.key}` : `option:${row.item.value}`}
 							>
-								{#snippet renderItem(row: Row, index: number)}
+								{#snippet renderItem(row: Row)}
 									{#if row.type === 'group'}
 										{@const allSelected = row.selectedCount === row.items.length}
 										{@const someSelected = row.selectedCount > 0 && !allSelected}
@@ -259,7 +273,7 @@
 											class={twMerge(
 												components.button(),
 												'h-7 w-full rounded-none border-none py-0 pl-[calc(var(--depth)*1.25rem+0.5rem)]',
-												index % 2 === 0 && 'bg-gray-200 dark:bg-zinc-900',
+												row.striped && 'bg-gray-200 dark:bg-zinc-900',
 												row.selectedCount > 0 && 'font-bold'
 											)}
 											style:--depth={row.depth}
@@ -311,7 +325,7 @@
 												components.button(),
 												'h-7 w-full rounded-none border-none py-0',
 												groups && 'pl-[calc(var(--depth)*1.25rem+0.5rem)]',
-												index % 2 === 0 && 'bg-gray-200 dark:bg-zinc-900',
+												row.striped && 'bg-gray-200 dark:bg-zinc-900',
 												item.selected ? 'font-bold' : ''
 											)}
 											style:--depth={row.depth + (groups ? 1 : 0)}
