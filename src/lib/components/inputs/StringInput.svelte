@@ -9,6 +9,7 @@
 	import Icon from '../widgets/Icon.svelte';
 	import { untrack } from 'svelte';
 	import type { FilterValue } from '$lib/types';
+	import { groupOptionsByWords, type OptionNode } from '$lib/utils/ui/optionGroups';
 
 	let {
 		defaultValue = [],
@@ -17,6 +18,7 @@
 		options = [],
 		label,
 		name,
+		grouped = false,
 		...rest
 	}: {
 		defaultValue?: FilterValue;
@@ -25,6 +27,8 @@
 		options?: FilterValue;
 		label?: string;
 		name?: string;
+		/** Group the options by their leading words (e.g. stores by city and district) */
+		grouped?: boolean;
 		rest?: Record<string, any>;
 	} = $props();
 
@@ -80,9 +84,73 @@
 		return filterAnnotationsToFilter[(original ?? label) as keyof typeof filterAnnotationsToFilter];
 	});
 
+	const matchesQuery = (value: string) => value.toLowerCase().includes(query.toLowerCase());
+
 	const filteredList = $derived.by(() =>
-		query ? list.filter((item) => item.value.toLowerCase().includes(query.toLowerCase())) : list
+		query ? list.filter((item) => matchesQuery(item.value)) : list
 	);
+
+	type Row =
+		| { type: 'option'; item: ListItem; label: string; depth: number }
+		| {
+				type: 'group';
+				key: string;
+				label: string;
+				depth: number;
+				items: ListItem[];
+				selectedCount: number;
+				expanded: boolean;
+		  };
+
+	const groups = $derived(grouped ? groupOptionsByWords(strOptions) : null);
+	let expandedGroups = $state<Set<string>>(new Set());
+
+	const rows = $derived.by((): Row[] => {
+		if (!groups)
+			return filteredList.map((item) => ({ type: 'option', item, label: item.value, depth: 0 }));
+		const itemsByValue = new Map(list.map((item) => [item.value, item]));
+		const rows: Row[] = [];
+		const walk = (nodes: OptionNode[], depth: number) => {
+			for (const node of nodes) {
+				if (node.type === 'option') {
+					const item = itemsByValue.get(node.value);
+					if (item && (!query || matchesQuery(item.value)))
+						rows.push({ type: 'option', item, label: node.label, depth });
+					continue;
+				}
+				const items = node.values
+					.filter((value) => !query || matchesQuery(value))
+					.map((value) => itemsByValue.get(value))
+					.filter((item) => item !== undefined);
+				if (!items.length) continue;
+				// Searching opens every group with matches so they can be seen right away
+				const expanded = !!query || expandedGroups.has(node.key);
+				rows.push({
+					type: 'group',
+					key: node.key,
+					label: node.label,
+					depth,
+					items,
+					selectedCount: items.filter((item) => item.selected).length,
+					expanded
+				});
+				if (expanded) walk(node.children, depth + 1);
+			}
+		};
+		walk(groups, 0);
+		return rows;
+	});
+
+	function updateValue() {
+		value = list.filter((option) => option.selected).map((option) => option.value);
+	}
+
+	function toggleGroup(key: string) {
+		const next = new Set(expandedGroups);
+		if (next.has(key)) next.delete(key);
+		else next.add(key);
+		expandedGroups = next;
+	}
 </script>
 
 <div class={twMerge('flex', strOptions.length > 1 ? 'flex-col' : 'items-center')}>
@@ -176,30 +244,94 @@
 						     while the dialog is display:none makes the list measure a 0px viewport
 						     and render only a tiny window, hiding later options until scrolled. -->
 						{#if isOpen}
-							<SvelteVirtualList items={filteredList} bufferSize={30}>
-								{#snippet renderItem(item: ListItem, index: number)}
-									<button
-										onclick={() => {
-											item.selected = !item.selected;
-											value = list
-												.filter((option) => option.selected)
-												.map((option) => option.value);
-										}}
-										class={twMerge(
-											components.button(),
-											'w-full rounded-none border-none',
-											index % 2 === 0 && 'bg-gray-200 dark:bg-zinc-900',
-											item.selected ? 'font-bold' : ''
-										)}
-									>
-										<span
-											class="max-w-full overflow-hidden overflow-ellipsis whitespace-nowrap"
-											title={item.value}
+							<SvelteVirtualList items={rows} bufferSize={30}>
+								{#snippet renderItem(row: Row, index: number)}
+									{#if row.type === 'group'}
+										{@const allSelected = row.selectedCount === row.items.length}
+										<div
+											class={twMerge(
+												'flex w-full flex-row items-center',
+												index % 2 === 0 && 'bg-gray-200 dark:bg-zinc-900'
+											)}
 										>
-											{item.value}
-										</span>
-										<input type="checkbox" bind:checked={item.selected} class="ml-auto" readonly />
-									</button>
+											<button
+												onclick={() => toggleGroup(row.key)}
+												aria-expanded={row.expanded}
+												class={twMerge(
+													components.button(),
+													'min-w-0 flex-1 justify-start rounded-none border-none bg-transparent pl-[calc(var(--depth)*1.25rem+0.5rem)] dark:bg-transparent',
+													row.selectedCount > 0 && 'font-bold'
+												)}
+												style:--depth={row.depth}
+											>
+												<Icon
+													name="chevron_right"
+													class={twMerge(
+														'shrink-0 transition-transform',
+														row.expanded && 'rotate-90'
+													)}
+												/>
+												<span
+													class="max-w-full overflow-hidden overflow-ellipsis whitespace-nowrap"
+													title={row.key}
+												>
+													{row.label}
+												</span>
+												<span class="shrink-0 text-xs font-normal text-gray-500 dark:text-gray-400">
+													{row.selectedCount ? `${row.selectedCount} / ` : ''}{row.items.length}
+												</span>
+											</button>
+											<button
+												onclick={() => {
+													row.items.forEach((item) => (item.selected = !allSelected));
+													updateValue();
+												}}
+												aria-label={`${allSelected ? 'Poista valinnat' : 'Valitse kaikki'}: ${row.key}`}
+												class={twMerge(
+													components.button({ type: 'noborder' }),
+													'shrink-0 rounded-none bg-transparent dark:bg-transparent'
+												)}
+											>
+												<Icon
+													name={allSelected
+														? 'checkbox_checked'
+														: row.selectedCount
+															? 'checkbox_minus'
+															: 'checkbox'}
+													class={row.selectedCount ? 'text-brand-1' : 'text-secondary'}
+												/>
+											</button>
+										</div>
+									{:else}
+										{@const item = row.item}
+										<button
+											onclick={() => {
+												item.selected = !item.selected;
+												updateValue();
+											}}
+											class={twMerge(
+												components.button(),
+												'w-full rounded-none border-none',
+												groups && 'pl-[calc(var(--depth)*1.25rem+0.5rem)]',
+												index % 2 === 0 && 'bg-gray-200 dark:bg-zinc-900',
+												item.selected ? 'font-bold' : ''
+											)}
+											style:--depth={row.depth + (groups ? 1 : 0)}
+										>
+											<span
+												class="max-w-full overflow-hidden overflow-ellipsis whitespace-nowrap"
+												title={item.value}
+											>
+												{row.label}
+											</span>
+											<input
+												type="checkbox"
+												bind:checked={item.selected}
+												class="ml-auto"
+												readonly
+											/>
+										</button>
+									{/if}
 								{/snippet}
 							</SvelteVirtualList>
 						{/if}
