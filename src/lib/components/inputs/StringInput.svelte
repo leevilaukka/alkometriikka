@@ -9,7 +9,7 @@
 	import Icon from '../widgets/Icon.svelte';
 	import { untrack } from 'svelte';
 	import type { FilterValue } from '$lib/types';
-	import { groupOptionsByWords, type OptionNode } from '$lib/utils/ui/optionGroups';
+	import type { OptionGrouper, OptionNode } from '$lib/utils/ui/optionGroups';
 
 	let {
 		defaultValue = [],
@@ -18,7 +18,7 @@
 		options = [],
 		label,
 		name,
-		grouped = false,
+		groupOptions,
 		...rest
 	}: {
 		defaultValue?: FilterValue;
@@ -27,8 +27,8 @@
 		options?: FilterValue;
 		label?: string;
 		name?: string;
-		/** Group the options by their leading words (e.g. stores by city and district) */
-		grouped?: boolean;
+		/** Groups the options shown in the picker, e.g. stores by city and district */
+		groupOptions?: OptionGrouper;
 		rest?: Record<string, any>;
 	} = $props();
 
@@ -117,7 +117,7 @@
 				expanded: boolean;
 		  };
 
-	const groups = $derived(grouped ? groupOptionsByWords(strOptions) : null);
+	const groups = $derived(groupOptions ? groupOptions(strOptions) : null);
 	let expandedGroups = $state<Set<string>>(new Set());
 
 	const rows = $derived.by((): Row[] => {

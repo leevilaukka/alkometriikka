@@ -18,6 +18,12 @@ export type OptionGroup = {
 
 export type OptionNode = OptionLeaf | OptionGroup;
 
+/**
+ * Builds the groups shown in a picker from the options given to it. Every option
+ * should appear in the tree exactly once.
+ */
+export type OptionGrouper = (options: string[]) => OptionNode[];
+
 type Entry = { value: string; words: string[] };
 
 /**

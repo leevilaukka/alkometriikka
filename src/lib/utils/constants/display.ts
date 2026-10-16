@@ -1,5 +1,6 @@
 import type { ColNameObj, ColumnNames } from '$lib/types';
 import { AllColumns } from './columns';
+import { groupOptionsByWords, type OptionGrouper } from '$lib/utils/ui/optionGroups';
 
 /**
  * Columns to be shown in the filter area.
@@ -28,8 +29,11 @@ export const shownFilters = [
 	AllColumns.OnSale
 ] as const satisfies readonly ColumnNames[];
 
-/** String filters whose options are grouped by their leading words in the picker, e.g. stores by city */
-export const groupedFilters: readonly ColumnNames[] = [AllColumns.StoreAvailability];
+/** How the options of a string filter are grouped in its picker */
+export const filterOptionGroupers: Partial<Record<ColumnNames, OptionGrouper>> = {
+	// Stores by city and district, e.g. "Helsinki" → "keskusta" → "Arkadia"
+	[AllColumns.StoreAvailability]: (options) => groupOptionsByWords(options)
+};
 
 /**
  * Filter annotations (AND / OR) used in the filter popups.
