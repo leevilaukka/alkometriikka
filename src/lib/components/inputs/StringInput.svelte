@@ -244,25 +244,30 @@
 						     while the dialog is display:none makes the list measure a 0px viewport
 						     and render only a tiny window, hiding later options until scrolled. -->
 						{#if isOpen}
-							<SvelteVirtualList items={rows} bufferSize={30}>
+							<SvelteVirtualList
+								items={rows}
+								bufferSize={30}
+								defaultEstimatedItemSize={28}
+								itemKey={(row: Row) =>
+									row.type === 'group' ? `group:${row.key}` : `option:${row.item.value}`}
+							>
 								{#snippet renderItem(row: Row, index: number)}
 									{#if row.type === 'group'}
 										{@const allSelected = row.selectedCount === row.items.length}
+										{@const someSelected = row.selectedCount > 0 && !allSelected}
 										<div
 											class={twMerge(
-												'flex w-full flex-row items-center',
-												index % 2 === 0 && 'bg-gray-200 dark:bg-zinc-900'
+												components.button(),
+												'h-7 w-full rounded-none border-none py-0 pl-[calc(var(--depth)*1.25rem+0.5rem)]',
+												index % 2 === 0 && 'bg-gray-200 dark:bg-zinc-900',
+												row.selectedCount > 0 && 'font-bold'
 											)}
+											style:--depth={row.depth}
 										>
 											<button
 												onclick={() => toggleGroup(row.key)}
 												aria-expanded={row.expanded}
-												class={twMerge(
-													components.button(),
-													'min-w-0 flex-1 justify-start rounded-none border-none bg-transparent pl-[calc(var(--depth)*1.25rem+0.5rem)] dark:bg-transparent',
-													row.selectedCount > 0 && 'font-bold'
-												)}
-												style:--depth={row.depth}
+												class="flex h-full min-w-0 flex-1 cursor-pointer items-center gap-2 text-left"
 											>
 												<Icon
 													name="chevron_right"
@@ -281,26 +286,19 @@
 													{row.selectedCount ? `${row.selectedCount} / ` : ''}{row.items.length}
 												</span>
 											</button>
-											<button
+											<input
+												type="checkbox"
+												checked={allSelected}
+												{@attach (input: HTMLInputElement) => {
+													input.indeterminate = someSelected;
+												}}
 												onclick={() => {
 													row.items.forEach((item) => (item.selected = !allSelected));
 													updateValue();
 												}}
 												aria-label={`${allSelected ? 'Poista valinnat' : 'Valitse kaikki'}: ${row.key}`}
-												class={twMerge(
-													components.button({ type: 'noborder' }),
-													'shrink-0 rounded-none bg-transparent dark:bg-transparent'
-												)}
-											>
-												<Icon
-													name={allSelected
-														? 'checkbox_checked'
-														: row.selectedCount
-															? 'checkbox_minus'
-															: 'checkbox'}
-													class={row.selectedCount ? 'text-brand-1' : 'text-secondary'}
-												/>
-											</button>
+												class="ml-auto cursor-pointer"
+											/>
 										</div>
 									{:else}
 										{@const item = row.item}
@@ -311,7 +309,7 @@
 											}}
 											class={twMerge(
 												components.button(),
-												'w-full rounded-none border-none',
+												'h-7 w-full rounded-none border-none py-0',
 												groups && 'pl-[calc(var(--depth)*1.25rem+0.5rem)]',
 												index % 2 === 0 && 'bg-gray-200 dark:bg-zinc-900',
 												item.selected ? 'font-bold' : ''
