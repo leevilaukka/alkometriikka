@@ -1,6 +1,7 @@
 import type { ColumnNames } from '$lib/types';
 import { replaceState } from '$app/navigation';
 import { isNullish } from '../format/labels';
+import { compressSearchParams, expandSearchParams } from './compressedParams';
 
 export class SearchParamsManager {
 	params = new URLSearchParams();
@@ -8,13 +9,13 @@ export class SearchParamsManager {
 	mergedParams = new URLSearchParams();
 
 	constructor(url: URL) {
-		this.params = url.searchParams;
+		this.params = expandSearchParams(url.searchParams);
 	}
 
 	update() {
 		this.mergedParams = new URLSearchParams([...this.params, ...this.persistentParams]);
 		let url = window.location.pathname;
-		if (this.mergedParams.size) url += `?${this.mergedParams.toString()}`;
+		if (this.mergedParams.size) url += `?${compressSearchParams(this.mergedParams)}`;
 		updateURL(url);
 	}
 
@@ -44,7 +45,7 @@ export class SearchParamsManager {
 	}
 
 	setParametersFromURL(url: URL) {
-		this.params = url.searchParams;
+		this.params = expandSearchParams(url.searchParams);
 	}
 
 	addPersistentParameter(key: string, value?: string) {

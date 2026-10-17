@@ -20,7 +20,6 @@
 	import { isLaptop, isMobile, pageBottomBar, searchQuery } from '$lib/global.svelte';
 	import Filters from '../widgets/Filters.svelte';
 	import { initFilterValues } from '$lib/utils/catalog/filters';
-	import { page } from '$app/state';
 	import { getContext, untrack, type Snippet } from 'svelte';
 	import type { SearchParamsManager } from '$lib/utils/app/url';
 	import ProductPreview from '../widgets/ProductPreview.svelte';
@@ -45,7 +44,7 @@
 	let showRemoved = $state(false);
 	let filterValues = $state(
 		untrack(() =>
-			initFilterValues(kaljakori, showFilters ? page.url.searchParams : undefined, showRemoved)
+			initFilterValues(kaljakori, showFilters ? searchParamsManager.params : undefined, showRemoved)
 		)
 	);
 	let activeFilters: ColumnNames[] = $state([]);

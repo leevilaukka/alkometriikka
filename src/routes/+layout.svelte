@@ -125,7 +125,7 @@
 		searchParamsManager.setParametersFromURL(to.url);
 		// Back/forward restores the search from the URL before the page mounts, otherwise the
 		// page would sync an empty search into the URL first
-		if (type === 'popstate') $searchQuery = to.url.searchParams.get('q') ?? '';
+		if (type === 'popstate') $searchQuery = searchParamsManager.getParameter('q') ?? '';
 		searchParamsManager.update();
 	});
 

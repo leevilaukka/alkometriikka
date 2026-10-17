@@ -199,6 +199,12 @@ Shareable state lives in the query string, managed by `SearchParamsManager`
 the URL with `replaceState` (no history entries). Calls made before the router is ready are
 queued and flushed by `markRouterReady()` in `afterNavigate`.
 
+Once the query string passes 200 characters, `update()` writes it as a single `z` parameter instead:
+the parameters grouped by key (repeated filter names are most of a long query) and compressed with
+lz-string (`src/lib/utils/app/compressedParams.ts`). Only `sid`, `flag` and `list` stay readable
+next to it. The manager expands `z` when it reads a URL, and code that reads the query string
+itself goes through `expandSearchParams()`, so a compressed link behaves like the long one.
+
 | Parameter                             | Used on                 | Meaning                                                                                                          |
 | ------------------------------------- | ----------------------- | ---------------------------------------------------------------------------------------------------------------- |
 | `q`                                   | lists with a search box | Name search                                                                                                      |
@@ -208,6 +214,7 @@ queued and flushed by `markRouterReady()` in `afterNavigate`.
 | `ids`                                 | `/vertailu`             | Comma-separated product numbers                                                                                  |
 | `pv`, `suunta`, `tyyppi`, `alatyyppi` | `/hinnanmuutokset`      | Window (7/30/90 days), direction (`halpeni`/`kallistui`), category slugs                                         |
 | `sid`                                 | any shared link         | Share id for counting shared views; stripped on arrival                                                          |
+| `z`                                   | any page                | The other parameters compressed, when the query string would be long                                             |
 
 The search box text belongs to the page it was typed on: navigating to a different path clears it,
 while back/forward restores it from the URL.
