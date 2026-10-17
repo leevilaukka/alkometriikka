@@ -2,7 +2,7 @@ import type { Snippet } from 'svelte';
 import { writable } from 'svelte/store';
 import { LocalStorageKeys } from './utils/constants/app';
 import { LocalStorageManager } from './utils/app/storage';
-import { expandSearchParams } from './utils/app/compressedParams';
+import { readSearchParams } from './utils/app/compressedParams';
 
 export let personalInfo = $state(
 	LocalStorageManager.getItem(LocalStorageKeys.PersonalInfo) || { gender: null, weight: null }
@@ -19,9 +19,7 @@ export let compareHighlightDifferences = writable<boolean>(
 /** A page's mobile action bar, rendered by the layout at the very bottom like the product page's. */
 export const pageBottomBar = $state<{ snippet?: Snippet }>({});
 
-export let searchQuery = writable(
-	expandSearchParams(new URLSearchParams(location.search)).get('q') || ''
-);
+export let searchQuery = writable(readSearchParams(location).get('q') || '');
 
 export let theme = writable(LocalStorageManager.getItem(LocalStorageKeys.Theme) ?? '');
 export let preferredStoreId = writable(

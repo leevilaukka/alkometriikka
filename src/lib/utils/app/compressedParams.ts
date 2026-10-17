@@ -1,6 +1,6 @@
 import { compressToEncodedURIComponent, decompressFromEncodedURIComponent } from 'lz-string';
 
-/** Query parameter that holds the other parameters compressed when the query string gets long. */
+/** Parameter that holds the other parameters compressed when the query string gets long. */
 export const COMPRESSED_PARAM = 'z';
 
 /** Query strings up to this length stay readable. */
@@ -11,6 +11,8 @@ export const COMPRESS_THRESHOLD = 200;
  * the app expands anything, and `list` is lz-string output already, which doesn't shrink again.
  */
 const PLAIN_PARAMS = new Set(['sid', 'flag', 'list']);
+
+const HASH_PREFIX = `#${COMPRESSED_PARAM}=`;
 
 // Separators that can't come from the UI. Grouping every value under its key once is what makes
 // this pay off: lz-string alone barely shortens a query, most of which is repeated filter names.
@@ -37,40 +39,44 @@ function decode(encoded: string) {
 }
 
 /**
- * Serializes `params` for the URL. Once the query string is longer than {@link COMPRESS_THRESHOLD},
- * everything but the plain parameters goes into one lz-string compressed `z` parameter.
+ * The `?query#hash` part of a URL holding `params`, or '' for none. Once the query string is longer
+ * than {@link COMPRESS_THRESHOLD}, everything but the plain parameters is compressed into a `z` in
+ * the fragment. Browsers never send the fragment, so however many values a filter has selected
+ * (selecting all of them can run to hundreds of kilobytes), reloading can't fail with 414.
  */
-export function compressSearchParams(params: URLSearchParams): string {
+export function serializeSearchParams(params: URLSearchParams): string {
 	const plain = new URLSearchParams();
 	const rest = new URLSearchParams();
 	for (const [key, value] of params) (PLAIN_PARAMS.has(key) ? plain : rest).append(key, value);
 
 	const restString = rest.toString();
-	if (restString.length <= COMPRESS_THRESHOLD) return params.toString();
-	const encoded = encode(rest);
-	// lz-string's URI alphabet is safe in a query string, so it's written without escaping
+	const encoded = restString.length > COMPRESS_THRESHOLD && encode(rest);
+	// lz-string's URI alphabet is safe in a fragment, so it's written without escaping
 	const compressed = encoded && compressToEncodedURIComponent(encoded);
-	if (!compressed || compressed.length >= restString.length) return params.toString();
+	if (!compressed || compressed.length >= restString.length) return params.size ? `?${params}` : '';
 
-	const plainString = plain.toString();
-	return `${COMPRESSED_PARAM}=${compressed}${plainString ? `&${plainString}` : ''}`;
+	return `${plain.size ? `?${plain}` : ''}${HASH_PREFIX}${compressed}`;
 }
 
-/**
- * The parameters a URL stands for, with a `z` parameter expanded. Returns `params` itself when
- * there's nothing to expand, and drops a `z` that can't be read.
- */
-export function expandSearchParams(params: URLSearchParams): URLSearchParams {
-	const compressed = params.get(COMPRESSED_PARAM);
-	if (compressed === null) return params;
-
-	let expanded = new URLSearchParams();
+function decompress(compressed: string) {
 	try {
 		const encoded = decompressFromEncodedURIComponent(compressed);
-		if (encoded) expanded = decode(encoded);
+		if (encoded) return decode(encoded);
 	} catch {
 		// Mangled link; keep whatever is readable
 	}
-	for (const [key, value] of params) if (key !== COMPRESSED_PARAM) expanded.append(key, value);
+	return new URLSearchParams();
+}
+
+/**
+ * The parameters a URL stands for, with a compressed `#z=` expanded. Returns `url.searchParams`
+ * itself when there's nothing to expand, and drops a `z` that can't be read.
+ */
+export function readSearchParams(url: URL | Location): URLSearchParams {
+	const searchParams = 'searchParams' in url ? url.searchParams : new URLSearchParams(url.search);
+	if (!url.hash.startsWith(HASH_PREFIX)) return searchParams;
+
+	const expanded = decompress(url.hash.slice(HASH_PREFIX.length));
+	for (const [key, value] of searchParams) expanded.append(key, value);
 	return expanded;
 }

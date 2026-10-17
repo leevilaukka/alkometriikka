@@ -1,5 +1,5 @@
 <script lang="ts" module>
-	import { expandSearchParams } from '$lib/utils/app/compressedParams';
+	import { readSearchParams } from '$lib/utils/app/compressedParams';
 
 	const LANDING_PARAMS_KEY = 'notice_landing_params';
 
@@ -9,7 +9,7 @@
 	 * reload on another page doesn't lose them either.
 	 */
 	function readLandingParams(): URLSearchParams {
-		const params = expandSearchParams(new URLSearchParams(location.search));
+		const params = readSearchParams(location);
 		try {
 			const stored = new URLSearchParams(sessionStorage.getItem(LANDING_PARAMS_KEY) ?? '');
 			for (const [key, value] of params) stored.set(key, value);

@@ -1,9 +1,8 @@
 import { describe, expect, test } from 'bun:test';
 import {
 	COMPRESS_THRESHOLD,
-	COMPRESSED_PARAM,
-	compressSearchParams,
-	expandSearchParams
+	readSearchParams,
+	serializeSearchParams
 } from '../../src/lib/utils/app/compressedParams';
 
 const countries = ['Ranska', 'Italia', 'Espanja', 'Etelä-Afrikka', 'Itävalta', 'Saksa', 'Chile'];
@@ -19,62 +18,69 @@ function longParams() {
 	return params;
 }
 
-/** What the app reads back from a URL written with `query`. */
-function roundTrip(query: string) {
-	return expandSearchParams(new URL(`https://alkometriikka.fi/?${query}`).searchParams);
+/** What the app reads back from a URL ending in `suffix`. */
+function roundTrip(suffix: string) {
+	return readSearchParams(new URL(`https://alkometriikka.fi/${suffix}`));
 }
 
-describe('compressSearchParams', () => {
-	test('leaves short query strings readable', () => {
-		const params = new URLSearchParams({ Hinta: '5-20', sort: 'Hinta' });
-		expect(compressSearchParams(params)).toBe(params.toString());
+describe('serializeSearchParams', () => {
+	test('writes nothing for no parameters', () => {
+		expect(serializeSearchParams(new URLSearchParams())).toBe('');
 	});
 
-	test('compresses long query strings into z, keeping every value and its order', () => {
+	test('leaves short query strings readable', () => {
+		const params = new URLSearchParams({ Hinta: '5-20', sort: 'Hinta' });
+		expect(serializeSearchParams(params)).toBe(`?${params}`);
+	});
+
+	test('compresses long query strings into the fragment, keeping every value and its order', () => {
 		const params = longParams();
 		expect(params.toString().length).toBeGreaterThan(COMPRESS_THRESHOLD);
 
-		const query = compressSearchParams(params);
-		expect(query.startsWith(`${COMPRESSED_PARAM}=`)).toBe(true);
-		expect(query.length).toBeLessThan(params.toString().length);
-		expect(roundTrip(query).getAll('Valmistusmaa')).toEqual(countries);
-		expect([...roundTrip(query)].sort()).toEqual([...params].sort());
+		const suffix = serializeSearchParams(params);
+		expect(suffix.startsWith('#z=')).toBe(true);
+		expect(suffix.length).toBeLessThan(params.toString().length);
+		expect(roundTrip(suffix).getAll('Valmistusmaa')).toEqual(countries);
+		expect([...roundTrip(suffix)].sort()).toEqual([...params].sort());
 	});
 
-	test('keeps sid, flag and list readable next to z', () => {
+	test('keeps sid, flag and list in the query next to the fragment', () => {
 		const params = longParams();
 		params.set('sid', 'abc12345');
 		params.set('flag', 'new-compare');
 		params.set('list', 'N4Ig');
 
-		const query = compressSearchParams(params);
-		const url = new URLSearchParams(query);
-		expect(url.get('sid')).toBe('abc12345');
-		expect(url.get('flag')).toBe('new-compare');
-		expect(url.get('list')).toBe('N4Ig');
-		expect([...roundTrip(query)].sort()).toEqual([...params].sort());
+		const suffix = serializeSearchParams(params);
+		const url = new URL(`https://alkometriikka.fi/${suffix}`);
+		expect([...url.searchParams]).toEqual([
+			['sid', 'abc12345'],
+			['flag', 'new-compare'],
+			['list', 'N4Ig']
+		]);
+		expect(url.hash.startsWith('#z=')).toBe(true);
+		expect([...roundTrip(suffix)].sort()).toEqual([...params].sort());
 	});
 
 	test('does not count plain parameters toward the threshold', () => {
 		const params = new URLSearchParams({ Hinta: '5-20', list: 'x'.repeat(COMPRESS_THRESHOLD) });
-		expect(compressSearchParams(params)).toBe(params.toString());
+		expect(serializeSearchParams(params)).toBe(`?${params}`);
 	});
 
 	test('leaves values containing its separators alone', () => {
 		const params = longParams();
 		params.set('q', 'a\u0001b');
-		expect(compressSearchParams(params)).toBe(params.toString());
+		expect(serializeSearchParams(params)).toBe(`?${params}`);
 	});
 });
 
-describe('expandSearchParams', () => {
-	test('returns the same params when there is nothing to expand', () => {
-		const params = new URLSearchParams({ Hinta: '5-20' });
-		expect(expandSearchParams(params)).toBe(params);
+describe('readSearchParams', () => {
+	test('returns the URL’s own params when there is nothing to expand', () => {
+		const url = new URL('https://alkometriikka.fi/?Hinta=5-20#sisalto');
+		expect(readSearchParams(url)).toBe(url.searchParams);
 	});
 
-	test('drops an unreadable z but keeps the other parameters', () => {
-		const params = expandSearchParams(new URLSearchParams({ z: '!!!', sid: 'abc' }));
+	test('drops an unreadable z but keeps the query', () => {
+		const params = readSearchParams(new URL('https://alkometriikka.fi/?sid=abc#z=!!!'));
 		expect([...params]).toEqual([['sid', 'abc']]);
 	});
 });
