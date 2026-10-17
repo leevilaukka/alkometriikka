@@ -5,7 +5,20 @@ import {
 	serializeSearchParams
 } from '../../src/lib/utils/app/compressedParams';
 
-const countries = ['Ranska', 'Italia', 'Espanja', 'Etelä-Afrikka', 'Itävalta', 'Saksa', 'Chile'];
+const countries = [
+	'Ranska',
+	'Italia',
+	'Espanja',
+	'Etelä-Afrikka',
+	'Itävalta',
+	'Saksa',
+	'Chile',
+	'Argentiina',
+	'Australia',
+	'Uusi-Seelanti',
+	'Yhdysvallat',
+	'Portugali'
+];
 
 function longParams() {
 	const params = new URLSearchParams();

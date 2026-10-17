@@ -94,21 +94,58 @@ export function searchParametersFromFilterValues(
 	);
 }
 
+/**
+ * Whether the URL gets a filter's selections as one comma-separated value (`?Tyyppi=Oluet,Siiderit`)
+ * instead of repeated keys (`?Tyyppi=Oluet&Tyyppi=Siiderit`). Both forms are read either way.
+ */
+export const COMMA_SEPARATED_FILTERS = false;
+
+/**
+ * Joins each filter's selections into one comma-separated value. A filter with a selection that
+ * contains a comma itself (`Brandyt, armanjakit ja calvadosit`) keeps the repeated form.
+ */
+export function joinFilterParams(params: Record<string, string | string[]>) {
+	return Object.fromEntries(
+		Object.entries(params).map(([key, value]) => [
+			key,
+			Array.isArray(value) && !value.some((v) => v.includes(',')) ? value.join(',') : value
+		])
+	);
+}
+
+/**
+ * Reads filters in either URL form: repeated keys (`?Tyyppi=Oluet&Tyyppi=Siiderit`) or
+ * comma-separated (`?Tyyppi=Oluet,Siiderit`), whichever {@link COMMA_SEPARATED_FILTERS} picks for
+ * writing. A value that is one of the filter's own values is kept whole, so selections containing
+ * commas (`Brandyt, armanjakit ja calvadosit`) survive either way.
+ */
 export function filterValuesFromSearchParameters(
 	searchParams: URLSearchParams,
 	kaljakori: Kaljakori
 ) {
-	return [...searchParams.keys()].reduce((obj, key) => {
+	return [...new Set(searchParams.keys())].reduce((obj, key) => {
 		const type = kaljakori.getFilterType(key as ColumnNames);
+		if (type === 'number')
+			return {
+				...obj,
+				[key]: searchParams
+					.get(key)
+					?.split('-')
+					.map((v) => Number(v))
+			};
+		const values = searchParams.getAll(key);
+		if (type !== 'string' && type !== 'object') return { ...obj, [key]: values };
+		const known = new Set(kaljakori.getFilterValues(key as ColumnNames));
 		return {
 			...obj,
-			[key]:
-				type === 'number'
-					? searchParams
-							.get(key)
-							?.split('-')
-							.map((v) => Number(v))
-					: searchParams.getAll(key)
+			[key]: values.flatMap((value) =>
+				known.has(value)
+					? [value]
+					: value
+							.split(',')
+							.map((v) => v.trim())
+							.filter(Boolean)
+			)
 		};
 	}, {});
 }

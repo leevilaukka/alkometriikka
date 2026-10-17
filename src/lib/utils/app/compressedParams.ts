@@ -4,7 +4,7 @@ import { compressToEncodedURIComponent, decompressFromEncodedURIComponent } from
 export const COMPRESSED_PARAM = 'z';
 
 /** Query strings up to this length stay readable. */
-export const COMPRESS_THRESHOLD = 200;
+export const COMPRESS_THRESHOLD = 400;
 
 /**
  * Never compressed: `sid` is appended to and stripped from finished links, `flag` is read before

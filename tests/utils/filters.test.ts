@@ -4,7 +4,9 @@ import type { PriceListItem } from '$lib/types';
 import { AllColumns } from '$lib/utils/constants/columns';
 import {
 	buildSizeOptions,
+	filterValuesFromSearchParameters,
 	findSimilarProducts,
+	joinFilterParams,
 	SIMILAR_PRODUCT_COLUMNS
 } from '$lib/utils/catalog/filters';
 
@@ -201,5 +203,69 @@ describe('buildSizeOptions', () => {
 		const sizes = buildSizeOptions(removedCheap, kaljakori);
 		expect(sizes.find((size) => size.isCurrent)?.product).toBe(removedCheap);
 		expect(sizes).toHaveLength(2);
+	});
+});
+
+describe('filters in the URL', () => {
+	const values: Record<string, (string | number)[]> = {
+		[AllColumns.Type]: ['oluet', 'siiderit', 'brandyt, armanjakit ja calvadosit'],
+		[AllColumns.Country]: ['Ranska', 'Italia', 'Espanja'],
+		[AllColumns.GrapeVarieties]: ['Merlot', 'Syrah']
+	};
+	const types: Record<string, string> = {
+		[AllColumns.Type]: 'string',
+		[AllColumns.Country]: 'string',
+		[AllColumns.GrapeVarieties]: 'object',
+		[AllColumns.Price]: 'number'
+	};
+	const kaljakori = {
+		getFilterType: (key: string) => types[key],
+		getFilterValues: (key: string) => values[key] ?? []
+	} as unknown as Kaljakori;
+	const read = (query: string) =>
+		filterValuesFromSearchParameters(new URLSearchParams(query), kaljakori);
+
+	it('joins selections with commas, except a filter with a comma in a selection', () => {
+		expect(
+			joinFilterParams({
+				[AllColumns.Country]: ['Ranska', 'Italia'],
+				[AllColumns.Type]: ['Oluet', 'Brandyt, armanjakit ja calvadosit'],
+				[AllColumns.Price]: '5-20'
+			})
+		).toEqual({
+			[AllColumns.Country]: 'Ranska,Italia',
+			[AllColumns.Type]: ['Oluet', 'Brandyt, armanjakit ja calvadosit'],
+			[AllColumns.Price]: '5-20'
+		});
+	});
+
+	it('reads comma-separated and repeated filters alike', () => {
+		const expected = {
+			[AllColumns.Country]: ['Ranska', 'Italia'],
+			[AllColumns.GrapeVarieties]: ['Merlot', 'Syrah']
+		};
+		expect(read('Valmistusmaa=Ranska,Italia&Rypäleet=Merlot,Syrah')).toEqual(expected);
+		expect(read('Valmistusmaa=Ranska&Valmistusmaa=Italia&Rypäleet=Merlot&Rypäleet=Syrah')).toEqual(
+			expected
+		);
+		expect(read('Valmistusmaa=Ranska, Italia,')).toEqual({
+			[AllColumns.Country]: ['Ranska', 'Italia']
+		});
+	});
+
+	it('keeps a selection that contains a comma whole', () => {
+		const brandy = 'brandyt, armanjakit ja calvadosit';
+		const query = new URLSearchParams([
+			[AllColumns.Type, 'oluet'],
+			[AllColumns.Type, brandy]
+		]).toString();
+		expect(read(query)).toEqual({ [AllColumns.Type]: ['oluet', brandy] });
+		expect(read(new URLSearchParams({ [AllColumns.Type]: brandy }).toString())).toEqual({
+			[AllColumns.Type]: [brandy]
+		});
+	});
+
+	it('leaves number ranges and other parameters as they were', () => {
+		expect(read('Hinta=5-20&q=a,b')).toEqual({ [AllColumns.Price]: [5, 20], q: ['a,b'] });
 	});
 });
