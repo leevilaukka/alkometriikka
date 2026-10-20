@@ -1,5 +1,5 @@
 import type { ListObj } from '$lib/types.js';
-import { validateListFromURI } from '$lib/utils/lists.js';
+import { validateListFromURI } from '$lib/utils/user/lists.js';
 import { error } from '@sveltejs/kit';
 import { decompressFromEncodedURIComponent } from 'lz-string';
 

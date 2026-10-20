@@ -20,7 +20,7 @@ import {
 	getHashValues
 } from './constants.ts';
 import type { MigratedData, MigratedProduct } from './types.ts';
-import { toNumber } from '../../src/lib/utils/number.ts';
+import { toNumber } from '../../src/lib/utils/format/number';
 
 const LEGACY_JSON_URL =
 	'https://raw.githubusercontent.com/leevilaukka/alkometriikka/dfbaa4c24221a1844388fcc53d361add4019b6c2/data.json';

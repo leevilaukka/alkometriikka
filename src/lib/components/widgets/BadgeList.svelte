@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { type ColumnNames, type BadgeConfig, type PriceListItem } from '$lib/types';
-	import { DynamicColumnToBadgeMap } from '$lib/utils/constants';
+	import { DynamicColumnToBadgeMap } from '$lib/utils/constants/badges';
 	import Badge from './Badge.svelte';
 
 	const { item, isProductPage }: { item: PriceListItem; isProductPage?: boolean } = $props();

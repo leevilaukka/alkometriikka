@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { twMerge } from 'tailwind-merge';
 	import Icon from './Icon.svelte';
-	import { components } from '$lib/utils/styles';
+	import { components } from '$lib/utils/ui/styles';
 	import type { BadgeConfig } from '$lib/types';
 
 	const { text, color = 'default', icon, tooltip }: BadgeConfig = $props();

@@ -1,15 +1,11 @@
 <script lang="ts">
-	import { components } from '$lib/utils/styles';
+	import { components } from '$lib/utils/ui/styles';
 	import { twMerge } from 'tailwind-merge';
 	import { isLaptop, isMobile, theme } from '$lib/global.svelte';
 	import Icon from '$lib/components/widgets/Icon.svelte';
-	import {
-		handleClearAll,
-		handleExport,
-		handleImport,
-		sendAnalyticsEvent
-	} from '$lib/utils/helpers';
-	import { install } from '$lib/utils/pwa.svelte';
+	import { handleClearAll, handleExport, handleImport } from '$lib/utils/app/backup';
+	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
+	import { install } from '$lib/utils/app/pwa.svelte';
 	let { dialogElement } = $props();
 </script>
 

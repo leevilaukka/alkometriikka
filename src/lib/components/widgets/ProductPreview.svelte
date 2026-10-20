@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import { AllColumns } from '$lib/utils/constants';
-	import { headerToDisplayName, valueToString } from '$lib/utils/helpers';
-	import { formatValue } from '$lib/utils/format';
-	import { getSaleInfo } from '$lib/utils/sales';
-	import { components } from '$lib/utils/styles';
+	import { AllColumns } from '$lib/utils/constants/columns';
+	import { headerToDisplayName, valueToString } from '$lib/utils/format/labels';
+	import { formatValue } from '$lib/utils/format/format';
+	import { getSaleInfo } from '$lib/utils/catalog/sales';
+	import { components } from '$lib/utils/ui/styles';
 	import { compareProductIds } from '$lib/global.svelte';
-	import { toggleCompare, MAX_COMPARE_PRODUCTS } from '$lib/utils/compare';
+	import { toggleCompare, MAX_COMPARE_PRODUCTS } from '$lib/utils/user/compare';
 	import { twMerge } from 'tailwind-merge';
 	import BadgeList from './BadgeList.svelte';
 	import ProductImage from './ProductImage.svelte';

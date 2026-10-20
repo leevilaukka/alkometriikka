@@ -6,10 +6,10 @@
 		getStoreDistance,
 		getTodaysOpeningHours,
 		isStoreOpen
-	} from '$lib/utils/availability';
-	import { formatRelativeTime } from '$lib/utils/format';
-	import { requestSettingsOpen } from '$lib/utils/settings';
-	import { components } from '$lib/utils/styles';
+	} from '$lib/utils/catalog/availability';
+	import { formatRelativeTime } from '$lib/utils/format/format';
+	import { requestSettingsOpen } from '$lib/utils/app/settings';
+	import { components } from '$lib/utils/ui/styles';
 	import { twMerge } from 'tailwind-merge';
 
 	// productNumber is threaded through for a future `show_availability` re-evaluation

@@ -25,7 +25,7 @@
 </script>
 
 <script lang="ts">
-	import { generateImageUrl } from '$lib/utils/image';
+	import { generateImageUrl } from '$lib/utils/catalog/alko';
 	import { twMerge } from 'tailwind-merge';
 	let {
 		number,

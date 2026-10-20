@@ -11,8 +11,8 @@ import {
 } from '../../scripts/data/constants';
 import { carryOverMissingProducts, updatePriceHistory } from '../../scripts/data/lifecycle';
 import type { MigratedData, MigratedProduct } from '../../scripts/data/types';
-import { DatasetColumns } from '$lib/utils/constants';
-import { parseDataset } from '$lib/utils/dataset';
+import { DatasetColumns } from '$lib/utils/constants/columns';
+import { parseDataset } from '$lib/utils/catalog/dataset';
 
 const headers = [...LEGACY_HEADERS];
 

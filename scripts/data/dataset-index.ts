@@ -1,6 +1,6 @@
 import { DATASET_INDEX_VERSION, Kaljakori, type DatasetIndex } from '../../src/lib/alko/index.ts';
-import { parseDataset, type StoredDataset } from '../../src/lib/utils/dataset.ts';
-import { AllColumns } from '../../src/lib/utils/constants.ts';
+import { parseDataset, type StoredDataset } from '../../src/lib/utils/catalog/dataset.ts';
+import { AllColumns } from '../../src/lib/utils/constants/columns';
 import type { DatasetRow } from '../../src/lib/types.ts';
 
 /**

@@ -6,7 +6,7 @@ import {
 	CATEGORY_BASE_PATH,
 	categorySlug,
 	type CategoryNode
-} from '../../src/lib/utils/categories';
+} from '../../src/lib/utils/catalog/categories';
 import {
 	el,
 	INK,

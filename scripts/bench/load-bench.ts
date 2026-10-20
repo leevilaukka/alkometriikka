@@ -12,9 +12,9 @@
  */
 import { parseArgs } from 'node:util';
 import { Kaljakori } from '$lib/alko';
-import { parseDataset } from '$lib/utils/dataset';
-import { parseAvailability } from '$lib/utils/availability';
-import { AllColumns, DatasetColumns } from '$lib/utils/constants';
+import { parseDataset } from '$lib/utils/catalog/dataset';
+import { parseAvailability } from '$lib/utils/catalog/availability';
+import { AllColumns, DatasetColumns } from '$lib/utils/constants/columns';
 import type { AvailabilityData, DatasetRow } from '$lib/types';
 
 const { values: args } = parseArgs({

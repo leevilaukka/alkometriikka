@@ -1,25 +1,26 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import { findSimilarProducts } from '$lib/utils/filters';
+	import { findSimilarProducts } from '$lib/utils/catalog/filters';
 	import SvelteVirtualList from '@humanspeak/svelte-virtual-list';
 	import ProductPreview from '../widgets/ProductPreview.svelte';
 	import { twMerge } from 'tailwind-merge';
 	import { goto } from '$app/navigation';
-	import { AllColumns } from '$lib/utils/constants';
+	import { AllColumns } from '$lib/utils/constants/columns';
 	import type { ListObj, PriceListItem } from '$lib/types';
-	import { components } from '$lib/utils/styles';
+	import { components } from '$lib/utils/ui/styles';
 	import { isMobile } from '$lib/global.svelte';
 	import Icon from '../widgets/Icon.svelte';
 	import Popup from '../widgets/Popup.svelte';
 	import AllLists from '../widgets/AllLists.svelte';
-	import { addToList } from '$lib/utils/lists';
-	import { setSEO, valueToString } from '$lib/utils/helpers';
-	import { formatValue } from '$lib/utils/format';
+	import { addToList } from '$lib/utils/user/lists';
+	import { setSEO } from '$lib/utils/app/meta';
+	import { valueToString } from '$lib/utils/format/labels';
+	import { formatValue } from '$lib/utils/format/format';
 	import ProductImage from '../widgets/ProductImage.svelte';
 	import BadgeList from '../widgets/BadgeList.svelte';
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
-	import { generateImageUrl } from '$lib/utils/image';
+	import { generateImageUrl } from '$lib/utils/catalog/alko';
 
 	let { product, kaljakori } = $props();
 

@@ -10,7 +10,7 @@ also linked from the app's settings dialog for anyone who wants the raw data.
 | `hashes.json`       | ~0.55 MB gzipped         | No                       | Change-detection hashes, used only by the sync |
 
 Type definitions: `scripts/data/types.ts` (the strict writer side) and
-`src/lib/utils/dataset.ts` (`StoredDataset`, the lenient reader side).
+`src/lib/utils/catalog/dataset.ts` (`StoredDataset`, the lenient reader side).
 
 ## `data.json`
 
@@ -139,7 +139,7 @@ so that an older deployed app bundle can still read a newer dataset positionally
 | 30  | `Normaalihinta`          | `lowest_30d_price`                     | ✓      | Only during campaigns. Euro number                                                                                     |
 | 31  | `Kampanja alkaa`         | `campaign_start_date`                  | ✓      | `YYYY-MM-DD`                                                                                                           |
 | 32  | `Kampanja päättyy`       | `campaign_end_date`                    | ✓      | `YYYY-MM-DD`                                                                                                           |
-| 33  | `Ruokasuositukset`       | `foodSymbolId`                         |        | Finnish labels from `src/lib/utils/food.ts`, joined with `, `. Refreshed every sync                                    |
+| 33  | `Ruokasuositukset`       | `foodSymbolId`                         |        | Finnish labels from `src/lib/utils/catalog/food.ts`, joined with `, `. Refreshed every sync                            |
 
 "(detail)" marks fields only the per-product detail API returns. Everything else comes from the
 search API. "Hashed" columns feed the change-detection hash; see
@@ -147,7 +147,7 @@ search API. "Hashed" columns feed the change-detection hash; see
 
 ### Columns added by the app
 
-`parseDataset` (`src/lib/utils/dataset.ts`) appends two columns when it turns the file into a
+`parseDataset` (`src/lib/utils/catalog/dataset.ts`) appends two columns when it turns the file into a
 table: **`Hintahistoria`** (the `priceHistory` array) and **`Poistunut valikoimasta`** (`true`
 when `meta.removedFromSelection` is set). `Kaljakori` then adds the derived columns described in
 [Kaljakori](../frontend/kaljakori.md#columns).
@@ -156,7 +156,7 @@ when `meta.removedFromSelection` is set). `Kaljakori` then adds the derived colu
 
 1. Append the column to `LEGACY_HEADERS` and add a `FIELD_TO_LEGACY_SCHEMA` entry at the same
    position in `scripts/data/constants.ts`.
-2. Add it to `DatasetColumns` in `src/lib/utils/constants.ts` (and to `PriceListItem` in
+2. Add it to `DatasetColumns` in `src/lib/utils/constants/columns.ts` (and to `PriceListItem` in
    `src/lib/types.ts`). `tests/data/dataset.test.ts` checks that the writer and reader agree.
 3. If it is a list, add it to `columnsHandledAsSet`; if missing values should count as zero, to
    `undefinedToZeroColumns`.
@@ -204,5 +204,5 @@ re-fetches products whose stored values hash differently from the search payload
   (the search API's `storeId` field). It covers only products currently in the selection.
 - It is rewritten in full on every sync, so `lastUpdated` is the sync time.
 
-`parseAvailability` (`src/lib/utils/availability.ts`) validates it in the browser and drops
+`parseAvailability` (`src/lib/utils/catalog/availability.ts`) validates it in the browser and drops
 malformed entries.

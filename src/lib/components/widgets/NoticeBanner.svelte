@@ -23,21 +23,22 @@
 </script>
 
 <script lang="ts">
-	import { appPath } from '$lib/utils/paths';
+	import { appPath } from '$lib/utils/app/paths';
 	import { onMount } from 'svelte';
 	import { resolve } from '$app/paths';
 	import { twMerge } from 'tailwind-merge';
 	import Icon from '$lib/components/widgets/Icon.svelte';
-	import { components } from '$lib/utils/styles';
-	import { LocalStorageKeys, timeConfig } from '$lib/utils/constants';
-	import { LocalStorageManager } from '$lib/utils/storage';
+	import { components } from '$lib/utils/ui/styles';
+	import { LocalStorageKeys } from '$lib/utils/constants/app';
+	import { timeConfig } from '$lib/utils/constants/display';
+	import { LocalStorageManager } from '$lib/utils/app/storage';
 	import {
 		CACHED_NOTICE_ID,
 		STALE_NOTICE_ID,
 		parseNotices,
 		visibleNotices,
 		type Notice
-	} from '$lib/utils/notices';
+	} from '$lib/utils/app/notices';
 
 	const { lastSynced, cached = false }: { lastSynced?: string; cached?: boolean } = $props();
 

@@ -1,6 +1,6 @@
 # CI/CD
 
-All automation is GitHub Actions. There are four workflows and six composite actions.
+All automation is GitHub Actions. There are four workflows and seven composite actions.
 
 | Workflow           | Name in the UI                          | Triggers                                                                             |
 | ------------------ | --------------------------------------- | ------------------------------------------------------------------------------------ |
@@ -55,7 +55,7 @@ them with `git add -f`.
 ## `test.yml`
 
 Runs `bunx svelte-kit sync && bun test`, then `bun run check` (svelte-check for `src`,
-`bun check` for `scripts`). Cancels in-progress runs for the same ref. `main` isn't tested here
+`tsc -p scripts` for `scripts`). Cancels in-progress runs for the same ref. `main` isn't tested here
 because `build.yml` tests before deploying.
 
 ## `build.yml`
@@ -106,7 +106,8 @@ flowchart LR
 2. Seed `data.json` and `hashes.json` from `gh-pages`.
 3. `scripts/data/rehash.ts` via the `rehash-dataset` action.
 4. Run the sync up to 3 times, 60 s apart. Exit code 3 (safeguards rejected the data) fails
-   immediately without retrying. The **force** input sets `ALKO_SYNC_FORCE=1`.
+   immediately without retrying. The **force** input sets `ALKO_SYNC_FORCE=1`. Each attempt
+   appends its outcome to `sync-report.ndjson`, uploaded as an artifact even when the job fails.
 5. Upload `data.json`, `hashes.json` and `availability.json` as artifacts.
 
 **og-images** renders and uploads product and category OG images for changed products, updating
@@ -145,6 +146,36 @@ that lands before midnight is a harmless no-op.
 6. Replace `daily/` on `gh-pages`, commit, push.
 7. Purge `daily/archive/index.json` from Cloudflare.
 
+## Run monitoring
+
+`build.yml`, `fetchData.yml` and `archiveDaily.yml` end with a `report` job (`if: always()`, so it
+also runs after a failure or cancellation) that writes one JSON record of the run to R2 with
+`scripts/ci/run-report.ts`. Grafana on the Umami Raspberry Pi pulls the records into Postgres for
+dashboards and alerts. `fetchData.yml` skips the report when it skipped the sync because the
+triggering build failed.
+
+Records live at `ci-runs/v1/YYYY/MM/DD/HHMMSS-<workflow>-<run id>-<attempt>.json`. Keys sort by
+time, so a reader can list everything new with one `start-after` call, and a re-run is a new
+attempt and a new key, so nothing is overwritten. A record holds:
+
+| Field                             | Contents                                                                              |
+| --------------------------------- | ------------------------------------------------------------------------------------- |
+| `workflow`, `runId`, `runAttempt` | Workflow file name (`fetchData`), run id and attempt; `runUrl` links to the attempt   |
+| `event`, `sha`, `ref`             | What triggered it (`schedule`, `push`, `workflow_run`, `workflow_dispatch`)           |
+| `status`                          | `success`, `failure` or `cancelled`, from the results of the jobs the report needs    |
+| `startedAt`, `durationSeconds`    | Run start and time up to the report                                                   |
+| `jobs`                            | Each job's conclusion and duration, and its steps' conclusions and durations          |
+| `failedSteps`                     | `job › step` for every failed step, including `continue-on-error` ones (OG images)    |
+| `sync` (fetchData)                | One entry per sync attempt: `outcome`, product and store counts, `stats`, phase times |
+
+Sync outcomes are `synced`, `incomplete_fetch`, `empty_fetch`, `stores_failed`,
+`no_existing_dataset`, `safeguards_rejected` and `error` (a crash, or any unexpected exit).
+
+The report is best-effort: the script logs any error and exits 0, so it can't fail a run. Job and
+step timings come from the GitHub API with the job's token (`actions: read`). The bucket's public
+domain serves these objects by exact key like any other, so they hold nothing that isn't already
+in the public Actions logs.
+
 ## Composite actions
 
 | Action              | Does                                                                                                                       |
@@ -155,6 +186,7 @@ that lands before midnight is a harmless no-op.
 | `run-daily-tests`   | `bun test tests/daily tests/site`: the pinned-manifest guard before any bake                                               |
 | `daily-og`          | Renders and uploads today's Daily card, then writes the `daily/index.html` stub. Stops before the stub if the upload fails |
 | `git-bot-identity`  | Commits as `github-actions[bot]`                                                                                           |
+| `report-run`        | Writes the run record to R2 (see [Run monitoring](#run-monitoring)). Used by each workflow's `report` job                  |
 
 ## Secrets and variables
 
@@ -162,11 +194,11 @@ that lands before midnight is a harmless no-op.
 | ------------------------- | -------- | ------------------------------ | ----------------------------------------------------------- |
 | `CLOUDFLARE_PURGE_KEY`    | secret   | fetchData, build, archiveDaily | Cloudflare API token with cache purge permission            |
 | `CF_ZONE`                 | secret   | fetchData, build, archiveDaily | Zone id of `alkometriikka.fi` (passed as `CLOUDFLARE_ZONE`) |
-| `CF_R2_ACCESS_KEY_ID`     | secret   | fetchData, archiveDaily        | R2 S3 access key                                            |
-| `CF_R2_SECRET_ACCESS_KEY` | secret   | fetchData, archiveDaily        | R2 S3 secret                                                |
-| `CF_R2_ACCOUNT_ID`        | secret   | fetchData, archiveDaily        | Cloudflare account id, part of the S3 endpoint              |
-| `CF_R2_BUCKET`            | variable | fetchData, archiveDaily        | Bucket name (default `alkometriikka-og`)                    |
-| `CF_R2_REGION`            | variable | fetchData, archiveDaily        | R2 jurisdiction (default `eu`)                              |
+| `CF_R2_ACCESS_KEY_ID`     | secret   | fetchData, archiveDaily, build | R2 S3 access key                                            |
+| `CF_R2_SECRET_ACCESS_KEY` | secret   | fetchData, archiveDaily, build | R2 S3 secret                                                |
+| `CF_R2_ACCOUNT_ID`        | secret   | fetchData, archiveDaily, build | Cloudflare account id, part of the S3 endpoint              |
+| `CF_R2_BUCKET`            | variable | fetchData, archiveDaily, build | Bucket name (default `alkometriikka-og`)                    |
+| `CF_R2_REGION`            | variable | fetchData, archiveDaily, build | R2 jurisdiction (default `eu`)                              |
 | `OG_CDN_BASE`             | variable | fetchData, archiveDaily        | Public bucket URL (default `https://cdn.alkometriikka.fi`)  |
 | `GITHUB_TOKEN`            | built-in | build                          | Push to `gh-pages`                                          |
 

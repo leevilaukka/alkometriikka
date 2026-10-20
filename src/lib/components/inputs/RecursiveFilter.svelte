@@ -1,8 +1,8 @@
 <script lang="ts">
 	import RecursiveFilter from './RecursiveFilter.svelte';
 	import StringInput from '../inputs/StringInput.svelte';
-	import { getNestedSubFilter } from '$lib/utils/filters';
-	import { headerToDisplayName } from '$lib/utils/helpers';
+	import { getNestedSubFilter } from '$lib/utils/catalog/filters';
+	import { headerToDisplayName } from '$lib/utils/format/labels';
 	import type { FilterValues, ColumnNames } from '$lib/types';
 	import type { Kaljakori } from '$lib/alko';
 

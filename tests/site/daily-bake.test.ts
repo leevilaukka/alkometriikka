@@ -10,7 +10,7 @@ import {
 } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { AllColumns } from '$lib/utils/constants';
+import { AllColumns } from '$lib/utils/constants/columns';
 import type { PriceListItem } from '$lib/types';
 import { DAILY_GAME_VERSION } from '$lib/daily/questions';
 import type { ArchiveGame, ArchiveIndex, DailyGameManifest } from '$lib/daily/manifest';

@@ -1,7 +1,7 @@
 import type { Snippet } from 'svelte';
 import { writable } from 'svelte/store';
-import { LocalStorageKeys } from './utils/constants';
-import { LocalStorageManager } from './utils/storage';
+import { LocalStorageKeys } from './utils/constants/app';
+import { LocalStorageManager } from './utils/app/storage';
 
 export let personalInfo = $state(
 	LocalStorageManager.getItem(LocalStorageKeys.PersonalInfo) || { gender: null, weight: null }

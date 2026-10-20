@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test';
-import { AllColumns } from '$lib/utils/constants';
+import { AllColumns } from '$lib/utils/constants/columns';
 import type { PriceListItem } from '$lib/types';
 import { createRng } from '$lib/daily/rng';
 import { DAILY_GAME_VERSION, DAILY_QUESTION_COUNT, generateDailyGame } from '$lib/daily/questions';

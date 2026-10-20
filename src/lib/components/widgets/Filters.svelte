@@ -1,8 +1,10 @@
 <script lang="ts">
 	import type { Kaljakori } from '$lib/alko';
 	import { twMerge } from 'tailwind-merge';
-	import { components } from '$lib/utils/styles';
-	import { ContextKeys, shownFilters as filters, AllColumns } from '$lib/utils/constants';
+	import { components } from '$lib/utils/ui/styles';
+	import { ContextKeys } from '$lib/utils/constants/app';
+	import { shownFilters as filters } from '$lib/utils/constants/display';
+	import { AllColumns } from '$lib/utils/constants/columns';
 	import NumberInput from '../inputs/NumberInput.svelte';
 	import StringInput from '../inputs/StringInput.svelte';
 	import Icon from './Icon.svelte';
@@ -13,14 +15,14 @@
 		getShownParentFilter,
 		initFilterValues,
 		searchParametersFromFilterValues
-	} from '$lib/utils/filters';
+	} from '$lib/utils/catalog/filters';
 	import type { ColumnNames, FilterValues } from '$lib/types';
 	import { getContext, untrack } from 'svelte';
 	import { get } from 'svelte/store';
-	import type { SearchParamsManager } from '$lib/utils/url';
-	import { headerToDisplayName } from '$lib/utils/helpers';
+	import type { SearchParamsManager } from '$lib/utils/app/url';
+	import { headerToDisplayName } from '$lib/utils/format/labels';
 	import RecursiveFilter from '../inputs/RecursiveFilter.svelte';
-	import { trackFilterUsage } from '$lib/utils/filterAnalytics.svelte';
+	import { trackFilterUsage } from '$lib/utils/app/filterAnalytics.svelte';
 
 	let {
 		kaljakori,

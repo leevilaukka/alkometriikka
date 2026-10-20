@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import { findCategoryBySlugs } from '$lib/utils/categories';
+import { findCategoryBySlugs } from '$lib/utils/catalog/categories';
 
 export async function load({ parent, params }) {
 	const data = await parent();

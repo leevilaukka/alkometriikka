@@ -28,8 +28,8 @@
  */
 import { existsSync } from 'node:fs';
 import { Kaljakori } from '../../src/lib/alko/index.ts';
-import { parseDataset } from '../../src/lib/utils/dataset.ts';
-import { toISODateInTimeZone } from '../../src/lib/utils/sales';
+import { parseDataset } from '../../src/lib/utils/catalog/dataset.ts';
+import { toISODateInTimeZone } from '../../src/lib/utils/catalog/sales';
 import { bakeArchive, bakeManifests } from './daily-bake.ts';
 
 /** When running with `--dev` we operate on the local static folder. Mirrors the sync scripts. */

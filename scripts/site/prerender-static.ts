@@ -9,7 +9,7 @@ import {
 	STATIC_PAGES,
 	storeAddress,
 	storeDescription
-} from '../../src/lib/utils/seo.ts';
+} from '../../src/lib/utils/app/seo.ts';
 import type { AvailabilityData, StoreData } from '../data/types';
 
 /**

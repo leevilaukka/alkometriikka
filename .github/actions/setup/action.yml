@@ -18,11 +18,10 @@ runs:
       uses: actions/cache@v4
       with:
         path: |
-          ~/.bun
-          node_modules
-        key: ${{ runner.os }}-bun-${{ hashFiles('bun.lock') }}
+          ~/.bun/install/cache
+        key: ${{ runner.os }}-bun-pkgs-${{ hashFiles('bun.lock') }}
         restore-keys: |
-          ${{ runner.os }}-bun-
+          ${{ runner.os }}-bun-pkgs-
 
     - name: Install dependencies
       shell: bash

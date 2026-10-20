@@ -11,12 +11,15 @@
 		getStoreDistance,
 		isStoreOpen,
 		rankStoresByDistance
-	} from '$lib/utils/availability';
-	import { generateTitle, setSEO } from '$lib/utils/helpers';
-	import { staticPage } from '$lib/utils/seo';
-	import { requestUserLocation } from '$lib/utils/location';
-	import { needsOrientationPermission, requestOrientationPermission } from '$lib/utils/orientation';
-	import { components } from '$lib/utils/styles';
+	} from '$lib/utils/catalog/availability';
+	import { generateTitle, setSEO } from '$lib/utils/app/meta';
+	import { staticPage } from '$lib/utils/app/seo';
+	import { requestUserLocation } from '$lib/utils/device/location';
+	import {
+		needsOrientationPermission,
+		requestOrientationPermission
+	} from '$lib/utils/device/orientation';
+	import { components } from '$lib/utils/ui/styles';
 
 	let { data } = $props();
 

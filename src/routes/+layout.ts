@@ -1,12 +1,12 @@
 import { resolve } from '$app/paths';
-import { parseDataset } from '$lib/utils/dataset';
-import { parseAvailability } from '$lib/utils/availability';
+import { parseDataset } from '$lib/utils/catalog/dataset';
+import { parseAvailability } from '$lib/utils/catalog/availability';
 import type { AvailabilityData } from '$lib/types';
 import { Kaljakori } from '$lib/alko';
 import { LazyAvailability } from '$lib/alko/availability.svelte';
 import { personalInfo } from '$lib/global.svelte';
 import { dev } from '$app/env';
-import { isCachedResponse } from '$lib/utils/offline';
+import { isCachedResponse } from '$lib/utils/app/offline';
 
 export const ssr = false;
 export const prerender = false;

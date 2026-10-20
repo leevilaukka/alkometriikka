@@ -2,8 +2,8 @@
 	import Compare from '$lib/components/views/Compare.svelte';
 	import { page } from '$app/state';
 	import { onMount } from 'svelte';
-	import { compareIdsFromParam } from '$lib/utils/compare';
-	import { sendAnalyticsEvent } from '$lib/utils/helpers';
+	import { compareIdsFromParam } from '$lib/utils/user/compare';
+	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 	import type { PriceListItem } from '$lib/types';
 
 	let { data } = $props();

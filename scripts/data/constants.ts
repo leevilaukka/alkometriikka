@@ -1,5 +1,5 @@
 import { CryptoHasher } from 'bun';
-import { formatFoodPairings } from '../../src/lib/utils/food.ts';
+import { formatFoodPairings } from '../../src/lib/utils/catalog/food.ts';
 
 export const LEGACY_HEADERS = [
 	'Numero',

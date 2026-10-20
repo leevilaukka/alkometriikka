@@ -1,17 +1,23 @@
 <script lang="ts">
-	import { appPath } from '$lib/utils/paths';
+	import { appPath } from '$lib/utils/app/paths';
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
 	import { getContext, untrack } from 'svelte';
 	import SvelteVirtualList from '@humanspeak/svelte-virtual-list';
 	import type { Kaljakori } from '$lib/alko';
 	import type { AvailabilityData, ListObj } from '$lib/types';
-	import { AllColumns, AUTO_STORE_ID, ContextKeys } from '$lib/utils/constants';
-	import { categoryFeedPath, categoryTitle, type CategoryNode } from '$lib/utils/categories';
-	import { generateTitle, sendAnalyticsEvent, setSEO } from '$lib/utils/helpers';
-	import { formatValue } from '$lib/utils/format';
-	import { staticPage } from '$lib/utils/seo';
-	import { recentPriceChanges, type PriceChange } from '$lib/utils/metrics';
+	import { AllColumns } from '$lib/utils/constants/columns';
+	import { AUTO_STORE_ID, ContextKeys } from '$lib/utils/constants/app';
+	import {
+		categoryFeedPath,
+		categoryTitle,
+		type CategoryNode
+	} from '$lib/utils/catalog/categories';
+	import { generateTitle, setSEO } from '$lib/utils/app/meta';
+	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
+	import { formatValue } from '$lib/utils/format/format';
+	import { staticPage } from '$lib/utils/app/seo';
+	import { recentPriceChanges, type PriceChange } from '$lib/utils/stats/metrics';
 	import {
 		countPriceChangesByCategory,
 		filterPriceChangesByDirection,
@@ -26,8 +32,8 @@
 		DEFAULT_PRICE_CHANGE_WINDOW,
 		PRICE_CHANGE_WINDOWS,
 		type PriceChangeDirection
-	} from '$lib/utils/priceChanges';
-	import type { SearchParamsManager } from '$lib/utils/url';
+	} from '$lib/utils/stats/priceChanges';
+	import type { SearchParamsManager } from '$lib/utils/app/url';
 	import {
 		isLaptop,
 		onlyPreferredStore,
@@ -36,10 +42,10 @@
 		searchQuery,
 		userLocation
 	} from '$lib/global.svelte';
-	import { resolvePreferredStore } from '$lib/utils/availability';
-	import { keepAutoLocationFresh } from '$lib/utils/location';
-	import { addToList } from '$lib/utils/lists';
-	import { components } from '$lib/utils/styles';
+	import { resolvePreferredStore } from '$lib/utils/catalog/availability';
+	import { keepAutoLocationFresh } from '$lib/utils/device/location';
+	import { addToList } from '$lib/utils/user/lists';
+	import { components } from '$lib/utils/ui/styles';
 	import { twMerge } from 'tailwind-merge';
 	import Icon from '../widgets/Icon.svelte';
 	import Breadcrumb from '../widgets/Breadcrumb.svelte';

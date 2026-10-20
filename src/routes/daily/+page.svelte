@@ -1,6 +1,7 @@
 <script lang="ts">
-	import { AllColumns, LocalStorageKeys } from '$lib/utils/constants';
-	import { components } from '$lib/utils/styles';
+	import { AllColumns } from '$lib/utils/constants/columns';
+	import { LocalStorageKeys } from '$lib/utils/constants/app';
+	import { components } from '$lib/utils/ui/styles';
 	import type { PriceListItem } from '$lib/types';
 	import { createRng } from '$lib/daily/rng';
 	import {
@@ -28,12 +29,14 @@
 		saveGame,
 		saveUnlimitedProgress
 	} from '$lib/daily/storage';
-	import { LocalStorageManager } from '$lib/utils/storage';
+	import { LocalStorageManager } from '$lib/utils/app/storage';
 	import { tick } from 'svelte';
 	import { dev } from '$app/environment';
 	import { base, resolve } from '$app/paths';
 	import { goto } from '$app/navigation';
-	import { generateTitle, handleShare, sendAnalyticsEvent, setSEO } from '$lib/utils/helpers';
+	import { generateTitle, setSEO } from '$lib/utils/app/meta';
+	import { handleShare } from '$lib/utils/app/share';
+	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 	import ProductImage from '$lib/components/widgets/ProductImage.svelte';
 	import { twMerge } from 'tailwind-merge';
 	import type { PageProps } from './$types';

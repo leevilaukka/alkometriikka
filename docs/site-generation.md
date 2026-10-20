@@ -20,7 +20,7 @@ full app) with:
 
 The shared renderer is `renderStub()` in `scripts/lib/stub.ts`; HTML/JSON escaping, the marker
 replacement and a small minifier are in `scripts/lib/html.ts`. Page copy (descriptions, titles)
-comes from `src/lib/utils/seo.ts` and `categories.ts`, the same functions the client uses for
+comes from `src/lib/utils/app/seo.ts` and `categories.ts`, the same functions the client uses for
 `setSEO()`.
 
 ### Product pages

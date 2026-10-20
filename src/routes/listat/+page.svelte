@@ -2,9 +2,9 @@
 	import List from '$lib/components/views/List.svelte';
 	import AllLists from '$lib/components/widgets/AllLists.svelte';
 	import Icon from '$lib/components/widgets/Icon.svelte';
-	import { generateTitle, setSEO } from '$lib/utils/helpers.js';
-	import { staticPage } from '$lib/utils/seo';
-	import { components } from '$lib/utils/styles';
+	import { generateTitle, setSEO } from '$lib/utils/app/meta';
+	import { staticPage } from '$lib/utils/app/seo';
+	import { components } from '$lib/utils/ui/styles';
 	import { twMerge } from 'tailwind-merge';
 
 	const { data } = $props();

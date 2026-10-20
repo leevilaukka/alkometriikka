@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { appPath } from '$lib/utils/paths';
+	import { appPath } from '$lib/utils/app/paths';
 	import { resolve } from '$app/paths';
 	import '../app.css';
 	import { dev } from '$app/environment';
-	import { ContextKeys, LocalStorageKeys } from '$lib/utils/constants';
+	import { ContextKeys, LocalStorageKeys } from '$lib/utils/constants/app';
 	import {
 		compareHighlightDifferences,
 		compareProductIds,
@@ -20,22 +20,23 @@
 	} from '$lib/global.svelte';
 	import logo from '$lib/assets/images/Logo/0.5x/Logo_rounded@0.5x.png';
 	import { twMerge } from 'tailwind-merge';
-	import { components } from '$lib/utils/styles';
+	import { components } from '$lib/utils/ui/styles';
 	import Icon from '$lib/components/widgets/Icon.svelte';
 	import { beforeNavigate, afterNavigate } from '$app/navigation';
 	import { page } from '$app/state';
-	import { SearchParamsManager } from '$lib/utils/url';
-	import { markRouterReady, shareTypeFromRoute, trackSharedView } from '$lib/utils/helpers';
+	import { SearchParamsManager } from '$lib/utils/app/url';
+	import { markRouterReady } from '$lib/utils/app/url';
+	import { shareTypeFromRoute, trackSharedView } from '$lib/utils/app/share';
 	import { setContext } from 'svelte';
 	import Settings from '$lib/components/widgets/Settings/Index.svelte';
 	import CompareBar from '$lib/components/widgets/CompareBar.svelte';
 	import CommandPalette from '$lib/components/widgets/CommandPalette.svelte';
 	import NoticeBanner from '$lib/components/widgets/NoticeBanner.svelte';
 	import InstallBanner from '$lib/components/widgets/InstallBanner.svelte';
-	import { LocalStorageManager } from '$lib/utils/storage';
+	import { LocalStorageManager } from '$lib/utils/app/storage';
 	import type { IconName } from '$lib/icons';
-	import { loadUpdateOnNavigate } from '$lib/utils/pwa.svelte';
-	import { loadFlags } from '$lib/utils/flags.svelte';
+	import { loadUpdateOnNavigate } from '$lib/utils/app/pwa.svelte';
+	import { loadFlags } from '$lib/utils/flags/flags.svelte';
 
 	let { children, data } = $props();
 	loadFlags();
@@ -185,36 +186,33 @@
 		if (extraMenu?.open && !event.composedPath().includes(extraMenu)) extraMenu.open = false;
 	}
 
-	const extraItems: { href: string; icon: IconName; name: string }[] = [
+	type MenuItem = { href: string; icon: IconName; name: string };
+	const menuGroups: { label: string; items: MenuItem[] }[] = [
 		{
-			href: '/kategoriat/',
-			icon: 'wine',
-			name: 'Kategoriat'
+			label: 'Selaa',
+			items: [
+				{ href: '/kategoriat/', icon: 'wine', name: 'Kategoriat' },
+				{ href: '/hinnanmuutokset/', icon: 'trending_down', name: 'Hinnanmuutokset' },
+				{ href: '/tilastot/', icon: 'stats', name: 'Tilastot' }
+			]
 		},
 		{
-			href: '/hinnanmuutokset/',
-			icon: 'trending_down',
-			name: 'Hinnanmuutokset'
+			label: 'Omat',
+			items: [{ href: '/listat/', icon: 'list_ul', name: 'Listat' }]
 		},
 		{
-			href: '/myymalat/',
-			icon: 'store',
-			name: 'Myymälät'
+			label: 'Myymälät',
+			items: [
+				{ href: '/myymalat/', icon: 'store', name: 'Myymälät' },
+				{ href: '/kompassi/', icon: 'compass', name: 'Kompassi' }
+			]
 		},
 		{
-			href: '/daily/arkisto/',
-			icon: 'archive',
-			name: 'Daily-arkisto'
-		},
-		{
-			href: '/laskin/',
-			icon: 'calculator',
-			name: 'Laskin'
-		},
-		{
-			href: '/tilastot/',
-			icon: 'stats',
-			name: 'Tilastot'
+			label: 'Työkalut & pelit',
+			items: [
+				{ href: '/laskin/', icon: 'calculator', name: 'Laskin' },
+				{ href: '/daily/arkisto/', icon: 'archive', name: 'Daily-arkisto' }
+			]
 		}
 	];
 
@@ -319,17 +317,35 @@
 						{#if !$isMobile}<span class="text-sm">Lisää</span>{/if}<Icon name="menu" />
 					</summary>
 					<div
-						class="absolute end-0 top-full z-20 mt-2 flex min-w-40 flex-col gap-1 rounded border border-primary bg-primary p-1 shadow-lg"
+						class="absolute end-0 top-full z-20 mt-2 flex w-56 flex-col rounded border border-primary bg-primary p-1.5 shadow-lg"
 					>
-						{#each extraItems as item}
-							<a
-								href={appPath(item.href)}
-								onclick={closeExtraMenu}
-								class={twMerge(components.button(), 'w-full justify-start')}
+						{#each menuGroups as group, index (group.label)}
+							<p
+								id={`menu-${index}`}
+								class={twMerge(
+									'px-2 pb-1 text-xs font-semibold tracking-wide text-secondary uppercase',
+									index > 0 ? 'mt-1.5 border-t border-primary pt-2.5' : 'pt-1'
+								)}
 							>
-								<Icon name={item.icon} />
-								<span>{item.name}</span>
-							</a>
+								{group.label}
+							</p>
+							<ul aria-labelledby={`menu-${index}`}>
+								{#each group.items as item (item.href)}
+									<li>
+										<a
+											href={appPath(item.href)}
+											onclick={closeExtraMenu}
+											aria-current={page.url.pathname.startsWith(appPath(item.href))
+												? 'page'
+												: undefined}
+											class="flex items-center gap-2.5 rounded px-2 py-1.5 text-sm hover:bg-secondary aria-[current=page]:bg-secondary aria-[current=page]:font-semibold"
+										>
+											<Icon name={item.icon} class="text-base" />
+											<span class="flex-1">{item.name}</span>
+										</a>
+									</li>
+								{/each}
+							</ul>
 						{/each}
 					</div>
 				</details>

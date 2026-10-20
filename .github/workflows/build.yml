@@ -13,8 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      pages: write
-      id-token: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -188,40 +186,32 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # GitHub Pages publishes the push a minute or so later. Purging before that lets a request in
-      # between cache the old service worker at the edge again, for hours. Asks GitHub rather than
-      # the site, since Cloudflare may not let the runner through.
-      - name: Wait for GitHub Pages to publish this deploy
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          deployed=$(git rev-parse HEAD)
-          for i in $(seq 1 30); do
-            build=$(gh api "repos/${{ github.repository }}/pages/builds/latest" \
-              --jq '"\(.commit) \(.status)"' 2>/dev/null || true)
-            if [ "$build" = "$deployed built" ]; then
-              echo "✅ Published after about $((i * 10)) s"
-              exit 0
-            fi
-            sleep 10
-          done
-          echo "⚠️  Pages hadn't published after 5 minutes (latest build: $build); purging anyway."
+      # Not deployed here: the Download Price List run that follows this one
+      # (workflow_run) rebuilds the product pages on top of this push and does
+      # the single Pages deploy and cache purge, so a push is never deployed twice.
 
-      # Notices are edited on main and deployed with the site; purge so a new
-      # notice reaches visitors right away instead of after the edge cache expires.
-      # The edge keeps .js for hours, and a stale service worker would try to
-      # precache _app files this deploy removed.
-      - name: Purge Cloudflare cache for notices and service worker
-        env:
-          CLOUDFLARE_PURGE_KEY: ${{ secrets.CLOUDFLARE_PURGE_KEY }}
-          CLOUDFLARE_ZONE: ${{ secrets.CF_ZONE }}
-        run: |
-          if [ -z "$CLOUDFLARE_PURGE_KEY" ] || [ -z "$CLOUDFLARE_ZONE" ]; then
-            echo "ℹ️  No purge credentials; skipping cache purge."
-            exit 0
-          fi
-          curl -sS -X POST "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE}/purge_cache" \
-            -H "Authorization: Bearer ${CLOUDFLARE_PURGE_KEY}" \
-            -H "Content-Type: application/json" \
-            --data '{"files":["https://alkometriikka.fi/notices.json","https://alkometriikka.fi/flags.json","https://alkometriikka.fi/service-worker.js"]}' || \
-            echo "⚠️  Cache purge failed; continuing."
+  # Records the run (result, timings) in R2 for build monitoring.
+  report:
+    needs: [build_site]
+    if: always()
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Bun
+        uses: ./.github/actions/setup
+
+      - name: Record run
+        uses: ./.github/actions/report-run
+        with:
+          needs: ${{ toJSON(needs) }}
+          github-token: ${{ github.token }}
+          r2-access-key-id: ${{ secrets.CF_R2_ACCESS_KEY_ID }}
+          r2-secret-access-key: ${{ secrets.CF_R2_SECRET_ACCESS_KEY }}
+          r2-account-id: ${{ secrets.CF_R2_ACCOUNT_ID }}
+          r2-bucket: ${{ vars.CF_R2_BUCKET }}
+          r2-region: ${{ vars.CF_R2_REGION }}

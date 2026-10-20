@@ -57,7 +57,8 @@ import {
 	valuesEqual,
 	withoutRemovedFlag
 } from './lifecycle.ts';
-import { toNumber } from '../../src/lib/utils/number.ts';
+import { toNumber } from '../../src/lib/utils/format/number';
+import { appendSyncReport, createSyncReport, elapsedMs, type SyncStats } from './sync-report.ts';
 import { DATA_PATH, HASHES_PATH, readDataset, writeDataset } from './dataset-file.ts';
 import { checkSyncSafety, missingCriticalColumns, restoreCriticalColumns } from './safeguards.ts';
 
@@ -107,6 +108,13 @@ const FORCE = truthyEnvVar('ALKO_SYNC_FORCE');
 /** Exit code for a sync refused by the safeguards; the workflow doesn't retry it. */
 const EXIT_UNSAFE = 3;
 
+/** Every exit appends this attempt's outcome to `ALKO_SYNC_REPORT`, if set (see sync-report.ts). */
+const syncReport = createSyncReport(FORCE);
+const SYNC_REPORT_PATH = process.env.ALKO_SYNC_REPORT;
+if (SYNC_REPORT_PATH) {
+	process.on('exit', (code) => appendSyncReport(SYNC_REPORT_PATH, syncReport, code));
+}
+
 interface Config {
 	detailConcurrency: number;
 	searchConcurrency: number;
@@ -148,18 +156,6 @@ function loadConfig(): Config {
 		detailVerifyCooldownDays,
 		detailVerifyBatch
 	};
-}
-
-interface SyncStats {
-	unchanged: number;
-	updated: number;
-	added: number;
-	removed: number;
-	failed: number;
-	filtered: number;
-	filteredRemoved: number;
-	verified: number;
-	verifyFailed: number;
 }
 
 // ============================================================================
@@ -479,14 +475,20 @@ async function sync(): Promise<void> {
 		console.log(`  🔧 Config:`, config);
 	}
 
+	const fetchStart = performance.now();
 	const [searchResult, existing, stores] = await Promise.all([
 		loadSearchProducts(config),
 		loadExistingData(),
 		loadStores(config)
 	]);
+	syncReport.phasesMs.fetch = elapsedMs(fetchStart);
 
 	const searchProducts = searchResult.products;
 	const existingProducts = existing.products ?? {};
+	syncReport.apiProducts = searchProducts.length;
+	syncReport.expectedTotal = searchResult.expectedTotal;
+	syncReport.existingProducts = Object.keys(existingProducts).length;
+	syncReport.stores = stores ? Object.keys(stores).length : null;
 
 	// Bail out before touching the dataset if the search fetch was incomplete.
 	// A partial fetch is missing live products, so proceeding would overwrite the
@@ -499,6 +501,7 @@ async function sync(): Promise<void> {
 				`Aborting sync without writing the dataset to avoid overwriting existing data with a ` +
 				`partial result. Re-run the sync once the API returns the full product list.`
 		);
+		syncReport.outcome = 'incomplete_fetch';
 		process.exit(1);
 	}
 
@@ -512,6 +515,7 @@ async function sync(): Promise<void> {
 				`avoid overwriting existing data with an empty result. Re-run the sync once the API ` +
 				`returns the product list.`
 		);
+		syncReport.outcome = 'empty_fetch';
 		process.exit(1);
 	}
 
@@ -519,6 +523,7 @@ async function sync(): Promise<void> {
 		console.warn(
 			'\n⚠️  Store fetch failed or returned no stores. Aborting sync without writing either dataset.'
 		);
+		syncReport.outcome = 'stores_failed';
 		process.exit(1);
 	}
 
@@ -530,6 +535,7 @@ async function sync(): Promise<void> {
 			'\n🛑 No existing dataset was loaded. Refusing to replace the deployed data with a fresh ' +
 				'one; re-run with ALKO_SYNC_FORCE=1 if that is intended.'
 		);
+		syncReport.outcome = 'no_existing_dataset';
 		process.exit(EXIT_UNSAFE);
 	}
 
@@ -549,6 +555,7 @@ async function sync(): Promise<void> {
 		verified: 0,
 		verifyFailed: 0
 	};
+	syncReport.stats = stats;
 
 	// Cheap first pass: hash the search-only fields and skip anything unchanged.
 	const pending: Array<{ product: SearchProductData; hash: string; previous?: MigratedProduct }> =
@@ -601,6 +608,7 @@ async function sync(): Promise<void> {
 	);
 
 	// Expensive second pass: fetch full details only for new/changed products.
+	const detailsStart = performance.now();
 	const totalPending = pending.length;
 	let processed = 0;
 	await mapWithConcurrency(
@@ -681,6 +689,7 @@ async function sync(): Promise<void> {
 			}
 		}
 	);
+	syncReport.phasesMs.details = elapsedMs(detailsStart);
 
 	// Lazy third pass: re-verify details for stale-but-unchanged products. Cold
 	// detail-only fields (producer, vintage, grapes, ...) can drift without ever
@@ -709,6 +718,7 @@ async function sync(): Promise<void> {
 		);
 
 		const today = new Date().toISOString().slice(0, 10);
+		const verifyStart = performance.now();
 		await mapWithConcurrency(
 			verifyBatch,
 			config.detailConcurrency,
@@ -767,6 +777,7 @@ async function sync(): Promise<void> {
 				}
 			}
 		);
+		syncReport.phasesMs.verify = elapsedMs(verifyStart);
 	}
 
 	// Never delete products: carry over every product from the existing dataset
@@ -800,6 +811,7 @@ async function sync(): Promise<void> {
 		apiProducts: relevantApiProducts.length,
 		stockedApiProducts: relevantApiProducts.filter((product) => product.storeId?.length > 0).length
 	});
+	syncReport.safeguardProblems = problems;
 	if (problems.length > 0) {
 		console.warn(
 			`\n🛑 Safeguards rejected this sync:\n${problems.map((p) => `  • ${p}`).join('\n')}`
@@ -808,6 +820,7 @@ async function sync(): Promise<void> {
 			console.warn(
 				'Leaving the existing data untouched. If the change is real, re-run with ALKO_SYNC_FORCE=1.'
 			);
+			syncReport.outcome = 'safeguards_rejected';
 			process.exit(EXIT_UNSAFE);
 		}
 		console.warn('ALKO_SYNC_FORCE is set, writing anyway.');
@@ -851,10 +864,15 @@ async function sync(): Promise<void> {
 		product: Object.fromEntries(searchProducts.map((product) => [product.id, product.storeId]))
 	};
 
+	const writeStart = performance.now();
 	await Promise.all([
 		writeDataset(result, DATA_PATH, HASHES_PATH),
 		Bun.write(AVAILABILITY_PATH, JSON.stringify(availability))
 	]);
+	syncReport.phasesMs.write = elapsedMs(writeStart);
+	syncReport.outcome = 'synced';
+	syncReport.totalProducts = Object.keys(products).length;
+	syncReport.hasChanges = hasChanges;
 	printSummary(stats, Object.keys(products).length);
 	console.log(`✅ Saved ${AVAILABILITY_PATH}`);
 	// The deployed copies are purged from Cloudflare's cache by fetchData.yml once
@@ -878,5 +896,6 @@ function printSummary(stats: SyncStats, total: number): void {
 
 sync().catch((error) => {
 	console.error('❌ Fatal error:', error);
+	syncReport.error = error instanceof Error ? error.message : String(error);
 	process.exit(1);
 });

@@ -1,9 +1,10 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import { isLaptop, pageBottomBar, personalInfo, searchQuery, isMobile } from '$lib/global.svelte';
-	import { components } from '$lib/utils/styles';
-	import { handleShare, sendAnalyticsEvent } from '$lib/utils/helpers';
-	import { formatValue } from '$lib/utils/format';
+	import { components } from '$lib/utils/ui/styles';
+	import { handleShare } from '$lib/utils/app/share';
+	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
+	import { formatValue } from '$lib/utils/format/format';
 	import type { Kaljakori } from '$lib/alko';
 	import {
 		getListById,
@@ -12,7 +13,7 @@
 		removeFromList,
 		saveList,
 		updateQuantity
-	} from '$lib/utils/lists';
+	} from '$lib/utils/user/lists';
 	import Icon from '../widgets/Icon.svelte';
 	import SvelteVirtualList from '@humanspeak/svelte-virtual-list';
 	import { twMerge } from 'tailwind-merge';
@@ -20,25 +21,24 @@
 	import {
 		shownColumnsToHighlight,
 		defaultSortingColumn,
-		AllColumns,
 		shownSortingKeys,
-		defaultSortingOrderMap,
-		ContextKeys,
-		GenderOptionsMap
-	} from '$lib/utils/constants';
-	import { headerToDisplayName, sortingOrderToString } from '$lib/utils/helpers';
+		defaultSortingOrderMap
+	} from '$lib/utils/constants/display';
+	import { AllColumns } from '$lib/utils/constants/columns';
+	import { ContextKeys, GenderOptionsMap } from '$lib/utils/constants/app';
+	import { headerToDisplayName, sortingOrderToString } from '$lib/utils/format/labels';
 	import Popup from '../widgets/Popup.svelte';
 	import AllLists from '../widgets/AllLists.svelte';
-	import { addToList } from '$lib/utils/lists';
+	import { addToList } from '$lib/utils/user/lists';
 	import Filters from '../widgets/Filters.svelte';
 	import { goto } from '$app/navigation';
 	import { getContext, untrack } from 'svelte';
-	import { initFilterValues } from '$lib/utils/filters';
-	import type { SearchParamsManager } from '$lib/utils/url';
+	import { initFilterValues } from '$lib/utils/catalog/filters';
+	import type { SearchParamsManager } from '$lib/utils/app/url';
 	import ProductPreview from '../widgets/ProductPreview.svelte';
 	import BottomBar from '../widgets/BottomBar.svelte';
 	import FilterButton from '../widgets/FilterButton.svelte';
-	import { compareURL, MAX_COMPARE_PRODUCTS } from '$lib/utils/compare';
+	import { compareURL, MAX_COMPARE_PRODUCTS } from '$lib/utils/user/compare';
 
 	let activeFilters: ColumnNames[] = $state([]);
 

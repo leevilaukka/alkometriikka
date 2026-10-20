@@ -2,8 +2,8 @@
 	import { resolve } from '$app/paths';
 	import type { ChartConfiguration } from 'chart.js';
 	import type { Kaljakori } from '$lib/alko';
-	import { AllColumns } from '$lib/utils/constants';
-	import { formatValue } from '$lib/utils/format';
+	import { AllColumns } from '$lib/utils/constants/columns';
+	import { formatValue } from '$lib/utils/format/format';
 	import { theme } from '$lib/global.svelte';
 	import type { ColumnNames, PersonalInfo } from '$lib/types';
 	import {
@@ -14,7 +14,7 @@
 		formatFinNumber,
 		subcategoryDistribution,
 		topCategories
-	} from '$lib/utils/stats';
+	} from '$lib/utils/stats/stats';
 	import ChartCard from '$lib/components/widgets/ChartCard.svelte';
 
 	const {

@@ -4,11 +4,12 @@
 	import StoreCompass from '$lib/components/widgets/StoreCompass.svelte';
 	import { preferredStoreId } from '$lib/global.svelte';
 	import type { AvailabilityStore } from '$lib/types';
-	import { getStoreCity, isStoreOpen } from '$lib/utils/availability.js';
-	import { AllColumns } from '$lib/utils/constants';
-	import { generateTitle, sendAnalyticsEvent, setSEO } from '$lib/utils/helpers';
-	import { storeDescription } from '$lib/utils/seo';
-	import { components } from '$lib/utils/styles';
+	import { getStoreCity, isStoreOpen } from '$lib/utils/catalog/availability.js';
+	import { AllColumns } from '$lib/utils/constants/columns';
+	import { generateTitle, setSEO } from '$lib/utils/app/meta';
+	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
+	import { storeDescription } from '$lib/utils/app/seo';
+	import { components } from '$lib/utils/ui/styles';
 	import { twMerge } from 'tailwind-merge';
 
 	let { data } = $props();

@@ -90,6 +90,7 @@ Bun loads `.env` automatically. Copy `.env.example` for the R2 credentials.
 | `ALKO_DETAIL_VERIFY_COOLDOWN_DAYS`                                   | sync               | Days before an unchanged product's details are re-verified (default 30)    |
 | `ALKO_DETAIL_VERIFY_BATCH`                                           | sync               | Max re-verifications per run (default 200)                                 |
 | `ALKO_DETAIL_VERIFY_IN_DEV`                                          | sync               | Run the re-verification pass in `--dev` too                                |
+| `ALKO_SYNC_REPORT`, `ALKO_SYNC_ATTEMPT`                              | sync               | Append each attempt's outcome to this file, for run monitoring (CI only)   |
 | `ALKO_PRERENDER_CONCURRENCY`                                         | prerender-products | Parallel page writes (default 32)                                          |
 | `DAILY_AHEAD_DAYS`                                                   | daily              | Future days to pre-bake (default 2)                                        |
 | `DAILY_ALLOW_EMPTY`                                                  | daily              | Allow baking without a seeded `daily/` (new deployments only)              |
@@ -130,7 +131,7 @@ Some tests are guards rather than unit tests, and CI depends on them:
   by the parser.
 - **`tests/site/base-path.test.ts`** fails on `href="/…"`, `goto('/…')`, `fetch('/…')` and
   similar in `src/`. Use `resolve()` / `asset()` from `$app/paths`, or `appPath()` from
-  `$lib/utils/paths` for paths only known as strings.
+  `$lib/utils/app/paths` for paths only known as strings.
 
 CI runs the whole suite on every push and PR (`test.yml`), and `build.yml` runs it before deploying.
 The data sync runs `tests/data tests/alko` first, and every Daily bake runs `tests/daily tests/site`.
@@ -152,12 +153,12 @@ Results and history are in [`notes/load-performance.md`](../notes/load-performan
   Svelte and Tailwind plugins. Run `bun run format`.
 - **Language:** code, comments and commit messages are in English. User-facing text is Finnish.
   Dataset column names stay in Finnish because they are the on-disk schema; refer to them through
-  `AllColumns` / `DatasetColumns` in `src/lib/utils/constants.ts`, never as string literals.
+  `AllColumns` / `DatasetColumns` in `src/lib/utils/constants/columns.ts`, never as string literals.
 - **Svelte 5 runes** (`$state`, `$derived`, `$effect`) throughout. Shared state lives in
   `src/lib/global.svelte.ts`.
 - **Styling:** Tailwind v4 with theme tokens and utilities in `src/app.css` (`bg-primary`,
   `bg-secondary`, `border-primary`, `text-secondary`, brand colors `brand-1`…`brand-4`).
-  Reusable variants are `class-variance-authority` recipes in `src/lib/utils/styles.ts`
+  Reusable variants are `class-variance-authority` recipes in `src/lib/utils/ui/styles.ts`
   (`components.button()`, `components.input()`…), merged with `tailwind-merge`. Dark mode is a
   `.dark` class on `<html>`.
 - **Icons:** an icon font (`src/lib/assets/fonts/icons/`) rendered by `Icon.svelte`; valid names

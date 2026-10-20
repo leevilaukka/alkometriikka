@@ -1,12 +1,17 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import { AllColumns } from '$lib/utils/constants';
-	import { formatValue } from '$lib/utils/format';
-	import { getSaleInfo } from '$lib/utils/sales';
-	import { generateTitle, handleShare, setSEO } from '$lib/utils/helpers';
-	import { components } from '$lib/utils/styles';
-	import { computeComparisonRows, getBestProductNumbers, valuesDiffer } from '$lib/utils/metrics';
-	import { compareURL, removeFromCompare, MAX_COMPARE_PRODUCTS } from '$lib/utils/compare';
+	import { AllColumns } from '$lib/utils/constants/columns';
+	import { formatValue } from '$lib/utils/format/format';
+	import { getSaleInfo } from '$lib/utils/catalog/sales';
+	import { generateTitle, setSEO } from '$lib/utils/app/meta';
+	import { handleShare } from '$lib/utils/app/share';
+	import { components } from '$lib/utils/ui/styles';
+	import {
+		computeComparisonRows,
+		getBestProductNumbers,
+		valuesDiffer
+	} from '$lib/utils/stats/metrics';
+	import { compareURL, removeFromCompare, MAX_COMPARE_PRODUCTS } from '$lib/utils/user/compare';
 	import { compareHighlightDifferences } from '$lib/global.svelte';
 	import { goto } from '$app/navigation';
 	import { twMerge } from 'tailwind-merge';

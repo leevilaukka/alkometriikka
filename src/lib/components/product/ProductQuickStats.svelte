@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { AllColumns } from '$lib/utils/constants';
-	import { formatValue } from '$lib/utils/format';
+	import { AllColumns } from '$lib/utils/constants/columns';
+	import { formatValue } from '$lib/utils/format/format';
 	import type { PriceListItem } from '$lib/types';
 	import { twMerge } from 'tailwind-merge';
 

@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"title": "Alkometriikka feature flags",
-	"description": "Feature flags read by the app at startup. See src/lib/utils/flags.ts.",
+	"description": "Feature flags read by the app at startup. See src/lib/utils/flags/flags.ts.",
 	"type": "object",
 	"required": ["flags"],
 	"additionalProperties": false,

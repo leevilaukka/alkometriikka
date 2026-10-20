@@ -3,8 +3,8 @@
 // This is the content alko.fi doesn't have, so it is what makes a stub worth indexing.
 // Kept free of `$lib` imports and side effects so tests can import it directly.
 
-import type { CategoryNode } from '../../src/lib/utils/categories.ts';
-import type { StoredProduct } from '../../src/lib/utils/dataset.ts';
+import type { CategoryNode } from '../../src/lib/utils/catalog/categories.ts';
+import type { StoredProduct } from '../../src/lib/utils/catalog/dataset.ts';
 
 /** Same constants as the app's calculator (src/lib/utils/alko.ts) */
 const ETHANOL_DENSITY = 789; // g/l

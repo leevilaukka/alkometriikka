@@ -1,4 +1,4 @@
-import { AllColumns } from '$lib/utils/constants';
+import { AllColumns } from '$lib/utils/constants/columns';
 import type { PriceListItem } from '$lib/types';
 import { shuffle } from './rng';
 

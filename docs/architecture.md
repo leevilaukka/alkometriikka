@@ -73,7 +73,7 @@ flowchart LR
     U --> IMG[images.alko.fi<br/>product photos]
 ```
 
-- **GitHub Pages** serves the `gh-pages` branch. The `CNAME` file points it at `alkometriikka.fi`.
+- **GitHub Pages** serves the `gh-pages` branch, deployed by our own workflows (the `.github/actions/deploy-pages` action) rather than the built-in branch deploy. The custom domain `alkometriikka.fi` is set in the repo's Pages settings.
   The branch is not built from `main` directly: workflows assemble it and push to it.
 - **Cloudflare** sits in front of the domain. The workflows purge specific URLs
   (`data.json`, `availability.json`, `rss.xml`, `feed.json`, `notices.json`,
@@ -128,13 +128,21 @@ src/
   lib/alko/           Kaljakori and lazy store availability
   lib/components/     views/, product/, category/, widgets/, inputs/
   lib/daily/          Daily game generator, manifest, scoring, storage
-  lib/utils/          everything else (filters, metrics, sales, SEO copy, storage…)
+  lib/utils/          everything else, grouped by concern:
+                        catalog/    dataset, categories, filters, sales, availability, search
+                        stats/      stats, metrics, price changes
+                        format/     value formatting, labels, number parsing
+                        app/        analytics, share, SEO, storage, URL, PWA, notices
+                        user/       lists, compare
+                        device/     location, compass, orientation
+                        flags/      feature flags
+                        constants/  columns, display config, badges, app keys
   routes/             SvelteKit routes
 static/               files copied as-is into the build (manifest, icons, notices.json…)
 tests/                bun:test suites, mirroring scripts/ and src/lib/
 ```
 
-Several modules under `src/lib/utils/` (`categories.ts`, `seo.ts`, `sales.ts`, `food.ts`,
-`number.ts`, `dataset.ts`) are imported by the Bun scripts as well as the app. They avoid `$lib`
+Several modules under `src/lib/utils/` (`catalog/categories.ts`, `app/seo.ts`, `catalog/sales.ts`,
+`catalog/food.ts`, `format/number.ts`, `catalog/dataset.ts`) are imported by the Bun scripts as well as the app. They avoid `$lib`
 imports and browser globals so both sides share one implementation of slugs, SEO copy, sale
 detection and dataset parsing.

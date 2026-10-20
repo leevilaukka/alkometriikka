@@ -9,7 +9,7 @@ import {
 	findProductCategoryTrail,
 	MIN_CATEGORY_PRODUCTS,
 	type CategoryEntry
-} from '$lib/utils/categories';
+} from '$lib/utils/catalog/categories';
 
 /** `count` active products of the given Tyyppi / Alatyyppi. */
 const entries = (

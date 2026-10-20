@@ -5,9 +5,10 @@
 		DatasetColumns,
 		DrunkColumns,
 		hideFromProductPageStats
-	} from '$lib/utils/constants';
-	import { headerToDisplayName, isNullish, sendAnalyticsEvent } from '$lib/utils/helpers';
-	import { formatValue } from '$lib/utils/format';
+	} from '$lib/utils/constants/columns';
+	import { headerToDisplayName, isNullish } from '$lib/utils/format/labels';
+	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
+	import { formatValue } from '$lib/utils/format/format';
 	import type { PriceListItem } from '$lib/types';
 	import Icon from '../widgets/Icon.svelte';
 	import { twMerge } from 'tailwind-merge';

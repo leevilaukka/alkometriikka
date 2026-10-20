@@ -1,13 +1,14 @@
 <script lang="ts">
-	import { appPath } from '$lib/utils/paths';
+	import { appPath } from '$lib/utils/app/paths';
 	import { lists, searchQuery } from '$lib/global.svelte';
-	import { createList, deleteList, listToURI } from '$lib/utils/lists';
-	import { components } from '$lib/utils/styles';
+	import { createList, deleteList, listToURI } from '$lib/utils/user/lists';
+	import { components } from '$lib/utils/ui/styles';
 	import { twMerge } from 'tailwind-merge';
 	import Icon from './Icon.svelte';
 	import type { ListObj } from '$lib/types';
-	import { isSimilarString } from '$lib/utils/search';
-	import { handleShare, sendAnalyticsEvent } from '$lib/utils/helpers';
+	import { isSimilarString } from '$lib/utils/catalog/search';
+	import { handleShare } from '$lib/utils/app/share';
+	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 
 	const {
 		action,

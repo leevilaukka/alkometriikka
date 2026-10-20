@@ -1,8 +1,6 @@
 import {
 	AllColumns,
 	CalculatedColumns,
-	defaultSortingColumn,
-	GenderOptionsMap,
 	subCategoryMap,
 	undefinedToZeroColumns,
 	MissingValues,
@@ -10,8 +8,10 @@ import {
 	StoreColumns,
 	columnsHandledAsString,
 	columnsHandledAsSet
-} from '$lib/utils/constants';
-import { calculateDrunkValue } from '../utils/alko';
+} from '$lib/utils/constants/columns';
+import { defaultSortingColumn } from '$lib/utils/constants/display';
+import { GenderOptionsMap } from '$lib/utils/constants/app';
+import { calculateDrunkValue } from '../utils/catalog/alko';
 import {
 	type ColumnNames,
 	type DatasetColumnNames,
@@ -22,10 +22,10 @@ import {
 	type FilterValues,
 	type AvailabilityData
 } from '../types';
-import { isSimilarString } from '$lib/utils/search';
-import { getSaleInfo } from '../utils/sales';
-import { ProductVariantIndex } from '../utils/product-variants';
-import { buildCategoryTree, type CategoryNode } from '../utils/categories';
+import { isSimilarString } from '$lib/utils/catalog/search';
+import { getSaleInfo } from '../utils/catalog/sales';
+import { ProductVariantIndex } from '../utils/catalog/productVariants';
+import { buildCategoryTree, type CategoryNode } from '../utils/catalog/categories';
 import { createSubscriber } from 'svelte/reactivity';
 
 function toPositiveNumber(value: unknown): number | null {

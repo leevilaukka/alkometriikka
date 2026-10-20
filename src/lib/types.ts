@@ -1,12 +1,7 @@
-import {
-	AllColumns,
-	DatasetColumns,
-	DrunkColumns,
-	GenderOptionsMap,
-	ShareTypes
-} from '$lib/utils/constants';
+import { AllColumns, DatasetColumns, DrunkColumns } from '$lib/utils/constants/columns';
+import { GenderOptionsMap, ShareTypes } from '$lib/utils/constants/app';
 import type { VariantProps } from 'class-variance-authority';
-import type { components } from './utils/styles';
+import type { components } from './utils/ui/styles';
 import type { IconName } from './icons';
 
 export type ColumnType =
@@ -256,6 +251,26 @@ export type AnalyticsEventMap = {
 		page_crash: boolean;
 		ui_bug: boolean;
 		other: boolean;
+	};
+	/** An unexpected error, see `reportError` in `src/lib/utils/app/errorAnalytics.ts`. */
+	app_error: {
+		kind: 'load' | 'uncaught' | 'unhandled_rejection';
+		message: string;
+		stack?: string;
+		/** HTTP-style status SvelteKit gave a load error */
+		status?: number;
+		route?: string | null;
+		path: string;
+		version: string;
+	};
+	/** The error page showed a 4xx status, see `reportPageNotFound` in `errorAnalytics.ts`. */
+	page_not_found: {
+		status: number;
+		/** `null` for a route that doesn't exist */
+		route: string | null;
+		message?: string;
+		path: string;
+		version: string;
 	};
 } & Shares &
 	Games;
