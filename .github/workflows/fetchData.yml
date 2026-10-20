@@ -333,7 +333,7 @@ jobs:
       - name: Commit and push downloaded file
         working-directory: ../gh-pages
         run: |
-          git add data.json hashes.json availability.json sitemap.xml rss.xml feed.json rss daily tuotteet tuotteet-manifest.json kategoriat -f index.html myymalat laskin tilastot kompassi hinnanmuutokset listat
+          git add data.json hashes.json availability.json sitemap.xml rss.xml feed.json rss daily tuotteet tuotteet-manifest.json kategoriat -f index.html myymalat laskin tilastot kompassi hinnanmuutokset listat seuratut
           [ -d stock ] && git add -f stock || true
           [ -f og-images.json ] && git add og-images.json -f || true
           [ -f og-categories.json ] && git add og-categories.json -f || true

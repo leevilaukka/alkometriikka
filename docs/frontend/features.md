@@ -54,6 +54,9 @@ The store availability header also shows the store count trend over the last 30 
 sparkline (`ProductStockTrend`), once the [stock history](../data/stock-history.md) has two days
 for the product.
 
+**Seuraa** (`ProductWatchButton`) adds the product to the [watchlist](#watchlist-seuratut). Opening
+a watched product shows what changed since the last visit above the page, then counts as seeing it.
+
 Removed products still have a page with a "Poistettu valikoimasta" badge. Every product also has
 a prerendered stub for crawlers ([Site generation](../site-generation.md#product-pages)).
 
@@ -96,6 +99,24 @@ volume, alcohol grams, grams per euro, sugar and an estimated ‰.
 compressed with lz-string. No server is involved. If the id matches one of the visitor's own lists
 it opens that list for editing; otherwise it is shown read-only with a button to save a copy. The
 first six products in the current order can be opened in the comparison view.
+
+## Watchlist (`/seuratut`)
+
+`views/Watchlist.svelte`, `widgets/WatchlistBanner.svelte`, `src/lib/utils/user/watchlist.ts`
+
+Products are watched from the product page. Each watched product keeps a snapshot of what the user
+last saw: price, whether it was in the selection, how many stores had it and whether the preferred
+store did. Comparing it with the current data gives the changes: got cheaper or dearer, removed or
+back in the selection, sold out everywhere or back in stores, arrived in or left the preferred
+store. Store changes are only compared once `availability.json` has loaded, and only for the same
+preferred store, so switching stores isn't reported as a change.
+
+- `/seuratut` lists watched products, changed ones first, with "Nähty" per product and "Merkitse
+  kaikki nähdyiksi".
+- The front page shows a banner summarising the changes ("2 halpeni, 1 tuli myymälääsi") while
+  there are any.
+- Opening the product marks it seen. Everything stays in localStorage (`watchlist`) and is part of
+  the settings export.
 
 ## Comparison (`/vertailu?ids=…`)
 

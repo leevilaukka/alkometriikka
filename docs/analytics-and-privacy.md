@@ -28,6 +28,9 @@ payloads are typed by `AnalyticsEventMap` in `src/lib/types.ts`; add new events 
 | `calculator_used`                                        | The calculator settles on a result (debounced)                                                                                                              | Inputs, results, whether saved personal values were used                                    |
 | `view_compare`                                           | The comparison page opens                                                                                                                                   | Product numbers and URL (the pathname alone doesn't identify the comparison)                |
 | `add_to_compare`                                         | A product is added to the comparison                                                                                                                        | Product number                                                                              |
+| `watch_product`, `unwatch_product`                       | A product is watched or unwatched                                                                                                                           | Product number                                                                              |
+| `view_watchlist`                                         | The watchlist page (`/seuratut`) opens                                                                                                                      | Number of watched products and how many have changed                                        |
+| `open_watchlist_banner`                                  | The front page's "your watched products changed" banner is followed                                                                                         | Number of changes                                                                           |
 | `view_sizes`, `show_product_details`                     | The size selector / details are opened on a product page                                                                                                    | Product number                                                                              |
 | `create_list`, `save_list`                               | A list is created / a shared list is saved                                                                                                                  |                                                                                             |
 | `preferred_store_changed`                                | A preferred store is chosen                                                                                                                                 | Store id, name, city                                                                        |
@@ -72,6 +75,7 @@ localStorage (keys in `LocalStorageKeys`, `src/lib/utils/constants/app.ts`):
 | `user_location`, `user_location_updated_at`         | Last device location, if the user allowed it (for the nearest store)                 |
 | `lists`                                             | Saved lists                                                                          |
 | `compare_products`, `compare_highlight_differences` | Comparison queue and setting                                                         |
+| `watchlist`                                         | Watched products, each with its price and stock as the user last saw them            |
 | `theme`                                             | Light/dark/system                                                                    |
 | `dismissed_notices`                                 | Ids of dismissed notices                                                             |
 | `flag_overrides`                                    | The visitor's own `?flag=` choices ([Feature flags](#feature-flags))                 |
@@ -85,7 +89,7 @@ localStorage (keys in `LocalStorageKeys`, `src/lib/utils/constants/app.ts`):
 sessionStorage holds the query parameters the visitor landed with, so URL-targeted notices stay
 visible for the session.
 
-Users can export their personal info, preferred store and lists as JSON, import them on another
+Users can export their personal info, preferred store, lists and watched products as JSON, import them on another
 device, or clear all of localStorage (flag keys included), from the settings dialog. Location is requested only on pages that need it (nearest store, compass) and is never
 sent anywhere; distances are computed in the browser.
 

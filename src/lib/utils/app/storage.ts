@@ -1,4 +1,4 @@
-import type { FilterValues, ListObj, PersonalInfo } from '../../types';
+import type { FilterValues, ListObj, PersonalInfo, WatchedProduct } from '../../types';
 import type {
 	ArchivedScores,
 	ArchiveRuns,
@@ -22,6 +22,7 @@ type LocalStorageValueMap = {
 	[LocalStorageKeys.ViewedShares]: string[];
 	[LocalStorageKeys.CompareProducts]: string[];
 	[LocalStorageKeys.CompareHighlightDifferences]: boolean;
+	[LocalStorageKeys.Watchlist]: WatchedProduct[];
 	[LocalStorageKeys.DismissedNotices]: string[];
 	[LocalStorageKeys.FlagOverrides]: Record<string, boolean>;
 	/** Random and anonymous, only created once a flag with a rollout needs to place the visitor */

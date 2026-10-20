@@ -60,6 +60,25 @@ export type AvailabilityData = {
 	product: Record<string, string[]>;
 };
 
+/** What a watched product looked like when the user last saw it. */
+export type WatchSnapshot = {
+	/** ISO timestamp */
+	at: string;
+	price: number;
+	removed: boolean;
+	/** Stores stocking it. Missing when store data hadn't loaded. */
+	stores?: number;
+	/** The preferred store then, and whether it stocked the product. */
+	store?: { id: string; stocked: boolean };
+};
+
+export type WatchedProduct = {
+	id: string;
+	/** ISO timestamp */
+	addedAt: string;
+	seen: WatchSnapshot;
+};
+
 export interface PriceListItem extends Record<DrunkColumnNames, number> {
 	Numero: string;
 	Nimi: string;
@@ -261,6 +280,12 @@ export type AnalyticsEventMap = {
 		path: string;
 		version: string;
 	};
+	watch_product: { product_number: string };
+	unwatch_product: { product_number: string };
+	/** The watchlist page was opened, with how many watched products had changed. */
+	view_watchlist: { count: number; changed: number };
+	/** The front page's "your watched products changed" banner was followed. */
+	open_watchlist_banner: { changed: number };
 	/** The error page showed a 4xx status, see `reportPageNotFound` in `errorAnalytics.ts`. */
 	page_not_found: {
 		status: number;

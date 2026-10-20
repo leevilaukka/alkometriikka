@@ -129,6 +129,13 @@ export const STATIC_PAGES: StaticPageSeo[] = [
 		title: 'Listat',
 		description: 'Selaa ja hallinnoi Alkon tuotteita sisältäviä listoja.',
 		keywords: 'listat, juomalistat, jaa, Alko'
+	},
+	{
+		path: '/seuratut/',
+		title: 'Seuratut',
+		description:
+			'Seuraa Alkon tuotteiden hintoja ja saatavuutta: näe, mitkä seuraamasi tuotteet halpenivat tai tulivat myymälääsi.',
+		keywords: 'seuratut, hintaseuranta, hinnanlasku, saatavuus, Alko'
 	}
 ];
 

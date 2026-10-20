@@ -16,7 +16,8 @@
 		preferredStoreId,
 		searchQuery,
 		theme,
-		userLocation
+		userLocation,
+		watchlist
 	} from '$lib/global.svelte';
 	import logo from '$lib/assets/images/Logo/0.5x/Logo_rounded@0.5x.png';
 	import { twMerge } from 'tailwind-merge';
@@ -64,6 +65,10 @@
 
 	$effect(() => {
 		LocalStorageManager.setItem(LocalStorageKeys.CompareProducts, compareProductIds);
+	});
+
+	$effect(() => {
+		LocalStorageManager.setItem(LocalStorageKeys.Watchlist, watchlist);
 	});
 
 	$effect(() => {
@@ -197,6 +202,11 @@
 			name: 'Hinnanmuutokset'
 		},
 		{
+			href: '/seuratut/',
+			icon: 'bell',
+			name: 'Seuratut'
+		},
+		{
 			href: '/myymalat/',
 			icon: 'store',
 			name: 'Myymälät'
@@ -231,7 +241,8 @@
 		'/vertailu',
 		'/kategoriat',
 		'/myymalat',
-		'/myymalat/[storeID]'
+		'/myymalat/[storeID]',
+		'/seuratut'
 	];
 </script>
 
