@@ -11,8 +11,9 @@
 	import { requestSettingsOpen } from '$lib/utils/app/settings';
 	import { components } from '$lib/utils/ui/styles';
 	import { twMerge } from 'tailwind-merge';
+	import ProductStockTrend from './ProductStockTrend.svelte';
 
-	// productNumber is threaded through for a future `show_availability` re-evaluation
+	// productNumber is also threaded through for a future `show_availability` re-evaluation
 	// (see AnalyticsEventMap) - not fired here since the section is always visible now,
 	// not opened by the user, so mounting isn't a meaningful "viewed" signal.
 	const {
@@ -66,6 +67,7 @@
 					>päivitetty {formatRelativeTime(availabilityUpdated, now)}</time
 				>{/if}
 		</p>
+		<ProductStockTrend {productNumber} class="mt-1" />
 	</header>
 	{#if !preferredStore}
 		<div class="border-b border-primary p-3.5">

@@ -50,6 +50,10 @@ Filter usage is reported as one analytics event per filtering session, not per c
 | Store availability     | `ProductStoreAvailability`               | Stores stocking it, sorted by distance from the preferred store, with "updated N minutes ago"                           |
 | Mobile CTA             | `ProductMobileCta`                       | Bottom bar on small screens: price, compare, add to list                                                                |
 
+The store availability header also shows the store count trend over the last 30 days with a
+sparkline (`ProductStockTrend`), once the [stock history](../data/stock-history.md) has two days
+for the product.
+
 Removed products still have a page with a "Poistettu valikoimasta" badge. Every product also has
 a prerendered stub for crawlers ([Site generation](../site-generation.md#product-pages)).
 
