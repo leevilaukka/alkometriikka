@@ -185,36 +185,33 @@
 		if (extraMenu?.open && !event.composedPath().includes(extraMenu)) extraMenu.open = false;
 	}
 
-	const extraItems: { href: string; icon: IconName; name: string }[] = [
+	type MenuItem = { href: string; icon: IconName; name: string };
+	const menuGroups: { label: string; items: MenuItem[] }[] = [
 		{
-			href: '/kategoriat/',
-			icon: 'wine',
-			name: 'Kategoriat'
+			label: 'Selaa',
+			items: [
+				{ href: '/kategoriat/', icon: 'wine', name: 'Kategoriat' },
+				{ href: '/hinnanmuutokset/', icon: 'trending_down', name: 'Hinnanmuutokset' },
+				{ href: '/tilastot/', icon: 'stats', name: 'Tilastot' }
+			]
 		},
 		{
-			href: '/hinnanmuutokset/',
-			icon: 'trending_down',
-			name: 'Hinnanmuutokset'
+			label: 'Omat',
+			items: [{ href: '/listat/', icon: 'list_ul', name: 'Listat' }]
 		},
 		{
-			href: '/myymalat/',
-			icon: 'store',
-			name: 'Myymälät'
+			label: 'Myymälät',
+			items: [
+				{ href: '/myymalat/', icon: 'store', name: 'Myymälät' },
+				{ href: '/kompassi/', icon: 'compass', name: 'Kompassi' }
+			]
 		},
 		{
-			href: '/daily/arkisto/',
-			icon: 'archive',
-			name: 'Daily-arkisto'
-		},
-		{
-			href: '/laskin/',
-			icon: 'calculator',
-			name: 'Laskin'
-		},
-		{
-			href: '/tilastot/',
-			icon: 'stats',
-			name: 'Tilastot'
+			label: 'Työkalut & pelit',
+			items: [
+				{ href: '/laskin/', icon: 'calculator', name: 'Laskin' },
+				{ href: '/daily/arkisto/', icon: 'archive', name: 'Daily-arkisto' }
+			]
 		}
 	];
 
@@ -305,17 +302,35 @@
 						{#if !$isMobile}<span class="text-sm">Lisää</span>{/if}<Icon name="menu" />
 					</summary>
 					<div
-						class="absolute end-0 top-full z-20 mt-2 flex min-w-40 flex-col gap-1 rounded border border-primary bg-primary p-1 shadow-lg"
+						class="absolute end-0 top-full z-20 mt-2 flex w-56 flex-col rounded border border-primary bg-primary p-1.5 shadow-lg"
 					>
-						{#each extraItems as item}
-							<a
-								href={appPath(item.href)}
-								onclick={closeExtraMenu}
-								class={twMerge(components.button(), 'w-full justify-start')}
+						{#each menuGroups as group, index (group.label)}
+							<p
+								id={`menu-${index}`}
+								class={twMerge(
+									'px-2 pb-1 text-xs font-semibold tracking-wide text-secondary uppercase',
+									index > 0 ? 'mt-1.5 border-t border-primary pt-2.5' : 'pt-1'
+								)}
 							>
-								<Icon name={item.icon} />
-								<span>{item.name}</span>
-							</a>
+								{group.label}
+							</p>
+							<ul aria-labelledby={`menu-${index}`}>
+								{#each group.items as item (item.href)}
+									<li>
+										<a
+											href={appPath(item.href)}
+											onclick={closeExtraMenu}
+											aria-current={page.url.pathname.startsWith(appPath(item.href))
+												? 'page'
+												: undefined}
+											class="flex items-center gap-2.5 rounded px-2 py-1.5 text-sm hover:bg-secondary aria-[current=page]:bg-secondary aria-[current=page]:font-semibold"
+										>
+											<Icon name={item.icon} class="text-base" />
+											<span class="flex-1">{item.name}</span>
+										</a>
+									</li>
+								{/each}
+							</ul>
 						{/each}
 					</div>
 				</details>
