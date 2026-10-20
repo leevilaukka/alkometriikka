@@ -9,7 +9,12 @@
 	import Icon from '../widgets/Icon.svelte';
 	import { untrack } from 'svelte';
 	import type { FilterValue } from '$lib/types';
-	import type { OptionGrouper, OptionNode } from '$lib/utils/ui/optionGroups';
+	import {
+		buildOptionRows,
+		type OptionGrouper,
+		type OptionNode,
+		type OptionRow
+	} from '$lib/utils/ui/optionGroups';
 
 	let {
 		defaultValue = [],
@@ -96,83 +101,27 @@
 		query ? list.filter((item) => matchesQuery(item.value)) : list
 	);
 
-	type Row =
-		| {
-				type: 'option';
-				item: ListItem;
-				label: string;
-				depth: number;
-				striped: boolean;
-				divider?: boolean;
-		  }
-		| {
-				type: 'group';
-				key: string;
-				label: string;
-				depth: number;
-				striped: boolean;
-				divider?: boolean;
-				items: ListItem[];
-				selectedCount: number;
-				expanded: boolean;
-		  };
+	type Row = OptionRow<ListItem>;
 
 	const groups = $derived(groupOptions ? groupOptions(strOptions) : null);
 	let expandedGroups = $state<Set<string>>(new Set());
 
-	const rows = $derived.by((): Row[] => {
-		if (!groups)
-			return filteredList.map((item, i) => ({
-				type: 'option',
-				item,
-				label: item.value,
-				depth: 0,
-				striped: i % 2 === 0
-			}));
-		const itemsByValue = new Map(list.map((item) => [item.value, item]));
-		const rows: Row[] = [];
-		// Stripes go by the position among the siblings, children continuing from their group,
-		// so opening a group doesn't flip the stripes of the rows after it
-		const walk = (nodes: OptionNode[], depth: number, firstStriped: boolean) => {
-			let striped = !firstStriped;
-			for (const node of nodes) {
-				if (node.type === 'option') {
-					const item = itemsByValue.get(node.value);
-					if (item && (!query || matchesQuery(item.value))) {
-						striped = !striped;
-						rows.push({ type: 'option', item, label: node.label, depth, striped });
-					}
-					continue;
-				}
-				const items = node.values
-					.filter((value) => !query || matchesQuery(value))
-					.map((value) => itemsByValue.get(value))
-					.filter((item) => item !== undefined);
-				if (!items.length) continue;
-				striped = !striped;
-				// Searching opens every group with matches so they can be seen right away
-				const expanded = !!query || expandedGroups.has(node.key);
-				rows.push({
-					type: 'group',
-					key: node.key,
-					label: node.label,
-					depth,
-					striped,
-					items,
-					selectedCount: items.filter((item) => item.selected).length,
-					expanded
-				});
-				if (expanded) walk(node.children, depth + 1, !striped);
-			}
-		};
-		walk(groups, 0, true);
-		// Mark the end of an open group when the row after it has the same stripe color
-		rows.forEach((row, i) => {
-			const next = rows[i + 1];
-			if (next && next.depth < row.depth && next.striped === row.striped) row.divider = true;
-		});
-		return rows;
-	});
+	const rows = $derived(
+		buildOptionRows(
+			groups ?? strOptions.map((value) => ({ type: 'option' as const, value, label: value })),
+			list,
+			matchesQuery,
+			// Searching opens every group with matches so they can be seen right away
+			(key) => !!query || expandedGroups.has(key)
+		)
+	);
+
+	// Groups where something was selected while searching stay open once the search is
+	// cleared, so the selection can still be seen
+	function keepOpen(keys: string[]) {
+		if (!query || keys.every((key) => expandedGroups.has(key))) return;
+		expandedGroups = new Set([...expandedGroups, ...keys]);
+	}
 
 	function updateValue() {
 		value = list.filter((option) => option.selected).map((option) => option.value);
@@ -198,6 +147,16 @@
 		expandedGroups = next;
 	}
 </script>
+
+<!-- Ends an open group, in the color of the other stripe -->
+{#snippet divider(striped: boolean)}
+	<span
+		class={twMerge(
+			'pointer-events-none absolute inset-x-0 bottom-0 h-px',
+			striped ? 'bg-white dark:bg-zinc-800' : 'bg-gray-200 dark:bg-zinc-900'
+		)}
+	></span>
+{/snippet}
 
 <div class={twMerge('flex', strOptions.length > 1 ? 'flex-col' : 'items-center')}>
 	{#if strOptions.length === 1}
@@ -264,6 +223,7 @@
 						<button
 							onclick={() => {
 								filteredList.forEach((option) => (option.selected = true));
+								keepOpen(rows.flatMap((row) => row.parents));
 								value = list.filter((option) => option.selected).map((option) => option.value);
 							}}
 							class={twMerge(components.button())}
@@ -310,26 +270,27 @@
 							>
 								{#snippet renderItem(row: Row)}
 									{#if row.type === 'group'}
-										{@const allSelected = row.selectedCount === row.items.length}
-										{@const someSelected = row.selectedCount > 0 && !allSelected}
+										{@const selectedCount = row.items.filter((item) => item.selected).length}
+										{@const allSelected = selectedCount === row.items.length}
+										{@const someSelected = selectedCount > 0 && !allSelected}
 										<div
 											class={twMerge(
 												components.button(),
-												'relative h-7 w-full rounded-none border-none py-0 pl-[calc(var(--depth)*1.25rem+0.5rem)]',
+												'relative h-7 w-full rounded-none border-none py-0 pl-[calc(var(--depth)*(1em+0.5rem)+0.5rem)]',
 												row.striped && 'bg-gray-200 dark:bg-zinc-900',
-												row.selectedCount > 0 && 'font-bold'
+												selectedCount > 0 && 'font-bold'
 											)}
 											style:--depth={row.depth}
 										>
 											<button
 												onclick={() => toggleGroup(row.key)}
 												aria-expanded={row.expanded}
-												class="flex h-full min-w-0 flex-1 cursor-pointer items-center gap-2 text-left"
+												class="flex h-full min-w-0 cursor-pointer items-center gap-2 text-left"
 											>
 												<Icon
 													name="chevron_right"
 													class={twMerge(
-														'shrink-0 transition-transform',
+														'w-[1em] shrink-0 transition-transform',
 														row.expanded && 'rotate-90'
 													)}
 												/>
@@ -340,39 +301,45 @@
 													{row.label}
 												</span>
 												<span class="shrink-0 text-xs font-normal text-gray-500 dark:text-gray-400">
-													{row.selectedCount ? `${row.selectedCount} / ` : ''}{row.items.length}
+													{selectedCount ? `${selectedCount} / ` : ''}{row.items.length}
 												</span>
 											</button>
-											<input
-												type="checkbox"
-												checked={allSelected}
-												{@attach (input: HTMLInputElement) => {
-													input.indeterminate = someSelected;
-												}}
-												onclick={() => {
-													row.items.forEach((item) => (item.selected = !allSelected));
-													updateValue();
-												}}
-												aria-label={`${allSelected ? 'Poista valinnat' : 'Valitse kaikki'}: ${row.key}`}
-												class="ml-auto cursor-pointer"
-											/>
-											{#if row.divider}
-												<span
-													class="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gray-300 dark:bg-zinc-700"
-												></span>
-											{/if}
+											<!-- The rest of the row after the name selects the group, like the
+											     whole row of an option, so the checkbox is easy to hit -->
+											<label
+												class="-mr-2 -ml-2 flex h-full flex-1 cursor-pointer items-center justify-end px-2"
+											>
+												<input
+													type="checkbox"
+													checked={allSelected}
+													{@attach (input: HTMLInputElement) => {
+														input.indeterminate = someSelected;
+													}}
+													onclick={() => {
+														// Read once: allSelected changes as soon as the first item does
+														const select = !allSelected;
+														row.items.forEach((item) => (item.selected = select));
+														keepOpen(row.parents);
+														updateValue();
+													}}
+													aria-label={`${allSelected ? 'Poista valinnat' : 'Valitse kaikki'}: ${row.key}`}
+													class="cursor-pointer"
+												/>
+											</label>
+											{#if row.divider}{@render divider(row.striped)}{/if}
 										</div>
 									{:else}
 										{@const item = row.item}
 										<button
 											onclick={() => {
 												item.selected = !item.selected;
+												keepOpen(row.parents);
 												updateValue();
 											}}
 											class={twMerge(
 												components.button(),
 												'relative h-7 w-full rounded-none border-none py-0',
-												groups && 'pl-[calc(var(--depth)*1.25rem+0.5rem)]',
+												groups && 'pl-[calc(var(--depth)*(1em+0.5rem)+0.5rem)]',
 												row.striped && 'bg-gray-200 dark:bg-zinc-900',
 												item.selected ? 'font-bold' : ''
 											)}
@@ -390,11 +357,7 @@
 												class="ml-auto"
 												readonly
 											/>
-											{#if row.divider}
-												<span
-													class="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gray-300 dark:bg-zinc-700"
-												></span>
-											{/if}
+											{#if row.divider}{@render divider(row.striped)}{/if}
 										</button>
 									{/if}
 								{/snippet}

@@ -1,5 +1,10 @@
 import { describe, expect, it } from 'bun:test';
-import { groupOptionsByWords, type OptionNode } from '$lib/utils/ui/optionGroups';
+import {
+	buildOptionRows,
+	groupOptionsByWords,
+	type OptionNode,
+	type OptionRow
+} from '$lib/utils/ui/optionGroups';
 
 const shape = (nodes: OptionNode[]): unknown[] =>
 	nodes.map((node) =>
@@ -59,5 +64,71 @@ describe('groupOptionsByWords', () => {
 	it('stops at the given depth', () => {
 		const groups = groupOptionsByWords(['A b c d', 'A b c e', 'A x'], 1);
 		expect(shape(groups)).toEqual([{ A: ['B c d', 'B c e', 'X'] }]);
+	});
+});
+
+describe('buildOptionRows', () => {
+	const values = ['A x', 'A y', 'A z', 'B', 'C d e', 'C d f', 'C g'];
+	const items = values.map((value) => ({ value }));
+	const groups = groupOptionsByWords(values);
+	const all = () => true;
+	// Indented by depth, "*" marks a striped row and "_" a divider
+	const view = (rows: OptionRow<{ value: string }>[]) =>
+		rows.map(
+			(row) =>
+				`${'  '.repeat(row.depth)}${row.label}${row.striped ? ' *' : ''}${row.divider ? ' _' : ''}`
+		);
+
+	it('keeps the stripes of the rows after a group when opening it', () => {
+		expect(view(buildOptionRows(groups, items, all, () => false))).toEqual(['A *', 'B', 'C *']);
+		expect(view(buildOptionRows(groups, items, all, (key) => key === 'A'))).toEqual([
+			'A *',
+			'  X',
+			'  Y *',
+			'  Z _',
+			'B',
+			'C *'
+		]);
+	});
+
+	it('marks a group end only when the next row has the same stripe', () => {
+		const rows = buildOptionRows(groups, items, all, (key) => key.startsWith('C'));
+		expect(view(rows)).toEqual(['A *', 'B', 'C *', '  D', '    E *', '    F', '  G *']);
+	});
+
+	it('hides the options that do not match and the groups left empty', () => {
+		const rows = buildOptionRows(
+			groups,
+			items,
+			(value) => value !== 'A y' && value !== 'B',
+			() => true
+		);
+		expect(view(rows)).toEqual(['A *', '  X', '  Z *', 'C', '  D *', '    E', '    F *', '  G']);
+		const a = rows[0];
+		expect(a.type === 'group' && a.items.map((item) => item.value)).toEqual(['A x', 'A z']);
+		expect(
+			buildOptionRows(
+				groups,
+				items,
+				(value) => value.startsWith('C'),
+				() => false
+			).length
+		).toBe(1);
+	});
+
+	it('lists the groups each row is in', () => {
+		const rows = buildOptionRows(groups, items, all, () => true);
+		expect(rows.map((row) => row.parents.join('/'))).toEqual([
+			'',
+			'A',
+			'A',
+			'A',
+			'',
+			'',
+			'C',
+			'C/C d',
+			'C/C d',
+			'C'
+		]);
 	});
 });

@@ -97,3 +97,86 @@ function leaf(entry: Entry, depth: number): OptionLeaf {
 function capitalize(value: string): string {
 	return value.charAt(0).toUpperCase() + value.slice(1);
 }
+
+export type OptionRow<T extends { value: string }> = {
+	depth: number;
+	/** Keys of the groups the row is in, outermost first */
+	parents: string[];
+	striped: boolean;
+	/** The row ends an open group and the row after it has the same stripe color */
+	divider: boolean;
+} & (
+	| { type: 'option'; item: T; label: string }
+	| {
+			type: 'group';
+			key: string;
+			label: string;
+			/** The items under the group that match */
+			items: T[];
+			expanded: boolean;
+	  }
+);
+
+/**
+ * Lays out the rows of a picker, each open group followed by its children. Stripes go by
+ * the position among the siblings, children continuing from their group, so opening a
+ * group doesn't flip the stripes of the rows after it.
+ *
+ * @param matches Hides the options it returns false for, and the groups left empty
+ * @param expanded Whether a group shows its children
+ */
+export function buildOptionRows<T extends { value: string }>(
+	nodes: OptionNode[],
+	items: T[],
+	matches: (value: string) => boolean,
+	expanded: (key: string) => boolean
+): OptionRow<T>[] {
+	const itemsByValue = new Map(items.map((item) => [item.value, item]));
+	const rows: OptionRow<T>[] = [];
+	const walk = (nodes: OptionNode[], parents: string[], firstStriped: boolean) => {
+		const depth = parents.length;
+		let striped = !firstStriped;
+		for (const node of nodes) {
+			if (node.type === 'option') {
+				const item = itemsByValue.get(node.value);
+				if (!item || !matches(node.value)) continue;
+				striped = !striped;
+				rows.push({
+					type: 'option',
+					item,
+					label: node.label,
+					depth,
+					parents,
+					striped,
+					divider: false
+				});
+				continue;
+			}
+			const groupItems = node.values
+				.filter(matches)
+				.map((value) => itemsByValue.get(value))
+				.filter((item) => item !== undefined);
+			if (!groupItems.length) continue;
+			striped = !striped;
+			const open = expanded(node.key);
+			rows.push({
+				type: 'group',
+				key: node.key,
+				label: node.label,
+				items: groupItems,
+				expanded: open,
+				depth,
+				parents,
+				striped,
+				divider: false
+			});
+			if (open) walk(node.children, [...parents, node.key], !striped);
+		}
+	};
+	walk(nodes, [], true);
+	rows.forEach((row, i) => {
+		const next = rows[i + 1];
+		if (next && next.depth < row.depth && next.striped === row.striped) row.divider = true;
+	});
+	return rows;
+}
