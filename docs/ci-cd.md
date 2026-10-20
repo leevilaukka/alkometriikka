@@ -45,7 +45,7 @@ rss/                   per-product and per-category feeds (fetchData)
 tuotteet/              product stubs (build + fetchData)
 tuotteet-manifest.json prerender keys (build + fetchData)
 kategoriat/            category stubs (build + fetchData)
-myymalat/, laskin/, tilastot/, kompassi/, hinnanmuutokset/, listat/, seuratut/   static stubs (build + fetchData)
+myymalat/, laskin/, tilastot/, kompassi/, hinnanmuutokset/, listat/, seuratut/, kausi/   static stubs (build + fetchData)
 daily/                 manifests, index.html stub, archive/ (fetchData + archiveDaily)
 notices.json           site notices (build, from static/)
 ```

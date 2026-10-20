@@ -48,14 +48,17 @@ The same script then fully regenerates the **category pages**: `kategoriat/index
 category in the tree, with `CollectionPage` and `ItemList` JSON-LD, up to 100 products in the
 fallback list, category RSS alternates and the category OG card from `og-categories.json`.
 
-### Static and store pages
+### Static, store and season pages
 
-`scripts/site/prerender-static.ts --out <dir> --template <404.html> --availability <availability.json>`
+`scripts/site/prerender-static.ts --out <dir> --template <404.html> --availability <availability.json> [--data <data.json>]`
 
 Writes the front page stub (`index.html`, from `HOME_PAGE`), stubs for the routes in
 `STATIC_PAGES` (`/laskin/`, `/tilastot/`, `/myymalat/`, `/kompassi/`, `/hinnanmuutokset/`,
-`/listat/`) and one `myymalat/<id>/index.html` per store with `LiquorStore`
-JSON-LD (address, coordinates, weekly opening hours). Output is deterministic: opening hours use
+`/listat/`, `/kausi/`, `/seuratut/`), one `myymalat/<id>/index.html` per store with `LiquorStore`
+JSON-LD (address, coordinates, weekly opening hours), and one `kausi/<slug>/index.html` per season
+in `SEASONS` (`src/lib/utils/catalog/seasons.ts`) listing its active products cheapest first, with
+`CollectionPage` + `ItemList` JSON-LD. `--data` defaults to `<out>/data.json`; without it the
+season pages are skipped. Output is deterministic: opening hours use
 the regular weekly pattern, not Alko's rolling two-week calendar, so unchanged stores produce
 byte-identical files and don't add commits to `gh-pages`. Fully regenerated on every run.
 
@@ -104,6 +107,7 @@ link their own feed, and category pages theirs.
 - the category index and every category page (`lastmod` = newest price-history date among its
   active products);
 - every store page;
+- the season index and every season page, ranked higher while the season is current;
 - the fixed pages: `/`, `/daily/`, `/daily/arkisto/`, `/listat/`, `/tilastot/`, `/laskin/`,
   `/myymalat/` and so on.
 

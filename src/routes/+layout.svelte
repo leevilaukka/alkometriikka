@@ -202,6 +202,11 @@
 			name: 'Hinnanmuutokset'
 		},
 		{
+			href: '/kausi/',
+			icon: 'calendar_star',
+			name: 'Kausijuomat'
+		},
+		{
 			href: '/seuratut/',
 			icon: 'bell',
 			name: 'Seuratut'
@@ -242,7 +247,8 @@
 		'/kategoriat',
 		'/myymalat',
 		'/myymalat/[storeID]',
-		'/seuratut'
+		'/seuratut',
+		'/kausi'
 	];
 </script>
 

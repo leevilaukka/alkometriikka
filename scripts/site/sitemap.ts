@@ -6,6 +6,7 @@ import {
 	categorySlug,
 	CATEGORY_BASE_PATH
 } from '../../src/lib/utils/catalog/categories.ts';
+import { SEASONS, currentSeasons, seasonPath } from '../../src/lib/utils/catalog/seasons.ts';
 
 type SitemapEntry = {
 	loc: string;
@@ -101,6 +102,17 @@ async function main() {
 				changeFreq: 'daily'
 			});
 		}
+	}
+
+	// Seasons in season rank higher, so the glögi page is crawled when people search for glögi
+	const inSeason = new Set(currentSeasons());
+	sitemapEntries.push({ loc: '/kausi/', priority: 0.7, changeFreq: 'weekly' });
+	for (const season of SEASONS) {
+		sitemapEntries.push({
+			loc: seasonPath(season),
+			priority: inSeason.has(season) ? 0.9 : 0.6,
+			changeFreq: inSeason.has(season) ? 'daily' : 'weekly'
+		});
 	}
 
 	for (const store of Object.keys(stores)) {

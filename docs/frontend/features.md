@@ -118,6 +118,18 @@ preferred store, so switching stores isn't reported as a change.
 - Opening the product marks it seen. Everything stays in localStorage (`watchlist`) and is part of
   the settings export.
 
+## Seasons (`/kausi/`, `/kausi/[slug]/`)
+
+`views/Season.svelte`, `routes/kausi/`, `src/lib/utils/catalog/seasons.ts`
+
+Pages for seasonal searches: glögit, joulujuomat, kuohuviinit uuteenvuoteen, vappujuomat,
+kesäjuomat. Alko has no season column (its `kausituote` selection mixes summer rosés with Christmas
+beers), so each season in `SEASONS` matches active products by name and category, and lists the
+months it's current. A season page is the category page's layout without the filter sidebar: the
+list, "only my store", highlights and stats, and links to the other seasons. The index (in the "Lisää"
+menu) puts current seasons first. Each season has a prerendered stub
+([Site generation](../site-generation.md#static-store-and-season-pages)).
+
 ## Comparison (`/vertailu?ids=…`)
 
 `views/Compare.svelte`, `widgets/CompareBar.svelte`, `src/lib/utils/user/compare.ts`
