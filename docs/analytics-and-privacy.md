@@ -42,6 +42,15 @@ payloads are typed by `AnalyticsEventMap` in `src/lib/types.ts`; add new events 
 | `daily_feedback`                                         | A problem with a Daily question is reported                                                                                                                 | Date, mode, question, game hash, reported problem types                                     |
 | `site_feedback`                                          | The site feedback form is sent                                                                                                                              | Path, app version, reported problem types                                                   |
 | `scan_barcode`, `scan_qr_code`                           | The (currently unmounted) barcode scanner finds a product                                                                                                   | Code and link                                                                               |
+| `app_error`                                              | An unexpected error: a failed page load or render, an uncaught exception or an unhandled promise rejection                                                  | Kind, message, stack, status, route, path (no query string), app version                    |
+| `page_not_found`                                         | The error page shows a 4xx status: a route that doesn't exist, an unknown product, category or store, or an unreadable list link (400)                      | Status, route (`null` for a missing route), message, path (no query string), app version    |
+
+`app_error` is sent from `src/hooks.client.ts` through `reportError` in
+`src/lib/utils/app/errorAnalytics.ts`. Each error is sent once per page load, at most five per
+load, and only after the analytics scripts have loaded. Errors from other origins (extensions,
+third-party scripts) are skipped. `page_not_found` is sent by the error pages
+(`src/routes/+error.svelte`, `src/routes/myymalat/+error.svelte`) through `reportPageNotFound`,
+so that missing pages, mostly old links to delisted products, don't drown out real errors.
 
 Share types are `page`, `list`, `product`, `filters`, `similar`, `compare` and `daily_game`
 (`ShareTypes` in `src/lib/utils/constants/app.ts`).
