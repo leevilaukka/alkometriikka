@@ -16,19 +16,20 @@
 		theme,
 		userLocation
 	} from '$lib/global.svelte';
-	import { AllColumns } from '$lib/utils/constants';
-	import { formatValue } from '$lib/utils/format';
-	import { addToList, createList, getItemQuantity, listToURI } from '$lib/utils/lists';
+	import { AllColumns } from '$lib/utils/constants/columns';
+	import { formatValue } from '$lib/utils/format/format';
+	import { addToList, createList, getItemQuantity, listToURI } from '$lib/utils/user/lists';
 	import {
 		clearCompare,
 		compareURL,
 		isInCompare,
 		MAX_COMPARE_PRODUCTS,
 		toggleCompare
-	} from '$lib/utils/compare';
-	import { resolvePreferredStore } from '$lib/utils/availability';
-	import { requestSettingsOpen } from '$lib/utils/settings';
-	import { handleShare, sendAnalyticsEvent, shareTypeFromRoute } from '$lib/utils/helpers';
+	} from '$lib/utils/user/compare';
+	import { resolvePreferredStore } from '$lib/utils/catalog/availability';
+	import { requestSettingsOpen } from '$lib/utils/app/settings';
+	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
+	import { handleShare, shareTypeFromRoute } from '$lib/utils/app/share';
 	import {
 		normalizeSearchText,
 		parseScopePrefix,
@@ -36,9 +37,9 @@
 		SCOPE_PREFIXES,
 		type SearchEntry,
 		type SearchScope
-	} from '$lib/utils/commandPalette';
-	import { appPath } from '$lib/utils/paths';
-	import { components } from '$lib/utils/styles';
+	} from '$lib/utils/app/commandPalette';
+	import { appPath } from '$lib/utils/app/paths';
+	import { components } from '$lib/utils/ui/styles';
 	import Icon from './Icon.svelte';
 	import ProductImage from './ProductImage.svelte';
 	import SiteFeedback from './Settings/SiteFeedback.svelte';

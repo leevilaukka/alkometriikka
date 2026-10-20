@@ -5,7 +5,7 @@ import {
 	parseScopePrefix,
 	rankEntries,
 	type SearchEntry
-} from '$lib/utils/commandPalette';
+} from '$lib/utils/app/commandPalette';
 
 const entry = (name: string, extra: Partial<SearchEntry<string>> = {}): SearchEntry<string> => ({
 	value: name,
