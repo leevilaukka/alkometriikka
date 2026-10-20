@@ -12,3 +12,4 @@ bun.lockb
 project.inlang/*
 !project.inlang/settings.json
 !project.inlang/paraglide.config.js
+src/lib/paraglide/
