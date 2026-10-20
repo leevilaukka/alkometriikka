@@ -215,8 +215,9 @@ while back/forward restores it from the URL.
 ## Navigation and layout
 
 - The header has the logo, the search box (hidden on pages without a product list), a "Lisää"
-  menu (Kategoriat, Hinnanmuutokset, Myymälät, Daily-arkisto, Laskin, Tilastot), links to Daily
-  and Listat, and the settings button.
+  menu, links to Daily and Listat, and the settings button. The menu (`menuGroups` in the layout)
+  groups its links under Selaa (Kategoriat, Hinnanmuutokset, Tilastot), Omat (Listat), Myymälät
+  (Myymälät, Kompassi) and Työkalut (Laskin, Daily-arkisto), and marks the current page.
 - `/` focuses the search box from anywhere that isn't a text field.
 - On phones, pages pass a snippet into `pageBottomBar` (filter button, product price/compare bar)
   and the layout renders it at the very bottom, below the compare bar.
