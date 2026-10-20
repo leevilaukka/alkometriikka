@@ -37,6 +37,8 @@
 	import type { IconName } from '$lib/icons';
 	import { loadUpdateOnNavigate } from '$lib/utils/app/pwa.svelte';
 	import { loadFlags } from '$lib/utils/flags/flags.svelte';
+	import { resolvePreferredStore } from '$lib/utils/catalog/availability';
+	import { watchStatuses } from '$lib/utils/user/watchlist';
 
 	let { children, data } = $props();
 	loadFlags();
@@ -190,46 +192,37 @@
 		if (extraMenu?.open && !event.composedPath().includes(extraMenu)) extraMenu.open = false;
 	}
 
-	const extraItems: { href: string; icon: IconName; name: string }[] = [
+	type MenuItem = { href: string; icon: IconName; name: string };
+	const menuGroups: { label: string; items: MenuItem[] }[] = [
 		{
-			href: '/kategoriat/',
-			icon: 'wine',
-			name: 'Kategoriat'
+			label: 'Selaa',
+			items: [
+				{ href: '/kategoriat/', icon: 'wine', name: 'Kategoriat' },
+				{ href: '/kausi/', icon: 'calendar_star', name: 'Kausijuomat' },
+				{ href: '/hinnanmuutokset/', icon: 'trending_down', name: 'Hinnanmuutokset' },
+				{ href: '/tilastot/', icon: 'stats', name: 'Tilastot' }
+			]
 		},
 		{
-			href: '/hinnanmuutokset/',
-			icon: 'trending_down',
-			name: 'Hinnanmuutokset'
+			label: 'Omat',
+			items: [
+				{ href: '/seuratut/', icon: 'bell', name: 'Seuratut' },
+				{ href: '/listat/', icon: 'list_ul', name: 'Listat' }
+			]
 		},
 		{
-			href: '/kausi/',
-			icon: 'calendar_star',
-			name: 'Kausijuomat'
+			label: 'Myymälät',
+			items: [
+				{ href: '/myymalat/', icon: 'store', name: 'Myymälät' },
+				{ href: '/kompassi/', icon: 'compass', name: 'Kompassi' }
+			]
 		},
 		{
-			href: '/seuratut/',
-			icon: 'bell',
-			name: 'Seuratut'
-		},
-		{
-			href: '/myymalat/',
-			icon: 'store',
-			name: 'Myymälät'
-		},
-		{
-			href: '/daily/arkisto/',
-			icon: 'archive',
-			name: 'Daily-arkisto'
-		},
-		{
-			href: '/laskin/',
-			icon: 'calculator',
-			name: 'Laskin'
-		},
-		{
-			href: '/tilastot/',
-			icon: 'stats',
-			name: 'Tilastot'
+			label: 'Työkalut & Pelit',
+			items: [
+				{ href: '/laskin/', icon: 'calculator', name: 'Laskin' },
+				{ href: '/daily/arkisto/', icon: 'archive', name: 'Daily-arkisto' }
+			]
 		}
 	];
 
@@ -256,6 +249,15 @@
 
 {#await data.alko then alko}
 	{shiftLoader()}
+	<!-- Watched products that changed since the user last looked, for the menu's count -->
+	{@const changedWatchCount = watchlist.length
+		? watchStatuses(
+				watchlist,
+				(id) => alko.kaljakori.findById(id),
+				alko.availabilityLoaded ? alko.availability : null,
+				resolvePreferredStore(alko.availability.stores, $preferredStoreId, $userLocation)?.id
+			).filter((status) => status.changes.length).length
+		: 0}
 	<div class="flex h-full w-full flex-col">
 		{#if dev}
 			<span class="bg-brand-3 px-1.5 py-0.5 text-center text-sm text-white">DEV</span>
@@ -318,21 +320,55 @@
 					onkeydown={handleExtraMenuKeydown}
 					onfocusout={handleExtraMenuFocusout}
 				>
-					<summary aria-label="Lisää" class={twMerge(components.button(), 'list-none p-2 text-xl')}>
+					<summary
+						aria-label={changedWatchCount
+							? `Lisää, ${changedWatchCount} seuratussa tuotteessa muutoksia`
+							: 'Lisää'}
+						class={twMerge(components.button(), 'relative list-none p-2 text-xl')}
+					>
 						{#if !$isMobile}<span class="text-sm">Lisää</span>{/if}<Icon name="menu" />
+						{#if changedWatchCount}
+							<span
+								class="absolute -end-1 -top-1 size-2.5 rounded-full bg-green-600 ring-2 ring-white dark:ring-zinc-900"
+							></span>
+						{/if}
 					</summary>
 					<div
-						class="absolute end-0 top-full z-20 mt-2 flex min-w-40 flex-col gap-1 rounded border border-primary bg-primary p-1 shadow-lg"
+						class="absolute end-0 top-full z-20 mt-2 flex w-56 flex-col rounded border border-primary bg-primary p-1.5 shadow-lg"
 					>
-						{#each extraItems as item}
-							<a
-								href={appPath(item.href)}
-								onclick={closeExtraMenu}
-								class={twMerge(components.button(), 'w-full justify-start')}
+						{#each menuGroups as group, index (group.label)}
+							<p
+								id={`menu-${index}`}
+								class={twMerge(
+									'px-2 pb-1 text-xs font-semibold tracking-wide text-secondary uppercase',
+									index > 0 ? 'mt-1.5 border-t border-primary pt-2.5' : 'pt-1'
+								)}
 							>
-								<Icon name={item.icon} />
-								<span>{item.name}</span>
-							</a>
+								{group.label}
+							</p>
+							<ul aria-labelledby={`menu-${index}`}>
+								{#each group.items as item (item.href)}
+									<li>
+										<a
+											href={appPath(item.href)}
+											onclick={closeExtraMenu}
+											aria-current={page.url.pathname.startsWith(appPath(item.href))
+												? 'page'
+												: undefined}
+											class="flex items-center gap-2.5 rounded px-2 py-1.5 text-sm hover:bg-secondary aria-[current=page]:bg-secondary aria-[current=page]:font-semibold"
+										>
+											<Icon name={item.icon} class="text-base" />
+											<span class="flex-1">{item.name}</span>
+											{#if item.href === '/seuratut/' && changedWatchCount}
+												<span
+													class="rounded-full bg-green-600 px-1.5 text-xs font-semibold text-white"
+													title="Muuttuneita seurattuja tuotteita">{changedWatchCount}</span
+												>
+											{/if}
+										</a>
+									</li>
+								{/each}
+							</ul>
 						{/each}
 					</div>
 				</details>
