@@ -6,9 +6,14 @@
 	import { components } from '$lib/utils/ui/styles';
 	import Icon from '$lib/components/widgets/Icon.svelte';
 	import { m } from '$lib/i18n';
+	import { reportPageNotFound } from '$lib/utils/app/errorAnalytics';
 
 	document.title = generateTitle(m.error_title({ status: page.status }));
 	console.error(page.error);
+
+	$effect(() => {
+		reportPageNotFound(page.status, page.route.id, page.url.pathname, page.error?.message);
+	});
 </script>
 
 <div class="grid h-full w-full place-content-center">
