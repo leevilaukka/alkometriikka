@@ -2,6 +2,8 @@
 	import { resolve } from '$app/paths';
 	import Icon from '$lib/components/widgets/Icon.svelte';
 	import StoreCompass from '$lib/components/widgets/StoreCompass.svelte';
+	import StoreHighlights from '$lib/components/store/StoreHighlights.svelte';
+	import { productsInStore } from '$lib/utils/catalog/storeHighlights';
 	import { preferredStoreId } from '$lib/global.svelte';
 	import type { AvailabilityStore } from '$lib/types';
 	import { getStoreCity, isStoreOpen } from '$lib/utils/catalog/availability.js';
@@ -171,6 +173,12 @@
 						{/each}
 					</section>
 				{/if}
+				{#await data.alkoWithStores then alko}
+					<StoreHighlights
+						storeId={store.id}
+						products={productsInStore(alko.kaljakori.data, alko.availability, store.id)}
+					/>
+				{/await}
 			</div>
 
 			<section class="overflow-hidden rounded border border-primary bg-secondary md:col-span-2">

@@ -150,6 +150,19 @@ requested only when needed, reused for 10 minutes, and refreshed when the tab re
 (`src/lib/utils/device/location.ts`). The product page uses the preferred store for its availability
 banner and distance sorting; category and price change pages can be limited to it.
 
+### Store page sections
+
+`components/store/StoreHighlights.svelte`, `src/lib/utils/catalog/storeHighlights.ts`
+
+Below the store's details, from the products it stocks (each list shows five, "Näytä kaikki" for
+the rest):
+
+- **Tullut myymälään**: arrivals of the last 30 days from the
+  [stock history](../data/stock-history.md#files), hidden while it's warming up
+- **Uutuudet**: Alko's new products in the store
+- **Alennuksessa**: products on sale, biggest discount first
+- **Eniten alkoholia eurolla**: the best alcohol per euro in each type
+
 ## Compass (`/kompassi`)
 
 `routes/kompassi/+page.svelte`, `widgets/CompassDial.svelte`, `src/lib/utils/device/compass.ts`,
