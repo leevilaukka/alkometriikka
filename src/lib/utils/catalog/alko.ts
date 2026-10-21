@@ -1,5 +1,5 @@
-import type { DrunkColumnNames, ImageTransform } from '$lib/types';
-import { DrunkColumns } from '../constants/columns';
+import type { DrunkColumnNames, ImageTransform, PriceListItem } from '$lib/types';
+import { AllColumns, DrunkColumns } from '../constants/columns';
 import { GenderOptionsMap } from '../constants/app';
 
 /**
@@ -117,4 +117,16 @@ export function generateImageUrl(itemNumber: string, transform?: ImageTransform)
 		`https://images.alko.fi/images/cs_srgb,f_auto,t_${transform || 'products'}/cdn` as const;
 
 	return `${imageURL}/${itemNumber}/kuva.jpg` as const;
+}
+
+/**
+ * Site path of the product's price-change RSS feed, or `undefined` when it has none.
+ * Same rule as scripts/site/rss.ts: a product gets a feed once its price has changed.
+ */
+export function productFeedPath(product: PriceListItem): string | undefined {
+	const history = product[AllColumns.History] ?? [];
+	const changed = history.some(
+		(entry, index) => index > 0 && entry.price !== history[index - 1].price
+	);
+	return changed ? `/rss/${encodeURIComponent(product[AllColumns.Number])}.xml` : undefined;
 }

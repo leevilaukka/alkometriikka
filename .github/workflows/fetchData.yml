@@ -300,6 +300,17 @@ jobs:
           r2-region: ${{ vars.CF_R2_REGION }}
           og-cdn-base: ${{ vars.OG_CDN_BASE }}
 
+      # Before the new availability.json is copied over the deployed one, which
+      # is the previous run's and tells which products arrived in which store.
+      # Best-effort: a missed run only loses that day's point.
+      - name: Update stock history
+        continue-on-error: true
+        run: |
+          bun run scripts/data/stock-history.ts \
+            --availability availability.json \
+            --previous ../gh-pages/availability.json \
+            --dir ../gh-pages/stock
+
       - name: Refresh product pages
         env:
           ALKO_PRERENDER_CONCURRENCY: '32'
@@ -322,7 +333,8 @@ jobs:
       - name: Commit and push downloaded file
         working-directory: ../gh-pages
         run: |
-          git add data.json hashes.json availability.json sitemap.xml rss.xml feed.json rss daily tuotteet tuotteet-manifest.json kategoriat -f index.html myymalat laskin tilastot kompassi hinnanmuutokset listat
+          git add data.json hashes.json availability.json sitemap.xml rss.xml feed.json rss daily tuotteet tuotteet-manifest.json kategoriat -f index.html myymalat laskin tilastot kompassi hinnanmuutokset listat seuratut
+          [ -d stock ] && git add -f stock || true
           [ -f og-images.json ] && git add og-images.json -f || true
           [ -f og-categories.json ] && git add og-categories.json -f || true
           git commit -m "Update price list and static product pages [skip ci]" || echo "No changes to commit"

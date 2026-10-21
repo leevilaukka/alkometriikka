@@ -359,7 +359,14 @@ All of these return the **SPA HTML shell** (not JSON) – i.e. the endpoints don
 /api/stores-services/2102/products
 ```
 
-**Conclusion:** there is no public bulk endpoint for per-store (product × store) unit-level inventory. alko.fi only shows the quantity for a single selected store (`selectedStore.amountAvailable`) via the store selector, one (product, store) request at a time. The only quantities you can fetch efficiently are the **online-warehouse** amounts (section 5, batched `/api/intershop/availability/webshop/...`).
+**Conclusion:** there is no public bulk endpoint for per-store (product × store) unit-level inventory across products. The only quantities you can fetch for many products at once are the **online-warehouse** amounts (section 5, batched `/api/intershop/availability/webshop/...`).
+
+**Per product, all stores (found 2026-10-21):** `GET /api/product-api/availability/<productId>?` (optionally `latitude`/`longitude` query params) returns every store stocking the product with its unit **`count`**: `[{ id, count, storeName, storeNameSv, outletType, address, latitude, longitude, openHours[], city, postalCode, open, … }]`. Found in the product page's bundle (endpoint key `productAvailabilityById`), where `amountAvailable` is derived from it.
+
+- Sample: 100151 → 306 stores, counts 1–93 (median 9); 300079 → 332 stores, 1–188.
+- ~250 KB per response (each store's two-week `openHours` is repeated), ~0.35 s.
+- **No CORS headers**, so a browser on another origin can't call it; it needs a proxy (e.g. a Cloudflare Worker trimming it to `{storeId: count}` with a short cache) or the sync (~11k requests, ~2.7 GB per full sweep).
+- Not used yet (decided against for now, 2026-10-21).
 
 ---
 

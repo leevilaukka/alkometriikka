@@ -1,4 +1,5 @@
 import type { Snippet } from 'svelte';
+import type { WatchedProduct } from './types';
 import { writable } from 'svelte/store';
 import { LocalStorageKeys } from './utils/constants/app';
 import { LocalStorageManager } from './utils/app/storage';
@@ -10,6 +11,10 @@ export let personalInfo = $state(
 export let lists = $state(LocalStorageManager.getItem(LocalStorageKeys.Lists) || []);
 export let compareProductIds = $state<string[]>(
 	LocalStorageManager.getItem(LocalStorageKeys.CompareProducts) || []
+);
+/** Products the user follows for price and stock changes, see `src/lib/utils/user/watchlist.ts`. */
+export let watchlist = $state<WatchedProduct[]>(
+	LocalStorageManager.getItem(LocalStorageKeys.Watchlist) || []
 );
 /** The comparison table emphasizes rows whose values differ between the products. */
 export let compareHighlightDifferences = writable<boolean>(

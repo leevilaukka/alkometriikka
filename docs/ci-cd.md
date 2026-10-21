@@ -36,6 +36,7 @@ working copies from it, so it is effectively the database.
 data.json              dataset (fetchData)
 hashes.json            change-detection hashes (fetchData)
 availability.json      stores and stock (fetchData)
+stock/                 stock history: state, per-product counts, per-store arrivals (fetchData)
 og-images.json         product OG manifest (fetchData)
 og-categories.json     category OG manifest (fetchData)
 sitemap.xml            (fetchData)
@@ -44,7 +45,7 @@ rss/                   per-product and per-category feeds (fetchData)
 tuotteet/              product stubs (build + fetchData)
 tuotteet-manifest.json prerender keys (build + fetchData)
 kategoriat/            category stubs (build + fetchData)
-myymalat/, laskin/, tilastot/, kompassi/, hinnanmuutokset/   static stubs (build + fetchData)
+myymalat/, laskin/, tilastot/, kompassi/, hinnanmuutokset/, listat/, seuratut/   static stubs (build + fetchData)
 daily/                 manifests, index.html stub, archive/ (fetchData + archiveDaily)
 notices.json           site notices (build, from static/)
 ```
@@ -76,7 +77,7 @@ Deploys a new version of the app. The site code changes, but the data must not.
 7. Prerender product and category pages if the gate said so. Always prerender static and store
    pages (cheap, and they embed the new page shell).
 8. Delete everything except `build/`, move `build/*` to the root.
-9. Restore `hashes.json`, `sitemap.xml`, `rss.xml`, `feed.json` and `rss/` from `gh-pages`.
+9. Restore `hashes.json`, `sitemap.xml`, `rss.xml`, `feed.json`, `rss/` and `stock/` from `gh-pages`.
 10. Write `CNAME` (`alkometriikka.fi`) and `.nojekyll`.
 11. Commit to a fresh `gh-pages` branch and **force-push** it.
 12. Purge `notices.json` and `service-worker.js` from Cloudflare, so a notice edited on `main`
@@ -123,12 +124,14 @@ deploy with the previous manifests and fall back to Alko's photos.
 3. Seed `daily/` from `gh-pages`. Fails if it's missing.
 4. `bun run daily` (bake and archive).
 5. Render today's Daily OG card and stub (best effort).
-6. Copy the OG manifests in, prerender product and category pages incrementally against the
+6. Update the [stock history](data/stock-history.md) in `../gh-pages/stock` against the deployed
+   (previous) `availability.json` (best effort).
+7. Copy the OG manifests in, prerender product and category pages incrementally against the
    deployed `404.html`, copy the data and feed files in, prerender static and store pages, and
    replace `daily/` and `rss/`.
-7. Commit "Update price list and static product pages [skip ci]" and push (a normal push, not a
+8. Commit "Update price list and static product pages [skip ci]" and push (a normal push, not a
    force-push).
-8. Purge `data.json`, `availability.json`, `rss.xml` and `feed.json` from Cloudflare. This runs
+9. Purge `data.json`, `availability.json`, `rss.xml` and `feed.json` from Cloudflare. This runs
    only after the push, so a request can't re-cache the old files between the purge and the new
    files going live.
 

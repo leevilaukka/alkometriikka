@@ -41,6 +41,7 @@
 	<Product
 		{product}
 		kaljakori={alko.kaljakori}
+		availability={alko.availability}
 		{availabilityStores}
 		{preferredStore}
 		{availabilityUpdated}

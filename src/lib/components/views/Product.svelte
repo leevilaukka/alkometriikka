@@ -6,7 +6,7 @@
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/ui/styles';
 	import Icon from '../widgets/Icon.svelte';
-	import { type AvailabilityStore, type PriceListItem } from '$lib/types';
+	import { type AvailabilityData, type AvailabilityStore, type PriceListItem } from '$lib/types';
 	import { afterNavigate } from '$app/navigation';
 	import type { Kaljakori } from '$lib/alko';
 	import {
@@ -36,17 +36,21 @@
 	import ProductDetailsTable from '../product/ProductDetailsTable.svelte';
 	import ProductStoreAvailability from '../product/ProductStoreAvailability.svelte';
 	import ProductMobileCta from '../product/ProductMobileCta.svelte';
+	import ProductWatchButton from '../product/ProductWatchButton.svelte';
+	import { describeWatchChange, type WatchChange } from '$lib/utils/user/watchlist';
 	import { pageBottomBar } from '$lib/global.svelte';
 
 	const {
 		product,
 		kaljakori,
+		availability,
 		availabilityStores,
 		preferredStore,
 		availabilityUpdated
 	}: {
 		product: PriceListItem;
 		kaljakori: Kaljakori;
+		availability: AvailabilityData;
 		availabilityStores: AvailabilityStore[];
 		preferredStore?: AvailabilityStore;
 		availabilityUpdated: Date | undefined;
@@ -64,6 +68,7 @@
 	);
 
 	let productElement: HTMLDivElement;
+	let watchChanges = $state<WatchChange[]>([]);
 
 	const sizeOptions = $derived(buildSizeOptions(product, kaljakori));
 	const cheapestSize = $derived(sizeOptions.find((size) => size.isBestValue));
@@ -145,11 +150,18 @@
 >
 	<div class="flex w-full items-center gap-3.5">
 		<ProductBreadcrumb {product} {kaljakori} class="min-w-0 flex-1" />
+		<ProductWatchButton
+			{product}
+			{availability}
+			preferredStoreId={preferredStore?.id}
+			bind:changes={watchChanges}
+			class="ml-auto"
+		/>
 		<button
 			type="button"
 			class={twMerge(
 				components.button({ size: 'sm', type: 'positive' }),
-				'ml-auto flex shrink-0 items-center gap-2'
+				'flex shrink-0 items-center gap-2'
 			)}
 			onclick={async () => {
 				const shared = await handleShare({
@@ -169,6 +181,30 @@
 			<span class="hidden sm:inline">Jaa tuote</span>
 		</button>
 	</div>
+
+	{#if watchChanges.length}
+		<div
+			role="status"
+			class="flex flex-col gap-1 rounded border border-primary bg-secondary px-4 py-3 text-sm"
+		>
+			<strong>Muuttunut edellisen käyntisi jälkeen</strong>
+			<ul class="flex flex-wrap gap-x-4 gap-y-1">
+				{#each watchChanges as change, index (index)}
+					{@const label = describeWatchChange(
+						change,
+						(storeId) => availability.stores[storeId]?.name
+					)}
+					<li
+						class={label.good
+							? 'text-green-700 dark:text-green-400'
+							: 'text-red-700 dark:text-red-400'}
+					>
+						{label.text}
+					</li>
+				{/each}
+			</ul>
+		</div>
+	{/if}
 
 	<div
 		class="grid w-full grid-cols-1 gap-6 lg:grid-cols-[360px_minmax(0,1fr)_320px] lg:items-start"

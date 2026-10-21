@@ -16,7 +16,8 @@
 		preferredStoreId,
 		searchQuery,
 		theme,
-		userLocation
+		userLocation,
+		watchlist
 	} from '$lib/global.svelte';
 	import logo from '$lib/assets/images/Logo/0.5x/Logo_rounded@0.5x.png';
 	import { twMerge } from 'tailwind-merge';
@@ -37,6 +38,8 @@
 	import type { IconName } from '$lib/icons';
 	import { loadUpdateOnNavigate } from '$lib/utils/app/pwa.svelte';
 	import { loadFlags } from '$lib/utils/flags/flags.svelte';
+	import { resolvePreferredStore } from '$lib/utils/catalog/availability';
+	import { watchStatuses } from '$lib/utils/user/watchlist';
 
 	let { children, data } = $props();
 	loadFlags();
@@ -65,6 +68,10 @@
 
 	$effect(() => {
 		LocalStorageManager.setItem(LocalStorageKeys.CompareProducts, compareProductIds);
+	});
+
+	$effect(() => {
+		LocalStorageManager.setItem(LocalStorageKeys.Watchlist, watchlist);
 	});
 
 	$effect(() => {
@@ -198,7 +205,10 @@
 		},
 		{
 			label: 'Omat',
-			items: [{ href: '/listat/', icon: 'list_ul', name: 'Listat' }]
+			items: [
+				{ href: '/seuratut/', icon: 'bell', name: 'Seuratut' },
+				{ href: '/listat/', icon: 'list_ul', name: 'Listat' }
+			]
 		},
 		{
 			label: 'Myymälät',
@@ -208,7 +218,7 @@
 			]
 		},
 		{
-			label: 'Työkalut & pelit',
+			label: 'Työkalut & Pelit',
 			items: [
 				{ href: '/laskin/', icon: 'calculator', name: 'Laskin' },
 				{ href: '/daily/arkisto/', icon: 'archive', name: 'Daily-arkisto' }
@@ -229,7 +239,8 @@
 		'/vertailu',
 		'/kategoriat',
 		'/myymalat',
-		'/myymalat/[storeID]'
+		'/myymalat/[storeID]',
+		'/seuratut'
 	];
 	const hasSearch = $derived(page.route.id === null || !noSearchPages.includes(page.route.id));
 
@@ -241,6 +252,15 @@
 
 {#await data.alko then alko}
 	{shiftLoader()}
+	<!-- Watched products that changed since the user last looked, for the menu's count -->
+	{@const changedWatchCount = watchlist.length
+		? watchStatuses(
+				watchlist,
+				(id) => alko.kaljakori.findById(id),
+				alko.availabilityLoaded ? alko.availability : null,
+				resolvePreferredStore(alko.availability.stores, $preferredStoreId, $userLocation)?.id
+			).filter((status) => status.changes.length).length
+		: 0}
 	<div class="flex h-full w-full flex-col">
 		{#if dev}
 			<span class="bg-brand-3 px-1.5 py-0.5 text-center text-sm text-white">DEV</span>
@@ -313,8 +333,18 @@
 					onkeydown={handleExtraMenuKeydown}
 					onfocusout={handleExtraMenuFocusout}
 				>
-					<summary aria-label="Lisää" class={twMerge(components.button(), 'list-none p-2 text-xl')}>
+					<summary
+						aria-label={changedWatchCount
+							? `Lisää, ${changedWatchCount} seuratussa tuotteessa muutoksia`
+							: 'Lisää'}
+						class={twMerge(components.button(), 'relative list-none p-2 text-xl')}
+					>
 						{#if !$isMobile}<span class="text-sm">Lisää</span>{/if}<Icon name="menu" />
+						{#if changedWatchCount}
+							<span
+								class="absolute -end-1 -top-1 size-2.5 rounded-full bg-green-600 ring-2 ring-white dark:ring-zinc-900"
+							></span>
+						{/if}
 					</summary>
 					<div
 						class="absolute end-0 top-full z-20 mt-2 flex w-56 flex-col rounded border border-primary bg-primary p-1.5 shadow-lg"
@@ -342,6 +372,12 @@
 										>
 											<Icon name={item.icon} class="text-base" />
 											<span class="flex-1">{item.name}</span>
+											{#if item.href === '/seuratut/' && changedWatchCount}
+												<span
+													class="rounded-full bg-green-600 px-1.5 text-xs font-semibold text-white"
+													title="Muuttuneita seurattuja tuotteita">{changedWatchCount}</span
+												>
+											{/if}
 										</a>
 									</li>
 								{/each}

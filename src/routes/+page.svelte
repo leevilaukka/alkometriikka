@@ -1,10 +1,12 @@
 <script lang="ts">
 	import Main, { type ListPosition } from '$lib/components/views/Main.svelte';
+	import WatchlistBanner from '$lib/components/widgets/WatchlistBanner.svelte';
 	import { beforeNavigate } from '$app/navigation';
 	import { generateTitle, resetSEO } from '$lib/utils/app/meta';
 	import type { PageProps, Snapshot } from './$types';
 	import { page } from '$app/state';
 	import { AllColumns } from '$lib/utils/constants/columns';
+	import { watchlist } from '$lib/global.svelte';
 	import { readSearchParams } from '$lib/utils/app/compressedParams';
 
 	let { data }: PageProps = $props();
@@ -29,5 +31,19 @@
 </svelte:head>
 
 {#await needsStores ? data.alkoWithStores : data.alko then alko}
-	<Main kaljakori={alko.kaljakori} {position} bind:this={main} />
+	<!-- Main's own heading is replaced by a header, so this one brings it back -->
+	{#snippet header()}
+		<h1 class="sr-only">Alkon tuotteet</h1>
+		<WatchlistBanner
+			kaljakori={alko.kaljakori}
+			availability={alko.availability}
+			availabilityLoaded={alko.availabilityLoaded}
+		/>
+	{/snippet}
+	<Main
+		kaljakori={alko.kaljakori}
+		header={watchlist.length ? header : undefined}
+		{position}
+		bind:this={main}
+	/>
 {/await}

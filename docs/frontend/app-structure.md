@@ -48,6 +48,7 @@ without store data await `alkoWithStores`:
 | `/tuotteet/[id]`                                     | always (shows availability)                 |
 | `/myymalat/[storeID]`                                | always                                      |
 | `/kategoriat/[type]/[[subtype]]`, `/hinnanmuutokset` | "only my store" is on and a store is chosen |
+| `/seuratut`                                          | always (compares stock)                     |
 | `/kompassi`                                          | the store list is read from it              |
 
 If `data.json` fails to load, the layout shows the error with a retry button. If
@@ -134,6 +135,7 @@ Product photos from `images.alko.fi` aren't handled: they are sent with a one-ye
 | `/kategoriat/`                    | Category index                         |                                                                                        |
 | `/kategoriat/[type]/[[subtype]]/` | Category page                          | 404 if the slugs don't match the category tree                                         |
 | `/hinnanmuutokset`                | Recent price changes                   |                                                                                        |
+| `/seuratut`                       | Watched products and their changes     |                                                                                        |
 | `/tilastot`                       | Catalog statistics and charts          |                                                                                        |
 | `/laskin`                         | Alcohol / BAC calculator               | Doesn't need the dataset                                                               |
 | `/myymalat`                       | Store list                             |                                                                                        |
@@ -174,6 +176,7 @@ legacy EAN, since API-synced products have none.
 | `personalInfo`                      | `$state` | `personal_info`                 | Weight and gender for BAC estimates                             |
 | `lists`                             | `$state` | `lists`                         | The user's saved lists                                          |
 | `compareProductIds`                 | `$state` | `compare_products`              | Products queued for comparison (max 6)                          |
+| `watchlist`                         | `$state` | `watchlist`                     | Watched products and what the user last saw of them             |
 | `compareHighlightDifferences`       | store    | `compare_highlight_differences` | Comparison table dims identical rows                            |
 | `theme`                             | store    | `theme`                         | `''` (system), `'light'` or `'dark'`                            |
 | `preferredStoreId`                  | store    | `preferred_store`               | A store id, or `'auto'` for the nearest store                   |
@@ -226,8 +229,10 @@ while back/forward restores it from the URL.
 
 - The header has the logo, the search box (hidden on pages without a product list), a "Lisää"
   menu, links to Daily and Listat, and the settings button. The menu (`menuGroups` in the layout)
-  groups its links under Selaa (Kategoriat, Hinnanmuutokset, Tilastot), Omat (Listat), Myymälät
-  (Myymälät, Kompassi) and Työkalut (Laskin, Daily-arkisto), and marks the current page.
+  groups its links under Selaa (Kategoriat, Hinnanmuutokset, Tilastot), Omat
+  (Seuratut, Listat), Myymälät (Myymälät, Kompassi) and Työkalut (Laskin, Daily-arkisto), and
+  marks the current page. When watched products have changed, Seuratut shows how many and the
+  menu button gets a green dot.
 - `/` focuses the search box from anywhere that isn't a text field.
 - On phones, pages pass a snippet into `pageBottomBar` (filter button, product price/compare bar)
   and the layout renders it at the very bottom, below the compare bar.

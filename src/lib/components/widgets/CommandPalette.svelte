@@ -26,6 +26,12 @@
 		MAX_COMPARE_PRODUCTS,
 		toggleCompare
 	} from '$lib/utils/user/compare';
+	import {
+		isWatched,
+		unwatchProduct,
+		watchProduct,
+		watchSnapshot
+	} from '$lib/utils/user/watchlist';
 	import { resolvePreferredStore } from '$lib/utils/catalog/availability';
 	import { requestSettingsOpen } from '$lib/utils/app/settings';
 	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
@@ -192,6 +198,14 @@
 			keywords: 'alennukset halpenivat kallistuivat'
 		},
 		{
+			id: 'page:/seuratut',
+			kind: 'page',
+			label: 'Seuratut',
+			icon: 'bell',
+			href: resolve('/seuratut'),
+			keywords: 'seuranta seurattavat muutokset hinta saatavuus'
+		},
+		{
 			id: 'page:/myymalat',
 			kind: 'page',
 			label: 'Myymälät',
@@ -245,7 +259,25 @@
 		if (!currentProduct) return [];
 		const number = String(currentProduct[AllColumns.Number]);
 		const inCompare = isInCompare(number);
+		const watched = isWatched(number);
+		const product = currentProduct;
 		return [
+			{
+				id: 'action:product-watch',
+				kind: 'action',
+				label: watched ? 'Lopeta seuraaminen' : 'Seuraa tuotetta',
+				icon: watched ? 'bell_minus' : 'bell_plus',
+				keywords: 'seuratut seuranta hinta saatavuus muutokset',
+				stay: true,
+				run: () => {
+					if (watched) {
+						unwatchProduct(number);
+						return 'Seuraaminen lopetettu';
+					}
+					watchProduct(number, watchSnapshot(product, availability, preferredStore?.id));
+					return 'Tuotetta seurataan';
+				}
+			},
 			{
 				id: 'action:product-compare',
 				kind: 'action',

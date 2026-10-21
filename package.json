@@ -26,7 +26,9 @@
 		"migrate": "bun run scripts/data/migrate.ts",
 		"sync": "bun run scripts/data/index.ts",
 		"daily": "bun run scripts/site/daily.ts",
-		"backup:daily": "bun run scripts/site/backup-archive.ts"
+		"backup:daily": "bun run scripts/site/backup-archive.ts",
+		"stock": "bun run scripts/data/stock-history.ts",
+		"stock:demo": "bun run scripts/data/stock-history.ts --dev --demo"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^6.1.1",

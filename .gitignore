@@ -10,6 +10,8 @@ feed.json
 /static/availability.json
 /hashes.json
 /static/hashes.json
+/static/stock/
+/stock/
 /static/data-migrate.json
 /static/sitemap.xml
 /static/rss.xml

@@ -54,7 +54,7 @@ fallback list, category RSS alternates and the category OG card from `og-categor
 
 Writes the front page stub (`index.html`, from `HOME_PAGE`), stubs for the routes in
 `STATIC_PAGES` (`/laskin/`, `/tilastot/`, `/myymalat/`, `/kompassi/`, `/hinnanmuutokset/`,
-`/listat/`) and one `myymalat/<id>/index.html` per store with `LiquorStore`
+`/listat/`, `/seuratut/`) and one `myymalat/<id>/index.html` per store with `LiquorStore`
 JSON-LD (address, coordinates, weekly opening hours). Output is deterministic: opening hours use
 the regular weekly pattern, not Alko's rolling two-week calendar, so unchanged stores produce
 byte-identical files and don't add commits to `gh-pages`. Fully regenerated on every run.

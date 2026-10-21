@@ -59,6 +59,13 @@ Filter usage is reported as one analytics event per filtering session, not per c
 | Store availability     | `ProductStoreAvailability`               | Stores stocking it, sorted by distance from the preferred store, with "updated N minutes ago"                           |
 | Mobile CTA             | `ProductMobileCta`                       | Bottom bar on small screens: price, compare, add to list                                                                |
 
+The store availability header also shows the store count trend over the last 30 days with a
+sparkline (`ProductStockTrend`), once the [stock history](../data/stock-history.md) has two days
+for the product.
+
+**Seuraa** (`ProductWatchButton`) adds the product to the [watchlist](#watchlist-seuratut). Opening
+a watched product shows what changed since the last visit above the page, then counts as seeing it.
+
 Removed products still have a page with a "Poistettu valikoimasta" badge. Every product also has
 a prerendered stub for crawlers ([Site generation](../site-generation.md#product-pages)).
 
@@ -101,6 +108,24 @@ volume, alcohol grams, grams per euro, sugar and an estimated ‰.
 compressed with lz-string. No server is involved. If the id matches one of the visitor's own lists
 it opens that list for editing; otherwise it is shown read-only with a button to save a copy. The
 first six products in the current order can be opened in the comparison view.
+
+## Watchlist (`/seuratut`)
+
+`views/Watchlist.svelte`, `widgets/WatchlistBanner.svelte`, `src/lib/utils/user/watchlist.ts`
+
+Products are watched from the product page. Each watched product keeps a snapshot of what the user
+last saw: price, whether it was in the selection, how many stores had it and whether the preferred
+store did. Comparing it with the current data gives the changes: got cheaper or dearer, removed or
+back in the selection, sold out everywhere or back in stores, arrived in or left the preferred
+store. Store changes are only compared once `availability.json` has loaded, and only for the same
+preferred store, so switching stores isn't reported as a change.
+
+- `/seuratut` lists watched products, changed ones first, with "Nähty" per product and "Merkitse
+  kaikki nähdyiksi".
+- The front page shows a banner summarising the changes ("2 halpeni, 1 tuli myymälääsi") while
+  there are any.
+- Opening the product marks it seen. Everything stays in localStorage (`watchlist`) and is part of
+  the settings export.
 
 ## Comparison (`/vertailu?ids=…`)
 
@@ -154,6 +179,19 @@ which follows the store nearest the device's location (`resolvePreferredStore`).
 requested only when needed, reused for 10 minutes, and refreshed when the tab regains focus
 (`src/lib/utils/device/location.ts`). The product page uses the preferred store for its availability
 banner and distance sorting; category and price change pages can be limited to it.
+
+### Store page sections
+
+`components/store/StoreHighlights.svelte`, `src/lib/utils/catalog/storeHighlights.ts`
+
+Below the store's details, from the products it stocks (each list shows five, "Näytä kaikki" for
+the rest):
+
+- **Tullut myymälään**: arrivals of the last 30 days from the
+  [stock history](../data/stock-history.md#files), hidden while it's warming up
+- **Uutuudet**: Alko's new products in the store
+- **Alennuksessa**: products on sale, biggest discount first
+- **Eniten alkoholia eurolla**: the best alcohol per euro in each type
 
 ## Compass (`/kompassi`)
 

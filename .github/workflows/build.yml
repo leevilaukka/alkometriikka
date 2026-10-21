@@ -163,6 +163,11 @@ jobs:
         run: |
           git archive origin/gh-pages rss 2>/dev/null | tar -x - || true
 
+      # Built up run by run (scripts/data/stock-history.ts); dropping it would restart the history
+      - name: Restore stock history from existing gh-pages
+        run: |
+          git archive origin/gh-pages stock 2>/dev/null | tar -x - || true
+
       - name: Create CNAME and .nojekyll file
         run: |
           echo "alkometriikka.fi" > CNAME
@@ -178,7 +183,7 @@ jobs:
           # Runtime datasets are gitignored, so `git add .` skips them. Force-add
           # them so the force-push to gh-pages preserves the data deployed by
           # fetchData.yml instead of deleting it on every site build.
-          for f in data.json hashes.json availability.json sitemap.xml rss.xml feed.json rss og-images.json og-categories.json daily tuotteet-manifest.json; do
+          for f in data.json hashes.json availability.json sitemap.xml rss.xml feed.json rss stock og-images.json og-categories.json daily tuotteet-manifest.json; do
             if [ -e "$f" ]; then git add -f "$f"; fi
           done
           git commit -m "Deploy to GitHub Pages [skip ci]" || echo "No changes to commit"
