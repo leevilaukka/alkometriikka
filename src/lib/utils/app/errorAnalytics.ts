@@ -1,5 +1,6 @@
 import { version } from '$app/environment';
 import type { AnalyticsEventMap } from '$lib/types';
+import { browserLabel } from '$lib/utils/device/browser';
 import { sendAnalyticsEvent } from './analytics';
 
 type ErrorKind = AnalyticsEventMap['app_error']['kind'];
@@ -7,6 +8,7 @@ type ErrorKind = AnalyticsEventMap['app_error']['kind'];
 // Umami cuts event data strings at 500 characters
 const maxMessageLength = 200;
 const maxStackLength = 500;
+const maxUserAgentLength = 300;
 // A render loop can throw the same error on every frame; a few reports per page load are enough
 const maxReportsPerLoad = 5;
 
@@ -58,7 +60,9 @@ export function reportError(
 		...extra,
 		// The query string is left out, like in Umami's pageviews
 		path: location.pathname,
-		version
+		version,
+		browser: browserLabel(navigator.userAgent),
+		user_agent: navigator.userAgent.slice(0, maxUserAgentLength)
 	};
 	whenAnalyticsLoaded(() => sendAnalyticsEvent('app_error', params));
 }

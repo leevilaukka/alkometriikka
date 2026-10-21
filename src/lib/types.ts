@@ -285,6 +285,9 @@ export type AnalyticsEventMap = {
 		route?: string | null;
 		path: string;
 		version: string;
+		/** Browser and version, such as "Chrome 121" or "Safari 16.6", see `browserLabel` */
+		browser: string;
+		user_agent: string;
 	};
 	watch_product: { product_number: string };
 	unwatch_product: { product_number: string };
