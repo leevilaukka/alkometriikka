@@ -22,6 +22,7 @@ import {
 } from '../../src/lib/utils/catalog/categories.ts';
 import { readOption } from '../lib/cli';
 import type { StoredDataset, StoredProduct } from '../../src/lib/utils/catalog/dataset.ts';
+import { hasRecordedPriceChange } from '../../src/lib/utils/catalog/priceHistory';
 import { mapPool } from '../lib/async';
 import { escapeHtml } from '../lib/html';
 import { breadcrumbJsonLd, breadcrumbNav, renderStub, SITE_URL, type StubPage } from '../lib/stub';
@@ -45,7 +46,7 @@ type PrerenderManifest = Record<string, PrerenderManifestEntry>;
 // Bump when the page rendering logic (productHtml, minifyHtml, the SEO
 // template, ...) changes in a way that can alter existing pages without the
 // template or product data changing, forcing a full re-render.
-const RENDER_VERSION = 8;
+const RENDER_VERSION = 9;
 
 function sha256Hex(value: string): string {
 	const hasher = new CryptoHasher('sha256');
@@ -168,12 +169,8 @@ function parsePrice(value: unknown, productId: string): number | null {
 }
 
 /** True when a per-product RSS feed has at least one recorded price change to list. */
-function hasPriceChange(history?: { date: string; price: number }[]): boolean {
-	if (!Array.isArray(history) || history.length < 2) return false;
-	for (let index = 1; index < history.length; index += 1) {
-		if (history[index].price !== history[index - 1].price) return true;
-	}
-	return false;
+function hasPriceChange(history: StoredProduct['priceHistory']): boolean {
+	return hasRecordedPriceChange(history);
 }
 
 function fiNumber(value: number, maxDigits: number, minDigits = 0): string {
@@ -215,7 +212,7 @@ function priceHistoryHtml(history: StoredProduct['priceHistory']): string {
 			]
 		);
 	} else {
-		entries.push(['Hinnanmuutokset', 'Hinta ei ole muuttunut seurannan aikana']);
+		entries.push(['Hinnanmuutokset', 'Ei tallennettuja hinnanmuutoksia']);
 	}
 	return `<section><h2>Hintahistoria</h2>${definitionList(entries)}</section>`;
 }

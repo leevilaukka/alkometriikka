@@ -5,20 +5,24 @@
 	import { productFeedPath } from '$lib/utils/catalog/alko';
 	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 	import type { PriceHistoryEntry, PriceListItem } from '$lib/types';
-	import type { ChartConfiguration, TooltipItem } from 'chart.js';
+	import type { ChartConfiguration, Plugin, TooltipItem } from 'chart.js';
 	import ChartCard from '../widgets/ChartCard.svelte';
 	import Icon from '../widgets/Icon.svelte';
-	import { components } from '$lib/utils/ui/styles';
 	import { twMerge } from 'tailwind-merge';
 	import { dev } from '$app/environment';
 	import { appPath } from '$lib/utils/app/paths';
 	import {
 		formatHistoryDate,
+		hasRecordedPriceChange,
 		historyTimestamp,
 		priceHistoryChartPoints
 	} from '$lib/utils/catalog/priceHistory';
 
-	const { product, class: _class = '' }: { product: PriceListItem; class?: string } = $props();
+	const {
+		product,
+		observedThrough,
+		class: _class = ''
+	}: { product: PriceListItem; observedThrough?: string; class?: string } = $props();
 
 	type RangeKey = '1kk' | '3kk' | '1v' | 'kaikki';
 	const ranges: { key: RangeKey; label: string; days: number | null }[] = [
@@ -32,20 +36,20 @@
 
 	const fullHistory = $derived(product[AllColumns.History] ?? []);
 	const archiveEntries = $derived(fullHistory.filter((entry) => entry.archive));
-	const liveHistory = $derived(fullHistory.filter((entry) => !entry.archive));
 	// Same rule as scripts/site/rss.ts: a product gets a feed once its price has changed
 	const feedHref = $derived(
-		liveHistory.some((entry, index) => index > 0 && entry.price !== liveHistory[index - 1].price)
+		hasRecordedPriceChange(fullHistory)
 			? `/rss/${encodeURIComponent(product[AllColumns.Number])}.xml`
 			: undefined
 	);
 	const chartPoints = $derived.by(() => {
 		const range = ranges.find((r) => r.key === selectedRange);
-		if (!range || range.days === null) return priceHistoryChartPoints(fullHistory);
+		if (!range || range.days === null)
+			return priceHistoryChartPoints(fullHistory, undefined, observedThrough);
 		const cutoff = new Date();
 		cutoff.setDate(cutoff.getDate() - range.days);
 		const cutoffISO = cutoff.toISOString().slice(0, 10);
-		return priceHistoryChartPoints(fullHistory, cutoffISO);
+		return priceHistoryChartPoints(fullHistory, cutoffISO, observedThrough);
 	});
 
 	function isSaleEntry(
@@ -54,13 +58,40 @@
 		return entry.normalPrice != null && entry.price < entry.normalPrice;
 	}
 
-	const config = $derived.by<ChartConfiguration>(() => {
+	const config = $derived.by<ChartConfiguration<'line'>>(() => {
 		const history = chartPoints.flatMap((point) => (point ? [point.entry] : []));
 		const visibleDates = chartPoints.flatMap((point) => (point ? [point.x] : []));
 		const firstDate = visibleDates[0];
 		const lastDate = visibleDates.at(-1);
 		const longRange =
-			firstDate != null && lastDate != null && lastDate - firstDate > 730 * 86400000;
+			firstDate != null && lastDate != null && lastDate - firstDate > 5 * 365 * 86400000;
+		const cyan = '#00b5dd';
+		const lastPoint = chartPoints.findLast((point) => point !== null);
+		const latestPricePlugin: Plugin<'line'> = {
+			id: 'latestPrice',
+			afterDraw(chart) {
+				if (!lastPoint) return;
+				const { ctx, chartArea, scales } = chart;
+				const label = String(formatValue(lastPoint.y, AllColumns.Price));
+				ctx.save();
+				ctx.font = 'bold 11px Inter, system-ui, sans-serif';
+				const width = ctx.measureText(label).width + 12;
+				const x = Math.min(chartArea.right + 6, chart.width - width - 2);
+				const y = Math.max(
+					chartArea.top + 12,
+					Math.min(chartArea.bottom - 12, scales.y.getPixelForValue(lastPoint.y))
+				);
+				ctx.fillStyle = cyan;
+				ctx.beginPath();
+				ctx.roundRect(x, y - 11, width, 22, 4);
+				ctx.fill();
+				ctx.fillStyle = '#ffffff';
+				ctx.textAlign = 'center';
+				ctx.textBaseline = 'middle';
+				ctx.fillText(label, x + width / 2, y);
+				ctx.restore();
+			}
+		};
 
 		// Sale periods are built from the price-history data (recorded at sync
 		// time) merged with the product's currently active campaign window, so
@@ -107,9 +138,9 @@
 
 		// Vertical "Kampanja" marker lines: one at the campaign start date and
 		// another at the end date once it is known.
-		const campaignLinePlugin = {
+		const campaignLinePlugin: Plugin<'line'> = {
 			id: 'campaignLinePlugin',
-			afterDatasetsDraw(chart: any) {
+			afterDatasetsDraw(chart) {
 				const { ctx, chartArea, scales } = chart;
 				const xScale = scales.x;
 				if (!chartArea || !xScale || windows.length === 0) return;
@@ -120,9 +151,11 @@
 				ctx.font = '12px Inter, system-ui, sans-serif';
 				for (const w of windows) {
 					const drawMarker = (date: string, label: string) => {
+						const timestamp = historyTimestamp(date);
+						if (timestamp < xScale.min || timestamp > xScale.max) return;
 						const x = Math.max(
 							chartArea.left,
-							Math.min(chartArea.right, xScale.getPixelForValue(historyTimestamp(date)))
+							Math.min(chartArea.right, xScale.getPixelForValue(timestamp))
 						);
 						const labelGap = 22;
 						ctx.setLineDash([6, 4]);
@@ -160,43 +193,28 @@
 							// Object-mode parsing needs an x value even for a skipped point.
 							return { x: previous && next ? (previous.x + next.x) / 2 : 0, y: Number.NaN };
 						}),
-						borderColor: 'rgba(75, 192, 192, 1)',
-						backgroundColor: 'rgba(75, 192, 192, 0.2)',
-						fill: false,
+						borderColor: cyan,
+						borderWidth: 1.5,
+						backgroundColor: ({ chart }) => {
+							const area = chart.chartArea;
+							if (!area) return 'rgba(0, 181, 221, 0.15)';
+							const gradient = chart.ctx.createLinearGradient(0, area.top, 0, area.bottom);
+							gradient.addColorStop(0, 'rgba(0, 181, 221, 0.32)');
+							gradient.addColorStop(1, 'rgba(0, 181, 221, 0.015)');
+							return gradient;
+						},
+						fill: 'origin',
 						tension: 0,
 						stepped: 'after',
-						spanGaps: false,
+						spanGaps: true,
 						segment: {
-							borderColor: (context) =>
-								chartPoints[context.p1DataIndex]?.entry.archive
-									? '#d97706'
-									: 'rgba(75, 192, 192, 1)'
+							borderDash: ({ p0, p1 }) => (p0.skip || p1.skip ? [5, 4] : [])
 						},
-						pointRadius: chartPoints.map((point) =>
-							!point
-								? 0
-								: point.boundary
-									? 2
-									: isSaleEntry(point.entry)
-										? 5
-										: point.entry.archive
-											? 4
-											: 3
-						),
-						pointBackgroundColor: chartPoints.map((point) =>
-							point?.entry.archive
-								? '#d97706'
-								: point && isSaleEntry(point.entry)
-									? 'rgba(239, 68, 68, 1)'
-									: 'rgba(75, 192, 192, 1)'
-						),
-						pointBorderColor: chartPoints.map((point) =>
-							point?.entry.archive
-								? '#d97706'
-								: point && isSaleEntry(point.entry)
-									? 'rgba(255, 255, 255, 1)'
-									: 'rgba(75, 192, 192, 1)'
-						),
+						pointRadius: chartPoints.length === 1 ? 3 : 0,
+						pointHoverRadius: 4,
+						pointHitRadius: 12,
+						pointBackgroundColor: cyan,
+						pointBorderWidth: 0,
 						tooltip: {
 							callbacks: {
 								label: function (context: any) {
@@ -218,28 +236,45 @@
 			options: {
 				responsive: true,
 				maintainAspectRatio: false,
+				layout: { padding: { top: 18, left: 12, right: 6, bottom: 8 } },
 				scales: {
 					x: {
 						type: 'linear',
 						...(firstDate != null && lastDate != null && firstDate < lastDate
 							? { min: firstDate, max: lastDate }
 							: {}),
-						title: { display: true, text: 'Päivämäärä' },
+						grid: { display: false },
+						border: { display: false },
 						ticks: {
-							maxTicksLimit: 7,
+							maxTicksLimit: 6,
+							maxRotation: 0,
+							padding: 10,
+							color: '#8293a3',
+							font: { family: 'Inter, system-ui, sans-serif', size: 11 },
 							callback: (value) =>
 								longRange
 									? new Date(Number(value)).getUTCFullYear().toString()
-									: formatHistoryDate(Number(value))
+									: new Date(Number(value)).toLocaleDateString('fi-FI', {
+											month: 'short',
+											year: '2-digit',
+											timeZone: 'UTC'
+										})
 						}
 					},
 					y: {
+						position: 'right',
+						beginAtZero: true,
+						grid: { color: 'rgba(130, 147, 163, 0.28)', drawTicks: false },
+						border: { display: false, dash: [3, 4] },
 						ticks: {
+							maxTicksLimit: 5,
+							padding: 10,
+							color: '#8293a3',
+							font: { family: 'Inter, system-ui, sans-serif', size: 11 },
 							callback: function (value) {
 								return String(formatValue(Number(value), AllColumns.Price));
 							}
-						},
-						title: { display: true, text: 'Hinta (€)' }
+						}
 					}
 				},
 				plugins: {
@@ -256,7 +291,7 @@
 					}
 				}
 			},
-			plugins: [campaignLinePlugin]
+			plugins: [campaignLinePlugin, latestPricePlugin]
 		};
 	});
 </script>
@@ -274,7 +309,11 @@
 
 {#if dev || fullHistory.length > 1}
 	<div class={_class}>
-		<ChartCard title="Hintahistoria" {config}>
+		<ChartCard
+			title="Hintahistoria"
+			subtitle={chartPoints.length ? '' : 'Valitulla aikavälillä ei ole hintahavaintoja.'}
+			{config}
+		>
 			{#snippet headerEnd()}
 				<div class="flex items-center gap-2">
 					{#if feedHref}
@@ -314,13 +353,13 @@
 				data-testid="archive-evidence"
 			>
 				<p>
-					<span class="mr-2 inline-block h-2.5 w-2.5 rounded-full bg-amber-600"></span><strong
+					<span class="mr-2 inline-block h-2.5 w-2.5 rounded-full bg-cyan-500"></span><strong
 						>Arkistoidut hinnastot</strong
 					>
 				</p>
 				<p class="mt-1 text-secondary">
-					Oranssit pisteet ovat hinnaston päivältä havaittuja hintoja. Havaintojen välisiä aukkoja
-					ei ole täytetty; tarkka hinnanmuutospäivä ei aina ole tiedossa.
+					Katkoviiva yhdistää hinnastohavainnot ajanjaksoilla, joilta puuttuu tietoja. Tarkka
+					hinnanmuutospäivä ei aina ole tiedossa.
 				</p>
 				<details class="mt-3">
 					<summary class="cursor-pointer font-medium"

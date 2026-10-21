@@ -46,7 +46,8 @@
 		availability,
 		availabilityStores,
 		preferredStore,
-		availabilityUpdated
+		availabilityUpdated,
+		pricesUpdated
 	}: {
 		product: PriceListItem;
 		kaljakori: Kaljakori;
@@ -54,6 +55,7 @@
 		availabilityStores: AvailabilityStore[];
 		preferredStore?: AvailabilityStore;
 		availabilityUpdated: Date | undefined;
+		pricesUpdated?: string;
 	} = $props();
 
 	const rankedAvailabilityStores = $derived(
@@ -255,7 +257,7 @@
 		class="grid w-full grid-cols-1 gap-6 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] lg:items-start"
 	>
 		<div class="flex flex-col gap-6">
-			<ProductPriceHistory {product} />
+			<ProductPriceHistory {product} observedThrough={pricesUpdated?.slice(0, 10)} />
 			<ProductDetailsTable {product} class="hidden lg:block" />
 		</div>
 		<ProductStoreAvailability

@@ -45,5 +45,6 @@
 		{availabilityStores}
 		{preferredStore}
 		{availabilityUpdated}
+		pricesUpdated={alko.dataset.metadata.LastSynced}
 	/>
 {/await}

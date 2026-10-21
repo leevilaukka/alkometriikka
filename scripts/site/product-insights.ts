@@ -109,7 +109,6 @@ export function priceHistorySummary(
 ): PriceHistorySummary | null {
 	const points = (Array.isArray(history) ? history : [])
 		.filter((point) => point && Number.isFinite(point.price) && point.price > 0 && point.date)
-		.map((point) => ({ price: point.price, date: point.date }))
 		// Stable, so same-day entries keep their recorded order
 		.sort((a, b) => (a.date < b.date ? -1 : a.date > b.date ? 1 : 0));
 	if (points.length === 0) return null;
@@ -117,15 +116,23 @@ export function priceHistorySummary(
 	let lowest = points[0];
 	let highest = points[0];
 	let lastChange: PriceHistorySummary['lastChange'] = null;
+	let previousLive = points[0].archive ? undefined : points[0];
 	for (let index = 1; index < points.length; index += 1) {
 		const point = points[index];
 		// Strict comparisons keep the first date a record price was seen
 		if (point.price < lowest.price) lowest = point;
 		if (point.price > highest.price) highest = point;
-		const previous = points[index - 1];
-		if (point.price !== previous.price) {
-			lastChange = { date: point.date, from: previous.price, to: point.price };
+		if (!point.archive) {
+			if (previousLive && point.price !== previousLive.price) {
+				lastChange = { date: point.date, from: previousLive.price, to: point.price };
+			}
+			previousLive = point;
 		}
 	}
-	return { trackedSince: points[0].date, lowest, highest, lastChange };
+	return {
+		trackedSince: points[0].date,
+		lowest: { price: lowest.price, date: lowest.date },
+		highest: { price: highest.price, date: highest.date },
+		lastChange
+	};
 }

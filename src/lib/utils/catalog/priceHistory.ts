@@ -2,6 +2,12 @@ import type { PriceHistoryEntry } from '../../types';
 
 export const HISTORY_DAY = 24 * 60 * 60 * 1000;
 
+/** Recovered observations do not prove the date a price changed. */
+export function hasRecordedPriceChange(history: PriceHistoryEntry[] = []): boolean {
+	const live = history.filter((point) => !point.archive);
+	return live.some((point, index) => index > 0 && point.price !== live[index - 1].price);
+}
+
 export function historyTimestamp(date: string): number {
 	return Date.parse(`${date}T00:00:00Z`);
 }
@@ -24,7 +30,8 @@ export type HistoryChartPoint = {
 /** Actual dates on the x axis; nulls break lines across unobserved archive periods. */
 export function priceHistoryChartPoints(
 	history: PriceHistoryEntry[],
-	cutoff?: string
+	cutoff?: string,
+	observedThrough?: string
 ): (HistoryChartPoint | null)[] {
 	const sorted = history
 		.filter(
@@ -54,10 +61,22 @@ export function priceHistoryChartPoints(
 				expanded.push({ x: historyTimestamp(end), y: entry.price, entry, boundary: true });
 		}
 	}
+	const last = expanded.at(-1);
+	const through = observedThrough ? historyTimestamp(observedThrough) : undefined;
+	// Live history stores changes only. Carry its final price through the last sync,
+	// while archive observations end exactly where their evidence ends.
+	if (last && !last.entry.archive && through != null && through > last.x) {
+		expanded.push({ ...last, x: through, boundary: true });
+	}
 	const visible = expanded.filter((point) => point.x >= cutoffTime);
 	const previous = expanded.findLast((point) => point.x < cutoffTime);
 	// Never extend a historical observation past the last date that witnessed it.
-	if (previous && !previous.entry.archive && visible[0]?.x !== cutoffTime) {
+	if (
+		previous &&
+		!previous.entry.archive &&
+		visible[0]?.x !== cutoffTime &&
+		(through == null || cutoffTime <= through)
+	) {
 		visible.unshift({ ...previous, x: cutoffTime, boundary: true });
 	} else if (
 		previous?.entry.archive &&

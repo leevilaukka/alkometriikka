@@ -25,6 +25,19 @@ describe('alcoholMetrics', () => {
 });
 
 describe('priceHistorySummary', () => {
+	it('keeps archive extrema but requires live evidence for a dated price change', () => {
+		const archived = {
+			date: '2007-05-11',
+			price: 5,
+			archive: { sourceId: 'a', lastSourceId: 'a', lastObserved: '2007-05-11', observations: 1 }
+		};
+		const history = [archived, { date: '2026-10-01', price: 10 }];
+		expect(priceHistorySummary(history)!.lowest).toEqual({ date: '2007-05-11', price: 5 });
+		expect(priceHistorySummary(history)!.lastChange).toBeNull();
+		expect(
+			priceHistorySummary([...history, { date: '2026-10-21', price: 12 }])!.lastChange
+		).toEqual({ date: '2026-10-21', from: 10, to: 12 });
+	});
 	it('finds the range and the latest change', () => {
 		const summary = priceHistorySummary([
 			{ date: '2026-07-18', price: 12.58 },

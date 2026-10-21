@@ -116,8 +116,8 @@
 			<div class="rounded-lg border border-amber-500/30 bg-amber-500/5 p-5">
 				<h2 class="font-semibold">Mitä kaaviossa näkyy?</h2>
 				<p class="mt-2 text-sm leading-relaxed text-secondary">
-					Oranssi piste kertoo hinnaston päivältä havaitun hinnan. Viivakatkos tarkoittaa puuttuvia
-					havaintoja. Arkisto ei aina kerro tarkkaa hinnanmuutospäivää.
+					Syaani viiva näyttää hintahistorian. Katkoviiva yhdistää havainnot ajanjaksoilla, joilta
+					puuttuu tietoja. Arkisto ei aina kerro tarkkaa hinnanmuutospäivää.
 				</p>
 				<p class="mt-3 text-sm text-secondary">
 					Nykyhinnat ja aiemmin tallennetut kampanjatiedot ovat mukana sellaisinaan. <strong

@@ -2,7 +2,7 @@
 
 The app combines its current catalog with recovered price observations from 246
 dated snapshots (2007–2026). Product charts label archive observations and keep
-unknown periods as gaps. `/historia/` provides the source explorer.
+unknown periods as dashed connecting lines. `/historia/` provides the source explorer.
 
 ## Application integration
 
@@ -90,7 +90,7 @@ range. Gaps remain explicit. Each compacted point retains its first and last sou
 IDs; the report maps them to original URLs and full hashes. The source observation
 CSV and original recovered files remain the complete evidence archive.
 
-Charts use elapsed dates, separate unknown periods and label archive observations.
+Charts use elapsed dates, dash the line across unknown periods and label archive observations.
 Source links are available below each product's chart. An observed price difference
 does not establish the exact date on which Alko changed its price.
 

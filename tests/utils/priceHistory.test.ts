@@ -1,5 +1,9 @@
 import { describe, expect, it } from 'bun:test';
-import { historyTimestamp, priceHistoryChartPoints } from '$lib/utils/catalog/priceHistory';
+import {
+	hasRecordedPriceChange,
+	historyTimestamp,
+	priceHistoryChartPoints
+} from '$lib/utils/catalog/priceHistory';
 import type { PriceHistoryEntry } from '$lib/types';
 
 function archive(date: string, end = date, price = 10): PriceHistoryEntry {
@@ -11,6 +15,25 @@ function archive(date: string, end = date, price = 10): PriceHistoryEntry {
 }
 
 describe('dated historical observations', () => {
+	it('extends an unchanged live price to the last sync, including a short selected range', () => {
+		const entry = { date: '2026-08-01', price: 10 };
+		const points = priceHistoryChartPoints([entry], '2026-10-01', '2026-10-21');
+		expect(points.map((point) => point!.x)).toEqual(
+			['2026-10-01', '2026-10-21'].map(historyTimestamp)
+		);
+		expect(points.map((point) => point!.y)).toEqual([10, 10]);
+		expect(priceHistoryChartPoints([entry], '2026-11-01', '2026-10-21')).toEqual([]);
+	});
+	it('never extends an archive price through the last sync', () => {
+		const points = priceHistoryChartPoints([archive('2025-01-01')], undefined, '2026-10-21');
+		expect(points).toHaveLength(1);
+		expect(points[0]!.x).toBe(historyTimestamp('2025-01-01'));
+	});
+	it('advertises a price-change feed only when two live observations differ', () => {
+		const history = [archive('2007-05-11', '2007-05-11', 5), { date: '2026-10-01', price: 10 }];
+		expect(hasRecordedPriceChange(history)).toBe(false);
+		expect(hasRecordedPriceChange([...history, { date: '2026-10-21', price: 12 }])).toBe(true);
+	});
 	it('uses elapsed time and breaks the line between isolated archive observations', () => {
 		const points = priceHistoryChartPoints([archive('2007-05-11'), archive('2025-09-11')]);
 		expect(points).toHaveLength(3);
