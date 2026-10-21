@@ -17,7 +17,12 @@ The home page lists every product in a virtualized list (`@humanspeak/svelte-vir
   single-valued columns (category, producer, country, store…) and AND for set columns (taste,
   grapes, notes, food pairings). Child filters narrow to the selected parent (wine subtypes under
   Viinit). String filters with only one possible value (e.g. Uutuus, Alennuksessa) are shown as
-  on/off pills instead of dropdowns.
+  on/off pills instead of dropdowns. A multi-select's search matches every word in any order.
+- **Grouped store picker**: stores are grouped by city and district ("Helsinki" → "Keskusta" →
+  "Arkadia") with collapsible groups that can be selected as a whole. Searching opens the groups
+  with matches, and the groups where something was selected stay open afterwards. Which filters
+  are grouped is set in `filterOptionGroupers` (`utils/constants/display.ts`); the grouping and
+  row layout are in `utils/ui/optionGroups.ts`.
 - **Show removed products**: off by default. Removed products and filter options that only exist
   on them are hidden until it's turned on.
 - **Sort** by any of `shownSortingKeys`; the default is alcohol grams per euro, descending.

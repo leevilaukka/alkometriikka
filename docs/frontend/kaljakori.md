@@ -49,7 +49,9 @@ inferred are tracked separately because they can't prove two products are differ
 the same drink.
 
 **Fill-ins**: an empty `Tyyppi` becomes "Ei määritelty"; an empty `Alatyyppi` becomes the
-`Oluttyyppi` or the `Tyyppi`.
+`Oluttyyppi` or the `Tyyppi`. An empty `Litrahinta` (products not on sale yet) is calculated with
+`calculatePricePerLitre` as `(Hinta − Pantti) / Pullokoko`, but only from a declared size, and
+recorded in `[MissingValues]` so the product page can mark it as calculated.
 
 The constructor sorts products by alcohol grams per euro, the default sort.
 
@@ -66,16 +68,16 @@ On top of the dataset columns, every product gets:
 `AllColumns` combines all four groups. Display names, units, sort labels, which columns are shown
 as filters or sort keys, and badge rules all live in `src/lib/utils/constants/` (`columns.ts`, `display.ts`, `badges.ts`):
 
-| Constant                                                                   | Controls                                                                                                   |
-| -------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `shownFilters`                                                             | Filters in the sidebar, in order                                                                           |
-| `filterAnnotationsToFilter`                                                | Whether a multi-select is OR (any selected) or AND (all selected)                                          |
-| `subCategoryMap`                                                           | Parent → child filters: `Tyyppi → Alatyyppi → Oluttyyppi`, `Valmistusmaa → Alue`                           |
-| `shownSortingKeys`, `defaultSortingOrderMap`, `sortingOrderDescriptionMap` | Sort dropdown options, default direction, and the "Halvin/Kallein"-style labels                            |
-| `shownColumnsToHighlight`                                                  | Columns that can be highlighted with a bar in list rows                                                    |
-| `filterRenameMap`, `filterToUnitMarker`                                    | UI names and units for columns                                                                             |
-| `ColumnToBadgeMap`, `DynamicColumnToBadgeMap`                              | Badges such as Luomu, Vegaani, Kausituote, Alennus −N %, Sokeriton, 6-pack, Uutuus, Poistettu valikoimasta |
-| `hideFromProductPageStats`                                                 | Columns left out of the product details table and comparison rows                                          |
+| Constant                                                                   | Controls                                                                                                                      |
+| -------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `shownFilters`                                                             | Filters in the sidebar, in order                                                                                              |
+| `filterAnnotationsToFilter`                                                | Whether a multi-select is OR (any selected) or AND (all selected)                                                             |
+| `subCategoryMap`                                                           | Parent → child filters: `Tyyppi → Alatyyppi → Oluttyyppi`, `Valmistusmaa → Alue`                                              |
+| `shownSortingKeys`, `defaultSortingOrderMap`, `sortingOrderDescriptionMap` | Sort dropdown options, default direction, and the "Halvin/Kallein"-style labels                                               |
+| `shownColumnsToHighlight`                                                  | Columns that can be highlighted with a bar in list rows                                                                       |
+| `filterRenameMap`, `filterToUnitMarker`                                    | UI names and units for columns                                                                                                |
+| `ColumnToBadgeMap`, `DynamicColumnToBadgeMap`                              | Badges such as Luomu, Vegaani, Kausituote, Alennus −N %, Sokeriton, 6-pack, Uutuus, Tulossa, Poistuva, Poistettu valikoimasta |
+| `hideFromProductPageStats`                                                 | Columns left out of the product details table and comparison rows                                                             |
 
 ## Filter values
 
