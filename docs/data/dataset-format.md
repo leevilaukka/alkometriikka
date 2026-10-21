@@ -16,7 +16,7 @@ Type definitions: `scripts/data/types.ts` (the strict writer side) and
 
 ```jsonc
 {
-	"schema": ["Numero", "Nimi", /* … 34 columns, see below */ "Ruokasuositukset"],
+	"schema": ["Numero", "Nimi", /* … 36 columns, see below */ "Pantti"],
 	"metadata": {
 		"LastUpdated": "2026-10-12T18:00:41.123Z", // last run that changed something
 		"LastSynced": "2026-10-13T06:00:39.456Z", // last run, changed or not
@@ -61,10 +61,13 @@ Type definitions: `scripts/data/types.ts` (the strict writer side) and
 
 Keyed by product number. Products are **never deleted**. When a product disappears from Alko's
 search results it stays in the file with `meta.removedFromSelection` set to the date it was first
-missed, and its `Uutuus` value is cleared. If it comes back, the flag is removed. The only
+missed, and its `Uutuus` and `Tila` values are cleared. If it comes back, the flag is removed. The only
 products ever dropped are gifts and drinking accessories (main group `mainGroup_002`,
 "lahja- ja juomatarvikkeet"), which are filtered out entirely.
 
+- Products with status `Tulee` have no `Litrahinta`: the detail API leaves `pricePerLitre` out until
+  they're on sale. The app then calculates it as `(Hinta − Pantti) / Pullokoko`, which is also how
+  Alko's own litre prices work out.
 - **`values`** is aligned with `schema`. Values are mostly what the preprocessors in
   `FIELD_TO_LEGACY_SCHEMA` produce: strings, numbers, `null`, and for `Luonnehdinta` an array of
   strings.
@@ -140,6 +143,8 @@ so that an older deployed app bundle can still read a newer dataset positionally
 | 31  | `Kampanja alkaa`         | `campaign_start_date`                  | ✓      | `YYYY-MM-DD`                                                                                                           |
 | 32  | `Kampanja päättyy`       | `campaign_end_date`                    | ✓      | `YYYY-MM-DD`                                                                                                           |
 | 33  | `Ruokasuositukset`       | `foodSymbolId`                         |        | Finnish labels from `src/lib/utils/catalog/food.ts`, joined with `, `. Refreshed every sync                            |
+| 34  | `Tila`                   | `statusId`                             |        | `Aktiivinen` (A), `Uutuus` (U), `Poistuva` (P, being phased out) or `Tulee` (X, not on sale yet). Refreshed every sync |
+| 35  | `Pantti`                 | `deposit` (detail)                     |        | Deposit in euros. Included in `Hinta`, not in `Litrahinta`. Missing for most products, including some cans             |
 
 "(detail)" marks fields only the per-product detail API returns. Everything else comes from the
 search API. "Hashed" columns feed the change-detection hash; see

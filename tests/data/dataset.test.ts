@@ -87,6 +87,26 @@ describe('schema consistency (writer vs reader)', () => {
 	});
 });
 
+describe('buildLegacyValues', () => {
+	const col = (name: (typeof LEGACY_HEADERS)[number]) => headers.indexOf(name);
+
+	it('labels the status code and keeps unknown codes as-is', () => {
+		expect(buildLegacyValues({ statusId: 'X' })[col('Tila')]).toBe('Tulee');
+		expect(buildLegacyValues({ statusId: 'P' })[col('Tila')]).toBe('Poistuva');
+		expect(buildLegacyValues({ statusId: 'Q' })[col('Tila')]).toBe('Q');
+		expect(buildLegacyValues({})[col('Tila')]).toBeNull();
+	});
+
+	it('keeps a positive deposit and a missing price per litre as null', () => {
+		const built = buildLegacyValues({ deposit: 0.15, pricePerLitre: '8.61' });
+		expect(built[col('Pantti')]).toBe(0.15);
+		expect(built[col('Litrahinta')]).toBe(8.61);
+		const coming = buildLegacyValues({ deposit: null });
+		expect(coming[col('Pantti')]).toBeNull();
+		expect(coming[col('Litrahinta')]).toBeNull();
+	});
+});
+
 describe('alignValues', () => {
 	it('pads rows from an older, narrower schema with nulls', () => {
 		const short = ['1', 'Olut'];

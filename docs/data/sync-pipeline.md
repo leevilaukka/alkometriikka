@@ -112,8 +112,12 @@ A product whose hash matches keeps its stored entry, with two adjustments:
 
 - Any `removedFromSelection` flag is cleared (it's in the API again).
 - The **always-refreshed columns** (`SEARCH_REFRESHED_COLUMNS`: `Erityisryhmä`,
-  `Ruokasuositukset`) are copied from the search payload. They aren't hashed, so a change there
+  `Ruokasuositukset`, `Tila`) are copied from the search payload. They aren't hashed, so a change there
   shouldn't cost a detail fetch, but should still reach the dataset.
+
+One exception goes to pass 2 anyway: a product stored as `Tulee` whose status has changed
+(`hasArrived`). Coming products have no `pricePerLitre` in the detail API, and since `Tila` isn't
+hashed, nothing else would fetch it before the 30-day re-verification.
 
 ### Pass 2: new and changed products
 
@@ -157,7 +161,7 @@ never deployed.
 - A product missing from the API that is already flagged keeps its original removal date.
 - A product missing from the API that isn't flagged gets `meta.removedFromSelection = today`.
 
-Removed products also get `Uutuus` cleared. This step only runs after a complete fetch, so absence
+Removed products also get `Uutuus` and `Tila` cleared. This step only runs after a complete fetch, so absence
 from the API can be trusted.
 
 ### Safeguards

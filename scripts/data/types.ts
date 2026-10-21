@@ -173,7 +173,8 @@ export interface DetailedProductData {
 	ingredients: string | null;
 	isFavorite: boolean;
 	name: string;
-	pricePerLitre: string;
+	/** Missing for products that aren't on sale yet (status Tulee). */
+	pricePerLitre?: string;
 	producer: string;
 	productionSites: ProductionSite[];
 	productId: string;
@@ -195,6 +196,10 @@ export interface DetailedProductData {
 	emptyWeight: number;
 	packageCertificates: unknown[];
 	ingredientsList: string | null;
+	/** Finnish status label: Aktiivinen, Uusi, Poistuva, Tulee, Kuoletettu. */
+	status?: string;
+	/** Deposit in euros, included in `valueInCents` but not in `pricePerLitre`. Missing on most products. */
+	deposit?: number | null;
 }
 
 export interface Certificates {
