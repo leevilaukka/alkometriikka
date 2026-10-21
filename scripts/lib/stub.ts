@@ -66,10 +66,8 @@ export function renderStub(template: string, page: StubPage): string {
 		`\t<meta property="og:image:height" content="${OG_IMAGE_HEIGHT}" />`,
 		`\t<meta property="og:image:alt" content="${escapeHtml(page.ogImageAlt)}" />`,
 		...(page.ogExtra ?? []),
+		// X falls back to the og: title, description and image
 		`\t<meta name="twitter:card" content="summary_large_image" />`,
-		`\t<meta name="twitter:title" content="${escapeHtml(page.title)}" />`,
-		`\t<meta name="twitter:description" content="${escapeHtml(page.description)}" />`,
-		`\t<meta name="twitter:image" content="${escapeHtml(page.ogImage)}" />`,
 		...page.jsonLd.map(
 			(entry) => `\t<script type="application/ld+json">${escapeJson(entry)}</script>`
 		)

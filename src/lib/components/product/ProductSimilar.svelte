@@ -1,15 +1,15 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import { AllColumns } from '$lib/utils/constants';
-	import { formatValue } from '$lib/utils/format';
-	import { components } from '$lib/utils/styles';
+	import { AllColumns } from '$lib/utils/constants/columns';
+	import { formatValue } from '$lib/utils/format/format';
+	import { components } from '$lib/utils/ui/styles';
 	import type { PriceListItem } from '$lib/types';
 	import { compareProductIds } from '$lib/global.svelte';
 	import {
 		addToCompareWithReference,
 		removeFromCompare,
 		MAX_COMPARE_PRODUCTS
-	} from '$lib/utils/compare';
+	} from '$lib/utils/user/compare';
 	import ProductImage from '../widgets/ProductImage.svelte';
 	import Icon from '../widgets/Icon.svelte';
 	import { twMerge } from 'tailwind-merge';
@@ -58,7 +58,7 @@
 		<div class="flex flex-wrap items-center justify-between gap-3.5">
 			<h2 class="text-2xl font-bold">Samankaltaisia tuotteita</h2>
 			<a
-				href={resolve(`/vastaavat/${product[AllColumns.Number]}`)}
+				href={resolve(`/vastaavat/${product[AllColumns.Number]}/`)}
 				class={twMerge(components.button({ size: 'sm' }), 'flex items-center gap-2')}
 			>
 				<span>Lisää samankaltaisia</span>

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test';
-import { formatCampaignWindow, getSaleInfo, toISODateInTimeZone } from '$lib/utils/sales';
+import { formatCampaignWindow, getSaleInfo, toISODateInTimeZone } from '$lib/utils/catalog/sales';
 
 const item = (overrides: Record<string, unknown> = {}) => ({
 	price: 8,

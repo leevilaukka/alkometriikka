@@ -1,10 +1,12 @@
 <script lang="ts">
-	import { AllColumns, DrunkColumns, GenderOptionsMap } from '$lib/utils/constants';
-	import { calculateDrunkValue } from '$lib/utils/alko';
-	import { components } from '$lib/utils/styles';
-	import { formatValue } from '$lib/utils/format';
-	import { generateTitle, sendAnalyticsEvent, setSEO } from '$lib/utils/helpers';
-	import { staticPage } from '$lib/utils/seo';
+	import { AllColumns, DrunkColumns } from '$lib/utils/constants/columns';
+	import { GenderOptionsMap } from '$lib/utils/constants/app';
+	import { calculateDrunkValue } from '$lib/utils/catalog/alko';
+	import { components } from '$lib/utils/ui/styles';
+	import { formatValue } from '$lib/utils/format/format';
+	import { generateTitle, setSEO } from '$lib/utils/app/meta';
+	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
+	import { staticPage } from '$lib/utils/app/seo';
 	import { personalInfo } from '$lib/global.svelte';
 	import type { GenderOptions } from '$lib/types';
 	import { twMerge } from 'tailwind-merge';

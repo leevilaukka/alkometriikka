@@ -1,6 +1,7 @@
 <script lang="ts">
-	import { AllColumns, LocalStorageKeys } from '$lib/utils/constants';
-	import { components } from '$lib/utils/styles';
+	import { AllColumns } from '$lib/utils/constants/columns';
+	import { LocalStorageKeys } from '$lib/utils/constants/app';
+	import { components } from '$lib/utils/ui/styles';
 	import type { PriceListItem } from '$lib/types';
 	import { createRng } from '$lib/daily/rng';
 	import {
@@ -28,12 +29,14 @@
 		saveGame,
 		saveUnlimitedProgress
 	} from '$lib/daily/storage';
-	import { LocalStorageManager } from '$lib/utils/storage';
+	import { LocalStorageManager } from '$lib/utils/app/storage';
 	import { tick } from 'svelte';
 	import { dev } from '$app/environment';
 	import { base, resolve } from '$app/paths';
 	import { goto } from '$app/navigation';
-	import { generateTitle, handleShare, sendAnalyticsEvent, setSEO } from '$lib/utils/helpers';
+	import { generateTitle, setSEO } from '$lib/utils/app/meta';
+	import { handleShare } from '$lib/utils/app/share';
+	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 	import ProductImage from '$lib/components/widgets/ProductImage.svelte';
 	import { twMerge } from 'tailwind-merge';
 	import type { PageProps } from './$types';
@@ -485,7 +488,7 @@
 				startUnlimited();
 			} else if (key === 'a') {
 				event.preventDefault();
-				goto(resolve('/daily/arkisto'));
+				goto(resolve('/daily/arkisto/'));
 			} else if (key === 'escape' || key === 'b') {
 				event.preventDefault();
 				goto(resolve('/'));
@@ -806,7 +809,7 @@
 						{/if}
 						<div class="grid w-full grid-cols-2 gap-2">
 							<a
-								href={resolve('/daily/arkisto')}
+								href={resolve('/daily/arkisto/')}
 								class={twMerge(components.button({ size: 'md' }), 'w-full px-4 py-2')}
 							>
 								<span class="flex items-center gap-2">

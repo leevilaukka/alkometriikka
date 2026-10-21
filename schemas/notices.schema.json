@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"title": "Alkometriikka site notices",
-	"description": "Banners shown under the header. See notes/notices.md and src/lib/utils/notices.ts.",
+	"description": "Banners shown under the header. See notes/notices.md and src/lib/utils/app/notices.ts.",
 	"type": "object",
 	"required": ["notices"],
 	"additionalProperties": false,

@@ -17,7 +17,7 @@ import {
 } from '../../scripts/data/dataset-file';
 import { isMigratedProduct } from '../../scripts/data/guards';
 import type { MigratedData } from '../../scripts/data/types';
-import { parseDataset } from '$lib/utils/dataset';
+import { parseDataset } from '$lib/utils/catalog/dataset';
 
 function values(id: string): unknown[] {
 	const row: unknown[] = Array(LEGACY_HEADERS.length).fill(null);

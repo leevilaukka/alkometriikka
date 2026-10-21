@@ -2,23 +2,21 @@
 	import List from '$lib/components/views/List.svelte';
 	import AllLists from '$lib/components/widgets/AllLists.svelte';
 	import Icon from '$lib/components/widgets/Icon.svelte';
-	import { generateTitle, setSEO } from '$lib/utils/helpers.js';
-	import { components } from '$lib/utils/styles';
+	import { generateTitle, setSEO } from '$lib/utils/app/meta';
+	import { staticPage } from '$lib/utils/app/seo';
+	import { components } from '$lib/utils/ui/styles';
 	import { twMerge } from 'tailwind-merge';
 
 	const { data } = $props();
+	const { description: DESCRIPTION } = staticPage('/listat/');
 
 	$effect(() => {
 		setSEO({
-			description: data.list
-				? `Katso lista "${data.list.name}" Alkometriikassa.`
-				: 'Selaa ja hallinnoi Alkon tuotteita sisältäviä listoja.',
+			description: data.list ? `Katso lista "${data.list.name}" Alkometriikassa.` : DESCRIPTION,
 			og: {
 				title: data.list ? `Lista - ${data.list.name}` : 'Listat',
 				url: window.location.href,
-				description: data.list
-					? `Katso lista "${data.list.name}" Alkometriikassa.`
-					: 'Selaa ja hallinnoi Alkon tuotteita sisältäviä listoja.'
+				description: data.list ? `Katso lista "${data.list.name}" Alkometriikassa.` : DESCRIPTION
 			}
 		});
 	});

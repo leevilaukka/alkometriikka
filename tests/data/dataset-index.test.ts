@@ -1,9 +1,9 @@
 import { describe, expect, it, spyOn } from 'bun:test';
 import { buildDatasetIndex, withDatasetIndex } from '../../scripts/data/dataset-index';
 import { Kaljakori } from '$lib/alko';
-import { parseDataset, type StoredProduct } from '$lib/utils/dataset';
-import { parseAvailability } from '$lib/utils/availability';
-import { AllColumns, DatasetColumns } from '$lib/utils/constants';
+import { parseDataset, type StoredProduct } from '$lib/utils/catalog/dataset';
+import { parseAvailability } from '$lib/utils/catalog/availability';
+import { AllColumns, DatasetColumns } from '$lib/utils/constants/columns';
 import type { DatasetRow } from '$lib/types';
 
 const schema = Object.values(DatasetColumns).filter(

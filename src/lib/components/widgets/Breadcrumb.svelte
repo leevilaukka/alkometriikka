@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { appPath } from '$lib/utils/paths';
+	import { appPath } from '$lib/utils/app/paths';
 	import { resolve } from '$app/paths';
 	import type { BreadcrumbItem } from '$lib/types';
 	import Icon from './Icon.svelte';

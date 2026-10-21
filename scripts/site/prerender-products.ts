@@ -1,7 +1,8 @@
 import { mkdir, readdir, rm } from 'node:fs/promises';
 import path from 'node:path';
 import Bun, { CryptoHasher } from 'bun';
-import { getSaleInfo, toISODateInTimeZone } from '../../src/lib/utils/sales.ts';
+import { getSaleInfo, toISODateInTimeZone } from '../../src/lib/utils/catalog/sales.ts';
+import { calculatePricePerLitre } from '../../src/lib/utils/catalog/alko.ts';
 import { ogImageUrl } from '../og/og';
 import {
 	CATEGORY_OG_MANIFEST_FILE,
@@ -18,13 +19,21 @@ import {
 	CATEGORY_INDEX_DESCRIPTION,
 	findProductCategoryTrail,
 	type CategoryNode
-} from '../../src/lib/utils/categories.ts';
+} from '../../src/lib/utils/catalog/categories.ts';
 import { readOption } from '../lib/cli';
-import type { StoredDataset, StoredProduct } from '../../src/lib/utils/dataset.ts';
+import type { StoredDataset, StoredProduct } from '../../src/lib/utils/catalog/dataset.ts';
 import { mapPool } from '../lib/async';
 import { escapeHtml } from '../lib/html';
 import { breadcrumbJsonLd, breadcrumbNav, renderStub, SITE_URL, type StubPage } from '../lib/stub';
-import { productDescription } from '../../src/lib/utils/seo.ts';
+import { productDescription } from '../../src/lib/utils/app/seo.ts';
+import {
+	alcoholMetrics,
+	categoryGroups,
+	categoryRanks,
+	priceHistorySummary,
+	type CategoryProduct,
+	type CategoryRank
+} from './product-insights';
 
 type PrerenderManifestEntry = {
 	key: string;
@@ -36,7 +45,7 @@ type PrerenderManifest = Record<string, PrerenderManifestEntry>;
 // Bump when the page rendering logic (productHtml, minifyHtml, the SEO
 // template, ...) changes in a way that can alter existing pages without the
 // template or product data changing, forcing a full re-render.
-const RENDER_VERSION = 6;
+const RENDER_VERSION = 8;
 
 function sha256Hex(value: string): string {
 	const hasher = new CryptoHasher('sha256');
@@ -47,16 +56,17 @@ function sha256Hex(value: string): string {
 // Content-addressable key for a product page. Every input that can change the
 // rendered HTML — the rendering logic version, the schema, the raw product
 // data, the page template (new JS/CSS hashes invalidate every page) and the
-// product's OG image key and category trail, plus today's date for products
-// with a campaign (their sale state is date-dependent) — is hashed, so unchanged
-// pages can be skipped.
+// product's OG image key, category trail and category rank, plus today's date
+// for products with a campaign (their sale state is date-dependent) — is hashed,
+// so unchanged pages can be skipped.
 function productKey(
 	schema: readonly string[],
 	product: StoredProduct,
 	templateFingerprint: string,
 	ogKey: string | null,
 	categoryTrail: CategoryNode[],
-	saleDay: string | null
+	saleDay: string | null,
+	rank: CategoryRank | null
 ): string {
 	return sha256Hex(
 		JSON.stringify([
@@ -68,7 +78,8 @@ function productKey(
 			templateFingerprint,
 			ogKey,
 			categoryTrail.map((node) => [node.name, node.path]),
-			saleDay
+			saleDay,
+			rank
 		])
 	);
 }
@@ -165,12 +176,57 @@ function hasPriceChange(history?: { date: string; price: number }[]): boolean {
 	return false;
 }
 
+function fiNumber(value: number, maxDigits: number, minDigits = 0): string {
+	return value.toLocaleString('fi-FI', {
+		minimumFractionDigits: minDigits,
+		maximumFractionDigits: maxDigits
+	});
+}
+
+const euros = (value: number) => `${fiNumber(value, 2, 2)} €`;
+
+/** "2026-09-29" → "29.9.2026" */
+function fiDate(isoDate: string): string {
+	const [year, month, day] = isoDate.split('-').map(Number);
+	return year && month && day ? `${day}.${month}.${year}` : isoDate;
+}
+
+function definitionList(entries: string[][]): string {
+	return `<dl>${entries.map(([label, value]) => `<dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd>`).join('')}</dl>`;
+}
+
+function rankHtml(rank: CategoryRank): string {
+	return `<p>Alkoholia euroa kohden sijalla ${rank.rank}/${rank.total.toLocaleString('fi-FI')} kategoriassa <a href="${escapeHtml(
+		`${SITE_URL}${rank.path}`
+	)}">${escapeHtml(rank.name)}</a>.</p>`;
+}
+
+function priceHistoryHtml(history: StoredProduct['priceHistory']): string {
+	const summary = priceHistorySummary(history);
+	if (!summary) return '';
+	const entries = [['Seurattu alkaen', fiDate(summary.trackedSince)]];
+	if (summary.lastChange) {
+		entries.push(
+			['Alin hinta', `${euros(summary.lowest.price)} (${fiDate(summary.lowest.date)})`],
+			['Korkein hinta', `${euros(summary.highest.price)} (${fiDate(summary.highest.date)})`],
+			[
+				'Viimeisin hinnanmuutos',
+				`${fiDate(summary.lastChange.date)}: ${euros(summary.lastChange.from)} → ${euros(summary.lastChange.to)}`
+			]
+		);
+	} else {
+		entries.push(['Hinnanmuutokset', 'Hinta ei ole muuttunut seurannan aikana']);
+	}
+	return `<section><h2>Hintahistoria</h2>${definitionList(entries)}</section>`;
+}
+
 function productHtml(
 	template: string,
 	schema: string[],
 	product: StoredProduct,
 	ogImageKey: string | null,
-	categoryTrail: CategoryNode[]
+	categoryTrail: CategoryNode[],
+	rank: CategoryRank | null
 ): { html: string; id: string } {
 	const fields = Object.fromEntries(schema.map((column, index) => [column, product.values[index]]));
 	const id = asText(fields.Numero);
@@ -193,7 +249,10 @@ function productHtml(
 	const keywords = [name, manufacturer, type, subtype, descriptionValue].filter(Boolean).join(', ');
 	const category = [type, subtype].filter(Boolean).join(' / ');
 	const volume = asNumber(fields.Pullokoko);
-	const pricePerLitre = asNumber(fields.Litrahinta);
+	// Alko leaves the litre price out until a product is on sale; the app calculates it then too.
+	const pricePerLitre =
+		asNumber(fields.Litrahinta) ?? calculatePricePerLitre(price, volume, asNumber(fields.Pantti));
+	const metrics = alcoholMetrics(volume, asNumber(fields['Alkoholi-%']), price);
 	const metaDescription = productDescription({
 		name,
 		category,
@@ -225,7 +284,15 @@ function productHtml(
 		property('Väri', fields['Väri EBC'], 'EBC'),
 		property('Katkerot', fields['Katkerot EBU'], 'EBU'),
 		property('Energia', fields['Energia kcal/100 ml'], 'kcal/100 ml'),
-		property('Valikoima', fields.Valikoima)
+		property('Valikoima', fields.Valikoima),
+		...(metrics
+			? [
+					// Preformatted: property()'s suffix path would re-parse the fi-FI decimal comma
+					property('Alkoholia euroa kohden', `${fiNumber(metrics.gramsPerEuro, 2)} g/€`),
+					property('Annoksia', fiNumber(metrics.servings, 1)),
+					property('Hinta per annos', euros(metrics.pricePerServing))
+				]
+			: [])
 	].filter((entry) => entry !== null);
 
 	const jsonLd = {
@@ -308,7 +375,17 @@ function productHtml(
 		['Pullokoko', formatNumber(fields.Pullokoko, 'l')],
 		['Alkoholia', formatNumber(fields['Alkoholi-%'], '%')],
 		['Hinta', price !== null ? formatNumber(fields.Hinta, '€') : ''],
-		['Litrahinta', formatNumber(fields.Litrahinta, '€/l')],
+		['Litrahinta', formatNumber(pricePerLitre, '€/l')],
+		...(metrics
+			? [
+					[
+						'Puhdasta alkoholia',
+						`${fiNumber(metrics.grams, 1)} g (${fiNumber(metrics.servings, 1)} annosta)`
+					],
+					['Alkoholia euroa kohden', `${fiNumber(metrics.gramsPerEuro, 2)} g/€`],
+					['Hinta per annos', euros(metrics.pricePerServing)]
+				]
+			: []),
 		['Valikoima', asText(fields.Valikoima)]
 	].filter((entry) => entry[1]);
 
@@ -343,19 +420,12 @@ function productHtml(
 \t\t</header>
 \t\t<img src="${escapeHtml(image)}" alt="${escapeHtml(name)}" width="320" height="384" />
 \t\t${descriptionValue ? `<p>${escapeHtml(descriptionValue)}</p>` : ''}
-\t\t<dl>${facts.map(([label, value]) => `<dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd>`).join('')}</dl>`
+\t\t${definitionList(facts)}
+\t\t${rank ? rankHtml(rank) : ''}
+\t\t${priceHistoryHtml(product.priceHistory)}`
 	};
 	return { html: renderStub(template, page), id };
 }
-
-type CategoryProduct = {
-	id: string;
-	name: string;
-	price: number;
-	alcoholPerEuro: number;
-	typeSlug: string;
-	subTypeSlug: string;
-};
 
 const CATEGORY_LIST_LIMIT = 100;
 const CATEGORY_ITEM_LIST_LIMIT = 20;
@@ -478,30 +548,11 @@ async function renderCategoryPages(
 	outputPath: string,
 	template: string,
 	tree: CategoryNode[],
-	products: CategoryProduct[],
+	pages: ReturnType<typeof categoryGroups>,
 	ogManifest: CategoryOgManifest
 ): Promise<number> {
 	const categoriesPath = path.join(outputPath, ...CATEGORY_BASE_PATH.split('/').filter(Boolean));
 	await rm(categoriesPath, { recursive: true, force: true });
-	const sorted = [...products].sort((a, b) => b.alcoholPerEuro - a.alcoholPerEuro);
-
-	const pages: { trail: CategoryNode[]; products: CategoryProduct[] }[] = [
-		{ trail: [], products: [] }
-	];
-	for (const type of tree) {
-		pages.push({
-			trail: [type],
-			products: sorted.filter((product) => product.typeSlug === type.slug)
-		});
-		for (const subType of type.children) {
-			pages.push({
-				trail: [type, subType],
-				products: sorted.filter(
-					(product) => product.typeSlug === type.slug && product.subTypeSlug === subType.slug
-				)
-			});
-		}
-	}
 
 	for (const page of pages) {
 		const directory = path.join(categoriesPath, ...page.trail.map((node) => node.slug));
@@ -561,6 +612,7 @@ async function main() {
 	const campaignIndexes = ['Kampanja alkaa', 'Kampanja päättyy'].map((column) =>
 		schema.indexOf(column)
 	);
+	const idIndex = schema.indexOf('Numero');
 	const typeIndex = schema.indexOf('Tyyppi');
 	const subTypeIndex = schema.indexOf('Alatyyppi');
 	const validProducts = Object.values(products).filter(
@@ -573,6 +625,14 @@ async function main() {
 			removed: Boolean(product.meta?.removedFromSelection)
 		}))
 	);
+
+	const groups = categoryGroups(
+		categoryTree,
+		validProducts
+			.map((product) => categoryProduct(schema, product))
+			.filter((product) => product !== null)
+	);
+	const ranks = categoryRanks(groups);
 
 	let count = 0;
 	let skipped = 0;
@@ -588,13 +648,17 @@ async function main() {
 		// Sale state depends on today's date, so a campaign starting or ending
 		// without a data change must still re-render the page.
 		const hasCampaign = campaignIndexes.some((index) => asText(product.values[index]));
+		// Only shown when it is the rank on the product's own category page
+		const rank = ranks.get(asText(product.values[idIndex])) ?? null;
+		const productRank = rank && rank.path === categoryTrail.at(-1)?.path ? rank : null;
 		const key = productKey(
 			schema,
 			product,
 			templateFingerprint,
 			ogKey,
 			categoryTrail,
-			hasCampaign ? today : null
+			hasCampaign ? today : null,
+			productRank
 		);
 		const previousEntry = previous[productId];
 		const previousPageId = previousEntry?.pageId;
@@ -612,7 +676,7 @@ async function main() {
 			skipped += 1;
 			return;
 		}
-		const rendered = productHtml(template, schema, product, ogKey, categoryTrail);
+		const rendered = productHtml(template, schema, product, ogKey, categoryTrail, productRank);
 		if (generatedIds.has(rendered.id)) throw new Error(`Duplicate product id: ${rendered.id}`);
 		generatedIds.add(rendered.id);
 		const directory = path.join(productsPath, rendered.id);
@@ -653,9 +717,7 @@ async function main() {
 		options.outputPath,
 		template,
 		categoryTree,
-		validProducts
-			.map((product) => categoryProduct(schema, product))
-			.filter((product) => product !== null),
+		groups,
 		await Bun.file(options.ogCategoriesManifestPath)
 			.json()
 			.then((value) => value as CategoryOgManifest)

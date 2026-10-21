@@ -2,9 +2,9 @@
 	import Product from '$lib/components/views/Product.svelte';
 	import { page } from '$app/state';
 	import { preferredStoreId, userLocation } from '$lib/global.svelte';
-	import { resolvePreferredStore } from '$lib/utils/availability';
-	import { AUTO_STORE_ID } from '$lib/utils/constants';
-	import { keepAutoLocationFresh } from '$lib/utils/location';
+	import { resolvePreferredStore } from '$lib/utils/catalog/availability';
+	import { AUTO_STORE_ID } from '$lib/utils/constants/app';
+	import { keepAutoLocationFresh } from '$lib/utils/device/location';
 	import type { AvailabilityStore, PriceListItem } from '$lib/types.js';
 
 	let { data } = $props();
@@ -41,6 +41,7 @@
 	<Product
 		{product}
 		kaljakori={alko.kaljakori}
+		availability={alko.availability}
 		{availabilityStores}
 		{preferredStore}
 		{availabilityUpdated}

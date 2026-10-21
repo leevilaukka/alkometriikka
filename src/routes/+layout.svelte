@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { appPath } from '$lib/utils/paths';
+	import { appPath } from '$lib/utils/app/paths';
 	import { resolve } from '$app/paths';
 	import '../app.css';
 	import { dev } from '$app/environment';
-	import { ContextKeys, LocalStorageKeys } from '$lib/utils/constants';
+	import { ContextKeys, LocalStorageKeys } from '$lib/utils/constants/app';
 	import {
 		compareHighlightDifferences,
 		compareProductIds,
@@ -16,24 +16,33 @@
 		preferredStoreId,
 		searchQuery,
 		theme,
-		userLocation
+		userLocation,
+		watchlist
 	} from '$lib/global.svelte';
 	import logo from '$lib/assets/images/Logo/0.5x/Logo_rounded@0.5x.png';
 	import { twMerge } from 'tailwind-merge';
-	import { components } from '$lib/utils/styles';
+	import { components } from '$lib/utils/ui/styles';
 	import Icon from '$lib/components/widgets/Icon.svelte';
 	import { beforeNavigate, afterNavigate } from '$app/navigation';
 	import { page } from '$app/state';
-	import { SearchParamsManager } from '$lib/utils/url';
-	import { markRouterReady, shareTypeFromRoute, trackSharedView } from '$lib/utils/helpers';
+	import { SearchParamsManager } from '$lib/utils/app/url';
+	import { markRouterReady } from '$lib/utils/app/url';
+	import { shareTypeFromRoute, trackSharedView } from '$lib/utils/app/share';
 	import { setContext } from 'svelte';
 	import Settings from '$lib/components/widgets/Settings/Index.svelte';
 	import CompareBar from '$lib/components/widgets/CompareBar.svelte';
+	import CommandPalette from '$lib/components/widgets/CommandPalette.svelte';
 	import NoticeBanner from '$lib/components/widgets/NoticeBanner.svelte';
-	import { LocalStorageManager } from '$lib/utils/storage';
+	import InstallBanner from '$lib/components/widgets/InstallBanner.svelte';
+	import { LocalStorageManager } from '$lib/utils/app/storage';
 	import type { IconName } from '$lib/icons';
+	import { loadUpdateOnNavigate } from '$lib/utils/app/pwa.svelte';
+	import { loadFlags } from '$lib/utils/flags/flags.svelte';
+	import { resolvePreferredStore } from '$lib/utils/catalog/availability';
+	import { watchStatuses } from '$lib/utils/user/watchlist';
 
 	let { children, data } = $props();
+	loadFlags();
 	let searchParamsManager = new SearchParamsManager(page.url);
 	setContext(ContextKeys.SearchParamsManager, searchParamsManager);
 
@@ -62,6 +71,10 @@
 	});
 
 	$effect(() => {
+		LocalStorageManager.setItem(LocalStorageKeys.Watchlist, watchlist);
+	});
+
+	$effect(() => {
 		LocalStorageManager.setItem(
 			LocalStorageKeys.CompareHighlightDifferences,
 			$compareHighlightDifferences
@@ -78,9 +91,21 @@
 
 	const mql = window.matchMedia('(prefers-color-scheme: dark)');
 
+	/**
+	 * Colours the browser and system bars like the header under them. Until the loader is gone,
+	 * app.html's own theme-color tags match the loader instead, which follows the OS scheme
+	 */
+	function syncThemeColor() {
+		if (!document.getElementById('main-loader')?.classList.contains('shift')) return;
+		const color = document.documentElement.classList.contains('dark') ? '#18181b' : '#ffffff';
+		for (const meta of document.querySelectorAll<HTMLMetaElement>('meta[name="theme-color"]'))
+			meta.content = color;
+	}
+
 	function handleDarkModeChange(event: MediaQueryListEvent) {
 		if (event.matches) document.documentElement.classList.add('dark');
 		else document.documentElement.classList.remove('dark');
+		syncThemeColor();
 	}
 
 	theme.subscribe((value) => {
@@ -92,6 +117,7 @@
 			else document.documentElement.classList.remove('dark');
 			mql.addEventListener('change', handleDarkModeChange);
 		}
+		syncThemeColor();
 	});
 
 	window.addEventListener('resize', () => {
@@ -99,13 +125,15 @@
 		$isLaptop = window.matchMedia('(width < 1280px)').matches;
 	});
 
-	beforeNavigate(({ to, type }) => {
+	beforeNavigate((navigation) => {
+		loadUpdateOnNavigate(navigation);
+		const { to, type } = navigation;
 		if (!to) return;
 		if (to.url.origin !== window.location.origin) return;
 		searchParamsManager.setParametersFromURL(to.url);
 		// Back/forward restores the search from the URL before the page mounts, otherwise the
 		// page would sync an empty search into the URL first
-		if (type === 'popstate') $searchQuery = to.url.searchParams.get('q') ?? '';
+		if (type === 'popstate') $searchQuery = searchParamsManager.getParameter('q') ?? '';
 		searchParamsManager.update();
 	});
 
@@ -123,6 +151,7 @@
 
 	function shiftLoader() {
 		document.getElementById('main-loader')?.classList.add('shift');
+		syncThemeColor();
 	}
 
 	let extraMenu = $state<HTMLDetailsElement>();
@@ -164,48 +193,75 @@
 		if (extraMenu?.open && !event.composedPath().includes(extraMenu)) extraMenu.open = false;
 	}
 
-	const extraItems: { href: string; icon: IconName; name: string }[] = [
+	type MenuItem = { href: string; icon: IconName; name: string };
+	const menuGroups: { label: string; items: MenuItem[] }[] = [
 		{
-			href: '/kategoriat/',
-			icon: 'wine',
-			name: 'Kategoriat'
+			label: 'Selaa',
+			items: [
+				{ href: '/kategoriat/', icon: 'wine', name: 'Kategoriat' },
+				{ href: '/hinnanmuutokset/', icon: 'trending_down', name: 'Hinnanmuutokset' },
+				{ href: '/tilastot/', icon: 'stats', name: 'Tilastot' }
+			]
 		},
 		{
-			href: '/hinnanmuutokset',
-			icon: 'trending_down',
-			name: 'Hinnanmuutokset'
+			label: 'Omat',
+			items: [
+				{ href: '/seuratut/', icon: 'bell', name: 'Seuratut' },
+				{ href: '/listat/', icon: 'list_ul', name: 'Listat' }
+			]
 		},
 		{
-			href: '/myymalat',
-			icon: 'store',
-			name: 'Myymälät'
+			label: 'Myymälät',
+			items: [
+				{ href: '/myymalat/', icon: 'store', name: 'Myymälät' },
+				{ href: '/kompassi/', icon: 'compass', name: 'Kompassi' }
+			]
 		},
 		{
-			href: '/daily/arkisto',
-			icon: 'archive',
-			name: 'Daily-arkisto'
-		},
-		{
-			href: '/laskin',
-			icon: 'calculator',
-			name: 'Laskin'
-		},
-		{
-			href: '/tilastot',
-			icon: 'stats',
-			name: 'Tilastot'
+			label: 'Työkalut & Pelit',
+			items: [
+				{ href: '/laskin/', icon: 'calculator', name: 'Laskin' },
+				{ href: '/daily/arkisto/', icon: 'archive', name: 'Daily-arkisto' }
+			]
 		}
 	];
 
 	const inCategory = $derived(page.route.id === '/kategoriat/[type]/[[subtype]]');
 
-	const noSearchPages: typeof page.route.id[] = ['/daily/arkisto', '/laskin', '/tilastot', '/muutosloki', '/listat', '/daily', '/daily/arkisto/[date]', '/tuotteet/[...id]', '/vertailu', '/kategoriat', '/myymalat', '/myymalat/[storeID]'];
+	const noSearchPages: (typeof page.route.id)[] = [
+		'/daily/arkisto',
+		'/laskin',
+		'/tilastot',
+		'/muutosloki',
+		'/listat',
+		'/daily',
+		'/daily/arkisto/[date]',
+		'/tuotteet/[...id]',
+		'/vertailu',
+		'/kategoriat',
+		'/myymalat',
+		'/myymalat/[storeID]',
+		'/seuratut'
+	];
+	const hasSearch = $derived(page.route.id === null || !noSearchPages.includes(page.route.id));
+
+	let commandPalette = $state<ReturnType<typeof CommandPalette>>();
+	const paletteShortcut = /Mac|iPhone|iPad/.test(navigator.userAgent) ? '⌘K' : 'Ctrl K';
 </script>
 
 <svelte:window onclick={handleDocumentClick} onkeydown={handleGlobalKeydown} />
 
 {#await data.alko then alko}
 	{shiftLoader()}
+	<!-- Watched products that changed since the user last looked, for the menu's count -->
+	{@const changedWatchCount = watchlist.length
+		? watchStatuses(
+				watchlist,
+				(id) => alko.kaljakori.findById(id),
+				alko.availabilityLoaded ? alko.availability : null,
+				resolvePreferredStore(alko.availability.stores, $preferredStoreId, $userLocation)?.id
+			).filter((status) => status.changes.length).length
+		: 0}
 	<div class="flex h-full w-full flex-col">
 		{#if dev}
 			<span class="bg-brand-3 px-1.5 py-0.5 text-center text-sm text-white">DEV</span>
@@ -228,9 +284,13 @@
 					>Alkometriikka</span
 				>
 			</a>
-			{#if page.route.id === null || !noSearchPages.includes(page.route.id)}
+			{#if hasSearch}
 				<div class={twMerge('flex w-full flex-row', 'rounded border border-primary')}>
-					<div
+					<button
+						type="button"
+						onclick={() => commandPalette?.openPalette()}
+						aria-label="Hae kaikkialta"
+						title={`Hae kaikkialta (${paletteShortcut})`}
 						class={twMerge(
 							components.button(),
 							'aspect-square border-0 bg-white text-black',
@@ -239,7 +299,7 @@
 						)}
 					>
 						<Icon name="search" />
-					</div>
+					</button>
 					<div class="relative flex w-full">
 						<input
 							id="searchQuery"
@@ -261,6 +321,12 @@
 				</div>
 			{/if}
 			<div class="ms-auto flex items-center gap-2">
+				<CommandPalette
+					bind:this={commandPalette}
+					kaljakori={alko.kaljakori}
+					availability={alko.availability}
+					showButton={!hasSearch}
+				/>
 				<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 				<details
 					bind:this={extraMenu}
@@ -268,32 +334,66 @@
 					onkeydown={handleExtraMenuKeydown}
 					onfocusout={handleExtraMenuFocusout}
 				>
-					<summary aria-label="Lisää" class={twMerge(components.button(), 'list-none p-2 text-xl')}>
+					<summary
+						aria-label={changedWatchCount
+							? `Lisää, ${changedWatchCount} seuratussa tuotteessa muutoksia`
+							: 'Lisää'}
+						class={twMerge(components.button(), 'relative list-none p-2 text-xl')}
+					>
 						{#if !$isMobile}<span class="text-sm">Lisää</span>{/if}<Icon name="menu" />
+						{#if changedWatchCount}
+							<span
+								class="absolute -end-1 -top-1 size-2.5 rounded-full bg-green-600 ring-2 ring-white dark:ring-zinc-900"
+							></span>
+						{/if}
 					</summary>
 					<div
-						class="absolute end-0 top-full z-20 mt-2 flex min-w-40 flex-col gap-1 rounded border border-primary bg-primary p-1 shadow-lg"
+						class="absolute end-0 top-full z-20 mt-2 flex w-56 flex-col rounded border border-primary bg-primary p-1.5 shadow-lg"
 					>
-						{#each extraItems as item}
-							<a
-								href={appPath(item.href)}
-								onclick={closeExtraMenu}
-								class={twMerge(components.button(), 'w-full justify-start')}
+						{#each menuGroups as group, index (group.label)}
+							<p
+								id={`menu-${index}`}
+								class={twMerge(
+									'px-2 pb-1 text-xs font-semibold tracking-wide text-secondary uppercase',
+									index > 0 ? 'mt-1.5 border-t border-primary pt-2.5' : 'pt-1'
+								)}
 							>
-								<Icon name={item.icon} />
-								<span>{item.name}</span>
-							</a>
+								{group.label}
+							</p>
+							<ul aria-labelledby={`menu-${index}`}>
+								{#each group.items as item (item.href)}
+									<li>
+										<a
+											href={appPath(item.href)}
+											onclick={closeExtraMenu}
+											aria-current={page.url.pathname.startsWith(appPath(item.href))
+												? 'page'
+												: undefined}
+											class="flex items-center gap-2.5 rounded px-2 py-1.5 text-sm hover:bg-secondary aria-[current=page]:bg-secondary aria-[current=page]:font-semibold"
+										>
+											<Icon name={item.icon} class="text-base" />
+											<span class="flex-1">{item.name}</span>
+											{#if item.href === '/seuratut/' && changedWatchCount}
+												<span
+													class="rounded-full bg-green-600 px-1.5 text-xs font-semibold text-white"
+													title="Muuttuneita seurattuja tuotteita">{changedWatchCount}</span
+												>
+											{/if}
+										</a>
+									</li>
+								{/each}
+							</ul>
 						{/each}
 					</div>
 				</details>
 				<a
-					href={resolve('/daily')}
+					href={resolve('/daily/')}
 					aria-label="Daily"
 					class={twMerge(components.button(), 'p-2 text-xl')}
 					>{#if !$isMobile}<span class="text-sm">Daily</span>{/if}<Icon name="flame" /></a
 				>
 				<a
-					href={resolve('/listat')}
+					href={resolve('/listat/')}
 					aria-label="Listat"
 					class={twMerge(components.button(), 'p-2 text-xl')}
 					>{#if !$isMobile}<span class="text-sm">Listat</span>{/if}<Icon name="list_ul" /></a
@@ -301,7 +401,8 @@
 				<Settings {alko} />
 			</div>
 		</header>
-		<NoticeBanner lastSynced={alko.dataset.metadata.LastSynced} />
+		<NoticeBanner lastSynced={alko.dataset.metadata.LastSynced} cached={alko.cached} />
+		<InstallBanner />
 		<div
 			id="main-content"
 			tabindex="-1"

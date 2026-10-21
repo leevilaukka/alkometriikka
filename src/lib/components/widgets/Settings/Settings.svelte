@@ -1,20 +1,36 @@
 <script lang="ts">
-	import { components } from '$lib/utils/styles';
+	import { components } from '$lib/utils/ui/styles';
 	import { twMerge } from 'tailwind-merge';
 	import { isLaptop, isMobile, theme } from '$lib/global.svelte';
 	import Icon from '$lib/components/widgets/Icon.svelte';
-	import {
-		handleClearAll,
-		handleExport,
-		handleImport,
-		sendAnalyticsEvent
-	} from '$lib/utils/helpers';
+	import { handleClearAll, handleExport, handleImport } from '$lib/utils/app/backup';
+	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
+	import { install } from '$lib/utils/app/pwa.svelte';
 	let { dialogElement } = $props();
 </script>
 
 <div class="prose dark:prose-invert">
 	<h2 class="text-lg font-bold">Lisäasetukset</h2>
 </div>
+{#if install.canPrompt || install.needsManualSteps}
+	<div class="flex flex-col gap-2">
+		<p class="text-sm font-bold">Asenna sovellus</p>
+		<p class="text-sm text-secondary">
+			Asennettuna Alkometriikka aukeaa kotinäytöltä omaan ikkunaansa ja toimii myös ilman
+			verkkoyhteyttä.
+		</p>
+		{#if install.canPrompt}
+			<button class={twMerge(components.button())} onclick={() => install.prompt('settings')}>
+				<Icon name="home_add" /> <span>Asenna</span>
+			</button>
+		{:else}
+			<p class="text-sm">
+				Napauta selaimen <span class="whitespace-nowrap"><b>Jaa</b>-painiketta</span> ja valitse
+				<b class="whitespace-nowrap">Lisää Koti-valikkoon</b>.
+			</p>
+		{/if}
+	</div>
+{/if}
 <div class="flex flex-col gap-2">
 	<p class="text-sm font-bold">Teema</p>
 	<div class="flex flex-row gap-0">

@@ -4,10 +4,10 @@
 	import Icon from '$lib/components/widgets/Icon.svelte';
 	import { locationDenied, userLocation } from '$lib/global.svelte';
 	import type { AvailabilityStore } from '$lib/types';
-	import { formatStoreDistance, getStoreDistance } from '$lib/utils/availability';
-	import { formatDirection, getBearing, unwrapAngle } from '$lib/utils/compass';
-	import { readHeading } from '$lib/utils/orientation';
-	import { components } from '$lib/utils/styles';
+	import { formatStoreDistance, getStoreDistance } from '$lib/utils/catalog/availability';
+	import { formatDirection, getBearing, unwrapAngle } from '$lib/utils/device/compass';
+	import { readHeading } from '$lib/utils/device/orientation';
+	import { components } from '$lib/utils/ui/styles';
 
 	let { store, active = true }: { store: AvailabilityStore; active?: boolean } = $props();
 
@@ -109,7 +109,7 @@
 		{:else if arrived}
 			<p class="text-lg font-bold">Perillä!</p>
 			<a
-				href={resolve('/listat')}
+				href={resolve('/listat/')}
 				class={twMerge(components.button({ type: 'positive', size: 'md' }), 'mt-2 px-5 py-3')}
 			>
 				<Icon name="list" />

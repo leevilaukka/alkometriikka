@@ -1,10 +1,10 @@
 import Bun from 'bun';
 import { mkdir, readdir, rm } from 'node:fs/promises';
 import path from 'node:path';
-import { MigratedData } from '../data/types';
+import type { MigratedData } from '../data/types';
 import { DEV } from '../data/constants';
 import { ogImageUrl } from '../og/og';
-import type { StoredProduct } from '../../src/lib/utils/dataset';
+import type { StoredProduct } from '../../src/lib/utils/catalog/dataset';
 import {
 	buildCategoryTree,
 	categoryFeedPath,
@@ -12,7 +12,7 @@ import {
 	categorySlug,
 	categoryTitle,
 	CATEGORY_FEED_DIR
-} from '../../src/lib/utils/categories';
+} from '../../src/lib/utils/catalog/categories';
 
 /** Max items in the aggregate (whole-catalog) feed. */
 const RSS_LIMIT = 1000;

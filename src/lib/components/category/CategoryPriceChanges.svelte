@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { appPath } from '$lib/utils/paths';
+	import { appPath } from '$lib/utils/app/paths';
 	import type { PriceListItem } from '$lib/types';
-	import { sendAnalyticsEvent } from '$lib/utils/helpers';
-	import { recentPriceChanges } from '$lib/utils/metrics';
-	import { isPriceDrop, priceChangeSince, priceChangesURL } from '$lib/utils/priceChanges';
+	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
+	import { recentPriceChanges } from '$lib/utils/stats/metrics';
+	import { isPriceDrop, priceChangeSince, priceChangesURL } from '$lib/utils/stats/priceChanges';
 	import Icon from '../widgets/Icon.svelte';
 	import PriceChangeList from '../widgets/PriceChangeList.svelte';
 	import CategorySection from './CategorySection.svelte';

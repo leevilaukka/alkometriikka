@@ -1,0 +1,43 @@
+name: Record run for monitoring
+description: >-
+  Writes one JSON record of this workflow run (result, job and step timings,
+  the sync's attempts) to R2 under ci-runs/, for the build monitoring
+  dashboards. Use it in a final job with `if: always()` that needs every
+  other job, and `actions: read` so the job timings can be read. Best-effort:
+  scripts/ci/run-report.ts never fails, so a broken report can't fail a run.
+inputs:
+  needs:
+    description: '`toJSON(needs)` of the report job; any failed job marks the run failed'
+    required: true
+  sync-report:
+    description: Path to the sync's per-attempt report (fetchData only)
+    required: false
+    default: ''
+  github-token:
+    required: true
+  r2-access-key-id:
+    required: false
+  r2-secret-access-key:
+    required: false
+  r2-account-id:
+    required: false
+  r2-bucket:
+    required: false
+  r2-region:
+    required: false
+runs:
+  using: composite
+  steps:
+    - name: Write the run record to R2
+      shell: bash
+      env:
+        RUN_NEEDS: ${{ inputs.needs }}
+        SYNC_REPORT: ${{ inputs.sync-report }}
+        GITHUB_TOKEN: ${{ inputs.github-token }}
+        CF_R2_ACCESS_KEY_ID: ${{ inputs.r2-access-key-id }}
+        CF_R2_SECRET_ACCESS_KEY: ${{ inputs.r2-secret-access-key }}
+        CF_R2_ACCOUNT_ID: ${{ inputs.r2-account-id }}
+        CF_R2_BUCKET: ${{ inputs.r2-bucket }}
+        CF_R2_REGION: ${{ inputs.r2-region }}
+      run: |
+        bun run scripts/ci/run-report.ts ${SYNC_REPORT:+--sync-report "$SYNC_REPORT"}

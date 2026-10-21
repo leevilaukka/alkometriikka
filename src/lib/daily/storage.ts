@@ -1,5 +1,5 @@
-import { LocalStorageKeys } from '$lib/utils/constants';
-import { LocalStorageManager } from '$lib/utils/storage';
+import { LocalStorageKeys } from '$lib/utils/constants/app';
+import { LocalStorageManager } from '$lib/utils/app/storage';
 import { DAILY_GAME_VERSION, DAILY_QUESTION_COUNT } from './questions';
 import type {
 	ArchivedScores,

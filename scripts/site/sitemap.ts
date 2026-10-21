@@ -1,11 +1,11 @@
 import Bun from 'bun';
-import { MigratedData, StoreData } from '../data/types';
+import type { MigratedData, StoreData } from '../data/types';
 import { DEV } from '../data/constants';
 import {
 	buildCategoryTree,
 	categorySlug,
 	CATEGORY_BASE_PATH
-} from '../../src/lib/utils/categories.ts';
+} from '../../src/lib/utils/catalog/categories.ts';
 
 type SitemapEntry = {
 	loc: string;
@@ -81,7 +81,7 @@ async function main() {
 	});
 	// Lists recent price changes across the selection, so it changes with the newest one
 	sitemapEntries.push({
-		loc: '/hinnanmuutokset',
+		loc: '/hinnanmuutokset/',
 		lastMod: categoryLastMod.get(''),
 		priority: 0.6,
 		changeFreq: 'daily'

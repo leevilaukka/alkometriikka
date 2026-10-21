@@ -1,18 +1,19 @@
 <script lang="ts">
-	import { appPath } from '$lib/utils/paths';
+	import { appPath } from '$lib/utils/app/paths';
 	import { resolve } from '$app/paths';
 	import type { Kaljakori } from '$lib/alko';
 	import type { AvailabilityData, PriceListItem } from '$lib/types';
-	import { AllColumns, AUTO_STORE_ID } from '$lib/utils/constants';
+	import { AllColumns } from '$lib/utils/constants/columns';
+	import { AUTO_STORE_ID } from '$lib/utils/constants/app';
 	import {
 		categoryDescription,
 		categoryFeedPath,
 		categorySlug,
 		categoryTitle,
 		type CategoryNode
-	} from '$lib/utils/categories';
-	import { generateTitle, setSEO } from '$lib/utils/helpers';
-	import { formatValue } from '$lib/utils/format';
+	} from '$lib/utils/catalog/categories';
+	import { generateTitle, setSEO } from '$lib/utils/app/meta';
+	import { formatValue } from '$lib/utils/format/format';
 	import {
 		compareProductIds,
 		isLaptop,
@@ -22,13 +23,13 @@
 		preferredStoreId,
 		userLocation
 	} from '$lib/global.svelte';
-	import { resolvePreferredStore } from '$lib/utils/availability';
-	import { keepAutoLocationFresh } from '$lib/utils/location';
-	import { compareURL, MAX_COMPARE_PRODUCTS } from '$lib/utils/compare';
-	import { pickCategoryHighlights } from '$lib/utils/metrics';
+	import { resolvePreferredStore } from '$lib/utils/catalog/availability';
+	import { keepAutoLocationFresh } from '$lib/utils/device/location';
+	import { compareURL, MAX_COMPARE_PRODUCTS } from '$lib/utils/user/compare';
+	import { pickCategoryHighlights } from '$lib/utils/stats/metrics';
 	import { twMerge } from 'tailwind-merge';
-	import Main from './Main.svelte';
-	import { components } from '$lib/utils/styles';
+	import Main, { type ListPosition } from './Main.svelte';
+	import { components } from '$lib/utils/ui/styles';
 	import Icon from '../widgets/Icon.svelte';
 	import Breadcrumb from '../widgets/Breadcrumb.svelte';
 	import Popup from '../widgets/Popup.svelte';
@@ -42,7 +43,8 @@
 		kaljakori: source,
 		table,
 		availability,
-		tree
+		tree,
+		position
 	}: {
 		trail: CategoryNode[];
 		kaljakori: Kaljakori;
@@ -50,7 +52,15 @@
 		table: any[][];
 		availability: AvailabilityData;
 		tree: CategoryNode[];
+		/** Where to scroll the product list to, see `Main` */
+		position?: ListPosition;
 	} = $props();
+
+	let main: Main | undefined = $state();
+
+	export function currentPosition() {
+		return main?.currentPosition();
+	}
 
 	const node = $derived(trail[trail.length - 1]);
 	const parent = $derived(trail.length > 1 ? trail[0] : undefined);
@@ -275,7 +285,7 @@
 				>
 			</label>
 		{:else if Object.keys(availability.stores).length}
-			<a href={resolve('/myymalat')} class="group flex items-center gap-1 text-sm text-secondary">
+			<a href={resolve('/myymalat/')} class="group flex items-center gap-1 text-sm text-secondary">
 				<Icon name="map_pin" />
 				<span class="group-hover:underline">Valitse myymälä nähdäksesi sen valikoiman</span>
 			</a>
@@ -349,9 +359,9 @@
 			{#snippet renderContent(dialogElement: HTMLDialogElement)}
 				<h2 class="text-xl font-bold">{node.name}</h2>
 				{@render insights(true)}
-				<!-- Pinned to the bottom of the scrolling sheet, where the Tiedot button that opened it was -->
+				<!-- Pinned to the bottom of the scrolling sheet, where the Tiedot button that opened it was. Sticky offsets count from inside the sheet's p-4, so -bottom-4 reaches its edge -->
 				<div
-					class="sticky bottom-0 -mx-4 -mb-4 bg-primary px-4 py-2.5 shadow-[0_-4px_12px_rgba(0,0,0,0.06)]"
+					class="sticky -bottom-4 -mx-4 -mb-4 bg-primary px-4 pt-2.5 pb-[calc(--spacing(2.5)_+_env(safe-area-inset-bottom))] shadow-[0_-4px_12px_rgba(0,0,0,0.06)]"
 				>
 					<button
 						type="button"
@@ -383,5 +393,12 @@
 {/snippet}
 
 {#key `${node.path}|${storeFilter ?? ''}`}
-	<Main {kaljakori} {header} footer={$isLaptop ? undefined : footer} showFilters={false} />
+	<Main
+		{kaljakori}
+		{header}
+		footer={$isLaptop ? undefined : footer}
+		showFilters={false}
+		{position}
+		bind:this={main}
+	/>
 {/key}

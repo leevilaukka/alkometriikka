@@ -2,13 +2,14 @@
 	import { resolve } from '$app/paths';
 	import Icon from '$lib/components/widgets/Icon.svelte';
 	import { preferredStoreId } from '$lib/global.svelte';
-	import { AUTO_STORE_ID } from '$lib/utils/constants';
-	import { requestUserLocation } from '$lib/utils/location';
+	import { AUTO_STORE_ID } from '$lib/utils/constants/app';
+	import { requestUserLocation } from '$lib/utils/device/location';
 	import type { AvailabilityStore } from '$lib/types';
-	import { getStoreCity, isStoreOpen } from '$lib/utils/availability.js';
-	import { generateTitle, sendAnalyticsEvent, setSEO } from '$lib/utils/helpers';
-	import { staticPage } from '$lib/utils/seo';
-	import { components } from '$lib/utils/styles';
+	import { getStoreCity, isStoreOpen } from '$lib/utils/catalog/availability.js';
+	import { generateTitle, setSEO } from '$lib/utils/app/meta';
+	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
+	import { staticPage } from '$lib/utils/app/seo';
+	import { components } from '$lib/utils/ui/styles';
 	import { twMerge } from 'tailwind-merge';
 
 	let { data } = $props();
@@ -89,7 +90,7 @@
 					? 'Automaattinen valinta käytössä'
 					: 'Valitse lähin myymälä automaattisesti'}
 			</button>
-			<a href={resolve('/kompassi')} class={components.button({ size: 'md' })}>
+			<a href={resolve('/kompassi/')} class={components.button({ size: 'md' })}>
 				<Icon name="compass" />
 				<span>Kompassi lähimpään myymälään</span>
 			</a>

@@ -1,8 +1,8 @@
 <script lang="ts">
 	import type { PriceListItem } from '$lib/types';
-	import { AllColumns } from '$lib/utils/constants';
-	import { formatRoundedPricePerLiter, formatValue } from '$lib/utils/format';
-	import { computeCategoryStats } from '$lib/utils/metrics';
+	import { AllColumns } from '$lib/utils/constants/columns';
+	import { formatRoundedPricePerLiter, formatValue } from '$lib/utils/format/format';
+	import { computeCategoryStats } from '$lib/utils/stats/metrics';
 	import Histogram from '../widgets/Histogram.svelte';
 	import CategorySection from './CategorySection.svelte';
 

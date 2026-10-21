@@ -1,7 +1,7 @@
 import path from 'node:path';
 import { mkdir } from 'node:fs/promises';
 import { dailyOgUrl } from '../og/og-daily-card';
-import { toISODateInTimeZone } from '../../src/lib/utils/sales';
+import { toISODateInTimeZone } from '../../src/lib/utils/catalog/sales';
 import { dayNumberForDate } from '../../src/lib/daily/dayNumber';
 import { readOption } from '../lib/cli';
 import { escapeHtml } from '../lib/html';

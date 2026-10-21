@@ -4,13 +4,13 @@
 	import type { DetectedBarcode } from 'barcode-detector/ponyfill';
 	import Popup from './Popup.svelte';
 	import Icon from './Icon.svelte';
-	import { components } from '$lib/utils/styles';
+	import { components } from '$lib/utils/ui/styles';
 	import { twMerge } from 'tailwind-merge';
 	import { isMobile } from '$lib/global.svelte';
 	import type { Kaljakori } from '$lib/alko';
-	import { AllColumns } from '$lib/utils/constants';
+	import { AllColumns } from '$lib/utils/constants/columns';
 	import { goto } from '$app/navigation';
-	import { sendAnalyticsEvent } from '$lib/utils/helpers';
+	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 
 	const barcodeDetector = new BarcodeDetector({
 		formats: ['ean_13', 'qr_code']

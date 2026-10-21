@@ -1,0 +1,4 @@
+{
+	"$schema": "../schemas/flags.schema.json",
+	"flags": {}
+}

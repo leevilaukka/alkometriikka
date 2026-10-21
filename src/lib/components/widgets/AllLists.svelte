@@ -1,13 +1,14 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
+	import { appPath } from '$lib/utils/app/paths';
 	import { lists, searchQuery } from '$lib/global.svelte';
-	import { createList, deleteList, listToURI } from '$lib/utils/lists';
-	import { components } from '$lib/utils/styles';
+	import { createList, deleteList, listToURI } from '$lib/utils/user/lists';
+	import { components } from '$lib/utils/ui/styles';
 	import { twMerge } from 'tailwind-merge';
 	import Icon from './Icon.svelte';
 	import type { ListObj } from '$lib/types';
-	import { isSimilarString } from '$lib/utils/search';
-	import { handleShare, sendAnalyticsEvent } from '$lib/utils/helpers';
+	import { isSimilarString } from '$lib/utils/catalog/search';
+	import { handleShare } from '$lib/utils/app/share';
+	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 
 	const {
 		action,
@@ -44,7 +45,7 @@
 				>
 					<div class="flex flex-col">
 						<a
-							href={resolve(`/listat?list=${listToURI(list)}`)}
+							href={appPath(`/listat/?list=${listToURI(list)}`)}
 							class="text-lg after:absolute after:inset-0 focus-visible:outline-none"
 							onclick={(e) => {
 								if (action && typeof action === 'function') {
@@ -70,7 +71,7 @@
 									const shared = await handleShare({
 										title: `Alkometriikka - ${list.name}`,
 										text: `Katso lista: ${list.name}`,
-										url: `${location.origin}/listat?list=${listToURI(list)}`,
+										url: `${location.origin}/listat/?list=${listToURI(list)}`,
 										includeSID: true
 									});
 

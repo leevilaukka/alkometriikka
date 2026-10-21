@@ -3,7 +3,7 @@ import { mkdir } from 'node:fs/promises';
 import { svgToPng } from './og';
 import { dailyOgKey, dailyOgSvg } from './og-daily-card';
 import { R2S3Client } from '../r2/client';
-import { toISODateInTimeZone } from '../../src/lib/utils/sales';
+import { toISODateInTimeZone } from '../../src/lib/utils/catalog/sales';
 import { dayNumberForDate } from '../../src/lib/daily/dayNumber';
 import { readOption } from '../lib/cli';
 

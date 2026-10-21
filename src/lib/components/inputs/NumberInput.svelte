@@ -1,6 +1,7 @@
 <script>
-	import { getRandom, headerToDisplayName, headerToUnitMarker } from '$lib/utils/helpers';
-	import { components } from '$lib/utils/styles';
+	import { getRandom } from '$lib/utils/app/share';
+	import { headerToDisplayName, headerToUnitMarker } from '$lib/utils/format/labels';
+	import { components } from '$lib/utils/ui/styles';
 	import { twMerge } from 'tailwind-merge';
 	import { untrack } from 'svelte';
 	import Icon from '../widgets/Icon.svelte';

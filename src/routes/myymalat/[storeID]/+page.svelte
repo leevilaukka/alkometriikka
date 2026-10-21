@@ -2,13 +2,16 @@
 	import { resolve } from '$app/paths';
 	import Icon from '$lib/components/widgets/Icon.svelte';
 	import StoreCompass from '$lib/components/widgets/StoreCompass.svelte';
+	import StoreHighlights from '$lib/components/store/StoreHighlights.svelte';
+	import { productsInStore } from '$lib/utils/catalog/storeHighlights';
 	import { preferredStoreId } from '$lib/global.svelte';
 	import type { AvailabilityStore } from '$lib/types';
-	import { getStoreCity, isStoreOpen } from '$lib/utils/availability.js';
-	import { AllColumns } from '$lib/utils/constants';
-	import { generateTitle, sendAnalyticsEvent, setSEO } from '$lib/utils/helpers';
-	import { storeDescription } from '$lib/utils/seo';
-	import { components } from '$lib/utils/styles';
+	import { getStoreCity, isStoreOpen } from '$lib/utils/catalog/availability.js';
+	import { AllColumns } from '$lib/utils/constants/columns';
+	import { generateTitle, setSEO } from '$lib/utils/app/meta';
+	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
+	import { storeDescription } from '$lib/utils/app/seo';
+	import { components } from '$lib/utils/ui/styles';
 	import { twMerge } from 'tailwind-merge';
 
 	let { data } = $props();
@@ -56,7 +59,7 @@
 			<Icon name="home" class="inline-block" />
 			<span>Etusivulle</span>
 		</a>
-		<a href={resolve('/myymalat')} class={twMerge(components.button({ size: 'md' }))}>
+		<a href={resolve('/myymalat/')} class={twMerge(components.button({ size: 'md' }))}>
 			<Icon name="map_pin" />
 			<span>Myymälät</span>
 		</a>
@@ -170,6 +173,12 @@
 						{/each}
 					</section>
 				{/if}
+				{#await data.alkoWithStores then alko}
+					<StoreHighlights
+						storeId={store.id}
+						products={productsInStore(alko.kaljakori.data, alko.availability, store.id)}
+					/>
+				{/await}
 			</div>
 
 			<section class="overflow-hidden rounded border border-primary bg-secondary md:col-span-2">

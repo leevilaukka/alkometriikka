@@ -1,17 +1,22 @@
 <script lang="ts">
-	import { appPath } from '$lib/utils/paths';
+	import { appPath } from '$lib/utils/app/paths';
 	import { resolve } from '$app/paths';
-	import { page } from '$app/state';
 	import { getContext, untrack } from 'svelte';
 	import SvelteVirtualList from '@humanspeak/svelte-virtual-list';
 	import type { Kaljakori } from '$lib/alko';
 	import type { AvailabilityData, ListObj } from '$lib/types';
-	import { AllColumns, AUTO_STORE_ID, ContextKeys } from '$lib/utils/constants';
-	import { categoryFeedPath, categoryTitle, type CategoryNode } from '$lib/utils/categories';
-	import { generateTitle, sendAnalyticsEvent, setSEO } from '$lib/utils/helpers';
-	import { formatValue } from '$lib/utils/format';
-	import { staticPage } from '$lib/utils/seo';
-	import { recentPriceChanges, type PriceChange } from '$lib/utils/metrics';
+	import { AllColumns } from '$lib/utils/constants/columns';
+	import { AUTO_STORE_ID, ContextKeys } from '$lib/utils/constants/app';
+	import {
+		categoryFeedPath,
+		categoryTitle,
+		type CategoryNode
+	} from '$lib/utils/catalog/categories';
+	import { generateTitle, setSEO } from '$lib/utils/app/meta';
+	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
+	import { formatValue } from '$lib/utils/format/format';
+	import { staticPage } from '$lib/utils/app/seo';
+	import { recentPriceChanges, type PriceChange } from '$lib/utils/stats/metrics';
 	import {
 		countPriceChangesByCategory,
 		filterPriceChangesByDirection,
@@ -26,8 +31,8 @@
 		DEFAULT_PRICE_CHANGE_WINDOW,
 		PRICE_CHANGE_WINDOWS,
 		type PriceChangeDirection
-	} from '$lib/utils/priceChanges';
-	import type { SearchParamsManager } from '$lib/utils/url';
+	} from '$lib/utils/stats/priceChanges';
+	import type { SearchParamsManager } from '$lib/utils/app/url';
 	import {
 		isLaptop,
 		onlyPreferredStore,
@@ -36,10 +41,10 @@
 		searchQuery,
 		userLocation
 	} from '$lib/global.svelte';
-	import { resolvePreferredStore } from '$lib/utils/availability';
-	import { keepAutoLocationFresh } from '$lib/utils/location';
-	import { addToList } from '$lib/utils/lists';
-	import { components } from '$lib/utils/styles';
+	import { resolvePreferredStore } from '$lib/utils/catalog/availability';
+	import { keepAutoLocationFresh } from '$lib/utils/device/location';
+	import { addToList } from '$lib/utils/user/lists';
+	import { components } from '$lib/utils/ui/styles';
 	import { twMerge } from 'tailwind-merge';
 	import Icon from '../widgets/Icon.svelte';
 	import Breadcrumb from '../widgets/Breadcrumb.svelte';
@@ -58,7 +63,7 @@
 
 	const searchParamsManager = getContext<SearchParamsManager>(ContextKeys.SearchParamsManager);
 
-	const initial = untrack(() => parsePriceChangeParams(page.url.searchParams));
+	const initial = untrack(() => parsePriceChangeParams(searchParamsManager.params));
 	let days = $state<number>(initial.days);
 	let direction = $state<PriceChangeDirection>(initial.direction);
 	let typeSlug = $state(initial.typeSlug);
@@ -180,7 +185,7 @@
 		const title = generateTitle(TITLE);
 		setSEO({
 			description: DESCRIPTION,
-			og: { title, description: DESCRIPTION, url: 'https://alkometriikka.fi/hinnanmuutokset' },
+			og: { title, description: DESCRIPTION, url: 'https://alkometriikka.fi/hinnanmuutokset/' },
 			twitter: { title, description: DESCRIPTION },
 			keywords: KEYWORDS
 		});
@@ -327,7 +332,7 @@
 			</label>
 		{:else if Object.keys(availability.stores).length}
 			<a
-				href={resolve('/myymalat')}
+				href={resolve('/myymalat/')}
 				class="group flex w-fit items-center gap-1 text-sm text-secondary"
 			>
 				<Icon name="map_pin" />
@@ -418,9 +423,9 @@
 			{#snippet renderContent(dialogElement: HTMLDialogElement)}
 				<h2 class="text-xl font-bold">Suodattimet</h2>
 				{@render filters()}
-				<!-- Pinned to the bottom of the scrolling sheet, where the button that opened it was -->
+				<!-- Pinned to the bottom of the scrolling sheet, where the button that opened it was. Sticky offsets count from inside the sheet's p-4, so -bottom-4 reaches its edge -->
 				<div
-					class="sticky bottom-0 -mx-4 -mb-4 flex gap-2.5 bg-primary px-4 py-2.5 shadow-[0_-4px_12px_rgba(0,0,0,0.06)]"
+					class="sticky -bottom-4 -mx-4 -mb-4 flex gap-2.5 bg-primary px-4 pt-2.5 pb-[calc(--spacing(2.5)_+_env(safe-area-inset-bottom))] shadow-[0_-4px_12px_rgba(0,0,0,0.06)]"
 				>
 					{#if activeFilterCount > 0}
 						<button

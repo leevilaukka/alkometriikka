@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { appPath } from '$lib/utils/paths';
+	import { appPath } from '$lib/utils/app/paths';
 	import type { Kaljakori } from '$lib/alko';
 	import type { PriceListItem } from '$lib/types';
-	import { findProductCategoryTrail } from '$lib/utils/categories';
-	import { AllColumns } from '$lib/utils/constants';
-	import { formatRoundedPricePerLiter } from '$lib/utils/format';
-	import { computeQualityMetrics } from '$lib/utils/metrics';
+	import { findProductCategoryTrail } from '$lib/utils/catalog/categories';
+	import { AllColumns } from '$lib/utils/constants/columns';
+	import { formatRoundedPricePerLiter } from '$lib/utils/format/format';
+	import { computeQualityMetrics } from '$lib/utils/stats/metrics';
 	import { twMerge } from 'tailwind-merge';
 	import Icon from '../widgets/Icon.svelte';
 

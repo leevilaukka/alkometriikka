@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { AllColumns } from '$lib/utils/constants';
+	import { AllColumns } from '$lib/utils/constants/columns';
 	import type { PriceListItem } from '$lib/types';
 	import type { Kaljakori } from '$lib/alko';
-	import { findProductCategoryTrail } from '$lib/utils/categories';
+	import { findProductCategoryTrail } from '$lib/utils/catalog/categories';
 	import Breadcrumb from '../widgets/Breadcrumb.svelte';
 	import type { BreadcrumbItem } from '$lib/types';
 

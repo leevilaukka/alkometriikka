@@ -3,6 +3,7 @@
 	"private": true,
 	"version": "0.0.2",
 	"type": "module",
+	"packageManager": "bun@1.4.3",
 	"scripts": {
 		"dev": "VERBOSE=1 bun run sync --dev && bun run changelog && vite dev --host",
 		"dev:no-sync": "vite dev --host",
@@ -11,11 +12,14 @@
 		"prerender:static": "bun run scripts/site/prerender-static.ts",
 		"changelog": "git-cliff --output CHANGELOG.md.tmp && mv CHANGELOG.md.tmp CHANGELOG.md",
 		"og:images": "bun run scripts/og/og-images.ts",
+		"pwa:splash": "bun run scripts/pwa/ios-splash.ts",
 		"r2": "bun run scripts/r2/cli.ts",
 		"sitemap": "bun run scripts/site/sitemap.ts",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check": "bun run check:svelte && bun run check:scripts",
+		"check:scripts": "tsc -p scripts",
+		"check:svelte": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"test": "bun test",
 		"format": "prettier --write .",
@@ -23,7 +27,9 @@
 		"migrate": "bun run scripts/data/migrate.ts",
 		"sync": "bun run scripts/data/index.ts",
 		"daily": "bun run scripts/site/daily.ts",
-		"backup:daily": "bun run scripts/site/backup-archive.ts"
+		"backup:daily": "bun run scripts/site/backup-archive.ts",
+		"stock": "bun run scripts/data/stock-history.ts",
+		"stock:demo": "bun run scripts/data/stock-history.ts --dev --demo"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^6.1.1",
@@ -33,7 +39,7 @@
 		"@tailwindcss/forms": "^0.5.11",
 		"@tailwindcss/typography": "^0.5.20",
 		"@tailwindcss/vite": "^4.3.3",
-		"@types/bun": "^1.3.14",
+		"@types/bun": "^1.4.3",
 		"@types/node": "^25.9.5",
 		"git-cliff": "^2.14.2",
 		"marked": "^18.1.0",

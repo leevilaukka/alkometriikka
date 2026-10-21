@@ -1,0 +1,26 @@
+name: Deploy to GitHub Pages
+description: >-
+  Publishes a directory to GitHub Pages through our own workflow instead of
+  GitHub's built-in branch deploy, which queues and hangs when gh-pages is
+  pushed to often. The calling job must run in the github-pages environment
+  with pages: write and id-token: write, and in the gh-pages-deployment
+  concurrency group so deploys never overlap. Blocks until the deploy is live.
+inputs:
+  path:
+    description: Directory holding the finished site
+    required: true
+outputs:
+  page-url:
+    description: URL of the deployed site
+    value: ${{ steps.deployment.outputs.page_url }}
+runs:
+  using: composite
+  steps:
+    - name: Upload site artifact
+      uses: actions/upload-pages-artifact@v4
+      with:
+        path: ${{ inputs.path }}
+
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4

@@ -1,4 +1,6 @@
 <script lang="ts" module>
+	import { readSearchParams } from '$lib/utils/app/compressedParams';
+
 	const LANDING_PARAMS_KEY = 'notice_landing_params';
 
 	/**
@@ -7,7 +9,7 @@
 	 * reload on another page doesn't lose them either.
 	 */
 	function readLandingParams(): URLSearchParams {
-		const params = new URLSearchParams(location.search);
+		const params = readSearchParams(location);
 		try {
 			const stored = new URLSearchParams(sessionStorage.getItem(LANDING_PARAMS_KEY) ?? '');
 			for (const [key, value] of params) stored.set(key, value);
@@ -23,25 +25,41 @@
 </script>
 
 <script lang="ts">
-	import { appPath } from '$lib/utils/paths';
+	import { appPath } from '$lib/utils/app/paths';
 	import { onMount } from 'svelte';
 	import { resolve } from '$app/paths';
 	import { twMerge } from 'tailwind-merge';
 	import Icon from '$lib/components/widgets/Icon.svelte';
-	import { components } from '$lib/utils/styles';
-	import { LocalStorageKeys, timeConfig } from '$lib/utils/constants';
-	import { LocalStorageManager } from '$lib/utils/storage';
-	import { STALE_NOTICE_ID, parseNotices, visibleNotices, type Notice } from '$lib/utils/notices';
+	import { components } from '$lib/utils/ui/styles';
+	import { LocalStorageKeys } from '$lib/utils/constants/app';
+	import { timeConfig } from '$lib/utils/constants/display';
+	import { LocalStorageManager } from '$lib/utils/app/storage';
+	import {
+		CACHED_NOTICE_ID,
+		STALE_NOTICE_ID,
+		parseNotices,
+		visibleNotices,
+		type Notice
+	} from '$lib/utils/app/notices';
 
-	const { lastSynced }: { lastSynced?: string } = $props();
+	const { lastSynced, cached = false }: { lastSynced?: string; cached?: boolean } = $props();
 
 	let notices = $state<Notice[]>([]);
 	let dismissed = $state(new Set(LocalStorageManager.getItem(LocalStorageKeys.DismissedNotices)));
+	let online = $state(navigator.onLine);
 
 	const lastSyncedLabel = $derived.by(() => {
 		if (!lastSynced) return '';
 		const date = new Date(lastSynced);
 		return `${date.toLocaleDateString('fi-FI')} klo ${date.toLocaleTimeString('fi-FI', timeConfig)}`;
+	});
+
+	const cachedMessage = $derived.by(() => {
+		const updated = lastSyncedLabel ? ` (päivitetty ${lastSyncedLabel})` : '';
+		if (!online) return `Ei verkkoyhteyttä. Näytetään tallennetut tiedot${updated}.`;
+		if (cached)
+			return `Uusimpia tietoja ei saatu ladattua, joten näytetään tallennetut tiedot${updated}.`;
+		return undefined;
 	});
 
 	const visible = $derived(
@@ -50,7 +68,8 @@
 			dismissed,
 			now: Date.now(),
 			params: landingParams,
-			staleMessage: `Alkon tietoja ei ole saatu päivitettyä ${lastSyncedLabel} jälkeen. Hinnat ja saatavuus voivat olla vanhentuneita.`
+			staleMessage: `Alkon tietoja ei ole saatu päivitettyä ${lastSyncedLabel} jälkeen. Hinnat ja saatavuus voivat olla vanhentuneita.`,
+			cachedMessage
 		})
 	);
 
@@ -63,7 +82,10 @@
 				// Forget dismissals of notices that have been removed so the list doesn't grow forever
 				const known = new Set(notices.map((notice) => notice.id));
 				const kept = [...dismissed].filter(
-					(id) => known.has(id) || id === `${STALE_NOTICE_ID}:${lastSynced}`
+					(id) =>
+						known.has(id) ||
+						id === `${STALE_NOTICE_ID}:${lastSynced}` ||
+						id === `${CACHED_NOTICE_ID}:${lastSynced}`
 				);
 				if (kept.length !== dismissed.size) {
 					dismissed = new Set(kept);
@@ -78,6 +100,8 @@
 		LocalStorageManager.setItem(LocalStorageKeys.DismissedNotices, [...dismissed]);
 	}
 </script>
+
+<svelte:window ononline={() => (online = true)} onoffline={() => (online = false)} />
 
 {#each visible as notice (notice.id)}
 	<div

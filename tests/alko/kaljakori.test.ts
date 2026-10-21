@@ -1,8 +1,9 @@
 import { beforeEach, describe, expect, it, spyOn } from 'bun:test';
 import { DATASET_INDEX_VERSION, Kaljakori } from '$lib/alko';
-import { AllColumns, DatasetColumns, GenderOptionsMap } from '$lib/utils/constants';
+import { AllColumns, DatasetColumns, MissingValues } from '$lib/utils/constants/columns';
+import { GenderOptionsMap } from '$lib/utils/constants/app';
 import type { AvailabilityData, DatasetRow } from '$lib/types';
-import { parseDataset } from '$lib/utils/dataset';
+import { parseDataset } from '$lib/utils/catalog/dataset';
 
 const header = [...Object.values(DatasetColumns)];
 type Fields = Partial<Record<keyof typeof DatasetColumns, unknown>>;
@@ -84,6 +85,22 @@ describe('Kaljakori row parsing', () => {
 		expect(implausible[AllColumns.BottleSize]).toBe(1);
 		const unknown = build([base('3', { BottleSize: '', PricePerLiter: '' })]).data[0];
 		expect(unknown[AllColumns.BottleSize]).toBe(1);
+	});
+
+	it('calculates a missing price per liter from price, deposit and a declared size only', () => {
+		const [calculated] = build([
+			base('1', { PricePerLiter: null, Price: 3.15, Deposit: 0.15, BottleSize: 0.33 })
+		]).data;
+		const missing = (item: object) => (item as { [MissingValues]?: Set<string> })[MissingValues];
+		expect(calculated[AllColumns.PricePerLiter]).toBe(9.09);
+		expect(missing(calculated)?.has(AllColumns.PricePerLiter)).toBe(true);
+
+		const [given] = build([base('2', { Deposit: 0.15 })]).data;
+		expect(given[AllColumns.PricePerLiter]).toBe(4);
+		expect(missing(given)?.has(AllColumns.PricePerLiter)).toBeFalsy();
+
+		const [sizeless] = build([base('3', { PricePerLiter: null, BottleSize: null })]).data;
+		expect(sizeless[AllColumns.PricePerLiter] as unknown).toBe('');
 	});
 
 	it('parses comma-decimal bottle sizes', () => {

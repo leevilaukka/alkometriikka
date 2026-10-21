@@ -1,13 +1,18 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import { generateTitle } from '$lib/utils/helpers';
+	import { generateTitle } from '$lib/utils/app/meta';
 	import { page } from '$app/state';
 	import { twMerge } from 'tailwind-merge';
-	import { components } from '$lib/utils/styles';
+	import { components } from '$lib/utils/ui/styles';
 	import Icon from '$lib/components/widgets/Icon.svelte';
+	import { reportPageNotFound } from '$lib/utils/app/errorAnalytics';
 
 	document.title = generateTitle(`Error ${page.status}`);
 	console.error(page.error);
+
+	$effect(() => {
+		reportPageNotFound(page.status, page.route.id, page.url.pathname, page.error?.message);
+	});
 </script>
 
 <div class="grid h-full w-full place-content-center">
@@ -24,7 +29,7 @@
 			</a>
 
 			{#if page.route.id === '/myymalat/[storeID]'}
-				<a href={resolve('/myymalat')} class={twMerge(components.button({ size: 'md' }))}>
+				<a href={resolve('/myymalat/')} class={twMerge(components.button({ size: 'md' }))}>
 					<Icon name="map_pin" class="inline-block" />
 					<span>Takaisin myymälälistaan</span>
 				</a>

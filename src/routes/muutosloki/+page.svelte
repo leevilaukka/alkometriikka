@@ -1,7 +1,7 @@
 <script lang="ts">
 	import changelog from 'virtual:changelog';
-	import { generateTitle, setSEO } from '$lib/utils/helpers';
-	import { staticPage } from '$lib/utils/seo';
+	import { generateTitle, setSEO } from '$lib/utils/app/meta';
+	import { staticPage } from '$lib/utils/app/seo';
 
 	const { description, keywords } = staticPage('/muutosloki/');
 	setSEO({

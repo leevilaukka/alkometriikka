@@ -1,39 +1,53 @@
 <script lang="ts">
 	import type { Kaljakori } from '$lib/alko';
 	import { twMerge } from 'tailwind-merge';
-	import { components } from '$lib/utils/styles';
-	import { ContextKeys, shownFilters as filters, AllColumns } from '$lib/utils/constants';
+	import { components } from '$lib/utils/ui/styles';
+	import { ContextKeys } from '$lib/utils/constants/app';
+	import { filterOptionGroupers, shownFilters as filters } from '$lib/utils/constants/display';
+	import { AllColumns } from '$lib/utils/constants/columns';
 	import NumberInput from '../inputs/NumberInput.svelte';
 	import StringInput from '../inputs/StringInput.svelte';
 	import Icon from './Icon.svelte';
 	import { isMobile } from '$lib/global.svelte';
 	import {
+		COMMA_SEPARATED_FILTERS,
 		getNarrowedFilterValues,
 		getNestedSubFilter,
 		getShownParentFilter,
 		initFilterValues,
+		joinFilterParams,
 		searchParametersFromFilterValues
-	} from '$lib/utils/filters';
+	} from '$lib/utils/catalog/filters';
 	import type { ColumnNames, FilterValues } from '$lib/types';
 	import { getContext, untrack } from 'svelte';
 	import { get } from 'svelte/store';
-	import type { SearchParamsManager } from '$lib/utils/url';
-	import { headerToDisplayName } from '$lib/utils/helpers';
+	import type { SearchParamsManager } from '$lib/utils/app/url';
+	import { headerToDisplayName } from '$lib/utils/format/labels';
 	import RecursiveFilter from '../inputs/RecursiveFilter.svelte';
+	import { trackFilterUsage } from '$lib/utils/app/filterAnalytics.svelte';
 
 	let {
 		kaljakori,
 		filterValues = $bindable(),
 		activeFilters = $bindable([]),
 		showRemoved = $bindable(false),
-		useURLParams = true
+		useURLParams = true,
+		resultCount
 	}: {
 		kaljakori: Kaljakori;
 		filterValues: FilterValues;
 		activeFilters: ColumnNames[];
 		showRemoved?: boolean;
 		useURLParams?: boolean;
+		/** Number of results the filters give, sent with the filter usage analytics */
+		resultCount?: number;
 	} = $props();
+
+	trackFilterUsage(
+		untrack(() => (useURLParams ? 'products' : 'list')),
+		() => searchParametersFromFilterValues(filterValues, kaljakori, showRemoved),
+		() => resultCount
+	);
 
 	let searchParamsManager = getContext<SearchParamsManager>(ContextKeys.SearchParamsManager);
 	let filtersElement: HTMLDialogElement;
@@ -143,7 +157,13 @@
 			kaljakori,
 			showRemoved
 		);
-		searchParamsManager.setParametersFromObject(filterValuesAsSearchParams).update();
+		searchParamsManager
+			.setParametersFromObject(
+				COMMA_SEPARATED_FILTERS
+					? joinFilterParams(filterValuesAsSearchParams)
+					: filterValuesAsSearchParams
+			)
+			.update();
 	});
 </script>
 
@@ -196,6 +216,7 @@
 						bind:value={filterValues[filter]}
 						bind:modified={filterActiveState[filter]}
 						name={filter}
+						groupOptions={filterOptionGroupers[filter]}
 					/>
 				{/if}
 				<RecursiveFilter {filter} bind:filterValues {kaljakori} {showRemoved} />

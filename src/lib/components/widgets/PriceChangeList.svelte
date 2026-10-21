@@ -1,13 +1,13 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import { AllColumns } from '$lib/utils/constants';
-	import { formatValue } from '$lib/utils/format';
-	import type { PriceChange } from '$lib/utils/metrics';
+	import { AllColumns } from '$lib/utils/constants/columns';
+	import { formatValue } from '$lib/utils/format/format';
+	import type { PriceChange } from '$lib/utils/stats/metrics';
 	import {
 		formatPriceChangeDate,
 		formatPriceChangePercent,
 		isPriceDrop
-	} from '$lib/utils/priceChanges';
+	} from '$lib/utils/stats/priceChanges';
 	import { twMerge } from 'tailwind-merge';
 
 	/** Rows of price changes, newest first. */

@@ -21,7 +21,7 @@ import {
 	generateDailyGameManifest,
 	type DailyGameManifest
 } from '../../src/lib/daily/manifest';
-import { toISODateInTimeZone } from '../../src/lib/utils/sales';
+import { toISODateInTimeZone } from '../../src/lib/utils/catalog/sales';
 
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
 
