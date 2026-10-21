@@ -4,7 +4,9 @@ import {
 	historyTimestamp,
 	priceHistoryChartPoints
 } from '$lib/utils/catalog/priceHistory';
-import type { PriceHistoryEntry } from '$lib/types';
+import type { PriceHistoryEntry, PriceListItem } from '$lib/types';
+import { productFeedPath } from '$lib/utils/catalog/alko';
+import { AllColumns } from '$lib/utils/constants/columns';
 
 function archive(date: string, end = date, price = 10): PriceHistoryEntry {
 	return {
@@ -32,6 +34,13 @@ describe('dated historical observations', () => {
 	it('advertises a price-change feed only when two live observations differ', () => {
 		const history = [archive('2007-05-11', '2007-05-11', 5), { date: '2026-10-01', price: 10 }];
 		expect(hasRecordedPriceChange(history)).toBe(false);
+		const product = {
+			[AllColumns.Number]: '319027',
+			[AllColumns.History]: history
+		} as PriceListItem;
+		expect(productFeedPath(product)).toBeUndefined();
+		product[AllColumns.History] = [...history, { date: '2026-10-21', price: 12 }];
+		expect(productFeedPath(product)).toBe('/rss/319027.xml');
 		expect(hasRecordedPriceChange([...history, { date: '2026-10-21', price: 12 }])).toBe(true);
 	});
 	it('uses elapsed time and breaks the line between isolated archive observations', () => {

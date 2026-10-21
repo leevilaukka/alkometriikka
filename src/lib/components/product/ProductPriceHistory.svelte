@@ -13,7 +13,6 @@
 	import { appPath } from '$lib/utils/app/paths';
 	import {
 		formatHistoryDate,
-		hasRecordedPriceChange,
 		historyTimestamp,
 		priceHistoryChartPoints
 	} from '$lib/utils/catalog/priceHistory';
@@ -36,12 +35,7 @@
 
 	const fullHistory = $derived(product[AllColumns.History] ?? []);
 	const archiveEntries = $derived(fullHistory.filter((entry) => entry.archive));
-	// Same rule as scripts/site/rss.ts: a product gets a feed once its price has changed
-	const feedHref = $derived(
-		hasRecordedPriceChange(fullHistory)
-			? `/rss/${encodeURIComponent(product[AllColumns.Number])}.xml`
-			: undefined
-	);
+	const feedHref = $derived(productFeedPath(product));
 	const chartPoints = $derived.by(() => {
 		const range = ranges.find((r) => r.key === selectedRange);
 		if (!range || range.days === null)
