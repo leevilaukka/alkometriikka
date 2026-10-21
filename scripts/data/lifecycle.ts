@@ -6,11 +6,7 @@
 
 import { getSaleInfo } from '../../src/lib/utils/catalog/sales.ts';
 import type { SaleInfo } from '../../src/lib/utils/catalog/sales.ts';
-import {
-	LEGACY_HEADERS,
-	SEARCH_REFRESHED_COLUMNS,
-	isIrrelevantStoredValues
-} from './constants.ts';
+import { LEGACY_HEADERS, SEARCH_REFRESHED_COLUMNS, isIrrelevantStoredValues } from './constants.ts';
 import type {
 	DetailedProductData,
 	MigratedProduct,
