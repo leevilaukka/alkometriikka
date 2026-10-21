@@ -51,8 +51,8 @@
 	);
 
 	$effect(() => {
-		const set = new Set(value).difference(new Set(defaultValue));
-		modified = !!set.size;
+		const defaults = new Set(defaultValue);
+		modified = [...new Set(value)].some((v) => !defaults.has(v));
 	});
 
 	$effect(() => {

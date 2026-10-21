@@ -417,7 +417,7 @@ export class Kaljakori {
 					item[AllColumns.RemovedFromSelection] === true ? removed : active,
 					item[column]
 				);
-			this.valueIndex.possibleValues[column] = sortedSet(active.union(removed));
+			this.valueIndex.possibleValues[column] = sortedSet(new Set([...active, ...removed]));
 			this.valueIndex.possibleValuesActive[column] = sortedSet(active);
 		}
 		if (this.valueIndex) return this.valueIndex;
@@ -450,7 +450,7 @@ export class Kaljakori {
 		const possibleValues: Record<string, Set<any>> = {};
 		const possibleValuesActive: Record<string, Set<any>> = {};
 		scanned.forEach((column, idx) => {
-			possibleValues[column] = sortedSet(active[idx].union(removed[idx]));
+			possibleValues[column] = sortedSet(new Set([...active[idx], ...removed[idx]]));
 			possibleValuesActive[column] = sortedSet(active[idx]);
 		});
 		for (const column of precomputed) {
@@ -659,10 +659,11 @@ export class Kaljakori {
 				if (type === 'number' && Array.isArray(filters[key]) && filters[key].length === 2) {
 					return item[key] >= filters[key][0] && item[key] <= filters[key][1];
 				} else if (type === 'object' && item[key] instanceof Set && filters[key] instanceof Set) {
+					const values = item[key];
 					// Store availability uses OR semantics: match if available in any selected store
 					if (key === AllColumns.StoreAvailability)
-						return filters[key].intersection(item[key]).size > 0;
-					return filters[key].isSubsetOf(item[key]);
+						return [...filters[key]].some((value) => values.has(value));
+					return [...filters[key]].every((value) => values.has(value));
 				} else if (filters[key] instanceof Set) {
 					return item[key] && filters[key].has(item[key]);
 				} else if (Array.isArray(filters[key])) {

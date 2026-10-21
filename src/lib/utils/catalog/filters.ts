@@ -219,7 +219,8 @@ export function findSimilarProducts(
 				let multiplier = 1;
 				const productValues = product[column];
 				const itemValues = item[column];
-				const commonValuesCount = productValues.intersection(itemValues).size;
+				let commonValuesCount = 0;
+				for (const value of productValues) if (itemValues.has(value)) commonValuesCount++;
 				multiplier += commonValuesCount / (Math.max(productValues.size, itemValues.size) || 1);
 				multiplier +=
 					multiplier *

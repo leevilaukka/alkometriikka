@@ -2,7 +2,7 @@
 	"extends": "./.svelte-kit/tsconfig.json",
 	"compilerOptions": {
 		"types": ["bun", "svelte"],
-		"lib": ["ESNext", "DOM"],
+		"lib": ["ES2023", "DOM", "DOM.Iterable"],
 		"allowJs": true,
 		"allowImportingTsExtensions": true,
 		"checkJs": true,
