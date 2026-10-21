@@ -24,6 +24,7 @@ export const NORMAL_PRICE_INDEX = LEGACY_HEADERS.indexOf('Normaalihinta');
 export const CAMPAIGN_START_INDEX = LEGACY_HEADERS.indexOf('Kampanja alkaa');
 export const CAMPAIGN_END_INDEX = LEGACY_HEADERS.indexOf('Kampanja päättyy');
 const NEW_INDEX = LEGACY_HEADERS.indexOf('Uutuus');
+const STATUS_INDEX = LEGACY_HEADERS.indexOf('Tila');
 
 const DAY_MS = 24 * 60 * 60 * 1000;
 
@@ -175,6 +176,12 @@ export function mergeProduct(
 	return merged;
 }
 
+/** Clears the "Uutuus" and "Tila" fields of a removed product: its last search status no longer applies. */
+function clearStatus(values: unknown[]): void {
+	values[NEW_INDEX] = null;
+	values[STATUS_INDEX] = null;
+}
+
 /**
  * Never delete products: carries over every product from the existing dataset
  * that the latest search response no longer contains, flagging it as removed
@@ -184,7 +191,7 @@ export function mergeProduct(
  *
  * Only call this after a complete search fetch: the API id set is trusted for
  * removal detection. Mutates `products` (and the `values` of removed entries,
- * to clear the "Uutuus" field) and returns how many products were newly
+ * to clear the "Uutuus" and "Tila" fields) and returns how many products were newly
  * removed and how many irrelevant ones were dropped.
  */
 export function carryOverMissingProducts(
@@ -217,7 +224,7 @@ export function carryOverMissingProducts(
 			// Missing from the API and already flagged in an earlier run: keep the
 			// original removal date.
 			products[id] = previous;
-			products[id]['values'][NEW_INDEX] = null; // Clear the "Uutuus" field for removed products
+			clearStatus(products[id].values);
 		} else {
 			// Present in the existing dataset but absent from the API response: this
 			// is a newly removed product, flag it with today's date.
@@ -225,7 +232,7 @@ export function carryOverMissingProducts(
 				...previous,
 				meta: { ...previous.meta, removedFromSelection: today }
 			};
-			products[id]['values'][NEW_INDEX] = null; // Clear the "Uutuus" field for removed products
+			clearStatus(products[id].values);
 			removed++;
 		}
 	}

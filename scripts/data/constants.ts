@@ -35,7 +35,9 @@ export const LEGACY_HEADERS = [
 	'Normaalihinta',
 	'Kampanja alkaa',
 	'Kampanja päättyy',
-	'Ruokasuositukset'
+	'Ruokasuositukset',
+	'Tila',
+	'Pantti'
 ] as const;
 
 export const DEV = process.argv.includes('--dev');
@@ -85,6 +87,25 @@ function formatCertificates(value: unknown): string | null {
 		.map((entry) => entry.split('|')[2]?.trim())
 		.filter((label): label is string => Boolean(label));
 	return labels.length ? [...new Set(labels)].join(', ') : null;
+}
+
+/**
+ * Labels for the search API's `statusId` codes, matching the Finnish `status`
+ * the detail API reports for the same products (except `U`, which the detail
+ * API calls "Uusi" but the dataset has always called "Uutuus"). Status `K`
+ * (Kuoletettu, discontinued) never reaches the search API.
+ */
+export const STATUS_LABELS: Readonly<Record<string, string>> = {
+	A: 'Aktiivinen',
+	P: 'Poistuva',
+	U: 'Uutuus',
+	X: 'Tulee'
+};
+
+/** Label of a `statusId`. Unknown codes are kept as-is so a new one shows up instead of vanishing. */
+function formatStatus(value: unknown): string | null {
+	if (typeof value !== 'string' || !value.trim()) return null;
+	return STATUS_LABELS[value.trim()] ?? value.trim();
 }
 
 /** Converts an unknown field into a finite number or null. Handles the string prices the API returns. */
@@ -192,7 +213,7 @@ export const FIELD_TO_LEGACY_SCHEMA: ProductFieldMapping[] = [
 		newPropertyKey: 'pricePerLitre',
 		legacyKey: 'Litrahinta',
 		usedForHashing: false,
-		preprocessor: (value) => Number(value)
+		preprocessor: toPriceNumber
 	},
 	{
 		newPropertyKey: 'statusId',
@@ -377,6 +398,23 @@ export const FIELD_TO_LEGACY_SCHEMA: ProductFieldMapping[] = [
 		legacyKey: 'Ruokasuositukset',
 		usedForHashing: false,
 		preprocessor: formatFoodPairings
+	},
+	{
+		newPropertyKey: 'statusId',
+		legacyKey: 'Tila',
+		usedForHashing: true,
+		preprocessor: formatStatus
+	},
+	{
+		// Euros, included in the price but not in `pricePerLitre`. Detail API only,
+		// and missing for some products that clearly have one (e.g. some cans).
+		newPropertyKey: 'deposit',
+		legacyKey: 'Pantti',
+		usedForHashing: false,
+		preprocessor: (value) => {
+			const deposit = toPriceNumber(value);
+			return deposit !== null && deposit > 0 ? deposit : null;
+		}
 	}
 ];
 
@@ -445,7 +483,7 @@ export function upgradeStoredValues(values: unknown[]): unknown[] {
  * sync persists it in the dataset metadata. Do not bump it for unrelated
  * schema additions (appended columns don't affect hashed indices).
  */
-export const HASH_VERSION = 1;
+export const HASH_VERSION = 2;
 
 /**
  * Extracts only the change-detection relevant values (`usedForHashing`) from a

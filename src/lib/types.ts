@@ -114,6 +114,10 @@ export interface PriceListItem extends Record<DrunkColumnNames, number> {
 	Normaalihinta: number;
 	'Kampanja alkaa': string;
 	'Kampanja päättyy': string;
+	/** Alko's product status: Aktiivinen, Uutuus, Poistuva or Tulee. Empty for removed products. */
+	Tila: string;
+	/** Deposit in euros, included in `Hinta`. Empty when the product has none or it isn't known. */
+	Pantti: number | '';
 	Hintahistoria: PriceHistoryEntry[];
 	'Poistunut valikoimasta': boolean;
 	Myymälät: Set<string>;

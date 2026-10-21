@@ -151,6 +151,9 @@ So "absent from the sweep" ≈ "removed" is ~99% accurate and matches what alko.
 ### `GET /api/product-api/products/{productId}` – full product details (used by sync)
 
 - Response: `{ data: DetailedProductData }` – e.g. `producer`, `vintage`, `grapeVarieties`, `productionSites`, `nutrition`, `taste`, etc. Not present in the search API.
+- `data.deposit` is the deposit in euros (`0.1`, `0.15`, `0.4`), often missing even for cans. `valueInCents` includes it, `pricePerLitre` doesn't: `(15.99 − 0.10) / 0.75 = 21.19` (verified 2026-10-21).
+- `pricePerLitre` (and `moreInfo`) is missing for products with `status` `Tulee`. Some of those answer `{"error":"Internal server error"}` altogether.
+- Search `statusId` ↔ detail `status` (2026-10-21 sweep, 11456 products): `A` Aktiivinen (8798), `P` Poistuva (1980), `U` Uusi (672), `X` Tulee (6). `K` Kuoletettu is filtered out of search.
 - Still answers for products that have left the search index. `data.status` is a Finnish label (seen: `Kuoletettu` = discontinued, `Poistuva` = being phased out); `onlineAvailabilityDatetime` gives the online launch date.
 - Used by `fetchProductDetails` in `scripts/data/index.ts`.
 

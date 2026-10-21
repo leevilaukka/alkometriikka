@@ -91,13 +91,15 @@ sync only fetches details for products whose **search payload** changed.
 For each search product, `buildLegacyValues` runs the schema's preprocessors over it, and
 `getHash(getHashValues(values))` takes a SHA-256 of the columns marked `usedForHashing`:
 `Nimi`, `Hinta`, `Uutuus`, `Luonnehdinta`, `Alkoholi-%`, `Valikoima`, `Normaalihinta`,
-`Kampanja alkaa`, `Kampanja päättyy`.
+`Kampanja alkaa`, `Kampanja päättyy`, `Tila`.
 
 Rules for that set:
 
 - Every hashed field must come from the search API. Otherwise it would be `null` in the first pass
   but filled in the stored hash, and the product would look changed on every run.
 - Fields that fluctuate constantly (stock levels, online availability) are not hashed.
+- `Tila` is hashed so a status change refetches details. In particular a product that was `Tulee`
+  only gets its `pricePerLitre` from the detail API once it's on sale.
 - Arrays (only `Luonnehdinta`) are trimmed and sorted before hashing, so Alko returning the same
   taste words in a different order isn't a change.
 
@@ -157,7 +159,7 @@ never deployed.
 - A product missing from the API that is already flagged keeps its original removal date.
 - A product missing from the API that isn't flagged gets `meta.removedFromSelection = today`.
 
-Removed products also get `Uutuus` cleared. This step only runs after a complete fetch, so absence
+Removed products also get `Uutuus` and `Tila` cleared. This step only runs after a complete fetch, so absence
 from the API can be trusted.
 
 ### Safeguards

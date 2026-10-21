@@ -164,7 +164,7 @@ await the data and pass it in.
 | `components/product/`  | The sections of the product page (gallery, price panel, size dropdown, history chart, availability…)                                                                                                                                                            |
 | `components/category/` | Category page sidebar sections (stats, price changes, collapsible section)                                                                                                                                                                                      |
 | `components/widgets/`  | Reusable pieces: `Filters`, `ProductPreview` (list row), `Popup` (dialog), `Badge`/`BadgeList`, `ChartCard`, `Histogram`, `NoticeBanner`, `CompareBar`, `BottomBar`, `AllLists`, `CompassDial`, `StoreCompass`, `FeedbackDialog`, `DailyFeedback`, `Settings/`… |
-| `components/inputs/`   | Filter inputs: `StringInput` (multi-select), `NumberInput` (range), `RecursiveFilter` (nested sub-filters)                                                                                                                                                      |
+| `components/inputs/`   | Filter inputs: `StringInput` (multi-select, optionally grouped), `NumberInput` (range), `RecursiveFilter` (nested sub-filters)                                                                                                                                  |
 
 `widgets/Barcode.svelte` (EAN-13/QR scanner using `barcode-detector`) is in the tree but not
 mounted anywhere at the moment. Its EAN lookup could only match removed products that kept a

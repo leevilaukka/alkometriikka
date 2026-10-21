@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { AllColumns } from '$lib/utils/constants/columns';
+	import { AllColumns, MissingValues } from '$lib/utils/constants/columns';
 	import { formatValue } from '$lib/utils/format/format';
 	import type { AvailabilityStore, PriceListItem } from '$lib/types';
 	import type { SaleInfo } from '$lib/utils/catalog/sales';
@@ -28,6 +28,12 @@
 		class?: string;
 	} = $props();
 
+	const deposit = $derived(Number(product[AllColumns.Deposit]) || 0);
+	const pricePerLiterCalculated = $derived(
+		(product as { [MissingValues]?: Set<string> })[MissingValues]?.has(AllColumns.PricePerLiter) ??
+			false
+	);
+
 	function scrollToAvailability() {
 		document.getElementById('myymalasaatavuus')?.scrollIntoView({ behavior: 'smooth' });
 	}
@@ -49,10 +55,19 @@
 			{/if}
 		</div>
 		<span class="mt-1 text-sm text-secondary">
-			{formatValue(product[AllColumns.PricePerLiter], AllColumns.PricePerLiter)} · {formatValue(
-				product[AllColumns.BottleSize],
-				AllColumns.BottleSize
-			)}
+			<span
+				title={pricePerLiterCalculated
+					? 'Alko ei ole vielä julkaissut litrahintaa, joten se on laskettu hinnasta ja pullokoosta'
+					: undefined}
+			>
+				{formatValue(
+					product[AllColumns.PricePerLiter],
+					AllColumns.PricePerLiter
+				)}{pricePerLiterCalculated ? ' (laskettu)' : ''}
+			</span>
+			· {formatValue(product[AllColumns.BottleSize], AllColumns.BottleSize)}{deposit
+				? ` · sis. pantin ${formatValue(deposit, AllColumns.Deposit)}`
+				: ''}
 		</span>
 		{#if sale}
 			<p class="mt-1 text-sm font-bold text-red-700 dark:text-red-400">
