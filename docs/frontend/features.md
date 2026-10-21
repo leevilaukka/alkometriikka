@@ -31,6 +31,10 @@ The home page lists every product in a virtualized list (`@humanspeak/svelte-vir
 - **Row actions**: add to a list, add to comparison, open the product.
 - Everything above is reflected in the URL, so a filtered list can be shared (see
   [App structure → URL state](app-structure.md#url-state)).
+- **Scroll position**: the list scrolls inside its own viewport, which the browser's scroll
+  restoration doesn't reach. The page's SvelteKit `snapshot` saves the row at the top of the list
+  and how far past it was scrolled (`currentPosition()` in `Main.svelte`), and back/forward passes
+  it back as `position`. Category pages do the same through `Category.svelte`.
 
 Filter usage is reported as one analytics event per filtering session, not per click
 (`trackFilterUsage` in `src/lib/utils/app/filterAnalytics.svelte.ts`).

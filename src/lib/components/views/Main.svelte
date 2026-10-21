@@ -1,3 +1,8 @@
+<script lang="ts" module>
+	/** A row of the list and how far it was scrolled past the top of the list, in pixels */
+	export type ListPosition = { index: number; offset: number };
+</script>
+
 <script lang="ts">
 	import SvelteVirtualList from '@humanspeak/svelte-virtual-list';
 	import { twMerge } from 'tailwind-merge';
@@ -32,8 +37,16 @@
 		kaljakori,
 		header,
 		footer,
-		showFilters = true
-	}: { kaljakori: Kaljakori; header?: Snippet; footer?: Snippet; showFilters?: boolean } = $props();
+		showFilters = true,
+		position
+	}: {
+		kaljakori: Kaljakori;
+		header?: Snippet;
+		footer?: Snippet;
+		showFilters?: boolean;
+		/** Where to scroll the list to, e.g. one saved by `currentPosition` before leaving the page */
+		position?: ListPosition;
+	} = $props();
 
 	// Without the filter sidebar, wide screens show the header in a sidebar of its own
 	const sidebarHeader = $derived(!!header && !showFilters && !$isLaptop);
@@ -41,9 +54,61 @@
 	let searchParamsManager = getContext<SearchParamsManager>(ContextKeys.SearchParamsManager);
 
 	let listRef: SvelteVirtualList<PriceListItem> | null = $state(null);
+	let listElement: HTMLDivElement | undefined = $state();
+	let restoring = $state(false);
+
+	function listViewport() {
+		return listElement?.querySelector<HTMLElement>('[data-svl-viewport]');
+	}
+
+	/** The row at the top of the list's viewport, so going back to the page can return to it */
+	export function currentPosition(): ListPosition {
+		const viewport = listViewport();
+		if (!viewport) return { index: 0, offset: 0 };
+		const top = viewport.getBoundingClientRect().top;
+		const item = [...viewport.querySelectorAll<HTMLElement>('[data-svl-item]')].find(
+			(element) => element.getBoundingClientRect().bottom > top
+		);
+		if (!item) return { index: 0, offset: 0 };
+		return {
+			index: Number(item.dataset.originalIndex),
+			offset: Math.round(top - item.getBoundingClientRect().top)
+		};
+	}
+
+	// The list scrolls inside its own viewport, so the browser's own scroll restoration
+	// doesn't reach it. The position can arrive after the list has mounted (the page restores
+	// its snapshot once navigation finishes), so this waits for both. Getting there takes a
+	// couple of steps, so the list stays hidden until it's in place instead of jumping.
+	$effect(() => {
+		if (!listRef || !position) return;
+		const list = listRef;
+		const { index, offset } = position;
+		// Untracked, since scrolling reads the list's own scroll state
+		untrack(async () => {
+			restoring = true;
+			try {
+				await list.scroll({ index, align: 'top', smoothScroll: false, shouldThrowOnBounds: false });
+				// Rows the list hasn't measured yet are only estimated, so line the row up by where it
+				// actually landed
+				const viewport = listViewport();
+				const item = viewport?.querySelector(`[data-original-index="${index}"]`);
+				if (!viewport || !item) return;
+				const landed = item.getBoundingClientRect().top - viewport.getBoundingClientRect().top;
+				await list.scrollToOffset({
+					offset: viewport.scrollTop + landed + offset,
+					smoothScroll: false
+				});
+			} finally {
+				restoring = false;
+			}
+		});
+	});
 
 	let filtersComponent: Filters | null = $state(null);
-	let showRemoved = $state(false);
+	let showRemoved = $state(
+		untrack(() => showFilters && searchParamsManager.getParameter('removed') === 'true')
+	);
 	let filterValues = $state(
 		untrack(() =>
 			initFilterValues(kaljakori, showFilters ? page.url.searchParams : undefined, showRemoved)
@@ -126,6 +191,7 @@
 		asc !== !!defaultSortingOrderMap[selectedSortingColumn as keyof typeof defaultSortingOrderMap]
 			? searchParamsManager.setParameter('asc', String(asc))
 			: searchParamsManager.setParameter('asc', '');
+		searchParamsManager.setParameter('removed', showRemoved ? 'true' : '');
 		searchParamsManager.update();
 	});
 
@@ -271,7 +337,10 @@
 				<span>{$isMobile ? m.list_to_top_short() : m.list_to_top()}</span>
 			</button>
 		</div>
-		<div class="flex min-h-0 flex-auto flex-col">
+		<div
+			class={twMerge('flex min-h-0 flex-auto flex-col', restoring && 'invisible')}
+			bind:this={listElement}
+		>
 			<SvelteVirtualList items={rows} bind:this={listRef} itemsClass={'flex flex-col gap-3'}>
 				{#snippet renderItem(item, idx: number)}
 					<ProductPreview product={item} highlight={selectedHighlight} {kaljakori} {highlightMax}>
