@@ -2,6 +2,7 @@ import { mkdir, readdir, rm } from 'node:fs/promises';
 import path from 'node:path';
 import Bun, { CryptoHasher } from 'bun';
 import { getSaleInfo, toISODateInTimeZone } from '../../src/lib/utils/catalog/sales.ts';
+import { calculatePricePerLitre } from '../../src/lib/utils/catalog/alko.ts';
 import { ogImageUrl } from '../og/og';
 import {
 	CATEGORY_OG_MANIFEST_FILE,
@@ -248,7 +249,9 @@ function productHtml(
 	const keywords = [name, manufacturer, type, subtype, descriptionValue].filter(Boolean).join(', ');
 	const category = [type, subtype].filter(Boolean).join(' / ');
 	const volume = asNumber(fields.Pullokoko);
-	const pricePerLitre = asNumber(fields.Litrahinta);
+	// Alko leaves the litre price out until a product is on sale; the app calculates it then too.
+	const pricePerLitre =
+		asNumber(fields.Litrahinta) ?? calculatePricePerLitre(price, volume, asNumber(fields.Pantti));
 	const metrics = alcoholMetrics(volume, asNumber(fields['Alkoholi-%']), price);
 	const metaDescription = productDescription({
 		name,
@@ -372,7 +375,7 @@ function productHtml(
 		['Pullokoko', formatNumber(fields.Pullokoko, 'l')],
 		['Alkoholia', formatNumber(fields['Alkoholi-%'], '%')],
 		['Hinta', price !== null ? formatNumber(fields.Hinta, '€') : ''],
-		['Litrahinta', formatNumber(fields.Litrahinta, '€/l')],
+		['Litrahinta', formatNumber(pricePerLitre, '€/l')],
 		...(metrics
 			? [
 					[
