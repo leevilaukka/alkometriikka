@@ -402,6 +402,17 @@
 		</header>
 		<NoticeBanner lastSynced={alko.dataset.metadata.LastSynced} cached={alko.cached} />
 		<InstallBanner />
+		{#if alko.dataset.metadata.historyPreview}
+			<aside
+				class="flex flex-wrap items-center justify-between gap-2 border-b border-amber-500/30 bg-amber-500/10 px-4 py-2 text-sm"
+				data-testid="history-preview-banner"
+			>
+				<span
+					><strong>Arkistoidut hinnastot</strong> · Tutustu tuotteiden aiempiin hintahavaintoihin.</span
+				>
+				<a class="font-medium underline" href={appPath('/historia/')}>Tutki aineistoa →</a>
+			</aside>
+		{/if}
 		<div
 			id="main-content"
 			tabindex="-1"

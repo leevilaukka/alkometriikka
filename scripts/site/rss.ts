@@ -126,7 +126,9 @@ function collectPerProductItems(
 	const byProduct = new Map<string, FeedItem[]>();
 	for (const [productId, product] of Object.entries(products)) {
 		if (!product || !Array.isArray(product.values)) continue;
-		const history = Array.isArray(product.priceHistory) ? product.priceHistory : [];
+		const history = Array.isArray(product.priceHistory)
+			? product.priceHistory.filter((point) => !point.archive)
+			: [];
 		if (history.length < 2) continue;
 
 		const fields = Object.fromEntries(
@@ -198,7 +200,9 @@ function collectNewProductItems(
 		const name = asText(fields.Nimi) || `Tuote ${id}`;
 		if (!id || id !== productId) continue;
 
-		const history = Array.isArray(product.priceHistory) ? product.priceHistory : [];
+		const history = Array.isArray(product.priceHistory)
+			? product.priceHistory.filter((point) => !point.archive)
+			: [];
 		const date = history[0]?.date;
 		if (!date) continue;
 

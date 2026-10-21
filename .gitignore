@@ -7,6 +7,8 @@ feed.json
 /rss/
 
 /static/data.json
+/static/history-preview.json
+/history-preview.json
 /static/availability.json
 /hashes.json
 /static/hashes.json
@@ -47,3 +49,4 @@ Thumbs.db
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 package-lock.json
+__pycache__/

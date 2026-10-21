@@ -1,4 +1,4 @@
-import type { ColumnNames } from '../../types';
+import type { ColumnNames, PriceHistoryEntry } from '../../types';
 import { DatasetColumns } from '../constants/columns';
 
 /**
@@ -8,19 +8,23 @@ import { DatasetColumns } from '../constants/columns';
  */
 export type StoredProduct = {
 	values: unknown[];
-	priceHistory?: {
-		date: string;
-		price: number;
-		normalPrice?: number;
-		campaignStart?: string;
-		campaignEnd?: string;
-	}[];
+	priceHistory?: PriceHistoryEntry[];
 	meta?: { removedFromSelection?: string };
 };
 
 export type StoredDataset = {
 	schema?: unknown;
-	metadata?: { LastUpdated?: string; LastSynced?: string };
+	metadata?: {
+		LastUpdated?: string;
+		LastSynced?: string;
+		historyPreview?: {
+			version: string;
+			reportUrl: string;
+			products: number;
+			firstDate: string;
+			lastDate: string;
+		};
+	};
 	products?: Record<string, StoredProduct>;
 	/**
 	 * Filter values precomputed by the sync (`DatasetIndex` in $lib/alko). Optional:

@@ -35,6 +35,7 @@ export interface ProductDetailsApiResponse {
  * sale periods even after the campaign columns on the live product have moved on.
  */
 export type PricePoint = {
+	archive?: import('../../src/lib/types').PriceHistoryEntry['archive'];
 	date: string;
 	price: number;
 	/** Reference ("normal") price Alko reported alongside the sale price. */

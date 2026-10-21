@@ -335,7 +335,7 @@ export type PriceChange = {
 export function recentPriceChanges(products: PriceListItem[], since: string): PriceChange[] {
 	const changes: PriceChange[] = [];
 	for (const product of products) {
-		const history = product[AllColumns.History] ?? [];
+		const history = (product[AllColumns.History] ?? []).filter((point) => !point.archive);
 		for (let index = history.length - 1; index > 0; index -= 1) {
 			const current = history[index];
 			if (current.date < since) break;

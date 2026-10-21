@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "datasetVersion": "ddf6d6465f18b8d9",
+  "catalogCapturedOn": "2026-10-15",
+  "files": [
+    {
+      "file": "data.json",
+      "gzip": "data.json.gz",
+      "bytes": 27120648,
+      "sha256": "d110fd2df07107b4013241e7c09dd5673d1f6a3950c44d7f7b7a5040a45342fc"
+    },
+    {
+      "file": "history-preview.json",
+      "gzip": "history-preview.json.gz",
+      "bytes": 3091786,
+      "sha256": "75c2b7ecb08b64501d0dbfae5e07ec6bc47d905e2f8ee8719b30be86692d22a3"
+    },
+    {
+      "file": "availability.json",
+      "gzip": "availability.json.gz",
+      "bytes": 4183288,
+      "sha256": "1ada1cd4812eb399ae39eed19e05d6a52e103ea183ac9e6241bfb840dc753d60"
+    },
+    {
+      "file": "og-images.json",
+      "gzip": "og-images.json.gz",
+      "bytes": 607949,
+      "sha256": "d98bce9972210752649fd4d5d2ad1692f7bd39b1da5560c5b202814c574b9fa7"
+    }
+  ]
+}

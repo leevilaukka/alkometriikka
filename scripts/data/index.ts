@@ -59,6 +59,7 @@ import {
 } from './lifecycle.ts';
 import { toNumber } from '../../src/lib/utils/format/number';
 import { appendSyncReport, createSyncReport, elapsedMs, type SyncStats } from './sync-report.ts';
+import { applyHistoricalPrices } from './historical-prices';
 import { DATA_PATH, HASHES_PATH, readDataset, writeDataset } from './dataset-file.ts';
 import { checkSyncSafety, missingCriticalColumns, restoreCriticalColumns } from './safeguards.ts';
 
@@ -864,6 +865,10 @@ async function sync(): Promise<void> {
 		product: Object.fromEntries(searchProducts.map((product) => [product.id, product.storeId]))
 	};
 
+	await applyHistoricalPrices(
+		result,
+		DEV ? './static/history-preview.json' : './history-preview.json'
+	);
 	const writeStart = performance.now();
 	await Promise.all([
 		writeDataset(result, DATA_PATH, HASHES_PATH),

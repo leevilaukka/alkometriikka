@@ -105,6 +105,16 @@ For development without running the data synchronization step:
 bun run dev:no-sync
 ```
 
+For the bundled historical-price working set, including the source explorer:
+
+```sh
+bun run dev:history
+```
+
+Open `/historia/` on the development server. This restores the captured working
+data before starting Vite; no research folder or live sync is needed. See
+[historical-price development](docs/history-preview.md) for dates and matching rules.
+
 Build the application:
 
 ```sh

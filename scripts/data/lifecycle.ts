@@ -132,7 +132,7 @@ export function updatePriceHistory(
 	const history = Array.isArray(previous) ? [...previous] : [];
 	if (price === null) return history;
 
-	const last = history[history.length - 1];
+	const last = history.findLast((point) => !point.archive);
 	if (!last || last.price !== price) {
 		history.push({
 			date: new Date().toISOString().slice(0, 10),

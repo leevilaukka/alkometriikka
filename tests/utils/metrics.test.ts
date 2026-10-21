@@ -66,6 +66,19 @@ describe('category stats', () => {
 });
 
 describe('recentPriceChanges', () => {
+	it('does not turn an archive observation into a live price change', () => {
+		expect(
+			recentPriceChanges(
+				[
+					product('1', 12, 1, 5, [
+						{ date: '2007-05-11', price: 5, archive: { sourceId: 'x' } },
+						{ date: '2026-10-21', price: 12 }
+					])
+				],
+				'2007-01-01'
+			)
+		).toEqual([]);
+	});
 	it('returns the latest change in the window, newest first', () => {
 		const changes = recentPriceChanges(
 			[
