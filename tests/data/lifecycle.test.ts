@@ -159,13 +159,14 @@ describe('carryOverMissingProducts', () => {
 		);
 
 	it('flags a product missing from the API as removed today and clears its "Uutuus" mark', () => {
-		const existing = { '1': stored('1') };
+		const existing = { '1': stored('1', { Tila: 'Uutuus' }) };
 		const products: Record<string, MigratedProduct> = {};
 		const result = run(existing, products, []);
 
 		expect(result).toEqual({ removed: 1, filteredRemoved: 0 });
 		expect(products['1']!.meta?.removedFromSelection).toBe('2026-10-01');
 		expect(products['1']!.values[col('Uutuus')]).toBeNull();
+		expect(products['1']!.values[col('Tila')]).toBeNull();
 		// The product itself, price history and hash are kept: nothing is ever deleted.
 		expect(products['1']!.hash).toBe('hash-1');
 	});

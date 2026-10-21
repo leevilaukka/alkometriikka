@@ -31,6 +31,20 @@ export const ColumnToBadgeMap: ColumnBadgeMap = {
 		erikoiserä: { text: m.badge_special_edition(), color: 'yellow', icon: 'star' },
 		tilausvalikoima: { text: m.badge_order_selection(), color: 'cyan', icon: 'truck' }
 	},
+	[DatasetColumns.Status]: {
+		Tulee: {
+			text: m.badge_coming(),
+			color: 'blue',
+			icon: 'calendar_plus',
+			tooltip: m.badge_coming_tooltip()
+		},
+		Poistuva: {
+			text: m.badge_phasing_out(),
+			color: 'orange',
+			icon: 'calendar_minus',
+			tooltip: m.badge_phasing_out_tooltip()
+		}
+	},
 	[DatasetColumns.Note]: {
 		'Vegaaneille soveltuva tuote': {
 			text: m.badge_vegan(),

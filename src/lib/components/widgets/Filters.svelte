@@ -3,7 +3,7 @@
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/ui/styles';
 	import { ContextKeys } from '$lib/utils/constants/app';
-	import { shownFilters as filters } from '$lib/utils/constants/display';
+	import { filterOptionGroupers, shownFilters as filters } from '$lib/utils/constants/display';
 	import { AllColumns } from '$lib/utils/constants/columns';
 	import NumberInput from '../inputs/NumberInput.svelte';
 	import StringInput from '../inputs/StringInput.svelte';
@@ -209,6 +209,7 @@
 						bind:value={filterValues[filter]}
 						bind:modified={filterActiveState[filter]}
 						name={filter}
+						groupOptions={filterOptionGroupers[filter]}
 					/>
 				{/if}
 				<RecursiveFilter {filter} bind:filterValues {kaljakori} {showRemoved} />

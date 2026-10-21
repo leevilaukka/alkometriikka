@@ -11,7 +11,7 @@ import {
 } from '$lib/utils/constants/columns';
 import { defaultSortingColumn } from '$lib/utils/constants/display';
 import { GenderOptionsMap } from '$lib/utils/constants/app';
-import { calculateDrunkValue } from '../utils/catalog/alko';
+import { calculateDrunkValue, calculatePricePerLitre } from '../utils/catalog/alko';
 import {
 	type ColumnNames,
 	type DatasetColumnNames,
@@ -268,6 +268,20 @@ export class Kaljakori {
 							item[datasetColumns[col]] = 0;
 							(item[MissingValues] ??= new Set()).add(datasetColumns[col]);
 						} else item[datasetColumns[col]] = '';
+				}
+			}
+
+			// Alko leaves the litre price out until a product is on sale. Only fill it in
+			// from a real size: an inferred one would make up a number.
+			if (item[AllColumns.PricePerLiter] === '' && this.declaredBottleSizes.has(item)) {
+				const perLitre = calculatePricePerLitre(
+					item[AllColumns.Price],
+					item[AllColumns.BottleSize],
+					item[AllColumns.Deposit]
+				);
+				if (perLitre !== null) {
+					item[AllColumns.PricePerLiter] = perLitre;
+					(item[MissingValues] ??= new Set()).add(AllColumns.PricePerLiter);
 				}
 			}
 

@@ -66,7 +66,7 @@ describe('schema consistency (writer vs reader)', () => {
 		const hashed = FIELD_TO_LEGACY_SCHEMA.filter((field) => field.usedForHashing).map(
 			(field) => field.legacyKey
 		);
-		expect(HASH_VERSION).toBe(1);
+		expect(HASH_VERSION).toBe(2);
 		expect(hashed).toEqual([
 			'Nimi',
 			'Hinta',
@@ -76,7 +76,8 @@ describe('schema consistency (writer vs reader)', () => {
 			'Valikoima',
 			'Normaalihinta',
 			'Kampanja alkaa',
-			'Kampanja päättyy'
+			'Kampanja päättyy',
+			'Tila'
 		]);
 		expect(getHashValues(row())).toHaveLength(hashed.length);
 	});
@@ -84,6 +85,26 @@ describe('schema consistency (writer vs reader)', () => {
 	it('hashes are stable SHA-256 hex strings', () => {
 		expect(getHash(['a', 1, null])).toMatch(/^[0-9a-f]{64}$/);
 		expect(getHash(['a', 1, null])).toBe(getHash(['a', 1, null]));
+	});
+});
+
+describe('buildLegacyValues', () => {
+	const col = (name: (typeof LEGACY_HEADERS)[number]) => headers.indexOf(name);
+
+	it('labels the status code and keeps unknown codes as-is', () => {
+		expect(buildLegacyValues({ statusId: 'X' })[col('Tila')]).toBe('Tulee');
+		expect(buildLegacyValues({ statusId: 'P' })[col('Tila')]).toBe('Poistuva');
+		expect(buildLegacyValues({ statusId: 'Q' })[col('Tila')]).toBe('Q');
+		expect(buildLegacyValues({})[col('Tila')]).toBeNull();
+	});
+
+	it('keeps a positive deposit and a missing price per litre as null', () => {
+		const built = buildLegacyValues({ deposit: 0.15, pricePerLitre: '8.61' });
+		expect(built[col('Pantti')]).toBe(0.15);
+		expect(built[col('Litrahinta')]).toBe(8.61);
+		const coming = buildLegacyValues({ deposit: null });
+		expect(coming[col('Pantti')]).toBeNull();
+		expect(coming[col('Litrahinta')]).toBeNull();
 	});
 });
 

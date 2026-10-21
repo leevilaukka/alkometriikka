@@ -42,6 +42,8 @@ export const DatasetColumns = Object.freeze({
 	CampaignStart: 'Kampanja alkaa',
 	CampaignEnd: 'Kampanja päättyy',
 	FoodPairings: 'Ruokasuositukset',
+	Status: 'Tila',
+	Deposit: 'Pantti',
 	History: 'Hintahistoria',
 	RemovedFromSelection: 'Poistunut valikoimasta'
 } as const);
@@ -118,8 +120,9 @@ export const undefinedToZeroColumns = [
 ] as const satisfies readonly ColumnNames[];
 
 /**
- * Key for the set of {@link undefinedToZeroColumns} that had no value in the dataset, so a filled
- * in zero can be told apart from a real one. A symbol survives spreads but stays out of Object.keys.
+ * Key for the set of columns that had no value in the dataset and were filled in by Kaljakori:
+ * the {@link undefinedToZeroColumns} (so a filled in zero can be told apart from a real one) and a
+ * `Litrahinta` calculated from the price. A symbol survives spreads but stays out of Object.keys.
  */
 export const MissingValues = Symbol('missingValues');
 
@@ -145,6 +148,9 @@ export const hideFromProductPageStats = new Set<ColumnNames>([
 	DatasetColumns.CampaignEnd,
 	// Shown as a row of links at the bottom of the table
 	DatasetColumns.FoodPairings,
+	// Shown as a badge, and the deposit next to the price
+	DatasetColumns.Status,
+	DatasetColumns.Deposit,
 	// Hide Uutuus as it is currently kinda bugged and not very useful on the product page stats. It is still shown in the list view and can be used for filtering.
 	DatasetColumns.New,
 	DatasetColumns.History

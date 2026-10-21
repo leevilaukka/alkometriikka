@@ -21,6 +21,7 @@ const columnNumberFormatDefaults: Partial<Record<ColumnNames, Intl.NumberFormatO
 	[AllColumns.Price]: { minimumFractionDigits: 2, maximumFractionDigits: 2 },
 	[AllColumns.PricePerLiter]: { minimumFractionDigits: 2, maximumFractionDigits: 2 },
 	[AllColumns.NormalPrice]: { minimumFractionDigits: 2, maximumFractionDigits: 2 },
+	[AllColumns.Deposit]: { minimumFractionDigits: 2, maximumFractionDigits: 2 },
 	[AllColumns.BottleSize]: { minimumFractionDigits: 0, maximumFractionDigits: 3 },
 	[AllColumns.AlcoholPercentage]: { minimumFractionDigits: 0, maximumFractionDigits: 1 },
 	[AllColumns.AlcoholGrams]: { minimumFractionDigits: 2, maximumFractionDigits: 2 },

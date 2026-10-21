@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { AllColumns } from '$lib/utils/constants/columns';
+	import { AllColumns, MissingValues } from '$lib/utils/constants/columns';
 	import { formatValue } from '$lib/utils/format/format';
 	import type { AvailabilityStore, PriceListItem } from '$lib/types';
 	import type { SaleInfo } from '$lib/utils/catalog/sales';
@@ -30,6 +30,12 @@
 		class?: string;
 	} = $props();
 
+	const deposit = $derived(Number(product[AllColumns.Deposit]) || 0);
+	const pricePerLiterCalculated = $derived(
+		(product as { [MissingValues]?: Set<string> })[MissingValues]?.has(AllColumns.PricePerLiter) ??
+			false
+	);
+
 	function scrollToAvailability() {
 		document.getElementById('myymalasaatavuus')?.scrollIntoView({ behavior: 'smooth' });
 	}
@@ -51,10 +57,17 @@
 			{/if}
 		</div>
 		<span class="mt-1 text-sm text-secondary">
-			{formatValue(product[AllColumns.PricePerLiter], AllColumns.PricePerLiter)} · {formatValue(
-				product[AllColumns.BottleSize],
-				AllColumns.BottleSize
-			)}
+			<span
+				title={pricePerLiterCalculated ? m.product_price_per_liter_calculated_tooltip() : undefined}
+			>
+				{formatValue(
+					product[AllColumns.PricePerLiter],
+					AllColumns.PricePerLiter
+				)}{pricePerLiterCalculated ? ` ${m.product_price_per_liter_calculated()}` : ''}
+			</span>
+			· {formatValue(product[AllColumns.BottleSize], AllColumns.BottleSize)}{deposit
+				? ` · ${m.product_deposit_included({ deposit: formatValue(deposit, AllColumns.Deposit) })}`
+				: ''}
 		</span>
 		{#if sale}
 			<p class="mt-1 text-sm font-bold text-red-700 dark:text-red-400">
