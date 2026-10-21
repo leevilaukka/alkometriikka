@@ -28,7 +28,7 @@
 	import { compareURL, MAX_COMPARE_PRODUCTS } from '$lib/utils/user/compare';
 	import { pickCategoryHighlights } from '$lib/utils/stats/metrics';
 	import { twMerge } from 'tailwind-merge';
-	import Main from './Main.svelte';
+	import Main, { type ListPosition } from './Main.svelte';
 	import { components } from '$lib/utils/ui/styles';
 	import Icon from '../widgets/Icon.svelte';
 	import Breadcrumb from '../widgets/Breadcrumb.svelte';
@@ -43,7 +43,8 @@
 		kaljakori: source,
 		table,
 		availability,
-		tree
+		tree,
+		position
 	}: {
 		trail: CategoryNode[];
 		kaljakori: Kaljakori;
@@ -51,7 +52,15 @@
 		table: any[][];
 		availability: AvailabilityData;
 		tree: CategoryNode[];
+		/** Where to scroll the product list to, see `Main` */
+		position?: ListPosition;
 	} = $props();
+
+	let main: Main | undefined = $state();
+
+	export function currentPosition() {
+		return main?.currentPosition();
+	}
 
 	const node = $derived(trail[trail.length - 1]);
 	const parent = $derived(trail.length > 1 ? trail[0] : undefined);
@@ -384,5 +393,12 @@
 {/snippet}
 
 {#key `${node.path}|${storeFilter ?? ''}`}
-	<Main {kaljakori} {header} footer={$isLaptop ? undefined : footer} showFilters={false} />
+	<Main
+		{kaljakori}
+		{header}
+		footer={$isLaptop ? undefined : footer}
+		showFilters={false}
+		{position}
+		bind:this={main}
+	/>
 {/key}
