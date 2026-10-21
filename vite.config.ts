@@ -4,7 +4,7 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
 	esbuild: {
-		drop: process.argv.includes('dev') ? [] : ["console"]
+		drop: process.argv.includes('dev') ? [] : ['console']
 	},
 	server: {},
 	plugins: [tailwindcss(), sveltekit()]

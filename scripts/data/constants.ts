@@ -1,4 +1,5 @@
 import { CryptoHasher } from 'bun';
+import { formatFoodPairings } from '../../src/lib/utils/catalog/food.ts';
 
 export const LEGACY_HEADERS = [
 	'Numero',
@@ -33,7 +34,10 @@ export const LEGACY_HEADERS = [
 	'EAN',
 	'Normaalihinta',
 	'Kampanja alkaa',
-	'Kampanja päättyy'
+	'Kampanja päättyy',
+	'Ruokasuositukset',
+	'Tila',
+	'Pantti'
 ] as const;
 
 export const DEV = process.argv.includes('--dev');
@@ -72,6 +76,36 @@ export const REQUEST_HEADERS: Record<string, string> = {
 function toStringList(value: unknown): string[] {
 	if (Array.isArray(value)) return value.filter((item): item is string => typeof item === 'string');
 	return typeof value === 'string' ? [value] : [];
+}
+
+/**
+ * Turns the search API's `certificateClass` entries (`certificateId|certificate_001|Luomu`)
+ * into a comma separated list of their labels, e.g. `Luomu, Vegaaneille soveltuva tuote`.
+ */
+function formatCertificates(value: unknown): string | null {
+	const labels = toStringList(value)
+		.map((entry) => entry.split('|')[2]?.trim())
+		.filter((label): label is string => Boolean(label));
+	return labels.length ? [...new Set(labels)].join(', ') : null;
+}
+
+/**
+ * Labels for the search API's `statusId` codes, matching the Finnish `status`
+ * the detail API reports for the same products (except `U`, which the detail
+ * API calls "Uusi" but the dataset has always called "Uutuus"). Status `K`
+ * (Kuoletettu, discontinued) never reaches the search API.
+ */
+export const STATUS_LABELS: Readonly<Record<string, string>> = {
+	A: 'Aktiivinen',
+	P: 'Poistuva',
+	U: 'Uutuus',
+	X: 'Tulee'
+};
+
+/** Label of a `statusId`. Unknown codes are kept as-is so a new one shows up instead of vanishing. */
+function formatStatus(value: unknown): string | null {
+	if (typeof value !== 'string' || !value.trim()) return null;
+	return STATUS_LABELS[value.trim()] ?? value.trim();
 }
 
 /** Converts an unknown field into a finite number or null. Handles the string prices the API returns. */
@@ -179,7 +213,7 @@ export const FIELD_TO_LEGACY_SCHEMA: ProductFieldMapping[] = [
 		newPropertyKey: 'pricePerLitre',
 		legacyKey: 'Litrahinta',
 		usedForHashing: false,
-		preprocessor: (value) => Number(value)
+		preprocessor: toPriceNumber
 	},
 	{
 		newPropertyKey: 'statusId',
@@ -206,10 +240,10 @@ export const FIELD_TO_LEGACY_SCHEMA: ProductFieldMapping[] = [
 		preprocessor: (value) => value
 	},
 	{
-		newPropertyKey: 'certificateId',
+		newPropertyKey: 'certificateClass',
 		legacyKey: 'Erityisryhmä',
 		usedForHashing: false,
-		preprocessor: (value) => (Array.isArray(value) ? value.includes('certificate_005') : false)
+		preprocessor: formatCertificates
 	},
 	{
 		newPropertyKey: 'flavorTag',
@@ -358,7 +392,40 @@ export const FIELD_TO_LEGACY_SCHEMA: ProductFieldMapping[] = [
 		legacyKey: 'Kampanja päättyy',
 		usedForHashing: true,
 		preprocessor: (value) => value ?? null
+	},
+	{
+		newPropertyKey: 'foodSymbolId',
+		legacyKey: 'Ruokasuositukset',
+		usedForHashing: false,
+		preprocessor: formatFoodPairings
+	},
+	{
+		newPropertyKey: 'statusId',
+		legacyKey: 'Tila',
+		usedForHashing: true,
+		preprocessor: formatStatus
+	},
+	{
+		// Euros, included in the price but not in `pricePerLitre`. Detail API only,
+		// and missing for some products that clearly have one (e.g. some cans).
+		newPropertyKey: 'deposit',
+		legacyKey: 'Pantti',
+		usedForHashing: false,
+		preprocessor: (value) => {
+			const deposit = toPriceNumber(value);
+			return deposit !== null && deposit > 0 ? deposit : null;
+		}
 	}
+];
+
+/**
+ * Search-API columns refreshed on every sync, even for products whose hash is
+ * unchanged. They aren't hashed (a change shouldn't cost a detail fetch), so
+ * without this they'd only update when something else about the product changes.
+ */
+export const SEARCH_REFRESHED_COLUMNS: readonly (typeof LEGACY_HEADERS)[number][] = [
+	'Erityisryhmä',
+	'Ruokasuositukset'
 ];
 
 /**
@@ -391,6 +458,22 @@ export function alignValues(values: unknown[]): unknown[] {
 	return values.slice(0, LEGACY_HEADERS.length);
 }
 
+const SPECIAL_GROUP_INDEX = LEGACY_HEADERS.indexOf('Erityisryhmä');
+
+/**
+ * Converts values stored in an older format to the current one. Erityisryhmä
+ * used to be a vegan flag (certificate_005), now it's the label list built by
+ * `formatCertificates`. Products still in the selection get refreshed from the
+ * search API anyway, so this mostly matters for removed ones.
+ */
+export function upgradeStoredValues(values: unknown[]): unknown[] {
+	const specialGroup = values[SPECIAL_GROUP_INDEX];
+	if (typeof specialGroup !== 'boolean') return values;
+	const upgraded = [...values];
+	upgraded[SPECIAL_GROUP_INDEX] = specialGroup ? 'Vegaaneille soveltuva tuote' : null;
+	return upgraded;
+}
+
 /**
  * Version of the change-detection hash algorithm and its hashed field set.
  *
@@ -400,7 +483,7 @@ export function alignValues(values: unknown[]): unknown[] {
  * sync persists it in the dataset metadata. Do not bump it for unrelated
  * schema additions (appended columns don't affect hashed indices).
  */
-export const HASH_VERSION = 1;
+export const HASH_VERSION = 2;
 
 /**
  * Extracts only the change-detection relevant values (`usedForHashing`) from a

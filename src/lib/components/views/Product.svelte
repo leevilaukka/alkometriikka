@@ -1,20 +1,26 @@
 <script lang="ts">
-	import { AllColumns } from '$lib/utils/constants';
-	import { generateTitle, setSEO, handleShare } from '$lib/utils/helpers';
-	import { formatCampaignWindow, getSaleInfo } from '$lib/utils/sales';
+	import { AllColumns } from '$lib/utils/constants/columns';
+	import { generateTitle, setSEO } from '$lib/utils/app/meta';
+	import { handleShare } from '$lib/utils/app/share';
+	import { formatCampaignWindow, getSaleInfo } from '$lib/utils/catalog/sales';
 	import { twMerge } from 'tailwind-merge';
-	import { components } from '$lib/utils/styles';
+	import { components } from '$lib/utils/ui/styles';
 	import Icon from '../widgets/Icon.svelte';
-	import { type AvailabilityStore, type PriceListItem } from '$lib/types';
+	import { type AvailabilityData, type AvailabilityStore, type PriceListItem } from '$lib/types';
 	import { afterNavigate } from '$app/navigation';
 	import type { Kaljakori } from '$lib/alko';
-	import { buildSizeOptions, findSimilarProducts } from '$lib/utils/filters';
+	import {
+		buildSizeOptions,
+		findSimilarProducts,
+		SIMILAR_PRODUCT_COLUMNS
+	} from '$lib/utils/catalog/filters';
 	import {
 		formatStoreDistance,
 		getStoreDistance,
 		rankStoresByDistance
-	} from '$lib/utils/availability';
-	import { generateImageUrl } from '$lib/utils/image';
+	} from '$lib/utils/catalog/availability';
+	import { generateImageUrl } from '$lib/utils/catalog/alko';
+	import { productDescription } from '$lib/utils/app/seo';
 
 	import ProductBreadcrumb from '../product/ProductBreadcrumb.svelte';
 	import ProductGallery from '../product/ProductGallery.svelte';
@@ -29,16 +35,22 @@
 	import ProductPriceHistory from '../product/ProductPriceHistory.svelte';
 	import ProductDetailsTable from '../product/ProductDetailsTable.svelte';
 	import ProductStoreAvailability from '../product/ProductStoreAvailability.svelte';
+	import ProductMobileCta from '../product/ProductMobileCta.svelte';
+	import ProductWatchButton from '../product/ProductWatchButton.svelte';
+	import { describeWatchChange, type WatchChange } from '$lib/utils/user/watchlist';
+	import { pageBottomBar } from '$lib/global.svelte';
 
 	const {
 		product,
 		kaljakori,
+		availability,
 		availabilityStores,
 		preferredStore,
 		availabilityUpdated
 	}: {
 		product: PriceListItem;
 		kaljakori: Kaljakori;
+		availability: AvailabilityData;
 		availabilityStores: AvailabilityStore[];
 		preferredStore?: AvailabilityStore;
 		availabilityUpdated: Date | undefined;
@@ -48,9 +60,7 @@
 		rankStoresByDistance(availabilityStores, preferredStore)
 	);
 	const availableInPreferredStore = $derived(
-		preferredStore
-			? availabilityStores.some((store) => store.id === preferredStore.id)
-			: false
+		preferredStore ? availabilityStores.some((store) => store.id === preferredStore.id) : false
 	);
 	const closestAvailableStore = $derived(rankedAvailabilityStores[0]);
 	const closestAvailableDistance = $derived(
@@ -58,28 +68,16 @@
 	);
 
 	let productElement: HTMLDivElement;
+	let watchChanges = $state<WatchChange[]>([]);
 
 	const sizeOptions = $derived(buildSizeOptions(product, kaljakori));
 	const cheapestSize = $derived(sizeOptions.find((size) => size.isBestValue));
 
+	// Removed products can't be bought, so they make no sense as alternatives here
 	const similarProducts = $derived(
-		findSimilarProducts(
-			product,
-			kaljakori,
-			new Set([
-				AllColumns.Type,
-				AllColumns.SubType,
-				AllColumns.BeerType,
-				AllColumns.Price,
-				AllColumns.BottleSize,
-				AllColumns.Sugar,
-				AllColumns.PackagingType,
-				AllColumns.AlcoholGramsPerEuro,
-				AllColumns.GrapeVarieties,
-				AllColumns.Description
-			]),
-			24
-		)
+		findSimilarProducts(product, kaljakori, SIMILAR_PRODUCT_COLUMNS, kaljakori.data.length)
+			.filter((item) => !item[AllColumns.RemovedFromSelection])
+			.slice(0, 24)
 	);
 
 	const sale = $derived(
@@ -97,11 +95,19 @@
 	});
 
 	$effect(() => {
+		const description = productDescription({
+			name: product[AllColumns.Name],
+			category: [product[AllColumns.Type], product[AllColumns.SubType]].filter(Boolean).join(' / '),
+			volume: product[AllColumns.BottleSize],
+			alcoholPercentage: product[AllColumns.AlcoholPercentage],
+			price: product[AllColumns.Price],
+			pricePerLitre: product[AllColumns.PricePerLiter]
+		});
 		setSEO({
-			description: `Katso ${product[AllColumns.Name]} -tuotteen tiedot, hinnat ja vastaavat tuotteet Alkometriikasta.`,
+			description,
 			og: {
 				title: generateTitle(`${product[AllColumns.Name]}`),
-				description: `Katso ${product[AllColumns.Name]} -tuotteen tiedot, hinnat ja vastaavat tuotteet Alkometriikasta.`,
+				description,
 				url: `https://alkometriikka.fi/tuotteet/${product[AllColumns.Number]}/`
 			},
 			image: {
@@ -113,13 +119,26 @@
 			twitter: {
 				card: 'summary_large_image',
 				title: generateTitle(`${product[AllColumns.Name]}`),
-				description: `Katso ${product[AllColumns.Name]} -tuotteen tiedot, hinnat ja vastaavat tuotteet Alkometriikasta.`,
+				description,
 				image: generateImageUrl(product[AllColumns.Number], 'medium')
 			},
 			keywords: `${product[AllColumns.Name]}, ${product[AllColumns.Manufacturer]}, ${product[AllColumns.Type]}, ${product[AllColumns.SubType]}, ${[...(product[AllColumns.Description] || [])].join(', ').toLocaleLowerCase()}`
 		});
 	});
+
+	// Price, compare and add-to-list bar for screens without the side price panel
+	$effect(() => {
+		if (!product) return;
+		pageBottomBar.snippet = mobileCta;
+		return () => {
+			if (pageBottomBar.snippet === mobileCta) pageBottomBar.snippet = undefined;
+		};
+	});
 </script>
+
+{#snippet mobileCta()}
+	<ProductMobileCta {product} class="lg:hidden" />
+{/snippet}
 
 <svelte:head>
 	<title>{generateTitle(`${product[AllColumns.Name]}`)}</title>
@@ -131,9 +150,19 @@
 >
 	<div class="flex w-full items-center gap-3.5">
 		<ProductBreadcrumb {product} {kaljakori} class="min-w-0 flex-1" />
+		<ProductWatchButton
+			{product}
+			{availability}
+			preferredStoreId={preferredStore?.id}
+			bind:changes={watchChanges}
+			class="ml-auto"
+		/>
 		<button
 			type="button"
-			class={twMerge(components.button({ size: 'sm', type: 'positive' }), 'ml-auto flex shrink-0 items-center gap-2')}
+			class={twMerge(
+				components.button({ size: 'sm', type: 'positive' }),
+				'flex shrink-0 items-center gap-2'
+			)}
 			onclick={async () => {
 				const shared = await handleShare({
 					type: 'product',
@@ -153,7 +182,33 @@
 		</button>
 	</div>
 
-	<div class="grid w-full grid-cols-1 gap-6 lg:grid-cols-[360px_minmax(0,1fr)_320px] lg:items-start">
+	{#if watchChanges.length}
+		<div
+			role="status"
+			class="flex flex-col gap-1 rounded border border-primary bg-secondary px-4 py-3 text-sm"
+		>
+			<strong>Muuttunut edellisen käyntisi jälkeen</strong>
+			<ul class="flex flex-wrap gap-x-4 gap-y-1">
+				{#each watchChanges as change, index (index)}
+					{@const label = describeWatchChange(
+						change,
+						(storeId) => availability.stores[storeId]?.name
+					)}
+					<li
+						class={label.good
+							? 'text-green-700 dark:text-green-400'
+							: 'text-red-700 dark:text-red-400'}
+					>
+						{label.text}
+					</li>
+				{/each}
+			</ul>
+		</div>
+	{/if}
+
+	<div
+		class="grid w-full grid-cols-1 gap-6 lg:grid-cols-[360px_minmax(0,1fr)_320px] lg:items-start"
+	>
 		<ProductGallery {product} {sale} />
 
 		<div class="flex flex-col gap-4">
@@ -196,7 +251,9 @@
 
 	<ProductSimilar {product} candidates={similarProducts} />
 
-	<div class="grid w-full grid-cols-1 gap-6 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] lg:items-start">
+	<div
+		class="grid w-full grid-cols-1 gap-6 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] lg:items-start"
+	>
 		<div class="flex flex-col gap-6">
 			<ProductPriceHistory {product} />
 			<ProductDetailsTable {product} class="hidden lg:block" />

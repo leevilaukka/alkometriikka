@@ -84,6 +84,8 @@ export type MigratedData = {
 		};
 	};
 	products?: Record<string, MigratedProduct>;
+	/** Precomputed filter values for the app, see dataset-index.ts. Rebuilt on every write. */
+	index?: unknown;
 };
 
 export type FieldToArrayOrder<T extends FullProductData> = [
@@ -101,6 +103,9 @@ export interface SearchProductData {
 	productCommunicationEthical: string | null;
 	productCommunicationProduction: string | null;
 	productCommunicationCultivation: string | null;
+	/** Certificates as `certificateId|<id>|<label>`, e.g. `certificateId|certificate_001|Luomu`. Missing when the product has none. */
+	certificateClass?: string[];
+	certificateId?: string[];
 	closures: string[];
 	closureId: string[];
 	country: string;
@@ -168,7 +173,8 @@ export interface DetailedProductData {
 	ingredients: string | null;
 	isFavorite: boolean;
 	name: string;
-	pricePerLitre: string;
+	/** Missing for products that aren't on sale yet (status Tulee). */
+	pricePerLitre?: string;
 	producer: string;
 	productionSites: ProductionSite[];
 	productId: string;
@@ -190,6 +196,10 @@ export interface DetailedProductData {
 	emptyWeight: number;
 	packageCertificates: unknown[];
 	ingredientsList: string | null;
+	/** Finnish status label: Aktiivinen, Uusi, Poistuva, Tulee, Kuoletettu. */
+	status?: string;
+	/** Deposit in euros, included in `valueInCents` but not in `pricePerLitre`. Missing on most products. */
+	deposit?: number | null;
 }
 
 export interface Certificates {

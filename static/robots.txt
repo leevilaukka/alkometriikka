@@ -2,4 +2,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://www.alkometriikka.fi/sitemap.xml
+Sitemap: https://alkometriikka.fi/sitemap.xml

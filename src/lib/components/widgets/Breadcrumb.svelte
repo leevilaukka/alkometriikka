@@ -1,8 +1,9 @@
 <script lang="ts">
+	import { appPath } from '$lib/utils/app/paths';
+	import { resolve } from '$app/paths';
+	import type { BreadcrumbItem } from '$lib/types';
 	import Icon from './Icon.svelte';
 	import { twMerge } from 'tailwind-merge';
-
-	export type BreadcrumbItem = { label: string; href?: string };
 
 	const {
 		items,
@@ -16,15 +17,22 @@
 	} = $props();
 </script>
 
-<nav class={twMerge('flex min-w-0 items-center gap-2 overflow-hidden text-sm text-secondary', _class)}>
-	<a href="/" class="flex shrink-0 items-center gap-1 hover:text-black dark:hover:text-white">
+<nav
+	class={twMerge('flex min-w-0 items-center gap-2 overflow-hidden text-sm text-secondary', _class)}
+>
+	<a
+		href={resolve('/')}
+		class="flex shrink-0 items-center gap-1 hover:text-black dark:hover:text-white"
+	>
 		<Icon name="home" class="text-base" />
 		<span class="hidden sm:inline">Etusivu</span>
 	</a>
 	{#each items as item}
 		<Icon name="chevron_right" />
 		{#if item.href}
-			<a href={item.href} class="shrink-0 hover:text-black dark:hover:text-white">{item.label}</a>
+			<a href={appPath(item.href)} class="shrink-0 hover:text-black dark:hover:text-white"
+				>{item.label}</a
+			>
 		{:else}
 			<span class="shrink-0">{item.label}</span>
 		{/if}

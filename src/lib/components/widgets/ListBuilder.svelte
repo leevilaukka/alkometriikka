@@ -2,11 +2,13 @@
 	import type { Kaljakori } from '$lib/alko';
 	import { customTemplates, preferredStoreId } from '$lib/global.svelte';
 	import type { AvailabilityData, ColumnNames } from '$lib/types';
-	import { AllColumns } from '$lib/utils/constants';
-	import { formatValue } from '$lib/utils/format';
-	import { getRandom, headerToDisplayName, sendAnalyticsEvent } from '$lib/utils/helpers';
-	import { listToURI } from '$lib/utils/lists';
-	import { components } from '$lib/utils/styles';
+	import { AllColumns } from '$lib/utils/constants/columns';
+	import { formatValue } from '$lib/utils/format/format';
+	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
+	import { getRandom } from '$lib/utils/app/share';
+	import { headerToDisplayName } from '$lib/utils/format/labels';
+	import { listToURI } from '$lib/utils/user/lists';
+	import { components } from '$lib/utils/ui/styles';
 	import {
 		createCustomTemplateId,
 		createListFromTemplate,
@@ -16,7 +18,7 @@
 		type CustomTemplateSlot,
 		type SerializedTemplateFilterSpec,
 		type SlotPickStrategy
-	} from '$lib/utils/templates';
+	} from '$lib/utils/user/templates';
 	import { twMerge } from 'tailwind-merge';
 	import Icon from './Icon.svelte';
 

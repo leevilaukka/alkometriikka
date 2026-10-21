@@ -1,19 +1,30 @@
 <script lang="ts">
 	import type { Kaljakori } from '$lib/alko';
 	import { twMerge } from 'tailwind-merge';
-	import { components } from '$lib/utils/styles';
-	import { ContextKeys, shownFilters as filters, AllColumns } from '$lib/utils/constants';
+	import { components } from '$lib/utils/ui/styles';
+	import { ContextKeys } from '$lib/utils/constants/app';
+	import { filterOptionGroupers, shownFilters as filters } from '$lib/utils/constants/display';
+	import { AllColumns } from '$lib/utils/constants/columns';
 	import NumberInput from '../inputs/NumberInput.svelte';
 	import StringInput from '../inputs/StringInput.svelte';
 	import Icon from './Icon.svelte';
 	import { isMobile } from '$lib/global.svelte';
-	import { getNarrowedFilterValues, getNestedSubFilter, getShownParentFilter, initFilterValues, searchParametersFromFilterValues } from '$lib/utils/filters';
+	import {
+		COMMA_SEPARATED_FILTERS,
+		getNarrowedFilterValues,
+		getNestedSubFilter,
+		getShownParentFilter,
+		initFilterValues,
+		joinFilterParams,
+		searchParametersFromFilterValues
+	} from '$lib/utils/catalog/filters';
 	import type { ColumnNames, FilterValues } from '$lib/types';
 	import { getContext, untrack } from 'svelte';
 	import { get } from 'svelte/store';
-	import type { SearchParamsManager } from '$lib/utils/url';
-	import { headerToDisplayName } from '$lib/utils/helpers';
+	import type { SearchParamsManager } from '$lib/utils/app/url';
+	import { headerToDisplayName } from '$lib/utils/format/labels';
 	import RecursiveFilter from '../inputs/RecursiveFilter.svelte';
+	import { trackFilterUsage } from '$lib/utils/app/filterAnalytics.svelte';
 
 	let {
 		kaljakori,
@@ -21,22 +32,38 @@
 		activeFilters = $bindable([]),
 		showRemoved = $bindable(false),
 		useURLParams = true,
+		resultCount
 	}: {
 		kaljakori: Kaljakori;
-		filterValues: FilterValues
-		activeFilters: ColumnNames[],
-		showRemoved?: boolean,
-		useURLParams?: boolean,
+		filterValues: FilterValues;
+		activeFilters: ColumnNames[];
+		showRemoved?: boolean;
+		useURLParams?: boolean;
+		/** Number of results the filters give, sent with the filter usage analytics */
+		resultCount?: number;
 	} = $props();
-	
+
+	trackFilterUsage(
+		untrack(() => (useURLParams ? 'products' : 'list')),
+		() => searchParametersFromFilterValues(filterValues, kaljakori, showRemoved),
+		() => resultCount
+	);
+
 	let searchParamsManager = getContext<SearchParamsManager>(ContextKeys.SearchParamsManager);
 	let filtersElement: HTMLDialogElement;
 	let showFilters = $state(get(isMobile));
-	let hasRemovedProducts = $derived(kaljakori.data.some((item) => item[AllColumns.RemovedFromSelection] === true));
-	let filterActiveState = $state(filters.reduce((acc, filter) => {
-		acc[filter] = false;
-		return acc;
-	}, {} as Record<ColumnNames, boolean>));
+	let hasRemovedProducts = $derived(
+		kaljakori.data.some((item) => item[AllColumns.RemovedFromSelection] === true)
+	);
+	let filterActiveState = $state(
+		filters.reduce(
+			(acc, filter) => {
+				acc[filter] = false;
+				return acc;
+			},
+			{} as Record<ColumnNames, boolean>
+		)
+	);
 
 	let pillFilters = $derived.by(() =>
 		filters.filter((filter) => {
@@ -51,9 +78,13 @@
 		else if ($isMobile) filtersElement.showModal();
 		else filtersElement.show();
 	}
-	
+
 	$effect(() => {
-		activeFilters = Object.entries(filterActiveState).filter(([_, value]) => { return value }).map(([filter]) => filter) as ColumnNames[];
+		activeFilters = Object.entries(filterActiveState)
+			.filter(([_, value]) => {
+				return value;
+			})
+			.map(([filter]) => filter) as ColumnNames[];
 	});
 
 	$effect(() => {
@@ -64,22 +95,26 @@
 
 	$effect(() => {
 		// Reset sub filters when parent filter is changed
-		filterValues && (Object.keys(filterValues) as ColumnNames[]).forEach((filter) => {
-			const child = getNestedSubFilter(filter)
-			if(child && filterValues[filter].length !== 1 && filterValues[child]?.length)  {
-				filterValues[child] = []
-			}
-		})
+		filterValues &&
+			(Object.keys(filterValues) as ColumnNames[]).forEach((filter) => {
+				const child = getNestedSubFilter(filter);
+				if (child && filterValues[filter].length !== 1 && filterValues[child]?.length) {
+					filterValues[child] = [];
+				}
+			});
 	});
 
 	$effect(() => {
 		// Drop selections that no longer match the selections of a shown parent filter
 		filters.forEach((filter) => {
-			const value = filterValues[filter]
-			if(!getShownParentFilter(filter) || !Array.isArray(value) || !value.length) return
-			const allowed = new Set(getNarrowedFilterValues(filter, filterValues, kaljakori, showRemoved))
-			if(value.some((v) => !allowed.has(v))) filterValues[filter] = value.filter((v) => allowed.has(v))
-		})
+			const value = filterValues[filter];
+			if (!getShownParentFilter(filter) || !Array.isArray(value) || !value.length) return;
+			const allowed = new Set(
+				getNarrowedFilterValues(filter, filterValues, kaljakori, showRemoved)
+			);
+			if (value.some((v) => !allowed.has(v)))
+				filterValues[filter] = value.filter((v) => allowed.has(v));
+		});
 	});
 
 	let previousShowRemoved = showRemoved;
@@ -93,7 +128,12 @@
 			(Object.keys(filterValues) as ColumnNames[]).forEach((filter) => {
 				const value = filterValues[filter];
 				// Drop selections that only exist on removed products, as they'd match nothing
-				if (kaljakori.getFilterType(filter) === 'string' && !currentShowRemoved && Array.isArray(value) && value.length) {
+				if (
+					kaljakori.getFilterType(filter) === 'string' &&
+					!currentShowRemoved &&
+					Array.isArray(value) &&
+					value.length
+				) {
 					const activeValues = new Set(kaljakori.getFilterValues(filter, false));
 					if (value.some((v) => !activeValues.has(v)))
 						filterValues[filter] = value.filter((v) => activeValues.has(v));
@@ -111,28 +151,63 @@
 
 	$effect(() => {
 		// Update URL parameters when filter values change
-		if(!useURLParams) return
-		const filterValuesAsSearchParams = searchParametersFromFilterValues(filterValues, kaljakori, showRemoved)
-		searchParamsManager.setParametersFromObject(filterValuesAsSearchParams).update()
-	})
-	
+		if (!useURLParams) return;
+		const filterValuesAsSearchParams = searchParametersFromFilterValues(
+			filterValues,
+			kaljakori,
+			showRemoved
+		);
+		searchParamsManager
+			.setParametersFromObject(
+				COMMA_SEPARATED_FILTERS
+					? joinFilterParams(filterValuesAsSearchParams)
+					: filterValuesAsSearchParams
+			)
+			.update();
+	});
 </script>
 
 <dialog
 	bind:this={filtersElement}
 	class={twMerge(
-		'relative m-auto hidden h-full w-full flex-col gap-4 rounded-lg bg-primary border border-primary p-4 backdrop:backdrop-blur-sm open:flex md:relative md:rounded-none md:border-0 overflow-x-hidden overflow-y-auto transition-transform open:starting:scale-0 md:open:starting:scale-100 open:scale-100'
+		'relative m-auto hidden h-full w-full flex-col gap-4 overflow-x-hidden overflow-y-auto rounded-lg border border-primary bg-primary p-4 transition-transform backdrop:backdrop-blur-sm open:flex open:scale-100 md:relative md:rounded-none md:border-0 open:starting:scale-0 md:open:starting:scale-100'
 	)}
 	onclose={() => (showFilters = false)}
 >
 	{#each filters as filter}
 		{@const possibleValues = getNarrowedFilterValues(filter, filterValues, kaljakori, showRemoved)}
 		{@const type = kaljakori.getFilterType(filter)}
-		{#if !pillFilters.includes(filter) && possibleValues.length > 1}
-			<div class="flex w-full flex-col text-sm gap-2">
+		{#if filter === AllColumns.StoreAvailability && !kaljakori.availabilityLoaded}
+			<!-- availability.json loads after the products; hold the store filter's place until then -->
+			<div class="flex w-full flex-col gap-2 text-sm" aria-busy="true">
+				<span>{headerToDisplayName(filter)}</span>
+				<button
+					disabled
+					class={twMerge(
+						components.button(),
+						'w-full cursor-wait justify-start gap-2 text-secondary'
+					)}
+				>
+					<span
+						class="block h-4 w-4 shrink-0 animate-spin rounded-full border-2 border-red-600 border-b-transparent"
+						aria-hidden="true"
+					></span>
+					<span>Ladataan myymälöitä…</span>
+				</button>
+			</div>
+		{:else if !pillFilters.includes(filter) && possibleValues.length > 1}
+			<div class="flex w-full flex-col gap-2 text-sm">
 				{#if type === 'number'}
 					{@const [min, max] = kaljakori.getMinAndMaxValues(filter, showRemoved)}
-					<NumberInput defaultValue={[min, max]} label={filter} bind:value={filterValues[filter]} bind:modified={filterActiveState[filter]} {min} {max} step={0.01} />
+					<NumberInput
+						defaultValue={[min, max]}
+						label={filter}
+						bind:value={filterValues[filter]}
+						bind:modified={filterActiveState[filter]}
+						{min}
+						{max}
+						step={0.01}
+					/>
 				{:else}
 					<StringInput
 						defaultValue={[]}
@@ -141,14 +216,10 @@
 						bind:value={filterValues[filter]}
 						bind:modified={filterActiveState[filter]}
 						name={filter}
+						groupOptions={filterOptionGroupers[filter]}
 					/>
 				{/if}
-				<RecursiveFilter
-					filter={filter}
-					bind:filterValues
-					{kaljakori}
-					{showRemoved}
-				/>
+				<RecursiveFilter {filter} bind:filterValues {kaljakori} {showRemoved} />
 			</div>
 		{/if}
 	{/each}
@@ -201,4 +272,3 @@
 		{/if}
 	</div>
 </dialog>
-	

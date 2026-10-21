@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { AllColumns } from '$lib/utils/constants';
+	import { AllColumns } from '$lib/utils/constants/columns';
 	import type { AvailabilityStore, ListObj, PriceListItem } from '$lib/types';
-	import type { SaleInfo } from '$lib/utils/sales';
-	import type { SizeOption } from '$lib/utils/filters';
-	import { addToList } from '$lib/utils/lists';
-	import { components } from '$lib/utils/styles';
+	import type { SaleInfo } from '$lib/utils/catalog/sales';
+	import type { SizeOption } from '$lib/utils/catalog/filters';
+	import { addToList } from '$lib/utils/user/lists';
+	import { components } from '$lib/utils/ui/styles';
 	import { compareProductIds } from '$lib/global.svelte';
-	import { toggleCompare, MAX_COMPARE_PRODUCTS } from '$lib/utils/compare';
+	import { toggleCompare, MAX_COMPARE_PRODUCTS } from '$lib/utils/user/compare';
 	import Icon from '../widgets/Icon.svelte';
 	import Popup from '../widgets/Popup.svelte';
 	import AllLists from '../widgets/AllLists.svelte';
@@ -45,7 +45,12 @@
 	}
 </script>
 
-<aside class={twMerge('flex w-full flex-col gap-4 rounded border border-primary bg-secondary p-4', _class)}>
+<aside
+	class={twMerge(
+		'flex w-full flex-col gap-4 rounded border border-primary bg-secondary p-4',
+		_class
+	)}
+>
 	<ProductPriceStoreBanner
 		{product}
 		{sale}
@@ -61,7 +66,10 @@
 			{#snippet renderButton(dialogElement: HTMLDialogElement)}
 				<button
 					type="button"
-					class={twMerge(components.button({ size: 'lg' }), 'w-full flex-1 justify-between px-4 py-2.5')}
+					class={twMerge(
+						components.button({ size: 'lg' }),
+						'w-full flex-1 justify-between px-4 py-2.5'
+					)}
 					onclick={() => dialogElement.showModal()}
 				>
 					<span>Lisää listaan</span>
@@ -95,24 +103,29 @@
 		<ProductSizeHook size={cheapestSize} />
 	{/if}
 
-	<a
-		href={`https://www.alko.fi/tuotteet/${product[AllColumns.Number]}`}
-		target="_blank"
-		rel="noopener noreferrer"
-		referrerpolicy="no-referrer"
-		class={twMerge(
-			components.button({ size: 'lg' }),
-			'w-full px-4 py-2.5',
-			product[AllColumns.RemovedFromSelection] ? 'pointer-events-none opacity-50' : ''
-		)}
-	>
-		<span>{product[AllColumns.RemovedFromSelection] ? 'Poistunut valikoimasta' : 'Alkon tuotesivu'}</span>
-		{#if !product[AllColumns.RemovedFromSelection]}
+	{#if product[AllColumns.RemovedFromSelection]}
+		<span
+			class={twMerge(
+				components.button({ size: 'lg' }),
+				'w-full cursor-default px-4 py-2.5 opacity-50'
+			)}
+		>
+			Poistunut valikoimasta
+		</span>
+	{:else}
+		<a
+			href={`https://www.alko.fi/tuotteet/${product[AllColumns.Number]}`}
+			target="_blank"
+			rel="noopener noreferrer"
+			referrerpolicy="no-referrer"
+			class={twMerge(components.button({ size: 'lg' }), 'w-full px-4 py-2.5')}
+		>
+			<span>Alkon tuotesivu</span>
 			<Icon name="link_external" />
-		{/if}
-	</a>
+		</a>
+	{/if}
 
-	<p class="text-xs text-secondary text-wrap-pretty">
+	<p class="text-wrap-pretty text-xs text-secondary">
 		Alkometriikka ei myy alkoholia. Tiedot päivittyvät Alkon hinnastosta.
 	</p>
 </aside>

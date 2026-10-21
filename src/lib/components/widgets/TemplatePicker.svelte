@@ -3,11 +3,12 @@
 	import type { Kaljakori } from '$lib/alko';
 	import { customTemplates, preferredStoreId } from '$lib/global.svelte';
 	import type { AvailabilityData } from '$lib/types';
-	import { AllColumns } from '$lib/utils/constants';
-	import { formatValue } from '$lib/utils/format';
-	import { sendAnalyticsEvent } from '$lib/utils/helpers';
-	import { listToURI } from '$lib/utils/lists';
-	import { components } from '$lib/utils/styles';
+	import { AllColumns } from '$lib/utils/constants/columns';
+	import { formatValue } from '$lib/utils/format/format';
+	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
+	import { appPath } from '$lib/utils/app/paths';
+	import { listToURI } from '$lib/utils/user/lists';
+	import { components } from '$lib/utils/ui/styles';
 	import {
 		createListFromTemplate,
 		customTemplateToListTemplate,
@@ -17,7 +18,7 @@
 		type ListTemplate,
 		type SlotResolution,
 		type TemplateOptions
-	} from '$lib/utils/templates';
+	} from '$lib/utils/user/templates';
 	import { twMerge } from 'tailwind-merge';
 	import Icon from './Icon.svelte';
 	import ListBuilder from './ListBuilder.svelte';
@@ -122,7 +123,7 @@
 		}
 		dialogElement.close();
 		selectedTemplate = null;
-		goto(`/listat?list=${listToURI(list)}`);
+		goto(appPath(`/listat/?list=${listToURI(list)}`));
 	}
 
 	function totalPrice(): number {
@@ -161,7 +162,7 @@
 					onCancel={handleBack}
 					onCreated={(uri) => {
 						dialogElement.close();
-						goto(`/listat?list=${uri}`);
+						goto(appPath(`/listat/?list=${uri}`));
 					}}
 				/>
 			</div>

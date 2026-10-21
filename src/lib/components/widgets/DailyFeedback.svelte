@@ -1,6 +1,6 @@
 <script lang="ts">
 	import FeedbackDialog from '$lib/components/widgets/FeedbackDialog.svelte';
-	import { sendAnalyticsEvent } from '$lib/utils/helpers';
+	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 	import { sha256Hex } from '$lib/daily/manifest';
 	import type { GameTypes } from '$lib/types';
 	import type { GeneratedGame } from '$lib/daily/questions';

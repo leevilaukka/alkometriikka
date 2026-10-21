@@ -1,12 +1,7 @@
-import {
-	AllColumns,
-	DatasetColumns,
-	DrunkColumns,
-	GenderOptionsMap,
-	ShareTypes
-} from '$lib/utils/constants';
+import { AllColumns, DatasetColumns, DrunkColumns } from '$lib/utils/constants/columns';
+import { GenderOptionsMap, ShareTypes } from '$lib/utils/constants/app';
 import type { VariantProps } from 'class-variance-authority';
-import type { components } from './utils/styles';
+import type { components } from './utils/ui/styles';
 import type { IconName } from './icons';
 
 export type ColumnType =
@@ -39,6 +34,8 @@ export type PersonalInfo = {
 	gender: GenderOptions | undefined | null;
 };
 
+export type BreadcrumbItem = { label: string; href?: string };
+
 export type AvailabilityStore = {
 	id: string;
 	name: string;
@@ -63,6 +60,25 @@ export type AvailabilityData = {
 	product: Record<string, string[]>;
 };
 
+/** What a watched product looked like when the user last saw it. */
+export type WatchSnapshot = {
+	/** ISO timestamp */
+	at: string;
+	price: number;
+	removed: boolean;
+	/** Stores stocking it. Missing when store data hadn't loaded. */
+	stores?: number;
+	/** The preferred store then, and whether it stocked the product. */
+	store?: { id: string; stocked: boolean };
+};
+
+export type WatchedProduct = {
+	id: string;
+	/** ISO timestamp */
+	addedAt: string;
+	seen: WatchSnapshot;
+};
+
 export interface PriceListItem extends Record<DrunkColumnNames, number> {
 	Numero: string;
 	Nimi: string;
@@ -75,7 +91,7 @@ export interface PriceListItem extends Record<DrunkColumnNames, number> {
 	Hinnastojärjestyskoodi: string;
 	Tyyppi: string;
 	Alatyyppi: string;
-	Erityisryhmä: string;
+	Erityisryhmä: Set<string>;
 	Oluttyyppi: string;
 	Valmistusmaa: string;
 	Alue: string;
@@ -84,6 +100,7 @@ export interface PriceListItem extends Record<DrunkColumnNames, number> {
 	Huomautus: Set<string>;
 	Rypäleet: Set<string>;
 	Luonnehdinta: Set<string>;
+	Ruokasuositukset: Set<string>;
 	Pakkaustyyppi: string;
 	'Alkoholi-%': number;
 	'Hapot g/l': number;
@@ -97,6 +114,10 @@ export interface PriceListItem extends Record<DrunkColumnNames, number> {
 	Normaalihinta: number;
 	'Kampanja alkaa': string;
 	'Kampanja päättyy': string;
+	/** Alko's product status: Aktiivinen, Uutuus, Poistuva or Tulee. Empty for removed products. */
+	Tila: string;
+	/** Deposit in euros, included in `Hinta`. Empty when the product has none or it isn't known. */
+	Pantti: number | '';
 	Hintahistoria: PriceHistoryEntry[];
 	'Poistunut valikoimasta': boolean;
 	Myymälät: Set<string>;
@@ -162,11 +183,13 @@ export type ShareType = (typeof ShareTypes)[keyof typeof ShareTypes];
 export type ShareEvent = `share_${ShareType}`;
 export type ShareViewEvent = `shared_${ShareType}_viewed`;
 
-type ShareState = { url?: string; sid?: string; [key: string]: any }
-type Shares = {[K in ShareEvent | ShareViewEvent]: ShareState};
+type ShareState = { url?: string; sid?: string; [key: string]: any };
+type Shares = { [K in ShareEvent | ShareViewEvent]: ShareState };
 
-export type GameTypes = "daily" | "unlimited" | "archive";
+export type GameTypes = 'daily' | 'unlimited' | 'archive';
 type GameKeys = `${GameTypes}_game`;
+
+type RSSFeed = 'site' | 'category' | 'product' | 'json';
 
 type GameState =
 	| {
@@ -180,16 +203,24 @@ type GameState =
 			questions_right: number;
 	  };
 
-type Games = {[K in GameKeys]: GameState;};
+type Games = { [K in GameKeys]: GameState };
 
 export type AnalyticsEventMap = {
-	calculator_used: { using_saved_values: boolean, state: { percentage: number, volume: number, price: number }, result: {
-		perEuro: number
-		rawAlcohol: number
-	} };
+	calculator_used: {
+		using_saved_values: boolean;
+		state: { percentage: number; volume: number; price: number };
+		result: {
+			perEuro: number;
+			rawAlcohol: number;
+		};
+	};
 	open_settings: undefined;
 	export_data: undefined;
 	import_data: undefined;
+	install_app: { outcome: 'accepted' | 'dismissed'; source: 'settings' | 'banner' };
+	app_installed: undefined;
+	pwa_launch: undefined;
+	dismiss_install_banner: undefined;
 	create_list: undefined;
 	create_list_from_template: { template: string };
 	save_list: { url?: string };
@@ -198,6 +229,8 @@ export type AnalyticsEventMap = {
 	show_price_history: { product_number?: string; [key: string]: any };
 	show_product_details: { product_number: string };
 	add_to_compare: { product_number: string };
+	command_palette_open: undefined;
+	command_palette_select: { kind: string; scope: string; query_length: number };
 	view_compare: { product_numbers: string[]; url: string };
 	scan_barcode: { ean: string; link?: string };
 	scan_qr_code: { type: string; product_number: string; link?: string };
@@ -207,6 +240,7 @@ export type AnalyticsEventMap = {
 		city?: string;
 		action?: 'set' | 'change';
 	};
+	store_compass_opened: { storeId: string; storeName: string };
 	show_availability: { product_number?: string; [key: string]: any };
 	daily_feedback: {
 		date: string;
@@ -221,6 +255,17 @@ export type AnalyticsEventMap = {
 		ui_bug: boolean;
 		other: boolean;
 	};
+	click_feed: { feed: RSSFeed; location: string };
+	/** One per filtering session, with the selection of each active filter under its column name. */
+	filters_used: {
+		source: 'products' | 'list';
+		exit: 'product' | 'navigate' | 'hidden';
+		filters: string[];
+		filter_count: number;
+		changes: number;
+		results?: number;
+		[filter: string]: string | string[] | number | undefined;
+	};
 	site_feedback: {
 		path: string;
 		version: string;
@@ -232,6 +277,36 @@ export type AnalyticsEventMap = {
 		ui_bug: boolean;
 		other: boolean;
 	};
-} & Shares & Games
+	/** An unexpected error, see `reportError` in `src/lib/utils/app/errorAnalytics.ts`. */
+	app_error: {
+		kind: 'load' | 'uncaught' | 'unhandled_rejection';
+		message: string;
+		stack?: string;
+		/** HTTP-style status SvelteKit gave a load error */
+		status?: number;
+		route?: string | null;
+		path: string;
+		version: string;
+		/** Browser and version, such as "Chrome 121" or "Safari 16.6", see `browserLabel` */
+		browser: string;
+		user_agent: string;
+	};
+	watch_product: { product_number: string };
+	unwatch_product: { product_number: string };
+	/** The watchlist page was opened, with how many watched products had changed. */
+	view_watchlist: { count: number; changed: number };
+	/** The front page's "your watched products changed" banner was followed. */
+	open_watchlist_banner: { changed: number };
+	/** The error page showed a 4xx status, see `reportPageNotFound` in `errorAnalytics.ts`. */
+	page_not_found: {
+		status: number;
+		/** `null` for a route that doesn't exist */
+		route: string | null;
+		message?: string;
+		path: string;
+		version: string;
+	};
+} & Shares &
+	Games;
 
 export type AnalyticsEventName = keyof AnalyticsEventMap;

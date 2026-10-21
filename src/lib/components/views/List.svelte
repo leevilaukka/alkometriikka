@@ -1,18 +1,19 @@
 <script lang="ts">
-	import { isLaptop, personalInfo, searchQuery, isMobile } from '$lib/global.svelte';
-	import { components } from '$lib/utils/styles';
-	import { handleShare, productIdsToDataset, sendAnalyticsEvent } from '$lib/utils/helpers';
-	import { formatValue } from '$lib/utils/format';
-	import { Kaljakori } from '$lib/alko';
+	import { resolve } from '$app/paths';
+	import { isLaptop, pageBottomBar, personalInfo, preferredStoreId, searchQuery, isMobile } from '$lib/global.svelte';
+	import { components } from '$lib/utils/ui/styles';
+	import { handleShare } from '$lib/utils/app/share';
+	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
+	import { formatValue } from '$lib/utils/format/format';
+	import type { Kaljakori } from '$lib/alko';
 	import {
-		getItemQuantity,
 		getListById,
 		getListItem,
 		listToURI,
 		removeFromList,
 		saveList,
 		updateQuantity
-	} from '$lib/utils/lists';
+	} from '$lib/utils/user/lists';
 	import Icon from '../widgets/Icon.svelte';
 	import SvelteVirtualList from '@humanspeak/svelte-virtual-list';
 	import { twMerge } from 'tailwind-merge';
@@ -20,49 +21,48 @@
 	import {
 		shownColumnsToHighlight,
 		defaultSortingColumn,
-		AllColumns,
 		shownSortingKeys,
-		defaultSortingOrderMap,
-		ContextKeys,
-		GenderOptionsMap
-	} from '$lib/utils/constants';
-	import {
-		headerToDisplayName,
-		sortingOrderToString,
-	} from '$lib/utils/helpers';
+		defaultSortingOrderMap
+	} from '$lib/utils/constants/display';
+	import { AllColumns } from '$lib/utils/constants/columns';
+	import { ContextKeys, GenderOptionsMap } from '$lib/utils/constants/app';
+	import { headerToDisplayName, sortingOrderToString } from '$lib/utils/format/labels';
 	import Popup from '../widgets/Popup.svelte';
 	import AllLists from '../widgets/AllLists.svelte';
-	import { addToList } from '$lib/utils/lists';
+	import { addToList } from '$lib/utils/user/lists';
 	import Filters from '../widgets/Filters.svelte';
 	import { goto } from '$app/navigation';
 	import { getContext, untrack } from 'svelte';
-	import { initFilterValues } from '$lib/utils/filters';
-	import type { SearchParamsManager } from '$lib/utils/url';
+	import { initFilterValues } from '$lib/utils/catalog/filters';
+	import type { SearchParamsManager } from '$lib/utils/app/url';
 	import ProductPreview from '../widgets/ProductPreview.svelte';
-	import { preferredStoreId } from '$lib/global.svelte';
-	import { rankStoresForProducts } from '$lib/utils/availability';
+	import BottomBar from '../widgets/BottomBar.svelte';
+	import FilterButton from '../widgets/FilterButton.svelte';
+	import { compareURL, MAX_COMPARE_PRODUCTS } from '$lib/utils/user/compare';
+	import { rankStoresForProducts } from '$lib/utils/catalog/availability';
+	import { appPath } from '$lib/utils/app/paths';
 
 	let activeFilters: ColumnNames[] = $state([]);
 
 	const {
 		list: importedList,
-		dataset,
+		kaljakori: source,
 		availability
-	}: { list: ListObj; dataset: string[][]; availability?: AvailabilityData } = $props();
+	}: { list: ListObj; kaljakori: Kaljakori; availability?: AvailabilityData } = $props();
 
 	let searchParamsManager = getContext<SearchParamsManager>(ContextKeys.SearchParamsManager);
 
 	const existingList = untrack(() => getListById(importedList.id));
 	const list = untrack(() => existingList || importedList);
 
-	const listDataset = $derived.by(() => {
-		return productIdsToDataset(
-			dataset,
-			list.items.map((i) => i.id)
+	// The list's products, with filter values and ranges covering just them
+	const kaljakori = $derived.by(() => {
+		const ids = new Set(list.items.map((i) => i.id));
+		return source.subset(
+			source.data.filter((item) => ids.has(item[AllColumns.Number])),
+			personalInfo
 		);
 	});
-
-	const kaljakori = $derived(new Kaljakori(listDataset, personalInfo, availability));
 
 	let listRef: SvelteVirtualList<PriceListItem> | null = $state(null);
 
@@ -105,6 +105,20 @@
 			temp = temp.sort((a, b) => (a[selectedSortingColumn] > b[selectedSortingColumn] ? 1 : -1));
 		if (!asc) temp = temp.reverse();
 		return temp;
+	});
+
+	// A new search, filter or sort gives a different list, so start it from the top. The
+	// virtual list keeps the old scroll position otherwise, and once a short result list
+	// has scrolled it to the bottom it stays pinned there as more results come back.
+	let listInputs: string | undefined;
+	$effect(() => {
+		const inputs = JSON.stringify(
+			[$searchQuery, $state.snapshot(filterValues), selectedSortingColumn, asc],
+			(_, value) => (value instanceof Set ? [...value] : value)
+		);
+		if (listInputs !== undefined && inputs !== listInputs)
+			untrack(() => listRef)?.scroll({ index: 0, smoothScroll: false });
+		listInputs = inputs;
 	});
 
 	let highlightMax = $derived.by(() => {
@@ -174,27 +188,133 @@
 			: topStores;
 	});
 
+	// Compares the products in their current order, capped to what the comparison view fits
+	const compareIds = $derived(
+		rows.slice(0, MAX_COMPARE_PRODUCTS).map((item) => item[AllColumns.Number])
+	);
+	const compareTruncated = $derived(rows.length > MAX_COMPARE_PRODUCTS);
+
 	function validateListName(name: string) {
 		if (name.trim().length === 0) list.name = 'Nimetön lista';
 		else list.name = name.trim();
 	}
 
 	function modifyQuantity(item: PriceListItem, delta: number) {
-		updateQuantity(
-			list,
-			item[AllColumns.Number],
-			getItemQuantity(list, item[AllColumns.Number]) + delta
-		);
+		updateQuantity(list, item[AllColumns.Number], delta);
 	}
 
 	$effect(() => {
 		searchParamsManager.setParameter('list', listToURI(list));
 	});
+
+	// On phones the list's actions live in a bottom bar, like on category pages; wider screens
+	// keep them in the header. Filters only exist for lists of two or more.
+	$effect(() => {
+		if (!$isMobile || (kaljakori.data.length === 0 && existingList)) return;
+		pageBottomBar.snippet = actionBar;
+		return () => {
+			if (pageBottomBar.snippet === actionBar) pageBottomBar.snippet = undefined;
+		};
+	});
 </script>
+
+<!-- The list's actions, shared by the header (wide screens) and the bottom bar -->
+{#snippet shareButton(inBar: boolean)}
+	{#if existingList && list.items.length > 0}
+		<button
+			aria-label="Jaa lista"
+			class={twMerge(
+				components.button({ type: 'positive', size: inBar ? 'lg' : 'md' }),
+				inBar ? 'aspect-square h-11 sm:aspect-auto' : 'aspect-square md:aspect-auto'
+			)}
+			onclick={async (e) => {
+				// Omit SID from the URL if shift key is held down
+				const includeSID = !e.shiftKey;
+
+				const shared = await handleShare({
+					type: 'list',
+					title: `Alkometriikka - ${list.name}`,
+					text: `Katso lista: ${list.name}`,
+					url: `${location.origin}/listat/?list=${listToURI(list)}`,
+					includeSID
+				});
+
+				if (!shared) alert('Linkki kopioitu leikepöydälle!');
+			}}
+		>
+			<Icon name="share" class="inline-block " /><span
+				class={inBar ? 'hidden sm:inline' : 'hidden md:block'}>Jaa</span
+			>
+		</button>
+	{/if}
+{/snippet}
+
+{#snippet saveButton(inBar: boolean)}
+	{#if !existingList}
+		<button
+			class={twMerge(
+				components.button({ type: 'positive', size: inBar ? 'lg' : 'md' }),
+				inBar && 'h-11 flex-1'
+			)}
+			onclick={() => {
+				sendAnalyticsEvent('save_list', { url: location.href });
+				const saved = saveList(list);
+				goto(`?list=${listToURI(saved)}`);
+			}}
+		>
+			<span>{inBar ? 'Tallenna' : 'Tallenna lista'}</span>
+			<Icon name="save" />
+		</button>
+	{/if}
+{/snippet}
+
+{#snippet compareButton(inBar: boolean)}
+	{#if compareIds.length > 1}
+		<a
+			href={resolve(compareURL(compareIds))}
+			aria-label="Vertaile listan tuotteita"
+			title={compareTruncated
+				? `Vertaile ${MAX_COMPARE_PRODUCTS} ensimmäistä tuotetta nykyisessä järjestyksessä`
+				: 'Vertaile listan tuotteita rinnakkain'}
+			class={twMerge(
+				components.button({ size: inBar ? 'lg' : 'md' }),
+				inBar ? 'aspect-square h-11 sm:aspect-auto' : 'aspect-square md:aspect-auto'
+			)}
+		>
+			<Icon name="compare" class="inline-block" />
+			<span class={inBar ? 'hidden sm:inline' : 'hidden md:block'}>Vertaile</span>
+		</a>
+	{/if}
+{/snippet}
+
+{#snippet actionBar()}
+	<BottomBar class="md:hidden">
+		{#if kaljakori.data.length > 0}
+			<button
+				type="button"
+				aria-haspopup="dialog"
+				class={twMerge(components.button({ size: 'lg' }), 'h-11 flex-1')}
+				onclick={() => toggleDetailsElement()}
+			>
+				<Icon name="info_circle" />
+				<span>Tiedot</span>
+			</button>
+		{/if}
+		{#if kaljakori.data.length > 1}
+			<FilterButton
+				activeCount={activeFilters.length}
+				onclick={() => filtersComponent?.toggleFilterElement()}
+			/>
+		{/if}
+		{@render compareButton(true)}
+		{@render shareButton(true)}
+		{@render saveButton(true)}
+	</BottomBar>
+{/snippet}
 
 <div class="flex flex-row items-center justify-between gap-4 border-b border-primary p-3 md:p-4">
 	<button
-		onclick={() => (window.history.length > 1 ? window.history.back() : goto('/'))}
+		onclick={() => (window.history.length > 1 ? window.history.back() : goto(resolve('/')))}
 		class={twMerge(components.button({ size: 'md' }), 'aspect-square md:aspect-auto')}
 	>
 		<Icon name="arrow_back" class="inline-block" />
@@ -208,7 +328,13 @@
 			class="w-full border-none bg-transparent p-0 text-2xl leading-none focus:ring-0"
 			bind:value={list.name}
 		/>
-		{#if list.items.length > 0}
+	{:else}
+		<!-- Fills the row like the name input, so the buttons stay grouped on the right -->
+		<h2 class="min-w-0 flex-1 truncate text-lg leading-none md:text-2xl">{list.name}</h2>
+	{/if}
+	<!-- Phones have these in the bottom bar -->
+	{#if !$isMobile}
+		{#if existingList && list.items.length > 0}
 			<button
 				class={twMerge(components.button({ size: 'md' }), 'aspect-square md:aspect-auto')}
 				onclick={() => {
@@ -218,42 +344,10 @@
 				<Icon name="sidebar" class="inline-block " />
 				<span class="hidden md:block"> Tiedot </span>
 			</button>
-			<button
-				class={twMerge(
-					components.button({ type: 'positive', size: 'md' }),
-					'aspect-square md:aspect-auto'
-				)}
-				onclick={async (e) => {
-					// Omit SID from the URL if shift key is held down
-					const includeSID = !e.shiftKey;
-					
-					const shared = await handleShare({
-						type: 'list',
-						title: `Alkometriikka - ${list.name}`,
-						text: `Katso lista: ${list.name}`,
-						url: `${location.origin}/listat?list=${listToURI(list)}`,
-						includeSID
-					});
-
-					if (!shared) alert('Linkki kopioitu leikepöydälle!');
-				}}
-			>
-				<Icon name="share" class="inline-block " /><span class="hidden md:block">Jaa</span>
-			</button>
 		{/if}
-	{:else}
-		<h2 class="text-lg leading-none md:text-2xl">{list.name}</h2>
-		<button
-			class={twMerge(components.button({ type: 'positive', size: 'md' }))}
-			onclick={() => {
-				sendAnalyticsEvent('save_list', { url: location.href });
-				const saved = saveList(list);
-				goto(`?list=${listToURI(saved)}`);
-			}}
-		>
-			<span>Tallenna lista</span>
-			<Icon name="save" />
-		</button>
+		{@render shareButton(false)}
+		{@render saveButton(false)}
+		{@render compareButton(false)}
 	{/if}
 </div>
 <div
@@ -264,10 +358,13 @@
 >
 	{#if kaljakori.data.length === 0}
 		<div class="grid flex-auto place-content-center">
-			<div class="mx-auto prose dark:prose-invert text-center">
+			<div class="mx-auto prose text-center dark:prose-invert">
 				<h2>Lista on tyhjä!</h2>
 				<p>Lisää tuotteita listaan tuotevalikosta!</p>
-				<a href="/" class={twMerge(components.button({ type: 'positive' }), 'mx-auto w-full')}>
+				<a
+					href={resolve('/')}
+					class={twMerge(components.button({ type: 'positive' }), 'mx-auto w-full')}
+				>
 					<span>Tuotevalikkoon</span>
 					<Icon name="arrow_right_stroke" />
 				</a>
@@ -281,6 +378,7 @@
 					bind:filterValues
 					bind:activeFilters
 					bind:this={filtersComponent}
+					resultCount={rows.length}
 					useURLParams={false}
 				/>
 			</aside>
@@ -343,17 +441,6 @@
 				</div>
 			</div>
 			<div class="flex flex-row flex-nowrap items-center justify-between gap-2">
-				{#if $isMobile}
-					<button
-						onclick={() => {
-							filtersComponent?.toggleFilterElement();
-						}}
-						class={twMerge(components.button(), 'w-full')}
-					>
-						<span>Näytä suodattimet</span>
-						<Icon name={'filter'} />
-					</button>
-				{/if}
 				<button
 					onclick={() => {
 						listRef?.scroll({ index: 0, smoothScroll: false });
@@ -368,14 +455,20 @@
 				<SvelteVirtualList items={rows} bind:this={listRef} itemsClass={'flex flex-col gap-3'}>
 					{#snippet renderItem(item, idx: number)}
 						{@const listItem = getListItem(list, item[AllColumns.Number])}
-						<ProductPreview product={item} quantity={listItem?.q} highlight={selectedHighlight} {kaljakori} highlightMax={highlightMax}>
+						<ProductPreview
+							product={item}
+							quantity={listItem?.q}
+							highlight={selectedHighlight}
+							{kaljakori}
+							{highlightMax}
+						>
 							{#snippet renderExtras()}
 								<div
-									class="absolute top-0 left-0 flex flex-nowrap items-center gap-0.5 rounded-br bg-gray-100 dark:bg-zinc-700 px-1.5 py-0.5 text-sm text-secondary"
+									class="absolute top-0 left-0 flex flex-nowrap items-center gap-0.5 rounded-br bg-gray-100 px-1.5 py-0.5 text-sm text-secondary dark:bg-zinc-700"
 								>
 									<Icon name="hashtag" />
-									<span>{`${(idx + 1)}`}</span>
-								</div>	
+									<span>{`${idx + 1}`}</span>
+								</div>
 								{#if listItem}
 									<div class={twMerge('flex flex-row')}>
 										<button
@@ -467,18 +560,32 @@
 		>
 			<dialog
 				bind:this={detailsElement}
+				closedby={$isLaptop ? 'any' : 'none'}
 				class={twMerge(
-					'fixed m-auto hidden h-full w-full flex-col gap-4 overflow-y-auto rounded-lg bg-primary border border-primary p-4 backdrop:backdrop-blur-sm open:flex xl:relative xl:w-84 xl:rounded-none xl:border-0 transition-transform open:starting:scale-0 md:open:starting:scale-100 open:scale-100'
+					// A bottom sheet like the category Tiedot sheet; on wide screens an inline sidebar
+					'fixed m-auto mb-0 hidden max-h-[85dvh] w-full max-w-none flex-col gap-4 overflow-y-auto rounded-t-lg border border-primary bg-primary p-4 transition-transform backdrop:backdrop-blur-sm open:flex open:translate-y-0 open:starting:translate-y-full',
+					'xl:relative xl:m-0 xl:h-full xl:max-h-none xl:w-84 xl:overflow-visible xl:rounded-none xl:border-0 xl:open:starting:translate-y-0'
 				)}
 			>
 				<h2 class="text-2xl font-bold">Listan tiedot</h2>
 				<div class="flex flex-auto flex-col gap-4">
 					<p>Tuotteita listassa: {details.totalItems}</p>
 					<p>Kokonaismäärä: {formatValue(details.totalVolume, AllColumns.BottleSize)}</p>
-					<p>Yhteensä alkoholia: {formatValue(details.totalAlcoholGrams, AllColumns.AlcoholGrams)}</p>
+					<p>
+						Yhteensä alkoholia: {formatValue(details.totalAlcoholGrams, AllColumns.AlcoholGrams)}
+					</p>
 					<p>Sokeria: {formatValue(details.totalSugarPerLitre, AllColumns.Sugar)}</p>
-					<p>Yhteensä sokeria: {formatValue(details.totalSugar, AllColumns.Sugar, {includeUnit: false})} g</p>
-					<p>Alkoholia per euro: {formatValue(details.totalAlcoholGramsPerEuro, AllColumns.AlcoholGramsPerEuro)} g</p>
+					<p>
+						Yhteensä sokeria: {formatValue(details.totalSugar, AllColumns.Sugar, {
+							includeUnit: false
+						})} g
+					</p>
+					<p>
+						Alkoholia per euro: {formatValue(
+							details.totalAlcoholGramsPerEuro,
+							AllColumns.AlcoholGramsPerEuro
+						)} g
+					</p>
 					<p>Arvioitu promillemäärä: {formatValue(details.totalBAC, AllColumns.PromillePerEuro)}</p>
 					{#if storeSummaries.length}
 						{@const bestStore = storeSummaries[0]}
@@ -510,8 +617,8 @@
 											</div>
 											<div class="flex shrink-0 flex-col gap-2 self-start">
 												<a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(directionsQuery)}`} target="_blank" rel="noopener noreferrer" aria-label={`Näytä ${summary.store.name} kartalla`} title="Näytä kartalla" class={twMerge(components.button({ size: 'sm' }), 'aspect-square p-3')}><Icon name="map_pin" /></a>
-												<a href={`/myymalat/${summary.store.id}/`} aria-label={`Avaa ${summary.store.name} myymäläsivu`} title="Avaa myymäläsivu" class={twMerge(components.button({ size: 'sm' }), 'aspect-square p-3')}><Icon name="store" /></a>
-												<a href={`/?${AllColumns.StoreAvailability}=${encodeURIComponent(summary.store.name)}`} aria-label={`Avaa ${summary.store.name} koko valikoima`} title="Avaa koko valikoima" class={twMerge(components.button({ size: 'sm' }), 'aspect-square p-3')}><Icon name="list" /></a>
+												<a href={resolve(`/myymalat/${summary.store.id}/`)} aria-label={`Avaa ${summary.store.name} myymäläsivu`} title="Avaa myymäläsivu" class={twMerge(components.button({ size: 'sm' }), 'aspect-square p-3')}><Icon name="store" /></a>
+												<a href={appPath(`/?${AllColumns.StoreAvailability}=${encodeURIComponent(summary.store.name)}`)} aria-label={`Avaa ${summary.store.name} koko valikoima`} title="Avaa koko valikoima" class={twMerge(components.button({ size: 'sm' }), 'aspect-square p-3')}><Icon name="list" /></a>
 											</div>
 										</li>
 									{/each}
@@ -520,21 +627,27 @@
 						</section>
 					{/if}
 					<div
-						class={twMerge(components.button({ size: 'lg' }), 'sticky bottom-0 z-10 mt-auto w-full hover:cursor-default')}
+						class={twMerge(
+							components.button({ size: 'lg' }),
+							'w-full hover:cursor-default xl:sticky xl:bottom-0 xl:z-10 xl:mt-auto'
+						)}
 					>
 						<Icon name="shopping_bag" />
 						<h2>Yhteensä: {formatValue(details.totalPrice, AllColumns.Price)}</h2>
 					</div>
 				</div>
 				{#if $isLaptop}
-					<div class="flex flex-row flex-wrap justify-end gap-4">
+					<!-- Pinned to the bottom of the scrolling sheet, where the Tiedot button that opened it was. Sticky offsets count from inside the sheet's p-4, so -bottom-4 reaches its edge -->
+					<div
+						class="sticky -bottom-4 -mx-4 -mb-4 bg-primary px-4 pt-2.5 pb-[calc(--spacing(2.5)_+_env(safe-area-inset-bottom))] shadow-[0_-4px_12px_rgba(0,0,0,0.06)]"
+					>
 						<button
-							onclick={() => {
-								toggleDetailsElement();
-							}}
-							class={twMerge(components.button({ type: 'negative' }))}
+							type="button"
+							class={twMerge(components.button({ size: 'lg' }), 'h-11 w-full')}
+							onclick={() => toggleDetailsElement()}
 						>
-							Sulje
+							<Icon name="x" />
+							<span>Sulje</span>
 						</button>
 					</div>
 				{/if}

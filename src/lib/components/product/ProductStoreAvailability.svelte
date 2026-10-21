@@ -1,16 +1,19 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import type { AvailabilityStore } from '$lib/types';
 	import {
 		formatStoreDistance,
 		getStoreDistance,
 		getTodaysOpeningHours,
 		isStoreOpen
-	} from '$lib/utils/availability';
-	import { requestSettingsOpen } from '$lib/utils/settings';
-	import { components } from '$lib/utils/styles';
+	} from '$lib/utils/catalog/availability';
+	import { formatRelativeTime } from '$lib/utils/format/format';
+	import { requestSettingsOpen } from '$lib/utils/app/settings';
+	import { components } from '$lib/utils/ui/styles';
 	import { twMerge } from 'tailwind-merge';
+	import ProductStockTrend from './ProductStockTrend.svelte';
 
-	// productNumber is threaded through for a future `show_availability` re-evaluation
+	// productNumber is also threaded through for a future `show_availability` re-evaluation
 	// (see AnalyticsEventMap) - not fired here since the section is always visible now,
 	// not opened by the user, so mounting isn't a meaningful "viewed" signal.
 	const {
@@ -28,16 +31,43 @@
 		availabilityUpdated: Date | undefined;
 		class?: string;
 	} = $props();
+
+	const HOUR_MS = 3_600_000;
+	let now = $state(new Date());
+
+	// Keep the minute-level "päivitetty x minuuttia sitten" label ticking. Past the
+	// first hour the label only changes hourly, so stop refreshing.
+	$effect(() => {
+		if (!availabilityUpdated) return;
+		const updated = availabilityUpdated.getTime();
+		if (Date.now() - updated >= HOUR_MS) return;
+		const interval = setInterval(() => {
+			now = new Date();
+			if (now.getTime() - updated >= HOUR_MS) clearInterval(interval);
+		}, 60_000);
+		return () => clearInterval(interval);
+	});
 </script>
 
-<section {id} class={twMerge('flex flex-col overflow-hidden rounded border border-primary bg-secondary scroll-mt-4', _class)}>
+<section
+	{id}
+	class={twMerge(
+		'flex scroll-mt-4 flex-col overflow-hidden rounded border border-primary bg-secondary',
+		_class
+	)}
+>
 	<header class="flex flex-col gap-0.5 border-b border-primary p-3.5">
 		<h2 class="text-lg font-bold">Myymäläsaatavuus</h2>
 		<p class="text-sm text-secondary">
-			{stores.length} myymälää{availabilityUpdated
-				? ` · päivitetty ${availabilityUpdated.toLocaleString('fi-FI')}`
-				: ''}
+			{stores.length}
+			{stores.length === 1 ? 'myymälä' : 'myymälää'}{#if availabilityUpdated}
+				· <time
+					datetime={availabilityUpdated.toISOString()}
+					title={availabilityUpdated.toLocaleString('fi-FI')}
+					>päivitetty {formatRelativeTime(availabilityUpdated, now)}</time
+				>{/if}
 		</p>
+		<ProductStockTrend {productNumber} class="mt-1" />
 	</header>
 	{#if !preferredStore}
 		<div class="border-b border-primary p-3.5">
@@ -58,7 +88,9 @@
 				{@const storeOpen = isStoreOpen(store)}
 				<li class="flex gap-2.5 border-b border-primary p-3.5 last:border-b-0">
 					<div class="flex min-w-0 flex-1 flex-col gap-0.5">
-						<a href={`/myymalat/${store.id}/`} class="w-fit font-bold hover:underline">{store.name}</a>
+						<a href={resolve(`/myymalat/${store.id}/`)} class="w-fit font-bold hover:underline"
+							>{store.name}</a
+						>
 						{#if store.address}
 							<span class="text-sm text-secondary">{store.address}</span>
 						{/if}

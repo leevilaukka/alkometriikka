@@ -2,13 +2,14 @@
 	import Compare from '$lib/components/views/Compare.svelte';
 	import { page } from '$app/state';
 	import { onMount } from 'svelte';
-	import { compareIdsFromParam } from '$lib/utils/compare';
-	import { sendAnalyticsEvent } from '$lib/utils/helpers';
+	import { compareIdsFromParam } from '$lib/utils/user/compare';
+	import { readSearchParams } from '$lib/utils/app/compressedParams';
+	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 	import type { PriceListItem } from '$lib/types';
 
 	let { data } = $props();
 
-	let ids = $derived(compareIdsFromParam(page.url.searchParams.get('ids')));
+	let ids = $derived(compareIdsFromParam(readSearchParams(page.url).get('ids')));
 
 	// The compare URL's ids are excluded from automatic pageview tracking (to keep
 	// the pathname stable across arbitrary comparisons), so send an explicit event

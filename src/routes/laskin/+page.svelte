@@ -1,9 +1,12 @@
 <script lang="ts">
-	import { AllColumns, DrunkColumns, GenderOptionsMap } from '$lib/utils/constants';
-	import { calculateDrunkValue } from '$lib/utils/alko';
-	import { components } from '$lib/utils/styles';
-	import { formatValue } from '$lib/utils/format';
-	import { generateTitle, sendAnalyticsEvent, setSEO } from '$lib/utils/helpers';
+	import { AllColumns, DrunkColumns } from '$lib/utils/constants/columns';
+	import { GenderOptionsMap } from '$lib/utils/constants/app';
+	import { calculateDrunkValue } from '$lib/utils/catalog/alko';
+	import { components } from '$lib/utils/ui/styles';
+	import { formatValue } from '$lib/utils/format/format';
+	import { generateTitle, setSEO } from '$lib/utils/app/meta';
+	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
+	import { staticPage } from '$lib/utils/app/seo';
 	import { personalInfo } from '$lib/global.svelte';
 	import type { GenderOptions } from '$lib/types';
 	import { twMerge } from 'tailwind-merge';
@@ -13,7 +16,14 @@
 		let timeout: ReturnType<typeof setTimeout> | undefined;
 		const track = (usingSavedValues: boolean) => {
 			if (!volume || !percentage || !price) return;
-			sendAnalyticsEvent('calculator_used', { using_saved_values: usingSavedValues, state: {volume, percentage, price}, result: {perEuro: result?.[DrunkColumns.AlcoholGramsPerEuro] || 0, rawAlcohol: result?.[DrunkColumns.AlcoholGrams] || 0} });
+			sendAnalyticsEvent('calculator_used', {
+				using_saved_values: usingSavedValues,
+				state: { volume, percentage, price },
+				result: {
+					perEuro: result?.[DrunkColumns.AlcoholGramsPerEuro] || 0,
+					rawAlcohol: result?.[DrunkColumns.AlcoholGrams] || 0
+				}
+			});
 		};
 
 		return {
@@ -70,9 +80,7 @@
 
 	const effectiveWeight = $derived(useSavedValues ? personalInfo.weight : weight);
 	const effectiveGender = $derived(
-		useSavedValues
-			? (personalInfo.gender ?? GenderOptionsMap.Unspecified)
-			: gender
+		useSavedValues ? (personalInfo.gender ?? GenderOptionsMap.Unspecified) : gender
 	);
 
 	const result = $derived.by(() => {
@@ -105,7 +113,9 @@
 				.filter((item) => item[AllColumns.RemovedFromSelection] !== true)
 				.map((item) => Number(item[AllColumns.AlcoholGramsPerEuro]))
 				.filter(Number.isFinite);
-			const rank = 1 + catalogValues.filter((value) => value > result[DrunkColumns.AlcoholGramsPerEuro]).length;
+			const rank =
+				1 +
+				catalogValues.filter((value) => value > result[DrunkColumns.AlcoholGramsPerEuro]).length;
 
 			return { rank, total: catalogValues.length };
 		});
@@ -121,10 +131,8 @@
 	] as const;
 
 	$effect(() => {
-		setSEO({
-			description: 'Laske juoman alkoholimäärä, annokset ja promillearvio omilla arvoillasi.',
-			keywords: 'laskin, promillelaskuri, alkoholi, annokset'
-		});
+		const { description, keywords } = staticPage('/laskin/');
+		setSEO({ description, keywords });
 	});
 
 	$effect(() => {
@@ -146,21 +154,53 @@
 		</p>
 	</header>
 
-	<form class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]" onsubmit={(event) => event.preventDefault()} onfocusout={flushWhenLeavingCalculator}>
+	<form
+		class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]"
+		onsubmit={(event) => event.preventDefault()}
+		onfocusout={flushWhenLeavingCalculator}
+	>
 		<section class="flex flex-col gap-4 rounded border border-primary bg-secondary p-4 md:p-6">
 			<h2 class="text-lg font-bold">Juoman tiedot</h2>
 			<div class="grid gap-4 sm:grid-cols-2">
 				<label class="flex flex-col gap-1" for="volume">
 					<span class="text-sm">Tilavuus (l)</span>
-					<input id="volume" bind:value={volume} oninput={markCalculatorEdited} class={twMerge(components.input(), 'w-full')} type="number" min="0.001" step="0.001" required />
+					<input
+						id="volume"
+						bind:value={volume}
+						oninput={markCalculatorEdited}
+						class={twMerge(components.input(), 'w-full')}
+						type="number"
+						min="0.001"
+						step="0.001"
+						required
+					/>
 				</label>
 				<label class="flex flex-col gap-1" for="percentage">
 					<span class="text-sm">Alkoholipitoisuus (%)</span>
-					<input id="percentage" bind:value={percentage} oninput={markCalculatorEdited} class={twMerge(components.input(), 'w-full')} type="number" min="0" max="100" step="0.1" required />
+					<input
+						id="percentage"
+						bind:value={percentage}
+						oninput={markCalculatorEdited}
+						class={twMerge(components.input(), 'w-full')}
+						type="number"
+						min="0"
+						max="100"
+						step="0.1"
+						required
+					/>
 				</label>
 				<label class="flex flex-col gap-1" for="price">
 					<span class="text-sm">Hinta (€)</span>
-					<input id="price" bind:value={price} oninput={markCalculatorEdited} class={twMerge(components.input(), 'w-full')} type="number" min="0" step="0.01" required />
+					<input
+						id="price"
+						bind:value={price}
+						oninput={markCalculatorEdited}
+						class={twMerge(components.input(), 'w-full')}
+						type="number"
+						min="0"
+						step="0.01"
+						required
+					/>
 				</label>
 			</div>
 		</section>
@@ -168,7 +208,9 @@
 		<section class="flex flex-col gap-4 rounded border border-primary bg-secondary p-4 md:p-6">
 			<div>
 				<h2 class="text-lg font-bold">Promillearvion tiedot</h2>
-				<p class="mt-1 text-sm text-secondary">Paino ja sukupuoli vaikuttavat vain promillearvioihin.</p>
+				<p class="mt-1 text-sm text-secondary">
+					Paino ja sukupuoli vaikuttavat vain promillearvioihin.
+				</p>
 			</div>
 			<label class="flex items-center gap-2 text-sm">
 				<input checked={useSavedValues} onclick={toggleSavedValues} type="checkbox" />
@@ -176,11 +218,38 @@
 			</label>
 			<label class="flex flex-col gap-1" for="weight">
 				<span class="text-sm">Paino (kg)</span>
-				<input id="weight" value={effectiveWeight ?? ''} oninput={updateWeight} disabled={useSavedValues} aria-describedby="saved-values-help" class={twMerge(components.input(), 'w-full', useSavedValues ? 'cursor-not-allowed opacity-60' : '')} type="number" min="1" max="500" step="0.1" placeholder="Oletusarvo" />
+				<input
+					id="weight"
+					value={effectiveWeight ?? ''}
+					oninput={updateWeight}
+					disabled={useSavedValues}
+					aria-describedby="saved-values-help"
+					class={twMerge(
+						components.input(),
+						'w-full',
+						useSavedValues ? 'cursor-not-allowed opacity-60' : ''
+					)}
+					type="number"
+					min="1"
+					max="500"
+					step="0.1"
+					placeholder="Oletusarvo"
+				/>
 			</label>
 			<label class="flex flex-col gap-1" for="gender">
 				<span class="text-sm">Sukupuoli</span>
-				<select id="gender" value={effectiveGender} onchange={updateGender} disabled={useSavedValues} aria-describedby="saved-values-help" class={twMerge(components.input(), 'w-full', useSavedValues ? 'cursor-not-allowed opacity-60' : '')}>
+				<select
+					id="gender"
+					value={effectiveGender}
+					onchange={updateGender}
+					disabled={useSavedValues}
+					aria-describedby="saved-values-help"
+					class={twMerge(
+						components.input(),
+						'w-full',
+						useSavedValues ? 'cursor-not-allowed opacity-60' : ''
+					)}
+				>
 					{#each Object.values(GenderOptionsMap) as option (option)}
 						<option value={option}>{option}</option>
 					{/each}
@@ -205,7 +274,9 @@
 					<div class="rounded border border-brand-2 bg-brand-4 p-4 text-white">
 						<p class="text-sm text-white/75">Vertailu Alkon aktiiviseen valikoimaan</p>
 						<p class="mt-1 text-xl font-bold">Sijoittuisi sijalle {rank.rank} / {rank.total}</p>
-						<p class="mt-1 text-sm text-white/75">Vertailu perustuu alkoholigrammoihin euroa kohden.</p>
+						<p class="mt-1 text-sm text-white/75">
+							Vertailu perustuu alkoholigrammoihin euroa kohden.
+						</p>
 					</div>
 				{/if}
 			{:catch}

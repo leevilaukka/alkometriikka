@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { AllColumns } from '$lib/utils/constants';
+	import { AllColumns } from '$lib/utils/constants/columns';
 	import type { PriceListItem } from '$lib/types';
-	import type { SaleInfo } from '$lib/utils/sales';
+	import type { SaleInfo } from '$lib/utils/catalog/sales';
 	import ProductImage from '../widgets/ProductImage.svelte';
 	import Icon from '../widgets/Icon.svelte';
 	import { twMerge } from 'tailwind-merge';

@@ -1,13 +1,14 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import { AllColumns } from '$lib/utils/constants';
-	import { formatValue } from '$lib/utils/format';
-	import { getSaleInfo } from '$lib/utils/sales';
-	import { sendAnalyticsEvent } from '$lib/utils/helpers';
+	import { AllColumns } from '$lib/utils/constants/columns';
+	import { formatValue } from '$lib/utils/format/format';
+	import { getSaleInfo } from '$lib/utils/catalog/sales';
+	import { productFeedPath } from '$lib/utils/catalog/alko';
+	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 	import type { PriceHistoryEntry, PriceListItem } from '$lib/types';
 	import type { ChartConfiguration } from 'chart.js';
 	import ChartCard from '../widgets/ChartCard.svelte';
-	import { components } from '$lib/utils/styles';
+	import Icon from '../widgets/Icon.svelte';
+	import { components } from '$lib/utils/ui/styles';
 	import { twMerge } from 'tailwind-merge';
 	import { dev } from '$app/environment';
 
@@ -24,16 +25,23 @@
 	let selectedRange: RangeKey = $state('kaikki');
 
 	const fullHistory = $derived(product[AllColumns.History] ?? []);
+	const feedHref = $derived(productFeedPath(product));
 	const filteredHistory = $derived.by(() => {
 		const range = ranges.find((r) => r.key === selectedRange);
 		if (!range || range.days === null) return fullHistory;
 		const cutoff = new Date();
 		cutoff.setDate(cutoff.getDate() - range.days);
 		const cutoffISO = cutoff.toISOString().slice(0, 10);
-		return fullHistory.filter((entry) => entry.date >= cutoffISO);
+		const inRange = fullHistory.filter((entry) => entry.date >= cutoffISO);
+		// Start the range with the price that was in effect at its start, so a range
+		// without recent price changes still shows the current price instead of nothing
+		const previous = fullHistory.findLast((entry) => entry.date < cutoffISO);
+		return previous ? [{ ...previous, date: cutoffISO }, ...inRange] : inRange;
 	});
 
-	function isSaleEntry(entry: PriceHistoryEntry): entry is PriceHistoryEntry & { normalPrice: number } {
+	function isSaleEntry(
+		entry: PriceHistoryEntry
+	): entry is PriceHistoryEntry & { normalPrice: number } {
 		return entry.normalPrice != null && entry.price < entry.normalPrice;
 	}
 
@@ -49,8 +57,14 @@
 		let run: { start: string; end: string } | null = null;
 		history.forEach((entry) => {
 			if (isSaleEntry(entry)) {
-				if (!run) run = { start: entry.date, end: entry.date };
-				else run.end = entry.date;
+				// The point may be recorded before the campaign starts, so prefer the real start date.
+				if (!run) {
+					const start =
+						entry.campaignStart && entry.campaignStart > entry.date
+							? entry.campaignStart
+							: entry.date;
+					run = { start, end: entry.date };
+				} else run.end = entry.date;
 				if (entry.campaignStart && entry.campaignStart < run.start) run.start = entry.campaignStart;
 				if (entry.campaignEnd && entry.campaignEnd > run.end) run.end = entry.campaignEnd;
 			} else if (run) {
@@ -106,7 +120,10 @@
 				ctx.font = '12px Inter, system-ui, sans-serif';
 				for (const w of windows) {
 					const drawMarker = (date: string, index: number, label: string) => {
-						const x = Math.max(chartArea.left, Math.min(chartArea.right, xScale.getPixelForValue(index)));
+						const x = Math.max(
+							chartArea.left,
+							Math.min(chartArea.right, xScale.getPixelForValue(index))
+						);
 						const labelGap = 22;
 						ctx.setLineDash([6, 4]);
 						ctx.beginPath();
@@ -189,31 +206,52 @@
 			plugins: [campaignLinePlugin]
 		};
 	});
-
-	onMount(() => {
-		if (fullHistory.length > 1) {
-			sendAnalyticsEvent('show_price_history', { product_number: product[AllColumns.Number] });
-		}
-	});
 </script>
+
+<svelte:head>
+	{#if feedHref}
+		<link
+			rel="alternate"
+			type="application/rss+xml"
+			title={`${product[AllColumns.Name]} – hintamuutokset`}
+			href={feedHref}
+		/>
+	{/if}
+</svelte:head>
 
 {#if dev || fullHistory.length > 1}
 	<div class={_class}>
 		<ChartCard title="Hintahistoria" {config}>
 			{#snippet headerEnd()}
-				<div class="flex overflow-hidden rounded border border-primary bg-primary">
-					{#each ranges as range (range.key)}
-						<button
-							type="button"
-							class={twMerge(
-								'px-2.5 py-1 text-sm',
-								selectedRange === range.key ? 'bg-secondary font-bold' : 'hover:bg-secondary'
-							)}
-							onclick={() => (selectedRange = range.key)}
+				<div class="flex items-center gap-2">
+					{#if feedHref}
+						<a
+							href={feedHref}
+							onclick={() =>
+								sendAnalyticsEvent('click_feed', { feed: 'product', location: 'price_history' })}
+							class="flex items-center gap-1 rounded px-1.5 py-1 text-sm text-secondary hover:bg-primary"
+							title="Tilaa tuotteen hinnanmuutokset RSS-syötteenä"
+							aria-label="Tilaa tuotteen hinnanmuutokset RSS-syötteenä"
 						>
-							{range.label}
-						</button>
-					{/each}
+							<Icon name="rss" />
+							<span class="hidden sm:inline">RSS</span>
+						</a>
+					{/if}
+					<div class="flex overflow-hidden rounded border border-primary bg-primary">
+						{#each ranges as range (range.key)}
+							<button
+								type="button"
+								aria-pressed={selectedRange === range.key}
+								class={twMerge(
+									'px-2.5 py-1 text-sm',
+									selectedRange === range.key ? 'bg-secondary font-bold' : 'hover:bg-secondary'
+								)}
+								onclick={() => (selectedRange = range.key)}
+							>
+								{range.label}
+							</button>
+						{/each}
+					</div>
 				</div>
 			{/snippet}
 		</ChartCard>

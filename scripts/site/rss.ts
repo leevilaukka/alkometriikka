@@ -1,20 +1,29 @@
 import Bun from 'bun';
 import { mkdir, readdir, rm } from 'node:fs/promises';
 import path from 'node:path';
-import { MigratedData } from '../data/types';
+import type { MigratedData } from '../data/types';
 import { DEV } from '../data/constants';
 import { ogImageUrl } from '../og/og';
+import type { StoredProduct } from '../../src/lib/utils/catalog/dataset';
+import {
+	buildCategoryTree,
+	categoryFeedPath,
+	categoryPath,
+	categorySlug,
+	categoryTitle,
+	CATEGORY_FEED_DIR
+} from '../../src/lib/utils/catalog/categories';
 
 /** Max items in the aggregate (whole-catalog) feed. */
 const RSS_LIMIT = 1000;
 /** Max items in each per-product feed. */
 const PER_PRODUCT_LIMIT = 20;
+/** Max items in each per-category feed. */
+const PER_CATEGORY_LIMIT = 50;
 const SITE_URL = 'https://alkometriikka.fi';
 const RSS_AGGREGATE_PATH = 'rss.xml';
 const RSS_DIR = 'rss';
 const FEED_AGGREGATE_PATH = 'feed.json';
-
-type PricePoint = { date: string; price: number };
 
 type FeedItem = {
 	guid: string;
@@ -26,12 +35,10 @@ type FeedItem = {
 	image: string | null;
 	name: string;
 	category: string;
+	/** Slugs of the product's Tyyppi and Alatyyppi, for the per-category feeds. */
+	typeSlug: string;
+	subTypeSlug: string;
 	tags: string[];
-};
-
-type ProductRecord = {
-	values: unknown[];
-	priceHistory?: PricePoint[];
 };
 
 function escapeXml(value: unknown): string {
@@ -113,7 +120,7 @@ function alkoImageUrl(productId: string): string {
  */
 function collectPerProductItems(
 	schema: string[],
-	products: Record<string, ProductRecord>,
+	products: Record<string, StoredProduct>,
 	ogManifest: Record<string, string>
 ): Map<string, FeedItem[]> {
 	const byProduct = new Map<string, FeedItem[]>();
@@ -158,6 +165,8 @@ function collectPerProductItems(
 				image,
 				name,
 				category,
+				typeSlug: categorySlug(asText(fields.Tyyppi)),
+				subTypeSlug: categorySlug(asText(fields.Alatyyppi)),
 				tags: []
 			});
 		}
@@ -173,7 +182,7 @@ function collectPerProductItems(
  */
 function collectNewProductItems(
 	schema: string[],
-	products: Record<string, ProductRecord>,
+	products: Record<string, StoredProduct>,
 	ogManifest: Record<string, string>
 ): FeedItem[] {
 	const items: FeedItem[] = [];
@@ -219,6 +228,8 @@ function collectNewProductItems(
 			image: ogManifest[productId] ? ogImageUrl(ogManifest[productId]) : alkoImageUrl(id),
 			name,
 			category,
+			typeSlug: categorySlug(asText(fields.Tyyppi)),
+			subTypeSlug: categorySlug(asText(fields.Alatyyppi)),
 			tags: ['Uutuus']
 		});
 	}
@@ -240,18 +251,18 @@ function generateRssXml(
 	const itemsXml = items
 		.map(
 			(item) =>
-				`\t\t<item>\n` +
-				`\t\t\t<title>${escapeXml(item.title)}</title>\n` +
-				`\t\t\t<link>${escapeXml(item.link)}</link>\n` +
-				`\t\t\t<guid isPermaLink="false">${escapeXml(item.guid)}</guid>\n` +
-				`\t\t\t<pubDate>${escapeXml(item.pubDate)}</pubDate>\n` +
+				`<item>` +
+				`<title>${escapeXml(item.title)}</title>` +
+				`<link>${escapeXml(item.link)}</link>` +
+				`<guid isPermaLink="false">${escapeXml(item.guid)}</guid>` +
+				`<pubDate>${escapeXml(item.pubDate)}</pubDate>` +
 				[...item.tags, item.category]
 					.filter(Boolean)
-					.map((category) => `\t\t\t<category>${escapeXml(category)}</category>\n`)
+					.map((category) => `<category>${escapeXml(category)}</category>`)
 					.join('') +
-				`\t\t\t<description><![CDATA[${item.description}]]></description>\n` +
-				(item.image ? `\t\t\t<media:thumbnail url="${escapeXml(item.image)}" />\n` : '') +
-				`\t\t</item>\n`
+				`<description><![CDATA[${item.description}]]></description>` +
+				(item.image ? `<media:thumbnail url="${escapeXml(item.image)}" />` : '') +
+				`</item>`
 		)
 		.join('');
 
@@ -260,61 +271,57 @@ function generateRssXml(
 		: new Date().toUTCString();
 
 	return (
-		`<?xml version="1.0" encoding="UTF-8"?>\n` +
-		`<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">\n` +
-		`\t<channel>\n` +
-		`\t\t<title>${escapeXml(channel.title)}</title>\n` +
-		`\t\t<link>${escapeXml(channel.link)}</link>\n` +
-		`\t\t<description>${escapeXml(channel.description)}</description>\n` +
-		`\t\t<language>fi</language>\n` +
-		`\t\t<lastBuildDate>${lastBuildDate}</lastBuildDate>\n` +
-		`\t\t<generator>alkometriikka rss.ts</generator>\n` +
-		`\t\t<docs>https://www.rssboard.org/rss-specification</docs>\n` +
-		`\t\t<ttl>60</ttl>\n` +
-		`\t\t<atom:link href="${escapeXml(channel.selfUrl)}" rel="self" type="application/rss+xml" />\n` +
-		`\t\t<image>\n` +
-		`\t\t\t<url>${SITE_URL}/favicon.ico</url>\n` +
-		`\t\t\t<title>${escapeXml(channel.title)}</title>\n` +
-		`\t\t\t<link>${SITE_URL}/</link>\n` +
-		`\t\t\t<width>48</width>\n` +
-		`\t\t\t<height>48</height>\n` +
-		`\t\t</image>\n` +
+		`<?xml version="1.0" encoding="UTF-8"?>` +
+		`<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">` +
+		`<channel>` +
+		`<title>${escapeXml(channel.title)}</title>` +
+		`<link>${escapeXml(channel.link)}</link>` +
+		`<description>${escapeXml(channel.description)}</description>` +
+		`<language>fi</language>` +
+		`<lastBuildDate>${lastBuildDate}</lastBuildDate>` +
+		`<generator>alkometriikka rss.ts</generator>` +
+		`<docs>https://www.rssboard.org/rss-specification</docs>` +
+		`<ttl>60</ttl>` +
+		`<atom:link href="${escapeXml(channel.selfUrl)}" rel="self" type="application/rss+xml" />` +
+		`<image>` +
+		`<url>${SITE_URL}/favicon.ico</url>` +
+		`<title>${escapeXml(channel.title)}</title>` +
+		`<link>${SITE_URL}/</link>` +
+		`<width>48</width>` +
+		`<height>48</height>` +
+		`</image>` +
 		itemsXml +
-		`\t</channel>\n` +
-		`</rss>\n`
+		`</channel>` +
+		`</rss>`
 	);
 }
 
 /** Serializes feed items to the JSON Feed 1.1 format (https://jsonfeed.org). */
 function generateJsonFeed(items: FeedItem[], channel: ChannelInfo): string {
-	return JSON.stringify(
-		{
-			version: 'https://jsonfeed.org/version/1.1',
-			title: channel.title,
-			home_page_url: channel.link,
-			feed_url: channel.selfUrl,
-			description: channel.description,
-			language: 'fi',
-			favicon: `${SITE_URL}/favicon.ico`,
-			items: items.map((item) => {
-				const entry: Record<string, string | string[]> = {
-					id: item.guid,
-					url: item.link,
-					title: item.title,
-					content_html: item.description,
-					summary: stripHtml(item.description),
-					date_published: toIsoDate(item.date)
-				};
-				if (item.image) entry.image = item.image;
-				// Split the hierarchical "Tyyppi / Alatyyppi" category into flat tags,
-				// prefixed with any item tags ("Uutuus" for new products).
-				entry.tags = [...item.tags, ...item.category.split(' / ')].filter(Boolean);
-				return entry;
-			})
-		},
-		null,
-		'\t'
-	);
+	return JSON.stringify({
+		version: 'https://jsonfeed.org/version/1.1',
+		title: channel.title,
+		home_page_url: channel.link,
+		feed_url: channel.selfUrl,
+		description: channel.description,
+		language: 'fi',
+		favicon: `${SITE_URL}/favicon.ico`,
+		items: items.map((item) => {
+			const entry: Record<string, string | string[]> = {
+				id: item.guid,
+				url: item.link,
+				title: item.title,
+				content_html: item.description,
+				summary: stripHtml(item.description),
+				date_published: toIsoDate(item.date)
+			};
+			if (item.image) entry.image = item.image;
+			// Split the hierarchical "Tyyppi / Alatyyppi" category into flat tags,
+			// prefixed with any item tags ("Uutuus" for new products).
+			entry.tags = [...item.tags, ...item.category.split(' / ')].filter(Boolean);
+			return entry;
+		})
+	});
 }
 
 async function writePerProductFeeds(
@@ -332,25 +339,16 @@ async function writePerProductFeeds(
 			link: feed[0]?.link ?? `${SITE_URL}/tuotteet/${encodeURIComponent(productId)}/`,
 			selfUrl: `${SITE_URL}/rss/${encodeURIComponent(productId)}.xml`
 		};
-		await Promise.all([
-			Bun.write(
-				path.join(RSS_DIR, `${productId}.xml`),
-				generateRssXml(feed, channel, lastBuildDateISO)
-			),
-			Bun.write(
-				path.join(RSS_DIR, `${productId}.json`),
-				generateJsonFeed(feed, {
-					...channel,
-					selfUrl: `${SITE_URL}/rss/${encodeURIComponent(productId)}.json`
-				})
-			)
-		]);
+		await Bun.write(
+			path.join(RSS_DIR, `${productId}.xml`),
+			generateRssXml(feed, channel, lastBuildDateISO)
+		);
 		writtenIds.add(productId);
 	}
 
 	// Prune stale per-product feeds for products that dropped out of the
 	// dataset, so an old feed never lingers on the deployed site.
-	const expected = new Set([...writtenIds].flatMap((id) => [`${id}.xml`, `${id}.json`]));
+	const expected = new Set([...writtenIds].map((id) => `${id}.xml`));
 	let existing: string[] = [];
 	try {
 		existing = await readdir(RSS_DIR);
@@ -358,11 +356,66 @@ async function writePerProductFeeds(
 		existing = [];
 	}
 	for (const entry of existing) {
+		// Category feeds live in their own subdirectory, regenerated by writeCategoryFeeds
+		if (`${RSS_DIR}/${entry}` === CATEGORY_FEED_DIR) continue;
 		if (!expected.has(entry)) {
 			await rm(path.join(RSS_DIR, entry), { force: true });
 		}
 	}
 	return writtenIds.size;
+}
+
+/**
+ * One feed per category page (Tyyppi and Tyyppi › Alatyyppi) with the newest
+ * products and price changes in it. Fully regenerated every run.
+ */
+async function writeCategoryFeeds(
+	schema: string[],
+	products: Record<string, StoredProduct>,
+	items: FeedItem[],
+	lastBuildDateISO: string | undefined
+): Promise<number> {
+	const typeIndex = schema.indexOf('Tyyppi');
+	const subTypeIndex = schema.indexOf('Alatyyppi');
+	const tree = buildCategoryTree(
+		Object.values(products)
+			.filter((product) => product && Array.isArray(product.values))
+			.map((product) => ({
+				type: product.values[typeIndex],
+				subType: product.values[subTypeIndex],
+				removed: Boolean(product.meta?.removedFromSelection)
+			}))
+	);
+
+	await rm(CATEGORY_FEED_DIR, { recursive: true, force: true });
+	let count = 0;
+	for (const type of tree) {
+		for (const trail of [[type], ...type.children.map((subType) => [type, subType])]) {
+			const [typeNode, subTypeNode] = trail;
+			const feed = items
+				.filter(
+					(item) =>
+						item.typeSlug === typeNode.slug &&
+						(!subTypeNode || item.subTypeSlug === subTypeNode.slug)
+				)
+				.slice(0, PER_CATEGORY_LIMIT);
+			if (feed.length === 0) continue;
+
+			const feedPath = categoryFeedPath(typeNode.slug, subTypeNode?.slug);
+			const name = categoryTitle(trail);
+			const channel: ChannelInfo = {
+				title: `Alkometriikka – ${name} – uutuudet ja hintamuutokset`,
+				description: `Uusimmat uutuudet ja hinnanmuutokset kategoriassa ${name}.`,
+				link: `${SITE_URL}${categoryPath(typeNode.slug, subTypeNode?.slug)}`,
+				selfUrl: `${SITE_URL}${feedPath}.xml`
+			};
+			// RSS only: a JSON Feed per category would double the size for little use
+			await mkdir(path.dirname(`.${feedPath}`), { recursive: true });
+			await Bun.write(`.${feedPath}.xml`, generateRssXml(feed, channel, lastBuildDateISO));
+			count += 1;
+		}
+	}
+	return count;
 }
 
 async function main() {
@@ -411,11 +464,18 @@ async function main() {
 	]);
 
 	const productFeedCount = await writePerProductFeeds(byProduct, lastBuildDateISO);
+	const categoryFeedCount = await writeCategoryFeeds(
+		schema,
+		products,
+		[...newItems, ...priceChanges].sort(compareItemsByDate),
+		lastBuildDateISO
+	);
 	const totalChanges = [...byProduct.values()].reduce((sum, items) => sum + items.length, 0);
 
 	console.log(
 		`RSS: aggregate ${aggregate.length} of ${totalChanges} price changes + ${newItems.length} new products → ${RSS_AGGREGATE_PATH}+${FEED_AGGREGATE_PATH}; ` +
-			`${productFeedCount} per-product feeds (xml+json) → ${RSS_DIR}/`
+			`${productFeedCount} per-product feeds (xml) → ${RSS_DIR}/; ` +
+			`${categoryFeedCount} per-category feeds (xml) → ${CATEGORY_FEED_DIR}/`
 	);
 }
 

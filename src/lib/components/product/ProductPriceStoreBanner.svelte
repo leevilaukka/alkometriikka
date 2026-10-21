@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { AllColumns } from '$lib/utils/constants';
-	import { formatValue } from '$lib/utils/format';
+	import { AllColumns, MissingValues } from '$lib/utils/constants/columns';
+	import { formatValue } from '$lib/utils/format/format';
 	import type { AvailabilityStore, PriceListItem } from '$lib/types';
-	import type { SaleInfo } from '$lib/utils/sales';
-	import { requestSettingsOpen } from '$lib/utils/settings';
-	import { components } from '$lib/utils/styles';
+	import type { SaleInfo } from '$lib/utils/catalog/sales';
+	import { requestSettingsOpen } from '$lib/utils/app/settings';
+	import { components } from '$lib/utils/ui/styles';
 	import Icon from '../widgets/Icon.svelte';
 	import { twMerge } from 'tailwind-merge';
 
@@ -28,6 +28,12 @@
 		class?: string;
 	} = $props();
 
+	const deposit = $derived(Number(product[AllColumns.Deposit]) || 0);
+	const pricePerLiterCalculated = $derived(
+		(product as { [MissingValues]?: Set<string> })[MissingValues]?.has(AllColumns.PricePerLiter) ??
+			false
+	);
+
 	function scrollToAvailability() {
 		document.getElementById('myymalasaatavuus')?.scrollIntoView({ behavior: 'smooth' });
 	}
@@ -36,7 +42,10 @@
 <div class={twMerge('flex flex-col gap-4', _class)}>
 	<div class="flex flex-col gap-0.5">
 		<div class="flex items-end gap-2">
-			<p class="text-[38px] leading-none font-bold" data-price={formatValue(product[AllColumns.Price], AllColumns.Price)}>
+			<p
+				class="text-[38px] leading-none font-bold"
+				data-price={formatValue(product[AllColumns.Price], AllColumns.Price)}
+			>
 				{formatValue(product[AllColumns.Price], AllColumns.Price)}
 			</p>
 			{#if sale}
@@ -46,10 +55,19 @@
 			{/if}
 		</div>
 		<span class="mt-1 text-sm text-secondary">
-			{formatValue(product[AllColumns.PricePerLiter], AllColumns.PricePerLiter)} · {formatValue(
-				product[AllColumns.BottleSize],
-				AllColumns.BottleSize
-			)}
+			<span
+				title={pricePerLiterCalculated
+					? 'Alko ei ole vielä julkaissut litrahintaa, joten se on laskettu hinnasta ja pullokoosta'
+					: undefined}
+			>
+				{formatValue(
+					product[AllColumns.PricePerLiter],
+					AllColumns.PricePerLiter
+				)}{pricePerLiterCalculated ? ' (laskettu)' : ''}
+			</span>
+			· {formatValue(product[AllColumns.BottleSize], AllColumns.BottleSize)}{deposit
+				? ` · sis. pantin ${formatValue(deposit, AllColumns.Deposit)}`
+				: ''}
 		</span>
 		{#if sale}
 			<p class="mt-1 text-sm font-bold text-red-700 dark:text-red-400">
@@ -73,7 +91,9 @@
 							? 'text-sm text-green-700 dark:text-green-400'
 							: 'text-sm text-red-700 dark:text-red-400'}
 					>
-						{availableInPreferredStore ? 'Saatavilla valitusta myymälästä' : 'Ei saatavilla valitusta myymälästä'}
+						{availableInPreferredStore
+							? 'Saatavilla valitusta myymälästä'
+							: 'Ei saatavilla valitusta myymälästä'}
 					</span>
 					<strong class="text-sm">{preferredStore.name}</strong>
 					{#if !availableInPreferredStore && closestAvailableStore}
@@ -82,6 +102,8 @@
 								? ` (${closestAvailableDistance})`
 								: ''}
 						</span>
+					{:else if !availableInPreferredStore}
+						<span class="text-sm text-secondary">Ei saatavilla muista myymälöistä</span>
 					{/if}
 				</div>
 				<button
@@ -92,10 +114,13 @@
 					Vaihda
 				</button>
 			</div>
-			{#if !availableInPreferredStore}
+			{#if !availableInPreferredStore && closestAvailableStore}
 				<button
 					type="button"
-					class={twMerge(components.button({ size: 'sm' }), 'flex w-full items-center justify-center gap-2')}
+					class={twMerge(
+						components.button({ size: 'sm' }),
+						'flex w-full items-center justify-center gap-2'
+					)}
 					onclick={scrollToAvailability}
 				>
 					<span>Katso muut myymälät</span>

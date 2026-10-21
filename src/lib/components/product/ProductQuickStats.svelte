@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { AllColumns } from '$lib/utils/constants';
-	import { formatValue } from '$lib/utils/format';
+	import { AllColumns } from '$lib/utils/constants/columns';
+	import { formatValue } from '$lib/utils/format/format';
 	import type { PriceListItem } from '$lib/types';
 	import { twMerge } from 'tailwind-merge';
 
@@ -12,9 +12,15 @@
 	const cellBorders = ['border-r border-b', 'border-b', 'border-r', ''];
 
 	const stats = $derived([
-		{ label: 'Alkoholi', value: formatValue(product[AllColumns.AlcoholPercentage], AllColumns.AlcoholPercentage) },
+		{
+			label: 'Alkoholi',
+			value: formatValue(product[AllColumns.AlcoholPercentage], AllColumns.AlcoholPercentage)
+		},
 		{ label: 'Sokeri', value: formatValue(product[AllColumns.Sugar], AllColumns.Sugar) },
-		{ label: 'Energia', value: formatValue(product[AllColumns.Energy] as number, AllColumns.Energy) },
+		{
+			label: 'Energia',
+			value: formatValue(product[AllColumns.Energy] as number, AllColumns.Energy)
+		},
 		{ label: 'Pakkaus', value: product[AllColumns.PackagingType] || '–' }
 	]);
 </script>
