@@ -2,6 +2,7 @@
 	import { AllColumns } from '$lib/utils/constants/columns';
 	import { formatValue } from '$lib/utils/format/format';
 	import { getSaleInfo } from '$lib/utils/catalog/sales';
+	import { productFeedPath } from '$lib/utils/catalog/alko';
 	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 	import type { PriceHistoryEntry, PriceListItem } from '$lib/types';
 	import type { ChartConfiguration } from 'chart.js';
@@ -24,12 +25,7 @@
 	let selectedRange: RangeKey = $state('kaikki');
 
 	const fullHistory = $derived(product[AllColumns.History] ?? []);
-	// Same rule as scripts/site/rss.ts: a product gets a feed once its price has changed
-	const feedHref = $derived(
-		fullHistory.some((entry, index) => index > 0 && entry.price !== fullHistory[index - 1].price)
-			? `/rss/${encodeURIComponent(product[AllColumns.Number])}.xml`
-			: undefined
-	);
+	const feedHref = $derived(productFeedPath(product));
 	const filteredHistory = $derived.by(() => {
 		const range = ranges.find((r) => r.key === selectedRange);
 		if (!range || range.days === null) return fullHistory;

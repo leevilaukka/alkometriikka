@@ -6,6 +6,7 @@
 	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 	import { generateTitle, setSEO } from '$lib/utils/app/meta';
 	import { staticPage } from '$lib/utils/app/seo';
+	import { productFeedPath } from '$lib/utils/catalog/alko';
 	import { resolvePreferredStore } from '$lib/utils/catalog/availability';
 	import { AUTO_STORE_ID } from '$lib/utils/constants/app';
 	import { AllColumns } from '$lib/utils/constants/columns';
@@ -104,78 +105,95 @@
 	{:else}
 		<ul class="flex flex-col gap-3">
 			{#each statuses as { item, product, changes } (item.id)}
+				{@const feedHref = product && productFeedPath(product)}
 				<li
 					class={twMerge(
-						'flex gap-3 rounded border bg-secondary p-3',
+						'flex flex-col gap-3 rounded border bg-secondary p-3',
 						changes.length ? 'border-green-600' : 'border-primary'
 					)}
 				>
-					{#if product}
-						<div class="flex h-20 w-16 shrink-0 items-center justify-center rounded bg-white p-1.5">
-							<ProductImage
-								number={product[AllColumns.Number]}
-								name={product[AllColumns.Name]}
-								alt=""
-								class="h-full w-full object-contain"
-							/>
-						</div>
-						<div class="flex min-w-0 flex-1 flex-col gap-1">
-							<a
-								href={resolve(`/tuotteet/${item.id}/`)}
-								class="font-bold hover:underline"
-								title={product[AllColumns.Name]}>{product[AllColumns.Name]}</a
+					<div class="flex gap-3">
+						{#if product}
+							<div
+								class="flex h-20 w-16 shrink-0 items-center justify-center rounded bg-white p-1.5"
 							>
-							<span class="text-sm text-secondary">
-								{formatValue(product[AllColumns.Price], AllColumns.Price)} · {formatValue(
-									product[AllColumns.BottleSize],
-									AllColumns.BottleSize
-								)}
-								{#if product[AllColumns.RemovedFromSelection]}
-									· Poistunut valikoimasta
-								{:else if preferredStore}
-									· {(availability.product[item.id] ?? []).includes(preferredStore.id)
-										? 'Myymälässäsi'
-										: 'Ei myymälässäsi'}
+								<ProductImage
+									number={product[AllColumns.Number]}
+									name={product[AllColumns.Name]}
+									alt=""
+									class="h-full w-full object-contain"
+								/>
+							</div>
+							<div class="flex min-w-0 flex-1 flex-col gap-1">
+								<a
+									href={resolve(`/tuotteet/${item.id}/`)}
+									class="font-bold hover:underline"
+									title={product[AllColumns.Name]}>{product[AllColumns.Name]}</a
+								>
+								<span class="text-sm text-secondary">
+									{formatValue(product[AllColumns.Price], AllColumns.Price)} · {formatValue(
+										product[AllColumns.BottleSize],
+										AllColumns.BottleSize
+									)}
+									{#if product[AllColumns.RemovedFromSelection]}
+										· Poistunut valikoimasta
+									{:else if preferredStore}
+										· {(availability.product[item.id] ?? []).includes(preferredStore.id)
+											? 'Myymälässäsi'
+											: 'Ei myymälässäsi'}
+									{/if}
+								</span>
+								{#if changes.length}
+									<ul class="flex flex-wrap gap-1.5">
+										{#each changes as change, index (index)}
+											{@const label = describeWatchChange(change, storeName)}
+											<li class={components.badge({ color: label.good ? 'green' : 'red' })}>
+												{label.text}
+											</li>
+										{/each}
+									</ul>
 								{/if}
-							</span>
-							{#if changes.length}
-								<ul class="flex flex-wrap gap-1.5">
-									{#each changes as change, index (index)}
-										{@const label = describeWatchChange(change, storeName)}
-										<li class={components.badge({ color: label.good ? 'green' : 'red' })}>
-											{label.text}
-										</li>
-									{/each}
-								</ul>
-							{/if}
-						</div>
-					{:else}
-						<div class="flex min-w-0 flex-1 flex-col gap-1">
-							<span class="font-bold">Tuote {item.id}</span>
-							<span class="text-sm text-secondary">Tuotetta ei enää löydy hinnastosta.</span>
-						</div>
-					{/if}
-					<div class="flex shrink-0 flex-col gap-1.5">
-						{#if changes.length}
-							<button
-								type="button"
+							</div>
+						{:else}
+							<div class="flex min-w-0 flex-1 flex-col gap-1">
+								<span class="font-bold">Tuote {item.id}</span>
+								<span class="text-sm text-secondary">Tuotetta ei enää löydy hinnastosta.</span>
+							</div>
+						{/if}
+					</div>
+					<!-- Like the product cards' buttons: right-aligned, the main action last -->
+					<div class="flex flex-row flex-wrap items-center justify-end gap-3">
+						{#if feedHref}
+							<a
+								href={feedHref}
+								onclick={() =>
+									sendAnalyticsEvent('click_feed', { feed: 'product', location: 'watchlist' })}
 								class={components.button()}
-								title="Merkitse muutokset nähdyiksi"
-								onclick={() => markSeen(item.id)}
+								title="Tilaa tuotteen hinnanmuutokset RSS-syötteenä"
 							>
-								<Icon name="check" />
-								<span class="hidden sm:inline">Nähty</span>
-							</button>
+								<Icon name="rss" />
+								<span>RSS</span>
+							</a>
 						{/if}
 						<button
 							type="button"
 							class={components.button()}
-							title="Lopeta seuraaminen"
-							aria-label="Lopeta seuraaminen"
 							onclick={() => unwatchProduct(item.id)}
 						>
 							<Icon name="bell_off" />
+							<span>Lopeta seuraaminen</span>
 						</button>
+						{#if changes.length}
+							<button
+								type="button"
+								class={components.button({ type: 'positive' })}
+								title="Merkitse muutokset nähdyiksi"
+								onclick={() => markSeen(item.id)}
+							>
+								<Icon name="check" />
+								<span>Nähty</span>
+							</button>
+						{/if}
 					</div>
 				</li>
 			{/each}
