@@ -66,7 +66,7 @@ describe('schema consistency (writer vs reader)', () => {
 		const hashed = FIELD_TO_LEGACY_SCHEMA.filter((field) => field.usedForHashing).map(
 			(field) => field.legacyKey
 		);
-		expect(HASH_VERSION).toBe(1);
+		expect(HASH_VERSION).toBe(2);
 		expect(hashed).toEqual([
 			'Nimi',
 			'Hinta',
@@ -76,7 +76,8 @@ describe('schema consistency (writer vs reader)', () => {
 			'Valikoima',
 			'Normaalihinta',
 			'Kampanja alkaa',
-			'Kampanja päättyy'
+			'Kampanja päättyy',
+			'Tila'
 		]);
 		expect(getHashValues(row())).toHaveLength(hashed.length);
 	});

@@ -402,7 +402,7 @@ export const FIELD_TO_LEGACY_SCHEMA: ProductFieldMapping[] = [
 	{
 		newPropertyKey: 'statusId',
 		legacyKey: 'Tila',
-		usedForHashing: false,
+		usedForHashing: true,
 		preprocessor: formatStatus
 	},
 	{
@@ -425,8 +425,7 @@ export const FIELD_TO_LEGACY_SCHEMA: ProductFieldMapping[] = [
  */
 export const SEARCH_REFRESHED_COLUMNS: readonly (typeof LEGACY_HEADERS)[number][] = [
 	'Erityisryhmä',
-	'Ruokasuositukset',
-	'Tila'
+	'Ruokasuositukset'
 ];
 
 /**
@@ -484,7 +483,7 @@ export function upgradeStoredValues(values: unknown[]): unknown[] {
  * sync persists it in the dataset metadata. Do not bump it for unrelated
  * schema additions (appended columns don't affect hashed indices).
  */
-export const HASH_VERSION = 1;
+export const HASH_VERSION = 2;
 
 /**
  * Extracts only the change-detection relevant values (`usedForHashing`) from a

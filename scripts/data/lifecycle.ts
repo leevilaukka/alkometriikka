@@ -9,7 +9,6 @@ import type { SaleInfo } from '../../src/lib/utils/catalog/sales.ts';
 import {
 	LEGACY_HEADERS,
 	SEARCH_REFRESHED_COLUMNS,
-	STATUS_LABELS,
 	isIrrelevantStoredValues
 } from './constants.ts';
 import type {
@@ -30,7 +29,6 @@ export const CAMPAIGN_START_INDEX = LEGACY_HEADERS.indexOf('Kampanja alkaa');
 export const CAMPAIGN_END_INDEX = LEGACY_HEADERS.indexOf('Kampanja päättyy');
 const NEW_INDEX = LEGACY_HEADERS.indexOf('Uutuus');
 const STATUS_INDEX = LEGACY_HEADERS.indexOf('Tila');
-const COMING_STATUS = STATUS_LABELS.X;
 
 const DAY_MS = 24 * 60 * 60 * 1000;
 
@@ -69,18 +67,6 @@ export function refreshSearchColumns(
 	const values = [...product.values];
 	for (const index of changed) values[index] = searchValues[index];
 	return { ...product, values };
-}
-
-/**
- * True when a product stored as coming ("Tulee") has a different status in the
- * search API now. Coming products have no `pricePerLitre` (or `moreInfo`) in
- * the detail API, and the status isn't hashed, so without this their details
- * would only be fetched again by the 30-day re-verification.
- */
-export function hasArrived(storedValues: unknown[], searchValues: unknown[]): boolean {
-	return (
-		storedValues[STATUS_INDEX] === COMING_STATUS && searchValues[STATUS_INDEX] !== COMING_STATUS
-	);
 }
 
 /**

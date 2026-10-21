@@ -20,7 +20,7 @@ Type definitions: `scripts/data/types.ts` (the strict writer side) and
 	"metadata": {
 		"LastUpdated": "2026-10-12T18:00:41.123Z", // last run that changed something
 		"LastSynced": "2026-10-13T06:00:39.456Z", // last run, changed or not
-		"HashVersion": 1,
+		"HashVersion": 2,
 		"ci": {
 			"sync": { "commit": "<sha>", "workflowRun": "https://github.com/…/actions/runs/…" },
 			"update": { "commit": "<sha>", "workflowRun": "https://github.com/…/actions/runs/…" }
@@ -143,7 +143,7 @@ so that an older deployed app bundle can still read a newer dataset positionally
 | 31  | `Kampanja alkaa`         | `campaign_start_date`                  | ✓      | `YYYY-MM-DD`                                                                                                           |
 | 32  | `Kampanja päättyy`       | `campaign_end_date`                    | ✓      | `YYYY-MM-DD`                                                                                                           |
 | 33  | `Ruokasuositukset`       | `foodSymbolId`                         |        | Finnish labels from `src/lib/utils/catalog/food.ts`, joined with `, `. Refreshed every sync                            |
-| 34  | `Tila`                   | `statusId`                             |        | `Aktiivinen` (A), `Uutuus` (U), `Poistuva` (P, being phased out) or `Tulee` (X, not on sale yet). Refreshed every sync |
+| 34  | `Tila`                   | `statusId`                             | ✓      | `Aktiivinen` (A), `Uutuus` (U), `Poistuva` (P, being phased out) or `Tulee` (X, not on sale yet)                       |
 | 35  | `Pantti`                 | `deposit` (detail)                     |        | Deposit in euros. Included in `Hinta`, not in `Litrahinta`. Missing for most products, including some cans             |
 
 "(detail)" marks fields only the per-product detail API returns. Everything else comes from the
@@ -174,7 +174,7 @@ when `meta.removedFromSelection` is set). `Kaljakori` then adds the derived colu
 ## `hashes.json`
 
 ```json
-{ "HashVersion": 1, "hashes": { "906458": "3f1c…", "…": "…" } }
+{ "HashVersion": 2, "hashes": { "906458": "3f1c…", "…": "…" } }
 ```
 
 Split out of `data.json` because the 64-character hashes were about a third of the gzipped file

@@ -91,13 +91,15 @@ sync only fetches details for products whose **search payload** changed.
 For each search product, `buildLegacyValues` runs the schema's preprocessors over it, and
 `getHash(getHashValues(values))` takes a SHA-256 of the columns marked `usedForHashing`:
 `Nimi`, `Hinta`, `Uutuus`, `Luonnehdinta`, `Alkoholi-%`, `Valikoima`, `Normaalihinta`,
-`Kampanja alkaa`, `Kampanja päättyy`.
+`Kampanja alkaa`, `Kampanja päättyy`, `Tila`.
 
 Rules for that set:
 
 - Every hashed field must come from the search API. Otherwise it would be `null` in the first pass
   but filled in the stored hash, and the product would look changed on every run.
 - Fields that fluctuate constantly (stock levels, online availability) are not hashed.
+- `Tila` is hashed so a status change refetches details. In particular a product that was `Tulee`
+  only gets its `pricePerLitre` from the detail API once it's on sale.
 - Arrays (only `Luonnehdinta`) are trimmed and sorted before hashing, so Alko returning the same
   taste words in a different order isn't a change.
 
@@ -112,12 +114,8 @@ A product whose hash matches keeps its stored entry, with two adjustments:
 
 - Any `removedFromSelection` flag is cleared (it's in the API again).
 - The **always-refreshed columns** (`SEARCH_REFRESHED_COLUMNS`: `Erityisryhmä`,
-  `Ruokasuositukset`, `Tila`) are copied from the search payload. They aren't hashed, so a change there
+  `Ruokasuositukset`) are copied from the search payload. They aren't hashed, so a change there
   shouldn't cost a detail fetch, but should still reach the dataset.
-
-One exception goes to pass 2 anyway: a product stored as `Tulee` whose status has changed
-(`hasArrived`). Coming products have no `pricePerLitre` in the detail API, and since `Tila` isn't
-hashed, nothing else would fetch it before the 30-day re-verification.
 
 ### Pass 2: new and changed products
 

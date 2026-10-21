@@ -4,7 +4,6 @@ import {
 	carryOverMissingProducts,
 	clearRemovedFlag,
 	detailVerifyAgeDays,
-	hasArrived,
 	isDetailVerifyCandidate,
 	mergeProduct,
 	refreshSearchColumns,
@@ -346,15 +345,5 @@ describe('refreshSearchColumns', () => {
 	it('returns the same product when nothing changed', () => {
 		const previous = stored('1', { Ruokasuositukset: 'Porsas' });
 		expect(refreshSearchColumns(previous, values({ Ruokasuositukset: 'Porsas' }))).toBe(previous);
-	});
-});
-
-describe('hasArrived', () => {
-	it('is true only when a coming product has another status now', () => {
-		expect(hasArrived(values({ Tila: 'Tulee' }), values({ Tila: 'Uutuus' }))).toBe(true);
-		expect(hasArrived(values({ Tila: 'Tulee' }), values({ Tila: 'Tulee' }))).toBe(false);
-		expect(hasArrived(values({ Tila: 'Aktiivinen' }), values({ Tila: 'Poistuva' }))).toBe(false);
-		// Products stored before the column existed don't count as arrived
-		expect(hasArrived(values({ Tila: null }), values({ Tila: 'Aktiivinen' }))).toBe(false);
 	});
 });
