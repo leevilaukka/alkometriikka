@@ -39,7 +39,7 @@
 	import CategorySection from '../category/CategorySection.svelte';
 	import { formatNumber } from '$lib/utils/format/format';
 	import { storeName } from '$lib/utils/catalog/availability';
-	import { m } from '$lib/i18n';
+	import { locale, m } from '$lib/i18n';
 	import { productName, translateValue } from '$lib/i18n/values';
 
 	const {
@@ -153,7 +153,11 @@
 			: undefined;
 	});
 
-	const description = $derived(categoryDescription(trail));
+	const description = $derived(
+		categoryDescription(trail, locale, (category, depth) =>
+			depth === 0 ? typeName(category) : subTypeName(category)
+		)
+	);
 
 	// Hand the mobile action bar to the layout; the sidebar footer covers wide screens
 	$effect(() => {
@@ -170,7 +174,9 @@
 			description,
 			og: { title: pageTitle, description, url: `https://alkometriikka.fi${node.path}` },
 			twitter: { title: pageTitle, description },
-			keywords: trail.map((item) => item.name).join(', ')
+			keywords: trail
+				.map((category, depth) => (depth === 0 ? typeName(category) : subTypeName(category)))
+				.join(', ')
 		});
 	});
 </script>

@@ -14,7 +14,7 @@
 		storeName,
 		storeText
 	} from '$lib/utils/catalog/availability';
-	import { m } from '$lib/i18n';
+	import { locale, m } from '$lib/i18n';
 	import { generateTitle, setSEO } from '$lib/utils/app/meta';
 	import { staticPage } from '$lib/utils/app/seo';
 	import { requestUserLocation } from '$lib/utils/device/location';
@@ -82,7 +82,7 @@
 		skipped = [];
 	}
 
-	const { description, keywords } = staticPage('/kompassi/');
+	const { description, keywords } = staticPage('/kompassi/', locale);
 	setSEO({
 		og: { title: generateTitle(m.compass_title()), description, url: window.location.href },
 		keywords,

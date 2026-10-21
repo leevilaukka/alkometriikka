@@ -11,7 +11,7 @@
 		storeName,
 		storeText
 	} from '$lib/utils/catalog/availability.js';
-	import { intlLocale, m } from '$lib/i18n';
+	import { intlLocale, locale, m } from '$lib/i18n';
 	import { generateTitle, setSEO } from '$lib/utils/app/meta';
 	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 	import { staticPage } from '$lib/utils/app/seo';
@@ -39,7 +39,7 @@
 		});
 	}
 
-	const { description, keywords } = staticPage('/myymalat/');
+	const { description, keywords } = staticPage('/myymalat/', locale);
 	setSEO({
 		og: { title: generateTitle(m.nav_stores()), description, url: window.location.href },
 		keywords,

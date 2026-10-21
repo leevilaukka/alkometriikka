@@ -1,4 +1,5 @@
 import { getLocale, locales, setLocale, type Locale } from '$lib/paraglide/runtime';
+import { INTL_TAGS } from './tags';
 
 export { m } from '$lib/paraglide/messages';
 export { locales, setLocale, type Locale };
@@ -8,12 +9,6 @@ export { locales, setLocale, type Locale };
  * it never changes while the app runs and can be read once.
  */
 export const locale: Locale = getLocale();
-
-/**
- * Tags for `Intl` formatting. English uses the British conventions (day-month dates, 24-hour
- * times), which match how Finnish visitors read them; Swedish uses Finland's Swedish.
- */
-const INTL_TAGS: Record<Locale, string> = { fi: 'fi-FI', en: 'en-GB', sv: 'sv-FI' };
 
 /** BCP 47 tag of the current language, for `Intl` formatters and `toLocaleString`. */
 export const intlLocale = INTL_TAGS[locale];

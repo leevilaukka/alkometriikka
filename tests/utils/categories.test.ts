@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'bun:test';
 import {
 	buildCategoryTree,
+	categoryDescription,
 	categoryFeedPath,
 	categoryPath,
 	categorySlug,
@@ -121,5 +122,23 @@ describe('category lookups', () => {
 			trail: [],
 			legacy: true
 		});
+	});
+});
+
+describe('categoryDescription', () => {
+	const tree = buildCategoryTree([...entries('Viinit', 'Punaviinit', 1200)]);
+	const trail = [tree[0], tree[0].children[0]];
+
+	it('is Finnish by default', () => {
+		expect(categoryDescription(trail)).toBe(
+			'Punaviinit (Viinit): 1\u00a0200 tuotetta Alkon valikoimassa. Vertaa hintoja, litrahintoja ja alkoholia euroa kohden Alkometriikassa.'
+		);
+	});
+
+	it('uses the given language and shown names', () => {
+		const names = ['Wines', 'Red wines'];
+		expect(categoryDescription(trail, 'en', (_, depth) => names[depth])).toBe(
+			"Red wines (Wines): 1,200 products in Alko's selection. Compare prices, prices per litre and alcohol per euro on Alkometriikka."
+		);
 	});
 });

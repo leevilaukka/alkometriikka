@@ -32,6 +32,17 @@ describe('productDescription', () => {
 			'Viini. Vertaa hintoja ja vastaavia tuotteita Alkometriikassa.'
 		);
 	});
+
+	it('follows the given language', () => {
+		expect(
+			productDescription(
+				{ name: 'Vodka', volume: 0.7, alcoholPercentage: 40, price: 20, pricePerLitre: 28.57 },
+				'en'
+			)
+		).toBe(
+			'Vodka: 40 % · 0.7 l · 20.00 € (28.57 €/l) · 1.09 €/serving. Compare prices and similar products on Alkometriikka.'
+		);
+	});
 });
 
 describe('pricePerServing', () => {
@@ -70,6 +81,9 @@ describe('store copy', () => {
 		expect(storeDescription({ name: 'X' })).toBe(
 			'Alkon myymälä X. Katso aukioloajat, osoite ja valikoima Alkometriikasta!'
 		);
+		expect(storeDescription({ name: 'X' }, 'sv')).toBe(
+			'Alkos butik X. Se öppettider, adress och sortiment på Alkometriikka!'
+		);
 	});
 });
 
@@ -83,5 +97,16 @@ describe('static pages', () => {
 	it('throws on unknown paths', () => {
 		expect(staticPage('/laskin/').title).toBe('Laskin');
 		expect(() => staticPage('/nope/')).toThrow();
+	});
+
+	it('describes the page in the given language, Finnish by default', () => {
+		expect(staticPage('/tilastot/').description).toBe('Alkon valikoima numeroina ja kuvaajina.');
+		expect(staticPage('/tilastot/', 'en').description).toBe(
+			"Alko's selection in numbers and charts."
+		);
+		expect(staticPage('/tilastot/', 'en').keywords).toBe('statistics, charts, prices, alcohol');
+		expect(STATIC_PAGES.find((page) => page.path === '/tilastot/')?.description).toBe(
+			'Alkon valikoima numeroina ja kuvaajina.'
+		);
 	});
 });

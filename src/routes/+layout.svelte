@@ -37,11 +37,14 @@
 	import { loadUpdateOnNavigate } from '$lib/utils/app/pwa.svelte';
 	import { loadFlags } from '$lib/utils/flags/flags.svelte';
 	import LanguageBanner from '$lib/components/widgets/LanguageBanner.svelte';
-	import { locale, m } from '$lib/i18n';
+	import { intlLocale, locale, m } from '$lib/i18n';
 
 	let { children, data } = $props();
 	loadFlags();
 	document.documentElement.lang = locale;
+	document
+		.querySelector('meta[property="og:locale"]')
+		?.setAttribute('content', intlLocale.replace('-', '_'));
 	let searchParamsManager = new SearchParamsManager(page.url);
 	setContext(ContextKeys.SearchParamsManager, searchParamsManager);
 

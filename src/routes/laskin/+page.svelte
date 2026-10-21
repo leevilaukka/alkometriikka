@@ -12,7 +12,7 @@
 	import { twMerge } from 'tailwind-merge';
 	import type { PageProps } from './$types';
 	import { genderLabel } from '$lib/utils/format/labels';
-	import { m } from '$lib/i18n';
+	import { locale, m } from '$lib/i18n';
 
 	const calculatorAnalytics = (() => {
 		let timeout: ReturnType<typeof setTimeout> | undefined;
@@ -133,7 +133,7 @@
 	] as const;
 
 	$effect(() => {
-		const { description, keywords } = staticPage('/laskin/');
+		const { description, keywords } = staticPage('/laskin/', locale);
 		setSEO({ description, keywords });
 	});
 

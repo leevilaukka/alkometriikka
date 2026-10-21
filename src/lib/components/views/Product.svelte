@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { productName } from '$lib/i18n/values';
+	import { productName, translateValue } from '$lib/i18n/values';
 	import { AllColumns } from '$lib/utils/constants/columns';
 	import { generateTitle, setSEO } from '$lib/utils/app/meta';
 	import { handleShare } from '$lib/utils/app/share';
@@ -38,7 +38,7 @@
 	import ProductStoreAvailability from '../product/ProductStoreAvailability.svelte';
 	import ProductMobileCta from '../product/ProductMobileCta.svelte';
 	import { pageBottomBar } from '$lib/global.svelte';
-	import { intlLocale, m } from '$lib/i18n';
+	import { intlLocale, locale, m } from '$lib/i18n';
 
 	const {
 		product,
@@ -92,14 +92,22 @@
 	});
 
 	$effect(() => {
-		const description = productDescription({
-			name: product[AllColumns.Name],
-			category: [product[AllColumns.Type], product[AllColumns.SubType]].filter(Boolean).join(' / '),
-			volume: product[AllColumns.BottleSize],
-			alcoholPercentage: product[AllColumns.AlcoholPercentage],
-			price: product[AllColumns.Price],
-			pricePerLitre: product[AllColumns.PricePerLiter]
-		});
+		const description = productDescription(
+			{
+				name: productName(product),
+				category: [
+					translateValue(product[AllColumns.Type], AllColumns.Type),
+					translateValue(product[AllColumns.SubType], AllColumns.SubType)
+				]
+					.filter(Boolean)
+					.join(' / '),
+				volume: product[AllColumns.BottleSize],
+				alcoholPercentage: product[AllColumns.AlcoholPercentage],
+				price: product[AllColumns.Price],
+				pricePerLitre: product[AllColumns.PricePerLiter]
+			},
+			locale
+		);
 		setSEO({
 			description,
 			og: {
@@ -119,7 +127,17 @@
 				description,
 				image: generateImageUrl(product[AllColumns.Number], 'medium')
 			},
-			keywords: `${product[AllColumns.Name]}, ${product[AllColumns.Manufacturer]}, ${product[AllColumns.Type]}, ${product[AllColumns.SubType]}, ${[...(product[AllColumns.Description] || [])].join(', ').toLocaleLowerCase()}`
+			keywords: [
+				productName(product),
+				product[AllColumns.Manufacturer],
+				translateValue(product[AllColumns.Type], AllColumns.Type),
+				translateValue(product[AllColumns.SubType], AllColumns.SubType),
+				...[...(product[AllColumns.Description] || [])].map((word) =>
+					translateValue(word, AllColumns.Description).toLocaleLowerCase()
+				)
+			]
+				.filter(Boolean)
+				.join(', ')
 		});
 	});
 

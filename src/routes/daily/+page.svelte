@@ -607,8 +607,7 @@
 	$effect(() =>
 		setSEO({
 			description: m.daily_seo_description(),
-			keywords:
-				'alkometriikka, alkometriikka daily, alkometriikka unlimited, tietovisa, alkometriikka kysymykset, alkometriikka kysymys, daily, game, peli',
+			keywords: m.seo_daily_keywords(),
 			og: {
 				description: m.daily_seo_description(),
 				title: 'Alkometriikka Daily',

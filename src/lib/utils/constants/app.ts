@@ -1,4 +1,4 @@
-import { HOME_PAGE } from '../app/seo';
+import { m } from '$lib/i18n';
 import type { setSEO } from '../app/meta';
 
 /** Value of the preferred store setting that follows the store nearest to the user. */
@@ -56,16 +56,16 @@ export const GenderOptionsMap = {
 } as const satisfies { [key: string]: string };
 
 export const defaultSEOData = {
-	description: HOME_PAGE.description,
+	description: m.seo_home_description(),
 	og: {
 		title: 'Alkometriikka',
-		description: 'Selaa Alkon tuotevalikoimaa, ja luo jaettavia listoja helposti!',
+		description: m.seo_default_description(),
 		url: 'https://alkometriikka.fi',
 		type: 'website'
 	},
 	image: {
 		url: '/images/og_image.png',
-		alt: 'Alkometriikka logo',
+		alt: m.seo_logo_alt(),
 		width: '1200',
 		height: '630'
 	},
@@ -73,7 +73,7 @@ export const defaultSEOData = {
 		title: 'Alkometriikka',
 		card: 'summary_large_image',
 		image: '/images/twitter_image.png',
-		description: 'Selaa Alkon tuotevalikoimaa, ja luo jaettavia listoja helposti!'
+		description: m.seo_default_description()
 	},
-	keywords: HOME_PAGE.keywords
+	keywords: m.seo_home_keywords()
 } as const satisfies Parameters<typeof setSEO>[0];

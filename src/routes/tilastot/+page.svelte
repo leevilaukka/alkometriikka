@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { m } from '$lib/i18n';
+	import { locale, m } from '$lib/i18n';
 	import Stats from '$lib/components/views/Stats.svelte';
 	import { generateTitle, setSEO } from '$lib/utils/app/meta';
 	import { staticPage } from '$lib/utils/app/seo';
@@ -7,7 +7,7 @@
 	const { data } = $props();
 
 	$effect(() => {
-		const { description, keywords } = staticPage('/tilastot/');
+		const { description, keywords } = staticPage('/tilastot/', locale);
 		setSEO({
 			description,
 			og: { title: generateTitle(m.nav_stats()), description, url: window.location.href },

@@ -5,10 +5,9 @@
  */
 import { labelKey } from './pairing.ts';
 
-export type Language = 'fi' | 'en' | 'sv';
+export { INTL_TAGS } from '../../src/lib/i18n/tags.ts';
 
-/** `Intl` tags, the same as the app's (src/lib/i18n/index.ts). */
-export const INTL_TAGS: Record<Language, string> = { fi: 'fi-FI', en: 'en-GB', sv: 'sv-FI' };
+export type Language = 'fi' | 'en' | 'sv';
 
 export type Translator = {
 	language: Language;

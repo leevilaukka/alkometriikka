@@ -102,7 +102,7 @@
 	$effect(() =>
 		setSEO({
 			description: m.archive_seo_description(),
-			keywords: 'alkometriikka, daily, arkisto, aiempien päivien peli, tulokset, tietovisa',
+			keywords: m.seo_archive_keywords(),
 			og: {
 				description: m.archive_seo_og_description(),
 				title: m.daily_archive(),

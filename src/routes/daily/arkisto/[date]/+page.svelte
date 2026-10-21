@@ -227,7 +227,7 @@
 			description: date
 				? m.archive_day_seo_description({ date: formatDate(date) })
 				: m.archive_seo_title(),
-			keywords: 'alkometriikka, daily, arkisto, vastaukset, tietovisa',
+			keywords: m.seo_archive_day_keywords(),
 			og: {
 				description: date ? `Alkometriikka Daily ${formatDate(date)}.` : m.archive_seo_title(),
 				title: date ? `${m.daily_archive()} · ${date}` : m.daily_archive(),

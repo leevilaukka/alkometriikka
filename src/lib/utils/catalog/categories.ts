@@ -1,5 +1,8 @@
 // Category (Tyyppi / Alatyyppi) pages. Kept free of `$lib` imports so the
 // prerender and sitemap scripts can share the exact same slugs and tree.
+import { m } from '../../paraglide/messages.js';
+import type { Locale } from '../../paraglide/runtime.js';
+import { INTL_TAGS } from '../../i18n/tags';
 
 export const CATEGORY_BASE_PATH = '/kategoriat';
 
@@ -64,10 +67,24 @@ export function categoryTitle(trail: CategoryNode[]): string {
 }
 
 /** Meta description shared by the prerendered page and the client-side route. */
-export function categoryDescription(trail: CategoryNode[]): string {
+/**
+ * The category's meta description. The app passes the visitor's language and `name` for the
+ * shown category names; the scripts use the Finnish defaults.
+ */
+export function categoryDescription(
+	trail: CategoryNode[],
+	locale: Locale = 'fi',
+	name: (node: CategoryNode, depth: number) => string = (node) => node.name
+): string {
 	const node = trail[trail.length - 1];
-	const parent = trail.length > 1 ? ` (${trail[0].name})` : '';
-	return `${node.name}${parent}: ${node.count.toLocaleString('fi-FI')} tuotetta Alkon valikoimassa. Vertaa hintoja, litrahintoja ja alkoholia euroa kohden Alkometriikassa.`;
+	const parent = trail.length > 1 ? ` (${name(trail[0], 0)})` : '';
+	return m.seo_category_description(
+		{
+			name: `${name(node, trail.length - 1)}${parent}`,
+			count: node.count.toLocaleString(INTL_TAGS[locale])
+		},
+		{ locale }
+	);
 }
 
 /**
@@ -164,5 +181,4 @@ export function findProductCategoryTrail(
 	return { trail: matches.length === 1 ? matches[0] : [], legacy: true };
 }
 
-export const CATEGORY_INDEX_DESCRIPTION =
-	'Selaa Alkon valikoimaa kategorioittain: viinit, oluet, väkevät ja muut. Vertaa hintoja, litrahintoja ja alkoholia euroa kohden Alkometriikassa.';
+export const CATEGORY_INDEX_DESCRIPTION = m.seo_category_index_description({}, { locale: 'fi' });

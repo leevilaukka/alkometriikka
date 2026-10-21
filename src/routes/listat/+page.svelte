@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { m } from '$lib/i18n';
+	import { locale, m } from '$lib/i18n';
 	import List from '$lib/components/views/List.svelte';
 	import AllLists from '$lib/components/widgets/AllLists.svelte';
 	import Icon from '$lib/components/widgets/Icon.svelte';
@@ -9,7 +9,7 @@
 	import { twMerge } from 'tailwind-merge';
 
 	const { data } = $props();
-	const { description: DESCRIPTION } = staticPage('/listat/');
+	const { description: DESCRIPTION } = staticPage('/listat/', locale);
 
 	$effect(() => {
 		const description = data.list ? m.list_seo_description({ name: data.list.name }) : DESCRIPTION;

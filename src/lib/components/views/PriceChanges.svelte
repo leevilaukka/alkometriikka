@@ -53,14 +53,14 @@
 	import { formatNumber } from '$lib/utils/format/format';
 	import { feedPath } from '$lib/utils/app/feeds';
 	import { storeName } from '$lib/utils/catalog/availability';
-	import { intlLocale, m } from '$lib/i18n';
+	import { intlLocale, locale, m } from '$lib/i18n';
 	import { productName, translateValue } from '$lib/i18n/values';
 
 	const { kaljakori, availability }: { kaljakori: Kaljakori; availability: AvailabilityData } =
 		$props();
 
 	const TITLE = m.nav_price_changes();
-	const { description: DESCRIPTION, keywords: KEYWORDS } = staticPage('/hinnanmuutokset/');
+	const { description: DESCRIPTION, keywords: KEYWORDS } = staticPage('/hinnanmuutokset/', locale);
 	const SITE_FEED = `https://alkometriikka.fi${feedPath('rss.xml')}`;
 
 	const typeName = (node: CategoryNode) => translateValue(node.name, AllColumns.Type);

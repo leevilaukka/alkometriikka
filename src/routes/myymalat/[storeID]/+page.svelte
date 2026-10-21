@@ -12,7 +12,7 @@
 		storeText
 	} from '$lib/utils/catalog/availability.js';
 	import { alkoStoreUrl } from '$lib/utils/app/alkoLinks';
-	import { intlLocale, m } from '$lib/i18n';
+	import { intlLocale, locale, m } from '$lib/i18n';
 	import { AllColumns } from '$lib/utils/constants/columns';
 	import { generateTitle, setSEO } from '$lib/utils/app/meta';
 	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
@@ -39,20 +39,25 @@
 		});
 	}
 
-	$effect(
-		() =>
-			data.store &&
-			setSEO({
-				og: {
-					title: generateTitle(m.store_page_title({ name: storeName(data.store) })),
-					description: storeDescription(data.store),
-					url: window.location.href,
-					type: 'website'
-				},
-				keywords: `Alko, myymälä, ${data.store.name}, ${data.store.address}, ${data.store.postalCode}, ${data.store.postOffice}`,
-				description: storeDescription(data.store)
-			})
-	);
+	$effect(() => {
+		if (!data.store) return;
+		const name = storeName(data.store);
+		const address = storeText(data.store, 'address');
+		const postOffice = storeText(data.store, 'postOffice');
+		const description = storeDescription({ ...data.store, name, address, postOffice }, locale);
+		setSEO({
+			og: {
+				title: generateTitle(m.store_page_title({ name })),
+				description,
+				url: window.location.href,
+				type: 'website'
+			},
+			keywords: m.seo_store_keywords({
+				store: `${name}, ${address}, ${data.store.postalCode}, ${postOffice}`
+			}),
+			description
+		});
+	});
 </script>
 
 <svelte:head>

@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { appPath } from '$lib/utils/app/paths';
 	import { generateTitle, setSEO } from '$lib/utils/app/meta';
-	import { CATEGORY_INDEX_DESCRIPTION } from '$lib/utils/catalog/categories';
 	import Breadcrumb from '$lib/components/widgets/Breadcrumb.svelte';
 	import Icon from '$lib/components/widgets/Icon.svelte';
 	import { AllColumns } from '$lib/utils/constants/columns';
@@ -10,11 +9,12 @@
 
 	let { data } = $props();
 
+	const description = m.seo_category_index_description();
 	setSEO({
-		description: CATEGORY_INDEX_DESCRIPTION,
+		description,
 		og: {
 			title: generateTitle(m.nav_categories()),
-			description: CATEGORY_INDEX_DESCRIPTION,
+			description,
 			url: 'https://alkometriikka.fi/kategoriat/'
 		}
 	});
