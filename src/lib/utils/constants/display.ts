@@ -155,6 +155,7 @@ export const filterToUnitMarker = {
 	[AllColumns.Price]: '€',
 	[AllColumns.PricePerLiter]: '€/L',
 	[AllColumns.NormalPrice]: '€',
+	[AllColumns.Deposit]: '€',
 	[AllColumns.BottleSize]: 'L',
 	[AllColumns.EstimatedPromille]: '‰',
 	[AllColumns.AlcoholPercentage]: '%',

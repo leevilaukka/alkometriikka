@@ -93,6 +93,25 @@ export function calculateDrunkValue(
 	};
 }
 
+/**
+ * Price per litre the way Alko calculates it: the deposit is part of the price
+ * but not of the litre price. For products the dataset has no `Litrahinta` for
+ * (Alko leaves it out until a product is on sale).
+ *
+ * @returns The litre price rounded to cents, or `null` without a price and a size.
+ */
+export function calculatePricePerLitre(
+	price: unknown,
+	volume: unknown,
+	deposit?: unknown
+): number | null {
+	if (typeof price !== 'number' || !(price > 0)) return null;
+	if (typeof volume !== 'number' || !(volume > 0)) return null;
+	const depositEuros = typeof deposit === 'number' && deposit > 0 ? deposit : 0;
+	const perLitre = (price - depositEuros) / volume;
+	return perLitre > 0 ? Math.round(perLitre * 100) / 100 : null;
+}
+
 export function generateImageUrl(itemNumber: string, transform?: ImageTransform): string {
 	const imageURL =
 		`https://images.alko.fi/images/cs_srgb,f_auto,t_${transform || 'products'}/cdn` as const;

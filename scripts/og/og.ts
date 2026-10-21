@@ -3,6 +3,7 @@ import path from 'node:path';
 import { Resvg } from '@resvg/resvg-js';
 import satori from 'satori';
 import { getSaleInfo, toISODateInTimeZone } from '../../src/lib/utils/catalog/sales';
+import { calculatePricePerLitre } from '../../src/lib/utils/catalog/alko';
 
 /**
  * Shared Open Graph image helpers for the Alkometriikka product pages.
@@ -54,6 +55,7 @@ const FIELD_NAMES = [
 	'Pullokoko',
 	'Hinta',
 	'Litrahinta',
+	'Pantti',
 	'Alkoholi-%',
 	'Normaalihinta',
 	'Kampanja alkaa',
@@ -117,7 +119,10 @@ export function ogDisplayFields(schema: readonly string[], values: unknown[]): O
 		vintage: text(fields.Vuosikerta),
 		volume: numberValue(fields.Pullokoko),
 		price,
-		pricePerLitre: numberValue(fields.Litrahinta),
+		pricePerLitre:
+			numberValue(fields.Litrahinta) ??
+			calculatePricePerLitre(price, numberValue(fields.Pullokoko), numberValue(fields.Pantti)) ??
+			undefined,
 		abv: numberValue(fields['Alkoholi-%']),
 		sale: sale
 			? {

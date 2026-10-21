@@ -4,6 +4,7 @@ import {
 	carryOverMissingProducts,
 	clearRemovedFlag,
 	detailVerifyAgeDays,
+	hasArrived,
 	isDetailVerifyCandidate,
 	mergeProduct,
 	refreshSearchColumns,
@@ -159,13 +160,14 @@ describe('carryOverMissingProducts', () => {
 		);
 
 	it('flags a product missing from the API as removed today and clears its "Uutuus" mark', () => {
-		const existing = { '1': stored('1') };
+		const existing = { '1': stored('1', { Tila: 'Uutuus' }) };
 		const products: Record<string, MigratedProduct> = {};
 		const result = run(existing, products, []);
 
 		expect(result).toEqual({ removed: 1, filteredRemoved: 0 });
 		expect(products['1']!.meta?.removedFromSelection).toBe('2026-10-01');
 		expect(products['1']!.values[col('Uutuus')]).toBeNull();
+		expect(products['1']!.values[col('Tila')]).toBeNull();
 		// The product itself, price history and hash are kept: nothing is ever deleted.
 		expect(products['1']!.hash).toBe('hash-1');
 	});
@@ -344,5 +346,15 @@ describe('refreshSearchColumns', () => {
 	it('returns the same product when nothing changed', () => {
 		const previous = stored('1', { Ruokasuositukset: 'Porsas' });
 		expect(refreshSearchColumns(previous, values({ Ruokasuositukset: 'Porsas' }))).toBe(previous);
+	});
+});
+
+describe('hasArrived', () => {
+	it('is true only when a coming product has another status now', () => {
+		expect(hasArrived(values({ Tila: 'Tulee' }), values({ Tila: 'Uutuus' }))).toBe(true);
+		expect(hasArrived(values({ Tila: 'Tulee' }), values({ Tila: 'Tulee' }))).toBe(false);
+		expect(hasArrived(values({ Tila: 'Aktiivinen' }), values({ Tila: 'Poistuva' }))).toBe(false);
+		// Products stored before the column existed don't count as arrived
+		expect(hasArrived(values({ Tila: null }), values({ Tila: 'Aktiivinen' }))).toBe(false);
 	});
 });

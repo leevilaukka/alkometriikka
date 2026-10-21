@@ -49,6 +49,7 @@ import {
 	carryOverMissingProducts,
 	clearRemovedFlag,
 	detailVerifyAgeDays,
+	hasArrived,
 	isDetailVerifyCandidate,
 	mergeProduct,
 	refreshSearchColumns,
@@ -584,7 +585,13 @@ async function sync(): Promise<void> {
 		const searchHash = getHash(getHashValues(searchValues));
 		const previous = existingProducts[product.id];
 
-		if (isMigratedProduct(previous) && previous.hash === searchHash) {
+		// A coming product that just arrived gets its details refetched even though
+		// its hash is unchanged: the detail API only now has its price per litre.
+		if (
+			isMigratedProduct(previous) &&
+			previous.hash === searchHash &&
+			!hasArrived(previous.values, searchValues)
+		) {
 			// Back in (or still in) the selection: keep it, but drop any stale removed flag.
 			const kept = refreshSearchColumns(clearRemovedFlag(previous), searchValues);
 			if (kept.values !== previous.values)
