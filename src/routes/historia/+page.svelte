@@ -116,7 +116,7 @@
 			<div class="rounded-lg border border-amber-500/30 bg-amber-500/5 p-5">
 				<h2 class="font-semibold">Mitä kaaviossa näkyy?</h2>
 				<p class="mt-2 text-sm leading-relaxed text-secondary">
-					Syaani viiva näyttää hintahistorian. Katkoviiva yhdistää havainnot ajanjaksoilla, joilta
+					Punainen viiva näyttää hintahistorian. Katkoviiva yhdistää havainnot ajanjaksoilla, joilta
 					puuttuu tietoja. Arkisto ei aina kerro tarkkaa hinnanmuutospäivää.
 				</p>
 				<p class="mt-3 text-sm text-secondary">

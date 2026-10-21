@@ -65,7 +65,7 @@
 		const lastDate = visibleDates.at(-1);
 		const longRange =
 			firstDate != null && lastDate != null && lastDate - firstDate > 5 * 365 * 86400000;
-		const cyan = '#00b5dd';
+		const brandRed = '#e51b15'; // --color-brand-1
 		const lastPoint = chartPoints.findLast((point) => point !== null);
 		const latestPricePlugin: Plugin<'line'> = {
 			id: 'latestPrice',
@@ -81,7 +81,7 @@
 					chartArea.top + 12,
 					Math.min(chartArea.bottom - 12, scales.y.getPixelForValue(lastPoint.y))
 				);
-				ctx.fillStyle = cyan;
+				ctx.fillStyle = brandRed;
 				ctx.beginPath();
 				ctx.roundRect(x, y - 11, width, 22, 4);
 				ctx.fill();
@@ -193,14 +193,14 @@
 							// Object-mode parsing needs an x value even for a skipped point.
 							return { x: previous && next ? (previous.x + next.x) / 2 : 0, y: Number.NaN };
 						}),
-						borderColor: cyan,
+						borderColor: brandRed,
 						borderWidth: 1.5,
 						backgroundColor: ({ chart }) => {
 							const area = chart.chartArea;
-							if (!area) return 'rgba(0, 181, 221, 0.15)';
+							if (!area) return 'rgba(229, 27, 21, 0.15)';
 							const gradient = chart.ctx.createLinearGradient(0, area.top, 0, area.bottom);
-							gradient.addColorStop(0, 'rgba(0, 181, 221, 0.32)');
-							gradient.addColorStop(1, 'rgba(0, 181, 221, 0.015)');
+							gradient.addColorStop(0, 'rgba(229, 27, 21, 0.32)');
+							gradient.addColorStop(1, 'rgba(229, 27, 21, 0.015)');
 							return gradient;
 						},
 						fill: 'origin',
@@ -213,7 +213,7 @@
 						pointRadius: chartPoints.length === 1 ? 3 : 0,
 						pointHoverRadius: 4,
 						pointHitRadius: 12,
-						pointBackgroundColor: cyan,
+						pointBackgroundColor: brandRed,
 						pointBorderWidth: 0,
 						tooltip: {
 							callbacks: {
@@ -353,7 +353,7 @@
 				data-testid="archive-evidence"
 			>
 				<p>
-					<span class="mr-2 inline-block h-2.5 w-2.5 rounded-full bg-cyan-500"></span><strong
+					<span class="mr-2 inline-block h-2.5 w-2.5 rounded-full bg-brand-1"></span><strong
 						>Arkistoidut hinnastot</strong
 					>
 				</p>
