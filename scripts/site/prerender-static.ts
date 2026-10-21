@@ -10,20 +10,12 @@ import {
 	storeAddress,
 	storeDescription
 } from '../../src/lib/utils/app/seo.ts';
-import {
-	SEASONS,
-	seasonPath,
-	seasonTitle,
-	type Season
-} from '../../src/lib/utils/catalog/seasons.ts';
-import type { StoredDataset } from '../../src/lib/utils/catalog/dataset.ts';
 import type { AvailabilityData, StoreData } from '../data/types';
 
 /**
  * Prerenders SEO stubs for the client-rendered routes that have no product
  * data behind them: the front page, the plain static pages (laskin, tilastot,
- * …), one page per Alko store and one per season (glögit…), whose product list
- * comes from data.json. See scripts/lib/stub.ts for why stubs exist at all.
+ * …) and one page per Alko store. See scripts/lib/stub.ts for why stubs exist at all.
  *
  * Both sets are tiny (a few hundred files) so they are fully regenerated on
  * every run. Output is deterministic — store opening hours use the regular
@@ -174,103 +166,6 @@ function storeStub(template: string, store: StoreData): string {
 	});
 }
 
-/** Season pages list this many products in the fallback, and fewer in the JSON-LD. */
-const SEASON_LIST_LIMIT = 100;
-const SEASON_ITEM_LIST_LIMIT = 30;
-
-type SeasonStubProduct = { id: string; name: string; price: number };
-
-/** Active products in each season, cheapest first. */
-function seasonProducts(dataset: StoredDataset): Map<Season, SeasonStubProduct[]> {
-	const schema = Array.isArray(dataset.schema) ? (dataset.schema as unknown[]) : [];
-	const column = (name: string) => schema.indexOf(name);
-	const [number, nameIndex, price, type, subType, beerType] = [
-		'Numero',
-		'Nimi',
-		'Hinta',
-		'Tyyppi',
-		'Alatyyppi',
-		'Oluttyyppi'
-	].map(column);
-	const bySeason = new Map<Season, SeasonStubProduct[]>(SEASONS.map((season) => [season, []]));
-	for (const product of Object.values(dataset.products ?? {})) {
-		if (!product || !Array.isArray(product.values) || product.meta?.removedFromSelection) continue;
-		const values = product.values;
-		const entry = {
-			id: text(values[number]),
-			name: text(values[nameIndex]),
-			price: Number(values[price])
-		};
-		if (!entry.id || !entry.name || !(entry.price > 0)) continue;
-		// The same Alatyyppi fallback as the app's Kaljakori
-		const input = {
-			name: entry.name,
-			type: text(values[type]),
-			subType: text(values[subType]) || text(values[beerType]) || text(values[type])
-		};
-		for (const season of SEASONS) if (season.matches(input)) bySeason.get(season)!.push(entry);
-	}
-	for (const products of bySeason.values()) products.sort((a, b) => a.price - b.price);
-	return bySeason;
-}
-
-function seasonStub(template: string, season: Season, products: SeasonStubProduct[]): string {
-	const url = `${SITE_URL}${seasonPath(season)}`;
-	const name = seasonTitle(season);
-	const productUrl = (product: SeasonStubProduct) =>
-		`${SITE_URL}/tuotteet/${encodeURIComponent(product.id)}/`;
-	const euros = (price: number) =>
-		`${price.toLocaleString('fi-FI', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} €`;
-	const collectionPage = {
-		'@context': 'https://schema.org',
-		'@type': 'CollectionPage',
-		'@id': url,
-		url,
-		name,
-		description: season.description,
-		inLanguage: 'fi-FI',
-		isPartOf: { '@type': 'WebSite', name: 'Alkometriikka', url: `${SITE_URL}/` },
-		mainEntity: {
-			'@type': 'ItemList',
-			numberOfItems: products.length,
-			itemListElement: products.slice(0, SEASON_ITEM_LIST_LIMIT).map((product, index) => ({
-				'@type': 'ListItem',
-				position: index + 1,
-				name: product.name,
-				url: productUrl(product)
-			}))
-		}
-	};
-	const trail = [{ name: 'Kausijuomat', path: '/kausi/' }];
-	return renderStub(template, {
-		title: pageTitle(name),
-		description: season.description,
-		url,
-		keywords: season.keywords,
-		ogImage: OG_IMAGE,
-		ogImageAlt: OG_IMAGE_ALT,
-		jsonLd: [
-			collectionPage,
-			breadcrumbJsonLd([
-				{ name: 'Kausijuomat', url: `${SITE_URL}/kausi/` },
-				{ name: season.title, url }
-			])
-		],
-		fallbackName: 'season',
-		fallbackHtml: `\t\t${breadcrumbNav(trail)}
-\t\t<h1>${escapeHtml(season.title)}</h1>
-\t\t<p>${escapeHtml(season.intro)}</p>
-\t\t<p>${products.length} tuotetta valikoimassa, halvimmat ensin.</p>
-\t\t<ol>${products
-			.slice(0, SEASON_LIST_LIMIT)
-			.map(
-				(product) =>
-					`<li><a href="${escapeHtml(`/tuotteet/${encodeURIComponent(product.id)}/`)}">${escapeHtml(product.name)}</a> – ${escapeHtml(euros(product.price))}</li>`
-			)
-			.join('')}</ol>`
-	});
-}
-
 function staticStub(template: string, page: (typeof STATIC_PAGES)[number]): string {
 	const url = `${SITE_URL}${page.path}`;
 	const jsonLd = {
@@ -334,7 +229,6 @@ async function main() {
 	const availabilityPath = path.resolve(
 		readOption('--availability') ?? path.join(outputPath, 'availability.json')
 	);
-	const dataPath = path.resolve(readOption('--data') ?? path.join(outputPath, 'data.json'));
 
 	const template = await Bun.file(templatePath).text();
 
@@ -362,20 +256,7 @@ async function main() {
 		console.warn(`⚠️  Availability data not found at ${availabilityPath}; skipping store pages.`);
 	}
 
-	let seasons = 0;
-	if (await Bun.file(dataPath).exists()) {
-		const dataset = (await Bun.file(dataPath).json()) as StoredDataset;
-		for (const [season, products] of seasonProducts(dataset)) {
-			await writePage(outputPath, seasonPath(season), seasonStub(template, season, products));
-			seasons += 1;
-		}
-	} else {
-		console.warn(`⚠️  Dataset not found at ${dataPath}; skipping season pages.`);
-	}
-
-	console.log(
-		`Static pages: ${STATIC_PAGES.length + 1} | Store pages: ${stores} | Season pages: ${seasons} → ${outputPath}`
-	);
+	console.log(`Static pages: ${STATIC_PAGES.length + 1} | Store pages: ${stores} → ${outputPath}`);
 }
 
 await main();

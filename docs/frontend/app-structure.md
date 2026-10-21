@@ -48,7 +48,6 @@ without store data await `alkoWithStores`:
 | `/tuotteet/[id]`                                     | always (shows availability)                 |
 | `/myymalat/[storeID]`                                | always                                      |
 | `/kategoriat/[type]/[[subtype]]`, `/hinnanmuutokset` | "only my store" is on and a store is chosen |
-| `/kausi/[slug]`                                      | "only my store" is on and a store is chosen |
 | `/seuratut`                                          | always (compares stock)                     |
 | `/kompassi`                                          | the store list is read from it              |
 
@@ -137,8 +136,6 @@ Product photos from `images.alko.fi` aren't handled: they are sent with a one-ye
 | `/kategoriat/[type]/[[subtype]]/` | Category page                          | 404 if the slugs don't match the category tree                                         |
 | `/hinnanmuutokset`                | Recent price changes                   |                                                                                        |
 | `/seuratut`                       | Watched products and their changes     |                                                                                        |
-| `/kausi/`                         | Season index                           |                                                                                        |
-| `/kausi/[slug]/`                  | Season page (glögit, joulujuomat…)     | 404 if the slug isn't in `SEASONS`                                                     |
 | `/tilastot`                       | Catalog statistics and charts          |                                                                                        |
 | `/laskin`                         | Alcohol / BAC calculator               | Doesn't need the dataset                                                               |
 | `/myymalat`                       | Store list                             |                                                                                        |
@@ -232,7 +229,7 @@ while back/forward restores it from the URL.
 
 - The header has the logo, the search box (hidden on pages without a product list), a "Lisää"
   menu, links to Daily and Listat, and the settings button. The menu (`menuGroups` in the layout)
-  groups its links under Selaa (Kategoriat, Kausijuomat, Hinnanmuutokset, Tilastot), Omat
+  groups its links under Selaa (Kategoriat, Hinnanmuutokset, Tilastot), Omat
   (Seuratut, Listat), Myymälät (Myymälät, Kompassi) and Työkalut (Laskin, Daily-arkisto), and
   marks the current page. When watched products have changed, Seuratut shows how many and the
   menu button gets a green dot.

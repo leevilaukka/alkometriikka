@@ -131,13 +131,6 @@ export const STATIC_PAGES: StaticPageSeo[] = [
 		keywords: 'listat, juomalistat, jaa, Alko'
 	},
 	{
-		path: '/kausi/',
-		title: 'Kausijuomat',
-		description:
-			'Glögit, joulujuomat, kuohuviinit uuteenvuoteen, vappu- ja kesäjuomat Alkon valikoimasta. Vertaa hintoja ja saatavuutta myymälässäsi.',
-		keywords: 'kausijuomat, glögi, jouluolut, kuohuviini, sima, kesäjuomat, Alko'
-	},
-	{
 		path: '/seuratut/',
 		title: 'Seuratut',
 		description:

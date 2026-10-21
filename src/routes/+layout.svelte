@@ -199,7 +199,6 @@
 			label: 'Selaa',
 			items: [
 				{ href: '/kategoriat/', icon: 'wine', name: 'Kategoriat' },
-				{ href: '/kausi/', icon: 'calendar_star', name: 'Kausijuomat' },
 				{ href: '/hinnanmuutokset/', icon: 'trending_down', name: 'Hinnanmuutokset' },
 				{ href: '/tilastot/', icon: 'stats', name: 'Tilastot' }
 			]
@@ -241,8 +240,7 @@
 		'/kategoriat',
 		'/myymalat',
 		'/myymalat/[storeID]',
-		'/seuratut',
-		'/kausi'
+		'/seuratut'
 	];
 	const hasSearch = $derived(page.route.id === null || !noSearchPages.includes(page.route.id));
 
