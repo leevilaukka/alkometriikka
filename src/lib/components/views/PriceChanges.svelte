@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { appPath } from '$lib/utils/app/paths';
 	import { resolve } from '$app/paths';
-	import { page } from '$app/state';
 	import { getContext, untrack } from 'svelte';
 	import SvelteVirtualList from '@humanspeak/svelte-virtual-list';
 	import type { Kaljakori } from '$lib/alko';
@@ -64,7 +63,7 @@
 
 	const searchParamsManager = getContext<SearchParamsManager>(ContextKeys.SearchParamsManager);
 
-	const initial = untrack(() => parsePriceChangeParams(page.url.searchParams));
+	const initial = untrack(() => parsePriceChangeParams(searchParamsManager.params));
 	let days = $state<number>(initial.days);
 	let direction = $state<PriceChangeDirection>(initial.direction);
 	let typeSlug = $state(initial.typeSlug);

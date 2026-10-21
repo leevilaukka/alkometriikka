@@ -7,12 +7,13 @@
 	import { page } from '$app/state';
 	import { AllColumns } from '$lib/utils/constants/columns';
 	import { watchlist } from '$lib/global.svelte';
+	import { readSearchParams } from '$lib/utils/app/compressedParams';
 
 	let { data }: PageProps = $props();
 	resetSEO();
 
 	// A store filter from the URL needs store availability, or the list would start out empty
-	const needsStores = page.url.searchParams.has(AllColumns.StoreAvailability);
+	const needsStores = readSearchParams(page.url).has(AllColumns.StoreAvailability);
 
 	// Going back to the list returns to where it was scrolled. Cleared on every navigation so
 	// only back/forward, which restores the snapshot, scrolls it.

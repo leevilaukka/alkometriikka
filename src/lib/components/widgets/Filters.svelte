@@ -10,10 +10,12 @@
 	import Icon from './Icon.svelte';
 	import { isMobile } from '$lib/global.svelte';
 	import {
+		COMMA_SEPARATED_FILTERS,
 		getNarrowedFilterValues,
 		getNestedSubFilter,
 		getShownParentFilter,
 		initFilterValues,
+		joinFilterParams,
 		searchParametersFromFilterValues
 	} from '$lib/utils/catalog/filters';
 	import type { ColumnNames, FilterValues } from '$lib/types';
@@ -155,7 +157,13 @@
 			kaljakori,
 			showRemoved
 		);
-		searchParamsManager.setParametersFromObject(filterValuesAsSearchParams).update();
+		searchParamsManager
+			.setParametersFromObject(
+				COMMA_SEPARATED_FILTERS
+					? joinFilterParams(filterValuesAsSearchParams)
+					: filterValuesAsSearchParams
+			)
+			.update();
 	});
 </script>
 

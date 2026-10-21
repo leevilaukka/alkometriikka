@@ -142,6 +142,12 @@ that use them re-run when `setAvailability` is called.
 - `searchParametersFromFilterValues` writes selections as repeated parameters
   (`?Tyyppi=Viinit&Tyyppi=Oluet`) and ranges as `min-max`. Ranges still at their default are
   left out.
+- With `COMMA_SEPARATED_FILTERS` on, `joinFilterParams` writes them comma-separated instead
+  (`?Tyyppi=Viinit,Oluet`); a filter with a selection containing a comma keeps the repeated form.
+  It's off by default.
+- `filterValuesFromSearchParameters` reads both forms whatever the toggle says. A value that is
+  one of the filter's own values is kept whole (`Brandyt, armanjakit ja calvadosit`); anything
+  else is split on commas.
 - `getNarrowedFilterValues` limits a child filter's options to those under the selected parent
   (e.g. only wine subtypes when Tyyppi = Viinit).
 

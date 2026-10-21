@@ -205,16 +205,25 @@ Shareable state lives in the query string, managed by `SearchParamsManager`
 the URL with `replaceState` (no history entries). Calls made before the router is ready are
 queued and flushed by `markRouterReady()` in `afterNavigate`.
 
-| Parameter                             | Used on                 | Meaning                                                                                                          |
-| ------------------------------------- | ----------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `q`                                   | lists with a search box | Name search                                                                                                      |
-| `<column name>`                       | `/`, list pages         | A filter, e.g. `?Tyyppi=Viinit&Tyyppi=Oluet` or `?Hinta=5-20` (see [Kaljakori](kaljakori.md#filters-in-the-url)) |
-| `sort`, `asc`, `highlight`            | `/`                     | Sort column, direction, highlighted column (omitted when default)                                                |
-| `removed`                             | `/`                     | `true` when removed products are shown                                                                           |
-| `list`                                | `/listat`               | An lz-string compressed list                                                                                     |
-| `ids`                                 | `/vertailu`             | Comma-separated product numbers                                                                                  |
-| `pv`, `suunta`, `tyyppi`, `alatyyppi` | `/hinnanmuutokset`      | Window (7/30/90 days), direction (`halpeni`/`kallistui`), category slugs                                         |
-| `sid`                                 | any shared link         | Share id for counting shared views; stripped on arrival                                                          |
+Once the query string passes 400 characters, `update()` moves it into a `#z=` fragment instead:
+the parameters grouped by key (repeated filter names are most of a long query) and compressed with
+lz-string (`src/lib/utils/app/compressedParams.ts`). Browsers never send the fragment, so even
+"Valitse kaikki" on a filter with thousands of values can't make a reload fail with 414 (GitHub
+Pages refuses URLs over about 8 KB). Only `sid`, `flag` and `list` stay in the query. The manager
+expands `z` when it reads a URL, and code that reads the query string itself goes through
+`readSearchParams()`, so a compressed link behaves like the long one.
+
+| Parameter                             | Used on                 | Meaning                                                                                                                              |
+| ------------------------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `q`                                   | lists with a search box | Name search                                                                                                                          |
+| `<column name>`                       | `/`, list pages         | A filter, e.g. `?Tyyppi=Viinit&Tyyppi=Oluet` (or `Viinit,Oluet`) or `?Hinta=5-20` (see [Kaljakori](kaljakori.md#filters-in-the-url)) |
+| `sort`, `asc`, `highlight`            | `/`                     | Sort column, direction, highlighted column (omitted when default)                                                                    |
+| `removed`                             | `/`                     | `true` when removed products are shown                                                                                               |
+| `list`                                | `/listat`               | An lz-string compressed list                                                                                                         |
+| `ids`                                 | `/vertailu`             | Comma-separated product numbers                                                                                                      |
+| `pv`, `suunta`, `tyyppi`, `alatyyppi` | `/hinnanmuutokset`      | Window (7/30/90 days), direction (`halpeni`/`kallistui`), category slugs                                                             |
+| `sid`                                 | any shared link         | Share id for counting shared views; stripped on arrival                                                                              |
+| `#z=` (fragment)                      | any page                | The other parameters compressed, when the query string would be long                                                                 |
 
 The search box text belongs to the page it was typed on: navigating to a different path clears it,
 while back/forward restores it from the URL.
