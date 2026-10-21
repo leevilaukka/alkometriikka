@@ -1,5 +1,7 @@
 <script lang="ts">
 	import Compare from '$lib/components/views/Compare.svelte';
+	import { resolve } from '$app/paths';
+	import { goto } from '$app/navigation';
 	import { page } from '$app/state';
 	import { onMount } from 'svelte';
 	import { compareIdsFromParam } from '$lib/utils/user/compare';
@@ -15,6 +17,12 @@
 	// the pathname stable across arbitrary comparisons), so send an explicit event
 	// with the compared items and full URL instead.
 	onMount(() => {
+		// Checked here rather than in a load function, which can't read the compressed
+		// params in the URL fragment
+		if (!ids.length) {
+			goto(resolve('/'), { replaceState: true });
+			return;
+		}
 		sendAnalyticsEvent('view_compare', { product_numbers: ids, url: page.url.href });
 	});
 </script>
