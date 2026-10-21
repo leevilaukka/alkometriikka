@@ -30,6 +30,7 @@
 	import { setContext } from 'svelte';
 	import Settings from '$lib/components/widgets/Settings/Index.svelte';
 	import CompareBar from '$lib/components/widgets/CompareBar.svelte';
+	import CommandPalette from '$lib/components/widgets/CommandPalette.svelte';
 	import NoticeBanner from '$lib/components/widgets/NoticeBanner.svelte';
 	import InstallBanner from '$lib/components/widgets/InstallBanner.svelte';
 	import { LocalStorageManager } from '$lib/utils/app/storage';
@@ -230,6 +231,10 @@
 		'/myymalat',
 		'/myymalat/[storeID]'
 	];
+	const hasSearch = $derived(page.route.id === null || !noSearchPages.includes(page.route.id));
+
+	let commandPalette = $state<ReturnType<typeof CommandPalette>>();
+	const paletteShortcut = /Mac|iPhone|iPad/.test(navigator.userAgent) ? '⌘K' : 'Ctrl K';
 </script>
 
 <svelte:window onclick={handleDocumentClick} onkeydown={handleGlobalKeydown} />
@@ -258,9 +263,13 @@
 					>Alkometriikka</span
 				>
 			</a>
-			{#if page.route.id === null || !noSearchPages.includes(page.route.id)}
+			{#if hasSearch}
 				<div class={twMerge('flex w-full flex-row', 'rounded border border-primary')}>
-					<div
+					<button
+						type="button"
+						onclick={() => commandPalette?.openPalette()}
+						aria-label="Hae kaikkialta"
+						title={`Hae kaikkialta (${paletteShortcut})`}
 						class={twMerge(
 							components.button(),
 							'aspect-square border-0 bg-white text-black',
@@ -269,7 +278,7 @@
 						)}
 					>
 						<Icon name="search" />
-					</div>
+					</button>
 					<div class="relative flex w-full">
 						<input
 							id="searchQuery"
@@ -291,6 +300,12 @@
 				</div>
 			{/if}
 			<div class="ms-auto flex items-center gap-2">
+				<CommandPalette
+					bind:this={commandPalette}
+					kaljakori={alko.kaljakori}
+					availability={alko.availability}
+					showButton={!hasSearch}
+				/>
 				<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 				<details
 					bind:this={extraMenu}

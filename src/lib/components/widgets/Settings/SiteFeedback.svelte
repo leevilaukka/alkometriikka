@@ -4,6 +4,13 @@
 	import { version } from '$app/environment';
 	import { page } from '$app/state';
 
+	let { showTrigger = true }: { showTrigger?: boolean } = $props();
+	let dialog = $state<ReturnType<typeof FeedbackDialog>>();
+
+	export function open() {
+		dialog?.open();
+	}
+
 	const categories = [
 		{ key: 'wrong_product_info', label: 'Tuotetiedot ovat väärät tai puuttuvat' },
 		{ key: 'wrong_image', label: 'Kuva puuttuu tai on väärä' },
@@ -30,6 +37,8 @@
 </script>
 
 <FeedbackDialog
+	bind:this={dialog}
+	{showTrigger}
 	title="Ilmoita ongelmasta"
 	description="Valitse alta, mikä meni pieleen — emme kerää vapaata tekstiä, vain valitut kohdat ja tämänhetkisen sivun ja version, jotta voimme jäljittää vian."
 	thankYou="Kiitos ilmoituksesta! Käytämme sitä Alkometriikan kehittämiseen."
