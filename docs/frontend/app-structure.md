@@ -212,6 +212,7 @@ expands `z` when it reads a URL, and code that reads the query string itself goe
 | `q`                                   | lists with a search box | Name search                                                                                                                          |
 | `<column name>`                       | `/`, list pages         | A filter, e.g. `?Tyyppi=Viinit&Tyyppi=Oluet` (or `Viinit,Oluet`) or `?Hinta=5-20` (see [Kaljakori](kaljakori.md#filters-in-the-url)) |
 | `sort`, `asc`, `highlight`            | `/`                     | Sort column, direction, highlighted column (omitted when default)                                                                    |
+| `removed`                             | `/`                     | `true` when removed products are shown                                                                                               |
 | `list`                                | `/listat`               | An lz-string compressed list                                                                                                         |
 | `ids`                                 | `/vertailu`             | Comma-separated product numbers                                                                                                      |
 | `pv`, `suunta`, `tyyppi`, `alatyyppi` | `/hinnanmuutokset`      | Window (7/30/90 days), direction (`halpeni`/`kallistui`), category slugs                                                             |
