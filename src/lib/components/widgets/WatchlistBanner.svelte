@@ -41,7 +41,8 @@
 		)}
 	>
 		<Icon name="bell_ring" class="shrink-0 text-xl text-green-700 dark:text-green-400" />
-		<span class="flex min-w-0 flex-1 flex-col">
+		<!-- contain-inline-size: the truncated summary would otherwise set the page's minimum width -->
+		<span class="flex min-w-0 flex-1 flex-col contain-inline-size">
 			<strong>Seuraamasi tuotteet ovat muuttuneet</strong>
 			<span class="truncate text-sm text-secondary">{summarizeWatchChanges(changes)}</span>
 		</span>
