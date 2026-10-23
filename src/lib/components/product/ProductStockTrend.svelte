@@ -16,11 +16,15 @@
 
 	let series = $state<StockPoint[]>([]);
 
+	// The prop re-reads the product it came from, which the product page swaps for the price
+	// list's copy once loaded. The derived only changes with the number, so that doesn't refetch
+	const currentNumber = $derived(productNumber);
+
 	$effect(() => {
-		const id = productNumber;
+		const id = currentNumber;
 		series = [];
 		loadProductStock(id).then((shard) => {
-			if (shard && id === productNumber) series = productStockSeries(shard, id);
+			if (shard && id === currentNumber) series = productStockSeries(shard, id);
 		});
 	});
 

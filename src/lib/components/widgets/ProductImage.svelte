@@ -31,19 +31,30 @@
 		number,
 		name,
 		transform = 'products',
+		priority = false,
 		...rest
-	}: { number: string; name: string; transform?: ImageTransform; [key: string]: any } = $props();
+	}: {
+		number: string;
+		name: string;
+		transform?: ImageTransform;
+		/** The page's main photo (its LCP element): fetched ahead of other images */
+		priority?: boolean;
+		[key: string]: any;
+	} = $props();
 
 	const src = $derived(generateImageUrl(number, transform));
 	let loadedSrc = $state<string>();
 
 	// The photo downloads in the background and replaces the placeholder once it's complete, from
-	// the browser's cache. Reruns for each product, so a reused component tries every photo
+	// the browser's cache. Reruns for each product, so a reused component tries every photo.
+	// Product page stubs preload their photo with these same request settings
+	// (scripts/lib/stub.ts), so the probe reuses that download
 	$effect(() => {
 		const url = src;
 		const probe = new Image();
 		probe.crossOrigin = 'anonymous';
 		probe.referrerPolicy = 'no-referrer';
+		if (priority) probe.fetchPriority = 'high';
 		probe.onload = () => (loadedSrc = url);
 		probe.src = url;
 		return () => (probe.onload = null);
@@ -55,6 +66,7 @@
 	referrerpolicy="no-referrer"
 	src={loadedSrc === src ? src : placeholder(transform)}
 	alt={name}
+	fetchpriority={priority ? 'high' : undefined}
 	data-name="product-image"
 	class={twMerge('block h-full w-full object-contain', rest.class)}
 />

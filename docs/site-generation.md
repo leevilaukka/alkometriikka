@@ -34,6 +34,15 @@ JSON-LD (offer with price and availability, additional properties, sale price wh
 history feed, and `product:price:*` meta tags. The OG image is the product's R2 card if
 `og-images.json` has a key for it, else Alko's photo.
 
+The product photo, the page's LCP element, is preloaded from `<head>` with `fetchpriority="high"`.
+The preload, the fallback `<img>` and the app's `ProductImage` all request it the same way (CORS,
+no referrer), so the browser downloads it once and the app reuses it from cache.
+
+Each product stub also carries the product itself as a one-product `data.json` (schema plus that
+product, about 1 KB) in `<script type="application/json" id="stub-data">`. The page renders it
+before the full price list has loaded; see
+[Product page preview](frontend/app-structure.md#product-page-preview).
+
 It is **incremental**. Each page has a content key, a SHA-256 of everything that can change its
 HTML: `RENDER_VERSION`, the schema, the product's values, meta and price history, the template
 (new JS/CSS hashes change every page), its OG image key and category trail, and today's date if

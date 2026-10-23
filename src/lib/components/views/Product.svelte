@@ -6,7 +6,12 @@
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/ui/styles';
 	import Icon from '../widgets/Icon.svelte';
-	import { type AvailabilityData, type AvailabilityStore, type PriceListItem } from '$lib/types';
+	import {
+		type AvailabilityData,
+		type AvailabilityStore,
+		type LoadState,
+		type PriceListItem
+	} from '$lib/types';
 	import { afterNavigate } from '$app/navigation';
 	import type { Kaljakori } from '$lib/alko';
 	import {
@@ -38,23 +43,33 @@
 	import ProductMobileCta from '../product/ProductMobileCta.svelte';
 	import ProductWatchButton from '../product/ProductWatchButton.svelte';
 	import { describeWatchChange, type WatchChange } from '$lib/utils/user/watchlist';
-	import { pageBottomBar } from '$lib/global.svelte';
+	import { pageBottomBar, preferredStoreId } from '$lib/global.svelte';
 
 	const {
 		product,
 		kaljakori,
+		catalogState,
 		availability,
+		availabilityState,
 		availabilityStores,
 		preferredStore,
 		availabilityUpdated
 	}: {
 		product: PriceListItem;
+		/** Only the product itself until the price list has loaded, when the page renders from its stub */
 		kaljakori: Kaljakori;
+		catalogState: LoadState;
 		availability: AvailabilityData;
+		availabilityState: LoadState;
 		availabilityStores: AvailabilityStore[];
 		preferredStore?: AvailabilityStore;
 		availabilityUpdated: Date | undefined;
 	} = $props();
+
+	// What the price box can say about the preferred store: with none chosen there's nothing to wait for
+	const preferredStoreState = $derived<LoadState>(
+		availabilityState === 'loading' && !$preferredStoreId ? 'loaded' : availabilityState
+	);
 
 	const rankedAvailabilityStores = $derived(
 		rankStoresByDistance(availabilityStores, preferredStore)
@@ -75,9 +90,11 @@
 
 	// Removed products can't be bought, so they make no sense as alternatives here
 	const similarProducts = $derived(
-		findSimilarProducts(product, kaljakori, SIMILAR_PRODUCT_COLUMNS, kaljakori.data.length)
-			.filter((item) => !item[AllColumns.RemovedFromSelection])
-			.slice(0, 24)
+		catalogState === 'loaded'
+			? findSimilarProducts(product, kaljakori, SIMILAR_PRODUCT_COLUMNS, kaljakori.data.length)
+					.filter((item) => !item[AllColumns.RemovedFromSelection])
+					.slice(0, 24)
+			: []
 	);
 
 	const sale = $derived(
@@ -153,6 +170,7 @@
 		<ProductWatchButton
 			{product}
 			{availability}
+			ready={availabilityState !== 'loading'}
 			preferredStoreId={preferredStore?.id}
 			bind:changes={watchChanges}
 			class="ml-auto"
@@ -219,6 +237,7 @@
 				{product}
 				{sale}
 				{campaignWindow}
+				storesState={preferredStoreState}
 				{preferredStore}
 				{availableInPreferredStore}
 				{closestAvailableStore}
@@ -235,6 +254,7 @@
 			{product}
 			{sale}
 			{campaignWindow}
+			storesState={preferredStoreState}
 			{preferredStore}
 			{availableInPreferredStore}
 			{closestAvailableStore}
@@ -247,9 +267,12 @@
 		<ProductSizeHook size={cheapestSize} class="lg:hidden" />
 	{/if}
 
-	<ProductQualityMetrics {product} {kaljakori} />
+	<!-- Both compare against the whole price list, so without it they're left out -->
+	{#if catalogState !== 'failed'}
+		<ProductQualityMetrics {product} {kaljakori} loading={catalogState === 'loading'} />
 
-	<ProductSimilar {product} candidates={similarProducts} />
+		<ProductSimilar {product} candidates={similarProducts} loading={catalogState === 'loading'} />
+	{/if}
 
 	<div
 		class="grid w-full grid-cols-1 gap-6 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] lg:items-start"
@@ -262,6 +285,7 @@
 			id="myymalasaatavuus"
 			productNumber={product[AllColumns.Number]}
 			stores={rankedAvailabilityStores}
+			{availabilityState}
 			{preferredStore}
 			{availabilityUpdated}
 		/>

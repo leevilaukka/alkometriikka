@@ -45,18 +45,46 @@ without store data await `alkoWithStores`:
 | Route                                                | Waits for store data when…                  |
 | ---------------------------------------------------- | ------------------------------------------- |
 | `/` (main list)                                      | the URL has a `Myymälät` filter             |
-| `/tuotteet/[id]`                                     | always (shows availability)                 |
 | `/myymalat/[storeID]`                                | always                                      |
 | `/kategoriat/[type]/[[subtype]]`, `/hinnanmuutokset` | "only my store" is on and a store is chosen |
 | `/seuratut`                                          | always (compares stock)                     |
 | `/kompassi`                                          | the store list is read from it              |
 
-If `data.json` fails to load, the layout shows the error with a retry button. If
-`availability.json` fails, the app continues with empty store data.
+If `data.json` fails to load, the layout shows the error with a retry button, or, when a
+[product page preview](#product-page-preview) is already showing, keeps it and shows a warning
+banner with a retry button. If `availability.json` fails, the app continues with empty store data
+and `availabilityFailed` set, so pages can say it failed instead of showing products in no store.
 
-`+layout.svelte` awaits `data.alko`, removes the loader, and renders the header, the
+`+layout.svelte` waits for `data.alko`, removes the loader, and renders the header, the
 [notice banner](features.md#site-notices), the page, the compare bar and the page's mobile bottom
-bar.
+bar. Once shown, the app stays up, so a page navigated to before the price list has loaded waits
+for it itself.
+
+### Product page preview
+
+Most visitors land on a product page from search, so the product page doesn't wait for either file.
+Each product's [prerendered stub](../site-generation.md#product-pages) embeds that product as a
+one-product `data.json` in `<script type="application/json" id="stub-data">` (`STUB_DATA_ID`).
+The page's `load` reads it into a one-product `Kaljakori` and returns it as `preview`, without
+awaiting `data.alko`; the layout renders right away for a page whose data has a `preview`.
+
+The page then fills in as data arrives, in place, without remounting:
+
+1. **Stub only:** name, price, picture, details, quick stats and price history. The price-quality
+   and similar-products sections, and the store parts, show placeholders sized like the loaded
+   sections so the page doesn't jump.
+2. **`data.json`:** the price list replaces the preview (`catalogState`). Price-quality, similar
+   products, sizes and the category links in the breadcrumb appear.
+3. **`availability.json`:** store availability, the preferred store's stock and the watch button
+   (`availabilityState`), which waits for stock data to snapshot and compare.
+
+If `data.json` fails, the preview stays: price-quality and similar products are left out and the
+store parts say availability couldn't be loaded, as they do when only `availability.json` fails.
+The watch button works either way, since a snapshot without stock data keeps the stock last seen.
+
+Without a matching stub (client-side navigation, or a stub older than this) the page's `load`
+awaits `data.alko` and checks the product exists, as other pages do. Store availability still
+fills in after the first render.
 
 ## Offline support
 

@@ -3,7 +3,7 @@ import { parseDataset } from '$lib/utils/catalog/dataset';
 import { parseAvailability } from '$lib/utils/catalog/availability';
 import type { AvailabilityData } from '$lib/types';
 import { Kaljakori } from '$lib/alko';
-import { LazyAvailability } from '$lib/alko/availability.svelte';
+import { EMPTY_AVAILABILITY, LazyAvailability } from '$lib/alko/availability.svelte';
 import { personalInfo } from '$lib/global.svelte';
 import { dev } from '$app/env';
 import { isCachedResponse } from '$lib/utils/app/offline';
@@ -40,7 +40,8 @@ async function getDataset({ fetch }: { fetch: Fetch }) {
 	return { dataset: parseDataset(text), cached };
 }
 
-async function readAvailability(request: Promise<Response>): Promise<AvailabilityData> {
+/** Null when the file can't be loaded */
+async function readAvailability(request: Promise<Response>): Promise<AvailabilityData | null> {
 	try {
 		const req = await request;
 		if (!req.ok) {
@@ -49,7 +50,7 @@ async function readAvailability(request: Promise<Response>): Promise<Availabilit
 		return parseAvailability(await req.json());
 	} catch (error) {
 		console.warn(error);
-		return { stores: {}, product: {} };
+		return null;
 	}
 }
 
@@ -73,7 +74,8 @@ async function getData({ fetch }: { fetch: Fetch }) {
 	const availability = new LazyAvailability(async () => {
 		await whenIdle();
 		const data = await readAvailability(availabilityRequest);
-		kaljakori.setAvailability(data);
+		// Without store data the app carries on with none, and pages that show it say it failed
+		kaljakori.setAvailability(data ?? EMPTY_AVAILABILITY);
 		return data;
 	});
 
@@ -88,6 +90,10 @@ async function getData({ fetch }: { fetch: Fetch }) {
 		},
 		get availabilityLoaded() {
 			return availability.loaded;
+		},
+		/** availability.json couldn't be loaded, so the empty store data isn't real */
+		get availabilityFailed() {
+			return availability.failed;
 		},
 		/** For code that can't render without store data. */
 		availabilityReady: availability.ready

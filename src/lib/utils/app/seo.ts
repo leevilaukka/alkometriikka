@@ -8,6 +8,12 @@ const number = (value: number, maxDigits: number, minDigits = 0) =>
 		maximumFractionDigits: maxDigits
 	});
 
+/**
+ * Id of the `<script type="application/json">` in which a prerendered stub carries its page's
+ * own data, so the page can render it before the full price list has loaded
+ */
+export const STUB_DATA_ID = 'stub-data';
+
 export type ProductSeoInput = {
 	name: string;
 	category?: string;

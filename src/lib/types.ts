@@ -60,6 +60,9 @@ export type AvailabilityData = {
 	product: Record<string, string[]>;
 };
 
+/** Whether a data file a page shows is still loading, has loaded or failed to load */
+export type LoadState = 'loading' | 'loaded' | 'failed';
+
 /** What a watched product looked like when the user last saw it. */
 export type WatchSnapshot = {
 	/** ISO timestamp */
