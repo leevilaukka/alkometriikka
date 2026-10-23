@@ -98,6 +98,7 @@
 									number={similarProduct[AllColumns.Number]}
 									name={similarProduct[AllColumns.Name]}
 									alt={similarProduct[AllColumns.Name]}
+									lazy
 									class="block aspect-square h-full w-full object-contain"
 								/>
 							</div>

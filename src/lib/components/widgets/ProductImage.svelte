@@ -33,6 +33,7 @@
 		name,
 		transform = 'products',
 		priority = false,
+		lazy = false,
 		...rest
 	}: {
 		number: string;
@@ -40,6 +41,8 @@
 		transform?: ImageTransform;
 		/** The page's main photo (its LCP element): fetched ahead of other images */
 		priority?: boolean;
+		/** Fetched only once near the viewport, so photos below the fold don't compete with the main one */
+		lazy?: boolean;
 		[key: string]: any;
 	} = $props();
 
@@ -47,12 +50,26 @@
 	const fallback = $derived(fallbackImageUrl(number, transform));
 	/** The URL that loaded, keyed by the `src` it was loaded for */
 	let loaded = $state<{ for: string; url: string }>();
+	let element = $state<HTMLImageElement>();
+	/** Whether a lazy image has come near the viewport; others are always visible */
+	let visible = $state(false);
+
+	$effect(() => {
+		if (!lazy || visible || !element) return;
+		const observer = new IntersectionObserver(
+			(entries) => entries.some((entry) => entry.isIntersecting) && (visible = true),
+			{ rootMargin: '200px' }
+		);
+		observer.observe(element);
+		return () => observer.disconnect();
+	});
 
 	// The photo downloads in the background and replaces the placeholder once it's complete, from
 	// the browser's cache. Reruns for each product, so a reused component tries every photo.
 	// Product page stubs preload their photo with these same request settings
 	// (scripts/lib/stub.ts), so the probe reuses that download
 	$effect(() => {
+		if (lazy && !visible) return;
 		const url = src;
 		const fallbackUrl = fallback;
 		const probe = new Image();
@@ -70,6 +87,7 @@
 </script>
 
 <img
+	bind:this={element}
 	crossorigin="anonymous"
 	referrerpolicy="no-referrer"
 	src={loaded?.for === src ? loaded.url : placeholder(transform)}

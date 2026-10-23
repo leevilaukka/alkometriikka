@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { appPath } from '$lib/utils/app/paths';
+	import { prefetchOnHover, prefetchOnPress } from '$lib/utils/app/imagePrefetch';
 	import { resolve } from '$app/paths';
 	import '../app.css';
 	import { dev } from '$app/environment';
@@ -281,7 +282,12 @@
 	const paletteShortcut = /Mac|iPhone|iPad/.test(navigator.userAgent) ? '⌘K' : 'Ctrl K';
 </script>
 
-<svelte:window onclick={handleDocumentClick} onkeydown={handleGlobalKeydown} />
+<svelte:window
+	onclick={handleDocumentClick}
+	onkeydown={handleGlobalKeydown}
+	onpointerover={prefetchOnHover}
+	onpointerdown={prefetchOnPress}
+/>
 
 <!-- A page already showing its preview stays up, with a notice, when the price list fails -->
 {#if loadError && !showApp}
