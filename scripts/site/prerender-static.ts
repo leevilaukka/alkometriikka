@@ -3,7 +3,14 @@ import path from 'node:path';
 import Bun from 'bun';
 import { readOption } from '../lib/cli';
 import { escapeHtml } from '../lib/html';
-import { breadcrumbJsonLd, breadcrumbNav, renderStub, SITE_URL } from '../lib/stub';
+import {
+	breadcrumbJsonLd,
+	breadcrumbNav,
+	readRoutePreloads,
+	renderStub,
+	SITE_URL,
+	type RouteAssets
+} from '../lib/stub';
 import {
 	HOME_PAGE,
 	STATIC_PAGES,
@@ -91,7 +98,7 @@ function openingHoursSpecification(hours: OpeningHours[]) {
 	});
 }
 
-function storeStub(template: string, store: StoreData): string {
+function storeStub(template: string, route: RouteAssets | undefined, store: StoreData): string {
 	const id = text(store.id);
 	const name = text(store.name);
 	const url = `${SITE_URL}/myymalat/${encodeURIComponent(id)}/`;
@@ -148,6 +155,7 @@ function storeStub(template: string, store: StoreData): string {
 			.join(', '),
 		ogImage: OG_IMAGE,
 		ogImageAlt: OG_IMAGE_ALT,
+		route,
 		jsonLd: [jsonLd, breadcrumb],
 		fallbackName: 'store',
 		fallbackHtml: `\t\t${breadcrumbNav(trail)}
@@ -166,7 +174,11 @@ function storeStub(template: string, store: StoreData): string {
 	});
 }
 
-function staticStub(template: string, page: (typeof STATIC_PAGES)[number]): string {
+function staticStub(
+	template: string,
+	route: RouteAssets | undefined,
+	page: (typeof STATIC_PAGES)[number]
+): string {
 	const url = `${SITE_URL}${page.path}`;
 	const jsonLd = {
 		'@context': 'https://schema.org',
@@ -185,6 +197,7 @@ function staticStub(template: string, page: (typeof STATIC_PAGES)[number]): stri
 		keywords: page.keywords,
 		ogImage: OG_IMAGE,
 		ogImageAlt: OG_IMAGE_ALT,
+		route,
 		jsonLd: [jsonLd, breadcrumbJsonLd([{ name: page.title, url }])],
 		fallbackName: 'page',
 		fallbackHtml: `\t\t${breadcrumbNav([])}
@@ -198,7 +211,7 @@ function staticStub(template: string, page: (typeof STATIC_PAGES)[number]): stri
  * so its canonical folds them all into `/`. The WebSite and Organization
  * JSON-LD already live in app.html, outside the replaced section.
  */
-function homeStub(template: string): string {
+function homeStub(template: string, route: RouteAssets | undefined): string {
 	const sections = [...STATIC_PAGES, { path: '/kategoriat/', title: 'Kategoriat' }];
 	return renderStub(template, {
 		title: HOME_PAGE.title,
@@ -207,6 +220,7 @@ function homeStub(template: string): string {
 		keywords: HOME_PAGE.keywords,
 		ogImage: OG_IMAGE,
 		ogImageAlt: OG_IMAGE_ALT,
+		route,
 		jsonLd: [],
 		fallbackName: 'page',
 		fallbackHtml: `\t\t<h1>${escapeHtml(HOME_PAGE.title)}</h1>
@@ -231,6 +245,9 @@ async function main() {
 	);
 
 	const template = await Bun.file(templatePath).text();
+	const preloads = await readRoutePreloads(outputPath);
+	// `/laskin/` → `/laskin`, the route id
+	const routeOf = (pagePath: string) => preloads[pagePath.replace(/(.)\/$/, '$1')];
 
 	const hasAvailability = await Bun.file(availabilityPath).exists();
 	// Reset the store pages first (the /myymalat/ index shares the directory) so
@@ -238,9 +255,9 @@ async function main() {
 	if (hasAvailability)
 		await rm(path.join(outputPath, 'myymalat'), { recursive: true, force: true });
 
-	await writePage(outputPath, HOME_PAGE.path, homeStub(template));
+	await writePage(outputPath, HOME_PAGE.path, homeStub(template, routeOf(HOME_PAGE.path)));
 	for (const page of STATIC_PAGES) {
-		await writePage(outputPath, page.path, staticStub(template, page));
+		await writePage(outputPath, page.path, staticStub(template, routeOf(page.path), page));
 	}
 
 	let stores = 0;
@@ -249,7 +266,11 @@ async function main() {
 		for (const store of Object.values(availability.stores ?? {})) {
 			const id = text(store?.id);
 			if (!/^[A-Za-z0-9_-]+$/.test(id) || !text(store.name)) continue;
-			await writePage(outputPath, `/myymalat/${id}/`, storeStub(template, store));
+			await writePage(
+				outputPath,
+				`/myymalat/${id}/`,
+				storeStub(template, preloads['/myymalat/[storeID]'], store)
+			);
 			stores += 1;
 		}
 	} else {

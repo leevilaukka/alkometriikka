@@ -16,7 +16,17 @@ full app) with:
   JSON-LD, and alternate links such as RSS feeds;
 - the page's `<title>`;
 - a plain-HTML fallback `<article>` at the top of `<body>` with the key content and links, which
-  an inline script removes as soon as a browser runs it.
+  an inline script removes as soon as a browser runs it;
+- `modulepreload` links for the page route's own code (its node, layouts, error page and their
+  chunks) that the shell doesn't already preload.
+
+The shell only preloads the root layout's code, so without the route preloads the browser finds a
+page's chunks only once the app has started, by which time they share the connection with the
+`data.json` and `availability.json` downloads. `scripts/site/route-preloads.ts` reads each route's
+files from SvelteKit's build output (`.svelte-kit/output/server`) right after `vite build` and
+writes them to `route-preloads.json` next to the site. The file is deployed, because the fetch-data
+workflow re-renders product pages against the deployed `404.html` without a build. When it's
+missing, stubs preload only the shell's code.
 
 The shared renderer is `renderStub()` in `scripts/lib/stub.ts`; HTML/JSON escaping, the marker
 replacement and a small minifier are in `scripts/lib/html.ts`. Page copy (descriptions, titles)
@@ -45,7 +55,7 @@ before the full price list has loaded; see
 
 It is **incremental**. Each page has a content key, a SHA-256 of everything that can change its
 HTML: `RENDER_VERSION`, the schema, the product's values, meta and price history, the template
-(new JS/CSS hashes change every page), its OG image key and category trail, and today's date if
+(new JS/CSS hashes change every page) and the product route's preloads, its OG image key and category trail, and today's date if
 the product has campaign dates (sale state depends on the date). Keys are stored in
 `tuotteet-manifest.json`; a product whose key and file are unchanged is skipped. Directories for
 products no longer in the dataset are deleted.

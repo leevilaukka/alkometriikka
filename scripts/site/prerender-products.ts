@@ -24,7 +24,16 @@ import { readOption } from '../lib/cli';
 import type { StoredDataset, StoredProduct } from '../../src/lib/utils/catalog/dataset.ts';
 import { mapPool } from '../lib/async';
 import { escapeHtml } from '../lib/html';
-import { breadcrumbJsonLd, breadcrumbNav, renderStub, SITE_URL, type StubPage } from '../lib/stub';
+import {
+	breadcrumbJsonLd,
+	breadcrumbNav,
+	readRoutePreloads,
+	renderStub,
+	SITE_URL,
+	type RouteAssets,
+	type RoutePreloads,
+	type StubPage
+} from '../lib/stub';
 import { productDescription } from '../../src/lib/utils/app/seo.ts';
 import {
 	alcoholMetrics,
@@ -45,7 +54,7 @@ type PrerenderManifest = Record<string, PrerenderManifestEntry>;
 // Bump when the page rendering logic (productHtml, minifyHtml, the SEO
 // template, ...) changes in a way that can alter existing pages without the
 // template or product data changing, forcing a full re-render.
-const RENDER_VERSION = 9;
+const RENDER_VERSION = 10;
 
 function sha256Hex(value: string): string {
 	const hasher = new CryptoHasher('sha256');
@@ -222,6 +231,7 @@ function priceHistoryHtml(history: StoredProduct['priceHistory']): string {
 
 function productHtml(
 	template: string,
+	route: RouteAssets | undefined,
 	schema: string[],
 	product: StoredProduct,
 	ogImageKey: string | null,
@@ -410,6 +420,7 @@ function productHtml(
 					]
 				: [],
 		preloadImage: image,
+		route,
 		jsonLd: [jsonLd, breadcrumbList],
 		// A one-product data.json, which the product page shows until the full price list loads
 		data: { schema, products: { [id]: product } } satisfies StoredDataset,
@@ -453,6 +464,7 @@ function categoryProduct(schema: string[], product: StoredProduct): CategoryProd
 /** Renders a category page, or the /kategoriat/ index when `trail` is empty. */
 function categoryHtml(
 	template: string,
+	route: RouteAssets | undefined,
 	tree: CategoryNode[],
 	trail: CategoryNode[],
 	products: CategoryProduct[],
@@ -533,6 +545,7 @@ function categoryHtml(
 					)}" href="${escapeHtml(`${SITE_URL}${categoryFeedPath(trail[0].slug, trail[1]?.slug)}.xml`)}" />`
 				]
 			: [],
+		route,
 		jsonLd: [collectionPage, breadcrumbList],
 		fallbackName: 'category',
 		fallbackHtml: `\t\t${breadcrumbNav(trail.slice(0, -1))}
@@ -548,6 +561,7 @@ function categoryHtml(
 async function renderCategoryPages(
 	outputPath: string,
 	template: string,
+	preloads: RoutePreloads,
 	tree: CategoryNode[],
 	pages: ReturnType<typeof categoryGroups>,
 	ogManifest: CategoryOgManifest
@@ -561,7 +575,14 @@ async function renderCategoryPages(
 		const pagePath = page.trail.at(-1)?.path ?? `${CATEGORY_BASE_PATH}/`;
 		await Bun.write(
 			path.join(directory, 'index.html'),
-			categoryHtml(template, tree, page.trail, page.products, ogManifest[pagePath])
+			categoryHtml(
+				template,
+				preloads[page.trail.length ? '/kategoriat/[type]/[[subtype]]' : '/kategoriat'],
+				tree,
+				page.trail,
+				page.products,
+				ogManifest[pagePath]
+			)
 		);
 	}
 	return pages.length;
@@ -605,7 +626,10 @@ async function main() {
 
 	const previous = await readManifest(options.manifestPath);
 	const manifest: PrerenderManifest = {};
-	const templateFingerprint = sha256Hex(template);
+	const preloads = await readRoutePreloads(options.outputPath);
+	const productRoute = preloads['/tuotteet/[...id]'];
+	// The route's code is part of the page shell, so a new build re-renders every page
+	const templateFingerprint = sha256Hex(template + JSON.stringify(productRoute ?? null));
 	const keptPageIds = new Set<string>();
 	const generatedIds = new Set<string>();
 
@@ -677,7 +701,15 @@ async function main() {
 			skipped += 1;
 			return;
 		}
-		const rendered = productHtml(template, schema, product, ogKey, categoryTrail, productRank);
+		const rendered = productHtml(
+			template,
+			productRoute,
+			schema,
+			product,
+			ogKey,
+			categoryTrail,
+			productRank
+		);
 		if (generatedIds.has(rendered.id)) throw new Error(`Duplicate product id: ${rendered.id}`);
 		generatedIds.add(rendered.id);
 		const directory = path.join(productsPath, rendered.id);
@@ -717,6 +749,7 @@ async function main() {
 	const categoryPages = await renderCategoryPages(
 		options.outputPath,
 		template,
+		preloads,
 		categoryTree,
 		groups,
 		await Bun.file(options.ogCategoriesManifestPath)
