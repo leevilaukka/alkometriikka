@@ -31,11 +31,14 @@
 </div>
 <div class="flex w-full flex-row gap-2">
 	<div class="flex w-full flex-col gap-2">
-		<label for="weight" class="text-sm">Paino (kg)</label>
+		<label for="personal-weight" class="text-sm">Paino (kg)</label>
 		<input
 			lang="fi"
 			type="number"
+			id="personal-weight"
 			name="weight"
+			aria-invalid={!weightOK}
+			aria-describedby={!weightOK ? 'personal-weight-error' : undefined}
 			bind:value={personalInfo.weight}
 			placeholder="Paino (kg)"
 			class={twMerge(components.input(), 'w-full')}
@@ -44,13 +47,14 @@
 			step="0.1"
 		/>
 		{#if !weightOK}
-			<p class="text-xs text-red-600">Painon tulee olla suurempi kuin 1 kg tai tyhjä.</p>
+			<p id="personal-weight-error" class="text-xs text-red-600">Painon tulee olla suurempi kuin 1 kg tai tyhjä.</p>
 		{/if}
 	</div>
 </div>
 <div class="flex flex-col">
-	<label for="gender" class="text-sm">Sukupuoli</label>
+	<label for="personal-gender" class="text-sm">Sukupuoli</label>
 	<select
+		id="personal-gender"
 		name="gender"
 		bind:value={personalInfo.gender}
 		class={twMerge(components.input(), 'w-full')}
