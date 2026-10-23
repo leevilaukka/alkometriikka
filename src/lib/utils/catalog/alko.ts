@@ -135,11 +135,12 @@ export function generateImageUrl(
 const DISPLAY_IMAGES: Record<ImageTransform, string> = {
 	products: 't_products/cdn/{id}/kuva.webp',
 	small: 't_digipruuvi/cdn/{id}/kuva.webp',
-	medium: 't_pdp/cdn/{id}/kuva.avif'
+	medium: 't_pdp/cdn/{id}/kuva.avif',
+	large: 't_large/cdn/{id}/kuva.avif'
 };
 
 /**
- * The product photo the app shows. `medium` is AVIF, about 40 % smaller than {@link generateImageUrl}'s
+ * The product photo the app shows. `medium` and `large` are AVIF, about 40 % smaller than {@link generateImageUrl}'s
  * WebP; browsers that can't decode it fall back to {@link fallbackImageUrl}.
  */
 export function displayImageUrl(
@@ -154,7 +155,9 @@ export function fallbackImageUrl(
 	itemNumber: string,
 	transform: ImageTransform
 ): string | undefined {
-	return transform === 'medium' ? generateImageUrl(itemNumber, 'medium') : undefined;
+	return transform === 'medium' || transform === 'large'
+		? generateImageUrl(itemNumber, transform)
+		: undefined;
 }
 
 /**

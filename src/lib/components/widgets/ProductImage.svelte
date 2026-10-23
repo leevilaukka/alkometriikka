@@ -5,7 +5,8 @@
 	const SIZES: Record<ImageTransform, [number, number]> = {
 		products: [160, 192],
 		small: [115, 500],
-		medium: [600, 2600]
+		medium: [600, 2600],
+		large: [900, 3900]
 	};
 
 	/** The bottle from the logo, in its 1024×1024 coordinates */

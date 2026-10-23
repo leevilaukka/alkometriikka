@@ -61,8 +61,9 @@ the format by the file extension:
 | `products`       | `t_products/…/kuva.webp`   | 160×192, padded | Lists, compare, search         |
 | `small`          | `t_digipruuvi/…/kuva.webp` | 500 px tall     | Daily cards                    |
 | `medium`         | `t_pdp/…/kuva.avif`        | 600 px wide     | Product page, similar products |
+| `large`          | `t_large/…/kuva.avif`      | 900 px wide     | Product page image zoom        |
 
-Others that exist: `t_large` (900 px wide), `t_thumbnail` (40×48), `t_img_160x192` and
+Others that exist: `t_thumbnail` (40×48), `t_img_160x192` and
 `t_img_40x148` (cropped to the bottle), and fill-cropped label close-ups like `t_4x5_w_400_h500`.
 
 Each product stub also carries the product itself as a one-product `data.json` (schema plus that

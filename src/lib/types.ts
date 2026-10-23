@@ -181,9 +181,9 @@ export type FilterValues = { [key in ColumnNames]: FilterValue };
 
 /**
  * Sizes of Alko's product photos: `products` is a 160×192 box, `small` 500 px tall and `medium`
- * 600 px wide (see displayImageUrl)
+ * 600 px wide and `large` 900 px wide (see displayImageUrl)
  */
-export type ImageTransform = 'products' | 'small' | 'medium';
+export type ImageTransform = 'products' | 'small' | 'medium' | 'large';
 
 export type ShareType = (typeof ShareTypes)[keyof typeof ShareTypes];
 
