@@ -57,7 +57,7 @@
 				class={twMerge(components.button({ type: 'negative' }))}
 			>
 				<Icon name="trash" />
-				<span class="hidden sm:inline">Tyhjennä</span>
+				<span class="sr-only sm:not-sr-only">Tyhjennä</span>
 			</button>
 			<button
 				onclick={() => goto(resolve(compareURL(compareProductIds)))}

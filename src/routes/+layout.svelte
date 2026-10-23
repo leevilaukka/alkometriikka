@@ -409,7 +409,7 @@
 											<span class="flex-1">{item.name}</span>
 											{#if item.href === '/seuratut/' && changedWatchCount}
 												<span
-													class="rounded-full bg-green-600 px-1.5 text-xs font-semibold text-white"
+													class="rounded-full bg-green-700 px-1.5 text-xs font-semibold text-white"
 													title="Muuttuneita seurattuja tuotteita">{changedWatchCount}</span
 												>
 											{/if}
@@ -452,13 +452,14 @@
 			</div>
 		{/if}
 		<InstallBanner />
-		<div
+		<!-- The page's one main landmark; pages render plain containers inside it -->
+		<main
 			id="main-content"
 			tabindex="-1"
 			class="flex max-h-full flex-auto flex-col overflow-x-hidden overflow-y-auto outline-none"
 		>
 			{@render children?.()}
-		</div>
+		</main>
 		{#if alko && page.route.id !== '/vertailu'}
 			<CompareBar kaljakori={alko.kaljakori} />
 		{/if}

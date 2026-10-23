@@ -25,7 +25,7 @@
 		class="flex shrink-0 items-center gap-1 hover:text-black dark:hover:text-white"
 	>
 		<Icon name="home" class="text-base" />
-		<span class="hidden sm:inline">Etusivu</span>
+		<span class="sr-only sm:not-sr-only">Etusivu</span>
 	</a>
 	{#each items as item}
 		<Icon name="chevron_right" />
