@@ -13,6 +13,21 @@
 	const BOTTLE =
 		'M682.67,473.68v550.32h-341.34V473.68c0-60.39,31.37-113.45,78.7-143.79,15.25-9.77,24.63-26.48,24.63-44.58V96.78h134.68v188.53c0,18.11,9.39,34.81,24.63,44.58,47.33,30.34,78.7,83.4,78.7,143.79Z';
 
+	/** Smallest to largest, so a bigger photo can stand in for a smaller one but not the reverse */
+	const RANK: Record<ImageTransform, number> = { products: 0, small: 1, medium: 2, large: 3 };
+
+	/** The largest photo that has loaded this session per product, still in the browser's cache */
+	const loadedPhotos = new Map<string, { transform: ImageTransform; url: string }>();
+
+	/**
+	 * A photo that has loaded already and is smaller than the wanted one, to show (blurry) in the
+	 * brief time the wanted one takes: the list's thumbnail for the product page, its photo for the zoom
+	 */
+	function standIn(number: string, transform: ImageTransform) {
+		const photo = loadedPhotos.get(number);
+		return photo && RANK[photo.transform] < RANK[transform] ? photo.url : undefined;
+	}
+
 	/**
 	 * Shown while a photo loads and when it fails (offline, or a product without one). It has the
 	 * photo's pixel size, so boxes that size themselves from the image are the same size in every
@@ -28,12 +43,14 @@
 <script lang="ts">
 	import { displayImageUrl, fallbackImageUrl } from '$lib/utils/catalog/alko';
 	import { twMerge } from 'tailwind-merge';
+	import { fade } from 'svelte/transition';
 	let {
 		number,
 		name,
 		transform = 'products',
 		priority = false,
 		lazy = false,
+		loading = $bindable(false),
 		...rest
 	}: {
 		number: string;
@@ -43,6 +60,8 @@
 		priority?: boolean;
 		/** Fetched only once near the viewport, so photos below the fold don't compete with the main one */
 		lazy?: boolean;
+		/** True while the wanted photo is still on its way, for callers to show a spinner */
+		loading?: boolean;
 		[key: string]: any;
 	} = $props();
 
@@ -50,7 +69,15 @@
 	const fallback = $derived(fallbackImageUrl(number, transform));
 	/** The URL that loaded, keyed by the `src` it was loaded for */
 	let loaded = $state<{ for: string; url: string }>();
+	/** The `src` that couldn't be loaded in any format, so there's nothing to wait for */
+	let failedFor = $state<string>();
+	/** The `src` whose photo has faded in, so the stand-in underneath is no longer needed */
+	let shownFor = $state<string>();
 	let element = $state<HTMLImageElement>();
+
+	$effect(() => {
+		loading = loaded?.for !== src && failedFor !== src;
+	});
 	/** Whether a lazy image has come near the viewport; others are always visible */
 	let visible = $state(false);
 
@@ -76,23 +103,51 @@
 		probe.crossOrigin = 'anonymous';
 		probe.referrerPolicy = 'no-referrer';
 		if (priority) probe.fetchPriority = 'high';
-		probe.onload = () => (loaded = { for: url, url: probe.src });
+		probe.onload = () => {
+			loaded = { for: url, url: probe.src };
+			const known = loadedPhotos.get(number);
+			if (!known || RANK[known.transform] <= RANK[transform])
+				loadedPhotos.set(number, { transform, url: probe.src });
+		};
 		// Browsers that can't decode the AVIF photo get the WebP/JPEG one
 		probe.onerror = () => {
 			if (fallbackUrl && probe.src !== fallbackUrl) probe.src = fallbackUrl;
+			else failedFor = url;
 		};
 		probe.src = url;
+		// Already in memory: show it at once, there's nothing to fade from
+		if (probe.complete && probe.naturalWidth) {
+			shownFor = url;
+			loaded = { for: url, url: probe.src };
+		}
 		return () => (probe.onload = probe.onerror = null);
 	});
 </script>
 
-<img
-	bind:this={element}
-	crossorigin="anonymous"
-	referrerpolicy="no-referrer"
-	src={loaded?.for === src ? loaded.url : placeholder(transform)}
-	alt={name}
-	fetchpriority={priority ? 'high' : undefined}
-	data-name="product-image"
-	class={twMerge('block h-full w-full object-contain', rest.class)}
-/>
+<!-- The stand-in stays underneath while the photo fades in over it -->
+<span class="grid h-full w-full grid-cols-[minmax(0,1fr)] grid-rows-[minmax(0,1fr)]">
+	{#if shownFor !== src}
+		<img
+			bind:this={element}
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+			src={standIn(number, transform) ?? placeholder(transform)}
+			alt={loaded?.for === src ? '' : name}
+			fetchpriority={priority ? 'high' : undefined}
+			class={twMerge('col-start-1 row-start-1 block h-full w-full object-contain', rest.class)}
+		/>
+	{/if}
+	{#if loaded?.for === src}
+		<img
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+			src={loaded.url}
+			alt={name}
+			fetchpriority={priority ? 'high' : undefined}
+			data-name="product-image"
+			class={twMerge('col-start-1 row-start-1 block h-full w-full object-contain', rest.class)}
+			in:fade={{ duration: shownFor === src ? 0 : 150 }}
+			onintroend={() => (shownFor = src)}
+		/>
+	{/if}
+</span>

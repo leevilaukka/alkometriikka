@@ -17,6 +17,16 @@
 	let dialogElement = $state<HTMLDialogElement>();
 	/** The large photo is only requested once the zoom has been opened, and kept so it doesn't vanish while the dialog fades out */
 	let zoomed = $state(false);
+	let zoomLoading = $state(false);
+	/** The zoom photo is slow enough to need a spinner; quick loads would only flash one */
+	let zoomSlow = $state(false);
+
+	$effect(() => {
+		zoomSlow = false;
+		if (!zoomLoading) return;
+		const timer = setTimeout(() => (zoomSlow = true), 300);
+		return () => clearTimeout(timer);
+	});
 
 	function openZoom() {
 		zoomed = true;
@@ -79,7 +89,7 @@
 	<div class="flex flex-col items-center gap-3">
 		<button
 			type="button"
-			class="cursor-zoom-out rounded bg-white p-4"
+			class="relative cursor-zoom-out rounded bg-white p-4"
 			aria-label={product[AllColumns.Name]}
 		>
 			{#if zoomed}
@@ -87,8 +97,12 @@
 					number={product[AllColumns.Number]}
 					name={product[AllColumns.Name]}
 					transform="large"
+					bind:loading={zoomLoading}
 					class="max-h-[60dvh] max-w-[min(900px,90vw-2rem)]"
 				/>
+			{/if}
+			{#if zoomSlow}
+				{@render spinner('top-3 left-3')}
 			{/if}
 		</button>
 		<!-- The name, price and number, to show to a store clerk -->
@@ -114,3 +128,15 @@
 		<Icon name="x" />
 	</button>
 </dialog>
+
+<!-- Shown on a stand-in photo, so it's clear a sharper one is on its way -->
+{#snippet spinner(position: string)}
+	<span
+		role="status"
+		aria-label="Ladataan kuvaa"
+		class={twMerge(
+			'pointer-events-none absolute block h-5 w-5 animate-spin rounded-full border-2 border-brand-1 border-b-transparent',
+			position
+		)}
+	></span>
+{/snippet}
