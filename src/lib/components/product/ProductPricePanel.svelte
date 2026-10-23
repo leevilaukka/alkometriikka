@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { AllColumns } from '$lib/utils/constants/columns';
-	import type { AvailabilityStore, ListObj, PriceListItem } from '$lib/types';
+	import type { AvailabilityStore, ListObj, LoadState, PriceListItem } from '$lib/types';
 	import type { SaleInfo } from '$lib/utils/catalog/sales';
 	import type { SizeOption } from '$lib/utils/catalog/filters';
 	import { addToList } from '$lib/utils/user/lists';
@@ -18,7 +18,7 @@
 		product,
 		sale,
 		campaignWindow,
-		storesLoading,
+		storesState,
 		preferredStore,
 		availableInPreferredStore,
 		closestAvailableStore,
@@ -29,7 +29,7 @@
 		product: PriceListItem;
 		sale: SaleInfo | null;
 		campaignWindow: string | null;
-		storesLoading: boolean;
+		storesState: LoadState;
 		preferredStore?: AvailabilityStore;
 		availableInPreferredStore: boolean;
 		closestAvailableStore?: AvailabilityStore;
@@ -57,7 +57,7 @@
 		{product}
 		{sale}
 		{campaignWindow}
-		{storesLoading}
+		{storesState}
 		{preferredStore}
 		{availableInPreferredStore}
 		{closestAvailableStore}

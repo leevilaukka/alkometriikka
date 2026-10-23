@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import type { AvailabilityStore } from '$lib/types';
+	import type { AvailabilityStore, LoadState } from '$lib/types';
 	import {
 		formatStoreDistance,
 		getStoreDistance,
@@ -20,7 +20,7 @@
 		id,
 		productNumber,
 		stores,
-		loading,
+		availabilityState,
 		preferredStore,
 		availabilityUpdated,
 		class: _class = ''
@@ -28,8 +28,8 @@
 		id?: string;
 		productNumber: string;
 		stores: AvailabilityStore[];
-		/** Availability hasn't loaded yet, so `stores` is empty */
-		loading: boolean;
+		/** `stores` is empty, rather than the product in no store, unless availability has loaded */
+		availabilityState: LoadState;
 		preferredStore?: AvailabilityStore;
 		availabilityUpdated: Date | undefined;
 		class?: string;
@@ -62,8 +62,10 @@
 	<header class="flex flex-col gap-0.5 border-b border-primary p-3.5">
 		<h2 class="text-lg font-bold">Myymäläsaatavuus</h2>
 		<p class="text-sm text-secondary">
-			{#if loading}
+			{#if availabilityState === 'loading'}
 				Haetaan saatavuutta…
+			{:else if availabilityState === 'failed'}
+				Saatavuustietoja ei saatu ladattua
 			{:else}
 				{stores.length}
 				{stores.length === 1 ? 'myymälä' : 'myymälää'}
@@ -76,7 +78,7 @@
 		</p>
 		<ProductStockTrend {productNumber} class="mt-1" />
 	</header>
-	{#if !loading && !preferredStore}
+	{#if availabilityState === 'loaded' && !preferredStore}
 		<div class="border-b border-primary p-3.5">
 			<button
 				type="button"
@@ -87,7 +89,18 @@
 			</button>
 		</div>
 	{/if}
-	{#if loading}
+	{#if availabilityState === 'failed'}
+		<div class="flex flex-col items-start gap-2.5 bg-primary p-3.5 text-secondary">
+			<p>Myymälöiden saatavuutta ei saatu ladattua.</p>
+			<button
+				type="button"
+				class={components.button({ size: 'sm' })}
+				onclick={() => location.reload()}
+			>
+				Yritä uudelleen
+			</button>
+		</div>
+	{:else if availabilityState === 'loading'}
 		<!-- As tall as the list usually is, which scrolls past max-h-96 -->
 		<div aria-hidden="true" class="flex h-96 flex-col gap-2 overflow-hidden bg-primary p-3.5">
 			{#each { length: 6 }, index (index)}

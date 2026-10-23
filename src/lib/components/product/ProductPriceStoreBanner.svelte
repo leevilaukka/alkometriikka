@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { AllColumns, MissingValues } from '$lib/utils/constants/columns';
 	import { formatValue } from '$lib/utils/format/format';
-	import type { AvailabilityStore, PriceListItem } from '$lib/types';
+	import type { AvailabilityStore, LoadState, PriceListItem } from '$lib/types';
 	import type { SaleInfo } from '$lib/utils/catalog/sales';
 	import { requestSettingsOpen } from '$lib/utils/app/settings';
 	import { components } from '$lib/utils/ui/styles';
@@ -12,7 +12,7 @@
 		product,
 		sale,
 		campaignWindow,
-		storesLoading,
+		storesState,
 		preferredStore,
 		availableInPreferredStore,
 		closestAvailableStore,
@@ -22,8 +22,8 @@
 		product: PriceListItem;
 		sale: SaleInfo | null;
 		campaignWindow: string | null;
-		/** A store is chosen but availability hasn't loaded yet */
-		storesLoading: boolean;
+		/** The preferred store's availability: `loading` only while a chosen store's is on its way */
+		storesState: LoadState;
 		preferredStore?: AvailabilityStore;
 		availableInPreferredStore: boolean;
 		closestAvailableStore?: AvailabilityStore;
@@ -79,7 +79,14 @@
 		{/if}
 	</div>
 
-	{#if storesLoading}
+	{#if storesState === 'failed'}
+		<div
+			class="flex min-h-17 items-center gap-2.5 rounded border border-primary bg-primary p-3 text-sm text-secondary"
+		>
+			<Icon name="alert_triangle" class="text-xl" />
+			<span>Saatavuustietoja ei saatu ladattua</span>
+		</div>
+	{:else if storesState === 'loading'}
 		<div
 			class="flex min-h-17 animate-pulse items-center gap-2.5 rounded border border-primary bg-primary p-3 text-sm text-secondary"
 		>

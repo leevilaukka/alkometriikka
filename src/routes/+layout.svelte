@@ -282,7 +282,8 @@
 
 <svelte:window onclick={handleDocumentClick} onkeydown={handleGlobalKeydown} />
 
-{#if loadError}
+<!-- A page already showing its preview stays up, with a notice, when the price list fails -->
+{#if loadError && !showApp}
 	<div class="grid h-full max-h-full w-full place-content-center overflow-hidden">
 		<div class="flex flex-col items-center gap-3">
 			<p>Virhe datan lataamisessa: {loadError.message}</p>
@@ -435,6 +436,19 @@
 		</header>
 		{#if alko}
 			<NoticeBanner lastSynced={alko.dataset.metadata.LastSynced} cached={alko.cached} />
+		{:else if loadError}
+			<div
+				role="alert"
+				class="flex items-center gap-2 border-b border-amber-300 bg-amber-100 px-4 py-2 text-sm text-amber-950 dark:border-amber-800 dark:bg-amber-950 dark:text-amber-100"
+			>
+				<Icon name="alert_triangle" class="shrink-0" />
+				<p class="flex-1">Hinnastoa ei saatu ladattua, joten osa tiedoista puuttuu.</p>
+				<button
+					type="button"
+					class="shrink-0 font-semibold underline"
+					onclick={() => location.reload()}>Yritä uudelleen</button
+				>
+			</div>
 		{/if}
 		<InstallBanner />
 		<div

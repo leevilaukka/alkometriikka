@@ -50,8 +50,10 @@ without store data await `alkoWithStores`:
 | `/seuratut`                                          | always (compares stock)                     |
 | `/kompassi`                                          | the store list is read from it              |
 
-If `data.json` fails to load, the layout shows the error with a retry button. If
-`availability.json` fails, the app continues with empty store data.
+If `data.json` fails to load, the layout shows the error with a retry button, or, when a
+[product page preview](#product-page-preview) is already showing, keeps it and shows a warning
+banner with a retry button. If `availability.json` fails, the app continues with empty store data
+and `availabilityFailed` set, so pages can say it failed instead of showing products in no store.
 
 `+layout.svelte` waits for `data.alko`, removes the loader, and renders the header, the
 [notice banner](features.md#site-notices), the page, the compare bar and the page's mobile bottom
@@ -71,10 +73,14 @@ The page then fills in as data arrives, in place, without remounting:
 1. **Stub only:** name, price, picture, details, quick stats and price history. The price-quality
    and similar-products sections, and the store parts, show placeholders sized like the loaded
    sections so the page doesn't jump.
-2. **`data.json`:** the price list replaces the preview (`catalogLoaded`). Price-quality, similar
+2. **`data.json`:** the price list replaces the preview (`catalogState`). Price-quality, similar
    products, sizes and the category links in the breadcrumb appear.
 3. **`availability.json`:** store availability, the preferred store's stock and the watch button
-   (`availabilityLoaded`), which needs stock data to snapshot and compare.
+   (`availabilityState`), which waits for stock data to snapshot and compare.
+
+If `data.json` fails, the preview stays: price-quality and similar products are left out and the
+store parts say availability couldn't be loaded, as they do when only `availability.json` fails.
+The watch button works either way, since a snapshot without stock data keeps the stock last seen.
 
 Without a matching stub (client-side navigation, or a stub older than this) the page's `load`
 awaits `data.alko` and checks the product exists, as other pages do. Store availability still

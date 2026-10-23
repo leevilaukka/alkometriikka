@@ -1,11 +1,12 @@
 <script lang="ts">
 	import Product from '$lib/components/views/Product.svelte';
+	import { EMPTY_AVAILABILITY } from '$lib/alko/availability.svelte';
 	import { page } from '$app/state';
 	import { preferredStoreId, userLocation } from '$lib/global.svelte';
 	import { resolvePreferredStore } from '$lib/utils/catalog/availability';
 	import { AUTO_STORE_ID } from '$lib/utils/constants/app';
 	import { keepAutoLocationFresh } from '$lib/utils/device/location';
-	import type { AvailabilityStore } from '$lib/types.js';
+	import type { AvailabilityStore, LoadState } from '$lib/types.js';
 
 	let { data } = $props();
 
@@ -13,15 +14,25 @@
 		if ($preferredStoreId === AUTO_STORE_ID) return keepAutoLocationFresh();
 	});
 
-	// The price list once loaded; until then the stub's own row (`data.preview`) stands in for it.
-	// Load errors are shown by the layout
+	// The price list once loaded; until then, or if it fails, the stub's own row (`data.preview`)
+	// stands in for it. The layout says when it failed
 	let alko = $state.raw<Awaited<typeof data.alko>>();
+	let alkoFailed = $state(false);
 	$effect(() => {
 		data.alko.then(
 			(value) => (alko = value),
-			() => {}
+			() => (alkoFailed = true)
 		);
 	});
+	const catalogState = $derived<LoadState>(alko ? 'loaded' : alkoFailed ? 'failed' : 'loading');
+	// Store data comes with the price list, so it fails along with it
+	const availabilityState = $derived<LoadState>(
+		alkoFailed || alko?.availabilityFailed
+			? 'failed'
+			: alko?.availabilityLoaded
+				? 'loaded'
+				: 'loading'
+	);
 
 	let id = $derived(page.params.id?.split('/')[0] as string); // Handle both /tuotteet/123 and /tuotteet/123/extra paths
 
@@ -46,9 +57,9 @@
 	<Product
 		{product}
 		{kaljakori}
-		catalogLoaded={Boolean(alko)}
-		availability={alko?.availability ?? { stores: {}, product: {} }}
-		availabilityLoaded={alko?.availabilityLoaded ?? false}
+		{catalogState}
+		availability={alko?.availability ?? EMPTY_AVAILABILITY}
+		{availabilityState}
 		{availabilityStores}
 		{preferredStore}
 		{availabilityUpdated}
