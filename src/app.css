@@ -35,6 +35,8 @@
 @font-face {
 	font-family: 'icons';
 	font-weight: 400;
+	/* Swapping would show each icon's name as text until the font arrives */
+	font-display: block;
 
 	src:
 		url('lib/assets/fonts/icons/icons.woff2') format('woff2'),
@@ -42,16 +44,20 @@
 		url('lib/assets/fonts/icons/icons.ttf') format('truetype');
 }
 
+/* Subset to Latin, its extensions and the punctuation and symbols the site uses
+   (pyftsubset, all layout features kept); other characters fall back to the system font */
 @font-face {
 	font-family: 'Inter';
 	font-weight: 500;
-	src: url('lib/assets/fonts/Inter/static/Inter_24pt-Medium.ttf');
+	font-display: swap;
+	src: url('lib/assets/fonts/Inter/static/Inter_24pt-Medium.subset.woff2') format('woff2');
 }
 
 @font-face {
 	font-family: 'Inter';
 	font-weight: 700;
-	src: url('lib/assets/fonts/Inter/static/Inter_24pt-Bold.ttf');
+	font-display: swap;
+	src: url('lib/assets/fonts/Inter/static/Inter_24pt-Bold.subset.woff2') format('woff2');
 }
 
 :root {

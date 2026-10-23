@@ -78,7 +78,9 @@
 									if (!shared) alert('Linkki kopioitu leikepöydälle!');
 								}}
 							>
-								<Icon name="share" class="inline-block " /><span class="hidden md:block">Jaa</span>
+								<Icon name="share" class="inline-block " /><span class="sr-only md:not-sr-only"
+									>Jaa</span
+								>
 							</button>
 						{/if}
 						{#if show?.delete}

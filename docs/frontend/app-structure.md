@@ -82,6 +82,11 @@ If `data.json` fails, the preview stays: price-quality and similar products are 
 store parts say availability couldn't be loaded, as they do when only `availability.json` fails.
 The watch button works either way, since a snapshot without stock data keeps the stock last seen.
 
+While a preview is showing, `data.json` is requested at low fetch priority (as `availability.json`
+always is), so on a slow connection the page's own code and photo download first. Once it arrives,
+the layout yields to the browser after parsing it and again after building the `Kaljakori`, so the
+work runs as several shorter tasks instead of one that blocks input for seconds on a phone.
+
 Without a matching stub (client-side navigation, or a stub older than this) the page's `load`
 awaits `data.alko` and checks the product exists, as other pages do. Store availability still
 fills in after the first render.

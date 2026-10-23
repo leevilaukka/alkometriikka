@@ -465,7 +465,7 @@
 			{@render filters()}
 		</aside>
 	{/if}
-	<main
+	<div
 		id="results"
 		tabindex="-1"
 		class="flex h-full w-full min-w-0 flex-col gap-3 overflow-y-auto bg-secondary p-4 outline-none md:gap-4 md:p-6"
@@ -534,5 +534,5 @@
 				</SvelteVirtualList>
 			</div>
 		{/if}
-	</main>
+	</div>
 </div>

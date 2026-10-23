@@ -11,7 +11,7 @@ export const components = {
 					negative:
 						'bg-brand-1 text-white border border-red-600 hover:bg-red-700 hover:border-red-700',
 					positive:
-						'bg-green-600 text-white border border-green-600 hover:bg-green-700 hover:border-green-700',
+						'bg-green-700 text-white border border-green-700 hover:bg-green-800 hover:border-green-800',
 					noborder:
 						'bg-transparent text-black dark:text-white border-none hover:bg-secondary not-hover:shadow-[0_1px_0_rgba(0,0,0,0.1)]'
 				},
@@ -66,7 +66,7 @@ export const components = {
 					violet: 'bg-violet-300 text-violet-800',
 					yellow: 'bg-yellow-300 text-yellow-800',
 					amber: 'bg-amber-200 text-amber-900',
-					gray: 'bg-gray-300 text-gray-500 dark:bg-zinc-600 dark:text-zinc-300'
+					gray: 'bg-gray-300 text-gray-600 dark:bg-zinc-600 dark:text-zinc-300'
 				}
 			}
 		}

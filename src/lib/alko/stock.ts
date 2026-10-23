@@ -16,7 +16,9 @@ const requests = new Map<string, Promise<unknown>>();
 function fetchJson(path: string): Promise<unknown> {
 	let request = requests.get(path);
 	if (!request) {
-		request = fetch(resolve('/') + path)
+		// Always revalidated: the files change daily, and a Cloudflare rule once served them as
+		// `immutable` for a year, which browsers would otherwise keep using without asking
+		request = fetch(resolve('/') + path, { cache: 'no-cache' })
 			.then((response) => (response.ok ? response.json() : null))
 			.catch(() => null);
 		requests.set(path, request);

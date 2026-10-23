@@ -299,7 +299,9 @@
 		class={twMerge(components.button({ size: 'md' }), 'aspect-square md:aspect-auto')}
 	>
 		<Icon name="arrow_back" class="inline-block" />
-		<span class="hidden md:block">{window.history.length > 1 ? 'Takaisin' : 'Etusivulle'}</span>
+		<span class="sr-only md:not-sr-only"
+			>{window.history.length > 1 ? 'Takaisin' : 'Etusivulle'}</span
+		>
 	</button>
 	{#if existingList}
 		<input
@@ -323,7 +325,7 @@
 				}}
 			>
 				<Icon name="sidebar" class="inline-block " />
-				<span class="hidden md:block"> Tiedot </span>
+				<span class="sr-only md:not-sr-only"> Tiedot </span>
 			</button>
 		{/if}
 		{@render shareButton(false)}
@@ -364,7 +366,7 @@
 				/>
 			</aside>
 		{/if}
-		<main class="mx-auto flex h-full w-full flex-col gap-3 bg-secondary p-3 md:gap-4 md:p-6">
+		<div class="mx-auto flex h-full w-full flex-col gap-3 bg-secondary p-3 md:gap-4 md:p-6">
 			<div class="flex w-full flex-col items-start gap-4">
 				<div class={twMerge('grid w-full grid-cols-2 items-end gap-2 md:w-fit')}>
 					<div class="flex flex-col">
@@ -535,7 +537,7 @@
 					{/snippet}
 				</SvelteVirtualList>
 			</div>
-		</main>
+		</div>
 		<aside
 			class="z-10 flex h-full flex-col overflow-x-hidden overflow-y-auto border-primary xl:border-s"
 		>

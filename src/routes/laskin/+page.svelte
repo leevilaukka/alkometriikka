@@ -146,7 +146,7 @@
 	<title>{generateTitle('Laskin')}</title>
 </svelte:head>
 
-<main class="mx-auto flex w-full max-w-5xl flex-col gap-6 p-4 md:p-8">
+<div class="mx-auto flex w-full max-w-5xl flex-col gap-6 p-4 md:p-8">
 	<header class="max-w-2xl">
 		<h1 class="text-2xl font-bold md:text-3xl">Laskin</h1>
 		<p class="mt-2 text-secondary">
@@ -290,4 +290,4 @@
 			</p>
 		{/if}
 	</section>
-</main>
+</div>

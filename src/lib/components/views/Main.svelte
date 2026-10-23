@@ -252,7 +252,7 @@
 		</aside>
 	{/if}
 	<!-- Without the filter sidebar, match the product page's width so rows don't stretch -->
-	<main
+	<div
 		id="results"
 		tabindex="-1"
 		class={twMerge(
@@ -375,5 +375,5 @@
 		{#if rows.length == 0}
 			<p>Ei tuloksia</p>
 		{/if}
-	</main>
+	</div>
 </div>

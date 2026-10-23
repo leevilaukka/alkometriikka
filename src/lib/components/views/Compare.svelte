@@ -107,7 +107,7 @@
 				}}
 			>
 				<Icon name="share" />
-				<span class="hidden sm:inline">Jaa vertailu</span>
+				<span class="sr-only sm:not-sr-only">Jaa vertailu</span>
 			</button>
 		{/if}
 	</div>

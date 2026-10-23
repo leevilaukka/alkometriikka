@@ -7,6 +7,7 @@ import { EMPTY_AVAILABILITY, LazyAvailability } from '$lib/alko/availability.sve
 import { personalInfo } from '$lib/global.svelte';
 import { dev } from '$app/env';
 import { isCachedResponse } from '$lib/utils/app/offline';
+import { STUB_DATA_ID } from '$lib/utils/app/seo';
 
 export const ssr = false;
 export const prerender = false;
@@ -27,7 +28,10 @@ if (dev) localStorage.setItem('umami.disabled', '1');
 type Fetch = (input: RequestInfo | URL, init?: RequestInit | undefined) => Promise<Response>;
 
 async function fetchAlkoPriceList({ fetch }: { fetch: Fetch }) {
-	const req = await fetch(getDatasetURL());
+	// A page with a preview from its stub renders without the price list, so its own code and
+	// photo go first on a slow connection; every other page waits for the list
+	const hasPreview = document.getElementById(STUB_DATA_ID) !== null;
+	const req = await fetch(getDatasetURL(), { priority: hasPreview ? 'low' : 'auto' });
 	if (!req.ok) {
 		throw new Error(`Hinnaston lataaminen epäonnistui: ${req.status} ${req.statusText}`);
 	}
@@ -54,6 +58,16 @@ async function readAvailability(request: Promise<Response>): Promise<Availabilit
 	}
 }
 
+/**
+ * Lets the browser handle input and paint before the next step, so loading the price list
+ * runs as several short tasks rather than one that freezes the page for seconds on a phone
+ */
+function yieldToMain() {
+	const scheduler = (globalThis as { scheduler?: { yield?: () => Promise<void> } }).scheduler;
+	if (scheduler?.yield) return scheduler.yield();
+	return new Promise<void>((resolve) => setTimeout(resolve, 0));
+}
+
 /** Resolves once the first render is done and the main thread is free. */
 function whenIdle() {
 	return new Promise<void>((resolve) => {
@@ -66,11 +80,14 @@ async function getData({ fetch }: { fetch: Fetch }) {
 	// Both files download in parallel, but only the price list blocks rendering.
 	// Store availability is needed for store filters and store pages, so it is
 	// parsed once the first render is done and filled in when ready.
-	const availabilityRequest = fetch(getAvailabilityURL());
+	const availabilityRequest = fetch(getAvailabilityURL(), { priority: 'low' });
 	availabilityRequest.catch(() => {}); // handled in readAvailability
 
 	const { dataset, cached } = await getDataset({ fetch });
+	await yieldToMain();
 	const kaljakori = new Kaljakori(dataset.table, personalInfo, undefined, dataset.index);
+	// Pages re-render with the whole list once this resolves
+	await yieldToMain();
 	const availability = new LazyAvailability(async () => {
 		await whenIdle();
 		const data = await readAvailability(availabilityRequest);

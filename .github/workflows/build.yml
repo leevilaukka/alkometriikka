@@ -47,6 +47,8 @@ jobs:
           BASE_PATH: ''
         run: |
           bun run vite build
+          # Each route's chunk list, deployed for stubs re-rendered later by fetchData.yml
+          bun run scripts/site/route-preloads.ts --out build
           # static/ is copied as-is, so minify the vendored analytics script in the output
           bun build static/scripts/simpleanalytics/auto-events.js --minify \
             --outfile build/scripts/simpleanalytics/auto-events.js

@@ -19,7 +19,8 @@
 		userLocation,
 		watchlist
 	} from '$lib/global.svelte';
-	import logo from '$lib/assets/images/Logo/0.5x/Logo_rounded@0.5x.png';
+	// Sized for the header's 40px at up to 3× pixel density; small enough to be inlined in the bundle
+	import logo from '$lib/assets/images/Logo/120px/Logo_rounded.png';
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/ui/styles';
 	import Icon from '$lib/components/widgets/Icon.svelte';
@@ -408,7 +409,7 @@
 											<span class="flex-1">{item.name}</span>
 											{#if item.href === '/seuratut/' && changedWatchCount}
 												<span
-													class="rounded-full bg-green-600 px-1.5 text-xs font-semibold text-white"
+													class="rounded-full bg-green-700 px-1.5 text-xs font-semibold text-white"
 													title="Muuttuneita seurattuja tuotteita">{changedWatchCount}</span
 												>
 											{/if}
@@ -451,13 +452,14 @@
 			</div>
 		{/if}
 		<InstallBanner />
-		<div
+		<!-- The page's one main landmark; pages render plain containers inside it -->
+		<main
 			id="main-content"
 			tabindex="-1"
 			class="flex max-h-full flex-auto flex-col overflow-x-hidden overflow-y-auto outline-none"
 		>
 			{@render children?.()}
-		</div>
+		</main>
 		{#if alko && page.route.id !== '/vertailu'}
 			<CompareBar kaljakori={alko.kaljakori} />
 		{/if}

@@ -196,7 +196,7 @@
 			}}
 		>
 			<Icon name="share" />
-			<span class="hidden sm:inline">Jaa tuote</span>
+			<span class="sr-only sm:not-sr-only">Jaa tuote</span>
 		</button>
 	</div>
 
