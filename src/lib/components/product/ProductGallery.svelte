@@ -7,6 +7,7 @@
 	import { formatValue } from '$lib/utils/format/format';
 	import { components } from '$lib/utils/ui/styles';
 	import { twMerge } from 'tailwind-merge';
+	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 
 	const {
 		product,
@@ -30,6 +31,7 @@
 
 	function openZoom() {
 		zoomed = true;
+		sendAnalyticsEvent('open_zoomed_image', { product_number: product[AllColumns.Number] });
 		dialogElement?.showModal();
 	}
 </script>

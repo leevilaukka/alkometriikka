@@ -300,6 +300,7 @@ export type AnalyticsEventMap = {
 	unwatch_product: { product_number: string };
 	/** The watchlist page was opened, with how many watched products had changed. */
 	view_watchlist: { count: number; changed: number };
+	open_zoomed_image: { product_number: string; };
 	/** The front page's "your watched products changed" banner was followed. */
 	open_watchlist_banner: { changed: number };
 	/** The error page showed a 4xx status, see `reportPageNotFound` in `errorAnalytics.ts`. */
