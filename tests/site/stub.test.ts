@@ -98,6 +98,21 @@ describe('renderStub', () => {
 		expect(html).not.toContain('rel="modulepreload"');
 	});
 
+	it("types the photo preload, so browsers that can't decode it skip it", () => {
+		const out = renderStub(template, {
+			...page,
+			preloadImage: 'https://images.example/a.avif',
+			preloadImageType: 'image/avif'
+		});
+		expect(out).toContain(
+			'<link rel="preload" as="image" href="https://images.example/a.avif" type="image/avif" fetchpriority="high"'
+		);
+		expect(
+			renderStub(template, { ...page, preloadImage: 'https://images.example/a.jpg' })
+		).toContain('href="https://images.example/a.jpg" fetchpriority="high"');
+		expect(html).not.toContain('as="image"');
+	});
+
 	it('omits optional tags when not given', () => {
 		expect(html).not.toContain('name="keywords"');
 		expect(html).toContain('<meta property="og:type" content="website" />');

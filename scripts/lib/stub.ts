@@ -50,6 +50,8 @@ export type StubPage = {
 	 * Requested like ProductImage does (CORS, no referrer), so the app reuses the download
 	 */
 	preloadImage?: string;
+	/** MIME type of `preloadImage`, so browsers that can't decode it skip the preload */
+	preloadImageType?: string;
 	/**
 	 * The page route's code. The shell preloads only the root layout's, so without these the
 	 * browser finds the route's chunks only once the app starts, by then sharing the connection
@@ -113,7 +115,7 @@ export function renderStub(template: string, page: StubPage): string {
 		...(page.keywords ? [`\t<meta name="keywords" content="${escapeHtml(page.keywords)}" />`] : []),
 		...(page.preloadImage
 			? [
-					`\t<link rel="preload" as="image" href="${escapeHtml(page.preloadImage)}" fetchpriority="high" crossorigin="anonymous" referrerpolicy="no-referrer" />`
+					`\t<link rel="preload" as="image" href="${escapeHtml(page.preloadImage)}"${page.preloadImageType ? ` type="${escapeHtml(page.preloadImageType)}"` : ''} fetchpriority="high" crossorigin="anonymous" referrerpolicy="no-referrer" />`
 				]
 			: []),
 		...routePreloadLinks(template, page.route),

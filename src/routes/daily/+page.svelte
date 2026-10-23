@@ -768,7 +768,7 @@
 									<ProductImage
 										number={product[AllColumns.Number]}
 										name={product[AllColumns.Name]}
-										transform="medium"
+										transform="small"
 									/>
 								</div>
 								<span class="min-w-0 text-sm">{product[AllColumns.Name]}</span>
@@ -864,7 +864,7 @@
 								<ProductImage
 									number={question.productId}
 									name={currentProduct?.[AllColumns.Name] ?? 'Tuote'}
-									transform="medium"
+									transform="small"
 								/>
 							</div>
 							<div class="min-w-0">
@@ -920,7 +920,7 @@
 									onclick={() => answer(id)}
 								>
 									<div class="h-32 w-24 shrink-0 rounded bg-white p-1">
-										<ProductImage number={id} name={productName(id)} transform="medium" />
+										<ProductImage number={id} name={productName(id)} transform="small" />
 									</div>
 									<span class="min-w-0"
 										><kbd
@@ -946,7 +946,7 @@
 								<ProductImage
 									number={question.productId}
 									name={currentProduct?.[AllColumns.Name] ?? 'Tuote'}
-									transform="medium"
+									transform="small"
 								/>
 							</div>
 							<div class="min-w-0">
@@ -985,7 +985,7 @@
 								<ProductImage
 									number={question.productId}
 									name={currentProduct?.[AllColumns.Name] ?? 'Tuote'}
-									transform="medium"
+									transform="small"
 								/>
 							</div>
 							<div class="min-w-0">

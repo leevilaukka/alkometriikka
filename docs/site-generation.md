@@ -46,7 +46,24 @@ history feed, and `product:price:*` meta tags. The OG image is the product's R2 
 
 The product photo, the page's LCP element, is preloaded from `<head>` with `fetchpriority="high"`.
 The preload, the fallback `<img>` and the app's `ProductImage` all request it the same way (CORS,
-no referrer), so the browser downloads it once and the app reuses it from cache.
+no referrer), so the browser downloads it once and the app reuses it from cache. The photo is AVIF
+(`displayImageUrl`), so the preload carries `type="image/avif"` and the fallback is a `<picture>`
+with a JPEG/WebP `<img>`: browsers without AVIF skip the preload, and `ProductImage` falls back to
+the same JPEG/WebP URL. The OG image and JSON-LD use the JPEG/WebP URL (`generateImageUrl`), since
+link-preview crawlers may not read AVIF.
+
+Alko's image CDN serves only a fixed set of transform and format combinations (anything else is a
+404, an unknown transform a 400), and its `f_auto` never chooses AVIF, so `displayImageUrl` names
+the format by the file extension:
+
+| `ImageTransform` | URL                        | Size            | Used by                        |
+| ---------------- | -------------------------- | --------------- | ------------------------------ |
+| `products`       | `t_products/…/kuva.webp`   | 160×192, padded | Lists, compare, search         |
+| `small`          | `t_digipruuvi/…/kuva.webp` | 500 px tall     | Daily cards                    |
+| `medium`         | `t_pdp/…/kuva.avif`        | 600 px wide     | Product page, similar products |
+
+Others that exist: `t_large` (900 px wide), `t_thumbnail` (40×48), `t_img_160x192` and
+`t_img_40x148` (cropped to the bottle), and fill-cropped label close-ups like `t_4x5_w_400_h500`.
 
 Each product stub also carries the product itself as a one-product `data.json` (schema plus that
 product, about 1 KB) in `<script type="application/json" id="stub-data">`. The page renders it

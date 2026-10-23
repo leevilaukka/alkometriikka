@@ -392,7 +392,7 @@
 										<ProductImage
 											number={currentQuestion.productId}
 											name={productMap.get(currentQuestion.productId)?.[AllColumns.Name] ?? 'Tuote'}
-											transform="medium"
+											transform="small"
 										/>
 									</div>
 									<div class="min-w-0">
@@ -440,7 +440,7 @@
 											)}
 										>
 											<div class="h-32 w-24 shrink-0 rounded bg-white p-1">
-												<ProductImage number={id} name={productName(id)} transform="medium" />
+												<ProductImage number={id} name={productName(id)} transform="small" />
 											</div>
 											<span class="min-w-0">{productName(id)}</span>
 											{#if correct}<Icon name="check_circle" />{:else if picked}<Icon
@@ -463,7 +463,7 @@
 										<ProductImage
 											number={currentQuestion.productId}
 											name={productMap.get(currentQuestion.productId)?.[AllColumns.Name] ?? 'Tuote'}
-											transform="medium"
+											transform="small"
 										/>
 									</div>
 									<div class="min-w-0">
@@ -499,7 +499,7 @@
 										<ProductImage
 											number={currentQuestion.productId}
 											name={productMap.get(currentQuestion.productId)?.[AllColumns.Name] ?? 'Tuote'}
-											transform="medium"
+											transform="small"
 										/>
 									</div>
 									<div class="min-w-0">
@@ -561,7 +561,7 @@
 							<ProductImage
 								number={question.productId}
 								name={productMap.get(question.productId)?.[AllColumns.Name] ?? 'Tuote'}
-								transform="medium"
+								transform="small"
 							/>
 						</div>
 						<div class="min-w-0">
@@ -590,7 +590,7 @@
 								onclick={() => answer(id)}
 							>
 								<div class="h-32 w-24 shrink-0 rounded bg-white p-1">
-									<ProductImage number={id} name={productName(id)} transform="medium" />
+									<ProductImage number={id} name={productName(id)} transform="small" />
 								</div>
 								<span class="min-w-0">{productName(id)}</span>
 							</button>
@@ -602,7 +602,7 @@
 							<ProductImage
 								number={question.productId}
 								name={productMap.get(question.productId)?.[AllColumns.Name] ?? 'Tuote'}
-								transform="medium"
+								transform="small"
 							/>
 						</div>
 						<div class="min-w-0">
@@ -627,7 +627,7 @@
 							<ProductImage
 								number={question.productId}
 								name={productMap.get(question.productId)?.[AllColumns.Name] ?? 'Tuote'}
-								transform="medium"
+								transform="small"
 							/>
 						</div>
 						<div class="min-w-0">
