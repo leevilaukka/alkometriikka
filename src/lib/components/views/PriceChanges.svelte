@@ -395,19 +395,19 @@
 	{@const cheaper = isPriceDrop(change)}
 	<div
 		class={twMerge(
-			'flex shrink-0 flex-row flex-wrap items-center justify-between gap-x-3 gap-y-1 border-b border-primary px-4 py-2 text-sm md:w-32 md:flex-col md:justify-center md:gap-1 md:border-e md:border-b-0 md:px-2 md:py-4 md:text-center',
+			'flex shrink-0 flex-row flex-wrap items-center justify-between gap-x-3 gap-y-1 border-b border-primary px-4 py-2 text-sm @4xl:w-32 @4xl:flex-col @4xl:justify-center @4xl:gap-1 @4xl:border-e @4xl:border-b-0 @4xl:px-2 @4xl:py-4 @4xl:text-center',
 			cheaper ? 'text-green-700 dark:text-green-400' : 'text-red-700 dark:text-red-400'
 		)}
 	>
-		<span class="flex items-center gap-1.5 md:flex-col md:gap-1">
-			<span class="md:text-2xl"><Icon name={cheaper ? 'trending_down' : 'trending_up'} /></span>
-			<strong class="leading-tight md:text-3xl">{formatPriceChangePercent(change.percent)}</strong>
+		<span class="flex items-center gap-1.5 @4xl:flex-col @4xl:gap-1">
+			<span class="@4xl:text-2xl"><Icon name={cheaper ? 'trending_down' : 'trending_up'} /></span>
+			<strong class="leading-tight @4xl:text-3xl">{formatPriceChangePercent(change.percent)}</strong>
 		</span>
 		<span class="font-semibold">{formatPriceChangeAmount(change)}</span>
-		<span class="md:text-xs">oli {formatValue(change.from, AllColumns.Price)}</span>
-		<span class="text-secondary md:text-xs">{formatPriceChangeDate(change.date)}</span>
+		<span class="@4xl:text-xs">oli {formatValue(change.from, AllColumns.Price)}</span>
+		<span class="text-secondary @4xl:text-xs">{formatPriceChangeDate(change.date)}</span>
 		{#if change.sale}
-			<span class={twMerge(components.badge({ color: 'green' }), 'md:text-xs')}>Tarjous</span>
+			<span class={twMerge(components.badge({ color: 'green' }), '@4xl:text-xs')}>Tarjous</span>
 		{/if}
 	</div>
 {/snippet}
