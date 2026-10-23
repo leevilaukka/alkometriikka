@@ -161,8 +161,12 @@
 				aspect-ratio: 263.28/69.19;
 			}
 
+			/* Full height, scaled from the bottom: a transform runs on the compositor and moves
+			   nothing else, where animating the height relaid the page every frame */
 			#main-loader .loader-bar {
 				display: block;
+				height: 100%;
+				transform-origin: bottom;
 				animation: oscillate 2s infinite linear;
 			}
 
@@ -221,15 +225,15 @@
 
 			@keyframes oscillate {
 				0% {
-					height: 20%;
+					transform: scaleY(0.2);
 				}
 
 				50% {
-					height: 100%;
+					transform: scaleY(1);
 				}
 
 				100% {
-					height: 20%;
+					transform: scaleY(0.2);
 				}
 			}
 		</style>

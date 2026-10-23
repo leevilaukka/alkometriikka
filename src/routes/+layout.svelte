@@ -19,7 +19,8 @@
 		userLocation,
 		watchlist
 	} from '$lib/global.svelte';
-	import logo from '$lib/assets/images/Logo/0.5x/Logo_rounded@0.5x.png';
+	// Sized for the header's 40px at up to 3× pixel density; small enough to be inlined in the bundle
+	import logo from '$lib/assets/images/Logo/120px/Logo_rounded.png';
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/ui/styles';
 	import Icon from '$lib/components/widgets/Icon.svelte';
