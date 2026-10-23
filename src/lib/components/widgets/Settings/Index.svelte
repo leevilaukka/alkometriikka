@@ -43,9 +43,10 @@
 
 	onMount(() => onSettingsOpenRequested(openSettings));
 
+	// Undefined while a page renders before the price list has loaded
 	const { alko }: { alko: any } = $props();
 	const stores = $derived(
-		(Object.values(alko.availability.stores) as AvailabilityStore[]).sort((a, b) =>
+		(Object.values(alko?.availability.stores ?? {}) as AvailabilityStore[]).sort((a, b) =>
 			a.name.localeCompare(b.name, 'fi', { sensitivity: 'base' })
 		)
 	);

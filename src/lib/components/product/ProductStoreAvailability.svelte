@@ -20,6 +20,7 @@
 		id,
 		productNumber,
 		stores,
+		loading,
 		preferredStore,
 		availabilityUpdated,
 		class: _class = ''
@@ -27,6 +28,8 @@
 		id?: string;
 		productNumber: string;
 		stores: AvailabilityStore[];
+		/** Availability hasn't loaded yet, so `stores` is empty */
+		loading: boolean;
 		preferredStore?: AvailabilityStore;
 		availabilityUpdated: Date | undefined;
 		class?: string;
@@ -59,8 +62,12 @@
 	<header class="flex flex-col gap-0.5 border-b border-primary p-3.5">
 		<h2 class="text-lg font-bold">Myymäläsaatavuus</h2>
 		<p class="text-sm text-secondary">
-			{stores.length}
-			{stores.length === 1 ? 'myymälä' : 'myymälää'}{#if availabilityUpdated}
+			{#if loading}
+				Haetaan saatavuutta…
+			{:else}
+				{stores.length}
+				{stores.length === 1 ? 'myymälä' : 'myymälää'}
+			{/if}{#if availabilityUpdated}
 				· <time
 					datetime={availabilityUpdated.toISOString()}
 					title={availabilityUpdated.toLocaleString('fi-FI')}
@@ -69,7 +76,7 @@
 		</p>
 		<ProductStockTrend {productNumber} class="mt-1" />
 	</header>
-	{#if !preferredStore}
+	{#if !loading && !preferredStore}
 		<div class="border-b border-primary p-3.5">
 			<button
 				type="button"
@@ -80,7 +87,14 @@
 			</button>
 		</div>
 	{/if}
-	{#if stores.length > 0}
+	{#if loading}
+		<!-- As tall as the list usually is, which scrolls past max-h-96 -->
+		<div aria-hidden="true" class="flex h-96 flex-col gap-2 overflow-hidden bg-primary p-3.5">
+			{#each { length: 6 }, index (index)}
+				<div class="h-12 animate-pulse rounded bg-secondary"></div>
+			{/each}
+		</div>
+	{:else if stores.length > 0}
 		<ul class="max-h-96 overflow-y-auto bg-primary">
 			{#each stores as store (store.id)}
 				{@const distance = formatStoreDistance(getStoreDistance(preferredStore, store))}

@@ -12,8 +12,15 @@
 	const {
 		product,
 		kaljakori,
+		loading = false,
 		class: _class = ''
-	}: { product: PriceListItem; kaljakori: Kaljakori; class?: string } = $props();
+	}: {
+		product: PriceListItem;
+		kaljakori: Kaljakori;
+		/** The price list hasn't loaded, so there's nothing to compare against yet */
+		loading?: boolean;
+		class?: string;
+	} = $props();
 
 	const trail = $derived(
 		findProductCategoryTrail(
@@ -27,9 +34,11 @@
 	let compareToParent = $state(false);
 
 	const result = $derived(
-		computeQualityMetrics(product, kaljakori, {
-			parentCategory: hasParentCategory && compareToParent
-		})
+		loading
+			? null
+			: computeQualityMetrics(product, kaljakori, {
+					parentCategory: hasParentCategory && compareToParent
+				})
 	);
 
 	// The category page of the compared products, for browsing them
@@ -61,7 +70,17 @@
 	</button>
 {/snippet}
 
-{#if result.metrics.length > 0}
+{#if loading}
+	<!-- As tall as the loaded section, so the page doesn't jump when the price list arrives -->
+	<section class={twMerge('flex h-118 flex-col gap-3 md:h-85 lg:h-48', _class)}>
+		<div class="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+			<h2 class="text-2xl font-bold">Hinta-laatu</h2>
+			<span aria-hidden="true" class="h-4 w-64 max-w-full animate-pulse rounded bg-secondary"
+			></span>
+		</div>
+		<div aria-hidden="true" class="flex-1 animate-pulse rounded bg-secondary"></div>
+	</section>
+{:else if result && result.metrics.length > 0}
 	<section class={twMerge('flex flex-col gap-3', _class)}>
 		<div class="flex flex-wrap items-baseline gap-x-2 gap-y-1">
 			<h2 class="text-2xl font-bold">Hinta-laatu</h2>

@@ -5,7 +5,7 @@
 	import { resolvePreferredStore } from '$lib/utils/catalog/availability';
 	import { AUTO_STORE_ID } from '$lib/utils/constants/app';
 	import { keepAutoLocationFresh } from '$lib/utils/device/location';
-	import type { AvailabilityStore, PriceListItem } from '$lib/types.js';
+	import type { AvailabilityStore } from '$lib/types.js';
 
 	let { data } = $props();
 
@@ -13,10 +13,47 @@
 		if ($preferredStoreId === AUTO_STORE_ID) return keepAutoLocationFresh();
 	});
 
-	let id = $derived(page.params.id?.split('/')[0]); // Handle both /tuotteet/123 and /tuotteet/123/extra paths
+	// The price list once loaded; until then the stub's own row (`data.preview`) stands in for it.
+	// Load errors are shown by the layout
+	let alko = $state.raw<Awaited<typeof data.alko>>();
+	$effect(() => {
+		data.alko.then(
+			(value) => (alko = value),
+			() => {}
+		);
+	});
+
+	let id = $derived(page.params.id?.split('/')[0] as string); // Handle both /tuotteet/123 and /tuotteet/123/extra paths
+
+	const kaljakori = $derived(alko?.kaljakori ?? data.preview);
+	const product = $derived(kaljakori?.findById(id) ?? data.preview?.findById(id));
+
+	// Store availability loads after the price list, and the page fills it in when it arrives
+	const availabilityStores = $derived(
+		(alko?.availability.product[id] ?? [])
+			.map((storeId: string) => alko!.availability.stores[storeId])
+			.filter((store: AvailabilityStore | undefined): store is AvailabilityStore => Boolean(store))
+	);
+	const preferredStore = $derived(
+		alko && resolvePreferredStore(alko.availability.stores, $preferredStoreId, $userLocation)
+	);
+	const availabilityUpdated = $derived(
+		alko?.availability.lastUpdated ? new Date(alko.availability.lastUpdated) : undefined
+	);
 </script>
 
-{#await data.alkoWithStores}
+{#if product && kaljakori}
+	<Product
+		{product}
+		{kaljakori}
+		catalogLoaded={Boolean(alko)}
+		availability={alko?.availability ?? { stores: {}, product: {} }}
+		availabilityLoaded={alko?.availabilityLoaded ?? false}
+		{availabilityStores}
+		{preferredStore}
+		{availabilityUpdated}
+	/>
+{:else}
 	<div class="grid h-full w-full place-content-center">
 		<div class="flex flex-col items-center gap-3">
 			<span
@@ -25,25 +62,4 @@
 			<p>Ladataan...</p>
 		</div>
 	</div>
-{:then alko}
-	{@const product = alko.kaljakori.findById(id as string) as PriceListItem}
-	{@const availabilityStores = (alko.availability.product[id as string] ?? [])
-		.map((storeId: string) => alko.availability.stores[storeId])
-		.filter((store: AvailabilityStore | undefined): store is AvailabilityStore => Boolean(store))}
-	{@const preferredStore = resolvePreferredStore(
-		alko.availability.stores,
-		$preferredStoreId,
-		$userLocation
-	)}
-	{@const availabilityUpdated = alko.availability?.lastUpdated
-		? new Date(alko.availability.lastUpdated)
-		: undefined}
-	<Product
-		{product}
-		kaljakori={alko.kaljakori}
-		availability={alko.availability}
-		{availabilityStores}
-		{preferredStore}
-		{availabilityUpdated}
-	/>
-{/await}
+{/if}

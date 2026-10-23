@@ -23,6 +23,7 @@
 		number={product[AllColumns.Number]}
 		name={product[AllColumns.Name]}
 		transform="medium"
+		priority
 		alt={product[AllColumns.Name]}
 	/>
 	{#if sale}

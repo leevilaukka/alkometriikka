@@ -1,5 +1,6 @@
 import { OG_IMAGE_WIDTH, OG_IMAGE_HEIGHT } from '../og/og';
 import { escapeHtml, escapeJson, minifyHtml, replaceMarkedSection } from './html';
+import { STUB_DATA_ID } from '../../src/lib/utils/app/seo.ts';
 
 export const SITE_URL = 'https://alkometriikka.fi';
 
@@ -20,12 +21,19 @@ export type StubPage = {
 	ogImageAlt: string;
 	/** `<link>` tags placed right after the canonical link (e.g. RSS alternates) */
 	alternates?: string[];
+	/**
+	 * The page's main photo (its LCP element), fetched at high priority straight from the HTML.
+	 * Requested like ProductImage does (CORS, no referrer), so the app reuses the download
+	 */
+	preloadImage?: string;
 	/** Extra meta tags placed after the og:image tags (e.g. product:price:*) */
 	ogExtra?: string[];
 	jsonLd: object[];
 	/** Becomes `data-prerendered-{fallbackName}` on the fallback article */
 	fallbackName: string;
 	fallbackHtml: string;
+	/** Data the app reads to render the page before the price list loads (see STUB_DATA_ID) */
+	data?: unknown;
 };
 
 export function breadcrumbJsonLd(items: { name: string; url: string }[]) {
@@ -54,6 +62,11 @@ export function renderStub(template: string, page: StubPage): string {
 	const metadata = [
 		`\t<meta name="description" content="${escapeHtml(page.description)}" />`,
 		...(page.keywords ? [`\t<meta name="keywords" content="${escapeHtml(page.keywords)}" />`] : []),
+		...(page.preloadImage
+			? [
+					`\t<link rel="preload" as="image" href="${escapeHtml(page.preloadImage)}" fetchpriority="high" crossorigin="anonymous" referrerpolicy="no-referrer" />`
+				]
+			: []),
 		`\t<link rel="canonical" href="${escapeHtml(page.url)}" />`,
 		...(page.alternates ?? []),
 		`\t<meta property="og:type" content="${escapeHtml(page.ogType ?? 'website')}" />`,
@@ -78,7 +91,11 @@ export function renderStub(template: string, page: StubPage): string {
 \t<article ${attribute} style="max-width:80rem;margin:0 auto;padding:2rem;font-family:sans-serif">
 ${page.fallbackHtml}
 \t</article>
-\t<script>document.querySelector('[${attribute}]')?.remove();document.currentScript?.remove();</script>`;
+\t<script>document.querySelector('[${attribute}]')?.remove();document.currentScript?.remove();</script>${
+		page.data === undefined
+			? ''
+			: `\n\t<script type="application/json" id="${STUB_DATA_ID}">${escapeJson(page.data)}</script>`
+	}`;
 
 	let html = replaceMarkedSection(template, metadata);
 	html = html.replace(/<title>[^<]*<\/title>/, () => `<title>${escapeHtml(page.title)}</title>`);

@@ -12,6 +12,7 @@
 		product,
 		sale,
 		campaignWindow,
+		storesLoading,
 		preferredStore,
 		availableInPreferredStore,
 		closestAvailableStore,
@@ -21,6 +22,8 @@
 		product: PriceListItem;
 		sale: SaleInfo | null;
 		campaignWindow: string | null;
+		/** A store is chosen but availability hasn't loaded yet */
+		storesLoading: boolean;
 		preferredStore?: AvailabilityStore;
 		availableInPreferredStore: boolean;
 		closestAvailableStore?: AvailabilityStore;
@@ -76,7 +79,14 @@
 		{/if}
 	</div>
 
-	{#if preferredStore}
+	{#if storesLoading}
+		<div
+			class="flex min-h-17 animate-pulse items-center gap-2.5 rounded border border-primary bg-primary p-3 text-sm text-secondary"
+		>
+			<Icon name="store" class="text-xl" />
+			<span>Haetaan saatavuutta…</span>
+		</div>
+	{:else if preferredStore}
 		<div class="flex flex-col gap-2.5 rounded border border-primary bg-primary p-3">
 			<div class="flex items-start gap-2.5">
 				<Icon

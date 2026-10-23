@@ -38,23 +38,31 @@
 	import ProductMobileCta from '../product/ProductMobileCta.svelte';
 	import ProductWatchButton from '../product/ProductWatchButton.svelte';
 	import { describeWatchChange, type WatchChange } from '$lib/utils/user/watchlist';
-	import { pageBottomBar } from '$lib/global.svelte';
+	import { pageBottomBar, preferredStoreId } from '$lib/global.svelte';
 
 	const {
 		product,
 		kaljakori,
+		catalogLoaded,
 		availability,
+		availabilityLoaded,
 		availabilityStores,
 		preferredStore,
 		availabilityUpdated
 	}: {
 		product: PriceListItem;
+		/** Only the product itself until `catalogLoaded`, when the page renders from its stub */
 		kaljakori: Kaljakori;
+		catalogLoaded: boolean;
 		availability: AvailabilityData;
+		availabilityLoaded: boolean;
 		availabilityStores: AvailabilityStore[];
 		preferredStore?: AvailabilityStore;
 		availabilityUpdated: Date | undefined;
 	} = $props();
+
+	// Whether the preferred store's availability is still on its way, as opposed to no store chosen
+	const storesLoading = $derived(!availabilityLoaded && Boolean($preferredStoreId));
 
 	const rankedAvailabilityStores = $derived(
 		rankStoresByDistance(availabilityStores, preferredStore)
@@ -75,9 +83,11 @@
 
 	// Removed products can't be bought, so they make no sense as alternatives here
 	const similarProducts = $derived(
-		findSimilarProducts(product, kaljakori, SIMILAR_PRODUCT_COLUMNS, kaljakori.data.length)
-			.filter((item) => !item[AllColumns.RemovedFromSelection])
-			.slice(0, 24)
+		catalogLoaded
+			? findSimilarProducts(product, kaljakori, SIMILAR_PRODUCT_COLUMNS, kaljakori.data.length)
+					.filter((item) => !item[AllColumns.RemovedFromSelection])
+					.slice(0, 24)
+			: []
 	);
 
 	const sale = $derived(
@@ -153,6 +163,7 @@
 		<ProductWatchButton
 			{product}
 			{availability}
+			ready={availabilityLoaded}
 			preferredStoreId={preferredStore?.id}
 			bind:changes={watchChanges}
 			class="ml-auto"
@@ -219,6 +230,7 @@
 				{product}
 				{sale}
 				{campaignWindow}
+				{storesLoading}
 				{preferredStore}
 				{availableInPreferredStore}
 				{closestAvailableStore}
@@ -235,6 +247,7 @@
 			{product}
 			{sale}
 			{campaignWindow}
+			{storesLoading}
 			{preferredStore}
 			{availableInPreferredStore}
 			{closestAvailableStore}
@@ -247,9 +260,9 @@
 		<ProductSizeHook size={cheapestSize} class="lg:hidden" />
 	{/if}
 
-	<ProductQualityMetrics {product} {kaljakori} />
+	<ProductQualityMetrics {product} {kaljakori} loading={!catalogLoaded} />
 
-	<ProductSimilar {product} candidates={similarProducts} />
+	<ProductSimilar {product} candidates={similarProducts} loading={!catalogLoaded} />
 
 	<div
 		class="grid w-full grid-cols-1 gap-6 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] lg:items-start"
@@ -262,6 +275,7 @@
 			id="myymalasaatavuus"
 			productNumber={product[AllColumns.Number]}
 			stores={rankedAvailabilityStores}
+			loading={!availabilityLoaded}
 			{preferredStore}
 			{availabilityUpdated}
 		/>

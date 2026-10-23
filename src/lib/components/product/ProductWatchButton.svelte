@@ -18,12 +18,15 @@
 	let {
 		product,
 		availability,
+		ready,
 		preferredStoreId,
 		changes = $bindable([]),
 		class: _class = ''
 	}: {
 		product: PriceListItem;
 		availability: AvailabilityData;
+		/** Whether `availability` has loaded, before which stock changes can't be told */
+		ready: boolean;
 		preferredStoreId?: string;
 		/** What changed since the user last saw the product, if they watch it */
 		changes?: WatchChange[];
@@ -36,6 +39,7 @@
 	// Opening a watched product shows what changed and then counts as seeing it
 	$effect(() => {
 		const productId = id;
+		if (!ready) return;
 		untrack(() => {
 			const item = watchlist.find((entry) => entry.id === productId);
 			if (!item) {
@@ -67,6 +71,7 @@
 		'flex shrink-0 items-center gap-2',
 		_class
 	)}
+	disabled={!ready}
 	onclick={toggle}
 >
 	<Icon name={watched ? 'bell_check' : 'bell_plus'} />

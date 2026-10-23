@@ -18,6 +18,7 @@
 		product,
 		sale,
 		campaignWindow,
+		storesLoading,
 		preferredStore,
 		availableInPreferredStore,
 		closestAvailableStore,
@@ -28,6 +29,7 @@
 		product: PriceListItem;
 		sale: SaleInfo | null;
 		campaignWindow: string | null;
+		storesLoading: boolean;
 		preferredStore?: AvailabilityStore;
 		availableInPreferredStore: boolean;
 		closestAvailableStore?: AvailabilityStore;
@@ -55,6 +57,7 @@
 		{product}
 		{sale}
 		{campaignWindow}
+		{storesLoading}
 		{preferredStore}
 		{availableInPreferredStore}
 		{closestAvailableStore}

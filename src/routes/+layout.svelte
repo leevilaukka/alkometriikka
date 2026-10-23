@@ -43,6 +43,38 @@
 
 	let { children, data } = $props();
 	loadFlags();
+
+	// The price list once loaded. Pages wait for it before rendering, except one whose load
+	// returns a `preview` to show meanwhile (a product page opened from its prerendered stub)
+	let alko = $state.raw<Awaited<typeof data.alko>>();
+	let loadError = $state.raw<Error>();
+	$effect(() => {
+		data.alko.then(
+			(value) => (alko = value),
+			(error) => (loadError = error)
+		);
+	});
+	// Once up, the app stays up: a page navigated to from a preview waits for the price list itself
+	let showApp = $state(false);
+	$effect(() => {
+		if (alko || page.data.preview) showApp = true;
+	});
+
+	// Watched products that changed since the user last looked, for the menu's count
+	const changedWatchCount = $derived(
+		alko && watchlist.length
+			? watchStatuses(
+					watchlist,
+					(id) => alko!.kaljakori.findById(id),
+					alko.availabilityLoaded ? alko.availability : null,
+					resolvePreferredStore(alko.availability.stores, $preferredStoreId, $userLocation)?.id
+				).filter((status) => status.changes.length).length
+			: 0
+	);
+
+	$effect(() => {
+		if (showApp || loadError) shiftLoader();
+	});
 	let searchParamsManager = new SearchParamsManager(page.url);
 	setContext(ContextKeys.SearchParamsManager, searchParamsManager);
 
@@ -250,17 +282,16 @@
 
 <svelte:window onclick={handleDocumentClick} onkeydown={handleGlobalKeydown} />
 
-{#await data.alko then alko}
-	{shiftLoader()}
-	<!-- Watched products that changed since the user last looked, for the menu's count -->
-	{@const changedWatchCount = watchlist.length
-		? watchStatuses(
-				watchlist,
-				(id) => alko.kaljakori.findById(id),
-				alko.availabilityLoaded ? alko.availability : null,
-				resolvePreferredStore(alko.availability.stores, $preferredStoreId, $userLocation)?.id
-			).filter((status) => status.changes.length).length
-		: 0}
+{#if loadError}
+	<div class="grid h-full max-h-full w-full place-content-center overflow-hidden">
+		<div class="flex flex-col items-center gap-3">
+			<p>Virhe datan lataamisessa: {loadError.message}</p>
+			<button class="rounded bg-brand-1 px-4 py-2 text-white" onclick={() => location.reload()}>
+				Yritä uudelleen
+			</button>
+		</div>
+	</div>
+{:else if showApp}
 	<div class="flex h-full w-full flex-col">
 		{#if dev}
 			<span class="bg-brand-3 px-1.5 py-0.5 text-center text-sm text-white">DEV</span>
@@ -320,12 +351,14 @@
 				</div>
 			{/if}
 			<div class="ms-auto flex items-center gap-2">
-				<CommandPalette
-					bind:this={commandPalette}
-					kaljakori={alko.kaljakori}
-					availability={alko.availability}
-					showButton={!hasSearch}
-				/>
+				{#if alko}
+					<CommandPalette
+						bind:this={commandPalette}
+						kaljakori={alko.kaljakori}
+						availability={alko.availability}
+						showButton={!hasSearch}
+					/>
+				{/if}
 				<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 				<details
 					bind:this={extraMenu}
@@ -400,7 +433,9 @@
 				<Settings {alko} />
 			</div>
 		</header>
-		<NoticeBanner lastSynced={alko.dataset.metadata.LastSynced} cached={alko.cached} />
+		{#if alko}
+			<NoticeBanner lastSynced={alko.dataset.metadata.LastSynced} cached={alko.cached} />
+		{/if}
 		<InstallBanner />
 		<div
 			id="main-content"
@@ -409,20 +444,10 @@
 		>
 			{@render children?.()}
 		</div>
-		{#if page.route.id !== '/vertailu'}
+		{#if alko && page.route.id !== '/vertailu'}
 			<CompareBar kaljakori={alko.kaljakori} />
 		{/if}
 		<!-- Pages hand their mobile action bar here (see pageBottomBar) so it sits below the compare bar -->
 		{@render pageBottomBar.snippet?.()}
 	</div>
-{:catch error}
-	{shiftLoader()}
-	<div class="grid h-full max-h-full w-full place-content-center overflow-hidden">
-		<div class="flex flex-col items-center gap-3">
-			<p>Virhe datan lataamisessa: {error.message}</p>
-			<button class="rounded bg-brand-1 px-4 py-2 text-white" onclick={() => location.reload()}>
-				Yritä uudelleen
-			</button>
-		</div>
-	</div>
-{/await}
+{/if}
