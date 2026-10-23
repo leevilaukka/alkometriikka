@@ -3,7 +3,6 @@
 	import SvelteVirtualList from '@humanspeak/svelte-virtual-list';
 	import { twMerge } from 'tailwind-merge';
 	import Popup from '../widgets/Popup.svelte';
-	import { getRandom } from '$lib/utils/app/share';
 	import { isSafari } from '$lib/global.svelte';
 	import { filterAnnotationsToFilter, filterRenameMap } from '$lib/utils/constants/display';
 	import Icon from '../widgets/Icon.svelte';
@@ -39,7 +38,9 @@
 
 	const strOptions = $derived(options.map(String));
 
-	const inputId = 'stringinput-' + getRandom();
+	// Stable across SSR and hydration, unlike a random id
+	const inputId = $props.id();
+	const labelId = `${inputId}-label`;
 
 	type ListItem = {
 		value: string;
@@ -179,15 +180,19 @@
 			/>
 		</label>
 	{:else}
-		<label for={inputId}>{label}</label>
+		<label id={labelId} for={inputId}>{label}</label>
 		<Popup
 			class={twMerge('gap-4 p-4', $isSafari && 'h-auto')}
 			onOpen={() => (isOpen = true)}
 			onClose={() => (isOpen = false)}
 		>
 			{#snippet renderButton(dialogElement: HTMLDialogElement)}
+				<!-- Named by the filter's label followed by the current selection -->
 				<button
+					id={inputId}
 					{name}
+					aria-haspopup="dialog"
+					aria-labelledby="{labelId} {inputId}"
 					class={twMerge(components.button(), 'w-full justify-start')}
 					onclick={() => dialogElement.showModal()}
 					title={value &&
@@ -243,14 +248,16 @@
 						{/if}
 						<span
 							class="my-auto ml-auto flex flex-row gap-2 text-sm text-gray-500 dark:text-gray-400"
+							aria-live="polite"
 						>
 							{list.filter((option) => option.selected).length} / {list.length} valittu
 						</span>
 					</div>
 					<input
-						type="text"
+						type="search"
 						bind:value={query}
 						placeholder="Hae..."
+						aria-label="Hae"
 						class={twMerge(components.input(), 'w-full')}
 					/>
 					<div
@@ -330,15 +337,10 @@
 										</div>
 									{:else}
 										{@const item = row.item}
-										<button
-											onclick={() => {
-												item.selected = !item.selected;
-												keepOpen(row.parents);
-												updateValue();
-											}}
+										<label
 											class={twMerge(
 												components.button(),
-												'relative h-7 w-full rounded-none border-none py-0',
+												'relative h-7 w-full cursor-pointer rounded-none border-none py-0',
 												groups && 'pl-[calc(var(--depth)*(1em+0.5rem)+0.5rem)]',
 												row.striped && 'bg-gray-200 dark:bg-zinc-900',
 												item.selected ? 'font-bold' : ''
@@ -353,12 +355,16 @@
 											</span>
 											<input
 												type="checkbox"
-												bind:checked={item.selected}
-												class="ml-auto"
-												readonly
+												checked={item.selected}
+												onchange={(e) => {
+													item.selected = e.currentTarget.checked;
+													keepOpen(row.parents);
+													updateValue();
+												}}
+												class="ml-auto cursor-pointer"
 											/>
 											{#if row.divider}{@render divider(row.striped)}{/if}
-										</button>
+										</label>
 									{/if}
 								{/snippet}
 							</SvelteVirtualList>

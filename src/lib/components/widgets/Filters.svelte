@@ -169,6 +169,7 @@
 
 <dialog
 	bind:this={filtersElement}
+	aria-label="Suodattimet"
 	class={twMerge(
 		'relative m-auto hidden h-full w-full flex-col gap-4 overflow-x-hidden overflow-y-auto rounded-lg border border-primary bg-primary p-4 transition-transform backdrop:backdrop-blur-sm open:flex open:scale-100 md:relative md:rounded-none md:border-0 open:starting:scale-0 md:open:starting:scale-100'
 	)}
