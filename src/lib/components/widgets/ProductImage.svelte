@@ -1,11 +1,11 @@
 <script lang="ts" module>
 	import type { ImageTransform } from '$lib/types';
 
-	/** Pixel size of Alko's photos per transform (`medium` ones vary slightly in height) */
+	/** Pixel size of Alko's photos per transform (`small` ones vary in width, `medium` in height) */
 	const SIZES: Record<ImageTransform, [number, number]> = {
 		products: [160, 192],
-		medium: [600, 2600],
-		pdp: [600, 2600]
+		small: [115, 500],
+		medium: [600, 2600]
 	};
 
 	/** The bottle from the logo, in its 1024×1024 coordinates */
@@ -25,7 +25,7 @@
 </script>
 
 <script lang="ts">
-	import { generateImageUrl } from '$lib/utils/catalog/alko';
+	import { displayImageUrl, fallbackImageUrl } from '$lib/utils/catalog/alko';
 	import { twMerge } from 'tailwind-merge';
 	let {
 		number,
@@ -42,8 +42,10 @@
 		[key: string]: any;
 	} = $props();
 
-	const src = $derived(generateImageUrl(number, transform));
-	let loadedSrc = $state<string>();
+	const src = $derived(displayImageUrl(number, transform));
+	const fallback = $derived(fallbackImageUrl(number, transform));
+	/** The URL that loaded, keyed by the `src` it was loaded for */
+	let loaded = $state<{ for: string; url: string }>();
 
 	// The photo downloads in the background and replaces the placeholder once it's complete, from
 	// the browser's cache. Reruns for each product, so a reused component tries every photo.
@@ -51,20 +53,25 @@
 	// (scripts/lib/stub.ts), so the probe reuses that download
 	$effect(() => {
 		const url = src;
+		const fallbackUrl = fallback;
 		const probe = new Image();
 		probe.crossOrigin = 'anonymous';
 		probe.referrerPolicy = 'no-referrer';
 		if (priority) probe.fetchPriority = 'high';
-		probe.onload = () => (loadedSrc = url);
+		probe.onload = () => (loaded = { for: url, url: probe.src });
+		// Browsers that can't decode the AVIF photo get the WebP/JPEG one
+		probe.onerror = () => {
+			if (fallbackUrl && probe.src !== fallbackUrl) probe.src = fallbackUrl;
+		};
 		probe.src = url;
-		return () => (probe.onload = null);
+		return () => (probe.onload = probe.onerror = null);
 	});
 </script>
 
 <img
 	crossorigin="anonymous"
 	referrerpolicy="no-referrer"
-	src={loadedSrc === src ? src : placeholder(transform)}
+	src={loaded?.for === src ? loaded.url : placeholder(transform)}
 	alt={name}
 	fetchpriority={priority ? 'high' : undefined}
 	data-name="product-image"

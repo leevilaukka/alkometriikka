@@ -112,11 +112,49 @@ export function calculatePricePerLitre(
 	return perLitre > 0 ? Math.round(perLitre * 100) / 100 : null;
 }
 
-export function generateImageUrl(itemNumber: string, transform?: ImageTransform): string {
-	const imageURL =
-		`https://images.alko.fi/images/cs_srgb,f_auto,t_${transform || 'products'}/cdn` as const;
+const ALKO_IMAGES = 'https://images.alko.fi/images' as const;
 
-	return `${imageURL}/${itemNumber}/kuva.jpg` as const;
+/**
+ * A product photo as JPEG, or WebP for clients that accept it, converted to sRGB. For share
+ * metadata, structured data and feeds, whose readers may not decode AVIF; the app itself shows
+ * {@link displayImageUrl}.
+ */
+export function generateImageUrl(
+	itemNumber: string,
+	transform: Exclude<ImageTransform, 'small'> = 'products'
+): string {
+	return `${ALKO_IMAGES}/cs_srgb,f_auto,t_${transform}/cdn/${itemNumber}/kuva.jpg` as const;
+}
+
+/**
+ * Alko's CDN serves only a fixed set of transform and format combinations (others are 404s), and
+ * its `f_auto` never picks AVIF, so the format is named by the extension. Without `cs_srgb` the
+ * photos keep their Adobe RGB profile, which browsers convert; it is far smaller than the sRGB one
+ * `cs_srgb` embeds, so the small photos are about 40 % lighter. `t_pdp` is converted to sRGB already.
+ */
+const DISPLAY_IMAGES: Record<ImageTransform, string> = {
+	products: 't_products/cdn/{id}/kuva.webp',
+	small: 't_digipruuvi/cdn/{id}/kuva.webp',
+	medium: 't_pdp/cdn/{id}/kuva.avif'
+};
+
+/**
+ * The product photo the app shows. `medium` is AVIF, about 40 % smaller than {@link generateImageUrl}'s
+ * WebP; browsers that can't decode it fall back to {@link fallbackImageUrl}.
+ */
+export function displayImageUrl(
+	itemNumber: string,
+	transform: ImageTransform = 'products'
+): string {
+	return `${ALKO_IMAGES}/${DISPLAY_IMAGES[transform].replace('{id}', itemNumber)}`;
+}
+
+/** The photo to show when {@link displayImageUrl}'s AVIF can't be decoded, e.g. Safari before 16 */
+export function fallbackImageUrl(
+	itemNumber: string,
+	transform: ImageTransform
+): string | undefined {
+	return transform === 'medium' ? generateImageUrl(itemNumber, 'medium') : undefined;
 }
 
 /**

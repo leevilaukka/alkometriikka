@@ -2,7 +2,11 @@ import { mkdir, readdir, rm } from 'node:fs/promises';
 import path from 'node:path';
 import Bun, { CryptoHasher } from 'bun';
 import { getSaleInfo, toISODateInTimeZone } from '../../src/lib/utils/catalog/sales.ts';
-import { calculatePricePerLitre, generateImageUrl } from '../../src/lib/utils/catalog/alko.ts';
+import {
+	calculatePricePerLitre,
+	displayImageUrl,
+	generateImageUrl
+} from '../../src/lib/utils/catalog/alko.ts';
 import { ogImageUrl } from '../og/og';
 import {
 	CATEGORY_OG_MANIFEST_FILE,
@@ -249,10 +253,12 @@ function productHtml(
 	const descriptionValue = asText(fields.Luonnehdinta);
 	const title = `${name} - Alkometriikka`;
 	const url = `${SITE_URL}/tuotteet/${encodeURIComponent(id)}/`;
-	// The app's own URLs, so the preload below matches what the product page requests
-	const image = generateImageUrl(id, 'medium');
-	const ogImage = ogImageKey ? ogImageUrl(ogImageKey) : image;
-	const imageVariants = [image, generateImageUrl(id, 'products')];
+	// The app's own URL, so the preload below matches what the product page requests
+	const image = displayImageUrl(id, 'medium');
+	// Its AVIF isn't read by every crawler, so metadata and the fallback's <img> use JPEG/WebP
+	const shareImage = generateImageUrl(id, 'medium');
+	const ogImage = ogImageKey ? ogImageUrl(ogImageKey) : shareImage;
+	const imageVariants = [shareImage, generateImageUrl(id, 'products')];
 	const price = parsePrice(fields.Hinta, id);
 	const keywords = [name, manufacturer, type, subtype, descriptionValue].filter(Boolean).join(', ');
 	const category = [type, subtype].filter(Boolean).join(' / ');
@@ -420,6 +426,7 @@ function productHtml(
 					]
 				: [],
 		preloadImage: image,
+		preloadImageType: 'image/avif',
 		route,
 		jsonLd: [jsonLd, breadcrumbList],
 		// A one-product data.json, which the product page shows until the full price list loads
@@ -430,7 +437,7 @@ function productHtml(
 \t\t\t<h1>${escapeHtml(name)}</h1>
 \t\t\t${manufacturer ? `<p>${escapeHtml(manufacturer)}</p>` : ''}
 \t\t</header>
-\t\t<img src="${escapeHtml(image)}" alt="${escapeHtml(name)}" width="320" height="384" crossorigin="anonymous" referrerpolicy="no-referrer" />
+\t\t<picture><source type="image/avif" srcset="${escapeHtml(image)}" /><img src="${escapeHtml(shareImage)}" alt="${escapeHtml(name)}" width="320" height="384" crossorigin="anonymous" referrerpolicy="no-referrer" /></picture>
 \t\t${descriptionValue ? `<p>${escapeHtml(descriptionValue)}</p>` : ''}
 \t\t${definitionList(facts)}
 \t\t${rank ? rankHtml(rank) : ''}

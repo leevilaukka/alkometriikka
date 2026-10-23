@@ -179,7 +179,11 @@ export type ColumnBadgeMap<T extends PriceListItem = PriceListItem> = Partial<
 export type FilterValue = (string | number)[];
 export type FilterValues = { [key in ColumnNames]: FilterValue };
 
-export type ImageTransform = 'products' | 'medium' | 'pdp';
+/**
+ * Sizes of Alko's product photos: `products` is a 160×192 box, `small` 500 px tall and `medium`
+ * 600 px wide (see displayImageUrl)
+ */
+export type ImageTransform = 'products' | 'small' | 'medium';
 
 export type ShareType = (typeof ShareTypes)[keyof typeof ShareTypes];
 
