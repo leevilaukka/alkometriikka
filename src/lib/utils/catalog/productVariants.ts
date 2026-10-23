@@ -238,40 +238,82 @@ function sameBeerEvidence(a: Identity, b: Identity): boolean {
 	);
 }
 
-/** A snapshot of a loaded catalogue. Rebuild when product data changes; sorting is harmless. */
+/**
+ * A snapshot of a loaded catalogue. Rebuild when product data changes; sorting is harmless.
+ *
+ * Built lazily: products are only grouped by their cheap block key (ABV and vintage) up front,
+ * and a block's names are normalized when a lookup first needs it. A product page looks up one
+ * product, so it no longer pays for normalizing the whole catalogue.
+ */
 export class ProductVariantIndex {
-	private readonly byId = new Map<string, Identity>();
+	private readonly products: readonly PriceListItem[];
+	private readonly declaredSizes: ReadonlySet<PriceListItem>;
+	private readonly rawBlocks = new Map<string, PriceListItem[]>();
 	private readonly blocks = new Map<string, Identity[]>();
-	private readonly genericWords: string[];
+	private readonly byId = new Map<string, Identity>();
+	private genericWordList: string[] | undefined;
 
 	constructor(products: readonly PriceListItem[], declaredSizes: ReadonlySet<PriceListItem>) {
-		const genericWords = new Set<string>();
+		this.products = products;
+		this.declaredSizes = declaredSizes;
 		for (const product of products) {
-			const entry = identity(product, declaredSizes.has(product));
-			this.byId.set(product[C.Number], entry);
-			const key = this.blockKey(entry);
-			const block = this.blocks.get(key) ?? [];
-			block.push(entry);
-			this.blocks.set(key, block);
-			for (const label of [
-				entry.type,
-				entry.subtype,
-				entry.style,
-				...descriptors(product[C.GrapeVarieties])
-			]) {
-				for (const token of label.split(/[^\p{L}\p{N}]+/u)) if (token) genericWords.add(token);
-			}
+			const key = this.blockKey(product);
+			const block = this.rawBlocks.get(key);
+			if (block) block.push(product);
+			else this.rawBlocks.set(key, [product]);
 		}
-		for (const block of this.blocks.values()) block.sort((a, b) => compareNames(a.base, b.base));
-		this.genericWords = [...genericWords].sort(compareNames);
 	}
 
-	private blockKey(entry: Identity): string {
-		return JSON.stringify([entry.abv, entry.vintage]);
+	/** Same as an identity's `abv` and `vintage`, read straight from the product */
+	private blockKey(product: PriceListItem): string {
+		return JSON.stringify([number(product[C.AlcoholPercentage]), text(product[C.Vintage])]);
+	}
+
+	private block(key: string): Identity[] {
+		let block = this.blocks.get(key);
+		if (!block) {
+			block = (this.rawBlocks.get(key) ?? []).map((product) => {
+				const entry = identity(product, this.declaredSizes.has(product));
+				this.byId.set(product[C.Number], entry);
+				return entry;
+			});
+			block.sort((a, b) => compareNames(a.base, b.base));
+			this.blocks.set(key, block);
+		}
+		return block;
+	}
+
+	/** Words of the catalogue's categories and grapes, which alone can't identify a product */
+	private get genericWords(): string[] {
+		if (!this.genericWordList) {
+			const words = new Set<string>();
+			// Labels repeat across thousands of products, so each distinct one is split once
+			const seenLabels = new Set<unknown>();
+			const seenGrapes = new Set<unknown>();
+			const add = (label: string) => {
+				for (const token of label.split(/[^\p{L}\p{N}]+/u)) if (token) words.add(token);
+			};
+			for (const product of this.products) {
+				for (const value of [product[C.Type], product[C.SubType], product[C.BeerType]]) {
+					if (seenLabels.has(value)) continue;
+					seenLabels.add(value);
+					add(text(value));
+				}
+				const grapes = product[C.GrapeVarieties];
+				// Sets and arrays are per product, so only plain strings are worth remembering
+				if (typeof grapes === 'string') {
+					if (seenGrapes.has(grapes)) continue;
+					seenGrapes.add(grapes);
+				}
+				for (const label of descriptors(grapes)) add(label);
+			}
+			this.genericWordList = [...words].sort(compareNames);
+		}
+		return this.genericWordList;
 	}
 
 	private candidates(target: Identity): Identity[] {
-		const block = this.blocks.get(this.blockKey(target)) ?? [];
+		const block = this.block(this.blockKey(target.product));
 		const low = lowerBound(block, target.base, (entry) => entry.base);
 		const result: Identity[] = [];
 		for (let i = low; i < block.length && compareNames(block[i].base, target.base) === 0; i++) {
@@ -302,6 +344,7 @@ export class ProductVariantIndex {
 	}
 
 	find(product: PriceListItem): PriceListItem[] {
+		if (!this.byId.has(product[C.Number])) this.block(this.blockKey(product));
 		const target = this.byId.get(product[C.Number]);
 		if (!target?.name || target.volume === null) return [];
 		const group = this.candidates(target);
