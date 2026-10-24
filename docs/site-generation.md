@@ -41,8 +41,16 @@ comes from `src/lib/utils/app/seo.ts` and `categories.ts`, the same functions th
 Writes `tuotteet/<id>/index.html` for every product, including removed ones, with `Product`
 JSON-LD (offer with price and availability, additional properties, sale price when on sale),
 `BreadcrumbList` JSON-LD for its category trail, an RSS alternate when the product has a price
-history feed, and `product:price:*` meta tags. The OG image is the product's R2 card if
-`og-images.json` has a key for it, else Alko's photo.
+history feed, and `product:*` meta tags (price, brand, availability, condition, item id). The OG
+image is the product's R2 card if `og-images.json` has a key for it, else Alko's photo.
+
+Products in the selection that the app's "Pakkauskoko" picker shows as sizes of each other
+(`ProductVariantIndex`) also get an `isVariantOf` `ProductGroup` and `inProductGroupWithID`, plus a
+"Muut koot" list linking the other sizes in the fallback HTML. `sizeVariantGroups`
+(`product-insights.ts`) merges the matches transitively, so every page of a group carries the same
+group: its id is the smallest member id, its name the shortest member name, and it `variesBy` size,
+and material (`Pakkaustyyppi`, also set as the product's `material`) when the members' packaging
+differs. Removed products are left out, as the picker leaves them out.
 
 The product photo, the page's LCP element, is preloaded from `<head>` with `fetchpriority="high"`.
 The preload, the fallback `<img>` and the app's `ProductImage` all request it the same way (CORS,
@@ -73,7 +81,7 @@ before the full price list has loaded; see
 
 It is **incremental**. Each page has a content key, a SHA-256 of everything that can change its
 HTML: `RENDER_VERSION`, the schema, the product's values, meta and price history, the template
-(new JS/CSS hashes change every page) and the product route's preloads, its OG image key and category trail, and today's date if
+(new JS/CSS hashes change every page) and the product route's preloads, its OG image key, category trail, category rank and size variant group, and today's date if
 the product has campaign dates (sale state depends on the date). Keys are stored in
 `tuotteet-manifest.json`; a product whose key and file are unchanged is skipped. Directories for
 products no longer in the dataset are deleted.
@@ -92,9 +100,15 @@ fallback list, category RSS alternates and the category OG card from `og-categor
 Writes the front page stub (`index.html`, from `HOME_PAGE`), stubs for the routes in
 `STATIC_PAGES` (`/laskin/`, `/tilastot/`, `/myymalat/`, `/kompassi/`, `/hinnanmuutokset/`,
 `/listat/`, `/seuratut/`) and one `myymalat/<id>/index.html` per store with `LiquorStore`
-JSON-LD (address, coordinates, weekly opening hours). Output is deterministic: opening hours use
-the regular weekly pattern, not Alko's rolling two-week calendar, so unchanged stores produce
-byte-identical files and don't add commits to `gh-pages`. Fully regenerated on every run.
+JSON-LD: address, coordinates, weekly opening hours, upcoming exception days
+(`specialOpeningHoursSpecification`, also listed in the fallback HTML), `sameAs` to the store's
+page on alko.fi, a Google Maps `hasMap` link and an accessibility `amenityFeature`. With
+availability data, `/myymalat/` becomes a `CollectionPage` with an `ItemList` of every store and
+fallback links to them grouped by city, the only links crawlers get to store pages besides the
+sitemap. Output is deterministic: opening hours use the regular weekly pattern, not Alko's
+rolling two-week calendar, plus only the exception days still ahead, so a store's file changes
+only when its hours or exceptions do and unchanged stores don't add commits to `gh-pages`. Fully
+regenerated on every run.
 
 The front page stub matters for more than its tags: every filtered view (`/?Tyyppi=…`, linked from
 product, category and store pages) is served the same file, so its canonical link folds them all

@@ -25,6 +25,9 @@ import {
 	type CategoryNode
 } from '../../src/lib/utils/catalog/categories.ts';
 import { readOption } from '../lib/cli';
+import { Kaljakori } from '../../src/lib/alko/index.ts';
+import { parseDataset } from '../../src/lib/utils/catalog/dataset.ts';
+import { AllColumns } from '../../src/lib/utils/constants/columns';
 import type { StoredDataset, StoredProduct } from '../../src/lib/utils/catalog/dataset.ts';
 import { mapPool } from '../lib/async';
 import { readStoredDataset } from '../lib/stored-dataset';
@@ -45,8 +48,10 @@ import {
 	categoryGroups,
 	categoryRanks,
 	priceHistorySummary,
+	sizeVariantGroups,
 	type CategoryProduct,
-	type CategoryRank
+	type CategoryRank,
+	type VariantGroup
 } from './product-insights';
 
 type PrerenderManifestEntry = {
@@ -59,7 +64,7 @@ type PrerenderManifest = Record<string, PrerenderManifestEntry>;
 // Bump when the page rendering logic (productHtml, minifyHtml, the SEO
 // template, ...) changes in a way that can alter existing pages without the
 // template or product data changing, forcing a full re-render.
-const RENDER_VERSION = 10;
+const RENDER_VERSION = 11;
 
 function sha256Hex(value: string): string {
 	const hasher = new CryptoHasher('sha256');
@@ -70,9 +75,9 @@ function sha256Hex(value: string): string {
 // Content-addressable key for a product page. Every input that can change the
 // rendered HTML — the rendering logic version, the schema, the raw product
 // data, the page template (new JS/CSS hashes invalidate every page) and the
-// product's OG image key, category trail and category rank, plus today's date
-// for products with a campaign (their sale state is date-dependent) — is hashed,
-// so unchanged pages can be skipped.
+// product's OG image key, category trail, category rank and size variant group,
+// plus today's date for products with a campaign (their sale state is
+// date-dependent) — is hashed, so unchanged pages can be skipped.
 function productKey(
 	schema: readonly string[],
 	product: StoredProduct,
@@ -80,7 +85,8 @@ function productKey(
 	ogKey: string | null,
 	categoryTrail: CategoryNode[],
 	saleDay: string | null,
-	rank: CategoryRank | null
+	rank: CategoryRank | null,
+	variantGroup: VariantGroup | null
 ): string {
 	return sha256Hex(
 		JSON.stringify([
@@ -93,7 +99,8 @@ function productKey(
 			ogKey,
 			categoryTrail.map((node) => [node.name, node.path]),
 			saleDay,
-			rank
+			rank,
+			variantGroup
 		])
 	);
 }
@@ -234,6 +241,21 @@ function priceHistoryHtml(history: StoredProduct['priceHistory']): string {
 	return `<section><h2>Hintahistoria</h2>${definitionList(entries)}</section>`;
 }
 
+const productUrl = (id: string) => `${SITE_URL}/tuotteet/${encodeURIComponent(id)}/`;
+
+/** Links to the product's other sizes, as the app's "Pakkauskoko" picker shows them */
+function sizesHtml(group: VariantGroup, currentId: string): string {
+	const others = group.members.filter((member) => member.id !== currentId);
+	return `<section><h2>Muut koot</h2><ul>${others
+		.map(
+			(member) =>
+				`<li><a href="/tuotteet/${escapeHtml(encodeURIComponent(member.id))}/">${escapeHtml(
+					[member.name, formatNumber(member.volume, 'l')].filter(Boolean).join(' ')
+				)}</a></li>`
+		)
+		.join('')}</ul></section>`;
+}
+
 function productHtml(
 	template: string,
 	route: RouteAssets | undefined,
@@ -241,7 +263,8 @@ function productHtml(
 	product: StoredProduct,
 	ogImageKey: string | null,
 	categoryTrail: CategoryNode[],
-	rank: CategoryRank | null
+	rank: CategoryRank | null,
+	variantGroup: VariantGroup | null
 ): { html: string; id: string } {
 	const fields = Object.fromEntries(schema.map((column, index) => [column, product.values[index]]));
 	const id = asText(fields.Numero);
@@ -314,7 +337,6 @@ function productHtml(
 		'@context': 'https://schema.org',
 		'@type': 'Product',
 		'@id': url,
-		inLanguage: 'fi-FI',
 		name,
 		sku: id,
 		url,
@@ -324,10 +346,30 @@ function productHtml(
 		...(manufacturer ? { brand: { '@type': 'Brand', name: manufacturer } } : {}),
 		...(asText(fields.Valmistusmaa) ? { countryOfOrigin: asText(fields.Valmistusmaa) } : {}),
 		...(volume !== null ? { size: `${volume} L` } : {}),
+		...(variantGroup?.variesBy.includes('material') && asText(fields.Pakkaustyyppi)
+			? { material: asText(fields.Pakkaustyyppi) }
+			: {}),
 		...(category ? { category } : {}),
 		...(additionalProperties.length ? { additionalProperty: additionalProperties } : {}),
 		...(!product.meta?.removedFromSelection
 			? { sameAs: `https://www.alko.fi/tuotteet/${id}` }
+			: {}),
+		...(variantGroup
+			? {
+					inProductGroupWithID: variantGroup.id,
+					isVariantOf: {
+						'@type': 'ProductGroup',
+						'@id': `${productUrl(variantGroup.id)}#koot`,
+						name: variantGroup.name,
+						productGroupID: variantGroup.id,
+						variesBy: variantGroup.variesBy.map((property) => `https://schema.org/${property}`),
+						hasVariant: variantGroup.members.map((member) => ({
+							'@type': 'Product',
+							'@id': productUrl(member.id),
+							url: productUrl(member.id)
+						}))
+					}
+				}
 			: {}),
 		offers: {
 			'@type': 'Offer',
@@ -419,13 +461,20 @@ function productHtml(
 					)}" href="${escapeHtml(`${SITE_URL}/rss/${encodeURIComponent(id)}.xml`)}" />`
 				]
 			: [],
-		ogExtra:
-			price !== null
+		ogExtra: [
+			...(price !== null
 				? [
 						`\t<meta property="product:price:amount" content="${price}" />`,
 						`\t<meta property="product:price:currency" content="EUR" />`
 					]
-				: [],
+				: []),
+			...(manufacturer
+				? [`\t<meta property="product:brand" content="${escapeHtml(manufacturer)}" />`]
+				: []),
+			`\t<meta property="product:availability" content="${product.meta?.removedFromSelection ? 'discontinued' : 'in stock'}" />`,
+			`\t<meta property="product:condition" content="new" />`,
+			`\t<meta property="product:retailer_item_id" content="${escapeHtml(id)}" />`
+		],
 		preloadImage: image,
 		preloadImageType: 'image/avif',
 		route,
@@ -442,6 +491,7 @@ function productHtml(
 \t\t${descriptionValue ? `<p>${escapeHtml(descriptionValue)}</p>` : ''}
 \t\t${definitionList(facts)}
 \t\t${rank ? rankHtml(rank) : ''}
+\t\t${variantGroup ? sizesHtml(variantGroup, id) : ''}
 \t\t${priceHistoryHtml(product.priceHistory)}`
 	};
 	return { html: renderStub(template, page), id };
@@ -487,8 +537,6 @@ function categoryHtml(
 	const ogImage = ogKey ? categoryOgUrl(ogKey) : `${SITE_URL}/images/og_image.png`;
 	const ogImageAlt = ogKey ? `${name} – Alkometriikka` : 'Alkometriikka logo';
 	const links = node ? (trail.length > 1 ? [] : node.children) : tree;
-	const productUrl = (product: CategoryProduct) =>
-		`${SITE_URL}/tuotteet/${encodeURIComponent(product.id)}/`;
 
 	const breadcrumbList = breadcrumbJsonLd([
 		...(node ? [] : [{ name: 'Kategoriat', url }]),
@@ -512,7 +560,7 @@ function categoryHtml(
 							'@type': 'ListItem',
 							position: index + 1,
 							name: product.name,
-							url: productUrl(product)
+							url: productUrl(product.id)
 						}))
 					}
 				}
@@ -563,6 +611,31 @@ function categoryHtml(
 \t\t${productList}`
 	};
 	return renderStub(template, page);
+}
+
+/**
+ * Size variant groups of the products still in the selection, from the same
+ * matcher the app's size picker uses. Removed products can't be bought, so
+ * they're left out like the picker leaves them out.
+ */
+function productVariantGroups(dataset: StoredDataset): Map<string, VariantGroup> {
+	const { table } = parseDataset(JSON.stringify(dataset));
+	const catalog = new Kaljakori(table, { weight: null, gender: null }, { stores: {}, product: {} });
+	const items = new Map(
+		catalog.data
+			.filter((item) => !item[AllColumns.RemovedFromSelection])
+			.map((item) => [item[AllColumns.Number], item])
+	);
+	return sizeVariantGroups(
+		[...items.values()].map((item) => ({
+			id: item[AllColumns.Number],
+			name: asText(item[AllColumns.Name]),
+			volume: asNumber(item[AllColumns.BottleSize]),
+			packaging: asText(item[AllColumns.PackagingType])
+		})),
+		(id) =>
+			catalog.findDifferentSizesOfProduct(items.get(id)!).map((item) => item[AllColumns.Number])
+	);
 }
 
 /** Category pages are few and cheap, so they're fully regenerated every run. */
@@ -666,6 +739,7 @@ async function main() {
 			.filter((product) => product !== null)
 	);
 	const ranks = categoryRanks(groups);
+	const variantGroups = productVariantGroups(dataset);
 
 	let count = 0;
 	let skipped = 0;
@@ -691,7 +765,8 @@ async function main() {
 			ogKey,
 			categoryTrail,
 			hasCampaign ? today : null,
-			productRank
+			productRank,
+			variantGroups.get(productId) ?? null
 		);
 		const previousEntry = previous[productId];
 		const previousPageId = previousEntry?.pageId;
@@ -716,7 +791,8 @@ async function main() {
 			product,
 			ogKey,
 			categoryTrail,
-			productRank
+			productRank,
+			variantGroups.get(productId) ?? null
 		);
 		if (generatedIds.has(rendered.id)) throw new Error(`Duplicate product id: ${rendered.id}`);
 		generatedIds.add(rendered.id);
