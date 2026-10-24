@@ -507,7 +507,7 @@
 				Sinulle jaettiin booli{sharedRecipe.name ? ` "${sharedRecipe.name}"` : ''} ({sharedRecipe
 					.ingredients.length} ainesosaa). Sen avaaminen korvaa nykyisen boolisi.
 			</p>
-			<button type="button" class={components.button()} onclick={openShared}>Avaa jaettu</button>
+			<button type="button" class={components.button()} onclick={openShared}>Avaa jaettu booli</button>
 			<button
 				type="button"
 				class={twMerge(components.button({ type: 'noborder' }), 'text-white hover:bg-brand-3')}
@@ -527,7 +527,7 @@
 		<h2 id="punch-templates-title" class="font-semibold">Aloita valmiista pohjasta</h2>
 		<p class="text-sm text-secondary">
 			Pohja valitsee kuhunkin juomaan Alkon edullisimman annoshinnan tuotteen{preferredStore
-				? ` myymälästä ${preferredStore.name}, kun sieltä löytyy`
+				? ` myymälästä ${preferredStore.name}, jos saatavilla.`
 				: ''}.
 		</p>
 		<div
