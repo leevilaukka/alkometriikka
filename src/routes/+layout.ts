@@ -112,18 +112,23 @@ async function getData({ fetch }: { fetch: Fetch }) {
 	const { dataset, cached } = await getDataset({ fetch });
 	await yieldToMain();
 	const kaljakori = new Kaljakori(dataset.table, personalInfo, undefined, dataset.index);
+	// Only these are needed from here on; nothing below may refer to `dataset`, so its table of
+	// raw rows, several megabytes once the products are built from it, can be freed
+	const { schema, metadata, removedProducts } = dataset;
 	// Products removed from the selection are in their own file, fetched once the price list is
 	// in so they don't slow it down, and added once the first render is done. Pages showing
 	// them re-render then; ones that can't do without them await `removedReady`
-	const removedReady = dataset.removedProducts
+	const removedReady = removedProducts
 		? (async () => {
 				const request = fetch(getRemovedURL(), { priority: 'low' });
 				request.catch(() => {}); // handled in readRemoved
 				await whenIdle();
-				const rows = await readRemoved(request, dataset.schema);
+				const rows = await readRemoved(request, schema);
 				if (rows) kaljakori.addProducts(rows);
 			})()
 		: Promise.resolve();
+	// Then, still while idle, gets the names ready for search so the first keystroke is quick
+	removedReady.then(whenIdle).then(() => kaljakori.prepareSearch());
 	// Pages re-render with the whole list once this resolves
 	await yieldToMain();
 	const availability = new LazyAvailability(async () => {
@@ -135,7 +140,7 @@ async function getData({ fetch }: { fetch: Fetch }) {
 	});
 
 	return {
-		dataset,
+		dataset: { metadata },
 		kaljakori,
 		/** The service worker's stored copy of data.json, served while offline or on a slow connection */
 		cached,

@@ -38,12 +38,20 @@
 		const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="241 -3 542 1127"><path fill="#d4d4d8" d="${BOTTLE}"/></svg>`;
 		return `data:image/svg+xml,${encodeURIComponent(svg)}`;
 	}
+
+	/**
+	 * Fades the photo in over its stand-in. Svelte's own `fade` reads the computed opacity first,
+	 * which forces a style recalculation for every photo when the list re-renders
+	 */
+	function fadeIn(_node: Element, { duration }: { duration: number }) {
+		return { duration, css: (t: number) => `opacity: ${t}` };
+	}
 </script>
 
 <script lang="ts">
 	import { displayImageUrl, fallbackImageUrl } from '$lib/utils/catalog/alko';
 	import { twMerge } from 'tailwind-merge';
-	import { fade } from 'svelte/transition';
+
 	let {
 		number,
 		name,
@@ -146,7 +154,7 @@
 			fetchpriority={priority ? 'high' : undefined}
 			data-name="product-image"
 			class={twMerge('col-start-1 row-start-1 block h-full w-full object-contain', rest.class)}
-			in:fade={{ duration: shownFor === src ? 0 : 150 }}
+			in:fadeIn={{ duration: shownFor === src ? 0 : 150 }}
 			onintroend={() => (shownFor = src)}
 		/>
 	{/if}

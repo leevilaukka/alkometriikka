@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { LIST_BUFFER_SIZE } from '$lib/utils/constants/display';
 	import { appPath } from '$lib/utils/app/paths';
 	import { resolve } from '$app/paths';
 	import { getContext, untrack } from 'svelte';
@@ -494,7 +495,12 @@
 			</div>
 		{:else}
 			<div class="flex min-h-0 flex-auto flex-col">
-				<SvelteVirtualList items={rows} bind:this={listRef} itemsClass={'flex flex-col gap-3'}>
+				<SvelteVirtualList
+					items={rows}
+					bind:this={listRef}
+					itemsClass={'flex flex-col gap-3'}
+					bufferSize={LIST_BUFFER_SIZE}
+				>
 					{#snippet renderItem(change)}
 						{#if change === null}
 							<div class="flex flex-col gap-3 pb-1">

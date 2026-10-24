@@ -22,7 +22,8 @@
 		shownColumnsToHighlight,
 		defaultSortingColumn,
 		shownSortingKeys,
-		defaultSortingOrderMap
+		defaultSortingOrderMap,
+		LIST_BUFFER_SIZE
 	} from '$lib/utils/constants/display';
 	import { AllColumns } from '$lib/utils/constants/columns';
 	import { ContextKeys, GenderOptionsMap } from '$lib/utils/constants/app';
@@ -435,7 +436,12 @@
 				</button>
 			</div>
 			<div class="flex flex-auto flex-col">
-				<SvelteVirtualList items={rows} bind:this={listRef} itemsClass={'flex flex-col gap-3'}>
+				<SvelteVirtualList
+					items={rows}
+					bind:this={listRef}
+					itemsClass={'flex flex-col gap-3'}
+					bufferSize={LIST_BUFFER_SIZE}
+				>
 					{#snippet renderItem(item, idx: number)}
 						{@const listItem = getListItem(list, item[AllColumns.Number])}
 						<ProductPreview

@@ -5,6 +5,12 @@ import { groupOptionsByWords, type OptionGrouper } from '$lib/utils/ui/optionGro
 /**
  * Columns to be shown in the filter area.
  */
+/**
+ * Product rows the long lists render past each edge of the screen. Every keystroke in the search
+ * re-renders them all, and each costs about 10 ms on a phone, so this stays small.
+ */
+export const LIST_BUFFER_SIZE = 6;
+
 export const shownFilters = [
 	AllColumns.Name,
 	AllColumns.Manufacturer,

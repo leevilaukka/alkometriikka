@@ -181,61 +181,70 @@ export const SIMILAR_PRODUCT_COLUMNS: ReadonlySet<ColumnNames> = new Set([
 	AllColumns.Description
 ]);
 
+/** Columns whose shared values multiply the score, by weight */
+const SIMILARITY_MULTIPLIERS = {
+	[AllColumns.GrapeVarieties]: 1,
+	[AllColumns.Description]: 1
+} as const;
+
+/**
+ * The products most like `product`, best first, scored on the `restrictions` columns. With
+ * `activeOnly`, products removed from the selection are left out.
+ */
 export function findSimilarProducts(
 	product: PriceListItem,
 	kaljakori: Kaljakori,
 	restrictions: ReadonlySet<ColumnNames>,
-	limit: number
+	limit: number,
+	{ activeOnly = false }: { activeOnly?: boolean } = {}
 ): PriceListItem[] {
-	const scored = kaljakori.data.map((item) => {
+	// Resolved once per call rather than per product: this runs over the whole catalog
+	const keys = [...restrictions];
+	const types = keys.map((key) => kaljakori.getFilterType(key));
+	const multipliers = (
+		Object.keys(SIMILARITY_MULTIPLIERS) as (keyof typeof SIMILARITY_MULTIPLIERS)[]
+	)
+		.filter((column) => restrictions.has(column) && product[column] instanceof Set)
+		.map((column) => ({ column, weight: SIMILARITY_MULTIPLIERS[column] }));
+	const number = product[AllColumns.Number];
+
+	const scored: { item: PriceListItem; score: number }[] = [];
+	for (const item of kaljakori.data) {
+		if (item[AllColumns.Number] === number) continue;
+		if (activeOnly && item[AllColumns.RemovedFromSelection]) continue;
 		let score = 0;
 
-		restrictions.forEach((key) => {
-			const valueType = kaljakori.getFilterType(key);
+		for (let i = 0; i < keys.length; i++) {
+			const key = keys[i];
 			if (
-				valueType === 'number' &&
+				types[i] === 'number' &&
 				typeof product[key] === 'number' &&
 				typeof item[key] === 'number'
 			) {
 				const diff = Math.abs(product[key] - item[key]);
 				const range = Math.max(product[key] * 0.2, 0.01); // 20% range or at least 0.01 to avoid division by zero
 				score += Math.max(0, 1 - diff / range); // Linear scoring within range
-			} else if (valueType === 'string') {
+			} else if (types[i] === 'string') {
 				if (product[key] === item[key]) score += 1;
 			}
-		});
+		}
 
-		const multiplierColumnsAndWeights = {
-			[AllColumns.GrapeVarieties]: 1,
-			[AllColumns.Description]: 1
-		} as const;
+		for (const { column, weight } of multipliers) {
+			const itemValues = item[column];
+			if (!(itemValues instanceof Set)) continue;
+			const productValues = product[column] as Set<string>;
+			let multiplier = 1;
+			let commonValuesCount = 0;
+			for (const value of productValues) if (itemValues.has(value)) commonValuesCount++;
+			multiplier += commonValuesCount / (Math.max(productValues.size, itemValues.size) || 1);
+			multiplier += multiplier * weight;
+			score *= multiplier;
+		}
 
-		Object.keys(multiplierColumnsAndWeights).forEach((column) => {
-			if (
-				restrictions.has(column as keyof typeof multiplierColumnsAndWeights) &&
-				product[column] instanceof Set &&
-				item[column] instanceof Set
-			) {
-				let multiplier = 1;
-				const productValues = product[column];
-				const itemValues = item[column];
-				let commonValuesCount = 0;
-				for (const value of productValues) if (itemValues.has(value)) commonValuesCount++;
-				multiplier += commonValuesCount / (Math.max(productValues.size, itemValues.size) || 1);
-				multiplier +=
-					multiplier *
-					multiplierColumnsAndWeights[column as keyof typeof multiplierColumnsAndWeights];
-				score *= multiplier;
-			}
-		});
-
-		return { item, score };
-	});
+		scored.push({ item, score });
+	}
 	scored.sort((a, b) => b.score - a.score);
-	return scored
-		.filter(({ item }) => item[AllColumns.Number] !== product[AllColumns.Number])
-		.slice(0, limit)
-		.map(({ item }) => item);
+	return scored.slice(0, limit).map(({ item }) => item);
 }
 
 export type SizeOption = {
