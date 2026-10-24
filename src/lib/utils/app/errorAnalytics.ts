@@ -12,8 +12,10 @@ const maxUserAgentLength = 300;
 // A render loop can throw the same error on every frame; a few reports per page load are enough
 const maxReportsPerLoad = 5;
 
-// Thrown by the browser or extensions, not by the site's own code
-const ignoredMessages = [/^Script error\.?$/, /ResizeObserver loop/];
+// Thrown by the browser or extensions, not by the site's own code. `selectedAddress` comes from
+// a crypto wallet check that Chrome on iOS injects into pages; it has no file, so the
+// third-party check in `trackUncaughtErrors` can't catch it.
+const ignoredMessages = [/^Script error\.?$/, /ResizeObserver loop/, /\bselectedAddress\b/];
 const extensionUrl = /(chrome|moz|safari(-web)?)-extension:\/\//;
 
 const reported = new Set<string>();
