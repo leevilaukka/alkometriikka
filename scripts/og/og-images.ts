@@ -13,6 +13,7 @@ import { R2S3Client } from '../r2/client';
 import { ogPlaceholderPng } from './og-placeholder';
 import { hasFlag, readNumberOption, readOption } from '../lib/cli';
 import { mapPool } from '../lib/async';
+import { readStoredDataset } from '../lib/stored-dataset';
 import { fetchProductImage as fetchAlkoImage } from '../lib/alko-image';
 
 const fetchProductImage = (id: string) =>
@@ -36,12 +37,9 @@ async function readManifest(pathName: string): Promise<Manifest> {
 	}
 }
 
+/** Every product, removed ones included; empty if there is no dataset */
 async function readDataset(pathName: string): Promise<Dataset> {
-	try {
-		return (await Bun.file(pathName).json()) as Dataset;
-	} catch {
-		return {};
-	}
+	return (await readStoredDataset<Dataset>(pathName)) ?? {};
 }
 
 /**

@@ -34,6 +34,8 @@ export async function load({ parent, params }) {
 	if (preview) return { ...data, preview };
 
 	const alko = await data.alko;
+	// A product removed from the selection is only there once its file has loaded
+	if (!alko.kaljakori.findById(id)) await alko.removedReady;
 	if (!alko.kaljakori.findById(id)) {
 		error(404, {
 			message: 'Tuotetta ei löytynyt'

@@ -33,7 +33,8 @@ working copies from it, so it is effectively the database.
 /                      404.html (SPA shell), index.html (front page stub), _app/ (JS/CSS),
                        service-worker.js,
                        static/ files, CNAME, .nojekyll
-data.json              dataset (fetchData)
+data.json              dataset: products in the selection (fetchData)
+data-removed.json      dataset: products removed from the selection (fetchData)
 hashes.json            change-detection hashes (fetchData)
 availability.json      stores and stock (fetchData)
 stock/                 stock history: state, per-product counts, per-store arrivals (fetchData)
@@ -64,10 +65,10 @@ because `build.yml` tests before deploying.
 Deploys a new version of the app. The site code changes, but the data must not.
 
 1. Run the full test suite.
-2. **Seed** `static/` with the deployed `data.json`, `availability.json`, `og-images.json` and
+2. **Seed** `static/` with the deployed `data.json`, `data-removed.json`, `availability.json`, `og-images.json` and
    `og-categories.json`, so the build copies them into `build/`.
 3. `vite build` with `BASE_PATH=''`, then minify the vendored `auto-events.js` in the output.
-4. **Prerender gate**: compare `data.json`, `404.html` and `og-images.json` in `build/` with the
+4. **Prerender gate**: compare `data.json`, `data-removed.json`, `404.html` and `og-images.json` in `build/` with the
    deployed ones. If all three are byte-identical, product pages don't need regenerating.
 5. **Restore** the deployed `tuotteet/`, `tuotteet-manifest.json` and `kategoriat/` into `build/`,
    so unchanged product pages carry over and the incremental prerender can skip them.
@@ -104,12 +105,12 @@ flowchart LR
 
 1. Run `tests/data` and `tests/alko`. The sync rewrites the dataset the whole site reads, so it
    never runs with lifecycle or schema code that fails its tests.
-2. Seed `data.json` and `hashes.json` from `gh-pages`.
+2. Seed `data.json`, `data-removed.json` and `hashes.json` from `gh-pages`.
 3. `scripts/data/rehash.ts` via the `rehash-dataset` action.
 4. Run the sync up to 3 times, 60 s apart. Exit code 3 (safeguards rejected the data) fails
    immediately without retrying. The **force** input sets `ALKO_SYNC_FORCE=1`. Each attempt
    appends its outcome to `sync-report.ndjson`, uploaded as an artifact even when the job fails.
-5. Upload `data.json`, `hashes.json` and `availability.json` as artifacts.
+5. Upload `data.json`, `data-removed.json`, `hashes.json` and `availability.json` as artifacts.
 
 **og-images** renders and uploads product and category OG images for changed products, updating
 the manifests checked out from `gh-pages`. Both steps are `continue-on-error`: if R2 is down, pages
@@ -131,7 +132,7 @@ deploy with the previous manifests and fall back to Alko's photos.
    replace `daily/` and `rss/`.
 8. Commit "Update price list and static product pages [skip ci]" and push (a normal push, not a
    force-push).
-9. Purge `data.json`, `availability.json`, `rss.xml` and `feed.json` from Cloudflare. This runs
+9. Purge `data.json`, `data-removed.json`, `availability.json`, `rss.xml` and `feed.json` from Cloudflare. This runs
    only after the push, so a request can't re-cache the old files between the purge and the new
    files going live.
 
@@ -140,7 +141,7 @@ deploy with the previous manifests and fall back to Alko's photos.
 Runs just after midnight Finnish time in both summer (21:15 UTC) and winter (22:15 UTC); the run
 that lands before midnight is a harmless no-op.
 
-1. Seed `data.json`, `hashes.json` and `daily/` from `gh-pages`, rehash.
+1. Seed `data.json`, `data-removed.json`, `hashes.json` and `daily/` from `gh-pages`, rehash.
 2. Run the Daily and site tests.
 3. `bun run daily`: bakes any missing future days and archives yesterday.
 4. `bun run backup:daily` to R2. Exit code 3 (the archive shrank compared to the backup) fails the

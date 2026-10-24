@@ -27,6 +27,7 @@ import {
 import { readOption } from '../lib/cli';
 import type { StoredDataset, StoredProduct } from '../../src/lib/utils/catalog/dataset.ts';
 import { mapPool } from '../lib/async';
+import { readStoredDataset } from '../lib/stored-dataset';
 import { escapeHtml } from '../lib/html';
 import {
 	breadcrumbJsonLd,
@@ -609,7 +610,7 @@ async function main() {
 	}
 
 	const [dataset, template, ogManifest] = await Promise.all([
-		Bun.file(options.dataPath).json() as Promise<StoredDataset>,
+		readStoredDataset<StoredDataset>(options.dataPath).then((dataset) => dataset ?? {}),
 		Bun.file(options.templatePath).text(),
 		Bun.file(options.ogManifestPath)
 			.json()

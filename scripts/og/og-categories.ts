@@ -14,6 +14,7 @@ import {
 import { R2S3Client } from '../r2/client';
 import { hasFlag, readNumberOption, readOption } from '../lib/cli';
 import { mapPool } from '../lib/async';
+import { readStoredDataset } from '../lib/stored-dataset';
 
 /**
  * Renders the category page OG cards and uploads them to R2 under
@@ -75,7 +76,7 @@ async function main() {
 	);
 	const previous = await readJson<CategoryOgManifest>(manifestPath, {});
 
-	const dataset = await readJson<Dataset>(dataPath, {});
+	const dataset = (await readStoredDataset<Dataset>(dataPath)) ?? {};
 	const products = Object.values(dataset.products ?? {});
 	if (products.length === 0) throw new Error(`No products found in ${dataPath}`);
 	const displays = categoryOgDisplays(dataset.schema ?? [], products);

@@ -65,7 +65,11 @@
 			Valikoiman "poistuneet tuotteet" perustuvat Alkometriikan aiemmin keräämiin tietoihin. Tiedot
 			eivät siis sisällä kautta aikojen kaikkia poistuneita tuotteita, vaan vain ne, jotka on
 			kerätty ennen tuotteen poistumista valikoimasta. Tämän vuoksi tietoa ei voi pitää täysin
-			luotettavana.
+			luotettavana. Poistuneet tuotteet ovat omassa tiedostossaan, jonka voit ladata <a
+				href={`${githubFileBase}/data-removed.json`}
+				download
+				>tästä
+			</a>.
 		</p>
 	</details>
 </div>

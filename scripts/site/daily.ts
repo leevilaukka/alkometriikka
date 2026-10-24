@@ -31,6 +31,7 @@ import { Kaljakori } from '../../src/lib/alko/index.ts';
 import { parseDataset } from '../../src/lib/utils/catalog/dataset.ts';
 import { toISODateInTimeZone } from '../../src/lib/utils/catalog/sales';
 import { bakeArchive, bakeManifests } from './daily-bake.ts';
+import { readStoredDataset } from '../lib/stored-dataset.ts';
 
 /** When running with `--dev` we operate on the local static folder. Mirrors the sync scripts. */
 const DEV = process.argv.includes('--dev');
@@ -54,7 +55,7 @@ async function bake(): Promise<void> {
 		throw new Error(`Dataset not found at ${DATA_PATH}. Run the sync first.`);
 	}
 
-	const { table } = parseDataset(await Bun.file(DATA_PATH).text());
+	const { table } = parseDataset(JSON.stringify(await readStoredDataset(DATA_PATH)));
 	const catalog = new Kaljakori(table, { weight: null, gender: null }, { stores: {}, product: {} })
 		.data;
 	// Baking without the previously deployed manifests would re-roll dates that

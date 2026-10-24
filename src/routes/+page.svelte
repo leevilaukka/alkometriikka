@@ -12,8 +12,17 @@
 	let { data }: PageProps = $props();
 	resetSEO();
 
-	// A store filter from the URL needs store availability, or the list would start out empty
-	const needsStores = readSearchParams(page.url).has(AllColumns.StoreAvailability);
+	// A store filter from the URL needs store availability, or the list would start out empty,
+	// and showing removed products needs them loaded, or the ranges would leave some out
+	const params = readSearchParams(page.url);
+	const needsStores = params.has(AllColumns.StoreAvailability);
+	const needsRemoved = params.get('removed') === 'true';
+	const ready = $derived(
+		Promise.all([
+			needsStores ? data.alkoWithStores : data.alko,
+			needsRemoved ? data.alkoWithRemoved : data.alko
+		]).then(([alko]) => alko)
+	);
 
 	// Going back to the list returns to where it was scrolled. Cleared on every navigation so
 	// only back/forward, which restores the snapshot, scrolls it.
@@ -30,7 +39,7 @@
 	<title>{generateTitle()}</title>
 </svelte:head>
 
-{#await needsStores ? data.alkoWithStores : data.alko then alko}
+{#await ready then alko}
 	<!-- Main's own heading is replaced by a header, so this one brings it back -->
 	{#snippet header()}
 		<h1 class="sr-only">Alkon tuotteet</h1>

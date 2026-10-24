@@ -176,6 +176,6 @@ bun run sitemap --dev
 bun run build    # also prerenders into build/ from static/ files copied by vite
 ```
 
-To reproduce a CI run against production data, download `data.json`, `hashes.json` and
+To reproduce a CI run against production data, download `data.json`, `data-removed.json`, `hashes.json` and
 `availability.json` from the site into the repo root and run the scripts without `--dev`. Don't
 set the R2 variables unless you mean to touch production.
