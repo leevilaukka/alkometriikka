@@ -320,7 +320,9 @@
 		sharedRecipe = null;
 	}
 
-	// Reported once the recipe has stayed the same for a few seconds, not on every keystroke
+	// Reported once the recipe has stayed the same for a few seconds, not on every keystroke,
+	// and not again for a result that was just reported (a rename, a reorder or an undone edit)
+	let lastReported = '';
 	$effect(() => {
 		const event = {
 			ingredients: punchDraft.ingredients.length,
@@ -331,7 +333,12 @@
 			people: punchDraft.people
 		};
 		if (!hasUserEdited || event.ingredients < 2) return;
-		const timeout = setTimeout(() => sendAnalyticsEvent('punch_calculator_used', event), 3000);
+		const key = JSON.stringify(event);
+		if (key === lastReported) return;
+		const timeout = setTimeout(() => {
+			lastReported = key;
+			sendAnalyticsEvent('punch_calculator_used', event);
+		}, 3000);
 		return () => clearTimeout(timeout);
 	});
 
