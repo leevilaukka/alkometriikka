@@ -32,7 +32,6 @@ import {
 	productDetailsUrl
 } from './constants.ts';
 import type {
-	AvailabilityData,
 	DetailedProductData,
 	MigratedData,
 	MigratedProduct,
@@ -40,6 +39,7 @@ import type {
 	SearchApiResponse,
 	SearchProductData,
 	StoreData,
+	StoredAvailability,
 	StoresApiResponse
 } from './types.ts';
 import { isMigratedProduct } from './guards.ts';
@@ -58,6 +58,10 @@ import {
 	withoutRemovedFlag
 } from './lifecycle.ts';
 import { toNumber } from '../../src/lib/utils/format/number';
+import {
+	AVAILABILITY_FORMAT,
+	encodeStockedStores
+} from '../../src/lib/utils/catalog/availabilityFile.ts';
 import { appendSyncReport, createSyncReport, elapsedMs, type SyncStats } from './sync-report.ts';
 import { DATA_PATH, HASHES_PATH, readDataset, writeDataset } from './dataset-file.ts';
 import { checkSyncSafety, missingCriticalColumns, restoreCriticalColumns } from './safeguards.ts';
@@ -858,10 +862,13 @@ async function sync(): Promise<void> {
 		},
 		products
 	};
-	const availability: AvailabilityData = {
+	const availability: StoredAvailability = {
+		format: AVAILABILITY_FORMAT,
 		lastUpdated: now,
 		stores,
-		product: Object.fromEntries(searchProducts.map((product) => [product.id, product.storeId]))
+		...encodeStockedStores(
+			Object.fromEntries(searchProducts.map((product) => [product.id, product.storeId ?? []]))
+		)
 	};
 
 	const writeStart = performance.now();

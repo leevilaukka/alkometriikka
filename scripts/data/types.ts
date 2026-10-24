@@ -1,3 +1,8 @@
+import type {
+	AVAILABILITY_FORMAT,
+	StockedStores
+} from '../../src/lib/utils/catalog/availabilityFile.ts';
+
 export interface SearchApiResponse {
 	'@odata.count': number;
 	'@search.facets': unknown;
@@ -15,10 +20,18 @@ export interface StoresApiResponse {
 	totalAmount?: number;
 }
 
+/** availability.json once its product map is unpacked by `readStockedStores` */
 export interface AvailabilityData {
 	lastUpdated: string;
 	stores: Record<string, StoreData>;
 	product: Record<string, string[]>;
+}
+
+/** availability.json as written, see `src/lib/utils/catalog/availabilityFile.ts` */
+export interface StoredAvailability extends StockedStores {
+	format: typeof AVAILABILITY_FORMAT;
+	lastUpdated: string;
+	stores: Record<string, StoreData>;
 }
 
 export type FullProductData = Omit<SearchProductData, 'country'> & DetailedProductData;

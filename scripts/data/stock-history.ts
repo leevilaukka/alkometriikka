@@ -15,6 +15,7 @@ import path from 'node:path';
 import { hasFlag, readOption } from '../lib/cli';
 import { toISODateInTimeZone } from '../../src/lib/utils/catalog/sales';
 import { addDays } from '../../src/lib/utils/catalog/stock';
+import { readStockedStores } from '../../src/lib/utils/catalog/availabilityFile';
 import { DEV } from './constants.ts';
 import { isStockState, stockFiles, updateStockState, type StockState } from './stock.ts';
 import type { AvailabilityData } from './types.ts';
@@ -31,9 +32,12 @@ async function readJson(file: string | undefined): Promise<unknown> {
 	}
 }
 
-function isAvailability(value: unknown): value is AvailabilityData {
-	const data = value as AvailabilityData | null;
-	return !!data && typeof data.stores === 'object' && typeof data.product === 'object';
+/** Either format of availability.json with its product map unpacked, or null */
+function readAvailability(value: unknown): AvailabilityData | null {
+	const data = value as (AvailabilityData & { storeIds?: unknown }) | null;
+	if (!data || typeof data !== 'object' || typeof data.stores !== 'object') return null;
+	const product = readStockedStores(data);
+	return product ? { ...data, product } : null;
 }
 
 async function writeFiles(dir: string, state: StockState, current: AvailabilityData) {
@@ -100,8 +104,8 @@ async function main() {
 	const dir = readOption('--dir') ?? (DEV ? 'static/stock' : 'stock');
 	const today = readOption('--today') ?? toISODateInTimeZone('Europe/Helsinki');
 
-	const current = await readJson(availabilityPath);
-	if (!isAvailability(current)) {
+	const current = readAvailability(await readJson(availabilityPath));
+	if (!current) {
 		console.error(`❌ No availability data at ${availabilityPath}`);
 		process.exit(1);
 	}
@@ -116,16 +120,11 @@ async function main() {
 	}
 
 	const stored = await readJson(path.join(dir, 'state.json'));
-	const previous = await readJson(readOption('--previous'));
+	const previous = readAvailability(await readJson(readOption('--previous')));
 	if (stored && !isStockState(stored)) console.warn('⚠️  Unknown state.json format, starting over');
-	if (!isAvailability(previous)) console.warn('ℹ️  No previous availability; arrivals not checked');
+	if (!previous) console.warn('ℹ️  No previous availability; arrivals not checked');
 
-	const state = updateStockState(
-		isStockState(stored) ? stored : null,
-		isAvailability(previous) ? previous : null,
-		current,
-		today
-	);
+	const state = updateStockState(isStockState(stored) ? stored : null, previous, current, today);
 	await writeFiles(dir, state, current);
 }
 
