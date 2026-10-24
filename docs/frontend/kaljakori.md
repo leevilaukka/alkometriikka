@@ -120,6 +120,12 @@ Filter semantics in `fuzzySearchAndFilter`:
 - **String** columns: the product's value must be one of the selected values (OR).
 - Empty selections are ignored.
 
+The list runs this on every keystroke, so it is kept cheap: the filters are turned into one check
+each before the products are scanned, and `fuzzySearch` keeps every searched value lowercased with
+its words as indexes into a shared word list. A search compares each distinct word once (names
+have ~70 000 words but only ~12 000 distinct ones) instead of once per product. The layout calls
+`prepareSearch()` while idle after load, so the first keystroke doesn't build that list.
+
 ## Subsets
 
 `subset(items)` makes a `Kaljakori` over some products (a category, a list, a store) whose filter

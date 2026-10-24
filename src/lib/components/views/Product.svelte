@@ -91,9 +91,7 @@
 	// Removed products can't be bought, so they make no sense as alternatives here
 	const similarProducts = $derived(
 		catalogState === 'loaded'
-			? findSimilarProducts(product, kaljakori, SIMILAR_PRODUCT_COLUMNS, kaljakori.data.length)
-					.filter((item) => !item[AllColumns.RemovedFromSelection])
-					.slice(0, 24)
+			? findSimilarProducts(product, kaljakori, SIMILAR_PRODUCT_COLUMNS, 24, { activeOnly: true })
 			: []
 	);
 

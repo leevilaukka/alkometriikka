@@ -41,15 +41,12 @@
 	const {
 		trail,
 		kaljakori: source,
-		table,
 		availability,
 		tree,
 		position
 	}: {
 		trail: CategoryNode[];
 		kaljakori: Kaljakori;
-		/** The raw dataset rows, which the category is matched on. */
-		table: any[][];
 		availability: AvailabilityData;
 		tree: CategoryNode[];
 		/** Where to scroll the product list to, see `Main` */
@@ -80,24 +77,18 @@
 	// ranges all match the category instead of the whole selection. With the store
 	// filter on, everything on the page (stats, price changes, highlights) follows it.
 	const kaljakori = $derived.by(() => {
-		const [header, ...rows] = table;
-		const typeIndex = header.indexOf(AllColumns.Type);
-		const subTypeIndex = header.indexOf(AllColumns.SubType);
-		const numberIndex = header.indexOf(AllColumns.Number);
 		const [type, subType] = trail;
-		const ids = new Set(
-			rows
-				.filter(
-					(row) =>
-						categorySlug(String(row[typeIndex] ?? '')) === type.slug &&
-						(!subType || categorySlug(String(row[subTypeIndex] ?? '')) === subType.slug) &&
-						(!storeFilter ||
-							(availability.product[String(row[numberIndex])] ?? []).includes(storeFilter))
-				)
-				.map((row) => String(row[numberIndex]))
-		);
 		return source.subset(
-			source.data.filter((item) => ids.has(item[AllColumns.Number])),
+			source.data.filter((item) => {
+				const number = item[AllColumns.Number];
+				const slugs = source.categoryOf(number);
+				return (
+					!!slugs &&
+					slugs[0] === type.slug &&
+					(!subType || slugs[1] === subType.slug) &&
+					(!storeFilter || (availability.product[number] ?? []).includes(storeFilter))
+				);
+			}),
 			personalInfo
 		);
 	});

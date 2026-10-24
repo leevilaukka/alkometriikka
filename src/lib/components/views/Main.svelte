@@ -11,7 +11,8 @@
 		shownColumnsToHighlight,
 		defaultSortingColumn,
 		shownSortingKeys,
-		defaultSortingOrderMap
+		defaultSortingOrderMap,
+		LIST_BUFFER_SIZE
 	} from '$lib/utils/constants/display';
 	import { AllColumns } from '$lib/utils/constants/columns';
 	import { ContextKeys } from '$lib/utils/constants/app';
@@ -154,12 +155,18 @@
 	// virtual list keeps the old scroll position otherwise, and once a short result list
 	// has scrolled it to the bottom it stays pinned there as more results come back.
 	let listInputs: string | undefined;
+	// Kept from scroll events, so a list already at the top isn't scrolled there again on every
+	// keystroke: scrolling reads the position, which forces a layout of the re-rendered list
+	let listAtTop = true;
+	function trackListScroll(event: Event) {
+		listAtTop = (event.target as HTMLElement).scrollTop <= 0;
+	}
 	$effect(() => {
 		const inputs = JSON.stringify(
 			[$searchQuery, $state.snapshot(filterValues), selectedSortingColumn, asc, showRemoved],
 			(_, value) => (value instanceof Set ? [...value] : value)
 		);
-		if (listInputs !== undefined && inputs !== listInputs)
+		if (listInputs !== undefined && inputs !== listInputs && !listAtTop)
 			untrack(() => listRef)?.scroll({ index: 0, smoothScroll: false });
 		listInputs = inputs;
 	});
@@ -336,8 +343,14 @@
 		<div
 			class={twMerge('flex min-h-0 flex-auto flex-col', restoring && 'invisible')}
 			bind:this={listElement}
+			onscrollcapture={trackListScroll}
 		>
-			<SvelteVirtualList items={rows} bind:this={listRef} itemsClass={'flex flex-col gap-3'}>
+			<SvelteVirtualList
+				items={rows}
+				bind:this={listRef}
+				itemsClass={'flex flex-col gap-3'}
+				bufferSize={LIST_BUFFER_SIZE}
+			>
 				{#snippet renderItem(item, idx: number)}
 					<ProductPreview product={item} highlight={selectedHighlight} {kaljakori} {highlightMax}>
 						{#snippet renderExtras()}

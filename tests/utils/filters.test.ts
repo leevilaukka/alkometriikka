@@ -158,6 +158,25 @@ describe('findSimilarProducts', () => {
 	it('respects the limit', () => {
 		expect(rank('karhu-033', 3)).toEqual(rank('karhu-033').slice(0, 3));
 	});
+
+	it('leaves out removed products with activeOnly, keeping the order of the rest', () => {
+		const reference = catalog.find((item) => item[AllColumns.Number] === 'karhu-033')!;
+		const withRemoved = catalog.map((item) =>
+			item[AllColumns.Number] === 'koff-033'
+				? ({ ...item, [AllColumns.RemovedFromSelection]: true } as PriceListItem)
+				: item
+		);
+		const all = ids(
+			findSimilarProducts(reference, kaljakoriOf(withRemoved), SIMILAR_PRODUCT_COLUMNS, 99)
+		);
+		const active = ids(
+			findSimilarProducts(reference, kaljakoriOf(withRemoved), SIMILAR_PRODUCT_COLUMNS, 3, {
+				activeOnly: true
+			})
+		);
+		expect(all[0]).toBe('koff-033');
+		expect(active).toEqual(all.filter((id) => id !== 'koff-033').slice(0, 3));
+	});
 });
 
 describe('buildSizeOptions', () => {

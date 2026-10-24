@@ -31,8 +31,9 @@ canonical link to that URL. With the default `'never'` the router would rewrite 
 `<path>` on load, so the visible URL would redirect when shared and disagree with the canonical.
 
 - **`alko`** resolves once `data.json` is downloaded, parsed (`parseDataset`) and indexed into a
-  `Kaljakori`. It also carries the parsed `dataset` (table + metadata) and a lazily filled
-  `availability`.
+  `Kaljakori`. It also carries the dataset's `metadata` (as `dataset.metadata`) and a lazily
+  filled `availability`. The parsed table isn't kept: once the products are built from it, it
+  would only take memory (category pages match products with `Kaljakori.categoryOf` instead).
 - **`alkoWithStores`** resolves to the same object, but only after `availability.json` has also
   been applied.
 - **`alkoWithRemoved`** resolves once the products removed from the selection have been added
