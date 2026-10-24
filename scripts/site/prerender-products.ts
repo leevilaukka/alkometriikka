@@ -64,7 +64,7 @@ type PrerenderManifest = Record<string, PrerenderManifestEntry>;
 // Bump when the page rendering logic (productHtml, minifyHtml, the SEO
 // template, ...) changes in a way that can alter existing pages without the
 // template or product data changing, forcing a full re-render.
-const RENDER_VERSION = 11;
+const RENDER_VERSION = 12;
 
 function sha256Hex(value: string): string {
 	const hasher = new CryptoHasher('sha256');
@@ -382,7 +382,7 @@ function productHtml(
 						...(sale.campaignEnd ? { priceValidUntil: sale.campaignEnd } : {})
 					}
 				: {}),
-			...(pricePerLitre || sale
+			...((price !== null && volume !== null) || sale
 				? {
 						priceSpecification: [
 							...(sale
@@ -395,16 +395,20 @@ function productHtml(
 										}
 									]
 								: []),
-							...(pricePerLitre
+							// Unit pricing: `price` is the active price of the whole bottle (or pack) and
+							// Google derives the litre price from the volume. A litre price in `price`
+							// reads as a second active price and shows up as a "from x to y" range.
+							...(price !== null && volume !== null
 								? [
 										{
 											'@type': 'UnitPriceSpecification',
-											price: pricePerLitre, // The strict per-litre price directly from the API
+											price,
 											priceCurrency: 'EUR',
 											referenceQuantity: {
 												'@type': 'QuantitativeValue',
-												value: 1,
-												unitCode: 'LTR'
+												value: volume,
+												unitCode: 'LTR',
+												valueReference: { '@type': 'QuantitativeValue', value: 1, unitCode: 'LTR' }
 											}
 										}
 									]
