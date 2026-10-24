@@ -58,6 +58,11 @@ bun run daily --dev
 Scripts not wired to an npm script are run directly with `bun run <path>`, for example
 `bun run scripts/site/rss.ts`, `scripts/data/rehash.ts` and `scripts/og/og-categories.ts`.
 
+The share cards of the static pages (`static/images/og/*.png`) are committed, not built. After a
+visible redesign of a page, serve a build (`bunx vite preview --port 4173`) and run
+`bun run scripts/og/og-static.ts [--only /laskin/]` (needs `chromium`). It lives outside `og.ts`
+so it never re-keys the product images.
+
 ## The `--dev` convention
 
 Every data script reads and writes in the repo root by default, which is what CI does, and in

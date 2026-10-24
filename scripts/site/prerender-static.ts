@@ -35,6 +35,11 @@ import type { AvailabilityData, StoreData } from '../data/types';
 const OG_IMAGE = `${SITE_URL}/images/og_image.png`;
 const OG_IMAGE_ALT = 'Alkometriikka logo';
 
+/** The page's own share card (scripts/og/og-static.ts), e.g. `/laskin/` → images/og/laskin.png */
+function pageOgImage(pagePath: string): string {
+	return `${SITE_URL}/images/og/${pagePath === '/' ? 'home' : pagePath.replaceAll('/', '')}.png`;
+}
+
 const WEEKDAYS = [
 	'Sunday',
 	'Monday',
@@ -288,8 +293,8 @@ function storeIndexStub(
 		description: page.description,
 		url,
 		keywords: page.keywords,
-		ogImage: OG_IMAGE,
-		ogImageAlt: OG_IMAGE_ALT,
+		ogImage: pageOgImage(page.path),
+		ogImageAlt: `${page.title} – Alkometriikka`,
 		route,
 		jsonLd: [jsonLd, breadcrumbJsonLd([{ name: page.title, url }])],
 		fallbackName: 'page',
@@ -332,8 +337,8 @@ function staticStub(
 		description: page.description,
 		url,
 		keywords: page.keywords,
-		ogImage: OG_IMAGE,
-		ogImageAlt: OG_IMAGE_ALT,
+		ogImage: pageOgImage(page.path),
+		ogImageAlt: `${page.title} – Alkometriikka`,
 		route,
 		jsonLd: [jsonLd, breadcrumbJsonLd([{ name: page.title, url }])],
 		fallbackName: 'page',
@@ -355,8 +360,8 @@ function homeStub(template: string, route: RouteAssets | undefined): string {
 		description: HOME_PAGE.description,
 		url: `${SITE_URL}/`,
 		keywords: HOME_PAGE.keywords,
-		ogImage: OG_IMAGE,
-		ogImageAlt: OG_IMAGE_ALT,
+		ogImage: pageOgImage(HOME_PAGE.path),
+		ogImageAlt: 'Alkometriikka',
 		route,
 		jsonLd: [],
 		fallbackName: 'page',
