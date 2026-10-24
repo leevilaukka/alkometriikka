@@ -217,6 +217,8 @@ legacy EAN, since API-synced products have none.
 | `lists`                             | `$state` | `lists`                         | The user's saved lists                                          |
 | `compareProductIds`                 | `$state` | `compare_products`              | Products queued for comparison (max 6)                          |
 | `watchlist`                         | `$state` | `watchlist`                     | Watched products and what the user last saw of them             |
+| `punchDraft`                        | `$state` | `punch_draft`                   | The recipe open in the punch calculator                         |
+| `punchRecipes`                      | `$state` | `punch_recipes`                 | Punch recipes saved by name                                     |
 | `compareHighlightDifferences`       | store    | `compare_highlight_differences` | Comparison table dims identical rows                            |
 | `theme`                             | store    | `theme`                         | `''` (system), `'light'` or `'dark'`                            |
 | `preferredStoreId`                  | store    | `preferred_store`               | A store id, or `'auto'` for the nearest store                   |

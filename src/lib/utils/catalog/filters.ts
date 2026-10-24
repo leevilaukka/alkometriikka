@@ -1,6 +1,6 @@
 import type { Kaljakori } from '$lib/alko';
 import type { ColumnNames, FilterValue, FilterValues, PriceListItem } from '$lib/types';
-import { AllColumns, subCategoryMap } from '../constants/columns';
+import { AllColumns, subCategoryMap, zeroWithoutAlcoholColumns } from '../constants/columns';
 import { getPackCount } from '../constants/badges';
 import { shownFilters } from '../constants/display';
 export { getComparableProductName } from './productVariants';
@@ -297,4 +297,19 @@ export function findDifferentSizeOfProduct(
 	kaljakori: Kaljakori
 ): PriceListItem[] {
 	return kaljakori.findDifferentSizesOfProduct(product);
+}
+
+/**
+ * Sorts the list views' rows by `column`, in place. Alcohol-free products have no value in the
+ * {@link zeroWithoutAlcoholColumns}, so they go last either way instead of first as the cheapest.
+ */
+export function sortRows(rows: PriceListItem[], column: ColumnNames, ascending: boolean) {
+	let missing: PriceListItem[] = [];
+	if (zeroWithoutAlcoholColumns.has(column)) {
+		missing = rows.filter((row) => row[column] === 0);
+		if (missing.length) rows = rows.filter((row) => row[column] !== 0);
+	}
+	rows.sort((a, b) => (a[column] > b[column] ? 1 : -1));
+	if (!ascending) rows.reverse();
+	return missing.length ? rows.concat(missing) : rows;
 }

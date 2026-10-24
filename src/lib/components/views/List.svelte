@@ -32,11 +32,12 @@
 	import { headerToDisplayName, sortingOrderToString } from '$lib/utils/format/labels';
 	import Popup from '../widgets/Popup.svelte';
 	import AllLists from '../widgets/AllLists.svelte';
-	import { addToList } from '$lib/utils/user/lists';
+	import AddToListContent from '../widgets/AddToListContent.svelte';
 	import Filters from '../widgets/Filters.svelte';
 	import { goto } from '$app/navigation';
 	import { getContext, untrack } from 'svelte';
-	import { initFilterValues } from '$lib/utils/catalog/filters';
+	import { initFilterValues, sortRows } from '$lib/utils/catalog/filters';
+	import { SERVING_GRAMS } from '$lib/utils/catalog/alko';
 	import type { SearchParamsManager } from '$lib/utils/app/url';
 	import ProductPreview from '../widgets/ProductPreview.svelte';
 	import BottomBar from '../widgets/BottomBar.svelte';
@@ -99,9 +100,8 @@
 				filterValuesCopy[key] = new Set(filterValuesCopy[key]);
 		});
 		let temp = kaljakori.fuzzySearchAndFilter($searchQuery, filterValuesCopy);
-		if (!!selectedSortingColumn)
-			temp = temp.sort((a, b) => (a[selectedSortingColumn] > b[selectedSortingColumn] ? 1 : -1));
-		if (!asc) temp = temp.reverse();
+		if (!!selectedSortingColumn) temp = sortRows(temp, selectedSortingColumn, asc);
+		else if (!asc) temp = temp.reverse();
 		return temp;
 	});
 
@@ -148,6 +148,8 @@
 		});
 
 		const totalAlcoholGramsPerEuro = totalPrice > 0 ? totalAlcoholGrams / totalPrice : 0;
+		const totalServings = totalAlcoholGrams / SERVING_GRAMS;
+		const totalEuroPerServing = totalServings > 0 ? totalPrice / totalServings : 0;
 		const totalBAC =
 			totalAlcoholGrams /
 			((personalInfo.weight ||
@@ -162,6 +164,8 @@
 			totalPrice,
 			totalAlcoholGrams,
 			totalAlcoholGramsPerEuro,
+			totalServings,
+			totalEuroPerServing,
 			totalItems,
 			totalSugarPerLitre,
 			totalSugar,
@@ -525,19 +529,17 @@
 										{#snippet renderButton(dialogElement: HTMLDialogElement)}
 											<button
 												class={twMerge(components.button({ type: 'positive' }))}
+												aria-label="Lisää listaan tai booliin"
 												onclick={() => dialogElement.showModal()}
 											>
-												<span>Lisää listaan</span>
+												<span>Lisää</span>
 												<Icon name="plus" />
 											</button>
 										{/snippet}
 										{#snippet renderContent(dialogElement: HTMLDialogElement)}
-											<h2 class="text-xl">Valitse lista</h2>
-											<AllLists
-												action={(list: ListObj) => {
-													addToList(list, item[AllColumns.Number]);
-													dialogElement.close();
-												}}
+											<AddToListContent
+												productNumber={item[AllColumns.Number]}
+												onadded={() => dialogElement.close()}
 											/>
 										{/snippet}
 									</Popup>
@@ -579,6 +581,12 @@
 							AllColumns.AlcoholGramsPerEuro
 						)} g
 					</p>
+					{#if details.totalServings > 0}
+						<p>
+							Annoksia: {formatValue(details.totalServings, AllColumns.Servings)}
+							({formatValue(details.totalEuroPerServing, AllColumns.EuroPerServing)} / annos)
+						</p>
+					{/if}
 					<p>Arvioitu promillemäärä: {formatValue(details.totalBAC, AllColumns.PromillePerEuro)}</p>
 					<div
 						class={twMerge(

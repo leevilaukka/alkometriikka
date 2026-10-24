@@ -107,6 +107,14 @@ export const STATIC_PAGES: StaticPageSeo[] = [
 		keywords: 'laskin, promillelaskuri, alkoholi, annokset'
 	},
 	{
+		path: '/boolilaskuri/',
+		title: 'Boolilaskuri',
+		description:
+			'Laske boolin alkoholiprosentti, hinta per lasi ja annokset Alkon tuotteilla. Valmiit pohjat, halvemmat vaihtoehdot ja hinnan jako porukalle.',
+		keywords:
+			'boolilaskuri, booli, boolin alkoholiprosentti, booliresepti, kuohuviinibooli, sangria, Alko'
+	},
+	{
 		path: '/tilastot/',
 		title: 'Tilastot',
 		description: 'Alkon valikoima numeroina ja kuvaajina.',

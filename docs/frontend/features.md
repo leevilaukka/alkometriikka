@@ -102,7 +102,7 @@ Links to the site RSS feed.
 
 Users create named lists of products with quantities, stored in localStorage. A list page shows
 the products with search, filters and sorting, and totals for the whole list: item count, price,
-volume, alcohol grams, grams per euro, sugar and an estimated ‰.
+volume, alcohol grams, grams per euro, servings and price per serving, sugar and an estimated ‰.
 
 **Sharing**: a list is shared as `/listat?list=<data>`, where `<data>` is the list's JSON
 compressed with lz-string. No server is involved. If the id matches one of the visitor's own lists
@@ -155,9 +155,43 @@ ranking. Drunk-value charts follow the user's personal info.
 
 `routes/laskin/+page.svelte`
 
-Enter volume, ABV and price to get alcohol grams, grams per euro, servings and an estimated ‰.
+Enter volume, ABV and price to get alcohol grams, grams per euro, servings, price per serving and
+an estimated ‰.
 Uses the saved weight and gender by default, with a toggle to enter other values for one
 calculation.
+
+## Punch calculator (`/boolilaskuri`)
+
+`views/Punch.svelte`, `components/punch/`, maths in `src/lib/utils/catalog/punch.ts`
+([formulas](calculations.md#punch-calculator)), draft and saved recipes in
+`src/lib/utils/user/punch.ts`
+
+Mixes Alko products and other ingredients into one bowl.
+
+- **Ingredients**: Alko products from a search box (name, producer, number or EAN), grocery
+  mixers from one-tap chips (juice, soda, water, ice, fruit; their prices are editable guesses),
+  or a blank ingredient. Counts take fractions and step by whole packages.
+- **Templates**: kuohuviinibooli, sangria, viinabooli, siideribooli and glögibooli. Each fills
+  its Alko ingredients with the cheapest serving of the right kind, from the preferred store when
+  it has one.
+- **Results**: strength, total price, glasses and price per glass up top; composition bars for
+  volume, alcohol and price per ingredient with a table of the same shares; servings, price per
+  serving and litre, alcohol per euro, ‰ per glass; per person once there's more than one
+  drinker; and where the punch's alcohol per euro would rank among Alko's products.
+- **Serving**: glass size (1–4 dl or any), number of drinkers, and a target strength that tells
+  how much mixer dilutes the bowl to it.
+- **Cheaper swaps**: each Alko ingredient can show a cheaper similar product, which **Vaihda**
+  swaps in.
+- **Store**: with a preferred store, each Alko ingredient says whether that store stocks it.
+- **Recipes**: the open recipe is kept in localStorage (`punch_draft`) and can be saved by name
+  (`punch_recipes`, part of the settings export). Saved ones are opened or deleted from the
+  "Tallennetut boolit" popup in the title row. Halve, double and clear are below the list.
+- **Sharing**: `?booli=<compressed recipe>`. Over an empty or saved draft it opens directly;
+  otherwise a banner asks first. The parameter is then removed from the address bar.
+- **Shopping list**: the Alko ingredients, rounded up to whole packages, become a new list.
+- **Elsewhere**: every "Lisää listaan" popup (`widgets/AddToListContent.svelte`) ends with
+  "Lisää booliin", which adds a package to the open recipe and shows a toast linking to the
+  calculator. The command palette has the page and, on product pages, "Lisää boolilaskuriin".
 
 ## Stores (`/myymalat`, `/myymalat/[id]/`)
 
@@ -241,6 +275,13 @@ Banners under the header, from two sources:
 
 Dismissals are stored per notice id in localStorage. The stale warning's and cached-data notice's
 ids include the sync time, so dismissing them lasts only until the data changes.
+
+## Toasts
+
+`widgets/Toast.svelte`, `src/lib/utils/app/toast.svelte.ts`
+
+`showToast({ text, href?, linkText? })` shows a short confirmation for 4 seconds, floating at the
+bottom of the page above the compare bar and the page's mobile bar, in an `aria-live` region.
 
 ## Sharing
 

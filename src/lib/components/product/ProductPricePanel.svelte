@@ -1,15 +1,15 @@
 <script lang="ts">
 	import { AllColumns } from '$lib/utils/constants/columns';
-	import type { AvailabilityStore, ListObj, LoadState, PriceListItem } from '$lib/types';
+	import type { AvailabilityStore, LoadState, PriceListItem } from '$lib/types';
 	import type { SaleInfo } from '$lib/utils/catalog/sales';
 	import type { SizeOption } from '$lib/utils/catalog/filters';
-	import { addToList } from '$lib/utils/user/lists';
 	import { components } from '$lib/utils/ui/styles';
 	import { compareProductIds } from '$lib/global.svelte';
 	import { toggleCompare, MAX_COMPARE_PRODUCTS } from '$lib/utils/user/compare';
 	import Icon from '../widgets/Icon.svelte';
 	import Popup from '../widgets/Popup.svelte';
 	import AllLists from '../widgets/AllLists.svelte';
+	import AddToListContent from '../widgets/AddToListContent.svelte';
 	import ProductPriceStoreBanner from './ProductPriceStoreBanner.svelte';
 	import ProductSizeHook from './ProductSizeHook.svelte';
 	import { twMerge } from 'tailwind-merge';
@@ -73,19 +73,17 @@
 						components.button({ size: 'lg' }),
 						'w-full flex-1 justify-between px-4 py-2.5'
 					)}
+					aria-label="Lisää listaan tai booliin"
 					onclick={() => dialogElement.showModal()}
 				>
-					<span>Lisää listaan</span>
+					<span>Lisää</span>
 					<Icon name="plus" />
 				</button>
 			{/snippet}
 			{#snippet renderContent(dialogElement: HTMLDialogElement)}
-				<h2 class="text-xl">Valitse lista</h2>
-				<AllLists
-					action={(list: ListObj) => {
-						addToList(list, product[AllColumns.Number]);
-						dialogElement.close();
-					}}
+				<AddToListContent
+					productNumber={product[AllColumns.Number]}
+					onadded={() => dialogElement.close()}
 				/>
 			{/snippet}
 		</Popup>

@@ -32,6 +32,7 @@
 	} = $props();
 
 	const deposit = $derived(Number(product[AllColumns.Deposit]) || 0);
+	const euroPerServing = $derived(Number(product[AllColumns.EuroPerServing]) || 0);
 	const pricePerLiterCalculated = $derived(
 		(product as { [MissingValues]?: Set<string> })[MissingValues]?.has(AllColumns.PricePerLiter) ??
 			false
@@ -58,6 +59,13 @@
 			{/if}
 		</div>
 		<span class="mt-1 text-sm text-secondary">
+			{#if euroPerServing > 0}
+				<span title="Hinta yhtä 12 gramman alkoholiannosta kohden">
+					<span class="font-medium text-black dark:text-zinc-200"
+						>{formatValue(euroPerServing, AllColumns.EuroPerServing)}</span
+					>/annos ·
+				</span>
+			{/if}
 			<span
 				title={pricePerLiterCalculated
 					? 'Alko ei ole vielä julkaissut litrahintaa, joten se on laskettu hinnasta ja pullokoosta'

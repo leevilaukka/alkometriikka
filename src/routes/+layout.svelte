@@ -15,6 +15,8 @@
 		pageBottomBar,
 		personalInfo,
 		preferredStoreId,
+		punchDraft,
+		punchRecipes,
 		searchQuery,
 		theme,
 		userLocation,
@@ -35,6 +37,7 @@
 	import CompareBar from '$lib/components/widgets/CompareBar.svelte';
 	import CommandPalette from '$lib/components/widgets/CommandPalette.svelte';
 	import NoticeBanner from '$lib/components/widgets/NoticeBanner.svelte';
+	import Toast from '$lib/components/widgets/Toast.svelte';
 	import InstallBanner from '$lib/components/widgets/InstallBanner.svelte';
 	import { LocalStorageManager } from '$lib/utils/app/storage';
 	import type { IconName } from '$lib/icons';
@@ -106,6 +109,14 @@
 
 	$effect(() => {
 		LocalStorageManager.setItem(LocalStorageKeys.Watchlist, watchlist);
+	});
+
+	$effect(() => {
+		LocalStorageManager.setItem(LocalStorageKeys.PunchDraft, punchDraft);
+	});
+
+	$effect(() => {
+		LocalStorageManager.setItem(LocalStorageKeys.PunchRecipes, punchRecipes);
 	});
 
 	$effect(() => {
@@ -255,6 +266,7 @@
 			label: 'Työkalut & Pelit',
 			items: [
 				{ href: '/laskin/', icon: 'calculator', name: 'Laskin' },
+				{ href: '/boolilaskuri/', icon: 'cocktail', name: 'Boolilaskuri' },
 				{ href: '/daily/arkisto/', icon: 'archive', name: 'Daily-arkisto' }
 			]
 		}
@@ -265,6 +277,7 @@
 	const noSearchPages: (typeof page.route.id)[] = [
 		'/daily/arkisto',
 		'/laskin',
+		'/boolilaskuri',
 		'/tilastot',
 		'/listat',
 		'/daily',
@@ -466,6 +479,10 @@
 		>
 			{@render children?.()}
 		</main>
+		<!-- Toasts float above the bars below -->
+		<div class="relative">
+			<Toast />
+		</div>
 		{#if alko && page.route.id !== '/vertailu'}
 			<CompareBar kaljakori={alko.kaljakori} />
 		{/if}

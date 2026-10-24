@@ -1,4 +1,5 @@
-import { lists, personalInfo, preferredStoreId, watchlist } from '$lib/global.svelte';
+import { lists, personalInfo, preferredStoreId, punchRecipes, watchlist } from '$lib/global.svelte';
+import { sanitizePunch } from '../catalog/punch';
 import { get } from 'svelte/store';
 import { LocalStorageKeys } from '../constants/app';
 import { LocalStorageManager } from './storage';
@@ -8,7 +9,8 @@ export function handleExport() {
 		personalInfo: personalInfo,
 		preferredStoreId: get(preferredStoreId),
 		lists: lists,
-		watchlist: watchlist
+		watchlist: watchlist,
+		punchRecipes: punchRecipes
 	};
 	const blob = new Blob([JSON.stringify(data, null, 2)], {
 		type: 'application/json'
@@ -45,6 +47,18 @@ export function handleImport() {
 				LocalStorageManager.setItem(LocalStorageKeys.Watchlist, [
 					...watchlist,
 					...data.watchlist.filter((item: { id?: unknown }) => !watched.has(String(item?.id)))
+				]);
+			}
+			if (Array.isArray(data.punchRecipes)) {
+				const saved = new Set(punchRecipes.map((recipe) => recipe.id));
+				LocalStorageManager.setItem(LocalStorageKeys.PunchRecipes, [
+					...punchRecipes,
+					...data.punchRecipes.flatMap((item: { id?: unknown; savedAt?: unknown }) => {
+						const recipe = sanitizePunch(item);
+						return recipe && typeof item.id === 'string' && !saved.has(item.id)
+							? [{ ...recipe, id: item.id, savedAt: String(item.savedAt ?? '') }]
+							: [];
+					})
 				]);
 			}
 			if (typeof data.preferredStoreId === 'string') {

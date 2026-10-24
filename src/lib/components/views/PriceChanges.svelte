@@ -5,7 +5,7 @@
 	import { getContext, untrack } from 'svelte';
 	import SvelteVirtualList from '@humanspeak/svelte-virtual-list';
 	import type { Kaljakori } from '$lib/alko';
-	import type { AvailabilityData, ListObj } from '$lib/types';
+	import type { AvailabilityData } from '$lib/types';
 	import { AllColumns } from '$lib/utils/constants/columns';
 	import { AUTO_STORE_ID, ContextKeys } from '$lib/utils/constants/app';
 	import {
@@ -44,13 +44,13 @@
 	} from '$lib/global.svelte';
 	import { resolvePreferredStore } from '$lib/utils/catalog/availability';
 	import { keepAutoLocationFresh } from '$lib/utils/device/location';
-	import { addToList } from '$lib/utils/user/lists';
 	import { components } from '$lib/utils/ui/styles';
 	import { twMerge } from 'tailwind-merge';
 	import Icon from '../widgets/Icon.svelte';
 	import Breadcrumb from '../widgets/Breadcrumb.svelte';
 	import Popup from '../widgets/Popup.svelte';
 	import AllLists from '../widgets/AllLists.svelte';
+	import AddToListContent from '../widgets/AddToListContent.svelte';
 	import ProductPreview from '../widgets/ProductPreview.svelte';
 	import BottomBar from '../widgets/BottomBar.svelte';
 	import FilterButton from '../widgets/FilterButton.svelte';
@@ -517,19 +517,17 @@
 										{#snippet renderButton(dialogElement: HTMLDialogElement)}
 											<button
 												class={twMerge(components.button({ type: 'positive' }), 'ml-auto')}
+												aria-label="Lisää listaan tai booliin"
 												onclick={() => dialogElement.showModal()}
 											>
-												<span>Lisää listaan</span>
+												<span>Lisää</span>
 												<Icon name="plus" />
 											</button>
 										{/snippet}
 										{#snippet renderContent(dialogElement: HTMLDialogElement)}
-											<h2 class="text-xl">Valitse lista</h2>
-											<AllLists
-												action={(list: ListObj) => {
-													addToList(list, change.product[AllColumns.Number]);
-													dialogElement.close();
-												}}
+											<AddToListContent
+												productNumber={change.product[AllColumns.Number]}
+												onadded={() => dialogElement.close()}
 											/>
 										{/snippet}
 									</Popup>

@@ -6,7 +6,7 @@
 <script lang="ts">
 	import SvelteVirtualList from '@humanspeak/svelte-virtual-list';
 	import { twMerge } from 'tailwind-merge';
-	import type { ColumnNames, ListObj, PriceListItem } from '$lib/types';
+	import type { ColumnNames, PriceListItem } from '$lib/types';
 	import {
 		shownColumnsToHighlight,
 		defaultSortingColumn,
@@ -24,10 +24,10 @@
 	import type { Kaljakori } from '$lib/alko';
 	import Popup from '../widgets/Popup.svelte';
 	import AllLists from '../widgets/AllLists.svelte';
-	import { addToList } from '$lib/utils/user/lists';
+	import AddToListContent from '../widgets/AddToListContent.svelte';
 	import { isLaptop, isMobile, pageBottomBar, searchQuery } from '$lib/global.svelte';
 	import Filters from '../widgets/Filters.svelte';
-	import { initFilterValues } from '$lib/utils/catalog/filters';
+	import { initFilterValues, sortRows } from '$lib/utils/catalog/filters';
 	import { getContext, untrack, type Snippet } from 'svelte';
 	import type { SearchParamsManager } from '$lib/utils/app/url';
 	import ProductPreview from '../widgets/ProductPreview.svelte';
@@ -147,9 +147,8 @@
 		});
 		let temp = kaljakori.fuzzySearchAndFilter($searchQuery, filterValuesCopy);
 		if (!showRemoved) temp = temp.filter((item) => item[AllColumns.RemovedFromSelection] !== true);
-		if (!!selectedSortingColumn)
-			temp = temp.sort((a, b) => (a[selectedSortingColumn] > b[selectedSortingColumn] ? 1 : -1));
-		if (!asc) temp = temp.reverse();
+		if (!!selectedSortingColumn) temp = sortRows(temp, selectedSortingColumn, asc);
+		else if (!asc) temp = temp.reverse();
 		return temp;
 	});
 
@@ -368,19 +367,17 @@
 								{#snippet renderButton(dialogElement: HTMLDialogElement)}
 									<button
 										class={twMerge(components.button({ type: 'positive' }), 'ml-auto')}
+										aria-label="Lisää listaan tai booliin"
 										onclick={() => dialogElement.showModal()}
 									>
-										<span>Lisää listaan</span>
+										<span>Lisää</span>
 										<Icon name="plus" />
 									</button>
 								{/snippet}
 								{#snippet renderContent(dialogElement: HTMLDialogElement)}
-									<h2 class="text-xl">Valitse lista</h2>
-									<AllLists
-										action={(list: ListObj) => {
-											addToList(list, item[AllColumns.Number]);
-											dialogElement.close();
-										}}
+									<AddToListContent
+										productNumber={item[AllColumns.Number]}
+										onadded={() => dialogElement.close()}
 									/>
 								{/snippet}
 							</Popup>

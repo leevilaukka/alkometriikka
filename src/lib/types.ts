@@ -176,6 +176,10 @@ export type BadgeConfig = {
 	icon?: IconName;
 	tooltip?: string;
 	hideFromProductPage?: boolean;
+	/** Only on the product page, for details too minor for lists and comparisons */
+	productPageOnly?: boolean;
+	/** Left out of lists' icon-only badges, for icons that don't say much on their own */
+	hideWhenCompact?: boolean;
 };
 export type ColumnBadgeMap<T extends PriceListItem = PriceListItem> = Partial<
 	Pick<Record<ColumnNames, BadgeConfig | Record<string, BadgeConfig>>, keyof T & ColumnNames>
@@ -226,6 +230,20 @@ export type AnalyticsEventMap = {
 			rawAlcohol: number;
 		};
 	};
+	/** Once the recipe has stayed unchanged for a while, like calculator_used */
+	punch_calculator_used: {
+		ingredients: number;
+		alko_products: number;
+		volume: number;
+		abv: number;
+		price: number;
+		people: number;
+	};
+	punch_template_used: { template: string };
+	punch_swap: { from: string; to: string; saving: number };
+	punch_to_list: { products: number };
+	/** From the "Lisää" popup */
+	punch_add_product: { product_number: string };
 	open_settings: undefined;
 	export_data: undefined;
 	import_data: undefined;

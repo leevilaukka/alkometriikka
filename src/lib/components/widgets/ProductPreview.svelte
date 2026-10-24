@@ -32,6 +32,12 @@
 	);
 
 	const inCompare = $derived(compareProductIds.includes(product[AllColumns.Number]));
+	// Alcohol-free products have no servings
+	const perServing = $derived(
+		product[AllColumns.EuroPerServing] > 0
+			? ` · ${formatValue(product[AllColumns.EuroPerServing], AllColumns.EuroPerServing)}/annos`
+			: ''
+	);
 
 	function handleToggleCompare() {
 		if (!toggleCompare(product[AllColumns.Number])) {
@@ -118,12 +124,10 @@
 							</span>
 						{/if}
 						<span class="text-sm text-secondary">
-							({formatValue(product[AllColumns.PricePerLiter], AllColumns.PricePerLiter)})
+							({formatValue(product[AllColumns.PricePerLiter], AllColumns.PricePerLiter)}{perServing})
 						</span>
 					</div>
-					<div class="flex flex-row items-center gap-3">
-						<BadgeList item={product} />
-					</div>
+					<BadgeList item={product} fit class="@4xl:flex-1" />
 					<div class="ms-auto flex flex-row flex-wrap items-center gap-3">
 						<button
 							type="button"

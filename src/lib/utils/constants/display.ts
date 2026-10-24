@@ -104,6 +104,7 @@ export const shownSortingKeys = [
 	AllColumns.AlcoholGramsPerEuro,
 	AllColumns.Price,
 	AllColumns.PricePerLiter,
+	AllColumns.EuroPerServing,
 	AllColumns.AlcoholGrams,
 	AllColumns.BottleSize,
 	AllColumns.Name,
@@ -123,6 +124,7 @@ export const sortingOrderDescriptionMap = {
 	[AllColumns.AlcoholGramsPerEuro]: ['Matalin', 'Korkein'],
 	[AllColumns.Price]: ['Halvin', 'Kallein'],
 	[AllColumns.PricePerLiter]: ['Halvin', 'Kallein'],
+	[AllColumns.EuroPerServing]: ['Halvin', 'Kallein'],
 	[AllColumns.AlcoholGrams]: ['Matalin', 'Korkein'],
 	[AllColumns.BottleSize]: ['Pienin', 'Suurin'],
 	[AllColumns.Name]: ['A-Ö', 'Ö-A'],
@@ -149,6 +151,7 @@ export const defaultSortingOrderMap = {
 	[AllColumns.Type]: true,
 	[AllColumns.Price]: true,
 	[AllColumns.PricePerLiter]: true,
+	[AllColumns.EuroPerServing]: true,
 	[AllColumns.BottleSize]: true,
 	[AllColumns.Sugar]: true
 } as const satisfies ColNameObj<boolean>;
@@ -189,6 +192,7 @@ export const filterToUnitMarker = {
 	[AllColumns.OriginalGravity]: '°P',
 	[AllColumns.ColorEBC]: 'EBC',
 	[AllColumns.EuroPerLiterAlcohol]: '€',
+	[AllColumns.EuroPerServing]: '€',
 	[AllColumns.PromillePerEuro]: '‰'
 } as const satisfies ColNameObj<string>;
 

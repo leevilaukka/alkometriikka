@@ -4,7 +4,8 @@
 		AllColumns,
 		DatasetColumns,
 		DrunkColumns,
-		hideFromProductPageStats
+		hideFromProductPageStats,
+		zeroWithoutAlcoholColumns
 	} from '$lib/utils/constants/columns';
 	import { headerToDisplayName, isNullish } from '$lib/utils/format/labels';
 	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
@@ -54,6 +55,7 @@
 		}
 		for (const value of Object.values(DrunkColumns)) {
 			const rawValue = product[value];
+			if (rawValue === 0 && zeroWithoutAlcoholColumns.has(value)) continue;
 			if (rawValue !== null && rawValue !== undefined) {
 				out.push({
 					key: value,

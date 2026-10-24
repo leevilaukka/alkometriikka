@@ -28,6 +28,7 @@ const columnNumberFormatDefaults: Partial<Record<ColumnNames, Intl.NumberFormatO
 	[AllColumns.PromillePerEuro]: { minimumFractionDigits: 3, maximumFractionDigits: 3 },
 	[AllColumns.Servings]: { minimumFractionDigits: 1, maximumFractionDigits: 2 },
 	[AllColumns.EuroPerLiterAlcohol]: { minimumFractionDigits: 2, maximumFractionDigits: 2 },
+	[AllColumns.EuroPerServing]: { minimumFractionDigits: 2, maximumFractionDigits: 2 },
 	[AllColumns.Vintage]: { minimumFractionDigits: 0, maximumFractionDigits: 0, useGrouping: false },
 	[AllColumns.Number]: { minimumFractionDigits: 0, maximumFractionDigits: 0, useGrouping: false },
 	[AllColumns.BitternessEBU]: { minimumFractionDigits: 0, maximumFractionDigits: 1 },

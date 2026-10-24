@@ -127,6 +127,7 @@
 		[DrunkColumns.EstimatedPromille, 'Arvioidut promillet'],
 		[DrunkColumns.PromillePerEuro, 'Promillea per euro'],
 		[DrunkColumns.Servings, 'Annokset'],
+		[DrunkColumns.EuroPerServing, 'Hinta per annos'],
 		[DrunkColumns.EuroPerLiterAlcohol, 'Hinta raakaa alkoholia kohden (€/l)']
 	] as const;
 

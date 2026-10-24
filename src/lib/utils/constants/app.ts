@@ -20,6 +20,8 @@ export const LocalStorageKeys = {
 	CompareProducts: 'compare_products',
 	CompareHighlightDifferences: 'compare_highlight_differences',
 	Watchlist: 'watchlist',
+	PunchDraft: 'punch_draft',
+	PunchRecipes: 'punch_recipes',
 	DismissedNotices: 'dismissed_notices',
 	FlagOverrides: 'flag_overrides',
 	FlagVisitorId: 'flag_visitor_id',
@@ -39,6 +41,7 @@ export const ShareTypes = {
 	Filters: 'filters',
 	Similar: 'similar',
 	Compare: 'compare',
+	Punch: 'punch',
 	DailyGame: 'daily_game'
 } as const;
 

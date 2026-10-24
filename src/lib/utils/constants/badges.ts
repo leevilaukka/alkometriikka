@@ -51,12 +51,18 @@ export const ColumnToBadgeMap: ColumnBadgeMap = {
 			icon: 'leaf',
 			tooltip: 'Vegaaneille soveltuva tuote'
 		},
-		Biodynaaminen: { text: 'Biodynaaminen', color: 'emerald', icon: 'yin_yang' },
+		Biodynaaminen: {
+			text: 'Biodynaaminen',
+			color: 'emerald',
+			icon: 'yin_yang',
+			hideWhenCompact: true
+		},
 		Alkuviini: { text: 'Alkuviini', color: 'violet', icon: 'wine' },
 		'Ei lisättyä sulfiittia': {
 			text: 'Ei lisättyä sulfiittia',
 			color: 'green',
-			icon: 'check_circle'
+			icon: 'check_circle',
+			productPageOnly: true
 		},
 		'Myydään lahjapakkauksessa': {
 			text: 'Lahjapakkaus',
@@ -66,7 +72,12 @@ export const ColumnToBadgeMap: ColumnBadgeMap = {
 		},
 		Laktoositon: { text: 'Laktoositon', color: 'cyan', icon: 'milk_bottle' },
 		Gluteeniton: { text: 'Gluteeniton', color: 'amber', icon: 'baguette' },
-		'Matala-alkoholinen': { text: 'Matala-alkoholinen', color: 'blue', icon: 'balloon' },
+		'Matala-alkoholinen': {
+			text: 'Matala-alkoholinen',
+			color: 'blue',
+			icon: 'balloon',
+			hideWhenCompact: true
+		},
 		Jälkiruokaviini: { text: 'Jälkiruokaviini', color: 'pink', icon: 'cake_slice' },
 		Oranssiviini: { text: 'Oranssiviini', color: 'orange', icon: 'wine_alt' },
 		'Rajallinen säilyvyys': { text: 'Rajallinen säilyvyys', color: 'yellow', icon: 'hourglass' },

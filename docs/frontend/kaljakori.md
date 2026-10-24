@@ -62,11 +62,11 @@ The constructor sorts products by alcohol grams per euro, the default sort.
 
 On top of the dataset columns, every product gets:
 
-| Group               | Columns                                                                                                      | Source                                                                                                    |
-| ------------------- | ------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------- |
-| `DrunkColumns`      | `Alkoholigrammat`, `Alkoholigrammat / €`, `Arvioidut promillet`, `Promillet / €`, `Annokset`, `€ / l (alk.)` | `calculateDrunkValue` with the user's weight and gender, see [Calculations](calculations.md#drunk-values) |
-| `CalculatedColumns` | `Alennuksessa`                                                                                               | `'alennuksessa'` when `getSaleInfo` says the product is on sale today                                     |
-| `StoreColumns`      | `Myymälät`                                                                                                   | Names of the stores stocking it, filled by `setAvailability`                                              |
+| Group               | Columns                                                                                                                   | Source                                                                                                    |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `DrunkColumns`      | `Alkoholigrammat`, `Alkoholigrammat / €`, `Arvioidut promillet`, `Promillet / €`, `Annokset`, `€ / l (alk.)`, `€ / annos` | `calculateDrunkValue` with the user's weight and gender, see [Calculations](calculations.md#drunk-values) |
+| `CalculatedColumns` | `Alennuksessa`                                                                                                            | `'alennuksessa'` when `getSaleInfo` says the product is on sale today                                     |
+| `StoreColumns`      | `Myymälät`                                                                                                                | Names of the stores stocking it, filled by `setAvailability`                                              |
 
 `AllColumns` combines all four groups. Display names, units, sort labels, which columns are shown
 as filters or sort keys, and badge rules all live in `src/lib/utils/constants/` (`columns.ts`, `display.ts`, `badges.ts`):

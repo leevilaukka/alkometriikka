@@ -153,6 +153,11 @@ function generateSitemapXML(entries: SitemapEntry[]) {
 		`    <changefreq>weekly</changefreq>\n` +
 		`  </url>\n` +
 		`  <url>\n` +
+		`    <loc>https://alkometriikka.fi/boolilaskuri/</loc>\n` +
+		`    <priority>0.6</priority>\n` +
+		`    <changefreq>weekly</changefreq>\n` +
+		`  </url>\n` +
+		`  <url>\n` +
 		`    <loc>https://alkometriikka.fi/myymalat/</loc>\n` +
 		`    <priority>0.6</priority>\n` +
 		`    <changefreq>monthly</changefreq>\n` +

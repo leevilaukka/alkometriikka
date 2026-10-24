@@ -19,6 +19,7 @@
 	import { AllColumns } from '$lib/utils/constants/columns';
 	import { formatValue } from '$lib/utils/format/format';
 	import { addToList, createList, getItemQuantity, listToURI } from '$lib/utils/user/lists';
+	import { addProductToPunch, punchCount } from '$lib/utils/user/punch';
 	import {
 		clearCompare,
 		compareURL,
@@ -238,6 +239,14 @@
 			keywords: 'promille annokset'
 		},
 		{
+			id: 'page:/boolilaskuri',
+			kind: 'page',
+			label: 'Boolilaskuri',
+			icon: 'cocktail',
+			href: resolve('/boolilaskuri'),
+			keywords: 'booli resepti juhlat lasi hinta'
+		},
+		{
 			id: 'page:/tilastot',
 			kind: 'page',
 			label: 'Tilastot',
@@ -307,6 +316,19 @@
 					}
 				};
 			}),
+			{
+				id: 'action:product-punch',
+				kind: 'action',
+				label: 'Lisää boolilaskuriin',
+				detail: punchCount(number) ? `Boolissa jo ${punchCount(number)} kpl` : undefined,
+				icon: 'cocktail',
+				keywords: 'booli boolilaskuri resepti juhlat',
+				stay: true,
+				run: () => {
+					addProductToPunch(number);
+					return 'Lisätty boolilaskuriin';
+				}
+			},
 			page.route.id === '/vastaavat/[...id]'
 				? {
 						id: 'action:product-page',

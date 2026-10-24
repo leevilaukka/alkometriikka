@@ -2,6 +2,12 @@ import type { DrunkColumnNames, ImageTransform, PriceListItem } from '$lib/types
 import { AllColumns, DrunkColumns } from '../constants/columns';
 import { GenderOptionsMap } from '../constants/app';
 
+/** Etanolin tiheys g/l */
+export const ETHANOL_DENSITY = 789;
+
+/** Suomalainen vakioannos, 12 g puhdasta alkoholia */
+export const SERVING_GRAMS = 12;
+
 /**
  * Laskee alkoholin määrän, känni per euro ja BAC-arvot.
  *
@@ -31,9 +37,6 @@ export function calculateDrunkValue(
 		}
 	}
 
-	// Etanolin tiheys g/l
-	const ETHANOL_DENSITY = 789;
-
 	// Widmarkin kertoimet
 	const r = gender === GenderOptionsMap.Male ? 0.68 : 0.55;
 
@@ -52,7 +55,10 @@ export function calculateDrunkValue(
 		price > 0 && Number.isFinite(price) && Number.isFinite(estimatedBAC) ? estimatedBAC / price : 0;
 
 	// Lasketaan annokset (1 annos = 12g)
-	const servings = pureAlcoholGrams / 12;
+	const servings = pureAlcoholGrams / SERVING_GRAMS;
+
+	// Lasketaan hinta per annos (alkoholittomalla ei annoksia, joten 0)
+	const euroPerServing = servings > 0 && Number.isFinite(price) ? price / servings : 0;
 
 	// € per litra raakaa alkoholia (varmistetaan, että nimittäjä ei ole nolla)
 	const alcoholLiters = volume * (percentage / 100);
@@ -67,7 +73,8 @@ export function calculateDrunkValue(
 		!Number.isFinite(estimatedBAC) ||
 		!Number.isFinite(bacPerEuro) ||
 		!Number.isFinite(servings) ||
-		!Number.isFinite(euroPerLiter)
+		!Number.isFinite(euroPerLiter) ||
+		!Number.isFinite(euroPerServing)
 	) {
 		console.log(
 			'Invalid input values. Please ensure volume, percentage, price, and weight are valid numbers., Item: ' +
@@ -89,7 +96,8 @@ export function calculateDrunkValue(
 		[DrunkColumns.EstimatedPromille]: parseFloat(estimatedBAC.toFixed(3)),
 		[DrunkColumns.PromillePerEuro]: parseFloat(bacPerEuro.toFixed(4)),
 		[DrunkColumns.Servings]: parseFloat(servings.toFixed(1)),
-		[DrunkColumns.EuroPerLiterAlcohol]: parseFloat(euroPerLiter.toFixed(2))
+		[DrunkColumns.EuroPerLiterAlcohol]: parseFloat(euroPerLiter.toFixed(2)),
+		[DrunkColumns.EuroPerServing]: parseFloat(euroPerServing.toFixed(2))
 	};
 }
 

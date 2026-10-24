@@ -57,7 +57,8 @@ export const DrunkColumns = Object.freeze({
 	EstimatedPromille: 'Arvioidut promillet',
 	PromillePerEuro: 'Promillet / €',
 	Servings: 'Annokset',
-	EuroPerLiterAlcohol: '€ / l (alk.)'
+	EuroPerLiterAlcohol: '€ / l (alk.)',
+	EuroPerServing: '€ / annos'
 } as const);
 
 /** Column holding the per-store availability derived from availability.json.
@@ -91,6 +92,14 @@ export const subCategoryMap = {
 	[DatasetColumns.SubType]: DatasetColumns.BeerType,
 	[DatasetColumns.Country]: DatasetColumns.Region
 } as const satisfies ColNameObj<ColumnNames>;
+
+/** Drunk columns that are 0 for an alcohol-free product, where there's nothing to divide the price
+ * by. That 0 means "no value", not "free", so it sorts last and never wins a comparison.
+ */
+export const zeroWithoutAlcoholColumns = new Set<ColumnNames>([
+	DrunkColumns.EuroPerLiterAlcohol,
+	DrunkColumns.EuroPerServing
+]);
 
 // Columns that should be handled as strings rather than numbers or other types, even if they look numeric and could be cast to numbers.
 export const columnsHandledAsString = [

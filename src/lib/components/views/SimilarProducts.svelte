@@ -6,13 +6,13 @@
 	import { twMerge } from 'tailwind-merge';
 	import { goto } from '$app/navigation';
 	import { AllColumns } from '$lib/utils/constants/columns';
-	import type { ListObj, PriceListItem } from '$lib/types';
+	import type { PriceListItem } from '$lib/types';
 	import { components } from '$lib/utils/ui/styles';
 	import { isMobile } from '$lib/global.svelte';
 	import Icon from '../widgets/Icon.svelte';
 	import Popup from '../widgets/Popup.svelte';
 	import AllLists from '../widgets/AllLists.svelte';
-	import { addToList } from '$lib/utils/user/lists';
+	import AddToListContent from '../widgets/AddToListContent.svelte';
 	import { setSEO } from '$lib/utils/app/meta';
 	import { valueToString } from '$lib/utils/format/labels';
 	import { formatValue } from '$lib/utils/format/format';
@@ -189,22 +189,20 @@
 								{#snippet renderButton(dialogElement: HTMLDialogElement)}
 									<button
 										class={twMerge(components.button({ type: 'positive' }), 'ml-auto')}
+										aria-label="Lisää listaan tai booliin"
 										onclick={() => dialogElement.showModal()}
 									>
-										<span>Lisää listaan</span>
+										<span>Lisää</span>
 										<Icon name="plus" />
 									</button>
 								{/snippet}
 								{#snippet renderContent(dialogElement: HTMLDialogElement)}
-									<h2 class="text-xl">Valitse lista</h2>
-									<AllLists
-										action={(list: ListObj) => {
-											if (item) {
-												addToList(list, item[AllColumns.Number]);
-											}
-											dialogElement.close();
-										}}
-									/>
+									{#if item}
+										<AddToListContent
+											productNumber={item[AllColumns.Number]}
+											onadded={() => dialogElement.close()}
+										/>
+									{/if}
 								{/snippet}
 							</Popup>
 						{/snippet}

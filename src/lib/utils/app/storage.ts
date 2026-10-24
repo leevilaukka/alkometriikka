@@ -7,6 +7,7 @@ import type {
 	UnlimitedRunState
 } from '$lib/daily/types';
 import { LocalStorageKeys } from '../constants/app';
+import type { PunchRecipe, SavedPunch } from '../catalog/punch';
 
 type LocalStorageValueMap = {
 	[LocalStorageKeys.PersonalInfo]: PersonalInfo;
@@ -23,6 +24,8 @@ type LocalStorageValueMap = {
 	[LocalStorageKeys.CompareProducts]: string[];
 	[LocalStorageKeys.CompareHighlightDifferences]: boolean;
 	[LocalStorageKeys.Watchlist]: WatchedProduct[];
+	[LocalStorageKeys.PunchDraft]: PunchRecipe;
+	[LocalStorageKeys.PunchRecipes]: SavedPunch[];
 	[LocalStorageKeys.DismissedNotices]: string[];
 	[LocalStorageKeys.FlagOverrides]: Record<string, boolean>;
 	/** Random and anonymous, only created once a flag with a rollout needs to place the visitor */

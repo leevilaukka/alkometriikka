@@ -4,8 +4,8 @@ The numbers Alkometriikka derives from Alko's data, and the rules behind them.
 
 ## Drunk values
 
-`calculateDrunkValue` (`src/lib/utils/catalog/alko.ts`) computes six columns for every product, and the
-same function powers the calculator at `/laskin`.
+`calculateDrunkValue` (`src/lib/utils/catalog/alko.ts`) computes seven columns for every product, and the
+same function powers the calculator at `/laskin` and the punch calculator's ‰ estimate.
 
 Inputs: package size `V` (l), alcohol `p` (%), price `P` (€), and the user's weight `m` (kg) and
 gender from settings. Without a saved weight the defaults are 86 kg (Mies), 76 kg (Nainen) and
@@ -19,10 +19,43 @@ gender from settings. Without a saved weight the defaults are 86 kg (Mies), 76 k
 | `Promillet / €`       | `‰ / P`               |                                                                                |
 | `Annokset`            | `g / 12`              | One Finnish standard drink = 12 g                                              |
 | `€ / l (alk.)`        | `P / (V × p/100)`     | Price per litre of pure alcohol                                                |
+| `€ / annos`           | `P / servings`        | Price per standard drink, shown with the price on product pages and list rows  |
 
-Division by zero yields `0`. Results are rounded to 2–4 decimals. Changing weight or gender in
+Division by zero yields `0`. For `€ / l (alk.)` and `€ / annos` that 0 means an alcohol-free
+product, not a free one (`zeroWithoutAlcoholColumns`): the list views sort it last in both
+directions (`sortRows`), the comparison never highlights it as the best, and the details table
+leaves the row out. Results are rounded to 2–4 decimals. Changing weight or gender in
 settings updates `personalInfo`; views that depend on it (lists, categories, stats) rebuild their
 `Kaljakori` subset with the new values.
+
+## Punch calculator
+
+`src/lib/utils/catalog/punch.ts`, used by [`/boolilaskuri`](features.md#punch-calculator-boolilaskuri).
+
+Each ingredient is an Alko product (by number) or the user's own (name, package size, ABV,
+price), times a package count that may be fractional. `computePunch` adds them up:
+
+- volume `V = Σ size × count`, pure alcohol `A = Σ size × count × abv/100`, price `P = Σ price × count`
+- strength `A / V`, grams `A × 789`, servings `grams / 12`, and `P / servings`, `P / V`, `grams / P`
+- glasses `V / glass size`; per glass and per person are the totals scaled by `glass / V` and
+  `1 / people`
+- ‰ is `calculateDrunkValue` on the whole bowl, scaled the same way
+
+`mixerForTarget` gives the litres of alcohol-free mixer that dilute the bowl to a target strength:
+`A / target − V`, or 0 when it's mild enough already.
+
+**Templates** name their Alko ingredients by type, subtype, sizes and a minimum ABV
+(`ProductPick`). `pickProduct` takes the active product with the cheapest `€ / annos`, among those
+in the preferred store when it has any.
+
+**Cheaper swaps** (`cheaperAlternative`): the active product with the same type, subtype and beer
+style, ABV within 1 percentage point and a lower price per litre, bought in whole packages that
+come to 85–120 % of the current amount, that saves the most. Shown when it saves at least 0.50 €.
+With a preferred store and store data, only products in that store count.
+
+**Sharing**: `encodePunch` writes the recipe as arrays (half the length of objects) and
+compresses it with lz-string into `?booli=`. `decodePunch` and `sanitizePunch` (also used for
+localStorage) clamp every value and drop malformed ingredients.
 
 ## Sales
 
