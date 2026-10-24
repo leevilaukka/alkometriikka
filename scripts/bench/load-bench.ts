@@ -14,6 +14,7 @@ import { parseArgs } from 'node:util';
 import { Kaljakori } from '$lib/alko';
 import { parseDataset } from '$lib/utils/catalog/dataset';
 import { parseAvailability } from '$lib/utils/catalog/availability';
+import { AVAILABILITY_FORMAT, encodeStockedStores } from '$lib/utils/catalog/availabilityFile';
 import { AllColumns, DatasetColumns } from '$lib/utils/constants/columns';
 import type { AvailabilityData, DatasetRow } from '$lib/types';
 
@@ -204,7 +205,12 @@ function syntheticData(productCount: number, storeCount: number) {
 
 	return {
 		data: { schema: header, metadata: { LastUpdated: '2026-10-01T00:00:00.000Z' }, products },
-		availability: { lastUpdated: '2026-10-01T00:00:00.000Z', stores, product: availabilityProducts }
+		availability: {
+			format: AVAILABILITY_FORMAT,
+			lastUpdated: '2026-10-01T00:00:00.000Z',
+			stores,
+			...encodeStockedStores(availabilityProducts)
+		}
 	};
 }
 

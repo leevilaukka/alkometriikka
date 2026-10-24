@@ -186,7 +186,7 @@ sets `ALKO_SYNC_FORCE=1`. See [Operations](../operations.md#forcing-a-sync).
   something changed.
 - `writeDataset` splits hashes into `hashes.json` and adds a freshly built `index`.
 - `availability.json` is rebuilt from scratch: the store map plus every search product's `storeId`
-  list.
+  list, packed into bitmaps (see [Dataset format](dataset-format.md#availabilityjson)).
 - With `ALKO_SYNC_REPORT` set, every exit (success, abort or crash) appends one JSON line with the
   attempt's outcome, counts and phase timings (`scripts/data/sync-report.ts`). It ends up in the
   run record, see [Run monitoring](../ci-cd.md#run-monitoring).

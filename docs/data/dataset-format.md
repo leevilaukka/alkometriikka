@@ -6,7 +6,7 @@ also linked from the app's settings dialog for anyone who wants the raw data.
 | File                | Size (Oct 2026)          | Loaded by the app        | Purpose                                        |
 | ------------------- | ------------------------ | ------------------------ | ---------------------------------------------- |
 | `data.json`         | ~7.8 MB, ~1.3 MB gzipped | Yes, blocks first render | Every product, its values and price history    |
-| `availability.json` | ~4.2 MB, ~0.9 MB gzipped | Yes, after first render  | Stores and which stores stock each product     |
+| `availability.json` | ~1.3 MB, ~0.2 MB gzipped | Yes, after first render  | Stores and which stores stock each product     |
 | `hashes.json`       | ~0.55 MB gzipped         | No                       | Change-detection hashes, used only by the sync |
 
 Type definitions: `scripts/data/types.ts` (the strict writer side) and
@@ -199,7 +199,9 @@ re-fetches products whose stored values hash differently from the search payload
 			// …plus the rest of Alko's store object, unmodified
 		}
 	},
-	"product": { "906458": ["2102", "5016", …] }
+	"format": 2,
+	"storeIds": ["2102", "2103", …, "5016"],
+	"product": { "906458": "AQAAgA…" }
 }
 ```
 
@@ -207,7 +209,15 @@ re-fetches products whose stored values hash differently from the search payload
   (`outletType === "2"`).
 - **`product`** maps every product in the latest search sweep to the stores that have it in stock
   (the search API's `storeId` field). It covers only products currently in the selection.
+  Each value is a base64 bitmap over **`storeIds`**, every store id any product refers to
+  (pickup points included) in numeric order: bit `i % 8` of byte `⌊i / 8⌋` set means the store
+  `storeIds[i]` has it, and trailing zero bytes are cut, so a product in no store is `""`. That is
+  about a quarter of the download of a list of id strings per product, the format before
+  `format: 2`, and much less JSON to parse.
 - It is rewritten in full on every sync, so `lastUpdated` is the sync time.
 
+`encodeStockedStores` and `readStockedStores` (`src/lib/utils/catalog/availabilityFile.ts`) write
+and unpack the product map; the reader also takes the earlier format, which an old copy in the
+service worker's cache or the previous deploy read by the stock history may still be in.
 `parseAvailability` (`src/lib/utils/catalog/availability.ts`) validates it in the browser and drops
 malformed entries.

@@ -3,6 +3,7 @@ import { buildDatasetIndex, withDatasetIndex } from '../../scripts/data/dataset-
 import { Kaljakori } from '$lib/alko';
 import { parseDataset, type StoredProduct } from '$lib/utils/catalog/dataset';
 import { parseAvailability } from '$lib/utils/catalog/availability';
+import { AVAILABILITY_FORMAT, encodeStockedStores } from '$lib/utils/catalog/availabilityFile';
 import { AllColumns, DatasetColumns } from '$lib/utils/constants/columns';
 import type { DatasetRow } from '$lib/types';
 
@@ -110,6 +111,15 @@ describe('parseAvailability', () => {
 		expect(Object.keys(parsed.stores)).toEqual(['a']);
 		expect(parsed.product).toEqual({ '1': ['a'] });
 		expect(parsed.lastUpdated).toBe('2026-10-01');
+	});
+
+	it('unpacks the compact product map', () => {
+		const parsed = parseAvailability({
+			format: AVAILABILITY_FORMAT,
+			stores: { a: { id: 'a', name: 'Alko A' } },
+			...encodeStockedStores({ '1': ['a', 'pickup'], '2': [] })
+		});
+		expect(parsed.product).toEqual({ '1': ['a', 'pickup'], '2': [] });
 	});
 
 	it('rejects data without stores or products', () => {
