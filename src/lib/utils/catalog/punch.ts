@@ -212,6 +212,8 @@ export type PunchAmounts = {
 export type PunchTotals = PunchAmounts & {
 	/** Litres of pure alcohol */
 	alcohol: number;
+	/** Litres of the ingredients that contain alcohol, i.e. the volume without mixers */
+	alcoholicVolume: number;
 	abv: number;
 	/** Null without anything to divide by, e.g. an alcohol-free punch */
 	euroPerServing: number | null;
@@ -241,6 +243,10 @@ export function computePunch(
 	const volume = lineTotals.reduce((sum, line) => sum + line.volume, 0);
 	const alcohol = lineTotals.reduce((sum, line) => sum + line.alcohol, 0);
 	const price = lineTotals.reduce((sum, line) => sum + line.price, 0);
+	const alcoholicVolume = lineTotals.reduce(
+		(sum, line) => (line.alcohol > 0 ? sum + line.volume : sum),
+		0
+	);
 	const grams = alcohol * ETHANOL_DENSITY;
 	const servings = grams / SERVING_GRAMS;
 	const abv = volume > 0 ? (alcohol / volume) * 100 : 0;
@@ -273,6 +279,7 @@ export function computePunch(
 	return {
 		...total,
 		alcohol,
+		alcoholicVolume,
 		abv,
 		euroPerServing: servings > 0 && price > 0 ? price / servings : null,
 		euroPerLitre: volume > 0 && price > 0 ? price / volume : null,

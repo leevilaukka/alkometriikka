@@ -119,13 +119,16 @@
 		});
 	});
 
+	/** A punch is for a group, so the promilles use the default weight and gender unless asked */
+	let useSavedBody = $state(false);
+
 	const lines = $derived(punchLines(punchDraft.ingredients, (id) => kaljakori.findById(id)));
 	const totals = $derived(
 		computePunch(lines, {
 			glass: punchDraft.glass,
 			people: punchDraft.people,
-			gender: personalInfo.gender,
-			weight: personalInfo.weight
+			gender: useSavedBody ? personalInfo.gender : null,
+			weight: useSavedBody ? personalInfo.weight : null
 		})
 	);
 	const hasIngredients = $derived(punchDraft.ingredients.length > 0);
@@ -771,6 +774,8 @@
 						people={Math.max(1, Math.round(punchDraft.people || 1))}
 						{rank}
 						hasPersonalInfo={personalInfo.weight != null}
+						hasSavedBody={personalInfo.weight != null || personalInfo.gender != null}
+						bind:useSavedBody
 						onopensettings={requestSettingsOpen}
 					/>
 				{:else}
