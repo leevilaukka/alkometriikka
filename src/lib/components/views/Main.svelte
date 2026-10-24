@@ -12,7 +12,9 @@
 		defaultSortingColumn,
 		shownSortingKeys,
 		defaultSortingOrderMap,
-		LIST_BUFFER_SIZE
+		LIST_BUFFER_SIZE,
+		productKey,
+		LIST_ROW_ESTIMATE
 	} from '$lib/utils/constants/display';
 	import { AllColumns } from '$lib/utils/constants/columns';
 	import { ContextKeys } from '$lib/utils/constants/app';
@@ -350,6 +352,8 @@
 				bind:this={listRef}
 				itemsClass={'flex flex-col gap-3'}
 				bufferSize={LIST_BUFFER_SIZE}
+				itemKey={productKey}
+				defaultEstimatedItemHeight={LIST_ROW_ESTIMATE}
 			>
 				{#snippet renderItem(item, idx: number)}
 					<ProductPreview product={item} highlight={selectedHighlight} {kaljakori} {highlightMax}>
