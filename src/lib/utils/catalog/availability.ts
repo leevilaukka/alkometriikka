@@ -125,6 +125,18 @@ export function getTodaysOpeningHours(
 }
 
 /**
+ * The store's regular hours on `date` (YYYY-MM-DD) from Alko's normal calendar,
+ * or `null` if the date is outside it. `openHours` already has exceptions such
+ * as holidays applied, so a day whose hours differ from this is an exception.
+ */
+export function getNormalOpeningHours(store: AvailabilityStore, date: string): string | null {
+	const openingHours = store.openHoursNormal?.find((entry) => entry.date === date)?.hours;
+	if (typeof openingHours !== 'string') return null;
+
+	return openingHours.trim() || null;
+}
+
+/**
  * Parses a single `HH`, `HH:MM`, `HH.MM`, or `H` clock time (as used in Alko's
  * opening hours strings) into minutes since midnight, or `null` if it isn't a
  * valid time.
@@ -155,6 +167,24 @@ export function isStoreOpen(store: AvailabilityStore, date: Date = new Date()): 
 	const nowMinutes = getStoreLocalMinutes(date);
 
 	return nowMinutes >= openMinutes && nowMinutes <= closeMinutes;
+}
+
+/**
+ * Alko's `unobstructured` field normally just says "esteetön" (accessible), but
+ * some stores put a notice in it with "esteetön" glued to the end ("…Alko
+ * Posio.esteetön"). Splits it into the notice and whether the store is
+ * accessible; a notice without any letters (".") is dropped.
+ */
+export function parseStoreAccessibility(value: string | undefined): {
+	notice: string | null;
+	accessible: boolean;
+} {
+	const text = value?.trim() ?? '';
+	const match = /^([\s\S]*?)\s*esteetön$/i.exec(text);
+	const accessible = match !== null && !/(^|\s)ei$/i.test(match[1]);
+	const notice = accessible ? match[1].trim() : text;
+
+	return { notice: /\p{L}/u.test(notice) ? notice : null, accessible };
 }
 
 export function getStoreCity(store: AvailabilityStore): string {

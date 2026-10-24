@@ -47,7 +47,12 @@ export type AvailabilityStore = {
 	longitude?: number;
 	open?: boolean;
 	openDays?: string[];
+	/** Actual hours (exceptions applied), today through Sunday of next week */
 	openHours?: { date: string; hours: string }[];
+	/** Regular hours without exceptions, Monday of this week through Sunday of next week */
+	openHoursNormal?: { date: string; hours: string }[];
+	/** The days in `openHours` that differ from `openHoursNormal` */
+	openHoursException?: { date: string; hours: string }[];
 	unobstructured?: string;
 	additional_info?: string;
 	location_details?: string;
@@ -300,7 +305,7 @@ export type AnalyticsEventMap = {
 	unwatch_product: { product_number: string };
 	/** The watchlist page was opened, with how many watched products had changed. */
 	view_watchlist: { count: number; changed: number };
-	open_zoomed_image: { product_number: string; };
+	open_zoomed_image: { product_number: string };
 	/** The front page's "your watched products changed" banner was followed. */
 	open_watchlist_banner: { changed: number };
 	/** The error page showed a 4xx status, see `reportPageNotFound` in `errorAnalytics.ts`. */

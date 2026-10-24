@@ -228,7 +228,9 @@ for re-verification, which the sync works through a capped number per run.
 			"address": "Salomonkatu 1", "postalCode": "00100", "postOffice": "HELSINKI",
 			"latitude": 60.17, "longitude": 24.93,
 			"openDays": ["kiinni", "10–21", …],
-			"openHours": [{ "date": "2026-10-13", "hours": "10–21" }, …]
+			"openHours": [{ "date": "2026-10-13", "hours": "10–21" }, …],
+			"openHoursNormal": [{ "date": "2026-10-12", "hours": "10–21" }, …],
+			"openHoursException": [{ "date": "2026-10-31", "hours": "Kiinni" }]
 			// …plus the rest of Alko's store object, unmodified
 		}
 	},
@@ -240,6 +242,14 @@ for re-verification, which the sync works through a capped number per run.
 
 - **`stores`** is Alko's `/api/stores` response keyed by id, minus pickup points
   (`outletType === "2"`).
+- A store's opening hours come in three calendars. **`openHours`** is the actual schedule with
+  exceptions (holidays, closures) applied, from the fetch day through Sunday of next week;
+  `openDays` is its hours alone. Open/closed status and today's hours come from it.
+  **`openHoursNormal`** is the regular schedule without exceptions, Monday of this week through
+  Sunday of next week. The store page uses it to flag days whose hours differ from normal, and the
+  prerendered store stubs use its first week for their JSON-LD `openingHoursSpecification`.
+  **`openHoursException`** lists only the days that differ; the stubs publish them as
+  `specialOpeningHoursSpecification` (a closed day as `opens` and `closes` both `"00:00"`).
 - **`product`** maps every product in the latest search sweep to the stores that have it in stock
   (the search API's `storeId` field). It covers only products currently in the selection.
   Each value is a base64 bitmap over **`storeIds`**, every store id any product refers to

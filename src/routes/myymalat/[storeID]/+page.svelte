@@ -6,7 +6,12 @@
 	import { productsInStore } from '$lib/utils/catalog/storeHighlights';
 	import { preferredStoreId } from '$lib/global.svelte';
 	import type { AvailabilityStore } from '$lib/types';
-	import { getStoreCity, isStoreOpen } from '$lib/utils/catalog/availability.js';
+	import {
+		getNormalOpeningHours,
+		getStoreCity,
+		isStoreOpen,
+		parseStoreAccessibility
+	} from '$lib/utils/catalog/availability.js';
 	import { AllColumns } from '$lib/utils/constants/columns';
 	import { generateTitle, setSEO } from '$lib/utils/app/meta';
 	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
@@ -72,14 +77,17 @@
 		.filter(Boolean)
 		.join(', ')}
 	{@const directionsQuery = ['Alko', store.name, address].filter(Boolean).join(', ')}
+	{@const accessibility = parseStoreAccessibility(store.unobstructured)}
 	{@const additionalDetails = [
 		store.additional_info,
 		store.location_details,
-		store.unobstructured,
-		store.exceptions
+		accessibility.notice,
+		store.exceptions,
+		accessibility.accessible ? 'Esteetön' : null
 	].filter((detail): detail is string => Boolean(detail?.trim()))}
 	{@const storeOpen = isStoreOpen(store)}
 	{@const today = new Date().toLocaleDateString('sv-SE')}
+	{@const openingHours = (store.openHours ?? []).filter((entry) => entry.date >= today)}
 	{@const isPreferred = store.id === $preferredStoreId}
 
 	<div class="mx-auto flex w-full max-w-[120ch] flex-col gap-6 p-4 md:p-6">
@@ -183,9 +191,10 @@
 
 			<section class="overflow-hidden rounded border border-primary bg-secondary md:col-span-2">
 				<h2 class="border-b border-primary px-4 py-3 text-xl font-bold">Aukioloajat</h2>
-				{#if store.openHours?.length}
+				{#if openingHours.length}
 					<ul>
-						{#each store.openHours as openingHour (openingHour.date)}
+						{#each openingHours as openingHour (openingHour.date)}
+							{@const normalHours = getNormalOpeningHours(store, openingHour.date)}
 							<li
 								class={twMerge(
 									'flex items-center justify-between gap-4 border-b border-primary px-4 py-3 last:border-b-0',
@@ -193,7 +202,14 @@
 								)}
 							>
 								<span class="capitalize">{formatDate(openingHour.date)}</span>
-								<strong>{openingHour.hours}</strong>
+								<span class="flex flex-col items-end text-right">
+									<strong>{openingHour.hours}</strong>
+									{#if normalHours && normalHours !== openingHour.hours.trim()}
+										<span class="text-sm font-normal text-secondary"
+											>Poikkeus, normaalisti {normalHours}</span
+										>
+									{/if}
+								</span>
 							</li>
 						{/each}
 					</ul>
