@@ -24,6 +24,9 @@ product) and rebuilds the table shape the app was originally written for:
 Unknown schema columns only log a warning, so an older bundle keeps working when the sync appends
 a column. If `metadata.LastUpdated` is missing, the newest price-history date is used.
 
+Removed products come from `data-removed.json` later: `parseRemovedProducts` turns it into rows
+with the same header, and `addProducts` adds them (see [Reactivity](#reactivity)).
+
 ## From table to products
 
 The constructor turns each row into a `PriceListItem` object keyed by column name (see
@@ -128,10 +131,12 @@ Category pages, list pages and the stats page all use subsets of the layout's `K
 
 ## Reactivity
 
-`Kaljakori` is a plain class, not `$state`. The one thing that changes after construction, store
-availability, is made reactive with `createSubscriber`: `filter`, `fuzzySearchAndFilter`,
-`getFilterValues` and `availabilityLoaded` register a dependency, so `$derived` values and effects
-that use them re-run when `setAvailability` is called.
+`Kaljakori` is a plain class, not `$state`. The two things that change after construction, store
+availability and the removed products, are made reactive with `createSubscriber`: `data`,
+`filter`, `fuzzySearchAndFilter`, `getFilterValues` and `availabilityLoaded` register a dependency,
+so `$derived` values and effects that use them re-run when `setAvailability` or `addProducts` is
+called. `addProducts` replaces the `data` array and drops the lazily built filter values, so they
+are rebuilt with every product.
 
 ## Filters in the URL
 

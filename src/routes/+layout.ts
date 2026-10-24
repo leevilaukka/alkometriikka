@@ -1,7 +1,8 @@
 import { resolve } from '$app/paths';
-import { parseDataset } from '$lib/utils/catalog/dataset';
+import { parseDataset, parseRemovedProducts } from '$lib/utils/catalog/dataset';
+import { REMOVED_DATASET_FILE } from '$lib/utils/catalog/datasetFile';
 import { parseAvailability } from '$lib/utils/catalog/availability';
-import type { AvailabilityData } from '$lib/types';
+import type { AvailabilityData, DatasetRow } from '$lib/types';
 import { Kaljakori } from '$lib/alko';
 import { EMPTY_AVAILABILITY, LazyAvailability } from '$lib/alko/availability.svelte';
 import { personalInfo } from '$lib/global.svelte';
@@ -21,6 +22,10 @@ function getDatasetURL() {
 
 function getAvailabilityURL() {
 	return resolve('/') + 'availability.json';
+}
+
+function getRemovedURL() {
+	return resolve('/') + REMOVED_DATASET_FILE;
 }
 
 if (dev) localStorage.setItem('umami.disabled', '1');
@@ -58,6 +63,27 @@ async function readAvailability(request: Promise<Response>): Promise<Availabilit
 	}
 }
 
+/** Null when the file can't be loaded or doesn't fit the price list */
+async function readRemoved(
+	request: Promise<Response>,
+	schema: unknown
+): Promise<DatasetRow[] | null> {
+	try {
+		const req = await request;
+		if (!req.ok) {
+			throw new Error(
+				`Poistuneiden tuotteiden lataaminen epäonnistui: ${req.status} ${req.statusText}`
+			);
+		}
+		const rows = parseRemovedProducts(await req.text(), schema);
+		if (!rows) throw new Error('Poistuneet tuotteet ovat väärässä muodossa');
+		return rows;
+	} catch (error) {
+		console.warn(error);
+		return null;
+	}
+}
+
 /**
  * Lets the browser handle input and paint before the next step, so loading the price list
  * runs as several short tasks rather than one that freezes the page for seconds on a phone
@@ -86,6 +112,18 @@ async function getData({ fetch }: { fetch: Fetch }) {
 	const { dataset, cached } = await getDataset({ fetch });
 	await yieldToMain();
 	const kaljakori = new Kaljakori(dataset.table, personalInfo, undefined, dataset.index);
+	// Products removed from the selection are in their own file, fetched once the price list is
+	// in so they don't slow it down, and added once the first render is done. Pages showing
+	// them re-render then; ones that can't do without them await `removedReady`
+	const removedReady = dataset.removedProducts
+		? (async () => {
+				const request = fetch(getRemovedURL(), { priority: 'low' });
+				request.catch(() => {}); // handled in readRemoved
+				await whenIdle();
+				const rows = await readRemoved(request, dataset.schema);
+				if (rows) kaljakori.addProducts(rows);
+			})()
+		: Promise.resolve();
 	// Pages re-render with the whole list once this resolves
 	await yieldToMain();
 	const availability = new LazyAvailability(async () => {
@@ -113,7 +151,9 @@ async function getData({ fetch }: { fetch: Fetch }) {
 			return availability.failed;
 		},
 		/** For code that can't render without store data. */
-		availabilityReady: availability.ready
+		availabilityReady: availability.ready,
+		/** Resolves once removed products are in the price list, or failed to load. Never rejects. */
+		removedReady
 	};
 }
 
@@ -126,5 +166,12 @@ export async function load({ fetch }: { fetch: Fetch }) {
 		return data;
 	});
 	alkoWithStores.catch(() => {}); // errors are shown through `alko`
-	return { alko, alkoWithStores };
+	// And once the products removed from the selection have loaded, for pages that show saved
+	// products, which may be removed ones
+	const alkoWithRemoved = alko.then(async (data) => {
+		await data.removedReady;
+		return data;
+	});
+	alkoWithRemoved.catch(() => {});
+	return { alko, alkoWithStores, alkoWithRemoved };
 }

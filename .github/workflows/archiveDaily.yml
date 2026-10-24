@@ -39,6 +39,7 @@ jobs:
         run: |
           git fetch origin gh-pages
           git show origin/gh-pages:data.json > data.json
+          git show origin/gh-pages:data-removed.json > data-removed.json 2>/dev/null || rm -f data-removed.json
           git show origin/gh-pages:hashes.json > hashes.json 2>/dev/null || rm -f hashes.json
           git archive origin/gh-pages daily | tar -x
 

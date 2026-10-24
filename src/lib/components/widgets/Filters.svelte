@@ -117,13 +117,25 @@
 		});
 	});
 
+	/** Each number range's default, the full range of its values */
+	function rangeDefaults(removed: boolean) {
+		const defaults: Partial<Record<ColumnNames, [number, number]>> = {};
+		for (const filter of Object.keys(filterValues) as ColumnNames[])
+			if (kaljakori.getFilterType(filter) === 'number')
+				defaults[filter] = kaljakori.getMinAndMaxValues(filter, removed);
+		return defaults;
+	}
+
 	let previousShowRemoved = showRemoved;
+	let previousProducts = untrack(() => kaljakori.data);
+	let previousDefaults = untrack(() => rangeDefaults(showRemoved));
 	$effect(() => {
-		// Toggling "show removed" changes the min/max defaults for number ranges.
-		// Re-sync any range that is still at its previous default to the new default
-		// so the toggle itself doesn't mark filters as modified / leak URL params.
+		// Toggling "show removed", or removed products arriving after the rest, changes the
+		// min/max defaults for number ranges. Re-sync any range that is still at its previous
+		// default to the new default so this doesn't mark filters as modified / leak URL params.
 		const currentShowRemoved = showRemoved;
-		if (currentShowRemoved === previousShowRemoved) return;
+		const products = kaljakori.data;
+		if (currentShowRemoved === previousShowRemoved && products === previousProducts) return;
 		untrack(() => {
 			(Object.keys(filterValues) as ColumnNames[]).forEach((filter) => {
 				const value = filterValues[filter];
@@ -131,6 +143,7 @@
 				if (
 					kaljakori.getFilterType(filter) === 'string' &&
 					!currentShowRemoved &&
+					currentShowRemoved !== previousShowRemoved &&
 					Array.isArray(value) &&
 					value.length
 				) {
@@ -141,11 +154,13 @@
 				}
 				if (kaljakori.getFilterType(filter) !== 'number') return;
 				if (!Array.isArray(value)) return;
-				const oldDefault = kaljakori.getMinAndMaxValues(filter, previousShowRemoved);
-				if (value[0] === oldDefault[0] && value[1] === oldDefault[1])
+				const oldDefault = previousDefaults[filter];
+				if (oldDefault && value[0] === oldDefault[0] && value[1] === oldDefault[1])
 					filterValues[filter] = kaljakori.getMinAndMaxValues(filter, currentShowRemoved);
 			});
 			previousShowRemoved = currentShowRemoved;
+			previousProducts = products;
+			previousDefaults = rangeDefaults(currentShowRemoved);
 		});
 	});
 

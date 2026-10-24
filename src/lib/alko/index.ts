@@ -148,8 +148,13 @@ function isDatasetIndex(value: unknown): value is DatasetIndex {
 	);
 }
 
+/** How each dataset column is parsed, resolved once instead of per cell */
+const Kind = { History: 0, Removed: 1, String: 2, Set: 3, Other: 4, OtherZero: 5 } as const;
+
+const isMissing = (value: unknown) => value === null || value === undefined || value === '';
+
 export class Kaljakori {
-	data: PriceListItem[] = [];
+	private items: PriceListItem[] = [];
 	personalInfo: PersonalInfo;
 	filters: ColumnNames[] = [];
 	private datasetColumns: DatasetColumnNames[] = [];
@@ -157,21 +162,28 @@ export class Kaljakori {
 	/** The gender and weight the drunk values in `data` were computed with. */
 	private drunkBasis: Pick<PersonalInfo, 'gender' | 'weight'>;
 	private datasetIndex: DatasetIndex | undefined;
+	/** The index passed in, kept to check again once products are added */
+	private datasetIndexCandidate: unknown;
+	/** Whether `datasetIndex` covers the removed products too, or only the selection is loaded */
+	private datasetIndexComplete = false;
+	private columnKinds: (typeof Kind)[keyof typeof Kind][] = [];
+	private datasetColumnIndexes = {} as Record<DatasetColumnNames, number>;
 	private valueIndex: ValueIndex | undefined;
 	private productVariants: ProductVariantIndex | undefined;
 	private categoryTree: CategoryNode[] | undefined;
 	private subValuesCache: Record<string, Record<string, Set<any>>> | undefined;
 	/** The Kaljakori this one is a subset of, or itself. Owns the store availability. */
 	private root: Kaljakori = this;
-	// Store availability can arrive after construction (see setAvailability); this
-	// lets Svelte effects and deriveds that filter by store re-run when it does.
+	// Store availability and removed products can arrive after construction (see
+	// setAvailability and addProducts); this lets Svelte effects and deriveds that
+	// read the products re-run when they do.
 	private availabilityVersion = 0;
 	private hasAvailability = false;
 	private valueIndexVersion = 0;
-	private availabilityUpdate: (() => void) | undefined;
-	private readonly availabilitySubscriber = createSubscriber((update) => {
-		this.availabilityUpdate = update;
-		return () => (this.availabilityUpdate = undefined);
+	private changeUpdate: (() => void) | undefined;
+	private readonly changeSubscriber = createSubscriber((update) => {
+		this.changeUpdate = update;
+		return () => (this.changeUpdate = undefined);
 	});
 
 	/**
@@ -196,17 +208,10 @@ export class Kaljakori {
 		this.datasetColumns = datasetColumns;
 		this.filters = [...datasetColumns, ...drunkColumns, ...storeColumns, ...calculatedColumns];
 
-		const datasetColumnIndexes = Object.fromEntries(
+		this.datasetColumnIndexes = Object.fromEntries(
 			datasetColumns.map((column, idx) => [column, idx])
 		) as Record<DatasetColumnNames, number>;
-		const indexOfTypeColumn = datasetColumns.indexOf(AllColumns.Availability);
-		const alcoholIndex = datasetColumnIndexes[AllColumns.AlcoholPercentage];
-		const priceIndex = datasetColumnIndexes[AllColumns.Price];
-		const bottleSizeIndex = datasetColumnIndexes[AllColumns.BottleSize];
-
-		// How each column is parsed, resolved once instead of per cell
-		const Kind = { History: 0, Removed: 1, String: 2, Set: 3, Other: 4, OtherZero: 5 } as const;
-		const kinds = datasetColumns.map((key) => {
+		this.columnKinds = datasetColumns.map((key) => {
 			if (key === AllColumns.History) return Kind.History;
 			if (key === AllColumns.RemovedFromSelection) return Kind.Removed;
 			if (columnsHandledAsString.includes(key as (typeof columnsHandledAsString)[number]))
@@ -217,117 +222,180 @@ export class Kaljakori {
 			return Kind.Other;
 		});
 
-		const isMissing = (value: unknown) => value === null || value === undefined || value === '';
-
-		for (let row = 0; row < rows.length; row++) {
-			const values = rows[row];
-
-			// Skip accessories ('lahja- ja juomatarvikkeet') and rows without an ABV or a price
-			if (values[indexOfTypeColumn] === 'tarvikevalikoima') continue;
-			if (isMissing(values[alcoholIndex]) || isMissing(values[priceIndex])) continue;
-
-			const item: any = {};
-
-			// Inferred sizes remain useful for display/calculations, but cannot prove
-			// that two products are different packages of the same drink.
-			const rawBottleSize = values[bottleSizeIndex];
-			if (
-				/^\d+(?:[.,]\d+)?(?:\s*l)?$/i.test(String(rawBottleSize).trim()) &&
-				toPositiveNumber(rawBottleSize) !== null
-			) {
-				this.declaredBottleSizes.add(item);
-			}
-			values[bottleSizeIndex] = resolveBottleSize(values, datasetColumnIndexes);
-
-			for (let col = 0; col < datasetColumns.length; col++) {
-				const value: unknown = values[col];
-				switch (kinds[col]) {
-					case Kind.History:
-						item[datasetColumns[col]] = Array.isArray(value) ? value : [];
-						break;
-					case Kind.Removed:
-						item[datasetColumns[col]] = Boolean(value);
-						break;
-					case Kind.String:
-						item[datasetColumns[col]] = toFormattedStringValue(String(value));
-						break;
-					case Kind.Set:
-						item[datasetColumns[col]] = new Set(
-							String(value || '')
-								.split(/[\.,]\s/)
-								.map((v) => toFormattedStringValue(v.trim()))
-								.filter((v) => v.length > 0)
-						);
-						break;
-					default:
-						if (isNumber(value)) item[datasetColumns[col]] = Number.parseFloat(String(value));
-						else if (typeof value === 'string')
-							item[datasetColumns[col]] = toFormattedStringValue(value);
-						else if (kinds[col] === Kind.OtherZero) {
-							item[datasetColumns[col]] = 0;
-							(item[MissingValues] ??= new Set()).add(datasetColumns[col]);
-						} else item[datasetColumns[col]] = '';
-				}
-			}
-
-			// Alko leaves the litre price out until a product is on sale. Only fill it in
-			// from a real size: an inferred one would make up a number.
-			if (item[AllColumns.PricePerLiter] === '' && this.declaredBottleSizes.has(item)) {
-				const perLitre = calculatePricePerLitre(
-					item[AllColumns.Price],
-					item[AllColumns.BottleSize],
-					item[AllColumns.Deposit]
-				);
-				if (perLitre !== null) {
-					item[AllColumns.PricePerLiter] = perLitre;
-					(item[MissingValues] ??= new Set()).add(AllColumns.PricePerLiter);
-				}
-			}
-
-			for (const column of calculatedColumns) {
-				if (column === AllColumns.OnSale) {
-					const sale = getSaleInfo({
-						price: item[AllColumns.Price],
-						normalPrice: item[AllColumns.NormalPrice],
-						campaignStart: item[AllColumns.CampaignStart],
-						campaignEnd: item[AllColumns.CampaignEnd]
-					});
-					item[column] = sale ? 'alennuksessa' : '';
-				} else {
-					item[column] = '';
-				}
-			}
-
-			Object.assign(item, this.computeDrunkValues(item, this.drunkBasis));
-
-			// Filled in by setAvailability from availability.json's productId -> storeId[] map
-			item[AllColumns.StoreAvailability] = new Set<string>();
-
-			// Fill "Tyyppi" with "Ei määritelty" if empty
-			if (!item[AllColumns.Type]) item[AllColumns.Type] = 'Ei määritelty';
-			// Fill "Alatyyppi" with "Oluttyyppi" or "Tyyppi" if empty
-			if (!item[AllColumns.SubType])
-				item[AllColumns.SubType] = item[AllColumns.BeerType] || item[AllColumns.Type];
-
-			this.data.push(item);
+		for (const values of rows) {
+			const item = this.parseRow(values);
+			if (item) this.items.push(item);
 		}
 
-		if (isDatasetIndex(index)) {
-			const valid =
-				index.columns.length === datasetColumns.length &&
-				index.columns.every((column, idx) => column === datasetColumns[idx]) &&
-				index.count === this.data.length &&
-				index.removedCount ===
-					this.data.filter((item) => item[AllColumns.RemovedFromSelection]).length;
-			if (valid) this.datasetIndex = index;
-		}
+		this.datasetIndexCandidate = index;
+		this.checkDatasetIndex();
 
 		if (availability) {
 			this.applyAvailability(availability);
 			this.hasAvailability = true;
 		}
 
-		this.data = this.sortBy(defaultSortingColumn);
+		this.items = this.sortBy(defaultSortingColumn);
+	}
+
+	/**
+	 * Every product, or a subset's products. Reading it in a Svelte effect or derived re-runs
+	 * it when products are added.
+	 */
+	get data(): PriceListItem[] {
+		this.trackChanges();
+		return this.items;
+	}
+
+	set data(items: PriceListItem[]) {
+		this.items = items;
+	}
+
+	/** A dataset row as a product, or null for accessories and rows without an ABV or a price. */
+	private parseRow(values: DatasetRow): PriceListItem | null {
+		const datasetColumns = this.datasetColumns;
+		const datasetColumnIndexes = this.datasetColumnIndexes;
+		const kinds = this.columnKinds;
+		const bottleSizeIndex = datasetColumnIndexes[AllColumns.BottleSize];
+
+		// Skip accessories ('lahja- ja juomatarvikkeet') and rows without an ABV or a price
+		if (values[datasetColumnIndexes[AllColumns.Availability]] === 'tarvikevalikoima') return null;
+		if (
+			isMissing(values[datasetColumnIndexes[AllColumns.AlcoholPercentage]]) ||
+			isMissing(values[datasetColumnIndexes[AllColumns.Price]])
+		)
+			return null;
+
+		const item: any = {};
+
+		// Inferred sizes remain useful for display/calculations, but cannot prove
+		// that two products are different packages of the same drink.
+		const rawBottleSize = values[bottleSizeIndex];
+		if (
+			/^\d+(?:[.,]\d+)?(?:\s*l)?$/i.test(String(rawBottleSize).trim()) &&
+			toPositiveNumber(rawBottleSize) !== null
+		) {
+			this.declaredBottleSizes.add(item);
+		}
+		values[bottleSizeIndex] = resolveBottleSize(values, datasetColumnIndexes);
+
+		for (let col = 0; col < datasetColumns.length; col++) {
+			const value: unknown = values[col];
+			switch (kinds[col]) {
+				case Kind.History:
+					item[datasetColumns[col]] = Array.isArray(value) ? value : [];
+					break;
+				case Kind.Removed:
+					item[datasetColumns[col]] = Boolean(value);
+					break;
+				case Kind.String:
+					item[datasetColumns[col]] = toFormattedStringValue(String(value));
+					break;
+				case Kind.Set:
+					item[datasetColumns[col]] = new Set(
+						String(value || '')
+							.split(/[\.,]\s/)
+							.map((v) => toFormattedStringValue(v.trim()))
+							.filter((v) => v.length > 0)
+					);
+					break;
+				default:
+					if (isNumber(value)) item[datasetColumns[col]] = Number.parseFloat(String(value));
+					else if (typeof value === 'string')
+						item[datasetColumns[col]] = toFormattedStringValue(value);
+					else if (kinds[col] === Kind.OtherZero) {
+						item[datasetColumns[col]] = 0;
+						(item[MissingValues] ??= new Set()).add(datasetColumns[col]);
+					} else item[datasetColumns[col]] = '';
+			}
+		}
+
+		// Alko leaves the litre price out until a product is on sale. Only fill it in
+		// from a real size: an inferred one would make up a number.
+		if (item[AllColumns.PricePerLiter] === '' && this.declaredBottleSizes.has(item)) {
+			const perLitre = calculatePricePerLitre(
+				item[AllColumns.Price],
+				item[AllColumns.BottleSize],
+				item[AllColumns.Deposit]
+			);
+			if (perLitre !== null) {
+				item[AllColumns.PricePerLiter] = perLitre;
+				(item[MissingValues] ??= new Set()).add(AllColumns.PricePerLiter);
+			}
+		}
+
+		for (const column of calculatedColumns) {
+			if (column === AllColumns.OnSale) {
+				const sale = getSaleInfo({
+					price: item[AllColumns.Price],
+					normalPrice: item[AllColumns.NormalPrice],
+					campaignStart: item[AllColumns.CampaignStart],
+					campaignEnd: item[AllColumns.CampaignEnd]
+				});
+				item[column] = sale ? 'alennuksessa' : '';
+			} else {
+				item[column] = '';
+			}
+		}
+
+		Object.assign(item, this.computeDrunkValues(item, this.drunkBasis));
+
+		// Filled in by setAvailability from availability.json's productId -> storeId[] map
+		item[AllColumns.StoreAvailability] = new Set<string>();
+
+		// Fill "Tyyppi" with "Ei määritelty" if empty
+		if (!item[AllColumns.Type]) item[AllColumns.Type] = 'Ei määritelty';
+		// Fill "Alatyyppi" with "Oluttyyppi" or "Tyyppi" if empty
+		if (!item[AllColumns.SubType])
+			item[AllColumns.SubType] = item[AllColumns.BeerType] || item[AllColumns.Type];
+
+		return item;
+	}
+
+	/**
+	 * Uses the precomputed index if it was built for these columns and products. It is built
+	 * over every product, so it also fits while only the selection is loaded, with the
+	 * selection's values standing in for all of them until the removed products are added.
+	 */
+	private checkDatasetIndex() {
+		const index = this.datasetIndexCandidate;
+		this.datasetIndex = undefined;
+		if (!isDatasetIndex(index)) return;
+		const columns = this.datasetColumns;
+		const removed = this.items.filter((item) => item[AllColumns.RemovedFromSelection]).length;
+		const valid =
+			index.columns.length === columns.length &&
+			index.columns.every((column, idx) => column === columns[idx]) &&
+			index.count - index.removedCount === this.items.length - removed &&
+			(removed === index.removedCount || removed === 0);
+		if (!valid) return;
+		this.datasetIndex = index;
+		this.datasetIndexComplete = removed === index.removedCount;
+	}
+
+	/**
+	 * Adds products that load after the rest, the removed ones from data-removed.json. Products
+	 * already here are skipped. Svelte effects and deriveds reading `data` re-run; subsets made
+	 * before keep their products.
+	 */
+	addProducts(rows: DatasetRow[]) {
+		const known = new Set(this.items.map((item) => item[AllColumns.Number]));
+		const added: PriceListItem[] = [];
+		for (const values of rows) {
+			const item = this.parseRow(values);
+			if (item && !known.has(item[AllColumns.Number])) added.push(item);
+		}
+		if (!added.length) return;
+
+		// A new array, so deriveds that compare it by reference see the change
+		this.items = [...this.items, ...added];
+		this.checkDatasetIndex();
+		this.valueIndex = undefined;
+		this.productVariants = undefined;
+		this.categoryTree = undefined;
+		this.subValuesCache = undefined;
+		this.items = this.sortBy(defaultSortingColumn);
+		this.changeUpdate?.();
 	}
 
 	private computeDrunkValues(item: any, info: Pick<PersonalInfo, 'gender' | 'weight'>) {
@@ -364,7 +432,7 @@ export class Kaljakori {
 		this.applyAvailability(availability);
 		this.hasAvailability = true;
 		this.availabilityVersion++;
-		this.availabilityUpdate?.();
+		this.changeUpdate?.();
 	}
 
 	/**
@@ -372,13 +440,13 @@ export class Kaljakori {
 	 * and came back empty). Reactive in Svelte effects, deriveds and templates.
 	 */
 	get availabilityLoaded(): boolean {
-		this.trackAvailability();
+		this.trackChanges();
 		return this.root.hasAvailability;
 	}
 
-	/** Makes the calling Svelte effect or derived re-run when store availability changes. */
-	private trackAvailability() {
-		this.root.availabilitySubscriber();
+	/** Makes the calling Svelte effect or derived re-run when store availability or the products change. */
+	private trackChanges() {
+		this.root.changeSubscriber();
 	}
 
 	/**
@@ -454,7 +522,8 @@ export class Kaljakori {
 			possibleValuesActive[column] = sortedSet(active[idx]);
 		});
 		for (const column of precomputed) {
-			possibleValues[column] = new Set(index!.possibleValues[column]);
+			const all = this.datasetIndexComplete ? index!.possibleValues : index!.possibleValuesActive;
+			possibleValues[column] = new Set(all[column]);
 			possibleValuesActive[column] = new Set(index!.possibleValuesActive[column]);
 		}
 
@@ -544,7 +613,7 @@ export class Kaljakori {
 	}
 
 	getFilterValues(key: ColumnNames, showRemoved: boolean = true): (string | number)[] {
-		this.trackAvailability();
+		this.trackChanges();
 		const source = showRemoved ? this.possibleValues : this.possibleValuesActive;
 		return source[key] ? Array.from(source[key]) : [];
 	}
@@ -638,7 +707,7 @@ export class Kaljakori {
 	}
 
 	fuzzySearchAndFilter(query: string, filters: Record<string, any>) {
-		this.trackAvailability();
+		this.trackChanges();
 		let result = this.fuzzySearch(AllColumns.Name, query);
 		if (Object.keys(filters).length === 0) return result;
 
@@ -677,7 +746,7 @@ export class Kaljakori {
 	}
 
 	filter(filters: Record<string, any>) {
-		this.trackAvailability();
+		this.trackChanges();
 		filters = Object.fromEntries(
 			Object.entries(filters).filter(([, value]) => {
 				if (value instanceof Set) return value.size > 0;

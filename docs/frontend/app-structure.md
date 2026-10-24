@@ -35,6 +35,12 @@ canonical link to that URL. With the default `'never'` the router would rewrite 
   `availability`.
 - **`alkoWithStores`** resolves to the same object, but only after `availability.json` has also
   been applied.
+- **`alkoWithRemoved`** resolves once the products removed from the selection have been added
+  from `data-removed.json` (or failed to load). It is fetched once `data.json` is in and added in
+  a `requestIdleCallback` with `Kaljakori.addProducts`. Pages showing saved products, which may
+  be removed ones, wait for it: `/seuratut`, `/listat`, `/vertailu`, `/tilastot`, and `/` when the
+  URL shows removed products. `/tuotteet/[id]` and `/vastaavat/[id]` await `alko.removedReady`
+  only when the product isn't in the selection; a product page with a preview shows it meanwhile.
 
 `availability.json` is requested in parallel with `data.json` but parsed only after the first
 render, in a `requestIdleCallback` (`LazyAvailability` in `src/lib/alko/availability.svelte.ts`).
