@@ -58,6 +58,7 @@
 	import { ShareTypes } from '$lib/utils/constants/app';
 	import { formatValue } from '$lib/utils/format/format';
 	import { handleShare } from '$lib/utils/app/share';
+	import { showToast } from '$lib/utils/app/toast.svelte';
 	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 	import { requestSettingsOpen } from '$lib/utils/app/settings';
 	import { appPath } from '$lib/utils/app/paths';
@@ -257,7 +258,8 @@
 
 	const shareTitle = $derived(punchDraft.name.trim() || 'Booli');
 
-	async function share() {
+	async function share(event: MouseEvent) {
+		const anchor = event.currentTarget as Element;
 		const url = new URL(resolve('/boolilaskuri/'), location.origin);
 		url.searchParams.set('booli', encodePunch(punchDraft));
 		const summary = `${shareTitle}: ${formatValue(totals.abv, AllColumns.AlcoholPercentage)}, ${formatValue(totals.perGlass.price, AllColumns.Price)} per lasi`;
@@ -269,7 +271,7 @@
 				url: url.toString(),
 				includeSID: true
 			});
-			if (!shared) flash('Linkki kopioitu leikepöydälle');
+			if (!shared) showToast({ text: 'Linkki kopioitu leikepöydälle', anchor });
 		} catch {
 			flash('Jakaminen epäonnistui');
 		}
@@ -514,7 +516,9 @@
 				Sinulle jaettiin booli{sharedRecipe.name ? ` "${sharedRecipe.name}"` : ''} ({sharedRecipe
 					.ingredients.length} ainesosaa). Sen avaaminen korvaa nykyisen boolisi.
 			</p>
-			<button type="button" class={components.button()} onclick={openShared}>Avaa jaettu booli</button>
+			<button type="button" class={components.button()} onclick={openShared}
+				>Avaa jaettu booli</button
+			>
 			<button
 				type="button"
 				class={twMerge(components.button({ type: 'noborder' }), 'text-white hover:bg-brand-3')}

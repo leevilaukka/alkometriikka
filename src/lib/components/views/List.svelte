@@ -3,6 +3,7 @@
 	import { isLaptop, pageBottomBar, personalInfo, searchQuery, isMobile } from '$lib/global.svelte';
 	import { components } from '$lib/utils/ui/styles';
 	import { handleShare } from '$lib/utils/app/share';
+	import { showToast } from '$lib/utils/app/toast.svelte';
 	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 	import { formatValue } from '$lib/utils/format/format';
 	import type { Kaljakori } from '$lib/alko';
@@ -216,6 +217,7 @@
 				inBar ? 'aspect-square h-11 sm:aspect-auto' : 'aspect-square md:aspect-auto'
 			)}
 			onclick={async (e) => {
+				const anchor = e.currentTarget;
 				// Omit SID from the URL if shift key is held down
 				const includeSID = !e.shiftKey;
 
@@ -227,7 +229,7 @@
 					includeSID
 				});
 
-				if (!shared) alert('Linkki kopioitu leikepöydälle!');
+				if (!shared) showToast({ text: 'Linkki kopioitu leikepöydälle', anchor });
 			}}
 		>
 			<Icon name="share" class="inline-block " /><span

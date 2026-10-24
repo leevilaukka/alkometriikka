@@ -2,6 +2,7 @@
 	import { AllColumns } from '$lib/utils/constants/columns';
 	import { generateTitle, setSEO } from '$lib/utils/app/meta';
 	import { handleShare } from '$lib/utils/app/share';
+	import { showToast } from '$lib/utils/app/toast.svelte';
 	import { formatCampaignWindow, getSaleInfo } from '$lib/utils/catalog/sales';
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/ui/styles';
@@ -179,7 +180,8 @@
 				components.button({ size: 'sm', type: 'positive' }),
 				'flex shrink-0 items-center gap-2'
 			)}
-			onclick={async () => {
+			onclick={async (e) => {
+				const anchor = e.currentTarget;
 				const shared = await handleShare({
 					type: 'product',
 					text: `Katso ${product[AllColumns.Name]} -tuotteen tiedot, hinnat ja vastaavat tuotteet Alkometriikasta.`,
@@ -189,7 +191,7 @@
 				});
 
 				if (!shared) {
-					alert('Linkki kopioitu leikepöydälle!');
+					showToast({ text: 'Linkki kopioitu leikepöydälle', anchor });
 				}
 			}}
 		>

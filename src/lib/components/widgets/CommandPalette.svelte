@@ -37,6 +37,7 @@
 	import { requestSettingsOpen } from '$lib/utils/app/settings';
 	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 	import { handleShare, shareTypeFromRoute } from '$lib/utils/app/share';
+	import { showToast } from '$lib/utils/app/toast.svelte';
 	import {
 		normalizeSearchText,
 		parseScopePrefix,
@@ -379,9 +380,13 @@
 				url: location.href,
 				includeSID: true
 			});
-			// The native share sheet gives its own feedback; the clipboard fallback needs a notice
+			// The native share sheet gives its own feedback; the clipboard fallback shows a toast
 			if (shared) closePalette();
-			else return 'Linkki kopioitu leikepöydälle';
+			else {
+				// stay: true keeps the palette open, so close it once the toast takes over
+				showToast({ text: 'Linkki kopioitu leikepöydälle', position: 'top' });
+				closePalette();
+			}
 		} catch {
 			return 'Jakaminen epäonnistui';
 		}
