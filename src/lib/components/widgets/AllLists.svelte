@@ -41,7 +41,7 @@
 				return useSearch && $searchQuery ? isSimilarString(list.name, $searchQuery) : true;
 			}) as list}
 				<div
-					class="relative flex items-center justify-between gap-2 rounded border border-primary p-2 focus-within:outline-1 focus-within:outline-brand-1"
+					class="relative flex items-center justify-between gap-2 rounded border border-primary p-2 focus-within:outline-1 focus-within:outline-brand-1 hover:bg-secondary"
 				>
 					<div class="flex flex-col">
 						<a
