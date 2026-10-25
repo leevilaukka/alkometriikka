@@ -64,7 +64,7 @@ type PrerenderManifest = Record<string, PrerenderManifestEntry>;
 // Bump when the page rendering logic (productHtml, minifyHtml, the SEO
 // template, ...) changes in a way that can alter existing pages without the
 // template or product data changing, forcing a full re-render.
-const RENDER_VERSION = 12;
+const RENDER_VERSION = 13;
 
 function sha256Hex(value: string): string {
 	const hasher = new CryptoHasher('sha256');
@@ -361,12 +361,18 @@ function productHtml(
 						'@type': 'ProductGroup',
 						'@id': `${productUrl(variantGroup.id)}#koot`,
 						name: variantGroup.name,
+						// Merchant listings require a description on every Product/ProductGroup node
+						description: descriptionValue || metaDescription,
 						productGroupID: variantGroup.id,
 						variesBy: variantGroup.variesBy.map((property) => `https://schema.org/${property}`),
 						hasVariant: variantGroup.members.map((member) => ({
 							'@type': 'Product',
 							'@id': productUrl(member.id),
-							url: productUrl(member.id)
+							url: productUrl(member.id),
+							name: member.name,
+							description: [member.name, member.volume !== null ? `${member.volume} L` : '']
+								.filter(Boolean)
+								.join(', ')
 						}))
 					}
 				}
