@@ -52,12 +52,18 @@ export const ColumnToBadgeMap: ColumnBadgeMap = {
 			icon: 'leaf',
 			tooltip: m.badge_vegan_tooltip()
 		},
-		Biodynaaminen: { text: m.badge_biodynamic(), color: 'emerald', icon: 'yin_yang' },
+		Biodynaaminen: {
+			text: m.badge_biodynamic(),
+			color: 'emerald',
+			icon: 'yin_yang',
+			hideWhenCompact: true
+		},
 		Alkuviini: { text: m.badge_natural_wine(), color: 'violet', icon: 'wine' },
 		'Ei lisättyä sulfiittia': {
 			text: m.badge_no_added_sulfites(),
 			color: 'green',
-			icon: 'check_circle'
+			icon: 'check_circle',
+			productPageOnly: true
 		},
 		'Myydään lahjapakkauksessa': {
 			text: m.badge_gift_box(),
@@ -67,7 +73,12 @@ export const ColumnToBadgeMap: ColumnBadgeMap = {
 		},
 		Laktoositon: { text: m.badge_lactose_free(), color: 'cyan', icon: 'milk_bottle' },
 		Gluteeniton: { text: m.badge_gluten_free(), color: 'amber', icon: 'baguette' },
-		'Matala-alkoholinen': { text: m.badge_low_alcohol(), color: 'blue', icon: 'balloon' },
+		'Matala-alkoholinen': {
+			text: m.badge_low_alcohol(),
+			color: 'blue',
+			icon: 'balloon',
+			hideWhenCompact: true
+		},
 		Jälkiruokaviini: { text: m.badge_dessert_wine(), color: 'pink', icon: 'cake_slice' },
 		Oranssiviini: { text: m.badge_orange_wine(), color: 'orange', icon: 'wine_alt' },
 		'Rajallinen säilyvyys': {

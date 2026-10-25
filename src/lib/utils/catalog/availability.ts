@@ -1,6 +1,7 @@
 import type { AvailabilityData, AvailabilityStore } from '$lib/types';
 import { AUTO_STORE_ID } from '../constants/app';
 import { intlLocale, locale, m } from '$lib/i18n';
+import { readStockedStores } from './availabilityFile';
 
 type Coordinates = {
 	latitude: number;
@@ -157,6 +158,18 @@ export function getTodaysOpeningHours(
 }
 
 /**
+ * The store's regular hours on `date` (YYYY-MM-DD) from Alko's normal calendar,
+ * or `null` if the date is outside it. `openHours` already has exceptions such
+ * as holidays applied, so a day whose hours differ from this is an exception.
+ */
+export function getNormalOpeningHours(store: AvailabilityStore, date: string): string | null {
+	const openingHours = store.openHoursNormal?.find((entry) => entry.date === date)?.hours;
+	if (typeof openingHours !== 'string') return null;
+
+	return openingHours.trim() || null;
+}
+
+/**
  * Parses a single `HH`, `HH:MM`, `HH.MM`, or `H` clock time (as used in Alko's
  * opening hours strings) into minutes since midnight, or `null` if it isn't a
  * valid time.
@@ -189,6 +202,24 @@ export function isStoreOpen(store: AvailabilityStore, date: Date = new Date()): 
 	return nowMinutes >= openMinutes && nowMinutes <= closeMinutes;
 }
 
+/**
+ * Alko's `unobstructured` field normally just says "esteetön" (accessible), but
+ * some stores put a notice in it with "esteetön" glued to the end ("…Alko
+ * Posio.esteetön"). Splits it into the notice and whether the store is
+ * accessible; a notice without any letters (".") is dropped.
+ */
+export function parseStoreAccessibility(value: string | undefined): {
+	notice: string | null;
+	accessible: boolean;
+} {
+	const text = value?.trim() ?? '';
+	const match = /^([\s\S]*?)\s*esteetön$/i.exec(text);
+	const accessible = match !== null && !/(^|\s)ei$/i.test(match[1]);
+	const notice = accessible ? match[1].trim() : text;
+
+	return { notice: /\p{L}/u.test(notice) ? notice : null, accessible };
+}
+
 export function getStoreCity(store: AvailabilityStore): string {
 	if (!store) return '';
 	if (typeof store.postOffice === 'string' && store.postOffice.trim() !== '') {
@@ -206,12 +237,14 @@ export function getStoreCity(store: AvailabilityStore): string {
 }
 
 /**
- * Validates a parsed `availability.json`: drops malformed stores and product
- * entries, and stores of outlet type 2 (not shown in the app).
+ * Validates a parsed `availability.json` and unpacks its product map (see
+ * `availabilityFile.ts`): drops malformed stores and product entries, and stores
+ * of outlet type 2 (not shown in the app).
  */
 export function parseAvailability(data: unknown): AvailabilityData {
-	const raw = data as Partial<AvailabilityData> | null;
-	if (!raw || typeof raw !== 'object' || !raw.stores || !raw.product) {
+	const raw = data as (Partial<AvailabilityData> & { storeIds?: unknown }) | null;
+	const product = raw && typeof raw === 'object' ? readStockedStores(raw) : null;
+	if (!raw || !raw.stores || !product) {
 		throw new Error(m.error_availability_invalid());
 	}
 
@@ -223,12 +256,6 @@ export function parseAvailability(data: unknown): AvailabilityData {
 				typeof entry[1].id === 'string' &&
 				typeof entry[1].name === 'string' &&
 				entry[1].outletType !== '2'
-		)
-	);
-	const product = Object.fromEntries(
-		Object.entries(raw.product).filter(
-			(entry): entry is [string, string[]] =>
-				Array.isArray(entry[1]) && entry[1].every((storeId) => typeof storeId === 'string')
 		)
 	);
 

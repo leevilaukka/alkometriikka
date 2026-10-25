@@ -275,6 +275,44 @@ describe('Kaljakori querying', () => {
 		expect(k.fuzzySearch(column(AllColumns.Name), 'xyzzy')).toEqual([]);
 	});
 
+	it('fuzzy-matches words first seen in products added later', () => {
+		const k = alko();
+		expect(k.fuzzySearch(column(AllColumns.Name), 'koskenkorv')).toEqual([]);
+		k.addProducts([base('9', { Name: 'Koskenkorva Vodka', RemovedFromSelection: true })]);
+		expect(
+			k.fuzzySearch(column(AllColumns.Name), 'koskenkorv').map((i) => i[AllColumns.Number])
+		).toEqual(['9']);
+		// A typo of the new word
+		expect(
+			k.fuzzySearch(column(AllColumns.Name), 'koskekorva').map((i) => i[AllColumns.Number])
+		).toEqual(['9']);
+	});
+
+	it('extends filter values built before products were added, as if built with them', () => {
+		const added = [
+			base('8', { Name: 'Uusi', Price: 99, Country: 'Ranska', RemovedFromSelection: true }),
+			base('9', { Name: 'Toinen', Price: 1, Country: 'Suomi' })
+		];
+		const extended = alko();
+		extended.getFilterValues(column(AllColumns.Country));
+		extended.addProducts(added.map((row) => [...row] as DatasetRow));
+		const fresh = alko();
+		fresh.addProducts(added.map((row) => [...row] as DatasetRow));
+		for (const key of fresh.getFilterKeys()) {
+			for (const showRemoved of [true, false]) {
+				expect(extended.getFilterValues(key, showRemoved)).toEqual(
+					fresh.getFilterValues(key, showRemoved)
+				);
+				expect(extended.getMinAndMaxValues(key, showRemoved)).toEqual(
+					fresh.getMinAndMaxValues(key, showRemoved)
+				);
+			}
+			expect(extended.getFilterType(key)).toBe(fresh.getFilterType(key));
+		}
+		expect(extended.getFilterValues(column(AllColumns.Country), false)).not.toContain('Ranska');
+		expect(extended.getMinAndMaxValues(column(AllColumns.Price))).toEqual([1, 99]);
+	});
+
 	it('only fuzzy-matches queries of four or more letters', () => {
 		const k = build([base('1', { Name: 'Sol' })]);
 		const ids = (query: string) =>

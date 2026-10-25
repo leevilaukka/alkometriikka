@@ -1,6 +1,7 @@
 import Bun from 'bun';
 import type { MigratedData, StoreData } from '../data/types';
 import { DEV } from '../data/constants';
+import { readStoredDataset } from '../lib/stored-dataset';
 import {
 	buildCategoryTree,
 	categorySlug,
@@ -20,10 +21,11 @@ type StoreList = {
 };
 
 async function main() {
-	const productFile = Bun.file(DEV ? './static/data.json' : './data.json');
 	const availabilityFile = Bun.file(DEV ? './static/availability.json' : './availability.json');
 	const sitemapEntries: SitemapEntry[] = [];
-	const { schema, products } = (await productFile.json()) as MigratedData;
+	const { schema, products } = ((await readStoredDataset<MigratedData>(
+		DEV ? './static/data.json' : './data.json'
+	)) ?? {}) as MigratedData;
 	const { stores } = (await availabilityFile.json()) as StoreList;
 
 	if (products === undefined) {
@@ -147,6 +149,11 @@ function generateSitemapXML(entries: SitemapEntry[]) {
 		`  </url>\n` +
 		`  <url>\n` +
 		`    <loc>https://alkometriikka.fi/laskin/</loc>\n` +
+		`    <priority>0.6</priority>\n` +
+		`    <changefreq>weekly</changefreq>\n` +
+		`  </url>\n` +
+		`  <url>\n` +
+		`    <loc>https://alkometriikka.fi/boolilaskuri/</loc>\n` +
 		`    <priority>0.6</priority>\n` +
 		`    <changefreq>weekly</changefreq>\n` +
 		`  </url>\n` +

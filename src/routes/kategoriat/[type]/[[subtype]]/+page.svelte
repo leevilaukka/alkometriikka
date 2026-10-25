@@ -27,7 +27,6 @@
 	<Category
 		trail={data.trail}
 		kaljakori={alko.kaljakori}
-		table={alko.dataset.table}
 		availability={alko.availability}
 		tree={alko.kaljakori.getCategoryTree()}
 		{position}

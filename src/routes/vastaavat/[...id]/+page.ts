@@ -10,6 +10,8 @@ export async function load({ parent, params }) {
 
 	if (!id) redirect(300, resolve('/'));
 
+	// A product removed from the selection is only there once its file has loaded
+	if (!alko.kaljakori.findById(id)) await alko.removedReady;
 	if (!alko.kaljakori.findById(id)) {
 		error(404, {
 			message: m.scan_product_not_found()

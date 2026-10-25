@@ -184,9 +184,11 @@ sets `ALKO_SYNC_FORCE=1`. See [Operations](../operations.md#forcing-a-sync).
   or dropped; otherwise it carries over.
 - `metadata.ci` records `GITHUB_SHA` and the workflow run URL for the sync, and for the update when
   something changed.
-- `writeDataset` splits hashes into `hashes.json` and adds a freshly built `index`.
+- `writeDataset` splits hashes into `hashes.json`, adds a freshly built `index`, and writes removed
+  products to `data-removed.json` (see [Dataset format](dataset-format.md)). `readDataset` refuses
+  to load a `data.json` whose removed products file is missing, rather than drop their history.
 - `availability.json` is rebuilt from scratch: the store map plus every search product's `storeId`
-  list.
+  list, packed into bitmaps (see [Dataset format](dataset-format.md#availabilityjson)).
 - With `ALKO_SYNC_REPORT` set, every exit (success, abort or crash) appends one JSON line with the
   attempt's outcome, counts and phase timings (`scripts/data/sync-report.ts`). It ends up in the
   run record, see [Run monitoring](../ci-cd.md#run-monitoring).

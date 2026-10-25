@@ -1,8 +1,10 @@
 import { describe, expect, it, spyOn } from 'bun:test';
 import { buildDatasetIndex, withDatasetIndex } from '../../scripts/data/dataset-index';
 import { Kaljakori } from '$lib/alko';
-import { parseDataset, type StoredProduct } from '$lib/utils/catalog/dataset';
+import { parseDataset, parseRemovedProducts, type StoredProduct } from '$lib/utils/catalog/dataset';
+import { packDataset } from '$lib/utils/catalog/datasetFile';
 import { parseAvailability } from '$lib/utils/catalog/availability';
+import { AVAILABILITY_FORMAT, encodeStockedStores } from '$lib/utils/catalog/availabilityFile';
 import { AllColumns, DatasetColumns } from '$lib/utils/constants/columns';
 import type { DatasetRow } from '$lib/types';
 
@@ -87,6 +89,43 @@ describe('precomputed dataset index', () => {
 		expect((kaljakori(JSON.stringify(data)) as any).datasetIndex).toBeUndefined();
 	});
 
+	it('fits the selection alone, then every product once the removed ones are added', () => {
+		const full = kaljakori(JSON.stringify(withDatasetIndex(dataset())));
+		const packed = packDataset(withDatasetIndex(dataset()));
+		const parsed = parseDataset(JSON.stringify(packed.data));
+		expect(parsed.removedProducts).toBe(1);
+		const split = new Kaljakori(parsed.table as DatasetRow[], undefined, undefined, parsed.index);
+		expect((split as any).datasetIndex).toBeDefined();
+		expect(split.data).toHaveLength(39);
+		// Until the removed products arrive, the selection's values stand in for all of them
+		expect(split.getFilterValues(AllColumns.Type, true)).toEqual(
+			full.getFilterValues(AllColumns.Type, false)
+		);
+
+		const rows = parseRemovedProducts(JSON.stringify(packed.removed), parsed.schema);
+		split.addProducts(rows!);
+		split.addProducts(rows!); // already there, so nothing changes
+		expect((split as any).datasetIndex).toBeDefined();
+		expect(split.data).toEqual(full.data);
+		for (const key of full.getFilterKeys()) {
+			for (const showRemoved of [true, false]) {
+				expect(split.getFilterValues(key, showRemoved)).toEqual(
+					full.getFilterValues(key, showRemoved)
+				);
+				expect(split.getMinAndMaxValues(key, showRemoved)).toEqual(
+					full.getMinAndMaxValues(key, showRemoved)
+				);
+			}
+		}
+	});
+
+	it('ignores removed products written for other columns', () => {
+		const packed = packDataset(dataset());
+		expect(
+			parseRemovedProducts(JSON.stringify({ ...packed.removed, schema: ['Numero'] }), schema)
+		).toBeNull();
+	});
+
 	it('writes the dataset without an index when building one fails', () => {
 		const silence = spyOn(console, 'warn').mockImplementation(() => {});
 		const broken = withDatasetIndex({ schema: [], products: {} });
@@ -110,6 +149,15 @@ describe('parseAvailability', () => {
 		expect(Object.keys(parsed.stores)).toEqual(['a']);
 		expect(parsed.product).toEqual({ '1': ['a'] });
 		expect(parsed.lastUpdated).toBe('2026-10-01');
+	});
+
+	it('unpacks the compact product map', () => {
+		const parsed = parseAvailability({
+			format: AVAILABILITY_FORMAT,
+			stores: { a: { id: 'a', name: 'Alko A' } },
+			...encodeStockedStores({ '1': ['a', 'pickup'], '2': [] })
+		});
+		expect(parsed.product).toEqual({ '1': ['a', 'pickup'], '2': [] });
 	});
 
 	it('rejects data without stores or products', () => {

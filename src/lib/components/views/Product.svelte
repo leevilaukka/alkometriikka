@@ -3,11 +3,17 @@
 	import { AllColumns } from '$lib/utils/constants/columns';
 	import { generateTitle, setSEO } from '$lib/utils/app/meta';
 	import { handleShare } from '$lib/utils/app/share';
+	import { showToast } from '$lib/utils/app/toast.svelte';
 	import { formatCampaignWindow, getSaleInfo } from '$lib/utils/catalog/sales';
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/ui/styles';
 	import Icon from '../widgets/Icon.svelte';
-	import { type AvailabilityStore, type PriceListItem } from '$lib/types';
+	import {
+		type AvailabilityData,
+		type AvailabilityStore,
+		type LoadState,
+		type PriceListItem
+	} from '$lib/types';
 	import { afterNavigate } from '$app/navigation';
 	import type { Kaljakori } from '$lib/alko';
 	import {
@@ -21,6 +27,8 @@
 		rankStoresByDistance
 	} from '$lib/utils/catalog/availability';
 	import { generateImageUrl } from '$lib/utils/catalog/alko';
+	import ErrorBoundary from '../widgets/ErrorBoundary.svelte';
+	import { safely } from '$lib/utils/app/errorAnalytics';
 	import { productDescription } from '$lib/utils/app/seo';
 
 	import ProductBreadcrumb from '../product/ProductBreadcrumb.svelte';
@@ -37,22 +45,36 @@
 	import ProductDetailsTable from '../product/ProductDetailsTable.svelte';
 	import ProductStoreAvailability from '../product/ProductStoreAvailability.svelte';
 	import ProductMobileCta from '../product/ProductMobileCta.svelte';
-	import { pageBottomBar } from '$lib/global.svelte';
+	import ProductWatchButton from '../product/ProductWatchButton.svelte';
+	import { describeWatchChange, type WatchChange } from '$lib/utils/user/watchlist';
+	import { pageBottomBar, preferredStoreId } from '$lib/global.svelte';
 	import { intlLocale, locale, m } from '$lib/i18n';
 
 	const {
 		product,
 		kaljakori,
+		catalogState,
+		availability,
+		availabilityState,
 		availabilityStores,
 		preferredStore,
 		availabilityUpdated
 	}: {
 		product: PriceListItem;
+		/** Only the product itself until the price list has loaded, when the page renders from its stub */
 		kaljakori: Kaljakori;
+		catalogState: LoadState;
+		availability: AvailabilityData;
+		availabilityState: LoadState;
 		availabilityStores: AvailabilityStore[];
 		preferredStore?: AvailabilityStore;
 		availabilityUpdated: Date | undefined;
 	} = $props();
+
+	// What the price box can say about the preferred store: with none chosen there's nothing to wait for
+	const preferredStoreState = $derived<LoadState>(
+		availabilityState === 'loading' && !$preferredStoreId ? 'loaded' : availabilityState
+	);
 
 	const rankedAvailabilityStores = $derived(
 		rankStoresByDistance(availabilityStores, preferredStore)
@@ -66,15 +88,26 @@
 	);
 
 	let productElement: HTMLDivElement;
+	let watchChanges = $state<WatchChange[]>([]);
 
-	const sizeOptions = $derived(buildSizeOptions(product, kaljakori));
+	// Optional extras: when one fails the rest of the page still shows
+	const sizeOptions = $derived(
+		safely('product_size_options', () => buildSizeOptions(product, kaljakori), [])
+	);
 	const cheapestSize = $derived(sizeOptions.find((size) => size.isBestValue));
 
 	// Removed products can't be bought, so they make no sense as alternatives here
 	const similarProducts = $derived(
-		findSimilarProducts(product, kaljakori, SIMILAR_PRODUCT_COLUMNS, kaljakori.data.length)
-			.filter((item) => !item[AllColumns.RemovedFromSelection])
-			.slice(0, 24)
+		catalogState === 'loaded'
+			? safely(
+					'product_similar',
+					() =>
+						findSimilarProducts(product, kaljakori, SIMILAR_PRODUCT_COLUMNS, 24, {
+							activeOnly: true
+						}),
+					[]
+				)
+			: []
 	);
 
 	const sale = $derived(
@@ -165,13 +198,22 @@
 >
 	<div class="flex w-full items-center gap-3.5">
 		<ProductBreadcrumb {product} {kaljakori} class="min-w-0 flex-1" />
+		<ProductWatchButton
+			{product}
+			{availability}
+			ready={availabilityState !== 'loading'}
+			preferredStoreId={preferredStore?.id}
+			bind:changes={watchChanges}
+			class="ml-auto"
+		/>
 		<button
 			type="button"
 			class={twMerge(
 				components.button({ size: 'sm', type: 'positive' }),
-				'ml-auto flex shrink-0 items-center gap-2'
+				'flex shrink-0 items-center gap-2'
 			)}
-			onclick={async () => {
+			onclick={async (e) => {
+				const anchor = e.currentTarget;
 				const shared = await handleShare({
 					type: 'product',
 					text: m.product_share_text({ name: productName(product) }),
@@ -181,19 +223,45 @@
 				});
 
 				if (!shared) {
-					alert(m.share_link_copied());
+					showToast({ text: m.share_link_copied(), anchor });
 				}
 			}}
 		>
 			<Icon name="share" />
-			<span class="hidden sm:inline">{m.product_share()}</span>
+			<span class="sr-only sm:not-sr-only">{m.product_share()}</span>
 		</button>
 	</div>
+
+	{#if watchChanges.length}
+		<div
+			role="status"
+			class="flex flex-col gap-1 rounded border border-primary bg-secondary px-4 py-3 text-sm"
+		>
+			<strong>{m.product_watch_changed()}</strong>
+			<ul class="flex flex-wrap gap-x-4 gap-y-1">
+				{#each watchChanges as change, index (index)}
+					{@const label = describeWatchChange(
+						change,
+						(storeId) => availability.stores[storeId]?.name
+					)}
+					<li
+						class={label.good
+							? 'text-green-700 dark:text-green-400'
+							: 'text-red-700 dark:text-red-400'}
+					>
+						{label.text}
+					</li>
+				{/each}
+			</ul>
+		</div>
+	{/if}
 
 	<div
 		class="grid w-full grid-cols-1 gap-6 lg:grid-cols-[360px_minmax(0,1fr)_320px] lg:items-start"
 	>
-		<ProductGallery {product} {sale} />
+		<ErrorBoundary name="product_gallery" fallback="section" label={m.error_label_gallery()}>
+			<ProductGallery {product} {sale} />
+		</ErrorBoundary>
 
 		<div class="flex flex-col gap-4">
 			<ProductBadgesHeader {product} {sale} />
@@ -203,13 +271,16 @@
 				{product}
 				{sale}
 				{campaignWindow}
+				storesState={preferredStoreState}
 				{preferredStore}
 				{availableInPreferredStore}
 				{closestAvailableStore}
 				{closestAvailableDistance}
 			/>
 
-			<ProductSizeDropdown {product} sizes={sizeOptions} />
+			<ErrorBoundary name="product_size_dropdown">
+				<ProductSizeDropdown {product} sizes={sizeOptions} />
+			</ErrorBoundary>
 
 			<ProductQuickStats {product} />
 		</div>
@@ -219,6 +290,7 @@
 			{product}
 			{sale}
 			{campaignWindow}
+			storesState={preferredStoreState}
 			{preferredStore}
 			{availableInPreferredStore}
 			{closestAvailableStore}
@@ -231,24 +303,40 @@
 		<ProductSizeHook size={cheapestSize} class="lg:hidden" />
 	{/if}
 
-	<ProductQualityMetrics {product} {kaljakori} />
+	<!-- Both compare against the whole price list, so without it they're left out -->
+	{#if catalogState !== 'failed'}
+		<ErrorBoundary name="product_quality_metrics">
+			<ProductQualityMetrics {product} {kaljakori} loading={catalogState === 'loading'} />
+		</ErrorBoundary>
 
-	<ProductSimilar {product} candidates={similarProducts} />
+		<ErrorBoundary name="product_similar">
+			<ProductSimilar {product} candidates={similarProducts} loading={catalogState === 'loading'} />
+		</ErrorBoundary>
+	{/if}
 
 	<div
 		class="grid w-full grid-cols-1 gap-6 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] lg:items-start"
 	>
 		<div class="flex flex-col gap-6">
-			<ProductPriceHistory {product} />
+			<ErrorBoundary name="product_price_history">
+				<ProductPriceHistory {product} />
+			</ErrorBoundary>
 			<ProductDetailsTable {product} class="hidden lg:block" />
 		</div>
-		<ProductStoreAvailability
-			id="myymalasaatavuus"
-			productNumber={product[AllColumns.Number]}
-			stores={rankedAvailabilityStores}
-			{preferredStore}
-			{availabilityUpdated}
-		/>
+		<ErrorBoundary
+			name="product_store_availability"
+			fallback="section"
+			label={m.error_label_availability()}
+		>
+			<ProductStoreAvailability
+				id="myymalasaatavuus"
+				productNumber={product[AllColumns.Number]}
+				stores={rankedAvailabilityStores}
+				{availabilityState}
+				{preferredStore}
+				{availabilityUpdated}
+			/>
+		</ErrorBoundary>
 	</div>
 
 	<ProductDetailsTable {product} class="lg:hidden" />

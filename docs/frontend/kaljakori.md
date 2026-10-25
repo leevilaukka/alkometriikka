@@ -24,6 +24,9 @@ product) and rebuilds the table shape the app was originally written for:
 Unknown schema columns only log a warning, so an older bundle keeps working when the sync appends
 a column. If `metadata.LastUpdated` is missing, the newest price-history date is used.
 
+Removed products come from `data-removed.json` later: `parseRemovedProducts` turns it into rows
+with the same header, and `addProducts` adds them (see [Reactivity](#reactivity)).
+
 ## From table to products
 
 The constructor turns each row into a `PriceListItem` object keyed by column name (see
@@ -59,11 +62,11 @@ The constructor sorts products by alcohol grams per euro, the default sort.
 
 On top of the dataset columns, every product gets:
 
-| Group               | Columns                                                                                                      | Source                                                                                                    |
-| ------------------- | ------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------- |
-| `DrunkColumns`      | `Alkoholigrammat`, `Alkoholigrammat / €`, `Arvioidut promillet`, `Promillet / €`, `Annokset`, `€ / l (alk.)` | `calculateDrunkValue` with the user's weight and gender, see [Calculations](calculations.md#drunk-values) |
-| `CalculatedColumns` | `Alennuksessa`                                                                                               | `'alennuksessa'` when `getSaleInfo` says the product is on sale today                                     |
-| `StoreColumns`      | `Myymälät`                                                                                                   | Names of the stores stocking it, filled by `setAvailability`                                              |
+| Group               | Columns                                                                                                                   | Source                                                                                                    |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `DrunkColumns`      | `Alkoholigrammat`, `Alkoholigrammat / €`, `Arvioidut promillet`, `Promillet / €`, `Annokset`, `€ / l (alk.)`, `€ / annos` | `calculateDrunkValue` with the user's weight and gender, see [Calculations](calculations.md#drunk-values) |
+| `CalculatedColumns` | `Alennuksessa`                                                                                                            | `'alennuksessa'` when `getSaleInfo` says the product is on sale today                                     |
+| `StoreColumns`      | `Myymälät`                                                                                                                | Names of the stores stocking it, filled by `setAvailability`                                              |
 
 `AllColumns` combines all four groups. Display names, units, sort labels, which columns are shown
 as filters or sort keys, and badge rules all live in `src/lib/utils/constants/` (`columns.ts`, `display.ts`, `badges.ts`):
@@ -117,6 +120,12 @@ Filter semantics in `fuzzySearchAndFilter`:
 - **String** columns: the product's value must be one of the selected values (OR).
 - Empty selections are ignored.
 
+The list runs this on every keystroke, so it is kept cheap: the filters are turned into one check
+each before the products are scanned, and `fuzzySearch` keeps every searched value lowercased with
+its words as indexes into a shared word list. A search compares each distinct word once (names
+have ~70 000 words but only ~12 000 distinct ones) instead of once per product. The layout calls
+`prepareSearch()` while idle after load, so the first keystroke doesn't build that list.
+
 ## Subsets
 
 `subset(items)` makes a `Kaljakori` over some products (a category, a list, a store) whose filter
@@ -128,10 +137,12 @@ Category pages, list pages and the stats page all use subsets of the layout's `K
 
 ## Reactivity
 
-`Kaljakori` is a plain class, not `$state`. The one thing that changes after construction, store
-availability, is made reactive with `createSubscriber`: `filter`, `fuzzySearchAndFilter`,
-`getFilterValues` and `availabilityLoaded` register a dependency, so `$derived` values and effects
-that use them re-run when `setAvailability` is called.
+`Kaljakori` is a plain class, not `$state`. The two things that change after construction, store
+availability and the removed products, are made reactive with `createSubscriber`: `data`,
+`filter`, `fuzzySearchAndFilter`, `getFilterValues` and `availabilityLoaded` register a dependency,
+so `$derived` values and effects that use them re-run when `setAvailability` or `addProducts` is
+called. `addProducts` replaces the `data` array and drops the lazily built filter values, so they
+are rebuilt with every product.
 
 ## Filters in the URL
 
@@ -142,6 +153,12 @@ that use them re-run when `setAvailability` is called.
 - `searchParametersFromFilterValues` writes selections as repeated parameters
   (`?Tyyppi=Viinit&Tyyppi=Oluet`) and ranges as `min-max`. Ranges still at their default are
   left out.
+- With `COMMA_SEPARATED_FILTERS` on, `joinFilterParams` writes them comma-separated instead
+  (`?Tyyppi=Viinit,Oluet`); a filter with a selection containing a comma keeps the repeated form.
+  It's off by default.
+- `filterValuesFromSearchParameters` reads both forms whatever the toggle says. A value that is
+  one of the filter's own values is kept whole (`Brandyt, armanjakit ja calvadosit`); anything
+  else is split on commas.
 - `getNarrowedFilterValues` limits a child filter's options to those under the selected parent
   (e.g. only wine subtypes when Tyyppi = Viinit).
 

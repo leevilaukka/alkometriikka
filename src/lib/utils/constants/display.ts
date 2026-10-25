@@ -1,7 +1,29 @@
-import type { ColNameObj, ColumnNames } from '$lib/types';
+import type { ColNameObj, ColumnNames, PriceListItem } from '$lib/types';
 import { m } from '$lib/i18n';
 import { AllColumns } from './columns';
 import { groupOptionsByWords, type OptionGrouper } from '$lib/utils/ui/optionGroups';
+
+/**
+ * Product rows the long lists render past each edge of the screen. Every keystroke in the search
+ * re-renders them all, and each costs about 10 ms on a phone, so this stays small.
+ */
+export const LIST_BUFFER_SIZE = 6;
+
+/**
+ * The long lists' guess for a row not yet measured: no shorter than a product card ever is
+ * (about 530 px stacked on phones, 240 px on wide screens). With the list's default of 40 px a
+ * new result list seems to fit on screen, so being at its top also counts as being at its bottom,
+ * and once the rows are measured the list keeps to the bottom, jumping to its end.
+ */
+export const LIST_ROW_ESTIMATE = 560;
+
+/**
+ * Keys the long lists' rows by product. A product still on screen after a search keeps its row
+ * and photo instead of the row at its position re-rendering with another product, and the list
+ * matches rows by key: keyed by position, it scrolls to keep the old top row in view, which after
+ * a short result list means jumping to the end of the new one.
+ */
+export const productKey = (item: PriceListItem) => item[AllColumns.Number];
 
 /**
  * Columns to be shown in the filter area.
@@ -81,6 +103,7 @@ export const shownSortingKeys = [
 	AllColumns.AlcoholGramsPerEuro,
 	AllColumns.Price,
 	AllColumns.PricePerLiter,
+	AllColumns.EuroPerServing,
 	AllColumns.AlcoholGrams,
 	AllColumns.BottleSize,
 	AllColumns.Name,
@@ -104,6 +127,7 @@ export const sortingOrderDescriptionMap = {
 	[AllColumns.AlcoholGramsPerEuro]: lowestHighest,
 	[AllColumns.Price]: cheapestPriciest,
 	[AllColumns.PricePerLiter]: cheapestPriciest,
+	[AllColumns.EuroPerServing]: cheapestPriciest,
 	[AllColumns.AlcoholGrams]: lowestHighest,
 	[AllColumns.BottleSize]: [m.sort_smallest(), m.sort_largest()],
 	[AllColumns.Name]: alphabetical,
@@ -130,6 +154,7 @@ export const defaultSortingOrderMap = {
 	[AllColumns.Type]: true,
 	[AllColumns.Price]: true,
 	[AllColumns.PricePerLiter]: true,
+	[AllColumns.EuroPerServing]: true,
 	[AllColumns.BottleSize]: true,
 	[AllColumns.Sugar]: true
 } as const satisfies ColNameObj<boolean>;
@@ -170,6 +195,7 @@ export const filterToUnitMarker = {
 	[AllColumns.OriginalGravity]: '°P',
 	[AllColumns.ColorEBC]: 'EBC',
 	[AllColumns.EuroPerLiterAlcohol]: '€',
+	[AllColumns.EuroPerServing]: '€',
 	[AllColumns.PromillePerEuro]: '‰'
 } as const satisfies ColNameObj<string>;
 
@@ -221,6 +247,7 @@ export const columnDisplayNames = {
 	[AllColumns.EstimatedPromille]: m.column_estimated_promille(),
 	[AllColumns.PromillePerEuro]: m.column_promille_per_euro(),
 	[AllColumns.Servings]: m.column_servings(),
+	[AllColumns.EuroPerServing]: m.column_euro_per_serving(),
 	[AllColumns.EuroPerLiterAlcohol]: m.column_euro_per_liter_alcohol(),
 	[AllColumns.StoreAvailability]: m.column_store_availability(),
 	[AllColumns.OnSale]: m.column_on_sale()

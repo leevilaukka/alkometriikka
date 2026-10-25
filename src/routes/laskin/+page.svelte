@@ -129,6 +129,7 @@
 		[DrunkColumns.EstimatedPromille, m.column_estimated_promille()],
 		[DrunkColumns.PromillePerEuro, m.calculator_promille_per_euro()],
 		[DrunkColumns.Servings, m.column_servings()],
+		[DrunkColumns.EuroPerServing, m.calculator_price_per_serving()],
 		[DrunkColumns.EuroPerLiterAlcohol, m.calculator_price_per_liter_alcohol()]
 	] as const;
 
@@ -148,7 +149,7 @@
 	<title>{generateTitle(m.nav_calculator())}</title>
 </svelte:head>
 
-<main class="mx-auto flex w-full max-w-5xl flex-col gap-6 p-4 md:p-8">
+<div class="mx-auto flex w-full max-w-5xl flex-col gap-6 p-4 md:p-8">
 	<header class="max-w-2xl">
 		<h1 class="text-2xl font-bold md:text-3xl">{m.nav_calculator()}</h1>
 		<p class="mt-2 text-secondary">{m.calculator_intro()}</p>
@@ -288,4 +289,4 @@
 			</p>
 		{/if}
 	</section>
-</main>
+</div>

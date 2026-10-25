@@ -33,9 +33,11 @@ working copies from it, so it is effectively the database.
 /                      404.html (SPA shell), index.html (front page stub), _app/ (JS/CSS),
                        service-worker.js,
                        static/ files, CNAME, .nojekyll
-data.json              dataset (fetchData)
+data.json              dataset: products in the selection (fetchData)
+data-removed.json      dataset: products removed from the selection (fetchData)
 hashes.json            change-detection hashes (fetchData)
 availability.json      stores and stock (fetchData)
+stock/                 stock history: state, per-product counts, per-store arrivals (fetchData)
 og-images.json         product OG manifest (fetchData)
 og-categories.json     category OG manifest (fetchData)
 sitemap.xml            (fetchData)
@@ -46,7 +48,7 @@ rss/                   per-product and per-category feeds (fetchData)
 tuotteet/              product stubs (build + fetchData)
 tuotteet-manifest.json prerender keys (build + fetchData)
 kategoriat/            category stubs (build + fetchData)
-myymalat/, laskin/, tilastot/, kompassi/, hinnanmuutokset/   static stubs (build + fetchData)
+myymalat/, laskin/, tilastot/, kompassi/, hinnanmuutokset/, listat/, seuratut/   static stubs (build + fetchData)
 daily/                 manifests, index.html stub, archive/ (fetchData + archiveDaily)
 notices.json           site notices (build, from static/)
 ```
@@ -65,10 +67,10 @@ because `build.yml` tests before deploying.
 Deploys a new version of the app. The site code changes, but the data must not.
 
 1. Run the full test suite.
-2. **Seed** `static/` with the deployed `data.json`, `availability.json`, `og-images.json` and
+2. **Seed** `static/` with the deployed `data.json`, `data-removed.json`, `availability.json`, `og-images.json` and
    `og-categories.json`, so the build copies them into `build/`.
 3. `vite build` with `BASE_PATH=''`, then minify the vendored `auto-events.js` in the output.
-4. **Prerender gate**: compare `data.json`, `404.html` and `og-images.json` in `build/` with the
+4. **Prerender gate**: compare `data.json`, `data-removed.json`, `404.html` and `og-images.json` in `build/` with the
    deployed ones. If all three are byte-identical, product pages don't need regenerating.
 5. **Restore** the deployed `tuotteet/`, `tuotteet-manifest.json` and `kategoriat/` into `build/`,
    so unchanged product pages carry over and the incremental prerender can skip them.
@@ -78,7 +80,7 @@ Deploys a new version of the app. The site code changes, but the data must not.
 7. Prerender product and category pages if the gate said so. Always prerender static and store
    pages (cheap, and they embed the new page shell).
 8. Delete everything except `build/`, move `build/*` to the root.
-9. Restore `hashes.json`, `sitemap.xml`, `rss.xml`, `feed.json` and `rss/` from `gh-pages`.
+9. Restore `hashes.json`, `sitemap.xml`, `rss.xml`, `feed.json`, `rss/` and `stock/` from `gh-pages`.
 10. Write `CNAME` (`alkometriikka.fi`) and `.nojekyll`.
 11. Commit to a fresh `gh-pages` branch and **force-push** it.
 12. Purge `notices.json` and `service-worker.js` from Cloudflare, so a notice edited on `main`
@@ -105,12 +107,12 @@ flowchart LR
 
 1. Run `tests/data` and `tests/alko`. The sync rewrites the dataset the whole site reads, so it
    never runs with lifecycle or schema code that fails its tests.
-2. Seed `data.json`, `hashes.json` and the `labels.*.json` value translations from `gh-pages`.
+2. Seed `data.json`, `data-removed.json`, `hashes.json` and the `labels.*.json` value translations from `gh-pages`.
 3. `scripts/data/rehash.ts` via the `rehash-dataset` action.
 4. Run the sync up to 3 times, 60 s apart. Exit code 3 (safeguards rejected the data) fails
    immediately without retrying. The **force** input sets `ALKO_SYNC_FORCE=1`. Each attempt
    appends its outcome to `sync-report.ndjson`, uploaded as an artifact even when the job fails.
-5. Upload `data.json`, `hashes.json` and `availability.json` as artifacts.
+5. Upload `data.json`, `data-removed.json`, `hashes.json` and `availability.json` as artifacts.
 6. Build the English and Swedish value translations (`scripts/i18n/labels.ts`,
    `continue-on-error`) and upload them. On a failure the seeded files are uploaded unchanged, so
    the site keeps the previous translations ([Languages](i18n.md#the-label-files)).
@@ -129,13 +131,15 @@ translations for the English and Swedish aggregate feeds.
 3. Seed `daily/` from `gh-pages`. Fails if it's missing.
 4. `bun run daily` (bake and archive).
 5. Render today's Daily OG card and stub (best effort).
-6. Copy the OG manifests in, prerender product and category pages incrementally against the
+6. Update the [stock history](data/stock-history.md) in `../gh-pages/stock` against the deployed
+   (previous) `availability.json` (best effort).
+7. Copy the OG manifests in, prerender product and category pages incrementally against the
    deployed `404.html`, copy the data and feed files in, prerender static and store pages, and
    replace `daily/` and `rss/`.
-7. Commit "Update price list and static product pages [skip ci]" and push (a normal push, not a
+8. Commit "Update price list and static product pages [skip ci]" and push (a normal push, not a
    force-push).
-8. Purge `data.json`, `availability.json`, the value translations and the aggregate feeds from
-   Cloudflare. This runs
+9. Purge `data.json`, `data-removed.json`, `availability.json`, the value translations and the
+   aggregate feeds from Cloudflare. This runs
    only after the push, so a request can't re-cache the old files between the purge and the new
    files going live.
 
@@ -144,7 +148,7 @@ translations for the English and Swedish aggregate feeds.
 Runs just after midnight Finnish time in both summer (21:15 UTC) and winter (22:15 UTC); the run
 that lands before midnight is a harmless no-op.
 
-1. Seed `data.json`, `hashes.json` and `daily/` from `gh-pages`, rehash.
+1. Seed `data.json`, `data-removed.json`, `hashes.json` and `daily/` from `gh-pages`, rehash.
 2. Run the Daily and site tests.
 3. `bun run daily`: bakes any missing future days and archives yesterday.
 4. `bun run backup:daily` to R2. Exit code 3 (the archive shrank compared to the backup) fails the

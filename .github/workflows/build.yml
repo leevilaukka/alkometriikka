@@ -32,6 +32,9 @@ jobs:
           if git show origin/gh-pages:data.json > /tmp/data.json 2>/dev/null; then
             mv /tmp/data.json static/data.json
           fi
+          if git show origin/gh-pages:data-removed.json > /tmp/data-removed.json 2>/dev/null; then
+            mv /tmp/data-removed.json static/data-removed.json
+          fi
           if git show origin/gh-pages:availability.json > /tmp/availability.json 2>/dev/null; then
             mv /tmp/availability.json static/availability.json
           fi
@@ -47,6 +50,8 @@ jobs:
           BASE_PATH: ''
         run: |
           bun run vite build
+          # Each route's chunk list, deployed for stubs re-rendered later by fetchData.yml
+          bun run scripts/site/route-preloads.ts --out build
           # static/ is copied as-is, so minify the vendored analytics script in the output
           bun build static/scripts/simpleanalytics/auto-events.js --minify \
             --outfile build/scripts/simpleanalytics/auto-events.js
@@ -56,7 +61,7 @@ jobs:
         run: |
           set -e
           changed=false
-          for f in data.json 404.html og-images.json; do
+          for f in data.json data-removed.json 404.html og-images.json; do
             if git show "origin/gh-pages:$f" 2>/dev/null | cmp -s - "build/$f"; then
               echo "· $f unchanged"
             else
@@ -170,6 +175,11 @@ jobs:
         run: |
           git archive origin/gh-pages rss 2>/dev/null | tar -x - || true
 
+      # Built up run by run (scripts/data/stock-history.ts); dropping it would restart the history
+      - name: Restore stock history from existing gh-pages
+        run: |
+          git archive origin/gh-pages stock 2>/dev/null | tar -x - || true
+
       - name: Create CNAME and .nojekyll file
         run: |
           echo "alkometriikka.fi" > CNAME
@@ -185,7 +195,7 @@ jobs:
           # Runtime datasets are gitignored, so `git add .` skips them. Force-add
           # them so the force-push to gh-pages preserves the data deployed by
           # fetchData.yml instead of deleting it on every site build.
-          for f in data.json hashes.json availability.json sitemap.xml rss.xml feed.json rss og-images.json og-categories.json daily tuotteet-manifest.json labels.en.json labels.sv.json rss.en.xml rss.sv.xml feed.en.json feed.sv.json; do
+          for f in data.json data-removed.json hashes.json availability.json sitemap.xml rss.xml feed.json rss stock og-images.json og-categories.json daily tuotteet-manifest.json labels.en.json labels.sv.json rss.en.xml rss.sv.xml feed.en.json feed.sv.json; do
             if [ -e "$f" ]; then git add -f "$f"; fi
           done
           git commit -m "Deploy to GitHub Pages [skip ci]" || echo "No changes to commit"

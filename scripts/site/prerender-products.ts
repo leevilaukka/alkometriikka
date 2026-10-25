@@ -2,7 +2,11 @@ import { mkdir, readdir, rm } from 'node:fs/promises';
 import path from 'node:path';
 import Bun, { CryptoHasher } from 'bun';
 import { getSaleInfo, toISODateInTimeZone } from '../../src/lib/utils/catalog/sales.ts';
-import { calculatePricePerLitre } from '../../src/lib/utils/catalog/alko.ts';
+import {
+	calculatePricePerLitre,
+	displayImageUrl,
+	generateImageUrl
+} from '../../src/lib/utils/catalog/alko.ts';
 import { ogImageUrl } from '../og/og';
 import {
 	CATEGORY_OG_MANIFEST_FILE,
@@ -21,18 +25,33 @@ import {
 	type CategoryNode
 } from '../../src/lib/utils/catalog/categories.ts';
 import { readOption } from '../lib/cli';
+import { Kaljakori } from '../../src/lib/alko/index.ts';
+import { parseDataset } from '../../src/lib/utils/catalog/dataset.ts';
+import { AllColumns } from '../../src/lib/utils/constants/columns';
 import type { StoredDataset, StoredProduct } from '../../src/lib/utils/catalog/dataset.ts';
 import { mapPool } from '../lib/async';
+import { readStoredDataset } from '../lib/stored-dataset';
 import { escapeHtml } from '../lib/html';
-import { breadcrumbJsonLd, breadcrumbNav, renderStub, SITE_URL, type StubPage } from '../lib/stub';
+import {
+	breadcrumbJsonLd,
+	breadcrumbNav,
+	readRoutePreloads,
+	renderStub,
+	SITE_URL,
+	type RouteAssets,
+	type RoutePreloads,
+	type StubPage
+} from '../lib/stub';
 import { productDescription } from '../../src/lib/utils/app/seo.ts';
 import {
 	alcoholMetrics,
 	categoryGroups,
 	categoryRanks,
 	priceHistorySummary,
+	sizeVariantGroups,
 	type CategoryProduct,
-	type CategoryRank
+	type CategoryRank,
+	type VariantGroup
 } from './product-insights';
 
 type PrerenderManifestEntry = {
@@ -45,7 +64,7 @@ type PrerenderManifest = Record<string, PrerenderManifestEntry>;
 // Bump when the page rendering logic (productHtml, minifyHtml, the SEO
 // template, ...) changes in a way that can alter existing pages without the
 // template or product data changing, forcing a full re-render.
-const RENDER_VERSION = 8;
+const RENDER_VERSION = 12;
 
 function sha256Hex(value: string): string {
 	const hasher = new CryptoHasher('sha256');
@@ -56,9 +75,9 @@ function sha256Hex(value: string): string {
 // Content-addressable key for a product page. Every input that can change the
 // rendered HTML — the rendering logic version, the schema, the raw product
 // data, the page template (new JS/CSS hashes invalidate every page) and the
-// product's OG image key, category trail and category rank, plus today's date
-// for products with a campaign (their sale state is date-dependent) — is hashed,
-// so unchanged pages can be skipped.
+// product's OG image key, category trail, category rank and size variant group,
+// plus today's date for products with a campaign (their sale state is
+// date-dependent) — is hashed, so unchanged pages can be skipped.
 function productKey(
 	schema: readonly string[],
 	product: StoredProduct,
@@ -66,7 +85,8 @@ function productKey(
 	ogKey: string | null,
 	categoryTrail: CategoryNode[],
 	saleDay: string | null,
-	rank: CategoryRank | null
+	rank: CategoryRank | null,
+	variantGroup: VariantGroup | null
 ): string {
 	return sha256Hex(
 		JSON.stringify([
@@ -79,7 +99,8 @@ function productKey(
 			ogKey,
 			categoryTrail.map((node) => [node.name, node.path]),
 			saleDay,
-			rank
+			rank,
+			variantGroup
 		])
 	);
 }
@@ -220,13 +241,30 @@ function priceHistoryHtml(history: StoredProduct['priceHistory']): string {
 	return `<section><h2>Hintahistoria</h2>${definitionList(entries)}</section>`;
 }
 
+const productUrl = (id: string) => `${SITE_URL}/tuotteet/${encodeURIComponent(id)}/`;
+
+/** Links to the product's other sizes, as the app's "Pakkauskoko" picker shows them */
+function sizesHtml(group: VariantGroup, currentId: string): string {
+	const others = group.members.filter((member) => member.id !== currentId);
+	return `<section><h2>Muut koot</h2><ul>${others
+		.map(
+			(member) =>
+				`<li><a href="/tuotteet/${escapeHtml(encodeURIComponent(member.id))}/">${escapeHtml(
+					[member.name, formatNumber(member.volume, 'l')].filter(Boolean).join(' ')
+				)}</a></li>`
+		)
+		.join('')}</ul></section>`;
+}
+
 function productHtml(
 	template: string,
+	route: RouteAssets | undefined,
 	schema: string[],
 	product: StoredProduct,
 	ogImageKey: string | null,
 	categoryTrail: CategoryNode[],
-	rank: CategoryRank | null
+	rank: CategoryRank | null,
+	variantGroup: VariantGroup | null
 ): { html: string; id: string } {
 	const fields = Object.fromEntries(schema.map((column, index) => [column, product.values[index]]));
 	const id = asText(fields.Numero);
@@ -239,12 +277,12 @@ function productHtml(
 	const descriptionValue = asText(fields.Luonnehdinta);
 	const title = `${name} - Alkometriikka`;
 	const url = `${SITE_URL}/tuotteet/${encodeURIComponent(id)}/`;
-	const image = `https://images.alko.fi/images/cs_srgb,f_auto,t_medium/cdn/${encodeURIComponent(id)}/kuva.jpg`;
-	const ogImage = ogImageKey ? ogImageUrl(ogImageKey) : image;
-	const imageVariants = [
-		image,
-		`https://images.alko.fi/images/cs_srgb,f_auto,t_products/cdn/${encodeURIComponent(id)}/kuva.jpg`
-	];
+	// The app's own URL, so the preload below matches what the product page requests
+	const image = displayImageUrl(id, 'medium');
+	// Its AVIF isn't read by every crawler, so metadata and the fallback's <img> use JPEG/WebP
+	const shareImage = generateImageUrl(id, 'medium');
+	const ogImage = ogImageKey ? ogImageUrl(ogImageKey) : shareImage;
+	const imageVariants = [shareImage, generateImageUrl(id, 'products')];
 	const price = parsePrice(fields.Hinta, id);
 	const keywords = [name, manufacturer, type, subtype, descriptionValue].filter(Boolean).join(', ');
 	const category = [type, subtype].filter(Boolean).join(' / ');
@@ -299,7 +337,6 @@ function productHtml(
 		'@context': 'https://schema.org',
 		'@type': 'Product',
 		'@id': url,
-		inLanguage: 'fi-FI',
 		name,
 		sku: id,
 		url,
@@ -309,10 +346,30 @@ function productHtml(
 		...(manufacturer ? { brand: { '@type': 'Brand', name: manufacturer } } : {}),
 		...(asText(fields.Valmistusmaa) ? { countryOfOrigin: asText(fields.Valmistusmaa) } : {}),
 		...(volume !== null ? { size: `${volume} L` } : {}),
+		...(variantGroup?.variesBy.includes('material') && asText(fields.Pakkaustyyppi)
+			? { material: asText(fields.Pakkaustyyppi) }
+			: {}),
 		...(category ? { category } : {}),
 		...(additionalProperties.length ? { additionalProperty: additionalProperties } : {}),
 		...(!product.meta?.removedFromSelection
 			? { sameAs: `https://www.alko.fi/tuotteet/${id}` }
+			: {}),
+		...(variantGroup
+			? {
+					inProductGroupWithID: variantGroup.id,
+					isVariantOf: {
+						'@type': 'ProductGroup',
+						'@id': `${productUrl(variantGroup.id)}#koot`,
+						name: variantGroup.name,
+						productGroupID: variantGroup.id,
+						variesBy: variantGroup.variesBy.map((property) => `https://schema.org/${property}`),
+						hasVariant: variantGroup.members.map((member) => ({
+							'@type': 'Product',
+							'@id': productUrl(member.id),
+							url: productUrl(member.id)
+						}))
+					}
+				}
 			: {}),
 		offers: {
 			'@type': 'Offer',
@@ -325,7 +382,7 @@ function productHtml(
 						...(sale.campaignEnd ? { priceValidUntil: sale.campaignEnd } : {})
 					}
 				: {}),
-			...(pricePerLitre || sale
+			...((price !== null && volume !== null) || sale
 				? {
 						priceSpecification: [
 							...(sale
@@ -338,16 +395,20 @@ function productHtml(
 										}
 									]
 								: []),
-							...(pricePerLitre
+							// Unit pricing: `price` is the active price of the whole bottle (or pack) and
+							// Google derives the litre price from the volume. A litre price in `price`
+							// reads as a second active price and shows up as a "from x to y" range.
+							...(price !== null && volume !== null
 								? [
 										{
 											'@type': 'UnitPriceSpecification',
-											price: pricePerLitre, // The strict per-litre price directly from the API
+											price,
 											priceCurrency: 'EUR',
 											referenceQuantity: {
 												'@type': 'QuantitativeValue',
-												value: 1,
-												unitCode: 'LTR'
+												value: volume,
+												unitCode: 'LTR',
+												valueReference: { '@type': 'QuantitativeValue', value: 1, unitCode: 'LTR' }
 											}
 										}
 									]
@@ -404,24 +465,37 @@ function productHtml(
 					)}" href="${escapeHtml(`${SITE_URL}/rss/${encodeURIComponent(id)}.xml`)}" />`
 				]
 			: [],
-		ogExtra:
-			price !== null
+		ogExtra: [
+			...(price !== null
 				? [
 						`\t<meta property="product:price:amount" content="${price}" />`,
 						`\t<meta property="product:price:currency" content="EUR" />`
 					]
-				: [],
+				: []),
+			...(manufacturer
+				? [`\t<meta property="product:brand" content="${escapeHtml(manufacturer)}" />`]
+				: []),
+			`\t<meta property="product:availability" content="${product.meta?.removedFromSelection ? 'discontinued' : 'in stock'}" />`,
+			`\t<meta property="product:condition" content="new" />`,
+			`\t<meta property="product:retailer_item_id" content="${escapeHtml(id)}" />`
+		],
+		preloadImage: image,
+		preloadImageType: 'image/avif',
+		route,
 		jsonLd: [jsonLd, breadcrumbList],
+		// A one-product data.json, which the product page shows until the full price list loads
+		data: { schema, products: { [id]: product } } satisfies StoredDataset,
 		fallbackName: 'product',
 		fallbackHtml: `\t\t${breadcrumbNav(categoryTrail)}
 \t\t<header>
 \t\t\t<h1>${escapeHtml(name)}</h1>
 \t\t\t${manufacturer ? `<p>${escapeHtml(manufacturer)}</p>` : ''}
 \t\t</header>
-\t\t<img src="${escapeHtml(image)}" alt="${escapeHtml(name)}" width="320" height="384" />
+\t\t<picture><source type="image/avif" srcset="${escapeHtml(image)}" /><img src="${escapeHtml(shareImage)}" alt="${escapeHtml(name)}" width="320" height="384" crossorigin="anonymous" referrerpolicy="no-referrer" /></picture>
 \t\t${descriptionValue ? `<p>${escapeHtml(descriptionValue)}</p>` : ''}
 \t\t${definitionList(facts)}
 \t\t${rank ? rankHtml(rank) : ''}
+\t\t${variantGroup ? sizesHtml(variantGroup, id) : ''}
 \t\t${priceHistoryHtml(product.priceHistory)}`
 	};
 	return { html: renderStub(template, page), id };
@@ -452,6 +526,7 @@ function categoryProduct(schema: string[], product: StoredProduct): CategoryProd
 /** Renders a category page, or the /kategoriat/ index when `trail` is empty. */
 function categoryHtml(
 	template: string,
+	route: RouteAssets | undefined,
 	tree: CategoryNode[],
 	trail: CategoryNode[],
 	products: CategoryProduct[],
@@ -466,8 +541,6 @@ function categoryHtml(
 	const ogImage = ogKey ? categoryOgUrl(ogKey) : `${SITE_URL}/images/og_image.png`;
 	const ogImageAlt = ogKey ? `${name} – Alkometriikka` : 'Alkometriikka logo';
 	const links = node ? (trail.length > 1 ? [] : node.children) : tree;
-	const productUrl = (product: CategoryProduct) =>
-		`${SITE_URL}/tuotteet/${encodeURIComponent(product.id)}/`;
 
 	const breadcrumbList = breadcrumbJsonLd([
 		...(node ? [] : [{ name: 'Kategoriat', url }]),
@@ -491,7 +564,7 @@ function categoryHtml(
 							'@type': 'ListItem',
 							position: index + 1,
 							name: product.name,
-							url: productUrl(product)
+							url: productUrl(product.id)
 						}))
 					}
 				}
@@ -532,6 +605,7 @@ function categoryHtml(
 					)}" href="${escapeHtml(`${SITE_URL}${categoryFeedPath(trail[0].slug, trail[1]?.slug)}.xml`)}" />`
 				]
 			: [],
+		route,
 		jsonLd: [collectionPage, breadcrumbList],
 		fallbackName: 'category',
 		fallbackHtml: `\t\t${breadcrumbNav(trail.slice(0, -1))}
@@ -543,10 +617,36 @@ function categoryHtml(
 	return renderStub(template, page);
 }
 
+/**
+ * Size variant groups of the products still in the selection, from the same
+ * matcher the app's size picker uses. Removed products can't be bought, so
+ * they're left out like the picker leaves them out.
+ */
+function productVariantGroups(dataset: StoredDataset): Map<string, VariantGroup> {
+	const { table } = parseDataset(JSON.stringify(dataset));
+	const catalog = new Kaljakori(table, { weight: null, gender: null }, { stores: {}, product: {} });
+	const items = new Map(
+		catalog.data
+			.filter((item) => !item[AllColumns.RemovedFromSelection])
+			.map((item) => [item[AllColumns.Number], item])
+	);
+	return sizeVariantGroups(
+		[...items.values()].map((item) => ({
+			id: item[AllColumns.Number],
+			name: asText(item[AllColumns.Name]),
+			volume: asNumber(item[AllColumns.BottleSize]),
+			packaging: asText(item[AllColumns.PackagingType])
+		})),
+		(id) =>
+			catalog.findDifferentSizesOfProduct(items.get(id)!).map((item) => item[AllColumns.Number])
+	);
+}
+
 /** Category pages are few and cheap, so they're fully regenerated every run. */
 async function renderCategoryPages(
 	outputPath: string,
 	template: string,
+	preloads: RoutePreloads,
 	tree: CategoryNode[],
 	pages: ReturnType<typeof categoryGroups>,
 	ogManifest: CategoryOgManifest
@@ -560,7 +660,14 @@ async function renderCategoryPages(
 		const pagePath = page.trail.at(-1)?.path ?? `${CATEGORY_BASE_PATH}/`;
 		await Bun.write(
 			path.join(directory, 'index.html'),
-			categoryHtml(template, tree, page.trail, page.products, ogManifest[pagePath])
+			categoryHtml(
+				template,
+				preloads[page.trail.length ? '/kategoriat/[type]/[[subtype]]' : '/kategoriat'],
+				tree,
+				page.trail,
+				page.products,
+				ogManifest[pagePath]
+			)
 		);
 	}
 	return pages.length;
@@ -580,7 +687,7 @@ async function main() {
 	}
 
 	const [dataset, template, ogManifest] = await Promise.all([
-		Bun.file(options.dataPath).json() as Promise<StoredDataset>,
+		readStoredDataset<StoredDataset>(options.dataPath).then((dataset) => dataset ?? {}),
 		Bun.file(options.templatePath).text(),
 		Bun.file(options.ogManifestPath)
 			.json()
@@ -604,7 +711,10 @@ async function main() {
 
 	const previous = await readManifest(options.manifestPath);
 	const manifest: PrerenderManifest = {};
-	const templateFingerprint = sha256Hex(template);
+	const preloads = await readRoutePreloads(options.outputPath);
+	const productRoute = preloads['/tuotteet/[...id]'];
+	// The route's code is part of the page shell, so a new build re-renders every page
+	const templateFingerprint = sha256Hex(template + JSON.stringify(productRoute ?? null));
 	const keptPageIds = new Set<string>();
 	const generatedIds = new Set<string>();
 
@@ -633,6 +743,7 @@ async function main() {
 			.filter((product) => product !== null)
 	);
 	const ranks = categoryRanks(groups);
+	const variantGroups = productVariantGroups(dataset);
 
 	let count = 0;
 	let skipped = 0;
@@ -658,7 +769,8 @@ async function main() {
 			ogKey,
 			categoryTrail,
 			hasCampaign ? today : null,
-			productRank
+			productRank,
+			variantGroups.get(productId) ?? null
 		);
 		const previousEntry = previous[productId];
 		const previousPageId = previousEntry?.pageId;
@@ -676,7 +788,16 @@ async function main() {
 			skipped += 1;
 			return;
 		}
-		const rendered = productHtml(template, schema, product, ogKey, categoryTrail, productRank);
+		const rendered = productHtml(
+			template,
+			productRoute,
+			schema,
+			product,
+			ogKey,
+			categoryTrail,
+			productRank,
+			variantGroups.get(productId) ?? null
+		);
 		if (generatedIds.has(rendered.id)) throw new Error(`Duplicate product id: ${rendered.id}`);
 		generatedIds.add(rendered.id);
 		const directory = path.join(productsPath, rendered.id);
@@ -716,6 +837,7 @@ async function main() {
 	const categoryPages = await renderCategoryPages(
 		options.outputPath,
 		template,
+		preloads,
 		categoryTree,
 		groups,
 		await Bun.file(options.ogCategoriesManifestPath)

@@ -1,9 +1,24 @@
+<script lang="ts" module>
+	/**
+	 * An option and whether it's selected. A class with one reactive field rather than a deep
+	 * `$state` list, which wraps every option (each product name, for the name filter) in a proxy
+	 * of its own: tens of megabytes, built again whenever the options change.
+	 */
+	class ListItem {
+		readonly value: string;
+		selected = $state(false);
+		constructor(value: string, selected: boolean) {
+			this.value = value;
+			this.selected = selected;
+		}
+	}
+</script>
+
 <script lang="ts">
 	import { components } from '$lib/utils/ui/styles';
 	import SvelteVirtualList from '@humanspeak/svelte-virtual-list';
 	import { twMerge } from 'tailwind-merge';
 	import Popup from '../widgets/Popup.svelte';
-	import { getRandom } from '$lib/utils/app/share';
 	import { isSafari } from '$lib/global.svelte';
 	import { filterAnnotationsToFilter } from '$lib/utils/constants/display';
 	import Icon from '../widgets/Icon.svelte';
@@ -51,25 +66,22 @@
 		return values.sort((a, b) => labelOf(a).localeCompare(labelOf(b), intlLocale));
 	});
 
-	const inputId = 'stringinput-' + getRandom();
+	// Stable across SSR and hydration, unlike a random id
+	const inputId = $props.id();
+	const labelId = `${inputId}-label`;
 
-	type ListItem = {
-		value: string;
-		selected: boolean;
-	};
-
-	let list = $state<ListItem[]>(
-		untrack(() => strOptions.map((option) => ({ value: option, selected: value.includes(option) })))
+	let list = $state.raw<ListItem[]>(
+		untrack(() => strOptions.map((option) => new ListItem(option, value.includes(option))))
 	);
 
 	$effect(() => {
-		const set = new Set(value).difference(new Set(defaultValue));
-		modified = !!set.size;
+		const defaults = new Set(defaultValue);
+		modified = [...new Set(value)].some((v) => !defaults.has(v));
 	});
 
 	$effect(() => {
 		if (!value) return;
-		if (value.length === 0) list = strOptions.map((option) => ({ value: option, selected: false }));
+		if (value.length === 0) list = strOptions.map((option) => new ListItem(option, false));
 	});
 
 	$effect(() => {
@@ -80,7 +92,7 @@
 			if (options.length === list.length && options.every((option, i) => list[i].value === option))
 				return;
 			const selected = new Set(value ?? []);
-			list = options.map((option) => ({ value: option, selected: selected.has(option) }));
+			list = options.map((option) => new ListItem(option, selected.has(option)));
 		});
 	});
 
@@ -191,15 +203,19 @@
 			/>
 		</label>
 	{:else}
-		<label for={inputId}>{label}</label>
+		<label id={labelId} for={inputId}>{label}</label>
 		<Popup
 			class={twMerge('gap-4 p-4', $isSafari && 'h-auto')}
 			onOpen={() => (isOpen = true)}
 			onClose={() => (isOpen = false)}
 		>
 			{#snippet renderButton(dialogElement: HTMLDialogElement)}
+				<!-- Named by the filter's label followed by the current selection -->
 				<button
+					id={inputId}
 					{name}
+					aria-haspopup="dialog"
+					aria-labelledby="{labelId} {inputId}"
 					class={twMerge(components.button(), 'w-full justify-start')}
 					onclick={() => dialogElement.showModal()}
 					title={value &&
@@ -230,7 +246,7 @@
 					<div class="order-1 flex flex-row flex-wrap gap-4">
 						<button
 							onclick={() => {
-								list = strOptions.map((option) => ({ value: option, selected: false }));
+								list = strOptions.map((option) => new ListItem(option, false));
 								value = list.filter((option) => option.selected).map((option) => option.value);
 							}}
 							class={twMerge(components.button({ type: 'negative' }))}
@@ -260,6 +276,7 @@
 						{/if}
 						<span
 							class="my-auto ml-auto flex flex-row gap-2 text-sm text-gray-500 dark:text-gray-400"
+							aria-live="polite"
 						>
 							{m.filter_selected_of({
 								selected: list.filter((option) => option.selected).length,
@@ -268,9 +285,10 @@
 						</span>
 					</div>
 					<input
-						type="text"
+						type="search"
 						bind:value={query}
 						placeholder={m.common_search_placeholder()}
+						aria-label={m.common_search_label()}
 						class={twMerge(components.input(), 'w-full')}
 					/>
 					<div
@@ -350,15 +368,10 @@
 										</div>
 									{:else}
 										{@const item = row.item}
-										<button
-											onclick={() => {
-												item.selected = !item.selected;
-												keepOpen(row.parents);
-												updateValue();
-											}}
+										<label
 											class={twMerge(
 												components.button(),
-												'relative h-7 w-full rounded-none border-none py-0',
+												'relative h-7 w-full cursor-pointer rounded-none border-none py-0',
 												groups && 'pl-[calc(var(--depth)*(1em+0.5rem)+0.5rem)]',
 												row.striped && 'bg-gray-200 dark:bg-zinc-900',
 												item.selected ? 'font-bold' : ''
@@ -373,12 +386,16 @@
 											</span>
 											<input
 												type="checkbox"
-												bind:checked={item.selected}
-												class="ml-auto"
-												readonly
+												checked={item.selected}
+												onchange={(e) => {
+													item.selected = e.currentTarget.checked;
+													keepOpen(row.parents);
+													updateValue();
+												}}
+												class="ml-auto cursor-pointer"
 											/>
 											{#if row.divider}{@render divider(row.striped)}{/if}
-										</button>
+										</label>
 									{/if}
 								{/snippet}
 							</SvelteVirtualList>

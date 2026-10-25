@@ -3,6 +3,7 @@
 	import { AllColumns } from '$lib/utils/constants/columns';
 	import { formatValue } from '$lib/utils/format/format';
 	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
+	import { prefetchProductImage } from '$lib/utils/app/imagePrefetch';
 	import type { PriceListItem } from '$lib/types';
 	import type { SizeOption } from '$lib/utils/catalog/filters';
 	import Icon from '../widgets/Icon.svelte';
@@ -44,6 +45,10 @@
 	function handleToggle() {
 		if (detailsEl?.open) {
 			sendAnalyticsEvent('view_sizes', { product_number: product[AllColumns.Number] });
+			// Opening the list signals a pick is near, so the other sizes' photos start downloading
+			for (const size of sizes) {
+				if (!size.isCurrent) prefetchProductImage(size.product[AllColumns.Number]);
+			}
 		}
 	}
 </script>

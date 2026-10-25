@@ -2,6 +2,7 @@ import Bun from 'bun';
 import { mkdir, readdir, rm } from 'node:fs/promises';
 import path from 'node:path';
 import type { MigratedData } from '../data/types';
+import { readStoredDataset } from '../lib/stored-dataset';
 import { DEV } from '../data/constants';
 import { ogImageUrl } from '../og/og';
 import type { StoredProduct } from '../../src/lib/utils/catalog/dataset';
@@ -491,11 +492,11 @@ async function writeAggregateFeeds(
 }
 
 async function main() {
-	const dataFile = Bun.file(DEV ? './static/data.json' : './data.json');
+	const dataPath = DEV ? './static/data.json' : './data.json';
 	const ogManifestFile = Bun.file(DEV ? './static/og-images.json' : './og-images.json');
 
 	const [{ schema, metadata, products }, ogManifest] = (await Promise.all([
-		dataFile.json(),
+		readStoredDataset<MigratedData>(dataPath).then((dataset) => dataset ?? {}),
 		ogManifestFile
 			.json()
 			.then((value) => value as Record<string, string>)
@@ -503,10 +504,10 @@ async function main() {
 	])) as [MigratedData, Record<string, string>];
 
 	if (!Array.isArray(schema) || !schema.every((column) => typeof column === 'string')) {
-		throw new Error(`Invalid schema in ${dataFile.name}`);
+		throw new Error(`Invalid schema in ${dataPath}`);
 	}
 	if (!products || typeof products !== 'object') {
-		throw new Error(`No products found in ${dataFile.name}`);
+		throw new Error(`No products found in ${dataPath}`);
 	}
 
 	const byProduct = collectPerProductItems(schema, products, ogManifest);

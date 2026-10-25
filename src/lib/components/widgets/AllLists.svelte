@@ -8,6 +8,7 @@
 	import type { ListObj } from '$lib/types';
 	import { isSimilarString } from '$lib/utils/catalog/search';
 	import { handleShare } from '$lib/utils/app/share';
+	import { showToast } from '$lib/utils/app/toast.svelte';
 	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 	import { formatDate, formatTime } from '$lib/utils/format/format';
 	import { m } from '$lib/i18n';
@@ -41,7 +42,7 @@
 				return useSearch && $searchQuery ? isSimilarString(list.name, $searchQuery) : true;
 			}) as list}
 				<div
-					class="relative flex items-center justify-between gap-2 rounded border border-primary p-2 focus-within:outline-1 focus-within:outline-brand-1"
+					class="relative flex items-center justify-between gap-2 rounded border border-primary p-2 focus-within:outline-1 focus-within:outline-brand-1 hover:bg-secondary"
 				>
 					<div class="flex flex-col">
 						<a
@@ -68,6 +69,7 @@
 								onclick={async (e) => {
 									e.preventDefault();
 									e.stopPropagation();
+									const anchor = e.currentTarget;
 									const shared = await handleShare({
 										title: `Alkometriikka - ${list.name}`,
 										text: m.list_share_text({ name: list.name }),
@@ -75,10 +77,10 @@
 										includeSID: true
 									});
 
-									if (!shared) alert(m.share_link_copied());
+									if (!shared) showToast({ text: m.share_link_copied(), anchor });
 								}}
 							>
-								<Icon name="share" class="inline-block " /><span class="hidden md:block"
+								<Icon name="share" class="inline-block " /><span class="sr-only md:not-sr-only"
 									>{m.share_button()}</span
 								>
 							</button>

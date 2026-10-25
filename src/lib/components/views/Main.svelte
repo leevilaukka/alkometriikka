@@ -6,12 +6,15 @@
 <script lang="ts">
 	import SvelteVirtualList from '@humanspeak/svelte-virtual-list';
 	import { twMerge } from 'tailwind-merge';
-	import type { ColumnNames, ListObj, PriceListItem } from '$lib/types';
+	import type { ColumnNames, PriceListItem } from '$lib/types';
 	import {
 		shownColumnsToHighlight,
 		defaultSortingColumn,
 		shownSortingKeys,
-		defaultSortingOrderMap
+		defaultSortingOrderMap,
+		LIST_BUFFER_SIZE,
+		productKey,
+		LIST_ROW_ESTIMATE
 	} from '$lib/utils/constants/display';
 	import { AllColumns } from '$lib/utils/constants/columns';
 	import { ContextKeys } from '$lib/utils/constants/app';
@@ -20,12 +23,10 @@
 	import Icon from '../widgets/Icon.svelte';
 	import type { Kaljakori } from '$lib/alko';
 	import Popup from '../widgets/Popup.svelte';
-	import AllLists from '../widgets/AllLists.svelte';
-	import { addToList } from '$lib/utils/user/lists';
+	import AddToListContent from '../widgets/AddToListContent.svelte';
 	import { isLaptop, isMobile, pageBottomBar, searchQuery } from '$lib/global.svelte';
 	import Filters from '../widgets/Filters.svelte';
-	import { initFilterValues } from '$lib/utils/catalog/filters';
-	import { page } from '$app/state';
+	import { initFilterValues, sortRows } from '$lib/utils/catalog/filters';
 	import { getContext, untrack, type Snippet } from 'svelte';
 	import type { SearchParamsManager } from '$lib/utils/app/url';
 	import ProductPreview from '../widgets/ProductPreview.svelte';
@@ -111,7 +112,7 @@
 	);
 	let filterValues = $state(
 		untrack(() =>
-			initFilterValues(kaljakori, showFilters ? page.url.searchParams : undefined, showRemoved)
+			initFilterValues(kaljakori, showFilters ? searchParamsManager.params : undefined, showRemoved)
 		)
 	);
 	let activeFilters: ColumnNames[] = $state([]);
@@ -146,9 +147,8 @@
 		});
 		let temp = kaljakori.fuzzySearchAndFilter($searchQuery, filterValuesCopy);
 		if (!showRemoved) temp = temp.filter((item) => item[AllColumns.RemovedFromSelection] !== true);
-		if (!!selectedSortingColumn)
-			temp = temp.sort((a, b) => (a[selectedSortingColumn] > b[selectedSortingColumn] ? 1 : -1));
-		if (!asc) temp = temp.reverse();
+		if (!!selectedSortingColumn) temp = sortRows(temp, selectedSortingColumn, asc);
+		else if (!asc) temp = temp.reverse();
 		return temp;
 	});
 
@@ -156,12 +156,18 @@
 	// virtual list keeps the old scroll position otherwise, and once a short result list
 	// has scrolled it to the bottom it stays pinned there as more results come back.
 	let listInputs: string | undefined;
+	// Kept from scroll events, so a list already at the top isn't scrolled there again on every
+	// keystroke: scrolling reads the position, which forces a layout of the re-rendered list
+	let listAtTop = true;
+	function trackListScroll(event: Event) {
+		listAtTop = (event.target as HTMLElement).scrollTop <= 0;
+	}
 	$effect(() => {
 		const inputs = JSON.stringify(
 			[$searchQuery, $state.snapshot(filterValues), selectedSortingColumn, asc, showRemoved],
 			(_, value) => (value instanceof Set ? [...value] : value)
 		);
-		if (listInputs !== undefined && inputs !== listInputs)
+		if (listInputs !== undefined && inputs !== listInputs && !listAtTop)
 			untrack(() => listRef)?.scroll({ index: 0, smoothScroll: false });
 		listInputs = inputs;
 	});
@@ -254,7 +260,7 @@
 		</aside>
 	{/if}
 	<!-- Without the filter sidebar, match the product page's width so rows don't stretch -->
-	<main
+	<div
 		id="results"
 		tabindex="-1"
 		class={twMerge(
@@ -340,8 +346,16 @@
 		<div
 			class={twMerge('flex min-h-0 flex-auto flex-col', restoring && 'invisible')}
 			bind:this={listElement}
+			onscrollcapture={trackListScroll}
 		>
-			<SvelteVirtualList items={rows} bind:this={listRef} itemsClass={'flex flex-col gap-3'}>
+			<SvelteVirtualList
+				items={rows}
+				bind:this={listRef}
+				itemsClass={'flex flex-col gap-3'}
+				bufferSize={LIST_BUFFER_SIZE}
+				itemKey={productKey}
+				defaultEstimatedItemHeight={LIST_ROW_ESTIMATE}
+			>
 				{#snippet renderItem(item, idx: number)}
 					<ProductPreview product={item} highlight={selectedHighlight} {kaljakori} {highlightMax}>
 						{#snippet renderExtras()}
@@ -355,19 +369,17 @@
 								{#snippet renderButton(dialogElement: HTMLDialogElement)}
 									<button
 										class={twMerge(components.button({ type: 'positive' }), 'ml-auto')}
+										aria-label={m.list_add_to_or_punch_label()}
 										onclick={() => dialogElement.showModal()}
 									>
-										<span>{m.list_add_to()}</span>
+										<span>{m.list_add()}</span>
 										<Icon name="plus" />
 									</button>
 								{/snippet}
 								{#snippet renderContent(dialogElement: HTMLDialogElement)}
-									<h2 class="text-xl">{m.list_choose()}</h2>
-									<AllLists
-										action={(list: ListObj) => {
-											addToList(list, item[AllColumns.Number]);
-											dialogElement.close();
-										}}
+									<AddToListContent
+										productNumber={item[AllColumns.Number]}
+										onadded={() => dialogElement.close()}
 									/>
 								{/snippet}
 							</Popup>
@@ -379,5 +391,5 @@
 		{#if rows.length == 0}
 			<p>{m.list_no_results()}</p>
 		{/if}
-	</main>
+	</div>
 </div>

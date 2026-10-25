@@ -25,7 +25,7 @@ import {
 import { isSimilarString } from '$lib/utils/catalog/search';
 import { getSaleInfo } from '../utils/catalog/sales';
 import { ProductVariantIndex } from '../utils/catalog/productVariants';
-import { buildCategoryTree, type CategoryNode } from '../utils/catalog/categories';
+import { buildCategoryTree, categorySlug, type CategoryNode } from '../utils/catalog/categories';
 import { createSubscriber } from 'svelte/reactivity';
 import { productName } from '$lib/i18n/values';
 
@@ -106,6 +106,17 @@ function toFormattedStringValue(value: string) {
 	return first + value.slice(1);
 }
 
+/**
+ * The value of a set column with nothing in it, shared by every such product (tens of thousands
+ * of them) instead of an empty Set each. Read-only, as adding to it would add to all of them.
+ */
+class EmptySet extends Set<never> {
+	override add(): this {
+		throw new Error('The shared empty set is read-only');
+	}
+}
+const EMPTY_SET: Set<any> = new EmptySet();
+
 /** Adds a column value to a possible-values bucket: numbers, non-empty strings and set members. */
 function collectValue(bucket: Set<any>, value: unknown) {
 	if (typeof value === 'number' || (typeof value === 'string' && value.length)) bucket.add(value);
@@ -114,6 +125,24 @@ function collectValue(bucket: Set<any>, value: unknown) {
 
 function sortedSet(values: Iterable<any>) {
 	return new Set([...values].sort());
+}
+
+/**
+ * `values`, ordered as by `sortedSet`, with `extra` added in the same order. Merges rather than
+ * sorting everything again: the default sort compares values as strings, and so does this.
+ */
+function mergeSorted(values: Set<any>, extra: Set<any>) {
+	const added = [...extra].filter((value) => !values.has(value)).sort();
+	if (!added.length) return values;
+	const merged = new Set<any>();
+	let next = 0;
+	for (const value of values) {
+		const text = String(value);
+		while (next < added.length && String(added[next]) < text) merged.add(added[next++]);
+		merged.add(value);
+	}
+	while (next < added.length) merged.add(added[next++]);
+	return merged;
 }
 
 function minAndMax(values: Set<any>): [number, number] {
@@ -128,6 +157,46 @@ function minAndMax(values: Set<any>): [number, number] {
 
 /** Queries shorter than this only match values that contain them, without typo tolerance. */
 const MIN_FUZZY_QUERY_LENGTH = 4;
+
+/**
+ * Each searched value lowercased, with its words as indexes into `searchWords`, kept so a search
+ * doesn't redo that for every product on every keystroke. Names share most of their words, so a
+ * search compares each distinct word once. Keyed by the value itself, so it can't go stale.
+ */
+const searchTexts = new Map<string, { text: string; words: number[] }>();
+const searchWords: string[] = [];
+const searchWordIds = new Map<string, number>();
+
+function searchText(value: unknown) {
+	const raw = String(value);
+	let entry = searchTexts.get(raw);
+	if (!entry) {
+		const text = raw.toLowerCase();
+		// A plain array: a typed array would carry a separate buffer for each value
+		const words = text.split(' ').map((word) => {
+			let id = searchWordIds.get(word);
+			if (id === undefined) searchWordIds.set(word, (id = searchWords.push(word) - 1));
+			return id;
+		});
+		entry = { text, words };
+		searchTexts.set(raw, entry);
+	}
+	return entry;
+}
+
+/** Which of `searchWords` are similar enough to `query` to count as a typo of it. */
+function similarSearchWords(query: string) {
+	const similar = new Uint8Array(searchWords.length);
+	for (let id = 0; id < searchWords.length; id++) {
+		const word = searchWords[id];
+		// Words whose length differs too much can't pass isSimilarString (the edit
+		// distance is at least the length difference), so skip calling it
+		const longer = Math.max(word.length, query.length);
+		if (Math.abs(word.length - query.length) > Math.ceil(longer * 0.4)) continue;
+		if (isSimilarString(word, query, 0.6)) similar[id] = 1;
+	}
+	return similar;
+}
 
 const drunkColumns = Object.values(DrunkColumns);
 const storeColumns = Object.values(StoreColumns);
@@ -149,8 +218,13 @@ function isDatasetIndex(value: unknown): value is DatasetIndex {
 	);
 }
 
+/** How each dataset column is parsed, resolved once instead of per cell */
+const Kind = { History: 0, Removed: 1, String: 2, Set: 3, Other: 4, OtherZero: 5 } as const;
+
+const isMissing = (value: unknown) => value === null || value === undefined || value === '';
+
 export class Kaljakori {
-	data: PriceListItem[] = [];
+	private items: PriceListItem[] = [];
 	personalInfo: PersonalInfo;
 	filters: ColumnNames[] = [];
 	private datasetColumns: DatasetColumnNames[] = [];
@@ -158,21 +232,35 @@ export class Kaljakori {
 	/** The gender and weight the drunk values in `data` were computed with. */
 	private drunkBasis: Pick<PersonalInfo, 'gender' | 'weight'>;
 	private datasetIndex: DatasetIndex | undefined;
+	/** The index passed in, kept to check again once products are added */
+	private datasetIndexCandidate: unknown;
+	/** Whether `datasetIndex` covers the removed products too, or only the selection is loaded */
+	private datasetIndexComplete = false;
+	private columnKinds: (typeof Kind)[keyof typeof Kind][] = [];
+	private datasetColumnIndexes = {} as Record<DatasetColumnNames, number>;
 	private valueIndex: ValueIndex | undefined;
 	private productVariants: ProductVariantIndex | undefined;
 	private categoryTree: CategoryNode[] | undefined;
 	private subValuesCache: Record<string, Record<string, Set<any>>> | undefined;
+	/**
+	 * Each product's category page slugs from its raw Tyyppi and Alatyyppi, as the prerendered
+	 * category pages group them (`Alatyyppi` here has no fallback to the beer or main type).
+	 * Kept instead of the raw table, which would otherwise stay in memory just for this.
+	 */
+	private categories = new Map<string, readonly [type: string, subType: string]>();
+	private categoryTuples = new Map<string, readonly [string, string]>();
 	/** The Kaljakori this one is a subset of, or itself. Owns the store availability. */
 	private root: Kaljakori = this;
-	// Store availability can arrive after construction (see setAvailability); this
-	// lets Svelte effects and deriveds that filter by store re-run when it does.
+	// Store availability and removed products can arrive after construction (see
+	// setAvailability and addProducts); this lets Svelte effects and deriveds that
+	// read the products re-run when they do.
 	private availabilityVersion = 0;
 	private hasAvailability = false;
 	private valueIndexVersion = 0;
-	private availabilityUpdate: (() => void) | undefined;
-	private readonly availabilitySubscriber = createSubscriber((update) => {
-		this.availabilityUpdate = update;
-		return () => (this.availabilityUpdate = undefined);
+	private changeUpdate: (() => void) | undefined;
+	private readonly changeSubscriber = createSubscriber((update) => {
+		this.changeUpdate = update;
+		return () => (this.changeUpdate = undefined);
 	});
 
 	/**
@@ -197,17 +285,10 @@ export class Kaljakori {
 		this.datasetColumns = datasetColumns;
 		this.filters = [...datasetColumns, ...drunkColumns, ...storeColumns, ...calculatedColumns];
 
-		const datasetColumnIndexes = Object.fromEntries(
+		this.datasetColumnIndexes = Object.fromEntries(
 			datasetColumns.map((column, idx) => [column, idx])
 		) as Record<DatasetColumnNames, number>;
-		const indexOfTypeColumn = datasetColumns.indexOf(AllColumns.Availability);
-		const alcoholIndex = datasetColumnIndexes[AllColumns.AlcoholPercentage];
-		const priceIndex = datasetColumnIndexes[AllColumns.Price];
-		const bottleSizeIndex = datasetColumnIndexes[AllColumns.BottleSize];
-
-		// How each column is parsed, resolved once instead of per cell
-		const Kind = { History: 0, Removed: 1, String: 2, Set: 3, Other: 4, OtherZero: 5 } as const;
-		const kinds = datasetColumns.map((key) => {
+		this.columnKinds = datasetColumns.map((key) => {
 			if (key === AllColumns.History) return Kind.History;
 			if (key === AllColumns.RemovedFromSelection) return Kind.Removed;
 			if (columnsHandledAsString.includes(key as (typeof columnsHandledAsString)[number]))
@@ -218,117 +299,200 @@ export class Kaljakori {
 			return Kind.Other;
 		});
 
-		const isMissing = (value: unknown) => value === null || value === undefined || value === '';
-
-		for (let row = 0; row < rows.length; row++) {
-			const values = rows[row];
-
-			// Skip accessories ('lahja- ja juomatarvikkeet') and rows without an ABV or a price
-			if (values[indexOfTypeColumn] === 'tarvikevalikoima') continue;
-			if (isMissing(values[alcoholIndex]) || isMissing(values[priceIndex])) continue;
-
-			const item: any = {};
-
-			// Inferred sizes remain useful for display/calculations, but cannot prove
-			// that two products are different packages of the same drink.
-			const rawBottleSize = values[bottleSizeIndex];
-			if (
-				/^\d+(?:[.,]\d+)?(?:\s*l)?$/i.test(String(rawBottleSize).trim()) &&
-				toPositiveNumber(rawBottleSize) !== null
-			) {
-				this.declaredBottleSizes.add(item);
-			}
-			values[bottleSizeIndex] = resolveBottleSize(values, datasetColumnIndexes);
-
-			for (let col = 0; col < datasetColumns.length; col++) {
-				const value: unknown = values[col];
-				switch (kinds[col]) {
-					case Kind.History:
-						item[datasetColumns[col]] = Array.isArray(value) ? value : [];
-						break;
-					case Kind.Removed:
-						item[datasetColumns[col]] = Boolean(value);
-						break;
-					case Kind.String:
-						item[datasetColumns[col]] = toFormattedStringValue(String(value));
-						break;
-					case Kind.Set:
-						item[datasetColumns[col]] = new Set(
-							String(value || '')
-								.split(/[\.,]\s/)
-								.map((v) => toFormattedStringValue(v.trim()))
-								.filter((v) => v.length > 0)
-						);
-						break;
-					default:
-						if (isNumber(value)) item[datasetColumns[col]] = Number.parseFloat(String(value));
-						else if (typeof value === 'string')
-							item[datasetColumns[col]] = toFormattedStringValue(value);
-						else if (kinds[col] === Kind.OtherZero) {
-							item[datasetColumns[col]] = 0;
-							(item[MissingValues] ??= new Set()).add(datasetColumns[col]);
-						} else item[datasetColumns[col]] = '';
-				}
-			}
-
-			// Alko leaves the litre price out until a product is on sale. Only fill it in
-			// from a real size: an inferred one would make up a number.
-			if (item[AllColumns.PricePerLiter] === '' && this.declaredBottleSizes.has(item)) {
-				const perLitre = calculatePricePerLitre(
-					item[AllColumns.Price],
-					item[AllColumns.BottleSize],
-					item[AllColumns.Deposit]
-				);
-				if (perLitre !== null) {
-					item[AllColumns.PricePerLiter] = perLitre;
-					(item[MissingValues] ??= new Set()).add(AllColumns.PricePerLiter);
-				}
-			}
-
-			for (const column of calculatedColumns) {
-				if (column === AllColumns.OnSale) {
-					const sale = getSaleInfo({
-						price: item[AllColumns.Price],
-						normalPrice: item[AllColumns.NormalPrice],
-						campaignStart: item[AllColumns.CampaignStart],
-						campaignEnd: item[AllColumns.CampaignEnd]
-					});
-					item[column] = sale ? 'alennuksessa' : '';
-				} else {
-					item[column] = '';
-				}
-			}
-
-			Object.assign(item, this.computeDrunkValues(item, this.drunkBasis));
-
-			// Filled in by setAvailability from availability.json's productId -> storeId[] map
-			item[AllColumns.StoreAvailability] = new Set<string>();
-
-			// Fill "Tyyppi" with "Ei määritelty" if empty
-			if (!item[AllColumns.Type]) item[AllColumns.Type] = 'Ei määritelty';
-			// Fill "Alatyyppi" with "Oluttyyppi" or "Tyyppi" if empty
-			if (!item[AllColumns.SubType])
-				item[AllColumns.SubType] = item[AllColumns.BeerType] || item[AllColumns.Type];
-
-			this.data.push(item);
+		for (const values of rows) {
+			const item = this.parseRow(values);
+			if (!item) continue;
+			this.items.push(item);
+			this.recordCategory(values, item);
 		}
 
-		if (isDatasetIndex(index)) {
-			const valid =
-				index.columns.length === datasetColumns.length &&
-				index.columns.every((column, idx) => column === datasetColumns[idx]) &&
-				index.count === this.data.length &&
-				index.removedCount ===
-					this.data.filter((item) => item[AllColumns.RemovedFromSelection]).length;
-			if (valid) this.datasetIndex = index;
-		}
+		this.datasetIndexCandidate = index;
+		this.checkDatasetIndex();
 
 		if (availability) {
 			this.applyAvailability(availability);
 			this.hasAvailability = true;
 		}
 
-		this.data = this.sortBy(defaultSortingColumn);
+		this.items = this.sortBy(defaultSortingColumn);
+	}
+
+	/**
+	 * Every product, or a subset's products. Reading it in a Svelte effect or derived re-runs
+	 * it when products are added.
+	 */
+	get data(): PriceListItem[] {
+		this.trackChanges();
+		return this.items;
+	}
+
+	set data(items: PriceListItem[]) {
+		this.items = items;
+	}
+
+	private recordCategory(values: DatasetRow, item: PriceListItem) {
+		const indexes = this.datasetColumnIndexes;
+		const type = String(values[indexes[AllColumns.Type]] ?? '');
+		const subType = String(values[indexes[AllColumns.SubType]] ?? '');
+		const key = `${type}\u0000${subType}`;
+		let slugs = this.categoryTuples.get(key);
+		if (!slugs) this.categoryTuples.set(key, (slugs = [categorySlug(type), categorySlug(subType)]));
+		this.categories.set(item[AllColumns.Number], slugs);
+	}
+
+	/** A product's category page slugs, `[type, subType]`, see `categories` */
+	categoryOf(id: string): readonly [type: string, subType: string] | undefined {
+		return this.root.categories.get(id);
+	}
+
+	/** A dataset row as a product, or null for accessories and rows without an ABV or a price. */
+	private parseRow(values: DatasetRow): PriceListItem | null {
+		const datasetColumns = this.datasetColumns;
+		const datasetColumnIndexes = this.datasetColumnIndexes;
+		const kinds = this.columnKinds;
+		const bottleSizeIndex = datasetColumnIndexes[AllColumns.BottleSize];
+
+		// Skip accessories ('lahja- ja juomatarvikkeet') and rows without an ABV or a price
+		if (values[datasetColumnIndexes[AllColumns.Availability]] === 'tarvikevalikoima') return null;
+		if (
+			isMissing(values[datasetColumnIndexes[AllColumns.AlcoholPercentage]]) ||
+			isMissing(values[datasetColumnIndexes[AllColumns.Price]])
+		)
+			return null;
+
+		const item: any = {};
+
+		// Inferred sizes remain useful for display/calculations, but cannot prove
+		// that two products are different packages of the same drink.
+		const rawBottleSize = values[bottleSizeIndex];
+		if (
+			/^\d+(?:[.,]\d+)?(?:\s*l)?$/i.test(String(rawBottleSize).trim()) &&
+			toPositiveNumber(rawBottleSize) !== null
+		) {
+			this.declaredBottleSizes.add(item);
+		}
+		values[bottleSizeIndex] = resolveBottleSize(values, datasetColumnIndexes);
+
+		for (let col = 0; col < datasetColumns.length; col++) {
+			const value: unknown = values[col];
+			switch (kinds[col]) {
+				case Kind.History:
+					item[datasetColumns[col]] = Array.isArray(value) ? value : [];
+					break;
+				case Kind.Removed:
+					item[datasetColumns[col]] = Boolean(value);
+					break;
+				case Kind.String:
+					item[datasetColumns[col]] = toFormattedStringValue(String(value));
+					break;
+				case Kind.Set: {
+					const members = String(value || '')
+						.split(/[\.,]\s/)
+						.map((v) => toFormattedStringValue(v.trim()))
+						.filter((v) => v.length > 0);
+					item[datasetColumns[col]] = members.length ? new Set(members) : EMPTY_SET;
+					break;
+				}
+				default:
+					if (isNumber(value)) item[datasetColumns[col]] = Number.parseFloat(String(value));
+					else if (typeof value === 'string')
+						item[datasetColumns[col]] = toFormattedStringValue(value);
+					else if (kinds[col] === Kind.OtherZero) {
+						item[datasetColumns[col]] = 0;
+						(item[MissingValues] ??= new Set()).add(datasetColumns[col]);
+					} else item[datasetColumns[col]] = '';
+			}
+		}
+
+		// Alko leaves the litre price out until a product is on sale. Only fill it in
+		// from a real size: an inferred one would make up a number.
+		if (item[AllColumns.PricePerLiter] === '' && this.declaredBottleSizes.has(item)) {
+			const perLitre = calculatePricePerLitre(
+				item[AllColumns.Price],
+				item[AllColumns.BottleSize],
+				item[AllColumns.Deposit]
+			);
+			if (perLitre !== null) {
+				item[AllColumns.PricePerLiter] = perLitre;
+				(item[MissingValues] ??= new Set()).add(AllColumns.PricePerLiter);
+			}
+		}
+
+		for (const column of calculatedColumns) {
+			if (column === AllColumns.OnSale) {
+				const sale = getSaleInfo({
+					price: item[AllColumns.Price],
+					normalPrice: item[AllColumns.NormalPrice],
+					campaignStart: item[AllColumns.CampaignStart],
+					campaignEnd: item[AllColumns.CampaignEnd]
+				});
+				item[column] = sale ? 'alennuksessa' : '';
+			} else {
+				item[column] = '';
+			}
+		}
+
+		Object.assign(item, this.computeDrunkValues(item, this.drunkBasis));
+
+		// Filled in by setAvailability from availability.json's productId -> storeId[] map
+		item[AllColumns.StoreAvailability] = new Set<string>();
+
+		// Fill "Tyyppi" with "Ei määritelty" if empty
+		if (!item[AllColumns.Type]) item[AllColumns.Type] = 'Ei määritelty';
+		// Fill "Alatyyppi" with "Oluttyyppi" or "Tyyppi" if empty
+		if (!item[AllColumns.SubType])
+			item[AllColumns.SubType] = item[AllColumns.BeerType] || item[AllColumns.Type];
+
+		return item;
+	}
+
+	/**
+	 * Uses the precomputed index if it was built for these columns and products. It is built
+	 * over every product, so it also fits while only the selection is loaded, with the
+	 * selection's values standing in for all of them until the removed products are added.
+	 */
+	private checkDatasetIndex() {
+		const index = this.datasetIndexCandidate;
+		this.datasetIndex = undefined;
+		if (!isDatasetIndex(index)) return;
+		const columns = this.datasetColumns;
+		const removed = this.items.filter((item) => item[AllColumns.RemovedFromSelection]).length;
+		const valid =
+			index.columns.length === columns.length &&
+			index.columns.every((column, idx) => column === columns[idx]) &&
+			index.count - index.removedCount === this.items.length - removed &&
+			(removed === index.removedCount || removed === 0);
+		if (!valid) return;
+		this.datasetIndex = index;
+		this.datasetIndexComplete = removed === index.removedCount;
+	}
+
+	/**
+	 * Adds products that load after the rest, the removed ones from data-removed.json. Products
+	 * already here are skipped. Svelte effects and deriveds reading `data` re-run; subsets made
+	 * before keep their products.
+	 */
+	addProducts(rows: DatasetRow[]) {
+		const known = new Set(this.items.map((item) => item[AllColumns.Number]));
+		const added: PriceListItem[] = [];
+		for (const values of rows) {
+			const item = this.parseRow(values);
+			if (!item || known.has(item[AllColumns.Number])) continue;
+			added.push(item);
+			this.recordCategory(values, item);
+		}
+		if (!added.length) return;
+
+		// A new array, so deriveds that compare it by reference see the change
+		this.items = [...this.items, ...added];
+		const indexBefore = this.datasetIndex;
+		this.checkDatasetIndex();
+		this.extendValueIndex(added, indexBefore);
+		this.productVariants = undefined;
+		this.categoryTree = undefined;
+		this.subValuesCache = undefined;
+		this.items = this.sortBy(defaultSortingColumn);
+		this.changeUpdate?.();
 	}
 
 	private computeDrunkValues(item: any, info: Pick<PersonalInfo, 'gender' | 'weight'>) {
@@ -365,7 +529,7 @@ export class Kaljakori {
 		this.applyAvailability(availability);
 		this.hasAvailability = true;
 		this.availabilityVersion++;
-		this.availabilityUpdate?.();
+		this.changeUpdate?.();
 	}
 
 	/**
@@ -373,13 +537,13 @@ export class Kaljakori {
 	 * and came back empty). Reactive in Svelte effects, deriveds and templates.
 	 */
 	get availabilityLoaded(): boolean {
-		this.trackAvailability();
+		this.trackChanges();
 		return this.root.hasAvailability;
 	}
 
-	/** Makes the calling Svelte effect or derived re-run when store availability changes. */
-	private trackAvailability() {
-		this.root.availabilitySubscriber();
+	/** Makes the calling Svelte effect or derived re-run when store availability or the products change. */
+	private trackChanges() {
+		this.root.changeSubscriber();
 	}
 
 	/**
@@ -405,60 +569,62 @@ export class Kaljakori {
 		return subset;
 	}
 
-	/** Possible filter values, types and ranges, computed on first use. */
-	private getValueIndex(): ValueIndex {
-		const version = this.root.availabilityVersion;
-		if (this.valueIndex && this.valueIndexVersion !== version) {
-			this.valueIndexVersion = version;
-			const column = AllColumns.StoreAvailability;
-			const active = new Set<any>();
-			const removed = new Set<any>();
-			for (const item of this.data)
-				collectValue(
-					item[AllColumns.RemovedFromSelection] === true ? removed : active,
-					item[column]
-				);
-			this.valueIndex.possibleValues[column] = sortedSet(active.union(removed));
-			this.valueIndex.possibleValuesActive[column] = sortedSet(active);
-		}
-		if (this.valueIndex) return this.valueIndex;
-		this.valueIndexVersion = version;
-
+	/** Whether `column`'s values come from the precomputed index rather than the products */
+	private isPrecomputed(column: string) {
 		const index = this.datasetIndex;
-		const columns = this.filters;
-		const precomputed = new Set<string>(
-			index
-				? this.datasetColumns.filter(
-						(column) =>
-							Array.isArray(index.possibleValues[column]) &&
-							Array.isArray(index.possibleValuesActive[column])
-					)
-				: []
+		return (
+			!!index &&
+			Array.isArray(index.possibleValues[column]) &&
+			Array.isArray(index.possibleValuesActive[column])
 		);
-		const scanned = columns.filter((column) => !precomputed.has(column));
+	}
 
-		// One pass over the products, straight into sets: columns like store
-		// availability have hundreds of thousands of product/value pairs but only
-		// a few hundred unique values. Active and removed products go into separate
-		// sets, merged afterwards, so each value is only added once.
-		const active = scanned.map(() => new Set<any>());
-		const removed = scanned.map(() => new Set<any>());
-		for (const item of this.data) {
-			const target = item[AllColumns.RemovedFromSelection] === true ? removed : active;
-			for (let col = 0; col < scanned.length; col++) collectValue(target[col], item[scanned[col]]);
+	/** A precomputed column's values, with the selection's standing in for all until complete */
+	private precomputedValues(column: string) {
+		const index = this.datasetIndex!;
+		const all = this.datasetIndexComplete ? index.possibleValues : index.possibleValuesActive;
+		return { all: new Set(all[column]), active: new Set(index.possibleValuesActive[column]) };
+	}
+
+	/**
+	 * Adds the values of products added after the filter values were built, rather than build
+	 * them again from every product, which on a phone is a long task right after load.
+	 */
+	private extendValueIndex(added: PriceListItem[], indexBefore: DatasetIndex | undefined) {
+		const current = this.valueIndex;
+		if (!current) return;
+		// Other columns would come from the index now, so start over
+		if (this.datasetIndex !== indexBefore) {
+			this.valueIndex = undefined;
+			return;
 		}
-
-		const possibleValues: Record<string, Set<any>> = {};
-		const possibleValuesActive: Record<string, Set<any>> = {};
-		scanned.forEach((column, idx) => {
-			possibleValues[column] = sortedSet(active[idx].union(removed[idx]));
-			possibleValuesActive[column] = sortedSet(active[idx]);
-		});
-		for (const column of precomputed) {
-			possibleValues[column] = new Set(index!.possibleValues[column]);
-			possibleValuesActive[column] = new Set(index!.possibleValuesActive[column]);
+		const possibleValues = { ...current.possibleValues };
+		const possibleValuesActive = { ...current.possibleValuesActive };
+		for (const column of this.filters) {
+			if (this.isPrecomputed(column)) {
+				const { all, active } = this.precomputedValues(column);
+				possibleValues[column] = all;
+				possibleValuesActive[column] = active;
+				continue;
+			}
+			const all = new Set<any>();
+			const active = new Set<any>();
+			for (const item of added) {
+				collectValue(all, item[column]);
+				if (item[AllColumns.RemovedFromSelection] !== true) collectValue(active, item[column]);
+			}
+			possibleValues[column] = mergeSorted(possibleValues[column], all);
+			possibleValuesActive[column] = mergeSorted(possibleValuesActive[column], active);
 		}
+		this.valueIndex = this.withTypesAndRanges(possibleValues, possibleValuesActive);
+	}
 
+	/** Column types and number ranges from the possible values */
+	private withTypesAndRanges(
+		possibleValues: Record<string, Set<any>>,
+		possibleValuesActive: Record<string, Set<any>>
+	): ValueIndex {
+		const columns = this.filters;
 		// Get column type by getting the type of the first value in the possible values set
 		const columnTypes: Record<string, ColumnType> = Object.fromEntries(
 			columns.map((key) => {
@@ -477,13 +643,64 @@ export class Kaljakori {
 				return minAndMax(source[column]);
 			});
 
-		this.valueIndex = {
+		return {
 			possibleValues,
 			possibleValuesActive,
 			columnTypes,
 			minAndMaxValues: ranges(possibleValues, true),
 			minAndMaxValuesActive: ranges(possibleValuesActive, false)
 		};
+	}
+
+	/** Possible filter values, types and ranges, computed on first use. */
+	private getValueIndex(): ValueIndex {
+		const version = this.root.availabilityVersion;
+		if (this.valueIndex && this.valueIndexVersion !== version) {
+			this.valueIndexVersion = version;
+			const column = AllColumns.StoreAvailability;
+			const active = new Set<any>();
+			const removed = new Set<any>();
+			for (const item of this.data)
+				collectValue(
+					item[AllColumns.RemovedFromSelection] === true ? removed : active,
+					item[column]
+				);
+			this.valueIndex.possibleValues[column] = sortedSet(new Set([...active, ...removed]));
+			this.valueIndex.possibleValuesActive[column] = sortedSet(active);
+		}
+		if (this.valueIndex) return this.valueIndex;
+		this.valueIndexVersion = version;
+
+		const columns = this.filters;
+		const precomputed = new Set<string>(
+			this.datasetColumns.filter((column) => this.isPrecomputed(column))
+		);
+		const scanned = columns.filter((column) => !precomputed.has(column));
+
+		// One pass over the products, straight into sets: columns like store
+		// availability have hundreds of thousands of product/value pairs but only
+		// a few hundred unique values. Active and removed products go into separate
+		// sets, merged afterwards, so each value is only added once.
+		const active = scanned.map(() => new Set<any>());
+		const removed = scanned.map(() => new Set<any>());
+		for (const item of this.data) {
+			const target = item[AllColumns.RemovedFromSelection] === true ? removed : active;
+			for (let col = 0; col < scanned.length; col++) collectValue(target[col], item[scanned[col]]);
+		}
+
+		const possibleValues: Record<string, Set<any>> = {};
+		const possibleValuesActive: Record<string, Set<any>> = {};
+		scanned.forEach((column, idx) => {
+			possibleValues[column] = sortedSet(new Set([...active[idx], ...removed[idx]]));
+			possibleValuesActive[column] = sortedSet(active[idx]);
+		});
+		for (const column of precomputed) {
+			const { all, active } = this.precomputedValues(column);
+			possibleValues[column] = all;
+			possibleValuesActive[column] = active;
+		}
+
+		this.valueIndex = this.withTypesAndRanges(possibleValues, possibleValuesActive);
 		return this.valueIndex;
 	}
 
@@ -545,7 +762,7 @@ export class Kaljakori {
 	}
 
 	getFilterValues(key: ColumnNames, showRemoved: boolean = true): (string | number)[] {
-		this.trackAvailability();
+		this.trackChanges();
 		const source = showRemoved ? this.possibleValues : this.possibleValuesActive;
 		return source[key] ? Array.from(source[key]) : [];
 	}
@@ -595,6 +812,14 @@ export class Kaljakori {
 		return source[this.filters.indexOf(key)] || [0, 0];
 	}
 
+	/**
+	 * Lowercases and splits every value of `key` ahead of time, which the first search would
+	 * otherwise do while someone waits for their first keystroke to show.
+	 */
+	prepareSearch(key: ColumnNames = AllColumns.Name) {
+		for (const item of this.items) if (item[key]) searchText(item[key]);
+	}
+
 	/** Matches values containing `query`, or with any word similar to it (to tolerate typos). */
 	fuzzySearch(key: ColumnNames, query: string) {
 		// Every value contains the empty string
@@ -602,26 +827,28 @@ export class Kaljakori {
 		const lowerQuery = query.toLowerCase();
 		// Short queries match too many words loosely, so they only match exactly
 		const fuzzy = lowerQuery.length >= MIN_FUZZY_QUERY_LENGTH;
-		const matches = (text: string) => {
-			const value = text.toLowerCase();
-			if (value.includes(lowerQuery)) return true;
-			if (!fuzzy) return false;
-			return value.split(' ').some((word) => {
-				// Words whose length differs too much can't pass isSimilarString (the edit
-				// distance is at least the length difference), so skip calling it
-				const longer = Math.max(word.length, lowerQuery.length);
-				if (Math.abs(word.length - lowerQuery.length) > Math.ceil(longer * 0.4)) return false;
-				return isSimilarString(word, lowerQuery, 0.6);
-			});
+		const items = this.data;
+		const texts = items.map((item) => (item[key] ? searchText(item[key]) : null));
+		// Names are also searched in the language they're shown in
+		const shown =
+			key === AllColumns.Name
+				? items.map((item, index) => {
+						const name = productName(item);
+						return texts[index] && name !== item[key]?.toString() ? searchText(name) : null;
+					})
+				: null;
+		// After `texts` and `shown`, so every word of these values has an id
+		const similar = fuzzy ? similarSearchWords(lowerQuery) : null;
+		const matches = (entry: { text: string; words: number[] } | null | undefined) => {
+			if (!entry) return false;
+			if (entry.text.includes(lowerQuery)) return true;
+			if (!similar) return false;
+			for (const id of entry.words) if (similar[id]) return true;
+			return false;
 		};
-		return this.data.filter((item) => {
-			if (!item[key]) return false;
-			const value = item[key].toString();
-			if (matches(value)) return true;
-			// Names are also searched in the language they're shown in
-			if (key !== AllColumns.Name) return false;
-			const shown = productName(item);
-			return shown !== value && matches(shown);
+		return items.filter((_, index) => {
+			if (!texts[index]) return false;
+			return matches(texts[index]) || matches(shown?.[index]);
 		});
 	}
 
@@ -647,69 +874,51 @@ export class Kaljakori {
 	}
 
 	fuzzySearchAndFilter(query: string, filters: Record<string, any>) {
-		this.trackAvailability();
+		this.trackChanges();
 		let result = this.fuzzySearch(AllColumns.Name, query);
 		if (Object.keys(filters).length === 0) return result;
-
-		filters = Object.fromEntries(
-			Object.entries(filters).filter(([_, value]) => {
-				if (value instanceof Set) return value.size > 0;
-				return value.length > 0;
-			})
-		);
-
-		const keys = Object.keys(filters);
-		const types = Object.fromEntries(
-			keys.map((key) => [key, this.getFilterType(key as ColumnNames)])
-		);
-		return result.filter((item) => {
-			const temp = keys.every((key) => {
-				const type = types[key];
-				if (type === 'number' && Array.isArray(filters[key]) && filters[key].length === 2) {
-					return item[key] >= filters[key][0] && item[key] <= filters[key][1];
-				} else if (type === 'object' && item[key] instanceof Set && filters[key] instanceof Set) {
-					// Store availability uses OR semantics: match if available in any selected store
-					if (key === AllColumns.StoreAvailability)
-						return filters[key].intersection(item[key]).size > 0;
-					return filters[key].isSubsetOf(item[key]);
-				} else if (filters[key] instanceof Set) {
-					return item[key] && filters[key].has(item[key]);
-				} else if (Array.isArray(filters[key])) {
-					return item[key] && filters[key].includes(item[key]);
-				} else {
-					return item[key] === filters[key];
-				}
-			});
-			return temp;
-		});
+		const matches = this.compileFilters(filters, true);
+		return result.filter(matches);
 	}
 
 	filter(filters: Record<string, any>) {
-		this.trackAvailability();
-		filters = Object.fromEntries(
-			Object.entries(filters).filter(([, value]) => {
-				if (value instanceof Set) return value.size > 0;
-				return value.length > 0;
-			})
-		);
-		const keys = Object.keys(filters);
-		const types = Object.fromEntries(
-			keys.map((key) => [key, this.getFilterType(key as ColumnNames)])
-		);
-		return this.data.filter((item) => {
-			return keys.every((key) => {
-				const type = types[key];
-				if (type === 'number' && Array.isArray(filters[key]) && filters[key].length === 2) {
-					return item[key] >= filters[key][0] && item[key] <= filters[key][1];
-				} else if (filters[key] instanceof Set) {
-					return item[key] && filters[key].has(item[key]);
-				} else if (Array.isArray(filters[key])) {
-					return item[key] && filters[key].includes(item[key]);
-				} else {
-					return item[key] === filters[key];
-				}
-			});
-		});
+		this.trackChanges();
+		return this.data.filter(this.compileFilters(filters, false));
+	}
+
+	/**
+	 * One check per non-empty filter, resolved once rather than per product: the list runs this
+	 * over every product on each keystroke. With `setColumns`, a set filter on a set column (store
+	 * availability, descriptions, …) matches products having any (stores) or all of its values.
+	 */
+	private compileFilters(filters: Record<string, any>, setColumns: boolean) {
+		const checks: ((item: PriceListItem) => unknown)[] = [];
+		for (const [key, filter] of Object.entries(filters) as [keyof PriceListItem, any][]) {
+			if (filter instanceof Set ? filter.size === 0 : !(filter.length > 0)) continue;
+			const type = this.getFilterType(key as ColumnNames);
+			if (type === 'number' && Array.isArray(filter) && filter.length === 2) {
+				const [min, max] = filter;
+				checks.push((item) => item[key] >= min && item[key] <= max);
+			} else if (filter instanceof Set) {
+				const wanted = [...filter];
+				// Store availability uses OR semantics: match if available in any selected store
+				const any = key === AllColumns.StoreAvailability;
+				checks.push((item) => {
+					const value = item[key];
+					if (setColumns && type === 'object' && value instanceof Set)
+						return any ? wanted.some((v) => value.has(v)) : wanted.every((v) => value.has(v));
+					return value && filter.has(value);
+				});
+			} else if (Array.isArray(filter)) {
+				checks.push((item) => item[key] && filter.includes(item[key]));
+			} else {
+				checks.push((item) => item[key] === filter);
+			}
+		}
+		return (item: PriceListItem) => {
+			for (let i = 0; i < checks.length; i++) if (!checks[i](item)) return false;
+			return true;
+		};
 	}
 
 	filterByRange(key: ColumnNames, min: number, max: number) {

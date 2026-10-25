@@ -60,7 +60,11 @@
 			{m.info_sources_availability()}
 			<a href={`${githubFileBase}/availability.json`} download>{m.info_sources_download_link()}</a>.
 		</p>
-		<p>{m.info_sources_removed()}</p>
+		<p>
+			{m.info_sources_removed()}
+			{m.info_sources_removed_file()}
+			<a href={`${githubFileBase}/data-removed.json`} download>{m.info_sources_download_link()}</a>.
+		</p>
 	</details>
 </div>
 <div class="flex flex-row flex-wrap items-center gap-2">
@@ -99,7 +103,7 @@
 	<a href={`${githubRepoBase}/commit/${version}`} target="_blank">
 		{gitCommitHash}
 	</a>
-	{#if alko.dataset.metadata.LastUpdated && alko.dataset.metadata.LastSynced}
+	{#if alko?.dataset.metadata.LastUpdated && alko.dataset.metadata.LastSynced}
 		<br />
 		{@const lastSynced = formatDateTime(alko.dataset.metadata.LastSynced)}
 		{@const lastUpdated = formatDateTime(alko.dataset.metadata.LastUpdated)}

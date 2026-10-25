@@ -243,7 +243,7 @@
 	<title>{generateTitle(date ? `${m.daily_archive()} · ${date}` : m.daily_archive())}</title>
 </svelte:head>
 
-<main class="mx-auto flex w-full max-w-4xl flex-col gap-6 p-4 md:p-8 lg:gap-8 lg:p-10">
+<div class="mx-auto flex w-full max-w-4xl flex-col gap-6 p-4 md:p-8 lg:gap-8 lg:p-10">
 	<header class="flex flex-col gap-2 border-b border-primary pb-5">
 		<div class="flex items-center justify-between gap-4">
 			<a href={resolve('/daily/arkisto/')} class={twMerge(components.button(), 'px-3 py-2')}
@@ -359,7 +359,7 @@
 											number={currentQuestion.productId}
 											name={localizedName(productMap.get(currentQuestion.productId)) ??
 												m.stats_product()}
-											transform="medium"
+											transform="small"
 										/>
 									</div>
 									<div class="min-w-0">
@@ -407,7 +407,7 @@
 											)}
 										>
 											<div class="h-32 w-24 shrink-0 rounded bg-white p-1">
-												<ProductImage number={id} name={productName(id)} transform="medium" />
+												<ProductImage number={id} name={productName(id)} transform="small" />
 											</div>
 											<span class="min-w-0">{productName(id)}</span>
 											{#if correct}<Icon name="check_circle" />{:else if picked}<Icon
@@ -431,7 +431,7 @@
 											number={currentQuestion.productId}
 											name={localizedName(productMap.get(currentQuestion.productId)) ??
 												m.stats_product()}
-											transform="medium"
+											transform="small"
 										/>
 									</div>
 									<div class="min-w-0">
@@ -468,7 +468,7 @@
 											number={currentQuestion.productId}
 											name={localizedName(productMap.get(currentQuestion.productId)) ??
 												m.stats_product()}
-											transform="medium"
+											transform="small"
 										/>
 									</div>
 									<div class="min-w-0">
@@ -539,7 +539,7 @@
 							<ProductImage
 								number={question.productId}
 								name={localizedName(productMap.get(question.productId)) ?? m.stats_product()}
-								transform="medium"
+								transform="small"
 							/>
 						</div>
 						<div class="min-w-0">
@@ -568,7 +568,7 @@
 								onclick={() => answer(id)}
 							>
 								<div class="h-32 w-24 shrink-0 rounded bg-white p-1">
-									<ProductImage number={id} name={productName(id)} transform="medium" />
+									<ProductImage number={id} name={productName(id)} transform="small" />
 								</div>
 								<span class="min-w-0">{productName(id)}</span>
 							</button>
@@ -580,7 +580,7 @@
 							<ProductImage
 								number={question.productId}
 								name={localizedName(productMap.get(question.productId)) ?? m.stats_product()}
-								transform="medium"
+								transform="small"
 							/>
 						</div>
 						<div class="min-w-0">
@@ -605,7 +605,7 @@
 							<ProductImage
 								number={question.productId}
 								name={localizedName(productMap.get(question.productId)) ?? m.stats_product()}
-								transform="medium"
+								transform="small"
 							/>
 						</div>
 						<div class="min-w-0">
@@ -683,4 +683,4 @@
 			</div>
 		</section>
 	{/if}
-</main>
+</div>

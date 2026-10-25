@@ -1,47 +1,42 @@
-<script lang="ts">
-	import {
-		Chart,
-		ArcElement,
-		BarController,
-		BarElement,
-		CategoryScale,
-		DoughnutController,
-		Filler,
-		Legend,
-		LinearScale,
-		LineController,
-		LineElement,
-		LogarithmicScale,
-		PieController,
-		PointElement,
-		ScatterController,
-		Title,
-		Tooltip
-	} from 'chart.js';
-	import type { ChartConfiguration } from 'chart.js';
+<script lang="ts" module>
+	import type { Chart as ChartType, ChartConfiguration } from 'chart.js';
 	import { intlLocale } from '$lib/i18n';
 
-	Chart.register(
-		ArcElement,
-		BarController,
-		BarElement,
-		CategoryScale,
-		DoughnutController,
-		Filler,
-		Legend,
-		LinearScale,
-		LineController,
-		LineElement,
-		LogarithmicScale,
-		PieController,
-		PointElement,
-		ScatterController,
-		Title,
-		Tooltip
-	);
-	// Numbers on the axes and in tooltips follow the app's language, not the browser's
-	Chart.defaults.locale = intlLocale;
+	let chartModule: Promise<typeof ChartType> | undefined;
 
+	/**
+	 * Chart.js, loaded with the first chart rather than with the page: it is most of a product
+	 * page's code, and the chart sits below the fold in a box of fixed height
+	 */
+	function loadChart() {
+		chartModule ??= import('chart.js').then((module) => {
+			module.Chart.register(
+				module.ArcElement,
+				module.BarController,
+				module.BarElement,
+				module.CategoryScale,
+				module.DoughnutController,
+				module.Filler,
+				module.Legend,
+				module.LinearScale,
+				module.LineController,
+				module.LineElement,
+				module.LogarithmicScale,
+				module.PieController,
+				module.PointElement,
+				module.ScatterController,
+				module.Title,
+				module.Tooltip
+			);
+			// Numbers on the axes and in tooltips follow the app's language, not the browser's
+			module.Chart.defaults.locale = intlLocale;
+			return module.Chart;
+		});
+		return chartModule;
+	}
+</script>
+
+<script lang="ts">
 	const {
 		title,
 		subtitle = '',
@@ -55,17 +50,24 @@
 	} = $props();
 
 	let canvas: HTMLCanvasElement | undefined = $state();
-	let chart = $state<Chart | undefined>();
 
 	$effect(() => {
 		if (!canvas) return;
-		// Config objects are usually built via helper functions that return a
-		// ChartConfiguration union; Chart accepts any of them.
-		chart = new Chart(canvas, config as ConstructorParameters<typeof Chart>[1]) as Chart;
+		// Read here, not once Chart.js has loaded, so a new config re-creates the chart
+		const target = canvas;
+		const current = config;
+		let chart: ChartType | undefined;
+		let destroyed = false;
+		loadChart().then((Chart) => {
+			if (destroyed) return;
+			// Config objects are usually built via helper functions that return a
+			// ChartConfiguration union; Chart accepts any of them.
+			chart = new Chart(target, current as ConstructorParameters<typeof Chart>[1]) as ChartType;
+		});
 
 		return () => {
+			destroyed = true;
 			chart?.destroy();
-			chart = undefined;
 		};
 	});
 </script>

@@ -6,15 +6,15 @@ JSON files. A set of GitHub Actions workflows keeps those files fresh.
 
 ## The moving parts
 
-| Part              | Where it lives                             | What it does                                                                                         |
-| ----------------- | ------------------------------------------ | ---------------------------------------------------------------------------------------------------- |
-| Data sync         | `scripts/data/`                            | Fetches Alko's API every 6 hours, writes `data.json`, `hashes.json` and `availability.json`          |
-| SvelteKit app     | `src/`                                     | Client-rendered SPA. Downloads `data.json` and does all searching, filtering and math in the browser |
-| Daily game baker  | `scripts/site/daily*.ts`, `src/lib/daily/` | Pins each day's quiz to a JSON manifest and archives finished days                                   |
-| Prerender scripts | `scripts/site/prerender-*.ts`              | Writes an HTML stub per product, category, store and static page so crawlers see real metadata       |
-| Feeds and sitemap | `scripts/site/rss.ts`, `sitemap.ts`        | `rss.xml`, `feed.json`, per-product and per-category RSS, `sitemap.xml`                              |
-| OG image renderer | `scripts/og/`                              | Renders 1200×630 share cards with satori + resvg and uploads them to R2                              |
-| Workflows         | `.github/workflows/`                       | Glue: test, build, sync, render, deploy, archive                                                     |
+| Part              | Where it lives                             | What it does                                                                                                     |
+| ----------------- | ------------------------------------------ | ---------------------------------------------------------------------------------------------------------------- |
+| Data sync         | `scripts/data/`                            | Fetches Alko's API every 6 hours, writes `data.json`, `data-removed.json`, `hashes.json` and `availability.json` |
+| SvelteKit app     | `src/`                                     | Client-rendered SPA. Downloads `data.json` and does all searching, filtering and math in the browser             |
+| Daily game baker  | `scripts/site/daily*.ts`, `src/lib/daily/` | Pins each day's quiz to a JSON manifest and archives finished days                                               |
+| Prerender scripts | `scripts/site/prerender-*.ts`              | Writes an HTML stub per product, category, store and static page so crawlers see real metadata                   |
+| Feeds and sitemap | `scripts/site/rss.ts`, `sitemap.ts`        | `rss.xml`, `feed.json`, per-product and per-category RSS, `sitemap.xml`                                          |
+| OG image renderer | `scripts/og/`                              | Renders 1200×630 share cards with satori + resvg and uploads them to R2                                          |
+| Workflows         | `.github/workflows/`                       | Glue: test, build, sync, render, deploy, archive                                                                 |
 
 ## Data flow
 

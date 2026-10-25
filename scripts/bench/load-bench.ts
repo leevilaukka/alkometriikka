@@ -12,8 +12,11 @@
  */
 import { parseArgs } from 'node:util';
 import { Kaljakori } from '$lib/alko';
-import { parseDataset } from '$lib/utils/catalog/dataset';
+import { parseDataset, parseRemovedProducts } from '$lib/utils/catalog/dataset';
+import { packDataset } from '$lib/utils/catalog/datasetFile';
+import { readStoredDataset } from '../lib/stored-dataset';
 import { parseAvailability } from '$lib/utils/catalog/availability';
+import { AVAILABILITY_FORMAT, encodeStockedStores } from '$lib/utils/catalog/availabilityFile';
 import { AllColumns, DatasetColumns } from '$lib/utils/constants/columns';
 import type { AvailabilityData, DatasetRow } from '$lib/types';
 
@@ -204,21 +207,28 @@ function syntheticData(productCount: number, storeCount: number) {
 
 	return {
 		data: { schema: header, metadata: { LastUpdated: '2026-10-01T00:00:00.000Z' }, products },
-		availability: { lastUpdated: '2026-10-01T00:00:00.000Z', stores, product: availabilityProducts }
+		availability: {
+			format: AVAILABILITY_FORMAT,
+			lastUpdated: '2026-10-01T00:00:00.000Z',
+			stores,
+			...encodeStockedStores(availabilityProducts)
+		}
 	};
 }
 
 // --- Harness -----------------------------------------------------------------
 
-async function loadText(): Promise<{ data: string; availability: string; source: string }> {
+/** The dataset with every product in it, unpacked, plus the availability file's text */
+async function loadDataset(): Promise<{ data: any; availability: string; source: string }> {
 	if (args.data) {
-		const data = await Bun.file(args.data).text();
+		const data = await readStoredDataset(args.data);
+		if (!data) throw new Error(`No dataset at ${args.data}`);
 		const availability = args.availability ? await Bun.file(args.availability).text() : '{}';
 		return { data, availability, source: args.data };
 	}
 	const synthetic = syntheticData(Number(args.products), Number(args.stores));
 	return {
-		data: JSON.stringify(synthetic.data),
+		data: synthetic.data,
 		availability: JSON.stringify(synthetic.availability),
 		source: `synthetic (${args.products} products, ${args.stores} stores)`
 	};
@@ -244,13 +254,15 @@ function time<T>(label: string, fn: () => T): T {
 	return result;
 }
 
-let { data: dataText, availability: availabilityText, source } = await loadText();
+const { data: dataset, availability: availabilityText, source } = await loadDataset();
 if (args['with-index']) {
-	const parsed = JSON.parse(dataText);
 	const { buildDatasetIndex } = await import('../data/dataset-index');
-	parsed.index = buildDatasetIndex(parsed);
-	dataText = JSON.stringify(parsed);
+	dataset.index = buildDatasetIndex(dataset);
 }
+// Split and packed the way the sync writes it
+const packed = packDataset(dataset);
+const dataText = JSON.stringify(packed.data);
+const removedText = JSON.stringify(packed.removed);
 
 // Kaljakori logs skipped products in some versions; keep the output readable.
 const log = console.log;
@@ -297,6 +309,23 @@ results.push(['  ↳ minus parseDataset', results.at(-1)![1] - parsedOnly]);
 if ('setAvailability' in kaljakori) {
 	time('kaljakori.setAvailability', () => (kaljakori as any).setAvailability(availability));
 }
+{
+	const { table, index, schema } = parseDataset(dataText);
+	const samples = Array.from({ length: runs + 1 }, () => {
+		const instance = new Kaljakori(
+			structuredClone(table) as DatasetRow[],
+			undefined,
+			undefined,
+			index
+		);
+		Bun.gc(true);
+		const start = performance.now();
+		instance.addProducts(parseRemovedProducts(removedText, schema) ?? []);
+		return performance.now() - start;
+	});
+	results.push(['parseRemovedProducts + addProducts', median(samples.slice(1))]);
+	kaljakori.addProducts(parseRemovedProducts(removedText, schema) ?? []);
+}
 
 time('fuzzySearchAndFilter("", {})', () => kaljakori.fuzzySearchAndFilter('', {}));
 time('fuzzySearchAndFilter("lapin", {})', () => kaljakori.fuzzySearchAndFilter('lapin', {}));
@@ -312,7 +341,7 @@ time('fuzzySearchAndFilter("", type + price)', () =>
 
 console.log = log;
 console.log(
-	`\nSource: ${source}  (${(dataText.length / 1e6).toFixed(1)} MB data, ${(availabilityText.length / 1e6).toFixed(1)} MB availability)`
+	`\nSource: ${source}  (${(dataText.length / 1e6).toFixed(1)} MB data, ${(removedText.length / 1e6).toFixed(1)} MB removed, ${(availabilityText.length / 1e6).toFixed(1)} MB availability)`
 );
 console.log(`Products in index: ${kaljakori.data.length}, median of ${runs} runs\n`);
 const width = Math.max(...results.map(([label]) => label.length));

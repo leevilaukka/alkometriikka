@@ -1,5 +1,4 @@
 <script>
-	import { getRandom } from '$lib/utils/app/share';
 	import { headerToDisplayName, headerToUnitMarker } from '$lib/utils/format/labels';
 	import { components } from '$lib/utils/ui/styles';
 	import { twMerge } from 'tailwind-merge';
@@ -18,36 +17,42 @@
 	} = $props();
 
 	$effect(() => {
-		const set = new Set(value).difference(new Set(defaultValue));
-		modified = !!set.size;
+		const defaults = new Set(defaultValue);
+		modified = [...new Set(value)].some((v) => !defaults.has(v));
 	});
 
 	const unitMarker = untrack(() =>
 		headerToUnitMarker(label) !== '' ? `(${headerToUnitMarker(label)})` : ''
 	);
+	const displayName = $derived(headerToDisplayName(label));
 
-	const name = 'numberinput-' + getRandom();
+	// Stable across SSR and hydration, unlike a random id
+	const id = $props.id();
 </script>
 
-<div class="flex flex-col">
-	<label for={name} class="text-sm">
-		{`${headerToDisplayName(label)} ${unitMarker}`}
+<!-- The range is one group named by the label; each input says which end it sets -->
+<div class="flex flex-col" role="group" aria-labelledby="{id}-label">
+	<label id="{id}-label" for="{id}-min" class="text-sm">
+		{`${displayName} ${unitMarker}`}
 	</label>
 	<div class="flex w-full gap-2">
 		<input
 			lang={locale}
 			type="number"
-			{name}
+			id="{id}-min"
+			aria-label={m.filter_at_least()}
 			bind:value={value[0]}
 			{min}
 			max={value[1]}
 			{step}
 			class={twMerge(components.input(), 'w-full')}
 		/>
-		<span class="my-auto">-</span>
+		<span class="my-auto" aria-hidden="true">-</span>
 		<input
 			lang={locale}
 			type="number"
+			id="{id}-max"
+			aria-label={m.filter_at_most()}
 			bind:value={value[1]}
 			min={value[0]}
 			{max}
@@ -56,7 +61,7 @@
 		/>
 		<button
 			class={twMerge(components.button())}
-			aria-label={m.common_reset()}
+			aria-label={m.common_reset_named({ name: displayName })}
 			onclick={() => (value = [min, max])}><Icon name="refresh_ccw" /></button
 		>
 	</div>

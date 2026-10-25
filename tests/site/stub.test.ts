@@ -75,6 +75,44 @@ describe('renderStub', () => {
 		expect(html).not.toContain('twitter:title');
 	});
 
+	it("preloads the route's code the shell doesn't already load, under its base path", () => {
+		const shell = template.replace(
+			'<title>',
+			`<link href="/base/_app/immutable/entry/start.a.js" rel="modulepreload">
+	<link href="/base/_app/immutable/chunks/shared.js" rel="modulepreload">
+	<link href="/base/_app/immutable/assets/0.css" rel="stylesheet"><title>`
+		);
+		const out = renderStub(shell, {
+			...page,
+			route: {
+				imports: ['_app/immutable/nodes/19.b.js', '_app/immutable/chunks/shared.js'],
+				stylesheets: ['_app/immutable/assets/0.css', '_app/immutable/assets/19.css']
+			}
+		});
+		expect(out).toContain('<link rel="modulepreload" href="/base/_app/immutable/nodes/19.b.js" />');
+		expect(out).toContain(
+			'<link rel="preload" as="style" href="/base/_app/immutable/assets/19.css" />'
+		);
+		expect(out.match(/chunks\/shared\.js/g)).toHaveLength(1);
+		expect(out.match(/assets\/0\.css/g)).toHaveLength(1);
+		expect(html).not.toContain('rel="modulepreload"');
+	});
+
+	it("types the photo preload, so browsers that can't decode it skip it", () => {
+		const out = renderStub(template, {
+			...page,
+			preloadImage: 'https://images.example/a.avif',
+			preloadImageType: 'image/avif'
+		});
+		expect(out).toContain(
+			'<link rel="preload" as="image" href="https://images.example/a.avif" type="image/avif" fetchpriority="high"'
+		);
+		expect(
+			renderStub(template, { ...page, preloadImage: 'https://images.example/a.jpg' })
+		).toContain('href="https://images.example/a.jpg" fetchpriority="high"');
+		expect(html).not.toContain('as="image"');
+	});
+
 	it('omits optional tags when not given', () => {
 		expect(html).not.toContain('name="keywords"');
 		expect(html).toContain('<meta property="og:type" content="website" />');

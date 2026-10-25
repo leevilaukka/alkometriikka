@@ -11,6 +11,7 @@ import {
 } from './og';
 import { readOption, readNumberOption } from '../lib/cli';
 import { mapPool } from '../lib/async';
+import { readStoredDataset } from '../lib/stored-dataset';
 import { fetchProductImage as fetchAlkoImage } from '../lib/alko-image';
 
 /**
@@ -51,7 +52,7 @@ const client = new R2S3Client({ accessKeyId, secretAccessKey, accountId, bucket,
 const dataPath = path.resolve(readOption('--data') ?? 'static/data.json');
 const concurrency = readNumberOption('--concurrency', Number(process.env.OG_CONCURRENCY) || 16);
 
-const dataset = (await Bun.file(dataPath).json()) as Dataset;
+const dataset = (await readStoredDataset<Dataset>(dataPath)) ?? {};
 const schema = dataset.schema ?? [];
 const products = Object.entries(dataset.products ?? {});
 if (products.length === 0) throw new Error(`No products found in ${dataPath}`);

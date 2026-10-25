@@ -5,7 +5,8 @@ import {
 	AllColumns,
 	DatasetColumns,
 	DrunkColumns,
-	hideFromProductPageStats
+	hideFromProductPageStats,
+	zeroWithoutAlcoholColumns
 } from '../constants/columns';
 import { formatValue } from '../format/format';
 import { headerToDisplayName, isNullish } from '../format/labels';
@@ -159,6 +160,7 @@ export const comparisonBestDirection: Partial<Record<ColumnNames, 'lower' | 'hig
 	[AllColumns.AlcoholGramsPerEuro]: 'higher',
 	[AllColumns.PromillePerEuro]: 'higher',
 	[AllColumns.EuroPerLiterAlcohol]: 'lower',
+	[AllColumns.EuroPerServing]: 'lower',
 	[AllColumns.Sugar]: 'lower',
 	[AllColumns.Servings]: 'higher',
 	[AllColumns.Energy]: 'lower'
@@ -174,9 +176,10 @@ export function getBestProductNumbers(products: PriceListItem[], key: ColumnName
 	const direction = comparisonBestDirection[key];
 	if (!direction) return new Set();
 
+	const zeroIsMissing = zeroWithoutAlcoholColumns.has(key);
 	const numericValues = products
 		.map((product) => Number(product[key]))
-		.filter((value) => Number.isFinite(value));
+		.filter((value) => Number.isFinite(value) && !(zeroIsMissing && value === 0));
 
 	if (numericValues.length < 2) return new Set();
 

@@ -2,7 +2,8 @@ import { beforeEach, describe, expect, it, mock } from 'bun:test';
 
 // The real modules pull in Svelte runes, browser globals and SvelteKit modules
 const compareProductIds: string[] = [];
-mock.module('$lib/global.svelte', () => ({ compareProductIds }));
+// Bun shares module mocks between test files, so this matches the one in watchlist.test.ts
+mock.module('$lib/global.svelte', () => ({ compareProductIds, watchlist: [] }));
 // Bun shares module mocks between test files, so this matches the analytics mock in metrics.test.ts
 mock.module('$lib/utils/app/analytics', () => ({ sendAnalyticsEvent: () => {} }));
 const { addToCompareWithReference, MAX_COMPARE_PRODUCTS } = await import('$lib/utils/user/compare');

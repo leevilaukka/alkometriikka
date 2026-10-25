@@ -4,7 +4,9 @@ import {
 	categoryGroups,
 	categoryRanks,
 	priceHistorySummary,
-	type CategoryProduct
+	sizeVariantGroups,
+	type CategoryProduct,
+	type VariantProduct
 } from '../../scripts/site/product-insights';
 import type { CategoryNode } from '../../src/lib/utils/catalog/categories';
 
@@ -91,5 +93,45 @@ describe('categoryRanks', () => {
 		expect(ranks.has('a')).toBe(false);
 		// No subtype page of its own, so its type rank is used
 		expect(ranks.get('d')).toMatchObject({ rank: 1, total: 4, path: '/kategoriat/viinit/' });
+	});
+});
+
+describe('sizeVariantGroups', () => {
+	const product = (id: string, name: string, volume: number, packaging = 'lasipullo') =>
+		({ id, name, volume, packaging }) satisfies VariantProduct;
+	const products = [
+		product('511897', 'Champagne Brut', 0.75),
+		product('903500', 'Champagne Brut', 0.2),
+		product('500200', 'Champagne Brut', 0.2),
+		product('109156', 'Viina muovipullo', 0.5, 'muovipullo'),
+		product('000706', 'Viina', 0.5),
+		product('300001', 'Alone', 0.7)
+	];
+	const matches: Record<string, string[]> = {
+		'511897': ['903500', '500200'],
+		'903500': ['511897'],
+		'500200': ['511897'],
+		'109156': ['000706'],
+		'000706': ['109156', '999999']
+	};
+	const groups = sizeVariantGroups(products, (id) => matches[id] ?? []);
+
+	it('merges matches through a shared product into one group with the smallest id', () => {
+		const group = groups.get('903500')!;
+		expect(group).toBe(groups.get('500200')!);
+		expect(group.id).toBe('500200');
+		expect(group.members.map((member) => member.id)).toEqual(['500200', '903500', '511897']);
+		expect(group.variesBy).toEqual(['size']);
+	});
+
+	it('names the group after its shortest name and notes differing packaging', () => {
+		const group = groups.get('109156')!;
+		expect(group.name).toBe('Viina');
+		expect(group.variesBy).toEqual(['size', 'material']);
+	});
+
+	it('gives unmatched products no group and ignores matches outside the list', () => {
+		expect(groups.has('300001')).toBe(false);
+		expect(groups.get('000706')!.members).toHaveLength(2);
 	});
 });

@@ -1,13 +1,20 @@
 # Dataset format
 
-The sync writes three files. All three are published at the site root on `gh-pages` and are
-also linked from the app's settings dialog for anyone who wants the raw data.
+The sync writes four files. All four are published at the site root on `gh-pages`, and all but
+`hashes.json` are linked from the app's settings dialog for anyone who wants the raw data.
 
-| File                | Size (Oct 2026)          | Loaded by the app        | Purpose                                        |
-| ------------------- | ------------------------ | ------------------------ | ---------------------------------------------- |
-| `data.json`         | ~7.8 MB, ~1.3 MB gzipped | Yes, blocks first render | Every product, its values and price history    |
-| `availability.json` | ~4.2 MB, ~0.9 MB gzipped | Yes, after first render  | Stores and which stores stock each product     |
-| `hashes.json`       | ~0.55 MB gzipped         | No                       | Change-detection hashes, used only by the sync |
+| File                | Size (Oct 2026)          | Loaded by the app        | Purpose                                                   |
+| ------------------- | ------------------------ | ------------------------ | --------------------------------------------------------- |
+| `data.json`         | ~5.8 MB, ~0.85 MB brotli | Yes, blocks first render | Products in the selection, their values and price history |
+| `data-removed.json` | ~1.4 MB, ~0.23 MB brotli | Yes, after first render  | Products removed from the selection, in the same format   |
+| `availability.json` | ~1.3 MB, ~0.2 MB gzipped | Yes, after first render  | Stores and which stores stock each product                |
+| `hashes.json`       | ~0.55 MB gzipped         | No                       | Change-detection hashes, used only by the sync            |
+
+`packDataset` and `unpackDataset` (`src/lib/utils/catalog/datasetFile.ts`) split and join the two
+dataset files and their word lists. Scripts read both through `readStoredDataset`
+(`scripts/lib/stored-dataset.ts`), which throws if `data.json` lists removed products that
+`data-removed.json` doesn't hold, so a missing file stops a script instead of quietly leaving
+products out. Datasets written before the split (one file, no word lists) read the same.
 
 Type definitions: `scripts/data/types.ts` (the strict writer side) and
 `src/lib/utils/catalog/dataset.ts` (`StoredDataset`, the lenient reader side).
@@ -39,10 +46,12 @@ Type definitions: `scripts/data/types.ts` (the strict writer side) and
 					"campaignEnd": "2026-09-29"
 				}
 			],
-			"meta": { "removedFromSelection": "2026-07-14", "detailCheckedAt": "2026-10-01" }
+			"meta": { "removedFromSelection": "2026-07-14" }
 		}
 	},
-	"index": {/* precomputed filter values, see below */}
+	"index": {/* precomputed filter values, see below */},
+	"dictionaries": { "Luonnehdinta": ["Keltainen", " makea", …], "Ruokasuositukset": […] },
+	"removedProducts": 2501 // how many products data-removed.json holds
 }
 ```
 
@@ -70,19 +79,23 @@ products ever dropped are gifts and drinking accessories (main group `mainGroup_
   Alko's own litre prices work out.
 - **`values`** is aligned with `schema`. Values are mostly what the preprocessors in
   `FIELD_TO_LEGACY_SCHEMA` produce: strings, numbers, `null`, and for `Luonnehdinta` an array of
-  strings.
+  strings. `Luonnehdinta` and `Ruokasuositukset` are stored as indexes into the file's
+  `dictionaries` (a number for a string, an array of numbers for an array), which is about 8 % of
+  the compressed file smaller than repeating the words in every product.
 - **`priceHistory`** gets a new point only when the price differs from the last point. The first
   point is the first time the sync saw the product. Points recorded during an active campaign also
   carry `normalPrice`, `campaignStart` and `campaignEnd`, so the price chart can draw past sale
   periods.
 - **`meta.detailCheckedAt`** is the last date the sync fetched this product's details. It drives
   the periodic re-verification (see [Sync pipeline](sync-pipeline.md#pass-3-re-verify-stale-details)).
+  Only the sync uses it, so it is stored in [`hashes.json`](#hashesjson) and merged back in on read.
 
 ### `index`
 
 Filter values precomputed by `scripts/data/dataset-index.ts` so the browser doesn't have to
 collect and sort them from 13 000+ products on load. It is built with the app's own `Kaljakori`,
-so it is exactly what the browser would compute.
+over every product including the removed ones, so it is exactly what the browser would compute
+once `data-removed.json` has loaded.
 
 ```jsonc
 {
@@ -97,8 +110,20 @@ so it is exactly what the browser would compute.
 
 Only low-cardinality columns are included (at most 10 % as many unique values as products), so
 names, ids and prices are still computed in the browser. `Kaljakori` ignores the index unless its
-version, column list, product count and removed count all match the data it just parsed, so a
-stale or missing index only costs speed.
+version and column list match and its counts fit the products: the active count always, and the
+removed count once the removed products are added. Until then the active values stand in for all
+of them. A stale or missing index only costs speed.
+
+## `data-removed.json`
+
+```jsonc
+{ "schema": [/* same as data.json */], "dictionaries": { … }, "products": { "906458": { … } } }
+```
+
+The products with `meta.removedFromSelection` set, in the same shape as in `data.json`, with their
+own word lists so the file stands alone. Most visits never show a removed product, so the app
+fetches this file once `data.json` is in and adds its products after the first render. Its `schema`
+must match `data.json`'s, or readers ignore it rather than read values into the wrong columns.
 
 ## Column schema
 
@@ -174,7 +199,11 @@ when `meta.removedFromSelection` is set). `Kaljakori` then adds the derived colu
 ## `hashes.json`
 
 ```json
-{ "HashVersion": 2, "hashes": { "906458": "3f1c…", "…": "…" } }
+{
+	"HashVersion": 2,
+	"hashes": { "906458": "3f1c…", "…": "…" },
+	"detailCheckedAt": { "906458": "2026-10-01", "…": "…" }
+}
 ```
 
 Split out of `data.json` because the 64-character hashes were about a third of the gzipped file
@@ -183,6 +212,10 @@ in. Each product's hash comes from, in order: the product itself (datasets writt
 split), `hashes.json` if its `HashVersion` matches, or a recomputation from the stored values.
 Losing `hashes.json` therefore never causes a full refetch or drops price history; it only
 re-fetches products whose stored values hash differently from the search payload.
+
+`detailCheckedAt` holds each product's `meta.detailCheckedAt`, also sync-only (about 2% of the
+compressed `data.json`). It is restored whatever the `HashVersion`. Without it every product is due
+for re-verification, which the sync works through a capped number per run.
 
 ## `availability.json`
 
@@ -195,19 +228,39 @@ re-fetches products whose stored values hash differently from the search payload
 			"address": "Salomonkatu 1", "postalCode": "00100", "postOffice": "HELSINKI",
 			"latitude": 60.17, "longitude": 24.93,
 			"openDays": ["kiinni", "10–21", …],
-			"openHours": [{ "date": "2026-10-13", "hours": "10–21" }, …]
+			"openHours": [{ "date": "2026-10-13", "hours": "10–21" }, …],
+			"openHoursNormal": [{ "date": "2026-10-12", "hours": "10–21" }, …],
+			"openHoursException": [{ "date": "2026-10-31", "hours": "Kiinni" }]
 			// …plus the rest of Alko's store object, unmodified
 		}
 	},
-	"product": { "906458": ["2102", "5016", …] }
+	"format": 2,
+	"storeIds": ["2102", "2103", …, "5016"],
+	"product": { "906458": "AQAAgA…" }
 }
 ```
 
 - **`stores`** is Alko's `/api/stores` response keyed by id, minus pickup points
   (`outletType === "2"`).
+- A store's opening hours come in three calendars. **`openHours`** is the actual schedule with
+  exceptions (holidays, closures) applied, from the fetch day through Sunday of next week;
+  `openDays` is its hours alone. Open/closed status and today's hours come from it.
+  **`openHoursNormal`** is the regular schedule without exceptions, Monday of this week through
+  Sunday of next week. The store page uses it to flag days whose hours differ from normal, and the
+  prerendered store stubs use its first week for their JSON-LD `openingHoursSpecification`.
+  **`openHoursException`** lists only the days that differ; the stubs publish them as
+  `specialOpeningHoursSpecification` (a closed day as `opens` and `closes` both `"00:00"`).
 - **`product`** maps every product in the latest search sweep to the stores that have it in stock
   (the search API's `storeId` field). It covers only products currently in the selection.
+  Each value is a base64 bitmap over **`storeIds`**, every store id any product refers to
+  (pickup points included) in numeric order: bit `i % 8` of byte `⌊i / 8⌋` set means the store
+  `storeIds[i]` has it, and trailing zero bytes are cut, so a product in no store is `""`. That is
+  about a quarter of the download of a list of id strings per product, the format before
+  `format: 2`, and much less JSON to parse.
 - It is rewritten in full on every sync, so `lastUpdated` is the sync time.
 
+`encodeStockedStores` and `readStockedStores` (`src/lib/utils/catalog/availabilityFile.ts`) write
+and unpack the product map; the reader also takes the earlier format, which an old copy in the
+service worker's cache or the previous deploy read by the stock history may still be in.
 `parseAvailability` (`src/lib/utils/catalog/availability.ts`) validates it in the browser and drops
 malformed entries.

@@ -2,12 +2,16 @@
 	import { resolve } from '$app/paths';
 	import Icon from '$lib/components/widgets/Icon.svelte';
 	import StoreCompass from '$lib/components/widgets/StoreCompass.svelte';
+	import StoreHighlights from '$lib/components/store/StoreHighlights.svelte';
+	import { productsInStore } from '$lib/utils/catalog/storeHighlights';
 	import { preferredStoreId } from '$lib/global.svelte';
 	import type { AvailabilityStore } from '$lib/types';
 	import {
 		formatOpeningHours,
+		getNormalOpeningHours,
 		getStoreCity,
 		isStoreOpen,
+		parseStoreAccessibility,
 		storeName,
 		storeText
 	} from '$lib/utils/catalog/availability.js';
@@ -88,14 +92,17 @@
 		.filter(Boolean)
 		.join(', ')}
 	{@const directionsQuery = ['Alko', store.name, address].filter(Boolean).join(', ')}
+	{@const accessibility = parseStoreAccessibility(store.unobstructured)}
 	{@const additionalDetails = [
 		storeText(store, 'additional_info'),
 		storeText(store, 'location_details'),
-		storeText(store, 'unobstructured'),
-		storeText(store, 'exceptions')
+		accessibility.notice,
+		storeText(store, 'exceptions'),
+		accessibility.accessible ? m.store_accessible() : null
 	].filter((detail): detail is string => Boolean(detail?.trim()))}
 	{@const storeOpen = isStoreOpen(store)}
 	{@const today = new Date().toLocaleDateString('sv-SE')}
+	{@const openingHours = (store.openHours ?? []).filter((entry) => entry.date >= today)}
 	{@const isPreferred = store.id === $preferredStoreId}
 
 	<div class="mx-auto flex w-full max-w-[120ch] flex-col gap-6 p-4 md:p-6">
@@ -189,15 +196,22 @@
 						{/each}
 					</section>
 				{/if}
+				{#await data.alkoWithStores then alko}
+					<StoreHighlights
+						storeId={store.id}
+						products={productsInStore(alko.kaljakori.data, alko.availability, store.id)}
+					/>
+				{/await}
 			</div>
 
 			<section class="overflow-hidden rounded border border-primary bg-secondary md:col-span-2">
 				<h2 class="border-b border-primary px-4 py-3 text-xl font-bold">
 					{m.store_opening_hours()}
 				</h2>
-				{#if store.openHours?.length}
+				{#if openingHours.length}
 					<ul>
-						{#each store.openHours as openingHour (openingHour.date)}
+						{#each openingHours as openingHour (openingHour.date)}
+							{@const normalHours = getNormalOpeningHours(store, openingHour.date)}
 							<li
 								class={twMerge(
 									'flex items-center justify-between gap-4 border-b border-primary px-4 py-3 last:border-b-0',
@@ -205,7 +219,14 @@
 								)}
 							>
 								<span class="capitalize">{formatDate(openingHour.date)}</span>
-								<strong>{formatOpeningHours(openingHour.hours)}</strong>
+								<span class="flex flex-col items-end text-right">
+									<strong>{formatOpeningHours(openingHour.hours)}</strong>
+									{#if normalHours && normalHours !== openingHour.hours.trim()}
+										<span class="text-sm font-normal text-secondary"
+											>{m.store_hours_exception({ hours: normalHours })}</span
+										>
+									{/if}
+								</span>
 							</li>
 						{/each}
 					</ul>

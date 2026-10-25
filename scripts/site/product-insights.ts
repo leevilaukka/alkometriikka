@@ -129,3 +129,74 @@ export function priceHistorySummary(
 	}
 	return { trackedSince: points[0].date, lowest, highest, lastChange };
 }
+
+export type VariantProduct = {
+	id: string;
+	name: string;
+	/** Litres, the whole pack's for a multipack */
+	volume: number | null;
+	packaging: string;
+};
+
+export type VariantGroup = {
+	/** The smallest member id, the same on every member's page */
+	id: string;
+	/** The shortest member name, usually the one without "muovipullo" or a pack size */
+	name: string;
+	/** schema.org properties the members differ by */
+	variesBy: ('size' | 'material')[];
+	/** By volume, then id */
+	members: VariantProduct[];
+};
+
+/**
+ * Groups products the app shows as sizes of each other (`matches`, its
+ * "Pakkauskoko" picker). Matches are merged transitively, so every page of a
+ * group names the same group and members even if two of them only match
+ * through a third. Products without matches get no group.
+ */
+export function sizeVariantGroups(
+	products: VariantProduct[],
+	matches: (id: string) => string[]
+): Map<string, VariantGroup> {
+	const byId = new Map(products.map((product) => [product.id, product]));
+	const parent = new Map(products.map((product) => [product.id, product.id]));
+	const root = (id: string): string => {
+		let current = id;
+		while (parent.get(current) !== current) current = parent.get(current)!;
+		return current;
+	};
+	for (const product of products) {
+		for (const match of matches(product.id)) {
+			if (!byId.has(match)) continue;
+			const [first, second] = [root(product.id), root(match)].sort();
+			if (first !== second) parent.set(second, first);
+		}
+	}
+
+	const components = new Map<string, VariantProduct[]>();
+	for (const product of products) {
+		const key = root(product.id);
+		components.set(key, [...(components.get(key) ?? []), product]);
+	}
+
+	const groups = new Map<string, VariantGroup>();
+	for (const [id, members] of components) {
+		if (members.length < 2) continue;
+		members.sort(
+			(a, b) => (a.volume ?? 0) - (b.volume ?? 0) || (a.id < b.id ? -1 : a.id > b.id ? 1 : 0)
+		);
+		const name = [...members].sort(
+			(a, b) => a.name.length - b.name.length || (a.id < b.id ? -1 : 1)
+		)[0].name;
+		const packaging = new Set(members.map((member) => member.packaging.toLowerCase()));
+		const group: VariantGroup = {
+			id,
+			name,
+			variesBy: packaging.size > 1 ? ['size', 'material'] : ['size'],
+			members
+		};
+		for (const member of members) groups.set(member.id, group);
+	}
+	return groups;
+}

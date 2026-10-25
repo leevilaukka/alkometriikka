@@ -31,10 +31,17 @@ canonical link to that URL. With the default `'never'` the router would rewrite 
 `<path>` on load, so the visible URL would redirect when shared and disagree with the canonical.
 
 - **`alko`** resolves once `data.json` is downloaded, parsed (`parseDataset`) and indexed into a
-  `Kaljakori`. It also carries the parsed `dataset` (table + metadata) and a lazily filled
-  `availability`.
+  `Kaljakori`. It also carries the dataset's `metadata` (as `dataset.metadata`) and a lazily
+  filled `availability`. The parsed table isn't kept: once the products are built from it, it
+  would only take memory (category pages match products with `Kaljakori.categoryOf` instead).
 - **`alkoWithStores`** resolves to the same object, but only after `availability.json` has also
   been applied.
+- **`alkoWithRemoved`** resolves once the products removed from the selection have been added
+  from `data-removed.json` (or failed to load). It is fetched once `data.json` is in and added in
+  a `requestIdleCallback` with `Kaljakori.addProducts`. Pages showing saved products, which may
+  be removed ones, wait for it: `/seuratut`, `/listat`, `/vertailu`, `/tilastot`, and `/` when the
+  URL shows removed products. `/tuotteet/[id]` and `/vastaavat/[id]` await `alko.removedReady`
+  only when the product isn't in the selection; a product page with a preview shows it meanwhile.
 
 `availability.json` is requested in parallel with `data.json` but parsed only after the first
 render, in a `requestIdleCallback` (`LazyAvailability` in `src/lib/alko/availability.svelte.ts`).
@@ -45,17 +52,51 @@ without store data await `alkoWithStores`:
 | Route                                                | Waits for store data when…                  |
 | ---------------------------------------------------- | ------------------------------------------- |
 | `/` (main list)                                      | the URL has a `Myymälät` filter             |
-| `/tuotteet/[id]`                                     | always (shows availability)                 |
 | `/myymalat/[storeID]`                                | always                                      |
 | `/kategoriat/[type]/[[subtype]]`, `/hinnanmuutokset` | "only my store" is on and a store is chosen |
+| `/seuratut`                                          | always (compares stock)                     |
 | `/kompassi`                                          | the store list is read from it              |
 
-If `data.json` fails to load, the layout shows the error with a retry button. If
-`availability.json` fails, the app continues with empty store data.
+If `data.json` fails to load, the layout shows the error with a retry button, or, when a
+[product page preview](#product-page-preview) is already showing, keeps it and shows a warning
+banner with a retry button. If `availability.json` fails, the app continues with empty store data
+and `availabilityFailed` set, so pages can say it failed instead of showing products in no store.
 
-`+layout.svelte` awaits `data.alko`, removes the loader, and renders the header, the
+`+layout.svelte` waits for `data.alko`, removes the loader, and renders the header, the
 [notice banner](features.md#site-notices), the page, the compare bar and the page's mobile bottom
-bar.
+bar. Once shown, the app stays up, so a page navigated to before the price list has loaded waits
+for it itself.
+
+### Product page preview
+
+Most visitors land on a product page from search, so the product page doesn't wait for either file.
+Each product's [prerendered stub](../site-generation.md#product-pages) embeds that product as a
+one-product `data.json` in `<script type="application/json" id="stub-data">` (`STUB_DATA_ID`).
+The page's `load` reads it into a one-product `Kaljakori` and returns it as `preview`, without
+awaiting `data.alko`; the layout renders right away for a page whose data has a `preview`.
+
+The page then fills in as data arrives, in place, without remounting:
+
+1. **Stub only:** name, price, picture, details, quick stats and price history. The price-quality
+   and similar-products sections, and the store parts, show placeholders sized like the loaded
+   sections so the page doesn't jump.
+2. **`data.json`:** the price list replaces the preview (`catalogState`). Price-quality, similar
+   products, sizes and the category links in the breadcrumb appear.
+3. **`availability.json`:** store availability, the preferred store's stock and the watch button
+   (`availabilityState`), which waits for stock data to snapshot and compare.
+
+If `data.json` fails, the preview stays: price-quality and similar products are left out and the
+store parts say availability couldn't be loaded, as they do when only `availability.json` fails.
+The watch button works either way, since a snapshot without stock data keeps the stock last seen.
+
+While a preview is showing, `data.json` is requested at low fetch priority (as `availability.json`
+always is), so on a slow connection the page's own code and photo download first. Once it arrives,
+the layout yields to the browser after parsing it and again after building the `Kaljakori`, so the
+work runs as several shorter tasks instead of one that blocks input for seconds on a phone.
+
+Without a matching stub (client-side navigation, or a stub older than this) the page's `load`
+awaits `data.alko` and checks the product exists, as other pages do. Store availability still
+fills in after the first render.
 
 ## Offline support
 
@@ -134,6 +175,7 @@ Product photos from `images.alko.fi` aren't handled: they are sent with a one-ye
 | `/kategoriat/`                    | Category index                         |                                                                                        |
 | `/kategoriat/[type]/[[subtype]]/` | Category page                          | 404 if the slugs don't match the category tree                                         |
 | `/hinnanmuutokset`                | Recent price changes                   |                                                                                        |
+| `/seuratut`                       | Watched products and their changes     |                                                                                        |
 | `/tilastot`                       | Catalog statistics and charts          |                                                                                        |
 | `/laskin`                         | Alcohol / BAC calculator               | Doesn't need the dataset                                                               |
 | `/myymalat`                       | Store list                             |                                                                                        |
@@ -174,6 +216,9 @@ legacy EAN, since API-synced products have none.
 | `personalInfo`                      | `$state` | `personal_info`                 | Weight and gender for BAC estimates                             |
 | `lists`                             | `$state` | `lists`                         | The user's saved lists                                          |
 | `compareProductIds`                 | `$state` | `compare_products`              | Products queued for comparison (max 6)                          |
+| `watchlist`                         | `$state` | `watchlist`                     | Watched products and what the user last saw of them             |
+| `punchDraft`                        | `$state` | `punch_draft`                   | The recipe open in the punch calculator                         |
+| `punchRecipes`                      | `$state` | `punch_recipes`                 | Punch recipes saved by name                                     |
 | `compareHighlightDifferences`       | store    | `compare_highlight_differences` | Comparison table dims identical rows                            |
 | `theme`                             | store    | `theme`                         | `''` (system), `'light'` or `'dark'`                            |
 | `preferredStoreId`                  | store    | `preferred_store`               | A store id, or `'auto'` for the nearest store                   |
@@ -199,16 +244,25 @@ Shareable state lives in the query string, managed by `SearchParamsManager`
 the URL with `replaceState` (no history entries). Calls made before the router is ready are
 queued and flushed by `markRouterReady()` in `afterNavigate`.
 
-| Parameter                             | Used on                 | Meaning                                                                                                          |
-| ------------------------------------- | ----------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `q`                                   | lists with a search box | Name search                                                                                                      |
-| `<column name>`                       | `/`, list pages         | A filter, e.g. `?Tyyppi=Viinit&Tyyppi=Oluet` or `?Hinta=5-20` (see [Kaljakori](kaljakori.md#filters-in-the-url)) |
-| `sort`, `asc`, `highlight`            | `/`                     | Sort column, direction, highlighted column (omitted when default)                                                |
-| `removed`                             | `/`                     | `true` when removed products are shown                                                                           |
-| `list`                                | `/listat`               | An lz-string compressed list                                                                                     |
-| `ids`                                 | `/vertailu`             | Comma-separated product numbers                                                                                  |
-| `pv`, `suunta`, `tyyppi`, `alatyyppi` | `/hinnanmuutokset`      | Window (7/30/90 days), direction (`halpeni`/`kallistui`), category slugs                                         |
-| `sid`                                 | any shared link         | Share id for counting shared views; stripped on arrival                                                          |
+Once the query string passes 400 characters, `update()` moves it into a `#z=` fragment instead:
+the parameters grouped by key (repeated filter names are most of a long query) and compressed with
+lz-string (`src/lib/utils/app/compressedParams.ts`). Browsers never send the fragment, so even
+"Valitse kaikki" on a filter with thousands of values can't make a reload fail with 414 (GitHub
+Pages refuses URLs over about 8 KB). Only `sid`, `flag` and `list` stay in the query. The manager
+expands `z` when it reads a URL, and code that reads the query string itself goes through
+`readSearchParams()`, so a compressed link behaves like the long one.
+
+| Parameter                             | Used on                 | Meaning                                                                                                                              |
+| ------------------------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `q`                                   | lists with a search box | Name search                                                                                                                          |
+| `<column name>`                       | `/`, list pages         | A filter, e.g. `?Tyyppi=Viinit&Tyyppi=Oluet` (or `Viinit,Oluet`) or `?Hinta=5-20` (see [Kaljakori](kaljakori.md#filters-in-the-url)) |
+| `sort`, `asc`, `highlight`            | `/`                     | Sort column, direction, highlighted column (omitted when default)                                                                    |
+| `removed`                             | `/`                     | `true` when removed products are shown                                                                                               |
+| `list`                                | `/listat`               | An lz-string compressed list                                                                                                         |
+| `ids`                                 | `/vertailu`             | Comma-separated product numbers                                                                                                      |
+| `pv`, `suunta`, `tyyppi`, `alatyyppi` | `/hinnanmuutokset`      | Window (7/30/90 days), direction (`halpeni`/`kallistui`), category slugs                                                             |
+| `sid`                                 | any shared link         | Share id for counting shared views; stripped on arrival                                                                              |
+| `#z=` (fragment)                      | any page                | The other parameters compressed, when the query string would be long                                                                 |
 
 The search box text belongs to the page it was typed on: navigating to a different path clears it,
 while back/forward restores it from the URL.
@@ -217,8 +271,10 @@ while back/forward restores it from the URL.
 
 - The header has the logo, the search box (hidden on pages without a product list), a "Lisää"
   menu, links to Daily and Listat, and the settings button. The menu (`menuGroups` in the layout)
-  groups its links under Selaa (Kategoriat, Hinnanmuutokset, Tilastot), Omat (Listat), Myymälät
-  (Myymälät, Kompassi) and Työkalut (Laskin, Daily-arkisto), and marks the current page.
+  groups its links under Selaa (Kategoriat, Hinnanmuutokset, Tilastot), Omat
+  (Seuratut, Listat), Myymälät (Myymälät, Kompassi) and Työkalut (Laskin, Daily-arkisto), and
+  marks the current page. When watched products have changed, Seuratut shows how many and the
+  menu button gets a green dot.
 - `/` focuses the search box from anywhere that isn't a text field.
 - On phones, pages pass a snippet into `pageBottomBar` (filter button, product price/compare bar)
   and the layout renders it at the very bottom, below the compare bar.

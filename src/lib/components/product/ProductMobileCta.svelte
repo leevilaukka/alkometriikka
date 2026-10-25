@@ -1,14 +1,13 @@
 <script lang="ts">
 	import { AllColumns } from '$lib/utils/constants/columns';
 	import { formatValue } from '$lib/utils/format/format';
-	import type { ListObj, PriceListItem } from '$lib/types';
-	import { addToList } from '$lib/utils/user/lists';
+	import type { PriceListItem } from '$lib/types';
 	import { components } from '$lib/utils/ui/styles';
 	import { compareProductIds } from '$lib/global.svelte';
 	import { toggleCompare, MAX_COMPARE_PRODUCTS } from '$lib/utils/user/compare';
 	import Icon from '../widgets/Icon.svelte';
 	import Popup from '../widgets/Popup.svelte';
-	import AllLists from '../widgets/AllLists.svelte';
+	import AddToListContent from '../widgets/AddToListContent.svelte';
 	import { twMerge } from 'tailwind-merge';
 	import BottomBar from '../widgets/BottomBar.svelte';
 	import { alkoProductUrl } from '$lib/utils/app/alkoLinks';
@@ -68,20 +67,17 @@
 			<button
 				type="button"
 				class={twMerge(components.button({ type: 'positive', size: 'lg' }), 'h-11 w-20 sm:w-full')}
-				aria-label={m.list_add_to()}
+				aria-label={m.list_add_to_or_punch_label()}
 				onclick={() => dialogElement.showModal()}
 			>
-				<span class="hidden sm:inline">{m.list_add_to()}</span>
+				<span class="hidden sm:inline">{m.list_add()}</span>
 				<Icon name="plus" />
 			</button>
 		{/snippet}
 		{#snippet renderContent(dialogElement: HTMLDialogElement)}
-			<h2 class="text-xl">{m.list_choose()}</h2>
-			<AllLists
-				action={(list: ListObj) => {
-					addToList(list, product[AllColumns.Number]);
-					dialogElement.close();
-				}}
+			<AddToListContent
+				productNumber={product[AllColumns.Number]}
+				onadded={() => dialogElement.close()}
 			/>
 		{/snippet}
 	</Popup>

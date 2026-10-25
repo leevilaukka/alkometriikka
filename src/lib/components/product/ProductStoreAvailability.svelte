@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import type { AvailabilityStore } from '$lib/types';
+	import type { AvailabilityStore, LoadState } from '$lib/types';
 	import {
 		formatStoreDistance,
 		getStoreDistance,
@@ -14,14 +14,16 @@
 	import { requestSettingsOpen } from '$lib/utils/app/settings';
 	import { components } from '$lib/utils/ui/styles';
 	import { twMerge } from 'tailwind-merge';
+	import ProductStockTrend from './ProductStockTrend.svelte';
 
-	// productNumber is threaded through for a future `show_availability` re-evaluation
+	// productNumber is also threaded through for a future `show_availability` re-evaluation
 	// (see AnalyticsEventMap) - not fired here since the section is always visible now,
 	// not opened by the user, so mounting isn't a meaningful "viewed" signal.
 	const {
 		id,
 		productNumber,
 		stores,
+		availabilityState,
 		preferredStore,
 		availabilityUpdated,
 		class: _class = ''
@@ -29,6 +31,8 @@
 		id?: string;
 		productNumber: string;
 		stores: AvailabilityStore[];
+		/** `stores` is empty, rather than the product in no store, unless availability has loaded */
+		availabilityState: LoadState;
 		preferredStore?: AvailabilityStore;
 		availabilityUpdated: Date | undefined;
 		class?: string;
@@ -61,15 +65,22 @@
 	<header class="flex flex-col gap-0.5 border-b border-primary p-3.5">
 		<h2 class="text-lg font-bold">{m.availability_title()}</h2>
 		<p class="text-sm text-secondary">
-			{m.stores_count({ count: stores.length })}{#if availabilityUpdated}
+			{#if availabilityState === 'loading'}
+				{m.availability_loading()}
+			{:else if availabilityState === 'failed'}
+				{m.availability_failed()}
+			{:else}
+				{m.stores_count({ count: stores.length })}
+			{/if}{#if availabilityUpdated}
 				· <time
 					datetime={availabilityUpdated.toISOString()}
 					title={availabilityUpdated.toLocaleString(intlLocale)}
 					>{m.availability_updated({ time: formatRelativeTime(availabilityUpdated, now) })}</time
 				>{/if}
 		</p>
+		<ProductStockTrend {productNumber} class="mt-1" />
 	</header>
-	{#if !preferredStore}
+	{#if availabilityState === 'loaded' && !preferredStore}
 		<div class="border-b border-primary p-3.5">
 			<button
 				type="button"
@@ -80,7 +91,25 @@
 			</button>
 		</div>
 	{/if}
-	{#if stores.length > 0}
+	{#if availabilityState === 'failed'}
+		<div class="flex flex-col items-start gap-2.5 bg-primary p-3.5 text-secondary">
+			<p>{m.availability_stores_failed()}</p>
+			<button
+				type="button"
+				class={components.button({ size: 'sm' })}
+				onclick={() => location.reload()}
+			>
+				{m.common_retry()}
+			</button>
+		</div>
+	{:else if availabilityState === 'loading'}
+		<!-- As tall as the list usually is, which scrolls past max-h-96 -->
+		<div aria-hidden="true" class="flex h-96 flex-col gap-2 overflow-hidden bg-primary p-3.5">
+			{#each { length: 6 }, index (index)}
+				<div class="h-12 animate-pulse rounded bg-secondary"></div>
+			{/each}
+		</div>
+	{:else if stores.length > 0}
 		<ul class="max-h-96 overflow-y-auto bg-primary">
 			{#each stores as store (store.id)}
 				{@const distance = formatStoreDistance(getStoreDistance(preferredStore, store))}

@@ -34,6 +34,12 @@
 	);
 
 	const inCompare = $derived(compareProductIds.includes(product[AllColumns.Number]));
+	// Alcohol-free products have no servings
+	const perServing = $derived(
+		product[AllColumns.EuroPerServing] > 0
+			? ` · ${m.punch_result_per_serving({ price: formatValue(product[AllColumns.EuroPerServing], AllColumns.EuroPerServing) })}`
+			: ''
+	);
 
 	function handleToggleCompare() {
 		if (!toggleCompare(product[AllColumns.Number])) {
@@ -43,18 +49,22 @@
 </script>
 
 <div
-	class={twMerge('relative flex flex-col overflow-clip rounded border border-primary bg-primary')}
+	class={twMerge(
+		'@container relative flex flex-col overflow-clip rounded border border-primary bg-primary'
+	)}
 >
 	<!-- Pages can attach a tab to the card's left edge (its top on phones), e.g. the price change on /hinnanmuutokset -->
-	<div class="flex flex-col md:flex-row">
+	<div class="flex flex-col @4xl:flex-row">
 		{#if renderAside}
 			{@render renderAside()}
 		{/if}
 		<div
-			class={twMerge('flex min-w-0 flex-1 flex-col flex-nowrap items-center gap-4 p-4 md:flex-row')}
+			class={twMerge(
+				'flex min-w-0 flex-1 flex-col flex-nowrap items-center gap-4 p-4 @4xl:flex-row'
+			)}
 		>
 			<div
-				class="flex aspect-square w-40 max-w-[10rem] shrink-0 rounded bg-white p-2 md:h-full md:w-auto md:max-w-fit"
+				class="flex aspect-square w-40 max-w-[10rem] shrink-0 rounded bg-white p-2 @4xl:h-full @4xl:w-auto @4xl:max-w-fit"
 			>
 				<ProductImage number={product[AllColumns.Number]} name={productName(product)} />
 			</div>
@@ -69,7 +79,7 @@
 						</h2>
 					</a>
 				</div>
-				<div class="flex flex-col items-start gap-0.5 md:flex-row md:gap-3">
+				<div class="flex flex-col items-start gap-0.5 @4xl:flex-row @4xl:gap-3">
 					<div class="flex flex-col gap-0.5 md:gap-1">
 						<p>{valueToString(product[AllColumns.Manufacturer], AllColumns.Manufacturer)}</p>
 						<p>
@@ -104,7 +114,7 @@
 							: null}
 					</span>
 				</div>
-				<div class="flex flex-col gap-4 lg:flex-row lg:items-center">
+				<div class="flex flex-col gap-4 @4xl:flex-row @4xl:items-center">
 					<div class="flex items-center gap-2">
 						{#if sale}
 							<span class="text-xl text-secondary line-through">
@@ -120,12 +130,13 @@
 							</span>
 						{/if}
 						<span class="text-sm text-secondary">
-							({formatValue(product[AllColumns.PricePerLiter], AllColumns.PricePerLiter)})
+							({formatValue(
+								product[AllColumns.PricePerLiter],
+								AllColumns.PricePerLiter
+							)}{perServing})
 						</span>
 					</div>
-					<div class="flex flex-row items-center gap-3">
-						<BadgeList item={product} />
-					</div>
+					<BadgeList item={product} fit class="@4xl:flex-1" />
 					<div class="ms-auto flex flex-row flex-wrap items-center gap-3">
 						<button
 							type="button"

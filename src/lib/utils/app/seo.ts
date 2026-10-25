@@ -12,6 +12,12 @@ const number = (locale: Locale, value: number, maxDigits: number, minDigits = 0)
 		maximumFractionDigits: maxDigits
 	});
 
+/**
+ * Id of the `<script type="application/json">` in which a prerendered stub carries its page's
+ * own data, so the page can render it before the full price list has loaded
+ */
+export const STUB_DATA_ID = 'stub-data';
+
 export type ProductSeoInput = {
 	name: string;
 	category?: string;
@@ -113,6 +119,12 @@ const STATIC_PAGE_SOURCES: StaticPageSource[] = [
 		keywords: m.seo_calculator_keywords
 	},
 	{
+		path: '/boolilaskuri/',
+		title: 'Boolilaskuri',
+		description: m.seo_punch_description,
+		keywords: m.seo_punch_keywords
+	},
+	{
 		path: '/tilastot/',
 		title: 'Tilastot',
 		description: m.seo_stats_description,
@@ -141,6 +153,12 @@ const STATIC_PAGE_SOURCES: StaticPageSource[] = [
 		title: 'Listat',
 		description: m.seo_lists_description,
 		keywords: m.seo_lists_keywords
+	},
+	{
+		path: '/seuratut/',
+		title: 'Seuratut',
+		description: m.seo_watchlist_description,
+		keywords: m.seo_watchlist_keywords
 	}
 ];
 

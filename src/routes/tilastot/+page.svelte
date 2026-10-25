@@ -20,7 +20,7 @@
 	<title>{generateTitle(m.nav_stats())}</title>
 </svelte:head>
 
-{#await data.alko}
+{#await data.alkoWithRemoved}
 	<div class="grid h-full w-full place-content-center">
 		<div class="flex flex-col items-center gap-3">
 			<span

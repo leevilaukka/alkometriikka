@@ -1,11 +1,11 @@
 <script lang="ts">
+	import { LIST_BUFFER_SIZE } from '$lib/utils/constants/display';
 	import { appPath } from '$lib/utils/app/paths';
 	import { resolve } from '$app/paths';
-	import { page } from '$app/state';
 	import { getContext, untrack } from 'svelte';
 	import SvelteVirtualList from '@humanspeak/svelte-virtual-list';
 	import type { Kaljakori } from '$lib/alko';
-	import type { AvailabilityData, ListObj } from '$lib/types';
+	import type { AvailabilityData } from '$lib/types';
 	import { AllColumns } from '$lib/utils/constants/columns';
 	import { AUTO_STORE_ID, ContextKeys } from '$lib/utils/constants/app';
 	import { categoryFeedPath, type CategoryNode } from '$lib/utils/catalog/categories';
@@ -40,13 +40,12 @@
 	} from '$lib/global.svelte';
 	import { resolvePreferredStore } from '$lib/utils/catalog/availability';
 	import { keepAutoLocationFresh } from '$lib/utils/device/location';
-	import { addToList } from '$lib/utils/user/lists';
 	import { components } from '$lib/utils/ui/styles';
 	import { twMerge } from 'tailwind-merge';
 	import Icon from '../widgets/Icon.svelte';
 	import Breadcrumb from '../widgets/Breadcrumb.svelte';
 	import Popup from '../widgets/Popup.svelte';
-	import AllLists from '../widgets/AllLists.svelte';
+	import AddToListContent from '../widgets/AddToListContent.svelte';
 	import ProductPreview from '../widgets/ProductPreview.svelte';
 	import BottomBar from '../widgets/BottomBar.svelte';
 	import FilterButton from '../widgets/FilterButton.svelte';
@@ -68,7 +67,7 @@
 
 	const searchParamsManager = getContext<SearchParamsManager>(ContextKeys.SearchParamsManager);
 
-	const initial = untrack(() => parsePriceChangeParams(page.url.searchParams));
+	const initial = untrack(() => parsePriceChangeParams(searchParamsManager.params));
 	let days = $state<number>(initial.days);
 	let direction = $state<PriceChangeDirection>(initial.direction);
 	let typeSlug = $state(initial.typeSlug);
@@ -403,21 +402,22 @@
 	{@const cheaper = isPriceDrop(change)}
 	<div
 		class={twMerge(
-			'flex shrink-0 flex-row flex-wrap items-center justify-between gap-x-3 gap-y-1 border-b border-primary px-4 py-2 text-sm md:w-32 md:flex-col md:justify-center md:gap-1 md:border-e md:border-b-0 md:px-2 md:py-4 md:text-center',
+			'flex shrink-0 flex-row flex-wrap items-center justify-between gap-x-3 gap-y-1 border-b border-primary px-4 py-2 text-sm @4xl:w-32 @4xl:flex-col @4xl:justify-center @4xl:gap-1 @4xl:border-e @4xl:border-b-0 @4xl:px-2 @4xl:py-4 @4xl:text-center',
 			cheaper ? 'text-green-700 dark:text-green-400' : 'text-red-700 dark:text-red-400'
 		)}
 	>
-		<span class="flex items-center gap-1.5 md:flex-col md:gap-1">
-			<span class="md:text-2xl"><Icon name={cheaper ? 'trending_down' : 'trending_up'} /></span>
-			<strong class="leading-tight md:text-3xl">{formatPriceChangePercent(change.percent)}</strong>
+		<span class="flex items-center gap-1.5 @4xl:flex-col @4xl:gap-1">
+			<span class="@4xl:text-2xl"><Icon name={cheaper ? 'trending_down' : 'trending_up'} /></span>
+			<strong class="leading-tight @4xl:text-3xl">{formatPriceChangePercent(change.percent)}</strong
+			>
 		</span>
 		<span class="font-semibold">{formatPriceChangeAmount(change)}</span>
-		<span class="md:text-xs"
+		<span class="@4xl:text-xs"
 			>{m.price_changes_was({ price: String(formatValue(change.from, AllColumns.Price)) })}</span
 		>
-		<span class="text-secondary md:text-xs">{formatPriceChangeDate(change.date)}</span>
+		<span class="text-secondary @4xl:text-xs">{formatPriceChangeDate(change.date)}</span>
 		{#if change.sale}
-			<span class={twMerge(components.badge({ color: 'green' }), 'md:text-xs')}
+			<span class={twMerge(components.badge({ color: 'green' }), '@4xl:text-xs')}
 				>{m.price_changes_sale_badge()}</span
 			>
 		{/if}
@@ -477,7 +477,7 @@
 			{@render filters()}
 		</aside>
 	{/if}
-	<main
+	<div
 		id="results"
 		tabindex="-1"
 		class="flex h-full w-full min-w-0 flex-col gap-3 overflow-y-auto bg-secondary p-4 outline-none md:gap-4 md:p-6"
@@ -506,7 +506,12 @@
 			</div>
 		{:else}
 			<div class="flex min-h-0 flex-auto flex-col">
-				<SvelteVirtualList items={rows} bind:this={listRef} itemsClass={'flex flex-col gap-3'}>
+				<SvelteVirtualList
+					items={rows}
+					bind:this={listRef}
+					itemsClass={'flex flex-col gap-3'}
+					bufferSize={LIST_BUFFER_SIZE}
+				>
 					{#snippet renderItem(change)}
 						{#if change === null}
 							<div class="flex flex-col gap-3 pb-1">
@@ -523,19 +528,17 @@
 										{#snippet renderButton(dialogElement: HTMLDialogElement)}
 											<button
 												class={twMerge(components.button({ type: 'positive' }), 'ml-auto')}
+												aria-label={m.list_add_to_or_punch_label()}
 												onclick={() => dialogElement.showModal()}
 											>
-												<span>{m.list_add_to()}</span>
+												<span>{m.list_add()}</span>
 												<Icon name="plus" />
 											</button>
 										{/snippet}
 										{#snippet renderContent(dialogElement: HTMLDialogElement)}
-											<h2 class="text-xl">{m.list_choose()}</h2>
-											<AllLists
-												action={(list: ListObj) => {
-													addToList(list, change.product[AllColumns.Number]);
-													dialogElement.close();
-												}}
+											<AddToListContent
+												productNumber={change.product[AllColumns.Number]}
+												onadded={() => dialogElement.close()}
 											/>
 										{/snippet}
 									</Popup>
@@ -546,5 +549,5 @@
 				</SvelteVirtualList>
 			</div>
 		{/if}
-	</main>
+	</div>
 </div>

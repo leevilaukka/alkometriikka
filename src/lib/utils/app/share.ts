@@ -45,7 +45,9 @@ export async function handleShare({
 }): Promise<boolean> {
 	const sid = includeSID ? generateSID() : undefined;
 
-	const shareUrl = sid ? `${url}${url.includes('?') ? '&' : '?'}sid=${sid}` : url;
+	// The sid belongs in the query, ahead of a compressed `#z=` fragment
+	const [base, hash] = url.split(/(?=#)/);
+	const shareUrl = sid ? `${base}${base.includes('?') ? '&' : '?'}sid=${sid}${hash ?? ''}` : url;
 
 	const completeShare = () => {
 		if (sid) {
@@ -105,6 +107,8 @@ export function shareTypeFromRoute(routeId: typeof page.route.id): ShareType {
 			return ShareTypes.Similar;
 		case '/vertailu':
 			return ShareTypes.Compare;
+		case '/boolilaskuri':
+			return ShareTypes.Punch;
 		case '/daily':
 		case '/daily/arkisto':
 		case '/daily/arkisto/[date]':

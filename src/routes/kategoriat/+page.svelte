@@ -25,7 +25,7 @@
 </svelte:head>
 
 {#await data.alko then alko}
-	<main class="mx-auto flex w-full max-w-7xl flex-col gap-4 p-4 md:p-6">
+	<div class="mx-auto flex w-full max-w-7xl flex-col gap-4 p-4 md:p-6">
 		<Breadcrumb items={[]} current={m.nav_categories()} />
 		<h1 class="text-2xl font-bold">{m.nav_categories()}</h1>
 		<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -58,5 +58,5 @@
 				</section>
 			{/each}
 		</div>
-	</main>
+	</div>
 {/await}

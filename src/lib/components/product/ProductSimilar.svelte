@@ -19,8 +19,15 @@
 	const {
 		product,
 		candidates,
+		loading = false,
 		class: _class = ''
-	}: { product: PriceListItem; candidates: PriceListItem[]; class?: string } = $props();
+	}: {
+		product: PriceListItem;
+		candidates: PriceListItem[];
+		/** The price list hasn't loaded, so the cards are a placeholder as tall as they will be */
+		loading?: boolean;
+		class?: string;
+	} = $props();
 
 	function handleToggleCompare(number: string) {
 		if (compareProductIds.includes(number)) {
@@ -55,8 +62,8 @@
 	}
 </script>
 
-{#if candidates.length > 0}
-	<section class={twMerge('flex flex-col gap-3.5', _class)}>
+{#if loading || candidates.length > 0}
+	<section class={twMerge('flex flex-col gap-3.5', loading && 'h-133 md:h-125', _class)}>
 		<div class="flex flex-wrap items-center justify-between gap-3.5">
 			<h2 class="text-2xl font-bold">{m.similar_title()}</h2>
 			<a
@@ -68,58 +75,63 @@
 			</a>
 		</div>
 
-		<div class="flex max-w-full flex-row flex-nowrap gap-3 overflow-x-auto" use:sideScroll>
-			{#each candidates as similarProduct (similarProduct[AllColumns.Number])}
-				{@const number = similarProduct[AllColumns.Number]}
-				{@const inCompare = compareProductIds.includes(number)}
-				<div class="flex w-48 shrink-0 flex-col gap-3 rounded-lg border border-primary p-4">
-					<a href={resolve(`/tuotteet/${number}/`)} class="flex flex-col gap-3">
-						<div class="flex h-30 flex-col gap-2 md:h-33">
-							<h3 class="line-clamp-3 text-xl font-bold md:text-2xl">
-								{productName(similarProduct)}
-							</h3>
-							<span>
-								{formatValue(
-									similarProduct[AllColumns.AlcoholPercentage],
-									AllColumns.AlcoholPercentage
-								)}
-							</span>
-						</div>
-						<div class="flex aspect-square w-full shrink-0 rounded bg-white p-2 md:max-w-fit">
-							<ProductImage
-								number={similarProduct[AllColumns.Number]}
-								name={productName(similarProduct)}
-								alt={productName(similarProduct)}
-								class="block aspect-square h-full w-full object-contain"
-							/>
-						</div>
-						<div class="flex flex-col gap-2">
-							<p class="text-3xl font-bold drop-shadow-lg">
-								{formatValue(similarProduct[AllColumns.Price], AllColumns.Price)}
-							</p>
-							<span class="text-sm text-secondary">
-								{formatValue(similarProduct[AllColumns.BottleSize], AllColumns.BottleSize)} ({formatValue(
-									similarProduct[AllColumns.PricePerLiter],
-									AllColumns.PricePerLiter
-								)})
-							</span>
-						</div>
-					</a>
-					<button
-						type="button"
-						aria-pressed={inCompare}
-						aria-label={m.compare_product_label({ name: productName(similarProduct) })}
-						class={twMerge(
-							components.button({ size: 'sm', type: inCompare ? 'positive' : 'primary' }),
-							'mt-auto w-full'
-						)}
-						onclick={() => handleToggleCompare(number)}
-					>
-						<Icon name="compare" />
-						<span>{inCompare ? m.compare_in_compare() : m.compare_button()}</span>
-					</button>
-				</div>
-			{/each}
-		</div>
+		{#if loading}
+			<div aria-hidden="true" class="flex-1 animate-pulse rounded bg-secondary"></div>
+		{:else}
+			<div class="flex max-w-full flex-row flex-nowrap gap-3 overflow-x-auto" use:sideScroll>
+				{#each candidates as similarProduct (similarProduct[AllColumns.Number])}
+					{@const number = similarProduct[AllColumns.Number]}
+					{@const inCompare = compareProductIds.includes(number)}
+					<div class="flex w-48 shrink-0 flex-col gap-3 rounded-lg border border-primary p-4">
+						<a href={resolve(`/tuotteet/${number}/`)} class="flex flex-col gap-3">
+							<div class="flex h-30 flex-col gap-2 md:h-33">
+								<h3 class="line-clamp-3 text-xl font-bold md:text-2xl">
+									{productName(similarProduct)}
+								</h3>
+								<span>
+									{formatValue(
+										similarProduct[AllColumns.AlcoholPercentage],
+										AllColumns.AlcoholPercentage
+									)}
+								</span>
+							</div>
+							<div class="flex aspect-square w-full shrink-0 rounded bg-white p-2 md:max-w-fit">
+								<ProductImage
+									number={similarProduct[AllColumns.Number]}
+									name={productName(similarProduct)}
+									alt={productName(similarProduct)}
+									lazy
+									class="block aspect-square h-full w-full object-contain"
+								/>
+							</div>
+							<div class="flex flex-col gap-2">
+								<p class="text-3xl font-bold drop-shadow-lg">
+									{formatValue(similarProduct[AllColumns.Price], AllColumns.Price)}
+								</p>
+								<span class="text-sm text-secondary">
+									{formatValue(similarProduct[AllColumns.BottleSize], AllColumns.BottleSize)} ({formatValue(
+										similarProduct[AllColumns.PricePerLiter],
+										AllColumns.PricePerLiter
+									)})
+								</span>
+							</div>
+						</a>
+						<button
+							type="button"
+							aria-pressed={inCompare}
+							aria-label={m.compare_product_label({ name: productName(similarProduct) })}
+							class={twMerge(
+								components.button({ size: 'sm', type: inCompare ? 'positive' : 'primary' }),
+								'mt-auto w-full'
+							)}
+							onclick={() => handleToggleCompare(number)}
+						>
+							<Icon name="compare" />
+							<span>{inCompare ? m.compare_in_compare() : m.compare_button()}</span>
+						</button>
+					</div>
+				{/each}
+			</div>
+		{/if}
 	</section>
 {/if}

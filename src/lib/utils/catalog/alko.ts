@@ -1,6 +1,12 @@
-import type { DrunkColumnNames, ImageTransform } from '$lib/types';
-import { DrunkColumns } from '../constants/columns';
+import type { DrunkColumnNames, ImageTransform, PriceListItem } from '$lib/types';
+import { AllColumns, DrunkColumns } from '../constants/columns';
 import { GenderOptionsMap } from '../constants/app';
+
+/** Etanolin tiheys g/l */
+export const ETHANOL_DENSITY = 789;
+
+/** Suomalainen vakioannos, 12 g puhdasta alkoholia */
+export const SERVING_GRAMS = 12;
 
 /**
  * Laskee alkoholin määrän, känni per euro ja BAC-arvot.
@@ -31,9 +37,6 @@ export function calculateDrunkValue(
 		}
 	}
 
-	// Etanolin tiheys g/l
-	const ETHANOL_DENSITY = 789;
-
 	// Widmarkin kertoimet
 	const r = gender === GenderOptionsMap.Male ? 0.68 : 0.55;
 
@@ -52,7 +55,10 @@ export function calculateDrunkValue(
 		price > 0 && Number.isFinite(price) && Number.isFinite(estimatedBAC) ? estimatedBAC / price : 0;
 
 	// Lasketaan annokset (1 annos = 12g)
-	const servings = pureAlcoholGrams / 12;
+	const servings = pureAlcoholGrams / SERVING_GRAMS;
+
+	// Lasketaan hinta per annos (alkoholittomalla ei annoksia, joten 0)
+	const euroPerServing = servings > 0 && Number.isFinite(price) ? price / servings : 0;
 
 	// € per litra raakaa alkoholia (varmistetaan, että nimittäjä ei ole nolla)
 	const alcoholLiters = volume * (percentage / 100);
@@ -67,7 +73,8 @@ export function calculateDrunkValue(
 		!Number.isFinite(estimatedBAC) ||
 		!Number.isFinite(bacPerEuro) ||
 		!Number.isFinite(servings) ||
-		!Number.isFinite(euroPerLiter)
+		!Number.isFinite(euroPerLiter) ||
+		!Number.isFinite(euroPerServing)
 	) {
 		console.log(
 			'Invalid input values. Please ensure volume, percentage, price, and weight are valid numbers., Item: ' +
@@ -89,7 +96,8 @@ export function calculateDrunkValue(
 		[DrunkColumns.EstimatedPromille]: parseFloat(estimatedBAC.toFixed(3)),
 		[DrunkColumns.PromillePerEuro]: parseFloat(bacPerEuro.toFixed(4)),
 		[DrunkColumns.Servings]: parseFloat(servings.toFixed(1)),
-		[DrunkColumns.EuroPerLiterAlcohol]: parseFloat(euroPerLiter.toFixed(2))
+		[DrunkColumns.EuroPerLiterAlcohol]: parseFloat(euroPerLiter.toFixed(2)),
+		[DrunkColumns.EuroPerServing]: parseFloat(euroPerServing.toFixed(2))
 	};
 }
 
@@ -112,9 +120,62 @@ export function calculatePricePerLitre(
 	return perLitre > 0 ? Math.round(perLitre * 100) / 100 : null;
 }
 
-export function generateImageUrl(itemNumber: string, transform?: ImageTransform): string {
-	const imageURL =
-		`https://images.alko.fi/images/cs_srgb,f_auto,t_${transform || 'products'}/cdn` as const;
+const ALKO_IMAGES = 'https://images.alko.fi/images' as const;
 
-	return `${imageURL}/${itemNumber}/kuva.jpg` as const;
+/**
+ * A product photo as JPEG, or WebP for clients that accept it, converted to sRGB. For share
+ * metadata, structured data and feeds, whose readers may not decode AVIF; the app itself shows
+ * {@link displayImageUrl}.
+ */
+export function generateImageUrl(
+	itemNumber: string,
+	transform: Exclude<ImageTransform, 'small'> = 'products'
+): string {
+	return `${ALKO_IMAGES}/cs_srgb,f_auto,t_${transform}/cdn/${itemNumber}/kuva.jpg` as const;
+}
+
+/**
+ * Alko's CDN serves only a fixed set of transform and format combinations (others are 404s), and
+ * its `f_auto` never picks AVIF, so the format is named by the extension. Without `cs_srgb` the
+ * photos keep their Adobe RGB profile, which browsers convert; it is far smaller than the sRGB one
+ * `cs_srgb` embeds, so the small photos are about 40 % lighter. `t_pdp` is converted to sRGB already.
+ */
+const DISPLAY_IMAGES: Record<ImageTransform, string> = {
+	products: 't_products/cdn/{id}/kuva.webp',
+	small: 't_digipruuvi/cdn/{id}/kuva.webp',
+	medium: 't_pdp/cdn/{id}/kuva.avif',
+	large: 't_large/cdn/{id}/kuva.avif'
+};
+
+/**
+ * The product photo the app shows. `medium` and `large` are AVIF, about 40 % smaller than {@link generateImageUrl}'s
+ * WebP; browsers that can't decode it fall back to {@link fallbackImageUrl}.
+ */
+export function displayImageUrl(
+	itemNumber: string,
+	transform: ImageTransform = 'products'
+): string {
+	return `${ALKO_IMAGES}/${DISPLAY_IMAGES[transform].replace('{id}', itemNumber)}`;
+}
+
+/** The photo to show when {@link displayImageUrl}'s AVIF can't be decoded, e.g. Safari before 16 */
+export function fallbackImageUrl(
+	itemNumber: string,
+	transform: ImageTransform
+): string | undefined {
+	return transform === 'medium' || transform === 'large'
+		? generateImageUrl(itemNumber, transform)
+		: undefined;
+}
+
+/**
+ * Site path of the product's price-change RSS feed, or `undefined` when it has none.
+ * Same rule as scripts/site/rss.ts: a product gets a feed once its price has changed.
+ */
+export function productFeedPath(product: PriceListItem): string | undefined {
+	const history = product[AllColumns.History] ?? [];
+	const changed = history.some(
+		(entry, index) => index > 0 && entry.price !== history[index - 1].price
+	);
+	return changed ? `/rss/${encodeURIComponent(product[AllColumns.Number])}.xml` : undefined;
 }

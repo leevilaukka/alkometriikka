@@ -118,7 +118,7 @@
 	<title>{generateTitle(m.daily_archive())}</title>
 </svelte:head>
 
-<main class="mx-auto flex w-full max-w-4xl flex-col gap-6 p-4 md:p-8 lg:gap-8 lg:p-10">
+<div class="mx-auto flex w-full max-w-4xl flex-col gap-6 p-4 md:p-8 lg:gap-8 lg:p-10">
 	<header class="flex flex-col gap-2 border-b border-primary pb-5">
 		<div class="flex items-center justify-between gap-4">
 			<div>
@@ -259,4 +259,4 @@
 			</div>
 		</section>
 	{/if}
-</main>
+</div>

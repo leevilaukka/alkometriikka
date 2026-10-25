@@ -5,6 +5,13 @@
 	import { page } from '$app/state';
 	import { m } from '$lib/i18n';
 
+	let { showTrigger = true }: { showTrigger?: boolean } = $props();
+	let dialog = $state<ReturnType<typeof FeedbackDialog>>();
+
+	export function open() {
+		dialog?.open();
+	}
+
 	const categories = [
 		{ key: 'wrong_product_info', label: m.site_feedback_wrong_product_info() },
 		{ key: 'wrong_image', label: m.site_feedback_wrong_image() },
@@ -31,6 +38,8 @@
 </script>
 
 <FeedbackDialog
+	bind:this={dialog}
+	{showTrigger}
 	title={m.site_feedback_title()}
 	description={m.site_feedback_description()}
 	thankYou={m.site_feedback_thanks()}

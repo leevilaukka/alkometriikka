@@ -1,6 +1,6 @@
 import type { Kaljakori } from '$lib/alko';
 import type { ColumnNames, FilterValue, FilterValues, PriceListItem } from '$lib/types';
-import { AllColumns, subCategoryMap } from '../constants/columns';
+import { AllColumns, subCategoryMap, zeroWithoutAlcoholColumns } from '../constants/columns';
 import { getPackCount } from '../constants/badges';
 import { shownFilters } from '../constants/display';
 export { getComparableProductName } from './productVariants';
@@ -94,21 +94,58 @@ export function searchParametersFromFilterValues(
 	);
 }
 
+/**
+ * Whether the URL gets a filter's selections as one comma-separated value (`?Tyyppi=Oluet,Siiderit`)
+ * instead of repeated keys (`?Tyyppi=Oluet&Tyyppi=Siiderit`). Both forms are read either way.
+ */
+export const COMMA_SEPARATED_FILTERS = false;
+
+/**
+ * Joins each filter's selections into one comma-separated value. A filter with a selection that
+ * contains a comma itself (`Brandyt, armanjakit ja calvadosit`) keeps the repeated form.
+ */
+export function joinFilterParams(params: Record<string, string | string[]>) {
+	return Object.fromEntries(
+		Object.entries(params).map(([key, value]) => [
+			key,
+			Array.isArray(value) && !value.some((v) => v.includes(',')) ? value.join(',') : value
+		])
+	);
+}
+
+/**
+ * Reads filters in either URL form: repeated keys (`?Tyyppi=Oluet&Tyyppi=Siiderit`) or
+ * comma-separated (`?Tyyppi=Oluet,Siiderit`), whichever {@link COMMA_SEPARATED_FILTERS} picks for
+ * writing. A value that is one of the filter's own values is kept whole, so selections containing
+ * commas (`Brandyt, armanjakit ja calvadosit`) survive either way.
+ */
 export function filterValuesFromSearchParameters(
 	searchParams: URLSearchParams,
 	kaljakori: Kaljakori
 ) {
-	return [...searchParams.keys()].reduce((obj, key) => {
+	return [...new Set(searchParams.keys())].reduce((obj, key) => {
 		const type = kaljakori.getFilterType(key as ColumnNames);
+		if (type === 'number')
+			return {
+				...obj,
+				[key]: searchParams
+					.get(key)
+					?.split('-')
+					.map((v) => Number(v))
+			};
+		const values = searchParams.getAll(key);
+		if (type !== 'string' && type !== 'object') return { ...obj, [key]: values };
+		const known = new Set(kaljakori.getFilterValues(key as ColumnNames));
 		return {
 			...obj,
-			[key]:
-				type === 'number'
-					? searchParams
-							.get(key)
-							?.split('-')
-							.map((v) => Number(v))
-					: searchParams.getAll(key)
+			[key]: values.flatMap((value) =>
+				known.has(value)
+					? [value]
+					: value
+							.split(',')
+							.map((v) => v.trim())
+							.filter(Boolean)
+			)
 		};
 	}, {});
 }
@@ -144,60 +181,70 @@ export const SIMILAR_PRODUCT_COLUMNS: ReadonlySet<ColumnNames> = new Set([
 	AllColumns.Description
 ]);
 
+/** Columns whose shared values multiply the score, by weight */
+const SIMILARITY_MULTIPLIERS = {
+	[AllColumns.GrapeVarieties]: 1,
+	[AllColumns.Description]: 1
+} as const;
+
+/**
+ * The products most like `product`, best first, scored on the `restrictions` columns. With
+ * `activeOnly`, products removed from the selection are left out.
+ */
 export function findSimilarProducts(
 	product: PriceListItem,
 	kaljakori: Kaljakori,
 	restrictions: ReadonlySet<ColumnNames>,
-	limit: number
+	limit: number,
+	{ activeOnly = false }: { activeOnly?: boolean } = {}
 ): PriceListItem[] {
-	const scored = kaljakori.data.map((item) => {
+	// Resolved once per call rather than per product: this runs over the whole catalog
+	const keys = [...restrictions];
+	const types = keys.map((key) => kaljakori.getFilterType(key));
+	const multipliers = (
+		Object.keys(SIMILARITY_MULTIPLIERS) as (keyof typeof SIMILARITY_MULTIPLIERS)[]
+	)
+		.filter((column) => restrictions.has(column) && product[column] instanceof Set)
+		.map((column) => ({ column, weight: SIMILARITY_MULTIPLIERS[column] }));
+	const number = product[AllColumns.Number];
+
+	const scored: { item: PriceListItem; score: number }[] = [];
+	for (const item of kaljakori.data) {
+		if (item[AllColumns.Number] === number) continue;
+		if (activeOnly && item[AllColumns.RemovedFromSelection]) continue;
 		let score = 0;
 
-		restrictions.forEach((key) => {
-			const valueType = kaljakori.getFilterType(key);
+		for (let i = 0; i < keys.length; i++) {
+			const key = keys[i];
 			if (
-				valueType === 'number' &&
+				types[i] === 'number' &&
 				typeof product[key] === 'number' &&
 				typeof item[key] === 'number'
 			) {
 				const diff = Math.abs(product[key] - item[key]);
 				const range = Math.max(product[key] * 0.2, 0.01); // 20% range or at least 0.01 to avoid division by zero
 				score += Math.max(0, 1 - diff / range); // Linear scoring within range
-			} else if (valueType === 'string') {
+			} else if (types[i] === 'string') {
 				if (product[key] === item[key]) score += 1;
 			}
-		});
+		}
 
-		const multiplierColumnsAndWeights = {
-			[AllColumns.GrapeVarieties]: 1,
-			[AllColumns.Description]: 1
-		} as const;
+		for (const { column, weight } of multipliers) {
+			const itemValues = item[column];
+			if (!(itemValues instanceof Set)) continue;
+			const productValues = product[column] as Set<string>;
+			let multiplier = 1;
+			let commonValuesCount = 0;
+			for (const value of productValues) if (itemValues.has(value)) commonValuesCount++;
+			multiplier += commonValuesCount / (Math.max(productValues.size, itemValues.size) || 1);
+			multiplier += multiplier * weight;
+			score *= multiplier;
+		}
 
-		Object.keys(multiplierColumnsAndWeights).forEach((column) => {
-			if (
-				restrictions.has(column as keyof typeof multiplierColumnsAndWeights) &&
-				product[column] instanceof Set &&
-				item[column] instanceof Set
-			) {
-				let multiplier = 1;
-				const productValues = product[column];
-				const itemValues = item[column];
-				const commonValuesCount = productValues.intersection(itemValues).size;
-				multiplier += commonValuesCount / (Math.max(productValues.size, itemValues.size) || 1);
-				multiplier +=
-					multiplier *
-					multiplierColumnsAndWeights[column as keyof typeof multiplierColumnsAndWeights];
-				score *= multiplier;
-			}
-		});
-
-		return { item, score };
-	});
+		scored.push({ item, score });
+	}
 	scored.sort((a, b) => b.score - a.score);
-	return scored
-		.filter(({ item }) => item[AllColumns.Number] !== product[AllColumns.Number])
-		.slice(0, limit)
-		.map(({ item }) => item);
+	return scored.slice(0, limit).map(({ item }) => item);
 }
 
 export type SizeOption = {
@@ -250,4 +297,19 @@ export function findDifferentSizeOfProduct(
 	kaljakori: Kaljakori
 ): PriceListItem[] {
 	return kaljakori.findDifferentSizesOfProduct(product);
+}
+
+/**
+ * Sorts the list views' rows by `column`, in place. Alcohol-free products have no value in the
+ * {@link zeroWithoutAlcoholColumns}, so they go last either way instead of first as the cheapest.
+ */
+export function sortRows(rows: PriceListItem[], column: ColumnNames, ascending: boolean) {
+	let missing: PriceListItem[] = [];
+	if (zeroWithoutAlcoholColumns.has(column)) {
+		missing = rows.filter((row) => row[column] === 0);
+		if (missing.length) rows = rows.filter((row) => row[column] !== 0);
+	}
+	rows.sort((a, b) => (a[column] > b[column] ? 1 : -1));
+	if (!ascending) rows.reverse();
+	return missing.length ? rows.concat(missing) : rows;
 }

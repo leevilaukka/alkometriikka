@@ -37,6 +37,7 @@
 	import { goto } from '$app/navigation';
 	import { generateTitle, setSEO } from '$lib/utils/app/meta';
 	import { handleShare } from '$lib/utils/app/share';
+	import { showToast } from '$lib/utils/app/toast.svelte';
 	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 	import ProductImage from '$lib/components/widgets/ProductImage.svelte';
 	import { twMerge } from 'tailwind-merge';
@@ -67,7 +68,6 @@
 	let answerPoints = $state(0);
 	let points = $state<number[]>([]);
 	let correctAnswers = $state<boolean[]>([]);
-	let shareStatus = $state('');
 	let runMode = $state<'daily' | 'unlimited'>('daily');
 	let unlimitedEnabled = $state(true);
 	let dailyError = $state<string | null>(null);
@@ -298,7 +298,6 @@
 
 	function exitUnlimited() {
 		clearUnlimitedProgress();
-		shareStatus = '';
 		const existing = loadSavedGame(date);
 		if (!existing) return;
 		runMode = 'daily';
@@ -327,7 +326,6 @@
 		answerPoints = 0;
 		points = [];
 		correctAnswers = [];
-		shareStatus = '';
 		persistUnlimitedProgress();
 	}
 
@@ -510,7 +508,8 @@
 		});
 	}
 
-	async function shareResult() {
+	async function shareResult(event: MouseEvent) {
+		const anchor = event.currentTarget as Element;
 		const text = shareText();
 		const shared = await handleShare({
 			type: 'daily_game',
@@ -519,7 +518,7 @@
 			url: `${window.location.origin}/daily/`,
 			includeSID: true
 		});
-		if (!shared) shareStatus = m.daily_link_copied();
+		if (!shared) showToast({ text: m.daily_link_copied(), anchor });
 	}
 
 	function resetGame() {
@@ -629,7 +628,7 @@
 <svelte:window onkeydown={handleKeydown} />
 
 {#await data.alko then alko}
-	<main class="mx-auto flex w-full max-w-4xl flex-col gap-6 p-4 md:p-8 lg:gap-8 lg:p-10">
+	<div class="mx-auto flex w-full max-w-4xl flex-col gap-6 p-4 md:p-8 lg:gap-8 lg:p-10">
 		<header class="flex flex-col gap-2 border-b border-primary pb-5">
 			<div class="flex items-center justify-between gap-4">
 				<div>
@@ -725,7 +724,7 @@
 									<ProductImage
 										number={product[AllColumns.Number]}
 										name={localizedName(product)}
-										transform="medium"
+										transform="small"
 									/>
 								</div>
 								<span class="min-w-0 text-sm">{localizedName(product)}</span>
@@ -743,9 +742,6 @@
 								<Icon name="share" />{m.daily_share_result()}</span
 							>
 						</button>
-						{#if shareStatus}<p class="text-left text-sm whitespace-pre-wrap text-secondary">
-								{shareStatus}
-							</p>{/if}
 					{/if}
 					<div class="flex w-full max-w-md flex-col items-center gap-2">
 						{#if unlimitedEnabled}
@@ -829,7 +825,7 @@
 								<ProductImage
 									number={question.productId}
 									name={localizedName(currentProduct) ?? m.stats_product()}
-									transform="medium"
+									transform="small"
 								/>
 							</div>
 							<div class="min-w-0">
@@ -885,7 +881,7 @@
 									onclick={() => answer(id)}
 								>
 									<div class="h-32 w-24 shrink-0 rounded bg-white p-1">
-										<ProductImage number={id} name={productName(id)} transform="medium" />
+										<ProductImage number={id} name={productName(id)} transform="small" />
 									</div>
 									<span class="min-w-0"
 										><kbd
@@ -911,7 +907,7 @@
 								<ProductImage
 									number={question.productId}
 									name={localizedName(currentProduct) ?? m.stats_product()}
-									transform="medium"
+									transform="small"
 								/>
 							</div>
 							<div class="min-w-0">
@@ -950,7 +946,7 @@
 								<ProductImage
 									number={question.productId}
 									name={localizedName(currentProduct) ?? m.stats_product()}
-									transform="medium"
+									transform="small"
 								/>
 							</div>
 							<div class="min-w-0">
@@ -1038,7 +1034,7 @@
 				>
 			</section>
 		{/if}
-	</main>
+	</div>
 {:catch error}
 	<p class="m-auto p-8">{m.daily_load_error({ message: error.message })}</p>
 {/await}

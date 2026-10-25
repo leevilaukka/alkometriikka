@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { appPath } from '$lib/utils/app/paths';
+	import { prefetchOnHover, prefetchOnPress } from '$lib/utils/app/imagePrefetch';
 	import { resolve } from '$app/paths';
 	import '../app.css';
 	import { dev } from '$app/environment';
@@ -14,11 +15,15 @@
 		pageBottomBar,
 		personalInfo,
 		preferredStoreId,
+		punchDraft,
+		punchRecipes,
 		searchQuery,
 		theme,
-		userLocation
+		userLocation,
+		watchlist
 	} from '$lib/global.svelte';
-	import logo from '$lib/assets/images/Logo/0.5x/Logo_rounded@0.5x.png';
+	// Sized for the header's 40px at up to 3× pixel density; small enough to be inlined in the bundle
+	import logo from '$lib/assets/images/Logo/120px/Logo_rounded.png';
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/ui/styles';
 	import Icon from '$lib/components/widgets/Icon.svelte';
@@ -30,7 +35,10 @@
 	import { setContext } from 'svelte';
 	import Settings from '$lib/components/widgets/Settings/Index.svelte';
 	import CompareBar from '$lib/components/widgets/CompareBar.svelte';
+	import CommandPalette from '$lib/components/widgets/CommandPalette.svelte';
 	import NoticeBanner from '$lib/components/widgets/NoticeBanner.svelte';
+	import ErrorBoundary from '$lib/components/widgets/ErrorBoundary.svelte';
+	import Toast from '$lib/components/widgets/Toast.svelte';
 	import InstallBanner from '$lib/components/widgets/InstallBanner.svelte';
 	import { LocalStorageManager } from '$lib/utils/app/storage';
 	import type { IconName } from '$lib/icons';
@@ -39,12 +47,47 @@
 	import LanguageBanner from '$lib/components/widgets/LanguageBanner.svelte';
 	import { intlLocale, locale, m } from '$lib/i18n';
 
+	import { resolvePreferredStore } from '$lib/utils/catalog/availability';
+	import { watchStatuses } from '$lib/utils/user/watchlist';
+
 	let { children, data } = $props();
 	loadFlags();
 	document.documentElement.lang = locale;
 	document
 		.querySelector('meta[property="og:locale"]')
 		?.setAttribute('content', intlLocale.replace('-', '_'));
+
+	// The price list once loaded. Pages wait for it before rendering, except one whose load
+	// returns a `preview` to show meanwhile (a product page opened from its prerendered stub)
+	let alko = $state.raw<Awaited<typeof data.alko>>();
+	let loadError = $state.raw<Error>();
+	$effect(() => {
+		data.alko.then(
+			(value) => (alko = value),
+			(error) => (loadError = error)
+		);
+	});
+	// Once up, the app stays up: a page navigated to from a preview waits for the price list itself
+	let showApp = $state(false);
+	$effect(() => {
+		if (alko || page.data.preview) showApp = true;
+	});
+
+	// Watched products that changed since the user last looked, for the menu's count
+	const changedWatchCount = $derived(
+		alko && watchlist.length
+			? watchStatuses(
+					watchlist,
+					(id) => alko!.kaljakori.findById(id),
+					alko.availabilityLoaded ? alko.availability : null,
+					resolvePreferredStore(alko.availability.stores, $preferredStoreId, $userLocation)?.id
+				).filter((status) => status.changes.length).length
+			: 0
+	);
+
+	$effect(() => {
+		if (showApp || loadError) shiftLoader();
+	});
 	let searchParamsManager = new SearchParamsManager(page.url);
 	setContext(ContextKeys.SearchParamsManager, searchParamsManager);
 
@@ -70,6 +113,18 @@
 
 	$effect(() => {
 		LocalStorageManager.setItem(LocalStorageKeys.CompareProducts, compareProductIds);
+	});
+
+	$effect(() => {
+		LocalStorageManager.setItem(LocalStorageKeys.Watchlist, watchlist);
+	});
+
+	$effect(() => {
+		LocalStorageManager.setItem(LocalStorageKeys.PunchDraft, punchDraft);
+	});
+
+	$effect(() => {
+		LocalStorageManager.setItem(LocalStorageKeys.PunchRecipes, punchRecipes);
 	});
 
 	$effect(() => {
@@ -131,7 +186,7 @@
 		searchParamsManager.setParametersFromURL(to.url);
 		// Back/forward restores the search from the URL before the page mounts, otherwise the
 		// page would sync an empty search into the URL first
-		if (type === 'popstate') $searchQuery = to.url.searchParams.get('q') ?? '';
+		if (type === 'popstate') $searchQuery = searchParamsManager.getParameter('q') ?? '';
 		searchParamsManager.update();
 	});
 
@@ -203,7 +258,10 @@
 		},
 		{
 			label: m.nav_group_personal(),
-			items: [{ href: '/listat/', icon: 'list_ul', name: m.nav_lists() }]
+			items: [
+				{ href: '/seuratut/', icon: 'bell', name: m.nav_watchlist() },
+				{ href: '/listat/', icon: 'list_ul', name: m.nav_lists() }
+			]
 		},
 		{
 			label: m.nav_group_stores(),
@@ -216,6 +274,7 @@
 			label: m.nav_group_tools(),
 			items: [
 				{ href: '/laskin/', icon: 'calculator', name: m.nav_calculator() },
+				{ href: '/boolilaskuri/', icon: 'cocktail', name: m.nav_punch() },
 				{ href: '/daily/arkisto/', icon: 'archive', name: m.nav_daily_archive() }
 			]
 		}
@@ -226,6 +285,7 @@
 	const noSearchPages: (typeof page.route.id)[] = [
 		'/daily/arkisto',
 		'/laskin',
+		'/boolilaskuri',
 		'/tilastot',
 		'/listat',
 		'/daily',
@@ -234,14 +294,33 @@
 		'/vertailu',
 		'/kategoriat',
 		'/myymalat',
-		'/myymalat/[storeID]'
+		'/myymalat/[storeID]',
+		'/seuratut'
 	];
+	const hasSearch = $derived(page.route.id === null || !noSearchPages.includes(page.route.id));
+
+	let commandPalette = $state<ReturnType<typeof CommandPalette>>();
+	const paletteShortcut = /Mac|iPhone|iPad/.test(navigator.userAgent) ? '⌘K' : 'Ctrl K';
 </script>
 
-<svelte:window onclick={handleDocumentClick} onkeydown={handleGlobalKeydown} />
+<svelte:window
+	onclick={handleDocumentClick}
+	onkeydown={handleGlobalKeydown}
+	onpointerover={prefetchOnHover}
+	onpointerdown={prefetchOnPress}
+/>
 
-{#await data.alko then alko}
-	{shiftLoader()}
+<!-- A page already showing its preview stays up, with a notice, when the price list fails -->
+{#if loadError && !showApp}
+	<div class="grid h-full max-h-full w-full place-content-center overflow-hidden">
+		<div class="flex flex-col items-center gap-3">
+			<p>{m.layout_load_error({ message: loadError.message })}</p>
+			<button class="rounded bg-brand-1 px-4 py-2 text-white" onclick={() => location.reload()}>
+				{m.common_retry()}
+			</button>
+		</div>
+	</div>
+{:else if showApp}
 	<div class="flex h-full w-full flex-col">
 		{#if dev}
 			<span class="bg-brand-3 px-1.5 py-0.5 text-center text-sm text-white">DEV</span>
@@ -265,9 +344,13 @@
 					>Alkometriikka</span
 				>
 			</a>
-			{#if page.route.id === null || !noSearchPages.includes(page.route.id)}
+			{#if hasSearch}
 				<div class={twMerge('flex w-full flex-row', 'rounded border border-primary')}>
-					<div
+					<button
+						type="button"
+						onclick={() => commandPalette?.openPalette()}
+						aria-label={m.palette_search_everywhere()}
+						title={m.palette_search_everywhere_shortcut({ shortcut: paletteShortcut })}
 						class={twMerge(
 							components.button(),
 							'aspect-square border-0 bg-white text-black',
@@ -276,7 +359,7 @@
 						)}
 					>
 						<Icon name="search" />
-					</div>
+					</button>
 					<div class="relative flex w-full">
 						<input
 							id="searchQuery"
@@ -300,6 +383,16 @@
 				</div>
 			{/if}
 			<div class="ms-auto flex items-center gap-2">
+				{#if alko}
+					<ErrorBoundary name="command_palette">
+						<CommandPalette
+							bind:this={commandPalette}
+							kaljakori={alko.kaljakori}
+							availability={alko.availability}
+							showButton={!hasSearch}
+						/>
+					</ErrorBoundary>
+				{/if}
 				<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 				<details
 					bind:this={extraMenu}
@@ -308,10 +401,17 @@
 					onfocusout={handleExtraMenuFocusout}
 				>
 					<summary
-						aria-label={m.nav_more()}
-						class={twMerge(components.button(), 'list-none p-2 text-xl')}
+						aria-label={changedWatchCount
+							? m.nav_more_changes({ count: changedWatchCount })
+							: m.nav_more()}
+						class={twMerge(components.button(), 'relative list-none p-2 text-xl')}
 					>
 						{#if !$isMobile}<span class="text-sm">{m.nav_more()}</span>{/if}<Icon name="menu" />
+						{#if changedWatchCount}
+							<span
+								class="absolute -end-1 -top-1 size-2.5 rounded-full bg-green-600 ring-2 ring-white dark:ring-zinc-900"
+							></span>
+						{/if}
 					</summary>
 					<div
 						class="absolute end-0 top-full z-20 mt-2 flex w-56 flex-col rounded border border-primary bg-primary p-1.5 shadow-lg"
@@ -339,6 +439,12 @@
 										>
 											<Icon name={item.icon} class="text-base" />
 											<span class="flex-1">{item.name}</span>
+											{#if item.href === '/seuratut/' && changedWatchCount}
+												<span
+													class="rounded-full bg-green-700 px-1.5 text-xs font-semibold text-white"
+													title={m.nav_more_watch_changed()}>{changedWatchCount}</span
+												>
+											{/if}
 										</a>
 									</li>
 								{/each}
@@ -360,33 +466,59 @@
 						name="list_ul"
 					/></a
 				>
-				<Settings {alko} />
+				<ErrorBoundary name="settings">
+					<Settings {alko} />
+				</ErrorBoundary>
 			</div>
 		</header>
-		<NoticeBanner lastSynced={alko.dataset.metadata.LastSynced} cached={alko.cached} />
-		<InstallBanner />
-		<LanguageBanner />
-		<div
+		{#if alko}
+			<ErrorBoundary name="notice_banner">
+				<NoticeBanner lastSynced={alko.dataset.metadata.LastSynced} cached={alko.cached} />
+			</ErrorBoundary>
+		{:else if loadError}
+			<div
+				role="alert"
+				class="flex items-center gap-2 border-b border-amber-300 bg-amber-100 px-4 py-2 text-sm text-amber-950 dark:border-amber-800 dark:bg-amber-950 dark:text-amber-100"
+			>
+				<Icon name="alert_triangle" class="shrink-0" />
+				<p class="flex-1">{m.layout_price_list_failed()}</p>
+				<button
+					type="button"
+					class="shrink-0 font-semibold underline"
+					onclick={() => location.reload()}>{m.common_retry()}</button
+				>
+			</div>
+		{/if}
+		<ErrorBoundary name="install_banner">
+			<InstallBanner />
+		</ErrorBoundary>
+		<ErrorBoundary name="language_banner">
+			<LanguageBanner />
+		</ErrorBoundary>
+		<!-- The page's one main landmark; pages render plain containers inside it -->
+		<main
 			id="main-content"
 			tabindex="-1"
 			class="flex max-h-full flex-auto flex-col overflow-x-hidden overflow-y-auto outline-none"
 		>
-			{@render children?.()}
+			<ErrorBoundary name={page.route.id ?? 'page'} fallback="page" resetKey={page.url.pathname}>
+				{@render children?.()}
+			</ErrorBoundary>
+		</main>
+		<!-- Toasts float above the bars below -->
+		<div class="relative">
+			<ErrorBoundary name="toast">
+				<Toast />
+			</ErrorBoundary>
 		</div>
-		{#if page.route.id !== '/vertailu'}
-			<CompareBar kaljakori={alko.kaljakori} />
+		{#if alko && page.route.id !== '/vertailu'}
+			<ErrorBoundary name="compare_bar">
+				<CompareBar kaljakori={alko.kaljakori} />
+			</ErrorBoundary>
 		{/if}
 		<!-- Pages hand their mobile action bar here (see pageBottomBar) so it sits below the compare bar -->
-		{@render pageBottomBar.snippet?.()}
+		<ErrorBoundary name="page_bottom_bar">
+			{@render pageBottomBar.snippet?.()}
+		</ErrorBoundary>
 	</div>
-{:catch error}
-	{shiftLoader()}
-	<div class="grid h-full max-h-full w-full place-content-center overflow-hidden">
-		<div class="flex flex-col items-center gap-3">
-			<p>{m.layout_load_error({ message: error.message })}</p>
-			<button class="rounded bg-brand-1 px-4 py-2 text-white" onclick={() => location.reload()}>
-				{m.common_retry()}
-			</button>
-		</div>
-	</div>
-{/await}
+{/if}

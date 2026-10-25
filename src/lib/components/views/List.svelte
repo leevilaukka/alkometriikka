@@ -3,6 +3,7 @@
 	import { isLaptop, pageBottomBar, personalInfo, searchQuery, isMobile } from '$lib/global.svelte';
 	import { components } from '$lib/utils/ui/styles';
 	import { handleShare } from '$lib/utils/app/share';
+	import { showToast } from '$lib/utils/app/toast.svelte';
 	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 	import { formatValue } from '$lib/utils/format/format';
 	import type { Kaljakori } from '$lib/alko';
@@ -22,18 +23,21 @@
 		shownColumnsToHighlight,
 		defaultSortingColumn,
 		shownSortingKeys,
-		defaultSortingOrderMap
+		defaultSortingOrderMap,
+		LIST_BUFFER_SIZE,
+		productKey,
+		LIST_ROW_ESTIMATE
 	} from '$lib/utils/constants/display';
 	import { AllColumns } from '$lib/utils/constants/columns';
 	import { ContextKeys, GenderOptionsMap } from '$lib/utils/constants/app';
 	import { headerToDisplayName, sortingOrderToString } from '$lib/utils/format/labels';
 	import Popup from '../widgets/Popup.svelte';
-	import AllLists from '../widgets/AllLists.svelte';
-	import { addToList } from '$lib/utils/user/lists';
+	import AddToListContent from '../widgets/AddToListContent.svelte';
 	import Filters from '../widgets/Filters.svelte';
 	import { goto } from '$app/navigation';
 	import { getContext, untrack } from 'svelte';
-	import { initFilterValues } from '$lib/utils/catalog/filters';
+	import { initFilterValues, sortRows } from '$lib/utils/catalog/filters';
+	import { SERVING_GRAMS } from '$lib/utils/catalog/alko';
 	import type { SearchParamsManager } from '$lib/utils/app/url';
 	import ProductPreview from '../widgets/ProductPreview.svelte';
 	import BottomBar from '../widgets/BottomBar.svelte';
@@ -97,9 +101,8 @@
 				filterValuesCopy[key] = new Set(filterValuesCopy[key]);
 		});
 		let temp = kaljakori.fuzzySearchAndFilter($searchQuery, filterValuesCopy);
-		if (!!selectedSortingColumn)
-			temp = temp.sort((a, b) => (a[selectedSortingColumn] > b[selectedSortingColumn] ? 1 : -1));
-		if (!asc) temp = temp.reverse();
+		if (!!selectedSortingColumn) temp = sortRows(temp, selectedSortingColumn, asc);
+		else if (!asc) temp = temp.reverse();
 		return temp;
 	});
 
@@ -146,6 +149,8 @@
 		});
 
 		const totalAlcoholGramsPerEuro = totalPrice > 0 ? totalAlcoholGrams / totalPrice : 0;
+		const totalServings = totalAlcoholGrams / SERVING_GRAMS;
+		const totalEuroPerServing = totalServings > 0 ? totalPrice / totalServings : 0;
 		const totalBAC =
 			totalAlcoholGrams /
 			((personalInfo.weight ||
@@ -160,6 +165,8 @@
 			totalPrice,
 			totalAlcoholGrams,
 			totalAlcoholGramsPerEuro,
+			totalServings,
+			totalEuroPerServing,
 			totalItems,
 			totalSugarPerLitre,
 			totalSugar,
@@ -210,6 +217,7 @@
 				inBar ? 'aspect-square h-11 sm:aspect-auto' : 'aspect-square md:aspect-auto'
 			)}
 			onclick={async (e) => {
+				const anchor = e.currentTarget;
 				// Omit SID from the URL if shift key is held down
 				const includeSID = !e.shiftKey;
 
@@ -221,7 +229,7 @@
 					includeSID
 				});
 
-				if (!shared) alert(m.share_link_copied());
+				if (!shared) showToast({ text: m.share_link_copied(), anchor });
 			}}
 		>
 			<Icon name="share" class="inline-block " /><span
@@ -300,7 +308,7 @@
 		class={twMerge(components.button({ size: 'md' }), 'aspect-square md:aspect-auto')}
 	>
 		<Icon name="arrow_back" class="inline-block" />
-		<span class="hidden md:block"
+		<span class="sr-only md:not-sr-only"
 			>{window.history.length > 1 ? m.common_back() : m.common_to_home()}</span
 		>
 	</button>
@@ -326,7 +334,7 @@
 				}}
 			>
 				<Icon name="sidebar" class="inline-block " />
-				<span class="hidden md:block">{m.list_details_button()}</span>
+				<span class="sr-only md:not-sr-only">{m.list_details_button()}</span>
 			</button>
 		{/if}
 		{@render shareButton(false)}
@@ -367,7 +375,7 @@
 				/>
 			</aside>
 		{/if}
-		<main class="mx-auto flex h-full w-full flex-col gap-3 bg-secondary p-3 md:gap-4 md:p-6">
+		<div class="mx-auto flex h-full w-full flex-col gap-3 bg-secondary p-3 md:gap-4 md:p-6">
 			<div class="flex w-full flex-col items-start gap-4">
 				<div class={twMerge('grid w-full grid-cols-2 items-end gap-2 md:w-fit')}>
 					<div class="flex flex-col">
@@ -436,7 +444,14 @@
 				</button>
 			</div>
 			<div class="flex flex-auto flex-col">
-				<SvelteVirtualList items={rows} bind:this={listRef} itemsClass={'flex flex-col gap-3'}>
+				<SvelteVirtualList
+					items={rows}
+					bind:this={listRef}
+					itemsClass={'flex flex-col gap-3'}
+					bufferSize={LIST_BUFFER_SIZE}
+					itemKey={productKey}
+					defaultEstimatedItemHeight={LIST_ROW_ESTIMATE}
+				>
 					{#snippet renderItem(item, idx: number)}
 						{@const listItem = getListItem(list, item[AllColumns.Number])}
 						<ProductPreview
@@ -516,19 +531,17 @@
 										{#snippet renderButton(dialogElement: HTMLDialogElement)}
 											<button
 												class={twMerge(components.button({ type: 'positive' }))}
+												aria-label={m.list_add_to_or_punch_label()}
 												onclick={() => dialogElement.showModal()}
 											>
-												<span>{m.list_add_to()}</span>
+												<span>{m.list_add()}</span>
 												<Icon name="plus" />
 											</button>
 										{/snippet}
 										{#snippet renderContent(dialogElement: HTMLDialogElement)}
-											<h2 class="text-xl">{m.list_choose()}</h2>
-											<AllLists
-												action={(list: ListObj) => {
-													addToList(list, item[AllColumns.Number]);
-													dialogElement.close();
-												}}
+											<AddToListContent
+												productNumber={item[AllColumns.Number]}
+												onadded={() => dialogElement.close()}
 											/>
 										{/snippet}
 									</Popup>
@@ -538,7 +551,7 @@
 					{/snippet}
 				</SvelteVirtualList>
 			</div>
-		</main>
+		</div>
 		<aside
 			class="z-10 flex h-full flex-col overflow-x-hidden overflow-y-auto border-primary xl:border-s"
 		>
@@ -579,6 +592,16 @@
 							value: `${formatValue(details.totalAlcoholGramsPerEuro, AllColumns.AlcoholGramsPerEuro)} g`
 						})}
 					</p>
+					{#if details.totalServings > 0}
+						<p>
+							{m.list_details_servings({
+								servings: String(formatValue(details.totalServings, AllColumns.Servings)),
+								perServing: String(
+									formatValue(details.totalEuroPerServing, AllColumns.EuroPerServing)
+								)
+							})}
+						</p>
+					{/if}
 					<p>
 						{m.list_details_promille({
 							value: String(formatValue(details.totalBAC, AllColumns.PromillePerEuro))

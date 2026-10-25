@@ -9,11 +9,14 @@ feed.*.json
 /rss/
 
 /static/data.json
+/static/data-removed.json
 /static/availability.json
 /labels.*.json
 /static/labels.*.json
 /hashes.json
 /static/hashes.json
+/static/stock/
+/stock/
 /static/data-migrate.json
 /static/sitemap.xml
 /static/rss.xml
