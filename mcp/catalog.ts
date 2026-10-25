@@ -9,6 +9,13 @@
  * English-keyed objects suitable for an LLM.
  */
 import { compressToEncodedURIComponent } from 'lz-string';
+import {
+	computePunch,
+	DEFAULT_GLASS,
+	encodePunch,
+	punchLines,
+	type PunchIngredient
+} from '../src/lib/utils/catalog/punch.ts';
 import { Kaljakori } from '../src/lib/alko/index.ts';
 import type {
 	AvailabilityData,
@@ -121,6 +128,12 @@ export const SEARCH_LIMIT_MAX = 50;
 export const COMPARE_MAX = 10;
 export const LIST_ITEMS_MAX = 100;
 export const LIST_QUANTITY_MAX = 99;
+export const PUNCH_INGREDIENTS_MAX = 50;
+export const PUNCH_COUNT_MAX = 1000;
+
+export type PunchIngredientInput =
+	| { product_id: string; count?: number }
+	| { name: string; volume_l: number; abv: number; price_eur: number; count?: number };
 
 const METRICS_NOTE =
 	'Metrics are computed with the same formulas as alkometriikka.fi: alcohol_grams = volume × ABV × 789 g/l ' +
@@ -612,6 +625,81 @@ export class Catalog {
 				standard_drinks: round(totalAlcohol / 12, 1)
 			},
 			note: 'The list lives only in the link: opening it shows the list on alkometriikka.fi, where it can be saved. Changing the list requires a new link. Prices are current catalog prices.',
+			dataset: this.status
+		};
+	}
+
+	/**
+	 * Builds an alkometriikka.fi link to the punch calculator (boolilaskuri) for a recipe. Like
+	 * lists, the recipe lives only in the URL (`encodePunch` in src/lib/utils/catalog/punch.ts).
+	 */
+	createPunchLink(
+		name: string,
+		ingredients: PunchIngredientInput[],
+		options: { glass_l?: number; people?: number } = {}
+	) {
+		const punchName = name.trim();
+		const notFound: string[] = [];
+		const recipeIngredients: PunchIngredient[] = [];
+		for (const input of ingredients) {
+			const count = input.count ?? 1;
+			if ('product_id' in input) {
+				const item = this.findProduct(input.product_id);
+				if (!item) notFound.push(input.product_id);
+				else recipeIngredients.push({ kind: 'alko', id: String(item[AllColumns.Number]), count });
+			} else {
+				recipeIngredients.push({
+					kind: 'custom',
+					name: input.name.trim(),
+					volume: input.volume_l,
+					abv: input.abv,
+					price: input.price_eur,
+					count
+				});
+			}
+		}
+		if (notFound.length) {
+			throw new ToolInputError(
+				`No products found for: ${notFound.join(', ')}. Use search_products to find product IDs; no link was created.`
+			);
+		}
+
+		const glass = options.glass_l ?? DEFAULT_GLASS;
+		const people = options.people ?? 1;
+		const recipe = { name: punchName, glass, people, ingredients: recipeIngredients };
+
+		const lines = punchLines(recipeIngredients, (id) => this.kaljakori.findById(id));
+		const totals = computePunch(lines, { glass, people });
+
+		return {
+			url: `${this.siteUrl.replace(/\/+$/, '')}/boolilaskuri/?booli=${encodePunch(recipe)}`,
+			name: punchName,
+			glass_l: glass,
+			people,
+			ingredients: lines.map((line, index) => ({
+				name: line.name,
+				product_id: line.product ? String(line.product[AllColumns.Number]) : null,
+				count: line.count,
+				package_size_l: round(line.volume, 3),
+				alcohol_percentage: round(line.abv, 1),
+				package_price_eur: round(line.price),
+				line_total_eur: round(totals.lines[index]!.price)
+			})),
+			totals: {
+				volume_l: round(totals.volume, 2),
+				alcohol_percentage: round(totals.abv, 1),
+				price_eur: round(totals.price),
+				standard_drinks: round(totals.servings, 1),
+				glasses: round(totals.glasses, 1),
+				euro_per_standard_drink:
+					totals.euroPerServing === null ? null : round(totals.euroPerServing),
+				per_person: {
+					glasses: round(totals.perPerson.glasses, 1),
+					standard_drinks: round(totals.perPerson.servings, 1),
+					price_eur: round(totals.perPerson.price)
+				}
+			},
+			note: 'The recipe lives only in the link: opening it shows the punch calculator on alkometriikka.fi, where it can be edited and saved. Changing the recipe requires a new link. Prices are current catalog prices; custom ingredient prices are as given.',
 			dataset: this.status
 		};
 	}

@@ -6,22 +6,28 @@
  * web app: if it cannot be loaded, the catalog is served without it.
  */
 import { readFile } from 'node:fs/promises';
-import { parseDataset } from '../src/lib/utils/catalog/dataset.ts';
+import { parseDataset, parseRemovedProducts } from '../src/lib/utils/catalog/dataset.ts';
 import { parseAvailability } from '../src/lib/utils/catalog/availability.ts';
-import type { AvailabilityData } from '../src/lib/types.ts';
+import type { AvailabilityData, DatasetRow } from '../src/lib/types.ts';
 import { Catalog, type DatasetStatus } from './catalog.ts';
 import { CachedResource, type DataStoreOptions, type ResourceState } from './data-store.ts';
 
 export class CatalogProvider {
 	private readonly data: CachedResource;
+	private readonly removed: CachedResource;
 	private readonly availability: CachedResource;
 	private catalog: Catalog | null = null;
 	private version = '';
+	/** The parsed `data.json`, kept until it changes so a new availability file doesn't re-parse it */
+	private parsed: { version: string; dataset: ReturnType<typeof parseDataset> } | null = null;
 	private pending: Promise<Catalog> | null = null;
 
 	constructor(private readonly options: DataStoreOptions) {
 		this.data = new CachedResource('data.json', options, (text) => {
 			parseDataset(text);
+		});
+		this.removed = new CachedResource('data-removed.json', options, (text) => {
+			JSON.parse(text);
 		});
 		this.availability = new CachedResource('availability.json', options, (text) => {
 			parseAvailability(JSON.parse(text));
@@ -64,14 +70,39 @@ export class CatalogProvider {
 			);
 		}
 
-		const stale = data.stale || Boolean(availabilityState?.stale);
-		const version = `${data.version}|${availabilityState?.version ?? 'none'}`;
+		if (this.parsed?.version !== data.version) {
+			this.parsed = {
+				version: data.version,
+				dataset: parseDataset(await readFile(data.path, 'utf8'))
+			};
+		}
+		const dataset = this.parsed.dataset;
+
+		// Products removed from the selection are in their own file; without it the catalog
+		// simply lacks them, as it does for the web app until that file has loaded.
+		let removedState: ResourceState | null = null;
+		if (dataset.removedProducts) {
+			try {
+				removedState = await this.removed.load();
+				if (removedState.warning) warnings.push(removedState.warning);
+			} catch (error) {
+				warnings.push(
+					`Products removed from the selection are unavailable: ${error instanceof Error ? error.message : String(error)}`
+				);
+			}
+		}
+
+		const stale = data.stale || Boolean(availabilityState?.stale) || Boolean(removedState?.stale);
+		const version = `${data.version}|${removedState?.version ?? 'none'}|${availabilityState?.version ?? 'none'}`;
 		let availability = this.catalog?.availability;
 		if (!this.catalog || version !== this.version) {
-			const { table, metadata } = parseDataset(await readFile(data.path, 'utf8'));
+			const { table, metadata, schema } = dataset;
+			const removedRows = removedState
+				? await this.readRemoved(removedState, schema, warnings)
+				: [];
 			availability = await this.readAvailability(availabilityState, warnings);
 			this.catalog = new Catalog(
-				table,
+				[...table, ...removedRows],
 				availability,
 				this.status(metadata, data, availability, stale, warnings),
 				this.options.baseUrl
@@ -88,6 +119,23 @@ export class CatalogProvider {
 			);
 		}
 		return this.catalog;
+	}
+
+	private async readRemoved(
+		state: ResourceState,
+		schema: unknown,
+		warnings: string[]
+	): Promise<DatasetRow[]> {
+		try {
+			const rows = parseRemovedProducts(await readFile(state.path, 'utf8'), schema);
+			if (rows) return rows;
+			warnings.push('Products removed from the selection do not match the price list columns.');
+		} catch (error) {
+			warnings.push(
+				`Products removed from the selection could not be parsed: ${error instanceof Error ? error.message : String(error)}`
+			);
+		}
+		return [];
 	}
 
 	private async readAvailability(

@@ -10,6 +10,8 @@ import {
 	FILTER_FIELDS,
 	LIST_ITEMS_MAX,
 	LIST_QUANTITY_MAX,
+	PUNCH_COUNT_MAX,
+	PUNCH_INGREDIENTS_MAX,
 	SEARCH_LIMIT_DEFAULT,
 	SEARCH_LIMIT_MAX,
 	SORT_KEYS,
@@ -24,7 +26,7 @@ export type CatalogSource = { get(): Promise<Catalog> };
 const INSTRUCTIONS = `Alkometriikka is an independent database of the Finnish alcohol retailer Alko's product catalog (not affiliated with Alko).
 - Product data (names, categories, countries, etc.) is in Finnish, exactly as Alko publishes it, and filter values are Finnish. Products are classified as category (e.g. "Viinit" wines, "Väkevät" spirits, "Panimotuotteet" beers/ciders/long drinks, "Alkoholittomat" non-alcoholic) → subcategory (e.g. "Punaviinit" red wines, "Oluet" beers, "Viskit" whiskies) → style (e.g. "Lager", "Ipa"). Use list_filter_values when unsure of a value.
 - Prices are in euros, volumes in liters. Product IDs are Alko product numbers (e.g. "319027").
-- Typical flow: search_products → get_product / compare_products / price_history / store_availability. create_list_link turns chosen products into a shareable alkometriikka.fi list link.
+- Typical flow: search_products → get_product / compare_products / price_history / store_availability. create_list_link turns chosen products into a shareable alkometriikka.fi list link, and create_punch_link a punch (booli) recipe into a link to the punch calculator.
 - Every result includes a "dataset" block with update timestamps. Data is refreshed upstream about every 6 hours; mention staleness when "stale" is true or warnings are present.
 - Store availability is a periodic snapshot without stock quantities; do not present it as live stock.`;
 
@@ -273,6 +275,98 @@ Products removed from Alko's selection are excluded unless include_removed is tr
 			annotations: { title: 'Create a shareable list link', ...READ_ONLY, idempotentHint: false }
 		},
 		async ({ name, items }) => result((await source.get()).createListLink(name, items))
+	);
+
+	server.registerTool(
+		'create_punch_link',
+		{
+			title: 'Create a punch calculator link',
+			description: `Create a link to the alkometriikka.fi punch calculator (boolilaskuri) for a punch or batch-drink recipe. Ingredients are either Alko products (by product_id) or other ingredients such as juice, soda or ice (name, package size, ABV and price). Opening the link shows the recipe in the calculator with total volume, strength, cost and servings, where the visitor can edit and save it. The whole recipe is encoded in the URL: nothing is stored, and a changed recipe needs a new link. Fails without creating a link if any product ID is not found. Returns the URL plus each ingredient, and the totals and per-person figures for the glass size and number of people. Share the url with the user as is.`,
+			inputSchema: {
+				name: z.string().max(80).describe('Recipe name, e.g. "Juhannusbooli"'),
+				ingredients: z
+					.array(
+						z.union([
+							z.object({
+								product_id: productId,
+								count: z
+									.number()
+									.positive()
+									.max(PUNCH_COUNT_MAX)
+									.optional()
+									.describe('Number of packages of this product (default 1)')
+							}),
+							z.object({
+								name: z.string().min(1).max(80).describe('E.g. "Sitruunalimu"'),
+								volume_l: z
+									.number()
+									.min(0)
+									.max(100)
+									.describe('Package size in liters (0 for e.g. fruit)'),
+								abv: z.number().min(0).max(100).describe('Alcohol percentage (0 for mixers)'),
+								price_eur: z.number().min(0).max(10_000).describe('Price of one package in euros'),
+								count: z
+									.number()
+									.positive()
+									.max(PUNCH_COUNT_MAX)
+									.optional()
+									.describe('Number of packages (default 1)')
+							})
+						])
+					)
+					.min(1)
+					.max(PUNCH_INGREDIENTS_MAX)
+					.describe(`1–${PUNCH_INGREDIENTS_MAX} ingredients`),
+				glass_l: z
+					.number()
+					.min(0.01)
+					.max(2)
+					.optional()
+					.describe('Glass size in liters (default 0.2)'),
+				people: z
+					.number()
+					.int()
+					.min(1)
+					.max(500)
+					.optional()
+					.describe('Number of people the punch is for (default 1)')
+			},
+			outputSchema: {
+				url: z.string(),
+				name: z.string(),
+				glass_l: z.number(),
+				people: z.number(),
+				ingredients: z.array(
+					z.object({
+						name: z.string(),
+						product_id: z.string().nullable(),
+						count: z.number(),
+						package_size_l: z.number(),
+						alcohol_percentage: z.number(),
+						package_price_eur: z.number(),
+						line_total_eur: z.number()
+					})
+				),
+				totals: z.object({
+					volume_l: z.number(),
+					alcohol_percentage: z.number(),
+					price_eur: z.number(),
+					standard_drinks: z.number(),
+					glasses: z.number(),
+					euro_per_standard_drink: z.number().nullable(),
+					per_person: z.object({
+						glasses: z.number(),
+						standard_drinks: z.number(),
+						price_eur: z.number()
+					})
+				}),
+				note: z.string(),
+				dataset: datasetStatus
+			},
+			annotations: { title: 'Create a punch calculator link', ...READ_ONLY, idempotentHint: false }
+		},
+		async ({ name, ingredients, glass_l, people }) =>
+			result((await source.get()).createPunchLink(name, ingredients, { glass_l, people }))
 	);
 
 	server.registerTool(

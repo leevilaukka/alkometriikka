@@ -1,6 +1,6 @@
 /**
  * Downloads and caches Alkometriikka's public data files (`data.json`,
- * `availability.json`) for the MCP server.
+ * `data-removed.json`, `availability.json`) for the MCP server.
  *
  * Behaviour, per file:
  * - A cached copy younger than `ttlMs` is used as-is, without any network request.
@@ -17,7 +17,7 @@ import { join } from 'node:path';
 
 export type FetchLike = (input: string, init?: RequestInit) => Promise<Response>;
 
-export type ResourceName = 'data.json' | 'availability.json';
+export type ResourceName = 'data.json' | 'data-removed.json' | 'availability.json';
 
 export type DataStoreOptions = {
 	/** Base URL the files are downloaded from, e.g. `https://alkometriikka.fi`. */

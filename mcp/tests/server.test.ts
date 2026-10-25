@@ -14,6 +14,7 @@ const TOOLS = [
 	'catalog_statistics',
 	'compare_products',
 	'create_list_link',
+	'create_punch_link',
 	'get_product',
 	'list_filter_values',
 	'price_history',
