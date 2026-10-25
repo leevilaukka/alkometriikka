@@ -62,23 +62,23 @@ function normalizeName(product: PriceListItem, volume: number | null) {
 	const counts = new Set<number>();
 	if (packaging && packaging !== 'muu') {
 		name = name.replace(
-			new RegExp(`(?<![\\p{L}\\p{N}])${escapeRegex(packaging)}(?![\\p{L}\\p{N}])`, 'gu'),
-			' '
+			new RegExp(`(^|[^\\p{L}\\p{N}])${escapeRegex(packaging)}(?![\\p{L}\\p{N}])`, 'gu'),
+			'$1 '
 		);
 	}
 	name = name.replace(
-		/(?<![\p{L}\p{N}.,])(\d+)\s*[-–]?\s*pack(?![\p{L}\p{N}])/gu,
-		(match, count: string) => {
+		/(^|[^\p{L}\p{N}.,])(\d+)\s*[-–]?\s*pack(?![\p{L}\p{N}])/gu,
+		(match, prefix: string, count: string) => {
 			const parsed = Number(count);
 			if (!Number.isSafeInteger(parsed) || parsed < 1) return match;
 			counts.add(parsed);
-			return ' ';
+			return `${prefix} `;
 		}
 	);
 	const units: Record<string, number> = { l: 1, cl: 0.01, ml: 0.001 };
 	name = name.replace(
-		/(?<![\p{L}\p{N}.,])(\d+)\s*[x×]\s*(\d+(?:[.,]\d+)?)\s*(ml|cl|l)(?![\p{L}\p{N}])/gu,
-		(match, count: string, size: string, unit: string) => {
+		/(^|[^\p{L}\p{N}.,])(\d+)\s*[x×]\s*(\d+(?:[.,]\d+)?)\s*(ml|cl|l)(?![\p{L}\p{N}])/gu,
+		(match, prefix: string, count: string, size: string, unit: string) => {
 			const parsedCount = Number(count);
 			const total = parsedCount * Number(size.replace(',', '.')) * units[unit];
 			if (
@@ -89,33 +89,36 @@ function normalizeName(product: PriceListItem, volume: number | null) {
 			)
 				return match;
 			counts.add(parsedCount);
-			return ' ';
+			return `${prefix} `;
 		}
 	);
 	const packCount = counts.size > 1 ? null : ([...counts][0] ?? 1);
 	name = name.replace(
-		/(?<![\p{L}\p{N}.,])(\d+(?:[.,]\d+)?)\s*(ml|cl|l)(?![\p{L}\p{N}])/gu,
-		(match, size: string, unit: string) => {
+		/(^|[^\p{L}\p{N}.,])(\d+(?:[.,]\d+)?)\s*(ml|cl|l)(?![\p{L}\p{N}])/gu,
+		(match, prefix: string, size: string, unit: string) => {
 			const litres = Number(size.replace(',', '.')) * units[unit];
 			return volume !== null &&
 				packCount !== null &&
 				(equalVolume(litres, volume) || equalVolume(litres * packCount, volume))
-				? ' '
+				? `${prefix} `
 				: match;
 		}
 	);
 	const abv = number(product[C.AlcoholPercentage]);
 	name = name.replace(
-		/(?<![\p{L}\p{N}.,])(\d+(?:[.,]\d+)?)\s*%(?![\p{L}\p{N}])/gu,
-		(match, percentage: string) => (number(percentage) === abv && abv !== null ? ' ' : match)
+		/(^|[^\p{L}\p{N}.,])(\d+(?:[.,]\d+)?)\s*%(?![\p{L}\p{N}])/gu,
+		(match, prefix: string, percentage: string) =>
+			number(percentage) === abv && abv !== null ? `${prefix} ` : match
 	);
 	const vintage = text(product[C.Vintage]);
 	if (/^\d{4}$/.test(vintage)) {
-		name = name.replace(new RegExp(`(?<![\\p{L}\\p{N}])${vintage}(?![\\p{L}\\p{N}])`, 'gu'), ' ');
+		name = name.replace(new RegExp(`(^|[^\\p{L}\\p{N}])${vintage}(?![\\p{L}\\p{N}])`, 'gu'), '$1 ');
 	}
 	// A bare trailing decimal may repeat the ABV. Integers can be ages or brand names.
-	name = name.replace(/(?<![\p{L}\p{N}.,])(\d+[.,]\d+)\s*$/u, (match, percentage: string) =>
-		number(percentage) === abv && abv !== null ? ' ' : match
+	name = name.replace(
+		/(^|[^\p{L}\p{N}.,])(\d+[.,]\d+)\s*$/u,
+		(match, prefix: string, percentage: string) =>
+			number(percentage) === abv && abv !== null ? `${prefix} ` : match
 	);
 	return { name: text(name.replace(/\(\s*\)|\[\s*\]/g, ' ')), packCount };
 }
