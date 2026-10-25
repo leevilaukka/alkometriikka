@@ -241,6 +241,32 @@ Claude Code:
 claude mcp add alkometriikka -- bun run /absolute/path/to/alkometriikka/mcp/index.ts
 ```
 
+### Hosting it
+
+`bun run mcp:http` serves the same tools over Streamable HTTP at `/mcp` (plus `/health`), stateless and read-only, so other people can connect with just a URL. It listens on `127.0.0.1:8787` by default (`PORT`, `HOST`). A Raspberry Pi 5 is plenty:
+
+```ini
+# /etc/systemd/system/alkometriikka-mcp.service
+[Unit]
+Description=Alkometriikka MCP server
+After=network-online.target
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/alkometriikka
+ExecStart=/home/pi/.bun/bin/bun run mcp/http.ts
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Expose it with a free [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/) (`cloudflared tunnel`, service `http://localhost:8787`, hostname e.g. `mcp.alkometriikka.fi`), which needs no open ports. Clients then connect with:
+
+```sh
+claude mcp add --transport http alkometriikka https://mcp.alkometriikka.fi/mcp
+```
+
 ### Tools
 
 | Tool                 | Purpose                                                                                                                                                                                                                      |

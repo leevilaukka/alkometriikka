@@ -29,6 +29,7 @@
 		"daily": "bun run scripts/site/daily.ts",
 		"backup:daily": "bun run scripts/site/backup-archive.ts",
 		"mcp": "bun run mcp/index.ts",
+		"mcp:http": "bun run mcp/http.ts",
 		"check:mcp": "tsc -p mcp/tsconfig.json",
 		"stock": "bun run scripts/data/stock-history.ts",
 		"stock:demo": "bun run scripts/data/stock-history.ts --dev --demo"
