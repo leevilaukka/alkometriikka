@@ -1,11 +1,18 @@
-import { describe, expect, it, mock } from 'bun:test';
+import { describe, expect, it } from 'bun:test';
+import { decompressFromEncodedURIComponent } from 'lz-string';
 import { ToolInputError } from '../catalog.ts';
 import { fixtureCatalog } from './helpers.ts';
 
-// The site's list helpers import browser state; stub it so the real decoder can run here.
-mock.module('$lib/global.svelte', () => ({ lists: [] }));
-mock.module('../../src/lib/utils/helpers.ts', () => ({ getRandom: () => crypto.randomUUID() }));
-const { URIToList, validateList, getListTimestamp } = await import('../../src/lib/utils/lists.ts');
+// Decodes like the site's `URIToList`. The real helper imports browser state, and module
+// mocks leak across test files in bun, so the decoder is repeated here instead.
+type DecodedList = { id: string; name: string; items: { id: string; q: number }[] };
+const URIToList = (uri: string) =>
+	JSON.parse(decompressFromEncodedURIComponent(uri)) as DecodedList;
+const validateListFromURI = (uri: string) => {
+	const list = URIToList(uri);
+	return Boolean(list.id && list.name && Array.isArray(list.items));
+};
+const getListTimestamp = (list: DecodedList) => new Date(parseInt(list.id.split('-')[0]));
 
 const catalog = fixtureCatalog();
 const listParam = (url: string) => new URL(url).searchParams.get('list')!;
@@ -20,7 +27,7 @@ describe('createListLink', () => {
 		expect(result.url.startsWith('https://alkometriikka.fi/listat?list=')).toBe(true);
 
 		const param = listParam(result.url);
-		expect(validateList(param)).toBe(true);
+		expect(validateListFromURI(param)).toBe(true);
 		const list = URIToList(param);
 		expect(list.name).toBe('Juhannus');
 		expect(list.items).toEqual([
@@ -28,7 +35,7 @@ describe('createListLink', () => {
 			{ id: '300003', q: 2 },
 			{ id: '100001', q: 1 }
 		]);
-		expect(Math.abs(getListTimestamp(list)!.getTime() - Date.now())).toBeLessThan(10_000);
+		expect(Math.abs(getListTimestamp(list).getTime() - Date.now())).toBeLessThan(10_000);
 	});
 
 	it('merges repeated products and accepts URLs and dropped leading zeros', () => {

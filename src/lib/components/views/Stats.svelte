@@ -1,10 +1,11 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import type { ChartConfiguration } from 'chart.js';
-import { Kaljakori } from '$lib/alko';
-	import { AllColumns } from '$lib/utils/constants';
-	import { formatValue } from '$lib/utils/format';
+	import type { Kaljakori } from '$lib/alko';
+	import { AllColumns } from '$lib/utils/constants/columns';
+	import { formatValue } from '$lib/utils/format/format';
 	import { theme } from '$lib/global.svelte';
-	import type { AvailabilityData, ColumnNames, PersonalInfo } from '$lib/types';
+	import type { ColumnNames, PersonalInfo } from '$lib/types';
 	import {
 		bandHistogram,
 		bestValueRanks,
@@ -13,21 +14,19 @@ import { Kaljakori } from '$lib/alko';
 		formatFinNumber,
 		subcategoryDistribution,
 		topCategories
-	} from '$lib/utils/stats';
+	} from '$lib/utils/stats/stats';
 	import ChartCard from '$lib/components/widgets/ChartCard.svelte';
 
 	const {
-		dataset,
-		availability,
+		kaljakori: source,
 		personalInfo
 	}: {
-		dataset: any[][];
-		availability: AvailabilityData;
+		kaljakori: Kaljakori;
 		personalInfo: PersonalInfo;
 	} = $props();
 
-	const kaljakori = $derived(new Kaljakori(dataset, personalInfo, availability));
-	const items = $derived(kaljakori.data);
+	// Follows personal info changes made after the data was loaded
+	const items = $derived(source.subset(source.data, personalInfo).data);
 
 	const summary = $derived(computeSummary(items));
 
@@ -44,13 +43,23 @@ import { Kaljakori } from '$lib/alko';
 			'€/l'
 		)
 	);
-	const typeDistribution = $derived(topCategories(categoryDistribution(items, AllColumns.Type), 12));
-	const subtypeDistribution = $derived(
-		topCategories(subcategoryDistribution(items), 10)
-	);
-	const countryDistribution = $derived(
-		topCategories(categoryDistribution(items, AllColumns.Country), 12)
-	);
+	const allTypes = $derived(categoryDistribution(items, AllColumns.Type));
+	const allSubtypes = $derived(subcategoryDistribution(items));
+	const allCountries = $derived(categoryDistribution(items, AllColumns.Country));
+	const typeDistribution = $derived(topCategories(allTypes, 12));
+	const subtypeDistribution = $derived(topCategories(allSubtypes, 10));
+	const countryDistribution = $derived(topCategories(allCountries, 12));
+
+	const sumCounts = (entries: { count: number }[]) =>
+		entries.reduce((sum, entry) => sum + entry.count, 0);
+	const typeTotal = $derived(sumCounts(allTypes));
+	const subtypeTotal = $derived(sumCounts(allSubtypes));
+	const countryTotal = $derived(sumCounts(allCountries));
+
+	const formatShare = (count: number, total: number) =>
+		total > 0 ? `${formatFinNumber((count / total) * 100, 1)} %` : '–';
+	const shareLabels = (entries: { key: string; count: number }[], total: number) =>
+		entries.map((entry) => `${entry.key} (${formatShare(entry.count, total)})`);
 	const cheaps = $derived(bestValueRanks(items, 25));
 	const alcoholBands = $derived(
 		bandHistogram(
@@ -117,15 +126,13 @@ import { Kaljakori } from '$lib/alko';
 				legend: { display: false },
 				tooltip: {
 					callbacks: {
-						label: (context) =>
-							opts.tooltipLabel?.(context) ?? `${context.formattedValue} tuotetta`
+						label: (context) => opts.tooltipLabel?.(context) ?? `${context.formattedValue} tuotetta`
 					}
 				}
 			},
 			scales: {
 				x: { ticks: { color: tickColor, autoSkip: false }, grid: { color: gridColor } },
 				y: opts.logY
-
 					? {
 							type: 'logarithmic',
 							ticks: {
@@ -156,7 +163,8 @@ import { Kaljakori } from '$lib/alko';
 	const horizontalBarConfig = (
 		labels: string[],
 		values: number[],
-		colors: string[] | string
+		colors: string[] | string,
+		total?: number
 	): ChartConfiguration => ({
 		type: 'bar',
 		data: {
@@ -179,7 +187,10 @@ import { Kaljakori } from '$lib/alko';
 				legend: { display: false },
 				tooltip: {
 					callbacks: {
-						label: (context) => `${context.formattedValue} tuotetta`
+						label: (context) =>
+							total === undefined
+								? `${context.formattedValue} tuotetta`
+								: `${context.formattedValue} tuotetta (${formatShare(Number(context.raw), total)})`
 					}
 				}
 			},
@@ -200,7 +211,8 @@ import { Kaljakori } from '$lib/alko';
 	const doughnutConfig = (
 		labels: string[],
 		values: number[],
-		colors: string[]
+		colors: string[],
+		total: number
 	): ChartConfiguration<'doughnut'> => ({
 		type: 'doughnut',
 		data: {
@@ -226,7 +238,7 @@ import { Kaljakori } from '$lib/alko';
 				tooltip: {
 					callbacks: {
 						label: (context) =>
-							`${context.label}: ${context.formattedValue} tuotetta (${context.parsed.toLocaleString('fi-FI')})`
+							`${context.label}: ${context.formattedValue} tuotetta (${formatShare(context.parsed, total)})`
 					}
 				}
 			}
@@ -251,36 +263,46 @@ import { Kaljakori } from '$lib/alko';
 	);
 	const typeConfig = $derived(
 		barConfig(
-			typeDistribution.map((entry) => entry.key),
+			shareLabels(typeDistribution, typeTotal),
 			typeDistribution.map((entry) => entry.count),
-			barColor
+			barColor,
+			{
+				tooltipLabel: (context) =>
+					`${context.formattedValue} tuotetta (${formatShare(typeDistribution[context.dataIndex].count, typeTotal)})`
+			}
 		)
 	);
 	const subtypeConfig = $derived(
 		horizontalBarConfig(
-			subtypeDistribution.map((entry) => entry.key),
+			shareLabels(subtypeDistribution, subtypeTotal),
 			subtypeDistribution.map((entry) => entry.count),
-			barColor
+			barColor,
+			subtypeTotal
 		)
 	);
 
-	const countryConfig = $derived(doughnutConfig(countryDistribution.map((e) => e.key), countryDistribution.map((e) => e.count),
-		[
-			'#E51B15',
-			'#EF6C00',
-			'#FBC02D',
-			'#43A047',
-			'#00897B',
-			'#00ACC1',
-			'#1E88E5',
-			'#3949AB',
-			'#8E24AA',
-			'#D81B60',
-			'#6D4C41',
-			'#546E7A',
-			'#FF7043',
-		]
-	));
+	const countryConfig = $derived(
+		doughnutConfig(
+			shareLabels(countryDistribution, countryTotal),
+			countryDistribution.map((e) => e.count),
+			[
+				'#E51B15',
+				'#EF6C00',
+				'#FBC02D',
+				'#43A047',
+				'#00897B',
+				'#00ACC1',
+				'#1E88E5',
+				'#3949AB',
+				'#8E24AA',
+				'#D81B60',
+				'#6D4C41',
+				'#546E7A',
+				'#FF7043'
+			],
+			countryTotal
+		)
+	);
 
 	const alcoholConfig = $derived(
 		barConfig(
@@ -370,25 +392,45 @@ import { Kaljakori } from '$lib/alko';
 	</section>
 
 	<div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
-		<ChartCard title="Hinnat" subtitle="Tuotteiden määrä hintaluokittain (logaritminen pystyasteikko)" config={priceConfig} />
-		<ChartCard title="Litrahinnat" subtitle="Tuotteiden määrä litrahintaluokittain (logaritminen pystyasteikko)" config={literConfig} />
+		<ChartCard
+			title="Hinnat"
+			subtitle="Tuotteiden määrä hintaluokittain (logaritminen pystyasteikko)"
+			config={priceConfig}
+		/>
+		<ChartCard
+			title="Litrahinnat"
+			subtitle="Tuotteiden määrä litrahintaluokittain (logaritminen pystyasteikko)"
+			config={literConfig}
+		/>
 	</div>
 
 	<h2 class="text-xl font-semibold">Kategoriat</h2>
 	<p class="text-secondary">Yleisimmät tuoteryhmät valikoimassa.</p>
 	<div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
 		<ChartCard title="Pääkategoriat" subtitle="Tuotemäärä tuotetyypeittäin" config={typeConfig} />
-		<ChartCard title="Alakategoriat" subtitle="Suosituimmat alatyyypit (top 10)" config={subtypeConfig} />
+		<ChartCard
+			title="Alakategoriat"
+			subtitle="Suosituimmat alatyyypit (top 10)"
+			config={subtypeConfig}
+		/>
 	</div>
 
 	<h2 class="text-xl font-semibold">Alkoholi</h2>
 	<div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
-		<ChartCard title="Alkoholin määrä" subtitle="Tuotteiden määrä alkoholiprosenttiluokittain (logaritminen pystyasteikko)" config={alcoholConfig} />
+		<ChartCard
+			title="Alkoholin määrä"
+			subtitle="Tuotteiden määrä alkoholiprosenttiluokittain (logaritminen pystyasteikko)"
+			config={alcoholConfig}
+		/>
 	</div>
 
 	<h2 class="text-xl font-semibold">Hinta vs "teho"</h2>
 	<div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
-		<ChartCard title='"Tehokkuus" pistepilvenä' subtitle="Alkoholigrammat / € (vaaka) ja hinta (pysty)" config={scatterConfig} />
+		<ChartCard
+			title={'"Tehokkuus" pistepilvenä'}
+			subtitle="Alkoholigrammat / € (vaaka) ja hinta (pysty)"
+			config={scatterConfig}
+		/>
 
 		<section class="overflow-hidden rounded border border-primary bg-secondary">
 			<header class="border-b border-primary px-4 py-3">
@@ -399,12 +441,10 @@ import { Kaljakori } from '$lib/alko';
 				{#each cheaps as product, index (product.number)}
 					{@const gramsPerEuro = formatFinNumber(product.gramsPerEuro, 1)}
 					{@const price = formatValue(product.price, AllColumns.Price)}
-					<li
-						class="flex items-center gap-3 border-b border-primary px-4 py-2 last:border-b-0"
-					>
+					<li class="flex items-center gap-3 border-b border-primary px-4 py-2 last:border-b-0">
 						<span class="w-6 shrink-0 text-sm text-secondary">{index + 1}.</span>
 						<a
-							href={`/tuotteet/${product.number}/`}
+							href={resolve(`/tuotteet/${product.number}/`)}
 							class="min-w-0 flex-1 truncate hover:underline"
 							title={product.name}
 						>
@@ -423,6 +463,10 @@ import { Kaljakori } from '$lib/alko';
 
 	<h2 class="text-xl font-semibold">Alkuperä</h2>
 	<div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
-		<ChartCard title="Alkuperämaa" subtitle="Tuotemäärä valmistusmaittain (top 12)" config={countryConfig} />
+		<ChartCard
+			title="Alkuperämaa"
+			subtitle="Tuotemäärä valmistusmaittain (top 12)"
+			config={countryConfig}
+		/>
 	</div>
 </div>

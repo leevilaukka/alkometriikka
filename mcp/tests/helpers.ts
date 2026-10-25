@@ -1,6 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { formatDatasetToJSON, parseAvailability } from '../../src/lib/alko/dataset.ts';
+import { parseDataset } from '../../src/lib/utils/catalog/dataset.ts';
+import { parseAvailability } from '../../src/lib/utils/catalog/availability.ts';
 import { Catalog, type DatasetStatus } from '../catalog.ts';
 
 export const FIXTURE_DIR = join(import.meta.dir, 'fixtures');
@@ -37,7 +38,7 @@ export const fixtureStatus: DatasetStatus = {
 export function fixtureCatalog(
 	options: { withAvailability?: boolean; siteUrl?: string } = {}
 ): Catalog {
-	const { table } = formatDatasetToJSON(fixtureText('data.json'));
+	const { table } = parseDataset(fixtureText('data.json'));
 	const availability =
 		options.withAvailability === false
 			? { stores: {}, product: {} }

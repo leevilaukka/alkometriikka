@@ -6,7 +6,8 @@
  * web app: if it cannot be loaded, the catalog is served without it.
  */
 import { readFile } from 'node:fs/promises';
-import { formatDatasetToJSON, parseAvailability } from '../src/lib/alko/dataset.ts';
+import { parseDataset } from '../src/lib/utils/catalog/dataset.ts';
+import { parseAvailability } from '../src/lib/utils/catalog/availability.ts';
 import type { AvailabilityData } from '../src/lib/types.ts';
 import { Catalog, type DatasetStatus } from './catalog.ts';
 import { CachedResource, type DataStoreOptions, type ResourceState } from './data-store.ts';
@@ -20,7 +21,7 @@ export class CatalogProvider {
 
 	constructor(private readonly options: DataStoreOptions) {
 		this.data = new CachedResource('data.json', options, (text) => {
-			formatDatasetToJSON(text);
+			parseDataset(text);
 		});
 		this.availability = new CachedResource('availability.json', options, (text) => {
 			parseAvailability(JSON.parse(text));
@@ -67,7 +68,7 @@ export class CatalogProvider {
 		const version = `${data.version}|${availabilityState?.version ?? 'none'}`;
 		let availability = this.catalog?.availability;
 		if (!this.catalog || version !== this.version) {
-			const { table, metadata } = formatDatasetToJSON(await readFile(data.path, 'utf8'));
+			const { table, metadata } = parseDataset(await readFile(data.path, 'utf8'));
 			availability = await this.readAvailability(availabilityState, warnings);
 			this.catalog = new Catalog(
 				table,

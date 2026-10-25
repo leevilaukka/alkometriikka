@@ -18,17 +18,21 @@ import type {
 	PriceHistoryEntry,
 	PriceListItem
 } from '../src/lib/types.ts';
-import { AllColumns } from '../src/lib/utils/constants.ts';
-import { getSaleInfo } from '../src/lib/utils/sales.ts';
-import { similarity } from '../src/lib/utils/search.ts';
+import { AllColumns } from '../src/lib/utils/constants/columns.ts';
+import { getSaleInfo } from '../src/lib/utils/catalog/sales.ts';
+import { similarity } from '../src/lib/utils/catalog/search.ts';
 import {
 	activeProducts,
 	bestValueRanks,
 	categoryDistribution,
 	computeSummary
-} from '../src/lib/utils/stats.ts';
-import { getStoreCity, getTodaysOpeningHours, isStoreOpen } from '../src/lib/utils/availability.ts';
-import { generateImageUrl } from '../src/lib/utils/image.ts';
+} from '../src/lib/utils/stats/stats.ts';
+import {
+	getStoreCity,
+	getTodaysOpeningHours,
+	isStoreOpen
+} from '../src/lib/utils/catalog/availability.ts';
+import { generateImageUrl } from '../src/lib/utils/catalog/alko.ts';
 
 /** An error caused by the tool arguments (unknown product, unknown filter value, ...). */
 export class ToolInputError extends Error {
@@ -552,7 +556,7 @@ export class Catalog {
 
 	/**
 	 * Builds an alkometriikka.fi share link for a list. The site keeps the whole list in
-	 * the URL (`listToURI` in src/lib/utils/lists.ts), so nothing is stored anywhere.
+	 * the URL (`listToURI` in src/lib/utils/user/lists.ts), so nothing is stored anywhere.
 	 */
 	createListLink(name: string, items: { product_id: string; quantity?: number }[]) {
 		const listName = name.trim();

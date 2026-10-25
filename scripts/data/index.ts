@@ -17,8 +17,6 @@
  * Muistiinpanot -> notes/notes.md
  */
 
-import { getSaleInfo } from '../../src/lib/utils/sales.ts';
-import type { SaleInfo } from '../../src/lib/utils/sales.ts';
 import {
 	DEV,
 	HASH_VERSION,
@@ -31,29 +29,47 @@ import {
 	getHash,
 	getHashValues,
 	isIrrelevantMainGroup,
-	isIrrelevantStoredValues,
 	productDetailsUrl
 } from './constants.ts';
 import type {
-	AvailabilityData,
 	DetailedProductData,
 	MigratedData,
 	MigratedProduct,
-	PricePoint,
 	ProductDetailsApiResponse,
-	ProductMeta,
 	SearchApiResponse,
 	SearchProductData,
 	StoreData,
+	StoredAvailability,
 	StoresApiResponse
 } from './types.ts';
+import { isMigratedProduct } from './guards.ts';
+import {
+	HINTA_INDEX,
+	NIMI_INDEX,
+	carryOverMissingProducts,
+	clearRemovedFlag,
+	detailVerifyAgeDays,
+	isDetailVerifyCandidate,
+	mergeProduct,
+	refreshSearchColumns,
+	salesInfoFromValues,
+	updatePriceHistory,
+	valuesEqual,
+	withoutRemovedFlag
+} from './lifecycle.ts';
+import { toNumber } from '../../src/lib/utils/format/number';
+import {
+	AVAILABILITY_FORMAT,
+	encodeStockedStores
+} from '../../src/lib/utils/catalog/availabilityFile.ts';
+import { appendSyncReport, createSyncReport, elapsedMs, type SyncStats } from './sync-report.ts';
+import { DATA_PATH, HASHES_PATH, readDataset, writeDataset } from './dataset-file.ts';
+import { checkSyncSafety, missingCriticalColumns, restoreCriticalColumns } from './safeguards.ts';
 
 // ============================================================================
 // CONFIG & CONSTANTS
 // ============================================================================
 
-/** Where the dataset is read from and written to. Mirrors the legacy setup.ts convention. */
-const DATA_PATH = DEV ? './static/data.json' : './data.json';
 /** Store and per-product availability generated from the same complete search sweep. */
 const AVAILABILITY_PATH = DEV ? './static/availability.json' : './availability.json';
 /** Fallback base dataset used when no synced `data.json` exists yet (produced by migrate.ts). */
@@ -91,14 +107,17 @@ const DEFAULT_DETAIL_VERIFY_COOLDOWN_DAYS = 30;
 const DEFAULT_DETAIL_VERIFY_BATCH = 200;
 
 const VERBOSE = truthyEnvVar('VERBOSE');
+/** Writes the dataset even when the safeguards reject it, for legitimate large changes. */
+const FORCE = truthyEnvVar('ALKO_SYNC_FORCE');
+/** Exit code for a sync refused by the safeguards; the workflow doesn't retry it. */
+const EXIT_UNSAFE = 3;
 
-/** Column indices we read back out of a stored `values` array. */
-const NUMERO_INDEX = LEGACY_HEADERS.indexOf('Numero');
-const NIMI_INDEX = LEGACY_HEADERS.indexOf('Nimi');
-const HINTA_INDEX = LEGACY_HEADERS.indexOf('Hinta');
-const NORMAL_PRICE_INDEX = LEGACY_HEADERS.indexOf('Normaalihinta');
-const CAMPAIGN_START_INDEX = LEGACY_HEADERS.indexOf('Kampanja alkaa');
-const CAMPAIGN_END_INDEX = LEGACY_HEADERS.indexOf('Kampanja päättyy');
+/** Every exit appends this attempt's outcome to `ALKO_SYNC_REPORT`, if set (see sync-report.ts). */
+const syncReport = createSyncReport(FORCE);
+const SYNC_REPORT_PATH = process.env.ALKO_SYNC_REPORT;
+if (SYNC_REPORT_PATH) {
+	process.on('exit', (code) => appendSyncReport(SYNC_REPORT_PATH, syncReport, code));
+}
 
 interface Config {
 	detailConcurrency: number;
@@ -143,135 +162,11 @@ function loadConfig(): Config {
 	};
 }
 
-interface SyncStats {
-	unchanged: number;
-	updated: number;
-	added: number;
-	removed: number;
-	failed: number;
-	filtered: number;
-	filteredRemoved: number;
-	verified: number;
-	verifyFailed: number;
-}
-
-/** Returns a copy of `meta` without the `removedFromSelection` flag, or `undefined` if nothing remains. */
-function withoutRemovedFlag(meta: ProductMeta | undefined): ProductMeta | undefined {
-	if (!meta) return undefined;
-	const { removedFromSelection, ...rest } = meta;
-	return Object.keys(rest).length > 0 ? rest : undefined;
-}
-
-/** Clears the `removedFromSelection` flag on a product that is back in the selection. */
-function clearRemovedFlag(product: MigratedProduct): MigratedProduct {
-	if (!product.meta?.removedFromSelection) return product;
-	const meta = withoutRemovedFlag(product.meta);
-	const { meta: _omit, ...rest } = product;
-	return meta ? { ...rest, meta } : rest;
-}
-
-const DAY_MS = 24 * 60 * 60 * 1000;
-
-/**
- * Number of days since the product's last detail verification. Products that
- * have never been verified sort as infinitely stale, so bootstrapping or
- * migrated datasets drain oldest-first across successive runs.
- */
-function detailVerifyAgeDays(product: MigratedProduct): number {
-	const checkedAt = product.meta?.detailCheckedAt;
-	const timestamp = checkedAt ? Date.parse(checkedAt) : NaN;
-	if (Number.isNaN(timestamp)) return Infinity;
-	return (Date.now() - timestamp) / DAY_MS;
-}
-
-/** True when a product is stale enough to warrant a detail re-verification. */
-function isDetailVerifyCandidate(product: MigratedProduct, cooldownDays: number): boolean {
-	return detailVerifyAgeDays(product) > cooldownDays;
-}
-
-/**
- * Deep value equality between two `values` cells. Array-shaped fields (such as
- * `taste`/Luonnehdinta) are produced as a fresh array on every build, so a
- * reference comparison would falsely flag identical content as a change.
- */
-function valuesEqual(a: unknown, b: unknown): boolean {
-	if (Array.isArray(a) && Array.isArray(b)) {
-		if (a.length !== b.length) return false;
-		return a.every((item, index) => valuesEqual(item, b[index]));
-	}
-	return Object.is(a, b);
-}
-
 // ============================================================================
 // HELPERS
 // ============================================================================
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-
-function toNumber(value: unknown): number | null {
-	if (typeof value === 'number' && Number.isFinite(value)) return value;
-	if (typeof value === 'string') {
-		const normalized = Number(value.replace(',', '.').trim());
-		if (Number.isFinite(normalized)) return normalized;
-	}
-	return null;
-}
-
-function isMigratedProduct(entry: unknown): entry is MigratedProduct {
-	return (
-		!!entry &&
-		typeof entry === 'object' &&
-		typeof (entry as MigratedProduct).hash === 'string' &&
-		Array.isArray((entry as MigratedProduct).values)
-	);
-}
-
-/**
- * Extracts the sale/campaign info stored in a product's legacy `values` array
- * and detects whether the product was on sale at the time the values were
- * captured. Returns `null` when the product is not on sale.
- */
-function salesInfoFromValues(values: unknown[]): SaleInfo | null {
-	return getSaleInfo({
-		price: values[HINTA_INDEX],
-		normalPrice: values[NORMAL_PRICE_INDEX],
-		campaignStart: values[CAMPAIGN_START_INDEX],
-		campaignEnd: values[CAMPAIGN_END_INDEX]
-	});
-}
-
-/**
- * Appends today's price to the product's history when it differs from the most
- * recent recorded price. Existing history is preserved untouched otherwise.
- *
- * When the product is on sale (`sale` is non-null) the recorded point also
- * carries the reference price and campaign window, so the chart can later show
- * the sale period.
- */
-function updatePriceHistory(
-	previous: PricePoint[] | undefined,
-	price: number | null,
-	sale: SaleInfo | null
-): PricePoint[] {
-	const history = Array.isArray(previous) ? [...previous] : [];
-	if (price === null) return history;
-
-	const last = history[history.length - 1];
-	if (!last || last.price !== price) {
-		history.push({
-			date: new Date().toISOString().slice(0, 10),
-			price,
-			...(sale
-				? {
-						normalPrice: sale.normalPrice,
-						campaignStart: sale.campaignStart,
-						campaignEnd: sale.campaignEnd
-					}
-				: {})
-		});
-	}
-	return history;
-}
 
 /**
  * Runs `worker` over `items` with at most `limit` promises in flight at once.
@@ -521,24 +416,23 @@ async function loadStores(config: Config): Promise<Record<string, StoreData> | n
 // ============================================================================
 
 async function loadExistingData(): Promise<MigratedData> {
-	let file = Bun.file(DATA_PATH);
 	let sourcePath = DATA_PATH;
 
-	// Fall back to the migration output when no synced dataset exists yet.
-	if (!(await file.exists())) {
-		const migrated = Bun.file(MIGRATED_DATA_PATH);
-		if (await migrated.exists()) {
-			file = migrated;
-			sourcePath = MIGRATED_DATA_PATH;
-		}
-	}
-
-	if (VERBOSE) {
-		console.log(`  📂 Loading existing dataset from ${sourcePath}...`);
-	}
-
 	try {
-		const parsed = (await file.json()) as MigratedData;
+		// Hashes live in a separate file next to data.json (see dataset-file.ts);
+		// readDataset merges them back in.
+		let parsed = await readDataset(DATA_PATH, HASHES_PATH);
+
+		// Fall back to the migration output when no synced dataset exists yet.
+		if (parsed === null && (await Bun.file(MIGRATED_DATA_PATH).exists())) {
+			sourcePath = MIGRATED_DATA_PATH;
+			parsed = await readDataset(MIGRATED_DATA_PATH, `${MIGRATED_DATA_PATH}.hashes`);
+		}
+
+		if (VERBOSE) {
+			console.log(`  📂 Loading existing dataset from ${sourcePath}...`);
+		}
+
 		if (!parsed || !Array.isArray(parsed.schema)) {
 			console.warn('⚠️  Existing dataset has no schema, starting fresh');
 			const now = new Date().toISOString();
@@ -550,7 +444,7 @@ async function loadExistingData(): Promise<MigratedData> {
 		}
 		if (VERBOSE) {
 			console.log(
-				`  ✅ Loaded file: ${sourcePath} with ${Object.keys(parsed.products ?? {}).length} products - File size: ${file.size} bytes`
+				`  ✅ Loaded file: ${sourcePath} with ${Object.keys(parsed.products ?? {}).length} products - File size: ${Bun.file(sourcePath).size} bytes`
 			);
 		}
 
@@ -574,87 +468,6 @@ async function loadExistingData(): Promise<MigratedData> {
 	}
 }
 
-/**
- * Merges the search and detail payloads into a single object the schema can
- * read from. Detail-API keys win over search-API keys (see notes), while
- * price/abv/volume remain search-only fields and are preserved.
- *
- * The campaign fields are an exception: the search and detail endpoints report
- * them in different formats, and the search format is the canonical one — the
- * search API returns `lowest_30d_price` as a euro string ("1.1900") and the
- * campaign dates as plain `YYYY-MM-DD`, whereas the detail API returns the
- * price as an integer in cents (179 = 1.79 €) and the dates as ISO timestamps.
- * Keeping the search values protects the normal price from being read as a
- * 100×-too-large reference price and the campaign window from being
- * unparseable.
- */
-const SEARCH_WINS_KEYS = ['lowest_30d_price', 'campaign_start_date', 'campaign_end_date'] as const;
-
-function mergeProduct(
-	search: SearchProductData,
-	details: DetailedProductData
-): Record<string, unknown> {
-	const merged: Record<string, unknown> = { ...search, ...details };
-	for (const key of SEARCH_WINS_KEYS) {
-		if (search[key] != null) merged[key] = search[key];
-	}
-	return merged;
-}
-
-// ============================================================================
-// CACHE
-// ============================================================================
-
-/**
- * Purges the deployed data.json from Cloudflare's cache so visitors receive the
- * freshly published dataset. Skipped in dev and when no purge key is configured.
- */
-async function purgeCache(): Promise<void> {
-	if (DEV) return;
-
-	const purgeKey = process.env.CLOUDFLARE_PURGE_KEY;
-	if (!purgeKey) {
-		console.warn('⚠️  CLOUDFLARE_PURGE_KEY is not set. Skipping cache purge.');
-		return;
-	}
-
-	console.log('🧹 Purging Cloudflare cache...');
-	try {
-		const response = await fetch(
-			`https://api.cloudflare.com/client/v4/zones/${process.env.CLOUDFLARE_ZONE}/purge_cache`,
-			{
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-					Authorization: `Bearer ${purgeKey}`
-				},
-				body: JSON.stringify({
-					files: [
-						'https://alkometriikka.fi/data.json',
-						'https://alkometriikka.fi/availability.json',
-						'https://alkometriikka.fi/rss.xml',
-						'https://alkometriikka.fi/feed.json'
-					]
-				})
-			}
-		);
-
-		if (!response.ok) {
-			throw new Error(`Cache purge failed: ${response.status} ${response.statusText}`);
-		}
-		if (VERBOSE) {
-			console.log('  ✅ Cache purge successful.', await response.json());
-		} else {
-			console.log(
-				'✅ Cache purge successful.',
-				`Status: ${response.status} ${response.statusText}`
-			);
-		}
-	} catch (error) {
-		console.error('❌ Error during cache purge:', error);
-	}
-}
-
 // ============================================================================
 // SYNC
 // ============================================================================
@@ -666,14 +479,20 @@ async function sync(): Promise<void> {
 		console.log(`  🔧 Config:`, config);
 	}
 
+	const fetchStart = performance.now();
 	const [searchResult, existing, stores] = await Promise.all([
 		loadSearchProducts(config),
 		loadExistingData(),
 		loadStores(config)
 	]);
+	syncReport.phasesMs.fetch = elapsedMs(fetchStart);
 
 	const searchProducts = searchResult.products;
 	const existingProducts = existing.products ?? {};
+	syncReport.apiProducts = searchProducts.length;
+	syncReport.expectedTotal = searchResult.expectedTotal;
+	syncReport.existingProducts = Object.keys(existingProducts).length;
+	syncReport.stores = stores ? Object.keys(stores).length : null;
 
 	// Bail out before touching the dataset if the search fetch was incomplete.
 	// A partial fetch is missing live products, so proceeding would overwrite the
@@ -686,6 +505,7 @@ async function sync(): Promise<void> {
 				`Aborting sync without writing the dataset to avoid overwriting existing data with a ` +
 				`partial result. Re-run the sync once the API returns the full product list.`
 		);
+		syncReport.outcome = 'incomplete_fetch';
 		process.exit(1);
 	}
 
@@ -699,6 +519,7 @@ async function sync(): Promise<void> {
 				`avoid overwriting existing data with an empty result. Re-run the sync once the API ` +
 				`returns the product list.`
 		);
+		syncReport.outcome = 'empty_fetch';
 		process.exit(1);
 	}
 
@@ -706,7 +527,20 @@ async function sync(): Promise<void> {
 		console.warn(
 			'\n⚠️  Store fetch failed or returned no stores. Aborting sync without writing either dataset.'
 		);
+		syncReport.outcome = 'stores_failed';
 		process.exit(1);
+	}
+
+	// In CI the existing dataset is seeded from the deployed site. Starting fresh
+	// there means the seed failed, and writing would drop every removed product
+	// and all price history, so only allow it locally or when forced.
+	if (!DEV && !FORCE && Object.keys(existingProducts).length === 0) {
+		console.warn(
+			'\n🛑 No existing dataset was loaded. Refusing to replace the deployed data with a fresh ' +
+				'one; re-run with ALKO_SYNC_FORCE=1 if that is intended.'
+		);
+		syncReport.outcome = 'no_existing_dataset';
+		process.exit(EXIT_UNSAFE);
 	}
 
 	console.log(
@@ -725,6 +559,7 @@ async function sync(): Promise<void> {
 		verified: 0,
 		verifyFailed: 0
 	};
+	syncReport.stats = stats;
 
 	// Cheap first pass: hash the search-only fields and skip anything unchanged.
 	const pending: Array<{ product: SearchProductData; hash: string; previous?: MigratedProduct }> =
@@ -737,6 +572,10 @@ async function sync(): Promise<void> {
 	// Ids the API classifies as irrelevant (gifts & drinking accessories).
 	const irrelevantIds = new Set<string>();
 
+	// Every existing product rebuilt from the API this run, for the safeguards'
+	// check that no column is being wiped out by a renamed field.
+	const rewrites: Array<{ previous: unknown[]; values: unknown[] }> = [];
+
 	for (const product of searchProducts) {
 		// Drop gifts & drinking accessories entirely: they never enter the dataset.
 		if (isIrrelevantMainGroup(product as unknown as Record<string, unknown>)) {
@@ -745,14 +584,15 @@ async function sync(): Promise<void> {
 			continue;
 		}
 
-		const searchHash = getHash(
-			getHashValues(buildLegacyValues(product as unknown as Record<string, unknown>))
-		);
+		const searchValues = buildLegacyValues(product as unknown as Record<string, unknown>);
+		const searchHash = getHash(getHashValues(searchValues));
 		const previous = existingProducts[product.id];
 
 		if (isMigratedProduct(previous) && previous.hash === searchHash) {
 			// Back in (or still in) the selection: keep it, but drop any stale removed flag.
-			const kept = clearRemovedFlag(previous);
+			const kept = refreshSearchColumns(clearRemovedFlag(previous), searchValues);
+			if (kept.values !== previous.values)
+				rewrites.push({ previous: previous.values, values: kept.values });
 			products[product.id] = kept;
 			stats.unchanged++;
 			if (isDetailVerifyCandidate(kept, config.detailVerifyCooldownDays)) {
@@ -772,6 +612,7 @@ async function sync(): Promise<void> {
 	);
 
 	// Expensive second pass: fetch full details only for new/changed products.
+	const detailsStart = performance.now();
 	const totalPending = pending.length;
 	let processed = 0;
 	await mapWithConcurrency(
@@ -779,13 +620,39 @@ async function sync(): Promise<void> {
 		config.detailConcurrency,
 		async ({ product, hash, previous }) => {
 			const details = await fetchProductDetails(product.id, config);
+			processed++;
+			if (processed === totalPending || processed % PROGRESS_LOG_INTERVAL === 0) {
+				console.log(`  📥 ${processed}/${totalPending} details fetched`);
+			}
 			if (!details) {
 				stats.failed++;
 				// Keep the previous entry so a transient failure never drops a product.
 				// It's still in the selection, so clear any stale removed flag.
 				if (previous) products[product.id] = clearRemovedFlag(previous);
 			} else {
-				const values = buildLegacyValues(mergeProduct(product, details));
+				const built = buildLegacyValues(mergeProduct(product, details));
+				let values = built;
+				if (previous) {
+					rewrites.push({ previous: previous.values, values: built });
+					// Never let a blank core field from the API erase what we had.
+					const restored = restoreCriticalColumns(built, previous.values);
+					values = restored.values;
+					if (restored.restored.length > 0) {
+						console.warn(
+							`  ⚠️  ${product.id} came back without ${restored.restored.join(', ')}; kept the previous value`
+						);
+					}
+				} else {
+					// A new product without its core fields isn't usable: retry it next run.
+					const missing = missingCriticalColumns(built);
+					if (missing.length > 0) {
+						stats.failed++;
+						console.warn(
+							`  ⚠️  New product ${product.id} is missing ${missing.join(', ')}; skipped`
+						);
+						return;
+					}
+				}
 				const price = toNumber(values[HINTA_INDEX]);
 				const priceHistory = updatePriceHistory(
 					previous?.priceHistory,
@@ -824,13 +691,9 @@ async function sync(): Promise<void> {
 					stats.added++;
 				}
 			}
-
-			processed++;
-			if (processed === totalPending || processed % PROGRESS_LOG_INTERVAL === 0) {
-				console.log(`  📥 ${processed}/${totalPending} details fetched`);
-			}
 		}
 	);
+	syncReport.phasesMs.details = elapsedMs(detailsStart);
 
 	// Lazy third pass: re-verify details for stale-but-unchanged products. Cold
 	// detail-only fields (producer, vintage, grapes, ...) can drift without ever
@@ -859,6 +722,7 @@ async function sync(): Promise<void> {
 		);
 
 		const today = new Date().toISOString().slice(0, 10);
+		const verifyStart = performance.now();
 		await mapWithConcurrency(
 			verifyBatch,
 			config.detailConcurrency,
@@ -871,7 +735,15 @@ async function sync(): Promise<void> {
 					return;
 				}
 
-				const values = buildLegacyValues(mergeProduct(product, details));
+				const built = buildLegacyValues(mergeProduct(product, details));
+				rewrites.push({ previous: previous.values, values: built });
+				// Same as above: a blank core field never erases the stored one.
+				const { values, restored } = restoreCriticalColumns(built, previous.values);
+				if (restored.length > 0) {
+					console.warn(
+						`  ⚠️  ${product.id} came back without ${restored.join(', ')}; kept the previous value`
+					);
+				}
 				const changedFields = values.reduce<string[]>((acc, value, index) => {
 					if (!valuesEqual(previous.values[index], value)) {
 						acc.push(LEGACY_HEADERS[index]);
@@ -909,6 +781,7 @@ async function sync(): Promise<void> {
 				}
 			}
 		);
+		syncReport.phasesMs.verify = elapsedMs(verifyStart);
 	}
 
 	// Never delete products: carry over every product from the existing dataset
@@ -922,38 +795,39 @@ async function sync(): Promise<void> {
 	// otherwise), so the API id set can be trusted for removal detection.
 	const apiIds = new Set(searchProducts.map((product) => product.id));
 	const today = new Date().toISOString().slice(0, 10);
+	const carried = carryOverMissingProducts(
+		existingProducts,
+		products,
+		apiIds,
+		irrelevantIds,
+		today
+	);
+	stats.removed += carried.removed;
+	stats.filteredRemoved += carried.filteredRemoved;
 
-	for (const [id, previous] of Object.entries(existingProducts)) {
-		// Already rebuilt as an active product from the API response this run.
-		if (id in products) continue;
-		if (!isMigratedProduct(previous)) continue;
-
-		// Drop any existing gifts & drinking accessories: matched by the API's
-		// classification (by id) or, for items no longer in the API, by the stored
-		// main-group name. These are excluded from the dataset, not "removed".
-		if (irrelevantIds.has(id) || isIrrelevantStoredValues(previous.values)) {
-			stats.filteredRemoved++;
-			continue;
+	// Last line of defence before anything is written: refuse results that look
+	// like the API changed rather than the selection.
+	const relevantApiProducts = searchProducts.filter((product) => !irrelevantIds.has(product.id));
+	const problems = checkSyncSafety({
+		existingProducts,
+		products,
+		rewrites,
+		apiProducts: relevantApiProducts.length,
+		stockedApiProducts: relevantApiProducts.filter((product) => product.storeId?.length > 0).length
+	});
+	syncReport.safeguardProblems = problems;
+	if (problems.length > 0) {
+		console.warn(
+			`\n🛑 Safeguards rejected this sync:\n${problems.map((p) => `  • ${p}`).join('\n')}`
+		);
+		if (!FORCE) {
+			console.warn(
+				'Leaving the existing data untouched. If the change is real, re-run with ALKO_SYNC_FORCE=1.'
+			);
+			syncReport.outcome = 'safeguards_rejected';
+			process.exit(EXIT_UNSAFE);
 		}
-
-		if (apiIds.has(id)) {
-			// Still present in the API response: keep it active, clear any stale flag.
-			products[id] = clearRemovedFlag(previous);
-		} else if (previous.meta?.removedFromSelection) {
-			// Missing from the API and already flagged in an earlier run: keep the
-			// original removal date.
-			products[id] = previous;
-			products[id]['values'][LEGACY_HEADERS.indexOf('Uutuus')] = null; // Clear the "Uutuus" field for removed products
-		} else {
-			// Present in the existing dataset but absent from the API response: this
-			// is a newly removed product, flag it with today's date.
-			products[id] = {
-				...previous,
-				meta: { ...previous.meta, removedFromSelection: today }
-			};
-			products[id]['values'][LEGACY_HEADERS.indexOf('Uutuus')] = null; // Clear the "Uutuus" field for removed products
-			stats.removed++;
-		}
+		console.warn('ALKO_SYNC_FORCE is set, writing anyway.');
 	}
 
 	const now = new Date().toISOString();
@@ -988,20 +862,28 @@ async function sync(): Promise<void> {
 		},
 		products
 	};
-	const availability: AvailabilityData = {
+	const availability: StoredAvailability = {
+		format: AVAILABILITY_FORMAT,
 		lastUpdated: now,
 		stores,
-		product: Object.fromEntries(searchProducts.map((product) => [product.id, product.storeId]))
+		...encodeStockedStores(
+			Object.fromEntries(searchProducts.map((product) => [product.id, product.storeId ?? []]))
+		)
 	};
 
+	const writeStart = performance.now();
 	await Promise.all([
-		Bun.write(DATA_PATH, JSON.stringify(result)),
+		writeDataset(result, DATA_PATH, HASHES_PATH),
 		Bun.write(AVAILABILITY_PATH, JSON.stringify(availability))
 	]);
+	syncReport.phasesMs.write = elapsedMs(writeStart);
+	syncReport.outcome = 'synced';
+	syncReport.totalProducts = Object.keys(products).length;
+	syncReport.hasChanges = hasChanges;
 	printSummary(stats, Object.keys(products).length);
 	console.log(`✅ Saved ${AVAILABILITY_PATH}`);
-
-	await purgeCache();
+	// The deployed copies are purged from Cloudflare's cache by fetchData.yml once
+	// the new files are pushed; purging here would run before they're live.
 }
 
 function printSummary(stats: SyncStats, total: number): void {
@@ -1016,10 +898,11 @@ function printSummary(stats: SyncStats, total: number): void {
 	console.log(`  ❌ Failed:    ${stats.failed}`);
 	console.log(`  ❌ Verify failed: ${stats.verifyFailed}`);
 	console.log(`  📦 Total:     ${total}\n`);
-	console.log(`✅ Saved ${DATA_PATH}`);
+	console.log(`✅ Saved ${DATA_PATH} and ${HASHES_PATH}`);
 }
 
 sync().catch((error) => {
 	console.error('❌ Fatal error:', error);
+	syncReport.error = error instanceof Error ? error.message : String(error);
 	process.exit(1);
 });

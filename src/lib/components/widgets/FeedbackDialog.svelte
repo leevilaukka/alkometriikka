@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { components } from '$lib/utils/styles';
+	import { components } from '$lib/utils/ui/styles';
 	import { twMerge } from 'tailwind-merge';
 	import Popup from '$lib/components/widgets/Popup.svelte';
 	import Icon from '$lib/components/widgets/Icon.svelte';
@@ -9,6 +9,7 @@
 		triggerLabel = 'Palaute',
 		triggerIcon = 'bug',
 		triggerClass = '',
+		showTrigger = true,
 		dialogClass = '',
 		title,
 		description,
@@ -19,6 +20,8 @@
 		triggerLabel?: string;
 		triggerIcon?: IconName;
 		triggerClass?: string;
+		/** False when something else opens the dialog through `open()` */
+		showTrigger?: boolean;
 		dialogClass?: string;
 		title: string;
 		description: string;
@@ -43,6 +46,10 @@
 		sent = false;
 	}
 
+	export function open() {
+		dialogElement?.showModal();
+	}
+
 	async function submit() {
 		if (!anySelected || sending) return;
 		sending = true;
@@ -52,15 +59,21 @@
 	}
 </script>
 
-<Popup bind:dialogElement class={twMerge('w-[min(50ch,100%)] gap-4 p-4', dialogClass)} onClose={reset}>
+<Popup
+	bind:dialogElement
+	class={twMerge('w-[min(50ch,100%)] gap-4 p-4', dialogClass)}
+	onClose={reset}
+>
 	{#snippet renderButton(dialogElement: HTMLDialogElement)}
-		<button
-			class={twMerge(components.button(), triggerClass)}
-			onclick={() => dialogElement?.showModal()}
-			aria-label="Lähetä palautetta"
-		>
-			<span class="flex items-center gap-2"><Icon name={triggerIcon} />{triggerLabel}</span>
-		</button>
+		{#if showTrigger}
+			<button
+				class={twMerge(components.button(), triggerClass)}
+				onclick={() => dialogElement?.showModal()}
+				aria-label="Lähetä palautetta"
+			>
+				<span class="flex items-center gap-2"><Icon name={triggerIcon} />{triggerLabel}</span>
+			</button>
+		{/if}
 	{/snippet}
 	{#snippet renderContent(dialogElement: HTMLDialogElement)}
 		<div class="flex flex-col gap-4">
@@ -68,6 +81,7 @@
 				<h2 class="text-lg font-bold">{title}</h2>
 				<button
 					onclick={() => dialogElement?.close()}
+					aria-label="Sulje"
 					class={twMerge(components.button({ type: 'noborder' }))}
 				>
 					<Icon name="x" />
@@ -96,7 +110,10 @@
 					{/each}
 				</div>
 				<button
-					class={twMerge(components.button({ type: 'negative', size: 'md' }), 'justify-center px-4 py-2')}
+					class={twMerge(
+						components.button({ type: 'negative', size: 'md' }),
+						'justify-center px-4 py-2'
+					)}
 					disabled={!anySelected || sending}
 					onclick={submit}
 				>

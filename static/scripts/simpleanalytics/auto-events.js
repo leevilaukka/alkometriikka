@@ -134,7 +134,7 @@
     }
   };
 
-  function collectLink(link) {
+  function linkType(link) {
     let collect = false;
 
     // Collect download clicks
@@ -160,15 +160,23 @@
       collect = "email";
     }
 
-    if (!collect) return;
+    return collect;
+  }
 
-    const linkClickHandler = function (element) {
-        saAutomatedLink(link, collect);
-    }
+  // One shared handler, so adding it to a link again is a no-op (a new function per scan was
+  // never removed and piled up, sending one event per scan), and the link's type is read at
+  // click time, as list rows are reused for other products
+  function linkClickHandler() {
+    const collect = linkType(this);
+    if (collect) saAutomatedLink(this, collect);
+  }
 
-    link.removeEventListener("click", linkClickHandler);
+  function collectLink(link) {
     link.addEventListener("click", linkClickHandler);
   }
+
+  // Links already handled, with the href they had then
+  const seenLinks = new WeakMap();
 
   function registerLinkListeners() {
     try {
@@ -179,8 +187,9 @@
         let link = a[i];
         let href = link.getAttribute("href");
 
-        // Skip links that don't have an href
-        if (!href) continue;
+        // Skip links that don't have an href, and ones unchanged since the last scan
+        if (!href || seenLinks.get(link) === href) continue;
+        seenLinks.set(link, href);
 
         // Add umami attributes to outbound links that don't already have them
         const name = `outbound_link_click`;
@@ -195,8 +204,17 @@
     }
   }
 
+  // Rescans once the page is idle rather than on every change: a list re-rendering while
+  // someone types would otherwise rescan every link on each keystroke
+  let scanScheduled = false;
+  const scheduleScan = window.requestIdleCallback || function (callback) { return setTimeout(callback, 200); };
   const obsverver = new MutationObserver(() => {
-      registerLinkListeners();
+      if (scanScheduled) return;
+      scanScheduled = true;
+      scheduleScan(function () {
+        scanScheduled = false;
+        registerLinkListeners();
+      });
   })
 
   obsverver.observe(document.body, { childList: true, subtree: true });

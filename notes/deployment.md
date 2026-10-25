@@ -90,8 +90,18 @@ API, and fetches details only for changed/new products — the intended design.
   `gh-pages` `data.json` is new-format, the seeded baseline is rejected and the
   sync still starts fresh.
 - **Format compatibility:** `loadExistingData()` requires the top-level
-  `schema` array and per-product `{ hash, values }` entries. An old-format seed
-  is silently ignored (starts fresh) rather than erroring.
+  `schema` array and per-product `values`. An old-format seed is silently
+  ignored (starts fresh) rather than erroring.
+- **Hashes live in `hashes.json`:** the per-product change-detection hashes are
+  stored next to `data.json` as `{ HashVersion, hashes: { id: hash } }`, not
+  inside it, because the site never needs them and they were ~⅓ of the gzipped
+  download. `scripts/data/dataset-file.ts` reads and writes the pair. fetchData
+  seeds and deploys it, and build.yml restores it before its force-push. A
+  product's hash comes from (1) the product itself (datasets from before the
+  split), (2) `hashes.json`, or (3) is recomputed from the stored values, like
+  `rehash.ts`. So a lost `hashes.json` costs only a one-off refetch of products
+  whose stored values hash differently from the search payload. It never
+  causes a full refetch and never drops price history.
 - **First run after seeding** may still refetch some products if stored hashes
   differ from the sync's hash domain — see improvement #14 in
   [`notes/improvements.md`](./improvements.md) (migration hash must match the

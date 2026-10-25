@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'bun:test';
-import { calculateDrunkValue } from '../../src/lib/utils/alko.ts';
-import { AllColumns, DrunkColumns } from '../../src/lib/utils/constants.ts';
+import { calculateDrunkValue } from '../../src/lib/utils/catalog/alko.ts';
+import { AllColumns, DrunkColumns } from '../../src/lib/utils/constants/columns.ts';
 import { ToolInputError, parseProductId } from '../catalog.ts';
 import { fixtureCatalog } from './helpers.ts';
 

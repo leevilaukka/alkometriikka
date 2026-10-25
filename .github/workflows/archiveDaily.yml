@@ -22,44 +22,32 @@ permissions:
 jobs:
   archive:
     runs-on: ubuntu-latest
+    environment: github-pages
+    permissions:
+      contents: write
+      actions: read
+      pages: write
+      id-token: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install Bun
-        uses: oven-sh/setup-bun@v2
-
-      - name: Cache Bun dependencies
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.bun
-            node_modules
-          key: ${{ runner.os }}-bun-${{ hashFiles('bun.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-bun-
-
-      - name: Install dependencies
-        run: bun install --frozen-lockfile
+      - name: Set up Bun
+        uses: ./.github/actions/setup
 
       - name: Seed dataset and current daily folder from deployed site
         run: |
           git fetch origin gh-pages
           git show origin/gh-pages:data.json > data.json
+          git show origin/gh-pages:data-removed.json > data-removed.json 2>/dev/null || rm -f data-removed.json
+          git show origin/gh-pages:hashes.json > hashes.json 2>/dev/null || rm -f hashes.json
           git archive origin/gh-pages daily | tar -x
 
       - name: Rehash seeded dataset to current schema
-        run: |
-          if [ -f data.json ]; then
-            bun run scripts/data/rehash.ts
-          else
-            echo "ℹ️  No seeded data.json found; skipping rehash."
-          fi
+        uses: ./.github/actions/rehash-dataset
 
-      # Same pinned-manifest guard build.yml runs: never bake with generator code
-      # that failed the tests (a live manifest would stop verifying on clients).
       - name: Run daily game tests
-        run: bunx svelte-kit sync && bun test src/lib/daily
+        uses: ./.github/actions/run-daily-tests
 
       - name: Bake daily manifests and archive finished days
         run: bun run daily
@@ -86,9 +74,7 @@ jobs:
           fi
 
       - name: Check out deployed site
-        run: |
-          git fetch origin gh-pages
-          git worktree add --detach ../gh-pages origin/gh-pages
+        uses: ./.github/actions/checkout-gh-pages
 
       # Generated here (not just in fetchData.yml) so the Daily share card and
       # its page stub flip over in the same commit as the archive, right at
@@ -114,14 +100,20 @@ jobs:
           rm -rf daily
           cp -r "$GITHUB_WORKSPACE/daily" daily
 
+      - name: Configure git bot identity
+        uses: ./.github/actions/git-bot-identity
+
       - name: Commit and push archive
         working-directory: ../gh-pages
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add daily -f
           git commit -m "Archive finished daily games [skip ci]" || echo "No changes to commit"
           git push origin HEAD:gh-pages
+
+      - name: Deploy to GitHub Pages
+        uses: ./.github/actions/deploy-pages
+        with:
+          path: ../gh-pages
 
       - name: Purge Cloudflare cache for archive index
         env:
@@ -137,3 +129,29 @@ jobs:
             -H "Content-Type: application/json" \
             --data '{"files":["https://alkometriikka.fi/daily/archive/index.json"]}' || \
             echo "⚠️  Cache purge failed; continuing."
+
+  # Records the run (result, timings) in R2 for build monitoring.
+  report:
+    needs: [archive]
+    if: always()
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Bun
+        uses: ./.github/actions/setup
+
+      - name: Record run
+        uses: ./.github/actions/report-run
+        with:
+          needs: ${{ toJSON(needs) }}
+          github-token: ${{ github.token }}
+          r2-access-key-id: ${{ secrets.CF_R2_ACCESS_KEY_ID }}
+          r2-secret-access-key: ${{ secrets.CF_R2_SECRET_ACCESS_KEY }}
+          r2-account-id: ${{ secrets.CF_R2_ACCOUNT_ID }}
+          r2-bucket: ${{ vars.CF_R2_BUCKET || secrets.CF_R2_BUCKET }}
+          r2-region: ${{ vars.CF_R2_REGION || secrets.CF_R2_REGION }}
