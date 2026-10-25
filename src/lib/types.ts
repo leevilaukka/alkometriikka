@@ -307,7 +307,7 @@ export type AnalyticsEventMap = {
 	};
 	/** An unexpected error, see `reportError` in `src/lib/utils/app/errorAnalytics.ts`. */
 	app_error: {
-		kind: 'load' | 'uncaught' | 'unhandled_rejection';
+		kind: 'load' | 'uncaught' | 'unhandled_rejection' | 'boundary';
 		message: string;
 		stack?: string;
 		/** HTTP-style status SvelteKit gave a load error */

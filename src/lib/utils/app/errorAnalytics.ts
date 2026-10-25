@@ -89,6 +89,20 @@ export function reportPageNotFound(
 	whenAnalyticsLoaded(() => sendAnalyticsEvent('page_not_found', params));
 }
 
+/**
+ * Runs an optional computation, so a bug in it costs the feature built on it instead of
+ * the whole page. Reports the error and returns `fallback`.
+ */
+export function safely<T>(name: string, compute: () => T, fallback: T): T {
+	try {
+		return compute();
+	} catch (error) {
+		console.error(error);
+		reportError('boundary', error, { route: name });
+		return fallback;
+	}
+}
+
 /** Reports errors that SvelteKit's `handleError` doesn't see: event handlers, timers, promises. */
 export function trackUncaughtErrors() {
 	window.addEventListener('error', (event) => {

@@ -37,6 +37,7 @@
 	import CompareBar from '$lib/components/widgets/CompareBar.svelte';
 	import CommandPalette from '$lib/components/widgets/CommandPalette.svelte';
 	import NoticeBanner from '$lib/components/widgets/NoticeBanner.svelte';
+	import ErrorBoundary from '$lib/components/widgets/ErrorBoundary.svelte';
 	import Toast from '$lib/components/widgets/Toast.svelte';
 	import InstallBanner from '$lib/components/widgets/InstallBanner.svelte';
 	import { LocalStorageManager } from '$lib/utils/app/storage';
@@ -373,12 +374,14 @@
 			{/if}
 			<div class="ms-auto flex items-center gap-2">
 				{#if alko}
-					<CommandPalette
-						bind:this={commandPalette}
-						kaljakori={alko.kaljakori}
-						availability={alko.availability}
-						showButton={!hasSearch}
-					/>
+					<ErrorBoundary name="command_palette">
+						<CommandPalette
+							bind:this={commandPalette}
+							kaljakori={alko.kaljakori}
+							availability={alko.availability}
+							showButton={!hasSearch}
+						/>
+					</ErrorBoundary>
 				{/if}
 				<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 				<details
@@ -451,11 +454,15 @@
 					class={twMerge(components.button(), 'p-2 text-xl')}
 					>{#if !$isMobile}<span class="text-sm">Listat</span>{/if}<Icon name="list_ul" /></a
 				>
-				<Settings {alko} />
+				<ErrorBoundary name="settings">
+					<Settings {alko} />
+				</ErrorBoundary>
 			</div>
 		</header>
 		{#if alko}
-			<NoticeBanner lastSynced={alko.dataset.metadata.LastSynced} cached={alko.cached} />
+			<ErrorBoundary name="notice_banner">
+				<NoticeBanner lastSynced={alko.dataset.metadata.LastSynced} cached={alko.cached} />
+			</ErrorBoundary>
 		{:else if loadError}
 			<div
 				role="alert"
@@ -470,23 +477,33 @@
 				>
 			</div>
 		{/if}
-		<InstallBanner />
+		<ErrorBoundary name="install_banner">
+			<InstallBanner />
+		</ErrorBoundary>
 		<!-- The page's one main landmark; pages render plain containers inside it -->
 		<main
 			id="main-content"
 			tabindex="-1"
 			class="flex max-h-full flex-auto flex-col overflow-x-hidden overflow-y-auto outline-none"
 		>
-			{@render children?.()}
+			<ErrorBoundary name={page.route.id ?? 'page'} fallback="page" resetKey={page.url.pathname}>
+				{@render children?.()}
+			</ErrorBoundary>
 		</main>
 		<!-- Toasts float above the bars below -->
 		<div class="relative">
-			<Toast />
+			<ErrorBoundary name="toast">
+				<Toast />
+			</ErrorBoundary>
 		</div>
 		{#if alko && page.route.id !== '/vertailu'}
-			<CompareBar kaljakori={alko.kaljakori} />
+			<ErrorBoundary name="compare_bar">
+				<CompareBar kaljakori={alko.kaljakori} />
+			</ErrorBoundary>
 		{/if}
 		<!-- Pages hand their mobile action bar here (see pageBottomBar) so it sits below the compare bar -->
-		{@render pageBottomBar.snippet?.()}
+		<ErrorBoundary name="page_bottom_bar">
+			{@render pageBottomBar.snippet?.()}
+		</ErrorBoundary>
 	</div>
 {/if}
