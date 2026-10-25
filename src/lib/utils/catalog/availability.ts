@@ -95,15 +95,12 @@ export function rankStoresByDistance(
 		const secondDistance = getStoreDistance(origin, second);
 
 		if (firstDistance === null && secondDistance === null) {
-			return first.name.localeCompare(second.name, intlLocale, { sensitivity: 'base' });
+			return compareStoreNames(first.name, second.name);
 		}
 		if (firstDistance === null) return 1;
 		if (secondDistance === null) return -1;
 
-		return (
-			firstDistance - secondDistance ||
-			first.name.localeCompare(second.name, intlLocale, { sensitivity: 'base' })
-		);
+		return firstDistance - secondDistance || compareStoreNames(first.name, second.name);
 	});
 }
 
@@ -136,6 +133,14 @@ export function storeText(store: AvailabilityStore, field: StoreTextField): stri
 }
 
 /** Shorthand for the store's name in the current language. */
+/**
+ * Orders store names alphabetically the Finnish way (Ä and Ö after Z), whatever the language:
+ * English collation would sort them in among the As and Os.
+ */
+export function compareStoreNames(first: string, second: string): number {
+	return first.localeCompare(second, locale === 'sv' ? 'sv-FI' : 'fi-FI');
+}
+
 export function storeName(store: AvailabilityStore): string {
 	return storeText(store, 'name');
 }

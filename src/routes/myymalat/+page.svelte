@@ -6,6 +6,7 @@
 	import { requestUserLocation } from '$lib/utils/device/location';
 	import type { AvailabilityStore } from '$lib/types';
 	import {
+		compareStoreNames,
 		getStoreCity,
 		isStoreOpen,
 		storeName,
@@ -62,7 +63,7 @@
 	</div>
 {:then alko}
 	{@const stores = Object.values(alko.availability.stores).sort((first, second) =>
-		storeName(first).localeCompare(storeName(second), intlLocale)
+		compareStoreNames(storeName(first), storeName(second))
 	)}
 	{@const normalizedQuery = query.trim().toLocaleLowerCase(intlLocale)}
 	{@const filteredStores = stores.filter((store) =>

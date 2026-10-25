@@ -50,7 +50,12 @@
 	import { appPath } from '$lib/utils/app/paths';
 	import { intlLocale, m } from '$lib/i18n';
 	import { productName, translateValue } from '$lib/i18n/values';
-	import { resolvePreferredStore, storeName, storeText } from '$lib/utils/catalog/availability';
+	import {
+		compareStoreNames,
+		resolvePreferredStore,
+		storeName,
+		storeText
+	} from '$lib/utils/catalog/availability';
 	import { components } from '$lib/utils/ui/styles';
 	import Icon from './Icon.svelte';
 	import ProductImage from './ProductImage.svelte';
@@ -696,8 +701,7 @@
 				return storeEntries
 					.map((entry) => entry.value)
 					.sort(
-						(a, b) =>
-							Number(!!b.badge) - Number(!!a.badge) || a.label.localeCompare(b.label, intlLocale)
+						(a, b) => Number(!!b.badge) - Number(!!a.badge) || compareStoreNames(a.label, b.label)
 					);
 			case 'list':
 				return lists.toReversed().map(listItem);

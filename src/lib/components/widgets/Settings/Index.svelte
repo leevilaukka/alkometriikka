@@ -7,6 +7,7 @@
 	import { version } from '$app/environment';
 	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 	import type { AvailabilityStore } from '$lib/types';
+	import { compareStoreNames } from '$lib/utils/catalog/availability';
 	import { onSettingsOpenRequested } from '$lib/utils/app/settings';
 	import { onMount } from 'svelte';
 	import type { Component } from 'svelte';
@@ -48,7 +49,7 @@
 	const { alko }: { alko: any } = $props();
 	const stores = $derived(
 		(Object.values(alko?.availability.stores ?? {}) as AvailabilityStore[]).sort((a, b) =>
-			a.name.localeCompare(b.name, intlLocale, { sensitivity: 'base' })
+			compareStoreNames(a.name, b.name)
 		)
 	);
 
