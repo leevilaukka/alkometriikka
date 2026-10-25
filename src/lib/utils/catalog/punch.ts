@@ -331,6 +331,51 @@ const isActive = (product: PriceListItem) =>
 const pricePerLitre = (product: PriceListItem) =>
 	finite(product[AllColumns.Price]) / (finite(product[AllColumns.BottleSize]) || Infinity);
 
+/** Fruit a cider or similar tastes of, by the stems in Alko's tasting notes; berries count as one */
+const FRUITS: [fruit: string, stems: string[]][] = [
+	['apple', ['omen']],
+	['pear', ['päärynä']],
+	['berry', ['marja', 'mansikk', 'vadelm', 'mustikk', 'karpalo', 'puolukk', 'herukka']],
+	['peach', ['persik', 'aprikoo']],
+	['cherry', ['kirsik']],
+	['tropical', ['mango', 'ananas', 'banaani', 'passion', 'kiivi']],
+	['rhubarb', ['raparperi']],
+	['ginger', ['inkivääri']]
+];
+const SWEETNESS = ['kuiva', 'puolikuiva', 'puolimakea', 'makea'];
+
+/** Taste of a cider by its tasting notes: the first fruit named and how sweet it is */
+function tasteOf(product: PriceListItem) {
+	const notes = product[AllColumns.Description];
+	// A set in the app, an array in the dataset file
+	const text = (
+		typeof notes === 'object' && notes ? [...notes].join(',') : String(notes ?? '')
+	).toLowerCase();
+	let fruit: string | undefined;
+	let first = Infinity;
+	for (const [name, stems] of FRUITS) {
+		for (const stem of stems) {
+			const at = text.indexOf(stem);
+			if (at !== -1 && at < first) [fruit, first] = [name, at];
+		}
+	}
+	const words = text.split(/[\s,;.]+/);
+	const sweetness = SWEETNESS.findIndex((word) => words.includes(word));
+	return { fruit, sweetness: sweetness === -1 ? undefined : sweetness };
+}
+
+/** Whether a swap keeps a cider tasting about the same: the same fruit, a step from as sweet */
+function similarTaste(a: PriceListItem, b: PriceListItem) {
+	if (!/siider/i.test(String(a[AllColumns.SubType] || a[AllColumns.Type]))) return true;
+	const [x, y] = [tasteOf(a), tasteOf(b)];
+	if (x.fruit && y.fruit && x.fruit !== y.fruit) return false;
+	return (
+		x.sweetness === undefined ||
+		y.sweetness === undefined ||
+		Math.abs(x.sweetness - y.sweetness) <= 1
+	);
+}
+
 export type PunchSwap = { product: PriceListItem; count: number; saving: number };
 
 /** Smallest saving worth suggesting a swap for */
@@ -338,7 +383,7 @@ const MIN_SAVING = 0.5;
 
 /**
  * The cheapest active product of the same kind (same type, subtype and beer style, alcohol within
- * a percentage point) that replaces `count` packages of `product` with about the same amount in
+ * a percentage point, and for ciders the same fruit and sweetness) that replaces `count` packages of `product` with about the same amount in
  * whole packages, or null when none saves at least 50 cents. With `available`, only products it
  * accepts are considered, e.g. those in the preferred store.
  */
@@ -361,6 +406,7 @@ export function cheaperAlternative(
 		if ((candidate[AllColumns.BeerType] || '') !== (product[AllColumns.BeerType] || '')) continue;
 		if (Math.abs(finite(candidate[AllColumns.AlcoholPercentage]) - abv) > 1) continue;
 		if (pricePerLitre(candidate) >= pricePerLitre(product)) continue;
+		if (!similarTaste(product, candidate)) continue;
 		if (available && !available(candidate)) continue;
 
 		const size = finite(candidate[AllColumns.BottleSize]);
