@@ -15,11 +15,17 @@ const TOOLS = [
 	'compare_products',
 	'create_list_link',
 	'create_punch_link',
+	'find_cheaper_alternative',
 	'get_product',
 	'list_filter_values',
+	'price_changes',
 	'price_history',
 	'search_products',
-	'store_availability'
+	'similar_products',
+	'stock_trend',
+	'store_availability',
+	'store_overview',
+	'suggest_punch'
 ];
 
 async function connect(source: CatalogSource) {

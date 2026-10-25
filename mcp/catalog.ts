@@ -10,12 +10,30 @@
  */
 import { compressToEncodedURIComponent } from 'lz-string';
 import {
+	cheaperAlternative,
 	computePunch,
 	DEFAULT_GLASS,
 	encodePunch,
 	punchLines,
+	pickProduct,
+	PUNCH_TEMPLATES,
+	resolveTemplate,
 	type PunchIngredient
 } from '../src/lib/utils/catalog/punch.ts';
+import { findSimilarProducts } from '../src/lib/utils/catalog/filters.ts';
+import {
+	bestValueByType,
+	productsInStore,
+	storeArrivals,
+	storeSales
+} from '../src/lib/utils/catalog/storeHighlights.ts';
+import { productStockSeries, stockTrend } from '../src/lib/utils/catalog/stock.ts';
+import {
+	filterPriceChangesByDirection,
+	priceChangeSince
+} from '../src/lib/utils/stats/priceChanges.ts';
+import { recentPriceChanges } from '../src/lib/utils/stats/metrics.ts';
+import type { StockSource } from './stock.ts';
 import { Kaljakori } from '../src/lib/alko/index.ts';
 import type {
 	AvailabilityData,
@@ -74,13 +92,14 @@ export const FILTER_FIELDS = {
 	packaging: AllColumns.PackagingType,
 	selection: AllColumns.Availability,
 	grape: AllColumns.GrapeVarieties,
-	taste_descriptor: AllColumns.Description
+	taste_descriptor: AllColumns.Description,
+	food_pairing: AllColumns.FoodPairings
 } as const satisfies Record<string, ColumnNames>;
 
 export type FilterField = keyof typeof FILTER_FIELDS | 'store';
 
 /** Set-valued columns match with AND semantics in `Kaljakori` (the product must have every value). */
-const SET_FIELDS = new Set<FilterField>(['grape', 'taste_descriptor']);
+const SET_FIELDS = new Set<FilterField>(['grape', 'taste_descriptor', 'food_pairing']);
 
 export const SORT_KEYS = {
 	relevance: null,
@@ -107,6 +126,7 @@ export type SearchParams = {
 	selection?: string[];
 	grapes?: string[];
 	taste_descriptors?: string[];
+	food_pairings?: string[];
 	store?: string[];
 	min_price?: number;
 	max_price?: number;
@@ -130,6 +150,38 @@ export const LIST_ITEMS_MAX = 100;
 export const LIST_QUANTITY_MAX = 99;
 export const PUNCH_INGREDIENTS_MAX = 50;
 export const PUNCH_COUNT_MAX = 1000;
+export const PUNCH_TEMPLATE_IDS = PUNCH_TEMPLATES.map((template) => template.id) as [
+	string,
+	...string[]
+];
+/** The punch templates as plain data, for the punch-templates resource */
+export const PUNCH_TEMPLATES_INFO = PUNCH_TEMPLATES.map((template) => ({
+	id: template.id,
+	name: template.name,
+	description: template.description,
+	glass_l: template.glass,
+	ingredients: template.ingredients.map((ingredient) =>
+		'pick' in ingredient
+			? {
+					kind: 'alko_pick',
+					label: ingredient.pick.label,
+					category: ingredient.pick.type,
+					subcategories: ingredient.pick.subTypes,
+					package_sizes_l: ingredient.pick.sizes,
+					min_alcohol_percentage: ingredient.pick.minAbv ?? null,
+					count: ingredient.count
+				}
+			: {
+					kind: 'custom',
+					name: ingredient.name,
+					package_size_l: ingredient.volume,
+					price_eur: ingredient.price,
+					count: ingredient.count
+				}
+	)
+}));
+/** How many similar products are scored before the caller's limit applies */
+const SIMILAR_POOL = 50;
 
 export type PunchIngredientInput =
 	| { product_id: string; count?: number }
@@ -213,6 +265,8 @@ function mergeSpellingVariants(values: { value: string; count: number }[]) {
 export class Catalog {
 	readonly kaljakori: Kaljakori;
 	status: DatasetStatus;
+	/** Stock history; without it the stock tools report that no history is available. */
+	stock: StockSource | null = null;
 
 	constructor(
 		table: any[],
@@ -362,6 +416,7 @@ export class Catalog {
 				is_new: normalize(String(item[AllColumns.New] ?? '')) === 'uutuus',
 				taste_descriptors: list(item[AllColumns.Description]),
 				grapes: list(item[AllColumns.GrapeVarieties]),
+				food_pairings: list(item[AllColumns.FoodPairings]),
 				notes: list(item[AllColumns.Note]),
 				sugar_g_per_l: num(item[AllColumns.Sugar]),
 				acids_g_per_l: num(item[AllColumns.Acidity]),
@@ -403,7 +458,8 @@ export class Catalog {
 			['packaging', params.packaging],
 			['selection', params.selection],
 			['grape', params.grapes],
-			['taste_descriptor', params.taste_descriptors]
+			['taste_descriptor', params.taste_descriptors],
+			['food_pairing', params.food_pairings]
 		];
 		for (const [field, values] of categorical) {
 			if (!values?.length || field === 'store') continue;
@@ -880,6 +936,284 @@ export class Catalog {
 			truncated: matching.length > limit,
 			note: 'count is the number of products currently in Alko’s selection with that value.',
 			dataset: this.status
+		};
+	}
+
+	// ------------------------------------------------------------------------
+	// Discovery tools
+	// ------------------------------------------------------------------------
+
+	/** Each product's latest price change within the last `days` days, as on /hinnanmuutokset. */
+	priceChanges(options: {
+		days: number;
+		direction: 'all' | 'down' | 'up';
+		category?: string;
+		subcategory?: string;
+		sort_by: 'date' | 'percent';
+		limit: number;
+	}) {
+		let items = activeProducts(this.kaljakori.data);
+		const scope: string[] = [];
+		if (options.category) {
+			const allowed = new Set(this.resolveValues('category', [options.category]));
+			items = items.filter((item) => allowed.has(String(item[AllColumns.Type])));
+			scope.push(`category: ${[...allowed].join(', ')}`);
+		}
+		if (options.subcategory) {
+			const allowed = new Set(this.resolveValues('subcategory', [options.subcategory]));
+			items = items.filter((item) => allowed.has(String(item[AllColumns.SubType])));
+			scope.push(`subcategory: ${[...allowed].join(', ')}`);
+		}
+
+		const since = priceChangeSince(options.days);
+		const all = recentPriceChanges(items, since);
+		const changes = filterPriceChangesByDirection(all, options.direction);
+		if (options.sort_by === 'percent') {
+			changes.sort((a, b) => Math.abs(b.percent) - Math.abs(a.percent));
+		}
+		return {
+			since,
+			days: options.days,
+			scope: scope.length ? scope.join('; ') : 'all products',
+			total_changes: changes.length,
+			price_drops: all.filter((change) => change.to < change.from).length,
+			price_rises: all.filter((change) => change.to > change.from).length,
+			changes: changes.slice(0, options.limit).map((change) => ({
+				...this.summary(change.product),
+				change_date: change.date,
+				previous_price_eur: change.from,
+				new_price_eur: change.to,
+				change_percent: round(change.percent, 1),
+				is_sale_price: change.sale
+			})),
+			changes_truncated: changes.length > options.limit,
+			note: 'Only a product’s latest change in the window is listed. Changes are what Alkometriikka observed; a product tracked for less than the window has a shorter history. is_sale_price means the new price is a campaign price below the normal price.',
+			dataset: this.status
+		};
+	}
+
+	similarProducts(input: string, options: { limit: number; max_price?: number }) {
+		const item = this.requireProduct(input);
+		const restrictions = new Set<ColumnNames>([
+			AllColumns.Type,
+			AllColumns.SubType,
+			AllColumns.BeerType,
+			AllColumns.Price,
+			AllColumns.BottleSize,
+			AllColumns.Sugar,
+			AllColumns.PackagingType,
+			AllColumns.AlcoholGramsPerEuro,
+			AllColumns.GrapeVarieties,
+			AllColumns.Description
+		]);
+		let similar = findSimilarProducts(item, this.kaljakori, restrictions, SIMILAR_POOL, {
+			activeOnly: true
+		});
+		if (options.max_price !== undefined) {
+			similar = similar.filter(
+				(other) => (num(other[AllColumns.Price]) ?? Infinity) <= options.max_price!
+			);
+		}
+		return {
+			product: this.summary(item),
+			similar: similar.slice(0, options.limit).map((other) => this.summary(other)),
+			note: 'Similar products are ranked on category, price, size, sugar, packaging, alcohol per euro, grapes and taste, as on the product pages.',
+			dataset: this.status
+		};
+	}
+
+	cheaperAlternative(input: string, options: { quantity: number; store?: string }) {
+		const item = this.requireProduct(input);
+		let available: ((product: PriceListItem) => boolean) | undefined;
+		let storeNames: string[] | undefined;
+		if (options.store) {
+			storeNames = this.resolveStores([options.store]).map((store) => store.name);
+			available = (product) => {
+				const stores = list(product[AllColumns.StoreAvailability]);
+				return storeNames!.some((name) => stores.includes(name));
+			};
+		}
+		const swap = cheaperAlternative(item, options.quantity, this.kaljakori.data, available);
+		const price = num(item[AllColumns.Price]) ?? 0;
+		return {
+			product: this.summary(item),
+			quantity: options.quantity,
+			current_cost_eur: round(price * options.quantity),
+			...(storeNames ? { only_in_stores: storeNames } : {}),
+			alternative: swap
+				? {
+						product: this.summary(swap.product),
+						quantity: swap.count,
+						cost_eur: round((num(swap.product[AllColumns.Price]) ?? 0) * swap.count),
+						saving_eur: round(swap.saving)
+					}
+				: null,
+			note: swap
+				? 'The alternative is the cheapest active product of the same type, subcategory and style, within one percentage point of alcohol, and about the same total amount in whole packages.'
+				: 'No cheaper comparable product saves at least 50 cents for this quantity. Comparable means the same type, subcategory and style, within one percentage point of alcohol, and about the same total amount in whole packages.',
+			dataset: this.status
+		};
+	}
+
+	async storeOverview(input: string, limit: number) {
+		const stores = this.resolveStores([input]);
+		if (stores.length > 1) {
+			throw new ToolInputError(
+				`"${input}" matches ${stores.length} stores (${stores
+					.slice(0, 10)
+					.map((store) => `${store.name} [${store.id}]`)
+					.join(', ')}${stores.length > 10 ? ', …' : ''}). Use one store ID or an exact store name.`
+			);
+		}
+		const store = stores[0]!;
+		const stocked = productsInStore(this.kaljakori.data, this.availability, store.id);
+
+		const stockFile = (await this.stock?.storeFile(store.id)) ?? null;
+		const arrivals = stockFile ? storeArrivals(stockFile, stocked) : null;
+		const sales = storeSales(stocked);
+		const now = new Date();
+		return {
+			store: {
+				store_id: store.id,
+				name: store.name,
+				city: getStoreCity(store) || null,
+				address: store.address ?? null,
+				postal_code: store.postalCode ?? null,
+				opening_hours_today: getTodaysOpeningHours(store, now),
+				open_now: isStoreOpen(store, now)
+			},
+			product_count: stocked.length,
+			sales: {
+				total: sales.length,
+				top: sales.slice(0, limit).map(({ product, sale }) => ({
+					...this.summary(product),
+					normal_price_eur: sale.normalPrice,
+					discount_percent: sale.discountPercent,
+					campaign_end: sale.campaignEnd ?? null
+				}))
+			},
+			best_value_by_category: bestValueByType(stocked)
+				.slice(0, limit)
+				.map((product) => this.summary(product)),
+			recent_arrivals: arrivals
+				? arrivals
+						.slice(0, limit)
+						.map(({ product, date }) => ({ ...this.summary(product), arrived: date }))
+				: null,
+			limitations: [
+				...AVAILABILITY_LIMITATIONS,
+				arrivals
+					? 'recent_arrivals lists products that appeared in the store in the last 30 days, from the stock history.'
+					: 'Recent arrivals are not available for this store (no stock history yet).'
+			],
+			dataset: this.status
+		};
+	}
+
+	async stockTrend(input: string, days: number) {
+		const item = this.requireProduct(input);
+		const id = String(item[AllColumns.Number]);
+		const shard = (await this.stock?.productShard(id)) ?? null;
+		const series = shard ? productStockSeries(shard, id) : [];
+		const trend = stockTrend(series, days);
+		return {
+			product: this.summary(item),
+			current_store_count: this.storesFor(item).length,
+			history_available: series.length > 0,
+			trend: trend
+				? {
+						days_compared: days,
+						store_count_now: trend.now.count,
+						store_count_before: trend.before.count,
+						compared_from: trend.before.date,
+						change: trend.change
+					}
+				: null,
+			history: series
+				.slice(-days - 1)
+				.map((point) => ({ date: point.date, store_count: point.count })),
+			note: 'The history is the number of Alko stores listing the product per day, kept for the last 90 days; it only grows from when Alkometriikka started recording it. A falling count usually means the product is selling out or being phased out. Stock quantities are not known.',
+			dataset: this.status
+		};
+	}
+
+	/**
+	 * A ready-made punch from one of the site's templates: cheapest matching Alko products, scaled
+	 * to the number of people, as a calculator link.
+	 */
+	suggestPunch(options: {
+		template: string;
+		people: number;
+		glasses_per_person: number;
+		glass_l?: number;
+		max_budget_eur?: number;
+		store?: string;
+	}) {
+		const template = PUNCH_TEMPLATES.find((candidate) => candidate.id === options.template);
+		if (!template) {
+			throw new ToolInputError(
+				`Unknown template "${options.template}". Templates: ${PUNCH_TEMPLATES.map((t) => `${t.id} (${t.name})`).join(', ')}.`
+			);
+		}
+		const glass = options.glass_l ?? template.glass;
+
+		let available: ((product: PriceListItem) => boolean) | undefined;
+		if (options.store) {
+			const names = this.resolveStores([options.store]).map((store) => store.name);
+			available = (product) => {
+				const stores = list(product[AllColumns.StoreAvailability]);
+				return names.some((name) => stores.includes(name));
+			};
+		}
+
+		const base = resolveTemplate(template, this.kaljakori.data, available);
+		const missing = template.ingredients.flatMap((ingredient) =>
+			'pick' in ingredient && !pickProduct(ingredient.pick, this.kaljakori.data, available)
+				? [ingredient.pick.label]
+				: []
+		);
+		if (!base.ingredients.some((ingredient) => ingredient.kind === 'alko')) {
+			throw new ToolInputError(
+				`No Alko products matched the "${template.name}" template${options.store ? ' in that store' : ''}.`
+			);
+		}
+
+		// Scale the whole recipe to the wanted volume; Alko products come in whole packages.
+		const baseTotals = computePunch(
+			punchLines(base.ingredients, (id) => this.kaljakori.findById(id)),
+			{
+				glass,
+				people: 1
+			}
+		);
+		const wanted = options.people * options.glasses_per_person * glass;
+		const factor = baseTotals.volume > 0 ? wanted / baseTotals.volume : 1;
+		const inputs: PunchIngredientInput[] = base.ingredients.map((ingredient) =>
+			ingredient.kind === 'alko'
+				? { product_id: ingredient.id, count: Math.max(1, Math.round(ingredient.count * factor)) }
+				: {
+						name: ingredient.name,
+						volume_l: ingredient.volume,
+						abv: ingredient.abv,
+						price_eur: ingredient.price,
+						count: Math.max(1, Math.ceil(ingredient.count * factor))
+					}
+		);
+
+		const link = this.createPunchLink(template.name, inputs, {
+			glass_l: glass,
+			people: options.people
+		});
+		return {
+			template: { id: template.id, name: template.name, description: template.description },
+			...link,
+			within_budget:
+				options.max_budget_eur === undefined
+					? null
+					: link.totals.price_eur <= options.max_budget_eur,
+			max_budget_eur: options.max_budget_eur ?? null,
+			...(missing.length ? { unresolved_ingredients: missing } : {}),
+			note: `${link.note} Amounts are scaled to ${options.people} people × ${options.glasses_per_person} glasses of ${glass} l; the mixers use rough supermarket prices and can be edited in the calculator.`
 		};
 	}
 

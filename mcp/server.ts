@@ -2,7 +2,7 @@
  * MCP tool definitions for the Alkometriikka catalog. All tools are read-only
  * and only query the in-memory catalog built from the public data files.
  */
-import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
+import { McpServer, ResourceTemplate } from '@modelcontextprotocol/sdk/server/mcp.js';
 import type { CallToolResult } from '@modelcontextprotocol/sdk/types.js';
 import { z } from 'zod';
 import {
@@ -10,6 +10,8 @@ import {
 	FILTER_FIELDS,
 	LIST_ITEMS_MAX,
 	LIST_QUANTITY_MAX,
+	PUNCH_TEMPLATE_IDS,
+	PUNCH_TEMPLATES_INFO,
 	PUNCH_COUNT_MAX,
 	PUNCH_INGREDIENTS_MAX,
 	SEARCH_LIMIT_DEFAULT,
@@ -26,7 +28,7 @@ export type CatalogSource = { get(): Promise<Catalog> };
 const INSTRUCTIONS = `Alkometriikka is an independent database of the Finnish alcohol retailer Alko's product catalog (not affiliated with Alko).
 - Product data (names, categories, countries, etc.) is in Finnish, exactly as Alko publishes it, and filter values are Finnish. Products are classified as category (e.g. "Viinit" wines, "Väkevät" spirits, "Panimotuotteet" beers/ciders/long drinks, "Alkoholittomat" non-alcoholic) → subcategory (e.g. "Punaviinit" red wines, "Oluet" beers, "Viskit" whiskies) → style (e.g. "Lager", "Ipa"). Use list_filter_values when unsure of a value.
 - Prices are in euros, volumes in liters. Product IDs are Alko product numbers (e.g. "319027").
-- Typical flow: search_products → get_product / compare_products / price_history / store_availability. create_list_link turns chosen products into a shareable alkometriikka.fi list link, and create_punch_link a punch (booli) recipe into a link to the punch calculator.
+- Typical flow: search_products → get_product / compare_products / price_history / store_availability. create_list_link turns chosen products into a shareable alkometriikka.fi list link, and create_punch_link a punch (booli) recipe into a link to the punch calculator (suggest_punch builds one from a template). Also: price_changes (recent price drops/rises), find_cheaper_alternative, similar_products, store_overview and stock_trend.
 - Every result includes a "dataset" block with update timestamps. Data is refreshed upstream about every 6 hours; mention staleness when "stale" is true or warnings are present.
 - Store availability is a periodic snapshot without stock quantities; do not present it as live stock.`;
 
@@ -97,7 +99,7 @@ export function createServer(source: CatalogSource): McpServer {
 			title: 'Search Alko products',
 			description: `Search and filter the Alko product catalog. Use this to find products and their IDs by name, type, price, alcohol content, country, store, etc.
 
-Text query matches product names (fuzzy, same as the alkometriikka.fi search box). Categorical filters are case-insensitive, accept several values (a product matches if it has ANY of them), and a partial value matches every value containing it (e.g. category "viini" matches all wine categories). Values are Finnish; call list_filter_values to discover them. grapes / taste_descriptors require the product to have ALL given values.
+Text query matches product names (fuzzy, same as the alkometriikka.fi search box). Categorical filters are case-insensitive, accept several values (a product matches if it has ANY of them), and a partial value matches every value containing it (e.g. category "viini" matches all wine categories). Values are Finnish; call list_filter_values to discover them. grapes / taste_descriptors / food_pairings require the product to have ALL given values.
 
 Products removed from Alko's selection are excluded unless include_removed is true. Returns at most ${SEARCH_LIMIT_MAX} compact product summaries per call (default ${SEARCH_LIMIT_DEFAULT}); use offset to page. Sorting defaults to relevance when a query is given, otherwise to alcohol_grams_per_euro (best alcohol value first). Use get_product for full details.`,
 			inputSchema: {
@@ -127,6 +129,9 @@ Products removed from Alko's selection are excluded unless include_removed is tr
 				grapes: stringList('Grape varieties the product must ALL contain, e.g. ["Pinot Noir"]'),
 				taste_descriptors: stringList(
 					'Taste descriptors the product must ALL have (Finnish), e.g. ["Hedelmäinen"]'
+				),
+				food_pairings: stringList(
+					'Food pairings the product must ALL suit (Finnish, from Alko), e.g. ["Rasvainen kala"] (fatty fish), ["Nauta"] (beef), ["Tulinen ruoka"] (spicy food)'
 				),
 				store: stringList(
 					'Only products listed in ANY of these Alko stores. Accepts store IDs, store names or city names (a city matches all its stores), e.g. ["Tampere"]'
@@ -504,7 +509,7 @@ Products removed from Alko's selection are excluded unless include_removed is tr
 				field: z
 					.enum(filterFields)
 					.describe(
-						'Filter to list; "grape" and "taste_descriptor" correspond to the grapes / taste_descriptors search filters'
+						'Filter to list; "grape", "taste_descriptor" and "food_pairing" correspond to the grapes / taste_descriptors / food_pairings search filters'
 					),
 				contains: z
 					.string()
@@ -540,6 +545,411 @@ Products removed from Alko's selection are excluded unless include_removed is tr
 		},
 		async ({ field, contains, limit }) =>
 			result((await source.get()).filterValues(field, contains, limit ?? 100))
+	);
+
+	const dated = z.string().describe('YYYY-MM-DD');
+
+	server.registerTool(
+		'price_changes',
+		{
+			title: 'Recent price changes',
+			description: `List products whose price changed recently, like the alkometriikka.fi price changes page: each product's latest change in the window with the old and new price. Use it for "what got cheaper this week?" or "which wines went up?". Optionally limit it to a category or subcategory. Only products in Alko's current selection are included.`,
+			inputSchema: {
+				days: z
+					.number()
+					.int()
+					.min(1)
+					.max(365)
+					.optional()
+					.describe('Look back this many days (default 30; the site uses 7, 30 and 90)'),
+				direction: z
+					.enum(['all', 'down', 'up'])
+					.optional()
+					.describe('"down": only price drops, "up": only rises (default all)'),
+				category: z.string().max(100).optional().describe('Category, e.g. "Viinit"'),
+				subcategory: z.string().max(100).optional().describe('Subcategory, e.g. "Punaviinit"'),
+				sort_by: z
+					.enum(['date', 'percent'])
+					.optional()
+					.describe('"date": newest first (default); "percent": biggest change first'),
+				limit: z.number().int().min(1).max(50).optional().describe('Results to return (default 20)')
+			},
+			outputSchema: {
+				since: dated,
+				days: z.number(),
+				scope: z.string(),
+				total_changes: z.number(),
+				price_drops: z.number(),
+				price_rises: z.number(),
+				changes: z.array(
+					productSummary.extend({
+						change_date: dated,
+						previous_price_eur: z.number(),
+						new_price_eur: z.number(),
+						change_percent: z.number(),
+						is_sale_price: z.boolean()
+					})
+				),
+				changes_truncated: z.boolean(),
+				note: z.string(),
+				dataset: datasetStatus
+			},
+			annotations: { title: 'Recent price changes', ...READ_ONLY }
+		},
+		async ({ days, direction, category, subcategory, sort_by, limit }) =>
+			result(
+				(await source.get()).priceChanges({
+					days: days ?? 30,
+					direction: direction ?? 'all',
+					category,
+					subcategory,
+					sort_by: sort_by ?? 'date',
+					limit: limit ?? 20
+				})
+			)
+	);
+
+	server.registerTool(
+		'find_cheaper_alternative',
+		{
+			title: 'Find a cheaper alternative',
+			description: `Find a cheaper, comparable replacement for a product: the cheapest active product of the same type, subcategory and style, within one percentage point of alcohol, in whole packages that add up to about the same amount. Returns the saving for the given quantity, or null when nothing saves at least 50 cents. Optionally restrict to products sold in a store or city.`,
+			inputSchema: {
+				product_id: productId,
+				quantity: z
+					.number()
+					.int()
+					.min(1)
+					.max(LIST_QUANTITY_MAX)
+					.optional()
+					.describe('How many packages are being bought (default 1)'),
+				store: z
+					.string()
+					.max(100)
+					.optional()
+					.describe('Only alternatives listed in this store (ID or name) or any store in this city')
+			},
+			outputSchema: {
+				product: productSummary,
+				quantity: z.number(),
+				current_cost_eur: z.number(),
+				only_in_stores: z.array(z.string()).optional(),
+				alternative: z
+					.object({
+						product: productSummary,
+						quantity: z.number(),
+						cost_eur: z.number(),
+						saving_eur: z.number()
+					})
+					.nullable(),
+				note: z.string(),
+				dataset: datasetStatus
+			},
+			annotations: { title: 'Find a cheaper alternative', ...READ_ONLY }
+		},
+		async ({ product_id, quantity, store }) =>
+			result(
+				(await source.get()).cheaperAlternative(product_id, { quantity: quantity ?? 1, store })
+			)
+	);
+
+	server.registerTool(
+		'similar_products',
+		{
+			title: 'Find similar products',
+			description: `Find products similar to a given one in Alko's current selection, ranked the way the product pages do (category, price, size, sugar, packaging, alcohol per euro, grapes and taste). Use it for "something like this, but …" and combine with max_price for cheaper options.`,
+			inputSchema: {
+				product_id: productId,
+				limit: z
+					.number()
+					.int()
+					.min(1)
+					.max(25)
+					.optional()
+					.describe('Results to return (default 10)'),
+				max_price: z.number().min(0).optional().describe('Only products up to this price in euros')
+			},
+			outputSchema: {
+				product: productSummary,
+				similar: z.array(productSummary),
+				note: z.string(),
+				dataset: datasetStatus
+			},
+			annotations: { title: 'Find similar products', ...READ_ONLY }
+		},
+		async ({ product_id, limit, max_price }) =>
+			result((await source.get()).similarProducts(product_id, { limit: limit ?? 10, max_price }))
+	);
+
+	server.registerTool(
+		'store_overview',
+		{
+			title: 'Alko store overview',
+			description: `Overview of one Alko store: opening hours today, how many products it lists, its products on sale (biggest discount first), the best alcohol-per-euro product per category, and products that recently arrived there. Based on the availability snapshot; stock quantities are not known.`,
+			inputSchema: {
+				store: z
+					.string()
+					.min(1)
+					.max(100)
+					.describe(
+						'Store ID or name (a city only works if it has a single store; use list_filter_values with field "store" to find stores)'
+					),
+				limit: z
+					.number()
+					.int()
+					.min(1)
+					.max(25)
+					.optional()
+					.describe('Entries per section (default 5)')
+			},
+			outputSchema: {
+				store: z.object({
+					store_id: z.string(),
+					name: z.string(),
+					city: z.string().nullable(),
+					address: z.string().nullable(),
+					postal_code: z.string().nullable(),
+					opening_hours_today: z.string().nullable(),
+					open_now: z.boolean()
+				}),
+				product_count: z.number(),
+				sales: z.object({
+					total: z.number(),
+					top: z.array(
+						productSummary.extend({
+							normal_price_eur: z.number(),
+							discount_percent: z.number(),
+							campaign_end: z.string().nullable()
+						})
+					)
+				}),
+				best_value_by_category: z.array(productSummary),
+				recent_arrivals: z.array(productSummary.extend({ arrived: dated })).nullable(),
+				limitations: z.array(z.string()),
+				dataset: datasetStatus
+			},
+			annotations: { title: 'Alko store overview', ...READ_ONLY }
+		},
+		async ({ store, limit }) => result(await (await source.get()).storeOverview(store, limit ?? 5))
+	);
+
+	server.registerTool(
+		'stock_trend',
+		{
+			title: 'Product stock trend',
+			description: `How many Alko stores have listed a product each day over the last 90 days, with the change over a period. Use it to see whether a product is spreading to more stores, or selling out and being phased out. It counts stores, not units: stock quantities are not known. The history only goes back to when Alkometriikka started recording it.`,
+			inputSchema: {
+				product_id: productId,
+				days: z
+					.number()
+					.int()
+					.min(1)
+					.max(90)
+					.optional()
+					.describe('Period to compare and return, in days (default 30)')
+			},
+			outputSchema: {
+				product: productSummary,
+				current_store_count: z.number(),
+				history_available: z.boolean(),
+				trend: z
+					.object({
+						days_compared: z.number(),
+						store_count_now: z.number(),
+						store_count_before: z.number(),
+						compared_from: dated,
+						change: z.number()
+					})
+					.nullable(),
+				history: z.array(z.object({ date: dated, store_count: z.number() })),
+				note: z.string(),
+				dataset: datasetStatus
+			},
+			annotations: { title: 'Product stock trend', ...READ_ONLY }
+		},
+		async ({ product_id, days }) =>
+			result(await (await source.get()).stockTrend(product_id, days ?? 30))
+	);
+
+	server.registerTool(
+		'suggest_punch',
+		{
+			title: 'Suggest a punch',
+			description: `Build a ready-to-share punch (booli) from one of the site's templates: it picks the cheapest matching Alko products (optionally only ones sold in a store or city), adds mixers, scales everything to the number of people and glasses, and returns a punch calculator link with totals. Templates: ${PUNCH_TEMPLATE_IDS.join(', ')}. For a custom recipe use create_punch_link instead. Mixer prices are rough supermarket guesses and editable in the calculator.`,
+			inputSchema: {
+				template: z.enum(PUNCH_TEMPLATE_IDS).describe('Punch template'),
+				people: z.number().int().min(1).max(500).describe('Number of people'),
+				glasses_per_person: z
+					.number()
+					.min(0.5)
+					.max(20)
+					.optional()
+					.describe('Glasses of punch per person (default 3)'),
+				glass_l: z
+					.number()
+					.min(0.01)
+					.max(2)
+					.optional()
+					.describe('Glass size in liters (default 0.2)'),
+				max_budget_eur: z
+					.number()
+					.min(0)
+					.optional()
+					.describe('Budget in euros; the result says whether the punch fits in it'),
+				store: z
+					.string()
+					.max(100)
+					.optional()
+					.describe('Prefer products sold in this store (ID or name) or any store in this city')
+			},
+			outputSchema: {
+				template: z.object({ id: z.string(), name: z.string(), description: z.string() }),
+				url: z.string(),
+				name: z.string(),
+				glass_l: z.number(),
+				people: z.number(),
+				ingredients: z.array(
+					z.object({
+						name: z.string(),
+						product_id: z.string().nullable(),
+						count: z.number(),
+						package_size_l: z.number(),
+						alcohol_percentage: z.number(),
+						package_price_eur: z.number(),
+						line_total_eur: z.number()
+					})
+				),
+				totals: z.looseObject({}),
+				within_budget: z.boolean().nullable(),
+				max_budget_eur: z.number().nullable(),
+				unresolved_ingredients: z.array(z.string()).optional(),
+				note: z.string(),
+				dataset: datasetStatus
+			},
+			annotations: { title: 'Suggest a punch', ...READ_ONLY, idempotentHint: false }
+		},
+		async ({ template, people, glasses_per_person, glass_l, max_budget_eur, store }) =>
+			result(
+				(await source.get()).suggestPunch({
+					template,
+					people,
+					glasses_per_person: glasses_per_person ?? 3,
+					glass_l,
+					max_budget_eur,
+					store
+				})
+			)
+	);
+
+	// ------------------------------------------------------------------------
+	// Resources: reference data a client can read without a tool call
+	// ------------------------------------------------------------------------
+
+	server.registerResource(
+		'punch-templates',
+		'alkometriikka://punch-templates',
+		{
+			title: 'Punch templates',
+			description: 'The punch templates suggest_punch can build, with their ingredients.',
+			mimeType: 'application/json'
+		},
+		(uri) => ({
+			contents: [
+				{ uri: uri.href, mimeType: 'application/json', text: JSON.stringify(PUNCH_TEMPLATES_INFO) }
+			]
+		})
+	);
+
+	server.registerResource(
+		'filter-values',
+		new ResourceTemplate('alkometriikka://filter-values/{field}', {
+			list: () => ({
+				resources: filterFields.map((field) => ({
+					uri: `alkometriikka://filter-values/${field}`,
+					name: `filter-values-${field}`,
+					title: `Filter values: ${field}`,
+					mimeType: 'application/json'
+				}))
+			}),
+			complete: { field: () => [...filterFields] }
+		}),
+		{
+			title: 'Filter values',
+			description:
+				'All valid values of a search_products filter (category, subcategory, style, country, region, manufacturer, packaging, selection, grape, taste_descriptor, food_pairing, store) with product counts.',
+			mimeType: 'application/json'
+		},
+		async (uri, { field }) => {
+			const name = String(field);
+			if (!(filterFields as string[]).includes(name)) {
+				throw new Error(`Unknown filter "${name}". Fields: ${filterFields.join(', ')}.`);
+			}
+			const values = (await source.get()).filterValues(name as FilterField, undefined, 500);
+			return {
+				contents: [{ uri: uri.href, mimeType: 'application/json', text: JSON.stringify(values) }]
+			};
+		}
+	);
+
+	// ------------------------------------------------------------------------
+	// Prompts: starting points that clients show as slash commands
+	// ------------------------------------------------------------------------
+
+	const userPrompt = (text: string) => ({
+		messages: [{ role: 'user' as const, content: { type: 'text' as const, text } }]
+	});
+
+	server.registerPrompt(
+		'plan_party',
+		{
+			title: 'Plan a party',
+			description: 'Plan the drinks for a party within a budget and get shareable links.',
+			argsSchema: {
+				people: z.string().describe('Number of guests'),
+				budget_eur: z.string().optional().describe('Budget in euros'),
+				wishes: z.string().optional().describe('What the guests like, restrictions, occasion')
+			}
+		},
+		({ people, budget_eur, wishes }) =>
+			userPrompt(
+				`Plan the drinks for a party of ${people} people${budget_eur ? ` with a budget of ${budget_eur} €` : ''}${wishes ? `. Notes: ${wishes}` : ''}.\n\n` +
+					`Use the alkometriikka tools: search_products (and list_filter_values when unsure of a value) to find good-value drinks, suggest_punch or create_punch_link if a punch fits, and create_list_link for a shopping list with quantities. ` +
+					`Check the total against the budget, use find_cheaper_alternative where it saves money, and finish by giving the links and the total cost. Allow roughly 3–4 standard drinks per guest unless told otherwise.`
+			)
+	);
+
+	server.registerPrompt(
+		'best_value',
+		{
+			title: 'Best value in a category',
+			description: 'Find the best value-for-money products in a category.',
+			argsSchema: {
+				category: z.string().describe('E.g. "Oluet", "Punaviinit", "Viskit"'),
+				max_price: z.string().optional().describe('Maximum price in euros')
+			}
+		},
+		({ category, max_price }) =>
+			userPrompt(
+				`Find the best value products in "${category}"${max_price ? ` up to ${max_price} €` : ''}. ` +
+					`Use search_products sorted by alcohol_grams_per_euro (or price_per_liter for non-alcoholic drinks), compare the top candidates with compare_products, and mention any that are on sale or have recently dropped in price (price_changes). Give a short ranked list with prices.`
+			)
+	);
+
+	server.registerPrompt(
+		'pair_with_food',
+		{
+			title: 'Pair a drink with food',
+			description: 'Suggest drinks for a dish.',
+			argsSchema: {
+				dish: z.string().describe('The dish or meal'),
+				max_price: z.string().optional().describe('Maximum price in euros')
+			}
+		},
+		({ dish, max_price }) =>
+			userPrompt(
+				`Suggest drinks to go with: ${dish}${max_price ? ` (up to ${max_price} € each)` : ''}. ` +
+					`Map the dish to Alko's food pairing categories (list_filter_values with field "food_pairing"), then use search_products with food_pairings to find options. Offer a few choices with different styles and prices.`
+			)
 	);
 
 	return server;

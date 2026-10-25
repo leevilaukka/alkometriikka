@@ -9,6 +9,7 @@ import { readFile } from 'node:fs/promises';
 import { parseDataset, parseRemovedProducts } from '../src/lib/utils/catalog/dataset.ts';
 import { parseAvailability } from '../src/lib/utils/catalog/availability.ts';
 import type { AvailabilityData, DatasetRow } from '../src/lib/types.ts';
+import { StockSource } from './stock.ts';
 import { Catalog, type DatasetStatus } from './catalog.ts';
 import { CachedResource, type DataStoreOptions, type ResourceState } from './data-store.ts';
 
@@ -21,11 +22,13 @@ export class CatalogProvider {
 	/** The parsed `data.json`, kept until it changes so a new availability file doesn't re-parse it */
 	private parsed: { version: string; dataset: ReturnType<typeof parseDataset> } | null = null;
 	private pending: Promise<Catalog> | null = null;
+	private readonly stock: StockSource;
 
 	constructor(private readonly options: DataStoreOptions) {
 		this.data = new CachedResource('data.json', options, (text) => {
 			parseDataset(text);
 		});
+		this.stock = new StockSource(options);
 		this.removed = new CachedResource('data-removed.json', options, (text) => {
 			JSON.parse(text);
 		});
@@ -107,6 +110,7 @@ export class CatalogProvider {
 				this.status(metadata, data, availability, stale, warnings),
 				this.options.baseUrl
 			);
+			this.catalog.stock = this.stock;
 			this.version = version;
 		} else {
 			const { last_updated, last_synced } = this.catalog.status;

@@ -261,6 +261,8 @@ Restart=on-failure
 WantedBy=multi-user.target
 ```
 
+Public use is limited by default: 60 requests per minute per client (`ALKOMETRIIKKA_RATE_LIMIT`, 0 turns it off) and 64 KB request bodies. Set `ALKOMETRIIKKA_ALLOWED_HOSTS=mcp.alkometriikka.fi` to reject requests with any other `Host` header (DNS rebinding). Clients are told apart by Cloudflare's `CF-Connecting-IP` header, which is only trustworthy while the server listens on `127.0.0.1` and is reached through the tunnel.
+
 Expose it with a free [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/) (`cloudflared tunnel`, service `http://localhost:8787`, hostname e.g. `mcp.alkometriikka.fi`), which needs no open ports. Clients then connect with:
 
 ```sh
@@ -269,17 +271,25 @@ claude mcp add --transport http alkometriikka https://mcp.alkometriikka.fi/mcp
 
 ### Tools
 
-| Tool                 | Purpose                                                                                                                                                                                                                      |
-| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `search_products`    | Search by name and filter by category, subcategory, style, country, region, manufacturer, packaging, selection, grapes, taste, store/city, price, alcohol %, size, sugar and sale status. Results are capped at 50 per page. |
-| `get_product`        | Full details for one product, including calculated metrics, active sale, price history summary and store count.                                                                                                              |
-| `compare_products`   | Compare 2–10 products and show which one is best on each metric.                                                                                                                                                             |
-| `price_history`      | Recorded price changes and a summary for a product.                                                                                                                                                                          |
-| `store_availability` | Stores that listed the product in the latest availability snapshot, with today's opening hours.                                                                                                                              |
-| `create_list_link`   | Build a shareable alkometriikka.fi list link from products and quantities. The list is encoded in the URL; nothing is stored.                                                                                                |
-| `create_punch_link`  | Build a link to the punch calculator (boolilaskuri) from Alko products and other ingredients, with glass size and number of people. The recipe is encoded in the URL; nothing is stored.                                     |
-| `catalog_statistics` | Product counts, averages, category breakdown and data timestamps.                                                                                                                                                            |
-| `list_filter_values` | Valid (Finnish) values for the search filters, with product counts.                                                                                                                                                          |
+| Tool                       | Purpose                                                                                                                                                                                                                      |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `search_products`          | Search by name and filter by category, subcategory, style, country, region, manufacturer, packaging, selection, grapes, taste, store/city, price, alcohol %, size, sugar and sale status. Results are capped at 50 per page. |
+| `get_product`              | Full details for one product, including calculated metrics, active sale, price history summary and store count.                                                                                                              |
+| `compare_products`         | Compare 2–10 products and show which one is best on each metric.                                                                                                                                                             |
+| `price_history`            | Recorded price changes and a summary for a product.                                                                                                                                                                          |
+| `store_availability`       | Stores that listed the product in the latest availability snapshot, with today's opening hours.                                                                                                                              |
+| `create_list_link`         | Build a shareable alkometriikka.fi list link from products and quantities. The list is encoded in the URL; nothing is stored.                                                                                                |
+| `create_punch_link`        | Build a link to the punch calculator (boolilaskuri) from Alko products and other ingredients, with glass size and number of people. The recipe is encoded in the URL; nothing is stored.                                     |
+| `price_changes`            | Products whose price changed in the last 7–365 days, with direction, category and sort options.                                                                                                                              |
+| `find_cheaper_alternative` | A cheaper, comparable product for a given product and quantity, optionally from a store or city.                                                                                                                             |
+| `similar_products`         | Products similar to a given one, ranked as on the product pages, with an optional price cap.                                                                                                                                 |
+| `store_overview`           | One store: opening hours, product count, sales, best value per category and recent arrivals.                                                                                                                                 |
+| `stock_trend`              | How many stores listed a product each day over the last 90 days.                                                                                                                                                             |
+| `suggest_punch`            | A punch from a template, scaled to the number of people and a budget, as a calculator link.                                                                                                                                  |
+| `catalog_statistics`       | Product counts, averages, category breakdown and data timestamps.                                                                                                                                                            |
+| `list_filter_values`       | Valid (Finnish) values for the search filters, with product counts.                                                                                                                                                          |
+
+The server also offers resources (`alkometriikka://punch-templates` and `alkometriikka://filter-values/{field}`) and prompts (`plan_party`, `best_value`, `pair_with_food`), which clients show as slash commands. `search_products` can filter by Alko's food pairings (`food_pairings`).
 
 ### Data freshness and caching
 
