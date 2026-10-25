@@ -85,6 +85,14 @@ describe('parseScopePrefix', () => {
 		];
 		expect(parseScopePrefix('s:kamppi', english)).toEqual({ scope: 'store', rest: 'kamppi' });
 		expect(parseScopePrefix('t:kosken', english)).toBeNull();
+		// The symbols work in every language
+		expect(parseScopePrefix('@kamppi', english)).toEqual({ scope: 'store', rest: 'kamppi' });
+	});
+
+	it('accepts the symbols as alternatives', () => {
+		expect(parseScopePrefix('@kamppi')).toEqual({ scope: 'store', rest: 'kamppi' });
+		expect(parseScopePrefix('# viinit')).toEqual({ scope: 'category', rest: 'viinit' });
+		expect(parseScopePrefix('/laskin')).toEqual({ scope: 'page', rest: 'laskin' });
 	});
 
 	it('returns null without a prefix', () => {

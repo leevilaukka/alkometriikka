@@ -1045,5 +1045,6 @@
 	"palette_prefix_category": "k:",
 	"palette_prefix_store": "b:",
 	"palette_prefix_list": "l:",
-	"palette_prefix_page": "s:"
+	"palette_prefix_page": "s:",
+	"palette_narrow_title_symbol": "Avgränsa: {label} (skriv {prefix} eller {symbol})"
 }

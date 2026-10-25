@@ -92,11 +92,13 @@ export function rankEntries<T>(
 
 export type SearchScope = 'product' | 'category' | 'store' | 'list' | 'page' | 'action';
 
+export type ScopePrefix = { prefix: string; scope: SearchScope };
+
 /**
  * Typing one of these at the start of the query narrows the search to that scope. These are the
  * Finnish ones; the app passes the active language's own (`palette_prefix_*` messages).
  */
-export const SCOPE_PREFIXES: { prefix: string; scope: SearchScope }[] = [
+export const SCOPE_PREFIXES: ScopePrefix[] = [
 	{ prefix: 't:', scope: 'product' },
 	{ prefix: 'k:', scope: 'category' },
 	{ prefix: 'm:', scope: 'store' },
@@ -105,14 +107,21 @@ export const SCOPE_PREFIXES: { prefix: string; scope: SearchScope }[] = [
 	{ prefix: '>', scope: 'action' }
 ];
 
+/** Shorter, language-independent alternatives to the prefixes above (products and lists have none). */
+export const SCOPE_SYMBOLS: ScopePrefix[] = [
+	{ prefix: '#', scope: 'category' },
+	{ prefix: '@', scope: 'store' },
+	{ prefix: '/', scope: 'page' }
+];
+
 /** The scope a query starts with and the query without its prefix, or null when there is none. */
 export function parseScopePrefix(
 	query: string,
-	prefixes: { prefix: string; scope: SearchScope }[] = SCOPE_PREFIXES
+	prefixes: ScopePrefix[] = SCOPE_PREFIXES
 ): { scope: SearchScope; rest: string } | null {
 	const trimmed = query.trimStart();
 	const lower = trimmed.toLowerCase();
-	for (const { prefix, scope } of prefixes) {
+	for (const { prefix, scope } of [...prefixes, ...SCOPE_SYMBOLS]) {
 		if (lower.startsWith(prefix)) return { scope, rest: trimmed.slice(prefix.length).trimStart() };
 	}
 	return null;

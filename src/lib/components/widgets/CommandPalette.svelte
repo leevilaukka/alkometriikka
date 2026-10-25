@@ -42,6 +42,8 @@
 		parseScopePrefix,
 		rankEntries,
 		SCOPE_PREFIXES,
+		SCOPE_SYMBOLS,
+		type ScopePrefix,
 		type SearchEntry,
 		type SearchScope
 	} from '$lib/utils/app/commandPalette';
@@ -108,7 +110,7 @@
 
 	/** Results per group when narrowed to one scope */
 	const SCOPED_LIMIT = 50; /** Each language has its own initials, and only the active language's work */
-	const PREFIXES: { prefix: string; scope: SearchScope }[] = [
+	const PREFIXES: ScopePrefix[] = [
 		{ prefix: m.palette_prefix_product(), scope: 'product' },
 		{ prefix: m.palette_prefix_category(), scope: 'category' },
 		{ prefix: m.palette_prefix_store(), scope: 'store' },
@@ -117,12 +119,13 @@
 		{ prefix: SCOPE_PREFIXES.find((entry) => entry.scope === 'action')!.prefix, scope: 'action' }
 	];
 
-	const SCOPES: { scope: Kind; label: string; prefix: string }[] = (
+	const SCOPES: { scope: Kind; label: string; prefix: string; symbol?: string }[] = (
 		['product', 'category', 'store', 'list', 'page', 'action'] as const
 	).map((scope) => ({
 		scope,
 		label: GROUP_TITLES[scope],
-		prefix: PREFIXES.find((entry) => entry.scope === scope)!.prefix
+		prefix: PREFIXES.find((entry) => entry.scope === scope)!.prefix,
+		symbol: SCOPE_SYMBOLS.find((entry) => entry.scope === scope)?.prefix
 	}));
 
 	const SCOPE_PLACEHOLDERS: Record<Kind, string> = {
@@ -962,13 +965,19 @@
 		aria-label={m.palette_narrow()}
 		class="flex gap-1 overflow-x-auto border-b border-primary px-2 py-1.5"
 	>
-		{#each [{ scope: null, label: m.palette_all(), prefix: '' }, ...SCOPES] as option (option.label)}
+		{#each [{ scope: null, label: m.palette_all(), prefix: '', symbol: undefined }, ...SCOPES] as option (option.label)}
 			<button
 				type="button"
 				tabindex="-1"
 				aria-pressed={scope === option.scope}
 				title={option.prefix
-					? m.palette_narrow_title({ label: option.label, prefix: option.prefix })
+					? option.symbol
+						? m.palette_narrow_title_symbol({
+								label: option.label,
+								prefix: option.prefix,
+								symbol: option.symbol
+							})
+						: m.palette_narrow_title({ label: option.label, prefix: option.prefix })
 					: m.palette_search_everywhere()}
 				onmousedown={(event) => event.preventDefault()}
 				onclick={() => setScope(option.scope)}
