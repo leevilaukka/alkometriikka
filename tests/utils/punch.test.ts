@@ -148,6 +148,7 @@ describe('mixerForTarget', () => {
 describe('sharing', () => {
 	const recipe: PunchRecipe = {
 		name: 'Juhannus',
+		description: 'Tarjoile kylmänä',
 		glass: 0.25,
 		people: 8,
 		ingredients: [
@@ -158,6 +159,12 @@ describe('sharing', () => {
 
 	it('round-trips a recipe', () => {
 		expect(decodePunch(encodePunch(recipe))).toEqual(recipe);
+	});
+
+	it('keeps links without a description as short as before', () => {
+		const without = encodePunch({ ...recipe, description: '' });
+		expect(decodePunch(without)?.description).toBe('');
+		expect(without.length).toBeLessThan(encodePunch(recipe).length);
 	});
 
 	it('rejects mangled links', () => {
@@ -176,7 +183,8 @@ describe('sharing', () => {
 				null
 			]
 		});
-		expect(sanitized?.name.length).toBe(80);
+		expect(sanitized?.name.length).toBe(30);
+		expect(sanitizePunch({ ...recipe, description: 'x'.repeat(500) })?.description.length).toBe(100);
 		expect(sanitized?.glass).toBe(0.01);
 		expect(sanitized?.people).toBe(1);
 		expect(sanitized?.ingredients).toEqual([
@@ -189,6 +197,7 @@ describe('scalePunch', () => {
 	it('scales to quarter packages', () => {
 		const recipe: PunchRecipe = {
 			name: '',
+			description: '',
 			glass: 0.2,
 			people: 1,
 			ingredients: [{ kind: 'alko', id: '1', count: 3 }]

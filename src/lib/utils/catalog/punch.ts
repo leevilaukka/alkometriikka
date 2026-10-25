@@ -25,6 +25,8 @@ export type PunchIngredient = AlkoIngredient | CustomIngredient;
 
 export type PunchRecipe = {
 	name: string;
+	/** Optional note shown with the recipe, e.g. how to mix it */
+	description: string;
 	/** Glass size in litres */
 	glass: number;
 	people: number;
@@ -36,7 +38,7 @@ export type SavedPunch = PunchRecipe & { id: string; savedAt: string };
 export const DEFAULT_GLASS = 0.2;
 
 export function emptyPunch(): PunchRecipe {
-	return { name: '', glass: DEFAULT_GLASS, people: 1, ingredients: [] };
+	return { name: '', description: '', glass: DEFAULT_GLASS, people: 1, ingredients: [] };
 }
 
 /** Limits that keep a typo or a hand-edited link from producing nonsense */
@@ -48,7 +50,9 @@ const LIMITS = {
 	glass: [0.01, 2],
 	people: [1, 500],
 	ingredients: 50,
-	name: 80
+	name: 80,
+	recipeName: 30,
+	description: 100
 } as const;
 
 const clamp = (value: unknown, min: number, max: number, fallback = min) => {
@@ -85,7 +89,8 @@ export function sanitizePunch(value: unknown): PunchRecipe | null {
 	const recipe = value as Partial<PunchRecipe> | null;
 	if (!recipe || typeof recipe !== 'object' || !Array.isArray(recipe.ingredients)) return null;
 	return {
-		name: text(recipe.name),
+		name: text(recipe.name, LIMITS.recipeName),
+		description: text(recipe.description, LIMITS.description),
 		glass: clamp(recipe.glass, LIMITS.glass[0], LIMITS.glass[1], DEFAULT_GLASS),
 		people: Math.round(clamp(recipe.people, LIMITS.people[0], LIMITS.people[1], 1)),
 		ingredients: recipe.ingredients
@@ -99,7 +104,15 @@ export function sanitizePunch(value: unknown): PunchRecipe | null {
 type EncodedIngredient =
 	| [id: string, count: number]
 	| [name: string, volume: number, abv: number, price: number, count: number];
-type EncodedPunch = [version: 1, name: string, glass: number, people: number, EncodedIngredient[]];
+type EncodedPunch = [
+	version: 1,
+	name: string,
+	glass: number,
+	people: number,
+	EncodedIngredient[],
+	// Left out when empty, so links without one stay as short as before
+	description?: string
+];
 
 export function encodePunch(recipe: PunchRecipe): string {
 	const encoded: EncodedPunch = [
@@ -113,6 +126,7 @@ export function encodePunch(recipe: PunchRecipe): string {
 				: [ingredient.name, ingredient.volume, ingredient.abv, ingredient.price, ingredient.count]
 		)
 	];
+	if (recipe.description) encoded.push(recipe.description);
 	return compressToEncodedURIComponent(JSON.stringify(encoded));
 }
 
@@ -120,9 +134,10 @@ export function decodePunch(value: string): PunchRecipe | null {
 	try {
 		const decoded = JSON.parse(decompressFromEncodedURIComponent(value) ?? '') as unknown;
 		if (!Array.isArray(decoded) || decoded[0] !== 1 || !Array.isArray(decoded[4])) return null;
-		const [, name, glass, people, items] = decoded as EncodedPunch;
+		const [, name, glass, people, items, description] = decoded as EncodedPunch;
 		return sanitizePunch({
 			name,
+			description,
 			glass,
 			people,
 			ingredients: items.map((item) =>
@@ -563,5 +578,5 @@ export function resolveTemplate(
 		if (product)
 			ingredients.push({ kind: 'alko', id: product[AllColumns.Number], count: ingredient.count });
 	}
-	return { name: template.name, glass: template.glass, people: 1, ingredients };
+	return { name: template.name, description: '', glass: template.glass, people: 1, ingredients };
 }
