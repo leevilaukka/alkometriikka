@@ -43,6 +43,7 @@
 		parseScopePrefix,
 		rankEntries,
 		SCOPE_PREFIXES,
+		SCOPE_SYMBOLS,
 		type SearchEntry,
 		type SearchScope
 	} from '$lib/utils/app/commandPalette';
@@ -107,12 +108,13 @@
 	/** Results per group when narrowed to one scope */
 	const SCOPED_LIMIT = 50;
 
-	const SCOPES: { scope: Kind; label: string; prefix: string }[] = (
+	const SCOPES: { scope: Kind; label: string; prefix: string; symbol?: string }[] = (
 		['product', 'category', 'store', 'list', 'page', 'action'] as const
 	).map((scope) => ({
 		scope,
 		label: GROUP_TITLES[scope],
-		prefix: SCOPE_PREFIXES.find((entry) => entry.scope === scope)!.prefix
+		prefix: SCOPE_PREFIXES.find((entry) => entry.scope === scope)!.prefix,
+		symbol: SCOPE_SYMBOLS.find((entry) => entry.scope === scope)?.prefix
 	}));
 
 	const SCOPE_PLACEHOLDERS: Record<Kind, string> = {
@@ -932,13 +934,13 @@
 		aria-label="Rajaa hakua"
 		class="flex gap-1 overflow-x-auto border-b border-primary px-2 py-1.5"
 	>
-		{#each [{ scope: null, label: 'Kaikki', prefix: '' }, ...SCOPES] as option (option.label)}
+		{#each [{ scope: null, label: 'Kaikki', prefix: '', symbol: undefined }, ...SCOPES] as option (option.label)}
 			<button
 				type="button"
 				tabindex="-1"
 				aria-pressed={scope === option.scope}
 				title={option.prefix
-					? `Rajaa: ${option.label} (kirjoita ${option.prefix})`
+					? `Rajaa: ${option.label} (kirjoita ${option.prefix}${option.symbol ? ` tai ${option.symbol}` : ''})`
 					: 'Hae kaikkialta'}
 				onmousedown={(event) => event.preventDefault()}
 				onclick={() => setScope(option.scope)}
