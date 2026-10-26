@@ -385,7 +385,8 @@ export class Kaljakori {
 					item[datasetColumns[col]] = toFormattedStringValue(String(value));
 					break;
 				case Kind.Set: {
-					const members = String(value || '')
+					// Lists are joined with ", " so trimmed words split too, not only " word" items
+					const members = (Array.isArray(value) ? value.join(', ') : String(value || ''))
 						.split(/[\.,]\s/)
 						.map((v) => toFormattedStringValue(v.trim()))
 						.filter((v) => v.length > 0);

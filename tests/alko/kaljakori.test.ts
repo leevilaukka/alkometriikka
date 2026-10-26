@@ -71,6 +71,16 @@ describe('Kaljakori row parsing', () => {
 		expect(item[AllColumns.Description]).toEqual(new Set(['Raikas', 'Humalainen', 'Maltainen']));
 	});
 
+	it('splits set columns stored as lists, with or without the space after each comma', () => {
+		const [untrimmed, trimmed] = build([
+			base('1', { Description: ['Keltainen', ' raikas', ' humalainen'] }),
+			base('2', { Description: ['Keltainen', 'raikas', '', 'humalainen'] })
+		]).data;
+		const expected = new Set(['Keltainen', 'Raikas', 'Humalainen']);
+		expect(untrimmed[AllColumns.Description]).toEqual(expected);
+		expect(trimmed[AllColumns.Description]).toEqual(expected);
+	});
+
 	it('defaults numeric-looking-missing columns to 0 only for undefined-to-zero columns', () => {
 		const [item] = build([base('1', { Sugar: undefined, Region: undefined })]).data;
 		expect(item[AllColumns.Sugar]).toBe(0);
