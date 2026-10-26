@@ -101,7 +101,8 @@ Rules for that set:
 - `Tila` is hashed so a status change refetches details. In particular a product that was `Tulee`
   only gets its `pricePerLitre` from the detail API once it's on sale.
 - Arrays (only `Luonnehdinta`) are trimmed and sorted before hashing, so Alko returning the same
-  taste words in a different order isn't a change.
+  taste words in a different order isn't a change. The preprocessor also lowercases them, so the
+  stored words hash the same as fresh ones (`HASH_VERSION` 3).
 
 When the hashed set or a hashed preprocessor changes, bump **`HASH_VERSION`** in
 `constants.ts`. `fetchData.yml` runs `scripts/data/rehash.ts` on the seeded dataset before every

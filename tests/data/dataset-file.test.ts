@@ -108,19 +108,19 @@ describe('dataset file with separate hashes', () => {
 		const data = dataset();
 		const notes = LEGACY_HEADERS.indexOf('Luonnehdinta');
 		const pairings = LEGACY_HEADERS.indexOf('Ruokasuositukset');
-		data.products!['1'].values[notes] = ['Keltainen', ' makea'];
-		data.products!['3'].values[notes] = [' makea', 'Punainen'];
-		data.products!['1'].values[pairings] = 'Kala, Äyriäiset';
+		data.products!['1'].values[notes] = ['keltainen', 'makea'];
+		data.products!['3'].values[notes] = ['makea', 'punainen'];
+		data.products!['1'].values[pairings] = ['Kala', 'Äyriäiset'];
 		await writeDataset(data, dataPath, hashesPath);
 
 		const written = await Bun.file(dataPath).json();
-		expect(written.dictionaries.Luonnehdinta).toEqual(['Keltainen', ' makea', 'Punainen']);
+		expect(written.dictionaries.Luonnehdinta).toEqual(['keltainen', 'makea', 'punainen']);
 		expect(written.products['3'].values[notes]).toEqual([1, 2]);
-		expect(written.products['1'].values[pairings]).toBe(0);
+		expect(written.products['1'].values[pairings]).toEqual([0, 1]);
 
 		const read = await readDataset(dataPath, hashesPath);
-		expect(read!.products!['3'].values[notes]).toEqual([' makea', 'Punainen']);
-		expect(read!.products!['1'].values[pairings]).toBe('Kala, Äyriäiset');
+		expect(read!.products!['3'].values[notes]).toEqual(['makea', 'punainen']);
+		expect(read!.products!['1'].values[pairings]).toEqual(['Kala', 'Äyriäiset']);
 	});
 
 	it('refuses a dataset whose removed products file is missing or short', async () => {

@@ -13,16 +13,17 @@ describe('foodPairingLabel', () => {
 });
 
 describe('formatFoodPairings', () => {
-	it('joins labels with the separator set columns are split on', () => {
-		expect(formatFoodPairings(['foodSymbol_Porsas', 'foodSymbol_Pasta_ja_pizza'])).toBe(
-			'Porsas, Pasta ja pizza'
-		);
+	it('lists the labels', () => {
+		expect(formatFoodPairings(['foodSymbol_Porsas', 'foodSymbol_Pasta_ja_pizza'])).toEqual([
+			'Porsas',
+			'Pasta ja pizza'
+		]);
 	});
 
 	it('drops duplicates and non-string entries', () => {
-		expect(formatFoodPairings(['foodSymbol_Porsas', null, ' foodSymbol_Porsas ', ''])).toBe(
+		expect(formatFoodPairings(['foodSymbol_Porsas', null, ' foodSymbol_Porsas ', ''])).toEqual([
 			'Porsas'
-		);
+		]);
 	});
 
 	it('returns null when there are no pairings', () => {

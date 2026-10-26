@@ -53,10 +53,9 @@ export function foodPairingLabel(id: string): string {
 }
 
 /**
- * Turns the search API's `foodSymbolId` list into the stored column value:
- * the labels joined with ", ", the separator the app splits set columns on.
+ * Turns the search API's `foodSymbolId` list into the stored column value: its labels, each once.
  */
-export function formatFoodPairings(ids: unknown): string | null {
+export function formatFoodPairings(ids: unknown): string[] | null {
 	if (!Array.isArray(ids)) return null;
 	const labels = [
 		...new Set(
@@ -65,5 +64,5 @@ export function formatFoodPairings(ids: unknown): string | null {
 				.map((id) => foodPairingLabel(id.trim()))
 		)
 	];
-	return labels.length ? labels.join(', ') : null;
+	return labels.length ? labels : null;
 }

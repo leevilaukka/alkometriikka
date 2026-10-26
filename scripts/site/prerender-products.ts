@@ -152,6 +152,10 @@ function asText(value: unknown): string {
 	return value === null || value === undefined ? '' : String(value).trim();
 }
 
+function sentenceCase(text: string): string {
+	return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
 function formatNumber(value: unknown, suffix: string): string {
 	const text = asText(value);
 	if (!text) return '';
@@ -274,7 +278,8 @@ function productHtml(
 	const manufacturer = asText(fields.Valmistaja);
 	const type = asText(fields.Tyyppi);
 	const subtype = asText(fields.Alatyyppi);
-	const descriptionValue = asText(fields.Luonnehdinta);
+	// Tasting notes are stored lowercase
+	const descriptionValue = sentenceCase(asText(fields.Luonnehdinta));
 	const title = `${name} - Alkometriikka`;
 	const url = `${SITE_URL}/tuotteet/${encodeURIComponent(id)}/`;
 	// The app's own URL, so the preload below matches what the product page requests

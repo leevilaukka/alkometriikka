@@ -50,7 +50,7 @@ Type definitions: `scripts/data/types.ts` (the strict writer side) and
 		}
 	},
 	"index": {/* precomputed filter values, see below */},
-	"dictionaries": { "Luonnehdinta": ["Keltainen", " makea", …], "Ruokasuositukset": […] },
+	"dictionaries": { "Luonnehdinta": ["keltainen", "makea", …], "Ruokasuositukset": ["Kala", …] },
 	"removedProducts": 2501 // how many products data-removed.json holds
 }
 ```
@@ -78,10 +78,12 @@ products ever dropped are gifts and drinking accessories (main group `mainGroup_
   they're on sale. The app then calculates it as `(Hinta − Pantti) / Pullokoko`, which is also how
   Alko's own litre prices work out.
 - **`values`** is aligned with `schema`. Values are mostly what the preprocessors in
-  `FIELD_TO_LEGACY_SCHEMA` produce: strings, numbers, `null`, and for `Luonnehdinta` an array of
-  strings. `Luonnehdinta` and `Ruokasuositukset` are stored as indexes into the file's
-  `dictionaries` (a number for a string, an array of numbers for an array), which is about 8 % of
-  the compressed file smaller than repeating the words in every product.
+  `FIELD_TO_LEGACY_SCHEMA` produce: strings, numbers, `null`, and for `Luonnehdinta` and
+  `Ruokasuositukset` arrays of trimmed words (tasting notes lowercased; the app capitalizes them).
+  These two are stored as indexes into the file's `dictionaries` (an array of numbers), which is
+  about 6 % of the compressed file smaller than repeating the words in every product. Older
+  datasets have them in other shapes (a joined string, words with a leading space, sentence case);
+  `upgradeStoredValues` converts those on read, and the app reads both.
 - **`priceHistory`** gets a new point only when the price differs from the last point. The first
   point is the first time the sync saw the product. Points recorded during an active campaign also
   carry `normalPrice`, `campaignStart` and `campaignEnd`, so the price chart can draw past sale
@@ -152,7 +154,7 @@ so that an older deployed app bundle can still read a newer dataset positionally
 | 15  | `Etikettimerkintöjä`     | —                                      |        | Always `null`                                                                                                          |
 | 16  | `Huomautus`              | `moreInfo` (detail)                    |        | Free-text notes, e.g. "Vegaaneille soveltuva tuote", "Saattaa sisältää sakkaa". Not in the declared API types          |
 | 17  | `Rypäleet`               | `grapeVarieties[].label` (detail)      |        | Joined with `, `                                                                                                       |
-| 18  | `Luonnehdinta`           | `taste`                                | ✓      | Split on `,` into an array                                                                                             |
+| 18  | `Luonnehdinta`           | `taste`                                | ✓      | Split on `,` into trimmed, lowercased words                                                                            |
 | 19  | `Pakkaustyyppi`          | `packageTypes`                         |        | Label part of `id\|key\|label`                                                                                         |
 | 20  | `Suljentatyyppi`         | `closures`                             |        | Label part                                                                                                             |
 | 21  | `Alkoholi-%`             | `abv`                                  | ✓      |                                                                                                                        |
@@ -167,7 +169,7 @@ so that an older deployed app bundle can still read a newer dataset positionally
 | 30  | `Normaalihinta`          | `lowest_30d_price`                     | ✓      | Only during campaigns. Euro number                                                                                     |
 | 31  | `Kampanja alkaa`         | `campaign_start_date`                  | ✓      | `YYYY-MM-DD`                                                                                                           |
 | 32  | `Kampanja päättyy`       | `campaign_end_date`                    | ✓      | `YYYY-MM-DD`                                                                                                           |
-| 33  | `Ruokasuositukset`       | `foodSymbolId`                         |        | Finnish labels from `src/lib/utils/catalog/food.ts`, joined with `, `. Refreshed every sync                            |
+| 33  | `Ruokasuositukset`       | `foodSymbolId`                         |        | List of Finnish labels from `src/lib/utils/catalog/food.ts`. Refreshed every sync                                      |
 | 34  | `Tila`                   | `statusId`                             | ✓      | `Aktiivinen` (A), `Uutuus` (U), `Poistuva` (P, being phased out) or `Tulee` (X, not on sale yet)                       |
 | 35  | `Pantti`                 | `deposit` (detail)                     |        | Deposit in euros. Included in `Hinta`, not in `Litrahinta`. Missing for most products, including some cans             |
 
