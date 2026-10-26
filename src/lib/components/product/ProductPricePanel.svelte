@@ -2,6 +2,7 @@
 	import { AllColumns } from '$lib/utils/constants/columns';
 	import type { AvailabilityStore, LoadState, PriceListItem } from '$lib/types';
 	import type { SaleInfo } from '$lib/utils/catalog/sales';
+	import { isStaleArrival } from '$lib/utils/catalog/status';
 	import type { SizeOption } from '$lib/utils/catalog/filters';
 	import { components } from '$lib/utils/ui/styles';
 	import { compareProductIds } from '$lib/global.svelte';
@@ -104,14 +105,15 @@
 		<ProductSizeHook size={cheapestSize} />
 	{/if}
 
-	{#if product[AllColumns.RemovedFromSelection]}
+	{#if product[AllColumns.RemovedFromSelection] || isStaleArrival(product)}
+		<!-- alko.fi has no page for these -->
 		<span
 			class={twMerge(
 				components.button({ size: 'lg' }),
 				'w-full cursor-default px-4 py-2.5 opacity-50'
 			)}
 		>
-			Poistunut valikoimasta
+			{product[AllColumns.RemovedFromSelection] ? 'Poistunut valikoimasta' : 'Ei myynnissä'}
 		</span>
 	{:else}
 		<a

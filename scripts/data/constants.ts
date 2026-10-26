@@ -1,5 +1,6 @@
 import { CryptoHasher } from 'bun';
 import { formatFoodPairings } from '../../src/lib/utils/catalog/food.ts';
+import { STALE_ARRIVAL_STATUS } from '../../src/lib/utils/catalog/status.ts';
 
 export const LEGACY_HEADERS = [
 	'Numero',
@@ -103,7 +104,7 @@ export const STATUS_LABELS: Readonly<Record<string, string>> = {
 };
 
 /** Label of a `statusId`. Unknown codes are kept as-is so a new one shows up instead of vanishing. */
-function formatStatus(value: unknown): string | null {
+export function formatStatus(value: unknown): string | null {
 	if (typeof value !== 'string' || !value.trim()) return null;
 	return STATUS_LABELS[value.trim()] ?? value.trim();
 }
@@ -485,6 +486,8 @@ export function upgradeStoredValues(values: unknown[]): unknown[] {
  */
 export const HASH_VERSION = 2;
 
+const STATUS_INDEX = LEGACY_HEADERS.indexOf('Tila');
+
 /**
  * Extracts only the change-detection relevant values (`usedForHashing`) from a
  * legacy-ordered value array, preserving their column order.
@@ -492,7 +495,14 @@ export const HASH_VERSION = 2;
 export function getHashValues(values: unknown[]): unknown[] {
 	return FIELD_TO_LEGACY_SCHEMA.map((field, index) => ({ field, index }))
 		.filter(({ field }) => field.usedForHashing)
-		.map(({ index }) => values[index]);
+		.map(({ index }) =>
+			// The sync derives the stale arrival status after hashing (see markStaleArrivals),
+			// so it hashes as the "Tulee" the search API reports. Otherwise stored values
+			// would hash differently from the search payload after a rehash.
+			index === STATUS_INDEX && values[index] === STALE_ARRIVAL_STATUS
+				? STATUS_LABELS.X
+				: values[index]
+		);
 }
 
 /**

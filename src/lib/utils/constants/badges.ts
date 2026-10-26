@@ -1,5 +1,6 @@
 import type { ColumnBadgeMap, ColumnNames, PriceListItem } from '$lib/types';
 import { formatCampaignWindow, getSaleInfo } from '../catalog/sales';
+import { STALE_ARRIVAL_STATUS } from '../catalog/status';
 import { DatasetColumns, MissingValues } from './columns';
 
 // Matches the "N-pack" convention Alko uses in product names for multi-packs,
@@ -42,6 +43,13 @@ export const ColumnToBadgeMap: ColumnBadgeMap = {
 			color: 'orange',
 			icon: 'calendar_minus',
 			tooltip: 'Tuote on poistumassa Alkon valikoimasta'
+		},
+		[STALE_ARRIVAL_STATUS]: {
+			text: 'Ei myynnissä',
+			color: 'gray',
+			icon: 'calendar_x',
+			tooltip:
+				'Alko listaa tuotteen yhä tulevaksi, vaikka sen julkaisupäivä on mennyt jo kauan sitten. Tuotetta ei myydä missään, eikä Alkon sivuilla ole sille tuotesivua'
 		}
 	},
 	[DatasetColumns.Note]: {

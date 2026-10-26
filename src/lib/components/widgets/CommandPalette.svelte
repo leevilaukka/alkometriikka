@@ -34,6 +34,7 @@
 		watchSnapshot
 	} from '$lib/utils/user/watchlist';
 	import { resolvePreferredStore } from '$lib/utils/catalog/availability';
+	import { isStaleArrival } from '$lib/utils/catalog/status';
 	import { requestSettingsOpen } from '$lib/utils/app/settings';
 	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 	import { handleShare, shareTypeFromRoute } from '$lib/utils/app/share';
@@ -348,15 +349,20 @@
 						href: resolve(`/vastaavat/${number}/`),
 						keywords: 'samankaltaiset korvaava'
 					},
-			{
-				id: 'action:product-alko',
-				kind: 'action',
-				label: 'Avaa Alkon sivuilla',
-				icon: 'arrow_up_right_square',
-				href: `https://www.alko.fi/tuotteet/${number}`,
-				external: true,
-				keywords: 'alko.fi osta tilaa'
-			}
+			// alko.fi has no page for these
+			...(product[AllColumns.RemovedFromSelection] || isStaleArrival(product)
+				? []
+				: [
+						{
+							id: 'action:product-alko',
+							kind: 'action',
+							label: 'Avaa Alkon sivuilla',
+							icon: 'arrow_up_right_square',
+							href: `https://www.alko.fi/tuotteet/${number}`,
+							external: true,
+							keywords: 'alko.fi osta tilaa'
+						} satisfies PaletteItem
+					])
 		];
 	});
 

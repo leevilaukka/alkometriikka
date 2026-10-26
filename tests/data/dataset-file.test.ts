@@ -50,7 +50,7 @@ function dataset(): MigratedData {
 				hash: 'hash-3',
 				values: values('3'),
 				priceHistory: [],
-				meta: { detailCheckedAt: '2026-09-20' }
+				meta: { detailCheckedAt: '2026-09-20', detailFailedAt: '2026-09-25' }
 			}
 		}
 	};
@@ -83,7 +83,8 @@ describe('dataset file with separate hashes', () => {
 		expect(await Bun.file(hashesPath).json()).toEqual({
 			HashVersion: HASH_VERSION,
 			hashes: { '1': 'hash-1', '2': 'hash-2', '3': 'hash-3' },
-			detailCheckedAt: { '2': '2026-09-15', '3': '2026-09-20' }
+			detailCheckedAt: { '2': '2026-09-15', '3': '2026-09-20' },
+			detailFailedAt: { '3': '2026-09-25' }
 		});
 
 		const read = await readDataset(dataPath, hashesPath);
@@ -159,7 +160,10 @@ describe('dataset file with separate hashes', () => {
 		const counts = mergeHashes(data, { ...hashes, HashVersion: HASH_VERSION + 1 });
 		expect(counts).toEqual({ inline: 0, file: 0, recomputed: 3 });
 		// Detail check dates don't depend on the hash version
-		expect(data.products!['3'].meta).toEqual({ detailCheckedAt: '2026-09-20' });
+		expect(data.products!['3'].meta).toEqual({
+			detailCheckedAt: '2026-09-20',
+			detailFailedAt: '2026-09-25'
+		});
 	});
 
 	it('prefers inline hashes, then the hashes file', () => {
