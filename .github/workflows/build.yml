@@ -166,12 +166,17 @@ jobs:
 
       - name: Restore per-product rss feeds from existing gh-pages
         run: |
-          git archive origin/gh-pages rss 2>/dev/null | tar -x - || true
+          if git cat-file -e origin/gh-pages:rss 2>/dev/null; then
+            git archive origin/gh-pages rss | tar -x
+          fi
 
-      # Built up run by run (scripts/data/stock-history.ts); dropping it would restart the history
+      # Built up run by run (scripts/data/stock-history.ts); dropping it would restart the history.
+      # Fails the build if the restore breaks, rather than force-pushing gh-pages without it.
       - name: Restore stock history from existing gh-pages
         run: |
-          git archive origin/gh-pages stock 2>/dev/null | tar -x - || true
+          if git cat-file -e origin/gh-pages:stock 2>/dev/null; then
+            git archive origin/gh-pages stock | tar -x
+          fi
 
       - name: Create CNAME and .nojekyll file
         run: |
