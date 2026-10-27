@@ -80,9 +80,7 @@
 									if (!shared) showToast({ text: 'Linkki kopioitu leikepöydälle', anchor });
 								}}
 							>
-								<Icon name="share" class="inline-block " /><span class="sr-only md:not-sr-only"
-									>Jaa</span
-								>
+								<Icon name="share" /><span class="sr-only md:not-sr-only">Jaa</span>
 							</button>
 						{/if}
 						{#if show?.delete}
