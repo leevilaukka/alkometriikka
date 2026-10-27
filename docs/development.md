@@ -75,6 +75,7 @@ Every data script reads and writes in the repo root by default, which is what CI
 | Availability      | `./availability.json` | `./static/availability.json` |
 | Daily manifests   | `./daily/`            | `./static/daily/`            |
 | OG manifest (RSS) | `./og-images.json`    | `./static/og-images.json`    |
+| Stock history     | `./data/stock/`       | `./static/data/stock/`       |
 
 All of these are gitignored. None of the runtime data is committed to `main`; it only exists on
 `gh-pages`.

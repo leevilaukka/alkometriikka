@@ -2,6 +2,7 @@
 	import { AllColumns } from '$lib/utils/constants/columns';
 	import { formatValue } from '$lib/utils/format/format';
 	import type { PriceListItem } from '$lib/types';
+	import { isStaleArrival } from '$lib/utils/catalog/status';
 	import { components } from '$lib/utils/ui/styles';
 	import { compareProductIds } from '$lib/global.svelte';
 	import { toggleCompare, MAX_COMPARE_PRODUCTS } from '$lib/utils/user/compare';
@@ -35,7 +36,7 @@
 			)}
 		</span>
 	</div>
-	{#if !product[AllColumns.RemovedFromSelection]}
+	{#if !product[AllColumns.RemovedFromSelection] && !isStaleArrival(product)}
 		<a
 			href={`https://www.alko.fi/tuotteet/${product[AllColumns.Number]}`}
 			target="_blank"

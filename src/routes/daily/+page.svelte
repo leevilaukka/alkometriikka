@@ -36,6 +36,7 @@
 	import { goto } from '$app/navigation';
 	import { generateTitle, setSEO } from '$lib/utils/app/meta';
 	import { handleShare } from '$lib/utils/app/share';
+	import { showToast } from '$lib/utils/app/toast.svelte';
 	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 	import ProductImage from '$lib/components/widgets/ProductImage.svelte';
 	import { twMerge } from 'tailwind-merge';
@@ -56,7 +57,6 @@
 	let answerPoints = $state(0);
 	let points = $state<number[]>([]);
 	let correctAnswers = $state<boolean[]>([]);
-	let shareStatus = $state('');
 	let runMode = $state<'daily' | 'unlimited'>('daily');
 	let unlimitedEnabled = $state(true);
 	let dailyError = $state<string | null>(null);
@@ -343,7 +343,6 @@
 
 	function exitUnlimited() {
 		clearUnlimitedProgress();
-		shareStatus = '';
 		const existing = loadSavedGame(date);
 		if (!existing) return;
 		runMode = 'daily';
@@ -372,7 +371,6 @@
 		answerPoints = 0;
 		points = [];
 		correctAnswers = [];
-		shareStatus = '';
 		persistUnlimitedProgress();
 	}
 
@@ -548,7 +546,8 @@
 		return `🍺 Alkometriikka Daily — ${displayDate}\n${grid}\n${totalCorrect}/${DAILY_QUESTION_COUNT} oikein · ${totalScore} pistettä · 🔥 ${streak.current} päivän putki`;
 	}
 
-	async function shareResult() {
+	async function shareResult(event: MouseEvent) {
+		const anchor = event.currentTarget as Element;
 		const text = shareText();
 		const shared = await handleShare({
 			type: 'daily_game',
@@ -557,7 +556,7 @@
 			url: `${window.location.origin}/daily/`,
 			includeSID: true
 		});
-		if (!shared) shareStatus = 'Linkki kopioitu leikepöydälle';
+		if (!shared) showToast({ text: 'Linkki kopioitu leikepöydälle', anchor });
 	}
 
 	function resetGame() {
@@ -784,9 +783,6 @@
 						>
 							<span class="flex items-center gap-2"> <Icon name="share" />Jaa tulos</span>
 						</button>
-						{#if shareStatus}<p class="text-left text-sm whitespace-pre-wrap text-secondary">
-								{shareStatus}
-							</p>{/if}
 					{/if}
 					<div class="flex w-full max-w-md flex-col items-center gap-2">
 						{#if unlimitedEnabled}

@@ -1,10 +1,15 @@
 import { afterEach, beforeEach, describe, expect, it, setSystemTime } from 'bun:test';
 import { LEGACY_HEADERS, getHash, getHashValues } from '../../scripts/data/constants';
 import {
+	OVERDUE_ARRIVAL_DAYS,
 	carryOverMissingProducts,
 	clearRemovedFlag,
+	detailCheckedMeta,
 	detailVerifyAgeDays,
+	isDetailRetryBackedOff,
 	isDetailVerifyCandidate,
+	isOverdueArrival,
+	markStaleArrivals,
 	mergeProduct,
 	refreshSearchColumns,
 	salesInfoFromValues,
@@ -281,6 +286,88 @@ describe('detail verification staleness', () => {
 		expect(detailVerifyAgeDays(product)).toBeCloseTo(30.5, 1);
 		expect(isDetailVerifyCandidate(product, 31)).toBe(false);
 		expect(isDetailVerifyCandidate(product, 30)).toBe(true);
+	});
+
+	it('backs off retries only while the last failure is recent', () => {
+		expect(isDetailRetryBackedOff(stored('1'), 7)).toBe(false);
+		const failed = stored('1', {}, { meta: { detailFailedAt: '2026-09-26' } });
+		expect(isDetailRetryBackedOff(failed, 7)).toBe(true);
+		expect(isDetailRetryBackedOff(failed, 5)).toBe(false);
+	});
+
+	it('clears the failure date once the details are fetched', () => {
+		expect(
+			detailCheckedMeta(
+				{ detailCheckedAt: '2026-08-01', detailFailedAt: '2026-09-26' },
+				'2026-10-01'
+			)
+		).toEqual({ detailCheckedAt: '2026-10-01' });
+	});
+});
+
+describe('stale arrivals', () => {
+	const now = Date.parse('2026-10-01T12:00:00Z');
+	const daysAgo = (days: number) => Math.floor((now - days * 86_400_000) / 1000);
+	const arrival = (fields: Record<string, unknown> = {}) =>
+		asSearch({
+			id: '1',
+			statusId: 'X',
+			onlineAvailability: false,
+			storeId: [],
+			onlineAvailabilityDatetimeTs: daysAgo(OVERDUE_ARRIVAL_DAYS + 1),
+			...fields
+		});
+	const failed = { meta: { detailFailedAt: '2026-09-28' } };
+
+	it('is overdue when listed as coming months after its launch date, with no stock', () => {
+		expect(isOverdueArrival(arrival(), now)).toBe(true);
+		expect(isOverdueArrival(arrival({ statusId: 'A' }), now)).toBe(false);
+		expect(
+			isOverdueArrival(
+				arrival({ onlineAvailabilityDatetimeTs: daysAgo(OVERDUE_ARRIVAL_DAYS - 1) }),
+				now
+			)
+		).toBe(false);
+		expect(isOverdueArrival(arrival({ storeId: ['2102'] }), now)).toBe(false);
+		expect(isOverdueArrival(arrival({ onlineAvailability: true }), now)).toBe(false);
+		expect(isOverdueArrival(arrival({ onlineAvailabilityDatetimeTs: null }), now)).toBe(false);
+	});
+
+	it('labels only overdue arrivals whose details failed', () => {
+		const products = {
+			'1': stored('1', { Tila: 'Tulee' }, failed),
+			'2': stored('2', { Tila: 'Tulee' }),
+			'3': stored('3', { Tila: 'Tulee' }, failed)
+		};
+		const delayed = arrival({ id: '2' });
+		const recent = arrival({ id: '3', onlineAvailabilityDatetimeTs: daysAgo(10) });
+
+		expect(markStaleArrivals(products, [arrival(), delayed, recent], now)).toBe(1);
+		expect(products['1'].values[col('Tila')]).toBe('Ei myynnissä');
+		expect(products['2'].values[col('Tila')]).toBe('Tulee');
+		expect(products['3'].values[col('Tila')]).toBe('Tulee');
+
+		const unchanged = products['1'];
+		markStaleArrivals(products, [arrival()], now);
+		expect(products['1']).toBe(unchanged);
+	});
+
+	it('restores the status once the details come back or the product launches', () => {
+		const launched = { '1': stored('1', { Tila: 'Ei myynnissä' }, failed) };
+		markStaleArrivals(launched, [arrival({ statusId: 'A', storeId: ['2102'] })], now);
+		expect(launched['1'].values[col('Tila')]).toBe('Aktiivinen');
+
+		const recovered = { '1': stored('1', { Tila: 'Ei myynnissä' }) };
+		markStaleArrivals(recovered, [arrival()], now);
+		expect(recovered['1'].values[col('Tila')]).toBe('Tulee');
+	});
+
+	it('hashes the label like the Tulee the search API reports', () => {
+		const coming = values({ Numero: '1', Hinta: 3, Tila: 'Tulee' });
+		const stale = values({ Numero: '1', Hinta: 3, Tila: 'Ei myynnissä' });
+		const active = values({ Numero: '1', Hinta: 3, Tila: 'Aktiivinen' });
+		expect(getHash(getHashValues(stale))).toBe(getHash(getHashValues(coming)));
+		expect(getHash(getHashValues(active))).not.toBe(getHash(getHashValues(coming)));
 	});
 });
 

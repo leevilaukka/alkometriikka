@@ -64,7 +64,7 @@ type PrerenderManifest = Record<string, PrerenderManifestEntry>;
 // Bump when the page rendering logic (productHtml, minifyHtml, the SEO
 // template, ...) changes in a way that can alter existing pages without the
 // template or product data changing, forcing a full re-render.
-const RENDER_VERSION = 12;
+const RENDER_VERSION = 13;
 
 function sha256Hex(value: string): string {
 	const hasher = new CryptoHasher('sha256');
@@ -132,13 +132,14 @@ function resolveOptions(): Options {
 		outputPath,
 		templatePath: path.resolve(readOption('--template') ?? path.join(outputPath, '404.html')),
 		ogManifestPath: path.resolve(
-			readOption('--og-manifest') ?? path.join(outputPath, 'og-images.json')
+			readOption('--og-manifest') ?? path.join(outputPath, 'data', 'og-images.json')
 		),
 		ogCategoriesManifestPath: path.resolve(
-			readOption('--og-categories-manifest') ?? path.join(outputPath, CATEGORY_OG_MANIFEST_FILE)
+			readOption('--og-categories-manifest') ??
+				path.join(outputPath, 'data', CATEGORY_OG_MANIFEST_FILE)
 		),
 		manifestPath: path.resolve(
-			readOption('--manifest') ?? path.join(outputPath, 'tuotteet-manifest.json')
+			readOption('--manifest') ?? path.join(outputPath, 'data', 'tuotteet-manifest.json')
 		)
 	};
 }
@@ -150,6 +151,10 @@ function asText(value: unknown): string {
 			.filter(Boolean)
 			.join(', ');
 	return value === null || value === undefined ? '' : String(value).trim();
+}
+
+function sentenceCase(text: string): string {
+	return text.charAt(0).toUpperCase() + text.slice(1);
 }
 
 function formatNumber(value: unknown, suffix: string): string {
@@ -274,7 +279,8 @@ function productHtml(
 	const manufacturer = asText(fields.Valmistaja);
 	const type = asText(fields.Tyyppi);
 	const subtype = asText(fields.Alatyyppi);
-	const descriptionValue = asText(fields.Luonnehdinta);
+	// Tasting notes are stored lowercase
+	const descriptionValue = sentenceCase(asText(fields.Luonnehdinta));
 	const title = `${name} - Alkometriikka`;
 	const url = `${SITE_URL}/tuotteet/${encodeURIComponent(id)}/`;
 	// The app's own URL, so the preload below matches what the product page requests
@@ -361,12 +367,18 @@ function productHtml(
 						'@type': 'ProductGroup',
 						'@id': `${productUrl(variantGroup.id)}#koot`,
 						name: variantGroup.name,
+						// Merchant listings require a description on every Product/ProductGroup node
+						description: descriptionValue || metaDescription,
 						productGroupID: variantGroup.id,
 						variesBy: variantGroup.variesBy.map((property) => `https://schema.org/${property}`),
 						hasVariant: variantGroup.members.map((member) => ({
 							'@type': 'Product',
 							'@id': productUrl(member.id),
-							url: productUrl(member.id)
+							url: productUrl(member.id),
+							name: member.name,
+							description: [member.name, member.volume !== null ? `${member.volume} L` : '']
+								.filter(Boolean)
+								.join(', ')
 						}))
 					}
 				}

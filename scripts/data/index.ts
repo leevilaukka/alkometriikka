@@ -48,8 +48,11 @@ import {
 	NIMI_INDEX,
 	carryOverMissingProducts,
 	clearRemovedFlag,
+	detailCheckedMeta,
 	detailVerifyAgeDays,
+	isDetailRetryBackedOff,
 	isDetailVerifyCandidate,
+	markStaleArrivals,
 	mergeProduct,
 	refreshSearchColumns,
 	salesInfoFromValues,
@@ -105,6 +108,12 @@ const PROGRESS_LOG_INTERVAL = 25;
 const DEFAULT_DETAIL_VERIFY_COOLDOWN_DAYS = 30;
 /** Default cap on how many stale products get detail-verified per sync run. */
 const DEFAULT_DETAIL_VERIFY_BATCH = 200;
+/**
+ * Days a product whose detail fetch failed is left out of the verify pass. One
+ * means it's retried on the next UTC day, so a one-off failure doesn't keep a
+ * delayed arrival labelled as stale for long (see markStaleArrivals).
+ */
+const DETAIL_RETRY_BACKOFF_DAYS = 1;
 
 const VERBOSE = truthyEnvVar('VERBOSE');
 /** Writes the dataset even when the safeguards reject it, for legitimate large changes. */
@@ -595,7 +604,10 @@ async function sync(): Promise<void> {
 				rewrites.push({ previous: previous.values, values: kept.values });
 			products[product.id] = kept;
 			stats.unchanged++;
-			if (isDetailVerifyCandidate(kept, config.detailVerifyCooldownDays)) {
+			if (
+				isDetailVerifyCandidate(kept, config.detailVerifyCooldownDays) &&
+				!isDetailRetryBackedOff(kept, DETAIL_RETRY_BACKOFF_DAYS)
+			) {
 				verifyCandidates.push({ product, previous: kept });
 			}
 		} else {
@@ -628,7 +640,13 @@ async function sync(): Promise<void> {
 				stats.failed++;
 				// Keep the previous entry so a transient failure never drops a product.
 				// It's still in the selection, so clear any stale removed flag.
-				if (previous) products[product.id] = clearRemovedFlag(previous);
+				if (previous) {
+					const kept = clearRemovedFlag(previous);
+					products[product.id] = {
+						...kept,
+						meta: { ...kept.meta, detailFailedAt: new Date().toISOString().slice(0, 10) }
+					};
+				}
 			} else {
 				const built = buildLegacyValues(mergeProduct(product, details));
 				let values = built;
@@ -661,10 +679,10 @@ async function sync(): Promise<void> {
 				);
 				// A fresh detail fetch means the product was verified now: reset the
 				// cooldown clock so it isn't re-verified by the lazy pass as well.
-				const meta = {
-					...withoutRemovedFlag(previous?.meta),
-					detailCheckedAt: new Date().toISOString().slice(0, 10)
-				};
+				const meta = detailCheckedMeta(
+					withoutRemovedFlag(previous?.meta),
+					new Date().toISOString().slice(0, 10)
+				);
 
 				products[product.id] = { hash, values, priceHistory, meta };
 				if (previous) {
@@ -728,10 +746,16 @@ async function sync(): Promise<void> {
 			config.detailConcurrency,
 			async ({ product, previous }) => {
 				const details = await fetchProductDetails(product.id, config);
-				// Leave the entry and its `detailCheckedAt` untouched so the product
-				// stays eligible and is retried on the next run after a transient failure.
+				// Leave the values and `detailCheckedAt` untouched so the product stays
+				// eligible, but back off: some products' details fail every time (e.g.
+				// stale arrivals, see markStaleArrivals), and they'd otherwise stay the
+				// stalest ones and be retried on every run.
 				if (!details) {
 					stats.verifyFailed++;
+					products[product.id] = {
+						...previous,
+						meta: { ...previous.meta, detailFailedAt: today }
+					};
 					return;
 				}
 
@@ -762,7 +786,7 @@ async function sync(): Promise<void> {
 						...previous,
 						values,
 						priceHistory,
-						meta: { ...previous.meta, detailCheckedAt: today }
+						meta: detailCheckedMeta(previous.meta, today)
 					};
 					stats.updated++;
 					if (VERBOSE) {
@@ -775,13 +799,21 @@ async function sync(): Promise<void> {
 				} else {
 					products[product.id] = {
 						...previous,
-						meta: { ...previous.meta, detailCheckedAt: today }
+						meta: detailCheckedMeta(previous.meta, today)
 					};
 					stats.verified++;
 				}
 			}
 		);
 		syncReport.phasesMs.verify = elapsedMs(verifyStart);
+	}
+
+	// After the detail passes, which rebuild "Tila" from the search status and record failures.
+	const staleArrivals = markStaleArrivals(products, searchProducts);
+	if (staleArrivals > 0) {
+		console.log(
+			`\n🕸️  ${staleArrivals} products listed as coming long after their launch date have no details\n`
+		);
 	}
 
 	// Never delete products: carry over every product from the existing dataset

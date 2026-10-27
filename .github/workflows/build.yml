@@ -13,6 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    env:
+      # Written by fetchData.yml, not this build: the steps below restore them from
+      # gh-pages and carry them through the force-push
+      RUNTIME_FILES: data.json data-removed.json availability.json sitemap.xml rss.xml feed.json rss daily data
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -38,11 +42,10 @@ jobs:
           if git show origin/gh-pages:availability.json > /tmp/availability.json 2>/dev/null; then
             mv /tmp/availability.json static/availability.json
           fi
-          if git show origin/gh-pages:og-images.json > /tmp/og-images.json 2>/dev/null; then
-            mv /tmp/og-images.json static/og-images.json
-          fi
-          if git show origin/gh-pages:og-categories.json > /tmp/og-categories.json 2>/dev/null; then
-            mv /tmp/og-categories.json static/og-categories.json
+          # The pipeline's own files (hashes, OG and prerender manifests, stock history), all
+          # under data/ so this one restore carries them through the force-push below
+          if git cat-file -e origin/gh-pages:data 2>/dev/null; then
+            git archive origin/gh-pages data | tar -x -C static
           fi
 
       - name: Build site assets
@@ -61,7 +64,7 @@ jobs:
         run: |
           set -e
           changed=false
-          for f in data.json data-removed.json 404.html og-images.json; do
+          for f in data.json data-removed.json 404.html data/og-images.json; do
             if git show "origin/gh-pages:$f" 2>/dev/null | cmp -s - "build/$f"; then
               echo "· $f unchanged"
             else
@@ -75,13 +78,12 @@ jobs:
       # must be present in the deploy even when nothing changed. Restore the
       # last deployed pages first so the incremental prerender below can skip
       # untouched products and so a skip keeps the existing pages on gh-pages.
+      # (Their manifest, data/tuotteet-manifest.json, came with the seed above.)
       - name: Restore last deployed product and category pages
         run: |
           # Restore each path separately: git archive fails as a whole when any
-          # one pathspec is missing (e.g. the manifest on the first run after
-          # adding it), which would otherwise silently drop the pages too.
+          # one pathspec is missing, which would otherwise silently drop the other.
           git archive origin/gh-pages tuotteet 2>/dev/null | tar -x -C build/ || true
-          git archive origin/gh-pages tuotteet-manifest.json 2>/dev/null | tar -x -C build/ || true
           git archive origin/gh-pages kategoriat 2>/dev/null | tar -x -C build/ || true
 
       # The daily manifests are immutable pins: once baked, a date must never
@@ -117,7 +119,9 @@ jobs:
             --out build \
             --data build/data.json \
             --template build/404.html \
-            --og-manifest build/og-images.json
+            --og-manifest build/data/og-images.json \
+            --og-categories-manifest build/data/og-categories.json \
+            --manifest build/data/tuotteet-manifest.json
 
       # Cheap (a few hundred files), so always regenerated: the pages embed the
       # built page shell and the store list from availability.json.
@@ -137,14 +141,6 @@ jobs:
         run: |
           mv build/* .
           rm -rf build
-
-      # The sync's change-detection hashes (not used by the site). Without this the
-      # force-push below would drop them; the sync would then recompute them.
-      - name: Restore hashes.json from existing gh-pages
-        run: |
-          if git show origin/gh-pages:hashes.json > /tmp/hashes.json 2>/dev/null; then
-            mv /tmp/hashes.json hashes.json
-          fi
 
       - name: Restore sitemap.xml from existing gh-pages
         run: |
@@ -166,12 +162,9 @@ jobs:
 
       - name: Restore per-product rss feeds from existing gh-pages
         run: |
-          git archive origin/gh-pages rss 2>/dev/null | tar -x - || true
-
-      # Built up run by run (scripts/data/stock-history.ts); dropping it would restart the history
-      - name: Restore stock history from existing gh-pages
-        run: |
-          git archive origin/gh-pages stock 2>/dev/null | tar -x - || true
+          if git cat-file -e origin/gh-pages:rss 2>/dev/null; then
+            git archive origin/gh-pages rss | tar -x
+          fi
 
       - name: Create CNAME and .nojekyll file
         run: |
@@ -181,18 +174,38 @@ jobs:
       - name: Configure git bot identity
         uses: ./.github/actions/git-bot-identity
 
-      - name: Push build to gh-pages branch
+      - name: Commit build for gh-pages
         run: |
           git checkout -b gh-pages
           git add .
           # Runtime datasets are gitignored, so `git add .` skips them. Force-add
           # them so the force-push to gh-pages preserves the data deployed by
           # fetchData.yml instead of deleting it on every site build.
-          for f in data.json data-removed.json hashes.json availability.json sitemap.xml rss.xml feed.json rss stock og-images.json og-categories.json daily tuotteet-manifest.json; do
+          for f in $RUNTIME_FILES; do
             if [ -e "$f" ]; then git add -f "$f"; fi
           done
           git commit -m "Deploy to GitHub Pages [skip ci]" || echo "No changes to commit"
-          git push origin gh-pages --force
+
+      # The force-push replaces gh-pages wholesale, so a restore above that silently
+      # fails would delete those files from the site (and restart anything built up
+      # run by run, like data/stock/). Never push a commit that lost any.
+      - name: Check runtime files were carried over
+        run: |
+          if ! git rev-parse -q --verify origin/gh-pages >/dev/null; then
+            echo "❌ origin/gh-pages wasn't fetched, so the carried-over files can't be checked — refusing to force-push."
+            exit 1
+          fi
+          missing=$(git diff --name-only --diff-filter=D origin/gh-pages HEAD -- $RUNTIME_FILES)
+          if [ -n "$missing" ]; then
+            echo "❌ On gh-pages but missing from this build — refusing to force-push:"
+            echo "$missing" | head -20
+            echo "($(echo "$missing" | wc -l) files)"
+            exit 1
+          fi
+          echo "✅ All runtime files carried over"
+
+      - name: Push build to gh-pages branch
+        run: git push origin gh-pages --force
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

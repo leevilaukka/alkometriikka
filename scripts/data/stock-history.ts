@@ -2,13 +2,13 @@
  * Updates the stock history (docs/data/stock-history.md) from an availability.json:
  *
  *   bun run scripts/data/stock-history.ts --availability availability.json \
- *     --previous ../gh-pages/availability.json --dir ../gh-pages/stock
+ *     --previous ../gh-pages/availability.json --dir ../gh-pages/data/stock
  *
  * `--previous` is the availability the last run saw; without it the store counts
  * update but no arrivals are detected. `--today YYYY-MM-DD` overrides the date.
  *
  * `--demo` (local only) instead fakes a month of history from the current
- * availability into static/stock/, for trying the pages that show it.
+ * availability into static/data/stock/, for trying the pages that show it.
  */
 import { mkdir, rm } from 'node:fs/promises';
 import path from 'node:path';
@@ -101,7 +101,7 @@ function demoState(current: AvailabilityData, today: string): StockState {
 async function main() {
 	const availabilityPath =
 		readOption('--availability') ?? (DEV ? 'static/availability.json' : 'availability.json');
-	const dir = readOption('--dir') ?? (DEV ? 'static/stock' : 'stock');
+	const dir = readOption('--dir') ?? (DEV ? 'static/data/stock' : 'data/stock');
 	const today = readOption('--today') ?? toISODateInTimeZone('Europe/Helsinki');
 
 	const current = readAvailability(await readJson(availabilityPath));

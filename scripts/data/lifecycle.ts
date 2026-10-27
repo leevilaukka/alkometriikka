@@ -6,7 +6,13 @@
 
 import { getSaleInfo } from '../../src/lib/utils/catalog/sales.ts';
 import type { SaleInfo } from '../../src/lib/utils/catalog/sales.ts';
-import { LEGACY_HEADERS, SEARCH_REFRESHED_COLUMNS, isIrrelevantStoredValues } from './constants.ts';
+import { STALE_ARRIVAL_STATUS } from '../../src/lib/utils/catalog/status.ts';
+import {
+	LEGACY_HEADERS,
+	SEARCH_REFRESHED_COLUMNS,
+	formatStatus,
+	isIrrelevantStoredValues
+} from './constants.ts';
 import type {
 	DetailedProductData,
 	MigratedProduct,
@@ -80,6 +86,80 @@ export function detailVerifyAgeDays(product: MigratedProduct): number {
 /** True when a product is stale enough to warrant a detail re-verification. */
 export function isDetailVerifyCandidate(product: MigratedProduct, cooldownDays: number): boolean {
 	return detailVerifyAgeDays(product) > cooldownDays;
+}
+
+/**
+ * True while the product's last failed detail fetch is less than
+ * `backoffDays` old. A product whose detail fetch keeps failing stays the
+ * stalest one, so without this it would be retried on every run.
+ */
+export function isDetailRetryBackedOff(product: MigratedProduct, backoffDays: number): boolean {
+	const failedAt = product.meta?.detailFailedAt;
+	const timestamp = failedAt ? Date.parse(failedAt) : NaN;
+	if (Number.isNaN(timestamp)) return false;
+	return (Date.now() - timestamp) / DAY_MS < backoffDays;
+}
+
+/** Meta after a successful detail fetch: a fresh `detailCheckedAt` and no failure date. */
+export function detailCheckedMeta(meta: ProductMeta | undefined, today: string): ProductMeta {
+	const { detailFailedAt: _failedAt, ...rest } = meta ?? {};
+	return { ...rest, detailCheckedAt: today };
+}
+
+/** Days past its online launch date after which a product still listed as coming is overdue. */
+export const OVERDUE_ARRIVAL_DAYS = 90;
+
+/**
+ * True for a product Alko lists as coming (`X`) more than `OVERDUE_ARRIVAL_DAYS`
+ * after its online launch date, with no stock in stores or online. Search never
+ * returns a product before its launch date, so every `X` product is late; some
+ * are only delayed (order selection products can take months).
+ */
+export function isOverdueArrival(product: SearchProductData, now: number = Date.now()): boolean {
+	if (product.statusId !== 'X' || product.onlineAvailability) return false;
+	if (Array.isArray(product.storeId) && product.storeId.length > 0) return false;
+	const launch = product.onlineAvailabilityDatetimeTs;
+	if (typeof launch !== 'number' || !Number.isFinite(launch)) return false;
+	return (now - launch * 1000) / DAY_MS > OVERDUE_ARRIVAL_DAYS;
+}
+
+/**
+ * Sets the "Tila" of every stale arrival to `STALE_ARRIVAL_STATUS`, and back to
+ * Alko's own status once a product no longer is one. A stale arrival is overdue
+ * (see `isOverdueArrival`) and its latest detail fetch failed (`detailFailedAt`).
+ * That failure is what separates products Alko gave up on from delayed ones:
+ * the detail API answers 500 for them and their alko.fi page is a 404, while
+ * delayed products still have both. A successful fetch clears `detailFailedAt`,
+ * so a one-off failure is undone by the next retry.
+ *
+ * Run it after the detail passes, which rebuild "Tila" from the search status
+ * and record the failures. The hash treats the label as "Tulee" (see
+ * `getHashValues`), so it never triggers a detail fetch. Mutates `products` and
+ * returns how many stale arrivals there are.
+ */
+export function markStaleArrivals(
+	products: Record<string, MigratedProduct>,
+	searchProducts: readonly SearchProductData[],
+	now: number = Date.now()
+): number {
+	let stale = 0;
+	for (const search of searchProducts) {
+		const product = products[search.id];
+		if (!product) continue;
+		const current = product.values[STATUS_INDEX];
+		let status = current;
+		if (product.meta?.detailFailedAt && isOverdueArrival(search, now)) {
+			status = STALE_ARRIVAL_STATUS;
+			stale++;
+		} else if (current === STALE_ARRIVAL_STATUS) {
+			status = formatStatus(search.statusId);
+		}
+		if (status === current) continue;
+		const values = [...product.values];
+		values[STATUS_INDEX] = status;
+		products[search.id] = { ...product, values };
+	}
+	return stale;
 }
 
 /**

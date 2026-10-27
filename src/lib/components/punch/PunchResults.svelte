@@ -5,7 +5,7 @@
 	import { twMerge } from 'tailwind-merge';
 	import Icon from '../widgets/Icon.svelte';
 
-	const {
+	let {
 		totals,
 		lines,
 		colors,
@@ -13,6 +13,8 @@
 		people,
 		rank,
 		hasPersonalInfo,
+		hasSavedBody,
+		useSavedBody = $bindable(false),
 		onopensettings,
 		class: _class = ''
 	}: {
@@ -25,6 +27,10 @@
 		/** Where the punch's alcohol per euro would place it among Alko's products */
 		rank: { rank: number; total: number } | null;
 		hasPersonalInfo: boolean;
+		/** Whether a weight or gender is saved, otherwise the defaults are used anyway */
+		hasSavedBody: boolean;
+		/** Estimate with the saved weight and gender instead of the defaults */
+		useSavedBody?: boolean;
 		onopensettings: () => void;
 		class?: string;
 	} = $props();
@@ -49,16 +55,17 @@
 	const bars = $derived(
 		(
 			[
-				['Määrä', 'volume', litres(totals.volume)],
-				['Alkoholi', 'alcohol', litres(totals.alcohol)],
-				['Hinta', 'price', euros(totals.price)]
+				['Määrä', 'volume', litres(totals.volume), undefined],
+				['Alkoholi (100 %)', 'alcohol', litres(totals.alcohol), 'Puhtaan alkoholin määrä'],
+				['Hinta', 'price', euros(totals.price), undefined]
 			] as const
-		).map(([label, key, total]) => {
+		).map(([label, key, total, tooltip]) => {
 			const whole =
 				key === 'volume' ? totals.volume : key === 'alcohol' ? totals.alcohol : totals.price;
 			return {
 				label,
 				total,
+				tooltip,
 				segments: totals.lines
 					.map((line, index) => ({ index, share: share(line[key], whole) }))
 					.filter((segment) => segment.share > 0)
@@ -75,6 +82,10 @@
 
 	const details = $derived([
 		['Kokonaismäärä', litres(totals.volume)],
+		// Only worth a row when there are mixers, otherwise it repeats the total
+		...(totals.alcoholicVolume < totals.volume
+			? ([['Alkoholijuomia', litres(totals.alcoholicVolume)]] as const)
+			: []),
 		['Puhdasta alkoholia', `${decimals(totals.grams, 0)} g`],
 		['Annokset (12 g)', decimals(totals.servings, 1)],
 		[
@@ -132,7 +143,9 @@
 			{#each bars as bar (bar.label)}
 				<div class="flex flex-col gap-1">
 					<div class="flex justify-between text-sm">
-						<span>{bar.label}</span>
+						<span title={bar.tooltip} class={bar.tooltip ? 'cursor-help' : undefined}
+							>{bar.label}</span
+						>
 						<span class="text-secondary tabular-nums">{bar.total}</span>
 					</div>
 					<div class="flex h-3 gap-0.5 overflow-hidden rounded bg-secondary">
@@ -193,7 +206,9 @@
 		class="grid grid-cols-1 overflow-hidden rounded border border-primary bg-primary sm:grid-cols-2"
 	>
 		{#each details as [label, value] (label)}
-			<div class="flex justify-between gap-3 border-b border-primary px-4 py-2.5 sm:odd:border-r">
+			<div
+				class="flex justify-between gap-3 border-b border-primary px-4 py-2.5 sm:odd:border-r sm:odd:last:col-span-2 sm:odd:last:border-r-0"
+			>
 				<dt class="text-sm text-secondary">{label}</dt>
 				<dd class="font-semibold whitespace-nowrap tabular-nums">{value}</dd>
 			</div>
@@ -219,6 +234,13 @@
 		</div>
 	{/if}
 
+	{#if hasSavedBody}
+		<label class="flex cursor-pointer items-center gap-2 text-sm">
+			<input type="checkbox" bind:checked={useSavedBody} class="shrink-0 rounded" />
+			Käytä tallennettua painoa ja sukupuolta
+		</label>
+	{/if}
+
 	<p class="text-xs text-secondary">
 		Promillet ovat arvio Widmarkin kaavalla, jos alkoholi juodaan kerralla. Elimistö polttaa
 		alkoholia noin 0,1 g painokiloa kohden tunnissa, joten todellinen lukema jää pienemmäksi.
@@ -226,7 +248,7 @@
 			<button type="button" class="underline" onclick={onopensettings}>
 				Lisää paino ja sukupuoli asetuksiin
 			</button>
-			tarkempaa arviota varten.
+			laskeaksesi promillet omilla tiedoillasi.
 		{/if}
 	</p>
 

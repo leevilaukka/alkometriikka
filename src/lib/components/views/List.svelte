@@ -3,6 +3,7 @@
 	import { isLaptop, pageBottomBar, personalInfo, searchQuery, isMobile } from '$lib/global.svelte';
 	import { components } from '$lib/utils/ui/styles';
 	import { handleShare } from '$lib/utils/app/share';
+	import { showToast } from '$lib/utils/app/toast.svelte';
 	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 	import { formatValue } from '$lib/utils/format/format';
 	import type { Kaljakori } from '$lib/alko';
@@ -216,6 +217,7 @@
 				inBar ? 'aspect-square h-11 sm:aspect-auto' : 'aspect-square md:aspect-auto'
 			)}
 			onclick={async (e) => {
+				const anchor = e.currentTarget;
 				// Omit SID from the URL if shift key is held down
 				const includeSID = !e.shiftKey;
 
@@ -227,12 +229,10 @@
 					includeSID
 				});
 
-				if (!shared) alert('Linkki kopioitu leikepöydälle!');
+				if (!shared) showToast({ text: 'Linkki kopioitu leikepöydälle', anchor });
 			}}
 		>
-			<Icon name="share" class="inline-block " /><span
-				class={inBar ? 'hidden sm:inline' : 'hidden md:block'}>Jaa</span
-			>
+			<Icon name="share" /><span class={inBar ? 'hidden sm:inline' : 'hidden md:block'}>Jaa</span>
 		</button>
 	{/if}
 {/snippet}
@@ -269,7 +269,7 @@
 				inBar ? 'aspect-square h-11 sm:aspect-auto' : 'aspect-square md:aspect-auto'
 			)}
 		>
-			<Icon name="compare" class="inline-block" />
+			<Icon name="compare" />
 			<span class={inBar ? 'hidden sm:inline' : 'hidden md:block'}>Vertaile</span>
 		</a>
 	{/if}
@@ -305,7 +305,7 @@
 		onclick={() => (window.history.length > 1 ? window.history.back() : goto(resolve('/')))}
 		class={twMerge(components.button({ size: 'md' }), 'aspect-square md:aspect-auto')}
 	>
-		<Icon name="arrow_back" class="inline-block" />
+		<Icon name="arrow_back" />
 		<span class="sr-only md:not-sr-only"
 			>{window.history.length > 1 ? 'Takaisin' : 'Etusivulle'}</span
 		>
@@ -331,7 +331,7 @@
 					toggleDetailsElement();
 				}}
 			>
-				<Icon name="sidebar" class="inline-block " />
+				<Icon name="sidebar" />
 				<span class="sr-only md:not-sr-only"> Tiedot </span>
 			</button>
 		{/if}

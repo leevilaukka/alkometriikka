@@ -34,14 +34,17 @@
 		watchSnapshot
 	} from '$lib/utils/user/watchlist';
 	import { resolvePreferredStore } from '$lib/utils/catalog/availability';
+	import { isStaleArrival } from '$lib/utils/catalog/status';
 	import { requestSettingsOpen } from '$lib/utils/app/settings';
 	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 	import { handleShare, shareTypeFromRoute } from '$lib/utils/app/share';
+	import { showToast } from '$lib/utils/app/toast.svelte';
 	import {
 		normalizeSearchText,
 		parseScopePrefix,
 		rankEntries,
 		SCOPE_PREFIXES,
+		SCOPE_SYMBOLS,
 		type SearchEntry,
 		type SearchScope
 	} from '$lib/utils/app/commandPalette';
@@ -106,12 +109,13 @@
 	/** Results per group when narrowed to one scope */
 	const SCOPED_LIMIT = 50;
 
-	const SCOPES: { scope: Kind; label: string; prefix: string }[] = (
+	const SCOPES: { scope: Kind; label: string; prefix: string; symbol?: string }[] = (
 		['product', 'category', 'store', 'list', 'page', 'action'] as const
 	).map((scope) => ({
 		scope,
 		label: GROUP_TITLES[scope],
-		prefix: SCOPE_PREFIXES.find((entry) => entry.scope === scope)!.prefix
+		prefix: SCOPE_PREFIXES.find((entry) => entry.scope === scope)!.prefix,
+		symbol: SCOPE_SYMBOLS.find((entry) => entry.scope === scope)?.prefix
 	}));
 
 	const SCOPE_PLACEHOLDERS: Record<Kind, string> = {
@@ -345,15 +349,20 @@
 						href: resolve(`/vastaavat/${number}/`),
 						keywords: 'samankaltaiset korvaava'
 					},
-			{
-				id: 'action:product-alko',
-				kind: 'action',
-				label: 'Avaa Alkon sivuilla',
-				icon: 'arrow_up_right_square',
-				href: `https://www.alko.fi/tuotteet/${number}`,
-				external: true,
-				keywords: 'alko.fi osta tilaa'
-			}
+			// alko.fi has no page for these
+			...(product[AllColumns.RemovedFromSelection] || isStaleArrival(product)
+				? []
+				: [
+						{
+							id: 'action:product-alko',
+							kind: 'action',
+							label: 'Avaa Alkon sivuilla',
+							icon: 'arrow_up_right_square',
+							href: `https://www.alko.fi/tuotteet/${number}`,
+							external: true,
+							keywords: 'alko.fi osta tilaa'
+						} satisfies PaletteItem
+					])
 		];
 	});
 
@@ -379,9 +388,13 @@
 				url: location.href,
 				includeSID: true
 			});
-			// The native share sheet gives its own feedback; the clipboard fallback needs a notice
+			// The native share sheet gives its own feedback; the clipboard fallback shows a toast
 			if (shared) closePalette();
-			else return 'Linkki kopioitu leikepöydälle';
+			else {
+				// stay: true keeps the palette open, so close it once the toast takes over
+				showToast({ text: 'Linkki kopioitu leikepöydälle', position: 'top' });
+				closePalette();
+			}
 		} catch {
 			return 'Jakaminen epäonnistui';
 		}
@@ -927,13 +940,13 @@
 		aria-label="Rajaa hakua"
 		class="flex gap-1 overflow-x-auto border-b border-primary px-2 py-1.5"
 	>
-		{#each [{ scope: null, label: 'Kaikki', prefix: '' }, ...SCOPES] as option (option.label)}
+		{#each [{ scope: null, label: 'Kaikki', prefix: '', symbol: undefined }, ...SCOPES] as option (option.label)}
 			<button
 				type="button"
 				tabindex="-1"
 				aria-pressed={scope === option.scope}
 				title={option.prefix
-					? `Rajaa: ${option.label} (kirjoita ${option.prefix})`
+					? `Rajaa: ${option.label} (kirjoita ${option.prefix}${option.symbol ? ` tai ${option.symbol}` : ''})`
 					: 'Hae kaikkialta'}
 				onmousedown={(event) => event.preventDefault()}
 				onclick={() => setScope(option.scope)}

@@ -122,7 +122,10 @@ export interface PriceListItem extends Record<DrunkColumnNames, number> {
 	Normaalihinta: number;
 	'Kampanja alkaa': string;
 	'Kampanja päättyy': string;
-	/** Alko's product status: Aktiivinen, Uutuus, Poistuva or Tulee. Empty for removed products. */
+	/**
+	 * Alko's product status: Aktiivinen, Uutuus, Poistuva or Tulee, or our own "Ei myynnissä" for
+	 * products stuck at Tulee (see STALE_ARRIVAL_STATUS). Empty for removed products.
+	 */
 	Tila: string;
 	/** Deposit in euros, included in `Hinta`. Empty when the product has none or it isn't known. */
 	Pantti: number | '';
@@ -307,7 +310,7 @@ export type AnalyticsEventMap = {
 	};
 	/** An unexpected error, see `reportError` in `src/lib/utils/app/errorAnalytics.ts`. */
 	app_error: {
-		kind: 'load' | 'uncaught' | 'unhandled_rejection';
+		kind: 'load' | 'uncaught' | 'unhandled_rejection' | 'boundary';
 		message: string;
 		stack?: string;
 		/** HTTP-style status SvelteKit gave a load error */

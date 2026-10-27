@@ -25,6 +25,8 @@ export type PunchIngredient = AlkoIngredient | CustomIngredient;
 
 export type PunchRecipe = {
 	name: string;
+	/** Optional note shown with the recipe, e.g. how to mix it */
+	description: string;
 	/** Glass size in litres */
 	glass: number;
 	people: number;
@@ -36,7 +38,7 @@ export type SavedPunch = PunchRecipe & { id: string; savedAt: string };
 export const DEFAULT_GLASS = 0.2;
 
 export function emptyPunch(): PunchRecipe {
-	return { name: '', glass: DEFAULT_GLASS, people: 1, ingredients: [] };
+	return { name: '', description: '', glass: DEFAULT_GLASS, people: 1, ingredients: [] };
 }
 
 /** Limits that keep a typo or a hand-edited link from producing nonsense */
@@ -48,7 +50,9 @@ const LIMITS = {
 	glass: [0.01, 2],
 	people: [1, 500],
 	ingredients: 50,
-	name: 80
+	name: 80,
+	recipeName: 30,
+	description: 100
 } as const;
 
 const clamp = (value: unknown, min: number, max: number, fallback = min) => {
@@ -85,7 +89,8 @@ export function sanitizePunch(value: unknown): PunchRecipe | null {
 	const recipe = value as Partial<PunchRecipe> | null;
 	if (!recipe || typeof recipe !== 'object' || !Array.isArray(recipe.ingredients)) return null;
 	return {
-		name: text(recipe.name),
+		name: text(recipe.name, LIMITS.recipeName),
+		description: text(recipe.description, LIMITS.description),
 		glass: clamp(recipe.glass, LIMITS.glass[0], LIMITS.glass[1], DEFAULT_GLASS),
 		people: Math.round(clamp(recipe.people, LIMITS.people[0], LIMITS.people[1], 1)),
 		ingredients: recipe.ingredients
@@ -99,7 +104,15 @@ export function sanitizePunch(value: unknown): PunchRecipe | null {
 type EncodedIngredient =
 	| [id: string, count: number]
 	| [name: string, volume: number, abv: number, price: number, count: number];
-type EncodedPunch = [version: 1, name: string, glass: number, people: number, EncodedIngredient[]];
+type EncodedPunch = [
+	version: 1,
+	name: string,
+	glass: number,
+	people: number,
+	EncodedIngredient[],
+	// Left out when empty, so links without one stay as short as before
+	description?: string
+];
 
 export function encodePunch(recipe: PunchRecipe): string {
 	const encoded: EncodedPunch = [
@@ -113,6 +126,7 @@ export function encodePunch(recipe: PunchRecipe): string {
 				: [ingredient.name, ingredient.volume, ingredient.abv, ingredient.price, ingredient.count]
 		)
 	];
+	if (recipe.description) encoded.push(recipe.description);
 	return compressToEncodedURIComponent(JSON.stringify(encoded));
 }
 
@@ -120,9 +134,10 @@ export function decodePunch(value: string): PunchRecipe | null {
 	try {
 		const decoded = JSON.parse(decompressFromEncodedURIComponent(value) ?? '') as unknown;
 		if (!Array.isArray(decoded) || decoded[0] !== 1 || !Array.isArray(decoded[4])) return null;
-		const [, name, glass, people, items] = decoded as EncodedPunch;
+		const [, name, glass, people, items, description] = decoded as EncodedPunch;
 		return sanitizePunch({
 			name,
+			description,
 			glass,
 			people,
 			ingredients: items.map((item) =>
@@ -212,6 +227,8 @@ export type PunchAmounts = {
 export type PunchTotals = PunchAmounts & {
 	/** Litres of pure alcohol */
 	alcohol: number;
+	/** Litres of the ingredients that contain alcohol, i.e. the volume without mixers */
+	alcoholicVolume: number;
 	abv: number;
 	/** Null without anything to divide by, e.g. an alcohol-free punch */
 	euroPerServing: number | null;
@@ -241,6 +258,10 @@ export function computePunch(
 	const volume = lineTotals.reduce((sum, line) => sum + line.volume, 0);
 	const alcohol = lineTotals.reduce((sum, line) => sum + line.alcohol, 0);
 	const price = lineTotals.reduce((sum, line) => sum + line.price, 0);
+	const alcoholicVolume = lineTotals.reduce(
+		(sum, line) => (line.alcohol > 0 ? sum + line.volume : sum),
+		0
+	);
 	const grams = alcohol * ETHANOL_DENSITY;
 	const servings = grams / SERVING_GRAMS;
 	const abv = volume > 0 ? (alcohol / volume) * 100 : 0;
@@ -273,6 +294,7 @@ export function computePunch(
 	return {
 		...total,
 		alcohol,
+		alcoholicVolume,
 		abv,
 		euroPerServing: servings > 0 && price > 0 ? price / servings : null,
 		euroPerLitre: volume > 0 && price > 0 ? price / volume : null,
@@ -309,6 +331,51 @@ const isActive = (product: PriceListItem) =>
 const pricePerLitre = (product: PriceListItem) =>
 	finite(product[AllColumns.Price]) / (finite(product[AllColumns.BottleSize]) || Infinity);
 
+/** Fruit a cider or similar tastes of, by the stems in Alko's tasting notes; berries count as one */
+const FRUITS: [fruit: string, stems: string[]][] = [
+	['apple', ['omen']],
+	['pear', ['päärynä']],
+	['berry', ['marja', 'mansikk', 'vadelm', 'mustikk', 'karpalo', 'puolukk', 'herukka']],
+	['peach', ['persik', 'aprikoo']],
+	['cherry', ['kirsik']],
+	['tropical', ['mango', 'ananas', 'banaani', 'passion', 'kiivi']],
+	['rhubarb', ['raparperi']],
+	['ginger', ['inkivääri']]
+];
+const SWEETNESS = ['kuiva', 'puolikuiva', 'puolimakea', 'makea'];
+
+/** Taste of a cider by its tasting notes: the first fruit named and how sweet it is */
+function tasteOf(product: PriceListItem) {
+	const notes = product[AllColumns.Description];
+	// A set in the app, an array in the dataset file
+	const text = (
+		typeof notes === 'object' && notes ? [...notes].join(',') : String(notes ?? '')
+	).toLowerCase();
+	let fruit: string | undefined;
+	let first = Infinity;
+	for (const [name, stems] of FRUITS) {
+		for (const stem of stems) {
+			const at = text.indexOf(stem);
+			if (at !== -1 && at < first) [fruit, first] = [name, at];
+		}
+	}
+	const words = text.split(/[\s,;.]+/);
+	const sweetness = SWEETNESS.findIndex((word) => words.includes(word));
+	return { fruit, sweetness: sweetness === -1 ? undefined : sweetness };
+}
+
+/** Whether a swap keeps a cider tasting about the same: the same fruit, a step from as sweet */
+function similarTaste(a: PriceListItem, b: PriceListItem) {
+	if (!/siider/i.test(String(a[AllColumns.SubType] || a[AllColumns.Type]))) return true;
+	const [x, y] = [tasteOf(a), tasteOf(b)];
+	if (x.fruit && y.fruit && x.fruit !== y.fruit) return false;
+	return (
+		x.sweetness === undefined ||
+		y.sweetness === undefined ||
+		Math.abs(x.sweetness - y.sweetness) <= 1
+	);
+}
+
 export type PunchSwap = { product: PriceListItem; count: number; saving: number };
 
 /** Smallest saving worth suggesting a swap for */
@@ -316,7 +383,7 @@ const MIN_SAVING = 0.5;
 
 /**
  * The cheapest active product of the same kind (same type, subtype and beer style, alcohol within
- * a percentage point) that replaces `count` packages of `product` with about the same amount in
+ * a percentage point, and for ciders the same fruit and sweetness) that replaces `count` packages of `product` with about the same amount in
  * whole packages, or null when none saves at least 50 cents. With `available`, only products it
  * accepts are considered, e.g. those in the preferred store.
  */
@@ -339,6 +406,7 @@ export function cheaperAlternative(
 		if ((candidate[AllColumns.BeerType] || '') !== (product[AllColumns.BeerType] || '')) continue;
 		if (Math.abs(finite(candidate[AllColumns.AlcoholPercentage]) - abv) > 1) continue;
 		if (pricePerLitre(candidate) >= pricePerLitre(product)) continue;
+		if (!similarTaste(product, candidate)) continue;
 		if (available && !available(candidate)) continue;
 
 		const size = finite(candidate[AllColumns.BottleSize]);
@@ -556,5 +624,5 @@ export function resolveTemplate(
 		if (product)
 			ingredients.push({ kind: 'alko', id: product[AllColumns.Number], count: ingredient.count });
 	}
-	return { name: template.name, glass: template.glass, people: 1, ingredients };
+	return { name: template.name, description: '', glass: template.glass, people: 1, ingredients };
 }

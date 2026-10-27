@@ -4,10 +4,12 @@
  * Each product's change-detection `hash` is only used by the sync, but as 64 hex
  * characters per product it was about a third of the gzipped data.json every
  * visitor downloads. It is stored in a separate `hashes.json` next to data.json,
- * which the app never loads, along with `meta.detailCheckedAt`, also sync-only:
+ * which the app never loads, along with `meta.detailCheckedAt` and `meta.detailFailedAt`, also
+ * sync-only:
  *
  *   data.json    { schema, metadata, products: { id: { values, priceHistory, meta } }, index }
- *   hashes.json  { HashVersion, hashes: { id: hash }, detailCheckedAt: { id: date } }
+ *   hashes.json  { HashVersion, hashes: { id: hash }, detailCheckedAt: { id: date },
+ *                  detailFailedAt: { id: date } }
  *
  * `readDataset` merges the two back into the in-memory `MigratedData` the sync
  * works with. Every product must end up with a hash: without one the sync would
@@ -17,7 +19,8 @@
  * values like rehash.ts does. A lost hashes.json therefore only re-fetches the
  * products whose stored values hash differently from the search payload, the
  * same one-off cost as a hash version bump. A lost `detailCheckedAt` only makes
- * the products due for re-verification, which the sync spreads over its runs.
+ * the products due for re-verification, which the sync spreads over its runs, and
+ * a lost `detailFailedAt` only retries failing products sooner.
  *
  * Products removed from the selection are written to `data-removed.json` and some columns as
  * word-list indexes (see src/lib/utils/catalog/datasetFile.ts). Unlike hashes, removed products
@@ -38,19 +41,23 @@ export type HashesFile = {
 	hashes: Record<string, string>;
 	/** Each product's `meta.detailCheckedAt`. */
 	detailCheckedAt?: Record<string, string>;
+	/** Each product's `meta.detailFailedAt`. */
+	detailFailedAt?: Record<string, string>;
 };
 
 /** Splits the hashes and detail check dates out of the dataset. The input is left untouched. */
 export function splitHashes(data: MigratedData): { data: MigratedData; hashes: HashesFile } {
 	const hashes: Record<string, string> = {};
 	const detailCheckedAt: Record<string, string> = {};
+	const detailFailedAt: Record<string, string> = {};
 	const products: Record<string, unknown> = {};
 	for (const [id, product] of Object.entries(data.products ?? {})) {
 		if (product && typeof product === 'object') {
 			const { hash, meta, ...rest } = product;
 			if (typeof hash === 'string') hashes[id] = hash;
-			const { detailCheckedAt: checkedAt, ...otherMeta } = meta ?? {};
+			const { detailCheckedAt: checkedAt, detailFailedAt: failedAt, ...otherMeta } = meta ?? {};
 			if (typeof checkedAt === 'string') detailCheckedAt[id] = checkedAt;
+			if (typeof failedAt === 'string') detailFailedAt[id] = failedAt;
 			products[id] = Object.keys(otherMeta).length ? { ...rest, meta: otherMeta } : rest;
 		} else {
 			products[id] = product;
@@ -58,14 +65,14 @@ export function splitHashes(data: MigratedData): { data: MigratedData; hashes: H
 	}
 	return {
 		data: { ...data, products: products as MigratedData['products'] },
-		hashes: { HashVersion: data.metadata?.HashVersion, hashes, detailCheckedAt }
+		hashes: { HashVersion: data.metadata?.HashVersion, hashes, detailCheckedAt, detailFailedAt }
 	};
 }
 
 /**
  * Gives every product in `data` (mutated in place) a hash: its own, the one in
  * `hashes`, or one recomputed from its stored values. Returns how many came
- * from each source. Also restores `meta.detailCheckedAt` from `hashes`.
+ * from each source. Also restores `meta.detailCheckedAt` and `meta.detailFailedAt` from `hashes`.
  */
 export function mergeHashes(data: MigratedData, hashes: HashesFile | null | undefined) {
 	const counts = { inline: 0, file: 0, recomputed: 0 };
@@ -73,10 +80,14 @@ export function mergeHashes(data: MigratedData, hashes: HashesFile | null | unde
 	const fileHashes =
 		hashes && hashes.HashVersion === data.metadata?.HashVersion ? (hashes.hashes ?? {}) : {};
 	const fileCheckedAt = hashes?.detailCheckedAt ?? {};
+	const fileFailedAt = hashes?.detailFailedAt ?? {};
 	for (const [id, product] of Object.entries(data.products ?? {})) {
 		if (!product || typeof product !== 'object' || !Array.isArray(product.values)) continue;
 		if (!product.meta?.detailCheckedAt && typeof fileCheckedAt[id] === 'string') {
 			product.meta = { ...product.meta, detailCheckedAt: fileCheckedAt[id] };
+		}
+		if (!product.meta?.detailFailedAt && typeof fileFailedAt[id] === 'string') {
+			product.meta = { ...product.meta, detailFailedAt: fileFailedAt[id] };
 		}
 		if (typeof product.hash === 'string') {
 			counts.inline++;

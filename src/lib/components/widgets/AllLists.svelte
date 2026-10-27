@@ -8,6 +8,7 @@
 	import type { ListObj } from '$lib/types';
 	import { isSimilarString } from '$lib/utils/catalog/search';
 	import { handleShare } from '$lib/utils/app/share';
+	import { showToast } from '$lib/utils/app/toast.svelte';
 	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 
 	const {
@@ -68,6 +69,7 @@
 								onclick={async (e) => {
 									e.preventDefault();
 									e.stopPropagation();
+									const anchor = e.currentTarget;
 									const shared = await handleShare({
 										title: `Alkometriikka - ${list.name}`,
 										text: `Katso lista: ${list.name}`,
@@ -75,12 +77,10 @@
 										includeSID: true
 									});
 
-									if (!shared) alert('Linkki kopioitu leikepöydälle!');
+									if (!shared) showToast({ text: 'Linkki kopioitu leikepöydälle', anchor });
 								}}
 							>
-								<Icon name="share" class="inline-block " /><span class="sr-only md:not-sr-only"
-									>Jaa</span
-								>
+								<Icon name="share" /><span class="sr-only md:not-sr-only">Jaa</span>
 							</button>
 						{/if}
 						{#if show?.delete}

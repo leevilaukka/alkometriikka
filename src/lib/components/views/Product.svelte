@@ -2,6 +2,7 @@
 	import { AllColumns } from '$lib/utils/constants/columns';
 	import { generateTitle, setSEO } from '$lib/utils/app/meta';
 	import { handleShare } from '$lib/utils/app/share';
+	import { showToast } from '$lib/utils/app/toast.svelte';
 	import { formatCampaignWindow, getSaleInfo } from '$lib/utils/catalog/sales';
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/ui/styles';
@@ -25,6 +26,8 @@
 		rankStoresByDistance
 	} from '$lib/utils/catalog/availability';
 	import { generateImageUrl } from '$lib/utils/catalog/alko';
+	import ErrorBoundary from '../widgets/ErrorBoundary.svelte';
+	import { safely } from '$lib/utils/app/errorAnalytics';
 	import { productDescription } from '$lib/utils/app/seo';
 
 	import ProductBreadcrumb from '../product/ProductBreadcrumb.svelte';
@@ -85,13 +88,23 @@
 	let productElement: HTMLDivElement;
 	let watchChanges = $state<WatchChange[]>([]);
 
-	const sizeOptions = $derived(buildSizeOptions(product, kaljakori));
+	// Optional extras: when one fails the rest of the page still shows
+	const sizeOptions = $derived(
+		safely('product_size_options', () => buildSizeOptions(product, kaljakori), [])
+	);
 	const cheapestSize = $derived(sizeOptions.find((size) => size.isBestValue));
 
 	// Removed products can't be bought, so they make no sense as alternatives here
 	const similarProducts = $derived(
 		catalogState === 'loaded'
-			? findSimilarProducts(product, kaljakori, SIMILAR_PRODUCT_COLUMNS, 24, { activeOnly: true })
+			? safely(
+					'product_similar',
+					() =>
+						findSimilarProducts(product, kaljakori, SIMILAR_PRODUCT_COLUMNS, 24, {
+							activeOnly: true
+						}),
+					[]
+				)
 			: []
 	);
 
@@ -179,7 +192,8 @@
 				components.button({ size: 'sm', type: 'positive' }),
 				'flex shrink-0 items-center gap-2'
 			)}
-			onclick={async () => {
+			onclick={async (e) => {
+				const anchor = e.currentTarget;
 				const shared = await handleShare({
 					type: 'product',
 					text: `Katso ${product[AllColumns.Name]} -tuotteen tiedot, hinnat ja vastaavat tuotteet Alkometriikasta.`,
@@ -189,7 +203,7 @@
 				});
 
 				if (!shared) {
-					alert('Linkki kopioitu leikepöydälle!');
+					showToast({ text: 'Linkki kopioitu leikepöydälle', anchor });
 				}
 			}}
 		>
@@ -225,7 +239,9 @@
 	<div
 		class="grid w-full grid-cols-1 gap-6 lg:grid-cols-[360px_minmax(0,1fr)_320px] lg:items-start"
 	>
-		<ProductGallery {product} {sale} />
+		<ErrorBoundary name="product_gallery" fallback="section" label="Tuotekuvaa">
+			<ProductGallery {product} {sale} />
+		</ErrorBoundary>
 
 		<div class="flex flex-col gap-4">
 			<ProductBadgesHeader {product} {sale} />
@@ -242,7 +258,9 @@
 				{closestAvailableDistance}
 			/>
 
-			<ProductSizeDropdown {product} sizes={sizeOptions} />
+			<ErrorBoundary name="product_size_dropdown">
+				<ProductSizeDropdown {product} sizes={sizeOptions} />
+			</ErrorBoundary>
 
 			<ProductQuickStats {product} />
 		</div>
@@ -267,26 +285,38 @@
 
 	<!-- Both compare against the whole price list, so without it they're left out -->
 	{#if catalogState !== 'failed'}
-		<ProductQualityMetrics {product} {kaljakori} loading={catalogState === 'loading'} />
+		<ErrorBoundary name="product_quality_metrics">
+			<ProductQualityMetrics {product} {kaljakori} loading={catalogState === 'loading'} />
+		</ErrorBoundary>
 
-		<ProductSimilar {product} candidates={similarProducts} loading={catalogState === 'loading'} />
+		<ErrorBoundary name="product_similar">
+			<ProductSimilar {product} candidates={similarProducts} loading={catalogState === 'loading'} />
+		</ErrorBoundary>
 	{/if}
 
 	<div
 		class="grid w-full grid-cols-1 gap-6 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] lg:items-start"
 	>
 		<div class="flex flex-col gap-6">
-			<ProductPriceHistory {product} />
+			<ErrorBoundary name="product_price_history">
+				<ProductPriceHistory {product} />
+			</ErrorBoundary>
 			<ProductDetailsTable {product} class="hidden lg:block" />
 		</div>
-		<ProductStoreAvailability
-			id="myymalasaatavuus"
-			productNumber={product[AllColumns.Number]}
-			stores={rankedAvailabilityStores}
-			{availabilityState}
-			{preferredStore}
-			{availabilityUpdated}
-		/>
+		<ErrorBoundary
+			name="product_store_availability"
+			fallback="section"
+			label="Myymälöiden saatavuutta"
+		>
+			<ProductStoreAvailability
+				id="myymalasaatavuus"
+				productNumber={product[AllColumns.Number]}
+				stores={rankedAvailabilityStores}
+				{availabilityState}
+				{preferredStore}
+				{availabilityUpdated}
+			/>
+		</ErrorBoundary>
 	</div>
 
 	<ProductDetailsTable {product} class="lg:hidden" />

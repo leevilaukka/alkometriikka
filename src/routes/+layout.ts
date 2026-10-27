@@ -8,6 +8,7 @@ import { EMPTY_AVAILABILITY, LazyAvailability } from '$lib/alko/availability.sve
 import { personalInfo } from '$lib/global.svelte';
 import { dev } from '$app/env';
 import { isCachedResponse } from '$lib/utils/app/offline';
+import { watchLoadedData } from '$lib/utils/app/pwa.svelte';
 import { STUB_DATA_ID } from '$lib/utils/app/seo';
 
 export const ssr = false;
@@ -40,6 +41,7 @@ async function fetchAlkoPriceList({ fetch }: { fetch: Fetch }) {
 	if (!req.ok) {
 		throw new Error(`Hinnaston lataaminen epäonnistui: ${req.status} ${req.statusText}`);
 	}
+	watchLoadedData(getDatasetURL(), req);
 	const text = await req.text();
 	return { text, cached: isCachedResponse(req) };
 }

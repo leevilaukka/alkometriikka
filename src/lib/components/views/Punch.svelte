@@ -58,6 +58,7 @@
 	import { ShareTypes } from '$lib/utils/constants/app';
 	import { formatValue } from '$lib/utils/format/format';
 	import { handleShare } from '$lib/utils/app/share';
+	import { showToast } from '$lib/utils/app/toast.svelte';
 	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 	import { requestSettingsOpen } from '$lib/utils/app/settings';
 	import { appPath } from '$lib/utils/app/paths';
@@ -118,13 +119,16 @@
 		});
 	});
 
+	/** A punch is for a group, so the promilles use the default weight and gender unless asked */
+	let useSavedBody = $state(false);
+
 	const lines = $derived(punchLines(punchDraft.ingredients, (id) => kaljakori.findById(id)));
 	const totals = $derived(
 		computePunch(lines, {
 			glass: punchDraft.glass,
 			people: punchDraft.people,
-			gender: personalInfo.gender,
-			weight: personalInfo.weight
+			gender: useSavedBody ? personalInfo.gender : null,
+			weight: useSavedBody ? personalInfo.weight : null
 		})
 	);
 	const hasIngredients = $derived(punchDraft.ingredients.length > 0);
@@ -171,7 +175,7 @@
 
 	/** Compares recipes by what they're made of, for knowing whether replacing one loses anything */
 	const recipeKey = (recipe: PunchRecipe) =>
-		JSON.stringify([recipe.glass, recipe.people, recipe.ingredients]);
+		JSON.stringify([recipe.description, recipe.glass, recipe.people, recipe.ingredients]);
 
 	const isSaved = $derived(
 		punchRecipes.some(
@@ -255,9 +259,14 @@
 		if (confirm(`Poistetaanko tallennettu booli "${name}"?`)) deletePunch(id);
 	}
 
+	/** The counters appear once a field is within a fifth of its limit */
+	const nameNearLimit = $derived(punchDraft.name.length >= 24);
+	const descriptionNearLimit = $derived(punchDraft.description.length >= 80);
+
 	const shareTitle = $derived(punchDraft.name.trim() || 'Booli');
 
-	async function share() {
+	async function share(event: MouseEvent) {
+		const anchor = event.currentTarget as Element;
 		const url = new URL(resolve('/boolilaskuri/'), location.origin);
 		url.searchParams.set('booli', encodePunch(punchDraft));
 		const summary = `${shareTitle}: ${formatValue(totals.abv, AllColumns.AlcoholPercentage)}, ${formatValue(totals.perGlass.price, AllColumns.Price)} per lasi`;
@@ -269,7 +278,7 @@
 				url: url.toString(),
 				includeSID: true
 			});
-			if (!shared) flash('Linkki kopioitu leikepöydälle');
+			if (!shared) showToast({ text: 'Linkki kopioitu leikepöydälle', anchor });
 		} catch {
 			flash('Jakaminen epäonnistui');
 		}
@@ -320,7 +329,9 @@
 		sharedRecipe = null;
 	}
 
-	// Reported once the recipe has stayed the same for a few seconds, not on every keystroke
+	// Reported once the recipe has stayed the same for a few seconds, not on every keystroke,
+	// and not again for a result that was just reported (a rename, a reorder or an undone edit)
+	let lastReported = '';
 	$effect(() => {
 		const event = {
 			ingredients: punchDraft.ingredients.length,
@@ -331,7 +342,12 @@
 			people: punchDraft.people
 		};
 		if (!hasUserEdited || event.ingredients < 2) return;
-		const timeout = setTimeout(() => sendAnalyticsEvent('punch_calculator_used', event), 3000);
+		const key = JSON.stringify(event);
+		if (key === lastReported) return;
+		const timeout = setTimeout(() => {
+			lastReported = key;
+			sendAnalyticsEvent('punch_calculator_used', event);
+		}, 3000);
 		return () => clearTimeout(timeout);
 	});
 
@@ -485,7 +501,7 @@
 						</ul>
 					{:else}
 						<p class="text-secondary">
-							Ei vielä tallennettuja booleja. Tallenna nykyinen booli Ainesosat-kohdan
+							Ei vielä tallennettuja booleja. Tallenna nykyinen booli Perustiedot-kohdan
 							Tallenna-painikkeella.
 						</p>
 					{/if}
@@ -507,7 +523,9 @@
 				Sinulle jaettiin booli{sharedRecipe.name ? ` "${sharedRecipe.name}"` : ''} ({sharedRecipe
 					.ingredients.length} ainesosaa). Sen avaaminen korvaa nykyisen boolisi.
 			</p>
-			<button type="button" class={components.button()} onclick={openShared}>Avaa jaettu booli</button>
+			<button type="button" class={components.button()} onclick={openShared}
+				>Avaa jaettu booli</button
+			>
 			<button
 				type="button"
 				class={twMerge(components.button({ type: 'noborder' }), 'text-white hover:bg-brand-3')}
@@ -546,30 +564,59 @@
 		</div>
 	</section>
 
+	<section aria-labelledby="punch-name-title" class={twMerge(card, 'gap-3')}>
+		<div class="flex items-center justify-between gap-2">
+			<h2 id="punch-name-title" class="text-lg font-bold">Perustiedot</h2>
+			<button type="button" class={components.button()} onclick={save} disabled={!hasIngredients}>
+				<Icon name="save" />
+				{isSaved ? 'Tallennettu' : 'Tallenna'}
+			</button>
+		</div>
+		<div class="grid gap-3 md:grid-cols-2">
+			<div class="relative">
+				<input
+					id="punch-name"
+					class={twMerge(components.input(), 'w-full pe-14')}
+					bind:value={punchDraft.name}
+					maxlength="30"
+					placeholder="Boolin nimi, esim. Vappubooli"
+					aria-label="Nimi"
+				/>
+				{#if nameNearLimit}
+					<span
+						class="pointer-events-none absolute end-3 top-1/2 -translate-y-1/2 text-xs text-secondary tabular-nums"
+						aria-hidden="true"
+					>
+						{punchDraft.name.length}/30
+					</span>
+				{/if}
+			</div>
+			<div class="relative">
+				<!-- One line that grows with the text, with room on the right for the counter -->
+				<textarea
+					class={twMerge(components.input(), 'field-sizing-content w-full resize-none pe-14')}
+					bind:value={punchDraft.description}
+					maxlength="100"
+					rows="1"
+					placeholder="Kuvaus (valinnainen), esim. tarjoile jääkylmänä"
+					aria-label="Kuvaus"
+				></textarea>
+				{#if descriptionNearLimit}
+					<span
+						class="pointer-events-none absolute end-3 bottom-2 text-xs text-secondary tabular-nums"
+						aria-hidden="true"
+					>
+						{punchDraft.description.length}/100
+					</span>
+				{/if}
+			</div>
+		</div>
+	</section>
+
 	<div class="grid grid-cols-1 items-start gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
 		<div class="flex flex-col gap-6">
 			<section aria-labelledby="punch-ingredients-title" class={card}>
-				<div class="flex flex-wrap items-end gap-2">
-					<label class="flex min-w-0 flex-1 flex-col gap-1" for="punch-name">
-						<span id="punch-ingredients-title" class="text-lg font-bold">Ainesosat</span>
-						<input
-							id="punch-name"
-							class={twMerge(components.input(), 'w-full')}
-							bind:value={punchDraft.name}
-							maxlength="80"
-							placeholder="Boolin nimi, esim. Vappubooli"
-						/>
-					</label>
-					<button
-						type="button"
-						class={components.button()}
-						onclick={save}
-						disabled={!hasIngredients}
-					>
-						<Icon name="save" />
-						{isSaved ? 'Tallennettu' : 'Tallenna'}
-					</button>
-				</div>
+				<h2 id="punch-ingredients-title" class="text-lg font-bold">Ainesosat</h2>
 
 				<PunchProductSearch {kaljakori} {inStore} onadd={addProduct} />
 
@@ -760,6 +807,8 @@
 						people={Math.max(1, Math.round(punchDraft.people || 1))}
 						{rank}
 						hasPersonalInfo={personalInfo.weight != null}
+						hasSavedBody={personalInfo.weight != null || personalInfo.gender != null}
+						bind:useSavedBody
 						onopensettings={requestSettingsOpen}
 					/>
 				{:else}

@@ -5,6 +5,7 @@
 	import { getSaleInfo } from '$lib/utils/catalog/sales';
 	import { generateTitle, setSEO } from '$lib/utils/app/meta';
 	import { handleShare } from '$lib/utils/app/share';
+	import { showToast } from '$lib/utils/app/toast.svelte';
 	import { components } from '$lib/utils/ui/styles';
 	import {
 		computeComparisonRows,
@@ -95,7 +96,8 @@
 					components.button({ size: 'sm', type: 'positive' }),
 					'ml-auto flex shrink-0 items-center gap-2'
 				)}
-				onclick={async () => {
+				onclick={async (e) => {
+					const anchor = e.currentTarget;
 					const shared = await handleShare({
 						type: 'compare',
 						text: `Vertaile: ${products.map((p) => p[AllColumns.Name]).join(', ')}`,
@@ -103,7 +105,7 @@
 						title: generateTitle('Tuotevertailu'),
 						includeSID: true
 					});
-					if (!shared) alert('Linkki kopioitu leikepöydälle!');
+					if (!shared) showToast({ text: 'Linkki kopioitu leikepöydälle', anchor });
 				}}
 			>
 				<Icon name="share" />

@@ -12,22 +12,22 @@ Code: `scripts/data/stock.ts` (the update, pure), `scripts/data/stock-history.ts
 
 ## Files
 
-Everything lives under `stock/` on `gh-pages`, next to `availability.json`.
+Everything lives under `data/stock/` on `gh-pages`, with the pipeline's other files.
 
-| File                       | Size (Oct 2026, gzipped)  | Read by       | Contents                                          |
-| -------------------------- | ------------------------- | ------------- | ------------------------------------------------- |
-| `stock/state.json`         | ~0.4 MB, growing to ~1 MB | The CLI only  | Everything needed between runs (below)            |
-| `stock/products/<NN>.json` | ~2 KB each, 100 files     | Product pages | Daily store counts of the products ending in `NN` |
-| `stock/stores/<id>.json`   | under 1 KB each           | Store pages   | That store's recent arrivals                      |
+| File                            | Size (Oct 2026, gzipped)  | Read by       | Contents                                          |
+| ------------------------------- | ------------------------- | ------------- | ------------------------------------------------- |
+| `data/stock/state.json`         | ~0.4 MB, growing to ~1 MB | The CLI only  | Everything needed between runs (below)            |
+| `data/stock/products/<NN>.json` | ~2 KB each, 100 files     | Product pages | Daily store counts of the products ending in `NN` |
+| `data/stock/stores/<id>.json`   | under 1 KB each           | Store pages   | That store's recent arrivals                      |
 
 ```jsonc
-// stock/products/58.json: products whose number ends in 58
+// data/stock/products/58.json: products whose number ends in 58
 {
 	"start": "2026-07-23", // the day of each array's first entry
 	"counts": { "906458": [34, 34, null, 33, …] } // stores per day; null = not in the selection, or no run that day
 }
 
-// stock/stores/2102.json
+// data/stock/stores/2102.json
 {
 	"since": "2026-07-23", // when the history began
 	"arrivals": [["906458", "2026-10-20"], …] // still-stocked arrivals of the last 30 days, newest first
@@ -44,7 +44,7 @@ Each `fetchData.yml` deploy runs, before the new `availability.json` replaces th
 
 ```sh
 bun run scripts/data/stock-history.ts --availability availability.json \
-  --previous ../gh-pages/availability.json --dir ../gh-pages/stock
+  --previous ../gh-pages/availability.json --dir ../gh-pages/data/stock
 ```
 
 - **Counts**: today's slot (Helsinki date) gets each product's number of stores, counting only
@@ -60,17 +60,18 @@ bun run scripts/data/stock-history.ts --availability availability.json \
   closed stores are dropped.
 
 The step is `continue-on-error`: a failed run only loses that run's data point. `build.yml`
-restores `stock/` from `gh-pages` before its force-push, like `rss/`.
+carries `data/` over from `gh-pages` through its force-push, and fails rather than push a commit
+that lost any of it.
 
 The files aren't purged from Cloudflare after a deploy (there are ~460 of them), so a cached copy
 can lag by the edge cache's lifetime. They change at most daily, so that's fine.
 
 ## Locally
 
-`static/stock/` is gitignored. To try the pages that use it without weeks of history:
+`static/data/stock/` is gitignored. To try the pages that use it without weeks of history:
 
 ```sh
-bun run stock:demo   # fakes 30 days from static/availability.json into static/stock/
+bun run stock:demo   # fakes 30 days from static/availability.json into static/data/stock/
 bun run stock -- --dev --previous <older availability.json>   # a real update
 ```
 

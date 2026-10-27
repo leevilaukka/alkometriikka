@@ -1,5 +1,6 @@
 import { CryptoHasher } from 'bun';
 import { formatFoodPairings } from '../../src/lib/utils/catalog/food.ts';
+import { STALE_ARRIVAL_STATUS } from '../../src/lib/utils/catalog/status.ts';
 
 export const LEGACY_HEADERS = [
 	'Numero',
@@ -79,6 +80,18 @@ function toStringList(value: unknown): string[] {
 }
 
 /**
+ * Normalizes a word list column (Luonnehdinta, Ruokasuositukset): a comma separated string is
+ * split, words are trimmed and empty ones dropped, and with `lowercase` the words lose their
+ * sentence case too (the app capitalizes words itself). Null when no words are left.
+ */
+function toWordList(value: unknown, lowercase: boolean): string[] | null {
+	const words = (typeof value === 'string' ? value.split(',') : toStringList(value))
+		.map((word) => (lowercase ? word.trim().toLowerCase() : word.trim()))
+		.filter(Boolean);
+	return words.length ? words : null;
+}
+
+/**
  * Turns the search API's `certificateClass` entries (`certificateId|certificate_001|Luomu`)
  * into a comma separated list of their labels, e.g. `Luomu, Vegaaneille soveltuva tuote`.
  */
@@ -103,7 +116,7 @@ export const STATUS_LABELS: Readonly<Record<string, string>> = {
 };
 
 /** Label of a `statusId`. Unknown codes are kept as-is so a new one shows up instead of vanishing. */
-function formatStatus(value: unknown): string | null {
+export function formatStatus(value: unknown): string | null {
 	if (typeof value !== 'string' || !value.trim()) return null;
 	return STATUS_LABELS[value.trim()] ?? value.trim();
 }
@@ -299,7 +312,7 @@ export const FIELD_TO_LEGACY_SCHEMA: ProductFieldMapping[] = [
 		newPropertyKey: 'taste',
 		legacyKey: 'Luonnehdinta',
 		usedForHashing: true,
-		preprocessor: (value) => (typeof value === 'string' ? value.split(',') : value)
+		preprocessor: (value) => toWordList(value, true)
 	},
 	{
 		newPropertyKey: 'packageTypes',
@@ -460,17 +473,37 @@ export function alignValues(values: unknown[]): unknown[] {
 
 const SPECIAL_GROUP_INDEX = LEGACY_HEADERS.indexOf('Erityisryhmä');
 
+/** Word list columns and whether their words are lowercased, see `toWordList` */
+const WORD_LIST_COLUMNS = [
+	[LEGACY_HEADERS.indexOf('Luonnehdinta'), true],
+	[LEGACY_HEADERS.indexOf('Ruokasuositukset'), false]
+] as const;
+
 /**
- * Converts values stored in an older format to the current one. Erityisryhmä
- * used to be a vegan flag (certificate_005), now it's the label list built by
- * `formatCertificates`. Products still in the selection get refreshed from the
- * search API anyway, so this mostly matters for removed ones.
+ * Converts values stored in an older format to the current one:
+ * - Erityisryhmä used to be a vegan flag (certificate_005), now it's the label
+ *   list built by `formatCertificates`.
+ * - Luonnehdinta used to keep the space after each comma and its sentence case,
+ *   and the legacy XLSX rows have it as one string. Ruokasuositukset used to be
+ *   its labels joined with ", ". Both are now lists from `toWordList`.
+ *
+ * Products still in the selection get refreshed from the search API anyway, so
+ * this mostly matters for removed ones.
  */
 export function upgradeStoredValues(values: unknown[]): unknown[] {
+	const upgrades: [number, unknown][] = [];
 	const specialGroup = values[SPECIAL_GROUP_INDEX];
-	if (typeof specialGroup !== 'boolean') return values;
+	if (typeof specialGroup === 'boolean')
+		upgrades.push([SPECIAL_GROUP_INDEX, specialGroup ? 'Vegaaneille soveltuva tuote' : null]);
+	for (const [index, lowercase] of WORD_LIST_COLUMNS) {
+		const value = values[index];
+		if (typeof value !== 'string' && !Array.isArray(value)) continue;
+		const words = toWordList(value, lowercase);
+		if (JSON.stringify(words) !== JSON.stringify(value)) upgrades.push([index, words]);
+	}
+	if (!upgrades.length) return values;
 	const upgraded = [...values];
-	upgraded[SPECIAL_GROUP_INDEX] = specialGroup ? 'Vegaaneille soveltuva tuote' : null;
+	for (const [index, value] of upgrades) upgraded[index] = value;
 	return upgraded;
 }
 
@@ -483,7 +516,9 @@ export function upgradeStoredValues(values: unknown[]): unknown[] {
  * sync persists it in the dataset metadata. Do not bump it for unrelated
  * schema additions (appended columns don't affect hashed indices).
  */
-export const HASH_VERSION = 2;
+export const HASH_VERSION = 3;
+
+const STATUS_INDEX = LEGACY_HEADERS.indexOf('Tila');
 
 /**
  * Extracts only the change-detection relevant values (`usedForHashing`) from a
@@ -492,7 +527,14 @@ export const HASH_VERSION = 2;
 export function getHashValues(values: unknown[]): unknown[] {
 	return FIELD_TO_LEGACY_SCHEMA.map((field, index) => ({ field, index }))
 		.filter(({ field }) => field.usedForHashing)
-		.map(({ index }) => values[index]);
+		.map(({ index }) =>
+			// The sync derives the stale arrival status after hashing (see markStaleArrivals),
+			// so it hashes as the "Tulee" the search API reports. Otherwise stored values
+			// would hash differently from the search payload after a rehash.
+			index === STATUS_INDEX && values[index] === STALE_ARRIVAL_STATUS
+				? STATUS_LABELS.X
+				: values[index]
+		);
 }
 
 /**

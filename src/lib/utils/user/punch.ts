@@ -23,6 +23,7 @@ const copyIngredients = (ingredients: PunchIngredient[]) =>
 /** Replaces the open recipe, e.g. with a saved one, a template or a shared link */
 export function openPunch(recipe: PunchRecipe) {
 	punchDraft.name = recipe.name;
+	punchDraft.description = recipe.description;
 	punchDraft.glass = recipe.glass;
 	punchDraft.people = recipe.people;
 	punchDraft.ingredients = copyIngredients(recipe.ingredients);
@@ -33,6 +34,7 @@ export function savePunch(name: string) {
 	punchDraft.name = name;
 	const recipe = {
 		name,
+		description: punchDraft.description,
 		glass: punchDraft.glass,
 		people: punchDraft.people,
 		ingredients: copyIngredients(punchDraft.ingredients),
