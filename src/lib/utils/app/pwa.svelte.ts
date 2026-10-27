@@ -3,6 +3,7 @@ import { updated } from '$app/state';
 import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 import { LocalStorageKeys } from '$lib/utils/constants/app';
 import { LocalStorageManager } from '$lib/utils/app/storage';
+import { isNewerFile } from '$lib/utils/app/offline';
 
 /** Chrome's install prompt event, which TypeScript's DOM types don't include */
 interface BeforeInstallPromptEvent extends Event {
@@ -139,6 +140,38 @@ navigator.serviceWorker?.addEventListener('controllerchange', () => {
 		);
 	controlled = true;
 });
+
+/** How long the app has to be out of view before coming back checks for newer data */
+const DATA_CHECK_AFTER_HIDDEN_MS = 30 * 60 * 1000;
+
+/** The price list this page loaded, and its `Last-Modified` then */
+let loadedData: { url: string; lastModified: string | null } | undefined;
+let hiddenAt = document.visibilityState === 'hidden' ? Date.now() : undefined;
+
+// The price list loads once per page load, and a data sync doesn't change the app's version, so
+// an app left open in the background keeps the data it opened with until the stale-data warning
+// shows, though newer data is out. Coming back after a while asks the server whether the file
+// changed, a HEAD request without the download, and reloads if it did, as a relaunch would
+document.addEventListener('visibilitychange', () => {
+	if (document.visibilityState === 'hidden') {
+		hiddenAt = Date.now();
+		return;
+	}
+	const data = loadedData;
+	if (!data || hiddenAt === undefined || Date.now() - hiddenAt < DATA_CHECK_AFTER_HIDDEN_MS) return;
+	hiddenAt = undefined;
+	fetch(data.url, { method: 'HEAD', cache: 'no-cache' })
+		.then((response) => {
+			if (response.ok && isNewerFile(data.lastModified, response.headers.get('last-modified')))
+				location.reload();
+		})
+		.catch(() => {});
+});
+
+/** Records the price list the page loaded, for the check above */
+export function watchLoadedData(url: string, response: Response) {
+	loadedData = { url, lastModified: response.headers.get('last-modified') };
+}
 
 /**
  * Turns the next in-app navigation into a full page load once a new deploy has taken over, so the

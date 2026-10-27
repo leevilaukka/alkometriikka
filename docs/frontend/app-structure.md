@@ -155,6 +155,11 @@ Product photos from `images.alko.fi` aren't handled: they are sent with a one-ye
   only looks for a new service worker on page loads. Coming back into view checks again (at most
   every 10 minutes). If a new deploy's worker takes over, the next in-app link does a full page
   load, so the page doesn't keep running old code that asks for removed `_app` files.
+- **New data while open**: data syncs don't change the app's version, so the check above misses
+  them, and the price list loads once per page load. Coming back into view after at least 30
+  minutes away (`DATA_CHECK_AFTER_HIDDEN_MS`) sends a HEAD request for `data.json` and reloads the
+  page if its `Last-Modified` is later than the loaded copy's. Otherwise an app left open would
+  show the stale-data warning although CI has published newer data.
 - **iOS launch screens**: iOS ignores the manifest's splash and needs an `apple-touch-startup-image`
   per screen size, orientation and colour scheme. `bun run pwa:splash`
   (`scripts/pwa/ios-splash.ts`) draws the loader's first frame into `static/ios/splash/` and
