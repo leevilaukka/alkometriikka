@@ -13,7 +13,7 @@ import type { AvailabilityData } from './types.ts';
 export const STOCK_STATE_VERSION = 1;
 
 /**
- * Everything the stock history needs between runs (`stock/state.json`). Not read
+ * Everything the stock history needs between runs (`data/stock/state.json`). Not read
  * by the site, which gets the smaller files from {@link stockFiles}.
  */
 export type StockState = {

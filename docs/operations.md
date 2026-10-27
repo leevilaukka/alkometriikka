@@ -134,7 +134,7 @@ get stale output; bump without need and you pay a full regeneration.
 - **Full re-render** (after a design change): CI handles it automatically on the next sync, but
   rendering 13 000+ images there is slow. Faster: render on a PC and upload, as described in
   [`notes/og-images.md`](../notes/og-images.md#first-full-render-on-a-pc-then-batch-upload),
-  then upload the resulting `og-images.json` to `gh-pages`.
+  then upload the resulting `og-images.json` to `gh-pages` as `data/og-images.json`.
 - **A product shows Alko's photo instead of a card**: its render failed or it has no key in
   `og-images.json`. The next successful run retries it.
 - **403 from R2**: usually the wrong jurisdiction. EU buckets need `CF_R2_REGION=eu`. Also check the
@@ -176,6 +176,6 @@ bun run sitemap --dev
 bun run build    # also prerenders into build/ from static/ files copied by vite
 ```
 
-To reproduce a CI run against production data, download `data.json`, `data-removed.json`, `hashes.json` and
-`availability.json` from the site into the repo root and run the scripts without `--dev`. Don't
+To reproduce a CI run against production data, download `data.json`, `data-removed.json`, `data/hashes.json` and
+`availability.json` from the site into the repo root (all flat, so `hashes.json` too) and run the scripts without `--dev`. Don't
 set the R2 variables unless you mean to touch production.

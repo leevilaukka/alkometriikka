@@ -132,13 +132,14 @@ function resolveOptions(): Options {
 		outputPath,
 		templatePath: path.resolve(readOption('--template') ?? path.join(outputPath, '404.html')),
 		ogManifestPath: path.resolve(
-			readOption('--og-manifest') ?? path.join(outputPath, 'og-images.json')
+			readOption('--og-manifest') ?? path.join(outputPath, 'data', 'og-images.json')
 		),
 		ogCategoriesManifestPath: path.resolve(
-			readOption('--og-categories-manifest') ?? path.join(outputPath, CATEGORY_OG_MANIFEST_FILE)
+			readOption('--og-categories-manifest') ??
+				path.join(outputPath, 'data', CATEGORY_OG_MANIFEST_FILE)
 		),
 		manifestPath: path.resolve(
-			readOption('--manifest') ?? path.join(outputPath, 'tuotteet-manifest.json')
+			readOption('--manifest') ?? path.join(outputPath, 'data', 'tuotteet-manifest.json')
 		)
 	};
 }

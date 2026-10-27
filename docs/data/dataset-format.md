@@ -1,7 +1,8 @@
 # Dataset format
 
-The sync writes four files. All four are published at the site root on `gh-pages`, and all but
-`hashes.json` are linked from the app's settings dialog for anyone who wants the raw data.
+The sync writes four files. The first three are published at the site root on `gh-pages` and
+linked from the app's settings dialog for anyone who wants the raw data; `hashes.json` is stored
+as `data/hashes.json` with the pipeline's other files.
 
 | File                | Size (Oct 2026)          | Loaded by the app        | Purpose                                                   |
 | ------------------- | ------------------------ | ------------------------ | --------------------------------------------------------- |
