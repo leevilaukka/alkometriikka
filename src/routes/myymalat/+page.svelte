@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
+	import Breadcrumb from '$lib/components/widgets/Breadcrumb.svelte';
 	import Icon from '$lib/components/widgets/Icon.svelte';
 	import { preferredStoreId } from '$lib/global.svelte';
 	import { AUTO_STORE_ID } from '$lib/utils/constants/app';
@@ -65,6 +66,7 @@
 	)}
 
 	<div class="mx-auto flex w-full max-w-[120ch] flex-col gap-6 p-6">
+		<Breadcrumb items={[]} current="Myymälät" />
 		<header class="flex flex-col gap-2">
 			<h1 class="text-2xl font-bold md:text-3xl">Myymälät</h1>
 			<p class="text-secondary">Selaa Alkon myymälöitä ja valitse ensisijainen myymälä.</p>

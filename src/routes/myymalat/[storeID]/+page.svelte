@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
+	import Breadcrumb from '$lib/components/widgets/Breadcrumb.svelte';
 	import Icon from '$lib/components/widgets/Icon.svelte';
 	import StoreCompass from '$lib/components/widgets/StoreCompass.svelte';
 	import StoreHighlights from '$lib/components/store/StoreHighlights.svelte';
@@ -58,17 +59,8 @@
 	<title>{generateTitle(`Myymälä - ${data.store.name}`)}</title>
 </svelte:head>
 
-{#snippet nav()}
-	<nav class="flex items-center gap-2">
-		<a href={resolve('/')} class={twMerge(components.button({ size: 'md' }))}>
-			<Icon name="home" class="inline-block" />
-			<span>Etusivulle</span>
-		</a>
-		<a href={resolve('/myymalat/')} class={twMerge(components.button({ size: 'md' }))}>
-			<Icon name="map_pin" />
-			<span>Myymälät</span>
-		</a>
-	</nav>
+{#snippet nav(current?: string)}
+	<Breadcrumb items={[{ label: 'Myymälät', href: '/myymalat/' }]} {current} />
 {/snippet}
 
 {#if data.store}
@@ -91,7 +83,7 @@
 	{@const isPreferred = store.id === $preferredStoreId}
 
 	<div class="mx-auto flex w-full max-w-[120ch] flex-col gap-6 p-4 md:p-6">
-		{@render nav()}
+		{@render nav(store.name)}
 
 		<header class="flex flex-col gap-4 rounded border border-primary bg-secondary p-5 md:p-6">
 			<div class="flex flex-wrap items-start justify-between gap-3">
@@ -138,20 +130,35 @@
 				>
 					{isPreferred ? 'Ensisijainen myymälä' : 'Valitse ensisijaiseksi'}
 				</button>
-				<a
-					href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(directionsQuery)}`}
-					target="_blank"
-					rel="noopener noreferrer"
-					class={twMerge(
-						components.button({ size: 'md' }),
-						'w-full justify-center px-3 py-2.5 text-base sm:w-auto sm:px-5 sm:py-3 sm:text-lg'
-					)}
-				>
-					<Icon name="map_pin" />
-					<span class="sm:hidden">Kartta</span>
-					<span class="hidden sm:inline">Näytä kartalla</span>
-					<Icon name="link_external" />
-				</a>
+				<div role="group" aria-label="Google Maps" class="col-span-2 flex sm:col-span-1">
+					<a
+						href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(directionsQuery)}`}
+						target="_blank"
+						rel="noopener noreferrer"
+						class={twMerge(
+							components.button({ size: 'md' }),
+							'flex-1 justify-center rounded-r-none px-3 py-2.5 text-base sm:flex-none sm:px-5 sm:py-3 sm:text-lg'
+						)}
+					>
+						<Icon name="map_pin" />
+						<span class="sm:hidden">Kartta</span>
+						<span class="hidden sm:inline">Näytä kartalla</span>
+						<Icon name="link_external" class="hidden sm:block" />
+					</a>
+					<a
+						href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(directionsQuery)}`}
+						target="_blank"
+						rel="noopener noreferrer"
+						class={twMerge(
+							components.button({ size: 'md' }),
+							'-ml-px flex-1 justify-center rounded-l-none px-3 py-2.5 text-base sm:flex-none sm:px-5 sm:py-3 sm:text-lg'
+						)}
+					>
+						<Icon name="directions" />
+						<span>Reittiohjeet</span>
+						<Icon name="link_external" class="hidden sm:block" />
+					</a>
+				</div>
 				<a
 					href={`https://www.alko.fi/myymalat-palvelut/${store.id}`}
 					target="_blank"
@@ -159,7 +166,7 @@
 					referrerpolicy="no-referrer"
 					class={twMerge(
 						components.button({ size: 'md' }),
-						'w-full justify-center px-3 py-2.5 text-base sm:w-auto sm:px-5 sm:py-3 sm:text-lg'
+						'col-span-2 w-full justify-center px-3 py-2.5 text-base sm:col-span-1 sm:w-auto sm:px-5 sm:py-3 sm:text-lg'
 					)}
 				>
 					<span>Alkon sivu</span>
