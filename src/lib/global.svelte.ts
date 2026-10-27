@@ -4,6 +4,7 @@ import { writable } from 'svelte/store';
 import { LocalStorageKeys } from './utils/constants/app';
 import { LocalStorageManager } from './utils/app/storage';
 import { readSearchParams } from './utils/app/compressedParams';
+import { sanitizeBrowsePrefs } from './utils/user/browsePrefs';
 import { emptyPunch, sanitizePunch, type SavedPunch } from './utils/catalog/punch';
 
 export let personalInfo = $state(
@@ -29,6 +30,10 @@ export let punchRecipes = $state<SavedPunch[]>(
 			? [{ ...recipe, id: saved.id, savedAt: String(saved.savedAt ?? '') }]
 			: [];
 	})
+);
+/** How the product list opens and what it leaves out, see `src/lib/utils/user/browsePrefs.ts`. */
+export let browsePrefs = $state(
+	sanitizeBrowsePrefs(LocalStorageManager.getItem(LocalStorageKeys.BrowsePreferences))
 );
 /** The comparison table emphasizes rows whose values differ between the products. */
 export let compareHighlightDifferences = writable<boolean>(

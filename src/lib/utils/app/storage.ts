@@ -8,11 +8,13 @@ import type {
 } from '$lib/daily/types';
 import { LocalStorageKeys } from '../constants/app';
 import type { PunchRecipe, SavedPunch } from '../catalog/punch';
+import type { BrowsePrefs } from '../user/browsePrefs';
 
 type LocalStorageValueMap = {
 	[LocalStorageKeys.PersonalInfo]: PersonalInfo;
 	[LocalStorageKeys.PreferredStore]: string;
 	[LocalStorageKeys.OnlyPreferredStore]: boolean;
+	[LocalStorageKeys.BrowsePreferences]: BrowsePrefs;
 	[LocalStorageKeys.UserLocation]: { latitude: number; longitude: number };
 	[LocalStorageKeys.UserLocationUpdatedAt]: number;
 	[LocalStorageKeys.Lists]: ListObj[];

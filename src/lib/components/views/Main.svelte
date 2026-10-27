@@ -25,7 +25,8 @@
 	import Popup from '../widgets/Popup.svelte';
 	import AllLists from '../widgets/AllLists.svelte';
 	import AddToListContent from '../widgets/AddToListContent.svelte';
-	import { isLaptop, isMobile, pageBottomBar, searchQuery } from '$lib/global.svelte';
+	import { browsePrefs, isLaptop, isMobile, pageBottomBar, searchQuery } from '$lib/global.svelte';
+	import { preferredColumn } from '$lib/utils/user/browsePrefs';
 	import Filters from '../widgets/Filters.svelte';
 	import { initFilterValues, sortRows } from '$lib/utils/catalog/filters';
 	import { getContext, untrack, type Snippet } from 'svelte';
@@ -39,7 +40,9 @@
 		header,
 		footer,
 		showFilters = true,
-		position
+		position,
+		visible,
+		notice
 	}: {
 		kaljakori: Kaljakori;
 		header?: Snippet;
@@ -47,6 +50,10 @@
 		showFilters?: boolean;
 		/** Where to scroll the list to, e.g. one saved by `currentPosition` before leaving the page */
 		position?: ListPosition;
+		/** Leaves out the products it returns false for, e.g. ones the user's settings hide */
+		visible?: (item: PriceListItem) => boolean;
+		/** Said next to the result count, e.g. that the user's settings narrow the list */
+		notice?: Snippet;
 	} = $props();
 
 	// Without the filter sidebar, wide screens show the header in a sidebar of its own
@@ -117,11 +124,27 @@
 	);
 	let activeFilters: ColumnNames[] = $state([]);
 
+	// What the list opens with: the user's own choices, when this list has values for them. The
+	// URL only carries a choice that differs from this, so a shared link doesn't pin the sender's
+	const openingSort = untrack(() =>
+		preferredColumn(
+			browsePrefs.sort,
+			defaultSortingColumn,
+			(column) => kaljakori.getFilterValues(column).length > 0
+		)
+	);
+	const openingHighlight = untrack(() =>
+		preferredColumn(
+			browsePrefs.highlight,
+			defaultSortingColumn,
+			(column) => kaljakori.getFilterValues(column).length > 0
+		)
+	);
 	let selectedHighlight = $state(
-		searchParamsManager.getParameter('highlight') || defaultSortingColumn
+		searchParamsManager.getParameter('highlight') || openingHighlight
 	) as ColumnNames;
 	let selectedSortingColumn = $state(
-		searchParamsManager.getParameter('sort') || defaultSortingColumn
+		searchParamsManager.getParameter('sort') || openingSort
 	) as ColumnNames;
 	// The URL only carries `asc` when it differs from the column's default order, so a
 	// missing parameter means the default. A linked order applies to the linked column only;
@@ -147,6 +170,7 @@
 		});
 		let temp = kaljakori.fuzzySearchAndFilter($searchQuery, filterValuesCopy);
 		if (!showRemoved) temp = temp.filter((item) => item[AllColumns.RemovedFromSelection] !== true);
+		if (visible) temp = temp.filter(visible);
 		if (!!selectedSortingColumn) temp = sortRows(temp, selectedSortingColumn, asc);
 		else if (!asc) temp = temp.reverse();
 		return temp;
@@ -188,10 +212,10 @@
 
 	$effect(() => {
 		searchParamsManager.setParameter('q', $searchQuery);
-		selectedHighlight !== defaultSortingColumn
+		selectedHighlight !== openingHighlight
 			? searchParamsManager.setParameter('highlight', selectedHighlight)
 			: searchParamsManager.setParameter('highlight', '');
-		selectedSortingColumn !== defaultSortingColumn
+		selectedSortingColumn !== openingSort
 			? searchParamsManager.setParameter('sort', selectedSortingColumn)
 			: searchParamsManager.setParameter('sort', '');
 		asc !== !!defaultSortingOrderMap[selectedSortingColumn as keyof typeof defaultSortingOrderMap]
@@ -330,7 +354,10 @@
 			</div>
 		</div>
 		<div class="flex flex-row flex-wrap items-center justify-between gap-2">
-			<p>Tulosten määrä: {rows.length}</p>
+			<p>
+				Tulosten määrä: {rows.length}
+				{@render notice?.()}
+			</p>
 			<button
 				onclick={() => {
 					listRef?.scroll({ index: 0, smoothScroll: false });

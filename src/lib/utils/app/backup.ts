@@ -1,4 +1,13 @@
-import { lists, personalInfo, preferredStoreId, punchRecipes, watchlist } from '$lib/global.svelte';
+import {
+	browsePrefs,
+	lists,
+	onlyPreferredStore,
+	personalInfo,
+	preferredStoreId,
+	punchRecipes,
+	watchlist
+} from '$lib/global.svelte';
+import { sanitizeBrowsePrefs } from '../user/browsePrefs';
 import { sanitizePunch } from '../catalog/punch';
 import { get } from 'svelte/store';
 import { LocalStorageKeys } from '../constants/app';
@@ -8,6 +17,8 @@ export function handleExport() {
 	const data = {
 		personalInfo: personalInfo,
 		preferredStoreId: get(preferredStoreId),
+		onlyPreferredStore: get(onlyPreferredStore),
+		browsePrefs: browsePrefs,
 		lists: lists,
 		watchlist: watchlist,
 		punchRecipes: punchRecipes
@@ -63,6 +74,15 @@ export function handleImport() {
 			}
 			if (typeof data.preferredStoreId === 'string') {
 				LocalStorageManager.setItem(LocalStorageKeys.PreferredStore, data.preferredStoreId);
+			}
+			if (typeof data.onlyPreferredStore === 'boolean') {
+				LocalStorageManager.setItem(LocalStorageKeys.OnlyPreferredStore, data.onlyPreferredStore);
+			}
+			if (data.browsePrefs) {
+				LocalStorageManager.setItem(
+					LocalStorageKeys.BrowsePreferences,
+					sanitizeBrowsePrefs(data.browsePrefs)
+				);
 			}
 			window.location.reload();
 		}

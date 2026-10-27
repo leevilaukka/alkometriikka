@@ -14,11 +14,13 @@
 	import Info from './Info.svelte';
 	import Settings from './Settings.svelte';
 	import PersonalInfo from './PersonalInfo.svelte';
+	import Browsing from './Browsing.svelte';
 
 	// Define the available tabs for the settings dialog
 	// Each tab has an id, label, icon, and associated Svelte component
 	const tabs = [
 		{ id: 'personal', label: 'Henkilökohtaiset tiedot', icon: 'user', component: PersonalInfo },
+		{ id: 'browsing', label: 'Selaus', icon: 'filter', component: Browsing },
 		{ id: 'settings', label: 'Lisäasetukset', icon: 'cog', component: Settings },
 		{ id: 'info', label: 'Tietoa', icon: 'info_circle', component: Info }
 	] as const satisfies readonly {
@@ -35,8 +37,8 @@
 
 	const gitCommitHash = version.substring(0, 7);
 
-	function openSettings() {
-		tab = 'personal';
+	function openSettings(requested?: string) {
+		tab = tabs.find((tabOption) => tabOption.id === requested)?.id ?? 'personal';
 		sendAnalyticsEvent('open_settings');
 		if (dialogElement && !dialogElement.open) dialogElement.showModal();
 	}
@@ -60,7 +62,7 @@
 	{#snippet renderButton(dialogElement: HTMLDialogElement)}
 		<button
 			class={twMerge(components.button(), 'p-2 text-xl')}
-			onclick={openSettings}
+			onclick={() => openSettings()}
 			aria-label="Asetukset"
 		>
 			{#if !$isMobile}<span class="text-sm">Asetukset</span>{/if}<Icon name="cog" />

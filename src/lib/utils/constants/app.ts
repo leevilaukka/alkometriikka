@@ -9,6 +9,7 @@ export const LocalStorageKeys = {
 	PersonalInfo: 'personal_info',
 	PreferredStore: 'preferred_store',
 	OnlyPreferredStore: 'only_preferred_store',
+	BrowsePreferences: 'browse_preferences',
 	UserLocation: 'user_location',
 	UserLocationUpdatedAt: 'user_location_updated_at',
 	Lists: 'lists',

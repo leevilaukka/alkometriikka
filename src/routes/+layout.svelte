@@ -6,6 +6,7 @@
 	import { dev } from '$app/environment';
 	import { ContextKeys, LocalStorageKeys } from '$lib/utils/constants/app';
 	import {
+		browsePrefs,
 		compareHighlightDifferences,
 		compareProductIds,
 		isMobile,
@@ -102,6 +103,10 @@
 
 	$effect(() => {
 		LocalStorageManager.setItem(LocalStorageKeys.OnlyPreferredStore, $onlyPreferredStore);
+	});
+
+	$effect(() => {
+		LocalStorageManager.setItem(LocalStorageKeys.BrowsePreferences, browsePrefs);
 	});
 
 	$effect(() => {

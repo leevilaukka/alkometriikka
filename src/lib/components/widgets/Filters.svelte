@@ -3,12 +3,13 @@
 	import { twMerge } from 'tailwind-merge';
 	import { components } from '$lib/utils/ui/styles';
 	import { ContextKeys } from '$lib/utils/constants/app';
-	import { filterOptionGroupers, shownFilters as filters } from '$lib/utils/constants/display';
+	import { filterOptionGroupers, shownFilters } from '$lib/utils/constants/display';
 	import { AllColumns } from '$lib/utils/constants/columns';
 	import NumberInput from '../inputs/NumberInput.svelte';
 	import StringInput from '../inputs/StringInput.svelte';
 	import Icon from './Icon.svelte';
-	import { isMobile } from '$lib/global.svelte';
+	import { browsePrefs, isMobile } from '$lib/global.svelte';
+	import { arrangeFilters } from '$lib/utils/user/browsePrefs';
 	import {
 		COMMA_SEPARATED_FILTERS,
 		getNarrowedFilterValues,
@@ -55,8 +56,19 @@
 	let hasRemovedProducts = $derived(
 		kaljakori.data.some((item) => item[AllColumns.RemovedFromSelection] === true)
 	);
+	/** Whether a filter has been changed from its default, e.g. by a link */
+	function hasValue(filter: ColumnNames) {
+		const value = filterValues[filter];
+		if (!Array.isArray(value)) return false;
+		if (kaljakori.getFilterType(filter) !== 'number') return value.length > 0;
+		const [min, max] = kaljakori.getMinAndMaxValues(filter, showRemoved);
+		return value[0] !== min || value[1] !== max;
+	}
+	// The user's own order and choice of filters. A hidden filter stays while it has a value, so
+	// hiding one never leaves a selection nobody can see
+	const filters = $derived(arrangeFilters(shownFilters, browsePrefs, hasValue));
 	let filterActiveState = $state(
-		filters.reduce(
+		shownFilters.reduce(
 			(acc, filter) => {
 				acc[filter] = false;
 				return acc;

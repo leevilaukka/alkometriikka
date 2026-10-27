@@ -6,7 +6,20 @@
 	import type { PageProps, Snapshot } from './$types';
 	import { page } from '$app/state';
 	import { AllColumns } from '$lib/utils/constants/columns';
-	import { watchlist } from '$lib/global.svelte';
+	import {
+		browsePrefs,
+		onlyPreferredStore,
+		preferredStoreId,
+		userLocation,
+		watchlist
+	} from '$lib/global.svelte';
+	import { get } from 'svelte/store';
+	import { resolvePreferredStore } from '$lib/utils/catalog/availability';
+	import { productVisibility } from '$lib/utils/user/browsePrefs';
+	import { requestSettingsTab } from '$lib/utils/app/settings';
+	import { keepAutoLocationFresh } from '$lib/utils/device/location';
+	import { AUTO_STORE_ID } from '$lib/utils/constants/app';
+	import { onMount } from 'svelte';
 	import { readSearchParams } from '$lib/utils/app/compressedParams';
 
 	let { data }: PageProps = $props();
@@ -15,7 +28,11 @@
 	// A store filter from the URL needs store availability, or the list would start out empty,
 	// and showing removed products needs them loaded, or the ranges would leave some out
 	const params = readSearchParams(page.url);
-	const needsStores = params.has(AllColumns.StoreAvailability);
+	// The user's own settings are read once, so changing them doesn't reshuffle a list in view; the
+	// settings dialog reloads the page when they're saved
+	const prefs = $state.snapshot(browsePrefs);
+	const limitToStore = get(onlyPreferredStore) && !!get(preferredStoreId);
+	const needsStores = params.has(AllColumns.StoreAvailability) || limitToStore;
 	const needsRemoved = params.get('removed') === 'true';
 	const ready = $derived(
 		Promise.all([
@@ -23,6 +40,10 @@
 			needsRemoved ? data.alkoWithRemoved : data.alko
 		]).then(([alko]) => alko)
 	);
+
+	onMount(() => {
+		if (limitToStore && get(preferredStoreId) === AUTO_STORE_ID) return keepAutoLocationFresh();
+	});
 
 	// Going back to the list returns to where it was scrolled. Cleared on every navigation so
 	// only back/forward, which restores the snapshot, scrolls it.
@@ -49,8 +70,23 @@
 			availabilityLoaded={alko.availabilityLoaded}
 		/>
 	{/snippet}
+	{@const store = limitToStore
+		? resolvePreferredStore(alko.availability.stores, get(preferredStoreId), get(userLocation))
+		: undefined}
+	{@const visible = productVisibility(
+		prefs,
+		store ? { id: store.id, availability: alko.availability } : undefined
+	)}
+	{#snippet notice()}
+		<span class="text-sm text-secondary">
+			· rajattu asetuksillasi{store ? ` (${store.name})` : ''}.
+			<button class="underline" onclick={() => requestSettingsTab('browsing')}>Muokkaa</button>
+		</span>
+	{/snippet}
 	<Main
 		kaljakori={alko.kaljakori}
+		{visible}
+		notice={visible ? notice : undefined}
 		header={watchlist.length ? header : undefined}
 		{position}
 		bind:this={main}
