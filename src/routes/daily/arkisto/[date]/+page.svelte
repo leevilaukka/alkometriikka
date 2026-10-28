@@ -160,48 +160,65 @@
 		const decimals =
 			metric === 'volume' || metric === 'literPrice' ? 2 : metric === 'alcohol' ? 1 : 0;
 		const formatted = value.toFixed(decimals).replace('.', ',');
-		return metric === 'alcohol'
-			? `${formatted} %`
-			: metric === 'volume'
-				? `${formatted} l`
-				: metric === 'literPrice'
-					? `${formatted} €/l`
-					: metric === 'sugar'
-						? `${formatted} g/l`
-						: `${formatted} kcal/100 ml`;
+		switch (metric) {
+			case 'alcohol':
+				return `${formatted} %`;
+			case 'volume':
+				return `${formatted} l`;
+			case 'literPrice':
+				return `${formatted} €/l`;
+			case 'sugar':
+				return `${formatted} g/l`;
+			case 'energy':
+				return `${formatted} kcal/100 ml`;
+		}
 	}
 
 	function pairTitle(currentQuestion: Question) {
-		if (currentQuestion.type === 'cheaper') return 'Kumpi tuote on halvempi?';
-		if (currentQuestion.type === 'efficiency')
-			return 'Kummasta saat enemmän puhdasta alkoholia eurolla?';
-		if (currentQuestion.type === 'attribute') return attributeTitle(currentQuestion.metric);
-		if (currentQuestion.type === 'price') return 'Paljonko tämä tuote maksaa?';
-		if (currentQuestion.type === 'estimate') return 'Arvaa tuotteen hinta';
-		return 'Kumpi tuote on halvempi?';
+		switch (currentQuestion.type) {
+			case 'cheaper':
+				return 'Kumpi tuote on halvempi?';
+			case 'efficiency':
+				return 'Kummasta saat enemmän puhdasta alkoholia eurolla?';
+			case 'attribute':
+				return attributeTitle(currentQuestion.metric);
+			case 'price':
+				return 'Paljonko tämä tuote maksaa?';
+			case 'estimate':
+				return 'Arvaa tuotteen hinta';
+			case 'choice':
+				return choiceTitle(currentQuestion.field);
+		}
 	}
 
 	function choiceTitle(field: 'country' | 'manufacturer' | 'category') {
-		return field === 'country'
-			? 'Mistä maasta tämä tuote on?'
-			: field === 'manufacturer'
-				? 'Kuka valmistaa tämän tuotteen?'
-				: 'Mihin kategoriaan tämä tuote kuuluu?';
+		switch (field) {
+			case 'country':
+				return 'Mistä maasta tämä tuote on?';
+			case 'manufacturer':
+				return 'Kuka valmistaa tämän tuotteen?';
+			case 'category':
+				return 'Mihin kategoriaan tämä tuote kuuluu?';
+		}
 	}
 
 	function correctAnswerLabel(currentQuestion: Question) {
-		if (currentQuestion.type === 'price') return price(currentQuestion.correctPrice);
-		if (currentQuestion.type === 'cheaper')
-			return `Halvempi: ${productName(currentQuestion.correctProductId)}`;
-		if (currentQuestion.type === 'efficiency')
-			return `Enemmän alkoholia/euro: ${productName(currentQuestion.correctProductId)}`;
-		if (currentQuestion.type === 'attribute')
-			return `${productName(currentQuestion.correctProductId)}, ${attributeValueLabel(
-				currentQuestion.metric,
-				currentQuestion.values[currentQuestion.correctProductId]
-			)}`;
-		if (currentQuestion.type === 'choice') return currentQuestion.correctValue;
-		return price(currentQuestion.correctPrice);
+		switch (currentQuestion.type) {
+			case 'price':
+			case 'estimate':
+				return price(currentQuestion.correctPrice);
+			case 'cheaper':
+				return `Halvempi: ${productName(currentQuestion.correctProductId)}`;
+			case 'efficiency':
+				return `Enemmän alkoholia/euro: ${productName(currentQuestion.correctProductId)}`;
+			case 'attribute':
+				return `${productName(currentQuestion.correctProductId)}, ${attributeValueLabel(
+					currentQuestion.metric,
+					currentQuestion.values[currentQuestion.correctProductId]
+				)}`;
+			case 'choice':
+				return currentQuestion.correctValue;
+		}
 	}
 
 	function updateRun(patch: Partial<ArchiveRunState>) {

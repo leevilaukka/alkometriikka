@@ -84,16 +84,19 @@ export type DatasetIndex = {
 
 export const DATASET_INDEX_VERSION = 1;
 
+/** A value a column can take in the possible-values index. */
+type ColumnValue = string | number;
+
 type ValueIndex = {
-	possibleValues: Record<string, Set<any>>;
-	possibleValuesActive: Record<string, Set<any>>;
+	possibleValues: Record<string, Set<ColumnValue>>;
+	possibleValuesActive: Record<string, Set<ColumnValue>>;
 	columnTypes: Record<string, ColumnType>;
 	minAndMaxValues: ([number, number] | null)[];
 	minAndMaxValuesActive: ([number, number] | null)[];
 };
 
 const NUMBER_VALUE_REGEX = /^(?:0|[1-9]\d*)(?:\.\d+)?(?:\s*l)?$/;
-const isNumber = (value: any) => NUMBER_VALUE_REGEX.test(String(value));
+const isNumber = (value: unknown) => NUMBER_VALUE_REGEX.test(String(value));
 
 /** Capitalizes the first character. Only the first code point is lowercased before
  * upper-casing it, which gives the same result as lowercasing the whole string. */
@@ -114,15 +117,15 @@ class EmptySet extends Set<never> {
 		throw new Error('The shared empty set is read-only');
 	}
 }
-const EMPTY_SET: Set<any> = new EmptySet();
+const EMPTY_SET: Set<ColumnValue> = new EmptySet();
 
 /** Adds a column value to a possible-values bucket: numbers, non-empty strings and set members. */
-function collectValue(bucket: Set<any>, value: unknown) {
+function collectValue(bucket: Set<ColumnValue>, value: unknown) {
 	if (typeof value === 'number' || (typeof value === 'string' && value.length)) bucket.add(value);
 	else if (value instanceof Set) for (const member of value) bucket.add(member);
 }
 
-function sortedSet(values: Iterable<any>) {
+function sortedSet(values: Iterable<ColumnValue>) {
 	return new Set([...values].sort());
 }
 
@@ -130,10 +133,10 @@ function sortedSet(values: Iterable<any>) {
  * `values`, ordered as by `sortedSet`, with `extra` added in the same order. Merges rather than
  * sorting everything again: the default sort compares values as strings, and so does this.
  */
-function mergeSorted(values: Set<any>, extra: Set<any>) {
+function mergeSorted(values: Set<ColumnValue>, extra: Set<ColumnValue>) {
 	const added = [...extra].filter((value) => !values.has(value)).sort();
 	if (!added.length) return values;
-	const merged = new Set<any>();
+	const merged = new Set<ColumnValue>();
 	let next = 0;
 	for (const value of values) {
 		const text = String(value);
@@ -144,12 +147,12 @@ function mergeSorted(values: Set<any>, extra: Set<any>) {
 	return merged;
 }
 
-function minAndMax(values: Set<any>): [number, number] {
+function minAndMax(values: Set<ColumnValue>): [number, number] {
 	let min = Infinity;
 	let max = -Infinity;
 	for (const value of values) {
-		min = Math.min(min, value);
-		max = Math.max(max, value);
+		min = Math.min(min, Number(value));
+		max = Math.max(max, Number(value));
 	}
 	return [min, max];
 }
@@ -240,7 +243,7 @@ export class Kaljakori {
 	private valueIndex: ValueIndex | undefined;
 	private productVariants: ProductVariantIndex | undefined;
 	private categoryTree: CategoryNode[] | undefined;
-	private subValuesCache: Record<string, Record<string, Set<any>>> | undefined;
+	private subValuesCache: Record<string, Record<string, Set<ColumnValue>>> | undefined;
 	/**
 	 * Each product's category page slugs from its raw Tyyppi and Alatyyppi, as the prerendered
 	 * category pages group them (`Alatyyppi` here has no fallback to the beer or main type).
@@ -294,7 +297,8 @@ export class Kaljakori {
 				return Kind.String;
 			if (columnsHandledAsSet.includes(key as (typeof columnsHandledAsSet)[number]))
 				return Kind.Set;
-			if (undefinedToZeroColumns.includes(key as any)) return Kind.OtherZero;
+			if (undefinedToZeroColumns.includes(key as (typeof undefinedToZeroColumns)[number]))
+				return Kind.OtherZero;
 			return Kind.Other;
 		});
 
@@ -495,7 +499,7 @@ export class Kaljakori {
 		this.changeUpdate?.();
 	}
 
-	private computeDrunkValues(item: any, info: Pick<PersonalInfo, 'gender' | 'weight'>) {
+	private computeDrunkValues(item: PriceListItem, info: Pick<PersonalInfo, 'gender' | 'weight'>) {
 		return calculateDrunkValue(
 			item[AllColumns.BottleSize],
 			item[AllColumns.AlcoholPercentage],
@@ -607,8 +611,8 @@ export class Kaljakori {
 				possibleValuesActive[column] = active;
 				continue;
 			}
-			const all = new Set<any>();
-			const active = new Set<any>();
+			const all = new Set<ColumnValue>();
+			const active = new Set<ColumnValue>();
 			for (const item of added) {
 				collectValue(all, item[column]);
 				if (item[AllColumns.RemovedFromSelection] !== true) collectValue(active, item[column]);
@@ -621,8 +625,8 @@ export class Kaljakori {
 
 	/** Column types and number ranges from the possible values */
 	private withTypesAndRanges(
-		possibleValues: Record<string, Set<any>>,
-		possibleValuesActive: Record<string, Set<any>>
+		possibleValues: Record<string, Set<ColumnValue>>,
+		possibleValuesActive: Record<string, Set<ColumnValue>>
 	): ValueIndex {
 		const columns = this.filters;
 		// Get column type by getting the type of the first value in the possible values set
@@ -635,7 +639,7 @@ export class Kaljakori {
 			})
 		);
 
-		const ranges = (source: Record<string, Set<any>>, allowEmpty: boolean) =>
+		const ranges = (source: Record<string, Set<ColumnValue>>, allowEmpty: boolean) =>
 			columns.map((column) => {
 				if (columnTypes[column] !== 'number') return null;
 				if (column === AllColumns.SortingCode) return null;
@@ -658,8 +662,8 @@ export class Kaljakori {
 		if (this.valueIndex && this.valueIndexVersion !== version) {
 			this.valueIndexVersion = version;
 			const column = AllColumns.StoreAvailability;
-			const active = new Set<any>();
-			const removed = new Set<any>();
+			const active = new Set<ColumnValue>();
+			const removed = new Set<ColumnValue>();
 			for (const item of this.data)
 				collectValue(
 					item[AllColumns.RemovedFromSelection] === true ? removed : active,
@@ -681,15 +685,15 @@ export class Kaljakori {
 		// availability have hundreds of thousands of product/value pairs but only
 		// a few hundred unique values. Active and removed products go into separate
 		// sets, merged afterwards, so each value is only added once.
-		const active = scanned.map(() => new Set<any>());
-		const removed = scanned.map(() => new Set<any>());
+		const active = scanned.map(() => new Set<ColumnValue>());
+		const removed = scanned.map(() => new Set<ColumnValue>());
 		for (const item of this.data) {
 			const target = item[AllColumns.RemovedFromSelection] === true ? removed : active;
 			for (let col = 0; col < scanned.length; col++) collectValue(target[col], item[scanned[col]]);
 		}
 
-		const possibleValues: Record<string, Set<any>> = {};
-		const possibleValuesActive: Record<string, Set<any>> = {};
+		const possibleValues: Record<string, Set<ColumnValue>> = {};
+		const possibleValuesActive: Record<string, Set<ColumnValue>> = {};
 		scanned.forEach((column, idx) => {
 			possibleValues[column] = sortedSet(new Set([...active[idx], ...removed[idx]]));
 			possibleValuesActive[column] = sortedSet(active[idx]);
@@ -727,15 +731,16 @@ export class Kaljakori {
 	/** Sub-category values seen under each parent value, e.g. the subtypes of each type. */
 	get subValues() {
 		if (this.subValuesCache) return this.subValuesCache;
-		const subValues: Record<string, Record<string, Set<any>>> = {};
+		const subValues: Record<string, Record<string, Set<ColumnValue>>> = {};
 		for (const item of this.data) {
 			for (const key of Object.keys(subCategoryMap)) {
-				const value = item[key as keyof PriceListItem] as any;
+				const value = String(item[key as keyof PriceListItem]);
 				subValues[key] ??= {};
 				subValues[key][value] ??= new Set();
 				const subvalue =
 					item[subCategoryMap[key as keyof typeof subCategoryMap] as keyof PriceListItem];
-				if (subvalue && subvalue.toString().trim().length) subValues[key][value].add(subvalue);
+				if (subvalue && subvalue.toString().trim().length)
+					subValues[key][value].add(subvalue.toString());
 			}
 		}
 		return (this.subValuesCache = subValues);
@@ -845,19 +850,6 @@ export class Kaljakori {
 		return this.data.sort((a, b) => {
 			if (a[key] < b[key]) return ascending ? -1 : 1;
 			if (a[key] > b[key]) return ascending ? 1 : -1;
-			return 0;
-		});
-	}
-
-	sortByNested(key: ColumnNames, nestedKey: string, ascending: boolean = true) {
-		if (!nestedKey) {
-			return this.sortBy(key, ascending);
-		}
-		return this.data.sort((a, b) => {
-			// @ts-ignore
-			if (a[key][nestedKey] < b[key][nestedKey]) return ascending ? -1 : 1;
-			// @ts-ignore
-			if (a[key][nestedKey] > b[key][nestedKey]) return ascending ? 1 : -1;
 			return 0;
 		});
 	}

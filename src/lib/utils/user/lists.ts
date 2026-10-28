@@ -24,19 +24,10 @@ export function deleteList(list: ListObj) {
 	lists.splice(lists.indexOf(list), 1);
 }
 
-export function updateListName(list: ListObj, newName: string) {
-	list.name = newName;
-}
-
 export function getListItem(list: ListObj, itemNumber: string) {
 	const item = list.items.find((i) => i.id === itemNumber);
 	if (item) return item;
 	return null;
-}
-
-export function setQuantity(list: ListObj, itemNumber: string, newQuantity: number) {
-	const item = list.items.find((i) => i.id === itemNumber);
-	if (item) item.q = newQuantity;
 }
 
 export function updateQuantity(list: ListObj, itemNumber: string, delta: number) {
@@ -51,19 +42,8 @@ export function getItemQuantity(list: ListObj, itemNumber: string) {
 	return list.items.find((i) => i.id === itemNumber)?.q || 0;
 }
 
-export function getListTimestamp(list: ListObj) {
-	const timestamp = list ? parseInt(list.id.split('-')[0]) : null;
-	return timestamp ? new Date(timestamp) : null;
-}
-
-export function isInList(list: ListObj, itemNumber: string) {
+function isInList(list: ListObj, itemNumber: string) {
 	return list ? list.items.some((item) => item.id === itemNumber) : false;
-}
-
-export function inLists(itemNumber: string) {
-	return lists
-		.filter((list) => list.items.some((item) => item.id === itemNumber))
-		.map((list) => list.id);
 }
 
 export function addToList(list: ListObj, itemNumber: string) {
@@ -82,7 +62,7 @@ export function listToURI(list: ListObj) {
 	return compressToEncodedURIComponent(JSON.stringify(list));
 }
 
-export function URIToList(uri: string): ListObj | null {
+function URIToList(uri: string): ListObj | null {
 	try {
 		const decoded = JSON.parse(decompressFromEncodedURIComponent(uri));
 		return Array.isArray(decoded.items) ? decoded : null;
@@ -98,7 +78,7 @@ export function validateListFromURI(uri: string) {
 	return isValidList(list);
 }
 
-export function isValidList(list: ListObj): list is ListObj {
+function isValidList(list: ListObj): list is ListObj {
 	// Check if all required fields are present
 	const requiredFields = ['id', 'name', 'items'];
 	for (const field of requiredFields) {

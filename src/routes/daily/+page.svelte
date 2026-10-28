@@ -147,17 +147,18 @@
 		const decimals =
 			metric === 'volume' || metric === 'literPrice' ? 2 : metric === 'alcohol' ? 1 : 0;
 		const formatted = value.toFixed(decimals).replace('.', ',');
-		return metric === 'alcohol'
-			? `${formatted} %`
-			: metric === 'volume'
-				? `${formatted} l`
-				: metric === 'literPrice'
-					? `${formatted} €/l`
-					: metric === 'sugar'
-						? `${formatted} g/l`
-						: metric === 'energy'
-							? `${formatted} kcal/100 ml`
-							: `${formatted} merkintää`;
+		switch (metric) {
+			case 'alcohol':
+				return `${formatted} %`;
+			case 'volume':
+				return `${formatted} l`;
+			case 'literPrice':
+				return `${formatted} €/l`;
+			case 'sugar':
+				return `${formatted} g/l`;
+			case 'energy':
+				return `${formatted} kcal/100 ml`;
+		}
 	}
 
 	function choiceTitle(field: 'country' | 'manufacturer' | 'category') {
@@ -180,15 +181,17 @@
 	}
 
 	function correctAnswerText(currentQuestion: Question) {
-		if (
-			currentQuestion.type === 'cheaper' ||
-			currentQuestion.type === 'efficiency' ||
-			currentQuestion.type === 'attribute'
-		)
-			return productName(currentQuestion.correctProductId);
-		if (currentQuestion.type === 'choice') return currentQuestion.correctValue;
-		if (currentQuestion.type === 'price') return price(currentQuestion.correctPrice);
-		return price(currentQuestion.correctPrice);
+		switch (currentQuestion.type) {
+			case 'cheaper':
+			case 'efficiency':
+			case 'attribute':
+				return productName(currentQuestion.correctProductId);
+			case 'choice':
+				return currentQuestion.correctValue;
+			case 'price':
+			case 'estimate':
+				return price(currentQuestion.correctPrice);
+		}
 	}
 
 	function initialize(catalog: PriceListItem[]) {
@@ -527,10 +530,18 @@
 
 	function isCorrect(value: string | number) {
 		if (!question) return false;
-		if (question.type === 'price') return Number(value) === question.correctPrice;
-		if (question.type === 'estimate') return false;
-		if (question.type === 'choice') return value === question.correctValue;
-		return value === question.correctProductId;
+		switch (question.type) {
+			case 'price':
+				return Number(value) === question.correctPrice;
+			case 'estimate':
+				return false;
+			case 'choice':
+				return value === question.correctValue;
+			case 'cheaper':
+			case 'efficiency':
+			case 'attribute':
+				return value === question.correctProductId;
+		}
 	}
 
 	function estimateWasExact() {

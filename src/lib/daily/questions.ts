@@ -153,12 +153,18 @@ function textValue(product: PriceListItem, column: string): string | null {
 }
 
 function attributeValue(product: PriceListItem, metric: AttributeMetric): number | null {
-	if (metric === 'alcohol') return getAlcoholPercentage(product);
-	if (metric === 'volume') return getVolume(product);
-	if (metric === 'literPrice') return positiveNumber(product[AllColumns.PricePerLiter]);
-	if (metric === 'sugar') return positiveNumber(product[AllColumns.Sugar]);
-	if (metric === 'energy') return positiveNumber(product[AllColumns.Energy]);
-	return null;
+	switch (metric) {
+		case 'alcohol':
+			return getAlcoholPercentage(product);
+		case 'volume':
+			return getVolume(product);
+		case 'literPrice':
+			return positiveNumber(product[AllColumns.PricePerLiter]);
+		case 'sugar':
+			return positiveNumber(product[AllColumns.Sugar]);
+		case 'energy':
+			return positiveNumber(product[AllColumns.Energy]);
+	}
 }
 
 export function generateDailyGame(
@@ -350,14 +356,6 @@ export function generateDailyGame(
 	while (questions.length < DAILY_QUESTION_COUNT && validProducts.length) addPrice();
 
 	return { version: DAILY_GAME_VERSION, date, questions };
-}
-
-export function productForQuestion(
-	question: Question,
-	products: readonly PriceListItem[],
-	id: string
-) {
-	return products.find((product) => product[AllColumns.Number] === id);
 }
 
 export { pureAlcoholPerEuro };

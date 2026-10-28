@@ -1,4 +1,4 @@
-import { AllColumns, subCategoryMap } from '../constants/columns';
+import { AllColumns } from '../constants/columns';
 import type { ColumnNames, PriceListItem } from '../../types';
 
 /** A single histogram bin, labelled with the bucket's lower / upper bound. */
@@ -25,85 +25,17 @@ export type StatsSummary = {
 };
 
 /** Products that are still part of the current selection. */
-export function activeProducts(items: PriceListItem[]) {
+function activeProducts(items: PriceListItem[]) {
 	const removed = AllColumns.RemovedFromSelection as keyof PriceListItem;
 	return items.filter((item) => !item[removed]);
 }
 
 /** Products that are still in the selection with a matching category column. */
-export function withCategory(items: PriceListItem[], key: ColumnNames) {
+function withCategory(items: PriceListItem[], key: ColumnNames) {
 	return activeProducts(items).filter((item) => {
 		const value = item[key];
 		return typeof value === 'string' && value.trim().length > 0;
 	});
-}
-
-/**
- * Groups products into `targetBinCount` roughly equal-width bins. Bin widths are
- * rounded to a "nice" step (1-2-5 × powers of 10) so axis labels stay readable.
- *
- * When `maxValue` is provided, the distribution is clamped to that bound and the
- * widest bin is labelled "…" to absorb every value above it. Use this for skewed
- * data (e.g. prices) so a handful of extreme products doesn't flatten the chart.
- */
-export function histogram(
-	items: PriceListItem[],
-	key: ColumnNames,
-	targetBinCount = 25,
-	maxValue?: number
-): HistogramBin[] {
-	const values = items
-		.map((item) => Number(item[key]))
-		.filter((value) => Number.isFinite(value) && value >= 0);
-
-	if (values.length === 0) return [];
-
-	const clippedMax = maxValue ?? Infinity;
-	const min = Math.min(...values);
-	const max = Math.min(clippedMax, Math.max(...values));
-	if (max === min)
-		return [
-			{
-				label: clippedMax < min ? '…' : formatFinNumber(min),
-				from: min,
-				to: max,
-				count: values.length,
-				isTail: clippedMax < min
-			}
-		];
-
-	const rawStep = (max - min) / (clippedMax === Infinity ? targetBinCount : targetBinCount - 1);
-	const magnitude = Math.pow(10, Math.floor(Math.log10(rawStep)));
-	const step = niceStep(rawStep, magnitude);
-
-	const start = Math.max(min, Math.floor(min / step) * step);
-	const bins: HistogramBin[] = [];
-	for (let from = start; from < max; from += step) {
-		const isTail = from + step >= max && clippedMax !== Infinity;
-		bins.push({
-			label: isTail ? '…' : formatFinNumber(from),
-			from,
-			to: from + step,
-			count: 0,
-			isTail
-		});
-	}
-
-	for (const value of values) {
-		const index = Math.min(bins.length - 1, Math.floor((value - start) / step));
-		bins[index].count++;
-	}
-
-	return bins;
-}
-
-/** Nearest "nice" step (1-2-2.5-5-10 × powers of ten) that is >= rawStep. */
-function niceStep(rawStep: number, magnitude: number): number {
-	const steps = [1, 2, 2.5, 5, 10];
-	for (const step of steps) {
-		if (step * magnitude >= rawStep) return step * magnitude;
-	}
-	return 10 * magnitude;
 }
 
 /**
@@ -176,44 +108,6 @@ export function topCategories(
 	return top;
 }
 
-/**
- * Resolves a product's place in the Type -> SubType -> BeerType hierarchy,
- * falling back to the best available ancestor when a level is "Ei määritelty".
- */
-export function resolveSubcategory(item: PriceListItem): string {
-	const type = item[AllColumns.Type] as string | undefined;
-	const defaultLabel = 'Ei määritelty';
-
-	if (typeof type === 'string' && type !== defaultLabel) {
-		const parent = subCategoryMap[AllColumns.Type];
-		if (!parent) return type;
-
-		const sub = (item[parent] as string | undefined) ?? '';
-		if (sub !== defaultLabel && sub.length > 0) {
-			const grandparent = subCategoryMap[parent as keyof typeof subCategoryMap];
-			if (!grandparent) return sub;
-
-			const leaf = (item[grandparent] as string | undefined) ?? '';
-			if (leaf !== defaultLabel && leaf.length > 0) return leaf;
-			return sub;
-		}
-		return type;
-	}
-
-	const sub = (item[AllColumns.SubType] as string | undefined) ?? '';
-	if (typeof sub === 'string' && sub !== defaultLabel && sub.length > 0) {
-		const grandparent = subCategoryMap[AllColumns.SubType];
-		if (!grandparent) return sub;
-
-		const leaf = (item[grandparent] as string | undefined) ?? '';
-		if (leaf !== defaultLabel && leaf.length > 0) return leaf;
-		return sub;
-	}
-
-	const beerType = (item[AllColumns.BeerType] as string | undefined) ?? '';
-	return typeof beerType === 'string' && beerType.trim().length > 0 ? beerType : defaultLabel;
-}
-
 /** Aggregates products by their real subcategory (e.g. "punaviinit").
  * Products that only carry a taste descriptor (Alko stores styles like
  * "Pirteä & hedelmäinen" in the subcategory column) are grouped under
@@ -225,21 +119,6 @@ export function subcategoryDistribution(items: PriceListItem[]): CategoryDistrib
 		if (sub.length === 0 || sub === 'Ei määritelty') continue;
 		const key = sub.includes('&') || sub.includes('–') ? 'Makuominaisuus' : sub;
 		counts.set(key, (counts.get(key) ?? 0) + 1);
-	}
-	return [...counts.entries()]
-		.map(([key, count]) => ({ key, count }))
-		.sort((a, b) => b.count - a.count || a.key.localeCompare(b.key, 'fi'));
-}
-
-/** Aggregates products by their real subcategory (e.g. punaviinit). Does not
- * use the taste descriptor column. */
-
-/** Aggregates products by their real subcategory label. */
-export function categoryHierarchyDistribution(items: PriceListItem[]): CategoryDistribution {
-	const counts = new Map<string, number>();
-	for (const item of withCategory(items, AllColumns.Type)) {
-		const value = resolveSubcategory(item);
-		counts.set(value, (counts.get(value) ?? 0) + 1);
 	}
 	return [...counts.entries()]
 		.map(([key, count]) => ({ key, count }))

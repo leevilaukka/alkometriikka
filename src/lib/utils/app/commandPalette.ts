@@ -53,7 +53,7 @@ export type RankedEntry<T> = { value: T; score: number };
 
 const SECONDARY_KEY_WEIGHT = 0.7;
 
-export function scoreEntry<T>(query: string, entry: SearchEntry<T>): number {
+function scoreEntry<T>(query: string, entry: SearchEntry<T>): number {
 	let best = 0;
 	entry.keys.forEach((key, i) => {
 		const score = matchScore(query, key) * (i === 0 ? 1 : SECONDARY_KEY_WEIGHT);

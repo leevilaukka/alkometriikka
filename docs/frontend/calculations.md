@@ -97,7 +97,7 @@ percentile so a few extreme bottles don't flatten it; values outside are counted
 `pickCategoryHighlights` picks up to four products for the category's "compare highlights" link:
 most alcohol per euro, cheapest, lowest price per litre, then the next best by alcohol per euro.
 
-`src/lib/utils/stats/stats.ts` has the whole-catalog equivalents used by `/tilastot`: banded histograms
+`src/lib/utils/stats/stats.ts` has the whole-catalog equivalents used by `/tilastot`: banded distributions
 (price, price per litre, ABV), category/subcategory/country distributions, summary totals, and
 the best-value ranking.
 
