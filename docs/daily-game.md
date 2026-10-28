@@ -44,7 +44,7 @@ at `/daily/<YYYY-MM-DD>.json`:
 
 ```jsonc
 {
-	"version": 7, // DAILY_GAME_VERSION
+	"version": 8, // DAILY_GAME_VERSION
 	"date": "2026-10-13",
 	"seed": "9f2c…", // 16 random bytes, hex
 	"gameHash": "a41b…", // SHA-256 of the canonical game JSON

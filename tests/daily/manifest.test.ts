@@ -54,7 +54,7 @@ describe('daily game manifest', () => {
 
 	it('bakes a manifest that rebuilds to the exact hashed game', async () => {
 		const manifest: DailyGameManifest = await generateDailyGameManifest('2026-09-22', products);
-		expect(manifest.version).toBe(7);
+		expect(manifest.version).toBe(8);
 		expect(manifest.date).toBe('2026-09-22');
 		expect(manifest.seed.length).toBeGreaterThan(0);
 		expect(manifest.products.length).toBe(5);

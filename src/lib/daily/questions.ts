@@ -15,7 +15,7 @@ export const DAILY_QUESTION_COUNT = 7;
  * - until fetchData re-bakes (right after the build), clients reject the old
  *   manifests and show an error.
  */
-export const DAILY_GAME_VERSION = 7;
+export const DAILY_GAME_VERSION = 8;
 
 export type PriceQuestion = {
 	type: 'price';
@@ -280,25 +280,44 @@ export function generateDailyGame(
 		});
 		return true;
 	};
+	// Tyyppi is mixed-level: most rows hold a top-level value ("Viinit") with the fine-grained label
+	// in Alatyyppi, while others hold the fine-grained label ("valkoviinit") in Tyyppi itself.
+	// Questions use the fine-grained label so the options are all at the same level.
+	const isTopLevel = (value: string) => value[0] !== value[0].toLowerCase();
+	const categoryParents = new Map<string, string>();
+	const categoryOf = (product: PriceListItem) => {
+		const type = textValue(product, AllColumns.Type);
+		if (!type) return null;
+		if (!isTopLevel(type)) return type.toLowerCase();
+		const sub = textValue(product, AllColumns.SubType)?.toLowerCase() ?? null;
+		if (sub) categoryParents.set(sub, type);
+		return sub;
+	};
 	const addChoice = (field: ChoiceField) => {
+		const isCategory = field === 'category';
 		const column =
 			field === 'country'
 				? AllColumns.Country
 				: field === 'manufacturer'
 					? AllColumns.Manufacturer
 					: AllColumns.Type;
-		const candidates = validProducts.filter((product) => textValue(product, column));
+		const valueOf = (product: PriceListItem) =>
+			isCategory ? categoryOf(product) : textValue(product, column);
+		const candidates = validProducts.filter((product) => valueOf(product));
 		if (!candidates.length) return false;
 		const product = pickProduct(candidates);
-		const correctValue = textValue(product, column)!;
+		const correctValue = valueOf(product)!;
 		const allValues = [
-			...new Set(
-				candidates
-					.map((item) => textValue(item, column))
-					.filter((value): value is string => Boolean(value))
-			)
+			...new Set(candidates.map(valueOf).filter((value): value is string => Boolean(value)))
 		];
-		const options = [correctValue, ...allValues.filter((value) => value !== correctValue)];
+		let others = allValues.filter((value) => value !== correctValue);
+		if (isCategory) {
+			// Prefer distractors from the same family (wine vs wine) so it isn't a giveaway.
+			const parent = categoryParents.get(correctValue);
+			const family = (value: string) => (categoryParents.get(value) === parent ? 0 : 1);
+			if (parent) others = shuffle(others, random).sort((a, b) => family(a) - family(b));
+		}
+		const options = [correctValue, ...others];
 		if (options.length < 2) return false;
 		remember(product);
 		questions.push({
