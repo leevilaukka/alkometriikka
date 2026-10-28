@@ -48,7 +48,7 @@
 
 <div
 	class={twMerge(
-		'relative @container flex flex-col overflow-clip rounded border border-primary bg-primary'
+		'@container relative flex flex-col overflow-clip rounded border border-primary bg-primary'
 	)}
 >
 	<!-- Pages can attach a tab to the card's left edge (its top on phones), e.g. the price change on /hinnanmuutokset -->
@@ -57,7 +57,9 @@
 			{@render renderAside()}
 		{/if}
 		<div
-			class={twMerge('flex min-w-0 flex-1 flex-col flex-nowrap items-center gap-4 p-4 @4xl:flex-row')}
+			class={twMerge(
+				'flex min-w-0 flex-1 flex-col flex-nowrap items-center gap-4 p-4 @4xl:flex-row'
+			)}
 		>
 			<div
 				class="flex aspect-square w-40 max-w-[10rem] shrink-0 rounded bg-white p-2 @4xl:h-full @4xl:w-auto @4xl:max-w-fit"
@@ -124,7 +126,10 @@
 							</span>
 						{/if}
 						<span class="text-sm text-secondary">
-							({formatValue(product[AllColumns.PricePerLiter], AllColumns.PricePerLiter)}{perServing})
+							({formatValue(
+								product[AllColumns.PricePerLiter],
+								AllColumns.PricePerLiter
+							)}{perServing})
 						</span>
 					</div>
 					<BadgeList item={product} fit class="@4xl:flex-1" />

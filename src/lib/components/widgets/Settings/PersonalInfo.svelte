@@ -47,7 +47,9 @@
 			step="0.1"
 		/>
 		{#if !weightOK}
-			<p id="personal-weight-error" class="text-xs text-red-600">Painon tulee olla suurempi kuin 1 kg tai tyhjä.</p>
+			<p id="personal-weight-error" class="text-xs text-red-600">
+				Painon tulee olla suurempi kuin 1 kg tai tyhjä.
+			</p>
 		{/if}
 	</div>
 </div>

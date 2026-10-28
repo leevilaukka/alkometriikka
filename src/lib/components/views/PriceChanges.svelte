@@ -402,7 +402,8 @@
 	>
 		<span class="flex items-center gap-1.5 @4xl:flex-col @4xl:gap-1">
 			<span class="@4xl:text-2xl"><Icon name={cheaper ? 'trending_down' : 'trending_up'} /></span>
-			<strong class="leading-tight @4xl:text-3xl">{formatPriceChangePercent(change.percent)}</strong>
+			<strong class="leading-tight @4xl:text-3xl">{formatPriceChangePercent(change.percent)}</strong
+			>
 		</span>
 		<span class="font-semibold">{formatPriceChangeAmount(change)}</span>
 		<span class="@4xl:text-xs">oli {formatValue(change.from, AllColumns.Price)}</span>
