@@ -13,6 +13,13 @@ All three are loaded from `src/app.html`:
 | Simple Analytics         | `scripts.simpleanalyticscdn.com/latest.js`     | Plus `static/scripts/simpleanalytics/auto-events.js`, a local copy of their auto-events script for outbound links, email links and downloads (see [Outbound links](#outbound-links)) |
 | Cloudflare Web Analytics | `static.cloudflareinsights.com/beacon.min.js`  | Page loads and web vitals                                                                                                                                                            |
 
+An inline script before the Umami tag sets its `data-before-send` hook. When the browser says it is
+automated (`navigator.webdriver` or a `Headless` user agent), Umami hits are dropped and
+`recorder.js` isn't loaded. Every other hit gets a `tag` with the browser's time zone, plus any
+weaker automation hints (`no-window`, `no-languages`). Proxy bots rarely match their time zone to
+their exit IP, so a tag such as `America/New_York` on a Finnish session points to a bot. Compare
+them via the tag breakdown with a country filter.
+
 In `vite dev`, the layout sets `localStorage['umami.disabled'] = '1'` and `sendAnalyticsEvent`
 only logs to the console, so local work never reaches the dashboards.
 
