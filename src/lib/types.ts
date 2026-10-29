@@ -291,7 +291,7 @@ export type AnalyticsEventMap = {
 	click_feed: { feed: RSSFeed; location: string };
 	/** One per filtering session, with the selection of each active filter under its column name. */
 	filters_used: {
-		source: 'products' | 'list';
+		source: 'products' | 'list' | 'stats';
 		exit: 'product' | 'navigate' | 'hidden';
 		filters: string[];
 		filter_count: number;
