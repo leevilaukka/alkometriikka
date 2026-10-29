@@ -26,6 +26,8 @@ type LocalStorageValueMap = {
 	[LocalStorageKeys.ViewedShares]: string[];
 	[LocalStorageKeys.CompareProducts]: string[];
 	[LocalStorageKeys.CompareHighlightDifferences]: boolean;
+	/** Ids of the sidebars folded into a strip, see `FoldableSidebar` */
+	[LocalStorageKeys.FoldedSidebars]: string[];
 	[LocalStorageKeys.Watchlist]: WatchedProduct[];
 	[LocalStorageKeys.PunchDraft]: PunchRecipe;
 	[LocalStorageKeys.PunchRecipes]: SavedPunch[];

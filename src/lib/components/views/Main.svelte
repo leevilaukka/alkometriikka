@@ -33,18 +33,22 @@
 	import ProductPreview from '../widgets/ProductPreview.svelte';
 	import BottomBar from '../widgets/BottomBar.svelte';
 	import FilterButton from '../widgets/FilterButton.svelte';
+	import FoldableSidebar from '../widgets/FoldableSidebar.svelte';
 
 	const {
 		kaljakori,
 		header,
 		footer,
 		showFilters = true,
+		title,
 		position
 	}: {
 		kaljakori: Kaljakori;
 		header?: Snippet;
 		footer?: Snippet;
 		showFilters?: boolean;
+		/** The page's name, shown on the header sidebar while it's folded */
+		title?: string;
 		/** Where to scroll the list to, e.g. one saved by `currentPosition` before leaving the page */
 		position?: ListPosition;
 	} = $props();
@@ -225,11 +229,16 @@
 	class={twMerge(
 		'relative grid h-full max-h-full overflow-hidden',
 		showFilters ? 'grid-cols-[auto_1fr]' : 'bg-secondary',
-		!showFilters && (sidebarHeader ? 'grid-cols-[20rem_1fr]' : 'grid-cols-1')
+		!showFilters && (sidebarHeader ? 'grid-cols-[auto_1fr]' : 'grid-cols-1')
 	)}
 >
 	{#if sidebarHeader}
-		<aside class="flex max-h-full flex-col overflow-hidden border-e border-primary bg-primary">
+		<FoldableSidebar
+			id="category"
+			{title}
+			label="sivupalkki"
+			class="flex max-h-full w-80 flex-col overflow-hidden border-e border-primary bg-primary"
+		>
 			<div class="flex flex-auto flex-col gap-3 overflow-y-auto p-4">
 				{@render header?.()}
 			</div>
@@ -238,10 +247,14 @@
 					{@render footer()}
 				</div>
 			{/if}
-		</aside>
+		</FoldableSidebar>
 	{/if}
 	{#if showFilters}
-		<aside
+		<FoldableSidebar
+			id="filters"
+			title={activeFilters.length ? `Suodattimet (${activeFilters.length})` : 'Suodattimet'}
+			label="suodattimet"
+			foldable={!$isMobile}
 			class="z-10 flex h-full max-h-full flex-col overflow-hidden border-primary md:w-84 md:border-r"
 		>
 			<a
@@ -257,7 +270,7 @@
 				bind:this={filtersComponent}
 				resultCount={rows.length}
 			/>
-		</aside>
+		</FoldableSidebar>
 	{/if}
 	<!-- Without the filter sidebar, match the product page's width so rows don't stretch -->
 	<div

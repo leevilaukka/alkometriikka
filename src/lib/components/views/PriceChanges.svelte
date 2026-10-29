@@ -54,6 +54,7 @@
 	import ProductPreview from '../widgets/ProductPreview.svelte';
 	import BottomBar from '../widgets/BottomBar.svelte';
 	import FilterButton from '../widgets/FilterButton.svelte';
+	import FoldableSidebar from '../widgets/FoldableSidebar.svelte';
 
 	const { kaljakori, availability }: { kaljakori: Kaljakori; availability: AvailabilityData } =
 		$props();
@@ -460,12 +461,15 @@
 	)}
 >
 	{#if !$isLaptop}
-		<aside
+		<FoldableSidebar
+			id="price-changes"
+			title={TITLE}
+			label="suodattimet"
 			class="flex max-h-full w-84 flex-col gap-3 overflow-y-auto border-e border-primary bg-primary p-4"
 		>
 			{@render intro()}
 			{@render filters()}
-		</aside>
+		</FoldableSidebar>
 	{/if}
 	<div
 		id="results"

@@ -8,6 +8,7 @@
 	import {
 		compareHighlightDifferences,
 		compareProductIds,
+		foldedSidebars,
 		headerSlots,
 		isMobile,
 		isLaptop,
@@ -141,6 +142,10 @@
 			LocalStorageKeys.CompareHighlightDifferences,
 			$compareHighlightDifferences
 		);
+	});
+
+	$effect(() => {
+		LocalStorageManager.setItem(LocalStorageKeys.FoldedSidebars, $foldedSidebars);
 	});
 
 	$effect(() => {

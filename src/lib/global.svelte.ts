@@ -36,6 +36,11 @@ export let compareHighlightDifferences = writable<boolean>(
 	LocalStorageManager.getItem(LocalStorageKeys.CompareHighlightDifferences) ?? false
 );
 
+/** Sidebars folded into a strip to give the page more room, by their `FoldableSidebar` id. */
+export let foldedSidebars = writable<string[]>(
+	LocalStorageManager.getItem(LocalStorageKeys.FoldedSidebars) ?? []
+);
+
 /** A page's mobile action bar, rendered by the layout at the very bottom like the product page's. */
 export const pageBottomBar = $state<{ snippet?: Snippet }>({});
 

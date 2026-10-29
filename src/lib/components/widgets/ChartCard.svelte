@@ -27,6 +27,9 @@
 				module.Title,
 				module.Tooltip
 			);
+			// Redrawn once a resize settles rather than on every frame of one, e.g. while a sidebar
+			// slides open, which would otherwise stall the animation
+			module.Chart.defaults.resizeDelay = 150;
 			return module.Chart;
 		});
 		return chartModule;

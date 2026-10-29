@@ -20,6 +20,7 @@ export const LocalStorageKeys = {
 	ViewedShares: 'viewed_shares',
 	CompareProducts: 'compare_products',
 	CompareHighlightDifferences: 'compare_highlight_differences',
+	FoldedSidebars: 'folded_sidebars',
 	Watchlist: 'watchlist',
 	PunchDraft: 'punch_draft',
 	PunchRecipes: 'punch_recipes',
