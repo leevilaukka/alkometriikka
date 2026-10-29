@@ -37,7 +37,10 @@
 	</div>
 {:then alko}
 	{#if data.list}
-		<List kaljakori={alko.kaljakori} list={data.list} />
+		<!-- Saving gives the list a new id, so the page starts over as the saved list -->
+		{#key data.list.id}
+			<List kaljakori={alko.kaljakori} list={data.list} />
+		{/key}
 	{:else}
 		<div class={twMerge('mx-auto flex w-[min(80ch,_100%)] flex-col gap-4 p-4')}>
 			<div class="flex w-full items-center gap-4">
