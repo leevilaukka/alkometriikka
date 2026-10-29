@@ -248,6 +248,8 @@ export type AnalyticsEventMap = {
 	/** From the "Lisää" popup */
 	punch_add_product: { product_number: string };
 	open_settings: undefined;
+	/** `slots` lists the pinned pages in order, comma-separated */
+	header_slots_changed: { slots: string; source: 'settings' | 'menu' };
 	export_data: undefined;
 	import_data: undefined;
 	install_app: { outcome: 'accepted' | 'dismissed'; source: 'settings' | 'banner' };

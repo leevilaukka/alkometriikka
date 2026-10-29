@@ -16,6 +16,7 @@ export const LocalStorageKeys = {
 	AppVersion: 'app_version',
 	CurrentFilters: 'current_filters',
 	Theme: 'theme',
+	HeaderSlots: 'header_slots',
 	ViewedShares: 'viewed_shares',
 	CompareProducts: 'compare_products',
 	CompareHighlightDifferences: 'compare_highlight_differences',

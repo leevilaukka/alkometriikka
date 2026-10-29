@@ -5,6 +5,7 @@ import { LocalStorageKeys } from './utils/constants/app';
 import { LocalStorageManager } from './utils/app/storage';
 import { readSearchParams } from './utils/app/compressedParams';
 import { emptyPunch, sanitizePunch, type SavedPunch } from './utils/catalog/punch';
+import { sanitizeHeaderSlots, type NavHref } from './utils/app/nav';
 
 export let personalInfo = $state(
 	LocalStorageManager.getItem(LocalStorageKeys.PersonalInfo) || { gender: null, weight: null }
@@ -41,6 +42,10 @@ export const pageBottomBar = $state<{ snippet?: Snippet }>({});
 export let searchQuery = writable(readSearchParams(location).get('q') || '');
 
 export let theme = writable(LocalStorageManager.getItem(LocalStorageKeys.Theme) ?? '');
+/** The user's own header buttons, null to follow defaultHeaderSlots */
+export let headerSlots = writable<NavHref[] | null>(
+	sanitizeHeaderSlots(LocalStorageManager.getItem(LocalStorageKeys.HeaderSlots))
+);
 export let preferredStoreId = writable(
 	LocalStorageManager.getItem(LocalStorageKeys.PreferredStore) ?? ''
 );

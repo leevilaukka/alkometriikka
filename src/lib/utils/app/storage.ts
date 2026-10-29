@@ -8,6 +8,7 @@ import type {
 } from '$lib/daily/types';
 import { LocalStorageKeys } from '../constants/app';
 import type { PunchRecipe, SavedPunch } from '../catalog/punch';
+import type { NavHref } from './nav';
 
 type LocalStorageValueMap = {
 	[LocalStorageKeys.PersonalInfo]: PersonalInfo;
@@ -20,6 +21,8 @@ type LocalStorageValueMap = {
 	[LocalStorageKeys.AppVersion]: string;
 	[LocalStorageKeys.CurrentFilters]: FilterValues;
 	[LocalStorageKeys.Theme]: '' | 'dark' | 'light';
+	/** Missing until the user picks their own header buttons, so changes to the defaults reach everyone else */
+	[LocalStorageKeys.HeaderSlots]: NavHref[];
 	[LocalStorageKeys.ViewedShares]: string[];
 	[LocalStorageKeys.CompareProducts]: string[];
 	[LocalStorageKeys.CompareHighlightDifferences]: boolean;
