@@ -464,6 +464,7 @@
 		<FoldableSidebar
 			id="price-changes"
 			title={TITLE}
+			icon="trending_down"
 			label="suodattimet"
 			class="flex max-h-full w-80 flex-col gap-3 overflow-y-auto border-e border-primary bg-primary p-4"
 		>

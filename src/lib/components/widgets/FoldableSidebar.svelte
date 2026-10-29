@@ -2,6 +2,7 @@
 	import type { Snippet } from 'svelte';
 	import { twMerge } from 'tailwind-merge';
 	import { foldedSidebars } from '$lib/global.svelte';
+	import type { IconName } from '$lib/icons';
 	import Icon from './Icon.svelte';
 
 	/**
@@ -12,6 +13,7 @@
 	const {
 		id,
 		title,
+		icon,
 		label,
 		foldable = true,
 		class: _class = '',
@@ -20,6 +22,8 @@
 		id: string;
 		/** Shown down the strip while folded, e.g. the page's name */
 		title?: string;
+		/** Above the title on the strip, the same as the page's in the menu */
+		icon?: IconName;
 		/** What the sidebar holds, for the fold button, e.g. "suodattimet" */
 		label: string;
 		/** False where the sidebar isn't one, e.g. when its contents open as a sheet on phones */
@@ -68,6 +72,9 @@
 						class="flex max-h-full min-h-0 w-8 cursor-pointer flex-col items-center gap-3 rounded py-1.5 text-secondary hover:bg-secondary hover:text-black dark:hover:text-white"
 					>
 						<Icon name="chevrons_right" />
+						{#if icon}
+							<Icon name={icon} class="text-lg text-black dark:text-white" />
+						{/if}
 						{#if title}
 							<span
 								class="min-h-0 overflow-hidden font-bold text-ellipsis whitespace-nowrap text-black [writing-mode:vertical-rl] dark:text-white"

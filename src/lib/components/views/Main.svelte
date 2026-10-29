@@ -236,6 +236,7 @@
 		<FoldableSidebar
 			id="category"
 			{title}
+			icon="wine"
 			label="sivupalkki"
 			class="flex max-h-full w-80 flex-col overflow-hidden border-e border-primary bg-primary"
 		>
@@ -252,6 +253,7 @@
 	{#if showFilters}
 		<FoldableSidebar
 			id="filters"
+			icon="filter"
 			title={activeFilters.length ? `Suodattimet (${activeFilters.length})` : 'Suodattimet'}
 			label="suodattimet"
 			foldable={!$isMobile}

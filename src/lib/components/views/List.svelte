@@ -637,6 +637,7 @@
 		<FoldableSidebar
 			id="list"
 			title={list.name}
+			icon="list_ul"
 			label="sivupalkki"
 			class="flex max-h-full w-80 flex-col overflow-hidden border-e border-primary bg-primary"
 		>

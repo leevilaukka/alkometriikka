@@ -738,6 +738,7 @@
 		<FoldableSidebar
 			id="stats"
 			title="Tilastot"
+			icon="stats"
 			label="suodattimet"
 			class="flex max-h-full w-80 flex-col overflow-hidden border-e border-primary bg-primary"
 		>
