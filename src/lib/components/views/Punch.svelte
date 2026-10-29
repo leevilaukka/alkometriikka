@@ -70,6 +70,7 @@
 	import PunchResults from '../punch/PunchResults.svelte';
 	import BottomBar from '../widgets/BottomBar.svelte';
 	import Icon from '../widgets/Icon.svelte';
+	import PageHeader from '../widgets/PageHeader.svelte';
 	import Popup from '../widgets/Popup.svelte';
 
 	const {
@@ -444,11 +445,12 @@
 	{/if}
 {/snippet}
 
-<div class="mx-auto flex w-full max-w-6xl flex-col gap-6 p-4 md:p-8">
-	<header class="flex flex-col gap-2">
-		<!-- The saved recipes' button shares the title's row, so it takes no row of its own on phones -->
-		<div class="flex items-center justify-between gap-3">
-			<h1 class="text-2xl font-bold md:text-3xl">Boolilaskuri</h1>
+<div class="mx-auto flex w-full max-w-7xl flex-col gap-6 p-4 md:p-6">
+	<PageHeader
+		title="Boolilaskuri"
+		description="Kokoa booli Alkon tuotteista ja kaupan mehuista. Näet boolin vahvuuden, hinnan lasillista ja henkeä kohden sekä halvemmat vaihtoehdot samanlaisille juomille."
+	>
+		{#snippet actions()}
 			<Popup class="w-[min(60ch,_100%)] gap-4 p-4">
 				{#snippet renderButton(dialogElement: HTMLDialogElement)}
 					<button
@@ -507,12 +509,8 @@
 					{/if}
 				{/snippet}
 			</Popup>
-		</div>
-		<p class="max-w-2xl text-secondary">
-			Kokoa booli Alkon tuotteista ja kaupan mehuista. Näet boolin vahvuuden, hinnan lasillista ja
-			henkeä kohden sekä halvemmat vaihtoehdot samanlaisille juomille.
-		</p>
-	</header>
+		{/snippet}
+	</PageHeader>
 
 	{#if sharedRecipe}
 		<div

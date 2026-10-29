@@ -2,6 +2,7 @@
 	import { asset, resolve } from '$app/paths';
 	import { tick } from 'svelte';
 	import { AllColumns } from '$lib/utils/constants/columns';
+	import { formatValue } from '$lib/utils/format/format';
 	import { components } from '$lib/utils/ui/styles';
 	import { questionPoints } from '$lib/daily/scoring';
 	import type { Question } from '$lib/daily/questions';
@@ -527,7 +528,8 @@
 											</p>
 										{/if}
 										<p class="mt-2 text-secondary">
-											{currentQuestion.alcoholPercentage}% · {currentQuestion.volume} L
+											{formatValue(currentQuestion.alcoholPercentage, AllColumns.AlcoholPercentage)} ·
+											{formatValue(currentQuestion.volume, AllColumns.BottleSize)}
 										</p>
 									</div>
 								</div>
@@ -654,7 +656,12 @@
 									{estimatedWith(productMap.get(question.productId))}
 								</p>
 							{/if}
-							<p class="mt-2 text-secondary">{question.alcoholPercentage}% · {question.volume} L</p>
+							<p class="mt-2 text-secondary">
+								{formatValue(question.alcoholPercentage, AllColumns.AlcoholPercentage)} · {formatValue(
+									question.volume,
+									AllColumns.BottleSize
+								)}
+							</p>
 						</div>
 					</div>
 					<h2 class="mt-5 text-2xl font-bold">Arvaa tuotteen hinta</h2>

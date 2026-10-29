@@ -2,8 +2,8 @@
 	import { appPath } from '$lib/utils/app/paths';
 	import { generateTitle, setSEO } from '$lib/utils/app/meta';
 	import { CATEGORY_INDEX_DESCRIPTION } from '$lib/utils/catalog/categories';
-	import Breadcrumb from '$lib/components/widgets/Breadcrumb.svelte';
 	import Icon from '$lib/components/widgets/Icon.svelte';
+	import PageHeader from '$lib/components/widgets/PageHeader.svelte';
 
 	let { data } = $props();
 
@@ -22,9 +22,11 @@
 </svelte:head>
 
 {#await data.alko then alko}
-	<div class="mx-auto flex w-full max-w-7xl flex-col gap-4 p-4 md:p-6">
-		<Breadcrumb items={[]} current="Kategoriat" />
-		<h1 class="text-2xl font-bold">Kategoriat</h1>
+	<div class="mx-auto flex w-full max-w-7xl flex-col gap-6 p-4 md:p-6">
+		<PageHeader
+			title="Kategoriat"
+			description="Selaa Alkon valikoimaa kategorioittain ja tyypeittäin."
+		/>
 		<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
 			{#each alko.kaljakori.getCategoryTree() as type (type.slug)}
 				<section class="flex flex-col gap-3 rounded-lg border border-primary bg-primary p-4">

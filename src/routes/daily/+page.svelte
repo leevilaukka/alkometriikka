@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { AllColumns } from '$lib/utils/constants/columns';
+	import { formatValue } from '$lib/utils/format/format';
 	import { LocalStorageKeys } from '$lib/utils/constants/app';
 	import { components } from '$lib/utils/ui/styles';
 	import type { PriceListItem } from '$lib/types';
@@ -698,8 +699,7 @@
 				<div class="flex items-center gap-2">
 					{#if runMode === 'daily'}
 						<span class="rounded bg-brand-4 px-3 py-2 text-sm font-bold text-white"
-							>{displayDate}{#if dayNumber}
-								· #{dayNumber}{/if}</span
+							>{displayDate}{#if dayNumber}{` · #${dayNumber}`}{/if}</span
 						>
 					{/if}
 					{#if runMode === 'unlimited'}
@@ -1001,7 +1001,10 @@
 										{estimateDetails(currentProduct)}
 									</p>{/if}
 								<p class="mt-2 text-secondary">
-									{question.alcoholPercentage}% · {question.volume} L
+									{formatValue(question.alcoholPercentage, AllColumns.AlcoholPercentage)} · {formatValue(
+										question.volume,
+										AllColumns.BottleSize
+									)}
 								</p>
 							</div>
 						</div>

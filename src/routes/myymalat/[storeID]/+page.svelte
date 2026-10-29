@@ -82,7 +82,7 @@
 	{@const openingHours = (store.openHours ?? []).filter((entry) => entry.date >= today)}
 	{@const isPreferred = store.id === $preferredStoreId}
 
-	<div class="mx-auto flex w-full max-w-[120ch] flex-col gap-6 p-4 md:p-6">
+	<div class="mx-auto flex w-full max-w-7xl flex-col gap-6 p-4 md:p-6">
 		{@render nav(store.name)}
 
 		<header class="flex flex-col gap-4 rounded border border-primary bg-secondary p-5 md:p-6">
@@ -227,7 +227,7 @@
 		</div>
 	</div>
 {:else}
-	<div class="mx-auto flex w-full max-w-[120ch] flex-col gap-6 p-4 md:p-6">
+	<div class="mx-auto flex w-full max-w-7xl flex-col gap-6 p-4 md:p-6">
 		{@render nav()}
 		<div class="flex flex-col gap-2">
 			<h1 class="text-2xl font-bold md:text-3xl">Myymälää ei löytynyt</h1>

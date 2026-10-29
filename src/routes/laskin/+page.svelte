@@ -1,4 +1,5 @@
 <script lang="ts">
+	import PageHeader from '$lib/components/widgets/PageHeader.svelte';
 	import { AllColumns, DrunkColumns } from '$lib/utils/constants/columns';
 	import { GenderOptionsMap } from '$lib/utils/constants/app';
 	import { calculateDrunkValue } from '$lib/utils/catalog/alko';
@@ -147,13 +148,11 @@
 	<title>{generateTitle('Laskin')}</title>
 </svelte:head>
 
-<div class="mx-auto flex w-full max-w-5xl flex-col gap-6 p-4 md:p-8">
-	<header class="max-w-2xl">
-		<h1 class="text-2xl font-bold md:text-3xl">Laskin</h1>
-		<p class="mt-2 text-secondary">
-			Laske Alkon valikoiman ulkopuolisen juoman arvot samoilla laskukaavoilla kuin tuotesivuilla.
-		</p>
-	</header>
+<div class="mx-auto flex w-full max-w-4xl flex-col gap-6 p-4 md:p-6">
+	<PageHeader
+		title="Laskin"
+		description="Laske Alkon valikoiman ulkopuolisen juoman arvot samoilla laskukaavoilla kuin tuotesivuilla."
+	/>
 
 	<form
 		class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]"

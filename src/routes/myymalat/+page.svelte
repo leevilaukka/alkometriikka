@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import Breadcrumb from '$lib/components/widgets/Breadcrumb.svelte';
 	import Icon from '$lib/components/widgets/Icon.svelte';
+	import PageHeader from '$lib/components/widgets/PageHeader.svelte';
 	import { preferredStoreId } from '$lib/global.svelte';
 	import { AUTO_STORE_ID } from '$lib/utils/constants/app';
 	import { requestUserLocation } from '$lib/utils/device/location';
@@ -65,12 +65,11 @@
 			.includes(normalizedQuery)
 	)}
 
-	<div class="mx-auto flex w-full max-w-[120ch] flex-col gap-6 p-6">
-		<Breadcrumb items={[]} current="Myymälät" />
-		<header class="flex flex-col gap-2">
-			<h1 class="text-2xl font-bold md:text-3xl">Myymälät</h1>
-			<p class="text-secondary">Selaa Alkon myymälöitä ja valitse ensisijainen myymälä.</p>
-		</header>
+	<div class="mx-auto flex w-full max-w-7xl flex-col gap-6 p-4 md:p-6">
+		<PageHeader
+			title="Myymälät"
+			description="Selaa Alkon myymälöitä ja valitse ensisijainen myymälä."
+		/>
 
 		<div class="flex flex-wrap gap-2">
 			<button
@@ -92,7 +91,7 @@
 					? 'Automaattinen valinta käytössä'
 					: 'Valitse lähin myymälä automaattisesti'}
 			</button>
-			<a href={resolve('/kompassi/')} class={components.button({ size: 'md' })}>
+			<a href={resolve('/kompassi/')} class={components.button()}>
 				<Icon name="compass" />
 				<span>Kompassi lähimpään myymälään</span>
 			</a>
