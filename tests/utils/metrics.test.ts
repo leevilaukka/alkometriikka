@@ -5,12 +5,14 @@ import type { PriceListItem } from '$lib/types';
 // analytics.ts pulls in SvelteKit's $app/environment
 mock.module('$lib/utils/app/analytics', () => ({ sendAnalyticsEvent: () => {} }));
 const {
+	alcoholicPricePerLiterKey,
 	computeCategoryStats,
 	computeComparisonRows,
 	computeQualityMetrics,
 	histogram,
 	histogramBinIndex,
 	pickCategoryHighlights,
+	qualityMetricCount,
 	recentPriceChanges,
 	valuesDiffer
 } = await import('$lib/utils/stats/metrics');
@@ -164,5 +166,69 @@ describe('computeQualityMetrics', () => {
 		const result = computeQualityMetrics(target, kaljakori, { parentCategory: true });
 		expect(result.categoryLabel).toBe('Viinit');
 		expect(result.sampleSize).toBe(3);
+	});
+
+	describe('alcohol-free products', () => {
+		const alcoholFree = (id: string, subType: string, price: number, energy = 0) =>
+			({
+				...inCategory(product(id, price, 1, 0), 'Alkoholittomat', subType),
+				[AllColumns.Energy]: energy
+			}) as PriceListItem;
+		const beer = alcoholFree('beer', 'Alkoholittomat oluet', 4, 15);
+		const mixer = alcoholFree('mixer', 'Mikserit', 3);
+		const alcoholFreeKaljakori = {
+			data: [
+				beer,
+				alcoholFree('light', 'Alkoholittomat oluet', 5, 10),
+				alcoholFree('heavy', 'Alkoholittomat oluet', 3, 20),
+				mixer,
+				alcoholFree('tonic', 'Mikserit', 4),
+				inCategory(product('lager', 3, 1, 5), 'Panimotuotteet', 'Oluet'),
+				inCategory(product('ipa', 6, 1, 6), 'Panimotuotteet', 'Oluet'),
+				inCategory(product('stout', 8, 1, 7), 'Panimotuotteet', 'Oluet'),
+				inCategory(product('cider', 1, 1, 5), 'Panimotuotteet', 'Siiderit')
+			],
+			getCategoryTree: () => [
+				node('Alkoholittomat', [
+					{ ...node('alkoholittomat oluet'), slug: 'alkoholittomat-oluet' },
+					node('mikserit')
+				]),
+				node('Panimotuotteet', [node('oluet'), node('siiderit')])
+			]
+		} as unknown as Parameters<typeof computeQualityMetrics>[1];
+
+		it('compares beers by calories and against alcoholic beers instead of alcohol per euro', () => {
+			const result = computeQualityMetrics(beer, alcoholFreeKaljakori);
+			const byKey = Object.fromEntries(result.metrics.map((metric) => [metric.key, metric]));
+			expect(Object.keys(byKey)).toEqual([
+				AllColumns.PricePerLiter,
+				AllColumns.Sugar,
+				AllColumns.Energy,
+				alcoholicPricePerLiterKey
+			]);
+			expect(byKey[AllColumns.Energy].percentile).toBe(50);
+			// Cheaper than the 6 €/l and 8 €/l beers, but not the 3 €/l one, nor compared to cider
+			expect(byKey[alcoholicPricePerLiterKey].percentile).toBe(67);
+			expect(byKey[alcoholicPricePerLiterKey].label).toBe('Litrahinta vs. alkoholilliset oluet');
+			expect(byKey[alcoholicPricePerLiterKey].comparison).toBe('vs. 6 €/L');
+		});
+
+		it('knows the card count before the price list loads', () => {
+			for (const item of [beer, mixer, target]) {
+				const result = computeQualityMetrics(
+					item,
+					item === target ? kaljakori : alcoholFreeKaljakori
+				);
+				expect(qualityMetricCount(item)).toBe(result.metrics.length);
+			}
+		});
+
+		it('leaves out energy and the alcoholic comparison when they add nothing', () => {
+			const result = computeQualityMetrics(mixer, alcoholFreeKaljakori);
+			expect(result.metrics.map((metric) => metric.key)).toEqual([
+				AllColumns.PricePerLiter,
+				AllColumns.Sugar
+			]);
+		});
 	});
 });
