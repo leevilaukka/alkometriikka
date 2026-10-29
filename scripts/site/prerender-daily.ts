@@ -5,7 +5,7 @@ import { toISODateInTimeZone } from '../../src/lib/utils/catalog/sales';
 import { dayNumberForDate } from '../../src/lib/daily/dayNumber';
 import { readOption } from '../lib/cli';
 import { escapeHtml } from '../lib/html';
-import { renderStub, SITE_URL } from '../lib/stub';
+import { breadcrumbJsonLd, renderStub, SITE_URL } from '../lib/stub';
 
 /**
  * Writes a static `daily/index.html` stub, mirroring scripts/site/prerender-products.ts.
@@ -42,6 +42,18 @@ async function main() {
 		url,
 		inLanguage: 'fi-FI',
 		datePublished: date,
+		dateModified: date,
+		image: ogImage,
+		keywords: 'alkometriikka daily, tietovisa, alko, alkoholijuomat, hintavisa',
+		educationalLevel: 'beginner',
+		learningResourceType: 'quiz',
+		typicalAgeRange: '18-',
+		timeRequired: 'PT3M',
+		isAccessibleForFree: true,
+		about: { '@type': 'Thing', name: 'Alkon valikoima' },
+		audience: { '@type': 'PeopleAudience', suggestedMinAge: 18 },
+		mainEntityOfPage: url,
+		potentialAction: { '@type': 'PlayAction', target: url },
 		isPartOf: { '@type': 'WebSite', name: 'Alkometriikka', url: SITE_URL },
 		publisher: { '@type': 'Organization', name: 'Alkometriikka', url: SITE_URL }
 	};
@@ -52,7 +64,7 @@ async function main() {
 		url,
 		ogImage,
 		ogImageAlt: 'Alkometriikka Daily',
-		jsonLd: [jsonLd],
+		jsonLd: [jsonLd, breadcrumbJsonLd([{ name: 'Daily', url }])],
 		// Crawlers that don't execute JS need real content in <body>, not just
 		// <head> metadata — otherwise there's no H1 for them to see.
 		fallbackName: 'daily',
