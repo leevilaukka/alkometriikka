@@ -22,14 +22,14 @@ a date decides that date's game forever.
 until seven succeed (a builder fails when, say, two candidates have the same value), topping up
 with price questions if needed.
 
-| Type         | Variants                                             | Asks                                                   | Points      |
-| ------------ | ---------------------------------------------------- | ------------------------------------------------------ | ----------- |
-| `price`      | —                                                    | Which of four prices is this product's?                | 100 or 0    |
-| `cheaper`    | —                                                    | Which of two products is cheaper?                      | 100 or 0    |
-| `efficiency` | —                                                    | Which gives more alcohol per euro?                     | 100 or 0    |
-| `estimate`   | —                                                    | Guess the price, given volume and ABV                  | `100 × e^(− | guess − price | / max(price, 1))`, rounded |
-| `attribute`  | `alcohol`, `volume`, `literPrice`, `sugar`, `energy` | Which of two has more (or a lower price per litre)?    | 100 or 0    |
-| `choice`     | `country`, `manufacturer`, `category`                | Which of up to four options is right for this product? | 100 or 0    |
+| Type         | Variants                                             | Asks                                                   | Points                                                                         |
+| ------------ | ---------------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `price`      | —                                                    | Which of four prices is this product's?                | 100 or 0                                                                       |
+| `cheaper`    | —                                                    | Which of two products is cheaper?                      | 100 or 0                                                                       |
+| `efficiency` | —                                                    | Which gives more alcohol per euro?                     | 100 or 0                                                                       |
+| `estimate`   | —                                                    | Guess the price, given volume and ABV                  | 100 within 5 % of the price, then `100 × e^(−excess / max(price, 1))`, rounded |
+| `attribute`  | `alcohol`, `volume`, `literPrice`, `sugar`, `energy` | Which of two has more (or a lower price per litre)?    | 100 or 0                                                                       |
+| `choice`     | `country`, `manufacturer`, `category`                | Which of up to four options is right for this product? | 100 or 0                                                                       |
 
 Products are picked without repeats where possible, and new products (Uutuus) are three times as
 likely to be picked. Scoring is in `src/lib/daily/scoring.ts`; the maximum is 700.
