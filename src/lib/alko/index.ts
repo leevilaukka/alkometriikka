@@ -635,15 +635,18 @@ export class Kaljakori {
 				if (columnsHandledAsSet.includes(key as (typeof columnsHandledAsSet)[number]))
 					return [key, 'object'];
 				if (key === AllColumns.History) return [key, 'object'];
-				return [key, typeof possibleValues[key].values().next().value];
+				const first = possibleValues[key].values().next();
+				// A subset without products types its columns like the products it was taken from
+				if (first.done && this.root !== this) return [key, this.root.getFilterType(key)];
+				return [key, typeof first.value];
 			})
 		);
 
-		const ranges = (source: Record<string, Set<ColumnValue>>, allowEmpty: boolean) =>
+		const ranges = (source: Record<string, Set<ColumnValue>>) =>
 			columns.map((column) => {
 				if (columnTypes[column] !== 'number') return null;
 				if (column === AllColumns.SortingCode) return null;
-				if (!allowEmpty && !source[column].size) return null;
+				if (!source[column].size) return null;
 				return minAndMax(source[column]);
 			});
 
@@ -651,8 +654,8 @@ export class Kaljakori {
 			possibleValues,
 			possibleValuesActive,
 			columnTypes,
-			minAndMaxValues: ranges(possibleValues, true),
-			minAndMaxValuesActive: ranges(possibleValuesActive, false)
+			minAndMaxValues: ranges(possibleValues),
+			minAndMaxValuesActive: ranges(possibleValuesActive)
 		};
 	}
 

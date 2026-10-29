@@ -489,6 +489,17 @@ describe('Kaljakori subsets', () => {
 		expect(p.getFilterValues(column(AllColumns.Country))).toEqual(['Ranska', 'Saksa', 'Suomi']);
 	});
 
+	it('keeps the column types when it has no products', () => {
+		const p = parent();
+		const empty = p.subset([]);
+		expect(empty.data).toEqual([]);
+		for (const key of [AllColumns.Type, AllColumns.Country, AllColumns.Price]) {
+			expect(empty.getFilterType(column(key))).toBe(p.getFilterType(column(key)));
+		}
+		expect(empty.getFilterValues(column(AllColumns.Type))).toEqual([]);
+		expect(empty.getMinAndMaxValues(column(AllColumns.Price))).toEqual([0, 0]);
+	});
+
 	it('recomputes drunk values when personal info changed, leaving the parent as is', () => {
 		const p = parent();
 		const before = p.findById('1')![AllColumns.EstimatedPromille];
