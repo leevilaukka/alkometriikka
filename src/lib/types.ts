@@ -19,6 +19,15 @@ export type PriceHistoryEntry = {
 	normalPrice?: number;
 	campaignStart?: string;
 	campaignEnd?: string;
+	/** Evidence from a recovered price list; dates denote observations. */
+	archive?: {
+		sourceId: string;
+		lastObserved: string;
+		lastSourceId: string;
+		observations: number;
+		/** Disjoint spans of observed days, when a price reappears after gaps. */
+		ranges?: [string, string][];
+	};
 };
 
 export type Filter = {

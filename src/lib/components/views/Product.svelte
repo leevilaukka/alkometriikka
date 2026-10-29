@@ -56,7 +56,8 @@
 		availabilityState,
 		availabilityStores,
 		preferredStore,
-		availabilityUpdated
+		availabilityUpdated,
+		pricesUpdated
 	}: {
 		product: PriceListItem;
 		/** Only the product itself until the price list has loaded, when the page renders from its stub */
@@ -67,6 +68,8 @@
 		availabilityStores: AvailabilityStore[];
 		preferredStore?: AvailabilityStore;
 		availabilityUpdated: Date | undefined;
+		/** When the price list was last synced, which the price history line runs up to */
+		pricesUpdated?: string;
 	} = $props();
 
 	// What the price box can say about the preferred store: with none chosen there's nothing to wait for
@@ -299,7 +302,7 @@
 	>
 		<div class="flex flex-col gap-6">
 			<ErrorBoundary name="product_price_history">
-				<ProductPriceHistory {product} />
+				<ProductPriceHistory {product} observedThrough={pricesUpdated?.slice(0, 10)} />
 			</ErrorBoundary>
 			<ProductDetailsTable {product} class="hidden lg:block" />
 		</div>

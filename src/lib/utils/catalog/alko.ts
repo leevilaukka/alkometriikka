@@ -1,6 +1,7 @@
 import type { DrunkColumnNames, ImageTransform, PriceListItem } from '$lib/types';
 import { AllColumns, DrunkColumns } from '../constants/columns';
 import { GenderOptionsMap } from '../constants/app';
+import { hasRecordedPriceChange } from './priceHistory';
 
 /** Etanolin tiheys g/l */
 export const ETHANOL_DENSITY = 789;
@@ -173,9 +174,6 @@ export function fallbackImageUrl(
  * Same rule as scripts/site/rss.ts: a product gets a feed once its price has changed.
  */
 export function productFeedPath(product: PriceListItem): string | undefined {
-	const history = product[AllColumns.History] ?? [];
-	const changed = history.some(
-		(entry, index) => index > 0 && entry.price !== history[index - 1].price
-	);
+	const changed = hasRecordedPriceChange(product[AllColumns.History] ?? []);
 	return changed ? `/rss/${encodeURIComponent(product[AllColumns.Number])}.xml` : undefined;
 }
