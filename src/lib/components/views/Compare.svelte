@@ -128,10 +128,21 @@
 		</div>
 	{:else}
 		<div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
-			<p class="text-sm text-secondary">
-				{products.length}/{MAX_COMPARE_PRODUCTS} tuotetta vertailussa. Kunkin rivin paras arvo on korostettu,
-				kun mahdollista.
-			</p>
+			{#if products.length === 1}
+				<!-- One product has nothing to compare against, so say how to add another -->
+				<p class="text-sm text-secondary">
+					Lisää vertailuun toinen tuote sen Vertaile-painikkeella tuotelistassa tai tuotesivulla.
+					<a
+						href={resolve(`/vastaavat/${products[0][AllColumns.Number]}/`)}
+						class="text-primary font-semibold underline">Etsi samankaltaisia tuotteita</a
+					>
+				</p>
+			{:else}
+				<p class="text-sm text-secondary">
+					{products.length}/{MAX_COMPARE_PRODUCTS} tuotetta vertailussa. Kunkin rivin paras arvo on korostettu,
+					kun mahdollista.
+				</p>
+			{/if}
 			{#if products.length > 1}
 				<label class={twMerge(components.button(), 'w-fit shrink-0 justify-start gap-2')}>
 					<Icon

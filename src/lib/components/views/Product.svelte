@@ -40,6 +40,7 @@
 	import ProductPricePanel from '../product/ProductPricePanel.svelte';
 	import ProductQualityMetrics from '../product/ProductQualityMetrics.svelte';
 	import ProductSimilar from '../product/ProductSimilar.svelte';
+	import ProductExplore from '../product/ProductExplore.svelte';
 	import ProductPriceHistory from '../product/ProductPriceHistory.svelte';
 	import ProductDetailsTable from '../product/ProductDetailsTable.svelte';
 	import ProductStoreAvailability from '../product/ProductStoreAvailability.svelte';
@@ -293,6 +294,10 @@
 			<ProductSimilar {product} candidates={similarProducts} loading={catalogState === 'loading'} />
 		</ErrorBoundary>
 	{/if}
+
+	<ErrorBoundary name="product_explore">
+		<ProductExplore {product} {kaljakori} />
+	</ErrorBoundary>
 
 	<div
 		class="grid w-full grid-cols-1 gap-6 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] lg:items-start"

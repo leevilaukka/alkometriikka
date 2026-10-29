@@ -54,6 +54,7 @@ Filter usage is reported as one analytics event per filtering session, not per c
 | Price panel            | `ProductPricePanel`                      | Desktop side panel: price, add to list, compare, share                                                                  |
 | Hinta-laatu            | `ProductQualityMetrics`                  | Percentile bars against the category ([metrics](calculations.md#quality-metrics-hinta-laatu))                           |
 | Similar products       | `ProductSimilar`                         | Top 24 similar active products, with a one-tap "compare with this"                                                      |
+| Tutustu lisää          | `ProductExplore`                         | Links onward for visitors arriving from search: the list filtered to the type, price changes, Daily                     |
 | Price history          | `ProductPriceHistory`                    | Chart.js line chart with sale periods shaded, range selector, link to the product's RSS feed once its price has changed |
 | Details                | `ProductDetailsTable`                    | All other columns; food pairings link to the list filtered by that pairing and type                                     |
 | Store availability     | `ProductStoreAvailability`               | Stores stocking it, sorted by distance from the preferred store, with "updated N minutes ago"                           |
@@ -136,6 +137,7 @@ products row. While any are queued, the compare bar is shown at the bottom of ev
 table highlights the best value per row and can dim rows where all products are equal
 ("highlight differences", remembered in localStorage). The page URL carries the product ids, so a
 comparison can be shared.
+With a single product queued, the page says how to add another and links to its similar products.
 
 ## Similar products (`/vastaavat/[id]`)
 
@@ -275,6 +277,24 @@ Banners under the header, from two sources:
 
 Dismissals are stored per notice id in localStorage. The stale warning's and cached-data notice's
 ids include the sync time, so dismissing them lasts only until the data changes.
+
+## First-visit guidance
+
+`src/lib/utils/user/guidance.ts`, `src/lib/utils/app/guidance.svelte.ts`, `widgets/GuidanceHint.svelte`
+
+Short, closable hints for new visitors, each shown once:
+
+| Id             | Where                                    | Says                                                                 |
+| -------------- | ---------------------------------------- | -------------------------------------------------------------------- |
+| `intro`        | Above the front page list                | How the list is ordered, with links to price changes and Daily       |
+| `store_filter` | Above the store filter in the front page | Choosing a store narrows the list to it; gone once the filter is set |
+
+Only visitors first seen after guidance shipped get it. On the first load without saved guidance
+state, signs of earlier use (an install banner day before today, lists, watched or compared
+products, dismissed notices, viewed shares, a Daily streak) mark the visitor as returning, and the
+state is saved right away so a new visitor stays new. The intro also retires on its own a week after
+the first visit. Only one hint shows at a time: beside the desktop sidebar the store hint waits
+until the intro is closed, while on phones it shows when the filters are opened over it.
 
 ## Toasts
 

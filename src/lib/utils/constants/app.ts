@@ -26,6 +26,7 @@ export const LocalStorageKeys = {
 	FlagOverrides: 'flag_overrides',
 	FlagVisitorId: 'flag_visitor_id',
 	InstallBanner: 'install_banner',
+	Guidance: 'guidance',
 	DailyGame: 'alkometriikka-daily-v1',
 	DailyStreak: 'alkometriikka-daily-streak-v1',
 	DailyUnlimitedRun: 'alkometriikka-daily-unlimited-v1',

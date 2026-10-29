@@ -3,6 +3,7 @@ import { GenderOptionsMap, ShareTypes } from '$lib/utils/constants/app';
 import type { VariantProps } from 'class-variance-authority';
 import type { components } from './utils/ui/styles';
 import type { IconName } from './icons';
+import type { GuidanceId } from './utils/user/guidance';
 
 export type ColumnType =
 	'string' | 'number' | 'object' | 'undefined' | 'function' | 'boolean' | 'symbol' | 'bigint';
@@ -224,6 +225,9 @@ type GameState =
 
 type Games = { [K in GameKeys]: GameState };
 
+/** Where the product page's "explore further" links lead */
+export type ProductExploreTarget = 'list' | 'price_changes' | 'daily';
+
 export type AnalyticsEventMap = {
 	calculator_used: {
 		using_saved_values: boolean;
@@ -329,6 +333,12 @@ export type AnalyticsEventMap = {
 	open_zoomed_image: { product_number: string };
 	/** The front page's "your watched products changed" banner was followed. */
 	open_watchlist_banner: { changed: number };
+	/** A link in the product page's "explore further" section was followed. */
+	open_product_explore: { target: ProductExploreTarget; product_number: string };
+	/** First-visit guidance was closed, see `src/lib/utils/user/guidance.ts`. */
+	dismiss_guidance: { id: GuidanceId };
+	/** A link in the front page intro was followed. */
+	open_intro_link: { target: string };
 	/** The error page showed a 4xx status, see `reportPageNotFound` in `errorAnalytics.ts`. */
 	page_not_found: {
 		status: number;

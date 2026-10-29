@@ -1,6 +1,11 @@
 <script lang="ts">
 	import Main, { type ListPosition } from '$lib/components/views/Main.svelte';
 	import WatchlistBanner from '$lib/components/widgets/WatchlistBanner.svelte';
+	import GuidanceHint from '$lib/components/widgets/GuidanceHint.svelte';
+	import { guidance } from '$lib/utils/app/guidance.svelte';
+	import { GuidanceIds } from '$lib/utils/user/guidance';
+	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
+	import { resolve } from '$app/paths';
 	import { beforeNavigate } from '$app/navigation';
 	import { generateTitle, resetSEO } from '$lib/utils/app/meta';
 	import type { PageProps, Snapshot } from './$types';
@@ -29,6 +34,8 @@
 	let main: Main | undefined = $state();
 	let position: ListPosition | undefined = $state();
 	beforeNavigate(() => (position = undefined));
+
+	const showIntro = $derived(guidance.shows(GuidanceIds.Intro));
 	export const snapshot: Snapshot<ListPosition | undefined> = {
 		capture: () => main?.currentPosition(),
 		restore: (value) => (position = value)
@@ -48,10 +55,25 @@
 			availability={alko.availability}
 			availabilityLoaded={alko.availabilityLoaded}
 		/>
+		{#if showIntro}
+			<GuidanceHint id={GuidanceIds.Intro} icon="info_circle" closeLabel="Sulje esittely">
+				<strong>Uusi täällä?</strong> Ylimpänä on eniten alkoholia eurolla. Vaihda järjestystä alta
+				tai rajaa suodattimilla. Katso myös
+				{@render introLink('/hinnanmuutokset/', 'hinnanmuutokset', 'price_changes')}
+				ja päivän {@render introLink('/daily/', 'Daily-visa', 'daily')}.
+			</GuidanceHint>
+		{/if}
+	{/snippet}
+	{#snippet introLink(href: '/hinnanmuutokset/' | '/daily/', label: string, target: string)}
+		<a
+			href={resolve(href)}
+			class="font-semibold whitespace-nowrap underline"
+			onclick={() => sendAnalyticsEvent('open_intro_link', { target })}>{label}</a
+		>
 	{/snippet}
 	<Main
 		kaljakori={alko.kaljakori}
-		header={watchlist.length ? header : undefined}
+		header={watchlist.length || showIntro ? header : undefined}
 		{position}
 		bind:this={main}
 	/>

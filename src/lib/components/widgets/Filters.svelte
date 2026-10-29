@@ -25,6 +25,9 @@
 	import { headerToDisplayName } from '$lib/utils/format/labels';
 	import RecursiveFilter from '../inputs/RecursiveFilter.svelte';
 	import { trackFilterUsage } from '$lib/utils/app/filterAnalytics.svelte';
+	import { guidance } from '$lib/utils/app/guidance.svelte';
+	import { GuidanceIds } from '$lib/utils/user/guidance';
+	import GuidanceHint from './GuidanceHint.svelte';
 
 	let {
 		kaljakori,
@@ -71,6 +74,17 @@
 			return type === 'string' && kaljakori.getFilterValues(filter, showRemoved).length === 1;
 		})
 	);
+
+	// Only on the front page's list. One hint at a time: beside the sidebar it waits until the
+	// intro above the list is gone, while on phones the filters open over the intro
+	const showStoreHint = $derived(
+		useURLParams &&
+			guidance.shows(GuidanceIds.StoreFilter) &&
+			($isMobile || !guidance.shows(GuidanceIds.Intro))
+	);
+	$effect(() => {
+		if (filterActiveState[AllColumns.StoreAvailability]) guidance.dismiss(GuidanceIds.StoreFilter);
+	});
 
 	export function toggleFilterElement() {
 		if (!filtersElement) return;
@@ -193,6 +207,12 @@
 	{#each filters as filter}
 		{@const possibleValues = getNarrowedFilterValues(filter, filterValues, kaljakori, showRemoved)}
 		{@const type = kaljakori.getFilterType(filter)}
+		{#if filter === AllColumns.StoreAvailability && showStoreHint}
+			<GuidanceHint id={GuidanceIds.StoreFilter} icon="store" closeLabel="Sulje vinkki">
+				Valitse <strong>{headerToDisplayName(filter)}</strong>-kohdasta oma Alkosi, niin listassa
+				näkyvät vain siellä myytävät tuotteet.
+			</GuidanceHint>
+		{/if}
 		{#if filter === AllColumns.StoreAvailability && !kaljakori.availabilityLoaded}
 			<!-- availability.json loads after the products; hold the store filter's place until then -->
 			<div class="flex w-full flex-col gap-2 text-sm" aria-busy="true">

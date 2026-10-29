@@ -8,6 +8,7 @@ import type {
 } from '$lib/daily/types';
 import { LocalStorageKeys } from '../constants/app';
 import type { PunchRecipe, SavedPunch } from '../catalog/punch';
+import type { GuidanceState } from '../user/guidance';
 
 type LocalStorageValueMap = {
 	[LocalStorageKeys.PersonalInfo]: PersonalInfo;
@@ -32,6 +33,8 @@ type LocalStorageValueMap = {
 	[LocalStorageKeys.FlagVisitorId]: string;
 	/** Recent days the site was used on (local dates), and whether the install banner was closed */
 	[LocalStorageKeys.InstallBanner]: { days: string[]; dismissed?: boolean };
+	/** When the visitor was first seen and which first-visit guidance they've seen */
+	[LocalStorageKeys.Guidance]: GuidanceState;
 	[LocalStorageKeys.DailyGame]: SavedDailyGame;
 	[LocalStorageKeys.DailyStreak]: DailyStreak;
 	[LocalStorageKeys.DailyUnlimitedRun]: UnlimitedRunState;
