@@ -18,7 +18,7 @@
 	import Icon from '../widgets/Icon.svelte';
 	import SvelteVirtualList from '@humanspeak/svelte-virtual-list';
 	import { twMerge } from 'tailwind-merge';
-	import type { ColumnNames, ListObj, PriceListItem } from '$lib/types';
+	import type { ColumnNames, FilterValues, ListObj, PriceListItem } from '$lib/types';
 	import {
 		shownColumnsToHighlight,
 		defaultSortingColumn,
@@ -32,20 +32,26 @@
 	import { ContextKeys, GenderOptionsMap } from '$lib/utils/constants/app';
 	import { headerToDisplayName, sortingOrderToString } from '$lib/utils/format/labels';
 	import Popup from '../widgets/Popup.svelte';
-	import AllLists from '../widgets/AllLists.svelte';
+	import FoldableSidebar from '../widgets/FoldableSidebar.svelte';
 	import AddToListContent from '../widgets/AddToListContent.svelte';
-	import Filters from '../widgets/Filters.svelte';
+	import Breadcrumb from '../widgets/Breadcrumb.svelte';
+	import Chip from '../widgets/Chip.svelte';
+	import CategorySection from '../category/CategorySection.svelte';
+	import StringInput from '../inputs/StringInput.svelte';
 	import { goto } from '$app/navigation';
 	import { getContext, untrack } from 'svelte';
-	import { initFilterValues, sortRows } from '$lib/utils/catalog/filters';
+	import {
+		initFilterValues,
+		searchParametersFromFilterValues,
+		sortRows
+	} from '$lib/utils/catalog/filters';
+	import { trackFilterUsage } from '$lib/utils/app/filterAnalytics.svelte';
 	import { SERVING_GRAMS } from '$lib/utils/catalog/alko';
 	import type { SearchParamsManager } from '$lib/utils/app/url';
 	import ProductPreview from '../widgets/ProductPreview.svelte';
 	import BottomBar from '../widgets/BottomBar.svelte';
 	import FilterButton from '../widgets/FilterButton.svelte';
 	import { compareURL, MAX_COMPARE_PRODUCTS } from '$lib/utils/user/compare';
-
-	let activeFilters: ColumnNames[] = $state([]);
 
 	const { list: importedList, kaljakori: source }: { list: ListObj; kaljakori: Kaljakori } =
 		$props();
@@ -66,23 +72,37 @@
 
 	let listRef: SvelteVirtualList<PriceListItem> | null = $state(null);
 
-	let detailsElement: HTMLDialogElement | null = $state(null);
+	// Lighter filters than the product list's, as on the Stats page: Kategoria / Tyyppi chips and a
+	// few dropdowns, which is plenty for a list
+	const dropdownFilters = [
+		AllColumns.Country,
+		AllColumns.PackagingType
+	] as const satisfies ColumnNames[];
+	const ownFilters: ColumnNames[] = [AllColumns.Type, AllColumns.SubType, ...dropdownFilters];
+	const defaultFilterValues = () => initFilterValues(untrack(() => kaljakori));
+	let filterValues = $state(defaultFilterValues());
 
-	export function toggleDetailsElement() {
-		if (!detailsElement) return;
-		if (detailsElement.open) detailsElement.close();
-		else if ($isLaptop) detailsElement.showModal();
-		else detailsElement.show();
-	}
+	const filterParams = $derived(
+		searchParametersFromFilterValues(
+			Object.fromEntries(
+				ownFilters.map((column) => [column, filterValues[column]])
+			) as FilterValues,
+			kaljakori
+		)
+	);
+	const activeFilterCount = $derived(
+		Object.values(filterParams).filter((value) => value.length > 0).length
+	);
+	const dropdownFilterCount = $derived(
+		dropdownFilters.filter((filter) => filterParams[filter]?.length > 0).length
+	);
 
-	$effect(() => {
-		if (detailsElement?.open) detailsElement.close();
-		if ($isLaptop) return;
-		detailsElement?.show();
-	});
-
-	let filtersComponent: Filters | null = $state(null);
-	let filterValues = $state(initFilterValues(untrack(() => kaljakori)));
+	/** The list's products matching the search and the given filters */
+	const matching = (columns: readonly ColumnNames[]) =>
+		kaljakori.fuzzySearchAndFilter(
+			$searchQuery,
+			Object.fromEntries(columns.map((column) => [column, new Set(filterValues[column])]))
+		);
 
 	let selectedHighlight = $state(defaultSortingColumn);
 
@@ -92,15 +112,7 @@
 	);
 
 	let rows = $derived.by(() => {
-		let filterValuesCopy: Record<string, any> = { ...filterValues };
-		Object.keys(filterValuesCopy).forEach((key) => {
-			if (
-				Array.isArray(filterValuesCopy[key]) &&
-				kaljakori.getFilterType(key as ColumnNames) !== 'number'
-			)
-				filterValuesCopy[key] = new Set(filterValuesCopy[key]);
-		});
-		let temp = kaljakori.fuzzySearchAndFilter($searchQuery, filterValuesCopy);
+		let temp = matching(ownFilters);
 		if (!!selectedSortingColumn) temp = sortRows(temp, selectedSortingColumn, asc);
 		else if (!asc) temp = temp.reverse();
 		return temp;
@@ -120,6 +132,65 @@
 		listInputs = inputs;
 	});
 
+	trackFilterUsage(
+		'list',
+		() => filterParams,
+		() => rows.length
+	);
+
+	// Every Kategoria / Tyyppi in the list gets a chip, counted with the dropdown filters like on
+	// the Stats page, so the chips stay put while the counts follow
+	function countBy(items: PriceListItem[], column: ColumnNames) {
+		const counts = new Map<string, number>();
+		for (const item of items) {
+			const value = item[column];
+			if (typeof value === 'string' && value.trim())
+				counts.set(value, (counts.get(value) ?? 0) + 1);
+		}
+		return counts;
+	}
+	const dropdownMatches = $derived(matching(dropdownFilters));
+	const selectedType = $derived(
+		filterValues[AllColumns.Type].length === 1
+			? String(filterValues[AllColumns.Type][0])
+			: undefined
+	);
+	const chips = (items: PriceListItem[], column: ColumnNames) => {
+		const counts = countBy(
+			dropdownMatches.filter((item) => items.includes(item)),
+			column
+		);
+		return [...countBy(items, column)]
+			.sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'fi'))
+			.map(([value]) => ({ value, count: counts.get(value) ?? 0 }));
+	};
+	const typeChips = $derived(chips(kaljakori.data, AllColumns.Type));
+	const subTypeChips = $derived(
+		selectedType
+			? chips(
+					kaljakori.data.filter((item) => item[AllColumns.Type] === selectedType),
+					AllColumns.SubType
+				)
+			: []
+	);
+
+	function pick(column: typeof AllColumns.Type | typeof AllColumns.SubType, value?: string) {
+		filterValues[column] = value ? [value] : [];
+		// A Tyyppi belongs to its Kategoria
+		if (column === AllColumns.Type) filterValues[AllColumns.SubType] = [];
+	}
+
+	// What's selected, shown under the heading when the filters are in a sheet
+	const selection = $derived(
+		ownFilters.flatMap((column) =>
+			filterValues[column].map((value) => ({ column, value: String(value) }))
+		)
+	);
+	function deselect(column: ColumnNames, value: string) {
+		filterValues[column] = filterValues[column].filter((v) => String(v) !== value);
+		if (column === AllColumns.Type) filterValues[AllColumns.SubType] = [];
+	}
+
 	let highlightMax = $derived.by(() => {
 		if (!selectedHighlight) return null;
 		const maxValue = rows.reduce((max, item) => {
@@ -133,7 +204,6 @@
 		let totalPrice = 0;
 		let totalAlcoholGrams = 0;
 		let totalItems = 0;
-		let totalSugarPerLitre = 0;
 		let totalSugar = 0;
 		let totalVolume = 0;
 		list.items.forEach((item) => {
@@ -142,7 +212,6 @@
 				totalItems += item.q;
 				totalPrice += product[AllColumns.Price] * item.q;
 				totalAlcoholGrams += product[AllColumns.AlcoholGrams] * item.q;
-				totalSugarPerLitre += (product[AllColumns.Sugar] || 0) * item.q;
 				totalSugar += (product[AllColumns.Sugar] || 0) * product[AllColumns.BottleSize] * item.q;
 				totalVolume += product[AllColumns.BottleSize] * item.q;
 			}
@@ -168,7 +237,6 @@
 			totalServings,
 			totalEuroPerServing,
 			totalItems,
-			totalSugarPerLitre,
 			totalSugar,
 			totalBAC,
 			totalVolume
@@ -196,10 +264,10 @@
 		searchParamsManager.setParameter('list', listToURI(list));
 	});
 
-	// On phones the list's actions live in a bottom bar, like on category pages; wider screens
-	// keep them in the header. Filters only exist for lists of two or more.
+	// Below the sidebar breakpoint the list's details, filters and actions live in a bottom bar,
+	// like on category pages
 	$effect(() => {
-		if (!$isMobile || (kaljakori.data.length === 0 && existingList)) return;
+		if (!$isLaptop || (kaljakori.data.length === 0 && existingList)) return;
 		pageBottomBar.snippet = actionBar;
 		return () => {
 			if (pageBottomBar.snippet === actionBar) pageBottomBar.snippet = undefined;
@@ -207,14 +275,14 @@
 	});
 </script>
 
-<!-- The list's actions, shared by the header (wide screens) and the bottom bar -->
-{#snippet shareButton(inBar: boolean)}
+<!-- The list's actions: the sidebar's footer on wide screens, the Tiedot sheet and bottom bar otherwise -->
+{#snippet shareButton(large: boolean)}
 	{#if existingList && list.items.length > 0}
 		<button
 			aria-label="Jaa lista"
 			class={twMerge(
-				components.button({ type: 'positive', size: inBar ? 'lg' : 'md' }),
-				inBar ? 'aspect-square h-11 sm:aspect-auto' : 'aspect-square md:aspect-auto'
+				components.button({ type: 'positive', size: large ? 'lg' : 'sm' }),
+				large ? 'h-11 flex-1' : 'flex-1'
 			)}
 			onclick={async (e) => {
 				const anchor = e.currentTarget;
@@ -232,17 +300,17 @@
 				if (!shared) showToast({ text: 'Linkki kopioitu leikepöydälle', anchor });
 			}}
 		>
-			<Icon name="share" /><span class={inBar ? 'hidden sm:inline' : 'hidden md:block'}>Jaa</span>
+			<Icon name="share" /><span>Jaa</span>
 		</button>
 	{/if}
 {/snippet}
 
-{#snippet saveButton(inBar: boolean)}
+{#snippet saveButton(large: boolean)}
 	{#if !existingList}
 		<button
 			class={twMerge(
-				components.button({ type: 'positive', size: inBar ? 'lg' : 'md' }),
-				inBar && 'h-11 flex-1'
+				components.button({ type: 'positive', size: large ? 'lg' : 'sm' }),
+				large ? 'h-11 flex-1' : 'flex-1'
 			)}
 			onclick={() => {
 				sendAnalyticsEvent('save_list', { url: location.href });
@@ -250,130 +318,385 @@
 				goto(`?list=${listToURI(saved)}`);
 			}}
 		>
-			<span>{inBar ? 'Tallenna' : 'Tallenna lista'}</span>
 			<Icon name="save" />
+			<span>{large ? 'Tallenna' : 'Tallenna lista'}</span>
 		</button>
 	{/if}
 {/snippet}
 
-{#snippet compareButton(inBar: boolean)}
-	{#if compareIds.length > 1}
+<!-- Stays in place while filtering, disabled when fewer than two products show, so the actions
+     next to it don't shift -->
+{#snippet compareButton(large: boolean)}
+	{#if kaljakori.data.length > 1}
+		{@const enabled = compareIds.length > 1}
 		<a
-			href={resolve(compareURL(compareIds))}
+			href={enabled ? resolve(compareURL(compareIds)) : undefined}
+			aria-disabled={!enabled}
 			aria-label="Vertaile listan tuotteita"
-			title={compareTruncated
-				? `Vertaile ${MAX_COMPARE_PRODUCTS} ensimmäistä tuotetta nykyisessä järjestyksessä`
-				: 'Vertaile listan tuotteita rinnakkain'}
+			title={!enabled
+				? 'Vertailuun tarvitaan vähintään kaksi tuotetta'
+				: compareTruncated
+					? `Vertaile ${MAX_COMPARE_PRODUCTS} ensimmäistä tuotetta nykyisessä järjestyksessä`
+					: 'Vertaile listan tuotteita rinnakkain'}
 			class={twMerge(
-				components.button({ size: inBar ? 'lg' : 'md' }),
-				inBar ? 'aspect-square h-11 sm:aspect-auto' : 'aspect-square md:aspect-auto'
+				components.button({ size: large ? 'lg' : 'sm' }),
+				large ? 'h-11 flex-1' : 'flex-1',
+				!enabled && 'cursor-not-allowed opacity-50 hover:bg-white dark:hover:bg-zinc-800'
 			)}
 		>
 			<Icon name="compare" />
-			<span class={inBar ? 'hidden sm:inline' : 'hidden md:block'}>Vertaile</span>
+			<span>Vertaile</span>
 		</a>
 	{/if}
 {/snippet}
 
-{#snippet actionBar()}
-	<BottomBar class="md:hidden">
-		{#if kaljakori.data.length > 0}
-			<button
-				type="button"
-				aria-haspopup="dialog"
-				class={twMerge(components.button({ size: 'lg' }), 'h-11 flex-1')}
-				onclick={() => toggleDetailsElement()}
+{#snippet nameInput(className: string)}
+	<input
+		type="text"
+		name="listName"
+		aria-label="Listan nimi"
+		onblur={() => validateListName(list.name)}
+		class={twMerge(
+			'min-w-0 border-none bg-transparent p-0 text-2xl font-bold focus:ring-0',
+			className
+		)}
+		bind:value={list.name}
+	/>
+{/snippet}
+
+{#snippet heading(inSidebar = false)}
+	<Breadcrumb items={[{ label: 'Listat', href: '/listat/' }]} current={list.name} />
+	<div class="flex flex-col gap-1">
+		{#if existingList}
+			<h1 class="sr-only">{list.name}</h1>
+			{#if inSidebar}
+				<!-- A faint pencil hints the name can be edited; clicking it focuses the name too -->
+				<label
+					class="group -mx-1 flex items-center gap-1.5 rounded px-1 focus-within:bg-secondary hover:bg-secondary"
+					title="Muokkaa nimeä"
+				>
+					{@render nameInput('w-full flex-1')}
+					<Icon
+						name="pencil"
+						class="shrink-0 text-sm text-secondary opacity-60 transition-opacity group-focus-within:opacity-100 group-hover:opacity-100"
+					/>
+				</label>
+			{:else}
+				<!-- The name is as wide as its text, so the pencil sits right after it until editing starts.
+				     The hidden copy of the name sizes the field, as inputs don't size to their text. -->
+				<label class="group flex max-w-full min-w-0 items-center gap-1.5 self-start">
+					<span class="inline-grid max-w-full min-w-0">
+						<span
+							aria-hidden="true"
+							class="invisible col-start-1 row-start-1 overflow-hidden text-2xl font-bold whitespace-pre"
+						>
+							{list.name || ' '}
+						</span>
+						{@render nameInput('col-start-1 row-start-1 w-0 min-w-full')}
+					</span>
+					<Icon
+						name="pencil"
+						class="shrink-0 text-sm text-secondary opacity-60 group-focus-within:hidden"
+					/>
+				</label>
+			{/if}
+		{:else}
+			<h1 class="text-2xl font-bold wrap-break-word">{list.name}</h1>
+		{/if}
+		<span class="text-sm text-secondary">
+			{#if activeFilterCount}
+				{rows.length} / {kaljakori.data.length} tuotetta
+			{:else}
+				{kaljakori.data.length} tuotetta
+			{/if}
+			{#if kaljakori.data.length}
+				· {formatValue(details.totalPrice, AllColumns.Price)}
+			{/if}
+		</span>
+	</div>
+{/snippet}
+
+{#snippet stat(label: string, value: string, extra?: string, wide = false)}
+	<div
+		class={twMerge(
+			'flex min-w-0 flex-col gap-0.5 rounded border border-primary bg-primary px-3 py-2 text-sm',
+			wide && 'col-span-2'
+		)}
+	>
+		<span class="text-xs text-secondary">{label}</span>
+		<span class={twMerge('font-bold', wide && 'text-xl')}>{value}</span>
+		{#if extra}<span class="text-xs text-secondary">{extra}</span>{/if}
+	</div>
+{/snippet}
+
+<!-- The list's totals, whatever the filters show -->
+{#snippet summary()}
+	<div class="grid grid-cols-2 gap-2">
+		{@render stat(
+			'Yhteensä',
+			formatValue(details.totalPrice, AllColumns.Price) as string,
+			`${details.totalItems} kpl`,
+			true
+		)}
+		{@render stat('Tilavuus', formatValue(details.totalVolume, AllColumns.BottleSize) as string)}
+		{@render stat(
+			'Alkoholia',
+			formatValue(details.totalAlcoholGrams, AllColumns.AlcoholGrams) as string
+		)}
+		{@render stat(
+			'Alkoholia per euro',
+			`${formatValue(details.totalAlcoholGramsPerEuro, AllColumns.AlcoholGramsPerEuro)} g`
+		)}
+		{@render stat(
+			'Arvioidut promillet',
+			formatValue(details.totalBAC, AllColumns.PromillePerEuro) as string
+		)}
+		{#if details.totalServings > 0}
+			{@render stat(
+				'Annoksia',
+				formatValue(details.totalServings, AllColumns.Servings) as string,
+				`${formatValue(details.totalEuroPerServing, AllColumns.EuroPerServing)} / annos`
+			)}
+		{/if}
+		{@render stat(
+			'Sokeria',
+			`${formatValue(details.totalSugar, AllColumns.Sugar, { includeUnit: false })} g`
+		)}
+	</div>
+{/snippet}
+
+<!-- The sidebar's filters on wide screens, the Suodattimet sheet otherwise (which has its own
+     Tyhjennä next to Sulje) -->
+{#snippet filters(inSidebar = false)}
+	{#if typeChips.length > 1 || selectedType}
+		<nav aria-label="Kategoria" class="flex flex-col gap-2">
+			<span class="text-xs text-secondary">Kategoria</span>
+			<div class="flex flex-wrap gap-2">
+				<Chip
+					label="Kaikki"
+					selected={filterValues[AllColumns.Type].length === 0}
+					onclick={() => pick(AllColumns.Type)}
+				/>
+				{#each typeChips as { value, count } (value)}
+					<Chip
+						label={value}
+						{count}
+						selected={filterValues[AllColumns.Type].includes(value)}
+						onclick={() => pick(AllColumns.Type, value)}
+					/>
+				{/each}
+			</div>
+			{#if subTypeChips.length > 1}
+				<span class="text-xs text-secondary">Tyyppi</span>
+				<div class="flex flex-wrap gap-2">
+					<Chip
+						label="Kaikki"
+						selected={filterValues[AllColumns.SubType].length === 0}
+						onclick={() => pick(AllColumns.SubType)}
+					/>
+					{#each subTypeChips as { value, count } (value)}
+						<Chip
+							label={value}
+							{count}
+							selected={filterValues[AllColumns.SubType].includes(value)}
+							onclick={() => pick(AllColumns.SubType, value)}
+						/>
+					{/each}
+				</div>
+			{/if}
+		</nav>
+	{/if}
+	{#if dropdownFilters.some((filter) => kaljakori.getFilterValues(filter).length > 1)}
+		<div class="flex flex-col">
+			<CategorySection
+				title="Rajaa"
+				hint={dropdownFilterCount ? `${dropdownFilterCount} valittu` : undefined}
+				open
 			>
-				<Icon name="info_circle" />
-				<span>Tiedot</span>
-			</button>
+				<div class="flex flex-col gap-4">
+					{#each dropdownFilters as filter (filter)}
+						{@const options = kaljakori.getFilterValues(filter)}
+						{#if options.length > 1}
+							<div class="flex w-full flex-col gap-2 text-sm">
+								<StringInput
+									defaultValue={[]}
+									label={headerToDisplayName(filter)}
+									{options}
+									bind:value={filterValues[filter]}
+									name={filter}
+								/>
+							</div>
+						{/if}
+					{/each}
+				</div>
+			</CategorySection>
+		</div>
+	{/if}
+	{#if inSidebar && activeFilterCount}
+		<button
+			type="button"
+			onclick={() => (filterValues = defaultFilterValues())}
+			class="flex cursor-pointer items-center gap-1 self-start text-sm text-secondary hover:underline"
+		>
+			<Icon name="x_circle" />
+			<span>Tyhjennä suodattimet</span>
+		</button>
+	{/if}
+{/snippet}
+
+{#snippet clearFiltersButton()}
+	{#if activeFilterCount}
+		<button
+			type="button"
+			class={twMerge(components.button({ size: 'lg' }), 'h-11 flex-1')}
+			onclick={() => (filterValues = defaultFilterValues())}
+		>
+			<Icon name="x_circle" />
+			<span>Tyhjennä</span>
+		</button>
+	{/if}
+{/snippet}
+
+<!-- A bottom sheet like the category page's Tiedot sheet, its close button pinned to the bottom
+     where the button that opened it was. Sticky offsets count from inside the sheet's p-4, so
+     -bottom-4 reaches its edge. -->
+{#snippet sheet(
+	title: string,
+	content: import('svelte').Snippet,
+	button: import('svelte').Snippet<[HTMLDialogElement]>,
+	actions: import('svelte').Snippet
+)}
+	<Popup
+		class="mb-0 max-h-[85dvh] w-full max-w-none gap-4 overflow-y-auto rounded-b-none p-4 open:translate-y-0 open:starting:translate-y-full open:starting:scale-100"
+	>
+		{#snippet renderButton(dialogElement: HTMLDialogElement)}
+			{@render button(dialogElement)}
+		{/snippet}
+		{#snippet renderContent(dialogElement: HTMLDialogElement)}
+			<h2 class="text-xl font-bold">{title}</h2>
+			{@render content()}
+			<div
+				class="sticky -bottom-4 -mx-4 -mb-4 flex gap-2 bg-primary px-4 pt-2.5 pb-[calc(--spacing(2.5)_+_env(safe-area-inset-bottom))] shadow-[0_-4px_12px_rgba(0,0,0,0.06)]"
+			>
+				{@render actions()}
+				<button
+					type="button"
+					class={twMerge(components.button({ size: 'lg' }), 'h-11 flex-1')}
+					onclick={() => dialogElement.close()}
+				>
+					<Icon name="x" />
+					<span>Sulje</span>
+				</button>
+			</div>
+		{/snippet}
+	</Popup>
+{/snippet}
+
+{#snippet detailsButton(dialogElement: HTMLDialogElement)}
+	<button
+		type="button"
+		aria-haspopup="dialog"
+		class={twMerge(components.button({ size: 'lg' }), 'h-11 flex-1')}
+		onclick={() => dialogElement.showModal()}
+	>
+		<Icon name="info_circle" />
+		<span>Tiedot</span>
+	</button>
+{/snippet}
+
+{#snippet filterSheetButton(dialogElement: HTMLDialogElement)}
+	<FilterButton activeCount={activeFilterCount} onclick={() => dialogElement.showModal()} />
+{/snippet}
+
+{#snippet detailsActions()}
+	{@render compareButton(true)}
+	{@render shareButton(true)}
+{/snippet}
+
+<!-- Kept to two or three buttons like the category pages' bar: sharing and comparing are in the
+     Tiedot sheet, saving stays out as it's what an unsaved list is for -->
+{#snippet actionBar()}
+	<BottomBar class="xl:hidden">
+		{#if kaljakori.data.length > 0}
+			{@render sheet('Listan tiedot', summary, detailsButton, detailsActions)}
 		{/if}
-		{#if kaljakori.data.length > 1}
-			<FilterButton
-				activeCount={activeFilters.length}
-				onclick={() => filtersComponent?.toggleFilterElement()}
-			/>
-		{/if}
-		{@render compareButton(true)}
-		{@render shareButton(true)}
 		{@render saveButton(true)}
+		{#if kaljakori.data.length > 1}
+			{@render sheet('Suodattimet', filters, filterSheetButton, clearFiltersButton)}
+		{/if}
 	</BottomBar>
 {/snippet}
 
-<div class="flex flex-row items-center justify-between gap-4 border-b border-primary p-3 md:p-4">
-	<button
-		onclick={() => (window.history.length > 1 ? window.history.back() : goto(resolve('/')))}
-		class={twMerge(components.button({ size: 'md' }), 'aspect-square md:aspect-auto')}
-	>
-		<Icon name="arrow_back" />
-		<span class="sr-only md:not-sr-only"
-			>{window.history.length > 1 ? 'Takaisin' : 'Etusivulle'}</span
-		>
-	</button>
-	{#if existingList}
-		<input
-			type="text"
-			name="listName"
-			onblur={() => validateListName(list.name)}
-			class="w-full border-none bg-transparent p-0 text-2xl leading-none focus:ring-0"
-			bind:value={list.name}
-		/>
-	{:else}
-		<!-- Fills the row like the name input, so the buttons stay grouped on the right -->
-		<h2 class="min-w-0 flex-1 truncate text-lg leading-none md:text-2xl">{list.name}</h2>
-	{/if}
-	<!-- Phones have these in the bottom bar -->
-	{#if !$isMobile}
-		{#if existingList && list.items.length > 0}
-			<button
-				class={twMerge(components.button({ size: 'md' }), 'aspect-square md:aspect-auto')}
-				onclick={() => {
-					toggleDetailsElement();
-				}}
-			>
-				<Icon name="sidebar" />
-				<span class="sr-only md:not-sr-only"> Tiedot </span>
-			</button>
-		{/if}
-		{@render shareButton(false)}
-		{@render saveButton(false)}
-		{@render compareButton(false)}
-	{/if}
-</div>
 <div
 	class={twMerge(
-		'relative grid h-full max-h-full grid-cols-[1fr_auto] overflow-hidden',
-		kaljakori.data.length > 1 && 'grid-cols-[auto_1fr_auto]'
+		'grid h-full max-h-full overflow-hidden',
+		$isLaptop ? 'grid-cols-1' : 'grid-cols-[auto_1fr]'
 	)}
 >
-	{#if kaljakori.data.length === 0}
-		<div class="grid flex-auto place-content-center">
-			<div class="mx-auto prose text-center dark:prose-invert">
-				<h2>Lista on tyhjä!</h2>
-				<p>Lisää tuotteita listaan tuotevalikosta!</p>
-				<a
-					href={resolve('/')}
-					class={twMerge(components.button({ type: 'positive' }), 'mx-auto w-full')}
-				>
-					<span>Tuotevalikkoon</span>
-					<Icon name="arrow_right_stroke" />
-				</a>
+	{#if !$isLaptop}
+		<FoldableSidebar
+			id="list"
+			title={list.name}
+			label="sivupalkki"
+			class="flex max-h-full w-80 flex-col overflow-hidden border-e border-primary bg-primary"
+		>
+			<div class="flex flex-auto flex-col gap-3 overflow-y-auto p-4">
+				{@render heading(true)}
+				{#if kaljakori.data.length > 0}
+					{@render summary()}
+				{/if}
+				{#if kaljakori.data.length > 1}
+					{@render filters(true)}
+				{/if}
 			</div>
-		</div>
-	{:else}
-		{#if kaljakori.data.length > 1}
-			<aside class="z-10 flex h-full flex-col overflow-hidden border-primary md:w-84 md:border-e">
-				<Filters
-					{kaljakori}
-					bind:filterValues
-					bind:activeFilters
-					bind:this={filtersComponent}
-					resultCount={rows.length}
-					useURLParams={false}
-				/>
-			</aside>
+			<div class="flex flex-wrap gap-2 border-t border-primary p-4 empty:hidden">
+				{@render compareButton(false)}
+				{@render shareButton(false)}
+				{@render saveButton(false)}
+			</div>
+		</FoldableSidebar>
+	{/if}
+	<div
+		id="results"
+		tabindex="-1"
+		class="flex h-full min-w-0 flex-col gap-3 bg-secondary p-3 outline-none md:gap-4 md:p-6"
+	>
+		{#if $isLaptop}
+			<div class="flex w-full flex-col gap-3">
+				{@render heading()}
+				{#if selection.length}
+					<div class="-mx-3 flex gap-2 overflow-x-auto px-3 pb-0.5 md:mx-0 md:flex-wrap md:px-0">
+						{#each selection as { column, value } (`${column}|${value}`)}
+							<button
+								type="button"
+								onclick={() => deselect(column, value)}
+								title={`${headerToDisplayName(column)}: ${value}`}
+								aria-label={`Poista ${headerToDisplayName(column).toLowerCase()} ${value}`}
+								class="flex shrink-0 cursor-pointer items-center gap-1.5 rounded bg-brand-3 px-2.5 py-1 text-sm text-white"
+							>
+								<span>{value}</span>
+								<Icon name="x" />
+							</button>
+						{/each}
+					</div>
+				{/if}
+			</div>
 		{/if}
-		<div class="mx-auto flex h-full w-full flex-col gap-3 bg-secondary p-3 md:gap-4 md:p-6">
+		{#if kaljakori.data.length === 0}
+			<div class="grid flex-auto place-content-center">
+				<div class="mx-auto prose text-center dark:prose-invert">
+					<h2>Lista on tyhjä!</h2>
+					<p>Lisää tuotteita listaan tuotevalikosta!</p>
+					<a
+						href={resolve('/')}
+						class={twMerge(components.button({ type: 'positive' }), 'mx-auto w-full')}
+					>
+						<span>Tuotevalikkoon</span>
+						<Icon name="arrow_right_stroke" />
+					</a>
+				</div>
+			</div>
+		{:else}
 			<div class="flex w-full flex-col items-start gap-4">
 				<div class={twMerge('grid w-full grid-cols-2 items-end gap-2 md:w-fit')}>
 					<div class="flex flex-col">
@@ -549,71 +872,6 @@
 					{/snippet}
 				</SvelteVirtualList>
 			</div>
-		</div>
-		<aside
-			class="z-10 flex h-full flex-col overflow-x-hidden overflow-y-auto border-primary xl:border-s"
-		>
-			<dialog
-				bind:this={detailsElement}
-				closedby={$isLaptop ? 'any' : 'none'}
-				class={twMerge(
-					// A bottom sheet like the category Tiedot sheet; on wide screens an inline sidebar
-					'fixed m-auto mb-0 hidden max-h-[85dvh] w-full max-w-none flex-col gap-4 overflow-y-auto rounded-t-lg border border-primary bg-primary p-4 transition-transform backdrop:backdrop-blur-sm open:flex open:translate-y-0 open:starting:translate-y-full',
-					'xl:relative xl:m-0 xl:h-full xl:max-h-none xl:w-84 xl:overflow-visible xl:rounded-none xl:border-0 xl:open:starting:translate-y-0'
-				)}
-			>
-				<h2 class="text-2xl font-bold">Listan tiedot</h2>
-				<div class="flex flex-auto flex-col gap-4">
-					<p>Tuotteita listassa: {details.totalItems}</p>
-					<p>Kokonaismäärä: {formatValue(details.totalVolume, AllColumns.BottleSize)}</p>
-					<p>
-						Yhteensä alkoholia: {formatValue(details.totalAlcoholGrams, AllColumns.AlcoholGrams)}
-					</p>
-					<p>Sokeria: {formatValue(details.totalSugarPerLitre, AllColumns.Sugar)}</p>
-					<p>
-						Yhteensä sokeria: {formatValue(details.totalSugar, AllColumns.Sugar, {
-							includeUnit: false
-						})} g
-					</p>
-					<p>
-						Alkoholia per euro: {formatValue(
-							details.totalAlcoholGramsPerEuro,
-							AllColumns.AlcoholGramsPerEuro
-						)} g
-					</p>
-					{#if details.totalServings > 0}
-						<p>
-							Annoksia: {formatValue(details.totalServings, AllColumns.Servings)}
-							({formatValue(details.totalEuroPerServing, AllColumns.EuroPerServing)} / annos)
-						</p>
-					{/if}
-					<p>Arvioitu promillemäärä: {formatValue(details.totalBAC, AllColumns.PromillePerEuro)}</p>
-					<div
-						class={twMerge(
-							components.button({ size: 'lg' }),
-							'w-full hover:cursor-default xl:mt-auto'
-						)}
-					>
-						<Icon name="shopping_bag" />
-						<h2>Yhteensä: {formatValue(details.totalPrice, AllColumns.Price)}</h2>
-					</div>
-				</div>
-				{#if $isLaptop}
-					<!-- Pinned to the bottom of the scrolling sheet, where the Tiedot button that opened it was. Sticky offsets count from inside the sheet's p-4, so -bottom-4 reaches its edge -->
-					<div
-						class="sticky -bottom-4 -mx-4 -mb-4 bg-primary px-4 pt-2.5 pb-[calc(--spacing(2.5)_+_env(safe-area-inset-bottom))] shadow-[0_-4px_12px_rgba(0,0,0,0.06)]"
-					>
-						<button
-							type="button"
-							class={twMerge(components.button({ size: 'lg' }), 'h-11 w-full')}
-							onclick={() => toggleDetailsElement()}
-						>
-							<Icon name="x" />
-							<span>Sulje</span>
-						</button>
-					</div>
-				{/if}
-			</dialog>
-		</aside>
-	{/if}
+		{/if}
+	</div>
 </div>
