@@ -22,6 +22,8 @@ jobs:
   sync:
     if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
+    outputs:
+      fetched: ${{ steps.gate.outputs.fetch }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -54,7 +56,35 @@ jobs:
       - name: Rehash seeded dataset to current schema
         uses: ./.github/actions/rehash-dataset
 
+      # A run after a build still deploys the new page shell, but skips the Alko fetch
+      # when the deployed data was synced recently, so a burst of pushes doesn't hit the
+      # API each time. Scheduled and manual runs always fetch.
+      - name: Check time since last sync
+        id: gate
+        env:
+          SYNC_COOLDOWN_MINUTES: '120'
+        run: |
+          fetch=true
+          if [ "${{ github.event_name }}" = "workflow_run" ] && [ -f data.json ]; then
+            last=$(jq -r '.metadata.LastSynced // empty' data.json)
+            if [ -n "$last" ]; then
+              age=$(( ($(date +%s) - $(date -d "$last" +%s)) / 60 ))
+              if [ "$age" -lt "$SYNC_COOLDOWN_MINUTES" ]; then
+                echo "⏭️  Last sync $age min ago (< $SYNC_COOLDOWN_MINUTES) — redeploying the current data without fetching."
+                fetch=false
+              else
+                echo "· Last sync $age min ago — fetching."
+              fi
+            fi
+          fi
+          # The sync writes availability.json; without it, deploy the current one
+          if [ "$fetch" = false ]; then
+            git show origin/gh-pages:availability.json > availability.json
+          fi
+          echo "fetch=$fetch" >> "$GITHUB_OUTPUT"
+
       - name: Run script to convert to JSON
+        if: steps.gate.outputs.fetch == 'true'
         env:
           ALKO_DETAIL_CONCURRENCY: '8'
           ALKO_SEARCH_CONCURRENCY: '3'
@@ -308,8 +338,10 @@ jobs:
 
       # Before the new availability.json is copied over the deployed one, which
       # is the previous run's and tells which products arrived in which store.
-      # Best-effort: a missed run only loses that day's point.
+      # Best-effort: a missed run only loses that day's point. Skipped when the sync
+      # didn't fetch, since the availability is the deployed one.
       - name: Update stock history
+        if: needs.sync.outputs.fetched == 'true'
         continue-on-error: true
         run: |
           bun run scripts/data/stock-history.ts \

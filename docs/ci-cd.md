@@ -115,10 +115,14 @@ flowchart LR
 2. Seed `data.json`, `data-removed.json` and `data/hashes.json` from `gh-pages` (the job works
    with flat files: `hashes.json`, `og-images.json`, … in the workspace root).
 3. `scripts/data/rehash.ts` via the `rehash-dataset` action.
-4. Run the sync up to 3 times, 60 s apart. Exit code 3 (safeguards rejected the data) fails
+4. **Cooldown gate**: in a run triggered by a build, if the seeded `data.json`'s `LastSynced` is
+   less than 2 hours old (`SYNC_COOLDOWN_MINUTES`), skip the fetch and use the deployed
+   `availability.json` instead, so a burst of pushes still deploys each build without hitting
+   Alko's API every time. Scheduled and manual runs always fetch.
+5. Run the sync up to 3 times, 60 s apart. Exit code 3 (safeguards rejected the data) fails
    immediately without retrying. The **force** input sets `ALKO_SYNC_FORCE=1`. Each attempt
    appends its outcome to `sync-report.ndjson`, uploaded as an artifact even when the job fails.
-5. Upload `data.json`, `data-removed.json`, `hashes.json` and `availability.json` as artifacts.
+6. Upload `data.json`, `data-removed.json`, `hashes.json` and `availability.json` as artifacts.
 
 **og-images** renders and uploads product and category OG images for changed products, updating
 the manifests checked out from `gh-pages`. Both steps are `continue-on-error`: if R2 is down, pages
@@ -134,7 +138,7 @@ deploy with the previous manifests and fall back to Alko's photos.
 4. `bun run daily` (bake and archive).
 5. Render today's Daily OG card and stub (best effort).
 6. Update the [stock history](data/stock-history.md) in `../gh-pages/data/stock` against the deployed
-   (previous) `availability.json` (best effort).
+   (previous) `availability.json` (best effort; skipped when the sync didn't fetch).
 7. Copy the hashes and OG manifests into `data/`, prerender product and category pages incrementally against the
    deployed `404.html`, copy the data and feed files in, prerender static and store pages, and
    replace `daily/` and `rss/`.
