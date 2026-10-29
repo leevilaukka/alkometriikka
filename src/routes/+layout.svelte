@@ -289,22 +289,14 @@
 
 	const inCategory = $derived(page.route.id === '/kategoriat/[type]/[[subtype]]');
 
-	const noSearchPages: (typeof page.route.id)[] = [
-		'/daily/arkisto',
-		'/laskin',
-		'/boolilaskuri',
-		'/tilastot',
-		'/listat',
-		'/daily',
-		'/daily/arkisto/[date]',
-		'/tuotteet/[...id]',
-		'/vertailu',
-		'/kategoriat',
-		'/myymalat',
-		'/myymalat/[storeID]',
-		'/seuratut'
+	// The product lists that filter by the header's search; other pages get the Haku button, which
+	// opens the command palette, so a new page doesn't show a search box that does nothing
+	const searchPages: (typeof page.route.id)[] = [
+		'/',
+		'/kategoriat/[type]/[[subtype]]',
+		'/hinnanmuutokset'
 	];
-	const hasSearch = $derived(page.route.id === null || !noSearchPages.includes(page.route.id));
+	const hasSearch = $derived(searchPages.includes(page.route.id));
 
 	let commandPalette = $state<ReturnType<typeof CommandPalette>>();
 	const paletteShortcut = /Mac|iPhone|iPad/.test(navigator.userAgent) ? '⌘K' : 'Ctrl K';

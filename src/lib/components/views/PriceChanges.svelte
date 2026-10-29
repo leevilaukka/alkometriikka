@@ -465,7 +465,7 @@
 			id="price-changes"
 			title={TITLE}
 			label="suodattimet"
-			class="flex max-h-full w-84 flex-col gap-3 overflow-y-auto border-e border-primary bg-primary p-4"
+			class="flex max-h-full w-80 flex-col gap-3 overflow-y-auto border-e border-primary bg-primary p-4"
 		>
 			{@render intro()}
 			{@render filters()}

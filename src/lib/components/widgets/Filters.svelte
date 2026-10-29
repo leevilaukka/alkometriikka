@@ -186,45 +186,70 @@
 	bind:this={filtersElement}
 	aria-label="Suodattimet"
 	class={twMerge(
-		'relative m-auto hidden h-full w-full flex-col gap-4 overflow-x-hidden overflow-y-auto rounded-lg border border-primary bg-primary p-4 transition-transform backdrop:backdrop-blur-sm open:flex open:scale-100 md:relative md:rounded-none md:border-0 open:starting:scale-0 md:open:starting:scale-100'
+		'relative m-auto hidden h-full w-full flex-col overflow-hidden rounded-lg border border-primary bg-primary transition-transform backdrop:backdrop-blur-sm open:flex open:scale-100 md:relative md:rounded-none md:border-0 open:starting:scale-0 md:open:starting:scale-100'
 	)}
 	onclose={() => (showFilters = false)}
 >
-	{#each filters as filter}
-		{@const possibleValues = getNarrowedFilterValues(filter, filterValues, kaljakori, showRemoved)}
-		{@const type = kaljakori.getFilterType(filter)}
-		{#if filter === AllColumns.StoreAvailability && !kaljakori.availabilityLoaded}
-			<!-- availability.json loads after the products; hold the store filter's place until then -->
-			<div class="flex w-full flex-col gap-2 text-sm" aria-busy="true">
-				<span>{headerToDisplayName(filter)}</span>
-				<button
-					disabled
-					class={twMerge(
-						components.button(),
-						'w-full cursor-wait justify-start gap-2 text-secondary'
-					)}
-				>
-					<span
-						class="block h-4 w-4 shrink-0 animate-spin rounded-full border-2 border-red-600 border-b-transparent"
-						aria-hidden="true"
-					></span>
-					<span>Ladataan myymälöitä…</span>
-				</button>
-			</div>
-		{:else if !pillFilters.includes(filter) && possibleValues.length > 1}
-			<div class="flex w-full flex-col gap-2 text-sm">
-				{#if type === 'number'}
-					{@const [min, max] = kaljakori.getMinAndMaxValues(filter, showRemoved)}
-					<NumberInput
-						defaultValue={[min, max]}
-						label={filter}
-						bind:value={filterValues[filter]}
-						bind:modified={filterActiveState[filter]}
-						{min}
-						{max}
-						step={0.01}
-					/>
-				{:else}
+	<!-- The filters scroll above a footer that stays put, as in the other pages' sidebars -->
+	<div class="flex flex-auto flex-col gap-4 overflow-x-hidden overflow-y-auto p-4">
+		{#each filters as filter}
+			{@const possibleValues = getNarrowedFilterValues(
+				filter,
+				filterValues,
+				kaljakori,
+				showRemoved
+			)}
+			{@const type = kaljakori.getFilterType(filter)}
+			{#if filter === AllColumns.StoreAvailability && !kaljakori.availabilityLoaded}
+				<!-- availability.json loads after the products; hold the store filter's place until then -->
+				<div class="flex w-full flex-col gap-2 text-sm" aria-busy="true">
+					<span>{headerToDisplayName(filter)}</span>
+					<button
+						disabled
+						class={twMerge(
+							components.button(),
+							'w-full cursor-wait justify-start gap-2 text-secondary'
+						)}
+					>
+						<span
+							class="block h-4 w-4 shrink-0 animate-spin rounded-full border-2 border-red-600 border-b-transparent"
+							aria-hidden="true"
+						></span>
+						<span>Ladataan myymälöitä…</span>
+					</button>
+				</div>
+			{:else if !pillFilters.includes(filter) && possibleValues.length > 1}
+				<div class="flex w-full flex-col gap-2 text-sm">
+					{#if type === 'number'}
+						{@const [min, max] = kaljakori.getMinAndMaxValues(filter, showRemoved)}
+						<NumberInput
+							defaultValue={[min, max]}
+							label={filter}
+							bind:value={filterValues[filter]}
+							bind:modified={filterActiveState[filter]}
+							{min}
+							{max}
+							step={0.01}
+						/>
+					{:else}
+						<StringInput
+							defaultValue={[]}
+							label={headerToDisplayName(filter)}
+							options={possibleValues}
+							bind:value={filterValues[filter]}
+							bind:modified={filterActiveState[filter]}
+							name={filter}
+							groupOptions={filterOptionGroupers[filter]}
+						/>
+					{/if}
+					<RecursiveFilter {filter} bind:filterValues {kaljakori} {showRemoved} />
+				</div>
+			{/if}
+		{/each}
+		{#if pillFilters.length}
+			<div class="flex w-full flex-row flex-wrap items-center gap-2">
+				{#each pillFilters as filter}
+					{@const possibleValues = kaljakori.getFilterValues(filter, showRemoved)}
 					<StringInput
 						defaultValue={[]}
 						label={headerToDisplayName(filter)}
@@ -232,45 +257,26 @@
 						bind:value={filterValues[filter]}
 						bind:modified={filterActiveState[filter]}
 						name={filter}
-						groupOptions={filterOptionGroupers[filter]}
 					/>
-				{/if}
-				<RecursiveFilter {filter} bind:filterValues {kaljakori} {showRemoved} />
+				{/each}
 			</div>
 		{/if}
-	{/each}
-	{#if pillFilters.length}
-		<div class="flex w-full flex-row flex-wrap items-center gap-2">
-			{#each pillFilters as filter}
-				{@const possibleValues = kaljakori.getFilterValues(filter, showRemoved)}
-				<StringInput
-					defaultValue={[]}
-					label={headerToDisplayName(filter)}
-					options={possibleValues}
-					bind:value={filterValues[filter]}
-					bind:modified={filterActiveState[filter]}
-					name={filter}
-				/>
-			{/each}
-		</div>
-	{/if}
-	<div
-		class="sticky bottom-0 mt-auto flex w-full flex-col gap-2 backdrop:backdrop-blur-sm md:border-0 md:p-0"
-	>
+	</div>
+	<div class="flex flex-wrap gap-2 border-t border-primary p-4">
 		{#if hasRemovedProducts}
 			<button
 				onclick={() => (showRemoved = !showRemoved)}
-				class={twMerge(components.button(), 'w-full')}
+				class={twMerge(components.button(), 'flex-1')}
 			>
 				<Icon name={showRemoved ? 'eye' : 'eye_slash'} />
-				<span>{showRemoved ? 'Piilota poistuneet tuotteet' : 'Näytä poistuneet tuotteet'}</span>
+				<span>{showRemoved ? 'Piilota poistuneet' : 'Näytä poistuneet'}</span>
 			</button>
 		{/if}
 		<button
 			onclick={() => {
 				filterValues = initFilterValues(kaljakori, undefined, showRemoved);
 			}}
-			class={twMerge(components.button({ type: 'negative' }), 'w-full', 'mt-auto')}
+			class={twMerge(components.button(), 'flex-1')}
 		>
 			<Icon name={'x_circle'} />
 			<span>Tyhjennä suodattimet</span>
@@ -281,7 +287,7 @@
 					toggleFilterElement();
 					showFilters = !showFilters;
 				}}
-				class={twMerge(components.button(), 'w-full')}
+				class={twMerge(components.button(), 'basis-full')}
 			>
 				<span>Sulje suodattimet</span>
 			</button>

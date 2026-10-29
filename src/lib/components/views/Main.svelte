@@ -255,7 +255,7 @@
 			title={activeFilters.length ? `Suodattimet (${activeFilters.length})` : 'Suodattimet'}
 			label="suodattimet"
 			foldable={!$isMobile}
-			class="z-10 flex h-full max-h-full flex-col overflow-hidden border-primary md:w-84 md:border-r"
+			class="z-10 flex h-full max-h-full flex-col overflow-hidden border-primary md:w-80 md:border-r"
 		>
 			<a
 				href="#results"
