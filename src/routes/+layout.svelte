@@ -222,6 +222,8 @@
 	}
 
 	let extraMenu = $state<HTMLDetailsElement>();
+	// The pins stay hidden until asked for, so the menu isn't a column of them
+	let editingPins = $state(false);
 	function closeExtraMenu() {
 		if (extraMenu) extraMenu.open = false;
 	}
@@ -401,6 +403,9 @@
 					class="relative"
 					onkeydown={handleExtraMenuKeydown}
 					onfocusout={handleExtraMenuFocusout}
+					ontoggle={() => {
+						if (!extraMenu?.open) editingPins = false;
+					}}
 				>
 					<summary
 						aria-label={changedWatchCount
@@ -416,18 +421,38 @@
 						{/if}
 					</summary>
 					<div
-						class="absolute end-0 top-full z-20 mt-2 flex w-56 flex-col rounded border border-primary bg-primary p-1.5 shadow-lg"
+						class="absolute end-0 top-full z-20 mt-2 flex max-h-[calc(100dvh-5rem)] w-56 flex-col overflow-y-auto rounded border border-primary bg-primary p-1.5 shadow-lg"
 					>
 						{#each navGroups as group, index (group.label)}
-							<p
-								id={`menu-${index}`}
-								class={twMerge(
-									'px-2 pb-1 text-xs font-semibold tracking-wide text-secondary uppercase',
-									index > 0 ? 'mt-1.5 border-t border-primary pt-2.5' : 'pt-1'
-								)}
-							>
-								{group.label}
-							</p>
+							{#snippet groupLabel()}
+								<p
+									id={`menu-${index}`}
+									class={twMerge(
+										'px-2 pb-1 text-xs font-semibold tracking-wide text-secondary uppercase',
+										index > 0 ? 'mt-1.5 border-t border-primary pt-2.5' : 'pt-1'
+									)}
+								>
+									{group.label}
+								</p>
+							{/snippet}
+							{#if index === 0}
+								<!-- The cog shares the first label's row, so a bigger touch target pushes the rows down rather than covering one -->
+								<div class="flex items-center justify-between">
+									{@render groupLabel()}
+									<button
+										type="button"
+										aria-pressed={editingPins}
+										aria-label="Muokkaa yläpalkin pikavalintoja"
+										title="Muokkaa yläpalkin pikavalintoja"
+										onclick={() => (editingPins = !editingPins)}
+										class="rounded p-1 text-sm text-secondary hover:bg-secondary aria-pressed:bg-secondary aria-pressed:text-inherit pointer-coarse:p-2.5 pointer-coarse:text-base"
+									>
+										<Icon name="cog" />
+									</button>
+								</div>
+							{:else}
+								{@render groupLabel()}
+							{/if}
 							<ul aria-labelledby={`menu-${index}`}>
 								{#each group.items as item (item.href)}
 									{@const pinned = slots.includes(item.href)}
@@ -436,7 +461,7 @@
 											href={appPath(item.href)}
 											onclick={closeExtraMenu}
 											aria-current={item.href === currentHref ? 'page' : undefined}
-											class="flex flex-1 items-center gap-2.5 rounded px-2 py-1.5 text-sm hover:bg-secondary aria-[current=page]:bg-secondary aria-[current=page]:font-semibold"
+											class="flex flex-1 items-center gap-2.5 rounded px-2 py-1.5 text-sm hover:bg-secondary aria-[current=page]:bg-secondary aria-[current=page]:font-semibold pointer-coarse:py-2.5"
 										>
 											<Icon name={item.icon} class="text-base" />
 											<span class="flex-1">{item.name}</span>
@@ -447,20 +472,27 @@
 												>
 											{/if}
 										</a>
-										<button
-											type="button"
-											aria-pressed={pinned}
-											aria-label={`Kiinnitä ${item.name} yläpalkkiin`}
-											title={pinned ? 'Irrota yläpalkista' : 'Kiinnitä yläpalkkiin'}
-											onclick={() => togglePin(item)}
-											class="rounded p-1.5 text-sm text-secondary opacity-60 hover:bg-secondary hover:opacity-100 aria-pressed:text-inherit aria-pressed:opacity-100"
-										>
-											<Icon name={pinned ? 'pin' : 'pin_alt'} />
-										</button>
+										{#if editingPins}
+											<button
+												type="button"
+												aria-pressed={pinned}
+												aria-label={`Kiinnitä ${item.name} yläpalkkiin`}
+												title={pinned ? 'Irrota yläpalkista' : 'Kiinnitä yläpalkkiin'}
+												onclick={() => togglePin(item)}
+												class="rounded p-1.5 text-sm text-secondary opacity-60 hover:bg-secondary hover:opacity-100 aria-pressed:text-inherit aria-pressed:opacity-100 pointer-coarse:p-2.5 pointer-coarse:text-base"
+											>
+												<Icon name={pinned ? 'pin' : 'pin_alt'} />
+											</button>
+										{/if}
 									</li>
 								{/each}
 							</ul>
 						{/each}
+						{#if editingPins}
+							<p class="mt-1.5 border-t border-primary px-2 pt-2 text-xs text-secondary">
+								Kiinnitä enintään kaksi sivua yläpalkin painikkeiksi.
+							</p>
+						{/if}
 					</div>
 				</details>
 				{#each slotItems as item (item.href)}
