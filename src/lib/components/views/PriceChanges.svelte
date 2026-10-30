@@ -29,9 +29,11 @@
 		parsePriceChangeParams,
 		priceChangeParams,
 		priceChangeSince,
+		sortPriceChanges,
 		DEFAULT_PRICE_CHANGE_WINDOW,
 		PRICE_CHANGE_WINDOWS,
-		type PriceChangeDirection
+		type PriceChangeDirection,
+		type PriceChangeSort
 	} from '$lib/utils/stats/priceChanges';
 	import type { SearchParamsManager } from '$lib/utils/app/url';
 	import {
@@ -68,6 +70,7 @@
 	const initial = untrack(() => parsePriceChangeParams(searchParamsManager.params));
 	let days = $state<number>(initial.days);
 	let direction = $state<PriceChangeDirection>(initial.direction);
+	let sort = $state<PriceChangeSort>(initial.sort);
 	let typeSlug = $state(initial.typeSlug);
 	let subTypeSlug = $state(initial.subTypeSlug);
 
@@ -116,7 +119,9 @@
 		searched.filter((change) => isInCategory(change.product, typeNode?.slug, subTypeNode?.slug))
 	);
 	const drops = $derived(inCategory.filter(isPriceDrop).length);
-	const changes = $derived(filterPriceChangesByDirection(inCategory, direction));
+	const changes = $derived(
+		sortPriceChanges(filterPriceChangesByDirection(inCategory, direction), sort)
+	);
 
 	// Below the sidebar breakpoint (the same as the category page's) the title scrolls away
 	// with the list as its first row, leaving the cards room for the change tab
@@ -135,6 +140,11 @@
 		{ value: 'up', label: 'Kallistuneet' }
 	];
 
+	const sorts: { value: PriceChangeSort; label: string }[] = [
+		{ value: 'recent', label: 'Uusimmat' },
+		{ value: 'biggest', label: 'Suurin muutos' }
+	];
+
 	function selectType(slug?: string) {
 		typeSlug = slug;
 		subTypeSlug = undefined;
@@ -146,7 +156,7 @@
 		$searchQuery = '';
 	}
 
-	// The store toggle is a setting of its own, so it neither counts as a filter nor gets cleared
+	// The store toggle and the sort order are settings of their own, so they neither count as filters nor get cleared
 	const activeFilterCount = $derived(
 		[typeNode, subTypeNode, direction !== 'all', days !== DEFAULT_PRICE_CHANGE_WINDOW].filter(
 			Boolean
@@ -175,6 +185,7 @@
 				priceChangeParams({
 					days,
 					direction,
+					sort,
 					typeSlug: typeNode?.slug,
 					subTypeSlug: subTypeNode?.slug
 				})
@@ -248,7 +259,7 @@
 			<h1 class="text-2xl font-bold">{TITLE}</h1>
 			<p class="text-sm text-secondary">
 				Alkon valikoiman tuotteet, joiden hinta on muuttunut viime aikoina. Jokaisesta tuotteesta
-				näytetään sen viimeisin muutos, uusimmat ensin.
+				näytetään sen viimeisin muutos.
 			</p>
 		</div>
 	</div>
@@ -321,6 +332,18 @@
 			>
 				{#each PRICE_CHANGE_WINDOWS as value (value)}
 					{@render segment(`${value} pv`, days === value, () => (days = value))}
+				{/each}
+			</div>
+		</div>
+		<div class="flex flex-col gap-1">
+			<span id="price-change-sort" class="text-sm">Järjestys</span>
+			<div
+				class="flex overflow-hidden rounded border border-primary"
+				role="group"
+				aria-labelledby="price-change-sort"
+			>
+				{#each sorts as option (option.value)}
+					{@render segment(option.label, sort === option.value, () => (sort = option.value))}
 				{/each}
 			</div>
 		</div>

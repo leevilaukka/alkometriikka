@@ -92,8 +92,9 @@ Slugs are lower-cased and accent-stripped ("Väkevät" → `vakevat`).
 `views/PriceChanges.svelte`, helpers in `src/lib/utils/stats/priceChanges.ts`
 
 Each active product's latest price change within the last 7, 30 (default) or 90 days, newest
-first. Filter by direction (cheaper / more expensive), category chips with counts, name search,
-and optionally only the preferred store. All choices are in the URL (`?pv=7&suunta=halpeni&tyyppi=viinit`).
+first or biggest percentage change first. Filter by direction (cheaper / more expensive), category
+chips with counts, name search, and optionally only the preferred store. All choices are in the URL
+(`?pv=7&suunta=halpeni&jarjestys=suurin&tyyppi=viinit`).
 Links to the site RSS feed.
 
 ## Lists (`/listat`)

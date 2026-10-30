@@ -20,6 +20,11 @@ const DIRECTION_PARAMS: Record<Exclude<PriceChangeDirection, 'all'>, string> = {
 	up: 'kallistui'
 };
 
+export type PriceChangeSort = 'recent' | 'biggest';
+
+/** `?jarjestys=` value in the URL. */
+const BIGGEST_SORT_PARAM = 'suurin';
+
 /** First day (Helsinki time, `YYYY-MM-DD`) of a window of `days` ending now. */
 export function priceChangeSince(days: number, now: Date = new Date()): string {
 	return toISODateInTimeZone('Europe/Helsinki', new Date(now.getTime() - days * 864e5));
@@ -35,6 +40,15 @@ export function filterPriceChangesByDirection(
 ): PriceChange[] {
 	if (direction === 'all') return changes;
 	return changes.filter((change) => isPriceDrop(change) === (direction === 'down'));
+}
+
+/**
+ * Orders changes that are newest first, as `recentPriceChanges` returns them: `recent` keeps
+ * that order, `biggest` puts the largest percentage change first, newest first among equals.
+ */
+export function sortPriceChanges(changes: PriceChange[], sort: PriceChangeSort): PriceChange[] {
+	if (sort === 'recent') return changes;
+	return changes.toSorted((a, b) => Math.abs(b.percent) - Math.abs(a.percent));
 }
 
 /**
@@ -70,10 +84,11 @@ export function countPriceChangesByCategory(changes: PriceChange[]): Map<string,
 	return counts;
 }
 
-/** Reads the page's `?pv=`, `?suunta=` and `?tyyppi=`/`?alatyyppi=` parameters, ignoring unknown values. */
+/** Reads the page's `?pv=`, `?suunta=`, `?jarjestys=` and `?tyyppi=`/`?alatyyppi=` parameters, ignoring unknown values. */
 export function parsePriceChangeParams(params: URLSearchParams): {
 	days: PriceChangeWindow;
 	direction: PriceChangeDirection;
+	sort: PriceChangeSort;
 	typeSlug?: string;
 	subTypeSlug?: string;
 } {
@@ -88,6 +103,7 @@ export function parsePriceChangeParams(params: URLSearchParams): {
 				: direction === DIRECTION_PARAMS.up
 					? 'up'
 					: 'all',
+		sort: params.get('jarjestys') === BIGGEST_SORT_PARAM ? 'biggest' : 'recent',
 		typeSlug,
 		subTypeSlug: (typeSlug && params.get('alatyyppi')) || undefined
 	};
@@ -97,12 +113,14 @@ export function parsePriceChangeParams(params: URLSearchParams): {
 export function priceChangeParams(options: {
 	days: number;
 	direction: PriceChangeDirection;
+	sort?: PriceChangeSort;
 	typeSlug?: string;
 	subTypeSlug?: string;
-}): Record<'pv' | 'suunta' | 'tyyppi' | 'alatyyppi', string> {
+}): Record<'pv' | 'suunta' | 'jarjestys' | 'tyyppi' | 'alatyyppi', string> {
 	return {
 		pv: options.days === DEFAULT_PRICE_CHANGE_WINDOW ? '' : String(options.days),
 		suunta: options.direction === 'all' ? '' : DIRECTION_PARAMS[options.direction],
+		jarjestys: options.sort === 'biggest' ? BIGGEST_SORT_PARAM : '',
 		tyyppi: options.typeSlug ?? '',
 		alatyyppi: (options.typeSlug && options.subTypeSlug) || ''
 	};
