@@ -20,6 +20,7 @@
 		sale,
 		campaignWindow,
 		storesState,
+		inNoStore,
 		preferredStore,
 		availableInPreferredStore,
 		closestAvailableStore,
@@ -31,6 +32,7 @@
 		sale: SaleInfo | null;
 		campaignWindow: string | null;
 		storesState: LoadState;
+		inNoStore: boolean;
 		preferredStore?: AvailabilityStore;
 		availableInPreferredStore: boolean;
 		closestAvailableStore?: AvailabilityStore;
@@ -59,6 +61,7 @@
 		{sale}
 		{campaignWindow}
 		{storesState}
+		{inNoStore}
 		{preferredStore}
 		{availableInPreferredStore}
 		{closestAvailableStore}

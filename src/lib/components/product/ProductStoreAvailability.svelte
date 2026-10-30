@@ -1,16 +1,23 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
+	import { locationDenied, preferredStoreId } from '$lib/global.svelte';
 	import type { AvailabilityStore, LoadState } from '$lib/types';
 	import {
+		filterStoresByQuery,
 		formatStoreDistance,
+		getStoreCity,
 		getStoreDistance,
 		getTodaysOpeningHours,
-		isStoreOpen
+		isStoreOpen,
+		rankStoresByDistance
 	} from '$lib/utils/catalog/availability';
 	import { formatRelativeTime } from '$lib/utils/format/format';
-	import { requestSettingsOpen } from '$lib/utils/app/settings';
+	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
+	import { AUTO_STORE_ID } from '$lib/utils/constants/app';
+	import { requestUserLocation } from '$lib/utils/device/location';
 	import { components } from '$lib/utils/ui/styles';
 	import { twMerge } from 'tailwind-merge';
+	import Icon from '../widgets/Icon.svelte';
 	import ProductStockTrend from './ProductStockTrend.svelte';
 
 	// productNumber is also threaded through for a future `show_availability` re-evaluation
@@ -20,6 +27,7 @@
 		id,
 		productNumber,
 		stores,
+		allStores,
 		availabilityState,
 		preferredStore,
 		availabilityUpdated,
@@ -28,6 +36,8 @@
 		id?: string;
 		productNumber: string;
 		stores: AvailabilityStore[];
+		/** Every store, so a search can also say which ones don't have the product */
+		allStores: AvailabilityStore[];
 		/** `stores` is empty, rather than the product in no store, unless availability has loaded */
 		availabilityState: LoadState;
 		preferredStore?: AvailabilityStore;
@@ -50,6 +60,41 @@
 		}, 60_000);
 		return () => clearInterval(interval);
 	});
+
+	let query = $state('');
+	let searchTrackedFor: string | undefined;
+
+	const searching = $derived(query.trim() !== '');
+	const inNoStore = $derived(availabilityState === 'loaded' && stores.length === 0);
+	const stockedStoreIds = $derived(new Set(stores.map((store) => store.id)));
+	const shownStores = $derived(
+		searching ? rankStoresByDistance(filterStoresByQuery(allStores, query), preferredStore) : stores
+	);
+
+	function trackSearch() {
+		if (searchTrackedFor === productNumber) return;
+		searchTrackedFor = productNumber;
+		sendAnalyticsEvent('store_availability_search', { product_number: productNumber });
+	}
+
+	// Takes effect right away, so a search can go on from here without a reload
+	function selectPreferredStore(store: AvailabilityStore) {
+		$preferredStoreId = store.id;
+		sendAnalyticsEvent('preferred_store_changed', {
+			storeId: store.id,
+			storeName: store.name,
+			city: getStoreCity(store)
+		});
+	}
+
+	function selectNearestStore() {
+		$preferredStoreId = AUTO_STORE_ID;
+		requestUserLocation();
+		sendAnalyticsEvent('preferred_store_changed', {
+			storeId: AUTO_STORE_ID,
+			storeName: 'Auto'
+		});
+	}
 </script>
 
 <section
@@ -78,15 +123,26 @@
 		</p>
 		<ProductStockTrend {productNumber} class="mt-1" />
 	</header>
-	{#if availabilityState === 'loaded' && !preferredStore}
-		<div class="border-b border-primary p-3.5">
-			<button
-				type="button"
-				class={twMerge(components.button({ type: 'positive', size: 'md' }), 'w-full')}
-				onclick={requestSettingsOpen}
-			>
-				Valitse ensisijainen myymälä
-			</button>
+	{#if availabilityState !== 'failed' && !inNoStore}
+		<div class="flex flex-col gap-2 border-b border-primary p-3.5">
+			<label class="sr-only" for="myymalasaatavuus-haku">Hae myymälää</label>
+			<input
+				id="myymalasaatavuus-haku"
+				type="search"
+				bind:value={query}
+				oninput={trackSearch}
+				placeholder="Hae myymälää tai paikkakuntaa"
+				class={twMerge(components.input({ size: 'md' }), 'w-full')}
+			/>
+			{#if availabilityState === 'loaded' && !preferredStore && !$locationDenied}
+				<button
+					type="button"
+					class={twMerge(components.button({ size: 'sm' }), 'w-full')}
+					onclick={selectNearestStore}
+				>
+					Valitse lähin myymälä automaattisesti
+				</button>
+			{/if}
 		</div>
 	{/if}
 	{#if availabilityState === 'failed'}
@@ -107,17 +163,32 @@
 				<div class="h-12 animate-pulse rounded bg-secondary"></div>
 			{/each}
 		</div>
-	{:else if stores.length > 0}
+	{:else if inNoStore}
+		<p class="bg-primary p-3.5 text-secondary">Ei saatavilla myymälöissä.</p>
+	{:else if shownStores.length > 0}
 		<ul class="max-h-96 overflow-y-auto bg-primary">
-			{#each stores as store (store.id)}
+			{#each shownStores as store (store.id)}
 				{@const distance = formatStoreDistance(getStoreDistance(preferredStore, store))}
 				{@const openingHours = getTodaysOpeningHours(store)}
 				{@const storeOpen = isStoreOpen(store)}
+				{@const stocked = stockedStoreIds.has(store.id)}
+				{@const isPreferred = store.id === preferredStore?.id}
 				<li class="flex gap-2.5 border-b border-primary p-3.5 last:border-b-0">
 					<div class="flex min-w-0 flex-1 flex-col gap-0.5">
 						<a href={resolve(`/myymalat/${store.id}/`)} class="w-fit font-bold hover:underline"
 							>{store.name}</a
 						>
+						{#if searching}
+							<span
+								class={twMerge(
+									'flex items-center gap-1 text-sm',
+									stocked ? 'text-green-700 dark:text-green-400' : 'text-red-700 dark:text-red-400'
+								)}
+							>
+								<Icon name={stocked ? 'check_circle' : 'x_circle'} />
+								{stocked ? 'Saatavilla' : 'Ei saatavilla'}
+							</span>
+						{/if}
 						{#if store.address}
 							<span class="text-sm text-secondary">{store.address}</span>
 						{/if}
@@ -127,13 +198,26 @@
 							</span>
 						{/if}
 					</div>
-					{#if distance}
-						<span class="shrink-0 text-sm text-secondary">{distance}</span>
-					{/if}
+					<div class="flex shrink-0 flex-col items-end gap-1.5">
+						{#if distance}
+							<span class="text-sm text-secondary">{distance}</span>
+						{/if}
+						<button
+							type="button"
+							class={components.button({ size: 'sm', type: isPreferred ? 'positive' : 'primary' })}
+							disabled={isPreferred}
+							aria-label={isPreferred
+								? `${store.name} on ensisijainen myymäläsi`
+								: `Valitse ${store.name} ensisijaiseksi myymäläksi`}
+							onclick={() => selectPreferredStore(store)}
+						>
+							{isPreferred ? 'Valittu' : 'Valitse'}
+						</button>
+					</div>
 				</li>
 			{/each}
 		</ul>
 	{:else}
-		<p class="bg-primary p-3.5 text-secondary">Ei saatavilla myymälöissä.</p>
+		<p class="bg-primary p-3.5 text-secondary">Hakua vastaavia myymälöitä ei löytynyt.</p>
 	{/if}
 </section>

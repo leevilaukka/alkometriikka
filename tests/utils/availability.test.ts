@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'bun:test';
 import type { AvailabilityStore } from '$lib/types';
 import {
+	filterStoresByQuery,
 	getNormalOpeningHours,
 	getTodaysOpeningHours,
 	parseStoreAccessibility
@@ -20,6 +21,32 @@ const store: AvailabilityStore = {
 		{ hours: 'Kiinni', date: '2026-10-25' }
 	]
 };
+
+describe('filterStoresByQuery', () => {
+	const stores: AvailabilityStore[] = [
+		{ id: '1', name: 'Turku Kupittaa', address: 'Uudenmaankatu 1', postalCode: '20500' },
+		{ id: '2', name: 'Raisio Mylly', postOffice: 'RAISIO' },
+		{ id: '3', name: 'Hämeenlinna Goodman' }
+	];
+	const ids = (query: string) => filterStoresByQuery(stores, query).map((store) => store.id);
+
+	it('matches name, address, postal code and post office in any case', () => {
+		expect(ids('turku')).toEqual(['1']);
+		expect(ids('uudenmaan')).toEqual(['1']);
+		expect(ids('20500')).toEqual(['1']);
+		expect(ids('raisio')).toEqual(['2']);
+		expect(ids('HÄMEEN')).toEqual(['3']);
+	});
+
+	it('ignores surrounding whitespace and returns every store for an empty query', () => {
+		expect(ids('  turku ')).toEqual(['1']);
+		expect(ids(' ')).toEqual(['1', '2', '3']);
+	});
+
+	it('returns nothing without a match', () => {
+		expect(ids('oulu')).toEqual([]);
+	});
+});
 
 describe('getNormalOpeningHours', () => {
 	it('returns the regular hours, not the exception', () => {

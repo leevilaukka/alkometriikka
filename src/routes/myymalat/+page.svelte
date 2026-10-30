@@ -6,7 +6,11 @@
 	import { AUTO_STORE_ID } from '$lib/utils/constants/app';
 	import { requestUserLocation } from '$lib/utils/device/location';
 	import type { AvailabilityStore } from '$lib/types';
-	import { getStoreCity, isStoreOpen } from '$lib/utils/catalog/availability.js';
+	import {
+		filterStoresByQuery,
+		getStoreCity,
+		isStoreOpen
+	} from '$lib/utils/catalog/availability.js';
 	import { generateTitle, setSEO } from '$lib/utils/app/meta';
 	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 	import { staticPage } from '$lib/utils/app/seo';
@@ -56,14 +60,7 @@
 	{@const stores = Object.values(alko.availability.stores).sort((first, second) =>
 		first.name.localeCompare(second.name, 'fi')
 	)}
-	{@const normalizedQuery = query.trim().toLocaleLowerCase('fi-FI')}
-	{@const filteredStores = stores.filter((store) =>
-		[store.name, store.address, store.postalCode, store.postOffice]
-			.filter(Boolean)
-			.join(' ')
-			.toLocaleLowerCase('fi-FI')
-			.includes(normalizedQuery)
-	)}
+	{@const filteredStores = filterStoresByQuery(stores, query)}
 
 	<div class="mx-auto flex w-full max-w-7xl flex-col gap-6 p-4 md:p-6">
 		<PageHeader

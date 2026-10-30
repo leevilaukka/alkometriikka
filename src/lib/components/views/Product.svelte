@@ -77,6 +77,8 @@
 		availabilityState === 'loading' && !$preferredStoreId ? 'loaded' : availabilityState
 	);
 
+	const inNoStore = $derived(availabilityState === 'loaded' && availabilityStores.length === 0);
+
 	const rankedAvailabilityStores = $derived(
 		rankStoresByDistance(availabilityStores, preferredStore)
 	);
@@ -255,6 +257,7 @@
 				{sale}
 				{campaignWindow}
 				storesState={preferredStoreState}
+				{inNoStore}
 				{preferredStore}
 				{availableInPreferredStore}
 				{closestAvailableStore}
@@ -274,6 +277,7 @@
 			{sale}
 			{campaignWindow}
 			storesState={preferredStoreState}
+			{inNoStore}
 			{preferredStore}
 			{availableInPreferredStore}
 			{closestAvailableStore}
@@ -315,6 +319,7 @@
 				id="myymalasaatavuus"
 				productNumber={product[AllColumns.Number]}
 				stores={rankedAvailabilityStores}
+				allStores={Object.values(availability.stores)}
 				{availabilityState}
 				{preferredStore}
 				{availabilityUpdated}

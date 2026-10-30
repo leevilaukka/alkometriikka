@@ -56,7 +56,7 @@ Filter usage is reported as one analytics event per filtering session, not per c
 | Similar products       | `ProductSimilar`                         | Top 24 similar active products, with a one-tap "compare with this"                                                      |
 | Price history          | `ProductPriceHistory`                    | Chart.js line chart with sale periods shaded, range selector, link to the product's RSS feed once its price has changed |
 | Details                | `ProductDetailsTable`                    | All other columns; food pairings link to the list filtered by that pairing and type                                     |
-| Store availability     | `ProductStoreAvailability`               | Stores stocking it, sorted by distance from the preferred store, with "updated N minutes ago"                           |
+| Store availability     | `ProductStoreAvailability`               | Stores stocking it, sorted by distance from the preferred store, with "updated N minutes ago"; search by store or town  |
 | Mobile CTA             | `ProductMobileCta`                       | Bottom bar on small screens: price, compare, add to list                                                                |
 
 The store availability header also shows the store count trend over the last 30 days with a
@@ -209,11 +209,16 @@ Opening hours are evaluated in Europe/Helsinki time and accept Alko's `9–21` f
 
 ### Preferred store
 
-Chosen in settings, on the store list or a store page. It can be a specific store or **auto**,
-which follows the store nearest the device's location (`resolvePreferredStore`). Location is
-requested only when needed, reused for 10 minutes, and refreshed when the tab regains focus
-(`src/lib/utils/device/location.ts`). The product page uses the preferred store for its availability
-banner and distance sorting; category and price change pages can be limited to it.
+Chosen in settings, on the store list, on a store page or in a product's store availability. It
+can be a specific store or **auto**, which follows the store nearest the device's location
+(`resolvePreferredStore`). Location is requested only when needed, reused for 10 minutes, and
+refreshed when the tab regains focus (`src/lib/utils/device/location.ts`). The product page uses
+the preferred store for its availability banner and distance sorting; category and price change
+pages can be limited to it.
+
+To answer "which store near me has this?" without changing the setting, the product's store
+availability has a search: it lists every matching store, with or without the product, by distance.
+Banner's "Vaihda" goes there, and choosing a store takes effect without a reload.
 
 ### Store page sections
 
@@ -327,4 +332,5 @@ Products that leave Alko's selection stay in the data with a removal date
 - hidden from lists unless "show removed" is on, and their exclusive filter options with them;
 - excluded from category trees, similar-product suggestions, size options, quality metric peers,
   category stats and price changes;
-- still reachable by URL, with a "Poistettu valikoimasta" badge, and still in shared lists.
+- still reachable by URL, with a "Poistettu valikoimasta" badge and a price box saying no store
+  sells them instead of asking for a store, and still in shared lists.
