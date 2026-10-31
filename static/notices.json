@@ -1,4 +1,15 @@
 {
 	"$schema": "../schemas/notices.schema.json",
-	"notices": []
+	"notices": [{
+		"id":"punch-ad-2026-11",
+		"message": "Kokeile uutta",
+		"level": "info",
+		"link": {
+			"href": "/boolilaskuri",
+			"label": "boolilaskuria!"
+		},
+		"dismissible": true,
+		"expiresAt": "2026-11-07T12:00:00.000Z",
+		"dismissOnLinkClick": true
+	}]
 }
