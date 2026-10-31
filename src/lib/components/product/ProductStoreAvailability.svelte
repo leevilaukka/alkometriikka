@@ -125,12 +125,12 @@
 	</header>
 	{#if availabilityState !== 'failed' && !inNoStore}
 		<div class="flex flex-col gap-2 border-b border-primary p-3.5">
-			<label class="sr-only" for="myymalasaatavuus-haku">Hae myymälää</label>
 			<input
 				id="myymalasaatavuus-haku"
 				type="search"
 				bind:value={query}
 				oninput={trackSearch}
+				aria-label="Hae myymälää"
 				placeholder="Hae myymälää tai paikkakuntaa"
 				class={twMerge(components.input({ size: 'md' }), 'w-full')}
 			/>
