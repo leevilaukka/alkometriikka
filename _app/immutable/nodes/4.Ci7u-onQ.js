@@ -1,0 +1,1 @@
+import{r as t}from"../chunks/DA-bfbNK.js";import{r as o}from"../chunks/7PSb38av.js";async function i({parent:a,params:r}){const e=r.id?.split("/")[0];throw e?o(300,t(`/tuotteet/${e}/`)):o(300,t("/"))}const s=Object.freeze(Object.defineProperty({__proto__:null,load:i},Symbol.toStringTag,{value:"Module"}));export{s as universal};
