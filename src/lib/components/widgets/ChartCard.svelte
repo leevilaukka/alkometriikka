@@ -69,7 +69,11 @@
 
 		return () => {
 			destroyed = true;
-			chart?.destroy();
+			if (!chart) return;
+			chart.destroy();
+			// destroy() can't cancel a redraw still waiting on resizeDelay, which would throw when it
+			// finds the canvas gone
+			chart.update = () => {};
 		};
 	});
 </script>
