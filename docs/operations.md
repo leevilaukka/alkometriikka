@@ -44,6 +44,7 @@ The push deploys it and `build.yml` purges it from Cloudflare, so it's live with
 				"label": "Lisätietoja"
 			},
 			"expiresAt": "2026-10-20T00:00:00Z",
+			"dismissOnLinkClick": false,
 			"replacesStaleWarning": true
 		}
 	]
@@ -58,6 +59,7 @@ The push deploys it and `build.yml` purges it from Cloudflare, so it's live with
 | `link`                  | —       | `{ href, label }`. `href` must start with `/` or `https://`                                                                                                                                                                            |
 | `startsAt`, `expiresAt` | —       | ISO timestamps. Expired notices disappear on their own                                                                                                                                                                                 |
 | `dismissible`           | `true`  | `false` keeps it up                                                                                                                                                                                                                    |
+| `dismissOnLinkClick`    | `true`  | Clicking the link dismisses the notice. `false` keeps it up, e.g. for a warning that links to details. No effect with `dismissible: false`                                                                                             |
 | `replacesStaleWarning`  | `false` | Hides the automatic "data is stale" warning while active                                                                                                                                                                               |
 | `urlParams`             | —       | Show only to visitors who landed with these query parameters, e.g. `{ "utm_campaign": "fuksit" }`. A list value accepts any of its values; matching is case-insensitive. The landing parameters are remembered for the browser session |
 

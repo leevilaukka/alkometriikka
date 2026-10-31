@@ -279,6 +279,7 @@ Banners under the header, from two sources:
   [Offline support](app-structure.md#offline-support)). It gives the data's sync time and takes
   the stale warning's place, since old data then says nothing about the sync.
 
+Clicking a manual notice's link dismisses it too, unless it sets `dismissOnLinkClick: false`.
 Dismissals are stored per notice id in localStorage. The stale warning's and cached-data notice's
 ids include the sync time, so dismissing them lasts only until the data changes.
 

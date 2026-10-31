@@ -32,22 +32,24 @@ file would be dropped by the parser.
 				"label": "Lisätietoja"
 			},
 			"expiresAt": "2026-10-20T00:00:00Z",
+			"dismissOnLinkClick": false,
 			"replacesStaleWarning": true
 		}
 	]
 }
 ```
 
-| Field                  | Default | Notes                                                                         |
-| ---------------------- | ------- | ----------------------------------------------------------------------------- |
-| `id`                   | —       | Required. Dismissals are stored per id; use a new id to show it again.        |
-| `message`              | —       | Required. Plain text.                                                         |
-| `level`                | `info`  | `info` or `warning`.                                                          |
-| `link`                 | —       | `{ href, label }`. `href` must start with `/` or `https://`.                  |
-| `startsAt`/`expiresAt` | —       | ISO timestamps. Expired notices disappear on their own.                       |
-| `dismissible`          | `true`  | `false` keeps the notice up.                                                  |
-| `replacesStaleWarning` | `false` | Hides the automatic stale warning while active, to explain an outage instead. |
-| `urlParams`            | —       | Only shown to visitors who landed with these query params. See below.         |
+| Field                  | Default | Notes                                                                                                                                       |
+| ---------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`                   | —       | Required. Dismissals are stored per id; use a new id to show it again.                                                                      |
+| `message`              | —       | Required. Plain text.                                                                                                                       |
+| `level`                | `info`  | `info` or `warning`.                                                                                                                        |
+| `link`                 | —       | `{ href, label }`. `href` must start with `/` or `https://`.                                                                                |
+| `startsAt`/`expiresAt` | —       | ISO timestamps. Expired notices disappear on their own.                                                                                     |
+| `dismissible`          | `true`  | `false` keeps the notice up.                                                                                                                |
+| `dismissOnLinkClick`   | `true`  | Clicking the link dismisses the notice. `false` keeps it up, e.g. for a warning that links to details. No effect with `dismissible: false`. |
+| `replacesStaleWarning` | `false` | Hides the automatic stale warning while active, to explain an outage instead.                                                               |
+| `urlParams`            | —       | Only shown to visitors who landed with these query params. See below.                                                                       |
 
 Malformed entries are skipped, and a missing or broken file just shows no notices.
 

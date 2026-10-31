@@ -341,6 +341,9 @@ export type AnalyticsEventMap = {
 	open_zoomed_image: { product_number: string };
 	/** The front page's "your watched products changed" banner was followed. */
 	open_watchlist_banner: { changed: number };
+	notice_click: { id: string };
+	/** The close button only, not a dismissal by following the link. `id` leaves out the sync time of the automatic notices. */
+	notice_dismiss: { id: string };
 	/** The error page showed a 4xx status, see `reportPageNotFound` in `errorAnalytics.ts`. */
 	page_not_found: {
 		status: number;
