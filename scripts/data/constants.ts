@@ -442,6 +442,12 @@ export const SEARCH_REFRESHED_COLUMNS: readonly (typeof LEGACY_HEADERS)[number][
 ];
 
 /**
+ * Columns the Alko API never fills. Their values come from elsewhere (EAN: the legacy XLSX and
+ * scanned barcodes, see scanned-eans.ts), so a product rebuilt from the API keeps the stored ones.
+ */
+export const OWN_COLUMNS: readonly (typeof LEGACY_HEADERS)[number][] = ['EAN'];
+
+/**
  * Builds a legacy-ordered value array from an API product object by running each
  * schema entry's `preprocessor` over the matching `newPropertyKey`.
  *

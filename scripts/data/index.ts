@@ -47,6 +47,7 @@ import {
 	HINTA_INDEX,
 	NIMI_INDEX,
 	carryOverMissingProducts,
+	carryOwnColumns,
 	clearRemovedFlag,
 	detailCheckedMeta,
 	detailVerifyAgeDays,
@@ -68,6 +69,7 @@ import {
 import { appendSyncReport, createSyncReport, elapsedMs, type SyncStats } from './sync-report.ts';
 import { DATA_PATH, HASHES_PATH, readDataset, writeDataset } from './dataset-file.ts';
 import { checkSyncSafety, missingCriticalColumns, restoreCriticalColumns } from './safeguards.ts';
+import { applyScannedEans, loadScannedEans } from './scanned-eans.ts';
 
 // ============================================================================
 // CONFIG & CONSTANTS
@@ -489,10 +491,11 @@ async function sync(): Promise<void> {
 	}
 
 	const fetchStart = performance.now();
-	const [searchResult, existing, stores] = await Promise.all([
+	const [searchResult, existing, stores, scannedEans] = await Promise.all([
 		loadSearchProducts(config),
 		loadExistingData(),
-		loadStores(config)
+		loadStores(config),
+		loadScannedEans()
 	]);
 	syncReport.phasesMs.fetch = elapsedMs(fetchStart);
 
@@ -566,7 +569,8 @@ async function sync(): Promise<void> {
 		filtered: 0,
 		filteredRemoved: 0,
 		verified: 0,
-		verifyFailed: 0
+		verifyFailed: 0,
+		eans: 0
 	};
 	syncReport.stats = stats;
 
@@ -648,7 +652,11 @@ async function sync(): Promise<void> {
 					};
 				}
 			} else {
-				const built = buildLegacyValues(mergeProduct(product, details));
+				// The API has no EANs, so a rebuild keeps the stored one
+				const built = carryOwnColumns(
+					buildLegacyValues(mergeProduct(product, details)),
+					previous?.values
+				);
 				let values = built;
 				if (previous) {
 					rewrites.push({ previous: previous.values, values: built });
@@ -759,7 +767,10 @@ async function sync(): Promise<void> {
 					return;
 				}
 
-				const built = buildLegacyValues(mergeProduct(product, details));
+				const built = carryOwnColumns(
+					buildLegacyValues(mergeProduct(product, details)),
+					previous.values
+				);
 				rewrites.push({ previous: previous.values, values: built });
 				// Same as above: a blank core field never erases the stored one.
 				const { values, restored } = restoreCriticalColumns(built, previous.values);
@@ -837,6 +848,12 @@ async function sync(): Promise<void> {
 	stats.removed += carried.removed;
 	stats.filteredRemoved += carried.filteredRemoved;
 
+	// Barcodes found by the site's scanner since the last run (see scanned-eans.ts)
+	if (scannedEans) {
+		stats.eans = applyScannedEans(products, scannedEans).length;
+		console.log(`\n🏷️  ${scannedEans.length} scanned barcodes, ${stats.eans} new EANs written\n`);
+	}
+
 	// Last line of defence before anything is written: refuse results that look
 	// like the API changed rather than the selection.
 	const relevantApiProducts = searchProducts.filter((product) => !irrelevantIds.has(product.id));
@@ -866,7 +883,11 @@ async function sync(): Promise<void> {
 	// `LastSynced` records every fetch; `LastUpdated` only moves when an actual
 	// change to the data was detected this run.
 	const hasChanges =
-		stats.added > 0 || stats.updated > 0 || stats.removed > 0 || stats.filteredRemoved > 0;
+		stats.added > 0 ||
+		stats.updated > 0 ||
+		stats.removed > 0 ||
+		stats.filteredRemoved > 0 ||
+		stats.eans > 0;
 
 	const workflowRunUrl =
 		process.env.GITHUB_RUN_ID && process.env.GITHUB_REPOSITORY
@@ -929,6 +950,7 @@ function printSummary(stats: SyncStats, total: number): void {
 	console.log(`  🔍 Verified (unchanged): ${stats.verified}`);
 	console.log(`  ❌ Failed:    ${stats.failed}`);
 	console.log(`  ❌ Verify failed: ${stats.verifyFailed}`);
+	console.log(`  🏷️  New EANs from scans: ${stats.eans}`);
 	console.log(`  📦 Total:     ${total}\n`);
 	console.log(`✅ Saved ${DATA_PATH} and ${HASHES_PATH}`);
 }

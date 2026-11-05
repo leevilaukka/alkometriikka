@@ -79,7 +79,7 @@ Values like `>= 12` (sparse threshold), `pageSize = 1000`, backoff `2000`, `6000
 ## 10. Minor cleanups
 
 - Stray lone `;` after the `ProductRow` interface.
-- `EAN` field just copies `row[i]` back to itself — worth a comment explaining why (it's never sourced from the API) or handling explicitly.
+- ~~`EAN` field just copies `row[i]` back to itself~~ — handled explicitly now: `OWN_COLUMNS` / `carryOwnColumns`, filled from scanned barcodes (`scanned-eans.ts`).
 - Duplicate delay logic: there's a page delay at the top of the loop **and** at the bottom — consolidate to avoid double-sleeping.
 - `formatGrapes`/`formatDescription` take the whole `details` but only use one field — could take the array directly for clarity.
 

@@ -126,14 +126,16 @@ Details are fetched with `ALKO_DETAIL_CONCURRENCY` (default 4, CI 8) in parallel
    fields, where the search API's format is canonical: the detail API reports
    `lowest_30d_price` in cents and campaign dates as timestamps.
 2. **Build values** with the schema preprocessors.
-3. **Protect critical columns.** If the API returns a blank `Numero`, `Nimi`, `Hinta` or `Tyyppi`
+3. **Keep own columns.** The API never fills `EAN` (`OWN_COLUMNS`), so the stored value is
+   carried into the rebuild (`carryOwnColumns`). Pass 3 does the same.
+4. **Protect critical columns.** If the API returns a blank `Numero`, `Nimi`, `Hinta` or `Tyyppi`
    for an existing product, the previous value is kept. A new product missing one is skipped and
    retried next run.
-4. **Update price history**: append `{ date, price }` if the price differs from the last point,
+5. **Update price history**: append `{ date, price }` if the price differs from the last point,
    with the campaign fields attached if the product is on sale. A campaign that starts in the
    future is evaluated as of its start date, since nothing re-fetches the product when that day
    comes.
-5. Stamp `meta.detailCheckedAt` with today.
+6. Stamp `meta.detailCheckedAt` with today.
 
 If the detail fetch fails, the previous entry is kept unchanged so a transient error never drops a
 product.
@@ -163,6 +165,13 @@ never deployed.
 Removed products also get `Uutuus` and `Tila` cleared. This step only runs after a complete fetch, so absence
 from the API can be trusted.
 
+### Scanned barcodes
+
+The barcodes the [API Worker](../api-worker.md) has looked up for the scanner are read from its
+export while Alko's API is fetched, and `applyScannedEans` (`scanned-eans.ts`) writes them into
+the `EAN` column of products that have none. Without `GTIN_EXPORT_URL` and `GTIN_EXPORT_TOKEN`
+(locally), or when the export fails, this step is skipped.
+
 ### Safeguards
 
 `checkSyncSafety` (`safeguards.ts`) is the last check before writing. It catches an API that
@@ -182,7 +191,7 @@ sets `ALKO_SYNC_FORCE=1`. See [Operations](../operations.md#forcing-a-sync).
 ### Writing
 
 - `metadata.LastSynced` is now. `LastUpdated` is now only if something was added, updated, removed
-  or dropped; otherwise it carries over.
+  or dropped, or got a scanned EAN; otherwise it carries over.
 - `metadata.ci` records `GITHUB_SHA` and the workflow run URL for the sync, and for the update when
   something changed.
 - `writeDataset` splits hashes into `hashes.json`, adds a freshly built `index`, and writes removed

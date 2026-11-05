@@ -91,6 +91,9 @@ jobs:
           ALKO_SYNC_FORCE: ${{ inputs.force && '1' || '' }}
           # One line per attempt, for the run record (report job below)
           ALKO_SYNC_REPORT: sync-report.ndjson
+          # Barcodes found by the site's scanner, written into the EAN column (docs/api-worker.md)
+          GTIN_EXPORT_URL: https://api.alkometriikka.fi/gtin/export
+          GTIN_EXPORT_TOKEN: ${{ secrets.GTIN_EXPORT_TOKEN }}
         run: |
           for attempt in 1 2 3; do
             echo "▶️  Sync attempt $attempt..."

@@ -166,7 +166,7 @@ so that an older deployed app bundle can still read a newer dataset positionally
 | 26  | `Katkerot EBU`           | `beerBitternessEbu` (detail)           |        |                                                                                                                        |
 | 27  | `Energia kcal/100 ml`    | `nutrition.kiloCaloriesPerDL` (detail) |        |                                                                                                                        |
 | 28  | `Valikoima`              | `selectionTypes`                       | ✓      | Label part                                                                                                             |
-| 29  | `EAN`                    | —                                      |        | `null` for API-synced products (the API has no EANs). Some removed products still carry EANs from the legacy XLSX data |
+| 29  | `EAN`                    | —                                      |        | Not in the API: filled from [scanned barcodes](../api-worker.md). Some removed products keep EANs from the legacy XLSX |
 | 30  | `Normaalihinta`          | `lowest_30d_price`                     | ✓      | Only during campaigns. Euro number                                                                                     |
 | 31  | `Kampanja alkaa`         | `campaign_start_date`                  | ✓      | `YYYY-MM-DD`                                                                                                           |
 | 32  | `Kampanja päättyy`       | `campaign_end_date`                    | ✓      | `YYYY-MM-DD`                                                                                                           |
