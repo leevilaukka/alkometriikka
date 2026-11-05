@@ -1,0 +1,35 @@
+// api.alkometriikka.fi, see docs/api-worker.md. Deploy with: bunx wrangler@4 deploy -c workers/api/wrangler.jsonc
+{
+	"name": "alkometriikka-api",
+	"main": "src/index.ts",
+	"compatibility_date": "2026-10-01",
+	"workers_dev": false,
+	"routes": [
+		{
+			"pattern": "api.alkometriikka.fi",
+			"custom_domain": true
+		}
+	],
+	"kv_namespaces": [
+		// Barcode → product number. Create it with `wrangler kv namespace create GTIN` and paste the id here
+		{
+			"binding": "GTIN",
+			"id": "95ab49fce0544eb9a77ebe236f716a32"
+		}
+	],
+	"ratelimits": [
+		// Lookups that reach Alko, per IP
+		{
+			"name": "LOOKUP_LIMITER",
+			"namespace_id": "1001",
+			"simple": {
+				"limit": 30,
+				"period": 60
+			}
+		}
+	],
+	"observability": {
+		"enabled": true
+	}
+	// Secrets (wrangler secret put): ALKO_API_KEY, EXPORT_TOKEN
+}
