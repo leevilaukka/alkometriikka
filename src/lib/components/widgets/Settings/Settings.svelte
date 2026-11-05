@@ -20,7 +20,7 @@
 	const slots = $derived(
 		Array.from(
 			{ length: HEADER_SLOT_COUNT },
-			(_, index): NavHref | '' => ($headerSlots ?? defaultHeaderSlots)[index] ?? ''
+			(_, index): NavHref | '' => ($headerSlots ?? defaultHeaderSlots($isMobile))[index] ?? ''
 		)
 	);
 
@@ -33,7 +33,7 @@
 		if (taken !== -1) next[taken] = next[index];
 		next[index] = href;
 		const picked = next.filter((slot) => slot !== '');
-		$headerSlots = storedHeaderSlots(picked);
+		$headerSlots = storedHeaderSlots(picked, $isMobile);
 		sendAnalyticsEvent('header_slots_changed', { slots: picked.join(','), source: 'settings' });
 		// Empty buttons close up, so a select can end up showing a page that moved to the other one
 		// while its own value stayed '' and so never re-rendered

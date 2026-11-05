@@ -9,6 +9,7 @@ import type { SaleInfo } from '../../src/lib/utils/catalog/sales.ts';
 import { STALE_ARRIVAL_STATUS } from '../../src/lib/utils/catalog/status.ts';
 import {
 	LEGACY_HEADERS,
+	OWN_COLUMNS,
 	SEARCH_REFRESHED_COLUMNS,
 	formatStatus,
 	isIrrelevantStoredValues
@@ -21,6 +22,7 @@ import type {
 	SearchProductData
 } from './types.ts';
 import { isMigratedProduct } from './guards.ts';
+import { isEmptyValue } from './safeguards.ts';
 
 /** Column indices we read back out of a stored `values` array. */
 export const NUMERO_INDEX = LEGACY_HEADERS.indexOf('Numero');
@@ -69,6 +71,23 @@ export function refreshSearchColumns(
 	const values = [...product.values];
 	for (const index of changed) values[index] = searchValues[index];
 	return { ...product, values };
+}
+
+const OWN_INDICES = OWN_COLUMNS.map((column) => LEGACY_HEADERS.indexOf(column));
+
+/**
+ * Copies the columns the API never fills (see `OWN_COLUMNS`) from a product's stored values into
+ * values freshly built from the API, which always have them empty. Returns `built` itself when
+ * there is nothing to copy.
+ */
+export function carryOwnColumns(built: unknown[], previous: unknown[] | undefined): unknown[] {
+	const carried = OWN_INDICES.filter(
+		(index) => !isEmptyValue(previous?.[index]) && isEmptyValue(built[index])
+	);
+	if (carried.length === 0) return built;
+	const values = [...built];
+	for (const index of carried) values[index] = previous![index];
+	return values;
 }
 
 /**

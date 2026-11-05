@@ -271,7 +271,7 @@
 	}
 
 	// The pages with their own header buttons; the Lisää menu keeps them too, so it stays the same everywhere
-	const slots = $derived($headerSlots ?? defaultHeaderSlots);
+	const slots = $derived($headerSlots ?? defaultHeaderSlots($isMobile));
 	const slotItems = $derived(slots.map((href) => navItems.find((item) => item.href === href)!));
 	const currentHref = $derived(currentNavHref(page.url.pathname));
 
@@ -280,7 +280,7 @@
 		const { slots: next, unpinned } = pinned
 			? { slots: slots.filter((href) => href !== item.href), unpinned: undefined }
 			: pinHeaderSlot(slots, item.href);
-		$headerSlots = storedHeaderSlots(next);
+		$headerSlots = storedHeaderSlots(next, $isMobile);
 		sendAnalyticsEvent('header_slots_changed', { slots: next.join(','), source: 'menu' });
 		// The pin icons show the rest; only a page dropping off the header needs saying
 		const replaced = navItems.find((navItem) => navItem.href === unpinned)?.name;

@@ -18,6 +18,8 @@ export interface SyncStats {
 	filteredRemoved: number;
 	verified: number;
 	verifyFailed: number;
+	/** Products that got an EAN from the scanner's barcodes */
+	eans: number;
 }
 
 /** How an attempt ended. Anything not set explicitly (a crash, an unexpected exit) is `error`. */

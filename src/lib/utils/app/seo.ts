@@ -127,6 +127,12 @@ export const STATIC_PAGES: StaticPageSeo[] = [
 		keywords: 'Alko, myymälät, myymälä, aukioloajat, osoite, valikoima'
 	},
 	{
+		path: '/skanneri/',
+		title: 'Skanneri',
+		description: 'Skannaa Alkon tuotteen viivakoodi ja avaa sen tiedot, hinnat ja saatavuus.',
+		keywords: 'Alko, viivakoodi, skanneri, EAN, viivakoodinlukija'
+	},
+	{
 		path: '/kompassi/',
 		title: 'Kompassi',
 		description: 'Löydä lähin Alko kompassin avulla.',

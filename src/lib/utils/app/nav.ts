@@ -28,6 +28,7 @@ export const navGroups = [
 	{
 		label: 'Työkalut & Pelit',
 		items: [
+			{ href: '/skanneri/', icon: 'barcode_reader', name: 'Skanneri' },
 			{ href: '/laskin/', icon: 'calculator', name: 'Laskin' },
 			{ href: '/boolilaskuri/', icon: 'cocktail', name: 'Boolilaskuri', shortName: 'Booli' },
 			{ href: '/daily/', icon: 'flame', name: 'Daily' },
@@ -48,8 +49,13 @@ export const navItems = navGroups.flatMap((group): readonly NavItem[] => group.i
 /** How many pages fit on the header as their own buttons */
 export const HEADER_SLOT_COUNT = 2;
 
-/** The header buttons for anyone who hasn't picked their own */
-export const defaultHeaderSlots: NavHref[] = ['/daily/', '/listat/'];
+/**
+ * The header buttons for anyone who hasn't picked their own. Phones get the scanner, as that's
+ * where it's used (in the store, at the shelf), in place of Daily, the less visited of the two
+ */
+export function defaultHeaderSlots(mobile: boolean): NavHref[] {
+	return mobile ? ['/skanneri/', '/listat/'] : ['/daily/', '/listat/'];
+}
 
 /** A stored pick of header buttons, or null when it is missing or no longer fits the menu */
 export function sanitizeHeaderSlots(value: unknown): NavHref[] | null {
@@ -60,10 +66,10 @@ export function sanitizeHeaderSlots(value: unknown): NavHref[] | null {
 }
 
 /** What to keep of a pick: null when it matches the defaults, so it keeps following them */
-export function storedHeaderSlots(slots: NavHref[]): NavHref[] | null {
+export function storedHeaderSlots(slots: NavHref[], mobile: boolean): NavHref[] | null {
+	const defaults = defaultHeaderSlots(mobile);
 	const isDefault =
-		slots.length === defaultHeaderSlots.length &&
-		slots.every((slot, index) => slot === defaultHeaderSlots[index]);
+		slots.length === defaults.length && slots.every((slot, index) => slot === defaults[index]);
 	return isDefault ? null : slots;
 }
 

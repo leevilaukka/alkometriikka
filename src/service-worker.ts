@@ -30,7 +30,11 @@ const assetName = (path: string) => path.slice(path.lastIndexOf('/') + 1).split(
 // Browsers that load the icon font take the woff2, so its woff and ttf fallbacks aren't precached
 const woff2Fonts = new Set(build.filter((file) => file.endsWith('.woff2')).map(assetName));
 const PRECACHE = [
-	...build.filter((file) => !(/\.(woff|ttf)$/.test(file) && woff2Fonts.has(assetName(file)))),
+	// The barcode decoder (~1 MB) is only for the scanner, so it's cached on first use instead
+	...build.filter(
+		(file) =>
+			!file.endsWith('.wasm') && !(/\.(woff|ttf)$/.test(file) && woff2Fonts.has(assetName(file)))
+	),
 	...files
 ];
 

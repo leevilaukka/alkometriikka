@@ -186,6 +186,7 @@ Product photos from `images.alko.fi` aren't handled: they are sent with a one-ye
 | `/myymalat`                       | Store list                             |                                                                                        |
 | `/myymalat/[storeID]/`            | Store page                             | 404 if the store is unknown                                                            |
 | `/kompassi`                       | Compass pointing to the nearest store  |                                                                                        |
+| `/skanneri`                       | Barcode and shelf QR code scanner      | Lookups wait for `alkoWithRemoved`, as old EANs are on removed products                |
 | `/daily`                          | Daily quiz                             |                                                                                        |
 | `/daily/arkisto`                  | Daily archive calendar                 |                                                                                        |
 | `/daily/arkisto/[date]`           | One archived Daily game                |                                                                                        |
@@ -208,9 +209,8 @@ await the data and pass it in.
 | `components/widgets/`  | Reusable pieces: `Filters`, `ProductPreview` (list row), `Popup` (dialog), `Badge`/`BadgeList`, `ChartCard`, `Histogram`, `NoticeBanner`, `CompareBar`, `BottomBar`, `AllLists`, `CompassDial`, `StoreCompass`, `FeedbackDialog`, `DailyFeedback`, `Settings/`… |
 | `components/inputs/`   | Filter inputs: `StringInput` (multi-select, optionally grouped), `NumberInput` (range), `RecursiveFilter` (nested sub-filters)                                                                                                                                  |
 
-`widgets/Barcode.svelte` (EAN-13/QR scanner using `barcode-detector`) is in the tree but not
-mounted anywhere at the moment. Its EAN lookup could only match removed products that kept a
-legacy EAN, since API-synced products have none.
+`widgets/Barcode.svelte` is the camera view of the [scanner](features.md#scanner-skanneri): it
+picks a detector, reads frames and hands the largest code to its page.
 
 ## Global state
 
@@ -275,10 +275,12 @@ while back/forward restores it from the URL.
 ## Navigation and layout
 
 - The header has the logo, the search box (hidden on pages without a product list), a "Lisää"
-  menu, links to Daily and Listat, and the settings button. The menu (`menuGroups` in the layout)
-  groups its links under Selaa (Kategoriat, Hinnanmuutokset, Tilastot), Omat
-  (Seuratut, Listat), Myymälät (Myymälät, Kompassi) and Työkalut (Laskin, Daily-arkisto), and
-  marks the current page. When watched products have changed, Seuratut shows how many and the
+  menu, two pinned page buttons and the settings button. The menu (`navGroups` in
+  `src/lib/utils/app/nav.ts`) groups its links under Selaa (Kategoriat, Hinnanmuutokset,
+  Tilastot), Omat (Seuratut, Listat), Myymälät (Myymälät, Kompassi) and Työkalut & Pelit
+  (Skanneri, Laskin, Boolilaskuri, Daily, Daily-arkisto), and marks the current page. Any two of
+  them can be pinned as the header buttons; until the user picks, `defaultHeaderSlots` gives
+  Skanneri and Listat on phones (`isMobile`) and Daily and Listat elsewhere. When watched products have changed, Seuratut shows how many and the
   menu button gets a green dot.
 - `/` focuses the search box from anywhere that isn't a text field.
 - On phones, pages pass a snippet into `pageBottomBar` (filter button, product price/compare bar)

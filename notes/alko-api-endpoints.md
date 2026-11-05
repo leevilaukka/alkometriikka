@@ -377,3 +377,21 @@ All of these return the **SPA HTML shell** (not JSON) – i.e. the endpoints don
 - To add **online stock per product**: one batched pass over `GET /api/intershop/availability/webshop/<id1>:<id2>:...` (and/or the already-included `webshopStock`/`limeStock`/`limeWebshopTotalStock`) → not a "gazillion" requests, at most a few dozen.
 - Detail API key is `productId`, search API key is `id`; the merge is handled by `mergeProduct`. For campaign pricing, the search API format is canonical (`SEARCH_WINS_KEYS`).
 - Older notes: the EAN field is gone from the API (noted as "RIP viivakoodinlukija"), `Uutuus`/`vintage` are detail-API only.
+
+---
+
+## 10. Mobile app API – `mobile-api.alko.fi` (found 2026-11-06)
+
+Alko's Android app (`fi.alko.mobile` 1.34.0, React Native) has its own backend, `https://mobile-api.alko.fi/`, and its barcode scanner resolves codes there:
+
+```
+GET https://mobile-api.alko.fi/v1/products/gtin/{ean}?lang=fi
+accept: application/json
+x-api-key: <hardcoded in the APK, same for every install>
+```
+
+- Without the key: `403 {"error":"Unauthorized"}`. No CORS headers either way.
+- Answer: the product's details (`id`, `name`, `price`, `abv`, `status`, `taste`, `nutrition`, `webshopAvailability`…), **not** the GTIN itself. So it maps barcode → product but can't fill EANs in bulk.
+- It follows renumbering: EAN `5011007017965` (Jameson Single Pot Still) answers `id: 200047`, while the legacy XLSX data has it on the removed `928201`.
+- Found by capturing the app's traffic (Android emulator + HTTP Toolkit). The emulator needs the arm64 libraries copied into the app's `lib/arm64` dir by hand, as the APK doesn't extract them.
+- Used by the `api.alkometriikka.fi` Worker, see `docs/api-worker.md`. The key is a Worker secret, never committed.

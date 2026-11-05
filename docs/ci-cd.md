@@ -213,6 +213,7 @@ in the public Actions logs.
 | `CF_R2_ACCESS_KEY_ID`     | secret   | fetchData, archiveDaily, build | R2 S3 access key                                            |
 | `CF_R2_SECRET_ACCESS_KEY` | secret   | fetchData, archiveDaily, build | R2 S3 secret                                                |
 | `CF_R2_ACCOUNT_ID`        | secret   | fetchData, archiveDaily, build | Cloudflare account id, part of the S3 endpoint              |
+| `GTIN_EXPORT_TOKEN`       | secret   | fetchData                      | Reads scanned barcodes from the [API Worker](api-worker.md) |
 | `CF_R2_BUCKET`            | variable | fetchData, archiveDaily, build | Bucket name (default `alkometriikka-og`)                    |
 | `CF_R2_REGION`            | variable | fetchData, archiveDaily, build | R2 jurisdiction (default `eu`)                              |
 | `OG_CDN_BASE`             | variable | fetchData, archiveDaily        | Public bucket URL (default `https://cdn.alkometriikka.fi`)  |
