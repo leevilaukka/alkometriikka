@@ -233,6 +233,29 @@ the rest):
 - **Alennuksessa**: products on sale, biggest discount first
 - **Eniten alkoholia eurolla**: the best alcohol per euro in each type
 
+## Scanner (`/skanneri`)
+
+`routes/skanneri/+page.svelte`, `widgets/Barcode.svelte`, `src/lib/utils/catalog/barcode.ts`,
+`src/lib/utils/catalog/gtin.ts`
+
+Opens a product from its barcode, or from the QR code on Alko's shelf labels (an
+`alko.fi/tuotteet/<id>` link). The camera view reads the largest code in the frame, using the
+browser's `BarcodeDetector` where it has EAN and QR support (Chrome on Android), otherwise ZXing
+compiled to WebAssembly (`barcode-detector/ponyfill`). The ~1 MB wasm comes from our own build,
+not ZXing's default CDN, and the service worker leaves it out of the precache. A picture can be
+chosen instead of the camera, and the number can be typed. The camera is released when the page is
+hidden or left.
+
+`findProductByBarcode` looks for an active product with that EAN in the dataset first. Otherwise
+it asks the [API Worker](../api-worker.md), which looks the barcode up from Alko and stores it, so
+the next sync writes it into `data.json`. A barcode only found on a removed product is asked too,
+as Alko may sell the product under a new number now. The removed product is the fallback when the
+Worker has nothing better. UPC-A codes are padded to EAN-13 first, as Alko stores them that way.
+The same code held in view isn't looked up again for three seconds.
+
+Phones have Skanneri as a header button by default (see
+[Navigation and layout](app-structure.md#navigation-and-layout)).
+
 ## Compass (`/kompassi`)
 
 `routes/kompassi/+page.svelte`, `widgets/CompassDial.svelte`, `src/lib/utils/device/compass.ts`,

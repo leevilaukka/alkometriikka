@@ -56,7 +56,7 @@ payloads are typed by `AnalyticsEventMap` in `src/lib/types.ts`; add new events 
 | `daily_game`, `unlimited_game`, `archive_game`           | A Daily game is started or completed                                                                                                                        | Date, state, score, correct answers                                                                       |
 | `daily_feedback`                                         | A problem with a Daily question is reported                                                                                                                 | Date, mode, question, game hash, reported problem types                                                   |
 | `site_feedback`                                          | The site feedback form is sent                                                                                                                              | Path, app version, reported problem types                                                                 |
-| `scan_barcode`, `scan_qr_code`                           | The (currently unmounted) barcode scanner finds a product                                                                                                   | Code and link                                                                                             |
+| `scan_barcode`, `scan_qr_code`                           | The scanner reads a barcode / an Alko shelf QR code                                                                                                         | Code, link, and for barcodes whether it was found in data.json, by the Worker or not at all               |
 | `app_error`                                              | An unexpected error: a failed page load or render, an uncaught exception or an unhandled promise rejection                                                  | Kind, message, stack, status, route, path (no query string), app version, browser and version, user agent |
 | `page_not_found`                                         | The error page shows a 4xx status: a route that doesn't exist, an unknown product, category or store, or an unreadable list link (400)                      | Status, route (`null` for a missing route), message, path (no query string), app version                  |
 
@@ -127,3 +127,12 @@ links, so no redirect is involved.
 approach: a `noindex` redirect page that Simple Analytics recorded. It strips the referrer unless
 the link passes `&referrer=1`, and only redirects to http(s) URLs on other hosts. Nothing links
 through it at the moment, but it is kept for possible future use.
+
+## Barcode lookups
+
+The scanner decodes the camera image in the browser (the browser's own `BarcodeDetector`, or
+ZXing as WebAssembly served from the site); no image leaves the device. A barcode that isn't in
+`data.json` is sent to `api.alkometriikka.fi` (the [API Worker](api-worker.md)), which asks Alko
+for it once. The Worker keeps the barcode and its product number, and nothing about who scanned
+it. Cloudflare sees the visitor's IP like on any request, and the Worker uses it only for the rate
+limit.

@@ -274,7 +274,8 @@ export type AnalyticsEventMap = {
 	command_palette_open: undefined;
 	command_palette_select: { kind: string; scope: string; query_length: number };
 	view_compare: { product_numbers: string[]; url: string };
-	scan_barcode: { ean: string; link?: string };
+	/** source: how the code was matched, from data.json, the api.alkometriikka.fi Worker or neither */
+	scan_barcode: { ean: string; link?: string; source: 'local' | 'worker' | 'not_found' | 'error' };
 	scan_qr_code: { type: string; product_number: string; link?: string };
 	preferred_store_changed: {
 		storeId: string;
