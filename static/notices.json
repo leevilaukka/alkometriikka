@@ -9,7 +9,20 @@
 			"label": "boolilaskuria!"
 		},
 		"dismissible": true,
-		"expiresAt": "2026-11-07T12:00:00.000Z",
+		"expiresAt": "2026-11-06T12:00:00.000Z",
+		"dismissOnLinkClick": true
+	},
+	{
+		"id":"skanneri-2026-11",
+		"message": "Alkuaikojen kätevä viivakoodiskanneri on tehnyt paluun!",
+		"level": "info",
+		"link": {
+			"href": "/skanneri",
+			"label": "Kokeile tästä!"
+		},
+		"dismissible": true,
+		"startsAt": "2026-11-06T12:00:00.000Z",
+		"expiresAt": "2026-11-12T12:00:00.000Z",
 		"dismissOnLinkClick": true
 	}]
 }
