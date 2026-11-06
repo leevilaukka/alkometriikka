@@ -80,10 +80,15 @@ sequenceDiagram
 logs a warning and keeps the EANs it has. After the passes, `applyScannedEans` writes each barcode
 into its product's `EAN` column:
 
-- A product that already has an EAN keeps it (legacy XLSX data or an earlier scan).
+- A scanned barcode replaces a different EAN already stored (legacy XLSX data or an earlier scan):
+  the Worker's answer is the newer one.
 - When one product has several scanned barcodes (a bottle and a gift box, say), the first one seen
   is stored. The Worker still answers the others.
-- New EANs count as a change, so `LastUpdated` moves.
+- New or changed EANs count as a change, so `LastUpdated` moves.
+- `cleanEans` then empties EANs that can't identify a product: values that aren't a valid GTIN, the
+  all-zero placeholder, and barcodes shared by several products (the legacy list reuses one across
+  a producer's vintages). A scanned barcode that confirms one of the sharing products lets that one
+  keep it.
 
 The API never fills `EAN`, so it's listed in `OWN_COLUMNS` (`constants.ts`), and
 `carryOwnColumns` keeps the stored value when pass 2 or 3 rebuilds a product from the API. `EAN`

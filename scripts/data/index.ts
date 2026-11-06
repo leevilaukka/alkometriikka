@@ -69,7 +69,7 @@ import {
 import { appendSyncReport, createSyncReport, elapsedMs, type SyncStats } from './sync-report.ts';
 import { DATA_PATH, HASHES_PATH, readDataset, writeDataset } from './dataset-file.ts';
 import { checkSyncSafety, missingCriticalColumns, restoreCriticalColumns } from './safeguards.ts';
-import { applyScannedEans, loadScannedEans } from './scanned-eans.ts';
+import { applyScannedEans, cleanEans, loadScannedEans } from './scanned-eans.ts';
 
 // ============================================================================
 // CONFIG & CONSTANTS
@@ -851,7 +851,12 @@ async function sync(): Promise<void> {
 	// Barcodes found by the site's scanner since the last run (see scanned-eans.ts)
 	if (scannedEans) {
 		stats.eans = applyScannedEans(products, scannedEans).length;
-		console.log(`\n🏷️  ${scannedEans.length} scanned barcodes, ${stats.eans} new EANs written\n`);
+		console.log(`\n🏷️  ${scannedEans.length} scanned barcodes, ${stats.eans} EANs written\n`);
+	}
+	// Invalid or shared EANs can't identify a product, so they don't stay in the dataset
+	const clearedEans = cleanEans(products, scannedEans ?? []);
+	if (clearedEans.length > 0) {
+		console.log(`🧹 ${clearedEans.length} unusable EANs cleared\n`);
 	}
 
 	// Last line of defence before anything is written: refuse results that look

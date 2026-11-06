@@ -5,6 +5,7 @@
  * EAN column, so later scans of it are answered from data.json. See docs/api-worker.md.
  */
 
+import { isValidGtin } from '../../src/lib/utils/catalog/gtin.ts';
 import { LEGACY_HEADERS } from './constants.ts';
 import { isEmptyValue } from './safeguards.ts';
 import type { MigratedProduct } from './types.ts';
@@ -54,10 +55,22 @@ export async function loadScannedEans(): Promise<ScannedEan[] | null> {
 	}
 }
 
+/** True for a stored EAN that can identify a product: a valid GTIN that isn't all zeros */
+function isUsableEan(value: unknown): value is string {
+	return typeof value === 'string' && isValidGtin(value) && !/^0+$/.test(value);
+}
+
+function withEan(product: MigratedProduct, ean: string | null): MigratedProduct {
+	const values = [...product.values];
+	values[EAN_INDEX] = ean;
+	return { ...product, values };
+}
+
 /**
- * Writes scanned barcodes into the EAN column of the products they belong to. A product that
- * already has an EAN keeps it; one with several scanned barcodes gets the first one seen, and the
- * others are still answered by the Worker. Returns the products that got an EAN.
+ * Writes scanned barcodes into the EAN column of the products they belong to. The Worker's answer
+ * is newer than anything stored, so it replaces a different EAN; one product with several scanned
+ * barcodes gets the first one seen (the others are still answered by the Worker). Returns the
+ * products whose EAN changed.
  */
 export function applyScannedEans(
 	products: Record<string, MigratedProduct>,
@@ -75,11 +88,48 @@ export function applyScannedEans(
 	const updated: string[] = [];
 	for (const [id, entry] of byProduct) {
 		const product = products[id];
-		if (!product || !isEmptyValue(product.values[EAN_INDEX])) continue;
-		const values = [...product.values];
-		values[EAN_INDEX] = entry.ean;
-		products[id] = { ...product, values };
+		if (!product || product.values[EAN_INDEX] === entry.ean) continue;
+		products[id] = withEan(product, entry.ean);
 		updated.push(id);
 	}
 	return updated;
+}
+
+/**
+ * Empties EANs that can't identify a product, so the scanner never opens the wrong one: values
+ * that aren't a valid GTIN (a legacy import left price history in some) and barcodes shared by
+ * several products (the legacy list reuses one across a producer's vintages). When a scanned
+ * barcode confirms one of the sharing products, or only one of them is still in the selection,
+ * that one keeps it. Returns the products cleared.
+ */
+export function cleanEans(
+	products: Record<string, MigratedProduct>,
+	entries: ScannedEan[] = []
+): string[] {
+	const cleared: string[] = [];
+	const owners = new Map<string, string[]>();
+	for (const [id, product] of Object.entries(products)) {
+		const ean = product.values[EAN_INDEX];
+		if (isEmptyValue(ean)) continue;
+		if (!isUsableEan(ean)) {
+			products[id] = withEan(product, null);
+			cleared.push(id);
+			continue;
+		}
+		owners.set(ean, [...(owners.get(ean) ?? []), id]);
+	}
+	const confirmed = new Map(entries.map((entry) => [entry.ean, entry.id]));
+	for (const [ean, ids] of owners) {
+		if (ids.length < 2) continue;
+		// A scan decides first; otherwise a lone active product beats removed ones (a renumbered
+		// product's old entry still has the barcode)
+		const active = ids.filter((id) => !products[id].meta?.removedFromSelection);
+		const keeper = confirmed.get(ean) ?? (active.length === 1 ? active[0] : undefined);
+		for (const id of ids) {
+			if (id === keeper) continue;
+			products[id] = withEan(products[id], null);
+			cleared.push(id);
+		}
+	}
+	return cleared;
 }
