@@ -244,7 +244,9 @@ browser's `BarcodeDetector` where it has EAN and QR support (Chrome on Android),
 compiled to WebAssembly (`barcode-detector/ponyfill`). The ~1 MB wasm comes from our own build,
 not ZXing's default CDN, and the service worker leaves it out of the precache. A picture can be
 chosen instead of the camera, and the number can be typed. The camera is released when the page is
-hidden or left.
+hidden or left. The same code in view is left alone for 3 s after a lookup, 30 s after a failed one
+(Alko down, rate limited), and the Worker's found / not-found answers are kept in memory for 30 min,
+so rescanning a code doesn't reach the Worker.
 
 `findProductByBarcode` looks for an active product with that EAN in the dataset first. Otherwise
 it asks the [API Worker](../api-worker.md), which looks the barcode up from Alko and stores it, so

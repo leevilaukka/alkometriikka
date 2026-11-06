@@ -11,8 +11,14 @@
 		ondetect,
 		onnocode
 	}: {
-		/** Called with the largest code in view; scanning pauses until the promise settles */
-		ondetect: (code: { rawValue: string; format: string }) => Promise<void> | void;
+		/**
+		 * Called with the largest code in view; scanning pauses until the promise settles. It can ask
+		 * for the same code to be left alone for longer than usual (a failed lookup, say).
+		 */
+		ondetect: (code: {
+			rawValue: string;
+			format: string;
+		}) => Promise<void | { holdMs: number }> | void | { holdMs: number };
 		/** A chosen picture had no code in it */
 		onnocode: () => void;
 	} = $props();
@@ -58,7 +64,7 @@
 	let cameraState = $state<'starting' | 'running' | 'denied' | 'unavailable'>('starting');
 	let interval: ReturnType<typeof setInterval> | undefined;
 	let busy = false;
-	let last = { value: '', at: 0 };
+	let last = { value: '', at: 0, holdMs: REPEAT_MS };
 	let destroyed = false;
 
 	async function startCamera() {
@@ -103,12 +109,14 @@
 		const area = (code: DetectedCode) => code.boundingBox.width * code.boundingBox.height;
 		const largest = codes.reduce((best, code) => (area(code) > area(best) ? code : best));
 		const now = Date.now();
-		if (largest.rawValue === last.value && now - last.at < REPEAT_MS) return;
+		if (largest.rawValue === last.value && now - last.at < last.holdMs) return;
 		busy = true;
+		let holdMs = REPEAT_MS;
 		try {
-			await ondetect({ rawValue: largest.rawValue, format: largest.format });
+			const result = await ondetect({ rawValue: largest.rawValue, format: largest.format });
+			if (result) holdMs = Math.max(holdMs, result.holdMs);
 		} finally {
-			last = { value: largest.rawValue, at: Date.now() };
+			last = { value: largest.rawValue, at: Date.now(), holdMs };
 			busy = false;
 		}
 	}
@@ -134,7 +142,7 @@
 		if (!file) return;
 		const codes = await (await getDetector()).detect(await createImageBitmap(file)).catch(() => []);
 		// A picture is chosen on purpose, so the same code is handled again
-		last = { value: '', at: 0 };
+		last = { value: '', at: 0, holdMs: REPEAT_MS };
 		if (codes.length === 0) onnocode();
 		else await handle(codes);
 	}

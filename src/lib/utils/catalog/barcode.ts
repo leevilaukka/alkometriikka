@@ -16,8 +16,32 @@ export function normalizeBarcode(code: string, format: string): string {
 	return format === 'upc_a' && code.length === 12 ? `0${code}` : code;
 }
 
-/** Null on a network error or an answer other than found / not found */
+/** How long the Worker's answer for a barcode is remembered by this page, found or not */
+const ANSWER_TTL_MS = 30 * 60 * 1000;
+const answers = new Map<string, { answer: string | 'not_found'; at: number }>();
+
+/** Forgets the remembered Worker answers (for tests) */
+export function clearBarcodeAnswers() {
+	answers.clear();
+}
+
+/**
+ * Null on a network error or an answer other than found / not found. Both real answers are kept
+ * in memory, so scanning the same code again doesn't reach the Worker; failures are not, so a
+ * retry can succeed.
+ */
 async function askWorker(ean: string, fetchFn: typeof fetch): Promise<string | 'not_found' | null> {
+	const known = answers.get(ean);
+	if (known && Date.now() - known.at < ANSWER_TTL_MS) return known.answer;
+	const answer = await fetchWorker(ean, fetchFn);
+	if (answer !== null) answers.set(ean, { answer, at: Date.now() });
+	return answer;
+}
+
+async function fetchWorker(
+	ean: string,
+	fetchFn: typeof fetch
+): Promise<string | 'not_found' | null> {
 	try {
 		const response = await fetchFn(`${GTIN_API_ORIGIN}/gtin/${ean}`);
 		if (response.status === 404) return 'not_found';

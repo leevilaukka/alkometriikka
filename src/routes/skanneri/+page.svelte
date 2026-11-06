@@ -24,7 +24,10 @@
 	let status = $state<Status>({ kind: 'idle' });
 	let typed = $state('');
 
-	async function lookupEan(ean: string) {
+	/** A failed lookup (Alko down, rate limited) isn't retried for this long while the code stays in view */
+	const ERROR_HOLD_MS = 30_000;
+
+	async function lookupEan(ean: string): Promise<{ holdMs: number } | void> {
 		status = { kind: 'searching', code: ean };
 		// Removed products too, as an old barcode may only be on one of them
 		const { kaljakori } = await data.alkoWithRemoved;
@@ -38,6 +41,7 @@
 			await goto(link);
 		} else {
 			status = match.source === 'error' ? { kind: 'error' } : { kind: 'not_found', code: ean };
+			if (match.source === 'error') return { holdMs: ERROR_HOLD_MS };
 		}
 	}
 
@@ -73,8 +77,8 @@
 	}
 
 	async function handleCode({ rawValue, format }: { rawValue: string; format: string }) {
-		if (format === 'qr_code') await openQrCode(rawValue);
-		else await lookupEan(normalizeBarcode(rawValue, format));
+		if (format === 'qr_code') return openQrCode(rawValue);
+		return lookupEan(normalizeBarcode(rawValue, format));
 	}
 
 	function submitTyped(event: SubmitEvent) {

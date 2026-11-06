@@ -1,6 +1,10 @@
-import { describe, expect, it } from 'bun:test';
+import { beforeEach, describe, expect, it } from 'bun:test';
 import type { PriceListItem } from '$lib/types';
-import { findProductByBarcode, normalizeBarcode } from '$lib/utils/catalog/barcode';
+import {
+	clearBarcodeAnswers,
+	findProductByBarcode,
+	normalizeBarcode
+} from '$lib/utils/catalog/barcode';
 import { AllColumns } from '$lib/utils/constants/columns';
 
 const JAMESON = '5011007017965';
@@ -37,6 +41,8 @@ describe('normalizeBarcode', () => {
 });
 
 describe('findProductByBarcode', () => {
+	beforeEach(clearBarcodeAnswers);
+
 	it('finds an active product by its stored EAN without asking the Worker', async () => {
 		const { calls, fetchFn } = worker(500);
 		const match = await findProductByBarcode(catalog([item('200047', JAMESON)]), JAMESON, fetchFn);
@@ -74,10 +80,12 @@ describe('findProductByBarcode', () => {
 		expect((await findProductByBarcode(products, JAMESON, worker(404).fetchFn)).source).toBe(
 			'not_found'
 		);
+		clearBarcodeAnswers();
 		expect((await findProductByBarcode(products, JAMESON, worker(502).fetchFn)).source).toBe(
 			'error'
 		);
 		// The Worker knows a product data.json doesn't have yet
+		clearBarcodeAnswers();
 		const unknown = worker(200, { id: '999999' });
 		expect((await findProductByBarcode(products, JAMESON, unknown.fetchFn)).source).toBe(
 			'not_found'
@@ -89,5 +97,25 @@ describe('findProductByBarcode', () => {
 		const match = await findProductByBarcode(catalog([]), '5011007017964', fetchFn);
 		expect(match.source).toBe('not_found');
 		expect(calls).toEqual([]);
+	});
+
+	it("remembers the Worker's answers but not its failures", async () => {
+		const products = catalog([item('200047')]);
+		const found = worker(200, { id: '200047' });
+		await findProductByBarcode(products, JAMESON, found.fetchFn);
+		await findProductByBarcode(products, JAMESON, found.fetchFn);
+		expect(found.calls).toHaveLength(1);
+
+		clearBarcodeAnswers();
+		const missing = worker(404);
+		await findProductByBarcode(products, JAMESON, missing.fetchFn);
+		await findProductByBarcode(products, JAMESON, missing.fetchFn);
+		expect(missing.calls).toHaveLength(1);
+
+		clearBarcodeAnswers();
+		const failing = worker(502);
+		await findProductByBarcode(products, JAMESON, failing.fetchFn);
+		await findProductByBarcode(products, JAMESON, failing.fetchFn);
+		expect(failing.calls).toHaveLength(2);
 	});
 });
