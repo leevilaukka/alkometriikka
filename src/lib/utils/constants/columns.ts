@@ -148,7 +148,6 @@ export const hideFromProductPageStats = new Set<ColumnNames>([
 	DatasetColumns.PricePerLiter,
 	DatasetColumns.Name,
 	DatasetColumns.Vintage,
-	DatasetColumns.EAN,
 	DatasetColumns.RemovedFromSelection,
 	// The campaign/normal-price fields are shown around the price itself rather
 	// than as raw perustiedot rows.
