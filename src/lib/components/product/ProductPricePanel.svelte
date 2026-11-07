@@ -25,6 +25,7 @@
 		availableInPreferredStore,
 		closestAvailableStore,
 		closestAvailableDistance,
+		storeCounts,
 		cheapestSize,
 		class: _class = ''
 	}: {
@@ -37,6 +38,8 @@
 		availableInPreferredStore: boolean;
 		closestAvailableStore?: AvailabilityStore;
 		closestAvailableDistance: string | null;
+		/** Store id → units, once the live counts are in */
+		storeCounts?: Map<string, number>;
 		cheapestSize?: SizeOption;
 		class?: string;
 	} = $props();
@@ -66,6 +69,7 @@
 		{availableInPreferredStore}
 		{closestAvailableStore}
 		{closestAvailableDistance}
+		{storeCounts}
 	/>
 
 	<div class="flex w-full flex-row gap-2">

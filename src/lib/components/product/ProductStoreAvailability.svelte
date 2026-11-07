@@ -11,7 +11,6 @@
 		isStoreOpen,
 		rankStoresByDistance
 	} from '$lib/utils/catalog/availability';
-	import { loadLiveAvailability, type LiveStoreCounts } from '$lib/utils/catalog/liveAvailability';
 	import { formatRelativeTime } from '$lib/utils/format/format';
 	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 	import { AUTO_STORE_ID } from '$lib/utils/constants/app';
@@ -31,71 +30,52 @@
 		allStores,
 		availabilityState,
 		preferredStore,
-		availabilityUpdated,
+		updatedAt,
+		liveCounts,
+		onNearView,
 		class: _class = ''
 	}: {
 		id?: string;
 		productNumber: string;
+		/** The stores that have the product, nearest first: by the live counts once they're in */
 		stores: AvailabilityStore[];
 		/** Every store, so a search can also say which ones don't have the product */
 		allStores: AvailabilityStore[];
 		/** `stores` is empty, rather than the product in no store, unless availability has loaded */
 		availabilityState: LoadState;
 		preferredStore?: AvailabilityStore;
-		availabilityUpdated: Date | undefined;
+		/** How fresh `stores` is: the live counts' time, or availability.json's */
+		updatedAt: Date | undefined;
+		/** Store id → units, once the live counts are in */
+		liveCounts?: Map<string, number>;
+		/** Called once the section is about to scroll into view, to ask for the live counts */
+		onNearView?: () => void;
 		class?: string;
 	} = $props();
 
 	const HOUR_MS = 3_600_000;
 	let now = $state(new Date());
 	let section = $state<HTMLElement>();
-	let live = $state.raw<LiveStoreCounts | null>(null);
 
-	// The live counts are asked for once the section is about to scroll into view, so product
-	// views that never reach it don't use the Worker's requests or Alko's. Until they arrive, or if
-	// they can't, the section shows availability.json.
+	// Product views that never reach the section don't need its live counts, unless the price
+	// box's preferred store asked for them already. Re-armed for each product, as navigating from
+	// one product to another keeps this component.
 	$effect(() => {
-		const product = productNumber;
 		const element = section;
-		live = null;
-		if (!element) return;
-		let cancelled = false;
-		const load = () =>
-			loadLiveAvailability(product).then((result) => {
-				if (!cancelled) live = result;
-			});
-		if (typeof IntersectionObserver === 'undefined') {
-			load();
-			return () => (cancelled = true);
-		}
+		const notify = onNearView;
+		if (!element || !notify || !productNumber) return;
+		if (typeof IntersectionObserver === 'undefined') return notify();
 		const observer = new IntersectionObserver(
 			(entries) => {
 				if (!entries.some((entry) => entry.isIntersecting)) return;
 				observer.disconnect();
-				load();
+				notify();
 			},
 			{ rootMargin: '400px 0px' }
 		);
 		observer.observe(element);
-		return () => {
-			cancelled = true;
-			observer.disconnect();
-		};
+		return () => observer.disconnect();
 	});
-
-	const storesById = $derived(new Map(allStores.map((store) => [store.id, store])));
-	// Once the live counts are in, they decide which stores have the product: a store may have
-	// sold out or restocked since the sync. They need the store list for names and places.
-	const liveCounts = $derived(availabilityState === 'loaded' ? live?.counts : undefined);
-	const stockedStores = $derived(
-		liveCounts
-			? rankStoresByDistance(
-					[...liveCounts.keys()].flatMap((storeId) => storesById.get(storeId) ?? []),
-					preferredStore
-				)
-			: stores
-	);
-	const updatedAt = $derived(liveCounts ? live?.fetchedAt : availabilityUpdated);
 
 	// Keep the minute-level "päivitetty x minuuttia sitten" label ticking. Past the
 	// first hour the label only changes hourly, so stop refreshing.
@@ -114,12 +94,10 @@
 	let searchTrackedFor: string | undefined;
 
 	const searching = $derived(query.trim() !== '');
-	const inNoStore = $derived(availabilityState === 'loaded' && stockedStores.length === 0);
-	const stockedStoreIds = $derived(new Set(stockedStores.map((store) => store.id)));
+	const inNoStore = $derived(availabilityState === 'loaded' && stores.length === 0);
+	const stockedStoreIds = $derived(new Set(stores.map((store) => store.id)));
 	const shownStores = $derived(
-		searching
-			? rankStoresByDistance(filterStoresByQuery(allStores, query), preferredStore)
-			: stockedStores
+		searching ? rankStoresByDistance(filterStoresByQuery(allStores, query), preferredStore) : stores
 	);
 
 	function trackSearch() {
@@ -164,8 +142,8 @@
 			{:else if availabilityState === 'failed'}
 				Saatavuustietoja ei saatu ladattua
 			{:else}
-				{stockedStores.length}
-				{stockedStores.length === 1 ? 'myymälä' : 'myymälää'}
+				{stores.length}
+				{stores.length === 1 ? 'myymälä' : 'myymälää'}
 			{/if}{#if updatedAt}
 				{' '}·
 				<time datetime={updatedAt.toISOString()} title={updatedAt.toLocaleString('fi-FI')}

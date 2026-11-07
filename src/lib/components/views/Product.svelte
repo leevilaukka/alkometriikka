@@ -26,6 +26,7 @@
 		rankStoresByDistance
 	} from '$lib/utils/catalog/availability';
 	import { generateImageUrl } from '$lib/utils/catalog/alko';
+	import { loadLiveAvailability, type LiveStoreCounts } from '$lib/utils/catalog/liveAvailability';
 	import ErrorBoundary from '../widgets/ErrorBoundary.svelte';
 	import { safely } from '$lib/utils/app/errorAnalytics';
 	import { productDescription } from '$lib/utils/app/seo';
@@ -77,13 +78,52 @@
 		availabilityState === 'loading' && !$preferredStoreId ? 'loaded' : availabilityState
 	);
 
-	const inNoStore = $derived(availabilityState === 'loaded' && availabilityStores.length === 0);
+	const productNumber = $derived(product[AllColumns.Number]);
 
-	const rankedAvailabilityStores = $derived(
-		rankStoresByDistance(availabilityStores, preferredStore)
+	// Live store counts from the API Worker. They're asked for right away when a preferred store
+	// is chosen, as the price box near the top shows it; otherwise only once the store list is
+	// about to scroll into view. Until they arrive, or if they can't, availability.json is used.
+	let liveRequestedFor = $state<string>();
+	let live = $state.raw<{ productNumber: string; counts: LiveStoreCounts } | null>(null);
+
+	function requestLiveCounts() {
+		liveRequestedFor = productNumber;
+	}
+
+	$effect(() => {
+		if (preferredStore) requestLiveCounts();
+	});
+
+	$effect(() => {
+		const requested = liveRequestedFor;
+		if (!requested) return;
+		let cancelled = false;
+		loadLiveAvailability(requested).then((counts) => {
+			if (!cancelled && counts) live = { productNumber: requested, counts };
+		});
+		return () => (cancelled = true);
+	});
+
+	// Counts for another product (just navigated away from) or before the store list loaded are left out
+	const liveStock = $derived(
+		availabilityState === 'loaded' && live?.productNumber === productNumber
+			? live.counts
+			: undefined
 	);
+	// Once the live counts are in, they decide which stores have the product: a store may have
+	// sold out or restocked since the sync. They need the store list for names and places.
+	const stockedStores = $derived(
+		liveStock
+			? [...liveStock.counts.keys()].flatMap((storeId) => availability.stores[storeId] ?? [])
+			: availabilityStores
+	);
+	const storesUpdated = $derived(liveStock?.fetchedAt ?? availabilityUpdated);
+
+	const inNoStore = $derived(availabilityState === 'loaded' && stockedStores.length === 0);
+
+	const rankedAvailabilityStores = $derived(rankStoresByDistance(stockedStores, preferredStore));
 	const availableInPreferredStore = $derived(
-		preferredStore ? availabilityStores.some((store) => store.id === preferredStore.id) : false
+		preferredStore ? stockedStores.some((store) => store.id === preferredStore.id) : false
 	);
 	const closestAvailableStore = $derived(rankedAvailabilityStores[0]);
 	const closestAvailableDistance = $derived(
@@ -262,6 +302,7 @@
 				{availableInPreferredStore}
 				{closestAvailableStore}
 				{closestAvailableDistance}
+				storeCounts={liveStock?.counts}
 			/>
 
 			<ErrorBoundary name="product_size_dropdown">
@@ -282,6 +323,7 @@
 			{availableInPreferredStore}
 			{closestAvailableStore}
 			{closestAvailableDistance}
+			storeCounts={liveStock?.counts}
 			{cheapestSize}
 		/>
 	</div>
@@ -317,12 +359,14 @@
 		>
 			<ProductStoreAvailability
 				id="myymalasaatavuus"
-				productNumber={product[AllColumns.Number]}
+				{productNumber}
 				stores={rankedAvailabilityStores}
 				allStores={Object.values(availability.stores)}
 				{availabilityState}
 				{preferredStore}
-				{availabilityUpdated}
+				updatedAt={storesUpdated}
+				liveCounts={liveStock?.counts}
+				onNearView={requestLiveCounts}
 			/>
 		</ErrorBoundary>
 	</div>

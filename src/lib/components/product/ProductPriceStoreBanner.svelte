@@ -3,6 +3,7 @@
 	import { formatValue } from '$lib/utils/format/format';
 	import type { AvailabilityStore, LoadState, PriceListItem } from '$lib/types';
 	import type { SaleInfo } from '$lib/utils/catalog/sales';
+	import { groceryLinks } from '$lib/utils/catalog/grocery';
 	import { components } from '$lib/utils/ui/styles';
 	import Icon from '../widgets/Icon.svelte';
 	import { twMerge } from 'tailwind-merge';
@@ -17,6 +18,7 @@
 		availableInPreferredStore,
 		closestAvailableStore,
 		closestAvailableDistance,
+		storeCounts,
 		class: _class = ''
 	}: {
 		product: PriceListItem;
@@ -30,6 +32,8 @@
 		availableInPreferredStore: boolean;
 		closestAvailableStore?: AvailabilityStore;
 		closestAvailableDistance: string | null;
+		/** Store id → units, once the live counts are in */
+		storeCounts?: Map<string, number>;
 		class?: string;
 	} = $props();
 
@@ -39,6 +43,16 @@
 		(product as { [MissingValues]?: Set<string> })[MissingValues]?.has(AllColumns.PricePerLiter) ??
 			false
 	);
+
+	const preferredStoreCount = $derived(
+		preferredStore ? storeCounts?.get(preferredStore.id) : undefined
+	);
+	const closestAvailableCount = $derived(
+		closestAvailableStore ? storeCounts?.get(closestAvailableStore.id) : undefined
+	);
+
+	// Beer, cider and other drinks grocery stores may sell too
+	const groceryStoreLinks = $derived(groceryLinks(product));
 
 	function scrollToAvailability() {
 		document.getElementById('myymalasaatavuus')?.scrollIntoView({ behavior: 'smooth' });
@@ -144,7 +158,7 @@
 							: 'text-sm text-red-700 dark:text-red-400'}
 					>
 						{availableInPreferredStore
-							? 'Saatavilla valitusta myymälästä'
+							? `Saatavilla valitusta myymälästä${preferredStoreCount ? ` · ${preferredStoreCount} kpl` : ''}`
 							: 'Ei saatavilla valitusta myymälästä'}
 					</span>
 					<strong class="text-sm">{preferredStore.name}</strong>
@@ -152,7 +166,7 @@
 						<span class="text-sm text-secondary">
 							Lähin saatavilla: {closestAvailableStore.name}{closestAvailableDistance
 								? ` (${closestAvailableDistance})`
-								: ''}
+								: ''}{closestAvailableCount ? ` · ${closestAvailableCount} kpl` : ''}
 						</span>
 					{/if}
 				</div>
@@ -190,5 +204,23 @@
 			<Icon name="store" class="text-xl" />
 			<span>Valitse ensisijainen myymälä nähdäksesi saatavuuden</span>
 		</button>
+	{/if}
+
+	{#if groceryStoreLinks.length}
+		<p class="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-secondary">
+			<span class="w-full">Vertaa hintaa ruokakaupoissa:</span>
+			{#each groceryStoreLinks as link (link.id)}
+				<a
+					href={link.href}
+					target="_blank"
+					rel="noopener noreferrer"
+					referrerpolicy="no-referrer"
+					class="inline-flex items-center gap-1 underline"
+				>
+					{link.name}
+					<Icon name="link_external" />
+				</a>
+			{/each}
+		</p>
 	{/if}
 </div>

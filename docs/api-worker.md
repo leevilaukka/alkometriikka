@@ -134,12 +134,14 @@ Parsing Alko's answer is the only real CPU work, under a millisecond of the free
 and only on a miss or refresh. Each product page view that reaches the section is one Worker
 request (of the free plan's 100,000 a day, shared with `/gtin`).
 
-On the site, `ProductStoreAvailability` asks for the counts (`loadLiveAvailability`,
-`src/lib/utils/catalog/liveAvailability.ts`) once the section is 400 px from the viewport, so views
-that never scroll there cost nothing. Until they arrive, or if they don't, it shows
-`availability.json`. Once they do, they decide which stores are listed, each shows "Saatavilla N
-kpl", and "päivitetty" is the counts' `fetchedAt`. The preferred store banner at the top of the
-page still uses `availability.json`.
+On the site, the product view (`views/Product.svelte`) asks for the counts (`loadLiveAvailability`,
+`src/lib/utils/catalog/liveAvailability.ts`) and shares them between the price box and the store
+list. With a preferred store chosen it asks right away, as the price box near the top shows that
+store ("Saatavilla valitusta myymälästä · N kpl", or the nearest store that has it with its count).
+Without one it asks only once the store list is 400 px from the viewport, so those views that never
+scroll there cost nothing. Until the counts arrive, or if they don't, both show `availability.json`.
+Once they do, they decide which stores have the product, each listed store shows "Saatavilla N kpl",
+and "päivitetty" is the counts' `fetchedAt`.
 
 ## Setup and deploy
 
