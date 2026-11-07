@@ -15,6 +15,7 @@ Alkometriikka started as a simple way to compare the price and amount of alcohol
 - **Product statistics** — Compare prices, alcohol content, value, and other calculated metrics.
 - **Price history** — Track how product prices have changed over time.
 - **Store availability** — See which Alko stores currently carry a product.
+- **Barcode scanner** — Scan a bottle's barcode, or the QR code on an Alko shelf label, to open its product page.
 - **Shareable lists** — Create and share product selections.
 - **Alkometriikka Daily** — A daily game generated from the product database.
 - **Product pages** — Individual, search-engine-friendly pages for products in the catalog.
@@ -37,7 +38,11 @@ flowchart TD
     P --> F[Data feeds]
     P --> I[Daily]
 
+    Q[Scanner] --> R[API Worker]
+    R --> B
+
     C --> D
+    C --> Q
     C --> E
     C --> F
     C --> G[Price history]
@@ -83,7 +88,7 @@ flowchart LR
 - [Vite](https://vite.dev/)
 - GitHub Actions
 - GitHub Pages
-- Cloudflare
+- Cloudflare (R2, Workers, KV)
 
 ## Development
 
@@ -128,6 +133,17 @@ Check formatting:
 ```sh
 bun run lint
 ```
+
+### API Worker and barcode scanner
+
+The site is static, so the only server-side code is a small Cloudflare Worker in `workers/api/`, served at `api.alkometriikka.fi`. It resolves a barcode (EAN) to an Alko product number for the scanner page (`/skanneri`), and serves live store counts for product pages.
+
+- The scanner first looks for the EAN in the product dataset and only asks the Worker when it isn't found.
+- The Worker looks the barcode up from Alko's mobile API once, stores the answer in Workers KV, and rate limits lookups. Only the product number is returned to the browser.
+- The data sync periodically exports the barcodes the Worker has learned and writes them into the `EAN` column of `data.json`, so the dataset gains barcodes as people scan.
+- Product pages also ask the Worker how many units each store has right now. It fetches them from Alko's web API, trims them to store counts and keeps them in the edge cache for 15 minutes.
+
+The Worker needs the secrets `ALKO_API_KEY` and `EXPORT_TOKEN`, and the sync needs `GTIN_EXPORT_URL` and `GTIN_EXPORT_TOKEN`. Deployment and details are in [docs/api-worker.md](docs/api-worker.md).
 
 ### Testing product size matching
 
@@ -174,7 +190,7 @@ The Daily game is generated from the product dataset. Historical games are prese
 
 Alkometriikka's machine-readable data is provided so that others may build useful projects and integrations around it.
 
-Please **do not hammer the site or its data endpoints with requests**.
+Please **do not hammer the site or its data endpoints with requests**. The barcode lookup endpoint at `api.alkometriikka.fi` exists for the scanner and is rate limited; it is not a general product API.
 
 If you are building an application that consumes Alkometriikka data:
 

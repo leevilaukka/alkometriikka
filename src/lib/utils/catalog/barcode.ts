@@ -1,9 +1,7 @@
 import type { PriceListItem } from '$lib/types';
+import { API_ORIGIN } from '$lib/utils/constants/app';
 import { AllColumns } from '$lib/utils/constants/columns';
 import { isValidGtin } from './gtin';
-
-/** The Worker that knows barcodes data.json doesn't have yet (workers/api, docs/api-worker.md) */
-export const GTIN_API_ORIGIN = 'https://api.alkometriikka.fi';
 
 export type BarcodeMatch =
 	| { source: 'local' | 'worker'; product: PriceListItem }
@@ -43,7 +41,8 @@ async function fetchWorker(
 	fetchFn: typeof fetch
 ): Promise<string | 'not_found' | null> {
 	try {
-		const response = await fetchFn(`${GTIN_API_ORIGIN}/gtin/${ean}`);
+		// The Worker knows barcodes data.json doesn't have yet
+		const response = await fetchFn(`${API_ORIGIN}/gtin/${ean}`);
 		if (response.status === 404) return 'not_found';
 		if (!response.ok) return null;
 		const { id } = (await response.json()) as { id?: unknown };

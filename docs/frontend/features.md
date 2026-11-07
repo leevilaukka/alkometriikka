@@ -43,21 +43,21 @@ Filter usage is reported as one analytics event per filtering session, not per c
 
 `views/Product.svelte` and the sections in `components/product/`:
 
-| Section                | Component                                | Shows                                                                                                                   |
-| ---------------------- | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| Breadcrumb             | `ProductBreadcrumb`                      | Category trail, linked when the category has a page                                                                     |
-| Gallery                | `ProductGallery`                         | Alko's product photo                                                                                                    |
-| Badges and header      | `ProductBadgesHeader`                    | Name, producer (links to the list filtered to that producer), badges                                                    |
-| Price and store banner | `ProductPriceStoreBanner`                | Price, sale info, and whether the preferred store has it (or the closest store that does)                               |
-| Size selector          | `ProductSizeDropdown`, `ProductSizeHook` | Other package sizes with price per litre, cheapest marked ([how matching works](calculations.md#other-sizes))           |
-| Quick stats            | `ProductQuickStats`                      | 2×2 grid of headline numbers                                                                                            |
-| Price panel            | `ProductPricePanel`                      | Desktop side panel: price, add to list, compare, share                                                                  |
-| Hinta-laatu            | `ProductQualityMetrics`                  | Percentile bars against the category ([metrics](calculations.md#quality-metrics-hinta-laatu))                           |
-| Similar products       | `ProductSimilar`                         | Top 24 similar active products, with a one-tap "compare with this"                                                      |
-| Price history          | `ProductPriceHistory`                    | Chart.js line chart with sale periods shaded, range selector, link to the product's RSS feed once its price has changed |
-| Details                | `ProductDetailsTable`                    | All other columns; food pairings link to the list filtered by that pairing and type                                     |
-| Store availability     | `ProductStoreAvailability`               | Stores stocking it, sorted by distance from the preferred store, with "updated N minutes ago"; search by store or town  |
-| Mobile CTA             | `ProductMobileCta`                       | Bottom bar on small screens: price, compare, add to list                                                                |
+| Section                | Component                                | Shows                                                                                                                                                                                                 |
+| ---------------------- | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Breadcrumb             | `ProductBreadcrumb`                      | Category trail, linked when the category has a page                                                                                                                                                   |
+| Gallery                | `ProductGallery`                         | Alko's product photo                                                                                                                                                                                  |
+| Badges and header      | `ProductBadgesHeader`                    | Name, producer (links to the list filtered to that producer), badges                                                                                                                                  |
+| Price and store banner | `ProductPriceStoreBanner`                | Price, sale info, and whether the preferred store has it (or the closest store that does)                                                                                                             |
+| Size selector          | `ProductSizeDropdown`, `ProductSizeHook` | Other package sizes with price per litre, cheapest marked ([how matching works](calculations.md#other-sizes))                                                                                         |
+| Quick stats            | `ProductQuickStats`                      | 2×2 grid of headline numbers                                                                                                                                                                          |
+| Price panel            | `ProductPricePanel`                      | Desktop side panel: price, add to list, compare, share                                                                                                                                                |
+| Hinta-laatu            | `ProductQualityMetrics`                  | Percentile bars against the category ([metrics](calculations.md#quality-metrics-hinta-laatu))                                                                                                         |
+| Similar products       | `ProductSimilar`                         | Top 24 similar active products, with a one-tap "compare with this"                                                                                                                                    |
+| Price history          | `ProductPriceHistory`                    | Chart.js line chart with sale periods shaded, range selector, link to the product's RSS feed once its price has changed                                                                               |
+| Details                | `ProductDetailsTable`                    | All other columns; food pairings link to the list filtered by that pairing and type                                                                                                                   |
+| Store availability     | `ProductStoreAvailability`               | Stores stocking it with live unit counts ([API Worker](../api-worker.md#live-store-availability)), sorted by distance from the preferred store, with "updated N minutes ago"; search by store or town |
+| Mobile CTA             | `ProductMobileCta`                       | Bottom bar on small screens: price, compare, add to list                                                                                                                                              |
 
 The store availability header also shows the store count trend over the last 30 days with a
 sparkline (`ProductStockTrend`), once the [stock history](../data/stock-history.md) has two days

@@ -367,7 +367,7 @@ All of these return the **SPA HTML shell** (not JSON) – i.e. the endpoints don
 - Sample: 100151 → 306 stores, counts 1–93 (median 9); 300079 → 332 stores, 1–188.
 - ~250 KB per response (each store's two-week `openHours` is repeated), ~0.35 s.
 - **No CORS headers**, so a browser on another origin can't call it; it needs a proxy (e.g. a Cloudflare Worker trimming it to `{storeId: count}` with a short cache) or the sync (~11k requests, ~2.7 GB per full sweep).
-- Not used yet (decided against for now, 2026-10-21).
+- Used by the `api.alkometriikka.fi` Worker since 2026-11-08 (`GET /availability/{id}`, see `docs/api-worker.md`). Decided against in the sync (2026-10-21).
 
 ---
 

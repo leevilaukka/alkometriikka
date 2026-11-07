@@ -11,6 +11,7 @@
 		isStoreOpen,
 		rankStoresByDistance
 	} from '$lib/utils/catalog/availability';
+	import { loadLiveAvailability, type LiveStoreCounts } from '$lib/utils/catalog/liveAvailability';
 	import { formatRelativeTime } from '$lib/utils/format/format';
 	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 	import { AUTO_STORE_ID } from '$lib/utils/constants/app';
@@ -47,12 +48,60 @@
 
 	const HOUR_MS = 3_600_000;
 	let now = $state(new Date());
+	let section = $state<HTMLElement>();
+	let live = $state.raw<LiveStoreCounts | null>(null);
+
+	// The live counts are asked for once the section is about to scroll into view, so product
+	// views that never reach it don't use the Worker's requests or Alko's. Until they arrive, or if
+	// they can't, the section shows availability.json.
+	$effect(() => {
+		const product = productNumber;
+		const element = section;
+		live = null;
+		if (!element) return;
+		let cancelled = false;
+		const load = () =>
+			loadLiveAvailability(product).then((result) => {
+				if (!cancelled) live = result;
+			});
+		if (typeof IntersectionObserver === 'undefined') {
+			load();
+			return () => (cancelled = true);
+		}
+		const observer = new IntersectionObserver(
+			(entries) => {
+				if (!entries.some((entry) => entry.isIntersecting)) return;
+				observer.disconnect();
+				load();
+			},
+			{ rootMargin: '400px 0px' }
+		);
+		observer.observe(element);
+		return () => {
+			cancelled = true;
+			observer.disconnect();
+		};
+	});
+
+	const storesById = $derived(new Map(allStores.map((store) => [store.id, store])));
+	// Once the live counts are in, they decide which stores have the product: a store may have
+	// sold out or restocked since the sync. They need the store list for names and places.
+	const liveCounts = $derived(availabilityState === 'loaded' ? live?.counts : undefined);
+	const stockedStores = $derived(
+		liveCounts
+			? rankStoresByDistance(
+					[...liveCounts.keys()].flatMap((storeId) => storesById.get(storeId) ?? []),
+					preferredStore
+				)
+			: stores
+	);
+	const updatedAt = $derived(liveCounts ? live?.fetchedAt : availabilityUpdated);
 
 	// Keep the minute-level "päivitetty x minuuttia sitten" label ticking. Past the
 	// first hour the label only changes hourly, so stop refreshing.
 	$effect(() => {
-		if (!availabilityUpdated) return;
-		const updated = availabilityUpdated.getTime();
+		if (!updatedAt) return;
+		const updated = updatedAt.getTime();
 		if (Date.now() - updated >= HOUR_MS) return;
 		const interval = setInterval(() => {
 			now = new Date();
@@ -65,10 +114,12 @@
 	let searchTrackedFor: string | undefined;
 
 	const searching = $derived(query.trim() !== '');
-	const inNoStore = $derived(availabilityState === 'loaded' && stores.length === 0);
-	const stockedStoreIds = $derived(new Set(stores.map((store) => store.id)));
+	const inNoStore = $derived(availabilityState === 'loaded' && stockedStores.length === 0);
+	const stockedStoreIds = $derived(new Set(stockedStores.map((store) => store.id)));
 	const shownStores = $derived(
-		searching ? rankStoresByDistance(filterStoresByQuery(allStores, query), preferredStore) : stores
+		searching
+			? rankStoresByDistance(filterStoresByQuery(allStores, query), preferredStore)
+			: stockedStores
 	);
 
 	function trackSearch() {
@@ -99,6 +150,7 @@
 
 <section
 	{id}
+	bind:this={section}
 	class={twMerge(
 		'flex scroll-mt-4 flex-col overflow-hidden rounded border border-primary bg-secondary',
 		_class
@@ -112,13 +164,12 @@
 			{:else if availabilityState === 'failed'}
 				Saatavuustietoja ei saatu ladattua
 			{:else}
-				{stores.length}
-				{stores.length === 1 ? 'myymälä' : 'myymälää'}
-			{/if}{#if availabilityUpdated}
-				· <time
-					datetime={availabilityUpdated.toISOString()}
-					title={availabilityUpdated.toLocaleString('fi-FI')}
-					>päivitetty {formatRelativeTime(availabilityUpdated, now)}</time
+				{stockedStores.length}
+				{stockedStores.length === 1 ? 'myymälä' : 'myymälää'}
+			{/if}{#if updatedAt}
+				{' '}·
+				<time datetime={updatedAt.toISOString()} title={updatedAt.toLocaleString('fi-FI')}
+					>päivitetty {formatRelativeTime(updatedAt, now)}</time
 				>{/if}
 		</p>
 		<ProductStockTrend {productNumber} class="mt-1" />
@@ -172,13 +223,14 @@
 				{@const openingHours = getTodaysOpeningHours(store)}
 				{@const storeOpen = isStoreOpen(store)}
 				{@const stocked = stockedStoreIds.has(store.id)}
+				{@const count = liveCounts?.get(store.id)}
 				{@const isPreferred = store.id === preferredStore?.id}
 				<li class="flex gap-2.5 border-b border-primary p-3.5 last:border-b-0">
 					<div class="flex min-w-0 flex-1 flex-col gap-0.5">
 						<a href={resolve(`/myymalat/${store.id}/`)} class="w-fit font-bold hover:underline"
 							>{store.name}</a
 						>
-						{#if searching}
+						{#if searching || count}
 							<span
 								class={twMerge(
 									'flex items-center gap-1 text-sm',
@@ -186,7 +238,7 @@
 								)}
 							>
 								<Icon name={stocked ? 'check_circle' : 'x_circle'} />
-								{stocked ? 'Saatavilla' : 'Ei saatavilla'}
+								{stocked ? (count ? `Saatavilla ${count} kpl` : 'Saatavilla') : 'Ei saatavilla'}
 							</span>
 						{/if}
 						{#if store.address}

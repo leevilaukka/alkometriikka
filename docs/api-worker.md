@@ -1,8 +1,11 @@
 # API Worker (`api.alkometriikka.fi`)
 
-The site is static, so this Cloudflare Worker (`workers/api/`) is its only server-side code. For
-now it does one thing: it tells the [scanner](frontend/features.md#scanner-skanneri) which Alko
-product a barcode belongs to.
+The site is static, so this Cloudflare Worker (`workers/api/`) is its only server-side code. It
+does two things:
+
+- It tells the [scanner](frontend/features.md#scanner-skanneri) which Alko product a barcode
+  belongs to (the rest of this page up to [Live store availability](#live-store-availability)).
+- It gives product pages the [live unit count](#live-store-availability) of each store.
 
 ## Why it exists
 
@@ -50,10 +53,11 @@ sequenceDiagram
 
 ## Endpoints
 
-| Endpoint           | Auth                                   | Answer                                                                                                                                     |
-| ------------------ | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `GET /gtin/{ean}`  | none, rate limited                     | `200 { id }`, `404` if Alko doesn't know it, `400` for an invalid code (length or check digit), `429` over the limit, `502` if Alko failed |
-| `GET /gtin/export` | `Authorization: Bearer <EXPORT_TOKEN>` | `200 { entries: [{ ean, id, seenAt }] }`, every stored barcode                                                                             |
+| Endpoint                 | Auth                                   | Answer                                                                                                                                     |
+| ------------------------ | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `GET /gtin/{ean}`        | none, rate limited                     | `200 { id }`, `404` if Alko doesn't know it, `400` for an invalid code (length or check digit), `429` over the limit, `502` if Alko failed |
+| `GET /gtin/export`       | `Authorization: Bearer <EXPORT_TOKEN>` | `200 { entries: [{ ean, id, seenAt }] }`, every stored barcode                                                                             |
+| `GET /availability/{id}` | none, rate limited                     | `200 { fetchedAt, counts: { storeId: count } }`, `400` for an invalid product number, `429` over the limit, `502` if Alko failed           |
 
 - Lookups send `Access-Control-Allow-Origin: *`. A product number is public, so CORS doesn't need
   to guard anything. The rate limit is what protects Alko from being scraped through us.
@@ -94,6 +98,49 @@ The API never fills `EAN`, so it's listed in `OWN_COLUMNS` (`constants.ts`), and
 `carryOwnColumns` keeps the stored value when pass 2 or 3 rebuilds a product from the API. `EAN`
 isn't hashed, so filling it in doesn't trigger detail fetches or new OG images.
 
+## Live store availability
+
+`availability.json` comes from the sync's search sweep, so it says which stores had a product at
+the last sync (up to 6 hours ago) and nothing about how many units. Alko's product page asks a
+per-product endpoint for that:
+
+```
+GET https://www.alko.fi/api/product-api/availability/{id}
+User-Agent: <a browser's; 403 without one>
+```
+
+It answers every store stocking the product with its unit `count`, plus each store's address and
+two weeks of opening hours: ~200 KB, ~0.35 s. It has no CORS headers, and an unknown product
+answers `[]` like one no store has. The Worker fetches it, keeps only `{ storeId: count }` for
+stores with units (pickup points, `outletType` `"2"`, dropped like in `availability.json`), and
+returns ~3 KB.
+
+- **Edge cache, not KV.** The trimmed answer goes into `caches.default` under
+  `/availability/__counts/{id}`. KV's free tier allows 1,000 writes a day, and refreshing even a
+  hundred products every 15 minutes would take ten times that; the Cache API is free and unmetered.
+  It is per data centre, but Finnish visitors mostly land on the same one or two.
+- **Fresh for 15 minutes** (`AVAILABILITY_FRESH_S`). Browsers may reuse an answer for up to 5
+  minutes of that.
+- **Stale for up to 6 hours** (`AVAILABILITY_STALE_S`). An older answer is still returned at once
+  while a background refresh (`ctx.waitUntil`) fetches a new one, and keeps being returned while
+  Alko fails or the IP is over its limit. After 6 hours the cache drops it.
+- **Failures** are cached for a minute (`/availability/__error/{id}`): a product with nothing
+  cached answers `502` without asking Alko again, so an Alko outage isn't hammered.
+- **Rate limit `AVAILABILITY_LIMITER`**: 30 a minute per IP, counting only requests that would
+  reach Alko (a miss or a stale refresh). Over it, a stale answer is still served, without a
+  refresh.
+
+Parsing Alko's answer is the only real CPU work, under a millisecond of the free plan's 10 ms,
+and only on a miss or refresh. Each product page view that reaches the section is one Worker
+request (of the free plan's 100,000 a day, shared with `/gtin`).
+
+On the site, `ProductStoreAvailability` asks for the counts (`loadLiveAvailability`,
+`src/lib/utils/catalog/liveAvailability.ts`) once the section is 400 px from the viewport, so views
+that never scroll there cost nothing. Until they arrive, or if they don't, it shows
+`availability.json`. Once they do, they decide which stores are listed, each shows "Saatavilla N
+kpl", and "päivitetty" is the counts' `fetchedAt`. The preferred store banner at the top of the
+page still uses `availability.json`.
+
 ## Setup and deploy
 
 Wrangler isn't a dependency; run it with `bunx`. From the repository root:
@@ -110,8 +157,30 @@ The deploy creates the `api.alkometriikka.fi` custom domain (DNS record and cert
 `alkometriikka.fi` zone. Then add the same export token to the repository as the
 `GTIN_EXPORT_TOKEN` secret (see [CI/CD](ci-cd.md#secrets-and-variables)).
 
+A WAF custom rule in the zone ("Block: … anything but GET/OPTIONS /gtin/\* and /availability/\* on
+api") blocks every other path on `api.alkometriikka.fi` before it reaches the Worker, so bots
+probing random paths don't use Worker requests. **A new route has to be added to that rule**, or
+it answers Cloudflare's 403 "Sorry, you have been blocked" page. The zone's managed challenges
+(Asia, datacenter ASNs) also apply to the API; a challenged browser gets a 403 and the site falls
+back as it does for any failure.
+
 Logs: `bunx wrangler@4 tail -c workers/api/wrangler.jsonc`, or Workers observability in the
 Cloudflare dashboard. A `502` with "status 401" or "status 403" in the log means Alko no longer
 accepts the key. Get the current one from a newer APK.
 
 Tests: `tests/workers/api.test.ts` runs the Worker against an in-memory KV and a mocked Alko.
+
+## Local development
+
+Run the Worker locally, then point the dev site at it:
+
+```sh
+bunx wrangler@4 dev -c workers/api/wrangler.jsonc --local --port 8787
+echo 'VITE_API_ORIGIN=http://localhost:8787' > .env.development   # gitignored; only `vite dev` reads it
+bun run dev:no-sync
+```
+
+`--local` simulates KV, the rate limiters and the edge cache, so nothing touches the deployed
+Worker's state, but requests do reach Alko's real endpoints. `/availability/{id}` needs no secrets;
+`/gtin/{ean}` needs `ALKO_API_KEY` in `workers/api/.dev.vars` (gitignored) to answer anything other
+than `502`. Remove `.env.development` (or the line) to use the production Worker again.

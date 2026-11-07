@@ -1,6 +1,13 @@
 import { HOME_PAGE } from '../app/seo';
 import type { setSEO } from '../app/meta';
 
+/**
+ * The site's API Worker: barcode lookups and live store counts (workers/api, docs/api-worker.md).
+ * `VITE_API_ORIGIN` points it at a local `wrangler dev` (see docs/api-worker.md#local-development).
+ */
+export const API_ORIGIN: string =
+	import.meta.env?.VITE_API_ORIGIN || 'https://api.alkometriikka.fi';
+
 /** Value of the preferred store setting that follows the store nearest to the user. */
 export const AUTO_STORE_ID = 'auto';
 

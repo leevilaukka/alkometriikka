@@ -8,11 +8,8 @@
 	import { generateTitle, setSEO } from '$lib/utils/app/meta';
 	import { appPath } from '$lib/utils/app/paths';
 	import { staticPage } from '$lib/utils/app/seo';
-	import {
-		findProductByBarcode,
-		GTIN_API_ORIGIN,
-		normalizeBarcode
-	} from '$lib/utils/catalog/barcode';
+	import { findProductByBarcode, normalizeBarcode } from '$lib/utils/catalog/barcode';
+	import { API_ORIGIN } from '$lib/utils/constants/app';
 	import { AllColumns } from '$lib/utils/constants/columns';
 	import { components } from '$lib/utils/ui/styles';
 
@@ -98,7 +95,7 @@
 <svelte:head>
 	<title>{generateTitle('Skanneri')}</title>
 	<!-- The first barcode data.json doesn't know is asked from the Worker; have the connection ready -->
-	<link rel="preconnect" href={GTIN_API_ORIGIN} crossorigin="anonymous" />
+	<link rel="preconnect" href={API_ORIGIN} crossorigin="anonymous" />
 </svelte:head>
 
 <div class="mx-auto flex w-full max-w-xl flex-col gap-6 p-4 md:p-6">

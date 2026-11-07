@@ -26,10 +26,38 @@
 				"limit": 30,
 				"period": 60
 			}
+		},
+		// Store availability requests that reach Alko (not cache hits), per IP
+		{
+			"name": "AVAILABILITY_LIMITER",
+			"namespace_id": "1002",
+			"simple": {
+				"limit": 30,
+				"period": 60
+			}
 		}
 	],
+	"placement": {
+		"mode": "smart"
+	},
 	"observability": {
-		"enabled": true
+		"enabled": false,
+		"head_sampling_rate": 1,
+		"redact_query_string": false,
+		"logs": {
+			"enabled": true,
+			"head_sampling_rate": 1,
+			"invocation_logs": true,
+			"persist": true
+		},
+		"traces": {
+			"enabled": true,
+			"head_sampling_rate": 1,
+			"persist": true
+		},
+		"issue_detection": {
+			"enabled": false
+		}
 	}
-	// Secrets (wrangler secret put): ALKO_API_KEY, EXPORT_TOKEN
 }
+// Secrets (wrangler secret put): ALKO_API_KEY, EXPORT_TOKEN
