@@ -354,6 +354,7 @@ export type AnalyticsEventMap = {
 		path: string;
 		version: string;
 	};
+	share_target: { query: string; url: string };
 } & Shares &
 	Games;
 
