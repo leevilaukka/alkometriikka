@@ -11,7 +11,7 @@
 		isStoreOpen,
 		rankStoresByDistance
 	} from '$lib/utils/catalog/availability';
-	import { formatRelativeTime } from '$lib/utils/format/format';
+	import { formatTimeAgo } from '$lib/utils/format/format';
 	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 	import { AUTO_STORE_ID } from '$lib/utils/constants/app';
 	import { requestUserLocation } from '$lib/utils/device/location';
@@ -32,6 +32,7 @@
 		preferredStore,
 		updatedAt,
 		liveCounts,
+		liveLoading = false,
 		onNearView,
 		class: _class = ''
 	}: {
@@ -48,6 +49,8 @@
 		updatedAt: Date | undefined;
 		/** Store id → units, once the live counts are in */
 		liveCounts?: Map<string, number>;
+		/** The live counts are on their way to replace the sync's store list */
+		liveLoading?: boolean;
 		/** Called once the section is about to scroll into view, to ask for the live counts */
 		onNearView?: () => void;
 		class?: string;
@@ -78,9 +81,11 @@
 	});
 
 	// Keep the minute-level "päivitetty x minuuttia sitten" label ticking. Past the
-	// first hour the label only changes hourly, so stop refreshing.
+	// first hour the label only changes hourly, so stop refreshing. A new time (the live counts,
+	// often fetched minutes after this mounted, or another product's) restarts it from now.
 	$effect(() => {
 		if (!updatedAt) return;
+		now = new Date();
 		const updated = updatedAt.getTime();
 		if (Date.now() - updated >= HOUR_MS) return;
 		const interval = setInterval(() => {
@@ -144,10 +149,20 @@
 			{:else}
 				{stores.length}
 				{stores.length === 1 ? 'myymälä' : 'myymälää'}
-			{/if}{#if updatedAt}
+			{/if}{#if liveLoading}
+				{' '}·
+				<!-- Plain inline text, so the line is as tall as the "päivitetty" one it gives way to -->
+				<span>
+					<span
+						aria-hidden="true"
+						class="me-1 inline-block size-3 animate-spin rounded-full border-2 border-current border-b-transparent align-[-1px]"
+					></span>
+					haetaan ajantasaisia lukemia…
+				</span>
+			{:else if updatedAt}
 				{' '}·
 				<time datetime={updatedAt.toISOString()} title={updatedAt.toLocaleString('fi-FI')}
-					>päivitetty {formatRelativeTime(updatedAt, now)}</time
+					>päivitetty {formatTimeAgo(updatedAt, now)}</time
 				>{/if}
 		</p>
 		<ProductStockTrend {productNumber} class="mt-1" />
@@ -195,7 +210,7 @@
 	{:else if inNoStore}
 		<p class="bg-primary p-3.5 text-secondary">Ei saatavilla myymälöissä.</p>
 	{:else if shownStores.length > 0}
-		<ul class="max-h-96 overflow-y-auto bg-primary">
+		<ul class="max-h-96 overflow-y-auto bg-primary" aria-busy={liveLoading}>
 			{#each shownStores as store (store.id)}
 				{@const distance = formatStoreDistance(getStoreDistance(preferredStore, store))}
 				{@const openingHours = getTodaysOpeningHours(store)}
@@ -208,10 +223,15 @@
 						<a href={resolve(`/myymalat/${store.id}/`)} class="w-fit font-bold hover:underline"
 							>{store.name}</a
 						>
-						{#if searching || count}
+						<!-- Always one line, so a row keeps its height when the live count fills it in -->
+						{#if stocked && !count && liveLoading}
+							<span aria-hidden="true" class="flex h-5 items-center">
+								<span class="h-3.5 w-28 animate-pulse rounded bg-secondary"></span>
+							</span>
+						{:else}
 							<span
 								class={twMerge(
-									'flex items-center gap-1 text-sm',
+									'flex h-5 items-center gap-1 text-sm',
 									stocked ? 'text-green-700 dark:text-green-400' : 'text-red-700 dark:text-red-400'
 								)}
 							>

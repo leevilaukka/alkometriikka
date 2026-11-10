@@ -85,6 +85,8 @@
 	// about to scroll into view. Until they arrive, or if they can't, availability.json is used.
 	let liveRequestedFor = $state<string>();
 	let live = $state.raw<{ productNumber: string; counts: LiveStoreCounts } | null>(null);
+	/** The product whose live counts couldn't be had, so the page stops saying they're coming */
+	let liveFailedFor = $state<string>();
 
 	function requestLiveCounts() {
 		liveRequestedFor = productNumber;
@@ -99,7 +101,9 @@
 		if (!requested) return;
 		let cancelled = false;
 		loadLiveAvailability(requested).then((counts) => {
-			if (!cancelled && counts) live = { productNumber: requested, counts };
+			if (cancelled) return;
+			if (counts) live = { productNumber: requested, counts };
+			else liveFailedFor = requested;
 		});
 		return () => (cancelled = true);
 	});
@@ -118,6 +122,13 @@
 			: availabilityStores
 	);
 	const storesUpdated = $derived(liveStock?.fetchedAt ?? availabilityUpdated);
+	// The sync's store list is showing and this product's live counts are on their way to replace it
+	const liveLoading = $derived(
+		availabilityState === 'loaded' &&
+			liveRequestedFor === productNumber &&
+			live?.productNumber !== productNumber &&
+			liveFailedFor !== productNumber
+	);
 
 	const inNoStore = $derived(availabilityState === 'loaded' && stockedStores.length === 0);
 
@@ -318,6 +329,7 @@
 				{closestAvailableStore}
 				{closestAvailableDistance}
 				storeCounts={liveStock?.counts}
+				{liveLoading}
 			/>
 
 			<ErrorBoundary name="product_size_dropdown">
@@ -339,6 +351,7 @@
 			{closestAvailableStore}
 			{closestAvailableDistance}
 			storeCounts={liveStock?.counts}
+			{liveLoading}
 			{cheapestSize}
 		/>
 	</div>
@@ -381,6 +394,7 @@
 				{preferredStore}
 				updatedAt={storesUpdated}
 				liveCounts={liveStock?.counts}
+				{liveLoading}
 				onNearView={requestLiveCounts}
 			/>
 		</ErrorBoundary>

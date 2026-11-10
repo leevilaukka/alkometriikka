@@ -19,6 +19,7 @@
 		closestAvailableStore,
 		closestAvailableDistance,
 		storeCounts,
+		liveLoading = false,
 		class: _class = ''
 	}: {
 		product: PriceListItem;
@@ -34,6 +35,8 @@
 		closestAvailableDistance: string | null;
 		/** Store id → units, once the live counts are in */
 		storeCounts?: Map<string, number>;
+		/** The live counts are on their way, and may still change what the store box says */
+		liveLoading?: boolean;
 		class?: string;
 	} = $props();
 
@@ -160,6 +163,14 @@
 						{availableInPreferredStore
 							? `Saatavilla valitusta myymälästä${preferredStoreCount ? ` · ${preferredStoreCount} kpl` : ''}`
 							: 'Ei saatavilla valitusta myymälästä'}
+						<!-- Where the unit count will appear; inline so the box doesn't change height -->
+						{#if liveLoading}
+							<span
+								class="ms-1 inline-block size-3 animate-spin rounded-full border-2 border-current border-b-transparent align-[-1px] text-secondary"
+								title="Haetaan ajantasaista saatavuutta"
+							></span>
+							<span class="sr-only">Haetaan ajantasaista saatavuutta</span>
+						{/if}
 					</span>
 					<strong class="text-sm">{preferredStore.name}</strong>
 					{#if !availableInPreferredStore && closestAvailableStore}
