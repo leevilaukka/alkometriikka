@@ -28,7 +28,8 @@ The home page lists every product in a virtualized list (`@humanspeak/svelte-vir
 - **Sort** by any of `shownSortingKeys`; the default is alcohol grams per euro, descending.
 - **Highlight**: shows a bar in each row proportional to the chosen column's value against the
   list's maximum.
-- **Row actions**: add to a list, add to comparison, open the product.
+- **Row actions**: add to a list, add to comparison, open the product (see
+  [Product actions](#product-actions)).
 - Everything above is reflected in the URL, so a filtered list can be shared (see
   [App structure → URL state](app-structure.md#url-state)).
 - **Scroll position**: the list scrolls inside its own viewport, which the browser's scroll
@@ -58,6 +59,11 @@ Filter usage is reported as one analytics event per filtering session, not per c
 | Details                | `ProductDetailsTable`                    | All other columns; food pairings link to the list filtered by that pairing and type                                                                                                                                                                                         |
 | Store availability     | `ProductStoreAvailability`               | Stores stocking it with live unit counts ([API Worker](../api-worker.md#live-store-availability)), sorted by distance from the preferred store, with "updated N minutes ago"; search by store or town                                                                       |
 | Mobile CTA             | `ProductMobileCta`                       | Bottom bar on small screens: price, compare, add to list                                                                                                                                                                                                                    |
+
+Until the live counts arrive, the store list is the last sync's: its header says "haetaan
+ajantasaisia lukemia…" with a spinner in place of the update time, and the preferred store's box
+has a spinner where the unit count will go. If the Worker can't answer, both go away and the sync's
+list stays.
 
 The store availability header also shows the store count trend over the last 30 days with a
 sparkline (`ProductStockTrend`), once the [stock history](../data/stock-history.md) has two days
@@ -101,7 +107,9 @@ Links to the site RSS feed.
 
 `views/List.svelte`, `widgets/AllLists.svelte`, `src/lib/utils/user/lists.ts`
 
-Users create named lists of products with quantities, stored in localStorage. A list page shows
+Users create named lists of products with quantities, stored in localStorage. Products are added
+from any "Lisää" button ([Product actions](#product-actions)); "Lisää uuteen listaan" in that popup
+creates a list with the product already in it. A list page shows
 the products with search, filters and sorting, and totals for the whole list: item count, price,
 volume, alcohol grams, grams per euro, servings and price per serving, sugar and an estimated ‰.
 
@@ -122,7 +130,7 @@ store. Store changes are only compared once `availability.json` has loaded, and 
 preferred store, so switching stores isn't reported as a change.
 
 - `/seuratut` lists watched products, changed ones first, with "Nähty" per product and "Merkitse
-  kaikki nähdyiksi".
+  kaikki nähdyiksi". Each row also has the compare and add buttons.
 - The front page shows a banner summarising the changes ("2 halpeni, 1 tuli myymälääsi") while
   there are any.
 - Opening the product marks it seen. Everything stays in localStorage (`watchlist`) and is part of
@@ -132,8 +140,10 @@ preferred store, so switching stores isn't reported as a change.
 
 `views/Compare.svelte`, `widgets/CompareBar.svelte`, `src/lib/utils/user/compare.ts`
 
-Up to 6 products side by side. Products are added from list rows, product pages and the similar
-products row. While any are queued, the compare bar is shown at the bottom of every page. The
+Up to 6 products side by side. Products are added from list rows, product pages, the similar
+products row, watchlist rows and the scanner's recent scans, all with the same
+[`CompareButton`](#product-actions). Adding to a full comparison shows a warning toast with a link
+to it. While any are queued, the compare bar is shown at the bottom of every page. The
 table highlights the best value per row and can dim rows where all products are equal
 ("highlight differences", remembered in localStorage). The page URL carries the product ids, so a
 comparison can be shared.
@@ -255,6 +265,16 @@ as Alko may sell the product under a new number now. The removed product is the 
 Worker has nothing better. UPC-A codes are padded to EAN-13 first, as Alko stores them that way.
 The same code held in view isn't looked up again for three seconds.
 
+After a failed lookup the page offers a next step: "Yritä uudelleen" when the Worker couldn't be
+reached, "Hae nimellä" (the command palette, limited to products) when no product has the code.
+
+**Recent scans**: every product a scan opened is listed under the camera ("Skannatut", newest
+first, at most 10) with compare and add buttons, so bottles scanned at the shelf can be compared
+without going through each page again. The list is kept in `sessionStorage` (`recent_scans`,
+`src/lib/utils/user/recentScans.ts`), so it lasts for the tab. A product page opened from the
+scanner shows **Skannaa seuraava**, which goes back to it (`afterNavigate`'s `from`, so the button
+goes away once the visitor moves on to another product).
+
 Phones have Skanneri as a header button by default (see
 [Navigation and layout](app-structure.md#navigation-and-layout)).
 
@@ -308,12 +328,33 @@ Clicking a manual notice's link dismisses it too, unless it sets `dismissOnLinkC
 Dismissals are stored per notice id in localStorage. The stale warning's and cached-data notice's
 ids include the sync time, so dismissing them lasts only until the data changes.
 
+## Product actions
+
+`src/lib/utils/user/productActions.ts`, `widgets/CompareButton.svelte`,
+`widgets/AddToListButton.svelte`
+
+Every surface that shows a product (list rows, the product page's price panel and mobile bar,
+similar products, watchlist rows, recent scans) uses the same two buttons:
+
+- **`CompareButton`** toggles the product in the comparison (`aria-pressed`). With `reference` it
+  adds that product first, as the similar-products cards do. A full comparison gives a warning
+  toast with a link to the comparison.
+- **`AddToListButton`** opens the "Lisää" popup (`AddToListContent`): the user's lists, a new
+  list, and the punch. Adding confirms with a toast linking to the list or the calculator.
+
+`productActions.ts` holds the feedback-bearing versions (`toggleCompareAction`, `addToListAction`,
+`addToPunchAction`) over the plain state functions in `compare.ts`, `lists.ts` and `punch.ts`. The
+command palette runs the same state functions with its own inline notices. Their toasts sit at the
+bottom centre of the screen, above the compare bar and the mobile bar, wherever the button was.
+
 ## Toasts
 
 `widgets/Toast.svelte`, `src/lib/utils/app/toast.svelte.ts`
 
-`showToast({ text, href?, linkText? })` shows a short confirmation for 4 seconds, floating at the
-bottom of the page above the compare bar and the page's mobile bar, in an `aria-live` region.
+`showToast({ text, href?, linkText?, anchor?, tone? })` shows a short confirmation (2.5 s, 4 s
+with a link), next to `anchor` when given, otherwise floating at the bottom of the page above the
+compare bar and the page's mobile bar, in an `aria-live` region. `tone: 'warning'` swaps the check
+mark for a warning sign, for an action that couldn't be done.
 
 ## Sharing
 

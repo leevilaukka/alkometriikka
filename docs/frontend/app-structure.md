@@ -280,7 +280,10 @@ while back/forward restores it from the URL.
   Tilastot), Omat (Seuratut, Listat), Myymälät (Myymälät, Kompassi) and Työkalut & Pelit
   (Skanneri, Laskin, Boolilaskuri, Daily, Daily-arkisto), and marks the current page. Any two of
   them can be pinned as the header buttons; until the user picks, `defaultHeaderSlots` gives
-  Skanneri and Listat on phones (`isMobile`) and Daily and Listat elsewhere. When watched products have changed, Seuratut shows how many and the
+  Skanneri and Listat on phones (`isMobile`) and Daily and Listat elsewhere. The command palette
+  lists the same pages (plus Etusivu), searchable by each item's `keywords`, so a page added to the
+  menu is in both. Other code can open the palette with `requestPaletteOpen(scope?)`
+  (`src/lib/utils/app/commandPalette.ts`). When watched products have changed, Seuratut shows how many and the
   menu button gets a green dot.
 - `/` focuses the search box from anywhere that isn't a text field.
 - On phones, pages pass a snippet into `pageBottomBar` (filter button, product price/compare bar)
