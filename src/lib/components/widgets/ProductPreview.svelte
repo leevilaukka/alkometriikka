@@ -4,11 +4,9 @@
 	import { headerToDisplayName, valueToString } from '$lib/utils/format/labels';
 	import { formatValue } from '$lib/utils/format/format';
 	import { getSaleInfo } from '$lib/utils/catalog/sales';
-	import { components } from '$lib/utils/ui/styles';
-	import { compareProductIds } from '$lib/global.svelte';
-	import { toggleCompare, MAX_COMPARE_PRODUCTS } from '$lib/utils/user/compare';
 	import { twMerge } from 'tailwind-merge';
 	import BadgeList from './BadgeList.svelte';
+	import CompareButton from './CompareButton.svelte';
 	import ProductImage from './ProductImage.svelte';
 	import Icon from './Icon.svelte';
 
@@ -31,19 +29,12 @@
 		})
 	);
 
-	const inCompare = $derived(compareProductIds.includes(product[AllColumns.Number]));
 	// Alcohol-free products have no servings
 	const perServing = $derived(
 		product[AllColumns.EuroPerServing] > 0
 			? ` · ${formatValue(product[AllColumns.EuroPerServing], AllColumns.EuroPerServing)}/annos`
 			: ''
 	);
-
-	function handleToggleCompare() {
-		if (!toggleCompare(product[AllColumns.Number])) {
-			alert(`Voit vertailla korkeintaan ${MAX_COMPARE_PRODUCTS} tuotetta kerrallaan.`);
-		}
-	}
 </script>
 
 <div
@@ -134,14 +125,10 @@
 					</div>
 					<BadgeList item={product} fit class="@4xl:flex-1" />
 					<div class="ms-auto flex flex-row flex-wrap items-center gap-3">
-						<button
-							type="button"
-							onclick={handleToggleCompare}
-							class={twMerge(components.button({ type: inCompare ? 'positive' : 'primary' }))}
-						>
-							<Icon name="compare" />
-							<span>{inCompare ? 'Vertailussa' : 'Vertaile'}</span>
-						</button>
+						<CompareButton
+							productNumber={product[AllColumns.Number]}
+							name={product[AllColumns.Name]}
+						/>
 						{#if renderExtras}
 							{@render renderExtras()}
 						{/if}

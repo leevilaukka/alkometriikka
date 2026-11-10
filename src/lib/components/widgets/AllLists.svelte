@@ -25,10 +25,12 @@
 	const time = new Date();
 
 	function handleCreateList() {
-		createList(
+		const list = createList(
 			`Uusi lista - ${time.getDate()}.${time.getMonth() + 1}.${time.getFullYear()} ${time.getHours() < 10 ? '0' : ''}${time.getHours()}.${time.getMinutes() < 10 ? '0' : ''}${time.getMinutes()}`
 		);
 		sendAnalyticsEvent('create_list');
+		// Picking lists for something (the add popup): the new list is the one picked
+		action?.(list);
 	}
 </script>
 
@@ -118,6 +120,6 @@
 	<button
 		onclick={() => handleCreateList()}
 		class={twMerge(components.button({ type: 'positive' }), 'mx-auto w-full')}
-		><span>Uusi lista</span><Icon name="plus" /></button
+		><span>{action ? 'Lisää uuteen listaan' : 'Uusi lista'}</span><Icon name="plus" /></button
 	>
 </div>

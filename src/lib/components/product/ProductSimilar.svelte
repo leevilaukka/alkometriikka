@@ -4,13 +4,8 @@
 	import { formatValue } from '$lib/utils/format/format';
 	import { components } from '$lib/utils/ui/styles';
 	import type { PriceListItem } from '$lib/types';
-	import { compareProductIds } from '$lib/global.svelte';
-	import {
-		addToCompareWithReference,
-		removeFromCompare,
-		MAX_COMPARE_PRODUCTS
-	} from '$lib/utils/user/compare';
 	import ProductImage from '../widgets/ProductImage.svelte';
+	import CompareButton from '../widgets/CompareButton.svelte';
 	import Icon from '../widgets/Icon.svelte';
 	import { twMerge } from 'tailwind-merge';
 
@@ -26,19 +21,6 @@
 		loading?: boolean;
 		class?: string;
 	} = $props();
-
-	function handleToggleCompare(number: string) {
-		if (compareProductIds.includes(number)) {
-			removeFromCompare(number);
-			return;
-		}
-		// Selecting a candidate to compare implicitly compares it against the
-		// product currently being viewed, so that product goes in first - anchored
-		// as the reference - and only if both fit.
-		if (!addToCompareWithReference(product[AllColumns.Number], number)) {
-			alert(`Voit vertailla korkeintaan ${MAX_COMPARE_PRODUCTS} tuotetta kerrallaan.`);
-		}
-	}
 
 	function sideScroll(node: HTMLElement) {
 		function handleScroll(event: WheelEvent) {
@@ -79,7 +61,6 @@
 			<div class="flex max-w-full flex-row flex-nowrap gap-3 overflow-x-auto" use:sideScroll>
 				{#each candidates as similarProduct (similarProduct[AllColumns.Number])}
 					{@const number = similarProduct[AllColumns.Number]}
-					{@const inCompare = compareProductIds.includes(number)}
 					<div class="flex w-48 shrink-0 flex-col gap-3 rounded-lg border border-primary p-4">
 						<a href={resolve(`/tuotteet/${number}/`)} class="flex flex-col gap-3">
 							<div class="flex h-30 flex-col gap-2 md:h-33">
@@ -114,19 +95,13 @@
 								</span>
 							</div>
 						</a>
-						<button
-							type="button"
-							aria-pressed={inCompare}
-							aria-label={`Vertaile: ${similarProduct[AllColumns.Name]}`}
-							class={twMerge(
-								components.button({ size: 'sm', type: inCompare ? 'positive' : 'primary' }),
-								'mt-auto w-full'
-							)}
-							onclick={() => handleToggleCompare(number)}
-						>
-							<Icon name="compare" />
-							<span>{inCompare ? 'Vertailussa' : 'Vertaile'}</span>
-						</button>
+						<!-- Comparing a candidate compares it against this product, so this one goes in first -->
+						<CompareButton
+							productNumber={number}
+							name={similarProduct[AllColumns.Name]}
+							reference={product[AllColumns.Number]}
+							class="mt-auto w-full"
+						/>
 					</div>
 				{/each}
 			</div>

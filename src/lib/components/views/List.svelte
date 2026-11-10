@@ -33,7 +33,7 @@
 	import { headerToDisplayName, sortingOrderToString } from '$lib/utils/format/labels';
 	import Popup from '../widgets/Popup.svelte';
 	import FoldableSidebar from '../widgets/FoldableSidebar.svelte';
-	import AddToListContent from '../widgets/AddToListContent.svelte';
+	import AddToListButton from '../widgets/AddToListButton.svelte';
 	import Breadcrumb from '../widgets/Breadcrumb.svelte';
 	import Chip from '../widgets/Chip.svelte';
 	import CategorySection from '../category/CategorySection.svelte';
@@ -849,24 +849,7 @@
 										<Icon name="trash" />
 									</button>
 								{:else}
-									<Popup class="gap-4 p-4">
-										{#snippet renderButton(dialogElement: HTMLDialogElement)}
-											<button
-												class={twMerge(components.button({ type: 'positive' }))}
-												aria-label="Lisää listaan tai booliin"
-												onclick={() => dialogElement.showModal()}
-											>
-												<span>Lisää</span>
-												<Icon name="plus" />
-											</button>
-										{/snippet}
-										{#snippet renderContent(dialogElement: HTMLDialogElement)}
-											<AddToListContent
-												productNumber={item[AllColumns.Number]}
-												onadded={() => dialogElement.close()}
-											/>
-										{/snippet}
-									</Popup>
+									<AddToListButton productNumber={item[AllColumns.Number]} />
 								{/if}
 							{/snippet}
 						</ProductPreview>

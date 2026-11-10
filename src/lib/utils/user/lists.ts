@@ -7,13 +7,14 @@ export function createListId() {
 	return `${Date.now()}-${getRandom().split('-')[0]}`;
 }
 
-export function createList(name: string) {
-	const newList: ListObj = {
+/** Adds an empty list and returns it, as stored (the reactive proxy, so changes to it are saved) */
+export function createList(name: string): ListObj {
+	lists.push({
 		id: createListId(),
 		name,
 		items: []
-	};
-	lists.push(newList);
+	});
+	return lists[lists.length - 1];
 }
 
 export function getListById(listId: string) {

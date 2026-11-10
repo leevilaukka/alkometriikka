@@ -20,13 +20,8 @@
 	import { formatValue } from '$lib/utils/format/format';
 	import { addToList, createList, getItemQuantity, listToURI } from '$lib/utils/user/lists';
 	import { addProductToPunch, punchCount } from '$lib/utils/user/punch';
-	import {
-		clearCompare,
-		compareURL,
-		isInCompare,
-		MAX_COMPARE_PRODUCTS,
-		toggleCompare
-	} from '$lib/utils/user/compare';
+	import { clearCompare, compareURL, isInCompare, toggleCompare } from '$lib/utils/user/compare';
+	import { COMPARE_FULL_TEXT } from '$lib/utils/user/productActions';
 	import {
 		isWatched,
 		unwatchProduct,
@@ -299,8 +294,7 @@
 				keywords: 'vertaa vertailu',
 				stay: true,
 				run: () => {
-					if (!toggleCompare(number))
-						return `Voit vertailla korkeintaan ${MAX_COMPARE_PRODUCTS} tuotetta kerrallaan`;
+					if (!toggleCompare(number)) return COMPARE_FULL_TEXT;
 					return inCompare ? 'Poistettu vertailusta' : 'Lisätty vertailuun';
 				}
 			},
@@ -316,6 +310,7 @@
 					stay: true,
 					run: () => {
 						addToList(list, number);
+						sendAnalyticsEvent('add_to_list', { product_number: number });
 						return `Lisätty listaan ${list.name}`;
 					}
 				};
@@ -401,8 +396,7 @@
 	}
 
 	function createNamedList(name: string) {
-		createList(name);
-		const list = lists[lists.length - 1];
+		const list = createList(name);
 		sendAnalyticsEvent('create_list');
 		goto(resolve(`/listat?list=${listToURI(list)}`));
 	}

@@ -22,9 +22,7 @@
 	import { headerToDisplayName, sortingOrderToString } from '$lib/utils/format/labels';
 	import Icon from '../widgets/Icon.svelte';
 	import type { Kaljakori } from '$lib/alko';
-	import Popup from '../widgets/Popup.svelte';
-	import AllLists from '../widgets/AllLists.svelte';
-	import AddToListContent from '../widgets/AddToListContent.svelte';
+	import AddToListButton from '../widgets/AddToListButton.svelte';
 	import { isLaptop, isMobile, pageBottomBar, searchQuery } from '$lib/global.svelte';
 	import Filters from '../widgets/Filters.svelte';
 	import { initFilterValues, sortRows } from '$lib/utils/catalog/filters';
@@ -378,24 +376,7 @@
 								<Icon name="hashtag" />
 								<span>{`${idx + 1}`}</span>
 							</div>
-							<Popup class="gap-4 p-4">
-								{#snippet renderButton(dialogElement: HTMLDialogElement)}
-									<button
-										class={twMerge(components.button({ type: 'positive' }), 'ml-auto')}
-										aria-label="Lisää listaan tai booliin"
-										onclick={() => dialogElement.showModal()}
-									>
-										<span>Lisää</span>
-										<Icon name="plus" />
-									</button>
-								{/snippet}
-								{#snippet renderContent(dialogElement: HTMLDialogElement)}
-									<AddToListContent
-										productNumber={item[AllColumns.Number]}
-										onadded={() => dialogElement.close()}
-									/>
-								{/snippet}
-							</Popup>
+							<AddToListButton productNumber={item[AllColumns.Number]} class="ml-auto" />
 						{/snippet}
 					</ProductPreview>
 				{/snippet}

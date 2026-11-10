@@ -22,6 +22,8 @@
 	} from '$lib/utils/user/watchlist';
 	import { onMount, untrack } from 'svelte';
 	import { twMerge } from 'tailwind-merge';
+	import AddToListButton from '../widgets/AddToListButton.svelte';
+	import CompareButton from '../widgets/CompareButton.svelte';
 	import Icon from '../widgets/Icon.svelte';
 	import PageHeader from '../widgets/PageHeader.svelte';
 	import ProductImage from '../widgets/ProductImage.svelte';
@@ -172,6 +174,10 @@
 								<Icon name="rss" />
 								<span>RSS</span>
 							</a>
+						{/if}
+						{#if product}
+							<CompareButton productNumber={item.id} name={product[AllColumns.Name]} />
+							<AddToListButton productNumber={item.id} type="primary" />
 						{/if}
 						<button
 							type="button"

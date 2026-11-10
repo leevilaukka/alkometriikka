@@ -9,9 +9,7 @@
 	import { components } from '$lib/utils/ui/styles';
 	import { isMobile } from '$lib/global.svelte';
 	import Icon from '../widgets/Icon.svelte';
-	import Popup from '../widgets/Popup.svelte';
-	import AllLists from '../widgets/AllLists.svelte';
-	import AddToListContent from '../widgets/AddToListContent.svelte';
+	import AddToListButton from '../widgets/AddToListButton.svelte';
 	import { setSEO } from '$lib/utils/app/meta';
 	import { formatValue } from '$lib/utils/format/format';
 	import ProductImage from '../widgets/ProductImage.svelte';
@@ -173,26 +171,9 @@
 								<Icon name="hashtag" />
 								<span>{`${idx}`}</span>
 							</div>
-							<Popup class="gap-4 p-4">
-								{#snippet renderButton(dialogElement: HTMLDialogElement)}
-									<button
-										class={twMerge(components.button({ type: 'positive' }), 'ml-auto')}
-										aria-label="Lisää listaan tai booliin"
-										onclick={() => dialogElement.showModal()}
-									>
-										<span>Lisää</span>
-										<Icon name="plus" />
-									</button>
-								{/snippet}
-								{#snippet renderContent(dialogElement: HTMLDialogElement)}
-									{#if item}
-										<AddToListContent
-											productNumber={item[AllColumns.Number]}
-											onadded={() => dialogElement.close()}
-										/>
-									{/if}
-								{/snippet}
-							</Popup>
+							{#if item}
+								<AddToListButton productNumber={item[AllColumns.Number]} class="ml-auto" />
+							{/if}
 						{/snippet}
 					</ProductPreview>
 				{/if}

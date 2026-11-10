@@ -7,6 +7,8 @@ export type ToastMessage = {
 	anchor?: Element | null;
 	/** Without an anchor: `top` puts it where the command palette was, near the top of the window */
 	position?: 'top' | 'bottom';
+	/** `warning` when the action couldn't be done (the comparison is full, say); `success` by default */
+	tone?: 'success' | 'warning';
 };
 
 /** A toast with a link stays longer, to give time to reach it */

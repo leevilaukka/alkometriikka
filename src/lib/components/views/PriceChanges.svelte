@@ -51,8 +51,7 @@
 	import Icon from '../widgets/Icon.svelte';
 	import Breadcrumb from '../widgets/Breadcrumb.svelte';
 	import Popup from '../widgets/Popup.svelte';
-	import AllLists from '../widgets/AllLists.svelte';
-	import AddToListContent from '../widgets/AddToListContent.svelte';
+	import AddToListButton from '../widgets/AddToListButton.svelte';
 	import ProductPreview from '../widgets/ProductPreview.svelte';
 	import BottomBar from '../widgets/BottomBar.svelte';
 	import FilterButton from '../widgets/FilterButton.svelte';
@@ -542,24 +541,10 @@
 									{@render changeTab(change)}
 								{/snippet}
 								{#snippet renderExtras()}
-									<Popup class="gap-4 p-4">
-										{#snippet renderButton(dialogElement: HTMLDialogElement)}
-											<button
-												class={twMerge(components.button({ type: 'positive' }), 'ml-auto')}
-												aria-label="Lisää listaan tai booliin"
-												onclick={() => dialogElement.showModal()}
-											>
-												<span>Lisää</span>
-												<Icon name="plus" />
-											</button>
-										{/snippet}
-										{#snippet renderContent(dialogElement: HTMLDialogElement)}
-											<AddToListContent
-												productNumber={change.product[AllColumns.Number]}
-												onadded={() => dialogElement.close()}
-											/>
-										{/snippet}
-									</Popup>
+									<AddToListButton
+										productNumber={change.product[AllColumns.Number]}
+										class="ml-auto"
+									/>
 								{/snippet}
 							</ProductPreview>
 						{/if}
