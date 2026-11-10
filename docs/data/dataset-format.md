@@ -1,6 +1,6 @@
 # Dataset format
 
-The sync writes four files. The first three are published at the site root on `gh-pages` and
+The sync writes four files, plus a fifth derived from them. The first three and `data.minimal.json` are published at the site root on `gh-pages` and
 linked from the app's settings dialog for anyone who wants the raw data; `hashes.json` is stored
 as `data/hashes.json` with the pipeline's other files.
 
@@ -10,6 +10,7 @@ as `data/hashes.json` with the pipeline's other files.
 | `data-removed.json` | ~1.4 MB, ~0.23 MB brotli | Yes, after first render  | Products removed from the selection, in the same format   |
 | `availability.json` | ~1.3 MB, ~0.2 MB gzipped | Yes, after first render  | Stores and which stores stock each product                |
 | `hashes.json`       | ~0.55 MB gzipped         | No                       | Change-detection hashes, used only by the sync            |
+| `data.minimal.json` | ~2.4 MB, ~0.55 MB gzip   | No                       | 13 of the columns for the Bläkkiskili Telegram bot        |
 
 `packDataset` and `unpackDataset` (`src/lib/utils/catalog/datasetFile.ts`) split and join the two
 dataset files and their word lists. Scripts read both through `readStoredDataset`
@@ -219,6 +220,33 @@ re-fetches products whose stored values hash differently from the search payload
 `detailCheckedAt` holds each product's `meta.detailCheckedAt`, also sync-only (about 2% of the
 compressed `data.json`). It is restored whatever the `HashVersion`. Without it every product is due
 for re-verification, which the sync works through a capped number per run.
+
+## `data.minimal.json`
+
+A slimmed-down copy for the Bläkkiskili Telegram bot, which keeps it in memory. Not loaded by the
+app. `scripts/data/minimal.ts` builds it from `data.json` + `data-removed.json` in the
+`fetchData` workflow's publish step and it is served from the site root like the other dataset
+files (so GitHub Pages and Cloudflare answer conditional requests with `ETag` / `Last-Modified`).
+
+```jsonc
+{
+	"schema": ["Numero", "Nimi", "Pullokoko", "Alkoholi-%", "Tyyppi", "EAN", "Hinta",
+		"Energia kcal/100 ml", "Valmistaja", "Valmistusmaa", "Alatyyppi", "Valikoima", "Tila"],
+	"metadata": { "LastUpdated": "2026-11-10T03:39:38.508Z" },
+	"products": { "100004": { "values": ["100004", "Pramia Mansikka Sour muovipullo", 0.5, 15, …] } }
+}
+```
+
+- The bot reads columns by name from `schema`; the other columns, `priceHistory`, `meta`, `index`
+  and `dictionaries` are left out. Changing `MINIMAL_COLUMNS` changes the bot's contract.
+- Every product with an ABV is in, removed ones too. Alcohol-free drinks have an ABV of `0`.
+- Unlike `data.json`, the values are always plain: numbers are numbers (removed products from
+  the old price list store `"0.75 l"` and `"13.5"` as strings), unknown is `null` (an empty
+  string, a price of `0`, or `0` kcal in an alcoholic drink becomes `null`).
+- A removed product's old `Tyyppi` ("oluet", "punaviinit") is mapped to the current one the way
+  the category pages do it, so the bot sees `Panimotuotteet` and `Viinit`. A few old types with
+  no current counterpart (e.g. "liköörit ja katkerot") are kept as they are.
+- Run `bun run scripts/data/minimal.ts --dev` to write `static/data.minimal.json` locally.
 
 ## `availability.json`
 

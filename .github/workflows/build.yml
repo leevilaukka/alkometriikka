@@ -16,7 +16,7 @@ jobs:
     env:
       # Written by fetchData.yml, not this build: the steps below restore them from
       # gh-pages and carry them through the force-push
-      RUNTIME_FILES: data.json data-removed.json availability.json sitemap.xml rss.xml feed.json rss daily data
+      RUNTIME_FILES: data.json data-removed.json data.minimal.json availability.json sitemap.xml rss.xml feed.json rss daily data
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -38,6 +38,9 @@ jobs:
           fi
           if git show origin/gh-pages:data-removed.json > /tmp/data-removed.json 2>/dev/null; then
             mv /tmp/data-removed.json static/data-removed.json
+          fi
+          if git show origin/gh-pages:data.minimal.json > /tmp/data.minimal.json 2>/dev/null; then
+            mv /tmp/data.minimal.json static/data.minimal.json
           fi
           if git show origin/gh-pages:availability.json > /tmp/availability.json 2>/dev/null; then
             mv /tmp/availability.json static/availability.json

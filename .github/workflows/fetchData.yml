@@ -362,6 +362,8 @@ jobs:
           [ -f og-categories.json ] && cp og-categories.json ../gh-pages/data/og-categories.json || true
           bun run scripts/site/prerender-products.ts --data data.json --out ../gh-pages --template ../gh-pages/404.html --og-manifest ../gh-pages/data/og-images.json --og-categories-manifest ../gh-pages/data/og-categories.json --manifest ../gh-pages/data/tuotteet-manifest.json
           cp data.json data-removed.json availability.json sitemap.xml rss.xml feed.json ../gh-pages/
+          # Slimmed-down copy for the Bläkkiskili Telegram bot (see docs/data/dataset-format.md)
+          bun run scripts/data/minimal.ts --data data.json --out ../gh-pages/data.minimal.json
           bun run scripts/site/prerender-static.ts --out ../gh-pages --template ../gh-pages/404.html --availability availability.json
           # Reset first so stale manifests (and the nested archive/) actually
           # disappear from the site instead of merging over.
@@ -376,7 +378,7 @@ jobs:
       - name: Commit and push downloaded file
         working-directory: ../gh-pages
         run: |
-          git add data.json data-removed.json availability.json sitemap.xml rss.xml feed.json rss daily data tuotteet kategoriat -f index.html myymalat laskin tilastot kompassi hinnanmuutokset listat seuratut
+          git add data.json data-removed.json data.minimal.json availability.json sitemap.xml rss.xml feed.json rss daily data tuotteet kategoriat -f index.html myymalat laskin tilastot kompassi hinnanmuutokset listat seuratut
           git commit -m "Update price list and static product pages [skip ci]" || echo "No changes to commit"
           git push origin HEAD:gh-pages
 
@@ -402,7 +404,7 @@ jobs:
           curl -sS -X POST "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE}/purge_cache" \
             -H "Authorization: Bearer ${CLOUDFLARE_PURGE_KEY}" \
             -H "Content-Type: application/json" \
-            --data '{"files":["https://alkometriikka.fi/data.json","https://alkometriikka.fi/data-removed.json","https://alkometriikka.fi/availability.json","https://alkometriikka.fi/rss.xml","https://alkometriikka.fi/feed.json","https://alkometriikka.fi/notices.json","https://alkometriikka.fi/flags.json","https://alkometriikka.fi/service-worker.js"]}' || \
+            --data '{"files":["https://alkometriikka.fi/data.json","https://alkometriikka.fi/data-removed.json","https://alkometriikka.fi/data.minimal.json","https://alkometriikka.fi/availability.json","https://alkometriikka.fi/rss.xml","https://alkometriikka.fi/feed.json","https://alkometriikka.fi/notices.json","https://alkometriikka.fi/flags.json","https://alkometriikka.fi/service-worker.js"]}' || \
             echo "⚠️  Cache purge failed; continuing."
 
   # Records the run (result, timings, sync attempts) in R2 for build monitoring.

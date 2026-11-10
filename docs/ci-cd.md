@@ -144,7 +144,7 @@ deploy with the previous manifests and fall back to Alko's photos.
    replace `daily/` and `rss/`.
 8. Commit "Update price list and static product pages [skip ci]" and push (a normal push, not a
    force-push).
-9. Purge `data.json`, `data-removed.json`, `availability.json`, `rss.xml` and `feed.json` from Cloudflare. This runs
+9. Purge `data.json`, `data-removed.json`, `data.minimal.json`, `availability.json`, `rss.xml` and `feed.json` from Cloudflare. This runs
    only after the push, so a request can't re-cache the old files between the purge and the new
    files going live.
 

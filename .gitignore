@@ -8,6 +8,7 @@ feed.json
 
 /static/data.json
 /static/data-removed.json
+/static/data.minimal.json
 /static/availability.json
 /hashes.json
 /static/hashes.json
@@ -22,6 +23,7 @@ feed.json
 /og-images.json
 /og-categories.json
 /data.json
+/data.minimal.json
 /availability.json
 /daily/
 /static/daily/
