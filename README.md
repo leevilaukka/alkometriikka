@@ -38,8 +38,10 @@ flowchart TD
     P --> F[Data feeds]
     P --> I[Daily]
 
-    Q[Scanner] --> R[API Worker]
-    R --> B
+    S[Alko mobile & web APIs] --> R[API Worker]
+    Q[Scanner] -->|barcode lookup| R
+    R -->|learned EANs| B
+    R -->|live store counts| H
 
     C --> D
     C --> Q
@@ -59,7 +61,7 @@ flowchart TD
 
 ### Deployment
 
-The production site is primarily served as a static site. GitHub Actions builds the application and generated content and publishes the resulting site to GitHub Pages. Open Graph images are generated separately and stored in a Cloudflare R2 bucket.
+The production site is primarily served as a static site. GitHub Actions builds the application and generated content and publishes the resulting site to GitHub Pages. Open Graph images are generated separately and stored in a Cloudflare R2 bucket. The API Worker is deployed separately to Cloudflare Workers with Wrangler.
 
 ```mermaid
 flowchart LR
@@ -77,6 +79,9 @@ flowchart LR
     F --> I
     G --> I
     H --> J[Cloudflare R2]
+
+    K[workers/api] -->|wrangler deploy| L[Cloudflare Workers + KV]
+    L --> M[api.alkometriikka.fi]
 ```
 
 ## Tech stack
