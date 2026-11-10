@@ -57,6 +57,17 @@ describe('Kaljakori row parsing', () => {
 		expect(alko.data.map((item) => item[AllColumns.Number])).toEqual(['1']);
 	});
 
+	it('leaves a missing EAN or producer empty instead of the text "Null"', () => {
+		const alko = build([
+			base('1', { EAN: null, Manufacturer: null }),
+			base('2', { EAN: '6412700709703' })
+		]);
+		const [missing, present] = alko.data;
+		expect(missing[AllColumns.EAN]).toBe('');
+		expect(missing[AllColumns.Manufacturer]).toBe('');
+		expect(present[AllColumns.EAN]).toBe('6412700709703');
+	});
+
 	it('keeps a 0% product (alcohol-free) because only a missing ABV is skipped', () => {
 		expect(build([base('1', { AlcoholPercentage: 0 })]).data).toHaveLength(1);
 	});

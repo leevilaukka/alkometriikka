@@ -386,7 +386,9 @@ export class Kaljakori {
 					item[datasetColumns[col]] = Boolean(value);
 					break;
 				case Kind.String:
-					item[datasetColumns[col]] = toFormattedStringValue(String(value));
+					// Missing is '', as in the other columns; String(null) would show up as "Null"
+					item[datasetColumns[col]] =
+						value === null || value === undefined ? '' : toFormattedStringValue(String(value));
 					break;
 				case Kind.Set: {
 					// Lists are joined with ", " so trimmed words split too, not only " word" items
