@@ -41,7 +41,8 @@ default to `og-images.json`, `og-categories.json` and `tuotteet-manifest.json` i
 
 Writes `tuotteet/<id>/index.html` for every product, including removed ones, with `Product`
 JSON-LD (offer with price and availability, additional properties, sale price when on sale,
-unit pricing as the bottle's price and volume so Google derives the litre price itself),
+unit pricing as the bottle's price and volume so Google derives the litre price itself, and the
+barcode as `gtin` when the product has an EAN with a valid check digit),
 `BreadcrumbList` JSON-LD for its category trail, an RSS alternate when the product has a price
 history feed, and `product:*` meta tags (price, brand, availability, condition, item id). The OG
 image is the product's R2 card if `og-images.json` has a key for it, else Alko's photo.

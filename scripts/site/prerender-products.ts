@@ -2,6 +2,7 @@ import { mkdir, readdir, rm } from 'node:fs/promises';
 import path from 'node:path';
 import Bun, { CryptoHasher } from 'bun';
 import { getSaleInfo, toISODateInTimeZone } from '../../src/lib/utils/catalog/sales.ts';
+import { isValidGtin } from '../../src/lib/utils/catalog/gtin.ts';
 import {
 	calculatePricePerLitre,
 	displayImageUrl,
@@ -292,6 +293,9 @@ function productHtml(
 	const price = parsePrice(fields.Hinta, id);
 	const keywords = [name, manufacturer, type, subtype, descriptionValue].filter(Boolean).join(', ');
 	const category = [type, subtype].filter(Boolean).join(' / ');
+	// Scanned barcodes, and legacy ones on some removed products; only well-formed ones are claimed
+	const ean = asText(fields.EAN);
+	const gtin = isValidGtin(ean) ? ean : null;
 	const volume = asNumber(fields.Pullokoko);
 	// Alko leaves the litre price out until a product is on sale; the app calculates it then too.
 	const pricePerLitre =
@@ -345,6 +349,7 @@ function productHtml(
 		'@id': url,
 		name,
 		sku: id,
+		...(gtin ? { gtin } : {}),
 		url,
 		image: imageVariants,
 		description: descriptionValue || metaDescription,
