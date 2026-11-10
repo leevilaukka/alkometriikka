@@ -2,7 +2,7 @@
 	import { goto } from '$app/navigation';
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
-	import { tick } from 'svelte';
+	import { onMount, tick } from 'svelte';
 	import { twMerge } from 'tailwind-merge';
 	import type { Kaljakori } from '$lib/alko';
 	import type { AvailabilityData, ListObj, PriceListItem } from '$lib/types';
@@ -36,6 +36,7 @@
 	import { showToast } from '$lib/utils/app/toast.svelte';
 	import {
 		normalizeSearchText,
+		onPaletteOpenRequested,
 		parseScopePrefix,
 		rankEntries,
 		SCOPE_PREFIXES,
@@ -683,10 +684,10 @@
 		$searchQuery = value;
 	}
 
-	export async function openPalette() {
+	export async function openPalette(initialScope: Kind | null = null) {
 		if (!dialogElement || dialogElement.open) return;
 		query = '';
-		scope = null;
+		scope = initialScope;
 		notice = '';
 		activeIndex = 0;
 		open = true;
@@ -695,6 +696,9 @@
 		await tick();
 		inputElement?.focus();
 	}
+
+	// Other pages open it too (the scanner's "Hae nimellä")
+	onMount(() => onPaletteOpenRequested((requested) => openPalette(requested ?? null)));
 
 	export function closePalette() {
 		dialogElement?.close();
@@ -800,7 +804,7 @@
 {#if showButton}
 	<button
 		type="button"
-		onclick={openPalette}
+		onclick={() => openPalette()}
 		aria-label="Hae kaikkialta"
 		aria-keyshortcuts={isMac ? 'Meta+K' : 'Control+K'}
 		title={`Hae kaikkialta (${shortcutLabel})`}

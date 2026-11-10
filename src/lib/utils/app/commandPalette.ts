@@ -123,3 +123,19 @@ export function parseScopePrefix(
 	}
 	return null;
 }
+
+const OPEN_PALETTE_EVENT = 'alkometriikka:open-palette';
+
+/** Opens the command palette from anywhere, optionally narrowed to one scope (as `requestSettingsOpen`) */
+export function requestPaletteOpen(scope?: SearchScope): void {
+	window.dispatchEvent(
+		new CustomEvent<SearchScope | undefined>(OPEN_PALETTE_EVENT, { detail: scope })
+	);
+}
+
+export function onPaletteOpenRequested(handler: (scope?: SearchScope) => void): () => void {
+	const listener = (event: Event) =>
+		handler((event as CustomEvent<SearchScope | undefined>).detail);
+	window.addEventListener(OPEN_PALETTE_EVENT, listener);
+	return () => window.removeEventListener(OPEN_PALETTE_EVENT, listener);
+}

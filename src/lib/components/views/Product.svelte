@@ -163,7 +163,11 @@
 	);
 	const campaignWindow = $derived(sale ? formatCampaignWindow(sale) : null);
 
-	afterNavigate(() => {
+	// Opened by the scanner: going back is going to scan the next one. Not kept in page.state, which
+	// replaceState calls on this page clear; a product opened from this one doesn't get it
+	let fromScanner = $state(false);
+	afterNavigate(({ from }) => {
+		fromScanner = from?.route.id === '/skanneri';
 		productElement?.scrollIntoView({ behavior: 'smooth' });
 	});
 
@@ -223,6 +227,17 @@
 >
 	<div class="flex w-full items-center gap-3.5">
 		<ProductBreadcrumb {product} {kaljakori} class="min-w-0 flex-1" />
+		{#if fromScanner}
+			<button
+				type="button"
+				class={twMerge(components.button({ size: 'sm' }), 'flex shrink-0 items-center gap-2')}
+				title="Skannaa seuraava"
+				onclick={() => history.back()}
+			>
+				<Icon name="barcode_reader" />
+				<span class="sr-only sm:not-sr-only">Skannaa seuraava</span>
+			</button>
+		{/if}
 		<ProductWatchButton
 			{product}
 			{availability}
