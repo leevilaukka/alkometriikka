@@ -44,6 +44,7 @@
 		type SearchScope
 	} from '$lib/utils/app/commandPalette';
 	import { appPath } from '$lib/utils/app/paths';
+	import { navItems } from '$lib/utils/app/nav';
 	import { components } from '$lib/utils/ui/styles';
 	import Icon from './Icon.svelte';
 	import ProductImage from './ProductImage.svelte';
@@ -156,6 +157,7 @@
 		setScope(order[(order.indexOf(scope) + delta + order.length) % order.length]);
 	}
 
+	// Every page in the header menu, so the two can't drift apart, with the front page first
 	const pages: PaletteItem[] = [
 		{
 			id: 'page:/',
@@ -165,94 +167,14 @@
 			href: resolve('/'),
 			keywords: 'tuotteet hinnasto haku'
 		},
-		{
-			id: 'page:/listat',
+		...navItems.map<PaletteItem>((item) => ({
+			id: `page:${item.href}`,
 			kind: 'page',
-			label: 'Listat',
-			icon: 'list_ul',
-			href: resolve('/listat'),
-			keywords: 'ostoslista'
-		},
-		{
-			id: 'page:/daily',
-			kind: 'page',
-			label: 'Daily',
-			icon: 'flame',
-			href: resolve('/daily'),
-			keywords: 'peli visa'
-		},
-		{
-			id: 'page:/kategoriat',
-			kind: 'page',
-			label: 'Kategoriat',
-			icon: 'wine',
-			href: resolve('/kategoriat/'),
-			keywords: 'tyypit'
-		},
-		{
-			id: 'page:/hinnanmuutokset',
-			kind: 'page',
-			label: 'Hinnanmuutokset',
-			icon: 'trending_down',
-			href: resolve('/hinnanmuutokset'),
-			keywords: 'alennukset halpenivat kallistuivat'
-		},
-		{
-			id: 'page:/seuratut',
-			kind: 'page',
-			label: 'Seuratut',
-			icon: 'bell',
-			href: resolve('/seuratut'),
-			keywords: 'seuranta seurattavat muutokset hinta saatavuus'
-		},
-		{
-			id: 'page:/myymalat',
-			kind: 'page',
-			label: 'Myymälät',
-			icon: 'store',
-			href: resolve('/myymalat'),
-			keywords: 'alko kaupat aukioloajat'
-		},
-		{
-			id: 'page:/kompassi',
-			kind: 'page',
-			label: 'Kompassi',
-			icon: 'compass',
-			href: resolve('/kompassi'),
-			keywords: 'lähin myymälä'
-		},
-		{
-			id: 'page:/daily/arkisto',
-			kind: 'page',
-			label: 'Daily-arkisto',
-			icon: 'archive',
-			href: resolve('/daily/arkisto'),
-			keywords: 'peli'
-		},
-		{
-			id: 'page:/laskin',
-			kind: 'page',
-			label: 'Laskin',
-			icon: 'calculator',
-			href: resolve('/laskin'),
-			keywords: 'promille annokset'
-		},
-		{
-			id: 'page:/boolilaskuri',
-			kind: 'page',
-			label: 'Boolilaskuri',
-			icon: 'cocktail',
-			href: resolve('/boolilaskuri'),
-			keywords: 'booli resepti juhlat lasi hinta'
-		},
-		{
-			id: 'page:/tilastot',
-			kind: 'page',
-			label: 'Tilastot',
-			icon: 'stats',
-			href: resolve('/tilastot'),
-			keywords: 'kuvaajat'
-		}
+			label: item.name,
+			icon: item.icon,
+			href: appPath(item.href),
+			keywords: 'keywords' in item ? item.keywords : undefined
+		}))
 	];
 
 	/** The product whose page is open, for the "Tämä tuote" actions */

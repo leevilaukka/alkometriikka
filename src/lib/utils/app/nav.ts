@@ -6,39 +6,74 @@ export const navGroups = [
 	{
 		label: 'Selaa',
 		items: [
-			{ href: '/kategoriat/', icon: 'wine', name: 'Kategoriat' },
-			{ href: '/hinnanmuutokset/', icon: 'trending_down', name: 'Hinnanmuutokset' },
-			{ href: '/tilastot/', icon: 'stats', name: 'Tilastot' }
+			{ href: '/kategoriat/', icon: 'wine', name: 'Kategoriat', keywords: 'tyypit' },
+			{
+				href: '/hinnanmuutokset/',
+				icon: 'trending_down',
+				name: 'Hinnanmuutokset',
+				keywords: 'alennukset halpenivat kallistuivat'
+			},
+			{ href: '/tilastot/', icon: 'stats', name: 'Tilastot', keywords: 'kuvaajat' }
 		]
 	},
 	{
 		label: 'Omat',
 		items: [
-			{ href: '/seuratut/', icon: 'bell', name: 'Seuratut' },
-			{ href: '/listat/', icon: 'list_ul', name: 'Listat' }
+			{
+				href: '/seuratut/',
+				icon: 'bell',
+				name: 'Seuratut',
+				keywords: 'seuranta seurattavat muutokset hinta saatavuus'
+			},
+			{ href: '/listat/', icon: 'list_ul', name: 'Listat', keywords: 'ostoslista' }
 		]
 	},
 	{
 		label: 'Myymälät',
 		items: [
-			{ href: '/myymalat/', icon: 'store', name: 'Myymälät' },
-			{ href: '/kompassi/', icon: 'compass', name: 'Kompassi' }
+			{
+				href: '/myymalat/',
+				icon: 'store',
+				name: 'Myymälät',
+				keywords: 'alko kaupat aukioloajat'
+			},
+			{ href: '/kompassi/', icon: 'compass', name: 'Kompassi', keywords: 'lähin myymälä' }
 		]
 	},
 	{
 		label: 'Työkalut & Pelit',
 		items: [
-			{ href: '/skanneri/', icon: 'barcode_reader', name: 'Skanneri' },
-			{ href: '/laskin/', icon: 'calculator', name: 'Laskin' },
-			{ href: '/boolilaskuri/', icon: 'cocktail', name: 'Boolilaskuri', shortName: 'Booli' },
-			{ href: '/daily/', icon: 'flame', name: 'Daily' },
-			{ href: '/daily/arkisto/', icon: 'archive', name: 'Daily-arkisto' }
+			{
+				href: '/skanneri/',
+				icon: 'barcode_reader',
+				name: 'Skanneri',
+				keywords: 'viivakoodi ean qr koodi kamera skannaa'
+			},
+			{ href: '/laskin/', icon: 'calculator', name: 'Laskin', keywords: 'promille annokset' },
+			{
+				href: '/boolilaskuri/',
+				icon: 'cocktail',
+				name: 'Boolilaskuri',
+				shortName: 'Booli',
+				keywords: 'booli resepti juhlat lasi hinta'
+			},
+			{ href: '/daily/', icon: 'flame', name: 'Daily', keywords: 'peli visa' },
+			{ href: '/daily/arkisto/', icon: 'archive', name: 'Daily-arkisto', keywords: 'peli' }
 		]
 	}
 ] as const satisfies readonly {
 	label: string;
-	/** shortName stands in for name on a header button, where space is tight */
-	items: readonly { href: string; icon: IconName; name: string; shortName?: string }[];
+	/**
+	 * shortName stands in for name on a header button, where space is tight; keywords are extra
+	 * words the command palette finds the page by (it lists every page here)
+	 */
+	items: readonly {
+		href: string;
+		icon: IconName;
+		name: string;
+		shortName?: string;
+		keywords?: string;
+	}[];
 }[];
 
 export type NavItem = (typeof navGroups)[number]['items'][number];
