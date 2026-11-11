@@ -1,0 +1,15 @@
+name: Rehash seeded dataset
+description: >-
+  Rehashes a seeded data.json to the current schema, if one was seeded from
+  gh-pages; no-ops when no dataset was found.
+runs:
+  using: composite
+  steps:
+    - name: Rehash seeded dataset to current schema
+      shell: bash
+      run: |
+        if [ -f data.json ]; then
+          bun run scripts/data/rehash.ts
+        else
+          echo "ℹ️  No seeded data.json found; skipping rehash."
+        fi

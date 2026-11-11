@@ -1,0 +1,5 @@
+{
+	"extends": "../tsconfig.json",
+	"compilerOptions": { "noEmit": true, "types": ["bun", "svelte", "@sveltejs/kit"] },
+	"include": ["./**/*.ts", "../src/app.d.ts", "../.svelte-kit/ambient.d.ts"]
+}

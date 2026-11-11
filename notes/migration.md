@@ -19,12 +19,18 @@ for the sync design.
 
 ```jsonc
 {
-  "table": [
-    ["Numero", "Nimi", /* ... */, "EAN", "Hintahistoria"], // header row
-    ["906458", "Fair & Square...", /* ... */, "7350084980013", [{ "date": "2026-01-26", "price": "12.48" }]],
-    // ...one array per product, price history inline as the last column
-  ],
-  "metadata": { "CreatedDate": "2026-03-05T00:00:00.000Z", /* Apache POI props */ }
+	"table": [
+		["Numero", "Nimi" /* ... */, , "EAN", "Hintahistoria"], // header row
+		[
+			"906458",
+			"Fair & Square..." /* ... */,
+			,
+			"7350084980013",
+			[{ "date": "2026-01-26", "price": "12.48" }]
+		]
+		// ...one array per product, price history inline as the last column
+	],
+	"metadata": { "CreatedDate": "2026-03-05T00:00:00.000Z" /* Apache POI props */ }
 }
 ```
 
@@ -37,28 +43,28 @@ for the sync design.
 
 ```jsonc
 {
-  "schema": ["Numero", "Nimi", /* ... */, "EAN"], // 30 legacy headers, NO "Hintahistoria"
-  "906458": {
-    "hash": "…",                                   // change-detection hash
-    "values": ["906458", "Fair & Square...", /* ... */, "7350084980013"], // schema-ordered
-    "priceHistory": [{ "date": "2026-01-26", "price": 12.48 }],           // separate field
-    "meta": { "removedFromSelection": "2026-07-14" }                      // optional lifecycle flag
-  }
-  // ...one entry per product id
+	"schema": ["Numero", "Nimi" /* ... */, , "EAN"], // 30 legacy headers, NO "Hintahistoria"
+	"906458": {
+		"hash": "…", // change-detection hash
+		"values": ["906458", "Fair & Square..." /* ... */, , "7350084980013"], // schema-ordered
+		"priceHistory": [{ "date": "2026-01-26", "price": 12.48 }], // separate field
+		"meta": { "removedFromSelection": "2026-07-14" } // optional lifecycle flag
+	}
+	// ...one entry per product id
 }
 ```
 
 Key differences:
 
-| Aspect | Old | New |
-| --- | --- | --- |
-| Top-level shape | `{ table, metadata }` | `{ schema, [productId]: MigratedProduct }` |
-| Products | array of rows | object keyed by product id |
-| Header | `table[0]` (incl. `Hintahistoria`) | `schema` (30 cols, **no** `Hintahistoria`) |
-| Price history | inline last column | separate `priceHistory` field |
-| Price values | strings | numbers |
-| Removed products | absent | kept, flagged via `meta.removedFromSelection` |
-| Metadata | XLSX document props | none |
+| Aspect           | Old                                | New                                           |
+| ---------------- | ---------------------------------- | --------------------------------------------- |
+| Top-level shape  | `{ table, metadata }`              | `{ schema, [productId]: MigratedProduct }`    |
+| Products         | array of rows                      | object keyed by product id                    |
+| Header           | `table[0]` (incl. `Hintahistoria`) | `schema` (30 cols, **no** `Hintahistoria`)    |
+| Price history    | inline last column                 | separate `priceHistory` field                 |
+| Price values     | strings                            | numbers                                       |
+| Removed products | absent                             | kept, flagged via `meta.removedFromSelection` |
+| Metadata         | XLSX document props                | none                                          |
 
 Type definitions live in [`scripts/data/types.ts`](../scripts/data/types.ts)
 (`MigratedData`, `MigratedProduct`, `PricePoint`, `ProductMeta`).
@@ -124,8 +130,8 @@ rendered list:
 - If `Hintahistoria` is eventually added to `schema` on disk, step 3 should stop
   appending it to avoid a duplicate column.
 - All products are shown, including discontinued ones (`meta.removedFromSelection`).
-   The sync never deletes products; the loader deliberately keeps them so the UI
-   reflects the full dataset count.
+  The sync never deletes products; the loader deliberately keeps them so the UI
+  reflects the full dataset count.
 - `Kaljakori` still skips rows with no alcohol-% or price (drunk metrics can't be
-   computed for them). That is a separate, pre-existing data-quality filter — not
-   the selection status.
+  computed for them). That is a separate, pre-existing data-quality filter — not
+  the selection status.

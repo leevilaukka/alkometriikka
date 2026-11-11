@@ -2,7 +2,8 @@ import { CryptoHasher } from 'bun';
 import path from 'node:path';
 import { Resvg } from '@resvg/resvg-js';
 import satori from 'satori';
-import { getSaleInfo, toISODateInTimeZone } from '../../src/lib/utils/sales';
+import { getSaleInfo, toISODateInTimeZone } from '../../src/lib/utils/catalog/sales';
+import { calculatePricePerLitre } from '../../src/lib/utils/catalog/alko';
 
 /**
  * Shared Open Graph image helpers for the Alkometriikka product pages.
@@ -54,6 +55,7 @@ const FIELD_NAMES = [
 	'Pullokoko',
 	'Hinta',
 	'Litrahinta',
+	'Pantti',
 	'Alkoholi-%',
 	'Normaalihinta',
 	'Kampanja alkaa',
@@ -117,7 +119,10 @@ export function ogDisplayFields(schema: readonly string[], values: unknown[]): O
 		vintage: text(fields.Vuosikerta),
 		volume: numberValue(fields.Pullokoko),
 		price,
-		pricePerLitre: numberValue(fields.Litrahinta),
+		pricePerLitre:
+			numberValue(fields.Litrahinta) ??
+			calculatePricePerLitre(price, numberValue(fields.Pullokoko), numberValue(fields.Pantti)) ??
+			undefined,
 		abv: numberValue(fields['Alkoholi-%']),
 		sale: sale
 			? {
@@ -158,11 +163,15 @@ function sha256Hex(input: string | ArrayBuffer | Uint8Array): string {
 
 /** Strips comments and collapses whitespace so cosmetic edits don't re-key. */
 function normalizeSource(source: string): string {
-	return source
-		.replace(/\/\*[\s\S]*?\*\//g, ' ')
-		.replace(/^\s*\/\/.*$/gm, ' ')
-		.replace(/\s+/g, ' ')
-		.trim();
+	return (
+		source
+			.replace(/\/\*[\s\S]*?\*\//g, ' ')
+			.replace(/^\s*\/\/.*$/gm, ' ')
+			// Import paths follow file moves and say nothing about the layout
+			.replace(/^\s*import\b[\s\S]*?;\s*$/gm, ' ')
+			.replace(/\s+/g, ' ')
+			.trim()
+	);
 }
 
 let designFingerprintPromise: Promise<string> | null = null;
@@ -173,7 +182,7 @@ let designFingerprintPromise: Promise<string> | null = null;
  * the embedded fonts. Combined into the content hash, so a real layout change
  * (edit to `scripts/og/og.ts`, a new favicon, new font files) re-keys every image
  * and the next run re-renders the whole catalog — while formatting-only edits
- * (prettier, reordering, comments) leave the fingerprint, and thus all keys,
+ * (prettier, reordering, comments, import paths) leave the fingerprint, and thus all keys,
  * untouched. `OG_DESIGN_VERSION` is included as an escape hatch to force a
  * global refresh without touching the code.
  */
@@ -202,14 +211,14 @@ export function ogDesignFingerprint(): Promise<string> {
 /* Rendering                                                                  */
 /* -------------------------------------------------------------------------- */
 
-const RED = '#e51b15';
-const INK = '#18181c';
-const SLATE = '#5b5b62';
+export const RED = '#e51b15';
+export const INK = '#18181c';
+export const SLATE = '#5b5b62';
 const FAINT = '#909099';
 
-type El = { type: string; props: Record<string, unknown> };
+export type El = { type: string; props: Record<string, unknown> };
 
-function el(
+export function el(
 	type: string,
 	props: Record<string, unknown>,
 	...children: Array<El | string | null | undefined>
@@ -250,7 +259,7 @@ let fontsPromise: Promise<
 	{ name: string; data: ArrayBuffer; weight: number; style: string }[]
 > | null = null;
 
-function loadFonts(): Promise<
+export function loadFonts(): Promise<
 	{ name: string; data: ArrayBuffer; weight: number; style: string }[]
 > {
 	fontsPromise ??= (async () =>
@@ -273,7 +282,7 @@ function loadFonts(): Promise<
  * is unavailable (e.g. a bare script test), in which case the caller falls back
  * to a plain monogram tile.
  */
-function loadFavicon(): Promise<ArrayBuffer | undefined> {
+export function loadFavicon(): Promise<ArrayBuffer | undefined> {
 	return (async () => {
 		const file = path.join(import.meta.dir, '..', '..', 'static/favicon.ico');
 		const data = await Bun.file(file).arrayBuffer();

@@ -1,4 +1,6 @@
 import { CryptoHasher } from 'bun';
+import { formatFoodPairings } from '../../src/lib/utils/catalog/food.ts';
+import { STALE_ARRIVAL_STATUS } from '../../src/lib/utils/catalog/status.ts';
 
 export const LEGACY_HEADERS = [
 	'Numero',
@@ -33,7 +35,10 @@ export const LEGACY_HEADERS = [
 	'EAN',
 	'Normaalihinta',
 	'Kampanja alkaa',
-	'Kampanja päättyy'
+	'Kampanja päättyy',
+	'Ruokasuositukset',
+	'Tila',
+	'Pantti'
 ] as const;
 
 export const DEV = process.argv.includes('--dev');
@@ -72,6 +77,48 @@ export const REQUEST_HEADERS: Record<string, string> = {
 function toStringList(value: unknown): string[] {
 	if (Array.isArray(value)) return value.filter((item): item is string => typeof item === 'string');
 	return typeof value === 'string' ? [value] : [];
+}
+
+/**
+ * Normalizes a word list column (Luonnehdinta, Ruokasuositukset): a comma separated string is
+ * split, words are trimmed and empty ones dropped, and with `lowercase` the words lose their
+ * sentence case too (the app capitalizes words itself). Null when no words are left.
+ */
+function toWordList(value: unknown, lowercase: boolean): string[] | null {
+	const words = (typeof value === 'string' ? value.split(',') : toStringList(value))
+		.map((word) => (lowercase ? word.trim().toLowerCase() : word.trim()))
+		.filter(Boolean);
+	return words.length ? words : null;
+}
+
+/**
+ * Turns the search API's `certificateClass` entries (`certificateId|certificate_001|Luomu`)
+ * into a comma separated list of their labels, e.g. `Luomu, Vegaaneille soveltuva tuote`.
+ */
+function formatCertificates(value: unknown): string | null {
+	const labels = toStringList(value)
+		.map((entry) => entry.split('|')[2]?.trim())
+		.filter((label): label is string => Boolean(label));
+	return labels.length ? [...new Set(labels)].join(', ') : null;
+}
+
+/**
+ * Labels for the search API's `statusId` codes, matching the Finnish `status`
+ * the detail API reports for the same products (except `U`, which the detail
+ * API calls "Uusi" but the dataset has always called "Uutuus"). Status `K`
+ * (Kuoletettu, discontinued) never reaches the search API.
+ */
+export const STATUS_LABELS: Readonly<Record<string, string>> = {
+	A: 'Aktiivinen',
+	P: 'Poistuva',
+	U: 'Uutuus',
+	X: 'Tulee'
+};
+
+/** Label of a `statusId`. Unknown codes are kept as-is so a new one shows up instead of vanishing. */
+export function formatStatus(value: unknown): string | null {
+	if (typeof value !== 'string' || !value.trim()) return null;
+	return STATUS_LABELS[value.trim()] ?? value.trim();
 }
 
 /** Converts an unknown field into a finite number or null. Handles the string prices the API returns. */
@@ -179,7 +226,7 @@ export const FIELD_TO_LEGACY_SCHEMA: ProductFieldMapping[] = [
 		newPropertyKey: 'pricePerLitre',
 		legacyKey: 'Litrahinta',
 		usedForHashing: false,
-		preprocessor: (value) => Number(value)
+		preprocessor: toPriceNumber
 	},
 	{
 		newPropertyKey: 'statusId',
@@ -206,10 +253,10 @@ export const FIELD_TO_LEGACY_SCHEMA: ProductFieldMapping[] = [
 		preprocessor: (value) => value
 	},
 	{
-		newPropertyKey: 'certificateId',
+		newPropertyKey: 'certificateClass',
 		legacyKey: 'Erityisryhmä',
 		usedForHashing: false,
-		preprocessor: (value) => (Array.isArray(value) ? value.includes('certificate_005') : false)
+		preprocessor: formatCertificates
 	},
 	{
 		newPropertyKey: 'flavorTag',
@@ -265,7 +312,7 @@ export const FIELD_TO_LEGACY_SCHEMA: ProductFieldMapping[] = [
 		newPropertyKey: 'taste',
 		legacyKey: 'Luonnehdinta',
 		usedForHashing: true,
-		preprocessor: (value) => (typeof value === 'string' ? value.split(',') : value)
+		preprocessor: (value) => toWordList(value, true)
 	},
 	{
 		newPropertyKey: 'packageTypes',
@@ -358,8 +405,47 @@ export const FIELD_TO_LEGACY_SCHEMA: ProductFieldMapping[] = [
 		legacyKey: 'Kampanja päättyy',
 		usedForHashing: true,
 		preprocessor: (value) => value ?? null
+	},
+	{
+		newPropertyKey: 'foodSymbolId',
+		legacyKey: 'Ruokasuositukset',
+		usedForHashing: false,
+		preprocessor: formatFoodPairings
+	},
+	{
+		newPropertyKey: 'statusId',
+		legacyKey: 'Tila',
+		usedForHashing: true,
+		preprocessor: formatStatus
+	},
+	{
+		// Euros, included in the price but not in `pricePerLitre`. Detail API only,
+		// and missing for some products that clearly have one (e.g. some cans).
+		newPropertyKey: 'deposit',
+		legacyKey: 'Pantti',
+		usedForHashing: false,
+		preprocessor: (value) => {
+			const deposit = toPriceNumber(value);
+			return deposit !== null && deposit > 0 ? deposit : null;
+		}
 	}
 ];
+
+/**
+ * Search-API columns refreshed on every sync, even for products whose hash is
+ * unchanged. They aren't hashed (a change shouldn't cost a detail fetch), so
+ * without this they'd only update when something else about the product changes.
+ */
+export const SEARCH_REFRESHED_COLUMNS: readonly (typeof LEGACY_HEADERS)[number][] = [
+	'Erityisryhmä',
+	'Ruokasuositukset'
+];
+
+/**
+ * Columns the Alko API never fills. Their values come from elsewhere (EAN: the legacy XLSX and
+ * scanned barcodes, see scanned-eans.ts), so a product rebuilt from the API keeps the stored ones.
+ */
+export const OWN_COLUMNS: readonly (typeof LEGACY_HEADERS)[number][] = ['EAN'];
 
 /**
  * Builds a legacy-ordered value array from an API product object by running each
@@ -391,6 +477,42 @@ export function alignValues(values: unknown[]): unknown[] {
 	return values.slice(0, LEGACY_HEADERS.length);
 }
 
+const SPECIAL_GROUP_INDEX = LEGACY_HEADERS.indexOf('Erityisryhmä');
+
+/** Word list columns and whether their words are lowercased, see `toWordList` */
+const WORD_LIST_COLUMNS = [
+	[LEGACY_HEADERS.indexOf('Luonnehdinta'), true],
+	[LEGACY_HEADERS.indexOf('Ruokasuositukset'), false]
+] as const;
+
+/**
+ * Converts values stored in an older format to the current one:
+ * - Erityisryhmä used to be a vegan flag (certificate_005), now it's the label
+ *   list built by `formatCertificates`.
+ * - Luonnehdinta used to keep the space after each comma and its sentence case,
+ *   and the legacy XLSX rows have it as one string. Ruokasuositukset used to be
+ *   its labels joined with ", ". Both are now lists from `toWordList`.
+ *
+ * Products still in the selection get refreshed from the search API anyway, so
+ * this mostly matters for removed ones.
+ */
+export function upgradeStoredValues(values: unknown[]): unknown[] {
+	const upgrades: [number, unknown][] = [];
+	const specialGroup = values[SPECIAL_GROUP_INDEX];
+	if (typeof specialGroup === 'boolean')
+		upgrades.push([SPECIAL_GROUP_INDEX, specialGroup ? 'Vegaaneille soveltuva tuote' : null]);
+	for (const [index, lowercase] of WORD_LIST_COLUMNS) {
+		const value = values[index];
+		if (typeof value !== 'string' && !Array.isArray(value)) continue;
+		const words = toWordList(value, lowercase);
+		if (JSON.stringify(words) !== JSON.stringify(value)) upgrades.push([index, words]);
+	}
+	if (!upgrades.length) return values;
+	const upgraded = [...values];
+	for (const [index, value] of upgrades) upgraded[index] = value;
+	return upgraded;
+}
+
 /**
  * Version of the change-detection hash algorithm and its hashed field set.
  *
@@ -400,7 +522,9 @@ export function alignValues(values: unknown[]): unknown[] {
  * sync persists it in the dataset metadata. Do not bump it for unrelated
  * schema additions (appended columns don't affect hashed indices).
  */
-export const HASH_VERSION = 1;
+export const HASH_VERSION = 3;
+
+const STATUS_INDEX = LEGACY_HEADERS.indexOf('Tila');
 
 /**
  * Extracts only the change-detection relevant values (`usedForHashing`) from a
@@ -409,7 +533,14 @@ export const HASH_VERSION = 1;
 export function getHashValues(values: unknown[]): unknown[] {
 	return FIELD_TO_LEGACY_SCHEMA.map((field, index) => ({ field, index }))
 		.filter(({ field }) => field.usedForHashing)
-		.map(({ index }) => values[index]);
+		.map(({ index }) =>
+			// The sync derives the stale arrival status after hashing (see markStaleArrivals),
+			// so it hashes as the "Tulee" the search API reports. Otherwise stored values
+			// would hash differently from the search payload after a rehash.
+			index === STATUS_INDEX && values[index] === STALE_ARRIVAL_STATUS
+				? STATUS_LABELS.X
+				: values[index]
+		);
 }
 
 /**

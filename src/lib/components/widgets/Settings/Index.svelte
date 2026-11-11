@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { components } from '$lib/utils/styles';
+	import { components } from '$lib/utils/ui/styles';
 	import { twMerge } from 'tailwind-merge';
 	import { isMobile } from '$lib/global.svelte';
 	import Popup from '$lib/components/widgets/Popup.svelte';
 	import Icon from '$lib/components/widgets/Icon.svelte';
 	import { version } from '$app/environment';
-	import { sendAnalyticsEvent } from '$lib/utils/helpers';
+	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 	import type { AvailabilityStore } from '$lib/types';
-	import { onSettingsOpenRequested } from '$lib/utils/settings';
+	import { onSettingsOpenRequested } from '$lib/utils/app/settings';
 	import { onMount } from 'svelte';
 	import type { Component } from 'svelte';
 	import { type IconName } from '$lib/icons';
@@ -28,7 +28,7 @@
 		component: Component<any>;
 	}[];
 
-	type tabId = typeof tabs[number]['id'];
+	type tabId = (typeof tabs)[number]['id'];
 
 	let tab = $state<tabId>('personal');
 	let dialogElement: HTMLDialogElement | undefined = $state();
@@ -43,15 +43,17 @@
 
 	onMount(() => onSettingsOpenRequested(openSettings));
 
+	// Undefined while a page renders before the price list has loaded
 	const { alko }: { alko: any } = $props();
 	const stores = $derived(
-		(Object.values(alko.availability.stores) as AvailabilityStore[]).sort((a, b) =>
+		(Object.values(alko?.availability.stores ?? {}) as AvailabilityStore[]).sort((a, b) =>
 			a.name.localeCompare(b.name, 'fi', { sensitivity: 'base' })
 		)
 	);
 
 	const githubRepoBase = 'https://github.com/leevilaukka/alkometriikka';
-	const githubFileBase = 'https://raw.githubusercontent.com/leevilaukka/alkometriikka/refs/heads/gh-pages';
+	const githubFileBase =
+		'https://raw.githubusercontent.com/leevilaukka/alkometriikka/refs/heads/gh-pages';
 </script>
 
 <Popup bind:dialogElement class="gap-4 p-4">
@@ -59,6 +61,7 @@
 		<button
 			class={twMerge(components.button(), 'p-2 text-xl')}
 			onclick={openSettings}
+			aria-label="Asetukset"
 		>
 			{#if !$isMobile}<span class="text-sm">Asetukset</span>{/if}<Icon name="cog" />
 		</button>
@@ -74,7 +77,7 @@
 						type="radio"
 						id={tabOption.id}
 						name="tab"
-						class="hidden"
+						class="sr-only"
 						value={tabOption.id}
 						bind:group={tab}
 					/>
@@ -84,15 +87,9 @@
 			{/each}
 		</div>
 		<!-- Render the active tab component, sourced from the tabs array -->
-		{@const ActiveTab = tabs.find(tabOption => tabOption.id === tab)?.component}
+		{@const ActiveTab = tabs.find((tabOption) => tabOption.id === tab)?.component}
 		{#if ActiveTab}
-			<ActiveTab
-				dialogElement={dialogElement}
-				stores={stores}
-				alko={alko}
-				githubRepoBase={githubRepoBase}
-				githubFileBase={githubFileBase}
-				gitCommitHash={gitCommitHash}
+			<ActiveTab {dialogElement} {stores} {alko} {githubRepoBase} {githubFileBase} {gitCommitHash}
 			></ActiveTab>
 		{/if}
 	{/snippet}

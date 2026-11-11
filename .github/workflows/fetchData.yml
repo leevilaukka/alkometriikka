@@ -2,8 +2,13 @@ name: Download Price List
 
 on:
   workflow_dispatch:
+    inputs:
+      force:
+        description: 'Write the dataset even if the sync safeguards reject it (only for a real large selection change)'
+        type: boolean
+        default: false
   schedule:
-    - cron: '0 */6 * * *' # Runs every 6 hours
+    - cron: '0 */6 * * *' # Runs every 6 hours (also archives any missed finished days)
   workflow_run: # Runs after page is built
     workflows: ['Build and move files to gh-pages branch']
     types:
@@ -17,25 +22,19 @@ jobs:
   sync:
     if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
+    outputs:
+      fetched: ${{ steps.gate.outputs.fetch }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install Bun
-        uses: oven-sh/setup-bun@v2
+      - name: Set up Bun
+        uses: ./.github/actions/setup
 
-      - name: Cache Bun dependencies
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.bun
-            node_modules
-          key: ${{ runner.os }}-bun-${{ hashFiles('bun.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-bun-
-
-      - name: Install dependencies
-        run: bun install --frozen-lockfile
+      # The sync rewrites the dataset the whole site reads: never run it with
+      # lifecycle/schema code that fails its tests.
+      - name: Run data and dataset tests
+        run: bunx svelte-kit sync && bun test tests/data tests/alko
 
       - name: Seed existing dataset from gh-pages
         run: |
@@ -43,27 +42,74 @@ jobs:
           if git show origin/gh-pages:data.json > /tmp/data.json 2>/dev/null; then
             mv /tmp/data.json data.json
           fi
-
-      - name: Rehash seeded dataset to current schema
-        run: |
-          if [ -f data.json ]; then
-            bun run scripts/data/rehash.ts
-          else
-            echo "ℹ️  No seeded data.json found (first run or missing gh-pages dataset); skipping rehash."
+          # Products removed from the selection (scripts/data/dataset-file.ts). The sync stops if
+          # data.json lists removed products and this file is missing, rather than lose them.
+          if git show origin/gh-pages:data-removed.json > /tmp/data-removed.json 2>/dev/null; then
+            mv /tmp/data-removed.json data-removed.json
+          fi
+          # Change-detection hashes (scripts/data/dataset-file.ts), under data/ with the pipeline's
+          # other files. If missing, they're recomputed from data.json, so this never forces a full refetch.
+          if git show origin/gh-pages:data/hashes.json > /tmp/hashes.json 2>/dev/null; then
+            mv /tmp/hashes.json hashes.json
           fi
 
-      - name: Run script to convert to JSON
+      - name: Rehash seeded dataset to current schema
+        uses: ./.github/actions/rehash-dataset
+
+      # A run after a build still deploys the new page shell, but skips the Alko fetch
+      # when the deployed data was synced recently, so a burst of pushes doesn't hit the
+      # API each time. Scheduled and manual runs always fetch.
+      - name: Check time since last sync
+        id: gate
         env:
-          CLOUDFLARE_PURGE_KEY: ${{ secrets.CLOUDFLARE_PURGE_KEY }}
-          CLOUDFLARE_ZONE: ${{ secrets.CF_ZONE }}
+          SYNC_COOLDOWN_MINUTES: '120'
+        run: |
+          fetch=true
+          if [ "${{ github.event_name }}" = "workflow_run" ] && [ -f data.json ]; then
+            last=$(jq -r '.metadata.LastSynced // empty' data.json)
+            if [ -n "$last" ]; then
+              age=$(( ($(date +%s) - $(date -d "$last" +%s)) / 60 ))
+              if [ "$age" -lt "$SYNC_COOLDOWN_MINUTES" ]; then
+                echo "⏭️  Last sync $age min ago (< $SYNC_COOLDOWN_MINUTES) — redeploying the current data without fetching."
+                fetch=false
+              else
+                echo "· Last sync $age min ago — fetching."
+              fi
+            fi
+          fi
+          # The sync writes availability.json; without it, deploy the current one
+          if [ "$fetch" = false ]; then
+            git show origin/gh-pages:availability.json > availability.json
+          fi
+          echo "fetch=$fetch" >> "$GITHUB_OUTPUT"
+
+      - name: Run script to convert to JSON
+        if: steps.gate.outputs.fetch == 'true'
+        env:
           ALKO_DETAIL_CONCURRENCY: '8'
           ALKO_SEARCH_CONCURRENCY: '3'
+          ALKO_SYNC_FORCE: ${{ inputs.force && '1' || '' }}
+          # One line per attempt, for the run record (report job below)
+          ALKO_SYNC_REPORT: sync-report.ndjson
+          # Barcodes found by the site's scanner, written into the EAN column (docs/api-worker.md)
+          GTIN_EXPORT_URL: https://api.alkometriikka.fi/gtin/export
+          GTIN_EXPORT_TOKEN: ${{ secrets.GTIN_EXPORT_TOKEN }}
         run: |
           for attempt in 1 2 3; do
             echo "▶️  Sync attempt $attempt..."
-            if bun run scripts/data/index.ts; then
+            set +e
+            ALKO_SYNC_ATTEMPT=$attempt bun run scripts/data/index.ts
+            code=$?
+            set -e
+            if [ "$code" -eq 0 ]; then
               echo "✅ Sync succeeded on attempt $attempt"
               exit 0
+            fi
+            # Exit code 3 = the safeguards rejected the API's data; retrying won't change that.
+            if [ "$code" -eq 3 ]; then
+              echo "❌ Safeguards rejected the sync — leaving existing dataset untouched."
+              echo "   If the change is real, re-run this workflow manually with 'force' checked."
+              exit 1
             fi
             echo "⚠️  Sync failed on attempt $attempt (incomplete fetch or error)"
             if [ "$attempt" -lt 3 ]; then
@@ -74,11 +120,22 @@ jobs:
           echo "❌ All sync attempts failed — leaving existing dataset untouched."
           exit 1
 
+      - name: Upload sync report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sync-report
+          path: sync-report.ndjson
+          if-no-files-found: ignore
+
       - name: Upload dataset
         uses: actions/upload-artifact@v4
         with:
           name: data
-          path: data.json
+          path: |
+            data.json
+            data-removed.json
+            hashes.json
 
       - name: Upload availability data
         uses: actions/upload-artifact@v4
@@ -93,21 +150,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install Bun
-        uses: oven-sh/setup-bun@v2
-
-      - name: Cache Bun dependencies
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.bun
-            node_modules
-          key: ${{ runner.os }}-bun-${{ hashFiles('bun.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-bun-
-
-      - name: Install dependencies
-        run: bun install --frozen-lockfile
+      - name: Set up Bun
+        uses: ./.github/actions/setup
 
       - name: Download dataset
         uses: actions/download-artifact@v4
@@ -117,9 +161,7 @@ jobs:
           merge-multiple: true
 
       - name: Check out deployed site
-        run: |
-          git fetch origin gh-pages
-          git worktree add --detach ../gh-pages origin/gh-pages
+        uses: ./.github/actions/checkout-gh-pages
 
       - name: Generate and upload OG images
         continue-on-error: true
@@ -131,14 +173,31 @@ jobs:
           CF_R2_REGION: ${{ vars.CF_R2_REGION }}
           OG_CDN_BASE: ${{ vars.OG_CDN_BASE }}
         run: |
-          bun run scripts/og/og-images.ts --data data.json --manifest ../gh-pages/og-images.json
-          cp ../gh-pages/og-images.json og-images.json
+          bun run scripts/og/og-images.ts --data data.json --manifest ../gh-pages/data/og-images.json
+          cp ../gh-pages/data/og-images.json og-images.json
+
+      # Category page cards: own script, `categories/` key prefix and manifest, so
+      # they can never re-key or prune the product images above
+      - name: Generate and upload category OG images
+        continue-on-error: true
+        env:
+          CF_R2_ACCESS_KEY_ID: ${{ secrets.CF_R2_ACCESS_KEY_ID }}
+          CF_R2_SECRET_ACCESS_KEY: ${{ secrets.CF_R2_SECRET_ACCESS_KEY }}
+          CF_R2_ACCOUNT_ID: ${{ secrets.CF_R2_ACCOUNT_ID }}
+          CF_R2_BUCKET: ${{ vars.CF_R2_BUCKET }}
+          CF_R2_REGION: ${{ vars.CF_R2_REGION }}
+          OG_CDN_BASE: ${{ vars.OG_CDN_BASE }}
+        run: |
+          bun run scripts/og/og-categories.ts --data data.json --manifest ../gh-pages/data/og-categories.json
+          cp ../gh-pages/data/og-categories.json og-categories.json
 
       - name: Upload updated OG image manifest
         uses: actions/upload-artifact@v4
         with:
           name: og-images
-          path: og-images.json
+          path: |
+            og-images.json
+            og-categories.json
 
   sitemap:
     needs: sync
@@ -147,21 +206,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install Bun
-        uses: oven-sh/setup-bun@v2
-
-      - name: Cache Bun dependencies
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.bun
-            node_modules
-          key: ${{ runner.os }}-bun-${{ hashFiles('bun.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-bun-
-
-      - name: Install dependencies
-        run: bun install --frozen-lockfile
+      - name: Set up Bun
+        uses: ./.github/actions/setup
 
       - name: Download dataset
         uses: actions/download-artifact@v4
@@ -194,21 +240,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install Bun
-        uses: oven-sh/setup-bun@v2
-
-      - name: Cache Bun dependencies
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.bun
-            node_modules
-          key: ${{ runner.os }}-bun-${{ hashFiles('bun.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-bun-
-
-      - name: Install dependencies
-        run: bun install --frozen-lockfile
+      - name: Set up Bun
+        uses: ./.github/actions/setup
 
       - name: Download dataset
         uses: actions/download-artifact@v4
@@ -241,28 +274,18 @@ jobs:
   deploy:
     needs: [sync, og-images, sitemap, rss]
     runs-on: ubuntu-latest
+    environment: github-pages
     permissions:
       contents: write
       actions: read
+      pages: write
+      id-token: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install Bun
-        uses: oven-sh/setup-bun@v2
-
-      - name: Cache Bun dependencies
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.bun
-            node_modules
-          key: ${{ runner.os }}-bun-${{ hashFiles('bun.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-bun-
-
-      - name: Install dependencies
-        run: bun install --frozen-lockfile
+      - name: Set up Bun
+        uses: ./.github/actions/setup
 
       - name: Download all generated files
         uses: actions/download-artifact@v4
@@ -271,26 +294,151 @@ jobs:
           merge-multiple: true
 
       - name: Check out deployed site
+        uses: ./.github/actions/checkout-gh-pages
+
+      - name: Run daily game tests
+        uses: ./.github/actions/run-daily-tests
+
+      # The daily manifests are immutable pins: once baked, a date must never
+      # change. Seed the deployed manifests into the workspace before baking so
+      # the baker skips dates that already exist instead of re-rolling them with
+      # a fresh random seed (which would give players a different game mid-day).
+      - name: Seed deployed daily games
         run: |
-          git fetch origin gh-pages
-          git worktree add --detach ../gh-pages origin/gh-pages
+          set -e
+          if [ -d ../gh-pages/daily ] && [ -n "$(ls -A ../gh-pages/daily)" ]; then
+            rm -rf daily
+            cp -r ../gh-pages/daily daily
+            echo "✅ Seeded $(ls daily | wc -l) daily files from gh-pages"
+          else
+            echo "❌ daily/ missing on gh-pages — refusing to bake so no in-flight game is re-rolled."
+            exit 1
+          fi
+
+      - name: Bake daily manifests
+        run: |
+          # Bake the daily manifests here so `daily/` exists next to the copied
+          # data.json — the sync-job artifact round-trip would flatten the
+          # directory into the workspace root. Existing dates are kept as-is.
+          bun run daily
+
+      # A 6-hourly fallback for the midnight-precise run in archiveDaily.yml
+      # (which already publishes this the moment the day flips) — this just
+      # re-confirms the same content later. Best-effort: decorative, must
+      # never block the rest of the (critical) deploy job.
+      - name: Generate and publish today's Daily OG card
+        continue-on-error: true
+        uses: ./.github/actions/daily-og
+        with:
+          template: ../gh-pages/404.html
+          out-dir: ./daily
+          r2-access-key-id: ${{ secrets.CF_R2_ACCESS_KEY_ID }}
+          r2-secret-access-key: ${{ secrets.CF_R2_SECRET_ACCESS_KEY }}
+          r2-account-id: ${{ secrets.CF_R2_ACCOUNT_ID }}
+          r2-bucket: ${{ vars.CF_R2_BUCKET }}
+          r2-region: ${{ vars.CF_R2_REGION }}
+          og-cdn-base: ${{ vars.OG_CDN_BASE }}
+
+      # Before the new availability.json is copied over the deployed one, which
+      # is the previous run's and tells which products arrived in which store.
+      # Best-effort: a missed run only loses that day's point. Skipped when the sync
+      # didn't fetch, since the availability is the deployed one.
+      - name: Update stock history
+        if: needs.sync.outputs.fetched == 'true'
+        continue-on-error: true
+        run: |
+          bun run scripts/data/stock-history.ts \
+            --availability availability.json \
+            --previous ../gh-pages/availability.json \
+            --dir ../gh-pages/data/stock
 
       - name: Refresh product pages
         env:
           ALKO_PRERENDER_CONCURRENCY: '32'
         run: |
-          cp og-images.json ../gh-pages/og-images.json
-          bun run scripts/site/prerender-products.ts --data data.json --out ../gh-pages --template ../gh-pages/404.html --og-manifest ../gh-pages/og-images.json --manifest ../gh-pages/tuotteet-manifest.json
-          cp data.json availability.json sitemap.xml rss.xml feed.json ../gh-pages/
+          # The pipeline's own files live under data/ on gh-pages (build.yml carries it over whole)
+          mkdir -p ../gh-pages/data
+          cp hashes.json og-images.json ../gh-pages/data/
+          [ -f og-categories.json ] && cp og-categories.json ../gh-pages/data/og-categories.json || true
+          bun run scripts/site/prerender-products.ts --data data.json --out ../gh-pages --template ../gh-pages/404.html --og-manifest ../gh-pages/data/og-images.json --og-categories-manifest ../gh-pages/data/og-categories.json --manifest ../gh-pages/data/tuotteet-manifest.json
+          cp data.json data-removed.json availability.json sitemap.xml rss.xml feed.json ../gh-pages/
+          # Slimmed-down copy for the Bläkkiskili Telegram bot (see docs/data/dataset-format.md)
+          bun run scripts/data/minimal.ts --data data.json --out ../gh-pages/data.minimal.json
+          bun run scripts/site/prerender-static.ts --out ../gh-pages --template ../gh-pages/404.html --availability availability.json
+          # Reset first so stale manifests (and the nested archive/) actually
+          # disappear from the site instead of merging over.
+          rm -rf ../gh-pages/daily
+          cp -r daily ../gh-pages/
           rm -rf ../gh-pages/rss
           cp -r rss ../gh-pages/
+
+      - name: Configure git bot identity
+        uses: ./.github/actions/git-bot-identity
 
       - name: Commit and push downloaded file
         working-directory: ../gh-pages
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add data.json availability.json sitemap.xml rss.xml feed.json rss tuotteet tuotteet-manifest.json -f
-          [ -f og-images.json ] && git add og-images.json -f || true
+          git add data.json data-removed.json data.minimal.json availability.json sitemap.xml rss.xml feed.json rss daily data tuotteet kategoriat -f index.html myymalat laskin tilastot kompassi hinnanmuutokset listat seuratut
           git commit -m "Update price list and static product pages [skip ci]" || echo "No changes to commit"
           git push origin HEAD:gh-pages
+
+      - name: Deploy to GitHub Pages
+        uses: ./.github/actions/deploy-pages
+        with:
+          path: ../gh-pages
+
+      # Only after the deploy: purging any earlier lets a request in between
+      # re-cache the old files at the edge until their cache lifetime runs out.
+      # Also covers what a site build changes (notices, flags and the service
+      # worker, whose stale copy would precache _app files a deploy removed),
+      # since this run is the one that deploys after a push to main.
+      - name: Purge Cloudflare cache for data files
+        env:
+          CLOUDFLARE_PURGE_KEY: ${{ secrets.CLOUDFLARE_PURGE_KEY }}
+          CLOUDFLARE_ZONE: ${{ secrets.CF_ZONE }}
+        run: |
+          if [ -z "$CLOUDFLARE_PURGE_KEY" ] || [ -z "$CLOUDFLARE_ZONE" ]; then
+            echo "ℹ️  No purge credentials; skipping cache purge."
+            exit 0
+          fi
+          curl -sS -X POST "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE}/purge_cache" \
+            -H "Authorization: Bearer ${CLOUDFLARE_PURGE_KEY}" \
+            -H "Content-Type: application/json" \
+            --data '{"files":["https://alkometriikka.fi/data.json","https://alkometriikka.fi/data-removed.json","https://alkometriikka.fi/data.minimal.json","https://alkometriikka.fi/availability.json","https://alkometriikka.fi/rss.xml","https://alkometriikka.fi/feed.json","https://alkometriikka.fi/notices.json","https://alkometriikka.fi/flags.json","https://alkometriikka.fi/service-worker.js"]}' || \
+            echo "⚠️  Cache purge failed; continuing."
+
+  # Records the run (result, timings, sync attempts) in R2 for build monitoring.
+  # Skipped with the sync when the triggering build failed, so those runs
+  # don't show up as empty successes.
+  report:
+    needs: [sync, og-images, sitemap, rss, deploy]
+    if: always() && needs.sync.result != 'skipped'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Bun
+        uses: ./.github/actions/setup
+
+      - name: Download sync report
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: sync-report
+          path: ./
+
+      - name: Record run
+        uses: ./.github/actions/report-run
+        with:
+          needs: ${{ toJSON(needs) }}
+          sync-report: sync-report.ndjson
+          github-token: ${{ github.token }}
+          r2-access-key-id: ${{ secrets.CF_R2_ACCESS_KEY_ID }}
+          r2-secret-access-key: ${{ secrets.CF_R2_SECRET_ACCESS_KEY }}
+          r2-account-id: ${{ secrets.CF_R2_ACCOUNT_ID }}
+          r2-bucket: ${{ vars.CF_R2_BUCKET }}
+          r2-region: ${{ vars.CF_R2_REGION }}

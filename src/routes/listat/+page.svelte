@@ -1,24 +1,20 @@
 <script lang="ts">
 	import List from '$lib/components/views/List.svelte';
 	import AllLists from '$lib/components/widgets/AllLists.svelte';
-	import Icon from '$lib/components/widgets/Icon.svelte';
-	import { generateTitle, setSEO } from '$lib/utils/helpers.js';
-	import { components } from '$lib/utils/styles';
-	import { twMerge } from 'tailwind-merge';
+	import PageHeader from '$lib/components/widgets/PageHeader.svelte';
+	import { generateTitle, setSEO } from '$lib/utils/app/meta';
+	import { staticPage } from '$lib/utils/app/seo';
 
 	const { data } = $props();
+	const { description: DESCRIPTION } = staticPage('/listat/');
 
 	$effect(() => {
 		setSEO({
-			description: data.list
-				? `Katso lista "${data.list.name}" Alkometriikassa.`
-				: 'Selaa ja hallinnoi Alkon tuotteita sisältäviä listoja.',
+			description: data.list ? `Katso lista "${data.list.name}" Alkometriikassa.` : DESCRIPTION,
 			og: {
 				title: data.list ? `Lista - ${data.list.name}` : 'Listat',
 				url: window.location.href,
-				description: data.list
-					? `Katso lista "${data.list.name}" Alkometriikassa.`
-					: 'Selaa ja hallinnoi Alkon tuotteita sisältäviä listoja.'
+				description: data.list ? `Katso lista "${data.list.name}" Alkometriikassa.` : DESCRIPTION
 			}
 		});
 	});
@@ -28,7 +24,7 @@
 	<title>{data.list ? generateTitle(`Lista - ${data.list.name}`) : generateTitle('Listat')}</title>
 </svelte:head>
 
-{#await data.alko}
+{#await data.alkoWithRemoved}
 	<div class="grid h-full w-full place-content-center">
 		<div class="flex flex-col items-center gap-3">
 			<span
@@ -39,21 +35,18 @@
 	</div>
 {:then alko}
 	{#if data.list}
-		<List dataset={alko.dataset.table} availability={alko.availability} list={data.list} />
+		<!-- Saving gives the list a new id, so the page starts over as the saved list -->
+		{#key data.list.id}
+			<List kaljakori={alko.kaljakori} list={data.list} />
+		{/key}
 	{:else}
-		<div class={twMerge('mx-auto flex w-[min(80ch,_100%)] flex-col gap-4 p-4')}>
-			<div class="flex w-full items-center gap-4">
-				<button
-					onclick={() => window.history.back()}
-					class={twMerge(components.button({ size: 'md' }))}
-				>
-					<Icon name="arrow_back" class="inline-block" />
-					<span>Takaisin</span>
-				</button>
-			</div>
-			<div class="flex flex-auto flex-col items-center gap-4">
-				<AllLists useSearch={true} show={{ delete: true, share: true }} />
-			</div>
+		<div class="mx-auto flex w-full max-w-4xl flex-col gap-6 p-4 md:p-6">
+			<PageHeader title="Listat" description={DESCRIPTION} />
+			<AllLists
+				useSearch={true}
+				show={{ delete: true, share: true }}
+				class="h-auto w-full justify-start"
+			/>
 		</div>
 	{/if}
 {/await}

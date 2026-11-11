@@ -7,15 +7,26 @@ feed.json
 /rss/
 
 /static/data.json
+/static/data-removed.json
+/static/data.minimal.json
 /static/availability.json
+/hashes.json
+/static/hashes.json
+/static/data/
+/data/
 /static/data-migrate.json
 /static/sitemap.xml
 /static/rss.xml
 /static/og-images.json
+/static/og-categories.json
 
 /og-images.json
+/og-categories.json
 /data.json
+/data.minimal.json
 /availability.json
+/daily/
+/static/daily/
 
 # Output
 .output
@@ -39,3 +50,6 @@ Thumbs.db
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 package-lock.json
+
+# Wrangler local secrets
+.dev.vars
