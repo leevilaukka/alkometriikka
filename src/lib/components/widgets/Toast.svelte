@@ -76,7 +76,11 @@
 			style:max-width={placement ? `${viewportWidth - MARGIN * 2}px` : undefined}
 			class="pointer-events-auto relative flex max-w-full items-center gap-3 overflow-hidden rounded-lg border border-primary bg-primary px-4 py-3 text-base font-medium shadow-xl"
 		>
-			<Icon name="check" class="shrink-0 text-green-700 dark:text-green-400" />
+			{#if message.tone === 'warning'}
+				<Icon name="alert_triangle" class="shrink-0 text-amber-600 dark:text-amber-400" />
+			{:else}
+				<Icon name="check" class="shrink-0 text-green-700 dark:text-green-400" />
+			{/if}
 			<span>{message.text}</span>
 			{#if message.href}
 				<a href={message.href} class="font-semibold underline" onclick={hideToast}>

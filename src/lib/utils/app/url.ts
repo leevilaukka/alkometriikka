@@ -1,4 +1,3 @@
-import type { ColumnNames } from '$lib/types';
 import { replaceState } from '$app/navigation';
 import { isNullish } from '../format/labels';
 import { readSearchParams, serializeSearchParams } from './compressedParams';
@@ -107,28 +106,4 @@ export function updateURL(url: string) {
 		return;
 	}
 	replaceState(url, {});
-}
-
-export function mergeFilterParameters(
-	oldParameters: URLSearchParams,
-	newParameters: URLSearchParams,
-	filterValues: Record<ColumnNames, any[]>
-) {
-	oldParameters = new URLSearchParams(
-		[...oldParameters.entries()].filter(([key]) => {
-			return !Object.hasOwn(filterValues, key);
-		})
-	);
-	const merged = oldParameters;
-	for (const [key, value] of newParameters.entries()) {
-		if (merged.has(key)) {
-			const existingValues = merged.getAll(key);
-			if (!existingValues.includes(value)) {
-				merged.append(key, value);
-			}
-		} else {
-			merged.append(key, value);
-		}
-	}
-	return merged;
 }

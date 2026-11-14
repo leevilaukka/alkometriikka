@@ -1,11 +1,16 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import Icon from '$lib/components/widgets/Icon.svelte';
+	import PageHeader from '$lib/components/widgets/PageHeader.svelte';
 	import { preferredStoreId } from '$lib/global.svelte';
 	import { AUTO_STORE_ID } from '$lib/utils/constants/app';
 	import { requestUserLocation } from '$lib/utils/device/location';
 	import type { AvailabilityStore } from '$lib/types';
-	import { getStoreCity, isStoreOpen } from '$lib/utils/catalog/availability.js';
+	import {
+		filterStoresByQuery,
+		getStoreCity,
+		isStoreOpen
+	} from '$lib/utils/catalog/availability.js';
 	import { generateTitle, setSEO } from '$lib/utils/app/meta';
 	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 	import { staticPage } from '$lib/utils/app/seo';
@@ -55,20 +60,13 @@
 	{@const stores = Object.values(alko.availability.stores).sort((first, second) =>
 		first.name.localeCompare(second.name, 'fi')
 	)}
-	{@const normalizedQuery = query.trim().toLocaleLowerCase('fi-FI')}
-	{@const filteredStores = stores.filter((store) =>
-		[store.name, store.address, store.postalCode, store.postOffice]
-			.filter(Boolean)
-			.join(' ')
-			.toLocaleLowerCase('fi-FI')
-			.includes(normalizedQuery)
-	)}
+	{@const filteredStores = filterStoresByQuery(stores, query)}
 
-	<div class="mx-auto flex w-full max-w-[120ch] flex-col gap-6 p-6">
-		<header class="flex flex-col gap-2">
-			<h1 class="text-2xl font-bold md:text-3xl">Myymälät</h1>
-			<p class="text-secondary">Selaa Alkon myymälöitä ja valitse ensisijainen myymälä.</p>
-		</header>
+	<div class="mx-auto flex w-full max-w-7xl flex-col gap-6 p-4 md:p-6">
+		<PageHeader
+			title="Myymälät"
+			description="Selaa Alkon myymälöitä ja valitse ensisijainen myymälä."
+		/>
 
 		<div class="flex flex-wrap gap-2">
 			<button
@@ -90,7 +88,7 @@
 					? 'Automaattinen valinta käytössä'
 					: 'Valitse lähin myymälä automaattisesti'}
 			</button>
-			<a href={resolve('/kompassi/')} class={components.button({ size: 'md' })}>
+			<a href={resolve('/kompassi/')} class={components.button()}>
 				<Icon name="compass" />
 				<span>Kompassi lähimpään myymälään</span>
 			</a>

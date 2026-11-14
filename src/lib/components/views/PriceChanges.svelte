@@ -29,9 +29,11 @@
 		parsePriceChangeParams,
 		priceChangeParams,
 		priceChangeSince,
+		sortPriceChanges,
 		DEFAULT_PRICE_CHANGE_WINDOW,
 		PRICE_CHANGE_WINDOWS,
-		type PriceChangeDirection
+		type PriceChangeDirection,
+		type PriceChangeSort
 	} from '$lib/utils/stats/priceChanges';
 	import type { SearchParamsManager } from '$lib/utils/app/url';
 	import {
@@ -49,11 +51,11 @@
 	import Icon from '../widgets/Icon.svelte';
 	import Breadcrumb from '../widgets/Breadcrumb.svelte';
 	import Popup from '../widgets/Popup.svelte';
-	import AllLists from '../widgets/AllLists.svelte';
-	import AddToListContent from '../widgets/AddToListContent.svelte';
+	import AddToListButton from '../widgets/AddToListButton.svelte';
 	import ProductPreview from '../widgets/ProductPreview.svelte';
 	import BottomBar from '../widgets/BottomBar.svelte';
 	import FilterButton from '../widgets/FilterButton.svelte';
+	import FoldableSidebar from '../widgets/FoldableSidebar.svelte';
 
 	const { kaljakori, availability }: { kaljakori: Kaljakori; availability: AvailabilityData } =
 		$props();
@@ -67,6 +69,7 @@
 	const initial = untrack(() => parsePriceChangeParams(searchParamsManager.params));
 	let days = $state<number>(initial.days);
 	let direction = $state<PriceChangeDirection>(initial.direction);
+	let sort = $state<PriceChangeSort>(initial.sort);
 	let typeSlug = $state(initial.typeSlug);
 	let subTypeSlug = $state(initial.subTypeSlug);
 
@@ -115,7 +118,9 @@
 		searched.filter((change) => isInCategory(change.product, typeNode?.slug, subTypeNode?.slug))
 	);
 	const drops = $derived(inCategory.filter(isPriceDrop).length);
-	const changes = $derived(filterPriceChangesByDirection(inCategory, direction));
+	const changes = $derived(
+		sortPriceChanges(filterPriceChangesByDirection(inCategory, direction), sort)
+	);
 
 	// Below the sidebar breakpoint (the same as the category page's) the title scrolls away
 	// with the list as its first row, leaving the cards room for the change tab
@@ -134,6 +139,11 @@
 		{ value: 'up', label: 'Kallistuneet' }
 	];
 
+	const sorts: { value: PriceChangeSort; label: string }[] = [
+		{ value: 'recent', label: 'Uusimmat' },
+		{ value: 'biggest', label: 'Suurin muutos' }
+	];
+
 	function selectType(slug?: string) {
 		typeSlug = slug;
 		subTypeSlug = undefined;
@@ -145,7 +155,7 @@
 		$searchQuery = '';
 	}
 
-	// The store toggle is a setting of its own, so it neither counts as a filter nor gets cleared
+	// The store toggle and the sort order are settings of their own, so they neither count as filters nor get cleared
 	const activeFilterCount = $derived(
 		[typeNode, subTypeNode, direction !== 'all', days !== DEFAULT_PRICE_CHANGE_WINDOW].filter(
 			Boolean
@@ -174,6 +184,7 @@
 				priceChangeParams({
 					days,
 					direction,
+					sort,
 					typeSlug: typeNode?.slug,
 					subTypeSlug: subTypeNode?.slug
 				})
@@ -247,7 +258,7 @@
 			<h1 class="text-2xl font-bold">{TITLE}</h1>
 			<p class="text-sm text-secondary">
 				Alkon valikoiman tuotteet, joiden hinta on muuttunut viime aikoina. Jokaisesta tuotteesta
-				näytetään sen viimeisin muutos, uusimmat ensin.
+				näytetään sen viimeisin muutos.
 			</p>
 		</div>
 	</div>
@@ -320,6 +331,18 @@
 			>
 				{#each PRICE_CHANGE_WINDOWS as value (value)}
 					{@render segment(`${value} pv`, days === value, () => (days = value))}
+				{/each}
+			</div>
+		</div>
+		<div class="flex flex-col gap-1">
+			<span id="price-change-sort" class="text-sm">Järjestys</span>
+			<div
+				class="flex overflow-hidden rounded border border-primary"
+				role="group"
+				aria-labelledby="price-change-sort"
+			>
+				{#each sorts as option (option.value)}
+					{@render segment(option.label, sort === option.value, () => (sort = option.value))}
 				{/each}
 			</div>
 		</div>
@@ -402,7 +425,8 @@
 	>
 		<span class="flex items-center gap-1.5 @4xl:flex-col @4xl:gap-1">
 			<span class="@4xl:text-2xl"><Icon name={cheaper ? 'trending_down' : 'trending_up'} /></span>
-			<strong class="leading-tight @4xl:text-3xl">{formatPriceChangePercent(change.percent)}</strong>
+			<strong class="leading-tight @4xl:text-3xl">{formatPriceChangePercent(change.percent)}</strong
+			>
 		</span>
 		<span class="font-semibold">{formatPriceChangeAmount(change)}</span>
 		<span class="@4xl:text-xs">oli {formatValue(change.from, AllColumns.Price)}</span>
@@ -459,12 +483,16 @@
 	)}
 >
 	{#if !$isLaptop}
-		<aside
-			class="flex max-h-full w-84 flex-col gap-3 overflow-y-auto border-e border-primary bg-primary p-4"
+		<FoldableSidebar
+			id="price-changes"
+			title={TITLE}
+			icon="trending_down"
+			label="suodattimet"
+			class="flex max-h-full w-80 flex-col gap-3 overflow-y-auto border-e border-primary bg-primary p-4"
 		>
 			{@render intro()}
 			{@render filters()}
-		</aside>
+		</FoldableSidebar>
 	{/if}
 	<div
 		id="results"
@@ -513,24 +541,10 @@
 									{@render changeTab(change)}
 								{/snippet}
 								{#snippet renderExtras()}
-									<Popup class="gap-4 p-4">
-										{#snippet renderButton(dialogElement: HTMLDialogElement)}
-											<button
-												class={twMerge(components.button({ type: 'positive' }), 'ml-auto')}
-												aria-label="Lisää listaan tai booliin"
-												onclick={() => dialogElement.showModal()}
-											>
-												<span>Lisää</span>
-												<Icon name="plus" />
-											</button>
-										{/snippet}
-										{#snippet renderContent(dialogElement: HTMLDialogElement)}
-											<AddToListContent
-												productNumber={change.product[AllColumns.Number]}
-												onadded={() => dialogElement.close()}
-											/>
-										{/snippet}
-									</Popup>
+									<AddToListButton
+										productNumber={change.product[AllColumns.Number]}
+										class="ml-auto"
+									/>
 								{/snippet}
 							</ProductPreview>
 						{/if}

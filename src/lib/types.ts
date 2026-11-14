@@ -19,6 +19,15 @@ export type PriceHistoryEntry = {
 	normalPrice?: number;
 	campaignStart?: string;
 	campaignEnd?: string;
+	/** Evidence from a recovered price list; dates denote observations. */
+	archive?: {
+		sourceId: string;
+		lastObserved: string;
+		lastSourceId: string;
+		observations: number;
+		/** Disjoint spans of observed days, when a price reappears after gaps. */
+		ranges?: [string, string][];
+	};
 };
 
 export type Filter = {
@@ -122,7 +131,10 @@ export interface PriceListItem extends Record<DrunkColumnNames, number> {
 	Normaalihinta: number;
 	'Kampanja alkaa': string;
 	'Kampanja päättyy': string;
-	/** Alko's product status: Aktiivinen, Uutuus, Poistuva or Tulee. Empty for removed products. */
+	/**
+	 * Alko's product status: Aktiivinen, Uutuus, Poistuva or Tulee, or our own "Ei myynnissä" for
+	 * products stuck at Tulee (see STALE_ARRIVAL_STATUS). Empty for removed products.
+	 */
 	Tila: string;
 	/** Deposit in euros, included in `Hinta`. Empty when the product has none or it isn't known. */
 	Pantti: number | '';
@@ -245,6 +257,8 @@ export type AnalyticsEventMap = {
 	/** From the "Lisää" popup */
 	punch_add_product: { product_number: string };
 	open_settings: undefined;
+	/** `slots` lists the pinned pages in order, comma-separated */
+	header_slots_changed: { slots: string; source: 'settings' | 'menu' };
 	export_data: undefined;
 	import_data: undefined;
 	install_app: { outcome: 'accepted' | 'dismissed'; source: 'settings' | 'banner' };
@@ -257,10 +271,12 @@ export type AnalyticsEventMap = {
 	show_price_history: { product_number?: string; [key: string]: any };
 	show_product_details: { product_number: string };
 	add_to_compare: { product_number: string };
+	add_to_list: { product_number: string };
 	command_palette_open: undefined;
 	command_palette_select: { kind: string; scope: string; query_length: number };
 	view_compare: { product_numbers: string[]; url: string };
-	scan_barcode: { ean: string; link?: string };
+	/** source: how the code was matched, from data.json, the api.alkometriikka.fi Worker or neither */
+	scan_barcode: { ean: string; link?: string; source: 'local' | 'worker' | 'not_found' | 'error' };
 	scan_qr_code: { type: string; product_number: string; link?: string };
 	preferred_store_changed: {
 		storeId: string;
@@ -269,6 +285,7 @@ export type AnalyticsEventMap = {
 		action?: 'set' | 'change';
 	};
 	store_compass_opened: { storeId: string; storeName: string };
+	store_availability_search: { product_number: string };
 	show_availability: { product_number?: string; [key: string]: any };
 	daily_feedback: {
 		date: string;
@@ -286,7 +303,7 @@ export type AnalyticsEventMap = {
 	click_feed: { feed: RSSFeed; location: string };
 	/** One per filtering session, with the selection of each active filter under its column name. */
 	filters_used: {
-		source: 'products' | 'list';
+		source: 'products' | 'list' | 'stats';
 		exit: 'product' | 'navigate' | 'hidden';
 		filters: string[];
 		filter_count: number;
@@ -326,6 +343,9 @@ export type AnalyticsEventMap = {
 	open_zoomed_image: { product_number: string };
 	/** The front page's "your watched products changed" banner was followed. */
 	open_watchlist_banner: { changed: number };
+	notice_click: { id: string };
+	/** The close button only, not a dismissal by following the link. `id` leaves out the sync time of the automatic notices. */
+	notice_dismiss: { id: string };
 	/** The error page showed a 4xx status, see `reportPageNotFound` in `errorAnalytics.ts`. */
 	page_not_found: {
 		status: number;
@@ -335,6 +355,7 @@ export type AnalyticsEventMap = {
 		path: string;
 		version: string;
 	};
+	share_target: { query: string; url: string };
 } & Shares &
 	Games;
 

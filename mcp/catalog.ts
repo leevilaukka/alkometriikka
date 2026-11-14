@@ -722,7 +722,13 @@ export class Catalog {
 
 		const glass = options.glass_l ?? DEFAULT_GLASS;
 		const people = options.people ?? 1;
-		const recipe = { name: punchName, glass, people, ingredients: recipeIngredients };
+		const recipe = {
+			name: punchName,
+			description: '',
+			glass,
+			people,
+			ingredients: recipeIngredients
+		};
 
 		const lines = punchLines(recipeIngredients, (id) => this.kaljakori.findById(id));
 		const totals = computePunch(lines, { glass, people });

@@ -9,7 +9,7 @@ export function isInCompare(id: string): boolean {
 }
 
 /** Adds `id` to the comparison selection. Returns false if the selection is already full. */
-export function addToCompare(id: string): boolean {
+function addToCompare(id: string): boolean {
 	if (compareProductIds.includes(id)) return true;
 	if (compareProductIds.length >= MAX_COMPARE_PRODUCTS) return false;
 	compareProductIds.push(id);
@@ -18,7 +18,7 @@ export function addToCompare(id: string): boolean {
 }
 
 /** Adds `id` to the front of the comparison selection. Returns false if the selection is already full. */
-export function addToCompareFirst(id: string): boolean {
+function addToCompareFirst(id: string): boolean {
 	if (compareProductIds.includes(id)) return true;
 	if (compareProductIds.length >= MAX_COMPARE_PRODUCTS) return false;
 	compareProductIds.unshift(id);

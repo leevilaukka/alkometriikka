@@ -22,7 +22,10 @@
 	} from '$lib/utils/user/watchlist';
 	import { onMount, untrack } from 'svelte';
 	import { twMerge } from 'tailwind-merge';
+	import AddToListButton from '../widgets/AddToListButton.svelte';
+	import CompareButton from '../widgets/CompareButton.svelte';
 	import Icon from '../widgets/Icon.svelte';
+	import PageHeader from '../widgets/PageHeader.svelte';
 	import ProductImage from '../widgets/ProductImage.svelte';
 
 	const { kaljakori, availability }: { kaljakori: Kaljakori; availability: AvailabilityData } =
@@ -71,13 +74,10 @@
 </svelte:head>
 
 <div class="mx-auto flex w-full max-w-4xl flex-col gap-6 p-4 md:p-6">
-	<header class="flex flex-col gap-2">
-		<h1 class="text-2xl font-bold md:text-3xl">Seuratut tuotteet</h1>
-		<p class="text-secondary">
-			Näet täällä, mikä seuraamissasi tuotteissa on muuttunut edellisen käyntisi jälkeen: hinta,
-			saatavuus myymälöissä{preferredStore ? ` ja myymälässäsi ${preferredStore.name}` : ''}. Tiedot
-			pysyvät vain tällä laitteella.
-		</p>
+	<PageHeader
+		title="Seuratut tuotteet"
+		description={`Näet täällä, mikä seuraamissasi tuotteissa on muuttunut edellisen käyntisi jälkeen: hinta, saatavuus myymälöissä${preferredStore ? ` ja myymälässäsi ${preferredStore.name}` : ''}. Tiedot pysyvät vain tällä laitteella.`}
+	>
 		{#if changedCount > 0}
 			<button
 				type="button"
@@ -88,7 +88,7 @@
 				<span>Merkitse kaikki nähdyiksi ({changedCount})</span>
 			</button>
 		{/if}
-	</header>
+	</PageHeader>
 
 	{#if statuses.length === 0}
 		<section class="flex flex-col items-start gap-3 rounded border border-primary bg-secondary p-5">
@@ -174,6 +174,10 @@
 								<Icon name="rss" />
 								<span>RSS</span>
 							</a>
+						{/if}
+						{#if product}
+							<CompareButton productNumber={item.id} name={product[AllColumns.Name]} />
+							<AddToListButton productNumber={item.id} type="primary" />
 						{/if}
 						<button
 							type="button"

@@ -18,6 +18,7 @@ detail.
 | [Dataset format](data/dataset-format.md)          | `data.json`, `hashes.json`, `availability.json` and the column schema                 |
 | [Sync pipeline](data/sync-pipeline.md)            | How `scripts/data/index.ts` fetches Alko's API, detects changes and stays safe        |
 | [Stock history](data/stock-history.md)            | Daily store counts and store arrivals kept from `availability.json`                   |
+| [API Worker](api-worker.md)                       | `api.alkometriikka.fi`: barcode lookups for the scanner and their export to the sync  |
 | **Frontend**                                      |                                                                                       |
 | [App structure](frontend/app-structure.md)        | SvelteKit setup, loading, routing, global state, URL state, localStorage              |
 | [Kaljakori](frontend/kaljakori.md)                | The in-browser product database: parsing, filtering, search, subsets                  |

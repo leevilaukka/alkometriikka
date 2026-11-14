@@ -94,14 +94,14 @@ describe('stock history', () => {
 	let dir: string;
 	beforeAll(() => {
 		dir = mkdtempSync(join(tmpdir(), 'mcp-stock-'));
-		mkdirSync(join(dir, 'stock', 'products'), { recursive: true });
-		mkdirSync(join(dir, 'stock', 'stores'), { recursive: true });
+		mkdirSync(join(dir, 'data', 'stock', 'products'), { recursive: true });
+		mkdirSync(join(dir, 'data', 'stock', 'stores'), { recursive: true });
 		writeFileSync(
-			join(dir, 'stock', 'products', '01.json'),
+			join(dir, 'data', 'stock', 'products', '01.json'),
 			JSON.stringify({ start: '2026-09-10', counts: { '100001': [5, 6, null, 8, 9, 10] } })
 		);
 		writeFileSync(
-			join(dir, 'stock', 'stores', '2101.json'),
+			join(dir, 'data', 'stock', 'stores', '2101.json'),
 			JSON.stringify({ since: '2026-09-01', arrivals: [['200002', '2026-09-18']] })
 		);
 	});

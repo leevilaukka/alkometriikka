@@ -5,7 +5,11 @@
 	import { findProductCategoryTrail } from '$lib/utils/catalog/categories';
 	import { AllColumns } from '$lib/utils/constants/columns';
 	import { formatRoundedPricePerLiter } from '$lib/utils/format/format';
-	import { computeQualityMetrics } from '$lib/utils/stats/metrics';
+	import {
+		computeQualityMetrics,
+		isAlcoholFree,
+		qualityMetricCount
+	} from '$lib/utils/stats/metrics';
 	import { twMerge } from 'tailwind-merge';
 	import Icon from '../widgets/Icon.svelte';
 
@@ -29,8 +33,9 @@
 			product[AllColumns.SubType]
 		).trail
 	);
-	// Only products in a subcategory have a wider category to compare against
-	const hasParentCategory = $derived(trail.length > 1);
+	// Only products in a subcategory have a wider category to compare against. Alcohol-free
+	// products don't use theirs, as it lumps waters, mixers, beers and wines together
+	const hasParentCategory = $derived(trail.length > 1 && !isAlcoholFree(product));
 	let compareToParent = $state(false);
 
 	const result = $derived(
@@ -40,6 +45,13 @@
 					parentCategory: hasParentCategory && compareToParent
 				})
 	);
+
+	// Alcohol-free products have fewer cards, which fill the row on wide screens rather than leave a gap
+	const wideColumns: Record<number, string> = {
+		2: 'lg:grid-cols-2',
+		3: 'lg:grid-cols-3',
+		4: 'lg:grid-cols-4'
+	};
 
 	// The category page of the compared products, for browsing them
 	const categoryNode = $derived(hasParentCategory && compareToParent ? trail[0] : trail.at(-1));
@@ -72,7 +84,13 @@
 
 {#if loading}
 	<!-- As tall as the loaded section, so the page doesn't jump when the price list arrives -->
-	<section class={twMerge('flex h-118 flex-col gap-3 md:h-85 lg:h-48', _class)}>
+	<section
+		class={twMerge(
+			'flex flex-col gap-3',
+			qualityMetricCount(product) > 2 ? 'h-118 md:h-85 lg:h-48' : 'h-70 md:h-44 lg:h-40',
+			_class
+		)}
+	>
 		<div class="flex flex-wrap items-baseline gap-x-2 gap-y-1">
 			<h2 class="text-2xl font-bold">Hinta-laatu</h2>
 			<span aria-hidden="true" class="h-4 w-64 max-w-full animate-pulse rounded bg-secondary"
@@ -108,13 +126,20 @@
 			<!-- Next to the heading on wider screens; phones have no room, so it goes below the cards -->
 			{@render categoryLink('ml-auto hidden md:flex')}
 		</div>
-		<div class="grid grid-cols-2 gap-3.5 lg:grid-cols-4">
+		<div class={twMerge('grid grid-cols-2 gap-3.5', wideColumns[result.metrics.length])}>
 			{#each result.metrics as metric (metric.key)}
 				{@const showMedian =
 					metric.key === AllColumns.PricePerLiter && result.medianPricePerLiter !== null}
-				<div class="flex flex-col gap-2 rounded border border-primary bg-primary p-3.5">
+				<div
+					class="flex flex-col gap-2 rounded border border-primary bg-primary p-3.5 odd:last:col-span-2 lg:odd:last:col-span-1"
+				>
 					<span class="text-sm text-secondary">{metric.label}</span>
-					<strong class="text-2xl leading-tight font-bold">{metric.value}</strong>
+					<strong class="text-2xl leading-tight font-bold"
+						>{metric.value}{#if metric.comparison}{' '}<span
+								class="text-base font-normal whitespace-nowrap text-secondary"
+								>{metric.comparison}</span
+							>{/if}</strong
+					>
 					<div class="h-1.5 overflow-hidden rounded-full bg-secondary">
 						<div
 							class="h-full rounded-full bg-brand-3"

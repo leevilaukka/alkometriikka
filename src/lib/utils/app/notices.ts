@@ -19,6 +19,8 @@ export type Notice = {
 	expiresAt?: string;
 	/** Defaults to true. Keep critical notices up with `false`. */
 	dismissible: boolean;
+	/** Defaults to true. Dismisses the notice once its link is clicked, if it's dismissible at all. */
+	dismissOnLinkClick: boolean;
 	/** Hides the automatic stale-data warning while this notice is shown, e.g. to explain the outage. */
 	replacesStaleWarning: boolean;
 	/**
@@ -80,7 +82,16 @@ export function parseNotices(raw: unknown): Notice[] {
 	const seen = new Set<string>();
 	for (const entry of list) {
 		if (!isRecord(entry)) continue;
-		const { id, level, message, startsAt, expiresAt, dismissible, replacesStaleWarning } = entry;
+		const {
+			id,
+			level,
+			message,
+			startsAt,
+			expiresAt,
+			dismissible,
+			dismissOnLinkClick,
+			replacesStaleWarning
+		} = entry;
 		if (typeof id !== 'string' || !id.trim() || seen.has(id)) continue;
 		if (typeof message !== 'string' || !message.trim()) continue;
 		const urlParams = parseUrlParams(entry.urlParams);
@@ -94,6 +105,7 @@ export function parseNotices(raw: unknown): Notice[] {
 			startsAt: isValidDate(startsAt) ? startsAt : undefined,
 			expiresAt: isValidDate(expiresAt) ? expiresAt : undefined,
 			dismissible: dismissible !== false,
+			dismissOnLinkClick: dismissOnLinkClick !== false,
 			replacesStaleWarning: replacesStaleWarning === true,
 			urlParams
 		});
@@ -160,6 +172,7 @@ export function visibleNotices(
 				level: 'info',
 				message: cachedMessage,
 				dismissible: true,
+				dismissOnLinkClick: false,
 				replacesStaleWarning: false
 			});
 		}
@@ -176,6 +189,7 @@ export function visibleNotices(
 			level: 'warning',
 			message: staleMessage,
 			dismissible: true,
+			dismissOnLinkClick: false,
 			replacesStaleWarning: false
 		});
 	}

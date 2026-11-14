@@ -63,6 +63,7 @@
 		{availabilityStores}
 		{preferredStore}
 		{availabilityUpdated}
+		pricesUpdated={alko?.dataset.metadata.LastSynced}
 	/>
 {:else}
 	<div class="grid h-full w-full place-content-center">

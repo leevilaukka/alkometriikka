@@ -4,6 +4,7 @@
 	import { twMerge } from 'tailwind-merge';
 	import CompassDial from '$lib/components/widgets/CompassDial.svelte';
 	import Icon from '$lib/components/widgets/Icon.svelte';
+	import PageHeader from '$lib/components/widgets/PageHeader.svelte';
 	import { userLocation } from '$lib/global.svelte';
 	import type { AvailabilityStore } from '$lib/types';
 	import {
@@ -98,74 +99,76 @@
 		></span>
 	</div>
 {:else}
-	<div class="mx-auto flex w-full max-w-[60ch] flex-col items-center gap-6 p-6">
-		<header class="flex flex-col gap-2 text-center">
-			<h1 class="text-2xl font-bold md:text-3xl">Kompassi</h1>
-			<p class="text-secondary">Suunta lähimpään Alkoon!</p>
-		</header>
-
-		{#if permissionNeeded}
-			<button
-				type="button"
-				class={twMerge(components.button({ type: 'positive', size: 'md' }), 'px-5 py-3')}
-				onclick={enableCompass}
-			>
-				<Icon name="compass" />
-				<span>Ota kompassi käyttöön</span>
-			</button>
-		{/if}
-
-		<label class="flex items-center gap-2 text-sm">
-			<input
-				type="checkbox"
-				class="shrink-0 rounded"
-				checked={onlyOpen}
-				onchange={(event) => resetFilters(event.currentTarget.checked)}
-			/>
-			<span>Vain avoinna olevat myymälät</span>
-		</label>
-
-		{#if target}
-			<div class="flex flex-col items-center gap-1 text-center">
-				<a href={resolve(`/myymalat/${target.id}/`)} class="text-xl font-bold hover:underline">
-					{target.name}
-				</a>
-				<p class="text-sm text-secondary">
-					{[target.address, getStoreCity(target)].filter(Boolean).join(', ')}
-				</p>
-				<span
-					class={isStoreOpen(target)
-						? 'rounded bg-green-100 px-2 py-1 text-sm text-green-800 dark:bg-green-900 dark:text-green-100'
-						: 'rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-zinc-700 dark:text-zinc-100'}
+	<div class="mx-auto flex w-full max-w-4xl flex-col gap-6 p-4 md:p-6">
+		<PageHeader
+			title="Kompassi"
+			crumbs={[{ label: 'Myymälät', href: '/myymalat/' }]}
+			description="Suunta lähimpään Alkoon!"
+		/>
+		<div class="flex flex-col items-center gap-6">
+			{#if permissionNeeded}
+				<button
+					type="button"
+					class={twMerge(components.button({ type: 'positive', size: 'md' }), 'px-5 py-3')}
+					onclick={enableCompass}
 				>
-					{isStoreOpen(target) ? 'Avoinna' : 'Suljettu'}
-				</span>
-			</div>
-			{#key target.id}
-				<CompassDial store={target} />
-			{/key}
-			<button
-				type="button"
-				class={components.button({ size: 'md' })}
-				onclick={() => skipTarget(target)}
-			>
-				<Icon name="skip_next" />
-				<span>Seuraava lähin</span>
-			</button>
-		{:else if candidates.length === 0}
-			<p class="text-secondary">Sopivia myymälöitä ei löytynyt.</p>
-			{#if skipped.length}
+					<Icon name="compass" />
+					<span>Ota kompassi käyttöön</span>
+				</button>
+			{/if}
+
+			<label class="flex items-center gap-2 text-sm">
+				<input
+					type="checkbox"
+					class="shrink-0 rounded"
+					checked={onlyOpen}
+					onchange={(event) => resetFilters(event.currentTarget.checked)}
+				/>
+				<span>Vain avoinna olevat myymälät</span>
+			</label>
+
+			{#if target}
+				<div class="flex flex-col items-center gap-1 text-center">
+					<a href={resolve(`/myymalat/${target.id}/`)} class="text-xl font-bold hover:underline">
+						{target.name}
+					</a>
+					<p class="text-sm text-secondary">
+						{[target.address, getStoreCity(target)].filter(Boolean).join(', ')}
+					</p>
+					<span
+						class={isStoreOpen(target)
+							? 'rounded bg-green-100 px-2 py-1 text-sm text-green-800 dark:bg-green-900 dark:text-green-100'
+							: 'rounded bg-gray-100 px-2 py-1 text-sm text-gray-700 dark:bg-zinc-700 dark:text-zinc-100'}
+					>
+						{isStoreOpen(target) ? 'Avoinna' : 'Suljettu'}
+					</span>
+				</div>
+				{#key target.id}
+					<CompassDial store={target} />
+				{/key}
 				<button
 					type="button"
 					class={components.button({ size: 'md' })}
-					onclick={() => resetFilters(onlyOpen)}
+					onclick={() => skipTarget(target)}
 				>
-					Aloita alusta
+					<Icon name="skip_next" />
+					<span>Seuraava lähin</span>
 				</button>
+			{:else if candidates.length === 0}
+				<p class="text-secondary">Sopivia myymälöitä ei löytynyt.</p>
+				{#if skipped.length}
+					<button
+						type="button"
+						class={components.button({ size: 'md' })}
+						onclick={() => resetFilters(onlyOpen)}
+					>
+						Aloita alusta
+					</button>
+				{/if}
+			{:else}
+				<!-- No fix yet: the dial for any store would only show "locating", so keep the page simple. -->
+				<p class="animate-pulse text-secondary">Haetaan sijaintia…</p>
 			{/if}
-		{:else}
-			<!-- No fix yet: the dial for any store would only show "locating", so keep the page simple. -->
-			<p class="animate-pulse text-secondary">Haetaan sijaintia…</p>
-		{/if}
+		</div>
 	</div>
 {/if}

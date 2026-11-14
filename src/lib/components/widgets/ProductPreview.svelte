@@ -4,11 +4,9 @@
 	import { headerToDisplayName, valueToString } from '$lib/utils/format/labels';
 	import { formatValue } from '$lib/utils/format/format';
 	import { getSaleInfo } from '$lib/utils/catalog/sales';
-	import { components } from '$lib/utils/ui/styles';
-	import { compareProductIds } from '$lib/global.svelte';
-	import { toggleCompare, MAX_COMPARE_PRODUCTS } from '$lib/utils/user/compare';
 	import { twMerge } from 'tailwind-merge';
 	import BadgeList from './BadgeList.svelte';
+	import CompareButton from './CompareButton.svelte';
 	import ProductImage from './ProductImage.svelte';
 	import Icon from './Icon.svelte';
 
@@ -31,24 +29,17 @@
 		})
 	);
 
-	const inCompare = $derived(compareProductIds.includes(product[AllColumns.Number]));
 	// Alcohol-free products have no servings
 	const perServing = $derived(
 		product[AllColumns.EuroPerServing] > 0
 			? ` · ${formatValue(product[AllColumns.EuroPerServing], AllColumns.EuroPerServing)}/annos`
 			: ''
 	);
-
-	function handleToggleCompare() {
-		if (!toggleCompare(product[AllColumns.Number])) {
-			alert(`Voit vertailla korkeintaan ${MAX_COMPARE_PRODUCTS} tuotetta kerrallaan.`);
-		}
-	}
 </script>
 
 <div
 	class={twMerge(
-		'relative @container flex flex-col overflow-clip rounded border border-primary bg-primary'
+		'@container relative flex flex-col overflow-clip rounded border border-primary bg-primary'
 	)}
 >
 	<!-- Pages can attach a tab to the card's left edge (its top on phones), e.g. the price change on /hinnanmuutokset -->
@@ -57,7 +48,9 @@
 			{@render renderAside()}
 		{/if}
 		<div
-			class={twMerge('flex min-w-0 flex-1 flex-col flex-nowrap items-center gap-4 p-4 @4xl:flex-row')}
+			class={twMerge(
+				'flex min-w-0 flex-1 flex-col flex-nowrap items-center gap-4 p-4 @4xl:flex-row'
+			)}
 		>
 			<div
 				class="flex aspect-square w-40 max-w-[10rem] shrink-0 rounded bg-white p-2 @4xl:h-full @4xl:w-auto @4xl:max-w-fit"
@@ -124,19 +117,18 @@
 							</span>
 						{/if}
 						<span class="text-sm text-secondary">
-							({formatValue(product[AllColumns.PricePerLiter], AllColumns.PricePerLiter)}{perServing})
+							({formatValue(
+								product[AllColumns.PricePerLiter],
+								AllColumns.PricePerLiter
+							)}{perServing})
 						</span>
 					</div>
 					<BadgeList item={product} fit class="@4xl:flex-1" />
 					<div class="ms-auto flex flex-row flex-wrap items-center gap-3">
-						<button
-							type="button"
-							onclick={handleToggleCompare}
-							class={twMerge(components.button({ type: inCompare ? 'positive' : 'primary' }))}
-						>
-							<Icon name="compare" />
-							<span>{inCompare ? 'Vertailussa' : 'Vertaile'}</span>
-						</button>
+						<CompareButton
+							productNumber={product[AllColumns.Number]}
+							name={product[AllColumns.Name]}
+						/>
 						{#if renderExtras}
 							{@render renderExtras()}
 						{/if}

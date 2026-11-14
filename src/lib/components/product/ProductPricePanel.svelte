@@ -2,14 +2,12 @@
 	import { AllColumns } from '$lib/utils/constants/columns';
 	import type { AvailabilityStore, LoadState, PriceListItem } from '$lib/types';
 	import type { SaleInfo } from '$lib/utils/catalog/sales';
+	import { isStaleArrival } from '$lib/utils/catalog/status';
 	import type { SizeOption } from '$lib/utils/catalog/filters';
 	import { components } from '$lib/utils/ui/styles';
-	import { compareProductIds } from '$lib/global.svelte';
-	import { toggleCompare, MAX_COMPARE_PRODUCTS } from '$lib/utils/user/compare';
 	import Icon from '../widgets/Icon.svelte';
-	import Popup from '../widgets/Popup.svelte';
-	import AllLists from '../widgets/AllLists.svelte';
-	import AddToListContent from '../widgets/AddToListContent.svelte';
+	import AddToListButton from '../widgets/AddToListButton.svelte';
+	import CompareButton from '../widgets/CompareButton.svelte';
 	import ProductPriceStoreBanner from './ProductPriceStoreBanner.svelte';
 	import ProductSizeHook from './ProductSizeHook.svelte';
 	import { twMerge } from 'tailwind-merge';
@@ -19,10 +17,13 @@
 		sale,
 		campaignWindow,
 		storesState,
+		inNoStore,
 		preferredStore,
 		availableInPreferredStore,
 		closestAvailableStore,
 		closestAvailableDistance,
+		storeCounts,
+		liveLoading = false,
 		cheapestSize,
 		class: _class = ''
 	}: {
@@ -30,21 +31,18 @@
 		sale: SaleInfo | null;
 		campaignWindow: string | null;
 		storesState: LoadState;
+		inNoStore: boolean;
 		preferredStore?: AvailabilityStore;
 		availableInPreferredStore: boolean;
 		closestAvailableStore?: AvailabilityStore;
 		closestAvailableDistance: string | null;
+		/** Store id → units, once the live counts are in */
+		storeCounts?: Map<string, number>;
+		/** The live counts are on their way */
+		liveLoading?: boolean;
 		cheapestSize?: SizeOption;
 		class?: string;
 	} = $props();
-
-	const inCompare = $derived(compareProductIds.includes(product[AllColumns.Number]));
-
-	function handleToggleCompare() {
-		if (!toggleCompare(product[AllColumns.Number])) {
-			alert(`Voit vertailla korkeintaan ${MAX_COMPARE_PRODUCTS} tuotetta kerrallaan.`);
-		}
-	}
 </script>
 
 <aside
@@ -58,60 +56,43 @@
 		{sale}
 		{campaignWindow}
 		{storesState}
+		{inNoStore}
 		{preferredStore}
 		{availableInPreferredStore}
 		{closestAvailableStore}
 		{closestAvailableDistance}
+		{storeCounts}
+		{liveLoading}
 	/>
 
 	<div class="flex w-full flex-row gap-2">
-		<Popup class="gap-4 p-4">
-			{#snippet renderButton(dialogElement: HTMLDialogElement)}
-				<button
-					type="button"
-					class={twMerge(
-						components.button({ size: 'lg' }),
-						'w-full flex-1 justify-between px-4 py-2.5'
-					)}
-					aria-label="Lisää listaan tai booliin"
-					onclick={() => dialogElement.showModal()}
-				>
-					<span>Lisää</span>
-					<Icon name="plus" />
-				</button>
-			{/snippet}
-			{#snippet renderContent(dialogElement: HTMLDialogElement)}
-				<AddToListContent
-					productNumber={product[AllColumns.Number]}
-					onadded={() => dialogElement.close()}
-				/>
-			{/snippet}
-		</Popup>
-		<button
-			type="button"
-			onclick={handleToggleCompare}
-			class={twMerge(
-				components.button({ size: 'lg', type: inCompare ? 'positive' : 'primary' }),
-				'flex-1 justify-between px-4 py-2.5'
-			)}
-		>
-			<span>{inCompare ? 'Vertailussa' : 'Vertaile'}</span>
-			<Icon name="compare" />
-		</button>
+		<AddToListButton
+			productNumber={product[AllColumns.Number]}
+			type="primary"
+			size="lg"
+			class="w-full flex-1 justify-between px-4 py-2.5"
+		/>
+		<CompareButton
+			productNumber={product[AllColumns.Number]}
+			size="lg"
+			iconPosition="end"
+			class="flex-1 justify-between px-4 py-2.5"
+		/>
 	</div>
 
 	{#if cheapestSize && !cheapestSize.isCurrent}
 		<ProductSizeHook size={cheapestSize} />
 	{/if}
 
-	{#if product[AllColumns.RemovedFromSelection]}
+	{#if product[AllColumns.RemovedFromSelection] || isStaleArrival(product)}
+		<!-- alko.fi has no page for these -->
 		<span
 			class={twMerge(
 				components.button({ size: 'lg' }),
 				'w-full cursor-default px-4 py-2.5 opacity-50'
 			)}
 		>
-			Poistunut valikoimasta
+			{product[AllColumns.RemovedFromSelection] ? 'Poistunut valikoimasta' : 'Ei myynnissä'}
 		</span>
 	{:else}
 		<a

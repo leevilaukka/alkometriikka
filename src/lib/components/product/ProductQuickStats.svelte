@@ -8,7 +8,7 @@
 
 	// Always a 2x2 grid: this component is used inside a narrow desktop column
 	// (not the full page width), so a viewport-based 4-across breakpoint would
-	// crowd longer real-world values like "kcal/100ml" or "Muovipullo".
+	// crowd longer real-world values like "kcal/100 ml" or "Muovipullo".
 	const cellBorders = ['border-r border-b', 'border-b', 'border-r', ''];
 
 	const stats = $derived([

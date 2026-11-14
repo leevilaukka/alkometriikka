@@ -13,6 +13,13 @@ All three are loaded from `src/app.html`:
 | Simple Analytics         | `scripts.simpleanalyticscdn.com/latest.js`     | Plus `static/scripts/simpleanalytics/auto-events.js`, a local copy of their auto-events script for outbound links, email links and downloads (see [Outbound links](#outbound-links)) |
 | Cloudflare Web Analytics | `static.cloudflareinsights.com/beacon.min.js`  | Page loads and web vitals                                                                                                                                                            |
 
+An inline script before the Umami tag sets its `data-before-send` hook. When the browser says it is
+automated (`navigator.webdriver` or a `Headless` user agent), Umami hits are dropped and
+`recorder.js` isn't loaded. Every other hit gets a `tag` with the browser's time zone, plus any
+weaker automation hints (`no-window`, `no-languages`). Proxy bots rarely match their time zone to
+their exit IP, so a tag such as `America/New_York` on a Finnish session points to a bot. Compare
+them via the tag breakdown with a country filter.
+
 In `vite dev`, the layout sets `localStorage['umami.disabled'] = '1'` and `sendAnalyticsEvent`
 only logs to the console, so local work never reaches the dashboards.
 
@@ -31,13 +38,16 @@ payloads are typed by `AnalyticsEventMap` in `src/lib/types.ts`; add new events 
 | `punch_add_product`                                      | A product is added to the punch from a "Lisää listaan" popup                                                                                                | Product number                                                                                            |
 | `view_compare`                                           | The comparison page opens                                                                                                                                   | Product numbers and URL (the pathname alone doesn't identify the comparison)                              |
 | `add_to_compare`                                         | A product is added to the comparison                                                                                                                        | Product number                                                                                            |
+| `add_to_list`                                            | A product is added to a list, from a "Lisää" popup or the command palette                                                                                   | Product number                                                                                            |
 | `watch_product`, `unwatch_product`                       | A product is watched or unwatched                                                                                                                           | Product number                                                                                            |
 | `view_watchlist`                                         | The watchlist page (`/seuratut`) opens                                                                                                                      | Number of watched products and how many have changed                                                      |
 | `open_watchlist_banner`                                  | The front page's "your watched products changed" banner is followed                                                                                         | Number of changes                                                                                         |
+| `notice_click`, `notice_dismiss`                         | A site notice's link is followed / a site notice is closed with its button                                                                                  | Notice id                                                                                                 |
 | `view_sizes`, `show_product_details`                     | The size selector / details are opened on a product page                                                                                                    | Product number                                                                                            |
 | `create_list`, `save_list`                               | A list is created / a shared list is saved                                                                                                                  |                                                                                                           |
 | `preferred_store_changed`                                | A preferred store is chosen                                                                                                                                 | Store id, name, city                                                                                      |
 | `store_compass_opened`                                   | The store compass is opened                                                                                                                                 | Store id and name                                                                                         |
+| `store_availability_search`                              | A store is searched for on a product page, once per product                                                                                                 |
 | `open_settings`, `export_data`, `import_data`            | Settings actions                                                                                                                                            |                                                                                                           |
 | `install_app`, `app_installed`, `dismiss_install_banner` | The install prompt (from Settings or the banner) is answered / the app gets installed (any way) / the install banner is closed                              | Whether the prompt was accepted, and from where                                                           |
 | `pwa_launch`                                             | The site is opened as the installed app, once per launch. Counts installed-app use on every platform, iOS included, where installs themselves can't be seen |                                                                                                           |
@@ -47,7 +57,7 @@ payloads are typed by `AnalyticsEventMap` in `src/lib/types.ts`; add new events 
 | `daily_game`, `unlimited_game`, `archive_game`           | A Daily game is started or completed                                                                                                                        | Date, state, score, correct answers                                                                       |
 | `daily_feedback`                                         | A problem with a Daily question is reported                                                                                                                 | Date, mode, question, game hash, reported problem types                                                   |
 | `site_feedback`                                          | The site feedback form is sent                                                                                                                              | Path, app version, reported problem types                                                                 |
-| `scan_barcode`, `scan_qr_code`                           | The (currently unmounted) barcode scanner finds a product                                                                                                   | Code and link                                                                                             |
+| `scan_barcode`, `scan_qr_code`                           | The scanner reads a barcode / an Alko shelf QR code                                                                                                         | Code, link, and for barcodes whether it was found in data.json, by the Worker or not at all               |
 | `app_error`                                              | An unexpected error: a failed page load or render, an uncaught exception or an unhandled promise rejection                                                  | Kind, message, stack, status, route, path (no query string), app version, browser and version, user agent |
 | `page_not_found`                                         | The error page shows a 4xx status: a route that doesn't exist, an unknown product, category or store, or an unreadable list link (400)                      | Status, route (`null` for a missing route), message, path (no query string), app version                  |
 
@@ -118,3 +128,12 @@ links, so no redirect is involved.
 approach: a `noindex` redirect page that Simple Analytics recorded. It strips the referrer unless
 the link passes `&referrer=1`, and only redirects to http(s) URLs on other hosts. Nothing links
 through it at the moment, but it is kept for possible future use.
+
+## Barcode lookups
+
+The scanner decodes the camera image in the browser (the browser's own `BarcodeDetector`, or
+ZXing as WebAssembly served from the site); no image leaves the device. A barcode that isn't in
+`data.json` is sent to `api.alkometriikka.fi` (the [API Worker](api-worker.md)), which asks Alko
+for it once. The Worker keeps the barcode and its product number, and nothing about who scanned
+it. Cloudflare sees the visitor's IP like on any request, and the Worker uses it only for the rate
+limit.

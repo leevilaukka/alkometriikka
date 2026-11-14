@@ -67,6 +67,8 @@ export type ProductMeta = {
 	removedFromSelection?: string;
 	/** ISO date (YYYY-MM-DD) of the last detail re-verification. Drives the staleness cooldown. */
 	detailCheckedAt?: string;
+	/** ISO date (YYYY-MM-DD) of the last failed detail re-verification. Backs off the retries. */
+	detailFailedAt?: string;
 };
 
 /** A migrated/synced product: change-detection hash, legacy-ordered values, price history and optional metadata. */

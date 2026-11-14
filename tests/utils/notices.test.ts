@@ -18,6 +18,7 @@ function notice(overrides: Partial<Notice> = {}): Notice {
 		level: 'info',
 		message: 'Hei',
 		dismissible: true,
+		dismissOnLinkClick: true,
 		replacesStaleWarning: false,
 		...overrides
 	};
@@ -57,6 +58,16 @@ describe('parseNotices', () => {
 				replacesStaleWarning: true
 			})
 		]);
+	});
+
+	it('dismisses on link click unless told not to', () => {
+		const parsed = parseNotices({
+			notices: [
+				{ id: 'a', message: 'm' },
+				{ id: 'b', message: 'm', dismissOnLinkClick: false }
+			]
+		});
+		expect(parsed.map((n) => n.dismissOnLinkClick)).toEqual([true, false]);
 	});
 
 	it('only keeps same-site and https links', () => {

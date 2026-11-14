@@ -8,16 +8,21 @@ import {
 	hideFromProductPageStats,
 	zeroWithoutAlcoholColumns
 } from '../constants/columns';
-import { formatValue } from '../format/format';
+import { formatRoundedPricePerLiter, formatValue } from '../format/format';
 import { headerToDisplayName, isNullish } from '../format/labels';
 
+/** Key of the alcohol-free products' price comparison with their alcoholic version. */
+export const alcoholicPricePerLiterKey = 'alcoholicPricePerLiter';
+
 export type QualityMetric = {
-	key: ColumnNames;
+	key: ColumnNames | typeof alcoholicPricePerLiterKey;
 	label: string;
 	value: string;
 	percentile: number;
 	barPercent: number;
 	note: string;
+	/** A reference value shown after `value`, e.g. "vs. 33 €/L". */
+	comparison?: string;
 };
 
 export type QualityMetricsResult = {
@@ -35,30 +40,34 @@ type MetricDefinition = {
 	note: (percentile: number) => string;
 };
 
+const pricePerLiterMetric: MetricDefinition = {
+	key: AllColumns.PricePerLiter,
+	label: 'Hintataso',
+	higherIsBetter: false,
+	note: (p) => `Halvempi litrahinta kuin ${p} % vastaavista tuotteista`
+};
+
+const sugarMetric: MetricDefinition = {
+	key: AllColumns.Sugar,
+	label: 'Sokeripitoisuus',
+	higherIsBetter: false,
+	note: (p) => `Vähemmän sokeria kuin ${p} %:lla vastaavista`
+};
+
 /**
  * Fixed set of "Hinta-laatu" metrics, all normalized so a higher percentile is
  * always better regardless of whether the underlying column itself is
  * better-when-lower (price) or better-when-higher (alcohol grams per euro).
  */
 const metricDefinitions: MetricDefinition[] = [
-	{
-		key: AllColumns.PricePerLiter,
-		label: 'Hintataso',
-		higherIsBetter: false,
-		note: (p) => `Halvempi litrahinta kuin ${p} % vastaavista tuotteista`
-	},
+	pricePerLiterMetric,
 	{
 		key: AllColumns.AlcoholGramsPerEuro,
 		label: 'Alkoholia rahalle',
 		higherIsBetter: true,
 		note: (p) => `Enemmän alkoholia/€ kuin ${p} %:lla vastaavista`
 	},
-	{
-		key: AllColumns.Sugar,
-		label: 'Sokeripitoisuus',
-		higherIsBetter: false,
-		note: (p) => `Vähemmän sokeria kuin ${p} %:lla vastaavista`
-	},
+	sugarMetric,
 	{
 		key: AllColumns.PromillePerEuro,
 		label: 'Promillet per euro',
@@ -67,11 +76,140 @@ const metricDefinitions: MetricDefinition[] = [
 	}
 ];
 
+const alcoholFreeTypeSlug = 'alkoholittomat';
+
+/**
+ * Metrics for alcohol-free products, whose peers are all alcohol-free too, so
+ * alcohol per euro would be zero across the board. Their calories come almost
+ * entirely from sugar, so energy would repeat the sugar ranking, except in
+ * beers, where unfermented malt sugars add calories that aren't sugar.
+ */
+function alcoholFreeMetricDefinitions(subTypeSlug: string): MetricDefinition[] {
+	if (subTypeSlug !== 'alkoholittomat-oluet') return [pricePerLiterMetric, sugarMetric];
+	return [
+		pricePerLiterMetric,
+		sugarMetric,
+		{
+			key: AllColumns.Energy,
+			label: 'Energia',
+			higherIsBetter: false,
+			note: (p) => `Vähemmän kaloreita kuin ${p} %:lla vastaavista`
+		}
+	];
+}
+
+/**
+ * The alcoholic categories alcohol-free subtypes stand in for, keyed by the
+ * `Alatyyppi` slug, to show whether the alcohol-free version costs more. `name`
+ * is the category in the plural for the card's label, `elative` the same in
+ * the elative plural for its note.
+ */
+const alcoholicCounterparts: Record<
+	string,
+	{ type: string; subTypes: string[]; name: string; elative: string }
+> = {
+	'alkoholittomat-punaviinit': {
+		type: 'Viinit',
+		subTypes: ['punaviinit'],
+		name: 'punaviinit',
+		elative: 'punaviineistä'
+	},
+	'alkoholittomat-valko-ja-roseeviinit': {
+		type: 'Viinit',
+		subTypes: ['valkoviinit', 'roseeviinit'],
+		name: 'valko- ja roseeviinit',
+		elative: 'valko- ja roseeviineistä'
+	},
+	'alkoholittomat-kuohuviinit': {
+		type: 'Viinit',
+		subTypes: ['kuohuviinit ja samppanjat'],
+		name: 'kuohuviinit',
+		elative: 'kuohuviineistä'
+	},
+	'alkoholittomat-oluet': {
+		type: 'Panimotuotteet',
+		subTypes: ['oluet'],
+		name: 'oluet',
+		elative: 'oluista'
+	},
+	'alkoholittomat-siiderit': {
+		type: 'Panimotuotteet',
+		subTypes: ['siiderit'],
+		name: 'siiderit',
+		elative: 'siidereistä'
+	}
+};
+
+/**
+ * Where `product`'s price per liter falls among the alcoholic version of its
+ * category, or null when it has none (e.g. mixers) or nothing to compare to.
+ */
+function alcoholicPriceMetric(
+	product: PriceListItem,
+	subTypeSlug: string,
+	kaljakori: Kaljakori
+): QualityMetric | null {
+	const counterpart = alcoholicCounterparts[subTypeSlug];
+	const productPrice = Number(product[AllColumns.PricePerLiter]);
+	if (!counterpart || !(productPrice > 0)) return null;
+
+	const subTypeSlugs = new Set(counterpart.subTypes.map(categorySlug));
+	const prices = positiveValues(
+		kaljakori.data.filter(
+			(item) =>
+				item[AllColumns.RemovedFromSelection] !== true &&
+				categorySlug(String(item[AllColumns.Type] ?? '')) === categorySlug(counterpart.type) &&
+				subTypeSlugs.has(categorySlug(String(item[AllColumns.SubType] ?? '')))
+		),
+		AllColumns.PricePerLiter
+	);
+	const medianPrice = median(prices);
+	if (medianPrice === null) return null;
+
+	const percentile = Math.round(
+		(prices.filter((price) => price >= productPrice).length / prices.length) * 100
+	);
+	return {
+		key: alcoholicPricePerLiterKey,
+		label: `Litrahinta vs. alkoholilliset ${counterpart.name}`,
+		value: String(formatValue(productPrice, AllColumns.PricePerLiter)),
+		comparison: `vs. ${formatRoundedPricePerLiter(medianPrice)}`,
+		percentile,
+		barPercent: percentile,
+		note: `Halvempi litrahinta kuin ${percentile} %:lla alkoholillisista ${counterpart.elative}. Mediaani ${formatRoundedPricePerLiter(medianPrice)}`
+	};
+}
+
+/** The `Alatyyppi` slug of an alcohol-free product, or null for other products. */
+function alcoholFreeSubTypeSlug(product: PriceListItem): string | null {
+	if (categorySlug(String(product[AllColumns.Type] ?? '')) !== alcoholFreeTypeSlug) return null;
+	return categorySlug(String(product[AllColumns.SubType] ?? ''));
+}
+
+/** True for products in Alko's alcohol-free category. */
+export function isAlcoholFree(product: PriceListItem): boolean {
+	return alcoholFreeSubTypeSlug(product) !== null;
+}
+
+/**
+ * How many cards {@link computeQualityMetrics} gives `product` when it has
+ * peers, for sizing the section before the price list has loaded.
+ */
+export function qualityMetricCount(product: PriceListItem): number {
+	const subTypeSlug = alcoholFreeSubTypeSlug(product);
+	if (subTypeSlug === null) return metricDefinitions.length;
+	return (
+		alcoholFreeMetricDefinitions(subTypeSlug).length +
+		(subTypeSlug in alcoholicCounterparts ? 1 : 0)
+	);
+}
+
 /**
  * Computes percentile-based "Hinta-laatu" metrics for `product` against other
  * products in its category: the `Alatyyppi` when it has one, or the whole
- * `Tyyppi` with `parentCategory`. Returns an empty `metrics` array when there
- * are no comparable peers, so callers can hide the section.
+ * `Tyyppi` with `parentCategory`. Alcohol-free products get their own metric
+ * set. Returns an empty `metrics` array when there are no comparable peers,
+ * so callers can hide the section.
  */
 export function computeQualityMetrics(
 	product: PriceListItem,
@@ -114,7 +252,10 @@ export function computeQualityMetrics(
 		};
 	}
 
-	const metrics = metricDefinitions.map((def) => {
+	const subTypeSlug = alcoholFreeSubTypeSlug(product);
+	const definitions =
+		subTypeSlug === null ? metricDefinitions : alcoholFreeMetricDefinitions(subTypeSlug);
+	const metrics: QualityMetric[] = definitions.map((def) => {
 		const productValue = Number(product[def.key]) || 0;
 		const worseOrEqualCount = peers.filter((item) => {
 			const peerValue = Number(item[def.key]) || 0;
@@ -131,6 +272,9 @@ export function computeQualityMetrics(
 			note: def.note(percentile)
 		};
 	});
+	const alcoholicPrice =
+		subTypeSlug === null ? null : alcoholicPriceMetric(product, subTypeSlug, kaljakori);
+	if (alcoholicPrice) metrics.push(alcoholicPrice);
 
 	return {
 		metrics,

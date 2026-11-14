@@ -5,14 +5,22 @@
 	import { productFeedPath } from '$lib/utils/catalog/alko';
 	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 	import type { PriceHistoryEntry, PriceListItem } from '$lib/types';
-	import type { ChartConfiguration } from 'chart.js';
+	import type { ChartConfiguration, Plugin, TooltipItem } from 'chart.js';
 	import ChartCard from '../widgets/ChartCard.svelte';
 	import Icon from '../widgets/Icon.svelte';
-	import { components } from '$lib/utils/ui/styles';
 	import { twMerge } from 'tailwind-merge';
 	import { dev } from '$app/environment';
+	import {
+		formatHistoryDate,
+		historyTimestamp,
+		priceHistoryChartPoints
+	} from '$lib/utils/catalog/priceHistory';
 
-	const { product, class: _class = '' }: { product: PriceListItem; class?: string } = $props();
+	const {
+		product,
+		observedThrough,
+		class: _class = ''
+	}: { product: PriceListItem; observedThrough?: string; class?: string } = $props();
 
 	type RangeKey = '1kk' | '3kk' | '1v' | 'kaikki';
 	const ranges: { key: RangeKey; label: string; days: number | null }[] = [
@@ -26,17 +34,14 @@
 
 	const fullHistory = $derived(product[AllColumns.History] ?? []);
 	const feedHref = $derived(productFeedPath(product));
-	const filteredHistory = $derived.by(() => {
+	const chartPoints = $derived.by(() => {
 		const range = ranges.find((r) => r.key === selectedRange);
-		if (!range || range.days === null) return fullHistory;
+		if (!range || range.days === null)
+			return priceHistoryChartPoints(fullHistory, undefined, observedThrough);
 		const cutoff = new Date();
 		cutoff.setDate(cutoff.getDate() - range.days);
 		const cutoffISO = cutoff.toISOString().slice(0, 10);
-		const inRange = fullHistory.filter((entry) => entry.date >= cutoffISO);
-		// Start the range with the price that was in effect at its start, so a range
-		// without recent price changes still shows the current price instead of nothing
-		const previous = fullHistory.findLast((entry) => entry.date < cutoffISO);
-		return previous ? [{ ...previous, date: cutoffISO }, ...inRange] : inRange;
+		return priceHistoryChartPoints(fullHistory, cutoffISO, observedThrough);
 	});
 
 	function isSaleEntry(
@@ -45,9 +50,78 @@
 		return entry.normalPrice != null && entry.price < entry.normalPrice;
 	}
 
-	const config = $derived.by<ChartConfiguration>(() => {
-		const history = filteredHistory;
-		const dates = history.map((entry) => entry.date);
+	const config = $derived.by<ChartConfiguration<'line'>>(() => {
+		const history = chartPoints.flatMap((point) => (point ? [point.entry] : []));
+		const visibleDates = chartPoints.flatMap((point) => (point ? [point.x] : []));
+		const firstDate = visibleDates[0];
+		const lastDate = visibleDates.at(-1);
+		const longRange =
+			firstDate != null && lastDate != null && lastDate - firstDate > 5 * 365 * 86400000;
+		const brandRed = '#e51b15'; // --color-brand-1
+		const lastPoint = chartPoints.findLast((point) => point !== null);
+		const latestPricePlugin: Plugin<'line'> = {
+			id: 'latestPrice',
+			afterDraw(chart) {
+				const { ctx, chartArea, scales } = chart;
+				// Chart.js draws once before its scales exist; throwing there would stop it from
+				// setting up the tooltip
+				if (!lastPoint || !chartArea || !scales.y) return;
+				const label = String(formatValue(lastPoint.y, AllColumns.Price));
+				ctx.save();
+				ctx.font = 'bold 11px Inter, system-ui, sans-serif';
+				const width = ctx.measureText(label).width + 12;
+				const x = Math.min(chartArea.right + 6, chart.width - width - 2);
+				const y = Math.max(
+					chartArea.top + 12,
+					Math.min(chartArea.bottom - 12, scales.y.getPixelForValue(lastPoint.y))
+				);
+				ctx.fillStyle = brandRed;
+				ctx.beginPath();
+				ctx.roundRect(x, y - 11, width, 22, 4);
+				ctx.fill();
+				ctx.fillStyle = '#ffffff';
+				ctx.textAlign = 'center';
+				ctx.textBaseline = 'middle';
+				ctx.fillText(label, x + width / 2, y);
+				ctx.restore();
+			}
+		};
+
+		// Where the price steps to a new one, and the range's opening price
+		const changeIndexes = chartPoints.flatMap((point, index) => {
+			if (!point) return [];
+			const previous = chartPoints.slice(0, index).findLast((other) => other !== null);
+			return !previous || previous.y !== point.y ? [index] : [];
+		});
+		// Each earlier price above the start of its step. The last step's price is in the tag
+		// on the axis already, and a label that would overlap the one before it is left out.
+		const priceChangeLabelsPlugin: Plugin<'line'> = {
+			id: 'priceChangeLabels',
+			afterDatasetsDraw(chart) {
+				const { ctx, chartArea, scales } = chart;
+				if (!chartArea || !scales.x || !scales.y) return;
+				ctx.save();
+				ctx.font = 'bold 11px Inter, system-ui, sans-serif';
+				ctx.fillStyle = getComputedStyle(chart.canvas).color;
+				ctx.textAlign = 'left';
+				ctx.textBaseline = 'bottom';
+				let previousEnd = -Infinity;
+				for (const index of changeIndexes.slice(0, -1)) {
+					const point = chartPoints[index]!;
+					const label = String(formatValue(point.y, AllColumns.Price));
+					const width = ctx.measureText(label).width;
+					const x = Math.min(
+						Math.max(chartArea.left, scales.x.getPixelForValue(point.x)) + 4,
+						chartArea.right - width
+					);
+					if (x < previousEnd + 6) continue;
+					const y = Math.max(chartArea.top + 14, scales.y.getPixelForValue(point.y) - 5);
+					ctx.fillText(label, x, y);
+					previousEnd = x + width;
+				}
+				ctx.restore();
+			}
+		};
 
 		// Sale periods are built from the price-history data (recorded at sync
 		// time) merged with the product's currently active campaign window, so
@@ -87,19 +161,6 @@
 			});
 		}
 
-		const firstIndexFor = (date: string) => {
-			for (let i = 0; i < dates.length; i++) {
-				if (dates[i] >= date) return i;
-			}
-			return Math.max(0, dates.length - 1);
-		};
-		const lastIndexFor = (date: string) => {
-			for (let i = dates.length - 1; i >= 0; i--) {
-				if (dates[i] <= date) return i;
-			}
-			return 0;
-		};
-
 		const now = new Date();
 		const todayISO = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(
 			now.getDate()
@@ -107,9 +168,9 @@
 
 		// Vertical "Kampanja" marker lines: one at the campaign start date and
 		// another at the end date once it is known.
-		const campaignLinePlugin = {
+		const campaignLinePlugin: Plugin<'line'> = {
 			id: 'campaignLinePlugin',
-			afterDatasetsDraw(chart: any) {
+			afterDatasetsDraw(chart) {
 				const { ctx, chartArea, scales } = chart;
 				const xScale = scales.x;
 				if (!chartArea || !xScale || windows.length === 0) return;
@@ -119,10 +180,12 @@
 				ctx.lineWidth = 1.5;
 				ctx.font = '12px Inter, system-ui, sans-serif';
 				for (const w of windows) {
-					const drawMarker = (date: string, index: number, label: string) => {
+					const drawMarker = (date: string, label: string) => {
+						const timestamp = historyTimestamp(date);
+						if (timestamp < xScale.min || timestamp > xScale.max) return;
 						const x = Math.max(
 							chartArea.left,
-							Math.min(chartArea.right, xScale.getPixelForValue(index))
+							Math.min(chartArea.right, xScale.getPixelForValue(timestamp))
 						);
 						const labelGap = 22;
 						ctx.setLineDash([6, 4]);
@@ -140,8 +203,8 @@
 						);
 						ctx.fillText(label, textX, chartArea.top + 3);
 					};
-					if (w.start) drawMarker(w.start, firstIndexFor(w.start), 'Kampanja alkaa');
-					if (w.end && w.end < todayISO) drawMarker(w.end, lastIndexFor(w.end), 'Kampanja päättyy');
+					if (w.start) drawMarker(w.start, 'Kampanja alkaa');
+					if (w.end && w.end < todayISO) drawMarker(w.end, 'Kampanja päättyy');
 				}
 				ctx.restore();
 			}
@@ -150,26 +213,46 @@
 		return {
 			type: 'line',
 			data: {
-				labels: dates.map((date) => new Date(date).toLocaleDateString('fi-FI')),
 				datasets: [
 					{
 						label: 'Hinta',
-						data: history.map((entry) => entry.price),
-						borderColor: 'rgba(75, 192, 192, 1)',
-						backgroundColor: 'rgba(75, 192, 192, 0.2)',
-						fill: true,
-						tension: 0.1,
-						pointRadius: history.map((entry) => (isSaleEntry(entry) ? 5 : 3)),
-						pointBackgroundColor: history.map((entry) =>
-							isSaleEntry(entry) ? 'rgba(239, 68, 68, 1)' : 'rgba(75, 192, 192, 1)'
+						data: chartPoints.map((point, index) => {
+							if (point) return { x: point.x, y: point.y };
+							const previous = chartPoints[index - 1];
+							const next = chartPoints[index + 1];
+							// Object-mode parsing needs an x value even for a skipped point.
+							return { x: previous && next ? (previous.x + next.x) / 2 : 0, y: Number.NaN };
+						}),
+						borderColor: brandRed,
+						borderWidth: 1.5,
+						backgroundColor: ({ chart }) => {
+							const area = chart.chartArea;
+							if (!area) return 'rgba(229, 27, 21, 0.15)';
+							const gradient = chart.ctx.createLinearGradient(0, area.top, 0, area.bottom);
+							gradient.addColorStop(0, 'rgba(229, 27, 21, 0.32)');
+							gradient.addColorStop(1, 'rgba(229, 27, 21, 0.015)');
+							return gradient;
+						},
+						fill: 'origin',
+						tension: 0,
+						// A price holds until the next point. Chart.js names it the other way round:
+						// 'after' would jump to the next price right after each point.
+						stepped: 'before',
+						spanGaps: true,
+						segment: {
+							borderDash: ({ p0, p1 }) => (p0.skip || p1.skip ? [5, 4] : [])
+						},
+						pointRadius: chartPoints.map((_, index) =>
+							chartPoints.length === 1 || changeIndexes.includes(index) ? 3 : 0
 						),
-						pointBorderColor: history.map((entry) =>
-							isSaleEntry(entry) ? 'rgba(255, 255, 255, 1)' : 'rgba(75, 192, 192, 1)'
-						),
+						pointHoverRadius: 4,
+						pointHitRadius: 12,
+						pointBackgroundColor: brandRed,
+						pointBorderWidth: 0,
 						tooltip: {
 							callbacks: {
 								label: function (context: any) {
-									const entry = history[context.dataIndex];
+									const entry = chartPoints[context.dataIndex]?.entry;
 									if (!entry) return '';
 									const label = `Hinta: ${formatValue(entry.price, AllColumns.Price)}`;
 									if (isSaleEntry(entry)) {
@@ -186,24 +269,62 @@
 			options: {
 				responsive: true,
 				maintainAspectRatio: false,
+				layout: { padding: { top: 18, left: 12, right: 6, bottom: 8 } },
 				scales: {
-					x: { title: { display: true, text: 'Päivämäärä' } },
-					y: {
+					x: {
+						type: 'linear',
+						...(firstDate != null && lastDate != null && firstDate < lastDate
+							? { min: firstDate, max: lastDate }
+							: {}),
+						grid: { display: false },
+						border: { display: false },
 						ticks: {
+							maxTicksLimit: 6,
+							maxRotation: 0,
+							padding: 10,
+							color: '#8293a3',
+							font: { family: 'Inter, system-ui, sans-serif', size: 11 },
+							callback: (value) =>
+								longRange
+									? new Date(Number(value)).getUTCFullYear().toString()
+									: new Date(Number(value)).toLocaleDateString('fi-FI', {
+											month: 'short',
+											year: '2-digit',
+											timeZone: 'UTC'
+										})
+						}
+					},
+					y: {
+						position: 'right',
+						beginAtZero: true,
+						grid: { color: 'rgba(130, 147, 163, 0.28)', drawTicks: false },
+						border: { display: false, dash: [3, 4] },
+						ticks: {
+							maxTicksLimit: 5,
+							padding: 10,
+							color: '#8293a3',
+							font: { family: 'Inter, system-ui, sans-serif', size: 11 },
 							callback: function (value) {
 								return String(formatValue(Number(value), AllColumns.Price));
 							}
-						},
-						title: { display: true, text: 'Hinta (€)' }
+						}
 					}
 				},
 				plugins: {
 					legend: { display: false, position: 'top' },
 					title: { display: false },
-					tooltip: { enabled: true, mode: 'index', intersect: false }
+					tooltip: {
+						enabled: true,
+						mode: 'index',
+						intersect: false,
+						callbacks: {
+							title: (contexts: TooltipItem<'line'>[]) =>
+								contexts[0]?.parsed.x != null ? formatHistoryDate(contexts[0].parsed.x) : ''
+						}
+					}
 				}
 			},
-			plugins: [campaignLinePlugin]
+			plugins: [campaignLinePlugin, priceChangeLabelsPlugin, latestPricePlugin]
 		};
 	});
 </script>
@@ -221,7 +342,11 @@
 
 {#if dev || fullHistory.length > 1}
 	<div class={_class}>
-		<ChartCard title="Hintahistoria" {config}>
+		<ChartCard
+			title="Hintahistoria"
+			subtitle={chartPoints.length ? '' : 'Valitulla aikavälillä ei ole hintahavaintoja.'}
+			{config}
+		>
 			{#snippet headerEnd()}
 				<div class="flex items-center gap-2">
 					{#if feedHref}

@@ -26,6 +26,7 @@
 		rankStoresByDistance
 	} from '$lib/utils/catalog/availability';
 	import { generateImageUrl } from '$lib/utils/catalog/alko';
+	import { loadLiveAvailability, type LiveStoreCounts } from '$lib/utils/catalog/liveAvailability';
 	import ErrorBoundary from '../widgets/ErrorBoundary.svelte';
 	import { safely } from '$lib/utils/app/errorAnalytics';
 	import { productDescription } from '$lib/utils/app/seo';
@@ -56,7 +57,8 @@
 		availabilityState,
 		availabilityStores,
 		preferredStore,
-		availabilityUpdated
+		availabilityUpdated,
+		pricesUpdated
 	}: {
 		product: PriceListItem;
 		/** Only the product itself until the price list has loaded, when the page renders from its stub */
@@ -67,6 +69,8 @@
 		availabilityStores: AvailabilityStore[];
 		preferredStore?: AvailabilityStore;
 		availabilityUpdated: Date | undefined;
+		/** When the price list was last synced, which the price history line runs up to */
+		pricesUpdated?: string;
 	} = $props();
 
 	// What the price box can say about the preferred store: with none chosen there's nothing to wait for
@@ -74,11 +78,63 @@
 		availabilityState === 'loading' && !$preferredStoreId ? 'loaded' : availabilityState
 	);
 
-	const rankedAvailabilityStores = $derived(
-		rankStoresByDistance(availabilityStores, preferredStore)
+	const productNumber = $derived(product[AllColumns.Number]);
+
+	// Live store counts from the API Worker. They're asked for right away when a preferred store
+	// is chosen, as the price box near the top shows it; otherwise only once the store list is
+	// about to scroll into view. Until they arrive, or if they can't, availability.json is used.
+	let liveRequestedFor = $state<string>();
+	let live = $state.raw<{ productNumber: string; counts: LiveStoreCounts } | null>(null);
+	/** The product whose live counts couldn't be had, so the page stops saying they're coming */
+	let liveFailedFor = $state<string>();
+
+	function requestLiveCounts() {
+		liveRequestedFor = productNumber;
+	}
+
+	$effect(() => {
+		if (preferredStore) requestLiveCounts();
+	});
+
+	$effect(() => {
+		const requested = liveRequestedFor;
+		if (!requested) return;
+		let cancelled = false;
+		loadLiveAvailability(requested).then((counts) => {
+			if (cancelled) return;
+			if (counts) live = { productNumber: requested, counts };
+			else liveFailedFor = requested;
+		});
+		return () => (cancelled = true);
+	});
+
+	// Counts for another product (just navigated away from) or before the store list loaded are left out
+	const liveStock = $derived(
+		availabilityState === 'loaded' && live?.productNumber === productNumber
+			? live.counts
+			: undefined
 	);
+	// Once the live counts are in, they decide which stores have the product: a store may have
+	// sold out or restocked since the sync. They need the store list for names and places.
+	const stockedStores = $derived(
+		liveStock
+			? [...liveStock.counts.keys()].flatMap((storeId) => availability.stores[storeId] ?? [])
+			: availabilityStores
+	);
+	const storesUpdated = $derived(liveStock?.fetchedAt ?? availabilityUpdated);
+	// The sync's store list is showing and this product's live counts are on their way to replace it
+	const liveLoading = $derived(
+		availabilityState === 'loaded' &&
+			liveRequestedFor === productNumber &&
+			live?.productNumber !== productNumber &&
+			liveFailedFor !== productNumber
+	);
+
+	const inNoStore = $derived(availabilityState === 'loaded' && stockedStores.length === 0);
+
+	const rankedAvailabilityStores = $derived(rankStoresByDistance(stockedStores, preferredStore));
 	const availableInPreferredStore = $derived(
-		preferredStore ? availabilityStores.some((store) => store.id === preferredStore.id) : false
+		preferredStore ? stockedStores.some((store) => store.id === preferredStore.id) : false
 	);
 	const closestAvailableStore = $derived(rankedAvailabilityStores[0]);
 	const closestAvailableDistance = $derived(
@@ -118,7 +174,11 @@
 	);
 	const campaignWindow = $derived(sale ? formatCampaignWindow(sale) : null);
 
-	afterNavigate(() => {
+	// Opened by the scanner: going back is going to scan the next one. Not kept in page.state, which
+	// replaceState calls on this page clear; a product opened from this one doesn't get it
+	let fromScanner = $state(false);
+	afterNavigate(({ from }) => {
+		fromScanner = from?.route.id === '/skanneri';
 		productElement?.scrollIntoView({ behavior: 'smooth' });
 	});
 
@@ -178,6 +238,17 @@
 >
 	<div class="flex w-full items-center gap-3.5">
 		<ProductBreadcrumb {product} {kaljakori} class="min-w-0 flex-1" />
+		{#if fromScanner}
+			<button
+				type="button"
+				class={twMerge(components.button({ size: 'sm' }), 'flex shrink-0 items-center gap-2')}
+				title="Skannaa seuraava"
+				onclick={() => history.back()}
+			>
+				<Icon name="barcode_reader" />
+				<span class="sr-only sm:not-sr-only">Skannaa seuraava</span>
+			</button>
+		{/if}
 		<ProductWatchButton
 			{product}
 			{availability}
@@ -252,10 +323,13 @@
 				{sale}
 				{campaignWindow}
 				storesState={preferredStoreState}
+				{inNoStore}
 				{preferredStore}
 				{availableInPreferredStore}
 				{closestAvailableStore}
 				{closestAvailableDistance}
+				storeCounts={liveStock?.counts}
+				{liveLoading}
 			/>
 
 			<ErrorBoundary name="product_size_dropdown">
@@ -271,10 +345,13 @@
 			{sale}
 			{campaignWindow}
 			storesState={preferredStoreState}
+			{inNoStore}
 			{preferredStore}
 			{availableInPreferredStore}
 			{closestAvailableStore}
 			{closestAvailableDistance}
+			storeCounts={liveStock?.counts}
+			{liveLoading}
 			{cheapestSize}
 		/>
 	</div>
@@ -299,7 +376,7 @@
 	>
 		<div class="flex flex-col gap-6">
 			<ErrorBoundary name="product_price_history">
-				<ProductPriceHistory {product} />
+				<ProductPriceHistory {product} observedThrough={pricesUpdated?.slice(0, 10)} />
 			</ErrorBoundary>
 			<ProductDetailsTable {product} class="hidden lg:block" />
 		</div>
@@ -310,11 +387,15 @@
 		>
 			<ProductStoreAvailability
 				id="myymalasaatavuus"
-				productNumber={product[AllColumns.Number]}
+				{productNumber}
 				stores={rankedAvailabilityStores}
+				allStores={Object.values(availability.stores)}
 				{availabilityState}
 				{preferredStore}
-				{availabilityUpdated}
+				updatedAt={storesUpdated}
+				liveCounts={liveStock?.counts}
+				{liveLoading}
+				onNearView={requestLiveCounts}
 			/>
 		</ErrorBoundary>
 	</div>

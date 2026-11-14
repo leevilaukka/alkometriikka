@@ -14,6 +14,7 @@ JSON files. A set of GitHub Actions workflows keeps those files fresh.
 | Prerender scripts | `scripts/site/prerender-*.ts`              | Writes an HTML stub per product, category, store and static page so crawlers see real metadata                   |
 | Feeds and sitemap | `scripts/site/rss.ts`, `sitemap.ts`        | `rss.xml`, `feed.json`, per-product and per-category RSS, `sitemap.xml`                                          |
 | OG image renderer | `scripts/og/`                              | Renders 1200×630 share cards with satori + resvg and uploads them to R2                                          |
+| API Worker        | `workers/api/`                             | `api.alkometriikka.fi`: looks up scanned barcodes from Alko's app API and hands them to the sync                 |
 | Workflows         | `.github/workflows/`                       | Glue: test, build, sync, render, deploy, archive                                                                 |
 
 ## Data flow
@@ -70,6 +71,7 @@ flowchart LR
     CF --> GH[GitHub Pages<br/>gh-pages branch]
     U --> CDN[cdn.alkometriikka.fi<br/>R2 custom domain]
     U --> A[analytics.alkometriikka.fi<br/>self-hosted Umami]
+    U --> API[api.alkometriikka.fi<br/>Worker + KV] --> MA[mobile-api.alko.fi]
     U --> IMG[images.alko.fi<br/>product photos]
 ```
 
@@ -92,6 +94,8 @@ flowchart LR
 - **Cloudflare R2** (bucket `alkometriikka-og`, custom domain `cdn.alkometriikka.fi`) holds the OG
   share images and a tarball backup of the Daily archive. Images are content-addressed, so a
   Cloudflare Cache Rule serves them as immutable.
+- **The API Worker** (`api.alkometriikka.fi`, a Workers custom domain) answers the scanner's
+  barcode lookups. See [API Worker](api-worker.md).
 - **Alko's image CDN** (`images.alko.fi`) serves product photos directly to the browser. OG
   images fall back to it when no rendered card exists.
 
@@ -138,6 +142,8 @@ src/
                         flags/      feature flags
                         constants/  columns, display config, badges, app keys
   routes/             SvelteKit routes
+workers/
+  api/                the api.alkometriikka.fi Worker
 static/               files copied as-is into the build (manifest, icons, notices.json…)
 tests/                bun:test suites, mirroring scripts/ and src/lib/
 ```

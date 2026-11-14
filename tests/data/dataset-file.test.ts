@@ -50,7 +50,7 @@ function dataset(): MigratedData {
 				hash: 'hash-3',
 				values: values('3'),
 				priceHistory: [],
-				meta: { detailCheckedAt: '2026-09-20' }
+				meta: { detailCheckedAt: '2026-09-20', detailFailedAt: '2026-09-25' }
 			}
 		}
 	};
@@ -83,7 +83,8 @@ describe('dataset file with separate hashes', () => {
 		expect(await Bun.file(hashesPath).json()).toEqual({
 			HashVersion: HASH_VERSION,
 			hashes: { '1': 'hash-1', '2': 'hash-2', '3': 'hash-3' },
-			detailCheckedAt: { '2': '2026-09-15', '3': '2026-09-20' }
+			detailCheckedAt: { '2': '2026-09-15', '3': '2026-09-20' },
+			detailFailedAt: { '3': '2026-09-25' }
 		});
 
 		const read = await readDataset(dataPath, hashesPath);
@@ -107,19 +108,19 @@ describe('dataset file with separate hashes', () => {
 		const data = dataset();
 		const notes = LEGACY_HEADERS.indexOf('Luonnehdinta');
 		const pairings = LEGACY_HEADERS.indexOf('Ruokasuositukset');
-		data.products!['1'].values[notes] = ['Keltainen', ' makea'];
-		data.products!['3'].values[notes] = [' makea', 'Punainen'];
-		data.products!['1'].values[pairings] = 'Kala, Äyriäiset';
+		data.products!['1'].values[notes] = ['keltainen', 'makea'];
+		data.products!['3'].values[notes] = ['makea', 'punainen'];
+		data.products!['1'].values[pairings] = ['Kala', 'Äyriäiset'];
 		await writeDataset(data, dataPath, hashesPath);
 
 		const written = await Bun.file(dataPath).json();
-		expect(written.dictionaries.Luonnehdinta).toEqual(['Keltainen', ' makea', 'Punainen']);
+		expect(written.dictionaries.Luonnehdinta).toEqual(['keltainen', 'makea', 'punainen']);
 		expect(written.products['3'].values[notes]).toEqual([1, 2]);
-		expect(written.products['1'].values[pairings]).toBe(0);
+		expect(written.products['1'].values[pairings]).toEqual([0, 1]);
 
 		const read = await readDataset(dataPath, hashesPath);
-		expect(read!.products!['3'].values[notes]).toEqual([' makea', 'Punainen']);
-		expect(read!.products!['1'].values[pairings]).toBe('Kala, Äyriäiset');
+		expect(read!.products!['3'].values[notes]).toEqual(['makea', 'punainen']);
+		expect(read!.products!['1'].values[pairings]).toEqual(['Kala', 'Äyriäiset']);
 	});
 
 	it('refuses a dataset whose removed products file is missing or short', async () => {
@@ -159,7 +160,10 @@ describe('dataset file with separate hashes', () => {
 		const counts = mergeHashes(data, { ...hashes, HashVersion: HASH_VERSION + 1 });
 		expect(counts).toEqual({ inline: 0, file: 0, recomputed: 3 });
 		// Detail check dates don't depend on the hash version
-		expect(data.products!['3'].meta).toEqual({ detailCheckedAt: '2026-09-20' });
+		expect(data.products!['3'].meta).toEqual({
+			detailCheckedAt: '2026-09-20',
+			detailFailedAt: '2026-09-25'
+		});
 	});
 
 	it('prefers inline hashes, then the hashes file', () => {

@@ -2,7 +2,7 @@
 	import { goto } from '$app/navigation';
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
-	import { tick } from 'svelte';
+	import { onMount, tick } from 'svelte';
 	import { twMerge } from 'tailwind-merge';
 	import type { Kaljakori } from '$lib/alko';
 	import type { AvailabilityData, ListObj, PriceListItem } from '$lib/types';
@@ -20,13 +20,8 @@
 	import { formatValue } from '$lib/utils/format/format';
 	import { addToList, createList, getItemQuantity, listToURI } from '$lib/utils/user/lists';
 	import { addProductToPunch, punchCount } from '$lib/utils/user/punch';
-	import {
-		clearCompare,
-		compareURL,
-		isInCompare,
-		MAX_COMPARE_PRODUCTS,
-		toggleCompare
-	} from '$lib/utils/user/compare';
+	import { clearCompare, compareURL, isInCompare, toggleCompare } from '$lib/utils/user/compare';
+	import { COMPARE_FULL_TEXT } from '$lib/utils/user/productActions';
 	import {
 		isWatched,
 		unwatchProduct,
@@ -34,19 +29,23 @@
 		watchSnapshot
 	} from '$lib/utils/user/watchlist';
 	import { resolvePreferredStore } from '$lib/utils/catalog/availability';
+	import { isStaleArrival } from '$lib/utils/catalog/status';
 	import { requestSettingsOpen } from '$lib/utils/app/settings';
 	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 	import { handleShare, shareTypeFromRoute } from '$lib/utils/app/share';
 	import { showToast } from '$lib/utils/app/toast.svelte';
 	import {
 		normalizeSearchText,
+		onPaletteOpenRequested,
 		parseScopePrefix,
 		rankEntries,
 		SCOPE_PREFIXES,
+		SCOPE_SYMBOLS,
 		type SearchEntry,
 		type SearchScope
 	} from '$lib/utils/app/commandPalette';
 	import { appPath } from '$lib/utils/app/paths';
+	import { navItems } from '$lib/utils/app/nav';
 	import { components } from '$lib/utils/ui/styles';
 	import Icon from './Icon.svelte';
 	import ProductImage from './ProductImage.svelte';
@@ -107,12 +106,13 @@
 	/** Results per group when narrowed to one scope */
 	const SCOPED_LIMIT = 50;
 
-	const SCOPES: { scope: Kind; label: string; prefix: string }[] = (
+	const SCOPES: { scope: Kind; label: string; prefix: string; symbol?: string }[] = (
 		['product', 'category', 'store', 'list', 'page', 'action'] as const
 	).map((scope) => ({
 		scope,
 		label: GROUP_TITLES[scope],
-		prefix: SCOPE_PREFIXES.find((entry) => entry.scope === scope)!.prefix
+		prefix: SCOPE_PREFIXES.find((entry) => entry.scope === scope)!.prefix,
+		symbol: SCOPE_SYMBOLS.find((entry) => entry.scope === scope)?.prefix
 	}));
 
 	const SCOPE_PLACEHOLDERS: Record<Kind, string> = {
@@ -158,6 +158,7 @@
 		setScope(order[(order.indexOf(scope) + delta + order.length) % order.length]);
 	}
 
+	// Every page in the header menu, so the two can't drift apart, with the front page first
 	const pages: PaletteItem[] = [
 		{
 			id: 'page:/',
@@ -167,94 +168,14 @@
 			href: resolve('/'),
 			keywords: 'tuotteet hinnasto haku'
 		},
-		{
-			id: 'page:/listat',
+		...navItems.map<PaletteItem>((item) => ({
+			id: `page:${item.href}`,
 			kind: 'page',
-			label: 'Listat',
-			icon: 'list_ul',
-			href: resolve('/listat'),
-			keywords: 'ostoslista'
-		},
-		{
-			id: 'page:/daily',
-			kind: 'page',
-			label: 'Daily',
-			icon: 'flame',
-			href: resolve('/daily'),
-			keywords: 'peli visa'
-		},
-		{
-			id: 'page:/kategoriat',
-			kind: 'page',
-			label: 'Kategoriat',
-			icon: 'wine',
-			href: resolve('/kategoriat/'),
-			keywords: 'tyypit'
-		},
-		{
-			id: 'page:/hinnanmuutokset',
-			kind: 'page',
-			label: 'Hinnanmuutokset',
-			icon: 'trending_down',
-			href: resolve('/hinnanmuutokset'),
-			keywords: 'alennukset halpenivat kallistuivat'
-		},
-		{
-			id: 'page:/seuratut',
-			kind: 'page',
-			label: 'Seuratut',
-			icon: 'bell',
-			href: resolve('/seuratut'),
-			keywords: 'seuranta seurattavat muutokset hinta saatavuus'
-		},
-		{
-			id: 'page:/myymalat',
-			kind: 'page',
-			label: 'Myymälät',
-			icon: 'store',
-			href: resolve('/myymalat'),
-			keywords: 'alko kaupat aukioloajat'
-		},
-		{
-			id: 'page:/kompassi',
-			kind: 'page',
-			label: 'Kompassi',
-			icon: 'compass',
-			href: resolve('/kompassi'),
-			keywords: 'lähin myymälä'
-		},
-		{
-			id: 'page:/daily/arkisto',
-			kind: 'page',
-			label: 'Daily-arkisto',
-			icon: 'archive',
-			href: resolve('/daily/arkisto'),
-			keywords: 'peli'
-		},
-		{
-			id: 'page:/laskin',
-			kind: 'page',
-			label: 'Laskin',
-			icon: 'calculator',
-			href: resolve('/laskin'),
-			keywords: 'promille annokset'
-		},
-		{
-			id: 'page:/boolilaskuri',
-			kind: 'page',
-			label: 'Boolilaskuri',
-			icon: 'cocktail',
-			href: resolve('/boolilaskuri'),
-			keywords: 'booli resepti juhlat lasi hinta'
-		},
-		{
-			id: 'page:/tilastot',
-			kind: 'page',
-			label: 'Tilastot',
-			icon: 'stats',
-			href: resolve('/tilastot'),
-			keywords: 'kuvaajat'
-		}
+			label: item.name,
+			icon: item.icon,
+			href: appPath(item.href),
+			keywords: 'keywords' in item ? item.keywords : undefined
+		}))
 	];
 
 	/** The product whose page is open, for the "Tämä tuote" actions */
@@ -296,8 +217,7 @@
 				keywords: 'vertaa vertailu',
 				stay: true,
 				run: () => {
-					if (!toggleCompare(number))
-						return `Voit vertailla korkeintaan ${MAX_COMPARE_PRODUCTS} tuotetta kerrallaan`;
+					if (!toggleCompare(number)) return COMPARE_FULL_TEXT;
 					return inCompare ? 'Poistettu vertailusta' : 'Lisätty vertailuun';
 				}
 			},
@@ -313,6 +233,7 @@
 					stay: true,
 					run: () => {
 						addToList(list, number);
+						sendAnalyticsEvent('add_to_list', { product_number: number });
 						return `Lisätty listaan ${list.name}`;
 					}
 				};
@@ -346,15 +267,20 @@
 						href: resolve(`/vastaavat/${number}/`),
 						keywords: 'samankaltaiset korvaava'
 					},
-			{
-				id: 'action:product-alko',
-				kind: 'action',
-				label: 'Avaa Alkon sivuilla',
-				icon: 'arrow_up_right_square',
-				href: `https://www.alko.fi/tuotteet/${number}`,
-				external: true,
-				keywords: 'alko.fi osta tilaa'
-			}
+			// alko.fi has no page for these
+			...(product[AllColumns.RemovedFromSelection] || isStaleArrival(product)
+				? []
+				: [
+						{
+							id: 'action:product-alko',
+							kind: 'action',
+							label: 'Avaa Alkon sivuilla',
+							icon: 'arrow_up_right_square',
+							href: `https://www.alko.fi/tuotteet/${number}`,
+							external: true,
+							keywords: 'alko.fi osta tilaa'
+						} satisfies PaletteItem
+					])
 		];
 	});
 
@@ -393,8 +319,7 @@
 	}
 
 	function createNamedList(name: string) {
-		createList(name);
-		const list = lists[lists.length - 1];
+		const list = createList(name);
 		sendAnalyticsEvent('create_list');
 		goto(resolve(`/listat?list=${listToURI(list)}`));
 	}
@@ -759,10 +684,10 @@
 		$searchQuery = value;
 	}
 
-	export async function openPalette() {
+	export async function openPalette(initialScope: Kind | null = null) {
 		if (!dialogElement || dialogElement.open) return;
 		query = '';
-		scope = null;
+		scope = initialScope;
 		notice = '';
 		activeIndex = 0;
 		open = true;
@@ -771,6 +696,9 @@
 		await tick();
 		inputElement?.focus();
 	}
+
+	// Other pages open it too (the scanner's "Hae nimellä")
+	onMount(() => onPaletteOpenRequested((requested) => openPalette(requested ?? null)));
 
 	export function closePalette() {
 		dialogElement?.close();
@@ -876,7 +804,7 @@
 {#if showButton}
 	<button
 		type="button"
-		onclick={openPalette}
+		onclick={() => openPalette()}
 		aria-label="Hae kaikkialta"
 		aria-keyshortcuts={isMac ? 'Meta+K' : 'Control+K'}
 		title={`Hae kaikkialta (${shortcutLabel})`}
@@ -932,13 +860,13 @@
 		aria-label="Rajaa hakua"
 		class="flex gap-1 overflow-x-auto border-b border-primary px-2 py-1.5"
 	>
-		{#each [{ scope: null, label: 'Kaikki', prefix: '' }, ...SCOPES] as option (option.label)}
+		{#each [{ scope: null, label: 'Kaikki', prefix: '', symbol: undefined }, ...SCOPES] as option (option.label)}
 			<button
 				type="button"
 				tabindex="-1"
 				aria-pressed={scope === option.scope}
 				title={option.prefix
-					? `Rajaa: ${option.label} (kirjoita ${option.prefix})`
+					? `Rajaa: ${option.label} (kirjoita ${option.prefix}${option.symbol ? ` tai ${option.symbol}` : ''})`
 					: 'Hae kaikkialta'}
 				onmousedown={(event) => event.preventDefault()}
 				onclick={() => setScope(option.scope)}

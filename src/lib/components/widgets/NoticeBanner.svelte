@@ -34,6 +34,7 @@
 	import { LocalStorageKeys } from '$lib/utils/constants/app';
 	import { timeConfig } from '$lib/utils/constants/display';
 	import { LocalStorageManager } from '$lib/utils/app/storage';
+	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
 	import {
 		CACHED_NOTICE_ID,
 		STALE_NOTICE_ID,
@@ -99,6 +100,16 @@
 		dismissed = new Set([...dismissed, id]);
 		LocalStorageManager.setItem(LocalStorageKeys.DismissedNotices, [...dismissed]);
 	}
+
+	function close(id: string) {
+		dismiss(id);
+		sendAnalyticsEvent('notice_dismiss', { id: id.split(':')[0] });
+	}
+
+	function followLink(notice: Notice) {
+		sendAnalyticsEvent('notice_click', { id: notice.id });
+		if (notice.dismissible && notice.dismissOnLinkClick) dismiss(notice.id);
+	}
 </script>
 
 <svelte:window ononline={() => (online = true)} onoffline={() => (online = false)} />
@@ -123,7 +134,8 @@
 				<a
 					href={notice.link.href.startsWith('/') ? appPath(notice.link.href) : notice.link.href}
 					target={notice.link.href.startsWith('/') ? undefined : '_blank'}
-					class="font-semibold underline">{notice.link.label}</a
+					class="font-semibold underline"
+					onclick={() => followLink(notice)}>{notice.link.label}</a
 				>
 			{/if}
 		</p>
@@ -131,7 +143,7 @@
 			<button
 				aria-label="Sulje ilmoitus"
 				class={twMerge(components.button({ type: 'noborder' }), 'p-1 text-current')}
-				onclick={() => dismiss(notice.id)}
+				onclick={() => close(notice.id)}
 			>
 				<Icon name="x" />
 			</button>

@@ -14,26 +14,31 @@
 	const {
 		action,
 		show,
-		useSearch = false
+		useSearch = false,
+		class: _class = ''
 	}: {
 		action?: (list: ListObj) => void;
 		show?: { delete?: boolean; length?: boolean; share?: boolean };
 		useSearch?: boolean;
+		class?: string;
 	} = $props();
 	const time = new Date();
 
 	function handleCreateList() {
-		createList(
+		const list = createList(
 			`Uusi lista - ${time.getDate()}.${time.getMonth() + 1}.${time.getFullYear()} ${time.getHours() < 10 ? '0' : ''}${time.getHours()}.${time.getMinutes() < 10 ? '0' : ''}${time.getMinutes()}`
 		);
 		sendAnalyticsEvent('create_list');
+		// Picking lists for something (the add popup): the new list is the one picked
+		action?.(list);
 	}
 </script>
 
 <div
 	class={twMerge(
 		'flex w-[min(80ch,_100%)] flex-col gap-4',
-		lists.length === 0 && 'h-full justify-center'
+		lists.length === 0 && 'h-full justify-center',
+		_class
 	)}
 >
 	{#if lists.length > 0}
@@ -80,9 +85,7 @@
 									if (!shared) showToast({ text: 'Linkki kopioitu leikepöydälle', anchor });
 								}}
 							>
-								<Icon name="share" class="inline-block " /><span class="sr-only md:not-sr-only"
-									>Jaa</span
-								>
+								<Icon name="share" /><span class="sr-only md:not-sr-only">Jaa</span>
 							</button>
 						{/if}
 						{#if show?.delete}
@@ -106,14 +109,17 @@
 			{/each}
 		</div>
 	{:else}
-		<div class="mx-auto prose text-center dark:prose-invert">
-			<h2>Ei listoja!</h2>
-			<p>Luo uusi lista alla olevasta painikkeesta!</p>
-		</div>
+		<section class="flex flex-col gap-3 rounded border border-primary bg-secondary p-5">
+			<p>Et ole vielä luonut yhtään listaa.</p>
+			<p class="text-sm text-secondary">
+				Kokoa listaan tuotteita, joita haluat vertailla, ostaa tai jakaa. Luo ensimmäinen lista alla
+				olevasta painikkeesta.
+			</p>
+		</section>
 	{/if}
 	<button
 		onclick={() => handleCreateList()}
 		class={twMerge(components.button({ type: 'positive' }), 'mx-auto w-full')}
-		><span>Uusi lista</span><Icon name="plus" /></button
+		><span>{action ? 'Lisää uuteen listaan' : 'Uusi lista'}</span><Icon name="plus" /></button
 	>
 </div>

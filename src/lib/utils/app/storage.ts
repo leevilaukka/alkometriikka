@@ -8,6 +8,9 @@ import type {
 } from '$lib/daily/types';
 import { LocalStorageKeys } from '../constants/app';
 import type { PunchRecipe, SavedPunch } from '../catalog/punch';
+import type { NavHref } from './nav';
+
+export type LocalStorageKey = keyof LocalStorageValueMap;
 
 type LocalStorageValueMap = {
 	[LocalStorageKeys.PersonalInfo]: PersonalInfo;
@@ -20,9 +23,13 @@ type LocalStorageValueMap = {
 	[LocalStorageKeys.AppVersion]: string;
 	[LocalStorageKeys.CurrentFilters]: FilterValues;
 	[LocalStorageKeys.Theme]: '' | 'dark' | 'light';
+	/** Missing until the user picks their own header buttons, so changes to the defaults reach everyone else */
+	[LocalStorageKeys.HeaderSlots]: NavHref[];
 	[LocalStorageKeys.ViewedShares]: string[];
 	[LocalStorageKeys.CompareProducts]: string[];
 	[LocalStorageKeys.CompareHighlightDifferences]: boolean;
+	/** Ids of the sidebars folded into a strip, see `FoldableSidebar` */
+	[LocalStorageKeys.FoldedSidebars]: string[];
 	[LocalStorageKeys.Watchlist]: WatchedProduct[];
 	[LocalStorageKeys.PunchDraft]: PunchRecipe;
 	[LocalStorageKeys.PunchRecipes]: SavedPunch[];
@@ -40,7 +47,29 @@ type LocalStorageValueMap = {
 	[LocalStorageKeys.DailyArchiveRuns]: ArchiveRuns;
 };
 
-type LocalStorageKey = keyof LocalStorageValueMap;
+/** Always part of an export, so an import can tell which version wrote it */
+export const persistentExportKeys: LocalStorageKey[] = [
+	LocalStorageKeys.AppVersion,
+	LocalStorageKeys.ListsVersion
+];
+
+/** The keys a user can pick to export or import, with the name shown for each */
+const exportableKeyNames: Partial<Record<LocalStorageKey, string>> = {
+	[LocalStorageKeys.PersonalInfo]: 'Henkilökohtaiset tiedot',
+	[LocalStorageKeys.PreferredStore]: 'Oma myymälä',
+	[LocalStorageKeys.Lists]: 'Listat',
+	[LocalStorageKeys.Watchlist]: 'Seuratut tuotteet',
+	[LocalStorageKeys.PunchRecipes]: 'Boolireseptit',
+	[LocalStorageKeys.CurrentFilters]: 'Suodattimet',
+	[LocalStorageKeys.Theme]: 'Teema'
+};
+
+export const exportableKeys = Object.keys(exportableKeyNames) as LocalStorageKey[];
+
+export function getFriendlyNameForStorageKey(key: LocalStorageKey): string {
+	return exportableKeyNames[key] ?? key;
+}
+
 type LocalStorageArrayKey = {
 	[K in LocalStorageKey]: LocalStorageValueMap[K] extends readonly unknown[] ? K : never;
 }[LocalStorageKey];

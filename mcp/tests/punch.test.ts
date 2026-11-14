@@ -20,6 +20,7 @@ describe('createPunchLink', () => {
 
 		expect(decodePunch(booliParam(result.url))).toEqual({
 			name: 'Juhannusbooli',
+			description: '',
 			glass: 0.25,
 			people: 10,
 			ingredients: [

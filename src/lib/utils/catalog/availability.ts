@@ -72,6 +72,21 @@ export function getStoreDistance(
 	return EARTH_RADIUS_KM * 2 * Math.atan2(Math.sqrt(haversine), Math.sqrt(1 - haversine));
 }
 
+/** The stores whose name, address, postal code or post office contains `query`. */
+export function filterStoresByQuery(
+	stores: AvailabilityStore[],
+	query: string
+): AvailabilityStore[] {
+	const normalizedQuery = query.trim().toLocaleLowerCase('fi-FI');
+	return stores.filter((store) =>
+		[store.name, store.address, store.postalCode, store.postOffice]
+			.filter(Boolean)
+			.join(' ')
+			.toLocaleLowerCase('fi-FI')
+			.includes(normalizedQuery)
+	);
+}
+
 /** Resolves the preferred store setting, where `AUTO_STORE_ID` means the store nearest to `location`. */
 export function resolvePreferredStore(
 	stores: Record<string, AvailabilityStore>,

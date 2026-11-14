@@ -35,16 +35,17 @@ working copies from it, so it is effectively the database.
                        static/ files, CNAME, .nojekyll
 data.json              dataset: products in the selection (fetchData)
 data-removed.json      dataset: products removed from the selection (fetchData)
-hashes.json            change-detection hashes (fetchData)
 availability.json      stores and stock (fetchData)
-stock/                 stock history: state, per-product counts, per-store arrivals (fetchData)
-og-images.json         product OG manifest (fetchData)
-og-categories.json     category OG manifest (fetchData)
+data/                  the pipeline's own files, carried over whole by build.yml:
+  hashes.json            change-detection hashes (fetchData)
+  og-images.json         product OG manifest (fetchData)
+  og-categories.json     category OG manifest (fetchData)
+  tuotteet-manifest.json prerender keys (build + fetchData)
+  stock/                 stock history: state, per-product counts, per-store arrivals (fetchData)
 sitemap.xml            (fetchData)
 rss.xml, feed.json     aggregate feeds (fetchData)
 rss/                   per-product and per-category feeds (fetchData)
 tuotteet/              product stubs (build + fetchData)
-tuotteet-manifest.json prerender keys (build + fetchData)
 kategoriat/            category stubs (build + fetchData)
 myymalat/, laskin/, tilastot/, kompassi/, hinnanmuutokset/, listat/, seuratut/   static stubs (build + fetchData)
 daily/                 manifests, index.html stub, archive/ (fetchData + archiveDaily)
@@ -52,7 +53,9 @@ notices.json           site notices (build, from static/)
 ```
 
 The runtime files are gitignored on `main`, so every workflow that writes `gh-pages` force-adds
-them with `git add -f`.
+them with `git add -f`. A new file the pipeline needs between runs goes under `data/`, so
+`build.yml` carries it over without a change; public URLs (feeds, the sitemap, files the app or
+outside users load by name) stay at the root.
 
 ## `test.yml`
 
@@ -65,22 +68,26 @@ because `build.yml` tests before deploying.
 Deploys a new version of the app. The site code changes, but the data must not.
 
 1. Run the full test suite.
-2. **Seed** `static/` with the deployed `data.json`, `data-removed.json`, `availability.json`, `og-images.json` and
-   `og-categories.json`, so the build copies them into `build/`.
+2. **Seed** `static/` with the deployed `data.json`, `data-removed.json`, `availability.json` and
+   `data/`, so the build copies them into `build/`.
 3. `vite build` with `BASE_PATH=''`, then minify the vendored `auto-events.js` in the output.
-4. **Prerender gate**: compare `data.json`, `data-removed.json`, `404.html` and `og-images.json` in `build/` with the
-   deployed ones. If all three are byte-identical, product pages don't need regenerating.
-5. **Restore** the deployed `tuotteet/`, `tuotteet-manifest.json` and `kategoriat/` into `build/`,
-   so unchanged product pages carry over and the incremental prerender can skip them.
+4. **Prerender gate**: compare `data.json`, `data-removed.json`, `404.html` and `data/og-images.json` in `build/`
+   with the deployed ones. If all four are byte-identical, product pages don't need regenerating.
+5. **Restore** the deployed `tuotteet/` and `kategoriat/` into `build/`, so unchanged product
+   pages carry over and the incremental prerender (keys in the seeded `data/tuotteet-manifest.json`)
+   can skip them.
 6. **Restore** the deployed `daily/` into `build/`, migrating old archive folder names. If it can't
    be restored the build **fails**, because a deploy without it would let the next bake re-roll
    games in progress.
 7. Prerender product and category pages if the gate said so. Always prerender static and store
    pages (cheap, and they embed the new page shell).
 8. Delete everything except `build/`, move `build/*` to the root.
-9. Restore `hashes.json`, `sitemap.xml`, `rss.xml`, `feed.json`, `rss/` and `stock/` from `gh-pages`.
+9. Restore `sitemap.xml`, `rss.xml`, `feed.json` and `rss/` from `gh-pages`.
 10. Write `CNAME` (`alkometriikka.fi`) and `.nojekyll`.
-11. Commit to a fresh `gh-pages` branch and **force-push** it.
+11. Commit to a fresh `gh-pages` branch, force-adding the runtime files (`RUNTIME_FILES`). The
+    build **fails** if any file under them that is on `gh-pages` is missing from the commit, or if
+    `gh-pages` couldn't be fetched to check, so a broken restore can't wipe data. Otherwise
+    **force-push** it.
 12. Purge `notices.json` and `service-worker.js` from Cloudflare, so a notice edited on `main`
     shows immediately and browsers don't install a stale service worker that would try to
     precache `_app` files the force-push removed.
@@ -105,12 +112,17 @@ flowchart LR
 
 1. Run `tests/data` and `tests/alko`. The sync rewrites the dataset the whole site reads, so it
    never runs with lifecycle or schema code that fails its tests.
-2. Seed `data.json`, `data-removed.json` and `hashes.json` from `gh-pages`.
+2. Seed `data.json`, `data-removed.json` and `data/hashes.json` from `gh-pages` (the job works
+   with flat files: `hashes.json`, `og-images.json`, … in the workspace root).
 3. `scripts/data/rehash.ts` via the `rehash-dataset` action.
-4. Run the sync up to 3 times, 60 s apart. Exit code 3 (safeguards rejected the data) fails
+4. **Cooldown gate**: in a run triggered by a build, if the seeded `data.json`'s `LastSynced` is
+   less than 2 hours old (`SYNC_COOLDOWN_MINUTES`), skip the fetch and use the deployed
+   `availability.json` instead, so a burst of pushes still deploys each build without hitting
+   Alko's API every time. Scheduled and manual runs always fetch.
+5. Run the sync up to 3 times, 60 s apart. Exit code 3 (safeguards rejected the data) fails
    immediately without retrying. The **force** input sets `ALKO_SYNC_FORCE=1`. Each attempt
    appends its outcome to `sync-report.ndjson`, uploaded as an artifact even when the job fails.
-5. Upload `data.json`, `data-removed.json`, `hashes.json` and `availability.json` as artifacts.
+6. Upload `data.json`, `data-removed.json`, `hashes.json` and `availability.json` as artifacts.
 
 **og-images** renders and uploads product and category OG images for changed products, updating
 the manifests checked out from `gh-pages`. Both steps are `continue-on-error`: if R2 is down, pages
@@ -125,14 +137,14 @@ deploy with the previous manifests and fall back to Alko's photos.
 3. Seed `daily/` from `gh-pages`. Fails if it's missing.
 4. `bun run daily` (bake and archive).
 5. Render today's Daily OG card and stub (best effort).
-6. Update the [stock history](data/stock-history.md) in `../gh-pages/stock` against the deployed
-   (previous) `availability.json` (best effort).
-7. Copy the OG manifests in, prerender product and category pages incrementally against the
+6. Update the [stock history](data/stock-history.md) in `../gh-pages/data/stock` against the deployed
+   (previous) `availability.json` (best effort; skipped when the sync didn't fetch).
+7. Copy the hashes and OG manifests into `data/`, prerender product and category pages incrementally against the
    deployed `404.html`, copy the data and feed files in, prerender static and store pages, and
    replace `daily/` and `rss/`.
 8. Commit "Update price list and static product pages [skip ci]" and push (a normal push, not a
    force-push).
-9. Purge `data.json`, `data-removed.json`, `availability.json`, `rss.xml` and `feed.json` from Cloudflare. This runs
+9. Purge `data.json`, `data-removed.json`, `data.minimal.json`, `availability.json`, `rss.xml` and `feed.json` from Cloudflare. This runs
    only after the push, so a request can't re-cache the old files between the purge and the new
    files going live.
 
@@ -201,6 +213,7 @@ in the public Actions logs.
 | `CF_R2_ACCESS_KEY_ID`     | secret   | fetchData, archiveDaily, build | R2 S3 access key                                            |
 | `CF_R2_SECRET_ACCESS_KEY` | secret   | fetchData, archiveDaily, build | R2 S3 secret                                                |
 | `CF_R2_ACCOUNT_ID`        | secret   | fetchData, archiveDaily, build | Cloudflare account id, part of the S3 endpoint              |
+| `GTIN_EXPORT_TOKEN`       | secret   | fetchData                      | Reads scanned barcodes from the [API Worker](api-worker.md) |
 | `CF_R2_BUCKET`            | variable | fetchData, archiveDaily, build | Bucket name (default `alkometriikka-og`)                    |
 | `CF_R2_REGION`            | variable | fetchData, archiveDaily, build | R2 jurisdiction (default `eu`)                              |
 | `OG_CDN_BASE`             | variable | fetchData, archiveDaily        | Public bucket URL (default `https://cdn.alkometriikka.fi`)  |

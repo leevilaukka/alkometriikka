@@ -8,6 +8,14 @@ export function isSimilarString(s1: string, s2: string, threshold: number = 0.4)
 	return (longerLength - distance) / longerLength > threshold;
 }
 
+/** Normalised edit similarity in [0, 1], case-insensitive (1 = identical). */
+export function similarity(s1: string, s2: string) {
+	const longerLength = Math.max(s1.length, s2.length);
+	if (longerLength == 0) return 1.0;
+	const distance = boundedEditDistance(s1.toLowerCase(), s2.toLowerCase(), longerLength);
+	return (longerLength - distance) / longerLength;
+}
+
 let previousRow = new Int32Array(64);
 let currentRow = new Int32Array(64);
 
@@ -35,42 +43,4 @@ function boundedEditDistance(a: string, b: string, cap: number) {
 		[previous, current] = [current, previous];
 	}
 	return previous[b.length];
-}
-
-export function similarity(s1: string, s2: string) {
-	let longer = s1;
-	let shorter = s2;
-	if (s1.length < s2.length) {
-		longer = s2;
-		shorter = s1;
-	}
-	let longerLength = longer.length;
-	if (longerLength == 0) {
-		return 1.0;
-	}
-	return (longerLength - editDistance(longer, shorter)) / parseFloat(longerLength.toString());
-}
-
-export function editDistance(s1: string, s2: string) {
-	s1 = s1.toLowerCase();
-	s2 = s2.toLowerCase();
-
-	let costs = new Array();
-	for (let i = 0; i <= s1.length; i++) {
-		let lastValue = i;
-		for (let j = 0; j <= s2.length; j++) {
-			if (i == 0) costs[j] = j;
-			else {
-				if (j > 0) {
-					let newValue = costs[j - 1];
-					if (s1.charAt(i - 1) != s2.charAt(j - 1))
-						newValue = Math.min(Math.min(newValue, lastValue), costs[j]) + 1;
-					costs[j - 1] = lastValue;
-					lastValue = newValue;
-				}
-			}
-		}
-		if (i > 0) costs[s2.length] = lastValue;
-	}
-	return costs[s2.length];
 }

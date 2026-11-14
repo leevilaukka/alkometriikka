@@ -15,6 +15,7 @@
         "satori": "^0.33.4",
         "tailwind-merge": "^3.6.0",
         "zod": "^4.6.5",
+        "zxing-wasm": "3.1.3",
       },
       "devDependencies": {
         "@sveltejs/adapter-auto": "^6.1.1",

@@ -1,7 +1,8 @@
 # Dataset format
 
-The sync writes four files. All four are published at the site root on `gh-pages`, and all but
-`hashes.json` are linked from the app's settings dialog for anyone who wants the raw data.
+The sync writes four files, plus a fifth derived from them. The first three and `data.minimal.json` are published at the site root on `gh-pages` and
+linked from the app's settings dialog for anyone who wants the raw data; `hashes.json` is stored
+as `data/hashes.json` with the pipeline's other files.
 
 | File                | Size (Oct 2026)          | Loaded by the app        | Purpose                                                   |
 | ------------------- | ------------------------ | ------------------------ | --------------------------------------------------------- |
@@ -9,6 +10,7 @@ The sync writes four files. All four are published at the site root on `gh-pages
 | `data-removed.json` | ~1.4 MB, ~0.23 MB brotli | Yes, after first render  | Products removed from the selection, in the same format   |
 | `availability.json` | ~1.3 MB, ~0.2 MB gzipped | Yes, after first render  | Stores and which stores stock each product                |
 | `hashes.json`       | ~0.55 MB gzipped         | No                       | Change-detection hashes, used only by the sync            |
+| `data.minimal.json` | ~2.4 MB, ~0.55 MB gzip   | No                       | 13 of the columns for the Bläkkiskili Telegram bot        |
 
 `packDataset` and `unpackDataset` (`src/lib/utils/catalog/datasetFile.ts`) split and join the two
 dataset files and their word lists. Scripts read both through `readStoredDataset`
@@ -50,7 +52,7 @@ Type definitions: `scripts/data/types.ts` (the strict writer side) and
 		}
 	},
 	"index": {/* precomputed filter values, see below */},
-	"dictionaries": { "Luonnehdinta": ["Keltainen", " makea", …], "Ruokasuositukset": […] },
+	"dictionaries": { "Luonnehdinta": ["keltainen", "makea", …], "Ruokasuositukset": ["Kala", …] },
 	"removedProducts": 2501 // how many products data-removed.json holds
 }
 ```
@@ -78,10 +80,12 @@ products ever dropped are gifts and drinking accessories (main group `mainGroup_
   they're on sale. The app then calculates it as `(Hinta − Pantti) / Pullokoko`, which is also how
   Alko's own litre prices work out.
 - **`values`** is aligned with `schema`. Values are mostly what the preprocessors in
-  `FIELD_TO_LEGACY_SCHEMA` produce: strings, numbers, `null`, and for `Luonnehdinta` an array of
-  strings. `Luonnehdinta` and `Ruokasuositukset` are stored as indexes into the file's
-  `dictionaries` (a number for a string, an array of numbers for an array), which is about 8 % of
-  the compressed file smaller than repeating the words in every product.
+  `FIELD_TO_LEGACY_SCHEMA` produce: strings, numbers, `null`, and for `Luonnehdinta` and
+  `Ruokasuositukset` arrays of trimmed words (tasting notes lowercased; the app capitalizes them).
+  These two are stored as indexes into the file's `dictionaries` (an array of numbers), which is
+  about 6 % of the compressed file smaller than repeating the words in every product. Older
+  datasets have them in other shapes (a joined string, words with a leading space, sentence case);
+  `upgradeStoredValues` converts those on read, and the app reads both.
 - **`priceHistory`** gets a new point only when the price differs from the last point. The first
   point is the first time the sync saw the product. Points recorded during an active campaign also
   carry `normalPrice`, `campaignStart` and `campaignEnd`, so the price chart can draw past sale
@@ -152,7 +156,7 @@ so that an older deployed app bundle can still read a newer dataset positionally
 | 15  | `Etikettimerkintöjä`     | —                                      |        | Always `null`                                                                                                          |
 | 16  | `Huomautus`              | `moreInfo` (detail)                    |        | Free-text notes, e.g. "Vegaaneille soveltuva tuote", "Saattaa sisältää sakkaa". Not in the declared API types          |
 | 17  | `Rypäleet`               | `grapeVarieties[].label` (detail)      |        | Joined with `, `                                                                                                       |
-| 18  | `Luonnehdinta`           | `taste`                                | ✓      | Split on `,` into an array                                                                                             |
+| 18  | `Luonnehdinta`           | `taste`                                | ✓      | Split on `,` into trimmed, lowercased words                                                                            |
 | 19  | `Pakkaustyyppi`          | `packageTypes`                         |        | Label part of `id\|key\|label`                                                                                         |
 | 20  | `Suljentatyyppi`         | `closures`                             |        | Label part                                                                                                             |
 | 21  | `Alkoholi-%`             | `abv`                                  | ✓      |                                                                                                                        |
@@ -163,11 +167,11 @@ so that an older deployed app bundle can still read a newer dataset positionally
 | 26  | `Katkerot EBU`           | `beerBitternessEbu` (detail)           |        |                                                                                                                        |
 | 27  | `Energia kcal/100 ml`    | `nutrition.kiloCaloriesPerDL` (detail) |        |                                                                                                                        |
 | 28  | `Valikoima`              | `selectionTypes`                       | ✓      | Label part                                                                                                             |
-| 29  | `EAN`                    | —                                      |        | `null` for API-synced products (the API has no EANs). Some removed products still carry EANs from the legacy XLSX data |
+| 29  | `EAN`                    | —                                      |        | Not in the API: filled from [scanned barcodes](../api-worker.md). Some removed products keep EANs from the legacy XLSX |
 | 30  | `Normaalihinta`          | `lowest_30d_price`                     | ✓      | Only during campaigns. Euro number                                                                                     |
 | 31  | `Kampanja alkaa`         | `campaign_start_date`                  | ✓      | `YYYY-MM-DD`                                                                                                           |
 | 32  | `Kampanja päättyy`       | `campaign_end_date`                    | ✓      | `YYYY-MM-DD`                                                                                                           |
-| 33  | `Ruokasuositukset`       | `foodSymbolId`                         |        | Finnish labels from `src/lib/utils/catalog/food.ts`, joined with `, `. Refreshed every sync                            |
+| 33  | `Ruokasuositukset`       | `foodSymbolId`                         |        | List of Finnish labels from `src/lib/utils/catalog/food.ts`. Refreshed every sync                                      |
 | 34  | `Tila`                   | `statusId`                             | ✓      | `Aktiivinen` (A), `Uutuus` (U), `Poistuva` (P, being phased out) or `Tulee` (X, not on sale yet)                       |
 | 35  | `Pantti`                 | `deposit` (detail)                     |        | Deposit in euros. Included in `Hinta`, not in `Litrahinta`. Missing for most products, including some cans             |
 
@@ -216,6 +220,33 @@ re-fetches products whose stored values hash differently from the search payload
 `detailCheckedAt` holds each product's `meta.detailCheckedAt`, also sync-only (about 2% of the
 compressed `data.json`). It is restored whatever the `HashVersion`. Without it every product is due
 for re-verification, which the sync works through a capped number per run.
+
+## `data.minimal.json`
+
+A slimmed-down copy for the Bläkkiskili Telegram bot, which keeps it in memory. Not loaded by the
+app. `scripts/data/minimal.ts` builds it from `data.json` + `data-removed.json` in the
+`fetchData` workflow's publish step and it is served from the site root like the other dataset
+files (so GitHub Pages and Cloudflare answer conditional requests with `ETag` / `Last-Modified`).
+
+```jsonc
+{
+	"schema": ["Numero", "Nimi", "Pullokoko", "Alkoholi-%", "Tyyppi", "EAN", "Hinta",
+		"Energia kcal/100 ml", "Valmistaja", "Valmistusmaa", "Alatyyppi", "Valikoima", "Tila"],
+	"metadata": { "LastUpdated": "2026-11-10T03:39:38.508Z" },
+	"products": { "100004": { "values": ["100004", "Pramia Mansikka Sour muovipullo", 0.5, 15, …] } }
+}
+```
+
+- The bot reads columns by name from `schema`; the other columns, `priceHistory`, `meta`, `index`
+  and `dictionaries` are left out. Changing `MINIMAL_COLUMNS` changes the bot's contract.
+- Every product with an ABV is in, removed ones too. Alcohol-free drinks have an ABV of `0`.
+- Unlike `data.json`, the values are always plain: numbers are numbers (removed products from
+  the old price list store `"0.75 l"` and `"13.5"` as strings), unknown is `null` (an empty
+  string, a price of `0`, or `0` kcal in an alcoholic drink becomes `null`).
+- A removed product's old `Tyyppi` ("oluet", "punaviinit") is mapped to the current one the way
+  the category pages do it, so the bot sees `Panimotuotteet` and `Viinit`. A few old types with
+  no current counterpart (e.g. "liköörit ja katkerot") are kept as they are.
+- Run `bun run scripts/data/minimal.ts --dev` to write `static/data.minimal.json` locally.
 
 ## `availability.json`
 

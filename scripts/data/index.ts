@@ -47,9 +47,13 @@ import {
 	HINTA_INDEX,
 	NIMI_INDEX,
 	carryOverMissingProducts,
+	carryOwnColumns,
 	clearRemovedFlag,
+	detailCheckedMeta,
 	detailVerifyAgeDays,
+	isDetailRetryBackedOff,
 	isDetailVerifyCandidate,
+	markStaleArrivals,
 	mergeProduct,
 	refreshSearchColumns,
 	salesInfoFromValues,
@@ -65,6 +69,7 @@ import {
 import { appendSyncReport, createSyncReport, elapsedMs, type SyncStats } from './sync-report.ts';
 import { DATA_PATH, HASHES_PATH, readDataset, writeDataset } from './dataset-file.ts';
 import { checkSyncSafety, missingCriticalColumns, restoreCriticalColumns } from './safeguards.ts';
+import { applyScannedEans, cleanEans, loadScannedEans } from './scanned-eans.ts';
 
 // ============================================================================
 // CONFIG & CONSTANTS
@@ -105,6 +110,12 @@ const PROGRESS_LOG_INTERVAL = 25;
 const DEFAULT_DETAIL_VERIFY_COOLDOWN_DAYS = 30;
 /** Default cap on how many stale products get detail-verified per sync run. */
 const DEFAULT_DETAIL_VERIFY_BATCH = 200;
+/**
+ * Days a product whose detail fetch failed is left out of the verify pass. One
+ * means it's retried on the next UTC day, so a one-off failure doesn't keep a
+ * delayed arrival labelled as stale for long (see markStaleArrivals).
+ */
+const DETAIL_RETRY_BACKOFF_DAYS = 1;
 
 const VERBOSE = truthyEnvVar('VERBOSE');
 /** Writes the dataset even when the safeguards reject it, for legitimate large changes. */
@@ -480,10 +491,11 @@ async function sync(): Promise<void> {
 	}
 
 	const fetchStart = performance.now();
-	const [searchResult, existing, stores] = await Promise.all([
+	const [searchResult, existing, stores, scannedEans] = await Promise.all([
 		loadSearchProducts(config),
 		loadExistingData(),
-		loadStores(config)
+		loadStores(config),
+		loadScannedEans()
 	]);
 	syncReport.phasesMs.fetch = elapsedMs(fetchStart);
 
@@ -557,7 +569,8 @@ async function sync(): Promise<void> {
 		filtered: 0,
 		filteredRemoved: 0,
 		verified: 0,
-		verifyFailed: 0
+		verifyFailed: 0,
+		eans: 0
 	};
 	syncReport.stats = stats;
 
@@ -595,14 +608,17 @@ async function sync(): Promise<void> {
 				rewrites.push({ previous: previous.values, values: kept.values });
 			products[product.id] = kept;
 			stats.unchanged++;
-			if (isDetailVerifyCandidate(kept, config.detailVerifyCooldownDays)) {
+			if (
+				isDetailVerifyCandidate(kept, config.detailVerifyCooldownDays) &&
+				!isDetailRetryBackedOff(kept, DETAIL_RETRY_BACKOFF_DAYS)
+			) {
 				verifyCandidates.push({ product, previous: kept });
 			}
 		} else {
 			pending.push({
 				product,
 				hash: searchHash,
-				previous: isMigratedProduct(previous) ? previous : undefined
+				previous: isMigratedProduct(previous) ? previous : undefined,
 			});
 		}
 	}
@@ -628,9 +644,19 @@ async function sync(): Promise<void> {
 				stats.failed++;
 				// Keep the previous entry so a transient failure never drops a product.
 				// It's still in the selection, so clear any stale removed flag.
-				if (previous) products[product.id] = clearRemovedFlag(previous);
+				if (previous) {
+					const kept = clearRemovedFlag(previous);
+					products[product.id] = {
+						...kept,
+						meta: { ...kept.meta, detailFailedAt: new Date().toISOString().slice(0, 10) }
+					};
+				}
 			} else {
-				const built = buildLegacyValues(mergeProduct(product, details));
+				// The API has no EANs, so a rebuild keeps the stored one
+				const built = carryOwnColumns(
+					buildLegacyValues(mergeProduct(product, details)),
+					previous?.values
+				);
 				let values = built;
 				if (previous) {
 					rewrites.push({ previous: previous.values, values: built });
@@ -661,10 +687,10 @@ async function sync(): Promise<void> {
 				);
 				// A fresh detail fetch means the product was verified now: reset the
 				// cooldown clock so it isn't re-verified by the lazy pass as well.
-				const meta = {
-					...withoutRemovedFlag(previous?.meta),
-					detailCheckedAt: new Date().toISOString().slice(0, 10)
-				};
+				const meta = detailCheckedMeta(
+					withoutRemovedFlag(previous?.meta),
+					new Date().toISOString().slice(0, 10)
+				);
 
 				products[product.id] = { hash, values, priceHistory, meta };
 				if (previous) {
@@ -728,14 +754,23 @@ async function sync(): Promise<void> {
 			config.detailConcurrency,
 			async ({ product, previous }) => {
 				const details = await fetchProductDetails(product.id, config);
-				// Leave the entry and its `detailCheckedAt` untouched so the product
-				// stays eligible and is retried on the next run after a transient failure.
+				// Leave the values and `detailCheckedAt` untouched so the product stays
+				// eligible, but back off: some products' details fail every time (e.g.
+				// stale arrivals, see markStaleArrivals), and they'd otherwise stay the
+				// stalest ones and be retried on every run.
 				if (!details) {
 					stats.verifyFailed++;
+					products[product.id] = {
+						...previous,
+						meta: { ...previous.meta, detailFailedAt: today }
+					};
 					return;
 				}
 
-				const built = buildLegacyValues(mergeProduct(product, details));
+				const built = carryOwnColumns(
+					buildLegacyValues(mergeProduct(product, details)),
+					previous.values
+				);
 				rewrites.push({ previous: previous.values, values: built });
 				// Same as above: a blank core field never erases the stored one.
 				const { values, restored } = restoreCriticalColumns(built, previous.values);
@@ -762,7 +797,7 @@ async function sync(): Promise<void> {
 						...previous,
 						values,
 						priceHistory,
-						meta: { ...previous.meta, detailCheckedAt: today }
+						meta: detailCheckedMeta(previous.meta, today)
 					};
 					stats.updated++;
 					if (VERBOSE) {
@@ -775,13 +810,21 @@ async function sync(): Promise<void> {
 				} else {
 					products[product.id] = {
 						...previous,
-						meta: { ...previous.meta, detailCheckedAt: today }
+						meta: detailCheckedMeta(previous.meta, today)
 					};
 					stats.verified++;
 				}
 			}
 		);
 		syncReport.phasesMs.verify = elapsedMs(verifyStart);
+	}
+
+	// After the detail passes, which rebuild "Tila" from the search status and record failures.
+	const staleArrivals = markStaleArrivals(products, searchProducts);
+	if (staleArrivals > 0) {
+		console.log(
+			`\n🕸️  ${staleArrivals} products listed as coming long after their launch date have no details\n`
+		);
 	}
 
 	// Never delete products: carry over every product from the existing dataset
@@ -804,6 +847,17 @@ async function sync(): Promise<void> {
 	);
 	stats.removed += carried.removed;
 	stats.filteredRemoved += carried.filteredRemoved;
+
+	// Barcodes found by the site's scanner since the last run (see scanned-eans.ts)
+	if (scannedEans) {
+		stats.eans = applyScannedEans(products, scannedEans).length;
+		console.log(`\n🏷️  ${scannedEans.length} scanned barcodes, ${stats.eans} EANs written\n`);
+	}
+	// Invalid or shared EANs can't identify a product, so they don't stay in the dataset
+	const clearedEans = cleanEans(products, scannedEans ?? []);
+	if (clearedEans.length > 0) {
+		console.log(`🧹 ${clearedEans.length} unusable EANs cleared\n`);
+	}
 
 	// Last line of defence before anything is written: refuse results that look
 	// like the API changed rather than the selection.
@@ -834,7 +888,11 @@ async function sync(): Promise<void> {
 	// `LastSynced` records every fetch; `LastUpdated` only moves when an actual
 	// change to the data was detected this run.
 	const hasChanges =
-		stats.added > 0 || stats.updated > 0 || stats.removed > 0 || stats.filteredRemoved > 0;
+		stats.added > 0 ||
+		stats.updated > 0 ||
+		stats.removed > 0 ||
+		stats.filteredRemoved > 0 ||
+		stats.eans > 0;
 
 	const workflowRunUrl =
 		process.env.GITHUB_RUN_ID && process.env.GITHUB_REPOSITORY
@@ -897,6 +955,7 @@ function printSummary(stats: SyncStats, total: number): void {
 	console.log(`  🔍 Verified (unchanged): ${stats.verified}`);
 	console.log(`  ❌ Failed:    ${stats.failed}`);
 	console.log(`  ❌ Verify failed: ${stats.verifyFailed}`);
+	console.log(`  🏷️  New EANs from scans: ${stats.eans}`);
 	console.log(`  📦 Total:     ${total}\n`);
 	console.log(`✅ Saved ${DATA_PATH} and ${HASHES_PATH}`);
 }

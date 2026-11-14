@@ -36,11 +36,13 @@ comes from `src/lib/utils/app/seo.ts` and `categories.ts`, the same functions th
 ### Product pages
 
 `scripts/site/prerender-products.ts --data <data.json> --out <dir> --template <404.html>
---og-manifest <og-images.json> [--og-categories-manifest <file>] [--manifest <file>]`
+[--og-manifest <file>] [--og-categories-manifest <file>] [--manifest <file>]` (the three manifests
+default to `og-images.json`, `og-categories.json` and `tuotteet-manifest.json` in `<dir>/data/`)
 
 Writes `tuotteet/<id>/index.html` for every product, including removed ones, with `Product`
 JSON-LD (offer with price and availability, additional properties, sale price when on sale,
-unit pricing as the bottle's price and volume so Google derives the litre price itself),
+unit pricing as the bottle's price and volume so Google derives the litre price itself, and the
+barcode as `gtin` when the product has an EAN with a valid check digit),
 `BreadcrumbList` JSON-LD for its category trail, an RSS alternate when the product has a price
 history feed, and `product:*` meta tags (price, brand, availability, condition, item id). The OG
 image is the product's R2 card if `og-images.json` has a key for it, else Alko's photo.
@@ -84,7 +86,7 @@ It is **incremental**. Each page has a content key, a SHA-256 of everything that
 HTML: `RENDER_VERSION`, the schema, the product's values, meta and price history, the template
 (new JS/CSS hashes change every page) and the product route's preloads, its OG image key, category trail, category rank and size variant group, and today's date if
 the product has campaign dates (sale state depends on the date). Keys are stored in
-`tuotteet-manifest.json`; a product whose key and file are unchanged is skipped. Directories for
+`data/tuotteet-manifest.json`; a product whose key and file are unchanged is skipped. Directories for
 products no longer in the dataset are deleted.
 
 Bump **`RENDER_VERSION`** when you change the rendering logic in a way the inputs above don't

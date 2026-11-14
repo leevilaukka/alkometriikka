@@ -153,6 +153,7 @@ So "absent from the sweep" ≈ "removed" is ~99% accurate and matches what alko.
 - Response: `{ data: DetailedProductData }` – e.g. `producer`, `vintage`, `grapeVarieties`, `productionSites`, `nutrition`, `taste`, etc. Not present in the search API.
 - `data.deposit` is the deposit in euros (`0.1`, `0.15`, `0.4`), often missing even for cans. `valueInCents` includes it, `pricePerLitre` doesn't: `(15.99 − 0.10) / 0.75 = 21.19` (verified 2026-10-21).
 - `pricePerLitre` (and `moreInfo`) is missing for products with `status` `Tulee`. Some of those answer `{"error":"Internal server error"}` altogether.
+- Those 500s are stuck products, not upcoming ones (checked 2026-10-26). 5 of the 6 `X` products failed (913561, 583157, 153147, 138913, 565757), and all had an `onlineAvailabilityDatetimeTs` 2–4.5 years old, no store or webshop stock, and a 404 for their alko.fi product page. Examples: a 2009 Viognier, and the 0.2 l Havana Club Añejo 3 Años, whose other sizes are all active. The detail API still worked for 913561 at the 2026-07-14 dataset seed and at its last verify on 2026-09-20. The one `X` product that worked (902853) had a launch date 8 months back, a price (9.98 €) and a working alko.fi page. It answered webshop `messageCode` 103 / `productAvailability` 199, where the broken ones answered 101/102 with no `productAvailability` (meaning undocumented). Alko seems to leave products it never launched at `X` instead of discontinuing them (`K`), so they stay in search. Age alone can't tell them from delayed ones, but the failing detail fetch can. The sync labels an `X` product `Ei myynnissä` when it's over 90 days past its launch date, has no stock, and its latest detail fetch failed (`markStaleArrivals` in scripts/data/lifecycle.ts).
 - Search `statusId` ↔ detail `status` (2026-10-21 sweep, 11456 products): `A` Aktiivinen (8798), `P` Poistuva (1980), `U` Uusi (672), `X` Tulee (6). `K` Kuoletettu is filtered out of search.
 - Still answers for products that have left the search index. `data.status` is a Finnish label (seen: `Kuoletettu` = discontinued, `Poistuva` = being phased out); `onlineAvailabilityDatetime` gives the online launch date.
 - Used by `fetchProductDetails` in `scripts/data/index.ts`.
@@ -366,7 +367,7 @@ All of these return the **SPA HTML shell** (not JSON) – i.e. the endpoints don
 - Sample: 100151 → 306 stores, counts 1–93 (median 9); 300079 → 332 stores, 1–188.
 - ~250 KB per response (each store's two-week `openHours` is repeated), ~0.35 s.
 - **No CORS headers**, so a browser on another origin can't call it; it needs a proxy (e.g. a Cloudflare Worker trimming it to `{storeId: count}` with a short cache) or the sync (~11k requests, ~2.7 GB per full sweep).
-- Not used yet (decided against for now, 2026-10-21).
+- Used by the `api.alkometriikka.fi` Worker since 2026-11-08 (`GET /availability/{id}`, see `docs/api-worker.md`). Decided against in the sync (2026-10-21).
 
 ---
 
@@ -376,3 +377,21 @@ All of these return the **SPA HTML shell** (not JSON) – i.e. the endpoints don
 - To add **online stock per product**: one batched pass over `GET /api/intershop/availability/webshop/<id1>:<id2>:...` (and/or the already-included `webshopStock`/`limeStock`/`limeWebshopTotalStock`) → not a "gazillion" requests, at most a few dozen.
 - Detail API key is `productId`, search API key is `id`; the merge is handled by `mergeProduct`. For campaign pricing, the search API format is canonical (`SEARCH_WINS_KEYS`).
 - Older notes: the EAN field is gone from the API (noted as "RIP viivakoodinlukija"), `Uutuus`/`vintage` are detail-API only.
+
+---
+
+## 10. Mobile app API – `mobile-api.alko.fi` (found 2026-11-06)
+
+Alko's Android app (`fi.alko.mobile` 1.34.0, React Native) has its own backend, `https://mobile-api.alko.fi/`, and its barcode scanner resolves codes there:
+
+```
+GET https://mobile-api.alko.fi/v1/products/gtin/{ean}?lang=fi
+accept: application/json
+x-api-key: <hardcoded in the APK, same for every install>
+```
+
+- Without the key: `403 {"error":"Unauthorized"}`. No CORS headers either way.
+- Answer: the product's details (`id`, `name`, `price`, `abv`, `status`, `taste`, `nutrition`, `webshopAvailability`…), **not** the GTIN itself. So it maps barcode → product but can't fill EANs in bulk.
+- It follows renumbering: EAN `5011007017965` (Jameson Single Pot Still) answers `id: 200047`, while the legacy XLSX data has it on the removed `928201`.
+- Found by capturing the app's traffic (Android emulator + HTTP Toolkit). The emulator needs the arm64 libraries copied into the app's `lib/arm64` dir by hand, as the APK doesn't extract them.
+- Used by the `api.alkometriikka.fi` Worker, see `docs/api-worker.md`. The key is a Worker secret, never committed.

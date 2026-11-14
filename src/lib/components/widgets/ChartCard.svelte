@@ -27,6 +27,11 @@
 				module.Title,
 				module.Tooltip
 			);
+			// Redrawn once a resize settles rather than on every frame of one, e.g. while a sidebar
+			// slides open, which would otherwise stall the animation
+			module.Chart.defaults.resizeDelay = 150;
+			// Axis ticks and tooltips otherwise group thousands the English way, as 8,000
+			module.Chart.defaults.locale = 'fi-FI';
 			return module.Chart;
 		});
 		return chartModule;
@@ -64,7 +69,11 @@
 
 		return () => {
 			destroyed = true;
-			chart?.destroy();
+			if (!chart) return;
+			chart.destroy();
+			// destroy() can't cancel a redraw still waiting on resizeDelay, which would throw when it
+			// finds the canvas gone
+			chart.update = () => {};
 		};
 	});
 </script>

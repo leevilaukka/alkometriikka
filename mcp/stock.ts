@@ -1,5 +1,5 @@
 /**
- * Reads the stock history files (`stock/products/<NN>.json`, `stock/stores/<id>.json`, see
+ * Reads the stock history files (`data/stock/products/<NN>.json`, `data/stock/stores/<id>.json`, see
  * docs/data/stock-history.md). They are small and numerous, so unlike the main data files they
  * are only kept in memory: a file is fetched when first needed and reused for `ttlMs`.
  * Failures are remembered briefly so a missing history costs one request, not one per call.

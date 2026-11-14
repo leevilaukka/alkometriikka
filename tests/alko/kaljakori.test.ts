@@ -57,6 +57,17 @@ describe('Kaljakori row parsing', () => {
 		expect(alko.data.map((item) => item[AllColumns.Number])).toEqual(['1']);
 	});
 
+	it('leaves a missing EAN or producer empty instead of the text "Null"', () => {
+		const alko = build([
+			base('1', { EAN: null, Manufacturer: null }),
+			base('2', { EAN: '6412700709703' })
+		]);
+		const [missing, present] = alko.data;
+		expect(missing[AllColumns.EAN]).toBe('');
+		expect(missing[AllColumns.Manufacturer]).toBe('');
+		expect(present[AllColumns.EAN]).toBe('6412700709703');
+	});
+
 	it('keeps a 0% product (alcohol-free) because only a missing ABV is skipped', () => {
 		expect(build([base('1', { AlcoholPercentage: 0 })]).data).toHaveLength(1);
 	});
@@ -69,6 +80,16 @@ describe('Kaljakori row parsing', () => {
 		expect(item[AllColumns.Name]).toBe('Lapin kulta');
 		expect(item[AllColumns.AlcoholPercentage]).toBe(5);
 		expect(item[AllColumns.Description]).toEqual(new Set(['Raikas', 'Humalainen', 'Maltainen']));
+	});
+
+	it('splits set columns stored as lists, with or without the space after each comma', () => {
+		const [untrimmed, trimmed] = build([
+			base('1', { Description: ['Keltainen', ' raikas', ' humalainen'] }),
+			base('2', { Description: ['Keltainen', 'raikas', '', 'humalainen'] })
+		]).data;
+		const expected = new Set(['Keltainen', 'Raikas', 'Humalainen']);
+		expect(untrimmed[AllColumns.Description]).toEqual(expected);
+		expect(trimmed[AllColumns.Description]).toEqual(expected);
 	});
 
 	it('defaults numeric-looking-missing columns to 0 only for undefined-to-zero columns', () => {
@@ -477,6 +498,17 @@ describe('Kaljakori subsets', () => {
 		}
 		// The parent keeps its own values
 		expect(p.getFilterValues(column(AllColumns.Country))).toEqual(['Ranska', 'Saksa', 'Suomi']);
+	});
+
+	it('keeps the column types when it has no products', () => {
+		const p = parent();
+		const empty = p.subset([]);
+		expect(empty.data).toEqual([]);
+		for (const key of [AllColumns.Type, AllColumns.Country, AllColumns.Price]) {
+			expect(empty.getFilterType(column(key))).toBe(p.getFilterType(column(key)));
+		}
+		expect(empty.getFilterValues(column(AllColumns.Type))).toEqual([]);
+		expect(empty.getMinAndMaxValues(column(AllColumns.Price))).toEqual([0, 0]);
 	});
 
 	it('recomputes drunk values when personal info changed, leaving the parent as is', () => {

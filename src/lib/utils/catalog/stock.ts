@@ -1,6 +1,6 @@
 // Stock history: how many stores carried each product on each day, and which
 // products recently arrived in each store. Written by scripts/data/stock-history.ts
-// under `stock/` next to availability.json (format in docs/data/stock-history.md).
+// under `data/stock/` (format in docs/data/stock-history.md).
 
 /** Days of per-product store counts kept. */
 export const STOCK_HISTORY_DAYS = 90;
@@ -12,7 +12,7 @@ export const STOCK_ARRIVAL_DAYS = 30;
  */
 export const STOCK_RETURN_GAP_DAYS = 14;
 
-/** `stock/products/<shard>.json`: the products whose number ends in `<shard>`. */
+/** `data/stock/products/<shard>.json`: the products whose number ends in `<shard>`. */
 export type ProductStockShard = {
 	/** Day of each `counts` array's first entry (Helsinki time, YYYY-MM-DD). */
 	start: string;
@@ -20,7 +20,7 @@ export type ProductStockShard = {
 	counts: Record<string, (number | null)[]>;
 };
 
-/** `stock/stores/<id>.json` */
+/** `data/stock/stores/<id>.json` */
 export type StoreStockFile = {
 	/** First day of the history; arrivals are only recorded from `since` + the return gap on. */
 	since: string;
@@ -36,11 +36,11 @@ export function stockShard(productId: string): string {
 }
 
 export function productStockPath(productId: string): string {
-	return `stock/products/${stockShard(productId)}.json`;
+	return `data/stock/products/${stockShard(productId)}.json`;
 }
 
 export function storeStockPath(storeId: string): string {
-	return `stock/stores/${storeId}.json`;
+	return `data/stock/stores/${storeId}.json`;
 }
 
 /** "2026-10-21" + 3 → "2026-10-24", in calendar days. */

@@ -66,7 +66,7 @@ describe('schema consistency (writer vs reader)', () => {
 		const hashed = FIELD_TO_LEGACY_SCHEMA.filter((field) => field.usedForHashing).map(
 			(field) => field.legacyKey
 		);
-		expect(HASH_VERSION).toBe(2);
+		expect(HASH_VERSION).toBe(3);
 		expect(hashed).toEqual([
 			'Nimi',
 			'Hinta',
@@ -106,6 +106,16 @@ describe('buildLegacyValues', () => {
 		expect(coming[col('Pantti')]).toBeNull();
 		expect(coming[col('Litrahinta')]).toBeNull();
 	});
+
+	it('stores taste as trimmed lowercase words and food pairings as a label list', () => {
+		const built = buildLegacyValues({
+			taste: 'Keltainen, lämmin, , makea',
+			foodSymbolId: ['foodSymbol_Porsas', 'foodSymbol_Pasta_ja_pizza']
+		});
+		expect(built[col('Luonnehdinta')]).toEqual(['keltainen', 'lämmin', 'makea']);
+		expect(built[col('Ruokasuositukset')]).toEqual(['Porsas', 'Pasta ja pizza']);
+		expect(buildLegacyValues({ taste: ' ' })[col('Luonnehdinta')]).toBeNull();
+	});
 });
 
 describe('alignValues', () => {
@@ -132,8 +142,26 @@ describe('upgradeStoredValues', () => {
 		expect(upgradeStoredValues(row({ Erityisryhmä: false }))).toEqual(row());
 	});
 
+	it('turns taste and food pairings into trimmed word lists, lowercasing taste', () => {
+		expect(
+			upgradeStoredValues(
+				row({ Luonnehdinta: ['Keltainen', ' makea', ''], Ruokasuositukset: 'Kala, Äyriäiset' })
+			)
+		).toEqual(
+			row({ Luonnehdinta: ['keltainen', 'makea'], Ruokasuositukset: ['Kala', 'Äyriäiset'] })
+		);
+		expect(upgradeStoredValues(row({ Luonnehdinta: 'Punainen, kuiva' }))).toEqual(
+			row({ Luonnehdinta: ['punainen', 'kuiva'] })
+		);
+		expect(upgradeStoredValues(row({ Luonnehdinta: [''] }))).toEqual(row());
+	});
+
 	it('keeps already upgraded values as-is', () => {
-		const current = row({ Erityisryhmä: 'Luomu' });
+		const current = row({
+			Erityisryhmä: 'Luomu',
+			Luonnehdinta: ['keltainen', 'makea'],
+			Ruokasuositukset: ['Kala']
+		});
 		expect(upgradeStoredValues(current)).toBe(current);
 	});
 });

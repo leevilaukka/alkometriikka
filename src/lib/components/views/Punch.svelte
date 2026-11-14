@@ -70,6 +70,7 @@
 	import PunchResults from '../punch/PunchResults.svelte';
 	import BottomBar from '../widgets/BottomBar.svelte';
 	import Icon from '../widgets/Icon.svelte';
+	import PageHeader from '../widgets/PageHeader.svelte';
 	import Popup from '../widgets/Popup.svelte';
 
 	const {
@@ -175,7 +176,7 @@
 
 	/** Compares recipes by what they're made of, for knowing whether replacing one loses anything */
 	const recipeKey = (recipe: PunchRecipe) =>
-		JSON.stringify([recipe.glass, recipe.people, recipe.ingredients]);
+		JSON.stringify([recipe.description, recipe.glass, recipe.people, recipe.ingredients]);
 
 	const isSaved = $derived(
 		punchRecipes.some(
@@ -258,6 +259,10 @@
 	function removeSaved(id: string, name: string) {
 		if (confirm(`Poistetaanko tallennettu booli "${name}"?`)) deletePunch(id);
 	}
+
+	/** The counters appear once a field is within a fifth of its limit */
+	const nameNearLimit = $derived(punchDraft.name.length >= 24);
+	const descriptionNearLimit = $derived(punchDraft.description.length >= 80);
 
 	const shareTitle = $derived(punchDraft.name.trim() || 'Booli');
 
@@ -440,11 +445,12 @@
 	{/if}
 {/snippet}
 
-<div class="mx-auto flex w-full max-w-6xl flex-col gap-6 p-4 md:p-8">
-	<header class="flex flex-col gap-2">
-		<!-- The saved recipes' button shares the title's row, so it takes no row of its own on phones -->
-		<div class="flex items-center justify-between gap-3">
-			<h1 class="text-2xl font-bold md:text-3xl">Boolilaskuri</h1>
+<div class="mx-auto flex w-full max-w-7xl flex-col gap-6 p-4 md:p-6">
+	<PageHeader
+		title="Boolilaskuri"
+		description="Kokoa booli Alkon tuotteista ja kaupan mehuista. Näet boolin vahvuuden, hinnan lasillista ja henkeä kohden sekä halvemmat vaihtoehdot samanlaisille juomille."
+	>
+		{#snippet actions()}
 			<Popup class="w-[min(60ch,_100%)] gap-4 p-4">
 				{#snippet renderButton(dialogElement: HTMLDialogElement)}
 					<button
@@ -497,18 +503,14 @@
 						</ul>
 					{:else}
 						<p class="text-secondary">
-							Ei vielä tallennettuja booleja. Tallenna nykyinen booli Ainesosat-kohdan
+							Ei vielä tallennettuja booleja. Tallenna nykyinen booli Perustiedot-kohdan
 							Tallenna-painikkeella.
 						</p>
 					{/if}
 				{/snippet}
 			</Popup>
-		</div>
-		<p class="max-w-2xl text-secondary">
-			Kokoa booli Alkon tuotteista ja kaupan mehuista. Näet boolin vahvuuden, hinnan lasillista ja
-			henkeä kohden sekä halvemmat vaihtoehdot samanlaisille juomille.
-		</p>
-	</header>
+		{/snippet}
+	</PageHeader>
 
 	{#if sharedRecipe}
 		<div
@@ -560,30 +562,59 @@
 		</div>
 	</section>
 
+	<section aria-labelledby="punch-name-title" class={twMerge(card, 'gap-3')}>
+		<div class="flex items-center justify-between gap-2">
+			<h2 id="punch-name-title" class="text-lg font-bold">Perustiedot</h2>
+			<button type="button" class={components.button()} onclick={save} disabled={!hasIngredients}>
+				<Icon name="save" />
+				{isSaved ? 'Tallennettu' : 'Tallenna'}
+			</button>
+		</div>
+		<div class="grid gap-3 md:grid-cols-2">
+			<div class="relative">
+				<input
+					id="punch-name"
+					class={twMerge(components.input(), 'w-full pe-14')}
+					bind:value={punchDraft.name}
+					maxlength="30"
+					placeholder="Boolin nimi, esim. Vappubooli"
+					aria-label="Nimi"
+				/>
+				{#if nameNearLimit}
+					<span
+						class="pointer-events-none absolute end-3 top-1/2 -translate-y-1/2 text-xs text-secondary tabular-nums"
+						aria-hidden="true"
+					>
+						{punchDraft.name.length}/30
+					</span>
+				{/if}
+			</div>
+			<div class="relative">
+				<!-- One line that grows with the text, with room on the right for the counter -->
+				<textarea
+					class={twMerge(components.input(), 'field-sizing-content w-full resize-none pe-14')}
+					bind:value={punchDraft.description}
+					maxlength="100"
+					rows="1"
+					placeholder="Kuvaus (valinnainen), esim. tarjoile jääkylmänä"
+					aria-label="Kuvaus"
+				></textarea>
+				{#if descriptionNearLimit}
+					<span
+						class="pointer-events-none absolute end-3 bottom-2 text-xs text-secondary tabular-nums"
+						aria-hidden="true"
+					>
+						{punchDraft.description.length}/100
+					</span>
+				{/if}
+			</div>
+		</div>
+	</section>
+
 	<div class="grid grid-cols-1 items-start gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
 		<div class="flex flex-col gap-6">
 			<section aria-labelledby="punch-ingredients-title" class={card}>
-				<div class="flex flex-wrap items-end gap-2">
-					<label class="flex min-w-0 flex-1 flex-col gap-1" for="punch-name">
-						<span id="punch-ingredients-title" class="text-lg font-bold">Ainesosat</span>
-						<input
-							id="punch-name"
-							class={twMerge(components.input(), 'w-full')}
-							bind:value={punchDraft.name}
-							maxlength="80"
-							placeholder="Boolin nimi, esim. Vappubooli"
-						/>
-					</label>
-					<button
-						type="button"
-						class={components.button()}
-						onclick={save}
-						disabled={!hasIngredients}
-					>
-						<Icon name="save" />
-						{isSaved ? 'Tallennettu' : 'Tallenna'}
-					</button>
-				</div>
+				<h2 id="punch-ingredients-title" class="text-lg font-bold">Ainesosat</h2>
 
 				<PunchProductSearch {kaljakori} {inStore} onadd={addProduct} />
 

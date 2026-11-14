@@ -75,11 +75,11 @@
 </div>
 <div class="flex flex-row flex-wrap items-center gap-2">
 	<a href={githubRepoBase} target="_blank" class={twMerge(components.button())}>
-		<Icon name="github" class="inline-block" />
+		<Icon name="github" />
 		<span>GitHub</span>
 	</a>
 	<a href="mailto:contact@alkometriikka.fi" target="_blank" class={twMerge(components.button())}>
-		<Icon name="mail_send" class="inline-block" />
+		<Icon name="mail_send" />
 		<span>Sähköposti</span>
 	</a>
 	<SiteFeedback />
@@ -90,7 +90,7 @@
 			onclick={() => sendAnalyticsEvent('click_feed', { feed: 'site', location: 'info_button' })}
 			class={twMerge(components.button(), 'rounded-e-none')}
 		>
-			<Icon name="rss" class="inline-block" />
+			<Icon name="rss" />
 			<span>RSS</span>
 		</a>
 		<a
@@ -99,7 +99,7 @@
 			onclick={() => sendAnalyticsEvent('click_feed', { feed: 'json', location: 'info_button' })}
 			class={twMerge(components.button(), 'rounded-s-none border-s-0')}
 		>
-			<Icon name="bracket_curly" class="inline-block" />
+			<Icon name="bracket_curly" />
 			<span>JSON-syöte</span>
 		</a>
 	</div>

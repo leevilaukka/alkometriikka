@@ -150,23 +150,6 @@ export function filterValuesFromSearchParameters(
 	}, {});
 }
 
-export function generateSimilarProductsFilter(
-	product: PriceListItem,
-	restrictions: Partial<Record<ColumnNames, string[] | number | string>>
-): FilterValues {
-	return Object.fromEntries(
-		Object.entries(restrictions).map(([key, value]) => {
-			if (
-				typeof value === 'number' &&
-				typeof product[key] === 'number' &&
-				Object.hasOwn(product, key)
-			)
-				return [key, [product[key] - product[key] * value, product[key] + product[key] * value]];
-			return [key, value];
-		})
-	);
-}
-
 /** Columns the product page and the similar-products page score similarity on. */
 export const SIMILAR_PRODUCT_COLUMNS: ReadonlySet<ColumnNames> = new Set([
 	AllColumns.Type,
@@ -292,10 +275,7 @@ export function buildSizeOptions(product: PriceListItem, kaljakori: Kaljakori): 
 	});
 }
 
-export function findDifferentSizeOfProduct(
-	product: PriceListItem,
-	kaljakori: Kaljakori
-): PriceListItem[] {
+function findDifferentSizeOfProduct(product: PriceListItem, kaljakori: Kaljakori): PriceListItem[] {
 	return kaljakori.findDifferentSizesOfProduct(product);
 }
 

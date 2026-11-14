@@ -155,6 +155,11 @@ Product photos from `images.alko.fi` aren't handled: they are sent with a one-ye
   only looks for a new service worker on page loads. Coming back into view checks again (at most
   every 10 minutes). If a new deploy's worker takes over, the next in-app link does a full page
   load, so the page doesn't keep running old code that asks for removed `_app` files.
+- **New data while open**: data syncs don't change the app's version, so the check above misses
+  them, and the price list loads once per page load. Coming back into view after at least 30
+  minutes away (`DATA_CHECK_AFTER_HIDDEN_MS`) sends a HEAD request for `data.json` and reloads the
+  page if its `Last-Modified` is later than the loaded copy's. Otherwise an app left open would
+  show the stale-data warning although CI has published newer data.
 - **iOS launch screens**: iOS ignores the manifest's splash and needs an `apple-touch-startup-image`
   per screen size, orientation and colour scheme. `bun run pwa:splash`
   (`scripts/pwa/ios-splash.ts`) draws the loader's first frame into `static/ios/splash/` and
@@ -181,6 +186,7 @@ Product photos from `images.alko.fi` aren't handled: they are sent with a one-ye
 | `/myymalat`                       | Store list                             |                                                                                        |
 | `/myymalat/[storeID]/`            | Store page                             | 404 if the store is unknown                                                            |
 | `/kompassi`                       | Compass pointing to the nearest store  |                                                                                        |
+| `/skanneri`                       | Barcode and shelf QR code scanner      | Lookups wait for `alkoWithRemoved`, as old EANs are on removed products                |
 | `/daily`                          | Daily quiz                             |                                                                                        |
 | `/daily/arkisto`                  | Daily archive calendar                 |                                                                                        |
 | `/daily/arkisto/[date]`           | One archived Daily game                |                                                                                        |
@@ -203,9 +209,8 @@ await the data and pass it in.
 | `components/widgets/`  | Reusable pieces: `Filters`, `ProductPreview` (list row), `Popup` (dialog), `Badge`/`BadgeList`, `ChartCard`, `Histogram`, `NoticeBanner`, `CompareBar`, `BottomBar`, `AllLists`, `CompassDial`, `StoreCompass`, `FeedbackDialog`, `DailyFeedback`, `Settings/`… |
 | `components/inputs/`   | Filter inputs: `StringInput` (multi-select, optionally grouped), `NumberInput` (range), `RecursiveFilter` (nested sub-filters)                                                                                                                                  |
 
-`widgets/Barcode.svelte` (EAN-13/QR scanner using `barcode-detector`) is in the tree but not
-mounted anywhere at the moment. Its EAN lookup could only match removed products that kept a
-legacy EAN, since API-synced products have none.
+`widgets/Barcode.svelte` is the camera view of the [scanner](features.md#scanner-skanneri): it
+picks a detector, reads frames and hands the largest code to its page.
 
 ## Global state
 
@@ -252,17 +257,17 @@ Pages refuses URLs over about 8 KB). Only `sid`, `flag` and `list` stay in the q
 expands `z` when it reads a URL, and code that reads the query string itself goes through
 `readSearchParams()`, so a compressed link behaves like the long one.
 
-| Parameter                             | Used on                 | Meaning                                                                                                                              |
-| ------------------------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| `q`                                   | lists with a search box | Name search                                                                                                                          |
-| `<column name>`                       | `/`, list pages         | A filter, e.g. `?Tyyppi=Viinit&Tyyppi=Oluet` (or `Viinit,Oluet`) or `?Hinta=5-20` (see [Kaljakori](kaljakori.md#filters-in-the-url)) |
-| `sort`, `asc`, `highlight`            | `/`                     | Sort column, direction, highlighted column (omitted when default)                                                                    |
-| `removed`                             | `/`                     | `true` when removed products are shown                                                                                               |
-| `list`                                | `/listat`               | An lz-string compressed list                                                                                                         |
-| `ids`                                 | `/vertailu`             | Comma-separated product numbers                                                                                                      |
-| `pv`, `suunta`, `tyyppi`, `alatyyppi` | `/hinnanmuutokset`      | Window (7/30/90 days), direction (`halpeni`/`kallistui`), category slugs                                                             |
-| `sid`                                 | any shared link         | Share id for counting shared views; stripped on arrival                                                                              |
-| `#z=` (fragment)                      | any page                | The other parameters compressed, when the query string would be long                                                                 |
+| Parameter                                          | Used on                 | Meaning                                                                                                                              |
+| -------------------------------------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `q`                                                | lists with a search box | Name search                                                                                                                          |
+| `<column name>`                                    | `/`, list pages         | A filter, e.g. `?Tyyppi=Viinit&Tyyppi=Oluet` (or `Viinit,Oluet`) or `?Hinta=5-20` (see [Kaljakori](kaljakori.md#filters-in-the-url)) |
+| `sort`, `asc`, `highlight`                         | `/`                     | Sort column, direction, highlighted column (omitted when default)                                                                    |
+| `removed`                                          | `/`                     | `true` when removed products are shown                                                                                               |
+| `list`                                             | `/listat`               | An lz-string compressed list                                                                                                         |
+| `ids`                                              | `/vertailu`             | Comma-separated product numbers                                                                                                      |
+| `pv`, `suunta`, `jarjestys`, `tyyppi`, `alatyyppi` | `/hinnanmuutokset`      | Window (7/30/90 days), direction (`halpeni`/`kallistui`), sort (`suurin`), category slugs                                            |
+| `sid`                                              | any shared link         | Share id for counting shared views; stripped on arrival                                                                              |
+| `#z=` (fragment)                                   | any page                | The other parameters compressed, when the query string would be long                                                                 |
 
 The search box text belongs to the page it was typed on: navigating to a different path clears it,
 while back/forward restores it from the URL.
@@ -270,10 +275,15 @@ while back/forward restores it from the URL.
 ## Navigation and layout
 
 - The header has the logo, the search box (hidden on pages without a product list), a "Lisää"
-  menu, links to Daily and Listat, and the settings button. The menu (`menuGroups` in the layout)
-  groups its links under Selaa (Kategoriat, Hinnanmuutokset, Tilastot), Omat
-  (Seuratut, Listat), Myymälät (Myymälät, Kompassi) and Työkalut (Laskin, Daily-arkisto), and
-  marks the current page. When watched products have changed, Seuratut shows how many and the
+  menu, two pinned page buttons and the settings button. The menu (`navGroups` in
+  `src/lib/utils/app/nav.ts`) groups its links under Selaa (Kategoriat, Hinnanmuutokset,
+  Tilastot), Omat (Seuratut, Listat), Myymälät (Myymälät, Kompassi) and Työkalut & Pelit
+  (Skanneri, Laskin, Boolilaskuri, Daily, Daily-arkisto), and marks the current page. Any two of
+  them can be pinned as the header buttons; until the user picks, `defaultHeaderSlots` gives
+  Skanneri and Listat on phones (`isMobile`) and Daily and Listat elsewhere. The command palette
+  lists the same pages (plus Etusivu), searchable by each item's `keywords`, so a page added to the
+  menu is in both. Other code can open the palette with `requestPaletteOpen(scope?)`
+  (`src/lib/utils/app/commandPalette.ts`). When watched products have changed, Seuratut shows how many and the
   menu button gets a green dot.
 - `/` focuses the search box from anywhere that isn't a text field.
 - On phones, pages pass a snippet into `pageBottomBar` (filter button, product price/compare bar)

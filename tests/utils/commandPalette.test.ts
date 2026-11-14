@@ -79,6 +79,12 @@ describe('parseScopePrefix', () => {
 		expect(parseScopePrefix('k:')).toEqual({ scope: 'category', rest: '' });
 	});
 
+	it('accepts the symbols as alternatives', () => {
+		expect(parseScopePrefix('@kamppi')).toEqual({ scope: 'store', rest: 'kamppi' });
+		expect(parseScopePrefix('# viinit')).toEqual({ scope: 'category', rest: 'viinit' });
+		expect(parseScopePrefix('/laskin')).toEqual({ scope: 'page', rest: 'laskin' });
+	});
+
 	it('returns null without a prefix', () => {
 		expect(parseScopePrefix('koskenkorva')).toBeNull();
 		expect(parseScopePrefix('t kosken')).toBeNull();

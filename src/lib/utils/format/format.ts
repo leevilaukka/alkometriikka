@@ -111,3 +111,12 @@ export function formatRelativeTime(date: Date, now: Date = new Date()): string {
 	}
 	return 'juuri nyt';
 }
+
+/**
+ * How long ago something happened, e.g. "päivitetty 3 minuuttia sitten". A time after `now` (a
+ * server clock a little ahead of the device's, or a `now` that hasn't caught up) is "juuri nyt",
+ * as a past event can't be "in 1 minute".
+ */
+export function formatTimeAgo(date: Date, now: Date = new Date()): string {
+	return date.getTime() > now.getTime() ? 'juuri nyt' : formatRelativeTime(date, now);
+}

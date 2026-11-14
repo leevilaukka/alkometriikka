@@ -22,9 +22,7 @@
 	import { headerToDisplayName, sortingOrderToString } from '$lib/utils/format/labels';
 	import Icon from '../widgets/Icon.svelte';
 	import type { Kaljakori } from '$lib/alko';
-	import Popup from '../widgets/Popup.svelte';
-	import AllLists from '../widgets/AllLists.svelte';
-	import AddToListContent from '../widgets/AddToListContent.svelte';
+	import AddToListButton from '../widgets/AddToListButton.svelte';
 	import { isLaptop, isMobile, pageBottomBar, searchQuery } from '$lib/global.svelte';
 	import Filters from '../widgets/Filters.svelte';
 	import { initFilterValues, sortRows } from '$lib/utils/catalog/filters';
@@ -33,18 +31,22 @@
 	import ProductPreview from '../widgets/ProductPreview.svelte';
 	import BottomBar from '../widgets/BottomBar.svelte';
 	import FilterButton from '../widgets/FilterButton.svelte';
+	import FoldableSidebar from '../widgets/FoldableSidebar.svelte';
 
 	const {
 		kaljakori,
 		header,
 		footer,
 		showFilters = true,
+		title,
 		position
 	}: {
 		kaljakori: Kaljakori;
 		header?: Snippet;
 		footer?: Snippet;
 		showFilters?: boolean;
+		/** The page's name, shown on the header sidebar while it's folded */
+		title?: string;
 		/** Where to scroll the list to, e.g. one saved by `currentPosition` before leaving the page */
 		position?: ListPosition;
 	} = $props();
@@ -225,11 +227,17 @@
 	class={twMerge(
 		'relative grid h-full max-h-full overflow-hidden',
 		showFilters ? 'grid-cols-[auto_1fr]' : 'bg-secondary',
-		!showFilters && (sidebarHeader ? 'grid-cols-[20rem_1fr]' : 'grid-cols-1')
+		!showFilters && (sidebarHeader ? 'grid-cols-[auto_1fr]' : 'grid-cols-1')
 	)}
 >
 	{#if sidebarHeader}
-		<aside class="flex max-h-full flex-col overflow-hidden border-e border-primary bg-primary">
+		<FoldableSidebar
+			id="category"
+			{title}
+			icon="wine"
+			label="sivupalkki"
+			class="flex max-h-full w-80 flex-col overflow-hidden border-e border-primary bg-primary"
+		>
 			<div class="flex flex-auto flex-col gap-3 overflow-y-auto p-4">
 				{@render header?.()}
 			</div>
@@ -238,11 +246,16 @@
 					{@render footer()}
 				</div>
 			{/if}
-		</aside>
+		</FoldableSidebar>
 	{/if}
 	{#if showFilters}
-		<aside
-			class="z-10 flex h-full max-h-full flex-col overflow-hidden border-primary md:w-84 md:border-r"
+		<FoldableSidebar
+			id="filters"
+			icon="filter"
+			title={activeFilters.length ? `Suodattimet (${activeFilters.length})` : 'Suodattimet'}
+			label="suodattimet"
+			foldable={!$isMobile}
+			class="z-10 flex h-full max-h-full flex-col overflow-hidden border-primary md:w-80 md:border-r"
 		>
 			<a
 				href="#results"
@@ -257,7 +270,7 @@
 				bind:this={filtersComponent}
 				resultCount={rows.length}
 			/>
-		</aside>
+		</FoldableSidebar>
 	{/if}
 	<!-- Without the filter sidebar, match the product page's width so rows don't stretch -->
 	<div
@@ -363,24 +376,7 @@
 								<Icon name="hashtag" />
 								<span>{`${idx + 1}`}</span>
 							</div>
-							<Popup class="gap-4 p-4">
-								{#snippet renderButton(dialogElement: HTMLDialogElement)}
-									<button
-										class={twMerge(components.button({ type: 'positive' }), 'ml-auto')}
-										aria-label="Lisää listaan tai booliin"
-										onclick={() => dialogElement.showModal()}
-									>
-										<span>Lisää</span>
-										<Icon name="plus" />
-									</button>
-								{/snippet}
-								{#snippet renderContent(dialogElement: HTMLDialogElement)}
-									<AddToListContent
-										productNumber={item[AllColumns.Number]}
-										onadded={() => dialogElement.close()}
-									/>
-								{/snippet}
-							</Popup>
+							<AddToListButton productNumber={item[AllColumns.Number]} class="ml-auto" />
 						{/snippet}
 					</ProductPreview>
 				{/snippet}

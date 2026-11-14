@@ -26,7 +26,8 @@ const product = (
 		abv,
 		type = 'Viinit',
 		subType = 'kuohuviinit ja samppanjat',
-		removed = false
+		removed = false,
+		notes
 	}: {
 		price: number;
 		volume: number;
@@ -34,6 +35,7 @@ const product = (
 		type?: string;
 		subType?: string;
 		removed?: boolean;
+		notes?: string[];
 	}
 ) =>
 	({
@@ -45,6 +47,7 @@ const product = (
 		[AllColumns.Type]: type,
 		[AllColumns.SubType]: subType,
 		[AllColumns.BeerType]: '',
+		[AllColumns.Description]: notes && new Set(notes),
 		[AllColumns.RemovedFromSelection]: removed,
 		...calculateDrunkValue(volume, abv, price)
 	}) as unknown as PriceListItem;
@@ -148,6 +151,7 @@ describe('mixerForTarget', () => {
 describe('sharing', () => {
 	const recipe: PunchRecipe = {
 		name: 'Juhannus',
+		description: 'Tarjoile kylmänä',
 		glass: 0.25,
 		people: 8,
 		ingredients: [
@@ -158,6 +162,12 @@ describe('sharing', () => {
 
 	it('round-trips a recipe', () => {
 		expect(decodePunch(encodePunch(recipe))).toEqual(recipe);
+	});
+
+	it('keeps links without a description as short as before', () => {
+		const without = encodePunch({ ...recipe, description: '' });
+		expect(decodePunch(without)?.description).toBe('');
+		expect(without.length).toBeLessThan(encodePunch(recipe).length);
 	});
 
 	it('rejects mangled links', () => {
@@ -176,7 +186,10 @@ describe('sharing', () => {
 				null
 			]
 		});
-		expect(sanitized?.name.length).toBe(80);
+		expect(sanitized?.name.length).toBe(30);
+		expect(sanitizePunch({ ...recipe, description: 'x'.repeat(500) })?.description.length).toBe(
+			100
+		);
 		expect(sanitized?.glass).toBe(0.01);
 		expect(sanitized?.people).toBe(1);
 		expect(sanitized?.ingredients).toEqual([
@@ -189,6 +202,7 @@ describe('scalePunch', () => {
 	it('scales to quarter packages', () => {
 		const recipe: PunchRecipe = {
 			name: '',
+			description: '',
 			glass: 0.2,
 			people: 1,
 			ingredients: [{ kind: 'alko', id: '1', count: 3 }]
@@ -232,6 +246,27 @@ describe('cheaperAlternative', () => {
 			(item) => item[AllColumns.Number] !== '2'
 		);
 		expect(swap).toBeNull();
+	});
+});
+
+describe('cheaperAlternative for ciders', () => {
+	const cider = (id: string, price: number, notes: string[]) =>
+		product(id, { price, volume: 0.5, abv: 7, type: 'Panimotuotteet', subType: 'siiderit', notes });
+	const current = cider('1', 4.4, ['Keltainen', ' kuiva', ' hapokas', ' keltaomenainen']);
+
+	it('keeps to the same fruit', () => {
+		const pear = cider('2', 3.99, ['Vaalea', ' kuiva', ' päärynäinen', ' omenainen']);
+		expect(cheaperAlternative(current, 4, [current, pear])).toBeNull();
+	});
+
+	it('keeps to about the same sweetness', () => {
+		const sweet = cider('2', 3.5, ['Vaalea', ' makea', ' omenainen']);
+		expect(cheaperAlternative(current, 4, [current, sweet])).toBeNull();
+	});
+
+	it('suggests a similar cider', () => {
+		const apple = cider('2', 3.5, ['Vaalea', ' puolikuiva', ' kypsän omenainen']);
+		expect(cheaperAlternative(current, 4, [current, apple])?.product[AllColumns.Number]).toBe('2');
 	});
 });
 

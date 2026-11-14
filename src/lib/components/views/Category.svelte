@@ -387,6 +387,7 @@
 	<Main
 		{kaljakori}
 		{header}
+		title={node.name}
 		footer={$isLaptop ? undefined : footer}
 		showFilters={false}
 		{position}

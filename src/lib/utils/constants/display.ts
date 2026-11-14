@@ -187,7 +187,7 @@ export const filterToUnitMarker = {
 	[AllColumns.Sugar]: 'g/l',
 	[AllColumns.AlcoholGrams]: 'g',
 	[AllColumns.Acidity]: 'g/l',
-	[AllColumns.Energy]: 'kcal/100ml',
+	[AllColumns.Energy]: 'kcal/100 ml',
 	[AllColumns.BitternessEBU]: 'EBU',
 	[AllColumns.OriginalGravity]: '°P',
 	[AllColumns.ColorEBC]: 'EBC',

@@ -13,7 +13,8 @@ import {
 	parsePriceChangeParams,
 	priceChangeParams,
 	priceChangesURL,
-	priceChangeSince
+	priceChangeSince,
+	sortPriceChanges
 } from '$lib/utils/stats/priceChanges';
 
 const product = (id: string, type: string, subType = '') =>
@@ -58,6 +59,16 @@ describe('price change filters', () => {
 		expect(counts.get('oluet/lager')).toBe(1);
 		expect(counts.get('punaviinit')).toBe(1);
 	});
+
+	it('sorts by recency or by the size of the change', () => {
+		const item = product('1', 'Viinit');
+		const newest = { ...change(item, 10, 11), date: '2026-10-03' };
+		const newerEqual = { ...change(item, 10, 9), date: '2026-10-02' };
+		const biggestDrop = { ...change(item, 10, 5), date: '2026-10-01' };
+		const newestFirst = [newest, newerEqual, biggestDrop];
+		expect(sortPriceChanges(newestFirst, 'recent')).toEqual(newestFirst);
+		expect(sortPriceChanges(newestFirst, 'biggest')).toEqual([biggestDrop, newest, newerEqual]);
+	});
 });
 
 describe('price change params', () => {
@@ -65,11 +76,13 @@ describe('price change params', () => {
 		const options = {
 			days: 7 as const,
 			direction: 'down' as const,
+			sort: 'biggest' as const,
 			typeSlug: 'oluet',
 			subTypeSlug: 'lager'
 		};
 		const params = new URLSearchParams(priceChangeParams(options));
 		expect(params.get('suunta')).toBe('halpeni');
+		expect(params.get('jarjestys')).toBe('suurin');
 		expect(parsePriceChangeParams(params)).toEqual(options);
 	});
 
@@ -77,14 +90,18 @@ describe('price change params', () => {
 		expect(priceChangeParams({ days: DEFAULT_PRICE_CHANGE_WINDOW, direction: 'all' })).toEqual({
 			pv: '',
 			suunta: '',
+			jarjestys: '',
 			tyyppi: '',
 			alatyyppi: ''
 		});
 		expect(
-			parsePriceChangeParams(new URLSearchParams('pv=12&suunta=sivulle&alatyyppi=lager'))
+			parsePriceChangeParams(
+				new URLSearchParams('pv=12&suunta=sivulle&jarjestys=hassu&alatyyppi=lager')
+			)
 		).toEqual({
 			days: DEFAULT_PRICE_CHANGE_WINDOW,
 			direction: 'all',
+			sort: 'recent',
 			typeSlug: undefined,
 			subTypeSlug: undefined
 		});

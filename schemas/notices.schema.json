@@ -68,6 +68,11 @@
 					"default": true,
 					"description": "Set to `false` to keep the notice up."
 				},
+				"dismissOnLinkClick": {
+					"type": "boolean",
+					"default": true,
+					"description": "Dismiss the notice when its link is clicked. Set to `false` to keep it up, e.g. for a warning that links to more details. Has no effect on a notice with `dismissible: false`."
+				},
 				"replacesStaleWarning": {
 					"type": "boolean",
 					"default": false,

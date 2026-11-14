@@ -22,6 +22,8 @@ jobs:
   sync:
     if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
+    outputs:
+      fetched: ${{ steps.gate.outputs.fetch }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -45,22 +47,53 @@ jobs:
           if git show origin/gh-pages:data-removed.json > /tmp/data-removed.json 2>/dev/null; then
             mv /tmp/data-removed.json data-removed.json
           fi
-          # Change-detection hashes live next to data.json (scripts/data/dataset-file.ts).
-          # If missing, they're recomputed from data.json, so this never forces a full refetch.
-          if git show origin/gh-pages:hashes.json > /tmp/hashes.json 2>/dev/null; then
+          # Change-detection hashes (scripts/data/dataset-file.ts), under data/ with the pipeline's
+          # other files. If missing, they're recomputed from data.json, so this never forces a full refetch.
+          if git show origin/gh-pages:data/hashes.json > /tmp/hashes.json 2>/dev/null; then
             mv /tmp/hashes.json hashes.json
           fi
 
       - name: Rehash seeded dataset to current schema
         uses: ./.github/actions/rehash-dataset
 
+      # A run after a build still deploys the new page shell, but skips the Alko fetch
+      # when the deployed data was synced recently, so a burst of pushes doesn't hit the
+      # API each time. Scheduled and manual runs always fetch.
+      - name: Check time since last sync
+        id: gate
+        env:
+          SYNC_COOLDOWN_MINUTES: '120'
+        run: |
+          fetch=true
+          if [ "${{ github.event_name }}" = "workflow_run" ] && [ -f data.json ]; then
+            last=$(jq -r '.metadata.LastSynced // empty' data.json)
+            if [ -n "$last" ]; then
+              age=$(( ($(date +%s) - $(date -d "$last" +%s)) / 60 ))
+              if [ "$age" -lt "$SYNC_COOLDOWN_MINUTES" ]; then
+                echo "⏭️  Last sync $age min ago (< $SYNC_COOLDOWN_MINUTES) — redeploying the current data without fetching."
+                fetch=false
+              else
+                echo "· Last sync $age min ago — fetching."
+              fi
+            fi
+          fi
+          # The sync writes availability.json; without it, deploy the current one
+          if [ "$fetch" = false ]; then
+            git show origin/gh-pages:availability.json > availability.json
+          fi
+          echo "fetch=$fetch" >> "$GITHUB_OUTPUT"
+
       - name: Run script to convert to JSON
+        if: steps.gate.outputs.fetch == 'true'
         env:
           ALKO_DETAIL_CONCURRENCY: '8'
           ALKO_SEARCH_CONCURRENCY: '3'
           ALKO_SYNC_FORCE: ${{ inputs.force && '1' || '' }}
           # One line per attempt, for the run record (report job below)
           ALKO_SYNC_REPORT: sync-report.ndjson
+          # Barcodes found by the site's scanner, written into the EAN column (docs/api-worker.md)
+          GTIN_EXPORT_URL: https://api.alkometriikka.fi/gtin/export
+          GTIN_EXPORT_TOKEN: ${{ secrets.GTIN_EXPORT_TOKEN }}
         run: |
           for attempt in 1 2 3; do
             echo "▶️  Sync attempt $attempt..."
@@ -140,8 +173,8 @@ jobs:
           CF_R2_REGION: ${{ vars.CF_R2_REGION }}
           OG_CDN_BASE: ${{ vars.OG_CDN_BASE }}
         run: |
-          bun run scripts/og/og-images.ts --data data.json --manifest ../gh-pages/og-images.json
-          cp ../gh-pages/og-images.json og-images.json
+          bun run scripts/og/og-images.ts --data data.json --manifest ../gh-pages/data/og-images.json
+          cp ../gh-pages/data/og-images.json og-images.json
 
       # Category page cards: own script, `categories/` key prefix and manifest, so
       # they can never re-key or prune the product images above
@@ -155,8 +188,8 @@ jobs:
           CF_R2_REGION: ${{ vars.CF_R2_REGION }}
           OG_CDN_BASE: ${{ vars.OG_CDN_BASE }}
         run: |
-          bun run scripts/og/og-categories.ts --data data.json --manifest ../gh-pages/og-categories.json
-          cp ../gh-pages/og-categories.json og-categories.json
+          bun run scripts/og/og-categories.ts --data data.json --manifest ../gh-pages/data/og-categories.json
+          cp ../gh-pages/data/og-categories.json og-categories.json
 
       - name: Upload updated OG image manifest
         uses: actions/upload-artifact@v4
@@ -308,23 +341,29 @@ jobs:
 
       # Before the new availability.json is copied over the deployed one, which
       # is the previous run's and tells which products arrived in which store.
-      # Best-effort: a missed run only loses that day's point.
+      # Best-effort: a missed run only loses that day's point. Skipped when the sync
+      # didn't fetch, since the availability is the deployed one.
       - name: Update stock history
+        if: needs.sync.outputs.fetched == 'true'
         continue-on-error: true
         run: |
           bun run scripts/data/stock-history.ts \
             --availability availability.json \
             --previous ../gh-pages/availability.json \
-            --dir ../gh-pages/stock
+            --dir ../gh-pages/data/stock
 
       - name: Refresh product pages
         env:
           ALKO_PRERENDER_CONCURRENCY: '32'
         run: |
-          cp og-images.json ../gh-pages/og-images.json
-          [ -f og-categories.json ] && cp og-categories.json ../gh-pages/og-categories.json || true
-          bun run scripts/site/prerender-products.ts --data data.json --out ../gh-pages --template ../gh-pages/404.html --og-manifest ../gh-pages/og-images.json --manifest ../gh-pages/tuotteet-manifest.json
-          cp data.json data-removed.json hashes.json availability.json sitemap.xml rss.xml feed.json ../gh-pages/
+          # The pipeline's own files live under data/ on gh-pages (build.yml carries it over whole)
+          mkdir -p ../gh-pages/data
+          cp hashes.json og-images.json ../gh-pages/data/
+          [ -f og-categories.json ] && cp og-categories.json ../gh-pages/data/og-categories.json || true
+          bun run scripts/site/prerender-products.ts --data data.json --out ../gh-pages --template ../gh-pages/404.html --og-manifest ../gh-pages/data/og-images.json --og-categories-manifest ../gh-pages/data/og-categories.json --manifest ../gh-pages/data/tuotteet-manifest.json
+          cp data.json data-removed.json availability.json sitemap.xml rss.xml feed.json ../gh-pages/
+          # Slimmed-down copy for the Bläkkiskili Telegram bot (see docs/data/dataset-format.md)
+          bun run scripts/data/minimal.ts --data data.json --out ../gh-pages/data.minimal.json
           bun run scripts/site/prerender-static.ts --out ../gh-pages --template ../gh-pages/404.html --availability availability.json
           # Reset first so stale manifests (and the nested archive/) actually
           # disappear from the site instead of merging over.
@@ -339,10 +378,7 @@ jobs:
       - name: Commit and push downloaded file
         working-directory: ../gh-pages
         run: |
-          git add data.json data-removed.json hashes.json availability.json sitemap.xml rss.xml feed.json rss daily tuotteet tuotteet-manifest.json kategoriat -f index.html myymalat laskin tilastot kompassi hinnanmuutokset listat seuratut
-          [ -d stock ] && git add -f stock || true
-          [ -f og-images.json ] && git add og-images.json -f || true
-          [ -f og-categories.json ] && git add og-categories.json -f || true
+          git add data.json data-removed.json data.minimal.json availability.json sitemap.xml rss.xml feed.json rss daily data tuotteet kategoriat -f index.html myymalat laskin tilastot kompassi hinnanmuutokset listat seuratut
           git commit -m "Update price list and static product pages [skip ci]" || echo "No changes to commit"
           git push origin HEAD:gh-pages
 
@@ -368,7 +404,7 @@ jobs:
           curl -sS -X POST "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE}/purge_cache" \
             -H "Authorization: Bearer ${CLOUDFLARE_PURGE_KEY}" \
             -H "Content-Type: application/json" \
-            --data '{"files":["https://alkometriikka.fi/data.json","https://alkometriikka.fi/data-removed.json","https://alkometriikka.fi/availability.json","https://alkometriikka.fi/rss.xml","https://alkometriikka.fi/feed.json","https://alkometriikka.fi/notices.json","https://alkometriikka.fi/flags.json","https://alkometriikka.fi/service-worker.js"]}' || \
+            --data '{"files":["https://alkometriikka.fi/data.json","https://alkometriikka.fi/data-removed.json","https://alkometriikka.fi/data.minimal.json","https://alkometriikka.fi/availability.json","https://alkometriikka.fi/rss.xml","https://alkometriikka.fi/feed.json","https://alkometriikka.fi/notices.json","https://alkometriikka.fi/flags.json","https://alkometriikka.fi/service-worker.js"]}' || \
             echo "⚠️  Cache purge failed; continuing."
 
   # Records the run (result, timings, sync attempts) in R2 for build monitoring.

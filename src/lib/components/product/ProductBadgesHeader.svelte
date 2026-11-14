@@ -11,7 +11,12 @@
 		class: _class = ''
 	}: { product: PriceListItem; sale: SaleInfo | null; class?: string } = $props();
 
-	const description = $derived([...(product[AllColumns.Description] ?? [])].join(', '));
+	// The words are capitalized one by one, as tags; as a line only its first one is
+	const description = $derived(
+		[...(product[AllColumns.Description] ?? [])]
+			.map((word, index) => (index ? word.toLowerCase() : word))
+			.join(', ')
+	);
 
 	// The main list narrowed to the same producer's products
 	const manufacturerHref = $derived.by(() => {

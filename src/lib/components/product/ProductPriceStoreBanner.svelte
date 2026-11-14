@@ -3,7 +3,7 @@
 	import { formatValue } from '$lib/utils/format/format';
 	import type { AvailabilityStore, LoadState, PriceListItem } from '$lib/types';
 	import type { SaleInfo } from '$lib/utils/catalog/sales';
-	import { requestSettingsOpen } from '$lib/utils/app/settings';
+	import { groceryLinks } from '$lib/utils/catalog/grocery';
 	import { components } from '$lib/utils/ui/styles';
 	import Icon from '../widgets/Icon.svelte';
 	import { twMerge } from 'tailwind-merge';
@@ -13,10 +13,13 @@
 		sale,
 		campaignWindow,
 		storesState,
+		inNoStore,
 		preferredStore,
 		availableInPreferredStore,
 		closestAvailableStore,
 		closestAvailableDistance,
+		storeCounts,
+		liveLoading = false,
 		class: _class = ''
 	}: {
 		product: PriceListItem;
@@ -24,10 +27,16 @@
 		campaignWindow: string | null;
 		/** The preferred store's availability: `loading` only while a chosen store's is on its way */
 		storesState: LoadState;
+		/** Availability has loaded and no store has the product, so choosing a store won't help */
+		inNoStore: boolean;
 		preferredStore?: AvailabilityStore;
 		availableInPreferredStore: boolean;
 		closestAvailableStore?: AvailabilityStore;
 		closestAvailableDistance: string | null;
+		/** Store id → units, once the live counts are in */
+		storeCounts?: Map<string, number>;
+		/** The live counts are on their way, and may still change what the store box says */
+		liveLoading?: boolean;
 		class?: string;
 	} = $props();
 
@@ -38,10 +47,35 @@
 			false
 	);
 
+	const preferredStoreCount = $derived(
+		preferredStore ? storeCounts?.get(preferredStore.id) : undefined
+	);
+	const closestAvailableCount = $derived(
+		closestAvailableStore ? storeCounts?.get(closestAvailableStore.id) : undefined
+	);
+
+	// Beer, cider and other drinks grocery stores may sell too
+	const groceryStoreLinks = $derived(groceryLinks(product));
+
 	function scrollToAvailability() {
 		document.getElementById('myymalasaatavuus')?.scrollIntoView({ behavior: 'smooth' });
 	}
+
+	function openStoreSearch() {
+		scrollToAvailability();
+		document.getElementById('myymalasaatavuus-haku')?.focus({ preventScroll: true });
+	}
 </script>
+
+{#snippet soldNowhere(title: string, detail: string)}
+	<div class="flex items-start gap-2.5 rounded border border-primary bg-primary p-3">
+		<Icon name="x_circle" class="text-red-700 dark:text-red-400" />
+		<div class="flex min-w-0 flex-col gap-0.5">
+			<strong class="text-sm">{title}</strong>
+			<span class="text-sm text-secondary">{detail}</span>
+		</div>
+	</div>
+{/snippet}
 
 <div class={twMerge('flex flex-col gap-4', _class)}>
 	<div class="flex flex-col gap-0.5">
@@ -87,7 +121,12 @@
 		{/if}
 	</div>
 
-	{#if storesState === 'failed'}
+	{#if product[AllColumns.RemovedFromSelection]}
+		{@render soldNowhere(
+			'Poistunut Alkon valikoimasta',
+			'Tuotetta ei enää myydä Alkon myymälöissä.'
+		)}
+	{:else if storesState === 'failed'}
 		<div
 			class="flex min-h-17 items-center gap-2.5 rounded border border-primary bg-primary p-3 text-sm text-secondary"
 		>
@@ -101,6 +140,11 @@
 			<Icon name="store" class="text-xl" />
 			<span>Haetaan saatavuutta…</span>
 		</div>
+	{:else if inNoStore}
+		{@render soldNowhere(
+			'Ei saatavilla myymälöistä',
+			'Tuotetta ei ole tällä hetkellä yhdessäkään myymälässä.'
+		)}
 	{:else if preferredStore}
 		<div class="flex flex-col gap-2.5 rounded border border-primary bg-primary p-3">
 			<div class="flex items-start gap-2.5">
@@ -117,24 +161,30 @@
 							: 'text-sm text-red-700 dark:text-red-400'}
 					>
 						{availableInPreferredStore
-							? 'Saatavilla valitusta myymälästä'
+							? `Saatavilla valitusta myymälästä${preferredStoreCount ? ` · ${preferredStoreCount} kpl` : ''}`
 							: 'Ei saatavilla valitusta myymälästä'}
+						<!-- Where the unit count will appear; inline so the box doesn't change height -->
+						{#if liveLoading}
+							<span
+								class="ms-1 inline-block size-3 animate-spin rounded-full border-2 border-current border-b-transparent align-[-1px] text-secondary"
+								title="Haetaan ajantasaista saatavuutta"
+							></span>
+							<span class="sr-only">Haetaan ajantasaista saatavuutta</span>
+						{/if}
 					</span>
 					<strong class="text-sm">{preferredStore.name}</strong>
 					{#if !availableInPreferredStore && closestAvailableStore}
 						<span class="text-sm text-secondary">
 							Lähin saatavilla: {closestAvailableStore.name}{closestAvailableDistance
 								? ` (${closestAvailableDistance})`
-								: ''}
+								: ''}{closestAvailableCount ? ` · ${closestAvailableCount} kpl` : ''}
 						</span>
-					{:else if !availableInPreferredStore}
-						<span class="text-sm text-secondary">Ei saatavilla muista myymälöistä</span>
 					{/if}
 				</div>
 				<button
 					type="button"
 					class="ml-auto shrink-0 border-0 bg-transparent p-0 text-sm text-secondary underline"
-					onclick={requestSettingsOpen}
+					onclick={openStoreSearch}
 				>
 					Vaihda
 				</button>
@@ -160,10 +210,28 @@
 				components.button({ size: 'sm' }),
 				'flex w-full items-center gap-2.5 border-dashed bg-primary text-left text-sm text-secondary'
 			)}
-			onclick={requestSettingsOpen}
+			onclick={openStoreSearch}
 		>
 			<Icon name="store" class="text-xl" />
 			<span>Valitse ensisijainen myymälä nähdäksesi saatavuuden</span>
 		</button>
+	{/if}
+
+	{#if groceryStoreLinks.length}
+		<p class="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-secondary">
+			<span class="w-full">Vertaa hintaa ruokakaupoissa:</span>
+			{#each groceryStoreLinks as link (link.id)}
+				<a
+					href={link.href}
+					target="_blank"
+					rel="noopener noreferrer"
+					referrerpolicy="no-referrer"
+					class="inline-flex items-center gap-1 underline"
+				>
+					{link.name}
+					<Icon name="link_external" />
+				</a>
+			{/each}
+		</p>
 	{/if}
 </div>

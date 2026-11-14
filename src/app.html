@@ -251,6 +251,28 @@
 		></script>
 		<!-- End Cloudflare Web Analytics -->
 		<!-- Umami Analytics -->
+		<script>
+			// Automated browsers that pass Umami's user-agent check. A sure sign drops the hit; weaker
+			// hints and the time zone go into the tag, to compare against the country of the IP
+			{
+				const automated = navigator.webdriver || /Headless/.test(navigator.userAgent);
+				const hints = [];
+				if (!outerWidth || !outerHeight) hints.push('no-window');
+				if (!navigator.languages?.length) hints.push('no-languages');
+				const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+				// Umami rejects tags over 50 characters
+				const tag = [...hints, timeZone].join(' ').slice(0, 50);
+				window.umamiBeforeSend = (type, payload) => !automated && { ...payload, tag };
+
+				// The recorder ignores data-before-send, so it isn't loaded at all
+				if (!automated) {
+					const recorder = document.createElement('script');
+					recorder.src = 'https://analytics.alkometriikka.fi/recorder.js';
+					recorder.dataset.websiteId = '57fef1b0-17a9-4613-9263-1ab5f3206957';
+					document.head.append(recorder);
+				}
+			}
+		</script>
 		<script
 			defer
 			src="https://analytics.alkometriikka.fi/script.js"
@@ -258,11 +280,7 @@
 			data-exclude-search="true"
 			data-do-not-track="true"
 			data-performance="true"
-		></script>
-		<script
-			defer
-			src="https://analytics.alkometriikka.fi/recorder.js"
-			data-website-id="57fef1b0-17a9-4613-9263-1ab5f3206957"
+			data-before-send="umamiBeforeSend"
 		></script>
 		<!-- End Umami Analytics -->
 	</head>

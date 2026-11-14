@@ -21,7 +21,7 @@
 		<h2 class="text-xl font-bold">Tapahtui virhe</h2>
 		<p>{page.error?.message}</p>
 		<a href={resolve('/')} class={twMerge(components.button({ size: 'md' }))}>
-			<Icon name="arrow_left" class="inline-block" />
+			<Icon name="arrow_left" />
 			<span>Palaa etusivulle</span>
 		</a>
 	</div>

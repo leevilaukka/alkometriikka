@@ -8,6 +8,8 @@
 	import {
 		compareHighlightDifferences,
 		compareProductIds,
+		foldedSidebars,
+		headerSlots,
 		isMobile,
 		isLaptop,
 		lists,
@@ -41,7 +43,17 @@
 	import Toast from '$lib/components/widgets/Toast.svelte';
 	import InstallBanner from '$lib/components/widgets/InstallBanner.svelte';
 	import { LocalStorageManager } from '$lib/utils/app/storage';
-	import type { IconName } from '$lib/icons';
+	import {
+		currentNavHref,
+		defaultHeaderSlots,
+		navGroups,
+		navItems,
+		pinHeaderSlot,
+		storedHeaderSlots,
+		type NavItem
+	} from '$lib/utils/app/nav';
+	import { sendAnalyticsEvent } from '$lib/utils/app/analytics';
+	import { showToast } from '$lib/utils/app/toast.svelte';
 	import { loadUpdateOnNavigate } from '$lib/utils/app/pwa.svelte';
 	import { loadFlags } from '$lib/utils/flags/flags.svelte';
 	import { resolvePreferredStore } from '$lib/utils/catalog/availability';
@@ -97,6 +109,11 @@
 	});
 
 	$effect(() => {
+		if ($headerSlots) LocalStorageManager.setItem(LocalStorageKeys.HeaderSlots, $headerSlots);
+		else LocalStorageManager.removeItem(LocalStorageKeys.HeaderSlots);
+	});
+
+	$effect(() => {
 		LocalStorageManager.setItem(LocalStorageKeys.PreferredStore, $preferredStoreId);
 	});
 
@@ -125,6 +142,10 @@
 			LocalStorageKeys.CompareHighlightDifferences,
 			$compareHighlightDifferences
 		);
+	});
+
+	$effect(() => {
+		LocalStorageManager.setItem(LocalStorageKeys.FoldedSidebars, $foldedSidebars);
 	});
 
 	$effect(() => {
@@ -201,6 +222,8 @@
 	}
 
 	let extraMenu = $state<HTMLDetailsElement>();
+	// The pins stay hidden until asked for, so the menu isn't a column of them
+	let editingPins = $state(false);
 	function closeExtraMenu() {
 		if (extraMenu) extraMenu.open = false;
 	}
@@ -211,8 +234,15 @@
 		extraMenu.querySelector('summary')?.focus();
 	}
 
+	/** Whether a click or focus stays with the Lisää menu; the toast a pin in it brought up counts too */
+	function staysInMenu(node: EventTarget | null) {
+		return (
+			node instanceof Element && (extraMenu?.contains(node) || !!node.closest('[role=status]'))
+		);
+	}
+
 	function handleExtraMenuFocusout(event: FocusEvent) {
-		if (extraMenu?.open && event.relatedTarget && !extraMenu.contains(event.relatedTarget as Node))
+		if (extraMenu?.open && event.relatedTarget && !staysInMenu(event.relatedTarget))
 			extraMenu.open = false;
 	}
 
@@ -236,61 +266,37 @@
 	}
 
 	function handleDocumentClick(event: MouseEvent) {
-		if (extraMenu?.open && !event.composedPath().includes(extraMenu)) extraMenu.open = false;
+		// The whole path, as what was clicked may have been re-rendered out of the page by now
+		if (extraMenu?.open && !event.composedPath().some(staysInMenu)) extraMenu.open = false;
 	}
 
-	type MenuItem = { href: string; icon: IconName; name: string };
-	const menuGroups: { label: string; items: MenuItem[] }[] = [
-		{
-			label: 'Selaa',
-			items: [
-				{ href: '/kategoriat/', icon: 'wine', name: 'Kategoriat' },
-				{ href: '/hinnanmuutokset/', icon: 'trending_down', name: 'Hinnanmuutokset' },
-				{ href: '/tilastot/', icon: 'stats', name: 'Tilastot' }
-			]
-		},
-		{
-			label: 'Omat',
-			items: [
-				{ href: '/seuratut/', icon: 'bell', name: 'Seuratut' },
-				{ href: '/listat/', icon: 'list_ul', name: 'Listat' }
-			]
-		},
-		{
-			label: 'Myymälät',
-			items: [
-				{ href: '/myymalat/', icon: 'store', name: 'Myymälät' },
-				{ href: '/kompassi/', icon: 'compass', name: 'Kompassi' }
-			]
-		},
-		{
-			label: 'Työkalut & Pelit',
-			items: [
-				{ href: '/laskin/', icon: 'calculator', name: 'Laskin' },
-				{ href: '/boolilaskuri/', icon: 'cocktail', name: 'Boolilaskuri' },
-				{ href: '/daily/arkisto/', icon: 'archive', name: 'Daily-arkisto' }
-			]
-		}
-	];
+	// The pages with their own header buttons; the Lisää menu keeps them too, so it stays the same everywhere
+	const slots = $derived($headerSlots ?? defaultHeaderSlots($isMobile));
+	const slotItems = $derived(slots.map((href) => navItems.find((item) => item.href === href)!));
+	const currentHref = $derived(currentNavHref(page.url.pathname));
+
+	function togglePin(item: NavItem) {
+		const pinned = slots.includes(item.href);
+		const { slots: next, unpinned } = pinned
+			? { slots: slots.filter((href) => href !== item.href), unpinned: undefined }
+			: pinHeaderSlot(slots, item.href);
+		$headerSlots = storedHeaderSlots(next, $isMobile);
+		sendAnalyticsEvent('header_slots_changed', { slots: next.join(','), source: 'menu' });
+		// The pin icons show the rest; only a page dropping off the header needs saying
+		const replaced = navItems.find((navItem) => navItem.href === unpinned)?.name;
+		if (replaced) showToast({ text: `${item.name} korvasi ${replaced}-painikkeen yläpalkissa` });
+	}
 
 	const inCategory = $derived(page.route.id === '/kategoriat/[type]/[[subtype]]');
 
-	const noSearchPages: (typeof page.route.id)[] = [
-		'/daily/arkisto',
-		'/laskin',
-		'/boolilaskuri',
-		'/tilastot',
-		'/listat',
-		'/daily',
-		'/daily/arkisto/[date]',
-		'/tuotteet/[...id]',
-		'/vertailu',
-		'/kategoriat',
-		'/myymalat',
-		'/myymalat/[storeID]',
-		'/seuratut'
+	// The product lists that filter by the header's search; other pages get the Haku button, which
+	// opens the command palette, so a new page doesn't show a search box that does nothing
+	const searchPages: (typeof page.route.id)[] = [
+		'/',
+		'/kategoriat/[type]/[[subtype]]',
+		'/hinnanmuutokset'
 	];
-	const hasSearch = $derived(page.route.id === null || !noSearchPages.includes(page.route.id));
+	const hasSearch = $derived(searchPages.includes(page.route.id));
 
 	let commandPalette = $state<ReturnType<typeof CommandPalette>>();
 	const paletteShortcut = /Mac|iPhone|iPad/.test(navigator.userAgent) ? '⌘K' : 'Ctrl K';
@@ -389,6 +395,9 @@
 					class="relative"
 					onkeydown={handleExtraMenuKeydown}
 					onfocusout={handleExtraMenuFocusout}
+					ontoggle={() => {
+						if (!extraMenu?.open) editingPins = false;
+					}}
 				>
 					<summary
 						aria-label={changedWatchCount
@@ -404,28 +413,47 @@
 						{/if}
 					</summary>
 					<div
-						class="absolute end-0 top-full z-20 mt-2 flex w-56 flex-col rounded border border-primary bg-primary p-1.5 shadow-lg"
+						class="absolute end-0 top-full z-20 mt-2 flex max-h-[calc(100dvh-5rem)] w-56 flex-col overflow-y-auto rounded border border-primary bg-primary p-1.5 shadow-lg"
 					>
-						{#each menuGroups as group, index (group.label)}
-							<p
-								id={`menu-${index}`}
-								class={twMerge(
-									'px-2 pb-1 text-xs font-semibold tracking-wide text-secondary uppercase',
-									index > 0 ? 'mt-1.5 border-t border-primary pt-2.5' : 'pt-1'
-								)}
-							>
-								{group.label}
-							</p>
+						{#each navGroups as group, index (group.label)}
+							{#snippet groupLabel()}
+								<p
+									id={`menu-${index}`}
+									class={twMerge(
+										'px-2 pb-1 text-xs font-semibold tracking-wide text-secondary uppercase',
+										index > 0 ? 'mt-1.5 border-t border-primary pt-2.5' : 'pt-1'
+									)}
+								>
+									{group.label}
+								</p>
+							{/snippet}
+							{#if index === 0}
+								<!-- The cog shares the first label's row, so a bigger touch target pushes the rows down rather than covering one -->
+								<div class="flex items-center justify-between">
+									{@render groupLabel()}
+									<button
+										type="button"
+										aria-pressed={editingPins}
+										aria-label="Muokkaa yläpalkin pikavalintoja"
+										title="Muokkaa yläpalkin pikavalintoja"
+										onclick={() => (editingPins = !editingPins)}
+										class="rounded p-1 text-sm text-secondary hover:bg-secondary aria-pressed:bg-secondary aria-pressed:text-inherit pointer-coarse:p-2.5 pointer-coarse:text-base"
+									>
+										<Icon name="cog" />
+									</button>
+								</div>
+							{:else}
+								{@render groupLabel()}
+							{/if}
 							<ul aria-labelledby={`menu-${index}`}>
 								{#each group.items as item (item.href)}
-									<li>
+									{@const pinned = slots.includes(item.href)}
+									<li class="flex items-center gap-0.5">
 										<a
 											href={appPath(item.href)}
 											onclick={closeExtraMenu}
-											aria-current={page.url.pathname.startsWith(appPath(item.href))
-												? 'page'
-												: undefined}
-											class="flex items-center gap-2.5 rounded px-2 py-1.5 text-sm hover:bg-secondary aria-[current=page]:bg-secondary aria-[current=page]:font-semibold"
+											aria-current={item.href === currentHref ? 'page' : undefined}
+											class="flex flex-1 items-center gap-2.5 rounded px-2 py-1.5 text-sm hover:bg-secondary aria-[current=page]:bg-secondary aria-[current=page]:font-semibold pointer-coarse:py-2.5"
 										>
 											<Icon name={item.icon} class="text-base" />
 											<span class="flex-1">{item.name}</span>
@@ -436,24 +464,51 @@
 												>
 											{/if}
 										</a>
+										{#if editingPins}
+											<button
+												type="button"
+												aria-pressed={pinned}
+												aria-label={`Kiinnitä ${item.name} yläpalkkiin`}
+												title={pinned ? 'Irrota yläpalkista' : 'Kiinnitä yläpalkkiin'}
+												onclick={() => togglePin(item)}
+												class="rounded p-1.5 text-sm text-secondary opacity-60 hover:bg-secondary hover:opacity-100 aria-pressed:text-inherit aria-pressed:opacity-100 pointer-coarse:p-2.5 pointer-coarse:text-base"
+											>
+												<Icon name={pinned ? 'pin' : 'pin_alt'} />
+											</button>
+										{/if}
 									</li>
 								{/each}
 							</ul>
 						{/each}
+						{#if editingPins}
+							<p class="mt-1.5 border-t border-primary px-2 pt-2 text-xs text-secondary">
+								Kiinnitä enintään kaksi sivua yläpalkin painikkeiksi.
+							</p>
+						{/if}
 					</div>
 				</details>
-				<a
-					href={resolve('/daily/')}
-					aria-label="Daily"
-					class={twMerge(components.button(), 'p-2 text-xl')}
-					>{#if !$isMobile}<span class="text-sm">Daily</span>{/if}<Icon name="flame" /></a
-				>
-				<a
-					href={resolve('/listat/')}
-					aria-label="Listat"
-					class={twMerge(components.button(), 'p-2 text-xl')}
-					>{#if !$isMobile}<span class="text-sm">Listat</span>{/if}<Icon name="list_ul" /></a
-				>
+				{#each slotItems as item (item.href)}
+					{@const watchChanges = item.href === '/seuratut/' ? changedWatchCount : 0}
+					<a
+						href={appPath(item.href)}
+						aria-current={item.href === currentHref ? 'page' : undefined}
+						aria-label={watchChanges
+							? `${item.name}, ${watchChanges} tuotteessa muutoksia`
+							: item.name}
+						class={twMerge(
+							components.button(),
+							'relative p-2 text-xl aria-[current=page]:bg-secondary'
+						)}
+						>{#if !$isMobile}<span class="text-sm"
+								>{'shortName' in item ? item.shortName : item.name}</span
+							>{/if}<Icon name={item.icon} />
+						{#if watchChanges}
+							<span
+								class="absolute -end-1 -top-1 size-2.5 rounded-full bg-green-600 ring-2 ring-white dark:ring-zinc-900"
+							></span>
+						{/if}
+					</a>
+				{/each}
 				<ErrorBoundary name="settings">
 					<Settings {alko} />
 				</ErrorBoundary>

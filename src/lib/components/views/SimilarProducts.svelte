@@ -4,25 +4,35 @@
 	import SvelteVirtualList from '@humanspeak/svelte-virtual-list';
 	import ProductPreview from '../widgets/ProductPreview.svelte';
 	import { twMerge } from 'tailwind-merge';
-	import { goto } from '$app/navigation';
 	import { AllColumns } from '$lib/utils/constants/columns';
 	import type { PriceListItem } from '$lib/types';
 	import { components } from '$lib/utils/ui/styles';
 	import { isMobile } from '$lib/global.svelte';
 	import Icon from '../widgets/Icon.svelte';
-	import Popup from '../widgets/Popup.svelte';
-	import AllLists from '../widgets/AllLists.svelte';
-	import AddToListContent from '../widgets/AddToListContent.svelte';
+	import AddToListButton from '../widgets/AddToListButton.svelte';
 	import { setSEO } from '$lib/utils/app/meta';
-	import { valueToString } from '$lib/utils/format/labels';
 	import { formatValue } from '$lib/utils/format/format';
 	import ProductImage from '../widgets/ProductImage.svelte';
+	import ProductBreadcrumb from '../product/ProductBreadcrumb.svelte';
 	import BadgeList from '../widgets/BadgeList.svelte';
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import { generateImageUrl } from '$lib/utils/catalog/alko';
 
 	let { product, kaljakori } = $props();
+
+	// Same order as the product page's line under the name
+	const details = $derived(
+		[
+			product[AllColumns.Manufacturer],
+			formatValue(product[AllColumns.BottleSize], AllColumns.BottleSize),
+			formatValue(product[AllColumns.AlcoholPercentage], AllColumns.AlcoholPercentage),
+			product[AllColumns.Vintage],
+			product[AllColumns.Availability]
+		]
+			.filter(Boolean)
+			.join(' · ')
+	);
 
 	let listRef: SvelteVirtualList<PriceListItem | null> | null = $state(null);
 	let showScrollToTopButton = $state(false);
@@ -46,11 +56,6 @@
 			kaljakori.data.length
 		)
 	);
-
-	function handleBack() {
-		if (window.history.length > 1) window.history.back();
-		else goto(resolve('/'));
-	}
 
 	onMount(() => {
 		const viewport = document.getElementById('virtual-list-viewport');
@@ -86,15 +91,10 @@
 </script>
 
 <div
-	class={twMerge(
-		'mx-auto flex w-full max-w-[120ch] flex-auto flex-col flex-nowrap gap-4 p-4 md:p-6'
-	)}
+	class={twMerge('mx-auto flex w-full max-w-7xl flex-auto flex-col flex-nowrap gap-4 p-4 md:p-6')}
 >
-	<div class="flex w-full items-center justify-between gap-4">
-		<button onclick={() => handleBack()} class={twMerge(components.button({ size: 'md' }))}>
-			<Icon name={window.history.length > 1 ? 'arrow_back' : 'home'} class="inline-block" />
-			<span>{window.history.length > 1 ? 'Takaisin' : 'Etusivulle'}</span>
-		</button>
+	<div class="flex min-h-8 w-full items-center justify-between gap-4">
+		<ProductBreadcrumb {product} {kaljakori} current="Samankaltaiset" />
 		{#if showScrollToTopButton}
 			<button
 				in:fade={{ duration: 200 }}
@@ -102,7 +102,7 @@
 				onclick={() => {
 					listRef?.scroll({ index: 0, smoothScroll: false });
 				}}
-				class={twMerge(components.button({ size: 'md' }))}
+				class={twMerge(components.button(), 'shrink-0')}
 			>
 				<Icon name={'arrow_to_top'} />
 				<span>{$isMobile ? 'Alkuun' : 'Hyppää alkuun'}</span>
@@ -138,21 +138,7 @@
 											{product[AllColumns.Name]}
 										</a>
 									</h1>
-									<span>
-										{valueToString(product[AllColumns.Manufacturer], AllColumns.Manufacturer)} | {valueToString(
-											product[AllColumns.BottleSize],
-											AllColumns.BottleSize
-										)} | {valueToString(
-											product[AllColumns.AlcoholPercentage],
-											AllColumns.AlcoholPercentage
-										)}
-										{product[AllColumns.Vintage] !== ''
-											? `| ${valueToString(product[AllColumns.Vintage], AllColumns.Vintage)}`
-											: ''}</span
-									>
-									<p class="w-fit rounded bg-gray-100 px-1 dark:bg-zinc-700 dark:text-white">
-										{product[AllColumns.Availability]}
-									</p>
+									<p class="text-secondary">{details}</p>
 									<div class="flex w-full flex-row gap-2 md:flex-row">
 										<BadgeList item={product} />
 									</div>
@@ -162,10 +148,10 @@
 										{formatValue(product[AllColumns.Price], AllColumns.Price)}
 									</p>
 									<span class="text-sm text-secondary">
-										({formatValue(product[AllColumns.BottleSize], AllColumns.BottleSize)} | {formatValue(
+										{formatValue(product[AllColumns.BottleSize], AllColumns.BottleSize)} · {formatValue(
 											product[AllColumns.PricePerLiter],
 											AllColumns.PricePerLiter
-										)})
+										)}
 									</span>
 								</div>
 							</div>
@@ -185,26 +171,9 @@
 								<Icon name="hashtag" />
 								<span>{`${idx}`}</span>
 							</div>
-							<Popup class="gap-4 p-4">
-								{#snippet renderButton(dialogElement: HTMLDialogElement)}
-									<button
-										class={twMerge(components.button({ type: 'positive' }), 'ml-auto')}
-										aria-label="Lisää listaan tai booliin"
-										onclick={() => dialogElement.showModal()}
-									>
-										<span>Lisää</span>
-										<Icon name="plus" />
-									</button>
-								{/snippet}
-								{#snippet renderContent(dialogElement: HTMLDialogElement)}
-									{#if item}
-										<AddToListContent
-											productNumber={item[AllColumns.Number]}
-											onadded={() => dialogElement.close()}
-										/>
-									{/if}
-								{/snippet}
-							</Popup>
+							{#if item}
+								<AddToListButton productNumber={item[AllColumns.Number]} class="ml-auto" />
+							{/if}
 						{/snippet}
 					</ProductPreview>
 				{/if}
