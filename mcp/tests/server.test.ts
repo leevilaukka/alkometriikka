@@ -18,6 +18,7 @@ const TOOLS = [
 	'find_cheaper_alternative',
 	'get_product',
 	'list_filter_values',
+	'lookup_barcode',
 	'price_changes',
 	'price_history',
 	'search_products',

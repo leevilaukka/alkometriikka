@@ -33,6 +33,8 @@ export type DataStoreOptions = {
 	/** Per-request timeout. */
 	timeoutMs: number;
 	userAgent: string;
+	/** The API Worker's origin, for barcode lookups and live store counts; without it they are off. */
+	apiUrl?: string;
 	fetch?: FetchLike;
 	now?: () => number;
 };

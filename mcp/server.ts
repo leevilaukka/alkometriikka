@@ -27,10 +27,11 @@ export type CatalogSource = { get(): Promise<Catalog> };
 
 const INSTRUCTIONS = `Alkometriikka is an independent database of the Finnish alcohol retailer Alko's product catalog (not affiliated with Alko).
 - Product data (names, categories, countries, etc.) is in Finnish, exactly as Alko publishes it, and filter values are Finnish. Products are classified as category (e.g. "Viinit" wines, "Väkevät" spirits, "Panimotuotteet" beers/ciders/long drinks, "Alkoholittomat" non-alcoholic) → subcategory (e.g. "Punaviinit" red wines, "Oluet" beers, "Viskit" whiskies) → style (e.g. "Lager", "Ipa"). Use list_filter_values when unsure of a value.
-- Prices are in euros, volumes in liters. Product IDs are Alko product numbers (e.g. "319027").
+- Prices are in euros, volumes in liters. Product IDs are Alko product numbers (e.g. "319027"). For a barcode (EAN), use lookup_barcode; product_id inputs also accept a barcode the catalog already knows.
+- A product's status is Alko's: "Aktiivinen" (normal), "Uutuus" (new), "Poistuva" (being phased out), "Tulee" (coming, not on sale yet), or "Ei myynnissä" (Alko still lists it as coming long after its launch date, but it never went on sale; treat it as not available). Products removed from the selection have no status and removed_from_selection true.
 - Typical flow: search_products → get_product / compare_products / price_history / store_availability. create_list_link turns chosen products into a shareable alkometriikka.fi list link, and create_punch_link a punch (booli) recipe into a link to the punch calculator (suggest_punch builds one from a template). Also: price_changes (recent price drops/rises), find_cheaper_alternative, similar_products, store_overview and stock_trend.
 - Every result includes a "dataset" block with update timestamps. Data is refreshed upstream about every 6 hours; mention staleness when "stale" is true or warnings are present.
-- Store availability is a periodic snapshot without stock quantities; do not present it as live stock.`;
+- store_availability gives live unit counts per store when live.available is true. Otherwise, and everywhere else (store_count, the store filter, store_overview), store availability is a snapshot from the last sync without quantities; do not present that as live stock.`;
 
 const READ_ONLY = {
 	readOnlyHint: true,
@@ -65,6 +66,7 @@ const productSummary = z.looseObject({
 	alcohol_grams_per_euro: z.number().nullable(),
 	euro_per_liter_alcohol: z.number().nullable(),
 	sale_discount_percent: z.number().nullable(),
+	status: z.string().nullable(),
 	removed_from_selection: z.boolean(),
 	url: z.string()
 });
@@ -74,7 +76,7 @@ const productId = z
 	.min(1)
 	.max(200)
 	.describe(
-		'Alko product number, e.g. "319027" (an alko.fi or alkometriikka.fi product URL also works)'
+		'Alko product number, e.g. "319027" (an alko.fi or alkometriikka.fi product URL, or the barcode of a product the catalog knows, also works)'
 	);
 
 const stringList = (description: string) =>
@@ -198,7 +200,7 @@ Products removed from Alko's selection are excluded unless include_removed is tr
 		'get_product',
 		{
 			title: 'Get product details',
-			description: `Get full details for one Alko product: price, size, alcohol %, €/L, taste descriptors, grapes, beer/sugar/energy values, active sale, calculated alcohol-value metrics (alcohol grams, grams per euro, € per liter of pure alcohol, standard drinks), a price history summary, the number of stores listing it, and links. Use search_products first if you do not know the product ID.`,
+			description: `Get full details for one Alko product: price, size, alcohol %, €/L, taste descriptors, grapes, beer/sugar/energy values, active sale, status, calculated alcohol-value metrics (alcohol grams, grams per euro, € per liter of pure alcohol, standard drinks), a price history summary, the number of stores listing it at the last sync (store_availability has live unit counts), and links. Use search_products first if you do not know the product ID.`,
 			inputSchema: { product_id: productId },
 			outputSchema: {
 				product: productSummary,
@@ -415,7 +417,7 @@ Products removed from Alko's selection are excluded unless include_removed is tr
 		'store_availability',
 		{
 			title: 'Store availability',
-			description: `List the Alko stores where a product was available at the last availability snapshot (refreshed about every 6 hours, no stock quantities), optionally narrowed to a city or store name. Includes today's opening hours. Always tell the user the data may be out of date and stock is not guaranteed; the response includes the snapshot time and limitations.`,
+			description: `List the Alko stores that have a product, with how many units each has, optionally narrowed to a city or store name. Includes today's opening hours. The counts are live from Alko (live.available true, fetched_at at most about 15 minutes old); when they can't be fetched, the list falls back to the snapshot from the last sync (about every 6 hours) without quantities. Tell the user which one they got, and that stock can change before a visit; the response includes the times and limitations.`,
 			inputSchema: {
 				product_id: productId,
 				city: z.string().max(100).optional().describe('Only stores in this city, e.g. "Helsinki"'),
@@ -436,6 +438,11 @@ Products removed from Alko's selection are excluded unless include_removed is tr
 				product: productSummary,
 				selection: z.string().nullable(),
 				availability_data_loaded: z.boolean(),
+				live: z.object({
+					available: z.boolean(),
+					fetched_at: z.string().nullable(),
+					total_units: z.number().nullable()
+				}),
 				available_store_count: z.number(),
 				matching_store_count: z.number(),
 				stores: z.array(
@@ -445,6 +452,7 @@ Products removed from Alko's selection are excluded unless include_removed is tr
 						city: z.string().nullable(),
 						address: z.string().nullable(),
 						postal_code: z.string().nullable(),
+						units: z.number().nullable(),
 						opening_hours_today: z.string().nullable(),
 						open_now: z.boolean()
 					})
@@ -453,12 +461,44 @@ Products removed from Alko's selection are excluded unless include_removed is tr
 				limitations: z.array(z.string()),
 				dataset: datasetStatus
 			},
-			annotations: { title: 'Store availability', ...READ_ONLY }
+			annotations: { title: 'Store availability', ...READ_ONLY, openWorldHint: true }
 		},
 		async ({ product_id, city, store, limit }) =>
 			result(
-				(await source.get()).storeAvailability(product_id, { city, store, limit: limit ?? 25 })
+				await (
+					await source.get()
+				).storeAvailability(product_id, { city, store, limit: limit ?? 25 })
 			)
+	);
+
+	server.registerTool(
+		'lookup_barcode',
+		{
+			title: 'Look up a barcode',
+			description: `Find the Alko product for a barcode (EAN-13, UPC-A, EAN-8 or GTIN-14), as alkometriikka.fi's scanner does: the catalog first, then Alko itself for barcodes the catalog doesn't know yet. Returns the product's full details, like get_product. When Alko knows the barcode under a product number the catalog doesn't have yet, alko_product_id and note say so.`,
+			inputSchema: {
+				barcode: z
+					.string()
+					.min(8)
+					.max(20)
+					.describe('The digits printed under the barcode, e.g. "6415600549990"')
+			},
+			outputSchema: {
+				barcode: z.string(),
+				found: z.boolean(),
+				source: z
+					.enum(['catalog', 'alko'])
+					.nullable()
+					.describe('catalog: the barcode is in the dataset; alko: Alko was asked'),
+				product: productSummary.nullable(),
+				alko_product_id: z.string().nullable(),
+				lookup_failed: z.boolean().describe('Alko could not be asked; trying again may work'),
+				note: z.string().optional(),
+				dataset: datasetStatus
+			},
+			annotations: { title: 'Look up a barcode', ...READ_ONLY, openWorldHint: true }
+		},
+		async ({ barcode }) => result(await (await source.get()).lookupBarcode(barcode))
 	);
 
 	server.registerTool(

@@ -17,6 +17,13 @@ function defaultCacheDir(env: NodeJS.ProcessEnv): string {
 	return join(base, 'alkometriikka-mcp');
 }
 
+function apiUrl(env: NodeJS.ProcessEnv): string | undefined {
+	const value = env.ALKOMETRIIKKA_API_URL?.trim();
+	if (value) return value.toLowerCase() === 'off' ? undefined : value;
+	// Reading local files is for offline use and tests, so don't reach the Worker by default
+	return env.ALKOMETRIIKKA_DATA_DIR ? undefined : 'https://api.alkometriikka.fi';
+}
+
 /**
  * Reads the server configuration from environment variables:
  *
@@ -24,6 +31,8 @@ function defaultCacheDir(env: NodeJS.ProcessEnv): string {
  * - `ALKOMETRIIKKA_CACHE_DIR`  cache directory (default $XDG_CACHE_HOME/alkometriikka-mcp or ~/.cache/…)
  * - `ALKOMETRIIKKA_DATA_DIR`   read data.json/availability.json from this directory instead (offline)
  * - `ALKOMETRIIKKA_CACHE_TTL_MINUTES`  how long cached data is used before revalidating (default 60, min 10)
+ * - `ALKOMETRIIKKA_API_URL`    API Worker for barcode lookups and live store unit counts (default
+ *   https://api.alkometriikka.fi, but off with `ALKOMETRIIKKA_DATA_DIR` unless set; `off` turns it off)
  */
 export function loadConfig(env: NodeJS.ProcessEnv = process.env): DataStoreOptions {
 	return {
@@ -37,6 +46,7 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): DataStoreOptio
 		ttlMs: Math.max(10, positiveNumber(env.ALKOMETRIIKKA_CACHE_TTL_MINUTES, 60)) * MINUTE,
 		retryAfterFailureMs: 5 * MINUTE,
 		timeoutMs: 60 * 1000,
-		userAgent: `${SERVER_NAME}-mcp/${SERVER_VERSION} (+https://alkometriikka.fi)`
+		userAgent: `${SERVER_NAME}-mcp/${SERVER_VERSION} (+https://alkometriikka.fi)`,
+		apiUrl: apiUrl(env)
 	};
 }

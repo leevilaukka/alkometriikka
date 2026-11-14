@@ -287,8 +287,8 @@ describe('priceHistory', () => {
 });
 
 describe('storeAvailability', () => {
-	it('lists stores and excludes non-store outlets', () => {
-		const result = catalog.storeAvailability('100001', { limit: 25 });
+	it('lists stores and excludes non-store outlets', async () => {
+		const result = await catalog.storeAvailability('100001', { limit: 25 });
 		expect(result.available_store_count).toBe(2);
 		expect(result.stores.map((store) => store.store_id)).toEqual(['2101', '2201']);
 		expect(result.stores[0]).toMatchObject({ name: 'Helsinki keskusta Testi', city: 'HELSINKI' });
@@ -296,25 +296,26 @@ describe('storeAvailability', () => {
 		expect(result.dataset.availability_last_updated).toBe('2026-09-20T12:00:00.000Z');
 	});
 
-	it('narrows by city and store', () => {
-		expect(catalog.storeAvailability('300003', { city: 'turku', limit: 25 }).stores).toHaveLength(
-			1
-		);
+	it('narrows by city and store', async () => {
 		expect(
-			catalog.storeAvailability('300003', { store: 'tampere', limit: 25 }).matching_store_count
+			(await catalog.storeAvailability('300003', { city: 'turku', limit: 25 })).stores
+		).toHaveLength(1);
+		expect(
+			(await catalog.storeAvailability('300003', { store: 'tampere', limit: 25 }))
+				.matching_store_count
 		).toBe(1);
-		const limited = catalog.storeAvailability('300003', { limit: 1 });
+		const limited = await catalog.storeAvailability('300003', { limit: 1 });
 		expect(limited.stores_truncated).toBe(true);
 	});
 
-	it('reports products that are in no store', () => {
-		const result = catalog.storeAvailability('008003', { limit: 25 });
+	it('reports products that are in no store', async () => {
+		const result = await catalog.storeAvailability('008003', { limit: 25 });
 		expect(result.available_store_count).toBe(0);
 		expect(result.selection).toBe('Tilausvalikoima');
 	});
 
-	it('says availability is unknown when it could not be loaded', () => {
-		const result = fixtureCatalog({ withAvailability: false }).storeAvailability('100001', {
+	it('says availability is unknown when it could not be loaded', async () => {
+		const result = await fixtureCatalog({ withAvailability: false }).storeAvailability('100001', {
 			limit: 25
 		});
 		expect(result.availability_data_loaded).toBe(false);

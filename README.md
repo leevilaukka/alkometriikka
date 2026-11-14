@@ -292,23 +292,24 @@ claude mcp add --transport http alkometriikka https://mcp.alkometriikka.fi/mcp
 
 ### Tools
 
-| Tool                       | Purpose                                                                                                                                                                                                                      |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `search_products`          | Search by name and filter by category, subcategory, style, country, region, manufacturer, packaging, selection, grapes, taste, store/city, price, alcohol %, size, sugar and sale status. Results are capped at 50 per page. |
-| `get_product`              | Full details for one product, including calculated metrics, active sale, price history summary and store count.                                                                                                              |
-| `compare_products`         | Compare 2–10 products and show which one is best on each metric.                                                                                                                                                             |
-| `price_history`            | Recorded price changes and a summary for a product.                                                                                                                                                                          |
-| `store_availability`       | Stores that listed the product in the latest availability snapshot, with today's opening hours.                                                                                                                              |
-| `create_list_link`         | Build a shareable alkometriikka.fi list link from products and quantities. The list is encoded in the URL; nothing is stored.                                                                                                |
-| `create_punch_link`        | Build a link to the punch calculator (boolilaskuri) from Alko products and other ingredients, with glass size and number of people. The recipe is encoded in the URL; nothing is stored.                                     |
-| `price_changes`            | Products whose price changed in the last 7–365 days, with direction, category and sort options.                                                                                                                              |
-| `find_cheaper_alternative` | A cheaper, comparable product for a given product and quantity, optionally from a store or city.                                                                                                                             |
-| `similar_products`         | Products similar to a given one, ranked as on the product pages, with an optional price cap.                                                                                                                                 |
-| `store_overview`           | One store: opening hours, product count, sales, best value per category and recent arrivals.                                                                                                                                 |
-| `stock_trend`              | How many stores listed a product each day over the last 90 days.                                                                                                                                                             |
-| `suggest_punch`            | A punch from a template, scaled to the number of people and a budget, as a calculator link.                                                                                                                                  |
-| `catalog_statistics`       | Product counts, averages, category breakdown and data timestamps.                                                                                                                                                            |
-| `list_filter_values`       | Valid (Finnish) values for the search filters, with product counts.                                                                                                                                                          |
+| Tool                       | Purpose                                                                                                                                                                                                                            |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `search_products`          | Search by name and filter by category, subcategory, style, country, region, manufacturer, packaging, selection, grapes, taste, store/city, price, alcohol %, size, sugar and sale status. Results are capped at 50 per page.       |
+| `get_product`              | Full details for one product, including Alko's status, calculated metrics, active sale, price history summary and store count. Accepts a product number, a product URL or a barcode the catalog knows.                             |
+| `compare_products`         | Compare 2–10 products and show which one is best on each metric.                                                                                                                                                                   |
+| `price_history`            | Recorded price changes and a summary for a product.                                                                                                                                                                                |
+| `store_availability`       | Stores that have the product, with live unit counts from the [API Worker](docs/api-worker.md#live-store-availability) and today's opening hours. Falls back to the availability snapshot (no counts) when the Worker can't answer. |
+| `create_list_link`         | Build a shareable alkometriikka.fi list link from products and quantities. The list is encoded in the URL; nothing is stored.                                                                                                      |
+| `create_punch_link`        | Build a link to the punch calculator (boolilaskuri) from Alko products and other ingredients, with glass size and number of people. The recipe is encoded in the URL; nothing is stored.                                           |
+| `price_changes`            | Products whose price changed in the last 7–365 days, with direction, category and sort options.                                                                                                                                    |
+| `find_cheaper_alternative` | A cheaper, comparable product for a given product and quantity, optionally from a store or city.                                                                                                                                   |
+| `similar_products`         | Products similar to a given one, ranked as on the product pages, with an optional price cap.                                                                                                                                       |
+| `store_overview`           | One store: opening hours, product count, sales, best value per category and recent arrivals.                                                                                                                                       |
+| `lookup_barcode`           | The product for an EAN/UPC barcode, as the site's scanner finds it: the catalog first, then Alko through the API Worker.                                                                                                           |
+| `stock_trend`              | How many stores listed a product each day over the last 90 days.                                                                                                                                                                   |
+| `suggest_punch`            | A punch from a template, scaled to the number of people and a budget, as a calculator link.                                                                                                                                        |
+| `catalog_statistics`       | Product counts, averages, category breakdown and data timestamps.                                                                                                                                                                  |
+| `list_filter_values`       | Valid (Finnish) values for the search filters, with product counts.                                                                                                                                                                |
 
 The server also offers resources (`alkometriikka://punch-templates` and `alkometriikka://filter-values/{field}`) and prompts (`plan_party`, `best_value`, `pair_with_food`), which clients show as slash commands. `search_products` can filter by Alko's food pairings (`food_pairings`).
 
@@ -322,12 +323,14 @@ The server also offers resources (`alkometriikka://punch-templates` and `alkomet
   - `ALKOMETRIIKKA_CACHE_TTL_MINUTES`: cache lifetime in minutes, minimum 10.
   - `ALKOMETRIIKKA_DATA_DIR`: read `data.json` / `data-removed.json` / `availability.json` from a local directory instead of downloading, e.g. `static/` after `bun run sync --dev`.
   - `ALKOMETRIIKKA_BASE_URL`: download from a mirror.
+  - `ALKOMETRIIKKA_API_URL`: the [API Worker](docs/api-worker.md) for `lookup_barcode` and live counts in `store_availability` (default `https://api.alkometriikka.fi`; off with `ALKOMETRIIKKA_DATA_DIR` unless set; `off` turns it off). Answers are kept in memory as long as the site keeps them (30 min for barcodes, 5 min for counts, a minute for failures).
   - `ALKOMETRIIKKA_MCP_DEBUG=1`: log to stderr.
 
 ### Limitations
 
 - The upstream data is refreshed about every 6 hours, so prices can lag behind Alko.
-- Store availability is a periodic snapshot of which stores list a product. It has no stock quantities and does not guarantee the product is on the shelf.
+- Live unit counts are at most about 15 minutes old, and only `store_availability` has them. Everywhere else (`store_count`, the store filter, `store_overview`) availability is the periodic snapshot of which stores list a product, without quantities. Neither guarantees the product is on the shelf.
+- The API Worker allows 30 Alko requests a minute per IP. A hosted server shares one IP between all its users, so under heavy use some lookups fall back to the snapshot or report `lookup_failed`.
 - Product data and filter values are in Finnish, as published by Alko.
 - `estimated_promille` is a rough estimate for a reference person. It is not medical or driving advice.
 

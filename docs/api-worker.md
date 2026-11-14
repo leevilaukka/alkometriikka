@@ -143,6 +143,10 @@ scroll there cost nothing. Until the counts arrive, or if they don't, both show 
 Once they do, they decide which stores have the product, each listed store shows "Saatavilla N kpl",
 and "päivitetty" is the counts' `fetchedAt`.
 
+The [MCP server](../README.md#mcp-server) is the Worker's other caller: `lookup_barcode` asks
+`/gtin/{ean}` and `store_availability` asks `/availability/{id}` (`mcp/live.ts`), keeping answers
+for as long as the site does.
+
 ## Setup and deploy
 
 Wrangler isn't a dependency; run it with `bunx`. From the repository root:

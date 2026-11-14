@@ -245,7 +245,9 @@ describe('CatalogProvider', () => {
 		const catalog = await quietly(() => new CatalogProvider(options(fetch)).get());
 		expect(catalog.search({ query: 'testiviina' }).total_matches).toBe(1);
 		expect(catalog.status.warnings?.[0]).toContain('Store availability is unavailable');
-		expect(catalog.storeAvailability('100001', { limit: 5 }).availability_data_loaded).toBe(false);
+		expect((await catalog.storeAvailability('100001', { limit: 5 })).availability_data_loaded).toBe(
+			false
+		);
 	});
 
 	it('rejects with a clear error when the dataset cannot be loaded', async () => {

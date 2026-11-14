@@ -33,6 +33,8 @@ import {
 	priceChangeSince
 } from '../src/lib/utils/stats/priceChanges.ts';
 import { recentPriceChanges } from '../src/lib/utils/stats/metrics.ts';
+import { isValidGtin } from '../src/lib/utils/catalog/gtin.ts';
+import type { LiveApi, LiveStoreCounts } from './live.ts';
 import type { StockSource } from './stock.ts';
 import { Kaljakori } from '../src/lib/alko/index.ts';
 import type {
@@ -193,12 +195,33 @@ const METRICS_NOTE =
 	'pure alcohol. estimated_promille is a rough Widmark estimate for drinking the whole package, for a 79 kg ' +
 	'reference person (r = 0.55); it is not medical or driving advice.';
 
-const AVAILABILITY_LIMITATIONS = [
-	'Store availability is a snapshot from Alko product search, refreshed by Alkometriikka roughly every 6 hours; see availability_last_updated.',
-	'A listed store carried the product at snapshot time. Stock quantities are not known, and the product may have sold out since.',
+const AVAILABILITY_NOTES = [
 	'Products that are not listed in any store may still be orderable (e.g. tilausvalikoima) or sold in Alko’s online shop.',
 	'open_now and opening_hours_today are based on published opening hours in Finnish time (Europe/Helsinki).'
 ];
+
+const SNAPSHOT_LIMITATIONS = [
+	'Store availability is a snapshot from Alko product search, refreshed by Alkometriikka roughly every 6 hours; see availability_last_updated.',
+	'A listed store carried the product at snapshot time. Stock quantities are not known, and the product may have sold out since.',
+	...AVAILABILITY_NOTES
+];
+
+const LIVE_LIMITATIONS = [
+	'units is the number of units Alko reported for the store at live.fetched_at (usually at most 15 minutes old, older while Alko is unreachable). Stock can still change before a visit.',
+	...AVAILABILITY_NOTES
+];
+
+/**
+ * A scanned code in the form data.json stores it: digits only, UPC-A padded to EAN-13 and a
+ * GTIN-14 with a leading zero cut to one. Null when it isn't a valid GTIN.
+ */
+export function normalizeBarcode(input: string): string | null {
+	const code = input.trim().replace(/[\s-]/g, '');
+	if (!isValidGtin(code)) return null;
+	if (code.length === 12) return `0${code}`;
+	if (code.length === 14 && code.startsWith('0')) return code.slice(1);
+	return code;
+}
 
 const normalize = (value: string) => value.trim().toLocaleLowerCase('fi');
 
@@ -267,6 +290,9 @@ export class Catalog {
 	status: DatasetStatus;
 	/** Stock history; without it the stock tools report that no history is available. */
 	stock: StockSource | null = null;
+	/** The API Worker; without it barcodes are only matched in the dataset and counts aren't live. */
+	live: LiveApi | null = null;
+	private barcodes: Map<string, PriceListItem[]> | null = null;
 
 	constructor(
 		table: any[],
@@ -286,17 +312,48 @@ export class Catalog {
 		const id = parseProductId(input);
 		if (!id) return undefined;
 		// Product numbers are 6 digits with leading zeros; tolerate them being dropped.
-		return this.kaljakori.findById(id) ?? this.kaljakori.findById(id.padStart(6, '0'));
+		const product = this.kaljakori.findById(id) ?? this.kaljakori.findById(id.padStart(6, '0'));
+		if (product) return product;
+		// Product numbers are never 8, 12, 13 or 14 digits, so a GTIN can't be mistaken for one
+		const barcode = normalizeBarcode(input);
+		return barcode ? this.productsWithBarcode(barcode)[0] : undefined;
 	}
 
 	requireProduct(input: string): PriceListItem {
 		const product = this.findProduct(input);
 		if (product) return product;
+		if (normalizeBarcode(input)) {
+			throw new ToolInputError(
+				`No product with barcode "${input}" is in the Alkometriikka catalog yet. Use lookup_barcode, which also asks Alko.`
+			);
+		}
 		throw new ToolInputError(
 			parseProductId(input)
 				? `No product with ID "${input}" exists in the Alkometriikka catalog. Use search_products to find product IDs.`
 				: `"${input}" is not a valid product ID. Product IDs are numeric Alko product numbers such as "319027"; use search_products to find them.`
 		);
+	}
+
+	/** Products with this EAN, the ones still in the selection first */
+	private productsWithBarcode(ean: string): PriceListItem[] {
+		if (!this.barcodes) {
+			this.barcodes = new Map();
+			for (const item of this.kaljakori.data) {
+				const code = text(item[AllColumns.EAN]);
+				if (!code) continue;
+				const products = this.barcodes.get(code) ?? [];
+				products.push(item);
+				this.barcodes.set(code, products);
+			}
+			for (const products of this.barcodes.values()) {
+				products.sort(
+					(a, b) =>
+						Number(Boolean(a[AllColumns.RemovedFromSelection])) -
+						Number(Boolean(b[AllColumns.RemovedFromSelection]))
+				);
+			}
+		}
+		return this.barcodes.get(ean) ?? [];
 	}
 
 	// ------------------------------------------------------------------------
@@ -332,6 +389,7 @@ export class Catalog {
 			alcohol_grams_per_euro: num(item[AllColumns.AlcoholGramsPerEuro]),
 			euro_per_liter_alcohol: num(item[AllColumns.EuroPerLiterAlcohol]) || null,
 			sale_discount_percent: this.sale(item)?.discountPercent ?? null,
+			status: text(item[AllColumns.Status]),
 			removed_from_selection: Boolean(item[AllColumns.RemovedFromSelection]),
 			url: this.productUrl(id)
 		};
@@ -791,10 +849,74 @@ export class Catalog {
 		};
 	}
 
-	storeAvailability(input: string, options: { city?: string; store?: string; limit: number }) {
+	/**
+	 * The product for a barcode, as the site's scanner finds it: the dataset first, then the API
+	 * Worker, which asks Alko. A barcode only found on a removed product is asked too, as Alko
+	 * may sell it under a new number now, and the removed product is the fallback.
+	 */
+	async lookupBarcode(input: string) {
+		const barcode = normalizeBarcode(input);
+		if (!barcode) {
+			throw new ToolInputError(
+				`"${input}" is not a valid barcode. Give the EAN-13, UPC-A, EAN-8 or GTIN-14 number printed under the bars, check digit included.`
+			);
+		}
+		const found = (item: PriceListItem, source: 'catalog' | 'alko') => ({
+			barcode,
+			found: true,
+			source,
+			product: this.getProduct(String(item[AllColumns.Number])).product,
+			alko_product_id: String(item[AllColumns.Number]),
+			lookup_failed: false,
+			note: undefined as string | undefined,
+			dataset: this.status
+		});
+
+		const local = this.productsWithBarcode(barcode);
+		const active = local.find((item) => !item[AllColumns.RemovedFromSelection]);
+		if (active) return found(active, 'catalog');
+
+		const answer = this.live ? await this.live.gtin(barcode) : null;
+		const fromAlko = answer && answer !== 'not_found' ? this.findProduct(answer) : undefined;
+		if (fromAlko) return found(fromAlko, 'alko');
+		if (local[0]) return found(local[0], 'catalog');
+		const unknownId = answer && answer !== 'not_found' ? answer : null;
+		return {
+			barcode,
+			found: false,
+			source: null,
+			product: null,
+			alko_product_id: unknownId,
+			lookup_failed: Boolean(this.live) && answer === null,
+			note: unknownId
+				? `Alko sells this barcode as product ${unknownId}, which is not in Alkometriikka's data yet; it is added at the next sync. Its Alko page: https://www.alko.fi/tuotteet/${unknownId}`
+				: !this.live
+					? 'No product in the catalog has this barcode, and asking Alko is turned off on this server.'
+					: answer === null
+						? 'No product in the catalog has this barcode, and Alko could not be asked right now; try again later or search by name.'
+						: 'Alko has no product with this barcode. Search by name instead.',
+			dataset: this.status
+		};
+	}
+
+	/**
+	 * Like the product page: once the Worker's live counts arrive they decide which stores have
+	 * the product, and without them the availability.json snapshot does.
+	 */
+	async storeAvailability(
+		input: string,
+		options: { city?: string; store?: string; limit: number }
+	) {
 		const item = this.requireProduct(input);
 		const hasAvailability = Object.keys(this.availability.stores).length > 0;
-		const all = this.storesFor(item).toSorted((a, b) => a.name.localeCompare(b.name, 'fi'));
+		const live: LiveStoreCounts | null =
+			(await this.live?.availability(String(item[AllColumns.Number]))) ?? null;
+		const stocked = live
+			? [...live.counts.keys()]
+					.map((id) => this.availability.stores[id])
+					.filter((store): store is AvailabilityStore => Boolean(store))
+			: this.storesFor(item);
+		const all = stocked.toSorted((a, b) => a.name.localeCompare(b.name, 'fi'));
 
 		let matching = all;
 		if (options.city) {
@@ -818,6 +940,13 @@ export class Catalog {
 			product: this.summary(item),
 			selection,
 			availability_data_loaded: hasAvailability,
+			live: {
+				available: Boolean(live),
+				fetched_at: live?.fetchedAt.toISOString() ?? null,
+				total_units: live
+					? all.reduce((sum, store) => sum + (live.counts.get(store.id) ?? 0), 0)
+					: null
+			},
 			available_store_count: all.length,
 			matching_store_count: matching.length,
 			stores: matching.slice(0, options.limit).map((store) => ({
@@ -826,16 +955,28 @@ export class Catalog {
 				city: getStoreCity(store) || null,
 				address: store.address ?? null,
 				postal_code: store.postalCode ?? null,
+				units: live?.counts.get(store.id) ?? null,
 				opening_hours_today: getTodaysOpeningHours(store, now),
 				open_now: isStoreOpen(store, now)
 			})),
 			stores_truncated: matching.length > options.limit,
-			limitations: hasAvailability
-				? AVAILABILITY_LIMITATIONS
-				: [
-						'Store availability data could not be loaded, so availability is unknown (not zero).',
-						...AVAILABILITY_LIMITATIONS
-					],
+			limitations: [
+				...(hasAvailability
+					? []
+					: [
+							live
+								? 'Store details could not be loaded, so stores with units may be missing from the list.'
+								: 'Store availability data could not be loaded, so availability is unknown (not zero).'
+						]),
+				...(live
+					? LIVE_LIMITATIONS
+					: [
+							...(this.live
+								? ['Live unit counts could not be fetched right now, so this is the snapshot.']
+								: []),
+							...SNAPSHOT_LIMITATIONS
+						])
+			],
 			dataset: this.status
 		};
 	}
@@ -1107,7 +1248,7 @@ export class Catalog {
 						.map(({ product, date }) => ({ ...this.summary(product), arrived: date }))
 				: null,
 			limitations: [
-				...AVAILABILITY_LIMITATIONS,
+				...SNAPSHOT_LIMITATIONS,
 				arrivals
 					? 'recent_arrivals lists products that appeared in the store in the last 30 days, from the stock history.'
 					: 'Recent arrivals are not available for this store (no stock history yet).'

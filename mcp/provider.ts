@@ -9,6 +9,7 @@ import { readFile } from 'node:fs/promises';
 import { parseDataset, parseRemovedProducts } from '../src/lib/utils/catalog/dataset.ts';
 import { parseAvailability } from '../src/lib/utils/catalog/availability.ts';
 import type { AvailabilityData, DatasetRow } from '../src/lib/types.ts';
+import { LiveApi } from './live.ts';
 import { StockSource } from './stock.ts';
 import { Catalog, type DatasetStatus } from './catalog.ts';
 import { CachedResource, type DataStoreOptions, type ResourceState } from './data-store.ts';
@@ -23,12 +24,23 @@ export class CatalogProvider {
 	private parsed: { version: string; dataset: ReturnType<typeof parseDataset> } | null = null;
 	private pending: Promise<Catalog> | null = null;
 	private readonly stock: StockSource;
+	private readonly live: LiveApi | null;
 
 	constructor(private readonly options: DataStoreOptions) {
 		this.data = new CachedResource('data.json', options, (text) => {
 			parseDataset(text);
 		});
 		this.stock = new StockSource(options);
+		this.live = options.apiUrl
+			? new LiveApi({
+					apiUrl: options.apiUrl,
+					userAgent: options.userAgent,
+					// A tool call waits for these, unlike the background data downloads
+					timeoutMs: Math.min(options.timeoutMs, 10_000),
+					fetch: options.fetch,
+					now: options.now
+				})
+			: null;
 		this.removed = new CachedResource('data-removed.json', options, (text) => {
 			JSON.parse(text);
 		});
@@ -111,6 +123,7 @@ export class CatalogProvider {
 				this.options.baseUrl
 			);
 			this.catalog.stock = this.stock;
+			this.catalog.live = this.live;
 			this.version = version;
 		} else {
 			const { last_updated, last_synced } = this.catalog.status;

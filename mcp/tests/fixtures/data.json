@@ -32,7 +32,8 @@
 		"EAN",
 		"Normaalihinta",
 		"Kampanja alkaa",
-		"Kampanja päättyy"
+		"Kampanja päättyy",
+		"Tila"
 	],
 	"metadata": {
 		"LastUpdated": "2026-09-20T10:00:00.000Z",
@@ -72,10 +73,11 @@
 				null,
 				220,
 				"vakiovalikoima",
-				"6412345678901",
+				"6412345678907",
 				null,
 				null,
-				null
+				null,
+				"Aktiivinen"
 			],
 			"priceHistory": [
 				{
@@ -127,7 +129,8 @@
 				null,
 				2.99,
 				"2000-01-01",
-				"2999-12-31"
+				"2999-12-31",
+				"Uutuus"
 			],
 			"priceHistory": [
 				{
@@ -178,7 +181,8 @@
 				null,
 				null,
 				null,
-				null
+				null,
+				"Poistuva"
 			],
 			"priceHistory": [
 				{
@@ -222,7 +226,8 @@
 				null,
 				null,
 				null,
-				null
+				null,
+				"Ei myynnissä"
 			],
 			"priceHistory": []
 		},
@@ -258,6 +263,7 @@
 				null,
 				null,
 				"vakiovalikoima",
+				"0036000291452",
 				null,
 				null,
 				null,
@@ -308,7 +314,8 @@
 				null,
 				null,
 				null,
-				null
+				null,
+				"Aktiivinen"
 			],
 			"priceHistory": []
 		}
